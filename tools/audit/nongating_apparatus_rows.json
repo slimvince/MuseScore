@@ -14,8 +14,8 @@
  },
  "population": {
   "rows_parsed": 350,
-  "open_rows": 252,
-  "first_cut_candidates": 61,
+  "open_rows": 249,
+  "first_cut_candidates": 60,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -38,7 +38,7 @@
  },
  "totals": {
   "non_gating": 29,
-  "gates": 32,
+  "gates": 31,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -116,9 +116,6 @@
     "OI-304",
     "OI-315",
     "OI-332"
-   ],
-   "an establishment obligation (#19) - the exemption, not the criterion": [
-    "OI-300"
    ],
    "an instrument a measurement depends on": [
     "OI-150",
@@ -502,14 +499,6 @@
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
   },
   {
-   "id": "OI-300",
-   "title": "The shell-read guard owes a false-deny establishment run over five shapes its corpora do not contain",
-   "subject_column": "process / mechanisation debt (#19)",
-   "verdict": "GATES",
-   "reason": "Its whole subject is a mechanism's MEASURED false-deny and detection rates over two shapes its corpora do not contain. Classified GATES on the exemption alone, and the exemption is what makes the classification easy: an establishment obligation always gates whatever its subject, because backgrounding one is how it never happens. The apparatus test is not reached and is not applied.",
-   "gate_ground": "an establishment obligation (#19) - the exemption, not the criterion"
-  },
-  {
    "id": "OI-301",
    "title": "`tools/open_items_split_check.py --split-baseline` overwrites the frozen split reconciliation with a failing report, and nothing warns",
    "subject_column": "process / audit tooling",
@@ -687,6 +676,12 @@
     "class_basis_or_ground": "#19 establishment obligation",
     "reason": "Gates on the exemption, and independently on the criterion: the marked set includes D-329, complete candidate listing, which is the family design's ratified admission premise and whose marking already failed once.",
     "closed": "VERIFIED 2026-08-03 (phase 1w) - the whole marked set re-verified against the live-reachability test, 0 marks established wrong and 0 corrected, the convention not in question. Its residues opened as OI-302 (which gates), OI-303 and OI-304."
+   },
+   "OI-300": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "an establishment obligation (#19) - the exemption, not the criterion",
+    "reason": "Its whole subject is a mechanism's MEASURED false-deny and detection rates over two shapes its corpora do not contain. Classified GATES on the exemption alone, and the exemption is what makes the classification easy: an establishment obligation always gates whatever its subject, because backgrounding one is how it never happens. The apparatus test is not reached and is not applied.",
+    "closed": "RESOLVED 2026-08-08 - the owed establishment run was performed and all five shapes are answered by the ONE design the user ruled that day (`cowork_ruling_guard_family_2026_08_08.md`), corpus first. The verdict was correct while it stood and is kept whole (#12); it is retired because the row closed, never because it was wrong - and its own ground held to the end, since what discharged the row was the establishment run it named."
    },
    "OI-331": {
     "verdict": "GATES",

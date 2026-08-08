@@ -1983,15 +1983,6 @@
    "OI-320"
   ],
   "recollected_but_NOT_in_the_derived_population": {
-   "OI-300": {
-    "subject_column": "process / mechanisation debt (#19)",
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "an establishment obligation (#19) - the exemption, not the criterion"
-    },
-    "why_this_cut_does_not_reach_it": "The TRUE half's cut searches for a row asserting that a SPECIFICATION states something false at HEAD. This row's subject column and text carry no such signal - which does not make the row unowed: it may be outstanding on the COMPLETE half or as an establishment obligation (#19), neither of which this cut searches."
-   },
    "OI-325": {
     "subject_column": "conformance check over the analysis's inputs — belongs to **phase 2**'s issue-finding program (D-231)",
     "gate": {
@@ -2003,6 +1994,7 @@
    }
   },
   "recollected_but_already_CLOSED_in_the_index": [
+   "OI-300",
    "OI-331",
    "OI-333"
   ],
@@ -2063,7 +2055,7 @@
  },
  "counted": {
   "decisions_recorded": 645,
-  "open_rows_in_the_index": 252,
+  "open_rows_in_the_index": 249,
   "true_half_wide_cut": 57,
   "true_half_gating": 35,
   "complete_half_gap": 43,

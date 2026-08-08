@@ -93,6 +93,18 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-300": (GATES, "an establishment obligation (#19) - the exemption, not the criterion",
+               "Its whole subject is a mechanism's MEASURED false-deny and detection rates over "
+               "two shapes its corpora do not contain. Classified GATES on the exemption alone, "
+               "and the exemption is what makes the classification easy: an establishment "
+               "obligation always gates whatever its subject, because backgrounding one is how "
+               "it never happens. The apparatus test is not reached and is not applied.",
+               "RESOLVED 2026-08-08 - the owed establishment run was performed and all five "
+               "shapes are answered by the ONE design the user ruled that day "
+               "(`cowork_ruling_guard_family_2026_08_08.md`), corpus first. The verdict was "
+               "correct while it stood and is kept whole (#12); it is retired because the row "
+               "closed, never because it was wrong - and its own ground held to the end, since "
+               "what discharged the row was the establishment run it named."),
     "OI-340": (GATES, "the criterion - D-438's line puts specification completion on the gating side",
                "Whether criterion C1 reaches SUPERSEDED register entries is unruled: the per-kind "
                "scheme said to settle it does not carry that kind, and read at its own text it "
@@ -341,12 +353,7 @@ V = {
                "later and records that every use sits on the legacy arm. What is owed is the "
                "correction of a statement about which code is live - the same D-438 clause as "
                "[[OI-303]], not a filing or a pointer."),
-    "OI-300": (GATES, "an establishment obligation (#19) - the exemption, not the criterion",
-               "Its whole subject is a mechanism's MEASURED false-deny and detection rates over "
-               "two shapes its corpora do not contain. Classified GATES on the exemption alone, "
-               "and the exemption is what makes the classification easy: an establishment "
-               "obligation always gates whatever its subject, because backgrounding one is how "
-               "it never happens. The apparatus test is not reached and is not applied."),
+    # OI-300's verdict moved to RETIRED_VERDICTS on 2026-08-08 when the row closed.
     # OI-316 and OI-319 (rowed 2026-08-04, READ WAVE 1) are NOT first-cut candidates -- the
     # over-inclusive vocabulary does not reach their subject columns -- so no verdict is authored
     # for them here, on the OI-305/OI-306 precedent four rows above. Both therefore carry the

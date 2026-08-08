@@ -58,6 +58,24 @@ entry records rather than rows (`gen_guard_classification.py` has a re-derivatio
 list runs). Leaving the row open with its subject discharged is the OI-283 shape — a finding never
 marked discharged — which is why it is put here rather than left silent.
 
+### 1.3 `CLAUDE.md` now understates what the shell-read guard watches — a doc-sync correction owed at a surface this batch may not edit (Task 1)
+
+`CLAUDE.md`'s D-253 conventions carry a 2026-08-08 clause stating, of the PowerShell reading family
+and of a `python -c "open(...)"` in the Cowork sandbox, that **"No guard watches either surface"**.
+Half of that was already made false by the 2026-08-07/08 dialect widening; **the other half is made
+false by Task 1**, which brings interpreter code — `python -c`, `perl -e`, and heredoc bodies fed to
+an interpreter — inside the guard, to the stated ceiling.
+
+**What is still true and must survive any correction**, because it is the clause's actual point: a
+guard armed as a hook in THIS project directory says nothing about the Cowork sandbox, and its
+silence on an unwatched execution surface is not compliance (#19). The correction is therefore not
+"a guard now watches it" but a narrowing — the surfaces are watched *where the hook runs*, and the
+sandbox is not that place.
+
+**HELD** because `CLAUDE.md` is in this batch's edit authority for **homing acts** only (D-645), and
+a doc-sync correction is not a homing act. Stated here so it is one edit for whoever is authorized,
+and so the staleness is on the record rather than merely inherited.
+
 ---
 
 ## 2. Surfaced findings (D-641, #13, #19)
@@ -156,13 +174,94 @@ STOPS on a list of documents that are nobody's home any more, accumulated by eve
 It is not repaired here — its table is generator source rather than register data, and pruning it
 is not among Task 0's acts.
 
-**Holds:** the filing decision at §1.1; OI-319's status at §1.2.
+**Holds:** the filing decision at §1.1; OI-319's status at §1.2; and two more, both outside this
+batch's edit authority and both stated so they are one edit for whoever is authorized.
+
+1. **A pointer this task made false, and did not correct.** `gen_phase1p_delegation_bar.py`'s
+   artifact prose says *"the register's PRESENT classes are the post-apply ones and are at
+   `tools/audit/decisions/phase1q_reclassification.json`"*, and names the same file again for its
+   `by_document` and `entries` blocks. After the epoch treatment the present classes are at
+   `home_classification.json`. The correction is to re-aim both namings at that file. It is HELD
+   because that generator is neither the register data nor the guard tooling nor the classifier —
+   the three surfaces the dispatch's edit-authority list admits — and its list ends *"Anything
+   else: hold."*
+2. **Two untracked files were deliberately NOT staged**, being Cowork's rather than this batch's:
+   `cowork_instruction_return_session.md` and `cowork_scratch_2026_08_08/`. They remain untracked;
+   naming them here is so their absence from the commit is a choice on the record rather than an
+   oversight.
+
+**Committed and pushed** as `82ebfd68d9` to `origin` (the user's fork `slimvince/MuseScore`);
+`upstream` was not touched and remains push-disabled. The commit also carries the accumulated,
+uncommitted document-routes wave — the two cannot be split, because the applying run re-serialized
+register data that wave had already changed — and the commit message says so.
 
 **No value is restated here (D-431)** — every quantity lives in the generated artifacts named
 above.
 
 **Freeze respected:** no `src/` change, no golden, no corpus, no `tools/robust_stop/` movement, no
 behaviour change to the analysis, no fix to inference, no design.
+
+### Task 1 — COMPLETE. The guard family built corpus-first; OI-300, OI-348 and OI-351 all resolve
+
+**What was done, in order, and the order is the ruling's.**
+
+1. **The corpus went in first**, before one line of the mechanism moved: OI-351's observed command
+   and its path-form variants, the POSIX and `pwsh` wrapper spellings, the interpreter forms
+   including the heredoc one, the hashless `git diff` forms, and — on the other side — the same
+   spellings aimed OUTSIDE the tree as controls, the wrapper controls including
+   `BUILD_AND_TEST.md`'s own mandated `Start-Process` invocation, and the hash-bearing git forms.
+2. **The blindness was measured at the unwidened guard**, with the corpus already in place. It has
+   the same shape as the dialect widening's: almost every new forbidden row admitted, not one new
+   sanctioned row denied. The guard was not wrong about this family — it could not see it.
+3. **The five clauses were built**, and only then were both rates re-measured on the same extended
+   corpus. **The revert condition is not met — false denials FALL**, and every one that remains is
+   accepted by the ruling's own clause 4.
+4. **Assumption A5 discharged by measurement.** Every row the corpus carried before this act was
+   decided both ways; every verdict that moved is named in the artifact, and every one is a shape
+   the design names — false denials removed on the heredoc and redirection shapes, misses caught on
+   the wrapper and interpreter shapes. No verdict moved anywhere else.
+
+**★ OI-351'S CAUSE IS ESTABLISHED, AND IT IS WIDER THAN THE ROW SUPPOSED.** The row named two
+candidates and asserted neither. **The first is confirmed, in a form it did not suppose: the DRIVE
+LETTER'S CASE.** The guard compared a path against the repository root with a case-sensitive string
+comparison on a platform whose paths are case-insensitive, so **every** repository path written with
+a lowercase drive letter read as outside the tree — in every utility and both dialects, not only in
+`ls`. The corpus now carries `cat` and `grep` in that spelling and both were admitted before the
+fix. **The second candidate — a gap between the live hook and the decision function — is refuted by
+observation**: the two agree on both live decisions the record holds, and **no new forbidden command
+was issued to test it**, because performing the violation in order to measure the guard is not a
+measurement anyone may take.
+
+**★ THE NEW GUARD DENIED THIS SESSION'S OWN COMMAND WITHIN MINUTES OF BEING BUILT, AND THAT IS
+REPORTED AS A DETECTION RATHER THAN AN INCONVENIENCE.** A `python - <<'PY'` heredoc was reached for
+to do a bulk rename inside the guard's own source; the interpreter-heredoc clause denied it, naming
+the repository path in the code. It is precisely OI-348's second shape and precisely the founding
+instance's own form. **It was not worked around** — the rename was redone through the file tools.
+
+**Two of this session's own new reserved-word collisions were caught by the standing self-check and
+corrected before the commit**: the bare non-musical *part*, throughout the new text and in an
+artifact field name, and the bare *rest* as a parameter name — **the same collision the previous
+wave's self-check caught in its own new selection function**, reintroduced by matching the adjacent
+code's idiom. That it recurred one wave later is worth the user's attention: matching the
+surrounding style is exactly how this rule gets broken.
+
+**One authored input was maintained rather than left to rot**, the same class of act as Task 0's
+missed retirement and caught the same way. Closing OI-300 stopped six generators — the non-gating
+apparatus declaration held a live verdict for a row the index no longer carries open, which is that
+tool's own STOP working. The verdict was moved WHOLE into its retired table with the reason it
+closed (#12), never deleted; and its own ground held to the end, since what discharged the row was
+the establishment run it named.
+
+**Holds:** §1.3, the `CLAUDE.md` doc-sync correction, which is outside this batch's edit authority.
+**Surfacings:** none new bearing on the analysis — this task's whole subject is the audit's own
+apparatus.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
+movement, no behaviour change to the analysis, no fix to inference, no design. The one mechanism
+change is the ruled one.
+
+**No value is restated here (D-431)** — every rate, count and identity lives in
+`tools/audit/shell_read_guard_establishment.json`.
 
 ---
 

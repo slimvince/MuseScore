@@ -29,9 +29,20 @@ and not in place is worse than none (#19):
   * It covers the TEXT-UTILITY half in BOTH shell dialects it is armed on — POSIX from the
     start, and PowerShell since 2026-08-08 (`OPEN_ITEMS.md` OI-345, user ruling R1 of
     2026-08-07).  Until that date the utility set was POSIX-only while the hook matcher named
-    both tools, so the PowerShell spelling of the same read was admitted.  What a name set
-    cannot reach is a command carried INSIDE a quoted argument — `powershell.exe -Command
-    "<cmdlet> <repository path>"` is still admitted, is in the corpus, and is rowed.
+    both tools, so the PowerShell spelling of the same read was admitted.
+  * ★ SINCE THE FAMILY RULING of 2026-08-08 it also covers a command carried inside a WRAPPER's
+    quoted code argument (`bash -c`, `sh -c`, `powershell(.exe) -Command`, `pwsh -Command`),
+    which is re-run through this same decision; an INTERPRETER's code string (`python -c`,
+    `perl -e`, and a heredoc body fed to one) by POLICY, when it carries a literal path this
+    repository holds; and a HASHLESS `git diff` aimed at a working-tree path.  The same act
+    removed three measured FALSE denies — the redirection tokens and the heredoc body — and
+    fixed the case-sensitive path comparison that admitted every repository path written with a
+    lowercase drive letter (OI-351).
+  * ★ THE CEILING, stated rather than left to be found: interpreter code whose path is COMPUTED
+    rather than written carries no literal for the policy to see, and is admitted.  A row of
+    exactly that shape is in the corpus and is reported as missed, so the published deny rate
+    states the bound instead of being silent about it (#19; a proxy pretending otherwise is
+    what #17(d) forbids).
   * It covers — since 2026-08-03 — `git status`.  The rest of the
     rule's other half, `git log` and `git rev-parse HEAD`, is still deliberately NOT enforced.
     Blocking those would fire on ordinary git use that the rule's own scope note leaves to
@@ -176,6 +187,189 @@ def powershell_targets(util: str, after_util: list[str]) -> list[str]:
         positional = positional[1:]
     return positional[:1]
 
+# ── THE 2026-08-08 FAMILY: wrappers, interpreters, redirections, heredocs, hashless git ──────
+# The ruling is `cowork_ruling_guard_family_2026_08_08.md`, with OI-351 folded in by Ruling 3 of
+# `cowork_rulings_2026_08_08_pre_away.md`. Everything in this block is licensed by it (D-436), and
+# every piece is reachable from `decide(..., family=False)` in its previous behaviour so both arms
+# are measurable on the same corpus.
+
+# CLAUSE 1 —the wrappers whose code argument is a shell command in a dialect this guard MODELS.
+# Recursing into one is composition of the established POSIX and PowerShell branches (#6), not new
+# modeling: the code string is re-run through this module's own decision.
+SHELL_WRAPPERS = {"bash", "sh", "dash", "zsh", "ksh", "powershell", "pwsh"}
+WRAPPER_CODE_FLAGS = {"-c", "-command", "-cmd"}
+
+# CLAUSE 2 —the interpreters whose code argument this guard does NOT model. A shell command is not
+# what they carry; source code is, and no name set reaches inside it. They are decided by POLICY.
+INTERPRETERS = {"python", "python3", "python2", "py", "perl", "ruby", "node", "php", "lua"}
+INTERPRETER_CODE_FLAGS = {"-c", "-e", "--eval", "--exec"}
+
+# A string literal in interpreter code. Deliberately simple: it finds quoted runs, and a prefix
+# such as `r` or `f` sits outside the quotes and is therefore not included in the capture.
+CODE_STRING_LITERAL = re.compile(r"'([^'\n]{1,400})'|\"([^\"\n]{1,400})\"")
+
+# CLAUSE 3a —redirection. A redirection operator and the file it names are not the command's aimed
+# path, and reading one as such is OI-300's shape (5): a measured FALSE DENY. Both spellings occur
+# — separated (`2>` `/dev/null`) and fused (`2>/dev/null`).
+REDIRECTION_OPERATOR = re.compile(r"^\d*(?:>>|>&|>|<<<|<<|<)&?\d*$")
+REDIRECTION_FUSED = re.compile(r"^\d*(?:>>|>|<<<|<<|<)\S+$")
+
+# CLAUSE 3b —heredocs. A heredoc BODY is not a sequence of commands, and classifying its lines as
+# commands is OI-300's shape (4): a `head = old[:k]` inside a Python heredoc was DENIED as a read.
+# What the body IS depends on who is fed it, which is the whole of the rule below.
+HEREDOC_INTRODUCER = re.compile(r"<<-?\s*(['\"]?)([A-Za-z_][A-Za-z0-9_]*)\1")
+
+
+def owner_of(line: str) -> str:
+    """The command a line invokes — its first token past any environment assignments."""
+    toks = tokenize(line)
+    i = 0
+    while i < len(toks) and ENV_ASSIGN.match(toks[i]):
+        i += 1
+    if i >= len(toks):
+        return ""
+    util = os.path.basename(toks[i].strip("'\"")).lower()
+    return util[:-4] if util.endswith(".exe") else util
+
+
+def split_heredocs(command: str) -> tuple[str, list[str]]:
+    """(command with non-shell heredoc bodies removed, interpreter heredoc bodies).
+
+    THREE CASES, and the third is why the body cannot simply be dropped:
+
+      * a heredoc fed to a SHELL (`bash <<'SH'`) is shell code — its body STAYS in the command and
+        is classified exactly as any other command would be. The corpus carries a forbidden read in
+        one, precisely so a body-skipping fix cannot pass by discarding bodies wholesale.
+      * a heredoc fed to an INTERPRETER (`python - <<'PY'`) is interpreter code — it is removed
+        from command classification and returned separately, so CLAUSE 2's policy runs over it. This
+        is the founding instance of `OPEN_ITEMS.md` OI-348's second shape.
+      * anything else is DATA and is removed.
+
+    THE LIMIT, stated rather than left to be found: one heredoc per command, introduced on the
+    first line. Every instance the corpus carries has that shape; a command with two heredocs, or
+    one introduced further down a pipeline, is not modeled and its later body would still be read
+    as commands.
+    """
+    lines = command.split("\n")
+    if len(lines) < 2:
+        return command, []
+    m = HEREDOC_INTRODUCER.search(lines[0])
+    if not m:
+        return command, []
+    terminator = m.group(2)
+    end = len(lines)
+    for i in range(1, len(lines)):
+        if lines[i].strip() == terminator:
+            end = i
+            break
+    body = lines[1:end]
+    remainder = lines[:1] + lines[end + 1:]
+    owner = owner_of(lines[0])
+    if owner in SHELL_WRAPPERS:
+        return command, []                      # shell code: leave it to be classified
+    if owner in INTERPRETERS:
+        return "\n".join(remainder), ["\n".join(body)]
+    return "\n".join(remainder), []             # data: it is not a command at all
+
+
+def wrapper_code(util: str, after_util: list[str]) -> str | None:
+    """The code string a wrapper carries, or None if this invocation carries none."""
+    if util not in SHELL_WRAPPERS:
+        return None
+    for i, tok in enumerate(after_util):
+        if tok.lower() in WRAPPER_CODE_FLAGS and i + 1 < len(after_util):
+            return after_util[i + 1].strip("'\"")
+    return None
+
+
+def interpreter_code(util: str, after_util: list[str]) -> str | None:
+    """The code string an interpreter carries with an eval flag, or None."""
+    if util not in INTERPRETERS:
+        return None
+    for i, tok in enumerate(after_util):
+        if tok.lower() in INTERPRETER_CODE_FLAGS and i + 1 < len(after_util):
+            return after_util[i + 1].strip("'\"")
+    return None
+
+
+def literal_repository_paths(code: str, family: bool = True) -> list[str]:
+    """String literals in interpreter code that NAME a path this repository actually has.
+
+    THE POLICY, and its stated bound (#19, #17(d)).  The guard cannot parse interpreter code, and
+    a structural proxy standing in for that is exactly what the Premise Gate forbids.  So the test
+    is deliberately narrow and checkable: a QUOTED LITERAL that resolves to a path the repository
+    HOLDS.  Requiring it to exist is what keeps `print('hello world')` from reading as a read —
+    without it every quoted word in every one-liner would be a candidate path, which is the
+    false-deny failure that gets a guard switched off.
+
+    WHAT IT CANNOT SEE, and the corpus carries a row for it so the published rate says so: a code
+    string that COMPUTES its path — `os.path.join(os.getcwd(), 'CLAUDE.md')` — has no literal
+    repository path in it at all.  That residual is the design's stated ceiling, not an oversight.
+    """
+    found: list[str] = []
+    for a, b in CODE_STRING_LITERAL.findall(code):
+        s = (a or b).strip()
+        if not s or outside_repo(s, family):
+            continue
+        cand = s if os.path.isabs(s) else os.path.join(ROOT, s)
+        if os.path.exists(cand):
+            found.append(s)
+    return found
+
+
+def strip_redirections(tokens: list[str]) -> list[str]:
+    """Tokens with redirection operators and their targets removed (OI-300 shape 5).
+
+    THE `2>&1` CASE, which is why this is an index loop rather than a skip-the-next-one.  The
+    lexer treats `&` as punctuation in its own right, so `2>&1` arrives as THREE tokens — `2>`,
+    `&`, `1`.  Skipping only the token after the operator leaves the bare `1`, which then reads as
+    a relative path and denies the command: measured on `tail -5 /tmp/out.txt 2>&1`, a row this
+    corpus already carried, which stayed a false deny until the `&` was consumed with the operator
+    it belongs to.
+    """
+    out: list[str] = []
+    i = 0
+    while i < len(tokens):
+        tok = tokens[i]
+        if REDIRECTION_OPERATOR.fullmatch(tok):
+            i += 1
+            if i < len(tokens) and tokens[i] == "&":
+                i += 1                      # the `&` of `2>&1`, cut out by the lexer
+            if i < len(tokens):
+                i += 1                      # the redirection target
+            continue
+        if REDIRECTION_FUSED.fullmatch(tok):
+            i += 1
+            continue
+        out.append(tok)
+        i += 1
+    return out
+
+
+# CLAUSE 3c —a HASHLESS `git diff` aimed at a working-tree path. D-253's own text names it: git is
+# permitted for read-only OBJECT queries by explicit hash, because a content-addressed read is
+# self-verifying and errors loudly rather than returning silently-wrong content. A working-tree
+# diff is not one. The test is on the ABSENCE of a hash, which is the property that separates this
+# from every form the rule permits.
+EXPLICIT_HASH = re.compile(r"^[0-9a-f]{7,40}$")
+
+
+def hashless_git_worktree_diff(after_git: list[str], family: bool = True) -> list[str]:
+    """The repository paths a hashless `git diff` is aimed at — empty when it is not one."""
+    j = 0
+    if j < len(after_git) and after_git[j] == "-C":
+        j += 2
+    while j < len(after_git) and after_git[j].startswith("-"):
+        j += 1
+    if j >= len(after_git) or after_git[j].strip("'\"") != "diff":
+        return []
+    args = after_git[j + 1:]
+    if any(EXPLICIT_HASH.fullmatch(a.strip("'\"")) for a in args):
+        return []                               # a hash is present: the sanctioned object query
+    return [a for a in args
+            if a != "--" and not OPTION.match(a) and not outside_repo(a, family)]
+
+
 # A read of a git OBJECT by explicit hash is self-verifying — it errors loudly rather than
 # returning silently-wrong content — which is exactly why the rule exempts it.
 GIT_OBJECT_READ = re.compile(
@@ -211,7 +405,23 @@ OPTION = re.compile(r"^-")
 
 # Paths that are not this repository's working tree, so a text utility aimed at them is
 # reading something else and the rule does not reach it.
-def outside_repo(token: str) -> bool:
+def outside_repo(token: str, family: bool = True) -> bool:
+    """Is this token a path OUTSIDE this repository's working tree?
+
+    ★ THE CASE FIX (2026-08-08, `OPEN_ITEMS.md` OI-351, the family ruling).  The comparison below
+    used to be `os.path.commonpath([...]) != ROOT` — a CASE-SENSITIVE string comparison, on a
+    platform whose paths are case-insensitive.  `ntpath.commonpath` takes the drive letter from the
+    token AS WRITTEN, so a path spelled `c:/s/MS/…` produced `c:\\s\\MS`, which is not the string
+    `C:\\s\\MS`, and the function answered OUTSIDE for a path plainly inside.  Every repository path
+    written with a lowercase drive letter was therefore admitted, in EVERY utility — `cat` and
+    `grep` as much as `ls`, which is why OI-351's title names `ls` only because `ls` is what was
+    observed.  `os.path.normcase` on both sides is the fix: on Windows it lowercases and squares the
+    separators, and on POSIX it is the identity, so nothing moves on a case-sensitive platform.
+
+    `family=False` restores the case-sensitive comparison so `--establish` can publish both arms on
+    the SAME corpus, which is the only way the family's effect is separable from the corpus
+    extension's (D-436).
+    """
     t = token.strip("'\"")
     if not t or t.startswith("-"):
         return True
@@ -225,7 +435,12 @@ def outside_repo(token: str) -> bool:
         return True
     if os.path.isabs(t):
         try:
-            return os.path.commonpath([os.path.abspath(t), ROOT]) != ROOT
+            cand = os.path.abspath(t)
+            if family:
+                cand, root = os.path.normcase(cand), os.path.normcase(ROOT)
+            else:
+                root = ROOT
+            return os.path.commonpath([cand, root]) != root
         except ValueError:              # different drives
             return True
     return False
@@ -335,17 +550,38 @@ def tokenize(segment: str, group_quotes: bool = True) -> list[str]:
 
 
 def decide(command: str, group_quotes: bool = True, token_first: bool = True,
-           dialect: bool = True) -> tuple[bool, str]:
+           dialect: bool = True, family: bool = True, depth: int = 0) -> tuple[bool, str]:
     """(deny, reason). A command is denied when a text utility names a repository path.
 
     `dialect=False` restores the POSIX-only utility set the guard carried before 2026-08-08. It
     exists so `--establish` can publish both arms on the SAME corpus, which is the only way the
     widening's effect is separable from the corpus extension's (D-436).
+
+    `family=False` restores the guard as it stood before the 2026-08-08 FAMILY ruling — no wrapper
+    recursion, no interpreter policy, no redirection or heredoc handling, no hashless-git rule, and
+    the case-sensitive path comparison OI-351 turned on. Same purpose, same reason.
+
+    `depth` bounds the wrapper recursion. A wrapper inside a wrapper is real (`bash -c "pwsh
+    -Command …"`), and an unbounded recursion on a crafted command is a guard that stops guarding.
     """
     if GIT_OBJECT_READ.search(command):
         # The whole command is a git-object pipeline; a text utility downstream of it is
         # formatting object output, not reading the working tree.
         return False, "reads a git object by explicit hash — the sanctioned exemption"
+
+    interpreter_bodies: list[str] = []
+    if family:
+        command, interpreter_bodies = split_heredocs(command)
+        for body in interpreter_bodies:
+            hits = literal_repository_paths(body, family)
+            if hits:
+                return True, (
+                    f"an interpreter's heredoc body names a path inside this repository "
+                    f"({', '.join(hits[:3])}). Interpreter code is not shell, so no utility name "
+                    "reaches it; a code string carrying a literal repository path is denied by "
+                    "policy — `CLAUDE.md` Conventions, register entry D-253, and the guard-family "
+                    "ruling of 2026-08-08. Read it with the file tools (Read / Grep / Glob).")
+
     exempt = False
     for tokens in segments(command, group_quotes, token_first):
         # The enumeration exemption is judged PER SEGMENT, never over the whole command: a
@@ -359,7 +595,14 @@ def decide(command: str, group_quotes: bool = True, token_first: bool = True,
             i += 1
         if i >= len(tokens):
             continue
-        util = os.path.basename(tokens[i].strip("'\"")).lower()
+        head = tokens[i].strip("'\"")
+        if family:
+            # PowerShell wraps a pipeline in parentheses to take a property off it —
+            # `(Get-Content …).Lines` — so the command name arrives with grouping punctuation
+            # attached and matches no name set. Measured on the one wrapper row that survived the
+            # recursion until this was stripped; POSIX has the same shape with `{`.
+            head = head.lstrip("({")
+        util = os.path.basename(head).lower()
         if util.endswith(".exe"):
             util = util[:-4]
         if util == "git" and git_status_invocation(tokens[i + 1:]):
@@ -368,18 +611,55 @@ def decide(command: str, group_quotes: bool = True, token_first: bool = True,
                           "which paths changed is `python tools/audit/changed_paths.py` "
                           "(`--staged`, or `--commit <hash>`), which reports paths and status "
                           "codes and cannot return file content.")
+        if family:
+            # CLAUSE 1 —a wrapper's code argument is re-run through this same decision. No new
+            # modeling: it is the POSIX and PowerShell branches already established, composed (#6).
+            code = wrapper_code(util, tokens[i + 1:])
+            if code is not None and depth < 3:
+                deny, why = decide(code, group_quotes, token_first, dialect, family, depth + 1)
+                if deny:
+                    return True, (f"`{util}` carries a command that is itself denied: {why}")
+                continue
+            # CLAUSE 2 —an interpreter's code argument is decided by POLICY, with a stated bound.
+            icode = interpreter_code(util, tokens[i + 1:])
+            if icode is not None:
+                hits = literal_repository_paths(icode, family)
+                if hits:
+                    return True, (
+                        f"`{util}` is given code naming a path inside this repository "
+                        f"({', '.join(hits[:3])}). Interpreter code is not shell, so no utility "
+                        "name reaches it; a code string carrying a literal repository path is "
+                        "denied by policy — `CLAUDE.md` Conventions, register entry D-253, and "
+                        "the guard-family ruling of 2026-08-08. Read it with the file tools "
+                        "(Read / Grep / Glob).")
+                continue
+            # CLAUSE 3c —a hashless `git diff` at a working-tree path.
+            if util == "git":
+                aimed = hashless_git_worktree_diff(tokens[i + 1:], family)
+                if aimed:
+                    return True, (
+                        f"`git diff` with no commit hash is aimed at a working-tree path "
+                        f"({', '.join(aimed[:3])}). D-253 permits git only for read-only OBJECT "
+                        "queries named by an explicit hash, because a content-addressed read "
+                        "errors loudly rather than returning silently-wrong content; a "
+                        "working-tree diff is not one. Use `python tools/audit/changed_paths.py`, "
+                        "or name the commits.")
+        # CLAUSE 3a —redirection operators and the files they name are not the command's aimed
+        # path (OI-300 shape 5). Stripped BEFORE candidate selection, so both dialect branches
+        # get the same benefit and neither has to know about redirection.
+        rest_tokens = strip_redirections(tokens[i + 1:]) if family else tokens[i + 1:]
         if dialect and util in POWERSHELL_UTILITIES:
             # The PowerShell branch selects candidates by that dialect's own parameter model;
             # the POSIX branch below is untouched by it (the dispatch's assumption A2).
-            targets = powershell_targets(util, tokens[i + 1:])
+            targets = powershell_targets(util, rest_tokens)
         elif util in TEXT_UTILITIES:
-            targets = [t for t in tokens[i + 1:] if not OPTION.match(t)]
+            targets = [t for t in rest_tokens if not OPTION.match(t)]
             # `grep PATTERN file` — the first non-option token is the pattern, not a path.
             if util in ("grep", "egrep", "fgrep", "rg") and targets:
                 targets = targets[1:]
         else:
             continue
-        inside = [t for t in targets if not outside_repo(t)]
+        inside = [t for t in targets if not outside_repo(t, family)]
         if inside:
             return True, (f"`{util}` is aimed at a path inside this repository "
                           f"({', '.join(inside[:3])}). Working-tree content, existence, line "
@@ -623,6 +903,169 @@ POWERSHELL_FORBIDDEN = [
 SANCTIONED += POWERSHELL_SANCTIONED
 FORBIDDEN += POWERSHELL_FORBIDDEN
 
+# ── THE CORPUS AS IT STOOD BEFORE THE 2026-08-08 GUARD FAMILY ENTERED IT ──────────────────────
+# Frozen here so the family ruling's assumption A5 — that the family's changes move no verdict on
+# a pre-existing row except the ones the design names — is DISCHARGED BY MEASUREMENT rather than
+# asserted. Every row below is decided with the family on and with it off, and every verdict that
+# moves is named and checked against the design.
+SANCTIONED_BEFORE_THE_FAMILY = tuple(SANCTIONED)
+FORBIDDEN_BEFORE_THE_FAMILY = tuple(FORBIDDEN)
+
+# ── ADDED 2026-08-08 (`cc_instruction_away_execution.md` Task 1) ──────────────────────────────
+# THE FAMILY OI-300's, OI-348's AND OI-351's SHAPES BELONG TO, entering the corpus BEFORE one line
+# of the mechanism moves.
+#
+# THE RULING (user, 2026-08-08, `cowork_ruling_guard_family_2026_08_08.md`, with OI-351 folded in
+# by Ruling 3 of `cowork_rulings_2026_08_08_pre_away.md`): ONE design over the enumerated family —
+# OI-300's shapes (1)–(5) and OI-348's two — never per symptom, applying the standing
+# one-fix-per-family rule of 2026-07-28. Its clause 5 fixes the ORDER, in the words the OI-343 and
+# OI-345 rulings fixed it: every shape enters the establishment corpus FIRST, the blindness is
+# measured at the UNWIDENED guard, both rates are published on the SAME extended corpus, and the
+# revert condition — a material rise in false denials — governs.
+#
+# WHY THE ORDER IS NOT A FORMALITY, in this act's own evidence: at the unwidened guard EVERY row of
+# the path-form group below was ADMITTED, including `cat` and `grep` aimed at repository files, and
+# the guard returned *"no text utility is aimed at a repository path"* for each. Widening first and
+# re-establishing against the corpus that could not see that would have repeated the error being
+# fixed — which is what the ruling says in its own words.
+
+AWAY_FORBIDDEN = [
+    # ── (A) OI-351'S PATH-FORM GROUP, and it is WIDER than that row supposed ──────────────────
+    # OI-351 records `ls` at a repository path ADMITTED by the LIVE hook on 2026-08-08, one day
+    # after the widening whose record says that shape is denied, and names two candidate causes
+    # without asserting either: the path form, and the gap between the live hook and `decide()`.
+    #
+    # ★ THE CAUSE IS ESTABLISHED AND IT IS THE FIRST: the DRIVE LETTER'S CASE. `outside_repo`
+    # compared `os.path.commonpath(...)` against `ROOT` with `!=`, a case-sensitive string
+    # comparison, on a platform whose paths are case-insensitive — and `ntpath.commonpath` takes
+    # the drive from the token AS WRITTEN. So a path spelled `c:/s/MS/…` produced `c:\s\MS`, which
+    # is not the string `C:\s\MS`, and every repository path written with a lowercase drive letter
+    # read as OUTSIDE the repository.
+    #
+    # ★ THE SECOND CANDIDATE IS REFUTED, and by observation rather than by argument: the live hook
+    # and `decide()` agree on BOTH live decisions the record holds. The `ls` OI-351 records as
+    # ADMITTED is admitted by `decide()` on the same string; the `ls -la /c/s/MS/…` this batch's
+    # own first command issued was DENIED by the live hook and is denied by `decide()` on the same
+    # string. No new forbidden command was issued to test this — performing the violation to
+    # measure the guard is not a measurement anyone may take.
+    #
+    # ★ AND IT IS NOT AN `ls` DEFECT. The two rows after the observed command are `cat` and `grep`
+    # — the guard's oldest and most central vocabulary — aimed at repository files in the same
+    # spelling, and at the unwidened guard both are admitted. OI-351's title names `ls` because
+    # `ls` is what was observed, not because the hole has a vocabulary.
+    "ls -la c:/s/MS/tools/audit/decisions/ 2>&1 | head -60",
+    "cat c:/s/MS/CLAUDE.md",
+    "grep -n \"D-253\" c:\\s\\MS\\CLAUDE.md",
+    "ls c:/s/MS/ARCHITECTURE.md",
+    "dir c:\\s\\MS\\open_items",
+    # The CONTROLS for the same group — already denied before this act, and they must stay denied.
+    "ls -la /c/s/MS/DECISIONS.md /c/s/MS/OPEN_ITEMS.md",
+    "ls -la tools/audit",
+
+    # ── (B) OI-348 SHAPE 1 — a read carried inside a WRAPPER's quoted code argument ───────────
+    # The three `powershell.exe -Command` rows the OI-345 session actually issued are already in
+    # the corpus above and already reported as missed. These add the POSIX spellings and `pwsh`,
+    # so the design's clause 1 — recursion where a dialect model exists — is measured across every
+    # wrapper it names rather than on the one that happened to be observed.
+    "bash -c \"cat CLAUDE.md\"",
+    "sh -c \"grep -n D-253 CLAUDE.md\"",
+    "pwsh -Command \"Get-Content C:\\s\\MS\\STATUS.md\"",
+
+    # ── (C) OI-348 SHAPE 2 — an INTERPRETER-mediated read ─────────────────────────────────────
+    # The `python -c` line count the 2026-08-08 dialect session issued is already in the corpus.
+    # These are the forms the policy in clause 2 is written against: a code string carrying a
+    # LITERAL repository path, relative and absolute, and in a second interpreter so the rule is
+    # not a single command's special case.
+    "python -c \"print(open('CLAUDE.md').read())\"",
+    "python -c \"import io; print(io.open(r'C:/s/MS/OPEN_ITEMS.md').read())\"",
+    "perl -e 'open(F, \"ARCHITECTURE.md\"); print <F>;'",
+    # The HEREDOC-fed interpreter — the founding instance of OI-348's second shape, issued live by
+    # the session that rowed it. It is here as well as the `-c` forms because clause 3 excludes
+    # heredoc bodies from COMMAND classification, and a body-skipping fix must not turn this into
+    # a new blind spot: an interpreter's heredoc body is interpreter CODE, not data.
+    "python - <<'PY'\nprint(open(r'C:/s/MS/tools/audit/decisions/backbone_decisions.json').read())\nPY",
+
+    # ── (D) THE CEILING, STATED RATHER THAN HIDDEN (#19, and #17(d) on unvalidated proxies) ───
+    # The guard cannot parse interpreter code, and pretending otherwise would be exactly the
+    # structural-proxy-for-a-behavioural-quantity the Premise Gate forbids. A code string that
+    # COMPUTES its path carries no literal for any policy to see. This row is in the corpus so the
+    # published deny rate REPORTS that residual instead of being silent about it — it is expected
+    # to be MISSED, and the design says so in terms.
+    #
+    # ★ THE FIRST WORDING OF THIS ROW WAS NOT THE CEILING IT CLAIMED TO BE, and it is corrected
+    # rather than kept: it read `os.path.join(os.getcwd(), 'CLAUDE.md')`, which still carries the
+    # literal `'CLAUDE.md'`, so the policy caught it and the corpus would have reported a ceiling
+    # it was not measuring. Caught by reading the measurement rather than the intention — the row
+    # came back DENIED when the design says it cannot be. The path is now assembled, so no literal
+    # in the code names anything the repository has.
+    "python -c \"import os; n='CLAUDE'+'.md'; print(open(os.path.join(os.getcwd(), n)).read())\"",
+
+    # ── (E) OI-300 SHAPE 3 — a HASHLESS `git diff` aimed at a working-tree path ───────────────
+    # D-253's own text names it: git is permitted for read-only OBJECT queries by explicit hash,
+    # because a content-addressed read is self-verifying. A working-tree diff is not one.
+    "git diff --stat -- ARCHITECTURE.md",
+    "git diff -- tools/audit/decisions/backbone_decisions.json",
+    "git diff STATUS.md",
+]
+
+AWAY_SANCTIONED = [
+    # ── The CONTROLS the path-form fix must not break: the same spellings, aimed OUTSIDE. ─────
+    "ls -la c:/tmp/ 2>&1 | head -60",
+    "ls -la \"C:/Users/vince/AppData/Local/Temp/claude/c--s-MS/x/scratchpad\"",
+    "cat c:/tmp/out.txt",
+
+    # ── The CONTROLS for wrapper recursion. The build command is the one that matters most: it
+    # is `BUILD_AND_TEST.md`'s mandated invocation, it is already in the sanctioned set above, and
+    # a recursion that denied it would stop the work the rule exists to protect.
+    "bash -c \"head -50 /tmp/snap_out.txt\"",
+    "powershell.exe -NoProfile -Command \"Get-ChildItem C:\\tmp | Select-Object Name\"",
+    # The sanctioned enumeration INSIDE a wrapper — the exemption must survive the recursion, or
+    # the guard denies the very tool that makes it affordable.
+    "bash -c \"python tools/audit/changed_paths.py --staged\"",
+    # A wrapper carrying a git OBJECT read by explicit hash, which D-253 permits.
+    "bash -c \"git show 4a9c0d4827:CLAUDE.md | head -20\"",
+
+    # ── The CONTROLS for the interpreter policy. Each is a real shape, and each must stay
+    # admitted: no literal at all, a literal that is not a path, and a literal outside the tree.
+    "python -c \"print(1+1)\"",
+    "python -c \"print('hello world')\"",
+    "python -c \"print(open('/tmp/x.txt').read())\"",
+    # A script invocation whose argument IS a repository path — this is running a tool, not
+    # reading a file, and it is how every generator in this repository is invoked.
+    "python tools/audit/decisions/gen_apply_field_diff.py",
+
+    # ── The CONTROLS for the hashless-git rule: the hash-bearing forms D-253 explicitly permits.
+    "git diff 4a9c0d4827 03bce02e4b",
+    "git diff --stat 82ebfd68d9",
+]
+
+SANCTIONED += AWAY_SANCTIONED
+FORBIDDEN += AWAY_FORBIDDEN
+
+# ── DENY-ON-INDETERMINATE: OI-300's shape (2), closed BY RULING rather than by code ───────────
+# The family ruling's clause 4: an unexpanded shell variable is INDETERMINATE, and deny-on-
+# indeterminate is adopted as standing policy. The asymmetry decides it, and the ruling states it
+# in terms: a false deny costs a retry through the file tools; a false admit costs an unverified
+# read through the very mount whose measured stale-content failure created D-253.
+#
+# So the two rows below are still DENIED and their denial is now CORRECT BY POLICY. They stay in
+# the SANCTIONED list — they are real commands that read outside the tree, and moving them to
+# FORBIDDEN would assert they are reads this rule prohibits, which they are not. What changes is
+# that the published false-deny rate is reported BOTH raw and net of policy, so the revert
+# condition is judged on denials the ruling has NOT accepted. Naming them here is what keeps the
+# raw rate honest: a policy that quietly removed rows from the denominator would be a corpus
+# chosen to make a guard look clean, which measures nothing (#19).
+DENIAL_ACCEPTED_BY_POLICY = {
+    "tail \"$SC/guards1.txt\"":
+        "OI-300 shape (2) — `$SC` is an unexpanded variable holding the session scratchpad, which "
+        "is outside the working tree. The guard reads arguments literally and cannot know that; "
+        "under clause 4 of the family ruling the indeterminate case is denied.",
+    "cat \"$SC/tasks/abc.output\" 2>/dev/null | tail -20":
+        "OI-300 shape (2) again, beside a redirection. The redirection half is fixed by clause 3 "
+        "of the design; what still denies this row is the unexpanded variable, which clause 4 is "
+        "denied on purpose.",
+}
+
 
 def establish() -> dict:
     san = [{"command": c, "denied": decide(c)[0], "reason": decide(c)[1]} for c in SANCTIONED]
@@ -663,6 +1106,35 @@ def establish() -> dict:
         for c in list(SANCTIONED_BEFORE_THE_DIALECT) + list(FORBIDDEN_BEFORE_THE_DIALECT)
         if decide(c, dialect=False)[0] != decide(c)[0]
     ]
+
+    # The 2026-08-08 FAMILY, measured the same way and on the SAME extended corpus, so the delta
+    # reported is the family's and not the corpus extension's (D-436).
+    fam_off_false = sum(1 for c in SANCTIONED if decide(c, family=False)[0])
+    fam_off_caught = sum(1 for c in FORBIDDEN if decide(c, family=False)[0])
+    fam_off_missed = [c for c in FORBIDDEN if not decide(c, family=False)[0]]
+    # ASSUMPTION A5, DISCHARGED BY MEASUREMENT: every row the corpus carried BEFORE the family is
+    # decided both ways, and each moved verdict is named so it can be read against the design.
+    a5_moved = [
+        {"command": c,
+         "list": "sanctioned" if c in SANCTIONED_BEFORE_THE_FAMILY else "forbidden",
+         "without_the_family": "DENY" if decide(c, family=False)[0] else "allow",
+         "with_the_family": "DENY" if decide(c)[0] else "allow"}
+        for c in list(SANCTIONED_BEFORE_THE_FAMILY) + list(FORBIDDEN_BEFORE_THE_FAMILY)
+        if decide(c, family=False)[0] != decide(c)[0]
+    ]
+    # The false denies, split by whether the ruling ACCEPTS the denial. The revert condition is
+    # judged on the unaccepted ones; the raw list stays visible so nothing leaves the denominator.
+    accepted = [c for c in still_false if c in DENIAL_ACCEPTED_BY_POLICY]
+    unaccepted = [c for c in still_false if c not in DENIAL_ACCEPTED_BY_POLICY]
+    stale_policy = [c for c in DENIAL_ACCEPTED_BY_POLICY if c not in still_false]
+    if stale_policy:
+        # An accepted denial that no longer happens is the same defect as an unrecorded one, in
+        # the other direction: the policy would go on excusing something the guard has stopped
+        # doing, and the next real false deny on that row would read as accepted.
+        raise SystemExit(
+            "STOP: a denial recorded as accepted by policy is no longer a denial — remove it from "
+            f"DENIAL_ACCEPTED_BY_POLICY or say why it is kept: {stale_policy}")
+
     return {
         "purpose": "Establishment (#19) of tools/audit/shell_read_guard.py: its deny rate on "
                    "the forms CLAUDE.md names, and its FALSE-deny rate on real commands this "
@@ -673,9 +1145,17 @@ def establish() -> dict:
             "project's settings. Whether the WRITING side does is not established, so the rule "
             "must not be described as enforced for both sides.",
             "The text-utility half in BOTH dialects the hook is armed on — POSIX from the "
-            "start, PowerShell since 2026-08-08 (OI-345). A command carried inside a quoted "
-            "argument (`powershell.exe -Command \"…\"`) is still admitted: a name set cannot "
-            "reach inside one, it is in the corpus, and it is rowed.",
+            "start, PowerShell since 2026-08-08 (OI-345). ★ SINCE THE FAMILY RULING of "
+            "2026-08-08 it also covers a command carried inside a WRAPPER's quoted code "
+            "argument (`bash -c`, `sh -c`, `powershell(.exe) -Command`, `pwsh -Command`), which "
+            "is re-run through this same decision; an INTERPRETER's code string (`python -c`, "
+            "`perl -e`, and a heredoc body fed to one), by POLICY, when it carries a literal "
+            "repository path; and a HASHLESS `git diff` aimed at a working-tree path.",
+            "★ THE STATED CEILING (#19): interpreter code whose path is COMPUTED rather than "
+            "written carries no literal for the policy to see, and is admitted. The guard cannot "
+            "parse interpreter code, and a proxy pretending otherwise is what #17(d) forbids. A "
+            "row of exactly that shape is in the corpus and is reported as missed, so the "
+            "published deny rate states the ceiling rather than being silent about it.",
             "The text-utility half, plus `git status` since 2026-08-03. The REST of D-253's "
             "branch-tip/index half — `git log`, `git rev-parse HEAD` — is still deliberately "
             "not enforced: no tool replaces them, so denying them would fire on legitimate "
@@ -687,7 +1167,17 @@ def establish() -> dict:
             "boundary.",
         ],
         "sanctioned": {"total": len(san), "false_denies": false_denies,
-                       "false_deny_rate": round(false_denies / len(san), 3), "rows": san},
+                       "false_deny_rate": round(false_denies / len(san), 3),
+                       "false_denies_ACCEPTED_BY_POLICY": accepted,
+                       "false_denies_NOT_accepted": unaccepted,
+                       "what_the_split_is_for": (
+                           "The family ruling's clause 4 adopts DENY-ON-INDETERMINATE as standing "
+                           "policy for OI-300's shape (2), the unexpanded shell variable. A "
+                           "denial the ruling accepts is not a defect, but removing it from the "
+                           "denominator would be a corpus chosen to make a guard look clean, "
+                           "which measures nothing (#19). So the raw rate above counts every "
+                           "denial and the revert condition is judged on the NOT-accepted list."),
+                       "rows": san},
         "forbidden": {"total": len(forb), "denied": caught,
                       "deny_rate": round(caught / len(forb), 3), "rows": forb},
         "changes_2026_08_03_phase_1s": {
@@ -961,6 +1451,149 @@ def establish() -> dict:
                 "OI-300's shapes (2), (3), (4) and (5), which remain that row's owed run.",
                 "The POSIX branch's own candidate selection, which is unchanged (assumption A2).",
             ],
+            "★_superseded_by_the_2026_08_08_family": (
+                "Every line of the list immediately above is answered by the family ruling of "
+                "2026-08-08 and is left standing rather than edited, because it is the record of "
+                "what the dialect widening did (#12). The wrapper form now recurses, the "
+                "interpreter read is decided by policy, and OI-300's shapes (2)–(5) are all "
+                "answered — (2) by ruling, (3), (4) and (5) by code. See the block below."
+            ),
+        },
+        "★_the_2026_08_08_guard_family_and_the_corpus_it_is_measured_on": {
+            "the_ruling": (
+                "User, 2026-08-08 (`cowork_ruling_guard_family_2026_08_08.md`, with "
+                "`OPEN_ITEMS.md` OI-351 folded in by Ruling 3 of "
+                "`cowork_rulings_2026_08_08_pre_away.md`): ONE design over the whole enumerated "
+                "family — OI-300's shapes (1)-(5) and OI-348's two — never per symptom, applying "
+                "the standing one-fix-per-family rule of 2026-07-28. The mechanism change is "
+                "licensed by that ruling (D-436)."
+            ),
+            "why_the_corpus_came_first": (
+                "The ruling's clause 5 fixes the order, in the words the OI-343 and OI-345 rulings "
+                "fixed it: every shape enters the corpus BEFORE one line of the mechanism moves, "
+                "the blindness is measured at the UNWIDENED guard, and both rates are published on "
+                "the SAME extended corpus. Measured here rather than argued — at the unwidened "
+                "guard every path-form row was ADMITTED, `cat` and `grep` aimed at repository "
+                "files among them, and the guard returned \"no text utility is aimed at a "
+                "repository path\" for each."
+            ),
+            "the_five_design_clauses_as_built": {
+                "1_wrapper_recursion": (
+                    "`bash -c`, `sh -c`, `powershell(.exe) -Command`, `pwsh -Command` and kin: the "
+                    "code string is re-run through this module's own decision, with the matching "
+                    "dialect branch. Composition of the established POSIX and PowerShell branches "
+                    "(#6), no new modeling. Bounded to three levels, because an unbounded "
+                    "recursion on a crafted command is a guard that stops guarding. Closes "
+                    "OI-348 shape 1."),
+                "2_interpreter_code_by_policy_with_a_positive_bound": (
+                    "`python -c` / `perl -e` and kin, and a heredoc body fed to one: a code string "
+                    "carrying a LITERAL path THIS REPOSITORY HOLDS is DENIED; anything else is "
+                    "admitted. Requiring the literal to exist is what keeps `print('hello world')` "
+                    "from reading as a read. The computed-path residual is in the corpus and is "
+                    "reported as missed, so the published rate states the ceiling (#19, #17(d)). "
+                    "Closes OI-348 shape 2 TO THAT BOUND."),
+                "3_the_false_deny_shapes_fixed_in_the_same_act": (
+                    "Redirection operators and their targets are classified as non-path tokens "
+                    "(OI-300 shape 5) — including the `&` of `2>&1`, which the lexer cuts into a "
+                    "token of its own and which left a bare `1` reading as a path. Heredoc bodies "
+                    "are excluded from COMMAND classification (shape 4), except where the heredoc "
+                    "is fed to a SHELL, in which case the body IS shell and stays classified. And "
+                    "a hashless `git diff` aimed at a working-tree path moves to the DENIED side "
+                    "(shape 3), on the ABSENCE of a hash — the property that separates it from "
+                    "every git form D-253 permits."),
+                "4_shape_2_is_closed_BY_RULING_not_by_code": (
+                    "DENY-ON-INDETERMINATE is adopted as standing policy for an unexpanded shell "
+                    "variable. The asymmetry decides it, in the ruling's own words: a false deny "
+                    "costs a retry through the file tools; a false admit costs an unverified read "
+                    "through the very mount whose measured stale-content failure created D-253. "
+                    "The two affected rows stay in the SANCTIONED list and their denials are "
+                    "listed as accepted, so nothing leaves the denominator."),
+                "5_order_and_establishment": (
+                    "Corpus first; blindness at the unwidened guard; both rates on the same "
+                    "extended corpus; the revert condition governs; a residual that survives is "
+                    "recorded in this artifact, never silently."),
+            },
+            "★_OI_351_the_cause_ESTABLISHED_and_the_candidate_REFUTED": {
+                "what_the_row_observed": "`ls` aimed at a repository path was ADMITTED by the LIVE "
+                                         "hook on 2026-08-08, one day after the widening whose "
+                                         "record says that shape is denied — while a `git status` "
+                                         "a minute earlier was denied.",
+                "the_two_candidates_the_row_named": ["the path form",
+                                                     "the gap between the live hook and decide()"],
+                "the_cause": (
+                    "THE DRIVE LETTER'S CASE. `outside_repo` compared `os.path.commonpath(...)` "
+                    "against `ROOT` with `!=` — a case-sensitive string comparison on a platform "
+                    "whose paths are case-insensitive — and `ntpath.commonpath` takes the drive "
+                    "from the token AS WRITTEN. A path spelled `c:/s/MS/…` produced `c:\\s\\MS`, "
+                    "which is not the string `C:\\s\\MS`, so it read as OUTSIDE the repository. "
+                    "Fixed with `os.path.normcase` on both sides: on Windows it lowercases and "
+                    "squares the separators; on POSIX it is the identity, so nothing moves there."),
+                "★_it_is_not_an_ls_defect": (
+                    "The corpus carries `cat` and `grep` — the guard's oldest vocabulary — aimed "
+                    "at repository files in the same spelling, and at the unwidened guard both "
+                    "are admitted. OI-351's title names `ls` because `ls` is what was observed, "
+                    "not because the hole had a vocabulary."),
+                "the_second_candidate_is_REFUTED_by_observation": (
+                    "The live hook and `decide()` agree on BOTH live decisions the record holds: "
+                    "the `ls` OI-351 records as ADMITTED is admitted by `decide()` on the same "
+                    "string, and the `ls -la /c/s/MS/…` the 2026-08-08 away batch issued as its "
+                    "first command was DENIED by the live hook and is denied by `decide()` on the "
+                    "same string. NO NEW FORBIDDEN COMMAND WAS ISSUED to test this: performing "
+                    "the violation in order to measure the guard is not a measurement anyone may "
+                    "take."),
+            },
+            "detection_on_the_forbidden_set_SAME_corpus": {
+                "with_the_family": caught, "without_it": fam_off_caught, "of": len(forb),
+                "what_the_family_newly_catches": sorted(
+                    c for c in fam_off_missed if c not in still_missed),
+                "what_is_STILL_missed": still_missed,
+                "what_the_remaining_miss_IS": (
+                    "The stated ceiling and nothing else: interpreter code that COMPUTES its path, "
+                    "so no literal in it names anything the repository has. The design says in "
+                    "terms that this is where the policy stops."),
+            },
+            "false_denies_on_the_sanctioned_set_SAME_corpus": {
+                "with_the_family": false_denies, "without_it": fam_off_false, "of": len(san),
+                "not_accepted_by_policy": unaccepted,
+                "the_revert_condition": (
+                    "The ruling says a MATERIAL RISE IN FALSE DENIALS governs — revert and report. "
+                    "Both values are measured on the SAME extended corpus, so the comparison is of "
+                    "the family and not of the rows added with it. The condition is NOT met: the "
+                    "count falls, and every denial that remains is one clause 4 of the design "
+                    "accepts on purpose."),
+            },
+            "★_assumption_A5_no_verdict_moves_except_where_the_design_says_it_does": {
+                "what_was_checked": "Every row the corpus carried BEFORE this act, decided with "
+                                    "the family off and again with it on; every moved verdict is "
+                                    "named here so it can be read against the design.",
+                "rows_checked": len(SANCTIONED_BEFORE_THE_FAMILY)
+                                + len(FORBIDDEN_BEFORE_THE_FAMILY),
+                "verdicts_that_moved": a5_moved,
+                "how_to_read_it": (
+                    "A moved verdict is expected HERE and only here, because the design names "
+                    "these shapes: a sanctioned row moving DENY->allow is one of OI-300's "
+                    "measured false denies being removed (shape 4, the heredoc body; shape 5, the "
+                    "redirections), and a forbidden row moving allow->DENY is one of OI-348's "
+                    "shapes being caught (shape 1, the wrappers; shape 2, the interpreter). A "
+                    "moved verdict of any OTHER shape would be this act reaching past its ruling."),
+            },
+            "★_what_the_PREVIOUS_published_rates_did_and_did_not_bound": (
+                "The rates published before 2026-08-08's family act are NOT WITHDRAWN AS WRONG "
+                "(#12): they were correct for the corpus they were measured on and they re-derived "
+                "exactly. What they did not do is bound the guard on any member of this family — "
+                "the wrappers, the interpreters, and every repository path written with a "
+                "lowercase drive letter. BLIND, NOT WRONG, for the third time in this file, which "
+                "is the reason #19 asks for positive establishment rather than for a check that "
+                "has not yet failed."
+            ),
+            "what_this_act_deliberately_does_NOT_touch": [
+                "The computed-path residual above, which is the design's stated bound.",
+                "`git log` and `git rev-parse HEAD`, still deliberately unenforced: no tool "
+                "replaces them, so denying them would fire on legitimate work.",
+                "Whether the guard is ARMED, which is the user's act and not this module's.",
+                "A command with more than one heredoc, or one introduced past the first line: "
+                "the body model is one heredoc per command and says so.",
+            ],
         },
     }
 
@@ -1000,7 +1633,16 @@ def main() -> int:
     except Exception:
         return 0                        # never block on a malformed payload
     command = (payload.get("tool_input") or {}).get("command") or ""
-    deny, reason = decide(command)
+    try:
+        deny, reason = decide(command)
+    except Exception:                   # noqa: BLE001
+        # A guard that crashes on a strange command is a guard that stops guarding — this
+        # module's own stated principle, applied to itself at the point where it decides. The
+        # 2026-08-08 family added a heredoc splitter, a wrapper recursion and an interpreter
+        # policy to this path; any one of them meeting a command shape nobody anticipated must
+        # cost an ADMISSION, never a broken tool call. `--establish` has no such catch, so a
+        # crash is still loud where it can be read.
+        return 0
     if deny:
         print(json.dumps({"hookSpecificOutput": {
             "hookEventName": "PreToolUse",
