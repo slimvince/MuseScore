@@ -140,7 +140,7 @@ PS_PATH_PARAMETERS = {"-path", "-literalpath", "-filepath"}
 PS_FIRST_POSITIONAL_IS_NOT_A_PATH = {"select-string", "sls", "measure-object", "measure"}
 
 
-def powershell_targets(util: str, rest: list[str]) -> list[str]:
+def powershell_targets(util: str, after_util: list[str]) -> list[str]:
     """The tokens of a PowerShell reading command that could be a path, and no others.
 
     DERIVED FROM THE CMDLETS' DOCUMENTED PARAMETER POSITIONS, not from what makes the corpus
@@ -158,12 +158,12 @@ def powershell_targets(util: str, rest: list[str]) -> list[str]:
     named: list[str] = []
     positional: list[str] = []
     i = 0
-    while i < len(rest):
-        tok = rest[i]
+    while i < len(after_util):
+        tok = after_util[i]
         if OPTION.match(tok):
-            if tok.lower() in PS_PATH_PARAMETERS and i + 1 < len(rest) \
-                    and not OPTION.match(rest[i + 1]):
-                named.append(rest[i + 1])
+            if tok.lower() in PS_PATH_PARAMETERS and i + 1 < len(after_util) \
+                    and not OPTION.match(after_util[i + 1]):
+                named.append(after_util[i + 1])
                 i += 2
                 continue
             i += 1
