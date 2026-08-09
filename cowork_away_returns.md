@@ -890,6 +890,48 @@ verdicts, whose act needs settling). **Surfacings:** §2.6 and §2.7.
 movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's
 completion statement is not written, not drafted and not partially written here.**
 
+### Task 1 — COMPLETE. All twenty rulings classified and delivered for review; NO register entry written
+
+**§1.4 is answered by Ruling 12 and discharged into a queue.** The question it put — is registering
+the unregistered rulings this batch's act? — is ruled: **CC drafts the classification, the user
+rules, and the entries then land in ONE commit.** The set is at
+`ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md`.
+
+**The population is twenty and it is derived from the carriers, not from any summary of them.** The
+four of 2026-08-08 (three in the pre-away record, one the guard-family ruling), Rulings 1–10 of the
+return record, Rulings 11–16 of this record. **Each was classified from its own text**, every
+carrier read whole (D-643).
+
+**Seven entries are proposed as DECISIONS the register should carry**, each with the reason it
+binds a future session beyond the act it licensed, and each with a proposed home under rule (e).
+**Twelve are proposed as EXERCISES** of decisions the register already holds — in most cases
+because the ruling itself names the decision it applies. **One is put both ways**, with the ground
+for each reading, because it is genuinely marginal and the user may reasonably downgrade it.
+
+**★ THE SHAPE THE CLASSIFICATION EXPOSED, which is worth more than the tally.** The rulings that
+BIND are almost never the ones that unblocked the most work. Several one-line licences moved a whole
+batch and bind nothing; the rules that will govern future sessions are clauses that rode ALONGSIDE
+those licences — the line between authored-input maintenance and a mechanism change, the condition
+that stops two same-dated texts being merged, the requirement that an arm-reconciling correction
+carry its non-equivalence visibly, the exhaustion rule for a contact route. **A register that
+carried only the headline acts would carry none of them.**
+
+**★ AND THE FILE ANSWERS ONE QUESTION IT WAS NOT ASKED, because Task 0 created it:** whether D-291's
+measurement half now warrants its own register identifier. That is register CONTENT — an entry is
+the register's unit and splitting one is not a filing act — so it is put in the queue rather than
+taken, and D-291's own entry records that it is there.
+
+**Nothing is self-ratifying.** No register entry is written, no identifier is assigned, no status
+moves, nothing is homed and no ruling's text is touched. **The ratification-surface census was
+deliberately NOT regenerated**: that tool has no verify-only mode and overwrites a committed
+artifact whose counts move whenever a file is added, so running it here would fold this file into
+the previous wave's uncommitted record — the OI-301 hazard, and the reason the guard list carries it
+as NOT RUN with that reason stated.
+
+**Holds:** none new. **Surfacings:** none — this task's whole subject is the register's own
+bookkeeping. **Freeze respected:** no `src/` change, no golden, no corpus of scores, no
+`tools/robust_stop/` movement, no behaviour change, no fix to inference, no design.
+
 ---
 
 ## 4. The batch's start state, recorded before any act
