@@ -932,6 +932,95 @@ as NOT RUN with that reason stated.
 bookkeeping. **Freeze respected:** no `src/` change, no golden, no corpus of scores, no
 `tools/robust_stop/` movement, no behaviour change, no fix to inference, no design.
 
+### Task 2 — the defense gaps. OPENED AND PARTLY DONE; this is where the batch stops, and it stops on capacity, not on a finding
+
+**The population was derived fresh at task start (A7)** from
+`tools/audit/phase1_completion_inventory.json` → `entries_with_no_rationale_at_all`, not carried
+from any dispatch or from this file. The eight the previous continuation closed are already out of
+that list by construction, since they now carry a field.
+
+**The act performed per entry.** Read the entry's own record — verbatim, plain restatement, status
+source — and then **open the home document and read the text AROUND the quoted span**, because a
+defense is very often in the sentence after the decision rather than inside it. Then write into the
+**trailing** `rationale` field either the defense the record holds WITH its citation, or the
+statement that a search was performed and the record holds none. **Memory was not used as a source
+anywhere.**
+
+**★ THE DISTINCTION IS THE POINT, AND THIS TASK'S ENTRIES SPLIT ALMOST EVENLY.** Before the fill the
+register DISPLAYED *"derivation not recorded"* for the whole population, because the renderer
+substitutes that phrase for an empty field — so the surface asserted an ESTABLISHED GAP for entries
+where no search had been performed. Of the entries closed here, **about half turn out to HOLD a
+defense the empty field misrepresented**, and in every one of those cases the defense was in the
+home text and not in the entry:
+
+- one carries a **precedent plus a sequencing reason** — a path may analyse with less context
+  provided that is STATED rather than silent, and the pre-pass that would fix it is not built
+  because a later layer would discard it (#8);
+- one carries a **measured** ground — the unified setting was tried and made the in-app path worse
+  on a named repertoire, so the divergence is kept and documented;
+- one carries the **kind of decision** it would be — flipping the live product onto the presets is a
+  product decision, not a code tidy-up, so it may not happen silently;
+- one carries a full **dismantling of the three reasons its subject had existed for**, plus the core
+  principle those reasons were measured against;
+- one carries the **structural defect it removes** — two type-only header back-edges a layering
+  audit found, killed by construction rather than by convention (#7).
+
+**And the ones that are genuine gaps are now genuine gaps, said with what stands in their place.**
+Where a supersession stands in place of a defense, that is said and the successor's reason is **not**
+borrowed — attributing a later design's ground to an earlier wiring step would be invention. Where
+evidence that a deferral currently costs nothing stands in place of a reason for deferring, the two
+are named apart. Where the obvious modern argument exists but the record never made it, the argument
+is named and explicitly NOT written in, because a defense composed after the fact is what the
+never-work-from-memory rule forbids.
+
+**★ THE MECHANICAL TRAP THE PREVIOUS CONTINUATION RECORDED WAS MET AND AVOIDED, by its own remedy.**
+Every entry carries a trailing `rationale: null`, so a second key added earlier is silently
+discarded. Each fill REPLACED that trailing field, and **the derived count was read after every
+batch** rather than the edit being trusted — it moved every time, which is A6 discharged by
+measurement.
+
+**One JSON hazard is worth recording for the next session**, because it is not the same trap and it
+bit twice: where the trailing `rationale` is the entry's LAST field it carries **no comma**, and a
+fill that adds one produces invalid data. Both instances were caught immediately and corrected; the
+register's own regeneration would have caught either.
+
+**The remainder is NOT started and no entry outside those closed was touched.** Every count lives in
+`tools/audit/phase1_completion_inventory.json` and none is restated here (**D-431**); the remaining
+population is that file's `entries_with_no_rationale_at_all` list, to be derived fresh again rather
+than carried from here.
+
+**Holds:** none new. **Surfacings:** none — the entries touched are records of decisions, and
+nothing about the analysis moved. **Freeze respected:** no `src/` change, no golden, no corpus of
+scores, no `tools/robust_stop/` movement, no behaviour change, no fix to inference, no design.
+
+### ★ WHERE THIS BATCH STOPPED
+
+**Tasks 0 and 1 are COMPLETE. Task 2 is OPENED AND PARTLY DONE. Tasks 3, 4, 5 and 6 are NOT
+STARTED.** That is a capacity stop at a clean boundary, not a halt on a finding: no STOP note was
+written against the batch, no analysis-bearing surface halted it, and nothing is left half-edited —
+every act on disk is complete in itself, every derived surface re-derives, and the guard set is
+where Task 0 left it.
+
+**What a continuing session should know.**
+
+1. **Task 2's remaining population is derived**, from the completion inventory's
+   `entries_with_no_rationale_at_all` list at task start. The act per entry is written above; the
+   two mechanical hazards are written above; **the home text must be opened**, because that is where
+   the defenses in this population have consistently been.
+2. **Tasks 3 to 6 are untouched and their populations must be derived fresh:** the reach-verdict
+   derivation over the apparatus-classed documentation rows (D-639's test, generated, no hand
+   verdicts), the section-unreached and findings-not-rules re-homes, the session-executable gating
+   rows, **Ruling 16's sibling sweep and its one comment-only `src/` commit**, and OI-346's marks.
+   **Ruling 16 is the only licensed `src/` touch of the knowledge arc and it is NOT taken here** —
+   no `src/` file was opened for editing by this batch.
+3. **Two things need the user before they can move:** §1.8 (whether Ruling 13's licence was meant
+   narrowly) and §1.9 (who may author OI-354's owed verdicts). Neither blocks Tasks 3–6.
+4. **The queue from Task 1 is awaiting a ruling** and no register entry may be written for any of
+   the twenty rulings until it comes.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch.**
+
 ---
 
 ## 4. The batch's start state, recorded before any act

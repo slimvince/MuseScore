@@ -222,13 +222,13 @@ project's own and are defined here because they are used before any entry explai
 | — of which recorded only on a tracking surface, with no home at all | 1 |
 | — of which a project-wide convention, correctly homed | 42 |
 | — of which a decision about the process, correctly homed | 114 |
-| Decisions whose defense the record does not state | 36 |
+| Decisions whose defense the record does not state | 23 |
 | Entries whose own ratification the provenance records | 315 |
 | Entries whose home is recorded at SECTION granularity | 193 |
 
 The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **315 of 645** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 330 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **609 of 645** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **622 of 645** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -467,11 +467,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-051 | The production key/mode path is the sequence decoder, not the per-stretch resolver | SUPERSEDED BY D-001 ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-051 | The production key/mode path is the sequence decoder, not the per-stretch resolver | SUPERSEDED BY D-001 ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-052 | The signature read and declared-mode mapping live in ONE shared function | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-053 | The tick-local path keeps the older resolver (the ratified P4-defer) | SUPERSEDED IN FACT ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-053 | The tick-local path keeps the older resolver (the ratified P4-defer) | SUPERSEDED IN FACT ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-054 | All 21 modes are scored against all 12 tonics; the harmonic major family is deferred | DEFERRED ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-055 | The 21 mode priors are independent and user-configurable | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-055 | The 21 mode priors are independent and user-configurable | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-056 | Notes always win - the notated key signature is a weak hint, not a bypass | LIVE | — | `ARCHITECTURE.md` |
 | D-057 | The priority of evidence - actual sounding notes are the strongest evidence | LIVE | — | `ARCHITECTURE.md` |
 | D-058 | The piece-start shortcut | SUPERSEDED IN FACT ⚠LEGACY | — | `ARCHITECTURE.md` |
@@ -519,13 +519,13 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-060 | The legacy chord analyzer is a vertical sonority analyzer - keep the boundary clean | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-061 | Gate thresholds are Baroque-calibrated and must not be loosened for other styles | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-062 | Progression signals are withheld while segmentation is being explored | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-063 | Cold context on the tick-local path is the accepted contract | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-064 | The chord-scoring presets are a measurement-only artifact | SUPERSEDED IN FACT ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-065 | The look-ahead divergence between the two paths is intentional and load-bearing | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-063 | Cold context on the tick-local path is the accepted contract | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
+| D-064 | The chord-scoring presets are a measurement-only artifact | SUPERSEDED IN FACT ⚠LEGACY | — | `ARCHITECTURE.md` |
+| D-065 | The look-ahead divergence between the two paths is intentional and load-bearing | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-066 | Chord symbols written in the score are never analyzer input | LIVE | — | `ARCHITECTURE.md` |
-| D-067 | Jazz mode (chord-symbol-driven boundaries) is retired | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-068 | The chord identifier needs at least three distinct pitch classes | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-069 | Two identity modes for merged stretches - harmonic summary and as-written | DEFERRED ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-067 | Jazz mode (chord-symbol-driven boundaries) is retired | LIVE | — | `ARCHITECTURE.md` |
+| D-068 | The chord identifier needs at least three distinct pitch classes | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
+| D-069 | Two identity modes for merged stretches - harmonic summary and as-written | DEFERRED ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-101 | Contextual inversion bonuses fire only for major and minor candidates | SUPERSEDED BY D-102 ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-102 | Augmented and half-diminished candidates receive the inversion bonuses too (Iter 46) | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-103 | Pedal-point detection is a second pass, accepted only on two conditions | SUPERSEDED BY D-207 ⚠LEGACY | — | `ARCHITECTURE.md` |
@@ -593,8 +593,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-079 | The function layer annotates and resolves; it never rewrites the committed chord | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-080 | Carried abstentions are resolved by selecting among the carried readings, never re-derived | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-079 | The function layer annotates and resolves; it never rewrites the committed chord | LIVE | — | `ARCHITECTURE.md` |
+| D-080 | Carried abstentions are resolved by selecting among the carried readings, never re-derived | LIVE | — | `ARCHITECTURE.md` |
 | D-081 | The cadence detector is key-agnostic | LIVE | — | `ARCHITECTURE.md` |
 | D-082 | The grouping layer is additive, read-only, with no feedback | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
 | D-083 | Hierarchy, periods and prolongation are out of the validatable core | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
@@ -660,13 +660,13 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 |---|---|---|---|---|
 | D-070 | Style behaviour is fully data-driven - no conditional logic on style identity | LIVE | — | `ARCHITECTURE.md` |
 | D-071 | The analysis layer never produces display strings | LIVE | — | `ARCHITECTURE.md` |
-| D-072 | The dependency rule - the analysis library knows nothing about the score format | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-072 | The dependency rule - the analysis library knows nothing about the score format | LIVE | — | `ARCHITECTURE.md` |
 | D-073 | Single implementation for shared logic; mirroring is a last resort | LIVE | — | `ARCHITECTURE.md` |
 | D-074 | Analyze and suggest - never modify the score without explicit user action | LIVE | — | `ARCHITECTURE.md` |
 | D-075 | Interface-based design for machine-learning substitutability | LIVE | — | `ARCHITECTURE.md` |
 | D-076 | Score inspection before diagnosis | LIVE | — | `ARCHITECTURE.md` |
 | D-077 | The configuration interface is split into two narrow IoC interfaces | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-078 | The cross-layer value types live in a dependency-free leaf header | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-078 | The cross-layer value types live in a dependency-free leaf header | LIVE | — | `ARCHITECTURE.md` |
 | D-107 | American English throughout | LIVE | — | `ARCHITECTURE.md` |
 | D-108 | Cross-platform by default | LIVE | — | `ARCHITECTURE.md` |
 | D-227 | Read how MuseScore already does it, and never invent parallel infrastructure | LIVE | — | `ARCHITECTURE.md` |
@@ -1025,8 +1025,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `f3f2a07ba6ad340b364ef8ce06b96b82a8482df4`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `a2421ac8e55a2584…`).
+- Coverage figures above regenerated at commit `9eef295038c8e5177cfa5779e6b1ba2fde258f6b`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `b5f7c085ff12e7d0…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

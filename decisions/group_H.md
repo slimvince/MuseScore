@@ -13,7 +13,7 @@
 
 **In plain words.** The stage that works out a chord's role in the key may label it and settle open questions, but it may not change which chord was identified.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record holds NO derivation for the prohibition itself, though it states the rule sharply and in a form that shows what it protects. The home says the function layer *"reads the L4 chord **in** the L3 key"* and is *"additive over L4"*, and it names the two things the layer MAY do — annotate, and resolve carried abstentions by selecting among readings already handed to it (**D-080**). No reason is given for the boundary: nothing says why an annotating layer must not overturn the chord identity, no alternative is recorded as considered, and no measurement is attached. The general grounds that would supply one — #7's layer adherence, and the fact that a downstream rewrite would make the committed chord unfalsifiable at the layer that committed it — are nowhere stated as THIS decision's ground, and are not written in as one. Recorded as an established gap. Its live counterpart, which is a DIFFERENT decision and does carry a defense, is the confidence-weighted forward-override the same section names: where a later layer may move an earlier commitment, the record says so explicitly and bounds it.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -27,7 +27,7 @@
 
 **In plain words.** Where the chord stage could not decide, the function stage picks from the options it was handed. It does not work the chord out again from the notes.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09. The record holds NO derivation as a stated reason, and it holds one STRUCTURAL fact that the rule follows from and that the home makes visible: the layer *"reads the L4 chord **in** the L3 key"* and is *"additive over L4"* (**D-079**), so re-deriving a reading from the notes would be the chord analysis run a second time, in a layer whose whole contract is that it does not do that. That is the rule restated at the boundary rather than a reason for drawing the boundary there, and the two are not conflated here. Nothing in the record says why SELECTING among carried readings is the right resolution rather than, say, re-deciding with the key now known; no alternative is recorded as considered and no measurement is attached. Recorded as an established gap. **What the record DOES establish, elsewhere and as a separate finding, is that this layer is the right OWNER of the resolution** — the same section states that the resolver of carried uncertain readings is this layer itself and not a distinct gated box, which answers WHERE and not WHY-BY-SELECTION.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

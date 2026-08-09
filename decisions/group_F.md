@@ -14,7 +14,7 @@
 
 **In plain words.** The tonality is worked out for the whole piece at once, as a sequence, rather than separately for each stretch.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record holds NO derivation for this decision at its own home. The home text (`ARCHITECTURE.md`, the Layer-3 wiring block) states WHAT the step-1 wiring did — the per-region `resolveKeyAndModeRanked` call replaced by a single whole-score decode — and what that connected (Layer 1's note model and Layer 2's slicer, so neither is isolated any longer). It states no reason for preferring a whole-score sequence decision to a per-region one AT THIS SITE. What stands in its place is a SUPERSESSION, not a defense: this entry is superseded by **D-001**, and the ground for deciding tonality as a sequence lives with the joint estimator's own decisions. Recorded as an established gap in this entry's record rather than filled from D-001, which would attribute to a 2026-06 wiring step a reason written for a later design.
 
 **Status.** SUPERSEDED BY D-001 · date not stated · ratifier not stated
 
@@ -50,7 +50,7 @@
 
 **In plain words.** One narrow fallback - answering about a single moment when no surrounding stretch is available - still uses the older method. That was a deliberate deferral.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09. The record holds NO derivation for the deferral itself — it does not say why the tick-local fallback was left on the older resolver rather than moved with the rest. What it DOES hold, and what is recorded here rather than mistaken for a derivation, is the EVIDENCE that the deferral cost nothing at the increment that made it: the home text states the path was verified *"byte-identical this increment (the `tickLocal` snapshot section is unchanged in all 11 goldens)"* and therefore *"no leak"*, and it names the follow-up that would end the deferral (**P4-redecode**). Evidence that a deferral is currently harmless is not a reason for choosing it, and the two are not conflated. The related contract for what that path may consume — cold context, accepted because stated — is **D-063**, which carries its own defense.
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
@@ -85,7 +85,7 @@
 
 **In plain words.** How likely each scale type is considered to be is a separate adjustable number per scale type, exposed in the preferences.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09. The record holds a ground for WHAT THE DEFAULTS EXPRESS but NO derivation for either half of the decision itself. The home text states that the defaults *"reflect Western tonal frequency"*, naming the ordering that follows from it — which is a musical justification of the default VALUES, and `ARCHITECTURE.md` §17.2 requires exactly that. It is not a reason for the two things this entry actually decides: that the priors are **independent and additive**, one per mode, rather than a shared tier or a single family term; and that they are **user-configurable** through the analysis-configuration interface rather than fixed. Neither choice has a recorded derivation and no alternative is recorded as considered. Recorded as an established gap. **Read beside its reachability finding, which is a different matter and is not restated here:** this entry is the one candidate wrong LEGACY mark the phase-1w verification reports — the preference registration runs unconditionally in production code while the consumer that reads the priors is the legacy key scorer — and that scoping question is tracked at `OPEN_ITEMS.md` OI-302.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

@@ -2497,7 +2497,7 @@
         "sequence decoder",
         "per-region resolver"
       ],
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 and the record holds NO derivation for this decision at its own home. The home text (`ARCHITECTURE.md`, the Layer-3 wiring block) states WHAT the step-1 wiring did — the per-region `resolveKeyAndModeRanked` call replaced by a single whole-score decode — and what that connected (Layer 1's note model and Layer 2's slicer, so neither is isolated any longer). It states no reason for preferring a whole-score sequence decision to a per-region one AT THIS SITE. What stands in its place is a SUPERSESSION, not a defense: this entry is superseded by **D-001**, and the ground for deciding tonality as a sequence lives with the joint estimator's own decisions. Recorded as an established gap in this entry's record rather than filled from D-001, which would attribute to a 2026-06 wiring step a reason written for a later design.",
       "legacy_subject": true
     },
     {
@@ -2543,7 +2543,7 @@
         "analyzeHarmonicContextLocallyAtTick",
         "tickLocal"
       ],
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09. The record holds NO derivation for the deferral itself — it does not say why the tick-local fallback was left on the older resolver rather than moved with the rest. What it DOES hold, and what is recorded here rather than mistaken for a derivation, is the EVIDENCE that the deferral cost nothing at the increment that made it: the home text states the path was verified *\"byte-identical this increment (the `tickLocal` snapshot section is unchanged in all 11 goldens)\"* and therefore *\"no leak\"*, and it names the follow-up that would end the deferral (**P4-redecode**). Evidence that a deferral is currently harmless is not a reason for choosing it, and the two are not conflated. The related contract for what that path may consume — cold context, accepted because stated — is **D-063**, which carries its own defense.",
       "legacy_subject": true
     },
     {
@@ -2589,7 +2589,7 @@
         "mode tier",
         "ModePriorPreset"
       ],
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09. The record holds a ground for WHAT THE DEFAULTS EXPRESS but NO derivation for either half of the decision itself. The home text states that the defaults *\"reflect Western tonal frequency\"*, naming the ordering that follows from it — which is a musical justification of the default VALUES, and `ARCHITECTURE.md` §17.2 requires exactly that. It is not a reason for the two things this entry actually decides: that the priors are **independent and additive**, one per mode, rather than a shared tier or a single family term; and that they are **user-configurable** through the analysis-configuration interface rather than fixed. Neither choice has a recorded derivation and no alternative is recorded as considered. Recorded as an established gap. **Read beside its reachability finding, which is a different matter and is not restated here:** this entry is the one candidate wrong LEGACY mark the phase-1w verification reports — the preference registration runs unconditionally in production code while the consumer that reads the priors is the legacy key scorer — and that scoping question is tracked at `OPEN_ITEMS.md` OI-302.",
       "legacy_subject": true
     },
     {
@@ -2774,7 +2774,7 @@
         "cold-analyzes",
         "null context"
       ],
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 and the record HOLDS one — two grounds, both in the decision's own home text, which is why an empty field misrepresented it. **(1) A PRECEDENT, named in the decision sentence itself:** *\"the same precedent as the Stage 2.3 diagnose context banner: a path may legitimately analyze with less context, provided that is stated, not silent.\"* The defensible thing is not the reduced context but its being declared. **(2) A SEQUENCING REASON, stated immediately after it:** *\"No pre-pass is built now: Stage 3's lattice makes accumulated context a decode product, and any context pre-pass built against the greedy pipeline would be discarded at Stage 3\"* — build-it-right before tune-precision (#8), applied to a specific piece of work that a later layer would throw away. The home also carries the FACTS the decision rests on (the fallback fires only when the regional path returns no region, structurally rare, exact live frequency **unmeasured**) and a REVISIT TRIGGER, which the record separately notes has not been discharged. No measured value is carried here (**D-431**).",
       "legacy_subject": true
     },
     {
@@ -2797,7 +2797,7 @@
         "kDefaultChordAnalyzerPreferences",
         "preset chordPrefs"
       ],
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 and the record HOLDS one, stated in the decision's own home text as the KIND of decision this would be: *\"whether the product should expose a chord-scoring style is a deliberate **product decision**, deferred.\"* The ground is therefore not that the presets are wrong but that flipping the live product onto them is not a code change at all — the home opens by recording the whole thing as *\"a **product-level finding**, not a code change\"* — so it may not be done silently as tidy-up. A second, doc-sync clause rides with it and belongs to the decision: every document implying that Jazz/Baroque chord tuning ships to users is to be corrected to batch-measurement only, because the live product analyzes chords with struct defaults. No measured value is carried here (**D-431**).",
       "legacy_subject": true
     },
     {
@@ -2819,7 +2819,7 @@
         "intentionally divergent",
         "Corelli trio-sonata dominants"
       ],
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 and the record HOLDS one, and it is a MEASURED one stated in the decision's own home text: *\"This is not an oversight: unifying it regresses the bridge/Corelli trio-sonata dominants.\"* The divergence is kept because the unified setting was tried and made the in-app path worse on a named repertoire — which is the reason the same home restates a second time at the Stage-2.4 block (*\"unifying it regresses the Corelli trio-sonata dominants on the bridge\"*), adding the disposition *\"Keep diverged; keep documented.\"* The home also names where the flag's contract is written down, which is what makes the divergence declared rather than silent. No measured value is carried here (**D-431**) — the home states the direction of the regression, not a magnitude, and none is invented.",
       "legacy_subject": true
     },
     {
@@ -2865,7 +2865,7 @@
         "forceClassicalPath",
         "Retirement rationale"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 and the record HOLDS one, in full, at a *Retirement rationale* block in the same specification — which is why an empty field misrepresented it. The block does not argue the retirement directly; it takes the three reasons the mode had EXISTED for and dismantles each. **Reason 1, redundancy** — a value judgment rather than a structural one: symbol-derived boundaries remain computable, so the question was whether their output is BETTER than note-derived output, never whether it is possible. **Reason 2, rootless voicings** — concerns chord IDENTITY and not boundaries, so it never justified symbol-driven boundaries at all; the identity problem exists however stretches are delimited. **Reason 3, monophonic and sparse voicings** — load-bearing only if identity inference from sparse notes also succeeded, and it does not, so boundaries without usable identity yield symbol-echoed output rather than analysis. **And a CORE PRINCIPLE the block states as the ground the three reasons are measured against:** chord symbols are user-written instructions, not analysis results, and analyzer output is a pure function of notes plus key signature plus preferences. That principle is what the tool-side half of the retirement completed. It is stated independently as **D-066**, and is cited here rather than restated (#6)."
     },
     {
       "id": "D-068",
@@ -2886,7 +2886,7 @@
         "3-PC minimum",
         "distinctPcs >= 3"
       ],
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 and the record holds NO derivation. The home states the rule and its consequence — the minimum, and that the identifier returns an empty result rather than a reading when it is not met — and the sentences around it are about instantiation and dependency injection, not about the threshold. Nothing in the record says why THREE: no alternative is recorded as considered, no measurement is attached, and the musical argument that a triad is the smallest chord whose quality is decidable from pitch classes alone is nowhere stated as this decision's ground. Recorded as an established gap and NOT filled from that argument, which would be a defense written after the fact. **This threshold is the subject of live work and the gap should be read beside it:** what the joint decoder ADMITS as a candidate has no specified form and is tracked at `OPEN_ITEMS.md` OI-226, with the sparse-density family at OI-215 and OI-227 — and `CLAUDE.md` records that candidate admission is COMPLETION rather than refinement, so #8 does not block deriving the correct rule from the model.",
       "legacy_subject": true
     },
     {
@@ -2909,7 +2909,7 @@
         "Harmonic summary mode",
         "octave dedup"
       ],
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09. The record holds NO derivation for the identity rule itself, and it DOES hold a stated ground for the deferral of the second mode plus a consequence the deferral is known to cost. **What is not recorded:** why a merged stretch's identity is root pitch class plus quality — why extensions, inversions and slash-chord bass notes are secondary metadata rather than identity keys. The home states the rule and the two modes' contents, and no alternative is recorded as considered. **What IS recorded, and is not the same thing:** the as-written mode is deferred because it *\"requires a mode flag in the implode bridge and a separate merge pass\"* — a cost, which is a ground for not building it yet rather than a derivation of the rule that ships. **And the deferral's price is stated with it**, which is why the entry is worth reading whole: the chord-track octave-deduplication limitation is named as *\"the primary consequence of this deferral\"*. Recorded as an established gap on the identity rule; nothing is invented for it.",
       "legacy_subject": true
     },
     {
@@ -2977,7 +2977,7 @@
         "NO engraving dependency",
         "notation bridge"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 and the record holds NO derivation. The home states the dependency ORDER as a diagram, declares it *\"enforced\"*, and gives the REMEDY for a violation — any code that would invert it moves to the notation bridge layer — with the same rule restated a few lines above as the critical rule for free functions taking engraving types. All of that is the rule and its enforcement; none of it is a reason. Nothing in the record says why the analysis library must not know the score format: no alternative layering is recorded as considered, no measurement is attached, and the usual grounds — testability without a score, portability of the analysis, one place where the two domains meet — are nowhere stated as THIS decision's ground. Recorded as an established gap and deliberately not filled from those grounds, which would be a defense written after the fact. **Read beside it, because they are different decisions and the record keeps them apart:** the MuseScore-dependency rule that follows it in the same section, user-ratified 2026-08-02, which governs which existing MuseScore code our code may depend on and does carry its own ground."
     },
     {
       "id": "D-073",
@@ -3110,7 +3110,7 @@
         "types leaf",
         "header back-edge"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 and the record HOLDS one, stated in the paragraph immediately below the decision at its own home — which is why an empty field misrepresented it. The leaf exists to KILL TWO HEADER BACK-EDGES a layering audit had found: with the value types in a dependency-free header, the L1.5 and L3 headers compile **without** including the L4 chord headers, so the two type-only back-edges the audit named are gone. That is #7 (layer adherence) enforced at the include graph rather than by convention. Two properties are recorded with it and belong to the defense, because they are what make the move safe: each type is a **pure relocation** — same name, same namespace, same layout — and the former homes now include the leaf, so every existing includer gets the types transitively and unchanged. No measured value is carried here (**D-431**)."
     },
     {
       "id": "D-079",
@@ -3132,7 +3132,7 @@
         "additive over L4",
         "Roman numeral.*precise superset"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 and the record holds NO derivation for the prohibition itself, though it states the rule sharply and in a form that shows what it protects. The home says the function layer *\"reads the L4 chord **in** the L3 key\"* and is *\"additive over L4\"*, and it names the two things the layer MAY do — annotate, and resolve carried abstentions by selecting among readings already handed to it (**D-080**). No reason is given for the boundary: nothing says why an annotating layer must not overturn the chord identity, no alternative is recorded as considered, and no measurement is attached. The general grounds that would supply one — #7's layer adherence, and the fact that a downstream rewrite would make the committed chord unfalsifiable at the layer that committed it — are nowhere stated as THIS decision's ground, and are not written in as one. Recorded as an established gap. Its live counterpart, which is a DIFFERENT decision and does carry a defense, is the confidence-weighted forward-override the same section names: where a later layer may move an earlier commitment, the record says so explicitly and bounds it."
     },
     {
       "id": "D-080",
@@ -3154,7 +3154,7 @@
         "abstention.*resolved by",
         "OpenQuestionLabel"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09. The record holds NO derivation as a stated reason, and it holds one STRUCTURAL fact that the rule follows from and that the home makes visible: the layer *\"reads the L4 chord **in** the L3 key\"* and is *\"additive over L4\"* (**D-079**), so re-deriving a reading from the notes would be the chord analysis run a second time, in a layer whose whole contract is that it does not do that. That is the rule restated at the boundary rather than a reason for drawing the boundary there, and the two are not conflated here. Nothing in the record says why SELECTING among carried readings is the right resolution rather than, say, re-deciding with the key now known; no alternative is recorded as considered and no measurement is attached. Recorded as an established gap. **What the record DOES establish, elsewhere and as a separate finding, is that this layer is the right OWNER of the resolution** — the same section states that the resolver of carried uncertain readings is this layer itself and not a distinct gated box, which answers WHERE and not WHY-BY-SELECTION."
     },
     {
       "id": "D-081",

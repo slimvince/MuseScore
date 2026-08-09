@@ -43,7 +43,7 @@
 
 **In plain words.** The music-theory library must not know how MuseScore stores a score. Anything that needs both lives in a thin bridge layer in between.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record holds NO derivation. The home states the dependency ORDER as a diagram, declares it *"enforced"*, and gives the REMEDY for a violation — any code that would invert it moves to the notation bridge layer — with the same rule restated a few lines above as the critical rule for free functions taking engraving types. All of that is the rule and its enforcement; none of it is a reason. Nothing in the record says why the analysis library must not know the score format: no alternative layering is recorded as considered, no measurement is attached, and the usual grounds — testability without a score, portability of the analysis, one place where the two domains meet — are nowhere stated as THIS decision's ground. Recorded as an established gap and deliberately not filled from those grounds, which would be a defense written after the fact. **Read beside it, because they are different decisions and the record keeps them apart:** the MuseScore-dependency rule that follows it in the same section, user-ratified 2026-08-02, which governs which existing MuseScore code our code may depend on and does carry its own ground.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -132,7 +132,7 @@
 
 **In plain words.** The small data types that several stages share live in one header that depends on nothing, which removed two places where a lower stage had to include a higher one.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record HOLDS one, stated in the paragraph immediately below the decision at its own home — which is why an empty field misrepresented it. The leaf exists to KILL TWO HEADER BACK-EDGES a layering audit had found: with the value types in a dependency-free header, the L1.5 and L3 headers compile **without** including the L4 chord headers, so the two type-only back-edges the audit named are gone. That is #7 (layer adherence) enforced at the include graph rather than by convention. Two properties are recorded with it and belong to the defense, because they are what make the move safe: each type is a **pure relocation** — same name, same namespace, same layout — and the former homes now include the leaf, so every existing includer gets the types transitively and unchanged. No measured value is carried here (**D-431**).
 
 **Status.** LIVE · date not stated · ratifier not stated
 

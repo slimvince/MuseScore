@@ -72,7 +72,7 @@
 
 **In plain words.** One narrow path analyses a moment without knowing what came before. That is allowed because it is written down, not hidden.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record HOLDS one — two grounds, both in the decision's own home text, which is why an empty field misrepresented it. **(1) A PRECEDENT, named in the decision sentence itself:** *"the same precedent as the Stage 2.3 diagnose context banner: a path may legitimately analyze with less context, provided that is stated, not silent."* The defensible thing is not the reduced context but its being declared. **(2) A SEQUENCING REASON, stated immediately after it:** *"No pre-pass is built now: Stage 3's lattice makes accumulated context a decode product, and any context pre-pass built against the greedy pipeline would be discarded at Stage 3"* — build-it-right before tune-precision (#8), applied to a specific piece of work that a later layer would throw away. The home also carries the FACTS the decision rests on (the fallback fires only when the regional path returns no region, structurally rare, exact live frequency **unmeasured**) and a REVISIT TRIGGER, which the record separately notes has not been discharged. No measured value is carried here (**D-431**).
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -90,7 +90,7 @@
 
 **In plain words.** The Baroque and Jazz chord-scoring settings exist only in the measurement tool. The program the user runs has never used them, and switching it over would be a product decision, not a code tidy-up.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record HOLDS one, stated in the decision's own home text as the KIND of decision this would be: *"whether the product should expose a chord-scoring style is a deliberate **product decision**, deferred."* The ground is therefore not that the presets are wrong but that flipping the live product onto them is not a code change at all — the home opens by recording the whole thing as *"a **product-level finding**, not a code change"* — so it may not be done silently as tidy-up. A second, doc-sync clause rides with it and belongs to the decision: every document implying that Jazz/Baroque chord tuning ships to users is to be corrected to batch-measurement only, because the live product analyzes chords with struct defaults. No measured value is carried here (**D-431**).
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
@@ -106,7 +106,7 @@
 
 **In plain words.** One setting deliberately differs between the measurement tool and the program, because making them the same made the program worse on a specific repertoire.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record HOLDS one, and it is a MEASURED one stated in the decision's own home text: *"This is not an oversight: unifying it regresses the bridge/Corelli trio-sonata dominants."* The divergence is kept because the unified setting was tried and made the in-app path worse on a named repertoire — which is the reason the same home restates a second time at the Stage-2.4 block (*"unifying it regresses the Corelli trio-sonata dominants on the bridge"*), adding the disposition *"Keep diverged; keep documented."* The home also names where the flag's contract is written down, which is what makes the divergence declared rather than silent. No measured value is carried here (**D-431**) — the home states the direction of the regression, not a magnitude, and none is invented.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -135,7 +135,7 @@
 
 **In plain words.** The separate jazz analysis mode that took its stretch boundaries from written chord symbols has been removed entirely.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record HOLDS one, in full, at a *Retirement rationale* block in the same specification — which is why an empty field misrepresented it. The block does not argue the retirement directly; it takes the three reasons the mode had EXISTED for and dismantles each. **Reason 1, redundancy** — a value judgment rather than a structural one: symbol-derived boundaries remain computable, so the question was whether their output is BETTER than note-derived output, never whether it is possible. **Reason 2, rootless voicings** — concerns chord IDENTITY and not boundaries, so it never justified symbol-driven boundaries at all; the identity problem exists however stretches are delimited. **Reason 3, monophonic and sparse voicings** — load-bearing only if identity inference from sparse notes also succeeded, and it does not, so boundaries without usable identity yield symbol-echoed output rather than analysis. **And a CORE PRINCIPLE the block states as the ground the three reasons are measured against:** chord symbols are user-written instructions, not analysis results, and analyzer output is a pure function of notes plus key signature plus preferences. That principle is what the tool-side half of the retirement completed. It is stated independently as **D-066**, and is cited here rather than restated (#6).
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -151,7 +151,7 @@
 
 **In plain words.** With fewer than three different pitch names sounding, the chord identifier declines to answer rather than guessing.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record holds NO derivation. The home states the rule and its consequence — the minimum, and that the identifier returns an empty result rather than a reading when it is not met — and the sentences around it are about instantiation and dependency injection, not about the threshold. Nothing in the record says why THREE: no alternative is recorded as considered, no measurement is attached, and the musical argument that a triad is the smallest chord whose quality is decidable from pitch classes alone is nowhere stated as this decision's ground. Recorded as an established gap and NOT filled from that argument, which would be a defense written after the fact. **This threshold is the subject of live work and the gap should be read beside it:** what the joint decoder ADMITS as a candidate has no specified form and is tracked at `OPEN_ITEMS.md` OI-226, with the sparse-density family at OI-215 and OI-227 — and `CLAUDE.md` records that candidate admission is COMPLETION rather than refinement, so #8 does not block deriving the correct rule from the model.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -168,7 +168,7 @@
 
 **In plain words.** When neighbouring stretches are merged, they count as the same chord if the root and the major/minor character match. A second mode that would also require the exact voicing to match is designed but not built.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09. The record holds NO derivation for the identity rule itself, and it DOES hold a stated ground for the deferral of the second mode plus a consequence the deferral is known to cost. **What is not recorded:** why a merged stretch's identity is root pitch class plus quality — why extensions, inversions and slash-chord bass notes are secondary metadata rather than identity keys. The home states the rule and the two modes' contents, and no alternative is recorded as considered. **What IS recorded, and is not the same thing:** the as-written mode is deferred because it *"requires a mode flag in the implode bridge and a separate merge pass"* — a cost, which is a ground for not building it yet rather than a derivation of the rule that ships. **And the deferral's price is stated with it**, which is why the entry is worth reading whole: the chord-track octave-deduplication limitation is named as *"the primary consequence of this deferral"*. Recorded as an established gap on the identity rule; nothing is invented for it.
 
 **Status.** DEFERRED · decided 2026-04-11 · ratifier not stated
 
