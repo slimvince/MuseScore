@@ -2056,7 +2056,7 @@
  },
  "counted": {
   "decisions_recorded": 645,
-  "open_rows_in_the_index": 252,
+  "open_rows_in_the_index": 253,
   "true_half_wide_cut": 59,
   "true_half_gating": 37,
   "complete_half_gap": 42,

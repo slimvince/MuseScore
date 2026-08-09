@@ -1,4 +1,4 @@
-# The twenty unregistered rulings — which the decisions register should CARRY, and which are exercises of decisions it already holds
+# The twenty-three unregistered rulings — which the decisions register should CARRY, and which are exercises of decisions it already holds
 
 > **STATUS: AWAITING THE USER. NO REGISTER ENTRY IS WRITTEN BY THIS FILE**, and nothing here
 > ratifies, shelves, supersedes or reworks any decision. Written 2026-08-09 (CC,
@@ -6,6 +6,13 @@
 > (`cowork_rulings_2026_08_09_second_stop.md`): CC drafts the per-ruling classification as a
 > ratification-surface reading file; **the user rules on the set; the entries then land in ONE
 > commit** (D-230 rule (c), discharged late but by the pattern every prior register event used).
+>
+> **★ EXTENDED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 0) to TWENTY-THREE.**
+> Rulings 17–19 of `cowork_rulings_2026_08_09_third_stop.md` join the same queue, as that record's
+> own banner directs, **classified by the same derivation and from their own texts** — the carrier
+> read whole (D-643), each ruling classified from what it says rather than from any summary of it.
+> Nothing already in this file is re-decided by the extension; §2.4 is added, and §3 and §4 are
+> brought into line with it.
 >
 > **Why this exists.** Three ruling records carry the same banner sentence — *"interim carrier
 > until the applying dispatch records them (D-230)"* — and **no register entry exists for any of
@@ -81,19 +88,35 @@ the proposed home is `CLAUDE.md`, **only the user writes it** — that is flagge
 | **15** | **D-472's** wording correction LICENSED, **with the non-equivalence stated** | **DECISION**, narrow — on the non-equivalence requirement only | The correction itself is phase-1 TRUE-half work and an exercise. What binds beyond it is the clause the ruling puts in capitals: a correction that reconciles a specification to the arm that SHIPS **must carry the recorded behavioural difference between the arms visibly, as unmeasured, and must not word it away as equivalence** (#12, #24). That is the failure mode a doc-sync correction invites — the correction reads as *the two are the same*, and a real, unmeasured difference disappears into a tidy sentence |
 | **16** | **OI-353 is BUNDLED**: sweep first, then ONE comment-only `src/` commit | **EXERCISE** | It applies the standing one-fix-per-family rule (user, 2026-07-28) and says so in terms — *"never per-symptom; OI-353's six sites are the found members, not the family"* — and its `src/` licence is scoped to that act. Both the rule and the freeze it narrows are already register content |
 
+### 2.4 Rulings 17–19 of 2026-08-09 (`cowork_rulings_2026_08_09_third_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **17** | **Ruling 13's widening is ACCEPTED, on a stated ground** — the heading-subject reading plus the report | **DECISION**, narrow — on the reported-widening clause only | The acceptance of one past act is an exercise. What binds beyond it is the clause the ruling states in its own words: **a widening that is REPORTED is reviewable and a widening that is SILENT would not have been accepted** — *"the §1.8 report is part of what is ratified"* — together with the half that keeps it from being read as a precedent: *"the one-edit licensing discipline's narrow-letter default is unchanged for every future licence."* Those two together decide the recurring case a session actually meets, which is not *may I widen* but *what do I owe if the letter of a licence leaves a known falsity standing in the file I was licensed to correct*. The answer is: correct it and REPORT it in the same act; do not treat the licence as thereby wider. The excluded alternative is recorded at the ruling — reverting the second correction, which would knowingly re-insert a false statement to make a process point |
+| **18** | **OI-354's establishment is LICENSED**: the phase-1w method, delivered for review | **DECISION**, narrow — on the authoring-does-not-clear separation only; *and the user may reasonably downgrade it* | The licence itself is an exercise, and the method half — *"by that method and no invented one"* — is #6 and #16 applied, both already carried. What is arguably new is the **structural answer to the weakest-kind hazard this row raised**: a session may AUTHOR establishment verdicts, **but its verdicts clear no guard** — *"the guard clears when the reviewed set is applied, and the application commit cites the ruling on the queue"*, so the standing failure is deliberately CARRIED red across the authoring session. That separates authoring from clearing, which is what stops a session discharging its own establishment obligation with its own unreviewed work (#14, #19). **The downgrade reading, given so the user can take it in one line:** Ruling 8 already established *author-then-review-at-the-queue*, and if the user reads the guard-clearing half as already implied by it, the verdict is EXERCISE and nothing is lost — the arrangement is recorded on [[OI-354]]'s row either way |
+| **19** | **OI-355 RIDES the next guard maintenance act**; no dispatch is written for it | **EXERCISE** | Every part of it names the decision it applies. The bundling is the standing one-fix-per-family rule (user, 2026-07-28), already register content and already in `CLAUDE.md`. The **fixed order** — corpus rows first, clause second, both rates re-measured on the same corpus, the revert condition governing — is the guard-family ruling's own, proposed as a DECISION at **D** above and exercised here. And the **toleration** of the deny-side failure meanwhile is that same ruling's asymmetry applied: a false deny costs a retry through the file tools, a false admit costs an unverified read. Nothing binds that is not already proposed elsewhere in this file |
+
 ---
 
 ## 3. The tally, and the one register-content question that rides with it
 
-**Proposed DECISIONS — seven entries** (Rulings 7 and 11 proposed as ONE): the epoch treatment
+**Proposed DECISIONS — nine entries** (Rulings 7 and 11 proposed as ONE): the epoch treatment
 (**A**); the guard family's deny-on-indeterminate policy and its stated interpreter ceiling (**D**);
 authored-input maintenance versus a mechanism change (**4b**); the D-472 homing pattern (**5**); the
 verbatim-comparison condition and its side-by-side remedy (**7 + 11**); OI-179's commissioning and
 its exhaustion rule (**10**); the non-equivalence requirement on an arm-reconciling correction
-(**15**). **Plus one the user may downgrade: 12.**
+(**15**); the reported-widening clause (**17**); the authoring-does-not-clear separation (**18**).
+**Plus one the user may downgrade: 12** — and **18 is the second the user may reasonably downgrade**,
+on the ground given at its own row.
 
-**Proposed EXERCISES — twelve** (thirteen if 12 is downgraded): **B**, **C**, and Rulings 1, 2, 3,
-4a, 6, 8, 9, 13, 14, 16.
+**Proposed EXERCISES — thirteen** (fourteen if 12 is downgraded, fifteen if 18 is too): **B**, **C**,
+and Rulings 1, 2, 3, 4a, 6, 8, 9, 13, 14, 16, 19.
+
+**★ THE SHAPE THE EXTENSION CONFIRMS RATHER THAN CHANGES.** All three of the new rulings fall the
+same way the first twenty did: the two that BIND are again clauses that rode ALONGSIDE a licence —
+what a session owes when a licence's letter leaves a falsity standing, and the separation of
+authoring an establishment from clearing the guard it would clear — while the ruling that unblocked
+an entire family's remedy (**19**) binds nothing the register does not already hold.
 
 **★ ONE FURTHER QUESTION, PUT HERE BECAUSE IT IS REGISTER CONTENT AND NOT A FILING ACT.**
 Ruling 11 established that **D-291 is two decisions**, and its measurement half is now homed in gate
@@ -117,8 +140,11 @@ D-291's own entry that the question is here.
 | **10** — OI-179's commissioning and its exhaustion rule | **`CLAUDE.md`**, principle **#21**'s ★ block, beside **D-474** | That block already carries the FACT-of-absence and names OI-179 as *"the only available route to the quantity this principle demands"*. **USER-ONLY TEXT** — a session may not write it. If the user prefers not to grow that block, the alternative home is the landed design surface `cowork_scratch_2026_08_08/draft_oi179_ceiling_measurement_surface_2026_08_08.md`, which the ruling already names |
 | **15** — the non-equivalence requirement | `cowork_audit_protocol.md`, beside **5** and **7 + 11** | It is the doc-sync case of the same family. The alternative is **`CLAUDE.md`**'s phase-1 clause, at its doc-sync half — **USER-ONLY TEXT** |
 
+| **17** — the reported-widening clause | `cowork_audit_protocol.md`, beside *"A homing dispatch may edit three further files, and the license is scoped to homing acts alone"* | That subsection is where the scope of a licence is stated, and this is the rule for the one case that subsection does not cover: what a session owes when the licence's letter leaves a known falsity standing in the file it was licensed to correct |
+| **18** — authoring does not clear | `cowork_audit_protocol.md`, beside *"★ THE EXCEPTION, STATED PLAINLY: AN ESTABLISHMENT OBLIGATION (#19) ALWAYS GATES"* | That block says when such an obligation starts gating; this says how it STOPS — by a reviewed set applied in a commit that cites the ruling, never by the authoring session's own verdicts. The two read as one rule and belong together |
+
 *(**12**, if the user keeps it as a DECISION, homes in **`CLAUDE.md`**'s decisions-register section
-beside rule (c) — **USER-ONLY TEXT**, and the smallest of the seven-or-eight.)*
+beside rule (c) — **USER-ONLY TEXT**, and the smallest of the nine-or-ten.)*
 
 ---
 
@@ -132,8 +158,9 @@ touches no `src/`, no golden, no corpus of scores and nothing in `tools/robust_s
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
-gap this discharges is `cowork_away_returns.md` §1.4. The three interim carriers whose banners name
-the debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
-`cowork_rulings_2026_08_09_return.md` and `cowork_rulings_2026_08_09_second_stop.md` — read whole
-(D-643) before this file was written, and each ruling classified from its own text rather than from
-any summary of it.*
+gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
+debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
+`cowork_rulings_2026_08_09_return.md`, `cowork_rulings_2026_08_09_second_stop.md` and — since the
+2026-08-09 extension — `cowork_rulings_2026_08_09_third_stop.md`, whose own banner directs its three
+rulings into this queue. Each carrier was read whole (D-643) before the file was written or
+extended, and each ruling classified from its own text rather than from any summary of it.*

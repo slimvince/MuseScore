@@ -521,6 +521,21 @@ being edited because its self-account was false, which #10 does not admit. **If 
 was meant, reverting the second correction is one edit** — it is the closing sentence of
 `frozen_record_intact`'s docstring and nothing else.
 
+**★ ANSWERED 2026-08-09 — the user's Ruling 17** (`cowork_rulings_2026_08_09_third_stop.md`), recorded
+here by `cc_instruction_return_continuation_3.md` Task 0. **Both corrections STAND, and the accepted
+ground is stated rather than left implied: the heading-subject reading PLUS this report.** The
+licence's heading named *the classifier's stale self-account* as its subject; the second instance was
+that self-account, in the same file, made stale by the same act — and leaving it would have shipped a
+known falsity at HEAD in the very file being corrected for falsity (#10). **A SILENT widening would
+NOT have been accepted** — in the ruling's own words, *"the §1.8 report is part of what is
+ratified"* — which is why the shape matters beyond this one file. **The one-edit licensing discipline's narrow-letter default is UNCHANGED for
+every future licence** — this is not a precedent for reading a licence past its letter, it is a
+ruling that a widening REPORTED is reviewable and a widening HIDDEN is not. *Excluded alternative,
+recorded at the ruling:* reverting the second correction, which would knowingly re-insert a false
+statement in order to make a process point — which the phase-1 TRUE half forbids. **Nothing is
+re-edited by this answer**; the corrections already stand, and what this act adds is the ground, here
+and in the classifier's own provenance.
+
 ### 1.9 OI-354's owed verdicts need an act no current licence covers, and whose act it is has to be settled (Task 0)
 
 Ruling 14's licensed re-aim was performed and its predicted consequence was **refuted** — see §2.6.
@@ -537,6 +552,18 @@ weakest kind there is.
 **So it is rowed and left**, at [[OI-354]], with the act named. What needs settling is whether a
 later session is licensed to perform that establishment, or whether it waits — and, because the row
 is an establishment obligation, it GATES either way.
+
+**★ ANSWERED 2026-08-09 — the user's Ruling 18** (`cowork_rulings_2026_08_09_third_stop.md`), recorded
+here and on [[OI-354]]'s row by `cc_instruction_return_continuation_3.md` Task 0, and PERFORMED at
+that dispatch's Task 1. **A session IS licensed to perform the establishment, by the phase-1w pass's
+own two-axis method and by no invented one** (#6, #16) — a reachability verdict at the code plus a
+citation-transfer scan, per entry the verification's verdict table does not cover. **The condition
+that answers this section's own objection — that verdicts written to clear a guard are the weakest
+kind there is — is that NOTHING SELF-RATIFIES (#14): the verdicts are delivered as a
+ratification-surface reading file for the user's review, they clear NO guard when they are written,
+and the guard clears only when the reviewed set is applied, in a commit that cites the user's ruling
+on the queue.** [[OI-289]]'s ✅ stays as it stands, being true of the population it covered; OI-354
+flips when the reviewed verdicts land, and not before.
 
 ## 2 (continued). Surfaced findings
 
@@ -1020,6 +1047,105 @@ where Task 0 left it.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this
 batch.**
+
+---
+
+# ═══ THE THIRD RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_3.md`, 2026-08-09) ═══
+
+> Rulings 17–19 of `cowork_rulings_2026_08_09_third_stop.md` are applied here, and the remaining
+> program (the second continuation's Tasks 2–6) continues. The sections above are earlier batches'
+> and are not rewritten — §1.8 and §1.9 gained their dated answers in place, where the questions
+> were asked. New holds are appended to §1, new surfacings to §2, and each task's log below.
+
+## 3 (continued). Per-task log — the third return continuation
+
+### Task 0 — COMPLETE. Rulings 17, 18 and 19 recorded at their subjects; the queue extended to twenty-three
+
+**The start state was derived at the artifacts before any act (A5), not carried from the dispatch.**
+The guard set's one failing tool is the legacy-mark verification, read at the committed
+`tools/audit/guard_state.json` → `summary`; the two rows this task writes to exist and carry the
+status the second continuation left them; the queue file covers twenty. No count is restated here
+(**D-431**).
+
+**Ruling 17 — recorded, and NOTHING is re-edited.** The two corrections in
+`gen_home_classification.py` already stood; what this act adds is the **ground**, in the two places a
+later reader meets the question. §1.8 above carries the answer where the report was made, and the
+classifier's own `frozen_record_intact` docstring — the widened correction's own site — carries it as
+provenance. **Both halves of the ruling are written, not just the acceptance:** that a SILENT widening
+would not have been accepted, and that the one-edit licensing discipline's narrow-letter default is
+**unchanged for every future licence**. That second half is the one worth the care: the ruling accepts
+an act without making it a precedent, and a record that carried only the acceptance would read as the
+opposite.
+
+**Ruling 18 — recorded on [[OI-354]]'s index row and in its detail file**, with the three things it
+fixes kept apart: the **licence** (a session may perform the establishment), the **method** (the
+phase-1w pass's two axes, *"by that method and no invented one"* — a session meeting an
+under-specified case states the gap rather than substituting), and the **review condition**, which is
+what answers the row's own objection rather than overriding it. The row's objection was never that
+the work is hard; it was that verdicts authored to clear a guard are the weakest establishment there
+is. **The remedy is structural: the verdicts clear nothing when written.** [[OI-289]]'s ✅ is
+explicitly not withdrawn, and the row **stays OPEN**.
+
+**Ruling 19 — recorded on [[OI-355]]'s index row and in its detail file** as a disposition, with the
+order it rides under stated in full — corpus rows first with their out-of-tree controls, clause
+second, both rates re-measured on the same extended corpus, the revert condition governing — and with
+the meantime written as a **decision rather than as neglect**: the deny-side failure is TOLERATED, on
+the grounds the row itself establishes. No dispatch is written for it, as the ruling directs.
+
+**The queue is extended to twenty-three by the same derivation that built it**, each of the three
+classified from its own text with the carrier read whole (D-643). **Two are proposed as DECISIONS and
+one as an EXERCISE**, and the extension confirms the shape the original twenty exposed rather than
+changing it: the clauses that bind rode ALONGSIDE licences, while the ruling that unblocked a whole
+family's remedy binds nothing new. **One of the two is flagged as reasonably downgradable, with the
+downgrade reading given in one line** so disagreeing costs the user nothing. **No register entry is
+written, no identifier assigned, no status moved** — the user has not ruled on the queue, and until
+they do none of the twenty-three may be registered.
+
+**★ THE SAME INSTRUCTION AS LAST TIME COULD NOT BE PERFORMED, AND IS NAMED RATHER THAN QUIETLY
+DROPPED.** This dispatch, like both before it, orders itself staged in the first commit.
+`cc_instruction_*.md` is matched by this repository's `.gitignore` — checked at that file, not
+recalled — so the dispatch is not staged and forcing it in would override a standing repository
+configuration decision, which is not a session's to take. The ruling record
+`cowork_rulings_2026_08_09_third_stop.md` is not matched and IS staged. This is the class's standing
+state, established by the previous continuation at the git objects; it is repeated here only because
+the instruction repeated.
+
+**★ THE STANDING SELF-CHECK CAUGHT A DEFECT IN THIS TASK'S OWN EDIT, AND THE DEFECT TURNED OUT TO BE
+IN THE APPARATUS RATHER THAN ONLY IN THE EDIT — [[OI-356]], rowed with its detail file in this
+commit (rule (c)).** The boundary guard run reported **five** derivations failing where the committed
+state carried one, all naming OI-354. **Diagnosed at the tool and confirmed in both directions, not
+inferred from the message:** the ONE index parser (#6) decides a row is resolved by searching its
+WHOLE status cell for the resolved mark, and this task's Ruling-18 note had recorded, correctly, that
+[[OI-289]]'s completed-verification status is not withdrawn — naming that status with its glyph put
+the mark inside OI-354's own status cell. The row was open throughout and its words said so.
+Rewriting the sentence to name the status in words, with its meaning unchanged, clears all five.
+
+**Why it is a row and not merely a remark beside the previous continuations' two JSON traps.** Here the
+tools STOPPED and named the row, which is the guard working and is why nothing was written on a wrong
+reading. **But that loudness depends on the row carrying an authored apparatus verdict.** A row
+without one simply leaves the open population — the open-row count, the TRUE-half cuts and the finish
+line's populations move with it and nothing cross-checks it. The silent half is the defect; the loud
+half is what caught this instance. **Nothing was changed in the parser** — how the index is read is a
+mechanism change **D-436** reserves to the user, and there are at least three defensible remedies. The
+working convention adopted meanwhile is on the row: **inside a status cell, name another row's
+resolved status in words, never with the glyph.**
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires; the classification re-derives. Adding OI-356 then put two
+index-DERIVED views out of date — a byte-identity drift, not a STOP — and regenerating them is
+**completing an edit, not repairing a finding**; the finish line follows from the same source and was
+regenerated with them. **STILL FAILING: ONE — the legacy-mark verification, and it is CARRIED
+DELIBERATELY.** It is Task 1's subject, and Ruling 18's own design is that the authoring session's
+verdicts clear no guard: it stays red until the user has reviewed the set and the reviewed set is
+applied. Every verdict is at `tools/audit/guard_state.json` → `summary` and none is restated here
+(**D-431**).
+
+**Holds:** none new. **Surfacings:** none — every subject of this task is the record's own
+bookkeeping and the rulings that govern it, and [[OI-356]] is an apparatus finding, so the protocol's
+own line puts it in a row rather than in §2. **Freeze respected:** no `src/` change, no golden, no
+corpus of scores, no `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to
+inference, no design. **Phase 1's completion statement is not written, not drafted and not partially
+written here.**
 
 ---
 

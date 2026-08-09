@@ -551,6 +551,18 @@ def frozen_record_intact() -> None:
     `cowork_rulings_2026_08_09_return.md`), so the record now lives at the snapshot alone and this
     check has one subject rather than two.  The module docstring above carries the current
     arrangement and the two closed alternatives.
+
+    ★ THE CORRECTION OF THAT CLOSING SENTENCE WENT PAST THE LETTER OF ITS LICENCE, WAS REPORTED AS
+    SUCH, AND IS RATIFIED (user, Ruling 17 of `cowork_rulings_2026_08_09_third_stop.md`,
+    2026-08-09).  Ruling 13 of `cowork_rulings_2026_08_09_second_stop.md` named ONE stale docstring
+    paragraph — the module one above — and the same stale sentence stood here as well, in different
+    words, made stale by the same act on the same day in this same file.  Both were corrected and
+    the widening was reported at `cowork_away_returns.md` §1.8 rather than taken silently.  THE
+    ACCEPTED GROUND IS THE LICENCE'S HEADING-SUBJECT READING PLUS THAT REPORT: the heading named
+    *the classifier's stale self-account*, this was that self-account, and leaving it would have
+    shipped a statement false at HEAD in the very file being corrected for falsity (#10).  A SILENT
+    widening would not have been accepted, and the one-edit licensing discipline's narrow-letter
+    default is UNCHANGED for every future licence.
     """
     if not os.path.exists(SNAPSHOT):
         raise SystemExit("STOP: the established phase-1q snapshot is missing: "
