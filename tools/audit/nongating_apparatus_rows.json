@@ -13,9 +13,9 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 350,
-  "open_rows": 249,
-  "first_cut_candidates": 60,
+  "rows_parsed": 352,
+  "open_rows": 250,
+  "first_cut_candidates": 61,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -38,7 +38,7 @@
  },
  "totals": {
   "non_gating": 29,
-  "gates": 31,
+  "gates": 32,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -144,6 +144,9 @@
    "the analysis's inputs": [
     "OI-239",
     "OI-57"
+   ],
+   "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side": [
+    "OI-353"
    ],
    "the criterion - the row's subject bears on an instrument": [
     "OI-320"
@@ -625,6 +628,14 @@
    "verdict": "NON-GATING",
    "reason": "The two Layer-1.5 primitives are sited in different sections of the canonical architecture document, and only one of the two sitings states its reason. WHAT IS OWED decides it, and what is owed is a FILING DECISION and a SECTION BOUNDARY -- where a specification paragraph should sit -- which D-438's line names on the apparatus side in those words. Nothing false about the analysis is stated by the present arrangement: the rule at issue is PUBLISHED, once, at the Layer-4 section, with 5.14 pointing at it, and this wave's own STOP check established that no section specifies the primitive twice, so there is no contradiction to correct and no specification left incomplete by it. It bears on no analysis, no analysis input and no instrument any measurement depends on -- the primitive's behaviour is untouched either way. It carries no establishment obligation (#19): nothing here is an instrument trusted without being established. Recorded against the row's SUBJECT, never its remedy -- and the remedy is deliberately open, since re-siting the spelling primitive and completing Layer 1's derived-views list are both available and neither is proposed.",
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-353",
+   "title": "★ **Six comments in `src/` say the production notation record path is \"default OFF\"; the configuration sets its default to TRUE** — a reader of any of them learns which analysis arm ships and learns it wrong",
+   "subject_column": "F — doc-sync debt (#10), in the code",
+   "verdict": "GATES",
+   "reason": "Six comments in `src/` describe the production notation record path as DEFAULT OFF while the configuration sets its default to true and says so in the comment beside the call. WHAT IS OWED decides it, and what is owed is not a pointer, an anchor, a label, a banner, a filing decision or a section boundary: it is the CORRECTION OF A STATEMENT ABOUT WHICH ANALYSIS ARM RUNS, and D-438's own line names a correction to a statement about the analysis or its build state on the gating side in those words. Which arm ships is the strongest form that statement has -- these are the comments a session reads when the never-work-from-memory rule sends it to the code for exactly that question, and they answer it wrongly in six places. It is the same class as OI-304, whose verdict is GATES on the same clause, and the same class as the resolved OI-232 one surface over -- that row found the identical staleness in ARCHITECTURE.md and closed on the document half only, leaving the code half nobody had looked at. NOT an establishment obligation (#19): no rate, instrument or measurement is affected, and no comment is executable -- the behaviour is what the configuration says. Recorded against the row's SUBJECT, never its remedy; the remedy is a `src/` edit no wave under the phase-1 freeze may make.",
+   "gate_ground": "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side"
   },
   {
    "id": "OI-150",

@@ -16,7 +16,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1457`
+**Home.** `ARCHITECTURE.md:1487`
 
 **Provenance.** ARCHITECTURE.md:1162-1173 (Layer 1 - Built+Live)
 
@@ -30,7 +30,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1457`
+**Home.** `ARCHITECTURE.md:1487`
 
 **Provenance.** ARCHITECTURE.md:1173; the behaviour change it caused is the ratified trade-off at :1026-1032
 
@@ -44,7 +44,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1457`
+**Home.** `ARCHITECTURE.md:1487`
 
 **Provenance.** ARCHITECTURE.md:1173; the standing no-information-loss principle is CLAUDE.md #12
 
@@ -58,7 +58,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1457`
+**Home.** `ARCHITECTURE.md:1487`
 
 **Provenance.** ARCHITECTURE.md:1173 records it as 'Purely additive' under the OI-180 dual-path sanction
 
@@ -76,7 +76,7 @@
 
 **Home.** `cowork_layer1_note_model_design.md:204-206`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 194). A delegation at ARCHITECTURE.md:1451 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 194). A delegation at ARCHITECTURE.md:1481 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** One of the four architecture decisions of the as-built Layer-1 specification. The order-equivalence it was chosen for is the acceptance test: the index must return exactly what a linear scan returns, over many random and deliberately awkward spans, on every test piece. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -94,7 +94,7 @@
 
 **Home.** `cowork_layer1_note_model_design.md:261-263`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **§13** — `## 13. Background: what Architectural Layer 1 replaces, and corrections on record (NOT needed to understand the layer)` (heading at line 252). A delegation at ARCHITECTURE.md:1451 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
+**Home section.** **§13** — `## 13. Background: what Architectural Layer 1 replaces, and corrections on record (NOT needed to understand the layer)` (heading at line 252). A delegation at ARCHITECTURE.md:1481 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
 
 **Provenance.** Recorded in the specification's own background section, which the document keeps separate so that the layer's description contains only what the layer is. It is why the per-note sounds flag is documented as covering muted notes and imported cue notes together — one flag for two cases, by necessity rather than by convenience. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -114,7 +114,7 @@
 
 **Home.** `cowork_layer1_note_model_design.md:43-47`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 26). A delegation at ARCHITECTURE.md:1451 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 26). A delegation at ARCHITECTURE.md:1481 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** The first of the two founding ideas of the as-built Layer-1 specification, stated with its exclusion. Registered because the exclusion is the load-bearing half and no register entry carried it: **D-038** records that tied notes are one event and does not say what does not merge. The unrelated split-note case, where a slur IS the joiner, is **D-147**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -138,7 +138,7 @@
 
 **Home.** `cowork_layer1_note_model_design.md:230-238`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 221). A delegation at ARCHITECTURE.md:1451 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 221). A delegation at ARCHITECTURE.md:1481 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Recorded in the as-built specification's risks section, which states plainly that the whole-score read is an interim behaviour and not the target. The bounded-context contract it is written against is `cowork_bounded_context_design.md` (**D-260**…**D-265**); the remaining half is the span-scoped walk the document names Phase-1b. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -296,7 +296,7 @@ never touched. This is structural, not a tunable local condition." The verbatim 
 
 **Status.** LIVE · decided 2026-06-26 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1945-1955`
+**Home.** `ARCHITECTURE.md:1975-1985`
 
 **Provenance.** `cowork_tpc_capability_design.md` §1, the shared spelling primitive's detail design, BUILT as a capability with no production consumer. Read in full by READ WAVE 6, 2026-08-04. The same section records that the chord scorer's existing inline spelling reads carry the wrong guard and that correcting them rides the fold into the primitive — an open unification question the document flags rather than closes. The record states no ratifier. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The ruling routes it to THE SECTION SPECIFYING THE SHARED LINE-OF-FIFTHS PRIMITIVE — the Layer-4 section per the record — with §5.14 pointing, and it carries a STOP: STOP IF THE PRIMITIVE IS SPECIFIED ELSEWHERE. ★ THE STOP WAS DISCHARGED BEFORE WRITING AND DID NOT FIRE: `ARCHITECTURE.md` names the primitive in exactly three places and specifies it in none — §3.3's terminology note DEFINES the term Layer 1.5 and lists the primitive among its two views; the Layer-4 section names it as the interpreter the symmetric-root spelling-pin reads through and states the one-interpreter rule about it; and Layer 1's own derived-views list does not mention it at all. Written into the Layer-4 section in that section's own voice, with its defense and with the honest bound the record states (the validity test cannot tell a real flattest spelling from a default-initialised field). §5.14 gains a POINTER, never a copy (#6). ★ AN ADJACENT FACT THE STOP SURFACED IS ROWED AND LEFT, not acted on: the sibling Layer-1.5 primitive is sited at Layer 1 with its reason stated in full, so the two Layer-1.5 primitives sit in different sections — `OPEN_ITEMS.md` OI-347. FORMER HOME, PRESERVED (#12): `cowork_tpc_capability_design.md:39-43`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 20, "section": "## 1. The shared tpc-interpretation primitive (the capability)", "label": "§1", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Validity & mapping (verified at source, 2026-06-26).** Line-of-fifths position = `tpc − TPC_C` with `TPC_C = 14`
 (+1 tpc = +1 fifth; `pitchspelling.h`). Sharp/flat sense = the sign of that offset. **The primitive must test presence

@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "920ed0c1ea4d63ba52f229dae598fb9aa959a941ad3ccbb9531bd28809aa2851",
+    "sha256": "bd6ca3c9a888dce1f399355a9cfd18b91c797d785be261debbe8b0668108786d",
     "decision_count": 645
    }
   },
-  "head_commit": "03bce02e4bdbea97b64a9d1abe90976c470e75f4",
+  "head_commit": "dfbf3ab824f0717d83cf3cce8e332c69f1074328",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -65,12 +65,12 @@
    {
     "id": "BR-3",
     "rule": "The cluster's text matches at least one backbone decision whose home IS a layer specification. Recorded as restating that decision (named).",
-    "clusters": 5545
+    "clusters": 5547
    },
    {
     "id": "BR-4",
     "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-    "clusters": 669
+    "clusters": 658
    },
    {
     "id": "BR-5",
@@ -80,7 +80,7 @@
    {
     "id": "BR-6",
     "rule": "A Claude Code session report or dispatch whose text is a measurement or delivery narrative (it carries a figure, a test count, a commit hash, or a delivery/verification verb) and matches no backbone decision. A report of work done, not a ruling.",
-    "clusters": 1578
+    "clusters": 1579
    },
    {
     "id": "BR-7",
@@ -135,20 +135,20 @@
    {
     "id": "BR-18",
     "rule": "The unit is in the STATUS ARCHIVE (`STATUS_ARCHIVE.md`) and carries none of the stated ruling words. BR-17's rule one file over, and ONLY because the file is now READ IN FULL — the phase-1e wave read lines 1-118 and 301-929, the phase-1f wave read the measured remainder (lines 119-300 and 930-3,861, 2026-08-02). Until then this surface deliberately carried NO rule and its residual share was marked UNREAD rather than judged. A superseded dated STATUS entry hands a session over and reports work done; `OPEN_ITEMS.md` OI-240/OI-266 establish that a tracking surface is not a home for a standing decision, and `STATUS.md:5-6` declares this file reference-only. The read is what licenses the rule, and the ruling-vocabulary exemption still holds every statement that carries a ruling word back for a reader.",
-    "clusters": 69
+    "clusters": 71
    },
    {
     "id": "BR-8",
     "rule": "Residual: none of the above applies. Recorded UNRESOLVED — the honest outcome, and the count is a finding about the record's legibility.",
-    "clusters": 2637
+    "clusters": 2643
    }
   ],
   "disposition_counts": {
-   "restates": 5545,
-   "not-a-decision": 5535,
+   "restates": 5547,
+   "not-a-decision": 5538,
    "boilerplate": 74,
-   "no-spec-home": 669,
-   "unresolved": 2637
+   "no-spec-home": 658,
+   "unresolved": 2643
   },
   "unresolved_partition_by_surface": {
    "cowork_* design documents": 801,
@@ -157,7 +157,7 @@
    "tools/ script comments": 295,
    "cc_instruction_* dispatches": 288,
    "src production comments": 274,
-   "the two archives": 93,
+   "the two archives": 99,
    "src test comments": 76,
    "governing: ARCHITECTURE.md": 55,
    "the open-items register": 17,
@@ -17557,8 +17557,7 @@
    "rule": "BR-3",
    "decisions": [
     "D-115",
-    "D-119",
-    "D-288"
+    "D-119"
    ],
    "categories": [
     "governing"
@@ -17946,11 +17945,9 @@
   {
    "cluster_id": "DC-00803",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-287"
-   ],
+   "disposition": "unresolved",
+   "rule": "BR-8",
+   "decisions": [],
    "categories": [
     "governing"
    ],
@@ -18750,11 +18747,9 @@
   {
    "cluster_id": "DC-00843",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-300"
-   ],
+   "disposition": "unresolved",
+   "rule": "BR-8",
+   "decisions": [],
    "categories": [
     "governing"
    ],
@@ -18771,11 +18766,9 @@
   {
    "cluster_id": "DC-00844",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-301"
-   ],
+   "disposition": "unresolved",
+   "rule": "BR-8",
+   "decisions": [],
    "categories": [
     "governing"
    ],
@@ -19834,11 +19827,9 @@
   {
    "cluster_id": "DC-00898",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-315"
-   ],
+   "disposition": "not-a-decision",
+   "rule": "BR-18",
+   "decisions": [],
    "categories": [
     "governing"
    ],
@@ -20174,11 +20165,9 @@
   {
    "cluster_id": "DC-00915",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-302"
-   ],
+   "disposition": "not-a-decision",
+   "rule": "BR-18",
+   "decisions": [],
    "categories": [
     "governing"
    ],
@@ -29339,11 +29328,9 @@
   {
    "cluster_id": "DC-01346",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-288"
-   ],
+   "disposition": "unresolved",
+   "rule": "BR-8",
+   "decisions": [],
    "categories": [
     "governing"
    ],
@@ -30754,8 +30741,8 @@
   {
    "cluster_id": "DC-01414",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-291"
    ],
@@ -30939,8 +30926,7 @@
    "rule": "BR-3",
    "decisions": [
     "D-081",
-    "D-119",
-    "D-290"
+    "D-119"
    ],
    "categories": [
     "governing"
@@ -31176,8 +31162,7 @@
     "D-115",
     "D-119",
     "D-179",
-    "D-181",
-    "D-287"
+    "D-181"
    ],
    "categories": [
     "governing"
@@ -32081,8 +32066,8 @@
   {
    "cluster_id": "DC-01481",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
+   "disposition": "restates",
+   "rule": "BR-3",
    "decisions": [
     "D-299"
    ],
@@ -32262,11 +32247,9 @@
   {
    "cluster_id": "DC-01490",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-287"
-   ],
+   "disposition": "unresolved",
+   "rule": "BR-8",
+   "decisions": [],
    "categories": [
     "governing"
    ],
@@ -32340,11 +32323,9 @@
   {
    "cluster_id": "DC-01494",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-287"
-   ],
+   "disposition": "unresolved",
+   "rule": "BR-8",
+   "decisions": [],
    "categories": [
     "governing"
    ],
@@ -77992,8 +77973,7 @@
    "disposition": "restates",
    "rule": "BR-3",
    "decisions": [
-    "D-119",
-    "D-288"
+    "D-119"
    ],
    "categories": [
     "docs"
@@ -183878,8 +183858,7 @@
    "rule": "BR-3",
    "decisions": [
     "D-054",
-    "D-058",
-    "D-287"
+    "D-058"
    ],
    "categories": [
     "cc_reports"
@@ -183977,11 +183956,9 @@
   {
    "cluster_id": "DC-09018",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-287"
-   ],
+   "disposition": "not-a-decision",
+   "rule": "BR-6",
+   "decisions": [],
    "categories": [
     "cc_reports"
    ],

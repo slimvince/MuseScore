@@ -370,6 +370,264 @@ this batch's own homings will have added to it.
 
 ---
 
+# ═══ THE RETURN CONTINUATION (dispatch `cc_instruction_return_continuation.md`, 2026-08-09) ═══
+
+> The away batch's Tasks 3–8 continue here, after the ten rulings of 2026-08-09
+> (`cowork_rulings_2026_08_09_return.md`) were applied. The sections above are the away batch's
+> and are not rewritten. New holds are appended to §1, new surfacings to §2, and each task's log
+> to §3, in the same shapes.
+
+## 1 (continued). What needs the user
+
+### 1.4 The ten rulings of 2026-08-09 are not IN the decisions register, and neither are the four of 2026-08-08 — is registering them this batch's act? (Tasks 0/1)
+
+**The fact.** `cowork_rulings_2026_08_09_return.md`'s own banner says it is an *"interim carrier
+until the applying dispatch records them (D-230)"*, and **D-230**'s clause (c) reads *"a new
+ratification, shelving or falsification gets its register entry (data + regenerated files) IN the
+commit that records it"*. The identical banner sentence stands on
+`cowork_rulings_2026_08_08_pre_away.md`, and **no register entry exists for any of those three
+rulings or for the guard-family ruling of the same date** — the register's highest identifier is
+unchanged since 2026-08-04, checked at the register data.
+
+**What this batch DID do, so nothing is lost meanwhile.** Every ruling applied is recorded in the
+provenance of the act it licensed — on the open-items rows, in the register data's own fields, in
+the generator source, and in this file — each naming the ruling, its date and its carrier
+document. What is missing is the register ENTRY, not the record of the ruling.
+
+**Why it is put here rather than taken.** A process ruling's home, in every comparable entry the
+register holds, is a section of `cowork_audit_protocol.md` — and that file is not in this batch's
+edit-authority list, whose last line reads *"Anything else: hold."* Registering fourteen rulings
+would also mean deciding, per ruling, whether an act (a removal, a licence, a probe's timing) is a
+DECISION the register carries at all, or the exercise of one it already holds — which is a
+judgment about register content this dispatch does not settle.
+
+**Not urgent, and stated so it is not read as urgent:** no ruling's content is at risk, and every
+one is on disk in a ratified record. What is at risk is the register's claim to be the ONE place a
+session learns what was decided.
+
+### 1.5 `gen_home_classification.py`'s docstring and one dead constant now name a file that does not exist (Task 0)
+
+Ruling 1's removal was performed, and Ruling 1 also says the removal is *"recorded where the file
+was named"*. It is — at the register data, at `OPEN_ITEMS.md` OI-291/OI-293/OI-295/OI-296/OI-305,
+and, by Ruling 4(a), in the delegation-bar generator's artifact prose.
+
+**One naming is NOT corrected, and it is the classifier's own.**
+`tools/audit/decisions/gen_home_classification.py` carries `FROZEN`, a module constant naming the
+removed path, and a docstring paragraph closing *"Whether the stale file is restored from the
+snapshot, renamed for what it holds, or removed is a FILING DECISION about a committed artifact
+and is the user's, not this tool's — surfaced in `cowork_away_returns.md` rather than taken."*
+That decision has now been taken, so the paragraph is stale by this batch's own act.
+
+**Nothing breaks.** `FROZEN` is read nowhere — the freeze is enforced against the SNAPSHOT, whose
+hash the run checks — so the removal moves no behaviour, and the classifier's re-derivation was
+run after the removal and is green.
+
+**HELD** because that generator is not in this batch's edit-authority list: Ruling 4 names the
+delegation-bar generator and only it, and Ruling 1's authority is *"the removal"*. Stated here so
+it is one edit for whoever is authorized — strike the dead constant, and replace the filing
+paragraph with the D-644 shape already written at the register data's
+`section_home_criterion.scope_of_application`.
+
+*(A second, smaller one rides with it: `gen_phase1q_record_divergence.py` READS the removed file,
+so re-running it would now fail. It is a point-in-time record whose artifact is committed and
+whose measurement is complete, which is the same class the guard-state classification puts the
+snapshot establishment's first-run path in — but it is named here rather than left to be
+discovered.)*
+
+### 1.6 STOP — Ruling 7's own condition is NOT met: D-291's measurement half and gate block (A)'s convention are not the same binding statement (Task 2)
+
+**This is the mechanism working, not a failure.** Ruling 7 rules D-291's measurement half ONE
+DECISION RECORDED TWICE, with the gate-block-(A) convention of the same date standing as its single
+home — **on the condition that the two texts are the same binding statement, compared verbatim
+before the act; any binding difference is a STOP.** The comparison was made at both texts and they
+are not.
+
+**What each text actually forbids.** D-291's measurement half, at its source, reads *"Crediting rule
+NOT warranted (harmful — masks the 95% real error); only a DIAGNOSTIC partial-sub-split (expose the
+masking) is defensible."* It forbids **amending the grading convention** so that a tonicization
+label counts as agreeing with the annotator's modulated numeral. Gate block (A)'s convention reads
+*"THE BINDING METRIC FOR A MODULATION DETECTOR IS MODULATION CORRECTNESS — explicitly NOT the
+agreement percentage … judged on whether the key changes it commits are real ones (precision) and
+whether it finds the real ones (recall) — the track rate together with the de-masked partial split
+— and never on the overall agreement percentage."* It fixes **which bar a modulation-detecting
+change is graded against.**
+
+**They overlap in everything except what they bind** — same date, same source dossier, same masking
+argument, and both name the de-masking diagnostic as the honesty measurement. But a session could
+obey the gate-block convention, grading a new detector on precision and recall, and still amend the
+crediting rule — which the D-291 half forbids, and which would corrupt the Roman-numeral column for
+**every** measurement rather than for that one change. Conversely a session could leave the
+comparison untouched and grade a detector on the agreement percentage, which the gate-block
+convention forbids and this half does not address.
+
+**So collapsing the two would lose the more specific and more easily violated prohibition (#12).**
+The measurement half is therefore NOT recorded as one decision recorded twice, is NOT homed, and
+nothing was written for it. **The build half is unaffected and landed** — Ruling 7's condition is
+attached to the measurement-half clause, and the build half is ruled independently.
+
+**What the user is being asked.** Whether the two are nonetheless meant to be one decision (in
+which case the gate-block convention's wording would have to be widened to cover the crediting rule
+before this half can be retired into it), or two decisions sharing a date and an argument (in which
+case the measurement half needs its own home in gate block (A), beside the convention rather than
+inside it). Both are one edit; neither is a session's to choose.
+
+### 1.7 The legacy-mark verification's STOP is now diagnosed to one line, and the fix is outside this batch's authority (Task 3)
+
+`tools/audit/decisions/gen_phase1w_legacy_verification.py` has been in the standing failing set
+since before the away batch, and neither that batch nor this one caused it. **What it says, run
+directly, is one line:** its assumption A1 locates a quote in `gen_decisions_register.py` at a
+recorded line, the quote has moved, and it names the line the quote is at now and asks for the
+citation to be re-aimed.
+
+**It is authored-input maintenance of exactly the class Ruling 4(b) legitimised** — the same shape
+as the retirement moves this batch and the away batch performed four times between them. **It is
+HELD** because Ruling 4 names ONE generator and this is a different one, and the edit-authority
+list ends *"Anything else: hold."* Stated here so it is one edit for whoever is authorized, and so
+that a standing failure with a known one-line cause is not carried forward as though undiagnosed.
+
+## 2 (continued). Surfaced findings
+
+### 2.4 The production notation arm satisfies D-472's stabilization precondition by other means — and the specification says otherwise (Task 1)
+
+The [[OI-349]] probe ran and the finding is **possibility 1**, with the means named: the record
+arm's per-segment key is the backtracked best path of the joint decoder's global dynamic program,
+whose key transitions are scored with separate stay and change branches. **The live path is not
+grouping un-stabilized regions.** Full detail on OI-349's row and in its detail file; every
+citation is located rather than transcribed, in the probe's own artifact (**D-431**).
+
+**Why it is surfaced and not merely logged:** it bears on the analysis, and what it establishes is
+that **D-472's own wording is wrong about the arm that ships** — its verbatim says the grouping
+runs *"over the already-stabilized regions"* and its defense names the legacy Pass 4. Correcting a
+register entry's verbatim at its home is its own act and is NOT performed here. **One
+non-equivalence is recorded rather than smoothed over:** the legacy pass erases a one-region key
+island unconditionally and the decoder only makes one expensive, so the two arms can differ.
+
+### 2.5 Six comments in `src/` say the production record path is "default OFF" (Task 1)
+
+Met at step 1 of the same probe and kept apart from its finding, because it answers a different
+question. The configuration sets the flag's default to true and says so; six sites in four `src/`
+files and one build file say the opposite. **Rowed at [[OI-353]] and left** — every site is a
+`src/` file and this batch admits no `src/` change. It is [[OI-232]]'s class in the code rather
+than in `ARCHITECTURE.md`, and OI-232 closed on the document half only.
+
+## 3 (continued). Per-task log
+
+### Tasks 0 and 1 — COMPLETE, in ONE commit, and the reason they are not two
+
+**Why one commit.** The two tasks' acts are separable but their DIFF is not: both write rows into
+`OPEN_ITEMS.md`, and splitting a file by hunk needs an interactive add, which this environment
+does not have. The plan's R3 asks for a commit per task boundary; this is one boundary carrying
+two tasks, said plainly rather than presented as one task.
+
+**Task 0 — the filing, status and licence rulings.**
+
+1. **Ruling 1 — the phase-1q artifact is REMOVED.** The pre-act check ran first: every commit the
+   divergence artifact names still carries the blob, verified as git objects by explicit hash, so
+   nothing became unreachable. The removal is recorded in the **D-644 shape** — state the current
+   arrangement, record the removal as closed — at the register data's
+   `section_home_criterion.scope_of_application`, with the two excluded alternatives and their
+   reasons; and every live pointer to it now aims at `home_classification.json`, which carries
+   `the_phase_1r_re_run`, `the_2026_08_08_apply` and `write_list` unchanged. Historical sentences
+   that NAME the file in the past tense are left alone: they are accurate.
+2. **Ruling 2 — OI-319 flips and its fragment becomes [[OI-352]]**, index row and detail file in
+   this same commit. The [[OI-283]] shape ends. The row's two accuracy corrections are explicitly
+   not withdrawn by the flip.
+3. **Ruling 3 — the `CLAUDE.md` D-253 clause is narrowed**, in one edit and no other. What the
+   guard watches, and where, is now stated with the guard-family act's own ceiling; the clause's
+   #19 point — a guard's silence on an unwatched execution surface is not compliance — is kept in
+   the same emphasis it had, because that is the clause's actual content. The former wording is
+   preserved in place (#12).
+4. **Ruling 4 — the delegation-bar generator.** (a) Both artifact-prose namings re-aimed. (b) The
+   thirty-six FORM judgments for documents that are nobody's home moved WHOLE into a retired block
+   with their reasons (#12), carried into the artifact as history and counted nowhere, with a STOP
+   in the OTHER direction so a retired judgment cannot be resurrected without being re-read. **The
+   standing failure clears by derivation:** the generator's own re-derivation and the classifier's
+   both pass, which is stated as the run's result rather than asserted.
+5. **Ruling 10 — OI-179**, recorded on the row and in the detail file: the PeARL contact is the
+   user's, the measurement is commissioned and opens WITH phase 2, desk simulation first. Five
+   things the commissioning does NOT do are written beside it, so the row is not read as further
+   along than it is; the row stays OPEN and the gate does not move.
+
+**Task 1 — the OI-349 probe (Ruling 9).** Read-only. **A5 holds at the diff**: the task's whole
+change is the probe's own named artifact and its generator, plus the two rows it writes. The
+finding is at §2.4 and the incidental at §2.5. The probe carries **no re-derivation mode**, by
+design and stated in its own docstring: it is a point-in-time record of a reading, in the class
+the 2026-08-04 ruling R4 defines, and a mode would also place it in the derived guard-candidate
+population where a historical record does not belong. Every citation is nonetheless located on
+each run, so re-running it is how a later reader confirms the anchors still resolve.
+
+**Task 2 — the three held entries (Rulings 5, 6, 7). TWO landed; ONE half is a STOP.**
+
+- **D-286 is HOMED** at `ARCHITECTURE.md` §2.16 — the section `CLAUDE.md`'s own make-it-work-first
+  rule names as where the analysis-extent question sits, which is the third of the three candidates
+  the 2026-08-08 hold enumerated, and the user's choice rather than this session's. **The pre-act
+  check ran first and PASSED:** the register's rule (h) admits a section only if it STATES RULES,
+  and §2.16 says of its own content, in its opening, that its two entries are *"requirements, not
+  defect reports"* against which every later design is judged. **The form is the D-472 pattern:**
+  the shelving is written in AS a shelving, the later build's contradiction is stated BESIDE it in
+  a marked block, and the two questions that would need a judgment are POINTED at OI-210 and
+  OI-206 rather than answered. **No conformance verdict is taken** — that was the hold's stronger
+  reason, and the home text says in terms that the section does not decide which of the two is
+  right.
+- **D-289 is RULED SUPERSEDED** by the D-642 route, and **nothing is written into any specification
+  for it** — a supersession is register business. **The ruling's condition was checked part by part
+  at the successors' own homes before the status was recorded, and it HOLDS:** the not-search half
+  at D-288, the not-the-key-path half at D-287 (with D-283's positive counterpart at D-001/D-096),
+  the positive half at D-284 — which this entry's own provenance already calls the same insight
+  independently derived, and which the user ruled superseded into D-036/D-001/D-010 on 2026-08-02 —
+  and what-delivers-instead at D-472 and D-001. The excluded alternative is recorded: homing it as
+  doctrine in the search block would state a rule that section already carries.
+- **D-291 is SPLIT, and only the BUILD half landed.** The tonicization labeller's non-wiring is
+  homed at the Layer-5 function section with its defense — that the comparison scores by root and
+  quality rather than against the numeral's reference key, so the label is already partly credited
+  and the comparison MASKS rather than over-penalises. **The MEASUREMENT half is a STOP back to the
+  user; see §1.6.**
+
+**Task 3 — the owed `CLAUDE.md` rule-triage entries (Ruling 8). The guard clears; the set goes to
+the user's review.**
+
+**The pre-act check ran first and PASSED.** The triage tool's own contract was read before an entry
+was authored: the population is DERIVED and only the CLASS is authored; the tool is *"a PROPOSAL,
+executed nowhere"*; it *"retires nothing and changes nothing"* and edits `CLAUDE.md` nowhere. No
+criterion demands an author the session cannot be, so the STOP the ruling reserves did not fire —
+and the tool's own file already carried the precedent, three earlier entries having been authored
+by the sessions whose homing acts created them.
+
+**Fifteen were owed, and the shape is worth more than the count.** The population is every register
+entry homed in `CLAUDE.md`, so **every homing wave that writes a decision into that document adds a
+member and cannot supply its own verdict** — this check then STOPS, and a tool that stops writes no
+artifact. Nine of the fifteen arrived by the licensed-homing waves of 2026-08-07, five by rulings
+homed into `CLAUDE.md` itself, and one by the away batch's own local-patch record.
+
+**The set is delivered for review at `ratification_surfaces/cowork_rule_triage_entries_2026_08_09.md`**,
+with each verdict and its ground. **Nothing is self-ratifying**, nothing was applied to `CLAUDE.md`,
+and no rule was retired, weakened or reworded.
+
+**★ ONE THING THE REGENERATION EXPOSED, checked at the objects rather than assumed.** None of the
+fifteen is in the defect class, so this act adds nothing to it — **but the regenerated defect set is
+not the committed one.** It gains **D-546**, whose classification was authored in the tool's source
+before this session and was never written out, because the tool had been stopping. **So the
+committed artifact has been describing a defect set one member short for as long as the check has
+been failing.** Recorded on OI-292's row and in the reading file; D-546's verdict is not re-decided.
+
+**One authored input was maintained**, the fourth instance of that shape across this batch and the
+away one: creating [[OI-353]] made it a first-cut candidate of the non-gating declaration with no
+authored verdict, which is that tool's own STOP working. A **GATES** verdict was authored with its
+ground — D-438's line puts a correction to a statement about the analysis's build state on the
+gating side, and which arm ships is the strongest form that statement has. **No non-gating verdict
+was hand-added**, which is the act the record forbids; authoring a GATES verdict for a row the cut
+DID reach is what the tool requires.
+
+**Holds:** §1.4 (the register entries for fourteen rulings), §1.5 (the classifier's own stale
+naming), §1.6 (Ruling 7's condition unmet) and §1.7 (the legacy-mark verification's moved anchor).
+**Surfacings:** §2.4 and §2.5.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
+movement, no behaviour change to the analysis, no fix to inference, no design. **No value is
+restated here (D-431).**
+
+---
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

@@ -1,0 +1,168 @@
+{
+  "purpose": "The OI-349 read-only probe: what the PRODUCTION record arm supplies to the key-area grouping pass, compared against the stabilization precondition D-472 states. A reading of the code, recorded; not a measurement of the analysis, not a fix, not a design, and not an authorization for either.",
+  "generated_by": "tools/audit/oi349_record_arm_precondition_probe.py",
+  "generated_for": "cc_instruction_return_continuation.md, Task 1 -- the user's Ruling 9 of 2026-08-09 (`cowork_rulings_2026_08_09_return.md`), which settles the timing question `OPEN_ITEMS.md` OI-349 reserved to the user and runs the probe now.",
+  "why_it_carries_no_re_derivation_mode": "It is a POINT-IN-TIME RECORD of a reading, in the class the 2026-08-04 ruling R4 defines: it says what the code said at one tree. A mode that re-asserted it would measure the clock rather than the repository, and would also put this file in the derived guard-candidate population, where a historical record does not belong. Every citation is nonetheless LOCATED on each run, so re-running it is how a reader confirms the anchors still resolve.",
+  "★_the_finding": "SATISFIED BY OTHER MEANS, and the means is named. The production record arm does not run the legacy stabilization step, and does not need to: the per-segment key it groups on is the output of the joint decoder's GLOBAL dynamic program, whose state carries the key and whose key transitions are scored with separate stay and change branches -- a smoothing layer over the key sequence arrived at by optimization. The derived-field half of the legacy step is supplied natively by the record. So the second possibility OI-349 states -- that the live path groups un-stabilized regions -- is NOT what the code does.",
+  "★_what_therefore_needs_correcting_and_is_NOT_corrected_here": "D-472's own wording. Its verbatim says key areas are grouped 'over the already-stabilized regions' and its recorded defense says the rule 'leverages the key/mode fields and the stabilization Pass 4 already performed'. Pass 4 is the legacy arm's, and on the arm that ships the precondition is met by a different design. Correcting the specification is its own act on OI-349's row and is NOT performed here: this batch's freeze admits the probe and nothing after it.",
+  "★_the_one_way_the_two_mechanisms_are_NOT_equivalent, stated rather than smoothed over": "They do not produce identical region key sequences. Layer B ERASES a one-region key island unconditionally; the decoder's key-transition term only makes an island expensive, so an island survives where the content evidence outweighs two key changes. That difference does not leave the grouping un-preconditioned, because D-472's own confidence test is what decides whether a divergent region opens a new area: a surviving island that is not assertively exposed is grouped into the enclosing area and keeps its own key for display, which is the rule's stated intent. But it is a real behavioural difference between the arms and is recorded as one.",
+  "what_this_probe_did_NOT_test": [
+    "Whether the decoder's key sequence is BETTER than Layer B's on any corpus -- no measurement was taken and none is implied by the finding.",
+    "The chord-quality half of the legacy step (the sparse refinement), which is a chord concern outside this precondition and is separately not ported.",
+    "Any other consumer of the legacy stabilization step."
+  ],
+  "steps": [
+    {
+      "step": "1_which_arm_ships",
+      "question": "Is the record arm the production notation arm at HEAD?",
+      "read_at": [
+        {
+          "at": "src/composing/composingconfiguration.cpp:178",
+          "line": "settings()->setDefaultValue(USE_JOINT_NOTATION_RECORD, Val(true));"
+        },
+        {
+          "at": "src/notation/internal/notationcomposingbridge.cpp:1491",
+          "line": "const bool useRecord = prefs && prefs->useJointNotationRecord();"
+        }
+      ],
+      "what_it_establishes": "YES. The flag's default value is true, and the span-annotation emitter branches on it and returns from the record branch without reaching the legacy path below."
+    },
+    {
+      "step": "2_the_grouping_pass_on_the_record_arm",
+      "question": "Does the shared grouping pass run on the record arm, and on what?",
+      "read_at": [
+        {
+          "at": "src/composing/analysis/section/sectionrecordadapter.cpp:359",
+          "line": "// Key-areas: the shared confidence-gated grouping (reads the stored hasAssertiveExposure)."
+        },
+        {
+          "at": "src/composing/analysis/section/sectionanalyzer.cpp:770",
+          "line": "// Lifted verbatim out of analyzeSection (byte-identical code movement) so the record-path variant"
+        }
+      ],
+      "what_it_establishes": "YES, and it is ONE definition shared by both arms (#6). It reads each region's stored (keySignatureFifths, mode) and the stored hasAssertiveExposure boolean; it re-decides no key."
+    },
+    {
+      "step": "3_the_named_precondition_is_legacy_only",
+      "question": "Where is the stabilization step D-472 names as its precondition called?",
+      "read_at": [
+        {
+          "at": "src/composing/analysis/section/sectionanalyzer.cpp:750",
+          "line": "stabilizeHarmonicRegionsForDisplay(displayRegions);"
+        },
+        {
+          "at": "src/composing/analysis/section/sectionrecordadapter.cpp:333",
+          "line": "// A's decode is CONTIGUOUS by construction — the legacy gap-fill / trim / measure-layout /"
+        }
+      ],
+      "what_it_establishes": "ONE call site, in the legacy arm's Pass 4. The record adapter states in its own comment that the legacy machinery is NOT ported. This is the split OI-349 already recorded; the probe re-confirms it rather than assuming it."
+    },
+    {
+      "step": "4_what_the_stabilization_step_actually_does",
+      "question": "What are the two halves of the legacy stabilization step, so 'satisfied by other means' can be judged half by half rather than as a whole?",
+      "read_at": [
+        {
+          "at": "src/composing/analysis/section/sectionanalyzer.cpp:121",
+          "line": "// Layer B — 1-region-island key stabilization.  J-key-iii: when the joint"
+        },
+        {
+          "at": "src/composing/analysis/section/sectionanalyzer.cpp:160",
+          "line": "region.chordResult.function.keyTonicPc = tonicPc;"
+        },
+        {
+          "at": "src/composing/analysis/section/sectionanalyzer.cpp:181",
+          "line": "cra::refineSparseChordQualityFromKeyContext(region.chordResult,"
+        }
+      ],
+      "what_it_establishes": "TWO halves, and only the first is the precondition D-472 names. (a) Layer B, a 1-region key-island smoother: a region whose key differs from the running stable key, and whose successor does not agree with it, is OVERWRITTEN with the running key. (b) A derived-field loop recomputing degree / keyTonicPc / keyMode / diatonicToKey per region, plus a legacy sparse chord-quality refinement, which is a CHORD concern and outside this precondition."
+    },
+    {
+      "step": "5_the_record_arm_supplies_half_b_natively",
+      "question": "Does the record arm supply half (b)'s derived fields?",
+      "read_at": [
+        {
+          "at": "src/composing/analysis/section/sectionrecordadapter.cpp:261",
+          "line": "fn.keyTonicPc = seg.tonicPc;"
+        },
+        {
+          "at": "src/composing/analysis/section/sectionrecordadapter.cpp:289",
+          "line": "kmr.keySignatureFifths   = seg.keySignatureFifths;"
+        }
+      ],
+      "what_it_establishes": "YES, natively, from the record's own committed fields -- degree, diatonicToKey, keyTonicPc and keyMode are read off the segment rather than recomputed. So half (b) is not a gap."
+    },
+    {
+      "step": "6_where_the_record_arm_key_comes_from",
+      "question": "Is the per-segment key the record supplies the output of a GLOBAL sequence decision, or a per-segment independent choice?",
+      "read_at": [
+        {
+          "at": "src/composing/analysis/joint/jointnotationrecord.cpp:225",
+          "line": "rs.keySignatureFifths = keySignatureFifths(s.tonicPc, s.isMajor, sigRef);"
+        },
+        {
+          "at": "src/composing/analysis/joint/jointdecoder.cpp:796",
+          "line": "const double stay = wKey * adapter.keyTransLogp(tonic, major, tonic, major);"
+        },
+        {
+          "at": "src/composing/analysis/joint/jointdecoder.cpp:807",
+          "line": "// (c) key-change transition + entry"
+        },
+        {
+          "at": "src/composing/analysis/joint/jointdecoder.cpp:857",
+          "line": "std::vector<SegmentSummary> segs;"
+        }
+      ],
+      "what_it_establishes": "GLOBAL. The record's per-segment key is copied verbatim from the decoder's committed SegmentSummary, and those are produced by backtracking the best full-coverage path of a dynamic program whose state carries (tonic, mode, chord class). The key sequence is scored by an explicit key-transition term with SEPARATE stay and change branches, so a key change must pay for itself against the content evidence. That is a smoothing layer over the key sequence, arrived at by optimization rather than by a post-hoc patch."
+    },
+    {
+      "step": "7_the_legacy_arm_states_this_reasoning_itself",
+      "question": "Does the record's own codebase already state this reasoning anywhere, or is it the probe's?",
+      "read_at": [
+        {
+          "at": "src/composing/analysis/section/sectionanalyzer.cpp:123",
+          "line": "// Viterbi decision (decideJointKey IS the smoothing layer), so this island"
+        },
+        {
+          "at": "src/composing/analysis/section/jointkeydecision.cpp:138",
+          "line": "const char* e = std::getenv(\"MUSE_JOINT_KEY_WIRING\");"
+        }
+      ],
+      "what_it_establishes": "IT IS ALREADY STATED, but for a DIFFERENT mechanism, and the difference matters. The legacy arm makes Layer B inert when the J-key-iii re-key wiring is on, on exactly this ground -- the per-region key is then already a global decision, so island smoothing would re-smooth it. That wiring is default OFF (an environment variable, absent by default), so on the legacy arm Layer B does run. The reasoning transfers to the record arm; the code path does not, and the two must not be conflated."
+    }
+  ],
+  "incidental_finding_kept_apart": {
+    "what": "Comments in `src/` describe the record path as DEFAULT OFF. The configuration sets its default to true, and says so in the comment directly above the call -- 'default TRUE since the user-ratified switch (2026-07-27)'.",
+    "why_it_is_here_and_not_in_the_finding": "It is not an answer to OI-349's question. It was met while establishing which arm ships, which is step 1, and a reader of any of these sites learns which arm runs and learns it wrong.",
+    "why_it_is_not_corrected_here": "Every site is a `src/` file, which this batch's freeze does not admit. Rowed and left.",
+    "the_true_default": {
+      "at": "src/composing/composingconfiguration.cpp:178",
+      "line": "settings()->setDefaultValue(USE_JOINT_NOTATION_RECORD, Val(true));"
+    },
+    "the_sites_saying_otherwise": [
+      {
+        "at": "src/notation/internal/notationcomposingbridge.cpp:719",
+        "line": "// Record arm (default OFF, useJointNotationRecord): the note seam is a VIEW into the whole-score"
+      },
+      {
+        "at": "src/notation/internal/notationcomposingbridge.cpp:1485",
+        "line": "// Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint"
+      },
+      {
+        "at": "src/notation/internal/notationimplodebridge.cpp:1408",
+        "line": "// Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint"
+      },
+      {
+        "at": "src/notation/internal/notationtuningbridge.cpp:765",
+        "line": "// ── Harmonic analysis (record path default OFF, useJointNotationRecord) ───"
+      },
+      {
+        "at": "src/composing/analysis/section/sectionrecordadapter.h:33",
+        "line": "// re-plumb, P3/P4, behind the default-OFF useJointNotationRecord flag). Byte-identical on production"
+      },
+      {
+        "at": "src/composing/analysis/CMakeLists.txt:218",
+        "line": "# default-OFF useJointNotationRecord flag); byte-identical on production by construction. Spec:"
+      }
+    ]
+  }
+}

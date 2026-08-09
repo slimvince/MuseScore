@@ -250,6 +250,125 @@ TRIAGE: dict[str, tuple[str, str]] = {
                       "unaffected) and `tools/audit/instrument_arm_declaration_effect.json` (the "
                       "declaration moves no measured value). What it does NOT do is prevent the "
                       "corpus being destroyed, which is why OPEN_ITEMS.md OI-312 stays open."),
+
+    # ── AUTHORED 2026-08-09 (CC, `cc_instruction_return_continuation.md` Task 3) on the user's
+    # Ruling 8 of 2026-08-09 (`cowork_rulings_2026_08_09_return.md`): the continuation session
+    # authors the owed entries per THIS TOOL'S OWN CRITERIA, each verdict with its reason, and the
+    # set goes to the user's review as a ratification-queue reading file. Nothing here is
+    # self-ratifying, nothing here edits CLAUDE.md, and no rule is retired.
+    #
+    # WHY FIFTEEN WERE OWED, which is the same shape the D-557/D-576/D-638 comments above record:
+    # every homing wave that writes a decision into CLAUDE.md ADDS to this tool's derived
+    # population, and the triage is authored. The population is derived and the class is not, so a
+    # homing act cannot supply its own triage and this check fails until a session writes one.
+    # ---------------------------------------------------------------------------------------
+    "D-315": (EXISTS, "See D-197 — `tools/audit/local_patches_check.py` covers the recorded "
+                      "patches, deriving its list from CLAUDE.md's own local-patches section, so "
+                      "this patch was covered by the same check the moment its subsection was "
+                      "written. PARTIAL in the same way D-197 is: the check verifies the patch is "
+                      "PRESENT at HEAD, which is the silent failure a dependency update produces; "
+                      "it does not enforce the distribution disposition beside it (D-316), "
+                      "because a push is the act that would breach one."),
+    "D-437": (EXISTS, "PARTIAL, and the mechanical half is the one that could rot silently. "
+                      "`tools/audit/gen_phase3_gate_partition.py --check` re-derives the "
+                      "registered partition: every per-item verdict carries its reason, every "
+                      "source quote is LOCATED in the file it cites, and the STOP the ruling "
+                      "attaches — a NON-GATING item that yields a family member falsifies the "
+                      "partition — is recorded with it. So the prediction cannot be quietly "
+                      "re-authored after the items run, which is what makes it falsifiable. What "
+                      "is NOT mechanical: whether a family design actually waited for the gating "
+                      "searches, and whether a given item's search space could contain a fact "
+                      "about what the model reads — the second is the judgment the ruling is."),
+    "D-438": (EXISTS, "PARTIAL. `tools/audit/gen_nongating_apparatus_rows.py --check` derives the "
+                      "non-gating set from the INDEX itself and STOPS if any candidate row lacks "
+                      "a verdict or any verdict names a row the INDEX no longer carries open — "
+                      "so the declaration cannot silently outlive the rows it classifies, in "
+                      "either direction, and no verdict can be hand-added to a row the cut never "
+                      "reached. What is NOT mechanical is the test itself: whether a row's "
+                      "subject bears on the analysis, its inputs or a measurement tool is the "
+                      "judgment, and the establishment exemption depends on recognising an "
+                      "obligation under #19 rather than on any property of the row's text."),
+    "D-439": (KNOWLEDGE, "It settles WHERE an enumeration lives and WHICH of its members a "
+                         "pointing clause reaches. Nothing mechanical separates a clause that "
+                         "POINTS at a section from one that RESTATES it — that distinction is #6 "
+                         "applied by a reader — and the four per-channel scope verdicts each rest "
+                         "on a reading of the channel's own text. A checker could at best assert "
+                         "that the clause names no subjects of its own, which would fire on any "
+                         "legitimate rewording."),
+    "D-451": (KNOWLEDGE, "A desk simulation is a hand trace. Whether a table value was declared "
+                         "provisional before use, and whether a verdict would flip inside that "
+                         "value's plausible range, are properties of the reasoning rather than of "
+                         "any file a checker can inspect. The adjacent mechanical half belongs to "
+                         "D-180, which already records that a checker can confirm the artifacts "
+                         "exist and not that the acts were performed."),
+    "D-452": (KNOWLEDGE, "Same ground as D-451, one clause over: whether a trace ran at identity "
+                         "weights is a property of how the trace was performed. It is worth "
+                         "noting WHY no mechanism follows from the rule's own strength — identity "
+                         "weights ARE the design's mandatory ablation baseline, so the rule "
+                         "imports no new premise, but a hand trace has no artifact a checker "
+                         "could read the weights off."),
+    "D-473": (KNOWLEDGE, "Whether a claim is load-bearing, and whether a source was actually "
+                         "fetched and read rather than reconstructed from a snippet, are both "
+                         "judgments. A mechanical form was considered and is NOT proposed: "
+                         "flagging an equation attributed to a source absent from the repository's "
+                         "papers directory would fire on every legitimately read source that was "
+                         "not stored, and a guard that fires on legitimate work gets switched "
+                         "off. The independent cross-extraction is an act, not a state."),
+    "D-474": (KNOWLEDGE, "A FACT OF ABSENCE established by search: no published study reports the "
+                         "figure. There is nothing for a mechanism to check — the rule's force is "
+                         "that a session may not satisfy principle #21 by citation, which is a "
+                         "constraint on what a reader may conclude. The obligation it creates is "
+                         "tracked as an open row (OI-179) and the work it names is a measurement, "
+                         "not a check."),
+    "D-486": (EXISTS, "PARTIAL, and the two halves come apart. The COVERAGE DENOMINATOR half is "
+                      "mechanical where it matters: gate block (A)'s figures are regenerated from "
+                      "the measurement's own summary by `tools/robust_stop_restamp.py`, which is "
+                      "established by reproducing the outgoing manifest exactly, so a published "
+                      "figure carries the block it was computed from and cannot be stated at a "
+                      "denominator the run did not have. The PER-CORPUS half is NOT mechanised: "
+                      "the gate corpora are split per PRESET, which is a different cut, and "
+                      "nothing checks that a figure reported over several repertoires is broken "
+                      "down by them. `process_check.py` has only the adjacent shape — it flags a "
+                      "bare quantity, not an aggregate that hides which corpus moved."),
+    "D-564": (KNOWLEDGE, "A CORRECTION OF RECORD to a recorded apportionment: it says that a "
+                         "published share is overstated because over-grabbed segmentation "
+                         "corrupts the bass and not only the pitch-class window. What it governs "
+                         "is how a reader interprets an existing caveat; there is no state a "
+                         "checker could compare it against, and the apportionment it corrects is "
+                         "prose in a gate block rather than a computed field."),
+    "D-582": (KNOWLEDGE, "Whether a collapsed value is RECOMPUTABLE from what is kept is a "
+                         "judgment about a derivation, made case by case — and the rule exists "
+                         "precisely as the guard against over-flagging, so a mechanical form "
+                         "would have to decide the same question in order not to report every "
+                         "summary as a fault. That is the point of the rule, not an incidental "
+                         "difficulty."),
+    "D-602": (EXISTS, "PARTIAL, and only the abstention half. The stop is abstain-aware by "
+                      "construction (D-212): the one abstain decision is "
+                      "`compare_rn._our_key_ident`, the abstain duration is published beside the "
+                      "percentage, and `robust_stop_diff.py` flags any rise in the candidate's "
+                      "abstain rate — so an agreement figure cannot be improved by declining more "
+                      "often without the rise being reported. What is NOT mechanical is the other "
+                      "half, which is the rule's own subject: whether the cases a layer declined "
+                      "were ones it SHOULD have declined is a judgment about each case."),
+    "D-603": (KNOWLEDGE, "Whether the pipeline is still being rebuilt, and whether an increment "
+                         "moved the specific defects it was meant to move, are both judgments. "
+                         "The rule settles WHETHER a fixed bar is admissible at all during a "
+                         "rebuild; how a bar is set once one is set is D-574's, and that one has "
+                         "an order a mechanism could in principle check — measure the baseline, "
+                         "then fix the bar — which this rule does not."),
+    "D-604": (KNOWLEDGE, "Whether an emitted mode is a DEFENSIBLE modal reading of the passage is "
+                         "the judgment the rule turns on, and no mechanism can make it. The "
+                         "adjacent mechanical act is a different rule's and is already built: "
+                         "D-210's shared reduction decides how a modal emission is SCORED, in one "
+                         "place. This rule decides what a REMAINING disagreement MEANS, which is "
+                         "principle #21 applied at the point of reading."),
+    "D-606": (KNOWLEDGE, "A mechanism cannot know that the change in front of it is a modulation "
+                         "detector, which is the antecedent the whole rule hangs on — and the "
+                         "rule's own reason is that the agreement percentage is GAMEABLE BY THE "
+                         "CHANGE UNDER TEST, so no property of the reported number distinguishes "
+                         "a compliant grading from a non-compliant one. The de-masking diagnostic "
+                         "it names is a measurement that must be BUILT and read, not a check that "
+                         "fires."),
 }
 
 

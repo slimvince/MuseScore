@@ -162,7 +162,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 351 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 353 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -282,12 +282,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "CLAUDE.md rule(s) with no authored triage: ['D-315', 'D-437', 'D-438', 'D-439', 'D-451', 'D-452', 'D-473', 'D-474', 'D-486', 'D-564', 'D-582', 'D-602', 'D-603', 'D-604', 'D-606']"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the CLAUDE.md rule triage re-derives"
       ],
+      "stderr": [],
       "what_it_checks": "every CLAUDE.md rule carries an authored mechanisation triage"
     },
     {
@@ -368,7 +368,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 31 gates of 60 candidates over 249 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 32 gates of 61 candidates over 250 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -557,12 +557,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "FORM judgment for a document that is nobody's home: ['cowork_adjudication_dossier.md', 'cowork_audit_obligation_map.md', 'cowork_delta_check_dispositions.md', 'cowork_eg1_premise_checks.md', 'cowork_eg2_scoping.md', 'cowork_fb_redesign_design.md', 'cowork_gateA_unification_design.md', 'cowork_idiom_discovery_design.md', 'cowork_idiom_discovery_findings.md', 'cowork_l1_l5_premise_debt_audit.md', 'cowork_layer1_extend_design.md', 'cowork_layer2_reslice_design.md', 'cowork_layer3_keymode_impl_design.md', 'cowork_layer3_reachback_design.md', 'cowork_layer5_function_methods.md', 'cowork_phase5c_l5_build_plan.md', 'cowork_phrase_boundary_methods.md', 'cowork_style_clustering_plan.md', 'cowork_style_taxonomy_proposal.md', 'cowork_target_architecture.md', 'cowork_tpc_capability_design.md', 'cowork_uncertain_resolver_investigation.md', 'docs/architecture_joint_inference.md', 'docs/back_half_design.md', 'docs/decoder_design.md', 'docs/iter90_bass_as_root_promotion_shelved.md', 'docs/iteration_path1_summary.md', 'docs/key_detection_baroque_partial_signature.md', 'docs/layer_architecture_audit.md', 'docs/nct_detection_design.md', 'docs/precision_metric_design.md', 'docs/redesign_plan.md', 'docs/stage4c_cadence_key_design.md', 'docs/stage4d_local_modulation_design.md', 'docs/symbol_input_audit.md', 'docs/unified_analysis_pipeline.md']"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the phase-1p delegation-bar artifact re-derives from the files"
       ],
+      "stderr": [],
       "what_it_checks": "the delegation-bar pre-apply record re-derives"
     },
     {
@@ -671,8 +671,8 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  the chord layer: ARCHITECTURE.md:1830 lists 10 entry(ies)",
-        "  the key layer: ARCHITECTURE.md:1626 lists 2 entry(ies)",
+        "  the chord layer: ARCHITECTURE.md:1860 lists 10 entry(ies)",
+        "  the key layer: ARCHITECTURE.md:1656 lists 2 entry(ies)",
         "  the search: ARCHITECTURE.md:315 lists 3 entry(ies)",
         "class members (derived from the verification): 13",
         "every live-prohibition entry carries its pointer, as derived"
@@ -686,7 +686,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=351 detail=351 baseline=200 post-baseline=151",
+        "living mode: index=353 detail=353 baseline=200 post-baseline=153",
         "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
@@ -708,21 +708,9 @@
   ],
   "summary": {
     "run": 35,
-    "passing": 32,
-    "failing": 3,
+    "passing": 34,
+    "failing": 1,
     "failing_tools": [
-      {
-        "tool": "tools/audit/claude_md_rule_triage.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_phase1p_delegation_bar.py",
-        "args": [
-          "--check"
-        ]
-      },
       {
         "tool": "tools/audit/decisions/gen_phase1w_legacy_verification.py",
         "args": [

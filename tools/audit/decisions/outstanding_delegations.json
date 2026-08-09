@@ -454,7 +454,7 @@
         "document": "cowork_layer5_function_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-03 and every entry of the document is `contract-home`. Nothing is outstanding.",
-        "delegation_at_head": "ARCHITECTURE.md:1968",
+        "delegation_at_head": "ARCHITECTURE.md:1998",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 8,
         "by_class": {
@@ -531,7 +531,7 @@
         "document": "cowork_layer1_note_model_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5) and it reaches every section. Three of the four entries are `contract-home`; the fourth (D-518) stays `gap` on the KIND half — its home section is §13, whose own heading ends '(NOT needed to understand the layer)'. That is not a delegation matter and no delegation would move it.",
-        "delegation_at_head": "ARCHITECTURE.md:1451",
+        "delegation_at_head": "ARCHITECTURE.md:1481",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 4,
         "by_class": {
@@ -544,7 +544,7 @@
         "document": "cowork_layer2_slicing_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5). Both entries are `contract-home` as of this wave's classification run.",
-        "delegation_at_head": "ARCHITECTURE.md:1577",
+        "delegation_at_head": "ARCHITECTURE.md:1607",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 2,
         "by_class": {
@@ -556,7 +556,7 @@
         "document": "cowork_layer6_grouping_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 6, ruling R5). Eight of the nine entries are `contract-home`; the ninth (D-458) stays `gap` on the KIND half — it is homed in the document's STATUS BANNER. Not a delegation matter.",
-        "delegation_at_head": "ARCHITECTURE.md:2055",
+        "delegation_at_head": "ARCHITECTURE.md:2113",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 9,
         "by_class": {
@@ -569,7 +569,7 @@
         "document": "cowork_phrase_boundary_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5, ruling R4). Eight of the ten entries are `contract-home`; two (D-484, D-485) stay `gap` on the KIND half — the document's opening block and its §11 'Open items'. Not a delegation matter.",
-        "delegation_at_head": "ARCHITECTURE.md:1453",
+        "delegation_at_head": "ARCHITECTURE.md:1483",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 10,
         "by_class": {

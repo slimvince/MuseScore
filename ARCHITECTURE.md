@@ -1210,6 +1210,36 @@ defect reports**: every later inference and notation design is judged against th
   explicit setting, never a hardcoded constant; and every optional expensive refinement is a cleanly
   separable on/off stage. Tracked at `OPEN_ITEMS.md` OI-209.
 
+**★ ONE OF THE TWO AXES THE EFFORT CONTROL MUST BOUND ALREADY CARRIES A RECORDED RULING, AND THIS
+SECTION MUST NOT BE READ AS OPEN ON IT: WHOLE-SCORE INTERACTIVE ANALYSIS IS SHELVED WITH EVIDENCE
+(Cowork, 2026-06-12, at Stage 3.1b; written into this section 2026-08-09 on the user's ruling —
+register entry **D-286**).** The bullet above records the user's prediction that always reading the
+entire score will very likely not survive. That prediction is not the first word on the question. A
+**measured A/B** put a whole-score interactive analysis against a **bounded-window** one, graded
+against the published human annotations; **the bounded window won, the whole-score variant was
+SHELVED with evidence, and the bounded-window cache was adopted as the ratified reading**. *Why —
+the measurement, not an argument:* the A/B moved a large share of ticks on contrapuntal music, and
+the annotations preferred the window path over the whole set and by a wider margin on the Mozart
+subset; the figures live in the committed evidence `docs/p3_granularity_ab_3_1b.md` and are
+deliberately not carried here (#17f, **D-431**). **One thing was PARKED rather than settled in the
+same act**, and is still parked: whether the answer given for a single note must agree with the
+answer given for the whole piece.
+
+> **⚠ THE IMPLEMENTATION AT HEAD CONTRADICTS THIS SHELVING, AND THE CONTRADICTION IS STATED HERE
+> RATHER THAN RESOLVED (#10, #12).** The record producer takes no tick range: every record-arm seam
+> analyzes the whole score and narrows to the requested span afterward — specified by dispatch,
+> with **no ruling overturning the shelving**. **This section does not decide which of the two is
+> right.** That is a conformance judgment about the analysis, and the build-it-right gate (#8)
+> stands. What is written above is that **the shelving EXISTS and is on the record**, so that no
+> later design meets the extent question believing it unruled. The extent question itself is
+> tracked at `OPEN_ITEMS.md` **OI-210** — which names the whole-score implementation as its own row
+> — and the interactive-cost fix whose design will force the question is **OI-206**.
+>
+> **Why the shelving is written here at all, rather than left where it was made:** it is the
+> founding case of the decision-conformance audit. It lived only in a session-handoff archive,
+> outside the session-start read, and a later build specified whole-score interactive analysis
+> without ever meeting it. A ruling nobody can find is a ruling nobody applies.
+
 ---
 
 ## 3. Directory Structure
@@ -2042,6 +2072,34 @@ mechanisms it has.**
   cadence-confirmed modulation gate almost never fires, so the default keeps the home key across
   genuinely modulating spans and every Roman numeral in them is computed against the wrong key. The
   measurement bed named with the amendment is a resolution-denying repertoire.
+
+**★ THE TONICIZATION LABELLER IS DELIBERATELY LEFT UNWIRED, AND THE REAL LEVER IS AT THE KEY LAYER
+(2026-06-14; the record states no ratifier for the decision itself. Written into this section
+2026-08-09 on the user's ruling — the BUILD half of register entry **D-291**, whose measurement half
+belongs to the grading conventions and is not restated here, #6).** A working labeller for applied
+chords exists and **must not be wired on the ground that it raises Roman-numeral agreement**. The
+error it appeared to address is **not a labelling error at all**: on the overwhelming majority of the
+affected cases the annotator has genuinely CHANGED KEY — the local key is cadence-confirmed and the
+span is long — so labelling the chord as an applied chord of the OLD key reports a better number
+while the reading underneath stays wrong. **The lever the measurement actually points at is a
+local-modulation / key-area detector at the KEY layer**, taking a sustained span together with a
+local cadence as its signal, and consuming the cadence and key-area facts this layer and the
+grouping layer already publish. The labeller's own sound predicate survives for the genuinely brief
+residue.
+
+> *Why, and it is a measurement rather than an argument:* the comparison was checked at its own
+> source before anything was built. It scores a chord by root and quality rather than against the
+> Roman numeral's reference key, so an applied-chord label in the home key **already** counts as a
+> partial match with the annotator's local numeral — the comparison does not over-penalise the
+> labeller, it **MASKS** the key error underneath it. Of the affected cases the great majority are
+> cadence-confirmed local keys in the ground truth and most last five chords or more; only a small
+> remainder is brief enough for either reading to be defensible. **No figure is carried here** —
+> every one lives in `cc_tonicization_modulation_metric_dossier.md` (#17f, **D-431**).
+>
+> **This is the clearest recorded win of the measure-before-building rule**, and it is why the
+> decision is written into a specification rather than left in a session record: without the check
+> the labeller would have shipped, the reported agreement would have risen, and the output would
+> have got worse.
 
 #### Layer 6 — the grouping layer (Design-only — v1 spec)
 

@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7503`
+**Home.** `ARCHITECTURE.md:7561`
 
 **Provenance.** ARCHITECTURE.md:6419-6422 (§15). No date or ratifier stated.
 
@@ -34,7 +34,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7512`
+**Home.** `ARCHITECTURE.md:7570`
 
 **Provenance.** ARCHITECTURE.md:6424-6433 (§15). No date or ratifier stated.
 
@@ -51,7 +51,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7722`
+**Home.** `ARCHITECTURE.md:7780`
 
 **Provenance.** ARCHITECTURE.md:6594-6643 (§16), which sorts the whole feature set into Core / Important / Prepared / Out of scope. No date or ratifier stated.
 
@@ -105,7 +105,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:3238-3240`
+**Home.** `ARCHITECTURE.md:3296-3298`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (the jazz-corpus status block). It is the standing evidence behind [[OI-7]] (establish a jazz ground-truth corpus or de-scope the Jazz correctness claims) and behind the A-7 empirically-unvalidated mark. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `ARCHITECTURE.md` §4.2's jazz-validation block, directly beneath the bass-injection measurement that is its defense. Former home preserved (#12): `STATUS_ARCHIVE.md:1580`, the jazz-corpus status block.
 

@@ -219,10 +219,10 @@
   "by_home_class": {
    "contract-home": 151,
    "gap": 42,
-   "homed-in-a-layer-specification": 293,
+   "homed-in-a-layer-specification": 295,
    "process": 114,
    "project-convention": 42,
-   "unhomed": 3
+   "unhomed": 1
   },
   "class_1_documentation_gap": {
    "what_it_is": "The register's own home_rule: a decision that governs a layer and is not findable from that layer's section - a documentation gap carrying an OPEN_ITEMS.md row. This is C1's outstanding population.",
@@ -372,11 +372,9 @@
   },
   "class_2_recorded_only_on_a_tracking_surface": {
    "what_it_is": "The register's `unhomed` class: no home at all - the decision is recorded only on a session handoff block or a superseded status archive.",
-   "count": 3,
+   "count": 1,
    "ids_and_homes": {
-    "D-286": "cowork_handoff_archive.md:2964",
-    "D-289": "cowork_handoff_archive.md:3082",
-    "D-291": "cowork_handoff_archive.md:3833"
+    "D-289": "cowork_handoff_archive.md:3082"
    }
   },
   "class_3_defense_not_recorded": {
@@ -464,7 +462,7 @@
      "document": "cowork_layer5_function_design.md",
      "state_at_head": "WRITTEN — CLOSED",
      "why": "The user wrote an explicit delegation clause on 2026-08-03 and every entry of the document is `contract-home`. Nothing is outstanding.",
-     "delegation_at_head": "ARCHITECTURE.md:1968",
+     "delegation_at_head": "ARCHITECTURE.md:1998",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 8,
      "by_class": {
@@ -541,7 +539,7 @@
      "document": "cowork_layer1_note_model_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5) and it reaches every section. Three of the four entries are `contract-home`; the fourth (D-518) stays `gap` on the KIND half — its home section is §13, whose own heading ends '(NOT needed to understand the layer)'. That is not a delegation matter and no delegation would move it.",
-     "delegation_at_head": "ARCHITECTURE.md:1451",
+     "delegation_at_head": "ARCHITECTURE.md:1481",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 4,
      "by_class": {
@@ -554,7 +552,7 @@
      "document": "cowork_layer2_slicing_design.md",
      "state_at_head": "WRITTEN — CLOSED",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5). Both entries are `contract-home` as of this wave's classification run.",
-     "delegation_at_head": "ARCHITECTURE.md:1577",
+     "delegation_at_head": "ARCHITECTURE.md:1607",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 2,
      "by_class": {
@@ -566,7 +564,7 @@
      "document": "cowork_layer6_grouping_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 6, ruling R5). Eight of the nine entries are `contract-home`; the ninth (D-458) stays `gap` on the KIND half — it is homed in the document's STATUS BANNER. Not a delegation matter.",
-     "delegation_at_head": "ARCHITECTURE.md:2055",
+     "delegation_at_head": "ARCHITECTURE.md:2113",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 9,
      "by_class": {
@@ -579,7 +577,7 @@
      "document": "cowork_phrase_boundary_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5, ruling R4). Eight of the ten entries are `contract-home`; two (D-484, D-485) stay `gap` on the KIND half — the document's opening block and its §11 'Open items'. Not a delegation matter.",
-     "delegation_at_head": "ARCHITECTURE.md:1453",
+     "delegation_at_head": "ARCHITECTURE.md:1483",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 10,
      "by_class": {
@@ -630,7 +628,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 41,
+   "count": 42,
    "ids": [
     "OI-105",
     "OI-107",
@@ -666,6 +664,7 @@
     "OI-338",
     "OI-346",
     "OI-347",
+    "OI-353",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -677,7 +676,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 57,
+   "count": 58,
    "ids": [
     "OI-105",
     "OI-107",
@@ -717,7 +716,6 @@
     "OI-315",
     "OI-317",
     "OI-318",
-    "OI-319",
     "OI-320",
     "OI-322",
     "OI-324",
@@ -726,6 +724,8 @@
     "OI-341",
     "OI-346",
     "OI-347",
+    "OI-352",
+    "OI-353",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -749,8 +749,8 @@
     "OI-292",
     "OI-309",
     "OI-311",
-    "OI-319",
     "OI-341",
+    "OI-352",
     "OI-57",
     "OI-90",
     "OI-95"
@@ -1545,22 +1545,6 @@
     }
    },
    {
-    "id": "OI-319",
-    "title": "Every read wave now widens `gen_home_classification.py --check`’s stale report, because a new gap-homed entry cannot be given its `home_section` while [[OI-305]] is open",
-    "subject_column": "D — instrument / measurement layer",
-    "matched_on_the_subject_column": [],
-    "matched_falsity_signals": [
-     "drift",
-     "no longer re-derive",
-     "stale"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the row's own recorded words",
-     "ground": "the row states it gates"
-    }
-   },
-   {
     "id": "OI-320",
     "title": "`docs/score_inventory.md` — the document `CLAUDE.md` sends every score-touching task to FIRST — states the SUPERSEDED batch case-identity gate as the current gate, three times, and tells the reader the granularity-robust",
     "subject_column": "F — doc-sync debt (#10)",
@@ -1699,6 +1683,38 @@
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
     }
+   },
+   {
+    "id": "OI-352",
+    "title": "★ **The guard classification's own `--check` is run by no guard list** — the one check that would catch a drifted classification is exempt from the runner by construction, and its running depends on a session remembering",
+    "subject_column": "D — instrument / measurement layer (the audit's own guard apparatus)",
+    "matched_on_the_subject_column": [],
+    "matched_falsity_signals": [
+     "drift"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
+    }
+   },
+   {
+    "id": "OI-353",
+    "title": "★ **Six comments in `src/` say the production notation record path is \"default OFF\"; the configuration sets its default to TRUE** — a reader of any of them learns which analysis arm ships and learns it wrong",
+    "subject_column": "F — doc-sync debt (#10), in the code",
+    "matched_on_the_subject_column": [
+     "doc",
+     "doc-sync"
+    ],
+    "matched_falsity_signals": [
+     "doc-sync",
+     "stale"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side"
+    }
    }
   ]
  },
@@ -1706,7 +1722,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 35,
+   "count": 36,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1733,12 +1749,13 @@
     "OI-309",
     "OI-311",
     "OI-315",
-    "OI-319",
     "OI-320",
     "OI-322",
     "OI-324",
     "OI-332",
     "OI-341",
+    "OI-352",
+    "OI-353",
     "OI-45",
     "OI-57",
     "OI-90",
@@ -1811,6 +1828,7 @@
     "OI-338",
     "OI-346",
     "OI-347",
+    "OI-353",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -1823,8 +1841,7 @@
    ],
    "the row's own recorded words": [
     "OI-309",
-    "OI-311",
-    "OI-319"
+    "OI-311"
    ],
    "D-438's default": [
     "OI-109",
@@ -1834,6 +1851,7 @@
     "OI-224",
     "OI-249",
     "OI-341",
+    "OI-352",
     "OI-90"
    ]
   }
@@ -1880,7 +1898,7 @@
    "the_authored_field": "The harvest holds {occurrences_total} candidate statements, grouped into {clusters} groups of near-identical statements, and every one of those groups carries a recorded disposition, so none was silently passed over. {unresolved} of them carry the 'unresolved' disposition: statements the pass could not mechanically classify as either restating a register decision or not being a decision. Sampling shows that residual is genuinely mixed — real rulings, deferred designs and ordinary narrative in one population. Every harvested statement sourced to `ARCHITECTURE.md` falls inside the range read in full, that file being read in full in its entirety (above). ★ WHICH LAYER THIS FIGURE IS THE FIGURE OF, and how the two numbers below are read together. **It is the LAYER OF RECORD's figure** — the disposition layer regenerated on 2026-08-07 and ADOPTED as the layer of record by the user's ruling of that date (`OPEN_ITEMS.md` OI-333), with the outgoing layer kept beside it as a snapshot (#16), and it may be published as CURRENT. It is derived at a backbone of {backbone_decision_count} entries; this register records {decisions_recorded}. **Where those two are equal the residual is current as it stands. Where the register has since grown, the older reading applies again**: every group that restates an entry entered since the derivation still reads 'unresolved', so the figure OVERSTATES what is unresolved at HEAD, in a known direction, by an amount only a re-derivation would give. What the figure is NOT, in either case: a judgment that any one group's disposition has been read — each is exactly as mechanical as the numbered rule that produced it — so the residual is a bound on what this register may claim about the documents it did not read in full, not a measurement of the record's quality. ★ THE FORMER WORDING IS PRESERVED VERBATIM (#12) at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.measured_remainder_former_wording_2026_08_04_preserved_12`. It was true when it was written; what changed under it is that the layer it called un-re-derivable was repaired and its regeneration adopted.",
    "it_is_a_template_the_generator_fills": true,
    "the_unresolved_figure_it_hand_carries": [],
-   "the_figure_the_same_file_computes": 2637,
+   "the_figure_the_same_file_computes": 2643,
    "the_backbone_the_committed_layer_was_derived_at": 645,
    "verdict": "TRUE AT HEAD. The field carries no hand-written figure: it is a template whose every figure `gen_decisions_register.py` fills from the same computed data it renders the coverage table from, and an unfilled placeholder stops that generator (#17f / D-431)."
   },
@@ -1907,7 +1925,7 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 600,
+    "count": 602,
     "of": 645
    },
    {
@@ -1923,7 +1941,7 @@
  "the_shape_of_what_remains": {
   "note": "Derived from the blocks above; every figure is computed, none transcribed.",
   "complete_half": {
-   "entries_not_homed_in_a_specification_that_owns_them": 45,
+   "entries_not_homed_in_a_specification_that_owns_them": 43,
    "of_which_never_graded_against_the_criteria_in_force": 0,
    "entries_whose_defense_the_record_does_not_state": 44,
    "documents_awaiting_a_delegation_only_the_user_may_write": 2,
@@ -1932,8 +1950,8 @@
    "of_which_a_widening_would_move": 4
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 57,
-   "of_which_gate": 35,
+   "open_rows_in_the_wide_cut": 58,
+   "of_which_gate": 36,
    "of_which_apparatus_and_therefore_non_gating": 22,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
@@ -2016,7 +2034,6 @@
    "OI-315",
    "OI-317",
    "OI-318",
-   "OI-319",
    "OI-322",
    "OI-324",
    "OI-332",
@@ -2024,6 +2041,8 @@
    "OI-341",
    "OI-346",
    "OI-347",
+   "OI-352",
+   "OI-353",
    "OI-45",
    "OI-46",
    "OI-47",
@@ -2039,11 +2058,11 @@
  },
  "counted": {
   "decisions_recorded": 645,
-  "open_rows_in_the_index": 249,
-  "true_half_wide_cut": 57,
-  "true_half_gating": 35,
+  "open_rows_in_the_index": 250,
+  "true_half_wide_cut": 58,
+  "true_half_gating": 36,
   "complete_half_gap": 42,
-  "complete_half_unhomed": 3,
+  "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 44
  }
 }

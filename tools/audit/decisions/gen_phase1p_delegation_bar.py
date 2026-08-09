@@ -59,6 +59,17 @@ records what the four carried when the check ran, and the check reads the frozen
 every row also reports its live grade beside them.  A document enters that block only once its
 delegation has actually changed, so it cannot shadow a grade that never moved.
 
+AND THE GRADES OUTLIVE THE HOMES (added 2026-08-09, the user's Ruling 4(b)).  A re-homing wave
+moves entries into the specification that owns their subject, and when a document's LAST entry
+moves the document stops being anybody's home -- at which point this tool STOPS on its grade,
+which is the guard working.  Thirty-six documents had accumulated that way and the STOP had
+become a standing failure.  Their judgments are moved WHOLE into `RETIRED_FORMS` with their
+reasons (#12), never deleted: each records a reading made at a surface, which no derivation
+reproduces.  A retired judgment is inert -- carried into the artifact as history, counted
+nowhere, not re-verified by `mentions()` -- and the retirement has a STOP of its own in the
+opposite direction, so a document that becomes somebody's home again halts the run instead of
+quietly reusing a grade nobody re-read.
+
 Run:  python tools/audit/decisions/gen_phase1p_delegation_bar.py [--check]
 """
 from __future__ import annotations
@@ -170,12 +181,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "appended citation on the line above it, which is why this document sat on the "
         "write list. The 'Full spec:' line is retained beside it and is still the ruling's "
         "own worked example of the excluded form."),
-    "docs/redesign_plan.md": (
-        BARE_CITATION, "ARCHITECTURE.md",
-        "Design reference: `docs/redesign_plan.md`",
-        "A bare appended citation. (Two of its three namings additionally sit inside "
-        "blocks `ARCHITECTURE.md` itself banners SUPERSEDED — the phase-1l ground, which "
-        "the bar does not need.)"),
     "cowork_prefit_gates.md": (
         CLAUSE, "ARCHITECTURE.md",
         "ratified contract for the PRE-FIT PROTOCOLS",
@@ -258,17 +263,7 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "DOC-GOVERNANCE GLOB `cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING "
         "(user, 2026-08-04, OI-326 ruling R1; `CLAUDE.md` rule (k), **D-546**), so this grade is "
         "unchanged and the document is on the OI-293 write list instead.'"),
-    "cowork_target_architecture.md": (
-        BARE_CITATION, "ARCHITECTURE.md",
-        "full statements in `cowork_target_architecture.md`",
-        "A bare appended citation, inside a section heading's parenthesis. It is the "
-        "strongest of four namings and it still does not admit; the canonical document also "
-        "states at `:352` that this document is DEMOTED and is 'not a second canonical doc', "
-        "so the surface that would have to delegate says the opposite. Its other namings "
-        "(`:829`, `:1236`) are provenance attributions."),
     "cowork_factorization_desk_simulation.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "docs/layer_architecture_audit.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
 
     "cowork_architecture_reassessment.md": (
@@ -283,8 +278,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
     # this artifact's population — the one place the wave would have had to grade a
     # naming, `CLAUDE.md`'s mandatory-read instruction, is therefore not reached.)
     # ------------------------------------------------------------------
-    "docs/unified_analysis_pipeline.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_term_theory_grounding.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_phrase_boundary_design.md": (
@@ -312,59 +305,9 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
     # Each grade was made by reading the located line in place, exactly as the phase-1p grades
     # were.  Eight are NOT_NAMED, three reach the bar, and all three come out EXCLUDE — so no
     # section-kind judgment is reached for any of the eleven.
-    "cowork_layer5_function_methods.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_phase5c_l5_build_plan.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_layer3_keymode_impl_design.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_phrase_boundary_methods.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_eg1_premise_checks.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_types_header_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "docs/stage4d_local_modulation_design.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_adjudication_dossier.md": (
-        PROVENANCE, "CLAUDE.md",
-        "`cowork_adjudication_dossier.md` Part B",
-        "The single naming is inside the fact-publication corollary's EVIDENCE clause — "
-        "'Evidence for why this needs stating: ... + `cowork_adjudication_dossier.md` Part B' — "
-        "which records where the reasoning behind a rule is written down. That is a provenance "
-        "attribution, the bar's second excluded form, and it delegates no concern to the "
-        "document."),
-    "docs/iter90_bass_as_root_promotion_shelved.md": (
-        PROVENANCE, "ARCHITECTURE.md",
-        "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization",
-        "The single naming is a parenthetical pointing at where an investigation's "
-        "characterization and its follow-up design are recorded. A provenance attribution, the "
-        "bar's second excluded form."),
-    "cowork_style_clustering_plan.md": (
-        BARE_CITATION, "ARCHITECTURE.md",
-        "`cowork_style_clustering_plan.md`); the weighting itself is a joint decision",
-        "Two namings, and the STRONGER is graded per `CLAUDE.md` rule (k1). The first is a "
-        "parenthetical identifying which document holds a piece of committed work; the second "
-        "is inside a two-document 'see' list. Both are bare appended citations at best — the "
-        "bar's first excluded form — and neither delegates a stated concern to the document."),
-    "cowork_style_taxonomy_proposal.md": (
-        BARE_CITATION, "ARCHITECTURE.md",
-        "`cowork_style_taxonomy_proposal.md:11-30`",
-        "FIVE namings, all of one kind, and the strongest is graded per rule (k1): each is a "
-        "parenthetical CITATION-WITH-LINE-RANGE supporting a statement `ARCHITECTURE.md` makes "
-        "in its own voice — the five idioms, the granularity ruling, the cross-axes, the "
-        "auto-detection roadmap. A citation supporting a sentence is the bar's first excluded "
-        "form however precise its line range: the canonical document is RESTATING the content "
-        "here, not delegating it. ★ Worth recording because it cuts the other way from the "
-        "usual case: this document is named more often than most admitted ones and still "
-        "excludes, which is exactly what D-432 was ruled to make mechanical."),
-    "docs/precision_metric_design.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_fb_redesign_design.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_architecture_review_2026_07.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "docs/symbol_input_audit.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
 
     # ------------------------------------------------------------------
@@ -440,10 +383,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
 
     "cowork_census_full_needs_audit.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_gateA_unification_design.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_idiom_discovery_design.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_layer1_note_model_design.md": (
         CLAUSE, "ARCHITECTURE.md",
         "The ratified contract for this layer is `cowork_layer1_note_model_design.md`",
@@ -456,8 +395,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "and the document is on the OI-293 write list instead.' That is R2 working exactly as "
         "ruled: a delegation the user writes settles the document without touching the bar."),
     "cowork_sensitive_cell_probe.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "docs/back_half_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "docs/iter92_joint_bass_chord_scoring.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
@@ -476,19 +413,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
     # an entry: every wave-4 entry is entered `gap`, and `gen_home_classification.py`'s apply
     # mode stays UNRUN under OI-305 / OI-319.
     # ------------------------------------------------------------------
-    "cowork_idiom_discovery_findings.md": (
-        PROVENANCE, "ARCHITECTURE.md",
-        "`cowork_idiom_discovery_findings.md:122`",
-        "A parenthetical citation, by document AND line, recording where a measurement this "
-        "document made is written down — 'found that harmony is not organised by genre'. The "
-        "bar's second excluded form: a provenance attribution. It is the only naming."),
-    "docs/nct_detection_design.md": (
-        PROVENANCE, "ARCHITECTURE.md",
-        "`docs/nct_detection_design.md` exists",
-        "A naming inside a statement about the RECORD — the sentence says the document exists "
-        "and that the record states neither a date nor a ratifier for the constraint. It "
-        "attributes provenance rather than delegating a concern; the concern itself is "
-        "delegated to nobody and is stated in place (D-303). It is the only naming."),
     "cowork_joint_estimator_factorization.md": (
         CLAUSE, "ARCHITECTURE.md",
         "is `cowork_joint_estimator_factorization.md`, which this section points at",
@@ -509,10 +433,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "the sibling architecture document, whose opening-banner naming IS graded a delegation "
         "clause.'"),
 
-    "cowork_audit_obligation_map.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_eg2_scoping.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_information_loss_audit.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_layer1_tone_collection_design.md": (
@@ -527,25 +447,10 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "the correct class for a decision whose concern is homed elsewhere."),
     "cowork_phase2_architecture_review.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "docs/key_detection_baroque_partial_signature.md": (
-        PROVENANCE, "CLAUDE.md",
-        "(`docs/key_detection_baroque_partial_signature.md`)",
-        "★ MOVED 2026-08-04 (READ WAVE 5) BY THIS WAVE'S OWN DOING, and recorded rather than "
-        "absorbed. Ruling R3 wrote D-576's caveat into gate block (A) beside the figures it "
-        "qualifies, and the caveat cites this document as the measurement behind it — so a "
-        "document graded 'named nowhere' became named, and the tool STOPPED until the grade was "
-        "authored. The naming is inside an *Evidence:* clause recording where the measurement is "
-        "written down: a provenance attribution, the bar's second excluded form, which delegates "
-        "no concern. The former grade, preserved (#12): NOT_NAMED — 'Named in none of the three "
-        "surfaces; verified mechanically here.'"),
     "docs/stage4b_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
 
-    "docs/decoder_design.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "docs/implementation_roadmap.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "docs/iteration_path1_summary.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
 
     # ------------------------------------------------------------------
@@ -557,6 +462,141 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
     # OI-319.  (`CLAUDE.md` is also a wave-6 home, via D-638, and was already in this table's
     # population as a surface — it needs no grade, being one of the three delegating surfaces.)
     # ------------------------------------------------------------------
+    "cowork_union_search_record.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    # Two documents READ WAVE 6 entered from carry only `process`-class entries —
+    # `cowork_key_mode_inference_diagnosis.md` (D-633) and `cowork_phase5b_l4_build_plan.md`
+    # (D-636, D-637) — so neither is in this tool's home population and neither takes a grade
+    # here. Recorded rather than left silent: the tool STOPS on a grade for a document that is
+    # nobody's home, which is how the omission was found, and the classification each WOULD have
+    # taken is a provenance attribution (the build plan is named inside a list of citations at
+    # `ARCHITECTURE.md:1488`) and NOT_NAMED (the diagnosis is named in none of the three).
+}
+
+
+# ---------------------------------------------------------------------------
+# RETIRED — FORM judgments for documents that are NOBODY'S HOME any more.
+#
+# WHY THIS BLOCK EXISTS (user, 2026-08-09, Ruling 4(b) of `cowork_rulings_2026_08_09_return.md`).
+# Every re-homing wave moves entries out of a `cowork_*`/`docs/*` document and into the layer
+# specification that owns their subject.  When the LAST of a document's entries moves, the
+# document leaves this tool's home population -- and the tool then STOPS with "FORM judgment for
+# a document that is nobody's home", which is that guard working exactly as written.  The waves
+# accumulated thirty-six such documents and the STOP became a standing failure, so this tool has
+# been unable to re-derive its own artifact since.
+#
+# THE ACT IS MAINTENANCE OF AN AUTHORED INPUT, NOT A CHANGE OF MECHANISM.  It is the same act the
+# away batch performed three times under three different tools' STOPs, and the same act the
+# register data already carries at `section_home_criterion.documents_retired_when_their_last_
+# entry_was_re_homed`: the judgment is moved WHOLE, with its reason, never deleted (#12).  Each
+# grade records a READING made at a surface, which no derivation reproduces.
+#
+# NOTHING READS THIS TABLE FOR A VERDICT.  It is carried into the artifact as history, counted
+# nowhere, and excluded from `mentions()` -- a retired judgment is inert.  The one thing it is
+# still wired into is a STOP in the OTHER direction: a retired document that becomes somebody's
+# home again halts the run, so a judgment cannot be quietly resurrected without being re-read.
+#
+#   document -> (form, surface, anchor, why) -- the four-tuple exactly as it stood in FORMS
+RETIRED_2026_08_09 = (
+    "CC, dispatch `cc_instruction_return_continuation.md`, Task 0, applying the user's Ruling "
+    "4(b) of 2026-08-09. The set is the one this tool's own STOP named at HEAD: every document "
+    "below carried a FORM judgment while it was somebody's home and is nobody's home now, its "
+    "entries having been re-homed into their owning specifications by the phase-1 homing waves. "
+    "No grade is re-read, re-graded or corrected here -- each is moved unchanged."
+)
+
+RETIRED_FORMS: dict[str, tuple[str, str, str, str]] = {
+    "cowork_adjudication_dossier.md": (
+        PROVENANCE, "CLAUDE.md",
+        "`cowork_adjudication_dossier.md` Part B",
+        "The single naming is inside the fact-publication corollary's EVIDENCE clause — "
+        "'Evidence for why this needs stating: ... + `cowork_adjudication_dossier.md` Part B' — "
+        "which records where the reasoning behind a rule is written down. That is a provenance "
+        "attribution, the bar's second excluded form, and it delegates no concern to the "
+        "document."),
+    "cowork_audit_obligation_map.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_delta_check_dispositions.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_eg1_premise_checks.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_eg2_scoping.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_fb_redesign_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_gateA_unification_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_idiom_discovery_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_idiom_discovery_findings.md": (
+        PROVENANCE, "ARCHITECTURE.md",
+        "`cowork_idiom_discovery_findings.md:122`",
+        "A parenthetical citation, by document AND line, recording where a measurement this "
+        "document made is written down — 'found that harmony is not organised by genre'. The "
+        "bar's second excluded form: a provenance attribution. It is the only naming."),
+    "cowork_l1_l5_premise_debt_audit.md": (
+        PROVENANCE, "cowork_engage_arc_plan.md",
+        "evidence `cowork_l1_l5_premise_debt_audit.md`",
+        "Named TWICE in the arc plan and graded on the stronger per rule (k1); both are "
+        "provenance attributions — the first a parenthetical naming the EVIDENCE behind the "
+        "ratified Stage-3 entry gate, the second a parenthetical citation beside a shelving note. "
+        "Naming a document as the evidence for a ruling records where the reasoning lives; it "
+        "does not delegate the concern to it."),
+    "cowork_layer1_extend_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_layer2_reslice_design.md": (
+        BARE_CITATION, "ARCHITECTURE.md",
+        "(Phase 2; `cowork_layer2_reslice_design.md` §2)",
+        "A parenthetical citation appended to a sentence the canonical document states in its own "
+        "voice about how the slicer clips to the loaded span. It names a SECTION, which is why it "
+        "is graded rather than waved past — but the bar's admitting second form is a NAMED HOME "
+        "with sections ('Criterion + build home: X §0/§5.3'), and this is a citation supporting a "
+        "restatement, not a home. Bare appended citation. Distinct from the SIBLING document "
+        "`cowork_layer2_slicing_design.md`, which the user delegated to by name on 2026-08-04."),
+    "cowork_layer3_keymode_impl_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_layer3_reachback_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_layer5_function_methods.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_phase5c_l5_build_plan.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_phrase_boundary_methods.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_style_clustering_plan.md": (
+        BARE_CITATION, "ARCHITECTURE.md",
+        "`cowork_style_clustering_plan.md`); the weighting itself is a joint decision",
+        "Two namings, and the STRONGER is graded per `CLAUDE.md` rule (k1). The first is a "
+        "parenthetical identifying which document holds a piece of committed work; the second "
+        "is inside a two-document 'see' list. Both are bare appended citations at best — the "
+        "bar's first excluded form — and neither delegates a stated concern to the document."),
+    "cowork_style_taxonomy_proposal.md": (
+        BARE_CITATION, "ARCHITECTURE.md",
+        "`cowork_style_taxonomy_proposal.md:11-30`",
+        "FIVE namings, all of one kind, and the strongest is graded per rule (k1): each is a "
+        "parenthetical CITATION-WITH-LINE-RANGE supporting a statement `ARCHITECTURE.md` makes "
+        "in its own voice — the five idioms, the granularity ruling, the cross-axes, the "
+        "auto-detection roadmap. A citation supporting a sentence is the bar's first excluded "
+        "form however precise its line range: the canonical document is RESTATING the content "
+        "here, not delegating it. ★ Worth recording because it cuts the other way from the "
+        "usual case: this document is named more often than most admitted ones and still "
+        "excludes, which is exactly what D-432 was ruled to make mechanical."),
+    "cowork_target_architecture.md": (
+        BARE_CITATION, "ARCHITECTURE.md",
+        "full statements in `cowork_target_architecture.md`",
+        "A bare appended citation, inside a section heading's parenthesis. It is the "
+        "strongest of four namings and it still does not admit; the canonical document also "
+        "states at `:352` that this document is DEMOTED and is 'not a second canonical doc', "
+        "so the surface that would have to delegate says the opposite. Its other namings "
+        "(`:829`, `:1236`) are provenance attributions."),
+    "cowork_tpc_capability_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_uncertain_resolver_investigation.md": (
+        PROVENANCE, "CLAUDE.md",
+        "Measured during the O1 investigation (`cowork_uncertain_resolver_investigation.md`",
+        "A parenthetical recording where a measurement was made, inside the gate block's "
+        "cross-layer-budget caveat. A provenance attribution: it attributes the figures the "
+        "caveat quotes and delegates no concern. It is the only naming."),
     "docs/architecture_joint_inference.md": (
         PROVENANCE, "ARCHITECTURE.md",
         "The `docs/architecture_joint_inference.md` joint-decode synthesis is **superseded**",
@@ -567,49 +607,54 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "since a surface cannot delegate a concern to a document in the act of retiring it. The "
         "same shape as `cowork_target_architecture.md`'s demotion, which the phase-1p grade "
         "already records."),
-    "cowork_layer2_reslice_design.md": (
-        BARE_CITATION, "ARCHITECTURE.md",
-        "(Phase 2; `cowork_layer2_reslice_design.md` §2)",
-        "A parenthetical citation appended to a sentence the canonical document states in its own "
-        "voice about how the slicer clips to the loaded span. It names a SECTION, which is why it "
-        "is graded rather than waved past — but the bar's admitting second form is a NAMED HOME "
-        "with sections ('Criterion + build home: X §0/§5.3'), and this is a citation supporting a "
-        "restatement, not a home. Bare appended citation. Distinct from the SIBLING document "
-        "`cowork_layer2_slicing_design.md`, which the user delegated to by name on 2026-08-04."),
-    "cowork_uncertain_resolver_investigation.md": (
-        PROVENANCE, "CLAUDE.md",
-        "Measured during the O1 investigation (`cowork_uncertain_resolver_investigation.md`",
-        "A parenthetical recording where a measurement was made, inside the gate block's "
-        "cross-layer-budget caveat. A provenance attribution: it attributes the figures the "
-        "caveat quotes and delegates no concern. It is the only naming."),
-    "cowork_l1_l5_premise_debt_audit.md": (
-        PROVENANCE, "cowork_engage_arc_plan.md",
-        "evidence `cowork_l1_l5_premise_debt_audit.md`",
-        "Named TWICE in the arc plan and graded on the stronger per rule (k1); both are "
-        "provenance attributions — the first a parenthetical naming the EVIDENCE behind the "
-        "ratified Stage-3 entry gate, the second a parenthetical citation beside a shelving note. "
-        "Naming a document as the evidence for a ruling records where the reasoning lives; it "
-        "does not delegate the concern to it."),
-
-    "cowork_union_search_record.md": (
+    "docs/back_half_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/decoder_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/iter90_bass_as_root_promotion_shelved.md": (
+        PROVENANCE, "ARCHITECTURE.md",
+        "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization",
+        "The single naming is a parenthetical pointing at where an investigation's "
+        "characterization and its follow-up design are recorded. A provenance attribution, the "
+        "bar's second excluded form."),
+    "docs/iteration_path1_summary.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/key_detection_baroque_partial_signature.md": (
+        PROVENANCE, "CLAUDE.md",
+        "(`docs/key_detection_baroque_partial_signature.md`)",
+        "★ MOVED 2026-08-04 (READ WAVE 5) BY THIS WAVE'S OWN DOING, and recorded rather than "
+        "absorbed. Ruling R3 wrote D-576's caveat into gate block (A) beside the figures it "
+        "qualifies, and the caveat cites this document as the measurement behind it — so a "
+        "document graded 'named nowhere' became named, and the tool STOPPED until the grade was "
+        "authored. The naming is inside an *Evidence:* clause recording where the measurement is "
+        "written down: a provenance attribution, the bar's second excluded form, which delegates "
+        "no concern. The former grade, preserved (#12): NOT_NAMED — 'Named in none of the three "
+        "surfaces; verified mechanically here.'"),
+    "docs/layer_architecture_audit.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/nct_detection_design.md": (
+        PROVENANCE, "ARCHITECTURE.md",
+        "`docs/nct_detection_design.md` exists",
+        "A naming inside a statement about the RECORD — the sentence says the document exists "
+        "and that the record states neither a date nor a ratifier for the constraint. It "
+        "attributes provenance rather than delegating a concern; the concern itself is "
+        "delegated to nobody and is stated in place (D-303). It is the only naming."),
+    "docs/precision_metric_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "docs/redesign_plan.md": (
+        BARE_CITATION, "ARCHITECTURE.md",
+        "Design reference: `docs/redesign_plan.md`",
+        "A bare appended citation. (Two of its three namings additionally sit inside "
+        "blocks `ARCHITECTURE.md` itself banners SUPERSEDED — the phase-1l ground, which "
+        "the bar does not need.)"),
     "docs/stage4c_cadence_key_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_layer3_reachback_design.md": (
+    "docs/stage4d_local_modulation_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_tpc_capability_design.md": (
+    "docs/symbol_input_audit.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_layer1_extend_design.md": (
+    "docs/unified_analysis_pipeline.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_delta_check_dispositions.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    # Two documents READ WAVE 6 entered from carry only `process`-class entries —
-    # `cowork_key_mode_inference_diagnosis.md` (D-633) and `cowork_phase5b_l4_build_plan.md`
-    # (D-636, D-637) — so neither is in this tool's home population and neither takes a grade
-    # here. Recorded rather than left silent: the tool STOPS on a grade for a document that is
-    # nobody's home, which is how the omission was found, and the classification each WOULD have
-    # taken is a provenance attribution (the build plan is named inside a list of citations at
-    # `ARCHITECTURE.md:1488`) and NOT_NAMED (the diagnosis is named in none of the three).
 }
 
 
@@ -725,12 +770,27 @@ def main() -> int:
         rec["entries"].append(d["id"])
         rec["current"][pre_apply_kind(d)] += 1
 
+    # The retired table and the live one may not both hold a document: two grades for one
+    # naming is the duplication #6 forbids, and it would make "which grade governs" a reading.
+    overlap = sorted(set(FORMS) & set(RETIRED_FORMS))
+    if overlap:
+        raise SystemExit(f"document(s) graded in BOTH FORMS and RETIRED_FORMS: {overlap}")
+
     unknown = sorted(set(per_doc) - set(FORMS))
     if unknown:
         raise SystemExit(f"home document(s) with no authored FORM judgment: {unknown}")
     unused = sorted(set(FORMS) - set(per_doc))
     if unused:
         raise SystemExit(f"FORM judgment for a document that is nobody's home: {unused}")
+
+    # The retirement STOP in the OTHER direction. A retired grade is history, and history that
+    # silently becomes live again is a judgment nobody re-read: if a document below is somebody's
+    # home once more, the run halts until its grade is read back into FORMS deliberately.
+    resurrected = sorted(set(RETIRED_FORMS) & set(per_doc))
+    if resurrected:
+        raise SystemExit("RETIRED FORM judgment for a document that is somebody's home again: "
+                         f"{resurrected} — read the grade back into FORMS rather than relying on "
+                         "the retired copy")
 
     seen = mentions()
     for doc, (form, _s, _a, _w) in FORMS.items():
@@ -841,14 +901,18 @@ def main() -> int:
             "entry's `home_section.class_before_phase1q` — the value the phase-1q pass records "
             "once and never overwrites. The user ruled the bar APPLIED on 2026-08-03, so the "
             "register's PRESENT classes are the post-apply ones and are at "
-            "`tools/audit/decisions/phase1q_reclassification.json`. Recomputing this artifact "
+            "`tools/audit/decisions/home_classification.json`. Recomputing this artifact "
             "from the present classes would report that the prediction holds and destroy the "
-            "finding OI-291 and D-432 both cite (#12).",
+            "finding OI-291 and D-432 both cite (#12). (Both namings in this artifact formerly "
+            "read `phase1q_reclassification.json`; that file held neither the phase-1q record "
+            "nor the present classes and was REMOVED on 2026-08-09 under the user's Ruling 1. "
+            "The phase-1q record is at the established snapshot; the present classes are at the "
+            "file named above.)",
         "section_level_consequence_moved":
             "The block that stood here reported what the section-level criterion would do to "
             "the five documents then at section granularity. It is SUPERSEDED, not deleted: the "
-            "phase-1q pass computes it for every entry of the population, at "
-            "`tools/audit/decisions/phase1q_reclassification.json` → `by_document` and "
+            "classification pass computes it for every entry of the population, at "
+            "`tools/audit/decisions/home_classification.json` → `by_document` and "
             "`entries`. Two computations of one thing is the duplication #6 forbids.",
         "the_bar": {
             "admitted_forms": [CLAUSE, NAMED_SECTIONS],
@@ -874,6 +938,28 @@ def main() -> int:
                     "outside it.",
         },
         "verdict_totals": dict(tally),
+        "retired_form_judgments": {
+            "what_this_is": "FORM judgments for documents that are NOBODY'S HOME any more, "
+                            "every entry they held having been re-homed into the specification "
+                            "that owns its subject. Each judgment records a READING made at a "
+                            "surface, which no derivation reproduces, so it is moved WHOLE "
+                            "rather than deleted (#12). It is carried here as history: nothing "
+                            "counts it, no verdict reads it, and `mentions()` does not "
+                            "re-verify it.",
+            "why_the_act_was_needed": "This tool STOPS on a grade for a document that is "
+                                      "nobody's home — that guard working. Thirty-six such "
+                                      "documents had accumulated across the re-homing waves and "
+                                      "the STOP had become a standing failure, so the artifact "
+                                      "could not re-derive at all.",
+            "the_stop_in_the_other_direction": "A retired document that becomes somebody's home "
+                                               "again halts the run, so a judgment cannot be "
+                                               "resurrected without being re-read into FORMS.",
+            "retired_2026_08_09": RETIRED_2026_08_09,
+            "judgments": {
+                doc: {"form": f, "surface": s or None, "anchor": a or None, "why": w}
+                for doc, (f, s, a, w) in sorted(RETIRED_FORMS.items())
+            },
+        },
         "documents": rows,
         "pre_apply_check": check,
         "census_8c_mixed_section": {

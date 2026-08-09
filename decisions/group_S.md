@@ -527,7 +527,7 @@
 
 **Status.** LIVE · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:7680-7682`
+**Home.** `ARCHITECTURE.md:7738-7740`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-56.md:7, decided by the user 2026-07-13. The when-question is tied to the corpus-onboarding event (OI-38) and the timing is itself open. OPEN_ITEMS OI-240 closes on this move
 
@@ -543,7 +543,7 @@
 
 **Status.** DEFERRED · decided 2026-07-13 · ratified by user
 
-**Home.** `ARCHITECTURE.md:5977-5979`
+**Home.** `ARCHITECTURE.md:6035-6037`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-62.md:7, decided by the user 2026-07-13. The six unbuilt items are specified at ARCHITECTURE.md §11.3a-g and confirmed absent from the code in that row. OPEN_ITEMS OI-240 closes on this move
 
@@ -590,7 +590,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:2009-2019`
+**Home.** `ARCHITECTURE.md:2039-2049`
 
 **Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_layer5_function_methods.md:16-20`; former verbatim: “friend: it means the generalized RN components, **not Riemann's *Funktionstheorie***. T/S/D, where it exists (music21's
 `analysis.harmonicFunction`), is a **deterministic lookup from the RN**, not a prediction. This matches our own world

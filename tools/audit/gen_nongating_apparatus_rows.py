@@ -620,6 +620,25 @@ V = {
                "SUBJECT, never its remedy -- and the remedy is deliberately open, since re-siting "
                "the spelling primitive and completing Layer 1's derived-views list are both "
                "available and neither is proposed."),
+    "OI-353": (GATES, "the criterion - a statement about the analysis's BUILD STATE, which D-438's "
+                      "line inside the documentation rows puts on the gating side",
+               "Six comments in `src/` describe the production notation record path as DEFAULT OFF "
+               "while the configuration sets its default to true and says so in the comment beside "
+               "the call. WHAT IS OWED decides it, and what is owed is not a pointer, an anchor, a "
+               "label, a banner, a filing decision or a section boundary: it is the CORRECTION OF "
+               "A STATEMENT ABOUT WHICH ANALYSIS ARM RUNS, and D-438's own line names a correction "
+               "to a statement about the analysis or its build state on the gating side in those "
+               "words. Which arm ships is the strongest form that statement has -- these are the "
+               "comments a session reads when the never-work-from-memory rule sends it to the code "
+               "for exactly that question, and they answer it wrongly in six places. It is the "
+               "same class as OI-304, whose verdict is GATES on the same clause, and the same "
+               "class as the resolved OI-232 one surface over -- that row found the identical "
+               "staleness in ARCHITECTURE.md and closed on the document half only, leaving the "
+               "code half nobody had looked at. NOT an establishment obligation (#19): no rate, "
+               "instrument or measurement is affected, and no comment is executable -- the "
+               "behaviour is what the configuration says. Recorded against the row's SUBJECT, "
+               "never its remedy; the remedy is a `src/` edit no wave under the phase-1 freeze may "
+               "make."),
 }
 
 # The dispatch's assumption A3, recorded so the difference is reported rather than reconciled.

@@ -21,8 +21,8 @@
     "what_was_measured": "for each superseded status in the register, how many of its entries carry a populated `superseded_by` field",
     "by_status": {
      "superseded-by": {
-      "entries": 11,
-      "carrying_a_populated_superseded_by_field": 11
+      "entries": 12,
+      "carrying_a_populated_superseded_by_field": 12
      },
      "superseded-in-fact": {
       "entries": 11,

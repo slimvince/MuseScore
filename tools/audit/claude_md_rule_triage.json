@@ -7,13 +7,13 @@
     "KNOWLEDGE": "it governs a judgment; any mechanical form would miss the point or fire on legitimate work"
   },
   "totals": {
-    "MECHANISM-EXISTS": 22,
-    "MECHANISABLE-AND-NOT": 7,
-    "KNOWLEDGE": 27
+    "MECHANISM-EXISTS": 28,
+    "MECHANISABLE-AND-NOT": 8,
+    "KNOWLEDGE": 41
   },
-  "rules_total": 56,
+  "rules_total": 77,
   "the_defect_set": {
-    "count": 7,
+    "count": 8,
     "rowed_at": "OPEN_ITEMS.md OI-292",
     "ids": [
       "D-113",
@@ -22,7 +22,8 @@
       "D-194",
       "D-230",
       "D-253",
-      "D-308"
+      "D-308",
+      "D-546"
     ],
     "strongest_candidate": "BUILT at phase 1q. It was D-197/D-198/D-199/D-316, the local patches, stated as do-not-revert against a dependency update — the silent failure a check catches and a reader does not. `tools/audit/local_patches_check.py` now covers them, so they have left the defect set; what remains of D-197 is its distribution constraint, which no check can enforce."
   },
@@ -110,8 +111,8 @@
     },
     {
       "id": "D-172",
-      "title": "#8 - no inference-problem-driven coding until every method sits in its correct layer",
-      "home": "CLAUDE.md:23",
+      "title": "#8 - no inference-problem-driven coding until the refactoring, the architectural design and the algorithmic completion are done",
+      "home": "CLAUDE.md:23-26",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether a change is inference-problem-driven is a judgment."
@@ -119,7 +120,7 @@
     {
       "id": "D-173",
       "title": "#9 - measure only on corpora known to be non-stale and accurate",
-      "home": "CLAUDE.md:25",
+      "home": "CLAUDE.md:50",
       "nonspec_kind": "project-convention",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "PARTIAL. `run_bach_preset.py` exits nonzero on an incomplete corpus and `characterise_bir_false.validate_corpus_dir` refuses a dir whose manifest or fingerprints do not match — staleness is mechanical; accuracy is not."
@@ -127,7 +128,7 @@
     {
       "id": "D-174",
       "title": "#10 - documentation always in sync with code",
-      "home": "CLAUDE.md:26",
+      "home": "CLAUDE.md:51",
       "nonspec_kind": "project-convention",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "PARTIAL. `gen_decisions_register.py --check`, `gen_cluster_dispositions.py --verify` and `tools/open_items_split_check.py` hold three surfaces to their data. Specification prose against code is not covered."
@@ -135,7 +136,7 @@
     {
       "id": "D-175",
       "title": "#11 - regression tests in sync with code, and run between iterations",
-      "home": "CLAUDE.md:27",
+      "home": "CLAUDE.md:52",
       "nonspec_kind": "project-convention",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`composing_tests`, `notation_tests` and `pipeline_snapshot_tests` against pinned goldens."
@@ -143,7 +144,7 @@
     {
       "id": "D-176",
       "title": "#13 - surface a surprise as a stop before building around it",
-      "home": "CLAUDE.md:31",
+      "home": "CLAUDE.md:66",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Recognising the surprise is the act; the rule governs what to do once it is recognised."
@@ -151,7 +152,7 @@
     {
       "id": "D-177",
       "title": "#14 - every behavior change is one user-ratified, revertible, provenance-stamped commit",
-      "home": "CLAUDE.md:32",
+      "home": "CLAUDE.md:67",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether a change alters behavior is what the test suites answer; whether it was ratified is not a property of the diff."
@@ -159,7 +160,7 @@
     {
       "id": "D-178",
       "title": "#15 - verify at the objects on the full output surface, never at an assertion",
-      "home": "CLAUDE.md:33",
+      "home": "CLAUDE.md:68",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "What the full output surface is differs per change."
@@ -167,7 +168,7 @@
     {
       "id": "D-179",
       "title": "#16 - every measurement is stamped to its corpus and its tooling, and the outgoing reference is snapshotted",
-      "home": "CLAUDE.md:35",
+      "home": "CLAUDE.md:70",
       "nonspec_kind": "project-convention",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`tools/robust_stop/manifest.json` with `tools/robust_stop_restamp.py`, which regenerates every recorded figure from the candidate summary and is established by reproducing the outgoing manifest exactly."
@@ -175,7 +176,7 @@
     {
       "id": "D-180",
       "title": "#17 - the Premise Gate",
-      "home": "CLAUDE.md:37",
+      "home": "CLAUDE.md:72",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "The premise ledger, the written prediction and the desk simulation are acts of reasoning; a mechanism can check that the artifacts exist, which is not the same as checking that they were done."
@@ -183,7 +184,7 @@
     {
       "id": "D-181",
       "title": "#18 - an unverified causal premise is forbidden (Class A)",
-      "home": "CLAUDE.md:51",
+      "home": "CLAUDE.md:102",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether a premise is load-bearing is a judgment."
@@ -191,7 +192,7 @@
     {
       "id": "D-182",
       "title": "#19 - an unestablished measurement tool is forbidden (Class B)",
-      "home": "CLAUDE.md:53",
+      "home": "CLAUDE.md:104",
       "nonspec_kind": "project-convention",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "PARTIAL, and by instance rather than centrally: each measurement tool carries its own `--establish` or `--check` (`tools/a8_rebaseline_measure.py`'s self-validation, `process_check.py --establish`, `shell_read_guard.py --establish`). Nothing checks that a NEW tool has one."
@@ -199,7 +200,7 @@
     {
       "id": "D-183",
       "title": "#20 - fit and evaluation are separated",
-      "home": "CLAUDE.md:57",
+      "home": "CLAUDE.md:108",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Which data helped fit a value is known to the fitter, not to a checker outside it."
@@ -207,7 +208,7 @@
     {
       "id": "D-184",
       "title": "#21 - ground truth is a measurement tool too, and its accuracy is measured",
-      "home": "CLAUDE.md:61",
+      "home": "CLAUDE.md:112",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Measuring annotator agreement is work, not a check."
@@ -215,7 +216,7 @@
     {
       "id": "D-185",
       "title": "#22 - every hard gate declares in advance how it handles the largest change it will meet",
-      "home": "CLAUDE.md:66",
+      "home": "CLAUDE.md:135",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether a gate's declared protocol covers the largest change it will meet is a judgment about the future."
@@ -223,7 +224,7 @@
     {
       "id": "D-186",
       "title": "#23 - an end-state principle needs a lawful transition",
-      "home": "CLAUDE.md:71",
+      "home": "CLAUDE.md:140",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Declaring and bounding a migration is a design act."
@@ -231,7 +232,7 @@
     {
       "id": "D-187",
       "title": "#24 - every reported figure carries its uncertainty",
-      "home": "CLAUDE.md:75",
+      "home": "CLAUDE.md:144",
       "nonspec_kind": "project-convention",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "A check that a reported comparison between two measured quantities carries an interval. `process_check.py` has the adjacent half — it flags a bare quantity — but not the comparison-without-uncertainty shape, which is one of the eight recorded instances it MISSES only because it was not asked to look for it as such."
@@ -239,7 +240,7 @@
     {
       "id": "D-188",
       "title": "The constrained-optimum ledger corollary",
-      "home": "CLAUDE.md:80",
+      "home": "CLAUDE.md:149",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Recording what the unconstrained best alternative is, is authorship."
@@ -247,7 +248,7 @@
     {
       "id": "D-189",
       "title": "The scope of surprise, and the three-stage funnel",
-      "home": "CLAUDE.md:85",
+      "home": "CLAUDE.md:154",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Which stage a piece of work is at is a judgment."
@@ -255,7 +256,7 @@
     {
       "id": "D-190",
       "title": "The decision-neutrality corollary - what exists carries no weight in choosing a design",
-      "home": "CLAUDE.md:106",
+      "home": "CLAUDE.md:175",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Weighing designs is the judgment the rule constrains."
@@ -263,7 +264,7 @@
     {
       "id": "D-191",
       "title": "The two-tier regression class policy - functional regression stops, rotation churn is tracked",
-      "home": "CLAUDE.md:555",
+      "home": "CLAUDE.md:776",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`tools/robust_stop_diff.py` — the class-(a)/(b) split, with the class-(a) INVESTIGATE flag at its declared threshold."
@@ -271,7 +272,7 @@
     {
       "id": "D-192",
       "title": "A scoring change and its documentation land in the same commit",
-      "home": "CLAUDE.md:735",
+      "home": "CLAUDE.md:969",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "A pre-commit check: a diff that touches a scoring term in `chordanalyzer.cpp` must also touch `docs/scoring_model.md`. The rule states the condition in exactly that form, and the staleness check it names — the template count in §2 against `kTemplateCount` — is arithmetic. Nothing implements either."
@@ -279,7 +280,7 @@
     {
       "id": "D-193",
       "title": "The writing standards live in one place, and predicates must be qualified",
-      "home": "CLAUDE.md:927",
+      "home": "CLAUDE.md:1167",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Qualified predicates and defined terms are properties of prose."
@@ -287,7 +288,7 @@
     {
       "id": "D-194",
       "title": "No self-invented labels, abbreviations, numbering schemes or jargon",
-      "home": "CLAUDE.md:923",
+      "home": "CLAUDE.md:1163",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "WEAK but real: a check for newly introduced identifiers of the shape a private numbering scheme takes, against the labels the repository already uses. It would flag candidates for a reader, not decide them."
@@ -295,7 +296,7 @@
     {
       "id": "D-195",
       "title": "Every design decision carries its defense at its home",
-      "home": "CLAUDE.md:979",
+      "home": "CLAUDE.md:1219",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "The register's `rationale` field, and the generated count of decisions whose defense the record does not state — a gap that cannot be hidden because the figure is computed."
@@ -303,7 +304,7 @@
     {
       "id": "D-196",
       "title": "The self-check: re-read the diff against the principles before reporting",
-      "home": "CLAUDE.md:1087",
+      "home": "CLAUDE.md:1431",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "NEW at phase 1p, and only for the document half: `tools/audit/process_check.py` reports a missing self-check section (D-434). Whether the check was actually run over the diff is not mechanical."
@@ -311,7 +312,7 @@
     {
       "id": "D-197",
       "title": "The distribution constraint - the import-fix patch is fork-local and never goes upstream",
-      "home": "CLAUDE.md:843",
+      "home": "CLAUDE.md:1077",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "BUILT at phase 1q: `tools/audit/local_patches_check.py` verifies each recorded patch is present at HEAD, deriving its patch list from `CLAUDE.md`'s own section so a newly recorded patch is covered without a code change, and STOPPING on a recorded patch it has no marker for. Established at `tools/audit/local_patches_establishment.json` by detecting deliberately unpatched content. PARTIAL for THIS entry: D-197 is the FORK-LOCAL distribution constraint on D-199's patch, not a patch of its own, and no check enforces a distribution constraint — a push is the act it forbids."
@@ -319,7 +320,7 @@
     {
       "id": "D-198",
       "title": "The Windows snap fix in the muse submodule is intentional and must not be reverted",
-      "home": "CLAUDE.md:795",
+      "home": "CLAUDE.md:1029",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "See D-197 — the same check covers the recorded patches. CLAUDE.md's section carries THREE patch subsections; the four entries here include D-197, which is a disposition rather than a patch."
@@ -327,7 +328,7 @@
     {
       "id": "D-199",
       "title": "The MusicXML declared-mode import fix is intentional and must not be reverted",
-      "home": "CLAUDE.md:816",
+      "home": "CLAUDE.md:1050",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "See D-197 — the same check covers the recorded patches."
@@ -335,7 +336,7 @@
     {
       "id": "D-200",
       "title": "Make it work first; compromise on performance only if performance proves a problem",
-      "home": "CLAUDE.md:1012-1014",
+      "home": "CLAUDE.md:1333-1335",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "A sequencing rule about when a trade-off may be considered."
@@ -343,7 +344,7 @@
     {
       "id": "D-203",
       "title": "Candidate admission is completion, not refinement - so #8 permits fixing it now",
-      "home": "CLAUDE.md:1022-1024",
+      "home": "CLAUDE.md:1343-1345",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "A ruling about what another rule permits."
@@ -351,7 +352,7 @@
     {
       "id": "D-204",
       "title": "One fix is designed once over the whole enumerated family, never per symptom",
-      "home": "CLAUDE.md:1033-1035",
+      "home": "CLAUDE.md:1354-1356",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether two faults share a cause is the diagnosis itself."
@@ -359,7 +360,7 @@
     {
       "id": "D-210",
       "title": "An exotic mode is graded against its parent collection's minor key, not its own tonic triad",
-      "home": "CLAUDE.md:481-483",
+      "home": "CLAUDE.md:639-641",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`compare_rn._our_key_tonic` — the one shared reduction every graded surface routes through."
@@ -367,7 +368,7 @@
     {
       "id": "D-211",
       "title": "Key agreement is reported against both the global home key and the local key",
-      "home": "CLAUDE.md:491-493",
+      "home": "CLAUDE.md:649-651",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "The dual key column, carried by the measurement tooling wherever the key column appears."
@@ -375,7 +376,7 @@
     {
       "id": "D-212",
       "title": "The regression stop is abstain-aware: an abstention counts as disagreement on root",
-      "home": "CLAUDE.md:496-498",
+      "home": "CLAUDE.md:654-656",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`compare_rn._our_key_ident` for the one abstain decision, and `robust_stop_diff.py`'s flag on any rise in the abstain rate."
@@ -399,7 +400,7 @@
     {
       "id": "D-249",
       "title": "The whole decision surface is delivered as user-visible text before any choice question",
-      "home": "CLAUDE.md:1042-1054",
+      "home": "CLAUDE.md:1363-1375",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether the user has actually seen a surface is not a property of any file."
@@ -407,7 +408,7 @@
     {
       "id": "D-253",
       "title": "Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash",
-      "home": "CLAUDE.md:1056-1074",
+      "home": "CLAUDE.md:1377-1395",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "NEW at phase 1p; BUILT and ESTABLISHED then, ARMED by the user at phase 1r, WIDENED at phase 1s. It stays in the defect class on ONE ground, and the ground is stated so it is not read as a backlog item: `tools/audit/shell_read_guard.py` binds the EXECUTING side only — the hook matcher names that side's shell tools and the writing side's carries a different name — so the rule is enforced on one side and must not be described as enforced. Two coverage limits closed 2026-08-03 (phase 1s, user ruling Y1): `git status` is now DENIED, which became affordable only once `tools/audit/changed_paths.py` gave a sanctioned way to enumerate changed paths; and the measured FALSE DENY on a quoted grep pattern is fixed and re-established. `git log` and `git rev-parse HEAD` remain deliberately unenforced — nothing replaces them, so denying them would fire on legitimate work. `tools/audit/guard_armed_check.py` puts the arming requirement in the record while `.claude/settings.json` stays out of it, which answers the OI-285 objection that kept it unarmed."
@@ -415,7 +416,7 @@
     {
       "id": "D-254",
       "title": "Investigate by default; never ask the user whether to investigate or proceed",
-      "home": "CLAUDE.md:1076-1083",
+      "home": "CLAUDE.md:1420-1427",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Recognising that a step could be measured first is the judgment."
@@ -423,7 +424,7 @@
     {
       "id": "D-294",
       "title": "The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement",
-      "home": "CLAUDE.md:468-470",
+      "home": "CLAUDE.md:626-628",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "PARTIAL. The variant-(b) DCML-only unit is the mechanism — the graded surface reads the human annotation and nothing else. That no self-annotation enters a measurement is not separately checked."
@@ -431,10 +432,18 @@
     {
       "id": "D-308",
       "title": "A newly acquired corpus enters as research material; the frozen regression corpus stays the gate until a deliberate re-baseline",
-      "home": "CLAUDE.md:454-456",
+      "home": "CLAUDE.md:612-614",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "The corpus manifest could carry an explicit tier, and the gate tooling could refuse to measure against material not marked gate-tier. The rule names exactly that condition, and nothing enforces it — a newly arrived corpus is kept out of the gate by discipline alone."
+    },
+    {
+      "id": "D-315",
+      "title": "A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork",
+      "home": "CLAUDE.md:1091-1093",
+      "nonspec_kind": "process",
+      "class": "MECHANISM-EXISTS",
+      "mechanism_or_ground": "See D-197 — `tools/audit/local_patches_check.py` covers the recorded patches, deriving its list from CLAUDE.md's own local-patches section, so this patch was covered by the same check the moment its subsection was written. PARTIAL in the same way D-197 is: the check verifies the patch is PRESENT at HEAD, which is the silent failure a dependency update produces; it does not enforce the distribution disposition beside it (D-316), because a push is the act that would breach one."
     },
     {
       "id": "D-316",
@@ -447,7 +456,7 @@
     {
       "id": "D-430",
       "title": "The contract-home criterion's unit is a SECTION of a document, not the document",
-      "home": "CLAUDE.md:181",
+      "home": "CLAUDE.md:286",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`tools/audit/decisions/gen_home_classification.py --check` re-derives every entry's section home from its document's own headings, and the class the criterion gives it. (It replaced `gen_section_homes.py`, which applied this ruling to a staged subset.)"
@@ -455,7 +464,7 @@
     {
       "id": "D-432",
       "title": "What counts as a delegation, graded by form — the clause the section-level criterion did not touch",
-      "home": "CLAUDE.md:208",
+      "home": "CLAUDE.md:313",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "APPLIED at phase 1q by the same tool as D-430: the bar's per-document form grade is authored once in `tools/audit/decisions/gen_phase1p_delegation_bar.py`'s FORMS table, whose anchors are LOCATED in the delegating file on every run, so a delegation that moves or is reworded stops the pass rather than passing a stale citation."
@@ -463,7 +472,7 @@
     {
       "id": "D-433",
       "title": "A shelved section can be a home — shelving is a status, not a kind",
-      "home": "CLAUDE.md:202",
+      "home": "CLAUDE.md:307",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "Same tool as D-432; the shelving question never enters its verdict, which is what the ruling says."
@@ -471,10 +480,170 @@
     {
       "id": "D-435",
       "title": "Delegating to a document and being a home are different tests with different subjects",
-      "home": "CLAUDE.md:231",
+      "home": "CLAUDE.md:336",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "The two roles are separate inputs to the same pass and cannot be conflated by it: the DELEGATING side is the fixed list of three user-ratified surfaces the pass searches, and the TARGET side is the home document being graded. A surface being in the first list gives it no standing in the second."
+    },
+    {
+      "id": "D-437",
+      "title": "Phase 3 waits on the phase-2 items that could find another member of the family being designed for, not on all of phase 2",
+      "home": "CLAUDE.md:1280-1298",
+      "nonspec_kind": "process",
+      "class": "MECHANISM-EXISTS",
+      "mechanism_or_ground": "PARTIAL, and the mechanical half is the one that could rot silently. `tools/audit/gen_phase3_gate_partition.py --check` re-derives the registered partition: every per-item verdict carries its reason, every source quote is LOCATED in the file it cites, and the STOP the ruling attaches — a NON-GATING item that yields a family member falsifies the partition — is recorded with it. So the prediction cannot be quietly re-authored after the items run, which is what makes it falsifiable. What is NOT mechanical: whether a family design actually waited for the gating searches, and whether a given item's search space could contain a fact about what the model reads — the second is the judgment the ruling is."
+    },
+    {
+      "id": "D-438",
+      "title": "Open-items register rows whose subject is this project's own tracking and documentation apparatus gate nothing — but an establishment obligation always gates",
+      "home": "CLAUDE.md:241-262",
+      "nonspec_kind": "process",
+      "class": "MECHANISM-EXISTS",
+      "mechanism_or_ground": "PARTIAL. `tools/audit/gen_nongating_apparatus_rows.py --check` derives the non-gating set from the INDEX itself and STOPS if any candidate row lacks a verdict or any verdict names a row the INDEX no longer carries open — so the declaration cannot silently outlive the rows it classifies, in either direction, and no verdict can be hand-added to a row the cut never reached. What is NOT mechanical is the test itself: whether a row's subject bears on the analysis, its inputs or a measurement tool is the judgment, and the establishment exemption depends on recognising an obligation under #19 rather than on any property of the row's text."
+    },
+    {
+      "id": "D-439",
+      "title": "The perspective inventory's §4 is the one home for the enumerated discovery channels, and CLAUDE.md's phase-2 clause points at it instead of listing its own subjects",
+      "home": "CLAUDE.md:1302-1314",
+      "nonspec_kind": "process",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "It settles WHERE an enumeration lives and WHICH of its members a pointing clause reaches. Nothing mechanical separates a clause that POINTS at a section from one that RESTATES it — that distinction is #6 applied by a reader — and the four per-channel scope verdicts each rest on a reading of the channel's own text. A checker could at best assert that the clause names no subjects of its own, which would fire on any legitimate rewording."
+    },
+    {
+      "id": "D-451",
+      "title": "A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win",
+      "home": "CLAUDE.md:86-88",
+      "nonspec_kind": "project-convention",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "A desk simulation is a hand trace. Whether a table value was declared provisional before use, and whether a verdict would flip inside that value's plausible range, are properties of the reasoning rather than of any file a checker can inspect. The adjacent mechanical half belongs to D-180, which already records that a checker can confirm the artifacts exist and not that the acts were performed."
+    },
+    {
+      "id": "D-452",
+      "title": "Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting",
+      "home": "CLAUDE.md:96-98",
+      "nonspec_kind": "project-convention",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "Same ground as D-451, one clause over: whether a trace ran at identity weights is a property of how the trace was performed. It is worth noting WHY no mechanism follows from the rule's own strength — identity weights ARE the design's mandatory ablation baseline, so the rule imports no new premise, but a hand trace has no artifact a checker could read the weights off."
+    },
+    {
+      "id": "D-468",
+      "title": "The pinned block-(A) instrument declares which inference arm its baselines were measured on, and refuses a corpus whose stamp disagrees",
+      "home": "CLAUDE.md:476-477",
+      "nonspec_kind": "process",
+      "class": "MECHANISM-EXISTS",
+      "mechanism_or_ground": "The rule IS a mechanism: `tools/a8_rebaseline_measure.py` carries the declared arm and `characterise_bir_false.validate_corpus_dir` refuses a mismatch, with no human step. Its detection and its non-interference are both measured -- `tools/audit/corpus_arm_establishment.json` (a wrong-arm corpus refused, a right-arm one admitted, an undeclared caller unaffected) and `tools/audit/instrument_arm_declaration_effect.json` (the declaration moves no measured value). What it does NOT do is prevent the corpus being destroyed, which is why OPEN_ITEMS.md OI-312 stays open."
+    },
+    {
+      "id": "D-473",
+      "title": "A theory-grounding pass labels every load-bearing claim FACT / THEORY / CONJECTURE, cross-checks its central sources independently, and carries no equation out of a text it could not fetch",
+      "home": "CLAUDE.md:189-191",
+      "nonspec_kind": "project-convention",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "Whether a claim is load-bearing, and whether a source was actually fetched and read rather than reconstructed from a snippet, are both judgments. A mechanical form was considered and is NOT proposed: flagging an equation attributed to a source absent from the repository's papers directory would fire on every legitimately read source that was not stored, and a guard that fires on legitimate work gets switched off. The independent cross-extraction is an act, not a state."
+    },
+    {
+      "id": "D-474",
+      "title": "No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field",
+      "home": "CLAUDE.md:117-127",
+      "nonspec_kind": "project-convention",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "A FACT OF ABSENCE established by search: no published study reports the figure. There is nothing for a mechanism to check — the rule's force is that a session may not satisfy principle #21 by citation, which is a constraint on what a reader may conclude. The obligation it creates is tracked as an open row (OI-179) and the work it names is a measurement, not a check."
+    },
+    {
+      "id": "D-486",
+      "title": "A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported",
+      "home": "CLAUDE.md:671-673",
+      "nonspec_kind": "process",
+      "class": "MECHANISM-EXISTS",
+      "mechanism_or_ground": "PARTIAL, and the two halves come apart. The COVERAGE DENOMINATOR half is mechanical where it matters: gate block (A)'s figures are regenerated from the measurement's own summary by `tools/robust_stop_restamp.py`, which is established by reproducing the outgoing manifest exactly, so a published figure carries the block it was computed from and cannot be stated at a denominator the run did not have. The PER-CORPUS half is NOT mechanised: the gate corpora are split per PRESET, which is a different cut, and nothing checks that a figure reported over several repertoires is broken down by them. `process_check.py` has only the adjacent shape — it flags a bare quantity, not an aggregate that hides which corpus moved."
+    },
+    {
+      "id": "D-546",
+      "title": "A delegation reaches only the members it names explicitly — a glob and a trailing ellipsis confer nothing; with the two confirmations ruled beside it",
+      "home": "CLAUDE.md:352",
+      "nonspec_kind": "process",
+      "class": "MECHANISABLE-AND-NOT",
+      "mechanism_or_ground": "PARTIAL, and the missing half is the one that matters. What the pass already does mechanically: `gen_phase1p_delegation_bar.mentions()` searches the three ratified surfaces for a document's BY-NAME mention and stops if a grade disagrees with it, and a glob is not a by-name mention, so no glob can silently become a delegation through that route. What NOTHING checks is the rule's actual subject: that a delegation's membership is DETERMINATE. A check exists in mechanical form -- flag any delegating clause whose named targets include a wildcard, an ellipsis or a prose description rather than a filename -- and it would have found this clause without a reading wave. Nothing implements it. (k1) and (k2) are confirmations of D-432 and D-430, so their mechanisation is those entries' and is not counted twice here."
+    },
+    {
+      "id": "D-557",
+      "title": "Build-it-right comes BEFORE tune-precision, strictly — no inference-problem fixing anywhere until the refactoring, the architectural design and the algorithmic completion are done",
+      "home": "CLAUDE.md:23-26",
+      "nonspec_kind": "process",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "The same judgment as D-172, which this rule is now the widened form of: whether a change is inference-problem-driven, and whether the refactoring and the architectural design are done, are both judgments. (The two entries record ONE rule at ONE home after the widening, which is OPEN_ITEMS.md OI-329.)"
+    },
+    {
+      "id": "D-564",
+      "title": "Correction of record: the 'function-only' share of the legacy residual was overstated, because over-grabbed segmentation corrupts the BASS and not only the pitch-class window",
+      "home": "CLAUDE.md:910-912",
+      "nonspec_kind": "process",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "A CORRECTION OF RECORD to a recorded apportionment: it says that a published share is overstated because over-grabbed segmentation corrupts the bass and not only the pitch-class window. What it governs is how a reader interprets an existing caveat; there is no state a checker could compare it against, and the apportionment it corrects is prose in a gate block rather than a computed field."
+    },
+    {
+      "id": "D-576",
+      "title": "The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent",
+      "home": "CLAUDE.md:511-515",
+      "nonspec_kind": "project-convention",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "The rule governs how a reported figure is READ, not how it is produced. Nothing a checker can inspect distinguishes a root figure read with the caveat from one read without it."
+    },
+    {
+      "id": "D-582",
+      "title": "A collapse that is RECOMPUTABLE from what is kept is not information loss — not every collapse is a defect",
+      "home": "CLAUDE.md:56-58",
+      "nonspec_kind": "project-convention",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "Whether a collapsed value is RECOMPUTABLE from what is kept is a judgment about a derivation, made case by case — and the rule exists precisely as the guard against over-flagging, so a mechanical form would have to decide the same question in order not to report every summary as a fault. That is the point of the rule, not an incidental difficulty."
+    },
+    {
+      "id": "D-602",
+      "title": "A layer's measurement is judged on coverage-matched accuracy AND correct abstention, never on raw coverage — abstaining on a genuinely undecidable case is a RIGHT outcome",
+      "home": "CLAUDE.md:680-682",
+      "nonspec_kind": "process",
+      "class": "MECHANISM-EXISTS",
+      "mechanism_or_ground": "PARTIAL, and only the abstention half. The stop is abstain-aware by construction (D-212): the one abstain decision is `compare_rn._our_key_ident`, the abstain duration is published beside the percentage, and `robust_stop_diff.py` flags any rise in the candidate's abstain rate — so an agreement figure cannot be improved by declining more often without the rise being reported. What is NOT mechanical is the other half, which is the rule's own subject: whether the cases a layer declined were ones it SHOULD have declined is a judgment about each case."
+    },
+    {
+      "id": "D-603",
+      "title": "While the pipeline is being rebuilt, a behaviour-changing increment is graded DIRECTIONALLY and not against a fixed bar — meaningful comparison happens only against the fully reconstructed pipeline",
+      "home": "CLAUDE.md:689-691",
+      "nonspec_kind": "process",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "Whether the pipeline is still being rebuilt, and whether an increment moved the specific defects it was meant to move, are both judgments. The rule settles WHETHER a fixed bar is admissible at all during a rebuild; how a bar is set once one is set is D-574's, and that one has an order a mechanism could in principle check — measure the baseline, then fix the bar — which this rule does not."
+    },
+    {
+      "id": "D-604",
+      "title": "A defensible modal reading the major/minor ground truth cannot represent is a GROUND-TRUTH LIMITATION, not a defect to optimise away",
+      "home": "CLAUDE.md:704-717",
+      "nonspec_kind": "process",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "Whether an emitted mode is a DEFENSIBLE modal reading of the passage is the judgment the rule turns on, and no mechanism can make it. The adjacent mechanical act is a different rule's and is already built: D-210's shared reduction decides how a modal emission is SCORED, in one place. This rule decides what a REMAINING disagreement MEANS, which is principle #21 applied at the point of reading."
+    },
+    {
+      "id": "D-606",
+      "title": "The binding metric for the modulation detector is modulation CORRECTNESS — explicitly not the agreement percentage, which the change under test can game",
+      "home": "CLAUDE.md:718-727",
+      "nonspec_kind": "process",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "A mechanism cannot know that the change in front of it is a modulation detector, which is the antecedent the whole rule hangs on — and the rule's own reason is that the agreement percentage is GAMEABLE BY THE CHANGE UNDER TEST, so no property of the reported number distinguishes a compliant grading from a non-compliant one. The de-masking diagnostic it names is a measurement that must be BUILT and read, not a check that fires."
+    },
+    {
+      "id": "D-638",
+      "title": "The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change",
+      "home": "CLAUDE.md:797-799",
+      "nonspec_kind": "process",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "An ATTRIBUTION of cause plus a prohibition on the wrong remedy: the rotation churn belongs to the chord layer and is only surfaced by a key change, so no key-layer change is the fix. Deciding that a particular churn is symmetric-rotation churn rather than a functional regression is the same judgment D-191's guardrails already place on a reader — verified at the score, per case, defaulting to the barred class on any doubt — and no mechanism can make it. What IS mechanical is the consequence rather than the attribution: `tools/robust_stop_diff.py` enforces the class-(b) non-increase this rule explains."
+    },
+    {
+      "id": "D-639",
+      "title": "Phase 1's doc-sync half reaches a document's account of ITSELF only where that account changes how its analysis content is read — with three worked examples that are the test, and a fallback ruled with it",
+      "home": "CLAUDE.md:1242-1261",
+      "nonspec_kind": "project-convention",
+      "class": "KNOWLEDGE",
+      "mechanism_or_ground": "Whether a document's account of ITSELF changes how a reader reads its analysis content is a judgment about that document's content, and the ruling settles it by giving three worked examples rather than a predicate. A mechanical form would have to decide, for an arbitrary banner or note, whether a reader would conclude something false about the system — which is the point of the rule, not an incidental difficulty. What IS mechanical is already built and is not this rule: D-307's anchor convention removes the whole OUT class at its source, and `gen_true_half_reach.py` refuses to record a verdict that names no worked example, so a case the test did not decide cannot be argued into one silently — which is how the ruling's own FALLBACK is enforced."
     }
   ]
 }

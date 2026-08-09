@@ -1399,9 +1399,17 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   `Get-Content` / `Select-String` / `Get-ChildItem` aimed at a repository path (the OI-345
   family, CC, 2026-08-07) and a `python -c "open(...)"` in the Cowork sandbox (Cowork,
   2026-08-07/08, self-reported at the user's challenge after repeated use for row statuses,
-  guard summaries and artifact fields) are the same violation as `cat`. **No guard watches
-  either surface** — the shell-read guard is armed on specific tools and dialects, and its
-  silence on an unwatched surface is not compliance (#19). The sandbox instance carries the
+  guard summaries and artifact fields) are the same violation as `cat`. **THE GUARD WATCHES
+  BOTH SPELLINGS WHERE THE HOOK RUNS, AND THE COWORK SANDBOX IS NOT THAT PLACE (corrected
+  2026-08-09 on the user's ruling; the former wording, preserved under #12, was *"No guard
+  watches either surface"*).** The PowerShell reading family came inside the guard at the
+  2026-08-07/08 dialect widening, and interpreter code — `python -c`, `perl -e`, and a heredoc
+  body fed to one — at the 2026-08-08 guard-family act, to that act's own stated ceiling:
+  interpreter code whose path is COMPUTED carries no literal for the policy to see and is
+  admitted. **The correction is a NARROWING and not a discharge**, because the clause's point
+  is unchanged: the guard is armed as a hook in THIS project directory, it says nothing about
+  any other execution surface, and **its silence on an unwatched surface is not compliance
+  (#19)**. The sandbox instance carries the
   rule's own founding hazard undiminished: sandbox reads go through the same mount whose
   measured stale-content failure created this rule, so a sandbox read can be stale in exactly
   the way the rule exists to prevent. The Cowork instance's reads were re-verified through the

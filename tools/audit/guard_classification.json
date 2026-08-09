@@ -30,7 +30,7 @@
     "re_derives_a_live_invariant": 32,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 1,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 3
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_phase1g_triage.py",
@@ -45,8 +45,6 @@
     "tools/audit/decisions/gen_reads6_yield.py"
   ],
   "live_tools_that_fail_and_stay": [
-    "tools/audit/claude_md_rule_triage.py",
-    "tools/audit/decisions/gen_phase1p_delegation_bar.py",
     "tools/audit/decisions/gen_phase1w_legacy_verification.py"
   ],
   "rows": [
@@ -64,7 +62,7 @@
       "evidence": "claude_md_rule_triage.py:15-18",
       "why": "★ CLASSIFIED LIVE DESPITE FAILING, and the failure is the reason it is live: the population is DERIVED — \"every register entry whose home is `CLAUDE.md`\" — so it grows as rules are written, and the STOP fires on exactly that (three rules with no authored triage). The invariant it asserts is about the rule set TODAY: every rule carries a mechanisation triage. A tool whose population tracks the tree is not a dated reading of it. It stays, failing.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "FAIL"
+      "state_at_the_committed_tree": "PASS"
     },
     {
       "tool": "tools/audit/corpus_arm_stamp.py",
@@ -168,7 +166,7 @@
       "evidence": "gen_phase1p_delegation_bar.py:22-27, :39-49",
       "why": "★ THE CASE THAT REFUTES THE ASSUMPTION THIS TASK WAS GIVEN, and the clearest demonstration of why R4 required a per-tool check. `OPEN_ITEMS.md` OI-309 names it \"the clearest candidate\" for the historical reading, on its own docstring's words — \"THIS ARTIFACT IS A PRE-APPLY RECORD, AND IT STAYS ONE\". But the frozen half was ALREADY SOLVED, by reading each entry's `class_before_phase1q` rather than its current class; and the LIVE half is load-bearing — the FORMS table is imported by `gen_home_classification.py` to classify against the delegations that exist TODAY, and every anchor is LOCATED in its surface, with a moved, missing or ambiguous one stopping the tool. It asserts a live invariant, it PASSES at the committed tree, and it stays.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "FAIL"
+      "state_at_the_committed_tree": "PASS"
     },
     {
       "tool": "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
