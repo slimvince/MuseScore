@@ -639,6 +639,27 @@ V = {
                "behaviour is what the configuration says. Recorded against the row's SUBJECT, "
                "never its remedy; the remedy is a `src/` edit no wave under the phase-1 freeze may "
                "make."),
+    "OI-354": (GATES, "the clause that overrides the criterion - an establishment obligation (#19) "
+                      "always gates, whatever its subject, including one whose subject is this "
+                      "project's own tracking apparatus",
+               "The legacy-mark verification's authored verdict table no longer covers the derived "
+               "legacy-marked set, and OI-289's status of record is a completed VERIFICATION over "
+               "that set. So a verification recorded as established describes a population smaller "
+               "than the one it names. THE FIRST-CUT CLASSIFICATION IS RIGHT ABOUT THE SUBJECT and "
+               "is not disputed: the subject is the decisions register's own verification "
+               "apparatus, it bears on no analysis, no analysis input and no measurement tool any "
+               "measurement of the analysis depends on, and the documentation criterion alone would "
+               "put it outside the gate. WHAT DECIDES IT IS THE OTHER CLAUSE, stated once in "
+               "`CLAUDE.md`'s own non-gating declaration and not discretionary there: an "
+               "establishment obligation always gates, whatever its subject, and the declaration "
+               "names an obligation whose subject is the open-items register itself as covered. "
+               "This is one -- #19 exists because a thing merely unfalsified is not established, "
+               "and this claim was unfalsified only because the tool that would have falsified it "
+               "was stopping earlier on an unrelated drifted citation. Backgrounding it is how it "
+               "never happens, which the declaration gives as its own reason for the clause. "
+               "Recorded against the row's SUBJECT, never its remedy -- and the remedy is "
+               "deliberately open, since who may author the owed per-entry verdicts is exactly what "
+               "the row leaves to the user."),
 }
 
 # The dispatch's assumption A3, recorded so the difference is reported rather than reconciled.

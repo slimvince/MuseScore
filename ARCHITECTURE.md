@@ -2112,31 +2112,54 @@ periods/sentences, and prolongation are out of the validatable core (verifiabili
 
 **Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The "Full spec:" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.
 
-**★ KEY AREAS ARE GROUPED BY A SMOOTHING PASS OVER STABILIZED REGIONS, AND A REGION THAT DISAGREES
-WITHOUT CLEARING THE CONFIDENCE TEST KEEPS ITS OWN KEY WHILE BEING GROUPED INTO THE ENCLOSING AREA
-(re-homed into this specification 2026-08-08 on the user's ruling — the owning layer in the target
-architecture, with §11.5 pointing).** Neighbouring regions in the same key are collected into one key
-area. A key area opens at the first region and closes when the next region's key differs from the
-current area's **and** that region clears a confidence test; a region whose key disagrees but does
-not clear the test **keeps its own key reading** — so the status bar stays accurate for that
-region — while being grouped into the enclosing area, so the annotation emitter writes Roman numerals
-against the key that actually governs the passage rather than against a momentary wobble. *Why:* it
-is a grouping rule and not a second key analysis — it reads the key fields the earlier layers already
-published rather than re-deciding them, which is the same not-a-new-detector reasoning this layer's
-contract states for grouping generally.
+**★ KEY AREAS ARE GROUPED BY A SMOOTHING PASS OVER REGIONS WHOSE KEY SEQUENCE HAS ALREADY BEEN
+SMOOTHED, AND A REGION THAT DISAGREES WITHOUT CLEARING THE CONFIDENCE TEST KEEPS ITS OWN KEY WHILE
+BEING GROUPED INTO THE ENCLOSING AREA (re-homed into this specification 2026-08-08 on the user's
+ruling — the owning layer in the target architecture, with §11.5 pointing; the PRECONDITION half of
+the wording corrected 2026-08-09 on the user's ruling, immediately below).** Neighbouring regions in
+the same key are collected into one key area. A key area opens at the first region and closes when
+the next region's key differs from the current area's **and** that region clears a confidence test; a
+region whose key disagrees but does not clear the test **keeps its own key reading** — so the status
+bar stays accurate for that region — while being grouped into the enclosing area, so the annotation
+emitter writes Roman numerals against the key that actually governs the passage rather than against a
+momentary wobble. *Why:* it is a grouping rule and not a second key analysis — it reads the key
+fields the earlier layers already published rather than re-deciding them, which is the same
+not-a-new-detector reasoning this layer's contract states for grouping generally.
 
-> **⚠ THE TWO ENDS OF THIS DECISION SIT ON DIFFERENT ARMS, AND THE SPLIT IS STATED RATHER THAN
-> SMOOTHED OVER (user-ruled 2026-08-08 after an arm check at the code; #12).** **The grouping rule
-> above is LIVE:** the pass that performs it is shared and is reached on the production record arm
-> (`sectionrecordadapter.cpp:360`), where the confidence test reads the stored per-region
-> exposure flag rather than re-thresholding a confidence field. **⚠ LEGACY — the stabilization pass
-> the decision names as the grouping's PRECONDITION is not:** the smoothing-and-stabilization step
-> the rule is specified to run *after* has a single call site, and that call site is inside the
-> legacy arm (`sectionanalyzer.cpp:750`). **Whether the record arm satisfies that precondition by
-> other means, or the live path runs the grouping on input this specification says must be
-> stabilized first, is an OPEN QUESTION** — it is not settled here, it bears on the analysis, and it
-> is tracked in the open-items register. Nothing in this paragraph changes what the analysis
-> computes.
+**★ WHAT SUPPLIES THE SMOOTHED KEY SEQUENCE, AND WHY THE PRECONDITION IS NOT ONE NAMED PASS
+(corrected 2026-08-09 on the user's ruling — Ruling 15 of
+`cowork_rulings_2026_08_09_second_stop.md` — after the read-only probe the open-items register had
+reserved to the user established the answer at the code).** The rule above requires that the
+per-region key sequence it groups over has already been smoothed; it does NOT require that the
+smoothing be any one implementation of it. **Two designs meet the requirement, one per arm.** On the
+**production record arm** the per-region key is copied verbatim from the joint decoder's committed
+segment summaries, and those come from backtracking the best full-coverage path of a **global dynamic
+program whose state carries the tonality**, with an explicit key-transition term written as
+**separate stay and change branches** — so a key change must pay for itself against the content
+evidence, and the smoothing is reached by optimization rather than by a later corrective pass. The
+derived per-region fields the grouping reads are supplied natively by the record rather than
+recomputed. On the **legacy arm** the same requirement is met by that arm's own
+smoothing-and-stabilization step, whose single call site is inside it. *Why the wording had to
+change:* the former text named the legacy step as THE precondition, so it described an arm that does
+not ship; the record arm meets the requirement by other means, and a specification that says
+otherwise cannot be the compliance standard (#10).
+
+> **⚠ THE TWO DESIGNS ARE NOT EQUIVALENT, AND THE DIFFERENCE IS STATED RATHER THAN WORDED AWAY
+> (recorded with the correction above; #12, #24).** They do not produce identical per-region key
+> sequences. The legacy step **ERASES** a one-region key island unconditionally — a region whose key
+> differs from the running stable key, and whose successor does not agree with it, is overwritten.
+> The decoder's key-transition term only makes such an island **EXPENSIVE**, so an island SURVIVES
+> where the content evidence outweighs two key changes. **This is a real behavioural difference
+> between the arms and it is UNMEASURED** — no corpus comparison of the two key sequences has been
+> taken, and none is implied by the correction above; nothing here claims either sequence is the
+> better one. What the difference does not do is leave the grouping un-preconditioned: a surviving
+> island that does not clear the confidence test is grouped into the enclosing area and keeps its own
+> key for display, which is this rule's stated intent. **The former wording, preserved (#12):** the
+> heading read *"OVER STABILIZED REGIONS"* and a paragraph here stated as an **OPEN QUESTION**
+> *"Whether the record arm satisfies that precondition by other means, or the live path runs the
+> grouping on input this specification says must be stabilized first"* — the probe answered it, with
+> the first of the two, and the citations are located rather than transcribed in the probe's own
+> artifact (**D-431**). Nothing in this paragraph changes what the analysis computes.
 
 #### Planned analysis consumers beyond the layer stack
 

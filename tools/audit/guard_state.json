@@ -162,7 +162,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 353 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 355 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -368,7 +368,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 32 gates of 61 candidates over 250 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 33 gates of 62 candidates over 252 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -606,7 +606,7 @@
       "exit_code": 2,
       "verdict": "FAIL",
       "stdout": [
-        "STOP: A1 (the marker is generated text): quote not at tools/audit/decisions/gen_decisions_register.py:455. It is now at line(s) [514] — re-aim the citation."
+        "STOP: derived entries with NO authored verdict (the tool will not guess one): D-536, D-537, D-538, D-564, D-568, D-571, D-572, D-575, D-579, D-580, D-583"
       ],
       "stderr": [],
       "what_it_checks": "the legacy-mark verification re-derives, and its declared premises still hold"
@@ -686,7 +686,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=353 detail=353 baseline=200 post-baseline=153",
+        "living mode: index=355 detail=355 baseline=200 post-baseline=155",
         "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],

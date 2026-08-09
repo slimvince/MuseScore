@@ -65,8 +65,15 @@ A1_GENERATOR_QUOTES = [
     # Re-aimed 2026-08-04 (phase 1z) from this generator's own STOP message (447 -> 455), per
     # citation: the phase-1z ratification event added lines to the register generator's PREAMBLE,
     # above these two and below the first two, which is why only these two move.
-    (455, "if d.get(\"legacy_subject\"):"),
-    (457, 'else LEGACY_MARK)'),
+    # Re-aimed AGAIN 2026-08-09 (455 -> 514, 457 -> 516) under Ruling 14 of
+    # `cowork_rulings_2026_08_09_second_stop.md`, from this tool's own STOP message, which named
+    # the line the first quote is at now. Same cause as the 2026-08-04 re-aim and the same
+    # signature: the two quotes above are unmoved, so what grew is the register generator's own
+    # preamble between them and `render_entry`, not the emission site. This is the
+    # authored-input maintenance class Ruling 4(b) of `cowork_rulings_2026_08_09_return.md`
+    # legitimised — a citation follows its quote; the premise itself is unchanged.
+    (514, "if d.get(\"legacy_subject\"):"),
+    (516, 'else LEGACY_MARK)'),
 ]
 
 # ── The recorded figures this wave reports as not matching the derived count ─────────────

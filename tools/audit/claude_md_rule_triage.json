@@ -264,7 +264,7 @@
     {
       "id": "D-191",
       "title": "The two-tier regression class policy - functional regression stops, rotation churn is tracked",
-      "home": "CLAUDE.md:776",
+      "home": "CLAUDE.md:805",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`tools/robust_stop_diff.py` — the class-(a)/(b) split, with the class-(a) INVESTIGATE flag at its declared threshold."
@@ -272,7 +272,7 @@
     {
       "id": "D-192",
       "title": "A scoring change and its documentation land in the same commit",
-      "home": "CLAUDE.md:969",
+      "home": "CLAUDE.md:998",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "A pre-commit check: a diff that touches a scoring term in `chordanalyzer.cpp` must also touch `docs/scoring_model.md`. The rule states the condition in exactly that form, and the staleness check it names — the template count in §2 against `kTemplateCount` — is arithmetic. Nothing implements either."
@@ -280,7 +280,7 @@
     {
       "id": "D-193",
       "title": "The writing standards live in one place, and predicates must be qualified",
-      "home": "CLAUDE.md:1167",
+      "home": "CLAUDE.md:1196",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Qualified predicates and defined terms are properties of prose."
@@ -288,7 +288,7 @@
     {
       "id": "D-194",
       "title": "No self-invented labels, abbreviations, numbering schemes or jargon",
-      "home": "CLAUDE.md:1163",
+      "home": "CLAUDE.md:1192",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "WEAK but real: a check for newly introduced identifiers of the shape a private numbering scheme takes, against the labels the repository already uses. It would flag candidates for a reader, not decide them."
@@ -296,7 +296,7 @@
     {
       "id": "D-195",
       "title": "Every design decision carries its defense at its home",
-      "home": "CLAUDE.md:1219",
+      "home": "CLAUDE.md:1248",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "The register's `rationale` field, and the generated count of decisions whose defense the record does not state — a gap that cannot be hidden because the figure is computed."
@@ -304,7 +304,7 @@
     {
       "id": "D-196",
       "title": "The self-check: re-read the diff against the principles before reporting",
-      "home": "CLAUDE.md:1431",
+      "home": "CLAUDE.md:1460",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "NEW at phase 1p, and only for the document half: `tools/audit/process_check.py` reports a missing self-check section (D-434). Whether the check was actually run over the diff is not mechanical."
@@ -312,7 +312,7 @@
     {
       "id": "D-197",
       "title": "The distribution constraint - the import-fix patch is fork-local and never goes upstream",
-      "home": "CLAUDE.md:1077",
+      "home": "CLAUDE.md:1106",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "BUILT at phase 1q: `tools/audit/local_patches_check.py` verifies each recorded patch is present at HEAD, deriving its patch list from `CLAUDE.md`'s own section so a newly recorded patch is covered without a code change, and STOPPING on a recorded patch it has no marker for. Established at `tools/audit/local_patches_establishment.json` by detecting deliberately unpatched content. PARTIAL for THIS entry: D-197 is the FORK-LOCAL distribution constraint on D-199's patch, not a patch of its own, and no check enforces a distribution constraint — a push is the act it forbids."
@@ -320,7 +320,7 @@
     {
       "id": "D-198",
       "title": "The Windows snap fix in the muse submodule is intentional and must not be reverted",
-      "home": "CLAUDE.md:1029",
+      "home": "CLAUDE.md:1058",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "See D-197 — the same check covers the recorded patches. CLAUDE.md's section carries THREE patch subsections; the four entries here include D-197, which is a disposition rather than a patch."
@@ -328,7 +328,7 @@
     {
       "id": "D-199",
       "title": "The MusicXML declared-mode import fix is intentional and must not be reverted",
-      "home": "CLAUDE.md:1050",
+      "home": "CLAUDE.md:1079",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "See D-197 — the same check covers the recorded patches."
@@ -336,7 +336,7 @@
     {
       "id": "D-200",
       "title": "Make it work first; compromise on performance only if performance proves a problem",
-      "home": "CLAUDE.md:1333-1335",
+      "home": "CLAUDE.md:1362-1364",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "A sequencing rule about when a trade-off may be considered."
@@ -344,7 +344,7 @@
     {
       "id": "D-203",
       "title": "Candidate admission is completion, not refinement - so #8 permits fixing it now",
-      "home": "CLAUDE.md:1343-1345",
+      "home": "CLAUDE.md:1372-1374",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "A ruling about what another rule permits."
@@ -352,7 +352,7 @@
     {
       "id": "D-204",
       "title": "One fix is designed once over the whole enumerated family, never per symptom",
-      "home": "CLAUDE.md:1354-1356",
+      "home": "CLAUDE.md:1383-1385",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether two faults share a cause is the diagnosis itself."
@@ -400,7 +400,7 @@
     {
       "id": "D-249",
       "title": "The whole decision surface is delivered as user-visible text before any choice question",
-      "home": "CLAUDE.md:1363-1375",
+      "home": "CLAUDE.md:1392-1404",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether the user has actually seen a surface is not a property of any file."
@@ -408,7 +408,7 @@
     {
       "id": "D-253",
       "title": "Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash",
-      "home": "CLAUDE.md:1377-1395",
+      "home": "CLAUDE.md:1406-1424",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "NEW at phase 1p; BUILT and ESTABLISHED then, ARMED by the user at phase 1r, WIDENED at phase 1s. It stays in the defect class on ONE ground, and the ground is stated so it is not read as a backlog item: `tools/audit/shell_read_guard.py` binds the EXECUTING side only — the hook matcher names that side's shell tools and the writing side's carries a different name — so the rule is enforced on one side and must not be described as enforced. Two coverage limits closed 2026-08-03 (phase 1s, user ruling Y1): `git status` is now DENIED, which became affordable only once `tools/audit/changed_paths.py` gave a sanctioned way to enumerate changed paths; and the measured FALSE DENY on a quoted grep pattern is fixed and re-established. `git log` and `git rev-parse HEAD` remain deliberately unenforced — nothing replaces them, so denying them would fire on legitimate work. `tools/audit/guard_armed_check.py` puts the arming requirement in the record while `.claude/settings.json` stays out of it, which answers the OI-285 objection that kept it unarmed."
@@ -416,7 +416,7 @@
     {
       "id": "D-254",
       "title": "Investigate by default; never ask the user whether to investigate or proceed",
-      "home": "CLAUDE.md:1420-1427",
+      "home": "CLAUDE.md:1449-1456",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Recognising that a step could be measured first is the judgment."
@@ -440,7 +440,7 @@
     {
       "id": "D-315",
       "title": "A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork",
-      "home": "CLAUDE.md:1091-1093",
+      "home": "CLAUDE.md:1120-1122",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "See D-197 — `tools/audit/local_patches_check.py` covers the recorded patches, deriving its list from CLAUDE.md's own local-patches section, so this patch was covered by the same check the moment its subsection was written. PARTIAL in the same way D-197 is: the check verifies the patch is PRESENT at HEAD, which is the silent failure a dependency update produces; it does not enforce the distribution disposition beside it (D-316), because a push is the act that would breach one."
@@ -488,7 +488,7 @@
     {
       "id": "D-437",
       "title": "Phase 3 waits on the phase-2 items that could find another member of the family being designed for, not on all of phase 2",
-      "home": "CLAUDE.md:1280-1298",
+      "home": "CLAUDE.md:1309-1327",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "PARTIAL, and the mechanical half is the one that could rot silently. `tools/audit/gen_phase3_gate_partition.py --check` re-derives the registered partition: every per-item verdict carries its reason, every source quote is LOCATED in the file it cites, and the STOP the ruling attaches — a NON-GATING item that yields a family member falsifies the partition — is recorded with it. So the prediction cannot be quietly re-authored after the items run, which is what makes it falsifiable. What is NOT mechanical: whether a family design actually waited for the gating searches, and whether a given item's search space could contain a fact about what the model reads — the second is the judgment the ruling is."
@@ -504,7 +504,7 @@
     {
       "id": "D-439",
       "title": "The perspective inventory's §4 is the one home for the enumerated discovery channels, and CLAUDE.md's phase-2 clause points at it instead of listing its own subjects",
-      "home": "CLAUDE.md:1302-1314",
+      "home": "CLAUDE.md:1331-1343",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "It settles WHERE an enumeration lives and WHICH of its members a pointing clause reaches. Nothing mechanical separates a clause that POINTS at a section from one that RESTATES it — that distinction is #6 applied by a reader — and the four per-channel scope verdicts each rest on a reading of the channel's own text. A checker could at best assert that the clause names no subjects of its own, which would fire on any legitimate rewording."
@@ -576,7 +576,7 @@
     {
       "id": "D-564",
       "title": "Correction of record: the 'function-only' share of the legacy residual was overstated, because over-grabbed segmentation corrupts the BASS and not only the pitch-class window",
-      "home": "CLAUDE.md:910-912",
+      "home": "CLAUDE.md:939-941",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "A CORRECTION OF RECORD to a recorded apportionment: it says that a published share is overstated because over-grabbed segmentation corrupts the bass and not only the pitch-class window. What it governs is how a reader interprets an existing caveat; there is no state a checker could compare it against, and the apportionment it corrects is prose in a gate block rather than a computed field."
@@ -632,7 +632,7 @@
     {
       "id": "D-638",
       "title": "The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change",
-      "home": "CLAUDE.md:797-799",
+      "home": "CLAUDE.md:826-828",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "An ATTRIBUTION of cause plus a prohibition on the wrong remedy: the rotation churn belongs to the chord layer and is only surfaced by a key change, so no key-layer change is the fix. Deciding that a particular churn is symmetric-rotation churn rather than a functional regression is the same judgment D-191's guardrails already place on a reader — verified at the score, per case, defaulting to the barred class on any doubt — and no mechanism can make it. What IS mechanical is the consequence rather than the attribution: `tools/robust_stop_diff.py` enforces the class-(b) non-increase this rule explains."
@@ -640,7 +640,7 @@
     {
       "id": "D-639",
       "title": "Phase 1's doc-sync half reaches a document's account of ITSELF only where that account changes how its analysis content is read — with three worked examples that are the test, and a fallback ruled with it",
-      "home": "CLAUDE.md:1242-1261",
+      "home": "CLAUDE.md:1271-1290",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether a document's account of ITSELF changes how a reader reads its analysis content is a judgment about that document's content, and the ruling settles it by giving three worked examples rather than a predicate. A mechanical form would have to decide, for an arbitrary banner or note, whether a reader would conclude something false about the system — which is the point of the rule, not an incidental difficulty. What IS mechanical is already built and is not this rule: D-307's anchor convention removes the whole OUT class at its source, and `gen_true_half_reach.py` refuses to record a verdict that names no worked example, so a case the test did not decide cannot be argued into one silently — which is how the ruling's own FALLBACK is enforced."

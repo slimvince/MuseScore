@@ -17,7 +17,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4011-4012`
+**Home.** `ARCHITECTURE.md:4034-4035`
 
 **Provenance.** ARCHITECTURE.md:3253-3257; consistent with D-016
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3712-3713`
+**Home.** `ARCHITECTURE.md:3735-3736`
 
 **Provenance.** ARCHITECTURE.md:2918-2958
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4677-4678`
+**Home.** `ARCHITECTURE.md:4700-4701`
 
 **Provenance.** ARCHITECTURE.md:3850-3858; an instance of D-074
 
@@ -65,7 +65,7 @@
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4362-4364`
+**Home.** `ARCHITECTURE.md:4385-4387`
 
 **Provenance.** The record arm replaces the 0.5/0.8 literals with the fitted nats constants (ARCHITECTURE.md:175-177); the literals are legacy-arm-only (sectionanalyzer.cpp::legacyKeyExposureBucket)
 
@@ -80,7 +80,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4382-4383`
+**Home.** `ARCHITECTURE.md:4405-4406`
 
 **Provenance.** ARCHITECTURE.md:3549-3601
 
@@ -95,7 +95,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4693-4694`
+**Home.** `ARCHITECTURE.md:4716-4717`
 
 **Provenance.** open_items/OI-112 already records this preset-gating as stale; open_items/OI-201 records that the record arm collapses the family to a plain major triad symbol ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): §5.11's assertion 'Gated to Standard and Baroque presets only' was corrected, since the formatter explicitly defers that gate for want of preset context (`chordsymbolformatter.cpp:882-883`) and emits the labels under every preset (OPEN_ITEMS OI-112(c) discharged). The decision's own words survive at the home, quoted inside the correction.
 
@@ -135,7 +135,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:7290-7292`
+**Home.** `ARCHITECTURE.md:7313-7315`
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the standing-records block) as item E-14 of `cowork_product_tool_register.md`, with a note that a pointer into the architecture document was owed at its next edit. This pass found no such pointer in the register's own home census, so the owed act appears undischarged. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written at the head of `ARCHITECTURE.md` §12 as the governing requirement over the user interface. This also discharges the pointer-into-the-architecture-document act the archive recorded as owed at its next edit. Former home preserved (#12): `cowork_handoff_archive.md:2507`, the standing-records block, as item E-14 of `cowork_product_tool_register.md`.
 
@@ -184,7 +184,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:7184-7199`
+**Home.** `ARCHITECTURE.md:7207-7222`
 
 **Provenance.** Stated as the divergence-C decision rule of the unification design; the document's own header records divergence C as PARKED, so the rule stands undischarged. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The recorded owner question was that what is recorded is a measurement protocol rather than a rule. The user ruled that a GATE'S PRE-DECLARED KEEP-OR-DROP PROTOCOL is exactly what principle #22 gives a kind to — a hard gate carries a pre-declared protocol for the change it will face — so the protocol belongs at the section that owns the gate. Written into §11.5 in that section's own voice, with both branches of the pre-declared verdict, its defense, and the statement that the observation run has not been made so neither branch has fired. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `docs/unified_analysis_pipeline.md:225-233`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 215, "section": "### Divergence C (duration gate)", "label": "“Divergence C”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "Decision rule:
 

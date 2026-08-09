@@ -725,6 +725,35 @@ figures contain is READ; neither moves a value in them.
   agreement percentage a behaviour change can move without analysing anything better is not a
   measurement of that change. The honesty measurement named with it is the de-masking diagnostic,
   which exposes a committed home-key label being credited against a ground-truth local key.
+  **★ READ IT BESIDE THE CREDITING-RULE PROHIBITION IMMEDIATELY BELOW, WHICH IS A DIFFERENT
+  BINDING STATEMENT OF THE SAME DATE.** This convention fixes WHICH BAR a modulation-detecting
+  change is graded against; the one below forbids AMENDING the comparison itself. A session can
+  obey either while breaching the other, which is why they are two entries and not one.
+
+**★ THE CREDITING RULE IS NOT AMENDED TO COUNT A TONICIZATION LABEL AS AGREEING WITH THE
+ANNOTATOR'S MODULATED NUMERAL; ONLY A DIAGNOSTIC PARTIAL-SUB-SPLIT IS DEFENSIBLE** (2026-06-14; the
+record states no ratifier for the decision itself. Homed here 2026-08-09 on the user's ruling —
+Ruling 11 of `cowork_rulings_2026_08_09_second_stop.md` — as the MEASUREMENT half of register entry
+**D-291**, whose BUILD half belongs to the Layer-5 function specification and is not restated here,
+#6). Where our analysis labels an applied chord relative to the home key and the human annotator
+has changed key, the comparison is **not** to be changed so that the label counts as agreement. The
+prohibition survives in the words it was recorded in: *"Crediting rule NOT warranted (harmful —
+masks the 95% real error); only a DIAGNOSTIC partial-sub-split (expose the masking) is
+defensible."* *(The percentage inside that sentence is the source's own wording, quoted rather than
+reported: every value of that measurement lives in `cc_tonicization_modulation_metric_dossier.md`
+and none is restated here, #17f, **D-431**.)* *Why:* measured before it was decided — the
+comparison already credits such a label by root and quality, so it does not over-penalise, it
+**MASKS**; and the affected cases are overwhelmingly cadence-confirmed local keys of substantial
+length, so the annotator's modulation is the correct reading for nearly all of them. Amending the
+crediting rule would therefore raise the reported Roman-numeral agreement while the underlying key
+reading stayed wrong — and, unlike a bar set for one change, it would corrupt the Roman-numeral
+column for **every** measurement this block publishes. **★ READ IT BESIDE THE
+MODULATION-CORRECTNESS CONVENTION IMMEDIATELY ABOVE** — same date, same source dossier, same masking
+argument, and both name the de-masking diagnostic as the honesty measurement. They are nonetheless
+**two decisions**, established by a verbatim comparison of the two texts on 2026-08-09: this one
+governs the comparison itself and binds on every measurement; that one governs the bar a
+modulation-detecting change is judged at. Collapsing them would lose this, the more specific and
+more easily violated prohibition (#12).
 
 **★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The
 **primary reported metric AND the Stage-5 fitting-objective basis** is the robust unit above: root

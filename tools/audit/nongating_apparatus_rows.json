@@ -13,9 +13,9 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 352,
-  "open_rows": 250,
-  "first_cut_candidates": 61,
+  "rows_parsed": 354,
+  "open_rows": 252,
+  "first_cut_candidates": 62,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -38,7 +38,7 @@
  },
  "totals": {
   "non_gating": 29,
-  "gates": 32,
+  "gates": 33,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -144,6 +144,9 @@
    "the analysis's inputs": [
     "OI-239",
     "OI-57"
+   ],
+   "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject, including one whose subject is this project's own tracking apparatus": [
+    "OI-354"
    ],
    "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side": [
     "OI-353"
@@ -636,6 +639,14 @@
    "verdict": "GATES",
    "reason": "Six comments in `src/` describe the production notation record path as DEFAULT OFF while the configuration sets its default to true and says so in the comment beside the call. WHAT IS OWED decides it, and what is owed is not a pointer, an anchor, a label, a banner, a filing decision or a section boundary: it is the CORRECTION OF A STATEMENT ABOUT WHICH ANALYSIS ARM RUNS, and D-438's own line names a correction to a statement about the analysis or its build state on the gating side in those words. Which arm ships is the strongest form that statement has -- these are the comments a session reads when the never-work-from-memory rule sends it to the code for exactly that question, and they answer it wrongly in six places. It is the same class as OI-304, whose verdict is GATES on the same clause, and the same class as the resolved OI-232 one surface over -- that row found the identical staleness in ARCHITECTURE.md and closed on the document half only, leaving the code half nobody had looked at. NOT an establishment obligation (#19): no rate, instrument or measurement is affected, and no comment is executable -- the behaviour is what the configuration says. Recorded against the row's SUBJECT, never its remedy; the remedy is a `src/` edit no wave under the phase-1 freeze may make.",
    "gate_ground": "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side"
+  },
+  {
+   "id": "OI-354",
+   "title": "★ **The legacy-mark verification's population has GROWN since it was declared verified, and a drifted citation hid that** — register entries now carry the legacy mark for which [[OI-289]]'s ✅ VERIFIED artifact holds no verdict",
+   "subject_column": "E — verification owed / decisions register",
+   "verdict": "GATES",
+   "reason": "The legacy-mark verification's authored verdict table no longer covers the derived legacy-marked set, and OI-289's status of record is a completed VERIFICATION over that set. So a verification recorded as established describes a population smaller than the one it names. THE FIRST-CUT CLASSIFICATION IS RIGHT ABOUT THE SUBJECT and is not disputed: the subject is the decisions register's own verification apparatus, it bears on no analysis, no analysis input and no measurement tool any measurement of the analysis depends on, and the documentation criterion alone would put it outside the gate. WHAT DECIDES IT IS THE OTHER CLAUSE, stated once in `CLAUDE.md`'s own non-gating declaration and not discretionary there: an establishment obligation always gates, whatever its subject, and the declaration names an obligation whose subject is the open-items register itself as covered. This is one -- #19 exists because a thing merely unfalsified is not established, and this claim was unfalsified only because the tool that would have falsified it was stopping earlier on an unrelated drifted citation. Backgrounding it is how it never happens, which the declaration gives as its own reason for the clause. Recorded against the row's SUBJECT, never its remedy -- and the remedy is deliberately open, since who may author the owed per-entry verdicts is exactly what the row leaves to the user.",
+   "gate_ground": "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject, including one whose subject is this project's own tracking apparatus"
   },
   {
    "id": "OI-150",

@@ -485,7 +485,99 @@ HELD** because Ruling 4 names ONE generator and this is a different one, and the
 list ends *"Anything else: hold."* Stated here so it is one edit for whoever is authorized, and so
 that a standing failure with a known one-line cause is not carried forward as though undiagnosed.
 
+---
+
+# ═══ THE SECOND RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_2.md`, 2026-08-09) ═══
+
+> Rulings 11–16 of `cowork_rulings_2026_08_09_second_stop.md` are applied here, and the remaining
+> program continues. The sections above are earlier batches' and are not rewritten. New holds are
+> appended to §1, new surfacings to §2, and each task's log to §3, in the same shapes.
+
+### 1.8 Ruling 13 names ONE stale docstring paragraph; the same stale sentence stood TWICE in that file, and both were corrected (Task 0)
+
+**What the ruling licensed.** Ruling 13's heading names its subject — *"the classifier's stale
+self-account"* — and its body names the acts: strike the dead `FROZEN` constant, and *"replace the
+stale filing-decision docstring paragraph"* with the D-644 shape already written at the register
+data. §1.5 of this file quotes the paragraph it means, and that quotation identifies the MODULE
+docstring.
+
+**What was found on opening the file.** The same stale sentence stands a second time, in the
+docstring of the function that performs the freeze check, in slightly different words — *"a FILING
+DECISION about an artifact already committed, and it is left to the user rather than taken here
+(surfaced in `cowork_away_returns.md`)"*. It was made stale by the same act, on the same day, in the
+same file.
+
+**What was done, and it is a widening of the licence's letter.** Both were corrected. The module
+paragraph was replaced with the D-644 shape, transcribed from
+`section_home_criterion.scope_of_application` and not re-judged. The function docstring's ★ block is
+a MEASUREMENT record whose substance stays true and is why the check aims at the snapshot, so it was
+not rewritten: its tense was corrected and its closing sentence now records that the filing decision
+has been taken, pointing at the module docstring for the current arrangement.
+
+**Why it is reported here rather than done silently.** The narrow reading of Ruling 13 is *one
+paragraph*; the reading applied is its heading's subject, *the classifier's stale self-account*.
+Leaving the second instance would have shipped a statement that is false at HEAD, in the very file
+being edited because its self-account was false, which #10 does not admit. **If the narrower scope
+was meant, reverting the second correction is one edit** — it is the closing sentence of
+`frozen_record_intact`'s docstring and nothing else.
+
+### 1.9 OI-354's owed verdicts need an act no current licence covers, and whose act it is has to be settled (Task 0)
+
+Ruling 14's licensed re-aim was performed and its predicted consequence was **refuted** — see §2.6.
+What now blocks the legacy-mark verification is that its authored verdict table does not cover the
+marked set as it stands at HEAD.
+
+**What is owed per newly marked entry** is a reachability verdict at the code plus a
+citation scan for transfer — the two axes the phase-1w pass used. **That is an establishment act
+about the live system**, not the authored-input maintenance Ruling 4(b) legitimised, and not
+anything Ruling 14 licensed. A session authoring them under a licence to re-aim an anchor would be
+widening its own authority, and the verdicts would be written to clear a guard, which is the
+weakest kind there is.
+
+**So it is rowed and left**, at [[OI-354]], with the act named. What needs settling is whether a
+later session is licensed to perform that establishment, or whether it waits — and, because the row
+is an establishment obligation, it GATES either way.
+
 ## 2 (continued). Surfaced findings
+
+### 2.6 Ruling 14's predicted consequence is NOT met: the guard set does not empty, and what was hiding behind the drifted citation is a verification whose population has grown (Task 0)
+
+**Ruling 14 stated its expected consequence and asked for it by derivation:** *"the standing guard
+failing set empties."* The licensed re-aim was performed — the citation now resolves, and the
+comment records both re-aims and the cause they share. **The set does not empty.**
+
+**What was behind it.** `gen_phase1w_legacy_verification.py` checks its declared assumption A1
+before the derivation rests on it, and raises on the first failure. Since the citation drifted,
+every run stopped there — the committed `tools/audit/guard_state.json` at the batch's start records
+that stop as this tool's ENTIRE captured output. With A1 resolving, the next check runs: that the
+tool's authored verdict table covers the derived legacy-marked set exactly. It does not, and the
+tool names the entries it holds no verdict for. Checked rather than assumed: the committed
+verification artifact does not mention them.
+
+**Why it is surfaced and not merely logged.** [[OI-289]]'s status of record is ✅ VERIFIED, and what
+it verified is a POPULATION. That population has grown, so the ✅ is true of what it covered and of
+no larger set — and the tool that exists to notice exactly this was mute for an unrelated reason.
+That is the shape #19 is written against: trusted because unfalsified, where the falsifier was not
+running. **OI-289's row now says so and the ✅ is NOT withdrawn.** Rowed at [[OI-354]]; every
+identity is in the guard state's captured output and none is restated here (**D-431**).
+
+### 2.7 The shell-read guard denies every `sed` and `awk`, wherever they are aimed — a reproducible false denial in the guard whose false-deny rate is published (Task 0)
+
+A read of a scratchpad file **outside the repository** was denied, the reason naming `sed`'s own
+range script as a repository path. **Reproduced once deliberately, on a different script and file,
+before being claimed.**
+
+**The cause, read at the tool.** Path candidates are every non-option token; only the four
+pattern-taking utilities drop the first one. `sed` and `awk` take a script in that position and
+carry no such correction, so a bare script resolves against the working directory — the repository
+root — and denies the command before its real target is considered.
+
+**It never ADMITS a forbidden read**; the whole failure is on the deny side. It is surfaced under
+#19 because the guard's published false-deny rate is an established value measured over a corpus
+that does not contain this shape. **Nothing was changed** — the decision function is a mechanism
+change D-436 reserves to the user, and the guard family's own ruling fixes the order (corpus row
+first, clause second). Rowed at [[OI-355]]. Nothing was worked around: the refused reads were done
+with the file tools.
 
 ### 2.4 The production notation arm satisfies D-472's stabilization precondition by other means — and the specification says otherwise (Task 1)
 
@@ -692,6 +784,111 @@ batch.**
 **Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
 movement, no behaviour change to the analysis, no fix to inference, no design. **No value is
 restated here (D-431).**
+
+## 3 (continued). Per-task log — the second return continuation
+
+### Task 0 — COMPLETE. Rulings 11, 13, 14 and 15 applied; OI-349 flips; two findings rowed, and one ruling's own prediction is refuted
+
+**Every assumption was checked before the act it licenses, and one was refuted.**
+
+- **A1 HOLDS.** Gate block (A) was read before Ruling 11's entry was written: it states its grading
+  and measurement conventions as binding rules, which is the register's rule (h) kind half. The
+  measurement half's prohibition was taken VERBATIM from D-291's own record and located at its
+  source in `cowork_handoff_archive.md` rather than transcribed from the register's summary of it.
+- **A2 HOLDS.** The D-644 shape was read at
+  `section_home_criterion.scope_of_application` before the docstring was touched, and transcribed
+  rather than re-judged.
+- **A3 HOLDS IN ITS FIRST HALF AND IS REFUTED IN ITS SECOND.** The tool's own output named the line;
+  the citation was re-aimed per its own numbers. **The failing set did NOT then empty** — §2.6.
+- **A4 HOLDS.** The Layer-6 section's D-472 text was read whole before the correction.
+- **A7 HOLDS.** Every population was derived at task start: the guard failing set from the committed
+  `guard_state.json`, the moved line from the tool's own run, the probe's finding from its own
+  artifact.
+
+**What was done, in order.**
+
+1. **Ruling 14 — the legacy-mark citation re-aimed**, from the tool's own STOP message, with the
+   comment recording both re-aims and the cause they share: the register generator's preamble grew
+   above the emission site, which is why two of its four quotes move and two do not.
+2. **Ruling 13 — the classifier's stale self-account corrected.** The dead constant is struck, with
+   the comment above it corrected too: it claimed both files were read and that a difference between
+   them stopped the run, and neither half was true. The module docstring's filing paragraph is
+   replaced with the D-644 shape. A second instance of the same stale sentence was found and
+   corrected — §1.8, where the widening is reported rather than done silently. **No behaviour
+   moves**, established by the run: the check is green.
+3. **Ruling 15 — D-472's wording corrected at the Layer-6 section that owns it.** The precondition
+   half no longer names one implementation: it requires that the key sequence the grouping runs over
+   HAS ALREADY BEEN SMOOTHED, and states the two designs that meet it, one per arm. **The
+   non-equivalence is carried visibly and stated as UNMEASURED** (#24) — island erased versus island
+   made expensive, with no corpus comparison taken and neither sequence claimed better. The former
+   heading wording and the former OPEN QUESTION are preserved in place (#12), and the register's
+   `verbatim`, `title` and recorded defense are re-taken from the corrected home, the former defense
+   preserved in the corrected one.
+4. **[[OI-349]] FLIPPED RESOLVED with provenance**, index row and dated detail note. Both halves of
+   what it owed are discharged — the probe was the establishment, the correction was the act the
+   probe made owed.
+5. **Ruling 11 — D-291's measurement half homed SIDE BY SIDE** in gate block (A), beside the
+   modulation-correctness convention and not inside it, **each cross-referencing the other**, with
+   the specific prohibition carried in the words it was recorded in and no already-ruled text
+   reworded (#14). The excluded alternative is recorded at the entry. **One thing is deliberately
+   not decided:** whether the measurement half now warrants its own register identifier is a
+   question about register CONTENT, so it goes to Task 1's queue rather than being taken here.
+
+**Two findings rowed, each with its detail file in this commit (rule (c)): [[OI-354]]** (the
+verification whose population grew, §2.6) and **[[OI-355]]** (the guard's `sed`/`awk` false denial,
+§2.7). Both GATE, and both by the same clause — an establishment obligation always gates.
+
+**★ ONE FIGURE IS CARRIED INTO `CLAUDE.md` INSIDE A QUOTATION, AND IT IS FLAGGED RATHER THAN
+SLIPPED IN.** Ruling 11 requires the specific prohibition to survive verbatim, and that sentence
+contains a percentage. It is quoted as the source's own wording, the home says so in terms, and it
+points at the dossier that holds every value of that measurement (#17f, **D-431**). The alternative
+— paraphrasing the percentage out — would have broken the verbatim the ruling asked for.
+
+**Guards.** The full set was re-run at the boundary and the classification after it, which is the
+order its own STOP requires. **Cleared by this task:** the `CLAUDE.md` rule triage and the
+delegation bar, both stale by line drift from this task's own insertions; the phase-3 gate
+partition and ruling R1's superseded reach, the same cause; the home classification and the
+decisions register, regenerated to a fixed point. **Still failing: one** — the legacy-mark
+verification, **with a different cause than at the batch's start**, which is the finding at §2.6 and
+not a carried-forward failure. Every verdict is at `tools/audit/guard_state.json` → `summary` and
+none is restated here (**D-431**).
+
+**A regeneration order is worth recording for the next session**, because it cost a cycle: the
+register renderer reads the cluster dispositions, so regenerating the register BEFORE the
+dispositions leaves it stale. The order that reaches a fixed point in one pass is classifier →
+anchors → dispositions → register → the derived views.
+
+**One authored input was maintained**, the fifth instance of that shape across this batch and the
+two before it. Creating [[OI-354]] made it a first-cut candidate of the non-gating declaration with
+no authored verdict, which is that tool's own STOP working. A **GATES** verdict was authored with
+its ground, and the ground is not the criterion but the clause that overrides it: the first-cut
+classification is RIGHT about the subject — this is the register's own verification apparatus — and
+`CLAUDE.md`'s declaration states that an establishment obligation always gates whatever its subject,
+naming an obligation about the open-items register itself as covered. **No non-gating verdict was
+hand-added**, which is the act the record forbids; authoring a GATES verdict for a row the cut DID
+reach is what the tool requires. [[OI-355]] is not a first-cut candidate and needed none.
+
+**★ ONE INSTRUCTION COULD NOT BE PERFORMED, AND IT IS NAMED RATHER THAN QUIETLY DROPPED.** The
+dispatch's edit-authority list says the first commit stages the ruling record **and this dispatch**.
+The ruling record is staged. **The dispatch file is not: `cc_instruction_*.md` is matched by this
+repository's `.gitignore`**, and forcing it in would override a standing repository configuration
+decision, which is not a session's to take. Checked rather than assumed, and checked as git objects
+by explicit hash: **neither of the two preceding dispatches is tracked at HEAD either**, so this is
+the class's standing state and not something this batch changed. If the dispatches are meant to be
+committed, that is one `.gitignore` decision for the user.
+
+**The standing self-check (D-434) over this task's own diff caught one class in its own new text
+and it was corrected before the commit:** the bare non-musical *figure* — the reserved-word
+collision the conventions enumerate — in the new `CLAUDE.md` block, in two register fields, in two
+rows and in this file. It is now *value* in each. Worth the user's attention only because it is the
+third consecutive wave whose self-check has caught a reserved-word collision in its OWN new prose.
+
+**Holds:** §1.8 (Ruling 13's second paragraph, reported for narrowing) and §1.9 (OI-354's owed
+verdicts, whose act needs settling). **Surfacings:** §2.6 and §2.7.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
+movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's
+completion statement is not written, not drafted and not partially written here.**
 
 ---
 

@@ -380,7 +380,7 @@
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:1090",
         "ARCHITECTURE.md:1122",
-        "ARCHITECTURE.md:2154"
+        "ARCHITECTURE.md:2177"
       ]
     },
     {
@@ -468,9 +468,9 @@
       "current_contract_home": 0,
       "current_gap": 9,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:5502",
+      "delegation_citation": "ARCHITECTURE.md:5525",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:5502",
+      "delegation_citation_now": "ARCHITECTURE.md:5525",
       "delegation_line_now": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -481,12 +481,12 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:511",
-        "ARCHITECTURE.md:5281",
-        "ARCHITECTURE.md:5283",
-        "ARCHITECTURE.md:5289",
-        "ARCHITECTURE.md:5313",
-        "ARCHITECTURE.md:5323",
-        "ARCHITECTURE.md:5503"
+        "ARCHITECTURE.md:5304",
+        "ARCHITECTURE.md:5306",
+        "ARCHITECTURE.md:5312",
+        "ARCHITECTURE.md:5336",
+        "ARCHITECTURE.md:5346",
+        "ARCHITECTURE.md:5526"
       ]
     },
     {
@@ -584,7 +584,7 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:512",
-        "ARCHITECTURE.md:2146"
+        "ARCHITECTURE.md:2169"
       ]
     },
     {
@@ -664,9 +664,9 @@
       "current_contract_home": 0,
       "current_gap": 7,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:7911",
+      "delegation_citation": "ARCHITECTURE.md:7934",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:7911",
+      "delegation_citation_now": "ARCHITECTURE.md:7934",
       "delegation_line_now": "> for this section's scope is `docs/llm_integration.md`, which this section points at and does not",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -676,11 +676,11 @@
       "movement": "WOULD MOVE IN",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:3103",
-        "ARCHITECTURE.md:7905",
-        "ARCHITECTURE.md:7911",
-        "ARCHITECTURE.md:7981",
-        "ARCHITECTURE.md:7992"
+        "ARCHITECTURE.md:3126",
+        "ARCHITECTURE.md:7928",
+        "ARCHITECTURE.md:7934",
+        "ARCHITECTURE.md:8004",
+        "ARCHITECTURE.md:8015"
       ]
     },
     {
@@ -917,9 +917,9 @@
       "current_contract_home": 4,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "CLAUDE.md:960",
+      "delegation_citation": "CLAUDE.md:989",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "CLAUDE.md:960",
+      "delegation_citation_now": "CLAUDE.md:989",
       "delegation_line_now": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -929,13 +929,13 @@
       "movement": "none",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:2794",
-        "CLAUDE.md:956",
-        "CLAUDE.md:958",
-        "CLAUDE.md:960",
-        "CLAUDE.md:971",
-        "CLAUDE.md:979",
-        "CLAUDE.md:998"
+        "ARCHITECTURE.md:2817",
+        "CLAUDE.md:985",
+        "CLAUDE.md:987",
+        "CLAUDE.md:989",
+        "CLAUDE.md:1000",
+        "CLAUDE.md:1008",
+        "CLAUDE.md:1027"
       ]
     },
     {
@@ -1029,9 +1029,9 @@
       "current_contract_home": 0,
       "current_gap": 3,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "ARCHITECTURE.md:6869",
+      "delegation_citation": "ARCHITECTURE.md:6892",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "ARCHITECTURE.md:6869",
+      "delegation_citation_now": "ARCHITECTURE.md:6892",
       "delegation_line_now": "`cowork_notation_adoption_increment.md`, which this section points at and does not restate.** *That",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -1041,8 +1041,8 @@
       "movement": "WOULD MOVE IN",
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
-        "ARCHITECTURE.md:5597",
-        "ARCHITECTURE.md:6869",
+        "ARCHITECTURE.md:5620",
+        "ARCHITECTURE.md:6892",
         "CLAUDE.md:209"
       ]
     },

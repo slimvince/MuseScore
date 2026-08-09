@@ -68,18 +68,24 @@ the artifact.  Two things follow and both are mechanical rather than asserted:
     phase-1q record no longer hashes to the value its establishment record froze — so *never
     regenerated over* is enforced by the run rather than promised by a docstring (#19).
 
-★ AND ONE FACT MEASURED AT THE FIRST RUN UNDER THE RULING, WHICH THE RULING'S PREMISE DID NOT
-CARRY (CC, 2026-08-08).  The file named for phase 1q is NOT the phase-1q record at HEAD.  The
-2026-08-04 establishment froze the two as byte-identical; at HEAD they are not, the snapshot is
-intact at its established hash, and what moved is the live file, whose content differs across the
-recent commits as well.  So the applying run has been performed by more than one wave since the
-snapshot was taken, each rewriting that file, and the rows describing the applying run as held
-un-run describe the LAST wave rather than the month.  The record survives because the snapshot was
-taken; the file named for it holds neither the phase-1q classification nor the present one.  The
-measurement is the generated artifact `tools/audit/decisions/phase1q_record_divergence.json` and no
-value from it is transcribed here (D-431).  Whether the stale file is restored from the snapshot,
-renamed for what it holds, or removed is a FILING DECISION about a committed artifact and is the
-user's, not this tool's — surfaced in `cowork_away_returns.md` rather than taken.
+★ THE FILE THIS TOOL FORMERLY NAMED BESIDE THE SNAPSHOT IS REMOVED (user, 2026-08-09, Ruling 1 of
+`cowork_rulings_2026_08_09_return.md`; written here in the D-644 shape — state the current
+arrangement, record the removal as closed — under Ruling 13 of
+`cowork_rulings_2026_08_09_second_stop.md`, transcribed from the register data's
+`section_home_criterion.scope_of_application` rather than re-judged here).
+`phase1q_reclassification.json` held NEITHER the phase-1q record NOR the present classes: the
+applying run had been performed by more than one wave since the 2026-08-04 establishment froze it
+and its snapshot as byte-identical, rewriting it each time (measured at
+`tools/audit/decisions/phase1q_record_divergence.json`, from git objects by explicit hash; no value
+is transcribed here, D-431).  THE CURRENT ARRANGEMENT IS TWO FILES WITH ONE JOB EACH — the phase-1q
+record at the established, hash-guarded snapshot, and the LIVE derived view at
+`home_classification.json`, which carries `the_phase_1r_re_run`, `the_2026_08_08_apply` and
+`write_list` unchanged.  Every committed state of the removed file remains reachable in git history
+at the commits the divergence artifact names, so nothing is lost (#12, the recomputable-collapse
+clause) and one concern has one home (#6).  TRIED AND CLOSED: restoring the stale file from the
+snapshot (a second, unguarded copy of the record — the OI-305 divergence class reopened) and
+renaming it for what it held (an orphan generated artifact with no writer and no consumer —
+undeclared dormancy).
 
 THIS TOOL REPLACES `gen_section_homes.py`, which applied D-430 alone to a staged five documents.
 Two appliers of one criterion is the duplication #6 forbids, so that file is deleted rather than
@@ -104,9 +110,16 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 BACKBONE = os.path.join(HERE, "backbone_decisions.json")
 OUT = os.path.join(HERE, "home_classification.json")
 
-# The frozen phase-1q record and the snapshot it is established against. Neither is written here;
-# both are READ, and a difference between them stops the run (see `frozen_record_intact`).
-FROZEN = os.path.join(HERE, "phase1q_reclassification.json")
+# The snapshot that carries the frozen phase-1q record. It is never written here; it is READ, and
+# a run proceeds only while its bytes still hash to the established value (see
+# `frozen_record_intact`).
+#
+# A second constant stood here until 2026-08-09, naming the live `phase1q_reclassification.json`
+# beside this one, under a comment saying both were read and a difference between them stopped the
+# run. Neither half was true: the constant was read nowhere, and what the run compares is the
+# snapshot against its own establishment record. It is struck under Ruling 13 of
+# `cowork_rulings_2026_08_09_second_stop.md`, together with the file it named, which Ruling 1 of
+# `cowork_rulings_2026_08_09_return.md` removed. No behaviour moves.
 SNAPSHOT = os.path.join(HERE, "snapshot_2026-08-04_pre_home_classification_apply",
                         "phase1q_reclassification.json")
 
@@ -527,16 +540,17 @@ def frozen_record_intact() -> None:
     run under this ruling).  It is the SNAPSHOT, and not the file named for phase 1q.  The
     establishment record of 2026-08-04 froze the two as byte-identical; they are not identical at
     HEAD, and the divergence is not damage to the snapshot — the snapshot still hashes to the
-    established value.  What moved is `phase1q_reclassification.json`, which later waves
-    regenerated, so the applying run this tool performs has been run more than once since the
-    snapshot was taken and has rewritten that file each time.  The file named for phase 1q
-    therefore holds NEITHER the phase-1q classification NOR the present one, and this ruling's
-    freeze is what stops it being rewritten again.  What the freeze protects is consequently the
-    snapshot, which is what is checked here.  The measurement is the generated artifact
-    `tools/audit/decisions/phase1q_record_divergence.json`; no value is transcribed into this
-    docstring (D-431).  Whether the stale file is restored from the snapshot, renamed for what it
-    holds, or removed is a FILING DECISION about an artifact already committed, and it is left to
-    the user rather than taken here (surfaced in `cowork_away_returns.md`).
+    established value.  What moved was `phase1q_reclassification.json`, which later waves
+    regenerated, so the applying run this tool performs had been run more than once since the
+    snapshot was taken and had rewritten that file each time.  The file named for phase 1q
+    therefore held NEITHER the phase-1q classification NOR the present one.  What the freeze
+    protects is consequently the snapshot, which is what is checked here.  The measurement is the
+    generated artifact `tools/audit/decisions/phase1q_record_divergence.json`; no value is
+    transcribed into this docstring (D-431).  THE FILING DECISION THAT SENTENCE LEFT OPEN HAS BEEN
+    TAKEN: the user removed that file on 2026-08-09 (Ruling 1 of
+    `cowork_rulings_2026_08_09_return.md`), so the record now lives at the snapshot alone and this
+    check has one subject rather than two.  The module docstring above carries the current
+    arrangement and the two closed alternatives.
     """
     if not os.path.exists(SNAPSHOT):
         raise SystemExit("STOP: the established phase-1q snapshot is missing: "

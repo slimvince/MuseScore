@@ -82,7 +82,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7791`
+**Home.** `ARCHITECTURE.md:7814`
 
 **Provenance.** ARCHITECTURE.md:6649-6655 (§17.1). No date or ratifier stated.
 
@@ -96,7 +96,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7797`
+**Home.** `ARCHITECTURE.md:7820`
 
 **Provenance.** ARCHITECTURE.md:6649-6657 (§17.1). No date or ratifier stated.
 
@@ -114,7 +114,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7801`
+**Home.** `ARCHITECTURE.md:7824`
 
 **Provenance.** ARCHITECTURE.md:6659-6671 (§17.2). No date or ratifier stated.
 
@@ -128,7 +128,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7813`
+**Home.** `ARCHITECTURE.md:7836`
 
 **Provenance.** ARCHITECTURE.md:6673 (§17.2). No date or ratifier stated. ★ This is the rule the 2026-08-01 CLAUDE.md Conventions entry generalizes from scoring values to design decisions as a class (D-195) - and the rule this register's rationale field serves.
 
@@ -144,7 +144,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7850`
+**Home.** `ARCHITECTURE.md:7873`
 
 **Provenance.** ARCHITECTURE.md:6707-6719 (§17.3), which gives a worked example from existing code (the circle-of-fifths interval deltas). No date or ratifier stated.
 
@@ -161,7 +161,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7863`
+**Home.** `ARCHITECTURE.md:7886`
 
 **Provenance.** ARCHITECTURE.md:6721-6729 (§17.4). No date or ratifier stated.
 
@@ -177,7 +177,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7884`
+**Home.** `ARCHITECTURE.md:7907`
 
 **Provenance.** ARCHITECTURE.md:6742-6746 (§18.2). No date or ratifier stated.
 
@@ -213,7 +213,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1091-1093`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1120-1122`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`. VERIFIED AT THE OBJECTS 2026-08-02: commit `b1ba746` deletes exactly that one line from `src/engraving/dom/chordlist.cpp`, only an upstream header-update commit has touched the file since, and the line is absent at HEAD. This is a THIRD edit to MuseScore's own code beside **D-198** and **D-199**, and it is not in `CLAUDE.md`'s “Local patches — do not revert” section, which carries exactly two subsections; the non-conformance against the ruled **D-229** is rowed at [[OI-273]]. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `CLAUDE.md`'s local-patches section, beside **D-316**, which records the same patch's distribution disposition. **The entry's own text is what settled the owner and what dated it:** it recorded that the section carried exactly two subsections and not this one — true when written, and closed the same day by the subsection the [[OI-273]] ruling added, which is why the home now exists to move into. NO NEW TEXT STATES THE FIX: the subsection already states it, so the homing act is the NAMING that makes the entry findable from the section (#6 — the rule is published once, there), and the verbatim is re-taken from that existing text rather than a copy being written beside it. Its class moves to `process` for the same reason D-316 carries that class: the decision is a record of an edit to a dependency, which the local-patches section is the declared home for. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:2262`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "One-line fix in MuseScore core `src/engraving/dom/chordlist.cpp:993` — removed `tok1 = u\"sus\"` from the susPending re-attachment block in `ParsedChord::parse()`. This was a genuine MuseScore core bug causing double-sus render for all sus+alteration chord suffixes. Should be reported upstream." Its closing sentence — that the fix should be reported upstream — is NOT lost by the move: it is the subject of D-316, which rules the disposition UPSTREAMABLE and sits in the same section.
 

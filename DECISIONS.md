@@ -636,7 +636,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-460 | A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.4 |
 | D-461 | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §7 |
 | D-462 | Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §10 |
-| D-472 | Key areas are grouped by a smoothing pass over the already-stabilized regions, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
+| D-472 | Key areas are grouped by a smoothing pass over regions whose key sequence has already been smoothed, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-476 | The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |
 | D-477 | Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §2 |
 | D-478 | A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals | LIVE | 2026-08-04 · user | `cowork_phrase_boundary_design.md` §6 |
@@ -1025,8 +1025,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `dfbf3ab824f0717d83cf3cce8e332c69f1074328`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `bd6ca3c9a888dce1…`).
+- Coverage figures above regenerated at commit `f3f2a07ba6ad340b364ef8ce06b96b82a8482df4`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `a2421ac8e55a2584…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).
