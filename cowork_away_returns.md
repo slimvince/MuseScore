@@ -1333,6 +1333,54 @@ inference, no design. **Phase 1's completion statement is not written, not draft
 written here** — and it is worth saying plainly at the moment this count reaches zero: **a closed
 defense-gap population is one item of the finish line, not the finish line.**
 
+### ★ WHERE THIS BATCH STOPPED
+
+**Tasks 0, 1 and 2 are COMPLETE, committed and pushed** — three commits, each its own task boundary,
+each with its guard run, its enumeration and its `STATUS.md` pointer entry. **Tasks 3, 4, 5 and 6 are
+NOT STARTED.** That is a capacity stop at a clean boundary, not a halt on a finding: no STOP note was
+written against the batch, no analysis-bearing surface halted it, and **nothing is left half-edited**
+— every act on disk is complete in itself, every derived surface re-derives, and the guard set stands
+at ONE failing, which is the legacy-mark verification that Ruling 18 requires to be carried.
+
+**★ WHY TASK 3 WAS NOT OPENED RATHER THAN OPENED AND LEFT PART-DONE.** Its deliverable is ONE
+GENERATED DERIVATION over a derived population of open rows, and a derivation published over part of
+its population is exactly the silent cap the standing rules forbid — it would read as covering the
+class while covering some of it. The three tasks that ran were each closed whole for the same reason.
+
+**What a continuing session should know.**
+
+1. **Task 3's population is DERIVED, not carried from here:** the completion inventory's
+   `the_gating_split` → `non_gating` set, read at task start. What is owed per row is a verdict under
+   **D-639**'s test — *the doc-sync half reaches a document's account of itself ONLY WHERE THAT
+   ACCOUNT CHANGES HOW THE DOCUMENT'S ANALYSIS CONTENT IS READ* — whose three worked examples ARE the
+   test (an as-built banner over a dormant mechanism IN; a missing supersession note IN; a stale
+   anchor or formatting artifact OUT), with **fallback (1A)** applied and SAID wherever the test does
+   not decide. **No hand verdicts.** The method to follow is the existing first application's, at
+   `tools/audit/decisions/gen_true_half_reach.py` — same shape, not an invented one (#6).
+2. **One thing Task 3 will meet immediately, and it is already rowed:** the completion inventory
+   still PUBLISHES this as an open question — `who_settles_it` reads *"the user. It is reported, not
+   decided."* — while the user ruled it on 2026-08-04 as D-639. Its clause quote is derived and moved
+   with HEAD; its criteria are an authored constant that did not. That is [[OI-338]], and the
+   finish-line generator's own text records the same finding.
+3. **Tasks 4 to 6 are untouched and their populations must be derived fresh:** the section-unreached
+   and findings-not-rules re-homes, the session-executable gating rows, **Ruling 16's sibling sweep
+   and its one comment-only `src/` commit**, and OI-346's marks. **Ruling 16 is the only licensed
+   `src/` touch of the knowledge arc and it is NOT taken here** — no `src/` file was opened for
+   editing by this batch.
+4. **Three things await the user and none of them blocks Tasks 3–6:** the registration queue, now
+   covering twenty-three rulings, on which no register entry may be written until it is ruled; the
+   [[OI-354]] verdict set, whose review is what clears the one failing guard; and the two new
+   apparatus questions rowed here, [[OI-356]] and [[OI-358]], each of which needs a mechanism or
+   filing decision the record does not carry.
+5. **A convention this batch adopted and recorded, so it is not rediscovered:** inside an
+   open-items status cell, name another row's resolved status **in words, never with the glyph**
+   ([[OI-356]]).
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch** — and the defense-gap population reaching zero does not change that: it is one item of the
+finish line, and the finish line's own count of what remains is derived at
+`tools/audit/phase1_finish_line.json` (**D-431**).
+
 ---
 
 ## 4. The batch's start state, recorded before any act
