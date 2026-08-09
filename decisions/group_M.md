@@ -31,7 +31,7 @@
 
 **In plain words.** When a style assembles itself from several inherited sources, the order of precedence is fixed: system defaults are weakest, inherited sources come next in the order they are declared with later ones winning, and anything the style file states explicitly wins outright.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason. The home states the three-tier order as a DEFINITION — system defaults weakest, inherited sources next in their declared order with later ones overriding earlier, explicit overrides highest and always winning — and says nothing about why that order rather than another. No alternative is weighed, nothing is said about what the ordering protects against, and no date or ratifier is stated.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

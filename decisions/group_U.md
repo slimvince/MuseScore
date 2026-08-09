@@ -195,7 +195,7 @@
 
 **In plain words.** The bonus that favours diminished readings can, in the course of comparing bass notes, end up electing a winner that is not diminished at all. When that happens the analysis falls back to the answer it had before the bonus was applied.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation for this fallback. What stands in its place is the section's BLANKET ground, which covers every bullet in it equally rather than this one in particular: these are load-bearing design decisions that future changes must respect or risk documented regressions. The rule's own text at the home states the DEFECT IT GUARDS AGAINST — the bonus can rotate the global winner across bass candidates, so a post-bonus winner that is not diminished or half-diminished falls back to the variant computed without it — which is the failure it prevents rather than an argument for this remedy over another. ⚠ Legacy subject. ★ AND THIS ENTRY'S RECORDED VERBATIM QUOTES A DIFFERENT RULE THAN ITS TITLE, RESTATEMENT AND DEFENSE DESCRIBE — rowed at `OPEN_ITEMS.md` OI-358. This field is written against the decision the title, restatement and defense identify, which is the post-bonus winner-quality guard at the home, and NOT against the quoted text.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -232,7 +232,7 @@
 
 **In plain words.** The scoring that considers the bass note and the chord together only switches on when the notes came from accumulating a whole stretch of music. The single-moment paths - the status bar, a unit test - use the simpler single-bass scoring.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation. The rule's own text at the home states the CONDITION and its consequence — joint scoring fires only where at least one tone carries evidence of regional accumulation, and the single-tick, status-bar and unit-test paths therefore use the legacy single-bass path — which is the rule restated rather than a ground for it; nothing says why those paths must fall back rather than accumulate, and no alternative is weighed. The section's blanket statement that its bullets are load-bearing decisions covers every bullet equally and is not this entry's own defense. ⚠ Legacy subject. ★ AND THIS ENTRY'S RECORDED VERBATIM QUOTES A SECTION-OPENING CHECKLIST RATHER THAN THIS RULE — rowed at `OPEN_ITEMS.md` OI-358. This field is written against the decision the title, restatement and defense identify, and NOT against the quoted text.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

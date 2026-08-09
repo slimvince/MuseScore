@@ -29,7 +29,7 @@
 
 **In plain words.** Text a user can read is translatable through MuseScore's own translation system, and every new string is supplied in English and Swedish.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND IT IS ONE SENTENCE ABOVE THE DECISION — which is exactly the placement this task exists to distinguish from an absent one. The section states the ground for its whole family of follow-the-host rules before applying it: new panels follow MuseScore's existing panel architecture, and "Do not create parallel infrastructure. Read how existing MuseScore panels are implemented before creating new ones." Using the host's own localization infrastructure is that rule applied to user-visible strings. WHAT IS NOT DEFENDED is the choice of the two languages: for English and Swedish specifically the record holds nothing, and no date or ratifier is stated.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -44,7 +44,7 @@
 
 **In plain words.** Keyboard navigation, focus handling and screen-reader support are done the way MuseScore already does them.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND IT IS TWO SENTENCES ABOVE THE DECISION — the same paragraph and the same ground as D-155, which is why the two are recorded alike: "Do not create parallel infrastructure. Read how existing MuseScore panels are implemented before creating new ones." Following the host's accessibility patterns is that rule applied to focus management, keyboard navigation and screen-reader hooks. No separate derivation is stated for the accessibility case, and no date or ratifier is stated.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -91,7 +91,7 @@
 
 **In plain words.** Each of our own files records which version of its format it is, so older files can be migrated when the format changes; the standard MuseScore score file inside the archive is never rewritten by us.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). IT DIFFERS BY PART. The VERSION FIELD carries its purpose in the very next sentence, and a purpose of that shape is a reason: "When the format changes, migration code handles existing files" — the field exists so an older file can be migrated rather than broken. The SECOND HALF — that our persistence never rewrites the score file — is stated flatly with no ground given at all. NOTHING IS BORROWED from the neighbouring paragraph, whose reason belongs to a different point: that export to MusicXML, PDF or MIDI loses our metadata is called acceptable "— the arranging workflow is MuseScore-native". Status DEFERRED: the component is planned rather than built, so the absence is a fact about the record and not about live code.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 

@@ -28,7 +28,7 @@
 
 **In plain words.** Which spelling convention to use on screen is a formatter setting, kept away from the settings that affect the analysis itself.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND THE EMPTY FIELD MISREPRESENTED IT — it is inside the decision's own sentence at the home, which states that the options live with the formatter rather than with the analyzer preferences "enforcing the analysis/display separation (principle 2.3)". The ground is therefore that the split ENFORCES A NAMED STANDING PRINCIPLE of the architecture: the entry is that principle applied to one pair of settings rather than a free choice, which is why it needs no argument of its own.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -61,7 +61,7 @@
 
 **In plain words.** On the old path, a key the program is unsure of is shown with a question mark, and one it is very unsure of is not shown at all rather than shown wrongly.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). IT DIFFERS BY PART. The THIRD band carries its own reason in the decision's own words — below the lower threshold the key-dependent annotations are suppressed "rather than exposing a low-confidence key" — which is a stated ground for preferring silence to a weak label, and is the abstention posture the record states elsewhere. The TWO THRESHOLD VALUES have no derivation anywhere in the record: the home gives the sigmoid's own parameters as construction (a midpoint and a steepness over the score gap) and then the three bands, with nothing said about why the cuts fall at 0.5 and 0.8 rather than elsewhere, and no alternative considered. ⚠ Legacy subject: the record arm replaces both literals with fitted constants on its own scale, which this entry's own status source states.
 
 **Status.** SUPERSEDED BY D-018 · date not stated · ratifier not stated
 
@@ -91,7 +91,7 @@
 
 **In plain words.** The specific Italian, French and German augmented-sixth labels are shown only under the classical presets.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). IT DIFFERS BY PART, and the two parts point opposite ways. The ORIGINAL decision — gating the augmented-sixth labels to two presets — has NO recorded derivation anywhere: the section asserted the gate and gave no ground for it. The CURRENT state does have one, and it is stated in terms at the home: the Roman-numeral formatter has no preset context, so the gate is explicitly deferred at the site and the labels are emitted under every preset. The home also warns off a false corroboration, which is worth carrying: the corpus shows no augmented-sixth label under the jazz preset, but that is an upstream-analysis coincidence — the extension the classifier requires is not set there — and NOT the documented gate working.
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 

@@ -380,32 +380,8 @@
   "class_3_defense_not_recorded": {
    "what_it_is": "C2's population. The standing convention forbids writing a defense retroactively from memory, so this class is discharged by RECORDING a defense the record holds or by stating the gap - never by inventing one. The population is reported; no judgment about fillability is made here.",
    "entries_with_no_rationale_at_all": {
-    "count": 23,
-    "ids": [
-     "D-077",
-     "D-082",
-     "D-083",
-     "D-084",
-     "D-087",
-     "D-089",
-     "D-094",
-     "D-106",
-     "D-119",
-     "D-129",
-     "D-135",
-     "D-151",
-     "D-155",
-     "D-156",
-     "D-159",
-     "D-162",
-     "D-164",
-     "D-175",
-     "D-177",
-     "D-194",
-     "D-222",
-     "D-224",
-     "D-342"
-    ]
+    "count": 0,
+    "ids": []
    },
    "entries_whose_rationale_says_derivation_not_recorded": {
     "count": 19,
@@ -655,7 +631,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 60,
+   "count": 61,
    "ids": [
     "OI-105",
     "OI-107",
@@ -707,6 +683,7 @@
     "OI-353",
     "OI-354",
     "OI-357",
+    "OI-358",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -734,6 +711,7 @@
     "OI-352",
     "OI-354",
     "OI-357",
+    "OI-358",
     "OI-57",
     "OI-90",
     "OI-95"
@@ -1726,6 +1704,20 @@
      "source": "the row's own recorded words",
      "ground": "the row states it gates"
     }
+   },
+   {
+    "id": "OI-358",
+    "title": "★ **Five consecutive register entries quote a DIFFERENT rule than their own title, plain restatement and defense describe — one quotes a section heading — and BOTH guards pass over it, because each verifies that the verb",
+    "subject_column": "E — verification owed / decisions register",
+    "matched_on_the_subject_column": [],
+    "matched_falsity_signals": [
+     "drift"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "two independent grounds - D-438's line, and the clause that overrides the criterion (an establishment obligation, #19, always gates)"
+    }
    }
   ]
  },
@@ -1733,7 +1725,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 38,
+   "count": 39,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1769,6 +1761,7 @@
     "OI-353",
     "OI-354",
     "OI-357",
+    "OI-358",
     "OI-45",
     "OI-57",
     "OI-90",
@@ -1843,6 +1836,7 @@
     "OI-347",
     "OI-353",
     "OI-354",
+    "OI-358",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -1958,15 +1952,15 @@
   "complete_half": {
    "entries_not_homed_in_a_specification_that_owns_them": 43,
    "of_which_never_graded_against_the_criteria_in_force": 0,
-   "entries_whose_defense_the_record_does_not_state": 23,
+   "entries_whose_defense_the_record_does_not_state": 0,
    "documents_awaiting_a_delegation_only_the_user_may_write": 2,
    "★_that_figure_is_now_DERIVED_not_the_write_lists_membership": "It is the count of documents that still lose entries to the DELEGATION HALF where an admitting delegation already exists - the only class a delegation the user writes would move. Derived at `tools/audit/decisions/outstanding_delegations.json`; the full partition, including the classes for which a delegation is NOT the remedy, is there and is not restated here (D-431). OI-335.",
    "entries_lost_for_want_of_a_delegation_all_classes": 29,
    "of_which_a_widening_would_move": 4
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 60,
-   "of_which_gate": 38,
+   "open_rows_in_the_wide_cut": 61,
+   "of_which_gate": 39,
    "of_which_apparatus_and_therefore_non_gating": 22,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
@@ -2060,6 +2054,7 @@
    "OI-353",
    "OI-354",
    "OI-357",
+   "OI-358",
    "OI-45",
    "OI-46",
    "OI-47",
@@ -2075,11 +2070,11 @@
  },
  "counted": {
   "decisions_recorded": 645,
-  "open_rows_in_the_index": 254,
-  "true_half_wide_cut": 60,
-  "true_half_gating": 38,
+  "open_rows_in_the_index": 255,
+  "true_half_wide_cut": 61,
+  "true_half_gating": 39,
   "complete_half_gap": 42,
   "complete_half_unhomed": 1,
-  "complete_half_defense_gaps": 23
+  "complete_half_defense_gaps": 0
  }
 }

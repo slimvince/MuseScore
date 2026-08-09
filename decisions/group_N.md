@@ -28,7 +28,7 @@
 
 **In plain words.** Anything the user has pinned - a note, a voice, a chord, a passage - anchors the search for good voice leading. The optimizer works around it and never changes it.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home states a ROLE, which is the nearest thing to a reason and is recorded as that rather than upgraded to a derivation: fixed elements are hard constraints "— they anchor the dynamic programming search". That says what the constraint is FOR. What it does not say is why the guarantee is ABSOLUTE — why the optimizer may never modify them at all, rather than modifying them at a cost the search weighs — which is the part of the decision that binds, and no alternative is considered. The persistence section immediately below adds mechanism (constraints keyed by element identifiers, which are stable within a score; fixed elements visually indicated in the score view) and not ground.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

@@ -164,7 +164,7 @@
 
 **In plain words.** The tests that guard against going backwards are kept current with the code, and they are run between each step of work rather than at the end.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation, and what stands in its place is PROVENANCE rather than argument: this principle belongs to the user's own standing list of 1–11, which the governing document records as given rather than derived, and whose provenance paragraph states which block of principles was ratified when without supplying a ground for the standing list itself. Recorded as an established gap rather than filled: the modern argument for it is easy to state and is NOT written in, because it is not in the record for this principle and a defense composed after the fact is what the never-work-from-memory rule forbids. Distinct from several of its immediate neighbours in the same list, which DO carry a stated ground at the same home — so the absence here is a property of this principle's record, not of the list.
 
 **Status.** LIVE · date not stated · ratified by user
 
@@ -192,7 +192,7 @@
 
 **In plain words.** Anything that changes what the system does is ratified by the user first, lands as a single commit that can be undone whole, and carries the record of where it came from.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation. The home states the rule and the date of its ratification, and the provenance paragraph at that same home records WHEN each block of principles was ratified rather than why any of them holds. Recorded as an established gap and deliberately NOT filled from the obvious argument — that one revertible, provenance-stamped commit per behaviour change is what makes a regression attributable and reversible — because that argument is nowhere in the record for this principle. ONE TRACE OF THE SAME REASONING DOES EXIST ELSEWHERE AND IS NAMED RATHER THAN BORROWED: D-538 records an early, concrete form of this discipline for one change, with its own stated risk, and the user ruled that entry SUPERSEDED BY this principle — which shows the kinship without supplying this principle's own derivation.
 
 **Status.** LIVE · decided 2026-07-06 · ratified by user
 

@@ -60,7 +60,7 @@
 
 **In plain words.** Before any of this work is offered back to MuseScore as a pull request, the contributor agreement with MuseScore must be signed.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason. The home states the requirement flatly, inside a licensing section whose neighbouring sentences DO carry a ground — all code under GPL v3, "consistent with MuseScore Studio's open source license", and every external library required to be GPL-v3-compatible. That is the defense of the LICENCE CHOICE, not of the contributor-agreement precondition, and it is deliberately not borrowed for it. No date and no ratifier are stated either, and no alternative is considered.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

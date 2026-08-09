@@ -56,7 +56,7 @@
 
 **In plain words.** The stage that assembles phrases and key areas only organises what earlier stages decided. It never changes their answers.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason for the additive, read-only, no-feedback constraint. The home states the rule and, in the same sentence, WHAT IT REPLACES — the forward-only rebuild of the scattered live cadence, pivot-chord and key-area machinery — which is a description of the change rather than a ground for the constraint. NOTHING IS BORROWED FROM THE NEAREST THING TO A REASON, and it is named so a later reader does not mistake it for this entry's: the key-area grouping rule further down the same section carries its own defense — that it is a grouping rule and not a second key analysis, reading the key fields the earlier layers already published rather than re-deciding them — and attributes that reasoning to "this layer's contract ... for grouping generally", i.e. to the delegated contract document rather than to this section. Whether that contract states a derivation for THIS constraint was not read by this fill and is not asserted.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -71,7 +71,7 @@
 
 **In plain words.** Deeper structural theory - nested hierarchy, periods, prolongation - is deliberately left out, because we have no annotated music to check it against.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home NAMES A GROUND rather than stating a derivation, and that is more than an empty field but less than a reason: the exclusion is given as following from the "verifiability contract" (§2.15), in a parenthetical inside the decision's own sentence. So the defense is BY REFERENCE — the contract is what decides what sits inside the validatable core, and these three are outside it. Checked rather than assumed: the phrase "validatable core" occurs nowhere else in the document, so §2.15 is named as the governing contract rather than restating this exclusion, and no derivation is stated at the home itself.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -85,7 +85,7 @@
 
 **In plain words.** Recognising well-known chord patterns is something that reads the finished analysis and annotates it. It is not another stage in the chain.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason for the classification. What stands in its place is a DESCRIPTION THAT ENTAILS IT, and it is recorded as that rather than upgraded: the home says the recognizer works over the COMMITTED progression, disambiguates through the forward-override and annotates the result as a grouping-layer span — which is what makes it a consumer of the finished analysis rather than a stage inside it. No alternative is weighed and no ground is given for preferring the consumer shape over a further layer. "Scaffolding-first, deferred" is a status, not a reason.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
@@ -300,7 +300,7 @@
 
 **In plain words.** Switching the function layer on in the product is not scheduled. It is built and checked against published human analyses, and stays inactive; the conditions written for a switch apply if one is ever made, and are not outstanding work. THIS IS NOT THE INFERENCE-ENGINE SWITCH - that happened (D-010): the joint estimator is production and the legacy pipeline is dormant. This entry concerns the separate Layer-5 function-annotation module, built and validated but never in production in either era. Its concerns are handled by the LIVE implementation natively or by schedule: degree-in-key Roman numerals are the estimator's own state; key changes are decided inside the decode; applied-chord labels are emitted by the live renderer (the D-248/OI-267 revisit covers the remainder); cadence is a fitted factor inside the model and a marker on the presentation surface; carried-abstention resolution is obviated by the full-posterior publication (D-006); the ornament labels are the ratified OI-194 increment; and the complete concern-by-concern mapping of the legacy layer's remaining scope is the OI-259 phase-3 re-disposition.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home states a GROUND in a parenthetical rather than a derivation, and it is recorded as that: engagement is deferred indefinitely "(production out of scope; the posture is dormant build + ground-truth validation)". So the reason given is a SCOPE DECISION taken elsewhere and applied here, together with the posture it leaves in place — built, validated against published human analyses, and inactive. What the record does NOT hold at this entry is any argument for that scope decision, and no alternative is weighed. The entry's plain restatement carries a concern-by-concern mapping of how the live implementation handles what this layer would have done — which is a statement about the live system rather than a defense of the deferral, and is not read as one. ⚠ Legacy subject; the hard-stops written for a switch apply IF one is ever made and are not pending work, which the decision itself says.
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 

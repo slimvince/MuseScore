@@ -660,6 +660,25 @@ V = {
                "Recorded against the row's SUBJECT, never its remedy -- and the remedy is "
                "deliberately open, since who may author the owed per-entry verdicts is exactly what "
                "the row leaves to the user."),
+    "OI-358": (GATES, "two independent grounds - D-438's line, and the clause that overrides the "
+                      "criterion (an establishment obligation, #19, always gates)",
+               "Five consecutive register entries quote a DIFFERENT rule than their own title, "
+               "restatement and defense describe; one quotes a section heading. THE FIRST-CUT "
+               "CLASSIFICATION IS RIGHT ABOUT THE SUBJECT -- this is the decisions register's own "
+               "content -- and is not disputed. TWO THINGS DECIDE IT ANYWAY, either sufficient. "
+               "(1) D-438's line inside the documentation rows puts a correction to a statement "
+               "about the analysis on the gating side, and what is owed here is not a pointer, an "
+               "anchor, a label, a banner, a filing decision or a section boundary: five entries "
+               "STATE ONE RULE'S IDENTITY OVER ANOTHER RULE'S WORDS, so a reader of the register "
+               "learns the wrong rule about the scorer. (2) Independently an establishment "
+               "obligation: the register's own verbatim check and the disposition verifier BOTH "
+               "PASS over the corrupted pairs, because once the verbatim is the text at the "
+               "drifted line the two agree with each other permanently -- so two green verdicts do "
+               "not bound what they appear to bound, which is the shape #19 refuses. Recorded "
+               "against the row's SUBJECT, never its remedy -- and the remedy is deliberately "
+               "open, since whether a corrupted verbatim is re-taken from the correct bullet or "
+               "the wrong quote is preserved beside it (#12) is a filing judgment about the "
+               "register's own unit."),
 }
 
 # The dispatch's assumption A3, recorded so the difference is reported rather than reconciled.

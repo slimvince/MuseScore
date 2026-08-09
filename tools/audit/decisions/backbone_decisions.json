@@ -3088,7 +3088,7 @@
         "IComposingConfiguration",
         "modularity_interfaceInfo"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND THE EMPTY FIELD MISREPRESENTED IT — it sits at the home in a paragraph whose own heading is \"Why split?\": the implode bridge has no business knowing about status-bar display preferences and the analysis bridge none about chord-staff output settings, and then the general ground those two instances rest on — \"Narrow interfaces make the dependency of each component explicit and keep the IoC registrations clean.\" The recorded verbatim is in fact the FIRST HALF of that justification rather than the rule itself, which is why the entry reads as undefended. A SECOND, structural reason is stated in the next paragraph, for the related choice not to register the combined interface: it inherits from both sub-interfaces, so the IoC static member would be ambiguous with two global-interface bases."
     },
     {
       "id": "D-078",
@@ -3198,7 +3198,7 @@
         "key-areas",
         "cowork_layer6_grouping_design"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason for the additive, read-only, no-feedback constraint. The home states the rule and, in the same sentence, WHAT IT REPLACES — the forward-only rebuild of the scattered live cadence, pivot-chord and key-area machinery — which is a description of the change rather than a ground for the constraint. NOTHING IS BORROWED FROM THE NEAREST THING TO A REASON, and it is named so a later reader does not mistake it for this entry's: the key-area grouping rule further down the same section carries its own defense — that it is a grouping rule and not a second key analysis, reading the key fields the earlier layers already published rather than re-deciding them — and attributes that reasoning to \"this layer's contract ... for grouping generally\", i.e. to the delegated contract document rather than to this section. Whether that contract states a derivation for THIS constraint was not read by this fill and is not asserted."
     },
     {
       "id": "D-083",
@@ -3219,7 +3219,7 @@
         "prolongation",
         "periods/sentences"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home NAMES A GROUND rather than stating a derivation, and that is more than an empty field but less than a reason: the exclusion is given as following from the \"verifiability contract\" (§2.15), in a parenthetical inside the decision's own sentence. So the defense is BY REFERENCE — the contract is what decides what sits inside the validatable core, and these three are outside it. Checked rather than assumed: the phrase \"validatable core\" occurs nowhere else in the document, so §2.15 is named as the governing contract rather than restating this exclusion, and no derivation is stated at the home itself."
     },
     {
       "id": "D-084",
@@ -3241,7 +3241,7 @@
         "Harmonic Vocabulary",
         "schema recognizer"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason for the classification. What stands in its place is a DESCRIPTION THAT ENTAILS IT, and it is recorded as that rather than upgraded: the home says the recognizer works over the COMMITTED progression, disambiguates through the forward-override and annotates the result as a grouping-layer span — which is what makes it a consumer of the finished analysis rather than a stage inside it. No alternative is weighed and no ground is given for preferring the consumer shape over a further layer. \"Scaffolding-first, deferred\" is a status, not a reason."
     },
     {
       "id": "D-085",
@@ -3309,7 +3309,7 @@
         "formatRomanNumeral",
         "chordsymbolformatter"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND THE EMPTY FIELD MISREPRESENTED IT — it is inside the decision's own sentence at the home, which states that the options live with the formatter rather than with the analyzer preferences \"enforcing the analysis/display separation (principle 2.3)\". The ground is therefore that the split ENFORCES A NAMED STANDING PRINCIPLE of the architecture: the entry is that principle applied to one pair of settings rather than a free choice, which is why it needs no argument of its own."
     },
     {
       "id": "D-088",
@@ -3354,7 +3354,7 @@
         "kAnnotateKeyConfidenceThreshold",
         "legacyKeyExposureBucket"
       ],
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). IT DIFFERS BY PART. The THIRD band carries its own reason in the decision's own words — below the lower threshold the key-dependent annotations are suppressed \"rather than exposing a low-confidence key\" — which is a stated ground for preferring silence to a weak label, and is the abstention posture the record states elsewhere. The TWO THRESHOLD VALUES have no derivation anywhere in the record: the home gives the sigmoid's own parameters as construction (a midpoint and a steepness over the score gap) and then the three bands, with nothing said about why the cuts fall at 0.5 and 0.8 rather than elsewhere, and no alternative considered. ⚠ Legacy subject: the record arm replaces both literals with fitted constants on its own scale, which this entry's own status source states.",
       "legacy_subject": true
     },
     {
@@ -3463,7 +3463,7 @@
         "Design-only",
         "Layer status legend"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason for the exactly-one-state rule. The three state names are DEFINED at the home — wired into production; built and tested but not wired, reachable only through diagnostics and byte-identical on production; specified and not yet built — and a definition is not a ground. What stands beside it is a DIVISION OF RECORD rather than a defense: per-date and per-commit provenance lives in the status document and the session reports, \"not here\", which says what the legend does not carry rather than why each layer carries exactly one state. No alternative is considered."
     },
     {
       "id": "D-095",
@@ -3749,7 +3749,7 @@
         "Fr\\+6",
         "augSixthSubType"
       ],
-      "rationale": null
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). IT DIFFERS BY PART, and the two parts point opposite ways. The ORIGINAL decision — gating the augmented-sixth labels to two presets — has NO recorded derivation anywhere: the section asserted the gate and gave no ground for it. The CURRENT state does have one, and it is stated in terms at the home: the Roman-numeral formatter has no preset context, so the gate is explicitly deferred at the site and the labels are emitted under every preset. The home also warns off a false corroboration, which is worth carrying: the corpus shows no augmented-sixth label under the jazz preset, but that is an upstream-analysis coincidence — the extension the classifier requires is not set there — and NOT the documented gate working."
     },
     {
       "id": "D-107",
@@ -4026,7 +4026,7 @@
       "title": "The MuseScore contributor licence agreement is signed before any pull request",
       "verbatim": "The Contributor License Agreement (CLA) with MuseScore must be signed before any\npull requests are submitted.",
       "plain": "Before any of this work is offered back to MuseScore as a pull request, the contributor agreement with MuseScore must be signed.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason. The home states the requirement flatly, inside a licensing section whose neighbouring sentences DO carry a ground — all code under GPL v3, \"consistent with MuseScore Studio's open source license\", and every external library required to be GPL-v3-compatible. That is the defense of the LICENCE CHOICE, not of the contributor-agreement precondition, and it is deliberately not borrowed for it. No date and no ratifier are stated either, and no alternative is considered.",
       "home": "ARCHITECTURE.md:591",
       "home_is_layer_spec": true,
       "status": "live",
@@ -4224,7 +4224,7 @@
       "title": "Style conflicts resolve by a declared priority - explicit overrides always win",
       "verbatim": "**Conflict resolution priority:**\n1. System defaults — lowest priority\n2. Mixin sources — in declared order, later overrides earlier\n3. Explicit `overrides` in the style file — highest priority, always wins",
       "plain": "When a style assembles itself from several inherited sources, the order of precedence is fixed: system defaults are weakest, inherited sources come next in the order they are declared with later ones winning, and anything the style file states explicitly wins outright.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason. The home states the three-tier order as a DEFINITION — system defaults weakest, inherited sources next in their declared order with later ones overriding earlier, explicit overrides highest and always winning — and says nothing about why that order rather than another. No alternative is weighed, nothing is said about what the ordering protects against, and no date or ratifier is stated.",
       "home": "ARCHITECTURE.md:5195",
       "home_is_layer_spec": true,
       "status": "live",
@@ -4345,7 +4345,7 @@
       "title": "A fixed element is a hard constraint the optimizer may never modify",
       "verbatim": "Fixed elements are hard constraints in the voice leading optimizer — they anchor\nthe dynamic programming search. The optimizer guarantees never modifying them.",
       "plain": "Anything the user has pinned - a note, a voice, a chord, a passage - anchors the search for good voice leading. The optimizer works around it and never changes it.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home states a ROLE, which is the nearest thing to a reason and is recorded as that rather than upgraded to a derivation: fixed elements are hard constraints \"— they anchor the dynamic programming search\". That says what the constraint is FOR. What it does not say is why the guarantee is ABSOLUTE — why the optimizer may never modify them at all, rather than modifying them at a cost the search weighs — which is the part of the decision that binds, and no alternative is considered. The persistence section immediately below adds mechanism (constraints keyed by element identifiers, which are stable within a score; fixed elements visually indicated in the score view) and not ground.",
       "home": "ARCHITECTURE.md:5844",
       "home_is_layer_spec": true,
       "status": "live",
@@ -4664,7 +4664,7 @@
       "title": "Populating the chord staff overwrites whatever is in the selected range",
       "verbatim": "**Any existing content in the selected region is overwritten.**  Re-analysis after\nscore edits simply selects the same range and runs again.  If the user wants to\npreserve a previous analysis, they can undo or copy it elsewhere first.",
       "plain": "Running the reduction again over the same passage replaces what is there. Keeping an earlier analysis is the user's job - undo it, or copy it somewhere else first.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home states a RECOURSE and a WORKFLOW rather than a derivation, and both are in the decision's own words: re-analysis after score edits \"simply selects the same range and runs again\", and a user who wants to keep an earlier analysis \"can undo or copy it elsewhere first\". So what defends the overwrite is that it costs the user nothing they cannot recover, and that it keeps re-running trivial — a ground, but not a comparison against any alternative (merging, appending, or refusing to overwrite are not weighed). NOTHING IS BORROWED FROM THE SENTENCE IMMEDIATELY ABOVE, which is a reason for a DIFFERENT rule — the target staff is excluded from the analysis input because that \"prevents feedback loops when re-running the analysis\".",
       "home": "ARCHITECTURE.md:6909",
       "home_is_layer_spec": true,
       "status": "live",
@@ -4743,7 +4743,7 @@
       "title": "Every user-visible string goes through MuseScore's localization, in English and Swedish",
       "verbatim": "All user-visible strings use MuseScore's existing Qt localization infrastructure\n(`.ts` files, Qt Linguist). English and Swedish translations provided for all new strings.",
       "plain": "Text a user can read is translatable through MuseScore's own translation system, and every new string is supplied in English and Swedish.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND IT IS ONE SENTENCE ABOVE THE DECISION — which is exactly the placement this task exists to distinguish from an absent one. The section states the ground for its whole family of follow-the-host rules before applying it: new panels follow MuseScore's existing panel architecture, and \"Do not create parallel infrastructure. Read how existing MuseScore panels are implemented before creating new ones.\" Using the host's own localization infrastructure is that rule applied to user-visible strings. WHAT IS NOT DEFENDED is the choice of the two languages: for English and Swedish specifically the record holds nothing, and no date or ratifier is stated.",
       "home": "ARCHITECTURE.md:7327",
       "home_is_layer_spec": true,
       "status": "live",
@@ -4763,7 +4763,7 @@
       "title": "Accessibility follows MuseScore's existing patterns",
       "verbatim": "Accessibility follows MuseScore's existing Qt accessibility patterns — focus\nmanagement, keyboard navigation, screen reader hooks.",
       "plain": "Keyboard navigation, focus handling and screen-reader support are done the way MuseScore already does them.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND IT IS TWO SENTENCES ABOVE THE DECISION — the same paragraph and the same ground as D-155, which is why the two are recorded alike: \"Do not create parallel infrastructure. Read how existing MuseScore panels are implemented before creating new ones.\" Following the host's accessibility patterns is that rule applied to focus management, keyboard navigation and screen-reader hooks. No separate derivation is stated for the accessibility case, and no date or ratifier is stated.",
       "home": "ARCHITECTURE.md:7330",
       "home_is_layer_spec": true,
       "status": "live",
@@ -4822,7 +4822,7 @@
       "title": "Every custom file carries a format version, and the score file is never rewritten by our persistence",
       "verbatim": "All our custom files include a format version field. When the format changes,\nmigration code handles existing files. The score.mscx is never modified by our\npersistence layer.",
       "plain": "Each of our own files records which version of its format it is, so older files can be migrated when the format changes; the standard MuseScore score file inside the archive is never rewritten by us.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). IT DIFFERS BY PART. The VERSION FIELD carries its purpose in the very next sentence, and a purpose of that shape is a reason: \"When the format changes, migration code handles existing files\" — the field exists so an older file can be migrated rather than broken. The SECOND HALF — that our persistence never rewrites the score file — is stated flatly with no ground given at all. NOTHING IS BORROWED from the neighbouring paragraph, whose reason belongs to a different point: that export to MusicXML, PDF or MIDI loses our metadata is called acceptable \"— the arranging workflow is MuseScore-native\". Status DEFERRED: the component is planned rather than built, so the absence is a fact about the record and not about live code.",
       "home": "ARCHITECTURE.md:7461",
       "home_is_layer_spec": true,
       "status": "deferred",
@@ -4882,7 +4882,7 @@
       "title": "The development tools are not part of the shipping product",
       "verbatim": "The following tools live in `tools/` and are **not part of the shipping product**.\nThey are compiled/run only in development builds (`MUE_BUILD_ENGRAVING_DEVTOOLS=ON`).",
       "plain": "The batch analysis tool, the comparison scripts and the remaining measurement tools are built only in development builds and never ship to a user.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason. The home states the rule and then its MECHANISM — the tools are compiled and run only in development builds, behind a named build option — and a mechanism is how the rule is enforced, not why it was adopted. Nothing is said about why they must not ship, no alternative is weighed, and no date or ratifier is stated.",
       "home": "ARCHITECTURE.md:7584",
       "home_is_layer_spec": true,
       "status": "live",
@@ -4922,7 +4922,7 @@
       "title": "What is out of scope, and what degrades gracefully at the boundary",
       "verbatim": "Live and real-time operation, film synchronization, adaptive game music, non-Western\ntraditions (graceful degradation at boundary), post-tonal and serial music (graceful\ndegradation at boundary), audio transcription from recording, spatial music, extended\ntechniques as primary language.",
       "plain": "Live performance, film and game synchronization, audio transcription, spatial music and extended techniques as a primary language are not attempted. Non-Western traditions and post-tonal music are not attempted either, but the system is required to fail gracefully where it meets them rather than producing confident nonsense.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason. The home is a LIST under an \"Out of Scope\" heading, inside a section that sorts the whole feature set into core, important, prepared and out-of-scope tiers: the classification is recorded, its ground is not, and no item carries an individual justification. The two graceful-degradation parentheticals — on non-Western traditions and on post-tonal and serial music — state a FURTHER REQUIREMENT at the boundary rather than a defense of the exclusion, and are recorded as that. No date and no ratifier are stated.",
       "home": "ARCHITECTURE.md:7803",
       "home_is_layer_spec": true,
       "status": "live",
@@ -5150,7 +5150,7 @@
       "title": "#11 - regression tests in sync with code, and run between iterations",
       "verbatim": "11. **Regression test cases always in sync with code; regression-test between iterations.**",
       "plain": "The tests that guard against going backwards are kept current with the code, and they are run between each step of work rather than at the end.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation, and what stands in its place is PROVENANCE rather than argument: this principle belongs to the user's own standing list of 1–11, which the governing document records as given rather than derived, and whose provenance paragraph states which block of principles was ratified when without supplying a ground for the standing list itself. Recorded as an established gap rather than filled: the modern argument for it is easy to state and is NOT written in, because it is not in the record for this principle and a defense composed after the fact is what the never-work-from-memory rule forbids. Distinct from several of its immediate neighbours in the same list, which DO carry a stated ground at the same home — so the absence here is a property of this principle's record, not of the list.",
       "home": "CLAUDE.md:52",
       "home_is_layer_spec": false,
       "nonspec_kind": "project-convention",
@@ -5190,7 +5190,7 @@
       "title": "#14 - every behavior change is one user-ratified, revertible, provenance-stamped commit",
       "verbatim": "14. **Every behavior change is user-ratified as one revertible, provenance-stamped commit.**",
       "plain": "Anything that changes what the system does is ratified by the user first, lands as a single commit that can be undone whole, and carries the record of where it came from.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation. The home states the rule and the date of its ratification, and the provenance paragraph at that same home records WHEN each block of principles was ratified rather than why any of them holds. Recorded as an established gap and deliberately NOT filled from the obvious argument — that one revertible, provenance-stamped commit per behaviour change is what makes a regression attributable and reversible — because that argument is nowhere in the record for this principle. ONE TRACE OF THE SAME REASONING DOES EXIST ELSEWHERE AND IS NAMED RATHER THAN BORROWED: D-538 records an early, concrete form of this discipline for one change, with its own stated risk, and the user ruled that entry SUPERSEDED BY this principle — which shows the kinship without supplying this principle's own derivation.",
       "home": "CLAUDE.md:67",
       "home_is_layer_spec": false,
       "nonspec_kind": "project-convention",
@@ -5548,7 +5548,7 @@
       "title": "No self-invented labels, abbreviations, numbering schemes or jargon",
       "verbatim": "- **No self-invented labels, abbreviations, numbering schemes, or jargon** — in documents,\n  register rows, commit messages, and conversation alike. Use the name a thing already has\n  in the repository; if it has none, describe it in plain words. (User-directed, repeatedly;\n  recorded 2026-07-11.)",
       "plain": "A thing is called by the name it already has in the repository. If it has none, it is described in plain words rather than given a coined label - in documents, rows of the open-items register, commit messages and conversation alike.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation. What the home states beside the rule is the STRENGTH of its provenance — user-directed \"repeatedly\", recorded 2026-07-11 — which says how firmly it is held, not why it holds. The rule's second clause states the REMEDY (use the name a thing already has in the repository; if it has none, describe it in plain words) rather than a ground. No cost of the practice it forbids is named at the home, and no alternative is considered.",
       "home": "CLAUDE.md:1192",
       "home_is_layer_spec": false,
       "nonspec_kind": "process",
@@ -6109,7 +6109,7 @@
       "title": "If the diminished bonus rotates the winner to a non-diminished chord, the result without it is used",
       "verbatim": "  fires only when at least one tone has `onsetAtRegionStart == true` or\n  `distinctMetricPositions > 0` (i.e. came from `collectRegionTones`).\n  Single-tick / status-bar / unit-test paths use the legacy single-bass path.",
       "plain": "The bonus that favours diminished readings can, in the course of comparing bass notes, end up electing a winner that is not diminished at all. When that happens the analysis falls back to the answer it had before the bonus was applied.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation for this fallback. What stands in its place is the section's BLANKET ground, which covers every bullet in it equally rather than this one in particular: these are load-bearing design decisions that future changes must respect or risk documented regressions. The rule's own text at the home states the DEFECT IT GUARDS AGAINST — the bonus can rotate the global winner across bass candidates, so a post-bonus winner that is not diminished or half-diminished falls back to the variant computed without it — which is the failure it prevents rather than an argument for this remedy over another. ⚠ Legacy subject. ★ AND THIS ENTRY'S RECORDED VERBATIM QUOTES A DIFFERENT RULE THAN ITS TITLE, RESTATEMENT AND DEFENSE DESCRIBE — rowed at `OPEN_ITEMS.md` OI-358. This field is written against the decision the title, restatement and defense identify, which is the post-bonus winner-quality guard at the home, and NOT against the quoted text.",
       "home": "docs/scoring_model.md:1061",
       "home_is_layer_spec": true,
       "status": "live",
@@ -6145,7 +6145,7 @@
       "title": "Joint bass-and-chord scoring requires accumulated regional evidence",
       "verbatim": "Derived from the B1, B2, and B3 lessons.\n\n1. **Read the existing template nearest to yours.** Understand its intervals,\n   TPC deltas, and which existing terms / guards apply to it.\n",
       "plain": "The scoring that considers the bass note and the chord together only switches on when the notes came from accumulating a whole stretch of music. The single-moment paths - the status bar, a unit test - use the simpler single-bass scoring.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation. The rule's own text at the home states the CONDITION and its consequence — joint scoring fires only where at least one tone carries evidence of regional accumulation, and the single-tick, status-bar and unit-test paths therefore use the legacy single-bass path — which is the rule restated rather than a ground for it; nothing says why those paths must fall back rather than accumulate, and no alternative is weighed. The section's blanket statement that its bullets are load-bearing decisions covers every bullet equally and is not this entry's own defense. ⚠ Legacy subject. ★ AND THIS ENTRY'S RECORDED VERBATIM QUOTES A SECTION-OPENING CHECKLIST RATHER THAN THIS RULE — rowed at `OPEN_ITEMS.md` OI-358. This field is written against the decision the title, restatement and defense identify, and NOT against the quoted text.",
       "home": "docs/scoring_model.md:1333",
       "home_is_layer_spec": true,
       "status": "live",
@@ -9851,7 +9851,7 @@
       "title": "Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation",
       "verbatim": "- **Engagement framing.** References to an \"engagement hard-stop\" / \"before any production switch\" (§5/§10) remain true\n  *conditionally* — engagement (Phase 5d) is **deferred indefinitely** (production out of scope; the posture is dormant\n  build + ground-truth validation). The hard-stops apply *if* a switch is ever made; they are not pending work.",
       "plain": "Switching the function layer on in the product is not scheduled. It is built and checked against published human analyses, and stays inactive; the conditions written for a switch apply if one is ever made, and are not outstanding work. THIS IS NOT THE INFERENCE-ENGINE SWITCH - that happened (D-010): the joint estimator is production and the legacy pipeline is dormant. This entry concerns the separate Layer-5 function-annotation module, built and validated but never in production in either era. Its concerns are handled by the LIVE implementation natively or by schedule: degree-in-key Roman numerals are the estimator's own state; key changes are decided inside the decode; applied-chord labels are emitted by the live renderer (the D-248/OI-267 revisit covers the remainder); cadence is a fitted factor inside the model and a marker on the presentation surface; carried-abstention resolution is obviated by the full-posterior publication (D-006); the ornament labels are the ratified OI-194 increment; and the complete concern-by-concern mapping of the legacy layer's remaining scope is the OI-259 phase-3 re-disposition.",
-      "rationale": null,
+      "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home states a GROUND in a parenthetical rather than a derivation, and it is recorded as that: engagement is deferred indefinitely \"(production out of scope; the posture is dormant build + ground-truth validation)\". So the reason given is a SCOPE DECISION taken elsewhere and applied here, together with the posture it leaves in place — built, validated against published human analyses, and inactive. What the record does NOT hold at this entry is any argument for that scope decision, and no alternative is weighed. The entry's plain restatement carries a concern-by-concern mapping of how the live implementation handles what this layer would have done — which is a statement about the live system rather than a defense of the deferral, and is not read as one. ⚠ Legacy subject; the hard-stops written for a switch apply IF one is ever made and are not pending work, which the decision itself says.",
       "status": "deferred",
       "date": "not stated",
       "ratified_by": [

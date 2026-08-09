@@ -128,7 +128,7 @@
 
 **In plain words.** Running the reduction again over the same passage replaces what is there. Keeping an earlier analysis is the user's job - undo it, or copy it somewhere else first.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home states a RECOURSE and a WORKFLOW rather than a derivation, and both are in the decision's own words: re-analysis after score edits "simply selects the same range and runs again", and a user who wants to keep an earlier analysis "can undo or copy it elsewhere first". So what defends the overwrite is that it costs the user nothing they cannot recover, and that it keeps re-running trivial — a ground, but not a comparison against any alternative (merging, appending, or refusing to overwrite are not weighed). NOTHING IS BORROWED FROM THE SENTENCE IMMEDIATELY ABOVE, which is a reason for a DIFFERENT rule — the target staff is excluded from the analysis input because that "prevents feedback loops when re-running the analysis".
 
 **Status.** LIVE · date not stated · ratifier not stated
 

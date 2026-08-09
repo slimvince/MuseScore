@@ -59,7 +59,7 @@
 
 **In plain words.** Every stage is labelled as live, built-but-not-connected, or designed-only - one label each, no ambiguity.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason for the exactly-one-state rule. The three state names are DEFINED at the home — wired into production; built and tested but not wired, reachable only through diagnostics and byte-identical on production; specified and not yet built — and a definition is not a ground. What stands beside it is a DIVISION OF RECORD rather than a defense: per-date and per-commit provenance lives in the status document and the session reports, "not here", which says what the legend does not carry rather than why each layer carries exactly one state. No alternative is considered.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -215,7 +215,7 @@
 
 **In plain words.** A thing is called by the name it already has in the repository. If it has none, it is described in plain words rather than given a coined label - in documents, rows of the open-items register, commit messages and conversation alike.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation. What the home states beside the rule is the STRENGTH of its provenance — user-directed "repeatedly", recorded 2026-07-11 — which says how firmly it is held, not why it holds. The rule's second clause states the REMEDY (use the name a thing already has in the repository; if it has none, describe it in plain words) rather than a ground. No cost of the practice it forbids is named at the home, and no alternative is considered.
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 

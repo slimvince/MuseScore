@@ -13,7 +13,7 @@
 
 **In plain words.** The batch analysis tool, the comparison scripts and the remaining measurement tools are built only in development builds and never ship to a user.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason. The home states the rule and then its MECHANISM — the tools are compiled and run only in development builds, behind a named build option — and a mechanism is how the rule is enforced, not why it was adopted. Nothing is said about why they must not ship, no alternative is weighed, and no date or ratifier is stated.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -47,7 +47,7 @@
 
 **In plain words.** Live performance, film and game synchronization, audio transcription, spatial music and extended techniques as a primary language are not attempted. Non-Western traditions and post-tonal music are not attempted either, but the system is required to fail gracefully where it meets them rather than producing confident nonsense.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason. The home is a LIST under an "Out of Scope" heading, inside a section that sorts the whole feature set into core, important, prepared and out-of-scope tiers: the classification is recorded, its ground is not, and no item carries an individual justification. The two graceful-degradation parentheticals — on non-Western traditions and on post-tonal and serial music — state a FURTHER REQUIREMENT at the boundary rather than a defense of the exclusion, and are recorded as that. No date and no ratifier are stated.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

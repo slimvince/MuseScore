@@ -1076,6 +1076,46 @@ arm that ships, which bears on how that value should be read.
 ground are at `ratification_surfaces/cowork_oi354_legacy_mark_establishment_2026_08_09.md` §5.
 **Nothing is proposed for it beyond the row** — no fix, no design, no inference change.
 
+### 2.9 Five register entries quote a different rule than they are about, and both guards pass over it (Task 2)
+
+**Found by the defense-gap method's own required act** — *open the home document and read the text
+AROUND the quoted span* — which is the only way a mismatch between an entry and its quote becomes
+visible at all.
+
+In `docs/scoring_model.md` §8 the bullets stand in the same order as the identifiers **D-214 …
+D-224**, and for the first six the recorded home lands inside the correct bullet. From **D-220** on
+it does not, and the offset grows: D-220 quotes the `hasStructuralBass` bullet, D-221 a fragment of
+the pre-sort capture bullet, D-222 the joint-scoring bullet, D-224 §9's checklist opening — and
+**D-223 quotes a horizontal rule and the heading `## 9. How to add a new template safely
+(checklist)`**, which is not a decision at all.
+
+**What is established is the STATE, not the cause.** In all five the **title, the plain restatement
+and the defense are correct, mutually consistent, and describe the bullet the identifier's position
+predicts** — so the entries' meaning survives and it is the QUOTE and the LINE that are wrong. Five
+consecutive entries entered with correct titles and correct measured defenses but wrong quotes is
+not a plausible entry error.
+
+**★ WHY NO GUARD SEES IT, which is the reason this is surfaced rather than quietly repaired.** The
+register's own check verifies that every verbatim resolves at its cited home; the disposition
+verifier reports zero line drift. **Both are satisfied by a corrupted pair** — once the verbatim IS
+the text at the drifted line, the two agree with each other permanently. The condition is
+self-sealing: the moment it happens, the machinery that exists to detect drift confirms health.
+
+**The candidate cause is named and NOT asserted:** a verbatim RE-TAKE against an already-drifted
+anchor would produce exactly this. **One tool is REFUTED as the cause and is not under suspicion** —
+`reaim_home_anchors.py`, read at its own source, moves only the line part of `home`, never the
+verbatim, and locates an entry by finding that entry's own quote, so it follows a quote rather than
+overwriting it.
+
+**The detection method is the finding's most useful half and is stated so it can be built: compare
+each entry's verbatim against its own title and defense.** Nobody runs that check, and it is the
+only one that could have caught this.
+
+**Rowed at [[OI-358]]** with its detail file in the same commit. **Nothing is corrected** — five
+verbatims and five anchors are register DATA maintenance under D-230, and the act needs a decision
+the record does not carry: whether a corrupted verbatim is re-taken from the correct bullet, or the
+wrong quote is preserved beside it (#12).
+
 ---
 
 # ═══ THE THIRD RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_3.md`, 2026-08-09) ═══
@@ -1231,6 +1271,67 @@ answer to the objection that verdicts written to clear a guard are the weakest k
 corpus of scores, no `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to
 inference, no design. **Phase 1's completion statement is not written, not drafted and not partially
 written here.**
+
+### Task 2 — COMPLETE. The defense-gap population is CLOSED, and reading the home text turned up a corruption in the register itself
+
+**The population was derived fresh at task start (A5)** from the completion inventory's
+`entries_with_no_rationale_at_all`, not carried from the dispatch or from this file. **Every one of
+it is now filled, and the derived count reads zero** — no count is restated here (**D-431**).
+
+**The act per entry was the recorded one, and the second half of it is what earns its keep:** read
+the entry's own record — verbatim, plain restatement, status source — and **then open the home
+document and read the text AROUND the quoted span**, because a defense is very often in the sentence
+after the decision rather than inside it. **Memory was not used as a source anywhere.**
+
+**★ THE SPLIT IS AGAIN ABOUT EVEN, AND WHERE THE DEFENSES WERE FOUND IS THE FINDING.** Before the
+fill the register DISPLAYED *"derivation not recorded"* for the whole population, because the
+renderer substitutes that phrase for an empty field — so the surface asserted an ESTABLISHED GAP for
+entries where **no search had ever been performed.** Of those closed here:
+
+- **two hold a defense the empty field flatly misrepresented** — one sits in a paragraph whose own
+  heading is *"Why split?"* and whose second sentence is the general ground the decision rests on
+  (the recorded verbatim turns out to be the first half of that justification rather than the rule);
+  the other names the standing principle it enforces inside the decision's own sentence;
+- **two more have their defense ONE AND TWO SENTENCES ABOVE the decision** — a single paragraph
+  states the ground for a whole family of follow-the-host rules (*"Do not create parallel
+  infrastructure"*), and the two entries are that rule applied to strings and to accessibility;
+- **five differ BY PART**, and each is said apart: a threshold trio where the third band carries its
+  own stated reason and the two values carry none; a gate whose original decision has no derivation
+  while the record of why it is NOT implemented does; a version field whose purpose is stated while
+  the never-rewrite half is bare; a hard constraint whose ROLE is stated but not why the guarantee
+  is absolute; and a deferral whose ground is a scope decision taken elsewhere;
+- **the rest are genuine gaps, said with what stands in their place** — a MECHANISM mistaken for a
+  ground, a DEFINITION, a DIVISION OF RECORD, a LIST under a heading, and the STRENGTH of a
+  provenance (*user-directed repeatedly*) which says how firmly a rule is held rather than why.
+
+**★ NOTHING WAS INVENTED, AND TWO NEAR-MISSES ARE RECORDED BECAUSE THEY ARE THE FAILURE MODE.**
+Several entries sit one sentence away from a reason that belongs to a DIFFERENT rule — a
+feedback-loop justification next to an overwrite rule, a metadata-loss justification next to a
+versioning rule, a licence justification next to a contributor-agreement rule. **In each case the
+neighbouring reason is named and explicitly not borrowed.** And where the obvious modern argument
+exists but the record never made it — twice, on the standing principles — the argument is named and
+**deliberately not written in**, because a defense composed after the fact is what the
+never-work-from-memory rule forbids.
+
+**★ THE TWO RECORDED MECHANICAL HAZARDS WERE MET AND AVOIDED BY THEIR OWN REMEDIES.** Every fill
+REPLACED the entry's trailing `rationale` rather than adding a second key, and the trailing field's
+comma state was preserved per entry — some carry one and some do not. **The derived count was read
+after the fills rather than the edits being trusted**, and the classifier's round-trip establishment
+— which a duplicate key would break — passes.
+
+**★ AND THE METHOD'S SECOND HALF FOUND SOMETHING NOBODY WAS LOOKING FOR — §2.9, rowed at
+[[OI-358]].** Five consecutive register entries quote a different rule than their own title,
+restatement and defense describe; one quotes a section heading. **Both guards pass over it**, because
+each verifies that the verbatim sits at the cited line and neither asks whether it is the rule the
+entry is about. The two entries of this task's own population that are among the five carry a marker
+saying so, and their fills are written against the decision the title and defense identify rather
+than against the quoted text.
+
+**Holds:** none new. **Surfacings:** §2.9. **Freeze respected:** no `src/` change, no golden, no
+corpus of scores, no `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to
+inference, no design. **Phase 1's completion statement is not written, not drafted and not partially
+written here** — and it is worth saying plainly at the moment this count reaches zero: **a closed
+defense-gap population is one item of the finish line, not the finish line.**
 
 ---
 

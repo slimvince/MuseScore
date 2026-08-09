@@ -118,7 +118,7 @@
 
 **In plain words.** Settings are exposed through two small interfaces rather than one big one, so each component can only see the settings it actually needs.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND THE EMPTY FIELD MISREPRESENTED IT — it sits at the home in a paragraph whose own heading is "Why split?": the implode bridge has no business knowing about status-bar display preferences and the analysis bridge none about chord-staff output settings, and then the general ground those two instances rest on — "Narrow interfaces make the dependency of each component explicit and keep the IoC registrations clean." The recorded verbatim is in fact the FIRST HALF of that justification rather than the rule itself, which is why the entry reads as undefended. A SECOND, structural reason is stated in the next paragraph, for the related choice not to register the combined interface: it inherits from both sub-interfaces, so the IoC static member would be ambiguous with two global-interface bases.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

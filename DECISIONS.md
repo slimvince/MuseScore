@@ -222,13 +222,13 @@ project's own and are defined here because they are used before any entry explai
 | — of which recorded only on a tracking surface, with no home at all | 1 |
 | — of which a project-wide convention, correctly homed | 42 |
 | — of which a decision about the process, correctly homed | 114 |
-| Decisions whose defense the record does not state | 23 |
+| Decisions whose defense the record does not state | 0 |
 | Entries whose own ratification the provenance records | 315 |
 | Entries whose home is recorded at SECTION granularity | 193 |
 
 The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **315 of 645** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 330 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **622 of 645** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **645 of 645** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -596,9 +596,9 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-079 | The function layer annotates and resolves; it never rewrites the committed chord | LIVE | — | `ARCHITECTURE.md` |
 | D-080 | Carried abstentions are resolved by selecting among the carried readings, never re-derived | LIVE | — | `ARCHITECTURE.md` |
 | D-081 | The cadence detector is key-agnostic | LIVE | — | `ARCHITECTURE.md` |
-| D-082 | The grouping layer is additive, read-only, with no feedback | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-083 | Hierarchy, periods and prolongation are out of the validatable core | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-084 | The progression-schema recognizer is a consumer of the function layer, not a new layer | DEFERRED · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-082 | The grouping layer is additive, read-only, with no feedback | LIVE | — | `ARCHITECTURE.md` |
+| D-083 | Hierarchy, periods and prolongation are out of the validatable core | LIVE | — | `ARCHITECTURE.md` |
+| D-084 | The progression-schema recognizer is a consumer of the function layer, not a new layer | DEFERRED | — | `ARCHITECTURE.md` |
 | D-085 | The voice-leading axis is a separate axis with its own layers | LIVE | — | `ARCHITECTURE.md` |
 | D-248 | Tonicization labels are not implemented and are deferred | DEFERRED ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-291 | The tonicization labeller is NOT wired, and the metric is NOT changed to credit it - both would hide a real key error | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
@@ -608,7 +608,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-338 | The function layer selects among the chord layer's carried readings and never re-derives a chord from the notes | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §9 |
 | D-340 | The reading the function layer emits IS the selected source's committed identity, carried whole — never rebuilt field by field | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §7 |
 | D-341 | The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §5.0 |
-| D-342 | Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation | DEFERRED ⚠LEGACY · derivation not recorded | 2026-08-02 · user | `cowork_layer5_function_design.md` §11 |
+| D-342 | Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation | DEFERRED ⚠LEGACY | 2026-08-02 · user | `cowork_layer5_function_design.md` §11 |
 | D-382 | The function layer selects by JOINT CONSISTENCY across tonality, root, inversion and bass — not by maximizing any one score — and every ambiguity kind reasons over the full carried distribution | LIVE | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§3.1 The objective: select by JOINT CONSISTENCY, not by strengthening one score” |
 | D-383 | Bass, spelling and tonality-consistency DECIDE; a licensed progression is only a tie-break among already-consistent readings and may never override a committed root | LIVE | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§3.2 The evidence channels, ranked by the research” |
 | D-384 | Re-ranking the tonality under chord evidence is a SEPARATE step, never part of the function layer's selection — the function layer reasons inside a tonality already fixed | LIVE | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§4.1 Layer boundaries” |
@@ -665,7 +665,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-074 | Analyze and suggest - never modify the score without explicit user action | LIVE | — | `ARCHITECTURE.md` |
 | D-075 | Interface-based design for machine-learning substitutability | LIVE | — | `ARCHITECTURE.md` |
 | D-076 | Score inspection before diagnosis | LIVE | — | `ARCHITECTURE.md` |
-| D-077 | The configuration interface is split into two narrow IoC interfaces | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-077 | The configuration interface is split into two narrow IoC interfaces | LIVE | — | `ARCHITECTURE.md` |
 | D-078 | The cross-layer value types live in a dependency-free leaf header | LIVE | — | `ARCHITECTURE.md` |
 | D-107 | American English throughout | LIVE | — | `ARCHITECTURE.md` |
 | D-108 | Cross-platform by default | LIVE | — | `ARCHITECTURE.md` |
@@ -690,11 +690,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
 | D-086 | Roman numerals and Nashville numbers are presentation choices, not separate analyses | LIVE | — | `ARCHITECTURE.md` |
-| D-087 | Display options live with the formatter, not with the analyzer preferences | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-087 | Display options live with the formatter, not with the analyzer preferences | LIVE | — | `ARCHITECTURE.md` |
 | D-088 | No automatic key signature injection | LIVE | — | `ARCHITECTURE.md` |
-| D-089 | The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive | SUPERSEDED BY D-018 ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-089 | The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive | SUPERSEDED BY D-018 ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-090 | Abstention is a valid outcome - high precision before coverage | LIVE | — | `ARCHITECTURE.md` |
-| D-106 | The augmented-sixth labels are gated to the Standard and Baroque presets | SUPERSEDED IN FACT · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-106 | The augmented-sixth labels are gated to the Standard and Baroque presets | SUPERSEDED IN FACT | — | `ARCHITECTURE.md` |
 | D-234 | A chord symbol string must be valid under chords_std.xml; chords.xml is not relied on | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-295 | Zero information loss to the end user - every inferred object must be displayable | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-304 | The analyzer always emits its fullest reading; simplifying it happens only when comparing against a corpus, never in the product | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
@@ -711,7 +711,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-091 | ARCHITECTURE.md is the canonical architecture document and wins every disagreement | LIVE | — | `ARCHITECTURE.md` |
 | D-092 | A cross-cutting contract is stated once and never redefined in a layer document | LIVE | — | `ARCHITECTURE.md` |
 | D-093 | STATUS.md wins on current state; ARCHITECTURE.md on design | LIVE | — | `ARCHITECTURE.md` |
-| D-094 | Each layer carries exactly one build state | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-094 | Each layer carries exactly one build state | LIVE | — | `ARCHITECTURE.md` |
 | D-109 | The open-items register is the one home for every unresolved issue, and the index is the status of record | LIVE | — | `OPEN_ITEMS.md` |
 | D-110 | The decisions register records what was decided and its status - nothing else | LIVE | — | `open_items/OI-208.md` |
 | D-111 | A decision belongs in the owning layer's specification; the register is an index | LIVE | — | `open_items/OI-208.md` |
@@ -720,7 +720,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-127 | An architectural decision that changes is documented in the same commit | LIVE | — | `ARCHITECTURE.md` |
 | D-192 | A scoring change and its documentation land in the same commit | LIVE | — | `CLAUDE.md` |
 | D-193 | The writing standards live in one place, and predicates must be qualified | LIVE | — | `CLAUDE.md` |
-| D-194 | No self-invented labels, abbreviations, numbering schemes or jargon | LIVE · derivation not recorded | — | `CLAUDE.md` |
+| D-194 | No self-invented labels, abbreviations, numbering schemes or jargon | LIVE | — | `CLAUDE.md` |
 | D-195 | Every design decision carries its defense at its home | LIVE | — | `CLAUDE.md` |
 | D-230 | The decisions register is a mandatory session-start read, and a new ruling lands in the register in the commit that records it | LIVE | — | `CLAUDE.md` |
 | D-232 | The section numbers are authoritative; the "Rule N" labels are a legacy flat numbering | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
@@ -744,7 +744,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-116 | The system is a module inside MuseScore Studio, not a plugin | LIVE | — | `ARCHITECTURE.md` |
 | D-117 | The long-term intent is an official contribution to MuseScore Studio | LIVE | — | `ARCHITECTURE.md` |
 | D-118 | GPL v3, and every external library must be GPL v3 compatible | LIVE | — | `ARCHITECTURE.md` |
-| D-119 | The MuseScore contributor licence agreement is signed before any pull request | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-119 | The MuseScore contributor licence agreement is signed before any pull request | LIVE | — | `ARCHITECTURE.md` |
 | D-120 | MuseScore's coding style is followed, with clang-format run before every commit | LIVE | — | `ARCHITECTURE.md` |
 | D-121 | Where MuseScore's documentation practice is minimal, the higher standard applies | LIVE | — | `ARCHITECTURE.md` |
 | D-122 | Every public class and method is documented in musical terms | LIVE | — | `ARCHITECTURE.md` |
@@ -763,7 +763,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
 | D-128 | Styles are defined entirely in data; adding one never requires code changes | LIVE | — | `ARCHITECTURE.md` |
-| D-129 | Style conflicts resolve by a declared priority - explicit overrides always win | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-129 | Style conflicts resolve by a declared priority - explicit overrides always win | LIVE | — | `ARCHITECTURE.md` |
 | D-130 | The style loader never names a style in code | LIVE | — | `ARCHITECTURE.md` |
 | D-131 | One shared style taxonomy, not two parallel vocabularies | LIVE | — | `ARCHITECTURE.md` |
 | D-132 | The remaining empirical grounding is the per-preset WEIGHTS alone; the clusters half is delivered by the ratified five-idiom set | DEFERRED | — | `ARCHITECTURE.md` |
@@ -800,7 +800,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
 | D-134 | A voicing type is never requested directly; the style selects it | LIVE | — | `ARCHITECTURE.md` |
-| D-135 | A fixed element is a hard constraint the optimizer may never modify | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-135 | A fixed element is a hard constraint the optimizer may never modify | LIVE | — | `ARCHITECTURE.md` |
 | D-136 | The inference demo view is a developer tool and is not shipped | DEFERRED | — | `ARCHITECTURE.md` |
 | D-137 | The harmony maps are our own visual design, and are chosen partly to avoid intellectual-property claims | DEFERRED | — | `ARCHITECTURE.md` |
 | D-138 | Chord preview uses MuseScore's note-input pathway, not the playback pipeline | DEFERRED | — | `ARCHITECTURE.md` |
@@ -830,7 +830,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-148 | The split is visible in the score; the invisible alternative is deferred | LIVE | — | `ARCHITECTURE.md` |
 | D-149 | Only visible, sounding notes enter the pitch-class collection | LIVE | — | `ARCHITECTURE.md` |
 | D-150 | The chord staff is the output, never an input to the analysis that fills it | LIVE | — | `ARCHITECTURE.md` |
-| D-151 | Populating the chord staff overwrites whatever is in the selected range | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-151 | Populating the chord staff overwrites whatever is in the selected range | LIVE | — | `ARCHITECTURE.md` |
 | D-152 | Roman numerals and Nashville numbers are never shown together on one staff | LIVE | — | `ARCHITECTURE.md` |
 | D-153 | Interactive annotations are written in the score's normal colour; the batch pipeline writes red | LIVE | — | `ARCHITECTURE.md` |
 | D-244 | Choosing an interval family for an ambiguous sonority is deferred; fixed tables are used | DEFERRED | 2026-08-02 · user | `ARCHITECTURE.md` |
@@ -844,11 +844,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
 | D-154 | New panels use MuseScore's own panel and interface infrastructure | DEFERRED | — | `ARCHITECTURE.md` |
-| D-155 | Every user-visible string goes through MuseScore's localization, in English and Swedish | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-156 | Accessibility follows MuseScore's existing patterns | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-155 | Every user-visible string goes through MuseScore's localization, in English and Swedish | LIVE | — | `ARCHITECTURE.md` |
+| D-156 | Accessibility follows MuseScore's existing patterns | LIVE | — | `ARCHITECTURE.md` |
 | D-157 | The harmonic-display preference exists for clarity, not for cost | LIVE | — | `ARCHITECTURE.md` |
 | D-158 | Our data lives in separate files inside the score archive; the score file is never touched | DEFERRED | — | `ARCHITECTURE.md` |
-| D-159 | Every custom file carries a format version, and the score file is never rewritten by our persistence | DEFERRED · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-159 | Every custom file carries a format version, and the score file is never rewritten by our persistence | DEFERRED | — | `ARCHITECTURE.md` |
 | D-160 | Arranger interactions are logged from the start, with consent, as future training data | DEFERRED | — | `ARCHITECTURE.md` |
 | D-161 | Chord symbols already in a score are a second analyst's opinion, not ground truth | DEFERRED | — | `ARCHITECTURE.md` |
 
@@ -856,9 +856,9 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-162 | The development tools are not part of the shipping product | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-162 | The development tools are not part of the shipping product | LIVE | — | `ARCHITECTURE.md` |
 | D-163 | The batch tool deliberately skips post-load layout | LIVE | — | `ARCHITECTURE.md` |
-| D-164 | What is out of scope, and what degrades gracefully at the boundary | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-164 | What is out of scope, and what degrades gracefully at the boundary | LIVE | — | `ARCHITECTURE.md` |
 | D-308 | A newly acquired corpus enters as research material; the frozen regression corpus stays the gate until a deliberate re-baseline | LIVE | 2026-08-02 · user | `CLAUDE.md` |
 | D-309 | A corpus the analysis handles badly stays on the roadmap marked deferred; it is more valuable than one that confirms what already works | LIVE | 2026-08-02 · user | `docs/score_inventory.md` |
 | D-310 | Jazz accuracy is not measurable on the corpora held: the low agreement is missing bass and piano voicings, not a scoring failure | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
@@ -901,9 +901,9 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-172 | #8 - no inference-problem-driven coding until the refactoring, the architectural design and the algorithmic completion are done | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-173 | #9 - measure only on corpora known to be non-stale and accurate | LIVE | — | `CLAUDE.md` |
 | D-174 | #10 - documentation always in sync with code | LIVE | — | `CLAUDE.md` |
-| D-175 | #11 - regression tests in sync with code, and run between iterations | LIVE · derivation not recorded | — | `CLAUDE.md` |
+| D-175 | #11 - regression tests in sync with code, and run between iterations | LIVE | — | `CLAUDE.md` |
 | D-176 | #13 - surface a surprise as a stop before building around it | LIVE | — | `CLAUDE.md` |
-| D-177 | #14 - every behavior change is one user-ratified, revertible, provenance-stamped commit | LIVE · derivation not recorded | — | `CLAUDE.md` |
+| D-177 | #14 - every behavior change is one user-ratified, revertible, provenance-stamped commit | LIVE | — | `CLAUDE.md` |
 | D-178 | #15 - verify at the objects on the full output surface, never at an assertion | LIVE | — | `CLAUDE.md` |
 | D-179 | #16 - every measurement is stamped to its corpus and its tooling, and the outgoing reference is snapshotted | LIVE | — | `CLAUDE.md` |
 | D-180 | #17 - the Premise Gate | LIVE | — | `CLAUDE.md` |
@@ -1015,9 +1015,9 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-219 | Gates B, C and D were unreachable and were removed; no temporal condition may be added to the enharmonic flip | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-220 | The augmented-seventh guard requires both the major third and the augmented fifth | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-221 | A sparse upper-register lowest note does not earn inversion bonuses | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
-| D-222 | If the diminished bonus rotates the winner to a non-diminished chord, the result without it is used | LIVE ⚠LEGACY · derivation not recorded | — | `docs/scoring_model.md` |
+| D-222 | If the diminished bonus rotates the winner to a non-diminished chord, the result without it is used | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-223 | A gate that judges the pre-correction winner reads a snapshot, not the live result | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
-| D-224 | Joint bass-and-chord scoring requires accumulated regional evidence | LIVE ⚠LEGACY · derivation not recorded | — | `docs/scoring_model.md` |
+| D-224 | Joint bass-and-chord scoring requires accumulated regional evidence | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-225 | A corpus is regenerated before its baseline figures are updated | LIVE | — | `BUILD_AND_TEST.md` |
 | D-226 | The music21 export is version-pinned; regenerating it is a deliberate re-baseline | LIVE | — | `tools/REPRODUCIBILITY.md` |
 | D-281 | The batch measurement tool must emit the structured fields on every alternative, or the corpus figures silently revert | LIVE | 2026-08-02 · user | `BUILD_AND_TEST.md` |
@@ -1025,8 +1025,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `9eef295038c8e5177cfa5779e6b1ba2fde258f6b`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `b5f7c085ff12e7d0…`).
+- Coverage figures above regenerated at commit `ba6e40e7849b7aac401e23a4fe17084aca7d62be`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `cb37f81faa95d3c6…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).
