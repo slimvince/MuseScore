@@ -1048,6 +1048,34 @@ where Task 0 left it.
 **Phase 1's completion statement is not written, not drafted and not partially written by this
 batch.**
 
+### 2.8 The Baroque partial-signature correction is legacy-only, and the production arm's handling of that notation practice is unestablished (Task 1)
+
+**Found by the citation-transfer half of the [[OI-354]] establishment, not by looking for it.** The
+transfer verdict for **D-575** is `none-found`, and the reason it is `none-found` is a live question
+about the arm that ships.
+
+Baroque scores are frequently notated with one accidental fewer than the modern practice, so the
+sounding key sits one step to the sharp side of anything a signature-faithful reading could name.
+The handling that detects and corrects it **lives in the legacy key resolver and nowhere else**; the
+production arm does not run that resolver; and D-575's own home text says in terms that whether the
+joint estimator handles the practice **at all** is not settled.
+
+**What is deliberately NOT claimed.** Absence of the machinery is not absence of the handling: the
+live arm reads the signature and declared mode as a **weak fitted soft prior** (**D-528**) rather
+than as a hard constraint, so a key one step to the sharp side is reachable there with no explicit
+correction. The row asserts **no defect and no regression** — it asserts that the question is
+unestablished in both directions, which is the state #19 refuses to treat as established.
+
+**And one thing substantially reduces its size, stated so it is not read as larger than it is:** the
+production arm's key agreement on exactly this repertoire IS measured and published in gate block
+(A), so this is not an unmeasured failure behind a green gate — any effect already sits inside a
+published value. What is missing is whether a named, corpus-wide notation practice is handled on the
+arm that ships, which bears on how that value should be read.
+
+**Rowed at [[OI-357]]** with its detail file in the same commit (rule (c)); the verdict and its
+ground are at `ratification_surfaces/cowork_oi354_legacy_mark_establishment_2026_08_09.md` §5.
+**Nothing is proposed for it beyond the row** — no fix, no design, no inference change.
+
 ---
 
 # ═══ THE THIRD RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_3.md`, 2026-08-09) ═══
@@ -1143,6 +1171,63 @@ applied. Every verdict is at `tools/audit/guard_state.json` → `summary` and no
 **Holds:** none new. **Surfacings:** none — every subject of this task is the record's own
 bookkeeping and the rulings that govern it, and [[OI-356]] is an apparatus finding, so the protocol's
 own line puts it in a row rather than in §2. **Freeze respected:** no `src/` change, no golden, no
+corpus of scores, no `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to
+inference, no design. **Phase 1's completion statement is not written, not drafted and not partially
+written here.**
+
+### Task 1 — COMPLETE. Ruling 18 executed: eleven verdicts authored and delivered for review, the guard deliberately left red
+
+**§1.9 is answered and discharged into a reading file.** The set is at
+`ratification_surfaces/cowork_oi354_legacy_mark_establishment_2026_08_09.md`.
+
+**A1 HOLDS, and it was checked before the first verdict rather than after.** The phase-1w pass's
+method is stated in its own record in full and is reusable as stated: half A is reachability at the
+code with **five named senses** — because the notation arm turns on a runtime flag whose default is
+true rather than on compilation, so a bare *dormant* is not an answer — each verdict citing located
+evidence anchors; half B is a citation scan across `.md`/`.cpp`/`.h`/`.py`/`.txt` with **its own two
+stated bounds carried across unchanged**, because they are what a `none-found` verdict is worth.
+**No method gap was met, so the STOP the assumption reserves did not fire, and nothing was
+substituted.** Where a case needed a judgment the pass had already faced, **the pass's own precedent
+is named at the entry** — D-302 for a procedure with no code, D-215 for an obligation never
+executed, D-284 and D-243 for a finding about a legacy surface, D-325 for a principle adjacent to
+one already transferred.
+
+**A2 HOLDS.** The population is eleven, derived at task start from the tool's own output and not
+carried from the dispatch or from this file. Checked rather than assumed: the committed verification
+artifact mentions none of them.
+
+**★ THE VERDICTS ARE NOT UNIFORM, WHICH IS THE RESULT WORTH READING.** Had all eleven come back
+*legacy, reached only off the default paths, nothing carried across*, the exercise would have
+confirmed the mark and little else. Instead: **three have no code at HEAD at all** — a landing
+procedure, a removal, and an obligation met by replacement rather than repair; **one is cited in a
+LIVE specification as a standing do-not-retry**, so its subject is legacy while its prohibition
+binds now; **one assigns work to the live design in its own text**, being a work-programme rule for
+the precision stage; **four have their doctrine living on in a named live entry**, one of them
+almost word for word — *no separate confidence test is added* on the legacy arm, *no conditional
+gate anywhere* on the live one; and **one is UNDETERMINED and is the sharpest of the set** — a
+carve-out on a dissolution rule whose parent principle a user ruling DID carry across, where whether
+the carve-out rides with it is a ruling and not a session's call.
+
+**★ ONE NEW EVIDENCE ANCHOR IS PROPOSED AND IS NOT ADDED.** Ten of the eleven rest on anchors the
+pass already declares and locates; the eleventh needs a fourth do-not-retry anchor, on the declared
+mode's weight, in the same construction as the three the pass already carries. It is located at the
+object and written into the reading file as a proposal.
+
+**★ AND HALF B TURNED UP A FINDING BEARING ON THE ANALYSIS — §2.8, rowed at [[OI-357]].** The one
+transfer verdict that came back `none-found` for a *substantive* reason rather than a bookkeeping
+one is D-575's, and the reason is that the Baroque partial-signature correction is legacy-only while
+the production arm's handling of that notation practice is unestablished. **It is stated with what
+it does not claim** — the live arm's soft prior can reach the same reading with no explicit
+correction — **and with what shrinks it**: the key agreement on this repertoire is measured and
+published, so any effect is already inside a published value rather than hiding behind a green gate.
+
+**THE GUARD IS STILL RED AND THAT IS THE RULING WORKING, not an unfinished task.** Nothing was
+written into `gen_phase1w_legacy_verification.py`; no mark, status, home or register entry moved;
+[[OI-289]]'s verified status is untouched; and [[OI-354]] stays OPEN. The failure clears when the
+reviewed set is applied, in a commit citing the user's ruling on the queue — **which is the whole
+answer to the objection that verdicts written to clear a guard are the weakest kind there is.**
+
+**Holds:** none new. **Surfacings:** §2.8. **Freeze respected:** no `src/` change, no golden, no
 corpus of scores, no `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to
 inference, no design. **Phase 1's completion statement is not written, not drafted and not partially
 written here.**

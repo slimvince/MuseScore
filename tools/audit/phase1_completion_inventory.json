@@ -655,7 +655,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 59,
+   "count": 60,
    "ids": [
     "OI-105",
     "OI-107",
@@ -706,6 +706,7 @@
     "OI-352",
     "OI-353",
     "OI-354",
+    "OI-357",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -732,6 +733,7 @@
     "OI-341",
     "OI-352",
     "OI-354",
+    "OI-357",
     "OI-57",
     "OI-90",
     "OI-95"
@@ -1710,6 +1712,20 @@
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject, including one whose subject is this project's own tracking apparatus"
     }
+   },
+   {
+    "id": "OI-357",
+    "title": "★ **The Baroque partial-signature correction lives in the LEGACY key resolver, which the production arm does not run — and whether the joint estimator handles that notation practice AT ALL is unestablished in both direct",
+    "subject_column": "B — the analysis (what the production key arm does with a Baroque notation practice the legacy arm detected and corrected)",
+    "matched_on_the_subject_column": [],
+    "matched_falsity_signals": [
+     "stale"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "the row's own recorded words",
+     "ground": "the row states it gates"
+    }
    }
   ]
  },
@@ -1717,7 +1733,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 37,
+   "count": 38,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1752,6 +1768,7 @@
     "OI-352",
     "OI-353",
     "OI-354",
+    "OI-357",
     "OI-45",
     "OI-57",
     "OI-90",
@@ -1838,7 +1855,8 @@
    ],
    "the row's own recorded words": [
     "OI-309",
-    "OI-311"
+    "OI-311",
+    "OI-357"
    ],
    "D-438's default": [
     "OI-109",
@@ -1947,8 +1965,8 @@
    "of_which_a_widening_would_move": 4
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 59,
-   "of_which_gate": 37,
+   "open_rows_in_the_wide_cut": 60,
+   "of_which_gate": 38,
    "of_which_apparatus_and_therefore_non_gating": 22,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
@@ -2041,6 +2059,7 @@
    "OI-352",
    "OI-353",
    "OI-354",
+   "OI-357",
    "OI-45",
    "OI-46",
    "OI-47",
@@ -2056,9 +2075,9 @@
  },
  "counted": {
   "decisions_recorded": 645,
-  "open_rows_in_the_index": 253,
-  "true_half_wide_cut": 59,
-  "true_half_gating": 37,
+  "open_rows_in_the_index": 254,
+  "true_half_wide_cut": 60,
+  "true_half_gating": 38,
   "complete_half_gap": 42,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 23
