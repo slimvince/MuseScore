@@ -44,7 +44,7 @@
 
 **In plain words.** Choosing the Baroque, Jazz or Default preset changes nothing about what the estimator concludes; it changes only how the result is shown.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record HOLDS one, in the decision's own home text: the constraint that forces it is stated in the parenthetical, `ARCHITECTURE.md:33-34` — **presets are presentation concerns**. A preset selects how a result is shown, so nothing it carries may reach what the estimator concludes; the three preset directories being identical at the inference fields is the measured consequence, recorded in `CLAUDE.md` gate block (A) at the OI-178 adoption. What the record does NOT hold is a separate derivation beyond that constraint, and none is invented here.
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
@@ -59,7 +59,7 @@
 
 **In plain words.** The estimator chooses among 24 tonalities and a list of chord roles read off the annotated corpus; a chord is named by its role in the key, and the chord symbol is worked out from that. One chord may span at most four consecutive events.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09, and the answer differs BY PART, which is why one sentence will not do. The state space's FORM is grounded: the chord is scale-degree-valued and the symbol is derived from (key, degree), and the segmentation is a modeled semi-Markov variable whose form is the established default of that model class (`cowork_joint_estimator_factorization.md:112-114`, which `ARCHITECTURE.md:48-49` names as the full specification). **The segment cap's VALUE — four — has NO recorded derivation anywhere in the record**: no citation, no measurement, no alternative considered. That gap is one of the founding instances `CLAUDE.md`'s carry-its-defense rule names in its own text, and it is stated here rather than filled (a defense written after the fact without a source is invention).
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -194,7 +194,7 @@
 
 **In plain words.** The joint estimator always names a key. It never declines to answer on the key axis, so the abstention counter is always zero.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record holds NO DERIVATION — it states the behaviour and its consequence, never a reason for choosing it. What it does state, and what a reader must not mistake for a defense: that the decoder commits its maximum-a-posteriori path, and that the abstention counter the regression stop reads therefore reads zero on the production arm. **No reason is recorded for committing rather than abstaining on that axis**, and what the record carries instead is a NAMED and deliberately unresolved tension with the calibrated-abstention design (**D-090**) at this entry's own home. So the gap here is a missing justification for a LIVE production behaviour, which is a stronger thing than a missing gloss on a retired one — stated, not filled.
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 

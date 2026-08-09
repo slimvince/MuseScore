@@ -618,9 +618,76 @@ gating side, and which arm ships is the strongest form that statement has. **No 
 was hand-added**, which is the act the record forbids; authoring a GATES verdict for a row the cut
 DID reach is what the tool requires.
 
+**Task 4 — the defense gaps. OPENED AND PARTLY DONE: EIGHT OF THE POPULATION CLOSED, THE REST NOT
+STARTED. This is where the batch stops, and it stops on capacity, not on a finding.**
+
+**What was done, and why these eight.** The away batch searched eight of the population during its
+own reading and recorded the results in this file, noting that *"none of these was written into the
+register: recording them is Task 3's act and Task 3 was not opened."* **Assumption A7 was
+discharged first** — each of the eight was re-read at its own record rather than carried from that
+summary — and then each was written into the register's `rationale` field, which is where
+`CLAUDE.md`'s carry-its-defense rule puts a decision's defense or the statement of its absence.
+
+**The distinction the eight now draw, which is the point of the task.** Before this act the
+register DISPLAYED *"derivation not recorded"* for the whole population, because the renderer
+substitutes that phrase for an empty field — so the surface asserted an ESTABLISHED GAP for entries
+where **no search had ever been performed**. Each of the eight now says which it is:
+
+- **two hold a defense the empty field misrepresented** — one states its reason as a CONSEQUENCE in
+  its own home text (*"so no signature/partial-correction logic is duplicated"*, which is #6), the
+  other states the constraint that forces it in a parenthetical (*presets are presentation
+  concerns*);
+- **one differs BY PART** — its state space's form is grounded in the published model class while
+  the segment cap's VALUE has no recorded derivation anywhere;
+- **one holds a stated pragmatic ground but no derivation**, and its mechanism has since been
+  removed from the code, so the absence is a fact about the record rather than a live gap;
+- **one names exactly what stands in place of a derivation** — an in-code gloss restating the two
+  window values in bars, which is not a reason for them;
+- **one holds no reason and a recorded CONFLICT instead**, with the ratified confidence contract;
+- **two are established gaps** stated as definitions or as behaviour-plus-consequence, with no
+  alternative considered.
+
+**Nothing was invented.** Where the record holds nothing, the field now says so AND says a search
+was performed — which is the difference between an established gap and an unexamined one, and the
+whole defect this task exists to close.
+
+**★ ONE MECHANICAL TRAP WAS HIT AND IS RECORDED, because the next session will meet it.** Every
+register entry already carries a `rationale` key, set to `null`, as its LAST field. Adding a second
+`rationale` earlier in the entry produces a duplicate JSON key whose later value wins, so the text
+is silently discarded — **the first attempt did exactly that and the completion inventory's count
+did not move**, which is how it was caught. It was caught by reading the derived count rather than
+by trusting the edit. The fill must REPLACE the trailing `null`; a duplicate key would additionally
+break the classifier's round-trip establishment.
+
+**The remainder of the population is NOT started**, and no entry outside the eight was touched.
+Every count lives in `tools/audit/phase1_completion_inventory.json` and none is restated here
+(**D-431**).
+
 **Holds:** §1.4 (the register entries for fourteen rulings), §1.5 (the classifier's own stale
 naming), §1.6 (Ruling 7's condition unmet) and §1.7 (the legacy-mark verification's moved anchor).
 **Surfacings:** §2.4 and §2.5.
+
+### ★ WHERE THIS BATCH STOPPED
+
+**Tasks 0, 1, 2 and 3 are COMPLETE. Task 4 is OPENED and PARTLY DONE. Tasks 5, 6, 7 and 8 are NOT
+STARTED.** That is a capacity stop, not a halt on a finding: no STOP note was written against the
+batch, no analysis-bearing surface halted it, and nothing is left half-edited — every act on disk
+is complete in itself and every derived surface re-derives.
+
+**What a continuing session should know.** Task 4's remaining population is the completion
+inventory's `entries_with_no_rationale_at_all` list, derived at task start and NOT carried from
+here. The act per entry is: read the entry's home text and its provenance, then write into the
+trailing `rationale` field either the defense the record holds WITH its citation, or a statement
+that a search was performed and the record holds none — never a defense reconstructed from memory.
+The eight already done are marked by their fields opening *"SEARCHED 2026-08-09"*, so the remainder
+is exactly the difference.
+
+**Tasks 5 to 8 are untouched and their populations must be derived fresh:** the reach-verdict
+derivation over the apparatus-classed documentation rows, the section-unreached and
+findings-not-rules re-homes, the session-executable gating rows, and OI-346's marks.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch.**
 
 **Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
 movement, no behaviour change to the analysis, no fix to inference, no design. **No value is

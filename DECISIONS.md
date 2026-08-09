@@ -222,13 +222,13 @@ project's own and are defined here because they are used before any entry explai
 | — of which recorded only on a tracking surface, with no home at all | 1 |
 | — of which a project-wide convention, correctly homed | 42 |
 | — of which a decision about the process, correctly homed | 114 |
-| Decisions whose defense the record does not state | 44 |
+| Decisions whose defense the record does not state | 36 |
 | Entries whose own ratification the provenance records | 315 |
 | Entries whose home is recorded at SECTION granularity | 193 |
 
 The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **315 of 645** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 330 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **601 of 645** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **609 of 645** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -283,8 +283,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 |---|---|---|---|---|
 | D-001 | Key, mode and chord are inferred by ONE joint decode | LIVE | — | `ARCHITECTURE.md` |
 | D-002 | The fitted tables and weights are compiled into the binary verbatim | LIVE | — | `ARCHITECTURE.md` |
-| D-003 | Inference is preset-independent; presets are presentation concerns | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-004 | The decode state space and the segment cap | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-003 | Inference is preset-independent; presets are presentation concerns | LIVE | — | `ARCHITECTURE.md` |
+| D-004 | The decode state space and the segment cap | LIVE | — | `ARCHITECTURE.md` |
 | D-005 | The joint estimator is the production inference layer on the batch and corpus surface | LIVE | — | `ARCHITECTURE.md` |
 | D-006 | The published uncertainty surface is two full candidate lists, with no truncation | LIVE | — | `ARCHITECTURE.md` |
 | D-007 | The published scores are log-scores, not probabilities | LIVE | — | `ARCHITECTURE.md` |
@@ -293,7 +293,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-096 | Fitted values are fit once against ground truth, never per-case tuned | LIVE | — | `ARCHITECTURE.md` |
 | D-097 | Held-out evaluation and a capacity budget are declared before any fit | LIVE | — | `ARCHITECTURE.md` |
 | D-098 | The exact-decode reserve - the declared prune was never adopted | LIVE | — | `ARCHITECTURE.md` |
-| D-114 | The decoder commits its best path; there is no abstention on the key axis | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-114 | The decoder commits its best path; there is no abstention on the key axis | LIVE | — | `ARCHITECTURE.md` |
 | D-270 | The held-out evaluation protocol - five-fold cross-validation grouped by ground-truth analysis file | LIVE | 2026-08-02 · user | `cowork_prefit_gates.md` “The held-out evaluation protocol” |
 | D-271 | The capacity budget - a cell keeps its own estimate only above a stated count, and free parameters are bounded against the training tokens | LIVE | 2026-08-02 · user | `cowork_prefit_gates.md` “The capacity budget” |
 | D-272 | The protocol constants are protocol, not tuning - changing one is an amendment, never a fitting act | LIVE | 2026-08-02 · user | `cowork_prefit_gates.md` the opening block (above the first section heading) |
@@ -332,11 +332,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-012 | Failure is unambiguous - never a partial record, never a silent fallback | LIVE | — | `ARCHITECTURE.md` |
 | D-013 | Which staves feed the analysis is decided at the fact adapter, not by a later filter | LIVE | — | `ARCHITECTURE.md` |
 | D-014 | The two seams read the record as pure views - no recomputation | LIVE | — | `ARCHITECTURE.md` |
-| D-015 | A boundary tick belongs to the segment it starts | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-015 | A boundary tick belongs to the segment it starts | LIVE | — | `ARCHITECTURE.md` |
 | D-016 | Display renderings are presentation; facts are published | LIVE | — | `ARCHITECTURE.md` |
 | D-017 | The inference/presentation boundary is guarded mechanically, both ways | LIVE | — | `ARCHITECTURE.md` |
 | D-018 | The key-exposure bucket is decided once, at one site | LIVE | — | `ARCHITECTURE.md` |
-| D-019 | The record arm publishes the raw key-axis gap, with no remapping to 0..1 | LIVE · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-019 | The record arm publishes the raw key-axis gap, with no remapping to 0..1 | LIVE | — | `ARCHITECTURE.md` |
 | D-020 | The interactive path bypasses the old window cache and has none of its own | LIVE | — | `ARCHITECTURE.md` |
 | D-021 | The pedal-point fields are suspended on the record arm | DEFERRED | — | `ARCHITECTURE.md` |
 | D-275 | Every published record carries its own instrument provenance; a provenance-less analysis cannot exist | LIVE | 2026-08-02 · user | `cowork_notation_output_contract.md` §2 |
@@ -468,14 +468,14 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
 | D-051 | The production key/mode path is the sequence decoder, not the per-stretch resolver | SUPERSEDED BY D-001 ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-052 | The signature read and declared-mode mapping live in ONE shared function | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-052 | The signature read and declared-mode mapping live in ONE shared function | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-053 | The tick-local path keeps the older resolver (the ratified P4-defer) | SUPERSEDED IN FACT ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
 | D-054 | All 21 modes are scored against all 12 tonics; the harmonic major family is deferred | DEFERRED ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-055 | The 21 mode priors are independent and user-configurable | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
 | D-056 | Notes always win - the notated key signature is a weak hint, not a bypass | LIVE | — | `ARCHITECTURE.md` |
 | D-057 | The priority of evidence - actual sounding notes are the strongest evidence | LIVE | — | `ARCHITECTURE.md` |
-| D-058 | The piece-start shortcut | SUPERSEDED IN FACT ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
-| D-059 | The temporal window - 16 beats back, 8 beats forward, decayed | LIVE ⚠LEGACY · derivation not recorded | — | `ARCHITECTURE.md` |
+| D-058 | The piece-start shortcut | SUPERSEDED IN FACT ⚠LEGACY | — | `ARCHITECTURE.md` |
+| D-059 | The temporal window - 16 beats back, 8 beats forward, decayed | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-235 | Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-287 | Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |

@@ -2,27 +2,11 @@
   "purpose": "A run of tools/audit/changed_paths.py. Generated so a report cites this file rather than transcribing the list (D-431).",
   "enumeration": "worktree",
   "commit": null,
-  "records": 318,
+  "records": 270,
   "rows": [
     {
       "code": " M",
-      "path": "ARCHITECTURE.md"
-    },
-    {
-      "code": " M",
-      "path": "CLAUDE.md"
-    },
-    {
-      "code": " M",
       "path": "DECISIONS.md"
-    },
-    {
-      "code": " M",
-      "path": "OPEN_ITEMS.md"
-    },
-    {
-      "code": " M",
-      "path": "STATUS.md"
     },
     {
       "code": " M",
@@ -30,19 +14,11 @@
     },
     {
       "code": " M",
+      "path": "decisions/group_A.md"
+    },
+    {
+      "code": " M",
       "path": "decisions/group_B.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_C.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_D.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_E.md"
     },
     {
       "code": " M",
@@ -50,143 +26,7 @@
     },
     {
       "code": " M",
-      "path": "decisions/group_G.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_H.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_I.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_J.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_K.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_L.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_M.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_N.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_O.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_P.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_Q.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_S.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_T.md"
-    },
-    {
-      "code": " M",
-      "path": "decisions/group_U.md"
-    },
-    {
-      "code": " M",
-      "path": "open_items/OI-179.md"
-    },
-    {
-      "code": " M",
-      "path": "open_items/OI-305.md"
-    },
-    {
-      "code": " M",
-      "path": "open_items/OI-319.md"
-    },
-    {
-      "code": " M",
-      "path": "open_items/OI-349.md"
-    },
-    {
-      "code": " M",
-      "path": "open_items/register_check.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/claude_md_rule_triage.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/claude_md_rule_triage.py"
-    },
-    {
-      "code": " M",
       "path": "tools/audit/decisions/backbone_decisions.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/decisions/cluster_dispositions.csv"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/decisions/cluster_dispositions.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/decisions/disposition_manifest.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/decisions/gen_phase1p_delegation_bar.py"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/decisions/home_classification.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/decisions/outstanding_delegations.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/decisions/phase1p_delegation_bar.json"
-    },
-    {
-      "code": "D ",
-      "path": "tools/audit/decisions/phase1q_reclassification.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/decisions/r1_superseded_reach.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/gen_nongating_apparatus_rows.py"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/guard_classification.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/guard_state.json"
-    },
-    {
-      "code": " M",
-      "path": "tools/audit/nongating_apparatus_rows.json"
     },
     {
       "code": " M",
@@ -195,30 +35,6 @@
     {
       "code": " M",
       "path": "tools/audit/phase1_finish_line.json"
-    },
-    {
-      "code": "??",
-      "path": "cowork_instruction_return_session.md"
-    },
-    {
-      "code": "??",
-      "path": "cowork_rulings_2026_08_09_return.md"
-    },
-    {
-      "code": "??",
-      "path": "cowork_scratch_2026_08_08/"
-    },
-    {
-      "code": "??",
-      "path": "open_items/OI-352.md"
-    },
-    {
-      "code": "??",
-      "path": "open_items/OI-353.md"
-    },
-    {
-      "code": "??",
-      "path": "ratification_surfaces/cowork_rule_triage_entries_2026_08_09.md"
     },
     {
       "code": "??",
@@ -1267,14 +1083,6 @@
     {
       "code": "??",
       "path": "scratch_artifacts/wjd_curl_err.txt"
-    },
-    {
-      "code": "??",
-      "path": "tools/audit/oi349_record_arm_precondition_probe.json"
-    },
-    {
-      "code": "??",
-      "path": "tools/audit/oi349_record_arm_precondition_probe.py"
     }
   ],
   "establishment": "tools/audit/changed_paths_establishment.json"

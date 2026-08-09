@@ -102,7 +102,7 @@
 
 **In plain words.** When a moment is exactly where one chord ends and the next begins, it counts as belonging to the new chord.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record holds NO DERIVATION — an established gap, not an unexamined field. The convention is stated as a DEFINITION at its home and at `ARCHITECTURE.md:132-134`: no alternative is considered, no reason is given, and no measurement or citation is attached anywhere the search reached. It is one of the founding instances `CLAUDE.md`'s carry-its-defense rule names in its own text. The gap is stated rather than filled: a boundary convention of this shape has obvious pragmatic grounds a session could invent, and inventing one is what the never-work-from-memory rule forbids.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -160,7 +160,7 @@
 
 **In plain words.** The confidence value carried on the record arm is the estimator's own raw score gap, on its own scale - deliberately not converted into a 0-to-1 number.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record holds NO REASON for the choice. What it holds INSTEAD is a recorded CONFLICT, which is why this gap is the sharper kind: the raw nats gap is written into a field whose declared range is 0 to 1, and carrying an unmapped model-internal quantity there contradicts the ratified confidence contract's rule that a confidence is compared only within its declared class and frame (**D-032**). The conflict is tracked at `OPEN_ITEMS.md` OI-231 and is not resolved here. So the entry records a decision whose defense is absent AND whose conformance is disputed — two different things, and neither is filled in from memory.
 
 **Status.** LIVE · date not stated · ratifier not stated
 

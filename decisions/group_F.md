@@ -33,7 +33,7 @@
 
 **In plain words.** Reading the printed key signature and turning it into a starting assumption happens in one place that both callers use, so the two cannot drift apart.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record HOLDS one, stated as a CONSEQUENCE in the decision's own home text rather than as a separate clause — which is why an empty field misrepresented it. The text ends *"so no signature/partial-correction logic is duplicated"*: the reason for lifting the signature read, the declared-mode mapping and the declared-gated partial-signature correction into one shared public function called by both the resolver and the wiring is that two copies of that logic can drift apart. That is principle #6 (one path per concern) applied at a named seam, and it is the whole of what the record states — no measurement is attached and none is invented.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
@@ -132,7 +132,7 @@
 
 **In plain words.** At the very start of a piece there is not yet enough music to judge the key, so if the score declares major or minor the program simply believes it, marked as a middling-confidence answer.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09. The record holds a STATED GROUND but no derivation, and the two are worth separating. The ground is at `ARCHITECTURE.md:3387-3392`, which calls the removed shortcut *"a deliberate pragmatic choice for the score opening, not a general bypass"* — the pragmatic claim being that at the very opening there is not yet pitch evidence to weigh, so the declared mode was believed rather than waited for. **No measurement, no citation and no alternative are recorded**, so the choice of a shortcut over any other opening treatment has no derivation. Read it beside this entry's status: the mechanism was REMOVED from the code on 2026-06-14 and the entry is superseded in fact, so the absent defense is a fact about the record rather than a live gap in the analysis.
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
@@ -148,7 +148,7 @@
 
 **In plain words.** To judge the key at a point, the program looks about four bars back and two bars forward, giving less weight to music further away.
 
-**Why.** derivation not recorded.
+**Why.** SEARCHED 2026-08-09 and the record holds NO DERIVATION for either number — an established gap, and the search names exactly what stands in place of one. The ONLY stated basis for 16 and 8 anywhere the search reached is an in-code gloss reproduced at `ARCHITECTURE.md:3428-3429`, *"~4 measures in 4/4"* and *"~2 measures ahead"*: a restatement of the values in bars, not a reason for them. There is no theory citation, no measurement, and no alternative window considered. It is one of the founding instances `CLAUDE.md`'s carry-its-defense rule names in its own text. The values are legacy-arm only since the notation switch (**D-010**), which bounds what the gap costs without closing it.
 
 **Status.** LIVE · date not stated · ratifier not stated
 
