@@ -237,6 +237,16 @@ AUTHORED = [
      "every entry the phase-1w verification puts in the live-prohibition class carries its "
      "pointer to the specification section that restates it as binding"),
 
+    ("tools/audit/gen_reserved_word_scanner.py", None,
+     "NOT RUN, and the reason is about the tool rather than about its result: it is the ADVISORY "
+     "reserved-word inventory the user's Ruling 31 of 2026-08-09 licensed, and its STOP — a derived "
+     "candidate with no authored verdict — is its HEADLINE rather than a failure, so it exits "
+     "nonzero by design until the per-word verdicts are authored. A guard set carrying a member "
+     "that fails by design teaches a reader to ignore the set. Its STOP is reported in its own "
+     "artifact `tools/audit/reserved_word_scanner.json` and on OPEN_ITEMS.md OI-229; it is not "
+     "adopted as a diff-time check, because Ruling 31 permits that only on measured clean "
+     "separation and the measurement is negative"),
+
     # guards that live outside tools/audit
     ("tools/open_items_split_check.py", [],
      "the open-items index/detail bijection, and the original items still byte-verbatim"),

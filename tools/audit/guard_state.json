@@ -39,6 +39,7 @@
       "tools/audit/gen_phase1_completion_inventory.py",
       "tools/audit/gen_phase1_finish_line.py",
       "tools/audit/gen_phase3_gate_partition.py",
+      "tools/audit/gen_reserved_word_scanner.py",
       "tools/audit/index_status_lint.py",
       "tools/audit/instrument_arm_declaration_effect.py",
       "tools/audit/local_patches_check.py",
@@ -47,7 +48,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 49,
+    "authored_entries": 50,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -72,6 +73,10 @@
     {
       "tool": "tools/audit/decisions/gen_verbatim_subject_consistency.py",
       "why": "NOT RUN: an ADVISORY REPORT that has no verify-only mode and is not a guard. It reaches this derived population only because its own prose names the mode it does not have. Built 2026-08-09 on the user's Ruling 24(b), CORPUS FIRST, and adopted as a guard ONLY on measured clean separation -- which its own artifact MEASURES, and the measurement is negative: legitimate entries sit at or below the worst labelled known-bad value, so any threshold would deny legitimate work, which is D-436's third condition and D-473's ground. It is therefore carried here as not-run WITH that reason, rather than added to the run and silently reporting nothing. Adding it to the run is a decision that follows a measurement showing separation, not a session's."
+    },
+    {
+      "tool": "tools/audit/gen_reserved_word_scanner.py",
+      "why": "NOT RUN, and the reason is about the tool rather than about its result: it is the ADVISORY reserved-word inventory the user's Ruling 31 of 2026-08-09 licensed, and its STOP — a derived candidate with no authored verdict — is its HEADLINE rather than a failure, so it exits nonzero by design until the per-word verdicts are authored. A guard set carrying a member that fails by design teaches a reader to ignore the set. Its STOP is reported in its own artifact `tools/audit/reserved_word_scanner.json` and on OPEN_ITEMS.md OI-229; it is not adopted as a diff-time check, because Ruling 31 permits that only on measured clean separation and the measurement is negative"
     }
   ],
   "historical_records": {
@@ -732,7 +737,7 @@
     "passing": 36,
     "failing": 0,
     "failing_tools": [],
-    "not_run": 3,
+    "not_run": 4,
     "historical_records": 10
   }
 }

@@ -2114,6 +2114,78 @@ open-items index's own parser and the record's own bookkeeping.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 2 — COMPLETE as a MEASUREMENT and a STOP. The completeness question is ANSWERED; neither derivation is both sound and bounded, and no check is adopted
+
+**A2 HOLDS in every part, and one of its clauses turned out to be the finding.** The musical
+vocabulary is derived from in-repo sources only — the analysis code's own domain surfaces crossed
+with the two music-theory documents. **The external glossary leg is ABSENT and is STATED rather than
+silently substituted:** this repository vendors no music-theory glossary, and importing one would
+put an unestablished list under load (#19). The seed is `CLAUDE.md`'s twenty, **parsed from that
+document's own list rather than typed into the tool**, so a wording change there is a STOP rather
+than a silently smaller seed. Separation was measured before anything could guard, and it is
+negative, so the artifact is advisory and says so.
+
+**★ TWO DERIVATIONS WERE COMPUTED AND BOTH ARE PUBLISHED, BECAUSE THE COMPARISON IS THE RESULT.**
+The SHARP surface is every `enum` in the analysis code — its name and its enumerators — crossed with
+the music-theory documents: an enumeration is where a program writes down the categories its domain
+actually has, which for this module are the chord qualities, the modes, the degrees, the cadence
+kinds and the interval classes. The BROAD surface is every word inside any identifier, crossed with
+the same documents.
+
+- **The SHARP derivation is not SOUND.** It misses seed words the user's own inventory names, and
+  one of them is a collision this project's standing self-check has caught in its own prose more
+  than once. A derivation that misses a known positive cannot be trusted to have found the unknown
+  ones.
+- **The BROAD derivation is not BOUNDED.** It reaches all but one seed word and buys that with a
+  population an order of magnitude larger, dominated by ordinary English that happens to appear on
+  both surfaces.
+- **One seed word is missed by BOTH**, which is the sharpest single result: the record is not a
+  subset of the derivation either.
+
+**So the completeness question is ANSWERED rather than closed.** The inventory is not complete
+relative to either derivation; the derivation is not complete relative to the record; and *complete*
+now means complete relative to a NAMED derivation **whose measured miss rate against the seed is
+part of its name**. That is what makes the claim checkable instead of asserted, which is exactly
+what Ruling 31 asked for.
+
+**★ NO CHECK IS ADOPTED, AND THE REASON IS A MEASUREMENT RATHER THAN A PREFERENCE.** Ruling 31
+permits a diff-time check ONLY on measured clean separation. **There is none to measure at the level
+a check would fire:** the population says which WORDS deserve a ruling, not which USE of a word is
+the non-musical sense — the semantic judgment Ruling 32 closed the neighbouring limb over. A check
+built on this population would fire on every legitimate musical use of every word in it, which is
+precisely the mis-firing **D-473** refuses and **D-436**'s third condition measures. **Nothing was
+tuned:** narrowing the population until it stopped firing would be fitting the signal to the cases
+that motivated it (DT-2), the same trap the previous continuation's consistency check reported
+rather than adjusted.
+
+**★ THE PER-CANDIDATE VERDICTS ARE NOT AUTHORED, AND THE STOP IS ARMED RATHER THAN QUIETLY
+SKIPPED.** Every derived candidate must carry an authored verdict — collision,
+non-collision-with-reason, or structural case — and the tool exits nonzero while any remains. **The
+advisory inventory is written anyway**, so the STOP is a headline rather than a silent nothing:
+that is the lesson the rule-triage tool's own history argued for, where a tool that stopped wrote no
+artifact and a committed count went stale for weeks. Authoring the verdicts is **a named act of its
+own** over a population the artifact counts, and it is not a step inside another task.
+
+**The scanner is registered in the guard population as NOT RUN, with the reason stated there** — its
+STOP is its headline and it fails by design until the verdicts are authored, and a guard set
+carrying a member that fails by design teaches a reader to ignore the set. Its result is on
+[[OI-229]]'s row and in its own artifact instead.
+
+**Ruling 30's two-tier test for research-tied names is recorded in the artifact and NOT applied.**
+Deciding which candidates are research-tied, and which site is a term's introduction site, is
+authorship of the same kind as the verdicts.
+
+**Delivered for the user's batch rulings** at
+`ratification_surfaces/cowork_reserved_word_inventory_2026_08_09.md`, which puts three readings
+including the cheapest one — leave the inventory at the user's twenty, keep the convention live, and
+record the completeness question as ANSWERED rather than closed, the scanner standing as the
+evidence and re-run when the tree has grown.
+
+**Holds:** none new. **Surfacings:** none bearing on the analysis. **Freeze respected:** no `src/`
+change, no golden, no corpus of scores, no `tools/corpus/` or `tools/robust_stop/` movement, no
+behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion statement
+is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected
