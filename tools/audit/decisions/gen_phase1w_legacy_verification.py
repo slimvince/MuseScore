@@ -95,10 +95,11 @@ RECORDED_FIGURES = [
     {
         'figure': 80,
         'where': 'OPEN_ITEMS.md',
-        # Re-aimed 2026-08-09 (318 -> 319) per this tool's own reported line: the OI-365 row
-        # inserted above it by `cc_instruction_return_continuation_5.md` Task 0 shifted it by one.
-        # Authored-input maintenance (D-648), not a mechanism change.
-        'line': 319,
+        # Re-aimed 2026-08-09 (318 -> 319 -> 327) per this tool's own reported line, twice in one
+        # session: the OI-365 row inserted above it by `cc_instruction_return_continuation_5.md`
+        # Task 0 shifted it by one, and that dispatch's Task 1 added eight lines to the INDEX
+        # preamble. Authored-input maintenance (D-648), not a mechanism change.
+        'line': 327,
         'quote': 'Set size **80**, counted from the data',
         'note': 'The INDEX row, which the register\'s own rule makes the authoritative status '
                 'surface. Same staleness as the detail file.',

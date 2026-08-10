@@ -32,6 +32,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from output_encoding import use_utf8_output      # noqa: E402  (path set above)
+# The canonical status vocabulary, the row split and the leading-token function live in ONE place
+# (#6) — the lint that enforces them. This parser reads a row's state through them rather than
+# re-implementing the test, which is what makes the lint's verdict and this parser's verdict the
+# same verdict by construction (Ruling 33, 2026-08-09).
+from index_status_lint import (                  # noqa: E402  (path set above)
+    CANONICAL, CELLS_PER_ROW, leading_token, split_row,
+)
 
 use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 
@@ -421,6 +428,17 @@ V = {
     # row the cut never proposed would be the hand-listing CLAUDE.md forbids. Both therefore carry
     # the default, which is that they GATE.
     # ---------------------------------------------------------------------- GATES
+    "OI-321": (GATES, "a statement about the analysis's build state",
+               "A design document states three things as current that are false at HEAD, one of "
+               "them a refactoring phase it calls DEFERRED which the code says was EXECUTED. "
+               "D-438's line inside the documentation rows makes a correction to a statement about "
+               "the analysis or its BUILD STATE gating, and a phase's execution status is that "
+               "statement in its strongest form. THE ROW REACHED THIS CUT FOR THE FIRST TIME ON "
+               "2026-08-09: it had SEVEN cells, its layer/gate column written twice, so the ONE "
+               "index parser skipped it silently and it was in no population at all (OI-362). The "
+               "user's Ruling 33 made a malformed row a STOP and the row was repaired in the same "
+               "act, which is what put it here. Its own text already carried this verdict in "
+               "words; authoring it for a row the cut DID reach is what the tool requires."),
     "OI-302": (GATES, "the default - the row's own scope does not settle it",
                "Half (a) IS apparatus: whether the decisions register gains a field for a mark "
                "whose subject is dormant while its prohibition is live. The other halves are not. "
@@ -772,12 +790,33 @@ A3 = {
 
 
 def parse_rows():
-    rows = []
-    for ln in INDEX.read_text(encoding="utf-8").splitlines():
+    """THE ONE INDEX PARSER (#6) — every derivation over the open-items register reads rows here.
+
+    ★ CHANGED 2026-08-09 by the user's Ruling 33 (`cowork_rulings_2026_08_09_fifth_stop.md`), which
+    remedies ONE family of three defects at once rather than per symptom:
+
+      * a status cell MENTIONING another row's resolved mark made this row read as resolved
+        (OI-356) — impossible now, because only the cell's own opening token decides it;
+      * a resolution spelled IN WORDS read as open (OI-361) — impossible now, because a resolved
+        cell must open with the mark;
+      * a row that did not split was skipped SILENTLY, present in no population at all (OI-362) —
+        now a STOP.
+
+    THE FORMER RULE, PRESERVED (#12): a row was OPEN when the resolved mark did not occur ANYWHERE
+    in its status cell, and a row that did not yield six cells was `continue`d without a report.
+    """
+    rows, malformed, noncanonical = [], [], []
+    for lineno, ln in enumerate(INDEX.read_text(encoding="utf-8").splitlines(), 1):
         if not ln.startswith("| OI-"):
             continue
-        cells = [c.strip() for c in ln.strip().strip("|").split(" | ")]
-        if len(cells) != 6:
+        cells = split_row(ln)
+        if len(cells) != CELLS_PER_ROW:
+            malformed.append(f"line {lineno}: {len(cells)} cells "
+                             f"({cells[0] if cells else '?'})")
+            continue
+        tok = leading_token(cells[4])
+        if tok is None:
+            noncanonical.append(f"{cells[0]} (line {lineno}): {cells[4][:80]}")
             continue
         rows.append({
             "id": cells[0],
@@ -788,8 +827,15 @@ def parse_rows():
             "description_column": cells[2],
             "subject_column": cells[3],
             "status_column": cells[4],
-            "open": "✅" not in cells[4],
+            "open": CANONICAL[tok] == "open",
         })
+    if malformed or noncanonical:
+        raise SystemExit(
+            "STOP: the open-items INDEX does not parse (Ruling 33 of 2026-08-09 — a row that does "
+            "not split, or a status cell whose opening is not canonical, is a STOP and never a "
+            "silent skip).\n  malformed rows: " + "; ".join(malformed) +
+            "\n  non-canonical status openings: " + "; ".join(noncanonical) +
+            "\n  The vocabulary and the lint are at tools/audit/index_status_lint.py.")
     return rows
 
 

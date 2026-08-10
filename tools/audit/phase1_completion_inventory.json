@@ -583,7 +583,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 42,
+   "count": 43,
    "ids": [
     "OI-105",
     "OI-107",
@@ -612,6 +612,7 @@
     "OI-317",
     "OI-318",
     "OI-320",
+    "OI-321",
     "OI-322",
     "OI-324",
     "OI-332",
@@ -631,7 +632,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 61,
+   "count": 62,
    "ids": [
     "OI-105",
     "OI-107",
@@ -671,6 +672,7 @@
     "OI-317",
     "OI-318",
     "OI-320",
+    "OI-321",
     "OI-322",
     "OI-324",
     "OI-332",
@@ -1509,6 +1511,26 @@
     }
    },
    {
+    "id": "OI-321",
+    "title": "`docs/unified_analysis_pipeline.md` states three things as current that are false at HEAD, including a phase it calls deferred that the code says was executed",
+    "subject_column": "F — doc-sync debt (#10)",
+    "matched_on_the_subject_column": [
+     "doc",
+     "doc-sync"
+    ],
+    "matched_falsity_signals": [
+     "doc-sync",
+     "drift",
+     "false at head",
+     "present tense"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "a statement about the analysis's build state"
+    }
+   },
+   {
     "id": "OI-322",
     "title": "`docs/symbol_input_audit.md` describes throughout, in the present tense, code its own closing line says was deleted — a reader who stops before the last line is told the opposite of HEAD",
     "subject_column": "F — doc-sync debt (#10)",
@@ -1725,7 +1747,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 40,
+   "count": 41,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1753,6 +1775,7 @@
     "OI-311",
     "OI-315",
     "OI-320",
+    "OI-321",
     "OI-322",
     "OI-324",
     "OI-332",
@@ -1827,6 +1850,7 @@
     "OI-317",
     "OI-318",
     "OI-320",
+    "OI-321",
     "OI-322",
     "OI-324",
     "OI-332",
@@ -1959,8 +1983,8 @@
    "of_which_a_widening_would_move": 4
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 61,
-   "of_which_gate": 40,
+   "open_rows_in_the_wide_cut": 62,
+   "of_which_gate": 41,
    "of_which_apparatus_and_therefore_non_gating": 21,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
@@ -2042,6 +2066,7 @@
    "OI-315",
    "OI-317",
    "OI-318",
+   "OI-321",
    "OI-322",
    "OI-324",
    "OI-332",
@@ -2070,9 +2095,9 @@
  },
  "counted": {
   "decisions_recorded": 656,
-  "open_rows_in_the_index": 259,
-  "true_half_wide_cut": 61,
-  "true_half_gating": 40,
+  "open_rows_in_the_index": 255,
+  "true_half_wide_cut": 62,
+  "true_half_gating": 41,
   "complete_half_gap": 42,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

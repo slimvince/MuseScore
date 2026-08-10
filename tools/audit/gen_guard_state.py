@@ -75,6 +75,10 @@ class Stop(Exception):
 AUTHORED = [
     # tools/audit — the record's own checks
     ("tools/audit/register_lint.py", [], "the open-items row-ID uniqueness lint"),
+    ("tools/audit/index_status_lint.py", ["--check"],
+     "every open-items status cell opens with one canonical token, and every row splits — the "
+     "standing half of the user's Ruling 33 of 2026-08-09, whose enforcement half is in the ONE "
+     "index parser itself and whose vocabulary this tool owns (#6)"),
     ("tools/audit/local_patches_check.py", [],
      "the three recorded local patches are still present at HEAD"),
     ("tools/audit/local_patches_check.py", ["--establish", "--check"],

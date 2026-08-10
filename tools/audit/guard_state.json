@@ -39,6 +39,7 @@
       "tools/audit/gen_phase1_completion_inventory.py",
       "tools/audit/gen_phase1_finish_line.py",
       "tools/audit/gen_phase3_gate_partition.py",
+      "tools/audit/index_status_lint.py",
       "tools/audit/instrument_arm_declaration_effect.py",
       "tools/audit/local_patches_check.py",
       "tools/audit/output_encoding.py",
@@ -46,7 +47,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 48,
+    "authored_entries": 49,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -172,6 +173,20 @@
       ],
       "stderr": [],
       "what_it_checks": "the open-items row-ID uniqueness lint"
+    },
+    {
+      "tool": "tools/audit/index_status_lint.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "INDEX STATUS LINT: OPEN_ITEMS.md",
+        "INDEX STATUS LINT: PASS — every status cell opens with one canonical token, and every row splits."
+      ],
+      "stderr": [],
+      "what_it_checks": "every open-items status cell opens with one canonical token, and every row splits — the standing half of the user's Ruling 33 of 2026-08-09, whose enforcement half is in the ONE index parser itself and whose vocabulary this tool owns (#6)"
     },
     {
       "tool": "tools/audit/local_patches_check.py",
@@ -373,7 +388,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 34 gates of 63 candidates over 259 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 35 gates of 64 candidates over 255 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -713,8 +728,8 @@
     }
   ],
   "summary": {
-    "run": 35,
-    "passing": 35,
+    "run": 36,
+    "passing": 36,
     "failing": 0,
     "failing_tools": [],
     "not_run": 3,

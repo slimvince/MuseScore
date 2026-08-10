@@ -2015,6 +2015,105 @@ collisions arrive by matching the surrounding prose's idiom, which is exactly th
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 1 — COMPLETE. Ruling 33 executed: the canonical status discipline lands, all three rows flip, and the pass found a FOURTH member of the family
+
+**A1 HOLDS, and it was checked by the pass rather than asserted before it.** The both-ways table
+decided every index row under BOTH rules — the rule live at HEAD (the resolved mark anywhere in the
+status cell) and the canonical-token rule — and **the only state movements are the two the ruling
+named**, each named in advance with its target state written down before the pass ran. Any other
+movement is a STOP the tool raises, and it did raise one, which is how the fourth member below was
+found.
+
+**★ THE BEFORE HALF IS READ FROM A GIT OBJECT BY EXPLICIT HASH, AND THAT IS THE DESIGN DECISION
+WORTH READING.** A both-ways pass that took its own before half from the working tree could be run
+exactly once: the second run would report the tree it had itself just changed and destroy the record
+it exists to keep. The previous continuation's pass had that shape, and this session **overwrote it
+by accident** within minutes of starting — see the self-check note below. So this pass reads the
+baseline from the commit before it, as a content-addressed object, which is the sanctioned form of
+shell read (**D-253**) and makes the record RE-DERIVABLE instead of one-shot.
+
+**What was built, and where the one definition lives (#6).**
+
+1. **`tools/audit/index_status_lint.py`** owns the canonical vocabulary, the row split and the
+   leading-token function, and is the STANDING check: it reports every non-canonical opening and
+   every row that does not split. It is in the guard population with its authored invocation.
+2. **The ONE index parser** — `gen_nongating_apparatus_rows.parse_rows`, which every derivation over
+   the register imports — now reads a row's state THROUGH that function rather than re-implementing
+   the test, and **STOPS** on a malformed row or a non-canonical opening instead of skipping.
+3. **`tools/audit/gen_index_status_normalization.py`** is the one-off pass and its record: the
+   survey the vocabulary was derived from, the both-ways table, the named corrections, and the
+   authored readings.
+
+**★ THE VOCABULARY IS DERIVED AND DELIBERATELY SMALL, AND THE SURVEY IS WHY.** The survey reported
+every opening the index actually used, and what those openings carry is two things: the resolved
+mark, and a handful of open-state words. So the vocabulary is **the mark at the head of the cell**
+(whatever word follows it — the index uses more than a dozen, and enumerating English past
+participles would be inventing a vocabulary rather than deriving one) **plus six open-state words**.
+Everything else is a date, a decorative marker or a sentence.
+
+**The normalization is PREPEND-ONLY with one stated exception.** A cell already opening canonically
+is untouched; a cell with no canonical opening gains the token as a prefix and loses no text (#12).
+**The exception:** where a cell opened with an open-state word that contradicts the state the row
+actually holds, that stale token is REPLACED rather than prefixed — prefixing would have produced a
+cell reading *"RESOLVED — OPEN — …"*. Every such row is named with an authored reading, and none of
+them moves state.
+
+**★ THE FOURTH MEMBER OF THE FAMILY, FOUND BY THE PASS AND NOT LOOKED FOR — AND IT CORRECTS THE
+PREVIOUS CONTINUATION'S READING OF THE SAME ROW.** [[OI-208]]'s status cell OPENS with a stale
+`OPEN —` and its own closing words say *"the row's purpose is achieved and it CLOSES"*. So the
+opening and the prose disagreed about that row's own state. The previous both-ways pass had read
+that row's mark as *a delivered half inside a row that is open*, making it **the one row Ruling 25's
+refuted remedy improved**. Read at the cell, that reading is **REFUTED**: the row is resolved, the
+rule at HEAD read it correctly, and the leading-token remedy would have marked it open too.
+**That makes the refuted remedy worse than it was recorded to be, not better** — it would have
+marked three genuinely closed rows open and improved none. The correction is written at
+[[OI-356]]'s own detail file and in the pass's artifact, with its ground.
+
+**★ AND THE ROW THAT WAS BEING DROPPED IS NOT WHAT ITS OWN ROW SUPPOSED.** [[OI-362]] records the
+dropped row as carrying an unescaped cell separator in its prose. It does not. **[[OI-321]]'s
+LAYER/GATE COLUMN WAS WRITTEN TWICE**, the second copy holding its gating clause, giving seven cells
+— a row edited by two acts that did not see each other, which is a different thing to watch for than
+a typing slip. The duplicate is merged into the status cell with its whole text preserved (#12). The
+row's state did not move; what changed is that it is COUNTED. It reached the apparatus declaration's
+first cut for the first time and a **GATES** verdict was authored for it, on the ground its own text
+already carried in words.
+
+**The order [[OI-362]] insisted on is honored rather than reversed:** the silent-skip STOP is in the
+same commit as the repair, and the population movement is accounted for by the pass that names it in
+advance — which is what that row asked for and what it forbade being slipped in unremarked.
+
+**[[OI-356]], [[OI-361]] and [[OI-362]] all FLIP**, each with its dated detail-file note, and each
+records what the flip does NOT withdraw. **Two things are retired by the fix and said plainly rather
+than left to be inferred:** OI-356's working convention — name another row's resolved status in
+words, never with the glyph — is no longer load-bearing, since a mention anywhere in a cell is now
+inert; and OI-361's third candidate is still **NOT SETTLED**, taking the token MIXED, which the
+parser reads as OPEN, the state it already held.
+
+**Guards.** The full set was re-run at the boundary and the classification after it. **Cleared and
+regenerated by this task's own edits:** the apparatus declaration, the completion inventory, the
+finish line, the gate partition and the legacy-mark verification — whose citation to a recorded
+value was re-aimed TWICE in one session, once per insertion above it, which is authored-input maintenance
+(**D-648**) and is recorded in its own comment. The set stands at **ZERO failing**, now with
+**thirty-six** guards rather than thirty-five: the new lint joined the derived candidate population
+and the runner STOPPED until its invocation was authored, which is that derivation working.
+
+**★ THE STANDING SELF-CHECK CAUGHT AN ACT OF THIS SESSION'S OWN THAT WOULD HAVE DESTROYED A COMMITTED
+RECORD, AND IT IS REPORTED BECAUSE THE NEAR-MISS IS THE LESSON.** Early in the session
+`gen_oi356_parser_correction.py` was invoked with `--help`; it takes no arguments, so it RAN, and it
+overwrote the committed point-in-time record of the refuted remedy with a fresh measurement at a
+tree that had changed. **Nothing was committed with it** — the file was restored from HEAD and the
+diff enumerated to confirm the tree was otherwise clean. Two things follow and both are acted on
+here: a point-in-time record whose before half comes from the working tree is one accidental
+invocation away from being lost, which is why THIS pass takes its baseline from a git object; and a
+generator with no argument parser treats every flag as no flag.
+
+**Holds:** none new. **Surfacings:** none bearing on the analysis — every subject of this task is the
+open-items index's own parser and the record's own bookkeeping.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

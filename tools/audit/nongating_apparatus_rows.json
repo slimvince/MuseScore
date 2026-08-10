@@ -13,9 +13,9 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 364,
-  "open_rows": 259,
-  "first_cut_candidates": 63,
+  "rows_parsed": 365,
+  "open_rows": 255,
+  "first_cut_candidates": 64,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -38,7 +38,7 @@
  },
  "totals": {
   "non_gating": 29,
-  "gates": 34,
+  "gates": 35,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -115,6 +115,7 @@
     "OI-303",
     "OI-304",
     "OI-315",
+    "OI-321",
     "OI-332"
    ],
    "an instrument a measurement depends on": [
@@ -562,6 +563,14 @@
    "verdict": "GATES",
    "reason": "A corpus/score inventory names the SUPERSEDED batch case-identity sets as the current acceptance gate, three times, and tells the reader the granularity-robust metric does not exist yet. That is a statement about an instrument a measurement depends on and about the analysis's build state, which D-438's line inside the documentation rows puts on the gating side; and the document is the one CLAUDE.md makes a mandatory first read for any task that touches scores, so a session is pointed at the retired gate before it reads anything else.",
    "gate_ground": "the criterion - the row's subject bears on an instrument"
+  },
+  {
+   "id": "OI-321",
+   "title": "`docs/unified_analysis_pipeline.md` states three things as current that are false at HEAD, including a phase it calls deferred that the code says was executed",
+   "subject_column": "F — doc-sync debt (#10)",
+   "verdict": "GATES",
+   "reason": "A design document states three things as current that are false at HEAD, one of them a refactoring phase it calls DEFERRED which the code says was EXECUTED. D-438's line inside the documentation rows makes a correction to a statement about the analysis or its BUILD STATE gating, and a phase's execution status is that statement in its strongest form. THE ROW REACHED THIS CUT FOR THE FIRST TIME ON 2026-08-09: it had SEVEN cells, its layer/gate column written twice, so the ONE index parser skipped it silently and it was in no population at all (OI-362). The user's Ruling 33 made a malformed row a STOP and the row was repaired in the same act, which is what put it here. Its own text already carried this verdict in words; authoring it for a row the cut DID reach is what the tool requires.",
+   "gate_ground": "a statement about the analysis's build state"
   },
   {
    "id": "OI-322",
