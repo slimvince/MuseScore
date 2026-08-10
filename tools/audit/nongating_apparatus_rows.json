@@ -13,8 +13,8 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 359,
-  "open_rows": 255,
+  "rows_parsed": 361,
+  "open_rows": 257,
   "first_cut_candidates": 63,
   "first_cut_vocabulary": [
    "doc-sync",

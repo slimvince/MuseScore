@@ -1389,6 +1389,54 @@ finish line, and the finish line's own count of what remains is derived at
 > program continues. The sections above are earlier batches' and are not rewritten. New holds are
 > appended to §1, new surfacings to §2, and each task's log below.
 
+### 1.10 STOP — Ruling 25's remedy is REFUTED by its own both-ways condition: anchoring to the leading token fixes ONE row and breaks TWO (Task 2)
+
+**This is the mechanism working, not a failure.** Ruling 25 corrects the open-items index parser so
+that a row's resolved state is *"anchored to a row's own status cell's leading token, never to a
+mention of another row's resolution"*, and attaches the condition that makes it safe: **every index
+row is decided both ways, before and after; the only verdicts that may move are rows the defect's
+shape names; any other movement is a STOP.** The dispatch's assumption **A3** states that shape in
+words — *rows whose status cell mentions another row's resolution.*
+
+**Every index row was decided both ways before anything moved**, by a generated table that
+implements BOTH rules itself rather than reporting a diff of the result
+(`tools/audit/oi356_parser_correction.json`). **Three rows move, and NOT ONE of them mentions
+another row's resolution.** Read at the rows themselves, with the text around each mark generated
+rather than transcribed:
+
+- **Two of the three state THEIR OWN resolution somewhere other than the first character.** One
+  cell reads *"PROTOCOL RATIFIED …; ✅ EXECUTED …"* — the mark is late only because a ratification
+  date precedes it. The other opens with the ruling that settled its question, carries the mark
+  mid-cell on the delivered half of its own work, and ends *"Row CLOSED"*. **Both are genuinely
+  resolved, the rule as it stands reads them correctly, and the corrected rule would mark them
+  open.**
+- **The third is genuinely OPEN** — its cell begins with the word *OPEN* and the mark appears far
+  into it on a delivered sub-result. **This is the one row the correction improves.**
+
+**So the remedy as worded trades one error class for another: it fixes one row and breaks two.**
+The parser is left EXACTLY as it stands and nothing was applied.
+
+**★ AND THE INSTANCE THE ROW WAS FOUND ON NO LONGER EXISTS AT THIS TREE**, which is why the movers
+are all of a different kind: the working convention [[OI-356]] adopted — *name another row's
+resolved status in words, never with the glyph* — was applied to the cell that caused it, so the
+defect's own founding instance is gone while the mechanism that produced it is untouched.
+
+**What is NOT withdrawn.** [[OI-356]]'s finding stands entirely: a cell that mentions another row's
+mark still makes its own row read as resolved to every derivation, and the working convention is
+still the only thing preventing it. What is refuted is that **the leading token** is the remedy.
+
+**What the user is being asked.** The remedy needs a different shape, and three are visible from the
+measurement — recognise a resolution token anywhere in a bounded opening rather than at the first
+character; take the state from a dedicated position rather than by search; or forbid the glyph in
+prose and check for it. **Choosing among them is a mechanism change D-436 reserves to the user**,
+and this session neither chose nor prototyped one.
+
+**★ AND DECIDING EVERY ROW BOTH WAYS TURNED UP TWO FURTHER DEFECTS IN THE SAME PARSER, each rowed
+rather than folded into this STOP:** rows whose status cell states a resolution IN WORDS with no
+glyph, which read OPEN to every derivation while their own text says otherwise ([[OI-361]]); and a
+row that the parser SILENTLY DROPS because it does not split into the expected number of cells, so
+it is neither open nor resolved but absent ([[OI-362]]).
+
 ## 3 (continued). Per-task log — the fourth return continuation
 
 ### Task 0 — COMPLETE. The register event: eleven entries, the triage re-class, and the OI-354 set applied — the guard clears in the commit that cites the ruling
@@ -1556,6 +1604,58 @@ that measurement is negative.
 
 **Holds:** none new. **Surfacings:** none new bearing on the analysis — the five repaired entries are
 records of decisions, and the decisions themselves were never in doubt.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
+movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion
+statement is not written, not drafted and not partially written here.**
+
+### Task 2 — COMPLETE as a MEASUREMENT and a STOP. The parser is NOT changed, because deciding every row both ways refuted the remedy — and turned up two further defects in the same parser
+
+**A3 IS REFUTED, and the refutation is §1.10.** The both-ways table was built first, as the ruling
+requires, and it implements BOTH rules itself rather than reporting a diff of the result — which is
+the only construction that can show a movement rather than assert one. Three rows move; **not one of
+them mentions another row's resolution**, which is the shape the condition names. Two of the three
+state THEIR OWN resolution somewhere other than the first character and are genuinely closed, so the
+corrected rule would mark them open; the third is genuinely open and is the single row the
+correction improves. **Fixes one, breaks two. Not applied.**
+
+**★ THE FOUNDING INSTANCE IS GONE AND THE MECHANISM IS NOT, which is the reason the measurement came
+out this way.** [[OI-356]] adopted a working convention — name another row's resolved status in
+words, never with the glyph — and the previous continuation applied it to the cell that caused the
+defect. So the defect's own instance no longer exists while the parser that produced it is
+untouched, and every row that now moves under the proposed rule is a different kind of case
+entirely. **A remedy measured against a population the defect has left is measuring something else**,
+and that is exactly what the both-ways condition caught.
+
+**Nothing about [[OI-356]] is withdrawn** and the row stays OPEN with the measurement on it. Three
+candidate remedies are visible from the table and **none is chosen or prototyped** — choosing is a
+mechanism change **D-436** reserves to the user, and one of the three is a convention rather than a
+mechanism.
+
+**★ AND DECIDING EVERY ROW BOTH WAYS TURNED UP TWO FURTHER DEFECTS IN THE SAME PARSER — which is
+what a both-ways pass is FOR, and neither would have been visible from a forward-only correction.**
+
+- **[[OI-361]]** — a row whose status cell states its resolution IN WORDS, with no glyph, reads OPEN
+  to every derivation. The register's own rule (d) does not mandate the glyph, so such a row is
+  following the rules and is miscounted anyway. **The per-row reading is authored and does not claim
+  every candidate is a defect:** one of the three states a MIXED status whose correct single bit is
+  not settled by its own text, and this pass does not settle it.
+- **[[OI-362]]** — a row that does not split into the expected number of cells is **skipped with no
+  report of any kind**, so it is neither open nor resolved but ABSENT. One row is being dropped at
+  HEAD. **This is worse than either mis-reading sibling:** a mis-read row is at least counted
+  somewhere and a moving count can be noticed; a dropped row is in no population at all, and the
+  bijection check uses a looser pattern and passes, so the row is accounted for on one surface while
+  invisible on another.
+
+**★ ONE FIX WAS AVAILABLE IN A SINGLE CHARACTER AND WAS DELIBERATELY NOT TAKEN.** The dropped row is
+malformed by one unescaped separator. Escaping it would put a row into the open population — moving
+the open-row count, the true-half cuts, the finish line's populations and the apparatus declaration's
+candidate cut. **A population movement belongs to an act that accounts for it, not to a parser task
+that would slip it in unremarked**, and the order is stated on the row: the silent-skip STOP goes in
+first, so that the movement is visible rather than merely happening.
+
+**Holds:** §1.10, the refuted remedy, which needs the user. **Surfacings:** none bearing on the
+analysis — every subject here is the open-items index's own parser.
 
 **Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
 movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion
