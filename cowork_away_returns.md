@@ -1753,6 +1753,44 @@ whatever its size.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 4 — COMPLETE. The D-580 fact-gathering surface is delivered, with no verdict — and gathering the facts LOCATED a conflict nobody had put side by side
+
+**A5 HOLDS in every part.** Every claim on the surface is cited at its source and was read in place;
+both records were read whole; anything the record does not settle is in the UNSETTLED section rather
+than filled; and **no recommendation is made at all**, which is the strongest form of the user's own
+rule that a decision rests on facts rather than on an unsure or remembered one.
+
+**The surface is at `ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md`.** It
+takes no transfer verdict, proposes no fix, design or inference change, and moves no status.
+
+**★ WHAT GATHERING THE FACTS SETTLED, and it is more than expected.** The carrying ruling's stated
+SCOPE is a named phase-3 family, and the gate layer is not a member of it; the measurement behind
+*purely-local* answers a different question from the one the principle asks — it establishes which
+gates read outside their own stretch, not where a non-compensating refinement belongs; one of the two
+carved-out gates no longer exists under its own name; and neither is reachable on either production
+surface.
+
+**★ AND ONE UNSETTLED ITEM WAS CLOSED BY INVESTIGATING RATHER THAN LEFT, WHICH LOCATED A CONFLICT.**
+D-580's own text routes its unfinished business to the retirement map. **That map's first entry
+retires the whole gate family without qualification and records no carve-out of any kind.** So the
+routing D-580 relies on does not, as it stands, carry the exception D-580 asserts. **The conflict is
+LOCATED and deliberately NOT RESOLVED:** two readings are visible — that the map predates or overlooks
+the carve-out, or that the two speak of different acts, a dissolution INTO the competition versus a
+deletion OF the legacy path — and the record chooses neither. Both readings are written onto the
+surface as what they are.
+
+**Four things remain UNSETTLED and are marked as such rather than filled**, including the question the
+cell turns on: whether a principle ruled binding on one named family reaches a decision outside it.
+**No text in the record addresses it**, and saying so is the answer this pass owes.
+
+**Holds:** the surface itself, which awaits the user's ruling on facts. **Surfacings:** none new
+bearing on the analysis — the two gates are legacy code unreachable on either production surface, and
+the conflict located is between two records rather than in any behaviour.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
+movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion
+statement is not written, not drafted and not partially written here.**
+
 ---
 
 ## 4. The batch's start state, recorded before any act
