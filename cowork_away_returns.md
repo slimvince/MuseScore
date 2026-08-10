@@ -1437,6 +1437,53 @@ glyph, which read OPEN to every derivation while their own text says otherwise (
 row that the parser SILENTLY DROPS because it does not split into the expected number of cells, so
 it is neither open nor resolved but absent ([[OI-362]]).
 
+## 2 (continued). Surfaced findings
+
+### 2.10 The Baroque partial-signature correction is recorded RESOLVED on one anchor case, and over the DERIVED population at committed outputs it reads fewer than half the tonics (Task 3)
+
+**Found by the bounded establishment [[OI-357]] was given, and not by looking for it.** Ruling 26
+ordered the committed outputs for the partial-signature stems compared against ground truth. The
+comparison could not answer the question it was aimed at — see the Task 3 log — and what it did
+answer is this.
+
+**The population is DERIVED, and that is why it is larger than the record's own account.** The
+evidence document states its own method — the notated key signature against the published annotated
+key, from the corpus metadata — and that METHOD was applied mechanically to every piece in that
+file, rather than the document's six-row table being transcribed. It yields a population many times
+that size.
+
+**What was measured, at the most recent committed run for this repertoire — dated after the
+correction landed, so it reflects it.** Fewer than half the population is read with the annotated
+tonic. **The large majority of the disagreements land on a home of the NOTATED signature**, which is
+the evidence document's own diagnostic for the signature lock the correction exists to escape; both
+homes are computed from the notated signature alone, so that column is derived and not a judgment.
+**And the split by the annotated key's mode is the sharpest cut:** the minor-key half fares markedly
+better than the major-key half, while the correction's own recorded detector keys on a single
+MINOR-key signal — the flattened sixth degree pervasive across the sounding weight and dominating its
+natural form. **The cut is reported and the causal claim is NOT made:** this pass counts, it does not
+explain.
+
+**★ WHAT IS DELIBERATELY NOT CLAIMED, because the disagreement total is not a defect total.** Each
+disagreement is one of three things and this pass distinguishes none of them: a genuine defect; a
+**defensible modal reading the major/minor ground truth cannot represent**, which gate block (A)
+makes a ground-truth limitation and explicitly not a defect to optimize away — the count of
+non-major/minor emissions among the disagreements is reported for exactly that reason; or an artifact
+of comparing a global reading against a global annotation on a piece that modulates.
+
+**★ AND THE RECORD'S OWN ACCOUNT READS WIDER THAN THE MEASUREMENT SUPPORTS.** The evidence document's
+banner declares the weakness RESOLVED, and what it verifies is one anchor case. Both halves are true
+as written; a reader meets *resolved* and would not learn that the population the anchor case belongs
+to is mostly not.
+
+**What bounds it, stated so it is not read as larger than it is.** Its subject is the LEGACY arm,
+which the production path does not run — so nothing here is a claim about what ships, and [[OI-357]]
+still carries the production question unanswered. **This repertoire is not the gate corpus**, so no
+published measurement moves and none is questioned. Every value is at
+`tools/audit/oi357_partial_signature_establishment.json` (**D-431**).
+
+**Rowed at [[OI-363]]** with its detail file in the same commit (rule (c)). **Nothing is proposed for
+it beyond the row** — no fix, no design, no inference change.
+
 ## 3 (continued). Per-task log — the fourth return continuation
 
 ### Task 0 — COMPLETE. The register event: eleven entries, the triage re-class, and the OI-354 set applied — the guard clears in the commit that cites the ruling
@@ -1660,6 +1707,51 @@ analysis — every subject here is the open-items index's own parser.
 **Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
 movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion
 statement is not written, not drafted and not partially written here.**
+
+### Task 3 — COMPLETE as a bounded establishment. The question is answered in ONE direction, so [[OI-357]] stays OPEN — and what the comparison CAN see is a finding of its own
+
+**A4 HOLDS, and it was checked before the first comparison.** A stem population IS derivable from the
+record: the evidence document states its own method, and applying that METHOD mechanically to every
+piece in the file it names is a stricter reading of *derived* than transcribing the document's own
+table would have been — it cannot be narrower than the record's rule makes it. **The STOP the
+assumption reserves did not fire, and no piece was sampled by judgment.**
+
+**★ THE COMPARISON'S OWN ESTABLISHMENT IS STATED BEFORE ANY VALUE IN IT, and it is the first
+finding.** Which arm produced the committed outputs is not a choice this pass makes — it is a
+property of what is on disk, and it was MEASURED rather than assumed, because it decides what the
+whole comparison is about. **Every committed output directory for this repertoire predates the date
+the joint estimator became the production inference layer; none carries a corpus manifest; none
+carries any field naming an inference arm.** They are the legacy arm's. **So the comparison cannot
+answer [[OI-357]]'s question**, and that half of the row is untouched.
+
+**The row therefore stays OPEN with what remains named**, which is the dispatch's own instruction for
+a partial answer: closing it would need a production-arm reading of these stems, no committed output
+supplies one, and producing one is a corpus run this ruling forbids.
+
+**★ AND WHAT THE COMPARISON CAN SEE IS NOT WHAT THE ROW'S PREMISE EXPECTED — §2.10, rowed at
+[[OI-363]].** [[OI-357]]'s framing is that the legacy resolver HAS the handling and the production
+arm does not. Measured over the derived population at committed outputs, **the legacy handling
+resolves fewer than half of it**, the large majority of the disagreements land on a home of the
+NOTATED signature — the evidence document's own diagnostic for the lock the correction exists to
+escape — and the shortfall is concentrated in the major-key half while the correction's recorded
+detector keys on a single minor-key signal.
+
+**That does not weaken [[OI-357]]; it sharpens what its remaining question is worth asking about.**
+The thing a later production-arm run would be compared against is not *a working correction* but a
+correction that works on part of the population, and any account of what the production arm lacks has
+to say which part.
+
+**★ THE CUT IS REPORTED AND THE CAUSAL CLAIM IS NOT MADE**, which is the line this task held
+throughout: the artifact counts and says in its own text that it does not explain. **No mechanism is
+diagnosed, no fix is proposed, and none is authorized** — the standing instruction is that an
+inference problem is DECLARED, not designed for, and phase 1's gate stands.
+
+**Holds:** none new. **Surfacings:** §2.10, which bears on the analysis and is therefore surfaced
+whatever its size.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores regenerated, no
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
 
 ---
 
