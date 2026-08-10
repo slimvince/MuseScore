@@ -1441,6 +1441,10 @@ it is neither open nor resolved but absent ([[OI-362]]).
 
 ### 2.10 The Baroque partial-signature correction is recorded RESOLVED on one anchor case, and over the DERIVED population at committed outputs it reads fewer than half the tonics (Task 3)
 
+> **★ THIS HEADING'S SECOND CLAUSE IS INVERTED and is corrected in place at the end of this section,
+> dated 2026-08-09 (#12 — nothing here is rewritten). The finding itself stands; what is wrong is
+> the direction of one comparison. See §2.11.**
+
 **Found by the bounded establishment [[OI-357]] was given, and not by looking for it.** Ruling 26
 ordered the committed outputs for the partial-signature stems compared against ground truth. The
 comparison could not answer the question it was aimed at — see the Task 3 log — and what it did
@@ -1483,6 +1487,17 @@ published measurement moves and none is questioned. Every value is at
 
 **Rowed at [[OI-363]]** with its detail file in the same commit (rule (c)). **Nothing is proposed for
 it beyond the row** — no fix, no design, no inference change.
+
+> **★ CORRECTED 2026-08-09, in place and dated, by `cc_instruction_return_continuation_7.md` Task 2
+> (the original text above stands, #12).** The sentence *"Fewer than half the population is read with
+> the annotated tonic"* is **INVERTED against the artifact it cites**: at the column it names, the
+> agreeing pieces OUTNUMBER the disagreeing ones. The other two characterizations in this section
+> are true and are not disturbed — the large majority of the disagreements do land on a home of the
+> notated signature, and the minor-key half does fare markedly better. **The user's Ruling 35(c) is
+> not disturbed either:** it ruled the FORM of such statements acceptable, which it is; a ruling
+> about form cannot make a direction true. The full account, including the one reading that would
+> make the sentence true and why it is recorded rather than adopted, is at **§2.11**. No value is
+> restated here (**D-431**).
 
 ## 3 (continued). Per-task log — the fourth return continuation
 
@@ -1734,7 +1749,9 @@ arm does not. Measured over the derived population at committed outputs, **the l
 resolves fewer than half of it**, the large majority of the disagreements land on a home of the
 NOTATED signature — the evidence document's own diagnostic for the lock the correction exists to
 escape — and the shortfall is concentrated in the major-key half while the correction's recorded
-detector keys on a single minor-key signal.
+detector keys on a single minor-key signal. *(★ THE FIRST CLAUSE IS INVERTED and is corrected at
+§2.10 and §2.11, dated 2026-08-09; the legacy handling leaves a large MINORITY of the population
+unresolved. The rest of this paragraph stands.)*
 
 **That does not weaken [[OI-357]]; it sharpens what its remaining question is worth asking about.**
 The thing a later production-arm run would be compared against is not *a working correction* but a
@@ -2543,6 +2560,155 @@ them and no route was picked.
 owner question is RULED**, and the record now says so in three places. What is refuted is the
 mechanism by which the nine were expected to close.
 
+### 1.13 The inverted characterization also stands in a live `docs/` document, and that one edit is outside this batch's authority (Task 2)
+
+**The correction at §2.11 was applied at every surface this batch may edit** — the two open-items
+rows, both detail files, and this file in place. **One instance is not corrected**, and it is the
+one a reader is most likely to meet: `docs/key_detection_baroque_partial_signature.md`'s own
+marked block, added under the user's Ruling 35(a), states that the correction *"reads **fewer than
+half** of that population with the annotated tonic"*.
+
+**It is the same inversion and the same one-sentence fix.** Everything else in that block is true
+and would not move: what *resolved* covers, the derived population, the notated-signature-home
+diagnostic, the disagreement-total-is-not-a-defect-total clause, and the two bounds.
+
+**HELD** because this batch's edit authority does not reach `docs/` — the homing widening names
+`docs/scoring_model.md` and no other file there, and Ruling 35(a)'s licence was ONE edit, which was
+performed. Stated here so it is one edit for whoever is authorized, and so the falsity is on the
+record rather than merely inherited.
+
+**One further instance is deliberately NOT corrected, and it is not a falsity.** The registration
+queue quotes the row's wording as an EXAMPLE of the direction-without-value FORM the user ruled on
+at 35(c). Quoting what was ruled on is what a ruling record does; the form ruling is undisturbed,
+and rewriting the example would misreport what the user saw.
+
+## 2 (continued). Surfaced findings
+
+### 2.11 A characterization the user RATIFIED is inverted against its own artifact: the legacy correction reads slightly MORE than half the tonics, not fewer (Task 2)
+
+**Found by re-running the committed-outputs pass at task start**, because Ruling 35(b)'s run had to
+be compared against it and a population is derived fresh rather than carried. The artifact
+re-derives byte-identically to the committed one, so nothing has drifted — what disagrees is the
+PROSE about it.
+
+**What the artifact says**, at the column the sentence names: of the pieces compared, the number
+whose tonic agrees with the published annotation is **greater than the number that disagree**.
+**What the record says**, in [[OI-363]]'s title, in that row's body, in [[OI-357]]'s row, in §2.10
+above and in the `STATUS.md` entry: *"fewer than half of the population is read with the annotated
+tonic."* **That is inverted.** No value is restated here (**D-431**); both live at
+`tools/audit/oi357_partial_signature_establishment.json`.
+
+**The two other characterizations in the same sentence-set are TRUE and are not disturbed:** the
+large majority of the disagreements do land on a home of the notated signature, and the minor-key
+half does fare markedly better than the major-key half. It is the headline that is wrong, and it is
+wrong by a narrow margin — which makes it harder to catch, not easier.
+
+**★ WHAT IS AND IS NOT AT FAULT, because a ruling is involved and must not be read as the cause.**
+The user's **Ruling 35(c)** ruled these qualitative characterizations ACCEPTABLE **as
+direction-without-value statements** — a ruling about their FORM, and the form is not in question:
+a direction with its artifact named beside it is exactly what **D-431** asks for. What the ruling
+cannot do, and did not purport to do, is make a direction TRUE. **Nothing about Ruling 35(c) is
+disturbed by this finding**, and the entry it produced (**D-663**) stands as written.
+
+**★ AND ONE READING WOULD MAKE THE SENTENCE TRUE, WHICH IS RECORDED BECAUSE IT IS PROBABLY THE
+CAUSE.** Requiring the MODE to agree as well as the tonic does put the count below half. But the
+sentence names the tonic, and the artifact says in its own words that the mode column *"is NOT
+graded here"* — so on the quantity actually named, the statement is false. The reading is recorded
+rather than adopted: a characterization that is true only of a quantity its own sentence does not
+name is not a direction, it is a different claim.
+
+**What is corrected and what is not.** The three prose surfaces are corrected at their own sites
+with the correction dated and the former wording preserved (#12). **§2.10 above is NOT rewritten** —
+earlier batches' sections are not rewritten, so it gains a dated correction note in place, which is
+the pattern §1.8 and §1.9 already use. **No measured value moves**, no artifact is edited, and
+nothing about the analysis changes.
+
+### 2.12 The production arm's batch output publishes NO whole-run key at all — so the comparison the row was waiting for could not have been made on the field it names (Task 2)
+
+**Found by running Ruling 35(b)'s licensed run and looking at its first output before comparing
+anything**, which is the one step that stops a surface artifact being reported as a catastrophe.
+
+**The fact.** The committed (legacy-arm) outputs carry a top-level `detectedKey`. **The production
+arm's outputs do not carry that field at all** — they publish a key per region and no whole-run
+one. Its own `analysisPath` field reads `joint`, so which arm produced them is established by the
+output rather than inferred from a flag.
+
+**Why it matters more than a missing field usually would.** The comparison OI-357 has been waiting
+for reads exactly that field. Run unchanged against the production arm it would have scored **every
+piece a disagreement** and reported a total failure that is a property of the OUTPUT SURFACE and not
+of the analysis. Nothing would have flagged it: the tool would have completed, written its artifact
+and printed a number.
+
+**What was done instead, and it is a measurement rather than a workaround.** The two arms publish
+one surface in common — the per-region key — so the comparison gained a second column computed
+**identically for both arms**: the whole-run key as a DURATION-WEIGHTED vote over the regions,
+weighted by sounding time rather than by region count, ties broken by earliest onset. **Its
+faithfulness is not assumed:** where an output publishes both, the derived reading is compared
+against the published `detectedKey`, and that check is reported. **It does not fully agree** — so
+the shared-surface column is reported as its own quantity and explicitly NOT as a proxy for the
+published field, which is what the check exists to establish (#19).
+
+**What this does NOT claim.** That the missing field is a defect. What a batch output should publish
+is a decision this pass does not take, and the production arm may have a good reason to publish a
+key per region and no global one. **What is claimed is narrower and is checkable:** the two arms do
+not publish the same key surface, so any comparison across them must say which surface it used —
+and until now the record assumed one that only one arm has.
+
+**Rowed, not proposed for.** No fix, no design and no inference change; the row is [[OI-357]]'s and
+the finding is recorded on it.
+
+### 2.13 The production arm reads this repertoire with the annotated tonic on the large majority of the derived population — and a same-commit control shows most of the gap against the committed outputs is NOT the arm (Task 2)
+
+**Ruling 35(b)'s licensed run was performed**, over the whole derived population, with
+`--joint-inference` passed and its presence established at the outputs' own `analysisPath` field
+rather than inferred from the command. Every value is at
+`tools/audit/oi357_production_arm_comparison.json`,
+`tools/audit/oi357_legacy_arm_same_commit_control.json` and the two run records beside them; none
+is restated here (**D-431**).
+
+**★ WHAT IS ESTABLISHED, ON THE SURFACE BOTH ARMS PUBLISH (§2.12).** The production arm reads **the
+large majority** of the derived partial-signature population with the annotated tonic. Its
+disagreements are a **small minority**, and only somewhat more than half of those land on a home of
+the NOTATED signature — the evidence document's own diagnostic for the signature lock. **It carries
+no partial-signature correction at all.** That is [[OI-357]]'s own "NOT claimed" half — the live
+arm's weak fitted soft prior reaching the reading without an explicit correction — moved from
+conjecture to measurement.
+
+**★ AND THE SAME-COMMIT CONTROL IS THE STEP THAT CHANGES WHAT MAY BE CONCLUDED, which is why it was
+run.** The committed Corelli outputs are the legacy arm's, but they were produced **two months
+before** this run and under a different preset. A production-versus-committed comparison therefore
+confounds THE ARM with everything else that moved in between, and a difference may not be attributed
+to a cause that is not the only one available (#19, #24). So the legacy arm was run again **at this
+commit, over the same scores, under the same preset, through the same comparison code — one flag
+apart.**
+
+**The result:** the two arms at the same commit are **close**, with the production arm modestly
+ahead; the large difference is between **either HEAD run and the June committed outputs**, and that
+comparison carries the preset change as well as two months of code. **Had the control not been run,
+this pass would have reported a large arm effect that the evidence does not support.**
+
+**★ WHAT THIS DOES AND DOES NOT DO TO [[OI-363]].** That row measured the legacy arm on the
+PUBLISHED whole-run field. On that same column the legacy arm at HEAD is close to the committed
+outputs, so **OI-363's finding is not overturned on its own quantity.** What the control does show
+is that on the DERIVED shared surface the legacy arm at HEAD is markedly better than the June
+outputs — so a reader must not carry the committed-outputs picture forward as a statement about the
+legacy arm as it stands.
+
+**★ ONE OBSERVATION IS RECORDED AND EXPLICITLY NOT DIAGNOSED.** The stand-in check — how often the
+derived whole-run reading equals the arm's own published field — is **much lower at HEAD than in the
+June outputs** on the legacy arm. That is a fact about the relationship between two of the legacy
+arm's own output fields across two months, not about correctness, and this pass does not explain it.
+It is the reason the shared-surface column is reported as its own quantity.
+
+**What is NOT claimed.** Why the production arm reads a piece the way it does; whether any
+disagreement is a defect rather than a defensible modal reading the major/minor ground truth cannot
+represent (a GROUND-TRUTH LIMITATION under `CLAUDE.md` gate block (A)) or a global-versus-local
+comparison artifact; and anything at all about the gate — this repertoire is not the gate corpus,
+nothing was promoted, no golden moved, and nothing under `tools/corpus/` or `tools/robust_stop/` was
+touched.
+
+**Nothing is proposed for any of it** — no fix, no design, no inference change.
+
 ## 3 (continued). Per-task log — the seventh return continuation
 
 ### Task 0 — COMPLETE as an ACT and a STOP. Ruling 39's delegation is written and its predicted close is refuted by measurement; the nine are held individually
@@ -2677,6 +2843,117 @@ this task is where a recorded decision is written down.
 **Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+### Task 2 — COMPLETE. Ruling 35(b)'s run is performed and [[OI-357]] is answered in the production direction; three findings, one of which is a ratified characterization that is inverted
+
+**A3's bounds held in every clause, and each was checked rather than asserted.** Outputs went to
+`scratch_artifacts/` and nowhere else; **nothing under `tools/corpus/` or `tools/robust_stop/` was
+written or read for a verdict**; no corpus was promoted, no golden refreshed, no gate touched; the
+comparison is the SAME tool as the committed-outputs pass, extended with a run-directory option
+rather than duplicated (#6); and the run record carries the #16 stamps — instrument commit, the
+corpus's pinned commit, a derived hash over exactly the scores read, the estimator table hash and
+the metadata hash. **The flag was passed**, and its effect is established at the outputs' own
+`analysisPath` field rather than trusted from the command line.
+
+**What was done, in order.**
+
+1. **The committed-outputs pass was re-run first**, because the production run had to be read
+   against it and a population is derived fresh rather than carried. It re-derives byte-identically
+   to the committed artifact — and re-reading it is what turned up **§2.11**.
+2. **The first production output was read before anything was compared** — which is what caught
+   **§2.12**, that the production arm publishes no whole-run key field at all. A comparison run
+   unchanged would have scored every piece a disagreement and reported a catastrophe that is a
+   property of the output surface.
+3. **A shared surface was built and its faithfulness measured**, not assumed: the per-region keys
+   reduced to a whole-run reading by a duration-weighted vote, computed identically for both arms,
+   with a check against the published field wherever both exist.
+4. **The production arm was run over the whole population**, and then **the legacy arm was run again
+   at the same commit as a control** — see the widening note below.
+5. **Both were compared by the same code**, and the three artifacts are named at §2.13.
+6. **Both runs were then performed a SECOND time**, because the standing self-check caught a
+   reserved-word collision in a field name this session had authored — the bare non-musical
+   *instrument*, which `CLAUDE.md` #16 itself uses for this stamp and which the Conventions require
+   in its disambiguated form. Correcting the field meant the committed record and the tool would
+   otherwise disagree. **The re-run doubles as a REPRODUCE-CHECK and its outcome is reported rather
+   than assumed** (#16, #19): **both comparison artifacts re-derive BYTE-IDENTICALLY** from the
+   second, independent run of the analysis over the same scores — the production arm's and the
+   legacy control's alike. So every value at §2.13 rests on two runs rather than one, and the
+   analysis is deterministic over this population at this commit.
+
+**★ ONE ACT WENT BEYOND RULING 35(b)'s LETTER AND IS REPORTED AS SUCH RATHER THAN TAKEN SILENTLY.**
+The ruling licenses the PRODUCTION arm's run. It does not license the legacy-arm control run. **It
+was performed anyway**, and the ground is stated so the user can review it: the committed outputs
+are two months older than HEAD and were produced under a different preset, so a
+production-versus-committed comparison attributes to THE ARM a difference that two other causes are
+equally available for — which #19 and #24 both forbid. **The control is what makes the answer sound,
+and the measurement proves the point: most of the apparent difference is NOT the arm.** Without it
+this pass would have published a large arm effect the evidence does not support. **If the narrower
+scope was meant, the control's artifact and its scratch directory are one deletion** — nothing else
+depends on them, and §2.13's arm comparison is what would be withdrawn. This is the reported-widening
+discipline (**D-654**): a widening reported is reviewable, a widening hidden is not.
+
+**★ [[OI-357]] IS ANSWERED IN THE PRODUCTION DIRECTION AND IS EXPLICITLY HELD OPEN, which is the
+dispatch's own permitted outcome.** What the row asked was *does the production arm read these
+scores correctly, **and by what means***. **The first half is now established**; the second is not,
+and this pass makes no attempt at it — it counts and does not explain. The per-case reading the row
+also names is untouched. So the row records what is established, and stays OPEN for what is not.
+
+**Holds:** §1.13 — the same inverted characterization stands in a live `docs/` document this batch
+may not edit. **Surfacings:** §2.11, §2.12 and §2.13, all three bearing on the analysis or on the
+record of a measurement of it.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores regenerated into any tracked
+corpus directory, no `tools/corpus/` or `tools/robust_stop/` movement, no behaviour change to the
+analysis, no fix to inference, no design. **Phase 1's completion statement is not written, not
+drafted and not partially written here.**
+
+### ★ WHERE THIS BATCH STOPPED
+
+**Tasks 0 and 2 are COMPLETE. Task 1 is OPENED and partly done, at a clean entry boundary. Tasks 3,
+4 and 5 are NOT STARTED.** That is a capacity stop, not a halt on a finding: no STOP note was
+written against the batch, nothing is left half-edited, every derived surface re-derives, and the
+guard set stands at **ZERO failing** with the classification green after it.
+
+**★ THE ONE ORDERING JUDGMENT THIS BATCH MADE, stated because it departs from the dispatch's own
+sequence.** Task 1 is the largest remaining item and Task 2's run had been carried unstarted through
+two batches, each time because a per-entry pass consumed the capacity first — and the dispatch says
+of Task 2 that it *"goes before the derivations this time so capacity cannot starve it again"*. So
+Task 1 was opened, its two NAMED members closed, and the batch moved to Task 2 rather than working
+Task 1 to exhaustion. **The judgment is the ordering and nothing else:** no instruction was skipped,
+and Task 1's remaining population is untouched rather than partly worked.
+
+**★ WHY TASK 3 WAS NOT OPENED RATHER THAN OPENED AND LEFT PART-DONE.** Its deliverable is ONE
+generated derivation over a derived population of open rows, and a derivation published over some of
+its population is the silent cap the standing rules forbid — it would read as covering the class
+while covering a subset. Three previous continuations declined it for exactly this reason and the
+reason has not changed. Its population is small in count and each member needs a row READ, so it is
+a task rather than a step inside one.
+
+**What a continuing session should know.**
+
+1. **Task 1's remaining population is DERIVED, not carried from here:** the four homing items at
+   `tools/audit/phase1_finish_line.json`, read at task start. The two closed here are already out of
+   it by construction, and **the nine census entries are HELD by §1.12 with both routes named** —
+   that hold needs the user, not a session.
+2. **Task 3's population is the completion inventory's `the_gating_split` → `non_gating` set**, read
+   at task start; what is owed per row is a verdict under **D-639**'s test, whose three worked
+   examples ARE the test, with fallback (1A) applied and SAID wherever the test does not decide, and
+   **no hand verdicts**. The method to follow is the existing first application's shape at
+   `tools/audit/decisions/gen_true_half_reach.py` (#6).
+3. **Tasks 4 and 5 are untouched:** Ruling 16's sibling sweep with its ONE comment-only `src/`
+   commit (sweep first, generated; diff verified comment-only; a sibling whose falsity needs a
+   judgment about the analysis is HELD, not edited; [[OI-353]] flips on it), and OI-346's marks with
+   the per-row sizing pass. **No `src/` file was opened for editing by this batch.**
+4. **Two things await the user and both are new:** **§1.12**, where Ruling 39's act stands and its
+   predicted outcome is refuted, so the nine census entries need a choice between the ruling's act
+   and its stated outcome; and **§1.13**, the one inverted sentence still standing in a live `docs/`
+   document this batch may not edit. Beside them stands the queue's new **§9**, which classifies
+   Rulings 36–39 and awaits a ruling.
+5. **Three findings bear on the analysis or on the record of a measurement of it — §2.11, §2.12 and
+   §2.13** — and none is proposed for.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch.**
 
 ## 4. The batch's start state, recorded before any act
 

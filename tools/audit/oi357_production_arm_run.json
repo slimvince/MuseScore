@@ -1,0 +1,39 @@
+{
+  "what_this_is": "OI-357's PRODUCTION-ARM run, on the user's Ruling 35(b) of 2026-08-09: a bounded EXPLORATIONAL run of the arm that ships over the derived partial-signature population, whose outputs live in a scratch directory and nowhere else. It takes no verdict; the comparison is performed by `gen_oi357_partial_signature_establishment.py --run-dir`, the SAME tool the committed-outputs pass used (#6).",
+  "generated_by": "tools/audit/gen_oi357_production_arm_run.py",
+  "the_row_it_feeds": "OPEN_ITEMS.md OI-357 (and OI-363, which gains the production-arm column beside its committed-outputs one)",
+  "★_the_bounds_this_run_was_performed_inside": {
+    "the_ruling": "User, 2026-08-09, Ruling 35(b) of `cowork_rulings_2026_08_09_fifth_stop.md`.",
+    "outputs_go_where": "scratch_artifacts/oi357_production_arm",
+    "nothing_under_tools_corpus_or_tools_robust_stop": true,
+    "no_corpus_promotion_no_golden_no_re_baseline": true,
+    "the_gate_is_unmoved": "This repertoire is not the gate corpus, and nothing here promotes it. The research-tier-on-entry rule in `CLAUDE.md` gate block (A) is untouched.",
+    "explorational": "#5 fact-finding under the scope-of-surprise clause: a surprise here is ROWED, and nothing is designed or fixed for it."
+  },
+  "★_which_arm_this_run_is": "the PRODUCTION arm (joint estimator)",
+  "★_the_flag_is_the_point": {
+    "invocation": "batch_analyze <score> <out> --preset Baroque --joint-inference <tools/joint_estimator>",
+    "why_it_is_not_optional": "Without `--joint-inference` batch_analyze runs the LEGACY pipeline (`BUILD_AND_TEST.md`, the corrected invocation note), which is exactly the arm the committed outputs already are — a flag-less run would answer nothing.",
+    "why_the_preset_is_named_and_why_it_does_not_decide_anything": "Production inference is PRESET-INDEPENDENT (`CLAUDE.md` gate block (A), the OI-178 adoption), so the preset is a presentation carrier here. It is stated because a recorded invocation must be reproducible, not because it moves a value."
+  },
+  "★_the_reproducibility_stamps_16": {
+    "measurement_tool_commit": "0e581a07b33049157f16b06a8327fd64db44b3b3",
+    "corpus_pinned_commit": "65608a1a193bb2375a018060b266645ba05a0bc4",
+    "corpus_hash_over_the_population_s_scores": "d603812ec0e3756354fd68c4aa87da5755915310a3d375f523ecd637853eef9e",
+    "joint_estimator_table_hash": "a8fa9d3eca6d43f77b271e98eeea47fe0b9f386b83d85189543374a21fc9e2e0",
+    "metadata_tsv_sha256": "299d2fa7970627989ef84af7ed12316aa8845a7b1f7c17c45923680e4e97b228",
+    "how_the_corpus_hash_is_built": "sha256 over the sorted (piece, sha256-of-.mscx) pairs of every score this run read. Derived, so a corpus that moves cannot be mistaken for the one measured."
+  },
+  "the_population": {
+    "how_it_is_derived": "IMPORTED from gen_oi357_partial_signature_establishment.py — the evidence document's own stated method, applied to every piece in the corpus metadata. Not re-implemented here (#6), so the two passes cannot drift apart in what they are about.",
+    "pieces_in_the_population": 78,
+    "pieces_attempted_in_this_run": 78,
+    "this_run_was_limited": false,
+    "★_what_a_limited_run_is_worth": "A limited run is a diagnostic, not a measurement of the population: reading it as one is the silent cap the standing rules forbid. The flag above says which this is."
+  },
+  "the_outcome": {
+    "pieces_analysed": 78,
+    "pieces_that_failed": [],
+    "pieces_with_no_score_file": []
+  }
+}

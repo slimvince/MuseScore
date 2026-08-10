@@ -22,14 +22,30 @@ derives its table "From `tools/dcml/corelli/metadata.tsv` (notated `KeySig` vs D
 than the document's six-row table being transcribed, so the population cannot be narrower than
 the record's own rule makes it.
 
+★ AND THE SAME COMPARISON NOW READS A SECOND RUN DIRECTORY, WHICH IS HOW THE ROW'S OTHER HALF IS
+ANSWERED (added 2026-08-09 under the user's Ruling 35(b) of
+`cowork_rulings_2026_08_09_fifth_stop.md`).  That ruling licenses a bounded EXPLORATIONAL run of the
+PRODUCTION arm over this same derived population, "compared identically to the committed-outputs
+pass".  Identically means BY THIS CODE: `--run-dir` points the comparison at another directory of
+`.ours.json` files and `--out` names the artifact it writes, and nothing else about the comparison
+moves — the population, the agreement rule, the notated-signature-home diagnostic and the mode cut
+are the same objects, so the two passes cannot drift apart in what they measure (#6).  The run
+itself is `gen_oi357_production_arm_run.py`; this tool never invokes the analysis and never writes
+a score.
+
 Run:
     python tools/audit/gen_oi357_partial_signature_establishment.py
+    python tools/audit/gen_oi357_partial_signature_establishment.py \
+        --run-dir scratch_artifacts/oi357_production_arm \
+        --out tools/audit/oi357_production_arm_comparison.json
 
 Output:
-    tools/audit/oi357_partial_signature_establishment.json
+    tools/audit/oi357_partial_signature_establishment.json   (the committed-outputs pass)
+    tools/audit/oi357_production_arm_comparison.json         (the Ruling 35(b) run)
 """
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import re
@@ -113,6 +129,43 @@ def our_key_to_tonic(label: str):
     return pc, mode
 
 
+def whole_run_key_by_duration(doc: dict):
+    """The piece's whole-run key, as a DURATION-WEIGHTED vote over the per-region keys.
+
+    ★ WHY THIS EXISTS, and it is a finding rather than a convenience.  The comparison above reads
+    the output's TOP-LEVEL `detectedKey`.  **The production arm's batch output does not publish
+    one** — it publishes a key per region and no whole-run field — so reading that field against
+    the production arm would score every piece a disagreement and report a catastrophe that is an
+    artifact of the surface.  The two arms nonetheless publish ONE surface in common: the per-region
+    key.  This reduces that surface to a whole-run reading, IDENTICALLY for both arms, so the two
+    are compared on the same derived quantity rather than on two different fields.
+
+    The weight is sounding TIME, not region count, because a key that governs most of the piece is
+    what a whole-run label names; a count would let a cluster of short tonicizations outvote it.
+    Ties are broken by earliest onset, so the result is deterministic.
+
+    Its faithfulness is not assumed: where an output DOES publish `detectedKey`, the artifact
+    reports how often this derived value equals it, which is what makes the stand-in established
+    (#19) rather than merely plausible.
+    """
+    weight: dict[str, int] = {}
+    first: dict[str, int] = {}
+    for r in doc.get("regions", []):
+        k = r.get("key")
+        if not k:
+            continue
+        start, end = r.get("startTick"), r.get("endTick")
+        if start is None or end is None or end <= start:
+            continue
+        weight[k] = weight.get(k, 0) + (end - start)
+        first.setdefault(k, start)
+    if not weight:
+        return None, None, None
+    best = sorted(weight, key=lambda k: (-weight[k], first[k]))[0]
+    pc, mode = our_key_to_tonic(best)
+    return best, pc, mode
+
+
 def read_metadata() -> list[dict]:
     with open(METADATA, encoding="utf-8") as fh:
         header = fh.readline().rstrip("\n").split("\t")
@@ -167,6 +220,14 @@ def committed_runs() -> list[dict]:
 
 
 def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--run-dir", default=None,
+                    help="compare against this directory of .ours.json files instead of the "
+                         "newest committed Corelli run (Ruling 35(b)'s production-arm run)")
+    ap.add_argument("--out", default=None,
+                    help="write the artifact here instead of the default path")
+    args = ap.parse_args()
+
     pieces = read_metadata()
 
     population, excluded = [], []
@@ -193,6 +254,23 @@ def main() -> int:
                 if any(m["piece"] in r["stems"] for m in population)]
     newest = covering[-1] if covering else None
 
+    # ── Ruling 35(b): the SAME comparison, aimed at a named run directory ────────────────────
+    # The directory is DECLARED rather than discovered, because this run is not a committed
+    # output and must never be mistaken for one: a discovered directory would eventually be
+    # found by the committed-run walk above and silently become "the newest committed run".
+    supplied_run = None
+    if args.run_dir:
+        rel = args.run_dir.replace("\\", "/")
+        d = os.path.join(ROOT, rel)
+        if not os.path.isdir(d):
+            raise SystemExit(f"STOP: --run-dir does not exist: {rel}")
+        stems = sorted(f[: -len(".ours.json")] for f in os.listdir(d)
+                       if f.endswith(".ours.json"))
+        if not stems:
+            raise SystemExit(f"STOP: --run-dir holds no .ours.json files: {rel}")
+        supplied_run = {"directory": rel, "date_in_the_directory_name": None, "stems": stems}
+        newest = supplied_run
+
     compared, missing = [], []
     if newest is not None:
         for m in population:
@@ -203,6 +281,7 @@ def main() -> int:
             doc = json.loads(open(path, encoding="utf-8").read())
             ours = doc.get("detectedKey")
             pc, mode = our_key_to_tonic(ours or "")
+            wr_key, wr_pc, wr_mode = whole_run_key_by_duration(doc)
             region_keys = sorted({r.get("key") for r in doc.get("regions", []) if r.get("key")})
             # The evidence document's OWN diagnostic for the signature lock: when the resolver
             # cannot escape the notated signature it "lands on the notated signature's Ionian
@@ -227,6 +306,17 @@ def main() -> int:
                 "our_mode": mode,
                 "the_tonic_agrees": pc is not None and pc == m["annotated_tonic_pitch_class"],
                 "the_mode_agrees": mode == m["annotated_mode"],
+                "this_output_publishes_a_top_level_detected_key": ours is not None,
+                "our_whole_run_key_by_duration": wr_key,
+                "our_whole_run_tonic_pitch_class": wr_pc,
+                "our_whole_run_mode": wr_mode,
+                "the_whole_run_tonic_agrees": (wr_pc is not None
+                                               and wr_pc == m["annotated_tonic_pitch_class"]),
+                "the_whole_run_mode_agrees": wr_mode == m["annotated_mode"],
+                "our_whole_run_tonic_is_a_home_of_the_NOTATED_signature": wr_pc in (
+                    ionian_home_pc, aeolian_home_pc),
+                "the_derived_whole_run_reading_equals_the_published_detected_key": (
+                    None if ours is None else (wr_pc == pc and wr_mode == mode)),
                 "distinct_region_keys_in_the_committed_output": region_keys,
                 "analysis_path_field": doc.get("analysisPath"),
                 "preset_field": doc.get("preset"),
@@ -239,12 +329,34 @@ def main() -> int:
     locked = [c for c in disagreeing if c["our_tonic_is_a_home_of_the_NOTATED_signature"]]
     modal = [c for c in disagreeing if str(c["our_mode"]).startswith("other:")]
 
+    # ── the shared surface, computed identically for both arms ───────────────────────────────
+    publishing = [c for c in compared if c["this_output_publishes_a_top_level_detected_key"]]
+    wr_agreeing = [c for c in compared if c["the_whole_run_tonic_agrees"]]
+    wr_disagreeing = [c for c in compared if not c["the_whole_run_tonic_agrees"]]
+    wr_locked = [c for c in wr_disagreeing
+                 if c["our_whole_run_tonic_is_a_home_of_the_NOTATED_signature"]]
+    wr_modal = [c for c in wr_disagreeing if str(c["our_whole_run_mode"]).startswith("other:")]
+    stand_in_checked = [c for c in publishing
+                        if c["the_derived_whole_run_reading_equals_the_published_detected_key"]
+                        is not None]
+    stand_in_agreeing = [c for c in stand_in_checked
+                         if c["the_derived_whole_run_reading_equals_the_published_detected_key"]]
+
     artifact = {
-        "what_this_is": "OI-357's EARLY, BOUNDED, READ-ONLY establishment, on the user's Ruling 26 "
-                        "of 2026-08-09: the committed corpus outputs for the Baroque "
-                        "partial-signature stems, compared against the published human "
-                        "annotation. No corpus was regenerated, no measurement tool of the "
-                        "analysis was built or run, and nothing about the analysis was changed.",
+        "what_this_is": ("OI-357's EARLY, BOUNDED, READ-ONLY establishment, on the user's Ruling 26 "
+                         "of 2026-08-09: the committed corpus outputs for the Baroque "
+                         "partial-signature stems, compared against the published human "
+                         "annotation. No corpus was regenerated, no measurement tool of the "
+                         "analysis was built or run, and nothing about the analysis was changed."
+                         if supplied_run is None else
+                         "OI-357's PRODUCTION-ARM comparison, on the user's Ruling 35(b) of "
+                         "2026-08-09: the arm that SHIPS, run over the same derived Baroque "
+                         "partial-signature population and compared against the published human "
+                         "annotation BY THE SAME CODE as the committed-outputs pass (#6). The run "
+                         "is explorational (#5); its outputs live in a scratch directory and "
+                         "nowhere else; nothing was promoted, no golden was refreshed, nothing "
+                         "under `tools/corpus/` or `tools/robust_stop/` moved, and no fix, design "
+                         "or inference change is proposed."),
         "generated_by": "tools/audit/gen_oi357_partial_signature_establishment.py",
         "the_row_it_answers": "OPEN_ITEMS.md OI-357",
         "the_population_and_how_it_was_DERIVED": {
@@ -284,23 +396,55 @@ def main() -> int:
                 "THEREFORE MEASURES THE LEGACY ARM AND CANNOT ANSWER THE ROW'S QUESTION. What it "
                 "CAN establish is stated below and is worth having; what it cannot is stated here "
                 "so no reader takes the values for an answer about the arm that ships."
+            ) if supplied_run is None else (
+                "THIS RUN IS THE PRODUCTION ARM'S, and it is a SUPPLIED directory rather than a "
+                "discovered one. The outputs were produced by `gen_oi357_production_arm_run.py` "
+                "under the user's Ruling 35(b), with `--joint-inference` passed — the flag "
+                "without which batch_analyze runs the legacy pipeline. The verdict above about "
+                "the committed runs is unchanged and still true of THEM; it is quoted in this "
+                "artifact so the two passes can be read side by side without either being "
+                "mistaken for the other. The run's own record, with the #16 stamps, is "
+                "`tools/audit/oi357_production_arm_run.json`."
             ),
+            "which_arm_this_artifact_is_about": (
+                "the LEGACY arm" if supplied_run is None else "the PRODUCTION arm (joint estimator)"
+            ),
+            "the_supplied_run_directory": supplied_run["directory"] if supplied_run else None,
         },
-        "what_this_comparison_CAN_establish": [
+        "what_this_comparison_CAN_establish": ([
             "Whether the LEGACY correction actually holds on the derived population at the "
             "committed outputs — that is, whether the fix the record says landed is visible in "
             "the data, on every member of the population rather than on the one anchor case the "
             "evidence document names.",
             "The BEFORE side any later production-arm comparison would be read against, taken "
             "from committed data rather than re-measured.",
-        ],
-        "what_this_comparison_CANNOT_establish": [
+        ] if supplied_run is None else [
+            "Whether the arm that SHIPS reads these scores with the annotated tonic, over the "
+            "whole derived population rather than on one anchor case — which is the direction "
+            "OI-357 has been open in.",
+            "Whether the production arm's disagreements land on a home of the NOTATED signature, "
+            "which is the evidence document's own diagnostic for the signature lock. The live arm "
+            "carries no explicit correction; whether it nonetheless escapes the lock is exactly "
+            "what the row says is unestablished in both directions.",
+        ]),
+        "what_this_comparison_CANNOT_establish": ([
             "Anything about the production arm's reading of these scores. No committed output for "
             "this repertoire was produced by it.",
             "Anything about how the production arm's soft signature prior behaves on a partial "
             "signature — the row's own 'NOT claimed' half, which stays not claimed.",
             "Any published measurement of the analysis, none of which this pass touches.",
-        ],
+        ] if supplied_run is None else [
+            "WHY the production arm reads a piece the way it does. This pass counts; it does not "
+            "explain, and no mechanism is diagnosed from it.",
+            "Whether any particular disagreement is a DEFECT. Each is one of three things — a "
+            "genuine defect, a defensible modal reading the major/minor ground truth cannot "
+            "represent (a GROUND-TRUTH LIMITATION under `CLAUDE.md` gate block (A), explicitly "
+            "not a defect to optimize away), or an artifact of comparing a global reading against "
+            "a global annotation on a piece that modulates — and this pass distinguishes none of "
+            "them.",
+            "Anything about the GATE. This repertoire is not the gate corpus, nothing was "
+            "promoted, and no published measurement moves.",
+        ]),
         "the_comparison": {
             "pieces_compared": len(compared),
             "pieces_in_the_population_with_no_committed_output": missing,
@@ -347,6 +491,59 @@ def main() -> int:
                                              "DEFENSIBLE is a judgment this pass does not make — "
                                              "the count is reported so that the disagreement "
                                              "total is not read as a defect total.",
+            "★_THE_SURFACE_THE_TWO_ARMS_SHARE_and_why_it_had_to_be_built": {
+                "the_finding_that_forced_it": "The comparison above reads the output's TOP-LEVEL "
+                                              "`detectedKey`. The PRODUCTION arm's batch output "
+                                              "publishes NO such field — it publishes a key per "
+                                              "region and no whole-run one. Reading that field "
+                                              "against the production arm would have scored every "
+                                              "piece a disagreement and reported a catastrophe "
+                                              "that is an artifact of the surface, not of the "
+                                              "analysis. Established by the column below rather "
+                                              "than asserted.",
+                "outputs_publishing_a_top_level_detected_key": len(publishing),
+                "outputs_compared": len(compared),
+                "the_shared_surface": "the per-region key, reduced to a whole-run reading by a "
+                                      "DURATION-WEIGHTED vote — sounding time, not region count, "
+                                      "because a key that governs most of the piece is what a "
+                                      "whole-run label names and a count would let a cluster of "
+                                      "short tonicizations outvote it. Ties break by earliest "
+                                      "onset, so the value is deterministic. The SAME function "
+                                      "computes it for both arms (#6).",
+                "★_the_stand_in_is_ESTABLISHED_rather_than_assumed": {
+                    "the_check": "Where an output DOES publish `detectedKey`, the derived "
+                                 "whole-run reading is compared against it. That is what makes "
+                                 "the derived quantity a faithful stand-in (#19) instead of a "
+                                 "plausible one, and it can only be checked on the arm that "
+                                 "publishes both.",
+                    "outputs_where_both_exist": len(stand_in_checked),
+                    "of_those_the_derived_reading_equals_the_published_one": len(stand_in_agreeing),
+                    "what_a_shortfall_here_would_mean": "that the derived whole-run reading is not "
+                                                        "what the published field names, in which "
+                                                        "case the cross-arm column below is a "
+                                                        "comparison of two things and is reported "
+                                                        "as such rather than read as one.",
+                },
+                "the_comparison_on_the_shared_surface": {
+                    "whole_run_tonic_agreeing": len(wr_agreeing),
+                    "whole_run_tonic_disagreeing": len(wr_disagreeing),
+                    "of_the_disagreeing_landing_on_a_HOME_OF_THE_NOTATED_SIGNATURE": len(wr_locked),
+                    "of_the_disagreeing_emitting_a_non_major_minor_mode": len(wr_modal),
+                    "by_annotated_mode": {
+                        mode: {
+                            "in_the_population": sum(1 for c in compared
+                                                     if c["annotated_mode"] == mode),
+                            "whole_run_tonic_agreeing": sum(1 for c in wr_agreeing
+                                                            if c["annotated_mode"] == mode),
+                            "whole_run_tonic_disagreeing": sum(1 for c in wr_disagreeing
+                                                               if c["annotated_mode"] == mode),
+                            "disagreeing_and_landing_on_a_home_of_the_notated_signature":
+                                sum(1 for c in wr_locked if c["annotated_mode"] == mode),
+                        }
+                        for mode in ("major", "minor")
+                    },
+                },
+            },
             "rows": compared,
             "what_the_agreement_column_means": "whether our committed detected key's TONIC matches "
                                                "the published human annotation's tonic. The mode "
@@ -357,9 +554,10 @@ def main() -> int:
         },
     }
 
-    open(OUT, "w", encoding="utf-8", newline="").write(
+    out_path = os.path.join(ROOT, args.out.replace("\\", "/")) if args.out else OUT
+    open(out_path, "w", encoding="utf-8", newline="").write(
         json.dumps(artifact, indent=2, ensure_ascii=False) + "\n")
-    print(f"wrote {os.path.relpath(OUT, ROOT)}")
+    print(f"wrote {os.path.relpath(out_path, ROOT)}")
     print(f"  pieces in the metadata: {len(pieces)}; population derived: {len(population)}")
     print(f"  committed Corelli runs: {len(runs)}; read: "
           f"{newest['directory'] if newest else 'NONE'}")
@@ -367,6 +565,12 @@ def main() -> int:
           f"disagreeing: {len(disagreeing)}")
     print(f"  of the disagreeing, landing on a home of the NOTATED signature: {len(locked)}")
     print(f"  of the disagreeing, emitting a non-major/minor mode: {len(modal)}")
+    print(f"  outputs publishing a top-level detectedKey: {len(publishing)} of {len(compared)}")
+    print(f"  SHARED SURFACE (duration-weighted whole-run key): agreeing {len(wr_agreeing)}; "
+          f"disagreeing {len(wr_disagreeing)}; of those on a notated-signature home "
+          f"{len(wr_locked)}")
+    print(f"  stand-in check (derived == published, where both exist): "
+          f"{len(stand_in_agreeing)} of {len(stand_in_checked)}")
     print(f"  no committed output: {missing}")
     return 0
 
