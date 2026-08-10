@@ -22,12 +22,12 @@
       "gap": 101
     },
     "class_after": {
-      "contract-home": 157,
-      "gap": 32
+      "contract-home": 159,
+      "gap": 30
     },
-    "entries_moved": 79,
+    "entries_moved": 81,
     "moved_to_gap": 5,
-    "moved_to_contract_home": 74,
+    "moved_to_contract_home": 76,
     "decided_by": {
       "D-430, the section-level unit": 171,
       "clause (a), the fifth home case (OI-268)": 18
@@ -1292,18 +1292,17 @@
         "gap": 10
       },
       "after": {
-        "contract-home": 8,
-        "gap": 2
+        "contract-home": 10
       },
       "moves_out": 0,
-      "moves_in": 8,
+      "moves_in": 10,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
       "delegation_line": "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate. *(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as \"the thin derived-view layer over the L1 note model\" and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so siting a contract pointer there would attach it to a question the user deliberately left open. Naming the document by filename also closes the prose-reference question the write list carried: the doc-governance clause's phrase \"the phrase-boundary design\" had more than one candidate in the tree.)*",
       "sections": {
         "§6": {
-          "heading_line": 222,
+          "heading_line": 249,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -1319,12 +1318,13 @@
           "delegated": true,
           "states_rules": true,
           "entries": [
-            "D-477"
+            "D-477",
+            "D-484"
           ],
           "class_after": "contract-home"
         },
         "§8": {
-          "heading_line": 266,
+          "heading_line": 293,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -1333,43 +1333,26 @@
           "class_after": "contract-home"
         },
         "§4.4": {
-          "heading_line": 175,
+          "heading_line": 187,
           "delegated": true,
           "states_rules": true,
           "entries": [
-            "D-481"
+            "D-481",
+            "D-485"
           ],
           "class_after": "contract-home"
         },
         "§7": {
-          "heading_line": 250,
+          "heading_line": 277,
           "delegated": true,
           "states_rules": true,
           "entries": [
             "D-483"
           ],
           "class_after": "contract-home"
-        },
-        "the opening block (above the first section heading)": {
-          "heading_line": 1,
-          "delegated": true,
-          "states_rules": false,
-          "entries": [
-            "D-484"
-          ],
-          "class_after": "gap"
-        },
-        "§11": {
-          "heading_line": 343,
-          "delegated": true,
-          "states_rules": false,
-          "entries": [
-            "D-485"
-          ],
-          "class_after": "gap"
         }
       },
-      "moves_in_since_phase1q": 8
+      "moves_in_since_phase1q": 10
     },
     "cowork_architecture_review_2026_07.md": {
       "entries": 2,
@@ -4890,9 +4873,9 @@
       "id": "D-476",
       "title": "The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it",
       "document": "cowork_phrase_boundary_design.md",
-      "home": "cowork_phrase_boundary_design.md:223-226",
+      "home": "cowork_phrase_boundary_design.md:250-253",
       "section": "§6",
-      "section_heading_line": 222,
+      "section_heading_line": 249,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
@@ -4934,9 +4917,9 @@
       "id": "D-478",
       "title": "A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals",
       "document": "cowork_phrase_boundary_design.md",
-      "home": "cowork_phrase_boundary_design.md:233-238",
+      "home": "cowork_phrase_boundary_design.md:260-265",
       "section": "§6",
-      "section_heading_line": 222,
+      "section_heading_line": 249,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
@@ -4956,9 +4939,9 @@
       "id": "D-479",
       "title": "The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published",
       "document": "cowork_phrase_boundary_design.md",
-      "home": "cowork_phrase_boundary_design.md:239-245",
+      "home": "cowork_phrase_boundary_design.md:266-272",
       "section": "§6",
-      "section_heading_line": 222,
+      "section_heading_line": 249,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
@@ -4978,9 +4961,9 @@
       "id": "D-480",
       "title": "The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate",
       "document": "cowork_phrase_boundary_design.md",
-      "home": "cowork_phrase_boundary_design.md:276-282",
+      "home": "cowork_phrase_boundary_design.md:303-309",
       "section": "§8",
-      "section_heading_line": 266,
+      "section_heading_line": 293,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
@@ -5000,9 +4983,9 @@
       "id": "D-481",
       "title": "The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked",
       "document": "cowork_phrase_boundary_design.md",
-      "home": "cowork_phrase_boundary_design.md:176-181",
+      "home": "cowork_phrase_boundary_design.md:188-193",
       "section": "§4.4",
-      "section_heading_line": 175,
+      "section_heading_line": 187,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
@@ -5022,9 +5005,9 @@
       "id": "D-482",
       "title": "The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output",
       "document": "cowork_phrase_boundary_design.md",
-      "home": "cowork_phrase_boundary_design.md:227-229",
+      "home": "cowork_phrase_boundary_design.md:254-256",
       "section": "§6",
-      "section_heading_line": 222,
+      "section_heading_line": 249,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
@@ -5044,9 +5027,9 @@
       "id": "D-483",
       "title": "The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas",
       "document": "cowork_phrase_boundary_design.md",
-      "home": "cowork_phrase_boundary_design.md:254-258",
+      "home": "cowork_phrase_boundary_design.md:281-285",
       "section": "§7",
-      "section_heading_line": 250,
+      "section_heading_line": 277,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
@@ -5066,45 +5049,45 @@
       "id": "D-484",
       "title": "The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence",
       "document": "cowork_phrase_boundary_design.md",
-      "home": "cowork_phrase_boundary_design.md:23-31",
-      "section": "the opening block (above the first section heading)",
-      "section_heading_line": 1,
+      "home": "cowork_phrase_boundary_design.md:83-94",
+      "section": "§2",
+      "section_heading_line": 63,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
       "delegation_line": "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate. *(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as \"the thin derived-view layer over the L1 note model\" and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so siting a contract pointer there would attach it to a question the user deliberately left open. Naming the document by filename also closes the prose-reference question the write list carried: the doc-governance clause's phrase \"the phrase-boundary design\" had more than one candidate in the tree.)*",
       "section_delegated": true,
-      "section_states_rules": false,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
       "class_before_phase1r": "gap",
       "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "moves_since_phase1r": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-485",
       "title": "Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase",
       "document": "cowork_phrase_boundary_design.md",
-      "home": "cowork_phrase_boundary_design.md:382-386",
-      "section": "§11",
-      "section_heading_line": 343,
+      "home": "cowork_phrase_boundary_design.md:205-218",
+      "section": "§4.4",
+      "section_heading_line": 187,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1519",
       "delegation_line": "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate. *(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as \"the thin derived-view layer over the L1 note model\" and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so siting a contract pointer there would attach it to a question the user deliberately left open. Naming the document by filename also closes the prose-reference question the write list carried: the doc-governance clause's phrase \"the phrase-boundary design\" had more than one candidate in the tree.)*",
       "section_delegated": true,
-      "section_states_rules": false,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
       "class_before_phase1r": "gap",
       "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "moves_since_phase1r": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-498",
@@ -6033,7 +6016,7 @@
   ],
   "the_phase_1r_re_run": {
     "why": "The user WROTE delegations on 2026-08-03 (the OI-293 write list) for the six documents this pass had reported losing entries. The pass therefore runs a SECOND time, over classes it had itself moved. `class_before_phase1q` still holds the state before the FIRST run, so `totals` and `by_document` below are unchanged in meaning; this block is the movement caused by the written delegations alone.",
-    "entries_moved_since_phase1q": 86,
+    "entries_moved_since_phase1q": 88,
     "moved_to_contract_home": [
       {
         "id": "D-270",
@@ -6470,6 +6453,20 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
       {
+        "id": "D-484",
+        "document": "cowork_phrase_boundary_design.md",
+        "section": "§2",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-485",
+        "document": "cowork_phrase_boundary_design.md",
+        "section": "§4.4",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
         "id": "D-500",
         "document": "cowork_score_census.md",
         "section": "§5",
@@ -6642,13 +6639,12 @@
     "write_list_documents_that_did_not_move_in_whole": [
       "cowork_layer1_note_model_design.md",
       "cowork_layer1_tone_collection_design.md",
-      "cowork_layer6_grouping_design.md",
-      "cowork_phrase_boundary_design.md"
+      "cowork_layer6_grouping_design.md"
     ]
   },
   "the_2026_08_08_apply": {
     "why": "The user WROTE three more delegations on 2026-08-08 (the document-route ruling, route (i)) and every read wave since phase 1r entered register entries whose `home_section` had no writer while the applying run was held. This block is the movement caused by everything since the phase-1r pass — graded against `class_before_the_2026_08_08_apply`, the fourth frozen epoch, which is read back from each entry and never overwritten (#12).",
-    "entries_moved_since_phase1r": 18,
+    "entries_moved_since_phase1r": 20,
     "moved_to_contract_home": [
       {
         "id": "D-398",
@@ -6731,6 +6727,20 @@
         "id": "D-448",
         "document": "docs/llm_integration.md",
         "section": "§4.2",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-484",
+        "document": "cowork_phrase_boundary_design.md",
+        "section": "§2",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-485",
+        "document": "cowork_phrase_boundary_design.md",
+        "section": "§4.4",
         "from": "gap",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
@@ -7110,6 +7120,18 @@
       "id": "D-483",
       "document": "cowork_phrase_boundary_design.md",
       "section": "§7",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-484",
+      "document": "cowork_phrase_boundary_design.md",
+      "section": "§2",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-485",
+      "document": "cowork_phrase_boundary_design.md",
+      "section": "§4.4",
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {

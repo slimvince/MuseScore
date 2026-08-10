@@ -76,7 +76,7 @@
     "D_closed": {
       "what_it_is": "Entries the criteria admit: delegated section, states rules.",
       "the_criterion_that_decides_it": "the delegation reaches this section and the section states rules",
-      "entries": 157,
+      "entries": 159,
       "documents": 25,
       "by_document": {
         "cowork_bounded_context_design.md": [
@@ -196,7 +196,9 @@
           "D-480",
           "D-481",
           "D-482",
-          "D-483"
+          "D-483",
+          "D-484",
+          "D-485"
         ],
         "cowork_prefit_gates.md": [
           "D-270",
@@ -291,8 +293,8 @@
     "E_reached_and_the_kind_half_decides": {
       "what_it_is": "Entries the delegation REACHES, excluded on the kind half. NOT a delegation matter — the remedy is at the document.",
       "the_criterion_that_decides_it": "D-430's kind half — the delegation reaches this section and the section records findings; not a delegation matter",
-      "entries": 13,
-      "documents": 7,
+      "entries": 11,
+      "documents": 6,
       "by_document": {
         "cowork_evidence_inventory.md": [
           "D-521",
@@ -311,10 +313,6 @@
         ],
         "cowork_layer6_grouping_design.md": [
           "D-458"
-        ],
-        "cowork_phrase_boundary_design.md": [
-          "D-484",
-          "D-485"
         ],
         "cowork_structural_integrity_audit.md": [
           "D-403",
@@ -413,8 +411,8 @@
       "why_no_draft_is_offered": "A naming exists but in an excluded form, and upgrading it asserts that the record MEANS the document to be a contract home. The register already declines that inference for the members it examined — for `docs/redesign_plan.md`: 'Drafting a delegation would assert that the record means to keep a superseded plan as a contract home, which the record does not say.' The same reasoning covers the class."
     },
     "class_E": {
-      "entries": 13,
-      "documents": 7,
+      "entries": 11,
+      "documents": 6,
       "why_it_is_not_a_delegation_matter": "The delegation already reaches these sections. What excludes them is D-430's kind half — the section records findings — and the register's own remedy for that shape is at the DOCUMENT: 'move the rule it states into a rule-stating section'. No delegation moves them."
     }
   },
@@ -539,8 +537,7 @@
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 10,
         "by_class": {
-          "contract-home": 8,
-          "gap": 2
+          "contract-home": 10
         },
         "entries_still_lost_to_the_delegation_half": []
       },

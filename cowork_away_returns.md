@@ -3213,6 +3213,88 @@ subject of this task is where a recorded decision is written down.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 2 — OPENED AND PARTLY DONE. Two entries re-homed inside their own specification — and deriving the population first turned up a fact that changes what a continuing session should expect of item 1
+
+**The population was derived fresh at task start (A2, A5)** from `tools/audit/phase1_finish_line.json`
+and the route artifacts, not carried from the dispatch or from this file. No count is restated here
+(**D-431**).
+
+**★ THE FIRST RESULT IS THE DERIVATION ITSELF, AND IT IS CHECKABLE RATHER THAN A JUDGMENT: ITEM 1's
+LIVE REMAINDER IS EXACTLY THE FOUR ENTRIES TASK 1 HELD.** Every one of item 1's other entries — the
+seven that are not census entries — carries the route **`NO HOME EXISTS`** in the authored route
+table, which records that **NEITHER route applies**: the entry's live content is carried by a homed
+successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision
+content to write at all. **Ruling 38 does not reach that class and Ruling 40 does not either**, and
+the record says so in its own words at the route generator. That class stays dispositioned under
+**D-642** where it already was. So a continuing session should NOT expect to find seven re-homable
+entries in item 1: it should expect four held ones and a dispositioned remainder.
+
+**What was done, and why these two.** They are the two members of the findings-not-rules item whose
+owning specification is **the same document they already sit in** — the cleanest case in that
+population, because no judgment about where the concern is owned enters at all. The closing act for
+that item is rule (e)'s preferred route, stated at the finish line: write the rule the entry records
+into a section that STATES it, in the specification that owns the concern.
+
+1. **D-484 → §2, the Constraints.** Its rule was sitting in the document's OPENING BLOCK, which the
+   classification grades as recording findings. Two constraints are now stated where the document's
+   constraints live: the primitive is a **derived view** that inherits the loaded span and requests
+   no extension of its own, and its published strength is a **per-profile max-normalised
+   confidence, comparable within one score's profile only, participating in no override frame** —
+   each with its own defense.
+2. **D-485 → §4.4, Peak-picking** — the section whose OUTPUT the requirement is about, inside a §4
+   whose heading is literally *The model (the rules)*. **The form is the D-472 pattern:** the
+   requirement is written in AS a requirement, marked **OWED and EXPLICITLY NOT BUILT**, with the
+   standing rule that a proper-layer refinement waits for the inference phase named beside it — so
+   the specification does not read as describing behaviour the implementation has. §11's own open
+   item is untouched (#12) and now has a requirement to point at.
+
+**★ THE OPENING BLOCK'S OWN AUTHORED JUDGMENT HAD ALREADY NAMED THIS ACT, WHICH IS WHY IT IS
+EVIDENCE AND NOT A PREFERENCE.** That judgment records the section as mixed and states the remedy in
+terms — *"the remedy is at the DOCUMENT (move the stance into §2, which owns the constraints it
+states), not at the delegation"*. **The re-home performed is that remedy, verbatim.**
+
+**Both former homes and both former verbatims are preserved whole in the entries' provenance
+(#12)**, and both former texts are left standing in the document. **What the new text deliberately
+does not carry** is recorded per entry: the gap-analysis finding identifiers, which are provenance;
+and the confidence CLASS NAME, whose home is the confidence contract — §2 states what the number
+means and what it may not do, and the class name stays where it is defined (#6).
+
+**★ ONE AUTHORED INPUT WAS RETIRED IN A SHAPE THIS PROJECT HAD NOT NEEDED BEFORE, AND IT IS REPORTED
+RATHER THAN DONE SILENTLY.** The classifier STOPPED with *"authored section-kind judgment(s) that
+decide no entry"* — both re-homed entries were the ONLY entry in their former sections, so the
+opening block's judgment and §11's now decide nothing. The tool offers *remove them or say why they
+are kept*, and it reads no "kept" field, so keeping them with a reason needs somewhere inert to put
+them. **They are moved WHOLE into a sibling block the classifier does not read** — the same shape
+the register data already uses for whole documents and the delegation bar uses for FORM judgments
+(#12, **D-648**) — with the reason, and with a STOP stated in the other direction: **if either
+section ever holds an entry again its judgment is RE-READ rather than restored, because a reading
+made of a section as it stood is not evidence about a section that has since changed.** **This is
+authored-input maintenance, not a mechanism change:** the classifier's code is untouched and it
+reads `section_kind` exactly as before. Deleting the opening block's judgment would have destroyed
+the evidence quoted two paragraphs up.
+
+**Four section-kind heading lines were re-aimed** by this task's own insertions, each followed by
+its own recorded heading TEXT rather than by an assumed uniform shift — the same
+authored-input maintenance, and the reason the tool checks the text as well as the line.
+
+**★ WHERE TASK 2 STOPS, AND THE ORDERING JUDGMENT IS STATED BECAUSE IT IS ONE.** The remaining
+population is the findings-not-rules item's other eleven entries, item 3's single entry, and item
+5's single one — a large per-entry pass, each member needing its own record read and its owning
+specification determined. **Task 4 — Ruling 16's sibling sweep and the knowledge arc's ONE licensed
+`src/` touch — has now been carried unstarted through FOUR consecutive batches, each time because a
+large per-entry pass consumed the capacity first.** That is the exact pattern the seventh
+continuation named and corrected by an explicit ordering judgment, and it is corrected the same way
+here: **Task 2 stops at a clean entry boundary and the batch moves on.** A per-entry pass has no
+silent-cap hazard — each homed entry is complete in itself — which is what makes stopping here safe
+and what the dispatch's own accepted-outcomes clause says.
+
+**Holds:** the remaining homing population, untouched and to be derived fresh; and the four census
+entries of Task 1. **Surfacings:** none bearing on the analysis.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

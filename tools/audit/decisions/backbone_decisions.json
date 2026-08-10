@@ -917,13 +917,24 @@
       "cowork_phrase_boundary_design.md": {
         "delegation_scope": "document",
         "why_this_scope": "ARCHITECTURE.md:1244, the delegation the user wrote 2026-08-04 (READ WAVE 5, ruling R4), names the DOCUMENT by filename and no section.",
+        "section_kind_retired_when_their_last_entry_was_re_homed": {
+          "retired_2026_08_09_the_eighth_return_continuation": "CC, dispatch `cc_instruction_return_continuation_8.md` Task 2, under the user's Ruling 38 — the finish-line item for entries the delegation REACHES in a section that RECORDS FINDINGS. Two authored kind judgments below decided exactly one entry each, and both entries were re-homed by that act: the OPENING BLOCK's decided D-484, now in §2; §11's decided D-485, now in §4.4. The classifier then STOPPED on both as 'authored section-kind judgment(s) that decide no entry', which is that guard working. ★ THEY ARE MOVED WHOLE RATHER THAN DELETED (#12, D-648), for the reason the opening block's own judgment makes plain: it records a READING of a mixed section and it NAMED THE REMEDY THIS ACT PERFORMED — 'move the stance into §2, which owns the constraints it states' — so deleting it would destroy the evidence that the re-home followed the record rather than a session's preference. The classifier reads `section_kind` and nothing else, so a judgment parked here is inert: nothing counts it and no verdict reads it. ★ IF EITHER SECTION EVER HOLDS AN ENTRY AGAIN, its judgment must be RE-READ into `section_kind` rather than restored from here — a reading made of a section as it stood is not evidence about a section that has since changed.",
+          "judgments": [
+            {
+              "heading_line": 1,
+              "heading_text": "Phrase-boundary primitive (Architectural Layer 1.5) — Architecture & Design",
+              "states_rules": false,
+              "why": "RECORDS FINDINGS - the opening block, on the same reading as `cowork_layer3_keymode_design.md`'s and `cowork_layer6_grouping_design.md`'s. Its first blockquote is the STATUS BANNER (SIGNED, the revision history, which audits ran and how many fixes were applied). ★ THIS IS THE ONE MIXED SECTION IN THIS PASS AND THE TENSION IS RECORDED RATHER THAN HIDDEN: the block's SECOND blockquote (:23-31) is a dated stance \"ruled by Cowork\" that does state rules - the primitive is a derived view, it requests no extension of its own, and its published strength is a Class-M boundary confidence. It is graded with the opening block it sits in, on the record's own precedent that a rule stated in a document's opening block is a rule recorded in a banner: the remedy is at the DOCUMENT (move the stance into §2, which owns the constraints it states), not at the delegation. Read :1-32."
+            },
+            {
+              "heading_line": 370,
+              "heading_text": "11. Open items",
+              "states_rules": false,
+              "why": "RECORDS FINDINGS. \"11. Open items\" is a tracking list inside the document: precision-phase constants left at defaults, a confirmation marked DONE, deferred cues, deferred refinements, and a recorded scope question. Its items say what is OWED (\"should carry\", \"Recorded as a proper-layer refinement; per the standing rule, not built until the inference phase opens\"), which is the tracking-surface shape OI-240 ruled is not a home. Read :343-386."
+            }
+          ]
+        },
         "section_kind": [
-          {
-            "heading_line": 1,
-            "heading_text": "Phrase-boundary primitive (Architectural Layer 1.5) — Architecture & Design",
-            "states_rules": false,
-            "why": "RECORDS FINDINGS - the opening block, on the same reading as `cowork_layer3_keymode_design.md`'s and `cowork_layer6_grouping_design.md`'s. Its first blockquote is the STATUS BANNER (SIGNED, the revision history, which audits ran and how many fixes were applied). ★ THIS IS THE ONE MIXED SECTION IN THIS PASS AND THE TENSION IS RECORDED RATHER THAN HIDDEN: the block's SECOND blockquote (:23-31) is a dated stance \"ruled by Cowork\" that does state rules - the primitive is a derived view, it requests no extension of its own, and its published strength is a Class-M boundary confidence. It is graded with the opening block it sits in, on the record's own precedent that a rule stated in a document's opening block is a rule recorded in a banner: the remedy is at the DOCUMENT (move the stance into §2, which owns the constraints it states), not at the delegation. Read :1-32."
-          },
           {
             "heading_line": 63,
             "heading_text": "2. Constraints",
@@ -931,34 +942,28 @@
             "why": "STATES RULES. \"2. Constraints\" - notation-only and key/chord/function-agnostic, general rather than chorale-specific, the firewall between mechanism and constants (\"This document fixes the mechanism ...; the constants are tuned later. No key/chord/function ever enters\"), one owner and no duplication, and what must be measured before the graded model lands. Read :63-83."
           },
           {
-            "heading_line": 175,
+            "heading_line": 187,
             "heading_text": "4.4 Peak-picking",
             "states_rules": true,
-            "why": "STATES RULES. \"4.4 Peak-picking\" states the picked set exactly (surface-cue peaks UNION every notated marker), why the markers are emitted unconditionally, the two conditions a surface tick must meet, and which tick a picked peak's boundary is. Read :175-192."
+            "why": "STATES RULES. \"4.4 Peak-picking\" states the picked set exactly (surface-cue peaks UNION every notated marker), why the markers are emitted unconditionally, the two conditions a surface tick must meet, and which tick a picked peak's boundary is; since the 2026-08-09 re-home of D-485 it also states a REQUIREMENT ON ITS OWN OUTPUT, marked owed and explicitly not built. (Heading line re-aimed 2026-08-09 from 175, following its own heading text after the §2 and §4.4 writes of `cc_instruction_return_continuation_8.md` Task 2 — authored-input maintenance, D-648, never a re-decision.)"
           },
           {
-            "heading_line": 222,
+            "heading_line": 249,
             "heading_text": "6. Architecture decisions (with the alternatives weighed)",
             "states_rules": true,
             "why": "STATES RULES. \"Architecture decisions (with the alternatives weighed)\" - D1-D6, each with what was rejected and why. Read :222-249."
           },
           {
-            "heading_line": 250,
+            "heading_line": 277,
             "heading_text": "7. Quality & testing",
             "states_rules": true,
             "why": "STATES RULES. \"7. Quality & testing\" states the oracle tests, that the validation ground truth must be the analyst-annotated markers and why a fermata-derived list would be inadmissible, that the de-duplication step is gated byte-identical, and that the build enumerates the live consumers before treating the change as output-moving. Obligations on the build, not a report of results. Read :250-265."
           },
           {
-            "heading_line": 266,
+            "heading_line": 293,
             "heading_text": "8. Risks & technical debt",
             "states_rules": true,
             "why": "STATES RULES. \"8. Risks & technical debt\" states the accepted design limits as binding expectations (\"this primitive should not be expected to reach the accuracy of systems that exploit tonal structure\"), what the document fixes versus what is tuned later, and the user-ratified proportionality discipline - \"Build the graded model right, but keep it proportionate - do not let it balloon.\" Read :266-283."
-          },
-          {
-            "heading_line": 343,
-            "heading_text": "11. Open items",
-            "states_rules": false,
-            "why": "RECORDS FINDINGS. \"11. Open items\" is a tracking list inside the document: precision-phase constants left at defaults, a confirmation marked DONE, deferred cues, deferred refinements, and a recorded scope question. Its items say what is OWED (\"should carry\", \"Recorded as a proper-layer refinement; per the standing rule, not built until the inference phase opens\"), which is the tracking-surface shape OI-240 ruled is not a home. Read :343-386."
           }
         ]
       },
@@ -14526,7 +14531,7 @@
       "title": "The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it",
       "verbatim": "- **D1 — Owner: Architectural Layer 1.5 (the notation-derived views).** The primitive is a notation-derived view, the same\n  kind as the bass, top-voice, and spelling views, reading the same notated surface. *Rejected:* the Layer-1 note model\n  (deliberately narrow — it records notes, it does not derive phrase structure) and the function layer (it consumes phrase\n  boundaries; it cannot own them).",
       "plain": "Working out where a musical phrase ends is done by the same kind of component that reads the bass line or the written spelling off the page. It is not part of the plain record of the notes, and it is not part of the stage that detects cadences — because that stage uses phrase ends as input and cannot also produce them.",
-      "home": "cowork_phrase_boundary_design.md:223-226",
+      "home": "cowork_phrase_boundary_design.md:250-253",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-06-26",
@@ -14544,7 +14549,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 222,
+        "heading_line": 249,
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
@@ -14602,7 +14607,7 @@
       "title": "A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals",
       "verbatim": "- **D4 — A graded boundary-strength model, not a binary union (user-ratified 2026-06-26).** The boundary is a peak in a\n  continuous strength profile, not the OR of a few binary signals. *Rejected:* the binary union — a degenerate special\n  case that cannot express \"a gap larger than its neighbours,\" inflates recall, and wrecks precision (per the research: a\n  weighted combination measurably beats any single cue and beats a naive union; the leading harmony-free models all\n  compute graded strength + peaks). The cost — per-cue normalisation, the weight vector, the peak threshold — is modest\n  and the constants are precision-phase.",
       "plain": "Rather than declaring a phrase end wherever any one signal fires, the program computes how strongly each moment is marked as an ending and then picks the peaks. The all-or-nothing version is the special case that cannot express 'a bigger gap than its neighbours', and it finds too many endings.",
-      "home": "cowork_phrase_boundary_design.md:233-238",
+      "home": "cowork_phrase_boundary_design.md:260-265",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-06-26",
@@ -14620,7 +14625,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 222,
+        "heading_line": 249,
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
@@ -14640,7 +14645,7 @@
       "title": "The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published",
       "verbatim": "- **D5 — Per-voice cues aggregated to the texture (both per-voice and polyphonic), not a top-voice/whole-texture\n  reduction.** The cues run **per eligible voice** and aggregate by **voice-coincidence** into the texture strength,\n  exposing **both** the per-voice boundaries and the texture boundaries (§4.3). *Rejected:* (a) a whole-texture reduction\n  with **top-voice-only pitch** — it discards every inner voice's pitch cue and yields no per-voice phrasing; (b) running\n  the cues on one arbitrary voice — ill-defined in polyphony. Per-voice-then-aggregate is the principled form (the\n  local-change cues are defined per line) and produces both outputs. Since the literature's cues are validated only\n  monophonically, the aggregation is validated on our own corpus (§7).",
       "plain": "The signals that mark a phrase end are properties of a single melodic line, so they are computed for every voice separately and then added up across the voices. Where many voices phrase together the total is high; where one inner voice alone pauses it is low. Both answers are published: each voice's own phrasing and the whole texture's.",
-      "home": "cowork_phrase_boundary_design.md:239-245",
+      "home": "cowork_phrase_boundary_design.md:266-272",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-06-26",
@@ -14658,7 +14663,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 222,
+        "heading_line": 249,
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
@@ -14678,7 +14683,7 @@
       "title": "The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate",
       "verbatim": "- **★ Proportionality (scope discipline, user-ratified 2026-06-26).** The state-of-the-art-competitive reference\n  engine (Contrapunctus) does **no** explicit phrase segmentation or cadence detection and is still competitive at Roman-numeral\n  analysis (it captures phrase structure implicitly via stable key runs). So this primitive is **not** an accuracy\n  requirement — it is load-bearing for *our* cadence mechanism (a means to key/function), a deliberate bet for an\n  explainable, decomposed pipeline. **Build the graded model right, but keep it proportionate — do not let it balloon.**\n  If the explicit phrase/cadence path proves hard, there is a proven implicit fallback (phrase-alignment via stable key\n  runs). See `contrapunctus_findings.md` addendum and `cowork_phrase_boundary_methods.md`.",
       "plain": "A comparable system that performs as well as ours at Roman-numeral analysis has no phrase detection whatsoever; it picks up phrase structure indirectly. So this component is not what accuracy depends on. It is a deliberate bet on an explainable, decomposed design — worth building properly, not worth letting grow without limit, and there is a proven fallback if the explicit route proves hard.",
-      "home": "cowork_phrase_boundary_design.md:276-282",
+      "home": "cowork_phrase_boundary_design.md:303-309",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-06-26",
@@ -14696,7 +14701,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 266,
+        "heading_line": 293,
         "section": "## 8. Risks & technical debt",
         "label": "§8",
         "delegated": true,
@@ -14716,7 +14721,7 @@
       "title": "The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked",
       "verbatim": "The picked-boundary set is **the surface-cue peaks UNION every notated marker** — because the §4.2 markers are\n**deterministic facts** (a fermata/barline/etc. *is* a phrase boundary), they are emitted **unconditionally**, not\nsubjected to the threshold; only the **surface-cue** strength is peak-picked. *(As-built realisation, ratified 2026-06-26:\nthe earlier wording \"peak-pick the combined profile\" put the markers through the local-maximum test, which a strict\ngreater-than rule drops for two **adjacent equal-height markers** — e.g. a final fermata abutting the closing barline.\nEmitting markers directly is the faithful reading of their \"deterministic / dominate wherever they occur\" status.)*",
       "plain": "A fermata, a breath mark, a structural barline and the other written signs are facts, not evidence to be weighed — so each one is reported as a phrase end directly. Only the computed strength has to clear a local-maximum test and a threshold.",
-      "home": "cowork_phrase_boundary_design.md:176-181",
+      "home": "cowork_phrase_boundary_design.md:188-193",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-06-26",
@@ -14734,7 +14739,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 175,
+        "heading_line": 187,
         "section": "### 4.4 Peak-picking",
         "label": "§4.4",
         "delegated": true,
@@ -14754,7 +14759,7 @@
       "title": "The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output",
       "verbatim": "- **D2 — One unified primitive replaces the two duplicated fermata scans.** The fermata logic exists today in two\n  hand-synchronised copies; they are retired into the single owned primitive and every consumer re-points at it. The\n  retirement is byte-identical.",
       "plain": "The same fermata-finding code existed twice, kept in step by hand. Both copies are replaced by the single owned component and every consumer re-pointed at it. Because the marker-only behaviour is unchanged, the swap produces identical results — the new behaviour is a separate, measured step.",
-      "home": "cowork_phrase_boundary_design.md:227-229",
+      "home": "cowork_phrase_boundary_design.md:254-256",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-06-26",
@@ -14772,7 +14777,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 222,
+        "heading_line": 249,
         "section": "## 6. Architecture decisions (with the alternatives weighed)",
         "label": "§6",
         "delegated": true,
@@ -14792,7 +14797,7 @@
       "title": "The picked boundaries are validated against the analysts' own phrase marks; a fermata-derived phrase list is inadmissible as ground truth because the primitive reads fermatas",
       "verbatim": "- **Validation on the chorale corpus** (the per-voice aggregation, D5) — the picked texture boundaries are checked\n  against the corpus's **analyst-annotated phrase markers** (the DCML corpora's `{}` / `phraseend` annotations, parsed\n  corpus-wide since the TSV-oracle infrastructure landed) — an **independent** ground truth: the markers are supplied\n  by the human analyst, not derived from fermatas, so validating the fermata marker against them is not circular. A\n  fermata-derived phrase list would be inadmissible as ground truth here, for exactly that circularity. A per-voice",
       "plain": "To check whether the phrase ends are right, they are compared with the phrase marks the human analysts wrote in the annotated corpora. A list of phrases derived from fermatas could not be used, because the program reads fermatas itself — it would be marking its own homework.",
-      "home": "cowork_phrase_boundary_design.md:254-258",
+      "home": "cowork_phrase_boundary_design.md:281-285",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-06-26",
@@ -14810,7 +14815,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 250,
+        "heading_line": 277,
         "section": "## 7. Quality & testing",
         "label": "§7",
         "delegated": true,
@@ -14828,19 +14833,19 @@
       "id": "D-484",
       "group": "H",
       "title": "The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence",
-      "verbatim": "> **Bounded-context stance (added 2026-07-02, closing gap-analysis v2 finding A-2, `cc_gap_analysis_v2_report.md` —\n> ruled by Cowork):** this primitive is a\n> **derived view** over the Layer-1/Layer-2 outputs: it **inherits the loaded span and requests no extension of its\n> own** (its profile simply ends where the loaded span ends; a consumer wanting boundary evidence beyond the loaded\n> span extends via ITS own bounded-context obligation, and this primitive recomputes over the enlarged span — the\n> standard re-run, per `cowork_bounded_context_design.md` §4). Its published boundary strength is a **Class-M\n> boundary confidence** under the cross-layer confidence contract (`cowork_confidence_contract.md`: [0,1] per-profile\n> max-normalised salience, comparable within one score's profile only; it participates in no override frame) —\n> closing gap A-3 of the same v2 report for this spec.",
+      "verbatim": "- **A DERIVED VIEW: it inherits the loaded span and requests no extension of its own.** Where only a stretch of the\n  score is loaded, this primitive does **not** ask for more music. Its profile simply **ends where the loaded span\n  ends**. A consumer that wants boundary evidence beyond that stretch extends the span through **its own**\n  bounded-context obligation, and this primitive then **recomputes over the enlarged span** — the standard re-run.\n  *Why:* a derived view that reached for its own context would hold a second, independent extension policy beside its\n  consumers' (#6), and its answer would then depend on which consumer asked.\n- **Its published boundary strength is a per-profile MAX-NORMALISED confidence, comparable within ONE score's profile\n  only, and it participates in NO override frame.** The number on the wire is a boundary confidence in the cross-layer\n  contract's Class-M sense: it ranks ticks inside one score's own profile and says nothing across scores, and it never\n  overrides another layer's answer. *Why:* the strength is a max-normalised salience rather than a probability, so two\n  scores' values are not on one scale, and a quantity that cannot be compared across scores must not be given the\n  authority to overrule one that can.",
       "plain": "When only part of a score is loaded, this component does not ask for more music. Its profile simply ends where the loaded stretch ends; a consumer that wants boundary evidence further out asks for the extension itself and this component recomputes. Its published strength is comparable only within one score's own profile — it never overrides another layer's answer.",
-      "home": "cowork_phrase_boundary_design.md:23-31",
+      "home": "cowork_phrase_boundary_design.md:83-94",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-02",
       "ratified_by": [
         "Cowork"
       ],
-      "status_source": "A stance added to the design document on 2026-07-02, closing two findings of the gap-analysis v2 report; the document records it as ruled by Cowork, not by the user. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)",
+      "status_source": "★ RE-HOMED 2026-08-09 into `cowork_phrase_boundary_design.md` §2 (Constraints) by `cc_instruction_return_continuation_8.md` Task 2, under the user's Ruling 38 — the finish-line item for entries the delegation REACHES in a section that RECORDS FINDINGS, whose closing act is rule (e)'s preferred route: write the rule into a section that STATES it, in the specification that owns the concern. The concern is owned by this same specification, so the move is within the document. THE KIND HALF WAS CHECKED BEFORE THE WRITE: §2 is a list of binding constraints on the primitive, which is what a rule-stating section is; the former home was the document's OPENING BLOCK, which the classification records as recording findings. FORMER HOME, PRESERVED (#12): `cowork_phrase_boundary_design.md:23-31`. FORMER VERBATIM, PRESERVED (#12): '> **Bounded-context stance (added 2026-07-02, closing gap-analysis v2 finding A-2, `cc_gap_analysis_v2_report.md` — ruled by Cowork):** this primitive is a **derived view** over the Layer-1/Layer-2 outputs: it **inherits the loaded span and requests no extension of its own** (its profile simply ends where the loaded span ends; a consumer wanting boundary evidence beyond the loaded span extends via ITS own bounded-context obligation, and this primitive recomputes over the enlarged span — the standard re-run, per `cowork_bounded_context_design.md` §4). Its published boundary strength is a **Class-M boundary confidence** under the cross-layer confidence contract (`cowork_confidence_contract.md`: [0,1] per-profile max-normalised salience, comparable within one score's profile only; it participates in no override frame) — closing gap A-3 of the same v2 report for this spec.' ★ WHAT THE CONSTRAINT TEXT DELIBERATELY DOES NOT CARRY: the two gap-analysis finding identifiers and the report that raised them, which are provenance and stay in the entry's own fields; and the Class-M label itself, whose home is the confidence contract — §2 states what the number MEANS and what it may not do, and the class name stays where it is defined (#6). The opening block's stance text is untouched (#12). The original entry: a stance added to the design document on 2026-07-02, closing two findings of the gap-analysis v2 report; the document records it as ruled by Cowork, not by the user. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)",
       "patterns": [],
       "rationale": "Stated with the stance and derived from the two contracts it cites: the bounded-context design's standard re-run rule for derived views, and the cross-layer confidence contract's Class-M boundary confidence, which fixes the range, the comparability and the fact that it participates in no override frame.",
-      "nonspec_kind": "gap",
+      "nonspec_kind": "contract-home",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -14848,14 +14853,14 @@
         ]
       },
       "home_section": {
-        "heading_line": 1,
-        "section": "# Phrase-boundary primitive (Architectural Layer 1.5) — Architecture & Design",
-        "label": "the opening block (above the first section heading)",
+        "heading_line": 63,
+        "section": "## 2. Constraints",
+        "label": "§2",
         "delegated": true,
         "delegation": "ARCHITECTURE.md:1519",
-        "states_rules": false,
-        "verdict": "EXCLUDE",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
         "class_before_phase1r": "gap",
@@ -14866,19 +14871,19 @@
       "id": "D-485",
       "group": "H",
       "title": "Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase",
-      "verbatim": "   - **Provenance (the information-loss fix).** Each picked boundary — texture *and* per-voice — should carry **which\n     cue/marker fired and at what scope** (global, or per-voice with which / how-many voices coincided), so a downstream\n     consumer (Layer 6's punctuation-span annotation) does not lose that a boundary was a *local breath* versus a *global\n     barline*. The picked set is scope-blind today. Recorded as a proper-layer refinement; per the standing rule, not\n     built until the inference phase opens; validate on a non-chorale corpus (§8).",
+      "verbatim": "**★ EVERY PICKED BOUNDARY CARRIES WHICH CUE OR MARKER FIRED, AND AT WHAT SCOPE — A REQUIREMENT ON THIS SECTION'S OUTPUT,\nSTATED AS OWED AND EXPLICITLY NOT BUILT.** A picked boundary — texture **and** per-voice — carries its **provenance**:\nwhich cue or marker produced it, and whether it fired **globally** or **per voice** (and if per voice, which voices, and\nhow many coincided). **The picked set is SCOPE-BLIND today**, which is the defect this requirement names: a marker\nwritten on one voice — a breath mark — is spiked onto the texture profile and thereafter reads exactly like a marker\nthat applies to the whole ensemble, so a downstream consumer (the punctuation-span annotation) cannot tell a **local\nbreath** from a **global barline**.",
       "plain": "The markers that produce a phrase end are of two kinds: some apply to the whole ensemble by notation (a structural barline), and some are written on one instrument (a breath mark). Today both are treated as whole-texture endings, so a local breath is promoted to a global boundary and the fact that it was local is lost. A boundary should record which signal produced it and at what scope — recorded as owed, and deliberately not built yet.",
-      "home": "cowork_phrase_boundary_design.md:382-386",
+      "home": "cowork_phrase_boundary_design.md:205-218",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-01",
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "Open item 5 of the design document, recorded 2026-07-01 and attributed there to the user raising it. The document records the whole item as a proper-layer refinement not built until the inference phase opens; the register carries it because a recorded refinement with a stated shape binds what a future build may do. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)",
+      "status_source": "★ RE-HOMED 2026-08-09 into `cowork_phrase_boundary_design.md` §4.4 (Peak-picking) — the section whose OUTPUT the requirement is about — by `cc_instruction_return_continuation_8.md` Task 2, under the user's Ruling 38, by the same finish-line item and the same rule (e) route as D-484. THE KIND HALF WAS CHECKED BEFORE THE WRITE: §4 is headed 'The model (the rules)' and §4.4 states the picking mechanism, so it states rules; the former home was §11 'Open items', which records what is owed. **THE FORM IS THE D-472 PATTERN**: the requirement is written in AS a requirement, marked OWED and EXPLICITLY NOT BUILT, with the standing rule that a proper-layer refinement waits for the inference phase named beside it — so the specification does not read as describing behaviour the implementation has. §11's own open item is untouched (#12) and now has a requirement to point at. FORMER HOME, PRESERVED (#12): `cowork_phrase_boundary_design.md:382-386`. FORMER VERBATIM, PRESERVED (#12): '   - **Provenance (the information-loss fix).** Each picked boundary — texture *and* per-voice — should carry **which cue/marker fired and at what scope** (global, or per-voice with which / how-many voices coincided), so a downstream consumer (Layer 6's punctuation-span annotation) does not lose that a boundary was a *local breath* versus a *global barline*. The picked set is scope-blind today. Recorded as a proper-layer refinement; per the standing rule, not built until the inference phase opens; validate on a non-chorale corpus (§8).' The original entry: open item 5 of the design document, recorded 2026-07-01 and attributed there to the user raising it. The document records the whole item as a proper-layer refinement not built until the inference phase opens; the register carries it because a recorded refinement with a stated shape binds what a future build may do. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)",
       "patterns": [],
       "rationale": "Stated with the item and grounded in #12 (no information loss): spiking a per-part marker onto the texture profile discards the locality, and the principled form is for it to reach a texture boundary only through the same voice-coincidence aggregation as the graded cues. The refinement is chorale-inert by construction — in the chorale convention all voices hold together — so it changes nothing on the gate repertoire and matters only for orchestral and contrapuntal textures.",
-      "nonspec_kind": "gap",
+      "nonspec_kind": "contract-home",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -14886,14 +14891,14 @@
         ]
       },
       "home_section": {
-        "heading_line": 343,
-        "section": "## 11. Open items",
-        "label": "§11",
+        "heading_line": 187,
+        "section": "### 4.4 Peak-picking",
+        "label": "§4.4",
         "delegated": true,
         "delegation": "ARCHITECTURE.md:1519",
-        "states_rules": false,
-        "verdict": "EXCLUDE",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
         "class_before_phase1r": "gap",

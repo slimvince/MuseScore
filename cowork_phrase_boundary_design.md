@@ -80,6 +80,18 @@ voice-leading-axis object this primitive does not model. Stated here at the defi
 - **The marker-only path is byte-identical; the graded model is gated.** Retiring the duplicated fermata scans into one
   primitive changes no output. Adding the surface-cue strength and the new notated markers *may* change which ticks are
   boundaries; that change is measured against the corpus two-tier BIR gate on both presets (§0) before it lands (§7).
+- **A DERIVED VIEW: it inherits the loaded span and requests no extension of its own.** Where only a stretch of the
+  score is loaded, this primitive does **not** ask for more music. Its profile simply **ends where the loaded span
+  ends**. A consumer that wants boundary evidence beyond that stretch extends the span through **its own**
+  bounded-context obligation, and this primitive then **recomputes over the enlarged span** — the standard re-run.
+  *Why:* a derived view that reached for its own context would hold a second, independent extension policy beside its
+  consumers' (#6), and its answer would then depend on which consumer asked.
+- **Its published boundary strength is a per-profile MAX-NORMALISED confidence, comparable within ONE score's profile
+  only, and it participates in NO override frame.** The number on the wire is a boundary confidence in the cross-layer
+  contract's Class-M sense: it ranks ticks inside one score's own profile and says nothing across scores, and it never
+  overrides another layer's answer. *Why:* the strength is a max-normalised salience rather than a probability, so two
+  scores' values are not on one scale, and a quantity that cannot be compared across scores must not be given the
+  authority to overrule one that can.
 
 ## 3. Context & scope (external view)
 **Consumes** (all notation, defined in earlier layers): from Layer 1, the note model — each note's **voice, pitch, onset,
@@ -189,6 +201,21 @@ last-sounding note's tick, the structural-barline tick, or the onset of the all-
 phrase** when a picked boundary tick falls within its half-open tick span. (Because the final tick of the score carries an end-of-piece
 boundary — the score's last barline — the last region ends a phrase automatically; no separate last-region rule is
 needed.)
+
+**★ EVERY PICKED BOUNDARY CARRIES WHICH CUE OR MARKER FIRED, AND AT WHAT SCOPE — A REQUIREMENT ON THIS SECTION'S OUTPUT,
+STATED AS OWED AND EXPLICITLY NOT BUILT.** A picked boundary — texture **and** per-voice — carries its **provenance**:
+which cue or marker produced it, and whether it fired **globally** or **per voice** (and if per voice, which voices, and
+how many coincided). **The picked set is SCOPE-BLIND today**, which is the defect this requirement names: a marker
+written on one voice — a breath mark — is spiked onto the texture profile and thereafter reads exactly like a marker
+that applies to the whole ensemble, so a downstream consumer (the punctuation-span annotation) cannot tell a **local
+breath** from a **global barline**. *Why it is a requirement rather than a preference:* dropping the scope is
+information loss (#12), and the principled form is already in this section — a per-voice marker should reach the texture
+profile through the **same voice-coincidence aggregation** the graded cues use (§4.3), not by being spiked onto it.
+*What is deliberately NOT claimed:* that this changes anything on the gate repertoire. It is **chorale-inert by
+construction** — in the chorale convention every voice holds together, so global and per-voice coincide — and it matters
+for orchestral and contrapuntal textures, where it is to be validated (§8). **It is NOT BUILT**, by the standing rule
+that a proper-layer refinement waits for the inference phase to open; §11 carries it as an open item and this is the
+requirement that item binds a future build to.
 
 ### 4.5 Explicitly excluded
 **Not** a boundary signal here: **cadential closure** (a dominant-to-tonic arrival), harmonic-rhythm change, and any
