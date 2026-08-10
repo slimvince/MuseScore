@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "fadbb6e2dfb0fba71d44d990a0245c42fa7d6ccdf6432e61efcc803f180eb79e",
+    "sha256": "7ed6f468cabd2276140aa91693c464df127a5ad4228f9009a2a2b64029681723",
     "decision_count": 664
    }
   },
-  "head_commit": "983301708ca004f8e3fa7ad878cf9a6dfa801b7d",
+  "head_commit": "894ae36d18bc9e4a5d1fc7d8d8fdb1e482eaad96",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -151,8 +151,8 @@
    "unresolved": 2644
   },
   "unresolved_partition_by_surface": {
-   "cowork_* design documents": 802,
-   "docs/ design documents": 389,
+   "cowork_* design documents": 801,
+   "docs/ design documents": 390,
    "cc_* session reports": 316,
    "tools/ script comments": 295,
    "cc_instruction_* dispatches": 288,
@@ -63769,9 +63769,11 @@
   {
    "cluster_id": "DC-03033",
    "size": 1,
-   "disposition": "unresolved",
-   "rule": "BR-8",
-   "decisions": [],
+   "disposition": "no-spec-home",
+   "rule": "BR-4",
+   "decisions": [
+    "D-614"
+   ],
    "categories": [
     "cowork_docs"
    ],
@@ -81732,11 +81734,9 @@
   {
    "cluster_id": "DC-03914",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-422"
-   ],
+   "disposition": "unresolved",
+   "rule": "BR-8",
+   "decisions": [],
    "categories": [
     "docs"
    ],
@@ -185855,8 +185855,7 @@
     "D-097",
     "D-119",
     "D-183",
-    "D-292",
-    "D-422"
+    "D-292"
    ],
    "categories": [
     "cc_reports"

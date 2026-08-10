@@ -69,12 +69,31 @@ phrase / none); **(b) machine-readable score alignment** (symbolic score + annot
 audio-aligned sets are research-tier at best); **(c) format** (parseable today vs converter needed); **(d) license
 class** (PD/CC0/CC-BY committable; NC/unclear → hash-pin-only, the established mechanism); **(e) decision tier** (§5).
 
+**★ AND A REGISTRY `content` SUMMARY IS ENUMERATION PROVENANCE, NOT EVIDENCE THAT A LAYER IS PRESENT.** Field (a)
+records what a source is *said* to carry, and that is a fact about where the source came from. **Whether a given
+annotation layer is actually in it is a MEASUREMENT, made per slice at the files** — never inferred from the summary
+line that admitted the source. *Why:* two of this census's own claims were falsified by measurement in the same week,
+both by exactly that mistake — a supposed pair of overlapping annotation sets that turn out not to co-occur at all,
+and a textbook corpus that holds scores and no analyses at the pinned commit. Both were taken from a `content` field
+and treated as stronger than it was. It is #19 applied to corpus bookkeeping: **a layer is trusted after being
+positively established, never because a summary mentions it.**
+
 ## 4. Overlap hazard (the accounting rule)
 
 The containers re-encode the same works (WiR↔DCML↔ChoCo; KernScores↔craigsapp↔music21↔MuseData; GigaMIDI absorbs
 Lakh/MetaMIDI). **Dedupe by work, not by container** — the registry keys on (composer, work, movement), and a work
 entering the gate corpus from one container is excluded as GT from every other (the M3 contamination lesson,
 generalized).
+
+**★ AND THE SAME RULE READ FORWARD IN TIME, FOR MATERIAL THAT ARRIVES AFTER THE GATE CORPUS ALREADY EXISTS: A NEWLY
+ACQUIRED ANNOTATION SET WHOSE WORKS OVERLAP THE REGRESSION CORPUS IS RECORD-ONLY.** It is cloned, pinned and
+enumerated like any other acquisition, and over the overlapping works it may **not** be wired to the analysis,
+**not** be compared against the gate corpus, and **not** be bulk-diffed with it. **Any use of it over those works is
+a USER RULING**, taken deliberately; a session does not take it. Whatever portion of such a set covers OTHER
+repertoire is outside the gate and is unaffected. *Why:* it is the dedupe rule above with time added — a work that is
+IN the regression corpus cannot also be a free-standing check ON it, because the two uses are not independent, which
+is the contamination lesson this section already generalizes. The recorded instance that produced the rule is a
+chorale annotation set whose Bach half re-encodes the gate repertoire while its remaining half does not.
 
 ## 5. Decision tiers (proposed; user disposes)
 
@@ -89,6 +108,24 @@ generalized).
   scale; the Tristan Prelude specifically via `wagner_overtures` (presence to confirm at clone time).
 - **Tier X (recorded, not pursued):** performance-MIDI aggregates, image-only, audio-aligned-only sets — listed in
   the appendices with reasons, so they are never "re-discovered".
+
+**★ THE SCOPE THE TIERS ABOVE IMPLEMENT IS ITSELF A USER RATIFICATION, AND IT IS STATED HERE RATHER THAN LEFT TO BE
+INFERRED FROM THE LISTS.** At the 2026-07-02 architecture review the user ratified **CORPUS EXPANSION**: gate-grade
+**jazz** ground truth, **chromatic material of the Wagner class**, and, in general, **more non-Bach, non-Baroque
+annotated music**. That is what Tier G and Tier J are for. *Why:* the review's own findings F-7 and F-8 — calibration
+and validation are Baroque- and Bach-heavy, with no gate-grade ground truth for the jazz preset or for the
+non-classical idioms, and a chromatic stress corpus is named there as the measurement bed for the capability
+amendments. **The entry rule above is NOT weakened by it, and the two are read together:** material arriving under
+this ratification widens what the analysis is MEASURED against, it enters at research tier, and promotion of any of
+it into a gate is the separate, deliberate re-baseline event that rule already describes.
+
+**★ AND TIER J GATES A FIT — stated here because that is what the tier is FOR: THE JAZZ FIT IS DEFERRED TO THE
+JAZZ-GROUND-TRUTH CONVERSION, and only the classical common-practice idiom is fitted now.** Until this path yields
+converted, score-aligned jazz ground truth, a fit of the jazz idiom has nothing to be evaluated against. *Why:* jazz
+accuracy is not measurable on the corpora held at all — the held jazz material is melody-and-chord-symbol
+transcription, with the bass and the piano voicings absent — so fitting the jazz idiom against it would be fitting
+without evaluation, which #20 forbids. The idiom that IS fitted now is the one the held annotated music covers, which
+is what the two non-jazz presets deliver.
 
 ## 6. Implementation (CC riders — not this doc's work)
 
@@ -251,6 +288,17 @@ the Stage-5 fitter's design doc must **declare its data pool explicitly, per lic
   own harder version of this caveat (no commercially usable label source exists at all).
 - Ride: the constraint enters `docs/implementation_roadmap.md`'s Stage-5 block at the next CC docs commit,
   and the fitter design doc restates it in its §2/§6 (data declaration) — not optional.
+
+**★ AND THE DIFFICULTY-GRADE CASE IS A DIFFERENT PROHIBITION FROM THE FOUR BULLETS ABOVE, STATED APART SO IT IS NOT
+READ AS THE SAME ONE.** Those restrict the pool a **shipped FITTED VALUE** may be estimated on. This restricts a
+shipped **FEATURE** whose labels are somebody else's property. **Every real difficulty-grade label source is
+research-only or proprietary AT ORIGIN:** no machine-readable exam-syllabus dump exists in any form, the open sets
+carry no licence file at all, the gated one is request-access and research-use-only, and the largest carries a
+free-licence badge over research-use-only text. **So a COMMERCIAL grading feature needs a licence path or labels of
+our own** — the held material is enough to validate the idea as research and is not enough to ship it. *Why it is
+stated here and not only where it was found:* this is the section a fitter or a feature design reads before declaring
+its pool, and a designer who meets the fitted-value rule must also meet the case where the constraint bites on the
+feature instead.
 
 **The intake rule (user, 2026-07-03 — the converse of step 2):** a find made FOR one need is **scored against
 the FULL needs-vector at intake**, never single-purpose-tagged. Three consequences, each binding:

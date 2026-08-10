@@ -3031,7 +3031,7 @@ DC-03029,1,restates,BR-3,D-027,cowork_docs,bullet,cowork_product_tool_register.m
 DC-03030,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_product_tool_register.md
 DC-03031,1,restates,BR-3,D-028;D-085,cowork_docs,bullet,cowork_product_tool_register.md
 DC-03032,1,restates,BR-3,D-119,cowork_docs,bullet,cowork_product_tool_register.md
-DC-03033,1,unresolved,BR-8,,cowork_docs,bullet,cowork_product_tool_register.md
+DC-03033,1,no-spec-home,BR-4,D-614,cowork_docs,bullet,cowork_product_tool_register.md
 DC-03034,1,restates,BR-3,D-027,cowork_docs,bullet,cowork_product_tool_register.md
 DC-03035,1,unresolved,BR-8,,cowork_docs,bullet,cowork_product_tool_register.md
 DC-03036,1,restates,BR-3,D-095;D-119;D-186,cowork_docs,bullet,cowork_product_tool_register.md
@@ -3912,7 +3912,7 @@ DC-03910,1,not-a-decision,BR-2,,docs,heading,docs/implementation_roadmap.md
 DC-03911,1,restates,BR-3,D-097;D-115;D-183,docs,table_row,docs/implementation_roadmap.md
 DC-03912,1,restates,BR-3,D-115;D-161;D-294,docs,table_row,docs/implementation_roadmap.md
 DC-03913,1,restates,BR-3,D-097;D-119;D-183;D-292,docs,paragraph,docs/implementation_roadmap.md
-DC-03914,1,no-spec-home,BR-4,D-422,docs,paragraph,docs/implementation_roadmap.md
+DC-03914,1,unresolved,BR-8,,docs,paragraph,docs/implementation_roadmap.md
 DC-03915,1,restates,BR-3,D-071,docs,table_row,docs/implementation_roadmap.md
 DC-03916,1,restates,BR-3,D-423,docs,bullet,docs/implementation_roadmap.md
 DC-03917,1,not-a-decision,BR-2,,docs,heading,docs/iter90_bass_as_root_promotion_shelved.md
@@ -9112,7 +9112,7 @@ DC-09110,1,not-a-decision,BR-5,,cc_reports,blockquote,cc_instruction_stage5_phas
 DC-09111,1,restates,BR-3,D-115;D-119,cc_reports,blockquote,cc_instruction_stage5_phase0.md
 DC-09112,1,not-a-decision,BR-6,,cc_reports,bullet,cc_instruction_stage5_phase0.md
 DC-09113,1,not-a-decision,BR-11,,cc_reports,bullet,cc_instruction_stage5_phase0.md
-DC-09114,1,restates,BR-3,D-097;D-119;D-183;D-292;D-422,cc_reports,paragraph,cc_instruction_stage5_phase0.md
+DC-09114,1,restates,BR-3,D-097;D-119;D-183;D-292,cc_reports,paragraph,cc_instruction_stage5_phase0.md
 DC-09115,1,not-a-decision,BR-11,,cc_reports,paragraph,cc_instruction_stage5_phase0.md
 DC-09116,1,not-a-decision,BR-9,,cc_reports,paragraph,cc_instruction_stage5_phase0.md
 DC-09117,1,restates,BR-3,D-032;D-119,cc_reports,bullet,cc_instruction_stage5_phase0.md

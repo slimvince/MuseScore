@@ -438,14 +438,14 @@
         "what_the_widening_MOVED_measured_not_assumed": "Nothing. Every entry homed in this document already sat in one of the seven sections the section-list delegation reached, and every one of those sections carries a states-rules judgment, so all of them were already `contract-home` before this act. The sections the widening newly reaches (§2, §6, §7, and §5 which the section list already named) hold no register entry at HEAD. Recorded here because Ruling 39's applying dispatch predicted a movement and there is none — see `cowork_away_returns.md` §1.12.",
         "delegated_sections": [
           {
-            "heading_line": 187,
+            "heading_line": 224,
             "heading_text": "8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
-            "why": "ARCHITECTURE.md:319 names §8c (\"The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c\"); CLAUDE.md:388 names the decision-tier block, §5, which today holds no register entry and is recorded so a later entry homed there is decided rather than missed."
+            "why": "ARCHITECTURE.md:319 names §8c (\"The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c\"); CLAUDE.md:388 names the decision-tier block, §5, which since the 2026-08-09 Ruling-40 writes holds register entries of its own. (Heading line re-aimed 2026-08-09 from 187, following its own heading text after those writes — authored-input maintenance, D-648, never a re-decision.)"
           },
           {
-            "heading_line": 79,
+            "heading_line": 98,
             "heading_text": "5. Decision tiers (proposed; user disposes)",
-            "why": "ARCHITECTURE.md:319 names §8c (\"The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c\"); CLAUDE.md:388 names the decision-tier block, §5, which today holds no register entry and is recorded so a later entry homed there is decided rather than missed."
+            "why": "ARCHITECTURE.md:319 names §8c (\"The constraint's own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c\"); CLAUDE.md:388 names the decision-tier block, §5, which since the 2026-08-09 Ruling-40 writes holds register entries of its own. (Heading line re-aimed 2026-08-09 from 79 — authored-input maintenance, D-648.)"
           },
           {
             "heading_line": 13,
@@ -458,24 +458,24 @@
             "why": "Added by the 2026-08-04 widening of the §8c pointer, written into `ARCHITECTURE.md` on the user's ruling R1: \"The ratified contract for the corpus census and its admission rules is `cowork_score_census.md` §1/§3/§4/§8/§8b/§8c\". These five sections hold D-359…D-364, every one of which was lost to D-430's DELEGATION half while the pointer named §8c alone. The widening settles that half only; whether each section states rules is judged per section in the `section_kind` block below, and the widening does not pre-judge it."
           },
           {
-            "heading_line": 72,
+            "heading_line": 81,
             "heading_text": "4. Overlap hazard (the accounting rule)",
             "why": "Added by the 2026-08-04 widening of the §8c pointer, written into `ARCHITECTURE.md` on the user's ruling R1: \"The ratified contract for the corpus census and its admission rules is `cowork_score_census.md` §1/§3/§4/§8/§8b/§8c\". These five sections hold D-359…D-364, every one of which was lost to D-430's DELEGATION half while the pointer named §8c alone. The widening settles that half only; whether each section states rules is judged per section in the `section_kind` block below, and the widening does not pre-judge it."
           },
           {
-            "heading_line": 117,
+            "heading_line": 154,
             "heading_text": "8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)",
             "why": "Added by the 2026-08-04 widening of the §8c pointer, written into `ARCHITECTURE.md` on the user's ruling R1: \"The ratified contract for the corpus census and its admission rules is `cowork_score_census.md` §1/§3/§4/§8/§8b/§8c\". These five sections hold D-359…D-364, every one of which was lost to D-430's DELEGATION half while the pointer named §8c alone. The widening settles that half only; whether each section states rules is judged per section in the `section_kind` block below, and the widening does not pre-judge it."
           },
           {
-            "heading_line": 150,
+            "heading_line": 187,
             "heading_text": "8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)",
             "why": "Added by the 2026-08-04 widening of the §8c pointer, written into `ARCHITECTURE.md` on the user's ruling R1: \"The ratified contract for the corpus census and its admission rules is `cowork_score_census.md` §1/§3/§4/§8/§8b/§8c\". These five sections hold D-359…D-364, every one of which was lost to D-430's DELEGATION half while the pointer named §8c alone. The widening settles that half only; whether each section states rules is judged per section in the `section_kind` block below, and the widening does not pre-judge it."
           }
         ],
         "section_kind": [
           {
-            "heading_line": 187,
+            "heading_line": 224,
             "heading_text": "8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
             "states_rules": true,
             "why": "Verified by reading the section in full at phase 1n and unchanged since. It carries three blocks that state what shall be: the Stage-5 fitting-pool licence constraint at :239-253 (user-ratified 2026-07-04, binding on the fitter design), which IS the per-licence-class pool the delegation points at; the intake rule at :255-264 (\"Three consequences, each binding\"); and the supersession decision protocol at :266-282. It also holds the needs-vector TABLE, whose rows record findings — the section is not homogeneous, and that is rowed at `OPEN_ITEMS.md` OI-290 rather than smoothed over. The criterion's unit is the section, so the section's character governs."
@@ -493,19 +493,25 @@
             "why": "Read in place :65-70 at the 2026-08-04 widening. The clearest of the five: the section is a single sentence and that sentence is an admission rule — \"A source enters the registry only with all five fields decided\" — followed by the five fields it names (annotation type; machine-readable score alignment; format; licence class; decision tier), with the consequence stated for the sources that fail one (chords-only or audio-aligned sets are research-tier at best). It records no finding at all. D-360 is the whole section."
           },
           {
-            "heading_line": 72,
+            "heading_line": 98,
+            "heading_text": "5. Decision tiers (proposed; user disposes)",
+            "states_rules": true,
+            "why": "AUTHORED 2026-08-09 by `cc_instruction_return_continuation_8.md` Task 1, because the user's Ruling 40 wrote the first register entries into this section and the kind half is judged PER SECTION BEFORE any such write. Read in place before the write. The section STATES RULES in two independent ways. (a) It DEFINES the five decision tiers — which class a source enters as — and a tier definition fixes what may thereafter be done with a source, which is a rule and not a report of what was found. (b) Tier G states the standing entry rule outright: material enters as research tier, and 'promotion to any gate is its own ratified re-baseline event'. That clause is the corpus-side statement of the rule `CLAUDE.md` gate block (A) carries from the other side, and gate block (A) itself points here for it, naming this section as 'the decision-tier block' — a user-ratified surface treating this section as the place that states the rule. The heading's word 'proposed' governs the TIER ASSIGNMENTS the user disposes of, not the tier definitions or the entry rule, and the section is not homogeneous in that respect — recorded, as at §1, §8 and §8b, rather than smoothed over (the `OPEN_ITEMS.md` OI-290 shape)."
+          },
+          {
+            "heading_line": 81,
             "heading_text": "4. Overlap hazard (the accounting rule)",
             "states_rules": true,
             "why": "Read in place :72-77 at the 2026-08-04 widening. The heading names it — \"the accounting rule\" — and the body states it: \"Dedupe by work, not by container\", the registry keys on (composer, work, movement), and a work entering the gate corpus from one container is excluded as reference data from every other. The opening sentence states the fact the rule answers to (the containers re-encode the same works), which is the rule's ground and not a competing finding. D-361 is the whole section."
           },
           {
-            "heading_line": 117,
+            "heading_line": 154,
             "heading_text": "8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)",
             "states_rules": true,
             "why": "Read in place :117-148 at the 2026-08-04 widening. Two blocks state what may thereafter be ASSERTED, and both entries sit in them: :119-124 fixes exactly what the census may claim — closure over the enumerated containers, the citation-closure argument for gate-grade harmony reference data, and an explicitly BOUNDED rather than closed claim for everything else (D-362) — and :126-131 states four named grounds that license leaving a source un-enumerated, one of which closes a class by RULING rather than by enumeration (D-363). A claim-scoping statement is a rule about what may be said afterwards, the same species as a grading convention, not a report of what was found. The six numbered mitigations at :133-148 are a plan rather than a rule, so the section is NOT homogeneous — recorded, as at §1, rather than smoothed over."
           },
           {
-            "heading_line": 150,
+            "heading_line": 187,
             "heading_text": "8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)",
             "states_rules": true,
             "why": "Read in place :150-185 at the 2026-08-04 widening. The section INSTITUTES a standing trigger in its own words at :166-171 — whenever a new analysis purpose enters the project, a targeted purpose-specific sweep runs for that purpose BEFORE that component's design document is signed, and \"we already enumerated the container\" does not discharge the duty to ask the new question of it. That block is where D-364 sits. The heading names both halves honestly: the user's observation at :152-153 and the two diagnosed mechanisms at :155-164 are findings, and the pending/executed notes at :173-185 are bookkeeping. NOT homogeneous, and recorded as such — but the section states a rule, which is what the kind half asks."
@@ -710,9 +716,6 @@
         ]
       },
       "cowork_architecture_reassessment.md": {
-        "delegation_scope": "none"
-      },
-      "docs/implementation_roadmap.md": {
         "delegation_scope": "none"
       },
       "docs/llm_integration.md": {
@@ -1281,6 +1284,12 @@
       "retired_2026_08_09_the_seventh_return_continuation": "CC, dispatch `cc_instruction_return_continuation_7.md` Task 1, under the user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`. ONE document: `cowork_information_loss_audit.md`, emptied by re-homing its two entries — **D-581** (the sweep's four-verdict rubric) and **D-583** (the condition a *keep, deferred* disposition holds under) — into P2 of `cowork_audit_protocol.md`, the section that already states this project's closed-verdict-set rule. The classifier STOPPED on it as 'authored judgment for a document that is nobody's home', which is that guard working. The judgment was `{\"delegation_scope\": \"none\"}` and is moved here whole rather than deleted (#12). The catalogue's own text is untouched: what stays there is the U2 INSTANCE and the sweep's findings, which are findings and not rules.",
       "judgments_retired_2026_08_09_the_seventh_return_continuation": {
         "cowork_information_loss_audit.md": {
+          "delegation_scope": "none"
+        }
+      },
+      "retired_2026_08_09_the_eighth_return_continuation": "CC, dispatch `cc_instruction_return_continuation_8.md` Task 1, under the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md` — the three-step procedure that replaces Ruling 39's unreachable predicted outcome. ONE document: `docs/implementation_roadmap.md`, emptied when its last home-population entry — **D-422**, the jazz fit deferred to the jazz-ground-truth conversion — was re-homed by that ruling's STEP 2 into `cowork_score_census.md` §5, at Tier J, the tier that owns the jazz ground-truth path the deferral waits on. The classifier STOPPED on it as 'authored judgment for a document that is nobody's home', which is that guard working. The judgment was `{\"delegation_scope\": \"none\"}` and is moved here whole rather than deleted (#12). **The roadmap's own text is untouched**: what stays there is its record of the Stage-5 design's signing, which is a plan's record of an event and not the rule the entry carries.",
+      "judgments_retired_2026_08_09_the_eighth_return_continuation": {
+        "docs/implementation_roadmap.md": {
           "delegation_scope": "none"
         }
       }
@@ -10643,7 +10652,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:74-77",
+      "home": "cowork_score_census.md:83-86",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10657,7 +10666,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 72,
+        "heading_line": 81,
         "section": "## 4. Overlap hazard (the accounting rule)",
         "label": "§4",
         "delegated": true,
@@ -10683,7 +10692,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:119-124",
+      "home": "cowork_score_census.md:156-161",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10697,7 +10706,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 117,
+        "heading_line": 154,
         "section": "## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)",
         "label": "§8",
         "delegated": true,
@@ -10723,7 +10732,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:126-131",
+      "home": "cowork_score_census.md:163-168",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10737,7 +10746,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 117,
+        "heading_line": 154,
         "section": "## 8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)",
         "label": "§8",
         "delegated": true,
@@ -10763,7 +10772,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:166-171",
+      "home": "cowork_score_census.md:203-208",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user observation of 2026-07-03; the record says the trigger is instituted but does not name who instituted it. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10777,7 +10786,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 150,
+        "heading_line": 187,
         "section": "## 8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)",
         "label": "§8b",
         "delegated": true,
@@ -10803,7 +10812,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:189-193",
+      "home": "cowork_score_census.md:226-230",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The section is headed as a user question of 2026-07-03; its first run is recorded EXECUTED and DISPOSED 2026-07-04, with the user's rulings at that disposition recorded in the same paragraph. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10817,7 +10826,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -10843,7 +10852,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_score_census.md:221",
+      "home": "cowork_score_census.md:258",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell records `★ SCOPE RULING RATIFIED (user, 2026-07-04)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10857,7 +10866,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -10883,7 +10892,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_score_census.md:255-264",
+      "home": "cowork_score_census.md:303-312",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The rule is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10897,7 +10906,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -10923,7 +10932,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_score_census.md:266-282",
+      "home": "cowork_score_census.md:314-330",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The protocol is recorded as the user's, 2026-07-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10937,7 +10946,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -10963,7 +10972,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:216",
+      "home": "cowork_score_census.md:253",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10977,7 +10986,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -11003,7 +11012,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:215",
+      "home": "cowork_score_census.md:252",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11017,7 +11026,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -11043,7 +11052,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:219",
+      "home": "cowork_score_census.md:256",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11057,7 +11066,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -11083,7 +11092,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:225",
+      "home": "cowork_score_census.md:262",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The user's act recorded on this row is the ADOPTION of the need (2026-07-04); the build-not-download conclusion is a measured search outcome and names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11097,7 +11106,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -11123,7 +11132,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:208",
+      "home": "cowork_score_census.md:245",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. The cell marks it `(Wave-3 MEASURED, corrects the audit)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11137,7 +11146,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -11163,7 +11172,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:208",
+      "home": "cowork_score_census.md:245",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL, in the Wave-3 addendum text of the dual-annotator row. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11177,7 +11186,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -11203,7 +11212,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_score_census.md:220",
+      "home": "cowork_score_census.md:257",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11217,7 +11226,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 187,
+        "heading_line": 224,
         "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
         "label": "§8c",
         "delegated": true,
@@ -12971,20 +12980,20 @@
       "id": "D-422",
       "group": "C",
       "title": "The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom is fitted now",
-      "verbatim": "**Stage-5 design SIGNED 2026-07-04:** `cowork_stage5_fitter_design.md`; A-3 ruled = Jazz fit deferred to the\njazz-GT conversion (the idiom-#2 Baroque/Default target is fitted now).",
+      "verbatim": "**★ AND TIER J GATES A FIT — stated here because that is what the tier is FOR: THE JAZZ FIT IS DEFERRED TO THE\nJAZZ-GROUND-TRUTH CONVERSION, and only the classical common-practice idiom is fitted now.** Until this path yields\nconverted, score-aligned jazz ground truth, a fit of the jazz idiom has nothing to be evaluated against. *Why:* jazz\naccuracy is not measurable on the corpora held at all — the held jazz material is melody-and-chord-symbol\ntranscription, with the bass and the piano voicings absent — so fitting the jazz idiom against it would be fitting\nwithout evaluation, which #20 forbids. The idiom that IS fitted now is the one the held annotated music covers, which\nis what the two non-jazz presets deliver.",
       "plain": "Fitting the analysis constants for jazz waits until jazz music with published human analyses can be converted into a form the fitter can use. What is fitted now is the one idiom the held annotated music covers — the classical common-practice one, which is what the two non-jazz presets deliver.",
       "rationale": "It follows from a measured constraint recorded elsewhere in the register: jazz accuracy is not measurable on the corpora held, because the jazz material is melody-and-chord-symbol transcription with the bass and piano voicings absent (D-310, whose defense is a bass-injection experiment moving agreement from 39.8 % to 98.3 % on one corpus and 18.0 % to 99.9 % on another). Fitting against material that cannot measure the result would be fitting without evaluation, which guiding principle #20 forbids.",
-      "home": "docs/implementation_roadmap.md:549",
+      "home": "cowork_score_census.md:122-128",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
+      "nonspec_kind": "contract-home",
       "status": "deferred",
       "date": "2026-07-04",
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "`docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: \"Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion\". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
+      "status_source": "`docs/implementation_roadmap.md`:460-461, recorded at the Stage-5 fitter design's signing: \"Stage-5 design SIGNED 2026-07-04 … A-3 ruled = Jazz fit deferred to the jazz-GT conversion\". The document states the DESIGN was signed that day but does not say who ruled A-3, so the ratifier is NOT STATED. A-3 is one of the ten external-review amendments the record marks user-ratified 2026-07-02 at `:148-151`, but that ratification is of the amendment, not of this later disposition of it. Beside D-310 (jazz accuracy not measurable) and `OPEN_ITEMS.md` OI-7 (establish a jazz ground truth or de-scope the jazz claims). Recorded in a plan rather than in the fitter's own specification, hence the documentation-gap flag. Found by the phase-1k continuation wave, 2026-08-03, reading `docs/implementation_roadmap.md` IN FULL (the OI-207 reading list's next document, 18 clusters). The document's own banner records it as the SINGLE TRACKER ensuring every review conclusion is addressed (`:4-8`); it carries none of the four declared status banners (register entry D-256), so it is not a contract home. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1k ratification queue. ★ RATIFIED (user, 2026-08-03, the phase-1l queue — ratified AS DRAFTED, with the status exactly as the record states it; the ratification is of each RULE itself, and it supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ RE-HOMED 2026-08-09 into `cowork_score_census.md` §5, at Tier J — the tier that owns the jazz ground-truth path this deferral waits on — by `cc_instruction_return_continuation_8.md` Task 1, under the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`, STEP 2. The kind half was judged before the write and §5 passes it. FORMER HOME, PRESERVED (#12): `docs/implementation_roadmap.md:549`, the Stage-5 block, which is untouched — the roadmap keeps its own record of the signing. FORMER VERBATIM, PRESERVED (#12): '**Stage-5 design SIGNED 2026-07-04:** `cowork_stage5_fitter_design.md`; A-3 ruled = Jazz fit deferred to the jazz-GT conversion (the idiom-#2 Baroque/Default target is fitted now).' ★ WHAT THE HOME TEXT DELIBERATELY DOES NOT CARRY: the bass-injection experiment's measured agreement values, which are D-310's and stay in the record that measured them (D-431); the census states the MECHANISM — the held jazz material is melody-and-chord-symbol transcription with the bass and voicings absent — which is what makes the deferral a corpus fact rather than a scheduling preference.",
       "patterns": [
-        "Jazz fit deferred to the"
+        "THE JAZZ FIT IS DEFERRED TO THE"
       ],
       "entry_ratified": {
         "date": "2026-08-03",
@@ -12993,14 +13002,14 @@
         ]
       },
       "home_section": {
-        "heading_line": 532,
-        "section": "## Stage 5 — Fit the weights *(stop hand-tuning)*",
-        "label": "“Stage 5”",
-        "delegated": null,
-        "delegation": "named in no user-ratified surface",
-        "states_rules": null,
-        "verdict": "EXCLUDE",
-        "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
+        "heading_line": 98,
+        "section": "## 5. Decision tiers (proposed; user disposes)",
+        "label": "§5",
+        "delegated": true,
+        "delegation": "ARCHITECTURE.md:370",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
         "class_before_phase1r": "gap",
@@ -15259,19 +15268,19 @@
       "id": "D-500",
       "group": "C",
       "title": "The user ratified CORPUS EXPANSION at the architecture review: gate-grade jazz ground truth, chromatic material of the Wagner class, and more non-Bach, non-Baroque annotation generally",
-      "verbatim": "> additionally ratified **corpus expansion** — gate-grade jazz GT and Wagner-class (and similar) DCML material; in\n> general more non-Bach, non-Baroque ground truth (folded into A-7/A-8; recorded in `docs/implementation_roadmap.md`).",
+      "verbatim": "**★ THE SCOPE THE TIERS ABOVE IMPLEMENT IS ITSELF A USER RATIFICATION, AND IT IS STATED HERE RATHER THAN LEFT TO BE\nINFERRED FROM THE LISTS.** At the 2026-07-02 architecture review the user ratified **CORPUS EXPANSION**: gate-grade\n**jazz** ground truth, **chromatic material of the Wagner class**, and, in general, **more non-Bach, non-Baroque\nannotated music**. That is what Tier G and Tier J are for. *Why:* the review's own findings F-7 and F-8 — calibration\nand validation are Baroque- and Bach-heavy, with no gate-grade ground truth for the jazz preset or for the\nnon-classical idioms, and a chromatic stress corpus is named there as the measurement bed for the capability\namendments. **The entry rule above is NOT weakened by it, and the two are read together:** material arriving under\nthis ratification widens what the analysis is MEASURED against, it enters at research tier, and promotion of any of\nit into a gate is the separate, deliberate re-baseline event that rule already describes.",
       "plain": "At the same review the user approved widening the material the program is measured against: real ground truth for jazz, hard chromatic repertoire, and in general more annotated music that is neither Bach nor Baroque.",
-      "home": "cowork_architecture_review_2026_07.md:4-5",
+      "home": "cowork_score_census.md:112-120",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-02",
       "ratified_by": [
         "user"
       ],
-      "status_source": "Recorded in the banner of the external architecture review as a user ratification additional to amendments A-1…A-10, folded into A-7/A-8 and recorded in the implementation roadmap. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. It is the ratification the corpus waves that follow it execute; the standing rule on the other side — a newly acquired corpus enters as research material and the frozen corpus stays the gate until a deliberate re-baseline — is `CLAUDE.md` gate block (A) and is not weakened by it.",
+      "status_source": "Recorded in the banner of the external architecture review as a user ratification additional to amendments A-1…A-10, folded into A-7/A-8 and recorded in the implementation roadmap. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) ★ NOT A FRESH DECISION, stated so that nothing is counted twice (dispatch cc_instruction_reads_3.md §1.3): the amendment itself was ratified by the user at the 2026-07-02 architecture review, which is what this entry's Status line already records. Ratifying the ENTRY records only that the register transcribes that ratification correctly — it neither re-makes the decision nor adds a second ratification event to it. It is the ratification the corpus waves that follow it execute; the standing rule on the other side — a newly acquired corpus enters as research material and the frozen corpus stays the gate until a deliberate re-baseline — is `CLAUDE.md` gate block (A) and is not weakened by it. ★ RE-HOMED 2026-08-09 into `cowork_score_census.md` §5 (the decision-tier block), by `cc_instruction_return_continuation_8.md` Task 1, under the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md` — STEP 2: §5's Tier G lists the chromatic material and its Tier J cites this very ratification by date, but neither STATES the ratification as the scope rule the tiers implement, so step 1 did not apply and the rule was written there in the section's own voice under the census-edit licence. THE KIND HALF WAS JUDGED BEFORE THE WRITE and §5 passes it — the user's own approved delegation wording of Ruling 39 names 'the decision-tier block' as one of the census's rule-stating sections. FORMER HOME, PRESERVED (#12): `cowork_architecture_review_2026_07.md:4-5`, the review's opening block, which is untouched. FORMER VERBATIM, PRESERVED (#12): '> additionally ratified **corpus expansion** — gate-grade jazz GT and Wagner-class (and similar) DCML material; in general more non-Bach, non-Baroque ground truth (folded into A-7/A-8; recorded in `docs/implementation_roadmap.md`).' The home text carries the research-tier-on-entry clause beside the ratification deliberately, so a reader cannot take the widening for a gate movement.",
       "patterns": [],
       "rationale": "Derived from the review's own findings F-7 and F-8: calibration and validation are Baroque- and Bach-heavy with no gate-grade ground truth for the jazz preset or the non-classical idioms, and the review names a chromatic stress corpus as the measurement bed for the capability amendments.",
-      "nonspec_kind": "gap",
+      "nonspec_kind": "contract-home",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -15279,14 +15288,14 @@
         ]
       },
       "home_section": {
-        "heading_line": 1,
-        "section": "# Comprehensive architecture review — the layered inference architecture (external Cowork review)",
-        "label": "the opening block (above the first section heading)",
-        "delegated": null,
-        "delegation": "named in no user-ratified surface",
-        "states_rules": null,
-        "verdict": "EXCLUDE",
-        "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
+        "heading_line": 98,
+        "section": "## 5. Decision tiers (proposed; user disposes)",
+        "label": "§5",
+        "delegated": true,
+        "delegation": "ARCHITECTURE.md:370",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
         "class_before_phase1r": "gap",
@@ -15631,28 +15640,28 @@
       "id": "D-513",
       "group": "Q",
       "title": "A corpus registry's content summary is enumeration provenance, not evidence that an annotation layer is present — per-slice presence must be measured",
-      "verbatim": "Lesson recorded: a registry `content` summary is enumeration provenance, not presence-of-layers evidence —\nper-slice presence must be measured (which is exactly what the wave's Task 5 was for). The census §8c\nN2/N5 state columns carry the corrections.",
+      "verbatim": "**★ AND A REGISTRY `content` SUMMARY IS ENUMERATION PROVENANCE, NOT EVIDENCE THAT A LAYER IS PRESENT.** Field (a)\nrecords what a source is *said* to carry, and that is a fact about where the source came from. **Whether a given\nannotation layer is actually in it is a MEASUREMENT, made per slice at the files** — never inferred from the summary\nline that admitted the source. *Why:* two of this census's own claims were falsified by measurement in the same week,\nboth by exactly that mistake — a supposed pair of overlapping annotation sets that turn out not to co-occur at all,\nand a textbook corpus that holds scores and no analyses at the pinned commit. Both were taken from a `content` field\nand treated as stronger than it was. It is #19 applied to corpus bookkeeping: **a layer is trusted after being\npositively established, never because a summary mentions it.**",
       "plain": "A one-line description of what a corpus contains records where the corpus came from. It does not establish that a particular kind of annotation is actually in it. Whether a layer is present is a measurement, made file by file.",
-      "home": "cowork_census_full_needs_audit.md:256-258",
+      "home": "cowork_score_census.md:72-79",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-04",
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "Recorded as the lesson of the audit's own post-wave corrections, which the document owns in its own §7 rather than quietly amending. It is #19 applied to corpus bookkeeping: a layer is trusted after being positively established, never because a summary mentions it. The surviving measured fact about on-disk dual annotation is **D-373**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "status_source": "Recorded as the lesson of the audit's own post-wave corrections, which the document owns in its own §7 rather than quietly amending. It is #19 applied to corpus bookkeeping: a layer is trusted after being positively established, never because a summary mentions it. The surviving measured fact about on-disk dual annotation is **D-373**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ RE-HOMED 2026-08-09 into `cowork_score_census.md` §3 (inclusion criteria), by `cc_instruction_return_continuation_8.md` Task 1, under the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md` — STEP 2 of that ruling's three-step procedure: no census rule-stating section already stated this rule, and the OWNING section states rules ('A source enters the registry only with all five fields decided'), so the rule was written there in the section's own voice under the census-edit licence the ruling grants. THE KIND HALF WAS JUDGED BEFORE THE WRITE and §3 passes it. FORMER HOME, PRESERVED (#12): `cowork_census_full_needs_audit.md:256-258`, its §7 post-wave-corrections section, which is untouched. FORMER VERBATIM, PRESERVED (#12): 'Lesson recorded: a registry `content` summary is enumeration provenance, not presence-of-layers evidence — per-slice presence must be measured (which is exactly what the wave's Task 5 was for). The census §8c N2/N5 state columns carry the corrections.' The home text deliberately does NOT carry the two falsified claims' identities or any value from them (D-431): those grade the FINDING and live in the audit that measured them, while §3 states the rule.",
       "patterns": [],
       "rationale": "The lesson is drawn from two of the audit's own claims being falsified by measurement in the same week — a supposed pair of overlapping annotation sets that do not co-occur at all, and a textbook corpus that turned out to hold scores and no analyses at the pinned commit. Both were sourced from a registry content field and treated as stronger than they were.",
-      "nonspec_kind": "gap",
+      "nonspec_kind": "contract-home",
       "home_section": {
-        "heading_line": 240,
-        "section": "## 7. POST-WAVE CORRECTIONS (Wave 3 measured, 2026-07-04 — two audit claims falsified, owned)",
-        "label": "§7",
-        "delegated": null,
-        "delegation": "named in no user-ratified surface",
-        "states_rules": null,
-        "verdict": "EXCLUDE",
-        "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
+        "heading_line": 65,
+        "section": "## 3. Inclusion criteria (what \"a corpus we can use\" means)",
+        "label": "§3",
+        "delegated": true,
+        "delegation": "ARCHITECTURE.md:370",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
         "class_before_phase1r": "gap",
@@ -15663,28 +15672,28 @@
       "id": "D-514",
       "group": "Q",
       "title": "A newly acquired annotation set whose works OVERLAP the regression corpus is RECORD-ONLY: it may not be wired to, compared against, or bulk-diffed with the gate corpus without a user ruling",
-      "verbatim": "   spine. GPLv3. **⚠ RECORD-ONLY this dispatch:** its 371 Bach chorales overlap the gate repertoire (Breitkopf/Dörffel\n   371 Four-Part Chorales, KernScores lineage = the music21 gate corpus's works); it must NOT be wired to /\n   compared against / bulk-diffed with the gate corpus — any use over gate pieces is a future **user** ruling\n   (census §4 dedupe / the M3 contamination lesson). The 200 Praetorius chorales are new and outside the gate.",
-      "plain": "One acquired collection of chorale analyses covers the same works the accuracy gate is measured on. It is recorded and left alone: it may not be connected to the analysis, compared against the gate corpus, or diffed against it in bulk. Using it over those pieces at all is a decision for the user. The part of it that covers other repertoire is outside the gate and unaffected.",
-      "home": "cowork_census_full_needs_audit.md:280-283",
+      "verbatim": "**★ AND THE SAME RULE READ FORWARD IN TIME, FOR MATERIAL THAT ARRIVES AFTER THE GATE CORPUS ALREADY EXISTS: A NEWLY\nACQUIRED ANNOTATION SET WHOSE WORKS OVERLAP THE REGRESSION CORPUS IS RECORD-ONLY.** It is cloned, pinned and\nenumerated like any other acquisition, and over the overlapping works it may **not** be wired to the analysis,\n**not** be compared against the gate corpus, and **not** be bulk-diffed with it. **Any use of it over those works is\na USER RULING**, taken deliberately; a session does not take it. Whatever portion of such a set covers OTHER\nrepertoire is outside the gate and is unaffected. *Why:* it is the dedupe rule above with time added — a work that is\nIN the regression corpus cannot also be a free-standing check ON it, because the two uses are not independent, which\nis the contamination lesson this section already generalizes. The recorded instance that produced the rule is a\nchorale annotation set whose Bach half re-encodes the gate repertoire while its remaining half does not.",
+      "plain": "One acquired collection of chorale analyses covers the same works the accuracy gate is measured on. It is recorded and left alone: it may not be connected to the analysis, compared against the gate corpus, or diffed against it in bulk. Using it over those pieces at all is a decision for the user. Whatever portion of it covers other repertoire is outside the gate and unaffected.",
+      "home": "cowork_score_census.md:88-96",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-04",
       "ratified_by": [
         "not stated"
       ],
-      "status_source": "Recorded at the Wave-3 addendum with the acquisition itself. It is the corpus-side companion of the de-duplication rule **D-361** (corpora are de-duplicated by WORK, not by container) and of the research-tier-on-entry rule at `CLAUDE.md` gate block (A). Bears directly on `OPEN_ITEMS.md` OI-179: it is a second annotation layer over gate-class chorales, and this is the ruling that says it may not be used as one without the user. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.",
+      "status_source": "Recorded at the Wave-3 addendum with the acquisition itself. It is the corpus-side companion of the de-duplication rule **D-361** (corpora are de-duplicated by WORK, not by container) and of the research-tier-on-entry rule at `CLAUDE.md` gate block (A). Bears directly on `OPEN_ITEMS.md` OI-179: it is a second annotation layer over gate-class chorales, and this is the ruling that says it may not be used as one without the user. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ RE-HOMED 2026-08-09 into `cowork_score_census.md` §4 (the overlap-hazard accounting rule), by `cc_instruction_return_continuation_8.md` Task 1, under the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md` — STEP 2: §4 states the dedupe rule and cites the same contamination lesson, but it does NOT state the record-only status or the user-ruling requirement, so step 1 did not apply and the rule was written there in the section's own voice under the census-edit licence. THE KIND HALF WAS JUDGED BEFORE THE WRITE and §4 passes it — its own heading calls it the accounting rule. FORMER HOME, PRESERVED (#12): `cowork_census_full_needs_audit.md:280-283`, its §7.1 Wave-3 addendum, which is untouched. FORMER VERBATIM, PRESERVED (#12): '   spine. GPLv3. **⚠ RECORD-ONLY this dispatch:** its 371 Bach chorales overlap the gate repertoire (Breitkopf/Dörffel 371 Four-Part Chorales, KernScores lineage = the music21 gate corpus's works); it must NOT be wired to / compared against / bulk-diffed with the gate corpus — any use over gate pieces is a future **user** ruling (census §4 dedupe / the M3 contamination lesson). The 200 Praetorius chorales are new and outside the gate.' ★ WHAT THE HOME TEXT DELIBERATELY DOES NOT CARRY: the acquired set's identity, its licence, its counts and the walk's finding about its packaging. Those grade the INSTANCE and stay in the audit that recorded them (D-431); §4 states the rule the instance produced, and names the instance only by its shape.",
       "patterns": [],
       "rationale": "Grounded in the contamination lesson the corpus discipline already carries: a work that is in the regression corpus cannot also be a free-standing check on it, because the two uses are not independent. The document also records what the walk actually found — the analyses ship as a packaged binary and the score files carry no analysis spine — so the constraint is stated together with the reason the material is not usable as-is anyway.",
-      "nonspec_kind": "gap",
+      "nonspec_kind": "contract-home",
       "home_section": {
-        "heading_line": 260,
-        "section": "### 7.1 WAVE-3 ADDENDUM — the two DDMAL direct pickups (2026-07-04, `cc_wave3_addendum_report.md`)",
-        "label": "§7.1",
-        "delegated": null,
-        "delegation": "named in no user-ratified surface",
-        "states_rules": null,
-        "verdict": "EXCLUDE",
-        "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
+        "heading_line": 81,
+        "section": "## 4. Overlap hazard (the accounting rule)",
+        "label": "§4",
+        "delegated": true,
+        "delegation": "ARCHITECTURE.md:370",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
         "class_before_phase1r": "gap",
@@ -18490,32 +18499,32 @@
       "id": "D-614",
       "group": "L",
       "title": "Every real difficulty-grade label source is research-only or proprietary at origin — a commercial grading feature needs a licence path or its own labels",
-      "verbatim": "**Negatives:** no machine-readable ABRSM/RCM/Trinity syllabus, no Henle dump, no violin/guitar grade\ndataset. **T-32 caveat recorded:** every real label source is research-only/proprietary at origin — a\nCOMMERCIAL grading feature needs a license path or own labels; CIPI+Mikrokosmos suffice for research\nvalidation.",
+      "verbatim": "**★ AND THE DIFFICULTY-GRADE CASE IS A DIFFERENT PROHIBITION FROM THE FOUR BULLETS ABOVE, STATED APART SO IT IS NOT\nREAD AS THE SAME ONE.** Those restrict the pool a **shipped FITTED VALUE** may be estimated on. This restricts a\nshipped **FEATURE** whose labels are somebody else's property. **Every real difficulty-grade label source is\nresearch-only or proprietary AT ORIGIN:** no machine-readable exam-syllabus dump exists in any form, the open sets\ncarry no licence file at all, the gated one is request-access and research-use-only, and the largest carries a\nfree-licence badge over research-use-only text. **So a COMMERCIAL grading feature needs a licence path or labels of\nour own** — the held material is enough to validate the idea as research and is not enough to ship it. *Why it is\nstated here and not only where it was found:* this is the section a fitter or a feature design reads before declaring\nits pool, and a designer who meets the fitted-value rule must also meet the case where the constraint bites on the\nfeature instead.",
       "plain": "Every collection that says how hard a piece is to play is either restricted to research use or belongs to somebody who sells it. So a difficulty feature in a shipped product would need either a licence agreement or labels of our own; the held material is enough to check the idea works and not enough to ship it.",
       "rationale": "Established by the same search, per source: the two open datasets carry no licence file at all, the gated one is request-access and research-only, and the largest carries a free-licence badge over research-use-only text. The consequence is not inferred but named — the research/commercial split is what the caveat records, and it is the licence-posture instance of the shipped-value constraint **D-292** applied to a feature rather than to a fitted value.",
-      "home": "cowork_union_search_record.md:87-90",
+      "home": "cowork_score_census.md:292-301",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-04",
       "ratified_by": [
         "user"
       ],
-      "nonspec_kind": "gap",
-      "status_source": "`cowork_union_search_record.md` §3, the union search round. Read in full by READ WAVE 6, 2026-08-04. The document's status block records the user's disposition of item 3 in terms — *\"the T-32 commercial caveat recorded in the product-tool register\"* — so the caveat carries the user's act while the search finding behind it names no ratifier. Distinct from **D-292**, which restricts the pool a SHIPPED FITTED VALUE may be estimated on; this restricts a shipped FEATURE whose labels are somebody else's property.",
+      "nonspec_kind": "contract-home",
+      "status_source": "`cowork_union_search_record.md` §3, the union search round. Read in full by READ WAVE 6, 2026-08-04. The document's status block records the user's disposition of item 3 in terms — *\"the T-32 commercial caveat recorded in the product-tool register\"* — so the caveat carries the user's act while the search finding behind it names no ratifier. Distinct from **D-292**, which restricts the pool a SHIPPED FITTED VALUE may be estimated on; this restricts a shipped FEATURE whose labels are somebody else's property. ★ RE-HOMED 2026-08-09 into `cowork_score_census.md` §8c, beside the Stage-5 fitting-pool licence constraint, by `cc_instruction_return_continuation_8.md` Task 1, under the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md` — STEP 2. Step 1 was CLOSE and did not apply: that constraint's last bullet already says the difficulty case *\"carries its own harder version of this caveat\"*, which states the FACT and not the consequence, so the rule was written beside it in the section's own voice under the census-edit licence. THE KIND HALF WAS JUDGED BEFORE THE WRITE and this block passes it — it is rule (h)'s own founding case, named in the user's approved Ruling 39 delegation wording as `the §8c shipped-parameter licence-pool constraint`. FORMER HOME, PRESERVED (#12): `cowork_union_search_record.md:87-90`, which is untouched. FORMER VERBATIM, PRESERVED (#12): '**Negatives:** no machine-readable ABRSM/RCM/Trinity syllabus, no Henle dump, no violin/guitar grade dataset. **T-32 caveat recorded:** every real label source is research-only/proprietary at origin — a COMMERCIAL grading feature needs a license path or own labels; CIPI+Mikrokosmos suffice for research validation.' The home text names the label sources by their licence posture rather than by identity, so the rule survives a source list that moves (D-431).",
       "patterns": [
-        "T-32 caveat recorded",
-        "research-only/proprietary at origin"
+        "research-only or proprietary AT ORIGIN",
+        "needs a licence path or labels of"
       ],
       "entry_ratified": null,
       "home_section": {
-        "heading_line": 76,
-        "section": "## 3. N14 — difficulty/grade labels: real datasets exist; license posture is the open risk",
-        "label": "§3",
-        "delegated": null,
-        "delegation": "named in no user-ratified surface",
-        "states_rules": null,
-        "verdict": "EXCLUDE",
-        "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade",
+        "heading_line": 224,
+        "section": "## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)",
+        "label": "§8c",
+        "delegated": true,
+        "delegation": "ARCHITECTURE.md:370",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
         "class_before_phase1r": "gap",

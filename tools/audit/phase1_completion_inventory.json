@@ -217,8 +217,8 @@
   "criterion": "C1 and C2",
   "register_population": 664,
   "by_home_class": {
-   "contract-home": 152,
-   "gap": 37,
+   "contract-home": 157,
+   "gap": 32,
    "homed-in-a-layer-specification": 297,
    "process": 132,
    "project-convention": 45,
@@ -226,17 +226,16 @@
   },
   "class_1_documentation_gap": {
    "what_it_is": "The register's own home_rule: a decision that governs a layer and is not findable from that layer's section - a documentation gap carrying an OPEN_ITEMS.md row. This is C1's outstanding population.",
-   "count": 37,
+   "count": 32,
    "by_home_document": {
     "cowork_architecture_reassessment.md": 4,
-    "cowork_census_full_needs_audit.md": 4,
     "cowork_structural_integrity_audit.md": 4,
-    "cowork_architecture_review_2026_07.md": 3,
     "cowork_evidence_inventory.md": 3,
+    "cowork_architecture_review_2026_07.md": 2,
+    "cowork_census_full_needs_audit.md": 2,
     "cowork_joint_estimator_architecture.md": 2,
     "cowork_layer1_tone_collection_design.md": 2,
     "cowork_phrase_boundary_design.md": 2,
-    "cowork_union_search_record.md": 2,
     "cowork_factorization_desk_simulation.md": 1,
     "cowork_layer1_note_model_design.md": 1,
     "cowork_layer3_keymode_design.md": 1,
@@ -245,7 +244,7 @@
     "cowork_sensitive_cell_probe.md": 1,
     "cowork_term_theory_grounding.md": 1,
     "cowork_types_header_design.md": 1,
-    "docs/implementation_roadmap.md": 1,
+    "cowork_union_search_record.md": 1,
     "docs/iter92_joint_bass_chord_scoring.md": 1,
     "docs/stage4b_design.md": 1
    },
@@ -259,7 +258,6 @@
     "D-403",
     "D-404",
     "D-405",
-    "D-422",
     "D-453",
     "D-458",
     "D-475",
@@ -267,9 +265,6 @@
     "D-485",
     "D-498",
     "D-499",
-    "D-500",
-    "D-513",
-    "D-514",
     "D-515",
     "D-516",
     "D-518",
@@ -285,13 +280,12 @@
     "D-571",
     "D-579",
     "D-610",
-    "D-613",
-    "D-614"
+    "D-613"
    ]
   },
   "class_1a_gap_whose_home_FAILS_the_section_criterion": {
    "what_it_is": "Entries carrying a home_section block whose verdict is EXCLUDE: the home document exists and was graded, and the criteria in force (clause (a), D-432, D-430) reject it. These are gaps WITH a measured reason.",
-   "count": 37,
+   "count": 32,
    "by_reason": {
     "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section": {
      "count": 1,
@@ -318,20 +312,16 @@
      ]
     },
     "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade": {
-     "count": 23,
+     "count": 18,
      "ids": [
       "D-282",
       "D-283",
       "D-284",
       "D-285",
-      "D-422",
       "D-453",
       "D-475",
       "D-498",
       "D-499",
-      "D-500",
-      "D-513",
-      "D-514",
       "D-515",
       "D-516",
       "D-535",
@@ -341,8 +331,7 @@
       "D-571",
       "D-579",
       "D-610",
-      "D-613",
-      "D-614"
+      "D-613"
      ]
     }
    }
@@ -1941,7 +1930,7 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 626,
+    "count": 631,
     "of": 664
    },
    {
@@ -1957,12 +1946,12 @@
  "the_shape_of_what_remains": {
   "note": "Derived from the blocks above; every figure is computed, none transcribed.",
   "complete_half": {
-   "entries_not_homed_in_a_specification_that_owns_them": 38,
+   "entries_not_homed_in_a_specification_that_owns_them": 33,
    "of_which_never_graded_against_the_criteria_in_force": 0,
    "entries_whose_defense_the_record_does_not_state": 0,
    "documents_awaiting_a_delegation_only_the_user_may_write": 1,
    "★_that_figure_is_now_DERIVED_not_the_write_lists_membership": "It is the count of documents that still lose entries to the DELEGATION HALF where an admitting delegation already exists - the only class a delegation the user writes would move. Derived at `tools/audit/decisions/outstanding_delegations.json`; the full partition, including the classes for which a delegation is NOT the remedy, is there and is not restated here (D-431). OI-335.",
-   "entries_lost_for_want_of_a_delegation_all_classes": 24,
+   "entries_lost_for_want_of_a_delegation_all_classes": 19,
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
@@ -2081,7 +2070,7 @@
   "open_rows_in_the_index": 255,
   "true_half_wide_cut": 62,
   "true_half_gating": 41,
-  "complete_half_gap": 37,
+  "complete_half_gap": 32,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0
  }

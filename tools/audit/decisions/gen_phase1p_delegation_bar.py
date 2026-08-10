@@ -459,9 +459,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
     "docs/stage4b_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
 
-    "docs/implementation_roadmap.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-
     # ------------------------------------------------------------------
     # Graded 2026-08-04 by the phase-1 reads WAVE 6, when these twelve documents FIRST became
     # somebody's home.  Seven come out NOT_NAMED, re-verified mechanically below.  FIVE are
@@ -522,7 +519,20 @@ RETIRED_2026_08_09_SEVENTH_RETURN = (
     "and is not re-read or re-graded."
 )
 
+RETIRED_2026_08_09_EIGHTH_RETURN = (
+    "CC, dispatch `cc_instruction_return_continuation_8.md`, Task 1, under the user's Ruling 40 of "
+    "2026-08-09 -- the three-step procedure that replaces Ruling 39's unreachable predicted "
+    "outcome. ONE document: `docs/implementation_roadmap.md`, emptied by re-homing D-422 (the jazz "
+    "fit deferred to the jazz-ground-truth conversion) into `cowork_score_census.md` §5 at Tier J, "
+    "the tier that owns the path the deferral waits on. This tool STOPPED on its grade as a FORM "
+    "judgment for a document that is nobody's home, which is that guard working. The grade is moved "
+    "unchanged and is not re-read or re-graded; the roadmap's own text is untouched."
+)
+
 RETIRED_FORMS: dict[str, tuple[str, str, str, str]] = {
+    # retired 2026-08-09, the eighth return continuation (see RETIRED_2026_08_09_EIGHTH_RETURN)
+    "docs/implementation_roadmap.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     # retired 2026-08-09, the seventh return continuation (see RETIRED_2026_08_09_SEVENTH_RETURN)
     "cowork_information_loss_audit.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
@@ -977,6 +987,8 @@ def main() -> int:
             "retired_2026_08_09": RETIRED_2026_08_09,
             "retired_2026_08_09_the_seventh_return_continuation":
                 RETIRED_2026_08_09_SEVENTH_RETURN,
+            "retired_2026_08_09_the_eighth_return_continuation":
+                RETIRED_2026_08_09_EIGHTH_RETURN,
             "judgments": {
                 doc: {"form": f, "surface": s or None, "anchor": a or None, "why": w}
                 for doc, (f, s, a, w) in sorted(RETIRED_FORMS.items())

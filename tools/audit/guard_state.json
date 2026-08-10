@@ -530,10 +530,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "population: 189 entries / 39 documents",
+        "population: 189 entries / 38 documents",
         "  before: {'contract-home': 88, 'gap': 101}",
-        "  after:  {'contract-home': 152, 'gap': 37}",
-        "  moved:  74  (to gap 5, to contract-home 69)",
+        "  after:  {'contract-home': 157, 'gap': 32}",
+        "  moved:  79  (to gap 5, to contract-home 74)",
         "    cowork_architecture_reassessment.md: −4 / +0",
         "    cowork_confidence_contract.md: −0 / +1",
         "    cowork_engage_arc_plan.md: −0 / +3",
@@ -548,10 +548,10 @@
         "    cowork_phrase_boundary_design.md: −0 / +8",
         "    cowork_progression_schema_design.md: −0 / +8",
         "    cowork_progression_schema_dictionary.md: −0 / +9",
-        "    cowork_score_census.md: −0 / +6",
+        "    cowork_score_census.md: −0 / +11",
         "    cowork_structural_integrity_audit.md: −0 / +1",
         "    docs/llm_integration.md: −0 / +7",
-        "  since phase 1q (the written delegations alone): 81 moved (to contract-home 81, to gap 0)",
+        "  since phase 1q (the written delegations alone): 86 moved (to contract-home 86, to gap 0)",
         "    cowork_confidence_contract.md: −0 / +1",
         "    cowork_engage_arc_plan.md: −0 / +3",
         "    cowork_joint_estimator_architecture.md: −0 / +5",
@@ -566,11 +566,11 @@
         "    cowork_phrase_boundary_design.md: −0 / +8",
         "    cowork_prefit_gates.md: −0 / +5",
         "    cowork_progression_schema_design.md: −0 / +8",
-        "    cowork_score_census.md: −0 / +6",
+        "    cowork_score_census.md: −0 / +11",
         "    cowork_voiceleading_axis_design.md: −0 / +8",
         "    docs/llm_integration.md: −0 / +7",
         "  write-list documents still holding a `gap` entry: cowork_layer1_note_model_design.md, cowork_layer1_tone_collection_design.md, cowork_layer6_grouping_design.md, cowork_phrase_boundary_design.md",
-        "  since phase 1r (the 2026-08-08 apply): 13 moved (to contract-home 13, to gap 0)",
+        "  since phase 1r (the 2026-08-08 apply): 18 moved (to contract-home 18, to gap 0)",
         "the home classification and its artifact re-derive from the files"
       ],
       "stderr": [],
@@ -643,7 +643,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 9 documents; 78 re-home / 2 delegation / 14 no-home)"
+        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 8 documents; 73 re-home / 7 delegation / 14 no-home)"
       ],
       "stderr": [],
       "what_it_checks": "every entry of finish-line item 1 still carries an authored closing route, no route names an entry the item no longer carries other than the ones this wave re-homed, and the route population still re-derives from the finish line rather than from a stored list"
@@ -656,7 +656,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: item1_rehome_blocker.json re-derives byte-identically (9 open re-home rows)"
+        "PASS: item1_rehome_blocker.json re-derives byte-identically (4 open re-home rows)"
       ],
       "stderr": [],
       "what_it_checks": "what actually blocks finish-line item 1's re-home class still re-derives — the standing autonomous-operation authorization still locatable in CLAUDE.md by its anchor, every open re-home row's owning specification still naming at least one file, and every row's blocker still cut from that row's own recorded reason rather than from a stored verdict"

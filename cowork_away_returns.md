@@ -3093,6 +3093,126 @@ document about a measurement, which moves no value in it.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 1 — COMPLETE. Ruling 40 executed over all nine: FIVE close by step 2, FOUR are held at step 3 — and the held four are not one shape
+
+**The population was derived fresh at task start (A5)** from
+`tools/audit/decisions/finish_line_item1_routes.json`, where membership is itself derived from the
+authored owner string rather than listed by hand. No count is restated here (**D-431**).
+
+**A1 HOLDS in all three of its clauses, and each was checked before the act it licenses.** The
+census was read **WHOLE** before the first verdict, not sampled at the candidate sections. **The
+KIND HALF was judged PER SECTION before any step-2 write**, and the judgment is written down with
+its evidence rather than asserted — §3 (its single sentence IS an admission rule), §4 (its own
+heading calls it the accounting rule), §5 (tier definitions plus the standing entry rule, and the
+user's own approved Ruling 39 delegation wording names *the decision-tier block* as rule-stating),
+and §8c's Stage-5 fitting-pool licence constraint (rule (h)'s founding case, named in that same
+wording). **The findings surfaces admit nothing and were used for nothing:** §1's container table,
+§2, §7, and §8c's needs-vector table. **No entry fell outside the three steps, so the STOP the
+assumption reserves did not fire.**
+
+**★ STEP 1 CLOSED NOTHING, AND THAT IS A RESULT RATHER THAN AN OMISSION.** Step 1 — move the HOME
+pointer where a census rule-stating section ALREADY STATES the entry's rule — was checked for every
+one of the nine and applied to none. **Two were close and are recorded as checked-and-declined,
+because a near miss is exactly where a rule gets admitted by stretch.** §5's Tier J cites D-500's
+own ratification BY DATE while stating the tiers rather than the ratification; and §8c's licence
+constraint already says the difficulty case *"carries its own harder version of this caveat"*, which
+states D-614's FACT and not its CONSEQUENCE. A pointer move onto a sentence that does not state the
+rule would have been the stretch this ruling forbids.
+
+**FIVE CLOSE BY STEP 2 — the rule written into the census section that owns it, in that section's
+own voice, under the census-edit licence this ruling grants.**
+
+1. **D-513 → §3.** A registry `content` summary is enumeration PROVENANCE; whether a layer is
+   present is a MEASUREMENT made per slice at the files.
+2. **D-514 → §4.** A newly acquired annotation set whose works OVERLAP the regression corpus is
+   RECORD-ONLY — not wired to, not compared against, not bulk-diffed with the gate corpus, and any
+   use over those works is a USER RULING. Written as the dedupe rule read forward in time, which is
+   its own ground.
+3. **D-500 → §5.** The corpus expansion the user ratified is stated as the SCOPE the tiers
+   implement, with the research-tier-on-entry clause beside it so the widening cannot be read as a
+   gate movement.
+4. **D-422 → §5, at Tier J** — the tier that owns the jazz ground-truth path the deferral waits on.
+5. **D-614 → §8c**, beside the fitting-pool constraint and explicitly kept APART from it: those
+   bullets restrict a shipped fitted VALUE, this restricts a shipped FEATURE whose labels are
+   somebody else's property.
+
+**In all five the home and the verbatim are re-taken from the census's own newly written text, and
+the FORMER home and FORMER verbatim are preserved whole in the entry's provenance (#12).** Every
+source document is untouched. **★ AND WHAT THE HOME TEXT DELIBERATELY DOES NOT CARRY IS RECORDED
+PER ENTRY**, because it is the same discipline the previous two batches' homings used: the two
+falsified claims' identities, the acquired set's identity and licence and counts, and the
+bass-injection experiment's measured agreement values all stay in the records that measured them
+(**D-431**) — the census states the RULE, and names an instance only by its shape.
+
+**★ THE CLASSIFICATION CONFIRMS THE CLOSE RATHER THAN THE PROSE ASSERTING IT.** All five now
+classify **`contract-home`**, each decided by the section-level unit — *the delegation reaches this
+section and it STATES RULES* — which is Ruling 39's act finally producing the effect its own
+predicted outcome could not: **the delegation could never reach these entries while they sat in
+other documents, and it reaches them the moment they sit in the census.**
+
+**FOUR ARE HELD AT STEP 3, and they are NOT one shape — which is the finding a continuing session
+needs.**
+
+- **D-516 — the plainest.** It records an ADOPTION EVENT, not a rule: two ground-truth classes
+  admitted to the needs vector. Its content is the vector's MEMBERSHIP, the vector is §8c's findings
+  table, and both adopted rows already carry their adoption there. **There is no rule to write**,
+  and restating the table's rows in a rule-stating section would breach #6.
+- **D-515 — the same table, with a temptation attached.** Its decision is that pedal-point ground
+  truth gets its own row rather than a remark under a neighbour. A generalizable rule is visible —
+  *a ground-truth class with a named consumer gets its own row* — and it is **deliberately NOT
+  written**, because the record states the decision for one need and authoring the general form
+  would be composing a rule the record never made.
+- **D-475 — no census section exists for it at all.** It is a per-corpus ESTABLISHMENT verdict
+  (#19) about one held annotation set, and that set is named nowhere in the census; its natural
+  element is the needs-vector row for dual-annotator material, a findings table. Writing a verdict
+  about one corpus into a rule-stating section would be the MIRROR of the error step 3 prevents.
+- **D-613 — held because closing it needs a SPLIT.** The entry has a fact-of-absence half (implied
+  polyphony has no ground truth; do not re-search) whose census element is the needs-vector row
+  that already carries it, and a RULE half (what the surviving voice labels actually MEASURE must
+  be said at intake) that would fit §8c's intake-rule block. **Splitting one entry into two is a
+  decision about the decisions register's own unit**, which the user has already had to rule once,
+  at D-291/D-656, and it is not taken here.
+
+**Two authored inputs were maintained, each caught by its own tool's STOP rather than by a reader,
+and one of them needed a judgment that is stated because it is one.** The classifier and the
+delegation bar both STOPPED on `docs/implementation_roadmap.md`, emptied by D-422's re-home; both
+judgments were moved WHOLE into their retired blocks with the reason they retired (#12, **D-648**),
+and the roadmap's own text is untouched — what stays there is its record of the Stage-5 design's
+signing, which is a plan's record of an event and not the rule the entry carried. **The judgment:**
+§5 had never held a register entry, so it carried no `states_rules` verdict; one was AUTHORED with
+its evidence read in place BEFORE the write, and it says in terms that the heading's word
+*proposed* governs the tier ASSIGNMENTS the user disposes of, not the tier definitions or the entry
+rule — the same non-homogeneity §1, §8 and §8b already record rather than smooth over.
+
+**★ AND THE SEAM RULING 38 CREATED IN THE ROUTE TABLE APPEARED AGAIN, EXACTLY AS THE PREVIOUS BATCH
+PREDICTED IT WOULD.** The executed-check reads the AUTHORED tuple, which still says *needs a
+delegation* because #12 keeps it there, so five performed re-homes read as never having happened.
+A **sixth per-act table** was added, one per wave as the five before it are, with the reason written
+at the code. **No other entry's verdict is touched.** That the same seam fires on every wave is
+worth the user's attention: it is a standing property of preserving an authored judgment beside a
+ruled one, not a defect of either.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires. Six derivations went stale by this task's own edits and
+were regenerated, not repaired, and **the set stands at ZERO failing** with the classification green
+after it. Every verdict is at `tools/audit/guard_state.json` → `summary` and none is restated here
+(**D-431**).
+
+**★ THE STANDING SELF-CHECK CAUGHT ONE RESERVED-WORD COLLISION IN THIS TASK'S OWN NEW TEXT AND ONE
+MORE IN TASK 0's, both corrected before their commits** — the bare non-musical *part*, twice in the
+queue's new §10 and once in the census's new §4 text, and the bare non-musical *register* in a route
+verdict. **This is the fifth consecutive wave whose self-check has caught one in its own new prose**,
+and this wave's instances arrived the way the record says they always do: by matching the idiom of
+the sentence next to them.
+
+**Holds:** the four census entries above, each named with the reason it is held and, where one
+exists, the act that would close it. **Surfacings:** none new bearing on the analysis — every
+subject of this task is where a recorded decision is written down.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

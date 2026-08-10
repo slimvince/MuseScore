@@ -19,7 +19,7 @@
   "★_the_sharpest_evidence_that_licensing_is_not_the_binding_constraint": {
    "what_it_is": "Entries whose owner names ONLY files the standing authorization ALREADY licenses, and which are still not executable. For these, widening the surface changes nothing — there is nothing to widen. They are blocked by the owner.",
    "count": 0,
-   "of_the_open_re_home_population": 9,
+   "of_the_open_re_home_population": 4,
    "ids": []
   }
  },
@@ -31,23 +31,18 @@
   ]
  },
  "counted": {
-  "open_re_home_rows": 9,
+  "open_re_home_rows": 4,
   "by_blocker": {
-   "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here": 9
+   "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here": 4
   },
   "rows_whose_owner_names_only_already_licensed_files": 0
  },
  "by_blocker": {
   "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here": [
-   "D-422",
    "D-475",
-   "D-500",
-   "D-513",
-   "D-514",
    "D-515",
    "D-516",
-   "D-613",
-   "D-614"
+   "D-613"
   ]
  },
  "★_the_edit_surface_the_class_REQUIRES": {
@@ -55,18 +50,13 @@
   "★_it_is_NOT_widened_here": "No surface is claimed, assumed or taken. What a file would RECEIVE is the entries listed beside it — and for most of them the owner is not determinate, so the licence is not what is missing. A widening would unblock only the licensing class.",
   "files": {
    "cowork_score_census.md": {
-    "entries_naming_it": 9,
+    "entries_naming_it": 4,
     "already_licensed": false,
     "entry_ids": [
-     "D-422",
      "D-475",
-     "D-500",
-     "D-513",
-     "D-514",
      "D-515",
      "D-516",
-     "D-613",
-     "D-614"
+     "D-613"
     ]
    }
   },
@@ -75,48 +65,6 @@
   ]
  },
  "rows": [
-  {
-   "id": "D-500",
-   "home_document": "cowork_architecture_review_2026_07.md",
-   "owning_specification": "cowork_score_census.md (the corpus decision surface)",
-   "files_named_in_the_owner": [
-    "cowork_score_census.md"
-   ],
-   "every_named_file_is_already_licensed": false,
-   "blocker": "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here",
-   "matched_phrase": null,
-   "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": null,
-   "points_at_another_entry_for_its_owner_question": null,
-   "the_recorded_reason_verbatim": "A ratified widening of the material the analysis is measured against. Its owner is the corpus census, whose delegation today reaches §8c only; widening a delegation is the act rule (g) reserves to the user."
-  },
-  {
-   "id": "D-513",
-   "home_document": "cowork_census_full_needs_audit.md",
-   "owning_specification": "cowork_score_census.md",
-   "files_named_in_the_owner": [
-    "cowork_score_census.md"
-   ],
-   "every_named_file_is_already_licensed": false,
-   "blocker": "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here",
-   "matched_phrase": null,
-   "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": null,
-   "points_at_another_entry_for_its_owner_question": null,
-   "the_recorded_reason_verbatim": "A rule about what a corpus registry's content field does and does not establish. Its subject is the corpus census surface, whose delegation reaches §8c only."
-  },
-  {
-   "id": "D-514",
-   "home_document": "cowork_census_full_needs_audit.md",
-   "owning_specification": "cowork_score_census.md",
-   "files_named_in_the_owner": [
-    "cowork_score_census.md"
-   ],
-   "every_named_file_is_already_licensed": false,
-   "blocker": "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here",
-   "matched_phrase": null,
-   "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": null,
-   "points_at_another_entry_for_its_owner_question": null,
-   "the_recorded_reason_verbatim": "A record-only constraint on a newly acquired annotation set that overlaps the gate corpus. Its subject is corpus scope; the census owns it and the delegation does not reach it."
-  },
   {
    "id": "D-515",
    "home_document": "cowork_census_full_needs_audit.md",
@@ -172,34 +120,6 @@
    "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": null,
    "points_at_another_entry_for_its_owner_question": null,
    "the_recorded_reason_verbatim": "A confirmed absence of ground truth for implied polyphony, plus what the surviving voice labels actually measure. Corpus-establishment subject; the census owns it."
-  },
-  {
-   "id": "D-614",
-   "home_document": "cowork_union_search_record.md",
-   "owning_specification": "cowork_score_census.md",
-   "files_named_in_the_owner": [
-    "cowork_score_census.md"
-   ],
-   "every_named_file_is_already_licensed": false,
-   "blocker": "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here",
-   "matched_phrase": null,
-   "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": null,
-   "points_at_another_entry_for_its_owner_question": null,
-   "the_recorded_reason_verbatim": "Licence posture of every difficulty-grade label source. Corpus subject, and the census already carries the shipped-parameter licence-pool constraint at §8c -- but widening a delegation is the user's act."
-  },
-  {
-   "id": "D-422",
-   "home_document": "docs/implementation_roadmap.md",
-   "owning_specification": "cowork_score_census.md",
-   "files_named_in_the_owner": [
-    "cowork_score_census.md"
-   ],
-   "every_named_file_is_already_licensed": false,
-   "blocker": "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here",
-   "matched_phrase": null,
-   "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": null,
-   "points_at_another_entry_for_its_owner_question": null,
-   "the_recorded_reason_verbatim": "The jazz fit waits on jazz ground truth. Recorded DEFERRED; its binding fact is a corpus fact, so the census is the owner and the delegation does not reach it."
   }
  ]
 }

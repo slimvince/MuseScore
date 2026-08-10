@@ -229,9 +229,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_score_census.md:220`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_score_census.md:257`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 187). A delegation at ARCHITECTURE.md:370 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Its class before the phase-1n staged application was `gap`.
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 224). A delegation at ARCHITECTURE.md:370 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Its class before the phase-1n staged application was `gap`.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -257,10 +257,16 @@
 
 ### D-614 — Every real difficulty-grade label source is research-only or proprietary at origin — a commercial grading feature needs a licence path or its own labels
 
-> **Negatives:** no machine-readable ABRSM/RCM/Trinity syllabus, no Henle dump, no violin/guitar grade
-> dataset. **T-32 caveat recorded:** every real label source is research-only/proprietary at origin — a
-> COMMERCIAL grading feature needs a license path or own labels; CIPI+Mikrokosmos suffice for research
-> validation.
+> **★ AND THE DIFFICULTY-GRADE CASE IS A DIFFERENT PROHIBITION FROM THE FOUR BULLETS ABOVE, STATED APART SO IT IS NOT
+> READ AS THE SAME ONE.** Those restrict the pool a **shipped FITTED VALUE** may be estimated on. This restricts a
+> shipped **FEATURE** whose labels are somebody else's property. **Every real difficulty-grade label source is
+> research-only or proprietary AT ORIGIN:** no machine-readable exam-syllabus dump exists in any form, the open sets
+> carry no licence file at all, the gated one is request-access and research-use-only, and the largest carries a
+> free-licence badge over research-use-only text. **So a COMMERCIAL grading feature needs a licence path or labels of
+> our own** — the held material is enough to validate the idea as research and is not enough to ship it. *Why it is
+> stated here and not only where it was found:* this is the section a fitter or a feature design reads before declaring
+> its pool, and a designer who meets the fitted-value rule must also meet the case where the constraint bites on the
+> feature instead.
 
 **In plain words.** Every collection that says how hard a piece is to play is either restricted to research use or belongs to somebody who sells it. So a difficulty feature in a shipped product would need either a licence agreement or labels of our own; the held material is enough to check the idea works and not enough to ship it.
 
@@ -268,9 +274,9 @@
 
 **Status.** LIVE · decided 2026-07-04 · ratified by user
 
-**Home.** `cowork_union_search_record.md:87-90`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_score_census.md:292-301`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§3** — `## 3. N14 — difficulty/grade labels: real datasets exist; license posture is the open risk` (heading at line 76). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 224). A delegation at ARCHITECTURE.md:370 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
-**Provenance.** `cowork_union_search_record.md` §3, the union search round. Read in full by READ WAVE 6, 2026-08-04. The document's status block records the user's disposition of item 3 in terms — *"the T-32 commercial caveat recorded in the product-tool register"* — so the caveat carries the user's act while the search finding behind it names no ratifier. Distinct from **D-292**, which restricts the pool a SHIPPED FITTED VALUE may be estimated on; this restricts a shipped FEATURE whose labels are somebody else's property.
+**Provenance.** `cowork_union_search_record.md` §3, the union search round. Read in full by READ WAVE 6, 2026-08-04. The document's status block records the user's disposition of item 3 in terms — *"the T-32 commercial caveat recorded in the product-tool register"* — so the caveat carries the user's act while the search finding behind it names no ratifier. Distinct from **D-292**, which restricts the pool a SHIPPED FITTED VALUE may be estimated on; this restricts a shipped FEATURE whose labels are somebody else's property. ★ RE-HOMED 2026-08-09 into `cowork_score_census.md` §8c, beside the Stage-5 fitting-pool licence constraint, by `cc_instruction_return_continuation_8.md` Task 1, under the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md` — STEP 2. Step 1 was CLOSE and did not apply: that constraint's last bullet already says the difficulty case *"carries its own harder version of this caveat"*, which states the FACT and not the consequence, so the rule was written beside it in the section's own voice under the census-edit licence. THE KIND HALF WAS JUDGED BEFORE THE WRITE and this block passes it — it is rule (h)'s own founding case, named in the user's approved Ruling 39 delegation wording as `the §8c shipped-parameter licence-pool constraint`. FORMER HOME, PRESERVED (#12): `cowork_union_search_record.md:87-90`, which is untouched. FORMER VERBATIM, PRESERVED (#12): '**Negatives:** no machine-readable ABRSM/RCM/Trinity syllabus, no Henle dump, no violin/guitar grade dataset. **T-32 caveat recorded:** every real label source is research-only/proprietary at origin — a COMMERCIAL grading feature needs a license path or own labels; CIPI+Mikrokosmos suffice for research validation.' The home text names the label sources by their licence posture rather than by identity, so the rule survives a source list that moves (D-431).
 

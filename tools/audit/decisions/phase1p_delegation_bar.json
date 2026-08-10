@@ -28,12 +28,12 @@
   },
   "population": {
     "entries": 189,
-    "documents": 39,
+    "documents": 38,
     "note": "the register's `contract-home` + `gap` entries — the classes the criterion reaches. `process`, `project-convention` and `unhomed` are outside it."
   },
   "verdict_totals": {
-    "ADMIT": 146,
-    "EXCLUDE": 43
+    "ADMIT": 151,
+    "EXCLUDE": 38
   },
   "retired_form_judgments": {
     "what_this_is": "FORM judgments for documents that are NOBODY'S HOME any more, every entry they held having been re-homed into the specification that owns its subject. Each judgment records a READING made at a surface, which no derivation reproduces, so it is moved WHOLE rather than deleted (#12). It is carried here as history: nothing counts it, no verdict reads it, and `mentions()` does not re-verify it.",
@@ -41,6 +41,7 @@
     "the_stop_in_the_other_direction": "A retired document that becomes somebody's home again halts the run, so a judgment cannot be resurrected without being re-read into FORMS.",
     "retired_2026_08_09": "CC, dispatch `cc_instruction_return_continuation.md`, Task 0, applying the user's Ruling 4(b) of 2026-08-09. The set is the one this tool's own STOP named at HEAD: every document below carried a FORM judgment while it was somebody's home and is nobody's home now, its entries having been re-homed into their owning specifications by the phase-1 homing waves. No grade is re-read, re-graded or corrected here -- each is moved unchanged.",
     "retired_2026_08_09_the_seventh_return_continuation": "CC, dispatch `cc_instruction_return_continuation_7.md`, Task 1, under the user's Ruling 38 of 2026-08-09. ONE document: `cowork_information_loss_audit.md`, emptied by re-homing D-581 and D-583 into P2 of `cowork_audit_protocol.md`. This tool STOPPED on its grade as a FORM judgment for a document that is nobody's home, which is that guard working. The grade is moved unchanged and is not re-read or re-graded.",
+    "retired_2026_08_09_the_eighth_return_continuation": "CC, dispatch `cc_instruction_return_continuation_8.md`, Task 1, under the user's Ruling 40 of 2026-08-09 -- the three-step procedure that replaces Ruling 39's unreachable predicted outcome. ONE document: `docs/implementation_roadmap.md`, emptied by re-homing D-422 (the jazz fit deferred to the jazz-ground-truth conversion) into `cowork_score_census.md` §5 at Tier J, the tier that owns the path the deferral waits on. This tool STOPPED on its grade as a FORM judgment for a document that is nobody's home, which is that guard working. The grade is moved unchanged and is not re-read or re-graded; the roadmap's own text is untouched.",
     "judgments": {
       "cowork_adjudication_dossier.md": {
         "form": "provenance-attribution",
@@ -198,6 +199,12 @@
         "anchor": null,
         "why": "Named in none of the three surfaces; verified mechanically here."
       },
+      "docs/implementation_roadmap.md": {
+        "form": "not-named-in-any-ratified-surface",
+        "surface": null,
+        "anchor": null,
+        "why": "Named in none of the three surfaces; verified mechanically here."
+      },
       "docs/iter90_bass_as_root_promotion_shelved.md": {
         "form": "provenance-attribution",
         "surface": "ARCHITECTURE.md",
@@ -269,7 +276,7 @@
   "documents": [
     {
       "document": "cowork_score_census.md",
-      "entries": 17,
+      "entries": 22,
       "entry_ids": [
         "D-359",
         "D-360",
@@ -287,10 +294,15 @@
         "D-372",
         "D-373",
         "D-374",
-        "D-375"
+        "D-375",
+        "D-422",
+        "D-500",
+        "D-513",
+        "D-514",
+        "D-614"
       ],
       "current_contract_home": 11,
-      "current_gap": 6,
+      "current_gap": 11,
       "form": "explicit-delegation-clause",
       "delegation_citation": "ARCHITECTURE.md:370",
       "form_now": "explicit-delegation-clause",
@@ -805,31 +817,6 @@
       "mentions_in_ratified_surfaces": []
     },
     {
-      "document": "cowork_census_full_needs_audit.md",
-      "entries": 4,
-      "entry_ids": [
-        "D-513",
-        "D-514",
-        "D-515",
-        "D-516"
-      ],
-      "current_contract_home": 0,
-      "current_gap": 4,
-      "form": "not-named-in-any-ratified-surface",
-      "delegation_citation": null,
-      "form_now": "not-named-in-any-ratified-surface",
-      "delegation_citation_now": null,
-      "delegation_line_now": null,
-      "delegation_written_since_the_check": false,
-      "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
-      "verdict": "EXCLUDE",
-      "verdict_now": "EXCLUDE",
-      "movement": "none",
-      "decided_by_the_bar": false,
-      "mentions_in_ratified_surfaces": []
-    },
-    {
       "document": "cowork_confidence_contract.md",
       "entries": 4,
       "entry_ids": [
@@ -946,30 +933,6 @@
       ]
     },
     {
-      "document": "cowork_architecture_review_2026_07.md",
-      "entries": 3,
-      "entry_ids": [
-        "D-498",
-        "D-499",
-        "D-500"
-      ],
-      "current_contract_home": 0,
-      "current_gap": 3,
-      "form": "not-named-in-any-ratified-surface",
-      "delegation_citation": null,
-      "form_now": "not-named-in-any-ratified-surface",
-      "delegation_citation_now": null,
-      "delegation_line_now": null,
-      "delegation_written_since_the_check": false,
-      "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
-      "verdict": "EXCLUDE",
-      "verdict_now": "EXCLUDE",
-      "movement": "none",
-      "decided_by_the_bar": false,
-      "mentions_in_ratified_surfaces": []
-    },
-    {
       "document": "cowork_engage_arc_plan.md",
       "entries": 3,
       "entry_ids": [
@@ -1081,6 +1044,52 @@
       ]
     },
     {
+      "document": "cowork_architecture_review_2026_07.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-498",
+        "D-499"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
+      "document": "cowork_census_full_needs_audit.md",
+      "entries": 2,
+      "entry_ids": [
+        "D-515",
+        "D-516"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 2,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
+    },
+    {
       "document": "cowork_layer1_tone_collection_design.md",
       "entries": 2,
       "entry_ids": [
@@ -1153,29 +1162,6 @@
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:79"
       ]
-    },
-    {
-      "document": "cowork_union_search_record.md",
-      "entries": 2,
-      "entry_ids": [
-        "D-613",
-        "D-614"
-      ],
-      "current_contract_home": 0,
-      "current_gap": 2,
-      "form": "not-named-in-any-ratified-surface",
-      "delegation_citation": null,
-      "form_now": "not-named-in-any-ratified-surface",
-      "delegation_citation_now": null,
-      "delegation_line_now": null,
-      "delegation_written_since_the_check": false,
-      "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
-      "verdict": "EXCLUDE",
-      "verdict_now": "EXCLUDE",
-      "movement": "none",
-      "decided_by_the_bar": false,
-      "mentions_in_ratified_surfaces": []
     },
     {
       "document": "cowork_factorization_desk_simulation.md",
@@ -1314,10 +1300,10 @@
       "mentions_in_ratified_surfaces": []
     },
     {
-      "document": "docs/implementation_roadmap.md",
+      "document": "cowork_union_search_record.md",
       "entries": 1,
       "entry_ids": [
-        "D-422"
+        "D-613"
       ],
       "current_contract_home": 0,
       "current_gap": 1,
@@ -1409,8 +1395,8 @@
   },
   "census_8c_mixed_section": {
     "needs_vector_table": {
-      "first_row_line": 207,
-      "last_row_line": 226,
+      "first_row_line": 244,
+      "last_row_line": 263,
       "row_count": 20
     },
     "admitted_in_8c": [
@@ -1424,7 +1410,8 @@
       "D-372",
       "D-373",
       "D-374",
-      "D-375"
+      "D-375",
+      "D-614"
     ],
     "of_those_rows_of_the_findings_table": [
       "D-366",
@@ -1439,7 +1426,8 @@
     "of_those_not_rows_of_the_table": [
       "D-365",
       "D-367",
-      "D-368"
+      "D-368",
+      "D-614"
     ],
     "note": "Task 1's figure. The phase-1n note on `open_items/OI-281.md` (§4) and the phase-1n `STATUS.md` entry both say NINE of the eleven are rows of the table; derived from the file the count is what `of_those_rows_of_the_findings_table` holds."
   }

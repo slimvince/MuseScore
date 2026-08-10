@@ -8,8 +8,8 @@
     "A_no_delegation_exists": {
       "what_it_is": "Entries whose home document is named in NONE of the three user-ratified surfaces.",
       "the_criterion_that_decides_it": "clause (a), the fifth home case (OI-268) — the document is named in none of the three user-ratified surfaces, so there is no delegation to grade",
-      "entries": 23,
-      "documents": 13,
+      "entries": 18,
+      "documents": 12,
       "by_document": {
         "cowork_architecture_reassessment.md": [
           "D-282",
@@ -19,12 +19,9 @@
         ],
         "cowork_architecture_review_2026_07.md": [
           "D-498",
-          "D-499",
-          "D-500"
+          "D-499"
         ],
         "cowork_census_full_needs_audit.md": [
-          "D-513",
-          "D-514",
           "D-515",
           "D-516"
         ],
@@ -48,11 +45,7 @@
           "D-610"
         ],
         "cowork_union_search_record.md": [
-          "D-613",
-          "D-614"
-        ],
-        "docs/implementation_roadmap.md": [
-          "D-422"
+          "D-613"
         ],
         "docs/iter92_joint_bass_chord_scoring.md": [
           "D-538"
@@ -83,7 +76,7 @@
     "D_closed": {
       "what_it_is": "Entries the criteria admit: delegated section, states rules.",
       "the_criterion_that_decides_it": "the delegation reaches this section and the section states rules",
-      "entries": 152,
+      "entries": 157,
       "documents": 25,
       "by_document": {
         "cowork_bounded_context_design.md": [
@@ -250,7 +243,12 @@
           "D-372",
           "D-373",
           "D-374",
-          "D-375"
+          "D-375",
+          "D-422",
+          "D-500",
+          "D-513",
+          "D-514",
+          "D-614"
         ],
         "cowork_stage5_fitter_design.md": [
           "D-312",
@@ -365,13 +363,14 @@
         "document": "cowork_score_census.md",
         "on_the_write_list": false,
         "class_at_head_DERIVED": {
-          "contract-home": 17
+          "contract-home": 22
         },
         "entries_still_lost_to_the_delegation_half_DERIVED": [],
         "sections_the_delegation_now_reaches_DERIVED": [
           "§1",
           "§3",
           "§4",
+          "§5",
           "§8",
           "§8b",
           "§8c"
@@ -404,8 +403,8 @@
   },
   "what_is_NOT_proposed_as_a_delegation_and_why": {
     "class_A": {
-      "entries": 23,
-      "documents": 13,
+      "entries": 18,
+      "documents": 12,
       "why_no_draft_is_offered": "The register's own `not_write_list_cases` rules on exactly this shape: 'A delegation drafted for them would be a new decision about where a concern is owned, not the repair of a wording — so the remedy is the OI-272 per-kind homing act into the specification that owns each decision, which is already the standing scheme.' Drafting delegations for this class would be proposing that many new decisions."
     },
     "class_B": {
@@ -569,8 +568,8 @@
   },
   "counted": {
     "home_population_entries": 189,
-    "home_population_documents": 39,
-    "lost_for_want_of_a_delegation": 24,
+    "home_population_documents": 38,
+    "lost_for_want_of_a_delegation": 19,
     "of_which_a_widening_would_move": 1,
     "outstanding_set_documents": 1,
     "write_list_members": 11,

@@ -201,6 +201,22 @@ REHOMED_2026_08_09_SEVENTH_RETURN = {
     "D-583": "cowork_audit_protocol.md",
 }
 
+# The SIXTH per-act table, one per wave as the five before it are.  These five left item 1 under
+# the user's RULING 40 (`cowork_rulings_2026_08_09_eighth_stop.md`), STEP 2 of its three-step
+# procedure: the rule was written into the census section that owns it, in that section's own
+# voice, under the census-edit licence the ruling grants -- and the entry's home and verbatim then
+# moved there.  They need this table for the same reason the two above do: Ruling 38's conversion
+# of an authored NEEDS A DELEGATION into a RE-HOME is applied at ROW BUILD while ROUTES keeps the
+# authored judgment (#12), so the executed-check reading the authored tuple alone would report a
+# performed act as never having happened.
+REHOMED_2026_08_09_EIGHTH_RETURN = {
+    "D-513": ("cowork_score_census.md", "§3, the inclusion criteria"),
+    "D-514": ("cowork_score_census.md", "§4, the overlap-hazard accounting rule"),
+    "D-500": ("cowork_score_census.md", "§5, the decision-tier block"),
+    "D-422": ("cowork_score_census.md", "§5, at Tier J"),
+    "D-614": ("cowork_score_census.md", "§8c, beside the Stage-5 fitting-pool licence constraint"),
+}
+
 # ★ THE 2026-08-09 RULING — THE HOMING FORK IS RESOLVED FOR THE WHOLE REMAINING POPULATION.
 #
 # `cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38 (user).  Its words: "For every remaining
@@ -331,7 +347,86 @@ RULING_40 = (
 # section already state this rule, and is the owning section a findings table -- and a reading is
 # authored.  The population is NOT listed here: membership stays derived from the authored owner
 # string above, so an entry that has no verdict yet says so rather than being silently absent.
-RULING_40_STEPS: dict[str, str] = {}
+RULING_40_STEPS: dict[str, str] = {
+    # ── EXECUTED 2026-08-09, cc_instruction_return_continuation_8.md Task 1 ───────────────────
+    # The census was read WHOLE before the first verdict, and the KIND HALF was judged per
+    # section before any write.  The rule-stating sections used: §3 (inclusion criteria -- "A
+    # source enters the registry only with all five fields decided"), §4 (the overlap-hazard
+    # ACCOUNTING RULE, so named in its own heading), §5 (the decision-tier block, named as
+    # rule-stating in the user's own approved Ruling 39 delegation wording), and §8c's Stage-5
+    # fitting-pool licence constraint (rule (h)'s founding case, named in that same wording).
+    # The FINDINGS surfaces, which admit nothing: §1's container table, §2, §7, and §8c's
+    # needs-vector table.
+    "D-513": ("STEP 2 — WRITTEN. No census rule-stating section already stated this rule, so "
+              "step 1 did not apply. The OWNING section is §3 (inclusion criteria), which "
+              "STATES RULES, so the rule was written there in §3's own voice under this "
+              "ruling's census-edit licence: a registry `content` summary is enumeration "
+              "PROVENANCE and presence of a layer is a MEASUREMENT made per slice. The entry's "
+              "home and verbatim now point there; the former home and the former verbatim are "
+              "preserved in its provenance (#12), and the audit that recorded the lesson is "
+              "untouched."),
+    "D-514": ("STEP 2 — WRITTEN. Step 1 was checked and did not apply: §4 states the dedupe "
+              "rule and cites the same contamination lesson, but it does NOT state the "
+              "record-only status or the user-ruling requirement, which are this entry's rule. "
+              "§4 STATES RULES — its own heading calls it the accounting rule — so the rule "
+              "was written there, read forward in time from the dedupe rule it extends. The "
+              "acquired set's identity, licence and counts were deliberately NOT carried: they "
+              "grade the instance and stay where they were measured (D-431)."),
+    "D-500": ("STEP 2 — WRITTEN. Step 1 was checked and did not apply: §5's Tier G lists the "
+              "chromatic material and its Tier J cites this very ratification BY DATE, but "
+              "neither STATES the ratification as the scope rule the tiers implement. §5 "
+              "STATES RULES — the user's own approved Ruling 39 delegation wording names 'the "
+              "decision-tier block' as one of the census's rule-stating sections — so the "
+              "ratification was written there with its defense and, beside it, the "
+              "research-tier-on-entry clause, so that a reader cannot take the widening for a "
+              "gate movement."),
+    "D-422": ("STEP 2 — WRITTEN, at §5's Tier J, the tier that owns the jazz ground-truth path "
+              "this deferral waits on. Step 1 did not apply: no census section stated the "
+              "deferral. The home text states the MECHANISM that makes it a corpus fact — the "
+              "held jazz material is melody-and-chord-symbol transcription with the bass and "
+              "the voicings absent — and carries no measured value from the experiment that "
+              "established it (D-431). The roadmap's own record of the signing is untouched."),
+    "D-614": ("STEP 2 — WRITTEN, beside §8c's Stage-5 fitting-pool licence constraint. ★ STEP 1 "
+              "WAS CLOSE AND IS RECORDED AS CHECKED-AND-DECLINED: that constraint's last bullet "
+              "already says the difficulty case 'carries its own harder version of this caveat', "
+              "which states the FACT and not the CONSEQUENCE this entry records — that a "
+              "commercial grading feature needs a licence path or labels of our own. A pointer "
+              "move onto a sentence that does not state the rule would be admitting it by "
+              "stretch, which this ruling forbids. The block STATES RULES — it is rule (h)'s "
+              "founding case and is named in the approved Ruling 39 delegation wording — so the "
+              "rule was written beside it, kept explicitly apart from the shipped-fitted-value "
+              "prohibition it is neighbours with."),
+    "D-515": ("STEP 3 — HELD. The owning census element is the §8c NEEDS-VECTOR TABLE, whose N20 "
+              "row is what this decision creates and which already carries its adoption. A "
+              "needs-vector row is a per-need STATE entry, so the table records findings and "
+              "admits no rule. The generalizable half — that a ground-truth class gets its own "
+              "row rather than a remark under a neighbour — is NOT written, because the record "
+              "states the decision for this one need and authoring the general form would be "
+              "composing a rule the record never made. Adding a rule-stating block to a findings "
+              "table is the document-structure act this ruling reserves to the user."),
+    "D-516": ("STEP 3 — HELD, for the same reason as D-515 and more plainly: this entry records "
+              "an ADOPTION EVENT — two ground-truth classes admitted to the needs vector — and "
+              "not a rule. Its content is the vector's MEMBERSHIP, the vector is the §8c findings "
+              "table, and both adopted rows already carry their adoption there. There is no rule "
+              "to write into a rule-stating section, and restating the table's own rows in one "
+              "would breach #6."),
+    "D-475": ("STEP 3 — HELD. This is a per-corpus ESTABLISHMENT verdict (#19) about one held "
+              "annotation set, and the census carries no section for it at all: the set is named "
+              "nowhere in the document, and its natural census element is the §8c needs-vector "
+              "row for dual-annotator material — a findings table. Writing a verdict about one "
+              "corpus into a rule-stating section would be the mirror of the error step 3 "
+              "prevents: a finding placed where rules are stated. The row is named and the entry "
+              "is left for the user."),
+    "D-613": ("STEP 3 — HELD, and the reason is a SPLIT that is not a session's to make. The "
+              "entry has two halves: a fact-of-absence (implied-polyphony ground truth is "
+              "confirmed absent — do not re-search) and a RULE (what the surviving voice labels "
+              "actually measure must be said at intake). The finding half's census element is "
+              "the §8c needs-vector row that already carries it — a findings table — while the "
+              "rule half would fit §8c's intake-rule block, which does state rules. Splitting "
+              "one entry into two is a decision about the decisions register's own unit, which "
+              "the user settled by ruling once already, at D-291/D-656, and it is not taken "
+              "here."),
+}
 
 
 def closed_row_home(entry_id: str) -> str:
@@ -345,6 +440,12 @@ def closed_row_home(entry_id: str) -> str:
         return (f"{REHOMED_2026_08_09_SEVENTH_RETURN[entry_id]} P2 (re-homed 2026-08-09 under the "
                 "user's Ruling 38, the homing default, by the seventh return continuation; class "
                 "`process` — no longer in item 1)")
+    if entry_id in REHOMED_2026_08_09_EIGHTH_RETURN:
+        doc, sec = REHOMED_2026_08_09_EIGHTH_RETURN[entry_id]
+        return (f"{doc} {sec} (re-homed 2026-08-09 under the user's Ruling 40, STEP 2 of the "
+                "three-step census procedure, by the eighth return continuation; the rule written "
+                "in the section's own voice under that ruling's census-edit licence, the kind half "
+                "judged before the write — no longer in item 1)")
     if entry_id in OWNER_RULED_2026_08_07_HOMING:
         return (f"{OWNER_RULED_2026_08_07_HOMING[entry_id]} (re-homed 2026-08-07 on the user's "
                 "owner ruling, the homing wave — no longer in item 1)")
@@ -938,6 +1039,12 @@ def _was_executed(entry_id: str) -> bool:
     that any route whatever discharges it, and a later wave that re-routed one of these must not
     inherit the ruling's answer to a question it no longer asks."""
     route, owner, unambig, _ = ROUTES[entry_id]
+    if entry_id in REHOMED_2026_08_09_EIGHTH_RETURN:
+        # A FIFTH CASE, on the same ground as the fourth immediately below: Ruling 40's STEP 2 is
+        # the re-home Ruling 38 makes the default, performed under a ruling that names the target
+        # SECTION. The route that governs is the RULED one, and the authored tuple still says
+        # NEEDS A DELEGATION because #12 keeps it there.
+        return route in (REHOME, DELEGATION)
     if entry_id in REHOMED_2026_08_09_SEVENTH_RETURN:
         # A FOURTH CASE, and it needs its own line rather than joining the three below, because
         # Ruling 38 converts an authored NEEDS A DELEGATION into a RE-HOME and that conversion is

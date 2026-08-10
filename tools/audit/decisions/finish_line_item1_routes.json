@@ -91,7 +91,7 @@
  "★_the_owner_judgment_read_rather_than_the_column": {
   "what_this_is": "OPEN_ITEMS.md OI-342 records that the `owner_is_unambiguous` column carries the EDIT-SURFACE answer for part of this population, although the row already has a separate field for that. This block reads the owner JUDGMENT -- the recorded reason -- instead of the column, and reports where the two disagree. It CORRECTS NOTHING: the column is untouched and no count in it is re-authored.",
   "how_each_set_is_cut": "By an exact phrase the authored reasons already contain, never by a vocabulary assembled until the answer came out right. `disagreement` is the reasons containing \"outside this dispatch's edit surface\"; `asserts_a_determinate_site` is the reasons containing 'determinate' and not 'not determinate'.",
-  "open_re_home_rows": 9,
+  "open_re_home_rows": 4,
   "disagreement_column_says_ambiguous_reason_names_only_the_edit_surface": {
    "count": 0,
    "ids": [],
@@ -118,14 +118,14 @@
  "the_NO_HOME_class_is_dispositioned_under_ruling_R1_elsewhere": "tools/audit/decisions/r1_superseded_reach.json applies the user's ruling R1 of 2026-08-04 to every member of this table's NO-HOME class: the successor the record names for each entry's live content, whether that successor is homed, and the disposition that follows. The route column here is UNCHANGED and no disposition or count is restated (D-431, #6).",
  "counted": {
   "entries": 94,
-  "documents": 9,
-  "route_RE_HOME": 78,
-  "route_NEEDS_A_DELEGATION": 2,
+  "documents": 8,
+  "route_RE_HOME": 73,
+  "route_NEEDS_A_DELEGATION": 7,
   "route_NO_HOME_EXISTS": 14,
   "re_home_with_an_unambiguous_owner": 13,
-  "executable_under_this_dispatch": 71,
-  "closed_by_this_wave_and_no_longer_in_item_1": 71,
-  "still_open_in_item_1_at_HEAD": 23
+  "executable_under_this_dispatch": 76,
+  "closed_by_this_wave_and_no_longer_in_item_1": 76,
+  "still_open_in_item_1_at_HEAD": 18
  },
  "executed_this_wave": [
   "D-280",
@@ -136,6 +136,7 @@
   "D-328",
   "D-419",
   "D-421",
+  "D-422",
   "D-423",
   "D-449",
   "D-450",
@@ -159,10 +160,13 @@
   "D-495",
   "D-496",
   "D-497",
+  "D-500",
   "D-501",
   "D-510",
   "D-511",
   "D-512",
+  "D-513",
+  "D-514",
   "D-531",
   "D-532",
   "D-533",
@@ -192,6 +196,7 @@
   "D-607",
   "D-608",
   "D-609",
+  "D-614",
   "D-616",
   "D-622",
   "D-623",
@@ -371,6 +376,17 @@
    "executable_under_this_dispatch": true,
    "closed_by_this_wave": true,
    "reason": "Idiom re-discovery rides every corpus wave on research material only, and a changed cluster set is its own ratification event. §6.7 owns the taxonomy; whether it owns the re-run protocol is the same question as D-542.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-422",
+   "home_document": "cowork_score_census.md §5, at Tier J (re-homed 2026-08-09 under the user's Ruling 40, STEP 2 of the three-step census procedure, by the eighth return continuation; the rule written in the section's own voice under that ruling's census-edit licence, the kind half judged before the write — no longer in item 1)",
+   "route": "NEEDS A DELEGATION",
+   "owning_specification": "cowork_score_census.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The jazz fit waits on jazz ground truth. Recorded DEFERRED; its binding fact is a corpus fact, so the census is the owner and the delegation does not reach it.",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -627,6 +643,17 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
+   "id": "D-500",
+   "home_document": "cowork_score_census.md §5, the decision-tier block (re-homed 2026-08-09 under the user's Ruling 40, STEP 2 of the three-step census procedure, by the eighth return continuation; the rule written in the section's own voice under that ruling's census-edit licence, the kind half judged before the write — no longer in item 1)",
+   "route": "NEEDS A DELEGATION",
+   "owning_specification": "cowork_score_census.md (the corpus decision surface)",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A ratified widening of the material the analysis is measured against. Its owner is the corpus census, whose delegation today reaches §8c only; widening a delegation is the act rule (g) reserves to the user.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
    "id": "D-501",
    "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
    "route": "RE-HOME",
@@ -668,6 +695,28 @@
    "executable_under_this_dispatch": true,
    "closed_by_this_wave": true,
    "reason": "Gate A's retirement condition. Same owner question as D-510.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-513",
+   "home_document": "cowork_score_census.md §3, the inclusion criteria (re-homed 2026-08-09 under the user's Ruling 40, STEP 2 of the three-step census procedure, by the eighth return continuation; the rule written in the section's own voice under that ruling's census-edit licence, the kind half judged before the write — no longer in item 1)",
+   "route": "NEEDS A DELEGATION",
+   "owning_specification": "cowork_score_census.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A rule about what a corpus registry's content field does and does not establish. Its subject is the corpus census surface, whose delegation reaches §8c only.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-514",
+   "home_document": "cowork_score_census.md §4, the overlap-hazard accounting rule (re-homed 2026-08-09 under the user's Ruling 40, STEP 2 of the three-step census procedure, by the eighth return continuation; the rule written in the section's own voice under that ruling's census-edit licence, the kind half judged before the write — no longer in item 1)",
+   "route": "NEEDS A DELEGATION",
+   "owning_specification": "cowork_score_census.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A record-only constraint on a newly acquired annotation set that overlaps the gate corpus. Its subject is corpus scope; the census owns it and the delegation does not reach it.",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -990,6 +1039,17 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
+   "id": "D-614",
+   "home_document": "cowork_score_census.md §8c, beside the Stage-5 fitting-pool licence constraint (re-homed 2026-08-09 under the user's Ruling 40, STEP 2 of the three-step census procedure, by the eighth return continuation; the rule written in the section's own voice under that ruling's census-edit licence, the kind half judged before the write — no longer in item 1)",
+   "route": "NEEDS A DELEGATION",
+   "owning_specification": "cowork_score_census.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "Licence posture of every difficulty-grade label source. Corpus subject, and the census already carries the shipped-parameter licence-pool constraint at §8c -- but widening a delegation is the user's act.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
    "id": "D-616",
    "home_document": "ARCHITECTURE.md (re-homed 2026-08-07 on the user's owner ruling, the homing wave — no longer in item 1)",
    "route": "RE-HOME",
@@ -1091,57 +1151,6 @@
    "ruled_by": "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write. The ruling settles which of two available routes is the default; it creates none where the record says there is none. Dispositioned under D-642 at tools/audit/decisions/r1_superseded_reach.json."
   },
   {
-   "id": "D-500",
-   "home_document": "cowork_architecture_review_2026_07.md",
-   "route": "RE-HOME",
-   "owning_specification": "cowork_score_census.md (the corpus decision surface)",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A ratified widening of the material the analysis is measured against. Its owner is the corpus census, whose delegation today reaches §8c only; widening a delegation is the act rule (g) reserves to the user.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason",
-   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
-   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed.",
-   "ruled_by_39": "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is — the first exception taken under Ruling 38's own exception mechanism, in the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the census's rule-stating sections are homes and its findings tables are not.",
-   "ruling_39_outcome": "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to the explicit-delegation form and its authored delegation scope to `document`; the classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this entry names the census as its OWNING SPECIFICATION but is homed in a different document, and that document is named in no user-ratified surface — so clause (a) excludes it before any delegation is reached. Two routes remain, each one act, and choosing between a ruling's act and its stated outcome is the user's: (1) move this entry's HOME into the census section that already states its rule, if one does — a pointer move, and the only route that is literally zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule into the census section that owns it, which is the text movement this exception was taken to avoid. Reported at `cowork_away_returns.md` §1.12.",
-   "ruled_by_40": "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed per entry, in order — (1) where a census RULE-STATING section already states this entry's rule, move the entry's HOME field there, verbatim re-taken from the census's own text and former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census section STATES RULES, write the rule there in the section's own voice under the census-edit licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because adding a rule-stating block to a findings table is a document-structure act reserved to the user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by stretch; an entry fitting none of the three steps is a STOP.",
-   "ruling_40_step_taken": "NOT YET EXECUTED — the procedure had not been run for this entry when this artifact was generated."
-  },
-  {
-   "id": "D-513",
-   "home_document": "cowork_census_full_needs_audit.md",
-   "route": "RE-HOME",
-   "owning_specification": "cowork_score_census.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A rule about what a corpus registry's content field does and does not establish. Its subject is the corpus census surface, whose delegation reaches §8c only.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason",
-   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
-   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed.",
-   "ruled_by_39": "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is — the first exception taken under Ruling 38's own exception mechanism, in the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the census's rule-stating sections are homes and its findings tables are not.",
-   "ruling_39_outcome": "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to the explicit-delegation form and its authored delegation scope to `document`; the classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this entry names the census as its OWNING SPECIFICATION but is homed in a different document, and that document is named in no user-ratified surface — so clause (a) excludes it before any delegation is reached. Two routes remain, each one act, and choosing between a ruling's act and its stated outcome is the user's: (1) move this entry's HOME into the census section that already states its rule, if one does — a pointer move, and the only route that is literally zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule into the census section that owns it, which is the text movement this exception was taken to avoid. Reported at `cowork_away_returns.md` §1.12.",
-   "ruled_by_40": "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed per entry, in order — (1) where a census RULE-STATING section already states this entry's rule, move the entry's HOME field there, verbatim re-taken from the census's own text and former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census section STATES RULES, write the rule there in the section's own voice under the census-edit licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because adding a rule-stating block to a findings table is a document-structure act reserved to the user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by stretch; an entry fitting none of the three steps is a STOP.",
-   "ruling_40_step_taken": "NOT YET EXECUTED — the procedure had not been run for this entry when this artifact was generated."
-  },
-  {
-   "id": "D-514",
-   "home_document": "cowork_census_full_needs_audit.md",
-   "route": "RE-HOME",
-   "owning_specification": "cowork_score_census.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A record-only constraint on a newly acquired annotation set that overlaps the gate corpus. Its subject is corpus scope; the census owns it and the delegation does not reach it.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason",
-   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
-   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed.",
-   "ruled_by_39": "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is — the first exception taken under Ruling 38's own exception mechanism, in the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the census's rule-stating sections are homes and its findings tables are not.",
-   "ruling_39_outcome": "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to the explicit-delegation form and its authored delegation scope to `document`; the classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this entry names the census as its OWNING SPECIFICATION but is homed in a different document, and that document is named in no user-ratified surface — so clause (a) excludes it before any delegation is reached. Two routes remain, each one act, and choosing between a ruling's act and its stated outcome is the user's: (1) move this entry's HOME into the census section that already states its rule, if one does — a pointer move, and the only route that is literally zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule into the census section that owns it, which is the text movement this exception was taken to avoid. Reported at `cowork_away_returns.md` §1.12.",
-   "ruled_by_40": "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed per entry, in order — (1) where a census RULE-STATING section already states this entry's rule, move the entry's HOME field there, verbatim re-taken from the census's own text and former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census section STATES RULES, write the rule there in the section's own voice under the census-edit licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because adding a rule-stating block to a findings table is a document-structure act reserved to the user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by stretch; an entry fitting none of the three steps is a STOP.",
-   "ruling_40_step_taken": "NOT YET EXECUTED — the procedure had not been run for this entry when this artifact was generated."
-  },
-  {
    "id": "D-515",
    "home_document": "cowork_census_full_needs_audit.md",
    "route": "RE-HOME",
@@ -1156,7 +1165,7 @@
    "ruled_by_39": "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is — the first exception taken under Ruling 38's own exception mechanism, in the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the census's rule-stating sections are homes and its findings tables are not.",
    "ruling_39_outcome": "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to the explicit-delegation form and its authored delegation scope to `document`; the classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this entry names the census as its OWNING SPECIFICATION but is homed in a different document, and that document is named in no user-ratified surface — so clause (a) excludes it before any delegation is reached. Two routes remain, each one act, and choosing between a ruling's act and its stated outcome is the user's: (1) move this entry's HOME into the census section that already states its rule, if one does — a pointer move, and the only route that is literally zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule into the census section that owns it, which is the text movement this exception was taken to avoid. Reported at `cowork_away_returns.md` §1.12.",
    "ruled_by_40": "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed per entry, in order — (1) where a census RULE-STATING section already states this entry's rule, move the entry's HOME field there, verbatim re-taken from the census's own text and former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census section STATES RULES, write the rule there in the section's own voice under the census-edit licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because adding a rule-stating block to a findings table is a document-structure act reserved to the user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by stretch; an entry fitting none of the three steps is a STOP.",
-   "ruling_40_step_taken": "NOT YET EXECUTED — the procedure had not been run for this entry when this artifact was generated."
+   "ruling_40_step_taken": "STEP 3 — HELD. The owning census element is the §8c NEEDS-VECTOR TABLE, whose N20 row is what this decision creates and which already carries its adoption. A needs-vector row is a per-need STATE entry, so the table records findings and admits no rule. The generalizable half — that a ground-truth class gets its own row rather than a remark under a neighbour — is NOT written, because the record states the decision for this one need and authoring the general form would be composing a rule the record never made. Adding a rule-stating block to a findings table is the document-structure act this ruling reserves to the user."
   },
   {
    "id": "D-516",
@@ -1173,7 +1182,7 @@
    "ruled_by_39": "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is — the first exception taken under Ruling 38's own exception mechanism, in the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the census's rule-stating sections are homes and its findings tables are not.",
    "ruling_39_outcome": "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to the explicit-delegation form and its authored delegation scope to `document`; the classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this entry names the census as its OWNING SPECIFICATION but is homed in a different document, and that document is named in no user-ratified surface — so clause (a) excludes it before any delegation is reached. Two routes remain, each one act, and choosing between a ruling's act and its stated outcome is the user's: (1) move this entry's HOME into the census section that already states its rule, if one does — a pointer move, and the only route that is literally zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule into the census section that owns it, which is the text movement this exception was taken to avoid. Reported at `cowork_away_returns.md` §1.12.",
    "ruled_by_40": "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed per entry, in order — (1) where a census RULE-STATING section already states this entry's rule, move the entry's HOME field there, verbatim re-taken from the census's own text and former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census section STATES RULES, write the rule there in the section's own voice under the census-edit licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because adding a rule-stating block to a findings table is a document-structure act reserved to the user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by stretch; an entry fitting none of the three steps is a STOP.",
-   "ruling_40_step_taken": "NOT YET EXECUTED — the procedure had not been run for this entry when this artifact was generated."
+   "ruling_40_step_taken": "STEP 3 — HELD, for the same reason as D-515 and more plainly: this entry records an ADOPTION EVENT — two ground-truth classes admitted to the needs vector — and not a rule. Its content is the vector's MEMBERSHIP, the vector is the §8c findings table, and both adopted rows already carry their adoption there. There is no rule to write into a rule-stating section, and restating the table's own rows in one would breach #6."
   },
   {
    "id": "D-453",
@@ -1238,7 +1247,7 @@
    "ruled_by_39": "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is — the first exception taken under Ruling 38's own exception mechanism, in the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the census's rule-stating sections are homes and its findings tables are not.",
    "ruling_39_outcome": "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to the explicit-delegation form and its authored delegation scope to `document`; the classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this entry names the census as its OWNING SPECIFICATION but is homed in a different document, and that document is named in no user-ratified surface — so clause (a) excludes it before any delegation is reached. Two routes remain, each one act, and choosing between a ruling's act and its stated outcome is the user's: (1) move this entry's HOME into the census section that already states its rule, if one does — a pointer move, and the only route that is literally zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule into the census section that owns it, which is the text movement this exception was taken to avoid. Reported at `cowork_away_returns.md` §1.12.",
    "ruled_by_40": "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed per entry, in order — (1) where a census RULE-STATING section already states this entry's rule, move the entry's HOME field there, verbatim re-taken from the census's own text and former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census section STATES RULES, write the rule there in the section's own voice under the census-edit licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because adding a rule-stating block to a findings table is a document-structure act reserved to the user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by stretch; an entry fitting none of the three steps is a STOP.",
-   "ruling_40_step_taken": "NOT YET EXECUTED — the procedure had not been run for this entry when this artifact was generated."
+   "ruling_40_step_taken": "STEP 3 — HELD. This is a per-corpus ESTABLISHMENT verdict (#19) about one held annotation set, and the census carries no section for it at all: the set is named nowhere in the document, and its natural census element is the §8c needs-vector row for dual-annotator material — a findings table. Writing a verdict about one corpus into a rule-stating section would be the mirror of the error step 3 prevents: a finding placed where rules are stated. The row is named and the entry is left for the user."
   },
   {
    "id": "D-610",
@@ -1267,41 +1276,7 @@
    "ruled_by_39": "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is — the first exception taken under Ruling 38's own exception mechanism, in the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the census's rule-stating sections are homes and its findings tables are not.",
    "ruling_39_outcome": "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to the explicit-delegation form and its authored delegation scope to `document`; the classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this entry names the census as its OWNING SPECIFICATION but is homed in a different document, and that document is named in no user-ratified surface — so clause (a) excludes it before any delegation is reached. Two routes remain, each one act, and choosing between a ruling's act and its stated outcome is the user's: (1) move this entry's HOME into the census section that already states its rule, if one does — a pointer move, and the only route that is literally zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule into the census section that owns it, which is the text movement this exception was taken to avoid. Reported at `cowork_away_returns.md` §1.12.",
    "ruled_by_40": "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed per entry, in order — (1) where a census RULE-STATING section already states this entry's rule, move the entry's HOME field there, verbatim re-taken from the census's own text and former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census section STATES RULES, write the rule there in the section's own voice under the census-edit licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because adding a rule-stating block to a findings table is a document-structure act reserved to the user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by stretch; an entry fitting none of the three steps is a STOP.",
-   "ruling_40_step_taken": "NOT YET EXECUTED — the procedure had not been run for this entry when this artifact was generated."
-  },
-  {
-   "id": "D-614",
-   "home_document": "cowork_union_search_record.md",
-   "route": "RE-HOME",
-   "owning_specification": "cowork_score_census.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "Licence posture of every difficulty-grade label source. Corpus subject, and the census already carries the shipped-parameter licence-pool constraint at §8c -- but widening a delegation is the user's act.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason",
-   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
-   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed.",
-   "ruled_by_39": "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is — the first exception taken under Ruling 38's own exception mechanism, in the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the census's rule-stating sections are homes and its findings tables are not.",
-   "ruling_39_outcome": "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to the explicit-delegation form and its authored delegation scope to `document`; the classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this entry names the census as its OWNING SPECIFICATION but is homed in a different document, and that document is named in no user-ratified surface — so clause (a) excludes it before any delegation is reached. Two routes remain, each one act, and choosing between a ruling's act and its stated outcome is the user's: (1) move this entry's HOME into the census section that already states its rule, if one does — a pointer move, and the only route that is literally zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule into the census section that owns it, which is the text movement this exception was taken to avoid. Reported at `cowork_away_returns.md` §1.12.",
-   "ruled_by_40": "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed per entry, in order — (1) where a census RULE-STATING section already states this entry's rule, move the entry's HOME field there, verbatim re-taken from the census's own text and former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census section STATES RULES, write the rule there in the section's own voice under the census-edit licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because adding a rule-stating block to a findings table is a document-structure act reserved to the user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by stretch; an entry fitting none of the three steps is a STOP.",
-   "ruling_40_step_taken": "NOT YET EXECUTED — the procedure had not been run for this entry when this artifact was generated."
-  },
-  {
-   "id": "D-422",
-   "home_document": "docs/implementation_roadmap.md",
-   "route": "RE-HOME",
-   "owning_specification": "cowork_score_census.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The jazz fit waits on jazz ground truth. Recorded DEFERRED; its binding fact is a corpus fact, so the census is the owner and the delegation does not reach it.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason",
-   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
-   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed.",
-   "ruled_by_39": "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is — the first exception taken under Ruling 38's own exception mechanism, in the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the census's rule-stating sections are homes and its findings tables are not.",
-   "ruling_39_outcome": "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to the explicit-delegation form and its authored delegation scope to `document`; the classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this entry names the census as its OWNING SPECIFICATION but is homed in a different document, and that document is named in no user-ratified surface — so clause (a) excludes it before any delegation is reached. Two routes remain, each one act, and choosing between a ruling's act and its stated outcome is the user's: (1) move this entry's HOME into the census section that already states its rule, if one does — a pointer move, and the only route that is literally zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule into the census section that owns it, which is the text movement this exception was taken to avoid. Reported at `cowork_away_returns.md` §1.12.",
-   "ruled_by_40": "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed per entry, in order — (1) where a census RULE-STATING section already states this entry's rule, move the entry's HOME field there, verbatim re-taken from the census's own text and former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census section STATES RULES, write the rule there in the section's own voice under the census-edit licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because adding a rule-stating block to a findings table is a document-structure act reserved to the user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by stretch; an entry fitting none of the three steps is a STOP.",
-   "ruling_40_step_taken": "NOT YET EXECUTED — the procedure had not been run for this entry when this artifact was generated."
+   "ruling_40_step_taken": "STEP 3 — HELD, and the reason is a SPLIT that is not a session's to make. The entry has two halves: a fact-of-absence (implied-polyphony ground truth is confirmed absent — do not re-search) and a RULE (what the surviving voice labels actually measure must be said at intake). The finding half's census element is the §8c needs-vector row that already carries it — a findings table — while the rule half would fit §8c's intake-rule block, which does state rules. Splitting one entry into two is a decision about the decisions register's own unit, which the user settled by ruling once already, at D-291/D-656, and it is not taken here."
   }
  ]
 }
