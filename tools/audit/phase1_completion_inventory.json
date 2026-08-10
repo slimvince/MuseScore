@@ -217,23 +217,22 @@
   "criterion": "C1 and C2",
   "register_population": 663,
   "by_home_class": {
-   "contract-home": 151,
-   "gap": 42,
-   "homed-in-a-layer-specification": 295,
+   "contract-home": 152,
+   "gap": 39,
+   "homed-in-a-layer-specification": 297,
    "process": 129,
    "project-convention": 45,
    "unhomed": 1
   },
   "class_1_documentation_gap": {
    "what_it_is": "The register's own home_rule: a decision that governs a layer and is not findable from that layer's section - a documentation gap carrying an OPEN_ITEMS.md row. This is C1's outstanding population.",
-   "count": 42,
+   "count": 39,
    "by_home_document": {
     "cowork_architecture_reassessment.md": 4,
     "cowork_census_full_needs_audit.md": 4,
     "cowork_structural_integrity_audit.md": 4,
     "cowork_architecture_review_2026_07.md": 3,
     "cowork_evidence_inventory.md": 3,
-    "cowork_voiceleading_axis_design.md": 3,
     "cowork_information_loss_audit.md": 2,
     "cowork_joint_estimator_architecture.md": 2,
     "cowork_layer1_tone_collection_design.md": 2,
@@ -257,9 +256,6 @@
     "D-284",
     "D-285",
     "D-350",
-    "D-397",
-    "D-398",
-    "D-400",
     "D-402",
     "D-403",
     "D-404",
@@ -298,14 +294,11 @@
   },
   "class_1a_gap_whose_home_FAILS_the_section_criterion": {
    "what_it_is": "Entries carrying a home_section block whose verdict is EXCLUDE: the home document exists and was graded, and the criteria in force (clause (a), D-432, D-430) reject it. These are gaps WITH a measured reason.",
-   "count": 42,
+   "count": 39,
    "by_reason": {
     "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section": {
-     "count": 4,
+     "count": 1,
      "ids": [
-      "D-397",
-      "D-398",
-      "D-400",
       "D-402"
      ]
     },
@@ -417,7 +410,7 @@
      "document": "cowork_layer5_function_design.md",
      "state_at_head": "WRITTEN — CLOSED",
      "why": "The user wrote an explicit delegation clause on 2026-08-03 and every entry of the document is `contract-home`. Nothing is outstanding.",
-     "delegation_at_head": "ARCHITECTURE.md:1998",
+     "delegation_at_head": "ARCHITECTURE.md:2028",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 8,
      "by_class": {
@@ -467,16 +460,11 @@
      "why": "The delegation was widened on 2026-08-03 from §0/§5.3 to §0/§5.1/§5.3/§8/§9, which moved seven entries in. Three remain outside the named sections: D-398 in §15 and D-397/D-400 in §16, and the 2026-08-03 widening excluded those two sections deliberately. ★ THE USER RULED ON 2026-08-04 (ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`) THAT THE DELEGATION IS NOT WIDENED TO REACH THEM. D-397 and D-400 ARE §16's ratification asks A7 and A5 — asks put TO the user — and D-398 sits in §15, a tracking list; an ask is not a rule, and forcing either a contract home would misdescribe what it is. The three entries stay `gap` as the ruling intends, and the kind half would exclude both sections at the next run in any case, so a widening would be a wording change that closes nothing. THIS IS A RULING AND NOT A DEFERRAL: the document is not awaiting an act and no later wave owes one here.",
      "delegation_at_head": "ARCHITECTURE.md:1089",
      "delegation_form_at_head": "named-home-with-sections",
-     "entries_in_the_home_population": 13,
+     "entries_in_the_home_population": 11,
      "by_class": {
-      "contract-home": 10,
-      "gap": 3
+      "contract-home": 11
      },
-     "entries_still_lost_to_the_delegation_half": [
-      "D-397",
-      "D-398",
-      "D-400"
-     ]
+     "entries_still_lost_to_the_delegation_half": []
     },
     {
      "document": "cowork_notation_output_contract.md",
@@ -494,7 +482,7 @@
      "document": "cowork_layer1_note_model_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5) and it reaches every section. Three of the four entries are `contract-home`; the fourth (D-518) stays `gap` on the KIND half — its home section is §13, whose own heading ends '(NOT needed to understand the layer)'. That is not a delegation matter and no delegation would move it.",
-     "delegation_at_head": "ARCHITECTURE.md:1481",
+     "delegation_at_head": "ARCHITECTURE.md:1511",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 4,
      "by_class": {
@@ -507,7 +495,7 @@
      "document": "cowork_layer2_slicing_design.md",
      "state_at_head": "WRITTEN — CLOSED",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5). Both entries are `contract-home` as of this wave's classification run.",
-     "delegation_at_head": "ARCHITECTURE.md:1607",
+     "delegation_at_head": "ARCHITECTURE.md:1637",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 2,
      "by_class": {
@@ -519,7 +507,7 @@
      "document": "cowork_layer6_grouping_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 6, ruling R5). Eight of the nine entries are `contract-home`; the ninth (D-458) stays `gap` on the KIND half — it is homed in the document's STATUS BANNER. Not a delegation matter.",
-     "delegation_at_head": "ARCHITECTURE.md:2113",
+     "delegation_at_head": "ARCHITECTURE.md:2143",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 9,
      "by_class": {
@@ -532,7 +520,7 @@
      "document": "cowork_phrase_boundary_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5, ruling R4). Eight of the ten entries are `contract-home`; two (D-484, D-485) stay `gap` on the KIND half — the document's opening block and its §11 'Open items'. Not a delegation matter.",
-     "delegation_at_head": "ARCHITECTURE.md:1483",
+     "delegation_at_head": "ARCHITECTURE.md:1513",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 10,
      "by_class": {
@@ -1958,7 +1946,7 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 620,
+    "count": 623,
     "of": 663
    },
    {
@@ -1974,13 +1962,13 @@
  "the_shape_of_what_remains": {
   "note": "Derived from the blocks above; every figure is computed, none transcribed.",
   "complete_half": {
-   "entries_not_homed_in_a_specification_that_owns_them": 43,
+   "entries_not_homed_in_a_specification_that_owns_them": 40,
    "of_which_never_graded_against_the_criteria_in_force": 0,
    "entries_whose_defense_the_record_does_not_state": 0,
-   "documents_awaiting_a_delegation_only_the_user_may_write": 2,
+   "documents_awaiting_a_delegation_only_the_user_may_write": 1,
    "★_that_figure_is_now_DERIVED_not_the_write_lists_membership": "It is the count of documents that still lose entries to the DELEGATION HALF where an admitting delegation already exists - the only class a delegation the user writes would move. Derived at `tools/audit/decisions/outstanding_delegations.json`; the full partition, including the classes for which a delegation is NOT the remedy, is there and is not restated here (D-431). OI-335.",
-   "entries_lost_for_want_of_a_delegation_all_classes": 29,
-   "of_which_a_widening_would_move": 4
+   "entries_lost_for_want_of_a_delegation_all_classes": 26,
+   "of_which_a_widening_would_move": 1
   },
   "true_half": {
    "open_rows_in_the_wide_cut": 62,
@@ -2098,7 +2086,7 @@
   "open_rows_in_the_index": 255,
   "true_half_wide_cut": 62,
   "true_half_gating": 41,
-  "complete_half_gap": 42,
+  "complete_half_gap": 39,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0
  }

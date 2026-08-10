@@ -16,7 +16,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1560`
+**Home.** `ARCHITECTURE.md:1590`
 
 **Provenance.** ARCHITECTURE.md:1200-1210 (Layer 2 - Built+Live)
 
@@ -30,7 +30,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1560`
+**Home.** `ARCHITECTURE.md:1590`
 
 **Provenance.** ARCHITECTURE.md:1210. Cited by open_items/OI-228 as the primary source the joint emission departs from
 
@@ -45,7 +45,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1567-1568`
+**Home.** `ARCHITECTURE.md:1597-1598`
 
 **Provenance.** ARCHITECTURE.md:1217-1218. The joint decoder's per-event note set is ONSET-only (jointdecoder.h:67) - open_items/OI-228
 
@@ -61,7 +61,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1564-1566`
+**Home.** `ARCHITECTURE.md:1594-1596`
 
 **Provenance.** ARCHITECTURE.md:1212-1218
 
@@ -75,7 +75,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1562`
+**Home.** `ARCHITECTURE.md:1592`
 
 **Provenance.** ARCHITECTURE.md:1212-1214
 
@@ -90,7 +90,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1587-1589`
+**Home.** `ARCHITECTURE.md:1617-1619`
 
 **Provenance.** ARCHITECTURE.md:1237-1245
 
@@ -105,7 +105,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1588-1590`
+**Home.** `ARCHITECTURE.md:1618-1620`
 
 **Provenance.** ARCHITECTURE.md:1237-1242
 
@@ -121,7 +121,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1592-1594`
+**Home.** `ARCHITECTURE.md:1622-1624`
 
 **Provenance.** ARCHITECTURE.md:1242-1245
 
@@ -136,7 +136,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1578-1580`
+**Home.** `ARCHITECTURE.md:1608-1610`
 
 **Provenance.** ARCHITECTURE.md:1220-1231
 
@@ -150,7 +150,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1575`
+**Home.** `ARCHITECTURE.md:1605`
 
 **Provenance.** ARCHITECTURE.md:1220-1227; cites cowork_layer2_reslice_design.md §2
 
@@ -175,7 +175,7 @@
 
 **Home.** `cowork_layer2_slicing_design.md:130-139`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1607 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1637 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** A crosscutting concept of the as-built Layer-2 specification, stated as a warning to the layers above. It is the qualification that makes the atomic-unit decision safe: **D-023** makes the constant-sonority slice the analysis unit, and this says what may not be concluded from that. The factor granularity that eventually consumes it is **D-449**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -199,7 +199,7 @@
 
 **Home.** `cowork_layer2_slicing_design.md:140-148`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1607 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 121). A delegation at ARCHITECTURE.md:1637 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Recorded as resolving prerequisite (i) of the function layer's input list, with the note that the whole prerequisite is this contract sentence and no new code. It places the primitive in the shared notation-derived-view tier beside the bass, spelling and phrase-boundary views. The phrase-boundary member of that same tier is **D-476**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
@@ -227,7 +227,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:1778-1790`
+**Home.** `ARCHITECTURE.md:1808-1820`
 
 **Provenance.** `docs/stage4d_local_modulation_design.md`, the Stage-4d local-modulation design, DRAFT and ratification-gated, 2026-06-14. Read in full by READ WAVE 5, 2026-08-04. The document's banner marks it DRAFT and ratification-gated, and its §7 lists this rule as item 2 for user ratification; the record does not state that the ratification happened, so no ratifier is recorded here. ⚠ The MECHANISM this rule governs is on the LEGACY key path — the joint estimator decides key and segmentation together and is the production inference layer (**D-001**, **D-005**) — but the RULE is about what evidence a modulation decision may read, which binds any such decision. It is the same principle **D-336**/**D-081** state for the cadence detector, applied to the local-key hypothesis and naming the specific surface that would make it circular. ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The recorded owner question was that the rule's two ends sit in different sections — Layer 3 for the hypothesis, the key-area grouping for what it may not read. The user ruled that THE INPUT RULE BINDS THE HYPOTHESIS'S DERIVATION, so Layer 3 owns it and the grouping section points. Written into the Layer-3 section in that section's own voice, with its defense and with the scope statement the record carries: the mechanism it was written for is on the legacy key path, while what the rule constrains — what evidence a modulation decision may read — binds any such decision on any arm. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `docs/stage4d_local_modulation_design.md:51-56`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 49, "section": "## §3 — No circularity / key-agnosticism (the architecture constraint)", "label": "“§3”", "delegated": null, "delegation": "named in no user-ratified surface", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**The local-key hypothesis MUST derive from key-agnostic signals — the cadence instrument (key-agnostic by
 construction) + raw region structure (root motion, diatonic-collection consistency) — NOT from the current
@@ -262,7 +262,7 @@ made the cadence detector usable; it is the load-bearing soundness property and 
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1613-1629`
+**Home.** `ARCHITECTURE.md:1643-1659`
 
 **Provenance.** `cowork_layer2_reslice_design.md` §3, the Layer-2 slicing-under-bounded-context detail design, BUILT. Read in full by READ WAVE 6, 2026-08-04. The correction is marked in the document as made after a read-only verification. **D-050** already carries the clip rule and the re-slice-equivalence invariant that makes widening lawful, and cites this document's §2 for it; this is the separate finding about what does and does not stay stable across an extension, which no other home carries and which the §6 test list turns into a written prohibition. The record states neither a date nor a ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). Routed to the Layer-2 section of `ARCHITECTURE.md`, in that section's own voice and with the counterexample that produced the correction. THE COUNTEREXAMPLE'S TICK VALUES ARE NOT CARRIED ACROSS (D-431): its SHAPE is what makes the prohibition binding — one eligible note spanning the loaded start — and the arithmetic stays in the design document. FORMER HOME, PRESERVED (#12): `cowork_layer2_reslice_design.md:55-65`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 53, "section": "## 3. What holds under extend (corrected after CC's read-only verification)", "label": "§3", "delegated": null, "delegation": "ARCHITECTURE.md:1339", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **Stability — seam-aware (the earlier \"old slices byte-identical\" claim was wrong).** The clip injects an
   **artificial boundary at `loadedStart`** — *not* a real change-point (a sustained-in note sounds on both sides; the
@@ -294,7 +294,7 @@ made the cadence detector usable; it is the load-bearing soundness property and 
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1630-1638`
+**Home.** `ARCHITECTURE.md:1660-1668`
 
 **Provenance.** `cowork_layer2_reslice_design.md` §5, BUILT; the document's own status block confirms the decision was taken at build. Read in full by READ WAVE 6, 2026-08-04. It is the data-shape consequence of the bounded-context rule that output is the selection while extended context is evidence, and of **D-033**'s one-contribution-per-layer invariant. The record states neither a date nor a ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into the Layer-2 section of `ARCHITECTURE.md`, in that section's own voice, with the alternative that was weighed named rather than dropped and with the defense stated as the layer's own ownership boundary. THE C++ STRUCT LITERAL IS NOT CARRIED ACROSS: the decision is what a slice carries, and D-307 forbids pinning a specification to code text. FORMER HOME, PRESERVED (#12): `cowork_layer2_reslice_design.md:83-90`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 82, "section": "## 5. Output vs context (the selection boundary)", "label": "§5", "delegated": null, "delegation": "ARCHITECTURE.md:1339", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "L2 produces slices for the **loaded** span; the **output** is only the **selection**. The slices in
 `[loadedStart, selectionStart)` ∪ `[selectionEnd, loadedEnd)` are **context (evidence), not output**. L2 itself makes

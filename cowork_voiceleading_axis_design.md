@@ -92,8 +92,18 @@ concept, the difference is stated. Nothing below is used before it is defined he
   two voices move between two consecutive time points: **parallel** = same direction, harmonic interval preserved;
   **similar** = same direction, harmonic interval changes; **contrary** = opposite directions; **oblique** = exactly
   one of the two voices moves. (The operational sampling rule that decides "consecutive time points" for real
-  scores is defined under motion profile [VL] below; whether "interval preserved" is counted in semitones or in
-  diatonic generic size is an implementation declaration owed at build — §15-2.)
+  scores is defined under motion profile [VL] below.)
+  **★ "INTERVAL PRESERVED" IS SEMITONE-EXACT, NOT GENERIC DIATONIC SIZE — CLOSED AT BUILD, 2026-07-03.** Two lines
+  count as **parallel** only when they move the same direction AND the SIGNED SEMITONE distance between them is
+  unchanged; a same-direction move whose semitone interval changes is **similar**. So a pair moving from a major
+  third to a minor third is similar motion, not parallel, although both are thirds on the staff. *Why this reading
+  and not the generic-diatonic one:* it was settled by REPLICATION rather than by choice — the convention was read
+  off the exploratory study's own motion classifier at source and reproduced exactly in the production
+  classification, which is oracle-tested against it, and reproducing the study's features is what this design
+  requires of the production implementation. *(This bullet formerly closed: "whether 'interval preserved' is counted
+  in semitones or in diatonic generic size is an implementation declaration owed at build — §15-2." That statement
+  was true when written and is FALSE at HEAD — the declaration was closed at build, and §15-2 records the closure.
+  The former wording is preserved here (#12), and the tracking line in §15 is untouched.)*
 - **Texture [MT].** The relationship among the concurrent lines of a passage — standardly: **monophony** (one
   line), **homophony** (one leading line with accompaniment; the lines move as one), **polyphony / counterpoint**
   (several independent lines). Operationally this design classifies texture from measured motion-type rates

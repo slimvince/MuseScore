@@ -224,26 +224,31 @@ ANCHORS = {
     # STOP, which fires before the anchor loop — the same layered shape that hid the coverage check
     # itself behind the A1 citation (OPEN_ITEMS.md OI-354).
     'L3_SPEC_DORMANT': {
-        'file': 'ARCHITECTURE.md', 'line': 1643,
+        # Re-aimed 2026-08-09 from 1643, per the tool's own reported line, after the Task-1 homings
+        # of D-397 and D-400 inserted above it in ARCHITECTURE.md (D-648, authored-input maintenance).
+        'file': 'ARCHITECTURE.md', 'line': 1673,
         'quote': "Layer 3's decoder no longer decides the key on either surface",
         'says': 'The layer specification\'s own build-state correction, which enumerates the same four '
                 'branch points this wave read and adds the remaining callers: "the batch_analyze '
                 'diagnostics, which are development tools and are not shipped".',
     },
     'L4_SPEC_DORMANT': {
-        'file': 'ARCHITECTURE.md', 'line': 1854,
+        # Re-aimed 2026-08-09 from 1854, per this tool's own reported line (D-648).
+        'file': 'ARCHITECTURE.md', 'line': 1884,
         'quote': 'The build state itself is unchanged and correct: Built+Dormant.',
         'says': 'The Layer-4 section\'s own build state. What becomes of that decoder is recorded OPEN.',
     },
     'SPEC_DONOTRETRY_CHORD': {
-        'file': 'ARCHITECTURE.md', 'line': 1860,
+        # Re-aimed 2026-08-09 from 1860, per this tool's own reported line (D-648).
+        'file': 'ARCHITECTURE.md', 'line': 1890,
         'quote': 'Tried and closed on the chord layer',
         'says': 'A LIVE do-not-retry list in the layer specification naming ten marked entries. The '
                 'mark is right about the SUBJECT and the entry still binds what a future designer '
                 'may attempt.',
     },
     'SPEC_DONOTRETRY_KEY': {
-        'file': 'ARCHITECTURE.md', 'line': 1656,
+        # Re-aimed 2026-08-09 from 1656, per this tool's own reported line (D-648).
+        'file': 'ARCHITECTURE.md', 'line': 1686,
         'quote': 'Tried and closed on this layer',
         'says': 'The same construction on the key layer, naming D-287 and D-290.',
     },
@@ -256,14 +261,16 @@ ANCHORS = {
     # `cowork_rulings_2026_08_09_fourth_stop.md`). The fourth instance of the do-not-retry
     # construction the pass already anchors on the chord layer, the key layer and the search.
     'SPEC_DONOTRETRY_DECLARED_MODE': {
-        'file': 'ARCHITECTURE.md', 'line': 4198,
+        # Re-aimed 2026-08-09 from 4198, per this tool's own reported line (D-648).
+        'file': 'ARCHITECTURE.md', 'line': 4228,
         'quote': "Tried and closed on the declared mode's weight",
         'says': 'The same construction on the declared mode\'s weight, naming D-572 with its '
                 'evidence — a LIVE specification line whose subject is a removed legacy promotion '
                 'and whose prohibition binds now.',
     },
     'ARCH_BATCH_DIAGNOSTICS': {
-        'file': 'ARCHITECTURE.md', 'line': 1651,
+        # Re-aimed 2026-08-09 from 1651, per this tool's own reported line (D-648).
+        'file': 'ARCHITECTURE.md', 'line': 1681,
         'quote': 'callers are the `batch_analyze` diagnostics, which are development tools and are not shipped',
         'says': 'The layer specification already names the fifth false-negative path — the batch '
                 'diagnostics — which OI-289\'s four-item enumeration does not. Located here rather '
@@ -277,14 +284,16 @@ ANCHORS = {
                 'own specification.',
     },
     'ARCH_L3_DELEGATION': {
-        'file': 'ARCHITECTURE.md', 'line': 1654,
+        # Re-aimed 2026-08-09 from 1654, per this tool's own reported line (D-648).
+        'file': 'ARCHITECTURE.md', 'line': 1684,
         'quote': 'The ratified contract for this layer is `cowork_layer3_keymode_design.md`',
         'says': 'The delegation that makes the Layer-3 design document a contract home. It sits '
                 'immediately below the build-state correction declaring that layer dormant, which '
                 'is why the marks on its decisions are consistent rather than contradictory.',
     },
     'ARCH_L5_ENGAGEMENT_DELEGATION': {
-        'file': 'ARCHITECTURE.md', 'line': 2018,
+        # Re-aimed 2026-08-09 from 2018, per this tool's own reported line (D-648).
+        'file': 'ARCHITECTURE.md', 'line': 2048,
         'quote': 'The ratified contract for how this layer ENGAGES with the chord layer',
         'says': 'The delegation behind D-380/D-381\'s home — the reason their transfer half is '
                 'undetermined rather than none-found.',

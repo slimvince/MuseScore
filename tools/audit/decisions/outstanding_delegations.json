@@ -76,23 +76,18 @@
     "C_admitting_delegation_does_not_name_this_section": {
       "what_it_is": "Entries whose home document HAS an admitting delegation that names sections, and which sit outside the named ones. The only class a widening moves.",
       "the_criterion_that_decides_it": "D-430's delegation half — the delegation names sections and this entry's section is not among them",
-      "entries": 4,
-      "documents": 2,
+      "entries": 1,
+      "documents": 1,
       "by_document": {
         "cowork_structural_integrity_audit.md": [
           "D-402"
-        ],
-        "cowork_voiceleading_axis_design.md": [
-          "D-397",
-          "D-398",
-          "D-400"
         ]
       }
     },
     "D_closed": {
       "what_it_is": "Entries the criteria admit: delegated section, states rules.",
       "the_criterion_that_decides_it": "the delegation reaches this section and the section states rules",
-      "entries": 151,
+      "entries": 152,
       "documents": 25,
       "by_document": {
         "cowork_bounded_context_design.md": [
@@ -279,6 +274,7 @@
           "D-394",
           "D-395",
           "D-396",
+          "D-398",
           "D-399"
         ],
         "docs/llm_integration.md": [
@@ -336,8 +332,8 @@
   },
   "THE_OUTSTANDING_SET": {
     "what_this_is": "The answer to the ruling's question, and what goes to the user: the documents that still lose entries to the DELEGATION HALF where an admitting delegation already exists — so the record has already said it means to keep the home, and what falls short is which sections the delegation names.",
-    "documents": 2,
-    "entries": 4,
+    "documents": 1,
+    "entries": 1,
     "members": [
       {
         "document": "cowork_structural_integrity_audit.md",
@@ -362,40 +358,6 @@
         "what_the_un_named_sections_are": "§1.2 'The cap→append chain — dissolution hypothesis TESTED at code (CONFIRMED)' — a section reporting the result of a test run against the code.",
         "draft_delegation_for_the_user_to_write_or_reject": "NONE IS OFFERED, AND THAT IS NOW A RULING RATHER THAN THIS TOOL'S READING. ★ THE USER RULED ON 2026-08-04 (ruling R3, dispatch `cc_instruction_census_delegation_and_commit.md`) THAT NO DELEGATION IS DRAFTED OR WRITTEN FOR THIS DOCUMENT. The ground is the register's own `not_write_list_cases`, which already rules on this document's other lost entries: 'A delegation cannot repair that; the remedy is the same as OI-290's — at the document, or by homing those verdicts where the concern is owned.' D-402 sits in a section of the same kind, and the same remedy follows. THE REMEDY IS AT THE DOCUMENT, and it is not a delegation act.",
         "what_it_would_close": "Nothing that should be closed by a delegation. Recorded so the class is complete, not because a widening is proposed — and it stays recorded after ruling R3, because a ruling that nothing is owed is itself a thing the record must carry (#12)."
-      },
-      {
-        "document": "cowork_voiceleading_axis_design.md",
-        "on_the_write_list": true,
-        "entries_lost_to_the_delegation_half": [
-          "D-397",
-          "D-398",
-          "D-400"
-        ],
-        "the_sections_they_sit_in": {
-          "§16": {
-            "heading": "## 16. Ratification asks",
-            "heading_line": 680,
-            "entries": [
-              "D-397",
-              "D-400"
-            ]
-          },
-          "§15": {
-            "heading": "## 15. Open items & deferred refinements",
-            "heading_line": 624,
-            "entries": [
-              "D-398"
-            ]
-          }
-        },
-        "the_delegation_that_exists": {
-          "at": "ARCHITECTURE.md:1089",
-          "line": "(one span) until the §15-1 per-span measurement refines it. Criterion + build home:"
-        },
-        "current_delegation_names": "§0, §5.1, §5.3, §8, §9",
-        "what_the_un_named_sections_are": "§15 is 'Open items & deferred refinements' — a numbered tracking list of what is owed, deferred or since closed. §16 is 'Ratification asks' — eight lettered asks (A1…A8) put TO the user; D-400 is ask A5 and D-397 is ask A7.",
-        "draft_delegation_for_the_user_to_write_or_reject": "Widen the named sections at `ARCHITECTURE.md`'s existing line — \"Criterion + build home: `cowork_voiceleading_axis_design.md` §0/§5.1/§5.3/§8/§9/§15/§16 (AS-BUILT)\" — OR leave it as it stands and home those three decisions where their concerns are owned instead.",
-        "what_it_would_close": "The DELEGATION half only, for D-397, D-398 and D-400. It would NOT by itself make them `contract-home`: D-430's kind half is then judged per section, and it is not pre-judged here. ★ THE RECOMMENDATION IS THE SECOND OPTION, and the reason is that the two sections are the two shapes the record has already declined elsewhere — a tracking list (the OI-240 shape, and the same reading this wave made of `cowork_phrase_boundary_design.md` §11) and a list of asks put to the user. A widening that reaches them would most likely be excluded on the kind half at the next run, which is a wording change that closes nothing."
       }
     ]
   },
@@ -430,6 +392,20 @@
       }
     ]
   },
+  "retired_class_C_drafts": {
+    "what_this_is": "Drafts authored for a document that has since LEFT class C because its class-C entries were re-homed rather than because a delegation was written. Moved WHOLE with the reason each retired and nothing deleted (#12) — the authored judgment follows its subject out of the population, which is maintenance under D-648 and not a mechanism change. Kept because a draft that was offered and the reasoning that produced it are evidence nothing re-derives once the class has moved, and because a reader comparing artifacts must be able to see that a document left this class by being CLOSED rather than by being dropped.",
+    "documents": 1,
+    "members": {
+      "cowork_voiceleading_axis_design.md": {
+        "retired": "2026-08-09, by cc_instruction_return_continuation_6.md Task 1",
+        "why_it_retired": "The document left class C because its three class-C entries left it. Under the user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md` — re-homing is the DEFAULT closing route and no document is excepted — D-397 and D-400 were re-homed into `ARCHITECTURE.md` (the growth-by-axis ownership paragraph, and the §2.15 span typology, which D-400's own text names as its target), and D-398 was re-homed into §0 of this document, a section the delegation ALREADY names and whose kind judgment is authored. ★ THE DRAFT'S OWN RECOMMENDATION IS THE ROUTE THAT WAS TAKEN, which is why this retirement is a discharge rather than an override: it recommended the SECOND option — leave the delegation as it stands and home those three decisions where their concerns are owned — and the ruling made that the default. The delegation is untouched: §15 and §16 are still not named, and no widening was written.",
+        "current_delegation_names": "§0, §5.1, §5.3, §8, §9",
+        "what_the_un_named_sections_are": "§15 is 'Open items & deferred refinements' — a numbered tracking list of what is owed, deferred or since closed. §16 is 'Ratification asks' — eight lettered asks (A1…A8) put TO the user; D-400 is ask A5 and D-397 is ask A7.",
+        "draft_delegation_for_the_user_to_write_or_reject": "Widen the named sections at `ARCHITECTURE.md`'s existing line — \"Criterion + build home: `cowork_voiceleading_axis_design.md` §0/§5.1/§5.3/§8/§9/§15/§16 (AS-BUILT)\" — OR leave it as it stands and home those three decisions where their concerns are owned instead.",
+        "what_it_would_close": "The DELEGATION half only, for D-397, D-398 and D-400. It would NOT by itself make them `contract-home`: D-430's kind half is then judged per section, and it is not pre-judged here. ★ THE RECOMMENDATION IS THE SECOND OPTION, and the reason is that the two sections are the two shapes the record has already declined elsewhere — a tracking list (the OI-240 shape, and the same reading this wave made of `cowork_phrase_boundary_design.md` §11) and a list of asks put to the user. A widening that reaches them would most likely be excluded on the kind half at the next run, which is a wording change that closes nothing."
+      }
+    }
+  },
   "what_is_NOT_proposed_as_a_delegation_and_why": {
     "class_A": {
       "entries": 25,
@@ -454,7 +430,7 @@
         "document": "cowork_layer5_function_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-03 and every entry of the document is `contract-home`. Nothing is outstanding.",
-        "delegation_at_head": "ARCHITECTURE.md:1998",
+        "delegation_at_head": "ARCHITECTURE.md:2028",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 8,
         "by_class": {
@@ -504,16 +480,11 @@
         "why": "The delegation was widened on 2026-08-03 from §0/§5.3 to §0/§5.1/§5.3/§8/§9, which moved seven entries in. Three remain outside the named sections: D-398 in §15 and D-397/D-400 in §16, and the 2026-08-03 widening excluded those two sections deliberately. ★ THE USER RULED ON 2026-08-04 (ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`) THAT THE DELEGATION IS NOT WIDENED TO REACH THEM. D-397 and D-400 ARE §16's ratification asks A7 and A5 — asks put TO the user — and D-398 sits in §15, a tracking list; an ask is not a rule, and forcing either a contract home would misdescribe what it is. The three entries stay `gap` as the ruling intends, and the kind half would exclude both sections at the next run in any case, so a widening would be a wording change that closes nothing. THIS IS A RULING AND NOT A DEFERRAL: the document is not awaiting an act and no later wave owes one here.",
         "delegation_at_head": "ARCHITECTURE.md:1089",
         "delegation_form_at_head": "named-home-with-sections",
-        "entries_in_the_home_population": 13,
+        "entries_in_the_home_population": 11,
         "by_class": {
-          "contract-home": 10,
-          "gap": 3
+          "contract-home": 11
         },
-        "entries_still_lost_to_the_delegation_half": [
-          "D-397",
-          "D-398",
-          "D-400"
-        ]
+        "entries_still_lost_to_the_delegation_half": []
       },
       {
         "document": "cowork_notation_output_contract.md",
@@ -531,7 +502,7 @@
         "document": "cowork_layer1_note_model_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5) and it reaches every section. Three of the four entries are `contract-home`; the fourth (D-518) stays `gap` on the KIND half — its home section is §13, whose own heading ends '(NOT needed to understand the layer)'. That is not a delegation matter and no delegation would move it.",
-        "delegation_at_head": "ARCHITECTURE.md:1481",
+        "delegation_at_head": "ARCHITECTURE.md:1511",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 4,
         "by_class": {
@@ -544,7 +515,7 @@
         "document": "cowork_layer2_slicing_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5). Both entries are `contract-home` as of this wave's classification run.",
-        "delegation_at_head": "ARCHITECTURE.md:1607",
+        "delegation_at_head": "ARCHITECTURE.md:1637",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 2,
         "by_class": {
@@ -556,7 +527,7 @@
         "document": "cowork_layer6_grouping_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 6, ruling R5). Eight of the nine entries are `contract-home`; the ninth (D-458) stays `gap` on the KIND half — it is homed in the document's STATUS BANNER. Not a delegation matter.",
-        "delegation_at_head": "ARCHITECTURE.md:2113",
+        "delegation_at_head": "ARCHITECTURE.md:2143",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 9,
         "by_class": {
@@ -569,7 +540,7 @@
         "document": "cowork_phrase_boundary_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5, ruling R4). Eight of the ten entries are `contract-home`; two (D-484, D-485) stay `gap` on the KIND half — the document's opening block and its §11 'Open items'. Not a delegation matter.",
-        "delegation_at_head": "ARCHITECTURE.md:1483",
+        "delegation_at_head": "ARCHITECTURE.md:1513",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 10,
         "by_class": {
@@ -601,13 +572,13 @@
     }
   },
   "counted": {
-    "home_population_entries": 193,
+    "home_population_entries": 191,
     "home_population_documents": 40,
-    "lost_for_want_of_a_delegation": 29,
-    "of_which_a_widening_would_move": 4,
-    "outstanding_set_documents": 2,
+    "lost_for_want_of_a_delegation": 26,
+    "of_which_a_widening_would_move": 1,
+    "outstanding_set_documents": 1,
     "write_list_members": 11,
-    "write_list_members_still_losing_entries_to_the_delegation_half": 2,
+    "write_list_members_still_losing_entries_to_the_delegation_half": 1,
     "write_list_members_still_AWAITING_AN_ACT_BY_THE_USER": [],
     "why_those_two_counts_differ": "`cowork_layer1_tone_collection_design.md` still loses both its entries to the delegation half and is NOT awaiting an act: the user ruled on 2026-08-04 (READ WAVE 6, R6) that it is not a delegation target, so `gap` is the class the ruling intends. Counting it as outstanding would re-open a settled question."
   }

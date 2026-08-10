@@ -2378,6 +2378,112 @@ is the record's own bookkeeping and the rulings that govern it.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 1 — OPENED AND PARTLY DONE. Three of the twenty-eight re-homed, each complete in itself; this is where the batch stops, and it stops on capacity
+
+**The population was derived fresh at task start (A2, A5)** from `tools/audit/phase1_finish_line.json`
+and the route artifacts, not carried from the dispatch or from this file. It is the four homing
+items the dispatch names, and the dispatch's own partition of it holds: the no-ratified-surface
+class, the bar-excluded class (empty at HEAD), and the standing seventeen — the section-unreached
+four and the findings-not-rules thirteen. **No count is restated here (D-431).**
+
+**★ RULING 38 SPLITS THE FIRST ITEM IN A WAY THE DISPATCH DID NOT ANTICIPATE, AND THE SPLIT IS
+DERIVED FROM THE ROUTE TABLE RATHER THAN JUDGED.** Of that item's entries, those whose AUTHORED
+route was *needs a delegation* are the ones the ruling converts to a re-home. The rest carry
+`NO HOME EXISTS`, and **Ruling 38 does not reach them** — they record that NEITHER route applies,
+because the entry's live content is carried by a homed successor and re-homing would put a second
+copy of a homed rule (#6), or because there is no decision content to write at all. The reasoning
+is written at the route generator itself and not only here.
+
+**★ AND THE ELEVEN CONVERTED ENTRIES ARE NOT ALL THE SAME SHAPE, WHICH IS THE FINDING A CONTINUING
+SESSION NEEDS BEFORE IT STARTS.** Nine of them name `cowork_score_census.md` as their own owning
+surface and two name `cowork_audit_protocol.md` — that is, **their recorded owner IS a document
+with no delegation.** For the two audit-method entries the act is the one this batch performed
+seven times at Task 0: a `process`-kind homing into the audit protocol, which leaves the gap class
+by construction and needs no delegation. **For the nine corpus entries it is not obvious that
+re-homing into the census closes anything**, and choosing a different surface would be a judgment
+about where a corpus decision is owned. **They are HELD, not sited**, and the candidates the record
+itself names are `cowork_score_census.md` (their recorded owner) and `CLAUDE.md` gate block (A),
+which already carries the corpus rules the census states from the other side. **Nothing is decided
+here** — the standing homing discipline is that an entry whose owner is not determinate is held
+with its candidates named.
+
+**What was done, and why these three.** They are the section-unreached item's voice-leading
+members, whose delegation question the user RULED CLOSED on 2026-08-04 — which is what makes them
+the cleanest members of the whole population: the finish line's own gate note draws the split this
+task turns on, that **the delegation question is closed and the ENTRIES are not.**
+
+1. **D-400 → `ARCHITECTURE.md` §2.15's span typology, THE SECTION THE ENTRY'S OWN TEXT NAMES.** Its
+   ask says in terms that the per-voice span kind is admitted *into ARCHITECTURE §2.15*, so nothing
+   is sited by judgment. **The propagation it recorded as riding the build had never happened:** the
+   typology carried no per-voice member, so a phrase-segmentation design written against the
+   catalogue would have found every span kind tiling the whole texture. The home text carries the
+   rule, its defense — phrases in contrapuntal writing are concurrent and out of phase across voices
+   — and the thing the record deliberately does NOT assert, that consecutive phrases within one
+   voice tile it exactly.
+2. **D-397 → `ARCHITECTURE.md`'s growth-by-axis paragraph**, as four ownership CLAIMS in plain
+   words, each with the record's own condition that a claim is discharged only at that component's
+   ratified design. **The component code names are deliberately not carried into the architecture
+   text** — a reader there meets an object rather than an identifier, and the identifiers live in
+   the axis design that section delegates to (#6).
+3. **D-398 → `cowork_voiceleading_axis_design.md` §0**, a section the EXISTING delegation already
+   reaches, at the motion-types bullet whose undecided word it settles. **This one is also a
+   doc-sync correction (C3):** that bullet closed by calling the reading *an implementation
+   declaration owed at build*, which is false at HEAD. The former wording is preserved in place
+   (#12) and the §15 tracking line is untouched.
+
+**In all three the delegation is untouched.** No delegation was written or widened, §15 and §16 are
+still not named, and the 2026-08-04 home-class rulings are preserved whole at each entry and
+explicitly NOT withdrawn: they settled the DELEGATION question, and this act settles the ENTRY.
+
+**★ ONE AUTHORED INPUT RETIRED AND ONE AUTHORED, both under their own tools' STOPs.** The
+class-C delegation DRAFT for the voice-leading design was moved WHOLE into a retired block with the
+reason it retired (#12, D-648): the document left class C because its three class-C entries did.
+**The draft's own recommendation is the route that was taken** — leave the delegation as it stands
+and home those decisions where their concerns are owned — so the retirement discharges it rather
+than overriding it. And the classifier STOPPED because the §0 homing made a subsection hold a
+register entry for the first time; a **states-rules** judgment was authored for it with its ground,
+that every bullet there FIXES the operational meaning a term carries wherever the axis's
+specifications use it, which is a binding definition and not an observation.
+
+**★ THE LAYERED-STOP SHAPE APPEARED FOR THE FOURTH TIME IN THIS ARC AND IS REPORTED RATHER THAN
+ABSORBED.** The legacy-mark verification reports only its FIRST failing anchor, so **seven anchors
+had to be re-aimed one run at a time**, each from the tool's own reported line and never by an
+assumed uniform shift. Every one is authored-input maintenance (D-648) and no verdict, mark, status
+or home moved with them. The general point is worth a reader's attention: **a cleared STOP is never
+evidence about what follows it**, and only a single green run is.
+
+**★ WHERE THE BATCH STOPS, AND IT STOPS INSIDE TASK 1 ON CAPACITY.** The dispatch permits a stop
+partway HERE and states the reason it is safe: unlike a derivation, a per-entry pass has no
+silent-cap hazard, because each homed entry is complete in itself. **Nothing is half-edited** —
+every act on disk is whole, every derived surface re-derives, and the guard set stands at ZERO
+failing with the classification green after it. **Tasks 2, 3, 4 and 5 are NOT STARTED**, and none
+of them was opened and abandoned.
+
+**What a continuing session should know.**
+
+1. **The remaining population is DERIVED, not carried from here:** the four homing items at
+   `tools/audit/phase1_finish_line.json`, read at task start. The three closed here are already out
+   of it by construction.
+2. **The eleven-entry split above is the first thing to settle**, and nine of those eleven need a
+   decision about where a CORPUS decision is owned — which is a judgment, not a filing act. The two
+   audit-method entries are executable now, by the Task-0 pattern.
+3. **The findings-not-rules thirteen are untouched.** Their closing act is stated at the finish
+   line: write the rule the entry records into a section that STATES it, in the specification that
+   owns the concern — rule (e)'s preferred route, and not a rewrite of the finding-recording
+   section.
+4. **Every homing into `ARCHITECTURE.md` shifts anchors below it**, and three separate tools carry
+   authored line citations into that file. The order that reaches a fixed point is: home →
+   `reaim_home_anchors.py` → classifier → dispositions → register → the derived views, with the
+   legacy-mark verification re-aimed one STOP at a time.
+
+**Holds:** the nine corpus entries of the converted eleven, with their candidates named above.
+**Surfacings:** none bearing on the analysis — every subject of this task is where a recorded
+decision is written down.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

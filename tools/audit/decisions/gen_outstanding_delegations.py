@@ -151,8 +151,25 @@ WRITE_LIST_STATE: dict[str, tuple[str, str]] = {
 # AUTHORED — for each class-C document, what the un-named sections ARE (read at the object,
 # from the section's own heading and opening lines), the draft wording, and what it would close.
 # ---------------------------------------------------------------------------
-CLASS_C_DRAFT: dict[str, dict] = {
+# ★ RETIRED CLASS-C DRAFTS — moved WHOLE with the reason they retired, never deleted (#12,
+# D-648: an authored judgment follows its subject out of the population; this is maintenance and
+# not a mechanism change).
+RETIRED_CLASS_C_DRAFT: dict[str, dict] = {
     "cowork_voiceleading_axis_design.md": {
+        "retired": "2026-08-09, by cc_instruction_return_continuation_6.md Task 1",
+        "why_it_retired": (
+            "The document left class C because its three class-C entries left it. Under the "
+            "user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md` — re-homing is the "
+            "DEFAULT closing route and no document is excepted — D-397 and D-400 were re-homed "
+            "into `ARCHITECTURE.md` (the growth-by-axis ownership paragraph, and the §2.15 span "
+            "typology, which D-400's own text names as its target), and D-398 was re-homed into "
+            "§0 of this document, a section the delegation ALREADY names and whose kind judgment "
+            "is authored. ★ THE DRAFT'S OWN RECOMMENDATION IS THE ROUTE THAT WAS TAKEN, which is "
+            "why this retirement is a discharge rather than an override: it recommended the "
+            "SECOND option — leave the delegation as it stands and home those three decisions "
+            "where their concerns are owned — and the ruling made that the default. The "
+            "delegation is untouched: §15 and §16 are still not named, and no widening was "
+            "written."),
         "current_delegation_names": "§0, §5.1, §5.3, §8, §9",
         "what_the_un_named_sections_are": (
             "§15 is 'Open items & deferred refinements' — a numbered tracking list of what is "
@@ -173,6 +190,8 @@ CLASS_C_DRAFT: dict[str, dict] = {
             "widening that reaches them would most likely be excluded on the kind half at the "
             "next run, which is a wording change that closes nothing."),
     },
+}
+CLASS_C_DRAFT: dict[str, dict] = {
     "cowork_structural_integrity_audit.md": {
         "current_delegation_names": "§3 (the prioritized fix-queue) and §4 (the sequencing call)",
         "what_the_un_named_sections_are": (
@@ -457,6 +476,20 @@ def build() -> dict:
             ),
             "documents": len(settled),
             "members": settled,
+        },
+        "retired_class_C_drafts": {
+            "what_this_is": (
+                "Drafts authored for a document that has since LEFT class C because its class-C "
+                "entries were re-homed rather than because a delegation was written. Moved WHOLE "
+                "with the reason each retired and nothing deleted (#12) — the authored judgment "
+                "follows its subject out of the population, which is maintenance under D-648 and "
+                "not a mechanism change. Kept because a draft that was offered and the reasoning "
+                "that produced it are evidence nothing re-derives once the class has moved, and "
+                "because a reader comparing artifacts must be able to see that a document left "
+                "this class by being CLOSED rather than by being dropped."
+            ),
+            "documents": len(RETIRED_CLASS_C_DRAFT),
+            "members": RETIRED_CLASS_C_DRAFT,
         },
         "what_is_NOT_proposed_as_a_delegation_and_why": {
             "class_A": {

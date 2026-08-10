@@ -1092,6 +1092,20 @@ contracts below all serve this principle. Their detailed statements live in the 
   crosscutting rules (§8) and the architecture decisions (§9) are inside the delegated concern and sat outside the
   named ones. §15/§16 are deliberately NOT named — they are ratification asks, not rule-stating sections.
   *(section-span / pedal-point-span remain latent.)*
+  **★ THE TYPOLOGY ADMITS A PER-VOICE SPAN KIND (user-ratified 2026-07-03; written here 2026-08-09).** Every span
+  kind listed above cuts across the whole texture at once — it is a segmentation of the music, and the members of
+  one kind tile it. **A MELODIC PHRASE DOES NOT.** In contrapuntal writing the voices' phrases run concurrently and
+  out of step with one another, as a fugue's staggered entries do, so phrase-spans **overlap across voices by
+  construction and tile only WITHIN one voice**. The typology therefore carries a second kind of member: a
+  **per-voice span**, whose tiling law is stated per voice rather than over the texture. *Why the typology has to
+  say so rather than leaving it to the owning design:* it is the typology that fixes what a span kind IS, and a
+  phrase-segmentation design cannot be written against a catalogue in which every member tiles the whole texture —
+  the extension is the thing that design is written against. *What is deliberately NOT asserted:* that consecutive
+  phrases within one voice tile that voice EXACTLY. Phrase elision makes a shared boundary note a real case, and it
+  is recorded as an open question for the segmentation design rather than assumed away. The melodic phrase itself
+  is a voice-leading-axis object (the **phrase [MT]** of the terminology above), not the punctuation-span, and its
+  owner is named with the axis; the criterion and build home for the phrase-span remain
+  `cowork_voiceleading_axis_design.md` under the delegation stated immediately above.
 - **The verifiability contract** — prefer what we can verify against ground truth (it is how we catch our own theory
   errors); for sound theory we cannot verify against the current corpus, build it with an explicit
   **alternative-confidence path** *and* an **"empirically-unvalidated" mark**, rather than refusing it (this governs the
@@ -1121,7 +1135,23 @@ contracts below all serve this principle. Their detailed statements live in the 
   texture-of-span, Class M) + its bounded-context requester; measured orthogonal to the harmonic spine (cross-ARI 0.030);
   VL-D/E/F/G/H named + design-gated (`cowork_voiceleading_axis_design.md`)** — and higher grouping structure (sections /
   periods / form) is explicitly
-  anticipated *above* L6 (`cowork_layer6_grouping_design.md` §9-D3), deferred, not forbidden. Growth is **by axis and by
+  anticipated *above* L6 (`cowork_layer6_grouping_design.md` §9-D3), deferred, not forbidden.
+  **★ FOUR ANALYSIS OBJECTS THAT HAD NO OWNER ARE OWNED BY THE VOICE-LEADING AXIS, AS CLAIMS (user-ratified
+  2026-07-03; written here 2026-08-09).** Growth by axis only works if every analysis object has a named owner, and
+  four did not. They are assigned here, and each is recorded **as a CLAIM with an owner rather than as work
+  started** — a claim is discharged only when that component's own design is ratified, never by this line.
+  **(1) The stock eighteenth-century patterns and the chromatic line cliché** belong to the axis, because what
+  defines them is primarily a paired outer-voice scale-degree skeleton — that is, voice leading — and the built
+  chord catalogue already records exactly that with a voice-leading-defined flag on the entries concerned, checked
+  at the catalogue rather than assumed. **(2) The melodic phrase [MT]** belongs to the axis; this is the other side
+  of a ruling already made on the harmonic side, where the grouping layer deliberately does not segment the melodic
+  phrase. **(3) Chord voicing and arrangement** belong to the axis, which the harmonic vocabulary's own scope
+  section states from the other direction by excluding them. **(4) Checking and advising on part-writing** belongs
+  to the axis, together with the per-sample motion-event surface that serves it. *Why the ownership is stated in
+  the architecture rather than only in the axis's design:* an unowned analysis object is how a concern gets built
+  twice, in two places, which is the failure (#6) exists against — and three of these four are named by OTHER
+  components' scope statements as things they exclude, so without a positive owner the record says only where they
+  do not belong. Growth is **by axis and by
   component**, not by climbing a fixed tower. **A new layer or axis is admitted only when it clears three co-equal gates,
   all required:** **(1) separation of concerns** — it carries *one* responsibility that must not sit mixed into another;
   this is a **structural mandate, sufficient on its own** to justify a split even at *zero* immediate accuracy gain, and
