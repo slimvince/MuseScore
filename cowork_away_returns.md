@@ -1791,6 +1791,64 @@ the conflict located is between two records rather than in any behaviour.
 movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion
 statement is not written, not drafted and not partially written here.**
 
+### ★ WHERE THIS BATCH STOPPED
+
+**Tasks 0, 1, 2, 3 and 4 are COMPLETE, committed and pushed** — five commits, each its own task
+boundary, each with its full guard run, its classification run after it, and its `STATUS.md` pointer
+entry. **Task 5 is NOT STARTED and Task 6 is NOT REACHED.** That is a capacity stop at a clean
+boundary, not a halt on a finding: no STOP note was written against the batch, nothing is left
+half-edited, every derived surface re-derives, and **the guard set stands at ZERO failing** — the
+standing failure this batch inherited was cleared by Task 0, in the commit that cites the ruling
+authorizing it.
+
+**★ WHY TASK 5 WAS NOT OPENED RATHER THAN OPENED AND LEFT PART-DONE.** Its first sub-part is ONE
+GENERATED DERIVATION over a derived population, and the previous continuation declined it for exactly
+this reason: *a derivation published over part of its population is the silent cap the standing rules
+forbid — it would read as covering the class while covering some of it.* Its last sub-part is the
+knowledge arc's ONE licensed `src/` act, where a half-performed sweep would leave the code carrying
+some corrected comments and some false ones with no record of which is which. **Both are worse
+part-done than not begun.**
+
+**★ ONE THING A RECONNAISSANCE FOR RULING 16's SWEEP ESTABLISHED, recorded because it corrects a
+premise the next session would otherwise carry.** Ruling 16 says in its own words that [[OI-353]]'s
+six sites *"are the found members, not the family"*. **They are: candidate sites exist well beyond
+the six**, and the largest group is of a kind neither [[OI-353]] nor the phase-1w side finding names —
+**comments declaring the JOINT MODULE'S OWN dormancy**, written before the notation switch and
+describing a state that switch ended. Located, with the file tools, at
+`src/composing/analysis/CMakeLists.txt` (the joint module's own block, the notation-record block and
+the record-producer block) and at `src/composing/analysis/section/sectionrecordadapter.cpp` beside the
+header already on the list. **What is NOT claimed:** that every candidate is false at HEAD. Many
+neighbouring `DORMANT` comments in the same file are about modules that ARE still dormant and are
+true, and separating the two is precisely what the sweep must do against the configuration facts —
+which is why the enumeration is generated and not read off. **The next session derives the
+enumeration and does not start from six.**
+
+**What a continuing session should know.**
+
+1. **Task 5's four sub-parts are untouched and each population must be derived fresh:** the
+   reach-verdict derivation over the apparatus-classed documentation rows (**D-639**'s test, its
+   three worked examples ARE the test, fallback (1A) applied and SAID where the test does not decide,
+   no hand verdicts, the method being the existing first application's shape and not an invented one);
+   the section-unreached and findings-not-rules re-homes; the session-executable gating rows; and
+   **Ruling 16's sibling sweep with its ONE comment-only `src/` commit** (sweep first, generated;
+   diff verified comment-only; a sibling whose falsity needs judgment about the analysis is HELD, not
+   edited; [[OI-353]] flips on it). **No `src/` file was opened for editing by this batch.**
+2. **Task 6's OI-346 marks are not reached.**
+3. **Four things await the user, and the first two are new STOPs this batch produced:**
+   **§1.10** — Ruling 25's remedy is refuted by its own both-ways condition, and the parser is
+   unchanged; **the D-580 fact-gathering surface**, which takes no verdict and returns the cell to the
+   user on facts. Beside them stand the two mechanism-or-convention decisions [[OI-361]] and
+   [[OI-362]] need, and the three candidate remedies [[OI-356]] now carries.
+4. **Two findings bearing on the analysis were surfaced and are rowed, not proposed for:** §2.10 /
+   [[OI-363]], the partial-signature correction resolving fewer than half its own derived population
+   at committed outputs; and [[OI-357]], whose production-arm question is still unanswered because no
+   committed output for that repertoire was produced by the arm that ships.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch** — and the guard set reaching zero failing does not change that: a green guard set is a
+statement about the record's own machinery, not about the finish line, whose remaining count is
+derived at `tools/audit/phase1_finish_line.json` (**D-431**).
+
 ---
 
 ## 4. The batch's start state, recorded before any act
