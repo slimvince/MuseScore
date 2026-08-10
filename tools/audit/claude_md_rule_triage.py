@@ -473,6 +473,36 @@ TRIAGE: dict[str, tuple[str, str]] = {
                       "restated here (D-431). What no mechanism covers is the choice of which "
                       "open-state word a row's author means, which is a judgment about the row "
                       "and not about the rule."),
+    # ── AUTHORED 2026-08-09, cc_instruction_return_continuation_8.md Task 0 ───────────────────
+    # Homed in CLAUDE.md by the user's Ruling 42 of that date, which is what put it into this
+    # tool's derived population and stopped the check. Authoring a verdict for a row the cut DID
+    # reach is what this tool requires; nothing is hand-added for a row the cut did not reach.
+    "D-664": (EXISTS, "PARTIAL, and the split runs exactly along the rule's own two halves. THE "
+                      "DEFAULT HALF IS MECHANISED: the population the rule speaks about — every "
+                      "entry whose home document is named in no user-ratified surface, or only in "
+                      "a form the delegation bar excludes — is DERIVED at "
+                      "tools/audit/decisions/home_classification.json and "
+                      "tools/audit/decisions/phase1p_delegation_bar.json, and "
+                      "tools/audit/decisions/gen_finish_line_item1_routes.py assigns the ruled "
+                      "route to every open member with the authored route preserved beside it "
+                      "(#12), so a session cannot reach one of these entries and quietly take the "
+                      "other route. gen_item1_rehome_blocker.py is in the guard population and "
+                      "STOPS when an authored route and the register disagree, which is how the "
+                      "seam Ruling 38 itself created in the route table was caught rather than "
+                      "reported as a completed act never having happened. Both run with no human "
+                      "step (D-436's first condition). WHAT NO MECHANISM COVERS IS THE EXCEPTION "
+                      "HALF, and it is stated rather than left to be discovered: whether a "
+                      "document has been excepted at all is a fact about a user ruling, and "
+                      "whether that ruling was taken BEFORE that document's entries were "
+                      "re-homed — which is what decides validity — is a fact about the ORDER of "
+                      "two acts in the record. A mechanism would need an AUTHORED list of excepted "
+                      "documents with the date each was excepted; the exception list was ruled "
+                      "EMPTY, so that list does not exist and creating it is a named act of its "
+                      "own. ★ SO THE MECHANICAL FORM OF THE EXCEPTION HALF IS A CONDITION ON A "
+                      "FUTURE ACT RATHER THAN AN OBLIGATION STANDING NOW — the same distinction "
+                      "that keeps D-660's annotation half out of the defect class — which is why "
+                      "this entry is not classed MECHANISABLE-AND-NOT and the defect class does "
+                      "not move."),
     "D-606": (KNOWLEDGE, "A mechanism cannot know that the change in front of it is a modulation "
                          "detector, which is the antecedent the whole rule hangs on — and the "
                          "rule's own reason is that the agreement percentage is GAMEABLE BY THE "

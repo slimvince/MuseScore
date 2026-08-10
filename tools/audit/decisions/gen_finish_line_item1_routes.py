@@ -292,6 +292,48 @@ RULING_39_MEASURED = (
 )
 
 
+# ── RULING 40, THE PROCEDURE THAT REPLACES RULING 39's UNREACHABLE OUTCOME ────────────────────
+#
+# THE RULING.  User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`, taken
+# after the refutation above was put to them.  Ruling 39's ACT stands -- the census is the ruled
+# owner and the delegation is written -- and its unreachable OUTCOME is replaced by a THREE-STEP
+# PROCEDURE, executed per entry, in order, with a STOP at each boundary:
+#
+#   (1) where a census RULE-STATING section ALREADY STATES the entry's rule, ROUTE 1 -- the entry's
+#       HOME field moves to that section, the verbatim re-taken from the census's own text, the
+#       former fields preserved (#12).  Zero text movement, which is what the exception was for.
+#   (2) else, where the OWNING census section STATES RULES, ROUTE 2 -- the rule is written there in
+#       the section's own voice, under a census-edit licence THIS ruling grants, scoped to
+#       rule-stating sections and to these entries only.
+#   (3) where the owning section is a FINDINGS TABLE, the entry is HELD with its row named.  Adding
+#       a rule-stating block to a findings table is a DOCUMENT-STRUCTURE act reserved to the user.
+#
+# The kind half is judged PER SECTION before any step-2 write, and nothing is admitted by stretch.
+# An entry fitting none of the three steps is a STOP, not a judgment.  Excluded alternative,
+# recorded at the ruling: nine individual rulings, which buys no fidelity over the guarded
+# procedure.
+RULING_40 = (
+    "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT "
+    "stands and its unreachable predicted OUTCOME is replaced by a THREE-STEP PROCEDURE executed "
+    "per entry, in order — (1) where a census RULE-STATING section already states this entry's "
+    "rule, move the entry's HOME field there, verbatim re-taken from the census's own text and "
+    "former fields preserved (#12), which is zero text movement; (2) else, where the OWNING census "
+    "section STATES RULES, write the rule there in the section's own voice under the census-edit "
+    "licence this ruling grants, scoped to rule-stating sections and to these entries only; (3) "
+    "where the owning section is a FINDINGS TABLE, HOLD the entry with its row named, because "
+    "adding a rule-stating block to a findings table is a document-structure act reserved to the "
+    "user. The kind half is judged PER SECTION before any step-2 write; nothing is admitted by "
+    "stretch; an entry fitting none of the three steps is a STOP."
+)
+
+# The per-entry OUTCOME of that procedure, authored as it is executed.  It is a table rather than a
+# derived value because which step an entry takes is a READING of the census -- does a rule-stating
+# section already state this rule, and is the owning section a findings table -- and a reading is
+# authored.  The population is NOT listed here: membership stays derived from the authored owner
+# string above, so an entry that has no verdict yet says so rather than being silently absent.
+RULING_40_STEPS: dict[str, str] = {}
+
+
 def closed_row_home(entry_id: str) -> str:
     """Where an executed entry went, and in which wave -- so one hardcoded date cannot stand for
     every wave (#12)."""
@@ -1009,6 +1051,13 @@ def build() -> dict:
             if owner and "cowork_score_census.md" in owner:
                 row["ruled_by_39"] = RULING_39
                 row["ruling_39_outcome"] = RULING_39_MEASURED
+                # Ruling 40 replaces 39's unreachable outcome with the three-step procedure. The
+                # membership is the SAME derived set (the authored owner string), so a row that
+                # later gains or loses the census as its owner joins or leaves this set by itself.
+                row["ruled_by_40"] = RULING_40
+                row["ruling_40_step_taken"] = RULING_40_STEPS.get(
+                    i, "NOT YET EXECUTED — the procedure had not been run for this entry when "
+                       "this artifact was generated.")
             rows.append(row)
 
     rehome = [r for r in rows if r["route"] == REHOME]
@@ -1193,6 +1242,40 @@ def build() -> dict:
                 "is RULED and this table records it as ruled; what is refuted is only the mechanism "
                 "by which the rows were expected to close."),
             "where_it_is_reported": "cowork_away_returns.md §1.12",
+        },
+        "★_the_2026_08_09_procedure_that_replaces_that_unreachable_outcome": {
+            "the_ruling": RULING_40,
+            "recorded_by": "cc_instruction_return_continuation_8.md Task 0",
+            "what_it_changes_and_what_it_does_not": (
+                "Ruling 39's ACT is untouched — the census is still the ruled owner and the "
+                "delegation the user approved verbatim is still written. What is replaced is the "
+                "predicted CLOSE, which the block above refutes by measurement. So the block above "
+                "is NOT withdrawn (#12): it records why the rows did not close, and this one "
+                "records what closes them instead."),
+            "which_of_the_two_named_routes_it_takes": (
+                "BOTH, in a fixed order, with the choice made per entry by a stated test rather "
+                "than by preference. Step 1 is route (1) of the block above — the pointer move, "
+                "available only where the census already carries the rule. Step 2 is route (2), "
+                "the re-home Ruling 38 makes the default, and it carries a NEW census-edit licence "
+                "the ruling grants, scoped to rule-stating sections and to these entries only. "
+                "Step 3 is the kind-half STOP Ruling 39 armed, now given an explicit outcome: the "
+                "entry is HELD with its row named rather than written by stretch."),
+            "★_why_the_kind_half_is_judged_before_any_write": (
+                "Register rule (h)'s two halves are applied form-first, kind-second-and-last "
+                "(rule (k2)), and the kind half is DECISIVE: a well-formed delegation to a section "
+                "that RECORDS FINDINGS rather than STATES RULES admits nothing. The census is a "
+                "census — its findings tables are the majority of it — so a procedure that wrote "
+                "first and checked afterwards would put rules into findings tables, which is the "
+                "single failure this ruling's step 3 exists to prevent."),
+            "the_per_entry_outcome_is_authored_and_is_on_each_row": (
+                "`ruling_40_step_taken`. An entry whose procedure has not run says so rather than "
+                "being absent, so a partially executed pass cannot read as a complete one."),
+            "what_this_ruling_does_NOT_authorize": [
+                "Any edit to a census FINDINGS TABLE, in either direction.",
+                "Any census edit for an entry outside this derived set.",
+                "Any fix to the analysis, any design, any inference change. Phase 1 (D-231) "
+                "remains open and #8's three-clause gate stands.",
+            ],
         },
         "★_findings_the_classification_produced": {
             "1_C1_reaches_entries_whose_re_homing_#6_would_FORBID": (

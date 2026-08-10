@@ -47,6 +47,14 @@
 > written for any ruling in it until the user rules on it.** §9.4 additionally REPORTS, rather than
 > classifies, that Ruling 39's predicted outcome is refuted by measurement while its act stands.
 >
+> **★★ §9 IS NOW RULED — the user's Ruling 42 of `cowork_rulings_2026_08_09_eighth_stop.md`,
+> recorded at §10 by `cc_instruction_return_continuation_8.md` Task 0.** The verdicts stand AS
+> PROPOSED and **BOTH offered upgrade readings are DECLINED**; **one** register entry was written.
+> **Every ruling this file classifies again carries a ruled verdict, and no ruling in it awaits
+> one.** Nothing above §10 is re-decided, re-worded or removed (#12) — §10 is this file's third
+> closing state and the only section added after Ruling 42, in the same shape §6 and §8 use for the
+> first two.
+>
 > **Why this exists.** Three ruling records carry the same banner sentence — *"interim carrier
 > until the applying dispatch records them (D-230)"* — and **no register entry exists for any of
 > them.** Every ruling's CONTENT is on disk in a ratified record, and every ruling applied is
@@ -452,6 +460,60 @@ It touches no `src/`, no golden, no corpus of scores and nothing in `tools/robus
 
 ---
 
+## 10. THE THIRD CLOSING STATE — what Ruling 42 did, per ruling, and why BOTH upgrade readings were declined
+
+**Added 2026-08-09 by `cc_instruction_return_continuation_8.md` Task 0, after the user's Ruling 42
+of `cowork_rulings_2026_08_09_eighth_stop.md`.** Nothing above this section is altered by it, and
+§6 and §8 — the first two closing states — are untouched.
+
+**The §9 verdicts are RULED AS PROPOSED. ONE register entry was written**, at the home §9.3
+proposes, carrying its verbatim taken from the home text after that text was written, its plain
+restatement, its defense, and a provenance field recording that the user ruled the CLASSIFICATION
+and the HOME while the entry text was written afterwards — so **the new entry carries no
+entry-ratification event, and nothing here is self-ratifying (#14)**, exactly as at §6 and §8.
+
+| Queue row | Register entry | Home written |
+|---|---|---|
+| **38** — the homing default and its exception mechanism | **D-664** | `CLAUDE.md`, the decisions-register section, beside rule (g) — written as **rule (l)**, the next letter of that section's own lettered list |
+
+**THREE are CONFIRMED AS EXERCISES and carry no register entry: 36, 37 and 39.** Each is fully
+recorded in the provenance of the act it licensed, which is where every one of them already was.
+
+**★ AND BOTH UPGRADE READINGS THIS SECTION OFFERED ARE DECLINED, ON #6 — which is the clause of the
+ruling worth reading, because §9 put them there precisely so that reading either the other way
+would cost the user one line.** The ruling takes neither, and its ground is the same for both: the
+content is **already carried**, so a second entry would duplicate it.
+
+- **37** — the clause that binds is *complete means complete relative to a named derivation* and it
+  is already register data at **D-661**, written under Ruling 36 in the same act; what 37 adds
+  beyond it is a set of DISPOSITIONS on live rows, each already recorded on `OPEN_ITEMS.md`
+  OI-229's row and in the scanner artifact's closing state.
+- **39** — its decision content is the DELEGATION itself, and a delegation's home is the
+  user-ratified surface that carries it. The user wrote it into `ARCHITECTURE.md`; registering it
+  again would put a second copy of carried content.
+
+**★ THE DECLINE IS NOT A REVERSAL OF THE KEEP-THE-INSURANCE GROUND, AND THE RULING SAYS SO.** At §6
+and §8 the user KEPT five entries this file flagged as reasonably downgradable, on the standing
+ground that keeping them is the cheaper insurance. That ground **prevents a proposed decision being
+downgraded**; it does not **manufacture an entry for content the register already holds**. So the
+two rulings are consistent, and a reader meeting the tally alone would not see it.
+
+**★ ONE THING THIS SECTION RECORDS RATHER THAN CLASSIFIES, in the same shape §9.4 used.** Ruling 40
+of the same record replaces Ruling 39's unreachable predicted OUTCOME — reported at §9.4 — with a
+THREE-STEP PROCEDURE executed per entry, and Ruling 43 accepts the seventh continuation's
+same-commit control on the reported-widening ground and ratifies the inversion corrections. **Both
+are recorded at their own subjects, not here**: Ruling 40 at `tools/audit/decisions/finish_line_item1_routes.json`
+and Ruling 43 at the OI-357 comparison artifacts' closing state and on the two rows. Neither
+creates a register entry under Ruling 42, and neither is re-classified here.
+
+**★ WHAT THIS FILE'S OWN JOB NOW IS — unchanged from §8, restated only because a third extension
+happened.** Every ruling it classifies carries a ruled verdict, so the queue is discharged as a
+queue. It stays as the RECORD of the classification — the verdicts, their grounds, the downgrade
+and upgrade readings offered and their outcomes, and all three closing states — and it is not
+extended again for a later ruling without a dispatch saying so.
+
+---
+
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
 debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
@@ -467,4 +529,6 @@ written, and was added on the instruction of `cc_instruction_return_continuation
 carriers are `cowork_rulings_2026_08_09_sixth_stop.md` and
 `cowork_rulings_2026_08_09_seventh_stop.md`, both read whole (D-643) before it was written; it was
 added on the instruction of `cc_instruction_return_continuation_7.md` Task 0, which is the dispatch
-§8's closing line requires, and it scopes itself to Rulings 36–39.*
+§8's closing line requires, and it scopes itself to Rulings 36–39. §10 records the user's Ruling 42
+of `cowork_rulings_2026_08_09_eighth_stop.md`, read whole (D-643) before it was written, and was
+added on the instruction of `cc_instruction_return_continuation_8.md` Task 0.*

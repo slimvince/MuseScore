@@ -23,11 +23,21 @@
 > population **derived by this document's own §3 method** — the notated key signature
 > against the published annotated key, read from the corpus metadata and applied
 > mechanically to every piece named here rather than to §3's table alone — the correction
-> reads **fewer than half** of that population with the annotated tonic, the large majority
+> reads **slightly more than half** of that population with the annotated tonic, so a large
+> minority of it is NOT read with the annotated tonic, the large majority
 > of the disagreements landing on a home of the **notated** signature, which is §3's own
 > diagnostic for the signature lock this correction exists to escape. Every value is at
 > `tools/audit/oi357_partial_signature_establishment.json` and none is restated here
-> (**D-431**). **A disagreement total is not a defect total** — each one is a genuine defect,
+> (**D-431**). *(★ CORRECTED 2026-08-09 on the user's **Ruling 41** of
+> `cowork_rulings_2026_08_09_eighth_stop.md`, one sentence, by
+> `cc_instruction_return_continuation_8.md` Task 0. **THE FORMER WORDING, PRESERVED (#12):**
+> "the correction reads **fewer than half** of that population with the annotated tonic". It
+> was INVERTED against the artifact this block cites — at the column the sentence names, the
+> agreeing pieces outnumber the disagreeing ones, by a narrow margin. **Nothing else in this
+> block moves**: what *resolved* covers, the derived population, the notated-signature
+> diagnostic, the disagreement-total clause and the two bounds are all true as written, and
+> the user's Ruling 35(a), under which this block was added, is undisturbed. The account is at
+> `cowork_away_returns.md` §2.11 and §1.13.)* **A disagreement total is not a defect total** — each one is a genuine defect,
 > a defensible modal reading the major/minor ground truth cannot represent, or an artifact of
 > comparing a global reading against a global annotation on a piece that modulates, and that
 > reading has not been made per case. **The tracking row is `OPEN_ITEMS.md` OI-363**, which

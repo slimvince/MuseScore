@@ -179,7 +179,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `CLAUDE.md:1066`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1088`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
@@ -202,7 +202,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:1264`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1286`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:821-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
@@ -219,7 +219,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1260`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1282`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:817-811, user-directed repeatedly and recorded 2026-07-11.
 
@@ -245,7 +245,7 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:1340`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1362`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:873-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
@@ -556,7 +556,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `CLAUDE.md:421-435`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:443-457`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 12 of `cowork_rulings_2026_08_09_second_stop.md` ("Agree with updated recommendations"), whose queue was drafted by `cc_instruction_return_continuation_2.md` Task 1 and extended by `cc_instruction_return_continuation_3.md` Task 0. CLASSIFIED as a DECISION by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), queue entry 12, which the queue itself put BOTH WAYS with the downgrade reading given — that as a procedure it is the author-then-review pattern again — and which the user ruled KEPT as a decision, the cheaper insurance. Homed by that same ruling in `CLAUDE.md`'s decisions-register section beside rule (c), the site the queue named; it is written as a marked block at the end of that section, which is the idiom that section already uses for a clause qualifying one of its lettered rules. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-230 (rule (c) itself), D-655 (the other clause that governs when a register-clearing act may be performed).
 
@@ -600,7 +600,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `CLAUDE.md:1315-1326`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:1337-1348`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 30 of `cowork_rulings_2026_08_09_fifth_stop.md`, whose two-tier test for research-tied names is the user's own; recorded on `OPEN_ITEMS.md` OI-229's row by `cc_instruction_return_continuation_5.md` Task 0, which stays OPEN because the cleanup itself is not done. CLASSIFIED as a DECISION by the user's Ruling 36 of 2026-08-09 (`cowork_rulings_2026_08_09_sixth_stop.md`), queue §7 entry 30, on the ground that nothing in the register says what a session may do with a research-tied name while #1/#2 make those names load-bearing. Homed by that same ruling in `CLAUDE.md`'s Conventions reserved-word block beside the disambiguation convention — the site the queue named, and a USER-ONLY text the ratification is the scoped licence for — written in that block's own voice, provenance here and never in the convention text. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-113 (the reserved-vocabulary convention it completes), D-661 (the completeness rule governing the inventory it orders), D-431 (why the inventory's counts stay in the artifact).
 
@@ -625,4 +625,29 @@
 **Home.** `CLAUDE.md:286-294`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 33 of `cowork_rulings_2026_08_09_fifth_stop.md`, over the family `OPEN_ITEMS.md` OI-356 / OI-361 / OI-362; executed by `cc_instruction_return_continuation_5.md` Task 1, whose normalization pass was gated by the both-ways condition D-657 records and which found a fourth member of the family in the process. CLASSIFIED as a DECISION by the user's Ruling 36 of 2026-08-09 (`cowork_rulings_2026_08_09_sixth_stop.md`), queue §7 entry 33, on the ground that it binds every row anyone writes into the index from now on. Homed by that same ruling in `CLAUDE.md`'s open-items register section beside rule (d) — the site the queue named, and a USER-ONLY text the ratification is the scoped licence for; the queue's stated alternative home, `OPEN_ITEMS.md`'s own preamble, was NOT taken because that preamble restates these rules rather than owning them (#6), and it carries a pointer instead. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). The vocabulary, the row split and the leading-token test have one home at `tools/audit/index_status_lint.py` and no token or count is restated (D-431). Cross-ref D-230 (the register's rules (a)-(e)), D-436 (the mechanism-change reservation the remedy was licensed under), D-657 (the both-ways condition the pass ran under).
+
+### D-664 — Re-homing is the default closing route where no delegation admits an entry's home, and only the user may except a document — before its entries are re-homed, never after
+
+> **(l) WHERE NO DELEGATION ADMITS AN ENTRY'S HOME, RE-HOMING IS THE DEFAULT CLOSING ROUTE — AND WHO
+> MAY EXCEPT A DOCUMENT FROM IT, AND WHEN (user-ruled 2026-08-09; the ruling record is
+> `cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38).** Rules (g)–(k) decide which documents and
+> sections are homes. This is the rule they lack: what closes an entry whose home is a home under
+> none of them. **For every register entry whose home document is named in NO user-ratified surface,
+> or only in a form the delegation bar excludes, the closing act is RE-HOMING into the owning layer's
+> specification** — rule (e)'s own stated preference, made a rule rather than a preference. **AND THE
+> EXCEPTION MECHANISM IS THE HALF THAT BINDS HARDER. A SESSION MAY NOT EXCEPT A DOCUMENT.** An
+> exception — a document the user wants kept as a contract home by delegation instead — is a **NEW
+> USER RULING NAMING THE DOCUMENT, TAKEN BEFORE THAT DOCUMENT'S ENTRIES ARE RE-HOMED, never after**;
+> taken after, it is void, because the entries it would have covered are already gone. **The exception
+> list was EMPTY when the rule was made, and that is a ruled state rather than an unfilled field.**
+
+**In plain words.** When a register entry sits in a document that no user-ratified surface names as a home — or names only in a form the delegation bar excludes — the entry is closed by writing its rule into the owning layer's specification, not by obtaining a delegation for the document it happens to sit in. A session may never except a document from that route. An exception is the user's own ruling naming the document, and it is only valid if taken before that document's entries have been re-homed. No document was excepted when the rule was made. The rule chooses between two routes that both exist; it creates neither where the record says there is none.
+
+**Why.** Rule (e) already prefers the owning layer's specification, and re-homing is what makes a decision findable without the register standing in for the specification; the excluded alternative is recorded at the ruling — delegation as the default grows the contract-home class, requires the user's own writing per document under rule (g), and runs against both concrete declinations already on the record. The timing half of the exception mechanism carries its own ground: an exception taken after the fact would be read back onto work already done, and the entries it would have covered are gone, so the ruling makes it void rather than retroactive. That the mechanism is real rather than notional is evidenced by its having been exercised once, at Ruling 39 of the seventh STOP, in the form it requires.
+
+**Status.** LIVE · decided 2026-08-09 · ratified by user
+
+**Home.** `CLAUDE.md:420-431`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`, recorded at the finish-line route machinery by `cc_instruction_return_continuation_6.md` Task 0 and exercised once, at Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`, whose predicted outcome was then refuted by measurement and replaced by the three-step procedure of Ruling 40. CLASSIFIED as a DECISION by the user's Ruling 42 of 2026-08-09 (`cowork_rulings_2026_08_09_eighth_stop.md`), queue §9 entry 38 — the ONLY entry that ruling creates; Rulings 36, 37 and 39 stand as EXERCISES and BOTH offered upgrade readings are DECLINED on #6, 37's binding clause being already register data at D-661 with its dispositions on OI-229's row, and 39's decision content being the delegation itself, homed where the user wrote it in `ARCHITECTURE.md`. Homed by that same ruling in `CLAUDE.md`'s decisions-register section beside rule (g), as rule (l) — a USER-ONLY text the ratification is the scoped licence for; the queue's stated alternative home, `cowork_audit_protocol.md` beside D-642, was NOT taken because rules (g)–(k) there are the register's own home rules and this is the one they lack. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14) — the user ruled the classification and the home, and the entry text was written afterwards. Cross-ref D-230 (the register's rules (a)–(e), which rule (e)'s preference this makes a rule), D-432 (the delegation bar whose excluded forms define half the population), D-435 (delegating and being a home as different tests), D-642 (the class where NEITHER route applies, which this rule does not reach), D-654 (the narrow-letter licensing default the exception mechanism is a special case of).
 

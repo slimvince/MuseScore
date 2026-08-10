@@ -359,6 +359,52 @@ def main() -> int:
                          "or inference change is proposed."),
         "generated_by": "tools/audit/gen_oi357_partial_signature_establishment.py",
         "the_row_it_answers": "OPEN_ITEMS.md OI-357",
+        "★_THE_CLOSING_STATE — WHAT THE USER RULED ABOUT THIS PASS": {
+            "the_ruling": "User, 2026-08-09, Ruling 43 of "
+                          "`cowork_rulings_2026_08_09_eighth_stop.md`, recorded here by "
+                          "`cc_instruction_return_continuation_8.md` Task 0. Written into this "
+                          "generator so it RE-DERIVES with the artifact rather than being pasted "
+                          "into the output.",
+            "the_same_commit_control_is_ACCEPTED": (
+                "The legacy-arm run at this commit went beyond the letter of Ruling 35(b), which "
+                "licenses the PRODUCTION arm's run and not a control. It is accepted on the "
+                "REPORTED-WIDENING ground: a widening reported is reviewable, a widening hidden is "
+                "not. The ruling's own reason is that the control replaced a FALSE conclusion with "
+                "a controlled one — without it this pass would have published a large arm effect "
+                "the evidence does not support, because the committed outputs are two months older "
+                "and were produced under a different preset."),
+            "★_the_citation_this_field_does_NOT_carry": (
+                "The ruling record cites the reported-widening ground as `(Ruling 17, D-660)`. "
+                "READ AT THE REGISTER DATA rather than carried: the reported-widening clause is "
+                "**D-654**, and **D-660** is the two-tier research-term rule and the terminology "
+                "cleanup order — a different decision on a different subject. The ground is "
+                "therefore cited here as D-654 and the discrepancy is SURFACED at "
+                "`cowork_away_returns.md` rather than propagated, which is the same treatment the "
+                "D-473→D-436 shorthand received when it appeared in two earlier ruling records."),
+            "the_inversion_corrections_are_RATIFIED": (
+                "The corrections applied within the previous session's own authority — the two "
+                "open-items rows, both detail files and the returns file in place — are ratified "
+                "as CORRECTIONS OF RECORD. Ruling 35(c) is undisturbed: it ruled a FORM acceptable "
+                "and never made a direction true. The one instance the previous batch could not "
+                "reach, in `docs/key_detection_baroque_partial_signature.md`, is corrected under "
+                "Ruling 41 of the same record, with its former wording preserved (#12)."),
+            "the_substantive_outcome_the_ruling_records": (
+                "OI-357's question is ANSWERED: the production arm handles the partial-signature "
+                "repertoire AT LEAST AS WELL as the legacy arm's explicit correction, established "
+                "by controlled comparison, with both comparison artifacts re-deriving "
+                "byte-identically from an independent second run of the analysis."),
+            "★_what_the_ruling_does_NOT_do": [
+                "It authorizes no fix, no design and no inference change; the row's second half — "
+                "BY WHAT MEANS — is untouched and this pass still counts rather than explains.",
+                "It moves no published measurement, promotes no corpus, refreshes no golden and "
+                "touches nothing under `tools/corpus/` or `tools/robust_stop/`.",
+                "It does not re-run the analysis: the two run records beside this artifact are "
+                "point-in-time records of the runs themselves and are NOT regenerated here, "
+                "because regenerating one means running the analysis again, which nothing needs "
+                "and no ruling licenses.",
+            ],
+            "no_value_is_restated_in_this_block": "D-431 — every value lives in the fields below.",
+        },
         "the_population_and_how_it_was_DERIVED": {
             "the_record_s_own_method": "`docs/key_detection_baroque_partial_signature.md` §3 "
                                        "derives its table 'From tools/dcml/corelli/metadata.tsv "

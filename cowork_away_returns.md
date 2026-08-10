@@ -2955,6 +2955,144 @@ a task rather than a step inside one.
 **Phase 1's completion statement is not written, not drafted and not partially written by this
 batch.**
 
+---
+
+# ═══ THE EIGHTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_8.md`, 2026-08-09) ═══
+
+> Rulings 40–43 of `cowork_rulings_2026_08_09_eighth_stop.md` are applied here, and the seventh
+> continuation's unstarted Tasks 3–5 are resumed. The sections above are earlier batches' and are
+> not rewritten. New holds are appended to §1, new surfacings to §2, and each task's log below.
+
+### 1.14 A ruling record cites the reported-widening ground as D-660; the register says D-654, and the discrepancy is SURFACED rather than propagated (Task 0)
+
+**The fact, read at the register data rather than recalled.** Ruling 43 of
+`cowork_rulings_2026_08_09_eighth_stop.md` accepts the same-commit control *"on the
+reported-widening ground (Ruling 17, **D-660**)"*, and the applying dispatch repeats that citation
+in its own Task 0 line. **Read at `tools/audit/decisions/backbone_decisions.json`: the
+reported-widening clause of Ruling 17 is **D-654**** — *where a licence's letter leaves a known
+falsity standing in the file it licensed, the session corrects it and REPORTS the widening in the
+same act* — and **D-660** is *a research-tied name is not renamed but is governed by a two-tier
+rule, and the terminology cleanup runs in a fixed order*, a different decision on a different
+subject.
+
+**What was done.** The ground is cited as **D-654** wherever this batch records Ruling 43 — at the
+comparison artifacts' closing state and on [[OI-357]]'s row — and the substance of the ruling is
+applied exactly as ruled. **Nothing about Ruling 43 is questioned**: the acceptance, its reason and
+its scope are the user's and are recorded whole. What is not propagated is one identifier.
+
+**Why it is surfaced rather than corrected in place.** A ruling record is a ratified carrier and a
+session does not edit one. This is the same shape as the D-473→D-436 shorthand, which appeared in
+two earlier ruling records and was closed by **dated correction remarks appended to those
+carriers**, with the entries themselves citing correctly — the record's own remedy for exactly this.
+**It is one appended remark for whoever is authorized**, and until then the discrepancy is on the
+record rather than merely inherited.
+
+**Nothing depends on it.** No act of this batch changes if the citation is read either way; what
+would change is a later session's reading of which decision the ground is.
+
+## 3 (continued). Per-task log — the eighth return continuation
+
+### Task 0 — COMPLETE. Rulings 40, 41, 42 and 43 recorded at their own subjects; ONE register entry written; the queue is fully ruled again
+
+**The start state was derived at the artifacts before any act (A5), not carried from the dispatch.**
+The full guard set was run unchanged before the first edit and came back at **ZERO failing**, which
+is where the seventh continuation left it, with the classification green after it; the working tree
+carried no uncommitted work of any batch's own. The nine census rows, the queue's §9, the two rows
+this task writes to and the register's highest identifier were each read at their own surfaces. No
+count is restated here (**D-431**).
+
+**What was done, in order.**
+
+1. **Ruling 41 — the one licensed `docs/` sentence.** The marked block in
+   `docs/key_detection_baroque_partial_signature.md` said the correction *"reads fewer than half of
+   that population with the annotated tonic"*; it now says **slightly more than half**, with the
+   consequence spelled out in the same breath and the **former wording preserved in place** (#12).
+   **Nothing else in that block moved** — what *resolved* covers, the derived population, the
+   notated-signature diagnostic, the disagreement-total clause and the two bounds are all true as
+   written, and Ruling 35(a), under which the block was added, is undisturbed. This discharges
+   §1.13, the last surface the previous batch could not reach.
+2. **Ruling 43 — recorded at the comparison artifacts' own closing state**, written into their
+   GENERATOR so it re-derives with them rather than being pasted into the output (the Ruling 37
+   pattern). Three things are recorded apart: the same-commit control **ACCEPTED** on the
+   reported-widening ground; the inversion corrections **ratified as corrections of record**, with
+   Ruling 35(c) explicitly undisturbed; and the **substantive outcome** — OI-357's question
+   ANSWERED, the production arm handling this repertoire at least as well as the legacy arm's
+   explicit correction. **★ THE THREE ARTIFACTS WERE REGENERATED AND THE DIFF IS ADDITIONS ONLY:**
+   thirteen added lines each, zero removed, measured against the commit by explicit hash — so
+   **every measured value re-derives byte-identically** and the closing state is the whole change.
+   **The two RUN records were deliberately NOT regenerated**, and it is said rather than left to be
+   noticed: regenerating one means running the analysis again, which nothing needs and no ruling
+   licenses.
+3. **[[OI-357]] and [[OI-363]] carry the ruling**, each on its index row and in a dated remark in
+   its detail file. **OI-357 is NOT FLIPPED, and that is a reading stated so it can be overridden
+   in one act** — see the paragraph below.
+4. **Ruling 40 — recorded on the nine census route rows**, membership derived from the same
+   authored owner string Ruling 39's record uses, so a row that later gains or loses the census as
+   its owner joins or leaves the set by itself. The three-step procedure is written out at the
+   generator with its order, its kind-half timing and the three things it does not authorize; each
+   row gains the ruling and a per-entry `ruling_40_step_taken` field that says **NOT YET EXECUTED**
+   rather than being absent, so a partially executed pass cannot read as a complete one. **The
+   Ruling 39 block is NOT withdrawn** (#12): it records why the rows did not close, and the new one
+   records what closes them instead.
+5. **Ruling 42 — ONE register entry, D-664**, at the home §9.3 proposed: `CLAUDE.md`'s
+   decisions-register section, written as **rule (l)** — the next letter of that section's own
+   lettered list, which is the section's scheme and not an invented one. It carries both halves of
+   Ruling 38: the re-homing default, and the load-bearing exception mechanism (a session may not
+   except a document; an exception is the user's ruling naming it, void unless taken BEFORE that
+   document's entries are re-homed). **Rulings 36, 37 and 39 stand as EXERCISES and BOTH offered
+   upgrade readings are DECLINED**, recorded at the queue's new **§10** with the ruling's own ground:
+   the content is already carried — 37's binding clause at **D-661** with its dispositions on
+   OI-229's row, 39's decision content in the delegation the user wrote into `ARCHITECTURE.md` — so
+   a second entry would duplicate it. **§10 also states why that is not a reversal of the
+   keep-the-insurance ground**, which prevents a proposed decision being downgraded and does not
+   manufacture an entry for content the register already holds. **The entry carries no
+   entry-ratification event** (#14): the user ruled the classification and the home, and the text
+   was written afterwards.
+
+**★ WHY [[OI-357]] IS NOT FLIPPED, AND WHY THAT IS REPORTED RATHER THAN SIMPLY DONE.** The dispatch
+conditions the flip on the question reading answered *in both directions at the row's own terms*.
+The row's own terms name **two** owed things — *does the production arm read these scores
+correctly*, which Ruling 43 answers, and ***by what means***, which no pass has answered and which
+the production run says in its own artifact it does not attempt — beside a **per-case reading** the
+row also names and no pass makes. Closing on the answered half would be the [[OI-283]] shape this
+register exists against. **So the ruling's answer is recorded, what remains is named, and a user who
+reads the ruling's *ANSWERED* as covering the whole row can flip it in one edit** with nothing else
+moving.
+
+**One authored input was maintained, caught by its own tool's STOP rather than by a reader.** The
+`CLAUDE.md` rule triage stopped the moment D-664 landed — the shape that tool's own reading file
+states in general terms, since every homing wave into that document adds a member and cannot supply
+its own verdict. A verdict was authored with its ground: **MECHANISM-EXISTS, partial**, and the
+split runs along the rule's own two halves. The DEFAULT half is mechanised — the population is
+derived at the classification and the delegation bar, the route generator assigns the ruled route
+with the authored one preserved beside it, and the re-home blocker STOPS when the two disagree, all
+with no human step. What no mechanism covers is the EXCEPTION half, because whether a document has
+been excepted is a fact about a user ruling and whether that ruling came BEFORE the re-homing is a
+fact about the ORDER of two acts; a mechanism would need an authored list of excepted documents with
+their dates, the exception list was ruled EMPTY, and creating that list is a named act of its own.
+**That is a condition on a future act rather than an obligation standing now — the same distinction
+that keeps D-660's annotation half out of the defect class — so the defect class does not move.**
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires. **Five derivations went stale by this task's own edits and
+were regenerated, not repaired** — the rule triage (after its verdict was authored), the delegation
+bar, ruling R1's superseded reach, the completion inventory and the phase-3 gate partition, the last
+four by line drift from the `CLAUDE.md` insertion — and **thirty-six anchors were re-aimed** by
+`reaim_home_anchors.py`, every one of them a uniform drift from that same insertion, with no verdict,
+mark, status or home moving with them. The set is back at **ZERO failing** and the classification is
+green after it. Every verdict is at `tools/audit/guard_state.json` → `summary` and none is restated
+here (**D-431**).
+
+**Holds:** §1.14 — a ruling record's citation of the reported-widening ground, surfaced rather than
+propagated, and one appended note for whoever is authorized; and the nine census entries, which
+Task 1 now executes under Ruling 40. **Surfacings:** none new bearing on the analysis — every
+subject of this task is where a recorded decision is written down, plus one prose correction to a
+document about a measurement, which moves no value in it.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

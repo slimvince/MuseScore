@@ -417,6 +417,28 @@ writes settles that document without touching the bar. *Measured before it was a
 user's own condition:* how much of the population the split moves was measured first, and the split
 moves nothing — the enumeration, the reasoning and every count are generated at
 `tools/audit/decisions/reads4_oi326_application.json`, and no figure is restated here (#17f, D-431).
+**(l) WHERE NO DELEGATION ADMITS AN ENTRY'S HOME, RE-HOMING IS THE DEFAULT CLOSING ROUTE — AND WHO
+MAY EXCEPT A DOCUMENT FROM IT, AND WHEN (user-ruled 2026-08-09; the ruling record is
+`cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38).** Rules (g)–(k) decide which documents and
+sections are homes. This is the rule they lack: what closes an entry whose home is a home under
+none of them. **For every register entry whose home document is named in NO user-ratified surface,
+or only in a form the delegation bar excludes, the closing act is RE-HOMING into the owning layer's
+specification** — rule (e)'s own stated preference, made a rule rather than a preference. **AND THE
+EXCEPTION MECHANISM IS THE HALF THAT BINDS HARDER. A SESSION MAY NOT EXCEPT A DOCUMENT.** An
+exception — a document the user wants kept as a contract home by delegation instead — is a **NEW
+USER RULING NAMING THE DOCUMENT, TAKEN BEFORE THAT DOCUMENT'S ENTRIES ARE RE-HOMED, never after**;
+taken after, it is void, because the entries it would have covered are already gone. **The exception
+list was EMPTY when the rule was made, and that is a ruled state rather than an unfilled field.**
+*Why the default falls this way:* the alternative — delegation as the default — grows the
+contract-home class, requires the user's own writing per document under rule (g), and runs against
+both concrete declinations already on the record; re-homing is what makes a decision findable
+without the register standing in for the specification. *Why the timing clause is not decorative:*
+it is the only thing that stops an exception being read back onto work already done, and the
+mechanism has been exercised once, which is what shows it is real rather than notional. **What (l)
+does NOT settle:** it chooses between two AVAILABLE routes and creates neither where the record says
+there is none — an entry whose live content is already carried by a homed successor is not re-homed,
+because that would put a second copy of a homed rule (#6), and an entry with no decision content to
+write has nothing to re-home. That class stays dispositioned where it already was.
 
 **★ HOW RULE (c) IS DISCHARGED ONCE IT HAS ALREADY BEEN MISSED (user-ruled 2026-08-09; the ruling
 record is `cowork_rulings_2026_08_09_second_stop.md`, Ruling 12).** Rule (c) says a new ratification,
