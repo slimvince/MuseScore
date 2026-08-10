@@ -2484,6 +2484,125 @@ decision is written down.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+---
+
+# ═══ THE SEVENTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_7.md`, 2026-08-09) ═══
+
+> Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md` is applied here, and the sixth
+> continuation's unstarted Tasks 2–5 are resumed. The sections above are earlier batches' and are not
+> rewritten. New holds are appended to §1, new surfacings to §2, and each task's log below.
+
+### 1.12 STOP — Ruling 39's ACT is performed and its PREDICTED OUTCOME is refuted: a delegation to the census cannot reach an entry that does not sit in the census (Task 0)
+
+**This is the mechanism working, not a failure.** The dispatch's assumption **A1** states that the
+delegation, once written, *"lands the nine as contract-home BY DERIVATION"*, and orders the
+assumption checked before the act it licenses. It was checked at the objects, and it does not hold.
+
+**What was performed, and it stands.** The user approved the delegation's wording verbatim, and that
+wording is now in `ARCHITECTURE.md`, sited beside the existing §8c naming and supplementing rather
+than replacing it. `cowork_score_census.md`'s FORMS grade moved to the explicit-delegation form —
+the strongest naming governs, rule (k1) — with the former grade preserved (#12), and its authored
+delegation scope moved from `sections` to `document`, the former scope and its section list
+preserved beside it.
+
+**What the delegation MOVED, measured rather than assumed: nothing, in either direction.** Every
+entry actually homed in `cowork_score_census.md` already sat in one of the seven sections the
+earlier section-list naming reached, and every one of those sections already carried a states-rules
+judgment — so all of them were `contract-home` before this act and are `contract-home` after it. The
+sections the widening newly reaches hold no register entry at HEAD. Established at
+`home_classification.json`, whose class totals and `decided_by` split are identical to the committed
+ones, read from the git object at the commit before this act; no value is restated here (**D-431**).
+
+**Why the nine did not close, and it is a checkable fact rather than a judgment.** A register
+entry's class is decided by **its own HOME DOCUMENT**. The nine name `cowork_score_census.md` as
+their **owning specification** — the surface that ought to state their rules — while each is
+**homed in a different document**: an architecture review, a full-needs audit, a term-grounding
+document, a union-search record and an implementation roadmap. Every one of those five is named in
+none of the three user-ratified surfaces, so clause (a) excludes their entries before any delegation
+is graded. **A delegation to the census cannot reach an entry that does not sit in the census.**
+
+**So the ruling's two halves come apart.** Its ACT — the census is the owner, the delegation is
+written — is performed. Its stated OUTCOME — the nine close by classification, with zero text
+movement — is unreachable as worded. Two routes remain and each is one act:
+
+1. **Move each entry's HOME field into the census section that already states its rule**, where one
+   does. This is register-data maintenance and it is the only route that is literally the zero text
+   movement the ruling names — but it is available only per entry, and only where the census already
+   carries the rule, which has to be read entry by entry.
+2. **Perform the re-home Ruling 38 makes the default**, writing each rule into the census section
+   that owns it. That is the text movement this exception was taken to avoid, and for some of these
+   entries the owning section is the needs-vector findings table — which is exactly the kind-half
+   STOP Ruling 39 arms.
+
+**The nine are HELD individually**, with both routes named on each row at
+`tools/audit/decisions/finish_line_item1_routes.json` and in the queue's §9.4. **Choosing between a
+ruling's act and its stated outcome is not a session's act**, which is why nothing was written for
+them and no route was picked.
+
+**What is NOT claimed.** That the ruling is wrong, or that the census is the wrong owner. **The
+owner question is RULED**, and the record now says so in three places. What is refuted is the
+mechanism by which the nine were expected to close.
+
+## 3 (continued). Per-task log — the seventh return continuation
+
+### Task 0 — COMPLETE as an ACT and a STOP. Ruling 39's delegation is written and its predicted close is refuted by measurement; the nine are held individually
+
+**The start state was derived at the artifacts before any act (A5), not carried from the dispatch.**
+The full guard set was run unchanged before the first edit and came back at **ZERO failing**, which
+is where the sixth continuation left it. The nine entries, their home documents and their classes
+were read at `home_classification.json` and at the register data; the route table and the queue were
+read at their own files. No count is restated here (**D-431**).
+
+**A1 IS REFUTED, and the refutation is §1.12.** It was checked before the act it licenses, as the
+dispatch requires, and the check is what the whole assumption block exists for.
+
+**What was done, in order.**
+
+1. **The delegation was written VERBATIM** — the wording the user approved, that clause and nothing
+   else, sited beside the existing §8c naming in `ARCHITECTURE.md` and supplementing it rather than
+   replacing it.
+2. **The authored FORMS grade was supplied**, moving `cowork_score_census.md` to the
+   explicit-delegation form with the former NAMED_SECTIONS grade preserved whole (#12) and rule (k1)
+   named as what decides between the three namings the document now carries.
+3. **The authored delegation scope moved to `document`** in the register data, with the former scope
+   and its section list preserved unread beside it (#12), because that list records which sections
+   the two earlier namings reached and by what reasoning.
+4. **The classification and everything downstream were regenerated** — classifier, anchors,
+   dispositions, register, derived views — and the movement was MEASURED against the committed
+   artifact read from a git object by explicit hash (**D-253**'s sanctioned form of shell read).
+   **Nothing moved.**
+5. **Ruling 39 was recorded at the route machinery**, with its act, its measured outcome and the two
+   remaining routes, and with the nine derived from the authored owner string rather than listed by
+   hand — so a row that later gains or loses the census as its owner joins or leaves the set by
+   itself.
+6. **The queue gained §9**, classifying Rulings 36–39 by the same derivation that built §2 and §7,
+   each from its own text with both carriers read whole (**D-643**). **One is proposed as a
+   DECISION** — Ruling 38's homing default and, load-bearing, its exception mechanism: who may
+   except a document, and that an exception taken after the re-homing is void. **Three are proposed
+   as EXERCISES**, two with an upgrade reading in one line so reading either the other way costs the
+   user nothing. **No register entry is written and no identifier is assigned.**
+
+**★ THE SHAPE §9 EXPOSED IS THE SAME ONE THE THREE EARLIER BATCHES FOUND, IN ITS SHARPEST FORM.** Of
+these four rulings the three that unblocked work bind nothing new, and the one that binds is a
+clause that rode alongside a routing decision. A register carrying only the headline acts would
+carry none of them.
+
+**★ WHY THE DELEGATION WAS WRITTEN ANYWAY, ONCE A1 WAS REFUTED, AND IT IS STATED BECAUSE IT IS A
+JUDGMENT.** The refutation is about the ruling's predicted CONSEQUENCE, not about its act. The
+wording is the user's own, approved verbatim; the delegation is the user's act under rule (g), which
+a session performs rather than decides; and its content — that corpus-content, corpus-tier and
+corpus-acquisition decisions are owned by the census, judged per section — is a governance statement
+that stands whichever route eventually closes the nine, and is a precondition for both of them. What
+a session may not do is pick between the ruling's act and its stated outcome, and that is the one
+thing not done here.
+
+**Holds:** §1.12 — the nine, held individually with both routes named. **Surfacings:** none new
+bearing on the analysis; every subject of this task is where a recorded decision is written down.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

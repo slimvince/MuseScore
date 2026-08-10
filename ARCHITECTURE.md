@@ -367,6 +367,12 @@
 > classification pass, and is **not** pre-judged by being named here; a named section that records findings
 > still admits nothing.
 >
+> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is
+> `cowork_score_census.md` — a document-level delegation whose reach is judged per section under the
+> register's rule (h), so its rule-stating sections (the §8c shipped-parameter licence-pool constraint and
+> the decision-tier block among them) are homes and its findings tables are not (user-ratified 2026-08-09;
+> the Ruling 39 exception to the Ruling 38 re-homing default).*
+>
 > **(f) Values are fitted per IDIOM, never for a user preset.** One fit event per musical idiom — a body of
 > repertoire sharing a practice — and no value is ever adjusted to make a named preset come out right. A
 > preset is a regression surface and a carrier for delivering a fitted set; which presets an end user should

@@ -39,6 +39,14 @@
 > written for any ruling in it until the user rules on it.** §7 also records, rather than settles,
 > which rulings this extension does NOT cover and why.
 >
+> **★ EXTENDED A THIRD TIME 2026-08-09 (CC, `cc_instruction_return_continuation_7.md` Task 0) —
+> Rulings 36–39 of the sixth and seventh STOPs are classified in a NEW SECTION, §9, which AWAITS THE
+> USER.** §8's own closing line reserves a further extension to a dispatch that asks for one, and
+> this is that dispatch. Nothing the user ruled is touched: §1–§8 stand exactly as ruled. §9 carries
+> its own verdict table, its own tally and its own proposed home, and **no register entry may be
+> written for any ruling in it until the user rules on it.** §9.4 additionally REPORTS, rather than
+> classifies, that Ruling 39's predicted outcome is refuted by measurement while its act stands.
+>
 > **Why this exists.** Three ruling records carry the same banner sentence — *"interim carrier
 > until the applying dispatch records them (D-230)"* — and **no register entry exists for any of
 > them.** Every ruling's CONTENT is on disk in a ratified record, and every ruling applied is
@@ -376,6 +384,74 @@ extended again for a later ruling without a dispatch saying so.
 
 ---
 
+## 9. THE THIRD EXTENSION — Rulings 36–39, AWAITING THE USER
+
+> **★ STATUS: AWAITING THE USER. NO REGISTER ENTRY IS WRITTEN FOR ANYTHING IN THIS SECTION.** Added
+> 2026-08-09 (CC, `cc_instruction_return_continuation_7.md` Task 0, which is the dispatch §8's
+> closing line requires before this file is extended again), by the SAME derivation that built §2
+> and extended it at §2.4 and §7: each ruling classified **from its own text**, with its carrier
+> read whole (**D-643**) before a verdict was written. Sections §1–§8 are untouched — the verdicts
+> the user ruled stand as ruled, and nothing here re-opens them.
+
+**The two verdicts mean exactly what §1 says they mean**, and that section is not restated here (#6).
+
+### 9.1 Rulings 36–38 (`cowork_rulings_2026_08_09_sixth_stop.md`) and Ruling 39 (`cowork_rulings_2026_08_09_seventh_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **36** | §7 is RATIFIED as proposed, all three downgradables KEPT, and the Rulings 20–23 gap CLOSES as ratification events | **EXERCISE** — a ratification event | It is the user's ruling ON a review queue, which is the very class this ruling itself fixed for 20–23: the ratification event a queue exists to obtain rather than a further ruling needing classification. Its content is already register data — the seven entries **D-657**…**D-663**, written in the commit that recorded it — and its closing state is §8 above. Nothing is owed |
+| **37** | The scanner outcome is READING 3: the completeness question is **ANSWERED and recorded, not closed** | **EXERCISE**; *and the user may reasonably read it as a DECISION* | The clause that binds — *complete means complete relative to a NAMED DERIVATION, re-derived as the tree grows, with the derivation's measured miss rate against the seed part of its name* — is already register data at **D-661**, written under Ruling 36 in the same act. What 37 adds beyond it is a set of DISPOSITIONS on live rows, each recorded where it belongs: the convention stays live for new text, the per-wave self-check continues as the working enforcement, no verdict-authoring pass runs over either derived population, and the seed-only batch is HELD and explicitly not scheduled — all on [[OI-229]]'s row and in the scanner artifact's closing state. Its two excluded alternatives are recorded at the ruling. **The upgrade reading, in one line:** if the user reads *the per-wave self-check IS the enforcement, and four consecutive waves of catches are its establishment* as a standing statement about how this convention is enforced rather than as a finding about four waves, the verdict is DECISION, and its home is `cowork_audit_protocol.md` beside **D-661** |
+| **38** | The homing fork: **RE-HOMING is the default route**, the exception list is EMPTY, and an exception is a NEW USER RULING naming the document, taken BEFORE its entries are re-homed | **DECISION** | Two things bind and neither is in the register. The **default** settles, for every remaining entry whose home document no user-ratified surface names in an admitting form, which of two available acts closes it — rule (e)'s own preference, made a rule rather than a preference. The **exception mechanism** is the load-bearing half: **a session may not except a document**, an exception is the user's ruling naming the document, and it is void unless taken BEFORE that document's entries are re-homed. Rule (g) reserves the WRITING of a delegation to the user; it says nothing about who may except a document from a closing route, or that the timing decides validity. The ruling has already been exercised once, at 39, which is the strongest evidence that the mechanism is real rather than notional |
+| **39** | The census exception: `cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded owner it already is, under a DOCUMENT-LEVEL delegation whose wording the user approved verbatim | **EXERCISE**; *and the user may reasonably read it as a DECISION* | It is the exercise of **38**'s exception mechanism in the form that mechanism requires, and the ruling opens by saying so in its own words. Its decision content is the DELEGATION, and a delegation's home is the user-ratified surface that carries it — `ARCHITECTURE.md`, where the approved wording is now written — which is where rule (g) puts it and is the same treatment every delegation of the OI-293 write list received: the FORMS grade moves and no register entry is created. **The upgrade reading, in one line:** if the user reads *which document owns corpus-content, corpus-tier and corpus-acquisition decisions* as a decision the register should carry in its own right rather than only as a delegation, the verdict is DECISION, and its home is the census's own §1 — the section that already states the method that closes the discovery problem |
+
+### 9.2 The tally, and the one thing this extension must report rather than classify
+
+**Proposed DECISIONS — one:** the homing default and its exception mechanism (**38**).
+
+**Proposed EXERCISES — three:** **36**, **37** and **39**, with an upgrade reading offered for 37 and
+39 so reading either the other way costs the user one line.
+
+**★ THE SHAPE THE EARLIER BATCHES EXPOSED HOLDS, IN ITS SHARPEST FORM YET.** Of these four rulings,
+the three that unblocked work — a queue ratified, a completeness question answered, a document
+excepted — bind nothing new, and the one that binds is the clause that rode alongside a routing
+decision: *who may except a document, and when.*
+
+### 9.3 Proposed home, for the one (rule (e))
+
+| Proposed entry | Proposed home | Why there |
+|---|---|---|
+| **38** — the homing default and its exception mechanism | **`CLAUDE.md`**, the decisions-register section, beside rule (g) | Rules (g)–(k) there are the register's own home rules — who may delegate, what counts as a delegation, what a delegation reaches. This is the rule they lack: what closes an entry whose home no delegation admits, and who may except a document from that closing route. **USER-ONLY TEXT** — a session may not write it. If the user prefers not to grow that block, the alternative home is `cowork_audit_protocol.md` beside **D-642**, which already disposes the class where neither route applies |
+
+### 9.4 ★ ONE THING THIS SECTION REPORTS RATHER THAN CLASSIFIES: RULING 39's PREDICTED OUTCOME IS REFUTED
+
+**The ruling's ACT is performed and stands.** The approved wording was written verbatim into
+`ARCHITECTURE.md` beside the §8c naming, the census's FORMS grade moved to the explicit-delegation
+form, and its authored delegation scope moved from `sections` to `document`.
+
+**Its predicted OUTCOME is not reachable as stated, and the cause is a checkable fact rather than a
+judgment.** A register entry's class is decided by ITS OWN HOME DOCUMENT. The nine corpus entries
+name the census as their OWNING SPECIFICATION — the surface that ought to state their rules — while
+each is HOMED in a different document, and every one of those documents is named in none of the
+three user-ratified surfaces, so clause (a) excludes them before any delegation is graded. **A
+delegation to the census cannot reach an entry that does not sit in the census**, so the nine did
+not close, and the delegation moved no entry at all: every entry actually homed in the census
+already sat in a reached, rule-stating section.
+
+**The nine are HELD individually with both remaining routes named**, at
+`tools/audit/decisions/finish_line_item1_routes.json` and at `cowork_away_returns.md` §1.12.
+Choosing between a ruling's act and its stated outcome is not a session's act. No value is restated
+here (**D-431**).
+
+### 9.5 What §9 does NOT do
+
+It writes no register entry and assigns no identifier. It re-opens no verdict the user ruled at §6 or
+§8, re-words no ruling, and re-reads no ruling's merits. It moves no status and authorizes nothing.
+It touches no `src/`, no golden, no corpus of scores and nothing in `tools/robust_stop/`.
+
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+---
+
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
 debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
@@ -387,4 +463,8 @@ carriers are `cowork_rulings_2026_08_09_fourth_stop.md` and `cowork_rulings_2026
 both read whole before it was written; §7 was added on the instruction of
 `cc_instruction_return_continuation_5.md` Task 0, which scopes it to Rulings 24–35. §8 records the
 user's Ruling 36 of `cowork_rulings_2026_08_09_sixth_stop.md`, read whole (D-643) before it was
-written, and was added on the instruction of `cc_instruction_return_continuation_6.md` Task 0.*
+written, and was added on the instruction of `cc_instruction_return_continuation_6.md` Task 0. §9's
+carriers are `cowork_rulings_2026_08_09_sixth_stop.md` and
+`cowork_rulings_2026_08_09_seventh_stop.md`, both read whole (D-643) before it was written; it was
+added on the instruction of `cc_instruction_return_continuation_7.md` Task 0, which is the dispatch
+§8's closing line requires, and it scopes itself to Rulings 36–39.*

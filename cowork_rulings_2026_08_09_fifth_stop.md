@@ -43,6 +43,15 @@ referencing the research. The scanner's conformance test for this class: a resea
 its introduction site with the conflict-and-synonym statement is conformant; elsewhere it
 is conformant iff annotated; an unannotated repeat use is a flag.
 
+> **★ CORRECTION OF RECORD, appended 2026-08-09 (Cowork, at the sixth continuation's
+> return; the original text above and below stands, #12).** Rulings 31 and 32 below cite
+> "the D-473 principle" / "(D-473)" for the ground that a mechanism firing on legitimate
+> work is worse than none. **That ground's home is D-436's own amended text; D-473 is the
+> theory-grounding rule.** The shorthand arose in Cowork's review aids from the triage
+> queue's D-473 row, where the phrase was the triage tool's criterion quoted in discussion
+> of that entry. The register entries citing this ground cite D-436 correctly (CC declined
+> to propagate the shorthand); what is corrected here is this carrier's own citation.
+
 ## Ruling 31 — the reserved-word scanner is LICENSED, corpus-first, with a DERIVED candidate population
 
 The user asked how the collision inventory's completeness is known; the answer ruled in:

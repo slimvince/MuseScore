@@ -695,10 +695,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  the chord layer: ARCHITECTURE.md:1890 lists 10 entry(ies)",
-        "  the key layer: ARCHITECTURE.md:1686 lists 2 entry(ies)",
+        "  the chord layer: ARCHITECTURE.md:1896 lists 10 entry(ies)",
+        "  the key layer: ARCHITECTURE.md:1692 lists 2 entry(ies)",
         "  the search: ARCHITECTURE.md:315 lists 3 entry(ies)",
-        "  the declared mode's weight: ARCHITECTURE.md:4229 lists 1 entry(ies)",
+        "  the declared mode's weight: ARCHITECTURE.md:4235 lists 1 entry(ies)",
         "class members (derived from the verification): 14",
         "every live-prohibition entry carries its pointer, as derived"
       ],

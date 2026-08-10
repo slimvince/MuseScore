@@ -28,6 +28,11 @@ provenance in register fields. **Rulings 20–23 are ruled RATIFICATION EVENTS**
 needing classification: their content lives in the ruling records, and 21's is already
 register data (D-291, D-656). The gap closes; no entry is owed for them.
 
+> **★ CORRECTION OF RECORD, appended 2026-08-09 (Cowork; the original text stands, #12).**
+> Where this record's surfaces cite "D-473's principle" for the mis-firing-guard ground,
+> the ground's home is **D-436's amended text**; D-473 is the theory-grounding rule. See
+> the fuller note in the fifth-stop record; the register entries cite D-436 correctly.
+
 ## Ruling 37 — the scanner outcome is READING 3: the completeness question is ANSWERED and recorded, not closed
 
 The inventory is incomplete by a measured amount relative to named derivations that are

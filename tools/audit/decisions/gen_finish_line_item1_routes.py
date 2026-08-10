@@ -215,6 +215,63 @@ RULING_38 = (
     "is a new user ruling naming the document, taken BEFORE its entries are re-homed."
 )
 
+# ── RULING 39, THE FIRST EXCEPTION TAKEN UNDER RULING 38's OWN MECHANISM ──────────────────────
+#
+# THE RULING.  User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`, taken
+# after a three-option decision surface: `cowork_score_census.md` is KEPT as the owning surface for
+# the corpus decisions whose recorded owner it already is, the user approved the wording of a
+# DOCUMENT-LEVEL delegation into `ARCHITECTURE.md` verbatim, and the rows below were to close by
+# CLASSIFICATION rather than by a re-home, with zero text movement.
+#
+# WHAT WAS PERFORMED.  `cc_instruction_return_continuation_7.md` Task 0 wrote the approved wording
+# into `ARCHITECTURE.md` beside the §8c naming, moved this document's FORMS grade to the
+# explicit-delegation form (the strongest naming governs, rule (k1)), moved its authored
+# `delegation_scope` from `sections` to `document`, and re-ran the classification.
+#
+# WHAT THE MEASUREMENT SAID, AND IT REFUTES THE PREDICTED CLOSE.  Not one of these rows moved, and
+# the cause is a fact about where they are homed rather than anything about the delegation.  A
+# register entry's class is decided by ITS OWN HOME DOCUMENT.  These entries name
+# `cowork_score_census.md` as their OWNING SPECIFICATION -- the surface that ought to state their
+# rules -- but every one of them is HOMED in a different document, and each of those documents is
+# named in none of the three user-ratified surfaces, so clause (a) excludes them before any
+# delegation is reached.  A delegation to the census cannot reach an entry that does not sit in the
+# census.  The delegation write moved no entry at all: every entry actually homed in the census
+# already sat in a reached, rule-stating section and was already `contract-home`.
+#
+# SO THE TWO HALVES OF THE RULING COME APART, AND CHOOSING BETWEEN THEM IS THE USER'S.  The ruling's
+# ACT (the census is the owner; the delegation is written) is performed and stands.  The ruling's
+# PREDICTED OUTCOME (these rows close by classification, with zero text movement) is unreachable as
+# stated.  Two routes remain and each is one act: move each entry's HOME to the census section that
+# already states its rule, if one does -- a pointer move, and the only route that is literally zero
+# text movement; or perform the re-home Ruling 38 makes the default, writing each rule into the
+# census section that owns it, which is text movement the exception was taken to avoid.  A session
+# may not pick between a ruling's act and its stated outcome, so these rows are HELD INDIVIDUALLY
+# with both routes named, and the refutation is reported at `cowork_away_returns.md` §1.12.
+RULING_39 = (
+    "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: "
+    "`cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded "
+    "owner it already is — the first exception taken under Ruling 38's own exception mechanism, in "
+    "the form that mechanism requires. The user approved the wording of a DOCUMENT-LEVEL delegation "
+    "into `ARCHITECTURE.md` verbatim; rule (h)'s granularity then does the filtering, so the "
+    "census's rule-stating sections are homes and its findings tables are not."
+)
+
+RULING_39_MEASURED = (
+    "HELD — the ruling's ACT is performed and its PREDICTED OUTCOME is refuted by measurement. The "
+    "delegation was written verbatim into `ARCHITECTURE.md`, this document's FORMS grade moved to "
+    "the explicit-delegation form and its authored delegation scope to `document`; the "
+    "classification was then re-run and THIS ROW DID NOT MOVE. The cause is where the entry is "
+    "homed, not the delegation: a register entry's class is decided by its own HOME DOCUMENT, this "
+    "entry names the census as its OWNING SPECIFICATION but is homed in a different document, and "
+    "that document is named in no user-ratified surface — so clause (a) excludes it before any "
+    "delegation is reached. Two routes remain, each one act, and choosing between a ruling's act "
+    "and its stated outcome is the user's: (1) move this entry's HOME into the census section that "
+    "already states its rule, if one does — a pointer move, and the only route that is literally "
+    "zero text movement; or (2) perform the re-home Ruling 38 makes the default, writing the rule "
+    "into the census section that owns it, which is the text movement this exception was taken to "
+    "avoid. Reported at `cowork_away_returns.md` §1.12."
+)
+
 
 def closed_row_home(entry_id: str) -> str:
     """Where an executed entry went, and in which wave -- so one hardcoded date cannot stand for
@@ -915,6 +972,12 @@ def build() -> dict:
                     "ruling settles which of two available routes is the default; it creates none "
                     "where the record says there is none. Dispositioned under D-642 at "
                     "tools/audit/decisions/r1_superseded_reach.json.")
+            # Ruling 39, the census exception. The membership is DERIVED from the authored owner
+            # string rather than listed by hand, so a row that later gains or loses the census as
+            # its owner joins or leaves this set by itself.
+            if owner and "cowork_score_census.md" in owner:
+                row["ruled_by_39"] = RULING_39
+                row["ruling_39_outcome"] = RULING_39_MEASURED
             rows.append(row)
 
     rehome = [r for r in rows if r["route"] == REHOME]
@@ -1054,6 +1117,51 @@ def build() -> dict:
                 "already on the record — the voice-leading delegation the user declined to widen "
                 "and the structural-integrity audit for which the user ruled no delegation is "
                 "drafted or written."),
+        },
+        "★_the_2026_08_09_census_exception_ruling_and_its_measured_outcome": {
+            "the_ruling": RULING_39,
+            "recorded_by": "cc_instruction_return_continuation_7.md Task 0",
+            "the_act_performed": (
+                "The approved wording was written VERBATIM into `ARCHITECTURE.md`, sited beside the "
+                "existing §8c naming and supplementing rather than replacing it; this document's "
+                "FORMS grade in `gen_phase1p_delegation_bar.py` moved to the explicit-delegation "
+                "form with the former grade preserved (#12), rule (k1) governing because the "
+                "document is now named in an admitting and two weaker forms; and the authored "
+                "`delegation_scope` in the register data moved from `sections` to `document`, the "
+                "former scope and its section list preserved (#12)."),
+            "what_the_delegation_MOVED_measured_rather_than_assumed": (
+                "NOTHING, in either direction. Every entry actually homed in `cowork_score_census.md` "
+                "already sat in one of the seven sections the earlier section-list naming reached, "
+                "and every one of those sections already carried a states-rules judgment, so all of "
+                "them were `contract-home` before this act and are `contract-home` after it. The "
+                "sections the widening newly reaches hold no register entry at HEAD. Established at "
+                "`home_classification.json`, whose class totals and `decided_by` split are identical "
+                "to the committed ones read from the git object at the commit before this act."),
+            "★_the_predicted_close_is_REFUTED_and_the_rows_are_HELD": (
+                "The ruling's premise is that these entries close by classification once the census "
+                "is delegated to. They do not, and the cause is a checkable fact rather than a "
+                "judgment: a register entry's class is decided by ITS OWN HOME DOCUMENT. These "
+                "entries name the census as their OWNING SPECIFICATION — the surface that ought to "
+                "state their rules — while each is HOMED in a different document, and every one of "
+                "those documents is named in none of the three user-ratified surfaces, so clause (a) "
+                "excludes them before any delegation is graded. A delegation to the census cannot "
+                "reach an entry that does not sit in the census."),
+            "the_two_routes_that_remain_and_why_neither_is_a_session's_to_pick": (
+                "(1) Move each entry's HOME field into the census section that already states its "
+                "rule, where one does — register-data maintenance, and the only route that is "
+                "literally the zero text movement the ruling names. It has to be decided per entry, "
+                "because it is only available where the census already carries the rule. (2) Perform "
+                "the re-home Ruling 38 makes the default, writing each rule into the census section "
+                "that owns it — which is the text movement this exception was taken to avoid, and "
+                "which would land in a findings table for some of these entries, exactly the "
+                "kind-half STOP the ruling arms. Choosing between a ruling's ACT and its stated "
+                "OUTCOME is not a session's act, so each row is held individually with both routes "
+                "named."),
+            "what_is_NOT_claimed": (
+                "That the ruling is wrong, or that the census is the wrong owner. The owner question "
+                "is RULED and this table records it as ruled; what is refuted is only the mechanism "
+                "by which the rows were expected to close."),
+            "where_it_is_reported": "cowork_away_returns.md §1.12",
         },
         "★_findings_the_classification_produced": {
             "1_C1_reaches_entries_whose_re_homing_#6_would_FORBID": (

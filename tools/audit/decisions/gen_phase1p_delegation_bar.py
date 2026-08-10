@@ -158,10 +158,21 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "ratification event. The excluded parenthetical form is the one that records WHERE "
         "SOMETHING WAS RATIFIED; this one names a home."),
     "cowork_score_census.md": (
-        NAMED_SECTIONS, "ARCHITECTURE.md",
-        "with the per-licence-class pool table, is `cowork_score_census.md` §8c",
-        "A named home with a section — the case the section-level ruling (D-430) was made "
-        "on, inside a passage the section marks user-ratified."),
+        CLAUSE, "ARCHITECTURE.md",
+        "The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
+        "★ MOVED 2026-08-09 (the user's Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`, "
+        "whose wording the user approved verbatim): THE USER RULED THE DELEGATION and this session "
+        "wrote it in that form. It is the bar's first named form — 'The ratified home for "
+        "corpus-content, corpus-tier and corpus-acquisition decisions is X' — and it is "
+        "DOCUMENT-LEVEL by its own terms, sited beside the §8c naming it supplements rather than "
+        "replaces. Rule (k1) governs, so the strongest naming decides and the two weaker namings "
+        "(the §8c pool-table pointer and the section-list widening) do not undo it. The reach is "
+        "judged PER SECTION under rule (h), which the delegation's own sentence says: the "
+        "rule-stating sections are homes and the findings tables are not. The former grade, "
+        "preserved (#12): NAMED_SECTIONS at 'with the per-licence-class pool table, is "
+        "`cowork_score_census.md` §8c' — 'A named home with a section — the case the "
+        "section-level ruling (D-430) was made on, inside a passage the section marks "
+        "user-ratified.'"),
     "cowork_voiceleading_axis_design.md": (
         NAMED_SECTIONS, "ARCHITECTURE.md",
         "Criterion + build home:",
