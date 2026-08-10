@@ -2186,6 +2186,85 @@ change, no golden, no corpus of scores, no `tools/corpus/` or `tools/robust_stop
 behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion statement
 is not written, not drafted and not partially written here.**
 
+### ★ WHERE THIS BATCH STOPPED
+
+**Tasks 0, 1 and 2 are COMPLETE, committed and pushed** — three commits, each its own task boundary,
+each with its full guard run, its classification run after it and its `STATUS.md` pointer entry.
+**Tasks 3, 4 and 5 are NOT STARTED.** That is a capacity stop at a clean boundary, not a halt on a
+finding: no STOP note was written against the batch, nothing is left half-edited, every derived
+surface re-derives, and **the guard set stands at ZERO failing** with thirty-six guards run.
+
+**★ WHY TASK 3 WAS NOT OPENED RATHER THAN OPENED AND LEFT PART-DONE.** Ruling 35(b)'s run is a
+MEASUREMENT over a derived population, and a measurement published over some of its population is
+the silent cap the standing rules forbid — it would read as describing the arm while describing
+part of it. Its output also feeds two rows that bear on the analysis, where a half-run would be
+worse than none.
+
+**What a continuing session should know.**
+
+1. **Task 3's population is DERIVED, not carried from here:** the evidence document's own §3 method —
+   the notated key signature against the published annotated key, from the corpus metadata — applied
+   mechanically to every piece in that file, which is how the previous continuation derived it and
+   is a stricter reading of *derived* than transcribing its table. **A3's bounds are the whole of the
+   licence:** outputs to `scratch_artifacts/` or a named `tools/audit/` artifact and **nowhere under
+   `tools/corpus/`**; the comparison is the SAME tool as the committed-outputs pass; corpus-hash and
+   tool-commit stamped (#16); predictions are not required (explorational, #5) but every surprise is
+   rowed. **The flag is not optional:** `batch_analyze` runs the legacy pipeline without
+   `--joint-inference`, which is the arm the previous pass already measured and not the one this run
+   is for.
+2. **Task 4's four sub-parts are untouched and each population must be derived fresh:** the
+   reach-verdict derivation over the apparatus-classed documentation rows (**D-639**'s test, its
+   three worked examples ARE the test, fallback (1A) applied and SAID where the test does not decide,
+   no hand verdicts, the method being the existing first application's shape); the section-unreached
+   and findings-not-rules re-homes; the session-executable gating rows; and **Ruling 16's sibling
+   sweep with its ONE comment-only `src/` commit** (sweep first, generated; diff verified
+   comment-only; a sibling whose falsity needs judgment about the analysis is HELD, not edited;
+   [[OI-353]] flips on it). **No `src/` file was opened for editing by this batch.**
+3. **Task 5's OI-346 marks are not reached.**
+4. **Three things await the user, and two are new:** the registration queue's **§7**, covering
+   Rulings 24–35 with seven proposed decisions and three flagged downgradable; the **reserved-word
+   inventory** reading surface, which puts three readings including the cheapest; and, standing from
+   the previous batch, the D-580 surface's remaining UNSETTLED items — now partly answered, since
+   Ruling 34 settled the conflict and [[OI-365]] carries what it did not decide.
+
+### ★ THE REMAINING-DISTANCE TRIAGE THE USER ASKED FOR — AUTHORED, AND LABELLED AS SIZING
+
+**This is SIZING, not measurement.** Every population it speaks about is derived at
+`tools/audit/phase1_finish_line.json` and **no population or count is carried here** (**D-431**).
+What is authored is the *kind and size of act* each remaining item needs, in the four labels the
+user named. A size is a judgment about work and can be wrong; a population cannot.
+
+**★ IT IS AT ITEM GRANULARITY, NOT ROW GRANULARITY, AND THAT IS A SHORTFALL STATED RATHER THAN
+HIDDEN.** The user asked for each remaining GATING ROW sized. Sizing a row honestly means reading
+that row — its own text is what says whether the act is a sentence or a study — and the batch
+stopped on capacity before that pass. **What is delivered is the finish line's own nine items, which
+is the granularity that actually decides scheduling**; the per-row pass over the gating set is named
+here as owed and is one session's work on its own.
+
+| Finish-line item | Sizing | Why that size |
+|---|---|---|
+| Register entries whose home document is named in **no** user-ratified surface | **NEEDS-RULING**, then session-large | The closing act is one of two and only one of them is a session's: the user writes a delegation naming the document — rule (g) reserves that act — or every entry is re-homed into the owning layer's specification. Until the user chooses, no session can start; after (ii) it is a per-entry homing pass |
+| Entries whose home is named only in a form the delegation bar excludes | **NEEDS-RULING**, then session-large | Same fork, same reason. The bar (**D-432**) decides the classification; what to DO about it is the user's |
+| Entries whose admitting delegation does not reach the section they sit in | **SESSION-LARGE** | The record already rules out the delegation route in its own words, so the act is a re-homing per entry — bounded, mechanical in shape, large in count |
+| Entries the delegation reaches, in a section that records FINDINGS rather than stating rules | **SESSION-LARGE** | Per entry, write the rule into a section that STATES it. Rule (e) prefers that over rewriting the finding-recording section, so the fork is already decided |
+| Entries with no home at all — recorded only on an archive | **SESSION-LARGE** | Per entry: write the decision into the specification that owns its subject, leaving the archive text in place (#12). This batch's predecessors did nine of these and the shape is established |
+| Entries whose defense the record does not state | **CLOSED** | The population reads zero. Recorded here because a distance map that listed only what remains would misrepresent the position |
+| Open rows asserting a specification states something false at HEAD, which GATE | **REAL-WORK**, mixed with needs-ruling | The largest item and the least uniform: rows differ widely, and several are user rulings rather than session work — the finish line names which. Some are a sentence; some are a correction that needs a judgment about the analysis, which phase 1's TRUE half puts on the gating side |
+| Open documentation rows classed apparatus, whose place inside the doc-sync half **D-639**'s test has not decided | **SESSION-SMALL** | ONE generated derivation over a derived population, with fallback (1A) applied and SAID where the test does not decide. It is Task 4's first sub-part and it is small because the method already exists and no verdict is hand-written |
+| Phase 1's completion statement | **NEEDS-RULING** | It is not a session's act at all: every item above must close first, and **the user commissions it**. This batch has not written, drafted or partially written it |
+
+**★ AND THE HONEST HEADLINE OF THE SIZING, said once rather than left to be assembled from the
+table:** what remains is dominated by **per-entry homing work whose fork is a user ruling**, not by
+investigation. Three items cannot start until the user chooses between a delegation and a re-homing;
+one item is a single generated derivation; one is closed; and the largest is a mixed population where
+the session-performable half and the ruling half are already named apart. **Nothing in the remaining
+distance is blocked on a measurement of the analysis** — the two rows that bear on the analysis
+([[OI-357]], [[OI-363]]) are surfaced, rowed and explicitly not proposed for.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch** — and none of the above is a claim about how close it is: the finish line's own count of what
+remains is derived at `tools/audit/phase1_finish_line.json` (**D-431**).
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected
