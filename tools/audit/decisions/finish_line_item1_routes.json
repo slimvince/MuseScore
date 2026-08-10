@@ -50,6 +50,14 @@
    "what_the_rulings_did_NOT_do": "They settled the OWNER question for these three and nothing else. R1 and R3 do not ratify their entries as correctly recorded — D-539's record still reads NOT ratified and it stays in the ratification queue; D-281 was already ratified on 2026-08-02, before this question arose. No fix to the analysis, no design and no inference change is authorized by any of the three, and nothing here proposes a corrected count for OI-342."
   }
  },
+ "★_the_2026_08_09_homing_fork_ruling": {
+  "the_ruling": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed.",
+  "recorded_by": "cc_instruction_return_continuation_6.md Task 0",
+  "what_it_moves_in_this_table": "Every OPEN row whose AUTHORED route was NEEDS A DELEGATION now carries route RE-HOME, with `authored_route_before_ruling_38` preserving the authored judgment beside it (#12) and `ruled_by` naming the ruling. Rows already routed RE-HOME carry `ruled_by` confirming that their authored route agreed. No reason, owner, unambiguity verdict or home document is re-authored, and no closed or discharged row is touched — those are the record of earlier waves.",
+  "what_it_does_NOT_move_and_why": "The NO HOME EXISTS class. Those rows do not record a choice between a delegation and a re-home; they record that NEITHER applies — the entry's live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write at all. Ruling 38 settles which of two AVAILABLE routes is the default and says nothing about #6, so it creates no route where the record says there is none. That class stays dispositioned under D-642 at r1_superseded_reach.json (#6).",
+  "the_exception_list_is_EMPTY_and_that_is_the_ruled_state": "No document is excepted at ruling time. A later exception — a document the user wants kept as a contract home by delegation — is a NEW USER RULING NAMING THE DOCUMENT, taken BEFORE that document's entries are re-homed and never after. A session may not except a document, and an empty list here is the ruled state rather than an unfilled field.",
+  "the_excluded_alternative_recorded": "Delegation as the default. It grows the contract-home class, requires the user's writing per document (rule (g)), and runs against both concrete declinations already on the record — the voice-leading delegation the user declined to widen and the structural-integrity audit for which the user ruled no delegation is drafted or written."
+ },
  "★_findings_the_classification_produced": {
   "1_C1_reaches_entries_whose_re_homing_#6_would_FORBID": "Several entries are recorded superseded or absorbed, and their live content is carried by named successors that ARE homed. Writing them into a specification would put a second copy of a homed rule, which #6 forbids. So criterion C1, read literally over the whole register, obliges an act the principles prohibit for part of its population. Reported, not resolved -- whether C1 reaches superseded entries is the user's, and nothing here assumes an answer.",
   "2_some_entries_record_that_something_is_OWED_rather_than_decided": "A ratified amendment requiring a product stance to be written, and four documentation riders, have no decision content to home -- what is recorded is the absence of a decision. Neither route applies until the decision is taken.",
@@ -60,7 +68,7 @@
  "★_the_owner_judgment_read_rather_than_the_column": {
   "what_this_is": "OPEN_ITEMS.md OI-342 records that the `owner_is_unambiguous` column carries the EDIT-SURFACE answer for part of this population, although the row already has a separate field for that. This block reads the owner JUDGMENT -- the recorded reason -- instead of the column, and reports where the two disagree. It CORRECTS NOTHING: the column is untouched and no count in it is re-authored.",
   "how_each_set_is_cut": "By an exact phrase the authored reasons already contain, never by a vocabulary assembled until the answer came out right. `disagreement` is the reasons containing \"outside this dispatch's edit surface\"; `asserts_a_determinate_site` is the reasons containing 'determinate' and not 'not determinate'.",
-  "open_re_home_rows": 0,
+  "open_re_home_rows": 11,
   "disagreement_column_says_ambiguous_reason_names_only_the_edit_surface": {
    "count": 0,
    "ids": [],
@@ -88,8 +96,8 @@
  "counted": {
   "entries": 94,
   "documents": 10,
-  "route_RE_HOME": 69,
-  "route_NEEDS_A_DELEGATION": 11,
+  "route_RE_HOME": 80,
+  "route_NEEDS_A_DELEGATION": 0,
   "route_NO_HOME_EXISTS": 14,
   "re_home_with_an_unambiguous_owner": 13,
   "executable_under_this_dispatch": 69,
@@ -1020,7 +1028,8 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "The entry records that a PRODUCT STANCE IS OWED for mostly-uncertain output and for non-tonal music. There is no decision content to write into a specification -- what is recorded is the absence of one. Neither route applies until the stance is taken.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "ruled_by": "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write. The ruling settles which of two available routes is the default; it creates none where the record says there is none. Dispositioned under D-642 at tools/audit/decisions/r1_superseded_reach.json."
   },
   {
    "id": "D-499",
@@ -1031,62 +1040,73 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "Four documentation riders -- a consolidated ownership page, a mark, a property to be written down, a file format. Each is apparatus owed, not a rule a specification states.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "ruled_by": "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write. The ruling settles which of two available routes is the default; it creates none where the record says there is none. Dispositioned under D-642 at tools/audit/decisions/r1_superseded_reach.json."
   },
   {
    "id": "D-500",
    "home_document": "cowork_architecture_review_2026_07.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_score_census.md (the corpus decision surface)",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "A ratified widening of the material the analysis is measured against. Its owner is the corpus census, whose delegation today reaches §8c only; widening a delegation is the act rule (g) reserves to the user.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-513",
    "home_document": "cowork_census_full_needs_audit.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_score_census.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "A rule about what a corpus registry's content field does and does not establish. Its subject is the corpus census surface, whose delegation reaches §8c only.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-514",
    "home_document": "cowork_census_full_needs_audit.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_score_census.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "A record-only constraint on a newly acquired annotation set that overlaps the gate corpus. Its subject is corpus scope; the census owns it and the delegation does not reach it.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-515",
    "home_document": "cowork_census_full_needs_audit.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_score_census.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "A ground-truth need promoted to a tracked row of its own. Its subject is the needs vector the census owns.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-516",
    "home_document": "cowork_census_full_needs_audit.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_score_census.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "Two ground-truth classes adopted into the needs list. Same owner and same gap as D-515.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-453",
@@ -1097,29 +1117,34 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "The desk simulation's VERDICT -- nine of ten traces passed and no finding reopens the structure. A verdict about a stage that has run is a finding, not a rule a specification states; what it ratifies is already homed as the factorization itself.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "ruled_by": "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write. The ruling settles which of two available routes is the default; it creates none where the record says there is none. Dispositioned under D-642 at tools/audit/decisions/r1_superseded_reach.json."
   },
   {
    "id": "D-581",
    "home_document": "cowork_information_loss_audit.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_audit_protocol.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "A four-verdict classification rule for an information-loss sweep. Its subject is audit method, which the audit protocol document homes (D-431, D-434, D-436, D-640, D-641); that document is itself named in no user-ratified surface, so the route runs through a delegation.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-583",
    "home_document": "cowork_information_loss_audit.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_audit_protocol.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "The condition under which a known deferred loss is kept. Same owner and same gap as D-581.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-569",
@@ -1130,7 +1155,8 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "The user RULED on 2026-08-04 that this document is not a delegation target because the concern it designs was ABSORBED BY THE NOTE MODEL, and that its entries stay `gap` -- a delegation would be a second home for a concern that already has one (#6). Whether re-homing is nevertheless owed is a question that ruling did not put, so no route is proposed here.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "ruled_by": "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write. The ruling settles which of two available routes is the default; it creates none where the record says there is none. Dispositioned under D-642 at tools/audit/decisions/r1_superseded_reach.json."
   },
   {
    "id": "D-570",
@@ -1141,7 +1167,8 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "Same ruling and same reason as D-569: an upstream layer's oracle is the score, recorded on a document the user ruled is not a delegation target with its entries left `gap`.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "ruled_by": "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write. The ruling settles which of two available routes is the default; it creates none where the record says there is none. Dispositioned under D-642 at tools/audit/decisions/r1_superseded_reach.json."
   },
   {
    "id": "D-535",
@@ -1152,18 +1179,21 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "The checking stage's VERDICT -- the counted tables overturn no desk-simulation verdict. A finding about a stage that has run, not a rule a specification states.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "ruled_by": "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write. The ruling settles which of two available routes is the default; it creates none where the record says there is none. Dispositioned under D-642 at tools/audit/decisions/r1_superseded_reach.json."
   },
   {
    "id": "D-475",
    "home_document": "cowork_term_theory_grounding.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_score_census.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "That a held annotation set is not established as an instrument. Its subject is corpus establishment, which the census owns; the delegation does not reach it.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-610",
@@ -1174,40 +1204,47 @@
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "A completed refactor's zero-churn property. It states what one relocation did, not a rule the code must go on satisfying; no specification section owns a finished move.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "ruled_by": "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write. The ruling settles which of two available routes is the default; it creates none where the record says there is none. Dispositioned under D-642 at tools/audit/decisions/r1_superseded_reach.json."
   },
   {
    "id": "D-613",
    "home_document": "cowork_union_search_record.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_score_census.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "A confirmed absence of ground truth for implied polyphony, plus what the surviving voice labels actually measure. Corpus-establishment subject; the census owns it.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-614",
    "home_document": "cowork_union_search_record.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_score_census.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "Licence posture of every difficulty-grade label source. Corpus subject, and the census already carries the shipped-parameter licence-pool constraint at §8c -- but widening a delegation is the user's act.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-422",
    "home_document": "docs/implementation_roadmap.md",
-   "route": "NEEDS A DELEGATION",
+   "route": "RE-HOME",
    "owning_specification": "cowork_score_census.md",
    "owner_is_unambiguous": false,
    "executable_under_this_dispatch": false,
    "closed_by_this_wave": false,
    "reason": "The jazz fit waits on jazz ground truth. Recorded DEFERRED; its binding fact is a corpus fact, so the census is the owner and the delegation does not reach it.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason"
+   "authored": "the route, the owner, the unambiguity verdict and the reason",
+   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
+   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   }
  ]
 }

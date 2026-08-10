@@ -2265,6 +2265,119 @@ distance is blocked on a measurement of the analysis** — the two rows that bea
 batch** — and none of the above is a claim about how close it is: the finish line's own count of what
 remains is derived at `tools/audit/phase1_finish_line.json` (**D-431**).
 
+---
+
+# ═══ THE SIXTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_6.md`, 2026-08-09) ═══
+
+> Rulings 36–38 of `cowork_rulings_2026_08_09_sixth_stop.md` are applied here, and the fifth
+> continuation's unstarted Tasks 3–5 are resumed. The sections above are earlier batches' and are
+> not rewritten. New holds are appended to §1, new surfacings to §2, and each task's log below.
+
+## 3 (continued). Per-task log — the sixth return continuation
+
+### Task 0 — COMPLETE. The §7 register event: seven entries written, the 20–23 gap closed by the user's own reading, Ruling 37 recorded at both its subjects and Ruling 38 at the route machinery
+
+**The start state was derived at the artifacts before any act (A5), not carried from the dispatch.**
+The full guard set was run unchanged before the first edit and came back at **ZERO failing**, which
+is where the fifth continuation left it and what the committed `tools/audit/guard_state.json`
+records; the queue's §7, the two rows this task writes to and the register's highest identifier
+were each read at their own surfaces. No count is restated here (**D-431**).
+
+**A1 HOLDS, and it was checked at each home before the first entry was written.** The rule (h) kind
+half asks whether the receiving section STATES RULES. `cowork_audit_protocol.md`'s dispatch-protocol
+block does, in its own opening, and every existing subsection of it states one rule with its ruling
+and its defense; `CLAUDE.md`'s Conventions block and its open-items register section likewise, the
+latter stating its rules as a lettered list this act adds to; and
+`cowork_design_doc_template.md`'s kind-list section states a binding scope, a maintained membership
+list and a STOP. **No home failed its check, so the STOP the assumption reserves did not fire.**
+
+**What was done, in order.**
+
+1. **Ruling 36 — SEVEN entries at the homes §7.4 proposes**, four in `cowork_audit_protocol.md` and
+   one each in `cowork_design_doc_template.md` and — under the ruling's own scoped licence — two in
+   `CLAUDE.md`. Each is written in the receiving section's own voice with its defense, provenance in
+   the register fields and never in the governing text. **The three entries §7.3 flagged as
+   reasonably downgradable are KEPT**, as the ruling directs. **★ NO NEW ENTRY CARRIES AN
+   ENTRY-RATIFICATION EVENT, and each says so:** the user ruled the CLASSIFICATION and the HOME, and
+   the entry text was written afterwards, so recording one would be the session ratifying its own
+   writing (#14). **The seven exercises are recorded as confirmed** in the queue's second closing
+   state and carry no entry, which is what an exercise verdict means.
+2. **The Rulings 20–23 gap CLOSES, and it closes in the reading §7.3 declined to take.** That
+   section reported the gap, stated the on-its-face reading — each of the four is the RATIFICATION
+   EVENT a queue exists to obtain — and deliberately did not take it, because classifying four
+   rulings the dispatch had not sent would be a session widening its own scope (**D-654**). Ruling
+   36 takes exactly that reading. **The refusal is what produced the answer**, and the queue's
+   closing state says so rather than presenting the outcome as though the reading had been obvious.
+3. **The queue is re-bannered FULLY RULED** and gains **§8**, its second closing state, in the same
+   shape §6 uses for the first. **Nothing above §8 is altered** (#12) — §1–§6 stand as the user
+   ruled them and §7's verdicts and grounds stand as they were put.
+4. **Ruling 37 — recorded at BOTH its subjects**, which is what the ruling names: [[OI-229]]'s index
+   row and detail file, and the scanner artifact's own closing state, written into the generator so
+   it re-derives rather than being pasted into the output. The outcome is READING 3 — the
+   completeness question is **ANSWERED and recorded, not closed** — and the answer is now the
+   standing statement of what *complete* means here, carried as register entry **D-661**. The held
+   seed-only batch is **named as HELD and explicitly not scheduled** at both sites.
+5. **Ruling 38 — recorded at the finish-line route machinery**, in two places because the fork is
+   stated in two: the finish line's own closing acts for the two homing items, and the per-entry
+   route table. **The former closing acts are preserved whole (#12)** rather than replaced, so a
+   reader comparing artifacts sees what the ruling changed.
+
+**★ WHAT RULING 38 MOVED IN THE ROUTE TABLE, AND THE ONE CLASS IT DELIBERATELY DOES NOT REACH.**
+Every OPEN row whose AUTHORED route was *needs a delegation* now carries route **RE-HOME**, with the
+authored route preserved beside it and the ruling named on the row; rows already routed re-home
+carry the ruling confirming that their authored route agreed. **The `NO HOME EXISTS` class is NOT
+moved, and the reason is written at the tool rather than left to be inferred:** those rows do not
+record a choice between a delegation and a re-home — they record that NEITHER applies, because the
+entry's live content is carried by a homed successor and re-homing would put a second copy of a
+homed rule (#6), or because there is no decision content to write at all. **Ruling 38 settles which
+of two AVAILABLE routes is the default; it says nothing about #6 and creates no route where the
+record says there is none.** That class stays dispositioned under **D-642** where it already was.
+**The exception list is EMPTY and that is the RULED state, not an unfilled field** — a session may
+not except a document, and a later exception is a new user ruling naming the document, taken BEFORE
+its entries are re-homed.
+
+**★ ONE THING THE SCANNER'S REGENERATION SHOWED, and it is the rule working rather than a defect.**
+Re-running the scanner after this task's own writing moved its derived candidate counts: the new
+`CLAUDE.md` and `cowork_audit_protocol.md` text is governance prose, so it enters surface (b) and
+the derived population grows with it. That is precisely what *re-derived as the tree grows* means in
+**D-661**, and it is why the artifact is the evidence for the completeness answer rather than a
+one-time verdict. Every value is at `tools/audit/reserved_word_scanner.json` and none is restated
+here (**D-431**).
+
+**Three authored inputs were maintained, each caught by its own tool's STOP rather than by a
+reader.** The `CLAUDE.md` rule triage STOPPED the moment the two new `CLAUDE.md`-homed entries
+landed — the shape that tool's own reading file states in general terms, since every homing wave
+into that document adds a member and cannot supply its own verdict. **Verdicts were authored for
+both, with their grounds:** the canonical status discipline is **MECHANISM-EXISTS**, because the
+lint and the parser STOP were built in the act that ruled it; the research-term rule is
+**KNOWLEDGE**, because its antecedent is authorship twice over — which terms are research-tied, and
+which site is a term's introduction site — and the derived population that would supply the first is
+measured neither sound nor bounded. **Neither verdict enters the defect class, and the defect set
+does not move.** The classifier's own apply moved four derived fields, all of them delegation line
+citations shifted by this task's insertions into `CLAUDE.md`; regenerating them is completing an
+edit, not repairing a finding.
+
+**★ AND THE THIRD IS A CARRIED-FORWARD ONE THIS TASK DID NOT CAUSE, which is why it is named rather
+than folded in.** The GUARD CLASSIFICATION — run after the guard set, which is the order its own
+STOP requires — stopped on **two tools the PREVIOUS continuation added**: the index-status lint and
+the reserved-word scanner. Neither had an authored verdict, and the classification is not a member
+of the guard set, so nothing in that set's zero-failing state reported it. Verdicts were authored
+for both with their evidence: the lint is **LIVE**, parsing the index on every run and asserting a
+property of it as it stands; the scanner is **LIVE DESPITE BEING REGISTERED NOT RUN**, on the
+`claude_md_rule_triage.py` precedent — its population is derived from the tree and its STOP fires on
+exactly that — with the two facts kept apart, since *not run* is a decision about the guard set and
+*live* is a statement about what the tool asserts. **The shape is worth a reader's attention:** a
+check that is deliberately outside the set it checks reports nothing when the set is green, which is
+the third instance in this arc of a STOP that only fires when something else has already been made
+to run.
+
+**Holds:** none new. **Surfacings:** none new bearing on the analysis — every subject of this task
+is the record's own bookkeeping and the rulings that govern it.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

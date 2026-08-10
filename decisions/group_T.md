@@ -23,7 +23,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1500`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1552`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:878-887, user-directed 2026-07-11. Binds Claude Code and Cowork sessions alike.
 
@@ -43,7 +43,7 @@
 
 **Status.** LIVE · decided 2026-06-15 · ratified by user
 
-**Home.** `CLAUDE.md:1146`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1174`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:737-753, user-directed 2026-06-15. ★ READ WITH the general contribution intent at ARCHITECTURE.md:380-382 - two recorded positions, a general intent to contribute and a named one-patch exception; the record does not state how the general intent applies to the rest of the tree.
 
@@ -71,7 +71,7 @@
 
 **Status.** LIVE · decided 2026-05-14 · ratified by user
 
-**Home.** `CLAUDE.md:1098`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1126`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:678-713, applied 2026-05-14. Unrelated to the composing module; recorded so a dependency update does not silently overwrite it.
 
@@ -104,7 +104,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratified by user
 
-**Home.** `CLAUDE.md:1119`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1147`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:715-745, applied 2026-06-14, commit cfc7eb5e39. ★ Carries the distribution constraint above: fork-local only, never upstream.
 
@@ -180,7 +180,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1432-1444`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1484-1496`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1589-1598, under the standing-rule heading 'FULL DECISION SURFACE BEFORE ANY CHOICE QUESTION' at cowork_handoff.md:1587 ('user mandate 2026-07-05'), with the instituting record at STATUS_ARCHIVE.md:202 - a session handoff block, which is a place for tracking a handover and not a home for a standing rule. Homed in the CLAUDE.md Conventions section, where this project's standing session-method rules live. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -281,7 +281,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1446-1464`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1498-1516`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1669-1680, under the standing-rule heading 'COWORK MUST NOT HALLUCINATE OR ASSUME - VERIFY AT SOURCE (user mandate 2026-06-21)' at cowork_handoff.md:1642 - a session handoff block. Homed in the CLAUDE.md Conventions section. Its scope is taken FROM THE RECORD, not decided here: that heading and D-252's own text ('Cowork MAY: read source files via the file tools - NOT bash') both state it as a planning-side rule, so the homed entry says so and says the mandated build, test and measurement commands are unaffected. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -304,7 +304,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `CLAUDE.md:1489-1496`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1541-1548`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1792-1796, under the standing-rule heading 'INVESTIGATE BY DEFAULT - NEVER ASK investigate vs proceed (user mandate 2026-06-14)' at cowork_handoff.md:1790 - a session handoff block. Homed in the CLAUDE.md Conventions section, beside principle #5, which it operationalizes. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -515,7 +515,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:274`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:294`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-03 (the seventh ruling set of that date, W5), homed at phase 1p in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-431**, which is the established home for rules about how a dispatch is written (D-250, D-251, D-252 also live there). **The rule carries its own mechanism**, so that it is more than a habit: every dispatch and every session report carries a SELF-CHECK SECTION answering a named five-item checklist — the guiding principles, the conventions, the figures-and-premises rule (D-431), the file-tools rule, and uncertainty on any comparison (#24) — and the section's ABSENCE is a failure `tools/audit/process_check.py` reports. The check's own detection power against the eight instances is measured rather than claimed, at `tools/audit/process_check_establishment.json`. NOT RATIFIED as an ENTRY — it goes to the user in the phase-1p ratification queue.
 
@@ -538,7 +538,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:307`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:327`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-03 (the eighth ruling set of that date, X3), homed at phase 1q in `cowork_audit_protocol.md`'s dispatch-protocol section beside **D-431** and **D-434**, which is the established home for rules about how a dispatch is written and checked. **It WITHDRAWS a test the planning side had stated and this project had been working under** — *a mechanism must retire the prose it replaces, or it is apparatus growth* — and the withdrawal is recorded with its reason rather than left as a silent change of standard. The two mechanisms built under the withdrawn test are KEPT under this one, and their establishment artifacts carry their measured rates: `tools/audit/process_check_establishment.json` and `tools/audit/shell_read_guard_establishment.json`. The guard's third condition holds only while it is ARMED, which is the user's act on the user's machine; until then it is recorded as an expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292). **★ AMENDED by the user 2026-08-03 (the eleventh ruling set, AA5) and re-taken at phase 1u: the criterion INFORMS; removal or retention is the user's ruling.** The three conditions and their stated reasons are unchanged — including the false-positive reason, *one that fires on legitimate work gets switched off, which is worse than having none*, which is why that condition exists and which survives the amendment intact. What changed is who decides the consequence. **The FORMER VERBATIM is preserved here (#12), being the text the entry carried before the amendment:** "**Ruled by the user, 2026-08-03.** A mechanism built to enforce one of these rules is kept when **it runs automatically with no human step, it has a measured detection rate against known instances of the failure it is for, and it has a measured false-positive rate at or near zero on legitimate work.** All three are measurable and none is judged. A mechanism that fails any of them is not kept: one needing a human step is a reminder, one with no measured detection rate is unestablished (#19), and one that fires on legitimate work gets switched off, which is worse than having none." **The amendment's first application is on the record in the same wave:** the shell-read guard has two shapes its established corpora do not cover — a common existence-listing command and a path outside the repository — and under the amended rule they are REPORTED and rowed for the false-deny establishment run rather than either added to the denied set unestablished or the guard treated as failing and dropped (`OPEN_ITEMS.md` OI-292, OI-300). NOT RATIFIED as an ENTRY — it goes to the user in the phase-1q ratification queue, with the amendment above added at phase 1u.
 
@@ -553,7 +553,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:1349-1367`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1401-1419`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling 2026-08-03, transmitted in the phase-1o dispatch cc_instruction_phase1o_gate_partition_and_probe_rerun.md §2.1; applied and homed at CLAUDE.md's D-231 entry in the recording commit per D-230. The partition itself is generated at tools/audit/phase3_gate_partition.json. **★ THE PER-ITEM VERDICTS WERE ACCEPTED BY THE USER 2026-08-03 (the eleventh ruling set, AA1) — accepted AS GENERATED, with the accounting of what the ruling's measured effect actually was recorded beside them.** That accounting is a block of the artifact, `what_the_partition_measured`, and no figure of it is restated here (#17f, D-431); its structural counts read fields rather than prose, and the one judgment a text test could not make honestly is carried as quoted sentences for the reader instead of as a number. **In plain words: most items GATE, several of them because their search space has ALREADY produced a member of the family rather than on the doubt default, and the narrowing bites in exactly one place** — the family design need not wait for phase 2's bounded trust statement to be WRITTEN, only for the gating searches to have RUN. **★ THE PLANNING PREDICTION THAT RECOMMENDED THIS RULING IS REFUTED AND IS RECORDED AS SUCH** (#17b applied to a planning claim): Cowork's decision surface said the option *"removes the largest share of the blocking for the smallest loss of rigor"*, and the second half holds while the first does not. **The RULING stands** — it was ruled by the user on its own terms and is not disturbed by its advocate's forecast being wrong; what the record must not do is let a later session inherit the expectation instead of the result. Full statement at the artifact's `what_the_partition_measured.the_refuted_planning_prediction`. **A second premise of the same wave was checked at the document and came back different too**: the claim about which of the four channels the phase-2 clause omits actually matter is not what the inventory supports, and the inventory's own statement that history mining is "run to completion" is not true at HEAD — both at `assumption_A1_of_the_phase1u_dispatch`. No verdict moved on either finding.
 
@@ -583,7 +583,7 @@
 
 **Status.** LIVE · decided 2026-08-03 · ratified by user
 
-**Home.** `CLAUDE.md:1371-1383`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1423-1435`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling 2026-08-03 (the twelfth ruling set: option C with option B's correction folded in), transmitted in the phase-1v dispatch cc_instruction_phase1v_channel_ratification.md §1 and §4; the reading surface the ruling was taken from is ratification_surfaces/cowork_perspective_inventory_ratification.md §5. Applied and homed at CLAUDE.md's phase-2 clause and its note, in the recording commit per D-230; the enumeration and the scope ruling themselves live at cowork_oi200_perspective_inventory.md §4, which that clause now delegates to by name. **★ THE CHANNEL-9 CORRECTION WAS MADE FIRST, DELIBERATELY.** The inventory's channel 9 said of history mining *"none new — the adjudication is this channel run to completion"*; that was untrue of both faces of the OI-207 adjudication at HEAD — its residual second pass ran on 2026-08-02, the unresolved cluster residual is live at tools/audit/decisions/disposition_manifest.json → disposition_counts.unresolved, and the owed full document reads are tracked on the OPEN_ITEMS.md OI-207 row. Both were established at those objects before this entry was written. Ruling the channel's scope while its own text said the work was finished would have ratified a contradiction, which is why the user's ruling folds the correction into the ratifying act rather than following it. The former wording is preserved verbatim at the inventory's own dated correction note (#12), as is the former CLAUDE.md note that recorded the gap while it stood. **★ WHAT IT DOES NOT DECIDE, stated because a later reader would otherwise assume more:** the §6 program is NOT adopted in whole or in part; OI-200 is not pulled forward and the inventory's §9 request — adopt, amend or reject that program — stays open and untaken; no probe, fix, design or inference change is authorized; and phase 1 is not complete. **★ WHAT IT RETIRES:** the stated workaround tools/audit/phase3_gate_partition.json carried about its structural source being an unratified draft — preserved verbatim in that artifact's `the_channel_enumeration_source.status_of_this_source.what_this_retires` and NOT deleted (#12). **No verdict of that partition moves**, and none was re-stated on the new authority: the verdicts were recorded as a prediction before the classified items ran, which is what makes them falsifiable. One consequence is reported rather than silently corrected — the partition's per-item `kind` field labels channel 10 a discovery channel, which this ruling supersedes; the field is left standing and the supersession is recorded beside it at that artifact's `the_channel_enumeration_source.the_scope_ruling`, because a registered prediction is not re-touched after the fact.
 
@@ -1104,7 +1104,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `CLAUDE.md:717-719`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:745-747`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `cowork_phase5c_l5_build_plan.md`, the Layer-5 build plan, DRAFT 2026-06-26. Read in full by READ WAVE 5, 2026-08-04. Recorded in the plan's build-discipline block. Its companion in the same block — build the mechanisms right at their defaults and stop, do not chase accuracy — is the proportionality rule **D-480** already carries for the phrase-boundary primitive, stated here for the function layer and not re-entered (#6). The record states no ratifier for the gate criterion. ★ HOMED 2026-08-07 (CC, the licensed homing wave, executing the user's ruling R2 of 2026-08-07, dispatch `cc_instruction_licensed_homing_and_oi344.md` §0a — the LICENSING class of finish-line item 1's re-home set, homed under the edit-surface licence the user ruled on the same date). Written into `CLAUDE.md` gate block (A), as the second of the three further measurement conventions homed beside the four grading conventions, in that section's own voice and with its defense. The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. FORMER HOME, PRESERVED (#12): `cowork_phase5c_l5_build_plan.md:27-29`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — it is removed because the home-class criteria do not reach a `process` entry (the register's own home rule): section "## The build discipline (every step)", label "“The build discipline”", verdict EXCLUDE, decided by "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"; former_class gap, class_before_phase1q gap, class_before_phase1r gap. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **The gate criterion (the L4 lesson).** Judge each measurement by **coverage-matched accuracy + correct\n  abstention**, never raw coverage — abstaining correctly on a genuinely function-undecidable slice is a *right*\n  outcome.". Provenance is recorded in this field and NOT in the specification text, on the ruling's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson). What the specification text carries is the rule, its date and its ratifier where the record states one, and its defense.
 
@@ -1122,7 +1122,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `CLAUDE.md:726-728`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:754-756`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `cowork_layer3_keymode_impl_design.md`, the Layer-3 key/mode implementation design. Read in full by READ WAVE 5, 2026-08-04. Marked *user, 2026-06-22* at the head of the design's metric section. Read alongside **D-574** — the pass-bar for a measured change is set AFTER the baseline is measured — which governs how a bar is set once one is set at all; this governs whether a fixed bar is admissible during a rebuild. ★ HOMED 2026-08-07 (CC, the licensed homing wave, executing the user's ruling R2 of 2026-08-07, dispatch `cc_instruction_licensed_homing_and_oi344.md` §0a — the LICENSING class of finish-line item 1's re-home set, homed under the edit-surface licence the user ruled on the same date). Written into `CLAUDE.md` gate block (A), as the third of the three further measurement conventions homed beside the four grading conventions, in that section's own voice and with its defense. The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. FORMER HOME, PRESERVED (#12): `cowork_layer3_keymode_impl_design.md:83-86`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — it is removed because the home-class criteria do not reach a `process` entry (the register's own home rule): section "## §4 — Metric / gates (Increment C — the behavior-changing one)", label "“§4”", verdict EXCLUDE, decided by "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"; former_class gap, class_before_phase1q gap, class_before_phase1r gap. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**★ METRICS ARE PROVISIONAL — grade DIRECTIONALLY, not against a fixed bar (user, 2026-06-22).** The Increment-B\nbaseline numbers (held-out Baroque 87.3% / Jazz 61.5%) **and the metric definitions** WILL move as the rest of the\npipeline (L4–L6) is reconstructed/refactored. **Meaningful comparison happens only against the fully reconstructed\npipeline**, not increment-by-increment.". Provenance is recorded in this field and NOT in the specification text, on the ruling's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson). What the specification text carries is the rule, its date and its ratifier where the record states one, and its defense.
 
@@ -1318,7 +1318,7 @@
 
 **Status.** LIVE · decided 2026-08-04 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:235-266`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:255-286`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_phase1_delegations_and_corrections.md` §0a as R4 — 'the outstanding delegation population is DERIVED at HEAD from the delegation grades and the home data — never taken from the write list, which carries no state and therefore cannot distinguish written from unwritten'. Homed in `cowork_audit_protocol.md` beside D-431, the figures rule whose shape it generalizes; `nonspec_kind` is `process` because its subject is how the work is measured and reported, not the system. Tracked at `OPEN_ITEMS.md` OI-335.
 
@@ -1379,7 +1379,7 @@
 
 **Status.** LIVE · decided 2026-08-04 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:424-471`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:508-555`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_commit_and_finish_line.md` §0a as R3 — 'A finding whose subject bears on the analysis, its inputs, or an instrument a measurement depends on — D-438's own test — is SURFACED to the user for decision, whatever its size. A finding that does not is rowed and left: no wave, no dispatch, no surface.' Homed in `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431, D-434, D-436 and D-640, as the dispatch's Task 3 directs; `nonspec_kind` is `process` because its subject is how the work is sorted and reported, not the system. It composes with ruling R2 of the same act, the derived finish line at `tools/audit/phase1_finish_line.json`, which R3 never adds to.
 
@@ -1426,7 +1426,7 @@
 
 **Status.** LIVE · decided 2026-08-04 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:497-530`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:581-614`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_c1_ruling_and_item1c.md` §0a as R1, which carries its own withdrawal of the basis previously claimed for it. Homed in `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431, D-434, D-436, D-640 and D-641; `nonspec_kind` is `process` because its subject is how the record's own completion criterion is applied, not the system. It is RECORDED against criterion C1 itself, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1, where the ruling is quoted in full from this home rather than restated (#6), and APPLIED per entry at `tools/audit/decisions/r1_superseded_reach.json`. The application's own assumption check came back REFUTED IN PART and the artifact records what it found; no verdict or count is carried here (D-431). Cross-ref D-231 (the clause), D-639 (the sibling ruling bounding the same clause's other half), `OPEN_ITEMS.md` OI-340 (the row that refuted the withdrawn basis).
 
@@ -1463,7 +1463,7 @@
 
 **Status.** LIVE · decided 2026-08-04 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:532-555`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:616-639`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_c1_ruling_and_item1c.md` §0a as R2 — 'A claim that invokes a ruling as an application must quote that ruling in full, not the branch that supports the claim' — with its measured instance stated in the same act. Homed in `cowork_audit_protocol.md`'s dispatch-protocol section as the dispatch's Task 1.3 directs, beside D-431, D-434, D-436, D-640 and D-641; `nonspec_kind` is `process` because its subject is how a dispatch and a report cite, not the system. Binds both sides, on D-431's own ground. Cross-ref D-431 (the figures-and-premises rule it composes with), D-642 (the ruling whose withdrawn basis is its measured instance).
 
@@ -1504,7 +1504,7 @@
 
 **Status.** LIVE · decided 2026-08-04 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:557-584`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:641-668`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_guard_fix_and_item1d.md` §0a as R2, which states in the same act that it is precedent and names the precedent's location. Homed in `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431, D-434, D-436, D-640, D-641, D-642 and D-643; `nonspec_kind` is `process` because its subject is what the record's own completion criterion obliges for one shape of entry, not the system. RECORDED against criterion C1 itself at `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1, beside D-642's block, where the PRECEDENT is located by anchor in `ARCHITECTURE.md` and quoted in full on every run rather than paraphrased (D-643). Cross-ref D-642 (the ruling whose open shape this closes), D-058 (the precedent's own entry), D-231 (the clause both bound), `OPEN_ITEMS.md` OI-315 (the row the precedent was performed under).
 
@@ -1547,7 +1547,7 @@
 
 **Status.** LIVE · decided 2026-08-07 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:651-680`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:761-790`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-07, transmitted in the dispatch `cc_instruction_five_rulings.md` §0a as R1 and taken on Cowork's decision surface of the same day, after the surface with its alternatives was delivered as user-visible text. Homed in `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431, D-434, D-436, D-640, D-641, D-642, D-643 and D-644; `nonspec_kind` is `process` because its subject is what a dispatch may edit, not the system. The dispatch that recorded it performed NO homing under it, by its own Task 1.3. Cross-ref D-231 (the phase-1 clause criterion C1 states), D-642 (which entries C1 reaches), `OPEN_ITEMS.md` OI-342 (the row whose owner column the blocker partition was cut against), `tools/audit/decisions/item1_rehome_blocker.json` (the partition the ruling was taken on).
 
@@ -1568,7 +1568,7 @@
 
 **Status.** LIVE · decided 2026-08-08 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:398-405`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:482-489`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-08, Ruling 1 of `cowork_rulings_2026_08_08_pre_away.md` ("All three ratified"), applied 2026-08-08 by `cc_instruction_away_execution.md` Task 0. CLASSIFIED as a DECISION the register carries — rather than an exercise of one it already holds — by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), on the classification queue `ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md` entry A, whose ground is that the ruling states a REUSABLE METHOD a future wave meeting the same hazard needs and that nothing in the register carried it. Homed by that same ruling in `cowork_audit_protocol.md`'s dispatch-protocol block, in that block's own voice, per rule (e) and the D-645 homing pattern; `nonspec_kind` is `process` because its subject is how the record's own generated artifacts are kept, not the system. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT: what the user ruled is the classification and the home, and this text was written afterwards, so nothing here is self-ratifying (#14). The applying tool states the whole arrangement in its own docstring (`tools/audit/decisions/gen_home_classification.py`), which this entry points at rather than copying (#6). Cross-ref D-436 (the mechanism-change reservation the freeze was licensed under), D-648 (the maintenance-versus-mechanism line), `OPEN_ITEMS.md` OI-301 (the hazard class), OI-305 and OI-319 (the rows the hold was carried on).
 
@@ -1593,7 +1593,7 @@
 
 **Status.** LIVE · decided 2026-08-08 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:346-357`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:397-408`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-08, `cowork_ruling_guard_family_2026_08_08.md` clauses 4 (deny-on-indeterminate adopted as standing policy) and 2 (interpreter code decided by policy, with the computed-path residual carried into the corpus so the published rate reports the ceiling); applied 2026-08-08 by `cc_instruction_away_execution.md` Task 1, corpus first. CLASSIFIED as a DECISION by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), queue entry D, on the ground that these two clauses bind beyond the act while the ruling's other three clauses are the mechanism change itself and its ordering, the ordering being attributed by the ruling to the earlier OI-343 and OI-345 rulings. Homed by that same ruling in `cowork_audit_protocol.md`'s dispatch-protocol block beside the three measured conditions a mechanism is judged on, because the ceiling half is a #19 statement about a published rate. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-253 (the rule the guard enforces), D-436 (the mechanism-change reservation), `OPEN_ITEMS.md` OI-300, OI-348, OI-351 (the family), OI-355 (the deny-side shape the corpus does not yet contain).
 
@@ -1615,7 +1615,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:374-382`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:425-433`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 4(b) of `cowork_rulings_2026_08_09_return.md` ("agree with recommendations"), whose own words are that the act is the same authored-input maintenance performed under the tools' own STOPs and "not a mechanism change under D-436"; applied 2026-08-09 by `cc_instruction_return_continuation.md` Task 0. CLASSIFIED as a DECISION by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), queue entry 4b, on the ground that it legitimises a CLASS and has since decided several acts across three batches; Ruling 4(a), the pointer re-aim, is classified an exercise and is not carried here. Homed by that same ruling in `cowork_audit_protocol.md` against the mechanism-change reservation it bounds. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-436 (the reservation), D-646 (the epoch treatment, whose own retirement discipline is the same shape one construct out).
 
@@ -1637,7 +1637,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:586-594`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:670-678`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 5 of `cowork_rulings_2026_08_09_return.md`, which names the pattern in terms ("D-286 is homed by the D-472 PATTERN") and attaches the STATES-RULES pre-act check as its own condition; applied 2026-08-09 by `cc_instruction_return_continuation.md` Task 2, where the check ran first and passed. CLASSIFIED as a DECISION by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), queue entry 5, on the PATTERN only — the homing of the entry that occasioned it is an exercise. Homed by that same ruling in `cowork_audit_protocol.md` beside D-644, the other form for writing a decision into a specification when the plain form would state something false. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-231 (the phase-1 clause it serves), D-644 (the removal form), D-650 (the comparison condition and its remedy, the third of the family), D-286 and D-472 (the two entries homed under it).
 
@@ -1660,7 +1660,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:608-617`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:692-701`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** TWO user rulings of 2026-08-09, recorded as ONE entry on the user's instruction: Ruling 7 of `cowork_rulings_2026_08_09_return.md` supplies the verbatim-comparison condition, and Ruling 11 of `cowork_rulings_2026_08_09_second_stop.md` supplies the side-by-side remedy the condition leaves open. The condition FIRED when applied (`cc_instruction_return_continuation.md` Task 2, reported at `cowork_away_returns.md` §1.6) and the remedy was applied at the next stop (`cc_instruction_return_continuation_2.md` Task 0). CLASSIFIED as ONE DECISION by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), queue entries 7 and 11 taken together, on the ground that splitting them across two entries would put the test in one place and what to do about it in another. Homed by that same ruling in `cowork_audit_protocol.md` beside D-649 and D-644. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-291 (the entry whose measurement half the condition fired on) and D-656 (the half homed side by side under the remedy), D-649 and D-644 (the same family).
 
@@ -1682,7 +1682,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:633-641`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:743-751`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 15 of `cowork_rulings_2026_08_09_second_stop.md`, which puts the non-equivalence requirement in capitals as a condition on the licensed correction; applied 2026-08-09 by `cc_instruction_return_continuation_2.md` Task 0 at the `ARCHITECTURE.md` Layer-6 section. CLASSIFIED as a DECISION by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), queue entry 15, NARROWLY — on the non-equivalence requirement only; the wording correction itself is phase-1 true-half work and an exercise. Homed by that same ruling in `cowork_audit_protocol.md` beside D-649 and D-650, the doc-sync case of the same family; the queue's stated alternative home was `CLAUDE.md`'s phase-1 clause and was not taken. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-472 (the entry whose wording the ruling corrected), D-649 and D-650 (the same family), `OPEN_ITEMS.md` OI-349 (the probe that established the by-other-means finding).
 
@@ -1703,7 +1703,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:682-689`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:792-799`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 17 of `cowork_rulings_2026_08_09_third_stop.md`, which accepts a past widening on a stated ground and says in terms that the report is part of what is ratified and that a silent widening would not have been accepted; recorded at its subject by `cc_instruction_return_continuation_3.md` Task 0 with nothing re-edited. CLASSIFIED as a DECISION by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), queue entry 17, NARROWLY — on the reported-widening clause only; the acceptance of the one past act is an exercise. Homed by that same ruling in `cowork_audit_protocol.md` beside D-645, the subsection that states the scope of a licence, because this is the one case that subsection does not cover. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-645 (the licence scope), D-231 (the phase-1 true half the correction serves), D-644 (the shape the licensed replacement text was written in).
 
@@ -1726,7 +1726,102 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `cowork_audit_protocol.md:473-482`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_audit_protocol.md:557-566`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 18 of `cowork_rulings_2026_08_09_third_stop.md`, recorded on `OPEN_ITEMS.md` OI-354's row by `cc_instruction_return_continuation_3.md` Task 0 and EXECUTED at that dispatch's Task 1, with the guard deliberately left failing. CLASSIFIED as a DECISION by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), queue entry 18, NARROWLY — on the authoring-does-not-clear separation only; the licence itself and the by-that-method-and-no-invented-one half are exercises of #6 and #16. The queue flagged it as reasonably downgradable and the user ruled it KEPT, on the same ground as entry 12. Homed by that same ruling in `cowork_audit_protocol.md` beside the always-gates clause, which says when such an obligation starts gating where this says how it stops. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-438 (the gating declaration whose exception clause it completes), D-652 (the other clause governing when a register-clearing act may be performed), `OPEN_ITEMS.md` OI-289 and OI-354 (the verification and the population that grew).
+
+### D-657 — A mechanism change is decided over its whole population both ways before it is applied, and only the members the defect's own shape names may move
+
+> ### A mechanism change is decided over its WHOLE population BOTH WAYS before it is applied, and only the members the defect's own shape names may move
+>
+> **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 25). The two
+> rules above bound the mechanism question from either side — how a mechanism is JUDGED once it
+> exists, and when the mechanism-change reservation is ENGAGED at all. This states what a mechanism
+> CHANGE owes BEFORE it is applied.
+>
+> **THE CONDITION.** Every member of the population is decided under **BOTH** rules — the one live at
+> HEAD and the proposed one — before and after. **Only the members the defect's own shape names may
+> move. ANY OTHER MOVEMENT IS A STOP back to the user**, and the change is not applied.
+
+**In plain words.** Before a proposed change to one of the record's own mechanisms is applied, every member of the population that mechanism reads is decided twice — once under the rule running now and once under the proposed rule — and the two answers are compared per member. Only the members the defect's own description names are allowed to move. Anything else moving stops the change and returns it to the user.
+
+**Why.** It binds because it has already killed a ruled remedy: applied at the case that produced it, the both-ways table established that the proposed correction fixed one member of its population and broke two, where a forward-only application would have reported the fix alone. The construction is part of the rule for the same reason — a table that implements both rules itself can SHOW a movement, while a diff of outputs can only assert that something changed. Nothing in the register carried the test: D-436 judges a mechanism by three measured rates once it exists, which is a different question, and D-648 draws the maintenance-versus-mechanism line without saying what a mechanism change owes before it is applied.
+
+**Status.** LIVE · decided 2026-08-09 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:449-458`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-09, Ruling 25 of `cowork_rulings_2026_08_09_fourth_stop.md`, whose correction was then REFUTED by this very condition and never applied — the condition is what survives, and it is the whole of what is registered here. CLASSIFIED as a DECISION, narrowly, by the user's Ruling 36 of 2026-08-09 (`cowork_rulings_2026_08_09_sixth_stop.md`), on the classification queue `ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md` §7 entry 25; the queue flagged it as reasonably downgradable — the ruling calls it 'the A5 pattern', naming a dispatch assumption — and the user ruled it KEPT as a decision on the standing cheap-insurance ground. Homed by that same ruling in `cowork_audit_protocol.md`'s dispatch-protocol block beside D-436 and D-648, in that block's own voice, per rule (e) and the D-645 homing pattern. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT: what the user ruled is the classification and the home, and this text was written afterwards (#14). The two applications and their findings are at `cowork_away_returns.md` §1.10 and the fifth continuation's Task 1 log, and no value is carried here (D-431). Cross-ref D-436 (the three measured conditions, whose own text carries the ground that a mechanism firing on legitimate work is worse than none), D-648 (the maintenance-versus-mechanism line), `OPEN_ITEMS.md` OI-356, OI-361, OI-362 (the family the condition was applied over).
+
+### D-658 — Where the record does not settle the question, the surface that returns it to the user gathers facts and makes no recommendation
+
+> ### Where the record does not settle the question, the surface that returns it to the user gathers FACTS and makes NO recommendation
+>
+> **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 27), on the
+> user's own instruction, quoted in the ruling verbatim: *"follow the rule: fact based decisions or
+> exploration to gather facts are allowed, not decided on unsure/fabulated/misremembered facts."* The
+> third member of the family above, and the case those two do not cover: not *the plain form would
+> state something false*, but *the record does not answer the question at all*.
+>
+> **THE FORM.** Where a question the session cannot settle has to go back to the user, the surface it
+> goes back on carries: **every claim CITED AT ITS SOURCE and read in place; the records concerned
+> READ WHOLE; anything the record does not settle marked UNSETTLED rather than filled — and NO
+> RECOMMENDATION AT ALL.**
+
+**In plain words.** When a question has to go back to the user because the record does not answer it, the surface it goes back on cites every claim at the place it can be checked, reads the records concerned whole, marks anything the record does not settle as unsettled instead of filling it in, and offers no recommendation of any kind.
+
+**Why.** The no-recommendation clause is the load-bearing one and the one a session will be tempted to break: a fact-gathering pass that ends in a recommendation has decided the question it was sent to inform, so the user then rules on the session's reading rather than on the facts — which is exactly what the user's quoted instruction exists against. Marking an item unsettled is likewise an answer rather than a shortfall, since filling it from the most plausible reading is the invention D-112 forbids. Evidenced at the case that produced it: gathering the facts LOCATED a conflict between two records that nobody had put side by side, wrote both readings onto the surface, and chose neither — a pass permitted to recommend would have chosen one, and the conflict would have been settled by a session's reading of intent.
+
+**Status.** LIVE · decided 2026-08-09 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:717-728`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-09, Ruling 27 of `cowork_rulings_2026_08_09_fourth_stop.md`, which quotes the user's instruction verbatim and takes no verdict on the cell it was asked about; the surface it ordered was delivered at `ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md` and the user then ruled the cell on facts (Ruling 34). CLASSIFIED as a DECISION, narrowly — on the fact-gathering-surface FORM only, the refusal to decide one cell being an exercise — by the user's Ruling 36 of 2026-08-09 (`cowork_rulings_2026_08_09_sixth_stop.md`), queue §7 entry 27; the queue flagged it as reasonably downgradable, on the reading that the no-recommendation clause is already implied by #5 and D-112, and the user ruled it KEPT. Homed by that same ruling in `cowork_audit_protocol.md` beside D-649 and D-650, the third member of that family. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-112 (never work from memory), D-649 and D-650 and D-653 (the same family of forms), D-580 (the cell the form was built for), `OPEN_ITEMS.md` OI-365 (the residual the ruling declined to decide).
+
+### D-661 — Complete means complete relative to a named derivation, whose measured miss rate against the record is part of its name
+
+> ### "Complete" means complete relative to a NAMED DERIVATION, whose measured miss rate against the record is part of its name
+>
+> **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 31; restated as
+> the standing statement by Ruling 37 of `cowork_rulings_2026_08_09_sixth_stop.md` when the derivation
+> it licensed came back negative). It belongs beside the three measured conditions above because it is
+> the same rule one level out: those say what a MECHANISM is worth unmeasured, and this says what a
+> COMPLETENESS CLAIM is worth unmeasured.
+>
+> **A hand-made inventory's completeness is not known, and it becomes checkable BY DERIVATION.** The
+> candidate population is DERIVED from named surfaces; the existing hand-made list is demoted to
+> **SEED VERDICTS** rather than standing as the population; every derived candidate carries an
+> AUTHORED verdict; **an unclassified candidate is a STOP**; and the derivation is RE-DERIVED as the
+> tree grows. *Complete* thereafter means complete **relative to that named derivation** and to
+> nothing wider.
+
+**In plain words.** A hand-made list cannot be known to be complete just because nobody has found a gap in it. It becomes checkable by deriving the candidate population from named surfaces, treating the hand-made list as seed verdicts rather than as the population, requiring an authored verdict for every derived candidate, stopping while any candidate is unclassified, and re-deriving as the tree grows. Complete then means complete relative to that named derivation, and the derivation's measured miss rate against the seed is published as part of what it is called.
+
+**Why.** It is #19 applied to a completeness claim: an inventory trusted because nobody has found a gap in it is exactly the thing merely unfalsified, and the register stated the test nowhere else. The miss-rate half has its own measured ground — the derivation licensed under this rule missed seed words the record already held, and one seed word was missed by both readings of the musical surface, so the record is not a subset of the derivation either; a derivation that misses a known positive cannot be trusted to have found the unknown ones. That is also why the population stays advisory rather than being narrowed until the misses disappear, which would be fitting the signal to the cases that motivated it (DT-2).
+
+**Status.** LIVE · decided 2026-08-09 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:366-379`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-09, Ruling 31 of `cowork_rulings_2026_08_09_fifth_stop.md`, executed by `cc_instruction_return_continuation_5.md` Task 2; its outcome was then ruled by the user's Ruling 37 of `cowork_rulings_2026_08_09_sixth_stop.md`, which records the completeness question as ANSWERED rather than closed and makes this the standing statement of what complete means here. CLASSIFIED as a DECISION, narrowly — on the derived-population answer to the completeness question only, the scanner licence itself being an exercise — by the user's Ruling 36 of 2026-08-09, queue §7 entry 31; the queue flagged it as reasonably downgradable, on the reading that the derived-population-with-authored-verdicts-and-a-STOP shape is already the practice of three existing tools, and the user ruled it KEPT. Homed by that same ruling in `cowork_audit_protocol.md` beside D-436. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Every measured value lives in `tools/audit/reserved_word_scanner.json` and none is carried here (D-431). Cross-ref D-436 (the three measured conditions, whose third is the separation a derived population must show before it may guard), D-660 (the cleanup this inventory feeds), `OPEN_ITEMS.md` OI-229 (the tracking row).
+
+### D-663 — A direction with its artifact named is not a transcribed value
+
+> ### A DIRECTION with its artifact named is not a transcribed value
+>
+> **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 35(c)). A
+> reading of the rule immediately above, recorded against it so that a session meeting the
+> prohibition meets the clause that says what it still permits. **A DIRECTION — *fewer than half*,
+> *the large majority*, *markedly better* — stated with the generated artifact CITED BESIDE IT is not
+> a transcribed value, and is what the rule above asks for.**
+
+**In plain words.** Saying which way a result went — fewer than half, the large majority, markedly better — with the generated artifact named beside it is not a transcribed value and is allowed. It does not permit restating the value itself, in digits or in words, and it does not relax the rule that an asserted difference between two measured quantities carries its uncertainty.
+
+**Why.** The prohibition it reads exists so that a quantity cannot enter prose and then go stale while the artifact moves; a direction with its artifact named leaves the value in the artifact and still tells a reader what was found. Without the clause the safe reading of the prohibition is that any characterization of a result is forbidden, which would make findings unreportable — and sessions had repeatedly had to guess at where the line falls, which is the recurrence that made it worth ruling.
+
+**Status.** LIVE · decided 2026-08-09 · ratified by user
+
+**Home.** `cowork_audit_protocol.md:235-241`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-09, Ruling 35(c) of `cowork_rulings_2026_08_09_fifth_stop.md`, taken over the qualitative characterizations in `OPEN_ITEMS.md` OI-363's row, which are ruled ACCEPTABLE and were not re-edited; recorded on that row by `cc_instruction_return_continuation_5.md` Task 0. CLASSIFIED as a DECISION, narrowly — on that clause only — by the user's Ruling 36 of 2026-08-09 (`cowork_rulings_2026_08_09_sixth_stop.md`), queue §7 entry 35c, on the ground that it is a reading of D-431 the register does not carry. Homed by that same ruling in `cowork_audit_protocol.md` beside D-431 itself. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-431 (the prohibition it reads), D-187 (principle #24, the uncertainty requirement it does not relax), `OPEN_ITEMS.md` OI-363 (the row the ruling was taken over).
 

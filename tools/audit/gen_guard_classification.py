@@ -239,6 +239,35 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "Ruling 24(b) — is NEGATIVE at this tree. Classified for completeness though it is NOT "
         "RUN, on the same footing as the census above."),
 
+    # ---- AUTHORED 2026-08-09, cc_instruction_return_continuation_6.md Task 0 -----------------
+    # Both tools were added by the previous continuation and reached this pass's derived
+    # population without a verdict, which is this tool's own STOP working. A verdict is authored
+    # for a tool the population DID reach; none is hand-added for one it did not.
+    "tools/audit/index_status_lint.py": (
+        LIVE, "index_status_lint.py:4-7, :16-20, :22-24",
+        "It PARSES `OPEN_ITEMS.md` on every run and asserts a property of the index AS IT STANDS: "
+        "every status cell opens with one canonical token, and every row splits into the expected "
+        "number of cells. A row written tomorrow with a non-canonical opening fails tomorrow, and a "
+        "clean index passes indefinitely — the shape of a live invariant rather than a dated "
+        "reading. It also OWNS the vocabulary, the row split and the leading-token function that "
+        "the ONE index parser imports (#6), so what it checks and what every derivation reads are "
+        "the same code. Its own docstring draws the boundary that keeps it live: it does not judge "
+        "whether a row's recorded state is CORRECT, only that the state is STATED in a form every "
+        "derivation reads the same way."),
+    "tools/audit/gen_reserved_word_scanner.py": (
+        LIVE, "gen_reserved_word_scanner.py:11-20, :37-39",
+        "★ CLASSIFIED LIVE DESPITE BEING REGISTERED NOT RUN, and the two facts are about different "
+        "things. Its POPULATION is DERIVED from the tree on every run — the project's own musical "
+        "vocabulary intersected with the words its governance surfaces use — and the invariant it "
+        "asserts is about that population TODAY: every derived candidate carries an authored "
+        "verdict, with an unclassified candidate a STOP. That is the `claude_md_rule_triage.py` "
+        "shape exactly, and it was demonstrated rather than assumed: writing new governance prose "
+        "in this very task moved the derived counts, which is what register entry D-661 means by "
+        "*re-derived as the tree grows*. It is NOT RUN in the guard set for a separate and recorded "
+        "reason — its STOP is its headline and it fails by design until the verdicts are authored, "
+        "and a guard set carrying a member that fails by design teaches a reader to ignore the set. "
+        "Classified for completeness on the same footing as the ratification-surface census above."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 44,
-    "re_derives_a_live_invariant": 32,
+    "tools_classified": 46,
+    "re_derives_a_live_invariant": 34,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 0
@@ -319,10 +319,26 @@
       "state_at_the_committed_tree": "NOT RUN"
     },
     {
+      "tool": "tools/audit/gen_reserved_word_scanner.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_reserved_word_scanner.py:11-20, :37-39",
+      "why": "★ CLASSIFIED LIVE DESPITE BEING REGISTERED NOT RUN, and the two facts are about different things. Its POPULATION is DERIVED from the tree on every run — the project's own musical vocabulary intersected with the words its governance surfaces use — and the invariant it asserts is about that population TODAY: every derived candidate carries an authored verdict, with an unclassified candidate a STOP. That is the `claude_md_rule_triage.py` shape exactly, and it was demonstrated rather than assumed: writing new governance prose in this very task moved the derived counts, which is what register entry D-661 means by *re-derived as the tree grows*. It is NOT RUN in the guard set for a separate and recorded reason — its STOP is its headline and it fails by design until the verdicts are authored, and a guard set carrying a member that fails by design teaches a reader to ignore the set. Classified for completeness on the same footing as the ratification-surface census above.",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "NOT RUN"
+    },
+    {
       "tool": "tools/audit/guard_armed_check.py",
       "verdict": "re-derives-a-live-invariant",
       "evidence": "guard_armed_check.py:22-25",
       "why": "It reads the settings files a session in this directory WOULD read and reports whether a PreToolUse hook running the shell-read guard is declared, and whether hooks are globally off. A property of the current machine state, re-answered on every run.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/index_status_lint.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "index_status_lint.py:4-7, :16-20, :22-24",
+      "why": "It PARSES `OPEN_ITEMS.md` on every run and asserts a property of the index AS IT STANDS: every status cell opens with one canonical token, and every row splits into the expected number of cells. A row written tomorrow with a non-canonical opening fails tomorrow, and a clean index passes indefinitely — the shape of a live invariant rather than a dated reading. It also OWNS the vocabulary, the row split and the leading-token function that the ONE index parser imports (#6), so what it checks and what every derivation reads are the same code. Its own docstring draws the boundary that keeps it live: it does not judge whether a row's recorded state is CORRECT, only that the state is STATED in a form every derivation reads the same way.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

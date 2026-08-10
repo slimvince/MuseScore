@@ -232,6 +232,26 @@ next dispatch as fact. `OPEN_ITEMS.md` **OI-283** is the register-side instance 
 hand-typed coverage claim inside a generated file — and its remedy is now one instance of this general
 rule rather than a one-off.
 
+### A DIRECTION with its artifact named is not a transcribed value
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 35(c)). A
+reading of the rule immediately above, recorded against it so that a session meeting the
+prohibition meets the clause that says what it still permits. **A DIRECTION — *fewer than half*,
+*the large majority*, *markedly better* — stated with the generated artifact CITED BESIDE IT is not
+a transcribed value, and is what the rule above asks for.**
+
+*Why the reading has to be written down:* the prohibition exists so that a quantity cannot enter
+prose and then go stale while the artifact moves. A direction with its artifact named leaves the
+value in the artifact and still tells a reader what was found. Without this clause the safe reading
+of the prohibition is that ANY characterization of a result is forbidden — which would make a
+finding unreportable, and sessions have repeatedly had to guess at where the line falls.
+
+**What the clause does NOT admit.** It does not admit restating the value itself, in digits or in
+words; the artifact and the field remain the only place a quantity is read. And it does not relax
+**#24**: a DIFFERENCE asserted between two measured quantities still carries its uncertainty, or is
+not asserted — a direction is a statement about one result, not a licence for an unqualified
+comparison.
+
 ### A count of OUTSTANDING work is DERIVED from state, never taken from the membership of a list of asks
 
 **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_phase1_delegations_and_corrections.md`,
@@ -343,6 +363,37 @@ retires any prose, which is why they failed the withdrawn test and is not a defe
 The guard's third condition is met only while it is ARMED; until it is, that is recorded as an
 expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292).
 
+### "Complete" means complete relative to a NAMED DERIVATION, whose measured miss rate against the record is part of its name
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 31; restated as
+the standing statement by Ruling 37 of `cowork_rulings_2026_08_09_sixth_stop.md` when the derivation
+it licensed came back negative). It belongs beside the three measured conditions above because it is
+the same rule one level out: those say what a MECHANISM is worth unmeasured, and this says what a
+COMPLETENESS CLAIM is worth unmeasured.
+
+**A hand-made inventory's completeness is not known, and it becomes checkable BY DERIVATION.** The
+candidate population is DERIVED from named surfaces; the existing hand-made list is demoted to
+**SEED VERDICTS** rather than standing as the population; every derived candidate carries an
+AUTHORED verdict; **an unclassified candidate is a STOP**; and the derivation is RE-DERIVED as the
+tree grows. *Complete* thereafter means complete **relative to that named derivation** and to
+nothing wider.
+
+**AND THE DERIVATION IS MEASURED AGAINST THE SEED, WITH WHAT IT MISSES PUBLISHED AS PART OF ITS
+NAME.** A derivation that misses a word the record already holds cannot be trusted to have found the
+ones the record does not — so the miss rate against the seed is not a footnote to the claim, it is a
+term of it. Where a derivation is not SOUND (it misses known positives) or not BOUNDED (it proposes
+a population no session can rule on), that is REPORTED and the population stays advisory. **Nothing
+is narrowed until the misses disappear:** fitting the derivation to the cases that motivated it is
+the defect the catalog names DT-2.
+
+*Why it is a standing rule rather than one pass's finding:* it is **#19** applied to a completeness
+claim. An inventory trusted because nobody has found a gap in it is exactly the thing merely
+unfalsified, and the register states the test nowhere else.
+
+**What it does not authorize.** No rename, no guard, no fix to the analysis, no design and no
+inference change. Adoption of a derived population as a diff-time check remains conditional on
+MEASURED clean separation, which is the third of the conditions above.
+
 ### When a shell-read policy cannot decide, it DENIES — and the ceiling it cannot see is published in the measured rate
 
 **Ruled by the user, 2026-08-08** (`cowork_ruling_guard_family_2026_08_08.md`, clauses 4 and 2).
@@ -394,6 +445,39 @@ apart either returns to the user on every stale authored input or edits mechanis
 of maintenance. It is recorded because the same shape recurred repeatedly across consecutive
 batches, each time as a pass REFUSING TO RUN rather than as a defect a reader happened to notice —
 which is those passes' own STOPs working.
+
+### A mechanism change is decided over its WHOLE population BOTH WAYS before it is applied, and only the members the defect's own shape names may move
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 25). The two
+rules above bound the mechanism question from either side — how a mechanism is JUDGED once it
+exists, and when the mechanism-change reservation is ENGAGED at all. This states what a mechanism
+CHANGE owes BEFORE it is applied.
+
+**THE CONDITION.** Every member of the population is decided under **BOTH** rules — the one live at
+HEAD and the proposed one — before and after. **Only the members the defect's own shape names may
+move. ANY OTHER MOVEMENT IS A STOP back to the user**, and the change is not applied.
+
+**THE CONSTRUCTION, which is not a detail.** The table **implements both rules itself** rather than
+reporting a diff of the result. That is the only construction that can SHOW a movement rather than
+assert one: a diff of outputs says that something changed, while two independent decisions per
+member say which rule moved it and in which direction. *(The second pass performed under this
+condition added one thing to the form and it is recorded here because it decides whether the record
+survives: the BEFORE half is read from a git object by explicit hash, never from the working tree.
+A pass that takes its baseline from the tree can be run exactly once — the second run reports the
+tree it has itself already changed — and one such record was overwritten by an accidental
+invocation before the change was made. See `cowork_away_returns.md`, the fifth continuation's Task 1
+log.)*
+
+*Why the condition binds rather than merely advising:* it has already killed a ruled remedy. Applied
+at the case that produced it, the both-ways table established that the proposed correction **fixed
+one member of its population and broke two** — and a forward-only application would have reported
+the fix and nothing else. It then did the same job a second time, in the other direction: the
+re-reading of one member REFUTED the previous pass's account of it, which made the refuted remedy
+worse than it had been recorded to be rather than better.
+
+**What it does not authorize.** No mechanism change is authorized by this rule — whether a mechanism
+changes at all stays the user's, as the reservation above states. This says what the evidence must
+look like before the question is put.
 
 ### A generated record that must outlive its own writer is FROZEN at an established snapshot, and the freeze is a hash STOP
 
@@ -629,6 +713,32 @@ of two prohibitions — a session could have obeyed the surviving text in full w
 about to be retired into it. Without the condition in the record, the next session meeting two
 same-dated texts has only the temptation to tidy them into one; without the remedy beside it, a
 session that runs the test correctly is left with a STOP and no form to write the answer in.
+
+### Where the record does not settle the question, the surface that returns it to the user gathers FACTS and makes NO recommendation
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 27), on the
+user's own instruction, quoted in the ruling verbatim: *"follow the rule: fact based decisions or
+exploration to gather facts are allowed, not decided on unsure/fabulated/misremembered facts."* The
+third member of the family above, and the case those two do not cover: not *the plain form would
+state something false*, but *the record does not answer the question at all*.
+
+**THE FORM.** Where a question the session cannot settle has to go back to the user, the surface it
+goes back on carries: **every claim CITED AT ITS SOURCE and read in place; the records concerned
+READ WHOLE; anything the record does not settle marked UNSETTLED rather than filled — and NO
+RECOMMENDATION AT ALL.**
+
+**The last clause is the load-bearing one, and it is the one a session will be tempted to break.** A
+fact-gathering pass that ends in a recommendation has decided the question it was sent to inform:
+the user then rules on the session's reading rather than on the facts, which is the outcome the
+instruction above exists against. Marking an item UNSETTLED is likewise an ANSWER and not a
+shortfall — *the record does not address this* is what a reader needs in order to rule, and filling
+it from the most plausible reading is the invention the never-work-from-memory rule forbids.
+
+*Why the form earns its place:* applied at the case that produced it, gathering the facts settled
+more than the question asked — and it LOCATED a conflict between two records that nobody had put
+side by side, with two readings visible and neither chosen. A pass permitted to recommend would
+have chosen one, and the conflict would have been resolved by a session's reading of intent rather
+than by the user on facts.
 
 ### A correction that reconciles a specification to the arm that SHIPS carries the behavioural non-equivalence visibly, as unmeasured
 

@@ -283,6 +283,34 @@ hand-listed — `tools/audit/nongating_apparatus_rows.json` from
 candidate row lacks a verdict or any verdict names a row the INDEX no longer carries open; no
 row identity or count is restated here (#17f, D-431).
 
+**★ RULE (f) — EVERY INDEX STATUS CELL BEGINS WITH ONE CANONICAL TOKEN (user-ruled 2026-08-09; the
+ruling record is `cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 33).** Rules (a)–(e) above say
+how the register is kept. This is the sixth, and it is about the one cell three separate derivations
+read. **A row's STATE is carried by the first token of its status cell — the resolved mark at the
+head of the cell, or one of the open-state words — and by nothing else.** Two consequences follow
+immediately and both are the point of the rule: a cell may **name any other row's resolution
+freely**, in words or with the mark, because a mention anywhere after the opening is inert; and a
+resolution spelled **only in prose**, with no canonical opening, **is not a state** and will be
+counted open until the opening is written.
+
+**The two STOPs that make it a mechanism rather than a convention.** A **lint** reports every
+non-canonical opening, and **the ONE index parser** — the single reader every derivation over this
+INDEX imports (#6) — **STOPS on a row that does not split into six cells** instead of skipping it.
+The vocabulary, the row split and the leading-token test have exactly one home,
+`tools/audit/index_status_lint.py`; the vocabulary is **DERIVED from the openings the INDEX
+actually uses** rather than invented, and no token or count is restated here (#17f, D-431).
+
+*Why the rule is worth a lettered place beside the others.* It is one cause with three faces, and
+each face was found separately: a cell that mentioned another row's mark made its OWN row read
+resolved to every derivation; a cell stating its resolution in words read OPEN although its text
+said otherwise; and a malformed row was **dropped silently — in no population at all**, which is
+worse than either mis-reading, because a mis-read row is at least counted somewhere and a moving
+count can be noticed. The silent drop is why the parser STOPs rather than skips (#12, #19). *The
+two excluded alternatives are recorded at the ruling:* recognising a resolution token anywhere in a
+bounded opening — a hand-picked threshold over varying prose, which fixes neither sibling — and
+forbidding the mark in prose, which is one symptom of three. **`OPEN_ITEMS.md`'s own preamble
+carries a POINTER to this rule and is explicitly not its home** (#6).
+
 ## The decisions register (shape user-ratified 2026-07-28; content + living surface 2026-08-02)
 
 **The register is `DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` (full entries: the
@@ -1284,6 +1312,30 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   eventual cleanup a BOUNDED job rather than a rename: much of the tree already complies by
   accident (`totalScore`, `content score`, `segmentContentScore` are qualified already), so only
   the BARE uses in a non-musical sense need touching.
+  **★ WHAT HAPPENS TO A NAME BORROWED FROM THE PUBLISHED RESEARCH, AND IN WHAT ORDER THE CLEANUP
+  RUNS (user-ruled 2026-08-09; the ruling record is `cowork_rulings_2026_08_09_fifth_stop.md`,
+  Ruling 30).** The block above says the existing tree is not renamed unilaterally and that the
+  pass is a decision surface rather than a sweep. It does not say what a session does with a term
+  that carries correspondence to the research the design is grounded in, and it does not fix the
+  order — both are settled here. **A RESEARCH-TIED NAME IS NOT RENAMED (#1/#2), AND IS GOVERNED BY
+  TWO TIERS.** *(i)* At the **INTRODUCTION SITE** — where the public research is actually
+  discussed, which is expected to be one or very few places — the collision is EXPLAINED and our
+  decided synonym STATED; the term standing there with that statement is conformant. *(ii)* **Every
+  subsequent use** of the research term outside our own vocabulary carries a **compact inline
+  annotation referencing the research**; such a use is conformant if and only if it is annotated,
+  and an **unannotated repeat use is a flag**. *Why the second tier is the load-bearing one:* a
+  rule stated as *research terms are not renamed* and nothing else reads as a licence to leave them
+  bare, which reproduces the ambiguity the whole convention exists against — the reader who meets
+  the term at its fiftieth use never meets the introduction site. **AND THE ORDER OF THE CLEANUP IS
+  FIXED: NO TREE-WIDE RENAME.** The derived inventory comes first; the user then rules **per-word
+  batches**, **governing surfaces first** (`CLAUDE.md`, `ARCHITECTURE.md`, the signed
+  specifications), with **code identifiers** and **research-tied names** each a named LATER
+  decision. *Why the order rather than a sweep:* it is what makes the pass a scoped decision
+  surface, which is the thing the block above already ruled it must be; a single tree-wide pass
+  would take every one of those decisions silently and at once. The tracking row is
+  `OPEN_ITEMS.md` OI-229, which stays open because the cleanup itself is not done, and the derived
+  inventory and its measured limits are at `tools/audit/reserved_word_scanner.json` — no count or
+  word list is restated here (#17f, D-431).
 
 - **EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME (user-directed, 2026-08-01, at the
   decisions-register ratification review).** Wherever a design decision is recorded — the owning

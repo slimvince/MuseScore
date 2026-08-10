@@ -299,6 +299,42 @@ def main() -> int:
         "status": "ADVISORY. No guard is adopted, no text is renamed, and no verdict here binds "
                   "anything. Ruling 30 governs what happens next: the user rules per-word batches, "
                   "governing surfaces first.",
+        "THE_CLOSING_STATE_the_user_ruled_2026_08_09": {
+            "the_ruling": "Ruling 37 of `cowork_rulings_2026_08_09_sixth_stop.md`, recorded here "
+                          "and on `OPEN_ITEMS.md` OI-229's row by "
+                          "`cc_instruction_return_continuation_6.md` Task 0.",
+            "the_outcome": "READING 3 of the reading surface's three. The inventory stays at the "
+                           "user's twenty, the convention stays LIVE for new writing, and the "
+                           "COMPLETENESS QUESTION IS ANSWERED AND RECORDED RATHER THAN CLOSED.",
+            "the_answer_that_is_now_a_STANDING_STATEMENT": "The inventory is incomplete by a "
+                "measured amount relative to named derivations that are themselves incomplete "
+                "against the record. So 'complete' means COMPLETE RELATIVE TO A NAMED DERIVATION, "
+                "re-derived as the tree grows, with the derivation's MEASURED MISS RATE AGAINST "
+                "THE SEED part of its name. It is register entry D-661, homed in "
+                "cowork_audit_protocol.md beside D-436; this artifact is the evidence for it and "
+                "is re-run when the tree has grown.",
+            "what_the_ruling_does_NOT_do": [
+                "No verdict-authoring pass runs over the derived population — the STOP below stays "
+                "armed and the candidates stay unclassified by decision rather than by omission.",
+                "No check is adopted: the separation measurement below is negative and nothing was "
+                "tuned to change that.",
+                "Nothing is renamed and no batch is scheduled.",
+                "OI-229 does NOT close — its subject is the cleanup, not the completeness question.",
+            ],
+            "the_working_enforcement": "The per-wave standing self-check (D-434), whose "
+                "establishment is four consecutive waves each catching a reserved-word collision "
+                "in that wave's OWN new prose. Those catches are the labelled corpus below.",
+            "one_bounded_option_HELD_and_not_scheduled": "A batch over the SEED TWENTY's bare uses "
+                "in the governing surfaces — the one subset sound by construction, the seed being "
+                "the user's own inventory — as a later leftover-capacity item. Named so it is not "
+                "rediscovered; not started.",
+            "excluded_alternatives_recorded": [
+                "Authoring verdicts over either derived population: unsound over the sharp one "
+                "(it misses seed words the record holds) and unbounded over the broad one. "
+                "Confidence in a verdict is not what #19 licenses.",
+                "Per-word batches over the same population — the same defect at a smaller bill.",
+            ],
+        },
         "the_derivation": {
             "musical_surface_a": {
                 "sharp": "Every `enum` in the analysis code — its name and its enumerators, "

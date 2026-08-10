@@ -288,13 +288,26 @@ def build_items(inv: dict, deleg: dict, discharged: set[str]) -> list[dict]:
         "why_it_is_outstanding": part["A_no_delegation_exists"]["the_criterion_that_decides_it"],
         "gate": gap_gate,
         "closing_act": (
-            "Per document, ONE of two acts, and they are not equivalent: (i) the user writes a "
-            "delegation naming the document — rule (g)'s guard reserves that act to the user, since "
-            "only the user writes a delegation into ARCHITECTURE.md; or (ii) each entry is re-homed "
-            "into the owning layer's specification section, which rule (e) prefers in terms "
-            "('a decision belongs, wherever possible, in the OWNING LAYER'S SPECIFICATION')."
+            "RE-HOMING, per entry, into the owning layer's specification section — rule (e)'s own "
+            "preference ('a decision belongs, wherever possible, in the OWNING LAYER'S "
+            "SPECIFICATION') and what makes criterion C4 true without the register. ★ THE FORK IS "
+            "RESOLVED: the user's Ruling 38 of 2026-08-09 "
+            "(`cowork_rulings_2026_08_09_sixth_stop.md`) rules re-homing the DEFAULT route for "
+            "every remaining entry of this item, and NO DOCUMENT IS EXCEPTED at ruling time. A "
+            "later exception — a document the user wants kept as a contract home by delegation — "
+            "is A NEW USER RULING NAMING THE DOCUMENT, taken BEFORE its entries are re-homed and "
+            "never after. THE FORMER CLOSING ACT, PRESERVED (#12), true until that ruling: 'Per "
+            "document, ONE of two acts, and they are not equivalent: (i) the user writes a "
+            "delegation naming the document — rule (g)'s guard reserves that act to the user, "
+            "since only the user writes a delegation into ARCHITECTURE.md; or (ii) each entry is "
+            "re-homed into the owning layer's specification section, which rule (e) prefers in "
+            "terms.' THE EXCLUDED ALTERNATIVE, RECORDED AT THE RULING: delegation as the default — "
+            "it grows the contract-home class, requires the user's writing per document (rule "
+            "(g)), and runs against both concrete declinations already on the record."
         ),
-        "who_may_perform_it": "(i) the user only. (ii) a working session, per document.",
+        "who_may_perform_it": "a working session, per entry. (The user's route survives only as a "
+                              "NEW RULING naming a document, taken before that document's entries "
+                              "are re-homed — Ruling 38.)",
         "authored": "the closing act. The population and the criterion are derived.",
     })
 
@@ -308,15 +321,23 @@ def build_items(inv: dict, deleg: dict, discharged: set[str]) -> list[dict]:
             part["B_naming_exists_but_the_bar_excludes_its_form"]["the_criterion_that_decides_it"],
         "gate": gap_gate,
         "closing_act": (
-            "Per document, ONE of two acts: (i) the user rewrites the naming into a form D-432 "
-            "admits — an explicit delegation clause or a named home with sections, rather than the "
-            "bare appended citation the bar excludes; or (ii) each entry is re-homed into the "
-            "owning layer's specification. Note what is NOT a closing act: relaxing the bar. D-432 "
-            "was applied over the whole home population on the user's ruling, and its own record "
-            "states that the alternative to applying it was a revision of the bar, which the user "
-            "declined."
+            "RE-HOMING, per entry, into the owning layer's specification — the same ruled default "
+            "as the item above, and by the same act: the user's Ruling 38 of 2026-08-09 covers "
+            "'every remaining register entry in the finish-line items whose home document is named "
+            "in NO user-ratified surface, OR ONLY IN A FORM THE DELEGATION BAR EXCLUDES', which is "
+            "this item by name. NO DOCUMENT IS EXCEPTED at ruling time, and a later exception is a "
+            "new user ruling naming the document, taken BEFORE its entries are re-homed. Note what "
+            "is still NOT a closing act: relaxing the bar. D-432 was applied over the whole home "
+            "population on the user's ruling, and its own record states that the alternative to "
+            "applying it was a revision of the bar, which the user declined. THE FORMER CLOSING "
+            "ACT, PRESERVED (#12): 'Per document, ONE of two acts: (i) the user rewrites the "
+            "naming into a form D-432 admits — an explicit delegation clause or a named home with "
+            "sections, rather than the bare appended citation the bar excludes; or (ii) each entry "
+            "is re-homed into the owning layer's specification.'"
         ),
-        "who_may_perform_it": "(i) the user only. (ii) a working session, per document.",
+        "who_may_perform_it": "a working session, per entry. (The user's route survives only as a "
+                              "NEW RULING naming a document, taken before that document's entries "
+                              "are re-homed — Ruling 38.)",
         "authored": "the closing act. The population and the criterion are derived.",
     })
 

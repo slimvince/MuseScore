@@ -484,10 +484,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 656",
+        "backbone decisions: 663",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 656/656",
-        "cited line numbers correct: 650/650   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 663/663",
+        "cited line numbers correct: 657/657   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -644,7 +644,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 10 documents; 69 re-home / 11 delegation / 14 no-home)"
+        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 10 documents; 80 re-home / 0 delegation / 14 no-home)"
       ],
       "stderr": [],
       "what_it_checks": "every entry of finish-line item 1 still carries an authored closing route, no route names an entry the item no longer carries other than the ones this wave re-homed, and the route population still re-derives from the finish line rather than from a stored list"
@@ -657,7 +657,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: item1_rehome_blocker.json re-derives byte-identically (0 open re-home rows)"
+        "PASS: item1_rehome_blocker.json re-derives byte-identically (11 open re-home rows)"
       ],
       "stderr": [],
       "what_it_checks": "what actually blocks finish-line item 1's re-home class still re-derives — the standing autonomous-operation authorization still locatable in CLAUDE.md by its anchor, every open re-home row's owning specification still naming at least one file, and every row's blocker still cut from that row's own recorded reason rather than from a stored verdict"

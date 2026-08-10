@@ -182,6 +182,39 @@ RULED_2026_08_08 = {
     "D-472": "ARCHITECTURE.md",
 }
 
+# ★ THE 2026-08-09 RULING — THE HOMING FORK IS RESOLVED FOR THE WHOLE REMAINING POPULATION.
+#
+# `cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38 (user).  Its words: "For every remaining
+# register entry in the finish-line items whose home document is named in NO user-ratified surface,
+# or only in a form the delegation bar excludes: the closing act is RE-HOMING into the owning
+# layer's specification — rule (e)'s own preference, and what makes C4 true without the register.
+# NO DOCUMENT IS EXCEPTED at ruling time.  A later exception — a document the user wants kept as a
+# contract home by delegation — is a NEW USER RULING naming the document, taken BEFORE its entries
+# are re-homed, never after."  Its excluded alternative, recorded: delegation as the default — it
+# grows the contract-home class, requires the user's writing per document (rule (g)), and runs
+# against both concrete declinations already on the record.
+#
+# WHAT IT MOVES HERE, AND WHAT IT DOES NOT.  The fork the ruling resolves is DELEGATION versus
+# RE-HOME, which is what its own excluded alternative names.  So every OPEN row whose authored
+# route is NEEDS A DELEGATION now closes by a RE-HOME, and the authored route is preserved beside
+# it (#12) rather than overwritten — the authored judgment is still the record of what a session
+# read off the document, and the ruling is what decided the act.
+#
+# THE `NO HOME EXISTS` CLASS IS DELIBERATELY NOT MOVED, and the reason is stated so the boundary is
+# not read as an oversight.  Those rows do not record a choice between a delegation and a re-home:
+# they record that NEITHER applies — the entry's live content is carried by a homed successor, so
+# writing it into a specification would put a second copy of a homed rule (#6), or there is no
+# decision content to write at all.  Ruling 38 settles which of two available routes is the
+# default; it does not create a route where the record says there is none, and it says nothing
+# about #6.  That class is dispositioned under D-642 in `gen_r1_superseded_reach.py`, which is
+# where it was already dispositioned before this ruling and where it stays (#6).
+RULING_38 = (
+    "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the "
+    "owning layer's specification is the DEFAULT closing route for every remaining entry of the "
+    "no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception "
+    "is a new user ruling naming the document, taken BEFORE its entries are re-homed."
+)
+
 
 def closed_row_home(entry_id: str) -> str:
     """Where an executed entry went, and in which wave -- so one hardcoded date cannot stand for
@@ -854,7 +887,7 @@ def build() -> dict:
     for doc, ids in by_doc.items():
         for i in ids:
             route, owner, unambig, reason = ROUTES[i]
-            rows.append({
+            row = {
                 "id": i,
                 "home_document": doc,
                 "route": route,
@@ -864,7 +897,25 @@ def build() -> dict:
                 "closed_by_this_wave": False,
                 "reason": reason,
                 "authored": "the route, the owner, the unambiguity verdict and the reason",
-            })
+            }
+            # Ruling 38, applied to the OPEN population only. The authored route is preserved
+            # beside the ruled one (#12): the authored judgment records what a session read off
+            # the document, and the ruling records what decides the act.
+            if route == DELEGATION:
+                row["route"] = REHOME
+                row["authored_route_before_ruling_38"] = DELEGATION
+                row["ruled_by"] = RULING_38
+            elif route == REHOME:
+                row["ruled_by"] = RULING_38 + " (this row's authored route already agreed)"
+            else:
+                row["ruled_by"] = (
+                    "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the "
+                    "live content is carried by a homed successor, so re-homing would put a second "
+                    "copy of a homed rule (#6), or there is no decision content to write. The "
+                    "ruling settles which of two available routes is the default; it creates none "
+                    "where the record says there is none. Dispositioned under D-642 at "
+                    "tools/audit/decisions/r1_superseded_reach.json.")
+            rows.append(row)
 
     rehome = [r for r in rows if r["route"] == REHOME]
     deleg = [r for r in rows if r["route"] == DELEGATION]
@@ -972,6 +1023,37 @@ def build() -> dict:
                     "no design and no inference change is authorized by any of the three, and "
                     "nothing here proposes a corrected count for OI-342."),
             },
+        },
+        "★_the_2026_08_09_homing_fork_ruling": {
+            "the_ruling": RULING_38,
+            "recorded_by": "cc_instruction_return_continuation_6.md Task 0",
+            "what_it_moves_in_this_table": (
+                "Every OPEN row whose AUTHORED route was NEEDS A DELEGATION now carries route "
+                "RE-HOME, with `authored_route_before_ruling_38` preserving the authored judgment "
+                "beside it (#12) and `ruled_by` naming the ruling. Rows already routed RE-HOME "
+                "carry `ruled_by` confirming that their authored route agreed. No reason, owner, "
+                "unambiguity verdict or home document is re-authored, and no closed or discharged "
+                "row is touched — those are the record of earlier waves."),
+            "what_it_does_NOT_move_and_why": (
+                "The NO HOME EXISTS class. Those rows do not record a choice between a delegation "
+                "and a re-home; they record that NEITHER applies — the entry's live content is "
+                "carried by a homed successor, so re-homing would put a second copy of a homed "
+                "rule (#6), or there is no decision content to write at all. Ruling 38 settles "
+                "which of two AVAILABLE routes is the default and says nothing about #6, so it "
+                "creates no route where the record says there is none. That class stays "
+                "dispositioned under D-642 at r1_superseded_reach.json (#6)."),
+            "the_exception_list_is_EMPTY_and_that_is_the_ruled_state": (
+                "No document is excepted at ruling time. A later exception — a document the user "
+                "wants kept as a contract home by delegation — is a NEW USER RULING NAMING THE "
+                "DOCUMENT, taken BEFORE that document's entries are re-homed and never after. A "
+                "session may not except a document, and an empty list here is the ruled state "
+                "rather than an unfilled field."),
+            "the_excluded_alternative_recorded": (
+                "Delegation as the default. It grows the contract-home class, requires the user's "
+                "writing per document (rule (g)), and runs against both concrete declinations "
+                "already on the record — the voice-leading delegation the user declined to widen "
+                "and the structural-integrity audit for which the user ruled no delegation is "
+                "drafted or written."),
         },
         "★_findings_the_classification_produced": {
             "1_C1_reaches_entries_whose_re_homing_#6_would_FORBID": (

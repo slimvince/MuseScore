@@ -22,6 +22,15 @@
 > Nothing already in this file is re-decided by the extension; §2.4 is added, and §3 and §4 are
 > brought into line with it.
 >
+> **★★ FULLY RULED 2026-08-09 — §7 IS RULED BY THE USER'S RULING 36 of
+> `cowork_rulings_2026_08_09_sixth_stop.md`, AND THE RULINGS-20–23 GAP §7.3 REPORTED IS CLOSED IN
+> THE SAME ACT.** Every ruling this file classifies now carries a ruled verdict: §1–§6 by Ruling 20,
+> §7 by Ruling 36. **Nothing above §8 is re-decided, re-worded or removed** (#12) — §8 is this
+> file's second closing state and the only part added after Ruling 36, in the same shape §6 uses for
+> the first. **No ruling is left in this file awaiting a verdict**, and the queue's own job is
+> therefore discharged; what remains open elsewhere is the work the entries create, never a
+> classification.
+>
 > **★ EXTENDED AGAIN 2026-08-09 (CC, `cc_instruction_return_continuation_5.md` Task 0) — Rulings
 > 24–35 of the fourth and fifth STOPs are classified in a NEW SECTION, §7, which AWAITS THE USER.**
 > Nothing that the user ruled is touched: §1–§6 stand exactly as ruled, the twenty-three verdicts
@@ -313,6 +322,60 @@ content must be findable**. It moves no status, homes nothing, and authorizes no
 
 ---
 
+## 8. THE SECOND CLOSING STATE — what Ruling 36 did, per ruling, and how the 20–23 gap closed
+
+**Added 2026-08-09 by `cc_instruction_return_continuation_6.md` Task 0, after the user's Ruling 36
+of `cowork_rulings_2026_08_09_sixth_stop.md`.** Nothing above this section is altered by it, and §6
+— the first closing state — is untouched.
+
+**The §7 verdicts are RULED AS PROPOSED. All three entries §7.3 flagged as reasonably downgradable
+— 25, 27 and 31 — are KEPT as DECISIONS**, on the same standing ground the user gave at §6: keeping
+them is the cheaper insurance. The ruling records that **25 carries the strongest case yet**, having
+killed two ruled remedies that would have made things worse. So this file's own alternative readings
+for those three are recorded and not taken.
+
+**SEVEN register entries were written, in one commit, at the homes §7.4 proposes.** Each carries its
+verbatim taken from the home text after that text was written, its plain restatement, its defense,
+and a provenance field recording that the user ruled the CLASSIFICATION and the HOME while the entry
+text itself was written afterwards — so **no new entry carries an entry-ratification event, and
+nothing here is self-ratifying (#14)**, exactly as at §6.
+
+| Queue row | Register entry | Home written |
+|---|---|---|
+| **25** — the both-ways condition on a mechanism change | **D-657** | `cowork_audit_protocol.md`, dispatch-protocol block, beside D-436 and D-648 |
+| **27** — the fact-gathering-surface form, with its no-recommendation clause | **D-658** | `cowork_audit_protocol.md`, beside D-649 and D-650 |
+| **28** — the kind-scoped structure and its kind list | **D-659** | `cowork_design_doc_template.md`, the kind-list section |
+| **30** — the two-tier research-term rule and the cleanup order | **D-660** | `CLAUDE.md`, the Conventions reserved-word block beside the disambiguation convention |
+| **31** — completeness by named derivation | **D-661** | `cowork_audit_protocol.md`, beside D-436 |
+| **33** — the canonical status discipline | **D-662** | `CLAUDE.md`, the open-items register section, as rule (f) |
+| **35c** — direction without value | **D-663** | `cowork_audit_protocol.md`, beside D-431 |
+
+**The two `CLAUDE.md` writings were performed under Ruling 36's own scoped licence** — the Ruling 20
+pattern, in the receiving section's own voice, with provenance in the register fields and never in
+the governing text. **The `cowork_design_doc_template.md` section was already written** under Ruling
+28's own licence at the previous continuation, so entry 28's home needed no new writing: what this
+act added is the register entry that points at it.
+
+**SEVEN are CONFIRMED AS EXERCISES and carry no register entry: 24, 26, 29, 32, 34, 35(a) and
+35(b).** Each is fully recorded in the provenance of the act it licensed, which is where every one
+of them already was; confirming the classification changes nothing about any of them.
+
+**★ AND THE GAP §7.3 REPORTED IS CLOSED BY THE SAME RULING, IN THE READING §7.3 DECLINED TO TAKE.**
+§7.3 recorded that **Rulings 20–23 are in no queue**, stated the on-its-face reading — that each is
+the RATIFICATION EVENT a queue exists to obtain rather than a further ruling needing classification
+— and deliberately did not take it, because a session classifying four rulings its dispatch did not
+send it would be widening its own scope (**D-654**'s narrow-letter default). **Ruling 36 takes that
+reading: 20–23 are RATIFICATION EVENTS, no entry is owed for any of them, and 21's content is
+already register data at D-291 and D-656.** The gap closes, and it closes by the user's act rather
+than by a session's reading — which is what the refusal at §7.3 was for.
+
+**★ WHAT THIS FILE'S OWN JOB NOW IS.** Every ruling it classifies carries a ruled verdict, so the
+queue is discharged as a queue. It stays as the RECORD of the classification — the verdicts, their
+grounds, the downgrade readings offered and declined, and both closing states — and it is not
+extended again for a later ruling without a dispatch saying so.
+
+---
+
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
 debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
@@ -322,4 +385,6 @@ rulings into this queue. Each carrier was read whole (D-643) before the file was
 extended, and each ruling classified from its own text rather than from any summary of it. §7's
 carriers are `cowork_rulings_2026_08_09_fourth_stop.md` and `cowork_rulings_2026_08_09_fifth_stop.md`,
 both read whole before it was written; §7 was added on the instruction of
-`cc_instruction_return_continuation_5.md` Task 0, which scopes it to Rulings 24–35.*
+`cc_instruction_return_continuation_5.md` Task 0, which scopes it to Rulings 24–35. §8 records the
+user's Ruling 36 of `cowork_rulings_2026_08_09_sixth_stop.md`, read whole (D-643) before it was
+written, and was added on the instruction of `cc_instruction_return_continuation_6.md` Task 0.*

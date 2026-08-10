@@ -436,6 +436,43 @@ TRIAGE: dict[str, tuple[str, str]] = {
                          "boundary this tool's own criterion draws. Its side-by-side neighbour "
                          "D-606 is KNOWLEDGE on the adjacent ground, and the two are separate "
                          "rules that a session can breach independently."),
+    # ── AUTHORED 2026-08-09, cc_instruction_return_continuation_6.md Task 0 ───────────────────
+    # Both entries were homed in CLAUDE.md by the user's Ruling 36 of that date, which is what put
+    # them into this tool's derived population and stopped the check. Authoring a verdict for a row
+    # the cut DID reach is what this tool requires; neither verdict is hand-added for a row the cut
+    # did not reach, which is the act the record forbids.
+    "D-660": (KNOWLEDGE, "The rule's antecedent is authorship, twice over: a mechanism would have "
+                         "to know WHICH terms carry correspondence to the published research, and "
+                         "WHICH site is a given term's introduction site. The record states both "
+                         "in terms — deciding research-tied-ness and locating an introduction "
+                         "site 'is authorship of the same kind as the per-candidate verdicts' — "
+                         "and the derived population that would supply the first was MEASURED and "
+                         "is neither sound nor bounded (D-661; the values are at "
+                         "tools/audit/reserved_word_scanner.json). The neighbouring limb was "
+                         "closed for exactly this reason: whether a given USE of a word is the "
+                         "non-musical sense is a semantic judgment, and a checker that fires on "
+                         "every legitimate musical use gets switched off, which is worse than "
+                         "none (D-436's third condition). The ORDER half — governing surfaces "
+                         "first, per-word batches the user rules — is a sequencing rule a session "
+                         "follows rather than a state a check reads. ★ WHAT WOULD MAKE THE "
+                         "ANNOTATION HALF MECHANICAL, said rather than left implicit: an AUTHORED "
+                         "list of research-tied terms with their introduction sites. That list "
+                         "does not exist and creating it is a named act of its own, so the "
+                         "mechanical form is a condition on a future act rather than an "
+                         "obligation standing now — which is why this is KNOWLEDGE and not the "
+                         "defect class."),
+    "D-662": (EXISTS, "A mechanism enforces it and was built in the act that ruled it. "
+                      "tools/audit/index_status_lint.py owns the canonical vocabulary, the row "
+                      "split and the leading-token test, and reports every non-canonical opening; "
+                      "the ONE index parser reads a row's state through that same function and "
+                      "STOPS on a row that does not split rather than skipping it. The lint is in "
+                      "the guard population with its authored invocation, so it runs with no "
+                      "human step (D-436's first condition), and its detection basis is the "
+                      "both-ways normalization record at "
+                      "tools/audit/index_status_normalization.json — no rate is "
+                      "restated here (D-431). What no mechanism covers is the choice of which "
+                      "open-state word a row's author means, which is a judgment about the row "
+                      "and not about the rule."),
     "D-606": (KNOWLEDGE, "A mechanism cannot know that the change in front of it is a modulation "
                          "detector, which is the antecedent the whole rule hangs on — and the "
                          "rule's own reason is that the agreement percentage is GAMEABLE BY THE "
