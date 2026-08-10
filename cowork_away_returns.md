@@ -1495,6 +1495,72 @@ lands elsewhere leaves the reader with a plausible, wrong answer rather than an 
 movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion
 statement is not written, not drafted and not partially written here.**
 
+### Task 1 — COMPLETE. The five quotes re-taken; the detection method built corpus-first, MEASURED, and NOT adopted — which is the result, not a shortfall
+
+**A2 was checked at the home before the first re-take, and it holds in both halves.** Each of the
+five quotes was taken from the bullet the entry's own TITLE and DEFENSE describe, read in place at
+`docs/scoring_model.md` §8 — not inferred from the offset the row reports, and not copied from the
+row's own table. Two of the five could be confirmed twice over, because their recorded defense names
+a measurement that appears in the correct bullet and in no other. The corrected pairs pass both
+existing guards — every verbatim resolves at its cited home with **zero anchor drift**.
+
+**In every one of the five the former, incorrect quote and the former anchor are preserved whole in
+the entry's provenance (#12), while the `verbatim` field carries ONE quote (#6)** — the shape the
+ruling fixed. **Nothing else moved in any of the five.** Title, plain restatement, defense, status,
+date, ratifier and LEGACY mark are untouched: this row's own finding was that those were correct and
+mutually consistent, and a repair that rewrote them would have destroyed the evidence that made the
+defect diagnosable in the first place. The two entries whose defense was written by the defense-gap
+task *against the decision the title identifies* keep those fields exactly as written, each still
+carrying its marker.
+
+**★ THE CHECK WAS BUILT CORPUS FIRST, AND THE CORPUS IS DATA RATHER THAN A LIVE READ — for a reason
+that is easy to get wrong.** The five known-bad quotes are recorded IN the tool. Had the corpus been
+read from the live entries, the repair would have emptied it at the moment of repair and the
+separation could never have been re-measured afterwards. Recording it first is also what let the
+measurement be taken twice: once at the corrupted tree, once after the repair, with the labelled
+positives unchanged across both.
+
+**★ AND THE MEASUREMENT SAYS THE CHECK MAY NOT BECOME A GUARD. THAT IS REPORTED, NOT TUNED.** All
+five known-bad quotes sit at the floor of the value. But a substantial population of legitimate
+entries sits at or below that same floor, so **no threshold separates the two populations** and a
+guard built on it would deny legitimate work — which is D-473's ground and the third of the measured
+conditions a mechanism is judged on. **The sharper result is about the signal's CEILING rather than
+its threshold:** after the repair four of the five entries rise and **one stays at the floor**, its
+correct bullet stating the rule in code names its own title paraphrases in ordinary words. So the
+method is not merely un-thresholded — it is measurably unable to see one of the five cases it was
+derived from. **Adjusting the token count, the stopword list or the comparison until the five fell
+below the remainder would be fitting the signal to the cases that motivated it**, which is the defect
+the catalog names DT-2 and the reason the adoption condition was ruled in advance. Nothing was
+adjusted. Every value is at `tools/audit/decisions/verbatim_subject_consistency.json` (**D-431**).
+
+**[[OI-358]] FLIPS, and what it does NOT discharge is rowed rather than absorbed.** That row gated on
+two independent grounds. The first — five entries stating one rule's identity over another rule's
+words — is discharged. **The second is not:** both existing checks are still satisfied by a
+corrupted pair, so their green verdicts still do not bound what they appear to bound. Closing the
+row on the repair alone would be the [[OI-283]] shape, so the surviving obligation is **[[OI-360]]**,
+created with its detail file in the same commit (rule (c)).
+
+**Two authored inputs were maintained, both caught by their own tools' STOPs.** [[OI-360]] reached
+the apparatus declaration's first cut with no verdict and a GATES verdict was authored for it with
+its ground; [[OI-358]]'s verdict moved WHOLE into the retired table with the reason it closed — and
+that retirement note says in terms that the row's SECOND ground does not retire with it.
+
+**★ ONE CONSEQUENCE OF ADDING A TOOL AT ALL, worth recording because it is not obvious.** The guard
+runner derives its candidate population by searching every file under `tools/audit/` for the words
+naming a verify mode — so the new tool joined that population **because its own docstring explains
+that it has no such mode**. That is the derivation being deliberately over-inclusive, and its STOP
+working. An authored NOT-RUN entry was written with the reason, and a classification verdict beside
+it: it is neither a live invariant nor a dated measurement of the tree, it RANKS entries for a
+reader. **Adding it to the run is a decision that follows a measurement showing separation**, and
+that measurement is negative.
+
+**Holds:** none new. **Surfacings:** none new bearing on the analysis — the five repaired entries are
+records of decisions, and the decisions themselves were never in doubt.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
+movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion
+statement is not written, not drafted and not partially written here.**
+
 ---
 
 ## 4. The batch's start state, recorded before any act

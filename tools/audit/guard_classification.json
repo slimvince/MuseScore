@@ -26,10 +26,10 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 43,
+    "tools_classified": 44,
     "re_derives_a_live_invariant": 32,
     "records_a_point_in_time_measurement": 10,
-    "neither_not_a_guard": 1,
+    "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 0
   },
   "tools_that_leave_the_live_guard_list": [
@@ -261,6 +261,14 @@
       "why": "It LOCATES ruling R1 in `CLAUDE.md` by anchor string on every run and STOPS if it has moved or been reworded; it re-reads `open_items/OI-332.md` and STOPS if that row no longer carries a document it grades; and it STOPS on a verdict naming a worked example the ruling does not state. Whether the ruling's FALLBACK was reached is DERIVED from the verdicts rather than declared, so the artifact cannot claim a clean application it did not have.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_verbatim_subject_consistency.py",
+      "verdict": "neither — not a guard",
+      "evidence": "gen_verbatim_subject_consistency.py, the 'WHAT IT IS AND IS NOT' paragraph of its module docstring, and the `adoption_verdict` field of its own artifact",
+      "why": "An ADVISORY REPORT, not a guard, and its own artifact is what says so. It compares every register entry's quoted decision against that entry's own account of which decision it records — the one comparison that does not depend on a corrupted pair agreeing with itself — but it returns no pass/fail verdict about the tree and has no verify-only mode. R4's question is not the one to ask of it: it neither re-derives an invariant nor records a dated measurement of the tree, it RANKS entries for a reader. It would become live only on a measurement showing clean separation between its labelled known-bad corpus and the remainder, and that measurement — taken with the corpus recorded first, per the user's Ruling 24(b) — is NEGATIVE at this tree. Classified for completeness though it is NOT RUN, on the same footing as the census above.",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "NOT RUN"
     },
     {
       "tool": "tools/audit/decisions/reaim_home_anchors.py",

@@ -145,6 +145,16 @@ AUTHORED = [
     ("tools/audit/reaim_ratification_surface_paths.py", None,
      "NOT RUN: an applier, not a guard -- it re-aims citations and reports what it changed. Its "
      "--dry-run classifies but returns no pass/fail verdict about the tree."),
+    ("tools/audit/decisions/gen_verbatim_subject_consistency.py", None,
+     "NOT RUN: an ADVISORY REPORT that has no verify-only mode and is not a guard. It reaches "
+     "this derived population only because its own prose names the mode it does not have. Built "
+     "2026-08-09 on the user's Ruling 24(b), CORPUS FIRST, and adopted as a guard ONLY on measured "
+     "clean separation -- which its own artifact MEASURES, and the measurement is negative: "
+     "legitimate entries sit at or below the worst labelled known-bad value, so any threshold "
+     "would deny legitimate work, which is D-436's third condition and D-473's ground. It is "
+     "therefore carried here as not-run WITH that reason, rather than added to the run and "
+     "silently reporting nothing. Adding it to the run is a decision that follows a measurement "
+     "showing separation, not a session's."),
 
     # tools/audit/decisions — the decisions register's own checks
     ("tools/audit/decisions/gen_decisions_register.py", ["--check"],

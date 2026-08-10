@@ -33,6 +33,7 @@
       "tools/audit/decisions/gen_reads5_yield.py",
       "tools/audit/decisions/gen_reads6_yield.py",
       "tools/audit/decisions/gen_true_half_reach.py",
+      "tools/audit/decisions/gen_verbatim_subject_consistency.py",
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
       "tools/audit/gen_phase1_completion_inventory.py",
@@ -45,7 +46,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 47,
+    "authored_entries": 48,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -66,6 +67,10 @@
     {
       "tool": "tools/audit/reaim_ratification_surface_paths.py",
       "why": "NOT RUN: an applier, not a guard -- it re-aims citations and reports what it changed. Its --dry-run classifies but returns no pass/fail verdict about the tree."
+    },
+    {
+      "tool": "tools/audit/decisions/gen_verbatim_subject_consistency.py",
+      "why": "NOT RUN: an ADVISORY REPORT that has no verify-only mode and is not a guard. It reaches this derived population only because its own prose names the mode it does not have. Built 2026-08-09 on the user's Ruling 24(b), CORPUS FIRST, and adopted as a guard ONLY on measured clean separation -- which its own artifact MEASURES, and the measurement is negative: legitimate entries sit at or below the worst labelled known-bad value, so any threshold would deny legitimate work, which is D-436's third condition and D-473's ground. It is therefore carried here as not-run WITH that reason, rather than added to the run and silently reporting nothing. Adding it to the run is a decision that follows a measurement showing separation, not a session's."
     }
   ],
   "historical_records": {
@@ -162,7 +167,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 359 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 360 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -687,7 +692,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=359 detail=359 baseline=200 post-baseline=159",
+        "living mode: index=360 detail=360 baseline=200 post-baseline=160",
         "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
@@ -712,7 +717,7 @@
     "passing": 35,
     "failing": 0,
     "failing_tools": [],
-    "not_run": 2,
+    "not_run": 3,
     "historical_records": 10
   }
 }

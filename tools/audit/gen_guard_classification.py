@@ -225,6 +225,19 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "An APPLIER, not a guard: it re-aims citations and reports what it changed, and its "
         "`--dry-run` classifies without returning a pass/fail verdict about the tree. R4's question "
         "does not arise — there is no invariant and no measurement, only an edit."),
+    "tools/audit/decisions/gen_verbatim_subject_consistency.py": (
+        NEITHER, "gen_verbatim_subject_consistency.py, the 'WHAT IT IS AND IS NOT' paragraph of its "
+        "module docstring, and the `adoption_verdict` field of its own artifact",
+        "An ADVISORY REPORT, not a guard, and its own artifact is what says so. It compares every "
+        "register entry's quoted decision against that entry's own account of which decision it "
+        "records — the one comparison that does not depend on a corrupted pair agreeing with "
+        "itself — but it returns no pass/fail verdict about the tree and has no verify-only mode. "
+        "R4's question is not the one to ask of it: it neither re-derives an invariant nor records "
+        "a dated measurement of the tree, it RANKS entries for a reader. It would become live only "
+        "on a measurement showing clean separation between its labelled known-bad corpus and the "
+        "remainder, and that measurement — taken with the corpus recorded first, per the user's "
+        "Ruling 24(b) — is NEGATIVE at this tree. Classified for completeness though it is NOT "
+        "RUN, on the same footing as the census above."),
 
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (

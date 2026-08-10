@@ -93,6 +93,35 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-358": (GATES, "two independent grounds - D-438's line, and the clause that overrides the "
+                      "criterion (an establishment obligation, #19, always gates)",
+               "Five consecutive register entries quote a DIFFERENT rule than their own title, "
+               "restatement and defense describe; one quotes a section heading. THE FIRST-CUT "
+               "CLASSIFICATION IS RIGHT ABOUT THE SUBJECT -- this is the decisions register's own "
+               "content -- and is not disputed. TWO THINGS DECIDE IT ANYWAY, either sufficient. "
+               "(1) D-438's line inside the documentation rows puts a correction to a statement "
+               "about the analysis on the gating side, and what is owed here is not a pointer, an "
+               "anchor, a label, a banner, a filing decision or a section boundary: five entries "
+               "STATE ONE RULE'S IDENTITY OVER ANOTHER RULE'S WORDS, so a reader of the register "
+               "learns the wrong rule about the scorer. (2) Independently an establishment "
+               "obligation: the register's own verbatim check and the disposition verifier BOTH "
+               "PASS over the corrupted pairs, because once the verbatim is the text at the "
+               "drifted line the two agree with each other permanently -- so two green verdicts do "
+               "not bound what they appear to bound, which is the shape #19 refuses. Recorded "
+               "against the row's SUBJECT, never its remedy -- and the remedy is deliberately "
+               "open, since whether a corrupted verbatim is re-taken from the correct bullet or "
+               "the wrong quote is preserved beside it (#12) is a filing judgment about the "
+               "register's own unit.",
+               "RESOLVED 2026-08-09 - the user ruled the filing judgment the row reserved "
+               "(Ruling 24 of `cowork_rulings_2026_08_09_fourth_stop.md`): the five quotes are "
+               "RE-TAKEN from the bullets their titles and defenses describe, with the former "
+               "quote and former anchor preserved in each entry's provenance (#12) and one quote "
+               "in the load-bearing field (#6). The verdict was correct while it stood and is kept "
+               "whole; it is retired because the row closed, never because it was wrong. ITS "
+               "SECOND GROUND IS NOT DISCHARGED BY THAT CLOSURE and does not disappear with this "
+               "retirement: both checks are still satisfied by a corrupted pair, and that "
+               "obligation is carried forward at OI-360 with its own verdict above.",
+    ),
     "OI-354": (GATES, "the clause that overrides the criterion - an establishment obligation (#19) "
                       "always gates, whatever its subject, including one whose subject is this "
                       "project's own tracking apparatus",
@@ -683,25 +712,22 @@ V = {
                "hide which corpus moved (#9, #24). Recorded against the row's SUBJECT, never its "
                "remedy: the remedy is a mechanism build the user's own ruling deliberately did not "
                "start, and it joins the D-436 backlog."),
-    "OI-358": (GATES, "two independent grounds - D-438's line, and the clause that overrides the "
-                      "criterion (an establishment obligation, #19, always gates)",
-               "Five consecutive register entries quote a DIFFERENT rule than their own title, "
-               "restatement and defense describe; one quotes a section heading. THE FIRST-CUT "
-               "CLASSIFICATION IS RIGHT ABOUT THE SUBJECT -- this is the decisions register's own "
-               "content -- and is not disputed. TWO THINGS DECIDE IT ANYWAY, either sufficient. "
-               "(1) D-438's line inside the documentation rows puts a correction to a statement "
-               "about the analysis on the gating side, and what is owed here is not a pointer, an "
-               "anchor, a label, a banner, a filing decision or a section boundary: five entries "
-               "STATE ONE RULE'S IDENTITY OVER ANOTHER RULE'S WORDS, so a reader of the register "
-               "learns the wrong rule about the scorer. (2) Independently an establishment "
-               "obligation: the register's own verbatim check and the disposition verifier BOTH "
-               "PASS over the corrupted pairs, because once the verbatim is the text at the "
-               "drifted line the two agree with each other permanently -- so two green verdicts do "
-               "not bound what they appear to bound, which is the shape #19 refuses. Recorded "
-               "against the row's SUBJECT, never its remedy -- and the remedy is deliberately "
-               "open, since whether a corrupted verbatim is re-taken from the correct bullet or "
-               "the wrong quote is preserved beside it (#12) is a filing judgment about the "
-               "register's own unit."),
+    "OI-360": (GATES, "the clause that overrides the criterion - an establishment obligation "
+                      "(#19) always gates, whatever its subject",
+               "Two checks over the decisions register's own data are BOTH satisfied by a "
+               "corrupted pair -- once an entry's quote IS the text at its drifted line, the two "
+               "agree with each other permanently -- so their green verdicts do not bound what "
+               "they appear to bound. That is the shape #19 refuses: a thing trusted because "
+               "nothing contradicted it, where what would contradict it cannot. THE FIRST-CUT "
+               "CLASSIFICATION IS RIGHT ABOUT THE SUBJECT and is not disputed -- this is the "
+               "decisions register's own verification apparatus, and the documentation criterion "
+               "alone would put it outside the gate. What decides it is the clause `CLAUDE.md`'s "
+               "non-gating declaration states and does not leave discretionary. The obligation is "
+               "not discharged by the repair that closed OI-358: repairing five entries removes "
+               "five instances and leaves the class unguarded, and the one candidate signal has "
+               "now been MEASURED and does not separate. Recorded against the row's SUBJECT, "
+               "never its remedy -- a second candidate signal is a mechanism design D-436 "
+               "reserves to the user, and this row proposes none."),
 }
 
 # The dispatch's assumption A3, recorded so the difference is reported rather than reconciled.

@@ -683,8 +683,8 @@
     "OI-352",
     "OI-353",
     "OI-357",
-    "OI-358",
     "OI-359",
+    "OI-360",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -711,7 +711,7 @@
     "OI-341",
     "OI-352",
     "OI-357",
-    "OI-358",
+    "OI-360",
     "OI-57",
     "OI-90",
     "OI-95"
@@ -1692,20 +1692,6 @@
     }
    },
    {
-    "id": "OI-358",
-    "title": "★ **Five consecutive register entries quote a DIFFERENT rule than their own title, plain restatement and defense describe — one quotes a section heading — and BOTH guards pass over it, because each verifies that the verb",
-    "subject_column": "E — verification owed / decisions register",
-    "matched_on_the_subject_column": [],
-    "matched_falsity_signals": [
-     "drift"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "two independent grounds - D-438's line, and the clause that overrides the criterion (an establishment obligation, #19, always gates)"
-    }
-   },
-   {
     "id": "OI-359",
     "title": "★ **Nothing checks that a measurement reported over several repertoires is broken down BY repertoire** — the per-corpus half of a ratified measurement convention has no mechanism, and the cut that does exist is by PRESET",
     "subject_column": "D — instrument / measurement layer (the mechanisation triage over the governing document's own rules)",
@@ -1717,6 +1703,20 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the criterion - the subject is an instrument a measurement of the analysis depends on"
+    }
+   },
+   {
+    "id": "OI-360",
+    "title": "★ **The decisions register still has NO mechanism that could catch a quote belonging to a different rule than the entry it sits in — and the one candidate has now been MEASURED and does not separate**",
+    "subject_column": "E — verification owed / decisions register",
+    "matched_on_the_subject_column": [],
+    "matched_falsity_signals": [
+     "drift"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject"
     }
    }
   ]
@@ -1760,8 +1760,8 @@
     "OI-352",
     "OI-353",
     "OI-357",
-    "OI-358",
     "OI-359",
+    "OI-360",
     "OI-45",
     "OI-57",
     "OI-90",
@@ -1835,8 +1835,8 @@
     "OI-346",
     "OI-347",
     "OI-353",
-    "OI-358",
     "OI-359",
+    "OI-360",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -2053,8 +2053,8 @@
    "OI-352",
    "OI-353",
    "OI-357",
-   "OI-358",
    "OI-359",
+   "OI-360",
    "OI-45",
    "OI-46",
    "OI-47",
