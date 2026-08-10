@@ -215,13 +215,13 @@
  },
  "the_complete_half": {
   "criterion": "C1 and C2",
-  "register_population": 645,
+  "register_population": 656,
   "by_home_class": {
    "contract-home": 151,
    "gap": 42,
    "homed-in-a-layer-specification": 295,
-   "process": 114,
-   "project-convention": 42,
+   "process": 123,
+   "project-convention": 44,
    "unhomed": 1
   },
   "class_1_documentation_gap": {
@@ -441,7 +441,7 @@
      "document": "cowork_engage_arc_plan.md",
      "state_at_head": "WRITTEN — CLOSED",
      "why": "The user wrote an explicit delegation clause into `CLAUDE.md` on 2026-08-03 and all three entries of the home population are `contract-home`. The document's fourth entry is `process`, which the home-class criteria do not reach at all.",
-     "delegation_at_head": "CLAUDE.md:215",
+     "delegation_at_head": "CLAUDE.md:236",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 3,
      "by_class": {
@@ -583,7 +583,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 42,
+   "count": 43,
    "ids": [
     "OI-105",
     "OI-107",
@@ -620,6 +620,7 @@
     "OI-346",
     "OI-347",
     "OI-353",
+    "OI-359",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -681,9 +682,9 @@
     "OI-347",
     "OI-352",
     "OI-353",
-    "OI-354",
     "OI-357",
     "OI-358",
+    "OI-359",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -709,7 +710,6 @@
     "OI-311",
     "OI-341",
     "OI-352",
-    "OI-354",
     "OI-357",
     "OI-358",
     "OI-57",
@@ -1678,20 +1678,6 @@
     }
    },
    {
-    "id": "OI-354",
-    "title": "★ **The legacy-mark verification's population has GROWN since it was declared verified, and a drifted citation hid that** — register entries now carry the legacy mark for which [[OI-289]]'s ✅ VERIFIED artifact holds no v",
-    "subject_column": "E — verification owed / decisions register",
-    "matched_on_the_subject_column": [],
-    "matched_falsity_signals": [
-     "drift"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject, including one whose subject is this project's own tracking apparatus"
-    }
-   },
-   {
     "id": "OI-357",
     "title": "★ **The Baroque partial-signature correction lives in the LEGACY key resolver, which the production arm does not run — and whether the joint estimator handles that notation practice AT ALL is unestablished in both direct",
     "subject_column": "B — the analysis (what the production key arm does with a Baroque notation practice the legacy arm detected and corrected)",
@@ -1717,6 +1703,20 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "two independent grounds - D-438's line, and the clause that overrides the criterion (an establishment obligation, #19, always gates)"
+    }
+   },
+   {
+    "id": "OI-359",
+    "title": "★ **Nothing checks that a measurement reported over several repertoires is broken down BY repertoire** — the per-corpus half of a ratified measurement convention has no mechanism, and the cut that does exist is by PRESET",
+    "subject_column": "D — instrument / measurement layer (the mechanisation triage over the governing document's own rules)",
+    "matched_on_the_subject_column": [
+     "doc"
+    ],
+    "matched_falsity_signals": [],
+    "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the criterion - the subject is an instrument a measurement of the analysis depends on"
     }
    }
   ]
@@ -1759,9 +1759,9 @@
     "OI-341",
     "OI-352",
     "OI-353",
-    "OI-354",
     "OI-357",
     "OI-358",
+    "OI-359",
     "OI-45",
     "OI-57",
     "OI-90",
@@ -1835,8 +1835,8 @@
     "OI-346",
     "OI-347",
     "OI-353",
-    "OI-354",
     "OI-358",
+    "OI-359",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -1908,7 +1908,7 @@
    "it_is_a_template_the_generator_fills": true,
    "the_unresolved_figure_it_hand_carries": [],
    "the_figure_the_same_file_computes": 2643,
-   "the_backbone_the_committed_layer_was_derived_at": 645,
+   "the_backbone_the_committed_layer_was_derived_at": 656,
    "verdict": "TRUE AT HEAD. The field carries no hand-written figure: it is a template whose every figure `gen_decisions_register.py` fills from the same computed data it renders the coverage table from, and an unfilled placeholder stops that generator (#17f / D-431)."
   },
   "statement_3_the_home_granularity_claim": {
@@ -1934,8 +1934,8 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 602,
-    "of": 645
+    "count": 613,
+    "of": 656
    },
    {
     "fact": "Every harvested cluster carries a recorded disposition at the committed artifact, so no harvested statement was silently passed over.",
@@ -2052,9 +2052,9 @@
    "OI-347",
    "OI-352",
    "OI-353",
-   "OI-354",
    "OI-357",
    "OI-358",
+   "OI-359",
    "OI-45",
    "OI-46",
    "OI-47",
@@ -2069,7 +2069,7 @@
   "how_to_read_it": "The derivation is the answer; this block measures the recollection against it. A recollected row that the derivation does not carry is not thereby wrong - it may be outstanding on a ground this cut does not search (the COMPLETE half, or an establishment obligation) - and each is stated rather than scored."
  },
  "counted": {
-  "decisions_recorded": 645,
+  "decisions_recorded": 656,
   "open_rows_in_the_index": 255,
   "true_half_wide_cut": 61,
   "true_half_gating": 39,

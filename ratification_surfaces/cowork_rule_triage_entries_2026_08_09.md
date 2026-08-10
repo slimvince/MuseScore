@@ -1,6 +1,20 @@
 # The fifteen owed `CLAUDE.md` rule-triage entries — put to the user for review
 
-> **STATUS: AWAITING THE USER. Nothing here is applied to `CLAUDE.md`, and nothing here retires,
+> **★ STATUS: RULED 2026-08-09 — the user's Ruling 22 of `cowork_rulings_2026_08_09_fourth_stop.md`
+> RATIFIES the fifteen verdicts as authored, with ONE movement.** The fourteen others stand exactly as
+> written below, **including D-473's refused mechanism** — a guard that fires on legitimate work gets
+> switched off, which is worse than none. **The one movement is D-486's uncovered PER-CORPUS half,
+> re-classed MECHANISM-EXISTS → MECHANISABLE-AND-NOT**, on the ground that the convention's own reason
+> — a single aggregate can hide which corpus moved — bears on measurement integrity (#9, #24). The
+> re-class was applied to `tools/audit/claude_md_rule_triage.py` with the former class and its whole
+> ground preserved beside it (#12), and it carries its own open-items row, **OI-359**, in the same
+> commit (rule (c)). **The mechanism itself is NOT built by the ruling**: it joins the D-436 mechanism
+> backlog like every other member of the defect class. §5's closing sentence anticipated exactly this
+> choice and is where the user's option was recorded; it is now taken. Applied by
+> `cc_instruction_return_continuation_4.md` Task 0. Nothing else below is altered (#12).
+>
+> **STATUS BEFORE THE RULING, preserved as written: AWAITING THE USER. Nothing here is applied to
+> `CLAUDE.md`, and nothing here retires,
 > weakens or rewords any rule.** Written 2026-08-09 (CC, `cc_instruction_return_continuation.md`
 > Task 3) on the user's **Ruling 8 of 2026-08-09** (`cowork_rulings_2026_08_09_return.md`): the
 > continuation session AUTHORS the owed triage entries per the triage tool's own criteria, each
@@ -91,7 +105,41 @@ for the first time.
   wants that half in the defect class instead, it is one edit and this file is where the choice is
   recorded.
 
-## 6. What this file does NOT do
+## 6. THE CLOSING STATE — and THREE FURTHER VERDICTS THIS ACT ITSELF MADE OWED
+
+**Added 2026-08-09 by `cc_instruction_return_continuation_4.md` Task 0, after the user's Ruling 22.**
+Nothing above this section is altered by it.
+
+**The fifteen are ruled** — fourteen as authored, D-486 re-classed into the defect class with its own
+row (OI-359). Applied to the tool; the mechanism is not built.
+
+**★ AND THE SAME SHAPE §2 DESCRIBES FIRED AGAIN, IN THE VERY COMMIT THAT RULED ON IT.** §2 states
+that every homing wave writing a decision into `CLAUDE.md` adds to this tool's derived population and
+cannot supply its own class, so the check STOPS until a session authors one. Ruling 20 and Ruling 21
+of the same day homed **three** decisions into `CLAUDE.md` — the ground-truth ceiling commissioning,
+the rule-(c) discharge procedure, and the crediting-rule prohibition given its own identifier — and
+the check stopped on all three the moment they landed.
+
+**They are AUTHORED here on the same pattern and are NOT ratified.** Each carries its class and its
+ground in the tool's source, marked as authored by this act; each is a proposal awaiting the user
+exactly as the fifteen above were. **All three are KNOWLEDGE**, and one of the three declines an
+available mechanism on purpose, which is the case worth a reader's attention:
+
+- **the ground-truth ceiling commissioning** — neither half has a state a checker can read: whether a
+  reply arrived on an external channel, and whether a reasonable wait has elapsed, are facts outside
+  this repository, and the work it creates is a measurement rather than a check;
+- **the rule-(c) discharge procedure** — it turns on the decision-versus-exercise classification,
+  which is the judgment no mechanism can make, since an exercise correctly carries no entry and the
+  absence of one is therefore evidence of nothing by itself. Its adjacent mechanical half belongs to
+  **D-230** and is already in the defect class there, not counted twice;
+- **the crediting-rule prohibition** — **a mechanical form exists and is refused.** A behaviour pin
+  over the grading comparison would catch the forbidden amendment, and it would also freeze the
+  comparison against every legitimate grading correction the record has made and ratified. That is
+  the same class boundary D-473 is refused on, and it is stated here rather than left implicit.
+
+**A verdict the user disagrees with is one edit to the tool's authored table**, as before.
+
+## 7. What this file does NOT do
 
 It applies nothing to `CLAUDE.md`. It retires no rule. It ratifies nothing — the verdicts stand as
 authored proposals until the user rules on them, exactly as the tool's own contract requires. And

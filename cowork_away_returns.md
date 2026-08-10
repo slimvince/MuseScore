@@ -1383,6 +1383,120 @@ finish line, and the finish line's own count of what remains is derived at
 
 ---
 
+# ═══ THE FOURTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_4.md`, 2026-08-09) ═══
+
+> Rulings 20–27 of `cowork_rulings_2026_08_09_fourth_stop.md` are applied here, and the remaining
+> program continues. The sections above are earlier batches' and are not rewritten. New holds are
+> appended to §1, new surfacings to §2, and each task's log below.
+
+## 3 (continued). Per-task log — the fourth return continuation
+
+### Task 0 — COMPLETE. The register event: eleven entries, the triage re-class, and the OI-354 set applied — the guard clears in the commit that cites the ruling
+
+**The start state was derived at the artifacts before any act (A6), not carried from the dispatch.**
+The guard set's one failing tool is the legacy-mark verification, read at the committed
+`tools/audit/guard_state.json` → `summary`; the three queues were read whole at their own files; the
+register's highest identifier was read at the register data. No count is restated here (**D-431**).
+
+**A1 HOLDS, and it was checked before the first entry was written.** Every home Ruling 20 names
+STATES RULES, which is the register's rule (h) kind half: `cowork_audit_protocol.md`'s
+dispatch-protocol block says of itself, in its own opening, that what follows are *rules* governing
+every dispatch, and each existing subsection states one with its ruling and its defense; `CLAUDE.md`
+principle #21's block and its decisions-register section likewise. No home failed its kind check, so
+the STOP the assumption reserves did not fire.
+
+**★ ONE THING IN THE QUEUE'S §4 WAS STALE AND IS REPORTED RATHER THAN QUIETLY FOLLOWED.** §4's
+heading says *"for the seven"*, and the section carries more rows than that — the 2026-08-09
+extension appended two beneath the table and did not touch the heading. **The population was
+therefore taken from §4's TABLES**, which is what the ruling names when it says *"homes as proposed
+in the queue's §4"*, and not from that count; every proposed decision has exactly one proposed home
+there and all of them were written. The heading is left as it stands (#12 — it is a delivered
+decision surface) and the discrepancy is recorded in the queue's own closing state.
+
+**What was written, in ONE commit.**
+
+1. **Ruling 20 — TEN entries at their ratified homes**, eight in `cowork_audit_protocol.md`'s
+   dispatch-protocol block and two in `CLAUDE.md`, each in the receiving section's own voice with its
+   defense, provenance in the register fields and never in the specification text. **THE THIRTEEN
+   EXERCISES are recorded as confirmed in the queue's closing state** and carry no entry, which is
+   what an exercise verdict means. **★ NO NEW ENTRY CARRIES AN ENTRY-RATIFICATION EVENT, and the
+   reason is stated in each one:** the user ruled the CLASSIFICATION and the HOME, and the entry text
+   was written afterwards, so recording an entry ratification would be the session ratifying its own
+   writing (#14).
+2. **Ruling 21 — D-291 is SPLIT.** The measurement half becomes its own entry at the home Ruling 11
+   gave it; **D-291 keeps the build half**, where its verbatim is located and verified. The two
+   cross-reference each other, no already-ruled text is reworded (#14), and the only field of D-291
+   that moved is its TITLE — which named both halves — with the former title preserved whole in its
+   provenance (#12).
+3. **Ruling 22 — the triage set applied.** Fourteen verdicts stand as authored, including the refused
+   mechanism at D-473. D-486's uncovered per-corpus half is re-classed into the defect class with the
+   former class and its whole ground preserved beside it, and **[[OI-359]]** is created with its
+   detail file in the same commit (rule (c)). **The mechanism is not built**, as the ruling directs.
+4. **Ruling 23 — the OI-354 verdict set applied**, with the proposed anchor, and **[[OI-354]]
+   FLIPPED**. D-580's transfer cell is recorded UNDETERMINED *pending Ruling 27*, and the tool's own
+   note for that entry says so, so a later reader meets a RULED state rather than an unfinished one.
+
+**★ THE AUTHORING-DOES-NOT-CLEAR SEPARATION HELD END TO END, which is the point of how this landed.**
+The verdicts were authored in the previous continuation and cleared nothing; the standing check was
+carried red across that whole session; and it clears HERE, in the commit that cites the user's ruling
+on the reviewed set. Nothing was written by the session that authored them, and nothing had to be
+unwritten.
+
+**★ APPLYING RULING 23 EXPOSED THE SAME LAYERED-STOP SHAPE A THIRD TIME, and it is reported rather
+than absorbed.** [[OI-354]]'s own finding was that an assumption STOP fired before the coverage
+check, so nothing ever reached that check. With the coverage check satisfied, **the ANCHOR LOOP that
+follows it ran for the first time since its own drift began, and eight `ARCHITECTURE.md` evidence
+anchors had moved.** Each was re-aimed per the tool's own reported line — authored-input maintenance,
+which is now a register decision rather than a precedent — and no verdict, mark, status or home moved
+with them. **The general shape is worth a reader's attention: a tool with several ordered STOPs
+reports only its first, so clearing one is never evidence that what follows it was passing.** That is
+now the third instance of the shape in three consecutive batches.
+
+**Three authored inputs were maintained, each caught by its own tool's STOP rather than by a reader.**
+The apparatus declaration's verdict for [[OI-354]] moved WHOLE into its retired table with the reason
+it closed; **[[OI-359]] reached the first cut with no verdict and a GATES verdict was authored for it
+with its ground** — no non-gating verdict was hand-added, which is the act the record forbids; and
+the live-prohibition pointer tool STOPPED because the class gained an entry its authored table held
+no do-not-retry line for.
+
+**★ THAT LAST ONE NEEDED MORE THAN A TABLE ROW, AND THE DIFFERENCE IS STATED BECAUSE IT IS A JUDGMENT
+CALL.** The pointer tool reads the entry identifiers off the SAME line its authored phrase locates,
+and the declared-mode prohibition is written over two lines with the identifier on the second — so
+the phrase had to be taken from the identifier-bearing line. It also stamped every pointer with ONE
+hard-coded observation date, which would have made the new pointer state something untrue. The date
+is now a per-section authored value, the three existing sections keep the date they were observed on,
+and the new one carries its own. **This is a small change to the tool's authored inputs and its
+pointer wording, not to what it derives**; it is reported here rather than done silently, which is
+the rule this batch also homed.
+
+**★ AND THE HOMING ACT ITSELF WIDENED ANOTHER TOOL'S OWED SET, exactly as that tool's own reading file
+predicts it would.** Three of the new entries are homed in `CLAUDE.md`, so the rule-triage check
+stopped on all three the moment they landed — the shape §2 of the triage file states in general
+terms. **Verdicts were authored for the three on the established pattern, with their grounds, and
+they are recorded as newly owed and unratified in that file's closing state.** One of the three
+declines an available mechanism on purpose and says so.
+
+**Holds:** none new. **Surfacings:** none new bearing on the analysis — every subject of this task is
+the record's own bookkeeping and the rulings that govern it.
+
+**★ THE STANDING SELF-CHECK CAUGHT A DEFECT IN THIS SESSION'S OWN CONDUCT, and it is recorded because
+it briefly fed a wrong conclusion.** Twice this task redirected a command's output to `/tmp/<name>`
+and then READ `c:\tmp\<name>` with the file tools. The redirect does not land there, and both files
+already existed from earlier sessions — so what was read was a month-old artifact. For a few minutes
+the stale enumeration was taken for the current tree and read as evidence of repository corruption.
+**It was caught by the enumeration disagreeing with this session's own edits** — a file this session
+had certainly modified was absent from the list — and the diagnosis was then completed at git objects
+by explicit hash, which confirmed the tree was sound. **Nothing was written on the wrong reading and
+no artifact carries it.** The lesson is narrow and worth stating: an output path that is not the
+session's own scratchpad may already hold a stale file with that name, and a redirect that silently
+lands elsewhere leaves the reader with a plausible, wrong answer rather than an error.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/robust_stop/`
+movement, no behaviour change to the analysis, no fix to inference, no design. **Phase 1's completion
+statement is not written, not drafted and not partially written here.**
+
+---
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

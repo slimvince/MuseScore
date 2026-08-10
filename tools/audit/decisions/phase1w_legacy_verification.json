@@ -19,18 +19,18 @@
    },
    {
     "file": "tools/audit/decisions/gen_decisions_register.py",
-    "line": 447,
+    "line": 514,
     "line_text": "if d.get(\"legacy_subject\"):"
    },
    {
     "file": "tools/audit/decisions/gen_decisions_register.py",
-    "line": 449,
+    "line": 516,
     "line_text": "else LEGACY_MARK)"
    }
   ]
  },
  "derived_set": {
-  "count": 81,
+  "count": 92,
   "ids": [
    "D-051",
    "D-052",
@@ -110,15 +110,26 @@
    "D-403",
    "D-404",
    "D-405",
+   "D-423",
    "D-428",
    "D-429",
-   "D-423"
+   "D-536",
+   "D-537",
+   "D-538",
+   "D-564",
+   "D-568",
+   "D-571",
+   "D-572",
+   "D-575",
+   "D-579",
+   "D-580",
+   "D-583"
   ],
   "carrying_the_transfer_variant": [
    "D-329",
    "D-429"
   ],
-  "register_size_at_this_tree": 439,
+  "register_size_at_this_tree": 656,
   "derivation": "every decision in backbone_decisions.json whose `legacy_subject` field is truthy; no figure in the record is used or quoted (D-431, and OI-289's own instruction to re-derive)."
  },
  "recorded_figures_that_do_not_match": [
@@ -129,20 +140,20 @@
     "line": 39,
     "line_text": "the set is **80 entries** (81 before D-311's mark was removed on the established evidence above —"
    },
-   "note": "The row that owns this verification. TRUE WHEN WRITTEN (phase 1m) and stale by one since phase 1n; see when_the_set_last_changed.",
-   "derived_count": 81,
-   "discrepancy": 1
+   "note": "The row that owns this verification. TRUE WHEN WRITTEN (phase 1m); it first went stale at phase 1n (see when_the_set_last_changed) and the set has GROWN AGAIN since — which is the OPEN_ITEMS.md OI-354 finding, and why the discrepancy field beside this note is computed from the derived set rather than read off any recorded figure. This tool records WHEN the set last changed only up to phase 1n; the later growth is dated on OI-354's own row and is not re-measured here.",
+   "derived_count": 92,
+   "discrepancy": 12
   },
   {
    "recorded_figure": 80,
    "located_at": {
     "file": "OPEN_ITEMS.md",
     "line": 318,
-    "line_text": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified — and two of them were wrong | The marker is generated text, one fixed sentence on every marked entry, and until 2026-08-03 it ended \"**it has no effect on the live solution**\" — a claim about the LIVE system that the marking pass never checked, since the set was drawn by asking what each decision is ABOUT. It failed twice: **D-329**, whose PRINCIPLE the [[OI-275]] ruling carried across to the live family design (patched then with a second marker variant, which fixed the instance and left the clause standing everywhere else), and **D-311**, whose subject `chordanalyzer.cpp` `STATUS_ARCHIVE.md:114` records as surviving the engagement and one of whose five produced translation units, `chordsymbolformatter.cpp`, the record arm runs (`notationimplodebridge.cpp:1170`). **The user ruled the clause REMOVED rather than re-argued** — a swept population with two demonstrated errors is not established (#19) — executed in the GENERATOR so one change covers all 80 and cannot drift (#17f). This row carries the full re-verification against a live-reachability test. **[[OI-288]]'s finding may bear on a whole CLASS of them:** the legacy notation arm's reachability turns on one runtime flag defaulting `true` and four branch points, not on compilation, so \"dormant\" is a statement about a DEFAULT with an enumerated false-negative path, and each verdict must say which it means. NOT in doubt: the marking convention itself (`CLAUDE.md` rule (f), user-ratified 2026-08-02) — what is withdrawn is an unchecked assertion riding along with it | E — verification owed / decisions register | ✅ VERIFIED 2026-08-03 (CC, phase 1w) — the full re-verification is DELIVERED as the generated artifact `tools/audit/decisions/phase1w_legacy_verification.json` (every count, verdict and citation there, none restated; D-431). **0 marks established wrong, so 0 corrected, and the marking convention is NOT in question.** The set is DERIVED, and **five** recorded figures disagree with it — all located, none corrected here (that is action, and this wave gathers). **★ The two results the family design needs. (1) \"Dormant\" is far weaker than it reads:** NO entry is unreachable at any setting on the notation flag and NONE is dormant-behind-the-default alone — every marked subject with code at HEAD is reached by plain `batch_analyze` (`--joint-inference` defaults OFF), by a batch diagnostic dump flag, or by the test suites. **(2) The largest transfer class was not predicted:** entries a LIVE specification section restates as standing do-not-retry prohibitions, where the mark is RIGHT about the subject and the entry still binds what a future designer may attempt — a third thing a mark can be, which the register has no field for. Both false-negative enumerations in this row are short (the batch diagnostic flags; and `jointKeyWiringEnabled()`, a second default-OFF flag inside the legacy arm). *Historical, preserved (#12): the row was opened saying* \"Set size **80**, counted from the data\" — *true at phase 1m and stale by one since phase 1n, when D-428 gained the mark; the register's own preamble says 79 and `STATUS.md` + the phase-1m dispatch say 75.* Residues: [[OI-302]] (the third mark class, D-055, and the undetermined transfers), [[OI-303]], [[OI-304]] | [detail](open_items/OI-289.md) |"
+    "line_text": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified — and two of them were wrong | The marker is generated text, one fixed sentence on every marked entry, and until 2026-08-03 it ended \"**it has no effect on the live solution**\" — a claim about the LIVE system that the marking pass never checked, since the set was drawn by asking what each decision is ABOUT. It failed twice: **D-329**, whose PRINCIPLE the [[OI-275]] ruling carried across to the live family design (patched then with a second marker variant, which fixed the instance and left the clause standing everywhere else), and **D-311**, whose subject `chordanalyzer.cpp` `STATUS_ARCHIVE.md:114` records as surviving the engagement and one of whose five produced translation units, `chordsymbolformatter.cpp`, the record arm runs (`notationimplodebridge.cpp:1170`). **The user ruled the clause REMOVED rather than re-argued** — a swept population with two demonstrated errors is not established (#19) — executed in the GENERATOR so one change covers all 80 and cannot drift (#17f). This row carries the full re-verification against a live-reachability test. **[[OI-288]]'s finding may bear on a whole CLASS of them:** the legacy notation arm's reachability turns on one runtime flag defaulting `true` and four branch points, not on compilation, so \"dormant\" is a statement about a DEFAULT with an enumerated false-negative path, and each verdict must say which it means. NOT in doubt: the marking convention itself (`CLAUDE.md` rule (f), user-ratified 2026-08-02) — what is withdrawn is an unchecked assertion riding along with it | E — verification owed / decisions register | ✅ VERIFIED 2026-08-03 (CC, phase 1w) — the full re-verification is DELIVERED as the generated artifact `tools/audit/decisions/phase1w_legacy_verification.json` (every count, verdict and citation there, none restated; D-431). **0 marks established wrong, so 0 corrected, and the marking convention is NOT in question.** The set is DERIVED, and **five** recorded figures disagree with it — all located, none corrected here (that is action, and this wave gathers). **★ The two results the family design needs. (1) \"Dormant\" is far weaker than it reads:** NO entry is unreachable at any setting on the notation flag and NONE is dormant-behind-the-default alone — every marked subject with code at HEAD is reached by plain `batch_analyze` (`--joint-inference` defaults OFF), by a batch diagnostic dump flag, or by the test suites. **(2) The largest transfer class was not predicted:** entries a LIVE specification section restates as standing do-not-retry prohibitions, where the mark is RIGHT about the subject and the entry still binds what a future designer may attempt — a third thing a mark can be, which the register has no field for. Both false-negative enumerations in this row are short (the batch diagnostic flags; and `jointKeyWiringEnabled()`, a second default-OFF flag inside the legacy arm). *Historical, preserved (#12): the row was opened saying* \"Set size **80**, counted from the data\" — *true at phase 1m and stale by one since phase 1n, when D-428 gained the mark; the register's own preamble says 79 and `STATUS.md` + the phase-1m dispatch say 75.* Residues: [[OI-302]] (the third mark class, D-055, and the undetermined transfers), [[OI-303]], [[OI-304]]. **★ AND THE VERDICT ABOVE IS TRUE OF THE POPULATION IT COVERED AND OF NO LARGER ONE — [[OI-354]], opened 2026-08-09.** Entries have carried the legacy mark since this pass ran, and the verification holds no verdict for them; the tool that exists to notice that had been stopping earlier, on a drifted citation, so the growth was invisible. **The ✅ above is NOT withdrawn** — what it verified, it verified — but it must not be read as a statement about the marked set at HEAD | [detail](open_items/OI-289.md) |"
    },
    "note": "The INDEX row, which the register's own rule makes the authoritative status surface. Same staleness as the detail file.",
-   "derived_count": 81,
-   "discrepancy": 1
+   "derived_count": 92,
+   "discrepancy": 12
   },
   {
    "recorded_figure": 79,
@@ -152,19 +163,19 @@
     "line_text": "> 2026-08-02:** the 5 phase-1i entries (D-401…D-405), the 79-entry LEGACY-marked set confirmed"
    },
    "note": "The register's own ratified preamble (eighth ratification event, 2026-08-02). Rendered from the generator's PREAMBLE constant, so correcting it means editing ratified text — reported, not touched.",
-   "derived_count": 81,
-   "discrepancy": 2
+   "derived_count": 92,
+   "discrepancy": 13
   },
   {
    "recorded_figure": 75,
    "located_at": {
     "file": "STATUS.md",
-    "line": 125,
+    "line": 193,
     "line_text": "occurrences; register `--check` across 21 files; open-items living check 278/278). **NEXT: the user ratifies (or corrects) D-401…D-405 and the 75-entry LEGACY"
    },
    "note": "The phase-1i entry. Still in the live STATUS entries, not archived.",
-   "derived_count": 81,
-   "discrepancy": 6
+   "derived_count": 92,
+   "discrepancy": 17
   },
   {
    "recorded_figure": 75,
@@ -174,8 +185,8 @@
     "line_text": "**The row.** Open a phase-2 row for the full re-verification: all **75** LEGACY-marked entries"
    },
    "note": "The phase-1m dispatch that opened OI-289 — so the row was sized from a figure that was already wrong by five when the row was written, which is why the row says to re-derive.",
-   "derived_count": 81,
-   "discrepancy": 6
+   "derived_count": 92,
+   "discrepancy": 17
   }
  ],
  "when_the_set_last_changed": {
@@ -326,55 +337,61 @@
   },
   "L3_SPEC_DORMANT": {
    "file": "ARCHITECTURE.md",
-   "line": 1331,
+   "line": 1643,
    "line_text": "two adoptions made false).** Layer 3's decoder no longer decides the key on either surface: the",
    "says": "The layer specification's own build-state correction, which enumerates the same four branch points this wave read and adds the remaining callers: \"the batch_analyze diagnostics, which are development tools and are not shipped\"."
   },
   "L4_SPEC_DORMANT": {
    "file": "ARCHITECTURE.md",
-   "line": 1414,
+   "line": 1854,
    "line_text": "D-051 records the same shape on Layer 3). The build state itself is unchanged and correct: Built+Dormant.",
    "says": "The Layer-4 section's own build state. What becomes of that decoder is recorded OPEN."
   },
   "SPEC_DONOTRETRY_CHORD": {
    "file": "ARCHITECTURE.md",
-   "line": 1420,
+   "line": 1860,
    "line_text": "**Tried and closed on the chord layer — do not retry; the register carries each with its measurement: D-215, D-299, D-300, D-301, D-302, D-317, D-318, D-319, D-320, D-328.**",
    "says": "A LIVE do-not-retry list in the layer specification naming ten marked entries. The mark is right about the SUBJECT and the entry still binds what a future designer may attempt."
   },
   "SPEC_DONOTRETRY_KEY": {
    "file": "ARCHITECTURE.md",
-   "line": 1344,
+   "line": 1656,
    "line_text": "**Tried and closed on this layer — do not retry; the register carries each with its evidence: D-287 (key-as-distribution, shelved), D-290 (the key-agnostic local cadence approach, falsified).**",
    "says": "The same construction on the key layer, naming D-287 and D-290."
   },
   "SPEC_DONOTRETRY_SEARCH": {
    "file": "ARCHITECTURE.md",
-   "line": 306,
+   "line": 315,
    "line_text": "> *Tried and closed on the search — do not retry; the register carries each with its measurement: D-288 (beam widening, shelved), D-328 (a wider search over the same scoring, refuted), D-278 (the joint key-and-chord step over the two legacy decoders, shelved).*",
    "says": "The same construction on the search, naming D-288, D-328 and D-278."
   },
+  "SPEC_DONOTRETRY_DECLARED_MODE": {
+   "file": "ARCHITECTURE.md",
+   "line": 4198,
+   "line_text": "**Tried and closed on the declared mode's weight, and it is a SECOND removal at the same increment",
+   "says": "The same construction on the declared mode's weight, naming D-572 with its evidence — a LIVE specification line whose subject is a removed legacy promotion and whose prohibition binds now."
+  },
   "ARCH_BATCH_DIAGNOSTICS": {
    "file": "ARCHITECTURE.md",
-   "line": 1339,
+   "line": 1651,
    "line_text": "callers are the `batch_analyze` diagnostics, which are development tools and are not shipped (§15). **The description below remains accurate for the dormant pipeline** and is retained as",
    "says": "The layer specification already names the fifth false-negative path — the batch diagnostics — which OI-289's four-item enumeration does not. Located here rather than quoted as a line number in prose, which is the failure D-432's own defense was re-written to avoid."
   },
   "ARCH_D429_POINTER": {
    "file": "ARCHITECTURE.md",
-   "line": 278,
+   "line": 287,
    "line_text": "> *Pointer, not a seventh rule (added 2026-08-03 on the user's D-416 ruling; register entry **D-429**): the standing mandate of 2026-06-14 to dissolve the legacy post-hoc gate-correction layer into fitted weights carries a principle for THIS estimator — a correction belongs in a factor's fitted value, never in a layer of after-the-fact corrections laid over the decode. It is not restated as a rule here because it is the same separation rule (a) makes on the fitting side, and a second copy would be a #6 violation; it is recorded once, at **D-429**, as a binding constraint on the phase-3 family design. Nothing in this architecture specifies a post-hoc correction layer for the estimator, and the legacy Gates A–L layer the mandate names retires at the retirement map's R1 (**D-418**) — but neither fact discharges the mandate, and it is not treated as discharged.*",
    "says": "The pointer that carries D-429's transferred principle into the live design's own specification."
   },
   "ARCH_L3_DELEGATION": {
    "file": "ARCHITECTURE.md",
-   "line": 1342,
+   "line": 1654,
    "line_text": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
    "says": "The delegation that makes the Layer-3 design document a contract home. It sits immediately below the build-state correction declaring that layer dormant, which is why the marks on its decisions are consistent rather than contradictory."
   },
   "ARCH_L5_ENGAGEMENT_DELEGATION": {
    "file": "ARCHITECTURE.md",
-   "line": 1498,
+   "line": 2018,
    "line_text": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`).",
    "says": "The delegation behind D-380/D-381's home — the reason their transfer half is undetermined rather than none-found."
   },
@@ -446,14 +463,12 @@
   }
  },
  "anchors_declared_but_unused": {
-  "why_they_exist": "These anchors establish the two PRODUCTION paths themselves — what the record arm and --joint-inference actually call — rather than any one entry's subject. Every per-entry verdict rests on them collectively: the reason no marked subject is reachable on a production path is that these paths were traced and none of them enters the legacy scorer or the legacy key layer. They are listed separately rather than attached to all 81 rows, and they are located at the object exactly like the cited ones, so a change to any of them stops this tool.",
+  "why_they_exist": "These anchors establish the two PRODUCTION paths themselves — what the record arm and --joint-inference actually call — rather than any one entry's subject. Every per-entry verdict rests on them collectively: the reason no marked subject is reachable on a production path is that these paths were traced and none of them enters the legacy scorer or the legacy key layer. They are listed separately rather than attached to every row of derived_set.ids, and they are located at the object exactly like the cited ones, so a change to any of them stops this tool. (The former wording named a row count, which the 2026-08-09 application of the OI-354 verdict set made stale; it is replaced by a pointer to the derived list rather than re-typed, D-431.)",
   "keys": [
-   "BATCH_JOINT",
    "CSF_RECORD_ARM",
    "IMPLODE_RECORD",
    "JOINT_SIG_READ",
    "RECORD_GROUPKEYAREAS",
-   "RECORD_SECTION",
    "SPAN_RECORD",
    "TUNING_RECORD"
   ]
@@ -1463,28 +1478,164 @@
    "transfer": "undetermined",
    "note": "THE SHARPEST UNDETERMINED IN THE SET. The entry says its three prohibitions hold \"for the whole programme\" while being LEGACY-marked, and one of the three is the rule D-429's transfer already carries to the live design. Either the programme-wide claim is a transfer the record has not ruled, or it is scoped to the legacy path and the wording overstates it. A session may not decide which.",
    "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-536",
+   "subject": "The bass and the chord chosen TOGETHER as one bass-root-template triple",
+   "reachability": "false-negative-path",
+   "anchors": [
+    "NOTE_SEAM_LEGACY",
+    "BATCH_LEGACY_DEFAULT",
+    "TESTS_CHORD"
+   ],
+   "transfer": "carried-elsewhere",
+   "note": "The legacy chord scorer, reached by plain batch_analyze and by the composing test suite, and sitting below the record return on the note seam. The transfer is the record's own statement, in this entry's home text AND its provenance: the principle it embodies — deciding coupled quantities together rather than committing one early — is the one D-001 carries for the live design (\"Key, mode and chord are inferred by ONE joint decode\"). The MECHANISM is legacy; the doctrine is live and named.",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-537",
+   "subject": "The completeness bonus firing only for a root-position reading — the guard against demoting genuine slash chords",
+   "reachability": "false-negative-path",
+   "anchors": [
+    "NOTE_SEAM_LEGACY",
+    "BATCH_LEGACY_DEFAULT",
+    "TESTS_CHORD"
+   ],
+   "transfer": "carried-elsewhere",
+   "note": "Same arm as D-536. The home text states the kinship in its own words: it is \"an early instance of the standing rule that a correction is given a structural entry condition rather than a widened threshold\" (CLAUDE.md, the gate and preset policy), which is live and binds now. STATED PRECISELY SO IT IS NOT OVER-CREDITED: what is carried is the general rule, not this guard; the guard itself is legacy code.",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-538",
+   "subject": "A multi-signal change lands one signal at a time, the corpus re-run after each, any rise a hard stop",
+   "reachability": "none",
+   "anchors": [],
+   "transfer": "carried-elsewhere",
+   "note": "Reach `none` on this pass's own D-302 precedent (\"a closure of a line of work, not a mechanism; nothing implements it\"): the subject is a LANDING PROCEDURE for one past change, so there is no code at HEAD to reach at any setting and no code anchor can bear on it — which is why the anchor list is empty rather than padded with an anchor that would not be evidence for the verdict. Transfer is the clearest in the set and is already RULED: the user ruled this entry's content superseded by D-177 (one revertible provenance-stamped commit per behaviour change) and D-115 (the measured non-increase of gate block (A)), both homed in CLAUDE.md, with the obligation moved to them under D-642.",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-564",
+   "subject": "Correction of record: the function-only share of the legacy residual was overstated — over-grab corrupts the BASS",
+   "reachability": "false-negative-path",
+   "anchors": [
+    "BATCH_LEGACY_DEFAULT",
+    "TESTS_CHORD"
+   ],
+   "transfer": "none-found",
+   "note": "Reach follows this pass's D-284 and D-243 precedent — a FINDING about the legacy surface takes the reachability of the surface it is about, not of the prose that records it. Transfer: the citation scan finds only homing and triage hits and no ruling carries it. ONE OBSERVATION, RECORDED RATHER THAN PROMOTED TO A VERDICT: its home is CLAUDE.md gate block (D), and the caveat it corrects is stated there as applying equally to the robust unit — the live measurement — so a reader of the live block meets the corrected apportionment. That is the entry's HOME being live, not a ruling carrying its principle, and under bound (i) it is not a transfer.",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-568",
+   "subject": "The two-track remedy: chord axis by hand-built rules, key axis by evidence quality and calibration — neither by a wider search",
+   "reachability": "false-negative-path",
+   "anchors": [
+    "L3_SPEC_DORMANT",
+    "BATCH_LEGACY_DEFAULT",
+    "TESTS_CHORD",
+    "TESTS_KEY"
+   ],
+   "transfer": "assigns-live-work",
+   "note": "The two-axis pipeline it was derived on is reachable only off the default paths. The transfer half is `assigns-live-work` on that value's own definition — the decision's OWN text assigns work to the live design rather than a later ruling — and the record says so twice: the home text calls it \"the work-programme statement it is, not a description of what runs\", and its key-axis half assigns the residual to the joint combination's SOFT integration, which is the live estimator. Its home is the arc plan's Stage-5 paragraph, the precision work it governs.",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-571",
+   "subject": "The declared-mode influence becomes a small additive hint, and SMALLNESS IS THE GATE",
+   "reachability": "false-negative-path",
+   "anchors": [
+    "L3_SPEC_DORMANT",
+    "BATCH_LEGACY_DEFAULT",
+    "TESTS_KEY"
+   ],
+   "transfer": "carried-elsewhere",
+   "note": "A scoring term of the legacy key emission. The transfer is unusually exact and the record names it: this entry's provenance states that the joint estimator takes the signature and declared mode as \"a weak fitted soft prior with no conditional gate anywhere\" (D-528) and conditions the initial key state only (D-450) — and \"no conditional gate anywhere\" is this decision's own \"no separate confidence test is added\", on the live arm.",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-572",
+   "subject": "The hard post-hoc declared-mode promotion REMOVED OUTRIGHT rather than kept in a gated form",
+   "reachability": "none",
+   "anchors": [
+    "SPEC_DONOTRETRY_DECLARED_MODE"
+   ],
+   "transfer": "live-prohibition-in-spec",
+   "note": "Reach `none`: the promotion was removed, so nothing at HEAD implements the subject. This is the ONE entry of the eleven cited in a LIVE specification section, and the citation is a standing do-not-retry naming the entry with its evidence. The subject stays legacy; the prohibition binds now. (D-528's own title additionally records that the hard declared-mode wall is formally retired on the live arm — noted, but the do-not-retry line is the more specific and is what the verdict rests on.)",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-575",
+   "subject": "The Baroque partial-signature convention handled by DETECTING it and reinterpreting the signature one step",
+   "reachability": "false-negative-path",
+   "anchors": [
+    "L3_SPEC_DORMANT",
+    "BATCH_LEGACY_DEFAULT",
+    "TESTS_KEY"
+   ],
+   "transfer": "none-found",
+   "note": "The correction is applied inside the legacy resolver, which the production arm does not run. DELIBERATELY NOT `explicitly-not-transferred`, and the distinction matters: that value requires a ruling stating the decision does not bear on the live design, and what the record actually says is that the question is UNSETTLED — the home text's own words are \"Whether the joint estimator handles the convention AT ALL is NOT settled by this entry and is not asserted here.\" Unsettled is not the same as not-transferred, so the weaker verdict is the honest one. The live open question this exposes is rowed at OPEN_ITEMS.md OI-357.",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-579",
+   "subject": "The anchor obligation: compute the chord ONCE against its region's FINAL notes, with tonality an explicit input",
+   "reachability": "none",
+   "anchors": [
+    "BATCH_JOINT",
+    "RECORD_SECTION"
+   ],
+   "transfer": "carried-elsewhere",
+   "note": "Reach `none` on this pass's own D-215 precedent — the obligation was never executed on the path it was written for, so nothing at HEAD implements the subject. Its two anchors are the production-path anchors, and they are the evidence for the transfer as much as for the reach: the record states the obligation \"was met by replacement rather than by repair\" — the live arm is one joint decode over key, mode, chord and segmentation together (D-001), which is the ordering this step asked for, reached by a different route.",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-580",
+   "subject": "Two of the twelve post-scoring gates are purely-local and MUST survive the dissolution; the other ten dissolve",
+   "reachability": "false-negative-path",
+   "anchors": [
+    "FM2_FLIP",
+    "BATCH_LEGACY_DEFAULT",
+    "TESTS_CHORD"
+   ],
+   "transfer": "undetermined",
+   "note": "The gates are legacy code at HEAD, and the entry's own home text says the surviving rule name for one of the two is FM2, which is the anchor. THE TRANSFER HALF IS UNDETERMINED on this pass's own D-325 precedent, and it is the sharpest of the eleven: the rule this constrains — dissolving the post-hoc correction layer into the competition — is D-429, whose principle a user ruling DID carry to the live design, and whether the carve-out rides across with it or was scoped to a legacy dissolution that never ran is a ruling and not a session's call. THE USER HELD THIS CELL EXPLICITLY: Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md` ratifies the other ten verdicts whole and leaves this one UNDETERMINED pending Ruling 27, which orders a read-only fact-gathering pass over D-580's and D-429's full records before any transfer verdict is taken. So `undetermined` here is a RULED state, not an unfinished one.",
+   "carries_transfer_variant_in_the_data": false
+  },
+  {
+   "id": "D-583",
+   "subject": "A known deferred loss is KEPT only while it stays characterized EXACTLY, and re-adjudicated when its form changes",
+   "reachability": "false-negative-path",
+   "anchors": [
+    "JKEY_WIRING_FLAG",
+    "JKEY_NO_REEMIT",
+    "BATCH_LEGACY_DEFAULT"
+   ],
+   "transfer": "none-found",
+   "note": "The characterized loss sits on the legacy region path behind a SECOND default-OFF flag — the same anchors this pass gives D-278, the shelved step it defers to. ONE THING THE RECORD STATES AND THE VERDICT DOES NOT CREDIT: its provenance says \"the CONDITION it states is general\", while the behaviour it characterizes is legacy. Under bound (i) a general condition no ruling carries is `none-found` — but a reader should not take the condition itself for legacy-scoped, and that is said here rather than folded into a verdict.",
+   "carries_transfer_variant_in_the_data": false
   }
  ],
  "counts": {
   "reachability": {
-   "false-negative-path": 63,
-   "none": 17,
+   "false-negative-path": 71,
+   "none": 20,
    "production": 1
   },
   "transfer": {
-   "none-found": 47,
-   "live-prohibition-in-spec": 13,
-   "undetermined": 11,
-   "assigns-live-work": 5,
-   "carried-elsewhere": 2,
+   "none-found": 50,
+   "live-prohibition-in-spec": 14,
+   "undetermined": 12,
+   "carried-elsewhere": 7,
+   "assigns-live-work": 6,
    "ruling-transferred": 2,
    "explicitly-not-transferred": 1
   },
-  "entries_whose_transfer_half_bears_on_live_work": 22
+  "entries_whose_transfer_half_bears_on_live_work": 29
  },
  "prediction_outcome": {
   "reachability": "HELD in shape. 0 entries reachable on a default production path except the single partial case D-055 (a preference registration, not an inference path); the large majority reached only by an enumerated non-default path; a minority with no code at all; and 0 UNDETERMINED, at the bottom of the predicted 0-3 band.",
-  "transfer": "PARTLY REFUTED, and the refutation is the finding. The prediction expected 2 ruling-transfers (correct) and 3-8 entries whose own text assigns live work (correct, 5). It did NOT predict the largest class: entries the LIVE layer specification restates as standing do-not-retry prohibitions. That class was not in the prediction at all, and it is more than six times the size of the ruling-transfer class the row was opened on.",
+  "transfer": "PARTLY REFUTED, and the refutation is the finding. The prediction expected 2 ruling-transfers (correct) and 3-8 entries whose own text assigns live work (correct — the count is in counts.transfer above). It did NOT predict the largest class: entries the LIVE layer specification restates as standing do-not-retry prohibitions. That class was not in the prediction at all, and it is several times the size of the ruling-transfer class the row was opened on. (The two figures formerly typed into this sentence were true of the population as it stood at phase 1w and were made stale by the 2026-08-09 application of the OI-354 verdict set; they are replaced by pointers to the computed tally rather than re-typed, D-431.)",
   "marks_established_wrong": "HELD — 0. See corrections_made."
  },
  "corrections_made": {
@@ -1496,7 +1647,7 @@
   "the_dormancy_is_weaker_than_it_sounds": "No entry earned the \"unreachable at any setting\" verdict for the notation flag alone, and none earned \"flag-default-only\". Every marked subject that HAS code at HEAD is reached by something: plain batch_analyze (the --joint-inference flag defaults OFF, so the corpus instrument runs the legacy pipeline unless told otherwise), a batch_analyze diagnostic dump flag, or the test suites. A change to any of these subjects still breaks tests and still moves what an untagged batch_analyze run produces. \"Dormant\" means \"not what the product runs\", not \"nothing runs it\".",
   "the_false_negative_enumeration_is_short_by_one": "OI-289 enumerates four false-negative paths: an explicit flag flip, batch_analyze without --joint-inference, the test suites, and the declared non-production uncached path. A fifth is load-bearing here: batch_analyze's DIAGNOSTIC DUMP FLAGS, which reach code neither production surface reaches and plain batch_analyze does not either — the Layer-4 slice decoder (--decode-chords) and the whole Layer-5 function module (--dump-l5, --dump-fullspine). ARCHITECTURE.md:1339 already names this path for Layer 3 (\"the remaining callers are the batch_analyze diagnostics\"); OI-289's list does not.",
   "a_second_flag_gates_reachability": "The reachability picture is not one flag. jointKeyWiringEnabled() (regionanalyzer.cpp:1484) is a second runtime flag, default OFF, gating the built half of the shelved joint key-and-chord step INSIDE the legacy arm. A verdict of the form \"reachable when the notation flag is flipped\" would be wrong for those subjects without also naming this one.",
-  "the_largest_transfer_class_was_not_the_predicted_one": "Thirteen entries are restated by a LIVE specification section as standing do-not-retry prohibitions (ARCHITECTURE.md:306, :1344, :1420), and docs/redesign_plan.md:4 states the distinction in its own words: \"LIVE prohibitions about the legacy chord path\". The mark is RIGHT about the subject and the entry still binds what a future designer may attempt. That is a third thing a mark can be, beside \"about live code\" and \"about dead code\", and the register has no field for it.",
+  "the_largest_transfer_class_was_not_the_predicted_one": "The largest transfer class — its size is counts.transfer[\"live-prohibition-in-spec\"] above, not typed here (D-431) — is entries restated by a LIVE specification section as standing do-not-retry prohibitions, on the chord layer, the key layer, the search and, since 2026-08-09, the declared mode's weight; docs/redesign_plan.md:4 states the distinction in its own words: \"LIVE prohibitions about the legacy chord path\". The mark is RIGHT about the subject and the entry still binds what a future designer may attempt. That is a third thing a mark can be, beside \"about live code\" and \"about dead code\", and the register has no field for it.",
   "entries_that_describe_an_arrangement_the_live_system_does_not_have": "Three cases where a reader could take a marked entry for a description of what runs: D-345 (the style preset enters at the key/mode layer — production inference is preset-independent, so on the live arm the preset has no entry point at all), D-351 (the key search is its own decoder — the live estimator decides key and chord in ONE decode), and D-052 (the signature read lives in one shared function — the joint fact adapter does its own). None is a wrong mark. All three are why the mark exists.",
   "no_marked_id_is_cited_anywhere_under_src": "The citation scan found not one occurrence of a marked decision ID in any .cpp or .h file. Nothing in the code points back at the decisions that govern it, in either direction, so the transfer half could only ever be searched in prose."
  },

@@ -132,6 +132,27 @@ override convenience.
     that do exist are off-domain (rock symbolic-by-ear; pop audio) and are recorded with D-474; they
     are **not** a ceiling for this repertoire and may not be used as one, however convenient the
     invariant they share.
+    **★ AND THE MEASUREMENT IS NOW COMMISSIONED, IN TWO HALVES, WITH THE RULE THAT ENDS THE CONTACT
+    ROUTE (user-ruled 2026-08-09; the ruling record is `cowork_rulings_2026_08_09_return.md`,
+    Ruling 10).** The block above establishes that this principle cannot be satisfied by citation.
+    What follows is the route to satisfying it, and both halves are recorded here because each
+    settles something a later session would otherwise re-decide. **(a) THE LABORATORY CONTACT IS THE
+    USER'S ACT** — the one act no session can perform, and the longest lead — **and it is
+    PERFORMED**: a public issue on the annotating laboratory's own repository, asking annotator count
+    and background, the validation and review procedure, any unpublished duplicate or superseded
+    readings, and errata. **A reply is recorded on the tracking row when it arrives; SILENCE AFTER A
+    REASONABLE WAIT IS RECORDED AS THE ROUTE EXHAUSTED**, which makes the declared status of what the
+    published record holds FINAL rather than provisional — #19 closed by exhaustion rather than left
+    open forever. *Why the exhaustion clause is part of the commissioning:* without it a contact
+    route never ends, and an obligation that cannot end is one that never closes, so the absence of a
+    reply would go on reading as work outstanding rather than as an answer. **(b) THE CEILING
+    MEASUREMENT ITSELF IS COMMISSIONED AND OPENS WITH PHASE 2, DESK SIMULATION FIRST (#17c).** No
+    measurement tool is built before phase 2 opens: the standing scope rule is that an addition to
+    the phase-1 finish line is a user ruling, and this is that ruling for this addition — it
+    commissions the measurement and it does not pull the work forward. *Why the commissioning is
+    recorded at the principle rather than only on the row:* the principle DEMANDS a quantity the
+    literature does not hold, so a reader meeting the demand must also meet the route to it and the
+    condition under which that route is finished.
 22. **Every hard gate carries a pre-declared protocol for the largest change it will face.**
     A gate written only for incremental change must not be amended under the pressure of a
     live diff — the exceptional-event variant (e.g. architecture-scale adoption: aggregate
@@ -368,6 +389,22 @@ writes settles that document without touching the bar. *Measured before it was a
 user's own condition:* how much of the population the split moves was measured first, and the split
 moves nothing — the enumeration, the reasoning and every count are generated at
 `tools/audit/decisions/reads4_oi326_application.json`, and no figure is restated here (#17f, D-431).
+
+**★ HOW RULE (c) IS DISCHARGED ONCE IT HAS ALREADY BEEN MISSED (user-ruled 2026-08-09; the ruling
+record is `cowork_rulings_2026_08_09_second_stop.md`, Ruling 12).** Rule (c) says a new ratification,
+shelving or falsification gets its register entry IN the commit that records it. It does not say what
+happens when a run of rulings has accumulated OUTSIDE the register — which is the state the rule is
+meant to prevent and, once reached, a state the rule alone does not resolve. **The discharge is: the
+accumulated rulings are CLASSIFIED first — per ruling, is this a DECISION the register carries, or
+the exercise of one it already holds — the classification is put to the user as a reading file, and
+the entries then land in ONE COMMIT, late but by the same pattern every on-time register event uses.
+No entry is written before the user rules on the classification.** Two things this forbids, and they
+are the reason it is written rather than left to be improvised: retro-fitting the entries ruling by
+ruling as later dispatches happen to touch them, which leaves the register's completeness depending
+on what came up next; and abandoning the debt on the ground that every ruling's CONTENT is already on
+disk in a ratified record — which is true, and beside the point. **What is at risk when rulings sit
+outside the register is not the rulings. It is the register's claim to be the ONE place a session
+learns what was decided**, which is what rule (a) makes a session rely on.
 
 ## Project context
 
@@ -735,7 +772,10 @@ ANNOTATOR'S MODULATED NUMERAL; ONLY A DIAGNOSTIC PARTIAL-SUB-SPLIT IS DEFENSIBLE
 record states no ratifier for the decision itself. Homed here 2026-08-09 on the user's ruling —
 Ruling 11 of `cowork_rulings_2026_08_09_second_stop.md` — as the MEASUREMENT half of register entry
 **D-291**, whose BUILD half belongs to the Layer-5 function specification and is not restated here,
-#6). Where our analysis labels an applied chord relative to the home key and the human annotator
+#6. **SPLIT INTO TWO REGISTER IDENTIFIERS 2026-08-09** on the user's Ruling 21 of
+`cowork_rulings_2026_08_09_fourth_stop.md`: this half now carries its own entry, **D-656**, and
+**D-291** keeps the build half; the two cross-reference each other, and neither text changed).
+Where our analysis labels an applied chord relative to the home key and the human annotator
 has changed key, the comparison is **not** to be changed so that the label counts as agreement. The
 prohibition survives in the words it was recorded in: *"Crediting rule NOT warranted (harmful —
 masks the 95% real error); only a DIAGNOSTIC partial-sub-split (expose the masking) is

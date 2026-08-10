@@ -30,7 +30,7 @@
     "re_derives_a_live_invariant": 32,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 1,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 0
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_phase1g_triage.py",
@@ -44,9 +44,7 @@
     "tools/audit/decisions/gen_reads5_yield.py",
     "tools/audit/decisions/gen_reads6_yield.py"
   ],
-  "live_tools_that_fail_and_stay": [
-    "tools/audit/decisions/gen_phase1w_legacy_verification.py"
-  ],
+  "live_tools_that_fail_and_stay": [],
   "rows": [
     {
       "tool": "tools/audit/changed_paths.py",
@@ -182,7 +180,7 @@
       "evidence": "gen_phase1w_legacy_verification.py:9-22",
       "why": "★ CLASSIFIED LIVE DESPITE FAILING, and its failure is the live invariant FIRING. It DERIVES the marked set from the backbone rather than from a recorded figure, LOCATES every recorded figure and every code anchor an entry rests on, and STOPS when a quote is not at its cited line — \"so the evidence cannot go stale silently\", in its own words. That is exactly what it reported: one anchor drifted by 23 lines. Re-aiming it is a lawful repair and is NOT done here (the freeze). It is also load-bearing live — `gen_live_prohibition_pointers.py` derives its class from this artifact. It stays, failing.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "FAIL"
+      "state_at_the_committed_tree": "PASS"
     },
     {
       "tool": "tools/audit/decisions/gen_r1_superseded_reach.py",

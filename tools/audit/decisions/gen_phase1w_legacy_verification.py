@@ -85,8 +85,12 @@ RECORDED_FIGURES = [
         'where': 'open_items/OI-289.md',
         'line': 39,
         'quote': 'the set is **80 entries**',
-        'note': 'The row that owns this verification. TRUE WHEN WRITTEN (phase 1m) and stale by '
-                'one since phase 1n; see when_the_set_last_changed.',
+        'note': 'The row that owns this verification. TRUE WHEN WRITTEN (phase 1m); it first went '
+                'stale at phase 1n (see when_the_set_last_changed) and the set has GROWN AGAIN '
+                'since — which is the OPEN_ITEMS.md OI-354 finding, and why the discrepancy field '
+                'beside this note is computed from the derived set rather than read off any '
+                'recorded figure. This tool records WHEN the set last changed only up to phase 1n; '
+                'the later growth is dated on OI-354\'s own row and is not re-measured here.',
     },
     {
         'figure': 80,
@@ -211,37 +215,51 @@ ANCHORS = {
         'quote': 'kms::KeyModeSequenceDecoder::decode(',
         'says': 'The legacy Layer-3 sequence decoder\'s production entry, on the legacy region path.',
     },
+    # Re-aimed 2026-08-09 from this tool's own STOP message, per citation (the authored-input
+    # maintenance class, D-648). These ARCHITECTURE.md anchors had drifted behind the uncovered-entry
+    # STOP, which fires before the anchor loop — the same layered shape that hid the coverage check
+    # itself behind the A1 citation (OPEN_ITEMS.md OI-354).
     'L3_SPEC_DORMANT': {
-        'file': 'ARCHITECTURE.md', 'line': 1331,
+        'file': 'ARCHITECTURE.md', 'line': 1643,
         'quote': "Layer 3's decoder no longer decides the key on either surface",
         'says': 'The layer specification\'s own build-state correction, which enumerates the same four '
                 'branch points this wave read and adds the remaining callers: "the batch_analyze '
                 'diagnostics, which are development tools and are not shipped".',
     },
     'L4_SPEC_DORMANT': {
-        'file': 'ARCHITECTURE.md', 'line': 1414,
+        'file': 'ARCHITECTURE.md', 'line': 1854,
         'quote': 'The build state itself is unchanged and correct: Built+Dormant.',
         'says': 'The Layer-4 section\'s own build state. What becomes of that decoder is recorded OPEN.',
     },
     'SPEC_DONOTRETRY_CHORD': {
-        'file': 'ARCHITECTURE.md', 'line': 1420,
+        'file': 'ARCHITECTURE.md', 'line': 1860,
         'quote': 'Tried and closed on the chord layer',
         'says': 'A LIVE do-not-retry list in the layer specification naming ten marked entries. The '
                 'mark is right about the SUBJECT and the entry still binds what a future designer '
                 'may attempt.',
     },
     'SPEC_DONOTRETRY_KEY': {
-        'file': 'ARCHITECTURE.md', 'line': 1344,
+        'file': 'ARCHITECTURE.md', 'line': 1656,
         'quote': 'Tried and closed on this layer',
         'says': 'The same construction on the key layer, naming D-287 and D-290.',
     },
     'SPEC_DONOTRETRY_SEARCH': {
-        'file': 'ARCHITECTURE.md', 'line': 306,
+        'file': 'ARCHITECTURE.md', 'line': 315,
         'quote': 'Tried and closed on the search',
         'says': 'The same construction on the search, naming D-288, D-328 and D-278.',
     },
+    # ADDED 2026-08-09 with the OI-354 verdict set (user, Ruling 23 of
+    # `cowork_rulings_2026_08_09_fourth_stop.md`). The fourth instance of the do-not-retry
+    # construction the pass already anchors on the chord layer, the key layer and the search.
+    'SPEC_DONOTRETRY_DECLARED_MODE': {
+        'file': 'ARCHITECTURE.md', 'line': 4198,
+        'quote': "Tried and closed on the declared mode's weight",
+        'says': 'The same construction on the declared mode\'s weight, naming D-572 with its '
+                'evidence — a LIVE specification line whose subject is a removed legacy promotion '
+                'and whose prohibition binds now.',
+    },
     'ARCH_BATCH_DIAGNOSTICS': {
-        'file': 'ARCHITECTURE.md', 'line': 1339,
+        'file': 'ARCHITECTURE.md', 'line': 1651,
         'quote': 'callers are the `batch_analyze` diagnostics, which are development tools and are not shipped',
         'says': 'The layer specification already names the fifth false-negative path — the batch '
                 'diagnostics — which OI-289\'s four-item enumeration does not. Located here rather '
@@ -249,20 +267,20 @@ ANCHORS = {
                 'was re-written to avoid.',
     },
     'ARCH_D429_POINTER': {
-        'file': 'ARCHITECTURE.md', 'line': 278,
+        'file': 'ARCHITECTURE.md', 'line': 287,
         'quote': 'register entry **D-429**',
         'says': 'The pointer that carries D-429\'s transferred principle into the live design\'s '
                 'own specification.',
     },
     'ARCH_L3_DELEGATION': {
-        'file': 'ARCHITECTURE.md', 'line': 1342,
+        'file': 'ARCHITECTURE.md', 'line': 1654,
         'quote': 'The ratified contract for this layer is `cowork_layer3_keymode_design.md`',
         'says': 'The delegation that makes the Layer-3 design document a contract home. It sits '
                 'immediately below the build-state correction declaring that layer dormant, which '
                 'is why the marks on its decisions are consistent rather than contradictory.',
     },
     'ARCH_L5_ENGAGEMENT_DELEGATION': {
-        'file': 'ARCHITECTURE.md', 'line': 1498,
+        'file': 'ARCHITECTURE.md', 'line': 2018,
         'quote': 'The ratified contract for how this layer ENGAGES with the chord layer',
         'says': 'The delegation behind D-380/D-381\'s home — the reason their transfer half is '
                 'undetermined rather than none-found.',
@@ -778,6 +796,140 @@ VERDICTS = [
      'carries to the live design. Either the programme-wide claim is a transfer the record has not '
      'ruled, or it is scoped to the legacy path and the wording overstates it. A session may not '
      'decide which.'),
+
+    # ── THE ELEVEN ENTRIES MARKED SINCE THE PHASE-1W PASS ────────────────────────────────────
+    # AUTHORED 2026-08-09 by `cc_instruction_return_continuation_3.md` Task 1 on the user's
+    # Ruling 18 of `cowork_rulings_2026_08_09_third_stop.md`, delivered for review at
+    # `ratification_surfaces/cowork_oi354_legacy_mark_establishment_2026_08_09.md`, and APPLIED
+    # HERE 2026-08-09 on the user's Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md`,
+    # which ratifies ten of the eleven whole and holds D-580's TRANSFER cell UNDETERMINED
+    # pending Ruling 27's fact-gathering pass.
+    #
+    # THE AUTHORING SESSION CLEARED NO GUARD (D-655): these verdicts were written into a reading
+    # file, the standing check was carried red across that session, and it clears here — in the
+    # commit that cites the user's ruling on the reviewed set. `OPEN_ITEMS.md` OI-354 is the
+    # event's row; OI-289's own VERIFIED status is untouched, being true of the population it
+    # covered.
+    #
+    # The METHOD is this pass's own, read in full before the first verdict and not invented:
+    # half A is reachability at the code with the five senses declared in THE_TEST, half B is
+    # the citation-transfer scan with the two bounds THE_TEST states on it. Where a case needed
+    # a judgment this pass had already faced, the pass's own precedent is named in the note.
+    ('D-536', 'The bass and the chord chosen TOGETHER as one bass-root-template triple',
+     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'carried-elsewhere',
+     'The legacy chord scorer, reached by plain batch_analyze and by the composing test suite, and '
+     'sitting below the record return on the note seam. The transfer is the record\'s own statement, '
+     'in this entry\'s home text AND its provenance: the principle it embodies — deciding coupled '
+     'quantities together rather than committing one early — is the one D-001 carries for the live '
+     'design ("Key, mode and chord are inferred by ONE joint decode"). The MECHANISM is legacy; the '
+     'doctrine is live and named.'),
+    ('D-537', 'The completeness bonus firing only for a root-position reading — the guard against '
+     'demoting genuine slash chords',
+     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'carried-elsewhere',
+     'Same arm as D-536. The home text states the kinship in its own words: it is "an early instance '
+     'of the standing rule that a correction is given a structural entry condition rather than a '
+     'widened threshold" (CLAUDE.md, the gate and preset policy), which is live and binds now. '
+     'STATED PRECISELY SO IT IS NOT OVER-CREDITED: what is carried is the general rule, not this '
+     'guard; the guard itself is legacy code.'),
+    ('D-538', 'A multi-signal change lands one signal at a time, the corpus re-run after each, any '
+     'rise a hard stop',
+     'none', [],
+     'carried-elsewhere',
+     'Reach `none` on this pass\'s own D-302 precedent ("a closure of a line of work, not a '
+     'mechanism; nothing implements it"): the subject is a LANDING PROCEDURE for one past change, so '
+     'there is no code at HEAD to reach at any setting and no code anchor can bear on it — which is '
+     'why the anchor list is empty rather than padded with an anchor that would not be evidence for '
+     'the verdict. Transfer is the clearest in the set and is already RULED: the user ruled this '
+     'entry\'s content superseded by D-177 (one revertible provenance-stamped commit per behaviour '
+     'change) and D-115 (the measured non-increase of gate block (A)), both homed in CLAUDE.md, with '
+     'the obligation moved to them under D-642.'),
+    ('D-564', 'Correction of record: the function-only share of the legacy residual was overstated — '
+     'over-grab corrupts the BASS',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found',
+     'Reach follows this pass\'s D-284 and D-243 precedent — a FINDING about the legacy surface takes '
+     'the reachability of the surface it is about, not of the prose that records it. Transfer: the '
+     'citation scan finds only homing and triage hits and no ruling carries it. ONE OBSERVATION, '
+     'RECORDED RATHER THAN PROMOTED TO A VERDICT: its home is CLAUDE.md gate block (D), and the '
+     'caveat it corrects is stated there as applying equally to the robust unit — the live '
+     'measurement — so a reader of the live block meets the corrected apportionment. That is the '
+     'entry\'s HOME being live, not a ruling carrying its principle, and under bound (i) it is not a '
+     'transfer.'),
+    ('D-568', 'The two-track remedy: chord axis by hand-built rules, key axis by evidence quality and '
+     'calibration — neither by a wider search',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD', 'TESTS_KEY'],
+     'assigns-live-work',
+     'The two-axis pipeline it was derived on is reachable only off the default paths. The transfer '
+     'half is `assigns-live-work` on that value\'s own definition — the decision\'s OWN text assigns '
+     'work to the live design rather than a later ruling — and the record says so twice: the home '
+     'text calls it "the work-programme statement it is, not a description of what runs", and its '
+     'key-axis half assigns the residual to the joint combination\'s SOFT integration, which is the '
+     'live estimator. Its home is the arc plan\'s Stage-5 paragraph, the precision work it governs.'),
+    ('D-571', 'The declared-mode influence becomes a small additive hint, and SMALLNESS IS THE GATE',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'carried-elsewhere',
+     'A scoring term of the legacy key emission. The transfer is unusually exact and the record names '
+     'it: this entry\'s provenance states that the joint estimator takes the signature and declared '
+     'mode as "a weak fitted soft prior with no conditional gate anywhere" (D-528) and conditions the '
+     'initial key state only (D-450) — and "no conditional gate anywhere" is this decision\'s own "no '
+     'separate confidence test is added", on the live arm.'),
+    ('D-572', 'The hard post-hoc declared-mode promotion REMOVED OUTRIGHT rather than kept in a gated '
+     'form',
+     'none', ['SPEC_DONOTRETRY_DECLARED_MODE'],
+     'live-prohibition-in-spec',
+     'Reach `none`: the promotion was removed, so nothing at HEAD implements the subject. This is the '
+     'ONE entry of the eleven cited in a LIVE specification section, and the citation is a standing '
+     'do-not-retry naming the entry with its evidence. The subject stays legacy; the prohibition '
+     'binds now. (D-528\'s own title additionally records that the hard declared-mode wall is '
+     'formally retired on the live arm — noted, but the do-not-retry line is the more specific and is '
+     'what the verdict rests on.)'),
+    ('D-575', 'The Baroque partial-signature convention handled by DETECTING it and reinterpreting '
+     'the signature one step',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found',
+     'The correction is applied inside the legacy resolver, which the production arm does not run. '
+     'DELIBERATELY NOT `explicitly-not-transferred`, and the distinction matters: that value requires '
+     'a ruling stating the decision does not bear on the live design, and what the record actually '
+     'says is that the question is UNSETTLED — the home text\'s own words are "Whether the joint '
+     'estimator handles the convention AT ALL is NOT settled by this entry and is not asserted here." '
+     'Unsettled is not the same as not-transferred, so the weaker verdict is the honest one. The live '
+     'open question this exposes is rowed at OPEN_ITEMS.md OI-357.'),
+    ('D-579', 'The anchor obligation: compute the chord ONCE against its region\'s FINAL notes, with '
+     'tonality an explicit input',
+     'none', ['BATCH_JOINT', 'RECORD_SECTION'],
+     'carried-elsewhere',
+     'Reach `none` on this pass\'s own D-215 precedent — the obligation was never executed on the path '
+     'it was written for, so nothing at HEAD implements the subject. Its two anchors are the '
+     'production-path anchors, and they are the evidence for the transfer as much as for the reach: '
+     'the record states the obligation "was met by replacement rather than by repair" — the live arm '
+     'is one joint decode over key, mode, chord and segmentation together (D-001), which is the '
+     'ordering this step asked for, reached by a different route.'),
+    ('D-580', 'Two of the twelve post-scoring gates are purely-local and MUST survive the '
+     'dissolution; the other ten dissolve',
+     'false-negative-path', ['FM2_FLIP', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'undetermined',
+     'The gates are legacy code at HEAD, and the entry\'s own home text says the surviving rule name '
+     'for one of the two is FM2, which is the anchor. THE TRANSFER HALF IS UNDETERMINED on this '
+     'pass\'s own D-325 precedent, and it is the sharpest of the eleven: the rule this constrains — '
+     'dissolving the post-hoc correction layer into the competition — is D-429, whose principle a '
+     'user ruling DID carry to the live design, and whether the carve-out rides across with it or was '
+     'scoped to a legacy dissolution that never ran is a ruling and not a session\'s call. THE USER '
+     'HELD THIS CELL EXPLICITLY: Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md` ratifies the '
+     'other ten verdicts whole and leaves this one UNDETERMINED pending Ruling 27, which orders a '
+     'read-only fact-gathering pass over D-580\'s and D-429\'s full records before any transfer '
+     'verdict is taken. So `undetermined` here is a RULED state, not an unfinished one.'),
+    ('D-583', 'A known deferred loss is KEPT only while it stays characterized EXACTLY, and '
+     're-adjudicated when its form changes',
+     'false-negative-path', ['JKEY_WIRING_FLAG', 'JKEY_NO_REEMIT', 'BATCH_LEGACY_DEFAULT'],
+     'none-found',
+     'The characterized loss sits on the legacy region path behind a SECOND default-OFF flag — the '
+     'same anchors this pass gives D-278, the shelved step it defers to. ONE THING THE RECORD STATES '
+     'AND THE VERDICT DOES NOT CREDIT: its provenance says "the CONDITION it states is general", '
+     'while the behaviour it characterizes is legacy. Under bound (i) a general condition no ruling '
+     'carries is `none-found` — but a reader should not take the condition itself for legacy-scoped, '
+     'and that is said here rather than folded into a verdict.'),
 ]
 
 # ── A side finding this wave met while tracing the two production surfaces ───────────────
@@ -966,8 +1118,11 @@ def main():
                               'the reason no marked subject is reachable on a production path is that '
                               'these paths were traced and none of them enters the legacy scorer or '
                               'the legacy key layer. They are listed separately rather than attached '
-                              'to all 81 rows, and they are located at the object exactly like the '
-                              'cited ones, so a change to any of them stops this tool.',
+                              'to every row of derived_set.ids, and they are located at the object '
+                              'exactly like the cited ones, so a change to any of them stops this '
+                              'tool. (The former wording named a row count, which the 2026-08-09 '
+                              'application of the OI-354 verdict set made stale; it is replaced by a '
+                              'pointer to the derived list rather than re-typed, D-431.)',
             'keys': unused,
         },
         'entries': entries,
@@ -984,10 +1139,14 @@ def main():
                             'the bottom of the predicted 0-3 band.',
             'transfer': 'PARTLY REFUTED, and the refutation is the finding. The prediction expected 2 '
                         'ruling-transfers (correct) and 3-8 entries whose own text assigns live work '
-                        '(correct, 5). It did NOT predict the largest class: entries the LIVE layer '
-                        'specification restates as standing do-not-retry prohibitions. That class was '
-                        'not in the prediction at all, and it is more than six times the size of the '
-                        'ruling-transfer class the row was opened on.',
+                        '(correct — the count is in counts.transfer above). It did NOT predict the '
+                        'largest class: entries the LIVE layer specification restates as standing '
+                        'do-not-retry prohibitions. That class was not in the prediction at all, and '
+                        'it is several times the size of the ruling-transfer class the row was opened '
+                        'on. (The two figures formerly typed into this sentence were true of the '
+                        'population as it stood at phase 1w and were made stale by the 2026-08-09 '
+                        'application of the OI-354 verdict set; they are replaced by pointers to the '
+                        'computed tally rather than re-typed, D-431.)',
             'marks_established_wrong': 'HELD — 0. See corrections_made.',
         },
         'corrections_made': {
@@ -1031,8 +1190,10 @@ def main():
                 'without also naming this one.'
             ),
             'the_largest_transfer_class_was_not_the_predicted_one': (
-                'Thirteen entries are restated by a LIVE specification section as standing '
-                'do-not-retry prohibitions (ARCHITECTURE.md:306, :1344, :1420), and docs/redesign_plan.md:4 '
+                'The largest transfer class — its size is counts.transfer["live-prohibition-in-spec"] '
+                'above, not typed here (D-431) — is entries restated by a LIVE specification section '
+                'as standing do-not-retry prohibitions, on the chord layer, the key layer, the search '
+                'and, since 2026-08-09, the declared mode\'s weight; docs/redesign_plan.md:4 '
                 'states the distinction in its own words: "LIVE prohibitions about the legacy chord '
                 'path". The mark is RIGHT about the subject and the entry still binds what a future '
                 'designer may attempt. That is a third thing a mark can be, beside "about live code" '

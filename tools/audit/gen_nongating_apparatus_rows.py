@@ -93,6 +93,35 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-354": (GATES, "the clause that overrides the criterion - an establishment obligation (#19) "
+                      "always gates, whatever its subject, including one whose subject is this "
+                      "project's own tracking apparatus",
+               "The legacy-mark verification's authored verdict table no longer covers the derived "
+               "legacy-marked set, and OI-289's status of record is a completed VERIFICATION over "
+               "that set. So a verification recorded as established describes a population smaller "
+               "than the one it names. THE FIRST-CUT CLASSIFICATION IS RIGHT ABOUT THE SUBJECT and "
+               "is not disputed: the subject is the decisions register's own verification "
+               "apparatus, it bears on no analysis, no analysis input and no measurement tool any "
+               "measurement of the analysis depends on, and the documentation criterion alone would "
+               "put it outside the gate. WHAT DECIDES IT IS THE OTHER CLAUSE, stated once in "
+               "`CLAUDE.md`'s own non-gating declaration and not discretionary there: an "
+               "establishment obligation always gates, whatever its subject, and the declaration "
+               "names an obligation whose subject is the open-items register itself as covered. "
+               "This is one -- #19 exists because a thing merely unfalsified is not established, "
+               "and this claim was unfalsified only because the tool that would have falsified it "
+               "was stopping earlier on an unrelated drifted citation. Backgrounding it is how it "
+               "never happens, which the declaration gives as its own reason for the clause. "
+               "Recorded against the row's SUBJECT, never its remedy -- and the remedy is "
+               "deliberately open, since who may author the owed per-entry verdicts is exactly what "
+               "the row leaves to the user.",
+               "RESOLVED 2026-08-09 - the user ruled the question the row reserved (Ruling 18 of "
+               "`cowork_rulings_2026_08_09_third_stop.md` settled WHOSE act the establishment is; "
+               "Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md` ratified the reviewed "
+               "verdict set and ordered it applied). The verdict was correct while it stood and is "
+               "kept whole (#12); it is retired because the row closed, never because it was wrong "
+               "- and its own ground held to the end, since what discharged the row was the "
+               "establishment it named, performed by one session and cleared by another act on the "
+               "user's ruling, which is the separation D-655 records."),
     "OI-300": (GATES, "an establishment obligation (#19) - the exemption, not the criterion",
                "Its whole subject is a mechanism's MEASURED false-deny and detection rates over "
                "two shapes its corpora do not contain. Classified GATES on the exemption alone, "
@@ -639,27 +668,21 @@ V = {
                "behaviour is what the configuration says. Recorded against the row's SUBJECT, "
                "never its remedy; the remedy is a `src/` edit no wave under the phase-1 freeze may "
                "make."),
-    "OI-354": (GATES, "the clause that overrides the criterion - an establishment obligation (#19) "
-                      "always gates, whatever its subject, including one whose subject is this "
-                      "project's own tracking apparatus",
-               "The legacy-mark verification's authored verdict table no longer covers the derived "
-               "legacy-marked set, and OI-289's status of record is a completed VERIFICATION over "
-               "that set. So a verification recorded as established describes a population smaller "
-               "than the one it names. THE FIRST-CUT CLASSIFICATION IS RIGHT ABOUT THE SUBJECT and "
-               "is not disputed: the subject is the decisions register's own verification "
-               "apparatus, it bears on no analysis, no analysis input and no measurement tool any "
-               "measurement of the analysis depends on, and the documentation criterion alone would "
-               "put it outside the gate. WHAT DECIDES IT IS THE OTHER CLAUSE, stated once in "
-               "`CLAUDE.md`'s own non-gating declaration and not discretionary there: an "
-               "establishment obligation always gates, whatever its subject, and the declaration "
-               "names an obligation whose subject is the open-items register itself as covered. "
-               "This is one -- #19 exists because a thing merely unfalsified is not established, "
-               "and this claim was unfalsified only because the tool that would have falsified it "
-               "was stopping earlier on an unrelated drifted citation. Backgrounding it is how it "
-               "never happens, which the declaration gives as its own reason for the clause. "
-               "Recorded against the row's SUBJECT, never its remedy -- and the remedy is "
-               "deliberately open, since who may author the owed per-entry verdicts is exactly what "
-               "the row leaves to the user."),
+    "OI-359": (GATES, "the criterion - the subject is an instrument a measurement of the analysis "
+                      "depends on",
+               "The per-corpus half of a ratified measurement convention has no mechanism, and the "
+               "split that does exist is by PRESET, which answers a different question. THE "
+               "FIRST-CUT CLASSIFICATION REACHED THIS ROW and the verdict is authored for it here, "
+               "which is what the tool requires; no non-gating verdict is hand-added, which is the "
+               "act the record forbids. It GATES on the criterion itself rather than on the "
+               "exemption: the subject is the ENFORCEMENT of a rule about how a measurement of the "
+               "analysis is reported, so it bears on an instrument every published figure depends "
+               "on, and D-438's test is answered YES directly. What is owed is not a pointer, an "
+               "anchor, a label, a banner, a filing decision or a section boundary -- it is a "
+               "mechanism for a convention whose own stated reason is that a single aggregate can "
+               "hide which corpus moved (#9, #24). Recorded against the row's SUBJECT, never its "
+               "remedy: the remedy is a mechanism build the user's own ruling deliberately did not "
+               "start, and it joins the D-436 backlog."),
     "OI-358": (GATES, "two independent grounds - D-438's line, and the clause that overrides the "
                       "criterion (an establishment obligation, #19, always gates)",
                "Five consecutive register entries quote a DIFFERENT rule than their own title, "

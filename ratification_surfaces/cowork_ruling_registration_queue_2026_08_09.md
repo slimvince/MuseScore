@@ -1,6 +1,14 @@
 # The twenty-three unregistered rulings — which the decisions register should CARRY, and which are exercises of decisions it already holds
 
-> **STATUS: AWAITING THE USER. NO REGISTER ENTRY IS WRITTEN BY THIS FILE**, and nothing here
+> **★ STATUS: RULED 2026-08-09 — the user's Ruling 20 of `cowork_rulings_2026_08_09_fourth_stop.md`
+> ratifies these verdicts AS PROPOSED, with BOTH downgradables KEPT as decisions.** The entries were
+> written in ONE commit by `cc_instruction_return_continuation_4.md` Task 0, at the homes §4 proposes.
+> **The outcome, per ruling, is recorded in §6 below**, which is this file's closing state and the only
+> part added after the ruling. Nothing above §6 is re-decided, re-worded or removed (#12): the verdicts
+> and their grounds stand as they were put to the user.
+>
+> **STATUS BEFORE THE RULING, preserved as written: AWAITING THE USER. NO REGISTER ENTRY IS WRITTEN BY
+> THIS FILE**, and nothing here
 > ratifies, shelves, supersedes or reworks any decision. Written 2026-08-09 (CC,
 > `cc_instruction_return_continuation_2.md` Task 1) on the user's **Ruling 12 of 2026-08-09**
 > (`cowork_rulings_2026_08_09_second_stop.md`): CC drafts the per-ruling classification as a
@@ -156,6 +164,58 @@ about whether the ruling was right. It moves no status, homes nothing, and autho
 touches no `src/`, no golden, no corpus of scores and nothing in `tools/robust_stop/`.
 
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+---
+
+## 6. THE CLOSING STATE — what the ruling did, per ruling
+
+**Added 2026-08-09 by `cc_instruction_return_continuation_4.md` Task 0, after the user's Ruling 20.**
+Nothing above this section is altered by it.
+
+**The verdicts are RULED AS PROPOSED. Both entries this file flagged as reasonably downgradable —
+12 and 18 — are KEPT as DECISIONS**, on the user's stated ground that keeping them is the cheaper
+insurance. So the file's own alternative readings for those two are recorded and not taken.
+
+**TEN register entries were written, in one commit, at the homes §4 proposes.** Each carries its
+verbatim taken from the home text after that text was written, its plain restatement, its defense,
+and a provenance field recording that the user ruled the CLASSIFICATION and the HOME while the entry
+text itself was written afterwards — so **no new entry carries an entry-ratification event, and
+nothing here is self-ratifying (#14)**.
+
+| Queue row | Register entry | Home written |
+|---|---|---|
+| **A** — the epoch treatment | **D-646** | `cowork_audit_protocol.md`, dispatch-protocol block |
+| **D** — deny-on-indeterminate + the interpreter ceiling | **D-647** | `cowork_audit_protocol.md`, beside the three measured conditions |
+| **4b** — authored-input maintenance versus a mechanism change | **D-648** | `cowork_audit_protocol.md`, against the mechanism-change reservation |
+| **5** — the homing pattern for a contradicted decision | **D-649** | `cowork_audit_protocol.md`, beside the removal form |
+| **7 + 11** — the verbatim-comparison condition and its side-by-side remedy | **D-650** | `cowork_audit_protocol.md`, beside 5 |
+| **10** — OI-179's commissioning and its exhaustion rule | **D-651** | `CLAUDE.md`, principle #21's block beside D-474 |
+| **12** — how rule (c) is discharged once missed | **D-652** | `CLAUDE.md`, the decisions-register section |
+| **15** — the non-equivalence requirement | **D-653** | `cowork_audit_protocol.md`, beside 5 and 7 + 11 |
+| **17** — the reported-widening clause | **D-654** | `cowork_audit_protocol.md`, beside the licence-scope subsection |
+| **18** — authoring does not clear | **D-655** | `cowork_audit_protocol.md`, beside the always-gates clause |
+
+**THIRTEEN are CONFIRMED AS EXERCISES and carry no register entry: B, C, and Rulings 1, 2, 3, 4a, 6,
+8, 9, 13, 14, 16, 19.** Each is fully recorded in the provenance of the act it licensed, which is
+where every one of them already was; confirming the classification changes nothing about any of
+them.
+
+**★ ONE THING IN §4 WAS STALE WHEN THE RULING WAS TAKEN, AND IS REPORTED RATHER THAN QUIETLY
+CORRECTED.** §4's own heading says *"for the seven"*, which was true of the table as first written
+and was made untrue by the 2026-08-09 extension that appended two further rows beneath it — the
+extension added the rows and did not touch the heading. **The heading is left as it stands** (#12,
+and this file is a delivered decision surface), and the enumeration above is taken from the §4
+TABLES rather than from that count, which is what Ruling 20 names when it says *"homes as proposed in
+the queue's §4"*. Nothing turned on it: every proposed DECISION has exactly one proposed home in
+those tables, and all ten were written.
+
+**★ AND THE REGISTER-CONTENT QUESTION §3 CARRIED IS ANSWERED IN THE SAME ACT, by a separate ruling.**
+Ruling 21 rules that D-291's measurement half DOES warrant its own register identifier: it is now
+**D-656**, homed where Ruling 11 put it, with **D-291** keeping the build half and the two
+cross-referencing each other. The ground is that an ENTRY is the register's findability unit — the
+same reasoning as Ruling 11, one level up.
+
+---
 
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the

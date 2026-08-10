@@ -162,7 +162,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 358 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 359 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -459,10 +459,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 645",
+        "backbone decisions: 656",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 645/645",
-        "cited line numbers correct: 639/639   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 656/656",
+        "cited line numbers correct: 650/650   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -603,10 +603,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 2,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "STOP: derived entries with NO authored verdict (the tool will not guess one): D-536, D-537, D-538, D-564, D-568, D-571, D-572, D-575, D-579, D-580, D-583"
+        "phase1w: A1 held; 92 entries derived; 35 anchors located; 5 recorded figures located"
       ],
       "stderr": [],
       "what_it_checks": "the legacy-mark verification re-derives, and its declared premises still hold"
@@ -674,7 +674,8 @@
         "  the chord layer: ARCHITECTURE.md:1860 lists 10 entry(ies)",
         "  the key layer: ARCHITECTURE.md:1656 lists 2 entry(ies)",
         "  the search: ARCHITECTURE.md:315 lists 3 entry(ies)",
-        "class members (derived from the verification): 13",
+        "  the declared mode's weight: ARCHITECTURE.md:4199 lists 1 entry(ies)",
+        "class members (derived from the verification): 14",
         "every live-prohibition entry carries its pointer, as derived"
       ],
       "stderr": [],
@@ -686,7 +687,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=358 detail=358 baseline=200 post-baseline=158",
+        "living mode: index=359 detail=359 baseline=200 post-baseline=159",
         "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
@@ -708,16 +709,9 @@
   ],
   "summary": {
     "run": 35,
-    "passing": 34,
-    "failing": 1,
-    "failing_tools": [
-      {
-        "tool": "tools/audit/decisions/gen_phase1w_legacy_verification.py",
-        "args": [
-          "--check"
-        ]
-      }
-    ],
+    "passing": 35,
+    "failing": 0,
+    "failing_tools": [],
     "not_run": 2,
     "historical_records": 10
   }

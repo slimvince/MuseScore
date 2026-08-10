@@ -1,6 +1,21 @@
 # The eleven uncovered legacy-marked entries — reachability and transfer verdicts, for the user's review
 
-> **STATUS: AWAITING THE USER. THESE VERDICTS CLEAR NO GUARD**, and nothing here changes a mark, a
+> **★ STATUS: RULED AND APPLIED 2026-08-09 — the user's Ruling 23 of
+> `cowork_rulings_2026_08_09_fourth_stop.md`.** Ten of the eleven verdicts stand WHOLE. **D-580's
+> TRANSFER cell stays UNDETERMINED pending Ruling 27**, which orders a read-only fact-gathering pass
+> over D-580's and D-429's full records before any transfer verdict is taken — so that cell is a RULED
+> state and not an unfinished one. The reviewed set and the §4 anchor were applied to
+> `tools/audit/decisions/gen_phase1w_legacy_verification.py` by
+> `cc_instruction_return_continuation_4.md` Task 0, in a commit citing this ruling; **the standing
+> guard failure clears there and not before**, and [[OI-354]] flips on it — the
+> authoring-does-not-clear separation honored end to end (**D-655**). **★ APPLYING IT EXPOSED THE SAME
+> LAYERED-STOP SHAPE ONE CONSTRUCT ON:** with the uncovered-entry STOP satisfied, the anchor loop that
+> follows it ran for the first time since the drift began and found eight `ARCHITECTURE.md` evidence
+> anchors moved; each was re-aimed per the tool's own reported line, which is authored-input
+> maintenance (**D-648**). Nothing below is altered (#12).
+>
+> **STATUS BEFORE THE RULING, preserved as written: AWAITING THE USER. THESE VERDICTS CLEAR NO
+> GUARD**, and nothing here changes a mark, a
 > status, a home or a register entry. Written 2026-08-09 (CC,
 > `cc_instruction_return_continuation_3.md` Task 1) on the user's **Ruling 18 of 2026-08-09**
 > (`cowork_rulings_2026_08_09_third_stop.md`): a session performs the owed establishment for every

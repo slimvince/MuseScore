@@ -13,7 +13,7 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 357,
+  "rows_parsed": 358,
   "open_rows": 255,
   "first_cut_candidates": 63,
   "first_cut_vocabulary": [
@@ -145,9 +145,6 @@
     "OI-239",
     "OI-57"
    ],
-   "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject, including one whose subject is this project's own tracking apparatus": [
-    "OI-354"
-   ],
    "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side": [
     "OI-353"
    ],
@@ -159,6 +156,9 @@
    ],
    "the criterion - the row's subject bears on what the emission reads": [
     "OI-324"
+   ],
+   "the criterion - the subject is an instrument a measurement of the analysis depends on": [
+    "OI-359"
    ],
    "the default - out of the declared class": [
     "OI-154"
@@ -644,20 +644,20 @@
    "gate_ground": "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side"
   },
   {
-   "id": "OI-354",
-   "title": "★ **The legacy-mark verification's population has GROWN since it was declared verified, and a drifted citation hid that** — register entries now carry the legacy mark for which [[OI-289]]'s ✅ VERIFIED artifact holds no verdict",
-   "subject_column": "E — verification owed / decisions register",
-   "verdict": "GATES",
-   "reason": "The legacy-mark verification's authored verdict table no longer covers the derived legacy-marked set, and OI-289's status of record is a completed VERIFICATION over that set. So a verification recorded as established describes a population smaller than the one it names. THE FIRST-CUT CLASSIFICATION IS RIGHT ABOUT THE SUBJECT and is not disputed: the subject is the decisions register's own verification apparatus, it bears on no analysis, no analysis input and no measurement tool any measurement of the analysis depends on, and the documentation criterion alone would put it outside the gate. WHAT DECIDES IT IS THE OTHER CLAUSE, stated once in `CLAUDE.md`'s own non-gating declaration and not discretionary there: an establishment obligation always gates, whatever its subject, and the declaration names an obligation whose subject is the open-items register itself as covered. This is one -- #19 exists because a thing merely unfalsified is not established, and this claim was unfalsified only because the tool that would have falsified it was stopping earlier on an unrelated drifted citation. Backgrounding it is how it never happens, which the declaration gives as its own reason for the clause. Recorded against the row's SUBJECT, never its remedy -- and the remedy is deliberately open, since who may author the owed per-entry verdicts is exactly what the row leaves to the user.",
-   "gate_ground": "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject, including one whose subject is this project's own tracking apparatus"
-  },
-  {
    "id": "OI-358",
    "title": "★ **Five consecutive register entries quote a DIFFERENT rule than their own title, plain restatement and defense describe — one quotes a section heading — and BOTH guards pass over it, because each verifies that the verbatim sits at the cited line and neither asks whether it is the rule the entry is about**",
    "subject_column": "E — verification owed / decisions register",
    "verdict": "GATES",
    "reason": "Five consecutive register entries quote a DIFFERENT rule than their own title, restatement and defense describe; one quotes a section heading. THE FIRST-CUT CLASSIFICATION IS RIGHT ABOUT THE SUBJECT -- this is the decisions register's own content -- and is not disputed. TWO THINGS DECIDE IT ANYWAY, either sufficient. (1) D-438's line inside the documentation rows puts a correction to a statement about the analysis on the gating side, and what is owed here is not a pointer, an anchor, a label, a banner, a filing decision or a section boundary: five entries STATE ONE RULE'S IDENTITY OVER ANOTHER RULE'S WORDS, so a reader of the register learns the wrong rule about the scorer. (2) Independently an establishment obligation: the register's own verbatim check and the disposition verifier BOTH PASS over the corrupted pairs, because once the verbatim is the text at the drifted line the two agree with each other permanently -- so two green verdicts do not bound what they appear to bound, which is the shape #19 refuses. Recorded against the row's SUBJECT, never its remedy -- and the remedy is deliberately open, since whether a corrupted verbatim is re-taken from the correct bullet or the wrong quote is preserved beside it (#12) is a filing judgment about the register's own unit.",
    "gate_ground": "two independent grounds - D-438's line, and the clause that overrides the criterion (an establishment obligation, #19, always gates)"
+  },
+  {
+   "id": "OI-359",
+   "title": "★ **Nothing checks that a measurement reported over several repertoires is broken down BY repertoire** — the per-corpus half of a ratified measurement convention has no mechanism, and the cut that does exist is by PRESET, which is a different question",
+   "subject_column": "D — instrument / measurement layer (the mechanisation triage over the governing document's own rules)",
+   "verdict": "GATES",
+   "reason": "The per-corpus half of a ratified measurement convention has no mechanism, and the split that does exist is by PRESET, which answers a different question. THE FIRST-CUT CLASSIFICATION REACHED THIS ROW and the verdict is authored for it here, which is what the tool requires; no non-gating verdict is hand-added, which is the act the record forbids. It GATES on the criterion itself rather than on the exemption: the subject is the ENFORCEMENT of a rule about how a measurement of the analysis is reported, so it bears on an instrument every published figure depends on, and D-438's test is answered YES directly. What is owed is not a pointer, an anchor, a label, a banner, a filing decision or a section boundary -- it is a mechanism for a convention whose own stated reason is that a single aggregate can hide which corpus moved (#9, #24). Recorded against the row's SUBJECT, never its remedy: the remedy is a mechanism build the user's own ruling deliberately did not start, and it joins the D-436 backlog.",
+   "gate_ground": "the criterion - the subject is an instrument a measurement of the analysis depends on"
   },
   {
    "id": "OI-150",
@@ -739,6 +739,12 @@
     "class_basis_or_ground": "the criterion - D-438's line puts specification completion on the gating side",
     "reason": "Whether criterion C1 reaches SUPERSEDED register entries is unruled: the per-kind scheme said to settle it does not carry that kind, and read at its own text it routes those entries the OPPOSITE way -- into the owning specification, the very act the ruling exists to forbid. WHAT IS OWED decides it, and what is owed here is not a pointer, an anchor, a label, a banner or a filing choice: it is WHICH DECISIONS PHASE 1 MUST WRITE INTO A SPECIFICATION. D-438's line names that side explicitly -- 'the completion of a specification GATES, because the phase-1 rule in Conventions makes specifications COMPLETE and TRUE the thing that precedes everything else.' The reach is not one entry: item 1's whole NO-HOME class has no closing act until it is ruled, so the finish line cannot report that item as dischargeable. Recorded against the row's SUBJECT, never its remedy.",
     "closed": "RESOLVED 2026-08-04 - the user ruled the question the row put (D-642), on the basis the row itself named. The verdict was correct while it stood and is kept whole (#12); it is retired because the row closed, never because it was wrong."
+   },
+   "OI-354": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject, including one whose subject is this project's own tracking apparatus",
+    "reason": "The legacy-mark verification's authored verdict table no longer covers the derived legacy-marked set, and OI-289's status of record is a completed VERIFICATION over that set. So a verification recorded as established describes a population smaller than the one it names. THE FIRST-CUT CLASSIFICATION IS RIGHT ABOUT THE SUBJECT and is not disputed: the subject is the decisions register's own verification apparatus, it bears on no analysis, no analysis input and no measurement tool any measurement of the analysis depends on, and the documentation criterion alone would put it outside the gate. WHAT DECIDES IT IS THE OTHER CLAUSE, stated once in `CLAUDE.md`'s own non-gating declaration and not discretionary there: an establishment obligation always gates, whatever its subject, and the declaration names an obligation whose subject is the open-items register itself as covered. This is one -- #19 exists because a thing merely unfalsified is not established, and this claim was unfalsified only because the tool that would have falsified it was stopping earlier on an unrelated drifted citation. Backgrounding it is how it never happens, which the declaration gives as its own reason for the clause. Recorded against the row's SUBJECT, never its remedy -- and the remedy is deliberately open, since who may author the owed per-entry verdicts is exactly what the row leaves to the user.",
+    "closed": "RESOLVED 2026-08-09 - the user ruled the question the row reserved (Ruling 18 of `cowork_rulings_2026_08_09_third_stop.md` settled WHOSE act the establishment is; Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md` ratified the reviewed verdict set and ordered it applied). The verdict was correct while it stood and is kept whole (#12); it is retired because the row closed, never because it was wrong - and its own ground held to the end, since what discharged the row was the establishment it named, performed by one session and cleared by another act on the user's ruling, which is the separation D-655 records."
    }
   }
  },

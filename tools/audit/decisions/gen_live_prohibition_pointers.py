@@ -58,12 +58,27 @@ use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 
 CLASS = "live-prohibition-in-spec"
 
-# The three do-not-retry lines, by the words they open with. The line numbers are DERIVED below by
+# The do-not-retry lines, by the words they open with. The line numbers are DERIVED below by
 # locating these phrases, never typed -- so a moved line re-aims itself and a reworded one STOPS.
+# The third field is the DATE THE LINE NUMBER WAS OBSERVED, which the pointer states as an
+# observation rather than as a current fact (see the docstring). It is per section because the
+# sections were not all added on the same day, and a single hard-coded date would make the pointer
+# for a later-added section say something untrue.
+#
+# ADDED 2026-08-09: the declared mode's weight, with the OI-354 verdict set (user, Ruling 23 of
+# `cowork_rulings_2026_08_09_fourth_stop.md`). D-572 entered the derived class in that act and this
+# tool STOPPED, correctly, because its authored table held no line listing that entry -- authoring
+# the row for a member the derived cut DID reach is what the tool requires. NOTE THE CONSTRUCTION
+# DIFFERENCE, which is why the opening phrase is the one below rather than the heading words: this
+# prohibition is written over two lines, and the identifiers sit on the SECOND. The opening phrase
+# must therefore be taken from the line that carries the identifier, because that is the line this
+# tool reads them off.
 SECTIONS = [
-    ("the chord layer", "**Tried and closed on the chord layer — do not retry;"),
-    ("the key layer", "**Tried and closed on this layer — do not retry;"),
-    ("the search", "*Tried and closed on the search — do not retry;"),
+    ("the chord layer", "**Tried and closed on the chord layer — do not retry;", "2026-08-03"),
+    ("the key layer", "**Tried and closed on this layer — do not retry;", "2026-08-03"),
+    ("the search", "*Tried and closed on the search — do not retry;", "2026-08-03"),
+    ("the declared mode's weight",
+     "— do not retry; the register carries it with its evidence: D-572", "2026-08-09"),
 ]
 
 MARKER = "**A LIVE specification section restates this as binding:**"
@@ -77,7 +92,7 @@ def locate_sections() -> list[dict]:
     """Find each do-not-retry line, and read the entry identifiers it actually lists."""
     lines = open(ARCHITECTURE, encoding="utf-8", errors="replace").read().splitlines()
     found = []
-    for label, opening in SECTIONS:
+    for label, opening, observed in SECTIONS:
         hits = [(i, ln) for i, ln in enumerate(lines, 1) if opening in ln]
         if len(hits) != 1:
             raise Stop(f"the do-not-retry line for {label} is not uniquely locatable in "
@@ -86,13 +101,15 @@ def locate_sections() -> list[dict]:
         line_no, text = hits[0]
         ids = sorted({tok.strip(".,;:*_`)") for tok in text.replace("(", " ").split()
                       if tok.strip(".,;:*_`)").startswith("D-")})
-        found.append({"label": label, "line": line_no, "ids": ids, "text": text})
+        found.append({"label": label, "line": line_no, "ids": ids, "text": text,
+                      "observed": observed})
     return found
 
 
-def pointer_for(sections: list[str], lines: list[int], phrases: list[str]) -> str:
-    where = "; ".join(f"{s} (at line {n} on 2026-08-03), under *\"{p}\"*"
-                      for s, n, p in zip(sections, lines, phrases))
+def pointer_for(sections: list[str], lines: list[int], phrases: list[str],
+                observed: list[str]) -> str:
+    where = "; ".join(f"{s} (at line {n} on {o}), under *\"{p}\"*"
+                      for s, n, p, o in zip(sections, lines, phrases, observed))
     return (f" {MARKER} `ARCHITECTURE.md` — {where}. The LEGACY mark above says this decision's "
             f"SUBJECT is dormant; what is named there says the prohibition still constrains what "
             f"a future design may attempt, and the two are not the same claim. Pointer only — "
@@ -117,6 +134,7 @@ def apply(backbone: dict, members: dict, located: list[dict]) -> list[str]:
             [h["label"] for h in hits],
             [h["line"] for h in hits],
             [h["text"].strip("*> ").split(";")[0] for h in hits],
+            [h["observed"] for h in hits],
         )
         touched.append(did)
     return touched

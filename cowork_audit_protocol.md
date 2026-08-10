@@ -343,6 +343,84 @@ retires any prose, which is why they failed the withdrawn test and is not a defe
 The guard's third condition is met only while it is ARMED; until it is, that is recorded as an
 expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292).
 
+### When a shell-read policy cannot decide, it DENIES — and the ceiling it cannot see is published in the measured rate
+
+**Ruled by the user, 2026-08-08** (`cowork_ruling_guard_family_2026_08_08.md`, clauses 4 and 2).
+Two standing statements about the guard that enforces the working-tree-read rule, both of which
+bind beyond the act that introduced them.
+
+**DENY ON INDETERMINATE, adopted as standing policy.** Where the guard cannot decide whether a
+command reads working-tree content — the ruling's own case is a shell variable it has not
+expanded — it DENIES. *Why, in the ruling's own asymmetry:* **a false deny costs a retry through
+the file tools; a false admit costs an unverified read through the very mount whose measured
+stale-content failure created the working-tree-read rule.** The two errors are not the same size,
+so the policy is a consequence of that difference rather than a preference between them.
+
+**AND THE POLICY'S CEILING IS PUBLISHED IN THE MEASURED RATE RATHER THAN LEFT SILENT.** Interpreter
+code — a `python -c` or `perl -e` code string, or a heredoc body fed to one — is decided by policy
+and not by a model of the language: a code string carrying a LITERAL path this repository holds is
+denied, and anything else is admitted. **A code string that COMPUTES its path carries no literal
+for any policy to see, and is therefore admitted**; that residual is carried as a row of the
+establishment corpus, so the published deny rate REPORTS it. *Why the ceiling must be published
+rather than merely known:* the guard cannot parse interpreter code, and a policy behaving as though
+it could would be a structural proxy standing in for a behavioral quantity, unvalidated — which
+principle #17(d) forbids — while a rate measured over a corpus that excludes the shape the guard
+cannot see bounds less than it appears to (#19). **A session that does not know the ceiling reads
+the published rate as covering more than it does.**
+
+**What this does not authorize.** No fix to the analysis, no design, no inference change, and no
+further widening of the guard: a widening is a mechanism change, which stays the user's.
+
+### Moving an authored judgment WHOLE into a retired block is MAINTENANCE, not a mechanism change
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_return.md`, Ruling 4(b)). A generated
+pass whose inputs are partly AUTHORED — a per-document judgment, a per-entry verdict, a per-row
+classification — STOPS when one of those inputs names something the tree no longer has. **Moving
+that judgment WHOLE into the pass's own retired block, with the reason it retired and with nothing
+deleted (#12), is AUTHORED-INPUT MAINTENANCE, and a session performs it. It is not a mechanism
+change**, so the reservation stated immediately above — that a mechanism's fate is decided by the
+user — is not engaged by it.
+
+**Where the line falls, stated so it is mechanical rather than a matter of taste.** What is admitted
+is a judgment FOLLOWING ITS SUBJECT: the subject left the pass's population, and the judgment goes
+with it, unaltered, into the record of what the pass once judged. What is NOT admitted is
+re-deciding that judgment, deleting it, authoring a new judgment for a subject the pass's own cut
+did not reach, or changing the rule by which judgments are made — each of those is a mechanism
+change. A retired judgment is protected in the other direction too: resurrecting one without
+re-reading it STOPS the pass, so retirement is not a quiet way of dropping an authored input.
+
+*Why it needs stating:* the two acts look alike at the diff, and a session that cannot tell them
+apart either returns to the user on every stale authored input or edits mechanisms under the cover
+of maintenance. It is recorded because the same shape recurred repeatedly across consecutive
+batches, each time as a pass REFUSING TO RUN rather than as a defect a reader happened to notice —
+which is those passes' own STOPs working.
+
+### A generated record that must outlive its own writer is FROZEN at an established snapshot, and the freeze is a hash STOP
+
+**Ruled by the user, 2026-08-08** (`cowork_rulings_2026_08_08_pre_away.md`, Ruling 1). **Where a
+generated artifact RECORDS WHAT A PASS FOUND and the tool that writes it must go on running, the
+artifact is declared HISTORICAL and frozen at an ESTABLISHED SNAPSHOT; the writer then runs at HEAD;
+and the freeze is enforced by a STOP on the snapshot's own bytes.** The writing tool carries one
+frozen CLASS EPOCH per completed pass on the same construction, so no value an earlier pass recorded
+is overwritten by a later one (#12).
+
+**Why the RECORD is frozen rather than the WRITER held.** The hazard is that a later wave regenerates
+the record and the pass's findings go with it. The remedy previously in use was to HOLD the writer,
+which stops a live derivation for as long as the record must survive — and which did not work: the
+held run was performed by more than one later wave, and what preserved the record was the snapshot,
+not the hold. The ruling's own words for the remedy are that the hazard is *"discharged by freezing
+rather than by holding the writer forever"* — the epoch treatment a tool already applies to its own
+fields, applied one level up, to the artifact.
+
+**What makes the freeze a mechanism rather than a convention.** The snapshot's bytes are hashed and
+re-checked on every run of the writing tool, so a regeneration over the record STOPS instead of
+succeeding quietly. A promise in prose is exactly what #19 refuses to treat as established. The tool
+that performs the freeze states the whole arrangement in its own docstring, which is what the
+register points at rather than a second copy of the rule (#6).
+
+**What it does not authorize.** No fix to the analysis, no design and no inference change. It says
+how a record-bearing generated artifact is kept, and nothing else.
+
 ### A finding that bears on the analysis is SURFACED whatever its size; an apparatus finding is ROWED AND LEFT
 
 **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_commit_and_finish_line.md`, R3). Every
@@ -391,6 +469,30 @@ mandatory, and the open-items register's rule (c) still requires the row and its
 commit that records the discovery. It is not a claim that apparatus defects are harmless. And it
 does not decide what PHASE 1 OWES: D-231's clause and D-639 decide that, and D-639 says in terms
 that what a stage waits on and what phase 1 owes are different tests with different subjects.
+
+### A session may AUTHOR an establishment; its verdicts clear no guard until the reviewed set is applied
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_third_stop.md`, Ruling 18). The block
+immediately above says WHEN an establishment obligation starts gating. This says how it STOPS.
+**A session is licensed to perform an owed establishment and to author its verdicts — by the
+originating pass's own method and by no invented one (#6, #16) — and those verdicts CLEAR NO GUARD
+when they are written.** They are delivered as a ratification-surface reading file; the standing
+check goes on failing, deliberately, across the authoring session; and it clears only when the
+REVIEWED set is applied, in a commit that cites the user's ruling on it. **Authoring and clearing
+are two acts by two parties, and a session performs only the first.**
+
+*Why the separation rather than a licence to author and apply in one act:* the objection this
+answers was never that the work is hard. It is that **verdicts written in order to clear a guard are
+the weakest establishment there is** — the session's own unreviewed judgment discharging the
+session's own obligation, which is what #14 and #19 exist against. The remedy is structural rather
+than exhortative: nothing self-ratifies, because at the moment of writing there is nothing the
+verdicts could ratify. It also costs the user nothing to disagree, since a verdict the user rejects
+is one line in a reading file rather than an edit that has to be unwritten.
+
+**What it does not authorize.** It does not weaken the always-gates clause above, it does not permit
+a verdict authored outside the originating pass's method — a session meeting a case that method does
+not cover states the gap rather than substituting a method of its own — and it moves no status that
+the reviewed application does not move. No fix to the analysis, no design, no inference change.
 
 ### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor
 
@@ -481,6 +583,71 @@ misdescribing the code.
 re-classification of any entry's home class. It says what the owning specification owes for one shape
 of entry, and nothing else.
 
+### Where the implementation CONTRADICTS the decision being homed, the shelving is written in AS a shelving, the contradiction stated beside it, and the questions POINTED at their rows
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_return.md`, Ruling 5). Same family as
+the two rules above: a FORM for writing a decision into a specification when the plain form would
+state something false. **Where the record says a later build specified the opposite of the decision
+being homed, the decision is written into its owning section AS WHAT IT IS — a shelving as a
+shelving, a deferral as a deferral — the later build's contradiction is stated BESIDE it in a marked
+block, and the two questions that would need a judgment (does the implementation conform, and what
+should the rule now be) are POINTED at the rows that own them. NO VERDICT IS TAKEN either way.**
+
+**The pre-act check the form carries.** The receiving section must STATE RULES rather than record
+findings — the register's own kind test for a home — read before any home text is written. A
+findings-recording section is a STOP back to the user, not a home to be argued into one.
+
+*Why the form exists:* without it, a decision the implementation contradicts cannot be homed at all.
+Writing it plainly states a rule the code does not follow; omitting it leaves the decision with no
+home and criterion C1 with no closing act; and deciding which of the two is right is a judgment about
+the analysis that a filing act may not take. The form lets the record become COMPLETE without
+becoming untrue — **both facts visible, neither adjudicated** — which is exactly the split D-231's
+own phase 1 draws between making the specifications complete and true, and fixing what they then
+expose. It is now a twice-ruled, named pattern rather than a one-off treatment.
+
+### Two same-dated texts are compared VERBATIM before either is retired into the other; where they bind different acts they are homed SIDE BY SIDE
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_return.md`, Ruling 7, and
+`cowork_rulings_2026_08_09_second_stop.md`, Ruling 11 — one method, recorded as one rule because the
+test and the remedy are useless apart). Same family as the form above.
+
+**THE CONDITION.** Before a recorded decision is treated as ONE DECISION RECORDED TWICE and retired
+into a text that appears to duplicate it, **the two texts are compared VERBATIM, at their sources,
+and any BINDING difference is a STOP back to the user.** Sharing a date, an argument, a source and a
+vocabulary is not the test; what the two texts FORBID is.
+
+**THE REMEDY, where the condition fires.** They are two decisions, and they are homed **SIDE BY SIDE
+in the same section, each cross-referencing the other**, with the more specific prohibition carried
+in the words it was recorded in — never merged into one widened text. *Why side by side rather than
+merged:* #6 forbids two homes for ONE rule, and two texts that bind different acts are demonstrably
+two rules, so #6 does not demand the merge; while the merge itself would edit an already-ruled text
+(#14) and risks paraphrasing away the narrower prohibition, which is a loss under #12.
+
+*Why the pair is recorded rather than left to a reader's judgment:* applied at the case that produced
+it, the comparison STOPPED a collapse that would have lost the more specific and more easily violated
+of two prohibitions — a session could have obeyed the surviving text in full while breaching the one
+about to be retired into it. Without the condition in the record, the next session meeting two
+same-dated texts has only the temptation to tidy them into one; without the remedy beside it, a
+session that runs the test correctly is left with a STOP and no form to write the answer in.
+
+### A correction that reconciles a specification to the arm that SHIPS carries the behavioural non-equivalence visibly, as unmeasured
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_second_stop.md`, Ruling 15). The
+doc-sync case of the same family. **Where a specification names one implementation as a rule's
+precondition and the arm that ships meets that precondition by a DIFFERENT design, the correction
+states the requirement rather than the implementation, names the design on each arm — and MUST CARRY
+THE RECORDED BEHAVIOURAL DIFFERENCE BETWEEN THE TWO ARMS VISIBLY, stated as UNMEASURED (#24). It may
+not word the difference away as equivalence, and it may not claim either arm's output is the better
+one.**
+
+*Why the clause is needed on top of the correction itself:* an arm-reconciling correction invites
+exactly one failure — it reads as *the two are the same*, and a real, unmeasured behavioural
+difference disappears into a tidy sentence. That loses information the record held (#12) and asserts
+an equivalence nobody measured (#24), on the surface a later design will treat as the compliance
+reference. The instance that produced the ruling had that shape precisely: two mechanisms meet one
+requirement, one erasing a condition unconditionally and the other only making it expensive, with no
+comparison of the two outputs taken.
+
 ### A homing dispatch may edit three further files, and the license is scoped to homing acts alone
 
 **Ruled by the user, 2026-08-07** (dispatch `cc_instruction_five_rulings.md`, §0a R1). **The edit
@@ -511,3 +678,25 @@ re-classification of any entry's home class, and no edit of these three files fo
 than a homing act. **The dispatch that records the license performs no homing under it**: the ruling
 and its first exercise are deliberately separate acts, so that what the license permits is on the
 record before anything is written under it.
+
+### Where a licence's letter leaves a known falsity standing in the file it licensed, the session CORRECTS it and REPORTS the widening in the same act
+
+**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_third_stop.md`, Ruling 17). The
+subsection above states the SCOPE of a licence. This states the one case that scope does not cover.
+**Where performing a one-edit licence to the letter would leave, in the very file being corrected, a
+second instance of the same falsity made false by the same act, the session CORRECTS THAT INSTANCE
+TOO AND REPORTS THE WIDENING IN THE SAME ACT — naming what it did, why the licence's heading-level
+subject covers it, and what the one edit would be if the narrower scope was meant.**
+
+**The half that keeps this from becoming a precedent, and it is the half worth the care.** A widening
+that is REPORTED is reviewable; a widening that is SILENT is not, and would not have been accepted.
+**The one-edit licensing discipline's narrow-letter default is UNCHANGED for every future licence.**
+This rule does not say a session may read a licence past its letter; it says what a session OWES when
+the letter leaves a known falsity in place — correct it and report it, and do not thereafter treat
+the licence as having been wider.
+
+*Why the correction rather than the letter:* leaving the second instance would ship a statement that
+is false at HEAD, in the very file being edited because its account of itself was false, which the
+doc-sync half of phase 1 does not admit. The excluded alternative is recorded with the ruling —
+reverting the second correction, which would knowingly re-insert a false statement in order to make a
+process point.

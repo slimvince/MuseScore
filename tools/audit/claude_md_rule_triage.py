@@ -320,16 +320,30 @@ TRIAGE: dict[str, tuple[str, str]] = {
                          "constraint on what a reader may conclude. The obligation it creates is "
                          "tracked as an open row (OI-179) and the work it names is a measurement, "
                          "not a check."),
-    "D-486": (EXISTS, "PARTIAL, and the two halves come apart. The COVERAGE DENOMINATOR half is "
-                      "mechanical where it matters: gate block (A)'s figures are regenerated from "
-                      "the measurement's own summary by `tools/robust_stop_restamp.py`, which is "
-                      "established by reproducing the outgoing manifest exactly, so a published "
-                      "figure carries the block it was computed from and cannot be stated at a "
-                      "denominator the run did not have. The PER-CORPUS half is NOT mechanised: "
-                      "the gate corpora are split per PRESET, which is a different cut, and "
-                      "nothing checks that a figure reported over several repertoires is broken "
-                      "down by them. `process_check.py` has only the adjacent shape — it flags a "
-                      "bare quantity, not an aggregate that hides which corpus moved."),
+    # RE-CLASSED 2026-08-09 EXISTS -> OWED on the user's Ruling 22 of
+    # `cowork_rulings_2026_08_09_fourth_stop.md`, applied by
+    # `cc_instruction_return_continuation_4.md` Task 0. The FORMER class and its whole ground are
+    # preserved below (#12); nothing about the two halves' factual account is re-decided, and the
+    # denominator half is still mechanised exactly as that account says.
+    "D-486": (OWED, "PARTIAL IN FACT, AND THE ENTRY IS IN THE DEFECT CLASS ON THE UNCOVERED HALF "
+                    "(user, Ruling 22 of 2026-08-09). The COVERAGE DENOMINATOR half IS "
+                    "mechanical where it matters: gate block (A)'s figures are regenerated from "
+                    "the measurement's own summary by `tools/robust_stop_restamp.py`, which is "
+                    "established by reproducing the outgoing manifest exactly, so a published "
+                    "figure carries the block it was computed from and cannot be stated at a "
+                    "denominator the run did not have. The PER-CORPUS half is NOT mechanised: "
+                    "the gate corpora are split per PRESET, which is a different cut, and "
+                    "nothing checks that a figure reported over several repertoires is broken "
+                    "down by them. `process_check.py` has only the adjacent shape -- it flags a "
+                    "bare quantity, not an aggregate that hides which corpus moved. THE RULING'S "
+                    "GROUND for putting the entry here rather than leaving it partial: the "
+                    "convention's own reason -- a single aggregate can hide which corpus moved -- "
+                    "bears on measurement integrity (#9, #24), so an uncovered half of it is a "
+                    "defect and not merely an absence. THE MECHANISM IS NOT BUILT BY THAT RULING: "
+                    "it joins the D-436 mechanism backlog like every other member of this class, "
+                    "and the re-class carries its own open-items row, OPEN_ITEMS.md OI-359. "
+                    "FORMER CLASS, PRESERVED (#12): MECHANISM-EXISTS, on the account of the two "
+                    "halves given above, which is unchanged."),
     "D-564": (KNOWLEDGE, "A CORRECTION OF RECORD to a recorded apportionment: it says that a "
                          "published share is overstated because over-grabbed segmentation "
                          "corrupts the bass and not only the pitch-class window. What it governs "
@@ -362,6 +376,47 @@ TRIAGE: dict[str, tuple[str, str]] = {
                          "D-210's shared reduction decides how a modal emission is SCORED, in one "
                          "place. This rule decides what a REMAINING disagreement MEANS, which is "
                          "principle #21 applied at the point of reading."),
+    # ── AUTHORED 2026-08-09 (CC, `cc_instruction_return_continuation_4.md` Task 0) ──────────────
+    # The same shape the D-557/D-576/D-638 comments above record, and the shape §2 of the triage
+    # reading file states in general terms: every homing wave that writes a decision into CLAUDE.md
+    # ADDS to this tool's derived population and cannot supply its own class, so the check STOPS
+    # until a session authors one. These three arrived by the user's Ruling 20 and Ruling 21 of
+    # 2026-08-09, and they are triaged here so this check's failure list does not widen by that act
+    # alone (the OI-319 shape). NOTHING HERE IS RATIFIED: the three verdicts are authored proposals
+    # and are recorded as newly owed in the triage reading file's closing state, exactly as the
+    # fifteen before them were.
+    "D-651": (KNOWLEDGE, "A COMMISSIONING plus the rule that ends a contact route. Neither half has "
+                         "a state a checker could read. Whether a reply arrived, and whether a "
+                         "reasonable wait has elapsed, are facts about an external channel that "
+                         "lives outside this repository; and the work the commissioning creates is "
+                         "a MEASUREMENT that opens with phase 2, not a check that fires. The "
+                         "adjacent mechanical question — is a measurement tool being built before "
+                         "phase 2 opens — would have to decide when phase 2 opened, which is the "
+                         "same judgment D-231 is classified KNOWLEDGE for. It sits beside D-474, "
+                         "which is KNOWLEDGE for the neighbouring reason: a fact of absence has "
+                         "nothing for a mechanism to check."),
+    "D-652": (KNOWLEDGE, "The rule turns on a CLASSIFICATION — per accumulated ruling, is this a "
+                         "decision the register carries or the exercise of one it already holds — "
+                         "and that is precisely the judgment no mechanism can make: an exercise "
+                         "correctly carries no entry, so the absence of an entry is not evidence of "
+                         "anything by itself. The adjacent mechanical half is D-230's and is "
+                         "already counted there: a check that a commit touching a ruling surface "
+                         "also touches the register data, which is in that entry's defect class and "
+                         "is not counted twice here. What this rule adds is the recovery procedure "
+                         "once that check would have fired and did not, and a procedure is followed "
+                         "rather than enforced."),
+    "D-656": (KNOWLEDGE, "The prohibition is on one SEMANTIC change to the grading comparison — "
+                         "amending it so that a tonicization label counts as agreeing with the "
+                         "annotator's modulated numeral — and no property of a diff distinguishes "
+                         "that change from a legitimate correction to the same code. A behaviour "
+                         "pin over the grader is the available mechanical form and is explicitly "
+                         "NOT proposed: it would freeze the comparison against ALL change, "
+                         "including the grading corrections the record has repeatedly made and "
+                         "ratified (the exotic-mode reduction, the transposition-offset fix, the "
+                         "home/local key split), so it would fire on legitimate work — the class "
+                         "boundary this tool's own criterion draws. Its side-by-side neighbour "
+                         "D-606 is KNOWLEDGE on the adjacent ground, and the two are separate "
+                         "rules that a session can breach independently."),
     "D-606": (KNOWLEDGE, "A mechanism cannot know that the change in front of it is a modulation "
                          "detector, which is the antecedent the whole rule hangs on — and the "
                          "rule's own reason is that the agreement percentage is GAMEABLE BY THE "
