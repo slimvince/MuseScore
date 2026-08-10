@@ -515,7 +515,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "register patterns compiling: 1223/1223",
+        "register patterns compiling: 1219/1219",
         "derivation dry-run: 14460/14460 clusters, 15224/15224 occurrences — nothing written",
         "OVERALL PASS"
       ],
@@ -530,9 +530,9 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "population: 191 entries / 40 documents",
-        "  before: {'contract-home': 88, 'gap': 103}",
-        "  after:  {'contract-home': 152, 'gap': 39}",
+        "population: 189 entries / 39 documents",
+        "  before: {'contract-home': 88, 'gap': 101}",
+        "  after:  {'contract-home': 152, 'gap': 37}",
         "  moved:  74  (to gap 5, to contract-home 69)",
         "    cowork_architecture_reassessment.md: −4 / +0",
         "    cowork_confidence_contract.md: −0 / +1",
@@ -643,7 +643,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 10 documents; 80 re-home / 0 delegation / 14 no-home)"
+        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 9 documents; 78 re-home / 2 delegation / 14 no-home)"
       ],
       "stderr": [],
       "what_it_checks": "every entry of finish-line item 1 still carries an authored closing route, no route names an entry the item no longer carries other than the ones this wave re-homed, and the route population still re-derives from the finish line rather than from a stored list"
@@ -656,7 +656,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: item1_rehome_blocker.json re-derives byte-identically (11 open re-home rows)"
+        "PASS: item1_rehome_blocker.json re-derives byte-identically (9 open re-home rows)"
       ],
       "stderr": [],
       "what_it_checks": "what actually blocks finish-line item 1's re-home class still re-derives — the standing autonomous-operation authorization still locatable in CLAUDE.md by its anchor, every open re-home row's owning specification still naming at least one file, and every row's blocker still cut from that row's own recorded reason rather than from a stored verdict"

@@ -27,6 +27,33 @@ does it assume? what does it publish? who consumes it? what happens at its edge 
 the auditor does not get to choose the questions per item — choosing questions is where
 priors leak in.
 
+**★ THE RUBRIC FOR AN INFORMATION-LOSS SWEEP, AND ITS FOURTH VERDICT (user-ratified 2026-07-06;
+written here 2026-08-09).** Where the sweep's subject is information the analysis produces,
+**information not yet consumed is NOT automatically a defect**, and every site takes one of four
+verdicts: **PRESERVED, awaiting a future or dormant consumer** — intact and carried, simply not read
+yet because the consumer is not built; **LOST** — destroyed, overwritten, collapsed or dropped so
+that no consumer, present or architecture-intended, can recover it; **SHOULD-ALREADY** — preserved
+and available, but a consumer that exists today and ought to be reading it is not given it; and
+**UNCLEAR — consumer status ambiguous**, which is **recorded for the user's adjudication and never
+guessed**. *Why the first clause:* without it a proactive sweep manufactures findings, because every
+correctly forward-provisioned fact reads as waste. *Why the fourth verdict:* it is what keeps the
+rule honest in the other direction — #1 forbids guessing, so an ambiguous consumer status is written
+down as ambiguous rather than resolved by the auditor. It is this section's closed-verdict-set rule
+applied to one sweep's subject, and the escape it forbids is the same one.
+
+**★ AND A VERDICT MAY BE *KEEP, DEFERRED* ONLY WHILE THE THING KEPT STAYS CHARACTERIZED EXACTLY
+(user-ratified 2026-07-06; written here 2026-08-09).** Where a known loss is deliberately left in
+place because the work that will close it is a planned later step, the disposition holds **only
+while its exact shape stays written down** — what is stale, under what circumstances, and what is
+not recomputed — and **the moment the behaviour drifts so that the loss is no longer precisely that,
+the decision to keep it is re-adjudicated.** *Why:* stated with the ruling in the user's own words —
+*keep as long as we know exactly what it is* — and the standing characterization is written out
+beside the disposition so the condition is checkable rather than asserted. It is what separates a
+deferral from an unexamined defect: a deferral names its future owner AND its exact form, so a later
+reader can tell whether what stands is still the thing that was ruled on. **This bounds a
+DISPOSITION, not a fix** — nothing here authorizes closing the loss, and the queue that owns the fix
+is unaffected.
+
 ## P3 — Audit the negative space (spec→code, not only code→intuition)
 
 Reading code and asking "does this look fine?" finds only what priors recognize. The second

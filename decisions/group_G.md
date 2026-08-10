@@ -1639,12 +1639,12 @@ user-written analytical claims." The verbatim above is RE-TAKEN from the new hom
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
 
-> - **U2 → KEEP, deferred to the owed joint step (O-18), ON CONDITION it stays characterized EXACTLY.** *"Keep as long as
->   we know exactly what it is."* The exact, standing characterization: on a J-key-iii joint re-key,
->   `region.keyModeResult` is updated but the chord + its `alternatives` are left as Pass-1 artifacts, **not re-ranked
->   under the new key** — a stale-under-new-key chord ranking. This is the architecture-intended future consumer's job
->   (the still-owed joint step); it stays as-is until then. **Not** a should-already gap. (If the joint step's design or
->   this behavior ever changes such that the loss is no longer *exactly* this, re-adjudicate.)
+> **★ AND A VERDICT MAY BE *KEEP, DEFERRED* ONLY WHILE THE THING KEPT STAYS CHARACTERIZED EXACTLY
+> (user-ratified 2026-07-06; written here 2026-08-09).** Where a known loss is deliberately left in
+> place because the work that will close it is a planned later step, the disposition holds **only
+> while its exact shape stays written down** — what is stale, under what circumstances, and what is
+> not recomputed — and **the moment the behaviour drifts so that the loss is no longer precisely that,
+> the decision to keep it is re-adjudicated.**
 
 **In plain words.** One loss was left in place deliberately, because the step that will fix it is a planned later piece of work. The condition attached is that its exact shape stays written down — what is stale, under what circumstances, and what is not re-ranked. If the behaviour ever drifts so that the loss is no longer precisely that, the decision to keep it is reopened.
 
@@ -1654,11 +1654,9 @@ user-written analytical claims." The verbatim above is RE-TAKEN from the new hom
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_information_loss_audit.md:152-157`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_audit_protocol.md:44-55`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Home section.** **“The prioritized DEFECT fix-queue”** — `## The prioritized DEFECT fix-queue (each a future separate, ratified, Gate-A-style event)` (heading at line 132). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_information_loss_audit.md`, the engage-arc-#4 information-loss catalogue (Cowork, 2026-07-06; every hit verified at code by CC). Read in full by READ WAVE 4, 2026-08-04. Recorded as the document's adjudication of its item U2, one of three the user ruled the same day (the other two being an uncapping and a queued check). **Its subject is the LEGACY chord path** — the stale-under-new-key ranking after a joint re-key — which the joint estimator replaced; the CONDITION it states is general and is what the entry records.
+**Provenance.** `cowork_information_loss_audit.md`, the engage-arc-#4 information-loss catalogue (Cowork, 2026-07-06; every hit verified at code by CC). Read in full by READ WAVE 4, 2026-08-04. Recorded as the document's adjudication of its item U2, one of three the user ruled the same day (the other two being an uncapping and a queued check). **Its subject is the LEGACY chord path** — the stale-under-new-key ranking after a joint re-key — which the joint estimator replaced; the CONDITION it states is general and is what the entry records. ★ RE-HOMED 2026-08-09 under the user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`, by `cc_instruction_return_continuation_7.md` Task 1, into P2 of `cowork_audit_protocol.md` beside the sweep rubric this condition qualifies — a verdict of *keep, deferred* is one of that rubric's dispositions, so the two belong in one section (#6). The owner was determinate from the entry's own record: what the entry carries is the general CONDITION, its own status source says so in those words, and a condition on how a verdict is recorded is audit method. The kind half was checked at the section before the writing: P2 STATES RULES. The class becomes `process`. The verbatim is RE-TAKEN from the new home. The catalogue's own text is UNTOUCHED (#12), which matters more here than usual: what stays there is the U2 INSTANCE — its exact standing characterization and the legacy mechanism it is about — and the home text deliberately does NOT carry it, because a specification stating a general condition must not be read as re-asserting a particular legacy behaviour that is not on the arm that ships. The LEGACY mark therefore stays on the entry and is not withdrawn by the re-homing. FORMER HOME, PRESERVED (#12): `cowork_information_loss_audit.md:152-157`, the section headed "The prioritized DEFECT fix-queue (each a future separate, ratified, Gate-A-style event)". FORMER CLASS, PRESERVED (#12): `gap`, excluded by clause (a). THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **U2 → KEEP, deferred to the owed joint step (O-18), ON CONDITION it stays characterized EXACTLY.** *\"Keep as long as\n  we know exactly what it is.\"* The exact, standing characterization: on a J-key-iii joint re-key,\n  `region.keyModeResult` is updated but the chord + its `alternatives` are left as Pass-1 artifacts, **not re-ranked\n  under the new key** — a stale-under-new-key chord ranking. This is the architecture-intended future consumer's job\n  (the still-owed joint step); it stays as-is until then. **Not** a should-already gap. (If the joint step's design or\n  this behavior ever changes such that the loss is no longer *exactly* this, re-adjudicate.)"
 
 ### D-638 — The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change
 

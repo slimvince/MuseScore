@@ -19,7 +19,7 @@
   "★_the_sharpest_evidence_that_licensing_is_not_the_binding_constraint": {
    "what_it_is": "Entries whose owner names ONLY files the standing authorization ALREADY licenses, and which are still not executable. For these, widening the surface changes nothing — there is nothing to widen. They are blocked by the owner.",
    "count": 0,
-   "of_the_open_re_home_population": 11,
+   "of_the_open_re_home_population": 9,
    "ids": []
   }
  },
@@ -31,9 +31,9 @@
   ]
  },
  "counted": {
-  "open_re_home_rows": 11,
+  "open_re_home_rows": 9,
   "by_blocker": {
-   "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here": 11
+   "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here": 9
   },
   "rows_whose_owner_names_only_already_licensed_files": 0
  },
@@ -46,8 +46,6 @@
    "D-514",
    "D-515",
    "D-516",
-   "D-581",
-   "D-583",
    "D-613",
    "D-614"
   ]
@@ -70,18 +68,9 @@
      "D-613",
      "D-614"
     ]
-   },
-   "cowork_audit_protocol.md": {
-    "entries_naming_it": 2,
-    "already_licensed": false,
-    "entry_ids": [
-     "D-581",
-     "D-583"
-    ]
    }
   },
   "files_not_already_licensed": [
-   "cowork_audit_protocol.md",
    "cowork_score_census.md"
   ]
  },
@@ -155,34 +144,6 @@
    "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": null,
    "points_at_another_entry_for_its_owner_question": "D-515",
    "the_recorded_reason_verbatim": "Two ground-truth classes adopted into the needs list. Same owner and same gap as D-515."
-  },
-  {
-   "id": "D-581",
-   "home_document": "cowork_information_loss_audit.md",
-   "owning_specification": "cowork_audit_protocol.md",
-   "files_named_in_the_owner": [
-    "cowork_audit_protocol.md"
-   ],
-   "every_named_file_is_already_licensed": false,
-   "blocker": "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here",
-   "matched_phrase": null,
-   "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": null,
-   "points_at_another_entry_for_its_owner_question": null,
-   "the_recorded_reason_verbatim": "A four-verdict classification rule for an information-loss sweep. Its subject is audit method, which the audit protocol document homes (D-431, D-434, D-436, D-640, D-641); that document is itself named in no user-ratified surface, so the route runs through a delegation."
-  },
-  {
-   "id": "D-583",
-   "home_document": "cowork_information_loss_audit.md",
-   "owning_specification": "cowork_audit_protocol.md",
-   "files_named_in_the_owner": [
-    "cowork_audit_protocol.md"
-   ],
-   "every_named_file_is_already_licensed": false,
-   "blocker": "NEITHER PHRASE — no blocker is stated in the recorded reason, and none is authored here",
-   "matched_phrase": null,
-   "the_matched_phrase_falls_only_inside_this_row_preserved_former_reason": null,
-   "points_at_another_entry_for_its_owner_question": "D-581",
-   "the_recorded_reason_verbatim": "The condition under which a known deferred loss is kept. Same owner and same gap as D-581."
   },
   {
    "id": "D-475",

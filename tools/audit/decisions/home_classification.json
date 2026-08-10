@@ -13,24 +13,24 @@
   ],
   "the_reading_of_a_whole_document_delegation": "A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others; and the rule-stating half is judged PER SECTION in both cases. **THIS IS NOW PART OF THE RULE, NOT AN INTERPRETATION OF IT (user, 2026-08-03, phase 1r).** At phase 1q it was this pass's reading of D-430's \"delegates a stated concern to that section BY NAME\", taken on the record's own precedent rather than a preference — `OPEN_ITEMS.md` OI-290 states in terms that \"`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries\" — and the strict alternative was recorded as available to the user. The user then WROTE the reading into `CLAUDE.md` rule (h) itself as the GRANULARITY clause, so D-430's verbatim now carries it and the strict alternative is CLOSED. Its defense, stated with it: the strict reading would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, making the rule retroactively destructive rather than refining. THE STRICT ALTERNATIVE, PRESERVED (#12): read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them.",
   "population": {
-    "entries": 191,
-    "documents": 40
+    "entries": 189,
+    "documents": 39
   },
   "totals": {
     "class_before": {
       "contract-home": 88,
-      "gap": 103
+      "gap": 101
     },
     "class_after": {
       "contract-home": 152,
-      "gap": 39
+      "gap": 37
     },
     "entries_moved": 74,
     "moved_to_gap": 5,
     "moved_to_contract_home": 69,
     "decided_by": {
       "D-430, the section-level unit": 166,
-      "clause (a), the fifth home case (OI-268)": 25
+      "clause (a), the fifth home case (OI-268)": 23
     }
   },
   "by_document": {
@@ -1853,41 +1853,6 @@
           "states_rules": null,
           "entries": [
             "D-579"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
-    "cowork_information_loss_audit.md": {
-      "entries": 2,
-      "before": {
-        "gap": 2
-      },
-      "after": {
-        "gap": 2
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "“The central classification axis”": {
-          "heading_line": 13,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-581"
-          ],
-          "class_after": "gap"
-        },
-        "“The prioritized DEFECT fix-queue”": {
-          "heading_line": 132,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-583"
           ],
           "class_after": "gap"
         }
@@ -6011,50 +5976,6 @@
       "home": "cowork_phase2_architecture_review.md:127-132",
       "section": "“§5”",
       "section_heading_line": 108,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-581",
-      "title": "Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed",
-      "document": "cowork_information_loss_audit.md",
-      "home": "cowork_information_loss_audit.md:15-24",
-      "section": "“The central classification axis”",
-      "section_heading_line": 13,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-583",
-      "title": "A known deferred loss is KEPT only while it stays characterized EXACTLY, and is re-adjudicated the moment its form changes",
-      "document": "cowork_information_loss_audit.md",
-      "home": "cowork_information_loss_audit.md:152-157",
-      "section": "“The prioritized DEFECT fix-queue”",
-      "section_heading_line": 132,
       "delegation_form": "not-named-in-any-ratified-surface",
       "delegation_scope": "none",
       "delegation_at": null,

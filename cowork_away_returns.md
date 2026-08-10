@@ -2603,6 +2603,81 @@ bearing on the analysis; every subject of this task is where a recorded decision
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 1 — OPENED. The two audit-method entries are re-homed, each complete in itself; the batch then leaves Task 1 at an entry boundary so that Ruling 35(b)'s run is not starved a third time
+
+**The population was derived fresh at task start (A2, A5)** from `tools/audit/phase1_finish_line.json`
+and the route artifacts, not carried from the dispatch or from this file. No count is restated here
+(**D-431**).
+
+**What was done, and why these two.** They are the pair the dispatch names first: the members of the
+converted eleven whose owning specification is `cowork_audit_protocol.md`, for which the act is the
+one the §7 register event performed seven times — a `process`-kind homing that leaves the gap class
+by construction and needs no delegation.
+
+1. **D-581 → P2 of `cowork_audit_protocol.md`**, the section that already states this project's
+   closed-verdict-set rule. What is written there is the rubric an information-loss sweep classifies
+   every site under — **information not yet consumed is NOT automatically a defect**, then the four
+   verdicts, with the fourth (**consumer status ambiguous**) recorded for the user's adjudication and
+   never guessed — with both halves of its defense: without the first clause a proactive sweep
+   manufactures findings, and the fourth verdict is what keeps it honest in the other direction,
+   since #1 forbids guessing.
+2. **D-583 → the same section, immediately beside it**, because a verdict of *keep, deferred* is one
+   of that rubric's dispositions and the two belong in one place (#6). What is written is the general
+   CONDITION — the disposition holds only while the thing kept stays characterized exactly, and is
+   re-adjudicated the moment its form changes — with the user's own words as its defense and the
+   line it draws: a deferral names its future owner AND its exact form, which is what separates it
+   from an unexamined defect.
+
+**★ WHAT THE HOME TEXT DELIBERATELY DOES NOT CARRY, AND THIS ONE MATTERS MORE THAN USUAL.** D-583's
+record is the general condition; the INSTANCE it was ruled on is a legacy chord-path behaviour that
+the joint estimator replaced. Carrying that instance into a live specification would have made a
+section stating a general rule read as re-asserting a particular behaviour **that is not on the arm
+that ships**. The instance stays in the catalogue that measured it, the LEGACY mark stays on the
+entry and is not withdrawn by the re-homing, and the same discipline kept D-581's severity scale and
+its named illustrative case out of the specification — those grade a FINDING rather than state the
+rubric (**D-431**). **The catalogue's own text is untouched** (#12).
+
+**Two authored inputs were maintained, both caught by their own tools' STOPs rather than by a
+reader.** The homing emptied `cowork_information_loss_audit.md`, so the classifier STOPPED on an
+authored judgment for a document that is nobody's home and the delegation bar STOPPED on its FORM
+grade; both judgments were moved WHOLE into their retired blocks with the reason they retired (#12,
+**D-648**), never deleted, and the retirement's own STOP in the other direction is untouched.
+
+**★ AND ONE STOP WAS A REAL FINDING ABOUT THE ROUTE TABLE RATHER THAN A STALE INPUT, so it is
+reported rather than absorbed.** Three derivations STOPPED with *"authored routes for entries item 1
+does not carry … (the register moved under the table)"*, which is the guard refusing to run while an
+authored route and the register disagree. The cause is a seam Ruling 38 created: **the ruling
+converts an authored *needs a delegation* into a *re-home* at ROW BUILD, while `ROUTES` keeps the
+authored judgment (#12)** — so the executed-check, which reads the authored tuple, could not see
+that a re-home had been performed and would have reported a completed act as never having happened.
+The two entries are recorded in a fifth per-act table, one table per wave as the four before it are,
+and the check reads the RULED route for them with the reason written at the code. **No other
+entry's verdict is touched.**
+
+**★ WHERE THE BATCH LEAVES TASK 1, AND THE REASON IS THE DISPATCH'S OWN.** The dispatch permits a
+partial stop at an entry boundary here and states why it is safe: a per-entry pass has no silent-cap
+hazard, because each homed entry is complete in itself. It also states, of Task 2, that it *"goes
+before the derivations this time so capacity cannot starve it again"* — and Task 2's run has now
+been carried unstarted through two batches, each time because a large per-entry pass consumed the
+capacity first. **So Task 1 stops here, at a clean entry boundary, and Task 2 runs next.** That
+ordering is stated rather than done silently, because it is a judgment about which of two
+instructions binds harder.
+
+**Guards at the boundary.** The full set was re-run and the classification re-run after it, which is
+the order its own STOP requires. **Six derivations went stale by this task's own edits and were
+regenerated, not repaired** — the route table, the re-home blocker, the superseded-reach
+application, the outstanding-delegation view, the finish line and the completion inventory — and the
+set stands at **ZERO failing**. Every verdict is at `tools/audit/guard_state.json` → `summary` and
+none is restated here (**D-431**).
+
+**Holds:** the nine census entries of §1.12, unchanged; the remainder of the homing population,
+untouched and to be derived fresh. **Surfacings:** none bearing on the analysis — every subject of
+this task is where a recorded decision is written down.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

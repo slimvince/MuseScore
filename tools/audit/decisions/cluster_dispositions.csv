@@ -2012,7 +2012,7 @@ DC-02010,1,restates,BR-3,D-119,cowork_docs,bullet,cowork_implementation_review.m
 DC-02011,1,not-a-decision,BR-2,,cowork_docs,heading,cowork_implementation_review.md
 DC-02012,1,unresolved,BR-8,,cowork_docs,bullet,cowork_implementation_review.md
 DC-02013,1,restates,BR-3,D-099;D-119,cowork_docs,blockquote,cowork_information_loss_audit.md
-DC-02014,1,no-spec-home,BR-4,D-581,cowork_docs,bullet,cowork_information_loss_audit.md
+DC-02014,1,unresolved,BR-8,,cowork_docs,bullet,cowork_information_loss_audit.md
 DC-02015,1,restates,BR-3,D-099,cowork_docs,paragraph,cowork_information_loss_audit.md
 DC-02016,1,restates,BR-3,D-094;D-105;D-119,cowork_docs,paragraph,cowork_information_loss_audit.md
 DC-02017,1,not-a-decision,BR-2,,cowork_docs,heading,cowork_information_loss_audit.md
@@ -2033,7 +2033,7 @@ DC-02031,1,restates,BR-3,D-105,cowork_docs,bullet,cowork_information_loss_audit.
 DC-02032,1,restates,BR-3,D-027;D-080;D-099,cowork_docs,bullet,cowork_information_loss_audit.md
 DC-02033,1,not-a-decision,BR-9,,cowork_docs,paragraph,cowork_information_loss_audit.md
 DC-02034,1,unresolved,BR-8,,cowork_docs,bullet,cowork_information_loss_audit.md
-DC-02035,1,restates,BR-3,D-032;D-583,cowork_docs,bullet,cowork_information_loss_audit.md
+DC-02035,1,restates,BR-3,D-032,cowork_docs,bullet,cowork_information_loss_audit.md
 DC-02036,1,unresolved,BR-8,,cowork_docs,bullet,cowork_information_loss_audit.md
 DC-02037,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_information_loss_audit.md
 DC-02038,1,not-a-decision,BR-2,,cowork_docs,heading,cowork_joint_estimator_architecture.md
@@ -5035,7 +5035,7 @@ DC-05033,1,not-a-decision,BR-6,,cc_reports,bullet,cc_b_guard_scoping_dossier.md
 DC-05034,1,restates,BR-3,D-081,cc_reports,bullet,cc_b_guard_scoping_dossier.md
 DC-05035,1,not-a-decision,BR-2,,cc_reports,heading,cc_b_guard_scoping_dossier.md
 DC-05036,1,not-a-decision,BR-12,,cc_reports,paragraph,cc_b_guard_scoping_dossier.md
-DC-05037,1,restates,BR-3,D-001;D-583,cc_reports,bullet,cc_b_guard_scoping_dossier.md
+DC-05037,1,restates,BR-3,D-001,cc_reports,bullet,cc_b_guard_scoping_dossier.md
 DC-05038,1,not-a-decision,BR-6,,cc_reports,paragraph,cc_b_guard_scoping_dossier.md
 DC-05039,1,not-a-decision,BR-12,,cc_reports,bullet,cc_backfill_engravingbridge_report.md
 DC-05040,1,not-a-decision,BR-12,,cc_reports,table_row,cc_backfill_engravingbridge_report.md
@@ -6242,7 +6242,7 @@ DC-06240,1,not-a-decision,BR-2,,cc_reports,heading,cc_instruction_b2_subdominant
 DC-06241,1,not-a-decision,BR-6,,cc_reports,paragraph,cc_instruction_b2_subdominant_guard_build.md
 DC-06242,1,restates,BR-3,D-081,cc_reports,paragraph,cc_instruction_b2_subdominant_guard_build.md
 DC-06243,1,not-a-decision,BR-6,,cc_reports,bullet,cc_instruction_b2_subdominant_guard_build.md
-DC-06244,1,no-spec-home,BR-4,D-583,cc_reports,bullet,cc_instruction_b2_subdominant_guard_build.md
+DC-06244,1,not-a-decision,BR-6,,cc_reports,bullet,cc_instruction_b2_subdominant_guard_build.md
 DC-06245,1,not-a-decision,BR-6,,cc_reports,bullet,cc_instruction_b2_subdominant_guard_build.md
 DC-06246,1,not-a-decision,BR-2,,cc_reports,heading,cc_instruction_b2_subdominant_guard_build.md
 DC-06247,1,not-a-decision,BR-6,,cc_reports,paragraph,cc_instruction_b2_subdominant_guard_build.md
@@ -6868,7 +6868,7 @@ DC-06866,1,no-spec-home,BR-4,D-115,cc_reports,bullet,cc_instruction_engage_gateA
 DC-06867,1,unresolved,BR-8,,cc_reports,bullet,cc_instruction_engage_gateA_unification_design.md
 DC-06868,1,unresolved,BR-8,,cc_reports,paragraph,cc_instruction_engage_gateA_unification_design.md
 DC-06869,1,unresolved,BR-8,,cc_reports,paragraph,cc_instruction_engage_gateA_unification_design.md
-DC-06870,1,restates,BR-3,D-099;D-119;D-581,cc_reports,blockquote,cc_instruction_engage_information_loss_audit.md
+DC-06870,1,restates,BR-3,D-099;D-119,cc_reports,blockquote,cc_instruction_engage_information_loss_audit.md
 DC-06871,1,unresolved,BR-8,,cc_reports,bullet,cc_instruction_engage_information_loss_audit.md
 DC-06872,1,restates,BR-3,D-112;D-119,cc_reports,bullet,cc_instruction_engage_information_loss_audit.md
 DC-06873,1,unresolved,BR-8,,cc_reports,bullet,cc_instruction_engage_information_loss_audit.md

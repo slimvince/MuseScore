@@ -182,6 +182,25 @@ RULED_2026_08_08 = {
     "D-472": "ARCHITECTURE.md",
 }
 
+# ★ THE SEVENTH RETURN CONTINUATION'S RE-HOMINGS, 2026-08-09 — a FIFTH table, for the same reason the
+# fourth is separate from the third: one table per act, so no wave's date stands for another's.
+#
+# `cc_instruction_return_continuation_7.md` Task 1, under the user's Ruling 38 (the homing default).
+# Two AUDIT-METHOD entries whose owning specification was determinate from their own records and whose
+# home document was named in no user-ratified surface: D-581, the four-verdict rubric an
+# information-loss sweep classifies every site under, with its no-guessing fourth verdict; and D-583,
+# the condition a `keep, deferred` disposition holds under — that the thing kept stays characterized
+# exactly, and is re-adjudicated the moment its form changes.  Both are written into P2 of
+# `cowork_audit_protocol.md`, the section that already states this project's closed-verdict-set rule,
+# in that section's own voice with their defenses; both take class `process`, which is what a method
+# rule is and which leaves the home population by construction rather than by a delegation.  The
+# catalogue's own text is untouched (#12) -- what stays there is the U2 INSTANCE and the sweep's
+# findings, which are findings rather than rules.
+REHOMED_2026_08_09_SEVENTH_RETURN = {
+    "D-581": "cowork_audit_protocol.md",
+    "D-583": "cowork_audit_protocol.md",
+}
+
 # ★ THE 2026-08-09 RULING — THE HOMING FORK IS RESOLVED FOR THE WHOLE REMAINING POPULATION.
 #
 # `cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38 (user).  Its words: "For every remaining
@@ -280,6 +299,10 @@ def closed_row_home(entry_id: str) -> str:
         return (f"{RULED_2026_08_08[entry_id]} Layer 6 (re-homed 2026-08-08 on the user's ruling "
                 "of that date, with both ends of the arm split visible and the conformance "
                 "question rowed at OI-349 — no longer in item 1)")
+    if entry_id in REHOMED_2026_08_09_SEVENTH_RETURN:
+        return (f"{REHOMED_2026_08_09_SEVENTH_RETURN[entry_id]} P2 (re-homed 2026-08-09 under the "
+                "user's Ruling 38, the homing default, by the seventh return continuation; class "
+                "`process` — no longer in item 1)")
     if entry_id in OWNER_RULED_2026_08_07_HOMING:
         return (f"{OWNER_RULED_2026_08_07_HOMING[entry_id]} (re-homed 2026-08-07 on the user's "
                 "owner ruling, the homing wave — no longer in item 1)")
@@ -873,6 +896,14 @@ def _was_executed(entry_id: str) -> bool:
     that any route whatever discharges it, and a later wave that re-routed one of these must not
     inherit the ruling's answer to a question it no longer asks."""
     route, owner, unambig, _ = ROUTES[entry_id]
+    if entry_id in REHOMED_2026_08_09_SEVENTH_RETURN:
+        # A FOURTH CASE, and it needs its own line rather than joining the three below, because
+        # Ruling 38 converts an authored NEEDS A DELEGATION into a RE-HOME and that conversion is
+        # applied at ROW BUILD rather than in ROUTES -- the authored judgment is preserved there
+        # (#12), which is the whole point of `authored_route_before_ruling_38`. So the route that
+        # GOVERNS these two is the RULED one, and reading the authored tuple alone would report an
+        # act that was performed as never having happened.
+        return route in (REHOME, DELEGATION)
     if (entry_id in OWNER_RULED_2026_08_07 or entry_id in OWNER_RULED_2026_08_07_HOMING
             or entry_id in RULED_2026_08_08):
         return route == REHOME

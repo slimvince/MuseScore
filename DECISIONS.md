@@ -218,13 +218,13 @@ project's own and are defined here because they are used before any entry explai
 | Decisions whose date is not stated in the record | 239 |
 | Decisions whose ratifier is not stated in the record | 365 |
 | Decisions recorded outside the specification that owns them | 366 |
-| — of which a documentation gap | 39 |
+| — of which a documentation gap | 37 |
 | — of which recorded only on a tracking surface, with no home at all | 1 |
 | — of which a project-wide convention, correctly homed | 45 |
-| — of which a decision about the process, correctly homed | 129 |
+| — of which a decision about the process, correctly homed | 131 |
 | Decisions whose defense the record does not state | 0 |
 | Entries whose own ratification the provenance records | 315 |
-| Entries whose home is recorded at SECTION granularity | 191 |
+| Entries whose home is recorded at SECTION granularity | 189 |
 
 The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **315 of 663** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 348 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
@@ -238,10 +238,10 @@ Alongside the register, every one of the harvested statements about decisions in
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
 | — restates | 5547 |
-| — not-a-decision | 5538 |
+| — not-a-decision | 5539 |
 | — boilerplate | 74 |
-| — no-spec-home | 658 |
-| — unresolved | 2643 |
+| — no-spec-home | 656 |
+| — unresolved | 2644 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
 
@@ -263,7 +263,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 **Not read in full.** Both archives (STATUS_ARCHIVE.md, cowork_handoff_archive.md) and the cc_* session reports. Each was opened where a specific citation required it and is not claimed to be swept. ★ CORRECTED 2026-08-04: this sentence previously also named the per-layer and per-component design documents, and that half became false — the OI-207 reading programme read every one of them IN FULL, finishing with read wave 6 on 2026-08-04, and each document's yield is on the record. The enumeration, per document, is derived at `tools/audit/phase1_completion_inventory.json` -> `what_the_register_says_about_itself_that_is_no_longer_true.statement_1_not_read_in_full` and at `tools/audit/decisions/phase1n_reading_regime.json` plus the six `reads<n>_yield.json` artifacts; no list or count is restated here (D-431).
 
-**The remainder, measured.** The harvest holds 15,224 candidate statements, grouped into 14,460 groups of near-identical statements, and every one of those groups carries a recorded disposition, so none was silently passed over. 2,643 of them carry the 'unresolved' disposition: statements the pass could not mechanically classify as either restating a register decision or not being a decision. Sampling shows that residual is genuinely mixed — real rulings, deferred designs and ordinary narrative in one population. Every harvested statement sourced to `ARCHITECTURE.md` falls inside the range read in full, that file being read in full in its entirety (above). ★ WHICH LAYER THIS FIGURE IS THE FIGURE OF, and how the two numbers below are read together. **It is the LAYER OF RECORD's figure** — the disposition layer regenerated on 2026-08-07 and ADOPTED as the layer of record by the user's ruling of that date (`OPEN_ITEMS.md` OI-333), with the outgoing layer kept beside it as a snapshot (#16), and it may be published as CURRENT. It is derived at a backbone of 663 entries; this register records 663. **Where those two are equal the residual is current as it stands. Where the register has since grown, the older reading applies again**: every group that restates an entry entered since the derivation still reads 'unresolved', so the figure OVERSTATES what is unresolved at HEAD, in a known direction, by an amount only a re-derivation would give. What the figure is NOT, in either case: a judgment that any one group's disposition has been read — each is exactly as mechanical as the numbered rule that produced it — so the residual is a bound on what this register may claim about the documents it did not read in full, not a measurement of the record's quality. ★ THE FORMER WORDING IS PRESERVED VERBATIM (#12) at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.measured_remainder_former_wording_2026_08_04_preserved_12`. It was true when it was written; what changed under it is that the layer it called un-re-derivable was repaired and its regeneration adopted.
+**The remainder, measured.** The harvest holds 15,224 candidate statements, grouped into 14,460 groups of near-identical statements, and every one of those groups carries a recorded disposition, so none was silently passed over. 2,644 of them carry the 'unresolved' disposition: statements the pass could not mechanically classify as either restating a register decision or not being a decision. Sampling shows that residual is genuinely mixed — real rulings, deferred designs and ordinary narrative in one population. Every harvested statement sourced to `ARCHITECTURE.md` falls inside the range read in full, that file being read in full in its entirety (above). ★ WHICH LAYER THIS FIGURE IS THE FIGURE OF, and how the two numbers below are read together. **It is the LAYER OF RECORD's figure** — the disposition layer regenerated on 2026-08-07 and ADOPTED as the layer of record by the user's ruling of that date (`OPEN_ITEMS.md` OI-333), with the outgoing layer kept beside it as a snapshot (#16), and it may be published as CURRENT. It is derived at a backbone of 663 entries; this register records 663. **Where those two are equal the residual is current as it stands. Where the register has since grown, the older reading applies again**: every group that restates an entry entered since the derivation still reads 'unresolved', so the figure OVERSTATES what is unresolved at HEAD, in a known direction, by an amount only a re-derivation would give. What the figure is NOT, in either case: a judgment that any one group's disposition has been read — each is exactly as mechanical as the numbered rule that produced it — so the residual is a bound on what this register may claim about the documents it did not read in full, not a measurement of the record's quality. ★ THE FORMER WORDING IS PRESERVED VERBATIM (#12) at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.measured_remainder_former_wording_2026_08_04_preserved_12`. It was true when it was written; what changed under it is that the layer it called un-re-derivable was repaired and its regeneration adopted.
 
 *Why this is stated at all:* DEFECT_TYPES.md DT-26 — scope-assumed enumeration. A sweep that is complete inside its own file set reads as complete about the whole question. The scope and its measured remainder are therefore stated rather than left implicit.
 
@@ -409,7 +409,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-568 | The two-track remedy: the chord axis is completed by hand-built rules, the key axis by soft-evidence quality and calibration — and NOT by a wider search on either | LIVE ⚠LEGACY | 2026-08-04 · user | `cowork_engage_arc_plan.md` |
 | D-576 | The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-579 | The anchor obligation: compute the chord ONCE against its region's FINAL notes, with the tonality as an explicit input rather than frozen mid-pipeline | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `cowork_phase2_architecture_review.md` “§5” ⚠gap |
-| D-581 | Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed | LIVE | 2026-08-04 · user | `cowork_information_loss_audit.md` “The central classification axis” ⚠gap |
+| D-581 | Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
 | D-582 | A collapse that is RECOMPUTABLE from what is kept is not information loss — not every collapse is a defect | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-600 | The quality-overwrite information-loss violation is TOLERATED until the gate-dissolution step and stays VISIBLE in the open-items register — tolerated is not forgotten | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
 | D-601 | Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation | LIVE | 2026-08-04 · user | `cowork_confidence_contract.md` §4 |
@@ -588,7 +588,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-538 | A multi-signal scoring change lands one signal at a time, with the corpus check re-run after each step and any increase in errors a hard stop before the next | SUPERSEDED BY D-177 and D-115 ⚠LEGACY | 2026-08-07 · user | `docs/iter92_joint_bass_chord_scoring.md` “Implementation insertion point” ⚠gap |
 | D-560 | Voice slots and stem direction are STRUCTURAL notational metadata, not user-written analytical claims, so the analysis may read them | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-580 | Two of the twelve post-scoring gates are purely-local vertical refinements and MUST survive the dissolution; the other ten dissolve into the competition | DEFERRED ⚠LEGACY | 2026-08-04 · user | `docs/scoring_model.md` |
-| D-583 | A known deferred loss is KEPT only while it stays characterized EXACTLY, and is re-adjudicated the moment its form changes | LIVE ⚠LEGACY | 2026-08-04 · user | `cowork_information_loss_audit.md` “The prioritized DEFECT fix-queue” ⚠gap |
+| D-583 | A known deferred loss is KEPT only while it stays characterized EXACTLY, and is re-adjudicated the moment its form changes | LIVE ⚠LEGACY | 2026-08-04 · user | `cowork_audit_protocol.md` |
 | D-638 | The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change | LIVE | — | `CLAUDE.md` |
 
 ## H. Layer 5 and Layer 6 — function, cadence, grouping — [full entries](decisions/group_H.md)
@@ -1043,8 +1043,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `9fe7f4561f750de4403b9bf9cfe812e474a1a5b3`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `c2c17aad1484e660…`).
+- Coverage figures above regenerated at commit `2fae57d21219e834a24a2e8cf391ae47cf66f63d`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `e813ae27df8f6d90…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

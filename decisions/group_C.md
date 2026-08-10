@@ -1267,16 +1267,15 @@ triggered.**" The verbatim above is RE-TAKEN from the new home, read out of the 
 
 ### D-581 — Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed
 
-> Not-yet-consumed information is **NOT automatically a defect.** Every site is classified as one of:
->
-> - **OK — PRESERVED, awaiting a future/dormant consumer.** Intact and carried; simply not consumed *yet* because
->   its consumer (e.g. Layer 5) is not built yet. Correct forward-provisioning — records the engage-ready substrate.
-> - **DEFECT — LOST.** Destroyed / overwritten / collapsed / dropped so **no** consumer — present OR the
->   architecture-intended future one — can recover it. (The Gate A case: a distinct alternative overwritten by a
->   near-duplicate.)
-> - **DEFECT — SHOULD-ALREADY.** Preserved/available, but a consumer that **already exists and should be using it now**
->   does not receive it (a routing/wiring gap).
-> - **UNCLEAR — consumer-status ambiguous.** Not guessed (#1); recorded for user adjudication.
+> **★ THE RUBRIC FOR AN INFORMATION-LOSS SWEEP, AND ITS FOURTH VERDICT (user-ratified 2026-07-06;
+> written here 2026-08-09).** Where the sweep's subject is information the analysis produces,
+> **information not yet consumed is NOT automatically a defect**, and every site takes one of four
+> verdicts: **PRESERVED, awaiting a future or dormant consumer** — intact and carried, simply not read
+> yet because the consumer is not built; **LOST** — destroyed, overwritten, collapsed or dropped so
+> that no consumer, present or architecture-intended, can recover it; **SHOULD-ALREADY** — preserved
+> and available, but a consumer that exists today and ought to be reading it is not given it; and
+> **UNCLEAR — consumer status ambiguous**, which is **recorded for the user's adjudication and never
+> guessed**.
 
 **In plain words.** A fact the analysis produces and nothing currently reads is not by itself a fault. It may be correctly held for a stage not yet built. So each such site gets one of four verdicts: it is intact and waiting; it has been destroyed so that nothing could ever recover it; it is intact but a reader that exists today is not being given it; or which of those it is cannot be told, in which case that is what gets written down.
 
@@ -1286,11 +1285,9 @@ triggered.**" The verbatim above is RE-TAKEN from the new home, read out of the 
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `cowork_information_loss_audit.md:15-24`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_audit_protocol.md:30-42`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Home section.** **“The central classification axis”** — `## The central classification axis (the user's binding rule)` (heading at line 13). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_information_loss_audit.md`, the engage-arc-#4 information-loss catalogue (Cowork, 2026-07-06; every hit verified at code by CC). Read in full by READ WAVE 4, 2026-08-04. Recorded as the document's own central classification axis, marked *the user's binding rule*. It is the operational form of principle #12 turned from accidental into a systematic sweep, which the document states as its purpose.
+**Provenance.** `cowork_information_loss_audit.md`, the engage-arc-#4 information-loss catalogue (Cowork, 2026-07-06; every hit verified at code by CC). Read in full by READ WAVE 4, 2026-08-04. Recorded as the document's own central classification axis, marked *the user's binding rule*. It is the operational form of principle #12 turned from accidental into a systematic sweep, which the document states as its purpose. ★ RE-HOMED 2026-08-09 under the user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`, by `cc_instruction_return_continuation_7.md` Task 1, into P2 of `cowork_audit_protocol.md` — the section that already states this project's closed-verdict-set rule, of which this is that rule applied to one sweep's subject. The owner was determinate from the entry's own record: its subject is AUDIT METHOD, and the audit protocol is where every method rule of this project is homed (D-431, D-434, D-436, D-640, D-641, D-657, D-658, D-661, D-663). The kind half was checked at the section before the writing: P2 STATES RULES, in its own opening sentence. The class becomes `process`, which is what a method rule is, and which takes the entry out of the home population by construction rather than by a delegation. The verbatim is RE-TAKEN from the new home. The catalogue's own text is UNTOUCHED (#12). FORMER HOME, PRESERVED (#12): `cowork_information_loss_audit.md:15-24`, the section headed "The central classification axis (the user's binding rule)". FORMER CLASS, PRESERVED (#12): `gap`, excluded by clause (a) — the catalogue is named in none of the three user-ratified surfaces, so no delegation existed to grade. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "Not-yet-consumed information is **NOT automatically a defect.** Every site is classified as one of:\n\n- **OK — PRESERVED, awaiting a future/dormant consumer.** Intact and carried; simply not consumed *yet* because\n  its consumer (e.g. Layer 5) is not built yet. Correct forward-provisioning — records the engage-ready substrate.\n- **DEFECT — LOST.** Destroyed / overwritten / collapsed / dropped so **no** consumer — present OR the\n  architecture-intended future one — can recover it. (The Gate A case: a distinct alternative overwritten by a\n  near-duplicate.)\n- **DEFECT — SHOULD-ALREADY.** Preserved/available, but a consumer that **already exists and should be using it now**\n  does not receive it (a routing/wiring gap).\n- **UNCLEAR — consumer-status ambiguous.** Not guessed (#1); recorded for user adjudication." WHAT THE HOME TEXT DELIBERATELY DOES NOT CARRY: the catalogue's own severity scale and its research-relevance mark, which grade a FINDING rather than state the rubric, and the Gate-A case named as an illustration of the LOST verdict — a measured instance stays in the record that measured it (D-431).
 
 ### D-582 — A collapse that is RECOMPUTABLE from what is kept is not information loss — not every collapse is a defect
 

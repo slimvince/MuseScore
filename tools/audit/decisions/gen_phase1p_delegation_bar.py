@@ -444,8 +444,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "the sibling architecture document, whose opening-banner naming IS graded a delegation "
         "clause.'"),
 
-    "cowork_information_loss_audit.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_layer1_tone_collection_design.md": (
         NOT_NAMED, "", "",
         "Named in none of the three surfaces; verified mechanically here. ★ SETTLED, NOT LEFT "
@@ -516,7 +514,18 @@ RETIRED_2026_08_09 = (
     "No grade is re-read, re-graded or corrected here -- each is moved unchanged."
 )
 
+RETIRED_2026_08_09_SEVENTH_RETURN = (
+    "CC, dispatch `cc_instruction_return_continuation_7.md`, Task 1, under the user's Ruling 38 of "
+    "2026-08-09. ONE document: `cowork_information_loss_audit.md`, emptied by re-homing D-581 and "
+    "D-583 into P2 of `cowork_audit_protocol.md`. This tool STOPPED on its grade as a FORM judgment "
+    "for a document that is nobody's home, which is that guard working. The grade is moved unchanged "
+    "and is not re-read or re-graded."
+)
+
 RETIRED_FORMS: dict[str, tuple[str, str, str, str]] = {
+    # retired 2026-08-09, the seventh return continuation (see RETIRED_2026_08_09_SEVENTH_RETURN)
+    "cowork_information_loss_audit.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_adjudication_dossier.md": (
         PROVENANCE, "CLAUDE.md",
         "`cowork_adjudication_dossier.md` Part B",
@@ -966,6 +975,8 @@ def main() -> int:
                                                "again halts the run, so a judgment cannot be "
                                                "resurrected without being re-read into FORMS.",
             "retired_2026_08_09": RETIRED_2026_08_09,
+            "retired_2026_08_09_the_seventh_return_continuation":
+                RETIRED_2026_08_09_SEVENTH_RETURN,
             "judgments": {
                 doc: {"form": f, "surface": s or None, "anchor": a or None, "why": w}
                 for doc, (f, s, a, w) in sorted(RETIRED_FORMS.items())

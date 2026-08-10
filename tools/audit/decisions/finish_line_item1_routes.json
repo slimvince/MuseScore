@@ -78,7 +78,7 @@
  "★_the_owner_judgment_read_rather_than_the_column": {
   "what_this_is": "OPEN_ITEMS.md OI-342 records that the `owner_is_unambiguous` column carries the EDIT-SURFACE answer for part of this population, although the row already has a separate field for that. This block reads the owner JUDGMENT -- the recorded reason -- instead of the column, and reports where the two disagree. It CORRECTS NOTHING: the column is untouched and no count in it is re-authored.",
   "how_each_set_is_cut": "By an exact phrase the authored reasons already contain, never by a vocabulary assembled until the answer came out right. `disagreement` is the reasons containing \"outside this dispatch's edit surface\"; `asserts_a_determinate_site` is the reasons containing 'determinate' and not 'not determinate'.",
-  "open_re_home_rows": 11,
+  "open_re_home_rows": 9,
   "disagreement_column_says_ambiguous_reason_names_only_the_edit_surface": {
    "count": 0,
    "ids": [],
@@ -105,14 +105,14 @@
  "the_NO_HOME_class_is_dispositioned_under_ruling_R1_elsewhere": "tools/audit/decisions/r1_superseded_reach.json applies the user's ruling R1 of 2026-08-04 to every member of this table's NO-HOME class: the successor the record names for each entry's live content, whether that successor is homed, and the disposition that follows. The route column here is UNCHANGED and no disposition or count is restated (D-431, #6).",
  "counted": {
   "entries": 94,
-  "documents": 10,
-  "route_RE_HOME": 80,
-  "route_NEEDS_A_DELEGATION": 0,
+  "documents": 9,
+  "route_RE_HOME": 78,
+  "route_NEEDS_A_DELEGATION": 2,
   "route_NO_HOME_EXISTS": 14,
   "re_home_with_an_unambiguous_owner": 13,
-  "executable_under_this_dispatch": 69,
-  "closed_by_this_wave_and_no_longer_in_item_1": 69,
-  "still_open_in_item_1_at_HEAD": 25
+  "executable_under_this_dispatch": 71,
+  "closed_by_this_wave_and_no_longer_in_item_1": 71,
+  "still_open_in_item_1_at_HEAD": 23
  },
  "executed_this_wave": [
   "D-280",
@@ -165,7 +165,9 @@
   "D-568",
   "D-572",
   "D-580",
+  "D-581",
   "D-582",
+  "D-583",
   "D-584",
   "D-585",
   "D-586",
@@ -821,6 +823,17 @@
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
+   "id": "D-581",
+   "home_document": "cowork_audit_protocol.md P2 (re-homed 2026-08-09 under the user's Ruling 38, the homing default, by the seventh return continuation; class `process` — no longer in item 1)",
+   "route": "NEEDS A DELEGATION",
+   "owning_specification": "cowork_audit_protocol.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "A four-verdict classification rule for an information-loss sweep. Its subject is audit method, which the audit protocol document homes (D-431, D-434, D-436, D-640, D-641); that document is itself named in no user-ratified surface, so the route runs through a delegation.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
    "id": "D-582",
    "home_document": "CLAUDE.md (re-homed 2026-08-07 under the homing licence — no longer in item 1)",
    "route": "RE-HOME",
@@ -829,6 +842,17 @@
    "executable_under_this_dispatch": true,
    "closed_by_this_wave": true,
    "reason": "A recomputable collapse is not information loss -- which is the qualification principle #12 already carries in its own text. The owner is CLAUDE.md, outside this dispatch's edit surface.",
+   "authored": "the route, the owner, the unambiguity verdict and the reason"
+  },
+  {
+   "id": "D-583",
+   "home_document": "cowork_audit_protocol.md P2 (re-homed 2026-08-09 under the user's Ruling 38, the homing default, by the seventh return continuation; class `process` — no longer in item 1)",
+   "route": "NEEDS A DELEGATION",
+   "owning_specification": "cowork_audit_protocol.md",
+   "owner_is_unambiguous": false,
+   "executable_under_this_dispatch": true,
+   "closed_by_this_wave": true,
+   "reason": "The condition under which a known deferred loss is kept. Same owner and same gap as D-581.",
    "authored": "the route, the owner, the unambiguity verdict and the reason"
   },
   {
@@ -1139,32 +1163,6 @@
    "reason": "The desk simulation's VERDICT -- nine of ten traces passed and no finding reopens the structure. A verdict about a stage that has run is a finding, not a rule a specification states; what it ratifies is already homed as the factorization itself.",
    "authored": "the route, the owner, the unambiguity verdict and the reason",
    "ruled_by": "NOT REACHED by Ruling 38. This row records that NEITHER route applies — the live content is carried by a homed successor, so re-homing would put a second copy of a homed rule (#6), or there is no decision content to write. The ruling settles which of two available routes is the default; it creates none where the record says there is none. Dispositioned under D-642 at tools/audit/decisions/r1_superseded_reach.json."
-  },
-  {
-   "id": "D-581",
-   "home_document": "cowork_information_loss_audit.md",
-   "route": "RE-HOME",
-   "owning_specification": "cowork_audit_protocol.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "A four-verdict classification rule for an information-loss sweep. Its subject is audit method, which the audit protocol document homes (D-431, D-434, D-436, D-640, D-641); that document is itself named in no user-ratified surface, so the route runs through a delegation.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason",
-   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
-   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
-  },
-  {
-   "id": "D-583",
-   "home_document": "cowork_information_loss_audit.md",
-   "route": "RE-HOME",
-   "owning_specification": "cowork_audit_protocol.md",
-   "owner_is_unambiguous": false,
-   "executable_under_this_dispatch": false,
-   "closed_by_this_wave": false,
-   "reason": "The condition under which a known deferred loss is kept. Same owner and same gap as D-581.",
-   "authored": "the route, the owner, the unambiguity verdict and the reason",
-   "authored_route_before_ruling_38": "NEEDS A DELEGATION",
-   "ruled_by": "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for every remaining entry of the no-ratified-surface and bar-excluded classes, and NO DOCUMENT IS EXCEPTED. A later exception is a new user ruling naming the document, taken BEFORE its entries are re-homed."
   },
   {
    "id": "D-569",

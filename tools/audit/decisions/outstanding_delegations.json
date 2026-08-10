@@ -8,8 +8,8 @@
     "A_no_delegation_exists": {
       "what_it_is": "Entries whose home document is named in NONE of the three user-ratified surfaces.",
       "the_criterion_that_decides_it": "clause (a), the fifth home case (OI-268) — the document is named in none of the three user-ratified surfaces, so there is no delegation to grade",
-      "entries": 25,
-      "documents": 14,
+      "entries": 23,
+      "documents": 13,
       "by_document": {
         "cowork_architecture_reassessment.md": [
           "D-282",
@@ -30,10 +30,6 @@
         ],
         "cowork_factorization_desk_simulation.md": [
           "D-453"
-        ],
-        "cowork_information_loss_audit.md": [
-          "D-581",
-          "D-583"
         ],
         "cowork_layer1_tone_collection_design.md": [
           "D-569",
@@ -408,8 +404,8 @@
   },
   "what_is_NOT_proposed_as_a_delegation_and_why": {
     "class_A": {
-      "entries": 25,
-      "documents": 14,
+      "entries": 23,
+      "documents": 13,
       "why_no_draft_is_offered": "The register's own `not_write_list_cases` rules on exactly this shape: 'A delegation drafted for them would be a new decision about where a concern is owned, not the repair of a wording — so the remedy is the OI-272 per-kind homing act into the specification that owns each decision, which is already the standing scheme.' Drafting delegations for this class would be proposing that many new decisions."
     },
     "class_B": {
@@ -572,9 +568,9 @@
     }
   },
   "counted": {
-    "home_population_entries": 191,
-    "home_population_documents": 40,
-    "lost_for_want_of_a_delegation": 26,
+    "home_population_entries": 189,
+    "home_population_documents": 39,
+    "lost_for_want_of_a_delegation": 24,
     "of_which_a_widening_would_move": 1,
     "outstanding_set_documents": 1,
     "write_list_members": 11,
