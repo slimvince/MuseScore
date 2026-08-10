@@ -140,7 +140,26 @@ TRIAGE: dict[str, tuple[str, str]] = {
                     "states the condition in exactly that form, and the staleness check it "
                     "names — the template count in §2 against `kTemplateCount` — is arithmetic. "
                     "Nothing implements either."),
-    "D-193": (KNOWLEDGE, "Qualified predicates and defined terms are properties of prose."),
+    "D-193": (OWED, "SPLIT BY USER RULING, AND THE ENTRY IS IN THE DEFECT CLASS ON THE MECHANICAL "
+                    "SUBSET ONLY (Rulings 28, 29 and 32 of 2026-08-09, "
+                    "`cowork_rulings_2026_08_09_fifth_stop.md`). **The DEEP half is ruled "
+                    "KNOWLEDGE and that limb CLOSES:** no mechanical test can decide whether a "
+                    "two-place word names its argument without understanding the sentence, and a "
+                    "noisy checker gets switched off, which is worse than none (D-473) — so "
+                    "predicate discipline and prose quality remain the writer's method stated in "
+                    "`cowork_design_doc_template.md`, the per-session self-check (D-434) and the "
+                    "reading passes. **The MECHANICAL subset is ruled IN SCOPE and is not built:** "
+                    "status-banner presence, terms-table presence on a new specification, and "
+                    "section structure judged against the KIND LIST — the enumeration Ruling 28 "
+                    "puts in `cowork_design_doc_template.md`, where a document of an unlisted kind "
+                    "is a STOP rather than a silent pass. All three read a document's own "
+                    "structure rather than its prose, which is why they fall on this side of the "
+                    "line the deep half fails. THE MECHANISM IS NOT BUILT BY THOSE RULINGS: it "
+                    "joins the D-436 mechanism backlog like every other member of this class, and "
+                    "the split carries its own open-items row, OPEN_ITEMS.md OI-364. FORMER "
+                    "CLASS, PRESERVED (#12): KNOWLEDGE, on the ground `Qualified predicates and "
+                    "defined terms are properties of prose.` — which the ruling confirms for the "
+                    "deep half and refutes for the three structural checks above."),
     "D-194": (OWED, "WEAK but real: a check for newly introduced identifiers of the shape a "
                     "private numbering scheme takes, against the labels the repository already "
                     "uses. It would flag candidates for a reader, not decide them."),

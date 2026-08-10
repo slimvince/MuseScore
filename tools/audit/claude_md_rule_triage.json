@@ -8,17 +8,18 @@
   },
   "totals": {
     "MECHANISM-EXISTS": 27,
-    "MECHANISABLE-AND-NOT": 9,
-    "KNOWLEDGE": 44
+    "MECHANISABLE-AND-NOT": 10,
+    "KNOWLEDGE": 43
   },
   "rules_total": 80,
   "the_defect_set": {
-    "count": 9,
+    "count": 10,
     "rowed_at": "OPEN_ITEMS.md OI-292",
     "ids": [
       "D-113",
       "D-187",
       "D-192",
+      "D-193",
       "D-194",
       "D-230",
       "D-253",
@@ -283,8 +284,8 @@
       "title": "The writing standards live in one place, and predicates must be qualified",
       "home": "CLAUDE.md:1236",
       "nonspec_kind": "process",
-      "class": "KNOWLEDGE",
-      "mechanism_or_ground": "Qualified predicates and defined terms are properties of prose."
+      "class": "MECHANISABLE-AND-NOT",
+      "mechanism_or_ground": "SPLIT BY USER RULING, AND THE ENTRY IS IN THE DEFECT CLASS ON THE MECHANICAL SUBSET ONLY (Rulings 28, 29 and 32 of 2026-08-09, `cowork_rulings_2026_08_09_fifth_stop.md`). **The DEEP half is ruled KNOWLEDGE and that limb CLOSES:** no mechanical test can decide whether a two-place word names its argument without understanding the sentence, and a noisy checker gets switched off, which is worse than none (D-473) — so predicate discipline and prose quality remain the writer's method stated in `cowork_design_doc_template.md`, the per-session self-check (D-434) and the reading passes. **The MECHANICAL subset is ruled IN SCOPE and is not built:** status-banner presence, terms-table presence on a new specification, and section structure judged against the KIND LIST — the enumeration Ruling 28 puts in `cowork_design_doc_template.md`, where a document of an unlisted kind is a STOP rather than a silent pass. All three read a document's own structure rather than its prose, which is why they fall on this side of the line the deep half fails. THE MECHANISM IS NOT BUILT BY THOSE RULINGS: it joins the D-436 mechanism backlog like every other member of this class, and the split carries its own open-items row, OPEN_ITEMS.md OI-364. FORMER CLASS, PRESERVED (#12): KNOWLEDGE, on the ground `Qualified predicates and defined terms are properties of prose.` — which the ruling confirms for the deep half and refutes for the three structural checks above."
     },
     {
       "id": "D-194",

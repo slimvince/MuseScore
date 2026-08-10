@@ -22,6 +22,14 @@
 > Nothing already in this file is re-decided by the extension; §2.4 is added, and §3 and §4 are
 > brought into line with it.
 >
+> **★ EXTENDED AGAIN 2026-08-09 (CC, `cc_instruction_return_continuation_5.md` Task 0) — Rulings
+> 24–35 of the fourth and fifth STOPs are classified in a NEW SECTION, §7, which AWAITS THE USER.**
+> Nothing that the user ruled is touched: §1–§6 stand exactly as ruled, the twenty-three verdicts
+> are not re-opened, and the ten entries written under Ruling 20 are not re-decided. §7 carries its
+> own verdict tables, its own tally and its own proposed homes, and **no register entry may be
+> written for any ruling in it until the user rules on it.** §7 also records, rather than settles,
+> which rulings this extension does NOT cover and why.
+>
 > **Why this exists.** Three ruling records carry the same banner sentence — *"interim carrier
 > until the applying dispatch records them (D-230)"* — and **no register entry exists for any of
 > them.** Every ruling's CONTENT is on disk in a ratified record, and every ruling applied is
@@ -217,10 +225,101 @@ same reasoning as Ruling 11, one level up.
 
 ---
 
+## 7. THE SECOND EXTENSION — Rulings 24–35, AWAITING THE USER
+
+> **★ STATUS: AWAITING THE USER. NO REGISTER ENTRY IS WRITTEN FOR ANYTHING IN THIS SECTION.** Added
+> 2026-08-09 (CC, `cc_instruction_return_continuation_5.md` Task 0), by the SAME derivation that
+> built §2 and extended it at §2.4: each ruling classified **from its own text**, with its carrier
+> read whole (**D-643**) before a verdict was written. Sections §1–§6 are untouched — the verdicts
+> the user ruled stand as ruled, and nothing here re-opens them.
+
+**The two verdicts mean exactly what §1 says they mean**, and that section is not restated here (#6).
+Every proposed DECISION carries one proposed home; every reading the user may reasonably take the
+other way carries its downgrade line, so disagreeing costs one line.
+
+### 7.1 Rulings 24–27 (`cowork_rulings_2026_08_09_fourth_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **24** | OI-358: the five corrupted verbatims RE-TAKEN; the consistency check built CORPUS-FIRST and adopted as a guard only on measured clean separation | **EXERCISE** | Both halves name decisions the register already holds. (a) is register-DATA maintenance under **D-230**, performed with the former quote and anchor preserved (#12) and the load-bearing field carrying one quote (#6). (b) is the corpus-first order — which the guard-family ruling itself attributes to the OI-343/OI-345 rulings, as row **D** of §2.1 records — plus **D-436**'s three measured conditions and **D-473**'s ground. *(That the measurement came back NEGATIVE and the check was not adopted is a FINDING, at `cowork_away_returns.md`'s Task 1 log, not a register question.)* |
+| **25** | OI-356: the index parser is CORRECTED under D-436, **on a both-ways condition** | **DECISION**, narrow — on the both-ways condition only; *and the user may reasonably downgrade it* | The correction itself was refuted and never applied, so there is no act to record. What binds is the condition the ruling attaches: **every member of the population is decided under BOTH rules, before and after; only the members the defect's own shape names may move; ANY OTHER MOVEMENT IS A STOP.** It is not a diff of results — the table implements both rules itself, which is the only construction that can SHOW a movement rather than assert one — and it has already proved it binds by killing a ruled remedy that would have fixed one row and broken two. Nothing in the register carries it: **D-436** judges a mechanism by three measured RATES, which is a different test, and **D-648** draws the maintenance/mechanism line without saying what a mechanism change owes before it is applied. **The downgrade reading, in one line:** the ruling calls it *"the A5 pattern"*, naming a dispatch assumption rather than a register decision, and if the user reads the pattern as already established by that precedent the verdict is EXERCISE |
+| **26** | OI-357: an EARLY, BOUNDED read-only establishment over committed outputs | **EXERCISE** | The timing is a choice the row itself reserved to the user, which §2.2's Ruling 9 already establishes as an exercise class. The population condition — *derived from the record, never sampled by judgment, and a STOP if no list is derivable* — is protocol P1 and #17f, which §1 of this file names as the standing practice. *(Its finding, that the comparison could not see the arm it was aimed at, is at `cowork_away_returns.md` §2.10 and [[OI-363]].)* |
+| **27** | D-580 is NOT decided; **facts are gathered first**, on the user's verbatim instruction | **DECISION**, narrow — on the fact-gathering-surface FORM only; *and the user may reasonably downgrade it* | The refusal to decide one cell is an exercise of the never-work-from-memory rule the ruling quotes in the user's own words. What binds beyond it is the FORM the ruling specifies for the surface that goes back to the user: **every claim cited at its source, the records read whole, anything the record does not settle marked UNSETTLED rather than filled — and NO recommendation at all.** That last clause is the load-bearing one and the one a session will be tempted to break: a fact-gathering pass that ends in a recommendation has decided the question it was sent to inform. It sits beside **D-649** and **D-650** as the third member of a family — how to write a surface when the plain form would state something the record does not support. **The downgrade reading, in one line:** it is #5's investigate-by-default plus **D-112**'s never-work-from-memory rule applied to one cell, and if the user reads the no-recommendation clause as already implied by them the verdict is EXERCISE |
+
+### 7.2 Rulings 28–35 (`cowork_rulings_2026_08_09_fifth_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **28** | Document-structure conformance is **KIND-SCOPED**, and the kind list is enumerated with a STOP on an unlisted kind | **DECISION** | It is a standing rule with a maintained membership list and a failure mode, and none of the three parts is in the register. It fixes WHAT the fourteen-section structure binds (specifications and design documents), WHY the working genres are exempt (the structure's basis is a design-description standard, #1/#2 — so they are a different genre and not a gap), and WHERE the membership lives (`cowork_design_doc_template.md`, maintained like the guard population). **The STOP is the part that keeps it honest:** without it *exempt* is whatever a session decides a document is, and the exemption widens by silence |
+| **29** | Documents are IN the conformance enumeration, **for the mechanical subset** | **EXERCISE** | It is a TRIAGE CLASSIFICATION — the mechanical subset of **D-193** — and Ruling 22's precedent is exactly on point: fifteen triage verdicts were ratified and carried no register entry, only the class MOVEMENT taking a row. This is that shape: **D-193** moves into the defect class on the subset, and the movement is rowed at [[OI-364]]. The three checks it names (status-banner presence, terms-table presence on a new specification, structure per Ruling 28's kind rule) are the template's own existing rules, not new ones |
+| **30** | The terminology cleanup: scanner first, then ruled batches; **research terms by the TWO-TIER rule** | **DECISION** | Two things bind well beyond the cleanup. The **two-tier rule for research-tied names** governs every future document that uses a term borrowed from the published research: at the INTRODUCTION SITE the collision is explained and our decided synonym stated; **every subsequent use carries a compact inline annotation referencing the research**, so an unannotated repeat use is a flag. Nothing in the register says what a session may do with a research-tied name, and #1/#2 make those names load-bearing rather than incidental. The **order** binds too — no tree-wide rename, governing surfaces first, code identifiers and research-tied names each a named later decision — which is the difference between a scoped decision surface and a sweep |
+| **31** | The reserved-word scanner is LICENSED, corpus-first, **with a DERIVED candidate population** | **DECISION**, narrow — on the derived-population answer to the completeness question; *and the user may reasonably downgrade it* | The licence is an exercise. What binds is the answer the ruling gives to *how is the inventory's completeness known*: **it is not, and it becomes checkable BY DERIVATION** — the candidate set is derived (the project's own musical vocabulary intersected with the words the documentation uses in non-musical contexts), the existing inventory is demoted to SEED verdicts, every derived candidate carries an authored verdict, and **an unclassified candidate is a STOP**. The general clause is the one worth registering: **"complete" means complete relative to a NAMED DERIVATION, re-derived as the tree grows** — which is #19 applied to a completeness claim, and which the register states nowhere. **The downgrade reading, in one line:** the derived-population-with-authored-verdicts-and-a-STOP shape is already the practice of three existing tools, and if the user reads the ruling as applying that practice rather than establishing it, the verdict is EXERCISE |
+| **32** | Predicate qualification is ruled KNOWLEDGE, and that limb closes | **EXERCISE** | The other half of the same triage classification as **29**, and an exercise for the same reason. Its ground is **D-473**'s, which the ruling names in its own words — a noisy checker gets switched off, which is worse than none — and **D-436**'s false-positive condition. What it adds is finality on one limb, and a closed limb is the ABSENCE of owed work rather than a new rule |
+| **33** | The index-parser family is remedied by **CANONICAL STATUS DISCIPLINE** | **DECISION** | It binds every row anyone writes into the open-items INDEX from now on: **every status cell begins with one canonical token.** With it come a mechanical normalization gated by a both-ways table, **a lint that STOPs on a non-canonical opening**, and **a parser that STOPs on a row that does not split rather than dropping it silently** (#12, #19). It is also the one-fix-per-family rule doing real work — three rows ([[OI-356]], [[OI-361]], [[OI-362]]) with one cause and one remedy — and the two excluded alternatives are recorded at the ruling: the bounded-opening search (a hand-picked threshold over varying prose, which fixes neither sibling) and the glyph prohibition alone (one symptom of three) |
+| **34** | The D-580 conflict is ruled **READING (ii)**: different acts, both records true | **EXERCISE** | A verdict on ONE register cell, taken on gathered facts, plus a routing of what it does not decide. Both are register content and both are recorded: the transfer cell carries the ruled value and its ground, D-580's own provenance carries the scoping, and the residual question — whether the live competition design owes the two gates' CONCERNS — is rowed at [[OI-365]] as a phase-3 fix-plan input under **D-231**. The interpretive ground it names, that reading (i) would qualify a ratified map on an assumption about intent, is #18 and **D-112** already carried |
+| **35(a)** | The evidence document's banner correction is LICENSED, one edit | **EXERCISE** | A scoped one-edit licence over a file outside standing authorization — the class §2.1's row **B** and §2.3's Rulings 13 and 14 already establish, and whose narrow-letter default **D-654** now governs |
+| **35(b)** | A bounded EXPLORATIONAL run is LICENSED | **EXERCISE** | A scoped licence to run a read-only exploration. Every bound it states is a standing rule applied: the freeze (no corpus promotion, no golden, nothing in `tools/robust_stop/`), the research-tier-on-entry rule, #16's corpus-hash-plus-tool-commit stamping, and the scope-of-surprise clause that makes a surprise in an explorational run a rowed finding rather than a #13 STOP |
+| **35(c)** | The row's qualitative characterizations are ruled **ACCEPTABLE as direction-without-value statements** | **DECISION**, narrow — on that clause only | It is a reading of **D-431** that the register does not carry and that sessions have repeatedly had to guess at: **a DIRECTION — *fewer than half*, *the large majority* — with the generated artifact cited beside it is not a transcribed value, and is what D-431 asks for.** The rule exists so a value cannot enter prose and go stale; a direction with its artifact named leaves the value in the artifact while still telling a reader what was found. Without this clause the safe reading of D-431 is that any characterization is forbidden, which would make findings unreportable |
+
+### 7.3 The tally, and what this extension does NOT cover
+
+**Proposed DECISIONS — seven:** the both-ways condition (**25**), the fact-gathering-surface form
+(**27**), the kind-scoped structure and its kind list (**28**), the two-tier research-term rule and
+the cleanup order (**30**), completeness-by-named-derivation (**31**), the canonical status
+discipline (**33**), and the direction-without-value clause (**35c**). **Three of them are flagged as
+reasonably downgradable — 25, 27 and 31** — each with its downgrade reading in one line at its own
+row.
+
+**Proposed EXERCISES — seven:** **24**, **26**, **29**, **32**, **34**, **35(a)** and **35(b)**.
+
+**★ THE SHAPE THE FIRST TWENTY-THREE EXPOSED HOLDS AGAIN, WITH ONE DIFFERENCE WORTH NAMING.** Once
+more the clauses that bind rode ALONGSIDE licences — a condition attached to a correction, a form
+attached to a refusal to decide, a completeness test attached to a scanner licence. **The
+difference:** three of this batch's rulings (**28**, **30**, **33**) are standing rules ruled as
+standing rules, not clauses discovered inside a licence. All three come from the one sitting whose
+subject was the writing standards themselves rather than a batch of work, which is the visible cause.
+
+**★ WHAT THIS EXTENSION DOES NOT COVER, RECORDED RATHER THAN DECIDED.** Its scope is Rulings 24–35,
+as the dispatch that ordered it states. **Rulings 20–23 are therefore in no queue.** They are the
+user's rulings ON the three review queues — ratifying the registration queue's verdicts (20),
+splitting **D-291** into two identifiers (21), ratifying the triage set with one re-class (22), and
+ratifying the OI-354 verdict set except one cell (23) — so on their face each is the ratification
+event a queue exists to obtain rather than a further ruling needing classification, and **21**'s
+content is already register data at **D-291** and **D-656**. **That reading is not taken here:** a
+session classifying four rulings the dispatch did not send it would be widening its own scope, which
+is the act **D-654**'s narrow-letter default forbids. It is recorded so the gap is visible and is one
+line for the user to close either way.
+
+### 7.4 Proposed homes, for the seven (rule (e))
+
+| Proposed entry | Proposed home | Why there |
+|---|---|---|
+| **25** — the both-ways condition | `cowork_audit_protocol.md`, dispatch-protocol block, beside **D-436** and **D-648** | **D-436** says how a mechanism is judged once it exists and **D-648** says when the mechanism-change reservation is engaged at all; this says what a mechanism CHANGE owes before it is applied, and the three read as one method |
+| **27** — the fact-gathering-surface form | `cowork_audit_protocol.md`, beside **D-649** and **D-650** | Same family: all three are forms for writing a surface when the plain form would state something the record does not support. This is the case where the answer is *the record does not settle it*, and the form's whole point is that the surface stops there |
+| **28** — the kind-scoped structure and its kind list | `cowork_design_doc_template.md`, the new kind-list section | That file is the ratified ONE home of the writing standards and now carries the enumeration itself; the ruling names it as the list's home in its own words, and the section was written under the ruling's own licence in the commit that records this extension |
+| **30** — the two-tier research-term rule and the cleanup order | **`CLAUDE.md`**, the Conventions reserved-word block, beside the disambiguation convention | That block is where the reserved-vocabulary rule and its twenty-word inventory already live, and this is the clause it lacks: what a session does with a name that carries correspondence to the published research. **USER-ONLY TEXT** — a session may not write it. If the user prefers not to grow that block, the alternative home is `cowork_design_doc_template.md` beside rule 5, which the reserved-word convention already sharpens |
+| **31** — completeness by named derivation | `cowork_audit_protocol.md`, beside **D-436** | It is an #19 statement about what a completeness CLAIM is worth, and that block is where the measured-establishment rules for this project's own apparatus live |
+| **33** — the canonical status discipline | **`CLAUDE.md`**, the open-items register section, beside rule (d) | Rules (a)–(e) there are how the register is kept, and this is the sixth: what a status cell must begin with, why (three derivations read it), and the two STOPs that keep it true. **USER-ONLY TEXT.** The alternative home is `OPEN_ITEMS.md`'s own standing-rule preamble, which is where a session writing a row actually looks — but that preamble restates `CLAUDE.md`'s rules rather than owning them, so homing it there would put one rule in two places (#6) |
+| **35c** — direction without value | `cowork_audit_protocol.md`, beside **D-431** | It is a reading of that entry and belongs against it, so a session meeting the prohibition meets the clause that says what it still permits |
+
+### 7.5 What §7 does NOT do
+
+It writes no register entry and assigns no identifier. It re-opens no verdict the user ruled at §6,
+re-words no ruling, and re-reads no ruling's merits — every verdict above is about **where a ruling's
+content must be findable**. It moves no status, homes nothing, and authorizes nothing. It touches no
+`src/`, no golden, no corpus of scores and nothing in `tools/robust_stop/`.
+
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+---
+
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
 debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
 `cowork_rulings_2026_08_09_return.md`, `cowork_rulings_2026_08_09_second_stop.md` and — since the
 2026-08-09 extension — `cowork_rulings_2026_08_09_third_stop.md`, whose own banner directs its three
 rulings into this queue. Each carrier was read whole (D-643) before the file was written or
-extended, and each ruling classified from its own text rather than from any summary of it.*
+extended, and each ruling classified from its own text rather than from any summary of it. §7's
+carriers are `cowork_rulings_2026_08_09_fourth_stop.md` and `cowork_rulings_2026_08_09_fifth_stop.md`,
+both read whole before it was written; §7 was added on the instruction of
+`cc_instruction_return_continuation_5.md` Task 0, which scopes it to Rulings 24–35.*

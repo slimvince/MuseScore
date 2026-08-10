@@ -93,6 +93,22 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-230": (NON_GATING, "user",
+               "The writing-standards conformance question, and the user has already DEFERRED it "
+               "to a discussion. Its subject is how this project's documents are written.",
+               "RESOLVED 2026-08-09 - the deferral ended and all three of the row's questions were "
+               "ruled at the fifth STOP (`cowork_rulings_2026_08_09_fifth_stop.md`): the "
+               "fourteen-section structure is KIND-SCOPED with its kind list enumerated in "
+               "`cowork_design_doc_template.md` and a STOP on an unlisted kind (Ruling 28); "
+               "documents are IN the conformance enumeration for a named MECHANICAL subset "
+               "(Ruling 29) while the deep half is ruled KNOWLEDGE and that limb closes "
+               "(Ruling 32); and the terminology cleanup is scoped -- no tree-wide rename, scanner "
+               "first, then ruled batches, research-tied names governed by a two-tier rule "
+               "(Rulings 30 and 31). The verdict was correct while it stood and is kept whole; it "
+               "is retired because the row closed, never because it was wrong. WHAT THE CLOSURE "
+               "DOES NOT DISCHARGE is carried forward rather than lost: the owed mechanical check "
+               "is OI-364, and the cleanup itself stays open at OI-229 with its ruled scope on it.",
+    ),
     "OI-358": (GATES, "two independent grounds - D-438's line, and the clause that overrides the "
                       "criterion (an establishment obligation, #19, always gates)",
                "Five consecutive register entries quote a DIFFERENT rule than their own title, "
@@ -324,9 +340,24 @@ V = {
                "The convention is already LIVE for new writing; what remains open is a tree-wide "
                "rename that the user has ruled is not done unilaterally. A rename changes no "
                "rule, no reading and no behaviour - it changes which word carries which sense."),
-    "OI-230": (NON_GATING, "user",
-               "The writing-standards conformance question, and the user has already DEFERRED it "
-               "to a discussion. Its subject is how this project's documents are written."),
+    "OI-364": (NON_GATING, "user",
+               "The owed MECHANICAL half of the writing-standards conformance check, created when "
+               "the user's Rulings 28/29/32 split that question: status-banner presence, "
+               "terms-table presence on a new specification, and section structure judged against "
+               "the enumerated kind list. All three read a DOCUMENT'S OWN STRUCTURE, so what is "
+               "owed is a check over how this project's documents are written - the same subject "
+               "the retired OI-230 verdict names, one construct out. CLASSIFIED WITH OI-297 AND "
+               "APART FROM OI-292, and the difference is stated so the pair does not read as "
+               "inconsistent: OI-292 gates because two of its members are MEASUREMENT rules and a "
+               "third guards the local patches to MuseScore's own code, while every member of this "
+               "row is a documentation-structure check that no measurement of the analysis "
+               "depends on. AND IT IS NOT AN ESTABLISHMENT OBLIGATION, which would override the "
+               "criterion whatever the subject: nothing here is a published rate or a trusted "
+               "instrument awaiting establishment - the establishment #19 requires would be owed "
+               "BY the check if it were ever built, which is a condition on a future act rather "
+               "than an obligation standing now. The distinction is the same one that puts OI-359 "
+               "on the gating side: there the missing mechanism enforces a MEASUREMENT convention, "
+               "which is an instrument a measurement of the analysis depends on."),
     "OI-233": (NON_GATING, "user",
                "Classified WITH OI-229 deliberately, because they are one subject and judging "
                "them apart would make the verdict turn on which document a reader opened. The "

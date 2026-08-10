@@ -584,10 +584,16 @@
     "quote": "| OI-283 | The decisions register's coverage claim states a stale `ARCHITECTURE.md` line count, and nothing keeps it current |",
     "expected_line": 312,
     "found_lines": [
-     312
+     313
     ],
     "found": true,
-    "anchor_ok": true
+    "anchor_ok": false,
+    "drift": {
+     "expected": 312,
+     "actual": [
+      313
+     ]
+    }
    },
    "the_check": {
     "has_run": false,
@@ -617,10 +623,16 @@
     "quote": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified - and two of them were wrong |",
     "expected_line": 318,
     "found_lines": [
-     318
+     319
     ],
     "found": true,
-    "anchor_ok": true
+    "anchor_ok": false,
+    "drift": {
+     "expected": 318,
+     "actual": [
+      319
+     ]
+    }
    },
    "the_check": {
     "has_run": false,
@@ -862,6 +874,38 @@
       1343
      ]
     }
+   },
+   {
+    "file": "OPEN_ITEMS.md",
+    "quote": "| OI-283 | The decisions register's coverage claim states a stale `ARCHITECTURE.md` line count, and nothing keeps it current |",
+    "expected_line": 312,
+    "found_lines": [
+     313
+    ],
+    "found": true,
+    "anchor_ok": false,
+    "drift": {
+     "expected": 312,
+     "actual": [
+      313
+     ]
+    }
+   },
+   {
+    "file": "OPEN_ITEMS.md",
+    "quote": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified - and two of them were wrong |",
+    "expected_line": 318,
+    "found_lines": [
+     319
+    ],
+    "found": true,
+    "anchor_ok": false,
+    "drift": {
+     "expected": 318,
+     "actual": [
+      319
+     ]
+    }
    }
   ],
   "records": [
@@ -1062,20 +1106,32 @@
     "quote": "| OI-283 | The decisions register's coverage claim states a stale `ARCHITECTURE.md` line count, and nothing keeps it current |",
     "expected_line": 312,
     "found_lines": [
-     312
+     313
     ],
     "found": true,
-    "anchor_ok": true
+    "anchor_ok": false,
+    "drift": {
+     "expected": 312,
+     "actual": [
+      313
+     ]
+    }
    },
    {
     "file": "OPEN_ITEMS.md",
     "quote": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified - and two of them were wrong |",
     "expected_line": 318,
     "found_lines": [
-     318
+     319
     ],
     "found": true,
-    "anchor_ok": true
+    "anchor_ok": false,
+    "drift": {
+     "expected": 318,
+     "actual": [
+      319
+     ]
+    }
    }
   ]
  }

@@ -72,6 +72,51 @@ Anything that can be misunderstood WILL be. Four rules, sharpened on the progres
 *(N/A for our modules: arc42 §7 Deployment view; §"Human-interface design" — backend analysis modules, no
 deployment topology or UI. Stated once per doc.)*
 
+## Which documents the section structure binds — the KIND LIST (user, 2026-08-09)
+
+The fourteen sections above are a **design-description** standard: arc42 and IEEE 1016 describe how a
+built or planned component is documented. They therefore bind **specifications and design documents**,
+and the project's **working genres are exempt as different genres** — not as unjudged gaps. The list
+below is the enumeration, and it is what a conformance check reads.
+
+**BOUND — the structure applies in full:**
+1. **Specification** — a document stating how a layer, component or contract must work
+   (`ARCHITECTURE.md`'s layer sections and the per-layer/per-component design documents they
+   delegate to).
+2. **Design document** — a document proposing or recording a design for something to be built,
+   including a factorization, a grounding study written as a design input, and an architecture
+   review written as a design surface.
+
+**EXEMPT — a different genre, whose form is its own:**
+3. **Dispatch** — an instruction to a session (`cc_instruction_*.md`, `cowork_instruction_*.md`).
+4. **Ruling record** — a dated record of decisions the user took (`cowork_rulings_*.md`).
+5. **Ratification queue or reading surface** — a surface written to be read and ruled on
+   (`ratification_surfaces/`).
+6. **Returns file** — a running record of what a batch did, held and surfaced.
+7. **Status or handoff surface** — `STATUS.md`, `cowork_handoff.md` and their archives.
+8. **Register** — the open-items register and the decisions register, index and detail files alike,
+   whose shape is fixed by their own rules.
+9. **Report or dossier** — a dated record of what one investigation or measurement found.
+10. **Procedure** — a document whose content is how to run something (`BUILD_AND_TEST.md`,
+    `tools/REPRODUCIBILITY.md`).
+11. **Inventory or census** — a document whose content is an enumeration.
+
+**A document of an UNLISTED kind is a STOP at the conformance check, never a silent pass.** The list
+is maintained the way the guard population is: a kind is added by a user ruling, in the commit that
+records it, with the reason it is a different genre — and until a kind is listed, a document of that
+kind is neither conformant nor exempt but reported.
+
+**What is NOT scoped by kind.** The two writing standards above — qualified predicates, and defined
+terms with plain vocabulary and no shorthand — bind **every** document and everything written for the
+user, exempt genres included. The status-banner convention likewise. Only the fourteen-section
+structure is kind-scoped.
+
+*Why: the structure's own basis is a design-description standard (#1/#2), so applying it to a
+dispatch or a ruling record would judge those documents against a standard written for something
+else — and reading the resulting non-conformance as a gap would make the whole conformance question
+unanswerable. The STOP on an unlisted kind is what keeps the exemption from widening by silence:
+without it, "exempt" is whatever a session decides a document is.*
+
 ## Status-banner convention
 Each doc opens with a one-line status: **DRAFT for sign-off** / **SIGNED (date)** / **AS-BUILT (date + commits)** /
 **SUPERSEDED (→ pointer)**. The all-documentation-in-sync standing rule applies: when the code or a decision

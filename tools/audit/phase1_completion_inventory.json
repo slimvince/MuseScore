@@ -583,7 +583,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 43,
+   "count": 42,
    "ids": [
     "OI-105",
     "OI-107",
@@ -594,7 +594,6 @@
     "OI-205",
     "OI-220",
     "OI-229",
-    "OI-230",
     "OI-233",
     "OI-239",
     "OI-274",
@@ -632,7 +631,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 62,
+   "count": 61,
    "ids": [
     "OI-105",
     "OI-107",
@@ -650,7 +649,6 @@
     "OI-223",
     "OI-224",
     "OI-229",
-    "OI-230",
     "OI-233",
     "OI-239",
     "OI-249",
@@ -1125,21 +1123,6 @@
     "id": "OI-229",
     "title": "Music-theory terminology collision — the reserved-word convention is now STANDING; the existing tree is not renamed unilaterally",
     "subject_column": "docs / convention",
-    "matched_on_the_subject_column": [
-     "doc",
-     "docs /"
-    ],
-    "matched_falsity_signals": [],
-    "gate": {
-     "verdict": "NON-GATING",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "tracking/documentation apparatus - the user's own phrase"
-    }
-   },
-   {
-    "id": "OI-230",
-    "title": "The writing-standards conformance question — DEFERRED by the user to the Friday discussion",
-    "subject_column": "docs / process",
     "matched_on_the_subject_column": [
      "doc",
      "docs /"
@@ -1787,11 +1770,10 @@
    ]
   },
   "non_gating": {
-   "count": 22,
+   "count": 21,
    "ids": [
     "OI-205",
     "OI-229",
-    "OI-230",
     "OI-233",
     "OI-280",
     "OI-281",
@@ -1826,7 +1808,6 @@
     "OI-220",
     "OI-223",
     "OI-229",
-    "OI-230",
     "OI-233",
     "OI-239",
     "OI-274",
@@ -1978,9 +1959,9 @@
    "of_which_a_widening_would_move": 4
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 62,
+   "open_rows_in_the_wide_cut": 61,
    "of_which_gate": 40,
-   "of_which_apparatus_and_therefore_non_gating": 22,
+   "of_which_apparatus_and_therefore_non_gating": 21,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
   "outside_both_halves_and_owed_before_the_statement": {
@@ -2046,7 +2027,6 @@
    "OI-223",
    "OI-224",
    "OI-229",
-   "OI-230",
    "OI-233",
    "OI-239",
    "OI-249",
@@ -2090,8 +2070,8 @@
  },
  "counted": {
   "decisions_recorded": 656,
-  "open_rows_in_the_index": 258,
-  "true_half_wide_cut": 62,
+  "open_rows_in_the_index": 259,
+  "true_half_wide_cut": 61,
   "true_half_gating": 40,
   "complete_half_gap": 42,
   "complete_half_unhomed": 1,

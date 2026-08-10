@@ -1,7 +1,9 @@
 # Key/Mode Detection — Baroque Partial-Signature Weakness
 
-> **RESOLVED 2026-06-03 by commit `81978321e3` (`fix(keyresolver): Option B
-> Baroque partial-signature correction`), in HEAD.** Option B from §4 below was
+> **RESOLVED ON THE ANCHOR CASE 2026-06-03 by commit `81978321e3` (`fix(keyresolver):
+> Option B Baroque partial-signature correction`), in HEAD — and the scope of that word
+> is stated here rather than left to be assumed (see the second banner below).** Option B
+> from §4 below was
 > implemented: the resolver now detects the partial-signature convention (♭6
 > pervasive ≥3% of sounding weight AND dominating ♮6 by ≥2×) and reinterprets the
 > signature one step toward the missing accidental (minor −1 flat / major +1 sharp)
@@ -12,6 +14,26 @@
 > The residual `op01n08d` test symptoms (§"three remaining symptoms") are
 > quality / inversion / segmentation issues, **not** key detection — see the commit
 > message of `81978321e3` for the post-fix status of each.
+
+> **★ WHAT *RESOLVED* ABOVE COVERS, AND WHAT IT DOES NOT (added 2026-08-09 on the user's
+> Ruling 35(a) of `cowork_rulings_2026_08_09_fifth_stop.md`; the correction is scoped and
+> nothing above it is withdrawn).** What the banner above verifies is the **anchor case**,
+> `op01n08d`, and it verifies it correctly. It is **not** a statement about the population
+> of pieces that share the notation practice this document describes. Measured over the
+> population **derived by this document's own §3 method** — the notated key signature
+> against the published annotated key, read from the corpus metadata and applied
+> mechanically to every piece named here rather than to §3's table alone — the correction
+> reads **fewer than half** of that population with the annotated tonic, the large majority
+> of the disagreements landing on a home of the **notated** signature, which is §3's own
+> diagnostic for the signature lock this correction exists to escape. Every value is at
+> `tools/audit/oi357_partial_signature_establishment.json` and none is restated here
+> (**D-431**). **A disagreement total is not a defect total** — each one is a genuine defect,
+> a defensible modal reading the major/minor ground truth cannot represent, or an artifact of
+> comparing a global reading against a global annotation on a piece that modulates, and that
+> reading has not been made per case. **The tracking row is `OPEN_ITEMS.md` OI-363**, which
+> also carries what bounds it: the subject here is the **legacy** key resolver, which the
+> production arm does not run (the production question is `OPEN_ITEMS.md` OI-357), and this
+> repertoire is not the gate corpus, so no published measurement moves.
 
 *Investigation, 2026-05-23 (read-only; no code changed). Anchor case: Corelli
 `op01n08d` (the `CorelliOp01n08dUserReportedChordTrackAudit` notation failure).*

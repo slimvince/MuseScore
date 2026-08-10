@@ -1851,6 +1851,170 @@ derived at `tools/audit/phase1_finish_line.json` (**D-431**).
 
 ---
 
+# ═══ THE FIFTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_5.md`, 2026-08-09) ═══
+
+> Rulings 28–35 of `cowork_rulings_2026_08_09_fifth_stop.md` are applied here, and the fourth
+> continuation's Task 5–6 tail is resumed. The sections above are earlier batches' and are not
+> rewritten. New holds are appended to §1, new surfacings to §2, and each task's log below.
+
+### 1.11 The registration queue's extension is scoped to Rulings 24–35, so Rulings 20–23 are in NO queue (Task 0)
+
+**Reported, not decided.** The dispatch scopes the queue extension to **Rulings 24–35**, and that is
+what §7 of `ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md` covers. **Rulings
+20–23 are therefore classified nowhere.**
+
+**What they are, so the gap can be judged in one line.** Each is the user's ruling ON one of the
+three review queues: ratifying the registration queue's verdicts (20), splitting **D-291** into two
+identifiers (21), ratifying the triage set with one re-class (22), and ratifying the OI-354 verdict
+set except one cell (23). On their face each is the ratification event a queue exists to obtain
+rather than a further ruling needing classification, and **21**'s content is already register data at
+**D-291** and **D-656**.
+
+**That reading is deliberately NOT taken.** A session classifying four rulings its dispatch did not
+send it would be widening its own scope, which is the act **D-654**'s narrow-letter default forbids —
+and the reported-widening clause makes a widening reviewable only when it is reported, which is what
+this section is. **Nothing is at risk meanwhile:** every one of the four is on disk in a ratified
+record, and each is recorded in the provenance of the act it licensed.
+
+## 3 (continued). Per-task log — the fifth return continuation
+
+### Task 0 — COMPLETE. Rulings 28, 29, 30, 32, 34, 35(a) and 35(c) recorded; OI-230 flips on a derivation; two rows created
+
+**The start state was derived at the artifacts before any act (A6), not carried from the dispatch.**
+The guard set was read at the committed `tools/audit/guard_state.json` by running the full set
+unchanged before the first edit: **zero failing**, which is where the fourth continuation left it.
+The working tree carried no uncommitted work of any batch's own. The rows this task writes to were
+read at the INDEX; the register's highest identifier and the highest open-items identifier were read
+at their own surfaces. No count is restated here (**D-431**).
+
+**A5 HOLDS, and it was checked before the kind list was written.** Ruling 28 names
+`cowork_design_doc_template.md` as the kind list's home in its own words, and that document is the
+ratified ONE home of the writing standards — so the list went in **in that document's own voice**,
+beside the section structure it scopes, and nowhere else.
+
+**What was done, in order.**
+
+1. **Ruling 28 — the KIND LIST is written into `cowork_design_doc_template.md`.** Two bound kinds
+   (specification, design document) and nine exempt ones, each named rather than described as a
+   class; **a document of an unlisted kind is a STOP** and the list is maintained the way the guard
+   population is — a kind is added by a user ruling, in the commit that records it, with the reason
+   it is a different genre. **One thing is stated that the ruling implies rather than says, and it is
+   stated because the omission would invert the ruling:** the two WRITING standards and the
+   status-banner convention are **not** kind-scoped and bind every document, exempt genres included.
+   Only the fourteen-section structure is scoped.
+2. **Rulings 29 and 32 — recorded at the conformance machinery**, which is
+   `tools/audit/claude_md_rule_triage.py`, the tool that classifies every `CLAUDE.md` rule as
+   MECHANISM or KNOWLEDGE. **D-193** moves into the defect class **on the mechanical subset only**,
+   with the deep half's KNOWLEDGE verdict now the user's rather than a session's, and the former
+   class and its ground preserved beside it (#12) — the D-486 shape of one wave earlier. The three
+   checks are named at the entry: status-banner presence, terms-table presence on a new
+   specification, and structure against Ruling 28's kind list.
+3. **[[OI-364]] created** with its detail file in the same commit (rule (c)): the owed mechanical
+   check. **The mechanism is deliberately NOT built** — it joins the **D-436** backlog like every
+   other member of that class, and what a member owes first is a measured establishment (#19), then
+   a user ruling on whether to build it at all.
+4. **Rulings 30 and 31 — recorded on [[OI-229]]'s row**, which stays OPEN because the cleanup itself
+   is not done; what is settled is its SCOPE and its ORDER. Both halves of the user's own two-tier
+   research-term rule are written out, because a rule stated as *research terms are not renamed* and
+   nothing else would read as a licence to leave them unannotated.
+5. **[[OI-230]] FLIPPED RESOLVED, and the flip is DERIVED question by question** rather than
+   asserted — (a) by Ruling 28, (b) by Rulings 29 and 32, (c) by Rulings 30 and 31 — with each
+   answer's own content on the row so a reader can check the derivation without opening the ruling
+   record. **The work the answers create is carried elsewhere rather than dropped** ([[OI-283]]'s
+   shape avoided): the owed check at [[OI-364]], the cleanup at [[OI-229]].
+6. **Ruling 34 — recorded on D-580's TRANSFER cell** in
+   `tools/audit/decisions/gen_phase1w_legacy_verification.py`, and in the entry's own provenance at
+   the register data. **[[OI-365]] created** with its detail file in the same commit for the residual
+   the ruling declines to decide — whether the live competition design owes the two gates' CONCERNS —
+   as a phase-3 fix-plan input under **D-231**. **The retirement map is untouched**, as the ruling
+   requires.
+7. **Ruling 35(a) — the evidence document's banner corrected**, one region: RESOLVED is now scoped to
+   the anchor case it verified, with a marked second block stating what the word does not cover and
+   pointing at [[OI-363]]. Nothing above it is withdrawn, because both halves are true as written.
+8. **Ruling 35(c) — recorded on [[OI-363]]'s row**: the qualitative characterizations are
+   ACCEPTABLE as direction-without-value statements and are **not re-edited**. The row also records
+   that 35(a)'s edit is performed and that the row nonetheless stays OPEN, because the per-case
+   reading it gates on was never the banner.
+9. **The registration queue extended over Rulings 24–35**, by the same derivation that built it,
+   each ruling classified from its own text with both carriers read whole (**D-643**).
+
+**★ THE EXTENSION IS A NEW SECTION RATHER THAN AN EDIT OF THE RULED ONES, and that is deliberate.**
+The queue's §1–§6 record verdicts the user has ruled and the ten entries written under them. Weaving
+twelve new rulings into those tables would put ruled and unruled verdicts in one surface with nothing
+distinguishing them. **§7 carries its own tables, its own tally and its own proposed homes, and says
+in its banner that it awaits the user**; the only change above it is one banner line pointing at it.
+
+**★ SEVEN OF THE TWELVE ARE PROPOSED AS DECISIONS, AND THE SHAPE HAS ONE NEW FEATURE WORTH THE
+USER'S ATTENTION.** The first twenty-three exposed a pattern: the rulings that BIND are clauses that
+rode ALONGSIDE licences, not the licences that unblocked the most work. That holds again — a
+condition attached to a correction (25), a form attached to a refusal to decide (27), a completeness
+test attached to a scanner licence (31). **What is new:** three of this batch (**28**, **30**,
+**33**) are standing rules ruled AS standing rules, and all three come from the one sitting whose
+subject was the writing standards themselves rather than a batch of work. **Three are flagged as
+reasonably downgradable**, each with its downgrade reading in one line.
+
+**Holds:** §1.11 — Rulings 20–23 are in no queue, reported rather than classified.
+**Surfacings:** none new bearing on the analysis. Every subject of this task is the record's own
+bookkeeping, the writing standards, and one register cell whose subject is legacy code unreachable on
+either production surface.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires. **Eight derivations went stale by this task's own edits and
+were regenerated, not repaired** — the completion inventory, the finish line, the gate partition, the
+apparatus declaration, the legacy-mark verification, and the three item-1 views — and the set is back
+at **ZERO failing**. Every verdict is at `tools/audit/guard_state.json` → `summary` and none is
+restated here (**D-431**).
+
+**Three authored inputs were maintained, each caught by its own tool's STOP rather than by a reader.**
+The kind-list insertion shifted three anchors in the template and they were re-aimed per the tool's
+own reported lines; the legacy-mark verification's recorded-figure citation moved by one line when the
+[[OI-365]] row was inserted above it, and was re-aimed the same way; and the apparatus declaration
+STOPPED because [[OI-364]] reached its first cut with no authored verdict. All three are the
+authored-input maintenance class **D-648** names, not mechanism changes.
+
+**★ THE APPARATUS VERDICT AUTHORED FOR [[OI-364]] IS NON-GATING, WHICH IS THE FIRST TIME THIS ARC HAS
+AUTHORED ONE, AND THE GROUND IS STATED BECAUSE OF THAT.** The rule the record enforces is that a
+non-gating verdict is never HAND-ADDED for a row the cut did not reach — and this row the cut DID
+reach, which is the case the tool requires an authored verdict for. The verdict is NON-GATING because
+all three owed checks read a document's own STRUCTURE and no measurement of the analysis depends on
+any of them; it is classified WITH [[OI-297]] and APART FROM [[OI-292]], and the difference is
+written at the verdict itself. **The clause that would override the criterion was checked and does not
+engage:** nothing here is a published rate or a trusted instrument awaiting establishment — the
+establishment #19 would require is owed BY the check if it is ever built, which is a condition on a
+future act and not an obligation standing now. That is the same distinction that puts [[OI-359]] on
+the gating side, where the missing mechanism enforces a MEASUREMENT convention.
+
+**★ ONE VOCABULARY ADDITION WAS MADE TO A TOOL'S AUTHORED INPUTS AND IS REPORTED RATHER THAN SLIPPED
+IN.** D-580's transfer cell could not be recorded truthfully in any of the seven values the
+verification tool's vocabulary carried: `none-found` reports a SEARCH result where this is a ruling,
+`explicitly-not-transferred` asserts the decision does not bear on the live design where the ruling
+leaves exactly that open, and `undetermined` says the evidence does not settle it where it now does.
+An eighth value — *scoped to an act that never ran* — was added with its definition, its date, and
+the reason each of the other three misstates the ruling. **It is used by one entry, it changes no
+other verdict, and the tally that counts entries bearing on live work does not include it**, which is
+correct: the ruling scopes the carve-out to an act that never happened and routes the surviving
+question to a row.
+
+**★ THE SAME INSTRUCTION AS THE THREE PREVIOUS CONTINUATIONS COULD NOT BE PERFORMED, AND IS NAMED
+RATHER THAN QUIETLY DROPPED.** This dispatch's own file is not staged: `cc_instruction_*.md` is
+matched by this repository's `.gitignore` — the class's standing state, established by an earlier
+continuation at the git objects — and forcing it in would override a standing repository
+configuration decision, which is not a session's to take. The ruling record
+`cowork_rulings_2026_08_09_fifth_stop.md` is not matched and IS staged.
+
+**★ THE STANDING SELF-CHECK (D-434) CAUGHT TWO RESERVED-WORD COLLISIONS IN THIS TASK'S OWN NEW PROSE
+AND BOTH WERE CORRECTED BEFORE THE COMMIT:** the bare non-musical *figure*, twice in one sentence of
+the queue extension — in, of all places, the row arguing that a value belongs in its artifact — and
+the bare non-musical *part* in a new detail file. They are *value* and *clause* now. **This is the
+fourth consecutive wave whose self-check has caught a reserved-word collision in its own new text**,
+which is worth the user's attention as evidence about the rule rather than about any one wave: the
+collisions arrive by matching the surrounding prose's idiom, which is exactly the mechanism
+[[OI-229]]'s scanner is licensed to make visible.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

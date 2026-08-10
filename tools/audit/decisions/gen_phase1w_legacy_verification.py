@@ -95,7 +95,10 @@ RECORDED_FIGURES = [
     {
         'figure': 80,
         'where': 'OPEN_ITEMS.md',
-        'line': 318,
+        # Re-aimed 2026-08-09 (318 -> 319) per this tool's own reported line: the OI-365 row
+        # inserted above it by `cc_instruction_return_continuation_5.md` Task 0 shifted it by one.
+        # Authored-input maintenance (D-648), not a mechanism change.
+        'line': 319,
         'quote': 'Set size **80**, counted from the data',
         'note': 'The INDEX row, which the register\'s own rule makes the authoritative status '
                 'surface. Same staleness as the detail file.',
@@ -394,6 +397,20 @@ THE_TEST = {
                                       'live design.',
         'none-found': 'The citation scan over every .md/.cpp/.h/.py/.txt surface found no ruling '
                       'carrying it, and the surfaces that do cite it are register mechanics.',
+        'scoped-to-an-act-that-never-ran': 'A USER RULING settles, on the two records\' own words, '
+                                           'that the decision\'s constraint was scoped to an act '
+                                           'that was never performed — so no ruling carried it '
+                                           'across, and any live-design question that survives is '
+                                           'a separate ROWED input rather than a transfer. ADDED '
+                                           '2026-08-09 for Ruling 34; used by one entry. It is a '
+                                           'distinct value because the three that could otherwise '
+                                           'carry it each say something the ruling declined to '
+                                           'say: `none-found` reports a SEARCH result where this '
+                                           'is a ruling, `explicitly-not-transferred` asserts the '
+                                           'decision does not bear on the live design where the '
+                                           'ruling leaves exactly that open, and `undetermined` '
+                                           'says the evidence does not settle it where it now '
+                                           'does.',
         'undetermined': 'The evidence read does not settle it.',
     },
     'how_the_transfer_half_was_searched': (
@@ -909,17 +926,30 @@ VERDICTS = [
     ('D-580', 'Two of the twelve post-scoring gates are purely-local and MUST survive the '
      'dissolution; the other ten dissolve',
      'false-negative-path', ['FM2_FLIP', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'undetermined',
+     'scoped-to-an-act-that-never-ran',
      'The gates are legacy code at HEAD, and the entry\'s own home text says the surviving rule name '
-     'for one of the two is FM2, which is the anchor. THE TRANSFER HALF IS UNDETERMINED on this '
-     'pass\'s own D-325 precedent, and it is the sharpest of the eleven: the rule this constrains — '
-     'dissolving the post-hoc correction layer into the competition — is D-429, whose principle a '
-     'user ruling DID carry to the live design, and whether the carve-out rides across with it or was '
-     'scoped to a legacy dissolution that never ran is a ruling and not a session\'s call. THE USER '
-     'HELD THIS CELL EXPLICITLY: Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md` ratifies the '
-     'other ten verdicts whole and leaves this one UNDETERMINED pending Ruling 27, which orders a '
-     'read-only fact-gathering pass over D-580\'s and D-429\'s full records before any transfer '
-     'verdict is taken. So `undetermined` here is a RULED state, not an unfinished one.'),
+     'for one of the two is FM2, which is the anchor. THE TRANSFER HALF IS SETTLED BY THE USER\'S '
+     'RULING 34 of `cowork_rulings_2026_08_09_fifth_stop.md`, taken on the facts gathered under '
+     'Ruling 27 and delivered at '
+     '`ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md`. THE RULING, in its '
+     'own terms: reading (ii) — DIFFERENT ACTS, BOTH RECORDS TRUE. D-580\'s carve-out is about a '
+     'DISSOLUTION into the competition that never ran; the retirement map\'s R1 performs a DELETION '
+     'of the legacy path; both stand, and R1 is NOT qualified. The carve-out is therefore recorded '
+     'as scoped to the unrun dissolution, which is what this transfer value states. THE EXCLUDED '
+     'READING IS RECORDED (#12): reading (i), that R1 overlooked the carve-out — it would qualify a '
+     'ratified map on an assumption about intent, the unestablished-premise class the user\'s own '
+     'verbatim rule forbids. WHAT THE RULING DELIBERATELY DOES NOT DECIDE, and what is therefore '
+     'ROWED rather than folded in here: whether the live competition design owes the two gates\' '
+     'CONCERNS is a phase-3 fix-plan input (D-231), at OPEN_ITEMS.md OI-365. FORMER VERDICT, '
+     'PRESERVED (#12): `undetermined`, on the ground that the rule this constrains — dissolving the '
+     'post-hoc correction layer into the competition — is D-429, whose principle a user ruling DID '
+     'carry to the live design, and that whether the carve-out rides across with it or was scoped to '
+     'a legacy dissolution that never ran was a ruling and not a session\'s call; the user held the '
+     'cell explicitly at Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md` pending Ruling 27\'s '
+     'fact-gathering pass, so that state was a RULED one and not an unfinished one. THE FACT THAT '
+     'DECIDED IT, located in that pass rather than assumed: D-429\'s carrying ruling states its own '
+     'scope as the phase-3 candidate-admission and emission family, and the gate layer is not a '
+     'member of it.'),
     ('D-583', 'A known deferred loss is KEPT only while it stays characterized EXACTLY, and '
      're-adjudicated when its form changes',
      'false-negative-path', ['JKEY_WIRING_FLAG', 'JKEY_NO_REEMIT', 'BATCH_LEGACY_DEFAULT'],
