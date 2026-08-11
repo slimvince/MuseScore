@@ -4716,6 +4716,68 @@ population a derivation is stated over.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 2 — OPENED AND STOPPED AT AN ENTRY BOUNDARY. One entry re-homed, complete in itself; the remainder untouched rather than partly worked
+
+**The population was derived fresh at task start (A5)** from `tools/audit/phase1_finish_line.json`
+and the route artifacts, not carried from the dispatch or from this file. **Item 1's live remainder
+is still EMPTY**, which is derived at `tools/audit/decisions/finish_line_item1_routes.json` and is
+the ninth continuation's own result, so the homing work sits where that batch said it would: in the
+findings-not-rules item and in items 3 and 5. No count is restated here (**D-431**).
+
+**A4 HOLDS.** The act ran under the registered procedure (**D-668**), in its order, and the kind
+half was judged at the section BEFORE the write.
+
+**What was done, and why this entry.** **D-458 → `cowork_layer6_grouping_design.md` §5.1-a**, the
+section that owns the rule. It is the cleanest member of the findings-not-rules item: its owning
+specification is the SAME document it already sat in, so no judgment about where the concern is
+owned enters at all — the eighth continuation's shape, one document over.
+
+**★ STEP 1 WAS CHECKED FIRST AND DECLINED, WHICH IS THE HALF WORTH READING.** D-668's procedure
+tries the pointer move before any write, and §5.1-a already states the strong-peak/weak-peak rule in
+its own words. **It does NOT state the three things the entry is about**: that the codetta's end is
+recorded as an ANNEXE in its own field rather than as a boundary, that the reading is RULED canonical,
+and the ground — that it is the only reading preserving the flat/total partition law the section
+opens with. **A pointer move onto a sentence that does not state the rule is the stretch the
+procedure forbids**, so step 2 was taken and the missing halves are written there in the section's
+own voice.
+
+**The former home and the former verbatim are preserved whole in the entry's provenance (#12), and
+the status banner they came from is untouched** — so a reader comparing the two sees exactly what
+moved. **What the home text deliberately does not carry** is recorded with it: no measured value and
+no build figure from the banner — the oracle counts, the recall value and the corpus-gate figures
+stay in the banner and in the build report that measured them (**D-431**). The section states the
+rule and its ground.
+
+**Two authored inputs were maintained, both caught by their own tools' STOPs rather than by a reader**
+(**D-648**). Five section-kind heading lines drifted by the insertion and were re-aimed **by locating
+each heading's own recorded TEXT, never by an assumed uniform shift** — which is why the tool records
+the text as well as the line. And the classifier then STOPPED in the other direction: the document's
+opening-block judgment now decides no entry, since D-458 was its only one. **It is moved WHOLE into
+the sibling block the classifier does not read**, with the reason and with a STOP armed the other way
+— and the reason is the one its own text supplies, because that judgment NAMED THE REMEDY THIS ACT
+PERFORMED (*"the remedy is at the DOCUMENT … not at the delegation"*). Deleting it would have
+destroyed the evidence that the re-home followed the record rather than a session's preference. **It
+is the second instance of a shape the eighth continuation met, and it is treated identically.**
+
+**★ WHERE TASK 2 STOPS, AND IT STOPS AT A CLEAN ENTRY BOUNDARY ON CAPACITY.** One entry is complete
+in itself; **the remainder is UNTOUCHED rather than partly worked**, and nothing is left half-edited.
+That is the allowance **D-672** states — homed by this batch's own Task 1 — and this is its first
+exercise under a registered rule rather than under dispatch prose. The remaining population is to be
+derived fresh: the findings-not-rules item's other entries, item 3's single one, and item 5's.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires. **Two derived views went stale by this task's own edits and
+were REGENERATED, not repaired** — the outstanding-delegation view, whose write-list state moved
+because a write-list document lost a gap entry, and the guard classification. Every verdict is at
+`tools/audit/guard_state.json` → `summary` and none is restated here (**D-431**).
+
+**Holds:** the remaining homing population, untouched and to be derived fresh. **Surfacings:** none
+bearing on the analysis — the subject of this task is where a recorded decision is written down.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

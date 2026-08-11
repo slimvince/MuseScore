@@ -231,6 +231,16 @@ boundaries is upstream, and how they *group into punctuation-spans* is the rule 
   - **(§5.1-a, refinement)** Where two boundaries fall close together (a strong structural peak followed by a weak one),
     the **stronger** peak is the punctuation-span's structural end and the span between them is its codetta; the weaker
     peak does not open a new punctuation-span. The closeness window and the strength margin are precision-phase constants.
+  - **(§5.1-a, the reading that is CANONICAL — ruled at ratification, Cowork, 2026-07-02.)** The refinement above admits
+    more than one reading of what to do with the second boundary, and one of them is fixed: **keep the strong-peak cut,
+    drop the weak cut, and record the codetta's end as an ANNEXE** — the `codettaEndTick` field — rather than as a span
+    boundary. *Why this reading and not another:* it is **the only one that preserves the flat/total partition law stated
+    at the head of §5.1**. A weak cut that opened a punctuation-span of its own would give the analysed stretch a group
+    the strong cut had already closed, so the partition would stop being total-and-flat — and that law is what this layer
+    is defined by, not a convenience of the implementation. *What the reading costs today:* nothing. It is **inert under
+    default settings** and changes no output unless the refinement is explicitly enabled, so it fixes what the refinement
+    means before anything depends on it rather than after. *(Homed here 2026-08-11 from the document's own status banner,
+    where the ruling was recorded; the banner text is untouched (#12) and this section is where the rule now lives.)*
 
 ### 5.2 Key-area grouping
 A **key-area** is a maximal span of constant local key. Read the upstream **local-key track** (the local tonic and mode

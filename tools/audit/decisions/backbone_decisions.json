@@ -779,51 +779,56 @@
       "cowork_layer6_grouping_design.md": {
         "delegation_scope": "document",
         "why_this_scope": "ARCHITECTURE.md:1515, the delegation the user wrote 2026-08-04 (READ WAVE 6, ruling R5), names the DOCUMENT and no section. THE FORMER AUTHORED VALUE, PRESERVED (#12): \"none\" - correct while the strongest naming was the bare `Full spec:` citation and the document was EXCLUDED; it went stale the moment the delegation was written, and the applier's own STOP is what surfaced it (a scope of \"none\" on an ADMITTED document).",
+        "section_kind_retired_when_their_last_entry_was_re_homed": {
+          "retired_2026_08_11_the_twelfth_return_continuation": "CC, dispatch `cc_instruction_return_continuation_12.md` Task 2, under the user's Ruling 38 / D-664 — the finish-line item for entries the delegation REACHES in a section that RECORDS FINDINGS. The judgment below decided exactly one entry, D-458, and that entry was re-homed by this act into §5.1-a, which STATES RULES. The classifier then STOPPED on it as an 'authored section-kind judgment that decides no entry', which is that guard working. ★ IT IS MOVED WHOLE RATHER THAN DELETED (#12, D-648), for the reason its own text makes plain: it NAMED THE REMEDY THIS ACT PERFORMED — 'the remedy is at the DOCUMENT (move it into the section that owns it), not at the delegation' — so deleting it would destroy the evidence that the re-home followed the record rather than a session's preference. It is also the second instance of a shape the eighth return continuation met at `cowork_phrase_boundary_design.md`, and it is treated identically. The classifier reads `section_kind` and nothing else, so a judgment parked here is inert. ★ IF THE OPENING BLOCK EVER HOLDS AN ENTRY AGAIN, its judgment is RE-READ into `section_kind` rather than restored from here — a reading made of a section as it stood is not evidence about a section that has since changed.",
+          "judgments": [
+            {
+              "heading_line": 1,
+              "heading_text": "Layer 6 — Grouping (design)",
+              "states_rules": false,
+              "why": "RECORDS FINDINGS - the document's STATUS BANNER, and the same judgment the record already made for `cowork_layer3_keymode_design.md`'s opening block. It records the AS-BUILT state, the commits, the test counts, the validation figures, the dormancy proof and the sign-off history. The one rule it carries - the codetta interpretation ruled at ratification - is, in that precedent's own words, \"a decision recorded in a banner rather than in\" a rule-stating section; the remedy is at the DOCUMENT (move it into the section that owns it), not at the delegation. Read :1-35."
+            }
+          ]
+        },
         "section_kind": [
-          {
-            "heading_line": 1,
-            "heading_text": "Layer 6 — Grouping (design)",
-            "states_rules": false,
-            "why": "RECORDS FINDINGS - the document's STATUS BANNER, and the same judgment the record already made for `cowork_layer3_keymode_design.md`'s opening block. It records the AS-BUILT state, the commits, the test counts, the validation figures, the dormancy proof and the sign-off history. The one rule it carries - the codetta interpretation ruled at ratification - is, in that precedent's own words, \"a decision recorded in a banner rather than in\" a rule-stating section; the remedy is at the DOCUMENT (move it into the section that owns it), not at the delegation. Read :1-35."
-          },
           {
             "heading_line": 209,
             "heading_text": "5.1 Punctuation-span segmentation",
             "states_rules": true,
-            "why": "STATES RULES. \"5.1 Punctuation-span segmentation\" states the partition law (total and flat), where the first and last spans open and close, the edge provenance marks, and \"L6 consumes the primitive's picked-peak set as-is - it does not re-threshold or re-detect boundaries\". Read :209-234."
+            "why": "STATES RULES. \"5.1 Punctuation-span segmentation\" states the partition law (total and flat), where the first and last spans open and close, the edge provenance marks, and \"L6 consumes the primitive's picked-peak set as-is - it does not re-threshold or re-detect boundaries\". Read :209-244. (The range grew by the 2026-08-11 re-home of D-458 into this section; the reading is unchanged.)"
           },
           {
-            "heading_line": 235,
+            "heading_line": 245,
             "heading_text": "5.2 Key-area grouping",
             "states_rules": true,
             "why": "STATES RULES. \"5.2 Key-area grouping\" states the open/extend/close rule, says in terms \"The rule that a key change starts a new area is fixed here\", and binds the published confidence to Class M of the confidence contract. Read :235-264."
           },
           {
-            "heading_line": 281,
+            "heading_line": 291,
             "heading_text": "5.4 Carrying the residual",
             "states_rules": true,
             "why": "STATES RULES. \"5.4 Carrying the residual\" states what is surfaced, that \"L6 never resolves an open mark\", and the whole test for reporting a span resolved (\"that is the whole test - no confidence threshold is involved\"). Read :281-287."
           },
           {
-            "heading_line": 296,
+            "heading_line": 306,
             "heading_text": "6. The layer is exactly its assembly rules + read-through carries (the proportionality bound)",
             "states_rules": true,
             "why": "STATES RULES. The section states the layer's scope law - \"Layer 6 defines no detection of its own\", \"There is no additional detection rule and no hierarchy\" - and tells the reader what to do with pressure to add one. Read :296-303."
           },
           {
-            "heading_line": 304,
+            "heading_line": 314,
             "heading_text": "7. Crosscutting concepts",
             "states_rules": true,
             "why": "STATES RULES. \"Crosscutting concepts\": additive and read-only over Layer 5, reuse-do-not-duplicate with \"L6 adds no second boundary detector, cadence detector, or key segmenter\", the firewall on constants, and the proportionality bound. Read :304-317."
           },
           {
-            "heading_line": 330,
+            "heading_line": 340,
             "heading_text": "9. Architecture decisions (with the alternatives weighed)",
             "states_rules": true,
             "why": "STATES RULES. \"Architecture decisions (with the alternatives weighed)\" - D1-D5, each with what was rejected and why. Read :330-351."
           },
           {
-            "heading_line": 352,
+            "heading_line": 362,
             "heading_text": "10. Quality & testing — the validation strategy (the two-step oracle, user-ratified 2026-06-29)",
             "states_rules": true,
             "why": "STATES RULES. \"Quality & testing - the validation strategy (the two-step oracle, user-ratified 2026-06-29)\" prescribes which oracle validates each of the three outputs, which metrics are used, the two-step plan, and that the layer stays dormant and byte-identical until engagement. A user-ratified validation contract, not a report of results. Read :352-372."
@@ -13870,7 +13875,7 @@
       "title": "The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere",
       "verbatim": "Layer 6 defines **no detection of its own**: it assembles §5.1–§5.3 (punctuation-span segmentation, key-area grouping,\ncadence alignment) and hosts the **read-through carries** — §5.4 the Layer-5 residual and §5.5 the consumer's schema\nannotations, both carried verbatim, neither *detected* here. There is no additional *detection* rule and no hierarchy.\nPressure to add detection is a signal to check whether the work belongs in an **earlier** layer (a detection that should be\na primitive) or is an **out-of-scope extension** (§9-D3) — not a new Layer-6 mechanism.",
       "plain": "The grouping stage adds no detector of its own. It puts together the boundaries, cadences, keys and unresolved marks the earlier stages produced. If it starts to feel as though grouping needs to detect something, that is a sign the work belongs to an earlier stage or is out of scope — not that grouping needs a new mechanism.",
-      "home": "cowork_layer6_grouping_design.md:297-301",
+      "home": "cowork_layer6_grouping_design.md:307-311",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-02",
@@ -13888,7 +13893,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 296,
+        "heading_line": 306,
         "section": "## 6. The layer is exactly its assembly rules + read-through carries (the proportionality bound)",
         "label": "§6",
         "delegated": true,
@@ -13908,7 +13913,7 @@
       "title": "A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded",
       "verbatim": "- **D4 — Cadences align to punctuation-spans, asymmetrically; an off-boundary cadence is surfaced, not snapped (§5.3).**\n  *Rejected:* forcing every punctuation-span to end with a cadence (contradicts the ground truth) and snapping a stray\n  cadence to the nearest boundary (hides a real tension signal and would be a covert upstream override).",
       "plain": "A cadence usually lands where a grouping span ends, but a span may end with no cadence at all, so the relation runs one way only. A cadence that lands nowhere near a boundary is marked as falling inside a span and shown as such. It is not dragged to the nearest boundary and it is not thrown away.",
-      "home": "cowork_layer6_grouping_design.md:345-347",
+      "home": "cowork_layer6_grouping_design.md:355-357",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-02",
@@ -13926,7 +13931,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 330,
+        "heading_line": 340,
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -13946,7 +13951,7 @@
       "title": "Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle",
       "verbatim": "- **D3 — Sections / periods / sentences are out of L6's *core* for PROPORTIONALITY — NOT disqualified for lack of an\n  oracle (user-ratified verifiability contract, 2026-06-29).** They are sound theory and *do* lack an oracle in our\n  corpus, but the contract is explicit that **lack of ground truth is not a disqualifier.** They stay out of the thin core\n  because L6 is the *flat-grouping assembly* layer and forms/sections are a larger, *higher*-layer structure — and they are\n  **buildable via a chosen alternative-confidence path** (a form-annotated corpus, or theory-rules-as-oracle) with an\n  \"empirically-unvalidated\" mark, when a need arises. The core is punctuation-spans + key-areas + cadence alignment + the\n  hosted schema spans.",
       "plain": "Larger formal structures — sections, periods, sentences — are left out of the grouping stage's core because that stage assembles the flat grouping and formal structure is a bigger thing belonging higher up. They are NOT rejected for being uncheckable against our annotated music: the standing contract says that alone never disqualifies sound theory. They may be built when a need arises, with a chosen way of gaining confidence in them and an explicit mark that they are empirically unchecked.",
-      "home": "cowork_layer6_grouping_design.md:338-344",
+      "home": "cowork_layer6_grouping_design.md:348-354",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-06-29",
@@ -13964,7 +13969,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 330,
+        "heading_line": 340,
         "section": "## 9. Architecture decisions (with the alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -14020,19 +14025,19 @@
       "id": "D-458",
       "group": "H",
       "title": "The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe",
-      "verbatim": "**§5.1-a codetta interpretation RULED (Cowork, at ratification):** the\n> as-built tiling reading (keep the strong-peak cut, drop the weak cut, record `codettaEndTick` as an annexe) is\n> canonical — it is the only reading preserving the §5.1 flat/total partition law; inert under default settings\n> (changes no output unless explicitly enabled).",
+      "verbatim": "**(§5.1-a, the reading that is CANONICAL — ruled at ratification, Cowork, 2026-07-02.)** The refinement above admits\n    more than one reading of what to do with the second boundary, and one of them is fixed: **keep the strong-peak cut,\n    drop the weak cut, and record the codetta's end as an ANNEXE** — the `codettaEndTick` field — rather than as a span\n    boundary.",
       "plain": "Where a strong grouping cut is followed closely by a weak one, the span ends at the strong cut and the stretch after it is recorded as a trailing annexe rather than opening a group of its own. This reading was ruled canonical at ratification.",
-      "home": "cowork_layer6_grouping_design.md:12-15",
+      "home": "cowork_layer6_grouping_design.md:234-237",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-02",
       "ratified_by": [
         "Cowork"
       ],
-      "status_source": "`cowork_layer6_grouping_design.md` status banner, which records the ruling as made by Cowork at ratification. Entered by the phase-1 reads wave 1. The banner is a status surface, which OI-240 establishes is not a home for a standing decision — recorded here so the ruling is findable, with the documentation-gap flag standing. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.)",
+      "status_source": "`cowork_layer6_grouping_design.md` status banner, which records the ruling as made by Cowork at ratification. Entered by the phase-1 reads wave 1. The banner is a status surface, which OI-240 establishes is not a home for a standing decision — recorded here so the ruling is findable, with the documentation-gap flag standing. ★ RATIFIED (user, 2026-08-04, the phase-1z ratification queue — the twenty-eight READ WAVE 1 entries ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated'. The ratification confirms that the register records the decision correctly; it is not a judgment that the decision is good. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping.) ★ RE-HOMED 2026-08-11 (CC, `cc_instruction_return_continuation_12.md` Task 2), under D-664's re-homing default and by D-668's procedure. STEP 1 WAS CHECKED FIRST AND DECLINED: §5.1-a already states the strong-peak/weak-peak rule, but it does NOT state the annexe field, that the reading is ruled canonical, or the partition-law ground — so a pointer move onto it would have admitted the rule by stretch, which the procedure forbids. STEP 2 was taken: the missing halves are written into §5.1-a in that section's own voice, and the home and verbatim are re-taken from the new text. THE KIND HALF WAS JUDGED BEFORE THE WRITE: §5.1 states the partition law and its refinement in the imperative, which is a rule-stating section; the document's opening block, which the classification grades as recording findings, is where this entry sat. FORMER HOME, PRESERVED (#12): `cowork_layer6_grouping_design.md:12-15`, the status banner. FORMER VERBATIM, PRESERVED (#12): \"**§5.1-a codetta interpretation RULED (Cowork, at ratification):** the\\n> as-built tiling reading (keep the strong-peak cut, drop the weak cut, record `codettaEndTick` as an annexe) is\\n> canonical — it is the only reading preserving the §5.1 flat/total partition law; inert under default settings\\n> (changes no output unless explicitly enabled).\" WHAT THE HOME TEXT DELIBERATELY DOES NOT CARRY: no measured value and no build figure from the banner — the oracle counts, the recall value and the corpus-gate figures stay in the banner and in the build report that measured them (D-431); the section states the rule and its ground. THE BANNER IS UNTOUCHED, so a reader comparing the two sees what moved.",
       "patterns": [],
       "rationale": "Stated with the ruling: it is the only reading that preserves the rule that groups tile the analysed stretch completely and without nesting — a second cut opening its own group would break the partition the layer is defined by. The ruling also records that it is inert under default settings, changing no output unless explicitly enabled.",
-      "nonspec_kind": "gap",
+      "nonspec_kind": "contract-home",
       "entry_ratified": {
         "date": "2026-08-04",
         "by": [
@@ -14040,14 +14045,14 @@
         ]
       },
       "home_section": {
-        "heading_line": 1,
-        "section": "# Layer 6 — Grouping (design)",
-        "label": "the opening block (above the first section heading)",
+        "heading_line": 209,
+        "section": "### 5.1 Punctuation-span segmentation",
+        "label": "§5.1",
         "delegated": true,
         "delegation": "ARCHITECTURE.md:2149",
-        "states_rules": false,
-        "verdict": "EXCLUDE",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "gap",
         "class_before_phase1q": "gap",
         "class_before_phase1r": "gap",
@@ -14060,7 +14065,7 @@
       "title": "The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid",
       "verbatim": "*(Contract compliance, added at sign-off review 2026-07-02: any confidence L6 publishes — the key-area\nconfidence, a span-level aggregate — is a **boundary confidence under the cross-layer confidence contract**\n(`cowork_confidence_contract.md` U2): [0,1], declared in the contract's **Class M** (a margin-family quantity, not a\ncalibrated probability), with its combiner and inputs named; and its **input** is\neach unit's DECLARED boundary key confidence per that contract — i.e. once the **D-L3a close-out** (the Layer-3\nboundary-confidence declaration item of `cowork_confidence_contract.md` §3) lands, the one declared\nL3/L5 number, not the **diagnostic sigmoid** (the Layer-3 emission-scale confidence squash used by the grading\ndiagnostics, named in the Layer-3 spec banner as the C1 fidelity fix).)*",
       "plain": "The confidence the grouping stage publishes for a key area is a quantity crossing a stage boundary, so it obeys the cross-layer confidence rules: it sits between zero and one, it is declared as a margin rather than a calibrated probability, and it names how it was combined and from what. What it is combined FROM is the declared key confidence, not the squashed number the grading diagnostics use.",
-      "home": "cowork_layer6_grouping_design.md:244-251",
+      "home": "cowork_layer6_grouping_design.md:254-261",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-02",
@@ -14078,7 +14083,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 235,
+        "heading_line": 245,
         "section": "### 5.2 Key-area grouping",
         "label": "§5.2",
         "delegated": true,
@@ -14098,7 +14103,7 @@
       "title": "A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test",
       "verbatim": "A Layer-5 open mark on a unit is surfaced on the punctuation-span and key-area that contain that unit (the group is\nreported as carrying an unresolved reading at that location). L6 **never** resolves an open mark — it has no evidence Layer\n5 lacked. A punctuation-span composed entirely of units carrying **no open mark** (that is the whole test — no\nconfidence threshold is involved) is reported as fully resolved; one containing an\nopen mark is reported with the residual visible.",
       "plain": "Where an earlier stage left a reading unresolved, that mark is shown on the group and the key area containing it. The grouping stage never resolves it — it has no evidence the earlier stage lacked. A group is reported as fully resolved when, and only when, none of its units carries such a mark; no confidence number is consulted.",
-      "home": "cowork_layer6_grouping_design.md:282-286",
+      "home": "cowork_layer6_grouping_design.md:292-296",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-02",
@@ -14116,7 +14121,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 281,
+        "heading_line": 291,
         "section": "### 5.4 Carrying the residual",
         "label": "§5.4",
         "delegated": true,
@@ -14136,7 +14141,7 @@
       "title": "The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin",
       "verbatim": "- **Proportionality.** The SOTA reaches competitive Roman-numeral accuracy with **no** explicit grouping layer (grouping\n  falls out of stable key runs — `contrapunctus_findings.md`). L6 is a deliberate **explainability** layer, not an\n  accuracy requirement; it stays the thin assembly layer specified here and does not grow detection of its own.",
       "plain": "The best published systems reach competitive Roman-numeral accuracy with no grouping stage at all — grouping falls out of stable key runs. Ours exists to make the analysis explainable, not to make it more accurate, and it is held to the thin assembly job on that basis.",
-      "home": "cowork_layer6_grouping_design.md:314-316",
+      "home": "cowork_layer6_grouping_design.md:324-326",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-07-02",
@@ -14154,7 +14159,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 304,
+        "heading_line": 314,
         "section": "## 7. Crosscutting concepts",
         "label": "§7",
         "delegated": true,
@@ -14174,7 +14179,7 @@
       "title": "Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate",
       "verbatim": "- **Cadence alignment → the DCML-TSV `|cadence` oracle, scoped to LOCATION** (robust to Roman-numeral errors; cadence\n  *type* is harmony-dependent and only partially attributable on the harder repertoire — measured, caveated, not a clean\n  gate).",
       "plain": "Cadences are checked against the annotated corpus for WHERE they fall, because that check survives a wrong Roman numeral. WHAT KIND of cadence it is depends on the harmony being right, so on the harder repertoire that can only partly be attributed — it is measured and reported with that caveat, and it never becomes a pass-or-fail gate.",
-      "home": "cowork_layer6_grouping_design.md:359-361",
+      "home": "cowork_layer6_grouping_design.md:369-371",
       "home_is_layer_spec": false,
       "status": "live",
       "date": "2026-06-29",
@@ -14192,7 +14197,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 352,
+        "heading_line": 362,
         "section": "## 10. Quality & testing — the validation strategy (the two-step oracle, user-ratified 2026-06-29)",
         "label": "§10",
         "delegated": true,

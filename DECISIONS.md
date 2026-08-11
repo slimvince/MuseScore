@@ -218,7 +218,7 @@ project's own and are defined here because they are used before any entry explai
 | Decisions whose date is not stated in the record | 239 |
 | Decisions whose ratifier is not stated in the record | 366 |
 | Decisions recorded outside the specification that owns them | 375 |
-| — of which a documentation gap | 29 |
+| — of which a documentation gap | 28 |
 | — of which recorded only on a tracking surface, with no home at all | 1 |
 | — of which a project-wide convention, correctly homed | 45 |
 | — of which a decision about the process, correctly homed | 139 |
@@ -633,7 +633,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-455 | A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §9 |
 | D-456 | Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §9 |
 | D-457 | A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.1 |
-| D-458 | The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` the opening block (above the first section heading) ⚠gap |
+| D-458 | The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.1 |
 | D-459 | The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.2 |
 | D-460 | A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §5.4 |
 | D-461 | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | LIVE | 2026-08-04 · user | `cowork_layer6_grouping_design.md` §7 |
@@ -1052,8 +1052,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `b46db085dbd803fefd828e8d95a8eb110e1981ac`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `5c063e780bfc0b24…`).
+- Coverage figures above regenerated at commit `d811efdb1935699beffc8bb7fc15e6a5fcd3e945`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `d9d8b2b3040c2c4e…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

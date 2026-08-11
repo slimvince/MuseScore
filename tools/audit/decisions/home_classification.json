@@ -22,12 +22,12 @@
       "gap": 102
     },
     "class_after": {
-      "contract-home": 161,
-      "gap": 29
+      "contract-home": 162,
+      "gap": 28
     },
-    "entries_moved": 83,
+    "entries_moved": 84,
     "moved_to_gap": 5,
-    "moved_to_contract_home": 78,
+    "moved_to_contract_home": 79,
     "decided_by": {
       "D-430, the section-level unit": 173,
       "clause (a), the fifth home case (OI-268)": 17
@@ -1176,18 +1176,17 @@
         "gap": 9
       },
       "after": {
-        "contract-home": 8,
-        "gap": 1
+        "contract-home": 9
       },
       "moves_out": 0,
-      "moves_in": 8,
+      "moves_in": 9,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:2149",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "sections": {
         "§6": {
-          "heading_line": 296,
+          "heading_line": 306,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -1196,7 +1195,7 @@
           "class_after": "contract-home"
         },
         "§9": {
-          "heading_line": 330,
+          "heading_line": 340,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -1210,21 +1209,13 @@
           "delegated": true,
           "states_rules": true,
           "entries": [
-            "D-457"
+            "D-457",
+            "D-458"
           ],
           "class_after": "contract-home"
         },
-        "the opening block (above the first section heading)": {
-          "heading_line": 1,
-          "delegated": true,
-          "states_rules": false,
-          "entries": [
-            "D-458"
-          ],
-          "class_after": "gap"
-        },
         "§5.2": {
-          "heading_line": 235,
+          "heading_line": 245,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -1233,7 +1224,7 @@
           "class_after": "contract-home"
         },
         "§5.4": {
-          "heading_line": 281,
+          "heading_line": 291,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -1242,7 +1233,7 @@
           "class_after": "contract-home"
         },
         "§7": {
-          "heading_line": 304,
+          "heading_line": 314,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -1251,7 +1242,7 @@
           "class_after": "contract-home"
         },
         "§10": {
-          "heading_line": 352,
+          "heading_line": 362,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -1260,7 +1251,7 @@
           "class_after": "contract-home"
         }
       },
-      "moves_in_since_phase1q": 8
+      "moves_in_since_phase1q": 9
     },
     "cowork_term_theory_grounding.md": {
       "entries": 1,
@@ -4654,9 +4645,9 @@
       "id": "D-454",
       "title": "The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere",
       "document": "cowork_layer6_grouping_design.md",
-      "home": "cowork_layer6_grouping_design.md:297-301",
+      "home": "cowork_layer6_grouping_design.md:307-311",
       "section": "§6",
-      "section_heading_line": 296,
+      "section_heading_line": 306,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:2149",
@@ -4676,9 +4667,9 @@
       "id": "D-455",
       "title": "A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded",
       "document": "cowork_layer6_grouping_design.md",
-      "home": "cowork_layer6_grouping_design.md:345-347",
+      "home": "cowork_layer6_grouping_design.md:355-357",
       "section": "§9",
-      "section_heading_line": 330,
+      "section_heading_line": 340,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:2149",
@@ -4698,9 +4689,9 @@
       "id": "D-456",
       "title": "Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle",
       "document": "cowork_layer6_grouping_design.md",
-      "home": "cowork_layer6_grouping_design.md:338-344",
+      "home": "cowork_layer6_grouping_design.md:348-354",
       "section": "§9",
-      "section_heading_line": 330,
+      "section_heading_line": 340,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:2149",
@@ -4742,31 +4733,31 @@
       "id": "D-458",
       "title": "The codetta refinement is read as the as-built tiling: keep the strong cut, drop the weak one, and record the codetta end as an annexe",
       "document": "cowork_layer6_grouping_design.md",
-      "home": "cowork_layer6_grouping_design.md:12-15",
-      "section": "the opening block (above the first section heading)",
-      "section_heading_line": 1,
+      "home": "cowork_layer6_grouping_design.md:234-237",
+      "section": "§5.1",
+      "section_heading_line": 209,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:2149",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes.",
       "section_delegated": true,
-      "section_states_rules": false,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
       "class_before_phase1r": "gap",
       "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "moves_since_phase1r": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-459",
       "title": "The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid",
       "document": "cowork_layer6_grouping_design.md",
-      "home": "cowork_layer6_grouping_design.md:244-251",
+      "home": "cowork_layer6_grouping_design.md:254-261",
       "section": "§5.2",
-      "section_heading_line": 235,
+      "section_heading_line": 245,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:2149",
@@ -4786,9 +4777,9 @@
       "id": "D-460",
       "title": "A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test",
       "document": "cowork_layer6_grouping_design.md",
-      "home": "cowork_layer6_grouping_design.md:282-286",
+      "home": "cowork_layer6_grouping_design.md:292-296",
       "section": "§5.4",
-      "section_heading_line": 281,
+      "section_heading_line": 291,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:2149",
@@ -4808,9 +4799,9 @@
       "id": "D-461",
       "title": "The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin",
       "document": "cowork_layer6_grouping_design.md",
-      "home": "cowork_layer6_grouping_design.md:314-316",
+      "home": "cowork_layer6_grouping_design.md:324-326",
       "section": "§7",
-      "section_heading_line": 304,
+      "section_heading_line": 314,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:2149",
@@ -4830,9 +4821,9 @@
       "id": "D-462",
       "title": "Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate",
       "document": "cowork_layer6_grouping_design.md",
-      "home": "cowork_layer6_grouping_design.md:359-361",
+      "home": "cowork_layer6_grouping_design.md:369-371",
       "section": "§10",
-      "section_heading_line": 352,
+      "section_heading_line": 362,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:2149",
@@ -6039,7 +6030,7 @@
   ],
   "the_phase_1r_re_run": {
     "why": "The user WROTE delegations on 2026-08-03 (the OI-293 write list) for the six documents this pass had reported losing entries. The pass therefore runs a SECOND time, over classes it had itself moved. `class_before_phase1q` still holds the state before the FIRST run, so `totals` and `by_document` below are unchanged in meaning; this block is the movement caused by the written delegations alone.",
-    "entries_moved_since_phase1q": 90,
+    "entries_moved_since_phase1q": 91,
     "moved_to_contract_home": [
       {
         "id": "D-270",
@@ -6392,6 +6383,13 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
       {
+        "id": "D-458",
+        "document": "cowork_layer6_grouping_design.md",
+        "section": "§5.1",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
         "id": "D-459",
         "document": "cowork_layer6_grouping_design.md",
         "section": "§5.2",
@@ -6675,13 +6673,12 @@
     "moved_to_gap": [],
     "write_list_documents_that_did_not_move_in_whole": [
       "cowork_layer1_note_model_design.md",
-      "cowork_layer1_tone_collection_design.md",
-      "cowork_layer6_grouping_design.md"
+      "cowork_layer1_tone_collection_design.md"
     ]
   },
   "the_2026_08_08_apply": {
     "why": "The user WROTE three more delegations on 2026-08-08 (the document-route ruling, route (i)) and every read wave since phase 1r entered register entries whose `home_section` had no writer while the applying run was held. This block is the movement caused by everything since the phase-1r pass — graded against `class_before_the_2026_08_08_apply`, the fourth frozen epoch, which is read back from each entry and never overwritten (#12).",
-    "entries_moved_since_phase1r": 22,
+    "entries_moved_since_phase1r": 23,
     "moved_to_contract_home": [
       {
         "id": "D-398",
@@ -6764,6 +6761,13 @@
         "id": "D-448",
         "document": "docs/llm_integration.md",
         "section": "§4.2",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-458",
+        "document": "cowork_layer6_grouping_design.md",
+        "section": "§5.1",
         "from": "gap",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
@@ -7097,6 +7101,12 @@
     },
     {
       "id": "D-457",
+      "document": "cowork_layer6_grouping_design.md",
+      "section": "§5.1",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-458",
       "document": "cowork_layer6_grouping_design.md",
       "section": "§5.1",
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
