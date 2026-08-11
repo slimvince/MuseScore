@@ -109,6 +109,31 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-47": (GATES, RULING_56_GROUND,
+              "★ RE-CLASSED 2026-08-11 by the user's Ruling 56 of "
+              "`cowork_rulings_2026_08_11_twelfth_stop.md`, which APPLIES D-639's reach derivation "
+              "over the apparatus-classed rows; the former NON-GATING verdict is preserved whole at "
+              "`superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's "
+              "own artifact and reconciled here in both directions rather than listed by hand. The "
+              "derivation put this row INSIDE the doc-sync half under D-639's fallback (1A), and "
+              "the ground is that four superseded status sections carry MEASURED VALUES about the "
+              "analysis which the governing hard stop supersedes - so a reader of the current-state "
+              "section is told the system's error counts are values no measurement now supports. "
+              "The owed act is unchanged and is the row's own: annotate, do not rewrite history.",
+              "RESOLVED 2026-08-11 - the BANNER half was performed at the objects "
+              "(`cc_instruction_status_touch_and_oi141_premise_repin.md` Task 2), all four "
+              "submission-era sections carrying a dated HISTORICAL banner and not one line below "
+              "any banner edited. THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); "
+              "it is retired because the row closed, never because it was wrong. ★ ITS GROUND IS "
+              "WHAT THE CLOSING ACT TURNED OUT TO NEED: the verdict graded the row on the sections "
+              "carrying MEASURED VALUES the governing hard stop supersedes, and the banner the act "
+              "wrote is exactly a statement that those acceptance numbers and hard stops are "
+              "superseded in whole - so a verdict written against the subject survived a closing "
+              "act that happened in a DIFFERENT FILE from the one this row's own citations named. "
+              "WHAT THE CLOSURE DOES NOT DISCHARGE: [[OI-370]], the file's accumulation against its "
+              "own archive rule, which the row's own text keeps apart from this one and which "
+              "carries its own verdict above; and one false-at-HEAD clause found while bannering, "
+              "named at its banner and carried at [[OI-315]] rather than corrected below it."),
     "OI-282": (GATES, RULING_56_GROUND,
                "★ RE-CLASSED 2026-08-11 by the user's Ruling 56, which APPLIES D-639's reach "
                "derivation; the former NON-GATING verdict is preserved whole at "
@@ -614,17 +639,7 @@ V = {
               "What is owed is 'annotate the tables' - a consistency banner inside the "
               "structural-integrity audit, a tracking document. Nothing about the analysis is "
               "stated falsely by the tables; two records disagree about a stage's build status."),
-    "OI-47": (GATES, RULING_56_GROUND,
-              "★ RE-CLASSED 2026-08-11 by the user's Ruling 56 of "
-              "`cowork_rulings_2026_08_11_twelfth_stop.md`, which APPLIES D-639's reach derivation "
-              "over the apparatus-classed rows; the former NON-GATING verdict is preserved whole at "
-              "`superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's "
-              "own artifact and reconciled here in both directions rather than listed by hand. The "
-              "derivation put this row INSIDE the doc-sync half under D-639's fallback (1A), and "
-              "the ground is that four superseded status sections carry MEASURED VALUES about the "
-              "analysis which the governing hard stop supersedes - so a reader of the current-state "
-              "section is told the system's error counts are values no measurement now supports. "
-              "The owed act is unchanged and is the row's own: annotate, do not rewrite history."),
+    # OI-47's verdict moved to RETIRED_VERDICTS on 2026-08-11 when the row closed.
     "OI-48": (NON_GATING, "user",
               "A dangling reference to a memory file from two documents; the row states in terms "
               "that nothing is lost and that the code substance rides OI-61. What is owed is "
@@ -1017,6 +1032,57 @@ V = {
                "reserves to the user, and this row proposes none."),
     # OI-369's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the user's Ruling 61 closed
     # the row.
+    # ---- rowed 2026-08-11, graded 2026-08-11 (`cc_instruction_apply_the_bearing_cut.md` Task 2) --
+    # The dispatch's assumption A6 forbids assuming either of these is apparatus and requires both
+    # to go through the cut like any other row, taking whatever verdict it gives them. Both come
+    # out GATES, on DIFFERENT grounds, which is the criterion doing its job rather than a close
+    # call. Each verdict is made against the row's SUBJECT, never its remedy.
+    "OI-370": (GATES, "the default - the row's own text does not settle its subject",
+               "A MANDATORY SESSION-START READ CANNOT BE PERFORMED: `CLAUDE.md` names `STATUS.md` "
+               "among the three files every session reads and forbids relying on memory for "
+               "baselines or iteration state, and the file tools refuse the file. THE FIRST-CUT "
+               "CLASSIFICATION REACHED THIS ROW and the verdict is authored for it here, which is "
+               "what the tool requires; no non-gating verdict is hand-added, which is the act the "
+               "record forbids. WHAT DECIDES IT IS THE DECLARATION'S OWN DEFAULT, and that is said "
+               "plainly rather than argued around: the row states BOTH readings and settles "
+               "neither, in its own words -- the subject is the record's own apparatus, which the "
+               "declaration classes non-gating, but the consequence is that a session may not know "
+               "the analysis's current state, and D-438's second half reaches a statement about "
+               "the analysis or its build state -- and it ends 'Left for the derivation.' A row "
+               "whose subject its own text does not settle GATES, because the declaration only "
+               "ever removes a wait where the row supports removing it. The two readings pull "
+               "opposite ways on the apparatus line itself: what is OWED reads as apparatus (a "
+               "filing act under the file's own archive rule, or a size guard), while what the row "
+               "ESTABLISHES is that a governing instruction cannot be carried out at all. NOT an "
+               "establishment obligation (#19), which would override the criterion whatever the "
+               "subject: the size guard's own establishment would be owed BY that check if it were "
+               "ever built, which is a condition on a future act rather than an obligation "
+               "standing now -- the same distinction that keeps [[OI-364]] off the exemption. "
+               "★ ITS FIRST REMEDY HAS ALREADY RUN AND THE ROW SURVIVED IT: the archive rule was "
+               "applied and the read failed again, which is why the row is still open and why the "
+               "verdict is made on the row as it stands rather than on the remedy proposed for "
+               "it. Distinct from the retired [[OI-47]], which was four SECTIONS of that file "
+               "contradicting the governing documents; this is the file's accumulation against its "
+               "own archive rule, and the two rows say so of each other."),
+    "OI-371": (GATES, "a statement about the analysis's build state",
+               "A set of comment blocks was graded HELD pending a call-graph answer, that answer "
+               "is now established, and the row that recorded the hold is RESOLVED -- so a "
+               "false-at-HEAD statement about WHICH DECODER SHIPS has no live tracking. WHAT IS "
+               "OWED decides it, and what is owed is not a pointer, an anchor, a label, a banner, "
+               "a filing decision or a section boundary: it is the CORRECTION OF A STATEMENT ABOUT "
+               "WHICH ANALYSIS ARM RUNS, which D-438's own line inside the documentation rows "
+               "names on the gating side in those words. It is the class the retired [[OI-303]], "
+               "[[OI-304]] and [[OI-353]] verdicts all carry, one artifact further in: there the "
+               "false claims stood in the comments, and here what is ALSO wrong is the sweep's own "
+               "verdict, which reads `undecided` rather than `owed` and therefore brings nothing "
+               "back. The row's own text reaches the same reading and is not the reason for it -- "
+               "the reading is made at D-438's line. NOT an establishment obligation (#19): no "
+               "rate, measurement tool or measured value is affected, and no comment is executable "
+               "-- the behaviour is what the configuration says, which is the same ground the "
+               "OI-353 verdict gave. Recorded against the row's SUBJECT, never its remedy: the "
+               "re-grade must run through `gen_arm_comment_sweep.py` rather than around it, and "
+               "the correcting act needs its own authorization, exactly as [[OI-368]]'s act (a) "
+               "records for the neighbouring site."),
 }
 
 # The dispatch's assumption A3, recorded so the difference is reported rather than reconciled.

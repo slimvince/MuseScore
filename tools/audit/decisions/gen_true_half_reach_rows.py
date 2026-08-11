@@ -330,27 +330,7 @@ VERDICTS = [
             "parameters or what any layer produces."
         ),
     },
-    {
-        "row": "OI-47",
-        "anchor_quote": "Their figures are superseded by the governing robust-unit stop",
-        "what_the_row_records": (
-            "Four submission-era sections of the status document contradict the governing "
-            "documents; the triage half is discharged and the banner half — marking those sections "
-            "historical — remains owed."
-        ),
-        "matched_worked_example": None,
-        FALLBACK_BIT: True,
-        "verdict": "IN — the doc-sync half reaches it",
-        "why": (
-            "The second worked example names a superseded PLAN and these are superseded status "
-            "sections, so the match is not literal and the fallback is applied and said. It "
-            "reaches: the sections carry MEASURED VALUES about the analysis that the governing "
-            "hard stop supersedes, so a reader of the current-state section is told the system's "
-            "error counts are values no measurement now supports. That is a document stating "
-            "something false about the system, which (1A) reaches. What is owed is the row's own "
-            "stated act — annotate, do not rewrite history."
-        ),
-    },
+    # OI-47's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the row closed.
     {
         "row": "OI-48",
         "anchor_quote": "the file EXISTS — it is a Claude Code MEMORY",
@@ -429,6 +409,42 @@ VERDICTS = [
 # a row that has since moved, so it is RE-READ rather than restored.
 # ---------------------------------------------------------------------------
 RETIRED_VERDICTS = [
+    {
+        "row": "OI-47",
+        "anchor_quote": "Their figures are superseded by the governing robust-unit stop",
+        "what_the_row_records": (
+            "Four submission-era sections of the status document contradict the governing "
+            "documents; the triage half is discharged and the banner half — marking those sections "
+            "historical — remains owed."
+        ),
+        "matched_worked_example": None,
+        FALLBACK_BIT: True,
+        "verdict": "IN — the doc-sync half reaches it",
+        "why": (
+            "The second worked example names a superseded PLAN and these are superseded status "
+            "sections, so the match is not literal and the fallback is applied and said. It "
+            "reaches: the sections carry MEASURED VALUES about the analysis that the governing "
+            "hard stop supersedes, so a reader of the current-state section is told the system's "
+            "error counts are values no measurement now supports. That is a document stating "
+            "something false about the system, which (1A) reaches. What is owed is the row's own "
+            "stated act — annotate, do not rewrite history."
+        ),
+        "why_it_is_retired": (
+            "LEFT THE POPULATION 2026-08-11 — the row RESOLVED "
+            "(`cc_instruction_status_touch_and_oi141_premise_repin.md` Task 2) when the banner "
+            "half was performed at the objects, all four sections carrying a dated HISTORICAL "
+            "banner with nothing below any banner edited. THE VERDICT WAS CORRECT WHILE IT STOOD "
+            "and is kept whole; it is retired because the row closed, never because it was wrong. "
+            "★ IT IS THE DERIVATION'S ONLY IN VERDICT SO FAR AND THE ONE THE USER APPLIED: Ruling "
+            "56 moved it to the gating side on this ground, and the closing act then wrote exactly "
+            "what the verdict said was missing — that those acceptance numbers and hard stops are "
+            "superseded in whole. ★ AND IT SURVIVED A DEPARTURE THE VERDICT DID NOT PREDICT: the "
+            "four sections were not in the file the row's citations named, the 2026-07-18 doc "
+            "split having moved them into the status archive, so the act was performed where they "
+            "live. The verdict was written against what the sections SAY, which is why the change "
+            "of file left it standing."
+        ),
+    },
     {
         "row": "OI-282",
         "anchor_quote": "**no annotation of any of this**",

@@ -159,21 +159,55 @@ SIZINGS = [
         ),
         "the_second_half": None,
     },
+    # OI-47's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the row closed.
     {
-        "row": "OI-47",
-        "anchor_quote": "mark the four sections historical at the next STATUS.md touch",
+        "row": "OI-370",
+        "anchor_quote": "the size guard, stays PROPOSED and untaken",
         "the_act_owed": (
-            "Mark the four submission-era sections of `STATUS.md` historical — the row's own words, "
-            "and the act it calls the BANNER half, its triage half being discharged."
+            "TWO acts, and neither is a session's as the row stands. (a) WIDEN the archive rule so "
+            "it reaches the entries it does not decide — every entry older than "
+            "`cowork_away_returns.md` itself, whose closes are recorded in dispatch reports and in "
+            "the handoff archive rather than in the returns file — which the row states in terms is "
+            "not settled here and not proposed. (b) The size guard, which is a mechanism addition "
+            "**D-436** reserves to the user. What is NOT owed is another application of the rule as "
+            "written: it has been applied, and the mandatory read failed again afterwards."
         ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
+        "sizing": "NEEDS-RULING",
+        "whose_act_it_is": "the user",
+        "what_blocks_it": "a user ruling",
         "why_that_size": (
-            "Four located sections, annotated rather than rewritten — the row's own instruction, and "
-            "the standing treatment for a superseded record. Nothing has to be re-measured: what "
-            "supersedes those values is the governing hard stop, which is published elsewhere and "
-            "is pointed at rather than restated."
+            "No session act exists on this row at all, and that is the row's own position rather "
+            "than a reading of it: it says the widening is not settled and not proposed, and it "
+            "says the size guard is PROPOSED and untaken because the mechanism set is frozen. The "
+            "one act a session could take has already been taken and did not close the row — which "
+            "is what makes the remaining question a scoping call rather than work waiting on "
+            "capacity. The pass does not estimate either act, because the row does not size them "
+            "and this pass does not estimate work it has not read."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-371",
+        "anchor_quote": "a re-grade must run through the sweep rather than around it",
+        "the_act_owed": (
+            "Re-grade every HELD comment block against the established call graph, THROUGH "
+            "`gen_arm_comment_sweep.py` so the verdicts stay derived and each keeps its reason, and "
+            "correct whichever the re-grade makes false at HEAD in one comment-only commit — the "
+            "shape Ruling 16 already used for the first pass. The row's second act rides with it: "
+            "deciding where the re-graded set is tracked, [[OI-353]] being resolved."
+        ),
+        "sizing": "SESSION-LARGE",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "the freeze on `src/`",
+        "why_that_size": (
+            "A per-site pass over a population plus a tooling act with its own re-derivation, which "
+            "is what the label names. It is not SESSION-SMALL: the population is the sweep's HELD "
+            "group rather than the two blocks the row happens to quote, the re-grade must go "
+            "through the derivation rather than around it, and the sweep's own STOP fires on a "
+            "verdict whose block the scan no longer finds — so the act cannot be reduced to editing "
+            "the comments a reader already knows about. The blocker is the `src/` freeze: the row "
+            "says in terms that the correcting act needs its own authorization, exactly as "
+            "[[OI-368]]'s act (a) records for the neighbouring site."
         ),
         "the_second_half": None,
     },
@@ -788,6 +822,40 @@ SIZINGS = [
 # declaration's.
 # ---------------------------------------------------------------------------
 RETIRED_SIZINGS = [
+    {
+        "row": "OI-47",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 "
+            "(`cc_instruction_status_touch_and_oi141_premise_repin.md` Task 2) by performing "
+            "exactly the act this sizing named: all four submission-era sections carry a dated "
+            "HISTORICAL banner and not one line below any banner was edited. **The size, the owner "
+            "and the blocker were all right.** ★ AND ITS `why_that_size` HELD THROUGH A DEPARTURE "
+            "IT DID NOT PREDICT: the four sections were not in the file the row's citations named "
+            "— the 2026-07-18 doc split had already moved them into the status archive — and the "
+            "reason this sizing gave turned on the sections being LOCATED and on nothing needing "
+            "re-measurement, both of which stayed true when the file changed under it. A sizing "
+            "written against what the act must DO rather than against where the act happens is the "
+            "one that survives a moved file."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-47",
+            "anchor_quote": "mark the four sections historical at the next STATUS.md touch",
+            "the_act_owed": (
+                "Mark the four submission-era sections of `STATUS.md` historical — the row's own "
+                "words, and the act it calls the BANNER half, its triage half being discharged."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "Four located sections, annotated rather than rewritten — the row's own "
+                "instruction, and the standing treatment for a superseded record. Nothing has to "
+                "be re-measured: what supersedes those values is the governing hard stop, which is "
+                "published elsewhere and is pointed at rather than restated."
+            ),
+            "the_second_half": None,
+        },
+    },
     {
         "row": "OI-282",
         "why_it_retired": (

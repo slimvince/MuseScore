@@ -11,9 +11,7 @@
   "the_ruling": "User, 2026-08-11, Ruling 56 of `cowork_rulings_2026_08_11_twelfth_stop.md`: the rows D-639's reach derivation put INSIDE the doc-sync half join the gating TRUE-half item — derived from the derivation's own artifact, never hand-listed.",
   "what_it_completes": "The FIRST application of D-639's test reported the same consequence for one document and declined to apply it, on the ground that a non-gating verdict is DERIVED from a cut and never hand-added — and the user then ruled it separately, re-classing that row GATES. This ruling is that reserved answer, given for the SECOND application and for its whole IN set at once.",
   "how_the_moved_set_is_derived": "Read on every run from `tools/audit/decisions/true_half_reach_rows.json` → `rows_inside_the_doc_sync_half`, and reconciled BOTH WAYS against the rows this table carries with the Ruling-56 gate ground. A disagreement in either direction is a STOP, and a MISSING artifact is a STOP rather than an empty set — treating it as empty would silently reverse a user ruling on the next regeneration.",
-  "rows_moved": [
-   "OI-47"
-  ],
+  "rows_moved": [],
   "rows_moved_that_have_since_CLOSED": [],
   "why_the_two_lists_are_apart": "The first is what a consumer of this artifact must still subtract from the pre-ruling cut; the second is rows the ruling moved and a later act then CLOSED, which are no longer in any live population and must not be subtracted from one. Keeping them together would make a consumer's cut disagree with the derived row set — the failure the reconciliation STOPs on — and dropping the second list entirely would lose the record that the ruling reached those rows at all (#12).",
   "what_did_NOT_move_with_them": "Nothing about D-438 or its criterion, which is unchanged and still decides every other row here; and no row the derivation put OUT. Each moved row's FORMER verdict is preserved whole at `superseded_verdicts` (#12) with the reason it was right about the question it answered — the two tests have different subjects, which D-639 states in terms."
@@ -24,9 +22,9 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 369,
-  "open_rows": 243,
-  "first_cut_candidates": 53,
+  "rows_parsed": 371,
+  "open_rows": 244,
+  "first_cut_candidates": 54,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -49,7 +47,7 @@
  },
  "totals": {
   "non_gating": 25,
-  "gates": 28,
+  "gates": 29,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -114,12 +112,10 @@
    "#19 establishment obligation": [
     "OI-283"
    ],
-   "D-639's reach derivation, applied by the user's Ruling 56": [
-    "OI-47"
-   ],
    "a statement about the analysis's build state": [
     "OI-315",
-    "OI-321"
+    "OI-321",
+    "OI-371"
    ],
    "an instrument a measurement depends on": [
     "OI-150",
@@ -159,6 +155,9 @@
    ],
    "the default - the row's own scope does not settle it": [
     "OI-302"
+   ],
+   "the default - the row's own text does not settle its subject": [
+    "OI-370"
    ],
    "the default - the row's scope does not settle it": [
     "OI-292"
@@ -361,14 +360,6 @@
    "verdict": "NON-GATING",
    "reason": "What is owed is 'annotate the tables' - a consistency banner inside the structural-integrity audit, a tracking document. Nothing about the analysis is stated falsely by the tables; two records disagree about a stage's build status.",
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
-  },
-  {
-   "id": "OI-47",
-   "title": "STATUS.md submission-era sections contradict governing docs",
-   "subject_column": "doc-sync",
-   "verdict": "GATES",
-   "reason": "★ RE-CLASSED 2026-08-11 by the user's Ruling 56 of `cowork_rulings_2026_08_11_twelfth_stop.md`, which APPLIES D-639's reach derivation over the apparatus-classed rows; the former NON-GATING verdict is preserved whole at `superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's own artifact and reconciled here in both directions rather than listed by hand. The derivation put this row INSIDE the doc-sync half under D-639's fallback (1A), and the ground is that four superseded status sections carry MEASURED VALUES about the analysis which the governing hard stop supersedes - so a reader of the current-state section is told the system's error counts are values no measurement now supports. The owed act is unchanged and is the row's own: annotate, do not rewrite history.",
-   "gate_ground": "D-639's reach derivation, applied by the user's Ruling 56"
   },
   {
    "id": "OI-48",
@@ -579,6 +570,22 @@
    "gate_ground": "an instrument a measurement depends on"
   },
   {
+   "id": "OI-370",
+   "title": "A mandatory session-start read cannot be performed — `STATUS.md` has accumulated past the point where the file tools can read it",
+   "subject_column": "doc-sync",
+   "verdict": "GATES",
+   "reason": "A MANDATORY SESSION-START READ CANNOT BE PERFORMED: `CLAUDE.md` names `STATUS.md` among the three files every session reads and forbids relying on memory for baselines or iteration state, and the file tools refuse the file. THE FIRST-CUT CLASSIFICATION REACHED THIS ROW and the verdict is authored for it here, which is what the tool requires; no non-gating verdict is hand-added, which is the act the record forbids. WHAT DECIDES IT IS THE DECLARATION'S OWN DEFAULT, and that is said plainly rather than argued around: the row states BOTH readings and settles neither, in its own words -- the subject is the record's own apparatus, which the declaration classes non-gating, but the consequence is that a session may not know the analysis's current state, and D-438's second half reaches a statement about the analysis or its build state -- and it ends 'Left for the derivation.' A row whose subject its own text does not settle GATES, because the declaration only ever removes a wait where the row supports removing it. The two readings pull opposite ways on the apparatus line itself: what is OWED reads as apparatus (a filing act under the file's own archive rule, or a size guard), while what the row ESTABLISHES is that a governing instruction cannot be carried out at all. NOT an establishment obligation (#19), which would override the criterion whatever the subject: the size guard's own establishment would be owed BY that check if it were ever built, which is a condition on a future act rather than an obligation standing now -- the same distinction that keeps [[OI-364]] off the exemption. ★ ITS FIRST REMEDY HAS ALREADY RUN AND THE ROW SURVIVED IT: the archive rule was applied and the read failed again, which is why the row is still open and why the verdict is made on the row as it stands rather than on the remedy proposed for it. Distinct from the retired [[OI-47]], which was four SECTIONS of that file contradicting the governing documents; this is the file's accumulation against its own archive rule, and the two rows say so of each other.",
+   "gate_ground": "the default - the row's own text does not settle its subject"
+  },
+  {
+   "id": "OI-371",
+   "title": "★ **A set of comment blocks was HELD pending a call-graph answer, that answer is now established, and the row recording the hold is RESOLVED** — so a false-at-HEAD statement about which decoder ships has no live tracking",
+   "subject_column": "F — doc-sync debt (#10), in the code",
+   "verdict": "GATES",
+   "reason": "A set of comment blocks was graded HELD pending a call-graph answer, that answer is now established, and the row that recorded the hold is RESOLVED -- so a false-at-HEAD statement about WHICH DECODER SHIPS has no live tracking. WHAT IS OWED decides it, and what is owed is not a pointer, an anchor, a label, a banner, a filing decision or a section boundary: it is the CORRECTION OF A STATEMENT ABOUT WHICH ANALYSIS ARM RUNS, which D-438's own line inside the documentation rows names on the gating side in those words. It is the class the retired [[OI-303]], [[OI-304]] and [[OI-353]] verdicts all carry, one artifact further in: there the false claims stood in the comments, and here what is ALSO wrong is the sweep's own verdict, which reads `undecided` rather than `owed` and therefore brings nothing back. The row's own text reaches the same reading and is not the reason for it -- the reading is made at D-438's line. NOT an establishment obligation (#19): no rate, measurement tool or measured value is affected, and no comment is executable -- the behaviour is what the configuration says, which is the same ground the OI-353 verdict gave. Recorded against the row's SUBJECT, never its remedy: the re-grade must run through `gen_arm_comment_sweep.py` rather than around it, and the correcting act needs its own authorization, exactly as [[OI-368]]'s act (a) records for the neighbouring site.",
+   "gate_ground": "a statement about the analysis's build state"
+  },
+  {
    "id": "OI-63",
    "title": "S7 full mode-prior single-sourcing",
    "subject_column": "substrate hygiene",
@@ -758,6 +765,12 @@
     "class_basis_or_ground": "the criterion - D-438's own line puts the completion of a specification on the gating side, and the default on doubt is to keep the wait",
     "reason": "The phase-1 finish line's last homing item counts one register entry and names, as the act that closes it, a write the user's own ruling forbids: the entry is SUPERSEDED, and a supersession is register business with no specification home owed. THE FIRST-CUT CLASSIFICATION REACHED THIS ROW and the verdict is authored for it here, which is what the tool requires; no non-gating verdict is hand-added, which is the act the record forbids. IT IS NOT SETTLED BY THE APPARATUS CRITERION, and that is said plainly rather than argued around: the surface is a derived completion map, which reads as this project's own tracking. What decides it is D-438's line INSIDE the documentation rows, which puts the completion of a specification on the gating side because the phase-1 rule makes specifications COMPLETE and TRUE the thing that precedes everything else -- and what is owed here is not a pointer, an anchor, a label, a banner or a section boundary, but the question of whether one specification-completion obligation is owed at all. The declaration's own default carries the remainder: a row whose subject its own text does not settle GATES, because the declaration only ever removes a wait where the row supports removing it. Recorded against the row's SUBJECT, never its remedy -- the two closing acts it names are a subtraction in a derivation and a correction to an authored closing act, and choosing between them is a mechanism question D-436 reserves to the user.",
     "closed": "RESOLVED 2026-08-11 - the user's Ruling 61 (`cowork_rulings_2026_08_11_fourteenth_stop.md`) ruled the FIRST of the two closing acts: the item gains the same D-642 subtraction its four sibling items apply, one machinery per concern (#6). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); it is retired because the row closed, never because it was wrong. ★ ITS LAST SENTENCE IS THE ONE WORTH KEEPING: it recorded the verdict against the row's SUBJECT and never its remedy, on the ground that choosing between the two closing acts is a mechanism question D-436 reserves to the user -- and the user chose. A verdict written against a remedy would have had to be re-authored when the remedy was picked; one written against the subject is simply retired."
+   },
+   "OI-47": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "D-639's reach derivation, applied by the user's Ruling 56",
+    "reason": "★ RE-CLASSED 2026-08-11 by the user's Ruling 56 of `cowork_rulings_2026_08_11_twelfth_stop.md`, which APPLIES D-639's reach derivation over the apparatus-classed rows; the former NON-GATING verdict is preserved whole at `superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's own artifact and reconciled here in both directions rather than listed by hand. The derivation put this row INSIDE the doc-sync half under D-639's fallback (1A), and the ground is that four superseded status sections carry MEASURED VALUES about the analysis which the governing hard stop supersedes - so a reader of the current-state section is told the system's error counts are values no measurement now supports. The owed act is unchanged and is the row's own: annotate, do not rewrite history.",
+    "closed": "RESOLVED 2026-08-11 - the BANNER half was performed at the objects (`cc_instruction_status_touch_and_oi141_premise_repin.md` Task 2), all four submission-era sections carrying a dated HISTORICAL banner and not one line below any banner edited. THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); it is retired because the row closed, never because it was wrong. ★ ITS GROUND IS WHAT THE CLOSING ACT TURNED OUT TO NEED: the verdict graded the row on the sections carrying MEASURED VALUES the governing hard stop supersedes, and the banner the act wrote is exactly a statement that those acceptance numbers and hard stops are superseded in whole - so a verdict written against the subject survived a closing act that happened in a DIFFERENT FILE from the one this row's own citations named. WHAT THE CLOSURE DOES NOT DISCHARGE: [[OI-370]], the file's accumulation against its own archive rule, which the row's own text keeps apart from this one and which carries its own verdict above; and one false-at-HEAD clause found while bannering, named at its banner and carried at [[OI-315]] rather than corrected below it."
    }
   }
  },

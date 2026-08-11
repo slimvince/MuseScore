@@ -30,7 +30,7 @@
     "re_derives_a_live_invariant": 38,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 0
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_phase1g_triage.py",
@@ -44,7 +44,9 @@
     "tools/audit/decisions/gen_reads5_yield.py",
     "tools/audit/decisions/gen_reads6_yield.py"
   ],
-  "live_tools_that_fail_and_stay": [],
+  "live_tools_that_fail_and_stay": [
+    "tools/audit/gen_filing_convention_application.py"
+  ],
   "rows": [
     {
       "tool": "tools/audit/changed_paths.py",
@@ -300,7 +302,7 @@
       "evidence": "gen_filing_convention_application.py:14-40",
       "why": "LIVE, and for the same reason its sibling sizing pass is: the artifact's CONTENT is authored judgment about documents, so what the check asserts is not that the verdicts are right — a verdict about a document cannot be checked by a tool — but three demands about the record as it stands TODAY. Its POPULATION is re-derived over the named surface set on every run and reconciled with the authored verdicts in BOTH directions, so a document entering or leaving the candidate set halts it rather than being verdicted silently or quietly dropped. And its SOUNDNESS against the seeds is re-computed on every run and published, so a signature that stops finding what the record already holds is reported rather than trusted. ★ ONE THING IS STATED PLAINLY BECAUSE THE ARTIFACT SAYS IT OF ITSELF: the derivation's REACH is unmeasured and is BOUNDED on the artifact rather than measured, under D-673 — so a green check here means the enumeration re-derives and its verdicts reconcile, never that the population is complete.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "state_at_the_committed_tree": "FAIL"
     },
     {
       "tool": "tools/audit/gen_gating_row_sizing.py",

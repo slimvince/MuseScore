@@ -12,7 +12,7 @@
   "source": "CLAUDE.md, the Conventions section; register entry D-231",
   "located_by": "anchor string, never a line number (the OI-330 lesson)",
   "clause_opening": "**ISSUE-EXHAUSTION AND SPECIFICATION COMPLETION BEFORE ANY FIX DESIGN (user-directed, 2026-08-02; sharpens #8, which forbade inference-problem coding before layer completion — this forbids fix DESIGN before knowledge completion).** Three phases, strictly ordered.",
-  "phase_1_verbatim": "**Phase 1 — the specifications are made COMPLETE and TRUE:** every recorded decision is written into its owning specification (the homing acts), with its defense, so that conformance is thereafter measured against the specifications themselves — the decisions register remains the status ledger (supersession, shelving, the same-commit rule), never the conformance reference; and the specification text is corrected wherever it states something false at HEAD (the doc-sync debt), because a specification cannot be the compliance standard while it misdescribes the code. **★ HOW FAR THE DOC-SYNC HALF REACHES INTO A DOCUMENT'S ACCOUNT OF ITSELF (user-ruled 2026-08-04; D-639).** The sentence above says *\"states something false at HEAD\"*, and a document states things about ITSELF as well as about the analysis — a status banner, an as-built marker, a code anchor, a missing supersession note. **The doc-sync half reaches a document's account of itself ONLY WHERE THAT ACCOUNT CHANGES HOW THE DOCUMENT'S ANALYSIS CONTENT IS READ.** The ruling's own three worked examples, which are the test rather than illustrations of it: an **as-built banner over a dormant mechanism — IN**; a **missing supersession note on a superseded plan — IN**; a **stale anchor or a formatting artifact — OUT**. *Why the line falls there:* the clause states its own reason two lines up — *because a specification cannot be the compliance standard while it misdescribes the code* — so what the half exists to catch is a document that would make a reader believe something false about the system; a coordinate that has drifted misleads nobody about the analysis, and D-307 already forbids citing code by line number in the first place. **THE FALLBACK, RULED WITH THE TEST AND NOT LEFT TO A LATER SESSION:** if the test needs judgment on the first rows it meets, that is the *\"stable enough to be cited\"* failure repeating — a criterion that reads as mechanical and resolves case by case — and the fallback is **option (1A): the doc-sync half reaches only the account of the ANALYSIS.** A session that finds itself arguing a case applies the fallback and says so; it does not stretch the test to reach a verdict. *(First application, 2026-08-04, at `OPEN_ITEMS.md` OI-332: three documents, one matching each worked example, decided without reaching the fallback — the enumeration and the per-document reason are generated at `tools/audit/decisions/true_half_reach.json` and no verdict is restated here, #17f, D-431.)* **★ AND IT BEARS ON A GATE VERDICT — A POINTER, NOT A RULING (the question is open at `OPEN_ITEMS.md` OI-336).** THIS rule decides what PHASE 1 OWES; the non-gating declaration above decides what A STAGE WAITS ON. They are different tests with different subjects and neither overrides the other. Applying this one at OI-332 surfaced a question about the OTHER: whether that row's apparatus classification survives reading the whole of D-438's line rather than its first half. **That is not settled here and nothing above settles it** — a non-gating verdict is derived from a cut and never hand-added, so it is the user's. Stated and left at OI-336.",
+  "phase_1_verbatim": "**Phase 1 — the specifications are made COMPLETE and TRUE:** every recorded decision is written into its owning specification (the homing acts), with its defense, so that conformance is thereafter measured against the specifications themselves — the decisions register remains the status ledger (supersession, shelving, the same-commit rule), never the conformance reference; and the specification text is corrected wherever it states something false at HEAD (the doc-sync debt), because a specification cannot be the compliance standard while it misdescribes the code. **★ HOW FAR THE DOC-SYNC HALF REACHES INTO A DOCUMENT'S ACCOUNT OF ITSELF (user-ruled 2026-08-04; D-639).** The sentence above says *\"states something false at HEAD\"*, and a document states things about ITSELF as well as about the analysis — a status banner, an as-built marker, a code anchor, a missing supersession note. **The doc-sync half reaches a document's account of itself ONLY WHERE THAT ACCOUNT CHANGES HOW THE DOCUMENT'S ANALYSIS CONTENT IS READ.** The ruling's own three worked examples, which are the test rather than illustrations of it: an **as-built banner over a dormant mechanism — IN**; a **missing supersession note on a superseded plan — IN**; a **stale anchor or a formatting artifact — OUT**. *Why the line falls there:* the clause states its own reason two lines up — *because a specification cannot be the compliance standard while it misdescribes the code* — so what the half exists to catch is a document that would make a reader believe something false about the system; a coordinate that has drifted misleads nobody about the analysis, and D-307 already forbids citing code by line number in the first place. **THE FALLBACK, RULED WITH THE TEST AND NOT LEFT TO A LATER SESSION:** if the test needs judgment on the first rows it meets, that is the *\"stable enough to be cited\"* failure repeating — a criterion that reads as mechanical and resolves case by case — and the fallback is **option (1A): the doc-sync half reaches only the account of the ANALYSIS.** A session that finds itself arguing a case applies the fallback and says so; it does not stretch the test to reach a verdict. *(First application, 2026-08-04, at `OPEN_ITEMS.md` OI-332: three documents, one matching each worked example, decided without reaching the fallback — the enumeration and the per-document reason are generated at `tools/audit/decisions/true_half_reach.json` and no verdict is restated here, #17f, D-431.)* **★ AND IT BEARS ON A GATE VERDICT — A POINTER, NOT A RULING (the question is open at `OPEN_ITEMS.md` OI-336).** THIS rule decides what PHASE 1 OWES; the non-gating declaration above decides what A STAGE WAITS ON. They are different tests with different subjects and neither overrides the other. Applying this one at OI-332 surfaced a question about the OTHER: whether that row's apparatus classification survives reading the whole of D-438's line rather than its first half. **That is not settled here and nothing above settles it** — a non-gating verdict is derived from a cut and never hand-added, so it is the user's. Stated and left at OI-336. **★ WHEN PHASE 1 IS COMPLETE — THE FINISH LINE IS CUT BY D-438'S TEST, AND THE APPARATUS RESIDUE DOES NOT GATE THE COMPLETION (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fifteenth_stop.md`, Ruling 65).** The clause above says WHAT phase 1 requires; it does not say which of those requirements the completion WAITS ON, and until this ruling the derived finish line waited on all of them. **The finish line is cut by D-438's own test — does the item's subject bear on the analysis, on the analysis's inputs, or on a measurement tool something depends on — and PHASE 1 COMPLETES WHEN THE INFERENCE-BEARING OBLIGATIONS ARE DISCHARGED. The apparatus residue does not gate phase 1's completion.** **THE #19 EXCEPTION STANDS INTACT AND IS ENCODED IN THE CUT RATHER THAN REMEMBERED:** an establishment obligation gates whatever its subject, because trust in a measurement is trust in the analysis. **THE CUT IS DERIVED AND REGENERATED, NEVER HAND-CLASSIFIED** — a gating verdict comes from a cut and is never hand-added (**D-436**; the recorded lesson is `OPEN_ITEMS.md` OI-336) — and **the pre-cut population is preserved beside the post-cut one (#12)**. **THE FALSIFICATION TEST THE RULING IS OWED, RUN ON EVERY REGENERATION: if the cut places into the apparatus class any item or row the record elsewhere calls inference-bearing, THE CUT IS WRONG AND HALTS** — without it a declaration cannot be told apart from wishful filing. *What it changes, mechanically:* it applies to the finish line the non-gating declaration the open-items register section already carries — the one surface the record had never applied it to. That declaration governs what a STAGE waits on, and the block immediately above says in terms that what PHASE 1 OWES is a different test with a different subject; so the finish line's items carried their gate separately, and one of them was explicitly the class whose place had not been decided. **That class is now decided.** *Why, in the user's own recorded ground:* the documentation work was genuinely valuable and its marginal value has fallen — the findings that bear on the objective came from reading specification against code and from probes, not from apparatus repair. **What it does NOT move:** the three phases and their strict order, #8's three-clause gate, the #19 exception, and D-639 immediately above, which still decides what the doc-sync half REACHES. It adds nothing to the finish line — it changes how the finish line is CUT. No item, verdict or count is restated here (#17f, **D-431**); the cut is derived at `tools/audit/phase1_finish_line.json`.",
   "phase_2_verbatim": "**Phase 2 — issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions and the blind second pass with its seeded error rate, plus the enumerated discovery channels — **enumerated at `cowork_oi200_perspective_inventory.md` §4, which is the ONE home for that list (user-ratified 2026-08-03, D-439); that section's own scope ruling states which of its channels this clause reaches, and this clause lists none of them itself (#6)** — each search reporting its detection power, ending in the bounded trust statement — every channel enumerated, every miss rate measured, every finding rowed.",
   "phase_3_verbatim": "**Phase 3 — ONE prioritized fix plan over the complete list** — where each fix lives (its proper layer), what it groups with (its family), in what order, and what refits it forces — and only then does design begin.",
   "criteria": [
@@ -215,12 +215,12 @@
  },
  "the_complete_half": {
   "criterion": "C1 and C2",
-  "register_population": 673,
+  "register_population": 676,
   "by_home_class": {
    "contract-home": 163,
    "gap": 27,
    "homed-in-a-layer-specification": 297,
-   "process": 140,
+   "process": 143,
    "project-convention": 45,
    "unhomed": 1
   },
@@ -539,7 +539,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 32,
+   "count": 33,
    "ids": [
     "OI-105",
     "OI-107",
@@ -566,9 +566,10 @@
     "OI-346",
     "OI-347",
     "OI-359",
+    "OI-370",
+    "OI-371",
     "OI-45",
     "OI-46",
-    "OI-47",
     "OI-48",
     "OI-49",
     "OI-50",
@@ -577,7 +578,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 51,
+   "count": 52,
    "ids": [
     "OI-105",
     "OI-107",
@@ -620,9 +621,10 @@
     "OI-359",
     "OI-360",
     "OI-363",
+    "OI-370",
+    "OI-371",
     "OI-45",
     "OI-46",
-    "OI-47",
     "OI-48",
     "OI-49",
     "OI-50",
@@ -715,23 +717,6 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
-    }
-   },
-   {
-    "id": "OI-47",
-    "title": "STATUS.md submission-era sections contradict governing docs",
-    "subject_column": "doc-sync",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "D-639's reach derivation, applied by the user's Ruling 56"
     }
    },
    {
@@ -1475,6 +1460,41 @@
      "source": "the row's own recorded words",
      "ground": "the row states it gates"
     }
+   },
+   {
+    "id": "OI-370",
+    "title": "A mandatory session-start read cannot be performed — `STATUS.md` has accumulated past the point where the file tools can read it",
+    "subject_column": "doc-sync",
+    "matched_on_the_subject_column": [
+     "doc",
+     "doc-sync"
+    ],
+    "matched_falsity_signals": [
+     "doc-sync"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the default - the row's own text does not settle its subject"
+    }
+   },
+   {
+    "id": "OI-371",
+    "title": "★ **A set of comment blocks was HELD pending a call-graph answer, that answer is now established, and the row recording the hold is RESOLVED** — so a false-at-HEAD statement about which decoder ships has no live tracking",
+    "subject_column": "F — doc-sync debt (#10), in the code",
+    "matched_on_the_subject_column": [
+     "doc",
+     "doc-sync"
+    ],
+    "matched_falsity_signals": [
+     "doc-sync",
+     "false at head"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "a statement about the analysis's build state"
+    }
    }
   ]
  },
@@ -1482,7 +1502,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 34,
+   "count": 35,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1513,8 +1533,9 @@
     "OI-359",
     "OI-360",
     "OI-363",
+    "OI-370",
+    "OI-371",
     "OI-45",
-    "OI-47",
     "OI-57",
     "OI-90",
     "OI-95"
@@ -1545,7 +1566,7 @@
   "non_gating_before_the_ruling_56_application": {
    "what_it_is": "The same cut taken BEFORE the user's Ruling 56 moved D-639's reach derivation's IN set to the gating side — that is, the rows the apparatus declaration classes non-gating on D-438's criterion alone.",
    "why_it_is_published": "It is the population the reach derivation grades, and it must not move when that derivation's own result is applied. Without it the two are circular: the derivation's verdicts would leave the set they were graded over, its STOP would fire, retiring them would empty the IN set, and the application would reverse itself on the next regeneration. This cut is invariant under the application, so the fixed point is the one the ruling intends.",
-   "count": 18,
+   "count": 17,
    "ids": [
     "OI-205",
     "OI-229",
@@ -1560,15 +1581,12 @@
     "OI-346",
     "OI-347",
     "OI-46",
-    "OI-47",
     "OI-48",
     "OI-49",
     "OI-50",
     "OI-99"
    ],
-   "moved_by_the_ruling": [
-    "OI-47"
-   ],
+   "moved_by_the_ruling": [],
    "derived_from": "tools/audit/nongating_apparatus_rows.json → ★_the_ruling_56_application.rows_moved",
    "★_this_cut_IS_a_reported_widening_and_the_user_has_ACCEPTED_it": {
     "what_was_widened": "Ruling 56 named no machinery. Publishing this second cut, and pointing the reach derivation at it, is the smallest thing that removes the circularity described above — and it is more than the ruling's letter said. It was REPORTED at `cowork_away_returns.md` §1.17 in the act that took it, with the one edit that reverses it and that edit's consequence stated beside it.",
@@ -1608,9 +1626,10 @@
     "OI-347",
     "OI-359",
     "OI-360",
+    "OI-370",
+    "OI-371",
     "OI-45",
     "OI-46",
-    "OI-47",
     "OI-48",
     "OI-49",
     "OI-50",
@@ -1706,8 +1725,8 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 645,
-    "of": 673
+    "count": 648,
+    "of": 676
    },
    {
     "fact": "Every harvested cluster carries a recorded disposition at the committed artifact, so no harvested statement was silently passed over.",
@@ -1731,8 +1750,8 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 51,
-   "of_which_gate": 34,
+   "open_rows_in_the_wide_cut": 52,
+   "of_which_gate": 35,
    "of_which_apparatus_and_therefore_non_gating": 17,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 5
   },
@@ -1819,9 +1838,10 @@
    "OI-359",
    "OI-360",
    "OI-363",
+   "OI-370",
+   "OI-371",
    "OI-45",
    "OI-46",
-   "OI-47",
    "OI-48",
    "OI-49",
    "OI-50",
@@ -1833,10 +1853,10 @@
   "how_to_read_it": "The derivation is the answer; this block measures the recollection against it. A recollected row that the derivation does not carry is not thereby wrong - it may be outstanding on a ground this cut does not search (the COMPLETE half, or an establishment obligation) - and each is stated rather than scored."
  },
  "counted": {
-  "decisions_recorded": 673,
-  "open_rows_in_the_index": 243,
-  "true_half_wide_cut": 51,
-  "true_half_gating": 34,
+  "decisions_recorded": 676,
+  "open_rows_in_the_index": 244,
+  "true_half_wide_cut": 52,
+  "true_half_gating": 35,
   "complete_half_gap": 27,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

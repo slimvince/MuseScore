@@ -410,12 +410,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "STOP: first-cut candidates with no authored verdict: OI-370, OI-371"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 29 gates of 54 candidates over 244 open rows)"
       ],
+      "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
     },
     {
@@ -423,12 +423,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "STOP: the committed apparatus declaration carries verdicts for rows the INDEX no longer carries open: OI-47"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: phase-1 completion inventory re-derives byte-identically."
       ],
+      "stderr": [],
       "what_it_checks": "the phase-1 completion inventory re-derives -- D-231's clause still locatable by its anchors, and every home class, defense gap, open-row cut and gate verdict unchanged"
     },
     {
@@ -436,12 +436,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "STOP: the committed apparatus declaration carries verdicts for rows the INDEX no longer carries open: OI-47"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: the phase-1 finish line re-derives byte-identically."
       ],
+      "stderr": [],
       "what_it_checks": "the phase-1 FINISH LINE re-derives -- the scope ruling R2 of 2026-08-04 fixed. Its three STOPs ride with it and are the reason it is a guard rather than a report: an item carrying no closing act stops it, a row named as a user ruling that is no longer in the derived gating set stops it, and -- the one that matters -- a population NO ITEM CARRIES stops it, so the list cannot quietly stop being exhaustive as the register and the open-items index move under it"
     },
     {
@@ -488,12 +488,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "STOP: OI-47's quoted words are not in the INDEX — a sizing may not rest on a reading of a row nobody opened."
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the per-row gating sizing re-derives from the files"
       ],
+      "stderr": [],
       "what_it_checks": "the per-row sizing over the gating set re-derives. What it guards is not the sizes, which are authored judgments, but the pass's own completeness: the authored sizings and the population derived from the completion inventory must agree in BOTH directions, so a row entering or leaving the gating set halts it rather than being sized silently or quietly dropped -- which is the silent cap three continuations declined to risk. Its other STOPs ride with it: every label, owner and blocker must come from the closed vocabulary the pass declares, a NEEDS-RULING label and a whose-act field must agree, and every row's quoted words must still be in the INDEX"
     },
     {
@@ -543,10 +543,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 674",
+        "backbone decisions: 676",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 674/674",
-        "cited line numbers correct: 668/668   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 676/676",
+        "cited line numbers correct: 670/670   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -699,12 +699,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "STOP: the committed apparatus declaration carries verdicts for rows the INDEX no longer carries open: OI-47"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 8 documents; 69 re-home / 8 delegation / 17 no-home)"
       ],
+      "stderr": [],
       "what_it_checks": "every entry of finish-line item 1 still carries an authored closing route, no route names an entry the item no longer carries other than the ones this wave re-homed, and the route population still re-derives from the finish line rather than from a stored list"
     },
     {
@@ -712,12 +712,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "STOP: the committed apparatus declaration carries verdicts for rows the INDEX no longer carries open: OI-47"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "PASS: item1_rehome_blocker.json re-derives byte-identically (0 open re-home rows)"
       ],
+      "stderr": [],
       "what_it_checks": "what actually blocks finish-line item 1's re-home class still re-derives — the standing autonomous-operation authorization still locatable in CLAUDE.md by its anchor, every open re-home row's owning specification still naming at least one file, and every row's blocker still cut from that row's own recorded reason rather than from a stored verdict"
     },
     {
@@ -725,12 +725,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "STOP: the committed apparatus declaration carries verdicts for rows the INDEX no longer carries open: OI-47"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "PASS: r1_superseded_reach.json re-derives byte-identically (18 entries; 8 leave / 0 route-changed / 10 neither)"
       ],
+      "stderr": [],
       "what_it_checks": "ruling R1's application re-derives — every member of item 1's NO-HOME class still carries an authored successor record, no successor record names an entry the class no longer carries, every authored successor is still NAMED IN THE SUPERSEDED ENTRY'S OWN TEXT, and every one that resolves to a register identifier still resolves to an entry the register holds"
     },
     {
@@ -792,53 +792,11 @@
   ],
   "summary": {
     "run": 40,
-    "passing": 32,
-    "failing": 8,
+    "passing": 39,
+    "failing": 1,
     "failing_tools": [
       {
-        "tool": "tools/audit/gen_nongating_apparatus_rows.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/gen_phase1_completion_inventory.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/gen_phase1_finish_line.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/gen_gating_row_sizing.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
         "tool": "tools/audit/gen_filing_convention_application.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_finish_line_item1_routes.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_item1_rehome_blocker.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_r1_superseded_reach.py",
         "args": [
           "--check"
         ]
