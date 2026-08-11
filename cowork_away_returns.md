@@ -3704,6 +3704,68 @@ no golden, no corpus of scores, no `tools/corpus/` or `tools/robust_stop/` movem
 change to the analysis, no fix to inference, no design. **Phase 1's completion statement is not
 written, not drafted and not partially written here.**
 
+### ★ WHERE THIS BATCH STOPPED
+
+**Task 0 is COMPLETE, committed and pushed.** **Tasks 1, 2 and 3's substantive halves are NOT
+STARTED**, and Task 3 is reached only for this close. That is a capacity stop at a clean task
+boundary, not a halt on a finding: no STOP note was written against the batch, nothing is left
+half-edited, every derived surface re-derives, and **the guard set stands at ZERO failing with
+thirty-seven guards run** and the classification green after it — including the shell-read guard,
+whose failure at the batch's START is §2.14 and whose pass here is that account's sixth consecutive
+one.
+
+**★ WHY NOTHING WAS OPENED RATHER THAN OPENED AND LEFT PART-DONE, and the judgment differs per
+task.** Task 2's first sub-part is ONE GENERATED DERIVATION over twenty-one open rows, **each of
+which must be READ before its verdict can be authored** — and a derivation published over some of
+its population is the silent cap the standing rules forbid, which is why six consecutive
+continuations have declined to open it. Task 1 is a per-entry pass with no such hazard, but each
+entry costs a full read of its record, a judgment about which specification owns its concern, a
+write with its defense, and then the whole regeneration chain and a boundary guard run — so opening
+it with what remained would have bought at most one entry while risking a half-edited tree, which is
+the one thing every continuation in this arc has avoided. **Task 3's per-row sizing pass has the same
+shape as Task 2's derivation**: the user asked for each remaining gating row SIZED, and sizing a row
+honestly means reading it.
+
+**★ AND THE STARVATION PATTERN IS NAMED AGAIN, because it is now the seventh batch it has survived.**
+Task 2's derivation has been carried unstarted through the fourth, fifth, sixth, seventh, eighth and
+now the ninth continuation. Every one of those refusals was correct on its own terms and the reason
+has never changed. **What is worth the user's attention is that the reason is structural rather than
+incidental:** the item is small in COUNT and large in READING, so it loses every contest against work
+that can be stopped at a boundary — and it will keep losing unless a batch is dispatched with it
+FIRST and nothing large in front of it. The fifth continuation's own sizing table calls it
+SESSION-SMALL, and that sizing is about the act rather than about the reading it rests on.
+
+**What a continuing session should know.**
+
+1. **Task 1's population is DERIVED, not carried from here:** the four homing items at
+   `tools/audit/phase1_finish_line.json`, read at task start. **Item 1's live remainder is now EMPTY**
+   — that is derived at `tools/audit/decisions/finish_line_item1_routes.json` and is this batch's own
+   result, so a continuing session should expect the remaining homing work to sit in the
+   findings-not-rules item and in items 3 and 5, not in item 1.
+2. **Task 2's population is the completion inventory's `the_gating_split` → `non_gating` set**, read
+   at task start; what is owed per row is a verdict under **D-639**'s test, whose three worked
+   examples ARE the test, with fallback (1A) applied and SAID wherever the test does not decide, and
+   **no hand verdicts**. The method is the existing first application's shape at
+   `tools/audit/decisions/gen_true_half_reach.py` (#6) — read that file before starting: it derives
+   whether the fallback was reached rather than declaring it, and it STOPS on a verdict naming a
+   worked example the ruling does not state, which is what keeps the pass honest.
+3. **Task 3's OI-346 marks and the per-row sizing pass are NOT reached.** OI-346's application half
+   is a per-constant act over the Jazz preset table and the §6.7 idioms, each with its validating
+   corpus named — not a leftover-capacity item, as the eighth continuation already recorded.
+4. **Two things await the user, and one is new:** the queue's new **§11** (Rulings 40–48, two
+   proposed decisions, both about what the homing obligation does NOT reach), and, standing,
+   [[OI-366]]'s mechanism question, which is **D-436**'s to rule and which belongs in the same act as
+   [[OI-355]]'s disposition under the guard family's fixed order.
+5. **One finding bearing on the record's own apparatus was surfaced — §2.14 — and nothing bearing on
+   the analysis was.** Every other subject of this batch is where a recorded decision is written
+   down, plus one comment-only correction to a statement about which arm ships, which moves no
+   measured value.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch** — and item 1's live remainder reaching zero does not change that: it is one population inside
+one of nine items, and the finish line's own count of what remains is derived at
+`tools/audit/phase1_finish_line.json` (**D-431**).
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected
