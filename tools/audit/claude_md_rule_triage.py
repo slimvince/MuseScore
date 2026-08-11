@@ -538,6 +538,36 @@ TRIAGE: dict[str, tuple[str, str]] = {
                          "a compliant grading from a non-compliant one. The de-masking diagnostic "
                          "it names is a measurement that must be BUILT and read, not a check that "
                          "fires."),
+    # ── AUTHORED 2026-08-11, cc_instruction_apply_the_bearing_cut.md Task 1 ────────────────────
+    # The user's Rulings 65 and 66 of `cowork_rulings_2026_08_11_fifteenth_stop.md` were homed into
+    # CLAUDE.md by that task, which ADDS them to this tool's derived population; they are triaged
+    # here so this check's failure list does not widen by that act alone (the OI-319 shape, as with
+    # D-557, D-638 and every later homing wave). NOTHING HERE IS RATIFIED: both verdicts are
+    # authored proposals with their grounds, offered for the user to correct.
+    "D-675": (EXISTS, "PARTIAL, and the split is stated so the un-mechanised half is not hidden. "
+                      "WHAT IS ENFORCED at this tree: the cut is DERIVED and never hand-classified "
+                      "— tools/audit/gen_nongating_apparatus_rows.py is the ONE place a verdict is "
+                      "authored, and it STOPS both on a first-cut candidate with no verdict and on "
+                      "a verdict for a row the INDEX no longer carries open, so a gating verdict "
+                      "cannot be hand-added; and tools/audit/gen_phase1_finish_line.py derives "
+                      "every population and every gate verdict and STOPS on a population no item "
+                      "carries, so the list cannot quietly stop being exhaustive. WHAT IS NOT yet "
+                      "enforced: the finish line's own PER-ITEM gate is not cut by D-438's test, "
+                      "the #19 carve-out is not encoded in that cut, and the falsification test "
+                      "the ruling requires does not run on regeneration. All three are named by "
+                      "the ruling's own text and are owed to it."),
+    "D-676": (EXISTS, "PARTIAL. WHAT IS ENFORCED at this tree: the lapse POPULATION is derived "
+                      "rather than chosen — it is the NON-GATING set of "
+                      "tools/audit/nongating_apparatus_rows.json, whose two STOPs keep the "
+                      "authored table from drifting away from the register in either direction — "
+                      "and the rule's clause that a lapsed row's status cell does not move holds "
+                      "BY CONSTRUCTION, since no derivation writes that cell (D-662 owns it). "
+                      "WHAT IS NOT yet enforced: the rule's own STOP, that a row with no named "
+                      "grading does not lapse, and whether each lapsing row actually carries its "
+                      "per-row lapse record. WHAT NO MECHANISM COVERS AT ALL: whether a recorded "
+                      "lapse reason is the right READING of the row — which is the judgment the "
+                      "rule deliberately leaves to a later reader who would re-open the row by "
+                      "challenging that recorded derivation."),
 }
 
 

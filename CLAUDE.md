@@ -283,6 +283,38 @@ hand-listed — `tools/audit/nongating_apparatus_rows.json` from
 candidate row lacks a verdict or any verdict names a row the INDEX no longer carries open; no
 row identity or count is restated here (#17f, D-431).
 
+**★ AND WHAT SUCH A ROW IS OWED — IT STOPS BEING OWED, WITH A PER-ROW LAPSE RECORD (user-ruled
+2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fifteenth_stop.md`, Ruling 66).** The
+declaration above says an apparatus row gates nothing, and then says three things about what such a
+row IS: *it stays open, it stays owed, and it is worked in leftover capacity.* **THE SECOND AND
+THIRD ARE SUPERSEDED HERE. An apparatus row STAYS OPEN in the open-items register, STOPS GATING ANY
+STAGE, and STOPS BEING OWED — it no longer draws leftover capacity.** The first clause is untouched, and so is the
+row's status cell: a lapse is not a resolution. **EACH LAPSE IS RECORDED PER ROW, NAMING THE
+DERIVATION THAT GRADED IT**, so a later reader sees why the row stopped being owed and can re-open
+it by challenging a recorded derivation rather than by rediscovering the issue; **a row with no
+named grading DOES NOT LAPSE.** **THE #19 CLAUSE ABOVE IS UNTOUCHED AND IS WHAT BOUNDS THIS ONE:**
+an establishment obligation always gates whatever its subject, so it never lapses. *(The former
+wording stands in place above (#12) — "it stays open, it stays owed, and it is worked in leftover
+capacity" — and was the rule until this date.)* *Why:* stated with the ruling — the apparatus is now
+large enough to generate its own defect stream indefinitely, and *stays owed, worked in leftover
+capacity* is precisely the mechanism **D-641**'s own recorded ground names as the cause of the
+backlog it describes (`OPEN_ITEMS.md` OI-337; no figure is restated here, #17f, **D-431**), so the
+alternative reading — the row unblocked but still owed — was declined as changing almost nothing.
+**THE COSTS THE USER
+ACCEPTED, recorded because an accepted cost is not a discharged one:** a residual #19 exposure,
+mitigated only as well as the cut encodes the carve-out; a motion against #5, since this decides to
+stop investigating a population; and practical irreversibility, which the per-row lapse record is
+what softens. **RESOLVING THE ROWS OUTRIGHT WAS NOT AVAILABLE AND THE EXCLUSION IS RECORDED:** rule
+(d) flips a row with provenance and there is none, because nothing was done; #19 forbids converting
+*merely unfalsified* into *established*; #10 forbids the record stating something false about
+itself; and three separate derivations read this INDEX's status token, so a false resolution
+propagates mechanically. **NO NEW CANONICAL STATUS TOKEN IS CREATED, AND THAT WAS ESTABLISHED
+RATHER THAN ASSUMED:** rule (f) below carries a row's OPEN-or-RESOLVED bit and nothing else — its
+vocabulary maps every canonical opening to exactly those two values — and a lapsed row is still
+OPEN, so *owed* is a DERIVED field of the same cut that already derives gating, and a token would
+put one state in two places (#6). The lapse population and every lapse record are derived, never
+hand-listed; no row identity or count is restated here (#17f, D-431).
+
 **★ RULE (f) — EVERY INDEX STATUS CELL BEGINS WITH ONE CANONICAL TOKEN (user-ruled 2026-08-09; the
 ruling record is `cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 33).** Rules (a)–(e) above say
 how the register is kept. This is the sixth, and it is about the one cell three separate derivations
@@ -1456,6 +1488,34 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   row's apparatus classification survives reading the whole of D-438's line rather than its first
   half. **That is not settled here and nothing above settles it** — a non-gating verdict is derived
   from a cut and never hand-added, so it is the user's. Stated and left at OI-336.
+  **★ WHEN PHASE 1 IS COMPLETE — THE FINISH LINE IS CUT BY D-438'S TEST, AND THE APPARATUS RESIDUE
+  DOES NOT GATE THE COMPLETION (user-ruled 2026-08-11; the ruling record is
+  `cowork_rulings_2026_08_11_fifteenth_stop.md`, Ruling 65).** The clause above says WHAT phase 1
+  requires; it does not say which of those requirements the completion WAITS ON, and until this
+  ruling the derived finish line waited on all of them. **The finish line is cut by D-438's own
+  test — does the item's subject bear on the analysis, on the analysis's inputs, or on a measurement
+  tool something depends on — and PHASE 1 COMPLETES WHEN THE INFERENCE-BEARING OBLIGATIONS ARE
+  DISCHARGED. The apparatus residue does not gate phase 1's completion.** **THE #19 EXCEPTION STANDS
+  INTACT AND IS ENCODED IN THE CUT RATHER THAN REMEMBERED:** an establishment obligation gates
+  whatever its subject, because trust in a measurement is trust in the analysis. **THE CUT IS DERIVED
+  AND REGENERATED, NEVER HAND-CLASSIFIED** — a gating verdict comes from a cut and is never
+  hand-added (**D-436**; the recorded lesson is `OPEN_ITEMS.md` OI-336) — and **the pre-cut
+  population is preserved beside the post-cut one (#12)**. **THE FALSIFICATION TEST THE RULING IS
+  OWED, RUN ON EVERY REGENERATION: if the cut places into the apparatus class any item or row the
+  record elsewhere calls inference-bearing, THE CUT IS WRONG AND HALTS** — without it a declaration
+  cannot be told apart from wishful filing. *What it changes, mechanically:* it applies to the finish
+  line the non-gating declaration the open-items register section already carries — the one surface
+  the record had never applied it to. That declaration governs what a STAGE waits on, and the block
+  immediately above says in terms that what PHASE 1 OWES is a different test with a different
+  subject; so the finish line's items carried their gate separately, and one of them was explicitly
+  the class whose place had not been decided. **That class is now decided.** *Why, in the user's own
+  recorded ground:* the documentation work was genuinely valuable and its marginal value has fallen —
+  the findings that bear on the objective came from reading specification against code and from
+  probes, not from apparatus repair. **What it does NOT move:** the three phases and their strict
+  order, #8's three-clause gate, the #19 exception, and D-639 immediately above, which still decides
+  what the doc-sync half REACHES. It adds nothing to the finish line — it changes how the finish line
+  is CUT. No item, verdict or count is restated here (#17f, **D-431**); the cut is derived at
+  `tools/audit/phase1_finish_line.json`.
   **Phase 2 — issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions
   and the blind second pass with its seeded error rate, plus the enumerated discovery channels —
   **enumerated at `cowork_oi200_perspective_inventory.md` §4, which is the ONE home for that list
