@@ -2990,6 +2990,24 @@ record rather than merely inherited.
 **Nothing depends on it.** No act of this batch changes if the citation is read either way; what
 would change is a later session's reading of which decision the ground is.
 
+### 1.15 Ruling 40's step 3 fires for FOUR of the nine census entries, and each needs a different act — none of which is a session's (Task 1)
+
+**This is the ruling working, not a shortfall.** Ruling 40 arms step 3 exactly for the case where
+the owning census section is a **findings table**, because adding a rule-stating block to one is a
+document-structure act it reserves to the user. Four entries reach it, and **they are not one
+shape** — which is why they are put here individually rather than as a set.
+
+| Entry | Why step 3 | What would close it |
+|---|---|---|
+| **D-516** | Its content is the needs vector's MEMBERSHIP — an ADOPTION EVENT, not a rule — and both adopted rows already carry their adoption in the §8c needs table | Nothing to write. If the user wants it homed at all, the act is a decision about whether an adoption event needs a home |
+| **D-515** | Same table. A generalizable rule IS visible — *a ground-truth class with a named consumer gets its own row rather than a remark under a neighbour* — and it is deliberately NOT written, because the record states the decision for one need and authoring the general form would compose a rule the record never made | The user either rules the general form into the §8c mechanism, or rules the entry closed as an adoption event |
+| **D-475** | A per-corpus **ESTABLISHMENT verdict (#19)** about one held annotation set, and the census names that set NOWHERE. Its natural element is the needs-vector row for dual-annotator material — a findings table. Writing a verdict about one corpus into a rule-stating section is the MIRROR of the error step 3 prevents | A user decision on where a per-corpus establishment verdict is homed at all |
+| **D-613** | It has TWO halves: a fact-of-absence whose census element is the needs-vector row that already carries it, and a RULE — *what the surviving voice labels actually MEASURE must be said at intake* — that would fit §8c's intake-rule block | A **SPLIT**, which is a decision about the decisions register's own unit. The user has ruled one once already, at D-291/D-656 |
+
+**Nothing is written for any of the four**, and the five that closed are untouched by this hold.
+Every row carries its step verdict and the reason at
+`tools/audit/decisions/finish_line_item1_routes.json` → `ruling_40_step_taken`.
+
 ## 3 (continued). Per-task log — the eighth return continuation
 
 ### Task 0 — COMPLETE. Rulings 40, 41, 42 and 43 recorded at their own subjects; ONE register entry written; the queue is fully ruled again
@@ -3327,8 +3345,20 @@ test-file headers whose closing sentence makes a claim about `src/`.
 **The ONE comment-only commit corrected every FALSE-AT-HEAD block.** Each correction changes only
 the false claim; every accurate sentence stands. **The diff is verified comment-only MECHANICALLY** —
 every changed line under `src/` begins with a comment marker, checked at the diff — which is what
-#14/#15 ask for. **And the suites were run rather than the reasoning being trusted:** the build
-succeeded and the composing suite passed whole.
+#14/#15 ask for. **And ALL THREE SUITES WERE RUN rather than the reasoning being trusted**, because
+"a comment cannot change behaviour" is an argument and not a measurement: the build succeeded, the
+composing suite passed whole, the notation suite passed whole, and the pipeline snapshots passed
+with one by-design skip. **No golden was refreshed and none needed to be.**
+
+**★ ONE DEFECT IN THIS SESSION'S OWN CONDUCT IS RECORDED RATHER THAN SMOOTHED OVER (D-434).** The
+pipeline snapshot suite was started TWICE, concurrently, writing to the same scratch file: a first
+invocation was moved to the background when it exceeded its foreground window, and a second was
+launched before that was noticed. **Both completed and both exited zero**, and the surviving file
+records a full run — fourteen tests, thirteen passed, one skipped. **What is at risk in that shape
+is not the verdict but the RECORD of it:** two processes writing one output file means the file
+cannot be attributed to either run, so the exit codes — which are per process and were reported
+separately — are what this account rests on, and the file is corroboration rather than evidence. It
+is written down because the same shape would matter more on a measurement than on a test suite.
 
 **★ TEN BLOCKS ARE HELD, BY THE RULING'S OWN CLAUSE, AND THE LINE IS WORTH READING.** Their claim is
 that a joint-INTERNAL module — the adapter, the decoder, the tables loader, the class value type,
@@ -3426,10 +3456,11 @@ for it.
    is a per-constant act over the Jazz preset table and the §6.7 idioms, each with its validating
    corpus named — not a leftover-capacity item. The per-ROW sizing pass the user asked for still
    needs each gating row READ and remains owed, as the fifth continuation's own triage said.
-6. **Two things await the user and both are new:** the four census entries at §1.12's successor
-   above, and **§1.14** — a ruling record's citation of the reported-widening ground, surfaced
-   rather than propagated. Beside them stands the `tools/batch_analyze.cpp` comment Ruling 16's
-   scope does not reach, which is one edit for whoever is authorized.
+6. **Two things await the user and both are new:** **§1.15**, the four census entries Ruling 40's
+   step 3 holds — each needing a different act, none of them a session's — and **§1.14**, a ruling
+   record's citation of the reported-widening ground, surfaced rather than propagated. Beside them
+   stands the `tools/batch_analyze.cpp` comment Ruling 16's scope does not reach, which is one edit
+   for whoever is authorized.
 7. **No finding bearing on the analysis was surfaced by this batch.** Every subject was where a
    recorded decision is written down, plus one prose correction to a document about a measurement
    and one comment-only correction to statements about which arm ships — neither of which moves a
