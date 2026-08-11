@@ -10,7 +10,7 @@
   "the_population": {
     "what_it_is": "The open rows the gating split puts on the GATING side — the rows a stage waits on.",
     "derived_from": "tools/audit/phase1_completion_inventory.json → the_gating_split.gates.ids",
-    "count": 42,
+    "count": 43,
     "ids": [
       "OI-105",
       "OI-107",
@@ -49,6 +49,7 @@
       "OI-359",
       "OI-360",
       "OI-363",
+      "OI-368",
       "OI-45",
       "OI-47",
       "OI-57",
@@ -647,6 +648,24 @@
       "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
     },
     {
+      "row": "OI-368",
+      "anchor_quote": "before its EMPTY verdict may be read as *the class is discharged*",
+      "the_act_owed": "Measure the enumerating pattern's REACH over the text it scans, in the shape D-436 requires of every mechanism, so that an empty verdict bounds something.",
+      "sizing": "REAL-WORK",
+      "whose_act_it_is": "a session on this side",
+      "what_blocks_it": "a user ruling",
+      "why_that_size": "A measured reach is an establishment, not a filing act, and choosing the shape it takes is a mechanism question the record reserves. **The row is worth reading beside [[OI-367]]:** the same failure at a different instrument, and the second time an unmeasured pattern has been found reporting a class complete.",
+      "the_second_half": {
+        "what_it_is": "The surviving comment itself — one edit correcting a staged-scope paragraph to what the same file already says nine hundred lines further down.",
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling"
+      },
+      "detail_file": "open_items/OI-368.md",
+      "what_the_label_means": "The act is substantive work rather than a filing or documentation act — a build, a measurement, an establishment, a certification, or a design. Where the row's own text does not size that work, this pass does not estimate it.",
+      "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
+    },
+    {
       "row": "OI-363",
       "anchor_quote": "What still gates is the per-case reading",
       "the_act_owed": "Make the per-case reading the row gates on — per disagreement, is it a defect, a defensible modal reading the major/minor ground truth cannot represent, or a global-versus-local comparison artifact.",
@@ -661,10 +680,10 @@
     }
   ],
   "counted": {
-    "rows_sized": 42,
+    "rows_sized": 43,
     "by_label": {
       "NEEDS-RULING": 4,
-      "REAL-WORK": 13,
+      "REAL-WORK": 14,
       "SESSION-LARGE": 4,
       "SESSION-SMALL": 21
     },
@@ -673,15 +692,15 @@
       "the freeze on `src/`": 2,
       "the phase order (D-231 and #8)": 4,
       "an event the record schedules elsewhere": 6,
-      "a user ruling": 14,
+      "a user ruling": 15,
       "the role separation": 1
     },
     "by_owner": {
-      "a session on this side": 37,
+      "a session on this side": 38,
       "the writing side (Cowork)": 1,
       "the user": 4
     },
-    "rows_carrying_a_second_half_of_a_different_kind": 6,
+    "rows_carrying_a_second_half_of_a_different_kind": 7,
     "rows_available_now": 15
   },
   "rows_by_label": {
@@ -704,6 +723,7 @@
       "OI-357",
       "OI-359",
       "OI-360",
+      "OI-368",
       "OI-363"
     ],
     "SESSION-LARGE": [
@@ -786,6 +806,7 @@
       "OI-357",
       "OI-359",
       "OI-360",
+      "OI-368",
       "OI-363"
     ],
     "the role separation": [
@@ -798,7 +819,8 @@
     "OI-315",
     "OI-321",
     "OI-324",
-    "OI-332"
+    "OI-332",
+    "OI-368"
   ],
   "rows_available_now": [
     "OI-47",

@@ -909,6 +909,32 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
+        "row": "OI-368",
+        "anchor_quote": "before its EMPTY verdict may be read as *the class is discharged*",
+        "the_act_owed": (
+            "Measure the enumerating pattern's REACH over the text it scans, in the shape D-436 "
+            "requires of every mechanism, so that an empty verdict bounds something."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "A measured reach is an establishment, not a filing act, and choosing the shape it takes "
+            "is a mechanism question the record reserves. **The row is worth reading beside "
+            "[[OI-367]]:** the same failure at a different instrument, and the second time an "
+            "unmeasured pattern has been found reporting a class complete."
+        ),
+        "the_second_half": {
+            "what_it_is": (
+                "The surviving comment itself — one edit correcting a staged-scope paragraph to what "
+                "the same file already says nine hundred lines further down."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "a user ruling",
+        },
+    },
+    {
         "row": "OI-363",
         "anchor_quote": "What still gates is the per-case reading",
         "the_act_owed": (

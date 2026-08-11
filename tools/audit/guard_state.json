@@ -176,7 +176,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 367 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 368 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -409,7 +409,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 36 gates of 61 candidates over 251 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 36 gates of 61 candidates over 252 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -753,7 +753,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=367 detail=367 baseline=200 post-baseline=167",
+        "living mode: index=368 detail=368 baseline=200 post-baseline=168",
         "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
