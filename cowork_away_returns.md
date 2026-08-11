@@ -5905,6 +5905,147 @@ where a decision is recorded.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### ★ WHERE THIS BATCH STOPPED — the fourteenth continuation's close, and the first commissioning sitting's whole ruling set applied
+
+**All four working tasks are COMPLETE and Task 4 — this close — is delivered.** Five commits, each
+its own task boundary, each with its full guard run, its classification run after it and its
+`STATUS.md` pointer entry. Task 3 stopped at a clean row boundary on capacity (**D-672**); nothing is
+left half-edited, every derived surface re-derives, and the guard set stands at **ZERO failing** with
+the classification green after it and the open-items bijection holding.
+
+**★ WHAT MAKES THIS BATCH DIFFERENT FROM THE THIRTEEN BEFORE IT, said once rather than assembled from
+the task logs.** Every earlier continuation applied one or two rulings and drained what capacity was
+left. **This one applied a whole sitting's ruling set — five rulings — and closed SEVEN gating
+rows**: [[OI-320]], [[OI-322]], [[OI-324]], [[OI-332]], [[OI-369]], [[OI-282]], [[OI-304]] and
+[[OI-318]]. That is not a claim about how much remains, which is derived and is at the artifacts; it
+is a statement about what a commissioning sitting turns out to unblock.
+
+**★ AND OI-346's MARKS WERE REACHED, AFTER SIX CONTINUATIONS RECORDED THAT THEY WERE NOT.** Each of
+those six gave the same reason and each was right: the row's application half has an ESTABLISHMENT
+inside every member, so no batch's leftover capacity was ever the right place for it. **The dispatch
+made it a task of its own and put it early, and it moved in one act** — the Jazz half applied with
+its establishment read at the record's own objects, the idiom half HELD because #19 forbids a verdict
+in either direction. That is the clearest evidence this arc has produced for **D-670**, the rule that
+places the unstoppable task first.
+
+### ★ THE THREE THINGS THIS BATCH FOUND THAT NOBODY WAS LOOKING FOR, and what they have in common
+
+1. **Ruling 60's entry had no proposed home** (§1.18) — found by reading the queue's §19 to perform
+   the ruling, not by auditing the queue. The home was DERIVED from the record instead, and the
+   departure is reported with the one edit that reverses it.
+2. **Ruling 61's closing act needed D-642 applied TWICE** — found by running the derivation rather
+   than assuming its answer. On the homed test alone the entry would have printed a FALSE
+   instruction, and the register performs the chain step in its own words.
+3. **The filing convention's own enumeration is NOT SOUND against its seeds** (§2.19) — found by the
+   soundness check the derivation was built with. The diagnosis is the useful half: **a falsified
+   approach is not a falsified-status entry**, and the signature conflated the two.
+
+**What they have in common is the method rather than the subject: each was found by DERIVING OR
+VERIFYING SOMETHING BEFORE ACTING ON IT**, and none by a search aimed at it. That is the **fifth
+consecutive batch** in which the finding of record came out of a population or a derivation being run
+at task start, and it is worth the user's attention as evidence about the working rule rather than
+about any one wave.
+
+### ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**Two reserved-word collisions were caught in this batch's own new prose and corrected before their
+commits** — the bare non-musical *part* in a sentence restating the user's recorded position on
+sounding notes, and the bare non-musical *figure* in prose about a preserved population. Both arrived
+the way the record says they always do: **by restating an existing sentence**, which is the
+matching-the-neighbouring-idiom mechanism [[OI-229]]'s scanner exists to make visible. **This is the
+ninth consecutive wave whose self-check has caught one.**
+
+**One class was deliberately NOT corrected and is named rather than passed over.** The word *note* in
+*"the phase-1z scoping note"* and in every *"Dated note —"* heading is the non-musical sense, and it
+is pervasive inherited vocabulary — the ruling this batch applies uses the phrase itself, and every
+open-items detail file ends with it. The convention forbids introducing a NEW collision; using the
+established name of an existing artifact is not that, and renaming it here would put this batch's
+prose out of step with the ruling it executes. It is recorded so the next scan expects the hit.
+
+**And one shape was avoided rather than caught.** Three earlier continuations recorded claims written
+ahead of their evidence — a suite predicted to pass, a log drafted from what every previous wave had
+done. **This batch met that shape twice and declined it both times:** the register-anchor expectation
+was CHECKED and reported (it drifted, twice, which is the opposite of the previous two batches'
+result), and no run's outcome is stated anywhere before its process reported.
+
+### ★ THE FINISH LINE'S END STATE, DERIVED FRESH
+
+**Derived at `tools/audit/phase1_finish_line.json` after this batch's last regeneration. No
+population, count or identity is restated here (D-431)** — the artifact is the statement.
+
+Its nine items stand in the three groups the eleventh continuation's close described, and that
+description is unchanged. **What moved this batch, derived rather than claimed:** the TRUE-half
+gating item lost the rows this batch performed; **the no-home-at-all homing item is now subtracted by
+the same machinery its four siblings use**, which is what Ruling 61 ordered and what closed the row
+that found the gap; and the defense-gap item still reads zero.
+
+**What the artifact does NOT say** is unchanged and is repeated because a reader will look for it: it
+does not say how much work remains — an item's population is a count of obligations, not of sessions;
+a green guard set is a statement about the record's own machinery and not about the finish line; and
+it is **not** phase 1's completion statement, not a draft of one, and not an authorization for any
+fix, design or inference change.
+
+### ★ WHAT NOW STANDS BETWEEN HEAD AND THE COMPLETION STATEMENT — grouped by blocker for the NEXT commissioning sitting
+
+**This is a derivation plus authored sizing. It is NOT a completion claim, and phase 1's completion
+statement is not written, not drafted and not partially written by this batch or by any batch of this
+arc.** Every identity, act, owner and blocker is at `tools/audit/gating_row_sizing.json`; no count is
+restated here (**D-431**).
+
+**The gating rows, grouped by what stops each — and the ORDER of the groups has changed, which is the
+one thing a commissioning reader should notice.** Before this batch, *a user ruling* held more rows
+than anything else. It still holds the largest group, but **four of the rows it held were ruled at
+this sitting and are gone**, and what the remaining eleven wait on is no longer a filing question:
+they are a mechanism design, a measurement's establishment, a per-case reading of the analysis, and a
+design conversation the user owns. **The other groups are unchanged in kind** — rows held by capacity
+alone, by an event the record schedules elsewhere, by the phase order, by the freeze on `src/`, and
+one by the role separation.
+
+**Four things stand between HEAD and that commissioning.**
+
+1. **The homing items** — per-entry work whose fork the user settled long ago (**D-664**, **D-668**).
+   Unchanged in kind and smaller by the subtraction Ruling 61 ordered. Still the largest of the four
+   and the least uncertain.
+2. **The gating rows on the TRUE half** — sized every one, grouped by whose act each needs. **Ten are
+   available to a session now**; the rest wait on a ruling, an event, the phase order, the freeze or
+   the role separation.
+3. **The queue's §21** — the ninth extension, awaiting a ruling. **Five rulings classified, TWO
+   proposed as decisions**, one with its downgrade reading in a line. It is the largest sitting the
+   queue has classified and **it breaks the shape six extensions recorded**: here the two rulings
+   that unblock the most work are the two proposed as decisions, where every earlier extension found
+   the opposite. That is reported at §21.2 rather than left for a reader to notice.
+4. **§1.18** — the one reported departure this batch made, reviewable and reversible in one edit.
+
+**★ AND THE MOST USEFUL SENTENCE IN THIS CLOSE IS THE SAME ONE AS THE LAST THREE, WHICH IS ITSELF THE
+FINDING.** Of what stands between HEAD and the completion statement, **what needs the user is small
+and named**, what needs a session is large but shaped, and **what needs a measurement of the analysis
+is nothing at all.** The two rows that bear on the analysis ([[OI-357]], [[OI-363]]) are surfaced,
+rowed and explicitly not proposed for; nothing in the remaining distance waits on either. That this
+sentence has now survived four closes over four different populations is worth more than any one of
+them.
+
+**What a continuing session should know.**
+
+1. **Every population is DERIVED at task start**, never carried from here — and **four moved in this
+   batch**: the gating set (three times), the open population, the homing items, and the
+   apparatus-classed cut. Any count carried from an earlier document is stale by construction.
+2. **The commissioning surface `cowork_phase1_commissioning_surface_2026_08_11.md` is now STALE in
+   its §3 tables** — it was written at the thirteenth continuation's close and this batch closed
+   seven of the rows it lists. **The sizing artifact is the home and wins any disagreement**, which
+   that surface says of itself in its own banner. Re-reading it against the artifact is a small act
+   nobody has been dispatched to do, and it is named here rather than left to surprise the next
+   reader.
+3. **Task 3's remaining rows are UNTOUCHED**, not part-done, and are named individually in the sizing
+   artifact.
+4. **OI-346 stays open for its IDIOM half alone**, and what would close it is named: a statement, on
+   a surface that owns the question, of which of the five idioms the held gate-grade annotated music
+   covers. That is a corpus-census question rather than a documentation act.
+5. **The filing convention's enumeration is ADVISORY and says so.** Its reach is bounded rather than
+   measured (**D-673**), and it is declared NOT SOUND against its seeds. Its silence is not evidence.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected
