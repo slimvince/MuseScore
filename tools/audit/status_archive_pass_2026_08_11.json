@@ -1,0 +1,293 @@
+{
+  "purpose": "The 2026-08-11 STATUS.md archive pass: which entries moved, which clause of the dispatch's rule moved each, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
+  "generated_by": "tools/audit/gen_status_archive_pass.py",
+  "the_rule_it_applies": {
+    "source": "cc_instruction_status_touch_and_oi141_premise_repin.md, assumption A2",
+    "verbatim": "an entry moves when it is a per-task or per-batch POINTER entry whose dispatch has completed and whose close is recorded in `cowork_away_returns.md`, or when its own text already marks it superseded or historical. An entry the rule does not decide STAYS WHERE IT IS.",
+    "what_is_derived": "clause (i)'s condition, from each entry's own text naming the returns file",
+    "what_is_authored": "one entry's clause, listed in the tool's AUTHORED_CLAUSE, with a STOP on any other entry lacking the derived signal"
+  },
+  "the_boundary_and_why_it_falls_there": {
+    "newer_side_NOT_moved": "The most recent batch's entries stay active. cc_instruction_doc_split.md §2 keeps 'the most recent one or two' entries and requires the active file to stay self-sufficient for a context-less session start; the boundary is drawn at a BATCH edge so one batch's entries are not split across it. That is the precedent deciding, which is what assumption A3 asks of it.",
+    "older_side_NOT_moved": "Every entry older than cowork_away_returns.md itself. Their closes are recorded in dispatch reports and in the handoff archive, not in the returns file, so clause (i) does not reach them and the rule does not decide them. They stay, and the remainder is UNTOUCHED rather than partly worked (D-672)."
+  },
+  "base_commit": "f9c9ba3f8ee43dcae9a86c9bfbfa18877a0b2a11",
+  "moved_range_at_base": {
+    "first_line": 14,
+    "last_line": 117
+  },
+  "counted": {
+    "dated_entries_moved": 52,
+    "lines_moved": 104,
+    "lines_in_STATUS_md_at_base": 722,
+    "lines_in_STATUS_md_after": 618
+  },
+  "moved_block_sha256": "d704a13cd20af72440dbe9e9b06fa6330299f091050517f8e020e4e64ec96286",
+  "moved_entries": [
+    {
+      "line_at_base": 14,
+      "opening": "*2026-08-11 (CC — **★ THE FOURTEENTH CONTINUATION'S CLOSE — THE FIRST COMMISSIONING SITTING'S WHOLE RULING SET APPLIED, SEVEN GATING ROWS CLOSED, AND ",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 16,
+      "opening": "*2026-08-11 (CC — **★ THE FOURTEENTH CONTINUATION, TASK 3 — THE SESSION-SMALL DRAIN: FOUR GATING ROWS CLOSED, AND ONE ACT CAME OUT DIFFERENT FROM ITS ",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 18,
+      "opening": "*2026-08-11 (CC — **★ THE FOURTEENTH CONTINUATION, TASK 2 — RULING 62 APPLIED: THE FILING CONVENTION'S DERIVED ENUMERATION, THREE HISTORICAL-RECORD BA",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 20,
+      "opening": "*2026-08-11 (CC — **★ THE FOURTEENTH CONTINUATION, TASK 1 — OI-346's MARKS REACHED AT LAST, AS A DEDICATED TASK: THE JAZZ HALF APPLIED, THE IDIOM HALF",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 22,
+      "opening": "*2026-08-11 (CC — **★ THE FOURTEENTH CONTINUATION, TASK 0 — THE FIRST COMMISSIONING SITTING'S FIVE RULINGS ALL APPLIED IN ONE COMMIT, AND TWO GATING R",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 24,
+      "opening": "*2026-08-11 (CC — **★ THE THIRTEENTH CONTINUATION'S CLOSE — THE COMMISSIONING SURFACE IS HANDED OVER, AND NOT ONE SENTENCE OF THE COMPLETION STATEMENT",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 26,
+      "opening": "*2026-08-11 (CC — **★ THE THIRTEENTH CONTINUATION, TASK 2 — [[OI-303]] CLOSES BY PERFORMING EXACTLY THE ACT ITS OWN SIZING NAMED.** No `src/` change, ",
+      "moved_by": "clause (i), authored: a per-TASK pointer entry of the thirteenth continuation, whose own CLOSE entry (immediately above it in the same batch) names cowork_away_returns.md and whose dispatch has completed. Clause (i) asks whether the DISPATCH's close is recorded there, not whether the task entry names the file."
+    },
+    {
+      "line_at_base": 28,
+      "opening": "*2026-08-11 (CC — **★ THE THIRTEENTH CONTINUATION, TASK 1 — THE FIRST HOMING ACT IN THIS ARC THAT CLOSED BY A POINTER MOVE, WITH NO TEXT WRITTEN.** No",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 30,
+      "opening": "*2026-08-11 (CC — **★ THE THIRTEENTH CONTINUATION, TASK 0 — THE THREE RULED ACTS, AND DERIVING THE NEXT TASK'S POPULATION FOUND THE FINISH LINE ASKING",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 32,
+      "opening": "*2026-08-11 (CC — **★ THE TWELFTH CONTINUATION'S CLOSE — THE PER-ROW SIZING PASS IS DONE, AND VERIFYING A ROW AT THE OBJECTS FOUND AN ENUMERATION REPO",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 34,
+      "opening": "*Last updated: 2026-08-11, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE HOMING REMAINDE",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 36,
+      "opening": "*Last updated: 2026-08-11, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE SMALL RULED ACTS",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 38,
+      "opening": "*Last updated: 2026-08-11, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE PER-ROW SIZING PA",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 40,
+      "opening": "*Last updated: 2026-08-11, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE ELEVENTH RETURN CO",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 42,
+      "opening": "*Last updated: 2026-08-11, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE SESSION-EXECUTABLE ",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 44,
+      "opening": "*Last updated: 2026-08-11, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE §13 REGISTER EVENT A",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 46,
+      "opening": "*Last updated: 2026-08-11, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE GUARD FAMILY ACT: THE",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 48,
+      "opening": "*Last updated: 2026-08-11, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE §11 REGISTER EVENT: TH",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 50,
+      "opening": "*Last updated: 2026-08-11, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ D-639's TEST IS APPLIED OVE",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 52,
+      "opening": "*Last updated: 2026-08-11, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE NINTH RETURN CONTINUATIO",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 54,
+      "opening": "*Last updated: 2026-08-11, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE CENSUS ITEM CLOSES: THE F",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 56,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE EIGHTH RETURN CONTINUATION",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 58,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ RULING 16 EXECUTED IN ITS OWN O",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 60,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ TWO ENTRIES RE-HOMED INSIDE THEI",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 62,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ RULING 40 IS EXECUTED OVER ALL NI",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 64,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ RULINGS 40–43 ARE RECORDED, THE IN",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 66,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE PRODUCTION ARM READS THIS REPER",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 68,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE TWO AUDIT-METHOD ENTRIES ARE RE-",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 70,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ RULING 39's DELEGATION IS WRITTEN AND",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 72,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE HOMING DEFAULT IS EXECUTED FOR THR",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 74,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE §7 REGISTER EVENT LANDS: SEVEN ENTR",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 76,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE FIFTH RETURN CONTINUATION STOPS AT A",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 78,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE RESERVED-WORD INVENTORY'S COMPLETENES",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 80,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE INDEX-PARSER FAMILY IS FIXED AT ITS CA",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 82,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE WRITING-STANDARDS CONFORMANCE QUESTION ",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 84,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE FOURTH RETURN CONTINUATION STOPS AT A CL",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 86,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE D-580 FACT-GATHERING SURFACE IS DELIVERED",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 88,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE BOUNDED ESTABLISHMENT COULD NOT ANSWER THE",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 90,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ A RULED REMEDY IS REFUTED BY ITS OWN CONDITION:",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 92,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE FIVE CORRUPTED QUOTES ARE REPAIRED — AND THE",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 94,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE REGISTER EVENT LANDS: ELEVEN NEW ENTRIES, THE",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 96,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE THIRD RETURN CONTINUATION STOPS AT A CLEAN BOU",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 98,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE DEFENSE-GAP POPULATION IS CLOSED — AND READING ",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 100,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ RULING 18 IS EXECUTED: THE ELEVEN OWED LEGACY-MARK V",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 102,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ RULINGS 17, 18 AND 19 ARE RECORDED AT THEIR SUBJECTS,",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 104,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE DEFENSE GAPS: MORE THAN A THIRD OF THE POPULATION ",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 106,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ ALL TWENTY UNREGISTERED RULINGS ARE CLASSIFIED AND GO T",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 108,
+      "opening": "*Last updated: 2026-08-09, LATEST++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ RULINGS 11, 13, 14 AND 15 ARE APPLIED, [[OI-349]] CLOSES",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 110,
+      "opening": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE TEN RULINGS OF 2026-08-09 ARE APPLIED THROUGH TASK 3:",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 112,
+      "opening": "*Last updated: 2026-08-08, LATEST++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ NINE OF THE ELEVEN ARCHIVE-ONLY DECISIONS ARE OUT OF THE A",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 114,
+      "opening": "*Last updated: 2026-08-08, LATEST+++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE GUARD FAMILY IS BUILT AS ONE DESIGN OVER THE WHOLE OF I",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    },
+    {
+      "line_at_base": 116,
+      "opening": "*Last updated: 2026-08-08, LATEST++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE HOLD IS OVER: THE PHASE-1Q RECORD IS FROZEN AT ITS SNAPS",
+      "moved_by": "clause (i), derived: a per-task or per-batch POINTER entry whose own text names cowork_away_returns.md, where its dispatch's close is recorded, and whose dispatch has completed."
+    }
+  ],
+  "reconciliation": {
+    "STATUS_md_at_head_is_exactly_the_base_minus_the_moved_range": true,
+    "the_moved_block_appears_verbatim_in_STATUS_ARCHIVE_md": true,
+    "what_that_proves_together": "Nothing left the live file that is not in the archive, and nothing else left it. Both are byte comparisons against the base commit's own git object, not against the memory of performing the move (#15)."
+  }
+}
