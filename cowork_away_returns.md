@@ -5097,7 +5097,11 @@ composing suite whole; and the notation suite whole. **The pipeline snapshot sui
 is still running** — it is much the slowest of the four — **so its result is NOT stated here and is
 recorded at this batch's close instead.** That is the eighth continuation's own correction applied
 in advance rather than after the fact: an assertion may not enter the record before the thing it
-asserts is established, and *the run I started will pass* is a prediction.
+asserts is established, and *the run I started will pass* is a prediction. *(★ IT HAS SINCE REPORTED,
+and the outcome is at this batch's close: the suite exited ZERO with zero failures and no golden
+refreshed. This note is appended where the question was raised; the sentence above stands as written,
+#12, because what it recorded — that the result was not yet established — was true when it was
+written and is the whole point of it.)*
 
 **★ [[OI-368]] FLIPS, AND THE TWO HALVES CLOSE BY TWO DIFFERENT ROUTES — which is the result worth
 reading.** Its half (a), the surviving comment, closes by the act being LICENSED and performed. Its
@@ -5339,6 +5343,157 @@ a statement about which arm ships, and no behaviour moved.
 **Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+### ★ WHERE THIS BATCH STOPPED — the thirteenth continuation's close, and the commissioning surface handed over
+
+**Tasks 0, 1, 2 and 3 are all reached: Tasks 0 and 2 COMPLETE, Task 1 OPENED AND STOPPED AT A CLEAN
+ENTRY BOUNDARY, and Task 3 — this close — DELIVERED.** Four commits, each its own task boundary, each
+with its full guard run, its classification run after it and its `STATUS.md` pointer entry. **OI-346's
+marks are NOT reached**, for the reason five previous continuations gave and this one restates at its
+Task 2 log. Nothing is left half-edited, every derived surface re-derives, and the guard set stands at
+ZERO failing with the classification green after it.
+
+**★ THE COMMISSIONING SURFACE IS `cowork_phase1_commissioning_surface_2026_08_11.md`, and what it is
+matters as much as what it says.** It is a CC reading surface, not ratified, not a specification and
+**not a decision surface — it asks no question and offers no option**, because every choice it names
+is already recorded on the row that owns it. It carries the finish line's end state derived fresh,
+every remaining gating row grouped by WHOSE act it needs with its sizing label and its one-line act,
+the two registers' own health checks with their verdicts, and the pointer to the target-document
+structure. **The tables are TRANSCRIBED from the sizing artifact by a generated pass over its own
+fields, not re-authored**, and the file says in its banner that the artifact is the home and wins any
+disagreement. **No count, percentage or population size is restated in it (D-431)** — identities are
+listed, because an identity is not a quantity.
+
+**★ AND THE CLOSE WRITES NOT ONE SENTENCE OF THE COMPLETION STATEMENT.** The dispatch bars it in
+terms, and the bar is met literally: the surface states what remains and whose act each remaining
+thing needs, and says of itself that it is not a claim that phase 1 is close, or far.
+
+**★ WHAT THE PIPELINE SNAPSHOT SUITE DID, recorded HERE because Task 0 deliberately declined to
+predict it.** That task's log said the suite was launched and still running, and that its result
+would be recorded at this close rather than asserted in advance — because *the run I started will
+pass* is a prediction, and this project has a recorded defect from exactly that shape. **Its outcome
+is stated HERE, from its own completed process**, and nothing above rests on it: the edit it tests is
+comment-only, verified mechanically against a git object, and the build, the `batch_analyze`
+regression check, the composing suite and the notation suite had each already reported and passed
+from their own completed processes.
+
+**THE RESULT: the suite ran to completion and EXITED ZERO — fourteen tests over four suites, thirteen
+passed and one skipped by design, ZERO failures.** All ten corpus scores match their golden snapshots.
+**No golden was refreshed and none needed to be**, which is what a comment-only change should produce
+and is now measured rather than argued. It is a single process, its exit code read after it reported,
+and its output file was written by that process alone — which is the correction the eighth
+continuation recorded against itself when two runs shared one file.
+
+**Holds this batch produced:** **[[OI-369]]**, whose two closing acts are both the user's, and the
+queue's **§19**, which awaits a ruling — one proposed decision, with its downgrade reading in one
+line. Beside them stand the remaining available gating rows, named individually in the sizing
+artifact, and OI-346's marks.
+
+**Surfacings:** **§2.18**, the record's own completion map asking for an act a ruling forbids.
+**Nothing bearing on the analysis was surfaced by this batch**, and no measured value moved.
+
+### ★ THE THREE THINGS THIS BATCH FOUND THAT NOBODY WAS LOOKING FOR, and what they have in common
+
+1. **§2.18 / [[OI-369]]** — found by deriving Task 1's population before working it. A finish-line
+   item asks for an act a ruling forbids, and the subtraction that would fix it consults an artifact
+   covering a different cut, so it could not reach the entry in any case.
+2. **[[OI-303]]'s sixth claim, standing at a second block of a file the correcting act had touched** —
+   found one batch earlier by verifying a row at the files rather than at the record of it, and
+   closed here.
+3. **The step-1 pointer move applying for the first time in this arc** — found by trying the
+   procedure's steps in order rather than assuming the outcome, which is what D-668 exists to make
+   mechanical.
+
+**What they have in common is the method rather than the subject: each was found by DERIVING OR
+VERIFYING SOMETHING BEFORE ACTING ON IT**, and none by a search aimed at it. That is the fourth
+consecutive batch in which the finding of record came out of a population being derived at task
+start, and it is worth the user's attention as evidence about the working rule rather than about any
+one wave.
+
+### ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**One reserved-word collision was caught in this batch's own new prose and corrected before its
+commit** — the bare non-musical *part*, in a phrase **paraphrased from an earlier continuation's own
+log**, which is the matching-the-neighbouring-idiom mechanism the record says produces them. **This
+is the eighth consecutive wave whose self-check has caught one.** The check ran as a generated scan
+over the lines each task ADDED, computed against that task's baseline commit read as a git object,
+rather than by re-reading prose — and the later tasks' scans came back empty, which is the first time
+in this arc a wave has cleared its own self-check on a second pass.
+
+**★ ONE CLASS THE SCAN FLAGGED WAS DELIBERATELY NOT CORRECTED, and it is named rather than passed
+over.** The commissioning surface's tables are TRANSCRIBED from the sizing artifact, and three of its
+transcribed lines carry a tool's *verify mode* or *apply mode* — the operating-mode sense in a
+compound. **Rewording them would make a file that claims to transcribe an artifact diverge from it**,
+which is a worse defect than the one it would fix, and the compound is unambiguous in the way
+*tie-break* is. The remaining flags are the verb *to measure*, which the convention explicitly keeps,
+and one MENTION of the collided word inside the self-check note that names it.
+
+**And one shape was avoided rather than caught, which is the more useful half.** The eighth
+continuation recorded against itself a claim written ahead of its evidence; the twelfth recorded a
+second, a log drafted from what every previous wave had done rather than from this wave's run. **This
+batch met both shapes and declined both in advance:** the snapshot suite's result was left unstated
+while it ran, and the register-anchor expectation was CHECKED and reported as zero rather than
+inherited from the pattern — twice.
+
+### ★ THE FINISH LINE'S END STATE, DERIVED FRESH
+
+**Derived at `tools/audit/phase1_finish_line.json` after this batch's last regeneration. No
+population, count or identity is restated here (D-431)** — the artifact is the statement, and
+`cowork_phase1_commissioning_surface_2026_08_11.md` §2 is its reader's guide.
+
+Its nine items stand in the three groups the eleventh continuation's close described, and that
+description is unchanged. **What moved this batch, derived rather than claimed:** two gating rows left
+the TRUE-half item by being performed; one register entry left the findings-not-rules item by being
+re-homed; one new gating row entered from this batch's own reading; and one homing item is now HELD
+rather than owed, because [[OI-369]] establishes that its closing act contradicts a ruling.
+
+**What the artifact does NOT say** is unchanged and is repeated at the commissioning surface rather
+than here.
+
+### ★ WHAT NOW STANDS BETWEEN HEAD AND THE COMPLETION STATEMENT — handed over rather than described
+
+**This is a derivation plus authored sizing. It is NOT a completion claim, and phase 1's completion
+statement is not written, not drafted and not partially written by this batch or by any batch of this
+arc.**
+
+**The previous close listed four things. Three of them have moved, and the movement is what this
+close hands over.**
+
+1. **The homing items** — unchanged in kind and smaller by one entry, with the procedure's step 1
+   now demonstrated as well as registered. **One of the five is HELD rather than owed** ([[OI-369]]).
+2. **The gating rows on the TRUE half** — sized every one, and now **GROUPED BY WHOSE ACT EACH NEEDS**
+   at the commissioning surface, which is the thing the previous close could not yet hand over. Two
+   left the item this batch.
+3. **The reach item's hand-on** — discharged one batch earlier and unchanged.
+4. **The queue** — §17 is now RULED at §18, and **§19 replaces it as what awaits the user**: three
+   rulings classified, one proposed decision, its downgrade reading in one line.
+
+**★ AND THE MOST USEFUL SENTENCE IN THIS CLOSE IS THE SAME ONE AS THE LAST TWO, WHICH IS ITSELF THE
+FINDING.** Of what stands between HEAD and the completion statement, **what needs the user is small
+and named**, what needs a session is large but shaped, and **what needs a measurement of the analysis
+is nothing at all.** The two rows that bear on the analysis ([[OI-357]], [[OI-363]]) are surfaced,
+rowed and explicitly not proposed for; nothing in the remaining distance waits on either. That this
+sentence has now survived three closes over three different populations is worth more than any one
+of them.
+
+**What a continuing session should know.**
+
+1. **Every population is DERIVED at task start**, never carried from here — and **three moved in this
+   batch**: the gating set (twice), the open population, and the homing items. Any count carried from
+   an earlier document is stale by construction.
+2. **The commissioning surface is the map, and the sizing artifact is its home.** A continuing session
+   reads the surface to see whose act each row needs, and the artifact for anything the surface
+   summarizes.
+3. **Task 1's remaining homing population is untouched**, not part-done, and is to be derived fresh.
+   Item 5 is HELD by [[OI-369]] rather than owed.
+4. **OI-346's marks are NOT reached**, as six continuations have now recorded, and the repetition is
+   the point: its application half has an establishment inside every member, so no batch's leftover
+   capacity has ever been the right place for it.
+5. **[[OI-369]] gates and is the user's.** Both of its closing acts change a derived surface, which
+   **D-436** reserves.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch.**
 
 ## 4. The batch's start state, recorded before any act
 
