@@ -5828,6 +5828,83 @@ gate blocks and move no figure in them.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 3 — the session-small drain: FOUR ROWS CLOSED, each performed whole, and the pass STOPPED at a row boundary with the remainder untouched
+
+**The population was derived fresh at task start (A6)** from `tools/audit/gating_row_sizing.json` →
+`rows_available_now`, which is what the sizing pass exists for: the rows a session may take now are
+named rather than searched for. No count is restated here (**D-431**).
+
+**Four rows closed, each by performing the act its OWN sizing named.**
+
+1. **[[OI-332]]** — completed by its remaining two items. The *no code* banner over two built
+   operations is corrected to AS-BUILT, with the former status preserved and nothing else in that
+   document edited. **★ AND THE SECOND ITEM WAS NOT THE ACT THE SIZING PREDICTED, which is recorded
+   rather than smoothed over:** the sizing said *re-aim the drifted as-built anchors*, and the
+   reading found that re-numbering would only reset the clock — **the drift sat inside a CORRECTION
+   of an earlier citation**, which is the defect **D-307** exists against arriving where a reader
+   would least expect it. So the citations now name **FUNCTIONS**, which is the writing standards'
+   own locator rule, with both former wordings preserved.
+2. **[[OI-282]]** — a dated scope annotation on the clustering plan: the taxonomy half was delivered
+   and ratified the day after the plan was written, the weights half is what remains. The title, the
+   *"Not now"* banner and the one-object sentence are **preserved and re-scoped rather than
+   rewritten** (#12).
+3. **[[OI-304]]** — a dated correction remark beside each of the two annotation blocks, naming
+   D-428's corrected text, **with neither block edited**. That is the row's own instruction and the
+   reason for it: an annotation block's wording is the record of what was believed when it was
+   written, and editing it would destroy the evidence that the correction happened at all.
+4. **[[OI-318]]** — both label defects. The Layer-6 paragraph names the punctuation-span at all three
+   of its uses; the duplicated section number is resolved by renumbering the second, which moves
+   nothing below it. **★ AND THE ROW'S OWN UNIQUE CONTRIBUTION IS SHARPENED RATHER THAN JUST
+   DISCHARGED:** it said the scope correction's enumeration was one word short, and the act records
+   at that enumeration **why it could not have found the word** — it was built by searching for ONE
+   banned word, so a second banned word in the same document was outside its reach. **That is the
+   third instance in this arc of an enumeration read as coverage when its reach was never measured**
+   ([[OI-367]], [[OI-368]]).
+
+**★ WHERE THE TASK STOPS, AND IT STOPS AT A CLEAN ROW BOUNDARY ON CAPACITY.** Each closed row is
+whole in itself; **the remaining available rows are UNTOUCHED rather than partly worked**, and
+nothing is left half-edited. That is the allowance **D-672** states, and its third exercise under a
+registered rule. The remainder is named individually in the sizing artifact, each with its act and
+its blocker, so what was not done is exactly the difference rather than a silent cap. **One row is
+named because a reader will ask why it was not taken:** [[OI-150]] is sized session-small but its act
+is a full build plus both suites before the re-stamp, which is not a documentation act and is the
+one available row whose cost is a run rather than a reading.
+
+**Seven authored inputs were maintained, every one caught by its own tool's STOP rather than by a
+reader** (**D-648**), and the shape of the seventh is worth stating. Four apparatus verdicts and four
+sizings moved WHOLE into their retired tables; the reach derivation's own two verdicts moved with
+them; **and then the apparatus declaration STOPPED IN A NEW WAY** — a row it had re-classed under
+Ruling 56 and that had since CLOSED left it with a superseded verdict and no live one, which its
+reconciliation had no case for. **Two STOPs were widened to admit a CLOSED row, each with its reason
+written beside it**, and the artifact now publishes the moved-and-since-closed rows in a list of
+their own: keeping them with the live movers would make every consumer's cut disagree with the
+derived row set, and dropping them would lose the record that the ruling reached those rows at all
+(#12). **That is the same third-case shape the same tool already carries for its A3 grading** — a
+row that closed is neither a confirmation nor a refutation — arriving in a second place.
+
+**★ AND EVERY RETIRED RECORD WAS RIGHT IN THE HALF THAT MATTERED, WHICH IS EVIDENCE ABOUT THE SIZING
+PASS RATHER THAN ABOUT THIS BATCH.** [[OI-282]]'s sizing named the SHAPE of the act as well as its
+size, and the act followed it without re-deciding anything. [[OI-304]]'s insisted the remedy was an
+annotation and not an edit, and that is what protected the two blocks. [[OI-318]]'s split survived
+the act intact, the two halves treated differently in one commit. Only [[OI-332]]'s was wrong about
+the act — and it could not have known, because what it read was the row's own text, which describes
+the drift and not where it sits.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires; the open-items split reconciliation was run beside them.
+Eight `ARCHITECTURE.md` code anchors and a run of register home anchors were re-aimed, each from its
+own tool's reported line, and **two authored section-kind heading lines were re-aimed by locating
+each heading's own recorded TEXT rather than by an assumed uniform shift**. Every verdict is at
+`tools/audit/guard_state.json` → `summary` and none is restated here (**D-431**).
+
+**Holds:** the remaining available rows, named individually in the sizing artifact. **Surfacings:**
+none new bearing on the analysis — every subject of this task is a document's account of itself or of
+where a decision is recorded.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

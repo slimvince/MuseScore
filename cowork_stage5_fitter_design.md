@@ -116,6 +116,17 @@ Stage-5-neighborhood method levers); the engage decision itself (E3 is its own u
 > #1 — are genuinely still owed (**D-428**), and their subject includes live Layer-1.5 code, so they
 > are not disposed of by the retirement map. **(ii)** This arc's own §6-block dissolution IS OWED
 > refactor #2 (**D-429**), and it is the half this document's scope-in list carries.
+>
+> **★ CORRECTION REMARK, 2026-08-11 (`OPEN_ITEMS.md` OI-304) — CLAUSE (i) ABOVE ASSERTS THE OPPOSITE
+> OF WHAT D-428 NOW RECORDS, AND THE ANNOTATION IS LEFT AS WRITTEN (#12).** Clause (i) says the
+> renames' subject *includes live Layer-1.5 code*, so they are not disposed of by the retirement map.
+> **D-428 was corrected later the same day** — at phase 1n, against the premise and at the call sites
+> — and now records that **every use sits on the legacy arm, so deleting that path discharges them.**
+> *Why the remark rather than an edit:* this is a dated annotation block, and its wording is the
+> record of what was believed when it was written; editing it would destroy the evidence that the
+> correction happened at all. The correction reached the register entry and not the two documents
+> that state the premise it refuted — the one-surface-corrected shape the row names — and this is
+> the second of those two surfaces.
 
 **Status.** DRAFT for sign-off. No implementation exists; locators are deferred until built.
 

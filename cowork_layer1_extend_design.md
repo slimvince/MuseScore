@@ -1,6 +1,16 @@
 # Architectural Layer 1 — build-over-a-selection + extend — detail design (Phase 1 of the L1–L3 stabilization)
 
-> **Status: DRAFT for sign-off. Read-only design — no code.** Implements the supplier side of the bounded-context
+> **★ STATUS CORRECTED 2026-08-11 (`OPEN_ITEMS.md` OI-332 item (1)): AS-BUILT — BOTH OPERATIONS THIS
+> DOCUMENT DESIGNS ARE BUILT.** The span-scoped `build` is declared in `note_model.h` with its
+> overlap-retention contract stated in its own comment beside it, and `extend` is declared there too;
+> the reach-back design in this family says in its own words that it rides *"on the Architectural
+> Layer 1 `extend` (now built)"*. **Every sibling design in this family carries an accurate as-built
+> banner, which is what made this one costly** — a reader comparing them was told this design alone
+> had produced no code. **FORMER STATUS, PRESERVED (#12):** *"Status: DRAFT for sign-off. Read-only
+> design — no code."* Nothing else in this document is edited: what was wrong is its account of
+> itself, not its content.
+>
+> Implements the supplier side of the bounded-context
 > contract (`cowork_bounded_context_design.md`) at Architectural Layer 1: build the note model over the **user's
 > selection**, and **extend** the loaded span on request. This is the foundation Phase-1 step; the genuinely hard part
 > (the look-up index under extension) is isolated and **deferred behind a byte-identical interim**, so the *contract*

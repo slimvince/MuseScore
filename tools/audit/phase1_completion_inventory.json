@@ -381,7 +381,7 @@
      "document": "cowork_layer5_function_design.md",
      "state_at_head": "WRITTEN — CLOSED",
      "why": "The user wrote an explicit delegation clause on 2026-08-03 and every entry of the document is `contract-home`. Nothing is outstanding.",
-     "delegation_at_head": "ARCHITECTURE.md:2076",
+     "delegation_at_head": "ARCHITECTURE.md:2086",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 8,
      "by_class": {
@@ -429,7 +429,7 @@
      "document": "cowork_voiceleading_axis_design.md",
      "state_at_head": "RULED NOT WIDENED — SETTLED BY RULING, NOT DEFERRED",
      "why": "The delegation was widened on 2026-08-03 from §0/§5.3 to §0/§5.1/§5.3/§8/§9, which moved seven entries in. Three remain outside the named sections: D-398 in §15 and D-397/D-400 in §16, and the 2026-08-03 widening excluded those two sections deliberately. ★ THE USER RULED ON 2026-08-04 (ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`) THAT THE DELEGATION IS NOT WIDENED TO REACH THEM. D-397 and D-400 ARE §16's ratification asks A7 and A5 — asks put TO the user — and D-398 sits in §15, a tracking list; an ask is not a rule, and forcing either a contract home would misdescribe what it is. The three entries stay `gap` as the ruling intends, and the kind half would exclude both sections at the next run in any case, so a widening would be a wording change that closes nothing. THIS IS A RULING AND NOT A DEFERRAL: the document is not awaiting an act and no later wave owes one here.",
-     "delegation_at_head": "ARCHITECTURE.md:1137",
+     "delegation_at_head": "ARCHITECTURE.md:1147",
      "delegation_form_at_head": "named-home-with-sections",
      "entries_in_the_home_population": 11,
      "by_class": {
@@ -453,7 +453,7 @@
      "document": "cowork_layer1_note_model_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5) and it reaches every section. Three of the four entries are `contract-home`; the fourth (D-518) stays `gap` on the KIND half — its home section is §13, whose own heading ends '(NOT needed to understand the layer)'. That is not a delegation matter and no delegation would move it.",
-     "delegation_at_head": "ARCHITECTURE.md:1559",
+     "delegation_at_head": "ARCHITECTURE.md:1569",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 4,
      "by_class": {
@@ -466,7 +466,7 @@
      "document": "cowork_layer2_slicing_design.md",
      "state_at_head": "WRITTEN — CLOSED",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5). Both entries are `contract-home` as of this wave's classification run.",
-     "delegation_at_head": "ARCHITECTURE.md:1685",
+     "delegation_at_head": "ARCHITECTURE.md:1695",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 2,
      "by_class": {
@@ -478,7 +478,7 @@
      "document": "cowork_layer6_grouping_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 6, ruling R5). Eight of the nine entries are `contract-home`; the ninth (D-458) stays `gap` on the KIND half — it is homed in the document's STATUS BANNER. Not a delegation matter.",
-     "delegation_at_head": "ARCHITECTURE.md:2191",
+     "delegation_at_head": "ARCHITECTURE.md:2206",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 9,
      "by_class": {
@@ -490,7 +490,7 @@
      "document": "cowork_phrase_boundary_design.md",
      "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
      "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5, ruling R4). Eight of the ten entries are `contract-home`; two (D-484, D-485) stay `gap` on the KIND half — the document's opening block and its §11 'Open items'. Not a delegation matter.",
-     "delegation_at_head": "ARCHITECTURE.md:1561",
+     "delegation_at_head": "ARCHITECTURE.md:1571",
      "delegation_form_at_head": "explicit-delegation-clause",
      "entries_in_the_home_population": 10,
      "by_class": {
@@ -539,7 +539,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 36,
+   "count": 32,
    "ids": [
     "OI-105",
     "OI-107",
@@ -555,17 +555,13 @@
     "OI-274",
     "OI-280",
     "OI-281",
-    "OI-282",
     "OI-283",
     "OI-290",
     "OI-296",
     "OI-299",
-    "OI-304",
     "OI-315",
     "OI-317",
-    "OI-318",
     "OI-321",
-    "OI-332",
     "OI-338",
     "OI-346",
     "OI-347",
@@ -581,7 +577,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 55,
+   "count": 51,
    "ids": [
     "OI-105",
     "OI-107",
@@ -605,20 +601,16 @@
     "OI-274",
     "OI-280",
     "OI-281",
-    "OI-282",
     "OI-283",
     "OI-290",
     "OI-292",
     "OI-296",
     "OI-299",
-    "OI-304",
     "OI-309",
     "OI-311",
     "OI-315",
     "OI-317",
-    "OI-318",
     "OI-321",
-    "OI-332",
     "OI-338",
     "OI-341",
     "OI-346",
@@ -1177,24 +1169,6 @@
     }
    },
    {
-    "id": "OI-282",
-    "title": "`cowork_style_clustering_plan.md` still presents the CLUSTERS half as future work, a day after it was delivered and ratified",
-    "subject_column": "doc-sync / #10 (DT-12)",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync",
-     "dt-12"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "D-639's reach derivation, applied by the user's Ruling 56"
-    }
-   },
-   {
     "id": "OI-283",
     "title": "The decisions register's coverage claim states a stale `ARCHITECTURE.md` line count, and nothing keeps it current",
     "subject_column": "doc-sync / #10, #17(f)",
@@ -1279,23 +1253,6 @@
     }
    },
    {
-    "id": "OI-304",
-    "title": "Two dated annotations still assert the opposite of **D-428** as corrected one wave later",
-    "subject_column": "F — doc-sync debt (#10)",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "a statement about the analysis's build state"
-    }
-   },
-   {
     "id": "OI-309",
     "title": "Four generated artifacts in the decisions chain do not re-derive at the committed tree",
     "subject_column": "D — instrument / measurement layer",
@@ -1362,23 +1319,6 @@
     }
    },
    {
-    "id": "OI-318",
-    "title": "Two label defects in the canonical architecture document: the Layer-6 section still calls the grouping unit a “phrase”, and §19.4 is used twice",
-    "subject_column": "F — doc-sync debt (#10)",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "D-639's reach derivation, applied by the user's Ruling 56"
-    }
-   },
-   {
     "id": "OI-321",
     "title": "`docs/unified_analysis_pipeline.md` states three things as current that are false at HEAD, including a phase it calls deferred that the code says was executed",
     "subject_column": "F — doc-sync debt (#10)",
@@ -1391,26 +1331,6 @@
      "drift",
      "false at head",
      "present tense"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "a statement about the analysis's build state"
-    }
-   },
-   {
-    "id": "OI-332",
-    "title": "Three of read wave 6's documents misdescribe their OWN state — a *\"no code\"* banner over a built design, stale as-built code anchors, and a design whose approach was later falsified with no note saying so",
-    "subject_column": "F — doc-sync debt (#10)",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync",
-     "drift",
-     "misdescrib",
-     "stale"
     ],
     "gate": {
      "verdict": "GATES",
@@ -1562,7 +1482,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 38,
+   "count": 34,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1581,16 +1501,12 @@
     "OI-239",
     "OI-249",
     "OI-274",
-    "OI-282",
     "OI-283",
     "OI-292",
-    "OI-304",
     "OI-309",
     "OI-311",
     "OI-315",
-    "OI-318",
     "OI-321",
-    "OI-332",
     "OI-341",
     "OI-352",
     "OI-357",
@@ -1629,19 +1545,17 @@
   "non_gating_before_the_ruling_56_application": {
    "what_it_is": "The same cut taken BEFORE the user's Ruling 56 moved D-639's reach derivation's IN set to the gating side — that is, the rows the apparatus declaration classes non-gating on D-438's criterion alone.",
    "why_it_is_published": "It is the population the reach derivation grades, and it must not move when that derivation's own result is applied. Without it the two are circular: the derivation's verdicts would leave the set they were graded over, its STOP would fire, retiring them would empty the IN set, and the application would reverse itself on the next regeneration. This cut is invariant under the application, so the fixed point is the one the ruling intends.",
-   "count": 20,
+   "count": 18,
    "ids": [
     "OI-205",
     "OI-229",
     "OI-233",
     "OI-280",
     "OI-281",
-    "OI-282",
     "OI-290",
     "OI-296",
     "OI-299",
     "OI-317",
-    "OI-318",
     "OI-338",
     "OI-346",
     "OI-347",
@@ -1653,8 +1567,6 @@
     "OI-99"
    ],
    "moved_by_the_ruling": [
-    "OI-282",
-    "OI-318",
     "OI-47"
    ],
    "derived_from": "tools/audit/nongating_apparatus_rows.json → ★_the_ruling_56_application.rows_moved",
@@ -1683,18 +1595,14 @@
     "OI-274",
     "OI-280",
     "OI-281",
-    "OI-282",
     "OI-283",
     "OI-290",
     "OI-292",
     "OI-296",
     "OI-299",
-    "OI-304",
     "OI-315",
     "OI-317",
-    "OI-318",
     "OI-321",
-    "OI-332",
     "OI-338",
     "OI-346",
     "OI-347",
@@ -1823,8 +1731,8 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 55,
-   "of_which_gate": 38,
+   "open_rows_in_the_wide_cut": 51,
+   "of_which_gate": 34,
    "of_which_apparatus_and_therefore_non_gating": 17,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 5
   },
@@ -1850,7 +1758,6 @@
   ],
   "carried_by_the_derivation": [
    "OI-274",
-   "OI-282",
    "OI-283",
    "OI-290",
    "OI-296",
@@ -1868,6 +1775,7 @@
    }
   },
   "recollected_but_already_CLOSED_in_the_index": [
+   "OI-282",
    "OI-300",
    "OI-320",
    "OI-331",
@@ -1897,14 +1805,11 @@
    "OI-280",
    "OI-281",
    "OI-292",
-   "OI-304",
    "OI-309",
    "OI-311",
    "OI-315",
    "OI-317",
-   "OI-318",
    "OI-321",
-   "OI-332",
    "OI-338",
    "OI-341",
    "OI-346",
@@ -1929,9 +1834,9 @@
  },
  "counted": {
   "decisions_recorded": 673,
-  "open_rows_in_the_index": 247,
-  "true_half_wide_cut": 55,
-  "true_half_gating": 38,
+  "open_rows_in_the_index": 243,
+  "true_half_wide_cut": 51,
+  "true_half_gating": 34,
   "complete_half_gap": 27,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

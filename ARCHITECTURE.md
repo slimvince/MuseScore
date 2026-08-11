@@ -1108,7 +1108,17 @@ contracts below all serve this principle. Their detailed statements live in the 
   pass and is NOT executed here: it must be sequenced against the standing music-theory-terminology convention
   (`OPEN_ITEMS.md` OI-229), under which existing names are not renamed unilaterally, and it is a judgment call in
   §11.5/§11.6, where "region" sometimes names a user-selected stretch rather than an analytical one. The ban itself
-  is unaffected and stands for all NEW text. The renames the 2026-07-03 pass did carry out:
+  is unaffected and stands for all NEW text. **★ THE ENUMERATION ABOVE WAS ONE INSTANCE SHORT, AND THE MISSING ONE
+  WAS A DIFFERENT BANNED WORD (added 2026-08-11, `OPEN_ITEMS.md` OI-318 item (1)): the LAYER-6 PARAGRAPH used the bare
+  "phrase" for the grouping unit** — the word the 2026-07-01 rename reserves for the accepted melodic phrase alone —
+  telling a reader of that paragraph that the grouping layer segments melodic phrases, which is the one thing the
+  delegated design's terminology section exists to deny. **It is CORRECTED in the same act** (the paragraph now says
+  punctuation-span, with its former wording preserved there, #12), and it is recorded here because this clause is the
+  document's own account of how far the rename reached, and an account that names only the "region" instances
+  understates it. *What that shows about the enumeration:* it was built by looking for one banned word, so a second
+  banned word in the same document was outside what it could find — which is why the count of instances it names is
+  not a bound on how many there are.
+  The renames the 2026-07-03 pass did carry out:
   **harmonic region → chord-span** (the typology bans "region" unqualified, yet its
   own atomic member carried the banned word; "the span one committed chord prevails over" is the criterion) ·
   latent **sequence-span → progression-schema-span** (D6, ratified) · latent **pedal span → pedal-point-span**
@@ -2181,9 +2191,14 @@ residue.
 
 #### Layer 6 — the grouping layer (Design-only — v1 spec)
 
-The grouping layer assembles the L5-labelled stream into the **flat** structure the ground truth annotates: **phrases**
-(from the L1.5 phrase-boundary primitive), **key-areas** (grouping the local-key track, which **cross-cuts** phrases —
-§2.15 span typology), and the **alignment of cadences to phrase ends** — additive, read-only, no feedback into L5. It is
+The grouping layer assembles the L5-labelled stream into the **flat** structure the ground truth annotates:
+**punctuation-spans** (from the L1.5 phrase-boundary primitive), **key-areas** (grouping the local-key track, which
+**cross-cuts** punctuation-spans — §2.15 span typology), and the **alignment of cadences to punctuation-span ends** —
+additive, read-only, no feedback into L5. **(Corrected 2026-08-11, `OPEN_ITEMS.md` OI-318 item (1): this paragraph
+used the word the ratified 2026-07-01 rename reserves for the accepted melodic phrase alone, and told a reader of the
+Layer-6 paragraph that the grouping layer segments melodic phrases — the one thing the delegated design's terminology
+section exists to deny. FORMER WORDING, PRESERVED (#12): "**phrases** (from the L1.5 phrase-boundary primitive) …
+which **cross-cuts** phrases … the **alignment of cadences to phrase ends**".)** It is
 the forward-only rebuild of the scattered live `detectCadences`/`detectPivotChords`/`KeyArea` machinery. Hierarchy,
 periods/sentences, and prolongation are out of the validatable core (verifiability contract, §2.15). Full spec:
 `cowork_layer6_grouping_design.md`.
@@ -8150,7 +8165,13 @@ speed, but strictly constrained to the Core Access Layer only (never bypassing
 it to the DOM). When the plugin API matures, migration to a plugin is then
 straightforward. See `docs/llm_integration.md §11` for the full argument.
 
-### 19.4 Implementation phases
+### 19.5 Implementation phases
+
+*(Renumbered from a second `19.4` on 2026-08-11, `OPEN_ITEMS.md` OI-318 item (2). Two sections
+carried the same number, and **D-244** makes the section numbers of this document authoritative —
+neighbouring text cites into this run by number, so a citation to §19.4 did not resolve. The
+preceding section keeps 19.4; this one takes the next free number, which changes no content and
+leaves nothing below it renumbered, §19.5 having been free.)*
 
 | Phase | Scope | Estimate |
 |-------|-------|----------|

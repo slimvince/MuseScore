@@ -15,16 +15,29 @@
 
 ## 0. CORRECTION after §7 verification (production is whole-score today — read this first)
 The §7 read-only verification (CC, cited in `cc_layer3_reachback_verify_report.md`) found that the production
-orchestrator `analyzeRegions` (now at `regionanalyzer.cpp:506`; the cited `:488` has drifted) **builds whole-score on
+orchestrator `analyzeRegions` (in `regionanalyzer.cpp` — **cited by FUNCTION, corrected 2026-08-11,
+`OPEN_ITEMS.md` OI-332 item (2); see the note below**) **builds whole-score on
 the production/default path** (`build(score)`, 1-arg) **regardless of the `[startTick, endTick)` range** — the range
 only drives which regions are *emitted*, not what is analysed. **As-built update:** the build is now **conditional**
-(`regionanalyzer.cpp:536–538`): `opts.reachBack.enabled ? build(score, start, end) : build(score)` — whole-score on
+(the `opts.reachBack.enabled` branch inside `analyzeRegions`): `opts.reachBack.enabled ? build(score, start, end) : build(score)` — whole-score on
 the production/default path (reach-back default false), selection-scoped only when reach-back is enabled. So the
 *spirit* of this correction still holds — **none of the bounded-context model is engaged in production; the production
 decode is always whole-score, and reach-back never fires there** — but the literal "builds whole-score on *every*
 path" is superseded by the conditional build. This corrects two things below: §2 step 1's "as today" is wrong (there
 is no selection-scoped decode on the production path), and reach-back can only fire once *something* (the reach-back
 parameter) builds over the selection.
+
+> **★ THE TWO CODE ANCHORS IN THIS SECTION ARE RE-AIMED AT FUNCTIONS RATHER THAN RE-NUMBERED
+> (2026-08-11, `OPEN_ITEMS.md` OI-332 item (2)).** This block's own correction of an earlier citation
+> had itself drifted — it said the orchestrator was *"now at `regionanalyzer.cpp:506`"* and named the
+> conditional build at *"`regionanalyzer.cpp:536–538`"*, and neither line held by 2026-08-04. **That
+> is the defect D-307 exists against, arriving inside a correction**, which is what makes it worth
+> stating rather than silently fixing: a line number rots the moment anything above it changes, so
+> re-numbering would only reset the clock. **The locator rule is the writing standard's own** — cite
+> by function or by section anchor, never by a raw line number — and both citations now name
+> `analyzeRegions` and the branch inside it. **FORMER WORDING, PRESERVED (#12):** *"(now at
+> `regionanalyzer.cpp:506`; the cited `:488` has drifted)"* and *"(`regionanalyzer.cpp:536–538`)"*.
+> Nothing about the finding changes; only how it points at the code.
 
 **Phase-3 scope (user-ratified, option A):** build reach-back **as a tested capability** — a **selection-aware
 orchestration path** (build over the selection → slice → decode → reach-back loop → output-filter) — with the

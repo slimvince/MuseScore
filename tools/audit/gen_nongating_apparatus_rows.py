@@ -109,6 +109,83 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-282": (GATES, RULING_56_GROUND,
+               "★ RE-CLASSED 2026-08-11 by the user's Ruling 56, which APPLIES D-639's reach "
+               "derivation; the former NON-GATING verdict is preserved whole at "
+               "`superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's "
+               "artifact and reconciled here both ways. This is the one of the three the test "
+               "decided WITHOUT reaching the fallback: it is D-639's SECOND WORKED EXAMPLE word for "
+               "word - a missing supersession note on a superseded plan - and the consequence is "
+               "the one that example is about, a reader sent there by two live specifications "
+               "being told the categories are still to be discovered when they are discovered, "
+               "ratified and compiled in. The owed act is unchanged: an annotation, not a rewrite.",
+               "RESOLVED 2026-08-11 - the act the verdict's own last sentence names was performed "
+               "(`cc_instruction_return_continuation_14.md` Task 3): a dated scope annotation, not "
+               "a rewrite. THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole; it is retired "
+               "because the row closed, never because it was wrong. Its last clause is worth one "
+               "line - a verdict that names the SHAPE of the owed act as well as the class turns "
+               "out to be the one a later session can act on without re-deciding anything."),
+    "OI-304": (GATES, "a statement about the analysis's build state",
+               "Two dated annotations assert that the owed iteration-API renames have a subject "
+               "including LIVE Layer-1.5 code; D-428 was corrected against the call sites one wave "
+               "later and records that every use sits on the legacy arm. What is owed is the "
+               "correction of a statement about which code is live - the same D-438 clause as "
+               "[[OI-303]], not a filing or a pointer.",
+               "RESOLVED 2026-08-11 - a dated CORRECTION REMARK was written beside each of the two "
+               "annotation blocks, naming D-428's corrected text, with neither block edited "
+               "(`cc_instruction_return_continuation_14.md` Task 3). THE VERDICT WAS CORRECT WHILE "
+               "IT STOOD and is kept whole; it is retired because the row closed. Its own last "
+               "clause held at the act: what was owed was the correction of a statement about "
+               "which code is live, and the remedy's being an annotation rather than an edit did "
+               "not make it a filing act."),
+    "OI-318": (GATES, RULING_56_GROUND,
+               "★ RE-CLASSED 2026-08-11 by the user's Ruling 56, which APPLIES D-639's reach "
+               "derivation; the former NON-GATING verdict is preserved whole at "
+               "`superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's "
+               "artifact and reconciled here both ways. The derivation reaches this row under the "
+               "fallback and through its FIRST half only: the Layer-6 paragraph is not the "
+               "document's account of ITSELF at all - it tells a reader what a LAYER PRODUCES, and "
+               "a reader of it alone is told the grouping layer segments melodic phrases, which the "
+               "ratified design exists to deny. THE SECOND HALF IS NOT RE-CLASSED WITH IT and is "
+               "recorded so the row is not read as gating on both: one section number used twice is "
+               "a numbering artifact and would be OUT on its own.",
+               "RESOLVED 2026-08-11 - both items corrected "
+               "(`cc_instruction_return_continuation_14.md` Task 3), and the verdict's own split "
+               "survived the act intact: the Layer-6 paragraph now names the punctuation-span at "
+               "all three of its uses, which is the half the derivation reached, and the duplicated "
+               "section number was renumbered as the numbering artifact this verdict said it was. "
+               "THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole. What the closure does NOT "
+               "discharge: OI-229's scoped terminology pass, which is untouched - this act "
+               "corrected two labels, not a class."),
+    "OI-332": (GATES, "a statement about the analysis's build state",
+               "★ RE-CLASSED 2026-08-07 by the user's ruling (dispatch "
+               "`cc_instruction_five_rulings.md` §0a, R5); the former NON-GATING verdict is "
+               "preserved whole at `superseded_verdicts` (#12), and the row that found the defect "
+               "is [[OI-336]], which closes on this act. The row cut its own class from the FIRST "
+               "HALF of D-438's line -- the half naming a pointer, an anchor, a label and a banner "
+               "as apparatus. THE SAME SENTENCE CONTINUES: 'a correction to a statement about the "
+               "analysis OR ITS BUILD STATE, or the completion of a specification, GATES' -- and "
+               "that half reaches two of the three documents. `cowork_layer1_extend_design.md` "
+               "carries a 'Read-only design -- no code' banner over two operations the row itself "
+               "verified BUILT at the header: a banner asserting that a design has no code, over "
+               "code that exists, IS a statement about the build state, and the fact that a banner "
+               "is the vehicle does not change what it states. `docs/stage4c_cadence_key_design.md` "
+               "carries no note that the approach it builds toward was falsified (D-290), which is "
+               "a statement about the analysis. The third item, a drifted code anchor, is apparatus "
+               "on both halves and carries the row neither way. The row takes the STRONGEST of its "
+               "instances, as OI-334's verdict does. Recorded against the row's SUBJECT, never its "
+               "remedy.",
+               "RESOLVED 2026-08-11 - all three items performed across two tasks of one batch "
+               "(`cc_instruction_return_continuation_14.md` Tasks 2 and 3): the falsified design "
+               "re-bannered under the user's Ruling 62, the 'no code' banner corrected to AS-BUILT, "
+               "and the drifted anchors RE-AIMED AT FUNCTIONS rather than re-numbered. THE VERDICT "
+               "WAS CORRECT WHILE IT STOOD and is kept whole; it is retired because the row closed. "
+               "★ ITS THIRD-ITEM READING IS VINDICATED IN AN UNEXPECTED WAY: it called the drifted "
+               "anchor apparatus on both halves, carrying the row neither way -- and the act "
+               "confirmed exactly that by treating it as a locator question, replacing the line "
+               "numbers with function names rather than refreshing them, because the drift sat "
+               "inside a CORRECTION of an earlier citation and re-numbering would only have reset "
+               "the clock."),
     "OI-320": (GATES, "the criterion - the row's subject bears on an instrument",
                "A corpus/score inventory names the SUPERSEDED batch case-identity sets as the "
                "current acceptance gate, three times, and tells the reader the granularity-robust "
@@ -620,16 +697,7 @@ V = {
                "Whether a delegation pointer confers contract-home status - a question about how "
                "the decisions register classifies homes. It moves no decision's content and no "
                "statement about the analysis."),
-    "OI-282": (GATES, RULING_56_GROUND,
-               "★ RE-CLASSED 2026-08-11 by the user's Ruling 56, which APPLIES D-639's reach "
-               "derivation; the former NON-GATING verdict is preserved whole at "
-               "`superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's "
-               "artifact and reconciled here both ways. This is the one of the three the test "
-               "decided WITHOUT reaching the fallback: it is D-639's SECOND WORKED EXAMPLE word for "
-               "word - a missing supersession note on a superseded plan - and the consequence is "
-               "the one that example is about, a reader sent there by two live specifications "
-               "being told the categories are still to be discovered when they are discovered, "
-               "ratified and compiled in. The owed act is unchanged: an annotation, not a rewrite."),
+    # OI-282's verdict moved to RETIRED_VERDICTS on 2026-08-11 when the row closed.
     # OI-287's verdict moved to RETIRED_VERDICTS on 2026-08-03 when the row closed.
     "OI-290": (NON_GATING, "user",
                "A section of a corpus document mixes rules and findings, which the home "
@@ -689,12 +757,7 @@ V = {
                "GATES by the declaration's own default - the declaration only ever removes a wait "
                "where the row supports removing it."),
     # OI-303's verdict moved to RETIRED_VERDICTS on 2026-08-11 when the row closed.
-    "OI-304": (GATES, "a statement about the analysis's build state",
-               "Two dated annotations assert that the owed iteration-API renames have a subject "
-               "including LIVE Layer-1.5 code; D-428 was corrected against the call sites one wave "
-               "later and records that every use sits on the legacy arm. What is owed is the "
-               "correction of a statement about which code is live - the same D-438 clause as "
-               "[[OI-303]], not a filing or a pointer."),
+    # OI-304's verdict moved to RETIRED_VERDICTS on 2026-08-11 when the row closed.
     # OI-300's verdict moved to RETIRED_VERDICTS on 2026-08-08 when the row closed.
     # OI-316 and OI-319 (rowed 2026-08-04, READ WAVE 1) are NOT first-cut candidates -- the
     # over-inclusive vocabulary does not reach their subject columns -- so no verdict is authored
@@ -706,17 +769,7 @@ V = {
                "it is committed. D-438's line inside the documentation rows names a banner as "
                "apparatus in terms. The substantive half of the same document's staleness -- what "
                "it says about the piece-start shortcut -- is a separate row, OI-315, which gates."),
-    "OI-318": (GATES, RULING_56_GROUND,
-               "★ RE-CLASSED 2026-08-11 by the user's Ruling 56, which APPLIES D-639's reach "
-               "derivation; the former NON-GATING verdict is preserved whole at "
-               "`superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's "
-               "artifact and reconciled here both ways. The derivation reaches this row under the "
-               "fallback and through its FIRST half only: the Layer-6 paragraph is not the "
-               "document's account of ITSELF at all - it tells a reader what a LAYER PRODUCES, and "
-               "a reader of it alone is told the grouping layer segments melodic phrases, which the "
-               "ratified design exists to deny. THE SECOND HALF IS NOT RE-CLASSED WITH IT and is "
-               "recorded so the row is not read as gating on both: one section number used twice is "
-               "a numbering artifact and would be OUT on its own."),
+    # OI-318's verdict moved to RETIRED_VERDICTS on 2026-08-11 when the row closed.
     # ---------------------------------------------------------------------- GATES
     "OI-315": (GATES, "a statement about the analysis's build state",
                "The canonical specification describes a key-layer behaviour in the present tense "
@@ -868,24 +921,7 @@ V = {
     # and it closed. OI-332's was RE-CLASSED on the same day (R5) and its former verdict is kept
     # at SUPERSEDED_VERDICTS -- the two tables are different acts and are deliberately separate.
     # ---------------------------------------------------------------------- GATES
-    "OI-332": (GATES, "a statement about the analysis's build state",
-               "★ RE-CLASSED 2026-08-07 by the user's ruling (dispatch "
-               "`cc_instruction_five_rulings.md` §0a, R5); the former NON-GATING verdict is "
-               "preserved whole at `superseded_verdicts` (#12), and the row that found the defect "
-               "is [[OI-336]], which closes on this act. The row cut its own class from the FIRST "
-               "HALF of D-438's line -- the half naming a pointer, an anchor, a label and a banner "
-               "as apparatus. THE SAME SENTENCE CONTINUES: 'a correction to a statement about the "
-               "analysis OR ITS BUILD STATE, or the completion of a specification, GATES' -- and "
-               "that half reaches two of the three documents. `cowork_layer1_extend_design.md` "
-               "carries a 'Read-only design -- no code' banner over two operations the row itself "
-               "verified BUILT at the header: a banner asserting that a design has no code, over "
-               "code that exists, IS a statement about the build state, and the fact that a banner "
-               "is the vehicle does not change what it states. `docs/stage4c_cadence_key_design.md` "
-               "carries no note that the approach it builds toward was falsified (D-290), which is "
-               "a statement about the analysis. The third item, a drifted code anchor, is apparatus "
-               "on both halves and carries the row neither way. The row takes the STRONGEST of its "
-               "instances, as OI-334's verdict does. Recorded against the row's SUBJECT, never its "
-               "remedy."),
+    # OI-332's verdict moved to RETIRED_VERDICTS on 2026-08-11 when the row closed.
     # ---- rowed 2026-08-04 by the finish-line item-1b wave ---------------------------------
     # OI-340's verdict moved to RETIRED_VERDICTS on 2026-08-04 when the user ruled the question.
     # ---------------------------------------------------------------------- NON-GATING
@@ -1092,12 +1128,22 @@ def build():
     # verdict must actually differ from it -- otherwise the table is either a graveyard for rows
     # that left (which is what RETIRED_VERDICTS is for) or a duplicate of a verdict nothing
     # replaced, which is the drift both stops above exist to prevent.
-    orphan_superseded = [i for i in SUPERSEDED_VERDICTS if i not in V]
+    #
+    # ★ A CLOSED ROW IS THE THIRD CASE, and it is admitted rather than stopped on (added 2026-08-11,
+    # `cc_instruction_return_continuation_14.md` Task 3). A row that was RE-CLASSED and has since
+    # CLOSED has no live verdict here by construction -- its verdict is in RETIRED_VERDICTS -- and
+    # its superseded verdict must still be kept whole (#12), because deleting it would destroy the
+    # record that the re-class happened at all. The two failures this STOP was written against are
+    # untouched: a superseded verdict for a row that never left, and one for a row that left
+    # WITHOUT its live verdict being retired.
+    orphan_superseded = [i for i in SUPERSEDED_VERDICTS
+                         if i not in V and i not in RETIRED_VERDICTS]
     if orphan_superseded:
         raise SystemExit("STOP: superseded verdicts for rows with no live verdict here: "
                          + ", ".join(sorted(orphan_superseded))
                          + ". A row that left the population belongs in RETIRED_VERDICTS.")
-    unchanged_superseded = [i for i, s in SUPERSEDED_VERDICTS.items() if V[i][0] == s[0]]
+    unchanged_superseded = [i for i, s in SUPERSEDED_VERDICTS.items()
+                            if i in V and V[i][0] == s[0]]
     if unchanged_superseded:
         raise SystemExit("STOP: superseded verdict(s) whose live verdict carries the same class: "
                          + ", ".join(sorted(unchanged_superseded))
@@ -1105,7 +1151,13 @@ def build():
 
     # ── the user's Ruling 56: WHICH rows the reach derivation moved is DERIVED, not listed ──────
     reach_in = reach_rows_inside()
-    moved_here = sorted(i for i, v in V.items() if v[1] == RULING_56_GROUND)
+    # A row the derivation moved and that has since CLOSED is counted here through its RETIRED
+    # record: the ruling was applied to it, and its closure is not an un-application. Without this
+    # the reconciliation would fire on every row Ruling 56 moved that a later act then closed --
+    # reporting the ruling as un-applied when what happened is that the work was done.
+    moved_here = sorted([i for i, v in V.items() if v[1] == RULING_56_GROUND]
+                        + [i for i, v in RETIRED_VERDICTS.items()
+                           if v[1] == RULING_56_GROUND and i in reach_in])
     if moved_here != sorted(reach_in):
         raise SystemExit(
             "STOP: the rows re-classed here under the user's Ruling 56 and the rows D-639's reach "
@@ -1197,7 +1249,18 @@ def build():
                 "is a STOP, and a MISSING artifact is a STOP rather than an empty set — treating "
                 "it as empty would silently reverse a user ruling on the next regeneration."
             ),
-            "rows_moved": moved_here,
+            "rows_moved": sorted(i for i, v in V.items() if v[1] == RULING_56_GROUND),
+            "rows_moved_that_have_since_CLOSED": sorted(
+                i for i, v in RETIRED_VERDICTS.items()
+                if v[1] == RULING_56_GROUND and i in reach_in),
+            "why_the_two_lists_are_apart": (
+                "The first is what a consumer of this artifact must still subtract from the "
+                "pre-ruling cut; the second is rows the ruling moved and a later act then CLOSED, "
+                "which are no longer in any live population and must not be subtracted from one. "
+                "Keeping them together would make a consumer's cut disagree with the derived row "
+                "set — the failure the reconciliation STOPs on — and dropping the second list "
+                "entirely would lose the record that the ruling reached those rows at all (#12)."
+            ),
             "what_did_NOT_move_with_them": (
                 "Nothing about D-438 or its criterion, which is unchanged and still decides every "
                 "other row here; and no row the derivation put OUT. Each moved row's FORMER verdict "

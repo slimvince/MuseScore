@@ -531,25 +531,7 @@ SIZINGS = [
         },
     },
     {
-        "row": "OI-282",
-        "anchor_quote": "a dated annotation scoping the title and §1 to the weights half",
-        "the_act_owed": (
-            "Append a dated annotation to `cowork_style_clustering_plan.md` scoping its title and "
-            "its opening to the half that is still future work, and recording that the other half "
-            "was delivered and ratified the next day."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "One annotation on one document, in a shape the record has used before and which the "
-            "row names. Everything it needs is already located — the delivering document, its "
-            "ratification date and the study behind it — and the row's own words are that the "
-            "plan's substance is not in doubt."
-        ),
-        "the_second_half": None,
-    },
-    {
+        # OI-282's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the row closed.
         "row": "OI-283",
         "anchor_quote": "Two acts at the register's next touch",
         "the_act_owed": (
@@ -587,24 +569,7 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
-        "row": "OI-304",
-        "anchor_quote": "the correction is an annotation act rather than an edit",
-        "the_act_owed": (
-            "Append a dated correction remark to each of the two annotation blocks, naming D-428's "
-            "corrected text — an annotation act, not an edit, which is what the row's own status "
-            "calls for."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "Two located blocks, one remark each, with both former wordings left standing because "
-            "they are the record of what was believed when written (#12). The corrected text already "
-            "exists at the decisions register's entry, so nothing has to be derived."
-        ),
-        "the_second_half": None,
-    },
-    {
+        # OI-304's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the row closed.
         "row": "OI-309",
         "anchor_quote": "Each needs the diagnosis [[OI-305]] asks for and does not answer",
         "the_act_owed": (
@@ -667,29 +632,7 @@ SIZINGS = [
         },
     },
     {
-        "row": "OI-318",
-        "anchor_quote": "the pass’s enumeration is one word short",
-        "the_act_owed": (
-            "Correct the Layer-6 paragraph so it names the punctuation-span rather than the word "
-            "the ratified rename reserved, and add that word to the scope correction's own "
-            "enumeration, which the row establishes is one short."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "One paragraph and one enumeration, both located, with the correct term fixed by a "
-            "ratified rename the same document already records. **What makes it gating is the "
-            "first item alone:** the paragraph tells a reader what a LAYER PRODUCES, which is a "
-            "statement about the analysis and not a label — the ground D-639's reach derivation "
-            "gives and the user's Ruling 56 applied. The duplicated section number is a numbering "
-            "artifact that would be outside the doc-sync half on its own, and it is named here so "
-            "the row is not read as gating on both; it is not a half of a different SIZE, so it is "
-            "not carried in the field for one."
-        ),
-        "the_second_half": None,
-    },
-    {
+        # OI-318's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the row closed.
         # OI-320's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 62 closed
         # the row.
         "row": "OI-321",
@@ -716,35 +659,11 @@ SIZINGS = [
             "what_blocks_it": "a user ruling",
         },
     },
-    {
-        # OI-322's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 62 closed
-        # the row.
-        # OI-324's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 63 closed
-        # the row.
-        "row": "OI-332",
-        "anchor_quote": "whether a superseded design document is re-bannered as a historical record",
-        "the_act_owed": (
-            "Correct the *no code* banner standing over two operations the row itself verified built, "
-            "and re-aim the drifted as-built anchors."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "Two located corrections, both established at the objects in the row's own text. The "
-            "banner is D-639's first worked example word for word, so what the corrected text should "
-            "say is settled rather than a judgment."
-        ),
-        "the_second_half": {
-            "what_it_is": (
-                "Item (3) — the falsified design carrying no supersession note, which raises the same "
-                "filing question OI-322 poses and does not answer."
-            ),
-            "sizing": "NEEDS-RULING",
-            "whose_act_it_is": "the user",
-            "what_blocks_it": "a user ruling",
-        },
-    },
+    # OI-322's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 62 closed
+    # the row.
+    # OI-324's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 63 closed
+    # the row.
+    # OI-332's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the row closed.
     {
         "row": "OI-341",
         "anchor_quote": "whether the remedy is to re-run the apply mode (a register write)",
@@ -869,6 +788,140 @@ SIZINGS = [
 # declaration's.
 # ---------------------------------------------------------------------------
 RETIRED_SIZINGS = [
+    {
+        "row": "OI-282",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 3) by "
+            "PERFORMING exactly the act this sizing named — a dated scope annotation, not a "
+            "rewrite. **The size, the owner and the blocker were all right**, and its "
+            "`why_that_size` was right about the reason: everything the act needed was already "
+            "located, so the work was writing rather than finding."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-282",
+            "anchor_quote": "a dated annotation scoping the title and §1 to the weights half",
+            "the_act_owed": (
+                "Append a dated annotation to `cowork_style_clustering_plan.md` scoping its title "
+                "and its opening to the half that is still future work, and recording that the "
+                "other half was delivered and ratified the next day."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "One annotation on one document, in a shape the record has used before and which "
+                "the row names. Everything it needs is already located — the delivering document, "
+                "its ratification date and the study behind it — and the row's own words are that "
+                "the plan's substance is not in doubt."
+            ),
+            "the_second_half": None,
+        },
+    },
+    {
+        "row": "OI-304",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 3) by "
+            "performing the act this sizing named at both surfaces. **The sizing's own insistence "
+            "that the remedy is an ANNOTATION and not an edit is what the act followed**, and it "
+            "is worth one line: both annotation blocks were left exactly as written, because their "
+            "wording is the record of what was believed when they were written."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-304",
+            "anchor_quote": "the correction is an annotation act rather than an edit",
+            "the_act_owed": (
+                "Append a dated correction remark to each of the two annotation blocks, naming "
+                "D-428's corrected text — an annotation act, not an edit, which is what the row's "
+                "own status calls for."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "Two located blocks, one remark each, with both former wordings left standing "
+                "because they are the record of what was believed when written (#12). The "
+                "corrected text already exists at the decisions register's entry, so nothing has "
+                "to be derived."
+            ),
+            "the_second_half": None,
+        },
+    },
+    {
+        "row": "OI-318",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 3), both "
+            "items performed. **The sizing's split survived the act intact**: the Layer-6 paragraph "
+            "was the gating half and was corrected at all three of its uses, and the duplicated "
+            "section number was renumbered as the numbering artifact the sizing said it was. ★ AND "
+            "THE ACT FOUND ONE THING THE SIZING DID NOT: the scope correction's enumeration could "
+            "not have found the missing word, because it was built by searching for a DIFFERENT "
+            "banned word — so the count of instances it names is not a bound on how many exist."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-318",
+            "anchor_quote": "the pass’s enumeration is one word short",
+            "the_act_owed": (
+                "Correct the Layer-6 paragraph so it names the punctuation-span rather than the "
+                "word the ratified rename reserved, and add that word to the scope correction's "
+                "own enumeration, which the row establishes is one short."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "One paragraph and one enumeration, both located, with the correct term fixed by a "
+                "ratified rename the same document already records. **What makes it gating is the "
+                "first item alone:** the paragraph tells a reader what a LAYER PRODUCES, which is "
+                "a statement about the analysis and not a label — the ground D-639's reach "
+                "derivation gives and the user's Ruling 56 applied. The duplicated section number "
+                "is a numbering artifact that would be outside the doc-sync half on its own, and "
+                "it is named here so the row is not read as gating on both; it is not a half of a "
+                "different SIZE, so it is not carried in the field for one."
+            ),
+            "the_second_half": None,
+        },
+    },
+    {
+        "row": "OI-332",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 across two tasks of one batch "
+            "(`cc_instruction_return_continuation_14.md` Tasks 2 and 3): its NEEDS-RULING second "
+            "half was answered by the user's Ruling 62 and performed, and the SESSION-SMALL main "
+            "act followed. **★ ONE HALF OF THE SIZING WAS WRONG AND IT IS NAMED RATHER THAN "
+            "SMOOTHED OVER:** the sizing said the drifted anchors were a re-aim, and the act found "
+            "that re-numbering would only reset the clock — the drift sat inside a CORRECTION of "
+            "an earlier citation, which is the defect D-307 exists against — so the citations were "
+            "changed to name FUNCTIONS instead. Same size, different act, and the sizing could not "
+            "have known: what it read was the row's own text, which describes the drift and not "
+            "where it sits."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-332",
+            "anchor_quote":
+                "whether a superseded design document is re-bannered as a historical record",
+            "the_act_owed": (
+                "Correct the *no code* banner standing over two operations the row itself verified "
+                "built, and re-aim the drifted as-built anchors."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "Two located corrections, both established at the objects in the row's own text. "
+                "The banner is D-639's first worked example word for word, so what the corrected "
+                "text should say is settled rather than a judgment."
+            ),
+            "the_second_half": {
+                "what_it_is": (
+                    "Item (3) — the falsified design carrying no supersession note, which raises "
+                    "the same filing question OI-322 poses and does not answer."
+                ),
+                "sizing": "NEEDS-RULING",
+                "whose_act_it_is": "the user",
+                "what_blocks_it": "a user ruling",
+            },
+        },
+    },
     {
         "row": "OI-320",
         "why_it_retired": (

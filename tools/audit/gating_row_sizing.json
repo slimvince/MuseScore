@@ -10,7 +10,7 @@
   "the_population": {
     "what_it_is": "The open rows the gating split puts on the GATING side — the rows a stage waits on.",
     "derived_from": "tools/audit/phase1_completion_inventory.json → the_gating_split.gates.ids",
-    "count": 38,
+    "count": 34,
     "ids": [
       "OI-105",
       "OI-107",
@@ -29,16 +29,12 @@
       "OI-239",
       "OI-249",
       "OI-274",
-      "OI-282",
       "OI-283",
       "OI-292",
-      "OI-304",
       "OI-309",
       "OI-311",
       "OI-315",
-      "OI-318",
       "OI-321",
-      "OI-332",
       "OI-341",
       "OI-352",
       "OI-357",
@@ -56,8 +52,69 @@
   "retired_sizings": {
     "what_this_is": "Sizings for rows that have LEFT the gating population, kept whole and counted nowhere (#12, D-648). They are history: a sizing named the act a row needed, and keeping it is what lets a later reader see whether the act performed is the act that was owed.",
     "the_stop_in_the_other_direction": "A retired sizing naming a row this pass sizes again halts the run. A sizing made of a row as it stood is not evidence about a row that has since changed, so such a row is RE-READ and re-authored, never restored.",
-    "count": 6,
+    "count": 10,
     "entries": [
+      {
+        "row": "OI-282",
+        "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 3) by PERFORMING exactly the act this sizing named — a dated scope annotation, not a rewrite. **The size, the owner and the blocker were all right**, and its `why_that_size` was right about the reason: everything the act needed was already located, so the work was writing rather than finding.",
+        "the_sizing_as_it_stood": {
+          "row": "OI-282",
+          "anchor_quote": "a dated annotation scoping the title and §1 to the weights half",
+          "the_act_owed": "Append a dated annotation to `cowork_style_clustering_plan.md` scoping its title and its opening to the half that is still future work, and recording that the other half was delivered and ratified the next day.",
+          "sizing": "SESSION-SMALL",
+          "whose_act_it_is": "a session on this side",
+          "what_blocks_it": "nothing beyond capacity",
+          "why_that_size": "One annotation on one document, in a shape the record has used before and which the row names. Everything it needs is already located — the delivering document, its ratification date and the study behind it — and the row's own words are that the plan's substance is not in doubt.",
+          "the_second_half": null
+        }
+      },
+      {
+        "row": "OI-304",
+        "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 3) by performing the act this sizing named at both surfaces. **The sizing's own insistence that the remedy is an ANNOTATION and not an edit is what the act followed**, and it is worth one line: both annotation blocks were left exactly as written, because their wording is the record of what was believed when they were written.",
+        "the_sizing_as_it_stood": {
+          "row": "OI-304",
+          "anchor_quote": "the correction is an annotation act rather than an edit",
+          "the_act_owed": "Append a dated correction remark to each of the two annotation blocks, naming D-428's corrected text — an annotation act, not an edit, which is what the row's own status calls for.",
+          "sizing": "SESSION-SMALL",
+          "whose_act_it_is": "a session on this side",
+          "what_blocks_it": "nothing beyond capacity",
+          "why_that_size": "Two located blocks, one remark each, with both former wordings left standing because they are the record of what was believed when written (#12). The corrected text already exists at the decisions register's entry, so nothing has to be derived.",
+          "the_second_half": null
+        }
+      },
+      {
+        "row": "OI-318",
+        "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 3), both items performed. **The sizing's split survived the act intact**: the Layer-6 paragraph was the gating half and was corrected at all three of its uses, and the duplicated section number was renumbered as the numbering artifact the sizing said it was. ★ AND THE ACT FOUND ONE THING THE SIZING DID NOT: the scope correction's enumeration could not have found the missing word, because it was built by searching for a DIFFERENT banned word — so the count of instances it names is not a bound on how many exist.",
+        "the_sizing_as_it_stood": {
+          "row": "OI-318",
+          "anchor_quote": "the pass’s enumeration is one word short",
+          "the_act_owed": "Correct the Layer-6 paragraph so it names the punctuation-span rather than the word the ratified rename reserved, and add that word to the scope correction's own enumeration, which the row establishes is one short.",
+          "sizing": "SESSION-SMALL",
+          "whose_act_it_is": "a session on this side",
+          "what_blocks_it": "nothing beyond capacity",
+          "why_that_size": "One paragraph and one enumeration, both located, with the correct term fixed by a ratified rename the same document already records. **What makes it gating is the first item alone:** the paragraph tells a reader what a LAYER PRODUCES, which is a statement about the analysis and not a label — the ground D-639's reach derivation gives and the user's Ruling 56 applied. The duplicated section number is a numbering artifact that would be outside the doc-sync half on its own, and it is named here so the row is not read as gating on both; it is not a half of a different SIZE, so it is not carried in the field for one.",
+          "the_second_half": null
+        }
+      },
+      {
+        "row": "OI-332",
+        "why_it_retired": "The row RESOLVED 2026-08-11 across two tasks of one batch (`cc_instruction_return_continuation_14.md` Tasks 2 and 3): its NEEDS-RULING second half was answered by the user's Ruling 62 and performed, and the SESSION-SMALL main act followed. **★ ONE HALF OF THE SIZING WAS WRONG AND IT IS NAMED RATHER THAN SMOOTHED OVER:** the sizing said the drifted anchors were a re-aim, and the act found that re-numbering would only reset the clock — the drift sat inside a CORRECTION of an earlier citation, which is the defect D-307 exists against — so the citations were changed to name FUNCTIONS instead. Same size, different act, and the sizing could not have known: what it read was the row's own text, which describes the drift and not where it sits.",
+        "the_sizing_as_it_stood": {
+          "row": "OI-332",
+          "anchor_quote": "whether a superseded design document is re-bannered as a historical record",
+          "the_act_owed": "Correct the *no code* banner standing over two operations the row itself verified built, and re-aim the drifted as-built anchors.",
+          "sizing": "SESSION-SMALL",
+          "whose_act_it_is": "a session on this side",
+          "what_blocks_it": "nothing beyond capacity",
+          "why_that_size": "Two located corrections, both established at the objects in the row's own text. The banner is D-639's first worked example word for word, so what the corrected text should say is settled rather than a judgment.",
+          "the_second_half": {
+            "what_it_is": "Item (3) — the falsified design carrying no supersession note, which raises the same filing question OI-322 poses and does not answer.",
+            "sizing": "NEEDS-RULING",
+            "whose_act_it_is": "the user",
+            "what_blocks_it": "a user ruling"
+          }
+        }
+      },
       {
         "row": "OI-320",
         "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 2) on the user's Ruling 62, which supplied exactly the filing decision this sizing said no session could take. **The sizing was right in both halves and the second is worth reading:** NEEDS-RULING was right, and its `why_that_size` said *once chosen the edit is small* — which is what happened. The act performed was four corrections, each pointing at the block that owns it rather than restating anything.",
@@ -478,19 +535,6 @@
       "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
     },
     {
-      "row": "OI-282",
-      "anchor_quote": "a dated annotation scoping the title and §1 to the weights half",
-      "the_act_owed": "Append a dated annotation to `cowork_style_clustering_plan.md` scoping its title and its opening to the half that is still future work, and recording that the other half was delivered and ratified the next day.",
-      "sizing": "SESSION-SMALL",
-      "whose_act_it_is": "a session on this side",
-      "what_blocks_it": "nothing beyond capacity",
-      "why_that_size": "One annotation on one document, in a shape the record has used before and which the row names. Everything it needs is already located — the delivering document, its ratification date and the study behind it — and the row's own words are that the plan's substance is not in doubt.",
-      "the_second_half": null,
-      "detail_file": "open_items/OI-282.md",
-      "what_the_label_means": "A session's act, small: a bounded documentation, comment or data correction, complete in itself.",
-      "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
-    },
-    {
       "row": "OI-283",
       "anchor_quote": "Two acts at the register's next touch",
       "the_act_owed": "Stamp the decisions register's coverage claim to a COMMIT rather than a line count, or have that register's generator compute it — the row's own two acts, the second removing the failure entirely (#17f).",
@@ -515,19 +559,6 @@
       "detail_file": "open_items/OI-292.md",
       "what_the_label_means": "The act is substantive work rather than a filing or documentation act — a build, a measurement, an establishment, a certification, or a design. Where the row's own text does not size that work, this pass does not estimate it.",
       "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
-    },
-    {
-      "row": "OI-304",
-      "anchor_quote": "the correction is an annotation act rather than an edit",
-      "the_act_owed": "Append a dated correction remark to each of the two annotation blocks, naming D-428's corrected text — an annotation act, not an edit, which is what the row's own status calls for.",
-      "sizing": "SESSION-SMALL",
-      "whose_act_it_is": "a session on this side",
-      "what_blocks_it": "nothing beyond capacity",
-      "why_that_size": "Two located blocks, one remark each, with both former wordings left standing because they are the record of what was believed when written (#12). The corrected text already exists at the decisions register's entry, so nothing has to be derived.",
-      "the_second_half": null,
-      "detail_file": "open_items/OI-304.md",
-      "what_the_label_means": "A session's act, small: a bounded documentation, comment or data correction, complete in itself.",
-      "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
     },
     {
       "row": "OI-309",
@@ -574,19 +605,6 @@
       "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
     },
     {
-      "row": "OI-318",
-      "anchor_quote": "the pass’s enumeration is one word short",
-      "the_act_owed": "Correct the Layer-6 paragraph so it names the punctuation-span rather than the word the ratified rename reserved, and add that word to the scope correction's own enumeration, which the row establishes is one short.",
-      "sizing": "SESSION-SMALL",
-      "whose_act_it_is": "a session on this side",
-      "what_blocks_it": "nothing beyond capacity",
-      "why_that_size": "One paragraph and one enumeration, both located, with the correct term fixed by a ratified rename the same document already records. **What makes it gating is the first item alone:** the paragraph tells a reader what a LAYER PRODUCES, which is a statement about the analysis and not a label — the ground D-639's reach derivation gives and the user's Ruling 56 applied. The duplicated section number is a numbering artifact that would be outside the doc-sync half on its own, and it is named here so the row is not read as gating on both; it is not a half of a different SIZE, so it is not carried in the field for one.",
-      "the_second_half": null,
-      "detail_file": "open_items/OI-318.md",
-      "what_the_label_means": "A session's act, small: a bounded documentation, comment or data correction, complete in itself.",
-      "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
-    },
-    {
       "row": "OI-321",
       "anchor_quote": "whether the implode path applying the gate is the rule being discharged",
       "the_act_owed": "Correct the two plainly false statements — the header calling a phase deferred that the code says was executed, and the named directory that does not exist.",
@@ -601,24 +619,6 @@
         "what_blocks_it": "a user ruling"
       },
       "detail_file": "open_items/OI-321.md",
-      "what_the_label_means": "A session's act, small: a bounded documentation, comment or data correction, complete in itself.",
-      "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
-    },
-    {
-      "row": "OI-332",
-      "anchor_quote": "whether a superseded design document is re-bannered as a historical record",
-      "the_act_owed": "Correct the *no code* banner standing over two operations the row itself verified built, and re-aim the drifted as-built anchors.",
-      "sizing": "SESSION-SMALL",
-      "whose_act_it_is": "a session on this side",
-      "what_blocks_it": "nothing beyond capacity",
-      "why_that_size": "Two located corrections, both established at the objects in the row's own text. The banner is D-639's first worked example word for word, so what the corrected text should say is settled rather than a judgment.",
-      "the_second_half": {
-        "what_it_is": "Item (3) — the falsified design carrying no supersession note, which raises the same filing question OI-322 poses and does not answer.",
-        "sizing": "NEEDS-RULING",
-        "whose_act_it_is": "the user",
-        "what_blocks_it": "a user ruling"
-      },
-      "detail_file": "open_items/OI-332.md",
       "what_the_label_means": "A session's act, small: a bounded documentation, comment or data correction, complete in itself.",
       "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
     },
@@ -702,15 +702,15 @@
     }
   ],
   "counted": {
-    "rows_sized": 38,
+    "rows_sized": 34,
     "by_label": {
       "NEEDS-RULING": 1,
       "REAL-WORK": 13,
       "SESSION-LARGE": 4,
-      "SESSION-SMALL": 20
+      "SESSION-SMALL": 16
     },
     "by_blocker": {
-      "nothing beyond capacity": 14,
+      "nothing beyond capacity": 10,
       "the freeze on `src/`": 2,
       "the phase order (D-231 and #8)": 4,
       "an event the record schedules elsewhere": 6,
@@ -718,12 +718,12 @@
       "the role separation": 1
     },
     "by_owner": {
-      "a session on this side": 36,
+      "a session on this side": 32,
       "the writing side (Cowork)": 1,
       "the user": 1
     },
-    "rows_carrying_a_second_half_of_a_different_kind": 5,
-    "rows_available_now": 14
+    "rows_carrying_a_second_half_of_a_different_kind": 4,
+    "rows_available_now": 10
   },
   "rows_by_label": {
     "NEEDS-RULING": [
@@ -761,14 +761,10 @@
       "OI-150",
       "OI-183",
       "OI-274",
-      "OI-282",
       "OI-283",
-      "OI-304",
       "OI-311",
       "OI-315",
-      "OI-318",
       "OI-321",
-      "OI-332",
       "OI-341",
       "OI-352"
     ]
@@ -783,12 +779,8 @@
       "OI-183",
       "OI-207",
       "OI-274",
-      "OI-282",
-      "OI-304",
       "OI-315",
-      "OI-318",
-      "OI-321",
-      "OI-332"
+      "OI-321"
     ],
     "the freeze on `src/`": [
       "OI-105",
@@ -829,8 +821,7 @@
     "OI-109",
     "OI-274",
     "OI-315",
-    "OI-321",
-    "OI-332"
+    "OI-321"
   ],
   "rows_available_now": [
     "OI-47",
@@ -841,12 +832,8 @@
     "OI-183",
     "OI-207",
     "OI-274",
-    "OI-282",
-    "OI-304",
     "OI-315",
-    "OI-318",
-    "OI-321",
-    "OI-332"
+    "OI-321"
   ],
   "★_what_the_shape_says": {
     "the_headline": "Almost nothing in the gating set is investigation of the analysis. What holds these rows is, in order of how many rows it holds: a user ruling, capacity alone, an event the record has scheduled elsewhere, the phase order, and the freeze on `src/`. Every one of those is a scheduling fact rather than an unknown.",

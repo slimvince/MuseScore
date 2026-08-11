@@ -1,5 +1,18 @@
 # Empirical style clustering — planned future work (the style taxonomy + the style weights, from corpora)
 
+> **★ SCOPE ANNOTATION, 2026-08-11 (`OPEN_ITEMS.md` OI-282) — THE TITLE AND §1 BELOW NAME TWO HALVES,
+> AND ONLY ONE IS STILL FUTURE WORK. The text is preserved exactly as written (#12); this says how to
+> read it.** **The TAXONOMY half was DELIVERED AND RATIFIED the day after this plan was written** —
+> `cowork_style_taxonomy_proposal.md` banners it RATIFIED 2026-06-30 · EXECUTED, grounded in the
+> completed cross-tradition discovery study, and the five idioms are **encoded**; `ARCHITECTURE.md`
+> §6.7 is the taxonomy's home and states the admission basis and the cross-axes. **What remains
+> future work is the WEIGHTS half** — each cluster's feature distribution as the per-style weight
+> set — and this plan's §2 defense of it is the defense the register still cites. **So read the
+> title, the *"Not now"* banner and §1's *"the taxonomy and the weights are one data-derived
+> object"* as statements about the pair AS IT STOOD ON 2026-06-29.** *Why an annotation rather than a
+> rewrite:* the plan is a dated record of a committed direction and its groundwork, and its own
+> substance is not in doubt — what went stale is its account of how much of the pair is still owed.
+>
 > **Status: committed future direction (user-ratified 2026-06-29) — "we will do this sooner or later."** Not now: it sits
 > two steps past the current path (the schema-recognition layer is itself deferred, and this tunes *its* weights). Recorded
 > with its groundwork so it is ready when picked up. Related: `cowork_progression_schema_dictionary.md` (the style taxonomy

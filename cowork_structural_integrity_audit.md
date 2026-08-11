@@ -322,6 +322,16 @@ Stage-5 if first"):**
 > preserved unedited (#12). What Stage 4 still owes of refactor #1 is the **iteration-API renames**
 > (**D-428**), whose subject includes live Layer-1.5 code and therefore does not retire with the
 > legacy path.
+>
+> **★ CORRECTION REMARK, 2026-08-11 (`OPEN_ITEMS.md` OI-304) — THE LAST CLAUSE ABOVE ASSERTS THE
+> OPPOSITE OF WHAT D-428 NOW RECORDS, AND THE ANNOTATION IS LEFT AS WRITTEN (#12).** It says the
+> renames' subject includes live Layer-1.5 code and therefore does not retire with the legacy path.
+> **D-428 was corrected later the same day** — at phase 1n, against the premise and at the call sites
+> — and now records that **every use sits on the legacy arm, so deleting that path discharges them.**
+> *Why the remark rather than an edit:* this is a dated annotation block, and its wording is the
+> record of what was believed when it was written. The correction reached the register entry and not
+> the two documents stating the premise it refuted; this is the first of those two surfaces, and its
+> sibling carries the same remark.
 
 **In one line:** *pre-L5 = FQ-1, FQ-3, FQ-5, FQ-6, FQ-7 (portable unification wins); part-of-L5/E4 = FQ-2,
 FQ-4, FQ-8 (the legacy-path tangles the decoder + §6-block dissolution retire); then R9 splits the file

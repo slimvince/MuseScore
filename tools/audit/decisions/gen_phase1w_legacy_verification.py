@@ -230,7 +230,8 @@ ANCHORS = {
         # was written into the joint-estimator section above it.
         # Re-aimed again 2026-08-11 from 1679, same way and same class, after Ruling 63's
         # evidential-priority section was written into the joint-estimator section above it.
-        'file': 'ARCHITECTURE.md', 'line': 1721,
+        # Re-aimed again 2026-08-11 from 1721, same way, after the OI-318 scope-correction clause.
+        'file': 'ARCHITECTURE.md', 'line': 1731,
         'quote': "Layer 3's decoder no longer decides the key on either surface",
         'says': 'The layer specification\'s own build-state correction, which enumerates the same four '
                 'branch points this wave read and adds the remaining callers: "the batch_analyze '
@@ -240,7 +241,7 @@ ANCHORS = {
         # Re-aimed 2026-08-09 from 1854, then from 1884, each per this tool's own reported line
         # (D-648) — the second after Ruling 39's delegation was written above it. Re-aimed again
         # 2026-08-11 from 1890, same way, after Ruling 63's evidential-priority section.
-        'file': 'ARCHITECTURE.md', 'line': 1932,
+        'file': 'ARCHITECTURE.md', 'line': 1942,
         'quote': 'The build state itself is unchanged and correct: Built+Dormant.',
         'says': 'The Layer-4 section\'s own build state. What becomes of that decoder is recorded OPEN.',
     },
@@ -249,7 +250,7 @@ ANCHORS = {
         # (D-648) — the second after Ruling 39's delegation was written above it.
         # Re-aimed again 2026-08-11 from 1896, same way, after Ruling 63's evidential-priority
         # section was written into the joint-estimator section above it.
-        'file': 'ARCHITECTURE.md', 'line': 1938,
+        'file': 'ARCHITECTURE.md', 'line': 1948,
         'quote': 'Tried and closed on the chord layer',
         'says': 'A LIVE do-not-retry list in the layer specification naming ten marked entries. The '
                 'mark is right about the SUBJECT and the entry still binds what a future designer '
@@ -260,7 +261,7 @@ ANCHORS = {
         # (D-648) — the second after Ruling 39's delegation was written above it.
         # Re-aimed again 2026-08-11 from 1692, same way, after Ruling 63's evidential-priority
         # section was written into the joint-estimator section above it.
-        'file': 'ARCHITECTURE.md', 'line': 1734,
+        'file': 'ARCHITECTURE.md', 'line': 1744,
         'quote': 'Tried and closed on this layer',
         'says': 'The same construction on the key layer, naming D-287 and D-290.',
     },
@@ -279,7 +280,7 @@ ANCHORS = {
         # section and the §5.2 annotation were written above it.
         # Re-aimed again 2026-08-11 from 4294, same way, after the OI-346 marks were written into
         # §4.6's preset table above it.
-        'file': 'ARCHITECTURE.md', 'line': 4324,
+        'file': 'ARCHITECTURE.md', 'line': 4339,
         'quote': "Tried and closed on the declared mode's weight",
         'says': 'The same construction on the declared mode\'s weight, naming D-572 with its '
                 'evidence — a LIVE specification line whose subject is a removed legacy promotion '
@@ -290,7 +291,7 @@ ANCHORS = {
         # (D-648) — the second after Ruling 39's delegation was written above it.
         # Re-aimed again 2026-08-11 from 1687, same way, after Ruling 63's evidential-priority
         # section was written into the joint-estimator section above it.
-        'file': 'ARCHITECTURE.md', 'line': 1729,
+        'file': 'ARCHITECTURE.md', 'line': 1739,
         'quote': 'callers are the `batch_analyze` diagnostics, which are development tools and are not shipped',
         'says': 'The layer specification already names the fifth false-negative path — the batch '
                 'diagnostics — which OI-289\'s four-item enumeration does not. Located here rather '
@@ -308,7 +309,7 @@ ANCHORS = {
         # (D-648) — the second after Ruling 39's delegation was written above it.
         # Re-aimed again 2026-08-11 from 1690, same way, after Ruling 63's evidential-priority
         # section was written into the joint-estimator section above it.
-        'file': 'ARCHITECTURE.md', 'line': 1732,
+        'file': 'ARCHITECTURE.md', 'line': 1742,
         'quote': 'The ratified contract for this layer is `cowork_layer3_keymode_design.md`',
         'says': 'The delegation that makes the Layer-3 design document a contract home. It sits '
                 'immediately below the build-state correction declaring that layer dormant, which '
@@ -319,7 +320,7 @@ ANCHORS = {
         # (D-648) — the second after Ruling 39's delegation was written above it.
         # Re-aimed again 2026-08-11 from 2054, same way, after Ruling 63's evidential-priority
         # section was written into the joint-estimator section above it.
-        'file': 'ARCHITECTURE.md', 'line': 2096,
+        'file': 'ARCHITECTURE.md', 'line': 2106,
         'quote': 'The ratified contract for how this layer ENGAGES with the chord layer',
         'says': 'The delegation behind D-380/D-381\'s home — the reason their transfer half is '
                 'undetermined rather than none-found.',

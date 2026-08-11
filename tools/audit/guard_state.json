@@ -410,7 +410,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 32 gates of 57 candidates over 247 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 28 gates of 53 candidates over 243 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -751,10 +751,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  the chord layer: ARCHITECTURE.md:1938 lists 10 entry(ies)",
-        "  the key layer: ARCHITECTURE.md:1734 lists 2 entry(ies)",
+        "  the chord layer: ARCHITECTURE.md:1948 lists 10 entry(ies)",
+        "  the key layer: ARCHITECTURE.md:1744 lists 2 entry(ies)",
         "  the search: ARCHITECTURE.md:315 lists 3 entry(ies)",
-        "  the declared mode's weight: ARCHITECTURE.md:4325 lists 1 entry(ies)",
+        "  the declared mode's weight: ARCHITECTURE.md:4340 lists 1 entry(ies)",
         "class members (derived from the verification): 14",
         "every live-prohibition entry carries its pointer, as derived"
       ],

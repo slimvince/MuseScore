@@ -397,9 +397,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_stage5_fitter_design.md:1482`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_stage5_fitter_design.md:1493`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§15 Open items & ratification asks”** — `## §15 Open items & ratification asks` (heading at line 908). A delegation at ARCHITECTURE.md:301 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“§15 Open items & ratification asks”** — `## §15 Open items & ratification asks` (heading at line 919). A delegation at ARCHITECTURE.md:301 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Recorded in `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) at open item O-10, and tracked as a standing obligation at [[OI-36]] — which is an open-items row, not a home. Found by the phase-1f final-partition wave, 2026-08-02, reading `cowork_stage5_fitter_design.md` in full (SIGNED, user, 2026-07-04). NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue).
 
@@ -1201,7 +1201,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `cowork_layer1_extend_design.md:50-60`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `cowork_layer1_extend_design.md:60-70`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `cowork_layer1_extend_design.md` §3, the Layer-1 build-over-a-selection and extend detail design, DRAFT for sign-off. Read in full by READ WAVE 6, 2026-08-04. The record shows the split was carried out — the register already carries the as-built note that the span-scoped walk is what remains — and the same two-level shape is used one layer up for the incremental re-slice. The record states neither a date nor a ratifier for this item.
 

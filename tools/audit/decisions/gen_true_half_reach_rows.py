@@ -163,29 +163,7 @@ VERDICTS = [
             "longer decides anything. Under (1A) the half does not reach it."
         ),
     },
-    {
-        "row": "OI-282",
-        "anchor_quote": "**no annotation of any of this**",
-        "what_the_row_records": (
-            "A document titled as planned future work presents both halves of its subject as "
-            "undelivered; one half was delivered and user-ratified the following day, and the "
-            "document carries no annotation of it."
-        ),
-        "matched_worked_example": "missing supersession note on a superseded plan",
-        FALLBACK_BIT: False,
-        "verdict": "IN — the doc-sync half reaches it",
-        "why": (
-            "It is the ruling's second worked example word for word: the document IS a plan, half "
-            "of it is superseded by a ratified delivery, and it carries no annotation saying so. "
-            "The "
-            "consequence is the one the example is about — a reader sent there by two live "
-            "specifications is told the categories are still to be discovered when they are "
-            "discovered, ratified and compiled in, so the same text is read as two different "
-            "things depending on a fact the document does not carry. It would also be reached "
-            "under the fallback, since that statement is false about the system at HEAD; the "
-            "worked example decides it and the fallback is not needed."
-        ),
-    },
+    # OI-282's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the row closed.
     {
         "row": "OI-290",
         "anchor_quote": "§8c should be SPLIT so that the rules and the",
@@ -268,28 +246,7 @@ VERDICTS = [
             "document's finding is corroborated three ways and yielded no register entry."
         ),
     },
-    {
-        "row": "OI-318",
-        "anchor_quote": "grouping layer segments melodic phrases, which is the one thing",
-        "what_the_row_records": (
-            "Two label defects in the canonical architecture document: its Layer-6 paragraph uses "
-            "the bare word a ratified rename reserved for a different object, and one section "
-            "number is used twice."
-        ),
-        "matched_worked_example": None,
-        FALLBACK_BIT: True,
-        "verdict": "IN — the doc-sync half reaches it",
-        "why": (
-            "The row is mixed and no worked example decides it, so the fallback governs — and it "
-            "reaches the row through its first half. That half is not the document's account of "
-            "ITSELF at all: the paragraph tells a reader what a LAYER PRODUCES, and the row's own "
-            "words are that a reader of it alone is told the grouping layer segments melodic "
-            "phrases, which the ratified design exists to deny. That is a specification stating "
-            "something false about the system, which is the doc-sync half's own subject. The "
-            "second half — one section number used twice — is a numbering artifact and would be "
-            "OUT on its own; it is recorded so the row is not read as gating on both."
-        ),
-    },
+    # OI-318's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the row closed.
     {
         "row": "OI-338",
         "anchor_quote": "The subject is an **authored prose field inside an audit artifact**.",
@@ -472,6 +429,68 @@ VERDICTS = [
 # a row that has since moved, so it is RE-READ rather than restored.
 # ---------------------------------------------------------------------------
 RETIRED_VERDICTS = [
+    {
+        "row": "OI-282",
+        "anchor_quote": "**no annotation of any of this**",
+        "what_the_row_records": (
+            "A document titled as planned future work presents both halves of its subject as "
+            "undelivered; one half was delivered and user-ratified the following day, and the "
+            "document carries no annotation of it."
+        ),
+        "matched_worked_example": "missing supersession note on a superseded plan",
+        FALLBACK_BIT: False,
+        "verdict": "IN — the doc-sync half reaches it",
+        "why": (
+            "It is the ruling's second worked example word for word: the document IS a plan, half "
+            "of it is superseded by a ratified delivery, and it carries no annotation saying so. "
+            "The "
+            "consequence is the one the example is about — a reader sent there by two live "
+            "specifications is told the categories are still to be discovered when they are "
+            "discovered, ratified and compiled in, so the same text is read as two different "
+            "things depending on a fact the document does not carry. It would also be reached "
+            "under the fallback, since that statement is false about the system at HEAD; the "
+            "worked example decides it and the fallback is not needed."
+        ),
+        "why_it_is_retired": (
+            "LEFT THE POPULATION 2026-08-11 — the row RESOLVED "
+            "(`cc_instruction_return_continuation_14.md` Task 3) by the annotation being written. "
+            "THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole; it is retired because the "
+            "row closed, never because it was wrong. ★ IT IS THE CLEANEST CONFIRMATION THIS "
+            "DERIVATION HAS: it matched a worked example word for word, needed no fallback, and "
+            "the act performed was exactly the annotation the example prescribes."
+        ),
+    },
+    {
+        "row": "OI-318",
+        "anchor_quote": "grouping layer segments melodic phrases, which is the one thing",
+        "what_the_row_records": (
+            "Two label defects in the canonical architecture document: its Layer-6 paragraph uses "
+            "the bare word a ratified rename reserved for a different object, and one section "
+            "number is used twice."
+        ),
+        "matched_worked_example": None,
+        FALLBACK_BIT: True,
+        "verdict": "IN — the doc-sync half reaches it",
+        "why": (
+            "The row is mixed and no worked example decides it, so the fallback governs — and it "
+            "reaches the row through its first half. That half is not the document's account of "
+            "ITSELF at all: the paragraph tells a reader what a LAYER PRODUCES, and the row's own "
+            "words are that a reader of it alone is told the grouping layer segments melodic "
+            "phrases, which the ratified design exists to deny. That is a specification stating "
+            "something false about the system, which is the doc-sync half's own subject. The "
+            "second half — one section number used twice — is a numbering artifact and would be "
+            "OUT on its own; it is recorded so the row is not read as gating on both."
+        ),
+        "why_it_is_retired": (
+            "LEFT THE POPULATION 2026-08-11 — the row RESOLVED "
+            "(`cc_instruction_return_continuation_14.md` Task 3), both items corrected. THE "
+            "VERDICT WAS CORRECT WHILE IT STOOD and is kept whole; it is retired because the row "
+            "closed. ★ ITS SPLIT SURVIVED THE ACT INTACT, which is the useful half: the paragraph "
+            "was corrected as a statement about what a layer produces, and the duplicated section "
+            "number was renumbered as the numbering artifact this verdict said it was — the two "
+            "halves were treated differently in the same act, which is what the verdict asked for."
+        ),
+    },
     {
         "row": "OI-298",
         "anchor_quote": "the two things the row said would not be done were done, in the order the user ruled",
