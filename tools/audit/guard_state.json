@@ -37,6 +37,7 @@
       "tools/audit/decisions/gen_verbatim_subject_consistency.py",
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_arm_comment_sweep.py",
+      "tools/audit/gen_gating_row_sizing.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
       "tools/audit/gen_phase1_completion_inventory.py",
       "tools/audit/gen_phase1_finish_line.py",
@@ -50,7 +51,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 52,
+    "authored_entries": 53,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -479,6 +480,19 @@
       "what_it_checks": "D-639's SECOND application re-derives -- the same ruling, over the open apparatus-classed rows the finish line names. Its guard value is in its four STOPs rather than in the artifact: the authored verdicts and the population derived from the completion inventory must agree in BOTH directions, so a row entering or leaving that population halts it rather than being graded silently or quietly dropped; every verdict must name a worked example the ruling states; every verdict must agree with the thing that decides it, the worked example's own sign or the row's fallback ground; and every row's quoted words must still be in that row's own detail file"
     },
     {
+      "tool": "tools/audit/gen_gating_row_sizing.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the per-row gating sizing re-derives from the files"
+      ],
+      "stderr": [],
+      "what_it_checks": "the per-row sizing over the gating set re-derives. What it guards is not the sizes, which are authored judgments, but the pass's own completeness: the authored sizings and the population derived from the completion inventory must agree in BOTH directions, so a row entering or leaving the gating set halts it rather than being sized silently or quietly dropped -- which is the silent cap three continuations declined to risk. Its other STOPs ride with it: every label, owner and blocker must come from the closed vocabulary the pass declares, a NEEDS-RULING label and a whose-act field must agree, and every row's quoted words must still be in the INDEX"
+    },
+    {
       "tool": "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
       "args": [
         "--check"
@@ -760,8 +774,8 @@
     }
   ],
   "summary": {
-    "run": 38,
-    "passing": 38,
+    "run": 39,
+    "passing": 39,
     "failing": 0,
     "failing_tools": [],
     "not_run": 4,

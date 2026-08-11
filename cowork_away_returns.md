@@ -4457,6 +4457,131 @@ rowed and explicitly not proposed for; nothing in the remaining distance waits o
    keep losing every capacity contest unless it is dispatched FIRST with nothing large in front of it,
    which is exactly what that entry rules.
 
+---
+
+# ═══ THE TWELFTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_12.md`, performed 2026-08-11) ═══
+
+> Rulings 54–56 of `cowork_rulings_2026_08_11_twelfth_stop.md` are applied here, and the eleventh
+> continuation's unopened tasks are resumed. The sections above are earlier batches' and are not
+> rewritten. New holds are appended to §1, new surfacings to §2, and each task's log below. **Acts
+> are dated from the clock: 2026-08-11.**
+
+## 2 (continued). Surfaced findings
+
+### 2.16 Two gating rows describe an owed act that later acts appear to have performed, and neither row says so (Task 0)
+
+**Found by the reading Task 0's own sizing required, and not by looking for it.** Sizing a row means
+reading it; reading these two put their named sites in front of a reader who had just read the
+enumeration that records what was done to them.
+
+**[[OI-303]].** Its subject is six comments saying the production record arm is *default OFF*, or the
+record section adapter has no caller. **All six appear in the CORRECTED set of acts taken after the
+row was written** — five in the enumeration `tools/audit/arm_comment_sweep.json` records for the one
+licensed comment-only commit, and the sixth, the measurement tool's comment about which arm the
+notation layer runs, under the later ruling that named it. **[[OI-220]].** Its subject is the joint
+module's headers uniformly asserting a dormancy the code outgrew. Of the six headers it names, one
+was corrected by that same act and one carries no such claim at HEAD at all; **its live remainder is
+the four blocks that act deliberately HELD**, whose claim is that a joint-INTERNAL module has no
+production consumer — a question about how the decode is COMPOSED, which no file-level fact answers.
+Its other half, the record-arm branch comments, is in the corrected set.
+
+**What is NOT claimed, and the line is the point.** Neither row is asserted discharged. What was read
+is a committed enumeration's account of what it did, which is evidence about that act and not a
+verification of six files at the objects. **Nothing was flipped and nothing was narrowed** — flipping
+a row moves the open-row count, the gating cuts, the finish line's populations and the apparatus
+declaration's candidate cut, including **the population this very pass is stated over**, derived at
+its own start. The record's own precedent governs, from [[OI-362]]: *a population movement belongs to
+an act that accounts for it, not to a task that would slip it in unremarked.*
+
+**Both flags are carried in the sizing artifact itself**, at
+`tools/audit/gating_row_sizing.json` → `the_staleness_flags`, with the act each row now needs named
+in its own sizing — which is the [[OI-107]] treatment of one wave earlier: an obligation that has
+been discharged but still reads as owed sends the next session to do the work twice.
+
+## 3 (continued). Per-task log — the twelfth return continuation
+
+### Task 0 — COMPLETE. The per-row sizing pass runs over the WHOLE gating set in one generated derivation — the act four continuations recorded as owed, dispatched first under D-670 and closed whole
+
+**The start state was derived at the artifacts before any act (A5), and it is what the dispatch's
+ledger records.** The full guard set was run unchanged before the first edit: **ZERO failing**, with
+the classification green after it, which is where the eleventh continuation left it. The population
+was read at `tools/audit/phase1_completion_inventory.json` → `the_gating_split.gates`, after that
+artifact's own last regeneration and not carried from the dispatch or from this file. No count is
+restated here (**D-431**).
+
+**A1 HOLDS in each of its clauses, and each is enforced by the tool rather than asserted in prose.**
+The derivation sizes its WHOLE derived population or not at all — the authored sizings and the
+population must agree in BOTH directions, so a pass published over a subset cannot be written, which
+is the silent cap three continuations declined to risk. Every row was **READ at the INDEX**, and the
+tool checks each row's quoted words are still there, so a size cannot outlive the text it was read
+from. The sizing is **authored and labelled as sizing** in the artifact's own opening: a size is a
+judgment about work and can be wrong; a population cannot.
+
+**★ THE FOUR RULED LABELS ARE USED AND NO FIFTH IS INVENTED, WHICH IS A DEPARTURE FROM THE TWO
+EARLIER SIZING TABLES AND IS STATED BECAUSE IT IS ONE.** The user named four; the fifth
+continuation's table used exactly those four. The eleventh continuation's table reached for further
+ones — a medium size, a not-yet-due, a not-a-session's — and **every one of those is information
+about the BLOCKER or the OWNER rather than about the SIZE**, so here each is carried in a field of its
+own from a closed vocabulary the tool enforces. `CLAUDE.md`'s Conventions forbid self-invented labels,
+and a label set that grows once per wave is that failure in slow motion. **Nothing is lost by the
+change** (#12): what those labels carried is now stated more precisely, per row, and is checkable.
+
+**★ WHAT THE LABEL SIZES, stated because a reader could reasonably take it two ways.** It sizes the
+act a SESSION would take toward closing the row — now, or at the trigger the row's own text names —
+and it is NEEDS-RULING only where **no session act exists at all**. Where a row carries a FURTHER half
+of a different kind, that half is named in its own field rather than collapsed into the label, so the
+row is not reported smaller or larger than it is. Such halves run in both directions — a session-small
+correction sitting beside a question only the user can answer, and a user's ruling sitting beside a
+small correction a session may take now — and which rows carry one is derived at the artifact
+(**D-431**).
+
+**★ THE HEADLINE OF THE PASS, said once rather than left to be assembled.** Almost nothing in the
+gating set is investigation of the analysis. What holds these rows is, in order of how many rows it
+holds, **a user ruling**, **capacity alone**, **an event the record has scheduled elsewhere**, **the
+phase order**, and **the freeze on `src/`** — every one of them a scheduling fact rather than an
+unknown. The two rows that bear on the analysis, [[OI-357]] and [[OI-363]], are both sized REAL-WORK
+and both wait on a ruling; nothing else in the population waits on either of them. Every count is at
+`tools/audit/gating_row_sizing.json` → `counted` and none is restated here (**D-431**).
+
+**★ AND WHAT THE PASS DELIBERATELY DOES NOT DO IS THE HALF WORTH READING.** It sizes; it performs
+nothing. It moves no status, flips no row, moves no gate verdict and edits no authored apparatus
+table — and where the reading turned up two rows the record may be stale about, they are FLAGGED in
+the artifact and left standing (**§2.16**). One further restraint is stated at the artifact itself:
+where a row's own text does not size a code act, **this pass does not estimate one** — a sizing that
+guesses at work it has not read is wrong in exactly the direction that matters.
+
+**Two authored inputs were maintained, both caught by their own tools' STOPs rather than by a
+reader** (**D-648**). The guard runner STOPPED because the new derivation joined the derived
+candidate population with no authored invocation — that derivation working — and the invocation was
+authored with what the check actually asserts; the guard classification then STOPPED for the same
+tool with no verdict, and a **LIVE** verdict was authored with its ground. **That ground is worth one
+line, because this tool is not like its neighbours:** its artifact's CONTENT is authored judgment, so
+what the check asserts is not that the sizes are right — a size cannot be checked — but three demands
+about the record as it stands today: the population reconciles both ways, every label comes from the
+closed vocabulary, and every quote is still in the INDEX.
+
+**★ ONE DEFECT IN THIS TASK'S OWN WORK IS RECORDED RATHER THAN SMOOTHED OVER (D-434), AND IT WAS
+CAUGHT BY THE TOOL'S OWN `--check`.** The first written artifact did not re-derive on a second
+process, with nothing edited between. **Diagnosed at the object rather than guessed:** one authored
+vocabulary was a `set`, and a set's iteration order is not stable across processes, so one derived
+block's key order moved. It is now a tuple, with the reason written beside it. **Nothing rested on
+the failing artifact** — it was never committed, and the re-derivation was verified twice, in two
+separate processes, before anything else was done. The general form is worth carrying: **a
+byte-compared artifact must not iterate an unordered container**, and the check that caught it is the
+same one every guard in this set relies on.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires. Every verdict is at `tools/audit/guard_state.json` →
+`summary` and none is restated here (**D-431**).
+
+**Holds:** none new. **Surfacings:** §2.16, which is the record's own apparatus rather than the
+analysis, and is surfaced because a row that reads as owed after being discharged is the [[OI-283]]
+shape the open-items register exists against.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

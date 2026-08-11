@@ -149,6 +149,15 @@ AUTHORED = [
      "states; every verdict must agree with the thing that decides it, the worked example's own "
      "sign or the row's fallback ground; and every row's quoted words must still be in that row's "
      "own detail file"),
+    ("tools/audit/gen_gating_row_sizing.py", ["--check"],
+     "the per-row sizing over the gating set re-derives. What it guards is not the sizes, which are "
+     "authored judgments, but the pass's own completeness: the authored sizings and the population "
+     "derived from the completion inventory must agree in BOTH directions, so a row entering or "
+     "leaving the gating set halts it rather than being sized silently or quietly dropped -- which "
+     "is the silent cap three continuations declined to risk. Its other STOPs ride with it: every "
+     "label, owner and blocker must come from the closed vocabulary the pass declares, a "
+     "NEEDS-RULING label and a whose-act field must agree, and every row's quoted words must still "
+     "be in the INDEX"),
     ("tools/audit/decisions/gen_phase1q_snapshot_establishment.py", ["--check"],
      "the phase-1q snapshot's establishment record re-verifies. Its two moment-in-time checks "
      "are FROZEN and read back -- they are statements about the tree before the apply ran, and "

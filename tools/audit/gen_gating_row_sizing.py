@@ -1,0 +1,1139 @@
+#!/usr/bin/env python3
+"""THE PER-ROW SIZING PASS over EVERY remaining gating row — the act three continuations recorded as owed.
+
+WHY IT EXISTS.  The user asked for each remaining gating row SIZED.  The fifth continuation delivered a
+sizing at ITEM granularity and said so in its own heading; the eleventh delivered a sizing over the
+twenty rows it had READ and said so too.  Both stated the same shortfall: sizing a row honestly means
+READING that row, and a sizing published over a subset while reading as the pass is the silent cap the
+standing rules forbid.  This is the pass.  It is dispatched FIRST and alone under **D-670** — a task
+that cannot be stopped partway loses every capacity contest to tasks that can, and this one had lost
+three.
+
+WHAT IS AUTHORED AND WHAT IS DERIVED.
+  authored : per row, the sizing label, the act owed, whose act it is, what blocks it, the reason for
+             the size, a further half of a different kind where the row carries one, and a short quote
+             from the row's own INDEX text.
+  derived  : the POPULATION, read at the artifact that owns it; the presence of every quote in the
+             INDEX; the existence of every detail file; the agreement between each label and the
+             fields that constrain it; and every count.
+
+A SIZE IS A JUDGMENT ABOUT WORK AND CAN BE WRONG; A POPULATION CANNOT.  That is why the population is
+derived and the sizing is authored, and why this file says which is which about every field it carries.
+
+THE FOUR LABELS ARE THE RULED ONES AND NO FIFTH IS INVENTED.  The user named four; the fifth
+continuation's table used exactly those four (plus CLOSED for an item that had closed, which is a state
+and not a size).  Later prose reached for further labels — a medium size, a not-yet-due, a not-a-
+session's — and each of those is information about the BLOCKER or the OWNER rather than about the size,
+so here it is carried in its own field.  `CLAUDE.md`'s Conventions forbid self-invented labels, and a
+label set that grows per wave is exactly what that rule is against.
+
+WHAT `sizing` SIZES.  The act a SESSION would take toward closing the row — now, or at the trigger the
+row's own text names.  Where no session act exists at all, the label is NEEDS-RULING.  Where the row
+carries a FURTHER half of a different kind, that half is named in `the_second_half` rather than
+collapsed into the label, so a reader is not told the row is smaller or larger than it is (#12).
+
+THE STOPS.  The run refuses if the authored set and the derived population disagree in either
+direction; if a row is sized twice; if any authored value falls outside its stated vocabulary; if a
+NEEDS-RULING label and a whose-act field disagree; if a role-separation blocker and a writing-side
+owner disagree; if a second half repeats its row's own (label, blocker) pair; if a quote is not present
+in the INDEX; or if a row has no detail file.
+
+WHAT IT DOES NOT DO.  It moves no status, flips no row, and performs no act on any row.  Two rows carry
+a flag saying the RECORD may be stale about them — checked at named objects and explicitly NOT acted
+on, because flipping a row moves a population and a population movement belongs to an act that accounts
+for it, never to a sizing pass that would slip it in unremarked (the [[OI-362]] precedent).
+
+Usage:
+  python tools/audit/gen_gating_row_sizing.py           # write the artifact
+  python tools/audit/gen_gating_row_sizing.py --check   # re-derive, exit 1 on drift
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
+INDEX = os.path.join(ROOT, "OPEN_ITEMS.md")
+OPEN_ITEMS_DIR = os.path.join(ROOT, "open_items")
+INVENTORY = os.path.join(HERE, "phase1_completion_inventory.json")
+OUT = os.path.join(HERE, "gating_row_sizing.json")
+
+sys.path.insert(0, HERE)
+from output_encoding import use_utf8_output          # noqa: E402  (path set above)
+
+use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
+
+# ── the vocabularies, each closed, each with the meaning this pass uses it in ────────────────────
+LABELS = {
+    "NEEDS-RULING": (
+        "No session act exists on this row at all: what closes it is the user's — a ruling, a filing "
+        "decision, or a governing-document choice."
+    ),
+    "REAL-WORK": (
+        "The act is substantive work rather than a filing or documentation act — a build, a "
+        "measurement, an establishment, a certification, or a design. Where the row's own text does "
+        "not size that work, this pass does not estimate it."
+    ),
+    "SESSION-LARGE": (
+        "A session's act, large: a per-entry, per-document or per-site pass over a population, or a "
+        "tooling act with its own re-derivation."
+    ),
+    "SESSION-SMALL": (
+        "A session's act, small: a bounded documentation, comment or data correction, complete in "
+        "itself."
+    ),
+}
+
+# A TUPLE and not a set, deliberately: this file's artifact is compared byte for byte by its own
+# `--check`, and a set's iteration order is not stable across processes — so a set here would make the
+# artifact fail to re-derive for a reason that has nothing to do with its content.
+WHOSE = (
+    "a session on this side",
+    "the writing side (Cowork)",
+    "the user",
+)
+
+BLOCKS = {
+    "nothing beyond capacity": "The act is available now; what it waits on is a session's capacity.",
+    "the freeze on `src/`": (
+        "The act touches `src/`, and the knowledge arc has taken exactly two licensed code-comment "
+        "acts, each on its own user ruling."
+    ),
+    "the phase order (D-231 and #8)": (
+        "The act is a design, a certification or a fix-plan input, which phase 1's order and #8's "
+        "three-clause gate both forbid now."
+    ),
+    "an event the record schedules elsewhere": (
+        "The row's own text assigns the act to a named later event — a retirement, an onboarding, a "
+        "layer completion, the completion statement — so no session may pull it forward."
+    ),
+    "a user ruling": (
+        "The act itself is a session's, but it may not start until the user rules — a mechanism "
+        "change (D-436), a licence for a bounded run, or a decision about whether to build at all."
+    ),
+    "the role separation": (
+        "The record assigns the act to the writing side; it is small, and it is not this side's."
+    ),
+}
+
+# ---------------------------------------------------------------------------
+# AUTHORED — one sizing per row of the derived population. Each carries a quote from the row's own
+# INDEX text, checked present, so a sizing cannot rest on a reading of a row nobody opened.
+# ---------------------------------------------------------------------------
+SIZINGS = [
+    {
+        "row": "OI-11",
+        "anchor_quote": "Retires with the decoder (reassigned E4; audit §3 table stale).",
+        "the_act_owed": (
+            "Correct the stale audit §3 file-table entry. The primitive itself needs no act — the "
+            "row's own words are that it retires WITH the decoder, which the retirement map deletes."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "an event the record schedules elsewhere",
+        "why_that_size": (
+            "Nothing on this row is investigation. One half is a stale table entry of a few lines; "
+            "the other closes by an event rather than by work, so no session can make it smaller or "
+            "larger."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-12",
+        "anchor_quote": "Reassigned E4 (audit §3 table stale).",
+        "the_act_owed": (
+            "The `findTemporalContext` ownership move itself, which the record reassigns to the E4 "
+            "engage step, plus the same stale audit §3 table entry."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "an event the record schedules elsewhere",
+        "why_that_size": (
+            "The closing act is a code ownership move across a layer boundary, not a documentation "
+            "act. The row's own text does not size that move, and this pass does not estimate a code "
+            "act it has not read — which is the honest form of a sizing that could otherwise be "
+            "wrong in the direction that matters."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-45",
+        "anchor_quote": "fix at the next scoring_model touch",
+        "the_act_owed": (
+            "Re-aim the stale §4/§6 anchors in `docs/scoring_model.md` and give "
+            "`kHalfDimFirstInversionBonus` its §6 entry."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "Two located corrections in one document, each verifiable at the object it points at. It "
+            "shares a document with OI-183 and OI-274, so one pass over that document closes three "
+            "rows' worth of act."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-57",
+        "anchor_quote": "ASSIGNED: the corpus-onboarding event (OI-38)",
+        "the_act_owed": (
+            "Make the extra-scores registry accurate and mechanically validated against the files on "
+            "disk, at the corpus-onboarding event the row assigns it to."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "an event the record schedules elsewhere",
+        "why_that_size": (
+            "Not a documentation act: a registry reconciled against the tree plus a validator that "
+            "needs its own establishment before anything is graded through it. The row's own text "
+            "gates it on the onboarding event and says the registry must be accurate THERE, before "
+            "any of those scores is used."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-90",
+        "anchor_quote": "correct the L1/L2 file-table reason at its next touch (comment/data-only)",
+        "the_act_owed": (
+            "Correct the L1/L2 file-table reason strings under `tools/audit/l1l2/`, which the L3 pass "
+            "made stale."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "The row's own words are comment/data-only with no code change, and the correct tags are "
+            "already recorded in the L3 file table — so the act is a transcription from a surface "
+            "that already holds the answer, not a re-derivation."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-95",
+        "anchor_quote": "the disposition-generator unification + the l1l2 restamp remain",
+        "the_act_owed": (
+            "Unify the two disposition generators into one layer-selected generator, the way the "
+            "sweep tool was unified, and re-stamp the line-stale l1l2 artifacts."
+        ),
+        "sizing": "SESSION-LARGE",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "The re-stamp is a regeneration a session may take. The unification is a mechanism change "
+            "to the audit's own tooling, with its own re-derivation and its own establishment that "
+            "the unified generator reproduces both layers' prior output — which is not a bounded "
+            "correction, and which D-436 puts in the class a session does not start on its own."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-105",
+        "anchor_quote": "fix at the next chordslicedecoder.cpp / param_manifest.json touch",
+        "the_act_owed": (
+            "Correct the `isSemitoneStep` naming imprecision in `chordslicedecoder.cpp` and the "
+            "`tools/param_manifest.json` consuming-path statement that denies a call the tool makes."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "the freeze on `src/`",
+        "why_that_size": (
+            "Two corrections, both comment/data-only by the row's own words. The "
+            "`tools/param_manifest.json` half is outside the freeze and is available to a licensed "
+            "act now; the `src/` half is not, and that is the whole of what holds the row."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-107",
+        "anchor_quote": "what remains owed on this row is the FIRST half only",
+        "the_act_owed": (
+            "Re-label `ARCHITECTURE.md` §4.1h's iteration-era baselines and test counts as a dated "
+            "historical snapshot — the second of the two routes the row's own text gives; the first, "
+            "re-measure, is a measurement rather than a labelling act."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "One block of one section, re-labelled rather than re-measured, with the former text "
+            "preserved in place. The row already records its second half discharged, so what is left "
+            "is a single dated qualification."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-109",
+        "anchor_quote": "the scoring question parked to the precision phase",
+        "the_act_owed": (
+            "Answer the P5-over-diminished scoring question the adjudication makes this row the one "
+            "home of — whether a sounding perfect fifth over a diminished template is correctly a "
+            "hard contradiction — which the record parks to the precision phase with a #17 ledger."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "the phase order (D-231 and #8)",
+        "why_that_size": (
+            "The row's closing act is an inference-affecting scoring question, which is the class "
+            "#8's gate holds until the build-it-right clauses finish; its size beyond that is not "
+            "estimated here."
+        ),
+        "the_second_half": {
+            "what_it_is": (
+                "The orphaned `BUG-10` marker in `chordanalyzer.cpp`, re-pointed at this row — a "
+                "one-line comment correction the adjudication already decided."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "the freeze on `src/`",
+        },
+    },
+    {
+        "row": "OI-121",
+        "anchor_quote": "Cowork re-words §5.0/§15-12 + handoff 1389",
+        "the_act_owed": (
+            "Re-word `cowork_layer5_function_design.md` §5.0/§15-12 and the handoff line to record "
+            "the grammar completion as landed at the commit the row names."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "the writing side (Cowork)",
+        "what_blocks_it": "the role separation",
+        "why_that_size": (
+            "Three sentences re-tensed against a commit the row already identifies. It is small, and "
+            "the row's own status assigns it to the writing side — which is why it has stayed open "
+            "through every executing-side batch."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-141",
+        "anchor_quote": "the design conversation is OPEN with the user",
+        "the_act_owed": (
+            "The key-menu design conversation itself. The row records the diagnosis, the drift "
+            "grounding, the mechanism pinned at the code and the design opening as all delivered — "
+            "what is left is the user's."
+        ),
+        "sizing": "NEEDS-RULING",
+        "whose_act_it_is": "the user",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "No session act exists on this row: everything a session owed is delivered, and the row's "
+            "own status names the open conversation as what remains."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-146",
+        "anchor_quote": "the ARCHITECTURE.md sync lands with the key-layer completion",
+        "the_act_owed": (
+            "Write each layer's published-facts contract into its `ARCHITECTURE.md` section from the "
+            "evidence inventory, which the row gates on the key-layer completion; and keep the "
+            "inventory live as new evidence kinds are found."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "an event the record schedules elsewhere",
+        "why_that_size": (
+            "Writing a layer's published-facts contract is a specification act about what that layer "
+            "produces, not a filing act, and the row gates it on a completion that has not happened. "
+            "Its live half — adding a newly discovered evidence kind in the commit that finds it — is "
+            "a standing obligation rather than an act with a size."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-150",
+        "anchor_quote": "re-stamp both baselines AND make the notation line name the 4 xfails",
+        "the_act_owed": (
+            "Build at HEAD, run both suites, re-stamp both `BUILD_AND_TEST.md` baselines from those "
+            "runs, and make the notation line name the four key-emission cases that fail by design."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "Two lines edited — but the edit's INPUT is a measurement, so the act includes a build "
+            "and both suites run. That is a capacity cost rather than a permission one, and copying "
+            "the recorded numbers forward is precisely the transcription this row exists against, as "
+            "its own dated remark records when the trigger fired and was deliberately not discharged."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-183",
+        "anchor_quote": "a small doc pass at the next scoring_model.md touch; no code effect",
+        "the_act_owed": (
+            "Give the twelve unmentioned scoring constants a by-name mention in "
+            "`docs/scoring_model.md`, or state per constant which table cell already covers it."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "The row's own words are a small doc pass with no code effect, and the population is "
+            "already enumerated by a mechanical check — so the act is bounded before it starts. It "
+            "shares its document with OI-45 and OI-274."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-207",
+        "anchor_quote": "the residual second pass is this row's remaining scope",
+        "the_act_owed": (
+            "The residual second pass over the clusters the mechanical disposition could not classify, "
+            "and the reading of the remaining design documents — which the row's own proposal says to "
+            "read whole rather than sampling through a yield proxy it declares unestablished."
+        ),
+        "sizing": "SESSION-LARGE",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "A per-document and per-cluster pass over a population the row has already measured. It "
+            "is the largest reading act in this set by a wide margin and it is blocked by nothing — "
+            "only unaffordable inside a batch that also does anything else, which is D-670's class."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-220",
+        "anchor_quote": "a comment sweep at next touch or its own doc commit",
+        "the_act_owed": (
+            "Establish at the CALL GRAPH whether each joint-internal module named by a dormancy "
+            "comment is on the live decode path, and then correct or leave each comment on that "
+            "finding."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "the freeze on `src/`",
+        "why_that_size": (
+            "What survives on this row is not a comment sweep. The blocks still standing were HELD by "
+            "the one licensed comment act precisely because their claim — that a joint-INTERNAL "
+            "module has no production consumer — is a question about how the decode is COMPOSED, "
+            "which no file-level fact answers. The establishment is read-only and available now; the "
+            "correction that follows it is a further `src/` comment act the freeze does not admit."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-223",
+        "anchor_quote": "NOT re-baselined here (out of OI-199 scope; each layer owns its inventory)",
+        "the_act_owed": (
+            "Regenerate each layer's deep inventory at HEAD and re-stamp it, which the row assigns to "
+            "each layer's own owner."
+        ),
+        "sizing": "SESSION-LARGE",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "an event the record schedules elsewhere",
+        "why_that_size": (
+            "Four layers' inventories, each regenerated and reconciled against its frozen reference "
+            "so the source drift is explained rather than absorbed. The row's own words are that the "
+            "frozen inventories stay valid as frozen references, so what triggers the act is a "
+            "session needing a current one."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-224",
+        "anchor_quote": "certification still owed (pass 2 blind reading + error rate + partitions)",
+        "the_act_owed": (
+            "The certification the row names as still owed — the pass-2 blind reading with its seeded "
+            "error rate and its partitions, to the standard the L4 precedent set."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "the phase order (D-231 and #8)",
+        "why_that_size": (
+            "A certification with measured coverage is phase-2 issue-finding by name — the clause "
+            "D-231 puts after phase 1 — so a session that sized it as work in hand would misreport "
+            "what phase 1 is waiting on."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-239",
+        "anchor_quote": "belonging WITH the [[OI-215]]/[[OI-226]]/[[OI-227]]/[[OI-228]] family design",
+        "the_act_owed": (
+            "Two separable acts the row names: record the event-lattice rule in a layer "
+            "specification, and decide whether the two boundary computations unify — the second "
+            "belonging WITH the struck-versus-sounding family design."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "the phase order (D-231 and #8)",
+        "why_that_size": (
+            "The first act needs the lattice rule ESTABLISHED from the code before it can be written "
+            "into a specification, which is a statement about what the production decode reads; the "
+            "second is a family design D-231 forbids now and the one-fix-per-family rule forbids "
+            "taking alone."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-249",
+        "anchor_quote": "one design surface with [[OI-248]]",
+        "the_act_owed": (
+            "The one design surface the row names with OI-248 — what metrical facts the adapter "
+            "derives, from what, and where they are specified."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "the phase order (D-231 and #8)",
+        "why_that_size": (
+            "It is a design surface by the row's own words, which is the act D-231 forbids before "
+            "phases 1 and 2 close."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-274",
+        "anchor_quote": "a doc-sync act at the document's next touch",
+        "the_act_owed": (
+            "Give `docs/scoring_model.md` the scoping sentence its two sibling rows closed on, "
+            "re-stamp its footer date, and correct the two DRAFT-UNCOMMITTED banners standing on "
+            "tracked files."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "The row's own remedy is a doc-sync act, and the shape is established: both sibling rows "
+            "closed by adding one scoping sentence. The three smaller instances are located."
+        ),
+        "the_second_half": {
+            "what_it_is": (
+                "Whether `CLAUDE.md`'s mandatory-read instruction should also name the joint "
+                "estimator's specification — which the row calls a governing-document question and "
+                "therefore the user's."
+            ),
+            "sizing": "NEEDS-RULING",
+            "whose_act_it_is": "the user",
+            "what_blocks_it": "a user ruling",
+        },
+    },
+    {
+        "row": "OI-283",
+        "anchor_quote": "Two acts at the register's next touch",
+        "the_act_owed": (
+            "Stamp the decisions register's coverage claim to a COMMIT rather than a line count, or "
+            "have that register's generator compute it — the row's own two acts, the second removing "
+            "the failure entirely (#17f)."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "an event the record schedules elsewhere",
+        "why_that_size": (
+            "The act itself is one field computed instead of typed. The row defers it to the phase-1 "
+            "completion statement, which rests on the very paragraph in question and which the user "
+            "commissions — so the size is small and the timing is not a session's."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-292",
+        "anchor_quote": "The triage is a PROPOSAL and nothing was executed",
+        "the_act_owed": (
+            "Per member of the defect class, the measured establishment #19 requires — a detection "
+            "rate against real violations and a false-positive rate on legitimate work — and then the "
+            "user's ruling on whether to build the mechanism at all."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "Each member is a measured establishment before it is a build, which is not a filing act; "
+            "and the row's own words are that retiring or mechanising a governing rule is the user's, "
+            "with D-436's three conditions the bar. Two members have already been built this way, so "
+            "the shape is established and the remainder is per member."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-303",
+        "anchor_quote": "correcting them is a `src/` change and the phase-1w dispatch forbids one",
+        "the_act_owed": (
+            "Verify the six named sites at the objects, and then flip the row or name what survives — "
+            "because the record may already be stale about it (see the flag below)."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "Six located sites, each checkable at its own file against a committed enumeration that "
+            "already records what was done to it. What the row asks for is a reading, not a "
+            "correction — and if the reading confirms what the enumeration says, the remaining act is "
+            "a flip with provenance."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-304",
+        "anchor_quote": "the correction is an annotation act rather than an edit",
+        "the_act_owed": (
+            "Append a dated correction remark to each of the two annotation blocks, naming D-428's "
+            "corrected text — an annotation act, not an edit, which is what the row's own status "
+            "calls for."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "Two located blocks, one remark each, with both former wordings left standing because "
+            "they are the record of what was believed when written (#12). The corrected text already "
+            "exists at the decisions register's entry, so nothing has to be derived."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-309",
+        "anchor_quote": "Each needs the diagnosis [[OI-305]] asks for and does not answer",
+        "the_act_owed": (
+            "Per artifact, the diagnosis the row asks for — STALE or HISTORICAL — and then either a "
+            "regeneration or a verify mode that says the artifact is a point-in-time record and must "
+            "not be regenerated over."
+        ),
+        "sizing": "SESSION-LARGE",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "Four artifacts, each read at its own generator, and the diagnosis is the whole of the "
+            "work — regenerating a historical record destroys the finding it exists to keep, which is "
+            "the hazard the row names. Adding a verify mode is a mechanism change D-436 reserves."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-311",
+        "anchor_quote": "The fix is the `--check` its siblings already have",
+        "the_act_owed": (
+            "Add the verify-only mode the tool's siblings carry, plus the one judgment the row names: "
+            "how a census whose scope is the tree reports a file-count field that moves by "
+            "construction."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "The verify mode itself is a copy of a shape two sibling tools already carry. What makes "
+            "it a row rather than a passing fix is the one judgment beside it, and choosing how a "
+            "derivation reports expected movement is a mechanism decision."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-315",
+        "anchor_quote": "THE ROW STAYS OPEN ON ITS DOCUMENT HALF",
+        "the_act_owed": (
+            "Correct `docs/key_path_design.md`'s §2.1/§5 self-contradiction and the two further "
+            "`docs/` surfaces that still state the removed piece-start shortcut as live."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "Three located surfaces, each a wording correction against a removal the specification "
+            "and the code already record. One of them is load-bearing for its document's whole "
+            "explanation, so the correction there is a qualification rather than a deletion — still "
+            "bounded, and named in the row's own enumeration."
+        ),
+        "the_second_half": {
+            "what_it_is": (
+                "The stale comment in `src/composing/tests/regionanalysis_tests.cpp`, the fourth "
+                "surface the row enumerates."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "the freeze on `src/`",
+        },
+    },
+    {
+        "row": "OI-320",
+        "anchor_quote": "that is a filing decision about a user-ratified gate's presentation",
+        "the_act_owed": (
+            "Decide which of the four stale sites become the retired diagnostic and which become the "
+            "governing robust unit — a filing decision about how a user-ratified gate is presented in "
+            "the document every score-touching task is sent to first."
+        ),
+        "sizing": "NEEDS-RULING",
+        "whose_act_it_is": "the user",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "The row says in terms that what the corrected text should say is not a session's to "
+            "choose. Once chosen the edit is small; until then no session act exists, because writing "
+            "either reading would be taking the decision."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-321",
+        "anchor_quote": "whether the implode path applying the gate is the rule being discharged",
+        "the_act_owed": (
+            "Correct the two plainly false statements — the header calling a phase deferred that the "
+            "code says was executed, and the named directory that does not exist."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "Both are checkable at the objects the row already cites, and both are one sentence each. "
+            "The row's own text establishes the true state for each of them."
+        ),
+        "the_second_half": {
+            "what_it_is": (
+                "Item (3) — whether the implode path applying the display-duration gate discharges "
+                "the parked divergence's decision rule or is a divergence that closed by drift, which "
+                "the row says a session may not answer."
+            ),
+            "sizing": "NEEDS-RULING",
+            "whose_act_it_is": "the user",
+            "what_blocks_it": "a user ruling",
+        },
+    },
+    {
+        "row": "OI-322",
+        "anchor_quote": "whether it is re-bannered as a historical record of the pre-deletion state",
+        "the_act_owed": (
+            "Decide whether a completed audit describing deleted code is re-bannered as a historical "
+            "record or rewritten — a filing question the row says applies to every completed audit in "
+            "the tree, not to this one."
+        ),
+        "sizing": "NEEDS-RULING",
+        "whose_act_it_is": "the user",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "No session act exists: the document already CONTAINS its own correction in its last "
+            "line, so nothing is unknown — what is undecided is which of two treatments a dated "
+            "report gets, and the row scopes that question to a class rather than to this document."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-324",
+        "anchor_quote": "which arm D-057 binds is a decision about the production emission",
+        "the_act_owed": (
+            "Rule which arm the priority-of-evidence table binds — a cross-cutting evidential rule "
+            "for both arms, or a legacy-path rule whose dependent open item needs a different source."
+        ),
+        "sizing": "NEEDS-RULING",
+        "whose_act_it_is": "the user",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "The row states it: the substantive half is a decision about the production emission's "
+            "evidential contract, not a wording fix, and neither reading is written down anywhere for "
+            "a session to follow."
+        ),
+        "the_second_half": {
+            "what_it_is": (
+                "The smaller defect in the same paragraph pair — an unqualified predicate naming no "
+                "argument, and two sentences that read plainly as contradicting each other."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+        },
+    },
+    {
+        "row": "OI-332",
+        "anchor_quote": "whether a superseded design document is re-bannered as a historical record",
+        "the_act_owed": (
+            "Correct the *no code* banner standing over two operations the row itself verified built, "
+            "and re-aim the drifted as-built anchors."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "Two located corrections, both established at the objects in the row's own text. The "
+            "banner is D-639's first worked example word for word, so what the corrected text should "
+            "say is settled rather than a judgment."
+        ),
+        "the_second_half": {
+            "what_it_is": (
+                "Item (3) — the falsified design carrying no supersession note, which raises the same "
+                "filing question OI-322 poses and does not answer."
+            ),
+            "sizing": "NEEDS-RULING",
+            "whose_act_it_is": "the user",
+            "what_blocks_it": "a user ruling",
+        },
+    },
+    {
+        "row": "OI-341",
+        "anchor_quote": "whether the remedy is to re-run the apply mode (a register write)",
+        "the_act_owed": (
+            "Make the check enforce the design its own docstring states — stop comparing a line number "
+            "the tool itself dates as an observation — or re-run the apply mode instead."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "The change is small and the row already names which of the two remedies looks right. "
+            "What holds it is that either one changes what a live guard asserts, which is the class "
+            "D-436 reserves."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-352",
+        "anchor_quote": "choosing among those is a mechanism change **D-436** reserves to the user",
+        "the_act_owed": (
+            "Compose the guard sweep so the classification's own check runs — a second runner stage, a "
+            "wrapper with a declared order, or an authored entry carrying that order."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "Each of the three candidate shapes is a small change to how one runner is composed; the "
+            "recursion exemption the row does NOT dispute stays exactly as it is. Choosing among them "
+            "is the mechanism decision the row's own status reserves."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-357",
+        "anchor_quote": "the second half of this row's own question",
+        "the_act_owed": (
+            "Establish BY WHAT MEANS the production arm reads this repertoire, and make the per-case "
+            "reading the row also names — both read-only, and every comparable establishment in this "
+            "arc has run on an explicit licence."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "It is an establishment about the analysis, not a documentation act: the first half of "
+            "the row was answered by a licensed run with a same-commit control, and the second half "
+            "asks for a mechanism account the counting pass says in its own artifact it does not "
+            "attempt."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-359",
+        "anchor_quote": "the mechanism is deliberately NOT built by the ruling that created this row",
+        "the_act_owed": (
+            "Build the per-corpus breakdown check the measurement convention's uncovered half needs — "
+            "after the measured establishment a member of that backlog owes, and after the user's "
+            "ruling on whether to build it at all."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "A mechanism enforcing a measurement convention is judged on a measured detection rate "
+            "and a measured false-positive rate before it is adopted, which is work rather than "
+            "filing; the row's own status says the ruling that created it deliberately did not start "
+            "the build."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-360",
+        "anchor_quote": "a second candidate signal is a MECHANISM design",
+        "the_act_owed": (
+            "Design and measure a second candidate signal for the verbatim-versus-subject check "
+            "against the committed labelled corpus, adopting nothing that does not separate."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "The first candidate was built, measured and refused, so the shape of the work is known "
+            "and it is measurement rather than filing. The corpus already exists and is committed, so "
+            "a later act starts from it rather than from a blank page — and tuning the existing "
+            "signal against its five motivating cases is forbidden."
+        ),
+        "the_second_half": None,
+    },
+    {
+        "row": "OI-363",
+        "anchor_quote": "What still gates is the per-case reading",
+        "the_act_owed": (
+            "Make the per-case reading the row gates on — per disagreement, is it a defect, a "
+            "defensible modal reading the major/minor ground truth cannot represent, or a "
+            "global-versus-local comparison artifact."
+        ),
+        "sizing": "REAL-WORK",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "a user ruling",
+        "why_that_size": (
+            "A judgment per member of a derived population, made against the score and the published "
+            "annotation. It is the one act on this row that no counting pass can substitute for, and "
+            "the row says in terms that the counting passes make none of it."
+        ),
+        "the_second_half": None,
+    },
+]
+
+# ---------------------------------------------------------------------------
+# AUTHORED — flags where the RECORD may be stale about a row, checked at named objects and explicitly
+# NOT acted on. Flipping a row moves a population, and a population movement belongs to an act that
+# accounts for it rather than to a sizing pass that would slip it in unremarked (the OI-362 precedent).
+# ---------------------------------------------------------------------------
+RECORD_MAY_BE_STALE = {
+    "OI-303": (
+        "ALL SIX of the sites this row names appear to have been corrected by acts taken after it was "
+        "rowed, and the row does not say so. Checked at `tools/audit/arm_comment_sweep.json`: the four "
+        "record-arm branch comments and the record section adapter's *no src/ caller* comment are in "
+        "that enumeration's CORRECTED set, and the sixth — the measurement tool's comment saying the "
+        "notation layer stays on the legacy analysis — was corrected under its own later ruling. "
+        "**NOT asserted discharged and NOT flipped here:** what is checked is a committed "
+        "enumeration's account of what it did, not the six files, and confirming a row's subject at "
+        "the objects and flipping it is an act. The act is named in this row's sizing above."
+    ),
+    "OI-220": (
+        "Its live remainder is SMALLER than the row states, and the row does not say so. Of the six "
+        "headers it names, one was CORRECTED by the licensed comment-only act and one carries no such "
+        "claim at HEAD at all — checked at `tools/audit/arm_comment_sweep.json` and at the file. What "
+        "survives is the four blocks that act deliberately HELD, whose claim is that a joint-INTERNAL "
+        "module has no production consumer; and the row's other half, the record-arm *default OFF* "
+        "branch comments, is in the corrected set. **NOT narrowed and NOT flipped here** — the sizing "
+        "above is written against the live remainder and says so, which is what a sizing owes; "
+        "changing what the row asserts is an act."
+    ),
+}
+
+
+def read(path: str) -> str:
+    with open(path, encoding="utf-8") as fh:
+        return fh.read()
+
+
+def derived_population() -> list:
+    inv = json.loads(read(INVENTORY))
+    try:
+        return list(inv["the_gating_split"]["gates"]["ids"])
+    except KeyError as exc:                                       # pragma: no cover - a STOP
+        raise SystemExit(
+            "STOP: the completion inventory does not carry `the_gating_split.gates.ids`, which is "
+            f"the population this pass sizes ({exc})."
+        )
+
+
+def check_vocabularies(entry: dict, where: str) -> None:
+    if entry["sizing"] not in LABELS:
+        raise SystemExit(
+            f"STOP: {where} uses a sizing label outside the four ruled ones: {entry['sizing']!r}. "
+            "A label set that grows per wave is the self-invented labelling `CLAUDE.md`'s "
+            "Conventions forbid."
+        )
+    if entry["whose_act_it_is"] not in WHOSE:
+        raise SystemExit(f"STOP: {where} names an owner outside the vocabulary: "
+                         f"{entry['whose_act_it_is']!r}")
+    if entry["what_blocks_it"] not in BLOCKS:
+        raise SystemExit(f"STOP: {where} names a blocker outside the vocabulary: "
+                         f"{entry['what_blocks_it']!r}")
+    needs_ruling = entry["sizing"] == "NEEDS-RULING"
+    is_the_users = entry["whose_act_it_is"] == "the user"
+    if needs_ruling != is_the_users:
+        raise SystemExit(
+            f"STOP: {where} disagrees with itself. NEEDS-RULING means no session act exists, so it "
+            "holds exactly when the act is the user's; here one says so and the other does not."
+        )
+    role = entry["what_blocks_it"] == "the role separation"
+    writing = entry["whose_act_it_is"] == "the writing side (Cowork)"
+    if role != writing:
+        raise SystemExit(
+            f"STOP: {where} disagrees with itself. The role separation blocks exactly the acts the "
+            "record assigns to the writing side."
+        )
+
+
+def build() -> dict:
+    index_text = read(INDEX)
+    population = derived_population()
+
+    authored = [s["row"] for s in SIZINGS]
+    if len(set(authored)) != len(authored):
+        raise SystemExit("STOP: a row is sized twice.")
+    missing = [r for r in population if r not in authored]
+    extra = [r for r in authored if r not in population]
+    if missing or extra:
+        raise SystemExit(
+            "STOP: the authored sizings and the derived population disagree. "
+            f"Derived but unsized: {missing}. Sized but not in the derived population: {extra}. "
+            "This pass sizes its WHOLE population or nothing — a sizing published over a subset "
+            "while reading as the pass is the silent cap the standing rules forbid."
+        )
+    stale_rows = [r for r in RECORD_MAY_BE_STALE if r not in population]
+    if stale_rows:
+        raise SystemExit(
+            "STOP: a staleness flag names a row this pass does not size: "
+            + ", ".join(sorted(stale_rows))
+        )
+
+    for s in SIZINGS:
+        where = s["row"]
+        detail = os.path.join(OPEN_ITEMS_DIR, f"{where}.md")
+        if not os.path.exists(detail):
+            raise SystemExit(f"STOP: {where} has no detail file at {detail}.")
+        if s["anchor_quote"] not in index_text:
+            raise SystemExit(
+                f"STOP: {where}'s quoted words are not in the INDEX — a sizing may not rest on a "
+                "reading of a row nobody opened."
+            )
+        check_vocabularies(s, where)
+        half = s["the_second_half"]
+        if half is not None:
+            check_vocabularies(half, f"{where}'s second half")
+            same = (half["sizing"] == s["sizing"]
+                    and half["what_blocks_it"] == s["what_blocks_it"])
+            if same:
+                raise SystemExit(
+                    f"STOP: {where}'s second half repeats the row's own size and blocker, so it is "
+                    "not a half of a different kind and does not need a field of its own."
+                )
+
+    by_label = {name: [s["row"] for s in SIZINGS if s["sizing"] == name] for name in LABELS}
+    by_blocker = {name: [s["row"] for s in SIZINGS if s["what_blocks_it"] == name]
+                  for name in BLOCKS}
+    by_owner = {name: [s["row"] for s in SIZINGS if s["whose_act_it_is"] == name] for name in WHOSE}
+    with_second_half = [s["row"] for s in SIZINGS if s["the_second_half"] is not None]
+    available_now = [s["row"] for s in SIZINGS if s["what_blocks_it"] == "nothing beyond capacity"]
+
+    rows = []
+    for s in SIZINGS:
+        entry = dict(s)
+        entry["detail_file"] = f"open_items/{s['row']}.md"
+        entry["what_the_label_means"] = LABELS[s["sizing"]]
+        entry["what_the_blocker_means"] = BLOCKS[s["what_blocks_it"]]
+        if s["row"] in RECORD_MAY_BE_STALE:
+            entry["the_record_may_be_stale_about_this_row"] = RECORD_MAY_BE_STALE[s["row"]]
+        rows.append(entry)
+
+    return {
+        "purpose": (
+            "The per-row sizing pass over EVERY remaining gating row — the act the fifth, ninth, "
+            "tenth and eleventh continuations each recorded as owed and each declined to publish "
+            "over a subset. It sizes the ACT each row needs; it performs none of them."
+        ),
+        "generated_by": "tools/audit/gen_gating_row_sizing.py",
+        "generated_for": (
+            "cc_instruction_return_continuation_12.md, Task 0 — placed FIRST and ALONE under D-670, "
+            "which rules that a task unable to stop partway is dispatched first with nothing large "
+            "in front of it."
+        ),
+        "what_this_is_and_is_not": {
+            "it_is": "SIZING — an authored judgment about the kind and size of act each row needs.",
+            "it_is_not": (
+                "A measurement. A size can be wrong; the population it is stated over cannot, which "
+                "is why the population is derived and the sizing is authored, and why every field "
+                "here says which it is."
+            ),
+            "no_value_is_restated_from_elsewhere": (
+                "Every count in this artifact is computed from the rows below (D-431). Nothing is "
+                "carried from any dispatch, any earlier sizing table or any report."
+            ),
+        },
+        "the_population": {
+            "what_it_is": (
+                "The open rows the gating split puts on the GATING side — the rows a stage waits on."
+            ),
+            "derived_from": "tools/audit/phase1_completion_inventory.json → the_gating_split.gates.ids",
+            "count": len(population),
+            "ids": population,
+            "how_a_disagreement_is_handled": (
+                "a STOP in either direction — a row derived but unsized, or sized but not derived, "
+                "halts the run, so a partial pass cannot be written at all"
+            ),
+        },
+        "the_four_ruled_labels": {
+            "what_they_are": LABELS,
+            "why_no_fifth": (
+                "The user named four and the first sizing table used exactly those four. Later prose "
+                "reached for further labels — a medium size, a not-yet-due, a not-a-session's — and "
+                "every one of those is information about the BLOCKER or the OWNER rather than about "
+                "the size, so it is carried in its own field here. `CLAUDE.md`'s Conventions forbid "
+                "self-invented labels, and a label set that grows per wave is that failure exactly."
+            ),
+            "what_the_label_sizes": (
+                "The act a SESSION would take toward closing the row — now, or at the trigger the "
+                "row's own text names. Where no session act exists at all the label is NEEDS-RULING. "
+                "Where the row carries a FURTHER half of a different kind, that half is named in its "
+                "own field rather than collapsed into the label (#12)."
+            ),
+        },
+        "the_owner_vocabulary": list(WHOSE),
+        "the_blocker_vocabulary": BLOCKS,
+        "sizings": rows,
+        "counted": {
+            "rows_sized": len(SIZINGS),
+            "by_label": {k: len(v) for k, v in by_label.items()},
+            "by_blocker": {k: len(v) for k, v in by_blocker.items()},
+            "by_owner": {k: len(v) for k, v in by_owner.items()},
+            "rows_carrying_a_second_half_of_a_different_kind": len(with_second_half),
+            "rows_available_now": len(available_now),
+        },
+        "rows_by_label": by_label,
+        "rows_by_blocker": by_blocker,
+        "rows_with_a_second_half": with_second_half,
+        "rows_available_now": available_now,
+        "★_what_the_shape_says": {
+            "the_headline": (
+                "Almost nothing in the gating set is investigation of the analysis. What holds these "
+                "rows is, in order of how many rows it holds: a user ruling, capacity alone, an event "
+                "the record has scheduled elsewhere, the phase order, and the freeze on `src/`. Every "
+                "one of those is a scheduling fact rather than an unknown."
+            ),
+            "what_a_reader_should_not_conclude": (
+                "That the sizes add up to an amount of work. An item's size is a judgment about ONE "
+                "act's kind, not a duration, and this pass deliberately does not estimate a code act "
+                "whose size the row's own text does not state."
+            ),
+            "the_two_rows_that_bear_on_the_analysis": (
+                "OI-357 and OI-363 are sized REAL-WORK and both wait on a user ruling. Neither is "
+                "proposed for here, and nothing else in this population waits on either of them."
+            ),
+        },
+        "the_staleness_flags": {
+            "what_they_are": (
+                "Rows where the RECORD may be stale about its own subject — checked at named objects "
+                "during the reading this pass required, and explicitly NOT acted on."
+            ),
+            "why_nothing_is_flipped": (
+                "Flipping a row moves the open-row count, the gating cuts, the finish line's "
+                "populations and the apparatus declaration's candidate cut — including the "
+                "population THIS pass is stated over, derived at its own start. A population movement "
+                "belongs to an act that accounts for it, never to a pass that would slip it in "
+                "unremarked (the OI-362 precedent)."
+            ),
+            "rows": RECORD_MAY_BE_STALE,
+        },
+        "what_this_pass_does_not_do": [
+            "It moves no open-items status, in either direction, and performs no act on any row.",
+            "It moves no gate verdict and edits no authored apparatus table.",
+            "It proposes no fix, no design and no inference change, and touches nothing about the "
+            "analysis, any measurement of it, any golden or anything in `tools/robust_stop/`.",
+            "It writes no portion of phase 1's completion statement.",
+        ],
+    }
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--check", action="store_true")
+    args = ap.parse_args()
+    art = build()
+    text = json.dumps(art, indent=2, ensure_ascii=False) + "\n"
+    if args.check:
+        have = read(OUT) if os.path.exists(OUT) else ""
+        if have != text:
+            print("STALE vs the files: gating_row_sizing.json does not re-derive")
+            return 1
+        print("the per-row gating sizing re-derives from the files")
+        return 0
+    with open(OUT, "w", encoding="utf-8", newline="") as fh:
+        fh.write(text)
+    c = art["counted"]
+    print(f"wrote {os.path.relpath(OUT, ROOT)}")
+    print(f"  {c['rows_sized']} rows sized; by label: {c['by_label']}")
+    print(f"  available now: {c['rows_available_now']}; "
+          f"with a second half: {c['rows_carrying_a_second_half_of_a_different_kind']}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

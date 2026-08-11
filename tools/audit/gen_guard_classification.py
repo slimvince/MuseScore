@@ -210,6 +210,17 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "directions: a row entering or leaving the apparatus-classed set halts it rather than "
         "being graded silently or dropped. That is a demand about the record as it stands today, "
         "not a dated reading of it."),
+    "tools/audit/gen_gating_row_sizing.py": (
+        LIVE, "gen_gating_row_sizing.py:30-44",
+        "LIVE, and the verdict is worth stating because the artifact's CONTENT is authored "
+        "judgment. What the check asserts is not that the sizes are right — a size cannot be "
+        "checked — but three demands about the record as it stands TODAY. Its POPULATION is read "
+        "at the completion inventory on every run and reconciled with the authored sizings in "
+        "BOTH directions, so a row entering or leaving the gating set halts it rather than being "
+        "sized silently or quietly dropped. Every label, owner and blocker must come from the "
+        "closed vocabulary the file declares, so a later wave cannot widen the label set by "
+        "writing one. And every row's quoted words must still be in the INDEX, so a sizing cannot "
+        "outlive the text it was read from. None of that is a dated reading."),
     "tools/audit/decisions/gen_phase1q_snapshot_establishment.py": (
         LIVE, "gen_phase1q_snapshot_establishment.py:24-38",
         "★ THE FIRST TOOL BUILT AFTER R4 AND BUILT TO IT, so the classification was a design "
