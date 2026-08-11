@@ -795,7 +795,7 @@ goldens. Diagnostic scaffolding fully removed from all files.
 > **★ HISTORICAL — MARKED 2026-08-11, DISCHARGING [[OI-47]]'s BANNER HALF. Nothing below this line is
 > edited (#12): this section is a record of the submission-era state, not a statement about HEAD, and
 > its heading is the only thing about it that reads as current.** Three things a reader must not carry
-> out of it. **(1) The acceptance figures and the hard stops it states are SUPERSEDED IN WHOLE.** The
+> out of it. **(1) The acceptance numbers and the hard stops it states are SUPERSEDED IN WHOLE.** The
 > governing hard regression stop is `CLAUDE.md` gate block (A)'s granularity-robust union-of-boundaries
 > unit, ratified at R10-b on 2026-07-06 (**D-115**); block (C) retains the batch case-identity form as
 > a runnable diagnostic and as historical reference only, and says so in its own words. The current

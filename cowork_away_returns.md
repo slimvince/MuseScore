@@ -6591,5 +6591,34 @@ fact about ONE MOMENT, so it is now checked at that moment's own git object (**D
 claims that are durable — the block verbatim in the archive, and ABSENT from the live file, so it was
 moved and not copied — are re-derived against HEAD. All three hold.
 
+### ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**One reserved-word collision was caught in this batch's own new prose and corrected before the
+close** — the bare non-musical *figure*, in three places this batch wrote (the *Current State*
+historical banner, [[OI-47]]'s INDEX cell and its detail note), each now reading *acceptance
+numbers*. **Tenth consecutive batch whose self-check caught a collision in its own new text**, and
+this one arrived the same way the last several did: by restating a neighbouring sentence that already
+used the collided word.
+
+**One class is DELIBERATELY NOT corrected and is named rather than fixed:** the bare *register* for
+the open-items and decisions registers, which this batch's prose uses as the surrounding record uses
+it throughout. Correcting it inside inherited idiom is the tree-wide rename [[OI-229]] forbids
+unilaterally, and the same row fixes the ORDER — the inventory first, then per-word batches the user
+rules, governing surfaces first.
+
+**On the D-253 side this batch's conduct was clean, and the guard's own known false-deny fired once
+and was not worked around.** Every working-tree read went through the file tools; the shell was used
+only for git object queries by explicit hash, for committed tools, and for the sanctioned enumeration
+tool. One `tail` aimed at a scratchpad path through an unexpanded shell variable was DENIED — the
+[[OI-300]] shape (2), which the guard family's ruling closes as deny-on-indeterminate by design — and
+the file was read through the file tools instead.
+
+**One stale-read hazard was met and caught before it fed anything.** The first enumeration of changed
+paths was written to a `/tmp` path that resolves elsewhere under this shell, and the file read back
+was a STALE artifact from an earlier session — visibly disagreeing with the session-start snapshot,
+which is what exposed it. The enumeration was re-run to an explicit absolute path and no value from
+the stale read entered any act. **It is the founding hazard D-253 exists against, arriving through a
+path this session chose rather than through a mount.**
+
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch
 or by any batch of this arc. D-231 stands and phase 1 is open; #8's three-clause gate stands.**
