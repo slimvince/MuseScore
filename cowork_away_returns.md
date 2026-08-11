@@ -5188,6 +5188,88 @@ no golden, no corpus of scores, no `tools/corpus/` or `tools/robust_stop/` movem
 change to the analysis, no fix to inference, no design. **Phase 1's completion statement is not
 written, not drafted and not partially written here.**
 
+### Task 1 — OPENED AND STOPPED AT AN ENTRY BOUNDARY. One entry re-homed by the procedure's STEP 1 — a pointer move with NO text written — and deriving the population first found §2.18
+
+**The population was derived fresh at task start (A4)** from `tools/audit/phase1_finish_line.json`
+and the route artifacts, not carried from the dispatch or from this file. **Item 1's live remainder
+is still EMPTY**, which is derived at `tools/audit/decisions/finish_line_item1_routes.json` and is
+the ninth continuation's own result, so the homing work sits where that batch said it would: in the
+findings-not-rules item and in items 3 and 5. **Item 5 is HELD by §2.18** — its single entry is the
+one [[OI-369]] is about, and re-homing it is the act a ruling forbids. No count is restated here
+(**D-431**).
+
+**A2 HOLDS.** The act ran under the registered procedure (**D-668**), in its order, and the kind
+half was judged at the receiving section BEFORE the write.
+
+**What was done, and why this entry. D-350 → `cowork_layer3_keymode_design.md` §0's terms row.** It
+is the cleanest member of the findings-not-rules item for a reason the record supplies rather than a
+session judging it: **the authored section judgment for its former home says, in its own words, that
+the one rule that block carries — *which of the two boundary numbers is THE Layer-3 confidence* — is
+*a decision recorded in a banner rather than in a rule-stating section*.** The record had already
+identified this entry, named its defect and named the remedy; what was left was performing it.
+
+**★ STEP 1 WAS TRIED FIRST AND IT APPLIED, WHICH IS THE HALF WORTH READING — AND IT IS THE FIRST
+TIME IN THIS ARC THAT IT HAS.** D-668's procedure tries the pointer move before any write, and every
+previous homing act in this arc reached step 2. Here §0's terms row **already states the rule, in
+both of its halves and with the closure label the entry's own verbatim carries**: that the sequence
+margin IS the layer's published boundary confidence, and that the per-slice emission sigmoid is an
+internal gate input and a diagnostic and NOT the boundary confidence. **So NO TEXT WAS WRITTEN INTO
+THE SPECIFICATION and none was moved** — writing the rule a second time elsewhere in the same
+document would have put two copies of one rule in one place, which is the thing #6 exists against.
+The home field moves, the verbatim is re-taken from the row, and the former home and former verbatim
+are preserved whole in the entry's provenance (#12).
+
+**★ WHAT THE NEW HOME DOES NOT CARRY IS RECORDED AT THE ENTRY, because a pointer move must not
+narrow one silently.** The former banner's closing rider — *only the Stage-5 calibration of the
+margin remains* — is a statement of OUTSTANDING WORK rather than of the rule, and it stays exactly
+where it stands, in the banner and in the entry's plain restatement; the banner text is not edited by
+this act. **And the entry's DEFENSE is not supplied by the move and was not invented:** its rationale
+records an established gap — the record states the closure and its outcome and gives no reason for
+choosing the whole-run margin over the per-stretch sigmoid — and names what stands in its place.
+
+**★ THE CLASSIFICATION CONFIRMS THE MOVE RATHER THAN THE PROSE ASSERTING IT.** D-350 now classifies
+`contract-home`, decided by the section-level unit — the delegation reaches this section and it
+STATES RULES — which is the same mechanism every homing act in this arc has been checked by.
+
+**Two authored inputs were maintained, both caught by their own tools' STOPs rather than by a reader**
+(**D-648**). **The receiving section had never held an entry**, so it carried no `states_rules`
+judgment and the classifier refused to run until one was authored: it was written with its evidence
+read in place BEFORE the write, on the ground that every row of that table FIXES the operational
+meaning a term carries wherever the specification uses it — a binding definition, not an observation
+— with the same judgment authored for another design document's §0 two waves earlier as its
+precedent. **And the classifier then STOPPED in the other direction:** the opening block's judgment
+now decides no entry, D-350 having been its only one. **It is moved WHOLE into the sibling block the
+classifier does not read**, with the reason and with a STOP armed the other way — and **here the
+reason is unusually direct, which is why it is stated rather than filed:** that judgment is **the
+SOURCE the other two instances of this shape cite**, one of them quoting its phrase verbatim.
+Deleting it would have left a live citation pointing at nothing. It is the third instance of a shape
+the eighth continuation met, and it is treated identically.
+
+**★ AND ONE THING EXPECTED DID NOT HAPPEN, checked rather than carried from the pattern.** The
+register home anchors report **zero drift**, run after the last edit rather than assumed: a pointer
+move writes nothing into any document, so nothing below any home moved. It is the second time this
+batch has checked that expectation instead of inheriting it.
+
+**★ WHERE TASK 1 STOPS, AND IT STOPS AT A CLEAN ENTRY BOUNDARY ON CAPACITY.** One entry is complete
+in itself; **the remainder is UNTOUCHED rather than partly worked**, and nothing is left half-edited.
+That is the allowance **D-672** states, and this is its second exercise under a registered rule. The
+remaining population is to be derived fresh: the findings-not-rules item's other entries, item 3's
+single one, and item 5's — the last of which is now HELD by [[OI-369]] rather than owed.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires. **Three derived views went stale by this task's own edits
+and were REGENERATED, not repaired** — the outstanding-delegation view, the completion inventory and
+the finish line — which is completing an edit rather than fixing a finding. Every verdict is at
+`tools/audit/guard_state.json` → `summary` and none is restated here (**D-431**).
+
+**Holds:** the remaining homing population, untouched and to be derived fresh; and item 5's single
+entry, held by [[OI-369]] because both of its closing acts are the user's. **Surfacings:** **§2.18**,
+which this task's own derivation produced and which was rowed in the preceding commit under rule (c).
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

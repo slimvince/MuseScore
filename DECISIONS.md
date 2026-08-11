@@ -218,7 +218,7 @@ project's own and are defined here because they are used before any entry explai
 | Decisions whose date is not stated in the record | 239 |
 | Decisions whose ratifier is not stated in the record | 366 |
 | Decisions recorded outside the specification that owns them | 375 |
-| — of which a documentation gap | 28 |
+| — of which a documentation gap | 27 |
 | — of which recorded only on a tracking surface, with no home at all | 1 |
 | — of which a project-wide convention, correctly homed | 45 |
 | — of which a decision about the process, correctly homed | 139 |
@@ -238,9 +238,9 @@ Alongside the register, every one of the harvested statements about decisions in
 | Groups of near-identical statements ("clusters") | **14460** |
 | Clusters carrying a recorded disposition | **14460** |
 | — restates | 5547 |
-| — not-a-decision | 5539 |
+| — not-a-decision | 5540 |
 | — boilerplate | 74 |
-| — no-spec-home | 656 |
+| — no-spec-home | 655 |
 | — unresolved | 2644 |
 
 The full disposition table, and the numbered rule behind each one, are in `tools/audit/decisions/cluster_dispositions.csv` and `tools/audit/decisions/disposition_manifest.json`.
@@ -490,7 +490,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-347 | The cost of changing tonality is cheap-to-stay plus a term growing with tonal distance plus a large extra penalty on the relative major/minor switch | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §9 |
 | D-348 | Tonal distance in the change cost is circle-of-fifths distance — not semitone distance, not differing scale tones — and brief-versus-sustained has no duration threshold at all | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §4 |
 | D-349 | The key/mode confidence compares whole readings — the winning run against the best run forced to a different tonality there — not the top two candidates at that stretch | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §9 |
-| D-350 | Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` the opening block (above the first section heading) ⚠gap |
+| D-350 | Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §0 |
 | D-351 | The key/mode search is its own decoder; the chord decoder is not reused for it | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §9 |
 | D-352 | The key/mode grading bar splits the cases first: agreement where the published analyses are unanimous, any recorded reading (or an uncertain mark) where they are not | LIVE | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §10 |
 | D-353 | The key/mode layer is graded on two goals kept apart — agreement where the notes decide, and whether its own uncertainty lands on the genuinely ambiguous cases | LIVE | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §10 |
@@ -1052,8 +1052,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `d811efdb1935699beffc8bb7fc15e6a5fcd3e945`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `d9d8b2b3040c2c4e…`).
+- Coverage figures above regenerated at commit `6104a4cb823746930141aa54db33cd275c42cf78`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `5a1efb9f139400a6…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

@@ -41,12 +41,23 @@
     "documents": {
       "cowork_layer3_keymode_design.md": {
         "delegation_scope": "document",
+        "section_kind_retired_when_their_last_entry_was_re_homed": {
+          "retired_2026_08_11_the_thirteenth_return_continuation": "CC, dispatch `cc_instruction_return_continuation_13.md` Task 1, under the user's Ruling 38 / D-664 — the finish-line item for entries the delegation REACHES in a section that RECORDS FINDINGS. The judgment below decided exactly one entry, D-350, and that entry moved by D-668's STEP 1 — a POINTER MOVE with no text written — to §0's terms row, which STATES RULES. The classifier then STOPPED on it as an 'authored section-kind judgment that decides no entry', which is that guard working. ★ IT IS MOVED WHOLE RATHER THAN DELETED (#12, D-648), and here the reason is unusually direct: this judgment is THE SOURCE THE OTHER TWO INSTANCES OF THIS SHAPE CITE. `cowork_layer6_grouping_design.md`'s retired judgment quotes it by name — 'the same judgment the record already made for `cowork_layer3_keymode_design.md`'s opening block' — and takes its phrase 'a decision recorded in a banner rather than in a rule-stating section' verbatim. Deleting it would leave a live citation pointing at nothing and would destroy the evidence that this re-home followed the record rather than a session's preference; its own text names the entry it decided and the reason that entry needed moving. It is the THIRD instance of a shape the eighth return continuation met, and it is treated identically. The classifier reads `section_kind` and nothing else, so a judgment parked here is inert. ★ IF THE OPENING BLOCK EVER HOLDS AN ENTRY AGAIN, its judgment is RE-READ into `section_kind` rather than restored from here — a reading made of a section as it stood is not evidence about a section that has since changed.",
+          "judgments": [
+            {
+              "heading_line": 1,
+              "heading_text": "Architectural Layer 3 — KEY/MODE — Architecture & Design",
+              "states_rules": false,
+              "why": "The document's opening block is its STATUS BANNER: it records the SIGNED/WIRED state, which commits landed, which follow-ups are tracked, and what the document is. That is a record of delivery status — the tracking-surface shape OI-240 ruled is not a home — and the one rule it does carry (which of the two boundary numbers is THE Layer-3 confidence) is a decision recorded in a banner rather than in a rule-stating section. Read in full this session at :1-25."
+            }
+          ]
+        },
         "section_kind": [
           {
-            "heading_line": 1,
-            "heading_text": "Architectural Layer 3 — KEY/MODE — Architecture & Design",
-            "states_rules": false,
-            "why": "The document's opening block is its STATUS BANNER: it records the SIGNED/WIRED state, which commits landed, which follow-ups are tracked, and what the document is. That is a record of delivery status — the tracking-surface shape OI-240 ruled is not a home — and the one rule it does carry (which of the two boundary numbers is THE Layer-3 confidence) is a decision recorded in a banner rather than in a rule-stating section. Read in full this session at :1-25."
+            "heading_line": 42,
+            "heading_text": "0. Terms (read first — nothing below uses a term before its row)",
+            "states_rules": true,
+            "why": "AUTHORED 2026-08-11 (CC, `cc_instruction_return_continuation_13.md` Task 1) because §0 held no register entry until D-350 was re-homed into it, and the classifier's own STOP requires the judgment BEFORE the write (D-668). Read in place at :42-67. It STATES RULES: every row FIXES the operational meaning a term carries wherever this specification uses it — the section's own preamble says nothing below uses a term before its row — which is a binding definition and not an observation. The precedent is the same judgment authored for `cowork_voiceleading_axis_design.md` §0 on 2026-08-09. And this section does not merely define: the confidence row DECIDES, declaring which of the layer's two confidence numbers crosses the boundary, what the other is for, and the Class M classification the cross-layer confidence contract binds it under. What separates it from the opening block is precisely what the block's own judgment above says — that block RECORDS a closure, this row STATES what the closure decided."
           },
           {
             "heading_line": 68,
@@ -10207,7 +10218,7 @@
       "id": "D-350",
       "group": "F",
       "title": "Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic",
-      "verbatim": "(The **sequence-margin confidence redesign** — which of the two boundary numbers is THE Layer-3\nconfidence — is **CLOSED by D-L3a, 2026-07-04**: the sequence margin is declared THE boundary confidence and the\nemission sigmoid demoted to gate-input/diagnostic; only the Stage-5 calibration of the margin remains.)",
+      "verbatim": "**As-built (D-L3a CLOSED, 2026-07-04): this sequence margin (`HarmonicRegion.keyConfidence`) IS the layer's published boundary confidence**; the per-slice emission sigmoid (`normalizedConfidence`) is an internal gate input (the downstream 0.8 KeyArea/cadence annotate gate) + diagnostic, NOT the boundary confidence.",
       "plain": "The tonality stage computes two different measures of how sure it is. The one that crosses the boundary to any other stage is the whole-run margin; the per-stretch one is kept only as an input to an internal threshold and for diagnosis. Only calibrating the published margin remains to be done.",
       "rationale": "derivation not recorded — the record states the closure and the outcome but gives no defense for choosing the whole-run margin over the per-stretch sigmoid. The neighbouring defense that IS recorded is for the margin's FORM, not for its selection as the published number (**D-349**), and the classification that constrains it is the cross-layer confidence contract's Class M — a ranking margin, never a calibrated probability (**D-267**, `cowork_layer3_keymode_design.md:39`).",
       "status": "live",
@@ -10215,12 +10226,12 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer3_keymode_design.md:32-34",
+      "home": "cowork_layer3_keymode_design.md:55",
       "home_is_layer_spec": false,
-      "nonspec_kind": "gap",
-      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
+      "nonspec_kind": "contract-home",
+      "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ HOME MOVED 2026-08-11 (CC, `cc_instruction_return_continuation_13.md` Task 1), under the registered homing procedure D-668, by its STEP 1 — the pointer move, tried before any write and taken because it applies. NO TEXT WAS WRITTEN INTO THE SPECIFICATION and none was moved: §0's terms row already STATED this rule, in both of its halves and with the closure label, so writing it a second time somewhere else would have put two copies of one rule into one document (#6). THE FORMER HOME, PRESERVED (#12): `cowork_layer3_keymode_design.md:32-34`, the document's opening STATUS BANNER — whose own authored section judgment says in terms that *the one rule it does carry (which of the two boundary numbers is THE Layer-3 confidence) is a decision recorded in a banner rather than in a rule-stating section*, which is what put this entry in the findings-not-rules item and is what this act discharges. THE FORMER VERBATIM, PRESERVED (#12): \"(The **sequence-margin confidence redesign** — which of the two boundary numbers is THE Layer-3\\nconfidence — is **CLOSED by D-L3a, 2026-07-04**: the sequence margin is declared THE boundary confidence and the\\nemission sigmoid demoted to gate-input/diagnostic; only the Stage-5 calibration of the margin remains.)\" ★ WHAT THE NEW HOME DOES NOT CARRY, stated because a pointer move must not narrow an entry silently: the former banner's closing rider — *only the Stage-5 calibration of the margin remains* — is a statement of OUTSTANDING WORK rather than of the rule, and it is untouched where it stands, in the banner and in the plain restatement above. The banner text is not edited by this act. The entry's DEFENSE is likewise not supplied by the move and is not invented: the rationale below records the established gap and names what stands in its place.",
       "patterns": [
-        "CLOSED by D-L3a"
+        "IS the layer's published boundary confidence"
       ],
       "legacy_subject": true,
       "entry_ratified": {
@@ -10230,14 +10241,14 @@
         ]
       },
       "home_section": {
-        "heading_line": 1,
-        "section": "# Architectural Layer 3 — KEY/MODE — Architecture & Design",
-        "label": "the opening block (above the first section heading)",
+        "heading_line": 42,
+        "section": "## 0. Terms (read first — nothing below uses a term before its row)",
+        "label": "§0",
         "delegated": true,
         "delegation": "ARCHITECTURE.md:1690",
-        "states_rules": false,
-        "verdict": "EXCLUDE",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS",
+        "states_rules": true,
+        "verdict": "ADMIT",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES",
         "former_class": "contract-home",
         "class_before_phase1q": "contract-home",
         "class_before_phase1r": "gap",

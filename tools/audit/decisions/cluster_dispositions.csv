@@ -2346,7 +2346,7 @@ DC-02344,1,restates,BR-3,D-041,cowork_docs,bullet,cowork_layer2_slicing_design.m
 DC-02345,1,unresolved,BR-8,,cowork_docs,bullet,cowork_layer2_slicing_design.md
 DC-02346,1,unresolved,BR-8,,cowork_docs,bullet,cowork_layer2_slicing_design.md
 DC-02347,1,restates,BR-3,D-119,cowork_docs,bullet,cowork_layer2_slicing_design.md
-DC-02348,1,restates,BR-3,D-013;D-051;D-052;D-053;D-119;D-191;D-255;D-350,cowork_docs,blockquote,cowork_layer3_keymode_design.md
+DC-02348,1,restates,BR-3,D-013;D-051;D-052;D-053;D-119;D-191;D-255,cowork_docs,blockquote,cowork_layer3_keymode_design.md
 DC-02349,1,not-a-decision,BR-7,,cowork_docs,table_row,cowork_layer3_keymode_design.md
 DC-02350,1,not-a-decision,BR-7,,cowork_docs,table_row,cowork_layer3_keymode_design.md
 DC-02351,1,restates,BR-3,D-027,cowork_docs,paragraph,cowork_layer3_keymode_design.md
@@ -2387,7 +2387,7 @@ DC-02385,1,restates,BR-3,D-119;D-356,cowork_docs,bullet,cowork_layer3_keymode_de
 DC-02386,1,restates,BR-3,D-051,cowork_docs,bullet,cowork_layer3_keymode_design.md
 DC-02387,1,no-spec-home,BR-4,D-354,cowork_docs,bullet,cowork_layer3_keymode_design.md
 DC-02388,1,restates,BR-3,D-097;D-183;D-355,cowork_docs,bullet,cowork_layer3_keymode_design.md
-DC-02389,1,restates,BR-3,D-089;D-098;D-122,cowork_docs,paragraph,cowork_layer3_keymode_design.md
+DC-02389,1,restates,BR-3,D-089;D-098;D-122;D-350,cowork_docs,paragraph,cowork_layer3_keymode_design.md
 DC-02390,1,restates,BR-3,D-097;D-183,cowork_docs,bullet,cowork_layer3_keymode_design.md
 DC-02391,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_layer3_keymode_design.md
 DC-02392,1,unresolved,BR-8,,cowork_docs,bullet,cowork_layer3_keymode_design.md
@@ -5395,7 +5395,7 @@ DC-05393,1,not-a-decision,BR-12,,cc_reports,table_row,cc_dl3a_closeout_report.md
 DC-05394,1,not-a-decision,BR-6,,cc_reports,table_row,cc_dl3a_closeout_report.md
 DC-05395,1,not-a-decision,BR-2,,cc_reports,heading,cc_dl3a_closeout_report.md
 DC-05396,1,restates,BR-3,D-119,cc_reports,paragraph,cc_dl3a_closeout_report.md
-DC-05397,1,no-spec-home,BR-4,D-350,cc_reports,bullet,cc_dl3a_closeout_report.md
+DC-05397,1,not-a-decision,BR-12,,cc_reports,bullet,cc_dl3a_closeout_report.md
 DC-05398,1,not-a-decision,BR-12,,cc_reports,bullet,cc_dl3a_closeout_report.md
 DC-05399,1,restates,BR-3,D-119,cc_reports,paragraph,cc_dl3a_closeout_report.md
 DC-05400,1,not-a-decision,BR-2,,cc_reports,heading,cc_dl3a_closeout_report.md

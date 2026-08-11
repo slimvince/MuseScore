@@ -217,8 +217,8 @@
   "criterion": "C1 and C2",
   "register_population": 672,
   "by_home_class": {
-   "contract-home": 162,
-   "gap": 28,
+   "contract-home": 163,
+   "gap": 27,
    "homed-in-a-layer-specification": 297,
    "process": 139,
    "project-convention": 45,
@@ -226,7 +226,7 @@
   },
   "class_1_documentation_gap": {
    "what_it_is": "The register's own home_rule: a decision that governs a layer and is not findable from that layer's section - a documentation gap carrying an OPEN_ITEMS.md row. This is C1's outstanding population.",
-   "count": 28,
+   "count": 27,
    "by_home_document": {
     "cowork_architecture_reassessment.md": 4,
     "cowork_structural_integrity_audit.md": 4,
@@ -237,7 +237,6 @@
     "cowork_census_full_needs_audit.md": 1,
     "cowork_factorization_desk_simulation.md": 1,
     "cowork_layer1_note_model_design.md": 1,
-    "cowork_layer3_keymode_design.md": 1,
     "cowork_phase2_architecture_review.md": 1,
     "cowork_sensitive_cell_probe.md": 1,
     "cowork_term_theory_grounding.md": 1,
@@ -251,7 +250,6 @@
     "D-283",
     "D-284",
     "D-285",
-    "D-350",
     "D-402",
     "D-403",
     "D-404",
@@ -279,7 +277,7 @@
   },
   "class_1a_gap_whose_home_FAILS_the_section_criterion": {
    "what_it_is": "Entries carrying a home_section block whose verdict is EXCLUDE: the home document exists and was graded, and the criteria in force (clause (a), D-432, D-430) reject it. These are gaps WITH a measured reason.",
-   "count": 28,
+   "count": 27,
    "by_reason": {
     "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section": {
      "count": 1,
@@ -288,9 +286,8 @@
      ]
     },
     "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS": {
-     "count": 10,
+     "count": 9,
      "ids": [
-      "D-350",
       "D-403",
       "D-404",
       "D-405",
@@ -1909,7 +1906,7 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 643,
+    "count": 644,
     "of": 672
    },
    {
@@ -1925,7 +1922,7 @@
  "the_shape_of_what_remains": {
   "note": "Derived from the blocks above; every figure is computed, none transcribed.",
   "complete_half": {
-   "entries_not_homed_in_a_specification_that_owns_them": 29,
+   "entries_not_homed_in_a_specification_that_owns_them": 28,
    "of_which_never_graded_against_the_criteria_in_force": 0,
    "entries_whose_defense_the_record_does_not_state": 0,
    "documents_awaiting_a_delegation_only_the_user_may_write": 1,
@@ -2047,7 +2044,7 @@
   "open_rows_in_the_index": 252,
   "true_half_wide_cut": 60,
   "true_half_gating": 43,
-  "complete_half_gap": 28,
+  "complete_half_gap": 27,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0
  }

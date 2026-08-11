@@ -22,11 +22,11 @@
       "gap": 102
     },
     "class_after": {
-      "contract-home": 162,
-      "gap": 28
+      "contract-home": 163,
+      "gap": 27
     },
-    "entries_moved": 84,
-    "moved_to_gap": 5,
+    "entries_moved": 83,
+    "moved_to_gap": 4,
     "moved_to_contract_home": 79,
     "decided_by": {
       "D-430, the section-level unit": 173,
@@ -486,10 +486,9 @@
         "contract-home": 16
       },
       "after": {
-        "contract-home": 15,
-        "gap": 1
+        "contract-home": 16
       },
-      "moves_out": 1,
+      "moves_out": 0,
       "moves_in": 0,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
@@ -544,14 +543,14 @@
           ],
           "class_after": "contract-home"
         },
-        "the opening block (above the first section heading)": {
-          "heading_line": 1,
+        "§0": {
+          "heading_line": 42,
           "delegated": true,
-          "states_rules": false,
+          "states_rules": true,
           "entries": [
             "D-350"
           ],
-          "class_after": "gap"
+          "class_after": "contract-home"
         },
         "§10": {
           "heading_line": 333,
@@ -584,7 +583,8 @@
           ],
           "class_after": "contract-home"
         }
-      }
+      },
+      "moves_in_since_phase1q": 1
     },
     "cowork_score_census.md": {
       "entries": 24,
@@ -2995,23 +2995,23 @@
       "id": "D-350",
       "title": "Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic",
       "document": "cowork_layer3_keymode_design.md",
-      "home": "cowork_layer3_keymode_design.md:32-34",
-      "section": "the opening block (above the first section heading)",
-      "section_heading_line": 1,
+      "home": "cowork_layer3_keymode_design.md:55",
+      "section": "§0",
+      "section_heading_line": 42,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1690",
       "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
       "section_delegated": true,
-      "section_states_rules": false,
+      "section_states_rules": true,
       "class_before_phase1q": "contract-home",
       "class_before_phase1r": "gap",
       "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": true,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
+      "class_after": "contract-home",
+      "moves": false,
+      "moves_since_phase1q": true,
+      "moves_since_phase1r": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-351",
@@ -6030,7 +6030,7 @@
   ],
   "the_phase_1r_re_run": {
     "why": "The user WROTE delegations on 2026-08-03 (the OI-293 write list) for the six documents this pass had reported losing entries. The pass therefore runs a SECOND time, over classes it had itself moved. `class_before_phase1q` still holds the state before the FIRST run, so `totals` and `by_document` below are unchanged in meaning; this block is the movement caused by the written delegations alone.",
-    "entries_moved_since_phase1q": 91,
+    "entries_moved_since_phase1q": 92,
     "moved_to_contract_home": [
       {
         "id": "D-270",
@@ -6148,6 +6148,13 @@
         "id": "D-342",
         "document": "cowork_layer5_function_design.md",
         "section": "§11",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-350",
+        "document": "cowork_layer3_keymode_design.md",
+        "section": "§0",
         "from": "gap",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
@@ -6678,8 +6685,15 @@
   },
   "the_2026_08_08_apply": {
     "why": "The user WROTE three more delegations on 2026-08-08 (the document-route ruling, route (i)) and every read wave since phase 1r entered register entries whose `home_section` had no writer while the applying run was held. This block is the movement caused by everything since the phase-1r pass — graded against `class_before_the_2026_08_08_apply`, the fourth frozen epoch, which is read back from each entry and never overwritten (#12).",
-    "entries_moved_since_phase1r": 23,
+    "entries_moved_since_phase1r": 24,
     "moved_to_contract_home": [
+      {
+        "id": "D-350",
+        "document": "cowork_layer3_keymode_design.md",
+        "section": "§0",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
       {
         "id": "D-398",
         "document": "cowork_voiceleading_axis_design.md",
@@ -6868,12 +6882,6 @@
       "document": "cowork_architecture_reassessment.md",
       "section": "§4",
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-350",
-      "document": "cowork_layer3_keymode_design.md",
-      "section": "the opening block (above the first section heading)",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
     }
   ],
   "moved_in": [

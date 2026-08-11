@@ -15,11 +15,11 @@
    },
    "backbone": {
     "file": "tools/audit/decisions/backbone_decisions.json",
-    "sha256": "d9d8b2b3040c2c4e03e222d05271799c076082bdce920a8d04848040a884677b",
+    "sha256": "5a1efb9f139400a6d2be0d1a9fde1bcd023091d308f7608fd44889c178dd868f",
     "decision_count": 672
    }
   },
-  "head_commit": "d811efdb1935699beffc8bb7fc15e6a5fcd3e945",
+  "head_commit": "6104a4cb823746930141aa54db33cd275c42cf78",
   "disposition_vocabulary": [
    "restates",
    "not-a-decision",
@@ -70,7 +70,7 @@
    {
     "id": "BR-4",
     "rule": "The cluster's text matches one or more backbone decisions, ALL of which are recorded outside any layer specification. Recorded as a decision with no layer-specification home (named) — the Task-4 documentation-gap class.",
-    "clusters": 656
+    "clusters": 655
    },
    {
     "id": "BR-5",
@@ -105,7 +105,7 @@
    {
     "id": "BR-12",
     "rule": "The unit is in a Claude Code session REPORT (`cc_*.md` that is not a dispatch) and carries none of the stated ruling words. A report records work done. Same register-rule reasoning as BR-11. This is BR-6 widened from its narrative-pattern test to the whole report class, minus the ruling vocabulary.",
-    "clusters": 987
+    "clusters": 988
    },
    {
     "id": "BR-13",
@@ -145,9 +145,9 @@
   ],
   "disposition_counts": {
    "restates": 5547,
-   "not-a-decision": 5539,
+   "not-a-decision": 5540,
    "boilerplate": 74,
-   "no-spec-home": 656,
+   "no-spec-home": 655,
    "unresolved": 2644
   },
   "unresolved_partition_by_surface": {
@@ -49711,8 +49711,7 @@
     "D-053",
     "D-119",
     "D-191",
-    "D-255",
-    "D-350"
+    "D-255"
    ],
    "categories": [
     "cowork_docs"
@@ -50554,7 +50553,8 @@
    "decisions": [
     "D-089",
     "D-098",
-    "D-122"
+    "D-122",
+    "D-350"
    ],
    "categories": [
     "cowork_docs"
@@ -111546,11 +111546,9 @@
   {
    "cluster_id": "DC-05397",
    "size": 1,
-   "disposition": "no-spec-home",
-   "rule": "BR-4",
-   "decisions": [
-    "D-350"
-   ],
+   "disposition": "not-a-decision",
+   "rule": "BR-12",
+   "decisions": [],
    "categories": [
     "cc_reports"
    ],

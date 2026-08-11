@@ -297,8 +297,8 @@
    "half": "COMPLETE",
    "criterion": "C1",
    "population": {
-    "entries": 10,
-    "documents": 5,
+    "entries": 9,
+    "documents": 4,
     "entry_ids_by_document": {
      "cowork_evidence_inventory.md": [
       "D-521",
@@ -312,9 +312,6 @@
      "cowork_layer1_note_model_design.md": [
       "D-518"
      ],
-     "cowork_layer3_keymode_design.md": [
-      "D-350"
-     ],
      "cowork_structural_integrity_audit.md": [
       "D-403",
       "D-404",
@@ -323,8 +320,8 @@
     },
     "★_this_is_the_ENTRY_level_cut": "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling has already discharged are subtracted, and are listed below rather than silently absent.",
     "at_document_granularity_before_the_re_cut": {
-     "entries": 10,
-     "documents": 5,
+     "entries": 9,
+     "documents": 4,
      "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the figure this item published before ruling R3."
     },
     "discharged_by_an_entry_level_ruling": {},
@@ -650,13 +647,13 @@
  "counted": {
   "items_on_the_finish_line": 9,
   "items_that_gate": 8,
-  "register_entries_owed_a_home": 22,
+  "register_entries_owed_a_home": 21,
   "register_entries_owed_a_defense": 0,
   "open_rows_owed_on_the_true_half_that_gate": 43,
   "open_rows_owed_a_reach_verdict": 17,
   "items_with_a_closing_route_only_the_user_may_take": 1,
   "★_that_count_is_items_not_acts": "It counts items at least ONE of whose closing routes is the user's — not items the user alone can close. Items offering a user route and a session route are in it, because a reader deciding what to commission needs to see them.",
-  "register_entries_owed_a_home_at_document_granularity": 29,
+  "register_entries_owed_a_home_at_document_granularity": 28,
   "register_entries_discharged_by_an_entry_level_ruling": 7,
   "★_which_of_those_two_figures_is_the_finish_line": "The entry-level one, on ruling R3. The document-granularity figure is kept beside it so the movement is visible rather than inferred (#12), and it is the figure this artifact published before the re-cut.",
   "reconciliation": {
