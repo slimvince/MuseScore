@@ -3360,6 +3360,18 @@ cannot be attributed to either run, so the exit codes — which are per process 
 separately — are what this account rests on, and the file is corroboration rather than evidence. It
 is written down because the same shape would matter more on a measurement than on a test suite.
 
+**★ AND THE SENTENCE ABOVE WAS WRITTEN ONE REPORT AHEAD OF ITS EVIDENCE — THE SHARPER HALF OF THE
+SAME DEFECT, CORRECTED HERE RATHER THAN LEFT TO STAND (D-434).** When *"both completed and both
+exited zero"* was written, **only the first run had reported**; the second was still running and its
+exit code was a PREDICTION. **It has since completed and exited zero, verified at its own process
+record**, so the sentence is TRUE at HEAD and nothing resting on it moves. What was wrong is the
+ORDER — an assertion entered the record before the thing it asserts was established, which is what
+#19 refuses — and it deserves more attention than the duplicate run itself: a duplicate run is a
+wasted process, while a claim written ahead of its evidence is the shape that survives into a
+document and is read later as measured. **Nothing else in this batch rests on an unreported run:**
+every other stated outcome was read at its own artifact before it was written, and the three suites'
+results were each taken from a completed process's own exit code.
+
 **★ TEN BLOCKS ARE HELD, BY THE RULING'S OWN CLAUSE, AND THE LINE IS WORTH READING.** Their claim is
 that a joint-INTERNAL module — the adapter, the decoder, the tables loader, the class value type,
 the fact adapter — has no production consumer. No outside `src/` file references those symbols, so
