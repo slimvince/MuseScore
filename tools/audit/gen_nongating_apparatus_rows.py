@@ -109,6 +109,27 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-303": (GATES, "a statement about the analysis's build state",
+               "Six comments in src/ and tools/ say the record arm is 'default OFF' and that the "
+               "record section adapter has no caller. D-438's line inside the documentation rows "
+               "makes a correction to a statement about the analysis or its BUILD STATE gating, "
+               "and every one of the six is exactly that - they are where a reader goes to learn "
+               "which analysis arm runs, and all six name the dormant one.",
+               "RESOLVED 2026-08-11 - all six claims are discharged and every one was verified AT "
+               "THE FILES by the closing session rather than at any record of them "
+               "(`cc_instruction_return_continuation_13.md` Task 2). Five were corrected by the "
+               "user's Ruling 16, the one licensed comment-only `src/` act; the sixth was corrected "
+               "in two halves under Rulings 48 and 59, the second half being a SECOND block of the "
+               "same file that the first correction did not reach - which is why the row survived "
+               "an act that appeared to close it. THE VERDICT WAS CORRECT WHILE IT STOOD and is "
+               "kept whole: what it graded was the SUBJECT, and the subject was a statement about "
+               "which analysis arm runs, which is exactly what D-438's line puts on the gating "
+               "side. It is retired because the row closed, never because it was wrong. WHAT THE "
+               "CLOSURE DOES NOT DISCHARGE is carried forward rather than lost: the enumeration "
+               "that located these six had no measured reach against the text it scans, so its "
+               "empty verdict bounded nothing - that is OI-368, closed separately by a ruling that "
+               "BOUNDED the pattern rather than measuring it, and its closure is explicitly not a "
+               "claim that the pattern has been measured."),
     "OI-276": (GATES, "specification truth",
                "Three live-specification documents state as current what is false at HEAD, and "
                "one names as its acceptance criterion, five times, a regression gate superseded "
@@ -578,12 +599,7 @@ V = {
                "row that is not wholly apparatus, or whose subject its own text does not settle, "
                "GATES by the declaration's own default - the declaration only ever removes a wait "
                "where the row supports removing it."),
-    "OI-303": (GATES, "a statement about the analysis's build state",
-               "Six comments in src/ and tools/ say the record arm is 'default OFF' and that the "
-               "record section adapter has no caller. D-438's line inside the documentation rows "
-               "makes a correction to a statement about the analysis or its BUILD STATE gating, "
-               "and every one of the six is exactly that - they are where a reader goes to learn "
-               "which analysis arm runs, and all six name the dormant one."),
+    # OI-303's verdict moved to RETIRED_VERDICTS on 2026-08-11 when the row closed.
     "OI-304": (GATES, "a statement about the analysis's build state",
                "Two dated annotations assert that the owed iteration-API renames have a subject "
                "including LIVE Layer-1.5 code; D-428 was corrected against the call sites one wave "

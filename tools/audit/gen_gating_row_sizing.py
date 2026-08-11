@@ -587,24 +587,6 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
-        "row": "OI-303",
-        "anchor_quote": "correcting them is a `src/` change and the phase-1w dispatch forbids one",
-        "the_act_owed": (
-            "Verify the six named sites at the objects, and then flip the row or name what survives — "
-            "because the record may already be stale about it (see the flag below)."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "Six located sites, each checkable at its own file against a committed enumeration that "
-            "already records what was done to it. What the row asks for is a reading, not a "
-            "correction — and if the reading confirms what the enumeration says, the remaining act is "
-            "a flip with provenance."
-        ),
-        "the_second_half": None,
-    },
-    {
         "row": "OI-304",
         "anchor_quote": "the correction is an annotation act rather than an edit",
         "the_act_owed": (
@@ -960,6 +942,58 @@ SIZINGS = [
 # ---------------------------------------------------------------------------
 RETIRED_SIZINGS = [
     {
+        "row": "OI-303",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_13.md` Task 2) — and "
+            "it closed by PERFORMING exactly the act this sizing named, which is the first time in "
+            "this pass's short life that has happened. The sizing said *verify the six named sites "
+            "at the objects, and then flip the row or name what survives*; the previous batch "
+            "performed the verification and found one claim surviving, the user's Ruling 59 "
+            "licensed its correction, and the closing session re-verified all six AT THE FILES "
+            "before flipping. **The size was right and so was the blocker** — it was a reading, it "
+            "was small, and nothing beyond capacity stood in the way of the reading; what the "
+            "sizing could not know is that the reading would come back the other way once and need "
+            "a ruling before the flip."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-303",
+            "anchor_quote": ("correcting them is a `src/` change and the phase-1w dispatch forbids "
+                             "one"),
+            "the_act_owed": (
+                "Verify the six named sites at the objects, and then flip the row or name what "
+                "survives — because the record may already be stale about it (see the flag below)."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "Six located sites, each checkable at its own file against a committed enumeration "
+                "that already records what was done to it. What the row asks for is a reading, not "
+                "a correction — and if the reading confirms what the enumeration says, the "
+                "remaining act is a flip with provenance."
+            ),
+            "the_second_half": None,
+        },
+        "its_staleness_flag_as_it_stood": (
+            "ALL SIX of the sites this row names appear to have been corrected by acts taken after "
+            "it was rowed, and the row does not say so. Checked at "
+            "`tools/audit/arm_comment_sweep.json`: the four record-arm branch comments and the "
+            "record section adapter's *no src/ caller* comment are in that enumeration's CORRECTED "
+            "set, and the sixth — the measurement tool's comment saying the notation layer stays on "
+            "the legacy analysis — was corrected under its own later ruling. **NOT asserted "
+            "discharged and NOT flipped here:** what is checked is a committed enumeration's "
+            "account of what it did, not the six files, and confirming a row's subject at the "
+            "objects and flipping it is an act. The act is named in this row's sizing above."
+        ),
+        "why_the_flag_is_kept": (
+            "Because its CAUTION was the load-bearing half and was vindicated. The flag said in "
+            "terms that what it had checked was the enumeration's ACCOUNT of what it did and not "
+            "the six files — and reading the files is exactly what found a site the account did not "
+            "carry. A flag that had asserted discharge would have closed a gating row over a live "
+            "falsity."
+        ),
+    },
+    {
         "row": "OI-368",
         "why_it_retired": (
             "The row RESOLVED 2026-08-11 under the user's Ruling 59 of "
@@ -1007,16 +1041,11 @@ RETIRED_SIZINGS = [
 # accounts for it rather than to a sizing pass that would slip it in unremarked (the OI-362 precedent).
 # ---------------------------------------------------------------------------
 RECORD_MAY_BE_STALE = {
-    "OI-303": (
-        "ALL SIX of the sites this row names appear to have been corrected by acts taken after it was "
-        "rowed, and the row does not say so. Checked at `tools/audit/arm_comment_sweep.json`: the four "
-        "record-arm branch comments and the record section adapter's *no src/ caller* comment are in "
-        "that enumeration's CORRECTED set, and the sixth — the measurement tool's comment saying the "
-        "notation layer stays on the legacy analysis — was corrected under its own later ruling. "
-        "**NOT asserted discharged and NOT flipped here:** what is checked is a committed "
-        "enumeration's account of what it did, not the six files, and confirming a row's subject at "
-        "the objects and flipping it is an act. The act is named in this row's sizing above."
-    ),
+    # OI-303's staleness flag retired 2026-08-11 with its sizing, when the row closed. It is kept
+    # WHOLE at RETIRED_SIZINGS above rather than deleted (#12, D-648), because it is the record of a
+    # caution that turned out to be load-bearing: the flag said in terms that what it had checked was
+    # a committed enumeration's ACCOUNT of what it did and not the six files, and reading the files
+    # is what found the surviving site the account did not carry.
     "OI-220": (
         "Its live remainder is SMALLER than the row states, and the row does not say so. Of the six "
         "headers it names, one was CORRECTED by the licensed comment-only act and one carries no such "

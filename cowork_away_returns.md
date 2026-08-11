@@ -5270,6 +5270,76 @@ which this task's own derivation produced and which was rowed in the preceding c
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 2 — the session-performable gating rows: ONE ROW CLOSED, and it closed by performing exactly the act its own sizing named. OI-346's marks NOT reached
+
+**The population was derived fresh at task start (A3)** from `tools/audit/gating_row_sizing.json` →
+`rows_available_now`, which is the whole point of having sized them: the rows a session may take now
+are named rather than searched for. No count is restated here (**D-431**).
+
+**What was done, and why this row first.** [[OI-303]]'s sizing named its act as *verify the six named
+sites at the objects, and then flip the row or name what survives*, and it is the row the previous
+batch's verification left one claim short of closing — a claim the user's Ruling 59 licensed the
+correction of in this batch's own Task 0. **It is the only available row whose closing act had
+already been performed except for a ruling**, so it is the one act that could close a gating row
+rather than merely advance one.
+
+**★ ALL SIX CLAIMS WERE RE-VERIFIED AT THE FILES BY THIS SESSION, AND THAT IS DELIBERATE RATHER THAN
+DUPLICATED WORK.** The previous batch's remark on the row is itself a record of a reading, and its
+own lesson was that reading a committed enumeration's account of what it did is not the same as
+reading the files. So the files were read again: the four branch-point comments say *default ON* at
+all four sites and **no `default OFF, useJointNotationRecord` survives anywhere under `src/`**; the
+record section adapter carries no `DORMANT` claim at all; and the sixth claim stands nowhere, its
+second block having been corrected in Task 0. **[[OI-303]] FLIPS.**
+
+**★ ONE THING IS STATED PLAINLY BECAUSE A LATER SEARCH WILL HIT IT.** The false sentence still
+appears once in `tools/batch_analyze.cpp`, **inside a preserved-former-wording quotation** opening
+*"Until 2026-08-11 this sentence read:"*, with the correction stated around it. That is #12 working
+— the former wording kept where the correction was made — and it is a quotation of what the comment
+used to say rather than a claim about what is true. **No site asserts it.** It is recorded on the row
+and in its detail file so a future sweep expects the hit and reads the sentence it sits in.
+
+**What the flip does NOT discharge, so this is not the [[OI-283]] shape.** The general half — an
+enumerating pattern owing a measured reach before its empty verdict means anything — is [[OI-368]],
+closed separately in this batch's Task 0 by a ruling that BOUNDED the pattern rather than measuring
+it, and that closure is explicitly not a claim that the pattern has been measured.
+
+**★ OI-346's MARKS ARE NOT REACHED, and the reason is the one five previous continuations gave
+rather than a new judgment.** Its application half is a per-constant act over the Jazz preset table
+and the §6.7 idioms, **each with its validating corpus named** — so it is a pass with an
+establishment inside every member, not a leftover-capacity item, and opening it with what remained
+would have bought at most one constant while risking a half-edited table. **This is the sixth
+consecutive continuation to record that**, and the repetition is itself worth the user's attention:
+the row is not starved by accident, it is a real piece of work that no batch's leftover capacity has
+ever been the right place for.
+
+**The remaining available rows are NOT worked and nothing is claimed about them.** They are named
+individually in the sizing artifact, each with its act and its blocker, so the remainder is exactly
+the difference — which is what makes stopping here a recorded stop under **D-672** rather than a
+silent cap.
+
+**Three authored inputs were maintained, each caught by its own tool's STOP rather than by a reader**
+(**D-648**), and all three fired on the same flip. The apparatus declaration STOPPED on a verdict for
+a row the INDEX no longer carries open, and that verdict moved WHOLE into its retired table with the
+reason it closed and with what the closure does NOT discharge written beside it. The sizing pass
+STOPPED twice — once because its quoted words had left the INDEX, and once because its staleness flag
+named a row it no longer sizes — and both moved whole into the retired-sizings block added in Task 0.
+**★ THE STALENESS FLAG IS KEPT FOR A REASON WORTH ONE LINE:** its CAUTION was the load-bearing half
+and was vindicated. It said in terms that what it had checked was the enumeration's ACCOUNT of what
+it did and not the six files — and reading the files is exactly what found a site the account did not
+carry. A flag that had asserted discharge would have closed a gating row over a live falsity.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires; the open-items split reconciliation was run beside them.
+Every verdict is at `tools/audit/guard_state.json` → `summary` and none is restated here (**D-431**).
+
+**Holds:** the remaining available rows, named individually in the sizing artifact; OI-346's marks,
+with the reason above. **Surfacings:** none new bearing on the analysis — the subject of this task is
+a statement about which arm ships, and no behaviour moved.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

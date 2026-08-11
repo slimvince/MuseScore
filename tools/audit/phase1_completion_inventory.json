@@ -539,7 +539,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 41,
+   "count": 40,
    "ids": [
     "OI-105",
     "OI-107",
@@ -560,7 +560,6 @@
     "OI-290",
     "OI-296",
     "OI-299",
-    "OI-303",
     "OI-304",
     "OI-315",
     "OI-317",
@@ -586,7 +585,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 60,
+   "count": 59,
    "ids": [
     "OI-105",
     "OI-107",
@@ -616,7 +615,6 @@
     "OI-292",
     "OI-296",
     "OI-299",
-    "OI-303",
     "OI-304",
     "OI-309",
     "OI-311",
@@ -1289,24 +1287,6 @@
     }
    },
    {
-    "id": "OI-303",
-    "title": "Six comments in `src/` and `tools/` still describe the production record arm as \"default OFF\", or the record section adapter as having no caller",
-    "subject_column": "F — doc-sync debt (#10)",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync",
-     "stale"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "a statement about the analysis's build state"
-    }
-   },
-   {
     "id": "OI-304",
     "title": "Two dated annotations still assert the opposite of **D-428** as corrected one wave later",
     "subject_column": "F — doc-sync debt (#10)",
@@ -1660,7 +1640,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 43,
+   "count": 42,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1682,7 +1662,6 @@
     "OI-282",
     "OI-283",
     "OI-292",
-    "OI-303",
     "OI-304",
     "OI-309",
     "OI-311",
@@ -1792,7 +1771,6 @@
     "OI-292",
     "OI-296",
     "OI-299",
-    "OI-303",
     "OI-304",
     "OI-315",
     "OI-317",
@@ -1931,8 +1909,8 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 60,
-   "of_which_gate": 43,
+   "open_rows_in_the_wide_cut": 59,
+   "of_which_gate": 42,
    "of_which_apparatus_and_therefore_non_gating": 17,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 5
   },
@@ -2005,7 +1983,6 @@
    "OI-280",
    "OI-281",
    "OI-292",
-   "OI-303",
    "OI-304",
    "OI-309",
    "OI-311",
@@ -2041,9 +2018,9 @@
  },
  "counted": {
   "decisions_recorded": 672,
-  "open_rows_in_the_index": 252,
-  "true_half_wide_cut": 60,
-  "true_half_gating": 43,
+  "open_rows_in_the_index": 251,
+  "true_half_wide_cut": 59,
+  "true_half_gating": 42,
   "complete_half_gap": 27,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

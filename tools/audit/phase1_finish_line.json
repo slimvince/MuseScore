@@ -380,7 +380,7 @@
    "half": "TRUE",
    "criterion": "C3 — the specification text corrected wherever it states something false",
    "population": {
-    "rows": 43,
+    "rows": 42,
     "row_ids": [
      "OI-105",
      "OI-107",
@@ -402,7 +402,6 @@
      "OI-282",
      "OI-283",
      "OI-292",
-     "OI-303",
      "OI-304",
      "OI-309",
      "OI-311",
@@ -457,7 +456,6 @@
      "OI-292",
      "OI-296",
      "OI-299",
-     "OI-303",
      "OI-304",
      "OI-315",
      "OI-317",
@@ -649,7 +647,7 @@
   "items_that_gate": 8,
   "register_entries_owed_a_home": 21,
   "register_entries_owed_a_defense": 0,
-  "open_rows_owed_on_the_true_half_that_gate": 43,
+  "open_rows_owed_on_the_true_half_that_gate": 42,
   "open_rows_owed_a_reach_verdict": 17,
   "items_with_a_closing_route_only_the_user_may_take": 1,
   "★_that_count_is_items_not_acts": "It counts items at least ONE of whose closing routes is the user's — not items the user alone can close. Items offering a user route and a session route are in it, because a reader deciding what to commission needs to see them.",
