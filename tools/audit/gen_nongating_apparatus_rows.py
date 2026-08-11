@@ -891,6 +891,27 @@ V = {
                "now been MEASURED and does not separate. Recorded against the row's SUBJECT, "
                "never its remedy -- a second candidate signal is a mechanism design D-436 "
                "reserves to the user, and this row proposes none."),
+    "OI-369": (GATES, "the criterion - D-438's own line puts the completion of a specification on "
+                      "the gating side, and the default on doubt is to keep the wait",
+               "The phase-1 finish line's last homing item counts one register entry and names, as "
+               "the act that closes it, a write the user's own ruling forbids: the entry is "
+               "SUPERSEDED, and a supersession is register business with no specification home "
+               "owed. THE FIRST-CUT CLASSIFICATION REACHED THIS ROW and the verdict is authored "
+               "for it here, which is what the tool requires; no non-gating verdict is hand-added, "
+               "which is the act the record forbids. IT IS NOT SETTLED BY THE APPARATUS "
+               "CRITERION, and that is said plainly rather than argued around: the surface is a "
+               "derived completion map, which reads as this project's own tracking. What decides "
+               "it is D-438's line INSIDE the documentation rows, which puts the completion of a "
+               "specification on the gating side because the phase-1 rule makes specifications "
+               "COMPLETE and TRUE the thing that precedes everything else -- and what is owed here "
+               "is not a pointer, an anchor, a label, a banner or a section boundary, but the "
+               "question of whether one specification-completion obligation is owed at all. The "
+               "declaration's own default carries the remainder: a row whose subject its own text "
+               "does not settle GATES, because the declaration only ever removes a wait where the "
+               "row supports removing it. Recorded against the row's SUBJECT, never its remedy -- "
+               "the two closing acts it names are a subtraction in a derivation and a correction "
+               "to an authored closing act, and choosing between them is a mechanism question "
+               "D-436 reserves to the user."),
 }
 
 # The dispatch's assumption A3, recorded so the difference is reported rather than reconciled.

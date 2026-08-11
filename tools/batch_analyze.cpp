@@ -4654,11 +4654,23 @@ static int runJointDecodeFromAdapter(const std::string& artifactDir)
 // <artifact-dir> is no longer read for fitted values. The render below is the C++ counterpart of probe_run.decode_to_regions
 // + adoption_measure.region_to_dict — the exact rendering the ratified adoption record (root 77.03,
 // RN 64.12, key-local 78.42) was measured through, so a8 over the regenerated corpus reproduces it.
-// STAGED SCOPE (the re-scoped dispatch): the in-app NOTATION layer stays on the legacy analysis (its
-// tables-packaging + richer output-surface contract are the named successor increment); this flag
-// touches only the batch/corpus output. The flag is default-OFF, so batch_analyze's default output —
-// and every legacy unit test on it — is byte-identical. Inference is PRESET-INDEPENDENT (the ratified
-// mode decision): the three preset dirs converge at the inference fields by construction.
+// STAGED SCOPE, AS THE OI-178 ADOPTION LEFT IT: that adoption put the joint estimator on the
+// batch/corpus surface only, and this flag touches only the batch/corpus output. THAT STAGING IS
+// CLOSED — the 2026-07-27 notation switch put the joint estimator on the in-app notation surface too
+// (useJointNotationRecord defaults ON), so both production surfaces are the joint arm and the legacy
+// notation path is dormant, awaiting deletion at the OI-180 retirement map. (Until 2026-08-11 this
+// sentence read: "the in-app NOTATION layer stays on the legacy analysis (its tables-packaging +
+// richer output-surface contract are the named successor increment)". The notation switch made it
+// false; the flag-parsing block below was corrected while this one stood, so one file stated both,
+// which is worse for a reader than a single false claim. The former wording is kept because the
+// staging it describes is the adoption's own history — #12 — and corrected because a comment stating
+// what is not true at HEAD is what D-231's TRUE half forbids. Licensed by the user's Ruling 59 of
+// `cowork_rulings_2026_08_11_thirteenth_stop.md`; rowed at OPEN_ITEMS.md OI-368 and OI-303.)
+// What is NOT closed by any of the above is THIS FLAG'S OWN DEFAULT, which is the same distinction
+// the flag-parsing block draws: the flag is default-OFF, so batch_analyze's default output — and
+// every legacy unit test on it — is byte-identical, and a flag-less run still measures the legacy
+// pipeline. Inference is PRESET-INDEPENDENT (the ratified mode decision): the three preset dirs
+// converge at the inference fields by construction.
 
 // The chord-symbol / Roman-numeral / grading-quality render primitives (jointPcKeyName,
 // jointOursQuality, jointChordSymbol, jointRenderRn) are single-sourced in the joint module

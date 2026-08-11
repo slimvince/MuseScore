@@ -1005,6 +1005,33 @@ def build() -> dict:
                 "moved_by_the_ruling": moved_by_56,
                 "derived_from": ("tools/audit/nongating_apparatus_rows.json → "
                                  "★_the_ruling_56_application.rows_moved"),
+                "★_this_cut_IS_a_reported_widening_and_the_user_has_ACCEPTED_it": {
+                    "what_was_widened": (
+                        "Ruling 56 named no machinery. Publishing this second cut, and pointing the "
+                        "reach derivation at it, is the smallest thing that removes the circularity "
+                        "described above — and it is more than the ruling's letter said. It was "
+                        "REPORTED at `cowork_away_returns.md` §1.17 in the act that took it, with "
+                        "the one edit that reverses it and that edit's consequence stated beside it."
+                    ),
+                    "the_ruling": (
+                        "User, 2026-08-11, Ruling 57 of "
+                        "`cowork_rulings_2026_08_11_thirteenth_stop.md`: the §1.17 reported widening "
+                        "is ACCEPTED. The pre-application cut this block publishes, and the reach "
+                        "derivation's reading of it, STAND."
+                    ),
+                    "the_ground_the_ruling_gives": (
+                        "Without them Ruling 56 is circular and inapplicable, and the stated reversal "
+                        "edit would reverse the user's own ruling. Accepted on the reported-widening "
+                        "ground, D-654 — a widening REPORTED is reviewable and a widening HIDDEN is "
+                        "not; the narrow-letter default for every future licence is unchanged."
+                    ),
+                    "what_the_acceptance_does_NOT_move": (
+                        "No verdict, no criterion, no row and no count moved by this machinery when "
+                        "it was built, and none moves by its acceptance. D-438 and its criterion are "
+                        "untouched and still decide every other row; the two cuts differ by exactly "
+                        "the rows the apparatus declaration records as moved."
+                    ),
+                },
             },
             "where_each_verdict_came_from": {
                 "the committed apparatus declaration":

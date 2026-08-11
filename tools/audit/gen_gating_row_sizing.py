@@ -909,30 +909,23 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
-        "row": "OI-368",
-        "anchor_quote": "before its EMPTY verdict may be read as *the class is discharged*",
+        "row": "OI-369",
+        "anchor_quote": "Two closing acts are visible and neither is a session's",
         "the_act_owed": (
-            "Measure the enumerating pattern's REACH over the text it scans, in the shape D-436 "
-            "requires of every mechanism, so that an empty verdict bounds something."
+            "Rule which of the two acts the row names closes it: the item subtracts superseded "
+            "entries whose successors are homed, by the sibling item's own machinery; or it keeps "
+            "the entry and its CLOSING ACT is corrected to say that no home is owed."
         ),
-        "sizing": "REAL-WORK",
-        "whose_act_it_is": "a session on this side",
+        "sizing": "NEEDS-RULING",
+        "whose_act_it_is": "the user",
         "what_blocks_it": "a user ruling",
         "why_that_size": (
-            "A measured reach is an establishment, not a filing act, and choosing the shape it takes "
-            "is a mechanism question the record reserves. **The row is worth reading beside "
-            "[[OI-367]]:** the same failure at a different instrument, and the second time an "
-            "unmeasured pattern has been found reporting a class complete."
+            "Both routes change a DERIVED surface — one the population a completion map publishes, "
+            "the other an authored closing act on it — and a derivation change is a mechanism "
+            "change D-436 reserves. **The work either route needs is small; what is missing is the "
+            "choice**, which is exactly what NEEDS-RULING labels. Once ruled, either is one act."
         ),
-        "the_second_half": {
-            "what_it_is": (
-                "The surviving comment itself — one edit correcting a staged-scope paragraph to what "
-                "the same file already says nine hundred lines further down."
-            ),
-            "sizing": "SESSION-SMALL",
-            "whose_act_it_is": "a session on this side",
-            "what_blocks_it": "a user ruling",
-        },
+        "the_second_half": None,
     },
     {
         "row": "OI-363",
@@ -951,6 +944,60 @@ SIZINGS = [
             "the row says in terms that the counting passes make none of it."
         ),
         "the_second_half": None,
+    },
+]
+
+# ---------------------------------------------------------------------------
+# RETIRED SIZINGS — kept WHOLE, counted NOWHERE, read by nothing (#12, D-648).  A row that leaves the
+# gating population takes its sizing out of the live table, and the sizing moves here with the reason
+# it left rather than being deleted: the sizing named the act, and the record of what a closed row was
+# sized as is what lets a later reader see whether the act performed is the act that was owed.
+#
+# THE STOP IN THE OTHER DIRECTION, armed below: a retired sizing naming a row the pass sizes again is
+# RE-READ and re-authored, never restored — a sizing made of a row as it stood is not evidence about a
+# row that has since changed.  Same shape as the reach derivation's retired block and the apparatus
+# declaration's.
+# ---------------------------------------------------------------------------
+RETIRED_SIZINGS = [
+    {
+        "row": "OI-368",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 under the user's Ruling 59 of "
+            "`cowork_rulings_2026_08_11_thirteenth_stop.md`, which discharged BOTH halves below by "
+            "two different routes: the second half by LICENSING the one comment-only edit, and the "
+            "main sizing not by performing the measurement but by RULING that none is seeded — the "
+            "bound is stated on the enumeration's own artifact instead, because establishment is "
+            "spent where an analysis decision consumes it and none consumes a comment sweep. **So "
+            "the sizing was RIGHT about the act being an establishment and about who it belonged "
+            "to, and the ruling answered it by deciding the establishment is not owed** — which is "
+            "an outcome a sizing cannot anticipate and is exactly why the sizing is kept."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-368",
+            "anchor_quote": "before its EMPTY verdict may be read as *the class is discharged*",
+            "the_act_owed": (
+                "Measure the enumerating pattern's REACH over the text it scans, in the shape D-436 "
+                "requires of every mechanism, so that an empty verdict bounds something."
+            ),
+            "sizing": "REAL-WORK",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "a user ruling",
+            "why_that_size": (
+                "A measured reach is an establishment, not a filing act, and choosing the shape it "
+                "takes is a mechanism question the record reserves. **The row is worth reading "
+                "beside [[OI-367]]:** the same failure at a different instrument, and the second "
+                "time an unmeasured pattern has been found reporting a class complete."
+            ),
+            "the_second_half": {
+                "what_it_is": (
+                    "The surviving comment itself — one edit correcting a staged-scope paragraph to "
+                    "what the same file already says nine hundred lines further down."
+                ),
+                "sizing": "SESSION-SMALL",
+                "whose_act_it_is": "a session on this side",
+                "what_blocks_it": "a user ruling",
+            },
+        },
     },
 ]
 
@@ -1050,6 +1097,21 @@ def build() -> dict:
             "STOP: a staleness flag names a row this pass does not size: "
             + ", ".join(sorted(stale_rows))
         )
+    retired = [r["row"] for r in RETIRED_SIZINGS]
+    if len(set(retired)) != len(retired):
+        raise SystemExit("STOP: a row is retired twice.")
+    both = sorted(set(retired) & set(authored))
+    if both:
+        raise SystemExit("STOP: a row is both sized and retired: " + ", ".join(both))
+    resurrected = [r for r in retired if r in population]
+    if resurrected:
+        raise SystemExit(
+            "STOP: a RETIRED sizing names a row this pass sizes again: "
+            + ", ".join(sorted(resurrected))
+            + ". A sizing made of a row as it stood is not evidence about a row that has since "
+            "changed — re-read the row and author a fresh sizing rather than restoring the retired "
+            "one."
+        )
 
     for s in SIZINGS:
         where = s["row"]
@@ -1125,6 +1187,21 @@ def build() -> dict:
                 "a STOP in either direction — a row derived but unsized, or sized but not derived, "
                 "halts the run, so a partial pass cannot be written at all"
             ),
+        },
+        "retired_sizings": {
+            "what_this_is": (
+                "Sizings for rows that have LEFT the gating population, kept whole and counted "
+                "nowhere (#12, D-648). They are history: a sizing named the act a row needed, and "
+                "keeping it is what lets a later reader see whether the act performed is the act "
+                "that was owed."
+            ),
+            "the_stop_in_the_other_direction": (
+                "A retired sizing naming a row this pass sizes again halts the run. A sizing made of "
+                "a row as it stood is not evidence about a row that has since changed, so such a row "
+                "is RE-READ and re-authored, never restored."
+            ),
+            "count": len(RETIRED_SIZINGS),
+            "entries": RETIRED_SIZINGS,
         },
         "the_four_ruled_labels": {
             "what_they_are": LABELS,

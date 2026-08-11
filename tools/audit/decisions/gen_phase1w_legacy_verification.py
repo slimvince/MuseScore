@@ -191,13 +191,13 @@ ANCHORS = {
                 'not read the legacy 0.5/0.8 confidence gates.',
     },
     'BATCH_JOINT': {
-        'file': 'tools/batch_analyze.cpp', 'line': 4793,
+        'file': 'tools/batch_analyze.cpp', 'line': 4805,
         'quote': 'r = joint::decodePiece(fx.piece, adapter, vocab, cache, 4, fx.sigFifths, fx.declaredMode);',
         'says': 'The production batch/corpus surface: --joint-inference decodes through the joint '
                 'module alone.',
     },
     'BATCH_LEGACY_DEFAULT': {
-        'file': 'tools/batch_analyze.cpp', 'line': 4914,
+        'file': 'tools/batch_analyze.cpp', 'line': 4926,
         'quote': 'the legacy analyzeScore pipeline. Default OFF',
         'says': 'ENUMERATED FALSE-NEGATIVE PATH: --joint-inference defaults OFF, so plain '
                 'batch_analyze runs the legacy pipeline. The corpus instrument reaches the legacy '
@@ -1026,6 +1026,21 @@ STALE_RECORD_ARM_COMMENTS_RETIRED_2026_08_11 = [
      'notation layer stays on the legacy analysis'),
 ]
 
+# ★ A SEVENTH SITE THIS ENUMERATION NEVER HELD, FOUND 2026-08-11 AND CORRECTED THE SAME DAY — and it
+# is recorded as a MISS rather than as a retirement, because it never entered the live table and so
+# never left it.  CC, `cc_instruction_return_continuation_12.md` Task 3 found it by VERIFYING
+# OPEN_ITEMS.md OI-303's six named sites AT THE FILES, which is the only way it becomes visible; the
+# correction is `cc_instruction_return_continuation_13.md` Task 0, on the user's RULING 59 of
+# `cowork_rulings_2026_08_11_thirteenth_stop.md`.  THE SAME CLAIM stood at a SECOND block of the SAME
+# file the Ruling-48 act had just corrected, so for two days that one file said both that the in-app
+# notation layer stays on the legacy analysis and that the staging is closed on both production
+# surfaces — worse for a reader than the single false claim the finding was opened for.  Rowed at
+# OPEN_ITEMS.md OI-368.
+STALE_RECORD_ARM_COMMENTS_MISSED_AND_CORRECTED_2026_08_11 = [
+    ('tools/batch_analyze.cpp', 4657,
+     'the in-app NOTATION layer stays on the legacy analysis'),
+]
+
 STALE_RECORD_ARM_COMMENTS: list[tuple[str, int, str]] = []
 
 # The two dated annotations that still assert the opposite of D-428 as corrected at phase 1n.
@@ -1311,6 +1326,41 @@ def main():
                     'one per act, so what the finding named survives the act that closed it. An '
                     'EMPTY count here is therefore a discharge and not a search that found '
                     'nothing.'),
+                '★_ADVISORY_WITH_UNMEASURED_REACH_—_a_bound_STATED_not_a_claim_withdrawn': {
+                    'the_ruling': (
+                        'User, 2026-08-11, Ruling 59 of '
+                        '`cowork_rulings_2026_08_11_thirteenth_stop.md`. Nothing above is '
+                        'withdrawn: the discharge is true of the sites this enumeration HOLDS, '
+                        'and what follows bounds what that is worth.'),
+                    'the_bound': (
+                        'This enumeration is an AUTHORED table whose members were found by a '
+                        'session reading, and its REACH against the text it scans has never been '
+                        'measured. It re-locates each member it holds on every run, which is the '
+                        'right construction for the members it holds — and it looks for no new '
+                        'ones. So an EMPTY live table bounds nothing about the class, and this '
+                        'block is ADVISORY. That is D-436\'s detection condition and D-661\'s '
+                        'completeness rule both unmet for this pattern, stated rather than left '
+                        'to be discovered.'),
+                    'the_instance_that_proves_it': (
+                        'While this block read empty, a SEVENTH site carrying the same claim stood '
+                        'at a second block of the very file the sixth\'s correction had touched — '
+                        'so one file stated both readings for two days. It was found by VERIFYING '
+                        'OI-303\'s named sites at the FILES rather than at the record of them, and '
+                        'is at STALE_RECORD_ARM_COMMENTS_MISSED_AND_CORRECTED_2026_08_11 in this '
+                        'file\'s source. It is corrected under the same ruling, so the class is '
+                        'empty at HEAD by act as well as by table.'),
+                    'why_no_detection_measurement_is_SEEDED_for_it': (
+                        'The ruling\'s own ground: establishment is spent where an ANALYSIS '
+                        'DECISION consumes it, and no analysis decision consumes a comment sweep. '
+                        'Measuring this pattern\'s reach would buy a bound on a class of '
+                        'statements ABOUT the build state, which no measurement of the analysis '
+                        'reads and no gate depends on. The obligation is therefore DISCHARGED BY '
+                        'STATING THE BOUND, not by leaving a measurement owed forever.'),
+                    'the_sibling_shape': (
+                        'OPEN_ITEMS.md OI-367 is the same shape one measurement tool over — a '
+                        'family enumerated by a pattern nobody measured, found because a later act '
+                        'derived or verified its own population. OI-368 carries this one.'),
+                },
                 'count': len(stale),
                 'located': stale,
             },

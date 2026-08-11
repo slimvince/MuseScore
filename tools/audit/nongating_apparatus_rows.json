@@ -24,9 +24,9 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 368,
+  "rows_parsed": 369,
   "open_rows": 252,
-  "first_cut_candidates": 61,
+  "first_cut_candidates": 62,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -49,7 +49,7 @@
  },
  "totals": {
   "non_gating": 25,
-  "gates": 36,
+  "gates": 37,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -155,6 +155,9 @@
    ],
    "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject": [
     "OI-360"
+   ],
+   "the criterion - D-438's own line puts the completion of a specification on the gating side, and the default on doubt is to keep the wait": [
+    "OI-369"
    ],
    "the criterion - the row's subject bears on an instrument": [
     "OI-320"
@@ -647,6 +650,14 @@
    "verdict": "NON-GATING",
    "reason": "The owed MECHANICAL half of the writing-standards conformance check, created when the user's Rulings 28/29/32 split that question: status-banner presence, terms-table presence on a new specification, and section structure judged against the enumerated kind list. All three read a DOCUMENT'S OWN STRUCTURE, so what is owed is a check over how this project's documents are written - the same subject the retired OI-230 verdict names, one construct out. CLASSIFIED WITH OI-297 AND APART FROM OI-292, and the difference is stated so the pair does not read as inconsistent: OI-292 gates because two of its members are MEASUREMENT rules and a third guards the local patches to MuseScore's own code, while every member of this row is a documentation-structure check that no measurement of the analysis depends on. AND IT IS NOT AN ESTABLISHMENT OBLIGATION, which would override the criterion whatever the subject: nothing here is a published rate or a trusted instrument awaiting establishment - the establishment #19 requires would be owed BY the check if it were ever built, which is a condition on a future act rather than an obligation standing now. The distinction is the same one that puts OI-359 on the gating side: there the missing mechanism enforces a MEASUREMENT convention, which is an instrument a measurement of the analysis depends on.",
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
+  },
+  {
+   "id": "OI-369",
+   "title": "★ **The finish line's LAST homing item counts one entry, and the user has already ruled that entry SUPERSEDED with no home owed — the subtraction its sibling item performs by machinery, this one does not perform at all**",
+   "subject_column": "F — doc-sync debt (#10) at a DERIVED surface: a completion map states an obligation the record has already dispositioned",
+   "verdict": "GATES",
+   "reason": "The phase-1 finish line's last homing item counts one register entry and names, as the act that closes it, a write the user's own ruling forbids: the entry is SUPERSEDED, and a supersession is register business with no specification home owed. THE FIRST-CUT CLASSIFICATION REACHED THIS ROW and the verdict is authored for it here, which is what the tool requires; no non-gating verdict is hand-added, which is the act the record forbids. IT IS NOT SETTLED BY THE APPARATUS CRITERION, and that is said plainly rather than argued around: the surface is a derived completion map, which reads as this project's own tracking. What decides it is D-438's line INSIDE the documentation rows, which puts the completion of a specification on the gating side because the phase-1 rule makes specifications COMPLETE and TRUE the thing that precedes everything else -- and what is owed here is not a pointer, an anchor, a label, a banner or a section boundary, but the question of whether one specification-completion obligation is owed at all. The declaration's own default carries the remainder: a row whose subject its own text does not settle GATES, because the declaration only ever removes a wait where the row supports removing it. Recorded against the row's SUBJECT, never its remedy -- the two closing acts it names are a subtraction in a derivation and a correction to an authored closing act, and choosing between them is a mechanism question D-436 reserves to the user.",
+   "gate_ground": "the criterion - D-438's own line puts the completion of a specification on the gating side, and the default on doubt is to keep the wait"
   },
   {
    "id": "OI-150",

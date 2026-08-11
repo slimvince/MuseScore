@@ -4502,6 +4502,19 @@ re-authored).
 derivation's artifact and reconciled both ways with a STOP; each moved row's former verdict is
 preserved whole; D-438 and its criterion are untouched and still decide every other row.
 
+**★ ANSWERED 2026-08-11 — the user's Ruling 57** (`cowork_rulings_2026_08_11_thirteenth_stop.md`),
+recorded here and at the widening's own artifact by `cc_instruction_return_continuation_13.md`
+Task 0. **The widening is ACCEPTED: the pre-application cut the completion inventory publishes, and
+the reach derivation's reading of it, STAND.** The ground the ruling gives is the one this section
+put in front of it — **without them Ruling 56 is circular and inapplicable, and the stated reversal
+edit would reverse the user's own ruling.** It is accepted on the reported-widening ground
+(**D-654**), which is the same shape as Ruling 17 and Ruling 43: a widening REPORTED is reviewable
+and a widening HIDDEN is not, and **the one-edit narrow-letter default is unchanged for every future
+licence.** **Nothing is re-edited by this answer** — no verdict, criterion, row or count moved when
+the machinery was built and none moves by its acceptance, which is established at the artifacts
+rather than asserted here; what this act adds is the ground, here and in the generator that
+publishes the cut.
+
 ## 2 (continued). Surfaced findings
 
 ### 2.16 Two gating rows describe an owed act that later acts appear to have performed, and neither row says so (Task 0)
@@ -4977,6 +4990,203 @@ distance waits on either.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this
 batch.**
+
+---
+
+# ═══ THE THIRTEENTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_13.md`, performed 2026-08-11) ═══
+
+> Rulings 57–59 of `cowork_rulings_2026_08_11_thirteenth_stop.md` are applied here, and the twelfth
+> continuation's unfinished tasks are resumed. The sections above are earlier batches' and are not
+> rewritten — §1.17 gained its dated answer in place, where the question was asked. New holds are
+> appended to §1, new surfacings to §2, and each task's log below. **Acts are dated from the clock:
+> 2026-08-11.**
+
+## 2 (continued). Surfaced findings
+
+### 2.18 The finish line's LAST homing item asks for an act the user has ruled must not be performed — and its sibling item performs the subtraction that would empty it, by machinery (Task 1)
+
+**Found by deriving Task 1's own population fresh at the artifact that owns it before working it**,
+which is the only way an item's single member gets read. Nothing looked for it.
+
+**Established at three objects rather than inferred.** The finish line's item *"Register entries
+with no home at all"* carries exactly one entry, **D-289**, and names as its closing act *"write the
+decision into the specification that owns its subject."* At the register data that entry's status is
+**`superseded-by`**, on the user's **Ruling 6** — whose own words are that **nothing is written into
+any specification for it, because a supersession is register business**, and whose excluded
+alternative is homing it as doctrine, which would duplicate its successors' rules (#6). And at the
+finish line's own generator, the NEIGHBOURING homing item performs exactly the subtraction that
+would empty this one — importing `r1_superseded_reach.json` and publishing **D-642**'s words beside
+it, *"a superseded entry's obligation moves to its successor and is discharged where that successor
+is homed"* — while this item takes its population raw from the register's `unhomed` class, applying
+no status test of any kind.
+
+**Why it is surfaced rather than logged.** This artifact is what a commissioning reader opens to
+learn what phase 1 still requires, and its ninth item is phase 1's completion statement itself. **An
+item asking for an act a ruling forbids is not a small inaccuracy on that surface**: a session
+reading it in good faith would write the entry's meta-principle into a specification, which is
+precisely the duplication the ruling excluded by name. It is also the [[OI-283]] shape one remove
+out — an obligation dispositioned but still reading as owed sends the next session to do work the
+record has already declined.
+
+**What is NOT claimed.** That the item is wrong — whether a derived cut subtracts a class is a
+mechanism question **D-436** reserves, and both readings are defensible. That the entry's whole
+successor chain is homed — two of the named successors are, read at the register data; one is itself
+superseded and gap-classed, and its own successors were NOT re-checked here. And nothing about the
+analysis: no measured value, no golden, no corpus of scores, nothing in `tools/robust_stop/`.
+
+**Nothing was changed.** Both closing acts the row names move something on a derived surface — one a
+published population, the other an authored closing act — and a population movement belongs to an
+act that accounts for it, not to a task that would slip it in unremarked ([[OI-362]]). **Rowed at
+[[OI-369]]** with its detail file in the same commit (rule (c)), with both acts named and neither
+taken.
+
+## 3 (continued). Per-task log — the thirteenth return continuation
+
+### Task 0 — COMPLETE. The three ruled acts: the widening accepted at its own artifact, the §17 closing state, and Ruling 59's comment edit — which flips [[OI-368]] by discharging its two halves along two different routes
+
+**The start state was derived at the artifacts before any act (A4), and it is what the dispatch's
+ledger records.** The full guard set was run unchanged before the first edit: **ZERO failing**, with
+the classification green after it, which is where the twelfth continuation left it. The queue's §17,
+§1.17 above, [[OI-368]]'s INDEX row and detail file, and both `tools/batch_analyze.cpp` blocks were
+each read at their own surface before anything was written. No count is restated here (**D-431**).
+
+**A1 HOLDS IN ALL THREE OF ITS CLAUSES, and each was checked before the act it licenses rather than
+after.** The edit is verified comment-only **MECHANICALLY** — see below; [[OI-368]] flips on it, and
+on the second half of the same ruling; and the enumeration's bound is written on its own artifact
+rather than in prose about it.
+
+**What was done, in order.**
+
+1. **Ruling 57 — the widening ACCEPTED, recorded at the widening's own artifact and at §1.17.** The
+   acceptance is written into the GENERATOR that publishes the pre-application cut, so it re-derives
+   with the artifact rather than being pasted into the output (the Ruling 37 pattern), and §1.17
+   gains its dated answer in place. **Nothing is re-edited by the acceptance** — the machinery
+   already stood, and what this act adds is the ground: without it Ruling 56 is circular and
+   inapplicable, and the stated reversal edit would reverse the user's own ruling. **Both halves of
+   D-654 are written, not only the acceptance:** that the narrow-letter default is unchanged for
+   every future licence, which a record carrying only the acceptance would read as the opposite of.
+2. **Ruling 58 — the queue's §18, its SEVENTH closing state.** §17's verdicts are ruled as proposed,
+   all three rulings stand as EXERCISES, **both offered upgrade readings are DECLINED with the
+   ruling's own grounds**, and nothing is owed. **The ruling's operative clause is recorded rather
+   than its outcome alone:** a second consecutive extension with no proposed decision is read as the
+   decisions register having caught up with the practice, and **entries are not manufactured against
+   that signal** — a queue that answered a quiet extension by finding something to register would
+   convert the signal into its own refutation.
+3. **Ruling 59 — the one licensed comment, and the bound.** `tools/batch_analyze.cpp`'s staged-scope
+   block said the in-app notation layer stays on the legacy analysis, which the 2026-07-27 notation
+   switch made false, and which the same file's flag-parsing block had already been corrected to
+   contradict. It now says the staging is CLOSED on both production surfaces and **keeps apart the
+   thing that is NOT closed** — this flag's own default, still OFF — in the same terms the sibling
+   block uses. The former wording is preserved in place (#12). Beside it, the enumeration that
+   reported its class empty while that instance stood is marked **ADVISORY WITH UNMEASURED REACH**
+   on its own artifact, and the seventh site is recorded there as a **MISS rather than a
+   retirement**, because it never entered the live table and so never left it.
+4. **The queue extended an eighth time, §19**, over Rulings 57–59, by the same derivation that built
+   §2 and extended it seven times, each ruling classified from its own text with the carrier read
+   whole (**D-643**). **No register entry is written and no identifier assigned.**
+
+**★ THE DIFF IS VERIFIED COMMENT-ONLY MECHANICALLY, AND THEN THE SUITES WERE RUN ANYWAY.** The
+comparison is against the committed blob read as a git OBJECT by explicit hash (**D-253**'s
+sanctioned form), by a checker that reports every changed line on BOTH sides and tests each for a
+comment marker: every one is a comment line, on both sides. **That is an argument about what the
+compiler sees, and the eighth continuation's own lesson is that *a comment cannot change behaviour*
+is an argument and not a measurement** — so the build ran, and the checks ran after it. **What has
+REPORTED at this commit, each taken from a completed process's own exit code:** the build; the
+`batch_analyze` regression check the build instructions require for any change to that file; the
+composing suite whole; and the notation suite whole. **The pipeline snapshot suite was launched and
+is still running** — it is much the slowest of the four — **so its result is NOT stated here and is
+recorded at this batch's close instead.** That is the eighth continuation's own correction applied
+in advance rather than after the fact: an assertion may not enter the record before the thing it
+asserts is established, and *the run I started will pass* is a prediction.
+
+**★ [[OI-368]] FLIPS, AND THE TWO HALVES CLOSE BY TWO DIFFERENT ROUTES — which is the result worth
+reading.** Its half (a), the surviving comment, closes by the act being LICENSED and performed. Its
+half (b), the enumerating pattern's unmeasured reach, **closes without the measurement being taken**:
+the ruling states the bound on the artifact instead and gives the ground — establishment is spent
+where an ANALYSIS DECISION consumes it, and none consumes a comment sweep. **So a sizing that was
+right about the act being an establishment was answered by a ruling that the establishment is not
+owed**, which is an outcome a sizing cannot anticipate. The row's own flip says what it does NOT
+claim: that the pattern has been measured, that no further instance exists, or that any other
+enumeration inherits the ground — the test is applied per enumeration, and [[OI-367]]'s pattern is
+untouched by it.
+
+**★ THE POPULATION MOVEMENT IS THIS ACT'S OWN AND IS ACCOUNTED FOR BY IT**, which is the standing
+rule ([[OI-362]]) and the third time this arc has exercised it. Flipping [[OI-368]] moves it out of
+the open population, so the gating cut, the finish line's populations and the sizing pass's own
+population all move; **the sizing pass's both-ways STOP fired naming it**, and every derivation over
+the index was regenerated in the same commit, so no surface carries the pre-flip population. A
+continuing session derives its populations fresh — a count carried from any earlier document is
+stale by construction.
+
+**Four authored inputs were maintained, each caught by its own tool's STOP rather than by a reader**
+(**D-648**). **(1)** The sizing pass STOPPED on a row it sizes that the population no longer carries;
+**that tool had no retired block at all**, so one was added on the established shape — the sizing
+kept whole, counted nowhere, with the reason it left — **and a STOP armed the other way: a retired
+sizing naming a row the pass sizes again is RE-READ and re-authored, never restored**, because a
+sizing made of a row as it stood is not evidence about a row that has since changed. **★ AND THE
+RETIREMENT IS WORTH ONE LINE, because the sizing was not wrong:** it sized the act as an
+establishment and named its owner correctly, and the ruling answered it by deciding the
+establishment is **not owed** — an outcome a sizing cannot anticipate, which is exactly why keeping
+it is worth more than deleting it. **(2)** The legacy-mark verification STOPPED twice on code
+anchors this task's own comment edit shifted, each re-aimed from the tool's own reported line and
+never by an assumed uniform shift — **the layered-STOP shape for the seventh time in this arc: a
+cleared STOP is never evidence about what follows it, and only a single green run is.** **(3)** The
+apparatus declaration STOPPED because [[OI-369]] reached its first cut with no authored verdict, and
+a **GATES** verdict was authored with its ground. **(4)** The sizing pass then STOPPED again, in the
+other direction, on that same new row — **the second population movement this batch has accounted
+for by the act that moved it**, and the fourth exercise of that standing rule in five commits.
+
+**★ AND ONE THING EXPECTED DID NOT HAPPEN, checked rather than carried from the pattern.** No
+register home anchor drifted: the edits that could have moved one are in a measurement tool's source
+and in a generator's, and no register entry is homed below them. It is stated because the previous
+batch recorded the opposite mistake — a claim written from what every earlier wave did rather than
+from this wave's run.
+
+**★ ONE JUDGMENT IS STATED BECAUSE IT DEPARTS FROM THE DISPATCH'S LETTER, and it is the tenth
+continuation's own departure repeated.** The dispatch puts the ruled acts in Task 0 and the homing
+remainder in Task 1. **Deriving Task 1's population turned up §2.18**, and the open-items register's
+rule (c) requires a newly discovered issue to get its index row AND its detail file **in the commit
+that records the discovery**, while recording it in this file without a row would be the prose-only
+tracking #10 forbids. **So [[OI-369]] is created here**, in Task 0's commit, and it is the only thing
+besides the ruled acts and their wiring in it. **Checked rather than assumed:** the new row DOES
+reach the apparatus declaration's first cut, so a **GATES** verdict was authored for it with its
+ground — no non-gating verdict was hand-added, which is the act the record forbids — and it
+therefore joins the gating set, where the sizing pass's own both-ways STOP fired naming it and it
+was sized in the same act. **No homing entry was re-homed in this commit**, so Task 1's substantive
+half is untouched rather than part-done.
+
+**★ THE SAME INSTRUCTION AS EVERY PREVIOUS CONTINUATION COULD NOT BE PERFORMED AND IS NAMED RATHER
+THAN QUIETLY DROPPED.** The dispatch orders itself staged with this record. **The ruling record
+`cowork_rulings_2026_08_11_thirteenth_stop.md` IS staged; the dispatch is not** — `/cc_instruction_*.md`
+is matched by this repository's `.gitignore`, checked at that file this session rather than carried
+from the earlier reports that say so, and forcing it in would override a standing repository
+configuration decision that is not a session's to take.
+
+**★ THE STANDING SELF-CHECK (D-434) CAUGHT A RESERVED-WORD COLLISION IN THIS TASK'S OWN NEW TEXT AND
+IT WAS CORRECTED BEFORE THE COMMIT** — the bare non-musical *part*, in the phrase *"checked part by
+part at the successors' own homes"*, in the new row and in its detail file. It is *clause by clause*
+in both now. **This is the eighth consecutive wave whose self-check has caught one in its own new
+prose**, and this instance arrived the way the record says they always do: **by paraphrasing an
+existing sentence** — the words came from the second continuation's own log, which is exactly the
+matching-the-neighbouring-idiom mechanism [[OI-229]]'s scanner is licensed to make visible. The check
+was run as a generated scan over the lines this session ADDED, computed against the baseline commit
+read as a git object, rather than by re-reading the prose.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires; the index-status lint and the open-items split
+reconciliation were run beside them, the latter because this task adds a row and its detail file.
+Every verdict is at `tools/audit/guard_state.json` → `summary` and none is restated here (**D-431**).
+
+**Holds:** none new; the queue's **§19** awaits a ruling, which is what an extension is, and
+[[OI-369]]'s two closing acts are the user's. **Surfacings:** **§2.18**, which is the record's own
+completion map rather than the analysis. **Nothing bearing on the analysis was surfaced** — the
+comment corrected is a statement ABOUT which arm ships, and no behaviour moved.
+
+**Freeze respected in every clause except the ONE the ruling licenses:** the `tools/batch_analyze.cpp`
+comment is Ruling 59's own act, its diff verified comment-only against a git object. No `src/` change,
+no golden, no corpus of scores, no `tools/corpus/` or `tools/robust_stop/` movement, no behaviour
+change to the analysis, no fix to inference, no design. **Phase 1's completion statement is not
+written, not drafted and not partially written here.**
 
 ## 4. The batch's start state, recorded before any act
 
