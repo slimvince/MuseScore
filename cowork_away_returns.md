@@ -6262,3 +6262,334 @@ one of its three permitted outcomes.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this
 session. D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+## 1 (continued). What needs the user
+
+### 1.20 The queue's §21 proposed no home either — the SECOND instance of §1.18's gap, and this time the ruling itself named the home; plus one cross-reference in §21 that the register refutes (Task 1)
+
+**Two separate things, kept apart because one is a procedural gap and the other is a wrong
+identifier.**
+
+**(a) THE PROPOSED-HOME GAP HAPPENS AGAIN.** §1 of the ruling-registration queue states its own rule:
+*"for every ruling proposed as a DECISION, one proposed home"*. §19 carried none, which §1.18 reported
+one batch ago. **§21 carries none either**, for either of its two proposed decisions. So the gap is
+not a slip in one section but a habit of the extension shape, and it is now on the record twice.
+
+**★ THIS TIME IT DECIDED NOTHING, AND THAT IS STATED SO IT IS NOT READ AS A DISCHARGE.** The
+dispatch's assumption A1 told this session to DERIVE the home and to STOP if two candidates were
+equally supported. It did not need to: **Ruling 62 names the home in terms** — *"The convention's
+home: `cowork_design_doc_template.md`, beside the Ruling 28 kind list, written under this ruling's
+licence."* The check A1 asked for was still performed, at the document: the convention stands there as
+its own section beside the kind list, and no second candidate exists — `CLAUDE.md`'s Conventions make
+that file the ONE home for this project's writing standards. **The gap is real and it is the queue's,
+not the ruling's.**
+
+**What reverses it, in one line, so the user can weigh it:** a proposed-home subsection in the next
+extension, of the shape §4 already uses. Without one, a future ruling that does NOT name its own home
+leaves a session deriving it — which is what §1.18 had to do and is where the risk actually sits.
+
+**(b) A CROSS-REFERENCE IN §21 IS REFUTED AT THE REGISTER AND WAS NOT CARRIED FORWARD.** §21.1's row
+for Ruling 64 attributes the conditional mandatory-read pattern to **D-137**. Checked at
+`DECISIONS.md` before the closing state was written: **D-137 is a different decision entirely** — the
+harmony maps are our own visual design — and a search of the register's own backbone for the
+mandatory scoring-model read returns nothing, so **no entry states that pattern at all**. The queue's
+§22 therefore cites the pattern to the `CLAUDE.md` section that states it and to no identifier, and
+says so where the citation would have gone.
+
+**§21 IS NOT EDITED, and that is deliberate:** it is a section the user has ruled on, and the closing
+state is where an answer lives (#12). **What the user may want to decide:** whether the mandatory
+scoring-model read — which `CLAUDE.md` has carried for a long time and which Ruling 64 has now
+extended to a second specification — is owed a register entry of its own. **It is not proposed here**;
+this session records that the pattern is a live governing rule with no entry, which is the class
+[[OI-240]] was opened for.
+
+### 1.21 Closing a gating row while the apparatus derivation is BLOCKED strands five more guards — and the block cannot be cleared by any act this batch may take (Tasks 2 and 4)
+
+**Established by running the whole guard set after Task 2, and diagnosed at each tool's own STOP
+message rather than inferred.** The failing set went from three to eight, and **every one of the five
+additions traces to a single act: [[OI-47]] flipping to resolved.**
+
+- `gen_gating_row_sizing.py --check` — *"OI-47's quoted words are not in the INDEX — a sizing may not
+  rest on a reading of a row nobody opened."* Its authored sizing quotes the row's former text.
+- `gen_filing_convention_application.py --check` — *"authored verdicts for documents the derivation
+  does not carry: STATUS_ARCHIVE.md — the tree has moved under the table."* The four historical
+  banners changed the archive's own overtaking signature.
+- `gen_finish_line_item1_routes.py`, `gen_item1_rehome_blocker.py` and `gen_r1_superseded_reach.py`
+  — all three report the SAME line: *"the committed apparatus declaration carries verdicts for rows
+  the INDEX no longer carries open: OI-47."*
+
+**★ THE THREE LAST ARE NOT FIXABLE BY ANY ACT THIS BATCH MAY TAKE, AND THAT IS THE FINDING.** They
+read the COMMITTED `nongating_apparatus_rows.json`, so retiring OI-47's verdict means REGENERATING
+that artifact — and its own generator **STOPs before it classifies anything**, on *"first-cut
+candidates with no authored verdict: OI-370, OI-371"*, the two rows the PREVIOUS dispatch landed.
+**So a row cannot be closed cleanly until those two carry a gating verdict, and both rows
+deliberately withhold one** — each saying in its own words that a gating verdict is derived from a
+cut and never hand-added.
+
+**★ THIS IS [[OI-350]]'s SHAPE ONE CONSTRUCT OVER, AND WORTH THE USER'S ATTENTION FOR THAT REASON.**
+There it was a delegation the user writes landing its entries in a class that is false of them and
+stopping four generators. Here it is a row the record CLOSES correctly, whose closure the derived
+views cannot follow because an unrelated authored input is owed. **The common cause is an authored
+table that every downstream derivation imports, with no way to advance one member while another is
+unclassified.**
+
+**WHAT WAS NOT DONE, and why each was declined rather than overlooked.** The OI-47 flip was **not
+reverted** — the row's subject is genuinely discharged, and a discharged row left open is the false
+status the register exists against, the [[OI-107]] shape. The two verdicts were **not authored** —
+§0e admits nothing else to the finish line, and both rows withhold them by design. The blocked
+artifacts were **not regenerated** — they cannot be, and regenerating the two that could would absorb
+a population movement this batch did not cause.
+
+**WHAT WOULD CLEAR IT, in one line:** a gating verdict for [[OI-370]] and [[OI-371]], after which the
+apparatus cut regenerates and the three chained tools follow. **It is the clearest thing on this
+batch's record waiting for a ruling.** *(The two guards that fail on their own authored tables —
+the sizing pass and the filing-convention application — are ordinary **D-648** maintenance and are
+separable from the block; they are named here so a later act does not mistake them for part of it.)*
+
+---
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+### 2.22 OI-141's SEVEN design decisions re-pinned against the arm that ships — THREE have no object at all, ONE is fully built, and the rest are analogies the code does not settle (Task 3)
+
+**Read at the shipping code, function by function, and at nothing else.** The production notation path
+is `produceNotationRecord` → `decodePiece(piece, adapter, vocab, cache, /*segCap=*/4, sigFifths,
+declaredMode)` (`src/composing/analysis/joint/jointnotationproducer.cpp`), and the batch/corpus
+surface reaches the same decode. This is a **premise ledger, not a mechanism report**: one question per
+decision — *what is the corresponding mechanism on the shipping arm, and does the decision have an
+object?* — and each answer is a code citation or an explicit absence.
+
+**★ THE RULE THIS PASS REFUSED TO BREAK.** Where the shipping arm has a mechanism that is
+ANALOGOUS-BUT-DIFFERENT, it is reported AS AN ANALOGY and is **not ruled same-or-different**. Ruling
+one would be a design judgment inside a fact-gathering act, which #8 forbids and which the dispatch's
+assumption A6 names in terms. The prune is the live example the dispatch itself supplies, and this
+pass found four more.
+
+**Decision 1 — retire the top-8 emission-union prune. NO OBJECT.** The shipping arm prunes keys, and
+it is not that prune. `candidateKeys` (`jointdecoder.cpp`) scores all 24 keys by **onset-pitch-class
+overlap with the key collection**, keeps the top `kKeyPruneTopK = 6`, and **always keeps the notated
+signature's key** if it fell out. It is per-segment, over 24 keys, on overlap; the pinned one was a
+global union of per-slice emission top-8 over 252 states. **ANALOGY, NOT RULED.** *What the code does
+settle:* a key absent from a segment's kept six is unsearchable for that segment. *What it does not:*
+whether that is the same defect the decision was written to remove.
+
+**Decision 2 — the emission model. PARTIAL OBJECT, and its largest sub-decision has none.** The
+emission IS a per-note categorical term — `segmentFeatures` sums `emissionLogp(category, metric class,
+approach/departure motion, tied)` over the notes of the segment's events, plus a **separate
+`spellingLogp` term binned on the note's line-of-fifths distance from the key** — so **(a)
+spelling-aware profiles ARE built**, as their own weighted factor rather than as a profile variant.
+**(c) window treatment has NO OBJECT**: there is no ±4-beat emission window and no multi-scale
+emission — the emission's extent IS the segment, bounded by `segCap = 4` events. *A four-beat window
+does exist in the shipping arm* (`Piece::approachWindowPcs`) *and it belongs to the cadence factor,
+not the emission* — **the second analogy, and the same trap the previous arm check named.** **(b)
+leading-tone evidence**: no emission term of that name; a `cad_leading_tone` cadence feature exists,
+which is a different factor — **analogy**. **(d) input weighting**: the emission is summed **per note
+record**, which is exactly what [[OI-277]] records as a model property by trained design, so the
+decision's question has an object and its answer is already on a row. **(e) profile fitting**: the
+emission is fitted, not hand-set — object.
+
+**Decision 3 — the transition model. OBJECT for three of its five, ANALOGY for two.** The key
+transition is `keyTransLogp`, a **fitted distribution** over `stay` / `parallel` / `relative` /
+circle-of-fifths distance bands (`cof0`, `cof1`, `cof2`, `cofFar`) crossed with the mode pair, with a
+`BASE` fallback — so **(c) key-proximity-structured costs are BUILT AND FITTED**, which is the one
+option the design opening attached a measured caution to. **(b) the cadence→key channel is BUILT**:
+`cadenceFired` computes four **key-agnostic, tonic-relative** features — leading-tone-into-tonic,
+fourth-and-leading-tone in the approach window, dominant-to-tonic **bass**, and fermata — each with
+its own fitted weight, applied at the boundary into a candidate key. That is the dossier's
+key-agnostic tonic-voting pre-scan, realised as a factor inside the decode rather than as a forward
+override. **(a) phrase-boundary-modulated change costs: NO OBJECT** — nothing modulates the key-change
+cost by phrase position. *A boundary factor exists* (`boundaryLogp(metric class, is-segment-start,
+fermata-context)`) *and it scores SEGMENT boundaries, not key changes* — **the third analogy**, and a
+sharp one, because one of its inputs is the fermata that decision 3(a) names as a phrase-end signal.
+**(d) tonicization modelling: ANALOGY** — the chord vocabulary carries applied classes with a
+`target`, so a tonicization is modelled as a CHORD, never as a short key excursion with its own
+change-cost. **(e) progression-grammar evidence: ANALOGY** — `chordTransLogp` is a fitted chord-to-chord
+transition with an applied-relation override, which is a learned grammar; the design opening's
+channel is the dormant licensed-progression CATALOG, which the shipping decode does not read.
+
+**Decision 4 — anchoring. SPLIT, and both halves are decided.** The declared mode **HAS AN OBJECT and
+the decision is already satisfied**: `priorTerms` returns the signature-only prior and the declared-mode
+INCREMENT separately, and the increment is applied under its own weight `declared_mode` — a graded
+prior, not a silo, which is what the decision asks for. **Re-anchoring at a mid-piece notated key
+change has NO OBJECT**: `buildAdapterFacts` reads `staff(0)->keySigEvent(Fraction(0,1))` — one staff,
+one moment — and the prior enters **only at the initial segment**, so a later signature change never
+reaches the decode. That is [[OI-247]]'s subject, and this pass confirms it at the shipping arm.
+
+**Decision 5 — the output surface. OBJECT, and larger than the decision asked for.** `SegmentSlice`
+publishes a **FULL candidate list with no truncation** on both axes — every scoreable key re-scored
+under the committed chord, and every scoreable vocabulary class re-scored under the committed key —
+each as parallel `labels`/`scores` arrays with the committed index, and the record carries one per
+segment plus the un-rounded modal reading. **So *publish the ranked alternatives WITH their margins*
+is delivered**; a margin is a subtraction the consumer performs. **One half is decided the other way
+and it is a ratified decision, not a gap:** the published numbers are **content scores in nats, not
+confidences** (**D-007**), and the record publishes the raw key-axis gap with no remapping to 0..1
+(**D-019**) — so *populate the per-alternative confidence* has no object **by ruling**.
+
+**Decision 6 — the state space. NO OBJECT, and it is superseded rather than unbuilt.** The shipping
+state space is **24 keys — 12 tonics × {major, minor}** (`candidateKeys` iterates `t` 0..11 and `m` in
+`{true,false}`; the decoder's own contract says *the full 24-key set*). The 252-state, 21-mode
+inventory the decision is about **does not exist on this arm**, so its enumeration-and-justification
+pass has nothing to enumerate. **This is D-524 in force** — two modes on the state axis, modal colour
+in the emission and published un-rounded — which is the *bind interpretations late* framing decided a
+different way: the rich per-state fit the decision's clause (1) says is *always computed and always
+published* is **NOT computed**, because only 24 states are scored; what IS published is the modal
+reading as counts.
+
+**Decision 7 — the structural fit. NO OBJECT, and its own document says so.**
+`cowork_key_layer_design_opening.md`'s banner records it **⛔ SUPERSEDED 2026-07-17 by
+`cowork_joint_estimator_architecture.md`**: the key is not a separable layer inside a forward-only
+frame but one axis of a single joint estimate (**D-001**). Decision 7 is the clause that binds the
+other six to that frame, so it is the one whose object the architecture ruling removed outright.
+
+**★ WHAT THIS DOES TO THE SITTING, AND IT IS NOT WHAT §7 OF THE PACK EXPECTED.** The pack's §7
+records that **three** of the seven have no object — the top-8 prune, the change-cost model, and the
+emission window. **Re-pinned decision by decision, the count is different in both directions.** Three
+have no object at all (**1**, **6**, **7**), and two of those three are not the three §7 names.
+**Decision 3's change-cost model is the opposite of absent** — the proximity structure and the cadence
+channel are both BUILT AND FITTED, and it is only the phrase-boundary modulation inside it that has
+none. **Decision 5 is substantially DELIVERED.** **Decision 4 is half satisfied and half absent.**
+**Decision 2's spelling half is built and its window half is not.**
+
+**★ SO THE REPAIR §7 CALLS FOR IS LARGER AND FINER-GRAINED THAN "THREE DECISIONS LOST THEIR OBJECT":
+every one of the seven needs re-stating against the arm that ships, and two of them would be re-stated
+as LARGELY DONE.** That is a fact this pass establishes and **not a proposal** — what the sitting
+reads is the user's, the sitting pack is left exactly as written (#12), and **nothing here re-opens,
+ranks or proposes any design decision.**
+
+**NOT in doubt, and stated so the finding is not read as wider than it is:** no behaviour was changed
+and nothing was measured; no `src/` file, no golden, no corpus of scores and nothing under
+`tools/robust_stop/` was touched; every published baseline stands; and **no analogy above is ruled
+same-or-different** — each is reported with what the code settles and what it does not.
+
+---
+
+## 3 (continued). Per-task log — the STATUS.md touch and the OI-141 premise re-pin
+
+### Task 1 — COMPLETE. The ninth extension closed and Ruling 62's entry written; the home was NOT derived, because the ruling names it
+
+**The queue's §22** records the user's five verdicts over §21 in the shape §6, §8, §10, §12, §14,
+§16, §18 and §20 use: Rulings 60, 63 and 64 as proposed with no contrary reading offered or found;
+Ruling 62 a DECISION with its downgrade reading put and **DECLINED**; Ruling 61 an EXERCISE with the
+contrary reading §21.2 names put and **DECLINED**. **§21 is not edited** — its banner still says
+AWAITING THE USER, the treatment §19 received when §20 landed.
+
+**ONE register entry: D-674**, for Ruling 62 alone, written through the backbone data and the
+generator and landing in the commit that records the ratification. **The identifier was verified
+absent from the register's own index immediately before it was written.**
+
+**Assumption A1 was checked and came back better than it expected** — see §1.20(a). **A1's STOP did
+not fire**: the convention stands at `cowork_design_doc_template.md` beside the kind list, and no
+second candidate home is supported.
+
+**Guards.** `gen_decisions_register.py --check` PASS; `gen_cluster_dispositions.py --verify` PASS,
+674/674 verbatims at their cited homes and 668/668 cited lines correct — **no citation drifted, so
+none was re-aimed**. **THREE FURTHER GUARDS FAIL AND THE CAUSE IS ESTABLISHED AT THE TOOL'S OWN
+MESSAGE:** `gen_nongating_apparatus_rows.py --check` STOPs on *"first-cut candidates with no authored
+verdict: OI-370, OI-371"* — the two rows the PREVIOUS dispatch landed — and the completion inventory
+and the finish line are chained to it. **No verdict was authored and no derived view regenerated:**
+both rows deliberately withhold their gating verdict, §0e admits nothing else to the finish line, and
+regenerating the two downstream artifacts would absorb a population movement this batch did not
+cause. **Reported red with its cause, which is the opposite of working around it.**
+
+**One accident, recorded rather than left to be noticed.** An ignored-path `git add` split the act
+into two commits carrying the same message. Nothing was pushed, so they were folded into ONE commit
+before push — the content is identical and nothing was lost. Commit **`f9c9ba3f8e`**, pushed to
+`origin/master`.
+
+### Task 2 — COMPLETE. Four acts in one touch; the archive rule applied a second time, and [[OI-370]] NOT flipped because the read still fails
+
+**(1) The fourteenth continuation's STATUS entry has NO RESIDUE, and that is established rather than
+assumed.** Its five entries — Tasks 0–3 and the close — are all present at HEAD, written by CC as each
+task completed; the only thing the record calls *DRAFTED COMPLETE* is the [[OI-370]] row, landed by the
+previous dispatch. **Nothing was invented to satisfy the step.** A step that comes back already
+discharged is recorded, because a claim that an owed act is outstanding sends the next session to do
+it twice — the [[OI-107]] shape.
+
+**(2) [[OI-47]]'s banner half is discharged and the row FLIPS — and the dispatch's premise about WHERE
+was refuted.** All four submission-era sections carry a dated HISTORICAL banner and **not one line
+below any banner is edited**. **The four sections are NOT in `STATUS.md`**: the row's citations
+pre-date the 2026-07-18 doc split, which moved all four into `STATUS_ARCHIVE.md`, so the archive pass
+could not reach them there because they were already there. The act is unchanged and only its file is.
+**One false-at-HEAD clause was found while bannering and is named AT its banner rather than corrected
+below it:** *Known Gaps* states the declared-mode piece-start shortcut as live and intentional, and it
+was removed from the code on 2026-06-14 (**D-058**; [[OI-315]]).
+
+**(3) The gating-row miscount gets a CORRECTION NOTE, never a rewrite.** Verified at the object: the
+fourteenth continuation's close says SEVEN and names EIGHT, and the same miscount is in the subject
+and the body of commit `e263aa9174`. A commit message is immutable, so the note is the whole remedy.
+It is sited immediately ABOVE the entry it corrects rather than beneath it, **so the moved block stays
+one contiguous verbatim run** — a placement decided by the reconciliation, not by taste.
+
+**(4) The archive pass ran over the entries the rule decides, and the remainder is UNTOUCHED.**
+Clause (i) is DERIVED from each entry's own text; exactly one entry in the range carries an authored
+clause instead, and the tool STOPs on any entry with neither. The boundary is drawn at a BATCH edge on
+the doc-split precedent's own terms. **Entries older than `cowork_away_returns.md` itself are NOT
+moved** — their closes are recorded in dispatch reports and the handoff archive, so the rule does not
+decide them (**D-672**).
+
+**NOTHING WAS LOST, PROVEN IN BOTH DIRECTIONS AND MECHANICALLY (#12, #15).**
+`tools/audit/gen_status_archive_pass.py` re-derives against the base commit's own git object that
+`STATUS.md` at HEAD is **EXACTLY** the base minus the moved range, and that the moved range appears
+**VERBATIM** as one contiguous run in the archive. It carries a `--check` mode, so the artifact is not
+an orphan. Every count and the per-entry clause record are at
+`tools/audit/status_archive_pass_2026_08_11.json` (**D-431**).
+
+**(5) [[OI-370]] IS NOT FLIPPED, and the reason is evidence.** Assumption A5 makes the flip
+conditional on the mandatory read succeeding AFTER the pass. **It was attempted and FAILED again** —
+the file tools now refuse on SIZE where before they refused on token count, so the refusal changed its
+form and not its verdict. **★ What that establishes is sharper than the flip would have been: the
+residue is not what this pass moved but what the rule does NOT decide, so the rule as written reaches
+the recent half of the file and stops.** Whether it should be widened is not settled here and not
+proposed.
+
+**Guards at the committed tree:** `index_status_lint --check` PASS, `register_lint` PASS,
+`open_items_split_check` **OVERALL PASS** with the bijection holding, no detail file carrying a status
+of its own and all 200 original items byte-verbatim, `gen_cluster_dispositions --verify` PASS, and
+`gen_status_archive_pass --check` PASS. Commit **`7675d5b7ad`**, pushed.
+
+### Task 3 — COMPLETE, READ-ONLY, all seven covered. The finding is §2.22
+
+**All seven decisions are covered**, so the sitting is not left partly answered and **D-672's partial
+allowance was not needed.** Each answer is a code citation or an explicit absence, at the shipping
+arm and at nothing else. **Nothing was changed:** no `src/` edit, no document corrected on the
+strength of the finding, no design decision re-opened or proposed, and the sitting pack is left as
+written with its §7 standing.
+
+**★ THE STOP RULE WAS READ AND ITS READING IS STATED RATHER THAN ASSUMED.** §0f names *an
+analogous-but-different mechanism whose sameness the code does not settle* as a STOP, while assumption
+A6 says such a mechanism is **REPORTED as an analogy** and that the forbidden act is RULING it. Read
+together — and against the previous dispatch, which met exactly this and reported two analogies
+without halting — the STOP is on ruling, not on encountering. **Five analogies were met and none was
+ruled**; each is reported with what the code settles and what it does not.
+
+### ★ WHERE THIS BATCH STOPPED
+
+**All four tasks reached; Tasks 1, 2 and 3 COMPLETE; no task stopped at a member boundary.** Two
+commits, both pushed to `origin/master`: **`f9c9ba3f8e`** and **`7675d5b7ad`**.
+
+**NO STOP was raised.** No assumption was refuted at its check: **A1** came back confirmed and better
+than expected (§1.20a); **A2**, **A3** and **A4** held, with A3's precedent deciding the boundary
+rather than a preference; **A5** governed and the row stayed OPEN on its evidence; **A6** held, with
+five analogies reported and none ruled. **One dispatch premise did not hold and is reported rather
+than worked around** — [[OI-47]]'s four sections are in the archive, not in `STATUS.md`.
+
+**EIGHT guards stand red and every one is reported with its established cause, not worked around.**
+Three were already red before this batch began — the non-gating apparatus cut and the two artifacts
+chained to it, all STOPping on the two rows the PREVIOUS dispatch landed. **Five more went red when
+[[OI-47]] closed**, and §1.21 is the finding: three of those five cannot be cleared by ANY act this
+batch may take, because clearing them means regenerating an artifact whose generator STOPs on those
+same two rows. **What the whole set wants is a gating verdict for [[OI-370]] and [[OI-371]], which
+both rows deliberately withhold and which §0e does not admit to this batch.** It is the clearest
+thing on this record waiting for a ruling.
+
+**One durability repair rode with Task 4 and is named so it is not mistaken for a finding.** The
+archive pass's reconciliation compared the LIVE file against a fixed base — which this batch's own
+closing entries would have turned red on the first append, the [[OI-344]] shape. The equality is a
+fact about ONE MOMENT, so it is now checked at that moment's own git object (**D-646**), while the two
+claims that are durable — the block verbatim in the archive, and ABSENT from the live file, so it was
+moved and not copied — are re-derived against HEAD. All three hold.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch
+or by any batch of this arc. D-231 stands and phase 1 is open; #8's three-clause gate stands.**

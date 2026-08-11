@@ -34,11 +34,22 @@ HOW THE MOVED SET WAS DRAWN, and what is derived versus authored:
 
 WHAT `--check` PROVES (#12, and the doc-split precedent's own reconciliation):
 
-  1. `STATUS.md` at HEAD is EXACTLY `STATUS.md` at the base commit with the moved line range
-     removed — not merely similar, byte-for-byte after the removal.
+  1. `STATUS.md` AT THE PASS'S OWN COMMIT is EXACTLY `STATUS.md` at the base commit with the
+     moved line range removed — not merely similar, byte-for-byte after the removal.  **Both
+     sides are read as GIT OBJECTS by explicit hash, so this re-derives forever** and does not
+     decay as later batches append their entries to the live file.
   2. The moved block appears VERBATIM, as one contiguous run of lines, inside
      `STATUS_ARCHIVE.md` at HEAD.
-  3. Together: nothing left the live file that is not in the archive, and nothing else left it.
+  3. The moved block does NOT appear in `STATUS.md` at HEAD — it was MOVED, not copied.
+  4. Together: nothing left the live file that is not in the archive, and nothing else left it.
+
+★ WHY (1) IS STAMPED TO A COMMIT RATHER THAN RE-DERIVED AGAINST THE WORKING TREE.  The live
+file grows: the very batch that performed this pass appended its own entries to it afterwards.
+A check comparing the working tree against a fixed base would therefore go red on the first
+legitimate append, which is the shape `OPEN_ITEMS.md` OI-344 records — a live guard that cannot
+stay green across a legitimate refresh of what it recomputes against.  The equality is a fact
+about ONE MOMENT, so it is checked at that moment's own object (D-646, the epoch pattern), while
+the two claims that ARE durable are re-derived against HEAD.
 
 Run:
     python tools/audit/gen_status_archive_pass.py --apply    # perform the move once
@@ -66,6 +77,12 @@ OUT = os.path.join(HERE, "status_archive_pass_2026_08_11.json")
 # The commit the pass was performed on top of — Task 1 of the dispatch, pushed to origin/master
 # before the pass began.  An explicit hash, which is the only git read D-253 permits.
 BASE = "f9c9ba3f8ee43dcae9a86c9bfbfa18877a0b2a11"
+
+# The commit the pass itself landed in — the ONE moment at which the live file was exactly the base
+# minus the moved range.  Read as a git object so that equality re-derives forever; the live file has
+# grown since, by the same batch's own later entries, and a working-tree comparison would go red on
+# the first legitimate append (the OI-344 shape).
+PASS_COMMIT = "7675d5b7ad5131b898f4915e14a7056a7b175e29"
 
 # The moved range, 1-based and inclusive of the trailing blank separator, at BASE.
 FIRST_LINE = 14
@@ -169,8 +186,9 @@ def build(applied: bool) -> dict:
     head_status = _read("STATUS.md")
     head_archive = _read("STATUS_ARCHIVE.md")
 
-    live_exact = (head_status == "".join(kept)) if applied else None
+    at_pass_exact = (_git_show(PASS_COMMIT, "STATUS.md") == "".join(kept)) if applied else None
     archive_has_block = (block_text in head_archive) if applied else None
+    live_lacks_block = (block_text not in head_status) if applied else None
 
     return {
         "purpose": "The 2026-08-11 STATUS.md archive pass: which entries moved, which clause of "
@@ -205,22 +223,34 @@ def build(applied: bool) -> dict:
                                     "the remainder is UNTOUCHED rather than partly worked (D-672).",
         },
         "base_commit": BASE,
+        "pass_commit": PASS_COMMIT,
         "moved_range_at_base": {"first_line": FIRST_LINE, "last_line": LAST_LINE},
         "counted": {
             "dated_entries_moved": len(entries),
             "lines_moved": len(block),
             "lines_in_STATUS_md_at_base": len(base_lines),
-            "lines_in_STATUS_md_after": len(kept),
+            "lines_in_STATUS_md_after_the_pass": len(kept),
         },
         "moved_block_sha256": _sha(block_text),
         "moved_entries": entries,
         "reconciliation": {
-            "STATUS_md_at_head_is_exactly_the_base_minus_the_moved_range": live_exact,
-            "the_moved_block_appears_verbatim_in_STATUS_ARCHIVE_md": archive_has_block,
+            "STATUS_md_AT_THE_PASS_COMMIT_is_exactly_the_base_minus_the_moved_range":
+                at_pass_exact,
+            "the_moved_block_appears_verbatim_in_STATUS_ARCHIVE_md_at_head": archive_has_block,
+            "the_moved_block_does_NOT_appear_in_STATUS_md_at_head": live_lacks_block,
             "what_that_proves_together": "Nothing left the live file that is not in the archive, "
-                                         "and nothing else left it. Both are byte comparisons "
-                                         "against the base commit's own git object, not against "
-                                         "the memory of performing the move (#15).",
+                                         "nothing else left it, and the block was MOVED rather "
+                                         "than copied. All three are byte comparisons against git "
+                                         "objects named by explicit hash, or against the file at "
+                                         "HEAD — never against the memory of performing the move "
+                                         "(#15).",
+            "why_the_first_is_stamped_to_a_commit": "The live file grows: the batch that performed "
+                                                    "this pass appended its own entries afterwards. "
+                                                    "The equality is a fact about ONE MOMENT, so it "
+                                                    "is checked at that moment's own git object "
+                                                    "(D-646, the epoch pattern) rather than against "
+                                                    "a working tree that legitimately moves on — "
+                                                    "the OI-344 shape, avoided by construction.",
         },
     }
 
@@ -249,9 +279,11 @@ def apply_move() -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    g = ap.add_mutually_exclusive_group(required=True)
+    g = ap.add_mutually_exclusive_group()
     g.add_argument("--apply", action="store_true", help="perform the move (once)")
     g.add_argument("--check", action="store_true", help="re-derive the reconciliation")
+    # No mode: re-derive and WRITE the artifact, which is how every sibling generator behaves and
+    # what a later batch needs when the reconciliation's own shape changes.
     args = ap.parse_args()
 
     if args.apply:
@@ -277,14 +309,14 @@ def main() -> int:
         print(f"wrote {os.path.relpath(OUT, ROOT)}")
 
     rec = art["reconciliation"]
-    ok = (rec["STATUS_md_at_head_is_exactly_the_base_minus_the_moved_range"] is True
-          and rec["the_moved_block_appears_verbatim_in_STATUS_ARCHIVE_md"] is True)
+    a = rec["STATUS_md_AT_THE_PASS_COMMIT_is_exactly_the_base_minus_the_moved_range"]
+    b = rec["the_moved_block_appears_verbatim_in_STATUS_ARCHIVE_md_at_head"]
+    c = rec["the_moved_block_does_NOT_appear_in_STATUS_md_at_head"]
     print(f"  dated entries moved: {art['counted']['dated_entries_moved']}")
-    print(f"  live file is exactly base-minus-range: "
-          f"{rec['STATUS_md_at_head_is_exactly_the_base_minus_the_moved_range']}")
-    print(f"  moved block verbatim in the archive:   "
-          f"{rec['the_moved_block_appears_verbatim_in_STATUS_ARCHIVE_md']}")
-    return 0 if ok else 1
+    print(f"  at the pass commit, the live file was exactly base-minus-range: {a}")
+    print(f"  the moved block is verbatim in the archive at HEAD:             {b}")
+    print(f"  the moved block is absent from the live file at HEAD:           {c}")
+    return 0 if (a is True and b is True and c is True) else 1
 
 
 if __name__ == "__main__":
