@@ -17,7 +17,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:523-524`
+**Home.** `ARCHITECTURE.md:565-566`
 
 **Provenance.** ARCHITECTURE.md:308-316 'Doc governance (2026-06-29) - the hierarchy'
 
@@ -32,7 +32,7 @@
 
 **Status.** LIVE · decided 2026-06-29 · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:520-521`
+**Home.** `ARCHITECTURE.md:562-563`
 
 **Provenance.** ARCHITECTURE.md:308-316
 
@@ -47,7 +47,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4178-4179`
+**Home.** `ARCHITECTURE.md:4220-4221`
 
 **Provenance.** ARCHITECTURE.md:3363-3365, consistent with :251-254
 
@@ -63,7 +63,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:1497-1499`
+**Home.** `ARCHITECTURE.md:1539-1541`
 
 **Provenance.** ARCHITECTURE.md:1151-1154. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
 
@@ -157,7 +157,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:7955`
+**Home.** `ARCHITECTURE.md:8020`
 
 **Provenance.** ARCHITECTURE.md:6754-6759 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
 
@@ -179,7 +179,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `CLAUDE.md:1122`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1135`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
@@ -202,7 +202,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:1320`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1333`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:821-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
@@ -219,7 +219,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1316`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1329`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:817-811, user-directed repeatedly and recorded 2026-07-11.
 
@@ -245,7 +245,7 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:1396`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1409`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:873-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
@@ -278,7 +278,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:826-828`
+**Home.** `ARCHITECTURE.md:868-870`
 
 **Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -317,7 +317,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_design_doc_template.md:120-123`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `cowork_design_doc_template.md:161-164`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** cowork_design_doc_template.md:75-78, stated as a convention in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards; no date or ratifier is stated at this home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -342,7 +342,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_design_doc_template.md:127-136`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `cowork_design_doc_template.md:170-179`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** cowork_design_doc_template.md:82 ('The locator stays (user, 2026-06-24)') and :91 ('User mandate 2026-06-22, refined 2026-06-24'). Homed in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards, which names the implementation/test locator rule among what it carries. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
@@ -360,7 +360,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_design_doc_template.md:138-140`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `cowork_design_doc_template.md:181-183`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` (session 21e, the gap-analysis rulings). It is NOT in `cowork_design_doc_template.md`, which is the ratified home of the writing standards and states the implementation/test locator rule without this constraint on the locator's form — checked at the source. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into `cowork_design_doc_template.md` beside the implementation/test locator rule (D-257) it constrains. Homed THERE rather than in `CLAUDE.md` because `CLAUDE.md`'s own Conventions entry names that file the ONE home for the writing standards (#6), and the phase-1f entry recorded the gap as the locator rule stating no constraint on the locator's form. Former home preserved (#12): `STATUS_ARCHIVE.md:242`, session 21e.
 
@@ -400,7 +400,7 @@
 
 **Home.** `cowork_notation_adoption_increment.md:18`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **the opening block (above the first section heading)** — `# The notation-layer adoption increment — decision surface (★ USER-RATIFIED 2026-07-26)` (heading at line 1). A delegation at ARCHITECTURE.md:6928 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **the opening block (above the first section heading)** — `# The notation-layer adoption increment — decision surface (★ USER-RATIFIED 2026-07-26)` (heading at line 1). A delegation at ARCHITECTURE.md:6993 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_notation_adoption_increment.md`:17-20, the first of three rulings the document records the user making at its drafting, each dated 2026-07-26 and each given as a correction to a prior writing. Rulings 2 and 3 of the same list were codified as the decision-neutrality corollary and are registered as D-190, homed in `CLAUDE.md`; ruling 1 was not, and is registered here. Its natural home is `cowork_design_doc_template.md`, which `CLAUDE.md` Conventions makes the ONE home for the writing standards (the same reasoning that placed D-307 there), hence the documentation-gap flag. Found by the phase-1l continuation wave, 2026-08-03, reading `cowork_notation_adoption_increment.md` IN FULL (the OI-207 reading list's next document, 17 unresolved clusters). The document carries a status banner and is user-ratified 2026-07-26, but NO user-ratified surface names it — it is absent from `ARCHITECTURE.md`, `CLAUDE.md` and `cowork_engage_arc_plan.md` alike (measured this session at Task 7) — so it is not a contract home under either the phase-1i criterion or the delegation-specificity criterion the user ruled 2026-08-03. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1l ratification queue.
 
@@ -600,7 +600,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `CLAUDE.md:1371-1382`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:1384-1395`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 30 of `cowork_rulings_2026_08_09_fifth_stop.md`, whose two-tier test for research-tied names is the user's own; recorded on `OPEN_ITEMS.md` OI-229's row by `cc_instruction_return_continuation_5.md` Task 0, which stays OPEN because the cleanup itself is not done. CLASSIFIED as a DECISION by the user's Ruling 36 of 2026-08-09 (`cowork_rulings_2026_08_09_sixth_stop.md`), queue §7 entry 30, on the ground that nothing in the register says what a session may do with a research-tied name while #1/#2 make those names load-bearing. Homed by that same ruling in `CLAUDE.md`'s Conventions reserved-word block beside the disambiguation convention — the site the queue named, and a USER-ONLY text the ratification is the scoped licence for — written in that block's own voice, provenance here and never in the convention text. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-113 (the reserved-vocabulary convention it completes), D-661 (the completeness rule governing the inventory it orders), D-431 (why the inventory's counts stay in the artifact).
 

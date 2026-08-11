@@ -302,6 +302,42 @@ def recut(cls: dict, discharged: set[str]) -> dict:
     }
 
 
+def recut_unhomed(cls: dict, discharged: set[str]) -> dict:
+    """The `unhomed` class's population, with the SAME subtraction its four siblings apply.
+
+    ★ THE USER'S RULING 61 of 2026-08-11 (`cowork_rulings_2026_08_11_fourteenth_stop.md`), closing
+    `OPEN_ITEMS.md` OI-369.  Until this act the last homing item took its population RAW while its
+    four siblings subtracted the entries an entry-level ruling had discharged — so the item asked
+    for an act the user's Ruling 6 of 2026-08-09 forbids for the one entry it carried.  The ruling
+    gives it the same subtraction rather than a carve-out of its own: one machinery per concern (#6),
+    two subtraction behaviours across five siblings being the excluded alternative recorded there.
+
+    The subtraction is IMPORTED, not re-implemented: `discharged` is the same set `recut` takes,
+    derived by `gen_r1_superseded_reach.py`, whose population the same ruling extends to this class.
+    The document cut is PRESERVED beside the result (#12), exactly as `recut` preserves it.
+    """
+    homes = cls["ids_and_homes"]
+    keep = {i: h for i, h in homes.items() if i not in discharged}
+    gone = {i: h for i, h in homes.items() if i in discharged}
+    return {
+        "entries": len(keep),
+        "entry_ids_and_current_homes": keep,
+        "★_the_same_subtraction_the_four_sibling_items_apply": (
+            "The population criterion C1 still reaches, per DECISION. Entries an entry-level ruling "
+            "has already discharged are subtracted, and are listed below rather than silently "
+            "absent — the user's Ruling 61 of 2026-08-11."
+        ),
+        "before_the_subtraction": {
+            "entries": cls["count"],
+            "entry_ids_and_current_homes": homes,
+            "why_it_is_kept": "So the movement is visible rather than inferred (#12). It is the "
+                              "figure this item published before Ruling 61.",
+        },
+        "discharged_by_an_entry_level_ruling": gone,
+        "entries_discharged": len(gone),
+    }
+
+
 def build_items(inv: dict, deleg: dict, discharged: set[str]) -> list[dict]:
     part = deleg["the_partition"]
     comp = inv["the_complete_half"]
@@ -449,20 +485,24 @@ def build_items(inv: dict, deleg: dict, discharged: set[str]) -> list[dict]:
                 "or a superseded status archive",
         "half": "COMPLETE",
         "criterion": "C1",
-        "population": {
-            "entries": unhomed["count"],
-            "entry_ids_and_current_homes": unhomed["ids_and_homes"],
-        },
+        "population": recut_unhomed(unhomed, discharged),
         "why_it_is_outstanding": unhomed["what_it_is"],
         "gate": gap_gate,
         "closing_act": (
             "Per entry: write the decision into the specification that owns its subject, and leave "
             "the archive text in place (#12 — the archive is provenance, and nothing is deleted "
             "from it). The archives themselves are reference-only and are NOT part of the "
-            "session-start read, which is precisely why an entry homed only there defeats C4."
+            "session-start read, which is precisely why an entry homed only there defeats C4. "
+            "★ IT GOVERNS WHAT THIS ITEM STILL HOLDS, AND NOTHING MORE (the user's Ruling 61 of "
+            "2026-08-11, closing `OPEN_ITEMS.md` OI-369): a SUPERSEDED entry whose successors are "
+            "homed leaves this item by the same D-642 subtraction its four sibling items apply, and "
+            "nothing is written into any specification for it — a supersession is register "
+            "business, which is what the user's Ruling 6 of 2026-08-09 ruled for the entry this "
+            "item used to carry. The act above therefore reaches whatever the subtraction leaves "
+            "standing, never what it removes."
         ),
         "who_may_perform_it": "a working session, per entry.",
-        "authored": "the closing act. The population and the homes are derived.",
+        "authored": "the closing act. The population, the homes and the subtraction are derived.",
     })
 
     # ── the COMPLETE half, criterion C2 — the defenses ───────────────────────────────────────
@@ -759,6 +799,27 @@ def build() -> dict:
             "STOP: the discharged count and the discharged identifiers disagree — %d against %d."
             % (entry_discharged, len(accounted)))
 
+    # ── STOP 2c: the `unhomed` item's subtraction must ACCOUNT for its whole class (Ruling 61) ──
+    # The same demand STOP 2b makes of the four sibling items, made of the fifth. It is stated
+    # separately because the class has its own shape — id → home rather than by document — and
+    # folding it into 2b would have meant re-shaping one of the two populations to fit the check.
+    unhomed_items = [i for i in items
+                     if i["criterion"] == "C1" and "entry_ids_and_current_homes" in i["population"]]
+    if len(unhomed_items) != 1:
+        raise SystemExit(
+            "STOP: expected exactly one item over the register's `unhomed` class, found %d. The "
+            "subtraction's reconciliation is stated over one item and cannot silently cover two."
+            % len(unhomed_items))
+    unhomed_pop = unhomed_items[0]["population"]
+    unhomed_kept = unhomed_pop["entries"]
+    unhomed_discharged = unhomed_pop["entries_discharged"]
+    if unhomed_kept + unhomed_discharged != unhomed_total:
+        raise SystemExit(
+            "STOP: the `unhomed` item accounts for %d + %d entries but the register's `unhomed` "
+            "class holds %d. Every entry the class carried must be either still on the finish line "
+            "or named as discharged, with its ground."
+            % (unhomed_kept, unhomed_discharged, unhomed_total))
+
     rows_covered = split["gates"]["count"] + split["non_gating"]["count"]
     wide_total = inv["the_true_half"]["the_wide_cut"]["count"]
     if rows_covered != wide_total:
@@ -787,7 +848,7 @@ def build() -> dict:
         raise SystemExit(
             "STOP: row(s) named both as awaiting a ruling and as ruled: " + ", ".join(both) + ".")
 
-    total_entries = entry_covered + unhomed_total
+    total_entries = entry_covered + unhomed_kept
     defense_total = comp["class_3_defense_not_recorded"][
         "entries_with_no_rationale_at_all"]["count"]
 
@@ -930,7 +991,8 @@ def build() -> dict:
                 "it, because a reader deciding what to commission needs to see them."
             ),
             "register_entries_owed_a_home_at_document_granularity": homing_covered + unhomed_total,
-            "register_entries_discharged_by_an_entry_level_ruling": entry_discharged,
+            "register_entries_discharged_by_an_entry_level_ruling": entry_discharged
+                                                                    + unhomed_discharged,
             "★_which_of_those_two_figures_is_the_finish_line": (
                 "The entry-level one, on ruling R3. The document-granularity figure is kept beside "
                 "it so the movement is visible rather than inferred (#12), and it is the figure "
@@ -940,6 +1002,8 @@ def build() -> dict:
                 "homing_items_cover_the_documentation_gap_class": homing_covered == gap_total,
                 "entry_cut_plus_discharged_covers_the_documentation_gap_class":
                     entry_covered + entry_discharged == gap_total,
+                "unhomed_item_kept_plus_discharged_covers_the_register_unhomed_class":
+                    unhomed_kept + unhomed_discharged == unhomed_total,
                 "true_half_items_cover_the_wide_cut": rows_covered == wide_total,
                 "every_item_carries_a_closing_act": True,
             },

@@ -71,6 +71,19 @@ LEAVES = "LEAVES ITEM 1 — correctly homed already (the register plus the succe
 ROUTE_CHANGES = "STAYS IN ITEM 1, ROUTE CHANGED — the owed act is homing the SUCCESSOR"
 NEITHER = "NEITHER — R1 does not discharge this entry"
 
+# ── Ruling 61 (user, 2026-08-11, `cowork_rulings_2026_08_11_fourteenth_stop.md`) ─────────────────
+#
+# The finish line's LAST homing item — "register entries with no home at all", whose population is
+# the register's own `unhomed` class — took its population RAW while its four sibling items applied
+# the D-642 subtraction this file derives.  `OPEN_ITEMS.md` OI-369 established that the item
+# therefore asked for an act the user's Ruling 6 of 2026-08-09 forbids.  The ruling closes it by
+# giving that item the SAME subtraction rather than a carve-out of its own, so this derivation now
+# covers BOTH classes and one machinery serves both (#6).
+#
+# The added members are DERIVED from the register's `unhomed` home class, never listed here, and two
+# reconciliations below STOP if the extension reaches further than the ruling licenses.
+UNHOMED_ROUTE = "NO HOME AT ALL — recorded only on a tracking surface (the register's `unhomed` class)"
+
 
 # ── authored: the successor list per entry of the NO-HOME class ────────────────────────────────────
 #
@@ -222,6 +235,34 @@ SUCCESSORS: dict[str, dict] = {
                                      "needs-vector row that already carries it, as evidence, so no "
                                      "home is owed. A split is not a supersession and R1 does not "
                                      "reach it."},
+
+    # ── THE REGISTER'S `unhomed` CLASS, joined to this derivation on the user's Ruling 61 ────────
+    #
+    # It is one entry at HEAD, and it is derived rather than listed: membership is `nonspec_kind ==
+    # "unhomed"` read off the register, and a member with no successor record below is a STOP.
+    "D-289": {
+        "successors": [{"register_id": "D-284", "named_as": "D-284"},
+                     {"register_id": "D-036", "named_as": "D-036"},
+                     {"register_id": "D-001", "named_as": "D-001"},
+                     {"register_id": "D-010", "named_as": "D-010"},
+                     {"register_id": "D-288", "named_as": "D-288"},
+                     {"register_id": "D-287", "named_as": "D-287"}],
+        "why": "`superseded_by` reads 'D-284 (and through it D-036 with D-001/D-010), with D-288 "
+               "and D-287' — six entries, every one of them named by the record itself, and the "
+               "parenthesis is the record performing the chain rather than a session inferring it: "
+               "it says in its own words that the content reaches D-036/D-001/D-010 THROUGH D-284. "
+               "All six are listed, so nothing the record names is dropped, and the chain is left "
+               "to the derived half rather than resolved by the authored one.",
+        "note": "★ THIS IS THE ONE ENTRY WHOSE DISPOSITION NEEDS D-642 APPLIED TWICE, AND IT IS WHY "
+                "THE TRANSITIVE STEP EXISTS AT ALL. D-284 is itself a member of this derivation and "
+                "is itself NOT homed — so on the homed test alone this entry would read STAYS, "
+                "ROUTE CHANGED, with the owed act 'home the successor D-284'. That instruction "
+                "would be FALSE: D-284's own obligation has already moved to D-036/D-001/D-010 and "
+                "is discharged there, which this same file derives. The user ruled the entry closes "
+                "by the sibling subtraction (Ruling 61) and ruled the entry SUPERSEDED with nothing "
+                "written into any specification (Ruling 6 of 2026-08-09); the transitive step is "
+                "what makes the derivation say so rather than the prose asserting it.",
+    },
 }
 
 
@@ -286,12 +327,64 @@ def homed_verdict(entry: dict) -> dict:
                        "discharge C1 for the entry that points at it (#19)"}
 
 
+def _disposition(status: str, successors: list[dict], discharged_ids: set[str]) -> tuple[str, str]:
+    """The disposition, given each successor's HOMED verdict and the set already dispositioned LEAVES.
+
+    `discharged_ids` is what makes D-642 iterate along the chain the record names: a successor that
+    is itself in this derivation and has itself LEFT carries no obligation to hand on, so it
+    discharges the entry pointing at it exactly as a homed successor does. Passing an EMPTY set
+    gives the homed-test-only answer, which is what the reconciliation below compares against.
+    """
+    if status not in SUPERSEDED_STATUSES:
+        return NEITHER, (
+            f"R1 DOES NOT REACH IT: the entry's status is `{status}`, and R1 governs entries "
+            "whose content is superseded.")
+    if not successors:
+        return NEITHER, (
+            "R1's CONDITION IS NOT DISCHARGEABLE: the entry is superseded, but the record "
+            "names no successor carrying its live content. R1 is silent on that shape and "
+            "nothing is proposed.")
+    open_ = [c for c in successors
+             if not c["homed"] and c.get("register_id") not in discharged_ids]
+    if not open_:
+        return LEAVES, (
+            "Every successor the record names is homed, or has itself already handed its "
+            "obligation on and been discharged in this derivation, so C1 is satisfied for this "
+            "entry's live content at the successor's home, and the supersession itself is register "
+            "business — which D-231's clause assigns to the register.")
+    named = [c["register_id"] for c in open_ if c["register_id"]]
+    unresolved = [c["named_as"] for c in open_ if not c["register_id"]]
+    ground = ("At least one successor is NOT homed, so C1 is defeated and the owed act is on "
+              "the SUCCESSOR side rather than on this entry. ")
+    if named:
+        ground += "Home the successor: " + ", ".join(named) + ". "
+    if unresolved:
+        ground += ("What the record names — " + ", ".join(unresolved) + " — is not a "
+                   "register entry, so the act owed FIRST is a naming: which recorded "
+                   "decision carries it. That is not settled here, for the reason the "
+                   "entry's note gives.")
+    return ROUTE_CHANGES, ground.strip()
+
+
 def build() -> dict:
     routes = build_routes()
     reg = register()
 
     class_rows = [r for r in routes["rows"]
                   if r["route"] == NO_HOME and not r["closed_by_this_wave"]]
+    # ── Ruling 61: the register's `unhomed` class joins the population, DERIVED not listed ───────
+    unhomed_rows = [{"id": e["id"], "route": UNHOMED_ROUTE}
+                    for e in sorted(reg.values(), key=lambda x: x["id"])
+                    if e.get("nonspec_kind") == "unhomed"]
+    unhomed_ids = {r["id"] for r in unhomed_rows}
+    original_ids = {r["id"] for r in class_rows}
+    overlap = sorted(unhomed_ids & original_ids)
+    if overlap:
+        raise SystemExit(
+            "STOP: entr(ies) in BOTH the no-home class and the register's `unhomed` class: "
+            + ", ".join(overlap) + ". The two classes are meant to be disjoint cuts; an entry in "
+            "both would be dispositioned twice and counted twice.")
+    class_rows = class_rows + unhomed_rows
     pop = [r["id"] for r in class_rows]
 
     missing = sorted(i for i in pop if i not in SUCCESSORS)
@@ -318,7 +411,7 @@ def build() -> dict:
         raise SystemExit(
             "STOP: entr(ies) recorded both live and retired: " + ", ".join(both) + ".")
 
-    rows = []
+    prepared = []
     for r in class_rows:
         eid = r["id"]
         entry = reg[eid]
@@ -366,40 +459,76 @@ def build() -> dict:
                 })
             successors.append(rec)
 
-        status = entry.get("status")
-        if status not in SUPERSEDED_STATUSES:
-            disposition, ground = NEITHER, (
-                f"R1 DOES NOT REACH IT: the entry's status is `{status}`, and R1 governs entries "
-                "whose content is superseded.")
-        elif not successors:
-            disposition, ground = NEITHER, (
-                "R1's CONDITION IS NOT DISCHARGEABLE: the entry is superseded, but the record "
-                "names no successor carrying its live content. R1 is silent on that shape and "
-                "nothing is proposed.")
-        elif all(c["homed"] for c in successors):
-            disposition, ground = LEAVES, (
-                "Every successor the record names is homed, so C1 is satisfied for this entry's live "
-                "content at the successor's home, and the supersession itself is register "
-                "business — which D-231's clause assigns to the register.")
-        else:
-            unhomed = [c for c in successors if not c["homed"]]
-            named = [c["register_id"] for c in unhomed if c["register_id"]]
-            unresolved = [c["named_as"] for c in unhomed if not c["register_id"]]
-            ground = ("At least one successor is NOT homed, so C1 is defeated and the owed act is on "
-                      "the SUCCESSOR side rather than on this entry. ")
-            if named:
-                ground += "Home the successor: " + ", ".join(named) + ". "
-            if unresolved:
-                ground += ("What the record names — " + ", ".join(unresolved) + " — is not a "
-                           "register entry, so the act owed FIRST is a naming: which recorded "
-                           "decision carries it. That is not settled here, for the reason the "
-                           "entry's note gives.")
-            disposition, ground = ROUTE_CHANGES, ground.strip()
+        prepared.append({"row": r, "entry": entry, "authored": authored,
+                         "successors": successors, "status": entry.get("status")})
 
+    # ── the fixpoint: D-642 ITERATED along the chain the record names ───────────────────────────
+    #
+    # The clause is "a superseded entry's obligation moves to its successor and is discharged where
+    # that successor is homed". Where the successor is ITSELF a superseded entry that has already
+    # handed its own obligation on, there is nothing left at it to home — so the clause applies
+    # again, to the same data, and the chain closes. That is iterating a rule, not extending one,
+    # and the register's own text performs the step for the one entry that needs it ("D-284 (and
+    # through it D-036 with D-001/D-010)").
+    #
+    # It settles because the LEAVES set only grows: adding a discharged successor can turn a
+    # ROUTE-CHANGED entry into a LEAVING one and never the reverse. The bound is therefore the
+    # population size, and failing to settle inside it is a STOP rather than a silent truncation.
+    def leaves_under(discharged_ids: set[str]) -> set[str]:
+        return {p["row"]["id"] for p in prepared
+                if _disposition(p["status"], p["successors"], discharged_ids)[0] == LEAVES}
+
+    leaves_ids: set[str] = set()
+    for _ in range(len(prepared) + 2):
+        nxt = leaves_under(leaves_ids)
+        if nxt == leaves_ids:
+            break
+        leaves_ids = nxt
+    else:
+        raise SystemExit(
+            "STOP: the successor chain did not settle within the population's own size. A cycle "
+            "among named successors is a fact about the register that this file may not resolve "
+            "by picking a starting point.")
+
+    # ── Ruling 61's RECONCILIATION, both ways, and the STOP the dispatch's A1 names ─────────────
+    #
+    # (1) The added population must be EXACTLY the register's `unhomed` class — derived on both
+    #     sides, so a class that grows or shrinks is caught rather than absorbed.
+    # (2) The transitive step must move NOTHING outside that class. Measured by running the same
+    #     disposition function with an EMPTY discharged set — the homed-test-only answer this file
+    #     produced before the ruling — and diffing.
+    homed_only = {p["row"]["id"]: _disposition(p["status"], p["successors"], set())[0]
+                  for p in prepared}
+    with_chain = {p["row"]["id"]: _disposition(p["status"], p["successors"], leaves_ids)[0]
+                  for p in prepared}
+    moved_by_the_chain = sorted(i for i in with_chain if with_chain[i] != homed_only[i])
+    beyond = [i for i in moved_by_the_chain if i not in unhomed_ids]
+    if beyond:
+        raise SystemExit(
+            "STOP: the transitive step moves entr(ies) outside the class Ruling 61 licenses: "
+            + ", ".join(beyond) + ". The ruling extends ONE subtraction to ONE class; a mover "
+            "beyond it is a change to what this derivation says about entries nobody ruled on.")
+    derived_unhomed = {e["id"] for e in reg.values() if e.get("nonspec_kind") == "unhomed"}
+    if derived_unhomed != unhomed_ids:
+        raise SystemExit(
+            "STOP: the register's `unhomed` class and the population this file joined disagree.")
+
+    rows = []
+    for p in prepared:
+        r, entry, authored = p["row"], p["entry"], p["authored"]
+        eid = r["id"]
+        successors = p["successors"]
+        disposition, ground = _disposition(p["status"], successors, leaves_ids)
+        for c in successors:
+            if not c["homed"] and c.get("register_id") in leaves_ids:
+                c["discharged_through_its_own_successors"] = (
+                    "NOT homed itself, but this derivation dispositions it as LEAVING — its own "
+                    "obligation has already moved to its own successors and is discharged there. "
+                    "D-642 applied a second time, along the chain the record names.")
         row = {
             "id": eid,
             "title": entry["title"],
-            "status": status,
+            "status": p["status"],
             "home_at_HEAD": entry["home"],
             "home_class": entry.get("nonspec_kind") or "homed-in-a-layer-specification",
             "route_before_R1": r["route"],
@@ -446,13 +575,62 @@ def build() -> dict:
 
     return {
         "purpose": (
-            "Ruling R1 APPLIED to finish-line item 1's NO-HOME class: per entry, the successor the "
-            "record names for its live content, whether that successor is homed, and what follows. "
-            "NOT a completion statement, and not an authorization for any fix, design or inference "
-            "change."
+            "Ruling R1 APPLIED to finish-line item 1's NO-HOME class AND — on the user's Ruling 61 "
+            "of 2026-08-11 — to the register's `unhomed` class, which the finish line's last homing "
+            "item carries: per entry, the successor the record names for its live content, whether "
+            "that successor is homed, and what follows. NOT a completion statement, and not an "
+            "authorization for any fix, design or inference change."
         ),
         "generated_by": "tools/audit/decisions/gen_r1_superseded_reach.py",
-        "generated_for": "cc_instruction_c1_ruling_and_item1c.md (Task 2, ruling R1)",
+        "generated_for": "cc_instruction_c1_ruling_and_item1c.md (Task 2, ruling R1); EXTENDED to "
+                         "the register's `unhomed` class by cc_instruction_return_continuation_14.md "
+                         "(Task 0) on the user's Ruling 61",
+        "★_ruling_61_the_sibling_subtraction_extended_to_the_LAST_homing_item": {
+            "the_ruling": (
+                "User, 2026-08-11 (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 61): the "
+                "no-home-at-all item gains the SAME D-642 subtraction its four sibling items apply "
+                "— one machinery per concern (#6), the movement derived and reconciled both ways. "
+                "The row it closes is `OPEN_ITEMS.md` OI-369."
+            ),
+            "what_changed_here": (
+                "The population. It was item 1's NO-HOME class alone; it is now that class PLUS the "
+                "register's `unhomed` class, DERIVED on both sides from `nonspec_kind` rather than "
+                "listed. The disposition rule is unchanged in substance and is applied ALONG THE "
+                "CHAIN the record names: a successor that is itself dispositioned LEAVING carries "
+                "no obligation to hand on, so it discharges the entry pointing at it exactly as a "
+                "homed successor does."
+            ),
+            "why_the_chain_step_is_not_a_new_rule": (
+                "D-642 says a superseded entry's obligation moves to its successor and is "
+                "discharged where that successor is homed. Applying it to a successor that has "
+                "ITSELF already handed its obligation on is the same clause used twice on the same "
+                "data. The register performs that step in its own words for the one entry that "
+                "needs it: `superseded_by` reads 'D-284 (AND THROUGH IT D-036 with D-001/D-010)'."
+            ),
+            "the_reconciliation_that_bounds_it": {
+                "direction_1_the_added_population": "Derived twice — the joined rows and a fresh "
+                                                    "read of the register's `unhomed` class must be "
+                                                    "the same set, or STOP.",
+                "direction_2_what_the_chain_step_moves": "Every disposition is computed a second "
+                                                         "time with the chain step OFF — the "
+                                                         "homed-test-only answer this file gave "
+                                                         "before the ruling — and any entry whose "
+                                                         "answer differs and is NOT in the added "
+                                                         "class is a STOP.",
+                "entries_the_chain_step_moves": moved_by_the_chain,
+                "★_what_that_list_being_exactly_the_added_class_shows": (
+                    "The extension is confined to what the ruling licenses: no entry the record had "
+                    "already dispositioned changes its answer, so nothing the user ruled on earlier "
+                    "is silently re-decided."
+                ),
+            },
+            "what_this_extension_does_NOT_do": (
+                "It moves no entry's home, class or status; it writes nothing into any "
+                "specification — which is the point, since Ruling 6 of 2026-08-09 ruled that "
+                "nothing is written for the entry this extension discharges; and it changes no "
+                "criterion."
+            ),
+        },
         "the_ruling_is_recorded_elsewhere_and_is_not_restated_here": (
             "tools/audit/phase1_completion_inventory.json → the_requirement.criteria → C1 → "
             "★_the_reach_of_C1_over_SUPERSEDED_entries, which carries R1's text, the sentence of "
@@ -542,7 +720,9 @@ def build() -> dict:
             ),
         },
         "counted": {
-            "no_home_class_population": len(rows),
+            "population_total": len(rows),
+            "no_home_class_population": len(original_ids),
+            "unhomed_class_population": len(unhomed_ids),
             "entries_that_LEAVE_item_1": len(leaves),
             "entries_whose_ROUTE_CHANGES_to_home_the_successor": len(changed),
             "entries_that_do_NEITHER": len(neither),
@@ -564,6 +744,18 @@ def build() -> dict:
                 "ENTRY-level clause about which entries criterion C1 reaches. The two are "
                 "different cuts, and subtracting R1's discharged entries from the derived item "
                 "would mean changing what that generator derives."
+            ),
+            "★_SUPERSEDED_BY_TWO_LATER_USER_RULINGS_AND_KEPT_WHOLE_(#12)": (
+                "This block records the state on 2026-08-04, when the reconciliation had NOT been "
+                "authorized and this file and the finish line disagreed in a stated direction. Both "
+                "halves of that disagreement have since been closed BY THE USER, and the text above "
+                "is kept as written because it is the reason each ruling was needed. (1) Ruling R3 "
+                "of 2026-08-04 re-cut the finish line at ENTRY granularity, so the four homing items "
+                "began subtracting the entries this file reports as leaving. (2) Ruling 61 of "
+                "2026-08-11 extended the same subtraction to the FIFTH homing item, the "
+                "no-home-at-all one, whose population this file now also covers. So the sentence "
+                "'the finish line still carries every entry above' was true when written and is "
+                "false at HEAD, by two acts of the user rather than by drift."
             ),
             "what_is_therefore_reported_rather_than_done": (
                 "The entries above are recorded as leaving item 1 by R1's own terms, and the count "
@@ -596,14 +788,15 @@ def main(argv: list[str]) -> int:
             return 1
         c = data["counted"]
         print(f"PASS: {OUT.name} re-derives byte-identically "
-              f"({c['no_home_class_population']} entries; {c['entries_that_LEAVE_item_1']} leave / "
+              f"({c['population_total']} entries; {c['entries_that_LEAVE_item_1']} leave / "
               f"{c['entries_whose_ROUTE_CHANGES_to_home_the_successor']} route-changed / "
               f"{c['entries_that_do_NEITHER']} neither)")
         return 0
     OUT.write_text(text, encoding="utf-8")
     c = data["counted"]
     print(f"wrote {OUT}")
-    print(f"  {c['no_home_class_population']} entries in item 1's NO-HOME class")
+    print(f"  {c['no_home_class_population']} entries in item 1's NO-HOME class "
+          f"+ {c['unhomed_class_population']} in the register's `unhomed` class (Ruling 61)")
     print(f"  leave: {c['entries_that_LEAVE_item_1']}  "
           f"route changed: {c['entries_whose_ROUTE_CHANGES_to_home_the_successor']}  "
           f"neither: {c['entries_that_do_NEITHER']}")

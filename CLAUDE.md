@@ -1114,6 +1114,19 @@ story in `docs/scoring_model.md` §4 (note below the "Other terms" table).
 logic in `chordanalyzer.cpp`** — this includes adding or modifying templates,
 bonuses, guards, gates, score matrices, or post-scoring passes.
 
+**★ THE SAME FORM, FOR THE PRODUCTION INFERENCE LAYER (user-ruled 2026-08-11; the ruling record is
+`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 64).** **Read the joint estimator's section of
+`ARCHITECTURE.md` — its standing rules and the factorization contract that section delegates to — at
+the start of any session that touches the joint estimator's behaviour.** *Why:* the
+never-work-from-memory rule's founding instance is measured evidence that routing a session to a
+specification on demand fails under load — a session reasoned about note collection from two
+neighbouring documents without opening the layer specification and reported the position as
+ambiguous, where the specification states it explicitly and twice. Phase 3's sessions live in this
+specification, so the risk concentrates exactly where the record is least able to absorb it. *The
+excluded alternatives are recorded at the ruling:* an unconditional read, which spends capacity —
+this arc's measured scarcest resource — on every session the condition excludes; and declining, which
+leaves the failed route as the only route.
+
 The document is the authoritative reference for how the scoring pipeline works,
 why each term exists, and what invariants must not be broken. Violating these
 invariants without reading the doc first has caused multiple failed attempts

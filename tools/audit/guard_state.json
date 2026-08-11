@@ -409,7 +409,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 36 gates of 61 candidates over 251 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 34 gates of 59 candidates over 249 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -526,10 +526,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 672",
+        "backbone decisions: 673",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 672/672",
-        "cited line numbers correct: 666/666   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 673/673",
+        "cited line numbers correct: 667/667   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -711,7 +711,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: r1_superseded_reach.json re-derives byte-identically (17 entries; 7 leave / 0 route-changed / 10 neither)"
+        "PASS: r1_superseded_reach.json re-derives byte-identically (18 entries; 8 leave / 0 route-changed / 10 neither)"
       ],
       "stderr": [],
       "what_it_checks": "ruling R1's application re-derives — every member of item 1's NO-HOME class still carries an authored successor record, no successor record names an entry the class no longer carries, every authored successor is still NAMED IN THE SUPERSEDED ENTRY'S OWN TEXT, and every one that resolves to a register identifier still resolves to an entry the register holds"
@@ -737,10 +737,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  the chord layer: ARCHITECTURE.md:1896 lists 10 entry(ies)",
-        "  the key layer: ARCHITECTURE.md:1692 lists 2 entry(ies)",
+        "  the chord layer: ARCHITECTURE.md:1938 lists 10 entry(ies)",
+        "  the key layer: ARCHITECTURE.md:1734 lists 2 entry(ies)",
         "  the search: ARCHITECTURE.md:315 lists 3 entry(ies)",
-        "  the declared mode's weight: ARCHITECTURE.md:4235 lists 1 entry(ies)",
+        "  the declared mode's weight: ARCHITECTURE.md:4295 lists 1 entry(ies)",
         "class members (derived from the verification): 14",
         "every live-prohibition entry carries its pointer, as derived"
       ],

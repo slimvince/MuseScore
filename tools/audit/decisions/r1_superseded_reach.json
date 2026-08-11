@@ -1,7 +1,21 @@
 {
- "purpose": "Ruling R1 APPLIED to finish-line item 1's NO-HOME class: per entry, the successor the record names for its live content, whether that successor is homed, and what follows. NOT a completion statement, and not an authorization for any fix, design or inference change.",
+ "purpose": "Ruling R1 APPLIED to finish-line item 1's NO-HOME class AND — on the user's Ruling 61 of 2026-08-11 — to the register's `unhomed` class, which the finish line's last homing item carries: per entry, the successor the record names for its live content, whether that successor is homed, and what follows. NOT a completion statement, and not an authorization for any fix, design or inference change.",
  "generated_by": "tools/audit/decisions/gen_r1_superseded_reach.py",
- "generated_for": "cc_instruction_c1_ruling_and_item1c.md (Task 2, ruling R1)",
+ "generated_for": "cc_instruction_c1_ruling_and_item1c.md (Task 2, ruling R1); EXTENDED to the register's `unhomed` class by cc_instruction_return_continuation_14.md (Task 0) on the user's Ruling 61",
+ "★_ruling_61_the_sibling_subtraction_extended_to_the_LAST_homing_item": {
+  "the_ruling": "User, 2026-08-11 (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 61): the no-home-at-all item gains the SAME D-642 subtraction its four sibling items apply — one machinery per concern (#6), the movement derived and reconciled both ways. The row it closes is `OPEN_ITEMS.md` OI-369.",
+  "what_changed_here": "The population. It was item 1's NO-HOME class alone; it is now that class PLUS the register's `unhomed` class, DERIVED on both sides from `nonspec_kind` rather than listed. The disposition rule is unchanged in substance and is applied ALONG THE CHAIN the record names: a successor that is itself dispositioned LEAVING carries no obligation to hand on, so it discharges the entry pointing at it exactly as a homed successor does.",
+  "why_the_chain_step_is_not_a_new_rule": "D-642 says a superseded entry's obligation moves to its successor and is discharged where that successor is homed. Applying it to a successor that has ITSELF already handed its obligation on is the same clause used twice on the same data. The register performs that step in its own words for the one entry that needs it: `superseded_by` reads 'D-284 (AND THROUGH IT D-036 with D-001/D-010)'.",
+  "the_reconciliation_that_bounds_it": {
+   "direction_1_the_added_population": "Derived twice — the joined rows and a fresh read of the register's `unhomed` class must be the same set, or STOP.",
+   "direction_2_what_the_chain_step_moves": "Every disposition is computed a second time with the chain step OFF — the homed-test-only answer this file gave before the ruling — and any entry whose answer differs and is NOT in the added class is a STOP.",
+   "entries_the_chain_step_moves": [
+    "D-289"
+   ],
+   "★_what_that_list_being_exactly_the_added_class_shows": "The extension is confined to what the ruling licenses: no entry the record had already dispositioned changes its answer, so nothing the user ruled on earlier is silently re-decided."
+  },
+  "what_this_extension_does_NOT_do": "It moves no entry's home, class or status; it writes nothing into any specification — which is the point, since Ruling 6 of 2026-08-09 ruled that nothing is written for the entry this extension discharges; and it changes no criterion."
+ },
  "the_ruling_is_recorded_elsewhere_and_is_not_restated_here": "tools/audit/phase1_completion_inventory.json → the_requirement.criteria → C1 → ★_the_reach_of_C1_over_SUPERSEDED_entries, which carries R1's text, the sentence of D-231's clause it rests on, and the WITHDRAWN OI-272 basis with the four grounds that refuted it (#6, #12).",
  "derived_at_head_from": [
   "tools/audit/decisions/gen_finish_line_item1_routes.py → build() (imported, #6)",
@@ -59,8 +73,10 @@
   "what_is_authored_here_and_what_is_not": "The MAPPING from home class to homed/not-homed is authored, read out of that criterion. Which class each entry carries is DERIVED, read off the register. No entry's class is judged or changed here."
  },
  "counted": {
+  "population_total": 18,
   "no_home_class_population": 17,
-  "entries_that_LEAVE_item_1": 7,
+  "unhomed_class_population": 1,
+  "entries_that_LEAVE_item_1": 8,
   "entries_whose_ROUTE_CHANGES_to_home_the_successor": 0,
   "entries_that_do_NEITHER": 10,
   "of_which_R1_does_not_reach_because_the_status_is_live": 10,
@@ -72,13 +88,15 @@
    "D-285",
    "D-538",
    "D-571",
-   "D-579"
+   "D-579",
+   "D-289"
   ],
   "ids_whose_route_changes": []
  },
  "★_the_one_thing_this_application_does_NOT_move": {
   "what": "The DERIVED population of finish-line item 1 at `tools/audit/phase1_finish_line.json`, which still carries every entry above.",
   "why": "That population is derived from the DOCUMENT-level delegation partition — entries whose home document is named in no user-ratified surface — while R1 is an ENTRY-level clause about which entries criterion C1 reaches. The two are different cuts, and subtracting R1's discharged entries from the derived item would mean changing what that generator derives.",
+  "★_SUPERSEDED_BY_TWO_LATER_USER_RULINGS_AND_KEPT_WHOLE_(#12)": "This block records the state on 2026-08-04, when the reconciliation had NOT been authorized and this file and the finish line disagreed in a stated direction. Both halves of that disagreement have since been closed BY THE USER, and the text above is kept as written because it is the reason each ruling was needed. (1) Ruling R3 of 2026-08-04 re-cut the finish line at ENTRY granularity, so the four homing items began subtracting the entries this file reports as leaving. (2) Ruling 61 of 2026-08-11 extended the same subtraction to the FIFTH homing item, the no-home-at-all one, whose population this file now also covers. So the sentence 'the finish line still carries every entry above' was true when written and is false at HEAD, by two acts of the user rather than by drift.",
   "what_is_therefore_reported_rather_than_done": "The entries above are recorded as leaving item 1 by R1's own terms, and the count is here. Reconciling the derived item with R1 is a change to the finish line's derivation; the finish line is THE SCOPE by the user's ruling R2 of 2026-08-04, and a session does not reshape it. Nothing is hidden either way: this artifact and the item disagree in a stated direction, by a stated amount."
  },
  "superseded_entries_of_item_1_OUTSIDE_this_class": {
@@ -118,7 +136,7 @@
     }
    ],
    "disposition": "LEAVES ITEM 1 — correctly homed already (the register plus the successor's home)",
-   "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+   "disposition_ground": "Every successor the record names is homed, or has itself already handed its obligation on and been discharged in this derivation, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
    "why_these_successors": "The register names both successors in its own `superseded_by` field, 'D-115 and D-191', and the entry's rationale states what each carries.",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
   },
@@ -153,7 +171,7 @@
     }
    ],
    "disposition": "LEAVES ITEM 1 — correctly homed already (the register plus the successor's home)",
-   "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+   "disposition_ground": "Every successor the record names is homed, or has itself already handed its obligation on and been discharged in this derivation, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
    "why_these_successors": "`superseded_by` reads 'D-001 and D-096', and the rationale states the supersession stands on dates and explicitness — both are later, explicit and user-ratified on the same subject.",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
   },
@@ -170,7 +188,7 @@
      "named_as": "D-036",
      "register_id": "D-036",
      "named_in": "superseded_by",
-     "home": "ARCHITECTURE.md:934-936",
+     "home": "ARCHITECTURE.md:976-978",
      "home_class": "homed-in-a-layer-specification",
      "status": "live",
      "homed": true,
@@ -198,7 +216,7 @@
     }
    ],
    "disposition": "LEAVES ITEM 1 — correctly homed already (the register plus the successor's home)",
-   "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+   "disposition_ground": "Every successor the record names is homed, or has itself already handed its obligation on and been discharged in this derivation, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
    "why_these_successors": "`superseded_by` reads 'D-036 with D-001/D-010' — D-036 carries the standing doctrine, and the other two retired the mechanism the finding warned about.",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
   },
@@ -233,7 +251,7 @@
     }
    ],
    "disposition": "LEAVES ITEM 1 — correctly homed already (the register plus the successor's home)",
-   "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+   "disposition_ground": "Every successor the record names is homed, or has itself already handed its obligation on and been discharged in this derivation, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
    "why_these_successors": "`superseded_by` reads 'the ratified factorization emission design (D-004 and D-426, the OI-194 ornament-label increment)'. BOTH successors are register entries the record names, so STOP 3 is satisfied for each: D-004 is homed in a layer specification, and D-426 — named by the USER on 2026-08-07 as the recorded decision carrying the increment half — is not, so R1's condition is still not discharged for the whole of this entry's content and the owed act is homing D-426.",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived.",
    "note": "★ THE NAMING GAP THIS RECORD REPORTED IS CLOSED BY A USER RULING, AND WHAT THE RECORD FORMERLY SAID IS KEPT WHOLE (#12). The user ruled on 2026-08-07 (dispatch `cc_instruction_five_rulings.md` §0a R2) that D-426 is the recorded decision carrying 'the OI-194 increment', and the register's `superseded_by` now names it — so the successor is derivable and no session had to nominate one. Before that ruling this record read, verbatim: \"A search of the register finds ONE entry whose subject is that increment — the one recording that the ornament labels get their own increment with the tracking row created at ruling time. It is NOT named here as the successor and does NOT drive the disposition: identifying it would be this session nominating a successor the record does not name, which STOP 3 exists to prevent. Reported so the next reader does not re-derive it, and so that whoever rules can see that the gap is a NAMING gap rather than an absent successor.\" The candidate that record declined to name is the one the user has now named, which is the STOP working rather than being circumvented: the search was reported, the naming was left to the user, and the ruling supplied it. WHAT THE RULING DID NOT CHANGE: the disposition. D-426 is unhomed, so this entry still STAYS IN ITEM 1 with its route on the successor side — what moved is that the act owed first is no longer a naming but the homing of a named entry."
@@ -269,7 +287,7 @@
     }
    ],
    "disposition": "LEAVES ITEM 1 — correctly homed already (the register plus the successor's home)",
-   "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+   "disposition_ground": "Every successor the record names is homed, or has itself already handed its obligation on and been discharged in this derivation, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
    "why_these_successors": "Ratified and ruled SUPERSEDED in the same act (user, 2026-08-07, ruling R2). The register names both successors in its own `superseded_by` field, 'D-177 and D-115', and — the reason a session had nothing to nominate — the entry's status_source had already named exactly these two in prose, BEFORE the ruling: 'an early, concrete form of the discipline the project later stated generally — one revertible provenance-stamped commit per behaviour change (#14) and a measured non-increase before proceeding (the gate block (A) hard stop)'.",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived.",
    "note": "⚠ LEGACY SUBJECT, and the mark is what makes the excluded alternative matter. The user's ruling records why this entry is NOT homed beside gate block (A): that would put a second copy of in-force discipline into a live specification (#6), under a LEGACY subject a reader could misapply to the live solution. So the early concrete form stays in the register verbatim (#12) and the obligation moves to the successors under D-642 — which is this file's own construction, arrived at here by a RULING rather than by a supersession the record already carried."
@@ -297,7 +315,7 @@
      "named_as": "D-450",
      "register_id": "D-450",
      "named_in": "the entry's own rationale / status_source prose",
-     "home": "ARCHITECTURE.md:405-414",
+     "home": "ARCHITECTURE.md:447-456",
      "home_class": "homed-in-a-layer-specification",
      "status": "live",
      "homed": true,
@@ -305,7 +323,7 @@
     }
    ],
    "disposition": "LEAVES ITEM 1 — correctly homed already (the register plus the successor's home)",
-   "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+   "disposition_ground": "Every successor the record names is homed, or has itself already handed its obligation on and been discharged in this derivation, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
    "why_these_successors": "Superseded-in-fact on the legacy key path. The status_source names what carries the live content on the production arm: the joint estimator 'takes the signature and declared mode as a weak fitted soft prior with no conditional gate anywhere (D-528), and conditions the initial key state only (D-450)'.",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived.",
    "note": "One of the two successors, D-450, is ITSELF a member of finish-line item 1 — its own route is RE-HOME and its home class is `gap`. That is the case R1's second half was written for, arrived at from the other direction: the owed act is homing the successor, and here the successor is already carried by the same item."
@@ -331,7 +349,7 @@
     }
    ],
    "disposition": "LEAVES ITEM 1 — correctly homed already (the register plus the successor's home)",
-   "disposition_ground": "Every successor the record names is homed, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+   "disposition_ground": "Every successor the record names is homed, or has itself already handed its obligation on and been discharged in this derivation, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
    "why_these_successors": "Recorded superseded-in-fact, so no ruling names a successor and `superseded_by` is empty. The register's own status_source names the successor in terms: 'The obligation was met by replacement rather than by repair: the production arm is now one joint decode over key, mode, chord and segmentation together (D-001), which is the ordering this step asked for arrived at by a different route.'",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
   },
@@ -474,6 +492,83 @@
    "disposition_ground": "R1 DOES NOT REACH IT: the entry's status is `live`, and R1 governs entries whose content is superseded.",
    "why_these_successors": "Status LIVE. Ruling 47 of 2026-08-09 (user) SPLIT the entry; the intake-rule half is D-665 and is homed in the census, and THIS half — the confirmed absence — stays at the needs-vector row that already carries it, as evidence, so no home is owed. A split is not a supersession and R1 does not reach it.",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
+  },
+  {
+   "id": "D-289",
+   "title": "Meta-principle: precision lives in the evidence and the functional labelling, not in the search",
+   "status": "superseded-by",
+   "home_at_HEAD": "cowork_handoff_archive.md:3082",
+   "home_class": "unhomed",
+   "route_before_R1": "NO HOME AT ALL — recorded only on a tracking surface (the register's `unhomed` class)",
+   "superseded_by_field": "D-284 (and through it D-036 with D-001/D-010), with D-288 and D-287",
+   "successors": [
+    {
+     "named_as": "D-284",
+     "register_id": "D-284",
+     "named_in": "superseded_by",
+     "home": "cowork_architecture_reassessment.md:108-109",
+     "home_class": "gap",
+     "status": "superseded-by",
+     "homed": false,
+     "because": "home class `gap` — C1's own outstanding population",
+     "discharged_through_its_own_successors": "NOT homed itself, but this derivation dispositions it as LEAVING — its own obligation has already moved to its own successors and is discharged there. D-642 applied a second time, along the chain the record names."
+    },
+    {
+     "named_as": "D-036",
+     "register_id": "D-036",
+     "named_in": "superseded_by",
+     "home": "ARCHITECTURE.md:976-978",
+     "home_class": "homed-in-a-layer-specification",
+     "status": "live",
+     "homed": true,
+     "because": "home_is_layer_spec — written into a layer specification"
+    },
+    {
+     "named_as": "D-001",
+     "register_id": "D-001",
+     "named_in": "superseded_by",
+     "home": "ARCHITECTURE.md:4-6",
+     "home_class": "homed-in-a-layer-specification",
+     "status": "live",
+     "homed": true,
+     "because": "home_is_layer_spec — written into a layer specification"
+    },
+    {
+     "named_as": "D-010",
+     "register_id": "D-010",
+     "named_in": "superseded_by",
+     "home": "ARCHITECTURE.md:250",
+     "home_class": "homed-in-a-layer-specification",
+     "status": "live",
+     "homed": true,
+     "because": "home_is_layer_spec — written into a layer specification"
+    },
+    {
+     "named_as": "D-288",
+     "register_id": "D-288",
+     "named_in": "superseded_by",
+     "home": "ARCHITECTURE.md:320-324",
+     "home_class": "homed-in-a-layer-specification",
+     "status": "live",
+     "homed": true,
+     "because": "home_is_layer_spec — written into a layer specification"
+    },
+    {
+     "named_as": "D-287",
+     "register_id": "D-287",
+     "named_in": "superseded_by",
+     "home": "ARCHITECTURE.md:1741-1745",
+     "home_class": "homed-in-a-layer-specification",
+     "status": "live",
+     "homed": true,
+     "because": "home_is_layer_spec — written into a layer specification"
+    }
+   ],
+   "disposition": "LEAVES ITEM 1 — correctly homed already (the register plus the successor's home)",
+   "disposition_ground": "Every successor the record names is homed, or has itself already handed its obligation on and been discharged in this derivation, so C1 is satisfied for this entry's live content at the successor's home, and the supersession itself is register business — which D-231's clause assigns to the register.",
+   "why_these_successors": "`superseded_by` reads 'D-284 (and through it D-036 with D-001/D-010), with D-288 and D-287' — six entries, every one of them named by the record itself, and the parenthesis is the record performing the chain rather than a session inferring it: it says in its own words that the content reaches D-036/D-001/D-010 THROUGH D-284. All six are listed, so nothing the record names is dropped, and the chain is left to the derived half rather than resolved by the authored one.",
+   "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived.",
+   "note": "★ THIS IS THE ONE ENTRY WHOSE DISPOSITION NEEDS D-642 APPLIED TWICE, AND IT IS WHY THE TRANSITIVE STEP EXISTS AT ALL. D-284 is itself a member of this derivation and is itself NOT homed — so on the homed test alone this entry would read STAYS, ROUTE CHANGED, with the owed act 'home the successor D-284'. That instruction would be FALSE: D-284's own obligation has already moved to D-036/D-001/D-010 and is discharged there, which this same file derives. The user ruled the entry closes by the sibling subtraction (Ruling 61) and ruled the entry SUPERSEDED with nothing written into any specification (Ruling 6 of 2026-08-09); the transitive step is what makes the derivation say so rather than the prose asserting it."
   }
  ]
 }

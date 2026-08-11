@@ -421,6 +421,44 @@ unfalsified, and the register states the test nowhere else.
 inference change. Adoption of a derived population as a diff-time check remains conditional on
 MEASURED clean separation, which is the third of the conditions above.
 
+### An ENUMERATING PATTERN whose reach has never been measured may STATE its bound on its own artifact instead of owing a detection measurement — and the test is whether an ANALYSIS DECISION consumes it
+
+**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 60, taking
+the proposed decision of Ruling 59 of `cowork_rulings_2026_08_11_thirteenth_stop.md`). It belongs
+beside the two sections above for the reason the second gives for its own siting: those say what a
+MECHANISM is worth unmeasured and what a COMPLETENESS CLAIM is worth unmeasured, and this says which
+of the two an ENUMERATING PATTERN is — a search expression run over text to locate every instance of
+a class.
+
+**THE RULE.** Where such a pattern's reach against the text it scans has never been measured, the
+limit may be **STATED ON THE PATTERN'S OWN ARTIFACT** — marked advisory, with its empty verdict
+recorded as bounding nothing — **instead of a detection measurement being owed**. **THE TEST FOR
+WHICH IT IS: does an ANALYSIS DECISION CONSUME the enumeration?** Where one does, the measurement is
+owed exactly as the three conditions above require and the bound is no substitute for it. Where none
+does, the bound is the whole of what is owed.
+
+**The bound is not a weaker measurement, and the difference is what makes the rule safe.** A stated
+bound claims nothing about coverage: it records that the pattern's misses are unknown, so an empty
+run is evidence of nothing and may not be cited as one. What it removes is the standing debt, not
+the ignorance.
+
+*Why it is a rule rather than one pattern's treatment:* as the record stood without it, **D-436**'s
+detection-rate condition and **D-661**'s completeness rule together left every unmeasured pattern
+owing a measurement that nothing would ever spend the effort on, and none was ever written off — so
+the register carried the obligation and never its limit, and an obligation that cannot end is one
+that never closes. The clause concentrates establishment effort where #19 actually buys something:
+on the measurement chain that feeds inference. **The test is applied PER ENUMERATION and is not
+inherited** — a pattern whose output no analysis decision reads is bounded, and its neighbour whose
+output one does read is measured, however alike the two patterns look.
+
+*The instance it was ruled at, and what that instance shows:* a comment sweep reported its class
+empty at HEAD while an instance of the class stood in a file the correcting act had touched, and the
+enumeration's reach had never been measured. Nothing in the analysis consumes a comment sweep — its
+output is read by sessions maintaining the record — so the ruling stated the bound on that
+artifact and declined to seed the measurement. **The excluded alternative is recorded:** owing the
+measurement, which is the reading the record already carried and which had produced no measurement
+in any of the waves that met the pattern.
+
 ### A maintenance act ESTABLISHES THE CAUSE before it touches the mechanism — and a cause that resists establishment is a STOP, with no fix taken on a named-but-unasserted candidate
 
 **Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_eleventh_stop.md`, Ruling 52, taking

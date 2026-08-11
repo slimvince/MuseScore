@@ -420,7 +420,7 @@
         "document": "cowork_layer5_function_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-03 and every entry of the document is `contract-home`. Nothing is outstanding.",
-        "delegation_at_head": "ARCHITECTURE.md:2034",
+        "delegation_at_head": "ARCHITECTURE.md:2076",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 8,
         "by_class": {
@@ -468,7 +468,7 @@
         "document": "cowork_voiceleading_axis_design.md",
         "state_at_head": "RULED NOT WIDENED — SETTLED BY RULING, NOT DEFERRED",
         "why": "The delegation was widened on 2026-08-03 from §0/§5.3 to §0/§5.1/§5.3/§8/§9, which moved seven entries in. Three remain outside the named sections: D-398 in §15 and D-397/D-400 in §16, and the 2026-08-03 widening excluded those two sections deliberately. ★ THE USER RULED ON 2026-08-04 (ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`) THAT THE DELEGATION IS NOT WIDENED TO REACH THEM. D-397 and D-400 ARE §16's ratification asks A7 and A5 — asks put TO the user — and D-398 sits in §15, a tracking list; an ask is not a rule, and forcing either a contract home would misdescribe what it is. The three entries stay `gap` as the ruling intends, and the kind half would exclude both sections at the next run in any case, so a widening would be a wording change that closes nothing. THIS IS A RULING AND NOT A DEFERRAL: the document is not awaiting an act and no later wave owes one here.",
-        "delegation_at_head": "ARCHITECTURE.md:1095",
+        "delegation_at_head": "ARCHITECTURE.md:1137",
         "delegation_form_at_head": "named-home-with-sections",
         "entries_in_the_home_population": 11,
         "by_class": {
@@ -492,7 +492,7 @@
         "document": "cowork_layer1_note_model_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5) and it reaches every section. Three of the four entries are `contract-home`; the fourth (D-518) stays `gap` on the KIND half — its home section is §13, whose own heading ends '(NOT needed to understand the layer)'. That is not a delegation matter and no delegation would move it.",
-        "delegation_at_head": "ARCHITECTURE.md:1517",
+        "delegation_at_head": "ARCHITECTURE.md:1559",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 4,
         "by_class": {
@@ -505,7 +505,7 @@
         "document": "cowork_layer2_slicing_design.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5). Both entries are `contract-home` as of this wave's classification run.",
-        "delegation_at_head": "ARCHITECTURE.md:1643",
+        "delegation_at_head": "ARCHITECTURE.md:1685",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 2,
         "by_class": {
@@ -517,7 +517,7 @@
         "document": "cowork_layer6_grouping_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 6, ruling R5). Eight of the nine entries are `contract-home`; the ninth (D-458) stays `gap` on the KIND half — it is homed in the document's STATUS BANNER. Not a delegation matter.",
-        "delegation_at_head": "ARCHITECTURE.md:2149",
+        "delegation_at_head": "ARCHITECTURE.md:2191",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 9,
         "by_class": {
@@ -529,7 +529,7 @@
         "document": "cowork_phrase_boundary_design.md",
         "state_at_head": "WRITTEN — CLOSED ON THE DELEGATION QUESTION",
         "why": "The user wrote an explicit delegation clause on 2026-08-04 (READ WAVE 5, ruling R4). Eight of the ten entries are `contract-home`; two (D-484, D-485) stay `gap` on the KIND half — the document's opening block and its §11 'Open items'. Not a delegation matter.",
-        "delegation_at_head": "ARCHITECTURE.md:1519",
+        "delegation_at_head": "ARCHITECTURE.md:1561",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 10,
         "by_class": {

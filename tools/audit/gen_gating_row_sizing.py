@@ -751,31 +751,8 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
-        "row": "OI-324",
-        "anchor_quote": "which arm D-057 binds is a decision about the production emission",
-        "the_act_owed": (
-            "Rule which arm the priority-of-evidence table binds — a cross-cutting evidential rule "
-            "for both arms, or a legacy-path rule whose dependent open item needs a different source."
-        ),
-        "sizing": "NEEDS-RULING",
-        "whose_act_it_is": "the user",
-        "what_blocks_it": "a user ruling",
-        "why_that_size": (
-            "The row states it: the substantive half is a decision about the production emission's "
-            "evidential contract, not a wording fix, and neither reading is written down anywhere for "
-            "a session to follow."
-        ),
-        "the_second_half": {
-            "what_it_is": (
-                "The smaller defect in the same paragraph pair — an unqualified predicate naming no "
-                "argument, and two sentences that read plainly as contradicting each other."
-            ),
-            "sizing": "SESSION-SMALL",
-            "whose_act_it_is": "a session on this side",
-            "what_blocks_it": "nothing beyond capacity",
-        },
-    },
-    {
+        # OI-324's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 63 closed
+        # the row.
         "row": "OI-332",
         "anchor_quote": "whether a superseded design document is re-bannered as a historical record",
         "the_act_owed": (
@@ -891,25 +868,8 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
-        "row": "OI-369",
-        "anchor_quote": "Two closing acts are visible and neither is a session's",
-        "the_act_owed": (
-            "Rule which of the two acts the row names closes it: the item subtracts superseded "
-            "entries whose successors are homed, by the sibling item's own machinery; or it keeps "
-            "the entry and its CLOSING ACT is corrected to say that no home is owed."
-        ),
-        "sizing": "NEEDS-RULING",
-        "whose_act_it_is": "the user",
-        "what_blocks_it": "a user ruling",
-        "why_that_size": (
-            "Both routes change a DERIVED surface — one the population a completion map publishes, "
-            "the other an authored closing act on it — and a derivation change is a mechanism "
-            "change D-436 reserves. **The work either route needs is small; what is missing is the "
-            "choice**, which is exactly what NEEDS-RULING labels. Once ruled, either is one act."
-        ),
-        "the_second_half": None,
-    },
-    {
+        # OI-369's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 61 closed
+        # the row.
         "row": "OI-363",
         "anchor_quote": "What still gates is the per-case reading",
         "the_act_owed": (
@@ -941,6 +901,81 @@ SIZINGS = [
 # declaration's.
 # ---------------------------------------------------------------------------
 RETIRED_SIZINGS = [
+    {
+        "row": "OI-324",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 0) on the "
+            "user's Ruling 63, which ruled the substantive half — reading (i), the ranking is "
+            "cross-cutting and binds both arms — and licensed the smaller half in the same act. "
+            "**BOTH halves of this sizing were right, and the row is the first in this pass to be "
+            "closed by ONE act discharging a NEEDS-RULING label and its SESSION-SMALL second half "
+            "together.** The label was right that no session act existed for the substantive half; "
+            "the second-half field was right that the wording defect was a session's and small. What "
+            "the sizing could not anticipate is that one ruling would release both at once — which "
+            "is an argument for carrying a second half in its own field rather than folding it into "
+            "the label, since folding would have made the row read wholly the user's."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-324",
+            "anchor_quote": "which arm D-057 binds is a decision about the production emission",
+            "the_act_owed": (
+                "Rule which arm the priority-of-evidence table binds — a cross-cutting evidential "
+                "rule for both arms, or a legacy-path rule whose dependent open item needs a "
+                "different source."
+            ),
+            "sizing": "NEEDS-RULING",
+            "whose_act_it_is": "the user",
+            "what_blocks_it": "a user ruling",
+            "why_that_size": (
+                "The row states it: the substantive half is a decision about the production "
+                "emission's evidential contract, not a wording fix, and neither reading is written "
+                "down anywhere for a session to follow."
+            ),
+            "the_second_half": {
+                "what_it_is": (
+                    "The smaller defect in the same paragraph pair — an unqualified predicate naming "
+                    "no argument, and two sentences that read plainly as contradicting each other."
+                ),
+                "sizing": "SESSION-SMALL",
+                "whose_act_it_is": "a session on this side",
+                "what_blocks_it": "nothing beyond capacity",
+            },
+        },
+    },
+    {
+        "row": "OI-369",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 0) on the "
+            "user's Ruling 61, which chose the first of the two acts the row names. **The sizing was "
+            "right in both of its halves and it is worth stating which:** NEEDS-RULING was right — "
+            "no session act existed, because both routes change a derived surface — and its "
+            "`why_that_size` was right that *the work either route needs is small; what is missing "
+            "is the choice*. What the act found that the sizing did not predict is that the chosen "
+            "route needed one piece of machinery nobody had named: the subtraction's own derivation "
+            "was stated over a different cut and could not reach the entry at all, which the row's "
+            "own text had established and the sizing did not carry."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-369",
+            "anchor_quote": "Two closing acts are visible and neither is a session's",
+            "the_act_owed": (
+                "Rule which of the two acts the row names closes it: the item subtracts superseded "
+                "entries whose successors are homed, by the sibling item's own machinery; or it "
+                "keeps the entry and its CLOSING ACT is corrected to say that no home is owed."
+            ),
+            "sizing": "NEEDS-RULING",
+            "whose_act_it_is": "the user",
+            "what_blocks_it": "a user ruling",
+            "why_that_size": (
+                "Both routes change a DERIVED surface — one the population a completion map "
+                "publishes, the other an authored closing act on it — and a derivation change is a "
+                "mechanism change D-436 reserves. **The work either route needs is small; what is "
+                "missing is the choice**, which is exactly what NEEDS-RULING labels. Once ruled, "
+                "either is one act."
+            ),
+            "the_second_half": None,
+        },
+    },
     {
         "row": "OI-303",
         "why_it_retired": (

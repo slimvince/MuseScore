@@ -10,7 +10,7 @@
   "the_population": {
     "what_it_is": "The open rows the gating split puts on the GATING side — the rows a stage waits on.",
     "derived_from": "tools/audit/phase1_completion_inventory.json → the_gating_split.gates.ids",
-    "count": 42,
+    "count": 40,
     "ids": [
       "OI-105",
       "OI-107",
@@ -40,7 +40,6 @@
       "OI-320",
       "OI-321",
       "OI-322",
-      "OI-324",
       "OI-332",
       "OI-341",
       "OI-352",
@@ -48,7 +47,6 @@
       "OI-359",
       "OI-360",
       "OI-363",
-      "OI-369",
       "OI-45",
       "OI-47",
       "OI-57",
@@ -60,8 +58,41 @@
   "retired_sizings": {
     "what_this_is": "Sizings for rows that have LEFT the gating population, kept whole and counted nowhere (#12, D-648). They are history: a sizing named the act a row needed, and keeping it is what lets a later reader see whether the act performed is the act that was owed.",
     "the_stop_in_the_other_direction": "A retired sizing naming a row this pass sizes again halts the run. A sizing made of a row as it stood is not evidence about a row that has since changed, so such a row is RE-READ and re-authored, never restored.",
-    "count": 2,
+    "count": 4,
     "entries": [
+      {
+        "row": "OI-324",
+        "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 0) on the user's Ruling 63, which ruled the substantive half — reading (i), the ranking is cross-cutting and binds both arms — and licensed the smaller half in the same act. **BOTH halves of this sizing were right, and the row is the first in this pass to be closed by ONE act discharging a NEEDS-RULING label and its SESSION-SMALL second half together.** The label was right that no session act existed for the substantive half; the second-half field was right that the wording defect was a session's and small. What the sizing could not anticipate is that one ruling would release both at once — which is an argument for carrying a second half in its own field rather than folding it into the label, since folding would have made the row read wholly the user's.",
+        "the_sizing_as_it_stood": {
+          "row": "OI-324",
+          "anchor_quote": "which arm D-057 binds is a decision about the production emission",
+          "the_act_owed": "Rule which arm the priority-of-evidence table binds — a cross-cutting evidential rule for both arms, or a legacy-path rule whose dependent open item needs a different source.",
+          "sizing": "NEEDS-RULING",
+          "whose_act_it_is": "the user",
+          "what_blocks_it": "a user ruling",
+          "why_that_size": "The row states it: the substantive half is a decision about the production emission's evidential contract, not a wording fix, and neither reading is written down anywhere for a session to follow.",
+          "the_second_half": {
+            "what_it_is": "The smaller defect in the same paragraph pair — an unqualified predicate naming no argument, and two sentences that read plainly as contradicting each other.",
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity"
+          }
+        }
+      },
+      {
+        "row": "OI-369",
+        "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 0) on the user's Ruling 61, which chose the first of the two acts the row names. **The sizing was right in both of its halves and it is worth stating which:** NEEDS-RULING was right — no session act existed, because both routes change a derived surface — and its `why_that_size` was right that *the work either route needs is small; what is missing is the choice*. What the act found that the sizing did not predict is that the chosen route needed one piece of machinery nobody had named: the subtraction's own derivation was stated over a different cut and could not reach the entry at all, which the row's own text had established and the sizing did not carry.",
+        "the_sizing_as_it_stood": {
+          "row": "OI-369",
+          "anchor_quote": "Two closing acts are visible and neither is a session's",
+          "the_act_owed": "Rule which of the two acts the row names closes it: the item subtracts superseded entries whose successors are homed, by the sibling item's own machinery; or it keeps the entry and its CLOSING ACT is corrected to say that no home is owed.",
+          "sizing": "NEEDS-RULING",
+          "whose_act_it_is": "the user",
+          "what_blocks_it": "a user ruling",
+          "why_that_size": "Both routes change a DERIVED surface — one the population a completion map publishes, the other an authored closing act on it — and a derivation change is a mechanism change D-436 reserves. **The work either route needs is small; what is missing is the choice**, which is exactly what NEEDS-RULING labels. Once ruled, either is one act.",
+          "the_second_half": null
+        }
+      },
       {
         "row": "OI-303",
         "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_13.md` Task 2) — and it closed by PERFORMING exactly the act this sizing named, which is the first time in this pass's short life that has happened. The sizing said *verify the six named sites at the objects, and then flip the row or name what survives*; the previous batch performed the verification and found one claim surviving, the user's Ruling 59 licensed its correction, and the closing session re-verified all six AT THE FILES before flipping. **The size was right and so was the blocker** — it was a reading, it was small, and nothing beyond capacity stood in the way of the reading; what the sizing could not know is that the reading would come back the other way once and need a ruling before the flip.",
@@ -574,24 +605,6 @@
       "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
     },
     {
-      "row": "OI-324",
-      "anchor_quote": "which arm D-057 binds is a decision about the production emission",
-      "the_act_owed": "Rule which arm the priority-of-evidence table binds — a cross-cutting evidential rule for both arms, or a legacy-path rule whose dependent open item needs a different source.",
-      "sizing": "NEEDS-RULING",
-      "whose_act_it_is": "the user",
-      "what_blocks_it": "a user ruling",
-      "why_that_size": "The row states it: the substantive half is a decision about the production emission's evidential contract, not a wording fix, and neither reading is written down anywhere for a session to follow.",
-      "the_second_half": {
-        "what_it_is": "The smaller defect in the same paragraph pair — an unqualified predicate naming no argument, and two sentences that read plainly as contradicting each other.",
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity"
-      },
-      "detail_file": "open_items/OI-324.md",
-      "what_the_label_means": "No session act exists on this row at all: what closes it is the user's — a ruling, a filing decision, or a governing-document choice.",
-      "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
-    },
-    {
       "row": "OI-332",
       "anchor_quote": "whether a superseded design document is re-bannered as a historical record",
       "the_act_owed": "Correct the *no code* banner standing over two operations the row itself verified built, and re-aim the drifted as-built anchors.",
@@ -675,19 +688,6 @@
       "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
     },
     {
-      "row": "OI-369",
-      "anchor_quote": "Two closing acts are visible and neither is a session's",
-      "the_act_owed": "Rule which of the two acts the row names closes it: the item subtracts superseded entries whose successors are homed, by the sibling item's own machinery; or it keeps the entry and its CLOSING ACT is corrected to say that no home is owed.",
-      "sizing": "NEEDS-RULING",
-      "whose_act_it_is": "the user",
-      "what_blocks_it": "a user ruling",
-      "why_that_size": "Both routes change a DERIVED surface — one the population a completion map publishes, the other an authored closing act on it — and a derivation change is a mechanism change D-436 reserves. **The work either route needs is small; what is missing is the choice**, which is exactly what NEEDS-RULING labels. Once ruled, either is one act.",
-      "the_second_half": null,
-      "detail_file": "open_items/OI-369.md",
-      "what_the_label_means": "No session act exists on this row at all: what closes it is the user's — a ruling, a filing decision, or a governing-document choice.",
-      "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
-    },
-    {
       "row": "OI-363",
       "anchor_quote": "What still gates is the per-case reading",
       "the_act_owed": "Make the per-case reading the row gates on — per disagreement, is it a defect, a defensible modal reading the major/minor ground truth cannot represent, or a global-versus-local comparison artifact.",
@@ -702,9 +702,9 @@
     }
   ],
   "counted": {
-    "rows_sized": 42,
+    "rows_sized": 40,
     "by_label": {
-      "NEEDS-RULING": 5,
+      "NEEDS-RULING": 3,
       "REAL-WORK": 13,
       "SESSION-LARGE": 4,
       "SESSION-SMALL": 20
@@ -714,24 +714,22 @@
       "the freeze on `src/`": 2,
       "the phase order (D-231 and #8)": 4,
       "an event the record schedules elsewhere": 6,
-      "a user ruling": 15,
+      "a user ruling": 13,
       "the role separation": 1
     },
     "by_owner": {
       "a session on this side": 36,
       "the writing side (Cowork)": 1,
-      "the user": 5
+      "the user": 3
     },
-    "rows_carrying_a_second_half_of_a_different_kind": 6,
+    "rows_carrying_a_second_half_of_a_different_kind": 5,
     "rows_available_now": 14
   },
   "rows_by_label": {
     "NEEDS-RULING": [
       "OI-141",
       "OI-320",
-      "OI-322",
-      "OI-324",
-      "OI-369"
+      "OI-322"
     ],
     "REAL-WORK": [
       "OI-12",
@@ -820,13 +818,11 @@
       "OI-311",
       "OI-320",
       "OI-322",
-      "OI-324",
       "OI-341",
       "OI-352",
       "OI-357",
       "OI-359",
       "OI-360",
-      "OI-369",
       "OI-363"
     ],
     "the role separation": [
@@ -838,7 +834,6 @@
     "OI-274",
     "OI-315",
     "OI-321",
-    "OI-324",
     "OI-332"
   ],
   "rows_available_now": [

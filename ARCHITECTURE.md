@@ -382,6 +382,48 @@
 > inference side (inference is preset-independent, presets are presentation concerns — stated at the head of
 > this document). Ratified by the user; the record does not date the mandate.
 
+### The evidential priority the emission is scored under — ACTUAL SOUNDING NOTES ARE THE STRONGEST EVIDENCE, and the ranking is ARM-INDEPENDENT
+
+**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63,
+closing `OPEN_ITEMS.md` OI-324). The six rules above govern how the estimator's values are fitted,
+evaluated and searched, and the block below fixes what the decode counts. **Neither says what
+EVIDENCE outranks what** — and the ranking that does was stated only inside §5.2, a section whose own
+scoping sentence disclaims describing the shipped analysis. So a premise a live open item puts under
+load had no statement binding the arm that open item is about. This section is that statement.
+
+**THE RANKING, and it binds THIS ARM as it binds the legacy one.** In descending strength: **actual
+sounding notes** — what is literally happening now; **temporal context** — the surrounding measures;
+**the notated key signature**; **the declared major/minor tag**, weakest of the four. It is a
+CROSS-CUTTING EVIDENTIAL RULE about what the analysis may treat as evidence and in what order, not a
+property of either implementation, and it is stated here so that no reader has to decide whether a
+rule written under a legacy heading reaches the production decode. **The legacy statement of the same
+ranking is `§5.2`'s priority-of-evidence table (register entry D-057), which stands exactly as
+written and is not amended by this section** — one rule, stated for the arm each section describes,
+cross-referenced rather than duplicated (#6).
+
+**WHAT IT MEANS FOR THE EMISSION, which is where the ranking actually bites.** A note that is already
+sounding is a constituent of the sonority. Whether it belongs to the chord is what the emission's
+chord-member and non-chord-tone categories are for — it is not settled by whether the note happened
+to be struck at this event. The bass factor's own specification already says this in its own words: *each event's
+**sounding** bass judged against the segment's chord*, in the block immediately below.
+
+*Why the ranking is arm-independent rather than a legacy-path rule.* Two grounds, both from the
+record rather than from this section. **(1) The user's recorded position of 2026-07-28**, taken at
+the challenge that opened this question: a sounding note is a constituent of the sonority, and the
+argument that held notes are weaker evidence does not survive — the fit corpus is voices and organ,
+sustaining throughout, so the decay reading never applied even where the model was fitted. **(2) The Layer-2
+slice identity**, which states the same doctrine one layer down and without reference to any arm:
+slice boundaries are every onset **and every release**, and *slice identity is the eligible
+sounding-note set*. A ranking that both a user ruling and an upstream layer specification state
+without qualification is not a property of one downstream implementation.
+
+**WHAT THIS SECTION DOES NOT DO.** It changes no behaviour, moves no fitted value and authorizes no
+fix: the known departure — the pitch and bass emissions reading the STRUCK set where the design says
+sounding — is `OPEN_ITEMS.md` OI-228, and it remains a conformance gap DECLARED and not fixed, whose
+remedy belongs to the one design over the whole struck-versus-sounding family at its #8-correct
+stage. What this section changes is that the premise that gap is measured against now has a home that
+binds the arm the gap is in.
+
 ### The decode's own counted quantities — factor granularity, the signature prior, transition pooling, the leftover back-off, and the missing-tone penalty
 
 Five decisions about **what the decode counts, and at what granularity**. They sit beside the six
@@ -4208,6 +4250,24 @@ and it is still what plain `batch_analyze` runs when `--joint-inference` is not 
 the production key path**, which is the joint estimator's decode (§3.3; register entry D-051).
 Nothing in §5.2 describes what the shipped analysis does on the key axis.
 
+**★ ANNOTATION (2026-08-11, the user's Ruling 63 of `cowork_rulings_2026_08_11_fourteenth_stop.md`,
+closing `OPEN_ITEMS.md` OI-324) — WHAT THE SCOPING SENTENCE ABOVE DOES AND DOES NOT SCOPE. The note
+is preserved exactly as written (#12); this says how to read it beside a later ruling.** The sentence
+scopes the MECHANISM this section describes — which code path runs, through which helper, under which
+flag. **It does NOT scope the EVIDENTIAL RANKING** the priority-of-evidence table below states. That
+ranking — actual sounding notes strongest, then temporal context, then the notated key signature, the
+declared major/minor tag weakest — is ruled **CROSS-CUTTING**: it binds the production arm as it
+binds this one, and it is stated for the production arm at the joint estimator's own section, where
+the emission's evidential contract lives. So the two texts do not conflict and must not be read as
+conflicting: this section describes a dormant MECHANISM, and the table inside it states a RULE that
+outlives the mechanism. *Why an annotation rather than a re-worded note:* the sentence is true about
+what it is about, and what was missing is not a correction to it but a statement elsewhere — a reader
+arriving at the table through this note must not conclude that the ranking stops at the legacy path,
+which is exactly the reading OI-324 recorded as written down neither way. *The excluded reading,
+recorded at the ruling:* that the ranking is legacy-only — it would override recorded user doctrine
+on an unestablished extension of a scoping note, and leave the shipping arm with no stated evidential
+priority anywhere.
+
 **★ CORRECTED 2026-08-04 (phase 1z; `OPEN_ITEMS.md` OI-315, register entry D-058). The paragraph
 this replaces specified a piece-start shortcut in the present tense. The code removed that
 short-circuit in Stage 4b-i on 2026-06-14 and this document went on asserting it.** What the
@@ -4242,7 +4302,12 @@ the declared mode a **no-op in exactly the cases the demotion was made for**, na
 inference had already out-scored the declared mode and was then vetoed here. What remains of the
 declared mode's influence is only the small hint stated above, applied at every tick.
 
-The priority of evidence, which now has no exception, is:
+The priority of evidence, which now has no PIECE-START exception, is (**corrected 2026-08-11, the
+user's Ruling 63; `OPEN_ITEMS.md` OI-324. The sentence read "which now has no exception", whose
+predicate named no argument — no exception TO WHAT — and which read plainly as contradicting the
+"all but one narrow fallback case" sentence below it. The intended reading is the one the preceding
+paragraph establishes and the phase-1z correction was making: the piece-start shortcut is gone. The
+insufficient-data fallback below is untouched by this correction and is not a piece-start rule**):
 
 **Priority of evidence:**
 

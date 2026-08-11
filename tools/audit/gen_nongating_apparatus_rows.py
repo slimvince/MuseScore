@@ -109,6 +109,57 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-324": (GATES, "the criterion - the row's subject bears on what the emission reads",
+               "Whether the priority-of-evidence ranking binds the production emission or only the "
+               "legacy key path is a question about the evidential contract the joint emission is "
+               "measured against -- OI-228 puts that very premise under load. Nothing about it is "
+               "apparatus. The row's smaller second half (an unqualified predicate in the same "
+               "paragraph pair) would be apparatus on its own and does not lift the row.",
+               "RESOLVED 2026-08-11 - the user's Ruling 63 "
+               "(`cowork_rulings_2026_08_11_fourteenth_stop.md`) ruled reading (i): the ranking is "
+               "CROSS-CUTTING and binds BOTH arms, and the rule is now stated for the production "
+               "arm where the emission's evidential contract lives, under the registered homing "
+               "procedure D-668 (step 1 tried and declined, kind half judged before the write). The "
+               "smaller second half was corrected under the same ruling's licence. THE VERDICT WAS "
+               "CORRECT WHILE IT STOOD and is kept whole (#12); it is retired because the row "
+               "closed, never because it was wrong -- and it is worth one line that the verdict's "
+               "own reasoning is what the ruling confirmed: it graded the row on the SUBJECT being "
+               "the evidential contract the emission is measured against, and the user ruled "
+               "exactly that question rather than the wording one. WHAT THE CLOSURE DOES NOT "
+               "DISCHARGE: OI-228, the departure this premise measures the code against, which "
+               "remains a conformance gap DECLARED and whose remedy belongs to the ONE design over "
+               "the struck-versus-sounding family at its #8-correct stage."),
+    "OI-369": (GATES, "the criterion - D-438's own line puts the completion of a specification on "
+                      "the gating side, and the default on doubt is to keep the wait",
+               "The phase-1 finish line's last homing item counts one register entry and names, as "
+               "the act that closes it, a write the user's own ruling forbids: the entry is "
+               "SUPERSEDED, and a supersession is register business with no specification home "
+               "owed. THE FIRST-CUT CLASSIFICATION REACHED THIS ROW and the verdict is authored "
+               "for it here, which is what the tool requires; no non-gating verdict is hand-added, "
+               "which is the act the record forbids. IT IS NOT SETTLED BY THE APPARATUS "
+               "CRITERION, and that is said plainly rather than argued around: the surface is a "
+               "derived completion map, which reads as this project's own tracking. What decides "
+               "it is D-438's line INSIDE the documentation rows, which puts the completion of a "
+               "specification on the gating side because the phase-1 rule makes specifications "
+               "COMPLETE and TRUE the thing that precedes everything else -- and what is owed here "
+               "is not a pointer, an anchor, a label, a banner or a section boundary, but the "
+               "question of whether one specification-completion obligation is owed at all. The "
+               "declaration's own default carries the remainder: a row whose subject its own text "
+               "does not settle GATES, because the declaration only ever removes a wait where the "
+               "row supports removing it. Recorded against the row's SUBJECT, never its remedy -- "
+               "the two closing acts it names are a subtraction in a derivation and a correction "
+               "to an authored closing act, and choosing between them is a mechanism question "
+               "D-436 reserves to the user.",
+               "RESOLVED 2026-08-11 - the user's Ruling 61 "
+               "(`cowork_rulings_2026_08_11_fourteenth_stop.md`) ruled the FIRST of the two closing "
+               "acts: the item gains the same D-642 subtraction its four sibling items apply, one "
+               "machinery per concern (#6). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept "
+               "whole (#12); it is retired because the row closed, never because it was wrong. ★ "
+               "ITS LAST SENTENCE IS THE ONE WORTH KEEPING: it recorded the verdict against the "
+               "row's SUBJECT and never its remedy, on the ground that choosing between the two "
+               "closing acts is a mechanism question D-436 reserves to the user -- and the user "
+               "chose. A verdict written against a remedy would have had to be re-authored when the "
+               "remedy was picked; one written against the subject is simply retired."),
     "OI-303": (GATES, "a statement about the analysis's build state",
                "Six comments in src/ and tools/ say the record arm is 'default OFF' and that the "
                "record section adapter has no caller. D-438's line inside the documentation rows "
@@ -757,12 +808,8 @@ V = {
                "the analyzer, not a banner or a label: D-438's apparatus line does not reach it. "
                "(The document's FILING -- re-banner as a historical record or rewrite -- is "
                "apparatus, but it is the remedy's shape, not the row's subject.)"),
-    "OI-324": (GATES, "the criterion - the row's subject bears on what the emission reads",
-               "Whether the priority-of-evidence ranking binds the production emission or only the "
-               "legacy key path is a question about the evidential contract the joint emission is "
-               "measured against -- OI-228 puts that very premise under load. Nothing about it is "
-               "apparatus. The row's smaller second half (an unqualified predicate in the same "
-               "paragraph pair) would be apparatus on its own and does not lift the row."),
+    # OI-324's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the user's Ruling 63 closed
+    # the row.
     # ---- rowed 2026-08-04 by READ WAVE 4 -------------------------------------------------
     "OI-327": (NON_GATING, "user",
                "Five drafted delegation clauses awaiting the user's word. The subject is WHERE a "
@@ -907,27 +954,8 @@ V = {
                "now been MEASURED and does not separate. Recorded against the row's SUBJECT, "
                "never its remedy -- a second candidate signal is a mechanism design D-436 "
                "reserves to the user, and this row proposes none."),
-    "OI-369": (GATES, "the criterion - D-438's own line puts the completion of a specification on "
-                      "the gating side, and the default on doubt is to keep the wait",
-               "The phase-1 finish line's last homing item counts one register entry and names, as "
-               "the act that closes it, a write the user's own ruling forbids: the entry is "
-               "SUPERSEDED, and a supersession is register business with no specification home "
-               "owed. THE FIRST-CUT CLASSIFICATION REACHED THIS ROW and the verdict is authored "
-               "for it here, which is what the tool requires; no non-gating verdict is hand-added, "
-               "which is the act the record forbids. IT IS NOT SETTLED BY THE APPARATUS "
-               "CRITERION, and that is said plainly rather than argued around: the surface is a "
-               "derived completion map, which reads as this project's own tracking. What decides "
-               "it is D-438's line INSIDE the documentation rows, which puts the completion of a "
-               "specification on the gating side because the phase-1 rule makes specifications "
-               "COMPLETE and TRUE the thing that precedes everything else -- and what is owed here "
-               "is not a pointer, an anchor, a label, a banner or a section boundary, but the "
-               "question of whether one specification-completion obligation is owed at all. The "
-               "declaration's own default carries the remainder: a row whose subject its own text "
-               "does not settle GATES, because the declaration only ever removes a wait where the "
-               "row supports removing it. Recorded against the row's SUBJECT, never its remedy -- "
-               "the two closing acts it names are a subtraction in a derivation and a correction "
-               "to an authored closing act, and choosing between them is a mechanism question "
-               "D-436 reserves to the user."),
+    # OI-369's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the user's Ruling 61 closed
+    # the row.
 }
 
 # The dispatch's assumption A3, recorded so the difference is reported rather than reconciled.

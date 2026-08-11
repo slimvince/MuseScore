@@ -1,7 +1,85 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-08-08 (TENTH) — THE FINISH LINE'S ITEM 1 IS SUBSTANTIALLY EXECUTED UNDER A DAY OF USER RULINGS; THE AWAY BATCH RUNS WITH THE USER ABSENT; EIGHT PREPARED SURFACES AWAIT THE RETURN STOP. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-08-11 (ELEVENTH) — THE RETURN ARC IS RUN: FOURTEEN CC CONTINUATIONS, SIXTY-FOUR USER RULINGS APPLIED, THE COMMISSIONING SURFACE DELIVERED; THE FOURTEENTH CONTINUATION IS THE ACTIVE DISPATCH; THE NEXT LARGE ACT IS THE USER COMMISSIONING PHASE 1'S COMPLETION STATEMENT. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is your boot; no figure appears here by
+design (D-431); every population is an artifact you read at HEAD. Your first act: establish
+whether `cc_instruction_return_continuation_14.md` has completed (its per-task STATUS
+pointer entries; its close appended to `cowork_away_returns.md`); if it still runs you are
+READ-ONLY on the repository until it stops.**
+
+**Read, in order:** (1) `CLAUDE.md` IN FULL — since the tenth block it gained, all
+user-ruled: the open-items register's rule (f) (canonical status tokens, the lint and the
+parser STOP); the decisions-register rules (l), (m), (n); the crediting-rule entry beside
+the modulation-correctness convention in gate block (A); the reserved-word block's two-tier
+research-term rule; the discharge-of-rule-(c) clause; principle #21's commissioned
+ceiling-measurement clause (the PeARL contact PERFORMED 2026-08-09 as a public GitHub
+issue — silence after a reasonable wait is recorded as the route EXHAUSTED). (2)
+`DECISIONS.md` (INDEX; the register grew through the D-660s–D-670s; identifiers are
+VERIFIED AT THE INDEX before being written anywhere — three citation/date slips on this
+arc's Cowork side are recorded as correction notes on the ruling records). (3)
+`OPEN_ITEMS.md` (INDEX; canonical tokens now govern). (4)
+`tools/audit/phase1_finish_line.json` at HEAD — THE SCOPE. (5) `STATUS.md` top entries.
+(6) **`cowork_phase1_commissioning_surface_2026_08_11.md`** — the deliverable this arc
+walked to: everything between HEAD and the completion statement, grouped by whose act each
+needs, sized per row. (7) `cowork_away_returns.md` END TO END — the whole program's
+returns file. (8) The FOURTEEN ruling records (`cowork_rulings_2026_08_09_return.md`
+through `cowork_rulings_2026_08_11_fourteenth_stop.md`, WITH their correction notes) —
+read whole when a task touches their subject (D-643); their register entries land via the
+registration queue (`ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md`),
+whose extensions the user rules sitting by sitting. (9)
+`cowork_target_document_structure_2026_08_09.md` — the seven-surface orientation the
+completion statement opens with.
+
+**★ WHERE THE PROJECT STANDS.** Phase 1 (D-231) is NEAR ITS END and NOT COMPLETE. The
+finish line's homing items are closed or reduced to machinery-verified residue; the
+defense-gap population reads zero; the guard set has held at zero failing across recent
+batches; the reach derivation ran whole and its IN-verdicts were applied; the census
+delegation stands; OI-357's production-arm question is ANSWERED (the arm handles the
+partial-signature repertoire at least as well as the legacy correction, controlled
+comparison, artifacts re-deriving byte-identically). What remains is in the commissioning
+surface's tables: the session-small drain (the active dispatch's Task 3), OI-346's marks
+(its Task 1 — dedicated early, after six leftover-capacity starvations), the filing
+convention's application (its Task 2), the NEEDS-RULING rows already ruled at the
+fourteenth stop, OI-141's key-menu design conversation (the one genuine sitting still
+open), and the scheduled-elsewhere / phase-order / `src/`-freeze groups that ride their
+events. **The completion statement is NOT written, NOT drafted, NOT partially written. The
+user commissions it; the proposed shape, stated in conversation 2026-08-11 and accepted in
+sequence, is COMPLETION-WITH-STATED-RESIDUE — phase 1 declared complete on what it owns
+(C1–C5), every carried row named with its blocker and its scheduled home, so phase 2 opens
+with the residue visible.** After it: phase 2's gating channels (the partition at
+`tools/audit/phase3_gate_partition.json`, unfalsified, nothing run), the OI-179 ceiling
+measurement (opens WITH phase 2, desk simulation first), and only then the
+struck-versus-sounding family design — the first work that changes what the analysis
+computes.
+
+**★ THE WORKING RULES, AS THIS ARC SHARPENED THEM (binding).** Verify EVERY CC report at
+the objects before accepting it — this arc's record: CC miscounted its own commits twice,
+and two direction-claims were inverted against their artifacts; **check values at the
+artifacts, not only structure** (the inversion survived a structure-only verification).
+Full-prose decision surfaces with every alternative's pros and cons NAMING PRINCIPLES and
+RATED AGAINST THE ULTIMATE OBJECTIVE — the user demanded this re-done TWICE this arc; do
+it the complete way the first time. Ruling records are interim carriers (D-230), their
+entries land via the queue's propose-then-ratify; dates from the clock; register
+identifiers verified at the index; D-253 in every dialect (the guard now watches wrappers,
+interpreters and lowercase-drive spellings; its remaining ceiling is not a licence);
+D-431; the writing-side self-check before releasing anything (it caught collisions in
+seven consecutive waves — reliable across a batch, not within a task). One dispatch at a
+time, written only at a verified STOP. D-669 (diagnosis before mechanism), D-670 (the
+unstoppable task goes first), D-671/D-672 now govern dispatch construction.
+
+**★ WHAT AWAITS THE USER at your first surface:** the fourteenth continuation's return
+(verify, then present); the queue's next extension (Rulings 60–64); OI-141's design
+sitting whenever the user wants it; and the commissioning itself once the drain is done.
+The away-arc holds that stay open ride their rows; nothing else is parked in conversation
+— everything is on disk.
+
+*(The tenth block below is the previous entry point — kept for provenance. Do not carry
+anything from it; its state is three arcs stale.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-08-08 (TENTH) — THE FINISH LINE'S ITEM 1 IS SUBSTANTIALLY EXECUTED UNDER A DAY OF USER RULINGS; THE AWAY BATCH RUNS WITH THE USER ABSENT; EIGHT PREPARED SURFACES AWAIT THE RETURN STOP. (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block plus `cowork_instruction_return_session.md`
 are the entire handover. No figure appears here by design (D-431); every population is an

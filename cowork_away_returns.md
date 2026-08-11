@@ -5495,6 +5495,155 @@ of them.
 **Phase 1's completion statement is not written, not drafted and not partially written by this
 batch.**
 
+---
+
+# ═══ THE FOURTEENTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_14.md`, performed 2026-08-11) ═══
+
+> Rulings 60–64 of `cowork_rulings_2026_08_11_fourteenth_stop.md` are applied here — the first
+> commissioning sitting. The sections above are earlier batches' and are not rewritten. New holds are
+> appended to §1, new surfacings to §2, and each task's log below. **Acts are dated from the clock:
+> 2026-08-11.**
+
+## 1 (continued). What needs the user
+
+### 1.18 Ruling 60's entry had no proposed home, because the queue's §19 carries none — the home is DERIVED from the record, and the one edit that reverses it is stated (Task 0)
+
+**This is the reported-widening discipline (D-654) applied to a DEPARTURE FROM THE DISPATCH'S LETTER,
+not a request for permission after the fact.** The act is done and it is reviewable; what follows is
+what was found, what was done instead, and what the narrow reading would have cost.
+
+**The obstruction, established at the file rather than reasoned about.** Ruling 60's own words are
+that the clause *"is a register entry at the home the queue proposes."* **The queue's §19 proposes
+no home.** It has three subsections — the verdict table, the tally, and what it does not do — and no
+proposed-home subsection at all, while its own §1 rule reads *"One verdict per ruling, and for every
+ruling proposed as a DECISION, one proposed home."* §19 proposes a decision and omits the home. The
+omission is §19's, made when it was written one batch earlier.
+
+**What was done, and why it is a derivation rather than a choice.** The home was taken from the
+record: **both entries the clause qualifies — D-436 and D-661 — are homed in the same block of
+`cowork_audit_protocol.md`**, and that block's own text states the siting logic the new section is
+placed under, in its own words, *"it is the same rule one level out."* The kind half was judged
+before the write: every existing subsection of that block states a rule with its ruling and its
+defense. So **D-673** is created there, beside the two entries whose debt it closes.
+
+**What the narrow reading would be, and its consequence, stated so the choice is informed.** Hold the
+entry and report the gap. **Ruling 60 then cannot be discharged at all** — not discharged
+differently, not later, but not discharged, because the queue is a ratified section the user has now
+ruled on and is not re-opened to add a home to it (#12). The record would carry a ratified decision
+with no register entry, which is precisely the state rule (c) exists against and the state the
+discharge procedure was written for.
+
+**What reverses it in one edit:** change D-673's `home` field and move the section. Nothing else in
+Ruling 60's application depends on the site — the clause's text, its defense and its classification
+are the ruling's own.
+
+**Nothing else in Task 0 is a departure.** Rulings 61–64 name their own sites, and each was performed
+at the site the ruling names.
+
+## 3 (continued). Per-task log — the fourteenth return continuation
+
+### Task 0 — COMPLETE. All five rulings applied in one commit: one register entry, one machinery edit that closes a row, one convention, one homing with its annotation, and one conditional read
+
+**The start state was derived at the artifacts before any act (A6), and it is what the dispatch's
+ledger records.** The full guard set was run unchanged before the first edit: **ZERO failing**, which
+is where the thirteenth continuation left it. The queue's §19, the register's highest identifier, the
+receiving block of `cowork_audit_protocol.md`, the template's kind list, `ARCHITECTURE.md` §5.2 and
+the joint estimator's section, and both rows' INDEX cells and detail files were each read at their
+own surface before anything was written. No count is restated here (**D-431**).
+
+**What was done, in order.**
+
+1. **Ruling 60 — the clause REGISTERED as D-673**, at `cowork_audit_protocol.md` beside D-436 and
+   D-661: an enumerating pattern whose reach has never been measured may STATE its bound on its own
+   artifact instead of owing a detection measurement, and the test is whether an ANALYSIS DECISION
+   consumes the enumeration. **The home is derived rather than proposed and that is reported at
+   §1.18.** The queue gains **§20**, its eighth closing state, and **§21**, the ninth extension over
+   Rulings 60–64.
+2. **Ruling 61 — the sibling subtraction extended, and [[OI-369]] FLIPS.** See below; it is the one
+   act in this task that needed something the ruling does not name, and it is the one worth reading.
+3. **Ruling 62 — the FILING CONVENTION written into `cowork_design_doc_template.md`**, beside the
+   Ruling 28 kind list, in two branches by document kind, with the three instances it was ruled at
+   named rather than described. Its application to those instances is Task 2's, not this one's.
+4. **Ruling 63 — the priority-of-evidence rule HOMED for the production arm, and [[OI-324]] FLIPS.**
+   Under **D-668**: step 1 was tried and **DECLINED** — the joint estimator's section states the
+   emission's granularity and the bass factor's *sounding* wording and states the RANKING nowhere —
+   so step 2 applies and the rule is written there in that section's own voice, with its two grounds
+   from the record. **D-057 is untouched**; its `status_source` records the settled scope. The
+   phase-1z scoping note is **ANNOTATED, not re-worded** (#12), and the small half is corrected: the
+   unqualified *"no exception"* now reads *"no PIECE-START exception"*.
+5. **Ruling 64 — one line in `CLAUDE.md`**, in the `scoring_model` pattern: a session touching the
+   joint estimator's behaviour reads its `ARCHITECTURE.md` section and the factorization contract
+   first. Both excluded alternatives recorded.
+
+**★ A1 HOLDS, AND IT WAS DISCHARGED BY MEASUREMENT RATHER THAN BY ASSERTION.** Its three clauses
+were each turned into a STOP in the tool rather than checked by a reader. **(i) Imported, not
+re-implemented:** the finish line's last item now subtracts the SAME `discharged` set its four
+siblings take, computed in one place. **(ii) Reconciled both ways:** the joined population is derived
+twice — as the rows the file carries and as a fresh read of the register's `unhomed` class — and a
+disagreement STOPs; and every disposition is recomputed with the chain step OFF, giving the answer
+the derivation produced before the ruling. **(iii) Any mover beyond the licensed class is a STOP:**
+the movers are exactly the one entry, published in the artifact, and anything else halts the run.
+
+**★ THE ONE THING RULING 61 NEEDED THAT IT DOES NOT NAME, AND [[OI-369]]'s OWN TEXT HAD ALREADY
+FOUND IT.** That row established, in its own words, that the sibling subtraction *could not reach
+this entry even if the item were built through the helper*, because the artifact the helper consults
+is stated over a different cut. So the act is in two halves: the subtraction's own derivation was
+extended to cover the register's `unhomed` class, and only then could the item import it. **And the
+disposition needed D-642 applied TWICE.** The successor the entry names first is itself in the
+derivation and itself not homed, so on the homed test alone the entry would have read *home the
+successor D-284* — an instruction that is **false**, because D-284's own obligation has already moved
+on and is discharged, which the same file derives. The register performs that step in its own words
+(*"D-284 (and through it D-036 with D-001/D-010)"*), so iterating one clause on one body of data is
+applying the rule and not extending it. The iteration is bounded and failing to settle is a STOP.
+
+**★ WHAT THIS TASK DID NOT DO WITH RULING 62, stated because a reader will expect it here.** The
+convention is WRITTEN and not APPLIED. Applying it — the derived enumeration, the branch-one banners,
+the score-inventory correction and the three rows it closes — is Task 2, which the dispatch separates
+from this one, and performing it here would have put a derived enumeration inside a commit whose
+subject is five rulings.
+
+**Five authored inputs were maintained, each caught by its own tool's STOP rather than by a reader**
+(**D-648**). **(1)** and **(2)** The apparatus declaration STOPPED on live verdicts for two rows the
+INDEX no longer carries open, and both moved WHOLE into its retired table with the reason each
+closed. **★ AND ONE OF THE TWO IS WORTH A LINE, because the verdict's own construction is what made
+the retirement clean:** OI-369's verdict closes by saying it is recorded *against the row's SUBJECT,
+never its remedy*, on the ground that choosing between the two closing acts is the user's — and the
+user chose. A verdict written against a remedy would have had to be re-authored; one written against
+the subject is simply retired. **(3)** and **(4)** The sizing pass STOPPED for the same two rows and
+both sizings moved whole into its retired block; **OI-324's is the first in this pass to be closed by
+ONE ruling discharging a NEEDS-RULING label and its SESSION-SMALL second half together**, which is an
+argument for carrying a second half in its own field rather than folding it into the label. **(5)**
+The legacy-mark verification STOPPED on code anchors this task's `ARCHITECTURE.md` insertion shifted
+— **the layered-STOP shape again, seven anchors cleared one STOP at a time, each re-aimed from the
+tool's own reported line and never by an assumed uniform shift.**
+
+**★ AND ONE EXPECTATION WAS CHECKED RATHER THAN INHERITED, WHICH IS THE THIRD CONSECUTIVE BATCH TO DO
+IT.** A run of register home anchors DID drift here — twice, once from the audit-protocol insertion
+and once from the `ARCHITECTURE.md` and `CLAUDE.md` ones — and both were re-aimed by running the tool
+and reading its result, not by assuming the pattern. The previous two batches recorded the opposite
+outcome from the same check, which is the point of running it.
+
+**★ THE SAME INSTRUCTION AS EVERY PREVIOUS CONTINUATION COULD NOT BE PERFORMED AND IS NAMED RATHER
+THAN QUIETLY DROPPED.** The dispatch orders itself staged with this record. **The ruling record
+`cowork_rulings_2026_08_11_fourteenth_stop.md` IS staged; the dispatch is not** — `cc_instruction_*.md`
+is matched by this repository's `.gitignore`, checked at that file this session rather than carried
+from the earlier reports that say so, and forcing it in would override a standing repository
+configuration decision that is not a session's to take.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires; the index-status lint and the open-items split
+reconciliation run inside that set. Every verdict is at `tools/audit/guard_state.json` → `summary`
+and none is restated here (**D-431**).
+
+**Holds:** **§1.18**, the reported departure, which is reviewable and reverses in one edit; and the
+queue's **§21**, which awaits a ruling — that is what an extension is. **Surfacings:** none bearing
+on the analysis. Ruling 63's subject is what the emission may treat as evidence, and **no behaviour,
+no fitted value and no measured value moved** — what changed is where the premise is written down.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

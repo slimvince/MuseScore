@@ -1059,6 +1059,96 @@ open-items status and authorizes nothing. It touches no golden, no corpus of sco
 
 ---
 
+## 20. THE EIGHTH CLOSING STATE — what Ruling 60 did: §19 RATIFIED as proposed, the proposed decision KEPT, and the ONE register entry it writes
+
+**Added 2026-08-11 by `cc_instruction_return_continuation_14.md` Task 0, after the user's Ruling 60
+of `cowork_rulings_2026_08_11_fourteenth_stop.md`.** Nothing above this section is altered by it, and
+§6, §8, §10, §12, §14, §16 and §18 — the first seven closing states — are untouched.
+
+**The §19 verdicts are RULED AS PROPOSED. The proposed DECISION is KEPT, its offered downgrade
+reading DECLINED, and ONE register entry is written.**
+
+| Queue row | Verdict as ruled | The ground the ruling gives |
+|---|---|---|
+| **57** — the §1.17 reported widening ACCEPTED | **EXERCISE** | Proposed EXERCISE and ruled EXERCISE; no upgrade was offered for it. **D-654** applied to one act, for the third time on the record |
+| **58** — the queue's §17 ratified as proposed, both upgrade offers declined | **EXERCISE** — a ratification event | Its closing state is §18 above. Proposed EXERCISE and ruled EXERCISE; no upgrade was offered for it |
+| **59** — the OI-368 comment edit licensed; the enumeration's limit RECORDED, not measured | **DECISION on its second half; the downgrade reading is DECLINED** | **The ruling's own words:** *"without it, D-436's third condition and D-661 leave every unmeasured pattern an unclosable #19 debt; the clause concentrates establishment effort on the measurement chain that feeds inference."* So the clause is a STANDING TEST rather than #19 restated for one case — which is exactly the fork §19.1 stated in one line, ruled the way the queue proposed. The licence half stands as an EXERCISE, as §19.1 classified it |
+
+**THE ONE ENTRY: D-673**, written into `cowork_audit_protocol.md` beside **D-436** and **D-661** —
+the two entries the clause qualifies — carrying its verbatim taken from the home text after that text
+was written, its plain restatement, its defense and the provenance field recording that the user
+ruled the CLASSIFICATION while the entry text was written afterwards.
+
+**★ ONE DEPARTURE IS REPORTED RATHER THAN PERFORMED QUIETLY: §19 PROPOSED NO HOME, AND ITS OWN §1
+RULE REQUIRES ONE.** §1 says *"for every ruling proposed as a DECISION, one proposed home"*, and §19
+carries no proposed-home subsection at all — the omission is §19's, made when it was written, and it
+is recorded here rather than repaired, because §19 is a section the user has now ruled on and is not
+re-opened (#12). **The home was therefore DERIVED from the record instead of chosen:** both entries
+the clause qualifies are homed in that one block, and the block's own text states the one-level-out
+siting logic — *"it is the same rule one level out"* — under which the new section sits. The
+departure and the one edit that reverses it are at `cowork_away_returns.md` §1.18.
+
+**★ WHAT THIS FILE'S OWN JOB NOW IS — unchanged from §8, §10, §12, §14, §16 and §18.** Every ruling
+it classifies carries a ruled verdict, so the queue is discharged as a queue. It stays as the RECORD
+of the classification and is not extended again for a later ruling without a dispatch saying so.
+
+---
+
+## 21. THE NINTH EXTENSION — Rulings 60–64, AWAITING THE USER
+
+> **★ STATUS: AWAITING THE USER. NO REGISTER ENTRY IS WRITTEN FOR ANYTHING IN THIS SECTION.** Added
+> 2026-08-11 (CC, `cc_instruction_return_continuation_14.md` Task 0, which is the dispatch §20's
+> closing line requires before this file is extended again), by the SAME derivation that built §2 and
+> extended it at §2.4, §7, §9, §11, §13, §15, §17 and §19: each ruling classified **from its own
+> text**, with its carrier read whole (**D-643**) before a verdict was written. Sections §1–§20 are
+> untouched — the verdicts the user ruled stand as ruled, and nothing here re-opens them.
+
+**The two verdicts mean exactly what §1 says they mean**, and that section is not restated here (#6).
+
+### 21.1 Rulings 60–64 (`cowork_rulings_2026_08_11_fourteenth_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **60** | The queue's §19 is RATIFIED as proposed, with the proposed decision KEPT | **EXERCISE** — a ratification event | The user's ruling ON a review queue, the class Ruling 36 fixed for 20–23 and Rulings 42, 49, 52, 54 and 58 applied at §10, §12, §14, §16 and §18. Its closing state is §20 above, and the entry it writes is **D-673** |
+| **61** | OI-369 closes by the SIBLING SUBTRACTION MACHINERY | **EXERCISE** | A ruling on ONE derived surface's construction, which **D-436** reserves to the user and which the record's own norm — derived and reconciled both ways, never hand-listed — already governs. What the ruling ADDS is the choice between two available closing acts for one row, which is an application rather than a rule: **D-642**'s clause is quoted in the sibling item's own machinery and is unchanged by extending its reach to a class it already covers in substance. **The excluded alternative is recorded at the ruling** — a per-item carve-out, i.e. two subtraction behaviours across five siblings — and an excluded alternative is evidence about the choice, not a second rule |
+| **62** | The FILING CONVENTION: dated reports are RE-BANNERED, live governing surfaces are CORRECTED | **DECISION**; *and the user may reasonably read it as an EXERCISE of D-249 and #12 together* | **What no entry states:** that document KIND decides between two remedies for the same defect — a dated report of a state is re-bannered as a historical record with its body untouched, while a live governing surface has its body corrected. The record carries each half separately and neither carries the fork: **D-249** governs how a correction is sited, #12 forbids destroying what a record found, and **C5** (the doc-sync half of **D-231**) requires a first-read surface to be true now. A session meeting a stale audit today has to compose the rule from three entries, and both compositions are defensible — which is what the two open rows this ruling closes each said in their own words. **The downgrade reading, in one line:** if the user reads *body untouched for a record, body corrected for a governing surface* as #12 and C5 applied to their obvious cases rather than as a filing rule, the verdict is EXERCISE and nothing is owed |
+| **63** | OI-324: the priority-of-evidence rule is CROSS-CUTTING and binds BOTH arms | **DECISION** | It settles what the record left unwritten in terms: which arm an evidential contract binds. The row itself states that *"neither reading is written down"*, so there is no entry to exercise — and the choice is not a wording fix but a statement about the production emission's evidential contract, which is why the row's own status calls it a ruling. **D-057** stands as written and is not amended; what the ruling adds is that the rule it states is arm-independent, which no entry says. *The small half — the unqualified predicate corrected to name its argument — is an EXERCISE of the qualified-predicates standard and needs no entry* |
+| **64** | The joint estimator's specification joins the CONDITIONAL mandatory reads | **EXERCISE** | The `scoring_model` pattern applied to a second specification. **D-137** (the mandatory scoring-model read) already fixes the form — a conditional read triggered by what a session touches — and this adds one more document under the same form, which is the shape Ruling 41 and Ruling 48 were classified EXERCISE for. **What is worth noticing is the ground rather than the verdict:** the ruling rests on the never-work-from-memory rule's own founding instance as measured evidence that route-on-demand fails under load, which is a fact about a past act and not a new rule |
+
+### 21.2 The tally, and the two things this extension reports rather than classifies
+
+**Proposed DECISIONS — two:** **62** and **63**. **Proposed EXERCISES — three:** **60**, **61** and
+**64**, and **62** entire under its downgrade reading. **One downgrade reading is given in one line**,
+so reading it the other way costs the user one line.
+
+**★ FIRST: THIS IS THE LARGEST SINGLE SITTING THE QUEUE HAS CLASSIFIED, AND IT BREAKS THE SHAPE SIX
+EXTENSIONS RECORDED.** Every earlier extension found that the rulings unblocking the most work bound
+nothing new. **Here the two that unblock the most work are the two proposed as decisions** — a filing
+convention that closes three open rows at once, and an evidential scope ruling a live open item rests
+on. The shape is reported as BROKEN rather than quietly dropped, because six batches of evidence for
+it is what would otherwise make a reader expect it to hold.
+
+**★ SECOND: RULING 61's CLASSIFICATION IS THE ONE A READER MAY REASONABLY PUSH BACK ON, AND THE PUSH
+IS NAMED HERE RATHER THAN LEFT TO BE FOUND.** It is classified an EXERCISE because it extends a
+subtraction the record already performs to a class the same clause already covers. **The contrary
+reading:** the ruling chooses between two closing acts a row named, and a choice between two
+defensible acts is what a DECISION is. It is not proposed as one because what the ruling decides is
+which MACHINERY a derived cut uses — and **D-436** already assigns that class of question to the user
+without needing a second entry to say so. If the user reads it the other way, the entry states that a
+derived cut applies its subtractions uniformly across sibling items unless a ruling excepts one, and
+its home is the audit protocol's dispatch-protocol block.
+
+### 21.3 What §21 does NOT do
+
+It writes no register entry and assigns no identifier. It re-opens no verdict the user ruled at §6,
+§8, §10, §12, §14, §16, §18 or §20, re-words no ruling, and re-reads no ruling's merits. It moves no
+open-items status and authorizes nothing. It touches no golden, no corpus of scores and nothing in
+`tools/robust_stop/`.
+
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+---
+
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
 debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
@@ -1101,4 +1191,8 @@ is the dispatch §18's closing line requires, and it scopes itself to Rulings 57
 §17 lines of this paragraph were written 2026-08-11 with §18's and §19's**: the wave that added those
 two sections recorded them in the file's own banner and not here, so this paragraph named carriers
 only through §15. Nothing else in it is altered — the correction adds what was missing and removes
-nothing, #12.)*
+nothing, #12.) §20 records the user's Ruling 60 of
+`cowork_rulings_2026_08_11_fourteenth_stop.md`, read whole (D-643) before it was written, and was
+added on the instruction of `cc_instruction_return_continuation_14.md` Task 0; §21's carrier is that
+same record, read whole before it was written, added on the same instruction, which is the dispatch
+§20's closing line requires, and it scopes itself to Rulings 60–64.*

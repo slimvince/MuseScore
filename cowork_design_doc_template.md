@@ -117,10 +117,53 @@ else — and reading the resulting non-conformance as a gap would make the whole
 unanswerable. The STOP on an unlisted kind is what keeps the exemption from widening by silence:
 without it, "exempt" is whatever a session decides a document is.*
 
+## What is done with a document the record has OVERTAKEN — the FILING CONVENTION, in two branches by KIND (user, 2026-08-11)
+
+The kind list above says which documents the section structure binds. **This says what is done when a
+document, of whatever kind, describes a state the record has since left behind** — the shape three
+open rows arrived at independently, each stopping at the same question and none able to answer it.
+The convention is written under the user's Ruling 62 of `cowork_rulings_2026_08_11_fourteenth_stop.md`
+and it turns on the SAME kind call the list above already makes.
+
+**BRANCH ONE — a DATED REPORT: it is RE-BANNERED as a historical record, and its BODY IS NEVER
+REWRITTEN.** Completed audits, probe reports, dossiers, and design documents whose approach was
+later falsified or superseded. The act is a **top banner** stating what the document is a record OF:
+its **date**, the **fate of its subject**, and the **commit or ruling that superseded or deleted
+it**. Nothing below the banner is touched.
+
+**BRANCH TWO — a LIVE GOVERNING SURFACE: the BODY IS CORRECTED.** A document a session is sent to in
+order to act — a first-read surface, a procedure, an inventory a task must trust. Its job is to be
+**true now**, so a stale statement in it is corrected in place, with the former wording preserved
+where the correction is made (#12).
+
+**THE KIND CALL FOLLOWS THE ENUMERATED KIND LIST ABOVE, AND A HARD CASE STOPS TO THE USER.** A
+document the two branches do not decide is not bannered by stretch and not rewritten by stretch — it
+is reported, exactly as an unlisted kind is.
+
+*Why the two branches, and why the split is by kind rather than by how stale the document is.* A
+dated report is **evidence about an act**: what was known, when, and what was concluded. Rewriting it
+destroys the thing it exists to be (#12) — and a reader who cannot see what the document said cannot
+tell a correction from a revision. A live governing surface is the opposite: it is not evidence, it
+is an INSTRUCTION, and an instruction that is false does damage every time it is read — which is what
+**D-231**'s doc-sync half means by *a specification cannot be the compliance standard while it
+misdescribes the code*. **The banner half also fixes, by construction, the defect the record has now
+met three times: a correcting sentence sitting sections away from what it refutes** — an audit whose
+final line says the code was deleted after three hundred lines describing it as live, a design
+falsified the next day with no note saying so. A reader who stops before the last line is told the
+opposite of HEAD; a reader who meets the banner first cannot be.
+
+*The three instances it was ruled at, named rather than described:* a completed audit describing
+deleted code (`OPEN_ITEMS.md` OI-322), a falsified design carrying no supersession note (OI-332
+item 3), and a first-read surface stating a superseded acceptance gate as current (OI-320). The
+first two are branch one; the third is branch two — and that the same defect splits by kind is
+exactly what none of the three rows could settle on its own.
+
 ## Status-banner convention
 Each doc opens with a one-line status: **DRAFT for sign-off** / **SIGNED (date)** / **AS-BUILT (date + commits)** /
 **SUPERSEDED (→ pointer)**. The all-documentation-in-sync standing rule applies: when the code or a decision
-changes, the doc moves with it.
+changes, the doc moves with it. **The historical-record banner the filing convention above prescribes is
+the SUPERSEDED form used for a dated report** — it states what the document is a record of rather than
+pointing at a replacement, because a report has no successor to point at.
 
 ## Implementation & test references (a *locator*, which stays — distinct from code-in-prose, which does not)
 A spec carries a **locator**: which files hold the implementation and which hold the tests, so a reader can go
