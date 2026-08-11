@@ -1,7 +1,23 @@
 # Architectural Layer 3 — KEY/MODE — Architecture & Design
 
 > **Status: SIGNED (user, 2026-06-22)** — conditional sign-off met by stating the recognized mode vocabulary
-> explicitly (Section 1). **WIRED — AS-BUILT, Step 1 (2026-06-22): the decoder is the live key/mode path.** The
+> explicitly (Section 1).
+>
+> **★ SCOPE, CORRECTED 2026-08-11 (CC, `cc_instruction_return_continuation_11.md` Task 1; `OPEN_ITEMS.md`
+> OI-276 (1)). THE AS-BUILT CLAUSE IMMEDIATELY BELOW IS FALSE AT HEAD AND ITS FORMER WORDING IS PRESERVED
+> IN PLACE (#12).** This document describes the **Layer-3 key/mode decoder**, which is **BUILT AND
+> DORMANT**: the joint estimator is the production key path on **both** surfaces — the batch/corpus surface
+> since 2026-07-26 (**D-005**) and the in-app notation surface since 2026-07-27 (**D-010**) — and all four of
+> this decoder's production call sites sit in the flag's false branch ([[OI-232]]'s resolution, which
+> re-tagged the canonical Layer-3 entry Built+Dormant with every call site verified). **So a reader must not
+> take any present-tense sentence in this document as a statement about what runs.** The design content is
+> untouched by this correction and nothing in it is withdrawn: what is corrected is the document's account of
+> its own standing, which is the half of phase 1's doc-sync obligation D-639's test puts squarely IN — an
+> as-built banner over a dormant mechanism is its first worked example, word for word.
+>
+> **WIRED — AS-BUILT, Step 1 (2026-06-22): the decoder is the live key/mode path.** *(The preceding sentence
+> is the FORMER wording, true when written and false at HEAD; it is preserved rather than deleted, #12, and
+> is governed by the scope block above.)* The
 > read-only audit, the decoder build, the unification extraction (the shared `pitchContextOverSpan` view), the
 > characterization + causal-decomposition diagnostics, and the bounded sweep are committed and pushed
 > (`c453315faa`, `b368f3c631`, `1538193d4d`, `2203ad9fda`). The **Step-1 wiring** — the decoder replaces the

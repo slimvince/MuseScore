@@ -433,9 +433,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:529-532`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:545-548`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 518). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 534). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -453,9 +453,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:533-535`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:549-551`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 518). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 534). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A3, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -474,9 +474,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:536-539`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:552-555`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 518). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 534). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A4, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -500,9 +500,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:543-551`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:559-567`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 518). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 534). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A8, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -520,9 +520,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:540-542`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:556-558`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 518). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (alternatives weighed)` (heading at line 534). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A2's second half, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -543,9 +543,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:356-361`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:372-377`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 348). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 364). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records that this clarification was folded in BEFORE signing and that the signing ratified asks A1–A8 in full. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -565,9 +565,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:314-318`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:330-334`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.1** — `### 5.1 VL-A — the voice-linear view (representation; facts)` (heading at line 299). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5.1** — `### 5.1 VL-A — the voice-linear view (representation; facts)` (heading at line 315). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)` and, separately, that the top-note default is closed as-built. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -588,9 +588,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:386-391`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:402-407`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 348). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 364). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. All three floor values are recorded as precision-phase constants, not fixed here. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -608,9 +608,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:512-514`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:528-530`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 494). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§8** — `## 8. Crosscutting concepts` (heading at line 510). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A6, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -648,9 +648,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:96-99`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:109-112`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“Accepted music-theory terms [MT]”** — `### Accepted music-theory terms [MT]` (heading at line 86). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **“Accepted music-theory terms [MT]”** — `### Accepted music-theory terms [MT]` (heading at line 99). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as one of two build declarations the design owed and the build closed; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-HOMED 2026-08-09 under the user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md` (re-homing is the DEFAULT closing route for finish-line item 1 and no document is excepted), by `cc_instruction_return_continuation_6.md` Task 1. The rule is written into §0, the delegated TERMINOLOGY section, at the very bullet that defines the motion types — because that bullet is where the ambiguity lives: it says 'harmonic interval preserved' and a reader meets the undecided word there. The homing is ALSO a doc-sync correction (C3): that bullet closed by calling the reading 'an implementation declaration owed at build', which is FALSE at HEAD, and the former wording is preserved in place (#12). The §15 tracking line is untouched and the verbatim is RE-TAKEN from the new home rather than transcribed. FORMER HOME, PRESERVED (#12): `cowork_voiceleading_axis_design.md:632-635`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "2. **The \"parallel\" interval-preservation convention** (semitone-exact vs generic-diatonic) — ✅ **CLOSED at build\n   (AS-BUILT, 2026-07-03): SEMITONE-EXACT.** Verified at `voiceleading2.py` `_motion`: `parallel` iff both voices\n   move the same direction AND `(pu1−pv1)==(pu0−pv0)` on signed MIDI pitches (a same-direction move whose semitone\n   interval changes is `similar`). Replicated exactly in `voiceleadingprofiles.cpp classifyMotion` (oracle-tested)." THE FORMER HOME-CLASS RULING, PRESERVED (#12) AND NOT WITHDRAWN — it settled the DELEGATION question and this act settles the ENTRY, which is the split the finish line's own gate note draws: "★ THE HOME CLASS IS SETTLED BY RULING AND IS NOT OWED WORK (user, 2026-08-04, ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`): the `ARCHITECTURE.md` delegation is NOT widened to reach §15, so this entry stays `gap` deliberately. §15 is 'Open items & deferred refinements', a tracking list of what is owed or since closed — the shape the record has declined as a home elsewhere — and D-430's kind half would exclude it at the next run in any case. THIS IS A RULING, NOT A DEFERRAL: no later wave owes a delegation act here." No code identifier or commit is carried into the specification text (#17f, D-431); the implementation evidence stays in this field and in §15's closure line.
 
@@ -669,9 +669,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_voiceleading_axis_design.md:378-381`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_voiceleading_axis_design.md:394-397`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 348). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5.3** — `### 5.3 VL-C — texture classification (inference; the first judgment component)` (heading at line 364). A delegation at ARCHITECTURE.md:1095 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as the second of two build declarations the design owed and the build closed, decided at build by measurement rather than at design time; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 

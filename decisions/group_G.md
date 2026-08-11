@@ -1049,9 +1049,9 @@ record but is not what shipped." The verbatim above is RE-TAKEN from the new hom
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_joint_key_chord_design.md:173-180`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_joint_key_chord_design.md:183-190`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§2.2 The chord re-decoded under each carried key”** — `### §2.2 The chord re-decoded under each carried key (the OWED axis)` (heading at line 164). A delegation at cowork_engage_arc_plan.md:44 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **“§2.2 The chord re-decoded under each carried key”** — `### §2.2 The chord re-decoded under each carried key (the OWED axis)` (heading at line 174). A delegation at cowork_engage_arc_plan.md:44 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about the two code paths and not about that step. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 

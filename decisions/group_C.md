@@ -847,9 +847,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_joint_key_chord_design.md:136-140`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_joint_key_chord_design.md:146-150`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **“§1.3 How it avoids re-introducing a cross-layer cycle”** — `### §1.3 How it avoids re-introducing a cross-layer cycle (#7)` (heading at line 118). A delegation at cowork_engage_arc_plan.md:44 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
+**Home section.** **“§1.3 How it avoids re-introducing a cross-layer cycle”** — `### §1.3 How it avoids re-introducing a cross-layer cycle (#7)` (heading at line 128). A delegation at cowork_engage_arc_plan.md:44 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 

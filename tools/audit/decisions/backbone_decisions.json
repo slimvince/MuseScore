@@ -49,49 +49,49 @@
             "why": "The document's opening block is its STATUS BANNER: it records the SIGNED/WIRED state, which commits landed, which follow-ups are tracked, and what the document is. That is a record of delivery status — the tracking-surface shape OI-240 ruled is not a home — and the one rule it does carry (which of the two boundary numbers is THE Layer-3 confidence) is a decision recorded in a banner rather than in a rule-stating section. Read in full this session at :1-25."
           },
           {
-            "heading_line": 52,
+            "heading_line": 68,
             "heading_text": "1. Introduction & purpose",
             "states_rules": true,
             "why": "States what the layer owns outright, what it explicitly does not do, the evidence boundary to Layer 5, and which key/modes it recognizes and does not. Rules throughout. Read :52-137."
           },
           {
-            "heading_line": 138,
+            "heading_line": 154,
             "heading_text": "2. Constraints",
             "states_rules": true,
-            "why": "A constraints list: each bullet states what the layer may and may not use, and what it must output. Read :138-181."
+            "why": "A constraints list: each bullet states what the layer may and may not use, and what it must output. Read :154-197."
           },
           {
-            "heading_line": 206,
+            "heading_line": 222,
             "heading_text": "4. Solution strategy",
             "states_rules": true,
             "why": "States the strategy as a rule — the sequence is chosen by total fit minus change cost, and it states in terms that no duration threshold exists. Read :206-223."
           },
           {
-            "heading_line": 224,
+            "heading_line": 240,
             "heading_text": "5. Building-block view (static / internal structure)",
             "states_rules": true,
             "why": "States the four steps and the as-built candidate-set rule the specification calls normative until a measurement rules otherwise. Read :224-255."
           },
           {
-            "heading_line": 295,
+            "heading_line": 311,
             "heading_text": "9. Architecture decisions (with the alternatives we weighed)",
             "states_rules": true,
             "why": "An architecture-decisions list: each row is a decision with the alternative weighed. Read :295-316."
           },
           {
-            "heading_line": 317,
+            "heading_line": 333,
             "heading_text": "10. Quality & testing",
             "states_rules": true,
             "why": "States the grading bar, the required behaviour tests, and the hard stop the layer must not move. Read :317-348."
           },
           {
-            "heading_line": 349,
+            "heading_line": 365,
             "heading_text": "11. Risks & technical debt",
             "states_rules": true,
             "why": "MIXED, and admitted on the census precedent: it records measured findings (the bounded-headroom decomposition, the settings sweep) AND states rules — the residual handed forward is written as *\"the spec for that later layer\"*, and the leading-tone fix is placed at a named later step. The mixedness is reported at `OPEN_ITEMS.md` OI-290's class, not used to exclude. Read :349-419."
           },
           {
-            "heading_line": 480,
+            "heading_line": 496,
             "heading_text": "15. To do — deferred enhancements (this layer is built; these are revisions on record)",
             "states_rules": true,
             "why": "Deferred enhancements, each stating where the work belongs and under what gate — placement rules, not observations. Read :480-520."
@@ -522,58 +522,58 @@
         "delegation_scope": "sections",
         "delegated_sections": [
           {
-            "heading_line": 50,
+            "heading_line": 53,
             "heading_text": "0. Terminology (read first) — accepted music theory vs. this design's operational terms",
             "why": "ARCHITECTURE.md (the voice-leading-span criterion) names the sections: \"Criterion + build home: `cowork_voiceleading_axis_design.md` §0/§5.1/§5.3/§8/§9 (AS-BUILT)\" — WIDENED 2026-08-03 on the user's direction (the OI-293 write list) from §0/§5.3. §0 today holds no register entry."
           },
           {
-            "heading_line": 299,
+            "heading_line": 315,
             "heading_text": "5.1 VL-A — the voice-linear view (representation; facts)",
             "why": "Added by the 2026-08-03 widening: the VL-A representation contract sat outside the two originally-named sections. (Heading line re-aimed 2026-08-09 from 289, following its subject after the §0 homing of D-398 — authored-input maintenance, D-648, never a re-decision.)"
           },
           {
-            "heading_line": 348,
+            "heading_line": 364,
             "heading_text": "5.3 VL-C — texture classification (inference; the first judgment component)",
             "why": "ARCHITECTURE.md (the voice-leading-span criterion) names the sections: \"Criterion + build home: `cowork_voiceleading_axis_design.md` §0/§5.1/§5.3/§8/§9 (AS-BUILT)\" — WIDENED 2026-08-03 from §0/§5.3. (Heading line re-aimed 2026-08-09 from 338, D-648.)"
           },
           {
-            "heading_line": 494,
+            "heading_line": 510,
             "heading_text": "8. Crosscutting concepts",
             "why": "Added by the 2026-08-03 widening: the crosscutting rules sat outside the two originally-named sections. (Heading line re-aimed 2026-08-09 from 484, D-648.)"
           },
           {
-            "heading_line": 518,
+            "heading_line": 534,
             "heading_text": "9. Architecture decisions (alternatives weighed)",
             "why": "Added by the 2026-08-03 widening: the architecture decisions sat outside the two originally-named sections. §15 and §16 are deliberately NOT named — the widening states in terms that they are ratification asks, not rule-stating sections. (Heading line re-aimed 2026-08-09 from 508, D-648.) ★ THE CLOSING CLAUSE OF THIS NOTE IS CORRECTED, THE FORMER WORDING PRESERVED (#12). It read: \"so D-397, D-398 and D-400 stay `gap`, which is the partial movement this document was predicted to show.\" That was true until 2026-08-09, when the user's Ruling 38 made re-homing the default closing route for finish-line item 1 and all three were re-homed: D-397 and D-400 into `ARCHITECTURE.md` (the growth-by-axis ownership paragraph and the §2.15 span typology, the section D-400's own text names), and D-398 into §0 of THIS document — a delegated, rule-stating section — at the very bullet whose undecided word it settles. The delegation itself is untouched: §15 and §16 are still not named, and no delegation was written or widened."
           }
         ],
         "section_kind": [
           {
-            "heading_line": 299,
+            "heading_line": 315,
             "heading_text": "5.1 VL-A — the voice-linear view (representation; facts)",
             "states_rules": true,
             "why": "States the representation contract for the voice-linear view, including the binding rule D-394 records — a reduction of a chord-bearing voice is a declared parameter of the request, uniform across sources, never silent and never chosen per source, with exactly one rule offered in v1. Read :299-347. (Heading line and read range re-aimed 2026-08-09 from 289 / :289-337, D-648.)"
           },
           {
-            "heading_line": 348,
+            "heading_line": 364,
             "heading_text": "5.3 VL-C — texture classification (inference; the first judgment component)",
             "states_rules": true,
             "why": "A building-block specification for the axis's one v1 judgment component: it states the output contract (committed class plus the full ranked list), the three declared abstention floors, and the as-built feature space. Recorded at phase 1n and unchanged. Read :348-395. (Heading line and read range re-aimed 2026-08-09 from 338 / :338-385, D-648.)"
           },
           {
-            "heading_line": 494,
+            "heading_line": 510,
             "heading_text": "8. Crosscutting concepts",
             "states_rules": true,
             "why": "States crosscutting rules that bind consumers: VL-C's discovery rule with its extension direction, increment, stop condition and hard bound, and the coverage declaration D-396 records — the axis analyses notated music only, and its style coordinate is undefined, not zero, for sources carrying no voices. Read :494-517. (Heading line and read range re-aimed 2026-08-09 from 484 / :484-507, D-648.)"
           },
           {
-            "heading_line": 518,
+            "heading_line": 534,
             "heading_text": "9. Architecture decisions (alternatives weighed)",
             "states_rules": true,
             "why": "A section of architecture decisions each with its rejected alternative and the measurement that decided it. Read :518-633. (Heading line and read range re-aimed 2026-08-09 from 508 / :508-623, D-648.)"
           },
           {
-            "heading_line": 86,
+            "heading_line": 99,
             "heading_text": "Accepted music-theory terms [MT]",
             "states_rules": true,
             "why": "AUTHORED 2026-08-09, when the §0 homing of D-398 made this subsection hold a register entry for the first time — the delegated-sections note above had recorded that §0 held none, and the classification resolves an entry to the deepest heading containing it. It STATES RULES rather than recording findings: every bullet FIXES the operational meaning a term carries wherever the axis's specifications and its consumers use it, which is a binding definition and not an observation. The entry homed here is one of those fixings — the motion-type bullet's \"interval preserved\" now states SEMITONE-EXACT where it formerly deferred the reading to an implementation declaration owed at build. The subsection carries no measurement, no finding and no dated reading. Read :86-158."
@@ -651,25 +651,25 @@
         "why_this_scope": "The delegation written 2026-08-03 into `cowork_engage_arc_plan.md`'s arc-#10 bullet names the DOCUMENT and says so in terms — it lists where the four entries sit and states that a document-level delegation reaches all of its sections. The surrounding surface is user-ratified (2026-07-07), which is what rule (j) requires of a delegating surface.",
         "section_kind": [
           {
-            "heading_line": 70,
+            "heading_line": 80,
             "heading_text": "§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state",
             "states_rules": true,
             "why": "States the decision and the three binding constraints that ground it, with the rejected alternative named. That its subject was later SHELVED does not change what the section does — D-433: shelving is a status, not a kind. Read :70-117."
           },
           {
-            "heading_line": 118,
+            "heading_line": 128,
             "heading_text": "§1.3 How it avoids re-introducing a cross-layer cycle (#7)",
             "states_rules": true,
             "why": "States construction rules: the step is forward-only, it does not call back into the key layer, and the coupled decision is owned by its own bounded closure rather than pushed backward — which is D-377, the forbidden back-edge stated concretely. Read :118-163."
           },
           {
-            "heading_line": 164,
+            "heading_line": 174,
             "heading_text": "§2.2 The chord re-decoded under each carried key (the OWED axis)",
             "states_rules": true,
             "why": "States what the axis computes and how — N forward invocations of the built decoder rather than a new decoder — and declares which of its claims is an owed measurement rather than asserting it. Read :164-248."
           },
           {
-            "heading_line": 249,
+            "heading_line": 259,
             "heading_text": "§3.1 The trigger, grounded in C3",
             "states_rules": true,
             "why": "States the firing condition as a contract — both components, each mapped to a named source-grounded input — and D-379 is the statement that one of them is not computable read-only. Read :249-300."
@@ -9923,7 +9923,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer3_keymode_design.md:60-72",
+      "home": "cowork_layer3_keymode_design.md:76-88",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -9937,7 +9937,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 52,
+        "heading_line": 68,
         "section": "## 1. Introduction & purpose",
         "label": "§1",
         "delegated": true,
@@ -9963,7 +9963,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer3_keymode_design.md:129-133",
+      "home": "cowork_layer3_keymode_design.md:145-149",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`, and the banner adds that the conditional sign-off was met by stating the recognized mode vocabulary explicitly — this passage is the other half of that statement. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -9978,7 +9978,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 52,
+        "heading_line": 68,
         "section": "## 1. Introduction & purpose",
         "label": "§1",
         "delegated": true,
@@ -10004,7 +10004,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer3_keymode_design.md:153-159",
+      "home": "cowork_layer3_keymode_design.md:169-175",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. **Flagged in the phase-1h report as an instance of the [[OI-275]] question** — it sits against **D-003** (inference is preset-independent; presets are presentation concerns), and the record contains no ruling that names either statement against the other. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) UNDER THE OI-275 TRANSFER TREATMENT, as offered with the queue and adopted in the blanket ratification: the letter (the preset as a weak mode prior) stays home to the LEGACY Layer-3 path, LEGACY-marked; the live estimator is governed by D-003's measured preset-independence. The second instance of the OI-275 governing question, treated identically.",
@@ -10019,7 +10019,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 138,
+        "heading_line": 154,
         "section": "## 2. Constraints",
         "label": "§2",
         "delegated": true,
@@ -10045,7 +10045,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer3_keymode_design.md:230-239",
+      "home": "cowork_layer3_keymode_design.md:246-255",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The date given is the date of the recorded ruling that the narrower alternative is to be settled by measurement and that the pooled rule is normative until then; the pooled rule itself is recorded as as-built and is not dated in the record. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10060,7 +10060,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 224,
+        "heading_line": 240,
         "section": "## 5. Building-block view (static / internal structure)",
         "label": "§5",
         "delegated": true,
@@ -10086,7 +10086,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer3_keymode_design.md:307-310",
+      "home": "cowork_layer3_keymode_design.md:323-326",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10101,7 +10101,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 295,
+        "heading_line": 311,
         "section": "## 9. Architecture decisions (with the alternatives we weighed)",
         "label": "§9",
         "delegated": true,
@@ -10127,7 +10127,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer3_keymode_design.md:212-220",
+      "home": "cowork_layer3_keymode_design.md:228-236",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10143,7 +10143,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 206,
+        "heading_line": 222,
         "section": "## 4. Solution strategy",
         "label": "§4",
         "delegated": true,
@@ -10169,7 +10169,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer3_keymode_design.md:311-313",
+      "home": "cowork_layer3_keymode_design.md:327-329",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10184,7 +10184,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 295,
+        "heading_line": 311,
         "section": "## 9. Architecture decisions (with the alternatives we weighed)",
         "label": "§9",
         "delegated": true,
@@ -10210,7 +10210,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer3_keymode_design.md:16-18",
+      "home": "cowork_layer3_keymode_design.md:32-34",
       "home_is_layer_spec": false,
       "nonspec_kind": "gap",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10251,7 +10251,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer3_keymode_design.md:314-315",
+      "home": "cowork_layer3_keymode_design.md:330-331",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10266,7 +10266,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 295,
+        "heading_line": 311,
         "section": "## 9. Architecture decisions (with the alternatives we weighed)",
         "label": "§9",
         "delegated": true,
@@ -10292,7 +10292,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer3_keymode_design.md:321-327",
+      "home": "cowork_layer3_keymode_design.md:337-343",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10306,7 +10306,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 317,
+        "heading_line": 333,
         "section": "## 10. Quality & testing",
         "label": "§10",
         "delegated": true,
@@ -10332,7 +10332,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_layer3_keymode_design.md:337-342",
+      "home": "cowork_layer3_keymode_design.md:353-358",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10346,7 +10346,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 317,
+        "heading_line": 333,
         "section": "## 10. Quality & testing",
         "label": "§10",
         "delegated": true,
@@ -10372,7 +10372,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer3_keymode_design.md:402-410",
+      "home": "cowork_layer3_keymode_design.md:418-426",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10387,7 +10387,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 349,
+        "heading_line": 365,
         "section": "## 11. Risks & technical debt",
         "label": "§11",
         "delegated": true,
@@ -10413,7 +10413,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer3_keymode_design.md:411-418",
+      "home": "cowork_layer3_keymode_design.md:427-434",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10428,7 +10428,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 349,
+        "heading_line": 365,
         "section": "## 11. Risks & technical debt",
         "label": "§11",
         "delegated": true,
@@ -10454,7 +10454,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer3_keymode_design.md:383-397",
+      "home": "cowork_layer3_keymode_design.md:399-413",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10469,7 +10469,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 349,
+        "heading_line": 365,
         "section": "## 11. Risks & technical debt",
         "label": "§11",
         "delegated": true,
@@ -10495,7 +10495,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer3_keymode_design.md:497-506",
+      "home": "cowork_layer3_keymode_design.md:513-522",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The surrounding deferred-enhancement entry is recorded per the user, 2026-06-22; the measured placement conclusion quoted here names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10510,7 +10510,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 480,
+        "heading_line": 496,
         "section": "## 15. To do — deferred enhancements (this layer is built; these are revisions on record)",
         "label": "§15",
         "delegated": true,
@@ -10536,7 +10536,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_layer3_keymode_design.md:507-520",
+      "home": "cowork_layer3_keymode_design.md:523-536",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -10551,7 +10551,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 480,
+        "heading_line": 496,
         "section": "## 15. To do — deferred enhancements (this layer is built; these are revisions on record)",
         "label": "§15",
         "delegated": true,
@@ -11257,7 +11257,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_joint_key_chord_design.md:77-96",
+      "home": "cowork_joint_key_chord_design.md:87-106",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step this decision places was shelved against measurement and that shelving is register entry **D-278** (user-ratified 2026-07-07, re-ratified 2026-08-02), so the placement is shelved with it; the document's own banner says it is retained as the record and that the step is off the build inventory. **Reported, not statused as a supersession:** the option this decision REJECTED — one decision over a combined tonality-and-chord state — is what **D-001** later adopts as the production architecture, and no record connects the two; the user ruled at D-278's ratification that the shelving does not bear on D-001, and the two objections raised here are answered elsewhere in the record (the decision-neutrality corollary answers the rebuild objection; the adoption measurement answers the magnitude objection). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11272,7 +11272,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 70,
+        "heading_line": 80,
         "section": "### §1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state",
         "label": "“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”",
         "delegated": true,
@@ -11298,7 +11298,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_joint_key_chord_design.md:136-140",
+      "home": "cowork_joint_key_chord_design.md:146-150",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11312,7 +11312,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 118,
+        "heading_line": 128,
         "section": "### §1.3 How it avoids re-introducing a cross-layer cycle (#7)",
         "label": "“§1.3 How it avoids re-introducing a cross-layer cycle”",
         "delegated": true,
@@ -11338,7 +11338,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_joint_key_chord_design.md:173-180",
+      "home": "cowork_joint_key_chord_design.md:183-190",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about the two code paths and not about that step. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11353,7 +11353,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 164,
+        "heading_line": 174,
         "section": "### §2.2 The chord re-decoded under each carried key (the OWED axis)",
         "label": "“§2.2 The chord re-decoded under each carried key”",
         "delegated": true,
@@ -11379,7 +11379,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_joint_key_chord_design.md:266-272",
+      "home": "cowork_joint_key_chord_design.md:276-282",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about what is and is not measurable, and stands independently of it — the same document records the shelving probe's own fire-rate as a structural proxy rather than the exact condition. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11393,7 +11393,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 249,
+        "heading_line": 259,
         "section": "### §3.1 The trigger, grounded in C3",
         "label": "“§3.1 The trigger, grounded in C3”",
         "delegated": true,
@@ -11741,7 +11741,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_voiceleading_axis_design.md:529-532",
+      "home": "cowork_voiceleading_axis_design.md:545-548",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11755,7 +11755,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 518,
+        "heading_line": 534,
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -11781,7 +11781,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_voiceleading_axis_design.md:533-535",
+      "home": "cowork_voiceleading_axis_design.md:549-551",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A3, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11795,7 +11795,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 518,
+        "heading_line": 534,
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -11821,7 +11821,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_voiceleading_axis_design.md:536-539",
+      "home": "cowork_voiceleading_axis_design.md:552-555",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A4, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11835,7 +11835,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 518,
+        "heading_line": 534,
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -11861,7 +11861,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_voiceleading_axis_design.md:543-551",
+      "home": "cowork_voiceleading_axis_design.md:559-567",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A8, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11875,7 +11875,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 518,
+        "heading_line": 534,
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -11901,7 +11901,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_voiceleading_axis_design.md:540-542",
+      "home": "cowork_voiceleading_axis_design.md:556-558",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A2's second half, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11915,7 +11915,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 518,
+        "heading_line": 534,
         "section": "## 9. Architecture decisions (alternatives weighed)",
         "label": "§9",
         "delegated": true,
@@ -11941,7 +11941,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_voiceleading_axis_design.md:356-361",
+      "home": "cowork_voiceleading_axis_design.md:372-377",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records that this clarification was folded in BEFORE signing and that the signing ratified asks A1–A8 in full. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11955,7 +11955,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 348,
+        "heading_line": 364,
         "section": "### 5.3 VL-C — texture classification (inference; the first judgment component)",
         "label": "§5.3",
         "delegated": true,
@@ -11981,7 +11981,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_voiceleading_axis_design.md:314-318",
+      "home": "cowork_voiceleading_axis_design.md:330-334",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full)` and, separately, that the top-note default is closed as-built. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -11995,7 +11995,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 299,
+        "heading_line": 315,
         "section": "### 5.1 VL-A — the voice-linear view (representation; facts)",
         "label": "§5.1",
         "delegated": true,
@@ -12021,7 +12021,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_voiceleading_axis_design.md:386-391",
+      "home": "cowork_voiceleading_axis_design.md:402-407",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. All three floor values are recorded as precision-phase constants, not fixed here. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -12035,7 +12035,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 348,
+        "heading_line": 364,
         "section": "### 5.3 VL-C — texture classification (inference; the first judgment component)",
         "label": "§5.3",
         "delegated": true,
@@ -12061,7 +12061,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "cowork_voiceleading_axis_design.md:512-514",
+      "home": "cowork_voiceleading_axis_design.md:528-530",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL; it is ratification ask A6, recorded ratified in full at the banner. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -12075,7 +12075,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 494,
+        "heading_line": 510,
         "section": "## 8. Crosscutting concepts",
         "label": "§8",
         "delegated": true,
@@ -12126,7 +12126,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_voiceleading_axis_design.md:96-99",
+      "home": "cowork_voiceleading_axis_design.md:109-112",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as one of two build declarations the design owed and the build closed; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RE-HOMED 2026-08-09 under the user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md` (re-homing is the DEFAULT closing route for finish-line item 1 and no document is excepted), by `cc_instruction_return_continuation_6.md` Task 1. The rule is written into §0, the delegated TERMINOLOGY section, at the very bullet that defines the motion types — because that bullet is where the ambiguity lives: it says 'harmonic interval preserved' and a reader meets the undecided word there. The homing is ALSO a doc-sync correction (C3): that bullet closed by calling the reading 'an implementation declaration owed at build', which is FALSE at HEAD, and the former wording is preserved in place (#12). The §15 tracking line is untouched and the verbatim is RE-TAKEN from the new home rather than transcribed. FORMER HOME, PRESERVED (#12): `cowork_voiceleading_axis_design.md:632-635`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): \"2. **The \\\"parallel\\\" interval-preservation convention** (semitone-exact vs generic-diatonic) — ✅ **CLOSED at build\\n   (AS-BUILT, 2026-07-03): SEMITONE-EXACT.** Verified at `voiceleading2.py` `_motion`: `parallel` iff both voices\\n   move the same direction AND `(pu1−pv1)==(pu0−pv0)` on signed MIDI pitches (a same-direction move whose semitone\\n   interval changes is `similar`). Replicated exactly in `voiceleadingprofiles.cpp classifyMotion` (oracle-tested).\" THE FORMER HOME-CLASS RULING, PRESERVED (#12) AND NOT WITHDRAWN — it settled the DELEGATION question and this act settles the ENTRY, which is the split the finish line's own gate note draws: \"★ THE HOME CLASS IS SETTLED BY RULING AND IS NOT OWED WORK (user, 2026-08-04, ruling R2, dispatch `cc_instruction_census_delegation_and_commit.md`): the `ARCHITECTURE.md` delegation is NOT widened to reach §15, so this entry stays `gap` deliberately. §15 is 'Open items & deferred refinements', a tracking list of what is owed or since closed — the shape the record has declined as a home elsewhere — and D-430's kind half would exclude it at the next run in any case. THIS IS A RULING, NOT A DEFERRAL: no later wave owes a delegation act here.\" No code identifier or commit is carried into the specification text (#17f, D-431); the implementation evidence stays in this field and in §15's closure line.",
@@ -12140,7 +12140,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 86,
+        "heading_line": 99,
         "section": "### Accepted music-theory terms [MT]",
         "label": "“Accepted music-theory terms [MT]”",
         "delegated": true,
@@ -12166,7 +12166,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "cowork_voiceleading_axis_design.md:378-381",
+      "home": "cowork_voiceleading_axis_design.md:394-397",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_voiceleading_axis_design.md` IN FULL. The document records this as the second of two build declarations the design owed and the build closed, decided at build by measurement rather than at design time; the closure names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).",
@@ -12180,7 +12180,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 348,
+        "heading_line": 364,
         "section": "### 5.3 VL-C — texture classification (inference; the first judgment component)",
         "label": "§5.3",
         "delegated": true,

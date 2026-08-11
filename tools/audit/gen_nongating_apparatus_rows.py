@@ -100,6 +100,27 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-276": (GATES, "specification truth",
+               "Three live-specification documents state as current what is false at HEAD, and "
+               "one names as its acceptance criterion, five times, a regression gate superseded "
+               "in whole. A stale criterion is not a description - it is what a future build "
+               "would try to satisfy.",
+               "RESOLVED 2026-08-11 - the three doc-sync acts were performed, one per document, "
+               "each complete in itself (`cc_instruction_return_continuation_11.md` Task 1). The "
+               "as-built banner over a dormant mechanism and the missing supersession note on a "
+               "revisited shelving are D-639's first two worked examples word for word; the stale "
+               "acceptance criterion is decided under the fallback and said so, and is corrected "
+               "by POINTING at CLAUDE.md gate block (A) rather than by restating any criterion "
+               "(#6, D-431). Its two AS-BUILT-RECORD sites were QUALIFIED rather than rewritten, "
+               "because what that 2026-07-03 build was proven against is TRUE as a record and "
+               "false only if read as the gate a later change reproduces. Every former wording is "
+               "preserved in place (#12). The verdict was correct while it stood and is kept "
+               "whole; it is retired because the row closed, never because it was wrong. WHAT THE "
+               "CLOSURE DOES NOT DISCHARGE is carried on the row rather than lost: whether a "
+               "sweep for this class rides the remaining unread LIVE-SPEC reads or runs as its "
+               "own pass is a SCOPING CALL the row reserves to the user, and the three edits "
+               "close three instances rather than the class.",
+    ),
     "OI-298": (NON_GATING, "user",
                "A binding rule POINTS at an enumeration the user has not ratified. What is owed "
                "is a pointer and a ratification status - the user's own apparatus examples - and "
@@ -620,11 +641,8 @@ V = {
                "`CLAUDE.md` directs every scoring session to read it with no other mandated read "
                "correcting it. A false statement about what runs, in a mandatory read, is the "
                "phase-1 truth class, not a banner."),
-    "OI-276": (GATES, "specification truth",
-               "Three live-specification documents state as current what is false at HEAD, and "
-               "one names as its acceptance criterion, five times, a regression gate superseded "
-               "in whole. A stale criterion is not a description - it is what a future build "
-               "would try to satisfy."),
+    # OI-276's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the three doc-sync acts
+    # landed and the row closed.
     "OI-283": (GATES, "#19 establishment obligation",
                "Gates on the exemption, and independently on the criterion: the register's "
                "coverage claim bounds which parts of the canonical document any "

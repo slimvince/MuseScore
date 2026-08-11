@@ -1050,8 +1050,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `464e6e3752fa422944b03da7fe6343bd7721f3d9`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `4487fb41d39399e2…`).
+- Coverage figures above regenerated at commit `0c2bc12df7d0c3d433622f6dc5fb302bb4d5179f`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `51c48eb70db786ab…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

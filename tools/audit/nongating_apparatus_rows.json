@@ -14,8 +14,8 @@
  },
  "population": {
   "rows_parsed": 367,
-  "open_rows": 252,
-  "first_cut_candidates": 62,
+  "open_rows": 251,
+  "first_cut_candidates": 61,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -38,7 +38,7 @@
  },
  "totals": {
   "non_gating": 28,
-  "gates": 34,
+  "gates": 33,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -132,8 +132,7 @@
     "OI-107",
     "OI-121",
     "OI-220",
-    "OI-274",
-    "OI-276"
+    "OI-274"
    ],
    "the analysis": [
     "OI-146",
@@ -405,14 +404,6 @@
    "subject_column": "doc-sync / #10 (DT-12)",
    "verdict": "GATES",
    "reason": "REPORTED AS A DIFFERENCE from the dispatch's assumption A3, which put this row's body-tense half in the apparatus set. The document opens by stating that the legacy scorer IS the bottom-up vertical-sonority scorer and keeps that present tense throughout, while that scorer is dormant on both production surfaces - and `CLAUDE.md` directs every scoring session to read it with no other mandated read correcting it. A false statement about what runs, in a mandatory read, is the phase-1 truth class, not a banner.",
-   "gate_ground": "specification truth"
-  },
-  {
-   "id": "OI-276",
-   "title": "Three LIVE-SPEC design documents state as CURRENT something false at HEAD — and one names a REGRESSION GATE that no longer exists",
-   "subject_column": "doc-sync / #10 (DT-12)",
-   "verdict": "GATES",
-   "reason": "Three live-specification documents state as current what is false at HEAD, and one names as its acceptance criterion, five times, a regression gate superseded in whole. A stale criterion is not a description - it is what a future build would try to satisfy.",
    "gate_ground": "specification truth"
   },
   {
@@ -691,6 +682,12 @@
     "class_basis_or_ground": "user",
     "reason": "The writing-standards conformance question, and the user has already DEFERRED it to a discussion. Its subject is how this project's documents are written.",
     "closed": "RESOLVED 2026-08-09 - the deferral ended and all three of the row's questions were ruled at the fifth STOP (`cowork_rulings_2026_08_09_fifth_stop.md`): the fourteen-section structure is KIND-SCOPED with its kind list enumerated in `cowork_design_doc_template.md` and a STOP on an unlisted kind (Ruling 28); documents are IN the conformance enumeration for a named MECHANICAL subset (Ruling 29) while the deep half is ruled KNOWLEDGE and that limb closes (Ruling 32); and the terminology cleanup is scoped -- no tree-wide rename, scanner first, then ruled batches, research-tied names governed by a two-tier rule (Rulings 30 and 31). The verdict was correct while it stood and is kept whole; it is retired because the row closed, never because it was wrong. WHAT THE CLOSURE DOES NOT DISCHARGE is carried forward rather than lost: the owed mechanical check is OI-364, and the cleanup itself stays open at OI-229 with its ruled scope on it."
+   },
+   "OI-276": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "specification truth",
+    "reason": "Three live-specification documents state as current what is false at HEAD, and one names as its acceptance criterion, five times, a regression gate superseded in whole. A stale criterion is not a description - it is what a future build would try to satisfy.",
+    "closed": "RESOLVED 2026-08-11 - the three doc-sync acts were performed, one per document, each complete in itself (`cc_instruction_return_continuation_11.md` Task 1). The as-built banner over a dormant mechanism and the missing supersession note on a revisited shelving are D-639's first two worked examples word for word; the stale acceptance criterion is decided under the fallback and said so, and is corrected by POINTING at CLAUDE.md gate block (A) rather than by restating any criterion (#6, D-431). Its two AS-BUILT-RECORD sites were QUALIFIED rather than rewritten, because what that 2026-07-03 build was proven against is TRUE as a record and false only if read as the gate a later change reproduces. Every former wording is preserved in place (#12). The verdict was correct while it stood and is kept whole; it is retired because the row closed, never because it was wrong. WHAT THE CLOSURE DOES NOT DISCHARGE is carried on the row rather than lost: whether a sweep for this class rides the remaining unread LIVE-SPEC reads or runs as its own pass is a SCOPING CALL the row reserves to the user, and the three edits close three instances rather than the class."
    },
    "OI-287": {
     "verdict": "NON-GATING",

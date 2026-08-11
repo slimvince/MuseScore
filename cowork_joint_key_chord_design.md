@@ -11,6 +11,16 @@
 > joint (key, chord) space ranked together** (the top chord may come from a non-top key) — which was NOT
 > measured. Revisit the shelving under that framing, on measured fact.
 >
+> **★ THE REVISIT THE SENTENCE ABOVE INSTRUCTS HAS RUN AND IS SETTLED — recorded 2026-08-11 (CC,
+> `cc_instruction_return_continuation_11.md` Task 1; `OPEN_ITEMS.md` OI-276 (2)). The instruction is
+> preserved in place (#12) and is NOT to be followed again.** The revisit under the full-joint framing was
+> performed on 2026-07-12 and the shelving held on BOTH axes: [[OI-43]] is SETTLED (shelved on both axes,
+> row closed) and [[OI-44]] was DECLARED by the user the same day. So a session reading the paragraph above
+> would otherwise re-open a question the record has closed, and re-measure something already measured —
+> which is the doc-sync failure phase 1's TRUE half exists against. **What is NOT withdrawn:** the probe's
+> own measurement, the shelving's ground, and the user's open architectural question as a question; what is
+> corrected is only the document's statement that the revisit is still owed.
+>
 > **Status: DESIGN (CC, 2026-07-07). READ-ONLY architectural design pass — no `src/` change, no build, no
 > corpus write, no constant fitted or tuned.** Engage arc #10 (`cc_instruction_engage_joint_key_chord_design.md`).
 > This DESIGNS the owed joint key-and-chord step's architecture; it does **NOT** build it. The build is a later

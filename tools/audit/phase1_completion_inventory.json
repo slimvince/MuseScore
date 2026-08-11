@@ -537,8 +537,7 @@
     "OI-107",
     "OI-121",
     "OI-220",
-    "OI-274",
-    "OI-276"
+    "OI-274"
    ],
    "gate_ground_specification_completeness": [
     "OI-183",
@@ -547,7 +546,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 41,
+   "count": 40,
    "ids": [
     "OI-105",
     "OI-107",
@@ -561,7 +560,6 @@
     "OI-233",
     "OI-239",
     "OI-274",
-    "OI-276",
     "OI-280",
     "OI-281",
     "OI-282",
@@ -594,7 +592,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 60,
+   "count": 59,
    "ids": [
     "OI-105",
     "OI-107",
@@ -616,7 +614,6 @@
     "OI-239",
     "OI-249",
     "OI-274",
-    "OI-276",
     "OI-280",
     "OI-281",
     "OI-282",
@@ -1160,27 +1157,6 @@
     }
    },
    {
-    "id": "OI-276",
-    "title": "Three LIVE-SPEC design documents state as CURRENT something false at HEAD — and one names a REGRESSION GATE that no longer exists",
-    "subject_column": "doc-sync / #10 (DT-12)",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync",
-     "drift",
-     "dt-12",
-     "false at head",
-     "stale"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "specification truth"
-    }
-   },
-   {
     "id": "OI-280",
     "title": "`cowork_progression_schema_dictionary.md` uses the label \"D5\" for two different decisions",
     "subject_column": "doc-sync / documentation gap",
@@ -1672,7 +1648,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 40,
+   "count": 39,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1691,7 +1667,6 @@
     "OI-239",
     "OI-249",
     "OI-274",
-    "OI-276",
     "OI-283",
     "OI-292",
     "OI-303",
@@ -1757,7 +1732,6 @@
     "OI-233",
     "OI-239",
     "OI-274",
-    "OI-276",
     "OI-280",
     "OI-281",
     "OI-282",
@@ -1904,10 +1878,10 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 60,
-   "of_which_gate": 40,
+   "open_rows_in_the_wide_cut": 59,
+   "of_which_gate": 39,
    "of_which_apparatus_and_therefore_non_gating": 20,
-   "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
+   "rows_the_records_own_authored_classification_puts_on_specification_truth": 5
   },
   "outside_both_halves_and_owed_before_the_statement": {
    "what": "The register's own published account of itself states things that are no longer true at HEAD (see `what_the_register_says_about_itself_that_is_no_longer_true`, and OPEN_ITEMS.md OI-334). A completion statement resting on DECISIONS.md rests on them.",
@@ -1975,7 +1949,6 @@
    "OI-233",
    "OI-239",
    "OI-249",
-   "OI-276",
    "OI-280",
    "OI-281",
    "OI-292",
@@ -2014,9 +1987,9 @@
  },
  "counted": {
   "decisions_recorded": 670,
-  "open_rows_in_the_index": 252,
-  "true_half_wide_cut": 60,
-  "true_half_gating": 40,
+  "open_rows_in_the_index": 251,
+  "true_half_wide_cut": 59,
+  "true_half_gating": 39,
   "complete_half_gap": 29,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

@@ -4233,6 +4233,83 @@ that govern it.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 1 — OPENED AND PARTLY DONE. [[OI-276]] performed WHOLE and flipped; a second row's owed half found already discharged; the remainder held, and what was not READ is said apart from what was
+
+**The population was derived fresh at task start (A5)** from
+`tools/audit/phase1_completion_inventory.json` → `the_gating_split.gates`, read at the artifact after
+Task 0's regeneration and not carried from the dispatch or from this file. No count is restated here
+(**D-431**).
+
+**★ THE ONE DISTINCTION THIS LOG KEEPS THROUGHOUT, because a per-row pass that blurs it claims more
+than it did: what was READ is stated apart from what was not.** Twenty rows of the derived set were
+read at the INDEX — **OI-11, OI-12, OI-45, OI-57, OI-90, OI-95, OI-105, OI-107, OI-109, OI-121,
+OI-141, OI-146, OI-183, OI-220, OI-223, OI-224, OI-239, OI-249, OI-274 and OI-276.** **The rest were
+NOT READ and nothing whatever is claimed about them** — not that they are performable, not that they
+are not, and not that this task's holds describe them.
+
+**★ ONE ROW WAS PERFORMED WHOLE AND FLIPPED: [[OI-276]].** Its remedy was already enumerated per
+document and needed no judgment about the analysis, which is what made it session work rather than a
+user ruling. Three live-specification documents stated as CURRENT something false at HEAD, and one
+named as its acceptance criterion a regression stop superseded in whole.
+
+1. **`cowork_layer3_keymode_design.md`** gains a SCOPE block above its as-built clause — the document
+   describes a mechanism that is BUILT AND DORMANT, the joint estimator being the production key path
+   on both surfaces (**D-005**, **D-010**) — with the former wording preserved in place (#12). **This
+   is D-639's FIRST worked example word for word**, an as-built banner over a dormant mechanism, so
+   the test decides it and the fallback is not reached.
+2. **`cowork_joint_key_chord_design.md`**'s standing instruction to *revisit the shelving under that
+   framing* now records that the revisit RAN and SETTLED on 2026-07-12 — [[OI-43]] on both axes and
+   [[OI-44]] declared by the user the same day — so a session reading it does not re-open a closed
+   question. **D-639's SECOND worked example**, a missing supersession note on a superseded plan.
+3. **`cowork_voiceleading_axis_design.md`**'s acceptance criterion is corrected at its terms bullet
+   and at both of its as-built records. **The correction POINTS at `CLAUDE.md` gate block (A) and
+   restates no criterion** (#6, **D-431**).
+
+**★ AND THE THIRD NEEDED TWO DIFFERENT TREATMENTS IN ONE DOCUMENT, WHICH IS THE JUDGMENT WORTH
+READING.** The terms bullet STATED the criterion, so it is corrected and re-pointed. The two other
+sites RECORD what that 2026-07-03 build was proven against — which is **TRUE as a record** and false
+only if read as the gate a later change reproduces — so they are **QUALIFIED rather than rewritten**,
+because rewriting them would have replaced a true historical statement with a different one. **What
+the row does NOT discharge is named rather than dropped:** whether a sweep for this class rides the
+remaining unread live-specification reads or runs as its own pass is a SCOPING CALL the row reserves
+to the user, and three instances closing is not the class closing.
+
+**★ A SECOND ROW'S OWED HALF TURNED OUT TO BE ALREADY DISCHARGED, AND THE ROW WAS STALE ABOUT IT —
+[[OI-107]], recorded and deliberately NOT flipped.** Its newly-found clause says `CLAUDE.md`'s
+gate-threshold policy still lists a retired gate among the live Baroque-calibrated thresholds. **Read
+at that policy rather than recalled: it does not.** It names the gate as RETIRED with the user's
+ruling that retired it written into the same sentence — the act the clause asked for, performed two
+days after the clause was written. **The row is not flipped**, because its first half — a
+specification section presenting iteration-era baselines as current state — is untouched and remains
+live. **It is recorded rather than dropped** for the reason the row itself now carries: an obligation
+that has been discharged but still reads as owed sends the next session to do the work twice, and a
+session that finds the act already done cannot tell a stale row from one describing something else.
+
+**Nineteen rows are HELD, each with the reason its OWN status cell gives**, grouped by the shape
+rather than restated one by one: **assigned to a later build or acquisition event** (OI-11, OI-12,
+OI-57, OI-146, OI-223); **deferred by the row to the next touch of a `src/` file, which this batch's
+freeze does not admit** (OI-90, OI-105, OI-109, OI-220); **assigned to the writing side** (OI-121);
+**a phase-2 or design act phase 1 forbids** (OI-224, OI-239, OI-249); **waiting on the user**
+(OI-141, and OI-274's governing-document half); **audit tooling housekeeping** (OI-95); and **a
+documentation pass that is genuinely session work and is held on CAPACITY alone, with its act named
+so it is not re-derived** (OI-45 and OI-183 at `docs/scoring_model.md`, OI-107's remaining half at
+`ARCHITECTURE.md` §4.1h — where the row's own words give the fork, re-measure or re-label as a dated
+historical snapshot, and only the second is available under this freeze).
+
+**Two authored inputs were maintained, both caught by their own tools' STOPs rather than by a
+reader** (**D-648**). The apparatus declaration STOPPED because [[OI-276]] left the open first-cut
+candidates, and its GATES verdict moved WHOLE into the retired table with the reason it closed and
+with what the closure does NOT discharge written beside it; the reach derivation and the finish line
+followed by regeneration, which is completing an edit rather than repairing a finding.
+
+**Holds:** the nineteen above. **Surfacings:** none bearing on the analysis — the three corrected
+documents are design records, no design content is withdrawn at any of them, and no measured value
+was carried into any of them (**D-431**).
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

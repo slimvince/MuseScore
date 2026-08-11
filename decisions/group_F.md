@@ -288,9 +288,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:60-72`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:76-88`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 52). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 68). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -312,9 +312,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:129-133`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:145-149`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 52). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§1** — `## 1. Introduction & purpose` (heading at line 68). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`, and the banner adds that the conditional sign-off was met by stating the recognized mode vocabulary explicitly — this passage is the other half of that statement. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -338,9 +338,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:153-159`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:169-175`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§2** — `## 2. Constraints` (heading at line 138). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§2** — `## 2. Constraints` (heading at line 154). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. **Flagged in the phase-1h report as an instance of the [[OI-275]] question** — it sits against **D-003** (inference is preset-independent; presets are presentation concerns), and the record contains no ruling that names either statement against the other. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) UNDER THE OI-275 TRANSFER TREATMENT, as offered with the queue and adopted in the blanket ratification: the letter (the preset as a weak mode prior) stays home to the LEGACY Layer-3 path, LEGACY-marked; the live estimator is governed by D-003's measured preset-independence. The second instance of the OI-275 governing question, treated identically.
 
@@ -367,9 +367,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:230-239`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:246-255`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§5** — `## 5. Building-block view (static / internal structure)` (heading at line 224). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§5** — `## 5. Building-block view (static / internal structure)` (heading at line 240). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The date given is the date of the recorded ruling that the narrower alternative is to be settled by measurement and that the pooled rule is normative until then; the pooled rule itself is recorded as as-built and is not dated in the record. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -390,9 +390,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:307-310`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:323-326`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 295). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 311). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -418,9 +418,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:212-220`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:228-236`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§4** — `## 4. Solution strategy` (heading at line 206). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§4** — `## 4. Solution strategy` (heading at line 222). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -440,9 +440,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:311-313`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:327-329`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 295). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 311). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -462,7 +462,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:16-18`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `cowork_layer3_keymode_design.md:32-34`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
 **Home section.** **the opening block (above the first section heading)** — `# Architectural Layer 3 — KEY/MODE — Architecture & Design` (heading at line 1). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `contract-home` to `gap`; the former class is kept here rather than overwritten (#12).
 
@@ -483,9 +483,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:314-315`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:330-331`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 295). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§9** — `## 9. Architecture decisions (with the alternatives we weighed)` (heading at line 311). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -507,9 +507,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:321-327`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:337-343`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§10** — `## 10. Quality & testing` (heading at line 317). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§10** — `## 10. Quality & testing` (heading at line 333). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -530,9 +530,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:337-342`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:353-358`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§10** — `## 10. Quality & testing` (heading at line 317). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§10** — `## 10. Quality & testing` (heading at line 333). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -558,9 +558,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:402-410`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:418-426`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 349). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 365). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -585,9 +585,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:411-418`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:427-434`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 349). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 365). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -619,9 +619,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:383-397`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:399-413`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 349). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 365). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -648,9 +648,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:497-506`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:513-522`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 480). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 496). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The surrounding deferred-enhancement entry is recorded per the user, 2026-06-22; the measured placement conclusion quoted here names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
@@ -681,9 +681,9 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_layer3_keymode_design.md:507-520`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
+**Home.** `cowork_layer3_keymode_design.md:523-536`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
-**Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 480). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
+**Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 496). A delegation at ARCHITECTURE.md:1690 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 

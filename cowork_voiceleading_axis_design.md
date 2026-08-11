@@ -3,7 +3,10 @@
 > **★ Status: AS-BUILT (VL-A/B/C foundation, 2026-07-03 — `cc_vl_foundation_build_report.md`).** The dormant
 > foundation is built, tested, and gate-proven (composing 1083 / notation 53 / snapshots 11 no refresh; gate 53/24/53
 > case-identity sets byte-identical on all three presets; dormancy grep-proven; study-parity float-exact on the pinned
-> sample). **Two build declarations owed by the design are now closed:** **(§15-2)** the "parallel" interval-preservation
+> sample). *(★ The gate named in that sentence is the SUPERSEDED batch case-identity stop — a true record of
+> what this build was proven against on 2026-07-03, and NOT the criterion a later change is judged by; the
+> standing stop is `CLAUDE.md` gate block (A). Corrected in place 2026-08-11, §0's terms bullet carrying the
+> full account; the sentence itself is preserved, #12.)* **Two build declarations owed by the design are now closed:** **(§15-2)** the "parallel" interval-preservation
 > convention is **SEMITONE-EXACT** — replicated from `voiceleading2.py` `_motion` at source (`parallel` iff both voices
 > move the same direction AND the *signed* pitch difference in semitones is preserved: `(pu1−pv1)==(pu0−pv0)`; a
 > same-direction move whose semitone interval changes is `similar`), NOT generic-diatonic. **(§5.3)** the feature space
@@ -74,8 +77,18 @@ concept, the difference is stated. Nothing below is used before it is defined he
 
 - **Dormant** — built and regression-tested but wired into no user-facing path (the harmonic spine's L4/L5/L6
   convention; engagement is a separate, deferred event).
-- **Byte-identical / the corpus gate** — the standing regression discipline: the frozen Bach corpus's BIR
-  case-identity sets (Baroque 53 / Jazz 24 / Default 53) reproduce exactly after a change (CLAUDE.md; STATUS.md).
+- **Byte-identical / the corpus gate** — the standing regression discipline: after a change, the project's
+  hard regression stop reproduces. **★ WHICH STOP THAT IS WAS CORRECTED 2026-08-11** (CC,
+  `cc_instruction_return_continuation_11.md` Task 1; `OPEN_ITEMS.md` OI-276 (3)). **THE STOP IS THE
+  ROBUST-UNIT ONE — `CLAUDE.md` gate block (A), the granularity-robust union-of-boundaries unit — and it is
+  the ONE authority for what this term means here; no criterion is restated in this document (#6, D-431).**
+  The batch case-identity gate this bullet formerly named was re-baselined on 2026-07-05 and **SUPERSEDED IN
+  WHOLE at R10-b on 2026-07-06**, `CLAUDE.md` block (C) retaining it as historical reference only. **FORMER
+  WORDING, preserved (#12):** *"the frozen Bach corpus's BIR case-identity sets (Baroque 53 / Jazz 24 /
+  Default 53) reproduce exactly after a change (CLAUDE.md; STATUS.md)."* **Why this correction is the sharp
+  one of its row's three:** the stale sentence is not a description of the past, it is an ACCEPTANCE
+  CRITERION a future build would try to satisfy — and it cited two governing documents as its authority,
+  neither of which has carried it since R10-b.
 - **Precision phase / the firewall** — numeric calibration is deferred behind structural design (the roadmap's
   Stage-5 weight fitting); specs are written rule-and-direction first.
 - **Census / corpus wave** — corpora enter the project only through the enumerated census and its waves
@@ -216,8 +229,11 @@ The axis obeys the same architecture the harmonic spine obeys:
 - **The confidence contract** (`cowork_confidence_contract.md`): every published confidence is [0,1],
   class-declared, attached to a named decision; no new cross-layer comparison frame exists until declared in the
   contract's §4 (none is declared by this design — §8).
-- **Dormant + byte-identical.** The build changes no harmonic-spine behavior; the corpus gate (53/24/53
-  case-identity sets) is untouched by construction; dormancy is proven by source search, as for L4/L5/L6.
+- **Dormant + byte-identical.** The build changes no harmonic-spine behavior; the corpus gate is untouched by
+  construction; dormancy is proven by source search, as for L4/L5/L6. *(★ The parenthetical formerly here
+  named the batch `53/24/53` case-identity sets, which R10-b superseded in whole on 2026-07-06; the standing
+  stop is `CLAUDE.md` gate block (A) and §0's terms bullet carries the account. Corrected 2026-08-11,
+  `OPEN_ITEMS.md` OI-276 (3); the former parenthetical is preserved there, #12.)*
 - **Verifiability with honest marks.** What lacks ground truth is built (if at all) with an alternative-confidence
   path and an **empirically-unvalidated** mark, never silently trusted (ARCHITECTURE §2.15; applied per component
   in §10).
@@ -568,9 +584,13 @@ in the score.
   does not exist in-corpus — the lens maps are per-source and approximate at the category boundaries (the
   study's declared caveat) — so VL-C carries **empirically-unvalidated at per-piece granularity** until a
   labeled bed exists (a census question, standing rule).
-- **Dormancy + gate:** no harmonic-spine source is touched; dormancy grep-proven; the corpus gate (53/24/53
-  case-identity sets) reproduced byte-identically as the no-contamination proof — the same acceptance shape as
-  every dormant build.
+- **Dormancy + gate:** no harmonic-spine source is touched; dormancy grep-proven; the corpus gate reproduced
+  byte-identically as the no-contamination proof — the same acceptance shape as every dormant build. *(★ The
+  parenthetical formerly here named the batch `53/24/53` case-identity sets. As a record of what THIS build
+  was proven against on 2026-07-03 that was true; as a statement of the gate a later change reproduces it is
+  not, R10-b having superseded that stop in whole on 2026-07-06. The standing stop is `CLAUDE.md` gate block
+  (A) and §0's terms bullet carries the account. Corrected 2026-08-11, `OPEN_ITEMS.md` OI-276 (3); the former
+  parenthetical is preserved there, #12.)*
 - **Documentation sync:** ARCHITECTURE §2.15 (the voice-leading-span criterion + the axis status), the roadmap
   step-4 status, **`cowork_confidence_contract.md`** (a §3 per-layer-inventory row for *texture-of-span* + the R5
   squash-map shape declaration — required before the boundary confidence exists), and this document flip to
