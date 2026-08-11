@@ -215,10 +215,10 @@
  },
  "the_complete_half": {
   "criterion": "C1 and C2",
-  "register_population": 664,
+  "register_population": 665,
   "by_home_class": {
-   "contract-home": 159,
-   "gap": 30,
+   "contract-home": 161,
+   "gap": 29,
    "homed-in-a-layer-specification": 297,
    "process": 132,
    "project-convention": 45,
@@ -226,15 +226,15 @@
   },
   "class_1_documentation_gap": {
    "what_it_is": "The register's own home_rule: a decision that governs a layer and is not findable from that layer's section - a documentation gap carrying an OPEN_ITEMS.md row. This is C1's outstanding population.",
-   "count": 30,
+   "count": 29,
    "by_home_document": {
     "cowork_architecture_reassessment.md": 4,
     "cowork_structural_integrity_audit.md": 4,
     "cowork_evidence_inventory.md": 3,
     "cowork_architecture_review_2026_07.md": 2,
-    "cowork_census_full_needs_audit.md": 2,
     "cowork_joint_estimator_architecture.md": 2,
     "cowork_layer1_tone_collection_design.md": 2,
+    "cowork_census_full_needs_audit.md": 1,
     "cowork_factorization_desk_simulation.md": 1,
     "cowork_layer1_note_model_design.md": 1,
     "cowork_layer3_keymode_design.md": 1,
@@ -262,7 +262,6 @@
     "D-475",
     "D-498",
     "D-499",
-    "D-515",
     "D-516",
     "D-518",
     "D-521",
@@ -282,7 +281,7 @@
   },
   "class_1a_gap_whose_home_FAILS_the_section_criterion": {
    "what_it_is": "Entries carrying a home_section block whose verdict is EXCLUDE: the home document exists and was graded, and the criteria in force (clause (a), D-432, D-430) reject it. These are gaps WITH a measured reason.",
-   "count": 30,
+   "count": 29,
    "by_reason": {
     "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section": {
      "count": 1,
@@ -307,7 +306,7 @@
      ]
     },
     "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade": {
-     "count": 18,
+     "count": 17,
      "ids": [
       "D-282",
       "D-283",
@@ -317,7 +316,6 @@
       "D-475",
       "D-498",
       "D-499",
-      "D-515",
       "D-516",
       "D-535",
       "D-538",
@@ -597,7 +595,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 61,
+   "count": 62,
    "ids": [
     "OI-105",
     "OI-107",
@@ -650,6 +648,7 @@
     "OI-359",
     "OI-360",
     "OI-363",
+    "OI-366",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -678,6 +677,7 @@
     "OI-357",
     "OI-360",
     "OI-363",
+    "OI-366",
     "OI-57",
     "OI-90",
     "OI-95"
@@ -1686,6 +1686,20 @@
      "source": "the row's own recorded words",
      "ground": "the row states it gates"
     }
+   },
+   {
+    "id": "OI-366",
+    "title": "★ **The shell-read guard's establishment check reports STALE intermittently, while the artifact it checks re-derives BYTE-IDENTICALLY — so a published deny rate and false-deny rate are not reproducible on demand**",
+    "subject_column": "D — instrument / measurement layer (the audit's own guard apparatus)",
+    "matched_on_the_subject_column": [],
+    "matched_falsity_signals": [
+     "stale"
+    ],
+    "gate": {
+     "verdict": "GATES",
+     "source": "the row's own recorded words",
+     "ground": "the row states it gates"
+    }
    }
   ]
  },
@@ -1693,7 +1707,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 40,
+   "count": 41,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1731,6 +1745,7 @@
     "OI-359",
     "OI-360",
     "OI-363",
+    "OI-366",
     "OI-45",
     "OI-57",
     "OI-90",
@@ -1818,7 +1833,8 @@
     "OI-309",
     "OI-311",
     "OI-357",
-    "OI-363"
+    "OI-363",
+    "OI-366"
    ],
    "D-438's default": [
     "OI-109",
@@ -1876,7 +1892,7 @@
    "it_is_a_template_the_generator_fills": true,
    "the_unresolved_figure_it_hand_carries": [],
    "the_figure_the_same_file_computes": 2644,
-   "the_backbone_the_committed_layer_was_derived_at": 664,
+   "the_backbone_the_committed_layer_was_derived_at": 665,
    "verdict": "TRUE AT HEAD. The field carries no hand-written figure: it is a template whose every figure `gen_decisions_register.py` fills from the same computed data it renders the coverage table from, and an unfilled placeholder stops that generator (#17f / D-431)."
   },
   "statement_3_the_home_granularity_claim": {
@@ -1902,8 +1918,8 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 633,
-    "of": 664
+    "count": 635,
+    "of": 665
    },
    {
     "fact": "Every harvested cluster carries a recorded disposition at the committed artifact, so no harvested statement was silently passed over.",
@@ -1918,17 +1934,17 @@
  "the_shape_of_what_remains": {
   "note": "Derived from the blocks above; every figure is computed, none transcribed.",
   "complete_half": {
-   "entries_not_homed_in_a_specification_that_owns_them": 31,
+   "entries_not_homed_in_a_specification_that_owns_them": 30,
    "of_which_never_graded_against_the_criteria_in_force": 0,
    "entries_whose_defense_the_record_does_not_state": 0,
    "documents_awaiting_a_delegation_only_the_user_may_write": 1,
    "★_that_figure_is_now_DERIVED_not_the_write_lists_membership": "It is the count of documents that still lose entries to the DELEGATION HALF where an admitting delegation already exists - the only class a delegation the user writes would move. Derived at `tools/audit/decisions/outstanding_delegations.json`; the full partition, including the classes for which a delegation is NOT the remedy, is there and is not restated here (D-431). OI-335.",
-   "entries_lost_for_want_of_a_delegation_all_classes": 19,
+   "entries_lost_for_want_of_a_delegation_all_classes": 18,
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 61,
-   "of_which_gate": 40,
+   "open_rows_in_the_wide_cut": 62,
+   "of_which_gate": 41,
    "of_which_apparatus_and_therefore_non_gating": 21,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
@@ -2023,6 +2039,7 @@
    "OI-359",
    "OI-360",
    "OI-363",
+   "OI-366",
    "OI-45",
    "OI-46",
    "OI-47",
@@ -2037,11 +2054,11 @@
   "how_to_read_it": "The derivation is the answer; this block measures the recollection against it. A recollected row that the derivation does not carry is not thereby wrong - it may be outstanding on a ground this cut does not search (the COMPLETE half, or an establishment obligation) - and each is stated rather than scored."
  },
  "counted": {
-  "decisions_recorded": 664,
-  "open_rows_in_the_index": 254,
-  "true_half_wide_cut": 61,
-  "true_half_gating": 40,
-  "complete_half_gap": 30,
+  "decisions_recorded": 665,
+  "open_rows_in_the_index": 255,
+  "true_half_wide_cut": 62,
+  "true_half_gating": 41,
+  "complete_half_gap": 29,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0
  }

@@ -3591,7 +3591,7 @@ DC-03589,1,unresolved,BR-8,,cowork_docs,paragraph,cowork_uncertain_resolver_inve
 DC-03590,1,restates,BR-3,D-119;D-612,cowork_docs,blockquote,cowork_union_search_record.md
 DC-03591,1,not-a-decision,BR-9,,cowork_docs,paragraph,cowork_union_search_record.md
 DC-03592,1,unresolved,BR-8,,cowork_docs,table_row,cowork_union_search_record.md
-DC-03593,1,no-spec-home,BR-4,D-613,cowork_docs,paragraph,cowork_union_search_record.md
+DC-03593,1,no-spec-home,BR-4,D-613;D-665,cowork_docs,paragraph,cowork_union_search_record.md
 DC-03594,1,restates,BR-3,D-097;D-119;D-183,cowork_docs,blockquote,cowork_union_search_record.md
 DC-03595,1,unresolved,BR-8,,cowork_docs,bullet,cowork_union_search_record.md
 DC-03596,1,unresolved,BR-8,,cowork_docs,blockquote,cowork_union_search_record.md

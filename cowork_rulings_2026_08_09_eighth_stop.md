@@ -44,6 +44,15 @@ again would duplicate carried content, which is the opposite of the keep-the-ins
 logic (that logic prevents downgrading proposed decisions; it does not manufacture entries
 for content already carried).
 
+> **★ CORRECTION OF RECORD, appended 2026-08-09 (Cowork, at the eighth continuation's
+> return; the original text stands, #12).** Ruling 43 below cites the reported-widening
+> ground as "(Ruling 17, D-660)". **Verified at the register index: the reported-widening
+> clause's entry is D-654; D-660 is the two-tier research-term rule.** The identifier was
+> carried from memory rather than read at the index — the same failure class as the
+> D-473/D-436 note on the fifth-stop record, and the reason register identifiers in these
+> carriers are now verified at the index before writing. CC surfaced the discrepancy
+> (§1.14) and correctly declined to propagate either reading into the register.
+
 ## Ruling 43 — the same-commit control is ACCEPTED; the inversion corrections are RATIFIED
 
 The seventh continuation's re-run of the legacy arm at HEAD — a reported widening of

@@ -4912,8 +4912,13 @@ int main(int argc, char* argv[])
     // Produces the standard .ours.json for the input score from the joint estimator's decode
     // (tables + selected weights read from <artifact-dir>, e.g. tools/joint_estimator), instead of
     // the legacy analyzeScore pipeline. Default OFF ⇒ the default batch output is byte-identical
-    // and every legacy unit test on it keeps passing. Staged scope: batch/corpus surface only; the
-    // notation layer stays on the legacy analysis (its increment is the named successor).
+    // and every legacy unit test on it keeps passing. The OI-178 adoption's staged scope was the
+    // batch/corpus surface only; that staging is CLOSED — the 2026-07-27 notation switch put the
+    // joint estimator on the in-app notation surface too (useJointNotationRecord defaults ON), so
+    // both production surfaces are the joint arm and the legacy notation path is dormant, awaiting
+    // deletion at the OI-180 retirement map. What is NOT closed is this flag's own default: it is
+    // still OFF here, so a flag-less batch_analyze still runs the legacy pipeline (BUILD_AND_TEST.md
+    // says which invocations may omit it, and CLAUDE.md gate block (A) carries the staging history).
     std::string jointInferenceDir;
     // --joint-posterior-slice <artifact-dir>: the Task-3 posterior-slice PARITY driver (default OFF).
     // Computes the §3.3 group (i) slice per segment and checks it bit-identically against the Python

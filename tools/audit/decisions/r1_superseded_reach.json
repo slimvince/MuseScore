@@ -59,11 +59,11 @@
   "what_is_authored_here_and_what_is_not": "The MAPPING from home class to homed/not-homed is authored, read out of that criterion. Which class each entry carries is DERIVED, read off the register. No entry's class is judged or changed here."
  },
  "counted": {
-  "no_home_class_population": 14,
+  "no_home_class_population": 17,
   "entries_that_LEAVE_item_1": 7,
   "entries_whose_ROUTE_CHANGES_to_home_the_successor": 0,
-  "entries_that_do_NEITHER": 7,
-  "of_which_R1_does_not_reach_because_the_status_is_live": 7,
+  "entries_that_do_NEITHER": 10,
+  "of_which_R1_does_not_reach_because_the_status_is_live": 10,
   "of_which_superseded_with_no_successor_the_record_names": 0,
   "ids_that_leave": [
    "D-282",
@@ -364,6 +364,20 @@
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
   },
   {
+   "id": "D-516",
+   "title": "Two ground-truth classes with named consumers but no needs row were ADOPTED at the first full-needs audit — contrapuntal/imitative structure, and marked part-writing errors",
+   "status": "live",
+   "home_at_HEAD": "cowork_census_full_needs_audit.md:223-225",
+   "home_class": "gap",
+   "route_before_R1": "NO HOME EXISTS",
+   "superseded_by_field": null,
+   "successors": [],
+   "disposition": "NEITHER — R1 does not discharge this entry",
+   "disposition_ground": "R1 DOES NOT REACH IT: the entry's status is `live`, and R1 governs entries whose content is superseded.",
+   "why_these_successors": "Status LIVE. Ruling 44 of 2026-08-09 (user) closed it as an ADOPTION EVENT for which no home is owed, its evidence pointed at the §8c needs table where the adoption happened. R1 governs entries whose content is superseded; this content is neither superseded nor a rule.",
+   "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
+  },
+  {
    "id": "D-453",
    "title": "The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure",
    "status": "live",
@@ -420,6 +434,20 @@
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
   },
   {
+   "id": "D-475",
+   "title": "The BCMH chorale annotations are NOT established as an instrument: the annotator is unknown, the annotations sit on a reduction, and they reached the repository through a machine translation",
+   "status": "live",
+   "home_at_HEAD": "cowork_term_theory_grounding.md:274-279",
+   "home_class": "gap",
+   "route_before_R1": "NO HOME EXISTS",
+   "superseded_by_field": null,
+   "successors": [],
+   "disposition": "NEITHER — R1 does not discharge this entry",
+   "disposition_ground": "R1 DOES NOT REACH IT: the entry's status is `live`, and R1 governs entries whose content is superseded.",
+   "why_these_successors": "Status LIVE. Ruling 46 of 2026-08-09 (user) recorded it as a STATUS-CLASS entry — a per-corpus establishment verdict is the same kind as supersession and shelving, so the register itself is its home and no specification home is owed. R1 does not reach it: what is superseded here is nothing, and the verdict's own route and exhaustion rule live at OI-179.",
+   "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
+  },
+  {
    "id": "D-610",
    "title": "The value-type relocation is ZERO-CHURN by construction: the leaf spans both namespaces and the un-nested type keeps a member alias, so no call site changes and the move is byte-identical",
    "status": "live",
@@ -431,6 +459,20 @@
    "disposition": "NEITHER — R1 does not discharge this entry",
    "disposition_ground": "R1 DOES NOT REACH IT: the entry's status is `live`, and R1 governs entries whose content is superseded.",
    "why_these_successors": "Status LIVE. A completed refactor's zero-churn property.",
+   "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
+  },
+  {
+   "id": "D-613",
+   "title": "Ground truth for IMPLIED polyphony is confirmed ABSENT — do not re-search it",
+   "status": "live",
+   "home_at_HEAD": "cowork_union_search_record.md:32-34",
+   "home_class": "gap",
+   "route_before_R1": "NO HOME EXISTS",
+   "superseded_by_field": null,
+   "successors": [],
+   "disposition": "NEITHER — R1 does not discharge this entry",
+   "disposition_ground": "R1 DOES NOT REACH IT: the entry's status is `live`, and R1 governs entries whose content is superseded.",
+   "why_these_successors": "Status LIVE. Ruling 47 of 2026-08-09 (user) SPLIT the entry; the intake-rule half is D-665 and is homed in the census, and THIS half — the confirmed absence — stays at the needs-vector row that already carries it, as evidence, so no home is owed. A split is not a supersession and R1 does not reach it.",
    "authored": "the successor list and its reason. The status, every successor's home and home class, the HOMED verdict and the disposition are derived."
   }
  ]

@@ -205,30 +205,30 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**664 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**665 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **664** |
-| — of which live | 573 |
+| Decisions recorded | **665** |
+| — of which live | 574 |
 | — of which superseded in fact | 11 |
 | — of which superseded by | 12 |
 | — of which deferred | 51 |
 | — of which shelved with evidence | 3 |
 | Decisions whose date is not stated in the record | 239 |
-| Decisions whose ratifier is not stated in the record | 365 |
-| Decisions recorded outside the specification that owns them | 367 |
-| — of which a documentation gap | 30 |
+| Decisions whose ratifier is not stated in the record | 366 |
+| Decisions recorded outside the specification that owns them | 368 |
+| — of which a documentation gap | 29 |
 | — of which recorded only on a tracking surface, with no home at all | 1 |
 | — of which a project-wide convention, correctly homed | 45 |
 | — of which a decision about the process, correctly homed | 132 |
 | Decisions whose defense the record does not state | 0 |
 | Entries whose own ratification the provenance records | 315 |
-| Entries whose home is recorded at SECTION granularity | 189 |
+| Entries whose home is recorded at SECTION granularity | 190 |
 
-The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **315 of 664** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 349 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
+The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **315 of 665** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 350 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **664 of 664** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **665 of 665** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -263,7 +263,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 **Not read in full.** Both archives (STATUS_ARCHIVE.md, cowork_handoff_archive.md) and the cc_* session reports. Each was opened where a specific citation required it and is not claimed to be swept. ★ CORRECTED 2026-08-04: this sentence previously also named the per-layer and per-component design documents, and that half became false — the OI-207 reading programme read every one of them IN FULL, finishing with read wave 6 on 2026-08-04, and each document's yield is on the record. The enumeration, per document, is derived at `tools/audit/phase1_completion_inventory.json` -> `what_the_register_says_about_itself_that_is_no_longer_true.statement_1_not_read_in_full` and at `tools/audit/decisions/phase1n_reading_regime.json` plus the six `reads<n>_yield.json` artifacts; no list or count is restated here (D-431).
 
-**The remainder, measured.** The harvest holds 15,224 candidate statements, grouped into 14,460 groups of near-identical statements, and every one of those groups carries a recorded disposition, so none was silently passed over. 2,644 of them carry the 'unresolved' disposition: statements the pass could not mechanically classify as either restating a register decision or not being a decision. Sampling shows that residual is genuinely mixed — real rulings, deferred designs and ordinary narrative in one population. Every harvested statement sourced to `ARCHITECTURE.md` falls inside the range read in full, that file being read in full in its entirety (above). ★ WHICH LAYER THIS FIGURE IS THE FIGURE OF, and how the two numbers below are read together. **It is the LAYER OF RECORD's figure** — the disposition layer regenerated on 2026-08-07 and ADOPTED as the layer of record by the user's ruling of that date (`OPEN_ITEMS.md` OI-333), with the outgoing layer kept beside it as a snapshot (#16), and it may be published as CURRENT. It is derived at a backbone of 664 entries; this register records 664. **Where those two are equal the residual is current as it stands. Where the register has since grown, the older reading applies again**: every group that restates an entry entered since the derivation still reads 'unresolved', so the figure OVERSTATES what is unresolved at HEAD, in a known direction, by an amount only a re-derivation would give. What the figure is NOT, in either case: a judgment that any one group's disposition has been read — each is exactly as mechanical as the numbered rule that produced it — so the residual is a bound on what this register may claim about the documents it did not read in full, not a measurement of the record's quality. ★ THE FORMER WORDING IS PRESERVED VERBATIM (#12) at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.measured_remainder_former_wording_2026_08_04_preserved_12`. It was true when it was written; what changed under it is that the layer it called un-re-derivable was repaired and its regeneration adopted.
+**The remainder, measured.** The harvest holds 15,224 candidate statements, grouped into 14,460 groups of near-identical statements, and every one of those groups carries a recorded disposition, so none was silently passed over. 2,644 of them carry the 'unresolved' disposition: statements the pass could not mechanically classify as either restating a register decision or not being a decision. Sampling shows that residual is genuinely mixed — real rulings, deferred designs and ordinary narrative in one population. Every harvested statement sourced to `ARCHITECTURE.md` falls inside the range read in full, that file being read in full in its entirety (above). ★ WHICH LAYER THIS FIGURE IS THE FIGURE OF, and how the two numbers below are read together. **It is the LAYER OF RECORD's figure** — the disposition layer regenerated on 2026-08-07 and ADOPTED as the layer of record by the user's ruling of that date (`OPEN_ITEMS.md` OI-333), with the outgoing layer kept beside it as a snapshot (#16), and it may be published as CURRENT. It is derived at a backbone of 665 entries; this register records 665. **Where those two are equal the residual is current as it stands. Where the register has since grown, the older reading applies again**: every group that restates an entry entered since the derivation still reads 'unresolved', so the figure OVERSTATES what is unresolved at HEAD, in a known direction, by an amount only a re-derivation would give. What the figure is NOT, in either case: a judgment that any one group's disposition has been read — each is exactly as mechanical as the numbered rule that produced it — so the residual is a bound on what this register may claim about the documents it did not read in full, not a measurement of the record's quality. ★ THE FORMER WORDING IS PRESERVED VERBATIM (#12) at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.measured_remainder_former_wording_2026_08_04_preserved_12`. It was true when it was written; what changed under it is that the layer it called un-re-derivable was repaired and its regeneration adopted.
 
 *Why this is stated at all:* DEFECT_TYPES.md DT-26 — scope-assumed enumeration. A sweep that is complete inside its own file set reads as complete about the whole question. The scope and its measured remainder are therefore stated rather than left implicit.
 
@@ -888,11 +888,12 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-488 | The two Bach chorale collections are independent selections, not sub- and superset — and the diff between them is not recoverable in-repo | LIVE | 2026-08-04 · user | `docs/score_inventory.md` |
 | D-513 | A corpus registry's content summary is enumeration provenance, not evidence that an annotation layer is present — per-slice presence must be measured | LIVE | — | `cowork_score_census.md` §3 |
 | D-514 | A newly acquired annotation set whose works OVERLAP the regression corpus is RECORD-ONLY: it may not be wired to, compared against, or bulk-diffed with the gate corpus without a user ruling | LIVE | — | `cowork_score_census.md` §4 |
-| D-515 | Pedal-point ground truth gets its OWN needs row rather than riding as a note on another — the user's reason: it can improve inference precision and nothing is lost | LIVE | — | `cowork_census_full_needs_audit.md` §6 ⚠gap |
+| D-515 | A ground-truth class with a named consumer gets its OWN row in the needs vector, never a remark under a neighbouring row — ruled generally after being decided for pedal-point ground truth | LIVE | — | `cowork_score_census.md` §8c |
 | D-516 | Two ground-truth classes with named consumers but no needs row were ADOPTED at the first full-needs audit — contrapuntal/imitative structure, and marked part-writing errors | LIVE | — | `cowork_census_full_needs_audit.md` §6 ⚠gap |
 | D-553 | A reference corpus's notation convention is DISCOVERED per entry by the comparison run, never declared as an input to it | LIVE | 2026-08-04 · user | `docs/extension_stripping_policy.md` |
 | D-612 | The corpus-search convention: a NEGATIVE is recorded so it is never re-searched, and every claim is RE-VERIFIED at acquisition rather than trusted from the search | LIVE | — | `cowork_union_search_record.md` |
-| D-613 | Ground truth for IMPLIED polyphony is confirmed ABSENT — and the voice labels that do exist come from engraved notation, which must be said at intake | LIVE | — | `cowork_union_search_record.md` §1 ⚠gap |
+| D-613 | Ground truth for IMPLIED polyphony is confirmed ABSENT — do not re-search it | LIVE | — | `cowork_union_search_record.md` §1 ⚠gap |
+| D-665 | What a voice/stream label set actually MEASURES is said at intake — the labels obtainable today come from engraved notation, not from a listener's judgment | LIVE | — | `cowork_score_census.md` §8c |
 
 ## S. The guiding principles — [full entries](decisions/group_S.md)
 
@@ -1044,8 +1045,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 ## Provenance of this register
 
 - Adjudication: the OI-207 decision-conformance adjudication, 2026-08-01, at commit `58dea6702ac8aa9d5ef8b89244b94d587a75f7a5`.
-- Coverage figures above regenerated at commit `5a004f78ac2aeb80f78594c2abf9421ec898b07a`.
-- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `e40e86af0e58fe3a…`).
+- Coverage figures above regenerated at commit `8870b9f6d279f7d4e0d038101f17027ba64b519e`.
+- Backbone data: `tools/audit/decisions/backbone_decisions.json` (sha256 `1549542950170089…`).
 - Harvest: `tools/audit/decisions/decision_candidates.json` (sha256 `51850440b315e6e9…`).
 - Clustering: `tools/audit/decisions/decision_clusters.json` (sha256 `0615b1e61bf10332…`).
 - Shape: `open_items/OI-208.md` (user-ratified 2026-07-28).

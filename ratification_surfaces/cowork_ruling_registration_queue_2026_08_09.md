@@ -55,6 +55,15 @@
 > closing state and the only section added after Ruling 42, in the same shape §6 and §8 use for the
 > first two.
 >
+> **★ EXTENDED A FOURTH TIME 2026-08-11 (CC, `cc_instruction_return_continuation_9.md` Task 0) —
+> Rulings 40–48 of the eighth and ninth STOPs are classified in a NEW SECTION, §11, which AWAITS THE
+> USER.** §10's own closing line reserves a further extension to a dispatch that asks for one, and
+> this is that dispatch. Nothing the user ruled is touched: §1–§10 stand exactly as ruled. §11
+> carries its own verdict table, its own tally and its own proposed homes, and **no register entry
+> may be written for any ruling in it until the user rules on it.** It also picks up the two rulings
+> §10 recorded rather than classified — **40** and **43** — which §10 named as recorded at their own
+> subjects and explicitly not re-classified there; they are classified here for the first time.
+>
 > **Why this exists.** Three ruling records carry the same banner sentence — *"interim carrier
 > until the applying dispatch records them (D-230)"* — and **no register entry exists for any of
 > them.** Every ruling's CONTENT is on disk in a ratified record, and every ruling applied is
@@ -514,6 +523,82 @@ extended again for a later ruling without a dispatch saying so.
 
 ---
 
+## 11. THE FOURTH EXTENSION — Rulings 40–48, AWAITING THE USER
+
+> **★ STATUS: AWAITING THE USER. NO REGISTER ENTRY IS WRITTEN FOR ANYTHING IN THIS SECTION.** Added
+> 2026-08-11 (CC, `cc_instruction_return_continuation_9.md` Task 0, which is the dispatch §10's
+> closing line requires before this file is extended again), by the SAME derivation that built §2
+> and extended it at §2.4, §7 and §9: each ruling classified **from its own text**, with its carrier
+> read whole (**D-643**) before a verdict was written. Sections §1–§10 are untouched — the verdicts
+> the user ruled stand as ruled, and nothing here re-opens them.
+
+**The two verdicts mean exactly what §1 says they mean**, and that section is not restated here (#6).
+
+**★ TWO OF THESE NINE WERE MET BEFORE AND DELIBERATELY NOT CLASSIFIED, WHICH IS WHY THEY ARE HERE.**
+§10 records Rulings **40** and **43** as *"recorded at their own subjects, not here"* and states that
+neither *"is re-classified here"* — the same refusal §7.3 made for Rulings 20–23, and for the same
+reason: a session classifying rulings its dispatch did not send it would widen its own scope
+(**D-654**). This dispatch sends them, so they are classified for the first time.
+
+### 11.1 Rulings 40–43 (`cowork_rulings_2026_08_09_eighth_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **40** | The nine census entries close by a **THREE-STEP PROCEDURE** executed per entry, with a kind-half check before any write and a STOP where the owning section is a findings table | **DECISION**; *and the user may reasonably read it as an EXERCISE* | What binds beyond the nine is the **ORDER and the STOP**: a pointer move is tried before a write, the kind half is judged PER SECTION and BEFORE any write, and where the owning element records findings the entry is HELD rather than written by stretch. That is the operational form of rule (h)'s kind half for a homing act, and no register entry states it — **D-664** gives the default ROUTE and **D-432** the delegation bar, neither of which says in what order a homing act tests a section or what happens when the test fails. The procedure has already earned its keep twice: step 1 closed nothing over nine entries with two near-misses recorded as checked-and-declined, and step 3 fired for four entries that turned out not to be one shape. **The downgrade reading, in one line:** if the user reads the procedure as scoped to the nine entries it names — its own text says *"to these nine entries only"* of the licence half — the verdict is EXERCISE of **D-664** and **D-430**, and nothing is owed |
+| **41** | The one-sentence correction in `docs/key_detection_baroque_partial_signature.md` is LICENSED | **EXERCISE** | A one-edit licence for a doc-sync correction, of exactly the class **D-654**'s narrow-letter default already governs and **D-231**'s TRUE half already requires. It binds nothing beyond the sentence it licensed, and the sentence is corrected with the former wording preserved in place |
+| **42** | The queue's §9 is RATIFIED as proposed; **both** upgrade readings are DECLINED, on #6 | **EXERCISE** — a ratification event | The user's ruling ON a review queue, which is the class Ruling 36 fixed for 20–23. Its content is already register data — **D-664**, written in the commit that recorded it — and its closing state is §10 above. **The clause worth noticing is already recorded there and is not a further decision:** the keep-the-insurance ground prevents a proposed decision being DOWNGRADED and does not manufacture an entry for content the register already holds |
+| **43** | The same-commit control is ACCEPTED on the reported-widening ground; the inversion corrections are RATIFIED as corrections of record; OI-357's first question is ANSWERED | **EXERCISE** | Three acts, and each applies a decision the register already holds. The acceptance is **D-654** (a widening REPORTED is reviewable, a widening HIDDEN is not) applied to one act. The inversion corrections are **D-231**'s TRUE half applied to prose about a measurement. The substantive outcome is a FINDING about a comparison, recorded on the rows and in the artifacts' closing state, and a finding is not a decision. The ruling's own care — that **D-663** is undisturbed, a ruling about FORM cannot make a direction true — restates that entry rather than adding to it |
+
+### 11.2 Rulings 44–48 (`cowork_rulings_2026_08_09_ninth_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **44** | **D-516** is CLOSED as an adoption event; no home is owed | **DECISION**; *and the user may reasonably read it as an EXERCISE* | The clause that binds is general and no entry states it: **an EVENT a mechanism exists to produce is not a rule needing a home, and inventing one writes text nothing consumes.** That is a rule about what the homing obligation reaches, and it will decide every future entry whose content is an adoption, an admission or any other act a standing mechanism performs. **D-664** settles which of two ROUTES closes an entry and says nothing about an entry for which neither is owed; **D-642** disposes entries whose content is SUPERSEDED, which this is not. **The downgrade reading, in one line:** if the user reads the ruling as settling one entry on the 20–23 precedent it cites, the verdict is EXERCISE and nothing is owed |
+| **45** | **D-515**: the USER MAKES the general rule, and the entry homes on it | **EXERCISE**; *and the user may reasonably read it as a DECISION* | Its decision CONTENT — a ground-truth class with a named consumer gets its own row in the needs vector rather than a remark under a neighbouring row — is now written into `cowork_score_census.md` §8c and carried by **D-515** itself, so registering it again would duplicate carried content, which is the ground Ruling 42 declined both upgrades on. What it also demonstrates rather than states is the answer to a step-3 hold: a session may not compose the general form, and the user making it is what gives the entry a rule-stating home. **The upgrade reading, in one line:** if the user reads *where a step-3 hold turns on a rule the record states for one case only, the closing act is the USER making the general form* as a standing route rather than as this entry's treatment, the verdict is DECISION, and its home is `CLAUDE.md`'s decisions-register section beside rule (l) |
+| **46** | **D-475** is a STATUS-CLASS entry; no specification home is owed | **DECISION** | The clause that binds is general and no entry states it: **a per-corpus ESTABLISHMENT verdict (#19) is the same KIND as supersession and shelving — decisions-register business — so that register itself is its home.** **D-231** assigns STATUS to the decisions register and CONFORMANCE to the specifications, but it does not say that an establishment verdict is a status; that identification is what this ruling makes, and it decides every future #19 verdict about a corpus, a measurement tool or a gate. Its converse binds equally and is stated in the ruling: writing a one-corpus verdict into a rule-stating section is the MIRROR of the error Ruling 40's step 3 prevents |
+| **47** | **D-613** is SPLIT (the D-291/D-656 precedent) | **EXERCISE** | The second exercise of a route the user established at Ruling 21 and the decisions register already carries at **D-291**/**D-656**: an entry is that register's findability unit, so two decisions with two owners become two entries, cross-referenced both ways with every former field preserved. Its own text names that precedent. What it decides beyond the precedent is which half keeps the identifier, and that is settled by the precedent too — the half that stays where it sits keeps it |
+| **48** | The `tools/batch_analyze.cpp` comment correction is LICENSED | **EXERCISE** | A one-edit licence, the same class as **41**. The clause a reader might take for a rule — that a stale claim under `tools/` is the same falsity class as one under `src/` and sits outside an enumerated family only by its directory — is a statement about the SCOPE of Ruling 16's family, not a new rule about comment correction; **D-231**'s TRUE half already requires the correction wherever the file lives |
+
+### 11.3 The tally, and what this extension reports rather than classifies
+
+**Proposed DECISIONS — two:** the adoption-event clause (**44**) and the establishment-verdict-is-a-status clause (**46**). **One further is offered as an upgrade** (**40**, whose procedure and STOP may be read as binding beyond the nine).
+
+**Proposed EXERCISES — seven:** **41**, **42**, **43**, **45**, **47**, **48**, and **40** under its
+downgrade reading. Upgrade or downgrade readings are given in one line for **40**, **44** and **45**,
+so reading any of the three the other way costs the user one line.
+
+**★ THE SHAPE THE FOUR EARLIER BATCHES EXPOSED HOLDS, AND THIS BATCH SHARPENS IT IN ONE RESPECT.**
+Again the rulings that unblocked the most work bind nothing new — two one-edit licences, a queue
+ratification, an acceptance — while what binds rode alongside them. **What is new:** the two proposed
+decisions are both about **what the homing obligation does NOT reach**. Every register entry the arc
+has written so far says where a decision goes; these two say when it goes nowhere, and that is the
+half of the rule the record has been missing while three separate waves held entries it could not
+place.
+
+**★ AND ONE THING IS REPORTED RATHER THAN CLASSIFIED.** Rulings 44, 46 and 47 together empty
+finish-line item 1's live remainder, and that is derived rather than asserted — the count and the
+identity list are computed at `tools/audit/decisions/finish_line_item1_routes.json` and no value is
+restated here (**D-431**). **An empty remainder is not a completion statement** and is not read as
+one: the other finish-line items are counted at `tools/audit/phase1_finish_line.json` and none of
+them is spoken for by this section.
+
+### 11.4 Proposed homes, for the two (rule (e))
+
+| Proposed entry | Proposed home | Why there |
+|---|---|---|
+| **44** — an event a mechanism exists to produce is not a rule needing a home | **`CLAUDE.md`**, the decisions-register section, beside rule (l) | It belongs with the rules that say what closes an entry. Rule (l) gives the default ROUTE and its exception mechanism; this is the neighbouring case — an entry for which neither route is owed because there is no rule to write. **USER-ONLY TEXT** — a session may not write it. If the user prefers not to grow that block, the alternative home is `cowork_audit_protocol.md` beside **D-642**, which already disposes the class where neither route applies |
+| **46** — a per-corpus establishment verdict is a status, so the decisions register is its home | **`CLAUDE.md`**, the decisions-register section, beside rule (l) and entry 44 above | Same block and the same reason: it settles what the homing obligation reaches. It could also be read as belonging beside principle #19, but #19 states what establishment IS and this states where a verdict about it is RECORDED, which is decisions-register business. **USER-ONLY TEXT.** Alternative home: `cowork_audit_protocol.md` beside **D-642** |
+
+### 11.5 What §11 does NOT do
+
+It writes no register entry and assigns no identifier. It re-opens no verdict the user ruled at §6,
+§8 or §10, re-words no ruling, and re-reads no ruling's merits. It moves no status and authorizes
+nothing. It touches no golden, no corpus of scores and nothing in `tools/robust_stop/`.
+
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+---
+
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
 debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
@@ -531,4 +616,9 @@ carriers are `cowork_rulings_2026_08_09_sixth_stop.md` and
 added on the instruction of `cc_instruction_return_continuation_7.md` Task 0, which is the dispatch
 §8's closing line requires, and it scopes itself to Rulings 36–39. §10 records the user's Ruling 42
 of `cowork_rulings_2026_08_09_eighth_stop.md`, read whole (D-643) before it was written, and was
-added on the instruction of `cc_instruction_return_continuation_8.md` Task 0.*
+added on the instruction of `cc_instruction_return_continuation_8.md` Task 0. §11's carriers are
+`cowork_rulings_2026_08_09_eighth_stop.md` and `cowork_rulings_2026_08_09_ninth_stop.md`, both read
+whole (D-643) before it was written; it was added on the instruction of
+`cc_instruction_return_continuation_9.md` Task 0, which is the dispatch §10's closing line requires,
+and it scopes itself to Rulings 40–48 — including the two, 40 and 43, that §10 recorded at their own
+subjects and explicitly did not classify.*

@@ -992,12 +992,14 @@ VERDICTS = [
 # changed" — that guard working.  The former table is kept whole here as the record of what the
 # finding named; the LIVE table below carries only what still stands.
 #
-# ★ THE SIXTH IS NOT DISCHARGED AND IS NOT SILENTLY DROPPED: `tools/batch_analyze.cpp` still says
-# the notation layer stays on the legacy analysis, which the 2026-07-27 notation switch made false.
-# It is OUTSIDE Ruling 16's stated scope — that ruling licenses ONE comment-only `src/` commit, and
-# a measurement tool is neither `src/` nor a build file — so it is left standing and surfaced, not
-# edited.  It is also outside the enumerated family the Ruling-16 sweep derives
-# (`tools/audit/arm_comment_sweep.json`), whose scan is `src/` by the same scope.
+# ★ THE SIXTH WAS NOT DISCHARGED BY THAT ACT, AND IT IS NOW.  FORMER TEXT OF THIS PARAGRAPH,
+# PRESERVED (#12) — true when it was written, and made false by the user's Ruling 48 rather than
+# wrong: "★ THE SIXTH IS NOT DISCHARGED AND IS NOT SILENTLY DROPPED: `tools/batch_analyze.cpp` still
+# says the notation layer stays on the legacy analysis, which the 2026-07-27 notation switch made
+# false.  It is OUTSIDE Ruling 16's stated scope — that ruling licenses ONE comment-only `src/`
+# commit, and a measurement tool is neither `src/` nor a build file — so it is left standing and
+# surfaced, not edited.  It is also outside the enumerated family the Ruling-16 sweep derives
+# (`tools/audit/arm_comment_sweep.json`), whose scan is `src/` by the same scope."
 STALE_RECORD_ARM_COMMENTS_RETIRED_2026_08_09 = [
     ('src/notation/internal/notationcomposingbridge.cpp', 719,
      'Record arm (default OFF, useJointNotationRecord)'),
@@ -1011,10 +1013,20 @@ STALE_RECORD_ARM_COMMENTS_RETIRED_2026_08_09 = [
      'DORMANT'),
 ]
 
-STALE_RECORD_ARM_COMMENTS = [
+# ★ THE SIXTH SITE, RETIRED 2026-08-11 — its own table, one per act, as the five above are (#12,
+# D-648).  CC, `cc_instruction_return_continuation_9.md` Task 0, on the user's RULING 48 of
+# `cowork_rulings_2026_08_09_ninth_stop.md`, which licenses exactly this one comment-only edit: the
+# stale claim is the OI-353 falsity class and sat outside Ruling 16's enumerated family ONLY by
+# living under `tools/`.  The comment now says the staging is CLOSED on both production surfaces and
+# keeps apart the thing that is NOT closed — this flag's own default, which is still OFF.  The quote
+# below is therefore gone from the file, and this tool STOPPED on it with "the premise has changed",
+# which is the same guard working that found the sweep's own missed member one act earlier.
+STALE_RECORD_ARM_COMMENTS_RETIRED_2026_08_11 = [
     ('tools/batch_analyze.cpp', 4916,
      'notation layer stays on the legacy analysis'),
 ]
+
+STALE_RECORD_ARM_COMMENTS: list[tuple[str, int, str]] = []
 
 # The two dated annotations that still assert the opposite of D-428 as corrected at phase 1n.
 D428_CONTRADICTIONS = [
@@ -1283,7 +1295,22 @@ def main():
                 'what': 'Comments in src/ and tools/ that still describe the record arm as "default '
                         'OFF", or the record section adapter as having no src/ caller, contradicting '
                         'the default at composingconfiguration.cpp:178 and their own call sites. Each '
-                        'is located below; correcting them is a src/ change, which this wave forbids.',
+                        'still standing is located below.',
+                'the_former_wording_preserved_12': (
+                    'Its last clause read "Each is located below; correcting them is a src/ change, '
+                    'which this wave forbids." True of the wave that wrote it and false now: the '
+                    'user licensed the corrections in two acts, Ruling 16 for the five under src/ '
+                    'and Ruling 48 for the sixth under tools/.'),
+                '★_this_side_finding_is_DISCHARGED_WHOLE': (
+                    'All six sites are corrected and the live list is EMPTY. The five under `src/` '
+                    'were corrected 2026-08-09 under the user\'s Ruling 16 (one comment-only `src/` '
+                    'commit); the sixth, under `tools/`, was corrected 2026-08-11 under the user\'s '
+                    'Ruling 48, which licensed exactly that edit because the site sat outside '
+                    'Ruling 16\'s enumerated family ONLY by living under `tools/`. Both retired '
+                    'tables are kept whole in this file\'s source rather than deleted (#12, D-648), '
+                    'one per act, so what the finding named survives the act that closed it. An '
+                    'EMPTY count here is therefore a discharge and not a search that found '
+                    'nothing.'),
                 'count': len(stale),
                 'located': stale,
             },

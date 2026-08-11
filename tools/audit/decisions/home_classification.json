@@ -13,24 +13,24 @@
   ],
   "the_reading_of_a_whole_document_delegation": "A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others; and the rule-stating half is judged PER SECTION in both cases. **THIS IS NOW PART OF THE RULE, NOT AN INTERPRETATION OF IT (user, 2026-08-03, phase 1r).** At phase 1q it was this pass's reading of D-430's \"delegates a stated concern to that section BY NAME\", taken on the record's own precedent rather than a preference — `OPEN_ITEMS.md` OI-290 states in terms that \"`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries\" — and the strict alternative was recorded as available to the user. The user then WROTE the reading into `CLAUDE.md` rule (h) itself as the GRANULARITY clause, so D-430's verbatim now carries it and the strict alternative is CLOSED. Its defense, stated with it: the strict reading would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, making the rule retroactively destructive rather than refining. THE STRICT ALTERNATIVE, PRESERVED (#12): read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them.",
   "population": {
-    "entries": 189,
+    "entries": 190,
     "documents": 38
   },
   "totals": {
     "class_before": {
       "contract-home": 88,
-      "gap": 101
+      "gap": 102
     },
     "class_after": {
-      "contract-home": 159,
-      "gap": 30
+      "contract-home": 161,
+      "gap": 29
     },
-    "entries_moved": 81,
+    "entries_moved": 83,
     "moved_to_gap": 5,
-    "moved_to_contract_home": 76,
+    "moved_to_contract_home": 78,
     "decided_by": {
-      "D-430, the section-level unit": 171,
-      "clause (a), the fifth home case (OI-268)": 18
+      "D-430, the section-level unit": 173,
+      "clause (a), the fifth home case (OI-268)": 17
     }
   },
   "by_document": {
@@ -587,16 +587,16 @@
       }
     },
     "cowork_score_census.md": {
-      "entries": 22,
+      "entries": 24,
       "before": {
-        "gap": 11,
+        "gap": 13,
         "contract-home": 11
       },
       "after": {
-        "contract-home": 22
+        "contract-home": 24
       },
       "moves_out": 0,
-      "moves_in": 11,
+      "moves_in": 13,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:370",
@@ -666,7 +666,9 @@
             "D-373",
             "D-374",
             "D-375",
-            "D-614"
+            "D-515",
+            "D-614",
+            "D-665"
           ],
           "class_after": "contract-home"
         },
@@ -681,7 +683,7 @@
           "class_after": "contract-home"
         }
       },
-      "moves_in_since_phase1q": 11
+      "moves_in_since_phase1q": 13
     },
     "cowork_joint_key_chord_design.md": {
       "entries": 4,
@@ -1440,12 +1442,12 @@
       "moves_in_since_phase1q": 8
     },
     "cowork_census_full_needs_audit.md": {
-      "entries": 2,
+      "entries": 1,
       "before": {
-        "gap": 2
+        "gap": 1
       },
       "after": {
-        "gap": 2
+        "gap": 1
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -1459,7 +1461,6 @@
           "delegated": null,
           "states_rules": null,
           "entries": [
-            "D-515",
             "D-516"
           ],
           "class_after": "gap"
@@ -3355,7 +3356,7 @@
       "id": "D-366",
       "title": "Recorded-performance intonation material is OUT of corpus scope — the intonation features are validated by theory and by listening",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:258",
+      "home": "cowork_score_census.md:273",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -3377,7 +3378,7 @@
       "id": "D-367",
       "title": "A corpus found FOR one need is scored against the WHOLE needs list at intake, and every annotation layer it carries is inventoried — never tagged to the purpose that found it",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:303-312",
+      "home": "cowork_score_census.md:318-327",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -3399,7 +3400,7 @@
       "id": "D-368",
       "title": "When new material bears on an already-settled conclusion, the rework question is settled by a recorded protocol — record, measure cheaply, then fork on whether it CONTRADICTS or merely enriches",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:314-330",
+      "home": "cowork_score_census.md:339-355",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -3421,7 +3422,7 @@
       "id": "D-369",
       "title": "The DCML figured-bass repository is a REALIZATION SCRIPT, not reference data — walked and recorded so it is never mistaken for reference data again",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:253",
+      "home": "cowork_score_census.md:268",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -3443,7 +3444,7 @@
       "id": "D-370",
       "title": "Reference data for implied polyphony does not exist and the negative is FINAL — the two candidate sets were never released",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:252",
+      "home": "cowork_score_census.md:267",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -3465,7 +3466,7 @@
       "id": "D-371",
       "title": "No dataset pairs an ornament sign with its written-out realization — confirmed absent, so the ornament expansion ships rule-based and unvalidated, as predicted",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:256",
+      "home": "cowork_score_census.md:271",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -3487,7 +3488,7 @@
       "id": "D-372",
       "title": "Marked part-writing errors must be BUILT, not downloaded — no public dataset exists and the two commercial holders keep theirs closed",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:262",
+      "home": "cowork_score_census.md:277",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -3509,7 +3510,7 @@
       "id": "D-373",
       "title": "The only dual-annotator reference data actually on disk is the 27 TAVERN A/B pairs — the assumed second source was measured to have ZERO overlap",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:245",
+      "home": "cowork_score_census.md:260",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -3531,7 +3532,7 @@
       "id": "D-374",
       "title": "The flexible multi-reading chorale annotations are RECORD-ONLY — they overlap the regression repertoire, so any use over those pieces is a future user ruling",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:245",
+      "home": "cowork_score_census.md:260",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -3553,7 +3554,7 @@
       "id": "D-375",
       "title": "Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:257",
+      "home": "cowork_score_census.md:272",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -5377,25 +5378,25 @@
     },
     {
       "id": "D-515",
-      "title": "Pedal-point ground truth gets its OWN needs row rather than riding as a note on another — the user's reason: it can improve inference precision and nothing is lost",
-      "document": "cowork_census_full_needs_audit.md",
-      "home": "cowork_census_full_needs_audit.md:227-228",
-      "section": "§6",
-      "section_heading_line": 213,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
+      "title": "A ground-truth class with a named consumer gets its OWN row in the needs vector, never a remark under a neighbouring row — ruled generally after being decided for pedal-point ground truth",
+      "document": "cowork_score_census.md",
+      "home": "cowork_score_census.md:242-245",
+      "section": "§8c",
+      "section_heading_line": 224,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:370",
+      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
+      "section_delegated": true,
+      "section_states_rules": true,
       "class_before_phase1q": "gap",
       "class_before_phase1r": "gap",
       "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "moves_since_phase1r": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-516",
@@ -5971,9 +5972,9 @@
     },
     {
       "id": "D-613",
-      "title": "Ground truth for IMPLIED polyphony is confirmed ABSENT — and the voice labels that do exist come from engraved notation, which must be said at intake",
+      "title": "Ground truth for IMPLIED polyphony is confirmed ABSENT — do not re-search it",
       "document": "cowork_union_search_record.md",
-      "home": "cowork_union_search_record.md:32-36",
+      "home": "cowork_union_search_record.md:32-34",
       "section": "§1",
       "section_heading_line": 20,
       "delegation_form": "not-named-in-any-ratified-surface",
@@ -5995,7 +5996,29 @@
       "id": "D-614",
       "title": "Every real difficulty-grade label source is research-only or proprietary at origin — a commercial grading feature needs a licence path or its own labels",
       "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:292-301",
+      "home": "cowork_score_census.md:307-316",
+      "section": "§8c",
+      "section_heading_line": 224,
+      "delegation_form": "explicit-delegation-clause",
+      "delegation_scope": "document",
+      "delegation_at": "ARCHITECTURE.md:370",
+      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
+      "section_delegated": true,
+      "section_states_rules": true,
+      "class_before_phase1q": "gap",
+      "class_before_phase1r": "gap",
+      "class_before_the_2026_08_08_apply": "gap",
+      "class_after": "contract-home",
+      "moves": true,
+      "moves_since_phase1q": true,
+      "moves_since_phase1r": true,
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-665",
+      "title": "What a voice/stream label set actually MEASURES is said at intake — the labels obtainable today come from engraved notation, not from a listener's judgment",
+      "document": "cowork_score_census.md",
+      "home": "cowork_score_census.md:328-330",
       "section": "§8c",
       "section_heading_line": 224,
       "delegation_form": "explicit-delegation-clause",
@@ -6016,7 +6039,7 @@
   ],
   "the_phase_1r_re_run": {
     "why": "The user WROTE delegations on 2026-08-03 (the OI-293 write list) for the six documents this pass had reported losing entries. The pass therefore runs a SECOND time, over classes it had itself moved. `class_before_phase1q` still holds the state before the FIRST run, so `totals` and `by_document` below are unchanged in meaning; this block is the movement caused by the written delegations alone.",
-    "entries_moved_since_phase1q": 88,
+    "entries_moved_since_phase1q": 90,
     "moved_to_contract_home": [
       {
         "id": "D-270",
@@ -6544,6 +6567,13 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
       {
+        "id": "D-515",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
         "id": "D-517",
         "document": "cowork_layer1_note_model_design.md",
         "section": "§9",
@@ -6633,6 +6663,13 @@
         "section": "§8c",
         "from": "gap",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-665",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       }
     ],
     "moved_to_gap": [],
@@ -6644,7 +6681,7 @@
   },
   "the_2026_08_08_apply": {
     "why": "The user WROTE three more delegations on 2026-08-08 (the document-route ruling, route (i)) and every read wave since phase 1r entered register entries whose `home_section` had no writer while the applying run was held. This block is the movement caused by everything since the phase-1r pass — graded against `class_before_the_2026_08_08_apply`, the fourth frozen epoch, which is read back from each entry and never overwritten (#12).",
-    "entries_moved_since_phase1r": 20,
+    "entries_moved_since_phase1r": 22,
     "moved_to_contract_home": [
       {
         "id": "D-398",
@@ -6766,6 +6803,13 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
       {
+        "id": "D-515",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
         "id": "D-565",
         "document": "cowork_joint_estimator_factorization.md",
         "section": "§5",
@@ -6781,6 +6825,13 @@
       },
       {
         "id": "D-614",
+        "document": "cowork_score_census.md",
+        "section": "§8c",
+        "from": "gap",
+        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+      },
+      {
+        "id": "D-665",
         "document": "cowork_score_census.md",
         "section": "§8c",
         "from": "gap",
@@ -7201,6 +7252,12 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
+      "id": "D-515",
+      "document": "cowork_score_census.md",
+      "section": "§8c",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
       "id": "D-517",
       "document": "cowork_layer1_note_model_design.md",
       "section": "§9",
@@ -7274,6 +7331,12 @@
     },
     {
       "id": "D-614",
+      "document": "cowork_score_census.md",
+      "section": "§8c",
+      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
+    },
+    {
+      "id": "D-665",
       "document": "cowork_score_census.md",
       "section": "§8c",
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"

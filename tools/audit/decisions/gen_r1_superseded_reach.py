@@ -192,6 +192,36 @@ SUCCESSORS: dict[str, dict] = {
                                      "its document is not a delegation target; that ruling did not "
                                      "put the re-homing question and R1 does not answer it."},
     "D-570": {"successors": [], "why": "Status LIVE. Same ruling and same reason as D-569."},
+
+    # ── THE THREE THAT ENTERED THIS CLASS ON 2026-08-11, each by its own user ruling ────────────
+    #
+    # They arrive here for a reason the class has not carried before, and it is worth stating once
+    # rather than three times: the members above are here because their live content is SUPERSEDED
+    # and carried by a successor, or because there is no decision content at all. These three are
+    # here because the user ruled that their content, though live and correctly recorded, IS NOT A
+    # RULE A SPECIFICATION SECTION STATES — an adoption event, a per-corpus establishment verdict,
+    # and the evidence half of a split entry. R1 governs SUPERSEDED content and does not reach any
+    # of them, which their dispositions below say in the tool's own derived words; what closes them
+    # is the ruling recorded on each route row, not this file. They are recorded here because this
+    # class's population is derived from the route table and a member with no successor record is
+    # a STOP — an entry may not be left silently undecided by the ruling made for it.
+    "D-516": {"successors": [], "why": "Status LIVE. Ruling 44 of 2026-08-09 (user) closed it as an "
+                                     "ADOPTION EVENT for which no home is owed, its evidence "
+                                     "pointed at the §8c needs table where the adoption happened. "
+                                     "R1 governs entries whose content is superseded; this content "
+                                     "is neither superseded nor a rule."},
+    "D-475": {"successors": [], "why": "Status LIVE. Ruling 46 of 2026-08-09 (user) recorded it as a "
+                                     "STATUS-CLASS entry — a per-corpus establishment verdict is "
+                                     "the same kind as supersession and shelving, so the register "
+                                     "itself is its home and no specification home is owed. R1 does "
+                                     "not reach it: what is superseded here is nothing, and the "
+                                     "verdict's own route and exhaustion rule live at OI-179."},
+    "D-613": {"successors": [], "why": "Status LIVE. Ruling 47 of 2026-08-09 (user) SPLIT the entry; "
+                                     "the intake-rule half is D-665 and is homed in the census, "
+                                     "and THIS half — the confirmed absence — stays at the "
+                                     "needs-vector row that already carries it, as evidence, so no "
+                                     "home is owed. A split is not a supersession and R1 does not "
+                                     "reach it."},
 }
 
 

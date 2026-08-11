@@ -3482,6 +3482,228 @@ for it.
 batch** — and the finish line's own count of what remains is derived at
 `tools/audit/phase1_finish_line.json` (**D-431**).
 
+---
+
+# ═══ THE NINTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_9.md`, performed 2026-08-11) ═══
+
+> Rulings 44–48 of `cowork_rulings_2026_08_09_ninth_stop.md` are applied here, and the eighth
+> continuation's unfinished Tasks 2, 3 and 5 are resumed. The sections above are earlier batches' and
+> are not rewritten. New holds are appended to §1, new surfacings to §2, and each task's log below.
+>
+> **★ A DATE DISCREPANCY IS STATED RATHER THAN SMOOTHED OVER, because eight preceding sections of
+> this file are dated 2026-08-09 and this one is not.** Every ruling this batch applies is dated
+> 2026-08-09 at its own carrier, and the dispatch is dated the same. **The acts below were performed
+> on 2026-08-11**, which is the date this session ran, so that is the date written on them. Naming
+> the ruling's date on an act performed two days later would state something the record does not
+> hold, and the never-work-from-memory rule reaches a date as much as anything else. Where a ruling
+> is cited its own date is used; where an act is recorded the act's date is used, and the two
+> deliberately differ.
+
+### 1.16 The registration queue's fourth extension covers Rulings 40–48 and AWAITS the user — including the two the previous batch reported rather than classified (Task 0)
+
+**Reported, not decided.** §11 of `ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md`
+classifies the nine rulings of the eighth and ninth STOPs, by the same derivation that built §2 and
+extended it at §2.4, §7 and §9 — each carrier read whole (**D-643**), each ruling classified from its
+own text. **No register entry is written, no identifier is assigned, and none may be until the user
+rules on it.**
+
+**Two of the nine were met before and deliberately left unclassified**, which is why they are in this
+extension rather than lost: §10 recorded Rulings **40** and **43** as *"recorded at their own
+subjects, not here"* and said in terms that neither *"is re-classified here"* — the same refusal §7.3
+made for Rulings 20–23, and for the same ground, that a session classifying rulings its dispatch did
+not send it widens its own scope (**D-654**). This dispatch sends them.
+
+**TWO are proposed as DECISIONS and seven as EXERCISES**, with upgrade or downgrade readings offered
+in one line for three of them. **The shape the four earlier batches exposed holds again** — the
+rulings that unblocked the most work bind nothing new — **and it sharpens in one respect worth the
+user's attention: both proposed decisions are about what the homing obligation does NOT reach.**
+Every entry the arc has written so far says where a decision goes; these two say when it goes
+nowhere, which is the half of the rule the record has been missing while three separate waves held
+entries they could not place.
+
+## 2 (continued). Surfaced findings
+
+### 2.14 The shell-read guard's establishment check reports STALE intermittently while its artifact re-derives byte-identically — the away batch's §2.2 shape, now recurring (Task 0)
+
+**The batch did not start at zero failing, and that is recorded before anything else it did.** The
+opening full guard run — launched before this session edited any file — reported
+`tools/audit/shell_read_guard.py --establish --check` FAILING, and reported the guard-state artifact
+STALE against that run, which is the same fact from the other side. **Re-run in isolation
+immediately afterwards, with nothing else running, it failed again.** It then **passed on five
+consecutive runs**, including the one inside this batch's own boundary guard run, with no intervening
+edit to the tool, its corpus or its artifact.
+
+**What is ESTABLISHED, and it narrows the question sharply.** The artifact's CONTENT is not what
+moved: the module was imported in-process, its `establish()` re-run, and the result compared against
+the committed file by **exact string equality — the same test `--check` performs**. Equal, at equal
+length, no first-differing character, empty line-level diff. And the only environment-dependent input
+in the decision was enumerated over the whole corpus: `os.path.exists` on quoted literals inside
+interpreter code, every one of which resolves either to a permanent repository file or to something
+the repository never has, so **no member of that input can move with the state of the tree**.
+
+**What is NOT established is the cause, and one candidate is named and explicitly NOT asserted.** The
+establishment publishes a CONTROL ARM that restores the case-sensitive path comparison so the family
+fix's effect stays separable (**D-436**), and that arm compares against the module's `ROOT`, which is
+derived from `__file__` and therefore made absolute against the process's own current directory — so
+a differently-cased drive letter reaching `ROOT` would move that arm's counts and **only** that arm's,
+which is the right shape for a difference that appears and disappears between invocations. One
+invocation was measured with `ROOT` upper-cased and passing; **no failing invocation's `ROOT` was
+captured**, so it is neither confirmed nor refuted, and naming it is so the next session starts from a
+testable statement.
+
+**Why it is surfaced now when the same shape was not surfaced as a defect before.** §2.2 above
+recorded one non-reproducing exit of this tool on 2026-08-08 and said, correctly for one event, that
+it *"establishes nothing except that it happened"*. **Two consecutive failures on a second date make
+it recurring rather than singular** — and what is at stake is an established value: this guard's
+measured deny and false-deny rates are published, and are what **D-436**'s third condition judges a
+change to this mechanism against. A rate whose check intermittently reports STALE without a content
+difference is not reproducible on demand, which is what #19 refuses to treat as established. It is
+also the guard that enforces **D-253**.
+
+**Rowed at [[OI-366]]** with its detail file in the same commit (rule (c)). **Nothing was changed** —
+the decision function is a mechanism **D-436** reserves to the user, the guard family's ruling fixes
+the order, and even a diagnostic that would capture a failing run's `ROOT` is a change to the tool, so
+it is named and not taken.
+
+**One thing is NOT in doubt and is stated because this session exercised it:** the guard's live
+DENYING path works. It denied this session's own `python -c` carrying a literal repository path,
+within minutes of the failure above, and **the read was redone through the file tools rather than
+worked around** — which is the founding instance's own form.
+
+## 3 (continued). Per-task log — the ninth return continuation
+
+### Task 0 — COMPLETE. Rulings 44–48 applied; the census item's four held entries all close, by FOUR DIFFERENT ACTS; item 1's live remainder empties by derivation
+
+**The start state was derived at the artifacts before any act (A5), and it is NOT what the dispatch's
+ledger records.** The full guard set was run unchanged before the first edit and came back at **ONE
+failing** — the shell-read guard's establishment — where the dispatch's premise ledger states zero.
+That is §2.14, established rather than assumed and rowed at [[OI-366]] before any other act of this
+task. Everything else was read at its own surface: the four route rows and their
+`ruling_40_step_taken` fields, the queue's §10, the decisions register's highest identifier, and the
+census read at the sections the two licensed writes were to land in. No count is restated here (**D-431**).
+
+**A1 HOLDS, and the kind half was judged PER SECTION before either write.** Ruling 45's sentence
+lands in §8c's MECHANISM — the numbered procedure whose steps 2 and 3 state what shall be done at
+each run and whose step 1 already carried a maintenance rule for the vector, which the new statement
+extends. Ruling 47's lands in §8c's INTAKE-RULE BLOCK, which opens by stating a rule and enumerates
+*"Three consequences, each binding"*, and which the classifier's own section reading already names as
+one of §8c's three rule-stating blocks. **Neither write touches the needs-vector table, in either
+direction**, and no measured value, corpus identity or licence class is carried into the census text
+(**D-431**) — both rules are written about the CLASS rather than about the instance that produced
+them. **A2 and A3 HOLD**; A3 is discharged at the diff and is described below.
+
+**What was done, in order.**
+
+1. **Ruling 45 — the ONE general rule the user makes, written into §8c's mechanism**, and **D-515**
+   homed on it. This is the act the eighth continuation's step-3 hold left open and could not take:
+   the hold's own reason was that authoring the general form would be composing a rule the record
+   never made, and the user making it is what removes that objection. The home text carries both
+   halves of its defense — the general one read off the section's own steps, that a need written as
+   a remark inside a neighbour's cell is invisible to the two mechanisms that exist to find its
+   material, and the specific one the user gave when this was first decided for a single need. **One
+   thing the home text states that neither ruling required and that is flagged as a judgment:** the
+   converse is explicitly NOT implied — a class with no consumer the project can name is not thereby
+   excluded — because a rule stated as *a class with a consumer gets a row* and nothing else reads as
+   settling membership, which is §8b's trigger and the audit's job.
+2. **Ruling 44 — D-516 CLOSED as an adoption event**, its register record standing as the event's
+   index and its evidence POINTED at the §8c needs table where the adoption happened. Nothing is
+   written into any census section.
+3. **Ruling 46 — D-475 recorded as a STATUS-CLASS entry**, its evidence pointed at the needs-vector
+   row for dual-annotator material and at the OI-179 record, where the verdict's route and its
+   exhaustion rule already live. Nothing is written into the census.
+4. **Ruling 47 — D-613 SPLIT.** The intake-rule half becomes **D-665** and is written into §8c's
+   intake-rule block as its fourth consequence; **D-613 keeps the fact-of-absence half** and stays
+   where it sat, its evidence being the needs-vector row that already carries it. **Which half keeps
+   the identifier is settled by the precedent rather than by preference:** at D-291/D-656 the new
+   identifier went to the half that gained a NEW home, and the old one stayed with the half that did
+   not. Every former field — title, verbatim, home, rationale — is preserved whole at D-613 (#12),
+   and the source document is untouched.
+5. **Ruling 48 — the one licensed `tools/batch_analyze.cpp` comment.** It said the notation layer
+   stays on the legacy analysis, which the 2026-07-27 notation switch made false. It now records
+   that the staging is CLOSED on both production surfaces, and **keeps apart the thing that is NOT
+   closed** — this flag's own default, still OFF, so a flag-less run still measures the legacy
+   pipeline. **The diff is verified comment-only MECHANICALLY**, against the committed blob read as a
+   git OBJECT by explicit hash (**D-253**'s sanctioned form): nine changed lines, every one beginning
+   with a comment marker, zero non-comment changes.
+6. **The `ruling_40_step_taken` field is updated per entry**, with the step-3 verdict preserved whole
+   in each cell (#12) and the ruling that closes it recorded beneath — because the HOLD is what
+   produced the ruling, and a cell carrying only the outcome would read as though the procedure had
+   reached it on its own.
+7. **The queue is extended a fourth time**, §11, over Rulings 40–48 — §1.16.
+
+**★ THE RESULT WORTH READING IS THAT THE FOUR CLOSE BY FOUR DIFFERENT ACTS, WHICH IS THE EIGHTH
+CONTINUATION'S OWN FINDING CONFIRMED BY THE USER RATHER THAN OVERRIDDEN.** That batch reported the
+four held entries are NOT one shape and put them individually. **Every ruling agrees with that
+reading, and not one of them widens step 3:** three settle that no home is owed at all — an adoption
+event, a status-class verdict, and the evidence half of a split — and the fourth closes by a write
+only because the user made a rule that did not exist before. **So the procedure's STOP is confirmed
+rather than relaxed**, and the entry that closes by a write does so because the rule now EXISTS, not
+because the test was loosened.
+
+**★ ITEM 1's LIVE REMAINDER IS EMPTY, AND IT IS STATED BY DERIVATION RATHER THAN ASSERTED.** The
+count and the identity list are computed from the rows themselves at
+`tools/audit/decisions/finish_line_item1_routes.json`, in a block that says what it counts and what
+it excludes; no value is restated here (**D-431**). The eighth continuation established by derivation
+that the live remainder was exactly the four entries step 3 held, and these four rulings close all
+four. **An empty remainder is NOT a completion statement and is not read as one:** the other
+finish-line items are counted at `tools/audit/phase1_finish_line.json` and none of them is spoken for.
+
+**★ THE CLASSIFICATION CONFIRMS THE TWO WRITES RATHER THAN THE PROSE ASSERTING THEM.** D-515 and
+D-665 both now classify `contract-home`, each decided by the section-level unit — the delegation
+reaches §8c and it STATES RULES — which is the same mechanism Ruling 39's act finally produced for
+the five that closed at step 2: a delegation to the census reaches an entry the moment it sits in the
+census.
+
+**★ ONE DEFECT IN THIS SESSION'S OWN WORK IS RECORDED RATHER THAN SMOOTHED OVER (D-434), AND IT IS
+THE WORST KIND THIS PROJECT HAS A RULE AGAINST.** While writing D-515's provenance the session
+inserted *"★ RATIFIED (user, 2026-08-02, the phase-1h queue)"* and an `entry_ratified` field —
+**a ratification the record does not state.** The entry's own status_source says, and had always
+said, *"NOT ratified — it enters with the record's own status and goes to the user in this wave's
+ratification queue"*; the phase-1h queue ratified the census's OWN entries, and this one was entered
+by a later read wave. **It was caught within the same edit sequence, by re-reading what had just been
+written against the field it replaced, and corrected before anything downstream was regenerated** —
+the original clause is restored verbatim and no `entry_ratified` field exists. Nothing rests on it:
+the decisions register was regenerated only afterwards. It is written down because it is exactly the
+never-work-from-memory failure the conventions name, arriving by the mechanism they warn about — a
+neighbouring entry's phrasing carried across because it looked like the shape the field wanted.
+
+**Two authored inputs were maintained, each caught by its own tool's STOP rather than by a reader.**
+The legacy-mark verification STOPPED with *"the premise has changed"* on the `tools/batch_analyze.cpp`
+quote the Ruling-48 edit removed — the sixth and last site of a side finding whose other five were
+discharged one act earlier — so its row was moved WHOLE into a retired table of its own, one per act
+as the five before it are (#12, **D-648**), and the finding's own account was corrected to say it is
+now DISCHARGED WHOLE rather than that correcting it is forbidden. And the R1 superseded-reach
+application STOPPED on the three entries that entered its NO-HOME class, which is that tool's own
+guard refusing to leave an entry undecided by the ruling made for it; successor records were authored
+for all three with the reason each is there — and the reason is new to that class and is stated once:
+its existing members are there because their content is SUPERSEDED or absent, while these three are
+there because the user ruled that live, correctly recorded content **is not a rule a specification
+section states**.
+
+**Eleven register home anchors drifted** by the two census insertions and were re-aimed by
+`reaim_home_anchors.py` from its own reported lines — authored-input maintenance (**D-648**), with no
+verdict, mark, status or home moving with them.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires. **The shell-read guard PASSED in that run**, which is
+§2.14's fifth consecutive pass and is why the row records an intermittent rather than a failure.
+**One tool reported FAIL in that run and it is not a finding: `tools/open_items_split_check.py`,
+whose run OVERLAPPED this task's creation of [[OI-366]]'s detail file and index row** — the §2.3
+shape exactly, a contaminated row discarded as evidence rather than reported as a reading. Re-run
+after the edits it PASSES, bijection holding at the new count with every original item still
+byte-verbatim. Every verdict is at `tools/audit/guard_state.json` → `summary` and none is restated
+here (**D-431**).
+
+**Holds:** §1.16 — the queue's fourth extension, which awaits the user and on which no register entry
+may be written. **Surfacings:** §2.14, which is apparatus rather than analysis but is an
+establishment obligation and therefore surfaced whatever its subject.
+
+**Freeze respected in every clause except the ONE the ruling licenses:** the `tools/batch_analyze.cpp`
+comment is Ruling 48's own act, its diff verified comment-only against a git object. No `src/` change,
+no golden, no corpus of scores, no `tools/corpus/` or `tools/robust_stop/` movement, no behaviour
+change to the analysis, no fix to inference, no design. **Phase 1's completion statement is not
+written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

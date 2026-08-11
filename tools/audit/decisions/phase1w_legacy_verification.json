@@ -129,7 +129,7 @@
    "D-329",
    "D-429"
   ],
-  "register_size_at_this_tree": 664,
+  "register_size_at_this_tree": 665,
   "derivation": "every decision in backbone_decisions.json whose `legacy_subject` field is truthy; no figure in the record is used or quoted (D-431, and OI-289's own instruction to re-derive)."
  },
  "recorded_figures_that_do_not_match": [
@@ -170,7 +170,7 @@
    "recorded_figure": 75,
    "located_at": {
     "file": "STATUS.md",
-    "line": 229,
+    "line": 235,
     "line_text": "occurrences; register `--check` across 21 files; open-items living check 278/278). **NEXT: the user ratifies (or corrects) D-401…D-405 and the 75-entry LEGACY"
    },
    "note": "The phase-1i entry. Still in the live STATUS entries, not archived.",
@@ -1655,15 +1655,11 @@
  },
  "findings_rowed_elsewhere": {
   "stale_record_arm_comments": {
-   "what": "Comments in src/ and tools/ that still describe the record arm as \"default OFF\", or the record section adapter as having no src/ caller, contradicting the default at composingconfiguration.cpp:178 and their own call sites. Each is located below; correcting them is a src/ change, which this wave forbids.",
-   "count": 1,
-   "located": [
-    {
-     "file": "tools/batch_analyze.cpp",
-     "line": 4916,
-     "line_text": "// notation layer stays on the legacy analysis (its increment is the named successor)."
-    }
-   ]
+   "what": "Comments in src/ and tools/ that still describe the record arm as \"default OFF\", or the record section adapter as having no src/ caller, contradicting the default at composingconfiguration.cpp:178 and their own call sites. Each still standing is located below.",
+   "the_former_wording_preserved_12": "Its last clause read \"Each is located below; correcting them is a src/ change, which this wave forbids.\" True of the wave that wrote it and false now: the user licensed the corrections in two acts, Ruling 16 for the five under src/ and Ruling 48 for the sixth under tools/.",
+   "★_this_side_finding_is_DISCHARGED_WHOLE": "All six sites are corrected and the live list is EMPTY. The five under `src/` were corrected 2026-08-09 under the user's Ruling 16 (one comment-only `src/` commit); the sixth, under `tools/`, was corrected 2026-08-11 under the user's Ruling 48, which licensed exactly that edit because the site sat outside Ruling 16's enumerated family ONLY by living under `tools/`. Both retired tables are kept whole in this file's source rather than deleted (#12, D-648), one per act, so what the finding named survives the act that closed it. An EMPTY count here is therefore a discharge and not a search that found nothing.",
+   "count": 0,
+   "located": []
   },
   "two_annotations_contradict_the_corrected_D_428": {
    "what": "Both were written 2026-08-03 at phase 1m and both assert that the owed iteration-API renames have a subject including LIVE Layer-1.5 code. D-428 was corrected later the same day (phase 1n) against the OI-165 premise and now says every use sits on the legacy arm, so deleting that path discharges it. The correction reached the register and not these two documents.",

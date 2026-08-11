@@ -217,6 +217,65 @@ REHOMED_2026_08_09_EIGHTH_RETURN = {
     "D-614": ("cowork_score_census.md", "§8c, beside the Stage-5 fitting-pool licence constraint"),
 }
 
+# The SEVENTH per-act table, one per wave as the six before it are.  ONE entry left item 1 under the
+# user's RULING 45 (`cowork_rulings_2026_08_09_ninth_stop.md`), which is Ruling 40's step 2 reached
+# by a route step 2 could not take on its own: the eighth return HELD this entry at step 3, because
+# the census element that owns it is the needs-vector findings table AND because the generalizable
+# form of its rule was visible but authoring it would have been composing a rule the record never
+# made.  Ruling 45 is the USER MAKING that general form, which is what gives the entry a
+# rule-stating home; the rule is then written into §8c's MECHANISM in that section's own voice,
+# under the census-edit licence Ruling 40 grants and Ruling 45 extends to this one write.  The
+# needs-vector TABLE is untouched in either direction.
+REHOMED_2026_08_11_NINTH_RETURN = {
+    "D-515": ("cowork_score_census.md", "§8c, in the mechanism, at the needs-vector step"),
+}
+
+# ── RULINGS 44, 46 AND 47: THREE ENTRIES FOR WHICH NO HOME IS OWED AT ALL ────────────────────
+#
+# The eighth return HELD four census entries at Ruling 40's step 3 and reported that they are NOT
+# ONE SHAPE.  The user then ruled all four, and only ONE of them (D-515, above) closes by a write.
+# For the other three the ruling is that no specification home is owed — which is neither of the two
+# routes Ruling 38 chooses between, and is therefore recorded the way that class already is: route
+# NO HOME EXISTS, with the AUTHORED route preserved beside it (#12), and the disposition derived
+# under D-642 in `gen_r1_superseded_reach.py` where that class is dispositioned (#6).
+#
+# WHY THIS IS NOT A SESSION WIDENING THE ROUTE VOCABULARY.  The NO HOME EXISTS route already records
+# that NEITHER route applies, and each of these three rulings says exactly that in its own words.
+# What is authored here is which ruling settles which entry and on what ground — the ROUTE field is
+# an authored judgment about what work would discharge an entry, and recording a ruled outcome in it
+# is the same authored-input maintenance Ruling 38's own conversion performs one line down.
+RULED_NO_HOME_OWED_2026_08_11 = {
+    "D-516": (
+        "RULING 44 (user, 2026-08-09, `cowork_rulings_2026_08_09_ninth_stop.md`): CLOSED as an "
+        "ADOPTION EVENT; no home is owed. Its content is the needs vector's MEMBERSHIP — two "
+        "ground-truth classes admitted to it — which is an event the mechanism exists to produce "
+        "rather than a rule a section states, and both adopted rows already carry their adoption at "
+        "the §8c needs table where it happened. The 20-23 precedent governs: an event a mechanism "
+        "exists to obtain is not a rule needing a home, and inventing one writes text nothing "
+        "consumes. The entry's register record stands as the event's index, evidence-pointed at the "
+        "table."
+    ),
+    "D-475": (
+        "RULING 46 (user, 2026-08-09, same record): a STATUS-CLASS entry; no specification home is "
+        "owed. A per-corpus establishment verdict (#19) is the same KIND as supersession and "
+        "shelving — decisions-register business, per D-231's own assignment of status to the "
+        "decisions register and conformance to the specifications — so that register itself is its "
+        "home. Its evidence is "
+        "pointed at the §8c needs-vector row for dual-annotator material and at the OI-179 record, "
+        "where the verdict's route and its exhaustion rule already live. Writing a one-corpus "
+        "verdict into a rule-stating section would be the MIRROR of the error step 3 prevents."
+    ),
+    "D-613": (
+        "RULING 47 (user, 2026-08-09, same record): the entry is SPLIT, and THIS HALF owes no home. "
+        "The intake rule — what the surviving voice labels actually MEASURE must be said at intake — "
+        "became **D-665** and is homed in §8c's intake-rule block; the FACT-OF-ABSENCE half stays at "
+        "the needs-vector row that already carries it, AS EVIDENCE. That row is a findings table, "
+        "which is the step-3 STOP itself, so the half that remains here is pointed rather than "
+        "restated (#6). Two identifiers, cross-referenced both ways, every former field preserved "
+        "(#12), on the D-291/D-656 precedent the user set for a register-unit split."
+    ),
+}
+
 # ★ THE 2026-08-09 RULING — THE HOMING FORK IS RESOLVED FOR THE WHOLE REMAINING POPULATION.
 #
 # `cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38 (user).  Its words: "For every remaining
@@ -396,6 +455,11 @@ RULING_40_STEPS: dict[str, str] = {
               "founding case and is named in the approved Ruling 39 delegation wording — so the "
               "rule was written beside it, kept explicitly apart from the shipped-fitted-value "
               "prohibition it is neighbours with."),
+    # ── The four held at step 3 on 2026-08-09, each RULED by the user on the same date and
+    # ── EXECUTED 2026-08-11, cc_instruction_return_continuation_9.md Task 0.  The step-3 verdict
+    # ── is preserved whole in each cell (#12) and the ruling that closes it is recorded beneath:
+    # ── the hold is what produced the ruling, and a cell that carried only the outcome would read
+    # ── as though the procedure had reached it on its own.
     "D-515": ("STEP 3 — HELD. The owning census element is the §8c NEEDS-VECTOR TABLE, whose N20 "
               "row is what this decision creates and which already carries its adoption. A "
               "needs-vector row is a per-need STATE entry, so the table records findings and "
@@ -403,20 +467,45 @@ RULING_40_STEPS: dict[str, str] = {
               "row rather than a remark under a neighbour — is NOT written, because the record "
               "states the decision for this one need and authoring the general form would be "
               "composing a rule the record never made. Adding a rule-stating block to a findings "
-              "table is the document-structure act this ruling reserves to the user."),
+              "table is the document-structure act this ruling reserves to the user. "
+              "★ CLOSED 2026-08-11 BY THE USER'S RULING 45, and by the one act the hold left "
+              "open: the USER MAKES the general form, so it is ruled rather than composed. The "
+              "rule — a ground-truth class with a named consumer gets its own row in the needs "
+              "vector rather than a remark under a neighbouring row — is written into §8c's "
+              "MECHANISM in that section's own voice, at the needs-vector step whose maintenance "
+              "clause it extends, under the census-edit licence Ruling 40 grants and Ruling 45 "
+              "extends to this write. The KIND HALF was judged before the write: the mechanism "
+              "states what shall be done at each run and step 1 already carried a maintenance "
+              "rule for the vector. THE NEEDS-VECTOR TABLE IS UNTOUCHED in either direction, and "
+              "the entry's home and verbatim now point at the new statement with the former "
+              "fields preserved (#12). The classification confirms the close rather than the "
+              "prose asserting it."),
     "D-516": ("STEP 3 — HELD, for the same reason as D-515 and more plainly: this entry records "
               "an ADOPTION EVENT — two ground-truth classes admitted to the needs vector — and "
               "not a rule. Its content is the vector's MEMBERSHIP, the vector is the §8c findings "
               "table, and both adopted rows already carry their adoption there. There is no rule "
               "to write into a rule-stating section, and restating the table's own rows in one "
-              "would breach #6."),
+              "would breach #6. "
+              "★ CLOSED 2026-08-11 BY THE USER'S RULING 44: no home is owed, and the entry's "
+              "register record stands as the event's INDEX, evidence-pointed at the table where "
+              "the adoption happened. The 20-23 precedent governs — an event a mechanism exists "
+              "to obtain is not a rule needing a home, and inventing one writes text nothing "
+              "consumes. NOTHING IS WRITTEN into any census section, and the route below records "
+              "NO HOME EXISTS rather than a re-home that was never owed."),
     "D-475": ("STEP 3 — HELD. This is a per-corpus ESTABLISHMENT verdict (#19) about one held "
               "annotation set, and the census carries no section for it at all: the set is named "
               "nowhere in the document, and its natural census element is the §8c needs-vector "
               "row for dual-annotator material — a findings table. Writing a verdict about one "
               "corpus into a rule-stating section would be the mirror of the error step 3 "
               "prevents: a finding placed where rules are stated. The row is named and the entry "
-              "is left for the user."),
+              "is left for the user. "
+              "★ CLOSED 2026-08-11 BY THE USER'S RULING 46: it is a STATUS-CLASS entry and no "
+              "specification home is owed. A per-corpus establishment verdict is the same KIND as "
+              "supersession and shelving — register business, per D-231's own assignment of "
+              "status to the decisions register and conformance to the specifications — so that "
+              "register itself is the home. Its evidence is POINTED at the §8c needs-vector row for "
+              "dual-annotator material and at the OI-179 record, where the verdict's route and "
+              "its exhaustion rule already live. NOTHING IS WRITTEN into the census."),
     "D-613": ("STEP 3 — HELD, and the reason is a SPLIT that is not a session's to make. The "
               "entry has two halves: a fact-of-absence (implied-polyphony ground truth is "
               "confirmed absent — do not re-search) and a RULE (what the surviving voice labels "
@@ -425,7 +514,15 @@ RULING_40_STEPS: dict[str, str] = {
               "rule half would fit §8c's intake-rule block, which does state rules. Splitting "
               "one entry into two is a decision about the decisions register's own unit, which "
               "the user settled by ruling once already, at D-291/D-656, and it is not taken "
-              "here."),
+              "here. "
+              "★ CLOSED 2026-08-11 BY THE USER'S RULING 47, which takes exactly that split. The "
+              "RULE half becomes **D-665** and is written into §8c's INTAKE-RULE BLOCK as its "
+              "fourth consequence, in the section's own voice, with the kind half judged before "
+              "the write — that block opens by stating a rule and enumerates three binding "
+              "consequences. THIS ENTRY KEEPS THE FACT-OF-ABSENCE HALF, which stays at the "
+              "needs-vector row that already carries it, AS EVIDENCE — so no home is owed for it "
+              "and the route below records NO HOME EXISTS. Two identifiers, cross-referenced both "
+              "ways, every former field preserved (#12), on the D-291/D-656 precedent."),
 }
 
 
@@ -446,6 +543,13 @@ def closed_row_home(entry_id: str) -> str:
                 "three-step census procedure, by the eighth return continuation; the rule written "
                 "in the section's own voice under that ruling's census-edit licence, the kind half "
                 "judged before the write — no longer in item 1)")
+    if entry_id in REHOMED_2026_08_11_NINTH_RETURN:
+        doc, sec = REHOMED_2026_08_11_NINTH_RETURN[entry_id]
+        return (f"{doc} {sec} (re-homed 2026-08-11 under the user's Ruling 45, by the ninth return "
+                "continuation; the eighth return's step-3 HOLD is what produced that ruling — the "
+                "user made the general form of the rule, which is what gave the entry a "
+                "rule-stating home, and the rule was then written in the section's own voice with "
+                "the kind half judged before the write — no longer in item 1)")
     if entry_id in OWNER_RULED_2026_08_07_HOMING:
         return (f"{OWNER_RULED_2026_08_07_HOMING[entry_id]} (re-homed 2026-08-07 on the user's "
                 "owner ruling, the homing wave — no longer in item 1)")
@@ -1039,6 +1143,11 @@ def _was_executed(entry_id: str) -> bool:
     that any route whatever discharges it, and a later wave that re-routed one of these must not
     inherit the ruling's answer to a question it no longer asks."""
     route, owner, unambig, _ = ROUTES[entry_id]
+    if entry_id in REHOMED_2026_08_11_NINTH_RETURN:
+        # A SIXTH CASE, on the same ground as the fifth immediately below: Ruling 45's write is the
+        # re-home Ruling 38 makes the default, performed under a ruling that names the target
+        # SECTION, while the authored tuple still says NEEDS A DELEGATION because #12 keeps it there.
+        return route in (REHOME, DELEGATION)
     if entry_id in REHOMED_2026_08_09_EIGHTH_RETURN:
         # A FIFTH CASE, on the same ground as the fourth immediately below: Ruling 40's STEP 2 is
         # the re-home Ruling 38 makes the default, performed under a ruling that names the target
@@ -1152,6 +1261,24 @@ def build() -> dict:
                     "ruling settles which of two available routes is the default; it creates none "
                     "where the record says there is none. Dispositioned under D-642 at "
                     "tools/audit/decisions/r1_superseded_reach.json.")
+            # Rulings 44, 46 and 47 — three entries for which NO HOME IS OWED. Applied AFTER
+            # Ruling 38's conversion and preserving what that conversion recorded (#12), because
+            # the two are different acts: 38 chose between the two available routes for the whole
+            # class, and these three rulings say that for this entry NEITHER applies. A row that
+            # loses its ruling here would fall back to the ruled default, which is the reason the
+            # override is written rather than the authored tuple being edited.
+            if i in RULED_NO_HOME_OWED_2026_08_11:
+                row["route_before_the_2026_08_11_rulings"] = row["route"]
+                row["route"] = NO_HOME
+                row["ruled_no_home_owed_by"] = RULED_NO_HOME_OWED_2026_08_11[i]
+                row["what_that_does_NOT_say"] = (
+                    "That the census is the wrong owner, or that Ruling 39's act is disturbed. The "
+                    "owner question stays RULED. What each of these three rulings settles is that "
+                    "this entry's content is not a rule a specification section states — an "
+                    "adoption event, a status-class verdict, and the evidence half of a split — so "
+                    "the closing act is a record rather than a write. Its disposition is derived "
+                    "under D-642 at r1_superseded_reach.json, where the NO HOME EXISTS class is "
+                    "dispositioned (#6).")
             # Ruling 39, the census exception. The membership is DERIVED from the authored owner
             # string rather than listed by hand, so a row that later gains or loses the census as
             # its owner joins or leaves this set by itself.
@@ -1383,6 +1510,71 @@ def build() -> dict:
                 "Any fix to the analysis, any design, any inference change. Phase 1 (D-231) "
                 "remains open and #8's three-clause gate stands.",
             ],
+        },
+        "★_the_2026_08_11_rulings_that_close_the_four_the_procedure_HELD": {
+            "recorded_by": "cc_instruction_return_continuation_9.md Task 0",
+            "the_rulings": (
+                "User, 2026-08-09, Rulings 44-47 of `cowork_rulings_2026_08_09_ninth_stop.md`, "
+                "taken after the eighth return continuation put the four held entries to them "
+                "individually with their alternatives. Executed 2026-08-11."
+            ),
+            "★_the_hold_is_what_produced_them_and_that_is_the_result": (
+                "Ruling 40's step 3 exists to stop a rule being written into a findings table by "
+                "stretch. It fired for four entries and the eighth return reported that they are "
+                "NOT ONE SHAPE. All four rulings agree with that reading and NONE of them widens "
+                "step 3: three settle that no home is owed at all, and the fourth closes by the "
+                "one act the hold left open — the USER makes the general form of the rule, which "
+                "a session could not compose. So the procedure's STOP is confirmed rather than "
+                "relaxed, and the entry that closes by a write does so because the rule now "
+                "EXISTS, not because the test was loosened."
+            ),
+            "per_entry": {
+                "D-515": "RULING 45 — the user makes the general form; the rule is written into "
+                         "§8c's mechanism and the entry homes on it. The ONE write.",
+                "D-516": "RULING 44 — closed as an adoption event; no home owed, evidence pointed "
+                         "at the needs table.",
+                "D-475": "RULING 46 — a status-class entry; no specification home owed, evidence "
+                         "pointed at the needs row and the OI-179 record.",
+                "D-613": "RULING 47 — SPLIT: the intake-rule half becomes D-665 and is written "
+                         "into §8c's intake-rule block; this half keeps the identifier, stays at "
+                         "the needs-vector row as evidence, and owes no home.",
+            },
+            "what_these_rulings_do_NOT_authorize": [
+                "Any edit to a census FINDINGS TABLE, in either direction. The needs vector is "
+                "untouched by all four.",
+                "Any census edit for an entry outside the two writes Rulings 45 and 47 name.",
+                "Any fix to the analysis, any design, any inference change. Phase 1 (D-231) "
+                "remains open and #8's three-clause gate stands.",
+            ],
+        },
+        "★_item_1s_LIVE_REMAINDER_derived_rather_than_asserted": {
+            "what_this_counts": (
+                "Open rows of item 1 that carry an ACTIONABLE closing route — that is, every row "
+                "still in the item whose route is not NO HOME EXISTS. The NO HOME EXISTS rows are "
+                "excluded because they record that NEITHER route applies, and they are "
+                "dispositioned under D-642 at r1_superseded_reach.json rather than owed an act "
+                "here (#6)."
+            ),
+            "why_it_is_computed_rather_than_stated": (
+                "The eighth return continuation established by derivation that item 1's live "
+                "remainder was exactly the four entries Ruling 40's step 3 held. Rulings 44-47 "
+                "close all four. Whether that empties the item is a fact about the rows, so it is "
+                "computed here from them and not asserted in prose."
+            ),
+            "count": len([r for r in rows
+                          if not r["closed_by_this_wave"]
+                          and not r.get("discharged_by_the_entry_level_re_cut")
+                          and r["route"] != NO_HOME]),
+            "ids": sorted(r["id"] for r in rows
+                          if not r["closed_by_this_wave"]
+                          and not r.get("discharged_by_the_entry_level_re_cut")
+                          and r["route"] != NO_HOME),
+            "what_an_EMPTY_remainder_does_and_does_not_mean": (
+                "It means item 1 carries no entry with an act still owed on it. It does NOT mean "
+                "the finish line is closed, and it is not a completion statement: the other items "
+                "are counted at tools/audit/phase1_finish_line.json and none of them is spoken "
+                "for here (D-431)."
+            ),
         },
         "★_findings_the_classification_produced": {
             "1_C1_reaches_entries_whose_re_homing_#6_would_FORBID": (

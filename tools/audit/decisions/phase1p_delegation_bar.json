@@ -27,13 +27,13 @@
     }
   },
   "population": {
-    "entries": 189,
+    "entries": 190,
     "documents": 38,
     "note": "the register's `contract-home` + `gap` entries — the classes the criterion reaches. `process`, `project-convention` and `unhomed` are outside it."
   },
   "verdict_totals": {
-    "ADMIT": 151,
-    "EXCLUDE": 38
+    "ADMIT": 153,
+    "EXCLUDE": 37
   },
   "retired_form_judgments": {
     "what_this_is": "FORM judgments for documents that are NOBODY'S HOME any more, every entry they held having been re-homed into the specification that owns its subject. Each judgment records a READING made at a surface, which no derivation reproduces, so it is moved WHOLE rather than deleted (#12). It is carried here as history: nothing counts it, no verdict reads it, and `mentions()` does not re-verify it.",
@@ -276,7 +276,7 @@
   "documents": [
     {
       "document": "cowork_score_census.md",
-      "entries": 22,
+      "entries": 24,
       "entry_ids": [
         "D-359",
         "D-360",
@@ -299,10 +299,12 @@
         "D-500",
         "D-513",
         "D-514",
-        "D-614"
+        "D-515",
+        "D-614",
+        "D-665"
       ],
       "current_contract_home": 11,
-      "current_gap": 11,
+      "current_gap": 13,
       "form": "explicit-delegation-clause",
       "delegation_citation": "ARCHITECTURE.md:370",
       "form_now": "explicit-delegation-clause",
@@ -1067,29 +1069,6 @@
       "mentions_in_ratified_surfaces": []
     },
     {
-      "document": "cowork_census_full_needs_audit.md",
-      "entries": 2,
-      "entry_ids": [
-        "D-515",
-        "D-516"
-      ],
-      "current_contract_home": 0,
-      "current_gap": 2,
-      "form": "not-named-in-any-ratified-surface",
-      "delegation_citation": null,
-      "form_now": "not-named-in-any-ratified-surface",
-      "delegation_citation_now": null,
-      "delegation_line_now": null,
-      "delegation_written_since_the_check": false,
-      "what_the_naming_was_at_the_check": null,
-      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
-      "verdict": "EXCLUDE",
-      "verdict_now": "EXCLUDE",
-      "movement": "none",
-      "decided_by_the_bar": false,
-      "mentions_in_ratified_surfaces": []
-    },
-    {
       "document": "cowork_layer1_tone_collection_design.md",
       "entries": 2,
       "entry_ids": [
@@ -1162,6 +1141,28 @@
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:79"
       ]
+    },
+    {
+      "document": "cowork_census_full_needs_audit.md",
+      "entries": 1,
+      "entry_ids": [
+        "D-516"
+      ],
+      "current_contract_home": 0,
+      "current_gap": 1,
+      "form": "not-named-in-any-ratified-surface",
+      "delegation_citation": null,
+      "form_now": "not-named-in-any-ratified-surface",
+      "delegation_citation_now": null,
+      "delegation_line_now": null,
+      "delegation_written_since_the_check": false,
+      "what_the_naming_was_at_the_check": null,
+      "why_this_grade_now": "Named in none of the three surfaces; verified mechanically here.",
+      "verdict": "EXCLUDE",
+      "verdict_now": "EXCLUDE",
+      "movement": "none",
+      "decided_by_the_bar": false,
+      "mentions_in_ratified_surfaces": []
     },
     {
       "document": "cowork_factorization_desk_simulation.md",
@@ -1395,8 +1396,8 @@
   },
   "census_8c_mixed_section": {
     "needs_vector_table": {
-      "first_row_line": 244,
-      "last_row_line": 263,
+      "first_row_line": 259,
+      "last_row_line": 278,
       "row_count": 20
     },
     "admitted_in_8c": [
@@ -1411,7 +1412,9 @@
       "D-373",
       "D-374",
       "D-375",
-      "D-614"
+      "D-515",
+      "D-614",
+      "D-665"
     ],
     "of_those_rows_of_the_findings_table": [
       "D-366",
@@ -1427,7 +1430,9 @@
       "D-365",
       "D-367",
       "D-368",
-      "D-614"
+      "D-515",
+      "D-614",
+      "D-665"
     ],
     "note": "Task 1's figure. The phase-1n note on `open_items/OI-281.md` (§4) and the phase-1n `STATUS.md` entry both say NINE of the eleven are rows of the table; derived from the file the count is what `of_those_rows_of_the_findings_table` holds."
   }

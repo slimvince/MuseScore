@@ -239,6 +239,21 @@ the audit's updates, marked *(audit)*.
 **The mechanism (run at natural checkpoints; first run = at Wave-3 scoping, BEFORE its disposition):**
 1. **The needs-vector (maintained here; §8b's trigger adds a row per new purpose):**
 
+   **★ AND WHAT EARNS A ROW: A GROUND-TRUTH CLASS WITH A NAMED CONSUMER GETS ITS OWN ROW IN THIS
+   VECTOR, NEVER A REMARK UNDER A NEIGHBOURING ROW** (user-ruled 2026-08-09). A class the project
+   can name a consumer for is tracked as a need in its own right; recording it as a remark inside
+   the cell of some adjacent need does not track it. *Why, in this section's own terms:* steps 2 and 3
+   below both operate on **columns** — the audit re-scores every enumerated row against the needs
+   COLUMNS, and the union search round searches only for the columns still uncovered — so a need
+   written as a remark inside a neighbour's cell is invisible to the two mechanisms that exist to
+   find its material, and the enumeration silently stops being the union of needs it is named for.
+   The second half of the ground is the one the user gave when this was first decided for a single
+   need: a row of its own can improve inference precision and nothing is lost by adding it, which is
+   principle #12 applied to the tracking surface itself. **The converse is not implied and is not
+   ruled here:** a class with no consumer the project can name is not thereby excluded — what fixes
+   the vector's membership is §8b's trigger and the audit, and this rule settles only how an
+   admitted class is recorded.
+
 | # | need (GT/material class) | consumer | state (2026-07-03; *(audit)* = updated 2026-07-04) |
 |---|---|---|---|
 | N1 | common-practice RN/harmony GT, score-aligned, human | gate, Stage-5 fitter | well-covered (DLC/WiR) |
@@ -310,6 +325,16 @@ the FULL needs-vector at intake**, never single-purpose-tagged. Three consequenc
    founding counter-example: the JHT entered for the harmonic idiom study and its hierarchical TREE annotations
    (a distinct GT layer, lever R-7's footing) went unrecorded until a different question was asked at it a week
    later. The registry's per-row needs-coverage note (audit step 2) is where the intake scoring lands.
+4. **What a voice/stream label set actually MEASURES is said at intake** (user-ruled 2026-08-09) — the
+   voice labels obtainable today are derived from **engraved notation**, not from a listener's
+   judgment about heard lines, and the intake record says so in those terms. For keyboard music the
+   engraved voice is close enough to the inference target that the field works with it, and that
+   acceptance is itself recorded rather than left unsaid. *Why:* the two are not the same quantity —
+   a label taken from the engraving measures the engraver's decision, and a consumer that needs
+   heard streams would be graded against something else without being told. It is principle #21 at
+   the intake point: ground truth is itself a measurement tool, so what it measures is established
+   before it bears load (#19), and the establishment status a published evidence fact must carry is
+   exactly this kind of statement.
 
 **The supersession decision protocol (user, 2026-07-03 — what happens when a find serves an already-passed
 need):** a "go back and rework now" vs "postpone" question is NEVER decided by enthusiasm or by default silence.
