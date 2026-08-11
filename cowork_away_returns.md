@@ -3909,6 +3909,92 @@ refuses.
 this item's derivation running does not change that: it is one item of nine, and the finish line's own
 count of what remains is derived at `tools/audit/phase1_finish_line.json` (**D-431**).
 
+### Task 1 — COMPLETE. The §11 register event: THREE entries, one upgrade TAKEN and one DECLINED in the same act, and the queue extended a fifth time
+
+**The start state was derived at the artifacts before any act (A5), not carried from the dispatch.**
+The queue's §11 was read whole at its own file; the register's highest identifier was read at the
+register data; the two receiving sections were read in place before either write. No count is
+restated here (**D-431**).
+
+**A2 HOLDS, and the kind half was judged at each home BEFORE the entry was written.**
+`CLAUDE.md`'s decisions-register section states its rules as a lettered list this act adds to, and
+`cowork_audit_protocol.md`'s dispatch-protocol block says in its own opening that what follows are
+rules governing every dispatch, every existing subsection stating one with its ruling and its
+defense. **No home failed its check, so the STOP the assumption reserves did not fire.**
+
+**What was written, in ONE commit.**
+
+1. **Ruling 44 → D-666**, at `CLAUDE.md`'s decisions-register section as **rule (m)** — the next
+   letter of that section's own lettered list, which is the section's scheme and not an invented
+   one. An event a standing mechanism exists to produce is not a rule needing a home; the entry
+   closes as the event, its evidence pointed at the surface the mechanism wrote to.
+2. **Ruling 46 → D-667**, the same section, as **rule (n)**. A per-corpus establishment verdict is a
+   STATUS, so this register is its home — **with the converse carried, because it is the half that
+   binds hardest:** writing a one-corpus verdict INTO a rule-stating section is the mirror of the
+   error the homing procedure's findings-table STOP prevents.
+3. **Ruling 40's UPGRADE → D-668**, at `cowork_audit_protocol.md`'s homing-under-difficulty family,
+   beside the shelving form and the verbatim-comparison condition. The ORDER a homing act tests a
+   section in, the kind half judged per section BEFORE any write, and the findings-table STOP.
+
+**★ THE ONE UPGRADE TAKEN AND THE ONE DECLINED SIT IN THE SAME RULING, AND THAT IS THE RESULT WORTH
+READING.** The queue put Ruling 40 both ways and Ruling 45 both ways. **40's upgrade is TAKEN on a
+ground the queue had not fully stated** — the procedure's only carrier was a generator's own text
+that no future homing act elsewhere would find, so registering it is the insurance logic rather than
+an exception to it. **45's upgrade is DECLINED on #6** — the user making a general form is what user
+rulings ARE, and the session-may-not-compose half is standing law already carried. **Two directions,
+one act:** the keep-the-insurance ground prevents a proposed decision being DOWNGRADED and does not
+manufacture an entry for content already carried, and this is the first act in the arc that
+exercises both halves of that at once.
+
+**★ WHAT THE ENTRY DELIBERATELY DOES NOT CARRY, and it matters for the one that is a procedure.**
+Ruling 40 had two halves — an ORDER that binds every homing act, and a census-edit LICENCE scoped to
+nine named entries. **Only the order, the kind-half timing and the STOP are registered.** The licence
+is exercised and expired; carrying it into a live rule would read as a standing permission to edit a
+corpus document, which no ruling gives. **No new entry carries an entry-ratification event** (#14):
+the user ruled the classification and the home, and the entry text was written afterwards.
+
+**The queue gains §12 and §13, and nothing above §12 is altered (#12).** §12 is its fourth closing
+state — the three entries with their homes, the upgrade taken with its ground, the upgrade declined
+with its ground, and the six exercises confirmed. §13 classifies Rulings 49–51 by the same
+derivation that built §2 and extended it four times, each from its own text with the carrier read
+whole (**D-643**): **two proposed as DECISIONS, both flagged reasonably downgradable with the
+downgrade reading in one line, and one as an EXERCISE. No register entry is written for any of
+them** and none may be until the user rules.
+
+**★ THE SHAPE THE EXTENSION EXPOSED, which is new rather than a repetition.** Five batches have now
+found that the rulings which unblock the most work bind nothing, while what binds rides alongside.
+**What is new here is the SUBJECT: both proposed decisions are about HOW AN ACT IS SEQUENCED** — a
+maintenance act establishing its cause before touching a mechanism, and a task that cannot stop
+partway being dispatched first. Every entry this arc has written so far answers *where a decision
+goes*; these two answer *in what order an act is performed*, which the record has been carrying in
+dispatch prose and generator comments.
+
+**One authored input was maintained, caught by its own tool's STOP rather than by a reader.** The
+`CLAUDE.md` rule triage stopped the moment the two new rules landed — the shape that tool's own
+reading file states in general terms, since every homing wave into that document adds a member and
+cannot supply its own verdict. **KNOWLEDGE verdicts were authored for both, with their grounds**,
+and the ground is the same in both cases and is worth stating once: the antecedent is a READING of
+what an entry says — is this content an event or the rule the mechanism operates under; is this
+verdict an establishment verdict about one corpus — and no property of the text carries it. **The
+defect class does not move.** Forty register home anchors drifted by the two insertions and were
+re-aimed from the tool's own reported lines (**D-648**), with no verdict, mark, status or home
+moving with them.
+
+**★ THE SAME INSTRUCTION AS EVERY PREVIOUS CONTINUATION COULD NOT BE PERFORMED AND IS NAMED RATHER
+THAN QUIETLY DROPPED.** The dispatch orders itself staged with this record. **The ruling record
+`cowork_rulings_2026_08_11_tenth_stop.md` IS staged; the dispatch is not** — `/cc_instruction_*.md`
+is matched by this repository's `.gitignore`, checked at that file this session rather than carried
+from the earlier reports that say so, and forcing it in would override a standing repository
+configuration decision that is not a session's to take.
+
+**Holds:** none new; the queue's §13 awaits the user, which is what an extension is.
+**Surfacings:** none — every subject of this task is the record's own bookkeeping and the rulings
+that govern it.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

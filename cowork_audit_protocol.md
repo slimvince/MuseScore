@@ -741,6 +741,47 @@ about to be retired into it. Without the condition in the record, the next sessi
 same-dated texts has only the temptation to tidy them into one; without the remedy beside it, a
 session that runs the test correctly is left with a STOP and no form to write the answer in.
 
+### A homing act tests a section in a FIXED ORDER — pointer move first, kind half before any write — and a findings-recording owner means HELD, never written by stretch
+
+**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49, taking the
+upgrade reading of Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`). Same family as the two
+forms above, and the one they leave out: those say HOW to write a decision into a section that will
+not take the plain form, and this says **in what order a homing act tests a section at all, and what
+happens when the test fails.**
+
+**THE ORDER, and it is an order rather than a set of considerations.**
+
+1. **Where the owning section ALREADY STATES the entry's rule, the pointer moves and nothing is
+   written.** The entry's home field moves to that section, its verbatim re-taken from that section's
+   own text, every former field preserved (#12), zero text movement. **This step is tried FIRST and
+   for every entry**, because a write that was not needed is a second statement of a homed rule (#6).
+2. **Else, where the owning section STATES RULES, the rule is written there in that section's own
+   voice**, with its defense, under whatever licence the act carries.
+3. **Where the owning section RECORDS FINDINGS, the entry is HELD, with its row named.** Adding a
+   rule-stating block to a findings table is a document-structure act, and it is reserved to the
+   user.
+
+**THE KIND HALF IS JUDGED PER SECTION AND BEFORE ANY WRITE**, with its evidence written down rather
+than asserted — form first, kind second and last, which is the register's own precedence. **An entry
+fitting none of the three steps is a STOP back to the user, never a judgment.**
+
+*Why the order is load-bearing and not a description of good practice:* each step exists against a
+different failure. Step 1 first, because the cheapest correct act is the one that moves no text, and
+a session that starts at step 2 writes a rule that was already written. The kind half BEFORE the
+write, because a section judged after the fact is judged by a reader who has already written into
+it. And step 3 rather than a widened step 2, because the temptation at a findings table is exactly
+to argue the table into a rule-stating section — the stretch that makes a mechanical test a matter
+of taste.
+
+*The evidence that it earns its place:* applied over one document's whole set, **step 1 closed
+nothing**, with two near-misses recorded as checked-and-declined — a citation of a ratification by
+date while stating something else, and a sentence stating a decision's FACT but not its CONSEQUENCE —
+either of which a looser reading would have taken. **Step 3 then fired for four entries that turned
+out not to be one shape**, and the user's own rulings on all four confirmed the STOP rather than
+relaxing it: three needed no home at all, and the fourth closed by a write only because the user
+MADE the general rule a session may not compose. A procedure whose STOP is confirmed by every case
+it stopped on is not a formality.
+
 ### Where the record does not settle the question, the surface that returns it to the user gathers FACTS and makes NO recommendation
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 27), on the

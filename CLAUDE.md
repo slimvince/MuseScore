@@ -439,6 +439,40 @@ does NOT settle:** it chooses between two AVAILABLE routes and creates neither w
 there is none — an entry whose live content is already carried by a homed successor is not re-homed,
 because that would put a second copy of a homed rule (#6), and an entry with no decision content to
 write has nothing to re-home. That class stays dispositioned where it already was.
+**(m) AN EVENT A MECHANISM EXISTS TO PRODUCE IS NOT A RULE NEEDING A HOME (user-ruled 2026-08-11;
+the ruling record is `cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49, taking Ruling 44 of
+`cowork_rulings_2026_08_09_ninth_stop.md`).** Rule (l) chooses between two available closing routes.
+This is the neighbouring case it does not reach: an entry for which **neither route is owed, because
+there is no rule to write at all.** **Where a register entry's whole content is an EVENT that a
+standing mechanism exists to produce and has produced — an adoption, an admission, a membership
+gained — the entry is CLOSED as that event, its register record standing as the event's index with
+its evidence POINTED at the surface where the mechanism recorded it. No specification home is owed,
+and inventing one is forbidden.** *Why:* writing such an entry into a rule-stating section produces
+text nothing consumes, and it restates on a second surface what the mechanism's own output already
+carries, which is what #6 forbids. The test is the one the words above state — **does a mechanism
+exist whose ordinary operation produces this, and did it?** — so the class is recognised rather than
+argued: an adoption event has an adopting mechanism and a table it wrote to, and an entry with
+neither is not in this class. **What (m) does NOT reach:** an entry whose content is a RULE the
+mechanism operates under, which is a rule and is homed like any other; and an entry whose content is
+SUPERSEDED, which the supersession route already disposes. *Founding instance, and the reason the
+clause is general rather than one entry's treatment:* three separate waves held entries they could
+not place, and one of them turned out to have nothing to write — the needs vector's membership,
+already carried at the table the adoption happened in.
+**(n) A PER-CORPUS ESTABLISHMENT VERDICT IS A STATUS, SO THE DECISIONS REGISTER IS ITS HOME
+(user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49,
+taking Ruling 46 of `cowork_rulings_2026_08_09_ninth_stop.md`).** The phase-1 rule assigns STATUS to
+this register and CONFORMANCE to the specifications; it does not say which of the two an
+establishment verdict is, and this fixes it. **An establishment verdict (#19) about ONE corpus, one
+measurement tool or one gate — that it is established, or that it is not, or that the route to
+establishing it is exhausted — is the same KIND as supersession and shelving: register business.
+Its home is this register itself, its evidence pointed at the record that measured it. No
+specification home is owed.** **The converse binds equally and is the half worth reading:** writing
+a one-corpus verdict INTO a rule-stating section is the mirror of the error the homing procedure's
+findings-table STOP prevents — a section that states what shall be would then carry a dated finding
+about one held collection, and a later reader would take the finding for the rule. *Why the line
+falls at the KIND rather than at the subject:* a verdict about a corpus and a supersession about an
+entry are both statements about the STANDING of something the record holds, which is what this
+register is for; the rule the verdict bears on is elsewhere and is unmoved by it.
 
 **★ HOW RULE (c) IS DISCHARGED ONCE IT HAS ALREADY BEEN MISSED (user-ruled 2026-08-09; the ruling
 record is `cowork_rulings_2026_08_09_second_stop.md`, Ruling 12).** Rule (c) says a new ratification,

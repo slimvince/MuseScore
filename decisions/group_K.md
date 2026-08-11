@@ -179,7 +179,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `CLAUDE.md:1088`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1122`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
@@ -202,7 +202,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:1286`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1320`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:821-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
@@ -219,7 +219,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1282`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1316`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:817-811, user-directed repeatedly and recorded 2026-07-11.
 
@@ -245,7 +245,7 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:1362`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1396`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:873-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
@@ -556,7 +556,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `CLAUDE.md:443-457`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:477-491`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 12 of `cowork_rulings_2026_08_09_second_stop.md` ("Agree with updated recommendations"), whose queue was drafted by `cc_instruction_return_continuation_2.md` Task 1 and extended by `cc_instruction_return_continuation_3.md` Task 0. CLASSIFIED as a DECISION by the user's Ruling 20 of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`), queue entry 12, which the queue itself put BOTH WAYS with the downgrade reading given — that as a procedure it is the author-then-review pattern again — and which the user ruled KEPT as a decision, the cheaper insurance. Homed by that same ruling in `CLAUDE.md`'s decisions-register section beside rule (c), the site the queue named; it is written as a marked block at the end of that section, which is the idiom that section already uses for a clause qualifying one of its lettered rules. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-230 (rule (c) itself), D-655 (the other clause that governs when a register-clearing act may be performed).
 
@@ -600,7 +600,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `CLAUDE.md:1337-1348`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:1371-1382`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 30 of `cowork_rulings_2026_08_09_fifth_stop.md`, whose two-tier test for research-tied names is the user's own; recorded on `OPEN_ITEMS.md` OI-229's row by `cc_instruction_return_continuation_5.md` Task 0, which stays OPEN because the cleanup itself is not done. CLASSIFIED as a DECISION by the user's Ruling 36 of 2026-08-09 (`cowork_rulings_2026_08_09_sixth_stop.md`), queue §7 entry 30, on the ground that nothing in the register says what a session may do with a research-tied name while #1/#2 make those names load-bearing. Homed by that same ruling in `CLAUDE.md`'s Conventions reserved-word block beside the disambiguation convention — the site the queue named, and a USER-ONLY text the ratification is the scoped licence for — written in that block's own voice, provenance here and never in the convention text. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-113 (the reserved-vocabulary convention it completes), D-661 (the completeness rule governing the inventory it orders), D-431 (why the inventory's counts stay in the artifact).
 
@@ -650,4 +650,48 @@
 **Home.** `CLAUDE.md:420-431`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`, recorded at the finish-line route machinery by `cc_instruction_return_continuation_6.md` Task 0 and exercised once, at Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`, whose predicted outcome was then refuted by measurement and replaced by the three-step procedure of Ruling 40. CLASSIFIED as a DECISION by the user's Ruling 42 of 2026-08-09 (`cowork_rulings_2026_08_09_eighth_stop.md`), queue §9 entry 38 — the ONLY entry that ruling creates; Rulings 36, 37 and 39 stand as EXERCISES and BOTH offered upgrade readings are DECLINED on #6, 37's binding clause being already register data at D-661 with its dispositions on OI-229's row, and 39's decision content being the delegation itself, homed where the user wrote it in `ARCHITECTURE.md`. Homed by that same ruling in `CLAUDE.md`'s decisions-register section beside rule (g), as rule (l) — a USER-ONLY text the ratification is the scoped licence for; the queue's stated alternative home, `cowork_audit_protocol.md` beside D-642, was NOT taken because rules (g)–(k) there are the register's own home rules and this is the one they lack. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14) — the user ruled the classification and the home, and the entry text was written afterwards. Cross-ref D-230 (the register's rules (a)–(e), which rule (e)'s preference this makes a rule), D-432 (the delegation bar whose excluded forms define half the population), D-435 (delegating and being a home as different tests), D-642 (the class where NEITHER route applies, which this rule does not reach), D-654 (the narrow-letter licensing default the exception mechanism is a special case of).
+
+### D-666 — An event a mechanism exists to produce is not a rule needing a home — the entry closes as the event, its evidence pointed at the surface the mechanism wrote to
+
+> **(m) AN EVENT A MECHANISM EXISTS TO PRODUCE IS NOT A RULE NEEDING A HOME (user-ruled 2026-08-11;
+> the ruling record is `cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49, taking Ruling 44 of
+> `cowork_rulings_2026_08_09_ninth_stop.md`).** Rule (l) chooses between two available closing routes.
+> This is the neighbouring case it does not reach: an entry for which **neither route is owed, because
+> there is no rule to write at all.** **Where a register entry's whole content is an EVENT that a
+> standing mechanism exists to produce and has produced — an adoption, an admission, a membership
+> gained — the entry is CLOSED as that event, its register record standing as the event's index with
+> its evidence POINTED at the surface where the mechanism recorded it. No specification home is owed,
+> and inventing one is forbidden.**
+
+**In plain words.** Some register entries record that something HAPPENED rather than stating a rule — a ground-truth class admitted to a needs list, an adoption, a membership gained — and the thing that produced the event is a mechanism the project already runs, which wrote the event down where it happened. Such an entry is closed as the event it is: the register record is its index, its evidence points at that surface, and no specification section is owed one. Writing one would be inventing text nothing reads.
+
+**Why.** Writing an adoption event into a rule-stating section produces text nothing consumes and restates on a second surface what the mechanism's own output already carries, which is what #6 forbids. The test is stated in the rule itself so the class is recognised rather than argued — does a mechanism exist whose ordinary operation produces this, and did it? — and the rule states its own two exclusions, a RULE the mechanism operates under and content that is SUPERSEDED. It is general rather than one entry's treatment because three separate waves held entries they could not place, and the founding one turned out to have nothing to write at all: the needs vector's membership, already carried at the table the adoption happened in.
+
+**Status.** LIVE · decided 2026-08-11 · ratified by user
+
+**Home.** `CLAUDE.md:442-460`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-11, Ruling 49 of `cowork_rulings_2026_08_11_tenth_stop.md`, which ratifies the registration queue's §11 and takes Ruling 44 of `cowork_rulings_2026_08_09_ninth_stop.md` as a register entry as proposed. Applied by `cc_instruction_return_continuation_10.md` Task 1. The ruling's own ground for the class is the 20–23 precedent: an event a mechanism exists to obtain is not a rule needing a home, and inventing one writes text nothing consumes. Homed by that same ruling in `CLAUDE.md`'s decisions-register section beside rule (l), as rule (m) — the next letter of that section's own lettered list, which is the section's scheme and not an invented one, and a USER-ONLY text the ratification is the scoped licence for; the queue's stated alternative home, `cowork_audit_protocol.md` beside D-642, was NOT taken because rules (g)–(m) there are the register's own home rules and this is one of them. THE KIND HALF WAS JUDGED BEFORE THE WRITE: the receiving section states its rules as a lettered list this act adds to. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14) — the user ruled the classification and the home, and the entry text was written afterwards. Cross-ref D-664 (rule (l), the default route this is the neighbouring case of), D-667 (the sibling ruled in the same act, the other half of what the homing obligation does NOT reach), D-642 (the class where NEITHER route applies, which this rule sharpens rather than replaces), D-516 (the founding instance, closed as an adoption event), D-668 (the homing procedure whose findings-table STOP produced the hold this answers).
+
+### D-667 — A per-corpus establishment verdict is a STATUS, so the decisions register is its home — and writing one into a rule-stating section is the mirror of the findings-table error
+
+> **(n) A PER-CORPUS ESTABLISHMENT VERDICT IS A STATUS, SO THE DECISIONS REGISTER IS ITS HOME
+> (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49,
+> taking Ruling 46 of `cowork_rulings_2026_08_09_ninth_stop.md`).** The phase-1 rule assigns STATUS to
+> this register and CONFORMANCE to the specifications; it does not say which of the two an
+> establishment verdict is, and this fixes it. **An establishment verdict (#19) about ONE corpus, one
+> measurement tool or one gate — that it is established, or that it is not, or that the route to
+> establishing it is exhausted — is the same KIND as supersession and shelving: register business.
+> Its home is this register itself, its evidence pointed at the record that measured it. No
+> specification home is owed.**
+
+**In plain words.** When the record settles whether one particular corpus, measurement tool or gate is established — or that the route to establishing it has been exhausted — that verdict is a statement about standing, of the same kind as saying a decision is superseded or shelved. It belongs in the decisions register, with its evidence pointing at whatever measured it, and no specification section is owed one. Putting a verdict about one collection into a section that states rules would leave a later reader taking the finding for the rule.
+
+**Why.** The phase-1 rule assigns status to this register and conformance to the specifications but never says which of the two an establishment verdict is; the ruling makes that identification, and it decides every future #19 verdict about a corpus, a measurement tool or a gate rather than the one it was taken on. Its converse carries its own ground and is stated with it: writing a one-corpus verdict into a rule-stating section is the mirror of the error the homing procedure's findings-table STOP exists to prevent. The line falls at the KIND rather than at the subject because a verdict about a corpus and a supersession about an entry are both statements about the STANDING of something the record holds, while the rule the verdict bears on lives elsewhere and is unmoved by it.
+
+**Status.** LIVE · decided 2026-08-11 · ratified by user
+
+**Home.** `CLAUDE.md:461-475`  — a decision about how the work is done, not about the system; this is its correct home.
+
+**Provenance.** User ruling of 2026-08-11, Ruling 49 of `cowork_rulings_2026_08_11_tenth_stop.md`, which ratifies the registration queue's §11 and takes Ruling 46 of `cowork_rulings_2026_08_09_ninth_stop.md` as a register entry as proposed. Applied by `cc_instruction_return_continuation_10.md` Task 1. Homed by that same ruling in `CLAUDE.md`'s decisions-register section beside rule (l) and beside D-666, as rule (n) — the next letter of that section's own lettered list, and a USER-ONLY text the ratification is the scoped licence for; the queue's stated alternative home beside principle #19 was NOT taken, because #19 states what establishment IS and this states where a verdict about it is RECORDED, which is decisions-register business. THE KIND HALF WAS JUDGED BEFORE THE WRITE: the receiving section states its rules as a lettered list this act adds to. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14) — the user ruled the classification and the home, and the entry text was written afterwards. Cross-ref D-666 (the sibling ruled in the same act), D-664 (rule (l), the default route neither reaches), D-475 (the founding instance, a per-corpus establishment verdict recorded as status-class), D-668 (the homing procedure whose step-3 STOP this converse mirrors), D-231 (the phase-1 rule that assigns status here and conformance to the specifications).
 

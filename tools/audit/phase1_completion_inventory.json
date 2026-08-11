@@ -215,12 +215,12 @@
  },
  "the_complete_half": {
   "criterion": "C1 and C2",
-  "register_population": 665,
+  "register_population": 668,
   "by_home_class": {
    "contract-home": 161,
    "gap": 29,
    "homed-in-a-layer-specification": 297,
-   "process": 132,
+   "process": 135,
    "project-convention": 45,
    "unhomed": 1
   },
@@ -1892,7 +1892,7 @@
    "it_is_a_template_the_generator_fills": true,
    "the_unresolved_figure_it_hand_carries": [],
    "the_figure_the_same_file_computes": 2644,
-   "the_backbone_the_committed_layer_was_derived_at": 665,
+   "the_backbone_the_committed_layer_was_derived_at": 668,
    "verdict": "TRUE AT HEAD. The field carries no hand-written figure: it is a template whose every figure `gen_decisions_register.py` fills from the same computed data it renders the coverage table from, and an unfilled placeholder stops that generator (#17f / D-431)."
   },
   "statement_3_the_home_granularity_claim": {
@@ -1918,8 +1918,8 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 635,
-    "of": 665
+    "count": 638,
+    "of": 668
    },
    {
     "fact": "Every harvested cluster carries a recorded disposition at the committed artifact, so no harvested statement was silently passed over.",
@@ -2054,7 +2054,7 @@
   "how_to_read_it": "The derivation is the answer; this block measures the recollection against it. A recollected row that the derivation does not carry is not thereby wrong - it may be outstanding on a ground this cut does not search (the COMPLETE half, or an establishment obligation) - and each is stated rather than scored."
  },
  "counted": {
-  "decisions_recorded": 665,
+  "decisions_recorded": 668,
   "open_rows_in_the_index": 256,
   "true_half_wide_cut": 62,
   "true_half_gating": 41,

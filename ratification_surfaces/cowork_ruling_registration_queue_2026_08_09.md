@@ -64,6 +64,21 @@
 > §10 recorded rather than classified — **40** and **43** — which §10 named as recorded at their own
 > subjects and explicitly not re-classified there; they are classified here for the first time.
 >
+> **★★ §11 IS NOW RULED — the user's Ruling 49 of `cowork_rulings_2026_08_11_tenth_stop.md`,
+> recorded at §12 by `cc_instruction_return_continuation_10.md` Task 1.** The two proposed decisions
+> stand AS PROPOSED, **Ruling 40's UPGRADE reading is TAKEN**, and **Ruling 45's upgrade is
+> DECLINED**; **three** register entries were written. **Every ruling this file classifies again
+> carries a ruled verdict, and no ruling in it awaits one.** Nothing above §12 is re-decided,
+> re-worded or removed (#12) — §12 is this file's fourth closing state and the only section added
+> after Ruling 49, in the same shape §6, §8 and §10 use for the first three.
+>
+> **★ EXTENDED A FIFTH TIME 2026-08-11 (CC, `cc_instruction_return_continuation_10.md` Task 1) —
+> Rulings 49–51 of the tenth STOP are classified in a NEW SECTION, §13, which AWAITS THE USER.**
+> §12's own closing line reserves a further extension to a dispatch that asks for one, and this is
+> that dispatch. Nothing the user ruled is touched: §1–§12 stand exactly as ruled. §13 carries its
+> own verdict table, its own tally and its own proposed home, and **no register entry may be written
+> for any ruling in it until the user rules on it.**
+>
 > **Why this exists.** Three ruling records carry the same banner sentence — *"interim carrier
 > until the applying dispatch records them (D-230)"* — and **no register entry exists for any of
 > them.** Every ruling's CONTENT is on disk in a ratified record, and every ruling applied is
@@ -599,6 +614,119 @@ nothing. It touches no golden, no corpus of scores and nothing in `tools/robust_
 
 ---
 
+## 12. THE FOURTH CLOSING STATE — what Ruling 49 did, per ruling, and the ONE upgrade it took against the one it declined
+
+**Added 2026-08-11 by `cc_instruction_return_continuation_10.md` Task 1, after the user's Ruling 49
+of `cowork_rulings_2026_08_11_tenth_stop.md`.** Nothing above this section is altered by it, and
+§6, §8 and §10 — the first three closing states — are untouched.
+
+**The §11 verdicts are RULED, with ONE movement in each direction. THREE register entries were
+written**, each carrying its verbatim taken from the home text after that text was written, its
+plain restatement, its defense, and a provenance field recording that the user ruled the
+CLASSIFICATION and the HOME while the entry text was written afterwards — so **no new entry carries
+an entry-ratification event, and nothing here is self-ratifying (#14)**, exactly as at §6, §8 and
+§10.
+
+| Queue row | Register entry | Home written |
+|---|---|---|
+| **44** — an event a mechanism exists to produce is not a rule needing a home | **D-666** | `CLAUDE.md`, the decisions-register section, beside rule (l) — written as **rule (m)**, the next letter of that section's own lettered list |
+| **46** — a per-corpus establishment verdict is a status, so the decisions register is its home | **D-667** | The same section, beside D-666 — written as **rule (n)** |
+| **40** — a homing act tests a section in a fixed ORDER, and a findings-recording owner means HELD | **D-668** | `cowork_audit_protocol.md`, the homing-under-difficulty family, beside the shelving form and the verbatim-comparison condition |
+
+**★ THE ONE UPGRADE TAKEN, AND WHY IT IS THE INTERESTING HALF.** §11.1 put Ruling **40** both ways
+and named the downgrade reading in one line — *the licence half says "to these nine entries only"*.
+**The user took the UPGRADE**, on a ground the section itself had not fully stated: the procedure's
+ORDER and its STOP bind every homing act, they have fired correctly twice, and **their only carrier
+was a generator's own text that no future homing act elsewhere would find.** That last clause is
+what makes the upgrade the insurance logic rather than an exception to it — a rule whose only home
+is the tool that happened to execute it once is a rule the next session will not meet. **The licence
+half is deliberately NOT carried into the entry:** it was scoped to nine named entries, it is
+exercised and expired, and what is registered is the order, the kind-half timing and the STOP.
+
+**★ AND THE ONE UPGRADE DECLINED, on the same #6 ground as both declines at §10.** §11.2 offered
+Ruling **45** as a possible DECISION — *where a step-3 hold turns on a rule the record states for
+one case only, the closing act is the USER making the general form*. **Declined.** The ruling's own
+words are that the user making a general form **is what user rulings ARE**, and that the
+session-may-not-compose half is standing law already carried — so registering it would put a second
+copy of carried content, which is the opposite of the keep-the-insurance logic. **That logic prevents
+a proposed decision being DOWNGRADED; it does not manufacture an entry for content the register
+already holds** — the clause §10 stated and this ruling applies again, now with an upgrade taken in
+the same act, which is what shows the two directions are judged separately rather than by a habit.
+
+**SIX are CONFIRMED AS EXERCISES and carry no register entry: 41, 42, 43, 45, 47 and 48.** Each is
+fully recorded in the provenance of the act it licensed, which is where every one of them already
+was.
+
+**★ WHAT THIS SECTION RECORDS RATHER THAN CLASSIFIES.** Rulings **50** and **51** of the same record
+are not classified here — they are classified at §13 below, which is this file's fifth extension and
+awaits the user. Ruling 51 is the reason the extension exists at all in this batch's shape: it fixed
+the ORDER of the dispatch that carries it.
+
+**★ WHAT THIS FILE'S OWN JOB NOW IS — unchanged from §8 and §10, restated only because a fourth
+extension happened.** Every ruling it classifies carries a ruled verdict, so the queue is discharged
+as a queue. It stays as the RECORD of the classification — the verdicts, their grounds, the
+downgrade and upgrade readings offered and their outcomes, and all four closing states — and it is
+not extended again for a later ruling without a dispatch saying so.
+
+---
+
+## 13. THE FIFTH EXTENSION — Rulings 49–51, AWAITING THE USER
+
+> **★ STATUS: AWAITING THE USER. NO REGISTER ENTRY IS WRITTEN FOR ANYTHING IN THIS SECTION.** Added
+> 2026-08-11 (CC, `cc_instruction_return_continuation_10.md` Task 1, which is what §12's closing
+> line requires before this file is extended again), by the SAME derivation that built §2 and
+> extended it at §2.4, §7, §9 and §11: each ruling classified **from its own text**, with its
+> carrier read whole (**D-643**) before a verdict was written. Sections §1–§12 are untouched.
+
+**The two verdicts mean exactly what §1 says they mean**, and that section is not restated here (#6).
+
+### 13.1 Rulings 49–51 (`cowork_rulings_2026_08_11_tenth_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **49** | The queue's §11 is RATIFIED, with Ruling 40 UPGRADED to a decision and Ruling 45's upgrade DECLINED | **EXERCISE** — a ratification event | The user's ruling ON a review queue, which is the class Ruling 36 fixed for 20–23 and Ruling 42 applied again at §10. Its content is already register data — **D-666**, **D-667** and **D-668**, written in the commit that recorded it — and its closing state is §12 above. The clause a reader might take for a rule is the one §10 already recorded and this ruling applies rather than extends: the keep-the-insurance ground prevents a proposed decision being DOWNGRADED and does not manufacture an entry for content the register already holds. **What is genuinely new is a DEMONSTRATION rather than a statement:** the same act took one upgrade and declined another, which shows the two directions are judged separately — and a demonstration of a recorded rule is not a further rule |
+| **50** | The guard act is LICENSED, DIAGNOSIS FIRST, with a STOP between diagnosis and fix | **DECISION**; *and the user may reasonably read it as an EXERCISE* | The clause that binds beyond this act is the **ORDER and the STOP inside a maintenance act**: the cause is established at the objects BEFORE any change to the mechanism, and **a cause that resists establishment is a STOP back to the user with no fix taken on an unverified candidate.** The register carries the family discipline's order for the FIX half — corpus rows first, both rates re-measured, the revert condition governing — at **D-436** and the guard-family entries; **none of them says that a maintenance act must first establish the cause, or what happens when it cannot.** That is the half this adds, and it is the half most easily skipped, because a named-but-unasserted candidate looks like a diagnosis. **The downgrade reading, in one line:** if the user reads the diagnosis-first order as #19 applied to one act — nothing may be trusted that is merely unfalsified, so a cause must be established before a fix rests on it — the verdict is EXERCISE of **D-436** and #19, and nothing is owed |
+| **51** | The reach derivation LEADS the next batch; the ordering is ruled, not preferred | **DECISION**; *and the user may reasonably read it as an EXERCISE* | The clause that binds is a general one about how work is SCHEDULED, and no entry states it: **a task that cannot be stopped partway loses every capacity contest to tasks that can, so where such a task exists it is dispatched FIRST with nothing large in front of it — and the ordering is recorded as a ruling rather than left to a preference, because a preference does not survive one more capacity squeeze.** The record carries the no-silent-cap rule that CREATES this class of task, and the partial-stop allowance for per-entry passes that creates its competitors, but nothing that says what to do when the two meet. It is measured rather than argued: the same item was correctly declined by seven consecutive batches, every refusal right on its own terms. **The downgrade reading, in one line:** if the user reads it as one dispatch's sequencing decision — its own words are *"the next dispatch"* — the verdict is EXERCISE, and the ordering it fixed is already discharged by this batch |
+
+### 13.2 The tally, and what this extension reports rather than classifies
+
+**Proposed DECISIONS — two:** the diagnosis-first order with its STOP (**50**) and the
+starvation-ordering rule (**51**). **Both are flagged as reasonably downgradable**, each with its
+downgrade reading in one line, so reading either the other way costs the user one line.
+
+**Proposed EXERCISE — one:** **49**, the ratification event.
+
+**★ THE SHAPE THE FIVE EARLIER BATCHES EXPOSED HOLDS AGAIN, AND THIS BATCH SHOWS IT AT ITS
+CLEANEST.** The ruling that unblocked the most work — the ratification that released three entries —
+binds nothing new, while the two that bind are clauses that rode alongside a licence and a
+scheduling decision. **What is new:** both proposed decisions are about **HOW AN ACT IS SEQUENCED**
+rather than about where a decision goes. Every entry this arc has written so far answers *where*;
+these two answer *in what order*, which is the half the record has been carrying in dispatch prose
+and generator comments.
+
+**★ AND ONE THING IS REPORTED RATHER THAN CLASSIFIED.** Ruling 51's own subject — the reach-verdict
+derivation — was performed by this batch's Task 0, and its outcome is derived at
+`tools/audit/decisions/true_half_reach_rows.json` with no value restated here (**D-431**). That the
+ordering worked is evidence about Ruling 51 and is recorded as such; **it is not an argument for the
+upgrade**, since one success is not what makes a clause bind.
+
+### 13.3 Proposed homes, for the two (rule (e))
+
+| Proposed entry | Proposed home | Why there |
+|---|---|---|
+| **50** — a maintenance act establishes the cause FIRST, and a cause that resists establishment is a STOP | **`cowork_audit_protocol.md`**, the dispatch-protocol block, beside **D-436**'s three-measured-conditions section | That section is where a mechanism change's conditions live, and this is the condition ON THE ACT that precedes them. Its neighbours there are the guard-family rules the fix half already carries, so a reader meeting the fix order meets the diagnosis order in the same place |
+| **51** — a task that cannot stop partway is dispatched FIRST, and the ordering is ruled rather than preferred | **`cowork_audit_protocol.md`**, the dispatch-protocol block, beside the no-silent-cap and partial-stop rules it arbitrates between | It is a rule about how a dispatch is ordered, which is that block's own subject, and it only makes sense beside the two rules whose collision produced it. The alternative home — `CLAUDE.md`'s standing instructions — is NOT proposed: it governs a dispatch's construction rather than a session's conduct, and the dispatch-protocol block is where every other rule of that kind sits |
+
+### 13.4 What §13 does NOT do
+
+It writes no register entry and assigns no identifier. It re-opens no verdict the user ruled at §6,
+§8, §10 or §12, re-words no ruling, and re-reads no ruling's merits. It moves no status and
+authorizes nothing. It touches no golden, no corpus of scores and nothing in `tools/robust_stop/`.
+
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+---
+
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
 debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
@@ -621,4 +749,8 @@ added on the instruction of `cc_instruction_return_continuation_8.md` Task 0. §
 whole (D-643) before it was written; it was added on the instruction of
 `cc_instruction_return_continuation_9.md` Task 0, which is the dispatch §10's closing line requires,
 and it scopes itself to Rulings 40–48 — including the two, 40 and 43, that §10 recorded at their own
-subjects and explicitly did not classify.*
+subjects and explicitly did not classify. §12 records the user's Ruling 49 of
+`cowork_rulings_2026_08_11_tenth_stop.md`, read whole (D-643) before it was written, and was added on
+the instruction of `cc_instruction_return_continuation_10.md` Task 1. §13's carrier is that same
+record, read whole before it was written; it was added on the same instruction, which is the dispatch
+§12's closing line requires, and it scopes itself to Rulings 49–51.*
