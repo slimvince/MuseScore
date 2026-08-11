@@ -226,27 +226,8 @@ VERDICTS = [
             "would grade something the row explicitly does not carry."
         ),
     },
-    {
-        "row": "OI-298",
-        "anchor_quote": "the two things the row said would not be done were done, in the order the user ruled",
-        "what_the_row_records": (
-            "A user-directed clause leaned on an unratified draft for an enumeration it requires; "
-            "the user ruled the scope, the draft was corrected and ratified, and the clause now "
-            "points at the ratified home."
-        ),
-        "matched_worked_example": None,
-        FALLBACK_BIT: False,
-        "verdict": "OUT — the doc-sync half does not reach it",
-        "why": (
-            "No worked example matches. The row's subject — a governing clause pointing at "
-            "unratified content — is discharged by its own dated remark, and the clause names no "
-            "subjects of its own at HEAD. Under (1A) nothing here is a false statement about the "
-            "system. **Read beside [[OI-367]]:** this row's status cell opens with an open-state "
-            "token while its own text records a closure with provenance, so it is counted open by "
-            "every derivation over the index. That is why it is in this population at all, and the "
-            "verdict is the same whichever way its state finally falls."
-        ),
-    },
+    # OI-298's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the user's Ruling 53 corrected
+    # its status cell's opening token and the row left the open population.
     {
         "row": "OI-299",
         "anchor_quote": "this is an apparatus row — its subject is",
@@ -483,6 +464,47 @@ VERDICTS = [
     },
 ]
 
+# ---------------------------------------------------------------------------
+# RETIRED — a verdict whose ROW has left the derived population, moved here WHOLE rather than
+# deleted (#12, D-648: authored-input maintenance, not a mechanism change). It is carried into the
+# artifact as history and COUNTED NOWHERE. A retired verdict naming a row the derivation reaches
+# again is a STOP in the other direction: a reading made of a row as it stood is not evidence about
+# a row that has since moved, so it is RE-READ rather than restored.
+# ---------------------------------------------------------------------------
+RETIRED_VERDICTS = [
+    {
+        "row": "OI-298",
+        "anchor_quote": "the two things the row said would not be done were done, in the order the user ruled",
+        "what_the_row_records": (
+            "A user-directed clause leaned on an unratified draft for an enumeration it requires; "
+            "the user ruled the scope, the draft was corrected and ratified, and the clause now "
+            "points at the ratified home."
+        ),
+        "matched_worked_example": None,
+        FALLBACK_BIT: False,
+        "verdict": "OUT — the doc-sync half does not reach it",
+        "why": (
+            "No worked example matches. The row's subject — a governing clause pointing at "
+            "unratified content — is discharged by its own dated remark, and the clause names no "
+            "subjects of its own at HEAD. Under (1A) nothing here is a false statement about the "
+            "system. **Read beside [[OI-367]]:** this row's status cell opens with an open-state "
+            "token while its own text records a closure with provenance, so it is counted open by "
+            "every derivation over the index. That is why it is in this population at all, and the "
+            "verdict is the same whichever way its state finally falls."
+        ),
+        "why_it_is_retired": (
+            "LEFT THE POPULATION 2026-08-11. The user's Ruling 53 of "
+            "`cowork_rulings_2026_08_11_eleventh_stop.md` corrected this row's status-cell opening "
+            "token PER THE CELL'S OWN WORDS, so the row is now counted RESOLVED and is no longer an "
+            "open apparatus-classed row. THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole: "
+            "its own text had already named the reading that turned out to be right — that the row "
+            "reads open only because of its opening token, and that the verdict is the same "
+            "whichever way its state finally falls — so nothing here is withdrawn. It is retired "
+            "because the row left the derived set, never because it was wrong."
+        ),
+    },
+]
+
 
 def read(path: str) -> str:
     with open(path, encoding="utf-8") as fh:
@@ -507,6 +529,17 @@ def build() -> dict:
     authored = [v["row"] for v in VERDICTS]
     if len(set(authored)) != len(authored):
         raise SystemExit("STOP: a row is graded twice.")
+    retired_ids = [v["row"] for v in RETIRED_VERDICTS]
+    if set(retired_ids) & set(authored):
+        raise SystemExit("STOP: a row is both graded and retired: "
+                         + ", ".join(sorted(set(retired_ids) & set(authored))))
+    resurrected = [r for r in retired_ids if r in population]
+    if resurrected:
+        raise SystemExit(
+            "STOP: a RETIRED verdict names a row the derivation reaches again: "
+            + ", ".join(resurrected) + ". A reading made of a row as it stood is not evidence "
+            "about a row that has since moved — it is RE-READ and re-authored, never restored."
+        )
     missing = [r for r in population if r not in authored]
     extra = [r for r in authored if r not in population]
     if missing or extra:
@@ -616,6 +649,17 @@ def build() -> dict:
             "count_undecided": len(undecided),
         },
         "verdicts": out,
+        "retired_verdicts": {
+            "what": "Verdicts whose ROW has since left the derived population. Each is kept WHOLE "
+                    "rather than deleted (#12) and is COUNTED NOWHERE — it is history, not a "
+                    "grading. A retired verdict naming a row this derivation reaches again is a "
+                    "STOP in the other direction: a reading made of a row as it stood is not "
+                    "evidence about a row that has since moved, so it is RE-READ and re-authored "
+                    "rather than restored. This is authored-input maintenance (D-648), not a "
+                    "mechanism change.",
+            "rows": RETIRED_VERDICTS,
+            "count": len(RETIRED_VERDICTS),
+        },
         "counted": {
             "rows_graded": len(VERDICTS),
             "inside_the_doc_sync_half": len(inside),

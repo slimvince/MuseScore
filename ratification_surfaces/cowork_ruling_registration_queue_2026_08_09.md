@@ -79,6 +79,22 @@
 > own verdict table, its own tally and its own proposed home, and **no register entry may be written
 > for any ruling in it until the user rules on it.**
 >
+> **★★ §13 IS NOW RULED — the user's Ruling 52 of `cowork_rulings_2026_08_11_eleventh_stop.md`,
+> recorded at §14 by `cc_instruction_return_continuation_11.md` Task 0.** The verdicts stand AS
+> PROPOSED and **BOTH downgradable decisions are KEPT**; **two** register entries were written.
+> **Every ruling this file classifies again carries a ruled verdict, and no ruling in it awaits one.**
+> Nothing above §14 is re-decided, re-worded or removed (#12) — §14 is this file's fifth closing
+> state and the only section added after Ruling 52, in the same shape §6, §8, §10 and §12 use for the
+> first four.
+>
+> **★ EXTENDED A SIXTH TIME 2026-08-11 (CC, `cc_instruction_return_continuation_11.md` Task 0) —
+> Rulings 52–53 of the eleventh STOP are classified in a NEW SECTION, §15, which AWAITS THE USER.**
+> §14's own closing line reserves a further extension to a dispatch that asks for one, and this is
+> that dispatch. Nothing the user ruled is touched: §1–§14 stand exactly as ruled. §15 carries its
+> own verdict table and its own tally, and **no register entry may be written for any ruling in it
+> until the user rules on it.** It is also the first extension this derivation has produced with **no
+> proposed decision at all**, which §15.2 reports rather than presents as a finding.
+>
 > **Why this exists.** Three ruling records carry the same banner sentence — *"interim carrier
 > until the applying dispatch records them (D-230)"* — and **no register entry exists for any of
 > them.** Every ruling's CONTENT is on disk in a ratified record, and every ruling applied is
@@ -727,6 +743,109 @@ authorizes nothing. It touches no golden, no corpus of scores and nothing in `to
 
 ---
 
+## 14. THE FIFTH CLOSING STATE — what Ruling 52 did: BOTH proposed decisions KEPT, and the shape that made them one act
+
+**Added 2026-08-11 by `cc_instruction_return_continuation_11.md` Task 0, after the user's Ruling 52
+of `cowork_rulings_2026_08_11_eleventh_stop.md`.** Nothing above this section is altered by it, and
+§6, §8, §10 and §12 — the first four closing states — are untouched.
+
+**The §13 verdicts are RULED AS PROPOSED, with BOTH downgradables KEPT. TWO register entries were
+written**, each carrying its verbatim taken from the home text after that text was written, its
+plain restatement, its defense, and a provenance field recording that the user ruled the
+CLASSIFICATION and the HOME while the entry text was written afterwards — so **no new entry carries
+an entry-ratification event, and nothing here is self-ratifying (#14)**, exactly as at §6, §8, §10
+and §12.
+
+| Queue row | Register entry | Home written |
+|---|---|---|
+| **50** — a maintenance act establishes the cause FIRST, and a cause that resists establishment is a STOP | **D-669** | `cowork_audit_protocol.md`, the dispatch-protocol block, immediately after D-436's three-measured-conditions section and D-661's completeness rule, and immediately BEFORE the guard-family sections whose fix order it precedes |
+| **51** — a task that cannot stop partway is dispatched FIRST, and the ordering is ruled rather than preferred | **D-670** | The same block, at its end |
+
+**ONE is CONFIRMED AS AN EXERCISE and carries no register entry: 49**, the ratification event, which
+is fully recorded in the provenance of the acts it licensed and whose closing state is §12 above.
+
+**★ WHY BOTH DOWNGRADABLES WERE KEPT IS RECORDED WITH THE RULING RATHER THAN INFERRED.** §13.1
+offered each a downgrade reading in one line — read 50 as #19 applied to one act, and read 51 as one
+dispatch's own sequencing decision. The ruling states its grounds for keeping both: **a
+named-but-unasserted candidate looks like a diagnosis**, and nothing in the register stated the
+act-level order or its STOP; and **the unstoppable-task class recurs with every whole-population
+derivation**, so a rule arbitrating between two recorded rules belongs in the register rather than in
+dispatch prose, its collision measured at seven consecutive correct refusals. This is the
+keep-the-insurance ground applied twice in one act, the same ground §6, §8 and §12 record.
+
+**★ ONE SITING DEPARTED FROM ITS PROPOSED WORDING AND IS REPORTED RATHER THAN SMOOTHED OVER.** §13.3
+proposed **51**'s home as the dispatch-protocol block *beside the no-silent-cap and partial-stop
+rules it arbitrates between*. **Those two rules are subsections of no governing surface** — they live
+in dispatch prose and session records, which is itself one reason nothing ever stated what happens
+when they meet. The entry is therefore sited in the block the ruling names, at its end, with the two rules
+stated in the terms the new rule needs them in; **homing those two is a separate act nobody has ruled
+and it was not taken.** **50**'s siting is its proposal's own: one section past D-436 rather than
+between D-436 and D-661, because D-661's own text claims adjacency to D-436 and an insertion between
+them would have weakened a standing statement to gain nothing.
+
+**★ WHAT THIS SECTION RECORDS RATHER THAN CLASSIFIES.** Ruling **53** of the same record — the OI-367
+one-row correction — is not classified here. It is classified at §15 below, which is this file's
+sixth extension and awaits the user.
+
+**★ WHAT THIS FILE'S OWN JOB NOW IS — unchanged from §8, §10 and §12, restated only because a fifth
+extension happened.** Every ruling it classifies carries a ruled verdict, so the queue is discharged
+as a queue. It stays as the RECORD of the classification — the verdicts, their grounds, the downgrade
+and upgrade readings offered and their outcomes, and all five closing states — and it is not extended
+again for a later ruling without a dispatch saying so.
+
+---
+
+## 15. THE SIXTH EXTENSION — Rulings 52–53, AWAITING THE USER
+
+> **★ STATUS: AWAITING THE USER. NO REGISTER ENTRY IS WRITTEN FOR ANYTHING IN THIS SECTION.** Added
+> 2026-08-11 (CC, `cc_instruction_return_continuation_11.md` Task 0, which is what §14's closing
+> line requires before this file is extended again), by the SAME derivation that built §2 and
+> extended it at §2.4, §7, §9, §11 and §13: each ruling classified **from its own text**, with its
+> carrier read whole (**D-643**) before a verdict was written. Sections §1–§14 are untouched.
+
+**The two verdicts mean exactly what §1 says they mean**, and that section is not restated here (#6).
+
+### 15.1 Rulings 52–53 (`cowork_rulings_2026_08_11_eleventh_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **52** | The queue's §13 is RATIFIED with BOTH proposed decisions KEPT | **EXERCISE** — a ratification event | The user's ruling ON a review queue, which is the class Ruling 36 fixed for 20–23 and Rulings 42 and 49 applied again at §10 and §12. Its content is already register data — **D-669** and **D-670**, written in the commit that recorded it — and its closing state is §14 above. The clause a reader might take for a rule is the one §10 already recorded and this ruling applies rather than extends: the keep-the-insurance ground prevents a proposed decision being DOWNGRADED and does not manufacture an entry for content the register already holds. **What is new is again a demonstration rather than a statement:** the same act kept two downgradables, where the act one ruling earlier took one upgrade and declined another — which shows the direction is judged per clause and not by a habit, and a demonstration of a recorded rule is not a further rule |
+| **53** | The OI-367 one-row correction is LICENSED, under the both-ways discipline | **EXERCISE**; *and the user may reasonably read it as a DECISION* | A scoped licence to perform ONE act the record already requires. Its discipline is **D-657**'s — a change decided over its whole population BOTH WAYS before it is applied, only the members the defect's own shape naming may move — and its reading rule is **D-662**'s canonical status discipline, which already says a row's state is the first token of its cell and nothing else. What the ruling supplies is the one thing a session may not: the USER fixing the target state, here by the cell's own words, which is the same act Ruling 45 was declined an upgrade for on the ground that *the user making a general form is what user rulings ARE*. **The upgrade reading, in one line:** two clauses could be read as binding beyond this act — *where a status cell's opening contradicts the cell's own words, the words fix the state* (a reading rule the record currently reaches only through per-row authored readings), and *where a closed family row's enumerating pattern is found incomplete, the gap is recorded on the finding's own row rather than opened as a new one* (a filing rule) — and if the user reads either as standing, the verdict is DECISION and its home is `cowork_audit_protocol.md`'s dispatch-protocol block beside **D-657** |
+
+### 15.2 The tally, and what this extension reports rather than classifies
+
+**Proposed EXERCISES — two:** the ratification event (**52**) and the scoped one-row licence
+(**53**). **53 is flagged as reasonably upgradable**, with its upgrade reading and its home in one
+line, so reading it the other way costs the user one line.
+
+**Proposed DECISIONS — none.** That is the first time this file's derivation has produced an
+extension with no proposed decision, and it is reported as a result rather than presented as a
+finding: a STOP that has already been converted into a register entry does not need a second one, and
+both rulings here operate inside rules the register now carries.
+
+**★ THE SHAPE THE SIX EARLIER BATCHES EXPOSED HOLDS, AND THIS EXTENSION IS ITS LIMIT CASE.** The
+finding has been that the rulings which unblock the most work bind nothing, while what binds rides
+alongside. Here nothing rides alongside at all — because the clauses that WOULD have ridden alongside
+were registered one ruling earlier, as **D-669** and **D-670**. **An extension with no proposed
+decision is what the pattern looks like once the register has caught up with the practice**, and it
+is the first evidence that the catching-up is finishing rather than merely continuing.
+
+**★ AND ONE THING IS REPORTED RATHER THAN CLASSIFIED.** Ruling 53's own act was performed by this
+batch's Task 0, and its both-ways table is at `tools/audit/oi367_opening_correction.json` with no
+value restated here (**D-431**). That the named row was the only mover is evidence about the act and
+is recorded as such; **it is not an argument for the upgrade**, since a discipline working once is
+not what makes a clause bind.
+
+### 15.3 What §15 does NOT do
+
+It writes no register entry and assigns no identifier. It re-opens no verdict the user ruled at §6,
+§8, §10, §12 or §14, re-words no ruling, and re-reads no ruling's merits. It moves no status and
+authorizes nothing. It touches no golden, no corpus of scores and nothing in `tools/robust_stop/`.
+
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+---
+
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
 debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
@@ -753,4 +872,8 @@ subjects and explicitly did not classify. §12 records the user's Ruling 49 of
 `cowork_rulings_2026_08_11_tenth_stop.md`, read whole (D-643) before it was written, and was added on
 the instruction of `cc_instruction_return_continuation_10.md` Task 1. §13's carrier is that same
 record, read whole before it was written; it was added on the same instruction, which is the dispatch
-§12's closing line requires, and it scopes itself to Rulings 49–51.*
+§12's closing line requires, and it scopes itself to Rulings 49–51. §14 records the user's Ruling 52
+of `cowork_rulings_2026_08_11_eleventh_stop.md`, read whole (D-643) before it was written, and was
+added on the instruction of `cc_instruction_return_continuation_11.md` Task 0. §15's carrier is that
+same record, read whole before it was written; it was added on the same instruction, which is the
+dispatch §14's closing line requires, and it scopes itself to Rulings 52–53.*

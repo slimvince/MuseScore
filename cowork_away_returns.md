@@ -4126,6 +4126,113 @@ difference**, and nothing about the item had changed.
 batch** — and two gating rows closing does not change that: the finish line's own count of what
 remains is derived at `tools/audit/phase1_finish_line.json` (**D-431**).
 
+---
+
+# ═══ THE ELEVENTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_11.md`, performed 2026-08-11) ═══
+
+> Rulings 52–53 of `cowork_rulings_2026_08_11_eleventh_stop.md` are applied here, and the tenth
+> continuation's unopened tasks are resumed. The sections above are earlier batches' and are not
+> rewritten. New holds are appended to §1, new surfacings to §2, and each task's log below. **Acts
+> are dated from the clock: 2026-08-11.**
+
+## 3 (continued). Per-task log — the eleventh return continuation
+
+### Task 0 — COMPLETE. The §13 register event: TWO entries and no upgrade question; the one-row correction lands under the both-ways discipline, and OI-367 flips
+
+**The start state was derived at the artifacts before any act (A5), and it is what the dispatch's
+ledger records.** The full guard set was run unchanged before the first edit: **thirty-eight run,
+ZERO failing**, which is where the tenth continuation left it. The queue's §13 was read whole at its
+own file; the register's highest identifier was read at the register data; both receiving sections
+were read in place before either write; OI-367's row and OI-298's status cell were read at the
+INDEX. No count is restated here (**D-431**).
+
+**A1 HOLDS, and the kind half was judged at the home BEFORE either entry was written.**
+`cowork_audit_protocol.md`'s dispatch-protocol block says in its own opening that what follows are
+rules governing every dispatch, and every existing subsection states one with its ruling and its
+defense. **No home failed its check, so the STOP the assumption reserves did not fire.**
+
+**What was written, in ONE commit.**
+
+1. **Ruling 50 → D-669**, sited one section past D-436's three measured conditions and D-661's
+   completeness rule and immediately BEFORE the guard-family rules — a maintenance act establishes
+   the cause AT THE OBJECTS before one line of the mechanism moves, and **a cause that resists
+   establishment is a STOP with no fix taken on an unverified candidate.** The defense is the one
+   the ruling gives and it is the load-bearing half: **a named-but-unasserted candidate looks like a
+   diagnosis**, so a fix gets taken on it and the symptom disappearing is read as confirmation.
+2. **Ruling 51 → D-670**, at the same block's end — a task that cannot be stopped partway is
+   dispatched FIRST with nothing large in front of it, and the ordering is RULED rather than left to
+   a preference, because a preference does not survive one more capacity squeeze.
+3. **The queue gains §14 and §15, and nothing above §14 is altered (#12).** §14 is its fifth closing
+   state — two entries with their homes, both downgradables KEPT with the ruling's own grounds, one
+   exercise confirmed. §15 classifies Rulings 52–53 by the same derivation that built §2 and
+   extended it five times, each from its own text with the carrier read whole (**D-643**).
+4. **Ruling 53 — [[OI-298]]'s opening token corrected and [[OI-367]] FLIPPED**, under the both-ways
+   discipline. The pass is `tools/audit/gen_oi367_opening_correction.py`; every state, ground and
+   count is at its artifact and none is restated here (**D-431**).
+
+**★ THE SITING OF ONE ENTRY DEPARTED FROM ITS PROPOSED WORDING, AND IT IS REPORTED RATHER THAN
+SMOOTHED OVER.** §13.3 proposed Ruling 51's home as the dispatch-protocol block *beside the
+no-silent-cap and partial-stop rules it arbitrates between*. **Those two rules are subsections of no
+governing surface at all** — checked at the audit protocol and at `CLAUDE.md`, not assumed — and live
+only in dispatch prose and session records, **which is itself one reason nothing ever stated what
+happens when they meet.** The entry is sited in the block the ruling names, at its end, with the two
+rules stated in the terms the new rule needs them in; **homing those two is a separate act nobody has
+ruled and it was not taken.** Ruling 50's siting is its proposal's own, one section past D-436 rather
+than between D-436 and D-661, because D-661's own text claims adjacency to D-436 and an insertion
+between them would have weakened a standing statement to gain nothing.
+
+**★ THE BOTH-WAYS PASS IS THE FIFTH CONTINUATION'S CONSTRUCTION RATHER THAN A NEW ONE (#6), AND THE
+ONE THING IT ADDS IS THE DIRECTION THAT IS SILENT WHEN IT FAILS.** It imports the canonical
+vocabulary, the row split and the leading-token function from the standing lint, decides every index
+row at the baseline commit and at this tree — **both halves under the canonical status discipline,
+because the rule is not amended and one cell is** — and reads its baseline from a git OBJECT by
+explicit hash, so the record is re-derivable rather than one-shot (**D-253**). **Beyond the ruling's
+own condition it also STOPS when a named correction does NOT move**: an unnamed movement is loud, and
+a predicted movement that silently fails to happen is not, so the prediction is checked in both
+directions (#17b). **The only movements are the named row and this commit's own resolution**, which
+is listed apart because a resolution is not an opening correction and must not be hidden inside one.
+
+**★ THE POPULATION MOVEMENT IS THIS ACT'S OWN AND IS ACCOUNTED FOR BY IT**, which is precisely what
+[[OI-367]] said it was waiting for. Correcting the opening moves [[OI-298]] out of the open
+population, so the open-row count, the TRUE-half cuts, the finish line's populations and the
+apparatus declaration's candidate cut all move; every derivation over the index was regenerated in
+the same commit, so no surface carries the pre-correction population. **A continuing session must
+therefore derive its populations fresh** — a count carried from any earlier document is stale by
+construction.
+
+**★ WHAT THE FLIP DOES NOT DISCHARGE IS RECORDED ON THE ROW, ON THE RULING'S OWN DIRECTION RATHER
+THAN OPENED AS A NEW ROW.** The family's enumerating pattern still has no measured miss rate against
+the openings the index actually uses, so *three members* was never established as *the family* —
+**D-436**'s detection-rate condition and **D-661**'s completeness rule, both unmet for that pattern.
+The row says so, and it says what the flip does not claim: that the pattern has since been measured,
+that no fifth member exists, or that [[OI-361]]'s resolved status is disturbed.
+
+**Three authored inputs were maintained, each caught by its own tool's STOP rather than by a
+reader.** The apparatus declaration STOPPED because [[OI-298]] left the open first-cut candidates,
+and its NON-GATING verdict was moved WHOLE into the retired table with the reason it left (#12,
+**D-648**) — **and the reason is stated precisely, because it is easy to state wrongly: the row did
+not resolve on 2026-08-11. It resolved on 2026-08-03 and said so; what changed is that the index now
+reads what the cell already said.** The reach derivation then STOPPED in the other direction — a
+graded row no longer in its derived population — and **that tool had no retired block at all**, so
+one was added on the established shape, with the verdict kept whole, counted nowhere, and a STOP
+armed the other way: a retired verdict naming a row the derivation reaches again is RE-READ and
+re-authored, never restored. Sixteen register home anchors drifted by the first insertion and were
+re-aimed from the tool's own reported lines (**D-648**), with no verdict, mark, status or home moving
+with them.
+
+**★ THE VERDICT THAT WAS RETIRED HAD ALREADY NAMED THE READING THAT TURNED OUT TO BE RIGHT**, which
+is why it is kept whole rather than treated as superseded: its own text said the row reads open only
+because of its opening token, and that its verdict is the same whichever way the state finally falls.
+It is retired because the row left the derived set, never because it was wrong.
+
+**Holds:** none new; the queue's §15 awaits the user, which is what an extension is.
+**Surfacings:** none — every subject of this task is the record's own bookkeeping and the rulings
+that govern it.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

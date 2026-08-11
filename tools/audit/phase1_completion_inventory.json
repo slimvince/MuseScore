@@ -215,12 +215,12 @@
  },
  "the_complete_half": {
   "criterion": "C1 and C2",
-  "register_population": 668,
+  "register_population": 670,
   "by_home_class": {
    "contract-home": 161,
    "gap": 29,
    "homed-in-a-layer-specification": 297,
-   "process": 135,
+   "process": 137,
    "project-convention": 45,
    "unhomed": 1
   },
@@ -547,7 +547,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 42,
+   "count": 41,
    "ids": [
     "OI-105",
     "OI-107",
@@ -568,7 +568,6 @@
     "OI-283",
     "OI-290",
     "OI-296",
-    "OI-298",
     "OI-299",
     "OI-303",
     "OI-304",
@@ -595,7 +594,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 61,
+   "count": 60,
    "ids": [
     "OI-105",
     "OI-107",
@@ -625,7 +624,6 @@
     "OI-290",
     "OI-292",
     "OI-296",
-    "OI-298",
     "OI-299",
     "OI-303",
     "OI-304",
@@ -1302,23 +1300,6 @@
     }
    },
    {
-    "id": "OI-298",
-    "title": "`CLAUDE.md`'s phase-2 clause leans on an UNRATIFIED DRAFT for the enumeration it requires",
-    "subject_column": "doc-sync / governance",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync"
-    ],
-    "gate": {
-     "verdict": "NON-GATING",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "tracking/documentation apparatus - the user's own phrase"
-    }
-   },
-   {
     "id": "OI-299",
     "title": "The open-items INDEX rows are paragraph-length narratives duplicating their detail files, and a correction reached one and not the other",
     "subject_column": "doc-sync / #6",
@@ -1736,7 +1717,7 @@
    ]
   },
   "non_gating": {
-   "count": 21,
+   "count": 20,
    "ids": [
     "OI-205",
     "OI-229",
@@ -1746,7 +1727,6 @@
     "OI-282",
     "OI-290",
     "OI-296",
-    "OI-298",
     "OI-299",
     "OI-317",
     "OI-318",
@@ -1785,7 +1765,6 @@
     "OI-290",
     "OI-292",
     "OI-296",
-    "OI-298",
     "OI-299",
     "OI-303",
     "OI-304",
@@ -1874,7 +1853,7 @@
    "it_is_a_template_the_generator_fills": true,
    "the_unresolved_figure_it_hand_carries": [],
    "the_figure_the_same_file_computes": 2644,
-   "the_backbone_the_committed_layer_was_derived_at": 668,
+   "the_backbone_the_committed_layer_was_derived_at": 670,
    "verdict": "TRUE AT HEAD. The field carries no hand-written figure: it is a template whose every figure `gen_decisions_register.py` fills from the same computed data it renders the coverage table from, and an unfilled placeholder stops that generator (#17f / D-431)."
   },
   "statement_3_the_home_granularity_claim": {
@@ -1900,8 +1879,8 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 638,
-    "of": 668
+    "count": 640,
+    "of": 670
    },
    {
     "fact": "Every harvested cluster carries a recorded disposition at the committed artifact, so no harvested statement was silently passed over.",
@@ -1925,9 +1904,9 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 61,
+   "open_rows_in_the_wide_cut": 60,
    "of_which_gate": 40,
-   "of_which_apparatus_and_therefore_non_gating": 21,
+   "of_which_apparatus_and_therefore_non_gating": 20,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
   "outside_both_halves_and_owed_before_the_statement": {
@@ -2000,7 +1979,6 @@
    "OI-280",
    "OI-281",
    "OI-292",
-   "OI-298",
    "OI-303",
    "OI-304",
    "OI-309",
@@ -2035,9 +2013,9 @@
   "how_to_read_it": "The derivation is the answer; this block measures the recollection against it. A recollected row that the derivation does not carry is not thereby wrong - it may be outstanding on a ground this cut does not search (the COMPLETE half, or an establishment obligation) - and each is stated rather than scored."
  },
  "counted": {
-  "decisions_recorded": 668,
-  "open_rows_in_the_index": 254,
-  "true_half_wide_cut": 61,
+  "decisions_recorded": 670,
+  "open_rows_in_the_index": 252,
+  "true_half_wide_cut": 60,
   "true_half_gating": 40,
   "complete_half_gap": 29,
   "complete_half_unhomed": 1,

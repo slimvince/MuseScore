@@ -14,8 +14,8 @@
  },
  "population": {
   "rows_parsed": 367,
-  "open_rows": 254,
-  "first_cut_candidates": 63,
+  "open_rows": 252,
+  "first_cut_candidates": 62,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -37,7 +37,7 @@
   ]
  },
  "totals": {
-  "non_gating": 29,
+  "non_gating": 28,
   "gates": 34,
   "non_gating_ids": [
    "OI-205",
@@ -50,7 +50,6 @@
    "OI-290",
    "OI-296",
    "OI-297",
-   "OI-298",
    "OI-299",
    "OI-301",
    "OI-317",
@@ -81,7 +80,6 @@
     "OI-290",
     "OI-296",
     "OI-297",
-    "OI-298",
     "OI-299",
     "OI-301",
     "OI-317",
@@ -482,14 +480,6 @@
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
   },
   {
-   "id": "OI-298",
-   "title": "`CLAUDE.md`'s phase-2 clause leans on an UNRATIFIED DRAFT for the enumeration it requires",
-   "subject_column": "doc-sync / governance",
-   "verdict": "NON-GATING",
-   "reason": "A binding rule POINTS at an enumeration the user has not ratified. What is owed is a pointer and a ratification status - the user's own apparatus examples - and the six subjects the clause itself names bind on the clause's own authority either way, so nothing about the analysis or its inputs turns on the ruling. It is deliberately NOT read as specification completion: no specification is incomplete or false here, and the clause was left unchanged precisely so that remains true.",
-   "class_basis": "tracking/documentation apparatus - the user's own phrase"
-  },
-  {
    "id": "OI-299",
    "title": "The open-items INDEX rows are paragraph-length narratives duplicating their detail files, and a correction reached one and not the other",
    "subject_column": "doc-sync / #6",
@@ -714,6 +704,12 @@
     "reason": "Gates on the exemption, and independently on the criterion: the marked set includes D-329, complete candidate listing, which is the family design's ratified admission premise and whose marking already failed once.",
     "closed": "VERIFIED 2026-08-03 (phase 1w) - the whole marked set re-verified against the live-reachability test, 0 marks established wrong and 0 corrected, the convention not in question. Its residues opened as OI-302 (which gates), OI-303 and OI-304."
    },
+   "OI-298": {
+    "verdict": "NON-GATING",
+    "class_basis_or_ground": "user",
+    "reason": "A binding rule POINTS at an enumeration the user has not ratified. What is owed is a pointer and a ratification status - the user's own apparatus examples - and the six subjects the clause itself names bind on the clause's own authority either way, so nothing about the analysis or its inputs turns on the ruling. It is deliberately NOT read as specification completion: no specification is incomplete or false here, and the clause was left unchanged precisely so that remains true.",
+    "closed": "LEFT THE OPEN POPULATION 2026-08-11 - and the reason is worth reading, because the row's own text had recorded its closure since 2026-08-03 while its status cell opened with an open-state token, so every derivation over the index counted it OPEN. That is OI-367's finding, and the user's Ruling 53 of `cowork_rulings_2026_08_11_eleventh_stop.md` corrected the opening token PER THE CELL'S OWN WORDS under the both-ways discipline, the named row the only permitted mover. The verdict was correct while it stood and is kept whole; it is retired because the row left the cut, never because it was wrong - and NOT because the row resolved on 2026-08-11: it resolved on 2026-08-03 and said so, and what changed here is that the index now reads what the cell already said. WHAT THE CORRECTION DOES NOT DISCHARGE is carried forward rather than lost: the family's enumerating pattern still owes a measured miss rate over the openings the index actually uses (D-436's detection-rate condition, D-661's completeness rule), and that gap is recorded on OI-367's own row on the ruling's direction rather than opened as a new one."
+   },
    "OI-300": {
     "verdict": "GATES",
     "class_basis_or_ground": "an establishment obligation (#19) - the exemption, not the criterion",
@@ -789,7 +785,6 @@
    "OI-290",
    "OI-296",
    "OI-297",
-   "OI-298",
    "OI-299",
    "OI-301",
    "OI-317",

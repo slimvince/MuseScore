@@ -16,7 +16,7 @@
   "the_population": {
     "what_it_is": "the open rows the gating split classes apparatus, and therefore non-gating — the finish line's own item, whose closing act is ONE derivation over the whole set rather than a per-row judgment",
     "derived_from": "tools/audit/phase1_completion_inventory.json → the_gating_split.non_gating.ids",
-    "count": 21,
+    "count": 20,
     "ids": [
       "OI-205",
       "OI-229",
@@ -26,7 +26,6 @@
       "OI-282",
       "OI-290",
       "OI-296",
-      "OI-298",
       "OI-299",
       "OI-317",
       "OI-318",
@@ -54,7 +53,6 @@
       "OI-281",
       "OI-290",
       "OI-296",
-      "OI-298",
       "OI-299",
       "OI-317",
       "OI-318",
@@ -66,7 +64,7 @@
       "OI-49",
       "OI-50"
     ],
-    "count_undecided": 18
+    "count_undecided": 17
   },
   "verdicts": [
     {
@@ -162,18 +160,6 @@
       "verdict": "OUT — the doc-sync half does not reach it",
       "why": "No worked example matches: the row's subject is a search that has not been performed, not any document's account of itself. Under (1A) it asserts no statement about the system that is false — the rules it names are correctly recorded, only in weaker places than they belong. Recorded rather than smoothed over: its fourth dated remark observes that a document the canonical specification marks superseded is nonetheless the only home of measured values, and calls that a filing decision rather than a session's; that observation is the row's evidence and not its subject, and grading it would grade something the row explicitly does not carry.",
       "detail_file": "open_items/OI-296.md",
-      "fallback_applied": true,
-      "what_decided_it": "D-639's fallback (1A), applied because no worked example matches — and the verdict is derived from `the_row_asserts_a_document_states_something_false_about_the_system`, not authored beside it"
-    },
-    {
-      "row": "OI-298",
-      "anchor_quote": "the two things the row said would not be done were done, in the order the user ruled",
-      "what_the_row_records": "A user-directed clause leaned on an unratified draft for an enumeration it requires; the user ruled the scope, the draft was corrected and ratified, and the clause now points at the ratified home.",
-      "matched_worked_example": null,
-      "the_row_asserts_a_document_states_something_false_about_the_system": false,
-      "verdict": "OUT — the doc-sync half does not reach it",
-      "why": "No worked example matches. The row's subject — a governing clause pointing at unratified content — is discharged by its own dated remark, and the clause names no subjects of its own at HEAD. Under (1A) nothing here is a false statement about the system. **Read beside [[OI-367]]:** this row's status cell opens with an open-state token while its own text records a closure with provenance, so it is counted open by every derivation over the index. That is why it is in this population at all, and the verdict is the same whichever way its state finally falls.",
-      "detail_file": "open_items/OI-298.md",
       "fallback_applied": true,
       "what_decided_it": "D-639's fallback (1A), applied because no worked example matches — and the verdict is derived from `the_row_asserts_a_document_states_something_false_about_the_system`, not authored beside it"
     },
@@ -322,12 +308,28 @@
       "what_decided_it": "the worked example named above, which the ruling puts OUT"
     }
   ],
+  "retired_verdicts": {
+    "what": "Verdicts whose ROW has since left the derived population. Each is kept WHOLE rather than deleted (#12) and is COUNTED NOWHERE — it is history, not a grading. A retired verdict naming a row this derivation reaches again is a STOP in the other direction: a reading made of a row as it stood is not evidence about a row that has since moved, so it is RE-READ and re-authored rather than restored. This is authored-input maintenance (D-648), not a mechanism change.",
+    "rows": [
+      {
+        "row": "OI-298",
+        "anchor_quote": "the two things the row said would not be done were done, in the order the user ruled",
+        "what_the_row_records": "A user-directed clause leaned on an unratified draft for an enumeration it requires; the user ruled the scope, the draft was corrected and ratified, and the clause now points at the ratified home.",
+        "matched_worked_example": null,
+        "the_row_asserts_a_document_states_something_false_about_the_system": false,
+        "verdict": "OUT — the doc-sync half does not reach it",
+        "why": "No worked example matches. The row's subject — a governing clause pointing at unratified content — is discharged by its own dated remark, and the clause names no subjects of its own at HEAD. Under (1A) nothing here is a false statement about the system. **Read beside [[OI-367]]:** this row's status cell opens with an open-state token while its own text records a closure with provenance, so it is counted open by every derivation over the index. That is why it is in this population at all, and the verdict is the same whichever way its state finally falls.",
+        "why_it_is_retired": "LEFT THE POPULATION 2026-08-11. The user's Ruling 53 of `cowork_rulings_2026_08_11_eleventh_stop.md` corrected this row's status-cell opening token PER THE CELL'S OWN WORDS, so the row is now counted RESOLVED and is no longer an open apparatus-classed row. THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole: its own text had already named the reading that turned out to be right — that the row reads open only because of its opening token, and that the verdict is the same whichever way its state finally falls — so nothing here is withdrawn. It is retired because the row left the derived set, never because it was wrong."
+      }
+    ],
+    "count": 1
+  },
   "counted": {
-    "rows_graded": 21,
+    "rows_graded": 20,
     "inside_the_doc_sync_half": 3,
-    "outside_it": 18,
+    "outside_it": 17,
     "decided_by_a_worked_example": 3,
-    "decided_by_the_fallback": 18,
+    "decided_by_the_fallback": 17,
     "by_worked_example": {
       "as-built banner over a dormant mechanism": 0,
       "missing supersession note on a superseded plan": 1,
@@ -347,7 +349,6 @@
     "OI-281",
     "OI-290",
     "OI-296",
-    "OI-298",
     "OI-299",
     "OI-317",
     "OI-338",

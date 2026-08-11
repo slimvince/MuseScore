@@ -421,6 +421,39 @@ unfalsified, and the register states the test nowhere else.
 inference change. Adoption of a derived population as a diff-time check remains conditional on
 MEASURED clean separation, which is the third of the conditions above.
 
+### A maintenance act ESTABLISHES THE CAUSE before it touches the mechanism — and a cause that resists establishment is a STOP, with no fix taken on a named-but-unasserted candidate
+
+**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_eleventh_stop.md`, Ruling 52, taking
+Ruling 50 of `cowork_rulings_2026_08_11_tenth_stop.md`). The two sections above say what a MECHANISM
+is worth unmeasured and what a COMPLETENESS CLAIM is worth unmeasured. This says what an ACT owes
+before it changes a mechanism at all, and it is sited here so that a reader meeting the fix order in
+the guard-family rules below meets the diagnosis order first.
+
+**THE ORDER, and the STOP is the half that binds.** Where a mechanism is failing, the maintenance
+act that would repair it **establishes the cause AT THE OBJECTS first — before one line of the
+mechanism moves.** Only with the cause established does the fix follow, under whatever order that
+mechanism's own family discipline fixes for it. **A cause that resists establishment is a STOP back
+to the user, and NO FIX IS TAKEN ON AN UNVERIFIED CANDIDATE** — not even one the record has already
+named, and not even one that turns out to be right.
+
+*Why the STOP is stated rather than left to #19:* **a named-but-unasserted candidate looks like a
+diagnosis.** A row that names a plausible cause and honestly declines to assert it reads, one wave
+later, as though the cause were known — so the fix gets taken on it, the mechanism changes, and the
+symptom disappearing is then read as confirmation. That is the merely-unfalsified trust #19 refuses,
+arriving by the one route that looks like diligence. The register carries the FIX half's order for
+this family — corpus rows first, both rates re-measured on the same extended corpus, the revert
+condition governing — and none of those entries says that the cause must be established first, or
+what happens when it cannot be.
+
+*The evidence that it earns its place, from the act that produced it:* the diagnosis was taken with
+**no change to the tool at all** — the module was loaded twice from its own file by an ordinary
+import from outside the repository, once under each spelling of the drive letter in that path, each
+load applying the same equality test the mechanism applies to its own artifact. The row's own closing
+clause had declined that diagnosis on the ground that it *"is a change to the tool"*, and it did not
+have to be. **The general form is worth carrying: a tool can be DIAGNOSED without being EDITED, so
+declining a diagnosis because it would edit the tool is a conclusion that deserves checking before it
+is accepted.**
+
 ### When a shell-read policy cannot decide, it DENIES — and the ceiling it cannot see is published in the measured rate
 
 **Ruled by the user, 2026-08-08** (`cowork_ruling_guard_family_2026_08_08.md`, clauses 4 and 2).
@@ -878,3 +911,40 @@ is false at HEAD, in the very file being edited because its account of itself wa
 doc-sync half of phase 1 does not admit. The excluded alternative is recorded with the ruling —
 reverting the second correction, which would knowingly re-insert a false statement in order to make a
 process point.
+
+### A task that CANNOT BE STOPPED PARTWAY is dispatched FIRST, with nothing large in front of it — and the ordering is RULED, never left to a preference
+
+**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_eleventh_stop.md`, Ruling 52, taking
+Ruling 51 of `cowork_rulings_2026_08_11_tenth_stop.md`). Every other rule in this block says what a
+dispatch may contain or how an act inside one is performed. This says in what ORDER the tasks of a
+dispatch are placed, and it exists because two rules the project already runs on collide and nothing
+said which wins.
+
+**THE TWO RULES THAT COLLIDE.** One kind of task must be published over its WHOLE derived population
+or not at all — a derivation covering some of its population reads as covering the class, which is
+the cap nobody sees. The other kind, a per-entry pass, may be stopped at any member boundary,
+because each completed member is whole in itself. **So the second kind can always absorb whatever
+capacity is left and the first kind never can.**
+
+**THE RULE.** Where a dispatch carries a task that cannot be stopped partway, **that task is placed
+FIRST, with nothing large in front of it**, and the placement is recorded as a RULING rather than as
+the dispatch-writer's preference.
+
+*Why a ruling rather than a preference, which is the clause that binds:* a preference does not
+survive one more capacity squeeze. The structural point is that such a task is **small in COUNT and
+large in READING**, so every honest estimate of it looks cheap while every attempt at it loses to
+work that can stop at a boundary — and each individual refusal is CORRECT on its own terms, which is
+what makes the pattern invisible from inside any one dispatch.
+
+*The evidence, measured rather than argued:* one such task was declined by **seven consecutive
+dispatches**, every refusal right on its own terms and for the same reason each time. Dispatched
+first under this rule, with nothing large in front of it, it closed WHOLE in one act — and turned up
+a finding nobody was looking for while deriving its own population. **The ordering was the whole
+difference, and nothing about the task had changed.**
+
+**Siting note, recorded rather than smoothed over.** The proposed home named this block *beside the
+two rules it arbitrates between*. Those two are not subsections of this block, or of any governing
+surface: they live in dispatch prose and in session records, which is itself one reason nothing ever
+stated what happens when they meet. The entry is therefore sited in the block the ruling names, at
+its end, and the two rules are stated above in the terms this rule needs them in — not homed here,
+because homing them is a separate act nobody has ruled.

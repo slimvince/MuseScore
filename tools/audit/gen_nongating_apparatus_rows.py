@@ -100,6 +100,30 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-298": (NON_GATING, "user",
+               "A binding rule POINTS at an enumeration the user has not ratified. What is owed "
+               "is a pointer and a ratification status - the user's own apparatus examples - and "
+               "the six subjects the clause itself names bind on the clause's own authority "
+               "either way, so nothing about the analysis or its inputs turns on the ruling. It "
+               "is deliberately NOT read as specification completion: no specification is "
+               "incomplete or false here, and the clause was left unchanged precisely so that "
+               "remains true.",
+               "LEFT THE OPEN POPULATION 2026-08-11 - and the reason is worth reading, because "
+               "the row's own text had recorded its closure since 2026-08-03 while its status "
+               "cell opened with an open-state token, so every derivation over the index counted "
+               "it OPEN. That is OI-367's finding, and the user's Ruling 53 of "
+               "`cowork_rulings_2026_08_11_eleventh_stop.md` corrected the opening token PER THE "
+               "CELL'S OWN WORDS under the both-ways discipline, the named row the only permitted "
+               "mover. The verdict was correct while it stood and is kept whole; it is retired "
+               "because the row left the cut, never because it was wrong - and NOT because the "
+               "row resolved on 2026-08-11: it resolved on 2026-08-03 and said so, and what "
+               "changed here is that the index now reads what the cell already said. WHAT THE "
+               "CORRECTION DOES NOT DISCHARGE is carried forward rather than lost: the family's "
+               "enumerating pattern still owes a measured miss rate over the openings the index "
+               "actually uses (D-436's detection-rate condition, D-661's completeness rule), and "
+               "that gap is recorded on OI-367's own row on the ruling's direction rather than "
+               "opened as a new one.",
+    ),
     "OI-230": (NON_GATING, "user",
                "The writing-standards conformance question, and the user has already DEFERRED it "
                "to a discussion. Its subject is how this project's documents are written.",
@@ -432,14 +456,8 @@ V = {
     "OI-296": (NON_GATING, "user",
                "A sweep for ratified rules recorded in tracking sections rather than in the "
                "section they amend. Where a rule is FILED, not what it says."),
-    "OI-298": (NON_GATING, "user",
-               "A binding rule POINTS at an enumeration the user has not ratified. What is owed "
-               "is a pointer and a ratification status - the user's own apparatus examples - and "
-               "the six subjects the clause itself names bind on the clause's own authority "
-               "either way, so nothing about the analysis or its inputs turns on the ruling. It "
-               "is deliberately NOT read as specification completion: no specification is "
-               "incomplete or false here, and the clause was left unchanged precisely so that "
-               "remains true."),
+    # OI-298's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the row's opening token was
+    # corrected under Ruling 53 and it left the open population.
     "OI-301": (NON_GATING, "user",
                "A tracking-surface check's REPORTING behaviour: a historical mode overwrites the "
                "frozen split-reconciliation artifact with a failing report. Apparatus by the "
