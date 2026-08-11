@@ -158,6 +158,14 @@ AUTHORED = [
      "label, owner and blocker must come from the closed vocabulary the pass declares, a "
      "NEEDS-RULING label and a whose-act field must agree, and every row's quoted words must still "
      "be in the INDEX"),
+    ("tools/audit/gen_filing_convention_application.py", ["--check"],
+     "the filing convention's candidate set re-derives. What it guards is not the verdicts, which "
+     "are authored judgments about documents, but three demands on the record as it stands: every "
+     "derived candidate carries an authored verdict, so an unclassified candidate halts the run "
+     "rather than passing silently; no verdict names a document the derivation no longer carries, "
+     "so the tree moving under the table halts it too; and the derivation's SOUNDNESS against its "
+     "seeds is re-computed on every run and published, so a signature that stops finding what the "
+     "record already holds is reported rather than quietly trusted"),
     ("tools/audit/decisions/gen_phase1q_snapshot_establishment.py", ["--check"],
      "the phase-1q snapshot's establishment record re-verifies. Its two moment-in-time checks "
      "are FROZEN and read back -- they are statements about the tree before the apply ran, and "

@@ -5724,6 +5724,110 @@ told about how far they are established.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### 2.19 The enumeration Ruling 62 ordered is NOT SOUND against its own seeds, and the diagnosis is that the signature encoded a wrong premise (Task 2)
+
+**Found by the derivation's own soundness check, which is what it is for.** Of the two seeds the
+record already holds, the derivation finds one and misses the other:
+`docs/stage4c_cadence_key_design.md`.
+
+**The diagnosis, taken at the objects rather than guessed.** The missing signature is S2, which asks
+the register for an entry whose STATUS is `falsified`, `shelved` or superseded and whose record names
+the document. The entry that records this falsification is **D-290**, and **its own status is
+`live`** — the FINDING stands; what was falsified is the approach the document designs. **So the
+signature encoded a wrong premise: a falsified approach does not show up as a falsified-status
+entry.** The two are different things and the derivation conflated them.
+
+**What was done about it, and what deliberately was not.** It is **REPORTED**, the population is
+declared **advisory**, and the signature is **NOT re-tuned in this act** — widening a derivation at
+the moment its own seed exposes it is one step from fitting it to the cases that motivated it, which
+is the defect the catalog names DT-2 and which **D-661** forbids in terms. The document itself is
+still acted on, because the RULING names it directly rather than the derivation finding it.
+
+**Why it is surfaced rather than logged.** A derived enumeration that reports a class empty, or
+nearly so, is read as coverage — that is the shape [[OI-367]] and [[OI-368]] both recorded, one
+instrument each. This one says of itself that it is advisory and why, which is the difference; the
+finding is that the same conflation may be sitting in any other derivation that asks a register for
+a status when what it means is a fate.
+
+### Task 2 — COMPLETE. Ruling 62 APPLIED: the derived enumeration published whole with its own bound, three branch-one banners written, the score inventory corrected, and two gating rows closed
+
+**The population was derived at task start (A2)** over a named surface set, from signatures of
+OVERTAKING carried in a document's own banner or closing line — never from signatures of being a
+report, which would enumerate a different class, since most reports are accurate records of what they
+found and are overtaken by nothing. No count is restated here (**D-431**);
+`tools/audit/filing_convention_application.json` is the artifact.
+
+**A2 HOLDS IN ALL THREE OF ITS CLAUSES, and the third decided two documents.** The enumeration is
+derived, the known instances are demoted to SEED VERDICTS rather than standing as the population
+(**D-661**); **each kind call is stated per document**, with its reason, in the artifact's own rows;
+and **two documents the two branches do not decide are HELD to the user rather than bannered by
+stretch** — an architecture review whose banner marks five claims as pending a later pass, and a
+design whose banner is already accurate and whose subject is legacy code awaiting deletion at a
+scheduled event.
+
+**★ THE ENUMERATION STATES ITS OWN BOUND RATHER THAN OWING A MEASUREMENT, WHICH IS THE FIRST
+EXERCISE OF THE RULING REGISTERED IN THIS BATCH'S OWN TASK 0.** Its reach against the text it scans
+has never been measured, so an empty result over any surface bounds nothing. **D-673**'s test is
+whether an ANALYSIS DECISION consumes the enumeration; none does — what consumes it is a filing act
+over documents — so the bound is stated on the artifact and a detection measurement is not owed. The
+test is applied per enumeration and this bound is inherited by none.
+
+**Three branch-one banners written, every body untouched (#12).** `docs/symbol_input_audit.md` (the
+seed, [[OI-322]]); `docs/stage4c_cadence_key_design.md` ([[OI-332]] item 3, named by the ruling and
+missed by the derivation — §2.19); and `docs/stage4b_design.md`, **which the derivation found and no
+row had named** — its banner reads *no code is written until this design is ratified*, the design
+landed, and the decision it carries is recorded superseded in fact. Each banner states what the
+document is a record OF: its date, the fate of its subject, and the commit or entry that superseded
+or deleted it.
+
+**★ THE SCORE INVENTORY IS CORRECTED, NOT BANNERED, AND THAT IS THE RULING'S OWN SPLIT (A3).** It is
+the document `CLAUDE.md` sends every score-touching task to FIRST, so its job is to be true now. All
+four sites now **POINT at the block that owns each** rather than restating anything (#6, **D-431**):
+the quick-pick row is SPLIT into the governing stop and the retired diagnostic; the per-preset-dir
+section says the check is a diagnostic and records why it is kept — the governing instrument imports
+its corpus-integrity mechanism; the coverage section gains a leading correction naming which gate it
+is about; and **the sentence saying a granularity-robust metric was still roadmap work is replaced
+by a pointer to the block where it has governed since 2026-07-06**. That was the costliest of the
+four: a session on its first read was told the governing stop did not exist. Every former wording is
+preserved at the correction, and **what survives it is named rather than dropped** — the batch count
+was never an absolute quality figure, most of it is legitimate ambiguity, and the
+pitch-class-root-resolvable qualifier is real; all three are carried by the blocks this document now
+points at.
+
+**[[OI-320]] and [[OI-322]] FLIP; [[OI-332]]'s item (3) is done and its row says so, staying open for
+its other two items.**
+
+**Five authored inputs were maintained, each caught by its own tool's STOP rather than by a reader**
+(**D-648**). The guard runner STOPPED because the new derivation joined the derived candidate
+population with no authored invocation, and the invocation was authored with what the check actually
+asserts; the guard classification then STOPPED for the same tool with no verdict, and a **LIVE**
+verdict was authored — **with one clause stated plainly, because the artifact says it of itself: a
+green check means the enumeration re-derives and its verdicts reconcile, never that the population is
+complete.** The apparatus declaration and the sizing pass each STOPPED on the two closed rows, and
+all four records moved WHOLE into their retired tables with the reason each closed.
+
+**★ AND TWO RETIRED RECORDS ARE WORTH ONE LINE EACH, because both were right in the half that
+mattered.** [[OI-320]]'s sizing said *once chosen the edit is small* — and it was. [[OI-322]]'s
+verdict drew, in a parenthesis, exactly the distinction the ruling then ruled on: the FILING is
+apparatus, the row's SUBJECT is not — which is why a verdict recorded against the subject survived
+whichever filing the user chose.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires; the index-status lint and the open-items split
+reconciliation run inside that set. Register home anchors drifted and were re-aimed by running the
+tool. Every verdict is at `tools/audit/guard_state.json` → `summary` and none is restated here
+(**D-431**).
+
+**Holds:** the two documents the enumeration HELDS to the user, named individually in the artifact;
+and the enumeration's own soundness, reported at §2.19 and deliberately not repaired here.
+**Surfacings:** **§2.19**. **Nothing bearing on the analysis** — no measured value, no golden, no
+corpus of scores, nothing in `tools/robust_stop/`; the score inventory's corrections POINT at the
+gate blocks and move no figure in them.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

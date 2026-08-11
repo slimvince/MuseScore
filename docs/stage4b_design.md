@@ -1,5 +1,26 @@
 # Stage 4b Design — note-based mode/key PRIMARY, declared mode demoted to a droppable hint
 
+> **★ HISTORICAL RECORD — a design that LANDED and whose decision is now superseded in fact. Banner
+> added 2026-08-11 under the FILING CONVENTION (`cowork_design_doc_template.md`, the user's Ruling
+> 62 of `cowork_rulings_2026_08_11_fourteenth_stop.md`), by the derived enumeration that convention
+> ordered. THE BODY BELOW IS UNTOUCHED (#12).**
+>
+> **What this document is a record OF:** a design, written 2026-06-14, for making note-based
+> mode/key inference primary and demoting the declared mode to a droppable hint.
+>
+> **The fate of its subject:** it was **ratified and BUILT** — Stage 4b-i landed the note-based
+> opening, and `ARCHITECTURE.md` §5.2 records both of that increment's removals with their pins.
+> The decision this document carries — that the declared-mode influence becomes a small additive
+> hint with smallness as the gate — is recorded **superseded in fact** on the production arm
+> (register entry **D-571**, homed here): the joint estimator takes the signature and declared mode
+> as a weak fitted soft prior with no conditional gate anywhere, and conditions the initial key
+> state only.
+>
+> **So the banner beneath is spent, and it is the reason this one is needed.** *"No code is written
+> until this design is ratified"* was true when written; the code was written, and a reader meeting
+> that line first is told a design is awaiting a decision that was taken, executed and since
+> overtaken.
+>
 > **DRAFT — ratification-gated.** Cowork design, 2026-06-14. Implements the user's ratified
 > Stage-4 redirect (`docs/back_half_design.md` §4: note-based major/minor inference PRIMARY, the
 > −7 declared-mode wall REMOVED not graded, declared mode a low-weight droppable tiebreaker). Scoped

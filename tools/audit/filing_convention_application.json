@@ -1,0 +1,333 @@
+{
+ "purpose": "The DERIVED candidate set for the filing convention (the user's Ruling 62 of 2026-08-11), with an authored verdict per candidate. NOT a completion statement and not an authorization for any fix, design or inference change.",
+ "generated_by": "tools/audit/gen_filing_convention_application.py",
+ "the_convention_is_homed_elsewhere_and_is_not_restated_here": "cowork_design_doc_template.md, beside the kind list (#6).",
+ "what_is_derived_and_what_is_authored": {
+  "derived": "the candidate population, from signatures of OVERTAKING carried in a document's own banner or closing line, over the named surface set below",
+  "authored": "the surface set, the signatures themselves, the seeds, and the VERDICT per candidate with its reason",
+  "why_it_matters": "A verdict is a judgment about a document and can be wrong; a population is derived and cannot (D-431)."
+ },
+ "the_named_surface_set": {
+  "globs": [
+   "*.md",
+   "docs/*.md",
+   "ratification_surfaces/*.md",
+   "tools/*.md",
+   "tools/*/*.md"
+  ],
+  "excluded_directories": [
+   "apidocs_static",
+   "decisions",
+   "old_docs",
+   "open_items"
+  ],
+  "excluded_names": [
+   "CODE_OF_CONDUCT.md",
+   "CONTRIBUTING.md",
+   "README.md"
+  ],
+  "why_these": "This project's own documentation. MuseScore's upstream documentation, the source tree and the build directories are outside the convention's subject; the two registers are excluded because a register is its own kind under the kind list, with its own rules."
+ },
+ "the_signatures": {
+  "S1_closing_line_fate": "Within the document's last non-blank lines, a line that declares its own subject's fate -- resolved, deleted, removed, retired, superseded or falsified -- carried on a status line or beside a commit name.",
+  "S2_banner_over_a_falsified_subject": "The top block carries a status a later act may have overtaken (draft, ratification-gated, for sign-off, no code, proposed, pending) AND the register holds an entry whose content is falsified, shelved or superseded and whose own record names this document.",
+  "why_overtaking_rather_than_report_kind": "The convention governs a document the record has LEFT BEHIND. Enumerating every report in the tree enumerates a different class -- most reports are accurate records of what they found and are overtaken by nothing."
+ },
+ "★_the_bound_on_this_derivation_STATED_rather_than_measured": {
+  "the_bound": "The reach of these two signatures against the text they scan HAS NEVER BEEN MEASURED. An empty result over any surface therefore bounds nothing, and this enumeration is ADVISORY: it locates candidates, and its silence is not evidence that none exists.",
+  "why_a_measurement_is_not_owed": "D-673 (user, Ruling 60 of 2026-08-11): where an enumerating pattern's reach is unmeasured the bound may be stated on the pattern's own artifact instead, and the test is whether an ANALYSIS DECISION consumes the enumeration. None does -- what consumes this is a filing act over documents. The test is applied PER ENUMERATION and this bound is not inherited by any other."
+ },
+ "the_ruling_s_own_instances_this_derivation_does_NOT_carry": {
+  "docs/stage4c_cadence_key_design.md": {
+   "why_the_ruling_names_it": "`OPEN_ITEMS.md` OI-332 item (3): it designs the key-agnostic local cadence detector the register records FALSIFIED at its precision ceiling one day later, and carries no note of it — while carrying an inline supersession note elsewhere, so the omission is not simple neglect.",
+   "why_the_derivation_MISSES_it": "★ THIS IS THE DERIVATION'S OWN SOUNDNESS FAILURE AND IT IS DIAGNOSED RATHER THAN PATCHED. S2 asks the register for an entry whose STATUS is falsified/shelved/superseded. The entry that records this falsification is D-290, and its own status is LIVE — the FINDING stands; what was falsified is the approach the document designs. So the signature encodes a wrong premise: a falsified approach does not show up as a falsified-status entry. It is REPORTED and the signature is NOT re-tuned here, because widening a derivation at the moment its own seed exposes it is one step from fitting it to the cases that motivated it (DT-2).",
+   "verdict": "BRANCH ONE -- a dated report: RE-BANNER as a historical record, body untouched",
+   "acted": "2026-08-11, `cc_instruction_return_continuation_14.md` Task 0/2, on the user's Ruling 62"
+  }
+ },
+ "the_seeds_and_the_soundness_check": {
+  "what_a_seed_is": "A document the record already knows is overtaken, demoted to a SEED VERDICT rather than standing as the population (D-661). Seeds measure the derivation; they are not the answer.",
+  "seeds": {
+   "docs/symbol_input_audit.md": "OPEN_ITEMS.md OI-322 -- a completed audit describing, in the present tense, code its own closing line says was deleted.",
+   "docs/stage4c_cadence_key_design.md": "OPEN_ITEMS.md OI-332 item (3) -- a design whose approach the register records FALSIFIED one day later, carrying no note of it."
+  },
+  "seeds_the_derivation_MISSED": [
+   "docs/stage4c_cadence_key_design.md"
+  ],
+  "verdict": "NOT SOUND -- it misses a document the record already holds, so the population stays advisory and is NOT narrowed to fit (DT-2)"
+ },
+ "counted": {
+  "candidates": 16,
+  "seeds": 2,
+  "by_verdict": {
+   "BRANCH ONE -- a dated report: RE-BANNER as a historical record, body untouched": 2,
+   "BRANCH TWO -- a live governing surface: CORRECT the body": 2,
+   "HELD to the user -- the two branches do not decide it": 2,
+   "NO ACT OWED -- the document already states its own fate where a reader meets it first": 10
+  }
+ },
+ "by_verdict": {
+  "BRANCH ONE -- a dated report: RE-BANNER as a historical record, body untouched": [
+   "docs/stage4b_design.md",
+   "docs/symbol_input_audit.md"
+  ],
+  "BRANCH TWO -- a live governing surface: CORRECT the body": [
+   "STATUS.md",
+   "docs/key_path_design.md"
+  ],
+  "HELD to the user -- the two branches do not decide it": [
+   "cowork_phase2_architecture_review.md",
+   "docs/iter92_joint_bass_chord_scoring.md"
+  ],
+  "NO ACT OWED -- the document already states its own fate where a reader meets it first": [
+   "STATUS_ARCHIVE.md",
+   "cc_instruction_phase1s_stale_rules_and_enumeration.md",
+   "cc_instruction_phase1z_commit_and_instrument_record.md",
+   "cc_key_grading_and_calibration_rebaseline_report.md",
+   "cc_oi207_residual_pass_report.md",
+   "cc_stage2a_wip_triage_report.md",
+   "cc_stage3_4i_dossier.md",
+   "cc_stage5_phase2_2d_report.md",
+   "docs/policy2_coalescing_map.md",
+   "ratification_surfaces/cowork_pending_ratifications_next_session.md"
+  ]
+ },
+ "rows": [
+  {
+   "document": "STATUS.md",
+   "signature": [
+    "S1 closing-line fate (1 line(s))"
+   ],
+   "s1_lines": [
+    "*Last updated: 2026-07-27, twelfth entry (CC — **★ SEAMS PART 2 — P7: THE PARTITION CLOSE-OUT — completeness verified, docs consolidated (pre-switch state).** Dispatch `cc_instruction_notation_p7.md`. The LAST unit of the seams-2 partition — NO new behavior, NO new code path: a read-only completeness verification + a documentation consolidation, closing the partition so the switch ratification assembles on a verified-complete record. **TASK 1 — THE COMPLETENESS VERIFICATION (read-only; generated artifact `tools/notation_seams/partition_completeness.json`) — OVERALL COMPLETE / PASS, ZERO FINDINGS:** (1) **every audited consumer has its record-arm branch behind the default-OFF `useJointNotationRecord`** — the span-annotation emitter (`notationcomposingbridge.cpp:1491`), the note-seam funnel `analyzeHarmonicContextAtTick` (`:729`), the implode `populateChordTrack` (`notationimplodebridge.cpp:1416`), the tuning `applyRegionTuning` region path (`notationtuningbridge.cpp:774`); the section layer + cadence/pivot enter via `analyzeSectionFromRecord` (key-areas via the shared `groupKeyAreas`, cadence/pivot via the shared `detectCadences`/`detectPivotChords` reading the P2a-unified stored `hasAssertiveExposure`); interaction / context-menu / accessibility route through `analyzeNoteHarmonicContext[Details]` → the note-seam funnel (**NO consumer code change**) — each cited to file:line. (2) **every ratified ruling implemented/carried** — the raw-gap rule (grep-verified: `normalizedConfidence = gap.value_or(0.0)` RAW, no [0,1] remap/sigmoid/normalize anywhere on the record arm), C1 two-mode (`twoModeOf`), the D2 grading/display split + the reused `ChordSymbolFormatter`, the shared `formatNashvilleNumber`, the pedal suspension (`isPedalPoint` false + OI-194 comment), the §4.1 constants at their declared sites (`kAssertiveKeyExposureGap=1.055757` / `kTentativeKeyExposureGap=0.975911`, cited to `exposure_constants.json`; the 0.35 mode-suffix gate RETIRED/unwired; `kSameChordReannotationGap=960` re-homed), and the permanent both-ways boundary guard `inference_presentation_boundary_tests`. (3) **every seams-era register row in state** (the INDEX is the authority): OI-182 EXECUTED; OI-195/197/202/204 RESOLVED; OI-196/201/203 OPEN with carried dispositions; OI-193/194 OPEN (post-switch/increment); the living split-check PASS (index=204 / detail=204 / baseline=200 at verification — OI-205, a concurrent user-directed doc-structure row (NOT seams-era; STATUS/ARCHITECTURE size), rides this commit via the handoff → committed register 205/205, living-check re-run PASS). (4) **the flag default is OFF everywhere** (`Val(false)`, no settings UI — the switch has NOT happened) and **the three suites are GREEN at HEAD `89412b48b2`: composing 1186 / notation 61 / pipeline-snapshot 13** (build \"no work to do\" — this unit changes no code). **TASK 2 — DOC CONSOLIDATION (#10):** ARCHITECTURE.md — the FIVE accumulated per-unit record-path blocks consolidated into ONE coherent as-built section \"THE RECORD PATH\" (producer + input-scoping → section adapter → the four consumers → the presentation formatters + boundary guard → the dual-arm instrument → the #23 dual-path posture + the named switch scope), nothing historical removed; STATUS this entry; the OI-180 detail file gains a dated close-out note (the dual path's forward exit is ASSEMBLED, pending ratification — the INDEX row UNTOUCHED, the map executes post-switch). **THE P0…P7 DELIVERY LIST (hashes):** P0 `b090f6e4ab` → P1 `ad0c4069bc` → P2a `e3dac74b04` → P2b `d25cf40170` → P3a `e2c59715a5` → P-strings `58ac88079b`/`55ae163ef5`/`b2c71fb6e3` → P4 `0e0ca379b3`/`bb9e3c9811`/`599eebd45e` → note-seam `874bda0ab6`/`2d16899734`/`903125a5dc` → P6 `f4a8bfdf1d`/`c7eafb777d`/`89412b48b2` (seams part 1 producer `6e71b3ceff`; OI-197 `c8c5bb6a25`). **THE PRE-SWITCH STATE:** the partition is closed out and completeness-verified; the record path is DORMANT behind the OFF flag; batch/corpus output is A's, the in-app notation analysis is LEGACY — the declared, bounded #23 migration, awaiting the user's switch ratification. **THE SWITCH EVIDENCE is `tools/notation_seams/dualarm_classified_report.json` (P6): identical 2053 / inference-driven 6029 / presentation-rule 220 / input-scoping 0 / UNEXPLAINED 0.** The switch (§8.4) is a separate, Cowork-written, user-ratified commit: flag default flips ON; goldens refresh against the established record with the P6 classified report + the OI-178 adoption record as cited preconditions; CLAUDE.md staged-scope block + STATUS + ARCHITECTURE + the register rows + the handoff dual-path line move together. **NAMED POST-SWITCH AGENDA:** the OI-180 retirement map (the legacy `ChordAnalysisResult`/`NoteHarmonicContext`/`HarmonicRegion` path + the per-arm legacy branches retire); OI-193 (the marginal-posterior completion); OI-194 (the ornament-label / voice-independent pedal-class publication); OI-203 (the record-cache increment); OI-201 (the aug-sixth display-symbol completeness); then the OI-198 / OI-199 / OI-200 review trio. NO code / golden / `tools/robust_stop/` change — docs + the completeness artifact + the riding `cowork_handoff.md` only. ONE commit, pushed origin. NEXT (per the handoff): Cowork assembles the SWITCH decision surface (§8.4) for the user.)*"
+   ],
+   "s2_register_entries": [],
+   "is_a_seed": false,
+   "verdict": "BRANCH TWO -- a live governing surface: CORRECT the body",
+   "why": "A live status surface a session reads at start — the kind list's kind 7. Its job is to be true now, so it is corrected rather than bannered. The signature fires on a dated entry INSIDE the running log, which the surface's own convention moves to its archive; the act the record actually owes here is `OPEN_ITEMS.md` OI-47, which names four submission-era sections and the banner half it asks for.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "STATUS_ARCHIVE.md",
+   "signature": [
+    "S2 banner over a falsified/shelved/superseded subject"
+   ],
+   "s1_lines": [],
+   "s2_register_entries": [
+    "D-311"
+   ],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "It IS the historical record, and it says so in its own first two lines: moved verbatim out of the live status surface, NOT part of the session-start read, nothing edited. That is the branch-one banner already standing.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "cc_instruction_phase1s_stale_rules_and_enumeration.md",
+   "signature": [
+    "S1 closing-line fate (1 line(s))"
+   ],
+   "s1_lines": [
+    "deleted is cited to commit `a7c627e5a3`, read at the object this session — not carried from a report."
+   ],
+   "s2_register_entries": [],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "A DISPATCH — kind 3 of the kind list, an exempt genre. A dispatch is an instruction to one session, dated by construction, and the record of what it did is the report or returns entry it produced. It describes no state the record has left behind.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "cc_instruction_phase1z_commit_and_instrument_record.md",
+   "signature": [
+    "S2 banner over a falsified/shelved/superseded subject"
+   ],
+   "s1_lines": [],
+   "s2_register_entries": [
+    "D-058"
+   ],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "A DISPATCH, on the same ground as its sibling above.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "cc_key_grading_and_calibration_rebaseline_report.md",
+   "signature": [
+    "S1 closing-line fate (1 line(s))"
+   ],
+   "s1_lines": [
+    "(O-12, `23e21da8ea`); the superseded key column is preserved inside the manifest; the pre-ruling probe"
+   ],
+   "s2_register_entries": [],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "A dated report carrying its date, its dispatch and the ruling it executed at the head. The signature fires on the report's own account of a snapshot IT took — a finding, not a fate that has overtaken it.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "cc_oi207_residual_pass_report.md",
+   "signature": [
+    "S1 closing-line fate (1 line(s))"
+   ],
+   "s1_lines": [
+    "the addition commit `249fc81b6c` shows **5,469 added / 4,999 removed** for a change that is"
+   ],
+   "s2_register_entries": [],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "Its banner opens `Status: DELIVERED 2026-08-02` with the freeze it ran under. The signature fires on a measured line count inside the body.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "cc_stage2a_wip_triage_report.md",
+   "signature": [
+    "S1 closing-line fate (1 line(s))"
+   ],
+   "s1_lines": [
+    "STATUS, or discard as superseded by the fresh \"Layer 1 Phase 1a / Layer 4 A/B\" track?* (needs Cowork's"
+   ],
+   "s2_register_entries": [],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "A dated read-only classification whose banner states its scope discipline and its date. The signature fires on a QUESTION the report puts to its reader, not on a fate.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "cc_stage3_4i_dossier.md",
+   "signature": [
+    "S1 closing-line fate (1 line(s))"
+   ],
+   "s1_lines": [
+    "No gate was retired in 3.4-ii; the tree remains byte-identical to `a652dc1ba7`. The §5(B)"
+   ],
+   "s2_register_entries": [],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "Header carries its date, its base commit and its owner. The signature fires on the dossier's own finding that no gate was retired — the opposite of a fate declaration.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "cc_stage5_phase2_2d_report.md",
+   "signature": [
+    "S1 closing-line fate (1 line(s))"
+   ],
+   "s1_lines": [
+    "Local/unpushed, fork-only. Working tree `src/` == HEAD (RETIRE-4 binary, untouched). **No `tools/corpus/` write** (all regen → `C:/tmp/…` scratch; frozen `git status` clean, manifest `0dd64660f4`). **No push. No fit value adopted. No rule retired. No golden refreshed.** Commits: 1 `feat(tools):` (driver + 2 ledgers), this report `docs(cowork):` (force-add), the fold `docs(cowork):`."
+   ],
+   "s2_register_entries": [],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "Header carries its dispatch, the HEAD it ran at and its nature (measurement only, no adoption). The signature fires on that scope statement.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "cowork_phase2_architecture_review.md",
+   "signature": [
+    "S2 banner over a falsified/shelved/superseded subject"
+   ],
+   "s1_lines": [],
+   "s2_register_entries": [
+    "D-579"
+   ],
+   "is_a_seed": false,
+   "verdict": "HELD to the user -- the two branches do not decide it",
+   "why": "A dated architecture review whose banner marks five load-bearing claims as PENDING a later empirical pass. Whether that pass overtook the review is not settled by either branch, and the superseded register entry homed in it is superseded in its own right rather than by anything about this document. Held rather than bannered by stretch.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "docs/iter92_joint_bass_chord_scoring.md",
+   "signature": [
+    "S2 banner over a falsified/shelved/superseded subject"
+   ],
+   "s1_lines": [],
+   "s2_register_entries": [
+    "D-538"
+   ],
+   "is_a_seed": false,
+   "verdict": "HELD to the user -- the two branches do not decide it",
+   "why": "Its banner is already updated and accurate — the design is implemented and committed, and the follow-up scope it names has landed. Its SUBJECT is the legacy scorer awaiting deletion at the retirement map, so whether it becomes a historical record is decided by that scheduled event and not by this convention.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "docs/key_path_design.md",
+   "signature": [
+    "S2 banner over a falsified/shelved/superseded subject"
+   ],
+   "s1_lines": [],
+   "s2_register_entries": [
+    "D-058"
+   ],
+   "is_a_seed": false,
+   "verdict": "BRANCH TWO -- a live governing surface: CORRECT the body",
+   "why": "A live design surface, and both of its defects already have rows that name the act: `OPEN_ITEMS.md` OI-317 (its banner says the document is uncommitted and under a commit hold, which is false at HEAD) and OI-315 (its §2.1/§5 self-contradiction about the removed piece-start shortcut). The convention says which branch; those rows say what to write.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "docs/policy2_coalescing_map.md",
+   "signature": [
+    "S1 closing-line fate (2 line(s))"
+   ],
+   "s1_lines": [
+    "- **B** — Jazz path and `forceClassicalPath` flag deleted in 02e3733afb + 69716deead.",
+    "- **D** — Display-context re-analysis deleted in Phase 3c (recon at d35f003aa2)."
+   ],
+   "s2_register_entries": [],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "Dated at the head, and its own opening table is a CLOSED-DIVERGENCES table that states each subject's fate with the commit that closed it, where a reader meets it first. That is what branch one exists to produce, arrived at by the document's own construction.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "docs/stage4b_design.md",
+   "signature": [
+    "S2 banner over a falsified/shelved/superseded subject"
+   ],
+   "s1_lines": [],
+   "s2_register_entries": [
+    "D-571",
+    "D-572"
+   ],
+   "is_a_seed": false,
+   "verdict": "BRANCH ONE -- a dated report: RE-BANNER as a historical record, body untouched",
+   "why": "Its banner reads `DRAFT — ratification-gated … No code is written until this design is ratified`. The design LANDED, and the decision it carries is recorded superseded-in-fact in the register. So a reader meeting the banner first is told the opposite of what happened — the OI-322 shape one document over.",
+   "acted": "2026-08-11, `cc_instruction_return_continuation_14.md` Task 0/2, on the user's Ruling 62",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "docs/symbol_input_audit.md",
+   "signature": [
+    "S1 closing-line fate (1 line(s))"
+   ],
+   "s1_lines": [
+    "**Status:** All Category-C findings resolved in 69716deead (`analyzeScoreJazz`,"
+   ],
+   "s2_register_entries": [],
+   "is_a_seed": true,
+   "verdict": "BRANCH ONE -- a dated report: RE-BANNER as a historical record, body untouched",
+   "why": "The SEED, and the instance the ruling names first: the body describes `analyzeScoreJazz`, the injection flag and the jazz-mode field as live code across five sections, while the final line says they were deleted. A reader who stops before the last line is told the opposite of HEAD.",
+   "acted": "2026-08-11, `cc_instruction_return_continuation_14.md` Task 0/2, on the user's Ruling 62",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  },
+  {
+   "document": "ratification_surfaces/cowork_pending_ratifications_next_session.md",
+   "signature": [
+    "S2 banner over a falsified/shelved/superseded subject"
+   ],
+   "s1_lines": [],
+   "s2_register_entries": [
+    "D-282",
+    "D-283",
+    "D-284",
+    "D-285"
+   ],
+   "is_a_seed": false,
+   "verdict": "NO ACT OWED -- the document already states its own fate where a reader meets it first",
+   "why": "★ IT ALREADY CARRIES THE BRANCH-ONE BANNER, and it is the model instance: `STATUS: RULED AND APPLIED (user, 2026-08-03) — SUPERSEDED BY ITS OWN EXECUTION`, with the body `retained unedited beneath, under #12, as the record of what was put to the user and in what words`. Nothing is owed, and the convention did not invent this shape — it generalizes it.",
+   "authored": "the verdict and its reason. The signature and the population are derived."
+  }
+ ],
+ "what_this_file_does_NOT_do": [
+  "It performs no banner insertion and no body correction -- it says which documents the convention reaches and what each is owed.",
+  "It moves no open-items status, no register entry and no home.",
+  "It touches no golden, no corpus of scores and nothing in `tools/robust_stop/`, and it authorizes no fix, design or inference change."
+ ]
+}

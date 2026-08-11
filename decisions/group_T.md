@@ -925,7 +925,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `docs/stage4b_design.md:196-197`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `docs/stage4b_design.md:217-218`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `docs/stage4b_design.md`, the Stage-4b design implementing the user's ratified Stage-4 redirect; the staged approach was chosen by the user 2026-06-14. Read in full by READ WAVE 4, 2026-08-04. **Its subject is the LEGACY key path** (`keymodeanalyzer` / `keyresolver`), which the joint estimator replaced on both surfaces. Recorded as the document's §7 stop conditions. Unlike D-571 and D-572 this clause is a MEASUREMENT rule, not a scoring term, so it is not legacy-scoped: it binds any future ablation that removes a support to size its contribution.
 
@@ -941,7 +941,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `docs/stage4b_design.md:146`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `docs/stage4b_design.md:167`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `docs/stage4b_design.md`, the Stage-4b design implementing the user's ratified Stage-4 redirect; the staged approach was chosen by the user 2026-06-14. Read in full by READ WAVE 4, 2026-08-04. **Its subject is the LEGACY key path** (`keymodeanalyzer` / `keyresolver`), which the joint estimator replaced on both surfaces. Recorded as disposition OQ6 of the document's open-question table, and confirmed in its §6 ratification asks. Like **D-573** this is a measurement rule rather than a scoring term and is not legacy-scoped. It stands beside the standing requirement that a fit declares its held-out data and capacity budget BEFORE fitting (#20) — that rule fixes what is declared early, this one fixes what may not be.
 
@@ -1158,7 +1158,7 @@
 
 **Status.** LIVE · decided 2026-06-14 · ratifier not stated
 
-**Home.** `docs/stage4c_cadence_key_design.md:26-31`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `docs/stage4c_cadence_key_design.md:46-51`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `docs/stage4c_cadence_key_design.md` §1, DRAFT and ratification-gated, 2026-06-14. Read in full by READ WAVE 6, 2026-08-04. Recorded as the design's own first obligation and repeated in its §8 stop conditions. It is the measure-before-build gate (**D-279**) stated for a specific quantity, and it is the discipline the case that follows vindicated: the local key-agnostic cadence approach was later measured at its precision ceiling and falsified (**D-290**) rather than shipped on the ceiling figure. The record states no ratifier.
 

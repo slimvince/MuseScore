@@ -1757,7 +1757,7 @@
       "delegation_line": null,
       "sections": {
         "§2.1": {
-          "heading_line": 43,
+          "heading_line": 64,
           "delegated": null,
           "states_rules": null,
           "entries": [
@@ -5877,9 +5877,9 @@
       "id": "D-571",
       "title": "The declared-mode influence becomes a small additive hint, and SMALLNESS IS THE GATE — no separate confidence test is added",
       "document": "docs/stage4b_design.md",
-      "home": "docs/stage4b_design.md:48-52",
+      "home": "docs/stage4b_design.md:69-73",
       "section": "§2.1",
-      "section_heading_line": 43,
+      "section_heading_line": 64,
       "delegation_form": "not-named-in-any-ratified-surface",
       "delegation_scope": "none",
       "delegation_at": null,

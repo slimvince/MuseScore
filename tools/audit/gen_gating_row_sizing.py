@@ -690,24 +690,8 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
-        "row": "OI-320",
-        "anchor_quote": "that is a filing decision about a user-ratified gate's presentation",
-        "the_act_owed": (
-            "Decide which of the four stale sites become the retired diagnostic and which become the "
-            "governing robust unit — a filing decision about how a user-ratified gate is presented in "
-            "the document every score-touching task is sent to first."
-        ),
-        "sizing": "NEEDS-RULING",
-        "whose_act_it_is": "the user",
-        "what_blocks_it": "a user ruling",
-        "why_that_size": (
-            "The row says in terms that what the corrected text should say is not a session's to "
-            "choose. Once chosen the edit is small; until then no session act exists, because writing "
-            "either reading would be taking the decision."
-        ),
-        "the_second_half": None,
-    },
-    {
+        # OI-320's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 62 closed
+        # the row.
         "row": "OI-321",
         "anchor_quote": "whether the implode path applying the gate is the rule being discharged",
         "the_act_owed": (
@@ -733,24 +717,8 @@ SIZINGS = [
         },
     },
     {
-        "row": "OI-322",
-        "anchor_quote": "whether it is re-bannered as a historical record of the pre-deletion state",
-        "the_act_owed": (
-            "Decide whether a completed audit describing deleted code is re-bannered as a historical "
-            "record or rewritten — a filing question the row says applies to every completed audit in "
-            "the tree, not to this one."
-        ),
-        "sizing": "NEEDS-RULING",
-        "whose_act_it_is": "the user",
-        "what_blocks_it": "a user ruling",
-        "why_that_size": (
-            "No session act exists: the document already CONTAINS its own correction in its last "
-            "line, so nothing is unknown — what is undecided is which of two treatments a dated "
-            "report gets, and the row scopes that question to a class rather than to this document."
-        ),
-        "the_second_half": None,
-    },
-    {
+        # OI-322's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 62 closed
+        # the row.
         # OI-324's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 63 closed
         # the row.
         "row": "OI-332",
@@ -901,6 +869,68 @@ SIZINGS = [
 # declaration's.
 # ---------------------------------------------------------------------------
 RETIRED_SIZINGS = [
+    {
+        "row": "OI-320",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 2) on the "
+            "user's Ruling 62, which supplied exactly the filing decision this sizing said no "
+            "session could take. **The sizing was right in both halves and the second is worth "
+            "reading:** NEEDS-RULING was right, and its `why_that_size` said *once chosen the edit "
+            "is small* — which is what happened. The act performed was four corrections, each "
+            "pointing at the block that owns it rather than restating anything."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-320",
+            "anchor_quote": "that is a filing decision about a user-ratified gate's presentation",
+            "the_act_owed": (
+                "Decide which of the four stale sites become the retired diagnostic and which "
+                "become the governing robust unit — a filing decision about how a user-ratified "
+                "gate is presented in the document every score-touching task is sent to first."
+            ),
+            "sizing": "NEEDS-RULING",
+            "whose_act_it_is": "the user",
+            "what_blocks_it": "a user ruling",
+            "why_that_size": (
+                "The row says in terms that what the corrected text should say is not a session's "
+                "to choose. Once chosen the edit is small; until then no session act exists, "
+                "because writing either reading would be taking the decision."
+            ),
+            "the_second_half": None,
+        },
+    },
+    {
+        "row": "OI-322",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 2) on the "
+            "user's Ruling 62, which answered the filing question for the CLASS rather than for "
+            "this document: a completed audit is re-bannered as a historical record, body never "
+            "rewritten. **The sizing's `why_that_size` was the load-bearing half and it was right:** "
+            "it said nothing was unknown, that the document already contains its own correction, "
+            "and that what was undecided was which of two treatments a dated report gets. That is "
+            "precisely the fork the user ruled — and it is why the closing act was a banner rather "
+            "than an investigation."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-322",
+            "anchor_quote":
+                "whether it is re-bannered as a historical record of the pre-deletion state",
+            "the_act_owed": (
+                "Decide whether a completed audit describing deleted code is re-bannered as a "
+                "historical record or rewritten — a filing question the row says applies to every "
+                "completed audit in the tree, not to this one."
+            ),
+            "sizing": "NEEDS-RULING",
+            "whose_act_it_is": "the user",
+            "what_blocks_it": "a user ruling",
+            "why_that_size": (
+                "No session act exists: the document already CONTAINS its own correction in its "
+                "last line, so nothing is unknown — what is undecided is which of two treatments a "
+                "dated report gets, and the row scopes that question to a class rather than to this "
+                "document."
+            ),
+            "the_second_half": None,
+        },
+    },
     {
         "row": "OI-324",
         "why_it_retired": (

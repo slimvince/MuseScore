@@ -37,6 +37,7 @@
       "tools/audit/decisions/gen_verbatim_subject_consistency.py",
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_arm_comment_sweep.py",
+      "tools/audit/gen_filing_convention_application.py",
       "tools/audit/gen_gating_row_sizing.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
       "tools/audit/gen_phase1_completion_inventory.py",
@@ -51,7 +52,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 53,
+    "authored_entries": 54,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -409,7 +410,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 34 gates of 59 candidates over 249 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 32 gates of 57 candidates over 247 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -491,6 +492,19 @@
       ],
       "stderr": [],
       "what_it_checks": "the per-row sizing over the gating set re-derives. What it guards is not the sizes, which are authored judgments, but the pass's own completeness: the authored sizings and the population derived from the completion inventory must agree in BOTH directions, so a row entering or leaving the gating set halts it rather than being sized silently or quietly dropped -- which is the silent cap three continuations declined to risk. Its other STOPs ride with it: every label, owner and blocker must come from the closed vocabulary the pass declares, a NEEDS-RULING label and a whose-act field must agree, and every row's quoted words must still be in the INDEX"
+    },
+    {
+      "tool": "tools/audit/gen_filing_convention_application.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "PASS: filing_convention_application.json re-derives byte-identically (16 candidate(s); NOT SOUND -- it misses a document the record already holds, so the population stays advisory and is NOT narrowed to fit (DT-2))"
+      ],
+      "stderr": [],
+      "what_it_checks": "the filing convention's candidate set re-derives. What it guards is not the verdicts, which are authored judgments about documents, but three demands on the record as it stands: every derived candidate carries an authored verdict, so an unclassified candidate halts the run rather than passing silently; no verdict names a document the derivation no longer carries, so the tree moving under the table halts it too; and the derivation's SOUNDNESS against its seeds is re-computed on every run and published, so a signature that stops finding what the record already holds is reported rather than quietly trusted"
     },
     {
       "tool": "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
@@ -774,8 +788,8 @@
     }
   ],
   "summary": {
-    "run": 39,
-    "passing": 39,
+    "run": 40,
+    "passing": 40,
     "failing": 0,
     "failing_tools": [],
     "not_run": 4,

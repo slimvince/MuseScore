@@ -25,8 +25,8 @@
  },
  "population": {
   "rows_parsed": 369,
-  "open_rows": 249,
-  "first_cut_candidates": 59,
+  "open_rows": 247,
+  "first_cut_candidates": 57,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -49,7 +49,7 @@
  },
  "totals": {
   "non_gating": 25,
-  "gates": 34,
+  "gates": 32,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -154,12 +154,6 @@
    ],
    "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject": [
     "OI-360"
-   ],
-   "the criterion - the row's subject bears on an instrument": [
-    "OI-320"
-   ],
-   "the criterion - the row's subject bears on the analysis": [
-    "OI-322"
    ],
    "the criterion - the subject is an instrument a measurement of the analysis depends on": [
     "OI-359"
@@ -533,28 +527,12 @@
    "gate_ground": "D-639's reach derivation, applied by the user's Ruling 56"
   },
   {
-   "id": "OI-320",
-   "title": "`docs/score_inventory.md` — the document `CLAUDE.md` sends every score-touching task to FIRST — states the SUPERSEDED batch case-identity gate as the current gate, three times, and tells the reader the granularity-robust metric does not exist yet",
-   "subject_column": "F — doc-sync debt (#10)",
-   "verdict": "GATES",
-   "reason": "A corpus/score inventory names the SUPERSEDED batch case-identity sets as the current acceptance gate, three times, and tells the reader the granularity-robust metric does not exist yet. That is a statement about an instrument a measurement depends on and about the analysis's build state, which D-438's line inside the documentation rows puts on the gating side; and the document is the one CLAUDE.md makes a mandatory first read for any task that touches scores, so a session is pointed at the retired gate before it reads anything else.",
-   "gate_ground": "the criterion - the row's subject bears on an instrument"
-  },
-  {
    "id": "OI-321",
    "title": "`docs/unified_analysis_pipeline.md` states three things as current that are false at HEAD, including a phase it calls deferred that the code says was executed",
    "subject_column": "F — doc-sync debt (#10)",
    "verdict": "GATES",
    "reason": "A design document states three things as current that are false at HEAD, one of them a refactoring phase it calls DEFERRED which the code says was EXECUTED. D-438's line inside the documentation rows makes a correction to a statement about the analysis or its BUILD STATE gating, and a phase's execution status is that statement in its strongest form. THE ROW REACHED THIS CUT FOR THE FIRST TIME ON 2026-08-09: it had SEVEN cells, its layer/gate column written twice, so the ONE index parser skipped it silently and it was in no population at all (OI-362). The user's Ruling 33 made a malformed row a STOP and the row was repaired in the same act, which is what put it here. Its own text already carried this verdict in words; authoring it for a row the cut DID reach is what the tool requires.",
    "gate_ground": "a statement about the analysis's build state"
-  },
-  {
-   "id": "OI-322",
-   "title": "`docs/symbol_input_audit.md` describes throughout, in the present tense, code its own closing line says was deleted — a reader who stops before the last line is told the opposite of HEAD",
-   "subject_column": "F — doc-sync debt (#10)",
-   "verdict": "GATES",
-   "reason": "A completed audit describes five pieces of analysis-tool code in the present tense -- with call-site line citations and three open questions -- that its own last line says were deleted. The subject is what the code does and whether a symbol may reach the analyzer, not a banner or a label: D-438's apparatus line does not reach it. (The document's FILING -- re-banner as a historical record or rewrite -- is apparatus, but it is the remedy's shape, not the row's subject.)",
-   "gate_ground": "the criterion - the row's subject bears on the analysis"
   },
   {
    "id": "OI-327",
@@ -726,6 +704,18 @@
     "class_basis_or_ground": "a statement about the analysis's build state",
     "reason": "Six comments in src/ and tools/ say the record arm is 'default OFF' and that the record section adapter has no caller. D-438's line inside the documentation rows makes a correction to a statement about the analysis or its BUILD STATE gating, and every one of the six is exactly that - they are where a reader goes to learn which analysis arm runs, and all six name the dormant one.",
     "closed": "RESOLVED 2026-08-11 - all six claims are discharged and every one was verified AT THE FILES by the closing session rather than at any record of them (`cc_instruction_return_continuation_13.md` Task 2). Five were corrected by the user's Ruling 16, the one licensed comment-only `src/` act; the sixth was corrected in two halves under Rulings 48 and 59, the second half being a SECOND block of the same file that the first correction did not reach - which is why the row survived an act that appeared to close it. THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole: what it graded was the SUBJECT, and the subject was a statement about which analysis arm runs, which is exactly what D-438's line puts on the gating side. It is retired because the row closed, never because it was wrong. WHAT THE CLOSURE DOES NOT DISCHARGE is carried forward rather than lost: the enumeration that located these six had no measured reach against the text it scans, so its empty verdict bounded nothing - that is OI-368, closed separately by a ruling that BOUNDED the pattern rather than measuring it, and its closure is explicitly not a claim that the pattern has been measured."
+   },
+   "OI-320": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "the criterion - the row's subject bears on an instrument",
+    "reason": "A corpus/score inventory names the SUPERSEDED batch case-identity sets as the current acceptance gate, three times, and tells the reader the granularity-robust metric does not exist yet. That is a statement about an instrument a measurement depends on and about the analysis's build state, which D-438's line inside the documentation rows puts on the gating side; and the document is the one CLAUDE.md makes a mandatory first read for any task that touches scores, so a session is pointed at the retired gate before it reads anything else.",
+    "closed": "RESOLVED 2026-08-11 - the user's Ruling 62 (`cowork_rulings_2026_08_11_fourteenth_stop.md`) supplied the filing decision the row said no session could take: this document is a LIVE GOVERNING SURFACE, so its BODY is corrected rather than re-bannered, and all four sites now POINT at the block that owns each -- the governing stop at gate block (A), the retired batch diagnostic at block (C) -- with no figure restated (D-431) and every former wording preserved at the correction (#12). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole; it is retired because the row closed, never because it was wrong. Its own last clause is what the act turned on: the cost was that a session is pointed at the retired gate BEFORE it reads anything else, and the sentence saying the granularity-robust metric was still roadmap work was the sharpest form of that."
+   },
+   "OI-322": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "the criterion - the row's subject bears on the analysis",
+    "reason": "A completed audit describes five pieces of analysis-tool code in the present tense -- with call-site line citations and three open questions -- that its own last line says were deleted. The subject is what the code does and whether a symbol may reach the analyzer, not a banner or a label: D-438's apparatus line does not reach it. (The document's FILING -- re-banner as a historical record or rewrite -- is apparatus, but it is the remedy's shape, not the row's subject.)",
+    "closed": "RESOLVED 2026-08-11 - the user's Ruling 62 answered the filing question this row posed for the whole class: BRANCH ONE, a completed audit is re-bannered as a historical record and its body is never rewritten. The banner names the date, the state audited, the fate of the subject and the deleting commit; the body is untouched (#12). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole -- and its parenthesis is worth one line, because it drew exactly the distinction the ruling then ruled on: the FILING is apparatus, the row's SUBJECT is not, and a verdict recorded against the subject survives whichever filing the user chooses. WHAT THE CLOSURE DOES NOT DISCHARGE: the row's wider half -- every completed audit in the tree -- is answered by a DERIVED enumeration whose reach is stated rather than measured and which is declared NOT SOUND against its seeds; that is a bound, not a completeness claim."
    },
    "OI-324": {
     "verdict": "GATES",

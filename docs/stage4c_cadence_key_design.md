@@ -1,5 +1,25 @@
 # Stage 4c Design — cadence→key: a key-agnostic global tonic anchor for the relative-pair decision
 
+> **★ HISTORICAL RECORD — a design whose approach was FALSIFIED. Banner added 2026-08-11 under the
+> FILING CONVENTION (`cowork_design_doc_template.md`, the user's Ruling 62 of
+> `cowork_rulings_2026_08_11_fourteenth_stop.md`); `OPEN_ITEMS.md` OI-332 item (3). THE BODY BELOW
+> IS UNTOUCHED (#12).**
+>
+> **What this document is a record OF:** a design, written 2026-06-14, for deciding the
+> relative-major/minor pair from cadences detected without knowing the key.
+>
+> **The fate of its subject:** the approach is **FALSIFIED at its precision ceiling**, recorded one
+> day later — register entry **D-290**, homed in `ARCHITECTURE.md`'s key layer, whose own words are
+> that deciding the key from cadences found without knowing the key, one cadence at a time, was
+> tested to its limit and cannot be made accurate enough to use; the remaining errors need either a
+> long-range key decision or a different kind of model, not a better local cadence rule. **What
+> survives the falsification is entered separately as D-616 and D-617 and is NOT falsified.**
+>
+> **So the design below is not a plan.** The banner is here because the document carried an inline
+> supersession note elsewhere and none for this — so its omission read as an oversight rather than
+> as a state, and a reader meeting the DRAFT banner first was told a design was awaiting
+> ratification when its central approach had already been ruled out.
+>
 > **DRAFT — ratification-gated.** Cowork design, 2026-06-14. Follows the ratified Stage-4 redirect
 > (`back_half_design.md` §4) and two measured results: **4b-ii** (`cc_stage4b_ii_report.md` — local
 > reweighting CANNOT carry the relative-major/minor decision; the floor is the sub-1.0-hint near-ties and

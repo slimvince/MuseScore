@@ -87,7 +87,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `docs/score_inventory.md:357-359`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `docs/score_inventory.md:383-385`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md` as the stated design principle of the validation-corpus roadmap. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written as hard rule 7 of `docs/score_inventory.md`, the document `CLAUDE.md` directs every score or corpus task to read first. Former home preserved (#12): `STATUS_ARCHIVE.md:2938`, the validation-corpus roadmap.
 
@@ -447,7 +447,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `docs/score_inventory.md:344-347`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `docs/score_inventory.md:370-373`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Hard rule 2 of the score inventory, the document `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.) It is the snapshot-corpus counterpart of **D-226** (the music21 export is version-pinned; regenerating it is a deliberate re-baseline) and of the block-(A) re-baseline discipline.
 
@@ -472,7 +472,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `docs/score_inventory.md:180-189`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `docs/score_inventory.md:184-193`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** The chorale-selection provenance finding of the score inventory (audit C3), restated as its hard rule 4; the document is the one `CLAUDE.md` directs every score-touching task to read first. Entered by the phase-1 reads WAVE 2 (dispatch `cc_instruction_reads_2.md`) from the full read of the document. ★ RATIFIED (user, 2026-08-04, the READ WAVE 3 ratification queue — the thirty-three READ WAVE 2 entries D-469…D-501 ratified AS DRAFTED, each keeping the status the record states, several of which are 'not stated', and left that way. What the ratification of an ENTRY settles is that the register records the decision correctly; it is not a judgment that the decision is good and it is not a conformance finding. It supplies no date and no ratifier the original record never had, so every 'not stated' fact above stands unchanged (#12). Home and provenance remain bookkeeping. Dispatch cc_instruction_reads_3.md §1.2.)
 

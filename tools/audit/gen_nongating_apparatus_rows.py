@@ -109,6 +109,44 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-320": (GATES, "the criterion - the row's subject bears on an instrument",
+               "A corpus/score inventory names the SUPERSEDED batch case-identity sets as the "
+               "current acceptance gate, three times, and tells the reader the granularity-robust "
+               "metric does not exist yet. That is a statement about an instrument a measurement "
+               "depends on and about the analysis's build state, which D-438's line inside the "
+               "documentation rows puts on the gating side; and the document is the one CLAUDE.md "
+               "makes a mandatory first read for any task that touches scores, so a session is "
+               "pointed at the retired gate before it reads anything else.",
+               "RESOLVED 2026-08-11 - the user's Ruling 62 "
+               "(`cowork_rulings_2026_08_11_fourteenth_stop.md`) supplied the filing decision the "
+               "row said no session could take: this document is a LIVE GOVERNING SURFACE, so its "
+               "BODY is corrected rather than re-bannered, and all four sites now POINT at the "
+               "block that owns each -- the governing stop at gate block (A), the retired batch "
+               "diagnostic at block (C) -- with no figure restated (D-431) and every former wording "
+               "preserved at the correction (#12). THE VERDICT WAS CORRECT WHILE IT STOOD and is "
+               "kept whole; it is retired because the row closed, never because it was wrong. Its "
+               "own last clause is what the act turned on: the cost was that a session is pointed "
+               "at the retired gate BEFORE it reads anything else, and the sentence saying the "
+               "granularity-robust metric was still roadmap work was the sharpest form of that."),
+    "OI-322": (GATES, "the criterion - the row's subject bears on the analysis",
+               "A completed audit describes five pieces of analysis-tool code in the present tense "
+               "-- with call-site line citations and three open questions -- that its own last line "
+               "says were deleted. The subject is what the code does and whether a symbol may reach "
+               "the analyzer, not a banner or a label: D-438's apparatus line does not reach it. "
+               "(The document's FILING -- re-banner as a historical record or rewrite -- is "
+               "apparatus, but it is the remedy's shape, not the row's subject.)",
+               "RESOLVED 2026-08-11 - the user's Ruling 62 answered the filing question this row "
+               "posed for the whole class: BRANCH ONE, a completed audit is re-bannered as a "
+               "historical record and its body is never rewritten. The banner names the date, the "
+               "state audited, the fate of the subject and the deleting commit; the body is "
+               "untouched (#12). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole -- and "
+               "its parenthesis is worth one line, because it drew exactly the distinction the "
+               "ruling then ruled on: the FILING is apparatus, the row's SUBJECT is not, and a "
+               "verdict recorded against the subject survives whichever filing the user chooses. "
+               "WHAT THE CLOSURE DOES NOT DISCHARGE: the row's wider half -- every completed audit "
+               "in the tree -- is answered by a DERIVED enumeration whose reach is stated rather "
+               "than measured and which is declared NOT SOUND against its seeds; that is a bound, "
+               "not a completeness claim."),
     "OI-324": (GATES, "the criterion - the row's subject bears on what the emission reads",
                "Whether the priority-of-evidence ranking binds the production emission or only the "
                "legacy key path is a question about the evidential contract the joint emission is "
@@ -793,21 +831,8 @@ V = {
     # precedent, and both carry the default, which is that they GATE. That is the right answer
     # for both on the criterion anyway: OI-321 is statements about the analysis's build state,
     # and OI-323 is an establishment obligation.
-    "OI-320": (GATES, "the criterion - the row's subject bears on an instrument",
-               "A corpus/score inventory names the SUPERSEDED batch case-identity sets as the "
-               "current acceptance gate, three times, and tells the reader the granularity-robust "
-               "metric does not exist yet. That is a statement about an instrument a measurement "
-               "depends on and about the analysis's build state, which D-438's line inside the "
-               "documentation rows puts on the gating side; and the document is the one CLAUDE.md "
-               "makes a mandatory first read for any task that touches scores, so a session is "
-               "pointed at the retired gate before it reads anything else."),
-    "OI-322": (GATES, "the criterion - the row's subject bears on the analysis",
-               "A completed audit describes five pieces of analysis-tool code in the present tense "
-               "-- with call-site line citations and three open questions -- that its own last line "
-               "says were deleted. The subject is what the code does and whether a symbol may reach "
-               "the analyzer, not a banner or a label: D-438's apparatus line does not reach it. "
-               "(The document's FILING -- re-banner as a historical record or rewrite -- is "
-               "apparatus, but it is the remedy's shape, not the row's subject.)"),
+    # OI-320's and OI-322's verdicts moved to RETIRED_VERDICTS on 2026-08-11, when the user's
+    # Ruling 62 closed both rows.
     # OI-324's verdict moved to RETIRED_VERDICTS on 2026-08-11, when the user's Ruling 63 closed
     # the row.
     # ---- rowed 2026-08-04 by READ WAVE 4 -------------------------------------------------

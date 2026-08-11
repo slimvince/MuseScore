@@ -1,5 +1,27 @@
 # Symbol-Input Audit — Post Jazz-Path Retirement
 
+> **★ HISTORICAL RECORD — a completed audit of a state the code has since left. Banner added
+> 2026-08-11 under the FILING CONVENTION (`cowork_design_doc_template.md`, the user's Ruling 62 of
+> `cowork_rulings_2026_08_11_fourteenth_stop.md`); `OPEN_ITEMS.md` OI-322. THE BODY BELOW IS
+> UNTOUCHED (#12).**
+>
+> **What this document is a record OF:** the chord-symbol reads that existed across the codebase
+> **after** the jazz path was retired in `02e3733afb`, classified by intent against the user's
+> operating principle. It was written at that state and is accurate about it.
+>
+> **The fate of its subject:** every Category-C symbol read this audit found is **GONE**. The
+> audit's own closing line records it — *"All Category-C findings resolved in `69716deead`
+> (`analyzeScoreJazz`, `--inject-written-root`, `jazzMode` field deleted)"* — and a search of every
+> `.cpp` and `.h` in the tree for `analyzeScoreJazz`, `injectWrittenRootTone`, `inject-written-root`,
+> `jazzMode` and `scoreHasValidChordSymbols` returns **no match** at HEAD.
+>
+> **So the body's present tense describes the pre-deletion state, and the open questions Q1–Q3 it
+> puts to the reader are ANSWERED by that deletion.** Read it as a record of what was found in
+> 2026, not as a description of the code. *Why the banner rather than a rewrite:* a completed audit
+> is evidence about an act — what was known, when, and what was concluded — and rewriting it
+> destroys the thing it exists to be. The banner fixes, by construction, the defect that a
+> correcting sentence sat three hundred lines below what it corrects.
+
 ## Context
 
 Jazz path retired in commit `02e3733afb`. That commit deleted

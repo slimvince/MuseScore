@@ -210,6 +210,20 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "directions: a row entering or leaving the apparatus-classed set halts it rather than "
         "being graded silently or dropped. That is a demand about the record as it stands today, "
         "not a dated reading of it."),
+    "tools/audit/gen_filing_convention_application.py": (
+        LIVE, "gen_filing_convention_application.py:14-40",
+        "LIVE, and for the same reason its sibling sizing pass is: the artifact's CONTENT is "
+        "authored judgment about documents, so what the check asserts is not that the verdicts are "
+        "right — a verdict about a document cannot be checked by a tool — but three demands about "
+        "the record as it stands TODAY. Its POPULATION is re-derived over the named surface set on "
+        "every run and reconciled with the authored verdicts in BOTH directions, so a document "
+        "entering or leaving the candidate set halts it rather than being verdicted silently or "
+        "quietly dropped. And its SOUNDNESS against the seeds is re-computed on every run and "
+        "published, so a signature that stops finding what the record already holds is reported "
+        "rather than trusted. ★ ONE THING IS STATED PLAINLY BECAUSE THE ARTIFACT SAYS IT OF "
+        "ITSELF: the derivation's REACH is unmeasured and is BOUNDED on the artifact rather than "
+        "measured, under D-673 — so a green check here means the enumeration re-derives and its "
+        "verdicts reconcile, never that the population is complete."),
     "tools/audit/gen_gating_row_sizing.py": (
         LIVE, "gen_gating_row_sizing.py:30-44",
         "LIVE, and the verdict is worth stating because the artifact's CONTENT is authored "

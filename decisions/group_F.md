@@ -752,9 +752,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `docs/stage4b_design.md:48-52`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
+**Home.** `docs/stage4b_design.md:69-73`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
 
-**Home section.** **§2.1** — `### 2.1 The −7 penalty → a small additive declared *hint* (OQ1)` (heading at line 43). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
+**Home section.** **§2.1** — `### 2.1 The −7 penalty → a small additive declared *hint* (OQ1)` (heading at line 64). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** `docs/stage4b_design.md`, the Stage-4b design implementing the user's ratified Stage-4 redirect; the staged approach was chosen by the user 2026-06-14. Read in full by READ WAVE 4, 2026-08-04. **Its subject is the LEGACY key path** (`keymodeanalyzer` / `keyresolver`), which the joint estimator replaced on both surfaces. The demotion landed and was measured (the document's own §2.7, HELD then ratified). Its subject is a scoring term of the legacy key emission, which the production arm no longer runs: the joint estimator takes the signature and declared mode as a weak fitted soft prior with no conditional gate anywhere (**D-528**), and conditions the initial key state only (**D-450**). Recorded *superseded in fact* rather than *superseded by* — no ruling names this decision; a later build replaced what it governs.
 

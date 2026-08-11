@@ -539,7 +539,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 38,
+   "count": 36,
    "ids": [
     "OI-105",
     "OI-107",
@@ -564,9 +564,7 @@
     "OI-315",
     "OI-317",
     "OI-318",
-    "OI-320",
     "OI-321",
-    "OI-322",
     "OI-332",
     "OI-338",
     "OI-346",
@@ -583,7 +581,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 57,
+   "count": 55,
    "ids": [
     "OI-105",
     "OI-107",
@@ -619,9 +617,7 @@
     "OI-315",
     "OI-317",
     "OI-318",
-    "OI-320",
     "OI-321",
-    "OI-322",
     "OI-332",
     "OI-338",
     "OI-341",
@@ -1383,24 +1379,6 @@
     }
    },
    {
-    "id": "OI-320",
-    "title": "`docs/score_inventory.md` — the document `CLAUDE.md` sends every score-touching task to FIRST — states the SUPERSEDED batch case-identity gate as the current gate, three times, and tells the reader the granularity-robust",
-    "subject_column": "F — doc-sync debt (#10)",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync",
-     "stale"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "the criterion - the row's subject bears on an instrument"
-    }
-   },
-   {
     "id": "OI-321",
     "title": "`docs/unified_analysis_pipeline.md` states three things as current that are false at HEAD, including a phase it calls deferred that the code says was executed",
     "subject_column": "F — doc-sync debt (#10)",
@@ -1418,25 +1396,6 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "a statement about the analysis's build state"
-    }
-   },
-   {
-    "id": "OI-322",
-    "title": "`docs/symbol_input_audit.md` describes throughout, in the present tense, code its own closing line says was deleted — a reader who stops before the last line is told the opposite of HEAD",
-    "subject_column": "F — doc-sync debt (#10)",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync",
-     "present tense",
-     "stale"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "the criterion - the row's subject bears on the analysis"
     }
    },
    {
@@ -1603,7 +1562,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 40,
+   "count": 38,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1630,9 +1589,7 @@
     "OI-311",
     "OI-315",
     "OI-318",
-    "OI-320",
     "OI-321",
-    "OI-322",
     "OI-332",
     "OI-341",
     "OI-352",
@@ -1736,9 +1693,7 @@
     "OI-315",
     "OI-317",
     "OI-318",
-    "OI-320",
     "OI-321",
-    "OI-322",
     "OI-332",
     "OI-338",
     "OI-346",
@@ -1868,8 +1823,8 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 57,
-   "of_which_gate": 40,
+   "open_rows_in_the_wide_cut": 55,
+   "of_which_gate": 38,
    "of_which_apparatus_and_therefore_non_gating": 17,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 5
   },
@@ -1899,8 +1854,7 @@
    "OI-283",
    "OI-290",
    "OI-296",
-   "OI-299",
-   "OI-320"
+   "OI-299"
   ],
   "recollected_but_NOT_in_the_derived_population": {
    "OI-325": {
@@ -1915,6 +1869,7 @@
   },
   "recollected_but_already_CLOSED_in_the_index": [
    "OI-300",
+   "OI-320",
    "OI-331",
    "OI-333"
   ],
@@ -1949,7 +1904,6 @@
    "OI-317",
    "OI-318",
    "OI-321",
-   "OI-322",
    "OI-332",
    "OI-338",
    "OI-341",
@@ -1975,9 +1929,9 @@
  },
  "counted": {
   "decisions_recorded": 673,
-  "open_rows_in_the_index": 249,
-  "true_half_wide_cut": 57,
-  "true_half_gating": 40,
+  "open_rows_in_the_index": 247,
+  "true_half_wide_cut": 55,
+  "true_half_gating": 38,
   "complete_half_gap": 27,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

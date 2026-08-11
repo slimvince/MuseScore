@@ -10,7 +10,7 @@
   "the_population": {
     "what_it_is": "The open rows the gating split puts on the GATING side — the rows a stage waits on.",
     "derived_from": "tools/audit/phase1_completion_inventory.json → the_gating_split.gates.ids",
-    "count": 40,
+    "count": 38,
     "ids": [
       "OI-105",
       "OI-107",
@@ -37,9 +37,7 @@
       "OI-311",
       "OI-315",
       "OI-318",
-      "OI-320",
       "OI-321",
-      "OI-322",
       "OI-332",
       "OI-341",
       "OI-352",
@@ -58,8 +56,36 @@
   "retired_sizings": {
     "what_this_is": "Sizings for rows that have LEFT the gating population, kept whole and counted nowhere (#12, D-648). They are history: a sizing named the act a row needed, and keeping it is what lets a later reader see whether the act performed is the act that was owed.",
     "the_stop_in_the_other_direction": "A retired sizing naming a row this pass sizes again halts the run. A sizing made of a row as it stood is not evidence about a row that has since changed, so such a row is RE-READ and re-authored, never restored.",
-    "count": 4,
+    "count": 6,
     "entries": [
+      {
+        "row": "OI-320",
+        "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 2) on the user's Ruling 62, which supplied exactly the filing decision this sizing said no session could take. **The sizing was right in both halves and the second is worth reading:** NEEDS-RULING was right, and its `why_that_size` said *once chosen the edit is small* — which is what happened. The act performed was four corrections, each pointing at the block that owns it rather than restating anything.",
+        "the_sizing_as_it_stood": {
+          "row": "OI-320",
+          "anchor_quote": "that is a filing decision about a user-ratified gate's presentation",
+          "the_act_owed": "Decide which of the four stale sites become the retired diagnostic and which become the governing robust unit — a filing decision about how a user-ratified gate is presented in the document every score-touching task is sent to first.",
+          "sizing": "NEEDS-RULING",
+          "whose_act_it_is": "the user",
+          "what_blocks_it": "a user ruling",
+          "why_that_size": "The row says in terms that what the corrected text should say is not a session's to choose. Once chosen the edit is small; until then no session act exists, because writing either reading would be taking the decision.",
+          "the_second_half": null
+        }
+      },
+      {
+        "row": "OI-322",
+        "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 2) on the user's Ruling 62, which answered the filing question for the CLASS rather than for this document: a completed audit is re-bannered as a historical record, body never rewritten. **The sizing's `why_that_size` was the load-bearing half and it was right:** it said nothing was unknown, that the document already contains its own correction, and that what was undecided was which of two treatments a dated report gets. That is precisely the fork the user ruled — and it is why the closing act was a banner rather than an investigation.",
+        "the_sizing_as_it_stood": {
+          "row": "OI-322",
+          "anchor_quote": "whether it is re-bannered as a historical record of the pre-deletion state",
+          "the_act_owed": "Decide whether a completed audit describing deleted code is re-bannered as a historical record or rewritten — a filing question the row says applies to every completed audit in the tree, not to this one.",
+          "sizing": "NEEDS-RULING",
+          "whose_act_it_is": "the user",
+          "what_blocks_it": "a user ruling",
+          "why_that_size": "No session act exists: the document already CONTAINS its own correction in its last line, so nothing is unknown — what is undecided is which of two treatments a dated report gets, and the row scopes that question to a class rather than to this document.",
+          "the_second_half": null
+        }
+      },
       {
         "row": "OI-324",
         "why_it_retired": "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 0) on the user's Ruling 63, which ruled the substantive half — reading (i), the ranking is cross-cutting and binds both arms — and licensed the smaller half in the same act. **BOTH halves of this sizing were right, and the row is the first in this pass to be closed by ONE act discharging a NEEDS-RULING label and its SESSION-SMALL second half together.** The label was right that no session act existed for the substantive half; the second-half field was right that the wording defect was a session's and small. What the sizing could not anticipate is that one ruling would release both at once — which is an argument for carrying a second half in its own field rather than folding it into the label, since folding would have made the row read wholly the user's.",
@@ -561,19 +587,6 @@
       "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
     },
     {
-      "row": "OI-320",
-      "anchor_quote": "that is a filing decision about a user-ratified gate's presentation",
-      "the_act_owed": "Decide which of the four stale sites become the retired diagnostic and which become the governing robust unit — a filing decision about how a user-ratified gate is presented in the document every score-touching task is sent to first.",
-      "sizing": "NEEDS-RULING",
-      "whose_act_it_is": "the user",
-      "what_blocks_it": "a user ruling",
-      "why_that_size": "The row says in terms that what the corrected text should say is not a session's to choose. Once chosen the edit is small; until then no session act exists, because writing either reading would be taking the decision.",
-      "the_second_half": null,
-      "detail_file": "open_items/OI-320.md",
-      "what_the_label_means": "No session act exists on this row at all: what closes it is the user's — a ruling, a filing decision, or a governing-document choice.",
-      "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
-    },
-    {
       "row": "OI-321",
       "anchor_quote": "whether the implode path applying the gate is the rule being discharged",
       "the_act_owed": "Correct the two plainly false statements — the header calling a phase deferred that the code says was executed, and the named directory that does not exist.",
@@ -590,19 +603,6 @@
       "detail_file": "open_items/OI-321.md",
       "what_the_label_means": "A session's act, small: a bounded documentation, comment or data correction, complete in itself.",
       "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
-    },
-    {
-      "row": "OI-322",
-      "anchor_quote": "whether it is re-bannered as a historical record of the pre-deletion state",
-      "the_act_owed": "Decide whether a completed audit describing deleted code is re-bannered as a historical record or rewritten — a filing question the row says applies to every completed audit in the tree, not to this one.",
-      "sizing": "NEEDS-RULING",
-      "whose_act_it_is": "the user",
-      "what_blocks_it": "a user ruling",
-      "why_that_size": "No session act exists: the document already CONTAINS its own correction in its last line, so nothing is unknown — what is undecided is which of two treatments a dated report gets, and the row scopes that question to a class rather than to this document.",
-      "the_second_half": null,
-      "detail_file": "open_items/OI-322.md",
-      "what_the_label_means": "No session act exists on this row at all: what closes it is the user's — a ruling, a filing decision, or a governing-document choice.",
-      "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
     },
     {
       "row": "OI-332",
@@ -702,9 +702,9 @@
     }
   ],
   "counted": {
-    "rows_sized": 40,
+    "rows_sized": 38,
     "by_label": {
-      "NEEDS-RULING": 3,
+      "NEEDS-RULING": 1,
       "REAL-WORK": 13,
       "SESSION-LARGE": 4,
       "SESSION-SMALL": 20
@@ -714,22 +714,20 @@
       "the freeze on `src/`": 2,
       "the phase order (D-231 and #8)": 4,
       "an event the record schedules elsewhere": 6,
-      "a user ruling": 13,
+      "a user ruling": 11,
       "the role separation": 1
     },
     "by_owner": {
       "a session on this side": 36,
       "the writing side (Cowork)": 1,
-      "the user": 3
+      "the user": 1
     },
     "rows_carrying_a_second_half_of_a_different_kind": 5,
     "rows_available_now": 14
   },
   "rows_by_label": {
     "NEEDS-RULING": [
-      "OI-141",
-      "OI-320",
-      "OI-322"
+      "OI-141"
     ],
     "REAL-WORK": [
       "OI-12",
@@ -816,8 +814,6 @@
       "OI-292",
       "OI-309",
       "OI-311",
-      "OI-320",
-      "OI-322",
       "OI-341",
       "OI-352",
       "OI-357",

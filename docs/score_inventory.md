@@ -22,9 +22,10 @@ If you only have a minute, read the **quick-pick table** and the **Hard rules**.
 
 | If you want to… | Use | Path | Notes |
 |---|---|---|---|
-| Run unit tests / mismatch report | In-tree fixtures | `src/composing/tests/data/` | Wired into `composing_tests` (498/498). The synthetic catalog drives the mismatch report; **do not edit without explicit approval** (Hard rules) |
+| Run unit tests / mismatch report | In-tree fixtures | `src/composing/tests/data/` | Wired into `composing_tests`; the suite's own current count is in `BUILD_AND_TEST.md` and is not restated here. The synthetic catalog drives the mismatch report; **do not edit without explicit approval** (Hard rules) |
 | Run pipeline snapshot tests | 11 DCML `.mscx`, loaded from `tools/dcml/*/MS3/` | `src/notation/tests/pipeline_snapshot_tests/` (test + goldens) | Snapshot diffs gate refactors. Sources are pinned in `tools/snapshot_sources_manifest.json` |
-| Measure the BIR gate | `tools/corpus/baroque/` or `…/jazz/` | per-preset `.ours.json` + `.music21.json` + manifest | `characterise_bir_false.py --corpus-dir …` (Baroque 53, Jazz 24, Default 53 — re-baselined 2026-06-13 + L3-wiring delta 2026-06-26; see CLAUDE.md) |
+| Run the **governing** hard regression stop | the per-preset dirs under `tools/corpus/` + the committed reference in `tools/robust_stop/` | `tools/a8_rebaseline_measure.py` then `tools/robust_stop_diff.py` | **This is the gate.** The granularity-robust union-of-boundaries unit, its acceptance rule and its two commands are `CLAUDE.md` gate block **(A)**; no figure of it is restated here (**D-431**) |
+| Run the **retired diagnostic** BIR characterisation | `tools/corpus/baroque/` or `…/jazz/` | per-preset `.ours.json` + `.music21.json` + manifest | `characterise_bir_false.py --corpus-dir …` — **a runnable per-region DIAGNOSTIC, no longer the regression gate**; its case-identity sets and their history are `CLAUDE.md` gate block **(C)** |
 | Validate analyzer against Roman-numeral annotations | DCML annotated corpora | `tools/dcml/<repo>/MS3/` + `harmonies/` | ~1,700 scores; `run_*_validation.py`, `compare_when_in_rome.py` |
 | Validate jazz analysis (single-line / Real Book) | Effendi, Omnibook | `tools/corpus_effendi_src/`, `tools/corpus_omnibook_src/omnibook_xml/` | No RNA ground truth — `compare_omnibook.py` heuristics |
 | Validate jazz analysis (big-band / multi-horn) | Rampageswing | `tools/corpus_rampageswing_full/` | 36 MXL; no ground truth |
@@ -163,8 +164,11 @@ cadence win" — see `cc_corpus_wave1_report.md`). Full provenance:
   `*.ours.json`, a copy of every `*.music21.json`, and a `corpus_manifest.json`
   (preset stamp + per-score sha256 + informational `music21_version`).
   `characterise_bir_false.py --corpus-dir tools/corpus/<preset>` validates the
-  manifest and refuses an incomplete/contaminated dir (Baroque 53, Jazz 24, Default 53 —
-  re-baselined 2026-06-13 + L3-wiring delta 2026-06-26).
+  manifest and refuses an incomplete/contaminated dir. **That check is a runnable
+  DIAGNOSTIC and is not the regression gate** — its case-identity sets live in
+  `CLAUDE.md` gate block **(C)** and none is restated here (**D-431**). The corpus-integrity
+  mechanism it carries is SHARED by the governing stop, whose instrument imports it, which is
+  why the diagnostic is kept rather than deleted.
 
 ### music21 provenance (audit C2)
 
@@ -190,27 +194,49 @@ silently treat one as a superset of the other.
 
 ### WiR human-annotation coverage — the gate's denominator (Stage 2.3 Rider 2)
 
+**★ WHICH GATE THIS SECTION IS ABOUT — corrected 2026-08-11 under the FILING CONVENTION
+(`cowork_design_doc_template.md`; the user's Ruling 62 of
+`cowork_rulings_2026_08_11_fourteenth_stop.md`), `OPEN_ITEMS.md` OI-320. This document is a live
+governing surface — `CLAUDE.md` sends every score-touching task here FIRST — so its body is
+corrected rather than bannered.** Everything below describes the **BATCH BIR characterisation**,
+which is the **retired diagnostic** of `CLAUDE.md` gate block **(C)**, not the governing hard stop.
+The governing stop is block **(A)**'s granularity-robust unit, and the coverage denominator this
+section is about is exactly the one that unit publishes with its own figures. Read this section as
+what it is: the qualifiers that narrowed the SUPERSEDED gate, and the reason it was replaced.
+
 **Only 326 of the 353 chorales resolve to a When-in-Rome human annotation** (324
 distinct analysis files; some chorales share an analysis). **The other 27 scores can
 never produce a "genuine" gate error** — with no human-adjudicated Roman numeral there
 is nothing for `music21_dcml_agree` to agree *with*, so they are silently outside the
-denominator the BIR=false count (Baroque 53 / Jazz 24 / Default 53, re-baselined 2026-06-13)
-is measured over. The headline gate
-therefore carries **three stacked qualifiers**, all narrowing what it sees:
+denominator the BIR=false count is measured over (the counts themselves are block (C)'s and are not
+restated here, **D-431**; the sentence formerly carried them inline). The batch gate
+therefore carried **three stacked qualifiers**, all narrowing what it saw:
 1. **human-adjudicated** — only the 326 WiR-covered chorales count;
 2. **music21-filtered** — a region is "genuine" only where music21 *and* WiR agree
    against us (the three-way `music21_dcml_agree` split);
 3. **batch granularity** — measured at cross-barline batch regions, which undercounts
    the user-visible per-beat error rate ~7× (CLAUDE.md gate-granularity caveat).
 
-A granularity-robust metric over the full annotated set is **roadmap 5.2** — until then,
-read "Baroque 53 / Jazz 24 / Default 53" as *candidate cases among the 326 human-covered
-chorales at batch granularity*, not an absolute quality figure — and note (re-baseline
-2026-06-13) that ~95% of these are **legitimate ambiguity** (symmetric fully-diminished-7th,
-viio↔V7 share-tones; the genuinely-actionable subset is only ~9–10 Baroque / ~4 Jazz), so the
-raw count is even less an "absolute quality figure" than the old 13/7 was. A fourth implicit
-qualifier — **pitch-class-root resolvable** — now applies: the symmetric-dim7 members
-(≈53% Baroque) are root-undefined by construction and await a spelling-aware / two-tier gate.
+**★ THE GRANULARITY-ROBUST METRIC EXISTS AND HAS GOVERNED SINCE 2026-07-06 — corrected 2026-08-11
+with the same ruling and row.** The sentence this replaces said it was still roadmap work, which was
+the most costly of this document's four stale statements: a session sent here first was told the
+governing stop did not exist yet. **It is `CLAUDE.md` gate block (A)** — the granularity-robust,
+segmentation-invariant, duration-weighted union-of-boundaries unit, with its committed reference
+under `tools/robust_stop/`, its acceptance rule, its two commands and its four grading conventions.
+**No figure of it is restated here (D-431).** **FORMER WORDING, PRESERVED (#12):** *"A
+granularity-robust metric over the full annotated set is **roadmap 5.2** — until then, read
+"Baroque 53 / Jazz 24 / Default 53" as candidate cases among the 326 human-covered chorales at batch
+granularity, not an absolute quality figure — and note (re-baseline 2026-06-13) that ~95% of these
+are legitimate ambiguity (symmetric fully-diminished-7th, viio↔V7 share-tones; the
+genuinely-actionable subset is only ~9–10 Baroque / ~4 Jazz), so the raw count is even less an
+"absolute quality figure" than the old 13/7 was. A fourth implicit qualifier — pitch-class-root
+resolvable — now applies: the symmetric-dim7 members (≈53% Baroque) are root-undefined by
+construction and await a spelling-aware / two-tier gate."*
+
+**What survives that former wording and is NOT withdrawn:** the batch count was never an absolute
+quality figure; most of it is legitimate ambiguity; and the pitch-class-root-resolvable qualifier is
+real. All three are now carried by block (C)'s own record and by the two-tier class policy at block
+(B), which is where they belong — this document points at them and does not keep a second copy (#6).
 
 ---
 
