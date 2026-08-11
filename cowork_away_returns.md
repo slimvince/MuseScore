@@ -6622,3 +6622,240 @@ path this session chose rather than through a mount.**
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch
 or by any batch of this arc. D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# ═══ THE BEARING CUT (dispatch `cc_instruction_apply_the_bearing_cut.md`, performed 2026-08-11) ═══
+
+> **Two tasks of four performed and committed; the batch then HALTED under the dispatch's own STOP
+> rule §0f, before Task 3.** Commits `733305f466` (Task 1) and `c18236c826` (Task 2), both pushed to
+> `origin/master`. No `src/` edit, no behaviour change, no golden refreshed, no corpus of scores
+> touched, nothing under `tools/corpus/` or `tools/robust_stop/` moved.
+
+## 1 (continued). What needs the user
+
+### 1.22 STOP — the dispatch's §0a prediction is REFUTED for one guard, and its §0f condition is met on the literal reading. The reason is known and recorded; whether that satisfies the clause is the user's (Task 2)
+
+**The facts, established at the objects and at the record, with no recommendation made.**
+
+**What §0a predicted.** *"The eight red guards clear as a CONSEQUENCE of the cut running."* **Seven
+did.** One did not: `gen_filing_convention_application.py --check`, whose STOP reads *"authored
+verdicts for documents the derivation does not carry: STATUS_ARCHIVE.md — the tree has moved under
+the table."*
+
+**Why it did not, established INDEPENDENTLY at the object rather than taken from the record.** The
+tool's S1 signature scans a document's LAST 25 lines for a fate declaration. `STATUS_ARCHIVE.md` is
+4,053 lines at HEAD and its last 25 lines now carry a 2026-06 Layer-3 wiring entry — read in place —
+so no fate line falls inside the window and the document is no longer a derived candidate, while its
+authored `CONFORMANT` verdict still names it. Nothing about the bearing cut touches that derivation.
+
+**The record had already established the same thing, one batch earlier, in this file.** §1.21 names
+this guard by name, gives the same diagnosis in its own words — *"The four historical banners changed
+the archive's own overtaking signature"* — and classifies the remedy: *"The two guards that fail on
+their own authored tables — the sizing pass and the filing-convention application — are ordinary
+**D-648** maintenance and are separable from the block; they are named here so a later act does not
+mistake them for part of it."* **The sizing pass, the other one §1.21 named, DID clear in this batch**,
+because its authored table's maintenance is exactly what retiring [[OI-47]] and sizing [[OI-370]] and
+[[OI-371]] amounts to. The filing-convention application's is not: that tool carries **no retired
+block at all**, so moving `STATUS_ARCHIVE.md`'s verdict out whole (#12) means adding one, which is a
+change to a mechanism's structure that §0e's freeze does not admit and **D-436** reserves.
+
+**The two readings of §0f, stated without choosing between them.** §0f STOPs on *"a guard remains red
+for a reason the cut does not explain."*
+- **Read literally**, the condition is MET: the cut does not explain this guard's redness, and nothing
+  in the cut touches it.
+- **Read purposively**, it is NOT met: every other member of §0f's list is a condition under which the
+  session cannot proceed HONESTLY — a wrong ruling number, an entry that already states the rule, an
+  unsettled token question, two equally supported homes, a failed falsification test, a row lapsing
+  with no grading — and this one is fully accounted for, at the objects and on the record, by an act
+  two batches back.
+
+**The batch took the literal reading and HALTED before Task 3.** The ground for choosing it, stated so
+the user can overrule it in one line: the cost of halting is one per-entry pass deferred, and the cost
+of the other error is a session working past a declared STOP, which is the failure this project's
+whole dispatch discipline exists against. The dispatch's own header says *hold-don't-guess*.
+
+**WHAT WAS NOT DONE, and each was declined rather than overlooked.** The guard was **not adjusted to
+suit the cut** — Task 2 forbids that in terms. Its authored verdict was **not retired** — there is no
+retired block to move it into, and adding one is a mechanism act. The S1 window was **not widened** —
+that is a change to a derivation's reach, which **D-436** reserves and which would silently change
+what every other candidate's absence means. And [[OI-47]]'s closure was **not** reconsidered: the row
+is genuinely discharged.
+
+**WHAT WOULD CLEAR IT, in one line:** a licence for the ordinary **D-648** maintenance on that one
+tool — a retired block, `STATUS_ARCHIVE.md`'s verdict moved into it whole with the reason it left —
+or a ruling that the purposive reading of §0f governs, in which case Task 3 resumes as written.
+
+## 3 (continued). Per-task log — the bearing cut
+
+### Task 1 — COMPLETE. Rulings 65 and 66 entered as D-675 and D-676 and homed, both assumptions discharged at their checks, and the token question ANSWERED by the record
+
+**Commit `733305f466`.** The ruling record and both register entries landed together, which is rule
+(c). Sixteen paths: `CLAUDE.md`, the ruling record, the rendered register and nine group files, the
+backbone, the home classification, and the rule triage with its artifact.
+
+**A1 — the ruling numbers are correct.** Checked at the ruling records: the fourteenth stop carries
+Rulings 60–64, so 65 and 66 are the next two. Nothing propagated on a guess.
+
+**A2 — no register entry states either rule.** Checked at the register data before either write. The
+nearest neighbours were read in full and each falls short in a stated way: **D-231** states the three
+phases but not which of them the completion waits on; **D-438** says an apparatus row gates nothing
+*and stays owed*, which is the clause Ruling 66 supersedes; **D-639** decides how far the doc-sync
+half reaches, not when phase 1 completes; and **D-641** governs a FINDING at the moment of discovery,
+saying in its own text that it ADDS to D-438 rather than amending it — which is why the ruling record
+is right that D-641 is not retired. The declared shortcut therefore holds and the entries were
+written directly.
+
+**★ A3 — THE TOKEN QUESTION IS SETTLED BY THE RECORD, AND THE ANSWER IS THAT NO TOKEN IS NEEDED.**
+The ruling explicitly left this open, forbade inventing a token and forbade assuming one unnecessary.
+Established at rule (f)'s home and at the one index parser, both read in full:
+- `tools/audit/index_status_lint.py` maps **every** canonical opening to exactly **two** values —
+  `resolved` or `open`. The vocabulary is derived from the openings the INDEX actually uses, and it
+  carries one bit and no more.
+- `gen_nongating_apparatus_rows.parse_rows` — the ONE index parser — publishes exactly one state
+  field per row, `open`, read through that same function. Every other classification a derivation
+  needs, GATING among them, it DERIVES.
+- A lapsed row is still **OPEN**: Ruling 66's own first clause says the row stays open.
+
+So *owed* is a derived field of the same cut that already derives gating, a new token would carry no
+information the derivation lacks, and it would put one state in two places (#6). **No STOP.**
+
+**THE HOMES WERE DERIVED AND VERIFIED, and the dispatch's two candidates were COMPARED rather than
+chosen between silently.** They are not equally supported, so the STOP did not fire. The audit
+protocol's dispatch-protocol block declares its own scope in its own words — *"they govern every
+dispatch, and this document is their home because it is where the project's dispatch-construction
+rules already live"* — and neither ruling governs how a dispatch is written or run. **D-676** replaces
+two clauses of a sentence that lives in `CLAUDE.md`'s open-items register section, so writing it
+elsewhere would leave that sentence false (#10) and split one concern (#6). **D-675** states when a
+PHASE completes, which is D-231's subject at the same file, and the closest precedent — D-639, the
+preceding ruling about a phase-1 half's reach — is homed at that very clause. The counter-precedents
+D-642 and D-644 sit in the protocol block because they govern how a DERIVATION reads criterion C1,
+which is a different subject.
+
+**The homing procedure D-668 ran in its fixed order.** Step 1 was tried FIRST for both and DECLINED
+with the reason recorded: the phase-1 clause says nothing about which requirements the completion
+waits on, and the non-gating declaration says the OPPOSITE of Ruling 66 — a pointer move would have
+pointed at a contradiction. Step 2 then applied, the kind half judged before either write. The edit
+surface is the 2026-08-07 homing licence, scoped to homing acts alone.
+
+**Regenerated in the same commit:** the rendered register, the home classification's apply (the
+insertions moved cited lines, which moved four entries' derived section fields), **46 home anchors
+re-aimed per citation from the verifier's own numbers** rather than by an assumed uniform shift, and
+the rule triage, which both new rules join with authored `MECHANISM-EXISTS (PARTIAL)` verdicts naming
+exactly which half was not yet mechanised at that tree.
+
+### Task 2 — COMPLETE. The cut built and run, the falsification test PASSING, the #19 carve-out demonstrated on a member, and the guard set 8 red → 1
+
+**Commit `c18236c826`**, fourteen paths, all under `tools/audit/`.
+
+**THE CUT.** Each item's gate was an AUTHORED ground; it is now DERIVED by D-438's own test, with the
+#19 carve-out encoded. **Every clause the cut rests on is LOCATED in `CLAUDE.md` by its own words and
+re-quoted on every run** — Ruling 65, Ruling 66, D-438's specification-completion clause, D-438's #19
+carve-out, and D-231's strict-order clause — **and a missing anchor is a STOP**, so a gate cannot
+outlive the sentence it rests on. Nothing was added to the finish line and nothing removed.
+
+**THE MOVEMENT, BOTH WAYS, computed in the artifact rather than described.**
+`★_the_bearing_cut.★_the_movement_BOTH_WAYS` carries each item's PRE-CUT gate beside its derived one,
+so *recomputed with the cut off* is the artifact itself rather than a reconstruction.
+- **`items_whose_GATE_moved`: EMPTY.** Nothing else moves, and that is the point rather than a
+  disappointment: D-438's line already decided the COMPLETE half and the TRUE half's rows already
+  carried per-row verdicts, so what the cut changes is WHERE a verdict comes from and what an
+  un-gated item is then OWED — not which items gate.
+- **`items_whose_OWED_moved`: ONE** — the apparatus-row item, under Ruling 66. It is the only class
+  the cut places outside the gate.
+- **Rows: the cut authors no row verdict at all.** Every row verdict comes from the apparatus
+  declaration, which is the ONE place one is authored (#6); the cut reads them and re-decides none.
+
+**THE FALSIFICATION TEST RUNS ON EVERY REGENERATION AND PASSES — four probes, all empty.** Each reads
+a place the record holds a determinate verdict about the SAME row: the phase-3 gate partition's
+row-naming item identifiers; D-639's reach derivation's IN set; the row's own bolded gate assertion
+in the INDEX; and the record's own instrument/measurement-layer subject taxonomy. **What a PASS does
+NOT establish is published with it:** probe 2 currently reads an EMPTY IN set and passes vacuously,
+and no probe can establish that no apparatus-classed row bears on the analysis, because that question
+is a reading of the row.
+
+**★ THE #19 CARVE-OUT IS DEMONSTRATED ON A MEMBER, WHICH IS WHAT A4 ASKED FOR.** Two rows are kept
+inside the gate by a ground naming the principle; of those, the one whose OWN recorded reason says
+*"the documentation criterion alone would put it outside the gate"* is the member that WOULD MOVE if
+the carve-out were off. Both lists are derived from the rows' own grounds, and the item-level form of
+the same test rides on every item.
+
+**★ A6 — THE TWO UNGRADED ROWS WENT THROUGH THE CUT AND BOTH CAME OUT GATES, ON DIFFERENT GROUNDS.**
+Neither was assumed apparatus. [[OI-370]] gates by the declaration's own DEFAULT: its text states
+both readings and settles neither, ending *"Left for the derivation."* [[OI-371]] gates on D-438's
+build-state clause — a false-at-HEAD statement about which decoder ships, the class the retired
+OI-303/OI-304/OI-353 verdicts carry. Neither is an establishment obligation, and each verdict is
+recorded against the row's SUBJECT, never its remedy.
+
+**★ A5 — RULING 66'S OWN STOP IS ARMED, NOT REMEMBERED.** The lapse population is the apparatus
+declaration's NON-GATING set, each row carrying the derivation that graded it, and **a row with no
+named grading HALTS the derivation rather than lapsing by default.** Whether each row's lapse record
+is written is REPORTED per row and deliberately is NOT a stop, because writing them is a per-entry
+pass **D-672** permits stopping at a member boundary — and that field is the record D-672 requires.
+
+**[[OI-47]] left the population by RESOLVING**, so its verdicts moved to the retired tables in three
+places — the apparatus declaration, D-639's reach derivation and the per-row sizing — each kept WHOLE
+with the reason it left (#12), none deleted. **A consequence worth naming rather than leaving to be
+noticed:** retiring its reach verdict empties D-639's IN set, so the Ruling-56 application's two
+published lists now read empty. The record that the ruling reached that row is preserved in the same
+artifact's retired and superseded tables, and no mechanism was changed to make the lists read
+otherwise.
+
+**THE GUARD SET AFTER THE CUT: 40 run, 39 passing, 1 failing** (from 8 failing). Seven cleared as a
+consequence. **Two others went red from this batch's own Task-1 insertions** moving located lines —
+the phase-3 gate partition and the delegation-bar record, both of which RECORD where a quote was
+found — and both were regenerated with their authored verdicts unmoved, the drift recorded as the
+derived field it is. The one still red is §1.22.
+
+### Task 3 — NOT PERFORMED. The batch halted under §0f before it began
+
+**Nothing was written and nothing was partly written.** The per-row lapse records for every row the
+cut places in the apparatus class are the whole of Task 3, and none exists. The state is derived and
+published rather than described: `phase1_finish_line.json` →
+`★_the_bearing_cut.the_lapse_population.lapse_records_written` carries the count, the rows written,
+and the rows still owed one. **This is a HALT under §0f, not a capacity stop under D-672** — the
+distinction matters because a capacity stop is a result and this is a question.
+
+### Task 4 — the RECORDING half only
+
+The close and the STOP are written here, which is what §0f itself directs. The `STATUS.md` pointer
+entries cover the two completed tasks. Nothing else was written into that file, which remains
+unreadable and whose row [[OI-370]] stays open.
+
+### ★ WHERE THIS BATCH STOPPED
+
+**At the top of Task 3, on a STOP and not on capacity.** Two commits, both pushed, both verified at
+the objects. What the next act needs is one line from the user: either a licence for the ordinary
+D-648 maintenance on `gen_filing_convention_application.py`, or a ruling that §0f's purposive reading
+governs — after which Task 3 resumes exactly as written, its population already derived and its
+grading already recorded per row.
+
+### ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**Two reserved-word collisions were caught in this batch's own new code and prose and corrected before
+the commit that carried them.** A new module constant named for the bare non-musical *instrument*,
+renamed to `MEASUREMENT_LAYER_SUBJECT_VOCAB` while still matching the record's own subject label; and
+two bare non-musical uses of *figure*, both now reading *count*. **Eleventh consecutive batch whose
+self-check caught a collision in its own new text**, and this one arrived the same way the last
+several did — by restating a neighbouring sentence that already used the collided word.
+
+**One class is DELIBERATELY NOT corrected and is named rather than fixed:** the bare *register* and
+the bare *resolution* for the open-items sense, both of which this batch's prose uses as the
+surrounding record uses them throughout, and both inside the section that already uses them. That is
+the tree-wide rename [[OI-229]] forbids unilaterally.
+
+**On the D-253 side the guard fired three times and was never worked around.** A `python -c` naming a
+repository path, a heredoc body naming one, and a `sed -i` aimed at a repository file were each
+DENIED, and each read or edit was redone through the file tools. Every working-tree read in this
+batch went through Read / Grep / Glob; the shell was used only for committed tools, for the sanctioned
+changed-path enumeration, and for git write operations.
+
+**One thing this batch did that the previous one's close would have caught earlier.** Task 1's commit
+left two guards red — the phase-3 partition and the delegation-bar record — because inserting into
+`CLAUDE.md` moves the lines those artifacts RECORD having found. They were regenerated inside Task 2,
+so the batch's own tree is clean, but the lesson is one line: **a homing act that inserts into
+`CLAUDE.md` owes a regeneration of every artifact that records a location in it**, and the re-aim tool
+covers only the register's own home anchors.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
