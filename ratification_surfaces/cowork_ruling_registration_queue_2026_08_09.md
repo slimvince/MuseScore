@@ -95,6 +95,22 @@
 > until the user rules on it.** It is also the first extension this derivation has produced with **no
 > proposed decision at all**, which §15.2 reports rather than presents as a finding.
 >
+> **★★ FULLY RULED AGAIN 2026-08-11 — §15 IS RULED BY THE USER'S RULING 54 of
+> `cowork_rulings_2026_08_11_twelfth_stop.md`, AS PROPOSED.** Both rulings stand as EXERCISES, the
+> upgrade reading §15.1 offered is not taken, and **nothing is owed** — so §16 is the first closing
+> state in this file that writes no register entry, which is the result §15.2 predicted rather than
+> an absence. Nothing above §16 is re-decided, re-worded or removed (#12).
+>
+> **★ EXTENDED A SEVENTH TIME 2026-08-11 (CC, `cc_instruction_return_continuation_12.md` Task 1) —
+> Rulings 54–56 of the twelfth STOP are classified in a NEW SECTION, §17, which AWAITS THE USER.**
+> §16's own closing line reserves a further extension to a dispatch that asks for one, and this is
+> that dispatch. Nothing the user ruled is touched: §1–§16 stand exactly as ruled. **ONE THING IS
+> DIFFERENT AND IS IN §17's OWN BANNER RATHER THAN BURIED:** two register entries WERE written in
+> the commit that carries §17, because Ruling 55 orders them in its own words and rule (c) puts a
+> new ratification's entry in the commit that records it. **What awaits the user in §17 is the
+> CLASSIFICATION of the three rulings, not those two entries' existence**, and the reading under
+> which they were written is stated there so it can be corrected in one act.
+>
 > **Why this exists.** Three ruling records carry the same banner sentence — *"interim carrier
 > until the applying dispatch records them (D-230)"* — and **no register entry exists for any of
 > them.** Every ruling's CONTENT is on disk in a ratified record, and every ruling applied is
@@ -841,6 +857,103 @@ not what makes a clause bind.
 It writes no register entry and assigns no identifier. It re-opens no verdict the user ruled at §6,
 §8, §10, §12 or §14, re-words no ruling, and re-reads no ruling's merits. It moves no status and
 authorizes nothing. It touches no golden, no corpus of scores and nothing in `tools/robust_stop/`.
+
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+---
+
+## 16. THE SIXTH CLOSING STATE — what Ruling 54 did: §15 RATIFIED AS PROPOSED, and the first closing state that writes no entry
+
+**Added 2026-08-11 by `cc_instruction_return_continuation_12.md` Task 1, after the user's Ruling 54
+of `cowork_rulings_2026_08_11_twelfth_stop.md`.** Nothing above this section is altered by it, and
+§6, §8, §10, §12 and §14 — the first five closing states — are untouched.
+
+**The §15 verdicts are RULED AS PROPOSED. Both rulings stand as EXERCISES and NOTHING IS OWED.**
+
+| Queue row | Verdict as ruled | What carries its content |
+|---|---|---|
+| **52** — the queue's §13 ratified with both downgradables kept | **EXERCISE** — a ratification event | Its content is already register data, **D-669** and **D-670**, written in the commit that recorded it; its closing state is §14 above |
+| **53** — the OI-367 one-row correction, licensed under the both-ways discipline | **EXERCISE** | A scoped licence to perform one act the record already requires, under **D-657**'s both-ways discipline and **D-662**'s canonical status discipline. **The upgrade reading §15.1 offered in one line is NOT taken** — the user ruled §15 *as proposed*, and the proposal was EXERCISE |
+
+**★ THIS IS THE FIRST CLOSING STATE IN THIS FILE THAT WRITES NO REGISTER ENTRY, and it is recorded
+as the result §15.2 predicted rather than as an absence.** That section reported an extension with
+no proposed decision — the first — and read it as what the pattern looks like once the register has
+caught up with the practice, because the clauses that would have ridden alongside were registered one
+ruling earlier. **The ratification confirms that reading**: nothing was owed, and the queue's own
+derivation had already said so.
+
+**★ WHAT THIS FILE'S OWN JOB NOW IS — unchanged from §8, §10, §12 and §14.** Every ruling it
+classifies carries a ruled verdict, so the queue is discharged as a queue. It stays as the RECORD of
+the classification and is not extended again for a later ruling without a dispatch saying so.
+
+---
+
+## 17. THE SEVENTH EXTENSION — Rulings 54–56, AWAITING THE USER
+
+> **★ STATUS: AWAITING THE USER.** Added 2026-08-11 (CC,
+> `cc_instruction_return_continuation_12.md` Task 1, which is what §16's closing line requires
+> before this file is extended again), by the SAME derivation that built §2 and extended it at
+> §2.4, §7, §9, §11, §13 and §15: each ruling classified **from its own text**, with its carrier
+> read whole (**D-643**) before a verdict was written. Sections §1–§16 are untouched.
+>
+> **★ AND ONE THING IS DIFFERENT ABOUT THIS EXTENSION, STATED IN ITS BANNER RATHER THAN BURIED.**
+> Two register entries — **D-671** and **D-672** — WERE written in the commit that carries this
+> section, because **Ruling 55 orders them in its own words** (*"where it does not, the entry is
+> created"*) and rule (c) puts a new ratification's entry in the commit that records it. What awaits
+> the user here is the CLASSIFICATION of the three rulings below, not those two entries' existence;
+> the reading under which they were written is stated at §17.1 so it can be corrected in one act.
+
+**The two verdicts mean exactly what §1 says they mean**, and that section is not restated here (#6).
+
+### 17.1 Rulings 54–56 (`cowork_rulings_2026_08_11_twelfth_stop.md`)
+
+| # | The ruling, in one line | Verdict | Ground |
+|---|---|---|---|
+| **54** | The queue's §15 is RATIFIED as proposed; Rulings 52–53 stand as exercises and nothing is owed | **EXERCISE** — a ratification event | The user's ruling ON a review queue, which is the class Ruling 36 fixed for 20–23 and Rulings 42, 49 and 52 applied again at §10, §12 and §14. Its closing state is §16 above. **What is new is again a demonstration rather than a statement:** it is the first ratification in this file that writes no entry, which confirms §15.2's own reading of what an extension with no proposed decision means — and a confirmation of a recorded reading is not a further rule |
+| **55** | The no-silent-cap rule and the partial-stop allowance are HOMED beside D-670, with register mechanics per rule (c) | **EXERCISE**; *and the user may reasonably read it as a DECISION* | **Its rule content is now register data** — **D-671** and **D-672**, written under its own directive — so a second entry for the ruling would duplicate carried content, which is the ground Ruling 42 gave for declining both its upgrade readings and Ruling 49 gave for declining Ruling 45's. The act it performs is the one **D-668** already governs and **rule (e)** already prefers: a rule with no governing surface is written into the section that owns it. **The upgrade reading, in one line:** its register-mechanics clause could be read as a standing rule — *where a homing act finds the rule carries no entry, the entry is CREATED in the same commit rather than the homing being deferred until one exists* — which the record currently reaches only through rule (c) plus D-668's routes taken together; if the user reads that as standing, the verdict is DECISION and its home is `cowork_audit_protocol.md`'s dispatch-protocol block beside **D-668**. **★ AND THE READING UNDER WHICH THE TWO ENTRIES WERE WRITTEN IS STATED SO IT CAN BE CORRECTED IN ONE ACT:** *"the entry is created and joins the queue's derivation for the user's next ratification"* was read as **the entry lands now (rule (c)'s own same-commit requirement, which the ruling invokes by name) while the RULING's classification joins this extension**. The alternative reading — propose the entries here and write nothing — was excluded because it would leave two rules written into a governing surface with no register entry, which is the exact state Ruling 55 exists to end |
+| **56** | The reach derivation's IN-verdicts are APPLIED, by derivation | **EXERCISE**; *and the user may reasonably read it as a DECISION* | The user completing what the first application's precedent **reserved to the user** — the same act, on the same question, that the first application reported and declined, and that the user then ruled at [[OI-336]]. It applies **D-639** and disturbs nothing about **D-438**, whose criterion still decides every other row. **The upgrade reading, in one line:** its opening clause could be read as a standing rule — *a derivation's own IN set is what moves a classification, and the moved set is DERIVED from the artifact and reconciled both ways rather than listed by hand* — which generalises the both-ways discipline **D-657** states for a mechanism change to the application of a derivation's result; if the user reads it as standing, the verdict is DECISION and its home is the same block beside **D-657** |
+
+### 17.2 The tally, and the two things this extension reports rather than classifies
+
+**Proposed EXERCISES — three.** **Proposed DECISIONS — none**, for the second consecutive extension.
+**Two are flagged as reasonably upgradable**, each with its upgrade reading and its home in one line,
+so reading either the other way costs the user one line.
+
+**★ THE SHAPE HOLDS AND ITS LIMIT CASE IS NOW REPEATED RATHER THAN SINGULAR.** §15.2 read an
+extension with no proposed decision as what the pattern looks like once the decisions register has
+caught up with the practice, and offered it as the first evidence that the catching-up was
+finishing. **A
+second such extension is the second observation of that**, and it is worth exactly that much: two
+observations are not a trend, and the honest statement is that the two rulings which would have
+carried new rules — 55 and 56 — carry them as **entries already written** and as **an application of
+rules already registered**, which is the same thing seen from the other side.
+
+**★ THE FIRST THING REPORTED RATHER THAN CLASSIFIED: RULING 56's APPLICATION NEEDED ONE PIECE OF
+MACHINERY THE RULING DOES NOT NAME, AND IT IS A REPORTED WIDENING (D-654).** The reach derivation
+grades the apparatus-classed rows, and its population had been read from the LIVE non-gating cut.
+Applying its IN verdicts moves exactly those rows OUT of that cut — so the derivation's own both-ways
+STOP fires, retiring the verdicts would empty the IN set, and the application would reverse itself on
+the next regeneration. **The application is therefore impossible without a population that does not
+move under it.** What was built is the smallest thing that achieves it: the completion inventory now
+publishes the same cut taken BEFORE the application, derived from the declaration's own record of
+which rows it moved, and the reach derivation reads that. **No verdict, no criterion and no row
+moved by this**; what changed is which of two derived cuts one tool reads. If the narrower scope was
+meant, the one edit is to point that tool back at the live cut — and the consequence, stated so the
+choice is informed, is that Ruling 56 cannot then be applied at all.
+
+**★ THE SECOND: THE APPLICATION MOVED A POPULATION A SIBLING DERIVATION WAS STATED OVER, AND THAT
+DERIVATION'S OWN STOP CAUGHT IT.** The per-row sizing pass over the gating set had been published one
+commit earlier over the whole set as it then stood; the three moved rows joined that set, its STOP
+fired, and the three were read at the INDEX and sized in this act. **That is the machinery working
+rather than a defect of either act** — a population movement belonging to the act that accounts for
+it is the standing rule ([[OI-362]]), and this act accounts for it.
+
+### 17.3 What §17 does NOT do
+
+It re-opens no verdict the user ruled at §6, §8, §10, §12, §14 or §16, re-words no ruling, and
+re-reads no ruling's merits. **It assigns no identifier beyond the two Ruling 55's own words direct**,
+and it proposes no entry for any of the three rulings above. It moves no open-items status. It
+touches no golden, no corpus of scores and nothing in `tools/robust_stop/`.
 
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 

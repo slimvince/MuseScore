@@ -801,6 +801,21 @@ def build() -> dict:
     gating = sorted(r["id"] for r in wide if r["gate"]["verdict"] == "GATES")
     non_gating = sorted(r["id"] for r in wide if r["gate"]["verdict"] == "NON-GATING")
 
+    # The cut as it stood BEFORE the user's Ruling 56 moved D-639's reach IN set to the gating
+    # side. It is DERIVED from the declaration's own record of what it moved, and it exists so the
+    # reach derivation's population does not move when that derivation's own result is applied —
+    # which would be circular. See the block it feeds for the full reason.
+    app = json.loads(read(APPARATUS))
+    moved_by_56 = list(app.get("★_the_ruling_56_application", {}).get("rows_moved", []))
+    wide_ids = {r["id"] for r in wide}
+    stray_moved = sorted(i for i in moved_by_56 if i not in wide_ids)
+    if stray_moved:
+        raise SystemExit(
+            "STOP: the apparatus declaration records rows moved by Ruling 56 that this cut does "
+            "not carry: " + ", ".join(stray_moved) + ". The reach derivation grades rows of the "
+            "wide cut, so a moved row outside it means the two populations have come apart.")
+    non_gating_before_56 = sorted(set(non_gating) | set(moved_by_56))
+
     # ---- A2, graded ------------------------------------------------------------------------
     derived_row_population = sorted({r["id"] for r in wide})
     a2_closed = [i for i in A2_RECOLLECTED if i in by_id and not by_id[i]["open"]]
@@ -971,6 +986,26 @@ def build() -> dict:
             "applied_over": "the wide cut",
             "gates": {"count": len(gating), "ids": gating},
             "non_gating": {"count": len(non_gating), "ids": non_gating},
+            "non_gating_before_the_ruling_56_application": {
+                "what_it_is": (
+                    "The same cut taken BEFORE the user's Ruling 56 moved D-639's reach derivation's "
+                    "IN set to the gating side — that is, the rows the apparatus declaration classes "
+                    "non-gating on D-438's criterion alone."
+                ),
+                "why_it_is_published": (
+                    "It is the population the reach derivation grades, and it must not move when "
+                    "that derivation's own result is applied. Without it the two are circular: the "
+                    "derivation's verdicts would leave the set they were graded over, its STOP would "
+                    "fire, retiring them would empty the IN set, and the application would reverse "
+                    "itself on the next regeneration. This cut is invariant under the application, "
+                    "so the fixed point is the one the ruling intends."
+                ),
+                "count": len(non_gating_before_56),
+                "ids": non_gating_before_56,
+                "moved_by_the_ruling": moved_by_56,
+                "derived_from": ("tools/audit/nongating_apparatus_rows.json → "
+                                 "★_the_ruling_56_application.rows_moved"),
+            },
             "where_each_verdict_came_from": {
                 "the committed apparatus declaration":
                     sorted(r["id"] for r in wide

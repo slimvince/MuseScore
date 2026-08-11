@@ -4466,6 +4466,42 @@ rowed and explicitly not proposed for; nothing in the remaining distance waits o
 > rewritten. New holds are appended to §1, new surfacings to §2, and each task's log below. **Acts
 > are dated from the clock: 2026-08-11.**
 
+## 1 (continued). What needs the user
+
+### 1.17 Ruling 56 cannot be applied without one piece of machinery it does not name — the widening is REPORTED, and the one edit that reverses it is stated with its consequence (Task 1)
+
+**This is the reported-widening discipline (D-654), not a request for permission after the fact.**
+The act is done and it is reviewable; what follows is what was done, why the ruling's letter could
+not be performed without it, and what the narrower scope would cost.
+
+**The obstruction, established at the tools rather than reasoned about.** D-639's reach derivation
+grades the apparatus-classed rows, and its population had been read from the LIVE non-gating cut of
+the completion inventory. **Applying its IN verdicts moves exactly those rows OUT of that cut.** So
+the derivation's own both-ways STOP fires — it did fire, and is what surfaced this — and the two
+available answers both fail: retiring the three verdicts empties the IN set the application derives
+from, so the rows flip back on the next regeneration; leaving them graded halts every run. **The
+application is impossible against a population that moves under it.**
+
+**What was built, which is the smallest thing that removes the obstruction.** The completion
+inventory now publishes the SAME cut taken BEFORE the application —
+`the_gating_split.non_gating_before_the_ruling_56_application` — derived from the apparatus
+declaration's own record of which rows it moved, and the reach derivation reads that. **No verdict,
+no criterion, no row and no count moved because of it**; what changed is which of two derived cuts
+one tool reads, and the two differ by exactly the rows the declaration records as moved.
+
+**What the narrower scope would be, and its consequence, stated so the choice is informed.** One
+edit: point the reach derivation back at the live cut. **Ruling 56 then cannot be applied at all** —
+not applied differently, not applied later, but not applied, because the circularity above is a
+property of the two populations and not of this implementation. The alternative shapes were
+considered and are recorded rather than left implied: retiring the three verdicts (self-reversing);
+grading the reach derivation over the apparatus declaration's authored table instead (a DIFFERENT
+population, which fires its own STOP for a different reason and would need every verdict
+re-authored).
+
+**Nothing else in Ruling 56's application is a widening.** The moved set is derived from the
+derivation's artifact and reconciled both ways with a STOP; each moved row's former verdict is
+preserved whole; D-438 and its criterion are untouched and still decide every other row.
+
 ## 2 (continued). Surfaced findings
 
 ### 2.16 Two gating rows describe an owed act that later acts appear to have performed, and neither row says so (Task 0)
@@ -4577,6 +4613,104 @@ which is the order its own STOP requires. Every verdict is at `tools/audit/guard
 **Holds:** none new. **Surfacings:** §2.16, which is the record's own apparatus rather than the
 analysis, and is surfaced because a row that reads as owed after being discharged is the [[OI-283]]
 shape the open-items register exists against.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+### Task 1 — COMPLETE. The §15 closing state, Ruling 55's two homings with their entries, and Ruling 56 APPLIED — the reach derivation's IN set moved by derivation, and the sizing pass's own STOP caught the movement
+
+**The start state was derived at the artifacts before any act (A5).** The queue's §15 was read whole
+at its own file; the decisions register's highest identifier was read at its own data; the receiving
+block was read in place before either write; **and the decisions register was searched for an
+existing entry for each of the two rules before anything was created**, which is the check
+Ruling 55's own register mechanics turn on. No count is restated here (**D-431**).
+
+**A2 HOLDS IN BOTH OF ITS CLAUSES.** The kind half was judged at the home BEFORE either write:
+`cowork_audit_protocol.md`'s dispatch-protocol block says in its own opening that what follows are
+rules governing every dispatch, and every existing subsection states one with its ruling and its
+defense. **And the register mechanics were decided by READING rather than by assumption: NEITHER
+rule carried an entry** — searched at `backbone_decisions.json` before the write — so Ruling 55's
+*where it does not, the entry is created* is the limb that applies, and both entries were created.
+
+**A3 HOLDS.** Ruling 56's application is derived from the reach derivation's own artifact, never
+hand-listed, and the moved populations reconcile against the finish line's own machinery — which is
+stated below as a run rather than as an intention.
+
+**What was done, in order.**
+
+1. **Ruling 54 — the queue's §16, its SIXTH closing state.** §15's verdicts are ruled as proposed:
+   both rulings stand as EXERCISES, the upgrade reading §15.1 offered for one of them is NOT taken,
+   and **nothing is owed**. It is the first closing state in this file that writes no register
+   entry, and it is recorded as the result §15.2 predicted rather than as an absence.
+2. **Ruling 55 — the two sequencing rules HOMED, in the block's own voice**, each with the defense
+   the record holds: the no-silent-cap rule in two halves (published whole, or as a subset whose
+   members are NAMED), and the partial-stop allowance with its recording clause. **D-671** and
+   **D-672** are created at those sections, and D-670's own siting note — which said homing them was
+   *"a separate act nobody has ruled"* — gains a dated correction with the former wording preserved
+   in place (#12).
+3. **Ruling 56 — the reach derivation's IN set APPLIED.** The rows it put inside the doc-sync half
+   are re-classed GATES at the one place a gate verdict is decided (#6), with each row's former
+   NON-GATING verdict preserved whole and the ruling that replaced it recorded beside it. **WHICH
+   rows move is read from the derivation's artifact on every run and reconciled with the authored
+   table in BOTH directions**, with a STOP either way; and a MISSING artifact is a STOP rather than
+   an empty set, because treating it as empty would silently reverse a user ruling on the next
+   regeneration.
+4. **The queue gains §16 and §17, and nothing above §16 is altered (#12).**
+
+**★ THE ONE THING RULING 56 NEEDED THAT IT DOES NOT NAME IS §1.17, AND IT IS REPORTED RATHER THAN
+DONE QUIETLY.** The reach derivation's population had been read from the live non-gating cut, which
+the application moves — so the application is circular against it and the derivation's own STOP fired
+the moment the verdicts landed. The inventory now publishes the same cut taken BEFORE the
+application, derived from the declaration's own record of what it moved, and the derivation reads
+that. **No verdict, criterion, row or count moved because of it.** The one edit that reverses it is
+stated at §1.17 together with its consequence, which is that the ruling then cannot be applied at
+all.
+
+**★ AND THE APPLICATION MOVED A POPULATION THE PREVIOUS COMMIT'S OWN DERIVATION WAS STATED OVER —
+CAUGHT BY THAT DERIVATION'S STOP, NOT BY A READER.** The per-row sizing pass had been published one
+commit earlier over the whole gating set as it then stood. The three re-classed rows joined that set;
+its both-ways STOP fired naming them; each was **read at the INDEX** and sized in this act, and the
+artifact re-derives. **That is the machinery working rather than a defect of either act** — a
+population movement belonging to the act that accounts for it is the standing rule ([[OI-362]]), and
+this act accounts for it.
+
+**★ ONE AUTHORED INPUT NEEDED A JUDGMENT RATHER THAN A MOVE, AND IT IS STATED BECAUSE IT IS ONE.**
+The apparatus declaration grades an old dispatch assumption about which rows would come out
+non-gating. One of the three re-classed rows is named by that assumption, and the tool would have
+reported it **refuted** — saying the original reading was wrong, where what happened is that a later
+user ruling changed the answer. The tool already keeps a row that CLOSED apart for exactly this
+reason; a row a later ruling RE-CLASSED is the third case and now has its own bucket, with the
+reason. **No assumption's grading was rewritten** — the confirmed and refuted sets keep their
+meaning, and what moved is one row out of a bucket it does not belong in.
+
+**One further STOP was added rather than maintained**, which is the other direction of the same
+discipline (**D-648**): a row re-classed under Ruling 56 must carry its former verdict at
+`superseded_verdicts`, and the tool now refuses to run if one does not — so a re-class cannot
+overwrite an answer without keeping it (#12).
+
+**★ AND ONE THING EXPECTED DID NOT HAPPEN, WHICH IS RECORDED BECAUSE THE EXPECTATION WAS WRONG
+RATHER THAN THE RESULT.** Every previous wave that wrote into a governing document re-aimed a run of
+drifted register anchors afterwards. **Here the anchor re-aim reports ZERO**, checked by running it
+after the last edit rather than assumed from the pattern: both new sections were written at the END
+of the block, and this file carries no register home below them.
+
+**★ THE SAME INSTRUCTION AS EVERY PREVIOUS CONTINUATION COULD NOT BE PERFORMED AND IS NAMED RATHER
+THAN QUIETLY DROPPED.** The dispatch orders itself staged with this record. **The ruling record
+`cowork_rulings_2026_08_11_twelfth_stop.md` IS staged; the dispatch is not** — `cc_instruction_*.md`
+is matched by this repository's `.gitignore`, checked at that file this session rather than carried
+from the earlier reports that say so, and forcing it in would override a standing repository
+configuration decision that is not a session's to take.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires; the open-items split reconciliation was run beside them.
+Every verdict is at `tools/audit/guard_state.json` → `summary` and none is restated here
+(**D-431**).
+
+**Holds:** §1.17 — the reported widening, which is reviewable and reverses in one edit. The queue's
+**§17** awaits a ruling, which is what an extension is. **Surfacings:** none new bearing on the
+analysis — every subject of this task is where a recorded decision is written down and which
+population a derivation is stated over.
 
 **Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.

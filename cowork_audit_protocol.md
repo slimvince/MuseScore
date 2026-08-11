@@ -948,3 +948,76 @@ surface: they live in dispatch prose and in session records, which is itself one
 stated what happens when they meet. The entry is therefore sited in the block the ruling names, at
 its end, and the two rules are stated above in the terms this rule needs them in — not homed here,
 because homing them is a separate act nobody has ruled.
+
+> **★ THE CLOSING CLAUSE ABOVE IS OVERTAKEN, AND THE FORMER WORDING STANDS (#12; corrected
+> 2026-08-11 on the user's Ruling 55 of `cowork_rulings_2026_08_11_twelfth_stop.md`).** *"Homing them
+> is a separate act nobody has ruled"* was true when it was written and is no longer: the user ruled
+> that act one stop later, and **both rules are now homed in the two subsections immediately below**,
+> in this block's own voice. Nothing in the rule above moves; what changes is that the two rules it
+> arbitrates between are governed text rather than dispatch prose, which is what made the arbitration
+> readable only through this entry.
+
+### A derivation, a measurement or a sizing over a derived population is published WHOLE or not at all — and a subset is published only under a scope that NAMES its members
+
+**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_twelfth_stop.md`, Ruling 55), which
+homes a rule this project had been running on since the fourth return continuation without any
+governing surface stating it. The rule above arbitrates between this rule and the one below; until
+this act neither of the two was written anywhere a session would find them.
+
+**THE RULE, in two halves.** **(a)** Where a task's deliverable is ONE derivation, ONE measurement or
+ONE sizing over a DERIVED population, it is published over the whole of that population or it is not
+opened at all. **(b)** Where a subset is nonetheless published — because the whole is not reachable
+and the finding is worth having — it is published **under a scope that names its members
+individually**, in the same surface that carries it, so that no reader can take it for the whole.
+
+*Why (a) is a rule and not a preference:* a derivation covering some of its population **reads as
+covering the class**. The failure is silent by construction — the surface looks complete, every
+value in it is correct, and nothing in it says what was left out — so the reader is not merely
+under-informed, they are informed wrongly and have no way to notice. That is the defect this
+project's establishment rules exist against, and it is why *opened and left part-done* is worse than
+*not opened*, which reverses the ordinary presumption about partial progress.
+
+*Why (b) rather than a flat prohibition:* a subset whose members are NAMED cannot be mistaken for the
+whole, so the silent half of the failure is removed and the finding is kept. The two published
+subsets on the record are exactly this shape — a sizing delivered over the rows one batch had read,
+with those rows named one by one and the shortfall stated in the heading that carried them.
+
+*The evidence, measured rather than argued:* one derivation was declined by seven consecutive
+dispatches, each refusal citing this rule and each correct on its own terms; when it finally ran
+under the ordering rule above it closed whole in one act. **A rule that produces seven correct
+refusals in a row is doing its job**, and the cost of those refusals is what the ordering rule exists
+to pay rather than an argument against this one.
+
+**What it does NOT reach.** A per-entry pass, which is the subject of the rule immediately below: its
+members are complete in themselves, so stopping inside one publishes nothing partial. And a
+deliberately bounded population — a derivation whose OWN declared scope is a subset — is not a
+partial publication of a larger one, provided the boundary is declared where the artifact is read.
+
+### A PER-ENTRY PASS may be stopped at any member boundary, and the stop is RECORDED — what was done, what was not, and that the remainder is untouched rather than partly worked
+
+**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_twelfth_stop.md`, Ruling 55), the
+second of the two rules the ordering rule above arbitrates between, and homed in the same act for the
+same reason: it governed every batch of this arc from dispatch prose alone.
+
+**THE RULE.** A task whose deliverable is a per-entry, per-row or per-site PASS may be stopped at any
+**member boundary** — on capacity, or because a later task binds harder — and the stop is not a
+failure. **Three things are recorded when it happens:** which members were completed, that the
+remainder is UNTOUCHED rather than partly worked, and that nothing is left half-edited. A stop
+recorded that way is a result; a stop that is silent is the defect the rule above names.
+
+*Why the allowance is safe here and nowhere else:* each completed member is **whole in itself**. A
+homed entry, a corrected row, a re-aimed anchor — each stands alone and is not made wrong by the next
+one never happening, so a stopped pass publishes nothing that reads as more than it is. That is
+exactly the property a derivation over a population does not have, which is why the two rules are
+different rules rather than one.
+
+*Why the recording clause is the load-bearing half:* an unrecorded stop turns a per-entry pass into
+the very thing the rule above forbids — a reader meets a list of completed members and cannot tell a
+finished pass from an interrupted one. **The remainder is therefore derived fresh by the continuing
+session and never carried from the stopping session's account of it**, which is the standing form this
+arc has used at every such stop.
+
+**What it does NOT license.** Leaving a member half-edited; a stop inside a task the rule above
+governs; and a stop presented as completion. Nor does it decide WHICH task stops — that is the
+ordering rule above, which places the unstoppable task first precisely so that the stoppable one is
+what absorbs the shortfall.

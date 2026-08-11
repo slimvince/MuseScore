@@ -46,9 +46,18 @@ ROOT = Path(__file__).resolve().parent.parent
 ROOT = ROOT.parent
 INDEX = ROOT / "OPEN_ITEMS.md"
 OUT = ROOT / "tools" / "audit" / "nongating_apparatus_rows.json"
+# D-639's SECOND application — the reach derivation over the apparatus-classed rows. Its IN set is
+# what the user's Ruling 56 APPLIES here, and it is read on every run rather than transcribed.
+REACH = ROOT / "tools" / "audit" / "decisions" / "true_half_reach_rows.json"
 
 GATES = "GATES"
 NON_GATING = "NON-GATING"
+
+# The gate ground a row carries when it is here because D-639's reach derivation put it INSIDE the
+# doc-sync half and the user's Ruling 56 applied that. It is a distinct string so the authored table
+# and the derivation's artifact can be reconciled MECHANICALLY, in both directions, rather than the
+# moved set being listed by hand — which is what that ruling asks for in its own words.
+RULING_56_GROUND = "D-639's reach derivation, applied by the user's Ruling 56"
 
 THE_RULING = (
     "Rows whose subject is this project's own tracking and documentation apparatus are declared "
@@ -354,6 +363,44 @@ RETIRED_VERDICTS = {
 # here (#12) with the ruling that replaced it, because a verdict overwritten in place is a reasoning
 # the next session re-derives -- the same ground the retired table gives for itself.
 SUPERSEDED_VERDICTS = {
+    "OI-47": (NON_GATING, "user",
+              "The subject is four superseded sections of STATUS.md, a tracking surface, and the "
+              "owed act is explicitly the BANNER half - marking them historical. The triage half, "
+              "which was the part that touched what is true of the analysis, is discharged.",
+              "RE-CLASSED GATES 2026-08-11 by the user's Ruling 56 of "
+              "`cowork_rulings_2026_08_11_twelfth_stop.md`, which APPLIES D-639's reach derivation. "
+              "The verdict is kept whole because it was right about the OWED ACT and the derivation "
+              "asks a different question: not what is owed, but whether the document's account "
+              "changes how its analysis content is read. What the derivation found is that those "
+              "sections carry MEASURED VALUES about the analysis that the governing hard stop "
+              "supersedes, so a reader of the current-state section is told the system's error "
+              "counts are values no measurement now supports."),
+    "OI-282": (NON_GATING, "user",
+               "A PLAN document still presents as future work a half delivered and ratified the "
+               "next day. The falsehood is real but it sits in a tracking surface: the analysis "
+               "fact it concerns - the five-idiom set - is correctly recorded in the canonical "
+               "document and in the register, so no specification of the analysis is wrong.",
+               "RE-CLASSED GATES 2026-08-11 by the user's Ruling 56, applying D-639's reach "
+               "derivation, which decided this row by the ruling's SECOND WORKED EXAMPLE word for "
+               "word - a missing supersession note on a superseded plan. The verdict is kept whole "
+               "because its reading of where the falsehood SITS is unchanged; what it did not ask "
+               "is whether the document's account of itself changes how its analysis content is "
+               "read, and the derivation's answer is that a reader sent there by two live "
+               "specifications is told the categories are still to be discovered when they are "
+               "discovered, ratified and compiled in."),
+    "OI-318": (NON_GATING, "user",
+               "Two LABELS in the canonical document: the Layer-6 section still calls the grouping "
+               "unit a 'phrase' after the ratified rename reserved that word, and one section "
+               "number is used twice. D-438's line names a label and an anchor as apparatus, and "
+               "item (1) is already sequenced as its own scoped terminology work item under "
+               "OI-229. Neither states anything false about what the analysis does.",
+               "RE-CLASSED GATES 2026-08-11 by the user's Ruling 56, applying D-639's reach "
+               "derivation, whose fallback (1A) reaches this row through its FIRST half. The "
+               "verdict is kept whole because its reading of item (2) stands - a section number "
+               "used twice is a numbering artifact and would be OUT on its own. What it read as a "
+               "label, the derivation reads as a statement: the paragraph tells a reader what a "
+               "LAYER PRODUCES, and a reader of it alone is told the grouping layer segments "
+               "melodic phrases, which the ratified design exists to deny."),
     "OI-332": (NON_GATING, "user",
                "Three documents misdescribe their OWN state: a 'no code' status banner over a "
                "design whose two operations are built, two stale as-built code line anchors, and a "
@@ -380,10 +427,17 @@ V = {
               "What is owed is 'annotate the tables' - a consistency banner inside the "
               "structural-integrity audit, a tracking document. Nothing about the analysis is "
               "stated falsely by the tables; two records disagree about a stage's build status."),
-    "OI-47": (NON_GATING, "user",
-              "The subject is four superseded sections of STATUS.md, a tracking surface, and the "
-              "owed act is explicitly the BANNER half - marking them historical. The triage half, "
-              "which was the part that touched what is true of the analysis, is discharged."),
+    "OI-47": (GATES, RULING_56_GROUND,
+              "★ RE-CLASSED 2026-08-11 by the user's Ruling 56 of "
+              "`cowork_rulings_2026_08_11_twelfth_stop.md`, which APPLIES D-639's reach derivation "
+              "over the apparatus-classed rows; the former NON-GATING verdict is preserved whole at "
+              "`superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's "
+              "own artifact and reconciled here in both directions rather than listed by hand. The "
+              "derivation put this row INSIDE the doc-sync half under D-639's fallback (1A), and "
+              "the ground is that four superseded status sections carry MEASURED VALUES about the "
+              "analysis which the governing hard stop supersedes - so a reader of the current-state "
+              "section is told the system's error counts are values no measurement now supports. "
+              "The owed act is unchanged and is the row's own: annotate, do not rewrite history."),
     "OI-48": (NON_GATING, "user",
               "A dangling reference to a memory file from two documents; the row states in terms "
               "that nothing is lost and that the code substance rides OI-61. What is owed is "
@@ -456,11 +510,16 @@ V = {
                "Whether a delegation pointer confers contract-home status - a question about how "
                "the decisions register classifies homes. It moves no decision's content and no "
                "statement about the analysis."),
-    "OI-282": (NON_GATING, "user",
-               "A PLAN document still presents as future work a half delivered and ratified the "
-               "next day. The falsehood is real but it sits in a tracking surface: the analysis "
-               "fact it concerns - the five-idiom set - is correctly recorded in the canonical "
-               "document and in the register, so no specification of the analysis is wrong."),
+    "OI-282": (GATES, RULING_56_GROUND,
+               "★ RE-CLASSED 2026-08-11 by the user's Ruling 56, which APPLIES D-639's reach "
+               "derivation; the former NON-GATING verdict is preserved whole at "
+               "`superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's "
+               "artifact and reconciled here both ways. This is the one of the three the test "
+               "decided WITHOUT reaching the fallback: it is D-639's SECOND WORKED EXAMPLE word for "
+               "word - a missing supersession note on a superseded plan - and the consequence is "
+               "the one that example is about, a reader sent there by two live specifications "
+               "being told the categories are still to be discovered when they are discovered, "
+               "ratified and compiled in. The owed act is unchanged: an annotation, not a rewrite."),
     # OI-287's verdict moved to RETIRED_VERDICTS on 2026-08-03 when the row closed.
     "OI-290": (NON_GATING, "user",
                "A section of a corpus document mixes rules and findings, which the home "
@@ -542,12 +601,17 @@ V = {
                "it is committed. D-438's line inside the documentation rows names a banner as "
                "apparatus in terms. The substantive half of the same document's staleness -- what "
                "it says about the piece-start shortcut -- is a separate row, OI-315, which gates."),
-    "OI-318": (NON_GATING, "user",
-               "Two LABELS in the canonical document: the Layer-6 section still calls the grouping "
-               "unit a 'phrase' after the ratified rename reserved that word, and one section "
-               "number is used twice. D-438's line names a label and an anchor as apparatus, and "
-               "item (1) is already sequenced as its own scoped terminology work item under "
-               "OI-229. Neither states anything false about what the analysis does."),
+    "OI-318": (GATES, RULING_56_GROUND,
+               "★ RE-CLASSED 2026-08-11 by the user's Ruling 56, which APPLIES D-639's reach "
+               "derivation; the former NON-GATING verdict is preserved whole at "
+               "`superseded_verdicts` (#12), and WHICH rows move is DERIVED from that derivation's "
+               "artifact and reconciled here both ways. The derivation reaches this row under the "
+               "fallback and through its FIRST half only: the Layer-6 paragraph is not the "
+               "document's account of ITSELF at all - it tells a reader what a LAYER PRODUCES, and "
+               "a reader of it alone is told the grouping layer segments melodic phrases, which the "
+               "ratified design exists to deny. THE SECOND HALF IS NOT RE-CLASSED WITH IT and is "
+               "recorded so the row is not read as gating on both: one section number used twice is "
+               "a numbering artifact and would be OUT on its own."),
     # ---------------------------------------------------------------------- GATES
     "OI-315": (GATES, "a statement about the analysis's build state",
                "The canonical specification describes a key-layer behaviour in the present tense "
@@ -889,6 +953,27 @@ def parse_rows():
     return rows
 
 
+def reach_rows_inside() -> list:
+    """The rows D-639's reach derivation put INSIDE the doc-sync half, read at its own artifact.
+
+    A MISSING artifact is a STOP rather than an empty set. An item whose closing act names one
+    derivation must not quietly omit it and read as though the derivation had found nothing — which
+    would silently un-do the user's Ruling 56 on the next regeneration.
+    """
+    if not REACH.exists():
+        raise SystemExit(
+            f"STOP: {REACH.relative_to(ROOT)} is absent. The user's Ruling 56 applies THAT "
+            "derivation's IN set, so without it this tool cannot say which rows were moved — and "
+            "treating an absent artifact as an empty set would silently reverse a user ruling.")
+    art = json.loads(REACH.read_text(encoding="utf-8"))
+    try:
+        return list(art["rows_inside_the_doc_sync_half"])
+    except KeyError as exc:                                        # pragma: no cover - a STOP
+        raise SystemExit(
+            "STOP: the reach derivation's artifact does not carry "
+            f"`rows_inside_the_doc_sync_half` ({exc}), which is the field Ruling 56 applies.")
+
+
 def build():
     rows = parse_rows()
     by_id = {r["id"]: r for r in rows}
@@ -928,6 +1013,26 @@ def build():
                          + ", ".join(sorted(unchanged_superseded))
                          + ". Nothing was re-classed, so nothing was superseded.")
 
+    # ── the user's Ruling 56: WHICH rows the reach derivation moved is DERIVED, not listed ──────
+    reach_in = reach_rows_inside()
+    moved_here = sorted(i for i, v in V.items() if v[1] == RULING_56_GROUND)
+    if moved_here != sorted(reach_in):
+        raise SystemExit(
+            "STOP: the rows re-classed here under the user's Ruling 56 and the rows D-639's reach "
+            "derivation puts INSIDE the doc-sync half disagree.\n"
+            f"  re-classed here but not IN the derivation: "
+            f"{[i for i in moved_here if i not in reach_in]}\n"
+            f"  IN the derivation but not re-classed here: "
+            f"{[i for i in reach_in if i not in moved_here]}\n"
+            "  Ruling 56 applies the derivation's own artifact and forbids a hand-listed set, so "
+            "the two must agree in both directions or nothing is written.")
+    not_superseded = [i for i in moved_here if i not in SUPERSEDED_VERDICTS]
+    if not_superseded:
+        raise SystemExit(
+            "STOP: a row re-classed under Ruling 56 carries no superseded verdict: "
+            + ", ".join(not_superseded)
+            + ". A re-class replaces an answer, and the answer it replaced is kept whole (#12).")
+
     items = []
     for rid in cut_ids:
         verdict, ground, reason = V[rid]
@@ -959,7 +1064,12 @@ def build():
     # it left the population rather than changing class. Counting it as refuted would report a
     # movement that never happened.
     a3_closed = [i for i in a3_ids if i in RETIRED_VERDICTS]
-    a3_live = [i for i in a3_ids if i not in a3_closed]
+    # A row a LATER USER RULING re-classed is a third case, and it is kept apart for the same
+    # reason the closed one is: the assumption was graded against the verdict that stood when it
+    # was made, and a ruling that changed the answer did not make the original reading wrong.
+    # Folding it into `refuted` would report a mistake where what happened is a decision.
+    a3_reclassed = [i for i in a3_ids if i not in a3_closed and i in SUPERSEDED_VERDICTS]
+    a3_live = [i for i in a3_ids if i not in a3_closed and i not in a3_reclassed]
     a3_confirmed = [i for i in a3_live if i in ng_ids]
     a3_refuted = [i for i in a3_live if i not in ng_ids]
     a3_missed = [i for i in ng_ids if i not in a3_ids]
@@ -977,6 +1087,35 @@ def build():
         "the_exemption": THE_EXEMPTION,
         "the_default": THE_DEFAULT,
         "the_line_this_derivation_draws": THE_LINE,
+        "★_the_ruling_56_application": {
+            "the_ruling": (
+                "User, 2026-08-11, Ruling 56 of `cowork_rulings_2026_08_11_twelfth_stop.md`: the "
+                "rows D-639's reach derivation put INSIDE the doc-sync half join the gating "
+                "TRUE-half item — derived from the derivation's own artifact, never hand-listed."
+            ),
+            "what_it_completes": (
+                "The FIRST application of D-639's test reported the same consequence for one "
+                "document and declined to apply it, on the ground that a non-gating verdict is "
+                "DERIVED from a cut and never hand-added — and the user then ruled it separately, "
+                "re-classing that row GATES. This ruling is that reserved answer, given for the "
+                "SECOND application and for its whole IN set at once."
+            ),
+            "how_the_moved_set_is_derived": (
+                "Read on every run from `tools/audit/decisions/true_half_reach_rows.json` → "
+                "`rows_inside_the_doc_sync_half`, and reconciled BOTH WAYS against the rows this "
+                "table carries with the Ruling-56 gate ground. A disagreement in either direction "
+                "is a STOP, and a MISSING artifact is a STOP rather than an empty set — treating "
+                "it as empty would silently reverse a user ruling on the next regeneration."
+            ),
+            "rows_moved": moved_here,
+            "what_did_NOT_move_with_them": (
+                "Nothing about D-438 or its criterion, which is unchanged and still decides every "
+                "other row here; and no row the derivation put OUT. Each moved row's FORMER verdict "
+                "is preserved whole at `superseded_verdicts` (#12) with the reason it was right "
+                "about the question it answered — the two tests have different subjects, which "
+                "D-639 states in terms."
+            ),
+        },
         "what_is_authored_and_what_is_derived": {
             "derived": ("the row population and its OPEN subset, parsed from OPEN_ITEMS.md; the "
                         "over-inclusive first cut on each row's own subject column; every count"),
@@ -1049,6 +1188,15 @@ def build():
                 "A row A3 named that has since been RESOLVED is neither a confirmation nor a "
                 "refutation: it left the population rather than changing class. Its verdict is "
                 "kept at `retired_verdicts`."
+            ),
+            reclassed_by_a_later_ruling=a3_reclassed,
+            reclassed_note=(
+                "A row a LATER USER RULING re-classed is the third case and is kept apart for the "
+                "same reason the closed one is. A3 was graded against the verdict that stood when "
+                "it was made; a ruling that changed the answer did not make the original reading "
+                "wrong, and folding such a row into `refuted` would report a mistake where what "
+                "happened is a decision. Each one's former verdict is whole at "
+                "`superseded_verdicts` with the ruling that replaced it."
             ),
             refuted_note=(
                 "OI-274 is NOT apparatus. Its subject is a mandatory session-start read that "

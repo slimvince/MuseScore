@@ -409,7 +409,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (28 non-gating / 33 gates of 61 candidates over 251 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 36 gates of 61 candidates over 251 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -526,10 +526,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 670",
+        "backbone decisions: 672",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 670/670",
-        "cited line numbers correct: 664/664   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 672/672",
+        "cited line numbers correct: 666/666   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"

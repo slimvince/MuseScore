@@ -215,12 +215,12 @@
  },
  "the_complete_half": {
   "criterion": "C1 and C2",
-  "register_population": 670,
+  "register_population": 672,
   "by_home_class": {
    "contract-home": 161,
    "gap": 29,
    "homed-in-a-layer-specification": 297,
-   "process": 137,
+   "process": 139,
    "project-convention": 45,
    "unhomed": 1
   },
@@ -752,9 +752,9 @@
      "doc-sync"
     ],
     "gate": {
-     "verdict": "NON-GATING",
+     "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "tracking/documentation apparatus - the user's own phrase"
+     "ground": "D-639's reach derivation, applied by the user's Ruling 56"
     }
    },
    {
@@ -1204,9 +1204,9 @@
      "dt-12"
     ],
     "gate": {
-     "verdict": "NON-GATING",
+     "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "tracking/documentation apparatus - the user's own phrase"
+     "ground": "D-639's reach derivation, applied by the user's Ruling 56"
     }
    },
    {
@@ -1406,9 +1406,9 @@
      "doc-sync"
     ],
     "gate": {
-     "verdict": "NON-GATING",
+     "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "tracking/documentation apparatus - the user's own phrase"
+     "ground": "D-639's reach derivation, applied by the user's Ruling 56"
     }
    },
    {
@@ -1648,7 +1648,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 39,
+   "count": 42,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1667,6 +1667,7 @@
     "OI-239",
     "OI-249",
     "OI-274",
+    "OI-282",
     "OI-283",
     "OI-292",
     "OI-303",
@@ -1674,6 +1675,7 @@
     "OI-309",
     "OI-311",
     "OI-315",
+    "OI-318",
     "OI-320",
     "OI-321",
     "OI-322",
@@ -1686,12 +1688,37 @@
     "OI-360",
     "OI-363",
     "OI-45",
+    "OI-47",
     "OI-57",
     "OI-90",
     "OI-95"
    ]
   },
   "non_gating": {
+   "count": 17,
+   "ids": [
+    "OI-205",
+    "OI-229",
+    "OI-233",
+    "OI-280",
+    "OI-281",
+    "OI-290",
+    "OI-296",
+    "OI-299",
+    "OI-317",
+    "OI-338",
+    "OI-346",
+    "OI-347",
+    "OI-46",
+    "OI-48",
+    "OI-49",
+    "OI-50",
+    "OI-99"
+   ]
+  },
+  "non_gating_before_the_ruling_56_application": {
+   "what_it_is": "The same cut taken BEFORE the user's Ruling 56 moved D-639's reach derivation's IN set to the gating side — that is, the rows the apparatus declaration classes non-gating on D-438's criterion alone.",
+   "why_it_is_published": "It is the population the reach derivation grades, and it must not move when that derivation's own result is applied. Without it the two are circular: the derivation's verdicts would leave the set they were graded over, its STOP would fire, retiring them would empty the IN set, and the application would reverse itself on the next regeneration. This cut is invariant under the application, so the fixed point is the one the ruling intends.",
    "count": 20,
    "ids": [
     "OI-205",
@@ -1714,7 +1741,13 @@
     "OI-49",
     "OI-50",
     "OI-99"
-   ]
+   ],
+   "moved_by_the_ruling": [
+    "OI-282",
+    "OI-318",
+    "OI-47"
+   ],
+   "derived_from": "tools/audit/nongating_apparatus_rows.json → ★_the_ruling_56_application.rows_moved"
   },
   "where_each_verdict_came_from": {
    "the committed apparatus declaration": [
@@ -1827,7 +1860,7 @@
    "it_is_a_template_the_generator_fills": true,
    "the_unresolved_figure_it_hand_carries": [],
    "the_figure_the_same_file_computes": 2644,
-   "the_backbone_the_committed_layer_was_derived_at": 670,
+   "the_backbone_the_committed_layer_was_derived_at": 672,
    "verdict": "TRUE AT HEAD. The field carries no hand-written figure: it is a template whose every figure `gen_decisions_register.py` fills from the same computed data it renders the coverage table from, and an unfilled placeholder stops that generator (#17f / D-431)."
   },
   "statement_3_the_home_granularity_claim": {
@@ -1853,8 +1886,8 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 640,
-    "of": 670
+    "count": 642,
+    "of": 672
    },
    {
     "fact": "Every harvested cluster carries a recorded disposition at the committed artifact, so no harvested statement was silently passed over.",
@@ -1879,8 +1912,8 @@
   },
   "true_half": {
    "open_rows_in_the_wide_cut": 59,
-   "of_which_gate": 39,
-   "of_which_apparatus_and_therefore_non_gating": 20,
+   "of_which_gate": 42,
+   "of_which_apparatus_and_therefore_non_gating": 17,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 5
   },
   "outside_both_halves_and_owed_before_the_statement": {
@@ -1986,10 +2019,10 @@
   "how_to_read_it": "The derivation is the answer; this block measures the recollection against it. A recollected row that the derivation does not carry is not thereby wrong - it may be outstanding on a ground this cut does not search (the COMPLETE half, or an establishment obligation) - and each is stated rather than scored."
  },
  "counted": {
-  "decisions_recorded": 670,
+  "decisions_recorded": 672,
   "open_rows_in_the_index": 251,
   "true_half_wide_cut": 59,
-  "true_half_gating": 39,
+  "true_half_gating": 42,
   "complete_half_gap": 29,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

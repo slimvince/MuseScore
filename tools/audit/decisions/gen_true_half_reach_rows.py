@@ -512,13 +512,26 @@ def read(path: str) -> str:
 
 
 def derived_population() -> list:
+    """The apparatus-classed rows this derivation grades — the cut BEFORE Ruling 56 is applied.
+
+    WHY THE *BEFORE* CUT AND NOT THE LIVE ONE, which is the whole of why this function has a
+    docstring. The user's Ruling 56 (2026-08-11) applies this derivation's IN verdicts by moving
+    those rows to the gating side. Read against the LIVE non-gating cut, this derivation's own
+    result would remove its own graded rows from its own population — its both-ways STOP would fire,
+    retiring them would empty the IN set, and the application would reverse itself on the next
+    regeneration. The BEFORE cut is invariant under the application, so the population is stable and
+    the fixed point is the one the ruling intends. It is still DERIVED, at the same artifact, and
+    the two cuts differ by exactly the rows that artifact records as moved.
+    """
     inv = json.loads(read(INVENTORY))
     try:
-        return list(inv["the_gating_split"]["non_gating"]["ids"])
+        return list(inv["the_gating_split"]["non_gating_before_the_ruling_56_application"]["ids"])
     except KeyError as exc:                                       # pragma: no cover - a STOP
         raise SystemExit(
-            "STOP: the completion inventory does not carry `the_gating_split.non_gating.ids`, "
-            f"which is the population this derivation grades ({exc})."
+            "STOP: the completion inventory does not carry "
+            "`the_gating_split.non_gating_before_the_ruling_56_application.ids`, which is the "
+            f"population this derivation grades ({exc}). It is NOT read from the live non-gating "
+            "cut, because that cut moves when this derivation's own verdicts are applied."
         )
 
 

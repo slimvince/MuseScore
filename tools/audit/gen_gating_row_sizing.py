@@ -160,6 +160,24 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
+        "row": "OI-47",
+        "anchor_quote": "mark the four sections historical at the next STATUS.md touch",
+        "the_act_owed": (
+            "Mark the four submission-era sections of `STATUS.md` historical — the row's own words, "
+            "and the act it calls the BANNER half, its triage half being discharged."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "Four located sections, annotated rather than rewritten — the row's own instruction, and "
+            "the standing treatment for a superseded record. Nothing has to be re-measured: what "
+            "supersedes those values is the governing hard stop, which is published elsewhere and "
+            "is pointed at rather than restated."
+        ),
+        "the_second_half": None,
+    },
+    {
         "row": "OI-45",
         "anchor_quote": "fix at the next scoring_model touch",
         "the_act_owed": (
@@ -513,6 +531,25 @@ SIZINGS = [
         },
     },
     {
+        "row": "OI-282",
+        "anchor_quote": "a dated annotation scoping the title and §1 to the weights half",
+        "the_act_owed": (
+            "Append a dated annotation to `cowork_style_clustering_plan.md` scoping its title and "
+            "its opening to the half that is still future work, and recording that the other half "
+            "was delivered and ratified the next day."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "One annotation on one document, in a shape the record has used before and which the "
+            "row names. Everything it needs is already located — the delivering document, its "
+            "ratification date and the study behind it — and the row's own words are that the "
+            "plan's substance is not in doubt."
+        ),
+        "the_second_half": None,
+    },
+    {
         "row": "OI-283",
         "anchor_quote": "Two acts at the register's next touch",
         "the_act_owed": (
@@ -646,6 +683,29 @@ SIZINGS = [
             "whose_act_it_is": "a session on this side",
             "what_blocks_it": "the freeze on `src/`",
         },
+    },
+    {
+        "row": "OI-318",
+        "anchor_quote": "the pass’s enumeration is one word short",
+        "the_act_owed": (
+            "Correct the Layer-6 paragraph so it names the punctuation-span rather than the word "
+            "the ratified rename reserved, and add that word to the scope correction's own "
+            "enumeration, which the row establishes is one short."
+        ),
+        "sizing": "SESSION-SMALL",
+        "whose_act_it_is": "a session on this side",
+        "what_blocks_it": "nothing beyond capacity",
+        "why_that_size": (
+            "One paragraph and one enumeration, both located, with the correct term fixed by a "
+            "ratified rename the same document already records. **What makes it gating is the "
+            "first item alone:** the paragraph tells a reader what a LAYER PRODUCES, which is a "
+            "statement about the analysis and not a label — the ground D-639's reach derivation "
+            "gives and the user's Ruling 56 applied. The duplicated section number is a numbering "
+            "artifact that would be outside the doc-sync half on its own, and it is named here so "
+            "the row is not read as gating on both; it is not a half of a different SIZE, so it is "
+            "not carried in the field for one."
+        ),
+        "the_second_half": None,
     },
     {
         "row": "OI-320",
