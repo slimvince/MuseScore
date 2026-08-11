@@ -1499,7 +1499,8 @@
      "doc-sync"
     ],
     "matched_falsity_signals": [
-     "doc-sync"
+     "doc-sync",
+     "states something false"
     ],
     "gate": {
      "verdict": "NON-GATING",

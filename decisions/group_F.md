@@ -72,7 +72,7 @@
 
 **Status.** DEFERRED · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3293-3295`
+**Home.** `ARCHITECTURE.md:3308-3310`
 
 **Provenance.** ARCHITECTURE.md:2394-2395 (21 modes), :2213-2217 (harmonic major deferred)
 
@@ -89,7 +89,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:3241-3242`
+**Home.** `ARCHITECTURE.md:3256-3257`
 
 **Provenance.** ARCHITECTURE.md:2408-2410, :3020-3073. Superseded on the production path by D-003 (inference is preset-independent)
 
@@ -105,7 +105,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4238-4240`
+**Home.** `ARCHITECTURE.md:4268-4270`
 
 **Provenance.** ARCHITECTURE.md:3380-3392
 
@@ -119,7 +119,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4316`
+**Home.** `ARCHITECTURE.md:4346`
 
 **Provenance.** ARCHITECTURE.md:3396-3403. Cited by open_items/OI-228 as the primary source the joint emission departs from. NOT catchable by the harvest's signature net - the reason this adjudication had to read the specifications in full. ★ SCOPE SETTLED 2026-08-11 BY THE USER'S RULING 63 (`cowork_rulings_2026_08_11_fourteenth_stop.md`, closing `OPEN_ITEMS.md` OI-324), AND THIS ENTRY IS NOT AMENDED BY IT: the ranking is CROSS-CUTTING and binds BOTH arms, so OI-228's citation of it for a claim about the joint emission stands. What was unwritten is now written — the same ranking is stated for the production arm at the joint estimator's own section of `ARCHITECTURE.md`, where the emission's evidential contract lives, and §5.2's phase-1z scoping note carries a dated annotation saying that it scopes the MECHANISM and not the ranking. One rule, stated for the arm each section describes, cross-referenced rather than duplicated (#6). The excluded reading, recorded at the ruling: legacy-only, which would override recorded user doctrine on an unestablished extension of a scoping note.
 
@@ -136,7 +136,7 @@
 
 **Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4276-4277`
+**Home.** `ARCHITECTURE.md:4306-4307`
 
 **Provenance.** ARCHITECTURE.md:3387-3392 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net ★ SUPERSEDED IN FACT — recorded 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 3.4; OPEN_ITEMS.md OI-315). The mechanism this decision records was REMOVED from the code in Stage 4b-i on 2026-06-14: src/composing/analysis/key/keyresolver.cpp:291-301 states the removal in its own comment, and docs/key_path_design.md:65-73 dates it and names the re-targeted pins (Composing_KeyresolverTests.PieceStartOpening_NoteBased_DeclaredMinor/_DeclaredMajor). It is NOT falsified: nothing showed the decision wrong, a later BUILD replaced what it governs without a ruling that names it — which is what this register's status vocabulary calls superseded-in-fact. The ⚠ LEGACY mark STAYS: the subject is still the legacy key path, and the mark states what the decision is ABOUT. ★ Verbatim RE-TAKEN 2026-08-04 from the corrected specification text. The sentence this entry quoted — 'when the analysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below — they coincide in value, not by design), no prior result exists (`prevResult == nullptr`), and the key signature carries an explicit mode, the function returns the declared mode immediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.' — was false at HEAD and is corrected in place at ARCHITECTURE.md §5.2, which now states that there is no piece-start exception, that the opening is note-based, and that the removal is tried and closed; the former wording is preserved here rather than deleted (#12). What did NOT change: the decision's own date and ratifier remain 'not stated', and no defense is supplied that the record never had.
 
@@ -152,7 +152,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `ARCHITECTURE.md:4344`
+**Home.** `ARCHITECTURE.md:4374`
 
 **Provenance.** ARCHITECTURE.md:3423-3435; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3428-3429) - no theory citation and no measurement
 
@@ -174,7 +174,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `ARCHITECTURE.md:3247-3251`
+**Home.** `ARCHITECTURE.md:3262-3266`
 
 **Provenance.** ARCHITECTURE.md:2414-2418; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
@@ -775,9 +775,9 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:4294-4303`
+**Home.** `ARCHITECTURE.md:4324-4333`
 
-**Provenance.** ★ HOMED 2026-08-04 (CC, dispatch `cc_instruction_guard_fix_and_item1d.md`, Task 2.2) UNDER RULING R2 / register entry **D-644**: where a superseded decision's content is a REMOVAL there is no successor to move the obligation to (D-642's condition cannot be met), so the owning specification STATES THE CURRENT BEHAVIOUR and RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE. **This is the precedent's own act, performed for the sibling removal that landed at the same increment:** D-058 was corrected in `ARCHITECTURE.md` §5.2 at phase 1z in exactly this form. Both halves are now present there — §5.2 already stated the current behaviour (the promotion 'was removed in the same increment', with the declared mode reaching the analysis only as a small hint at every tick), written when D-058 was corrected; what this act adds is the tried-and-closed line, in that section's own voice and WITH ITS DEFENSE. The verbatim is RE-TAKEN from that line. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `docs/stage4b_design.md:57-63`, §2.2 'The hard post-hoc promotion → REMOVED (OQ1)'; former class `gap`, cleared because a layer-specification home is not a non-specification home; former verbatim: "- **Current** [code]: `keyresolver.cpp:344-367` (\"Strong declared-mode prior\") promotes the highest-ranked declared-compatible result to the front **regardless of score gap** — a hard veto (\"the composer's intent overrides note-content inference\").\n- **Change:** **remove it outright.** It is incompatible with \"note-based primary.\" Leaving it would make §2.1's demotion a no-op wherever note inference already out-scored the declared mode but got vetoed here. The residual declared influence is now *only* the small hint in §2.1." — from `docs/stage4b_design.md`, the Stage-4b design implementing the user's ratified Stage-4 redirect; the staged approach was chosen by the user 2026-06-14, and the document was read in full by READ WAVE 4, 2026-08-04. **What did NOT change: the STATUS.** It remains `superseded-in-fact`, exactly as D-058's did through the identical act — R2 says what the specification owes, not what the register records. **Its subject is the LEGACY key path** (`keymodeanalyzer` / `keyresolver`), which the joint estimator replaced on both surfaces; the ⚠ LEGACY mark stays, because it states what the decision is ABOUT. Landed at the same event as **D-571**. The piece-start shortcut removed alongside it is **D-058**, already recorded *superseded in fact* (`OPEN_ITEMS.md` OI-315) — the Stage-4b design is a second, independent source for that removal and dates it the same way. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the declared mode's weight (at line 4295 on 2026-08-09), under *"— do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** ★ HOMED 2026-08-04 (CC, dispatch `cc_instruction_guard_fix_and_item1d.md`, Task 2.2) UNDER RULING R2 / register entry **D-644**: where a superseded decision's content is a REMOVAL there is no successor to move the obligation to (D-642's condition cannot be met), so the owning specification STATES THE CURRENT BEHAVIOUR and RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE. **This is the precedent's own act, performed for the sibling removal that landed at the same increment:** D-058 was corrected in `ARCHITECTURE.md` §5.2 at phase 1z in exactly this form. Both halves are now present there — §5.2 already stated the current behaviour (the promotion 'was removed in the same increment', with the declared mode reaching the analysis only as a small hint at every tick), written when D-058 was corrected; what this act adds is the tried-and-closed line, in that section's own voice and WITH ITS DEFENSE. The verbatim is RE-TAKEN from that line. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `docs/stage4b_design.md:57-63`, §2.2 'The hard post-hoc promotion → REMOVED (OQ1)'; former class `gap`, cleared because a layer-specification home is not a non-specification home; former verbatim: "- **Current** [code]: `keyresolver.cpp:344-367` (\"Strong declared-mode prior\") promotes the highest-ranked declared-compatible result to the front **regardless of score gap** — a hard veto (\"the composer's intent overrides note-content inference\").\n- **Change:** **remove it outright.** It is incompatible with \"note-based primary.\" Leaving it would make §2.1's demotion a no-op wherever note inference already out-scored the declared mode but got vetoed here. The residual declared influence is now *only* the small hint in §2.1." — from `docs/stage4b_design.md`, the Stage-4b design implementing the user's ratified Stage-4 redirect; the staged approach was chosen by the user 2026-06-14, and the document was read in full by READ WAVE 4, 2026-08-04. **What did NOT change: the STATUS.** It remains `superseded-in-fact`, exactly as D-058's did through the identical act — R2 says what the specification owes, not what the register records. **Its subject is the LEGACY key path** (`keymodeanalyzer` / `keyresolver`), which the joint estimator replaced on both surfaces; the ⚠ LEGACY mark stays, because it states what the decision is ABOUT. Landed at the same event as **D-571**. The piece-start shortcut removed alongside it is **D-058**, already recorded *superseded in fact* (`OPEN_ITEMS.md` OI-315) — the Stage-4b design is a second, independent source for that removal and dates it the same way. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the declared mode's weight (at line 4325 on 2026-08-09), under *"— do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-575 — The Baroque partial-signature convention is handled by DETECTING it and reinterpreting the signature one step, not by widening the candidate family for every score
 
@@ -837,7 +837,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:5567-5574`
+**Home.** `ARCHITECTURE.md:5613-5620`
 
 **Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6, the user's EXEMPLAR/GENRE proposal of 2026-07-05, marked RECORDED and DEFERRED product work. **D-131** already carries the five-idiom taxonomy itself; this is the separate rule for how a preset built over it is NAMED, which no other home carries. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). Routed into the style-system family: `ARCHITECTURE.md` §6 gains a section for the user-facing preset layer, §6.8, which is where the five preset-layer decisions now live together. THE RECORDED/DEFERRED STATUS RIDES ALONG and is stated in that section's own status line, so no reader takes a deferred product decision for a built one. FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:96-99`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 87, "section": "## 6. The user-facing preset layer — the EXEMPLAR/GENRE proposal (user, 2026-07-05; RECORDED, deferred product work)", "label": "§6", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "2. **Naming: exemplar anchoring, genre-era labels.** A preset presents as a familiar label + exemplars users
    know (\"60s pop — The Beatles\"), never as an idiom name or an obscure exemplar (\"Hiromi means nothing to most
@@ -863,7 +863,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:5575-5582`
+**Home.** `ARCHITECTURE.md:5621-5628`
 
 **Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6-3 of the user's 2026-07-05 proposal, RECORDED and deferred as product work. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into `ARCHITECTURE.md` §6.8, the new preset-layer section of the style-system family, with the RECORDED/DEFERRED status stated in that section's own status line. THE NAMED CORPORA AND THE NAMED GENRES ARE NOT CARRIED ACROSS: the rule is what is homed, and a list of which held corpora happen to cover which genre today is a state of the holdings rather than a rule (it stays in the proposal, #12). FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:100-109`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 87, "section": "## 6. The user-facing preset layer — the EXEMPLAR/GENRE proposal (user, 2026-07-05; RECORDED, deferred product work)", "label": "§6", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "3. **Coverage beyond the analyzed set — three tiers, no bare guessing:**
    - **Measured:** the held research corpora already cover much of the user's example list — CoCoPops =
@@ -896,7 +896,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:5583-5591`
+**Home.** `ARCHITECTURE.md:5629-5637`
 
 **Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6a, the bidirectional preset-to-mixture contract, user 2026-07-05. The marking pattern it generalises is **D-497** (the empirically-unvalidated mark applied to the Jazz preset constants). ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into `ARCHITECTURE.md` §6.8, with the RECORDED/DEFERRED status stated in that section's own status line. FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:128-132`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 122, "section": "### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)", "label": "§6a", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **Backward — every mixture is selectable; the discovered cloud is the EVIDENCE MAP, not the boundary.**
   Named presets = cluster centroids (progressive disclosure); a custom selector admits ANY simplex point
@@ -931,7 +931,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:5592-5607`
+**Home.** `ARCHITECTURE.md:5638-5653`
 
 **Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6a, user 2026-07-05, as RECORDED and deferred product work. It sits against **D-158**, which rules that OUR data lives in separate files inside the score archive and the score file is never touched — the two are not in conflict on their own terms (this uses MuseScore's OWN existing score-property mechanism rather than adding to the score file's schema), but a build would have to reconcile them explicitly and neither record does. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into `ARCHITECTURE.md` §6.8, with the RECORDED/DEFERRED status stated in that section's own status line. THE TENSION WITH D-158 IS CARRIED INTO THE HOME TEXT rather than left in this field alone, because a reader of the rule needs to meet it (#12); it is stated as a pointer to §13.1, which is D-158's home, and not as a second copy of that rule (#6). FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:140-152`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 122, "section": "### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)", "label": "§6a", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **The mixture's PRIMARY persistence home = the score itself (user, 2026-07-05).** Store the score's
   idiom mixture in the score's own metadata — MuseScore already supports user-defined score properties
@@ -967,7 +967,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:5608-5616`
+**Home.** `ARCHITECTURE.md:5654-5662`
 
 **Provenance.** `cowork_style_taxonomy_proposal.md`, RATIFIED 2026-06-30 and EXECUTED at the StyleTag swap 2026-07-02. Read in full by READ WAVE 5, 2026-08-04. Recorded in §6a. It REFINES **D-292** (the fitting-pool licence constraint — values that ship are fitted only on freely-licensed music) by saying which half of the style system that constraint reaches; it does not weaken it. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)) into `ARCHITECTURE.md` §6.8, with the RECORDED/DEFERRED status stated in that section's own status line. The fitting-pool constraint itself is NOT restated at the new home (#6) — it is stated once at the joint estimator's standing rule (e) — and the refinement is written as a refinement. FORMER HOME, PRESERVED (#12): `cowork_style_taxonomy_proposal.md:133-135`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 122, "section": "### 6a. The bidirectional preset⇄mixture contract (user, 2026-07-05; RECORDED with §6)", "label": "§6a", "delegated": null, "delegation": "ARCHITECTURE.md:4738", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **License split, resolved cleanly:** the ANCHORS are the shipped license-constrained fitted parameters;
   MIXTURE WEIGHTS are user configuration (free); only OUR shipped named-preset defaults carry the §6-4
@@ -993,7 +993,7 @@
 
 **Entry ratified.** 2026-08-04 · by user
 
-**Home.** `ARCHITECTURE.md:5525-5533`
+**Home.** `ARCHITECTURE.md:5571-5579`
 
 **Provenance.** `cowork_style_clustering_plan.md`, committed future direction, user-ratified 2026-06-29. Read in full by READ WAVE 5, 2026-08-04. It is why **D-132** records the weights half as the REMAINING empirical grounding after the five-idiom set was ratified: the same clustering delivers both, and only the second is still owed. The document's licensing rule is **D-292** and is not re-entered here (#6). ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). Routed to `ARCHITECTURE.md` §6.7, the section that owns the taxonomy this decision is about, in that section's own voice and with its defense. FORMER HOME, PRESERVED (#12): `cowork_style_clustering_plan.md:16-18`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 9, "section": "## 1. What it is", "label": "§1", "delegated": null, "delegation": "ARCHITECTURE.md:4752", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a bare-appended-citation, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "The **taxonomy and the weights are one data-derived object** (the clusters and their distributions). **Validation** —
 measuring our analyzer's *use* of a style — is a **separate third thing** that needs annotated *scores* (notes + a

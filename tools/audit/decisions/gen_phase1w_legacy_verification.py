@@ -277,7 +277,9 @@ ANCHORS = {
         # (D-648) — the second after Ruling 39's delegation was written above it.
         # Re-aimed again 2026-08-11 from 4234, same way, after Ruling 63's evidential-priority
         # section and the §5.2 annotation were written above it.
-        'file': 'ARCHITECTURE.md', 'line': 4294,
+        # Re-aimed again 2026-08-11 from 4294, same way, after the OI-346 marks were written into
+        # §4.6's preset table above it.
+        'file': 'ARCHITECTURE.md', 'line': 4324,
         'quote': "Tried and closed on the declared mode's weight",
         'says': 'The same construction on the declared mode\'s weight, naming D-572 with its '
                 'evidence — a LIVE specification line whose subject is a removed legacy promotion '

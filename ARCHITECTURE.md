@@ -2617,6 +2617,21 @@ The `StylePrior` commented-out code is the planned connection between
 `ChordAnalyzerPreferences` and the style system (Section 6). When the style system
 is implemented, the active style will populate the analyzer's preferences.
 
+**★ ⚠ THE JAZZ PRESET'S CHORD-SCORING CONSTANTS ARE EMPIRICALLY UNVALIDATED — the §6.6 rule applied,
+2026-08-11 (`OPEN_ITEMS.md` OI-346, the application half of D-497).** The affected values are the
+Jazz **extension threshold** (0.12, against the 0.20 the header declares as the default and Standard
+and Baroque keep — the comment above states it) and the Jazz **reduced individual inversion bonuses**,
+which are set in `tools/batch_analyze.cpp` and are where the preset's inversion behaviour actually
+comes from. **Validation path:** jazz ground truth carrying written-out bass and piano voicings,
+converted and score-aligned (§4.1c; `cowork_score_census.md` Tier J). **The establishment is the
+record's own:** §4.1c records that jazz accuracy is not measurable on the corpora held, measured by
+the bass-injection experiment, and the census defers the jazz fit to that conversion. **★ AND THE ONE
+THING A READER COULD MISTAKE FOR VALIDATION IS NAMED: the Jazz BIR regression check is not it.** That
+check runs the Jazz preset over the **Bach chorale** corpus — it is a regression surface that holds
+behaviour against change, and our own gate corpus is not jazz ground truth, so passing it establishes
+nothing about these values on jazz repertoire. §6.6 states the rule and its maintenance and is not
+restated here (#6).
+
 **Gate threshold policy**: the inversion-preference gate thresholds in
 `postscoringgates.cpp` (Gate I: 0.45, Gate L: 0.35, etc.) are empirically
 calibrated against the Baroque corpus and are Baroque-specific. They must not be
@@ -4169,10 +4184,25 @@ Five named presets populate all 21 sliders:
 | Preset | Character |
 |--------|-----------|
 | Standard | Classical/baroque defaults as above |
-| Jazz | LydianDominant=−0.20, Altered=−0.50, MelodicMinor=−0.50, DorianB2=−1.00, PhrygianDominant=−0.80, HarmonicMinor=−0.50; diatonic at standard weights |
+| Jazz | ⚠ **EMPIRICALLY UNVALIDATED** — LydianDominant=−0.20, Altered=−0.50, MelodicMinor=−0.50, DorianB2=−1.00, PhrygianDominant=−0.80, HarmonicMinor=−0.50; diatonic at standard weights. **Validation path:** jazz ground truth carrying written-out bass and piano voicings, converted and score-aligned (§4.1c; `cowork_score_census.md` Tier J) |
 | Modal | All 7 diatonic modes equal at 0.0; melodic and harmonic minor at high penalty |
 | Baroque | HarmonicMinor=−0.20, PhrygianDominant=−0.50; all non-diatonic modes at maximum penalty |
 | Contemporary | All 21 modes at moderate penalty; optimizer determines final weights from corpus |
+
+**★ THE MARK ON THE JAZZ ROW IS THE §6.6 RULE APPLIED, AND IT IS NOT DECORATIVE (2026-08-11;
+`OPEN_ITEMS.md` OI-346, the application half of D-497).** §6.6 states the rule and is not restated
+here (#6): a style constant no ground truth has calibrated carries the empirically-unvalidated mark,
+the corpus that would validate it is named beside it, and the mark is maintained until an established
+corpus measures the value. **The establishment for these six values is the record's own, read at its
+objects rather than assumed:** §4.1c records the standing consequence that **jazz accuracy is not
+measurable on the corpora held at all** — the held jazz material is melody-and-chord-symbol
+transcription with the bass and the piano voicings absent — measured by the bass-injection
+experiment; and the corpus census states that the jazz fit is **deferred to the jazz-ground-truth
+conversion**, so a fit of that idiom currently has nothing to be evaluated against (#20). **What the
+mark does NOT say:** that the six values are wrong, or that anything about the analysis moves. They
+are a user-selectable prior on the legacy key path; what changes is what a reader of them is told
+about how far they are established. **The mark is lost only in the act that records the measurement**
+— never by a value being changed or a preset renamed.
 
 Presets are represented by `ModePriorPreset` (a plain struct with 21 `double` fields and a
 `std::string name`) declared in `icomposinganalysisconfiguration.h`.  The free function
@@ -5388,10 +5418,26 @@ act that records that measurement, never by a value being changed or a preset be
 Bach-heavy, the jazz preset and the non-classical idioms have no gate-grade ground truth, and the
 mark defined in the specification was found absent from exactly those constants and presets. The
 gap is therefore between a stated rule and its application, not in the rule, which is why what is
-written here is the rule and its maintenance rather than a new criterion. **What this clause does
-NOT claim:** that the mark is applied at HEAD. It is not; applying it, constant by constant and
-idiom by idiom with the validating corpus named, is owed work and is tracked in the open-items
-register.
+written here is the rule and its maintenance rather than a new criterion.
+
+**★ HOW FAR THE APPLICATION HAS GOT, corrected 2026-08-11 (`OPEN_ITEMS.md` OI-346). The clause above
+formerly closed by saying the mark was not applied at all; half of that is no longer true, so the
+sentence is replaced here and its wording preserved (#12).** **THE JAZZ PRESET CONSTANTS ARE MARKED** — the six mode-prior overrides at the
+preset table in §4.6, and the Jazz chord-scoring constants (the extension threshold and the reduced
+inversion bonuses) beside the preferences structure — each with the same validation path named: jazz
+ground truth carrying written-out bass and piano voicings, converted and score-aligned (§4.1c;
+`cowork_score_census.md` Tier J). **THE IDIOM HALF IS NOT APPLIED AND IS HELD RATHER THAN GUESSED**,
+with the reason stated so that it is not mistaken for an oversight: the record establishes that only
+the **classical common-practice** idiom is covered by held annotated music and that the jazz fit is
+deferred, but **no surface maps the five §6.7 idiom names onto a per-idiom ground-truth verdict** —
+and the one mapping §6.7 does supply is complicated by the discovery study's own finding that the
+gate corpus's chorales form no distinct chord-idiom and scatter across clusters. Marking an idiom
+under those conditions would be marking by assertion, which #19 forbids in either direction: a mark
+on a validated idiom states something false about it, and an exemption of an unvalidated one states
+something worse. The remaining act is tracked in the open-items register.
+**FORMER WORDING, PRESERVED (#12):** *"**What this clause does NOT claim:** that the mark is applied
+at HEAD. It is not; applying it, constant by constant and idiom by idiom with the validating corpus
+named, is owed work and is tracked in the open-items register."*
 
 ### 6.7 The canonical style taxonomy (shared with the Harmonic Vocabulary)
 

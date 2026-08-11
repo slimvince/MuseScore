@@ -740,7 +740,7 @@
         "  the chord layer: ARCHITECTURE.md:1938 lists 10 entry(ies)",
         "  the key layer: ARCHITECTURE.md:1734 lists 2 entry(ies)",
         "  the search: ARCHITECTURE.md:315 lists 3 entry(ies)",
-        "  the declared mode's weight: ARCHITECTURE.md:4295 lists 1 entry(ies)",
+        "  the declared mode's weight: ARCHITECTURE.md:4325 lists 1 entry(ies)",
         "class members (derived from the verification): 14",
         "every live-prohibition entry carries its pointer, as derived"
       ],

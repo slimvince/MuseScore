@@ -5644,6 +5644,86 @@ no fitted value and no measured value moved** — what changed is where the prem
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 1 — the JAZZ half of OI-346's marks APPLIED; the IDIOM half HELD with its evidence. The row reports exactly which members stand
+
+**The state was derived fresh at task start (A5)**, not carried: the row and its detail file were
+read at their own surfaces, and the rule they apply — **D-497**, at `ARCHITECTURE.md` §6.6 — was read
+in place before anything was written. No count is restated here (**D-431**).
+
+**★ WHY THIS RAN AS A DEDICATED TASK, and it is the dispatch's own judgment rather than this
+session's.** Six consecutive continuations recorded that this row was not reached, each giving the
+same reason: **its application half has an ESTABLISHMENT inside every member**, so it is a real piece
+of work and no batch's leftover capacity was ever the right place for it. The dispatch made it a task
+of its own, early. That is the whole reason the row moved.
+
+**A5 HOLDS IN ALL THREE OF ITS CLAUSES.** The state was derived fresh; each member's establishment
+was performed inside its own act, at the record's objects; and **the member whose establishment
+failed is HELD with the evidence rather than marked by assertion** — which is the clause that decided
+the shape of this task's result.
+
+**What was marked — two families, each carrying the SAME validation path beside it:** jazz ground
+truth carrying written-out bass and piano voicings, converted and score-aligned. **(1)** The six Jazz
+mode-prior overrides at §4.6's preset table. **(2)** The Jazz chord-scoring constants beside the
+`ChordAnalyzerPreferences` structure — the extension threshold, and the reduced individual inversion
+bonuses, which is where the preset's inversion behaviour actually comes from.
+
+**The establishment is the record's own, read at its objects.** §4.1c records the standing
+consequence that **jazz accuracy is not measurable on the corpora held at all** — the held jazz
+material is melody-and-chord-symbol transcription with the bass and the piano voicings absent —
+measured by the bass-injection experiment; and the corpus census records that the jazz fit is
+deferred to the jazz-ground-truth conversion, because a fit of that idiom has nothing to be evaluated
+against (#20).
+
+**★ ONE THING A READER COULD MISTAKE FOR VALIDATION IS NAMED AT THE MARK ITSELF, and it is the half
+worth reading.** The Jazz BIR regression check runs the Jazz preset over the **Bach chorale** corpus.
+It is a regression surface holding behaviour against change, and our own gate corpus is not jazz
+ground truth — so passing it establishes nothing about these values on jazz repertoire. Without that
+sentence beside the mark, a reader meeting a marked constant and a passing Jazz gate in the same
+document would reasonably read the mark as stale.
+
+**★ THE IDIOM HALF IS HELD, AND THAT IS A RESULT RATHER THAN A SHORTFALL.** The rule reaches *the
+idioms of the §6.7 taxonomy for which no gate-grade ground truth exists*, so applying it needs a
+**per-idiom verdict** — and the record does not supply one. What it DOES establish is that only the
+**classical common-practice** idiom is covered by held annotated music and that the jazz fit is
+deferred; what no surface supplies is a mapping from those statements onto the five §6.7 idiom
+NAMES. **And the one mapping §6.7 does give is complicated by the study it rests on:** §6.7 records
+that Baroque, galant and Classical share one idiom, Chromatic-functional, while the discovery study's
+own v1.1 finding is that the **chordified Bach chorales form no distinct chord-idiom** — they scatter
+across clusters — and the chorales are the gate corpus. **A per-idiom verdict here would be a
+session's reading, and #19 forbids it in BOTH directions:** a mark on a validated idiom states
+something false about it, and an exemption of an unvalidated one states something worse. The
+safer-looking direction is not safe either, which is why neither was taken. What would close it is a
+statement, on a surface that owns the question, of which of the five idioms the held gate-grade
+annotated music covers — a corpus-census question rather than a documentation act.
+
+**★ THE RULE'S OWN CLAUSE WAS CORRECTED IN THE SAME ACT, because leaving it would have made the
+specification contradict the marks two sections away.** §6.6 closed by saying the mark is not applied
+at HEAD. Half of that is no longer true, so the sentence is replaced by a dated correction stating
+how far the application has got, **with its own wording preserved in place (#12)**.
+
+**One authored input needed a judgment rather than a move, and it is stated because it touches a
+RATIFIED entry.** D-497's registered verbatim ended inside the sentence that was corrected, so the
+verbatim was **RE-TAKEN — shortened, never re-worded**. The rule, its maintenance and its defense
+stand word for word; what left the quoted span is a status sentence about the application, which is
+not the decision. The former home range and the reason are recorded in the entry's provenance, and
+the correction itself lives at the home where the sentence stood.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it,
+which is the order its own STOP requires; the open-items split reconciliation was run beside them.
+**One code anchor and a run of register home anchors drifted by this task's own insertions and were
+re-aimed**, each from its own tool's reported line rather than by an assumed uniform shift
+(**D-648**). Every verdict is at `tools/audit/guard_state.json` → `summary` and none is restated here
+(**D-431**).
+
+**Holds:** the IDIOM half of OI-346, with the evidence and the closing act named above; the row stays
+OPEN for that half alone. **Surfacings:** none bearing on the analysis — no analysis behaviour, no
+measurement, no baseline and no constant moved; what changed is what a reader of those constants is
+told about how far they are established.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here.**
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

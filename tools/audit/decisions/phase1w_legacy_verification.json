@@ -170,7 +170,7 @@
    "recorded_figure": 75,
    "located_at": {
     "file": "STATUS.md",
-    "line": 265,
+    "line": 267,
     "line_text": "occurrences; register `--check` across 21 files; open-items living check 278/278). **NEXT: the user ratifies (or corrects) D-401…D-405 and the 75-entry LEGACY"
    },
    "note": "The phase-1i entry. Still in the live STATUS entries, not archived.",
@@ -368,7 +368,7 @@
   },
   "SPEC_DONOTRETRY_DECLARED_MODE": {
    "file": "ARCHITECTURE.md",
-   "line": 4294,
+   "line": 4324,
    "line_text": "**Tried and closed on the declared mode's weight, and it is a SECOND removal at the same increment",
    "says": "The same construction on the declared mode's weight, naming D-572 with its evidence — a LIVE specification line whose subject is a removed legacy promotion and whose prohibition binds now."
   },
