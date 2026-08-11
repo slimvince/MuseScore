@@ -4243,9 +4243,11 @@ Task 0's regeneration and not carried from the dispatch or from this file. No co
 **★ THE ONE DISTINCTION THIS LOG KEEPS THROUGHOUT, because a per-row pass that blurs it claims more
 than it did: what was READ is stated apart from what was not.** Twenty rows of the derived set were
 read at the INDEX — **OI-11, OI-12, OI-45, OI-57, OI-90, OI-95, OI-105, OI-107, OI-109, OI-121,
-OI-141, OI-146, OI-183, OI-220, OI-223, OI-224, OI-239, OI-249, OI-274 and OI-276.** **The rest were
-NOT READ and nothing whatever is claimed about them** — not that they are performable, not that they
-are not, and not that this task's holds describe them.
+OI-141, OI-146, OI-183, OI-220, OI-223, OI-224, OI-239, OI-249, OI-274 and OI-276.** **The remainder
+was NOT READ and nothing whatever is claimed about it** — not that those rows are performable, not
+that they are not, and not that this task's holds describe them. *(The word here was `the rest`, a
+bare non-musical use of a reserved word, when this section was committed; corrected by the standing
+self-check in the closing commit and reported at the close.)*
 
 **★ ONE ROW WAS PERFORMED WHOLE AND FLIPPED: [[OI-276]].** Its remedy was already enumerated per
 document and needed no judgment about the analysis, which is what made it session work rather than a
@@ -4309,6 +4311,151 @@ was carried into any of them (**D-431**).
 **Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
+
+### ★ WHERE THIS BATCH STOPPED — and, because this is the arc's return-program close, what stands between HEAD and the completion statement
+
+**Tasks 0 and 1 are COMPLETE and PARTLY DONE respectively, committed and pushed** — two commits, each
+its own task boundary, each with its full guard run, its classification run after it and its
+`STATUS.md` pointer entry. **Task 2 (the homing remainder) is NOT OPENED** and Task 3 is reached only
+for this close. That is a capacity stop, not a halt on a finding: no STOP note was written against the
+batch, nothing is left half-edited, every derived surface re-derives, and **the guard set stands at
+ZERO failing with the classification green after it.**
+
+**★ TASK 1 IS LEFT AT A CLEAN ENTRY BOUNDARY AND TASK 2 IS NOT OPENED AT ALL, which are two different
+treatments for two different reasons.** Task 1 is a per-row pass with no silent-cap hazard — each row
+performed is complete in itself — so stopping inside it costs nothing and is what the dispatch's own
+accepted outcomes admit. Task 2 is the same shape, and the reason it was not opened is capacity
+rather than hazard: opening it with what remained would have bought at most one entry while risking a
+half-edited tree. **Neither was opened and abandoned.**
+
+**★ TWO GUARD RUNS WERE DISCARDED AS EVIDENCE AND IT IS SAID PLAINLY.** Task 0's first boundary run
+overlapped this session's own edits — the §2.3 shape, a contaminated baseline reported as a clean one
+being the failure this project's establishment rules exist against — and Task 1's first boundary run
+reported two derivations stale by that task's own document edits. **In both cases the reported result
+is a clean re-run after every edit**, and in the second case the two stale derivations were
+REGENERATED rather than repaired, which is completing an edit and not fixing a finding.
+
+**Holds this batch produced:** none new needing the user. The queue's **§15** awaits a ruling, which
+is what an extension is; the nineteen gating rows Task 1 held each carry the reason its own status
+cell gives.
+
+**Surfacings:** none bearing on the analysis. Every subject of this batch is the record's own
+bookkeeping, the rulings that govern it, and three design documents' accounts of themselves — no
+measured value moved, no golden, no corpus of scores, nothing in `tools/robust_stop/`.
+
+**★ THE STANDING SELF-CHECK (D-434) CAUGHT A RESERVED-WORD COLLISION IN THIS BATCH'S OWN NEW PROSE,
+AND THIS TIME IT CAUGHT ONE THAT HAD ALREADY SHIPPED.** The bare non-musical *rest* stood in the
+Task 1 log and in that task's `STATUS.md` pointer entry — both already committed — and the bare
+non-musical *part* three times in this close before it was written out. All are corrected here, the
+committed instance carrying a note at its own site so the correction is visible where the wrong word
+was. **This is the seventh consecutive wave whose self-check has caught one in its own new text**,
+and the two halves of this instance are worth separating: the *part* uses were caught before the
+commit, which is the check working as designed; the *rest* uses were caught only at the close, **so
+the check is not reliable within a task and is reliable across a batch.** That is evidence about the
+check rather than about this wave, and it is the reason the close runs it over the whole diff rather
+than trusting the per-task passes.
+
+### ★ THE FINISH LINE'S END STATE, DERIVED FRESH — and what it does NOT say
+
+**Derived at `tools/audit/phase1_finish_line.json` after this batch's last regeneration. No
+population, count or identity is restated here (D-431)** — the artifact is the statement, and this is
+a reader's guide to it.
+
+Its nine items stand in three groups. **Five are per-entry HOMING items** — entries whose home
+document no user-ratified surface names, entries a delegation reaches only in an excluded form,
+entries whose delegation does not reach the section they sit in, entries the delegation reaches in a
+findings-recording section, and entries with no home at all. **Two are ROW items** — the open rows
+asserting a specification states something false at HEAD, which gate, and the apparatus-classed
+documentation rows whose place inside the doc-sync half **D-639**'s test decides. **One is CLOSED
+and is listed because a distance map showing only what remains would misrepresent the position** —
+the defense-gap population reads zero. **The ninth is phase 1's completion statement itself.**
+
+**What moved this batch, and it is derived rather than claimed:** one gating row left the TRUE-half
+item by being performed; one apparatus-classed row left the open population by having its recorded
+closure finally readable; and the reach derivation, having run whole one batch earlier, re-derives
+over the moved population without a verdict changing.
+
+**What the artifact does NOT say, stated because a reader will look for it.** It does not say how
+much work remains — an item's population is a count of obligations, not of sessions. It does not say
+that a green guard set means anything about the finish line: a green guard set is a statement about
+the record's own machinery. And it is **not** phase 1's completion statement, not a draft of one, and
+not an authorization for any fix, design or inference change.
+
+### ★ THE PER-ROW SIZING — DELIVERED FOR THE ROWS THIS BATCH READ, AND EXPLICITLY NOT THE PASS
+
+**This is SIZING, not measurement, and it is AUTHORED** — the fifth continuation's own label, kept.
+A size is a judgment about work and can be wrong; a population cannot.
+
+**★ AND IT IS NOT THE PER-ROW PASS THE USER ASKED FOR. THAT PASS IS STILL OWED, and saying so is the
+point of this heading.** The pass covers EVERY remaining gating row, and sizing a row honestly means
+READING that row — which is why three previous continuations recorded it as owed rather than
+producing it. **This batch read twenty rows of the gating set and no more**, so what follows covers
+exactly those and is published under that scope rather than as the pass. **A sizing published over a
+subset while reading as the pass is the silent cap the standing rules forbid**, and the way to publish
+a subset honestly is to name its members, which is done above at the Task 1 log.
+
+| Shape, over the rows this batch READ | Sizing | Why that size |
+|---|---|---|
+| Rows the record ASSIGNS to a later build or acquisition event (OI-11, OI-12, OI-57, OI-146, OI-223) | **NOT-YET-DUE** | The act exists and its owner is named; what is missing is the event it rides on. No session can pull it forward, and none should — the assignment is the record's own scheduling decision |
+| Rows deferred by their own text to the next touch of a `src/` file (OI-90, OI-105, OI-109, OI-220) | **SESSION-SMALL, BLOCKED** | Each is a comment or data correction of a few lines. **The freeze is what blocks them, not their size** — the knowledge arc has taken exactly one licensed `src/` touch and one licensed `tools/` comment, each on its own user ruling. A ruling licensing a comment-only sweep would close this group in one act |
+| Rows assigned to the writing side (OI-121) | **NOT A SESSION'S** | The role-separation rule puts design-document wording on the planning side. It is small, and it is not this side's |
+| Rows whose closing act is a phase-2 or design act (OI-224, OI-239, OI-249) | **BLOCKED BY PHASE ORDER** | Certification with its measured coverage, a family design, a design surface. **D-231** forbids all three now, and a session that sized them as work-in-hand would misreport what phase 1 is waiting on |
+| Rows waiting on the user (OI-141, and OI-274's governing-document half) | **NEEDS-RULING** | An open design conversation, and whether a mandatory-read instruction should name a second specification. Neither is a session's to take |
+| Audit tooling housekeeping (OI-95) | **SESSION-MEDIUM** | A generator unification and a re-stamp. Bounded, mechanical, and it touches the audit's own apparatus rather than the analysis |
+| Documentation passes that are genuinely session work now (OI-45, OI-183 at `docs/scoring_model.md`; OI-107's remaining half at `ARCHITECTURE.md` §4.1h) | **SESSION-SMALL, HELD ON CAPACITY ALONE** | Two stale-anchor-and-coverage passes over one document, and one block of iteration-era values presented as current state. **OI-107's fork is the one to note:** its own text gives two routes, re-measure or re-label as a dated historical snapshot, and **only the second is available under this freeze** — which makes it a one-edit act rather than a measurement |
+| The row performed this batch (OI-276) | **CLOSED** | Listed because a sizing table showing only what remains would misrepresent the position, which is the same reason the finish line lists its closed item |
+
+**★ THE HONEST HEADLINE OF THIS SIZING, over the rows it covers and no others:** almost none of it is
+investigation. What blocks this group is, in order, **the freeze**, **the phase order**, **an event
+the record has scheduled elsewhere**, and **capacity** — and only two members need a user ruling.
+**Nothing in it is blocked on a measurement of the analysis.**
+
+### ★ WHAT NOW STANDS BETWEEN HEAD AND THE COMPLETION STATEMENT — the arc's return-program close
+
+**This is a derivation plus authored sizing. It is NOT a completion claim, and phase 1's completion
+statement is not written, not drafted and not partially written by this batch or by any batch of this
+arc.** The statement is the user's to commission; the finish line's own item says so and this close
+does not move it.
+
+**Four things stand between HEAD and that commissioning, and they are of four different kinds.**
+
+1. **The homing items — per-entry work whose fork the user has already settled.** Ruling 38 made
+   re-homing the default and its exception mechanism binds; Ruling 40's procedure, now **D-668**,
+   binds every act. So this group is **session work in a known shape**, and what remains is its
+   volume. It is the largest of the four and the least uncertain.
+2. **The gating rows on the TRUE half** — the group this batch's Task 1 opened. Over the twenty read,
+   the blockers are the freeze, the phase order, a scheduled event and capacity, with two needing a
+   ruling; **the rows not read are not characterized, and the per-row pass over the whole set is
+   still owed.**
+3. **The reach item's hand-on.** Its derivation has RUN whole; what it hands on is a gate question a
+   session may not answer, because a non-gating verdict is derived from a cut and never hand-added.
+   **That is a ruling, and it is small.**
+4. **The queue's §15**, awaiting a ruling — the only new thing this batch put in front of the user,
+   and the first extension of that derivation with no proposed decision at all.
+
+**★ AND ONE THING IS SAID PLAINLY BECAUSE IT IS THE MOST USEFUL SENTENCE IN THIS CLOSE.** Of what
+stands between HEAD and the completion statement, **what needs the user is small and named**, what
+needs a session is large but shaped, and **what needs a measurement of the analysis is nothing at
+all.** The two rows that bear on the analysis ([[OI-357]], [[OI-363]]) are surfaced,
+rowed and explicitly not proposed for; nothing in the remaining distance waits on them.
+
+**What a continuing session should know.**
+
+1. **Every population is DERIVED at task start**, never carried from here: the gating set at
+   `tools/audit/phase1_completion_inventory.json` → `the_gating_split`, the homing items at
+   `tools/audit/phase1_finish_line.json`. **Both moved this batch**, so any count carried from an
+   earlier document is stale by construction.
+2. **Task 1's remaining rows were NOT READ by this batch.** Nineteen were read and held with reasons;
+   the remainder is untouched and uncharacterized.
+3. **Task 2, the homing remainder, is NOT OPENED** — not part-done, and its population is to be
+   derived fresh.
+4. **OI-346's marks are NOT reached**, as three previous continuations also recorded: its application
+   half is a per-constant act over the Jazz preset table and the §6.7 idioms, each with its validating
+   corpus named, and it is not a leftover-capacity item.
+5. **The per-ROW sizing pass over the whole gating set remains owed**, and the reason it keeps being
+   owed is now registered: it is **D-670**'s class — small in count, large in reading — so it will
+   keep losing every capacity contest unless it is dispatched FIRST with nothing large in front of it,
+   which is exactly what that entry rules.
 
 ## 4. The batch's start state, recorded before any act
 
