@@ -408,7 +408,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 34 gates of 63 candidates over 256 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 34 gates of 63 candidates over 254 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"

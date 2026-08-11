@@ -9,9 +9,9 @@
     "disableAllHooks and managed allowManagedHooksOnly switch it off. A guard, not a boundary."
   ],
   "sanctioned": {
-    "total": 62,
+    "total": 68,
     "false_denies": 2,
-    "false_deny_rate": 0.032,
+    "false_deny_rate": 0.029,
     "false_denies_ACCEPTED_BY_POLICY": [
       "tail \"$SC/guards1.txt\"",
       "cat \"$SC/tasks/abc.output\" 2>/dev/null | tail -20"
@@ -328,13 +328,43 @@
         "command": "git diff --stat 82ebfd68d9",
         "denied": false,
         "reason": "reads a git object by explicit hash — the sanctioned exemption"
+      },
+      {
+        "command": "sed -n '40,60p' /tmp/guards1.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "sed -n '1,2p' c:/tmp/out.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "awk '{print $1}' /tmp/changed.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "awk -F, '{print $2}' c:/tmp/rows.csv",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "sed -n \"1,20p\" /tmp/snap_out.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "awk 'NR>1 {print}' /tmp/reach.txt",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
       }
     ]
   },
   "forbidden": {
-    "total": 64,
-    "denied": 63,
-    "deny_rate": 0.984,
+    "total": 69,
+    "denied": 67,
+    "deny_rate": 0.971,
     "rows": [
       {
         "command": "cat CLAUDE.md",
@@ -359,7 +389,7 @@
       {
         "command": "sed -n '1,20p' STATUS.md",
         "denied": true,
-        "reason": "`sed` is aimed at a path inside this repository ('1,20p', STATUS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+        "reason": "`sed` is aimed at a path inside this repository (STATUS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
       },
       {
         "command": "wc -l OPEN_ITEMS.md",
@@ -655,6 +685,31 @@
         "command": "git diff STATUS.md",
         "denied": true,
         "reason": "`git diff` with no commit hash is aimed at a working-tree path (STATUS.md). D-253 permits git only for read-only OBJECT queries named by an explicit hash, because a content-addressed read errors loudly rather than returning silently-wrong content; a working-tree diff is not one. Use `python tools/audit/changed_paths.py`, or name the commits."
+      },
+      {
+        "command": "sed -n '40,60p' CLAUDE.md",
+        "denied": true,
+        "reason": "`sed` is aimed at a path inside this repository (CLAUDE.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "sed -n '1,2p' tools/audit/shell_read_guard.py",
+        "denied": true,
+        "reason": "`sed` is aimed at a path inside this repository (tools/audit/shell_read_guard.py). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "awk '{print $1}' OPEN_ITEMS.md",
+        "denied": true,
+        "reason": "`awk` is aimed at a path inside this repository (OPEN_ITEMS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
+      },
+      {
+        "command": "awk -F'|' '{print $2}' tools/audit/decisions/backbone_decisions.json",
+        "denied": false,
+        "reason": "no text utility is aimed at a repository path"
+      },
+      {
+        "command": "sed 's/a/b/' STATUS.md",
+        "denied": true,
+        "reason": "`sed` is aimed at a path inside this repository (STATUS.md). Working-tree content, existence, line counts and searches go through the file tools (Read / Grep / Glob) — `CLAUDE.md` Conventions, register entry D-253. Shell reads are for read-only git OBJECT queries by explicit hash."
       }
     ]
   },
@@ -669,15 +724,15 @@
       "the_false_deny_it_removes": "`grep -c \"^  D-\" /tmp/reaim_1r.txt` was denied: `.split()` broke the quoted pattern into two tokens and read the fragment `D-\"` as a repository path. Measured live 2026-08-03 and recorded at `OPEN_ITEMS.md` OI-292.",
       "false_denies_on_the_sanctioned_set": {
         "with_the_fix": 2,
-        "without_it": 3,
-        "of": 62,
+        "without_it": 6,
+        "of": 68,
         "read_this_as": "`without_it` is the guard with NEITHER the 2026-08-03 tokenizer nor the 2026-08-04 segmentation — the state before this line of maintenance began. It is measured on the corpus as it stands today, so it is not the figure phase 1s published against the corpus of that date.",
         "★_corrected_2026_08_08": "The sentence above is preserved as written (#12) and one clause of it is no longer true: `without_it` is NOT the guard as it stood before this line of maintenance began, because the 2026-08-08 PowerShell utility set is present in BOTH arms. It is held constant on purpose — that is what keeps the DIFFERENCE attributable to the tokenizer and the segmentation — so the delta is unaffected and only the description of the absolute value was wrong."
       },
       "detection_on_the_forbidden_set": {
-        "with_the_fix": 63,
-        "without_it": 47,
-        "of": 64
+        "with_the_fix": 67,
+        "without_it": 51,
+        "of": 69
       },
       "the_revert_condition": "The dispatch says: if the fix raises false denies elsewhere, revert and report. Compare the two figures above — a rise is the condition, and it is published either way rather than inferred."
     }
@@ -689,9 +744,9 @@
     "the_miss_it_removes": "`grep -n \"alpha|beta\" src/composing/analysis/key/keyresolver.cpp` was ADMITTED while the identical command without the pipe was DENIED. Found by the guard denying one command after admitting four of the same kind, and MEASURED at this module's own decision function over the commands the preceding session actually issued — never reasoned from the source (`OPEN_ITEMS.md` OI-343).",
     "★_what_the_PREVIOUS_published_rates_did_and_did_not_bound": "The rates published before 2026-08-04 are NOT WITHDRAWN AS WRONG (#12): they were correct for the corpus they were measured on, and they re-derived exactly. What they did not do is bound the guard's behaviour on the pipe-in-a-quoted-argument shape, because that shape was not in either corpus. They are recorded here as not bounding what they appeared to bound, which is a different statement from being incorrect.",
     "detection_on_the_forbidden_set_SAME_corpus": {
-      "with_the_fix": 63,
-      "without_it": 51,
-      "of": 64,
+      "with_the_fix": 67,
+      "without_it": 55,
+      "of": 69,
       "what_the_fix_newly_catches": [
         "grep -n \"D-642\\|D-643\" DECISIONS.md",
         "grep -n \"alpha|beta\" src/composing/analysis/key/keyresolver.cpp",
@@ -707,14 +762,15 @@
         "python tools/audit/changed_paths.py --staged | grep -n \"a|b\" ARCHITECTURE.md"
       ],
       "what_is_STILL_missed_and_is_not_this_fix_s_subject": [
-        "python -c \"import os; n='CLAUDE'+'.md'; print(open(os.path.join(os.getcwd(), n)).read())\""
+        "python -c \"import os; n='CLAUDE'+'.md'; print(open(os.path.join(os.getcwd(), n)).read())\"",
+        "awk -F'|' '{print $2}' tools/audit/decisions/backbone_decisions.json"
       ],
       "★_corrected_2026_08_08": "Both arms now also carry the 2026-08-08 PowerShell utility set, held constant so the difference stays attributable to the segmentation change alone. The absolute values therefore differ from those published on 2026-08-04; the delta does not, and neither list above is a reconstruction of the guard as it stood on any date."
     },
     "false_denies_on_the_sanctioned_set_SAME_corpus": {
       "with_the_fix": 2,
       "without_it": 2,
-      "of": 62,
+      "of": 68,
       "the_revert_condition": "The dispatch says: if the fix raises false denials materially, revert and report — a guard that blocks correct commands gets disarmed, which is worse than one with a known gap. Both figures are measured on the SAME extended corpus, so the comparison is of the fix and not of the corpus widening.",
       "the_false_denies_that_remain": [
         "tail \"$SC/guards1.txt\"",
@@ -772,9 +828,9 @@
       "the_candidate_selection_rule": "Within this family a path is bound either as the value of `-Path` / `-LiteralPath` / `-FilePath` or as the FIRST positional argument, never both, so those are the only two places examined. `Select-String` and `Measure-Object` have their first positional dropped, being a pattern and a property name — the same special case the POSIX branch already makes for `grep`, and what keeps a pipeline-fed `Select-String -Pattern 'FAIL'` from being read as a repository path."
     },
     "detection_on_the_forbidden_set_SAME_corpus": {
-      "with_the_widening": 63,
-      "posix_set_only": 35,
-      "of": 64,
+      "with_the_widening": 67,
+      "posix_set_only": 39,
+      "of": 69,
       "what_the_widening_newly_catches": [
         "Get-ChildItem C:\\s\\MS\\open_items",
         "Get-ChildItem C:\\tmp | Out-Null; Get-Content C:\\s\\MS\\CLAUDE.md",
@@ -806,13 +862,14 @@
         "sls -Path C:\\s\\MS\\DECISIONS.md -Pattern 'D-436'"
       ],
       "what_is_STILL_missed_and_is_not_this_act_s_subject": [
-        "python -c \"import os; n='CLAUDE'+'.md'; print(open(os.path.join(os.getcwd(), n)).read())\""
+        "python -c \"import os; n='CLAUDE'+'.md'; print(open(os.path.join(os.getcwd(), n)).read())\"",
+        "awk -F'|' '{print $2}' tools/audit/decisions/backbone_decisions.json"
       ]
     },
     "false_denies_on_the_sanctioned_set_SAME_corpus": {
       "with_the_widening": 2,
       "posix_set_only": 2,
-      "of": 62,
+      "of": 68,
       "the_revert_condition": "The ruling says: a material rise in false denials governs — revert and report. Both values are measured on the SAME extended corpus, so the comparison is of the widening and not of the corpus rows added with it.",
       "the_false_denies_that_remain": [
         "tail \"$SC/guards1.txt\"",
@@ -858,9 +915,9 @@
       "the_second_candidate_is_REFUTED_by_observation": "The live hook and `decide()` agree on BOTH live decisions the record holds: the `ls` OI-351 records as ADMITTED is admitted by `decide()` on the same string, and the `ls -la /c/s/MS/…` the 2026-08-08 away batch issued as its first command was DENIED by the live hook and is denied by `decide()` on the same string. NO NEW FORBIDDEN COMMAND WAS ISSUED to test this: performing the violation in order to measure the guard is not a measurement anyone may take."
     },
     "detection_on_the_forbidden_set_SAME_corpus": {
-      "with_the_family": 63,
-      "without_it": 44,
-      "of": 64,
+      "with_the_family": 67,
+      "without_it": 48,
+      "of": 69,
       "what_the_family_newly_catches": [
         "bash -c \"cat CLAUDE.md\"",
         "cat c:/s/MS/CLAUDE.md",
@@ -883,14 +940,15 @@
         "sh -c \"grep -n D-253 CLAUDE.md\""
       ],
       "what_is_STILL_missed": [
-        "python -c \"import os; n='CLAUDE'+'.md'; print(open(os.path.join(os.getcwd(), n)).read())\""
+        "python -c \"import os; n='CLAUDE'+'.md'; print(open(os.path.join(os.getcwd(), n)).read())\"",
+        "awk -F'|' '{print $2}' tools/audit/decisions/backbone_decisions.json"
       ],
-      "what_the_remaining_miss_IS": "The stated ceiling and nothing else: interpreter code that COMPUTES its path, so no literal in it names anything the repository has. The design says in terms that this is where the policy stops."
+      "what_the_remaining_miss_IS": "TWO shapes as of 2026-08-11, and the second is NEW — surfaced by a corpus row this act added and REPORTED rather than tuned away. (1) The stated ceiling: interpreter code that COMPUTES its path, so no literal in it names anything the repository has; the design says in terms that this is where the policy stops. (2) A SEPARATOR CHARACTER INSIDE A QUOTED OPTION — `awk -F'|' … <repository path>`. Diagnosed at the decision function and not reasoned from the source: the lexer does not group that quoting shape, so the tokens come out split at the `|` and the segment carrying the repository path has no utility at its head. **It is NOT a defect of the script-argument clause and the clause does not reach it** — the same command with a comma delimiter is denied correctly. It is the 2026-08-04 segmentation class, one quoting shape further out, and repairing it is a further mechanism change that Ruling 50 does not license. **The row STAYS in the forbidden corpus**: removing a row because the guard misses it is a corpus chosen to make a guard look clean, which measures nothing (#19)."
     },
     "false_denies_on_the_sanctioned_set_SAME_corpus": {
       "with_the_family": 2,
       "without_it": 6,
-      "of": 62,
+      "of": 68,
       "not_accepted_by_policy": [],
       "the_revert_condition": "The ruling says a MATERIAL RISE IN FALSE DENIALS governs — revert and report. Both values are measured on the SAME extended corpus, so the comparison is of the family and not of the rows added with it. The condition is NOT met: the count falls, and every denial that remains is one clause 4 of the design accepts on purpose."
     },
@@ -948,6 +1006,35 @@
         }
       ],
       "how_to_read_it": "A moved verdict is expected HERE and only here, because the design names these shapes: a sanctioned row moving DENY->allow is one of OI-300's measured false denies being removed (shape 4, the heredoc body; shape 5, the redirections), and a forbidden row moving allow->DENY is one of OI-348's shapes being caught (shape 1, the wrappers; shape 2, the interpreter). A moved verdict of any OTHER shape would be this act reaching past its ruling."
+    },
+    "★_the_2026_08_11_maintenance_act_ONE_family_TWO_defects": {
+      "the_ruling": "User, 2026-08-11, Ruling 50 of `cowork_rulings_2026_08_11_tenth_stop.md`: DIAGNOSIS FIRST, with a STOP between diagnosis and fix; then the fix under the family discipline's fixed order — corpus rows first, both rates re-measured on the same extended corpus, the revert condition governing. `OPEN_ITEMS.md` OI-355 rides it under Ruling 19 of 2026-08-09.",
+      "the_script_argument_clause_OI_355": {
+        "what_it_is": "`sed` and `awk` take a SCRIPT in the position `grep` takes a pattern, and only the pattern-taking four carried the correction that drops it — so a bare script resolved against the working directory and read as a repository path, denying the command before its real target was considered.",
+        "false_denies": {
+          "with_the_clause": 2,
+          "without_it": 8,
+          "of": 68
+        },
+        "detection": {
+          "with_the_clause": 67,
+          "without_it": 67,
+          "of": 69
+        },
+        "forbidden_rows_of_this_shape_still_missed": [
+          "awk -F'|' '{print $2}' tools/audit/decisions/backbone_decisions.json"
+        ],
+        "sanctioned_rows_of_this_shape_still_denied": [],
+        "the_revert_condition": "A material rise in false denials governs. Both values are measured on the SAME extended corpus, so the comparison is of the CLAUSE and not of the rows added with it — which is the order the family ruling fixes and which this act followed: the rows went in before the clause, so the blindness was measured at the unwidened guard.",
+        "verdicts_that_moved_among_rows_the_corpus_ALREADY_HELD": [],
+        "how_to_read_a_movement": "A moved verdict is expected only where the clause's own shape names it — a `sed` or `awk` invocation whose script was being read as a path. A movement of any other shape would be this act reaching past its ruling."
+      },
+      "the_ROOT_determinism_fix_OI_366": {
+        "the_cause_ESTABLISHED_AT_THE_OBJECTS": "`ROOT` is derived from `__file__`, which Python makes absolute against the process's own current directory, so the DRIVE LETTER'S CASE arrived in whatever spelling the invocation used. The FAMILY arm normcases both sides and is unaffected; the CONTROL arm restores the case-SENSITIVE comparison on purpose and compares against `ROOT` as written, so a lowercase drive letter moved that arm's verdicts and only that arm's — which is exactly the shape of a check reporting STALE on one invocation and re-deriving on the next with nothing edited between.",
+        "how_it_was_established": "The module was loaded twice from its own file, once under each spelling, each load re-running `establish()` and applying the SAME string-equality test `--check` applies. The uppercase load re-derives the committed artifact byte for byte; the lowercase load does not. The probe ran OUTSIDE this tool, which is what let the diagnosis be taken before any guard file was touched, as the ruling requires.",
+        "the_fix": "`_canonical_drive` puts the drive letter in ONE case at module load, so `ROOT` no longer depends on how the process started.",
+        "what_it_moves": "NO LIVE VERDICT. The family arm — which is what the live hook decides on — normcases both sides and never saw the difference. What changes is that the control arm, and therefore this artifact and the `--check` verdict over it, are REPRODUCIBLE ON DEMAND, which is what #19 asks of an established value. The published deny and false-deny rates are the same values they were."
+      }
     },
     "★_what_the_PREVIOUS_published_rates_did_and_did_not_bound": "The rates published before 2026-08-08's family act are NOT WITHDRAWN AS WRONG (#12): they were correct for the corpus they were measured on and they re-derived exactly. What they did not do is bound the guard on any member of this family — the wrappers, the interpreters, and every repository path written with a lowercase drive letter. BLIND, NOT WRONG, for the third time in this file, which is the reason #19 asks for positive establishment rather than for a check that has not yet failed.",
     "what_this_act_deliberately_does_NOT_touch": [

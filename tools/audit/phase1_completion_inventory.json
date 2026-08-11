@@ -595,7 +595,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 62,
+   "count": 61,
    "ids": [
     "OI-105",
     "OI-107",
@@ -648,7 +648,6 @@
     "OI-359",
     "OI-360",
     "OI-363",
-    "OI-366",
     "OI-45",
     "OI-46",
     "OI-47",
@@ -677,7 +676,6 @@
     "OI-357",
     "OI-360",
     "OI-363",
-    "OI-366",
     "OI-57",
     "OI-90",
     "OI-95"
@@ -1686,20 +1684,6 @@
      "source": "the row's own recorded words",
      "ground": "the row states it gates"
     }
-   },
-   {
-    "id": "OI-366",
-    "title": "★ **The shell-read guard's establishment check reports STALE intermittently, while the artifact it checks re-derives BYTE-IDENTICALLY — so a published deny rate and false-deny rate are not reproducible on demand**",
-    "subject_column": "D — instrument / measurement layer (the audit's own guard apparatus)",
-    "matched_on_the_subject_column": [],
-    "matched_falsity_signals": [
-     "stale"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the row's own recorded words",
-     "ground": "the row states it gates"
-    }
    }
   ]
  },
@@ -1707,7 +1691,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 41,
+   "count": 40,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1745,7 +1729,6 @@
     "OI-359",
     "OI-360",
     "OI-363",
-    "OI-366",
     "OI-45",
     "OI-57",
     "OI-90",
@@ -1833,8 +1816,7 @@
     "OI-309",
     "OI-311",
     "OI-357",
-    "OI-363",
-    "OI-366"
+    "OI-363"
    ],
    "D-438's default": [
     "OI-109",
@@ -1943,8 +1925,8 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 62,
-   "of_which_gate": 41,
+   "open_rows_in_the_wide_cut": 61,
+   "of_which_gate": 40,
    "of_which_apparatus_and_therefore_non_gating": 21,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
@@ -2039,7 +2021,6 @@
    "OI-359",
    "OI-360",
    "OI-363",
-   "OI-366",
    "OI-45",
    "OI-46",
    "OI-47",
@@ -2055,9 +2036,9 @@
  },
  "counted": {
   "decisions_recorded": 668,
-  "open_rows_in_the_index": 256,
-  "true_half_wide_cut": 62,
-  "true_half_gating": 41,
+  "open_rows_in_the_index": 254,
+  "true_half_wide_cut": 61,
+  "true_half_gating": 40,
   "complete_half_gap": 29,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

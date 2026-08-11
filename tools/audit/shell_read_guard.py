@@ -102,7 +102,38 @@ import shlex
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
+
+
+def _canonical_drive(path: str) -> str:
+    """A Windows drive letter in ONE case, so `ROOT` does not depend on how the process started.
+
+    ★ THE CAUSE OF `OPEN_ITEMS.md` OI-366, ESTABLISHED AT THE OBJECTS 2026-08-11 under the user's
+    Ruling 50 and NOT asserted from the source. `ROOT` is derived from `__file__`, which Python
+    makes absolute against the process's own current directory — so the drive letter arrives in
+    whatever case the invocation happened to use. The FAMILY arm normcases both sides and is
+    unaffected; the CONTROL arm (`family=False`) restores the case-SENSITIVE comparison on purpose,
+    and it compares against `ROOT` as written. A lowercase drive letter therefore moved that arm's
+    verdicts, and only that arm's, which is exactly the shape of a check that reports STALE on one
+    invocation and re-derives on the next with nothing edited in between.
+
+    MEASURED, both ways, before this line was written: the module loaded from a path spelled with an
+    uppercase drive letter re-derives the committed artifact byte for byte, and the same module
+    loaded from the same file spelled with a lowercase one does not. The diagnosis ran OUTSIDE the
+    tool, which is why it could be taken before any guard file was touched.
+
+    WHAT THIS FIXES AND WHAT IT DELIBERATELY DOES NOT. It makes the control arm REPRODUCIBLE — it
+    now reports the pre-fix guard as launched from the spelling every published rate was measured
+    under, instead of reporting whichever spelling the launcher happened to use. It does not change
+    the family arm, which is what the live hook decides on, so **no live verdict moves**: the
+    published deny and false-deny rates are the same values, now obtainable on demand, which is what
+    #19 asks of an established value.
+    """
+    if len(path) > 1 and path[1] == ":":
+        return path[0].upper() + path[1:]
+    return path
+
+
+ROOT = _canonical_drive(os.path.abspath(os.path.join(HERE, "..", "..")))
 ESTABLISH_OUT = os.path.join(HERE, "shell_read_guard_establishment.json")
 
 sys.path.insert(0, HERE)
@@ -550,7 +581,8 @@ def tokenize(segment: str, group_quotes: bool = True) -> list[str]:
 
 
 def decide(command: str, group_quotes: bool = True, token_first: bool = True,
-           dialect: bool = True, family: bool = True, depth: int = 0) -> tuple[bool, str]:
+           dialect: bool = True, family: bool = True, script_argument: bool = True,
+           depth: int = 0) -> tuple[bool, str]:
     """(deny, reason). A command is denied when a text utility names a repository path.
 
     `dialect=False` restores the POSIX-only utility set the guard carried before 2026-08-08. It
@@ -560,6 +592,10 @@ def decide(command: str, group_quotes: bool = True, token_first: bool = True,
     `family=False` restores the guard as it stood before the 2026-08-08 FAMILY ruling — no wrapper
     recursion, no interpreter policy, no redirection or heredoc handling, no hashless-git rule, and
     the case-sensitive path comparison OI-351 turned on. Same purpose, same reason.
+
+    `script_argument=False` restores the guard as it stood before the 2026-08-11 SCRIPT-ARGUMENT
+    clause, which drops the script `sed` and `awk` take in the position `grep` takes a pattern.
+    Same purpose, same reason (`OPEN_ITEMS.md` OI-355).
 
     `depth` bounds the wrapper recursion. A wrapper inside a wrapper is real (`bash -c "pwsh
     -Command …"`), and an unbounded recursion on a crafted command is a guard that stops guarding.
@@ -616,7 +652,8 @@ def decide(command: str, group_quotes: bool = True, token_first: bool = True,
             # modeling: it is the POSIX and PowerShell branches already established, composed (#6).
             code = wrapper_code(util, tokens[i + 1:])
             if code is not None and depth < 3:
-                deny, why = decide(code, group_quotes, token_first, dialect, family, depth + 1)
+                deny, why = decide(code, group_quotes, token_first, dialect, family,
+                                   script_argument, depth + 1)
                 if deny:
                     return True, (f"`{util}` carries a command that is itself denied: {why}")
                 continue
@@ -656,6 +693,19 @@ def decide(command: str, group_quotes: bool = True, token_first: bool = True,
             targets = [t for t in rest_tokens if not OPTION.match(t)]
             # `grep PATTERN file` — the first non-option token is the pattern, not a path.
             if util in ("grep", "egrep", "fgrep", "rg") and targets:
+                targets = targets[1:]
+            # `sed SCRIPT file`, `awk PROGRAM file` — the first non-option token is a SCRIPT, and
+            # it is not a path either. The same correction as the pattern-taking four, one utility
+            # class further out (`OPEN_ITEMS.md` OI-355, user Ruling 19 of 2026-08-09, performed
+            # under Ruling 50 of 2026-08-11). `script_argument=False` restores the guard as it
+            # stood before it, so `--establish` publishes both arms on the SAME extended corpus and
+            # the clause's effect stays separable from the corpus rows' (D-436).
+            #
+            # WHY IT NEVER OPENS A HOLE, which is the half worth stating: what is dropped is ONE
+            # token in the script's position, and every remaining token is still tested. A `sed`
+            # aimed at a repository file is denied on that file, which is what the corpus rows
+            # added with this clause measure in both directions.
+            if script_argument and util in ("sed", "awk", "gawk", "mawk") and targets:
                 targets = targets[1:]
         else:
             continue
@@ -1042,6 +1092,49 @@ AWAY_SANCTIONED = [
 SANCTIONED += AWAY_SANCTIONED
 FORBIDDEN += AWAY_FORBIDDEN
 
+SANCTIONED_BEFORE_THE_SCRIPT_ARGUMENT = tuple(SANCTIONED)
+FORBIDDEN_BEFORE_THE_SCRIPT_ARGUMENT = tuple(FORBIDDEN)
+
+# ── 2026-08-11: the SCRIPT-ARGUMENT rows, added BEFORE the clause that answers them ────────────
+# `OPEN_ITEMS.md` OI-355, riding this maintenance act under the user's Ruling 19 of 2026-08-09 and
+# performed under Ruling 50 of 2026-08-11. The ORDER is the family ruling's own and is not a
+# session's to reorder: the rows go in FIRST, so the blindness is measured at the UNWIDENED guard
+# rather than at one already changed to see it, and both rates are then re-measured on the SAME
+# extended corpus (D-436).
+#
+# THE SHAPE. `sed` and `awk` take a SCRIPT in the position `grep` takes a pattern, and only the
+# four pattern-taking utilities carried the correction that drops it. So a bare script — `1,2p`,
+# `40,60p`, `{print $1}` — has no drive letter and no leading separator, resolves against the
+# working directory, and reads as a repository path. The command is denied on that token before
+# its real target is considered at all.
+SCRIPT_ARGUMENT_SANCTIONED = [
+    # The FALSE DENIES themselves: aimed OUTSIDE the tree, where D-253 does not reach.
+    "sed -n '40,60p' /tmp/guards1.txt",
+    "sed -n '1,2p' c:/tmp/out.txt",
+    "awk '{print $1}' /tmp/changed.txt",
+    "awk -F, '{print $2}' c:/tmp/rows.csv",
+    # The same shapes with the script quoted the other way, and with an option before it, so the
+    # clause cannot be satisfied by a quoting accident.
+    "sed -n \"1,20p\" /tmp/snap_out.txt",
+    "awk 'NR>1 {print}' /tmp/reach.txt",
+]
+
+SCRIPT_ARGUMENT_FORBIDDEN = [
+    # The CONTROLS in the other direction, and they are what stop the clause from opening a hole:
+    # the same utilities aimed INSIDE the tree must stay denied, on their real target rather than
+    # on their script.
+    "sed -n '40,60p' CLAUDE.md",
+    "sed -n '1,2p' tools/audit/shell_read_guard.py",
+    "awk '{print $1}' OPEN_ITEMS.md",
+    "awk -F'|' '{print $2}' tools/audit/decisions/backbone_decisions.json",
+    # A script-only invocation reading standard input is not a path read at all, but the repository
+    # path here is the REAL target and must be caught: the script is dropped, the file is not.
+    "sed 's/a/b/' STATUS.md",
+]
+
+SANCTIONED += SCRIPT_ARGUMENT_SANCTIONED
+FORBIDDEN += SCRIPT_ARGUMENT_FORBIDDEN
+
 # ── DENY-ON-INDETERMINATE: OI-300's shape (2), closed BY RULING rather than by code ───────────
 # The family ruling's clause 4: an unexpanded shell variable is INDETERMINATE, and deny-on-
 # indeterminate is adopted as standing policy. The asymmetry decides it, and the ruling states it
@@ -1121,6 +1214,22 @@ def establish() -> dict:
          "with_the_family": "DENY" if decide(c)[0] else "allow"}
         for c in list(SANCTIONED_BEFORE_THE_FAMILY) + list(FORBIDDEN_BEFORE_THE_FAMILY)
         if decide(c, family=False)[0] != decide(c)[0]
+    ]
+    # The 2026-08-11 SCRIPT-ARGUMENT clause, measured the same way and on the SAME extended corpus,
+    # so the delta reported is the clause's and not the corpus rows' (D-436).
+    sa_off_false = sum(1 for c in SANCTIONED if decide(c, script_argument=False)[0])
+    sa_off_caught = sum(1 for c in FORBIDDEN if decide(c, script_argument=False)[0])
+    sa_off_missed = [c for c in FORBIDDEN if not decide(c, script_argument=False)[0]]
+    # Every row the corpus carried BEFORE the clause is decided both ways, and each moved verdict is
+    # named. A row moving here that the clause's own shape does not name is a STOP, not a result.
+    sa_moved = [
+        {"command": c,
+         "list": "sanctioned" if c in SANCTIONED_BEFORE_THE_SCRIPT_ARGUMENT else "forbidden",
+         "without_the_clause": "DENY" if decide(c, script_argument=False)[0] else "allow",
+         "with_the_clause": "DENY" if decide(c)[0] else "allow"}
+        for c in list(SANCTIONED_BEFORE_THE_SCRIPT_ARGUMENT)
+        + list(FORBIDDEN_BEFORE_THE_SCRIPT_ARGUMENT)
+        if decide(c, script_argument=False)[0] != decide(c)[0]
     ]
     # The false denies, split by whether the ruling ACCEPTS the denial. The revert condition is
     # judged on the unaccepted ones; the raw list stays visible so nothing leaves the denominator.
@@ -1548,9 +1657,21 @@ def establish() -> dict:
                     c for c in fam_off_missed if c not in still_missed),
                 "what_is_STILL_missed": still_missed,
                 "what_the_remaining_miss_IS": (
-                    "The stated ceiling and nothing else: interpreter code that COMPUTES its path, "
-                    "so no literal in it names anything the repository has. The design says in "
-                    "terms that this is where the policy stops."),
+                    "TWO shapes as of 2026-08-11, and the second is NEW — surfaced by a corpus row "
+                    "this act added and REPORTED rather than tuned away. (1) The stated ceiling: "
+                    "interpreter code that COMPUTES its path, so no literal in it names anything "
+                    "the repository has; the design says in terms that this is where the policy "
+                    "stops. (2) A SEPARATOR CHARACTER INSIDE A QUOTED OPTION — `awk -F'|' … "
+                    "<repository path>`. Diagnosed at the decision function and not reasoned from "
+                    "the source: the lexer does not group that quoting shape, so the tokens come "
+                    "out split at the `|` and the segment carrying the repository path has no "
+                    "utility at its head. **It is NOT a defect of the script-argument clause and "
+                    "the clause does not reach it** — the same command with a comma delimiter is "
+                    "denied correctly. It is the 2026-08-04 segmentation class, one quoting shape "
+                    "further out, and repairing it is a further mechanism change that Ruling 50 "
+                    "does not license. **The row STAYS in the forbidden corpus**: removing a row "
+                    "because the guard misses it is a corpus chosen to make a guard look clean, "
+                    "which measures nothing (#19)."),
             },
             "false_denies_on_the_sanctioned_set_SAME_corpus": {
                 "with_the_family": false_denies, "without_it": fam_off_false, "of": len(san),
@@ -1576,6 +1697,68 @@ def establish() -> dict:
                     "redirections), and a forbidden row moving allow->DENY is one of OI-348's "
                     "shapes being caught (shape 1, the wrappers; shape 2, the interpreter). A "
                     "moved verdict of any OTHER shape would be this act reaching past its ruling."),
+            },
+            "★_the_2026_08_11_maintenance_act_ONE_family_TWO_defects": {
+                "the_ruling": "User, 2026-08-11, Ruling 50 of "
+                              "`cowork_rulings_2026_08_11_tenth_stop.md`: DIAGNOSIS FIRST, with a "
+                              "STOP between diagnosis and fix; then the fix under the family "
+                              "discipline's fixed order — corpus rows first, both rates "
+                              "re-measured on the same extended corpus, the revert condition "
+                              "governing. `OPEN_ITEMS.md` OI-355 rides it under Ruling 19 of "
+                              "2026-08-09.",
+                "the_script_argument_clause_OI_355": {
+                    "what_it_is": "`sed` and `awk` take a SCRIPT in the position `grep` takes a "
+                                  "pattern, and only the pattern-taking four carried the "
+                                  "correction that drops it — so a bare script resolved against "
+                                  "the working directory and read as a repository path, denying "
+                                  "the command before its real target was considered.",
+                    "false_denies": {"with_the_clause": false_denies, "without_it": sa_off_false,
+                                     "of": len(san)},
+                    "detection": {"with_the_clause": caught, "without_it": sa_off_caught,
+                                  "of": len(forb)},
+                    "forbidden_rows_of_this_shape_still_missed": [
+                        c for c in SCRIPT_ARGUMENT_FORBIDDEN if c in still_missed],
+                    "sanctioned_rows_of_this_shape_still_denied": [
+                        c for c in SCRIPT_ARGUMENT_SANCTIONED if c in still_false],
+                    "the_revert_condition": (
+                        "A material rise in false denials governs. Both values are measured on "
+                        "the SAME extended corpus, so the comparison is of the CLAUSE and not of "
+                        "the rows added with it — which is the order the family ruling fixes and "
+                        "which this act followed: the rows went in before the clause, so the "
+                        "blindness was measured at the unwidened guard."),
+                    "verdicts_that_moved_among_rows_the_corpus_ALREADY_HELD": sa_moved,
+                    "how_to_read_a_movement": (
+                        "A moved verdict is expected only where the clause's own shape names it — "
+                        "a `sed` or `awk` invocation whose script was being read as a path. A "
+                        "movement of any other shape would be this act reaching past its ruling."),
+                },
+                "the_ROOT_determinism_fix_OI_366": {
+                    "the_cause_ESTABLISHED_AT_THE_OBJECTS": (
+                        "`ROOT` is derived from `__file__`, which Python makes absolute against "
+                        "the process's own current directory, so the DRIVE LETTER'S CASE arrived "
+                        "in whatever spelling the invocation used. The FAMILY arm normcases both "
+                        "sides and is unaffected; the CONTROL arm restores the case-SENSITIVE "
+                        "comparison on purpose and compares against `ROOT` as written, so a "
+                        "lowercase drive letter moved that arm's verdicts and only that arm's — "
+                        "which is exactly the shape of a check reporting STALE on one invocation "
+                        "and re-deriving on the next with nothing edited between."),
+                    "how_it_was_established": (
+                        "The module was loaded twice from its own file, once under each spelling, "
+                        "each load re-running `establish()` and applying the SAME string-equality "
+                        "test `--check` applies. The uppercase load re-derives the committed "
+                        "artifact byte for byte; the lowercase load does not. The probe ran "
+                        "OUTSIDE this tool, which is what let the diagnosis be taken before any "
+                        "guard file was touched, as the ruling requires."),
+                    "the_fix": "`_canonical_drive` puts the drive letter in ONE case at module "
+                               "load, so `ROOT` no longer depends on how the process started.",
+                    "what_it_moves": (
+                        "NO LIVE VERDICT. The family arm — which is what the live hook decides on "
+                        "— normcases both sides and never saw the difference. What changes is that "
+                        "the control arm, and therefore this artifact and the `--check` verdict "
+                        "over it, are REPRODUCIBLE ON DEMAND, which is what #19 asks of an "
+                        "established value. The published deny and false-deny rates are the same "
+                        "values they were."),
+                },
             },
             "★_what_the_PREVIOUS_published_rates_did_and_did_not_bound": (
                 "The rates published before 2026-08-08's family act are NOT WITHDRAWN AS WRONG "

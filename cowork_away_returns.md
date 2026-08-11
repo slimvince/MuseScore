@@ -3995,6 +3995,137 @@ that govern it.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 4 — COMPLETE, and the STOP did not fire. The cause OI-366 named-but-did-not-assert is ESTABLISHED at the objects; the family fix then ran in the ruled order and both rows flip
+
+**★ TAKEN OUT OF THE DISPATCH'S ORDER, AND THE JUDGMENT IS STATED BECAUSE IT IS ONE.** The dispatch
+puts Tasks 2 and 3 before this one. Both are large per-entry passes over populations of dozens of
+rows, each member needing its own record read; **this task is bounded, and both rows it closes are
+ESTABLISHMENT OBLIGATIONS, which gate whatever their subject.** Opening a per-entry pass with the
+capacity that remained would have bought a few entries and starved this act — **which is precisely
+the structural pattern Ruling 51 was made about, one task over.** So Tasks 2 and 3 are NOT OPENED
+rather than opened part-done, and this ran.
+
+**A3 HOLDS IN ITS ABSOLUTE CLAUSE: the diagnosis was taken BEFORE any guard file was touched.** The
+probe is an ordinary Python import from OUTSIDE the repository that loads the module twice from its
+own file — once under each spelling of the drive letter in that path — and for each load re-runs
+`establish()` and applies **the same string-equality test `--check` applies.** Nothing in the tool
+moved until the result was in.
+
+**★ THE CAUSE IS ESTABLISHED, AND IT IS THE CANDIDATE THE ROW NAMED AND REFUSED TO ASSERT.** The
+uppercase-drive load re-derives the committed artifact byte for byte; the lowercase-drive load does
+not. The mechanism is exactly as the row stated it: `ROOT` comes from `__file__`, which Python makes
+absolute against the process's own current directory, so the drive letter's case arrives in whatever
+spelling the invocation used — the FAMILY arm normcases both sides and never saw it, while the
+CONTROL arm restores the case-sensitive comparison on purpose and compares against `ROOT` as
+written. **So a lowercase drive letter moved that arm's verdicts and only that arm's**, which is the
+shape of a check reporting STALE on one invocation and re-deriving on the next with nothing edited
+between.
+
+**★ AND THE ROW'S OWN CLOSING CLAUSE TURNS OUT TO HAVE BEEN ONE STEP TOO CAUTIOUS, which is worth
+recording because the caution was right and the conclusion was not.** [[OI-366]] said that even a
+diagnostic capturing a failing run's `ROOT` *"is a change to the tool, so it is named and not
+taken"*. **It did not have to be a change to the tool.** A module can be loaded from outside itself,
+and the test it applies to its own artifact can be applied from there too — so the diagnosis the row
+declined was available all along at zero cost to the freeze. The general form is worth carrying: **a
+tool can be diagnosed without being edited, and declining the diagnosis on the ground that it would
+edit the tool is a conclusion that deserves checking before it is accepted.**
+
+**THE FIX THEN RAN IN THE RULED ORDER, WHICH IS RULING 19's AND WAS NOT REORDERED.**
+
+1. **The corpus rows went in FIRST**, before one line of the mechanism moved: the `sed`/`awk` failing
+   shapes with their quoting variants, aimed OUTSIDE the tree; and, in the other direction, the same
+   utilities aimed INSIDE it, which must stay denied on their real target rather than on their
+   script. That is what makes the blindness measured at the UNWIDENED guard.
+2. **The clause second** — `sed`, `awk` and their siblings drop the first non-option token, the same
+   correction the four pattern-taking utilities already carried, one utility class further out.
+3. **The `ROOT` determinism fix**, which is the diagnosed cause and nothing more.
+4. **Both rates re-measured on the SAME extended corpus**, with each new arm published beside the
+   existing ones, so the delta reported is the CLAUSE's rather than the corpus rows'.
+
+**THE REVERT CONDITION IS NOT MET — FALSE DENIALS FALL**, and the ones that remain are the two the
+deny-on-indeterminate policy accepts on purpose. Detection is unmoved, the clause being deny-side by
+construction. **Not one verdict moved among the rows the corpus already held**, which is the
+both-ways discipline discharged by measurement rather than asserted. **And the `ROOT` fix moves no
+live verdict at all** — the live hook decides on the family arm, so the published rates are the same
+values; what changes is that they are reproducible on demand, which is the whole of what #19 was
+refusing to grant them. Verified after the fix by the same probe: both spellings now give the same
+`ROOT` and both re-derive. No value is restated here (**D-431**).
+
+**★ A NEW MISS IS REPORTED RATHER THAN TUNED AWAY, AND THE ROW THAT ADDED IT IS THE ROW THAT FOUND
+IT.** One forbidden row this act added is still missed: a separator character inside a QUOTED OPTION
+— `awk -F'|' … <repository path>` — whose tokens the lexer splits at the separator, so the segment
+carrying the repository path has no utility at its head. **Diagnosed at the decision function, not
+reasoned from the source**, and the same command with a comma delimiter is denied correctly — which
+is what establishes that this is **not** a defect of the new clause and that the clause does not
+reach it. It is the 2026-08-04 segmentation class one quoting shape further out, repairing it is a
+further mechanism change Ruling 50 does not license, and **the row STAYS in the forbidden corpus**:
+removing a row because the guard misses it is a corpus chosen to make a guard look clean, which
+measures nothing (#19). The artifact's own *what the remaining miss IS* text is corrected in the
+same act, because it said the ceiling was the only one and that is no longer true.
+
+**[[OI-355]] and [[OI-366]] both FLIP**, each with its dated detail-file note, and Ruling 50's
+condition is met for both: established-and-fixed, not fixed-on-a-candidate.
+
+**Holds:** none new. **Surfacings:** the new miss above, which is the record's own apparatus and is
+recorded on [[OI-355]]'s row rather than opened as its own; nothing bearing on the analysis.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design —
+the one mechanism change is the ruled one, and it is to the audit's own guard. **Phase 1's
+completion statement is not written, not drafted and not partially written here.**
+
+### ★ WHERE THIS BATCH STOPPED
+
+**Tasks 0, 1 and 4 are COMPLETE, committed and pushed. Tasks 2 and 3 are NOT OPENED**, and Task 5 is
+reached only for this close. That is a capacity stop, not a halt on a finding: no STOP note was
+written against the batch, nothing is left half-edited, every derived surface re-derives, and the
+guard set is green at the boundary with the classification after it.
+
+**★ THE ONE ORDERING JUDGMENT, stated because it departs from the dispatch's sequence — and it is
+Ruling 51's own pattern, one task over.** The dispatch puts Tasks 2 and 3 before Task 4. Both are
+large per-entry passes over populations of dozens, each member needing its own record read. Task 4
+is bounded, and **both rows it closes are ESTABLISHMENT OBLIGATIONS, which gate whatever their
+subject** — so opening a per-entry pass with the capacity that remained would have bought a few
+entries and starved the act that discharges two gating rows. **Tasks 2 and 3 are untouched rather
+than part-done**, which is the treatment every continuation in this arc has given a per-entry pass
+it could not finish.
+
+**★ AND RULING 51 IS CONFIRMED BY ITS OWN FIRST APPLICATION, which is worth recording because the
+ruling asked to be judged this way.** The reach derivation had survived seven batches unstarted.
+Dispatched FIRST with nothing large in front of it, it closed WHOLE in one act — and it turned up a
+finding nobody was looking for while deriving its own population. **The ordering was the whole
+difference**, and nothing about the item had changed.
+
+**What a continuing session should know.**
+
+1. **Task 2's population is DERIVED, not carried from here:** the TRUE-half gating set at HEAD, read
+   at `tools/audit/phase1_completion_inventory.json` → `the_gating_split` at task start. It moved
+   this batch — two rows closed — so a count carried from any earlier document is stale by
+   construction.
+2. **Task 3's population is DERIVED too:** the four homing items at
+   `tools/audit/phase1_finish_line.json`, read at task start. **Item 1's live remainder is empty**
+   and stays empty; the remaining homing work sits in the findings-not-rules item and in items 3
+   and 5.
+3. **Task 5's OI-346 marks and the per-row sizing pass are NOT reached.** OI-346's application half
+   is a per-constant act over the Jazz preset table and the §6.7 idioms, each with its validating
+   corpus named — not a leftover-capacity item, as two previous continuations already recorded. The
+   per-ROW sizing pass still needs each gating row READ and remains owed.
+4. **Two things await the user, and one is new:** the registration queue's **§13** (Rulings 49–51,
+   two proposed decisions both flagged reasonably downgradable, both about HOW AN ACT IS SEQUENCED);
+   and **[[OI-367]]**, whose two closing acts are named on its row and neither of which is a
+   session's to pick, because either moves a population.
+5. **One finding bearing on the record's own apparatus was surfaced — §2.15 — and NOTHING BEARING ON
+   THE ANALYSIS WAS.** Every subject of this batch is where a recorded decision is written down, the
+   rulings that govern it, and the audit's own guard.
+6. **A method worth carrying, from Task 4:** a tool can be DIAGNOSED without being EDITED — loaded
+   from outside itself, with the same test it applies to its own artifact applied from there. A row
+   that declined a diagnosis on the ground that it would change the tool had a cheaper route
+   available all along.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch** — and two gating rows closing does not change that: the finish line's own count of what
+remains is derived at `tools/audit/phase1_finish_line.json` (**D-431**).
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected
