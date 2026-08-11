@@ -6071,3 +6071,194 @@ conformance probe, and OI-346's marks.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this
 batch — even if every item closes, the user commissions it.**
+
+---
+
+# ═══ THE ROW LANDING AND THE OI-141 ARM CHECK (dispatch `cc_instruction_row_landing_and_oi141_arm_check.md`, performed 2026-08-11) ═══
+
+> Two acts, both owed before the dispatch existed: landing a drafted open-items row, and settling —
+> at the call graph, read-only — whether the mechanism OI-141's fourth input pins still describes the
+> arm that ships. The sections above are earlier batches' and are not rewritten. **Acts are dated
+> from the clock: 2026-08-11. NO STOP was raised.**
+
+## 1 (continued). What needs the user
+
+### 1.19 The HELD comment verdicts are now decidable, and the row that recorded the hold is RESOLVED (Task 2, rowed at [[OI-371]])
+
+**This is a consequence of Task 2's licensed trace, not a search that went looking for it.**
+`tools/audit/arm_comment_sweep.json` grades a group of comment blocks **HELD** under the user's
+Ruling 16 clause *"a sibling whose falsity is not mechanical is HELD"*, each with the recorded reason
+that settling it needs the **call graph**. Task 2 performed exactly that trace for a different
+purpose, and it answers them. The population is at that artifact and none of it is restated here
+(**D-431**).
+
+**What the user is asked to see, not to decide here.** [[OI-353]], the row that recorded the hold,
+is RESOLVED, so nothing open carries the set. The row landed for it — [[OI-371]] — records the
+question and **assigns no gating verdict and no count**, both being derivations. Its two closing acts
+are named and neither is a session's to take unasked: re-grade every HELD block through
+`gen_arm_comment_sweep.py` so the verdicts stay derived, correcting whichever the re-grade makes
+false in one comment-only commit; and decide whether that act hangs on the new row or on a re-opened
+[[OI-353]].
+
+**Why it was not simply done here.** The dispatch is read-only on the analysis and admits no `src/`
+edit; and the neighbouring case is already on the record with the same answer — [[OI-368]]'s act (a)
+states that Ruling 16's comment licence *"is exercised and expired, so this needs its own
+authorization."*
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+### 2.20 The pinned mechanism at OI-141's fourth input describes the DORMANT LEGACY path only — none of its four elements is on either shipping surface (Task 2)
+
+**D-641's test returns YES** — the subject is which code path performs key inference on the arm that
+ships, which is the analysis itself — so it is surfaced whatever its size. **This is the answer to
+the question the sitting pack's §3 raised and left open, and the pack is left as written (#12).**
+
+**The verdict is outcome (iii) of the three the dispatch permits**, and what would have been needed
+for the other two is stated at the end.
+
+**The trace, at the code, never at a document's description of it (A5).**
+
+1. **`KeyModeSequenceDecoder::decode` has exactly two non-test call sites in the whole tree**, both in
+   `src/composing/analysis/region/regionanalyzer.cpp`. No file under
+   `src/composing/analysis/joint/` includes `keymodesequence.h` or `keymodeanalyzer.h`, and none
+   names `analyzeKeyMode`, `KeyModeSequenceDecoder`, `keyresolver` or `resolveKeyAndModeRanked`.
+2. **`analyzeRegions` — the function that reaches that decode — has exactly ONE non-test production
+   caller**, `analyzeHarmonicRhythm` in `src/notation/internal/notationharmonicrhythmbridge.cpp`.
+3. **The notation surface.** `composingconfiguration.cpp` sets `USE_JOINT_NOTATION_RECORD`'s default
+   value to `true` — **the default is read at the code, not assumed**. All four seams branch on
+   `useJointNotationRecord()` and **return on the record path without reaching
+   `analyzeHarmonicRhythm`**: the note seam and the span-annotation emitter in
+   `notationcomposingbridge.cpp`, the chord-track emitter in `notationimplodebridge.cpp`, and the
+   tuning region path in `notationtuningbridge.cpp`. Each record branch calls
+   `joint::produceNotationRecord`, and a produce failure returns empty rather than falling back.
+4. **The record path performs no key inference of its own either.** `produceNotationRecord` in
+   `jointnotationproducer.cpp` is `buildAdapterFacts` → `decodePiece` → `assembleNotationRecord`.
+   `analyzeSectionFromRecord` in `sectionrecordadapter.cpp` fills `KeyModeAnalysisResult` **directly
+   from the record segment's decoded fields**; it uses that type as an output structure and calls no
+   key layer. Its one shared call into the legacy section module is `groupKeyAreas`, which groups
+   already-decided per-region keys and infers nothing.
+5. **The batch/corpus surface.** `runJointInference` in `tools/batch_analyze.cpp` is
+   `buildAdapterFacts` → `decodePiece`, and its call site **returns before `analyzeScore`**.
+
+**So the answer to the question as the pack put it: the joint estimator's decode does NOT consult
+`keymodesequence` / `keymodeanalyzer` on either production arm. It carries its own key path.**
+
+**Element by element, as Task 2 requires.**
+
+- **The top-8 emission-union lattice — NOT on the shipping path.** It is `buildLattice` in
+  `keymodesequence.cpp` with `topK` in `keymodesequence.h`, over a 252-state (12 tonics × 21 modes)
+  per-slice emission. The shipping decoder prunes too, and **it is a different prune**:
+  `candidateKeys` in `jointdecoder.cpp` ranks **24** keys (12 tonics × major/minor) by pitch-class
+  overlap count against the key collection, keeps `kKeyPruneTopK`, and **always keeps the notated
+  signature's major key**. It is scored per candidate SEGMENT rather than per slice, ranked by
+  overlap count rather than by an emission score, and it is **not** a global union across the piece.
+  The values are at the code and are not restated here (**D-431**).
+- **The three hand-set change costs — NOT on the shipping path.** They are `changeCost` in
+  `keymodesequence.cpp`, reading `hysteresisMargin`, `keySignatureDistancePenalty` and
+  `relativeKeyHysteresisMargin` from `types/analysistypes.h`. The shipping decoder's key transition is
+  `FittedAdapter::keyTransLogp` in `jointadapter.cpp` — a **fitted** distribution over
+  stay / parallel / relative / circle-of-fifths bands, read from the embedded tables and scaled by the
+  fitted `key_trans` weight. **A fitted log-probability, not three hand-set constants.**
+- **The four-beat emission window — NOT on the shipping path, and this is the element most easily
+  mis-read.** The legacy `windowBeats` in `keymodesequence.h` is the **key emission** window. The
+  shipping decoder has no sliding key-evidence window at all: the evidence span IS the semi-Markov
+  segment, capped in EVENTS by `decodePiece`'s `segCap` argument. A four-beat window does exist on the
+  shipping path — `kCadenceApproachTicks` in `jointdecoder.cpp`, used only by `approachWindowPcs` for
+  the **cadence** feature detector. **Same number, different mechanism; they must not be conflated.**
+- **The single start-tick anchoring — the pinned CODE is not on the shipping path, and this is the
+  one element with a structural echo that survives.** The pinned mechanism is
+  `resolveKeySignatureContext` in `keyresolver.cpp`, which reads the `KeySigEvent` at the analysis
+  start tick and applies `partialSignatureCorrection` to produce `correctedFifths`. The shipping arm
+  reads its own signature in `jointfactadapter.cpp`, at `score->staff(0)->keySigEvent(Fraction(0, 1))`
+  — **staff 0, tick 0, no partial-signature correction anywhere on the path** — and hands the result
+  to `decodePiece` as `sigFifths` / `declaredMode`, which enter through `FittedAdapter::priorTerms`
+  as a fitted prior on the **initial state** and as the always-kept signature key in the candidate
+  prune. So *one signature read once and applied to the whole decode* is still true; **the code, the
+  correction and the way the value reaches the decode are all different.** This is consistent with
+  [[OI-357]], whose own establishment located the same production-path anchors, and nothing here
+  reopens that row or its Ruling 43 outcome.
+
+**What this does and does not imply for the sitting.** It does not touch the diagnosis or the
+research grounding — the pack says why, and the trace agrees: one is a measurement against ground
+truth, the other is published research. It bears on the fourth input and on the design decisions
+resting on it (retiring the top-8 prune; the change-cost model; the emission window), whose OBJECT
+is a mechanism that is not the one running. **No design decision is re-opened here and none is
+proposed — the sitting is the user's.**
+
+**What would have been needed for the other two outcomes (A6).** For *the pinned mechanism describes
+the shipping path*: a production call chain reaching `KeyModeSequenceDecoder::decode` — which would
+require `analyzeRegions` to be reachable from a shipping surface, and it is not on either. For *it
+describes it partly*: at least one of the four elements running as pinned on the shipping path —
+which would require one of the four code sites above to be in a shipping call chain, and none is.
+**Neither was found, and neither was assumed away.**
+
+### 2.21 The joint decoder's own header still says it is DORMANT, and that is now mechanically decidable (Task 2)
+
+`jointdecoder.h`'s header comment reads *"DORMANT (no production consumer)"*; `jointadapter.h`
+carries the same sentence. §2.20's trace establishes a production consumer for both, on both
+surfaces. **Surfaced rather than corrected** — the dispatch admits no `src/` edit — and rowed at
+[[OI-371]] with §1.19's two closing acts. **A comment is not executable; no behaviour is implicated.**
+
+## 3 (continued). Per-task log — the row landing and the OI-141 arm check
+
+### Task 1 — COMPLETE. The drafted row landed as [[OI-370]], index row and detail file in one commit
+
+**The identifier was verified at the INDEX immediately before it was written** (A1), never inferred
+from the draft or from any prose: the highest row the INDEX carried was OI-369, and no OI-370 or
+OI-371 appeared anywhere in the tree.
+
+**Landed as drafted in substance** (A2). The detail file is the draft's fenced block with the
+identifier filled in; the INDEX row is the draft's row with the identifier filled in. **The two
+things the draft withholds stay withheld**: no gating verdict is assigned by hand, and no count of
+what should move is written. Nothing else was re-argued.
+
+**One divergence from the surrounding convention is reported rather than silently corrected**: many
+detail files carry a verbatim copy of their INDEX row and the draft does not. The open-items
+register's living check requires that copy only for the ORIGINAL split items, so a post-baseline file without one is
+conformant — and adding it would have been a divergence from the draft, which A2 forbids.
+
+**Guards at the committed tree** (A3, A4): the index status lint PASS — the status cell opens with
+the canonical token and the row splits into six cells; the open-items split check OVERALL PASS with
+the bijection holding and every original item still byte-verbatim; the disposition verifier PASS with
+every verbatim quote at its cited home and every cited line number correct. **No anchor re-aim was
+owed, and that was established rather than assumed**: every `OPEN_ITEMS.md` line citation the
+decisions register's backbone carries points above line 270, and both insertions are at the end of
+section F, below all of them.
+
+**Commit `f916ee7c56`, pushed to `origin/master`.** The `OPEN_ITEMS.md` diff is a **pure insertion**,
+checked at the numstat.
+
+### Task 2 — COMPLETE, READ-ONLY. The arm question is settled at the call graph; the finding is §2.20 and the discovery it produced is [[OI-371]]
+
+**The licence chain in the dispatch's §0b was checked and is intact**, so no STOP was raised on it.
+
+**Every claim in the finding cites the code it is about** (A5). No document carries the verdict: the
+joint module's own headers, the sweep artifact and OI-357's detail file were read, and each is
+reported as a secondary source that the trace either confirms or corrects — never as the evidence.
+
+**All three outcomes were live and none preferred** (A6). The finding states which it reaches and
+what would have been needed for the others; nothing was held that the evidence decides, and nothing
+was decided that it does not.
+
+**Nothing was changed.** No behaviour, no `src/`, no golden, no corpus of scores, nothing under
+`tools/corpus/` or `tools/robust_stop/`; no document was corrected on the strength of the finding;
+no design decision was re-opened. The sitting pack is left exactly as written (#12).
+
+**One discovery was made and it is rowed rather than left in prose** — the open-items register's
+rules (c) and (e). [[OI-371]] landed with its detail file in the close commit, with no gating verdict
+and no count. It is the only register act Task 2 took.
+
+### Task 3 — COMPLETE. The close
+
+**One `STATUS.md` pointer entry per completed task, appended, and nothing else in that file
+touched.** The four acts §0e holds — the archive rule, the fourteenth continuation's entry, OI-47's
+banner half, and the gating-row miscount's correction note — are untouched, which is why the file's
+own defect ([[OI-370]]) is landed and unremedied in the same session.
+
+**No STOP was raised at any point.** No assumption was refuted at its check; the identifier was
+established at the INDEX; the landed detail file matches the draft beyond the identifier; every guard
+passed at the committed tree; the Task 2 licence chain held; and Task 2's evidence supports exactly
+one of its three permitted outcomes.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+session. D-231 stands and phase 1 is open; #8's three-clause gate stands.**
