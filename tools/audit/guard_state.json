@@ -33,6 +33,7 @@
       "tools/audit/decisions/gen_reads5_yield.py",
       "tools/audit/decisions/gen_reads6_yield.py",
       "tools/audit/decisions/gen_true_half_reach.py",
+      "tools/audit/decisions/gen_true_half_reach_rows.py",
       "tools/audit/decisions/gen_verbatim_subject_consistency.py",
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_arm_comment_sweep.py",
@@ -49,7 +50,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 51,
+    "authored_entries": 52,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -174,7 +175,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 366 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 367 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -407,7 +408,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 34 gates of 63 candidates over 255 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (29 non-gating / 34 gates of 63 candidates over 256 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -463,6 +464,19 @@
       ],
       "stderr": [],
       "what_it_checks": "ruling R1's application re-derives -- the ruling still locatable in CLAUDE.md by its anchor, OI-332 still carrying the three documents graded, and every verdict still naming one of the ruling's own worked examples (D-639)"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_true_half_reach_rows.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the D-639 row application re-derives from the files"
+      ],
+      "stderr": [],
+      "what_it_checks": "D-639's SECOND application re-derives -- the same ruling, over the open apparatus-classed rows the finish line names. Its guard value is in its four STOPs rather than in the artifact: the authored verdicts and the population derived from the completion inventory must agree in BOTH directions, so a row entering or leaving that population halts it rather than being graded silently or quietly dropped; every verdict must name a worked example the ruling states; every verdict must agree with the thing that decides it, the worked example's own sign or the row's fallback ground; and every row's quoted words must still be in that row's own detail file"
     },
     {
       "tool": "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
@@ -725,8 +739,8 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=366 detail=366 baseline=200 post-baseline=166",
-        "OVERALL PASS — bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
+        "living mode: index=367 detail=367 baseline=200 post-baseline=167",
+        "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
       "what_it_checks": "the open-items index/detail bijection, and the original items still byte-verbatim"
@@ -746,8 +760,8 @@
     }
   ],
   "summary": {
-    "run": 37,
-    "passing": 37,
+    "run": 38,
+    "passing": 38,
     "failing": 0,
     "failing_tools": [],
     "not_run": 4,

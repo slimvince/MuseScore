@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 47,
-    "re_derives_a_live_invariant": 35,
+    "tools_classified": 48,
+    "re_derives_a_live_invariant": 36,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 0
@@ -259,6 +259,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_true_half_reach.py:22-30",
       "why": "It LOCATES ruling R1 in `CLAUDE.md` by anchor string on every run and STOPS if it has moved or been reworded; it re-reads `open_items/OI-332.md` and STOPS if that row no longer carries a document it grades; and it STOPS on a verdict naming a worked example the ruling does not state. Whether the ruling's FALLBACK was reached is DERIVED from the verdicts rather than declared, so the artifact cannot claim a clean application it did not have.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/decisions/gen_true_half_reach_rows.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_true_half_reach_rows.py:30-43",
+      "why": "LIVE for the same operational reason as the first application, with one addition that is the stronger half. It imports the ruling, the three worked examples and the locator from that application (#6), so it inherits the anchor STOP; every verdict must name a worked example the ruling states and must AGREE with the thing that decides it — the example's own sign, or, where no example matched, the one authored ground the fallback turns on — so a verdict and its reason cannot point different ways. And its POPULATION is read at the completion inventory on every run and reconciled with the authored verdicts in BOTH directions: a row entering or leaving the apparatus-classed set halts it rather than being graded silently or dropped. That is a demand about the record as it stands today, not a dated reading of it.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

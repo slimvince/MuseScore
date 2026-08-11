@@ -3778,6 +3778,137 @@ batch** — and item 1's live remainder reaching zero does not change that: it i
 one of nine items, and the finish line's own count of what remains is derived at
 `tools/audit/phase1_finish_line.json` (**D-431**).
 
+---
+
+# ═══ THE TENTH RETURN CONTINUATION (dispatch `cc_instruction_return_continuation_10.md`, performed 2026-08-11) ═══
+
+> Rulings 49–51 of `cowork_rulings_2026_08_11_tenth_stop.md` are applied here, and the ninth
+> continuation's unfinished tasks are resumed. The sections above are earlier batches' and are not
+> rewritten. New holds are appended to §1, new surfacings to §2, and each task's log below. **Acts
+> are dated from the clock: 2026-08-11.**
+
+## 2 (continued). Surfaced findings
+
+### 2.15 A FOURTH row states a closure in words and reads OPEN to every derivation — and the pass that enumerated that family missed it, because the family was derived by a pattern whose reach was never measured (Task 0)
+
+**Found by deriving Task 0's own population at the artifact that owns it and then reading each of its
+rows at its own detail file** — which is the step that put the cell in front of a reader. Nothing
+looked for it.
+
+**The fact, read at the index and at two artifacts rather than inferred.** [[OI-298]]'s status cell
+opens with an open-state token and continues *"★ RESOLVED 2026-08-03 (CC, phase 1v)"*; its own text
+then records that closure in full, in six numbered acts with their provenance, and `CLAUDE.md`'s
+phase-2 clause says of the same subject that *"the gap it closed was tracked at `OPEN_ITEMS.md`
+OI-298."* Under the canonical status discipline a row's state is the first token of its cell and
+nothing else, so **the row is OPEN — read correctly. What is wrong is the cell, not the reader.**
+
+**How it came to read that way is in the artifacts, not a guess.** `oi356_parser_correction.json`
+enumerated the [[OI-361]] family — cells stating a closure in words with no resolved mark — and found
+THREE, of which this is not one: the two it called plain defects open with the word after markdown
+emphasis, and this cell opens with a decorative marker before it. `index_status_normalization.json`
+then carries the row with no canonical token before, no mark anywhere in the cell, and an open-state
+token after — the prepend-only pass preserving the state the row already held, **which is that pass
+working exactly as ruled, over a population that did not contain this row.**
+
+**Why it is surfaced and rowed rather than logged.** [[OI-361]] is CLOSED, and its own account says
+the two defects it found were *the only state movements the normalization made*. A fourth member
+found afterwards and left unrecorded because the row naming the family is closed is the [[OI-283]]
+shape. And the miss is about a DERIVATION rather than one cell: the family's pattern was never
+measured against the openings the index actually uses, which is the completeness question **D-661**
+answers for a different derivation — *complete* means complete relative to a NAMED derivation with
+its measured miss rate as a portion of its name.
+
+**Nothing was changed.** Flipping [[OI-298]] would move the open-row count, the TRUE-half cuts, the
+finish line's populations and the apparatus declaration's candidate cut — and it would move the
+population of the very derivation that found it, derived at that task's start. The record's own
+precedent governs, from [[OI-362]]: *a population movement belongs to an act that accounts for it,
+not to a task that would slip it in unremarked.* **Rowed at [[OI-367]]** with its detail file in the
+same commit (rule (c)), with both closing acts named and neither taken.
+
+## 3 (continued). Per-task log — the tenth return continuation
+
+### Task 0 — COMPLETE. D-639's test is applied over the whole apparatus-classed row set in ONE generated derivation; the fallback governs most of it and that is the result, not a shortfall
+
+**The start state was derived at the artifacts before any act (A5), and it is what the dispatch's
+ledger records.** The full guard set was run unchanged before the first edit: **thirty-seven run,
+ONE failing — the shell-read guard's establishment**, which is the exception the dispatch's own
+premise ledger names and is [[OI-366]]'s subject, still owed to Task 4. Everything else was read at
+its own surface: the population at the completion inventory, each row at its own detail file, the
+first application at its own generator, and the two parser artifacts named at §2.15. No count is
+restated here (**D-431**).
+
+**A1 HOLDS in each of its clauses, and each is enforced by the tool rather than asserted in prose.**
+The derivation runs over its WHOLE derived population or not at all — the authored verdicts and the
+population read from the completion inventory must agree in BOTH directions, so a derivation
+published over a subset cannot be written, which is the silent cap six continuations declined to
+risk. It is generated the way the first application was, and **it does not merely copy that shape —
+it IMPORTS the ruling, the three worked examples and the anchor locator from it (#6)**, so the test
+has one home and a reworded ruling STOPs both applications alike. The fallback is applied and SAID
+per row, in the ruling's own words.
+
+**★ THE ONE THING THIS APPLICATION ADDS TO THE FIRST, AND IT IS WHAT KEEPS THE FALLBACK HONEST.** The
+first application had only to name the worked example each document matched. Here most rows match
+none, and *the fallback* could have become a second, unchecked judgment. So applying it needs **one
+authored bit and nothing else** — does the row assert that a document STATES SOMETHING FALSE ABOUT
+THE SYSTEM: its behaviour, its inputs, its parameters, or what a layer produces? — and **the verdict
+is then DERIVED from that bit, with a disagreement between the two a STOP.** A session cannot author
+a fallback verdict and a ground that point different ways. Two consequences are deliberate and are
+stated at the artifact: an **omission is not a statement**, so a row recording what a document fails
+to say is not reached; and a document's account of **the WORK** — a stage, a closure, a commit
+standing — is not the account of the analysis.
+
+**★ THE HEADLINE IS THAT THE TEST DECIDED FEW OF THEM AND THE FALLBACK DECIDED MOST, WHICH IS THE
+RULING WORKING RATHER THAN FAILING.** D-639 anticipated exactly this — *if the test needs judgment on
+the first rows it meets, that is the "stable enough to be cited" failure repeating* — and named the
+remedy in advance. Three rows match a worked example literally; every other row is one where matching
+an example would have meant stretching it, and the ruling's instruction there is to apply the
+fallback and say so. **Each of the eighteen says so, individually, with the reason it is not the
+example it is nearest to.** No count or identity is restated here (**D-431**): every verdict, its
+ground, and a quoted span from the row's own detail file are at
+`tools/audit/decisions/true_half_reach_rows.json`.
+
+**★ THE GATE CONSEQUENCE IS REPORTED AND NOT APPLIED, ON THE FIRST APPLICATION'S OWN PRECEDENT.** The
+finish line's preceding item is the TRUE-half item whose rows GATE, so a row this derivation puts IN
+raises the question whether its non-gating classification survives — which is precisely the question
+the first application raised for [[OI-332]] and **the user then ruled at [[OI-336]]**. A non-gating
+verdict is DERIVED from a cut and never hand-added, so moving one is a change to an authored table
+and to a published classification, which is the user's. **It is stated at the artifact so it cannot
+be missed, and nothing is moved.** D-639's own closing line is carried with it: what PHASE 1 OWES and
+what A STAGE WAITS ON are different tests with different subjects, and this derivation answers the
+first only.
+
+**The finish line now reads the derivation rather than describing it as owed.** Its item gains a
+`the_derivation_has_run` block computed FROM the artifact — with a STOP if that artifact is absent,
+because an item whose closing act names one derivation must not quietly omit it and read as wholly
+outstanding. The rows put OUT leave the TRUE half and are owed nothing further ON THAT HALF; **they
+do not close**, and each keeps its own recorded act.
+
+**★ ONE JUDGMENT IS STATED BECAUSE IT DEPARTS FROM THE DISPATCH'S LETTER.** The dispatch says nothing
+else rides in this task. Deriving the population turned up §2.15, and the open-items register's rule
+(c) requires a newly discovered issue to get its index row AND its detail file **in the commit that
+records the discovery** — while recording it in this file without a row would be the prose-only
+tracking #10 forbids. **So [[OI-367]] is created here**, and it is the only thing besides the
+derivation and its wiring in this commit. Checked rather than assumed: the new row does not reach the
+apparatus declaration's first cut and does not enter the derivation's population, so the graded set
+is the one derived at task start and no count moved under the derivation while it ran.
+
+**Two authored inputs were maintained, both caught by their own tools' STOPs rather than by a
+reader.** The guard runner STOPPED because the new derivation joined the derived candidate population
+with no authored invocation — that derivation working — and the invocation was authored with what the
+tool checks; and the guard classification then STOPPED for the same tool with no verdict, and a
+**LIVE** verdict was authored with its ground: every half of it is a demand about the record as it
+stands today, and it stores no dated reading.
+
+**Holds:** none new. **Surfacings:** §2.15, which is the record's own apparatus rather than the
+analysis, and is surfaced because a family enumerated by an unmeasured pattern is the shape #19
+refuses.
+
+**Freeze respected:** no `src/` change, no golden, no corpus of scores, no `tools/corpus/` or
+`tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
+**Phase 1's completion statement is not written, not drafted and not partially written here** — and
+this item's derivation running does not change that: it is one item of nine, and the finish line's own
+count of what remains is derived at `tools/audit/phase1_finish_line.json` (**D-431**).
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

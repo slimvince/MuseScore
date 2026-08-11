@@ -140,6 +140,15 @@ AUTHORED = [
      "ruling R1's application re-derives -- the ruling still locatable in CLAUDE.md by its anchor, "
      "OI-332 still carrying the three documents graded, and every verdict still naming one of the "
      "ruling's own worked examples (D-639)"),
+    ("tools/audit/decisions/gen_true_half_reach_rows.py", ["--check"],
+     "D-639's SECOND application re-derives -- the same ruling, over the open apparatus-classed "
+     "rows the finish line names. Its guard value is in its four STOPs rather than in the artifact: "
+     "the authored verdicts and the population derived from the completion inventory must agree in "
+     "BOTH directions, so a row entering or leaving that population halts it rather than being "
+     "graded silently or quietly dropped; every verdict must name a worked example the ruling "
+     "states; every verdict must agree with the thing that decides it, the worked example's own "
+     "sign or the row's fallback ground; and every row's quoted words must still be in that row's "
+     "own detail file"),
     ("tools/audit/decisions/gen_phase1q_snapshot_establishment.py", ["--check"],
      "the phase-1q snapshot's establishment record re-verifies. Its two moment-in-time checks "
      "are FROZEN and read back -- they are statements about the tree before the apply ran, and "

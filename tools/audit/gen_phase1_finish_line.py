@@ -60,6 +60,12 @@ OUT = ROOT / "tools" / "audit" / "phase1_finish_line.json"
 # inventory already uses for the apparatus declaration, and it carries the same kind of STOP.
 R1_APPLICATION = ROOT / "tools" / "audit" / "decisions" / "r1_superseded_reach.json"
 
+# D-639's test applied over THIS FILE's apparatus-row item, READ AS A FILE for the same reason:
+# that generator derives its population from the completion inventory, which this module imports,
+# so importing it back would be a cycle. Its own STOP is what makes reading it safe — it refuses to
+# write unless its authored verdicts and the derived population agree in both directions.
+REACH_OVER_ROWS = ROOT / "tools" / "audit" / "decisions" / "true_half_reach_rows.json"
+
 
 # ────────────────────────────────────────────── the ENTRY-LEVEL re-cut (user ruling R3, 2026-08-04)
 #
@@ -215,6 +221,50 @@ THE_CONDITION_NOT_AN_ITEM = {
 # Each entry names its population by a FUNCTION over the derived data, never by a literal.  The
 # `name` fields are plain descriptions rather than codes, per the standing convention forbidding
 # self-invented labels and numbering schemes.
+def reach_over_rows_block() -> dict:
+    """The D-639 row application, read at its own artifact — never restated (D-431).
+
+    A missing artifact is a STOP rather than an absent block: this item's closing act names the
+    derivation, and a finish line that quietly omitted it would read as though the act were still
+    wholly outstanding.
+    """
+    if not REACH_OVER_ROWS.is_file():
+        raise SystemExit(
+            "STOP: this item's closing act names ONE derivation over the whole set and its "
+            f"artifact is absent ({REACH_OVER_ROWS}). Run "
+            "`tools/audit/decisions/gen_true_half_reach_rows.py` first."
+        )
+    art = json.loads(REACH_OVER_ROWS.read_text(encoding="utf-8"))
+    graded = art["the_population"]["ids"]
+    return {
+        "performed": "2026-08-11 (CC, `cc_instruction_return_continuation_10.md` Task 0), on the "
+                     "user's Ruling 51 of `cowork_rulings_2026_08_11_tenth_stop.md`, which placed "
+                     "it first with nothing large in front of it after seven batches of starvation.",
+        "artifact": "tools/audit/decisions/true_half_reach_rows.json",
+        "the_ruling_and_its_worked_examples_are_imported_not_restated":
+            "tools/audit/decisions/gen_true_half_reach.py (#6)",
+        "it_graded_the_whole_population_or_nothing":
+            "its own STOP — the authored verdicts and the population derived from the completion "
+            "inventory must agree in BOTH directions, so a derivation published over a subset "
+            "cannot be written",
+        "rows_graded": len(graded),
+        "rows_inside_the_doc_sync_half": art["rows_inside_the_doc_sync_half"],
+        "rows_outside_it": art["rows_outside_it"],
+        "decided_by_a_worked_example": art["counted"]["decided_by_a_worked_example"],
+        "decided_by_the_fallback": art["counted"]["decided_by_the_fallback"],
+        "what_remains_and_who_it_belongs_to": (
+            "The rows put OUT leave the TRUE half and are owed nothing further on it; they do not "
+            "close, and each keeps its own recorded act. The rows put IN raise the question "
+            "whether their non-gating classification survives — the same question the first "
+            "application raised for OI-332 and the user then ruled at OI-336. It is REPORTED at "
+            "the artifact and not applied here, because a non-gating verdict is derived from a cut "
+            "and never hand-added."
+        ),
+        "no_value_is_restated_here_beyond_the_lists_the_item_already_carries": "D-431 — every "
+            "verdict, its ground and its quoted evidence are at the artifact.",
+    }
+
+
 def recut(cls: dict, discharged: set[str]) -> dict:
     """A homing class's population at ENTRY granularity (user ruling R3).
 
@@ -478,10 +528,13 @@ def build_items(inv: dict, deleg: dict, discharged: set[str]) -> list[dict]:
         "why_it_is_outstanding": (
             "D-438 declares these rows non-gating, so no stage waits on them. That is a statement "
             "about what a STAGE waits on, and D-639 says in terms that it is a different test with "
-            "a different subject from the one deciding what PHASE 1 OWES. Whether each row is "
-            "inside the doc-sync half is therefore still open for every row but the three D-639's "
-            "first application already decided."
+            "a different subject from the one deciding what PHASE 1 OWES. **The derivation this "
+            "item's closing act names HAS NOW RUN over the whole set** — see "
+            "`the_derivation_has_run` — so what is outstanding is no longer the derivation but "
+            "what it hands on: the rows it puts IN raise a gate question this item may not answer, "
+            "because a non-gating verdict is derived from a cut and never hand-added."
         ),
+        "the_derivation_has_run": reach_over_rows_block(),
         "gate": {
             "gates": False,
             "ground": "the committed non-gating apparatus declaration, or the row's own recorded "

@@ -198,6 +198,18 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "the ruling does not state. Whether the ruling's FALLBACK was reached is DERIVED from the "
         "verdicts rather than declared, so the artifact cannot claim a clean application it did "
         "not have."),
+    "tools/audit/decisions/gen_true_half_reach_rows.py": (
+        LIVE, "gen_true_half_reach_rows.py:30-43",
+        "LIVE for the same operational reason as the first application, with one addition that is "
+        "the stronger half. It imports the ruling, the three worked examples and the locator from "
+        "that application (#6), so it inherits the anchor STOP; every verdict must name a worked "
+        "example the ruling states and must AGREE with the thing that decides it — the example's "
+        "own sign, or, where no example matched, the one authored ground the fallback turns on — "
+        "so a verdict and its reason cannot point different ways. And its POPULATION is read at "
+        "the completion inventory on every run and reconciled with the authored verdicts in BOTH "
+        "directions: a row entering or leaving the apparatus-classed set halts it rather than "
+        "being graded silently or dropped. That is a demand about the record as it stands today, "
+        "not a dated reading of it."),
     "tools/audit/decisions/gen_phase1q_snapshot_establishment.py": (
         LIVE, "gen_phase1q_snapshot_establishment.py:24-38",
         "★ THE FIRST TOOL BUILT AFTER R4 AND BUILT TO IT, so the classification was a design "
