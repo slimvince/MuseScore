@@ -1,7 +1,99 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-08-11 (ELEVENTH) — THE RETURN ARC IS RUN: FOURTEEN CC CONTINUATIONS, SIXTY-FOUR USER RULINGS APPLIED, THE COMMISSIONING SURFACE DELIVERED; THE FOURTEENTH CONTINUATION IS THE ACTIVE DISPATCH; THE NEXT LARGE ACT IS THE USER COMMISSIONING PHASE 1'S COMPLETION STATEMENT. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-08-11 (TWELFTH) — THE FOURTEENTH CONTINUATION IS COMPLETE AND **VERIFIED AT THE OBJECTS**; ONE DEFECT FOUND AND IT IS A MISCOUNT, NOT A WRONG ACT; THE QUEUE'S §21 AND OI-141's SITTING BOTH AWAIT THE USER. THE CURRENT ENTRY POINT.
+
+**You (the next session) start clueless — this block is your boot; no population is restated
+here by design (D-431); every figure is an artifact you read at HEAD. Your first act is NOT a
+branch check: `cc_instruction_return_continuation_14.md` HAS COMPLETED — five commits, tip
+`e263aa9174`, pushed to `origin/master`, its close appended to `cowork_away_returns.md`.
+Nothing is running. You are not read-only.**
+
+**Read, in order:** (1) `CLAUDE.md` IN FULL — it gained Ruling 64's conditional read (any
+session touching the joint estimator's behaviour reads its `ARCHITECTURE.md` section and the
+factorization contract FIRST, on the `scoring_model` pattern). (2) `DECISIONS.md` (INDEX; the
+decisions register now carries **D-673**, Ruling 60's clause, homed at
+`cowork_audit_protocol.md` beside D-436 and D-661 — identifiers VERIFIED at the INDEX before
+being written anywhere).
+(3) `OPEN_ITEMS.md` (INDEX). (4) `tools/audit/phase1_finish_line.json` at HEAD — THE SCOPE.
+(5) `STATUS.md`'s top entries — **and see the standing defect below before you try to read
+it**. (6) `cowork_scratch_2026_08_11/README.md` and the three drafts it lands. (7) the queue's
+**§20 and §21** (`ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md`).
+
+**★ THE BATCH IS VERIFIED — WHAT WAS CHECKED, SO YOU DO NOT REPEAT IT.** Cowork verified at
+the objects, against expectations registered in writing BEFORE the report existed
+(`cowork_scratch_2026_08_11/cowork_verification_plan_continuation_14.md` §3). **Ruling 63's
+homing PASSES the check that mattered:** the evidential-priority rule is written NORMATIVELY,
+not descriptively — it names the struck-versus-sounding departure as `OPEN_ITEMS.md` OI-228,
+a conformance gap DECLARED and not fixed, remedy deferred to the ONE design over the family at
+its **#8-correct stage** — and it landed in the **joint estimator's section**, the layer that
+owns the production emission's evidential contract (#7), not §5.2. The phase-1z scoping
+sentence is preserved verbatim with an annotation beneath it (#12). **OI-320's site 4 POINTS
+rather than states**, which is correct because OI-150 did not run — a value stamped there with
+no completed run behind it would have been a STOP. **Ruling 61's chain-following widening is
+BOUNDED by its own both-ways reconciliation:** every disposition is recomputed with the chain
+step OFF, and exactly one entry moves — the one the ruling licenses — so the seven already
+discharged keep their verdict under the narrow homed-only test. **The three branch-one banners
+are PURE INSERTIONS** (zero deletions, checked at the numstat), and the score inventory is a
+body edit — so Ruling 62's two-branch split is demonstrated, not asserted. **OI-346's Jazz
+half carries a real establishment** and names, beside the mark, the thing a reader would
+mistake for validation: the Jazz regression check runs the Jazz preset over the **Bach chorale**
+corpus, so passing it establishes nothing on jazz repertoire. **Its idiom half is HELD**, which
+is #19 refusing a verdict in both directions. **The read-only default held** — no `src/`, no
+golden, nothing under `tools/corpus/` or `tools/robust_stop/`.
+
+**★ THE ONE DEFECT, AND IT IS IN AN IMMUTABLE PLACE.** The report AND the tip commit message
+say **seven** gating rows closed. **The derived artifact disagrees, and the artifact governs**
+— the rows CC names as closed are OI-369, OI-324, OI-320, OI-322, OI-332, OI-282, OI-304 and
+OI-318, every one of them verified absent from the finish-line artifact's own gating
+population, whose size is read there and not restated here (D-431). *(Identities are listed
+because an identity is not a quantity and it is what lets a reader check the claim — the
+distinction the commissioning surface draws about itself.)* The direction is UNDER-claiming,
+so no derived surface is wrong; but this is the **third time this arc CC has miscounted its
+own work**, and the first time it reached a commit message. **The remedy is a correction note,
+never a rewrite.**
+
+**★ WHAT AWAITS THE USER, and both are genuine sittings rather than approvals.** **(1) The
+queue's §21** — the largest sitting the queue has classified, two proposed decisions, and CC
+reports it breaks the shape six extensions recorded: here the rulings that unblock the most
+work are also the ones that bind. **(2) OI-141's design sitting**, whose reading pack is landed
+— **and it carries a SURFACED, UNRESOLVED question that bears on the analysis** (D-641): all
+four of OI-141's delivered inputs are dated 2026-07-12, while the joint estimator became
+production on 2026-07-26/27, so the mechanism its fourth input pins at the code was traced
+before the arm it was traced on stopped shipping. **Dates only were checked; no code was read.**
+The settling act is named in the pack and was NOT performed.
+
+**★ OWED, AND NONE OF IT STARTED.** The `STATUS.md` row is DRAFTED COMPLETE and ready to land
+in one commit — a mandatory session-start read that **cannot be performed** (the file tools
+refuse it), whose own banner already states the remedy and whose archive rule is therefore in
+force and unapplied; no identifier is assigned and no gating verdict is assigned, both by
+design. `cowork_phase1_commissioning_surface_2026_08_11.md`'s §3 tables are STALE — the sizing
+artifact is the home and wins, which that surface says of itself. CC's **§2.19** reports its
+own new enumeration **NOT SOUND** (it asks the register for a falsified-STATUS entry, while the
+entry recording a falsification is itself LIVE), so Ruling 62's branch-one population is
+ADVISORY and probably under-inclusive — **Cowork had predicted a substantial held set as the
+CORRECT outcome, because the kind list partitions by GENRE while the branches turn on STATUS**.
+CC's **§1.18** reports a departure: Ruling 60 says the entry lands at the home the queue
+proposes and §19 proposed none; the home was derived, and **Cowork independently predicted the
+same home from the same grounds before seeing the answer** — the procedural gap is real, the
+substitute is not arbitrary.
+
+**★ THE WORKING RULES, UNCHANGED AND RE-EVIDENCED THIS SESSION.** Verify EVERY CC report at
+the objects, at VALUES and not only structure. **Pre-register your expectations in writing
+before the report exists** — it is the only thing git cannot reconstruct afterwards, and it is
+what turned two of this session's checks from opinions into tests. **Read a row's detail file
+BEFORE its flip**: two checks were sharpened that way and neither was repeatable after. Full-prose
+decision surfaces, every alternative's pros and cons naming principles and rated against the
+ultimate objective — demanded twice this arc; do it the complete way the first time. D-253 in
+every dialect: the file tools read working-tree files, and the shell is for git OBJECT queries
+by explicit hash only. D-431. The writing-side self-check before releasing anything. One
+dispatch at a time, written only at a verified STOP.
+
+*(The eleventh block below is the previous entry point — kept for provenance. Its account of
+the fourteenth continuation as ACTIVE is superseded: it has completed and been verified.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE 2026-08-11 (ELEVENTH) — THE RETURN ARC IS RUN: FOURTEEN CC CONTINUATIONS, SIXTY-FOUR USER RULINGS APPLIED, THE COMMISSIONING SURFACE DELIVERED; THE FOURTEENTH CONTINUATION IS THE ACTIVE DISPATCH; THE NEXT LARGE ACT IS THE USER COMMISSIONING PHASE 1'S COMPLETION STATEMENT. (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block is your boot; no figure appears here by
 design (D-431); every population is an artifact you read at HEAD. Your first act: establish

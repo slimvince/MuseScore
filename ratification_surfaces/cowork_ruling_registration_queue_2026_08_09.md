@@ -1149,6 +1149,48 @@ open-items status and authorizes nothing. It touches no golden, no corpus of sco
 
 ---
 
+## 22. THE NINTH CLOSING STATE — what the user's verdicts did over Rulings 60–64: §21 RATIFIED, one DECISION kept against its downgrade reading, one EXERCISE kept against its contrary reading, and the ONE register entry it writes
+
+**Added 2026-08-11 by `cc_instruction_status_touch_and_oi141_premise_repin.md` Task 1, after the
+user's verdicts of 2026-08-11 over the queue's §21.** Nothing above this section is altered by it,
+and §6, §8, §10, §12, §14, §16, §18 and §20 — the first eight closing states — are untouched. **§21's
+own banner still reads *AWAITING THE USER*, and it is left exactly as written** — the treatment §19
+received when §20 landed — because what a section PROPOSED is evidence, and a closing state is where
+the answer lives (#12).
+
+**The §21 verdicts are RULED. Rulings 60, 63 and 64 stand AS PROPOSED. Ruling 62 stands as a
+DECISION, its offered downgrade reading put and DECLINED. Ruling 61 stands as an EXERCISE, the
+contrary reading §21.2 names put and DECLINED. ONE register entry is written, for Ruling 62 alone.**
+
+| Queue row | Verdict as ruled | The ground the ruling gives |
+|---|---|---|
+| **60** — the queue's §19 ratified with the proposed decision KEPT | **EXERCISE** — a ratification event | Proposed EXERCISE and ruled EXERCISE, as proposed; **no contrary reading was offered for it and none was found.** Its closing state is §20 above and the entry it writes is **D-673** |
+| **61** — OI-369 closes by the SIBLING SUBTRACTION MACHINERY | **EXERCISE** — and the contrary reading §21.2 names was PUT and DECLINED | §21.2 named the push a reader may reasonably make — that choosing between two closing acts a row named is what a DECISION is — and wrote out in one line the entry that reading would produce. **The user declined it.** What stands is §21.1's ground: the ruling extends a subtraction the record already performs to a class the same clause already covers, and **D-436** assigns the construction of a derived cut to the user without needing a second entry to say so |
+| **62** — the FILING CONVENTION: two branches by document KIND | **DECISION** — and the downgrade reading §21.1 offers was PUT and DECLINED | The downgrade reading — that *body untouched for a dated report, body corrected for a governing surface* is #12 and **C5** applied to their obvious cases — was put and declined. **The ground the user was given, and did not contradict, is evidence rather than argument: the two open rows this ruling closes each recorded the COMPOSITION as ambiguous, in their own words.** [[OI-322]] said the same filing question applies to every completed audit in the tree and declined to take it; [[OI-320]] said what its corrected text should say *"is not a session's to choose either"*, being a filing decision about a user-ratified gate's presentation. Two rows stopping independently at the composition is what shows the principles did not decide it |
+| **63** — OI-324: the priority-of-evidence rule is CROSS-CUTTING | **DECISION** — as proposed | Ratified as proposed; **no contrary reading was offered for it and none was found.** It settles in terms what the record left unwritten — which arm an evidential contract binds — and **D-057** stands as written and is not amended |
+| **64** — the joint estimator's specification joins the CONDITIONAL reads | **EXERCISE** — as proposed | Ratified as proposed; **no contrary reading was offered for it and none was found.** It is the mandatory-read pattern `CLAUDE.md` already carries for `docs/scoring_model.md`, applied to a second specification — the class Rulings 41 and 48 were classified EXERCISE for. *(§21.1 attributes that pattern to **D-137**. Checked at the register before this row was written: **D-137 is a different decision** — the harmony maps' own visual design — and the register carries no entry for the mandatory scoring-model read at all, so the pattern is cited HERE to the `CLAUDE.md` section that states it and to no identifier. §21 is not edited: it is a section the user has ruled on. The mis-citation is reported at `cowork_away_returns.md` §1.20.)* |
+
+**THE ONE ENTRY: D-674**, written into `cowork_design_doc_template.md` beside the Ruling 28 kind list
+— the ONE home this project's writing standards have — carrying its verbatim taken from the home text
+after that text was written, its plain restatement, its defense, and the provenance field recording
+that the user ruled the CLASSIFICATION while the entry text was written afterwards.
+
+**★ THE DEPARTURE §20 REPORTED HAPPENS AGAIN, AND THIS TIME IT DECIDES NOTHING — BOTH FACTS ARE
+STATED SO NEITHER IS READ AS THE OTHER.** §1's rule is *"for every ruling proposed as a DECISION, one
+proposed home"*, and §21 carries no proposed-home subsection at all — the same omission §19 made,
+recorded at §20 and at `cowork_away_returns.md` §1.18. **The home was therefore NOT derived here,
+because Ruling 62 NAMES it:** *"The convention's home: `cowork_design_doc_template.md`, beside the
+Ruling 28 kind list, written under this ruling's licence."* So the queue's procedural gap is real and
+is now on the record twice, and in this instance it cost nothing. Recorded at
+`cowork_away_returns.md` §1.20.
+
+**★ WHAT THIS FILE'S OWN JOB NOW IS — unchanged from §8, §10, §12, §14, §16, §18 and §20.** Every
+ruling it classifies carries a ruled verdict, so the queue is discharged as a queue. It stays as the
+RECORD of the classification and is not extended again for a later ruling without a dispatch saying
+so.
+
+---
+
 *Provenance: the user's Ruling 12 of 2026-08-09 (`cowork_rulings_2026_08_09_second_stop.md`). The
 gap this discharges is `cowork_away_returns.md` §1.4. The interim carriers whose banners name the
 debt are `cowork_rulings_2026_08_08_pre_away.md`, `cowork_ruling_guard_family_2026_08_08.md`,
@@ -1195,4 +1237,8 @@ nothing, #12.) §20 records the user's Ruling 60 of
 `cowork_rulings_2026_08_11_fourteenth_stop.md`, read whole (D-643) before it was written, and was
 added on the instruction of `cc_instruction_return_continuation_14.md` Task 0; §21's carrier is that
 same record, read whole before it was written, added on the same instruction, which is the dispatch
-§20's closing line requires, and it scopes itself to Rulings 60–64.*
+§20's closing line requires, and it scopes itself to Rulings 60–64. §22 records the user's verdicts
+of 2026-08-11 over §21, taken in conversation and carried at
+`cc_instruction_status_touch_and_oi141_premise_repin.md` §0a, which is the dispatch §21's closing
+line requires; the carrier `cowork_rulings_2026_08_11_fourteenth_stop.md` was read whole (**D-643**)
+again before it was written, and §22 adds NO extension — it is a closing state only.*

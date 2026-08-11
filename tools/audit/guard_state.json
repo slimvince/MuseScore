@@ -177,7 +177,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 369 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 371 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -407,12 +407,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
-      "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 28 gates of 53 candidates over 243 open rows)"
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "stdout": [],
+      "stderr": [
+        "STOP: first-cut candidates with no authored verdict: OI-370, OI-371"
       ],
-      "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
     },
     {
@@ -420,10 +420,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
-        "OK: phase-1 completion inventory re-derives byte-identically."
+        "FAIL: re-derivation differs from the committed artifact: C:\\s\\MS\\tools\\audit\\phase1_completion_inventory.json"
       ],
       "stderr": [],
       "what_it_checks": "the phase-1 completion inventory re-derives -- D-231's clause still locatable by its anchors, and every home class, defense gap, open-row cut and gate verdict unchanged"
@@ -433,10 +433,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
-        "OK: the phase-1 finish line re-derives byte-identically."
+        "FAIL: re-derivation differs from the committed artifact: C:\\s\\MS\\tools\\audit\\phase1_finish_line.json"
       ],
       "stderr": [],
       "what_it_checks": "the phase-1 FINISH LINE re-derives -- the scope ruling R2 of 2026-08-04 fixed. Its three STOPs ride with it and are the reason it is a guard rather than a report: an item carrying no closing act stops it, a row named as a user ruling that is no longer in the derived gating set stops it, and -- the one that matters -- a population NO ITEM CARRIES stops it, so the list cannot quietly stop being exhaustive as the register and the open-items index move under it"
@@ -540,10 +540,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 673",
+        "backbone decisions: 674",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 673/673",
-        "cited line numbers correct: 667/667   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 674/674",
+        "cited line numbers correct: 668/668   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -767,7 +767,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=369 detail=369 baseline=200 post-baseline=169",
+        "living mode: index=371 detail=371 baseline=200 post-baseline=171",
         "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
@@ -789,9 +789,28 @@
   ],
   "summary": {
     "run": 40,
-    "passing": 40,
-    "failing": 0,
-    "failing_tools": [],
+    "passing": 37,
+    "failing": 3,
+    "failing_tools": [
+      {
+        "tool": "tools/audit/gen_nongating_apparatus_rows.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/gen_phase1_completion_inventory.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/gen_phase1_finish_line.py",
+        "args": [
+          "--check"
+        ]
+      }
+    ],
     "not_run": 4,
     "historical_records": 10
   }
