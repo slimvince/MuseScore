@@ -3711,8 +3711,20 @@ STARTED**, and Task 3 is reached only for this close. That is a capacity stop at
 boundary, not a halt on a finding: no STOP note was written against the batch, nothing is left
 half-edited, every derived surface re-derives, and **the guard set stands at ZERO failing with
 thirty-seven guards run** and the classification green after it — including the shell-read guard,
-whose failure at the batch's START is §2.14 and whose pass here is that account's sixth consecutive
-one.
+whose failure at the batch's START is §2.14 and which passed again here.
+
+> **★ CORRECTED IN THE SAME SESSION THAT WROTE IT, BY THE STANDING SELF-CHECK OVER ITS OWN COMMITTED
+> PROSE (D-434; the former wording is preserved here, #12).** The sentence above closed *"and whose
+> pass here is that account's sixth consecutive one."* **It was a MISCOUNT.** Counted at the runs:
+> §2.14's row was written after five consecutive passes and was true then; three further passes
+> followed before this close — the two intervening full guard runs and this one — so the pass
+> recorded here is the eighth, not the sixth. **Nothing rests on the number**, which is why the
+> correction removes it rather than replacing it with a larger one: the claim that matters is that
+> the failure has not recurred, and a running count of passes goes stale at every subsequent run,
+> which is the property that produced the error. [[OI-366]]'s own record keeps the count it was
+> written with, as the observation it was, and carries a dated note of what followed. *Why it is
+> corrected at all, given its size:* it is a stated count that is not what happened, and this
+> project's discipline is that such a count is either right or not stated.
 
 **★ WHY NOTHING WAS OPENED RATHER THAN OPENED AND LEFT PART-DONE, and the judgment differs per
 task.** Task 2's first sub-part is ONE GENERATED DERIVATION over twenty-one open rows, **each of
