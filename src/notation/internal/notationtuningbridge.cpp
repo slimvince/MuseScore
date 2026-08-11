@@ -762,7 +762,8 @@ bool applyRegionTuning(mu::engraving::Score* score,
 
     const auto* cfg = analysisConfig();
 
-    // ── Harmonic analysis (record path default OFF, useJointNotationRecord) ───
+    // ── Harmonic analysis (record path default ON, useJointNotationRecord — the production
+    // notation analysis since the user-ratified notation switch of 2026-07-27) ───
     // Legacy: analyzeHarmonicRhythm -> HarmonicRegion stream. Record (the P3a pattern): derive the
     // section from the joint notation record and map each region to the (span, chordResult,
     // keyModeResult) HarmonicRegion the loop below reads. The tuning inputs are FACTS the record carries

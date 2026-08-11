@@ -44,8 +44,9 @@
 //   §3.6  the deliberately-excluded fields are simply ABSENT (no confidence sigmoid, Class-M margin,
 //         21-value mode, temporalExtensions, hasAnalyzedChord, keyAlternatives, fanout, pedal-identity)
 //
-// DORMANT (declared dormancy, fact-publication corollary): the NAMED consumer is the seams dispatch
-// (the span/note seams that read this record). Nothing in src/ reads it yet. The record is a pure
+// LIVE: the named consumer — the seams dispatch (the span/note seams that read this record) —
+// landed at the user-ratified notation switch (2026-07-27), and useJointNotationRecord defaults
+// TRUE, so the in-app notation path reads this record. The record is a pure
 // function of the decode outputs (Piece + DecodeResult) plus the decode's prior inputs (sigFifths/
 // declaredMode) and the compiled-in provenance — it NEVER re-decodes and never reads the score.
 //

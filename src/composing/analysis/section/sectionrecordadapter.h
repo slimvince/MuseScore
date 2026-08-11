@@ -29,9 +29,11 @@
 // of the seams-part-2 consumer re-plumb: the section layer, record path (dispatch
 // cc_instruction_notation_seams_2.md, partition P2).
 //
-// DORMANT (declared dormancy — no src/ caller yet; the named consumer is the span/implode bridge
-// re-plumb, P3/P4, behind the default-OFF useJointNotationRecord flag). Byte-identical on production
-// by construction: nothing calls it.
+// LIVE ON THE PRODUCTION NOTATION PATH: the named consumer — the span/implode/tuning bridge
+// re-plumb, P3/P4 — landed at the user-ratified notation switch (2026-07-27), and
+// useJointNotationRecord defaults TRUE (composingconfiguration.cpp), so this is what the in-app
+// notation analysis runs. Explicit false selects the legacy path, still compiled and dormant; both
+// retire together at the OI-180 map.
 //
 // It is a CONSUMER of the published record (a pure data surface) plus the score's L1 note surface
 // (for the per-segment tone re-collection, composing-side — the SAME NoteModel/weightedPcView the

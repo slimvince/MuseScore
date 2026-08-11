@@ -3295,6 +3295,150 @@ entries of Task 1. **Surfacings:** none bearing on the analysis.
 `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design.
 **Phase 1's completion statement is not written, not drafted and not partially written here.**
 
+### Task 4 — COMPLETE. Ruling 16 executed in its own order: the sweep first, then ONE comment-only commit — and the sweep's own first run MISSED a member, which another tool's STOP found
+
+**★ TAKEN OUT OF THE DISPATCH'S ORDER, AND THE JUDGMENT IS STATED BECAUSE IT IS ONE.** The dispatch
+puts Task 3 before Task 4. Task 3's deliverable is ONE generated derivation over a derived
+population of twenty-one open rows, each needing its own row READ, and a derivation published over
+some of its population is the silent cap the standing rules forbid — which is why four consecutive
+continuations declined to open it part-done. **Task 4 had been carried unstarted through those same
+four batches**, each time starved by a large per-entry pass. Opening Task 3 with the capacity left
+would have starved it a fifth time or produced exactly the part-done derivation the record forbids.
+**So Task 4 ran and Task 3 is NOT OPENED — never part-done.**
+
+**A3 HOLDS: the family is DERIVED by the sweep, and the sweep is a mechanism rather than a list.**
+`tools/audit/gen_arm_comment_sweep.py` → `arm_comment_sweep.json`. Its candidate population is every
+comment **BLOCK** under `src/` that makes a dormancy, no-consumer or flag-default claim **AND** names
+the joint module or the notation record. **The unit is a BLOCK and not a line**, because the
+build-file entries put the state claim and its subject on different lines of one block — a per-line
+scan would have missed precisely the group the fourth continuation's reconnaissance called largest.
+Every candidate is graded against **two CONFIGURATION FACTS re-read at the code by anchor on every
+run**: the flag's default value, and whether any non-test `src/` translation unit outside the joint
+module references a joint or record symbol. **Two STOPs ride with it** — an unclassified candidate,
+and a verdict for a block the scan no longer finds — and **both fired during this task**.
+
+**★ THE RULING'S OWN PREDICTION IS CONFIRMED AT THE OBJECTS.** Its words were that [[OI-353]]'s six
+sites *"are the found members, not the family"*. They are: the false set reaches well past the
+default-OFF claim, and its **largest group declares the JOINT MODULE'S OWN dormancy** — comments
+written before the notation switch, describing a state that switch ended — in the build file, in two
+joint headers, in the record adapter's header **and its implementation file**, and in three
+test-file headers whose closing sentence makes a claim about `src/`.
+
+**The ONE comment-only commit corrected every FALSE-AT-HEAD block.** Each correction changes only
+the false claim; every accurate sentence stands. **The diff is verified comment-only MECHANICALLY** —
+every changed line under `src/` begins with a comment marker, checked at the diff — which is what
+#14/#15 ask for. **And the suites were run rather than the reasoning being trusted:** the build
+succeeded and the composing suite passed whole.
+
+**★ TEN BLOCKS ARE HELD, BY THE RULING'S OWN CLAUSE, AND THE LINE IS WORTH READING.** Their claim is
+that a joint-INTERNAL module — the adapter, the decoder, the tables loader, the class value type,
+the fact adapter — has no production consumer. No outside `src/` file references those symbols, so
+the derived facts do not refute them literally; whether they are nonetheless ON the live path is a
+**CALL-GRAPH** question, which is a judgment about how the decode is composed rather than a
+file-level fact. *A sibling whose falsity is not mechanical is HELD, not edited.*
+
+**★ AND THE SWEEP'S OWN FIRST RUN MISSED A MEMBER. IT IS RECORDED AS A MISS RATHER THAN ABSORBED,
+BECAUSE HOW IT WAS FOUND IS THE POINT.** `sectionrecordadapter.cpp` said *"DORMANT — no src/ caller
+yet"* and never entered the population: the subject pattern matched *record path* with a space and
+that block writes *record-path* with a hyphen. **It was found by ANOTHER tool's STOP** — the
+phase-1w legacy verification, whose own side-finding table carries the same site and which halted
+with *"the premise has changed"* the moment the four bridge comments were corrected. The pattern is
+widened, the miss is named at the widening and at the block's own verdict, and the correction
+follows. **Widening a derivation is the fix; narrowing one to quiet a STOP is the opposite act and
+was not taken.**
+
+**★ ONE MEMBER IS NOT DISCHARGED AND IS DELIBERATELY LEFT STANDING — surfaced, not edited.**
+`tools/batch_analyze.cpp` still says the notation layer stays on the legacy analysis, which the
+notation switch made false. **It is outside Ruling 16's stated scope**: that ruling licenses ONE
+comment-only `src/` commit, and a measurement tool is neither `src/` nor a build file. It is
+therefore also outside the sweep's derived population, whose scan is `src/` by the same scope. **It
+is one edit for whoever is authorized**, and it is now the only surviving row of the phase-1w
+side-finding table, whose other five are retired whole with the reason (#12, **D-648**).
+
+**Four authored inputs were maintained, each caught by its own tool's STOP rather than by a reader.**
+The apparatus declaration STOPPED because [[OI-353]] closed, and its GATES verdict was moved WHOLE
+into the retired table with the reason it closed. The notation-seams anchor check and the phase-1w
+verification each STOPPED on drifted code anchors — **thirteen between them, re-aimed ONE STOP AT A
+TIME**, each located at its own token and never by an assumed uniform shift. And the guard runner
+STOPPED because the new sweep joined the derived candidate population with no authored invocation,
+which is that derivation working; the invocation was authored with what the tool checks, and a
+**LIVE** classification verdict was authored beside it with its ground — every half of the sweep is
+a demand about today, and it stores no dated reading.
+
+**★ THE LAYERED-STOP SHAPE APPEARED FOR THE SIXTH TIME IN THIS ARC.** The phase-1w verification
+reports only its FIRST failing anchor, so six anchors came out one run at a time — and behind the
+last of them sat the side-finding table whose premise this task had just changed. **A cleared STOP
+is never evidence about what follows it**; only a single green run is.
+
+**[[OI-353]] FLIPS**, with its detail file carrying the dated account and its index row recording
+both halves, what was held, and why.
+
+**Guards at the task boundary.** The full set was re-run and the classification re-run after it.
+**Thirty-seven guards now run — one more than at the batch's start**, the new sweep among them — and
+the set stands at **ZERO failing** with the classification green after it. Every verdict is at
+`tools/audit/guard_state.json` → `summary` and none is restated here (**D-431**).
+
+**Holds:** the `tools/batch_analyze.cpp` comment above, outside the ruling's scope; and the ten
+sweep blocks held for a call-graph judgment. **Surfacings:** none new bearing on the analysis — the
+comments corrected are statements ABOUT the analysis's build state, and no behaviour moved.
+
+**Freeze respected in every clause except the ONE the ruling licenses:** the comment-only `src/`
+commit is Ruling 16's own act and its diff is verified comment-only. No golden, no corpus of scores,
+no `tools/corpus/` or `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to
+inference, no design. **Phase 1's completion statement is not written, not drafted and not partially
+written here.**
+
+### ★ WHERE THIS BATCH STOPPED
+
+**Tasks 0, 1 and 4 are COMPLETE. Task 2 is OPENED and partly done, at a clean entry boundary.
+Task 3 is NOT OPENED and Task 5 is reached only for this close.** That is a capacity stop, not a
+halt on a finding: no STOP note was written against the batch, nothing is left half-edited, every
+derived surface re-derives, and the guard set stands at **ZERO failing** with the classification
+green after it — **thirty-seven guards run, one more than at the batch's start.**
+
+**★ THE ONE ORDERING JUDGMENT THIS BATCH MADE, stated because it departs from the dispatch's
+sequence.** Task 3's deliverable is ONE generated derivation over twenty-one open rows, each needing
+its own row READ, and a derivation published over some of its population is the silent cap the
+standing rules forbid — four consecutive continuations declined to open it for exactly that reason.
+**Task 4 had been carried unstarted through those same four batches**, each time starved by a large
+per-entry pass. So Task 2 was stopped at a clean entry boundary and Task 4 ran. **Task 3 is
+untouched rather than part-done**, which is the treatment every previous continuation established
+for it.
+
+**What a continuing session should know.**
+
+1. **Task 1's four HELD census entries need the user, not a session.** Ruling 40's step 3 is the
+   reason: the owning census element for each is a findings table, and adding a rule-stating block
+   to one is a document-structure act the ruling reserves. They are not one shape — an adoption
+   event, a generalizable rule the record never made, a per-corpus establishment verdict with no
+   census section at all, and one that needs an entry SPLIT.
+2. **Item 1 has no other live remainder.** Every one of its seven non-census entries carries route
+   `NO HOME EXISTS`, which Ruling 38 and Ruling 40 both leave alone. Derived, not judged.
+3. **Task 2's remaining population is DERIVED, not carried from here:** the four homing items at
+   `tools/audit/phase1_finish_line.json`, read at task start. The two closed here are already out
+   of it by construction.
+4. **Task 3's population is the completion inventory's `the_gating_split` → `non_gating` set**, read
+   at task start; what is owed per row is a verdict under **D-639**'s test, whose three worked
+   examples ARE the test, with fallback (1A) applied and SAID wherever the test does not decide, and
+   **no hand verdicts**. The method is the existing first application's shape at
+   `tools/audit/decisions/gen_true_half_reach.py` (#6).
+5. **Task 5's OI-346 marks and the per-row sizing pass are NOT reached.** OI-346's application half
+   is a per-constant act over the Jazz preset table and the §6.7 idioms, each with its validating
+   corpus named — not a leftover-capacity item. The per-ROW sizing pass the user asked for still
+   needs each gating row READ and remains owed, as the fifth continuation's own triage said.
+6. **Two things await the user and both are new:** the four census entries at §1.12's successor
+   above, and **§1.14** — a ruling record's citation of the reported-widening ground, surfaced
+   rather than propagated. Beside them stands the `tools/batch_analyze.cpp` comment Ruling 16's
+   scope does not reach, which is one edit for whoever is authorized.
+7. **No finding bearing on the analysis was surfaced by this batch.** Every subject was where a
+   recorded decision is written down, plus one prose correction to a document about a measurement
+   and one comment-only correction to statements about which arm ships — neither of which moves a
+   measured value.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this
+batch** — and the finish line's own count of what remains is derived at
+`tools/audit/phase1_finish_line.json` (**D-431**).
+
 ## 4. The batch's start state, recorded before any act
 
 **HEAD** is `03bce02e4b` (*"docs(cowork): the standing self-check's own two findings, corrected

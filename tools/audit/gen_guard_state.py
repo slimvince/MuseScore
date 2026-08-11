@@ -79,6 +79,13 @@ AUTHORED = [
      "every open-items status cell opens with one canonical token, and every row splits — the "
      "standing half of the user's Ruling 33 of 2026-08-09, whose enforcement half is in the ONE "
      "index parser itself and whose vocabulary this tool owns (#6)"),
+    ("tools/audit/gen_arm_comment_sweep.py", ["--check"],
+     "Ruling 16's enumerated family re-derives — every `src/` comment block claiming an arm, a "
+     "flag default or a build state, graded against the two configuration facts the tool re-reads "
+     "at the code on every run. Its two STOPs are what make it a guard rather than a record: a "
+     "candidate block with NO authored verdict halts it, so a sibling added by a later commit "
+     "cannot enter the population unclassified; and a verdict for a block the scan no longer finds "
+     "halts it too, so a verdict cannot outlive the comment it grades"),
     ("tools/audit/local_patches_check.py", [],
      "the three recorded local patches are still present at HEAD"),
     ("tools/audit/local_patches_check.py", ["--establish", "--check"],

@@ -1,0 +1,307 @@
+{
+  "purpose": "Ruling 16's read-only SWEEP: the enumerated family of `src/` comments claiming an arm, a flag default or a build state, graded against the configuration facts. It edits nothing.",
+  "generated_by": "tools/audit/gen_arm_comment_sweep.py",
+  "the_ruling": "User, 2026-08-09, Ruling 16 of `cowork_rulings_2026_08_09_second_stop.md`: OI-353 is BUNDLED — sweep first so the family is enumerated, then ONE comment-only commit over it; the six found sites are 'the found members, not the family'; a sibling whose falsity is not mechanical is HELD.",
+  "★_the_configuration_facts_every_verdict_is_CHECKED_AGAINST": {
+    "how_they_were_obtained": "READ AT THE CODE, located by anchor string rather than by line number, and re-read on every run. Neither is recalled and neither is quoted from a document.",
+    "fact_1_the_flag_default": {
+      "flag": "useJointNotationRecord",
+      "site": "src/composing/composingconfiguration.cpp, at the setDefaultValue anchor",
+      "the_line": "settings()->setDefaultValue(USE_JOINT_NOTATION_RECORD, Val(true));",
+      "default_is_on": true
+    },
+    "fact_2_the_build_state": {
+      "question": "does any NON-TEST src/ translation unit outside the joint module and outside the record adapter itself reference a joint or record symbol?",
+      "answer_is_yes": true,
+      "the_callers": [
+        "src/composing/analysis/section/sectionanalyzer.cpp",
+        "src/composing/analysis/section/sectionanalyzer.h",
+        "src/composing/composingconfiguration.cpp",
+        "src/composing/composingconfiguration.h",
+        "src/composing/icomposinganalysisconfiguration.h",
+        "src/notation/internal/notationcomposingbridge.cpp",
+        "src/notation/internal/notationimplodebridge.cpp",
+        "src/notation/internal/notationtuningbridge.cpp"
+      ],
+      "why_the_exclusions": "A module referencing its own symbols proves nothing about whether anything CONSUMES it, and a test caller is not a production consumer — which is exactly the claim these comments make. Excluding them is what makes a YES mean what the comments deny."
+    }
+  },
+  "how_the_candidate_population_is_derived": {
+    "the_unit": "a comment BLOCK — a run of consecutive comment lines — and not a line. The build-file entries put the state claim and its subject on DIFFERENT lines of one block, so a per-line scan would miss precisely the group the fourth continuation's reconnaissance reported as largest.",
+    "the_two_conditions": "the block makes a STATE claim (dormant / no production consumer / no src caller / not wired / a flag default) AND names this family's subject (the joint module, the notation record, or the flag itself). Both are required, so the many TRUE dormancy comments about other modules never enter.",
+    "files_scanned": "every .h/.hpp/.cpp/.cc and every CMakeLists.txt under src/",
+    "what_is_authored": "the verdict per block and its reason, keyed by the file and the block's own first comment line — never by a line number, so the table follows its subject when the file moves (the D-307 lesson)."
+  },
+  "counted": {
+    "candidate_blocks": 26,
+    "false_at_head": 0,
+    "true_at_head": 16,
+    "held_for_a_judgment_about_the_analysis": 10,
+    "files_carrying_a_false_block": []
+  },
+  "★_the_family_is_LARGER_than_the_row_that_found_it": {
+    "what_OI_353_recorded": "six sites saying the production record path is default OFF.",
+    "what_the_sweep_finds": "the false set is not confined to that claim: the largest group declares the JOINT MODULE'S OWN dormancy — written before the notation switch and describing a state that switch ended — which neither OI-353 nor the phase-1w side finding names. The ruling predicted exactly this in its own words, and the enumeration is why it is not read off a list."
+  },
+  "★_the_comment_only_commit_this_sweep_licensed": {
+    "what_it_did": "Ruling 16's second half, performed against this enumeration: every FALSE-AT-HEAD block was corrected and nothing else was touched. Each correction changes only the false claim — the arm, the flag default, or the build state — and leaves every accurate sentence in the block standing. No behaviour changes: the diff is comments and build-file comments only.",
+    "what_it_deliberately_did_NOT_touch": "the ten HELD blocks. Their claims are about whether a joint-internal module is ON the live path, which needs the call graph rather than a file-level fact — the ruling's own clause: a sibling whose falsity is not mechanical is HELD, not edited.",
+    "blocks_corrected": 14,
+    "the_corrections": [
+      {
+        "path": "src/composing/analysis/CMakeLists.txt",
+        "former_first_comment_line": "# joint/ — THE JOINT KEY/MODE/CHORD ESTIMATOR (the OI-180 sanctioned dual path). The",
+        "what_was_corrected": "CORRECTED. 'DORMANT: no production consumer — nothing in src/ calls any joint symbol' now states both adoptions: the batch/corpus surface at OI-178 (2026-07-26) and the in-app notation surface at the notation switch (2026-07-27). Nothing else in the entry moved."
+      },
+      {
+        "path": "src/composing/analysis/CMakeLists.txt",
+        "former_first_comment_line": "# jointnotationrecord — the A-native NOTATION OUTPUT-SURFACE RECORD (contract §3): the one output",
+        "what_was_corrected": "CORRECTED. 'DORMANT (declared dormancy — named consumer: the seams dispatch)' now records that the named consumer landed and the notation bridges read the record. The §3.1–§3.6 contract account is untouched."
+      },
+      {
+        "path": "src/composing/analysis/CMakeLists.txt",
+        "former_first_comment_line": "# sectionrecordadapter — the RECORD-path variant of analyzeSection (seams part 2, partition P2b):",
+        "what_was_corrected": "CORRECTED. 'DORMANT — no src/ caller yet … behind the default-OFF useJointNotationRecord flag' now states what is true at HEAD: LIVE on the production notation path since the 2026-07-27 notation switch, the flag defaulting TRUE, with the legacy path compiled and dormant behind an explicit false. Nothing else in the entry moved."
+      },
+      {
+        "path": "src/composing/analysis/joint/jointnotationproducer.h",
+        "former_first_comment_line": "// ── The record-producing entry + the two seam views (notation output-surface contract §1) ──────────",
+        "what_was_corrected": "CORRECTED. 'leaves them DORMANT (declared dormancy — nothing in src/ calls them yet)' now records that the seams-part-2 consumer side LANDED and the producer and both views are live. What the producer composes, and that it adds no inference, is untouched."
+      },
+      {
+        "path": "src/composing/analysis/joint/jointnotationrecord.h",
+        "former_first_comment_line": "// ── The NOTATION OUTPUT-SURFACE RECORD (the A-native record; notation output-surface contract §3) ──",
+        "what_was_corrected": "CORRECTED. 'DORMANT (declared dormancy …). Nothing in src/ reads it yet.' now records that the in-app notation path reads the record. The pure-function clause and the whole contract account are untouched."
+      },
+      {
+        "path": "src/composing/analysis/section/sectionrecordadapter.cpp",
+        "former_first_comment_line": "// ── The record-path variant of analyzeSection ────────────────────────────────",
+        "what_was_corrected": "CORRECTED. 'DORMANT — no src/ caller yet' now records that the notation bridges call the adapter. The pointer to the header for the contract and the isolation rules is untouched."
+      },
+      {
+        "path": "src/composing/analysis/section/sectionrecordadapter.h",
+        "former_first_comment_line": "// ── composing/analysis/section/sectionrecordadapter ──────────────────────────",
+        "what_was_corrected": "CORRECTED. The header's status paragraph — 'DORMANT (declared dormancy — no src/ caller yet; … behind the default-OFF useJointNotationRecord flag)' — now states the live arm, the true default, and what an explicit false selects. The mapping account is untouched. The block stays in the derived population because it still names the legacy path as dormant, which is true."
+      },
+      {
+        "path": "src/composing/tests/joint_producer_tests.cpp",
+        "former_first_comment_line": "// Joint estimator — the RECORD-PRODUCING ENTRY + the two seam views (notation output-surface contract",
+        "what_was_corrected": "CORRECTED. 'DORMANT: nothing in src/ reads the producer or the views' now records that the notation bridges read them. What the tests assert is untouched."
+      },
+      {
+        "path": "src/composing/tests/joint_record_tests.cpp",
+        "former_first_comment_line": "// Joint estimator — the NOTATION OUTPUT-SURFACE RECORD (contract §3.1–§3.3) coverage tests for",
+        "what_was_corrected": "CORRECTED. 'The module stays DORMANT — nothing in src/ reads the record' now records that the notation bridges read it. What the tests check is untouched."
+      },
+      {
+        "path": "src/composing/tests/section_record_adapter_tests.cpp",
+        "former_first_comment_line": "// Seams part 2, partition P2b — the record-path variant of analyzeSection. Coverage for",
+        "what_was_corrected": "CORRECTED. 'DORMANT: nothing in src/ calls the adapter' now records that the notation bridges call it. The coverage description is untouched."
+      },
+      {
+        "path": "src/notation/internal/notationcomposingbridge.cpp",
+        "former_first_comment_line": "// Record arm (default OFF, useJointNotationRecord): the note seam is a VIEW into the whole-score",
+        "what_was_corrected": "CORRECTED — one of OI-353's six. 'default OFF' now reads 'default ON … the production notation analysis since the user-ratified notation switch of 2026-07-27'. Everything the block says about the seam and its failure behaviour is untouched."
+      },
+      {
+        "path": "src/notation/internal/notationcomposingbridge.cpp",
+        "former_first_comment_line": "// Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint",
+        "what_was_corrected": "CORRECTED — one of OI-353's six. Same correction, same untouched substance."
+      },
+      {
+        "path": "src/notation/internal/notationimplodebridge.cpp",
+        "former_first_comment_line": "// Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint",
+        "what_was_corrected": "CORRECTED — one of OI-353's six. Same correction, same untouched substance."
+      },
+      {
+        "path": "src/notation/internal/notationtuningbridge.cpp",
+        "former_first_comment_line": "// ── Harmonic analysis (record path default OFF, useJointNotationRecord) ───",
+        "what_was_corrected": "CORRECTED — one of OI-353's six. Same correction; which record fields the tuning path reads is untouched."
+      }
+    ]
+  },
+  "verdicts": [
+    {
+      "path": "src/composing/analysis/CMakeLists.txt",
+      "first_line_number": 131,
+      "first_comment_line": "# functionrelationallabel — Architectural Layer 5 (FUNCTION), Phase 5c Step 5: the",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "A Layer-5 module the record path does not reach. Neither fact touches it: no outside src/ caller is named for it, and the flag it does not mention is not its subject."
+    },
+    {
+      "path": "src/composing/analysis/CMakeLists.txt",
+      "first_line_number": 212,
+      "first_comment_line": "# sectionrecordadapter — the RECORD-path variant of analyzeSection (seams part 2, partition P2b):",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "CORRECTED. 'DORMANT — no src/ caller yet … behind the default-OFF useJointNotationRecord flag' now states what is true at HEAD: LIVE on the production notation path since the 2026-07-27 notation switch, the flag defaulting TRUE, with the legacy path compiled and dormant behind an explicit false. Nothing else in the entry moved."
+    },
+    {
+      "path": "src/composing/analysis/CMakeLists.txt",
+      "first_line_number": 238,
+      "first_comment_line": "# jointkeydecision — the scoped constrained-joint KEY decision (J-key-i;",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "Its default-OFF claim is about `jointKeyWiringEnabled()`, a DIFFERENT flag from the notation record's. Fact 1 is about `useJointNotationRecord` and does not reach it."
+    },
+    {
+      "path": "src/composing/analysis/CMakeLists.txt",
+      "first_line_number": 371,
+      "first_comment_line": "# jointfactadapter — the \"score -> facts\" build step (Task C): builds the decoder's Piece inputs",
+      "verdict": "HELD",
+      "why": "Says 'Still DORMANT (driven only by --joint-* diagnostics)'. Deciding this needs the CALL GRAPH — whether the live record producer drives the fact adapter — rather than a file-level reference, and neither derived fact establishes it. The ruling's own clause governs: a sibling whose falsity is not mechanical is HELD, not edited."
+    },
+    {
+      "path": "src/composing/analysis/engravingbridge/phraseboundaryview.h",
+      "first_line_number": 24,
+      "first_comment_line": "// ── composing/analysis/engravingbridge — the owned phrase-boundary primitive ──",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "Its CONSUMER STATUS paragraph names the joint-key re-key pass gated on `jointKeyWiringEnabled()` and the batch diagnostics — a different flag and a different path. Neither fact reaches it."
+    },
+    {
+      "path": "src/composing/analysis/function/forwardoverride.h",
+      "first_line_number": 24,
+      "first_comment_line": "// ── composing/analysis/function/forwardoverride ──────────────────────────────",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "A Layer-5 module with no outside src/ caller named by fact 2; its dormancy claim stands."
+    },
+    {
+      "path": "src/composing/analysis/function/functionrelationallabel.h",
+      "first_line_number": 24,
+      "first_comment_line": "// ── composing/analysis/function/functionrelationallabel ──────────────────────",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "Same class as its build entry: a Layer-5 module the record path does not reach, with no outside src/ caller named by fact 2."
+    },
+    {
+      "path": "src/composing/analysis/grouping/groupinglayer.h",
+      "first_line_number": 24,
+      "first_comment_line": "// ── composing/analysis/grouping — Architectural Layer 6 (GROUPING) ────────────",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "A Layer-6 module with no outside src/ caller named by fact 2; its dormancy claim stands."
+    },
+    {
+      "path": "src/composing/analysis/joint/jointadapter.h",
+      "first_line_number": 36,
+      "first_comment_line": "// The joint estimator's factor log-probability provider — the C++ port of",
+      "verdict": "HELD",
+      "why": "Says 'DORMANT (no production consumer)'. No outside src/ file references this symbol, so fact 2 does not refute it literally; whether it is nonetheless ON the live path is a call-graph question about how the decode is composed. HELD, not edited."
+    },
+    {
+      "path": "src/composing/analysis/joint/jointdecoder.h",
+      "first_line_number": 37,
+      "first_comment_line": "// The joint estimator's DECODER — the C++ port of the exact block-factorized semi-Markov Viterbi in",
+      "verdict": "HELD",
+      "why": "Same shape as the adapter: 'DORMANT (no production consumer)', with no outside src/ reference to refute it literally. HELD."
+    },
+    {
+      "path": "src/composing/analysis/joint/jointfactadapter.h",
+      "first_line_number": 37,
+      "first_comment_line": "// ── The joint estimator's FACT ADAPTER (score -> Piece) ──────────────────────────────────────────",
+      "verdict": "HELD",
+      "why": "Same shape, and it is the header of the build entry held above for the same reason. HELD."
+    },
+    {
+      "path": "src/composing/analysis/joint/jointtables.h",
+      "first_line_number": 29,
+      "first_comment_line": "// Runtime loader for the joint estimator's committed generative tables. The frozen tables",
+      "verdict": "HELD",
+      "why": "Says 'This module is DORMANT — no production path reads it.' Whether the live producer reads the tables THROUGH the embedded artifacts rather than this loader is exactly the distinction the block draws elsewhere, and settling it needs the call graph. HELD."
+    },
+    {
+      "path": "src/composing/analysis/joint/labelclass.h",
+      "first_line_number": 28,
+      "first_comment_line": "// The joint estimator's chord-class value type — the C++ decode-side port of",
+      "verdict": "HELD",
+      "why": "Says 'This module is DORMANT — no production path reads it.' Same call-graph question. HELD."
+    },
+    {
+      "path": "src/composing/analysis/region/regionanalyzer.cpp",
+      "first_line_number": 378,
+      "first_comment_line": "// ── J-key-iii — the joint re-key pass (the FIRST intentional production behavior",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "Gated on `jointKeyWiringEnabled()` — a DIFFERENT flag. Fact 1 does not reach it."
+    },
+    {
+      "path": "src/composing/analysis/region/regionanalyzer.cpp",
+      "first_line_number": 528,
+      "first_comment_line": "// PIN #2 (§15-3, Phase-5c Step-4): re-derive the override-readiness forward-carry",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "Its default-OFF claim names `jointKeyWiringEnabled()` explicitly — a different flag."
+    },
+    {
+      "path": "src/composing/analysis/region/regionanalyzer.cpp",
+      "first_line_number": 1479,
+      "first_comment_line": "// ── J-key-iii — joint re-key 2-pass (the FIRST intentional production behavior",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "Same flag, same reason: `jointKeyWiringEnabled()`, not the notation-record flag."
+    },
+    {
+      "path": "src/composing/analysis/section/jointkeydecision.cpp",
+      "first_line_number": 132,
+      "first_comment_line": "// J-key-iii production wiring flag.  Default OFF ⇒ byte-identical baseline.  The",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "This block IS the J-key wiring flag's own account of itself, and that flag's default is OFF. Fact 1 is about a different flag."
+    },
+    {
+      "path": "src/composing/analysis/section/sectionanalyzer.cpp",
+      "first_line_number": 121,
+      "first_comment_line": "// Layer B — 1-region-island key stabilization.  J-key-iii: when the joint",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "Its 'Default OFF ⇒ unchanged' is the J-key wiring flag again, not the notation-record flag."
+    },
+    {
+      "path": "src/composing/analysis/section/sectionanalyzer.h",
+      "first_line_number": 82,
+      "first_comment_line": "// ── Key-area grouping (shared by the legacy and record arms) ──────────────────",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "It reaches the scan by naming the record arm, and it makes NO dormancy or default claim about it — it describes a helper shared by both arms and says one field has no production consumer reading it AS A PROBABILITY, which neither fact touches."
+    },
+    {
+      "path": "src/composing/analysis/section/sectionrecordadapter.h",
+      "first_line_number": 24,
+      "first_comment_line": "// ── composing/analysis/section/sectionrecordadapter ──────────────────────────",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "CORRECTED. The header's status paragraph — 'DORMANT (declared dormancy — no src/ caller yet; … behind the default-OFF useJointNotationRecord flag)' — now states the live arm, the true default, and what an explicit false selects. The mapping account is untouched. The block stays in the derived population because it still names the legacy path as dormant, which is true."
+    },
+    {
+      "path": "src/composing/composingconfiguration.cpp",
+      "first_line_number": 173,
+      "first_comment_line": "// Internal migration switch — default TRUE since the user-ratified switch (2026-07-27):",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "This block is fact 1's own site and states the default correctly, together with what the explicit false selects. It is the standard the rest of the family is graded against."
+    },
+    {
+      "path": "src/composing/icomposinganalysisconfiguration.h",
+      "first_line_number": 137,
+      "first_comment_line": "/// INTERNAL MIGRATION SWITCH (default TRUE since the user-ratified switch of",
+      "verdict": "TRUE-AT-HEAD",
+      "why": "The interface's own account, and it agrees with fact 1: default TRUE, the record IS the production notation analysis, the legacy branch compiled and dormant."
+    },
+    {
+      "path": "src/composing/tests/joint_decoder_tests.cpp",
+      "first_line_number": 23,
+      "first_comment_line": "// Joint estimator, commit 2: DECODE PARITY against the established Python probe. The C++ decoder must",
+      "verdict": "HELD",
+      "why": "Closes 'the module stays dormant', about the DECODER — the same held call-graph question, restated in a test header. HELD, and it is named so it moves with the module it describes."
+    },
+    {
+      "path": "src/composing/tests/joint_modal_tests.cpp",
+      "first_line_number": 23,
+      "first_comment_line": "// Joint estimator — the §3.4 UN-ROUNDED MODAL READING (contract §3.4 / §5.4) coverage tests for",
+      "verdict": "HELD",
+      "why": "Closes 'The module stays DORMANT', about the modal-reading primitive. Same held question."
+    },
+    {
+      "path": "src/composing/tests/joint_slice_tests.cpp",
+      "first_line_number": 23,
+      "first_comment_line": "// Joint estimator — the POSTERIOR SLICE (notation output-surface contract §3.3 group (i)) coverage",
+      "verdict": "HELD",
+      "why": "Closes 'the module stays dormant', about the posterior slice, which the record attaches. Same held question."
+    },
+    {
+      "path": "src/composing/tests/joint_tables_tests.cpp",
+      "first_line_number": 23,
+      "first_comment_line": "// Commit 1 of the joint-estimator C++ module build: the LabelClass value type, the weight",
+      "verdict": "HELD",
+      "why": "Closes 'The module is DORMANT — no production path reads it', about the loader and the value type. Same held question as their two headers."
+    }
+  ]
+}

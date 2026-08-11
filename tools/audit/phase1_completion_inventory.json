@@ -549,7 +549,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 43,
+   "count": 42,
    "ids": [
     "OI-105",
     "OI-107",
@@ -585,7 +585,6 @@
     "OI-338",
     "OI-346",
     "OI-347",
-    "OI-353",
     "OI-359",
     "OI-45",
     "OI-46",
@@ -598,7 +597,7 @@
   },
   "the_wide_cut": {
    "what_it_is": "The narrow cut UNION every open row whose own text carries a specification-falsity signal. Deliberately over-inclusive: an over-included row simply carries its own gate verdict and is judged nowhere here.",
-   "count": 62,
+   "count": 61,
    "ids": [
     "OI-105",
     "OI-107",
@@ -647,7 +646,6 @@
     "OI-346",
     "OI-347",
     "OI-352",
-    "OI-353",
     "OI-357",
     "OI-359",
     "OI-360",
@@ -1633,24 +1631,6 @@
     }
    },
    {
-    "id": "OI-353",
-    "title": "★ **Six comments in `src/` say the production notation record path is \"default OFF\"; the configuration sets its default to TRUE** — a reader of any of them learns which analysis arm ships and learns it wrong",
-    "subject_column": "F — doc-sync debt (#10), in the code",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync",
-     "stale"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side"
-    }
-   },
-   {
     "id": "OI-357",
     "title": "★ **The Baroque partial-signature correction lives in the LEGACY key resolver, which the production arm does not run — and whether the joint estimator handles that notation practice AT ALL is unestablished in both direct",
     "subject_column": "B — the analysis (what the production key arm does with a Baroque notation practice the legacy arm detected and corrected)",
@@ -1713,7 +1693,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 41,
+   "count": 40,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1747,7 +1727,6 @@
     "OI-332",
     "OI-341",
     "OI-352",
-    "OI-353",
     "OI-357",
     "OI-359",
     "OI-360",
@@ -1823,7 +1802,6 @@
     "OI-338",
     "OI-346",
     "OI-347",
-    "OI-353",
     "OI-359",
     "OI-360",
     "OI-45",
@@ -1949,8 +1927,8 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 62,
-   "of_which_gate": 41,
+   "open_rows_in_the_wide_cut": 61,
+   "of_which_gate": 40,
    "of_which_apparatus_and_therefore_non_gating": 21,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 6
   },
@@ -2041,7 +2019,6 @@
    "OI-346",
    "OI-347",
    "OI-352",
-   "OI-353",
    "OI-357",
    "OI-359",
    "OI-360",
@@ -2061,9 +2038,9 @@
  },
  "counted": {
   "decisions_recorded": 664,
-  "open_rows_in_the_index": 255,
-  "true_half_wide_cut": 62,
-  "true_half_gating": 41,
+  "open_rows_in_the_index": 254,
+  "true_half_wide_cut": 61,
+  "true_half_gating": 40,
   "complete_half_gap": 30,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

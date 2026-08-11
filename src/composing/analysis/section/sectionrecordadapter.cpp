@@ -23,7 +23,8 @@
 // ── The record-path variant of analyzeSection ────────────────────────────────
 //
 // analyzeSectionFromRecord: NotationRecord -> AnalyzedSection. See sectionrecordadapter.h for the
-// contract, the isolation rules, and the provenance. DORMANT — no src/ caller yet.
+// contract, the isolation rules, and the provenance. LIVE on the production notation path since the
+// user-ratified notation switch (2026-07-27): the notation bridges call it.
 
 #include "composing/analysis/section/sectionrecordadapter.h"
 

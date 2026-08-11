@@ -716,7 +716,8 @@ NoteHarmonicContext analyzeHarmonicContextAtTick(const mu::engraving::Score* sco
         return {};
     }
 
-    // Record arm (default OFF, useJointNotationRecord): the note seam is a VIEW into the whole-score
+    // Record arm (default ON, useJointNotationRecord — the production notation analysis since the
+    // user-ratified notation switch of 2026-07-27): the note seam is a VIEW into the whole-score
     // joint notation record (contract §1 seam 2), NOT the legacy Pass-0 / expanding-window path. Produce
     // the record ONCE and look up `tick`. The bounded-window decode cache is BYPASSED — a whole-score
     // produce per invocation (the P3a/P4 emitter pattern); a record cache is a later, measured concern
@@ -1482,7 +1483,8 @@ void addHarmonicAnnotationsToSelection(mu::engraving::Score* score,
               * 4 * Constants::DIVISION)  // ~8 measures of lookahead
         : endTick;
 
-    // Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint
+    // Record path (default ON, useJointNotationRecord — the production notation analysis since the
+    // user-ratified notation switch of 2026-07-27): derive the AnalyzedSection from the joint
     // estimator's whole-score notation record instead of the legacy Pass-0 stream, and emit the
     // record's derived chord-symbol/Roman strings (§5.6, A2 — the record IS the surface).
     // analyzeSectionFromRecord windows the whole-score record to [startTick, lookaheadEndTick). A

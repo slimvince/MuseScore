@@ -56,15 +56,15 @@ ANCHORS = [
     ("acc_annot",     "src/notation/internal/notationaccessibility.cpp", 204, "harmonicAnnotation(toNote(element))"),
 
     # -- harmonicAnnotation -> Details -> funnel --
-    ("ha_fn",         "src/notation/internal/notationcomposingbridge.cpp", 817, "std::string harmonicAnnotation(const Note* note)"),
-    ("ha_calls",      "src/notation/internal/notationcomposingbridge.cpp", 825, "analyzeNoteHarmonicContextDetails(note)"),
-    ("details_funnel","src/notation/internal/notationcomposingbridge.cpp", 964, "return analyzeHarmonicContextAtTick(sc, tick"),
+    ("ha_fn",         "src/notation/internal/notationcomposingbridge.cpp", 818, "std::string harmonicAnnotation(const Note* note)"),
+    ("ha_calls",      "src/notation/internal/notationcomposingbridge.cpp", 826, "analyzeNoteHarmonicContextDetails(note)"),
+    ("details_funnel","src/notation/internal/notationcomposingbridge.cpp", 965, "return analyzeHarmonicContextAtTick(sc, tick"),
 
     # -- the funnel: record-arm produce (the per-selection payer) --
     ("funnel_fn",     "src/notation/internal/notationcomposingbridge.cpp", 703, "NoteHarmonicContext analyzeHarmonicContextAtTick"),
-    ("funnel_flag",   "src/notation/internal/notationcomposingbridge.cpp", 729, "prefs->useJointNotationRecord()"),
-    ("funnel_produce","src/notation/internal/notationcomposingbridge.cpp", 732, "produceNotationRecord(score, std::string()"),
-    ("funnel_view",   "src/notation/internal/notationcomposingbridge.cpp", 737, "buildNoteContextFromRecord(rec.record, tick)"),
+    ("funnel_flag",   "src/notation/internal/notationcomposingbridge.cpp", 730, "prefs->useJointNotationRecord()"),
+    ("funnel_produce","src/notation/internal/notationcomposingbridge.cpp", 733, "produceNotationRecord(score, std::string()"),
+    ("funnel_view",   "src/notation/internal/notationcomposingbridge.cpp", 738, "buildNoteContextFromRecord(rec.record, tick)"),
 
     # -- select() emits selectionChanged exactly once, no notationChanged --
     ("select_fn",     "src/notation/internal/notationinteraction.cpp", 1001, "void NotationInteraction::select("),
@@ -84,12 +84,12 @@ ANCHORS = [
     ("chan_sync",     "muse/framework/global/thirdparty/kors_async/async/internal/channelimpl.h", 487, "sendThdata.receiversCall(args ...)"),
 
     # -- other record-arm consumers (action-scoped) --
-    ("emit_fn",       "src/notation/internal/notationcomposingbridge.cpp", 1385, "void addHarmonicAnnotationsToSelection"),
-    ("emit_produce",  "src/notation/internal/notationcomposingbridge.cpp", 1495, "produceNotationRecord(score, std::string()"),
+    ("emit_fn",       "src/notation/internal/notationcomposingbridge.cpp", 1386, "void addHarmonicAnnotationsToSelection"),
+    ("emit_produce",  "src/notation/internal/notationcomposingbridge.cpp", 1497, "produceNotationRecord(score, std::string()"),
     ("implode_fn",    "src/notation/internal/notationimplodebridge.cpp", 1384, "bool populateChordTrack("),
-    ("implode_produce","src/notation/internal/notationimplodebridge.cpp", 1420, "produceNotationRecord(score, std::string()"),
+    ("implode_produce","src/notation/internal/notationimplodebridge.cpp", 1421, "produceNotationRecord(score, std::string()"),
     ("tuning_fn",     "src/notation/internal/notationtuningbridge.cpp", 747, "bool applyRegionTuning("),
-    ("tuning_produce","src/notation/internal/notationtuningbridge.cpp", 777, "produceNotationRecord(score, std::string()"),
+    ("tuning_produce","src/notation/internal/notationtuningbridge.cpp", 778, "produceNotationRecord(score, std::string()"),
     ("annot_sel_fn",  "src/notation/internal/notationinteraction.cpp", 8256, "void NotationInteraction::addAnalyzedHarmonyToSelection"),
     ("annot_sel_call","src/notation/internal/notationinteraction.cpp", 8311, "analyzeNoteHarmonicContext(note, keyFifths, keyMode)"),
     ("ctxmenu_call",  "src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp", 194, "analyzeNoteHarmonicContextDetails(note)"),

@@ -14,8 +14,8 @@
  },
  "population": {
   "rows_parsed": 365,
-  "open_rows": 255,
-  "first_cut_candidates": 64,
+  "open_rows": 254,
+  "first_cut_candidates": 63,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -38,7 +38,7 @@
  },
  "totals": {
   "non_gating": 29,
-  "gates": 35,
+  "gates": 34,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -148,9 +148,6 @@
    ],
    "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject": [
     "OI-360"
-   ],
-   "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side": [
-    "OI-353"
    ],
    "the criterion - the row's subject bears on an instrument": [
     "OI-320"
@@ -637,14 +634,6 @@
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
   },
   {
-   "id": "OI-353",
-   "title": "★ **Six comments in `src/` say the production notation record path is \"default OFF\"; the configuration sets its default to TRUE** — a reader of any of them learns which analysis arm ships and learns it wrong",
-   "subject_column": "F — doc-sync debt (#10), in the code",
-   "verdict": "GATES",
-   "reason": "Six comments in `src/` describe the production notation record path as DEFAULT OFF while the configuration sets its default to true and says so in the comment beside the call. WHAT IS OWED decides it, and what is owed is not a pointer, an anchor, a label, a banner, a filing decision or a section boundary: it is the CORRECTION OF A STATEMENT ABOUT WHICH ANALYSIS ARM RUNS, and D-438's own line names a correction to a statement about the analysis or its build state on the gating side in those words. Which arm ships is the strongest form that statement has -- these are the comments a session reads when the never-work-from-memory rule sends it to the code for exactly that question, and they answer it wrongly in six places. It is the same class as OI-304, whose verdict is GATES on the same clause, and the same class as the resolved OI-232 one surface over -- that row found the identical staleness in ARCHITECTURE.md and closed on the document half only, leaving the code half nobody had looked at. NOT an establishment obligation (#19): no rate, instrument or measurement is affected, and no comment is executable -- the behaviour is what the configuration says. Recorded against the row's SUBJECT, never its remedy; the remedy is a `src/` edit no wave under the phase-1 freeze may make.",
-   "gate_ground": "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side"
-  },
-  {
    "id": "OI-360",
    "title": "★ **The decisions register still has NO mechanism that could catch a quote belonging to a different rule than the entry it sits in — and the one candidate has now been MEASURED and does not separate**",
    "subject_column": "E — verification owed / decisions register",
@@ -754,6 +743,12 @@
     "class_basis_or_ground": "the criterion - D-438's line puts specification completion on the gating side",
     "reason": "Whether criterion C1 reaches SUPERSEDED register entries is unruled: the per-kind scheme said to settle it does not carry that kind, and read at its own text it routes those entries the OPPOSITE way -- into the owning specification, the very act the ruling exists to forbid. WHAT IS OWED decides it, and what is owed here is not a pointer, an anchor, a label, a banner or a filing choice: it is WHICH DECISIONS PHASE 1 MUST WRITE INTO A SPECIFICATION. D-438's line names that side explicitly -- 'the completion of a specification GATES, because the phase-1 rule in Conventions makes specifications COMPLETE and TRUE the thing that precedes everything else.' The reach is not one entry: item 1's whole NO-HOME class has no closing act until it is ruled, so the finish line cannot report that item as dischargeable. Recorded against the row's SUBJECT, never its remedy.",
     "closed": "RESOLVED 2026-08-04 - the user ruled the question the row put (D-642), on the basis the row itself named. The verdict was correct while it stood and is kept whole (#12); it is retired because the row closed, never because it was wrong."
+   },
+   "OI-353": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "the criterion - a statement about the analysis's BUILD STATE, which D-438's line inside the documentation rows puts on the gating side",
+    "reason": "Six comments in `src/` describe the production notation record path as DEFAULT OFF while the configuration sets its default to true and says so in the comment beside the call. WHAT IS OWED decides it, and what is owed is not a pointer, an anchor, a label, a banner, a filing decision or a section boundary: it is the CORRECTION OF A STATEMENT ABOUT WHICH ANALYSIS ARM RUNS, and D-438's own line names a correction to a statement about the analysis or its build state on the gating side in those words. Which arm ships is the strongest form that statement has -- these are the comments a session reads when the never-work-from-memory rule sends it to the code for exactly that question, and they answer it wrongly in six places. It is the same class as OI-304, whose verdict is GATES on the same clause, and the same class as the resolved OI-232 one surface over -- that row found the identical staleness in ARCHITECTURE.md and closed on the document half only, leaving the code half nobody had looked at. NOT an establishment obligation (#19): no rate, instrument or measurement is affected, and no comment is executable -- the behaviour is what the configuration says. Recorded against the row's SUBJECT, never its remedy; the remedy is a `src/` edit no wave under the phase-1 freeze may make.",
+    "closed": "RESOLVED 2026-08-09 (`cc_instruction_return_continuation_8.md` Task 4) on the user's Ruling 16 of 2026-08-09, BOTH halves in the ruling's own order. The SWEEP ran first and enumerated the family by derivation -- every `src/` comment block making a dormancy, no-consumer or flag-default claim AND naming the joint module or the notation record, graded against two configuration facts re-read at the code on every run (tools/audit/arm_comment_sweep.json). It CONFIRMED the ruling's own prediction that this row's six sites are the found members and not the family: the largest false group declares the JOINT MODULE'S OWN dormancy, which this row never named. Then ONE comment-only commit corrected every FALSE-AT-HEAD block, its diff verified comment-only mechanically; ten blocks whose falsity needs the CALL GRAPH rather than a file-level fact are HELD, not edited, by the ruling's own clause. The verdict above was correct while it stood and is kept whole (#12); it is retired because the row closed, never because it was wrong."
    },
    "OI-354": {
     "verdict": "GATES",

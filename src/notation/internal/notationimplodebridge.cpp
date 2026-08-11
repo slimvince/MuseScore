@@ -1405,7 +1405,8 @@ bool populateChordTrack(
         static_cast<size_t>(bassStaffIdx)
     };
 
-    // Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint
+    // Record path (default ON, useJointNotationRecord — the production notation analysis since the
+    // user-ratified notation switch of 2026-07-27): derive the AnalyzedSection from the joint
     // estimator's whole-score notation record (analyzeSectionFromRecord — the P3a pattern) instead of
     // the legacy Pass-0 stream, then run the SAME implode emitter with the record-arm specifics
     // (Roman = published fact, rootless symbol suppressed, two-mode source keys). A produce failure

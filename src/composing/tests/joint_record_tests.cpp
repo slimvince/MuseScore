@@ -25,7 +25,8 @@
 // INDEPENDENTLY-STATED expectations (a test-local recomputation, never the code under test), the
 // provenance block against the compiled-in embedded constants, and the augmented-sixth sub-type on
 // constructed sounding-content cases. The decode uses the compiled-in EMBEDDED tables (the production
-// source). The module stays DORMANT — nothing in src/ reads the record.
+// source). The record is LIVE on the production notation path since the user-ratified notation
+// switch (2026-07-27): the notation bridges read it.
 
 #include <gtest/gtest.h>
 

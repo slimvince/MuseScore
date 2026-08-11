@@ -214,8 +214,11 @@ target_sources(composing_analysis PRIVATE
     # output-surface record (jointnotationrecord.h) instead of the legacy Pass-0 HarmonicRegion stream,
     # re-collecting per-segment tones over the L1 note surface (composing-side, #7). A consumer of the
     # published record; it never re-decodes, never invokes the legacy analysis, computes no inference.
-    # DORMANT — no src/ caller yet (the named consumer is the span/implode bridge re-plumb behind the
-    # default-OFF useJointNotationRecord flag); byte-identical on production by construction. Spec:
+    # LIVE ON THE PRODUCTION NOTATION PATH since the user-ratified notation switch (2026-07-27): the
+    # named consumer — the span/implode/tuning bridge re-plumb — landed, and useJointNotationRecord
+    # defaults TRUE (composingconfiguration.cpp), so this is what the in-app notation analysis runs.
+    # Explicit false selects the legacy path, still compiled and dormant, and both retire at the
+    # OI-180 map. Spec:
     # cowork_notation_output_contract.md §3/§4; dispatch cc_instruction_notation_seams_2.md.
     ${CMAKE_CURRENT_LIST_DIR}/section/sectionrecordadapter.h
     ${CMAKE_CURRENT_LIST_DIR}/section/sectionrecordadapter.cpp
@@ -352,9 +355,11 @@ target_sources(composing_analysis PRIVATE
     # Reads ONLY the L1/L1.5 published fact surface + the two dependency-free pitch primitives
     # (normalizePc, diatonicMaskFromFifths) — never the legacy L2/L3/L4/L5 analysis. Frozen tables
     # and weights are LOADED AT RUNTIME from the committed artifacts under tools/joint_estimator/.
-    # DORMANT: no production consumer — nothing in src/ calls any joint symbol; it is exercised only
-    # by the composing tests and (a later commit) a default-OFF tools/batch_analyze diagnostic flag.
-    # Byte-identical on production by construction. Dispatch: the joint-estimator C++ module build.
+    # LIVE: this module IS the production inference layer. On the batch/corpus surface since the
+    # OI-178 adoption (2026-07-26, `batch_analyze --joint-inference`), and on the in-app NOTATION
+    # surface since the user-ratified notation switch (2026-07-27) — the notation bridges call the
+    # record producer, and useJointNotationRecord defaults TRUE. Dispatch: the joint-estimator C++
+    # module build.
     ${CMAKE_CURRENT_LIST_DIR}/joint/labelclass.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/labelclass.cpp
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointprimitives.h
@@ -382,8 +387,9 @@ target_sources(composing_analysis PRIVATE
     # jointnotationrecord — the A-native NOTATION OUTPUT-SURFACE RECORD (contract §3): the one output
     # surface the in-app notation path will read (Decision A2). ONE assembly function over the decode
     # outputs + the compiled-in provenance; §3.1 piece block, §3.2 committed + derived chord facts,
-    # §3.3 the established posterior slice, §3.4 the modal reading. DORMANT (declared dormancy — named
-    # consumer: the seams dispatch). It NEVER re-decodes and never reads the score.
+    # §3.3 the established posterior slice, §3.4 the modal reading. LIVE — the named consumer (the
+    # seams dispatch) landed at the notation switch, and the notation bridges read this record. It
+    # NEVER re-decodes and never reads the score.
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointnotationrecord.h
     ${CMAKE_CURRENT_LIST_DIR}/joint/jointnotationrecord.cpp
     # jointnotationproducer — the record-producing ENTRY + the two §1 seam views (notation

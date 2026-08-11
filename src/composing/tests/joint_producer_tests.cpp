@@ -27,7 +27,8 @@
 // committed segment fields against decode_parity_ref.json's selected arm; (b) the score->record wrapper
 // equals buildAdapterFacts + the core on a real .mscx; (c) the adapter-failure path returns an
 // unambiguous failure; (d) the view semantics (overlap; the boundary rule; the edge duties) on a
-// hand-built record. DORMANT: nothing in src/ reads the producer or the views.
+// hand-built record. The producer and both views are LIVE on the production notation path since the
+// user-ratified notation switch (2026-07-27): the notation bridges read them.
 
 #include <gtest/gtest.h>
 

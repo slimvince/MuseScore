@@ -26,7 +26,8 @@
 // C1 two-mode key axis + the raw §3.3 gap in normalizedConfidence + the P1 gap-based assertive gate,
 // re-collects per-segment tones from the L1 surface, ranks the chord-axis alternatives by content
 // score, groups key areas via the shared helper, suspends the pedal fact, and honours the [from, to)
-// overlap window + the null/degenerate guards. DORMANT: nothing in src/ calls the adapter.
+// overlap window + the null/degenerate guards. The adapter is LIVE on the production notation path
+// since the user-ratified notation switch (2026-07-27): the notation bridges call it.
 
 #include <gtest/gtest.h>
 

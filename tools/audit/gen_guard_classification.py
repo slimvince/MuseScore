@@ -243,6 +243,22 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
     # Both tools were added by the previous continuation and reached this pass's derived
     # population without a verdict, which is this tool's own STOP working. A verdict is authored
     # for a tool the population DID reach; none is hand-added for one it did not.
+    "tools/audit/gen_arm_comment_sweep.py": (
+        LIVE, "gen_arm_comment_sweep.py:14-22, :24-31",
+        "★ EVERY HALF OF IT IS A DEMAND ABOUT TODAY, which is what separates a live invariant from "
+        "a dated reading. The two CONFIGURATION FACTS it grades against are RE-READ AT THE CODE on "
+        "every run, located by anchor string rather than by line number — the flag's default value, "
+        "and whether any non-test `src/` translation unit outside the joint module references a "
+        "joint or record symbol — so the day either fact moves, every verdict is re-decided against "
+        "the new one rather than against a stored copy. Its CANDIDATE POPULATION is derived from "
+        "the tree by scanning every source and build file, so it grows as the tree grows. And its "
+        "two STOPs are live demands in both directions: a candidate block with no authored verdict "
+        "halts it, so a comment written tomorrow cannot enter the population unclassified; and a "
+        "verdict for a block the scan no longer finds halts it too, so a verdict cannot outlive "
+        "the comment it grades. It stores no dated measurement of anything. ★ WHAT IT DOES NOT "
+        "ASSERT, stated so the verdict is not read wider than it is: it does not claim the "
+        "authored verdicts are RIGHT — only that every candidate carries one and that the facts "
+        "they rest on still hold."),
     "tools/audit/index_status_lint.py": (
         LIVE, "index_status_lint.py:4-7, :16-20, :22-24",
         "It PARSES `OPEN_ITEMS.md` on every run and asserts a property of the index AS IT STANDS: "

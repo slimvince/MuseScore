@@ -7,7 +7,7 @@
           "src/notation/internal/notationaccessibility.cpp:118",
           "src/notation/internal/notationaccessibility.cpp:203",
           "src/notation/internal/notationaccessibility.cpp:204",
-          "src/notation/internal/notationcomposingbridge.cpp:732",
+          "src/notation/internal/notationcomposingbridge.cpp:733",
           "muse/framework/global/thirdparty/kors_async/async/internal/channelimpl.h:487"
         ],
         "code_explanation": "isSingle && isNote -> harmonicAnnotation -> synchronous whole-score produceNotationRecord on the UI thread; paint blocked until it returns",
@@ -43,7 +43,7 @@
       {
         "citations": [
           "muse/framework/global/thirdparty/kors_async/async/internal/channelimpl.h:487",
-          "src/notation/internal/notationcomposingbridge.cpp:732"
+          "src/notation/internal/notationcomposingbridge.cpp:733"
         ],
         "code_explanation": "the synchronous whole-score decode blocks the UI thread; paint AND input dispatch (the spacebar shortcut) starve together and recover together when produceNotationRecord returns \u2014 consistent with UI-thread blocking, not an aborted chain (hypothesis (b) is dead)",
         "field": "spacebar start/stop works INSTANTLY once the highlight has rendered, and not before",
@@ -56,7 +56,7 @@
     "anchor_count": 38,
     "anchors_verified": true,
     "generated_by": "tools/notation_seams/gen_callpath_facts.py",
-    "git_hash": "7dcfbf2096eeb655511ba6fbf4916409d942fc06",
+    "git_hash": "f007bc473b03643f31e33fde661d2182381d3139",
     "note": "READ-ONLY code-fact extraction; no production code touched. Every claim's citation was re-verified against the source at this git_hash. Re-run to reproduce; an anchor mismatch exits nonzero."
   },
   "open_item": "OI-206",
@@ -114,11 +114,11 @@
     "funnel_gate_citations": [
       "src/notation/internal/notationaccessibility.cpp:203",
       "src/notation/internal/notationaccessibility.cpp:204",
-      "src/notation/internal/notationcomposingbridge.cpp:817",
-      "src/notation/internal/notationcomposingbridge.cpp:825",
-      "src/notation/internal/notationcomposingbridge.cpp:964",
-      "src/notation/internal/notationcomposingbridge.cpp:729",
-      "src/notation/internal/notationcomposingbridge.cpp:732"
+      "src/notation/internal/notationcomposingbridge.cpp:818",
+      "src/notation/internal/notationcomposingbridge.cpp:826",
+      "src/notation/internal/notationcomposingbridge.cpp:965",
+      "src/notation/internal/notationcomposingbridge.cpp:730",
+      "src/notation/internal/notationcomposingbridge.cpp:733"
     ]
   },
   "q2_produce_calls_per_single_note_event": {
@@ -134,7 +134,7 @@
       "src/notation/internal/notationinteraction.cpp:387",
       "src/notation/internal/notationinteraction.cpp:395",
       "src/notation/internal/notationinteraction.cpp:344",
-      "src/notation/internal/notationcomposingbridge.cpp:732"
+      "src/notation/internal/notationcomposingbridge.cpp:733"
     ],
     "reasoning": [
       "A single-note mouse click routes mousePress_considerSelect -> select({hitElement}, SelectType::SINGLE); ctrl-click uses SelectType::ADD (making a list, not a single).",
@@ -155,7 +155,7 @@
       "src/notation/internal/notationinteraction.cpp:395",
       "muse/framework/global/thirdparty/kors_async/async/internal/channelimpl.h:596",
       "muse/framework/global/thirdparty/kors_async/async/internal/channelimpl.h:487",
-      "src/notation/internal/notationcomposingbridge.cpp:732"
+      "src/notation/internal/notationcomposingbridge.cpp:733"
     ]
   },
   "q4_other_consumers_frequency": {
@@ -163,28 +163,28 @@
       {
         "consumer": "note-seam status bar (accessibility)",
         "entry": "singleElementAccessibilityInfo -> harmonicAnnotation -> analyzeHarmonicContextAtTick",
-        "produce_call_site": "src/notation/internal/notationcomposingbridge.cpp:732",
+        "produce_call_site": "src/notation/internal/notationcomposingbridge.cpp:733",
         "trigger_scope": "PER single-note SELECTION change (the interactive per-event payer)"
       },
       {
         "consumer": "span-annotation emit (Add chord symbols/Roman numerals to selection)",
         "entry": "addHarmonicAnnotationsToSelection -> produceNotationRecord",
-        "fn": "src/notation/internal/notationcomposingbridge.cpp:1385",
-        "produce_call_site": "src/notation/internal/notationcomposingbridge.cpp:1495",
+        "fn": "src/notation/internal/notationcomposingbridge.cpp:1386",
+        "produce_call_site": "src/notation/internal/notationcomposingbridge.cpp:1497",
         "trigger_scope": "PER explicit annotate command over a range (once per invocation)"
       },
       {
         "consumer": "implode chord track",
         "entry": "populateChordTrack -> produceNotationRecord",
         "fn": "src/notation/internal/notationimplodebridge.cpp:1384",
-        "produce_call_site": "src/notation/internal/notationimplodebridge.cpp:1420",
+        "produce_call_site": "src/notation/internal/notationimplodebridge.cpp:1421",
         "trigger_scope": "PER Implode command (once)"
       },
       {
         "consumer": "region tuning",
         "entry": "applyRegionTuning -> produceNotationRecord",
         "fn": "src/notation/internal/notationtuningbridge.cpp:747",
-        "produce_call_site": "src/notation/internal/notationtuningbridge.cpp:777",
+        "produce_call_site": "src/notation/internal/notationtuningbridge.cpp:778",
         "trigger_scope": "PER tuning-apply command (once)"
       },
       {

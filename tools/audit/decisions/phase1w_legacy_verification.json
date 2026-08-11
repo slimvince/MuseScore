@@ -129,7 +129,7 @@
    "D-329",
    "D-429"
   ],
-  "register_size_at_this_tree": 663,
+  "register_size_at_this_tree": 664,
   "derivation": "every decision in backbone_decisions.json whose `legacy_subject` field is truthy; no figure in the record is used or quoted (D-431, and OI-289's own instruction to re-derive)."
  },
  "recorded_figures_that_do_not_match": [
@@ -170,7 +170,7 @@
    "recorded_figure": 75,
    "located_at": {
     "file": "STATUS.md",
-    "line": 217,
+    "line": 229,
     "line_text": "occurrences; register `--check` across 21 files; open-items living check 278/278). **NEXT: the user ratifies (or corrects) D-401…D-405 and the 75-entry LEGACY"
    },
    "note": "The phase-1i entry. Still in the live STATUS entries, not archived.",
@@ -260,7 +260,7 @@
   },
   "NOTE_SEAM_RECORD": {
    "file": "src/notation/internal/notationcomposingbridge.cpp",
-   "line": 737,
+   "line": 738,
    "line_text": "return buildNoteContextFromRecord(rec.record, tick);",
    "says": "Branch point 1 of 4. With the flag at its default the note seam returns the record view and never reaches the legacy funnel below."
   },
@@ -272,37 +272,37 @@
   },
   "SPAN_RECORD": {
    "file": "src/notation/internal/notationcomposingbridge.cpp",
-   "line": 1500,
+   "line": 1502,
    "line_text": "const auto section = mu::composing::analysis::analyzeSectionFromRecord(",
    "says": "Branch point 2 of 4 — the span annotation emitter."
   },
   "IMPLODE_RECORD": {
    "file": "src/notation/internal/notationimplodebridge.cpp",
-   "line": 1425,
+   "line": 1426,
    "line_text": "const auto section = mu::composing::analysis::analyzeSectionFromRecord(",
    "says": "Branch point 3 of 4 — the implode chord track."
   },
   "TUNING_RECORD": {
    "file": "src/notation/internal/notationtuningbridge.cpp",
-   "line": 782,
+   "line": 783,
    "line_text": "const auto section = mu::composing::analysis::analyzeSectionFromRecord(",
    "says": "Branch point 4 of 4 — the tuning region path."
   },
   "RECORD_SECTION": {
    "file": "src/composing/analysis/section/sectionrecordadapter.cpp",
-   "line": 309,
+   "line": 310,
    "line_text": "AnalyzedSection analyzeSectionFromRecord(const mu::engraving::Score* sc,",
    "says": "The record arm's whole section derivation. Read in full (:309-362): it calls NoteModel::build, weightedPcView, regionFromRecordSegment and groupKeyAreas, and calls NEITHER analyzeChord, NOR resolveKeyAndModeRanked, NOR KeyModeSequenceDecoder, NOR the post-scoring gates. That is why the legacy scorer and the legacy key layer are off the production notation path."
   },
   "RECORD_GROUPKEYAREAS": {
    "file": "src/composing/analysis/section/sectionrecordadapter.cpp",
-   "line": 360,
+   "line": 361,
    "line_text": "groupKeyAreas(out.regions, out.keyAreas);",
    "says": "The one piece of sectionanalyzer.cpp the record arm DOES run — the shared confidence-gated key-area grouping."
   },
   "RECORD_EXPOSURE": {
    "file": "src/composing/analysis/section/sectionrecordadapter.cpp",
-   "line": 69,
+   "line": 70,
    "line_text": "constexpr double kAssertiveKeyExposureGap = 1.055757;",
    "says": "The record arm declares its OWN exposure constant on the record gap scale; it does not read the legacy 0.5/0.8 confidence gates."
   },
@@ -1656,33 +1656,8 @@
  "findings_rowed_elsewhere": {
   "stale_record_arm_comments": {
    "what": "Comments in src/ and tools/ that still describe the record arm as \"default OFF\", or the record section adapter as having no src/ caller, contradicting the default at composingconfiguration.cpp:178 and their own call sites. Each is located below; correcting them is a src/ change, which this wave forbids.",
-   "count": 6,
+   "count": 1,
    "located": [
-    {
-     "file": "src/notation/internal/notationcomposingbridge.cpp",
-     "line": 719,
-     "line_text": "// Record arm (default OFF, useJointNotationRecord): the note seam is a VIEW into the whole-score"
-    },
-    {
-     "file": "src/notation/internal/notationcomposingbridge.cpp",
-     "line": 1485,
-     "line_text": "// Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint"
-    },
-    {
-     "file": "src/notation/internal/notationimplodebridge.cpp",
-     "line": 1408,
-     "line_text": "// Record path (default OFF, useJointNotationRecord): derive the AnalyzedSection from the joint"
-    },
-    {
-     "file": "src/notation/internal/notationtuningbridge.cpp",
-     "line": 765,
-     "line_text": "// ── Harmonic analysis (record path default OFF, useJointNotationRecord) ───"
-    },
-    {
-     "file": "src/composing/analysis/section/sectionrecordadapter.cpp",
-     "line": 26,
-     "line_text": "// contract, the isolation rules, and the provenance. DORMANT — no src/ caller yet."
-    },
     {
      "file": "tools/batch_analyze.cpp",
      "line": 4916,

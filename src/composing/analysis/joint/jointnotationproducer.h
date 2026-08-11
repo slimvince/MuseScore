@@ -40,8 +40,10 @@ class Score;
 // and the note view that READ the produced record. It composes ONLY already-delivered, established
 // parts (buildAdapterFacts + the embedded tables/adapter/weights + decodePiece + assembleNotationRecord,
 // which itself attaches the §3.3 slice) — no inference, no new derivation. The consumer side (the
-// re-plumbed notation consumers) is the SEAMS PART 2 dispatch; this increment builds the producer + the
-// views and leaves them DORMANT (declared dormancy — nothing in src/ calls them yet).
+// re-plumbed notation consumers) was the SEAMS PART 2 dispatch, and it LANDED: since the
+// user-ratified notation switch (2026-07-27) the notation bridges call this producer and
+// useJointNotationRecord defaults TRUE, so the producer and both views are LIVE on the in-app
+// notation path.
 //
 // Spec: cowork_notation_output_contract.md §1 (the two seams) + §3 (the record); the producer chain is
 // the same as tools/batch_analyze --joint-inference's decode + assembleNotationRecord.

@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 46,
-    "re_derives_a_live_invariant": 34,
+    "tools_classified": 47,
+    "re_derives_a_live_invariant": 35,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 0
@@ -275,6 +275,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "reaim_home_anchors.py:13-22",
       "why": "`--check` reports what would move and writes nothing, reading the drift from the verifier's OWN machinery so the number is by construction the number the guard reports. \"No register home anchor has drifted\" is a property of the tree right now.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_arm_comment_sweep.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_arm_comment_sweep.py:14-22, :24-31",
+      "why": "★ EVERY HALF OF IT IS A DEMAND ABOUT TODAY, which is what separates a live invariant from a dated reading. The two CONFIGURATION FACTS it grades against are RE-READ AT THE CODE on every run, located by anchor string rather than by line number — the flag's default value, and whether any non-test `src/` translation unit outside the joint module references a joint or record symbol — so the day either fact moves, every verdict is re-decided against the new one rather than against a stored copy. Its CANDIDATE POPULATION is derived from the tree by scanning every source and build file, so it grows as the tree grows. And its two STOPs are live demands in both directions: a candidate block with no authored verdict halts it, so a comment written tomorrow cannot enter the population unclassified; and a verdict for a block the scan no longer finds halts it too, so a verdict cannot outlive the comment it grades. It stores no dated measurement of anything. ★ WHAT IT DOES NOT ASSERT, stated so the verdict is not read wider than it is: it does not claim the authored verdicts are RIGHT — only that every candidate carries one and that the facts they rest on still hold.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

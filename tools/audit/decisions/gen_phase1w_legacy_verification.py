@@ -143,7 +143,7 @@ ANCHORS = {
                 'statement about this default, not about compilation.',
     },
     'NOTE_SEAM_RECORD': {
-        'file': 'src/notation/internal/notationcomposingbridge.cpp', 'line': 737,
+        'file': 'src/notation/internal/notationcomposingbridge.cpp', 'line': 738,
         'quote': 'return buildNoteContextFromRecord(rec.record, tick);',
         'says': 'Branch point 1 of 4. With the flag at its default the note seam returns the '
                 'record view and never reaches the legacy funnel below.',
@@ -155,22 +155,22 @@ ANCHORS = {
                 '— called at :753, BELOW the record return at :737.',
     },
     'SPAN_RECORD': {
-        'file': 'src/notation/internal/notationcomposingbridge.cpp', 'line': 1500,
+        'file': 'src/notation/internal/notationcomposingbridge.cpp', 'line': 1502,
         'quote': 'const auto section = mu::composing::analysis::analyzeSectionFromRecord(',
         'says': 'Branch point 2 of 4 — the span annotation emitter.',
     },
     'IMPLODE_RECORD': {
-        'file': 'src/notation/internal/notationimplodebridge.cpp', 'line': 1425,
+        'file': 'src/notation/internal/notationimplodebridge.cpp', 'line': 1426,
         'quote': 'const auto section = mu::composing::analysis::analyzeSectionFromRecord(',
         'says': 'Branch point 3 of 4 — the implode chord track.',
     },
     'TUNING_RECORD': {
-        'file': 'src/notation/internal/notationtuningbridge.cpp', 'line': 782,
+        'file': 'src/notation/internal/notationtuningbridge.cpp', 'line': 783,
         'quote': 'const auto section = mu::composing::analysis::analyzeSectionFromRecord(',
         'says': 'Branch point 4 of 4 — the tuning region path.',
     },
     'RECORD_SECTION': {
-        'file': 'src/composing/analysis/section/sectionrecordadapter.cpp', 'line': 309,
+        'file': 'src/composing/analysis/section/sectionrecordadapter.cpp', 'line': 310,
         'quote': 'AnalyzedSection analyzeSectionFromRecord(const mu::engraving::Score* sc,',
         'says': 'The record arm\'s whole section derivation. Read in full (:309-362): it calls '
                 'NoteModel::build, weightedPcView, regionFromRecordSegment and groupKeyAreas, and '
@@ -179,13 +179,13 @@ ANCHORS = {
                 'are off the production notation path.',
     },
     'RECORD_GROUPKEYAREAS': {
-        'file': 'src/composing/analysis/section/sectionrecordadapter.cpp', 'line': 360,
+        'file': 'src/composing/analysis/section/sectionrecordadapter.cpp', 'line': 361,
         'quote': 'groupKeyAreas(out.regions, out.keyAreas);',
         'says': 'The one piece of sectionanalyzer.cpp the record arm DOES run — the shared '
                 'confidence-gated key-area grouping.',
     },
     'RECORD_EXPOSURE': {
-        'file': 'src/composing/analysis/section/sectionrecordadapter.cpp', 'line': 69,
+        'file': 'src/composing/analysis/section/sectionrecordadapter.cpp', 'line': 70,
         'quote': 'constexpr double kAssertiveKeyExposureGap = 1.055757;',
         'says': 'The record arm declares its OWN exposure constant on the record gap scale; it does '
                 'not read the legacy 0.5/0.8 confidence gates.',
@@ -985,7 +985,20 @@ VERDICTS = [
 # Comments that still describe the record arm as OFF or uncalled, contradicting the default
 # at composingconfiguration.cpp:178 and their own call sites. Located, never hand-counted
 # (#17f); the count is derived from this list's length.
-STALE_RECORD_ARM_COMMENTS = [
+# ★ THIS SIDE FINDING IS DISCHARGED IN `src/`, AND ITS TABLE IS RETIRED RATHER THAN DELETED (#12,
+# D-648) — CC, `cc_instruction_return_continuation_8.md` Task 4, on the user's Ruling 16 of
+# 2026-08-09.  Five of the six sites below were CORRECTED by that ruling's one comment-only commit,
+# so their quotes are gone and this tool STOPPED on the first of them with "the premise has
+# changed" — that guard working.  The former table is kept whole here as the record of what the
+# finding named; the LIVE table below carries only what still stands.
+#
+# ★ THE SIXTH IS NOT DISCHARGED AND IS NOT SILENTLY DROPPED: `tools/batch_analyze.cpp` still says
+# the notation layer stays on the legacy analysis, which the 2026-07-27 notation switch made false.
+# It is OUTSIDE Ruling 16's stated scope — that ruling licenses ONE comment-only `src/` commit, and
+# a measurement tool is neither `src/` nor a build file — so it is left standing and surfaced, not
+# edited.  It is also outside the enumerated family the Ruling-16 sweep derives
+# (`tools/audit/arm_comment_sweep.json`), whose scan is `src/` by the same scope.
+STALE_RECORD_ARM_COMMENTS_RETIRED_2026_08_09 = [
     ('src/notation/internal/notationcomposingbridge.cpp', 719,
      'Record arm (default OFF, useJointNotationRecord)'),
     ('src/notation/internal/notationcomposingbridge.cpp', 1485,
@@ -996,6 +1009,9 @@ STALE_RECORD_ARM_COMMENTS = [
      'record path default OFF, useJointNotationRecord'),
     ('src/composing/analysis/section/sectionrecordadapter.cpp', 26,
      'DORMANT'),
+]
+
+STALE_RECORD_ARM_COMMENTS = [
     ('tools/batch_analyze.cpp', 4916,
      'notation layer stays on the legacy analysis'),
 ]
