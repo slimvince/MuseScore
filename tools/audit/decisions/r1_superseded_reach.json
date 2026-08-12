@@ -128,7 +128,7 @@
      "named_as": "D-191",
      "register_id": "D-191",
      "named_in": "superseded_by",
-     "home": "CLAUDE.md:1009",
+     "home": "CLAUDE.md:1022",
      "home_class": "process",
      "status": "live",
      "homed": true,
@@ -453,7 +453,7 @@
   },
   {
    "id": "D-475",
-   "title": "The BCMH chorale annotations are NOT established as an instrument: the annotator is unknown, the annotations sit on a reduction, and they reached the repository through a machine translation",
+   "title": "The BCMH chorale annotations are NOT established as an instrument: one named annotator with no independent second annotation, the annotations sit on a reduction, and they reached the repository through a machine translation",
    "status": "live",
    "home_at_HEAD": "cowork_term_theory_grounding.md:274-279",
    "home_class": "gap",

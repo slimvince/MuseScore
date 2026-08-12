@@ -325,8 +325,8 @@
         "ARCHITECTURE.md:2641",
         "ARCHITECTURE.md:4202",
         "ARCHITECTURE.md:5444",
-        "CLAUDE.md:427",
-        "CLAUDE.md:820"
+        "CLAUDE.md:440",
+        "CLAUDE.md:833"
       ]
     },
     {
@@ -670,7 +670,7 @@
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:4",
         "ARCHITECTURE.md:48",
-        "CLAUDE.md:276"
+        "CLAUDE.md:289"
       ]
     },
     {
@@ -916,9 +916,9 @@
       "current_contract_home": 4,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "CLAUDE.md:1193",
+      "delegation_citation": "CLAUDE.md:1206",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "CLAUDE.md:1193",
+      "delegation_citation_now": "CLAUDE.md:1206",
       "delegation_line_now": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -929,12 +929,12 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:2925",
-        "CLAUDE.md:1189",
-        "CLAUDE.md:1191",
-        "CLAUDE.md:1193",
-        "CLAUDE.md:1217",
-        "CLAUDE.md:1225",
-        "CLAUDE.md:1244"
+        "CLAUDE.md:1202",
+        "CLAUDE.md:1204",
+        "CLAUDE.md:1206",
+        "CLAUDE.md:1230",
+        "CLAUDE.md:1238",
+        "CLAUDE.md:1257"
       ]
     },
     {
@@ -950,7 +950,7 @@
       "form": "provenance-attribution",
       "delegation_citation": "CLAUDE.md:129",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "CLAUDE.md:284",
+      "delegation_citation_now": "CLAUDE.md:297",
       "delegation_line_now": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
       "delegation_written_since_the_check": true,
       "what_the_naming_was_at_the_check": "\"Companion standing rules elsewhere: … the MEASURE-BEFORE-BUILD gate (`cowork_engage_arc_plan.md`, …)\" — a naming inside a list of citations.",
@@ -961,9 +961,9 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:2106",
-        "CLAUDE.md:280",
-        "CLAUDE.md:285",
-        "CLAUDE.md:468"
+        "CLAUDE.md:293",
+        "CLAUDE.md:298",
+        "CLAUDE.md:481"
       ]
     },
     {
@@ -990,7 +990,7 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:1264",
-        "CLAUDE.md:236"
+        "CLAUDE.md:249"
       ]
     },
     {
@@ -1018,7 +1018,7 @@
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:5782",
         "ARCHITECTURE.md:7054",
-        "CLAUDE.md:278"
+        "CLAUDE.md:291"
       ]
     },
     {

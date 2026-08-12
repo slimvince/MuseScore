@@ -201,6 +201,19 @@ override convenience.
     recorded at the principle rather than only on the row:* the principle DEMANDS a quantity the
     literature does not hold, so a reader meeting the demand must also meet the route to it and the
     condition under which that route is finished.
+    **★ AND THE CONTACT ROUTE CLOSED BY ANSWER, NOT BY SILENCE — WITH THE ANSWER THAT THE ONE
+    LOCALLY HELD CANDIDATE CANNOT SUPPLY THE QUANTITY EITHER (user-ruled 2026-08-11).** Clause (a)
+    provides for the laboratory contact closing by silence after a reasonable wait. **It closed by
+    answer.** The laboratory states one annotator, named, PhD in musicology, who annotated the
+    harmonic spines; weekly review with the corpus author and **no independent annotation**; and no
+    duplicate or superseded readings. **So BCMH joins the class this principle already names for the
+    Mozart-sonatas corpus — consensus-built, so agreement cannot be recovered after the fact** — and
+    inter-annotator agreement inside it is not unpublished but nonexistent. **The consequence for
+    this principle: the ceiling is not obtainable from inside any single corpus in this repertoire**,
+    which is why OI-179's measurement is a comparison BETWEEN annotation traditions. *NOT claimed:*
+    that no corpus anywhere could supply it — the claim is about the enumerated set the D-474 block
+    names, and a corpus outside that set is a finding rather than a contradiction. *The errata limb
+    of the contact is UNANSWERED and stands outstanding.*
 22. **Every hard gate carries a pre-declared protocol for the largest change it will face.**
     A gate written only for incremental change must not be amended under the pressure of a
     live diff — the exceptional-event variant (e.g. architecture-scale adoption: aggregate
