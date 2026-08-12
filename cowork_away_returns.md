@@ -6859,3 +6859,232 @@ covers only the register's own home anchors.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# ═══ THE LAPSE RECORDS (dispatch `cc_instruction_resume_lapse_records.md`, performed 2026-08-12) ═══
+
+> **All four tasks performed, and no STOP rule fired. FIVE commits, all pushed to `origin/master`:**
+> `9a064da038` (Task 1), `c04d28a5b8` (Task 2), `bb2034568a` (the finding Task 2's own verification
+> turned up), `582eb44683` (Task 3), and this close. No `src/` edit, no behaviour change, no golden
+> refreshed, no corpus of scores touched, nothing under `tools/corpus/` or `tools/robust_stop/`
+> moved. No status cell moved and no row closed. **The guard set ends where it began** — the same
+> single failing member, now rowed — **and `guard_state.json` re-derives byte-identically at the
+> closing tree.**
+
+## 3 (continued). Per-task log — the lapse records
+
+### ★ RULING 67 AS THE EXECUTING ARM RECEIVED IT, AND ITS NARROWNESS IS RECORDED AS THE RULING
+
+**The ruling released the halt and created no rule.** §0f's clause — *a guard remains red for a
+reason the cut does not explain* — does not fire on `gen_filing_convention_application.py`, because
+its cause is established at the object and was recorded one batch earlier at **§1.21** as ordinary
+**D-648** maintenance separable from the cut. **THE NARROWNESS IS THE RULING AND IS NOT A QUALIFIER
+ON IT: it is an instance ruling, it creates no rule, and no later session may cite it as precedent
+for reading a declared STOP purposively.** This batch did not cite it that way and did not read any
+other STOP purposively — the record of that is the next paragraph but one, where a declared STOP
+was answered by measurement rather than by argument.
+
+**What it did NOT license, and this batch took none of it.** The D-648 maintenance on that tool was
+not performed; the tool's authored verdict was not retired; its signature was not widened; and the
+guard is still red at this batch's end, by the user's own choice of route. **What the batch did
+instead is the route the ruling directed: the defect is ROWED.**
+
+### Task 1 — COMPLETE. The guard defect rowed, a second apparatus finding rowed beside it, and A1 discharged by measurement rather than by argument
+
+**Commit `9a064da038`**, four paths: the INDEX, two new detail files and the bijection report.
+
+**★ A1 IS DISCHARGED, AND THE ORDER OF THE CHECK IS THE POINT.** The dispatch asks whether the
+bearing cut now derives a new row's verdict or whether an authored one is still required, and makes
+the second answer a STOP. It was answered **at the code and before the commit**, not from the
+previous batch's report of it: `gen_phase1_finish_line.py` reads per-row verdicts from the committed
+apparatus declaration through `apparatus_facts()` and re-decides none, so an authored verdict is
+required exactly when a row reaches that declaration's **first cut**. The declaration was then run
+over the enlarged index and **RAN TO COMPLETION**, reporting only that its artifact no longer matched
+— the population movement Task 2 absorbs — rather than stopping on a candidate with no verdict.
+**No verdict was authored, no STOP fired, and neither row reaches the first cut.**
+
+**A2 IS SATISFIED:** index row and detail file for each row in one commit (rule (c)), no gating
+verdict and no owed verdict by hand, and each row takes whatever the regenerated cut gives it.
+
+**[[OI-372]] is the row the dispatch ordered.** Verified at the objects rather than carried from
+either record: the tool exits non-zero on its third STOP, and because that STOP is raised before
+anything is written **the tool produces nothing at all** — its candidate population, its
+per-candidate verdicts and its soundness verdict against its own seeds are all unavailable while it
+stands. Its `--derive-only` path lists what the derivation currently carries and the named document
+is not among them. **What the row adds to §1.21 and §1.22 is the half that makes it a row rather
+than an act:** #12 asks that the verdict be moved out WHOLE, and **this tool has nowhere to move it
+to** — `gen_nongating_apparatus_rows.py` and `gen_gating_row_sizing.py` each carry a retired block
+for exactly this case, on the same recorded ground, and this one carries none.
+
+**[[OI-373]] is a finding of the batch's opening guard run**, launched before any file was edited.
+The guard-set runner cannot exit clean: a tool joined its derived candidate population with no
+authored invocation, which that tool's own rule makes a STOP whatever every member of the set said.
+The committed artifact already carries the condition at `the_population.unclassified_candidates`;
+what was missing is that no open row and no batch record named it. **Rowed and left under D-641**,
+with nothing about the guard set adjusted.
+
+**★ STATED HERE BECAUSE IT IS A JUDGMENT THE USER MAY OVERRULE IN ONE LINE.** Both cuts that decide
+where a row lands — the apparatus declaration's first cut and the completion inventory's wide cut —
+are **substring matches over free-text cells the row's author writes**. This session was aware of
+both while writing and wrote each row to describe its own subject: neither row asserts that a
+specification states something false, and neither subject is the tracking or documentation class the
+first cut looks for. It is said plainly rather than left to be noticed, because the alternative
+reading — that wording was chosen for its effect on a derivation — is the one a careful reader would
+have to rule out. **If either row belongs in a population it did not land in, its subject cell is one
+edit away.**
+
+### Task 2 — COMPLETE. The movement is two open rows and nothing else, the falsification test passes again, and no guard moved
+
+**Commit `c04d28a5b8`**, three artifacts, all regenerated and none edited.
+
+**THE MOVEMENT, BOTH WAYS, and it is smaller than the act that caused it.** The two rows appear in
+exactly one field of two artifacts — the index's open-row count. The apparatus declaration's
+first-cut candidate set, its NON-GATING and GATES sets, the completion inventory's TRUE-half wide
+cut, its gating split and every COMPLETE-half class are unchanged, and **`phase1_finish_line.json`
+regenerated BYTE-IDENTICALLY**: its writer ran and the file did not move, so no item's population,
+no item's gate and no member of the lapse population changed. **The claim was then verified at the
+objects** by diffing the two commits as git objects rather than describing the change.
+
+**A4 IS DISCHARGED.** The falsification test runs on every regeneration, before anything is written,
+and it ran over the enlarged population: four probes, all empty, verdict PASS. It did not halt, so
+the cut files nothing in the apparatus class that the record elsewhere calls inference-bearing. What
+a PASS does not establish is published with it and is unchanged — one probe still passes vacuously,
+and no probe can establish that no apparatus-classed row bears on the analysis, that being a reading
+of the row.
+
+**WHAT THE GUARD SET DOES:** forty run, thirty-nine passing, one failing — the same single failing
+tool as at the batch's start, now rowed at [[OI-372]]. **No guard went red from this batch's acts**
+and none was adjusted. The runner's own STOP stands and is [[OI-373]]'s; the guard classification
+re-derives.
+
+### ★ THE FINDING TASK 2's OWN VERIFICATION TURNED UP — [[OI-374]], rowed and left
+
+**Commit `bb2034568a`.** Verifying Task 2's movement claim at the objects carried one line nobody was
+looking for: the guard runner's captured output for `tools/open_items_split_check.py` changed from a
+replacement character to an em dash, with the tool unedited between the two runs. **The mechanism,
+read at the two tools:** `output_encoding.py` reconfigures the CALLING process's streams and sets no
+environment variable, so a child launched by the runner inherits nothing, and the runner decodes each
+child's output as UTF-8 with `errors="replace"`. **Demonstrated both ways rather than argued:** the
+bijection check run twice at this tree, unedited, with only the interpreter's output encoding changed
+— the locale codepage gives a replacement character, UTF-8 gives an em dash — and **neither run
+changed the verdict**, which is why it can sit in a guard artifact unnoticed. The population is
+derived, not listed: four members of the run set do not call the shared module. **And the sharper
+half is the artifact's own sentence**, which says every guard routes its printing through that module
+— not true of those four, for the reason the sentence itself gives ([[OI-305]]). **This is the
+residue [[OI-373]] recorded and explicitly did not diagnose**, and that row's clause saying so was
+corrected in place with the former statement preserved (#12).
+
+### Task 3 — COMPLETE, and the whole population is written. Ruling 66's per-row lapse records
+
+**Commit `582eb44683`**, twenty-five detail files and the finish line.
+
+**Every member of the derived lapse population carries a record**, and the count is the derivation's
+own rather than this report's: `phase1_finish_line.json` →
+`★_the_bearing_cut.the_lapse_population.lapse_records_written` reports `rows_still_owed_a_lapse_record`
+**EMPTY**, checked by searching each row's own detail file for the anchor. **D-672's partial
+allowance was not needed and is not used.**
+
+**A3 IS DISCHARGED AT THE ARTIFACT:** every lapsed row names the derivation that graded it, and the
+rule's own STOP — a row with no named grading does not lapse, it halts the derivation — fired on no
+member. Seventeen rows are graded by **both** the apparatus cut and D-639's reach derivation; the
+other eight say in terms that they are not in that derivation's population and that the apparatus cut
+is the whole of their grading.
+
+**WHAT EACH RECORD SAYS, and each part is there because Ruling 66 asks for it:** that the row stays
+open, stops gating and stops being owed, and that **this is not a resolution** — no status cell moves,
+no row closes, the open-row count is unchanged and nothing about the issue has been done; the
+derivation that graded it, named rather than described; **how to re-open it**, by challenging a named
+derivation rather than rediscovering the issue, which is the ruling's own stated reason for wanting
+these records; and the **#19 clause, which never lapses whatever its subject**, with the point that
+the cut cannot place a row outside the gate whose recorded ground names it.
+
+**★ NOT A TEMPLATE WHERE THE ROW HAS SOMETHING OF ITS OWN.** Eight records carry a clause the generic
+form would have flattened: the row whose ground is the WIDENING rather than the user's own phrase and
+which is expressly the user's to correct; the row admitted on its own recorded status rather than on
+the apparatus class at all; the two rows whose own verdicts keep an establishment run apart from the
+lapsing half; the row whose code substance rides a different row; the row whose substantive sibling
+gates; the row where the mark lapses but the fact it records does not, so #19 governs any use of
+those values exactly as before; and the row whose second recorded doubt would put it on the gating
+side if it were right.
+
+**VERIFIED AFTER THE WRITING:** the open-items bijection passes with **all 200 original items still
+byte-verbatim** — every record was appended after the verbatim row and none touched it — no detail
+file carries a status of its own, the finish line re-derives, and the guard-state artifact re-derives
+byte-identically, so no guard's output moved.
+
+### Task 4 — COMPLETE. The close
+
+Three `STATUS.md` pointer entries, one per completed task, and nothing else in that file, which
+**remains unreadable at HEAD** and whose row [[OI-370]] stays open and gating. One observation is
+recorded because a later session will meet it: the file tools refuse the file on token count **even
+when a line limit is given**, while a small offset-and-limit window reads normally — so the entries
+were written by locating the insertion point with the search tool and editing at a short anchor. That
+is a note about how the refusal behaves, not a change in its verdict. This close is the rest of
+Task 4.
+
+### ★ WHERE THIS BATCH STOPPED
+
+**At the end of its own list, on completion rather than on capacity or on a STOP.** No STOP rule
+fired, and each of the four was tested rather than waved past: **no authored verdict was required for
+a new row** (established by running the declaration, above); **no row lapsed with no named grading**
+(the derivation's own STOP is armed and did not fire); **the falsification test found nothing**; and
+**no guard went red**.
+
+**★ THE FOURTH ONE IS THE ONE THAT NEEDED A READING, AND THE READING IS STATED RATHER THAN ASSUMED.**
+The guard-set runner exits non-zero at this tree, and it did so at the batch's start before any edit.
+That is not a guard going red: `gen_guard_state.py` is **by its own code not a subject of its own
+run** — it names itself in `NOT_A_SUBJECT` — and the guard VERDICTS are unchanged from the committed
+record, the same number run, the same number passing and the same one failing. What the runner
+reports is a fact about the set's MEMBERSHIP, which is [[OI-373]]'s subject. **This is a factual
+reading of what the clause names, not a purposive one**, which Ruling 67 forbids as precedent and
+which this batch did not take.
+
+**The one guard that was red at the batch's start is red at its end**, by the user's own route —
+Ruling 67 released the halt and licensed no repair — and the defect now has a row instead of living
+in a session record.
+
+### ★ THE TWO THINGS THIS BATCH FOUND THAT NOBODY WAS LOOKING FOR, and what they have in common
+
+**One:** the guard-set runner cannot exit clean, and has not been able to since a tool with a
+`--check` mode landed without an authored invocation. **Two:** a guard artifact's captured text
+follows the environment rather than the tree, and the artifact's own ground for trusting its run is
+not true of four of its members.
+
+**What they share is the shape the record keeps meeting:** an AUTHORED table beside a DERIVED
+population, where the two come apart silently and the tool that would say so is the one that stopped.
+[[OI-372]] is the same shape a third time, from the other direction — an authored verdict whose
+document left the derivation. All three were found by running things and reading their output, never
+by reading a record of them.
+
+### ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**One reserved-word collision was caught in this batch's own new prose and corrected before the
+commit that would have carried it:** the bare non-musical *instrument*, in the inherited idiom *"the
+same shape one instrument over"*, which this session had copied from a neighbouring row into both
+[[OI-374]]'s index row and its detail file; both now read *"the same shape at a neighbouring tool"*.
+**Twelfth consecutive batch whose self-check caught a collision in its own new text, and it arrived
+the way the last several did — by restating a neighbouring sentence that already used the collided
+word.**
+
+**Two classes are DELIBERATELY NOT corrected and are named rather than fixed:** the section label
+*instrument / measurement layer*, which is the register's own taxonomy and belongs to [[OI-229]]'s
+scoped pass; and the bare *resolution* and bare *register* for the open-items senses, which this
+batch's prose uses as the surrounding record uses them throughout. Bare *mode* was checked and every
+use in this batch's new text is qualified by its flag name or by an adjective (*`--check` mode*,
+*read-only mode*, *failure mode*), which the convention admits.
+
+**On the D-253 side the guard fired once and was never worked around:** a `grep` aimed at a
+repository path was DENIED and the search was redone through the file tools. Every working-tree read
+in this batch went through Read / Grep / Glob; the shell was used only for committed tools, for the
+sanctioned changed-path enumeration, and for git write operations and object queries by explicit
+hash.
+
+**One thing this batch did that a later one should copy.** Task 2's commit message made a claim about
+what moved, and the claim was then **verified by diffing the two commits as git objects** rather than
+being left as a description. That verification is what found [[OI-374]]. A claim about a diff that is
+never checked against the diff is the cheapest kind of unverified statement a session can leave
+behind.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
