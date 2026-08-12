@@ -243,8 +243,8 @@ override convenience.
     width in the same principle, which is the ambiguity that produced the defect; and **striking the
     consequence sentence**,
     declined because a reader of #21 would then still infer the ceiling might come from citation,
-    which is exactly what D-474 exists to prevent. *The errata limb of the contact is UNANSWERED and
-    stands outstanding.*
+    which is exactly what D-474 exists to prevent. *The errata limb of the contact was RE-ASKED
+    2026-08-11 and AWAITS REPLY; clause (a)'s reasonable-wait clock runs from that date.*
 22. **Every hard gate carries a pre-declared protocol for the largest change it will face.**
     A gate written only for incremental change must not be amended under the pressure of a
     live diff — the exceptional-event variant (e.g. architecture-scale adoption: aggregate
