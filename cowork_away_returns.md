@@ -7482,3 +7482,161 @@ asserted anywhere in this batch, so none is left without its uncertainty.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# ═══ THE OI-375 WIDTH CORRECTION (dispatch `cc_instruction_oi375_width_correction.md`, performed 2026-08-12) ═══
+
+> **All three tasks performed. NO STOP RULE FIRED. THREE commits, all pushed to `origin/master`:**
+> `24aae38885` (Task 1), `91804c3e87` (Task 2), and this close. No `src/` edit, no behaviour change,
+> no golden refreshed, no corpus of scores touched, nothing under `tools/corpus/` or
+> `tools/robust_stop/` moved; **no measurement built, designed, scoped or run, and no ceiling figure
+> exists.** **One status cell moved — [[OI-375]], the row this dispatch exists to close** — and no
+> other. The guard set ends exactly where the batch found it: the same single failing member
+> ([[OI-372]]) and the same runner STOP ([[OI-373]]), both already rowed and discarded.
+
+## 1 (continued). What needs the user
+
+**TWO THINGS, and each is one line either way.**
+
+**(a) ASSUMPTION A2 CAME BACK MIXED, AND THE ACT WAS PERFORMED ANYWAY.** Its check is *no corpus's
+standing is restated that the block above already carries.* It **holds** for the two computable
+corpora: the ruled text points at *"the block above"* without naming them, and where it does name
+them it carries the DESIGN SURFACE's classifications, which the D-474 block does not hold. It does
+**not hold literally** for the ground clause — *"the Mozart sonatas are consensus-built"* and *"ABC
+has no overlap by design"* are the D-474 block's own facts, restated from earlier in the same
+principle. **The text is the user's ruled substance and a session may not re-word a ruling**, so the
+act was performed and the mixed result reported rather than resolved silently. **The fair reading,
+offered rather than assumed:** the clause USES facts whose home remains that block in order to draw
+a new conclusion, which leaves the home where it is and is not a second home (#6). **If the stricter
+reading is meant, the remedy is one line at the principle.** Written up on [[OI-375]]'s detail file
+and not restated further here (#6).
+
+**(b) THE ERRATA LIMB IS STILL OUTSTANDING AND IT IS STILL THE USER'S ACT.** Untouched by this batch,
+carried at all three surfaces where the previous batch put it. It is repeated here only because a
+batch that closes a row about principle #21 is exactly where a reader might assume the limb closed
+with it. **It did not.**
+
+**Nothing else is held.** [[OI-179]] stays **OPEN** and **GATES** under #19, with the closing-act
+clause it gained one batch ago intact.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+**NO NEW ROW. One finding is recorded here, and it is this session's own drafting rather than a
+discovery about the record — which is why it is a close entry and not a row.**
+
+**★ AN UNVERIFIED POSITIONAL COUNT WAS WRITTEN INTO A GOVERNING DOCUMENT'S DEFENSE, AND CAUGHT
+BEFORE THE COMMIT.** Drafting the defense at principle #21, this session carried the phrase *nine
+lines* forward from [[OI-375]]'s own analysis and from the dispatch's §0a. **Counted at the file, the
+distance is not nine**, and no reading of the two anchors this session could construct made it nine.
+The count was removed from all three surfaces it had reached — the principle, the INDEX row and the
+detail file — and replaced with a positional description that does not go stale.
+
+**Why it is worth carrying forward rather than dropping:** **D-432**'s recorded lesson is that a line
+number quoted inside a rule's prose is not a register anchor, so the anchor machinery cannot maintain
+it and it goes stale on the next insertion above it. **This insertion is that next insertion** — it
+moved 55 register anchors by its own line count — so a *nine lines* written into the very same
+paragraph would have been falsified by the act that wrote it. **NOT claimed:** that [[OI-375]]'s own
+pre-existing wording or the dispatch's §0a is wrong; neither was edited, and what a row records of
+its own finding is not this session's to rewrite (#12). **What is claimed** is narrower and is about
+this session: a positional count was carried from one surface to another without being counted, which
+is the never-work-from-memory rule's own failure mode at a very small scale.
+
+## 3 (continued). Per-task log — the width correction
+
+### Task 1 — COMPLETE. The correction, the flip, and the derived surfaces
+
+**Commit `24aae38885`**, 23 paths: `CLAUDE.md`, `OPEN_ITEMS.md`, [[OI-375]]'s detail file, and the
+register data with the ten group files and nine derived artifacts its re-aimed anchors touched.
+
+**★ THE SITING.** The ruled text replaces the consequence sentence and its *NOT claimed* clause
+**inside the existing 2026-08-11 annotation**, in the principle's own voice, and nothing else in that
+annotation moved — the reply's facts, BCMH joining the consensus-built class and the errata limb all
+stand where they were. **The former wording stands in place beneath it (#12)** with the ruling's own
+two declined alternatives, which is the shape **D-674** prescribes for a live governing surface.
+
+**★ A3 WAS CHECKED AT THE REGISTER DATA AND NOT INFERRED, AND ITS ANSWER IS WHY THE EDIT WAS SAFE.**
+No entry's `home` field points anywhere inside the annotation's lines — the two entries bracketing it
+are **D-474**, whose home is the fact-of-absence block, and **D-651**, whose home is the whole
+commissioning block — and the replaced sentence appears in no entry's `verbatim`. **So no verbatim
+was disturbed**, which is also why the STOP rule guarding the D-474 block did not fire, and **no
+register identity was created**, exactly as the assumption directs.
+
+**★ THE COST OF EDITING A GOVERNING DOCUMENT WAS PAID THE STANDING WAY.** The insertion drifted **55**
+register home anchors, every one by the insertion's own line count, and none of them D-474's or
+D-651's — which is itself the evidence that nothing above the edit moved. They were re-aimed from the
+verifier's own numbers, and **nine derivations went red and were REGENERATED BY THEIR OWN GENERATORS,
+never repaired and never adjusted to make a guard green.** One of them, the home-classification
+derivation, wrote seven field changes back into the register data; **the cause was established at the
+object before it was accepted** — those fields carry `CLAUDE.md:<line>` delegation pointers, which the
+insertion shifted. No verdict was authored anywhere.
+
+### Task 2 — COMPLETE. The rider on the proxy premise
+
+**Commit `91804c3e87`**, one path, ten inserted lines and **nothing removed** — which is what *nothing
+else in the note changes* means when checked rather than asserted.
+
+**What the rider adds is a question, not an answer.** The proxy premise already recorded that the
+link between what the measurement yields and what #21 demands is an ASSUMPTION whose validation is
+owed. The rider says what that validation now has to establish: **how tightly an off-repertoire TRUE
+value bounds an on-repertoire PROXY.** It is recorded as OPEN. **Nothing is computed, neither
+computable route is established (#19), and the bracketing is a property of the design surface's
+proposal rather than of any measurement** — stated on its face so the rider cannot be read as
+progress toward the ceiling.
+
+### Task 3 — COMPLETE. The close
+
+**Two `STATUS.md` pointer entries, one per completed task, and nothing else of substance in that
+file**, which remains unreadable in full and whose row [[OI-370]] stays open and gates. This section
+is the close.
+
+**★ ONE ACT BEYOND THE DISPATCH'S LETTER IS DECLARED.** The dispatch says *nothing else in that file*.
+The topmost existing entry carried the `Last updated:` prefix, and writing two newer entries above it
+would have left that prefix naming an entry that is no longer the last update — a statement about the
+file that its own banner makes load-bearing. **The prefix was therefore moved to the new topmost
+entry and removed from the one below it**, which is a two-word change and no content change.
+**Reported rather than done quietly**, and reversible in one edit if the reading is wrong. *The file
+already carried a second, older `Last updated:` marker further down; that one was NOT touched, on the
+standing rule that inherited state is not swept unilaterally.*
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ THE CHECK CAUGHT ITS OWN BATCH'S ONE REAL DEFECT, AND IT WAS NOT A RESERVED WORD.** The
+unverified positional count at §2 above was caught by re-reading the diff of the governing document
+against the sources it cites — the same act that produced [[OI-375]] one batch ago, applied to this
+batch's own text. **Fifteenth consecutive batch whose self-check found something in its own new
+prose**, and the first in that run where the find was a factual claim rather than a vocabulary
+collision.
+
+**★ ON THE RESERVED-WORD CONVENTION.** This batch's new prose was checked for the collided senses.
+Bare *value* and bare *figure* appear only in the record's own standing compounds — *ceiling figure*,
+*a published per-axis agreement value* — and every numerical sense is qualified. Bare *score* does not
+appear in a non-musical sense; the phrase *corpus of scores* is used throughout. Bare *key*, bare
+*mode*, bare *measure*, bare *beat* and bare *scale* do not appear in a non-musical sense. **Two
+inherited idioms were carried knowingly and are named rather than fixed:** the **dated-note** idiom of
+the open-items detail files, which each file's own closing line prescribes in those words, and
+**register entry** / **decisions register**, the record's own standing compounds — both belong to
+[[OI-229]]'s scoped pass and renaming either here would put one file out of step with every sibling.
+
+**★ ON D-253 THE GUARD FIRED ONCE AND WAS NOT WORKED AROUND.** A `git log`/`git status` at the
+session's opening was refused by the guard and the enumeration was redone through the sanctioned
+`tools/audit/changed_paths.py`. **No working-tree file was read through a shell in any dialect**;
+every read of `CLAUDE.md`, `OPEN_ITEMS.md`, the detail files, the design surface and the register data
+went through the file tools. `STATUS.md` was read in bounded ranges through the file tools, which is
+the only way it can now be read at all ([[OI-370]]).
+
+**★ ON THE FIGURES RULE (D-431):** the only quantities stated anywhere in this batch are the count of
+drifted register anchors, the count of regenerated derivations and the commit identities — each of
+which is this session's own act reported at its own output, not a measured quantity restated from an
+artifact. No population, verdict or measured value is restated in this close, in either commit
+message, or in the two `STATUS.md` entries. **On #24:** no comparison between measured quantities is
+asserted anywhere in this batch, so none is left without its uncertainty.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0d, checked item by item at the end).** No measurement built,
+designed, scoped or run and no ceiling figure exists. **D-475**'s two surviving defects on BCMH —
+the homorhythmic-reduction unit mismatch and the rntxt machine-translation noise — are untouched. The
+third option on #21, qualifying what the principle DEMANDS, is still unwritten and still waits on the
+desk simulation. The errata re-ask was not performed. **[[OI-179]] stays OPEN and GATES.**
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
