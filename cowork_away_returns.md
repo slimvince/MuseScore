@@ -8245,3 +8245,191 @@ stays OPEN and GATES**, untouched by anything here.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# ═══ THE SIZING REGENERATION AND THE README CORRECTION (dispatch `cc_instruction_sizing_regen_and_readme.md`, performed 2026-08-12) ═══
+
+> **★ ALL THREE TASKS COMPLETE. NO STOP RULE FIRED.** **TWO commits, both pushed to
+> `origin/master`:** `a8a048389f` (Task 1) and `6115cdf53e` (Task 2). No `src/` edit, no behaviour
+> change, no golden refreshed, no corpus of scores touched, nothing under `tools/corpus/` or
+> `tools/robust_stop/` moved, **no measurement built, designed, scoped or run**, no design. **NO
+> STATUS CELL MOVED, no row was written, no row was discarded and no register entry was written.**
+> One derivation was regenerated — the per-row gating sizing — and it re-derives.
+>
+> **★ THE HEADLINE IS THAT THE REGENERATION MOVED NOTHING, AND THAT THIS IS THE DISPATCH'S OWN
+> STATED CORRECT OUTCOME.** A2 predicted that Rulings 61, 62, 63 and 64 and the OI-141 sitting *may*
+> have discharged several user-blocked acts, and instructed that a count unchanged from before is a
+> correct outcome and not a failure. **It is unchanged.** Why is in Task 1's log below, and the one
+> thing the regeneration CANNOT see is the finding this batch declares.
+
+## 1 (continued). What needs the user
+
+**ONE THING, AND IT IS SMALL. [[OI-274]]'s SECOND HALF IS ANSWERED AT HEAD AND THE ROW DOES NOT SAY
+SO.** That half asks whether `CLAUDE.md`'s mandatory-read instruction should also name the joint
+estimator's own specification — a governing-document question the row assigns to the user — and the
+user **answered it on 2026-08-11 in Ruling 64** of `cowork_rulings_2026_08_11_fourteenth_stop.md`,
+with the ruled instruction now written and standing in `CLAUDE.md` beside the one it was patterned
+on. **The row's INDEX text and its detail file's disposition both still pose the question as the
+user's outstanding one.**
+
+**What this batch did about it, and what it deliberately did not.** It is recorded through the sizing
+pass's OWN mechanism for a stale record — the staleness flag, checked at named objects and explicitly
+not acted on — so the artifact no longer publishes the half as waiting on a ruling that has already
+been given. **The row itself is untouched:** correcting a row's INDEX text or its detail file is an
+act on a row, which §0e forbids this batch, and flipping anything would move a population this pass
+is stated over. **The row's MAIN half is untouched by that ruling and is still owed in full**, so the
+row stays open on its own subject either way — what is at issue is only what it says it waits on.
+**One line from the user settles it.**
+
+**Nothing else is added to what was already waiting.** Everything the previous batches left is left
+exactly where it was, [[OI-179]] included, which stays OPEN and GATES.
+
+## 2 (continued). Surfaced findings, and the discard that was overruled
+
+**NO NEW ROW, AND NO NEW DISCARD.**
+
+**★ THE OVERRULED DISCARD, RECORDED WITH THE GROUND SO THE REASONING IS RETRIEVABLE.** The previous
+batch's §2 above discards finding (iii) — that `cowork_scratch_2026_08_11/`'s README says of the
+sitting pack that *"Its §3 states a question that is surfaced and UNRESOLVED"* and that *"The settling
+act is named there and was not performed"*, both true when written and neither true now. **The user
+OVERRULED that discard on 2026-08-11 and ruled the README corrected instead**, and Task 2 below
+performs the correction.
+
+**The ground is the one the discarding session could not have had, and it is stated here rather than
+only in the dispatch, because a discard record and its overrule belong at the same reading.** The
+discard's ground was that no derivation reads that directory, verified at `tools/`. **That is correct
+as far as it goes, and it establishes only that there is no MACHINE consumer. The consumer is a
+SESSION:** `cowork_handoff.md`'s entry-point block names that README in the session-start read it
+prescribes, so a session performing the read it is instructed to perform would learn that the §3
+question is unresolved and the settling act unperformed — **both false at HEAD** — and could carry
+that into the design conversation the pack exists for. That is amended #10's limb (a), so the finding
+is worth fixing rather than discarded. **The earlier reasoning was sound and its evidence incomplete;
+what is corrected is the verdict, not the method.**
+
+**The discard record above is NOT edited or withdrawn** (#12). It stands where it was written, as the
+record of what was believed and on what evidence, and this section is what a reader meets beside it.
+
+## 3 (continued). Per-task log — the regeneration, the correction, and the close
+
+### Task 1 — COMPLETE. The artifact regenerated, nothing moved, and the one discharge the derivation cannot see is flagged
+
+**A1 HOLDS AND WAS CHECKED BEFORE ANYTHING WAS TOUCHED, IN BOTH DIRECTIONS THE ASSUMPTION NAMES.**
+The generator RUNS, and its input is NOT stale: the artifact this pass derives its population from —
+the phase-1 completion inventory — re-derives **byte-identically** at HEAD by its own `--check`, and
+the sizing artifact itself re-derived byte-identically **before** this batch changed anything. So the
+population is the record at HEAD rather than a stored copy of an earlier one, and no patching was
+needed or done. **The artifact was regenerated by its own generator and never hand-edited**, and it
+re-derives afterwards.
+
+**A2 IS ANSWERED AT THE ARTIFACT, AND THE ANSWER IS THAT NO ACT LEFT THE USER-BLOCKED POPULATION.**
+Every count, every label group, every blocker group, every owner group and the user-ruling population
+itself are **identical before and after**; the population is pointed at its artifact and no member or
+count is restated here (**D-431**). **Why that is the right outcome rather than a shortfall, per act
+A2 named:**
+
+- **Rulings 61, 62 and 63 had ALREADY been applied**, on 2026-08-11. Each closed a row, each row left
+  the gating population then, and each sizing was moved into the pass's retired block at that time —
+  so their discharges are already behind the state this batch found, not ahead of it.
+- **The OI-141 sitting discharged nothing on that row.** It was held 2026-08-11 **bounded to scoping
+  with no design output**, its own dated note records that the row's status does not move, and the
+  row's remaining act is still the design conversation, which is the user's. So [[OI-141]] stays
+  NEEDS-RULING and stays user-blocked.
+- **Ruling 64 DID discharge a user-blocked act — and it is not one this derivation can see.** It
+  answers [[OI-274]]'s SECOND HALF, and a second half is **AUTHORED, not derived**. No STOP this
+  generator carries could have fired on it: its STOPs guard the population, the closed vocabularies,
+  the presence of every quoted phrase in the INDEX and the existence of every detail file, and not
+  one of those moved.
+
+**HOW IT IS RECORDED, AND WHY NOT BY NARROWING THE SIZING.** Through the pass's own staleness-flag
+mechanism, which exists for exactly this case and already carried one entry. **Nothing was adjusted to
+produce a movement**, which the dispatch instructs in terms: the flag feeds no count and no
+population, so every published grouping is bit-for-bit what this batch found. **The sizing itself is
+left as authored**, because a sizing is written against the row AS IT STANDS and the row still poses
+the question — narrowing it would put the artifact and the row into disagreement without either being
+corrected.
+
+**ONE STALE HAND-TRANSCRIBED COUNT CORRECTED IN THE SAME FILE, AND DECLARED RATHER THAN SLIPPED IN.**
+The tool's docstring stated how many rows carried a staleness flag; it had been false since an earlier
+row's flag retired with its sizing. **The count is REMOVED rather than re-typed**, so it cannot go
+stale again (#17f, **D-431**). It is docstring prose, enters no artifact, and the artifact re-derives
+across the edit.
+
+Commit `a8a048389f`, pushed.
+
+### Task 2 — COMPLETE. The README corrected, the former wording preserved whole, the answer pointed at
+
+**A3 HOLDS AT BOTH LIMBS AND WAS VERIFIED AT THE FILE AFTER THE WRITE.** **The former wording is
+preserved in place (#12) and preserved WHOLE**: the entire superseded paragraph — not the two false
+sentences alone — is quoted verbatim in a dated correction block beneath the corrected one, marked as
+the former wording and dated, so a reader meets what was believed when the directory landed as well as
+what is true now. **And nothing else in the file changes:** no banner is touched, the other two
+paragraphs are untouched, the file's own closing provenance is untouched, and the three sibling drafts
+in that directory are untouched — the previous batch's declared, uncorrected fact about the landed row
+draft included, which is not this dispatch's subject.
+
+**THE TWO STATEMENTS WERE VERIFIED FALSE AT THE PACK ITSELF, not from any summary of it.** The pack's
+§7 heading states that §3's question is settled, and its text states that the act §3 named was
+performed — a read-only call-graph establishment followed by a premise re-pin over all seven
+decisions — with the former §7 preserved whole at that document's §7b.
+
+**THE ANSWER IS POINTED AT AND NEVER COPIED (#6).** The corrected paragraph says where the answer
+lives and restates none of it. **The pack's §3 is untouched**, because it is the record of what was
+believed when the question was raised, and it already says on its own face that dates only were
+checked, that no code was read and that no claim about the production arm was made.
+
+Commit `6115cdf53e`, pushed.
+
+### Task 3 — COMPLETE. The close
+
+**Two `STATUS.md` pointer entries — one per task — and nothing else of substance in that file**, which
+remains unreadable in full, its row [[OI-370]] open and gating. The `Last updated:` prefix was moved
+onto the new topmost entry and removed from the one below, on the precedent this file's own previous
+closes record. This section is the close, and the overruled discard is recorded at §2 above with the
+ground at the dispatch's §0b so the reasoning is retrievable rather than only the verdict.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ ON THE GUARD SET — IT ENDS EXACTLY WHERE IT WAS FOUND.** The full guard set was run after this
+batch's edits and **the guard state re-derives to the same bytes it carried at HEAD**, so its artifact
+is not among this batch's changed paths. **Two reds stand and both are the standing recorded pair**,
+carried at HEAD before this batch touched anything: the filing-convention application's `--check`
+failure, and the runner's own STOP on a derived guard candidate with no authored invocation. **Neither
+was caused by this batch and neither was worked around**, so §0f's condition — a guard red for a cause
+that is neither this dispatch's edits nor already recorded — did not fire. **The sizing pass's own
+`--check` PASSES** in that same run, which is the guard that would have caught a hand-edited artifact.
+
+**★ ON THE FIGURES RULE (D-431) AND ON POSITIONAL COUNTS (D-307, D-432).** No population, count or
+verdict is stated in either commit message, in either `STATUS.md` entry or above: each is pointed at
+its artifact. The only quantities stated anywhere are row identifiers, ruling identifiers, commit
+identities and this batch's own act count — two commits — each reported at its own output. **No
+positional count appears anywhere:** the dispatch is cited by its exact filename as it requires, the
+ruling by its own number, and the pack's sections by the numbers that document gives them.
+
+**★ ON D-253 IN EVERY DIALECT.** No working-tree file was read through a shell in any dialect: every
+read of `CLAUDE.md`, `STATUS.md`, `DECISIONS.md`, the `OPEN_ITEMS.md` INDEX, the detail files, the
+ruling records, the generators and the artifacts went through Read/Grep/Glob. **Every tool output this
+session produced was written to an absolute scratchpad path outside the repository and read back from
+that same absolute path**, from the first command onward, which is the standing remedy for the
+path-mapping hazard the previous batch recorded. **The guard fired once on this session and is
+reported rather than hidden:** an attempt to inspect the regenerated artifact through interpreter code
+naming a repository path was DENIED by policy, and the inspection was redone with the file tools —
+which is the guard-family ruling working as built.
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense (*corpus of
+scores* throughout); bare *key*, *mode*, *measure*, *beat*, *scale*, *interval*, *root*, *part*,
+*rest*, *note* and *figure* appear in no non-musical sense — *measurement* is used for the gauging
+sense, *count* and *value* for the numeric one. Two inherited compounds are carried knowingly:
+**register entry** / **decisions register**, and the **dated-note** idiom.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0e, checked item by item).** **No row is written**, none is
+discarded and no status cell moves. **No gating verdict moves** — the gating split is not touched and
+every derivation over it re-derives. **No route out of the abandoned derivation is taken**, and it
+stands where the previous batch left it. **The size guard is not built**, and [[OI-370]]'s ruling
+confirming it stays PROPOSED and untaken owes nothing, which is why nothing was written for it.
+**Phase 1 does not become nearer completion by this batch** — the user-blocked population becomes
+accurately described, which is a different thing, and one act inside it turns out to have been
+described wrongly rather than to have moved.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
