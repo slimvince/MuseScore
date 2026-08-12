@@ -971,6 +971,67 @@ def build() -> dict:
                     "specification-falsity signal. Deliberately over-inclusive: an over-included "
                     "row simply carries its own gate verdict and is judged nowhere here."
                 ),
+                "★_THE_OVER_INCLUSION_IS_A_STATED_BOUND_and_is_NOT_measured": {
+                    "the_ruling": (
+                        "User, 2026-08-11, executed 2026-08-12 under dispatch "
+                        "`cc_instruction_sitting_outcome_and_bound.md` Task 2. Two rulings meet "
+                        "here: the item-7 reach derivation is ABANDONED rather than re-routed, and "
+                        "this cut's over-inclusion is RECORDED AS A STATED BOUND in Ruling 59's "
+                        "shape - advisory with the bound stated - and is NOT measured."
+                    ),
+                    "the_bound": (
+                        "Membership is decided by an AUTHORED keyword vocabulary matched anywhere "
+                        "in a row's title, description column, status column or subject column. "
+                        "The over-inclusion that construction produces is deliberate and is "
+                        "declared in the field above; HOW MUCH of it there is has never been "
+                        "measured, and no measurement of it is seeded. So this population is a "
+                        "CANDIDATE SET whose boundary is advisory: no statement about its "
+                        "composition may be read as a measured property of it, in either "
+                        "direction - a row carrying no signal is not thereby unowed, which the "
+                        "reads-programme block below already says in its own words."
+                    ),
+                    "what_is_NOT_withdrawn": (
+                        "Nothing above or below is retracted. Every member stands, every gate "
+                        "verdict stands, and each is sourced where it was sourced. The bound "
+                        "states what the membership BOUNDARY is worth; it says of no member that "
+                        "it is wrongly in or wrongly out."
+                    ),
+                    "and_the_consuming_item_names_a_SECOND_class_this_cut_does_not_separate": (
+                        "The finish line's TRUE-half item whose rows GATE states its own scope as "
+                        "`Each row records a statement in a document of record that is false at "
+                        "HEAD, or an obligation that keeps one from being checkable`. The second "
+                        "clause is a different kind of thing from the first, and D-639's test - "
+                        "does this row record a document stating something false - does not reach "
+                        "it at all. This cut does not separate the two classes and was never "
+                        "built to. That is why a reach verdict taken over this population would "
+                        "not mean what the same verdict means over the population the reach "
+                        "machinery was built for."
+                    ),
+                    "why_no_measurement_of_the_over_inclusion_is_SEEDED": (
+                        "The ruling's own three grounds. (1) The amended #10 worth test discards "
+                        "it: an unmeasured over-inclusion risks neither something being built "
+                        "that fails the maximum-precision objective nor code becoming "
+                        "incomparable against its specification. (2) The over-inclusion is "
+                        "SELF-DECLARED in this cut's own field, so it is a stated bound and not a "
+                        "hidden defect - which is the distinction D-654 turns on. (3) Most of the "
+                        "gating population waits on user rulings, scheduled events, the phase "
+                        "order or the `src/` freeze, as the per-row sizing at "
+                        "`tools/audit/gating_row_sizing.json` records - no count is restated here "
+                        "(D-431) - so measuring the over-inclusion would not open the gate."
+                    ),
+                    "where_the_finding_was_made": (
+                        "`cowork_away_returns.md`, the STOP section of the abandoned reach "
+                        "derivation batch, which states the finding and the three routes out in "
+                        "full; none is restated here (#6). The abandonment and its ground are "
+                        "recorded at that same section."
+                    ),
+                    "what_this_record_does_NOT_move": (
+                        "No member enters or leaves this cut, no gate verdict moves, no row is "
+                        "written and no status cell changes. It is not a mechanism change: what "
+                        "the cut selects is untouched, and D-436 reserves a mechanism change to "
+                        "the user."
+                    ),
+                },
                 "count": len(wide),
                 "ids": sorted(r["id"] for r in wide),
                 "rows_the_narrow_cut_misses": sorted(r["id"] for r in wide_only),

@@ -7929,6 +7929,37 @@ population was performed — every detail file opened at the object — and **th
 published**, because publishing them is the act A5 gates and A5 is refuted. Re-doing that reading is
 the cost of the STOP, and it is stated so the user can weigh it rather than discover it.
 
+**★ CLOSED BY THE USER, 2026-08-11 — THE DERIVATION IS ABANDONED, NOT RE-ROUTED, AND NONE OF THE
+THREE ROUTES ABOVE IS TAKEN.** *(Recorded 2026-08-12 by CC under dispatch
+`cc_instruction_sitting_outcome_and_bound.md` Task 2. The three routes stand above exactly as
+written (#12): they are what was offered, and an excluded alternative is evidence about the choice.)*
+
+**The ground, recorded because it is the reason and not a preference.** Three parts, all the user's.
+**(1) The amended #10 worth test discards it** — an unmeasured over-inclusion risks neither
+something being built that does not serve maximum-precision inference nor code ceasing to be
+comparable against a correct and complete specification, so it is not an open obligation. **(2) The
+over-inclusion is SELF-DECLARED in the cut's own field**, which makes it a stated bound rather than
+a hidden defect — **D-654**'s own distinction, that a widening reported is reviewable and a widening
+hidden is not. **(3) Measuring it would not open the gate** — the per-row sizing already records
+most of the gating population as waiting on user rulings, scheduled events, the phase order or the
+`src/` freeze; no count is restated here (**D-431**).
+
+**What was done instead, and where it lives.** The over-inclusion is recorded as a **STATED BOUND on
+the cut's own artifact**, in Ruling 59's shape — advisory, with the bound stated, and **not
+measured** — placed **through the generator** and never by hand-editing a generated file. Its home
+is `tools/audit/phase1_completion_inventory.json` → the true half's wide cut, written by
+`tools/audit/gen_phase1_completion_inventory.py`, and it is not restated here (#6). The second half
+of the finding above — that the consuming item's own scope names a class D-639's test does not reach
+— is carried at that bound as a class this cut does not separate.
+
+**What the abandonment does NOT do.** No falsification test is built, narrowed or amended: **A5
+stands refuted rather than replaced**, and the routes above stay unexercised. **No population member
+moved and no gating verdict moved** — checked in both directions at the wide cut and at the gating
+split, before and after the regeneration, with every dependent derivation re-deriving
+byte-identically. It is therefore not a mechanism change, which **D-436** reserves to the user. **No
+row leaves the gating population and phase 1 does not become nearer completion by this act** — it
+becomes better described. [[OI-179]] stays OPEN and GATES.
+
 ## 2 (continued). Surfaced findings (D-641, #13, #19)
 
 **NO NEW ROW. Two findings, and the first is about this session's own reading discipline.**
