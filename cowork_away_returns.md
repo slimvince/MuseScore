@@ -7088,3 +7088,170 @@ behind.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+# ═══ THE WORTH TEST (dispatch `cc_instruction_worth_test.md`, performed 2026-08-12) ═══
+
+> **All three tasks performed, and no STOP rule fired. THREE commits, all pushed to
+> `origin/master`:** `b7d97a9142` (Task 1), `273c354df2` (Task 2), and this close. No `src/` edit, no
+> behaviour change, no golden refreshed, no corpus of scores touched, nothing under `tools/corpus/`
+> or `tools/robust_stop/` moved. **No status cell moved and no row closed.** The guard set ends
+> exactly where the batch found it — the same single failing member and the same runner STOP, both
+> already rowed — with the classification re-deriving after it.
+
+## 1 (continued). What needs the user
+
+**ONE THING, AND IT IS ONE LINE EITHER WAY: the filing decision on how Ruling 68 entered the
+decisions register.** The ratification was written as an **AMENDMENT to D-174**, principle #10's own
+entry, with its verbatim re-taken at the amended text and the former verbatim preserved in its
+provenance (#12) — **not** as a new entry beside it. The ground is that Ruling 68's own words are
+that *"Principle #10 gains its second half"*, so what is ruled is ONE principle with two halves at
+ONE home, and **the user has already ruled on exactly this shape**: at [[OI-329]], widening principle
+#8 briefly gave one principle two live entries, and the ruling was that **D-172** survives with its
+verbatim re-taken and the duplicate is recorded superseded into it — the duplication #6 forbids.
+**The excluded alternative is recorded rather than merely declined:** a second entry carrying the
+second half beside D-174, which is what the two amendments of the preceding stop did for the clauses
+they amended, and which would be right here if the user reads Ruling 68 as a rule ATTACHED to #10
+rather than as #10 restated. Nothing else in the batch depends on the answer.
+
+**Nothing else is held.** [[OI-374]] stays open and **stays owed** — that is the worth test's own
+verdict, not a hold — and its two closing acts are unchanged and untaken.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+**None new that are rowed.** Every subject this batch touched is the record's own governing text, the
+decisions register, and the rows the preceding batch created — [[OI-372]], [[OI-373]] and
+[[OI-374]]. No measured value moved, no golden, no corpus of scores, nothing in `tools/robust_stop/`.
+The one finding-shaped thing the batch produced is the worth verdict on [[OI-374]], which is Task 2's
+own deliverable rather than an incidental discovery, and it is recorded on that row.
+
+**★ AND ONE FINDING IS DISCARDED HERE, WHICH IS THE FIRST EXERCISE OF THE RULE THIS BATCH WROTE — so
+the discard record is this paragraph, and there is deliberately no row (Ruling 68, `CLAUDE.md`
+principle #10, register entry D-174).** **The finding, 2026-08-12:** `tools/audit/process_check.py`
+reports `[D-434 missing self-check section] no heading matching 'self-check'` against
+`cowork_away_returns.md`, and against the dispatch, while both plainly carry such a heading — this
+close's own is *THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK*, and the preceding
+batch's stands above it. **The reason it is discarded:** no establishment obligation is carried, that
+tool having its own establishment artifact, which passes in the guard set at this tree; no analysis
+decision consumes its output, whose readers are sessions writing dispatches and closes; limb (a)
+fails, since nothing is built from it; and limb (b) fails, since the heading it fails to see is
+present and the self-check it exists to demand was performed and is recorded immediately below —
+what the finding costs is a false negative in a reporting tool, not a specification that misdescribes
+code. **Re-open it by challenging one of those four grounds**, and note that an establishment
+obligation would re-open it by the carve-out alone.
+
+## 3 (continued). Per-task log — the worth test
+
+### Task 1 — COMPLETE. The amendment, its register entry, and the R3 pointer
+
+**Commit `b7d97a9142`**, twenty-four paths: the two edited governing documents, the ruling record,
+the register's source data and its regenerated files, and seven derived artifacts that went stale
+because a governing document grew.
+
+**★ THE RULED TEXT IS THE USER'S AND STANDS VERBATIM, with the five-word former wording preserved in
+place (#12).** The amendment carries what the ruling record carries and nothing this session
+composed: the user's own statement of the objective, quoted whole; the reason the remedy sits at the
+principle rather than at a process rule beside it; the three declined alternatives; the two costs the
+user accepted; and what the ruling does not do, including that it does not retroactively discard the
+open population.
+
+**★ A GUARD CAUGHT THE FIRST PLACEMENT OF THE R3 POINTER, AND THE CORRECTION IS WORTH RECORDING
+BECAUSE THE ERROR LOOKED RIGHT.** The supersession block was first written immediately after the
+clause it supersedes, which is where a reader most wants it. `gen_cluster_dispositions.py --verify`
+then reported **D-641**'s verbatim NOT FOUND at its home: R3's whole section is quoted as that
+decision's verbatim, so an insertion into it puts 2026-08-11 text **inside the text of a decision
+ruled 2026-08-04**. The block moved to the section's end, taking the form the overtaking block at the
+end of the ordering-rule section already uses, and the pointer names both places R3 states the
+mandatory row so a reader arriving at either meets the amendment.
+
+**★ SEVEN DERIVATIONS WERE REGENERATED, NOT REPAIRED, and the distinction is the one the record has
+used at every such stop.** Adding text to `CLAUDE.md` moved register home anchors below it and staled
+seven artifacts that locate their own quotes and anchors in the two edited documents. Each was
+re-derived by its own generator; **no verdict was authored, no population hand-listed, and nothing
+was adjusted to make a guard green.** The rule-triage tool's population is unchanged at its own
+artifact's `rules_total`, so what moved there is coordinates rather than membership.
+
+### Task 2 — COMPLETE. The test applied per row, with A2 discharged first
+
+**Commit `273c354df2`**, four paths: the INDEX and the three detail files.
+
+**★ A2 IS DISCHARGED AT THE RECORD AND IT SETTLES THE QUESTION — DISCARDED IS NOT A CANONICAL OPENING
+TOKEN.** Four grounds, each read in place rather than recalled. Rule (f)'s own home maps every
+canonical opening to exactly two values and states the ONLY recorded route to widen the vocabulary —
+adding an OPEN-STATE word, that is, a word meaning OPEN — so the record carries no route to a third
+state at all. The ONE index parser publishes exactly one state field per row. A discard is not a
+resolution, and the four grounds Ruling 66 recorded for declining to resolve its own population hold
+here unchanged. So under the one bit the index carries, a discarded row is still OPEN — **the same
+conclusion Ruling 66 reached for a lapsed row, in the same words**. The FORM follows the same
+precedent: the record goes in the detail file, the status cell is unmoved, and the INDEX clause sits
+AFTER the canonical opening where rule (f) makes it inert.
+
+**★ ONE DIFFERENCE FROM `owed` IS STATED RATHER THAN SMOOTHED OVER.** `owed` is a DERIVED field of an
+existing cut; a worth verdict is AUTHORED per row by the act that takes it, which is what Ruling 68
+prescribes. **No derivation is created here and none is implied**, and [[OI-372]], [[OI-373]] and
+[[OI-374]] were each checked against both derived populations first — none is a first-cut candidate
+of the apparatus declaration and none is on the finish line — so nothing derived moves either way.
+
+**★ AND WHAT THE RECORD DOES NOT SETTLE IS SAID PLAINLY.** The ruling's *no row* clause governs a
+finding at DISCOVERY, and the ruling itself says what the test does to rows already on the books is a
+separate act. Nothing orders an existing row's removal and #12 with rule (d) forbid it, so a
+discarded row that already exists stays where it is with its state unmoved. That is what remains once
+the two forbidden acts are excluded, not a choice this session made.
+
+**★ THE OUTCOME IS MIXED, AND THAT IS THE TEST WORKING.** [[OI-372]] and [[OI-373]] are
+**DISCARDED**, each on the #19 check first, then the consumer, then the two limbs, every ground
+answered at an object — a tool's own published bound and soundness verdict; a tool's own statement of
+what consumes its enumeration; a candidate set read by running the tool's own read-only derive mode;
+an artifact's own published gap. **For [[OI-373]] the cheap look was taken rather than the
+consequence imagined (A5, #5):** the uncovered guard's own check was run at this tree and passes, so
+it is not hiding a failing guard — a dated fact, explicitly not a standing property, which is
+precisely the exposure the discard accepts. **[[OI-374]] is NOT discarded**: it carries an
+establishment obligation, which the ruling's first carve-out never discards, and limb (b) is met
+independently at one member — a code-against-record comparability check whose findings go to a stream
+the shared module does not reconfigure and whose text is composed from source content rather than
+ASCII literals. **What is established there is the PATH and not an instance of it, and the row says
+so.**
+
+### Task 3 — COMPLETE. The close
+
+**Two `STATUS.md` pointer entries and nothing else in that file**, which remains unreadable and whose
+row [[OI-370]] stays open and gates. This section is the close.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**One reserved-word collision was caught in this batch's own new prose and corrected before the
+commit that would have carried it:** the bare non-musical *note*, twice, in the R3 pointer's own
+explanation of why it sits at the section's end. Both were rewritten without the word. **Thirteenth
+consecutive batch whose self-check caught a collision in its own new text.** Bare *mode* was checked
+and every use is qualified by a flag name or an adjective; bare *register* and bare *resolution* are
+used in the open-items senses the surrounding record uses throughout, and belong to [[OI-229]]'s
+scoped pass rather than to this batch.
+
+**★ THREE D-253 LAPSES OF THIS SESSION'S OWN ARE REPORTED RATHER THAN LEFT FOR A LATER READER, and
+none of them carried a premise.** At the session's opening, **before the governing documents were
+read**, `git log --oneline -3` and `git rev-parse HEAD` were run — a branch-tip and a log read, which
+the rule names explicitly as never trusted for what is current and which sit outside the sanctioned
+set of object queries by explicit hash. **Nothing rested on either**: every commit identity reported
+here comes from this session's own commit output, and every premise about the tree was read with the
+file tools. The third is `git check-ignore -v`, used to establish why the dispatch file is absent
+from the changed-path enumeration; it reports a rule and a path rather than content, which is why it
+is recorded as a lapse to be judged rather than asserted to be one. **The guard itself fired three
+times and was never worked around** — a `Get-Item` on repository paths, a `python -c` carrying a
+literal repository path, and a `grep` aimed at a repository file — and each search was redone through
+the file tools.
+
+**★ AN UNINTENDED WRITE IS SAID PLAINLY, AND SO IS THE FACT THAT IT IS NOT THE REPORTED RESULT.**
+`gen_guard_state.py --help` is not a recognised flag on that tool: the invocation ran the WHOLE guard
+set and **wrote its artifact**, at a tree that carried Task 1's document edits but not yet the
+regenerations they made necessary. **That run is discarded as evidence** — it is the contaminated
+shape this project's establishment rules exist against, and it is the same treatment the preceding
+batch recorded for two of its own runs. Every guard result reported above is from a clean re-run
+after every edit, and the artifact committed in Task 1 is that re-run's; the Task 2 boundary run then
+reproduced it with no change at all.
+
+**On the figures rule (D-431):** no quantity is restated in this close, in either commit message, or
+in the two `STATUS.md` entries. Every population, verdict and count lives at the artifact or the row
+that derives it. **On #24:** no comparison between measured quantities is asserted anywhere in this
+batch, so none is left without its uncertainty.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
