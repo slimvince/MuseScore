@@ -652,6 +652,31 @@ commit that records the discovery. It is not a claim that apparatus defects are 
 does not decide what PHASE 1 OWES: D-231's clause and D-639 decide that, and D-639 says in terms
 that what a stage waits on and what phase 1 owes are different tests with different subjects.
 
+> **★ THE MANDATORY-ROW CLAUSE ABOVE IS SUPERSEDED FOR ONE CLASS — the findings the WORTH TEST
+> DISCARDS (user-ruled 2026-08-11; the ruling record is
+> `cowork_rulings_2026_08_11_sixteenth_stop.md`, Ruling 68).** The NO branch's *"The row is written,
+> and the row is the whole of what is owed"*, and the closing paragraph's *"the row is mandatory"*,
+> **no longer hold for a finding that fails the worth test principle #10 now carries**: such a
+> finding is **recorded as DISCARDED and is not rowed**. **The test itself, what a discard record
+> carries, and the two carve-outs are NOT restated here (#6)** — their one home is `CLAUDE.md`
+> principle #10 (register entry **D-174**, whose verbatim is re-taken there).
+>
+> **R3 IS OTHERWISE UNTOUCHED, and the halves that stand are the ones a reader is most likely to
+> think moved.** It still decides whether a finding is SURFACED or rowed; **D-438**'s test is still
+> the sorting, unchanged; and **the #19 exception above is reinforced rather than weakened** — an
+> establishment obligation is never discarded, whatever its subject, so it is rowed and surfaced
+> exactly as before. What the supersession removes is the obligation to row a finding bearing on
+> neither of the worth test's two consequences; it removes nothing from the YES branch, and the
+> open-items register's rule (c) governs every finding that IS rowed exactly as before.
+>
+> *Why it is recorded here rather than only at the principle:* R3's own text states the mandatory
+> row twice, in the NO branch and again in its closing *What it is NOT* paragraph, and a reader
+> arriving at either would otherwise meet a demand the record no longer makes (#10). *Why it is
+> placed at the section's end rather than beside the clause it supersedes:* the section is quoted
+> whole as this decision's verbatim, and an amendment inserted into it would put 2026-08-11 text
+> inside a decision ruled 2026-08-04 — so it takes the form the overtaking block at the end of the
+> ordering-rule section below already uses.
+
 ### A session may AUTHOR an establishment; its verdicts clear no guard until the reviewed set is applied
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_third_stop.md`, Ruling 18). The block

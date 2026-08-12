@@ -911,7 +911,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-171 | #7 - a layer is enhanced only with what belongs to it | LIVE | — | `CLAUDE.md` |
 | D-172 | #8 - no inference-problem-driven coding until the refactoring, the architectural design and the algorithmic completion are done | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-173 | #9 - measure only on corpora known to be non-stale and accurate | LIVE | — | `CLAUDE.md` |
-| D-174 | #10 - documentation always in sync with code | LIVE | — | `CLAUDE.md` |
+| D-174 | #10 - documentation is kept in sync with code SO THAT code can always be compared against its specification, and that purpose is the test of what is worth fixing | LIVE | — | `CLAUDE.md` |
 | D-175 | #11 - regression tests in sync with code, and run between iterations | LIVE | — | `CLAUDE.md` |
 | D-176 | #13 - surface a surprise as a stop before building around it | LIVE | — | `CLAUDE.md` |
 | D-177 | #14 - every behavior change is one user-ratified, revertible, provenance-stamped commit | LIVE | — | `CLAUDE.md` |

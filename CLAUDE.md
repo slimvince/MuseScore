@@ -48,7 +48,55 @@ override convenience.
    The widened three-clause width is not a 2026-08-04 decision — it was **user-ratified 2026-06-25**,
    as the paragraph above records, and had been living in the wrong document until that date.
 9. **Test and measure only on corpora known to be non-stale and accurate.**
-10. **Documentation always in sync with code.**
+10. Documentation is kept in sync with code **so that code can always be compared against its
+    specification, and so that the specification is as correct and complete as possible — in order
+    that the code may be as correct and complete as possible.** That purpose is the test of what is
+    worth fixing. **An issue is WORTH FIXING when leaving it unfixed risks either (a) something
+    being built that does not serve maximum-precision inference, or (b) code no longer being
+    comparable against a correct and complete specification. An issue bearing on neither is
+    recorded as DISCARDED — the finding, its date, and the reason — and is not an open obligation:
+    no row, no gate, no capacity.** Two carve-outs: **an establishment obligation (#19) is never
+    discarded, whatever its subject**; and where the consequence can neither be named nor cheaply
+    established, **it is looked at once, cheaply (#5)** — being unable to imagine a consumer is not
+    evidence there is none.
+    **★ #10 GAINED ITS SECOND HALF HERE, AND THIS IS THE RULE'S ONE HOME (user-ruled 2026-08-11;
+    the ruling record is `cowork_rulings_2026_08_11_sixteenth_stop.md`, Ruling 68; register entry
+    D-174, whose verbatim is re-taken at the text above).** The ruled text is the user's own and
+    stands verbatim. **THE FORMER WORDING, PRESERVED IN PLACE (#12), WAS:** *"Documentation always
+    in sync with code."* — five words with no purpose attached. *Why the amendment was made at the
+    principle rather than at a process rule beside it (#6):* because nothing in those five words
+    said what being in sync is FOR, **every discrepancy read as owed, and a session that rowed a
+    stale banner was obeying the principle exactly as written** — so the unbounded documentation
+    stream is #10 working as written, and a remedy anywhere else would leave the principle still
+    demanding it. *The user's own statement of the objective, recorded verbatim because it is the
+    ground of the rule:* **"The objective is NOT to create to ultimate documentation. The objective
+    with fixing documentation is to make sure we always can compare code with specification, and
+    that the spec should always be as correct and complete as possible - in order to facilitate the
+    code to be as complete and correct as possible."**
+    **★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus
+    finding's row is **mandatory** no longer holds for a finding the worth test above discards.
+    **R3 is otherwise untouched** — it still decides whether a finding is surfaced or rowed, and
+    its own #19 sentence is reinforced rather than weakened. R3's home is `cowork_audit_protocol.md`
+    (register entry **D-641**), where the supersession is recorded at the clause itself and is not
+    restated here.
+    **★ THE THREE ALTERNATIVES DECLINED, recorded because an excluded alternative is evidence about
+    the choice.** *Keeping rows for the discarded class* was declined as achieving nothing **D-676**
+    had not already achieved — every row of the batch that prompted this would still exist.
+    *Placing the test at R3 instead of here* was declined on #6: the test would live at the process
+    rule while the purpose it serves lived nowhere, so a session reading the principle would still
+    meet an unbounded demand — the same disagreement between a governing document and practice that
+    forced #8's widening. *Doing nothing and letting **D-675** and **D-676** drain* was declined
+    because it changes the backlog and not the rate.
+    **★ THE COSTS THE USER ACCEPTED, stated before the ruling and recorded because an accepted cost
+    is not a discharged one.** **#12 is weakened:** a discarded finding is harder to retrieve than a
+    row, and the finding-by-exclusion clause holds that negative evidence is information — mitigated,
+    not erased, by the discard record carrying the finding and its reason. And it **amends a standing
+    principle**, which is the heaviest change available.
+    **★ WHAT IT DOES NOT DO.** It authorizes no fix, no design and no inference change. It moves
+    neither **D-231**'s phases nor #8's three-clause gate. It touches no measured value, no golden,
+    no corpus of scores and nothing under `tools/robust_stop/`. And **it does not retroactively
+    discard the open population** — it states the test; what the test does to rows already on the
+    books is a separate act.
 11. **Regression test cases always in sync with code; regression-test between iterations.**
 12. **No information loss.** Negative/exclusion evidence is information ("finding by exclusion") —
     carry a ruled-out possibility at low confidence rather than dropping it, unless the exclusion is
