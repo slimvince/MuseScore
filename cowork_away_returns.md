@@ -8068,3 +8068,180 @@ verified byte-identical rather than regenerated into a new state**.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# ═══ THE SITTING'S OUTCOME, THE SHIPPING-ARM CONFIRMATION AND THE ABANDONED DERIVATION'S BOUND (dispatch `cc_instruction_sitting_outcome_and_bound.md`, performed 2026-08-12) ═══
+
+> **★ ALL THREE TASKS COMPLETE. NO STOP RULE FIRED.** **TWO commits, both pushed to
+> `origin/master`:** `13602a70ba` (Task 1) and `f4e260ebd1` (Task 2). No `src/` edit, no behaviour
+> change, no golden refreshed, no corpus of scores touched, nothing under `tools/corpus/` or
+> `tools/robust_stop/` moved, **no measurement built, designed, scoped or run**, no design. **NO
+> STATUS CELL MOVED, no row was written and no register entry was written.** One derivation was
+> regenerated — the completion inventory, by the act that placed the bound on it — and every
+> derivation that reads it was re-checked and re-derives byte-identically.
+
+## 1 (continued). What needs the user
+
+**NOTHING NEW FROM THIS BATCH.** The one thing that needed the user — the STOP at the reach
+derivation — is closed by the ruling this batch executes, and its closing block is written at that
+STOP's own section above rather than repeated here (#6). The three routes it stated stay unexercised
+and stay on the record (#12). Everything the previous batches left waiting is left exactly where it
+was.
+
+## 2 (continued). Surfaced findings, and three discard records under the amended #10
+
+**NO NEW ROW.** Amended #10's worth test is applied to three findings, and each discard record
+carries what the principle requires of one: **the finding, its date, and the reason.** None of the
+three is an establishment obligation, so the #19 carve-out does not reach them; and for each the
+consequence is nameable, so the cheap-look carve-out is satisfied rather than owed — where a look was
+needed it was taken and is recorded below.
+
+**★ (i) THE PATH-MAPPING STALE READ — DISCARDED.** *Finding:* the previous batch ran the sanctioned
+enumeration with its output redirected through the shell to a path the file tool then resolved
+elsewhere, so the file tool returned a previous session's enumeration; it was caught before it became
+a reported fact, and the standing remedy — write tool output to an absolute scratchpad path — was
+applied for the remainder of that session. *Date:* found and recorded 2026-08-12, at the batch above.
+*Reason for the discard:* it bears on neither limb of #10's worth test. Nothing was built on it, so
+no design carries load from it; and it produced no statement in any document of record, so nothing
+became incomparable against a specification. It is a session-discipline hazard whose remedy already
+exists and was applied — **and this session applied the same remedy from its first command onward**,
+which is the only thing a row could have asked for.
+
+**★ (ii) THE LANDED DRAFT'S FULFILLED FORWARD STATEMENT — DISCARDED.** *Finding:*
+`cowork_scratch_2026_08_11/draft_row_status_md_unreadable.md` says *"The ROW is still NOT landed"*,
+and that row landed as [[OI-370]] on 2026-08-11; the file was committed as it stood and the fact was
+declared rather than corrected. *Date:* declared 2026-08-12, at the batch above. *Reason for the
+discard:* the file is a dated Cowork draft under a directory banner that presents its contents as
+drafts, it is not a specification and not a document of record, and **the cheap look was taken rather
+than the consequence imagined** — no file under `tools/` names that directory, so no derivation reads
+it, and the draft is named nowhere in the tree except in the two narrative records and in its own
+directory's README. Neither limb of the worth test bites.
+
+**★ (iii) THE SAME DIRECTORY'S README IS ITSELF OVERTAKEN — FOUND BY THIS BATCH, DISCARDED, AND
+DECLARED TO COWORK BECAUSE THE DIRECTORY IS COWORK'S.** *Finding:* `cowork_scratch_2026_08_11/`'s
+README says of the sitting pack that *"Its §3 states a question that is surfaced and UNRESOLVED"* and
+that *"The settling act is named there and was not performed."* Both were true when written and
+neither is true now: the act was performed, and the pack's own §7 — rewritten the same day and
+landed in the tree — settles §3's question and re-pins all seven decisions against the arm that
+ships. *Date:* found 2026-08-12, while reading the directory for this batch's Task 1. *Reason for the
+discard:* the same reason as (ii), established at the same cheap look — a self-declared draft
+directory that no derivation reads, and not a specification. **It does not contradict the previous
+batch's close**, which said the README's account of *what the directory holds* is true at HEAD: that
+claim is about which files sit there and it remains true; what is overtaken is the README's
+description of the pack's §3 STATE. **It is nonetheless declared rather than passed over**, because
+the sentence that is now false is about the state of the OI-141 arm question,
+which is a subject that bears on the analysis; a reader who met the README alone could believe the
+question is still open. **Nothing was edited** — the drafts are Cowork's and the previous dispatch's
+own instruction was to alter none of them — and one line from Cowork overrules this discard if the
+README is to be corrected instead.
+
+## 3 (continued). Per-task log — the sitting's outcome, the bound, and the close
+
+### Task 1 — COMPLETE. The sitting's outcome recorded, and the shipping-arm confirmation landed
+
+**On [[OI-141]]**, a dated note recording the sitting held **2026-08-11**, **bounded to scoping with
+no design output**, and its result: **four questions**, one of which is not a live question at that
+row because [[OI-247]] already carries it split and scheduled. The four are enumerated at the pack's
+§7 and are pointed at rather than re-derived here (#6).
+
+**The named settling acts are recorded with their status (A3).** **BARRED until phase 2:** the
+prune's recall measurement; the emission-only against full-decode measurement; the leading-tone
+ablation; and the modulation-placement measurement. **They are named as the sitting named them and
+deliberately NOT elaborated** — elaborating what a measurement would do is designing it, which is the
+act D-231 bars — and **the modulation-placement act carries its grading convention AT THE ACT**: gate
+block (A)'s **modulation correctness**, explicitly **not** the agreement percentage, which is
+gameable by the change under test and therefore cannot be that change's own bar. **Performable as
+reads:** the key-mode diagnosis's cause breakdown; the committed fitted tables; and the decode's
+transition structure — **which may relocate decision 3's question to the segmentation layer**, and #7
+makes that decisive before anything is designed. **That Cowork is performing the three reads is
+recorded on the row.**
+
+**On [[OI-247]]**, a dated note recording that the premise re-pin **confirmed the defect at the
+SHIPPING arm** — one staff, one moment, and the prior entering the decode only at the initial segment
+— so the row cannot later be dismissed as evidence about the dormant arm. **That is the failure that
+invalidated OI-141's fourth input**, whose mechanism was pinned at a path that stopped being the
+production arm two weeks afterwards. **The confirmation is stated at its true width:** it reaches the
+mid-score half only, and the row's eligibility-and-exclusion half is untouched, because silence is not
+establishment (#19).
+
+**No status cell moved on either row.** Commit `13602a70ba`, pushed.
+
+### Task 2 — COMPLETE. The derivation abandoned with its ground, and the bound placed through the generator
+
+**The abandonment and its three-part ground are recorded at the STOP's own section** above, with the
+three routes left standing and unexercised (#12). **A5 stands refuted rather than replaced**, and no
+falsification test was built, narrowed or amended.
+
+**A1 HOLDS.** The bound went onto the cut's own artifact **through its generator** —
+`tools/audit/gen_phase1_completion_inventory.py` — and never by hand-editing a generated file; the
+artifact re-derives with the bound present, and its own `--check` re-derives byte-identically
+afterwards.
+
+**A2 HOLDS, AND IT WAS CHECKED BOTH WAYS RATHER THAN ASSERTED.** The wide cut's membership and the
+gating split were read at the artifact before the edit and again after the regeneration: **no member
+entered and none left**, in either direction, at either block. Every derivation that consumes the cut
+was then re-checked and **re-derives byte-identically** — the finish line, the per-row gating sizing,
+both reach applications and the superseded-reach application. **So nothing about what the cut selects
+moved**, which is what makes this a record and not a mechanism change (**D-436**).
+
+**No row was written and no gating verdict moved.** Commit `f4e260ebd1`, pushed.
+
+### Task 3 — COMPLETE. The close
+
+**Two `STATUS.md` pointer entries — one per task that did work — and nothing else of substance in
+that file**, which remains unreadable in full, its row [[OI-370]] open and gating. The
+`Last updated:` prefix was moved onto the new topmost entry and removed from the one below, on the
+precedent this file's own previous closes record. This section is the close, and the two findings the
+previous batch surfaced are carried into §2 above with their discard records.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ ON THE GUARD SET — IT ENDS EXACTLY WHERE IT WAS FOUND, AND THAT IS ESTABLISHED RATHER THAN
+CLAIMED.** The full guard set was run at the start of the batch and again after this batch's edits.
+**Both runs report the identical outcome**, and the artifact that records them is **not among the
+changed paths after the second run** — the guard state re-derives to the same bytes it carried at
+HEAD, which is a stronger statement than a matching summary. Two reds stand, and **both were carried
+at HEAD before this batch touched anything**: the filing-convention application's STOP on an authored
+verdict for a document its derivation no longer carries, and the guard runner's own STOP on a derived
+guard with no authored invocation, which is the subject of a row the record has already discarded.
+**Neither was caused by this batch and neither was worked around**, so §0e's condition — a guard red
+for a cause that is neither this dispatch's edits nor already recorded — did not fire. The guard
+classification re-derives.
+
+**★ ON THE FIGURES RULE (D-431) AND ON POSITIONAL COUNTS (D-307, D-432).** No measured quantity is
+stated anywhere above or in either commit message: every population, count and verdict is pointed at
+its artifact. The only quantities stated are row identifiers, commit identities, and the counts of
+this batch's own acts — two commits, four barred acts, three reads — each of which is this session's
+own act reported at its own output. **No positional count appears anywhere:** the dispatch is cited by
+its exact filename as it requires, the finish-line item is named by its own name — *the TRUE-half item
+whose rows GATE* — and the design opening's decisions are named by the identifiers the record itself
+gives them, never by position in any list.
+
+**★ ON D-253 IN EVERY DIALECT.** No working-tree file was read through a shell in any dialect: every
+read of `CLAUDE.md`, `STATUS.md`, `DECISIONS.md`, the `OPEN_ITEMS.md` INDEX, the detail files, the
+generators and the artifacts went through Read/Grep/Glob. **The previous batch's finding (i) was
+treated as a standing remedy rather than a story:** every tool output this session produced was
+written to an **absolute** scratchpad path outside the repository and read back from that same
+absolute path, from the first command onward. The only shell reads of repository content were git
+object queries by explicit hash — `git show 4d2f1e063d:…`, `git show 5a58fb6932…:…`,
+`git show 13602a70ba --stat` — each hash taken from a session's own commit report or from
+`STATUS.md`'s record of one.
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense (*corpus of
+scores*, *candidate set*, *content* throughout); bare *key*, *mode*, *measure*, *beat*, *scale*,
+*interval*, *root*, *part*, *rest* and *figure* appear in no non-musical sense — *measurement* is used
+for the gauging sense throughout, and *mid-score* is the musical sense. Two inherited compounds are
+carried knowingly: **register entry** / **decisions register**, and the **dated-note** idiom the
+detail files prescribe.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0d, checked item by item).** **No route out of the STOP was
+taken** — the abandonment is not a route, it is the decision not to take one. **No falsification test
+was built or narrowed.** **No row left the gating population and phase 1 did not become nearer
+completion by this batch** — it became better described, which is exactly what §0d says the batch may
+do. **No measurement was built, designed, scoped or run**, and the four barred acts were recorded
+without being elaborated, which is the same prohibition applied to the writing itself. **[[OI-179]]
+stays OPEN and GATES**, untouched by anything here.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
