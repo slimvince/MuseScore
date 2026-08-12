@@ -444,7 +444,7 @@
         "document": "cowork_engage_arc_plan.md",
         "state_at_head": "WRITTEN — CLOSED",
         "why": "The user wrote an explicit delegation clause into `CLAUDE.md` on 2026-08-03 and all three entries of the home population are `contract-home`. The document's fourth entry is `process`, which the home-class criteria do not reach at all.",
-        "delegation_at_head": "CLAUDE.md:297",
+        "delegation_at_head": "CLAUDE.md:328",
         "delegation_form_at_head": "explicit-delegation-clause",
         "entries_in_the_home_population": 3,
         "by_class": {

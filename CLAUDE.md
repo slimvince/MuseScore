@@ -208,12 +208,43 @@ override convenience.
     harmonic spines; weekly review with the corpus author and **no independent annotation**; and no
     duplicate or superseded readings. **So BCMH joins the class this principle already names for the
     Mozart-sonatas corpus — consensus-built, so agreement cannot be recovered after the fact** — and
-    inter-annotator agreement inside it is not unpublished but nonexistent. **The consequence for
-    this principle: the ceiling is not obtainable from inside any single corpus in this repertoire**,
-    which is why OI-179's measurement is a comparison BETWEEN annotation traditions. *NOT claimed:*
-    that no corpus anywhere could supply it — the claim is about the enumerated set the D-474 block
-    names, and a corpus outside that set is a finding rather than a contradiction. *The errata limb
-    of the contact is UNANSWERED and stands outstanding.*
+    inter-annotator agreement inside it is not unpublished but nonexistent.
+    **The consequence for this principle, stated at the width the D-474 block above uses.** What is
+    absent is a **published** per-axis agreement value, and that absence is unchanged. What is **not**
+    absent is computability: the block above already records two corpora whose duplicate or dual
+    annotations exist and were never computed, and no corpus's standing is restated here (#6). **So
+    the ceiling is not obtainable from inside any corpus of OUR GATE REPERTOIRE** — BCMH and the
+    Mozart sonatas are consensus-built and can never yield it, and ABC has no overlap by design —
+    **while within the wider enumerated set it is computable by us, off-repertoire or of unchecked
+    domain.** OI-179's design surface — a Cowork reading surface, **not ratified** — classes TAVERN's
+    duplicates as within-corpus, true inter-annotator and off-repertoire, and Dilemmadata's domain as
+    still to be checked at the data; **neither computable route is established (#19)**, and neither
+    has been checked at its data. **That is why OI-179's on-repertoire leg is a comparison BETWEEN
+    annotation traditions and therefore a PROXY, and why the off-repertoire legs bracket it rather
+    than replace it.** The choice this leaves — the right quantity on the wrong music against a proxy
+    quantity on the right music — is a **phase-2 design decision and is not settled here.**
+    *NOT claimed:* that no corpus anywhere could supply it; that either computable route will yield a
+    usable value; or that the domain caveats have been discharged.
+    **★ THAT PARAGRAPH REPLACED A NARROWER ONE, AND THE FORMER WORDING STANDS IN PLACE (#12;
+    user-ruled 2026-08-11 on a surface carrying three alternatives with their principled costs — the
+    ruling is KEEP THE WIDTH AND RESTATE WHAT IS ACTUALLY ABSENT; the defect it corrects is tracked at
+    `OPEN_ITEMS.md` OI-375).** **THE FORMER WORDING WAS:** "**The consequence for this principle: the
+    ceiling is not obtainable from inside any single corpus in this repertoire**, which is why
+    OI-179's measurement is a comparison BETWEEN annotation traditions. *NOT claimed:* that no corpus
+    anywhere could supply it — the claim is about the enumerated set the D-474 block names, and a
+    corpus outside that set is a finding rather than a contradiction." *Why it was replaced:* its
+    load-bearing word's argument — *this repertoire* — was unnamed, and this record already uses that
+    phrase at two widths that give the sentence opposite truth values; read at the wider width, the
+    one the D-474 block earlier in this same principle uses of itself, it is refuted by that block's
+    own enumerated set and argues away two within-corpus legs OI-179's design surface holds open as
+    an undecided question. *The two declined alternatives, recorded because an excluded alternative
+    is evidence about the choice:* **narrowing the sentence to our gate repertoire**, declined
+    because it would place a narrow reading of *this repertoire* below the same phrase used at a wide
+    width in the same principle, which is the ambiguity that produced the defect; and **striking the
+    consequence sentence**,
+    declined because a reader of #21 would then still infer the ceiling might come from citation,
+    which is exactly what D-474 exists to prevent. *The errata limb of the contact is UNANSWERED and
+    stands outstanding.*
 22. **Every hard gate carries a pre-declared protocol for the largest change it will face.**
     A gate written only for incremental change must not be amended under the pressure of a
     live diff — the exceptional-event variant (e.g. architecture-scale adoption: aggregate
