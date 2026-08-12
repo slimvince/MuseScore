@@ -68,9 +68,10 @@ this.
 `cowork_spec_code_audit_adjudication_method.md` — a **Cowork reading surface for phase 2, NOT
 ratified, NOT a specification and NOT an authorization**. A pointer, never a copy (#6): none of that
 file's content is restated here, and it commissions no audit and licenses no probe. *(It sits at the
-section's end rather than inside the text above because that text is quoted whole as a register
-entry's verbatim, and an insertion into it would put 2026-08-12 words inside a decision ruled
-2026-07-10 — the placement error the preceding batch's own R3 pointer made and corrected.)*
+section's end rather than inside the text above because that text is quoted whole as a
+decisions-register entry's verbatim, and an insertion into it would put 2026-08-12 words inside a
+decision ruled 2026-07-10 — the placement error the preceding batch's own R3 pointer made and
+corrected.)*
 
 ## P4 — Behavioral characterization, not just reading (the PC-1 lesson)
 
