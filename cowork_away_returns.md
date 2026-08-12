@@ -7834,3 +7834,206 @@ scheduled or prepared beyond its pack, and nothing in the pack was edited.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# ═══ THE REACH DERIVATION OVER THE GATING TRUE-HALF ROWS (dispatch `cc_instruction_item7_reach_derivation.md`, performed 2026-08-12) ═══
+
+> **★ THIS BATCH HALTS ON TASK 1 UNDER THE DISPATCH'S OWN STOP RULE. The derivation is NOT
+> published, and nothing was adjusted to make it publishable.** The reason is the one the premise
+> ledger exists to produce: **assumption A5 is REFUTED at the objects.** Task 2 was performed and is
+> complete; this close is Task 3. **ONE commit, pushed to `origin/master`:** `4d2f1e063d`. No `src/`
+> edit, no behaviour change, no golden refreshed, no corpus of scores touched, nothing under
+> `tools/corpus/` or `tools/robust_stop/` moved, no measurement built or run, no design. **NO STATUS
+> CELL MOVED, no row was written, no register entry was written and no derivation was regenerated.**
+
+## 1 (continued). What needs the user
+
+### 1.x ★ STOP — assumption A5 is refuted: Ruling 65's falsification test does not transpose onto a D-639 reach verdict, and applied as the dispatch directs it forbids a true verdict (Task 1)
+
+**What A5 says.** *"Ruling 65's falsification test runs again over the enlarged reach population.
+Check: if any row the record elsewhere calls inference-bearing is placed outside the doc-sync half's
+reach, the derivation is wrong and HALTS."* The ledger's own preamble makes each assumption a thing
+**checked BEFORE the act resting on it**, and says **a refutation is a STOP**. This is that.
+
+**Why it does not transpose, in one sentence.** Ruling 65's falsification test grades a **D-438**
+verdict — *does this row's subject bear on the analysis, its inputs, or a measurement tool something
+depends on* — and its four probes read surfaces that answer exactly that question. A reach verdict
+answers **D-639**'s question — *does this row record a document stating something false* — and
+**D-639 says in its own words that the two are different tests with different subjects and neither
+overrides the other.** Transposed, the probes fire whenever the two tests correctly diverge.
+
+**★ IT IS DEMONSTRATED AT TWO ROWS RATHER THAN ARGUED, and both are read at the INDEX cell the probe
+actually reads.**
+
+- **[[OI-341]] — the probe contradicts the row's own recorded reading.** Its subject cell is
+  `D — instrument / measurement layer (the audit's own guard apparatus)`, so the fourth probe fires
+  on it. Its own detail file says the row *"bears on no analysis, no analysis input, and no
+  instrument any measurement of the analysis depends on"*, and its INDEX status cell calls it
+  **apparatus under D-641, rowed and left**. So the probe would halt the derivation by calling
+  inference-bearing a row the record itself classes apparatus.
+- **[[OI-359]] — the probe fires where the two tests correctly diverge.** Its subject cell is
+  `D — instrument / measurement layer (the mechanisation triage over the governing document's own
+  rules)` and its status cell asserts **GATES**, so the third and fourth probes both fire. Its gate
+  ground is D-438's own middle term — the enforcement of a measurement convention is an instrument a
+  measurement depends on — and that is **correct and not in dispute**. What the row records is the
+  **ABSENCE of a mechanism**, which is not a document stating something false about anything, so it
+  is correctly outside the doc-sync half. Both readings are right; A5 makes them a halt.
+
+**★ THE HIT SET, verified cell-precise for the fourth probe.** Five rows of the gating population
+carry `| D — instrument / measurement layer` as their subject cell and were placed outside the
+doc-sync half by this session's reading: **[[OI-309]]**, **[[OI-311]]**, **[[OI-341]]**,
+**[[OI-352]]**, **[[OI-359]]**. The third probe (a row asserting its own gate state in the INDEX)
+adds further members — **[[OI-357]]**, **[[OI-360]]**, **[[OI-363]]** carry the bolded marker on
+their INDEX lines — but **whether it sits in the STATUS cell the probe parses was not separately
+established for those three, so they are reported as candidates and not as established hits (#19).**
+
+**★ AND THE DISPATCH'S OWN FRAMING PREMISE IS INEXACT, which is the second half of the finding and
+the more useful half.** §0a states that *"every row in item 7 still gates on the classification **a
+specification states something false at HEAD**"*. That population is not uniform, and the record says
+so twice in its own words:
+
+- **The cut that builds it is keyword-based and declares itself over-inclusive.** The completion
+  inventory's wide cut is the narrow subject-column cut UNION every open row whose own text carries a
+  falsity SIGNAL, and its own field reads: *"Deliberately over-inclusive: an over-included row simply
+  carries its own gate verdict and is judged nowhere here."* Rows enter it on a word — *stale*,
+  *drift*, *doc-sync* — appearing anywhere in the row's title, description or status.
+- **The item's own scope names a second class.** Its `why_it_is_outstanding` reads: *"Each row
+  records a statement in a document of record that is false at HEAD, **or an obligation that keeps
+  one from being checkable**."* D-639's test does not reach the second clause at all: an
+  establishment obligation, a missing mechanism, an unperformed sweep and a live design question are
+  none of them a document's account of itself, and none of them a document stating something false.
+
+**So a reach verdict of OUT over this population does not mean what it means over the population the
+existing machinery was built for.** There, OUT meant *owed nothing further on the TRUE half* for a
+row that had no other phase-1 obligation. Here it would attach to rows whose obligation the item's
+own second clause carries.
+
+**★ WHAT WOULD BE NEEDED — STATED, NOT MADE (A1's own instruction, and D-436 reserves a mechanism
+change to the user).** One of these, and the choice is the user's:
+
+1. **A falsification test whose probes grade the proposition the reach verdict actually asserts** —
+   *does the record elsewhere say this row records a document stating something false about the
+   analysis* — rather than the D-438 proposition the four existing probes grade. This keeps A5's
+   intent and drops the transposition.
+2. **A5 narrowed to the probe that is already about the reach** — the second, which reads the reach
+   derivation's own IN set. Over this population it is vacuous, and saying so is the honest report
+   rather than a pass.
+3. **The population narrowed before the test is applied** — grade only the members whose subject IS
+   a document's account of itself or a document stating something false, and report the remainder as
+   *the test does not reach this row* rather than as OUT. This is a change to what the machinery
+   publishes and is therefore not a session's act either.
+
+**What was NOT done, and why it is not a lesser outcome.** The per-row reading over the whole gating
+population was performed — every detail file opened at the object — and **the verdicts are not
+published**, because publishing them is the act A5 gates and A5 is refuted. Re-doing that reading is
+the cost of the STOP, and it is stated so the user can weigh it rather than discover it.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+**NO NEW ROW. Two findings, and the first is about this session's own reading discipline.**
+
+**★ (i) A STALE FILE WAS READ AND ALMOST BECAME A REPORTED FACT — the D-253 hazard arriving through a
+path-mapping mismatch rather than a mount.** The session ran the sanctioned enumeration
+(`tools/audit/changed_paths.py`) with its output redirected to `/tmp/cp.txt` through the shell, then
+read `C:\tmp\cp.txt` with the file tool. **The two are not the same location**: the shell's `/tmp`
+resolves elsewhere, so the file tool returned a *previous session's* enumeration — a working tree
+with a dozen modified governing documents, none of which exist at HEAD. It was caught because the
+listing did not contain the untracked files the dispatch's own FACT section names, and the
+enumeration was redone with an absolute path. **This is exactly the failure D-253's recorded defense
+is built on** — a read returning silently-wrong content while the file tools read the live disk
+correctly — reproduced through a route the rule's own wording does not name, since the forbidden act
+here was not reading a repository file through a shell but *trusting a shell-written path to be the
+path the file tools read*. **Recorded and not rowed**: no repository file was read through a shell,
+the guard behaved correctly throughout, and the standing remedy — write tool output to an absolute
+scratchpad path — was applied for the rest of the session.
+
+**★ (ii) THE LANDED DRAFT CARRIES A FORWARD STATEMENT THAT HAS SINCE COME TRUE, and it was left
+exactly as written.** `cowork_scratch_2026_08_11/draft_row_status_md_unreadable.md`'s landing note
+says *"The ROW is still NOT landed"* and names the act as due *"at the next verified STOP"*. That row
+landed as **[[OI-370]]** on 2026-08-11. The file is a dated Cowork draft under a directory banner
+that presents its contents as drafts, so a reader meets it as a record of what was written rather
+than as a claim about HEAD — and the dispatch's Task 2 says in terms to alter none of them. **Not
+corrected, not rowed, and declared here** so the fact is not discovered later as an unreported one.
+
+## 3 (continued). Per-task log — the reach derivation and the scratch landing
+
+### Task 1 — HALTED at a refuted premise. The reading was performed; the derivation is not published
+
+**What was read, at the objects.** `CLAUDE.md`'s D-639 block including its three worked examples and
+its fallback; the finish line's TRUE-half item whose rows GATE, with its population and its
+`per_row_gate_source`; both existing applications of D-639's test — the one over the three documents
+and the one over the apparatus-classed rows — and the machinery that produces them; Ruling 65 at its
+own home; the completion inventory's derivation of the wide cut and the gating split; and **the
+detail file of every row in the gating population**.
+
+**A1 — the machinery would have taken the population.** The existing test IMPORTS cleanly: the
+ruling's anchor, its three worked examples and the fallback bit have one home, and the second
+application already demonstrates the pattern of a new population importing them rather than
+restating them (#6). **A1 is not what halts this task.**
+
+**A2 and A3 — the two clauses about how a verdict is reached hold.** Worked examples matched some
+rows literally (a dangling reference; an as-built claim over a live mechanism, the first
+application's reversal-of-sign precedent). Where none matched, the fallback governs and would have
+been declared per row, which is what A3 requires.
+
+**A4 — not reached.** The both-ways reconciliation is a property of the published artifact and no
+artifact was published.
+
+**★ A5 — REFUTED. See §1 above.** The check ran, at the INDEX cells the probes parse, and it fires.
+
+**What the halt does NOT claim.** It does not claim D-639's test is the wrong test for this
+population, that any row's gate is wrong, or that the dispatch should not have been written. §0a
+names *every row genuinely gates* as a correct outcome; this is a different outcome — **the test
+cannot be published under the falsification clause the dispatch attaches to it**, and that clause is
+the user's to amend.
+
+### Task 2 — COMPLETE. The untracked scratch landing is finished
+
+`cowork_scratch_2026_08_11/`'s README, the continuation-14 verification plan and the STATUS.md draft
+row are committed **as they stand**: no banner touched, no wording corrected, no row written and no
+discard record made. The sitting pack beside them was already tracked, so the README's account of
+what the directory holds is true at HEAD. Commit `4d2f1e063d`, pushed. Every file carries its own
+banner saying it is a Cowork draft, not ratified, not a specification and read by no derivation (#6).
+
+### Task 3 — COMPLETE. The close
+
+**Two `STATUS.md` pointer entries — one for the halted task and one for the completed one — and
+nothing else of substance in that file**, which remains unreadable in full, its row [[OI-370]] open
+and gating. The `Last updated:` prefix was moved onto the new topmost entry and removed from the one
+below, on the precedent this file's own previous close records and for that close's stated reason.
+This section is the close.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ ON THE FIGURES RULE (D-431) AND ON POSITIONAL COUNTS (D-307, D-432).** No population size, gate
+count or verdict tally is stated anywhere above — every one is pointed at
+`tools/audit/phase1_finish_line.json` or at the two committed reach artifacts. **No positional count
+appears anywhere:** the dispatch is cited by its exact filename as it requires, and the finish-line
+item it concerns is named by its own name — *the TRUE-half item whose rows GATE* — never by its
+position in the list. The only quantities stated are row identifiers, a commit identity and a path
+count of this session's own act reported at its own output.
+
+**★ ON D-253 IN EVERY DIALECT.** No working-tree file was read through a shell in any dialect: every
+read of `CLAUDE.md`, `OPEN_ITEMS.md`, the detail files, the generators and the artifacts went through
+Read/Grep/Glob. The guard fired twice and neither denial was worked around — once on `git status`,
+answered with the sanctioned enumeration, and once on a `tail` whose numeric argument it read as a
+repository path, answered by reading the file with the file tool. **The one real failure this session
+had was the opposite shape and is finding (i) above** — not a forbidden read, but a shell-written
+path trusted to be the path the file tools read.
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense (*corpus of
+scores* throughout); bare *key*, *mode*, *measure*, *beat*, *scale*, *interval*, *root* and *figure*
+appear in no non-musical sense. Two inherited compounds are carried knowingly: **register entry** /
+**decisions register**, and the **dated-note** idiom the detail files prescribe.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0d, checked item by item).** No completion statement, and
+nothing was written that brings one nearer. **No row was closed and none was written** — the halt
+produces no row, because the dispatch's own §0e routes a STOP to this file. **No ruling is amended**,
+and in particular A5 is reported refuted rather than replaced. **[[OI-179]] stays OPEN and GATES**,
+untouched by anything here. The OI-141 sitting is not prepared, scheduled or pre-empted. No gating
+verdict was hand-added, no apparatus table was edited, and the finish line was **re-derived and
+verified byte-identical rather than regenerated into a new state**.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
