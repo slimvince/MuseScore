@@ -7640,3 +7640,197 @@ desk simulation. The errata re-ask was not performed. **[[OI-179]] stays OPEN an
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# ★ CLOSE — the sitting pack's §7 committed, and the errata limb's state corrected (2026-08-12)
+
+> **Dispatch `cc_instruction_pack_section7_and_errata_state.md`. Both dispatched tasks performed.
+> NO STOP RULE FIRED. TWO commits, both pushed to `origin/master`:** `5dbf690203` (Task 1) and
+> `775b15b325` (Task 2), plus this close. No `src/` edit, no behaviour change, no golden refreshed,
+> no corpus of scores touched, nothing under `tools/corpus/` or `tools/robust_stop/` moved; **no
+> measurement built, designed, scoped or run, and no ceiling value exists.** **NO STATUS CELL MOVED.**
+> The guard set ends exactly where the batch found it: the same single failing member ([[OI-372]]) and
+> the same runner STOP ([[OI-373]]), both already rowed and both reproduced at the tools' own messages
+> rather than assumed.
+
+## 1 (continued). What needs the user
+
+**TWO THINGS, and each is one line either way.**
+
+**(a) ONE ACT WAS TAKEN BEYOND THE DISPATCH'S THREE NAMED SURFACES, AND IT IS REVERSIBLE IN ONE
+EDIT.** [[OI-179]]'s **INDEX row** carried the same stale statement the three named surfaces carried —
+that what remains from the user is the errata act. It is the authoritative status surface, the defect
+class is exactly the one Task 2 exists to correct, and the precedent is one batch old: the same row's
+INDEX cell was corrected in place then, after the canonical opening where rule (f) makes the addition
+inert. **The same treatment was applied, so no state moved.** If the dispatch's *three surfaces* was
+meant as a ceiling rather than an enumeration, the addition comes out in one edit.
+
+**(b) THE ERRATA LIMB IS RE-ASKED AND AWAITING REPLY — WHAT IS AWAITED IS NO LONGER AN ACT.** The
+clock under principle #21's clause (a) runs from **2026-08-11**. Nothing is owed from the user on this
+limb until a reasonable wait has passed with no reply, at which point recording the route as
+**EXHAUSTED** is the user's call and not a session's. **The limb is not closed and nothing in this
+batch closes it.**
+
+**Nothing else is held.** [[OI-179]] stays **OPEN** and **GATES** under #19, with its closing-act
+clause — the result is sent to the laboratory that supplied the annotations — intact.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+**NO NEW ROW. Three findings, one of which bears on a premise of the dispatch itself.**
+
+**★ (i) THE PACK WAS NEVER COMMITTED AT ALL — the dispatch's Task 1 describes §7 and §7b as landed
+and uncommitted, which is true, but the FILE has no history and neither does its directory.** So the
+commit adds the file whole rather than landing two sections onto a tracked file. **The act is the
+same either way and the task is unaffected**, which is why this is a finding and not a STOP. It has
+one real consequence, at (ii).
+
+**★ (ii) A2's THIRD LIMB IS NOT ESTABLISHABLE AND IS THEREFORE NOT ASSERTED (#19).** The check is
+that the former §7 is *present, unaltered, and marked not-current*. **Present: verified at the file.
+Marked not-current: verified at the file** — §7b's own banner says it is wrong as described at §7 and
+must not be read as current. **Unaltered: there is no object to compare against**, because no prior
+version of the file exists in the repository. Nothing suggests it was altered; the point is that
+*nothing established that it was not*, and a check that cannot run is reported as not run rather than
+as passed.
+
+**★ (iii) THREE FURTHER SURFACES MENTION THE ERRATA LIMB AND ALL THREE ARE DISCARDED UNDER AMENDED
+#10 — finding, date and reason recorded here, no row (Ruling 68's own no-row clause).** [[OI-375]]'s
+detail file, in the *what this does NOT do* section of a dated note on a **RESOLVED** row, says the
+limb *"remains UNANSWERED and is the user's act"* — both halves still true, since the re-ask is the
+user's act and it is still unanswered. `STATUS.md`'s width-correction entry names *"the errata limb
+outstanding"* among the things that commit did **not** change. And the close immediately above this
+one says *"The errata re-ask was not performed"* — true of the batch it records. **All three are
+dated records of executed acts, and none risks either limb of the worth test**: no design could be
+built on any of them, and none bears on comparing code against a specification. **This is the reading
+the dispatch's own §0 applied to the surviving positional counts at two of those same surfaces**,
+applied to their errata mentions by the same reasoning. *Found 2026-08-12; discarded 2026-08-12.*
+
+## 3 (continued). Per-task log — the pack's §7 and the errata state
+
+### Task 1 — COMPLETE. The sitting pack committed
+
+**Commit `5dbf690203`**, one path — `cowork_scratch_2026_08_11/cowork_oi141_sitting_pack.md`, added
+whole. **No other file was touched**, including the three siblings in that directory, which stay
+untracked; the dispatch's *no other file* was read strictly.
+
+**What the commit carries, in the file's own terms and not restated from it (#6):** §§1–6 as Cowork
+wrote them, the rewritten §7 re-pinning all seven design decisions at the arm that ships, and §7b
+holding the former §7 whole and marked not-current. **The rewrite is Cowork's and corrects Cowork's
+own error**, which the commit message records. **A2's finding is at §2(ii) above.**
+
+**The pack designs nothing and its own banner says so.** Nothing in this task authorizes a probe, a
+measurement or a design; **D-231** and #8 stand.
+
+### Task 2 — COMPLETE. The errata limb's state, at four surfaces
+
+**Commit `775b15b325`**, five paths: `CLAUDE.md`, `OPEN_ITEMS.md`, [[OI-179]]'s detail file, the
+register backbone data and the one group file it regenerated. `DECISIONS.md` itself did **not**
+change, which is the check that the edit touched provenance and not the entry's title, status or
+home.
+
+**★ A1's FINDING, PER SURFACE — the assumption is that the three surfaces state the limb's state *in
+words the correction can reach without disturbing anything else*, with a STOP if a statement is
+load-bearing for something other than that state. It came back DIFFERENT AT EACH, and no STOP was
+reached.**
+
+- **`CLAUDE.md` principle #21's annotation** — *"The errata limb of the contact is UNANSWERED and
+  stands outstanding."* **NOT load-bearing:** it closes the OI-375 width-correction block after the
+  two declined alternatives, and that block's argument is about the width of *this repertoire*;
+  nothing in #21 reasons from this sentence, and no register entry carries it in a `verbatim`.
+  **CORRECTED in place**, as a bare statement of state, **at the same line count** — so no register
+  home anchor moved, which the disposition verifier then confirmed at every entry.
+- **`D-475`'s verdict** — *"ERRATA: NOT ADDRESSED, so that limb of the contact stands outstanding."*
+  **THE CLAUSE SPLITS, and that is the finding.** *ERRATA: NOT ADDRESSED* is a **fact about the
+  reply** — it is why the limb exists at all and it is load-bearing — so it is **preserved**. Only the
+  state clause after it is corrected. **The update went through `backbone_decisions.json` and the
+  generator** (rule (d)); the entry's `verbatim` is deliberately unchanged, the entry stays **LIVE**,
+  and its two surviving defects are untouched.
+- **[[OI-179]]'s dated note** — **BOTH of its statements are load-bearing and BOTH are preserved.**
+  *"The errata limb is UNANSWERED and stands OUTSTANDING"* is interlocked with the reply's own facts
+  in the same paragraph; *"The errata re-ask is not performed — it is the user's act"* is **true of
+  the session that wrote it** and false only when read as a statement of the world. Each keeps its
+  words with the correction marked at it.
+
+**★ WHERE EACH FORMER SENTENCE WAS PRESERVED, stated per surface because the dispatch asks for
+exactly this.**
+
+- **`CLAUDE.md`**: NOT preserved in place, deliberately — the dispatch directs that a bare statement
+  of state is corrected, and the superseded state survives at [[OI-179]]'s detail file, which carries
+  it in its own words, and in this batch's own commit. Nothing is lost that is not recomputable
+  (#12's own clause).
+- **`D-475`**: preserved **inside the same field**, in the entry's own idiom — *the FORMER CLAUSE,
+  PRESERVED (#12), read "so that limb of the contact stands outstanding"* — beside the former title
+  and former plain restatement that field already carries.
+- **[[OI-179]]'s detail file**: both sentences preserved **exactly where they stand**, each followed
+  by a marked correction pointing at the new dated note that closes the file.
+- **[[OI-179]]'s INDEX row**: the former sentence preserved **in place**, with the correction appended
+  after it and after the cell's canonical opening, where rule (f) makes it inert.
+
+**★ WHAT THE NEW DATED NOTE ADDS BEYOND THE STATE**, as Task 2 directs: the two further questions the
+re-ask carried — **the reduction's alignment convention** and **which form of the annotations is
+authoritative** — each tied to the **D-475** defect it bears on, and the **#19 clause that an answer
+to either is an INPUT to the desk simulation and NEVER a substitute for reading the original files**.
+The note states the consequence plainly: **where an answer and the files disagree, the files govern**,
+and neither defect is discharged by an answer arriving.
+
+**★ A3 CONFIRMED AT ALL FOUR SURFACES.** No surface reads as though errata is answered; every one of
+them says the limb is **awaiting reply**; the limb is **not closed**; and OI-179's status cell **does
+not move** — the row stays **OPEN** and **GATES**.
+
+### Task 3 — COMPLETE. The close
+
+**Two `STATUS.md` pointer entries, one per completed task, and nothing else of substance in that
+file** — which remains unreadable in full, its row [[OI-370]] open and gating. This section is the
+close.
+
+**★ THE `Last updated:` PREFIX WAS MOVED, on the precedent set one batch ago and for that batch's own
+reason:** leaving it on an entry that is no longer the last update makes the file state something
+false about itself, which the file's own banner makes load-bearing. It was moved onto the new topmost
+entry and removed from the one below; the older second marker further down the file was **not**
+touched, on the standing rule that inherited state is not swept unilaterally.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ THE CHECK CAUGHT TWO RESERVED-WORD COLLISIONS IN THIS BATCH'S OWN NEW PROSE, BOTH BEFORE THE
+COMMIT.** Drafting [[OI-179]]'s new dated note, this session wrote *three to five **stems*** (the
+piece-identifier sense of a word reserved for the note stem) and *no ceiling **figure*** (the
+numerical sense of a word reserved for figuration). **Both were corrected on the spot** — to *pieces*
+and to *value* — and *value* is the word the dispatch itself uses in its own §0d, so the correction
+brings the note into step with the instruction rather than inventing a variant. **The neighbouring
+notes' inherited *ceiling figure* wording was NOT swept**: it belongs to [[OI-229]]'s scoped pass, and
+editing a sibling note's words while correcting my own would be exactly the unilateral rename that
+pass exists to prevent.
+
+**★ ON THE REST OF THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense
+(*corpus of scores* throughout); bare *key*, *mode*, *measure*, *beat*, *scale*, *interval* and *root*
+appear in no non-musical sense. **Two inherited idioms are carried knowingly and named rather than
+fixed:** the **dated-note** idiom the detail files' own closing line prescribes, and **register
+entry** / **decisions register**, the record's standing compounds.
+
+**★ ON D-253 THE GUARD FIRED ONCE AND WAS NOT WORKED AROUND.** A `wc -l` aimed at a repository path
+was **refused by the shell-read guard**, and the read was redone through the file tools. **No
+working-tree file was read through a shell in any dialect** — every read of `CLAUDE.md`,
+`OPEN_ITEMS.md`, the detail files, the sitting pack and the register data went through Read/Grep, and
+every shell text utility this batch ran was aimed at tool output under `/c/tmp`, outside the tree.
+`STATUS.md` was read in bounded ranges through the file tools, which is the only way it can now be
+read at all ([[OI-370]]). The two artifacts a guard run could have rewritten — the guard state and the
+open-items split report — were **checked by content hash against the commit and are byte-identical**,
+so no artifact churn entered either commit.
+
+**★ ON THE FIGURES RULE (D-431) AND ON POSITIONAL COUNTS (D-307, D-432).** The only quantities stated
+anywhere in this batch are commit identities, path counts and surface counts — each this session's own
+act reported at its own output, not a measured quantity restated from an artifact. **No positional
+count appears anywhere**: every location is described, never counted, including in the two commit
+messages and the two `STATUS.md` entries. **On #24:** no comparison between measured quantities is
+asserted, so none is left without its uncertainty.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0d, checked item by item at the end).** The errata limb is
+**not closed** — it is re-asked and awaiting reply. **No measurement is built, designed, scoped or run
+and no ceiling value exists.** **D-475**'s two surviving defects — the homorhythmic-reduction unit
+mismatch and the rntxt machine-translation noise — are untouched, and its establishment bar stands.
+The third option on principle #21, qualifying what the principle DEMANDS, is still unwritten and still
+waits on the desk simulation. **[[OI-179]] stays OPEN and GATES.** The OI-141 sitting is not held,
+scheduled or prepared beyond its pack, and nothing in the pack was edited.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
