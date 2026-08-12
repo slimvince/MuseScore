@@ -38,7 +38,7 @@ NEEDS-RULING label and a whose-act field disagree; if a role-separation blocker 
 owner disagree; if a second half repeats its row's own (label, blocker) pair; if a quote is not present
 in the INDEX; or if a row has no detail file.
 
-WHAT IT DOES NOT DO.  It moves no status, flips no row, and performs no act on any row.  Two rows carry
+WHAT IT DOES NOT DO.  It moves no status, flips no row, and performs no act on any row.  Some rows carry
 a flag saying the RECORD may be stale about them — checked at named objects and explicitly NOT acted
 on, because flipping a row moves a population and a population movement belongs to an act that accounts
 for it, never to a sizing pass that would slip it in unremarked (the [[OI-362]] precedent).
@@ -1232,6 +1232,23 @@ RECORD_MAY_BE_STALE = {
     # caution that turned out to be load-bearing: the flag said in terms that what it had checked was
     # a committed enumeration's ACCOUNT of what it did and not the six files, and reading the files
     # is what found the surviving site the account did not carry.
+    "OI-274": (
+        "Its SECOND HALF is ANSWERED at HEAD and the row does not say so. That half asks whether "
+        "`CLAUDE.md`'s mandatory-read instruction should also name the joint estimator's own "
+        "specification — a governing-document question the row assigns to the user — and the user "
+        "answered it on 2026-08-11 in Ruling 64 of "
+        "`cowork_rulings_2026_08_11_fourteenth_stop.md`: the joint estimator's `ARCHITECTURE.md` "
+        "section, together with the factorization contract that section delegates to, joins the "
+        "CONDITIONAL session-start reads on the `docs/scoring_model.md` pattern. The ruled "
+        "instruction is WRITTEN and stands in `CLAUDE.md` beside the one it was patterned on, so "
+        "the act is performed and not merely decided. **NOT narrowed and NOT flipped here** — the "
+        "second half above is authored against the row AS IT STANDS, which is what this pass "
+        "sizes, and the row's INDEX text and its detail file's disposition both still pose the "
+        "question as the user's outstanding one; correcting either is an act on a row. **The "
+        "row's MAIN half is untouched by that ruling and is still owed in full** — the scoping "
+        "sentence, the re-stamped footer and the two banners standing on tracked files — so this "
+        "flag narrows what the row waits on and nothing else."
+    ),
     "OI-220": (
         "Its live remainder is SMALLER than the row states, and the row does not say so. Of the six "
         "headers it names, one was CORRECTED by the licensed comment-only act and one carries no such "
