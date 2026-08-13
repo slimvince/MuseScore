@@ -8576,3 +8576,86 @@ answer.
 - **Not** that any sibling of this defect has been looked for. None was, and the dispatch forbids
   the sweep (§0d).
 - **Nothing is flipped, corrected or discarded**, and no population moves by this record.
+
+## THE ACTS AVAILABLE NOW, ENUMERATED AT `tools/audit/gating_row_sizing.json`
+
+**Recorded 2026-08-13 (CC) under `cc_instruction_stop_record_and_enumeration.md`, Task 2.** **Every
+act below is one whose blocker value, read at its own entry, is `nothing beyond capacity`** — which
+that artifact's own blocker vocabulary defines as *"The act is available now; what it waits on is a
+session's capacity."* **Nothing is regenerated, nothing is judged, and no ordering and no
+recommendation is offered:** the choice among these is the user's, and this section supplies only
+the facts under it.
+
+**How to read it, so it is not read as more than it is.** Each act names **which entry it came
+from** and **whether that entry is a main entry or a second half**; **quotes the entry's own blocker
+value**; gives **the act owed in the artifact's own words**; and gives **its size, in the artifact's
+own label.** The order is the artifact's own published order in `rows_available_now` — **it is not a
+sequence and not a priority.** No count, verdict or population is computed here (**D-431**): the
+artifact publishes its own at `counted`, and the artifact was not written to.
+
+### The available acts — every one a MAIN ENTRY
+
+- **[[OI-45]] — MAIN ENTRY.** Blocker at the entry: *"nothing beyond capacity"*. Size:
+  **SESSION-SMALL**. The act owed, in the artifact's words: *"Re-aim the stale §4/§6 anchors in
+  `docs/scoring_model.md` and give `kHalfDimFirstInversionBonus` its §6 entry."*
+- **[[OI-90]] — MAIN ENTRY.** Blocker: *"nothing beyond capacity"*. Size: **SESSION-SMALL**. Act:
+  *"Correct the L1/L2 file-table reason strings under `tools/audit/l1l2/`, which the L3 pass made
+  stale."*
+- **[[OI-107]] — MAIN ENTRY.** Blocker: *"nothing beyond capacity"*. Size: **SESSION-SMALL**. Act:
+  *"Re-label `ARCHITECTURE.md` §4.1h's iteration-era baselines and test counts as a dated historical
+  snapshot — the second of the two routes the row's own text gives; the first, re-measure, is a
+  measurement rather than a labelling act."*
+- **[[OI-150]] — MAIN ENTRY.** Blocker: *"nothing beyond capacity"*. Size: **SESSION-SMALL**. Act:
+  *"Build at HEAD, run both suites, re-stamp both `BUILD_AND_TEST.md` baselines from those runs, and
+  make the notation line name the four key-emission cases that fail by design."*
+- **[[OI-183]] — MAIN ENTRY.** Blocker: *"nothing beyond capacity"*. Size: **SESSION-SMALL**. Act:
+  *"Give the twelve unmentioned scoring constants a by-name mention in `docs/scoring_model.md`, or
+  state per constant which table cell already covers it."*
+- **[[OI-207]] — MAIN ENTRY.** Blocker: *"nothing beyond capacity"*. Size: **SESSION-LARGE**. Act:
+  *"The residual second pass over the clusters the mechanical disposition could not classify, and the
+  reading of the remaining design documents — which the row's own proposal says to read whole rather
+  than sampling through a yield proxy it declares unestablished."*
+- **[[OI-274]] — MAIN ENTRY.** Blocker: *"nothing beyond capacity"*. Size: **SESSION-SMALL**. Act:
+  *"Give `docs/scoring_model.md` the scoping sentence its two sibling rows closed on, re-stamp its
+  footer date, and correct the two DRAFT-UNCOMMITTED banners standing on tracked files."*
+- **[[OI-315]] — MAIN ENTRY.** Blocker: *"nothing beyond capacity"*. Size: **SESSION-SMALL**. Act:
+  *"Correct `docs/key_path_design.md`'s §2.1/§5 self-contradiction and the two further `docs/`
+  surfaces that still state the removed piece-start shortcut as live."*
+- **[[OI-321]] — MAIN ENTRY.** Blocker: *"nothing beyond capacity"*. Size: **SESSION-SMALL**. Act:
+  *"Correct the two plainly false statements — the header calling a phase deferred that the code says
+  was executed, and the named directory that does not exist."*
+
+### NOT ONE SECOND HALF IS AVAILABLE — stated by exclusion, because the absence is information (#12)
+
+The artifact carries a second half on four entries, and **every one of them is blocked**, each
+blocker quoted at its own `the_second_half` object:
+
+- **[[OI-109]]'s second half** — *"the freeze on `src/`"*. (*"The orphaned `BUG-10` marker in
+  `chordanalyzer.cpp`, re-pointed at this row"*.)
+- **[[OI-274]]'s second half** — *"a user ruling"*. This is the half Task 1's STOP above is about,
+  and it is **not** what makes that row appear in the available list; the row is there on its **main**
+  half, which the STOP leaves owed in full.
+- **[[OI-315]]'s second half** — *"the freeze on `src/`"*. (*"The stale comment in
+  `src/composing/tests/regionanalysis_tests.cpp`"*.)
+- **[[OI-321]]'s second half** — *"a user ruling"*.
+
+### The bound on this enumeration, stated rather than left to be discovered
+
+**The RETIRED sizings are not searched for available acts, and that is the artifact's own rule rather
+than a choice made here:** they are sizings for rows that have **left** the gating population, kept
+whole and — in the artifact's words — *"counted nowhere"*. Several of them do carry the
+`nothing beyond capacity` value, and every one belongs to a row that has since closed. **So this
+enumeration is over the live gating population and over nothing else.**
+
+### Two facts the artifact itself carries under these acts — quoted, and NOT a recommendation
+
+Recorded because leaving them out would let a label be read as more, or less, than the artifact says
+it is; **neither is an ordering, a grouping proposal or advice.**
+
+- **The artifact qualifies its own SESSION-SMALL label on [[OI-150]]**, in that entry's own words:
+  *"Two lines edited — but the edit's INPUT is a measurement, so the act includes a build and both
+  suites run. That is a capacity cost rather than a permission one."*
+- **Three of the acts name the same document.** [[OI-45]]'s entry says it *"shares a document with
+  OI-183 and OI-274, so one pass over that document closes three rows' worth of act"*, and
+  [[OI-183]]'s says it *"shares its document with OI-45 and OI-274"*. The document is
+  `docs/scoring_model.md`.
