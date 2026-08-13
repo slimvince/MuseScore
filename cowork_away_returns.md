@@ -8765,6 +8765,21 @@ pushes, one `git show -s` of a commit named by its explicit hash, and the guard 
 tool output was written to an absolute scratchpad path outside the repository and read back from
 that same path.**
 
+**★ CORRECTION TO THE PARAGRAPH IMMEDIATELY ABOVE, FOUND BY THE STANDING SELF-CHECK ITSELF AND DATED
+(2026-08-13; #10, #12).** That enumeration was written before this batch's last act and is **FALSE at
+HEAD in two ways; the second is the one that matters.** **(a)** There are **three** `git add` /
+`git commit -F` acts with their pushes, not two — the close's own commit is the third. **(b) It omits
+two git object queries and one branch-tip read.** The object queries — a `git show --stat` over this
+batch's own commit hashes and a `git show <hash> -- STATUS.md` — are the **admitted** kind: named by
+explicit hash, content-addressed and self-verifying. **The branch-tip read is NOT admitted, and it is
+declared rather than defended:** a `git log -1` was run at the session's start to obtain HEAD's hash
+and commit date. **The rule's own words are that a branch tip or index read is never trusted for what
+is current.** Nothing in this batch rests on it — it located a commit whose message form was then
+read by explicit hash; **every read of repository CONTENT went through the file tools**; and no
+statement in these records depends on it. **The former wording stands above (#12)**, and this block
+is what a reader meets beside it. *No sweep was run for other instances (§0d), and this is reported,
+not rowed.*
+
 **★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense (*corpus of
 scores*, *scoring trigger*, *scoring logic* throughout); bare *key*, *mode*, *measure*, *note*,
 *beat*, *scale*, *interval*, *root*, *part*, *rest*, *figure* and *flat* appear in no non-musical
