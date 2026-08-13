@@ -8659,3 +8659,127 @@ it is; **neither is an ordering, a grouping proposal or advice.**
   OI-183 and OI-274, so one pass over that document closes three rows' worth of act"*, and
   [[OI-183]]'s says it *"shares its document with OI-45 and OI-274"*. The document is
   `docs/scoring_model.md`.
+
+## 1 (continued). What needs the user
+
+**TWO THINGS, AND THE SECOND IS THE POINT OF THE BATCH.**
+
+**(i) THE NARROW QUESTION, WHICH ONE LINE SETTLES.** *Should the `chordanalyzer.cpp`-scoring trigger
+also name the joint estimator's specification, over and above the parallel trigger Ruling 64
+created?* It is [[OI-274]]'s second half read at the width the row itself argues at, and it survives
+Ruling 64 because that ruling put a **second** instruction beside the first rather than widening the
+first. **The row is untouched and stays open on its main half either way.** The full record, with
+every verdict at its object, is the STOP section above.
+
+**(ii) THE CHOICE AMONG THE AVAILABLE ACTS, WHICH IS THE USER'S AND IS NOT PROPOSED ON HERE.** The
+enumeration above lists every act the sizing artifact's own blocker value calls available now, each
+with its entry, its kind, the act in the artifact's words and its size. **No ordering, no grouping
+and no recommendation is offered.** Two facts under the choice are quoted from the artifact and
+marked as not being advice: that one SESSION-SMALL label covers an act whose input is a measurement,
+so it carries a build and both suites; and that three of the acts name the same document.
+
+**Nothing else is added to what was already waiting**, and everything the previous batches left is
+left where it was — [[OI-179]] included, which stays **OPEN** and **GATES**.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+**NO NEW ROW AND NO NEW DISCARD.** Two things are DECLARED rather than acted on, both because this
+dispatch reserves the act.
+
+**★ THE AUTHORED FLAG ASSERTING THE REFUTED PREMISE IS STILL LIVE AT A COMMITTED TOOL, AND IS
+DELIBERATELY LEFT THERE.** `tools/audit/gen_gating_row_sizing.py` carries it and the artifact
+publishes it twice, opening *"Its SECOND HALF is ANSWERED at HEAD and the row does not say so."*
+**This is not a finding made here** — it is the previous session's finding, recorded above with its
+objects — and the dispatch's Task 1 states in terms that the flag is **not** corrected, because
+correcting a committed tool under a STOP is a separate ruling. **It is named here so that a reader
+of the artifact meets the refutation beside it.**
+
+**★ THE PREVIOUS SESSION'S REPORT IS ON NO SURFACE, AND THAT IS WHY THIS BATCH EXISTS.** It is
+reported as a fact about the record rather than rowed: the dispatch's own §0a already establishes
+it, and the remedy — putting the STOP in the returns file — is what Task 1 performed. **No sweep was
+run for other findings that live only in a report**, and none is claimed to exist or not to exist;
+the dispatch forbids the sweep (§0d) and silence is not establishment (#19).
+
+## 3 (continued). Per-task log — the STOP record and the enumeration
+
+### Task 1 — COMPLETE. The STOP recorded, every verdict re-established at its object
+
+**THE ONE DEPARTURE FROM THE DISPATCH AS WRITTEN, DECLARED AT THE TOP OF THE RECORD ITSELF AND
+AGAIN HERE.** Task 1 asks for the previous session's A1, A2 and A3 verdicts. **That session's report
+is not on disk and this session did not have it**, so there was nothing to transcribe and
+transcription was not attempted. **The verdicts were re-established at the objects the previous
+dispatch's own assumptions name**, and the record states throughout that they are this session's
+findings. Three things are taken from the dispatch rather than from an object and each is marked
+where it appears: that a STOP was declared, that A1 and A2 refuted the premise, and the narrow
+question's wording. **Where the re-established verdicts and the dispatch's account of them agree,
+that agreement is evidence rather than a citation.**
+
+**A1 REFUTED on its second limb; A2 REFUTED; A3 SETTLED by the record and its STOP not fired; A4 not
+reached.** Each is written above with the object read and the text quoted. **No act on [[OI-274]] in
+either branch**, so the row's INDEX text, its detail file and its main half are all exactly as they
+were. Commit `fee2d12ee2`, pushed.
+
+### Task 2 — COMPLETE. The enumeration, published at the artifact's own field values
+
+**The artifact was read as a STRUCTURE** — every main entry taken whole, its nested second half
+distinguished from it — which is A1's requirement and the reading whose absence produced two wrong
+claims earlier. **Every act names its entry and its kind; every blocker value is quoted at the
+entry** (A2). **Nothing was derived:** no regeneration, no verdict, no count computed, and the
+artifact not written to (A3), which its own `--check` confirms in the guard run below.
+Commit `721e02b7b2`, pushed.
+
+### Task 3 — COMPLETE. The close
+
+**Two `STATUS.md` pointer entries — one per task — and nothing else in that file.** The
+`Last updated:` prefix moved onto the new topmost entry and was removed from the one below, on the
+precedent this file's own previous closes record. **`STATUS.md` remains unreadable in full**, its row
+[[OI-370]] open and gating, so the entries were written by locating the head of the file rather than
+by reading it whole. **The two content sections stand ABOVE this close** rather than under a §3
+heading, because Task 1 is atomic and had to land before the batch's own framing existed; the
+ordering is declared here so it is not read as a lost section.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ ON THE GUARD SET — IT ENDS EXACTLY WHERE IT WAS FOUND.** The full set was run after this batch's
+edits and **the guard state re-derives**, in the runner's own opening words, so its artifact is not
+among this batch's changed paths. **Two reds stand and both are the standing recorded pair**, each
+carrying its own row: the filing-convention application's `--check` failure ([[OI-372]]) and the
+runner's own STOP on a derived guard candidate with no authored invocation ([[OI-373]]). **Neither
+was caused by this batch and neither was worked around** — this batch's only changed paths are
+`cowork_away_returns.md` and `STATUS.md` — so §0e's condition, a guard red for a cause that is
+neither this dispatch's edits nor already recorded, did not fire. **The sizing pass's own `--check`
+PASSES**, which is the guard that would have caught the artifact being written to.
+
+**★ ON THE FIGURES RULE (D-431) AND ON POSITIONAL COUNTS (D-307, D-432).** No population, count or
+verdict is computed anywhere in this batch. The enumeration publishes **row identities and authored
+field values read at the artifact, each cited to it** — the exception in form the dispatch declares —
+and points at `counted` for every quantity rather than restating one. **No positional count appears
+anywhere:** the dispatch is cited by its exact filename, the previous dispatch by its own, the ruling
+by its number, and no file is cited by a line number.
+
+**★ ON D-253 IN EVERY DIALECT.** No working-tree file was read through a shell in any dialect: every
+read of `CLAUDE.md`, `STATUS.md`, `DECISIONS.md`, the `OPEN_ITEMS.md` INDEX, the detail files, the
+ruling record, the dispatches, the generators and the artifacts went through Read/Grep/Glob. **The
+shell was used for four things only** — the clock, two `git add`/`git commit -F` acts with their
+pushes, one `git show -s` of a commit named by its explicit hash, and the guard run — **and every
+tool output was written to an absolute scratchpad path outside the repository and read back from
+that same path.**
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense (*corpus of
+scores*, *scoring trigger*, *scoring logic* throughout); bare *key*, *mode*, *measure*, *note*,
+*beat*, *scale*, *interval*, *root*, *part*, *rest*, *figure* and *flat* appear in no non-musical
+sense — *measurement* carries the gauging sense and *value* the numeric one, and *tool* and
+*generator* are used where the collided word would have been. Two inherited compounds are carried
+knowingly: **register entry** / **the open-items register**, and the **second half** idiom the
+artifact itself defines.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0d and §0e, item by item).** **No act on [[OI-274]] in
+either branch** — no row written, corrected, flipped or discarded. **No sweep for siblings** of any
+defect named here. **No tool corrected**, the authored flag included. **No sizing regeneration** and
+no artifact written to. **No status cell moves and no gating verdict moves.** No measurement was
+built, designed, scoped or run, and no design was made. **Phase 1 does not become nearer completion
+by this batch — it becomes choosable**, which is a different thing and is what the dispatch says it
+is doing.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
