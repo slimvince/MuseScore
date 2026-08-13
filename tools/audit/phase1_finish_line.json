@@ -332,6 +332,21 @@
      "every item the cut places outside the gate — read at `THE_FINISH_LINE`"
     ]
    },
+   "★_and_a_SECOND_population_since_2026-08-13": {
+    "which": "the rows the user's Ruling 69 takes out of the gate through a DISCARD record (D-677) — read at the completion inventory's own gating split, never listed here (D-431)",
+    "rows": [
+     "OI-90"
+    ],
+    "why_the_SAME_four_probes_and_not_a_second_set": "Each probe grades a D-438 proposition — does the record elsewhere call this row inference-bearing — and that is what a gating verdict asserts however the row came to lose it. So the test transposes exactly, which is what the dispatch's assumption A4 says and why it transposes here where it did not onto a D-639 reach verdict. A row the record calls inference-bearing losing its gate to an AUTHORED discard is the failure this test was written for, arriving by a different door.",
+    "hits_per_probe": {
+     "1_named_GATING_by_the_phase_3_gate_partition": [],
+     "2_put_INSIDE_the_doc_sync_half_by_D_639s_reach_derivation": [],
+     "3_asserting_its_own_gate_in_the_index": [],
+     "4_subject_column_naming_the_instrument_or_measurement_layer": []
+    },
+    "verdict": "PASS — no row a discard takes out of the gate is called inference-bearing anywhere the four probes read",
+    "and_a_bound_it_does_NOT_remove": "The #19 carve-out is what keeps an establishment obligation inside the gate whatever its subject, and it is enforced UPSTREAM of this test: the discard locator STOPS on a record naming a row the apparatus declaration keeps gating on a ground invoking #19. This test is the second line, not the first."
+   },
    "the_four_probes_and_why_each_is_the_record_rather_than_an_opinion": {
     "1_named_GATING_by_the_phase_3_gate_partition": "tools/audit/phase3_gate_partition.json — a separate, user-ACCEPTED partition applying the SAME D-438 test to phase 2's items. Only the item identifiers that NAME an open-items row are comparable, and they are parsed from the artifact rather than listed here.",
     "2_put_INSIDE_the_doc_sync_half_by_D_639s_reach_derivation": "tools/audit/decisions/true_half_reach_rows.json — a row it puts IN is one the record says states something false about the SYSTEM. This is the exact shape the user ruled at Ruling 56, so a disagreement here would be the cut re-deciding a question already ruled.",
@@ -662,6 +677,17 @@
     "rows_still_owed_a_lapse_record": [],
     "how_it_is_checked": "the row's own detail file is searched for the anchor '★ LAPSE RECORD'. This is REPORTED and is deliberately not a STOP: writing the records is a per-entry pass, which D-672 permits stopping at a member boundary provided the record says what was done and what was not — and this field is that record."
    }
+  },
+  "★_the_DISCARD_input_the_user's_Ruling_69_adds_to_this_cut": {
+   "the_ruling": "User, 2026-08-13, Ruling 69 of `cowork_rulings_2026_08_13_seventeenth_stop.md`, homed at CLAUDE.md's open-items register section as register entry D-677: a DISCARD verdict on an already-rowed item is an INPUT to the derivation that decides gating, never an edit to a gating verdict. Quoted in full at its home (#6, D-643).",
+   "what_it_changes_HERE": "Nothing about how this file cuts an item. It changes the POPULATION this file reads: a row a conforming discard record takes out of the gate is no longer in the true half's gating item, and is in neither true-half item — it is not gating work and it is not apparatus. The reconciliation STOP above accounts for it as a third term rather than letting it vanish, which is what keeps this list exhaustive.",
+   "the_rows": [
+    "OI-90"
+   ],
+   "the_records_and_their_three_located_elements": "tools/audit/discard_records.json (D-431 — no element is restated here)",
+   "the_movement_is_reported_BOTH_WAYS_where_it_happens": "tools/audit/phase1_completion_inventory.json → the_gating_split → ★_the_discard_input_reported_BOTH_WAYS, which recomputes the same cut with the input OFF and STOPs on any mover that carries no conforming discard record.",
+   "and_the_falsification_test_runs_over_it": "The same four probes, over the discard-moved rows — see `the_falsification_test.★_and_a_SECOND_population_since_2026-08-13`.",
+   "what_it_does_NOT_do": "It closes no row and moves no status cell: each discarded row stays OPEN. It adds no item and removes none. It authorizes no fix, no design and no inference change."
   },
   "what_the_cut_does_NOT_do": [
    "It adds nothing to this list and removes nothing from it — an addition is a user ruling by the scope rule's own terms.",
@@ -1107,7 +1133,7 @@
    "half": "TRUE",
    "criterion": "C3 — the specification text corrected wherever it states something false",
    "population": {
-    "rows": 35,
+    "rows": 34,
     "row_ids": [
      "OI-105",
      "OI-107",
@@ -1142,7 +1168,6 @@
      "OI-371",
      "OI-45",
      "OI-57",
-     "OI-90",
      "OI-95"
     ]
    },
@@ -1208,7 +1233,9 @@
      "OI-224",
      "OI-249",
      "OI-341",
-     "OI-352",
+     "OI-352"
+    ],
+    "the row's DISCARD record (the user's Ruling 69, D-677)": [
      "OI-90"
     ]
    },
@@ -1254,7 +1281,6 @@
      "OI-371",
      "OI-45",
      "OI-57",
-     "OI-90",
      "OI-95"
     ],
     "★_the_19_carve_out": {
@@ -1470,7 +1496,7 @@
   "of_those_whose_lapse_record_is_written": 25,
   "register_entries_owed_a_home": 20,
   "register_entries_owed_a_defense": 0,
-  "open_rows_owed_on_the_true_half_that_gate": 35,
+  "open_rows_owed_on_the_true_half_that_gate": 34,
   "open_rows_the_cut_places_in_the_apparatus_class": 17,
   "★_this_field_was_renamed_2026-08-11_and_the_former_name_is_kept": "It read `open_rows_owed_a_reach_verdict` (#12). That became FALSE on 2026-08-11: the reach derivation ran over the whole set, so no row is owed a reach verdict any more, and under the user's Ruling 66 these rows are owed nothing at all. The count is unchanged; only what it is called is.",
   "items_with_a_closing_route_only_the_user_may_take": 1,

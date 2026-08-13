@@ -247,23 +247,6 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
-        "row": "OI-90",
-        "anchor_quote": "correct the L1/L2 file-table reason at its next touch (comment/data-only)",
-        "the_act_owed": (
-            "Correct the L1/L2 file-table reason strings under `tools/audit/l1l2/`, which the L3 pass "
-            "made stale."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "The row's own words are comment/data-only with no code change, and the correct tags are "
-            "already recorded in the L3 file table — so the act is a transcription from a surface "
-            "that already holds the answer, not a re-derivation."
-        ),
-        "the_second_half": None,
-    },
-    {
         "row": "OI-95",
         "anchor_quote": "the disposition-generator unification + the l1l2 restamp remain",
         "the_act_owed": (
@@ -822,6 +805,45 @@ SIZINGS = [
 # declaration's.
 # ---------------------------------------------------------------------------
 RETIRED_SIZINGS = [
+    {
+        "row": "OI-90",
+        "why_it_retired": (
+            "★ NOT BECAUSE THE ROW CLOSED, WHICH IS WHAT EVERY OTHER RETIREMENT HERE MEANS — and "
+            "that difference is the whole reason this record is worth reading. **The row is OPEN, "
+            "its status cell is untouched, and nothing this sizing describes has been done.** It "
+            "left this pass's population because the user's **Ruling 69** of 2026-08-13 "
+            "(`cowork_rulings_2026_08_13_seventeenth_stop.md`, register entry **D-677**) makes a "
+            "DISCARD verdict an INPUT to the derivation that decides gating, and this row carries "
+            "one — put to the worth test at `CLAUDE.md` principle #10 (**D-174**) and discarded on "
+            "2026-08-13, its finding, its date and its reason each located at the record by "
+            "`tools/audit/gen_discard_records.py`. This pass sizes the DERIVED gating population, "
+            "so a row that stops gating stops being sized. **The sizing below is not withdrawn and "
+            "was not wrong**: it is kept whole (#12) because it describes an act that is still "
+            "available to anyone who wants it, and because a discard is re-openable by challenging "
+            "its recorded reason rather than by rediscovering the issue — at which point this "
+            "pass's own STOP fires and asks for a FRESH sizing rather than the restoration of this "
+            "one, which is the right demand: a sizing made of a row as it stood is not evidence "
+            "about a row whose standing has moved."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-90",
+            "anchor_quote": "correct the L1/L2 file-table reason at its next touch "
+                            "(comment/data-only)",
+            "the_act_owed": (
+                "Correct the L1/L2 file-table reason strings under `tools/audit/l1l2/`, which the "
+                "L3 pass made stale."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "The row's own words are comment/data-only with no code change, and the correct "
+                "tags are already recorded in the L3 file table — so the act is a transcription "
+                "from a surface that already holds the answer, not a re-derivation."
+            ),
+            "the_second_half": None,
+        },
+    },
     {
         "row": "OI-47",
         "why_it_retired": (

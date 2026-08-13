@@ -677,6 +677,11 @@
      "verdict": "GATES",
      "source": "D-438's default",
      "ground": "the row's own text does not settle it, so it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
     }
    },
    {
@@ -688,6 +693,11 @@
      "stale"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "D-438's default",
      "ground": "the row's own text does not settle it, so it gates"
@@ -709,6 +719,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "specification completeness"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "specification completeness"
     }
    },
    {
@@ -723,6 +738,11 @@
      "doc-sync"
     ],
     "gate": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
@@ -743,6 +763,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -757,6 +782,11 @@
      "doc-sync"
     ],
     "gate": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
@@ -777,6 +807,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -791,6 +826,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the analysis's inputs"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the analysis's inputs"
     }
    },
    {
@@ -802,6 +842,18 @@
      "stale"
     ],
     "gate": {
+     "verdict": "DISCARDED",
+     "source": "the row's DISCARD record, consumed as an input to this derivation under the user's Ruling 69 of 2026-08-13 (D-677)",
+     "ground": "Amended #10 (D-174): a discarded finding is not an open obligation — no row, no gate, no capacity. Ruling 69 makes that reach a row already on the books THROUGH this derivation rather than by a hand-edited verdict, and the record's three elements were located at the record itself before it was consumed.",
+     "the_record": "tools/audit/discard_records.json → conforming (D-431 — no element is restated here)",
+     "★_the_D_438_verdict_it_replaces": {
+      "verdict": "GATES",
+      "source": "D-438's default",
+      "ground": "the row's own text does not settle it, so it gates"
+     },
+     "what_it_does_NOT_do": "The row STAYS OPEN and its status cell is untouched — a discard is not a resolution. What ends is the obligation, not the row."
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "D-438's default",
      "ground": "the row's own text does not settle it, so it gates"
@@ -816,6 +868,11 @@
      "stale"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "an instrument a measurement depends on"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "an instrument a measurement depends on"
@@ -835,6 +892,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -848,6 +910,11 @@
      "dt-12"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "specification truth"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "specification truth"
@@ -871,6 +938,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "specification truth"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "specification truth"
     }
    },
    {
@@ -882,6 +954,11 @@
      "dt-12"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "D-438's default",
      "ground": "the row's own text does not settle it, so it gates"
@@ -904,6 +981,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "specification truth"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "specification truth"
     }
    },
    {
@@ -918,6 +1000,11 @@
      "verdict": "GATES",
      "source": "D-438's default",
      "ground": "the row's own text does not settle it, so it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
     }
    },
    {
@@ -929,6 +1016,11 @@
     ],
     "matched_falsity_signals": [],
     "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the analysis"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the analysis"
@@ -952,6 +1044,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "an instrument a measurement depends on"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "an instrument a measurement depends on"
     }
    },
    {
@@ -965,6 +1062,11 @@
      "doc-sync"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "specification completeness"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "specification completeness"
@@ -985,6 +1087,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -996,6 +1103,11 @@
      "stale"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the analysis"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the analysis"
@@ -1017,6 +1129,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "specification truth"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "specification truth"
     }
    },
    {
@@ -1033,6 +1150,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "an instrument a measurement depends on"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "an instrument a measurement depends on"
     }
    },
    {
@@ -1044,6 +1166,11 @@
      "stale"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "D-438's default",
      "ground": "the row's own text does not settle it, so it gates"
@@ -1062,6 +1189,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -1074,6 +1206,11 @@
     ],
     "matched_falsity_signals": [],
     "gate": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
@@ -1092,6 +1229,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the analysis's inputs"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the analysis's inputs"
     }
    },
    {
@@ -1103,6 +1245,11 @@
      "drift"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "D-438's default",
      "ground": "the row's own text does not settle it, so it gates"
@@ -1125,6 +1272,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "specification truth"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "specification truth"
     }
    },
    {
@@ -1143,6 +1295,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -1157,6 +1314,11 @@
      "stale"
     ],
     "gate": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
@@ -1178,6 +1340,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "#19 establishment obligation"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "#19 establishment obligation"
     }
    },
    {
@@ -1195,6 +1362,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -1206,6 +1378,11 @@
      "stale"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the default - the row's scope does not settle it"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the default - the row's scope does not settle it"
@@ -1223,6 +1400,11 @@
      "doc-sync"
     ],
     "gate": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
@@ -1244,6 +1426,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -1259,6 +1446,11 @@
      "verdict": "GATES",
      "source": "the row's own recorded words",
      "ground": "the row states it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the row's own recorded words",
+     "ground": "the row states it gates"
     }
    },
    {
@@ -1270,6 +1462,11 @@
      "drift"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "the row's own recorded words",
+     "ground": "the row states it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "the row's own recorded words",
      "ground": "the row states it gates"
@@ -1292,6 +1489,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "a statement about the analysis's build state"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "a statement about the analysis's build state"
     }
    },
    {
@@ -1307,6 +1509,11 @@
      "stale"
     ],
     "gate": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
@@ -1330,6 +1537,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "a statement about the analysis's build state"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "a statement about the analysis's build state"
     }
    },
    {
@@ -1347,6 +1559,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -1358,6 +1575,11 @@
      "stale"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "D-438's default",
      "ground": "the row's own text does not settle it, so it gates"
@@ -1379,6 +1601,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -1397,6 +1624,11 @@
      "verdict": "NON-GATING",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "tracking/documentation apparatus - the user's own phrase"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "NON-GATING",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "tracking/documentation apparatus - the user's own phrase"
     }
    },
    {
@@ -1408,6 +1640,11 @@
      "drift"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "D-438's default",
+     "ground": "the row's own text does not settle it, so it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "D-438's default",
      "ground": "the row's own text does not settle it, so it gates"
@@ -1425,6 +1662,11 @@
      "verdict": "GATES",
      "source": "the row's own recorded words",
      "ground": "the row states it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the row's own recorded words",
+     "ground": "the row states it gates"
     }
    },
    {
@@ -1439,6 +1681,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the criterion - the subject is an instrument a measurement of the analysis depends on"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the criterion - the subject is an instrument a measurement of the analysis depends on"
     }
    },
    {
@@ -1450,6 +1697,11 @@
      "drift"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject"
@@ -1468,6 +1720,11 @@
      "verdict": "GATES",
      "source": "the row's own recorded words",
      "ground": "the row states it gates"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the row's own recorded words",
+     "ground": "the row states it gates"
     }
    },
    {
@@ -1482,6 +1739,11 @@
      "doc-sync"
     ],
     "gate": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "the default - the row's own text does not settle its subject"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the default - the row's own text does not settle its subject"
@@ -1503,6 +1765,11 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "a statement about the analysis's build state"
+    },
+    "★_the_same_verdict_with_the_discard_input_OFF": {
+     "verdict": "GATES",
+     "source": "the committed non-gating apparatus declaration (authored, D-438)",
+     "ground": "a statement about the analysis's build state"
     }
    }
   ]
@@ -1511,7 +1778,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 35,
+   "count": 34,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1546,7 +1813,6 @@
     "OI-371",
     "OI-45",
     "OI-57",
-    "OI-90",
     "OI-95"
    ]
   },
@@ -1571,6 +1837,162 @@
     "OI-50",
     "OI-99"
    ]
+  },
+  "★_discarded_and_therefore_not_gating": {
+   "what_it_is": "The third class the user's Ruling 69 of 2026-08-13 creates (D-677): rows whose D-438 verdict is GATES and which carry a CONFORMING discard record — one carrying its finding, its date and its reason, each located at the record itself. They do not gate. THEY ARE NOT RESOLVED AND NOT APPARATUS: each stays OPEN with its status cell untouched, and each keeps its D-438 verdict beside the result so a reader can see which of the two questions took it out of the gate.",
+   "why_it_is_a_class_of_its_own_rather_than_folded_into_non_gating": "The non-gating class is the APPARATUS class — rows D-438's test puts outside the gate because their subject does not bear on the analysis — and the finish line's item over it says so in its own name. A discarded row is outside the gate for a different reason, and filing it there would make that item's name false of one of its members. Folding it in would also lose which question answered the row (#12).",
+   "count": 1,
+   "ids": [
+    "OI-90"
+   ],
+   "the_records": "tools/audit/discard_records.json → conforming. No element of any record is restated here (D-431)."
+  },
+  "★_the_discard_input_reported_BOTH_WAYS": {
+   "why": "Ruling 69 changes what a derivation READS, so the movement it causes is shown rather than asserted: the same cut is recomputed with the input OFF and the two are diffed. The pre-input cut is kept beside the result (#12) so a reader comparing artifacts can see exactly what moved and by what.",
+   "with_the_input_OFF": {
+    "gates": {
+     "count": 35,
+     "ids": [
+      "OI-105",
+      "OI-107",
+      "OI-109",
+      "OI-11",
+      "OI-12",
+      "OI-121",
+      "OI-141",
+      "OI-146",
+      "OI-150",
+      "OI-183",
+      "OI-207",
+      "OI-220",
+      "OI-223",
+      "OI-224",
+      "OI-239",
+      "OI-249",
+      "OI-274",
+      "OI-283",
+      "OI-292",
+      "OI-309",
+      "OI-311",
+      "OI-315",
+      "OI-321",
+      "OI-341",
+      "OI-352",
+      "OI-357",
+      "OI-359",
+      "OI-360",
+      "OI-363",
+      "OI-370",
+      "OI-371",
+      "OI-45",
+      "OI-57",
+      "OI-90",
+      "OI-95"
+     ]
+    },
+    "non_gating": {
+     "count": 17,
+     "ids": [
+      "OI-205",
+      "OI-229",
+      "OI-233",
+      "OI-280",
+      "OI-281",
+      "OI-290",
+      "OI-296",
+      "OI-299",
+      "OI-317",
+      "OI-338",
+      "OI-346",
+      "OI-347",
+      "OI-46",
+      "OI-48",
+      "OI-49",
+      "OI-50",
+      "OI-99"
+     ]
+    }
+   },
+   "with_the_input_ON": {
+    "gates": {
+     "count": 34,
+     "ids": [
+      "OI-105",
+      "OI-107",
+      "OI-109",
+      "OI-11",
+      "OI-12",
+      "OI-121",
+      "OI-141",
+      "OI-146",
+      "OI-150",
+      "OI-183",
+      "OI-207",
+      "OI-220",
+      "OI-223",
+      "OI-224",
+      "OI-239",
+      "OI-249",
+      "OI-274",
+      "OI-283",
+      "OI-292",
+      "OI-309",
+      "OI-311",
+      "OI-315",
+      "OI-321",
+      "OI-341",
+      "OI-352",
+      "OI-357",
+      "OI-359",
+      "OI-360",
+      "OI-363",
+      "OI-370",
+      "OI-371",
+      "OI-45",
+      "OI-57",
+      "OI-95"
+     ]
+    },
+    "non_gating": {
+     "count": 17,
+     "ids": [
+      "OI-205",
+      "OI-229",
+      "OI-233",
+      "OI-280",
+      "OI-281",
+      "OI-290",
+      "OI-296",
+      "OI-299",
+      "OI-317",
+      "OI-338",
+      "OI-346",
+      "OI-347",
+      "OI-46",
+      "OI-48",
+      "OI-49",
+      "OI-50",
+      "OI-99"
+     ]
+    },
+    "discarded": {
+     "count": 1,
+     "ids": [
+      "OI-90"
+     ]
+    }
+   },
+   "rows_that_LEFT_the_gate": [
+    "OI-90"
+   ],
+   "rows_that_JOINED_the_gate": [],
+   "the_STOPs_that_are_armed": [
+    "a row that JOINS the gate under this input — a discard can only take a row out",
+    "a row that LEAVES the gate carrying no conforming discard record — the movement must be explained by the input and by nothing else",
+    "a row carrying a conforming discard record that is still gating — the input read and not applied",
+    "any movement in the NON-GATING set, which this input may not touch"
+   ],
+   "★_a_result_where_NOTHING_MOVES_is_a_correct_outcome": "It would mean no row of this population carries a conforming discard record, which is a fact about the record and not a failure of the derivation. Nothing here is adjusted to produce a movement."
   },
   "non_gating_before_the_ruling_56_application": {
    "what_it_is": "The same cut taken BEFORE the user's Ruling 56 moved D-639's reach derivation's IN set to the gating side — that is, the rows the apparatus declaration classes non-gating on D-438's criterion alone.",
@@ -1660,7 +2082,9 @@
     "OI-224",
     "OI-249",
     "OI-341",
-    "OI-352",
+    "OI-352"
+   ],
+   "the row's DISCARD record (the user's Ruling 69, D-677)": [
     "OI-90"
    ]
   }
@@ -1760,7 +2184,7 @@
   },
   "true_half": {
    "open_rows_in_the_wide_cut": 52,
-   "of_which_gate": 35,
+   "of_which_gate": 34,
    "of_which_apparatus_and_therefore_non_gating": 17,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 5
   },
@@ -1865,7 +2289,7 @@
   "decisions_recorded": 677,
   "open_rows_in_the_index": 247,
   "true_half_wide_cut": 52,
-  "true_half_gating": 35,
+  "true_half_gating": 34,
   "complete_half_gap": 27,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

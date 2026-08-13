@@ -120,6 +120,15 @@ AUTHORED = [
      "the registered phase-3 gate partition re-derives"),
     ("tools/audit/gen_nongating_apparatus_rows.py", ["--check"],
      "the non-gating apparatus-row declaration re-derives from the INDEX"),
+    ("tools/audit/gen_discard_records.py", ["--check"],
+     "the DISCARD records the gating derivation consumes re-derive AT THE RECORD -- the user's "
+     "Ruling 69 of 2026-08-13 (D-677) makes an authored discard verdict an input to a derived "
+     "gate, so this is the guard that keeps the authored half honest. Its STOPs are what make it "
+     "one rather than a report: a record whose quoted element is no longer in its surface, a "
+     "record naming a row the INDEX does not carry open, a record naming a row the #19 carve-out "
+     "keeps gating, a discard on the register's own two surfaces that the table does not enter, "
+     "and a NOT-DISCARDED negative seed being read as a discard -- each halts it rather than "
+     "letting an authored judgment move a gate on text nobody re-read"),
     ("tools/audit/gen_phase1_completion_inventory.py", ["--check"],
      "the phase-1 completion inventory re-derives -- D-231's clause still locatable by its "
      "anchors, and every home class, defense gap, open-row cut and gate verdict unchanged"),

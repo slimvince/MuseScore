@@ -45,6 +45,9 @@ from gen_nongating_apparatus_rows import (               # noqa: E402  (#6 - one
 from gen_outstanding_delegations import (                # noqa: E402  (#6 - one derivation)
     build as build_outstanding_delegations,
 )
+from gen_discard_records import (                        # noqa: E402  (#6 - one locator)
+    build as build_discard_records,
+)
 
 use_utf8_output()   # OI-297 - the findings must survive a non-console stdout
 
@@ -717,8 +720,19 @@ def gate_verdicts() -> dict:
 ROW_SAYS_GATES = re.compile(r"\*\*GATES\*\*|\bGATES\b(?! nothing)")
 ROW_SAYS_APPARATUS = re.compile(r"apparatus row|gates nothing|gate no stage", re.IGNORECASE)
 
+# The third state the user's Ruling 69 of 2026-08-13 creates (register entry D-677). It is the
+# record's own word, not an invented token: amended #10 calls the class DISCARDED.
+DISCARDED = "DISCARDED"
 
-def classify_gate(row: dict, authored: dict) -> dict:
+
+def classify_d438(row: dict, authored: dict) -> dict:
+    """D-438's verdict for one row, from the three sources it has always had.
+
+    UNCHANGED by the discard input, deliberately. D-438 asks whether the row's subject bears on the
+    analysis; a discard verdict answers a different question — whether the finding is worth fixing
+    — and folding the second into the first would destroy the ability to say which of the two took
+    a row out of the gate (#12).
+    """
     rid = row["id"]
     if rid in authored:
         a = authored[rid]
@@ -736,6 +750,49 @@ def classify_gate(row: dict, authored: dict) -> dict:
                 "ground": "the row states it gates"}
     return {"verdict": "GATES", "source": "D-438's default",
             "ground": "the row's own text does not settle it, so it gates"}
+
+
+def classify_gate(row: dict, authored: dict, discarded_ids: set) -> dict:
+    """The gate verdict, with the DISCARD input the user's Ruling 69 makes one of its inputs.
+
+    The order is the ruling's own and is stated so it is not rearranged. D-438's verdict is taken
+    FIRST and is kept beside the result whatever happens (#12). A conforming discard record then
+    takes the row out of the gate — amended #10's *no row, no gate, no capacity* reaching a row
+    already on the books, which is exactly what Ruling 69 settles. Where D-438 already says the row
+    does not gate, the discard changes nothing about gating and is recorded beside the verdict
+    rather than replacing it: two grounds for the same state is not a conflict.
+
+    The #19 carve-out does not need re-deciding here and is not re-decided: a discard record naming
+    a row the carve-out keeps gating never reaches this function, because the locator STOPS on it.
+    """
+    d438 = classify_d438(row, authored)
+    if row["id"] not in discarded_ids:
+        return d438
+    if d438["verdict"] != "GATES":
+        out = dict(d438)
+        out["★_a_conforming_discard_record_also_stands_against_this_row"] = (
+            "It moves nothing here: D-438 already puts the row outside the gate. Recorded so the "
+            "row is not read as gating-free for one reason when the record holds two."
+        )
+        return out
+    return {
+        "verdict": DISCARDED,
+        "source": "the row's DISCARD record, consumed as an input to this derivation under the "
+                  "user's Ruling 69 of 2026-08-13 (D-677)",
+        "ground": (
+            "Amended #10 (D-174): a discarded finding is not an open obligation — no row, no gate, "
+            "no capacity. Ruling 69 makes that reach a row already on the books THROUGH this "
+            "derivation rather than by a hand-edited verdict, and the record's three elements were "
+            "located at the record itself before it was consumed."
+        ),
+        "the_record": "tools/audit/discard_records.json → conforming (D-431 — no element is "
+                      "restated here)",
+        "★_the_D_438_verdict_it_replaces": d438,
+        "what_it_does_NOT_do": (
+            "The row STAYS OPEN and its status cell is untouched — a discard is not a resolution. "
+            "What ends is the obligation, not the row."
+        ),
+    }
 
 
 def build() -> dict:
@@ -756,6 +813,8 @@ def build() -> dict:
     scope = scope_block_facts(reads, reg)
     authored = gate_verdicts()
     outstanding = build_outstanding_delegations()   # #6 - the ONE derivation, imported not copied
+    discards = build_discard_records()              # #6 - the ONE locator, imported not copied
+    discarded_ids = {e["row"] for e in discards["conforming"]}
 
     rows = parse_rows()
     open_rows = [r for r in rows if r["open"]]
@@ -779,7 +838,8 @@ def build() -> dict:
             "subject_column": r["subject_column"],
             "matched_on_the_subject_column": hits_subject,
             "matched_falsity_signals": hits_text,
-            "gate": classify_gate(r, authored),
+            "gate": classify_gate(r, authored, discarded_ids),
+            "★_the_same_verdict_with_the_discard_input_OFF": classify_gate(r, authored, set()),
         }
         if hits_subject:
             narrow.append(rec)
@@ -800,6 +860,41 @@ def build() -> dict:
     # ---- the gating split over the whole derived population --------------------------------
     gating = sorted(r["id"] for r in wide if r["gate"]["verdict"] == "GATES")
     non_gating = sorted(r["id"] for r in wide if r["gate"]["verdict"] == "NON-GATING")
+    discarded = sorted(r["id"] for r in wide if r["gate"]["verdict"] == DISCARDED)
+
+    # ---- the SAME cut with the discard input OFF, and the movement between them ------------
+    #
+    # The user's Ruling 69 is applied to a POPULATION, so the movement it causes is reported BOTH
+    # WAYS rather than asserted: the cut is recomputed with the input off, and the difference must
+    # be exactly the rows carrying a conforming discard record. Any other mover is a STOP — that is
+    # the dispatch's own assumption A3, made mechanical rather than remembered.
+    gating_off = sorted(r["id"] for r in wide
+                        if r["★_the_same_verdict_with_the_discard_input_OFF"]["verdict"] == "GATES")
+    non_gating_off = sorted(
+        r["id"] for r in wide
+        if r["★_the_same_verdict_with_the_discard_input_OFF"]["verdict"] == "NON-GATING")
+    left_the_gate = sorted(set(gating_off) - set(gating))
+    joined_the_gate = sorted(set(gating) - set(gating_off))
+    if joined_the_gate:
+        raise SystemExit(
+            "STOP: the discard input put row(s) INTO the gate: " + ", ".join(joined_the_gate)
+            + ". A discard can only take a row out; a row entering the gate means this input is "
+            "doing something the ruling does not describe.")
+    unexplained = sorted(r for r in left_the_gate if r not in discarded_ids)
+    if unexplained:
+        raise SystemExit(
+            "STOP: row(s) left the gate with no conforming discard record: "
+            + ", ".join(unexplained)
+            + ". The both-ways recomputation must differ ONLY by rows carrying one.")
+    unmoved = sorted(r for r in discarded_ids if r in gating)
+    if unmoved:
+        raise SystemExit(
+            "STOP: row(s) carry a conforming discard record and are still in the gating set: "
+            + ", ".join(unmoved) + ". The input was read and not applied.")
+    if sorted(non_gating_off) != sorted(non_gating):
+        raise SystemExit(
+            "STOP: the discard input moved the NON-GATING set, which it may not touch: "
+            + ", ".join(sorted(set(non_gating) ^ set(non_gating_off))) + ".")
 
     # The cut as it stood BEFORE the user's Ruling 56 moved D-639's reach IN set to the gating
     # side. It is DERIVED from the declaration's own record of what it moved, and it exists so the
@@ -1047,6 +1142,59 @@ def build() -> dict:
             "applied_over": "the wide cut",
             "gates": {"count": len(gating), "ids": gating},
             "non_gating": {"count": len(non_gating), "ids": non_gating},
+            "★_discarded_and_therefore_not_gating": {
+                "what_it_is": (
+                    "The third class the user's Ruling 69 of 2026-08-13 creates (D-677): rows whose "
+                    "D-438 verdict is GATES and which carry a CONFORMING discard record — one "
+                    "carrying its finding, its date and its reason, each located at the record "
+                    "itself. They do not gate. THEY ARE NOT RESOLVED AND NOT APPARATUS: each stays "
+                    "OPEN with its status cell untouched, and each keeps its D-438 verdict beside "
+                    "the result so a reader can see which of the two questions took it out of the "
+                    "gate."
+                ),
+                "why_it_is_a_class_of_its_own_rather_than_folded_into_non_gating": (
+                    "The non-gating class is the APPARATUS class — rows D-438's test puts outside "
+                    "the gate because their subject does not bear on the analysis — and the finish "
+                    "line's item over it says so in its own name. A discarded row is outside the "
+                    "gate for a different reason, and filing it there would make that item's name "
+                    "false of one of its members. Folding it in would also lose which question "
+                    "answered the row (#12)."
+                ),
+                "count": len(discarded),
+                "ids": discarded,
+                "the_records": "tools/audit/discard_records.json → conforming. No element of any "
+                               "record is restated here (D-431).",
+            },
+            "★_the_discard_input_reported_BOTH_WAYS": {
+                "why": (
+                    "Ruling 69 changes what a derivation READS, so the movement it causes is shown "
+                    "rather than asserted: the same cut is recomputed with the input OFF and the "
+                    "two are diffed. The pre-input cut is kept beside the result (#12) so a reader "
+                    "comparing artifacts can see exactly what moved and by what."
+                ),
+                "with_the_input_OFF": {"gates": {"count": len(gating_off), "ids": gating_off},
+                                       "non_gating": {"count": len(non_gating_off),
+                                                      "ids": non_gating_off}},
+                "with_the_input_ON": {"gates": {"count": len(gating), "ids": gating},
+                                      "non_gating": {"count": len(non_gating), "ids": non_gating},
+                                      "discarded": {"count": len(discarded), "ids": discarded}},
+                "rows_that_LEFT_the_gate": left_the_gate,
+                "rows_that_JOINED_the_gate": joined_the_gate,
+                "the_STOPs_that_are_armed": [
+                    "a row that JOINS the gate under this input — a discard can only take a row "
+                    "out",
+                    "a row that LEAVES the gate carrying no conforming discard record — the "
+                    "movement must be explained by the input and by nothing else",
+                    "a row carrying a conforming discard record that is still gating — the input "
+                    "read and not applied",
+                    "any movement in the NON-GATING set, which this input may not touch",
+                ],
+                "★_a_result_where_NOTHING_MOVES_is_a_correct_outcome": (
+                    "It would mean no row of this population carries a conforming discard record, "
+                    "which is a fact about the record and not a failure of the derivation. Nothing "
+                    "here is adjusted to produce a movement."
+                ),
+            },
             "non_gating_before_the_ruling_56_application": {
                 "what_it_is": (
                     "The same cut taken BEFORE the user's Ruling 56 moved D-639's reach derivation's "
@@ -1103,6 +1251,9 @@ def build() -> dict:
                            if r["gate"]["source"] == "the row's own recorded words"),
                 "D-438's default":
                     sorted(r["id"] for r in wide if r["gate"]["source"] == "D-438's default"),
+                "the row's DISCARD record (the user's Ruling 69, D-677)":
+                    sorted(r["id"] for r in wide
+                           if r["gate"]["source"].startswith("the row's DISCARD record")),
             },
         },
         "what_the_register_says_about_itself_that_is_no_longer_true": scope,
@@ -1220,7 +1371,7 @@ def build() -> dict:
             "recollected_but_NOT_in_the_derived_population": {
                 i: {
                     "subject_column": by_id[i]["subject_column"],
-                    "gate": classify_gate(by_id[i], authored),
+                    "gate": classify_gate(by_id[i], authored, discarded_ids),
                     "why_this_cut_does_not_reach_it": (
                         "The TRUE half's cut searches for a row asserting that a SPECIFICATION "
                         "states something false at HEAD. This row's subject column and text "

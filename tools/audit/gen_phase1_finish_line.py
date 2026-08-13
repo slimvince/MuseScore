@@ -445,52 +445,76 @@ def cut_one_item(item: dict, gating_ids: set, app: dict, grounds: dict) -> dict:
     }
 
 
-def falsification_test(app: dict, inv: dict, reach: dict, rows_by_id: dict) -> dict:
-    """Ruling 65's own test: if the cut files as APPARATUS anything the record elsewhere calls
-    inference-bearing, the cut is WRONG AND HALTS.
-
-    Four probes, each over a place the record records a determinate verdict about the SAME row.
-    None of them is this file's opinion: each reads a committed surface or the row's own words.
-    """
-    ng = set(app["non_gating_ids"])
-
+def _four_probes(ids: set, app: dict, reach: dict, rows_by_id: dict) -> dict:
+    """The four probes, applied to ONE population. Factored so the discard-moved rows are graded by
+    exactly the same four and not by a second, softer set (#6)."""
     # (1) The phase-3 gate partition — an independent, user-ACCEPTED partition using the same
     #     D-438 test. Only its item identifiers that NAME a row are comparable, and they are
     #     parsed rather than listed.
     p3 = json.loads(PHASE3.read_text(encoding="utf-8"))
     p3_gating_rows = sorted({f"OI-{m.group(1)}" for i in p3["totals"]["gating_ids"]
                              for m in [re.fullmatch(r"P2-OI(\d+)", i)] if m})
-    probe_1 = sorted(ng & set(p3_gating_rows))
+    probe_1 = sorted(ids & set(p3_gating_rows))
 
     # (2) D-639's reach derivation — a row it puts INSIDE the doc-sync half is a row the record
     #     says states something false about the SYSTEM. This is the exact shape Ruling 56 ruled.
     reach_in = set(reach["rows_inside_the_doc_sync_half"])
-    probe_2 = sorted(ng & reach_in)
+    probe_2 = sorted(ids & reach_in)
 
     # (3) The row's OWN recorded words. A row that asserts its own gate state does so in the
     #     bolded form the index uses for it; prose about gating in lower case is not a verdict and
     #     is deliberately not matched.
-    probe_3 = sorted(r for r in ng
+    probe_3 = sorted(r for r in ids
                      if "**GATES**" in (rows_by_id.get(r, {}).get("status_column") or ""))
 
     # (4) The record's own subject taxonomy. A row whose subject column names the
-    #     instrument/measurement layer is one the record itself calls a measurement matter.
-    probe_4 = sorted(r for r in ng
-                     if any(v in (app["by_id"][r]["subject_column"] or "").lower()
+    #     instrument/measurement layer is one the record itself calls a measurement matter. The
+    #     subject column is read from the INDEX rather than from the apparatus declaration: a
+    #     discard-moved row need not be in that declaration at all, and falling back to it would
+    #     make this probe silently unavailable for exactly the population Ruling 69 added.
+    probe_4 = sorted(r for r in ids
+                     if any(v in (rows_by_id.get(r, {}).get("subject_column") or "").lower()
                             for v in MEASUREMENT_LAYER_SUBJECT_VOCAB))
 
-    hits = {
+    return {
         "1_named_GATING_by_the_phase_3_gate_partition": probe_1,
         "2_put_INSIDE_the_doc_sync_half_by_D_639s_reach_derivation": probe_2,
         "3_asserting_its_own_gate_in_the_index": probe_3,
         "4_subject_column_naming_the_instrument_or_measurement_layer": probe_4,
     }
+
+
+def falsification_test(app: dict, inv: dict, reach: dict, rows_by_id: dict) -> dict:
+    """Ruling 65's own test: if the cut files as APPARATUS anything the record elsewhere calls
+    inference-bearing, the cut is WRONG AND HALTS.
+
+    Four probes, each over a place the record records a determinate verdict about the SAME row.
+    None of them is this file's opinion: each reads a committed surface or the row's own words.
+
+    ★ IT RUNS OVER A SECOND POPULATION FROM 2026-08-13 — the rows the user's Ruling 69 takes out of
+    the gate through a DISCARD record (D-677). The transposition is exact and is why it is the same
+    four probes: each probe grades a D-438 proposition — does the record elsewhere call this row
+    inference-bearing — which is what a gating verdict asserts however the row lost it. A row the
+    record calls inference-bearing losing its gate to an AUTHORED discard is the same failure this
+    test was written for, arriving by a different door.
+    """
+    ng = set(app["non_gating_ids"])
+    hits = _four_probes(ng, app, reach, rows_by_id)
     failing = sorted({r for v in hits.values() for r in v})
     if failing:
         raise SystemExit(
             "STOP — THE CUT IS WRONG AND HALTS (Ruling 65's falsification test). The cut places "
             "in the apparatus class row(s) the record elsewhere calls inference-bearing: "
             + ", ".join(failing) + ".\n  per probe: " + json.dumps(hits))
+
+    discarded = set(inv["the_gating_split"]["★_discarded_and_therefore_not_gating"]["ids"])
+    d_hits = _four_probes(discarded, app, reach, rows_by_id)
+    d_failing = sorted({r for v in d_hits.values() for r in v})
+    if d_failing:
+        raise SystemExit(
+            "STOP — A DISCARD TOOK THE GATE OFF A ROW THE RECORD CALLS INFERENCE-BEARING, AND THIS "
+            "HALTS (Ruling 65's falsification test, transposed by Ruling 69's assumption A4): "
+            + ", ".join(d_failing) + ".\n  per probe: " + json.dumps(d_hits))
     return {
         "the_ruling": (
             "User, 2026-08-11, Ruling 65: 'If the cut moves into the apparatus class any item the "
@@ -501,6 +525,29 @@ def falsification_test(app: dict, inv: dict, reach: dict, rows_by_id: dict) -> d
         "what_it_is_applied_to": {
             "rows": sorted(ng),
             "items": ["every item the cut places outside the gate — read at `THE_FINISH_LINE`"],
+        },
+        "★_and_a_SECOND_population_since_2026-08-13": {
+            "which": "the rows the user's Ruling 69 takes out of the gate through a DISCARD record "
+                     "(D-677) — read at the completion inventory's own gating split, never listed "
+                     "here (D-431)",
+            "rows": sorted(discarded),
+            "why_the_SAME_four_probes_and_not_a_second_set": (
+                "Each probe grades a D-438 proposition — does the record elsewhere call this row "
+                "inference-bearing — and that is what a gating verdict asserts however the row came "
+                "to lose it. So the test transposes exactly, which is what the dispatch's "
+                "assumption A4 says and why it transposes here where it did not onto a D-639 reach "
+                "verdict. A row the record calls inference-bearing losing its gate to an AUTHORED "
+                "discard is the failure this test was written for, arriving by a different door."
+            ),
+            "hits_per_probe": d_hits,
+            "verdict": "PASS — no row a discard takes out of the gate is called inference-bearing "
+                       "anywhere the four probes read",
+            "and_a_bound_it_does_NOT_remove": (
+                "The #19 carve-out is what keeps an establishment obligation inside the gate "
+                "whatever its subject, and it is enforced UPSTREAM of this test: the discard "
+                "locator STOPS on a record naming a row the apparatus declaration keeps gating on "
+                "a ground invoking #19. This test is the second line, not the first."
+            ),
         },
         "the_four_probes_and_why_each_is_the_record_rather_than_an_opinion": {
             "1_named_GATING_by_the_phase_3_gate_partition": (
@@ -1268,12 +1315,20 @@ def build() -> dict:
             "or named as discharged, with its ground."
             % (unhomed_kept, unhomed_discharged, unhomed_total))
 
-    rows_covered = split["gates"]["count"] + split["non_gating"]["count"]
+    # ★ THE RECONCILIATION GAINS A THIRD TERM (the user's Ruling 69 of 2026-08-13, D-677).
+    # A row a conforming DISCARD record takes out of the gate is in neither true-half item, and
+    # that is deliberate rather than an omission: it is not gating work, and it is not apparatus
+    # either — filing it in the apparatus item would make that item's own name false of one of its
+    # members. It is ACCOUNTED FOR here instead, so the wide cut is still covered exactly and the
+    # list cannot quietly stop being exhaustive, which is what this STOP exists for.
+    discarded_rows = split["★_discarded_and_therefore_not_gating"]
+    rows_covered = (split["gates"]["count"] + split["non_gating"]["count"]
+                    + discarded_rows["count"])
     wide_total = inv["the_true_half"]["the_wide_cut"]["count"]
     if rows_covered != wide_total:
         raise SystemExit(
-            "STOP: the true-half items cover %d rows but the wide cut holds %d."
-            % (rows_covered, wide_total))
+            "STOP: the true-half items and the discarded class cover %d rows but the wide cut "
+            "holds %d." % (rows_covered, wide_total))
 
     ruling_rows = set(ROWS_THAT_ARE_USER_RULINGS["rows"])
     stray = sorted(ruling_rows - set(split["gates"]["ids"]))
@@ -1421,6 +1476,40 @@ def build() -> dict:
             },
             "the_falsification_test": falsification,
             "the_lapse_population": lapse,
+            "★_the_DISCARD_input_the_user's_Ruling_69_adds_to_this_cut": {
+                "the_ruling": (
+                    "User, 2026-08-13, Ruling 69 of "
+                    "`cowork_rulings_2026_08_13_seventeenth_stop.md`, homed at CLAUDE.md's "
+                    "open-items register section as register entry D-677: a DISCARD verdict on an "
+                    "already-rowed item is an INPUT to the derivation that decides gating, never an "
+                    "edit to a gating verdict. Quoted in full at its home (#6, D-643)."
+                ),
+                "what_it_changes_HERE": (
+                    "Nothing about how this file cuts an item. It changes the POPULATION this file "
+                    "reads: a row a conforming discard record takes out of the gate is no longer in "
+                    "the true half's gating item, and is in neither true-half item — it is not "
+                    "gating work and it is not apparatus. The reconciliation STOP above accounts "
+                    "for it as a third term rather than letting it vanish, which is what keeps this "
+                    "list exhaustive."
+                ),
+                "the_rows": discarded_rows["ids"],
+                "the_records_and_their_three_located_elements":
+                    "tools/audit/discard_records.json (D-431 — no element is restated here)",
+                "the_movement_is_reported_BOTH_WAYS_where_it_happens": (
+                    "tools/audit/phase1_completion_inventory.json → the_gating_split → "
+                    "★_the_discard_input_reported_BOTH_WAYS, which recomputes the same cut with the "
+                    "input OFF and STOPs on any mover that carries no conforming discard record."
+                ),
+                "and_the_falsification_test_runs_over_it": (
+                    "The same four probes, over the discard-moved rows — see "
+                    "`the_falsification_test.★_and_a_SECOND_population_since_2026-08-13`."
+                ),
+                "what_it_does_NOT_do": (
+                    "It closes no row and moves no status cell: each discarded row stays OPEN. It "
+                    "adds no item and removes none. It authorizes no fix, no design and no "
+                    "inference change."
+                ),
+            },
             "what_the_cut_does_NOT_do": [
                 "It adds nothing to this list and removes nothing from it — an addition is a user "
                 "ruling by the scope rule's own terms.",

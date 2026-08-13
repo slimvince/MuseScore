@@ -37,6 +37,7 @@
       "tools/audit/decisions/gen_verbatim_subject_consistency.py",
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_arm_comment_sweep.py",
+      "tools/audit/gen_discard_records.py",
       "tools/audit/gen_filing_convention_application.py",
       "tools/audit/gen_gating_row_sizing.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
@@ -53,7 +54,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 54,
+    "authored_entries": 55,
     "unclassified_candidates": [
       "tools/audit/gen_status_archive_pass.py"
     ],
@@ -417,6 +418,20 @@
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
+    },
+    {
+      "tool": "tools/audit/gen_discard_records.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the discard records re-derive from the record",
+        "  entered 3, conforming 3, not conforming 0"
+      ],
+      "stderr": [],
+      "what_it_checks": "the DISCARD records the gating derivation consumes re-derive AT THE RECORD -- the user's Ruling 69 of 2026-08-13 (D-677) makes an authored discard verdict an input to a derived gate, so this is the guard that keeps the authored half honest. Its STOPs are what make it one rather than a report: a record whose quoted element is no longer in its surface, a record naming a row the INDEX does not carry open, a record naming a row the #19 carve-out keeps gating, a discard on the register's own two surfaces that the table does not enter, and a NOT-DISCARDED negative seed being read as a discard -- each halts it rather than letting an authored judgment move a gate on text nobody re-read"
     },
     {
       "tool": "tools/audit/gen_phase1_completion_inventory.py",
@@ -791,8 +806,8 @@
     }
   ],
   "summary": {
-    "run": 40,
-    "passing": 39,
+    "run": 41,
+    "passing": 40,
     "failing": 1,
     "failing_tools": [
       {
