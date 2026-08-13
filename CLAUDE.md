@@ -435,6 +435,56 @@ bounded opening — a hand-picked threshold over varying prose, which fixes neit
 forbidding the mark in prose, which is one symptom of three. **`OPEN_ITEMS.md`'s own preamble
 carries a POINTER to this rule and is explicitly not its home** (#6).
 
+**★ AND WHAT A DISCARD VERDICT DOES TO A ROW ALREADY ON THE BOOKS — IT IS AN INPUT TO THE
+DERIVATION THAT DECIDES GATING, NEVER AN EDIT TO A GATING VERDICT (user-ruled 2026-08-13; the
+ruling record is `cowork_rulings_2026_08_13_seventeenth_stop.md`, Ruling 69).** The worth test at
+principle #10 says which findings are DISCARDED, and the ruling that created it says in its own
+words that it does not retroactively discard the open population — *"it states the test; what the
+test does to rows already on the books is a separate act."* **This is that act, and it was forced
+by the first case of the shape: a row that is OPEN, GATES and carries a discard verdict blocks
+phase 1 while the test says the work should never be done, and as it stood such a row could never
+close.**
+
+**THE RULING. A DISCARD verdict on an already-rowed item is an INPUT to the derivation that decides
+gating — never an edit to a gating verdict.** The gate continues to be **DERIVED**, from a
+population that now carries discard verdicts among its inputs. The row **STAYS OPEN** — the shape
+the lapse rule above already uses — and **DRAWS NO CAPACITY**, which is amended #10's own
+consequence. **Ruled as a CLASS and not for the row that forced it**: every later discard on a
+gating row would otherwise raise this again as a per-row question.
+
+**★ THE GUARD, WHICH IS NOT AN ADDITION BUT #10's OWN REQUIREMENT.** A discard verdict is
+**AUTHORED**, not derived, so feeding it to the cut lets an authored judgment move the gate. **A
+discard verdict therefore moves the gate only where it carries its finding, its date and its
+reason** — which amended #10 already demands of every discard. **A discard record lacking any of
+the three DOES NOT REACH THE CUT**, on the same shape as the lapse rule above under which a row
+with no named grading does not lapse.
+
+*Why an input rather than a hand-made correction:* **D-436** reserves to the user the question of
+what a derived cut carries, and a hand-removed gate would be the same act as a hand-added one,
+which the record forbids. Making the verdict an input keeps the gate derived, and answers the
+objection rather than overriding it.
+
+**THE THREE ALTERNATIVES DECLINED, recorded because an excluded alternative is evidence about the
+choice.** *Leaving the discard record standing beside the gate* was declined on **#10** — the
+record would then state two incompatible things about one row — and on **#4**, since the row
+becomes a permanent block. *Withdrawing the discard and working the row* was declined on **#4**,
+spending capacity on free-text reason strings in an audit artifact, and because it would empty the
+worth test of force on its second application. *Ruling that the worth test reaches new findings
+only* was declined as the first option restated as policy: the gating population could then shrink
+only by being worked, while containing rows nobody thinks worth working.
+
+**THE COSTS THE USER ACCEPTED, stated before the ruling and recorded because an accepted cost is
+not a discharged one.** It **extends the retroactivity disclaimer** the worth test's own ruling
+carries, which was written to prevent exactly a sweep. And it makes the gating population sensitive
+to an **AUTHORED** verdict, which the guard above bounds but does not remove.
+
+**★ WHAT IT DOES NOT DO.** It authorizes **NO SWEEP** — it states how a discard verdict is
+consumed, not that any row should be discarded. It moves **D-231**'s phases and #8's three-clause
+gate not at all. It touches no measured value, no golden, no corpus of scores and nothing under
+`tools/robust_stop/`. **It closes no row**: a row that stops gating is still open. The discard
+population and every consumed verdict are DERIVED, never hand-listed, and no row identity or count
+is restated here (#17f, **D-431**).
+
 ## The decisions register (shape user-ratified 2026-07-28; content + living surface 2026-08-02)
 
 **The register is `DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` (full entries: the

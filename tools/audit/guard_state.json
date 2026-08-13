@@ -543,10 +543,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 676",
+        "backbone decisions: 677",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 676/676",
-        "cited line numbers correct: 670/670   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 677/677",
+        "cited line numbers correct: 671/671   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"

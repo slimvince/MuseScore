@@ -215,12 +215,12 @@
  },
  "the_complete_half": {
   "criterion": "C1 and C2",
-  "register_population": 676,
+  "register_population": 677,
   "by_home_class": {
    "contract-home": 163,
    "gap": 27,
    "homed-in-a-layer-specification": 297,
-   "process": 143,
+   "process": 144,
    "project-convention": 45,
    "unhomed": 1
   },
@@ -1734,8 +1734,8 @@
    },
    {
     "fact": "Of the register's entries, the ones whose home the register's own home_rule declares CORRECT are: homed in a layer specification, contract-home, process, and project-convention.",
-    "count": 648,
-    "of": 676
+    "count": 649,
+    "of": 677
    },
    {
     "fact": "Every harvested cluster carries a recorded disposition at the committed artifact, so no harvested statement was silently passed over.",
@@ -1862,7 +1862,7 @@
   "how_to_read_it": "The derivation is the answer; this block measures the recollection against it. A recollected row that the derivation does not carry is not thereby wrong - it may be outstanding on a ground this cut does not search (the COMPLETE half, or an establishment obligation) - and each is stated rather than scored."
  },
  "counted": {
-  "decisions_recorded": 676,
+  "decisions_recorded": 677,
   "open_rows_in_the_index": 247,
   "true_half_wide_cut": 52,
   "true_half_gating": 35,

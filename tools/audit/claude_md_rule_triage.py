@@ -568,6 +568,26 @@ TRIAGE: dict[str, tuple[str, str]] = {
                       "lapse reason is the right READING of the row — which is the judgment the "
                       "rule deliberately leaves to a later reader who would re-open the row by "
                       "challenging that recorded derivation."),
+    # ── AUTHORED 2026-08-13, cc_instruction_ruling69_discard_input.md Task 1 ───────────────────
+    # The user's Ruling 69 of `cowork_rulings_2026_08_13_seventeenth_stop.md` was homed into
+    # CLAUDE.md by that task, which ADDS it to this tool's derived population; it is triaged here
+    # so this check's failure list does not widen by that act alone (the OI-319 shape, as with
+    # every homing wave before it). NOTHING HERE IS RATIFIED: the verdict is an authored proposal
+    # with its ground, offered for the user to correct.
+    "D-677": (OWED, "The rule's guard is a condition on a RECORD and is therefore checkable: a "
+                    "discard verdict reaches the gating derivation only where it carries its "
+                    "finding, its date and its reason, and a record lacking any of the three does "
+                    "not reach the cut. AT THIS COMMIT NOTHING IMPLEMENTS IT — the rule is written "
+                    "and entered, and no derivation consumes a discard verdict at all. ★ THE "
+                    "MECHANISM IS COMMISSIONED BY THE SAME BATCH — Task 2 of "
+                    "`cc_instruction_ruling69_discard_input.md` — and lands in the next commit, so "
+                    "this entry is in the defect class for the length of one commit and is "
+                    "deliberately NOT rowed: a row whose discharge is already ordered and under "
+                    "way is exactly the paperwork the worth test at D-174 exists against. WHAT NO "
+                    "MECHANISM WILL COVER, stated now rather than discovered later: whether a "
+                    "discard verdict is the right READING of a row. That is the judgment the "
+                    "ruling deliberately leaves to a later reader, who re-opens the row by "
+                    "challenging the recorded reason rather than by rediscovering the issue."),
 }
 
 

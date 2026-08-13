@@ -325,8 +325,8 @@
         "ARCHITECTURE.md:2641",
         "ARCHITECTURE.md:4202",
         "ARCHITECTURE.md:5444",
-        "CLAUDE.md:471",
-        "CLAUDE.md:864"
+        "CLAUDE.md:521",
+        "CLAUDE.md:914"
       ]
     },
     {
@@ -916,9 +916,9 @@
       "current_contract_home": 4,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "CLAUDE.md:1237",
+      "delegation_citation": "CLAUDE.md:1287",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "CLAUDE.md:1237",
+      "delegation_citation_now": "CLAUDE.md:1287",
       "delegation_line_now": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -929,12 +929,12 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:2925",
-        "CLAUDE.md:1233",
-        "CLAUDE.md:1235",
-        "CLAUDE.md:1237",
-        "CLAUDE.md:1261",
-        "CLAUDE.md:1269",
-        "CLAUDE.md:1288"
+        "CLAUDE.md:1283",
+        "CLAUDE.md:1285",
+        "CLAUDE.md:1287",
+        "CLAUDE.md:1311",
+        "CLAUDE.md:1319",
+        "CLAUDE.md:1338"
       ]
     },
     {
@@ -963,7 +963,7 @@
         "ARCHITECTURE.md:2106",
         "CLAUDE.md:324",
         "CLAUDE.md:329",
-        "CLAUDE.md:512"
+        "CLAUDE.md:562"
       ]
     },
     {
