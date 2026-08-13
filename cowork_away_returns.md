@@ -9325,3 +9325,243 @@ to inference.** [[OI-274]]'s banner half is not performed and belongs to the rat
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# ═══ OI-150 — THE BASELINES RE-STAMPED FROM THIS BATCH'S OWN BUILD AND RUNS (dispatch `cc_instruction_oi150_baselines.md`, performed 2026-08-13) ═══
+
+> The second of the five acts the user ratified. Build at HEAD, run both suites, re-stamp both
+> `BUILD_AND_TEST.md` baselines from those runs, and make the notation line name the by-design
+> failing cases. The sections above are earlier batches' and are not rewritten. **Acts are dated
+> from the clock: 2026-08-13. NO STOP was raised.**
+
+## 4 (continued). The start state, recorded before any act
+
+**The working tree carried no tracked modification at all** — enumerated through the sanctioned tool
+before the build was started, and again after each of the two suite runs. No `src/` path, no golden,
+nothing under `tools/corpus/` or `tools/robust_stop/` at any point, which is A4 discharged by
+measurement rather than by intention.
+
+**The guard set at the opening**, run before any file was edited: **exactly the two standing recorded
+reds and nothing else** — the filing-convention application's `--check` failure ([[OI-372]]) and the
+runner's STOP on a derived candidate with no authored invocation ([[OI-373]]). The guard state's own
+artifact **re-derived byte-identically at this tree**, which is worth recording because it is the
+evidence that later let this batch refresh that artifact without importing the environment-dependence
+[[OI-374]] describes.
+
+## 1 (continued). What needs the user
+
+### ★ TWO ROWS WHOSE ORDERED ACTS WERE PERFORMED ARE STILL OPEN, AND NEITHER ROW SAYS SO — ONE OF THEM STATES THE OPPOSITE (Task 3)
+
+**This is Task 3's whole answer, and the dispatch is explicit that it is a finding for the user and
+not a correction to make inside a dispatch sent for something else. Neither row was flipped, neither
+row was edited, and nothing about either was touched.**
+
+**The state, read at the INDEX.** [[OI-315]] is **OPEN**. [[OI-321]] is **OPEN**. Both still **GATE**.
+
+**What was performed, established at the objects rather than taken from any report.** The two commits
+of the false-statements pass were read as git objects by explicit hash and their changed paths
+enumerated through the sanctioned tool: one touched `docs/duplication_audit.md`,
+`docs/key_detection_baroque_partial_signature.md` and `docs/key_path_design.md`; the other touched
+`docs/unified_analysis_pipeline.md`. Both were then read at the documents themselves.
+
+**[[OI-315]] — the row's remaining scope is smaller than its cell says.** Its status cell records the
+2026-08-04 acts and then names what is still open: the design document's own self-contradiction about
+the removed piece-start shortcut, and three further surfaces the earlier wave deliberately did not
+touch. At HEAD the self-contradiction is corrected — the reuse map now says in terms that the
+shortcut no longer exists and points at a correction block, and the start-prior sentence carries its
+former wording preserved beside its correction (#12) — and two of the three named surfaces were
+corrected by that commit. **The third is the stale comment in a `src/` test file, which the freeze
+still blocks**, so the row does not become closable by this; what is stale is the cell's account of
+what remains.
+
+**[[OI-321]] — its status cell states something that is false at HEAD.** The cell opens *"OPEN — rowed
+2026-08-04 (CC, READ WAVE 2). NOT corrected."* At HEAD items (1) and (2) **are** corrected: the header
+now says the phase was EXECUTED, with the deferred wording preserved beside it, and the named
+directory statement is corrected with its former wording preserved. Item (3), the parked divergence,
+is untouched and is a user ruling, which is the row's own stated reason for staying open.
+
+**Why it is worth the user's attention rather than a quiet fix.** A row that reads *NOT corrected*
+after the correction landed is the shape this record has met before from the other side — a row
+closed while work remained. Here it is a row whose text UNDERSTATES what has been done, and the cost
+is the same in kind: a session choosing what to work next reads the cell, not the commits. **Neither
+detail file carries a 2026-08-13 remark either**, so the acts are recorded in `STATUS.md` and in the
+commits and nowhere on the rows.
+
+**What is NOT claimed.** That either row should be flipped. Whether [[OI-315]]'s remaining `src/`
+comment and [[OI-321]]'s parked divergence leave enough to keep each row open is exactly what this
+report does not decide.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+### ★ (i) THE GUARD CLASSIFICATION STOPS ON A TOOL WITH NO AUTHORED VERDICT — PRE-EXISTING, AND IN A TOOL NO GUARD LIST RUNS
+
+**Found by running it, and established pre-existing rather than assumed so.**
+`tools/audit/gen_guard_classification.py --check` exits non-zero on *"tool(s) in the guard-state
+population with no authored verdict"*, naming the discard-records guard that the previous batch added
+to the guard set. Because that STOP is raised before anything is compared, **the tool produces no
+classification at all** while it stands — the same shape as [[OI-372]] one tool over.
+
+**Why it is pre-existing and not this batch's doing.** The classification reads the guard state's tool
+names and verdicts, and the guard state at the batch's opening **re-derived byte-identically** from a
+run that already included that tool. So the committed artifact already carried it, and the STOP
+already fired, before this batch touched anything. This batch's refresh of the guard state changed
+captured output text only; the tool set and the verdict set are the same.
+
+**Why it is declared and not fixed.** Authoring a verdict for a tool is a judgment about a mechanism,
+which **D-436** reserves, and §0c admits no such act. It is the [[OI-352]] shape exactly — a
+re-derivation mode that no guard list runs, so nothing reports it — and it is recorded here so the
+next reader of the guard set knows the classification beside it is not merely stale but unproduced.
+
+### ★ (ii) THE FOUR xfails' LINE CITATIONS IN [[OI-148]]'s DETAIL FILE HAVE DRIFTED — the worth test DISCARDS it
+
+**The finding, 2026-08-13:** the verbatim row in `open_items/OI-148.md` cites the two implode xfails
+by line, and this batch's own run reports both `GTEST_SKIP()` sites at different lines in the same
+file. The test NAMES are unchanged and are what the re-stamped baseline uses.
+
+**The reason it is discarded under amended #10 (D-174).** The #19 carve-out is taken first and does
+not reach it: nothing is trusted on those two coordinates, and no measurement depends on them. Limb
+(a) fails — nothing is built from a line number in a detail file. Limb (b) fails — the row is
+findable and readable by test name, which is how this batch found all four. And **D-639**'s own
+worked examples put a stale anchor explicitly OUT of the doc-sync half. **The record is made here and
+no row is written, no gate moves and no capacity is drawn** — which is amended #10's own consequence.
+**It is about the CITATIONS only and says nothing about [[OI-148]] itself**, which stays OPEN, gates,
+and owns four tests that are still failing by design. The verbatim row is byte-verbatim-protected in
+any case, so even a session that thought it worth fixing could not edit it in place.
+
+## 3 (continued). Per-task log — OI-150
+
+### Task 1 — COMPLETE. Built at HEAD, both suites run, nothing edited, nothing committed
+
+**The build reported `ninja: no work to do.` and exited 0**, which is stated rather than glossed: the
+build tree was already current with HEAD sources, and since the working tree carried no `src/`
+modification, the binaries the suites then ran were built from HEAD. The standard script builds five
+targets in one invocation, so that verdict covers both suite binaries.
+
+**Both suites ran to completion and exited 0.** The composing suite reported no failure and no skip;
+the notation suite reported no failure and four skips. **Every value written in Task 2 comes from
+these two runs** (A1) and no value was taken from the row, from this file, from a report or from
+`BUILD_AND_TEST.md`'s own previous text.
+
+**A2 — the by-design set was ESTABLISHED AT THE RUN.** The notation suite named its four skipped
+cases, and the identities are exactly [[OI-148]]'s four. **The count and the identities both agree
+with what the row asserted**, so A2's STOP did not fire — and the row's unverified assertion has now
+been checked by someone rather than repeated. Each of the four skip messages charges itself to one
+cause and carries the standing do-not-re-bless instruction, read at the run's own output.
+
+**A3 — no failure of any kind, so nothing was surfaced and nothing was worked around.** **A4 — the
+enumeration after the runs was identical to the enumeration before them**, so neither run modified a
+tracked path. One thing is worth a line because a reader would expect otherwise: the composing suite
+writes a mismatch report that **is a tracked file under `src/`**, and it did not appear as modified —
+so the run reproduced it unchanged rather than rewriting it. **Nothing was edited and nothing was
+committed in this task**, which is the dispatch's own instruction.
+
+### Task 2 — COMPLETE. Both baselines re-stamped, the notation line made to name the four, [[OI-150]] flipped. `6315227063`
+
+**Both closing conditions are reported separately at the row**, as the dispatch asks: (a) re-stamp
+both baselines — **met**, by measurement; (b) make the notation line name the four — **met**, by
+naming them with the do-not-re-bless instruction and a pointer to [[OI-148]] rather than a
+restatement of it (#6). The trigger clause — *at the next `BUILD_AND_TEST.md` touch* — is satisfied
+literally as well, since this is that touch. **Neither half was left unmet, so the row flips whole.**
+
+**Both former wordings stand in place (#12)**, each beside its replacement and each saying what was
+wrong with it. The distinction the row itself draws is kept: the composing line was a stale count,
+while the notation line was a stale count that **also reported a clean suite** — the harmful half,
+because a reader asking whether the tests pass was told yes.
+
+**★ THE DERIVED VIEWS WERE REGENERATED BY THEIR OWN GENERATORS AND NEVER REPAIRED BY HAND, and the
+movement is exactly one row.** A closing row leaves the derived gating population, so the tools that
+carry an authored judgment about it STOP until that judgment is moved out **whole** — which is what
+both of them are built to allow. The apparatus declaration's verdict and the sizing pass's sizing each
+moved into that tool's own retired block with the reason it left (#12, **D-648**), and the apparatus
+declaration, the phase-1 completion inventory, the finish line and the sizing pass then re-derived.
+**Established at the artifacts rather than asserted:** the row now appears in the apparatus
+declaration only under its retired entries, and it appears in the finish line not at all. **The finish
+line's falsification test runs inside its own build before anything is written, and it passed.**
+
+**Two register home anchors into `BUILD_AND_TEST.md` drifted by the insertion and were re-aimed PER
+CITATION from the verifier's own reported numbers**, never by an assumed uniform shift — the standing
+rule, and the reason the re-aim is done by the tool that reads the verifier's machinery rather than by
+hand. The disposition verifier then reported **zero line drift** with every verbatim still at its
+cited home.
+
+**One further artifact was refreshed and the reason is stated because it was a judgment.** The guard
+set's own state artifact stopped re-deriving once four tools' captured output moved, which is this
+batch's own regeneration debt. It was regenerated by its own generator rather than left stale, and the
+one hazard against doing so — that captured text follows the environment ([[OI-374]]) — was answered
+by evidence rather than by assumption: the same artifact re-derived byte-identically **in this
+environment** at the batch's opening. **The verdict set is unchanged by the refresh** — the same tools
+run, the same one failing.
+
+### Task 3 — COMPLETE. Read-only; the two rows' state reported at §1 above and neither touched
+
+### Task 4 — this close. Three `STATUS.md` pointer entries, one per task, and nothing else in that file
+
+`STATUS.md` remains unreadable in full ([[OI-370]] open and gating), so the entries were written by
+locating the head of the file rather than by reading it whole, and the `Last updated:` prefix moved
+onto the new topmost entry on the precedent this file's own previous closes record.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ ON THE GUARD SET — IT ENDS EXACTLY WHERE IT WAS FOUND.** The full set was run at the opening
+before any edit, again after the Task-2 edits, and again after the regeneration debt was cleared.
+**Two reds stand and both are the standing recorded pair** ([[OI-372]], [[OI-373]]). **Two guards did
+go red mid-batch and both were this batch's own debt, cleared before the commit they belonged to:** the
+sizing pass, whose authored sizing named a row that had left the population, and the disposition
+verifier, whose two anchors into the edited file had drifted. §0d's last condition — a red for a cause
+that is neither this dispatch's edits nor already recorded — **did not fire**. The guard classification's
+STOP is reported at §2 above and is established pre-existing, not a new red.
+
+**★ ON THE MEASURED VALUES (A1, and the standing rule against hand-copied measurement values).** Every
+value written into `BUILD_AND_TEST.md` was produced by this batch's own two runs, and the file now says
+so at both lines, with the re-stamp rule stated once and pointed at from the second (#6). **No value
+was carried** — the earlier wave's refusal to re-stamp without measuring is recorded at both the row
+and the file as the correct act, not undone. **No derived population, verdict or count is restated
+here or in `STATUS.md`** (**D-431**); the movement is described as one row leaving, with the identities
+left at the artifacts. The dispatch is cited by its exact filename throughout, **no positional count
+appears anywhere**, and no file is cited by line number in any text written here (**D-307**).
+
+**★ ON D-253 IN EVERY DIALECT.** No working-tree file was read through a shell in any dialect — every
+read of `CLAUDE.md`, the two registers, the detail files, the dispatch, the generators, the artifacts
+and the two suite logs went through Read/Grep/Glob. **One shell read WAS attempted at the batch's
+opening and the guard DENIED it** — a PowerShell line count aimed at a repository path — and it was
+**not retried in another dialect**; the guard's message named the sanctioned enumeration tool, which is
+what every path enumeration here used. **`git status` was attempted once and denied on the same
+ground.** The shell was used for six things only: the build script, the two suite binaries, the
+committed tools, `git show` of commit objects named by **explicit hash**, the `git add` / `git commit
+-F` / `git push` acts, and the changed-path enumeration. **Every tool output was written to an absolute
+scratchpad path outside the repository and read back from that same path.** **No branch-tip or index
+read was made** — no `git log`, no `git rev-parse`; every hash came from the environment's own
+session-start record or from this session's own commit reports, and the session-start hash was
+confirmed at the push, which reported it as the ancestor.
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense; bare *key*,
+*mode*, *measure*, *note*, *beat*, *scale*, *interval*, *root*, *part*, *rest*, *figure* and *flat*
+appear in no non-musical sense — *measurement* carries the gauging sense, *value* the numeric one, and
+*tool*, *check* and *generator* stand where the collided word would have been. Two inherited compounds
+are carried knowingly: **register entry** / **the open-items register**, and the **retired block**
+idiom the two audit tools define of themselves.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0c and §0d, item by item).** **No golden was refreshed**,
+whatever the runs showed — and the runs showed four by-design failures, which is exactly the case the
+prohibition is written for. **No test was changed, skipped or marked**, and **no failure was
+diagnosed**: surfacing was the whole obligation and the four are described in the words their own skip
+messages use. **No `src/` edit, no behaviour change, no corpus of scores, nothing under
+`tools/corpus/` or `tools/robust_stop/`, no measurement of the analysis built, designed, scoped or
+run, no design, no fix to inference.** **No sweep** — no other stale count in the file was touched.
+**Neither [[OI-315]] nor [[OI-321]] was flipped or edited.** [[OI-148]] is not discharged: naming four
+xfails in a baseline line neither fixes nor re-blesses them. The `docs/scoring_model.md` pass,
+[[OI-274]]'s banner half and [[OI-207]] are ratified for later and were not started. **CC's two
+declared findings are still held and were not acted on.** [[OI-179]] stays **OPEN** and **GATES**.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# THE CLOSE — [[OI-150]] closed by MEASUREMENT: both baselines re-stamped from this batch's own runs, and the notation line now names the four cases that fail by design
+
+**Recorded 2026-08-13 (CC) under `cc_instruction_oi150_baselines.md`. Four tasks, two commits, both
+pushed to `origin`. No STOP rule fired.** The one thing that made the act possible is the thing an
+earlier wave correctly refused to do without: a build and two suite runs. **The row is closed because
+it was measured, not because it was re-worded.**
