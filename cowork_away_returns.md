@@ -8433,3 +8433,146 @@ described wrongly rather than to have moved.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+## ★ THE STOP THE PREVIOUS BATCH DECLARED, RECORDED HERE BECAUSE NOTHING ON DISK CARRIED IT
+
+**Recorded 2026-08-13 (CC) under `cc_instruction_stop_record_and_enumeration.md`, Task 1.** The
+previous batch ran `cc_instruction_oi274_second_half.md`, halted at that dispatch's own §0e and
+produced no commit — so **the STOP and its findings lived only in that session's report to Cowork,
+and no file carried them.** This section is that record. **No act on [[OI-274]] follows from it, in
+either branch:** no row is written, corrected, flipped or discarded here.
+
+**★ DECLARED FIRST, BECAUSE IT CHANGES WHAT THIS RECORD IS. THE PREVIOUS SESSION'S REPORT IS NOT ON
+DISK AND THIS SESSION DID NOT HAVE IT.** Nothing below is transcribed from it, because there was
+nothing to transcribe from. **Every verdict here is RE-ESTABLISHED at the objects by this session,
+today, and is stated as this session's own finding** — which is what the never-work-from-memory rule
+leaves a session when the source it would otherwise quote cannot be opened. Exactly three things are
+taken from the dispatch rather than from an object, and each is marked where it appears: **that a
+STOP was declared; that A1 and A2 refuted the premise; and the wording of the narrow question.** All
+of it is recorded as **the executing side's findings, not as facts Cowork has adopted** (the
+dispatch's §0b), and this paragraph is how a later reader tells the two apart. **Where the
+re-established verdicts and the dispatch's account of them agree, that agreement is evidence and not
+a citation** — this session could not read the report it agrees with.
+
+### The premise that is refuted, and where it is authored
+
+**The premise:** that [[OI-274]]'s SECOND HALF is **answered at HEAD** by Ruling 64 of
+`cowork_rulings_2026_08_11_fourteenth_stop.md`.
+
+**Where it is authored — checked at the generator rather than at its output.**
+`tools/audit/gen_gating_row_sizing.py` carries it in the `RECORD_MAY_BE_STALE` structure under the
+`"OI-274"` key, beneath the comment block that marks that structure **AUTHORED**. The artifact
+publishes it in two places — `tools/audit/gating_row_sizing.json` at
+`the_staleness_flags.rows` and again on that row's own entry as
+`the_record_may_be_stale_about_this_row` — and both open, verbatim: *"Its SECOND HALF is ANSWERED at
+HEAD and the row does not say so."*
+
+**THE FLAG IS NOT CORRECTED, AND THAT IS THE DISPATCH'S OWN INSTRUCTION** — an act on a committed
+tool under a STOP, and whether it is corrected at all is a separate ruling. It stands exactly as
+written; this section is what a reader meets beside it.
+
+### A1 — REFUTED on its second limb. Object: `CLAUDE.md`, the block Ruling 64 wrote
+
+A1 read: *"Ruling 64's instruction is present and standing in `CLAUDE.md`. Check at the file, reading
+the enclosing clause and not a matching line. If it is absent or narrower than the row's question,
+STOP."*
+
+**PRESENT — that limb HOLDS, and it was checked at the enclosing clause.** Under `CLAUDE.md`'s
+*"Scoring model — `docs/scoring_model.md` (MANDATORY for scoring sessions)"* heading, immediately
+after the instruction it was patterned on, stands the block *"★ THE SAME FORM, FOR THE PRODUCTION
+INFERENCE LAYER (user-ruled 2026-08-11 … Ruling 64)"*, whose instruction is verbatim: **"Read the
+joint estimator's section of `ARCHITECTURE.md` — its standing rules and the factorization contract
+that section delegates to — at the start of any session that touches the joint estimator's
+behaviour."**
+
+**NARROWER — that limb FAILS, and it fails on the TRIGGER and not on the target.** The instruction
+the row is about, quoted from the same file two paragraphs above it, is: **"Read
+`docs/scoring_model.md` at the start of any session that touches scoring logic in
+`chordanalyzer.cpp`"**. Ruling 64's instruction fires on *a session that touches the joint
+estimator's behaviour*. **A session that touches scoring logic in `chordanalyzer.cpp` and does not
+touch the joint estimator's behaviour is reached by the first trigger and by neither clause of the
+second** — and that session class is precisely the row's subject. So what stands in `CLAUDE.md` is a
+SECOND instruction beside the first, not a widening of the first, and the row's question is not
+answered for the sessions the row is about. **A1's own STOP clause names this case in the word
+`narrower`.**
+
+### A2 — REFUTED. The two formulations side by side, each at its own object
+
+A2 read: *"OI-274's second half is the question Ruling 64 answered … quote the row's own formulation
+and the ruling's own formulation side by side. If they are not the same question, STOP."*
+
+**The row's own formulation**, identical in its INDEX status cell and in the Disposition of
+`open_items/OI-274.md`: *"Whether `CLAUDE.md`'s mandatory-read instruction should **also name** the
+joint estimator's own specification is a **governing-document** question and therefore the user's."*
+
+**Ruling 64's own formulation**, at `cowork_rulings_2026_08_11_fourteenth_stop.md`: *"One line in
+`CLAUDE.md`, the `scoring_model` pattern, under this ruling's scoped licence: any session that
+touches the joint estimator's behaviour reads its `ARCHITECTURE.md` section and the factorization
+contract first."*
+
+**They are not the same question.** The row asks whether an **existing** instruction should gain a
+name; the ruling adds a **second** instruction on that instruction's pattern, with a trigger of its
+own. *On the `scoring_model` pattern* is the ruling saying which shape it copies — it is not the
+ruling reaching into the instruction it copied.
+
+**The reading that would make them one question is stated and refused at the row's own text**, so
+that the refusal can be checked rather than taken. Read widely — *should `CLAUDE.md` name the joint
+estimator's specification anywhere among its mandated reads* — Ruling 64 answers it. But the row
+does not argue at that width. Its own section *"Why it matters more here than in an ordinary stale
+document"* quotes the scoring trigger and reasons from the session class that trigger sends: *"So a
+session directed here is directed to a document that presents a dormant scorer as the system's
+scoring pipeline, and no other mandatory read corrects it"*, and *"The one place the truth is stated
+— `ARCHITECTURE.md`'s corrected Layer-3 and Layer-4 blocks — is not part of that session's mandated
+reading."* **That defect is unchanged by a parallel trigger that same session need not fire.**
+
+### A3 — the record SETTLES it, and the answer is that no per-half state exists
+
+A3 read: *"Whether the INDEX can carry a per-half state is settled by the record, not invented …
+does a status cell admit more than one state, or does the parser publish exactly one per row? If the
+record does not settle it, STOP."*
+
+**The record settles it, at both objects A3 names, and the answer is ONE state per row.**
+`CLAUDE.md`'s open-items register rule (f) states it in terms — *"A row's STATE is carried by the
+first token of its status cell … and by nothing else"* — and the one index parser,
+`tools/audit/index_status_lint.py`, implements exactly that: `leading_token` returns the single
+canonical token a cell opens with, and `CANONICAL` maps every token in the vocabulary to exactly one
+of *resolved* or *open*. **A cell cannot record one state for a main half and another for a second
+half.**
+
+**So A3's own STOP does not fire** — it fires only where the record leaves the question open — **and
+what A3 decides is which branch the previous dispatch's Task 1 would have taken had A1 and A2 held:
+the correct-the-text branch, never the flip.** With A1 and A2 refuted, **neither branch is
+licensed**: there is no answered question for the row's text to be corrected to.
+
+### A4 — not reached, and the main half is untouched by construction
+
+No act was taken on the row in either branch, so A4 — *"the row's MAIN half is untouched and still
+owed in full"* — is satisfied by there having been no act. **The main half is owed in full and
+unmoved:** the scoping sentence its two sibling rows closed on, the re-stamped footer date, and the
+two DRAFT-UNCOMMITTED banners standing on tracked files.
+
+### ★ THE NARROW QUESTION THE PREVIOUS SESSION ISOLATED — it belongs to a user sitting, not to a dispatch
+
+Quoted from `cc_instruction_stop_record_and_enumeration.md` §0c, which is the one place it was
+written down: **should the `chordanalyzer.cpp`-scoring trigger also name the joint estimator's
+specification, over and above the parallel trigger Ruling 64 created?**
+
+**Why it is still live after Ruling 64, in one sentence:** a session sent to
+`docs/scoring_model.md` because it touches `chordanalyzer.cpp` reads a document that presents a
+dormant scorer in the present tense, and Ruling 64's trigger does not fire for that session unless
+it also touches the joint estimator's behaviour. **It stays the user's for the reason the row already
+gives** — it is a governing-document question — and this record neither answers it nor proposes an
+answer.
+
+### What is NOT claimed
+
+- **Not** that Ruling 64 is wrong, inadequate, or wrongly written. It answers what it answers, and
+  its instruction stands in `CLAUDE.md` as ruled.
+- **Not** that the authored flag is wrong about the ruling's existence, its date or its content.
+  What is refuted is the single step from *the ruling exists and is written* to *this row's second
+  half is answered*.
+- **Not** that [[OI-274]]'s second half is unanswerable, or that the answer would be large. What the
+  narrow question needs is a line from the user.
+- **Not** that any sibling of this defect has been looked for. None was, and the dispatch forbids
+  the sweep (§0d).
+- **Nothing is flipped, corrected or discarded**, and no population moves by this record.
