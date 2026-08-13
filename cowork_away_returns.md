@@ -9085,3 +9085,243 @@ untouched. [[OI-179]] stays **OPEN** and **GATES**.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# THE CLOSE — Ruling 69 recorded, entered, and MADE MECHANICAL: a discard verdict is now an input the gating derivation reads
+
+**Recorded 2026-08-13 (CC) under `cc_instruction_ruling69_discard_input.md`. Three tasks, three
+commits, all pushed to `origin`. No STOP rule fired.** The dispatch's declared verification gap is
+closed below rather than carried.
+
+## 0 (continued). THE PREVIOUS BATCH'S FOUR HASHES — the declared verification gap, CLOSED
+
+The dispatch declares that the false-statements pass's report carried no commit hashes, so Cowork had
+not verified that batch at the objects. **All four are read here as git objects by explicit hash, and
+their changed paths enumerated per commit through the sanctioned tool.**
+
+| act | commit | what it touched |
+|---|---|---|
+| Task 1 | `d9f674e0ece17272634aa481114766197adb6c93` | three `docs/` surfaces |
+| Task 2 | `cfa3775a2acc07caacab8797e260e87de0e17224` | one `docs/` surface |
+| Task 3 | `2f36d66e1496440766609b370c6560af5f5cf66c` | `cowork_away_returns.md` only |
+| Task 4 | `a52437a287d5b0f082d19ded20c4f2d252540796` | `STATUS.md` and `cowork_away_returns.md` |
+
+**The union carries no `src/`, no golden, no `tools/corpus/` and no `tools/robust_stop/` path**, which
+is what that batch claimed and what is now checked. **One of the four is load-bearing for THIS batch,
+which is why the enumeration was worth doing rather than performing:** the worth-test commit touched
+`cowork_away_returns.md` **and nothing else** — so [[OI-90]]'s discard record is in the returns file
+and on neither of the row's own two surfaces. That is established at the objects, and it decided how
+Task 2's locator had to be built.
+
+## 1 (continued). What needs the user
+
+**ONE THING, AND IT IS A FINDING RATHER THAN A CHOICE.** It is at §2 below: two authored rule-triage
+entries state that mechanisms which DO run at HEAD are not yet enforced. **Neither the worth test nor
+a row is applied to it here** — this dispatch's §0c reserves both — so it is declared to the planning
+side and left there.
+
+**Everything the previous batches left is left where it was.** [[OI-274]]'s banner half is still WORTH
+FIXING and still not performed, and belongs to the ratified `docs/scoring_model.md` pass. [[OI-150]]
+is next in the ratified order and was not started. [[OI-179]] stays **OPEN** and **GATES**. **Nothing
+is added to what was already waiting.**
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+### ★ (i) TWO AUTHORED RULE-TRIAGE ENTRIES STATE THAT MECHANISMS WHICH RUN AT HEAD ARE NOT ENFORCED
+
+**Found while authoring the neighbouring entry this batch owed, and read at both objects rather than
+inferred.** `tools/audit/claude_md_rule_triage.py` carries, for the two rulings entered two batches
+ago, a *WHAT IS NOT yet enforced* clause each. **One says the finish line's per-item gate is not cut by
+D-438's test, that the #19 carve-out is not encoded in that cut, and that the falsification test does
+not run on regeneration. The other says the lapse rule's own STOP is not armed and that whether a
+lapsing row carries its lapse record is not checked.** All five statements are false at HEAD:
+`gen_phase1_finish_line.py` cuts every item by that test, encodes the carve-out, runs the
+falsification test inside `build()` before anything is written, halts on a row that would lapse with
+no named grading, and reports per row whether the lapse record is written.
+
+**What it is, and what it is not.** It is an AUTHORED field in an audit artifact going stale behind
+the mechanism it describes — the same shape the record has named before, a computed half current
+beside an authored half that is not. **It is not a wrong CLASS:** both entries are `MECHANISM-EXISTS`
+and both remain so; what is stale is each PARTIAL's second half. **Nothing is trusted on it**, and no
+verdict, population or gate anywhere reads it.
+
+**Why it is declared and not acted on.** Correcting an authored triage verdict for a rule this batch
+was not sent to is authoring a judgment about that rule, and §0c admits no sweep. The consequence
+worth naming is that these entries feed the mechanism backlog a later session reads when choosing what
+to build, so a reader could build a second falsification test beside the one that runs (#6). **That is
+the reading, not a ruling: whether it is worth fixing is a worth-test question and this batch does not
+take it.**
+
+### ★ (ii) THE ROUTE A DISCARD RECORD TAKES IS NOT ONE ROUTE, AND THE RECORD NOW HOLDS TWO
+
+**Established at the objects while building Task 2.** The register's own route puts a discard record in
+the row's detail file under its own heading, with a clause in the INDEX status cell beside it — which
+is where the two discards of 2026-08-12 stand. [[OI-90]]'s discard of 2026-08-13 stands in
+`cowork_away_returns.md` instead, because the dispatch that ordered it forbade the status cell moving
+and the detail-file half was not written either.
+
+**This is reported, not repaired.** Moving the record onto the row would be adjusting an input to
+produce a movement, which this dispatch forbids in terms. **It is why the locator is an authored
+pointer table rather than a scan of the register**: a derivation over the register's own two surfaces
+would not find [[OI-90]]'s record at all, and the batch would then have reported *nothing moved* for a
+reason having nothing to do with whether the verdict conforms. **The bound this leaves is stated on the
+tool's own artifact** — the completeness STOP reaches the register's two surfaces and no further — and
+the error it leaves runs in the safe direction, keeping a gate rather than removing one.
+
+## 3 (continued). Per-task log
+
+### Task 1 — COMPLETE. The ruling homed and entered, atomic under rule (c). `b36df5d710`
+
+The ruled text is written into `CLAUDE.md`'s open-items register section, after rule (f) and below the
+lapse rule whose shape it takes. **The placement is not incidental:** the lapse rule's own span is
+quoted IN FULL by the bearing cut on every run, located between its opening and rule (f)'s, so an
+insertion between them would have made that quotation swallow this ruling's text. It goes after rule
+(f) instead, and both quoted spans are untouched.
+
+**The home was DERIVED, and both other candidates are named at the entry.** The register section wins
+on #6: the rule turns the same three clauses of the non-gating declaration — stays open, stops gating,
+stops being owed — and takes the lapse rule's shape, and both live there. Principle #10, the worth
+test's own home, is the nearer alternative and still not it: its sentence already carries the
+consequence (*no row, no gate, no capacity*), while this rule decides how that consequence REACHES a
+row through a derivation; and the ruling's own words are that it is the separate act #10's ruling
+deferred, which homed inside that clause would read as though nothing had been deferred. The
+dispatch-protocol block is not supported at all — its own opening declares its rules govern every
+DISPATCH. **No two candidates were equally supported, so §0d's STOP did not fire.** Rules (g)–(k)
+neither admit nor exclude the entry and the entry says so: its class is `process`, which criterion C1
+declares correctly homed — the same class and home as the two rulings entered two batches ago.
+
+**The rule triage was authored in the same act**, so the check's failure list does not widen by this
+homing alone — the shape every homing wave here has followed. At that commit the entry was in the
+defect class and said so, and it was deliberately not rowed: the mechanism was already ordered by
+Task 2 and landed one commit later.
+
+**At the objects.** The register check passes; the disposition verify reports every verbatim quote at
+its cited home and every cited line number correct, after a **per-citation** re-aim of the anchors the
+insertion shifted — never an assumed uniform shift, which is the standing rule and the reason the
+re-aim runs from the verifier's own reported numbers. **★ ONE THING WAS ESTABLISHED RATHER THAN
+ASSUMED, and it is the half a reader should check:** running the home classifier writes to the register
+data, and it reported field changes. **No entry's CLASS moved** — the committed inventory was read as a
+git object by explicit hash and every home-class count is byte-equal to the current one except
+`process`, which moves by exactly the one entry this batch adds. What changed are `home_section`
+heading lines following the re-aim, which is the mechanical consequence of moving a line anchor.
+
+### Task 2 — COMPLETE. The cut takes discard verdicts as an input. `c9fd80bdf1`
+
+**A1 FIRST, and it is discharged AT THE RECORD.** [[OI-90]]'s discard record carries its finding, its
+date and its reason; each is located inside the record's own span, in the record's own surface, on
+every run. §0d's first condition did not fire.
+
+**What was built.** `tools/audit/gen_discard_records.py`: an authored POINTER table — the row, the
+surface, and the quote locating each element — with everything else derived. The row's open state comes
+from the ONE index parser; the **#19 carve-out** from the committed apparatus declaration's recorded
+gate grounds, and a record naming a row it keeps gating is a **STOP**, because amended #10 states an
+establishment obligation is never discarded whatever its subject. A record missing an element is
+published NOT CONFORMING and simply not consumed — the ruling's own wording, and deliberately not a
+STOP, because a non-conforming record is a fact about the record rather than a broken tool.
+
+**Why a pointer table and not a scanner, stated because the alternative was real.** A scanner would
+have to invent a grammar for a discard record and would then carry an UNMEASURED REACH — the defect
+this record has met twice, at a family enumerated by an unmeasured pattern and at a derived enumeration
+reporting its class empty while an instance stood. Every element of a pointer is RE-LOCATED on each
+run, so a reworded record halts the tool instead of leaving a citation nobody re-read. **A BOUNDED
+completeness STOP still runs** over the register's own two surfaces, so a discard written by the
+register's route cannot be left out silently; its reach is stated on the artifact and the error it
+leaves keeps a gate rather than removing one.
+
+**The patterns are MEASURED against seeds the record holds, in both directions.** The positive seeds
+are the three discard records; the negative seeds are the two worth-test outcomes that are NOT
+discards, written the same day by the same act and in two DIFFERENT shapes — so the check is against
+both shapes the record uses for a negative outcome, not one shape twice. Neither is carried by the
+table and neither is pulled in by the scan. **A seed whose quoted record leaves the record is a STOP:**
+a control that has silently gone establishes nothing.
+
+**A3 — THE MOVEMENT IS REPORTED BOTH WAYS.** The same cut is recomputed with the input OFF and the two
+are diffed, with four STOPs armed: a row JOINING the gate, a row LEAVING it with no conforming discard
+record, a row carrying one and still gating, and any movement in the non-gating set. The two cuts
+differ by exactly the rows carrying a conforming discard record and by nothing else. §0d's third
+condition did not fire. **Nothing was adjusted to produce a movement.**
+
+**A DISCARDED ROW IS ITS OWN CLASS.** Folding it into the non-gating set was available and was not
+taken: that set is the APPARATUS class and the finish line's item over it says so in its own name, so a
+discarded member would make that name false — and it would lose which of the two questions answered the
+row (#12). The finish line's reconciliation STOP gains a third term instead, so the wide cut is still
+covered exactly and the list cannot quietly stop being exhaustive.
+
+**A4 — THE FALSIFICATION TEST RUNS OVER THE RESULT, in its own terms.** The same four probes, over the
+discard-moved rows, because each grades a D-438 proposition and that is what a gating verdict asserts
+however the row lost it. All four are empty: **PASS**. §0d's fourth condition did not fire.
+
+**A2 — NO GATING VERDICT WAS WRITTEN, EDITED OR REMOVED BY HAND anywhere in this batch.** What changed
+is what the derivation READS. The D-438 verdict is computed by the same function as before and is kept
+beside every result (#12), so which of the two questions took a row out of the gate stays readable.
+
+**The consequences were followed rather than suppressed.** The row's sizing left the sized population
+and is retired **with its whole text kept**, and the retirement record says plainly what no other
+retirement there means: the row is OPEN, nothing the sizing describes has been done, and if the discard
+is ever challenged the pass STOPs and asks for a FRESH sizing rather than this one back. The new tool
+joined the guard set with its authored invocation — otherwise the runner's own STOP would have fired on
+it, which is [[OI-373]]'s condition and would have been this batch's doing. The rule triage moved to
+`MECHANISM-EXISTS` with its former class preserved and both un-mechanised halves stated.
+
+### Task 3 — COMPLETE. The handoff block committed as it stands. `284aa311d1`
+
+Verified independently at this tree rather than carried from the previous batch's account: the
+committed copy read as a git object by explicit hash, its section headings compared against the working
+copy's — every heading in both, same order, each displaced by the same constant, one new top section. A
+PREPEND, nothing below it moved, and the commit's own insertion count equals that constant. **Not one
+character was written, edited, re-worded or re-ordered**, and the file was not read for content beyond
+what that verification needed.
+
+### Task 4 — this close. One `STATUS.md` pointer entry per task and nothing else in that file
+
+[[OI-370]] stays open and gates; that file remains unreadable, and this batch adds three pointer entries
+to it and nothing more.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ ON THE GUARD SET.** The full set was run at the batch's opening before any file was edited, and
+again after each task's edits. **It ends exactly where it was found: two reds, and both are the standing
+recorded pair** — the filing-convention application's `--check` failure ([[OI-372]]) and the runner's
+STOP on a derived candidate with no authored invocation ([[OI-373]]). §0d's last condition — a red for a
+cause that is neither this dispatch's edits nor already recorded — did not fire. **Guards did go red
+mid-batch and every one was this batch's own regeneration debt, cleared before the commit it belonged
+to**; each is named in the per-task log's account of what was regenerated. **The new guard is in the set
+and passing.**
+
+**★ ON THE FIGURES RULE (D-431) AND ON POSITIONAL COUNTS (D-307, D-432).** No count from any derived cut
+is restated here or in `STATUS.md`: the movement is described as *exactly the rows carrying a conforming
+discard record*, with the identities and every count left at their artifacts. **The dispatch is cited by
+its exact filename throughout and no positional count appears anywhere; rulings are cited by number and
+no existing date was corrected.** No file is cited by line number in any text written here.
+
+**★ ON D-253 IN EVERY DIALECT.** No working-tree file was read through a shell in any dialect — every
+read of `CLAUDE.md`, the two registers, the detail files, the dispatch, the generators and the artifacts
+went through Read/Grep/Glob. **One shell read WAS attempted and the guard DENIED it**: a `tail -c` aimed
+at a tool's output; it was not retried in another dialect and the file was read with the file tools
+instead, which is the dialect widening working. **The shell was used for five things only** — `git show
+--stat -s` of the four previous-batch commits by explicit hash, three `git show <hash>:path` reads of
+committed blobs, the `git add` / `git commit -F` / `git push` acts, and the committed tools. **Every tool
+output was written to an absolute scratchpad path outside the repository and read back from that same
+path** — the path-mapping hazard's standing remedy, applied from the first command. **No branch-tip or
+index read was made**: no `git log`, no `git status`, no `git rev-parse`. Every hash used came from the
+environment's own session-start record or from this session's own commit reports, and each was verified
+at the object before anything rested on it.
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense; bare *key*, *mode*,
+*measure*, *note*, *beat*, *scale*, *interval*, *root*, *part*, *rest*, *figure* and *flat* appear in no
+non-musical sense — *measurement* carries the gauging sense, *value* the numeric one, and *tool* and
+*generator* stand where the collided word would have been. Two inherited compounds are carried
+knowingly: **register entry** / **the open-items register**, and the **second half** idiom the sizing
+artifact defines.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0c and §0d, item by item).** **No sweep** — no row was tested
+that had not been tested already, and Ruling 69 was applied as the class rule it is rather than to any
+new row. **No row is closed**; the row that stopped gating stays OPEN with its status cell untouched.
+**No `src/` edit, no behaviour change, no golden, no corpus of scores, nothing under `tools/corpus/` or
+`tools/robust_stop/`, no measurement of the analysis built, designed, scoped or run, no design, no fix
+to inference.** [[OI-274]]'s banner half is not performed and belongs to the ratified
+`docs/scoring_model.md` pass. [[OI-150]] is not started. [[OI-179]] stays **OPEN** and **GATES**.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
