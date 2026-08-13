@@ -1,6 +1,87 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## ★★★★★ COWORK SESSION CLOSE (THIRTEENTH) — THE APPARATUS STREAM IS CLOSED AT ITS SOURCE; PHASE 1 IS **CHOOSABLE** AND NOT NEARER; THE PLAN, NOT THE LAST FINDING, IS WHAT THE NEXT SESSION WORKS. THE CURRENT ENTRY POINT.
+
+**You start clueless — this block is your boot. No population appears here by design (D-431);
+every quantity is an artifact you read at HEAD. Nothing is running.**
+
+**★ FIRST, THE PLAN — because the whole failure of the previous arc was working the last finding
+instead of it.** D-231 orders three phases. **Phase 1 completes exactly two ways: the acts
+available now, and the user's rulings on the user-blocked set. Nothing else moves it** — no cut,
+no re-classification, no derivation; that was tested and abandoned, and the ground is recorded.
+Everything else rides a scheduled event, the phase order, the `src/` freeze or the role
+separation. **The previous arc wrote twelve dispatches and moved neither of the two.** Read the
+enumeration of available acts in `cowork_away_returns.md` (the Task 2 section headed *the
+enumeration, published at the artifact's own field values*) and the user-blocked set at
+`tools/audit/gating_row_sizing.json`, and work those. **If you find yourself writing a dispatch
+about whatever the last report contained, stop and ask where it sits in this order.**
+
+**Read, in order:** (1) `CLAUDE.md` IN FULL — **principle #10 now carries its purpose and the
+WORTH TEST**, which is the rule that governs whether a finding becomes anything at all; the
+open-items register's non-gating declaration now carries **D-676**, an apparatus row stops being
+owed. (2) `DECISIONS.md` (INDEX). (3) `OPEN_ITEMS.md` (INDEX). (4)
+`tools/audit/phase1_finish_line.json` and `tools/audit/gating_row_sizing.json` at HEAD.
+(5) `cowork_away_returns.md` from the STOP-record section to the end. (6) `STATUS.md`'s top
+entries — **and note it cannot be read in full; that is [[OI-370]], open and gating.**
+
+**★ WHAT CHANGED, AND IT IS A RATE CHANGE RATHER THAN A DRAIN.** Four user rulings:
+**Ruling 65** cut the finish line by D-438's test; **Ruling 66** made an apparatus row stop
+gating *and stop being owed*, with a per-row lapse record; **Ruling 67** released one halt
+narrowly and **creates no precedent for reading a declared STOP purposively**; **Ruling 68**
+gave principle #10 its purpose — an issue that risks neither something built failing the
+objective nor code becoming incomparable to specification is **DISCARDED**, no row, no gate, no
+capacity. The later batches exercise it: several real findings were recorded with finding, date
+and reason and generated **no row**. The two rules that produced the unbounded documentation
+stream are both closed at the source.
+
+**★ WHAT DID NOT CHANGE, stated plainly because the previous arc kept implying otherwise.** The
+gating population did not fall. Every close says it: **phase 1 is better described, not nearer
+completion.** The derivation that would have tested whether that population is inflated was
+abandoned on the user's ruling — the cut's over-inclusion is **self-declared and recorded as a
+stated bound, not measured** — so whether the gate is honestly shut is a bound rather than a
+fact, and that is an accepted cost, not an oversight.
+
+**★ WHAT IS BANKED FOR PHASE 2.** The OI-141 sitting was held, **bounded to scoping with no
+design output**, and its outcome is on that row: four questions, seven named settling acts, four
+barred until phase 2 — one of which carries gate block (A)'s **modulation-correctness
+convention** as its grading, explicitly not the agreement percentage. Three are reads; **one is
+done** and it relocated a question to the segmentation layer (#7), which is on the row.
+The other two have their **predictions registered before running** in Cowork's scratch outputs
+and must be run against them. `cowork_spec_code_audit_adjudication_method.md` is the phase-2
+audit method, pointed at from `cowork_audit_protocol.md` P3. **OI-179**: the laboratory answered,
+BCMH is single-annotator and consensus-built so it can never yield the ceiling, the errata limb
+is re-asked with its clock running, and **the row stays OPEN and GATES under #19**.
+
+**★ THE WORKING RULES, AS THIS ARC'S FAILURES EARNED THEM.** Verify every CC report at the
+objects. **Grep LOCATES; it does not ESTABLISH** — a structured file is read as the object, never
+as lines around a match, and a named thing is read at its own text, never at its title or a
+summary elsewhere; the writing side made seven errors of exactly that shape in one arc. **Write a
+premise ledger for your OWN claims, not only for CC's** — every one of those seven was a claim
+put to the user with no check attached, while the same session demanded checks of CC; a dispatch
+now marks facts *reported by CC and not independently verified* and checks them, and that is what
+caught the first one before it reached an act. D-253 in every dialect and mechanism, **including
+the path-mapping hazard**: a shell path and a file-tool path may name different places. D-431.
+One dispatch at a time, written only at a verified STOP, **to the plan and not to the last
+finding**.
+
+**★ OWED AND UNRESOLVED.** A **date discrepancy**: the rulings of this arc are recorded as
+2026-08-11 while the clock read 2026-08-13 at the close — establish at the git author dates
+before citing any of them by date. **OI-274's second half**: CC's checks refuted the premise that
+Ruling 64 answered it, so the narrow question stands — *should the `chordanalyzer.cpp`-scoring
+trigger also name the joint estimator's specification, over and above the parallel trigger Ruling
+64 created* — and it belongs to a user sitting, not a dispatch. The sizing generator carries an
+**authored flag asserting the refuted premise**, recorded and deliberately not corrected. Two
+guard reds stand, both rowed ([[OI-372]], [[OI-373]]).
+
+**★ WHAT AWAITS THE USER:** the choice among the available acts, put up with the facts under it;
+the sitting over the user-blocked set, which is the larger half of phase 1's remaining distance;
+and, after both, the completion statement the user commissions.
+
+*(The twelfth block below is the previous entry point — kept for provenance. Its account of what
+awaits the user is superseded entirely.)*
+
+---
 ## ★★★★★ COWORK SESSION CLOSE 2026-08-11 (TWELFTH) — THE FOURTEENTH CONTINUATION IS COMPLETE AND **VERIFIED AT THE OBJECTS**; ONE DEFECT FOUND AND IT IS A MISCOUNT, NOT A WRONG ACT; THE QUEUE'S §21 AND OI-141's SITTING BOTH AWAIT THE USER. THE CURRENT ENTRY POINT.
 
 **You (the next session) start clueless — this block is your boot; no population is restated
