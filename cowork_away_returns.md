@@ -8904,3 +8904,184 @@ a session obeying a standing rule and a session overriding it must be distinguis
 and because the fact is the evidence the verdict above rests on. **No sweep was run for other spent
 holds** and none is claimed to exist or not to exist; §0c forbids the sweep and silence is not
 establishment (#19).
+
+## 1 (continued). What needs the user
+
+**THREE THINGS, AND NONE OF THEM IS A CHOICE THIS BATCH SHAPES.**
+
+**(i) THE WORTH-TEST VERDICT ON [[OI-274]]'s BANNER HALF IS *WORTH FIXING*, AND THE ACT IS NOT
+PERFORMED.** The dispatch reserves it. The verdict, its limb and its measured ground are in §2 above;
+one line from the user or Cowork either commissions the act or overrules the verdict.
+
+**(ii) THE DISCARD ON [[OI-90]] IS RECORDED AND THE ROW DID NOT MOVE.** Under amended #10 a discarded
+finding is not an open obligation, but §0c forbids a row leaving the gating population by the worth
+test alone, and a gating verdict comes from a cut rather than from a hand-addition (**D-436**). **So
+the row is open and gating with a discard record against it, which is a state the record has not held
+before** — what to do about that is the user's, and it is not proposed on here.
+
+**(iii) A NEW THIRTEENTH COWORK SESSION-CLOSE BLOCK IS SITTING UNCOMMITTED IN THE WORKING TREE, AND
+IT IS NOT THIS SESSION'S TO COMMIT.** Established at the objects and reported in §2 below. It is
+Cowork's file and Cowork's block; this batch left it exactly as found.
+
+**Nothing else is added to what was already waiting**, and everything the previous batches left is
+left where it was — [[OI-179]] included, which stays **OPEN** and **GATES**. The narrow OI-274
+question the previous batch isolated is untouched and still with the user.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19) — the unexpected working-tree modification
+
+**★ `cowork_handoff.md` IS MODIFIED IN THE WORKING TREE AND NO COMMIT OF THIS BATCH TOUCHED IT. IT IS
+COWORK'S NEW THIRTEENTH SESSION-CLOSE BLOCK, AND IT IS DECLARED RATHER THAN ACTED ON.** The
+enumeration ran through the sanctioned tool (`tools/audit/changed_paths.py`) and reported the file
+modified at the worktree; **this is a surprise, so it was established rather than reasoned about
+(#13).**
+
+**What is established, at the objects.** The working tree's copy carries a **new top section** the
+committed copy does not — *"COWORK SESSION CLOSE (THIRTEENTH) — THE APPARATUS STREAM IS CLOSED AT ITS
+SOURCE; PHASE 1 IS CHOOSABLE AND NOT NEARER; THE PLAN, NOT THE LAST FINDING, IS WHAT THE NEXT SESSION
+WORKS. THE CURRENT ENTRY POINT."* — and **every other section heading in the file appears in both
+copies, in the same order, each displaced by the same constant**, so the change is a prepend and
+nothing below it moved. The committed copy was read by explicit hash (`git show <hash>:path`), which
+is the admitted content-addressed kind. **None of this batch's three commits touched the file**,
+enumerated per commit through the same sanctioned tool.
+
+**What is NOT established, and is not guessed.** WHEN the block appeared. The session-start working
+tree recorded no modified tracked file, but that record is not this session's own measurement and is
+not treated as one; nothing here rests on the timing either way.
+
+**Why it is declared and not acted on.** It is the planning side's own running record and its own
+session close, written by Cowork; committing another side's unfinished block would put a close on
+the record that its author has not finished writing. **The file was not read for content beyond the
+section headings, not edited, and not staged.**
+
+## 3 (continued). Per-task log — the false-statements pass
+
+### Task 1 — COMPLETE. A1 established at the code; three surfaces, two branches
+
+**A1 HOLDS and its STOP did not fire.** Both enclosing functions were read WHOLE.
+`keyresolver::resolveKeyAndModeRanked` carries no piece-start branch — its only early return is the
+insufficient-pitch-classes fallback, gated on the window's distinct-pitch-class count and on nothing
+about the tick — and its own two comments date the removal to Stage 4b-i and record the strong
+declared-mode prior removed in the same increment. The bridge entry point `resolveKeyAndMode` loads
+analyzer preferences and delegates, with no branch of its own. **The row's claim about the code was
+therefore confirmed at the code and not carried across from the row**, which is the whole point of
+the assumption.
+
+**A3 was run at the files and it did not simply reproduce the row's list.** The three surfaces the
+row names all still carry the statement, one of them at a line the row's citation no longer reaches.
+**Three surfaces the row does not name were examined and EXCLUDED, each with its ground** —
+`docs/back_half_design.md`, which states the anchor *deleted*; `docs/implementation_roadmap.md`,
+which records what a past commit pinned, correctly in the past tense; and `docs/stage4b_design.md`,
+which does state it and is already re-bannered under branch one, whose body is never rewritten.
+Outside `docs/`, the frozen test file carries **three** stale comments where the row names one —
+reported, untouched, and still this row's second half behind the freeze on `src/`.
+
+**A4 — the kind call per document, each with its ground, and no hard case.** The design surface is
+**branch two**, and that is not this session's judgment: the derived enumeration the filing
+convention ordered already carries the verdict for it. The two dated reports are **branch one**.
+**A5** raised nothing — each correction was made where the statement stands.
+
+**What was written.** Four statements in the design surface rested on the shortcut, not the two the
+row names; correcting two of four would have left the document still asserting the mechanism, which
+is the reason the neighbouring statements went with it when `ARCHITECTURE.md` §5.2 was corrected.
+Former wordings preserved beside their corrections (#12), the establishment stated once (#6). The two
+reports gained top banners and not one line of either body moved. **The audit's banner states its own
+bound** — no sweep was run over its remaining findings — and **no commit hash is invented**: the
+deleting commit's hash is not established at this reading, so the banners name the increment, its
+date and the surfaces that record it, and say so. Commit `d9f674e0ec`, pushed.
+
+### Task 2 — COMPLETE. A2 established at the code, and the third finding deliberately left
+
+**A2 HOLDS and its STOP did not fire.** The row's evidence is two source comments, and a comment is a
+claim about code. What was read instead: the declaration and the definition of `analyzeSection` in
+the composing module, the build file recording the bridge-side delegate retired, the bridge helper
+defining no such function, and **every** notation-side caller qualifying the name into the composing
+namespace. The second statement was checked the same way — the named directory was enumerated at the
+path and is not there.
+
+**A3** found the deferred-phase sentence on one live surface and two archive entries, the archive
+being reference-only with its own filing verdict already recorded; one further surface was examined
+and excluded with its ground. **A4 — branch two**, on the document's own claim to be the refactor's
+spine and on the production headers citing it as the design contract; no hard case. **A5** raised
+nothing.
+
+**The third finding is untouched, and the document now says so where a reader meets the
+corrections.** Divergence C is PARKED, **D-471** is undischarged, and whether the implode path
+applying the display-duration gate is that rule discharged or a divergence closed by drift is not
+answerable from the document or the code. **[[OI-321]] is not flipped.** Commit `cfa3775a2a`, pushed.
+
+### Task 3 — COMPLETE. The worth test applied to two acts, neither performed
+
+Written above as its own §2 section, because the verdicts are findings rather than a log entry. **The
+#19 carve-out was taken first for each and read at its derivation rather than remembered.** One
+DISCARD with the finding, its date and its reason; one WORTH FIXING with its limb and its measured
+ground; and one act of this session's own declared beside them. Commit `2f36d66e14`, pushed.
+
+### Task 4 — COMPLETE. The close
+
+**Three `STATUS.md` pointer entries — one per content task — and nothing else in that file.** The
+`Last updated:` prefix moved onto the new topmost entry and was removed from the one below, on the
+precedent this file's own previous closes record. **`STATUS.md` remains unreadable in full**, its row
+[[OI-370]] open and gating, so the entries were written by locating the head of the file rather than
+by reading it whole.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ ON THE GUARD SET — IT ENDS EXACTLY WHERE IT WAS FOUND.** The full set was run after this batch's
+document edits and **the guard state re-derives**: its artifact is not among the changed paths, which
+was enumerated through the sanctioned tool rather than asserted. **Two reds stand and both are the
+standing recorded pair** — the filing-convention application's `--check` failure ([[OI-372]]) and the
+runner's STOP on a derived guard candidate with no authored invocation ([[OI-373]]). **Neither was
+caused by this batch**, and that is established rather than assumed: the `--check` failure names
+`STATUS_ARCHIVE.md`, which this batch did not touch, and it STOPs before it would compare the derived
+population at all. **Whether this batch's two new banners move that derivation is therefore not
+reported by the check — so it was settled at the generator's own two signatures instead:** one reads
+the document's last non-blank lines, which no edit here touched, and the other reads the first
+lines of the top block for one of a closed list of status words, none of which appears in either
+banner. §0d's condition — a red for a cause that is neither this dispatch's edits nor already
+recorded — did not fire.
+
+**★ ON THE FIGURES RULE (D-431) AND ON POSITIONAL COUNTS (D-307, D-432).** No population, count or
+verdict is computed anywhere in this batch, and no row identity from a derived cut is restated — the
+#19 carve-out's membership is cited to its artifact and field. **The dispatch is cited by its exact
+filename throughout and no positional count appears anywhere.** Two small numbers do appear and both
+are counts of what this batch itself read at the files, not values taken from any artifact: how many
+statements in one document rested on the shortcut, and how many stale comments the frozen test file
+carries. **No file is cited by line number in any text written here** (D-307); the corrections point
+at sections and functions.
+
+**★ ON D-253 IN EVERY DIALECT.** No working-tree file was read through a shell in any dialect: every
+read of `CLAUDE.md`, the two registers, the detail files, the dispatch, the source files, the
+generators and the artifacts went through Read/Grep/Glob — **including the two reads a shell would
+have been quicker for, the source functions and the `.csv` audit tables.** One PowerShell
+`Get-Item` aimed at a repository path was issued early and **the guard DENIED it**; it was not
+retried in another dialect, which is the failure mode the dialect widening exists to catch. **The
+shell was used for six things only** — the clock, one `git show -s` of a commit named by explicit
+hash, three `git add` / `git commit -F` acts with their pushes plus this close's fourth, one
+`git show <hash>:path` of a committed blob, and the committed tools — the guard set, the
+filing-convention check, and the changed-path enumeration, run once at the worktree and once per
+commit at each of this batch's three explicit hashes.
+**Every tool output was written to an absolute scratchpad path outside the repository and read back
+from that same path** — the path-mapping hazard's standing remedy, applied from the first command.
+**No branch-tip or index read was made**: no `git log`, no `git status`, no `git rev-parse`. Every
+commit hash used came from this session's own commit reports.
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense; bare *key*
+carries the tonal sense throughout, which is what these documents are about; bare *measure*, *note*,
+*beat*, *scale*, *interval*, *root*, *part*, *rest*, *figure*, *flat* and *mode* appear in no
+non-musical sense — *measurement* carries the gauging sense, *value* the numeric one, and *tool* and
+*generator* stand where the collided word would have been. Two inherited compounds are carried
+knowingly: **register entry** / **the open-items register**, and the **second half** idiom the sizing
+artifact defines.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0c and §0d, item by item).** **No `src/` edit** — the three
+stale comments in the frozen test file are reported and untouched. **No behaviour change, no golden,
+no corpus of scores, nothing under `tools/corpus/` or `tools/robust_stop/`, no measurement built,
+designed, scoped or run, no design, no fix to inference.** **No tool was regenerated or written to**
+— the two artifacts consulted for the kind call and the carve-out were read only. **No row written,
+flipped or discarded; no status cell moved; no gating verdict moved.** [[OI-107]] does not ride this
+batch: it rides whichever act next touches `ARCHITECTURE.md`, and no act here did. **No sweep was run
+for siblings** of any defect named. [[OI-150]], the `docs/scoring_model.md` pass and [[OI-207]] are
+untouched. [[OI-179]] stays **OPEN** and **GATES**.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
