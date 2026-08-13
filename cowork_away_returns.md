@@ -8798,3 +8798,109 @@ is doing.
 
 **Phase 1's completion statement is not written, not drafted and not partially written by this batch.
 D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+## 2 (continued). Surfaced findings, and the two worth-test verdicts — ONE DISCARD, ONE WORTH FIXING
+
+**Recorded 2026-08-13 (CC) under `cc_instruction_false_statements_pass.md`, Task 3. The two acts are
+put to amended #10's worth test and are NOT PERFORMED — neither row is flipped, no status cell
+moves, and no row leaves the gating population by this test.** The dispatch's own words are that a
+verdict of WORTH FIXING is a correct outcome and not a failure; the test is being applied, not
+confirmed. **Both rows sit in the DERIVED gating population** at `tools/audit/phase1_finish_line.json`
+— which is where a gating verdict comes from, never from a hand-addition (**D-436**) — and both are
+still there after this section, which changes nothing about either.
+
+### ★ (i) [[OI-90]] — the stale reason strings under `tools/audit/l1l2/` — DISCARDED
+
+**THE #19 CARVE-OUT FIRST, AND IT DOES NOT REACH THIS ROW.** The carve-out is encoded rather than
+remembered: the finish line keeps a member gating under #19 when the member's own recorded gate
+ground names the principle, and the derivation publishes the members it keeps. **OI-90 is not among
+them** (`tools/audit/phase1_finish_line.json` → the bearing cut's `★_the_19_carve_out` →
+`members_the_carve_out_keeps_gating`; no identity is restated here, **D-431**). Nothing on this row
+asks for anything to be established: it asks for a free-text field to be corrected.
+
+**THE FINDING, at the objects.** `tools/audit/l1l2/file_table.csv` carries three rows whose `reason`
+text was made stale by the L3 audit: `decode/chordpathdecoder.h` is described as *"L3 key-mode
+decoder scaffolding — deferred to the L3 audit"*, and the two `region/sparsechordrefinement` rows as
+*"region orchestration (L3 seam) … deferred to the L3 audit"*. The L3 pass established at the code
+that all three are Layer 4.
+
+**THE ANALYSIS DECISION THAT CONSUMES IT: THERE IS NONE, and the consumer that does exist is named
+rather than left as a silence.** The column every consumer reads for scope is `tag`, and this row
+does not touch it — all three rows are tagged `L3+`, meaning *not L1 or L2, deferred*, which is true
+whichever later layer owns them. The `reason` column is free text, and it does reach one reader:
+`tools/audit/gen_pass2_sample.py` carries it into the blind-sample rows as orienting text for the
+human auditor of the L1/L2 second pass. **That consumer is the L1/L2 audit's own machinery, not an
+analysis decision.** No decoder, threshold, weight, gate, measurement, golden or corpus of scores
+reads this file.
+
+**THE CHEAP LOOK WAS TAKEN RATHER THAN THE CONSEQUENCE IMAGINED (#5), and it settles both limbs.**
+The consequence a mis-tag could have — a file falling out of every layer's audit scope — **cannot
+arise here, by construction and not by luck.** `DEFECT_TYPES.md`'s own DT-21 row states the standing
+remedy: a layer audit RE-VERIFIES every file at the code before inheriting a tag, and
+`gen_inventory.py --layer <L>` re-refines rather than inheriting. That remedy has RUN:
+`tools/audit/l3/file_table.csv` carries all three files at `L4`, re-points their deferral at the L4
+audit, and its `chordpathdecoder.h` row **quotes the L1/L2 mis-tag verbatim and names it as a
+pass-1 finding**. So the correction is on the record at the object, and no later audit inherits the
+stale string.
+
+**THE VERDICT — DISCARDED, with what amended #10 requires of a discard record.** *Finding:* the three
+stale `reason` strings named above. *Date:* found by the L3 pass-1 audit and rowed as OI-90; put to
+the worth test and discarded 2026-08-13, at this batch. *Reason for the discard:* it bears on neither
+limb. **Limb (a)** — nothing is built on a reason string; no design carries load from it. **Limb (b)**
+— `tools/audit/l1l2/file_table.csv` is an audit-scope table and not a specification, the layer
+specifications being `ARCHITECTURE.md`'s layer sections and the per-layer design documents, so no
+code becomes incomparable against a specification by leaving it. The substantive fact the string gets
+wrong — which layer owns the three files — is already correctly recorded where the next reader of
+their audit lineage meets it.
+
+**WHAT THIS DISCARD DOES NOT DO, stated so it is not read as more.** The row is **not flipped**, its
+status cell does not move, and it does not leave the gating population — §0c forbids that, and a
+gating verdict comes from a cut in any case (**D-436**). What the record does with a gating row the
+worth test discards is a **separate act and is not taken here.** One line from Cowork or the user
+overrules this verdict.
+
+### ★ (ii) [[OI-274]]'s banner half — the two DRAFT-UNCOMMITTED banners on tracked files — WORTH FIXING
+
+**THE #19 CARVE-OUT FIRST, AND IT DOES NOT REACH THIS HALF EITHER.** OI-274 is not among the members
+the finish line's carve-out keeps gating, at the same object cited above, and nothing in the banner
+half asks for an instrument, corpus, gate or figure to be established.
+
+**THE FINDING, at the objects.** `docs/key_path_design.md` opens *"**DRAFT — UNCOMMITTED.** …
+Ratification-gated: this document is **HELD** (`git add` permitted, `git commit` NOT) until a
+ratification addendum lands"*, and `docs/precision_metric_design.md` opens *"DRAFT — UNCOMMITTED"*.
+Both are tracked, committed files.
+
+**THE ANALYSIS DECISION THAT CONSUMES IT — none directly, AND THAT IS NOT WHAT DECIDES THIS ONE.**
+No decoder, threshold, weight, gate or measurement reads a banner. What consumes it is **a session**:
+the banner is a standing INSTRUCTION, in the imperative, forbidding a future session from committing
+the file. That is the distinction between this half and (i) — a stale field misinforms a reader,
+a stale standing instruction directs an act.
+
+**AND THE CONSEQUENCE IS MEASURED RATHER THAN IMAGINED, BY THIS BATCH'S OWN TASK 1.** A ratified
+dispatch ordered `docs/key_path_design.md` corrected because it stated removed code as live. **The
+session performing that correction had to commit the file over a banner forbidding exactly that
+commit.** The hold was already spent — the file was committed long before, so the prohibition
+forbade an act that had already happened and could not be obeyed — but nothing on the document says
+so, and the next session meeting it has two ways to go wrong: decline the correction and leave a
+governing document stating something the code refutes, or commit over a standing prohibition without
+establishing that it is spent. **The first of those is limb (b) directly** — the banner blocks the
+act that keeps a specification correct and complete, and the same document is one the production
+headers cite as a design contract.
+
+**THE VERDICT — WORTH FIXING**, on limb (b), and **NOT PERFORMED HERE**: Task 3 applies the test, and
+the dispatch reserves the act. The row is not flipped and no status cell moves. *(The neighbouring
+row on the same banner, [[OI-317]], is untouched and is not what was tested — its subject is the same
+banner and its remedy is a filing decision. What was tested is OI-274's banner half, which is the act
+the dispatch names.)*
+
+### ★ A THIRD THING, DECLARED RATHER THAN ROWED — this session's own commit over that standing hold
+
+**Declared under the standing self-check, because the act is this session's own.** Task 1 committed
+`docs/key_path_design.md` while its banner said `git commit` NOT. **The authority for the act is the
+ratified dispatch**, which names the correction of that document as Task 1; **and the prohibition was
+already spent**, established rather than assumed — the file is tracked and committed at HEAD, so what
+the banner forbids had already occurred. **It is declared anyway rather than passed over**, because
+a session obeying a standing rule and a session overriding it must be distinguishable in the record,
+and because the fact is the evidence the verdict above rests on. **No sweep was run for other spent
+holds** and none is claimed to exist or not to exist; §0c forbids the sweep and silence is not
+establishment (#19).
