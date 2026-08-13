@@ -23,8 +23,8 @@
  },
  "population": {
   "rows_parsed": 375,
-  "open_rows": 247,
-  "first_cut_candidates": 54,
+  "open_rows": 246,
+  "first_cut_candidates": 53,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -47,7 +47,7 @@
  },
  "totals": {
   "non_gating": 25,
-  "gates": 29,
+  "gates": 28,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -118,7 +118,6 @@
     "OI-371"
    ],
    "an instrument a measurement depends on": [
-    "OI-150",
     "OI-222",
     "OI-223",
     "OI-256",
@@ -562,14 +561,6 @@
    "class_basis": "tracking/documentation apparatus - the user's own phrase"
   },
   {
-   "id": "OI-150",
-   "title": "BUILD_AND_TEST.md stale test baselines",
-   "subject_column": "doc-sync",
-   "verdict": "GATES",
-   "reason": "The recorded test baselines are stale and the notation line hides four xfails. A baseline is what a regression is measured against.",
-   "gate_ground": "an instrument a measurement depends on"
-  },
-  {
    "id": "OI-370",
    "title": "A mandatory session-start read cannot be performed — `STATUS.md` has accumulated past the point where the file tools can read it",
    "subject_column": "doc-sync",
@@ -634,6 +625,12 @@
  "retired_verdicts": {
   "what_this_is": "Verdicts for rows that have since CLOSED. The tool stops on a live verdict naming a row the INDEX no longer carries open - correctly, since that is how a stale declaration survives an unnoticed resolution - and deleting the reasoning would lose it (#12), so it is preserved here. Never counted; if the row reopens, the tool stops until the verdict is moved back.",
   "entries": {
+   "OI-150": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "an instrument a measurement depends on",
+    "reason": "The recorded test baselines are stale and the notation line hides four xfails. A baseline is what a regression is measured against.",
+    "closed": "RESOLVED 2026-08-13 - both halves performed at the objects (`cc_instruction_oi150_baselines.md` Tasks 1 and 2): the two suites were BUILT and RUN at HEAD, both `BUILD_AND_TEST.md` baselines were written from those runs and from nothing else, and the notation line now names all four xfails by test name with the standing do-not-re-bless instruction and a pointer to their one home. THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); it is retired because the row closed, never because it was wrong. ★ ITS GROUND IS WHAT THE CLOSING ACT TURNED OUT TO NEED: the verdict graded the row on an INSTRUMENT rather than on filing, and the act that closed it was accordingly a MEASUREMENT and not a wording change - the earlier wave that touched the file and declined to re-stamp declined for exactly that reason, having run no suite. WHAT THE CLOSURE DOES NOT DISCHARGE: [[OI-148]], the four xfails themselves, still failing by design and still owned by the key-layer build - naming them in a baseline line neither fixes nor re-blesses them."
+   },
    "OI-230": {
     "verdict": "NON-GATING",
     "class_basis_or_ground": "user",

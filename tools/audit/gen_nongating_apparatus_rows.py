@@ -567,6 +567,23 @@ RETIRED_VERDICTS = {
                "plumbing commit bypasses hooks. The gating verdict is what it was: the instruments "
                "are now committed, which is the reproducibility exposure discharged rather than "
                "re-classified."),
+    "OI-150": (GATES, "an instrument a measurement depends on",
+               "The recorded test baselines are stale and the notation line hides four xfails. A "
+               "baseline is what a regression is measured against.",
+               "RESOLVED 2026-08-13 - both halves performed at the objects "
+               "(`cc_instruction_oi150_baselines.md` Tasks 1 and 2): the two suites were BUILT and "
+               "RUN at HEAD, both `BUILD_AND_TEST.md` baselines were written from those runs and "
+               "from nothing else, and the notation line now names all four xfails by test name "
+               "with the standing do-not-re-bless instruction and a pointer to their one home. THE "
+               "VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); it is retired because "
+               "the row closed, never because it was wrong. ★ ITS GROUND IS WHAT THE CLOSING ACT "
+               "TURNED OUT TO NEED: the verdict graded the row on an INSTRUMENT rather than on "
+               "filing, and the act that closed it was accordingly a MEASUREMENT and not a wording "
+               "change - the earlier wave that touched the file and declined to re-stamp declined "
+               "for exactly that reason, having run no suite. WHAT THE CLOSURE DOES NOT DISCHARGE: "
+               "[[OI-148]], the four xfails themselves, still failing by design and still owned by "
+               "the key-layer build - naming them in a baseline line neither fixes nor re-blesses "
+               "them."),
 }
 
 # Verdicts a USER RULING has RE-CLASSED. Distinct from RETIRED_VERDICTS in both directions: there
@@ -824,9 +841,6 @@ V = {
                "The evidence inventory is the live catalog of what each layer discovers, and the "
                "layer specifications update from it as facts are adopted. Its subject is analysis "
                "facts, not the paperwork about them."),
-    "OI-150": (GATES, "an instrument a measurement depends on",
-               "The recorded test baselines are stale and the notation line hides four xfails. A "
-               "baseline is what a regression is measured against."),
     "OI-154": (GATES, "the default - out of the declared class",
                "Explainability as an end-user feature is a product requirement, not this "
                "project's tracking or documentation apparatus, so the declaration does not reach "

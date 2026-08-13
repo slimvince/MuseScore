@@ -378,24 +378,7 @@ SIZINGS = [
         ),
         "the_second_half": None,
     },
-    {
-        "row": "OI-150",
-        "anchor_quote": "re-stamp both baselines AND make the notation line name the 4 xfails",
-        "the_act_owed": (
-            "Build at HEAD, run both suites, re-stamp both `BUILD_AND_TEST.md` baselines from those "
-            "runs, and make the notation line name the four key-emission cases that fail by design."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "Two lines edited — but the edit's INPUT is a measurement, so the act includes a build "
-            "and both suites run. That is a capacity cost rather than a permission one, and copying "
-            "the recorded numbers forward is precisely the transcription this row exists against, as "
-            "its own dated remark records when the trigger fired and was deliberately not discharged."
-        ),
-        "the_second_half": None,
-    },
+    # OI-150's sizing moved to RETIRED_SIZINGS on 2026-08-13, when the row closed.
     {
         "row": "OI-183",
         "anchor_quote": "a small doc pass at the next scoring_model.md touch; no code effect",
@@ -1239,6 +1222,43 @@ RETIRED_SIZINGS = [
                 "whose_act_it_is": "a session on this side",
                 "what_blocks_it": "a user ruling",
             },
+        },
+    },
+    {
+        "row": "OI-150",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-13 (`cc_instruction_oi150_baselines.md`, Tasks 1 and 2) by "
+            "performing exactly the act this sizing named: the build was run at HEAD, both suites "
+            "were run, both `BUILD_AND_TEST.md` baselines were written from those runs and from "
+            "nothing else, and the notation line now names all four by-design failing cases. **The "
+            "size, the owner and the blocker were all right** — one session, this side, nothing "
+            "blocking it but capacity. ★ AND ITS `why_that_size` IS THE PART THAT EARNED ITS KEEP: "
+            "it said the act's INPUT is a measurement and that the cost is therefore a build and "
+            "two suite runs rather than two lines of typing, which is exactly why the earlier wave "
+            "that touched the file declined to discharge the row and was right to. A sizing that "
+            "names what makes an act expensive is what lets a later reader see that the cheap "
+            "version of it would not have been the act at all. **What the closure does not touch:** "
+            "the four xfails themselves, which are [[OI-148]]'s and are still failing by design."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-150",
+            "anchor_quote": "re-stamp both baselines AND make the notation line name the 4 xfails",
+            "the_act_owed": (
+                "Build at HEAD, run both suites, re-stamp both `BUILD_AND_TEST.md` baselines from "
+                "those runs, and make the notation line name the four key-emission cases that fail "
+                "by design."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "Two lines edited — but the edit's INPUT is a measurement, so the act includes a "
+                "build and both suites run. That is a capacity cost rather than a permission one, "
+                "and copying the recorded numbers forward is precisely the transcription this row "
+                "exists against, as its own dated remark records when the trigger fired and was "
+                "deliberately not discharged."
+            ),
+            "the_second_half": None,
         },
     },
 ]

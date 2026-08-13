@@ -539,13 +539,12 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 33,
+   "count": 32,
    "ids": [
     "OI-105",
     "OI-107",
     "OI-121",
     "OI-146",
-    "OI-150",
     "OI-183",
     "OI-205",
     "OI-220",
@@ -587,7 +586,7 @@
     "where_the_finding_was_made": "`cowork_away_returns.md`, the STOP section of the abandoned reach derivation batch, which states the finding and the three routes out in full; none is restated here (#6). The abandonment and its ground are recorded at that same section.",
     "what_this_record_does_NOT_move": "No member enters or leaves this cut, no gate verdict moves, no row is written and no status cell changes. It is not a mechanism change: what the cut selects is untouched, and D-436 reserves a mechanism change to the user."
    },
-   "count": 52,
+   "count": 51,
    "ids": [
     "OI-105",
     "OI-107",
@@ -597,7 +596,6 @@
     "OI-121",
     "OI-141",
     "OI-146",
-    "OI-150",
     "OI-183",
     "OI-205",
     "OI-207",
@@ -1024,31 +1022,6 @@
      "verdict": "GATES",
      "source": "the committed non-gating apparatus declaration (authored, D-438)",
      "ground": "the analysis"
-    }
-   },
-   {
-    "id": "OI-150",
-    "title": "BUILD_AND_TEST.md stale test baselines",
-    "subject_column": "doc-sync",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync",
-     "drift",
-     "dt-12",
-     "stale"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "an instrument a measurement depends on"
-    },
-    "★_the_same_verdict_with_the_discard_input_OFF": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "an instrument a measurement depends on"
     }
    },
    {
@@ -1778,7 +1751,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 34,
+   "count": 33,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1788,7 +1761,6 @@
     "OI-121",
     "OI-141",
     "OI-146",
-    "OI-150",
     "OI-183",
     "OI-207",
     "OI-220",
@@ -1851,7 +1823,7 @@
    "why": "Ruling 69 changes what a derivation READS, so the movement it causes is shown rather than asserted: the same cut is recomputed with the input OFF and the two are diffed. The pre-input cut is kept beside the result (#12) so a reader comparing artifacts can see exactly what moved and by what.",
    "with_the_input_OFF": {
     "gates": {
-     "count": 35,
+     "count": 34,
      "ids": [
       "OI-105",
       "OI-107",
@@ -1861,7 +1833,6 @@
       "OI-121",
       "OI-141",
       "OI-146",
-      "OI-150",
       "OI-183",
       "OI-207",
       "OI-220",
@@ -1915,7 +1886,7 @@
    },
    "with_the_input_ON": {
     "gates": {
-     "count": 34,
+     "count": 33,
      "ids": [
       "OI-105",
       "OI-107",
@@ -1925,7 +1896,6 @@
       "OI-121",
       "OI-141",
       "OI-146",
-      "OI-150",
       "OI-183",
       "OI-207",
       "OI-220",
@@ -2032,7 +2002,6 @@
     "OI-107",
     "OI-121",
     "OI-146",
-    "OI-150",
     "OI-183",
     "OI-205",
     "OI-207",
@@ -2183,8 +2152,8 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 52,
-   "of_which_gate": 34,
+   "open_rows_in_the_wide_cut": 51,
+   "of_which_gate": 33,
    "of_which_apparatus_and_therefore_non_gating": 17,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 5
   },
@@ -2243,7 +2212,6 @@
    "OI-121",
    "OI-141",
    "OI-146",
-   "OI-150",
    "OI-183",
    "OI-205",
    "OI-207",
@@ -2287,9 +2255,9 @@
  },
  "counted": {
   "decisions_recorded": 677,
-  "open_rows_in_the_index": 247,
-  "true_half_wide_cut": 52,
-  "true_half_gating": 34,
+  "open_rows_in_the_index": 246,
+  "true_half_wide_cut": 51,
+  "true_half_gating": 33,
   "complete_half_gap": 27,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

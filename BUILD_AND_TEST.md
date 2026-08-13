@@ -121,7 +121,21 @@ cd C:\s\MS\ninja_build_rel
 ./composing_tests.exe
 ```
 
-**Current baseline: 974/974** passing, 2 disabled (verify with CC — count changes as tests are added).
+**Current baseline: 1186 tests from 100 test suites — 1186 passing, 2 disabled, 0 skipped, 0
+failing; process exit 0.** **MEASURED at HEAD on 2026-08-13** by building with `setup_and_build.bat`
+(which reported `ninja: no work to do.`, so the binary was already current with HEAD) and running
+`./composing_tests.exe`. **Every value in this line comes from that run and from nothing else.**
+
+**★ A BASELINE HERE IS RE-STAMPED BY MEASURING IT, NEVER BY CARRYING A VALUE FORWARD** — not from
+this file's own previous text, not from a report, not from a register row. *Why the rule is stated
+rather than assumed:* the 2026-08-03 touch of this file deliberately left the stale value standing,
+on the ground that re-typing a 2026-07-13 measurement as if it were current is exactly the
+transcription the standing rule against hand-copied measurement values forbids — and that refusal
+was correct. The remedy is to build and run, which is what was done here (`OPEN_ITEMS.md` OI-150).
+
+*Former wording, preserved in place (#12): "**Current baseline: 974/974** passing, 2 disabled (verify
+with CC — count changes as tests are added)." The 974 value was measured on 2026-07-13 and was stale
+at HEAD; its "verify with CC" caveat went unexercised from then until this re-stamp.*
 
 Tests `analyzeChord()` directly in the composing module. Run after any change to `src/composing/`.
 After each run, read `src/composing/tests/chord_mismatch_report.txt`.
@@ -132,7 +146,35 @@ After each run, read `src/composing/tests/chord_mismatch_report.txt`.
 ./notation_tests.exe
 ```
 
-**Current baseline: 53/53** passing (verify with CC — count changes as tests are added).
+**Current baseline: 65 tests from 8 test suites — 61 passing, 4 SKIPPED BY DESIGN, 0 failing;
+process exit 0.** **MEASURED at HEAD on 2026-08-13** by building with `setup_and_build.bat` (which
+reported `ninja: no work to do.`, so the binary was already current with HEAD) and running
+`./notation_tests.exe`. **Every value in this line comes from that run and from nothing else**, and
+a re-stamp of it is a fresh build-and-run, never a value carried forward — the rule stated at the
+composing baseline above binds here identically.
+
+**★ THIS SUITE IS NOT CLEAN, AND THE FOUR SKIPPED CASES ARE NAMED HERE BECAUSE A BARE PASSING COUNT
+CONCEALS THEM.** Established from this run's own output, not taken from any row:
+
+- `Notation_ImplodeTests.MozartK279OpeningPrefersCMajorOverFLydian`
+- `Notation_ImplodeTests.PopulateChordTrackEmitsCadenceMarkersOnCorelli`
+- `NotationInteractionHarmonyPinning.BehaviorSnapshot_RomanNumeral`
+- `NotationInteractionHarmonyPinning.BehaviorSnapshot_Nashville`
+
+All four are `GTEST_SKIP()` xfails; each skip message charges itself to ONE cause — the key-emission
+regression from `a6b08af3fe` (L3 decoder wiring) — and each carries the standing instruction **not**
+to refresh the golden or the expectation to the reading the code currently produces: the expectations
+in place are the DCML-correct ones and are to be MET, never re-blessed. They are user-visible,
+DCML-checked cases **failing by design**, so *"do the notation tests pass?"* is answered **yes for
+the 61 and no for these four** — which is what a `53/53` line could not say. Their one home is
+`OPEN_ITEMS.md` OI-148, which owns them and their scheduled fix; nothing else about them is restated
+here (#6).
+
+*Former wording, preserved in place (#12): "**Current baseline: 53/53** passing (verify with CC —
+count changes as tests are added)." It reported a clean suite: the count was stale at HEAD **and** it
+named none of the four xfails, so a reader checking whether the tests pass was told yes and never
+learned that four DCML-checked cases were failing by design. That concealment, not the stale count,
+is the harm `OPEN_ITEMS.md` OI-150 rowed as the harmful one of its two halves.*
 
 Run after any change to bridge code (`notationharmonicrhythmbridge.cpp`,
 `notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`, etc.) **and** after
