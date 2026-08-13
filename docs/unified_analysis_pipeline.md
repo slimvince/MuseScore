@@ -4,11 +4,43 @@ Date: 2026-04-24 (design); refactor structurally complete by 2026-05-04.
 Status: **Phases 1b–5b complete and merged.** P1/P2/P3 all consume `analyzeSection`;
 P4 stays parallel by design. Divergences B, D, E closed; A remains by design;
 C parked (cadence-aware duration gate idea — see memory `project_cadence_aware_duration_gate.md`).
-Phase 4c (`analyzeSection` move to composing module) deferred — gated on consumer need.
+Phase 4c (`analyzeSection` move to composing module) **EXECUTED in Stage 2.1** — see the correction
+block below.
 For per-phase commit hashes and the post-Phase-5 quality cycle, see STATUS.md
 (top dated section). The design content below is retained as the spine of the refactor.
 Predecessors: `docs/policy2_coalescing_map.md`, project memory
 `project_unified_analysis_pipeline.md`.
+
+> **★ CORRECTED 2026-08-13 — TWO STATEMENTS IN THIS DOCUMENT WERE FALSE AT HEAD (`OPEN_ITEMS.md`
+> OI-321): the header line above, and the pipeline's stated LOCATION in the architecture section.**
+> This document declares itself *"retained as the spine of the refactor"* and the production headers
+> cite it as the **design contract** (`src/composing/analyzed_section.h`) and as the source of the
+> key-area grouping rule (`src/composing/analysis/section/sectionanalyzer.h`), so a reader is sent
+> here to act on it. Under the filing convention (`cowork_design_doc_template.md`, the user's Ruling
+> 62 of `cowork_rulings_2026_08_11_fourteenth_stop.md`) that is **branch two — a live governing
+> surface, whose job is to be true now** — so the body is corrected in place, with **each former
+> wording preserved beside its correction (#12)**. Contrast a design whose approach was later
+> falsified or superseded, which is re-bannered and never rewritten.
+>
+> **(1) THE PHASE 4c MOVE HAPPENED. Established at the code 2026-08-13, not taken from a comment.**
+> `analyzeSection` is **declared and defined in the composing module** —
+> `src/composing/analysis/section/sectionanalyzer.{h,cpp}` — together with key/mode stabilization and
+> cadence / pivot detection; `src/composing/CMakeLists.txt` records in its own comment that Stage 2.1
+> (Phase 4c) retired the bridge-side delegate; `notationcomposingbridgehelpers.cpp` defines no such
+> function; and **every** notation-side caller now qualifies it into the composing namespace
+> (`mu::composing::analysis::analyzeSection`) — the span-annotation path, the implode bridge, the
+> bounded-window cache and the snapshot harness alike. **THE FORMER WORDING, PRESERVED (#12):**
+> *"Phase 4c (`analyzeSection` move to composing module) deferred — gated on consumer need."*
+>
+> **(2) The stated location is corrected in the architecture section below**, at the sentence that
+> carries it.
+>
+> **What this correction does NOT touch.** **Divergence C is untouched**, and deliberately: the
+> header records it PARKED, its decision rule (register entry **D-471**) is undischarged, and whether
+> the implode path now applying the display-duration gate IS that rule discharged or a divergence
+> that closed by drift is not answerable from this document or from the code — it belongs to whoever
+> rules on C. That third finding stays open on `OPEN_ITEMS.md` OI-321, which is NOT flipped by this
+> act. No behaviour changes and no design decision is taken here.
 
 ## Problem
 
@@ -138,11 +170,17 @@ plus `prepareUserFacingHarmonicRegions` pipeline (Passes 0–4), then
 enriches with `hasAssertiveExposure`, temporal extensions, and
 key-area grouping.
 
-Location: `src/composing/analysis/pipeline/` (new directory). The
+Location **as built**: `src/composing/analysis/section/sectionanalyzer.{h,cpp}`. The
 pipeline is pure analysis — no engraving mutation, no notation-specific
-behavior. The existing `notationcomposingbridgehelpers.cpp` analysis
-functions move here as the implementation core; the bridge layer
+behavior. The `notationcomposingbridgehelpers.cpp` analysis
+functions **moved** there as the implementation core in Stage 2.1 (Phase 4c); the bridge layer
 (`src/notation/internal/`) retains only the Score-to-input adapter.
+*(**★ CORRECTED 2026-08-13** — see the correction block at the top of this document, which carries
+the establishment. **THE FORMER WORDING, PRESERVED (#12):** "Location: `src/composing/analysis/pipeline/`
+(new directory). … The existing `notationcomposingbridgehelpers.cpp` analysis functions move here as
+the implementation core". **The proposed directory was never created:** there is no
+`src/composing/analysis/pipeline/` at HEAD, established by enumerating the path itself and finding
+nothing, so a reader following this sentence was sent to a directory that does not exist.)*
 
 ### Key-area detection
 
