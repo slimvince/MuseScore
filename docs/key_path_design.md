@@ -26,8 +26,33 @@
 | **Mechanism** | Key as an **HMM path**: states = (tonic×mode); emissions = the EXISTING `analyzeKeyMode` per-window scores; transitions = circle-of-fifths modulation penalty; **Viterbi** over windows → a key PATH, replacing per-window argmax + `promoteWinnerInPlace` hysteresis. | rec.2; [code] |
 | **§3 finding (reshapes the value)** | The path fixes only the **~10%** of S2 that is a *local flip in a mostly-correct stem* (margins ≈0.05–0.20, correct key is the runner-up). The other **~90%** is a *consistently-wrong emission* (153 regions, 14.8%, in stems whose key NEVER changes; correct key often not even rank-2; margins 2.0–3.3). For that bulk a modulation penalty is **neutral-to-harmful** (it entrenches the wrong key). | [probe] `s2_derive.py` |
 | **Conclusion** | Stage 4 is **necessary but not sufficient** for S2. Its real, defensible deliverables are (a) the flip + hysteresis-trap fix (~10–15%), (b) **superseding the `promoteWinnerInPlace` confidence wart** with a principled global decode, (c) the **KeyArea spans** Stage 6 needs (independent of whether S2 shrinks). The remaining ~85% of S2 needs an **emission** fix (partial-signature extension / key-profile), which Stage 4 must bundle to claim S2. | §3 |
-| **Reuse** | `analyzeKeyMode` (the 252-candidate scorer) = emission, REUSED. `resolveKeyAndModeRanked`'s per-region hysteresis + `promoteWinnerInPlace` + piece-start shortcut = REPLACED by the decode. Partial-signature correction = KEPT (folds into emission input). | [code] |
+| **Reuse** | `analyzeKeyMode` (the 252-candidate scorer) = emission, REUSED. `resolveKeyAndModeRanked`'s per-region hysteresis + `promoteWinnerInPlace` = REPLACED by the decode. Partial-signature correction = KEPT (folds into emission input). **The piece-start shortcut is not in this list — it no longer exists; see the correction block below.** | [code] |
 | **Caveat (not a falsification)** | The resolver currently surfaces only the **top-3** candidates with post-family-selection scores, not the raw 252. The HMM emission needs the **top-N (or full 252) raw scores** exposed — a small refactor of `analyzeKeyMode`'s output, not a rebuild. | [code] |
+
+> **★ CORRECTED 2026-08-13 — THE PIECE-START SHORTCUT DOES NOT EXIST AT HEAD, AND FOUR STATEMENTS IN
+> THIS DOCUMENT RESTED ON IT (`OPEN_ITEMS.md` OI-315).** §1's item 2 already recorded the removal.
+> The **Reuse** row above, §2.1's *Initial state* bullet, §5's reuse-map row and §9.1's step 2 still
+> described the shortcut as live code — the correcting sentence sitting sections away from the four
+> statements it refutes. All four are corrected in place, each with **its former wording preserved
+> beside it (#12)**; nothing else in this document is touched, and no design decision is taken here.
+>
+> **The filing branch, and why the body is corrected rather than bannered.** The filing convention
+> (`cowork_design_doc_template.md`, the user's Ruling 62 of
+> `cowork_rulings_2026_08_11_fourteenth_stop.md`) has two branches by kind, and the derived
+> enumeration that convention ordered records this document's verdict as **BRANCH TWO — a live
+> governing surface, so the body is corrected** (`tools/audit/filing_convention_application.json`,
+> the row for this file). Contrast `docs/stage4b_design.md`, the design that LANDED, whose verdict in
+> the same enumeration is **branch one** and whose body is therefore untouched behind a historical
+> banner.
+>
+> **Established at the code, this session, reading the whole enclosing function rather than a matching
+> line.** `keyresolver::resolveKeyAndModeRanked` carries no piece-start branch: its only early return
+> is the insufficient-pitch-classes fallback, gated on the window's distinct-pitch-class count and on
+> nothing about the tick, and the function's own comment dates the removal to Stage 4b-i and names the
+> re-targeted pins. The bridge entry point `resolveKeyAndMode`
+> (`notationcomposingbridgehelpers.cpp`) loads analyzer preferences and delegates to that function
+> with no branch of its own. The removal is likewise recorded in `ARCHITECTURE.md` §5.2 and in the
+> re-targeted pins `PieceStartOpening_NoteBased_DeclaredMinor` / `_DeclaredMajor`.
 
 ---
 
@@ -107,10 +132,15 @@ unlockable only by a tonicization labeler (Stage 6.1) consuming **KeyArea spans*
 
 - **Decode**: Viterbi over the window sequence maximizing `Σ_t e_t(s_t) + Σ_t τ(s_{t-1}→s_t)`. The
   argmax over the whole path replaces the greedy `.front()` + `promoteWinnerInPlace` of today.
-- **Initial state**: the **piece-start shortcut** becomes the HMM's start prior — when no pitch
-  evidence exists (tick < 16 beats, declared mode present), seed `s_0` = declared key at a prior
-  weight = `relativeKeyHysteresisMargin` (the exact value the shortcut uses today as
-  `decl.score` [code `keyresolver.cpp:272`]), so the decode reproduces the pin by construction.
+- **Initial state**: **there is no declared start-anchor to reproduce.** The piece-start shortcut this
+  bullet was written against was removed in Stage 4b-i (2026-06-14; §1 item 2, which states the
+  consequence in the same words), so the start prior is whatever the note-based opening's own emission
+  produces at the first window, and a degenerate opening is covered by the insufficient-data fallback
+  rather than by a declared seed. *(**★ CORRECTED 2026-08-13** — see the correction block under §0.
+  **THE FORMER WORDING, PRESERVED (#12):** "the **piece-start shortcut** becomes the HMM's start prior
+  — when no pitch evidence exists (tick < 16 beats, declared mode present), seed `s_0` = declared key
+  at a prior weight = `relativeKeyHysteresisMargin` (the exact value the shortcut uses today as
+  `decl.score` [code `keyresolver.cpp:272`]), so the decode reproduces the pin by construction.")*
 
 ### 2.2 The observation unit (window)
 
@@ -307,7 +337,7 @@ The metric rung for it is **L2** (S1 migrating `key_disagree → exact/partial` 
 | `KeyModeAnalyzer::analyzeKeyMode` (252-candidate scorer, 6 helper terms) | **Emission model** `e_t(s)` | **REUSE.** Expose top-N raw `eval.score` instead of only top-3 family-selected (§2.3). |
 | `resolveKeyAndModeRanked` — per-region orchestration | The decode replaces its *combination* logic; its evidence-gathering (window build, lookahead loop) is reused | **REFACTOR.** Becomes the per-window emission provider; the decode is layered over the window sequence. |
 | `partialSignatureCorrection` (81978321e3) | Emission-input adjustment to `keyFifths` | **KEEP, untouched.** Folds into each window's emission exactly as today. |
-| Piece-start shortcut (declared mode, tick<16beats) | HMM **initial-state prior** (seed `s_0`) | **REUSE as start prior** (reproduces the pin). |
+| Piece-start shortcut (declared mode, tick<16beats) — **REMOVED FROM THE CODE in Stage 4b-i, 2026-06-14 (§1 item 2)** | — (there is no such component to give a role) | **NOTHING TO REUSE.** The start prior is the note-based opening's own emission; a degenerate opening is the fallback row below. *(★ Corrected 2026-08-13 — see the block under §0. **THE FORMER WORDING, PRESERVED (#12):** role "HMM **initial-state prior** (seed `s_0`)", disposition "**REUSE as start prior** (reproduces the pin).")* |
 | Insufficient-data fallback (`<3` distinct PCs) | Empty/degenerate emission → carry incumbent or notated key | **REUSE** (reproduces the pin). |
 | Per-region **hysteresis** (`relativeKeyHysteresisMargin`/`hysteresisMargin`, cross-window score threshold) | The principled, distance-graded **transition penalty** | **REPLACED.** The decode *is* the hysteresis, done right (same-window emission diffs, not cross-window absolute scores — §3.1 Class C). |
 | `promoteWinnerInPlace` (re-rank without recomputing confidence — the Stage-1c wart) | — | **REMOVED.** The decode is the principled re-ranking; confidence becomes the path marginal (§4.1). |
@@ -412,8 +442,13 @@ is the Viterbi: O(windows × N² ) with N = top-N states (≈5–8) — negligib
 1. **4.0 — expose top-N raw emissions** from `analyzeKeyMode` (additive; byte-identical: nothing
    consumes them yet). Gate: 0/353 × 3 configs, snapshots 11/11.
 2. **4.1 — key decode behind a flag** (`decodeKeyPath`, default OFF = today's per-region argmax+hysteresis,
-   byte-identical). Implement Viterbi over the window sequence; reproduce the piece-start /
-   insufficient-data / partial-signature pins under flag-OFF. Gate: flag-OFF byte-identical.
+   byte-identical). Implement Viterbi over the window sequence; reproduce the **note-based-opening**
+   (`PieceStartOpening_NoteBased_DeclaredMinor` / `_DeclaredMajor`) / insufficient-data /
+   partial-signature pins under flag-OFF. Gate: flag-OFF byte-identical. *(**★ CORRECTED 2026-08-13**
+   — see the correction block under §0. **THE FORMER WORDING, PRESERVED (#12):** "reproduce the
+   piece-start / insufficient-data / partial-signature pins under flag-OFF". The pins were re-targeted
+   to the note-based opening when the shortcut was removed, so the former wording named a pin that no
+   longer exists.)*
 3. **4.1-measure — flip the flag in a corpus A/B**, measure S2 on `--key-breakdown` (Class A/C expected
    ↓; Class B flat). **Decision point:** ratify the `λ` direction; this is the second intentional
    behavior change (the first since the decoder went byte-identical), gated like 3.2 — measured,

@@ -45,6 +45,36 @@
 > production arm does not run (the production question is `OPEN_ITEMS.md` OI-357), and this
 > repertoire is not the gate corpus, so no published measurement moves.
 
+> **★ A SECOND, LATER FATE THE TWO BANNERS ABOVE DO NOT NAME: THE PIECE-START SHORTCUT THIS
+> DOCUMENT'S EXPLANATION RESTS ON WAS REMOVED FROM THE CODE ON 2026-06-14, ELEVEN DAYS AFTER THE FIX
+> THE FIRST BANNER RECORDS (banner added 2026-08-13 under the FILING CONVENTION —
+> `cowork_design_doc_template.md`, the user's Ruling 62 of
+> `cowork_rulings_2026_08_11_fourteenth_stop.md`; tracking row `OPEN_ITEMS.md` OI-315). THE BODY
+> BELOW IS UNTOUCHED (#12).**
+>
+> **What this document is a record OF:** an investigation, dated 2026-05-23, of why the legacy key
+> resolver reads Corelli `op01n08d` as G minor.
+>
+> **The fate of the mechanism it explains that with.** §1 ends by saying *"The resolver then applies
+> a **piece-start shortcut** … it returns the declared anchor directly"*, and §2 opens the
+> explanation with *"Piece-start anchor → **G Aeolian (G minor)**, confidence 0.5."* **That
+> short-circuit no longer exists.** It was removed in **Stage 4b-i, 2026-06-14** — the increment that
+> made the opening note-based and demoted the declared mode to a small hint — recorded at
+> `ARCHITECTURE.md` §5.2, in `docs/key_path_design.md` §1 item 2, and in the resolver's own comment;
+> the two piece-start pins were re-targeted to `PieceStartOpening_NoteBased_DeclaredMinor` /
+> `_DeclaredMajor`. **Established at the code 2026-08-13**, reading the whole enclosing function:
+> `keyresolver::resolveKeyAndModeRanked` carries no piece-start branch, its only early return being
+> the insufficient-pitch-classes fallback, which is gated on the window's distinct-pitch-class count
+> and on nothing about the tick. **The deleting commit's hash is NOT named here because it is not
+> established at this reading** — the increment, its date and the surfaces that record it are.
+>
+> **What this does and does not change about the body.** The §1/§2 account of the *signature lock* —
+> the mode priors and the family-selection loop — is not touched by this, and neither is the anchor
+> case's outcome, which the first banner verifies at the fix. What a reader must not carry away is
+> the **hard anchor**: region 1 is no longer pinned by a declared-mode short-circuit, so any reading
+> of the residual behaviour that leans on that step is reasoning about code that is gone. The inline
+> code citation at that sentence points into `keyresolver.cpp` at a line that no longer holds one.
+
 *Investigation, 2026-05-23 (read-only; no code changed). Anchor case: Corelli
 `op01n08d` (the `CorelliOp01n08dUserReportedChordTrackAudit` notation failure).*
 

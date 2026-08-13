@@ -1,5 +1,37 @@
 # Duplication Audit — Analysis Pipeline (2026-05-18)
 
+> **★ HISTORICAL RECORD — a read-only audit of the tree as it stood on 2026-05-18, parts of whose
+> subject the record has since left behind. Banner added 2026-08-13 under the FILING CONVENTION
+> (`cowork_design_doc_template.md`, the user's Ruling 62 of
+> `cowork_rulings_2026_08_11_fourteenth_stop.md`); tracking row `OPEN_ITEMS.md` OI-315. THE BODY
+> BELOW IS UNTOUCHED (#12).**
+>
+> **What this document is a record OF:** a read-only duplication audit, dated 2026-05-18, taken at
+> baseline `7060f2c5db`, of the batch and bridge analysis paths as they stood on that date.
+>
+> **The fate of the part of its subject that was established at this reading, and of nothing else.**
+> §2.11 says of the two key-resolution entry points that *"both have the same piece-start
+> shortcut"*, and lists a *"strong declared-mode prior"* block as a bridge-side divergence. **Both of
+> those code paths are gone.** They were removed in **Stage 4b-i, 2026-06-14** — the increment that
+> made the opening note-based and demoted the declared mode to a small hint — which
+> `ARCHITECTURE.md` §5.2 records and which `keyresolver::resolveKeyAndModeRanked` states in its own
+> two comments. **Established at the code 2026-08-13**, reading the whole of each enclosing function:
+> that resolver carries no piece-start branch, its only early return being the
+> insufficient-pitch-classes fallback; and the bridge entry point `resolveKeyAndMode`
+> (`notationcomposingbridgehelpers.cpp`) is a preference load followed by a delegation to it, with
+> neither block. §2.11's line citations into that file resolve to neither function at HEAD.
+>
+> **THE BOUND ON THIS BANNER, STATED SO IT IS NOT READ AS MORE THAN IT IS.** No sweep was run over
+> this audit's remaining findings, and none is claimed to hold or not to hold. The banner names the
+> fates established at this reading; every other statement in the body is a 2026-05-18 statement
+> about a 2026-05-18 tree and is neither endorsed nor withdrawn here. Two facts a reader should carry
+> into the body anyway, both from the record rather than from a sweep: the helper duplication §§2.1–2.13
+> describes has since been unified onto shared `engravingbridge` implementations, which the code's own
+> comment at the surviving pass-throughs points back at this document for; and the joint estimator has
+> since become the production inference layer on **both** the batch/corpus surface and the in-app
+> notation surface (`CLAUDE.md` gate block (A)), so the two-path framing this audit is built on no
+> longer describes what runs.
+
 **Scope.** Read-only audit across `tools/batch_analyze.cpp`,
 `src/notation/internal/notationharmonicrhythmbridge.cpp`,
 `src/notation/internal/notationcomposingbridgehelpers.{cpp,h}`,
