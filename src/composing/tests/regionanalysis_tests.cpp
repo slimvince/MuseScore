@@ -159,8 +159,14 @@ TEST(Composing_KeyresolverTests, PieceStartOpening_NoteBased_DeclaredMajor)
 }
 
 // 4.4 — Insufficient-data fallback: a window with < 3 distinct pitch classes
-// (unison C, no key signature so the piece-start shortcut does not apply) →
-// fallbackResult at confidence 0.0, single element.
+// (unison C) → fallbackResult at confidence 0.0, single element. The fallback is
+// gated on the window's distinct-pitch-class count alone (keyresolver.cpp, the
+// "Empty / insufficient PCs fallback" block) — nothing about the tick and nothing
+// about the key signature reaches it.
+// (Stage 4b-i: the declared-mode piece-start short-circuit was REMOVED, so there
+// is no piece-start branch here for a key signature to trigger or to fail to
+// trigger. Former wording, preserved: "(unison C, no key signature so the
+// piece-start shortcut does not apply)".)
 TEST(Composing_KeyresolverTests, InsufficientPitchClasses_FallbackConfidenceZero)
 {
     MasterScore* score = ScoreRW::readScore(u"data/s1c_unison_c.mscx");
