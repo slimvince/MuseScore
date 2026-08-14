@@ -1,9 +1,26 @@
 # Key-as-a-Path — Stage 4 Design (key HMM + KeyArea spans)
 
-> **DRAFT — UNCOMMITTED. Design only; no production code, no behavior change.**
-> Base commit `f8c6b3932a` ([probe] `git rev-parse --short HEAD`). Ratification-gated:
-> this document is **HELD** (`git add` permitted, `git commit` NOT) until a ratification
-> addendum lands.
+> **DRAFT. Design only; no production code, no behavior change.**
+> Drafted against base commit `f8c6b3932a` ([probe] `git rev-parse --short HEAD`) — the base it
+> was written against, not a statement of its current standing.
+>
+> **★ THE "UNCOMMITTED" CLAIM AND THE COMMIT HOLD ARE STRUCK: THIS FILE IS TRACKED AND COMMITTED
+> (corrected 2026-08-14 at `cc_instruction_scoring_model_pass.md`, discharging the false half of
+> `OPEN_ITEMS.md` OI-274's third instance; OI-317 is the row whose own subject this banner is).**
+> Established at the git object by explicit hash, not asserted. **The former wording, preserved
+> (#12), was:** "**DRAFT — UNCOMMITTED. Design only; no production code, no behavior change.** Base
+> commit `f8c6b3932a` ([probe] `git rev-parse --short HEAD`). Ratification-gated: this document is
+> **HELD** (`git add` permitted, `git commit` NOT) until a ratification addendum lands." *Why it is
+> struck rather than left standing beside the truth:* it was a standing INSTRUCTION to a future
+> session not to commit this file, a previous session had to commit the file over it, and a stale
+> standing rule is worse than none.
+>
+> **What this correction does NOT decide, because it is not its to decide.** Whether this document
+> is retained as a superseded design record or re-bannered as something else is a **filing
+> decision**, which OI-317's own status cell reserves — so OI-317 does NOT close here. And **no
+> ratification addendum is named anywhere in this document**: nothing above says the ratification
+> gate it referred to has been passed, and its §10 open questions still carry recommendations and
+> no answers. Only the two false statements about the file's own standing are struck.
 >
 > Every existence claim is tagged **[code]** (read the source) or **[probe]** (ran a script
 > and read output). The §3 derivation — *does the path actually fix S2?* — is the
@@ -510,6 +527,14 @@ independently revertible. No step removes the old path until 4.x, after the new 
 
 ---
 
-*Drafted by CC, 2026-06-13, base `f8c6b3932a`. Read-only: the only repo write is this draft (HELD,
-uncommitted). Probe `/c/tmp/s2_derive.py` (throwaway) reuses the committed metric machinery verbatim;
-no production code changed. Awaiting ratification.*
+*Drafted by CC, 2026-06-13, base `f8c6b3932a`. Read-only at the time of drafting: the only repo
+write was this draft. Probe `/c/tmp/s2_derive.py` (throwaway) reuses the committed metric machinery
+verbatim; no production code changed. No ratification addendum is named in this document.*
+
+*(★ Corrected 2026-08-14 at `cc_instruction_scoring_model_pass.md` — the closing line repeated the
+banner's struck claim, so correcting the banner alone would have left the falsity in the document.
+**The former wording, preserved (#12), was:** "Read-only: the only repo write is this draft (HELD,
+uncommitted). … Awaiting ratification." The file is tracked and committed, established at the git
+object by explicit hash. "Awaiting ratification" is replaced by the fact behind it — no addendum is
+named here — rather than by any claim that ratification has or has not happened, which this
+correction does not establish either way. See the banner and `OPEN_ITEMS.md` OI-317.)*

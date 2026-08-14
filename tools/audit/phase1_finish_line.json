@@ -269,7 +269,6 @@
      "OI-121",
      "OI-146",
      "OI-154",
-     "OI-183",
      "OI-207",
      "OI-220",
      "OI-222",
@@ -287,7 +286,6 @@
      "OI-360",
      "OI-370",
      "OI-371",
-     "OI-45",
      "OI-57",
      "OI-63",
      "OI-95"
@@ -1131,7 +1129,7 @@
    "half": "TRUE",
    "criterion": "C3 — the specification text corrected wherever it states something false",
    "population": {
-    "rows": 32,
+    "rows": 30,
     "row_ids": [
      "OI-105",
      "OI-107",
@@ -1141,7 +1139,6 @@
      "OI-121",
      "OI-141",
      "OI-146",
-     "OI-183",
      "OI-207",
      "OI-220",
      "OI-223",
@@ -1162,7 +1159,6 @@
      "OI-363",
      "OI-370",
      "OI-371",
-     "OI-45",
      "OI-57",
      "OI-95"
     ]
@@ -1179,7 +1175,6 @@
      "OI-107",
      "OI-121",
      "OI-146",
-     "OI-183",
      "OI-205",
      "OI-207",
      "OI-220",
@@ -1204,7 +1199,6 @@
      "OI-360",
      "OI-370",
      "OI-371",
-     "OI-45",
      "OI-46",
      "OI-48",
      "OI-49",
@@ -1250,7 +1244,6 @@
      "OI-121",
      "OI-141",
      "OI-146",
-     "OI-183",
      "OI-207",
      "OI-220",
      "OI-223",
@@ -1271,7 +1264,6 @@
      "OI-363",
      "OI-370",
      "OI-371",
-     "OI-45",
      "OI-57",
      "OI-95"
     ],
@@ -1488,7 +1480,7 @@
   "of_those_whose_lapse_record_is_written": 25,
   "register_entries_owed_a_home": 20,
   "register_entries_owed_a_defense": 0,
-  "open_rows_owed_on_the_true_half_that_gate": 32,
+  "open_rows_owed_on_the_true_half_that_gate": 30,
   "open_rows_the_cut_places_in_the_apparatus_class": 17,
   "★_this_field_was_renamed_2026-08-11_and_the_former_name_is_kept": "It read `open_rows_owed_a_reach_verdict` (#12). That became FALSE on 2026-08-11: the reach derivation ran over the whole set, so no row is owed a reach verdict any more, and under the user's Ruling 66 these rows are owed nothing at all. The count is unchanged; only what it is called is.",
   "items_with_a_closing_route_only_the_user_may_take": 1,

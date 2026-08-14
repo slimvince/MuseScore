@@ -1,8 +1,20 @@
 # Precision-Metric Design — the measurement instrument for maximally-precise inference of (mode, functional chord, actual chord)
 
-> **DRAFT — UNCOMMITTED. Design + scoping only; no production code, no behavior change.**
-> Base commit `a652dc1ba7` ([probe] `git rev-parse --short HEAD`). Read-only investigation.
-> Deliverable for the ratification gate that precedes building any metric.
+> **DRAFT. Design + scoping only; no production code, no behavior change.**
+> Drafted against base commit `a652dc1ba7` ([probe] `git rev-parse --short HEAD`) — the base it was
+> written against, not a statement of its current standing. Read-only investigation. Deliverable for
+> the ratification gate that precedes building any metric.
+>
+> **★ THE "UNCOMMITTED" CLAIM IS STRUCK: THIS FILE IS TRACKED AND COMMITTED (corrected 2026-08-14 at
+> `cc_instruction_scoring_model_pass.md`, discharging the false half of `OPEN_ITEMS.md` OI-274's
+> third instance).** Established at the git object by explicit hash, not asserted. **The former
+> wording, preserved (#12), was:** "**DRAFT — UNCOMMITTED. Design + scoping only; no production code,
+> no behavior change.** Base commit `a652dc1ba7` ([probe] `git rev-parse --short HEAD`)."
+>
+> **What this correction does NOT decide.** Only the false statement about the file's own standing
+> is struck. The DRAFT marking stands as written; nothing above says whether the ratification gate
+> this document is a deliverable for has been passed, and this correction establishes nothing either
+> way about that.
 >
 > Every existence claim is tagged **[code]** (read the source) or **[probe]** (ran it and read
 > output). Every design choice is argued. The chicken-and-egg (a functional-precision metric needs

@@ -606,6 +606,49 @@ RETIRED_VERDICTS = {
                "comment's 'empty on fallback' half, reported at the row as a finding about a "
                "different subject and deliberately not corrected under a licence that does not "
                "reach it."),
+    "OI-45": (GATES, "specification completeness",
+              "Half of it is stale anchors, which would be apparatus - but the other half is a "
+              "scoring constant with no entry in the scoring specification at all, and phase 1 "
+              "requires specifications COMPLETE, not only true. The whole row gates with its "
+              "gating half.",
+              "RESOLVED 2026-08-14 - both halves closed in one pass over "
+              "`docs/scoring_model.md` (`cc_instruction_scoring_model_pass.md` Task 2, commit "
+              "b366d44947). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); it is "
+              "retired because the row closed, never because it was wrong. * ITS GROUND IS WHERE "
+              "THE VERDICT AND THE ROW PARTED COMPANY, AND THE VERDICT WAS THE MORE ACCURATE OF "
+              "THE TWO: it gated the row on specification COMPLETENESS, on the ground that a "
+              "scoring constant had no entry at all - and read at the document, the entry EXISTS. "
+              "What was actually wrong was WHERE the entry said the bonus fires (the "
+              "bias-correction block, not the enharmonic-flip block or the G-family region), "
+              "which is specification TRUTH rather than completeness. So the row gated on a half "
+              "that was already met and was closed by correcting a different defect at the same "
+              "place; the anchor half, which the verdict rightly called apparatus, was closed "
+              "beside it. * AND THE ANCHOR HALF WAS WRONG ABOUT ITS OWN SECTIONS: the raw "
+              "line-number anchors stood in the overview, the matrix section, the terms section, "
+              "the joint-scoring section AND the inversion-correction section - not the two the "
+              "row names, whose gate section had already been converted before the row was "
+              "written. Enumerating at the document rather than from the row's list is what found "
+              "both, and is why the dispatch required it."),
+    "OI-183": (GATES, "specification completeness",
+               "Twelve of thirty-two override-registered scoring constants have no by-name "
+               "mention in the scoring specification. Incompleteness of a specification, the "
+               "same ground as OI-45.",
+               "RESOLVED 2026-08-14 - the twelve get a by-name table in the terms section, each "
+               "with the site it acts at and, where the specification already describes its "
+               "effect without naming it, the cell or prose that covers it - the row's own stated "
+               "alternative, taken as an equal outcome (`cc_instruction_scoring_model_pass.md` "
+               "Task 2, commit b366d44947). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept "
+               "whole (#12); it is retired because the row closed, never because it was wrong. * "
+               "ITS GROUND WAS EXACTLY RIGHT AND THE CLOSING ACT NEEDED NOTHING ELSE: the verdict "
+               "graded the row on specification completeness, and completing the specification is "
+               "the whole of what was done. * WHAT THE CLOSURE CORRECTS IN THE ROW'S OWN "
+               "ACCOUNT, and therefore in this verdict's opening sentence, which took its "
+               "population figure from it: the TWELVE reproduce exactly at HEAD, but the "
+               "POPULATION does not - the scorer's translation unit registers one fewer name than "
+               "the row gives it, and the progression constants registered through the same "
+               "registry from the function layer are excluded from the row's population "
+               "altogether, though the specification already names every one of them so none is "
+               "a gap. The outcome is unchanged; the count is not the row's."),
 }
 
 # Verdicts a USER RULING has RE-CLASSED. Distinct from RETIRED_VERDICTS in both directions: there
@@ -826,11 +869,7 @@ V = {
     # OI-318's verdict moved to RETIRED_VERDICTS on 2026-08-11 when the row closed.
     # ---------------------------------------------------------------------- GATES
     # OI-315's verdict moved to RETIRED_VERDICTS on 2026-08-13 when the row closed.
-    "OI-45": (GATES, "specification completeness",
-              "Half of it is stale anchors, which would be apparatus - but the other half is a "
-              "scoring constant with no entry in the scoring specification at all, and phase 1 "
-              "requires specifications COMPLETE, not only true. The whole row gates with its "
-              "gating half."),
+    # OI-45's verdict moved to RETIRED_VERDICTS on 2026-08-14 when the row closed.
     "OI-57": (GATES, "the analysis's inputs",
               "The extra-scores registry is stale and unvalidated against what is on disk, and "
               "the row states the registry must be accurate and mechanically validated before "
@@ -863,10 +902,7 @@ V = {
                "project's tracking or documentation apparatus, so the declaration does not reach "
                "it and the default applies. Recorded honestly: the row's own status is 'held' "
                "pending an unrelated publication wave, so nothing turns on the verdict today."),
-    "OI-183": (GATES, "specification completeness",
-               "Twelve of thirty-two override-registered scoring constants have no by-name "
-               "mention in the scoring specification. Incompleteness of a specification, the "
-               "same ground as OI-45."),
+    # OI-183's verdict moved to RETIRED_VERDICTS on 2026-08-14 when the row closed.
     "OI-207": (GATES, "the analysis",
                "The decision-conformance audit searches the implementation for opposition to "
                "recorded decisions; its residual second pass is a phase-2 discovery channel and "

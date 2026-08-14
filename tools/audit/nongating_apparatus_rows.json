@@ -23,8 +23,8 @@
  },
  "population": {
   "rows_parsed": 375,
-  "open_rows": 245,
-  "first_cut_candidates": 52,
+  "open_rows": 243,
+  "first_cut_candidates": 50,
   "first_cut_vocabulary": [
    "doc-sync",
    "docs /",
@@ -47,7 +47,7 @@
  },
  "totals": {
   "non_gating": 25,
-  "gates": 27,
+  "gates": 25,
   "non_gating_ids": [
    "OI-205",
    "OI-219",
@@ -121,10 +121,6 @@
     "OI-223",
     "OI-256",
     "OI-95"
-   ],
-   "specification completeness": [
-    "OI-183",
-    "OI-45"
    ],
    "specification truth": [
     "OI-105",
@@ -206,14 +202,6 @@
    "verdict": "GATES",
    "reason": "The evidence inventory is the live catalog of what each layer discovers, and the layer specifications update from it as facts are adopted. Its subject is analysis facts, not the paperwork about them.",
    "gate_ground": "the analysis"
-  },
-  {
-   "id": "OI-183",
-   "title": "scoring_model.md symbol-level coverage gap",
-   "subject_column": "scoring_model doc",
-   "verdict": "GATES",
-   "reason": "Twelve of thirty-two override-registered scoring constants have no by-name mention in the scoring specification. Incompleteness of a specification, the same ground as OI-45.",
-   "gate_ground": "specification completeness"
   },
   {
    "id": "OI-207",
@@ -342,14 +330,6 @@
    "verdict": "GATES",
    "reason": "The extra-scores registry is stale and unvalidated against what is on disk, and the row states the registry must be accurate and mechanically validated before any of those scores is used. A corpus register is an input to every measurement taken on it (#9).",
    "gate_ground": "the analysis's inputs"
-  },
-  {
-   "id": "OI-45",
-   "title": "scoring_model §4/§6 stale anchors",
-   "subject_column": "doc-sync",
-   "verdict": "GATES",
-   "reason": "Half of it is stale anchors, which would be apparatus - but the other half is a scoring constant with no entry in the scoring specification at all, and phase 1 requires specifications COMPLETE, not only true. The whole row gates with its gating half.",
-   "gate_ground": "specification completeness"
   },
   {
    "id": "OI-46",
@@ -622,6 +602,12 @@
     "reason": "The recorded test baselines are stale and the notation line hides four xfails. A baseline is what a regression is measured against.",
     "closed": "RESOLVED 2026-08-13 - both halves performed at the objects (`cc_instruction_oi150_baselines.md` Tasks 1 and 2): the two suites were BUILT and RUN at HEAD, both `BUILD_AND_TEST.md` baselines were written from those runs and from nothing else, and the notation line now names all four xfails by test name with the standing do-not-re-bless instruction and a pointer to their one home. THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); it is retired because the row closed, never because it was wrong. ★ ITS GROUND IS WHAT THE CLOSING ACT TURNED OUT TO NEED: the verdict graded the row on an INSTRUMENT rather than on filing, and the act that closed it was accordingly a MEASUREMENT and not a wording change - the earlier wave that touched the file and declined to re-stamp declined for exactly that reason, having run no suite. WHAT THE CLOSURE DOES NOT DISCHARGE: [[OI-148]], the four xfails themselves, still failing by design and still owned by the key-layer build - naming them in a baseline line neither fixes nor re-blesses them."
    },
+   "OI-183": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "specification completeness",
+    "reason": "Twelve of thirty-two override-registered scoring constants have no by-name mention in the scoring specification. Incompleteness of a specification, the same ground as OI-45.",
+    "closed": "RESOLVED 2026-08-14 - the twelve get a by-name table in the terms section, each with the site it acts at and, where the specification already describes its effect without naming it, the cell or prose that covers it - the row's own stated alternative, taken as an equal outcome (`cc_instruction_scoring_model_pass.md` Task 2, commit b366d44947). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); it is retired because the row closed, never because it was wrong. * ITS GROUND WAS EXACTLY RIGHT AND THE CLOSING ACT NEEDED NOTHING ELSE: the verdict graded the row on specification completeness, and completing the specification is the whole of what was done. * WHAT THE CLOSURE CORRECTS IN THE ROW'S OWN ACCOUNT, and therefore in this verdict's opening sentence, which took its population figure from it: the TWELVE reproduce exactly at HEAD, but the POPULATION does not - the scorer's translation unit registers one fewer name than the row gives it, and the progression constants registered through the same registry from the function layer are excluded from the row's population altogether, though the specification already names every one of them so none is a gap. The outcome is unchanged; the count is not the row's."
+   },
    "OI-230": {
     "verdict": "NON-GATING",
     "class_basis_or_ground": "user",
@@ -759,6 +745,12 @@
     "class_basis_or_ground": "the criterion - D-438's own line puts the completion of a specification on the gating side, and the default on doubt is to keep the wait",
     "reason": "The phase-1 finish line's last homing item counts one register entry and names, as the act that closes it, a write the user's own ruling forbids: the entry is SUPERSEDED, and a supersession is register business with no specification home owed. THE FIRST-CUT CLASSIFICATION REACHED THIS ROW and the verdict is authored for it here, which is what the tool requires; no non-gating verdict is hand-added, which is the act the record forbids. IT IS NOT SETTLED BY THE APPARATUS CRITERION, and that is said plainly rather than argued around: the surface is a derived completion map, which reads as this project's own tracking. What decides it is D-438's line INSIDE the documentation rows, which puts the completion of a specification on the gating side because the phase-1 rule makes specifications COMPLETE and TRUE the thing that precedes everything else -- and what is owed here is not a pointer, an anchor, a label, a banner or a section boundary, but the question of whether one specification-completion obligation is owed at all. The declaration's own default carries the remainder: a row whose subject its own text does not settle GATES, because the declaration only ever removes a wait where the row supports removing it. Recorded against the row's SUBJECT, never its remedy -- the two closing acts it names are a subtraction in a derivation and a correction to an authored closing act, and choosing between them is a mechanism question D-436 reserves to the user.",
     "closed": "RESOLVED 2026-08-11 - the user's Ruling 61 (`cowork_rulings_2026_08_11_fourteenth_stop.md`) ruled the FIRST of the two closing acts: the item gains the same D-642 subtraction its four sibling items apply, one machinery per concern (#6). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); it is retired because the row closed, never because it was wrong. ★ ITS LAST SENTENCE IS THE ONE WORTH KEEPING: it recorded the verdict against the row's SUBJECT and never its remedy, on the ground that choosing between the two closing acts is a mechanism question D-436 reserves to the user -- and the user chose. A verdict written against a remedy would have had to be re-authored when the remedy was picked; one written against the subject is simply retired."
+   },
+   "OI-45": {
+    "verdict": "GATES",
+    "class_basis_or_ground": "specification completeness",
+    "reason": "Half of it is stale anchors, which would be apparatus - but the other half is a scoring constant with no entry in the scoring specification at all, and phase 1 requires specifications COMPLETE, not only true. The whole row gates with its gating half.",
+    "closed": "RESOLVED 2026-08-14 - both halves closed in one pass over `docs/scoring_model.md` (`cc_instruction_scoring_model_pass.md` Task 2, commit b366d44947). THE VERDICT WAS CORRECT WHILE IT STOOD and is kept whole (#12); it is retired because the row closed, never because it was wrong. * ITS GROUND IS WHERE THE VERDICT AND THE ROW PARTED COMPANY, AND THE VERDICT WAS THE MORE ACCURATE OF THE TWO: it gated the row on specification COMPLETENESS, on the ground that a scoring constant had no entry at all - and read at the document, the entry EXISTS. What was actually wrong was WHERE the entry said the bonus fires (the bias-correction block, not the enharmonic-flip block or the G-family region), which is specification TRUTH rather than completeness. So the row gated on a half that was already met and was closed by correcting a different defect at the same place; the anchor half, which the verdict rightly called apparatus, was closed beside it. * AND THE ANCHOR HALF WAS WRONG ABOUT ITS OWN SECTIONS: the raw line-number anchors stood in the overview, the matrix section, the terms section, the joint-scoring section AND the inversion-correction section - not the two the row names, whose gate section had already been converted before the row was written. Enumerating at the document rather than from the row's list is what found both, and is why the dispatch required it."
    },
    "OI-47": {
     "verdict": "GATES",
