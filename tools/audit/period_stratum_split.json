@@ -1,0 +1,2268 @@
+{
+ "what_this_is": "THE PERIOD SPLIT, re-derived by a checked tool from the candidate artifacts alone, with the screen population for the July screen enumerated whole. It supersedes the ad-hoc per-stratum values the decision surface declared as assumption A1. It restores nothing, corrects nothing, and makes no comparison against the code.",
+ "dispatch": "cc_instruction_period_checks.md",
+ "generator": "tools/audit/gen_period_stratum_split.py",
+ "reproduce": "python tools/audit/gen_period_stratum_split.py --check   # re-derives from the inputs and exits 1 on any drift",
+ "inputs": [
+  {
+   "path": "tools/audit/doc_change_candidates.json",
+   "sha256": "debe7985595246b7748bff179da061c6de64b3c48882ea65a17db8803acbf3e4",
+   "bytes": 1006562
+  },
+  {
+   "path": "tools/audit/doc_change_candidates_hunks.jsonl",
+   "sha256": "b15e2539aac66fc28263aa00835c7848209ebb819e3999719382c330c387e41d",
+   "bytes": 6694103
+  }
+ ],
+ "★_the_inherited_establishment_caveat": "#19, INHERITED AND NOT DISCHARGED HERE. Every count below is a re-derivation over the two candidate artifacts, and the generator that produced those artifacts (`tools/audit/gen_doc_change_candidates.py`) has itself never been positively established — it was written in one batch, and its own artifact marks assumption A3 UNESTABLISHED for every generator family. What THIS tool establishes is that the split follows from those artifacts and reconciles with the totals they publish of themselves. It establishes nothing about whether the enumeration underneath them is complete or correct, and a reader may not take a clean re-derivation here as evidence that it is. What would settle the inherited half is an establishment pass over that generator — an act named here and not started.",
+ "what_is_AUTHORED_here": {
+  "the_ruled_start_commit": {
+   "commit": "b006dc15b5f696f2fc86ad72b97fae58d2119cd7",
+   "taken_at": "`cowork_rulings_2026_08_15_period_start.md`, the first ruling: \"The restructuring period opens EXCLUSIVE at commit b006dc15b5f696f2fc86ad72b97fae58d2119cd7\" — taken by the user on 2026-08-15 on the surface `ratification_surfaces/cowork_restructuring_period_start_decision_surface.md` (Alternative B)."
+  },
+  "the_specification_bearing_roles": {
+   "roles": [
+    "governing",
+    "specification-or-docs"
+   ],
+   "taken_at": "The decision surface's F2 — \"the specification-bearing slice is 314 (governing 239 + specification-or-docs 75)\" — and `cc_instruction_period_checks.md` §0a, which names the same two roles. The roles themselves are assigned by `tools/audit/gen_doc_change_candidates.py`; this tool selects among them and defines none."
+  },
+  "the_registered_expectation_graded_below": {
+   "taken_at": "`cc_instruction_period_checks.md` §0a, prediction P1, which records the values assumption A1 of the decision surface declared. Registered expectation, moderate confidence, no authority."
+  }
+ },
+ "what_is_DERIVED": [
+  "every count and every population below, from the two candidate artifacts alone",
+  "the screen population, enumerated whole by hunk identity",
+  "the reconciliation against the input artifact's own published totals"
+ ],
+ "the_ruled_period": {
+  "opens_EXCLUSIVE_at": "b006dc15b5f696f2fc86ad72b97fae58d2119cd7",
+  "the_boundary_commit": {
+   "sha": "b006dc15b5f696f2fc86ad72b97fae58d2119cd7",
+   "date": "2026-08-02T00:00:30+02:00",
+   "stratum_label_it_carries": "S4-D231-phase-1",
+   "subject": "docs(cowork): the three-phase sequencing rule ratified (D-231): specification completion, then issue-exhaustion, then ONE fix plan - no fix design before",
+   "position_in_the_commits_table": 232
+  },
+  "★_the_boundary_commit_is_OUTSIDE_the_period_it_opens": "EXCLUSIVE is the ruling's own word. The candidate artifact nonetheless labels this commit with stratum S4, because a stratum boundary is inclusive of the act that opens it. So the stratum label and the ruled period are NOT the same population, and the difference is exactly this commit's own hunks — enumerated below rather than left for a reader to discover.",
+  "commits_in_the_candidate_population": 435,
+  "commits_IN_PERIOD_under_the_ruling": 202,
+  "commits_OUT_OF_PERIOD_under_the_ruling": 233,
+  "the_two_readings_of_the_cut_agree_away_from_the_boundary_commit": true
+ },
+ "the_split": {
+  "hunks_by_stratum_all_verdicts": {
+   "S1-open-items-register": 1055,
+   "S2-status-handoff-doc-split": 680,
+   "S3-open-items-register-split": 1475,
+   "S4-D231-phase-1": 20527
+  },
+  "flagged_hunks_by_stratum": {
+   "S1-open-items-register": 705,
+   "S2-status-handoff-doc-split": 378,
+   "S3-open-items-register-split": 1279,
+   "S4-D231-phase-1": 19836
+  },
+  "flagged_hunks_by_stratum_and_document_role": {
+   "S1-open-items-register": {
+    "cc-report": 90,
+    "cowork-planning-or-ruling": 75,
+    "dispatch": 37,
+    "governing": 17,
+    "other": 10,
+    "register-index": 148,
+    "source-comment": 56,
+    "specification-or-docs": 5,
+    "status-or-procedure": 40,
+    "tool-or-artifact": 227
+   },
+   "S2-status-handoff-doc-split": {
+    "cc-report": 2,
+    "cowork-planning-or-ruling": 74,
+    "dispatch": 19,
+    "governing": 15,
+    "register-index": 28,
+    "source-comment": 109,
+    "specification-or-docs": 2,
+    "status-or-procedure": 26,
+    "tool-or-artifact": 103
+   },
+   "S3-open-items-register-split": {
+    "cc-report": 5,
+    "cowork-planning-or-ruling": 50,
+    "governing": 27,
+    "register-detail": 323,
+    "register-index": 252,
+    "source-comment": 69,
+    "specification-or-docs": 1,
+    "status-or-procedure": 24,
+    "tool-or-artifact": 528
+   },
+   "S4-D231-phase-1": {
+    "cc-report": 3,
+    "cowork-planning-or-ruling": 233,
+    "dispatch": 3,
+    "governing": 180,
+    "other": 13,
+    "ratification-surface": 51,
+    "register-detail": 8918,
+    "register-index": 935,
+    "source-comment": 19,
+    "specification-or-docs": 67,
+    "status-or-procedure": 132,
+    "tool-or-artifact": 9282
+   }
+  },
+  "flagged_hunks_by_document_role": {
+   "cc-report": 100,
+   "cowork-planning-or-ruling": 432,
+   "dispatch": 59,
+   "governing": 239,
+   "other": 23,
+   "ratification-surface": 51,
+   "register-detail": 9241,
+   "register-index": 1363,
+   "source-comment": 253,
+   "specification-or-docs": 75,
+   "status-or-procedure": 222,
+   "tool-or-artifact": 10140
+  },
+  "specification_bearing_roles": [
+   "governing",
+   "specification-or-docs"
+  ],
+  "specification_bearing_flagged_by_stratum": {
+   "S1-open-items-register": 22,
+   "S2-status-handoff-doc-split": 17,
+   "S3-open-items-register-split": 28,
+   "S4-D231-phase-1": 247
+  },
+  "specification_bearing_flagged_by_role": {
+   "governing": 239,
+   "specification-or-docs": 75
+  },
+  "specification_bearing_flagged_total": 314
+ },
+ "the_period_cut_applied": {
+  "flagged_hunks_IN_PERIOD": 19823,
+  "flagged_hunks_OUT_OF_PERIOD": 2375,
+  "specification_bearing_flagged_IN_PERIOD": 246,
+  "specification_bearing_flagged_OUT_OF_PERIOD": 68,
+  "the_boundary_commits_own_hunks": {
+   "hunks_enumerated": 13,
+   "flagged": 13,
+   "specification_bearing_flagged": 1,
+   "★_why_they_are_counted_OUT_OF_PERIOD": "The ruling opens the period exclusive at this commit, so its own changes are outside the period and inside the class the screen exists to check."
+  }
+ },
+ "the_screen_population_for_task_2": {
+  "what_it_is": "Every OUT-OF-PERIOD specification-bearing flagged hunk: the pre-S4 strata plus whatever the boundary commit itself contributes. This is the population the July screen reads, one hunk at a time.",
+  "★_why_the_ruled_cut_rather_than_the_pre_S4_strata_alone": "The dispatch names the pre-S4 slice, which is the stratum reading. Under the ruled cut the boundary commit is out of period too, so its specification-bearing flagged hunks sit in exactly the class the screen exists to check. Taking the ruled cut can only ADD members and never drop one, and under-screening is the direction that costs the objective. Both slices are published; the members the wider one adds are marked `added_by_the_ruled_cut` in the enumeration.",
+  "size": 68,
+  "the_pre_S4_strata_slice_size": 67,
+  "members_the_ruled_cut_adds": 1,
+  "by_stratum": {
+   "S1-open-items-register": 22,
+   "S2-status-handoff-doc-split": 17,
+   "S3-open-items-register-split": 28,
+   "S4-D231-phase-1": 1
+  },
+  "by_role": {
+   "governing": 60,
+   "specification-or-docs": 8
+  },
+  "by_file": {
+   "ARCHITECTURE.md": 27,
+   "CLAUDE.md": 33,
+   "docs/research_papers/BIBLIOGRAPHY.md": 1,
+   "docs/research_papers/README.md": 1,
+   "docs/score_inventory.md": 1,
+   "docs/scoring_model.md": 5
+  },
+  "distinct_commits": 32,
+  "hunks": [
+   {
+    "commit": "6b4ca1752b6f857027da1b9ddff4ea9fd3081814",
+    "date": "2026-07-11T01:39:20+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "docs(cowork): #17(c) control-flow-first RATIFIED + the siloed-facts audit (spelling was not alone) + register section I (OI-72..OI-80)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-44 +44,3",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     3
+    ],
+    "carry_vector": [
+     1,
+     3,
+     1,
+     3
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 6b4ca1752b6f857027da1b9ddff4ea9fd3081814 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "2454658f077a2ba5efd43600b409b309ebfdd486",
+    "date": "2026-07-11T02:04:57+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "docs(cowork): RATIFIED - the fact-publication corollary (into CLAUDE.md) + the seven Part-A verdicts (A3 acceptance explicit); OI-84 added - exhaustive audit OWED",
+    "file": "CLAUDE.md",
+    "hunk_header": "-63,0 +64,6",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     6
+    ],
+    "carry_vector": [
+     0,
+     5,
+     0,
+     5
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance",
+     "preserved-former-wording"
+    ],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 2454658f077a2ba5efd43600b409b309ebfdd486 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "7123c7cb5512b011811edb4b4c87bb1d8c94e877",
+    "date": "2026-07-11T02:31:04+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "docs(cowork): cowork_handoff.md is THE single entry document - tracked name lowercased (was COWORK_HANDOFF.md), entry block reframed, live references fixed",
+    "file": "CLAUDE.md",
+    "hunk_header": "-74 +74",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     1
+    ],
+    "carry_vector": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 7123c7cb5512b011811edb4b4c87bb1d8c94e877 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "239408faadf40e2d46c428397522ca3d688dbe5d",
+    "date": "2026-07-11T11:17:31+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "docs(cowork): L1/L2 certification withheld on partial blinding - OI-89 + DT-20 + the blind re-run instruction; CLAUDE.md conventions: no self-invented labels; the self-check after every coding exercise",
+    "file": "CLAUDE.md",
+    "hunk_header": "-554,0 +555,15",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     15
+    ],
+    "carry_vector": [
+     0,
+     13,
+     0,
+     13
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 239408faadf40e2d46c428397522ca3d688dbe5d --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "d9b52ba9696ae51f1504c902c04825c538313754",
+    "date": "2026-07-12T17:22:22+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(tools): OI-142/OI-143 key-grading re-baseline — corpus-transposition correction + dual home/local key columns (user-ratified 2026-07-12)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-177,11 +177,18",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     11,
+     18
+    ],
+    "carry_vector": [
+     10,
+     17,
+     10,
+     17
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show d9b52ba9696ae51f1504c902c04825c538313754 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "d9b52ba9696ae51f1504c902c04825c538313754",
+    "date": "2026-07-12T17:22:22+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(tools): OI-142/OI-143 key-grading re-baseline — corpus-transposition correction + dual home/local key columns (user-ratified 2026-07-12)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-213,4 +220,12",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     4,
+     12
+    ],
+    "carry_vector": [
+     4,
+     12,
+     4,
+     12
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show d9b52ba9696ae51f1504c902c04825c538313754 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "fe985ab04757dc9eb214ed12664001fa5156238e",
+    "date": "2026-07-12T20:48:05+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "docs(cowork): preserve the concurrent live edits — publish-evidence-broadly rule + the evidence inventory + OI-146",
+    "file": "CLAUDE.md",
+    "hunk_header": "-68,0 +69,9",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     9
+    ],
+    "carry_vector": [
+     0,
+     9,
+     0,
+     9
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show fe985ab04757dc9eb214ed12664001fa5156238e --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "800f1a12bf136ebc80b84d05427570a9be0a7a5b",
+    "date": "2026-07-13T11:20:39+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(tools): OI-132 — the parent-collection mode grading, consolidated into the ONE key reduction (re-baseline, user-ratified 2026-07-13)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-194 +194",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     1
+    ],
+    "carry_vector": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 800f1a12bf136ebc80b84d05427570a9be0a7a5b --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "800f1a12bf136ebc80b84d05427570a9be0a7a5b",
+    "date": "2026-07-13T11:20:39+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(tools): OI-132 — the parent-collection mode grading, consolidated into the ONE key reduction (re-baseline, user-ratified 2026-07-13)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-196,8 +196,22",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     8,
+     22
+    ],
+    "carry_vector": [
+     8,
+     20,
+     8,
+     20
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 800f1a12bf136ebc80b84d05427570a9be0a7a5b --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "800f1a12bf136ebc80b84d05427570a9be0a7a5b",
+    "date": "2026-07-13T11:20:39+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(tools): OI-132 — the parent-collection mode grading, consolidated into the ONE key reduction (re-baseline, user-ratified 2026-07-13)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-230,7 +244,12",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     7,
+     12
+    ],
+    "carry_vector": [
+     7,
+     12,
+     7,
+     12
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 800f1a12bf136ebc80b84d05427570a9be0a7a5b --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "153d45e78c5162c17844c7a488f9e9901b524141",
+    "date": "2026-07-14T09:44:13+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(composing): OI-168 — default-OFF key-collection probe + the signature-mask A/B variant (measurement build)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-609,0 +610,4",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     4
+    ],
+    "carry_vector": [
+     0,
+     4,
+     0,
+     4
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 153d45e78c5162c17844c7a488f9e9901b524141 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "153d45e78c5162c17844c7a488f9e9901b524141",
+    "date": "2026-07-14T09:44:13+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(composing): OI-168 — default-OFF key-collection probe + the signature-mask A/B variant (measurement build)",
+    "file": "docs/scoring_model.md",
+    "hunk_header": "-262,0 +263,23",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "specification-or-docs",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     23
+    ],
+    "carry_vector": [
+     0,
+     20,
+     0,
+     20
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 153d45e78c5162c17844c7a488f9e9901b524141 --no-color -U0 -- docs/scoring_model.md"
+   },
+   {
+    "commit": "153d45e78c5162c17844c7a488f9e9901b524141",
+    "date": "2026-07-14T09:44:13+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(composing): OI-168 — default-OFF key-collection probe + the signature-mask A/B variant (measurement build)",
+    "file": "docs/scoring_model.md",
+    "hunk_header": "-556 +579",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "specification-or-docs",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     1
+    ],
+    "carry_vector": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 153d45e78c5162c17844c7a488f9e9901b524141 --no-color -U0 -- docs/scoring_model.md"
+   },
+   {
+    "commit": "10235d5547865c899fb088423fcf3a151fa9520e",
+    "date": "2026-07-14T11:29:59+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(composing): OI-168 FIX — the two key-consuming scoring terms take the key SIGNATURE's collection, not the tonic (correctness re-baseline, user-ratified)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-186 +186",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     1
+    ],
+    "carry_vector": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "look_alike_signals": [
+     "differs-only-in-digits"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 10235d5547865c899fb088423fcf3a151fa9520e --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "10235d5547865c899fb088423fcf3a151fa9520e",
+    "date": "2026-07-14T11:29:59+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(composing): OI-168 FIX — the two key-consuming scoring terms take the key SIGNATURE's collection, not the tonic (correctness re-baseline, user-ratified)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-190,8 +190,32",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     8,
+     32
+    ],
+    "carry_vector": [
+     7,
+     30,
+     7,
+     30
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 10235d5547865c899fb088423fcf3a151fa9520e --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "10235d5547865c899fb088423fcf3a151fa9520e",
+    "date": "2026-07-14T11:29:59+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(composing): OI-168 FIX — the two key-consuming scoring terms take the key SIGNATURE's collection, not the tonic (correctness re-baseline, user-ratified)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-244 +268,4",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     4
+    ],
+    "carry_vector": [
+     1,
+     4,
+     1,
+     4
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 10235d5547865c899fb088423fcf3a151fa9520e --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "10235d5547865c899fb088423fcf3a151fa9520e",
+    "date": "2026-07-14T11:29:59+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(composing): OI-168 FIX — the two key-consuming scoring terms take the key SIGNATURE's collection, not the tonic (correctness re-baseline, user-ratified)",
+    "file": "docs/scoring_model.md",
+    "hunk_header": "-263,22 +263,34",
+    "hunk_ordinal_in_the_commit": 3,
+    "role": "specification-or-docs",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     22,
+     34
+    ],
+    "carry_vector": [
+     20,
+     28,
+     20,
+     28
+    ],
+    "look_alike_signals": [
+     "rule-force-word",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 10235d5547865c899fb088423fcf3a151fa9520e --no-color -U0 -- docs/scoring_model.md"
+   },
+   {
+    "commit": "10235d5547865c899fb088423fcf3a151fa9520e",
+    "date": "2026-07-14T11:29:59+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(composing): OI-168 FIX — the two key-consuming scoring terms take the key SIGNATURE's collection, not the tonic (correctness re-baseline, user-ratified)",
+    "file": "docs/scoring_model.md",
+    "hunk_header": "-579 +591",
+    "hunk_ordinal_in_the_commit": 4,
+    "role": "specification-or-docs",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     1
+    ],
+    "carry_vector": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 10235d5547865c899fb088423fcf3a151fa9520e --no-color -U0 -- docs/scoring_model.md"
+   },
+   {
+    "commit": "b3d6c0f03a18a72d87341ad89220a81e090039ba",
+    "date": "2026-07-16T15:40:19+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "feat(composing): OI-170 — default-OFF instrumentation + signature-mask A/B for the THREE remaining collection-membership sites (measurement build; NO fix promoted)",
+    "file": "docs/scoring_model.md",
+    "hunk_header": "-297,0 +298,25",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "specification-or-docs",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     25
+    ],
+    "carry_vector": [
+     0,
+     22,
+     0,
+     22
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show b3d6c0f03a18a72d87341ad89220a81e090039ba --no-color -U0 -- docs/scoring_model.md"
+   },
+   {
+    "commit": "06d4318bd1f322d055d04622681587c44a01bffb",
+    "date": "2026-07-18T19:52:09+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "docs: ratify principles #20-#24 + joint-estimator plan amendments (OI-176...OI-181), user-ratified 2026-07-18",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-2,0 +3,8",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     8
+    ],
+    "carry_vector": [
+     0,
+     7,
+     0,
+     7
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 06d4318bd1f322d055d04622681587c44a01bffb --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "06d4318bd1f322d055d04622681587c44a01bffb",
+    "date": "2026-07-18T19:52:09+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "docs: ratify principles #20-#24 + joint-estimator plan amendments (OI-176...OI-181), user-ratified 2026-07-18",
+    "file": "CLAUDE.md",
+    "hunk_header": "-56,0 +57,27",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     27
+    ],
+    "carry_vector": [
+     0,
+     26,
+     0,
+     26
+    ],
+    "look_alike_signals": [
+     "example-updated-to-behaviour",
+     "rule-force-word",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 06d4318bd1f322d055d04622681587c44a01bffb --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "06d4318bd1f322d055d04622681587c44a01bffb",
+    "date": "2026-07-18T19:52:09+02:00",
+    "stratum": "S1-open-items-register",
+    "commit_subject": "docs: ratify principles #20-#24 + joint-estimator plan amendments (OI-176...OI-181), user-ratified 2026-07-18",
+    "file": "CLAUDE.md",
+    "hunk_header": "-82 +109,4",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     4
+    ],
+    "carry_vector": [
+     1,
+     4,
+     1,
+     4
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 06d4318bd1f322d055d04622681587c44a01bffb --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "51d4f6dcf34121a2598750c41b808c2f895ae674",
+    "date": "2026-07-18T19:56:41+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "docs(cc): split STATUS.md + cowork_handoff.md into lean active must-reads + verbatim archives (cc_instruction_doc_split.md)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-168 +168,2",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     2
+    ],
+    "carry_vector": [
+     1,
+     2,
+     1,
+     2
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "cc-authored",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 51d4f6dcf34121a2598750c41b808c2f895ae674 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "51d4f6dcf34121a2598750c41b808c2f895ae674",
+    "date": "2026-07-18T19:56:41+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "docs(cc): split STATUS.md + cowork_handoff.md into lean active must-reads + verbatim archives (cc_instruction_doc_split.md)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-170 +171,3",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     3
+    ],
+    "carry_vector": [
+     1,
+     3,
+     1,
+     3
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "cc-authored",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 51d4f6dcf34121a2598750c41b808c2f895ae674 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "4f2c5ddfdb0ecd2e4363982b0dc722dd9e7e52e0",
+    "date": "2026-07-19T10:17:36+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "docs(cc): research-paper library link-rot mitigation — private repo, nothing redistributed",
+    "file": "docs/research_papers/BIBLIOGRAPHY.md",
+    "hunk_header": "-0,0 +1,99",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "specification-or-docs",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "A",
+    "change_shape": "new-file-content",
+    "lines_removed_added": [
+     0,
+     99
+    ],
+    "carry_vector": [
+     0,
+     87,
+     0,
+     87
+    ],
+    "look_alike_signals": [
+     "example-updated-to-behaviour",
+     "rule-force-word"
+    ],
+    "authoring_side": "cc-authored",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4f2c5ddfdb0ecd2e4363982b0dc722dd9e7e52e0 --no-color -U0 -- docs/research_papers/BIBLIOGRAPHY.md"
+   },
+   {
+    "commit": "4f2c5ddfdb0ecd2e4363982b0dc722dd9e7e52e0",
+    "date": "2026-07-19T10:17:36+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "docs(cc): research-paper library link-rot mitigation — private repo, nothing redistributed",
+    "file": "docs/research_papers/README.md",
+    "hunk_header": "-0,0 +1,27",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "specification-or-docs",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "A",
+    "change_shape": "new-file-content",
+    "lines_removed_added": [
+     0,
+     27
+    ],
+    "carry_vector": [
+     0,
+     21,
+     0,
+     21
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "cc-authored",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4f2c5ddfdb0ecd2e4363982b0dc722dd9e7e52e0 --no-color -U0 -- docs/research_papers/README.md"
+   },
+   {
+    "commit": "1e35415ee06b77e001aeea3b947369a2016573b3",
+    "date": "2026-07-25T20:56:48+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "composing: joint estimator Task B — the L1 fact-surface additive extension (notatedNotes)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-768 +768",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     1
+    ],
+    "carry_vector": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 1e35415ee06b77e001aeea3b947369a2016573b3 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "205dd0843aff3e41e3da3ff7e8e6e4147b320d74",
+    "date": "2026-07-26T11:32:13+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "composing: joint estimator — THE OI-178 ADOPTION (batch/corpus surface; staged scope, user-ratified option 1)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-10,0 +11,25",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     25
+    ],
+    "carry_vector": [
+     0,
+     24,
+     0,
+     24
+    ],
+    "look_alike_signals": [
+     "banner-or-status",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 205dd0843aff3e41e3da3ff7e8e6e4147b320d74 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "205dd0843aff3e41e3da3ff7e8e6e4147b320d74",
+    "date": "2026-07-26T11:32:13+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "composing: joint estimator — THE OI-178 ADOPTION (batch/corpus surface; staged scope, user-ratified option 1)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-219 +219,3",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     3
+    ],
+    "carry_vector": [
+     1,
+     3,
+     1,
+     3
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 205dd0843aff3e41e3da3ff7e8e6e4147b320d74 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "205dd0843aff3e41e3da3ff7e8e6e4147b320d74",
+    "date": "2026-07-26T11:32:13+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "composing: joint estimator — THE OI-178 ADOPTION (batch/corpus surface; staged scope, user-ratified option 1)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-228,7 +230,28",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     7,
+     28
+    ],
+    "carry_vector": [
+     6,
+     25,
+     6,
+     25
+    ],
+    "look_alike_signals": [
+     "banner-or-status",
+     "measured-value-or-provenance",
+     "preserved-former-wording"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 205dd0843aff3e41e3da3ff7e8e6e4147b320d74 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "205dd0843aff3e41e3da3ff7e8e6e4147b320d74",
+    "date": "2026-07-26T11:32:13+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "composing: joint estimator — THE OI-178 ADOPTION (batch/corpus surface; staged scope, user-ratified option 1)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-300,8 +323,13",
+    "hunk_ordinal_in_the_commit": 3,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     8,
+     13
+    ],
+    "carry_vector": [
+     8,
+     13,
+     8,
+     13
+    ],
+    "look_alike_signals": [
+     "banner-or-status",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 205dd0843aff3e41e3da3ff7e8e6e4147b320d74 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "00c0df81c5682fbda0515a81cea0c3c541e8ee23",
+    "date": "2026-07-26T13:06:32+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "ratification record: notation-layer adoption increment decision surface + the decision-neutrality principles corollary (user, 2026-07-26); rows OI-193/OI-194",
+    "file": "CLAUDE.md",
+    "hunk_header": "-105,0 +106,14",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     14
+    ],
+    "carry_vector": [
+     0,
+     13,
+     0,
+     13
+    ],
+    "look_alike_signals": [
+     "rule-force-word",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 00c0df81c5682fbda0515a81cea0c3c541e8ee23 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "00c0df81c5682fbda0515a81cea0c3c541e8ee23",
+    "date": "2026-07-26T13:06:32+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "ratification record: notation-layer adoption increment decision surface + the decision-neutrality principles corollary (user, 2026-07-26); rows OI-193/OI-194",
+    "file": "CLAUDE.md",
+    "hunk_header": "-112 +126,3",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     3
+    ],
+    "carry_vector": [
+     1,
+     3,
+     1,
+     3
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 00c0df81c5682fbda0515a81cea0c3c541e8ee23 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "83fbb9e66156d2c0fc4ad6b2f98cad4ed46e4146",
+    "date": "2026-07-26T15:00:31+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "composing: joint estimator — Decision D1 EXECUTED (fitted tables + selected weight vector embedded as provenance-stamped generated source)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-18,3 +18,14",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     3,
+     14
+    ],
+    "carry_vector": [
+     3,
+     14,
+     3,
+     14
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 83fbb9e66156d2c0fc4ad6b2f98cad4ed46e4146 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "83fbb9e66156d2c0fc4ad6b2f98cad4ed46e4146",
+    "date": "2026-07-26T15:00:31+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "composing: joint estimator — Decision D1 EXECUTED (fitted tables + selected weight vector embedded as provenance-stamped generated source)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-24 +35,2",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     2
+    ],
+    "carry_vector": [
+     1,
+     2,
+     1,
+     2
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 83fbb9e66156d2c0fc4ad6b2f98cad4ed46e4146 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "56439ebad7f5010013cec41eab834d39189f52f6",
+    "date": "2026-07-26T18:26:30+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "joint: posterior slice on the C++ module surface + bit-identical parity driver (contract §3.3 group (i))",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-44,0 +45,22",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     22
+    ],
+    "carry_vector": [
+     0,
+     21,
+     0,
+     21
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 56439ebad7f5010013cec41eab834d39189f52f6 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "e336bd034837cfc4e81cf1c5bb4b00d611c283b4",
+    "date": "2026-07-26T21:43:07+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "joint: the §3.4 un-rounded modal reading + establishment + doc sync (contract §3.4; dormant)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-66,0 +67,27",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     27
+    ],
+    "carry_vector": [
+     0,
+     26,
+     0,
+     26
+    ],
+    "look_alike_signals": [
+     "removing-redundancy",
+     "rule-force-word",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show e336bd034837cfc4e81cf1c5bb4b00d611c283b4 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "6e71b3ceff61dcdf9c79cfb722111fa95e79e0c8",
+    "date": "2026-07-27T04:31:23+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "joint: seams part 1 — the record-producing entry + the two §1 seam views (dormant; contract §1; dispatch cc_instruction_notation_seams_1.md Task 2)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-90,3 +90,8",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     3,
+     8
+    ],
+    "carry_vector": [
+     3,
+     8,
+     3,
+     8
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 6e71b3ceff61dcdf9c79cfb722111fa95e79e0c8 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "6e71b3ceff61dcdf9c79cfb722111fa95e79e0c8",
+    "date": "2026-07-27T04:31:23+02:00",
+    "stratum": "S2-status-handoff-doc-split",
+    "commit_subject": "joint: seams part 1 — the record-producing entry + the two §1 seam views (dormant; contract §1; dispatch cc_instruction_notation_seams_1.md Task 2)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-93,0 +99,22",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     22
+    ],
+    "carry_vector": [
+     0,
+     21,
+     0,
+     21
+    ],
+    "look_alike_signals": [
+     "example-updated-to-behaviour",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 6e71b3ceff61dcdf9c79cfb722111fa95e79e0c8 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "1e32b5e92e2594d3a8d1752fcea051dab16f60a7",
+    "date": "2026-07-27T12:44:50+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "register split: OPEN_ITEMS.md -> lean index + open_items/ per-item detail files (user-ratified option 1, 2026-07-26; byte-reconciled, status authoritative in the index)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-133 +133",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     1
+    ],
+    "carry_vector": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 1e32b5e92e2594d3a8d1752fcea051dab16f60a7 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "1e32b5e92e2594d3a8d1752fcea051dab16f60a7",
+    "date": "2026-07-27T12:44:50+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "register split: OPEN_ITEMS.md -> lean index + open_items/ per-item detail files (user-ratified option 1, 2026-07-26; byte-reconciled, status authoritative in the index)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-135,6 +135,12",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     6,
+     12
+    ],
+    "carry_vector": [
+     6,
+     12,
+     6,
+     12
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 1e32b5e92e2594d3a8d1752fcea051dab16f60a7 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "1e32b5e92e2594d3a8d1752fcea051dab16f60a7",
+    "date": "2026-07-27T12:44:50+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "register split: OPEN_ITEMS.md -> lean index + open_items/ per-item detail files (user-ratified option 1, 2026-07-26; byte-reconciled, status authoritative in the index)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-142,2 +148,3",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     2,
+     3
+    ],
+    "carry_vector": [
+     2,
+     3,
+     2,
+     3
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 1e32b5e92e2594d3a8d1752fcea051dab16f60a7 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "b2c71fb6e3b29d1ae1b7595a6875199389604b75",
+    "date": "2026-07-27T14:31:36+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P-strings Task 3+4: the permanent inference↔presentation boundary guard + doc sync (dispatch cc_instruction_notation_pstrings.md)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-123,0 +124,22",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     22
+    ],
+    "carry_vector": [
+     0,
+     21,
+     0,
+     21
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show b2c71fb6e3b29d1ae1b7595a6875199389604b75 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "599eebd45eb5a050e1901ef9111a7b5890716817",
+    "date": "2026-07-27T16:23:03+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P4 Task 3+4: the tuning region record path + OI-182 EXECUTED + doc sync",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-145,0 +146,25",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     25
+    ],
+    "carry_vector": [
+     0,
+     24,
+     0,
+     24
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": true,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 599eebd45eb5a050e1901ef9111a7b5890716817 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "903125a5dc79b9ac80865f82b79fa15cd604bdc5",
+    "date": "2026-07-27T17:23:27+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 note-seam Task 3+4: the three consumers on the carriage + structural pins + doc sync",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-170,0 +171,27",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     27
+    ],
+    "carry_vector": [
+     0,
+     26,
+     0,
+     26
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 903125a5dc79b9ac80865f82b79fa15cd604bdc5 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "89412b48b27e2cfe70254e5a2199d6c3c681958c",
+    "date": "2026-07-27T20:37:32+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P6 Task 3+4: the classified diff + doc sync (the switch evidence)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-107 +107,7",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     7
+    ],
+    "carry_vector": [
+     1,
+     7,
+     1,
+     7
+    ],
+    "look_alike_signals": [
+     "example-updated-to-behaviour"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 89412b48b27e2cfe70254e5a2199d6c3c681958c --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "89412b48b27e2cfe70254e5a2199d6c3c681958c",
+    "date": "2026-07-27T20:37:32+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P6 Task 3+4: the classified diff + doc sync (the switch evidence)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-197,0 +204,21",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     21
+    ],
+    "carry_vector": [
+     0,
+     20,
+     0,
+     20
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 89412b48b27e2cfe70254e5a2199d6c3c681958c --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17",
+    "date": "2026-07-27T21:11:48+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P7: partition close-out — completeness verified, docs consolidated (pre-switch state)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-100,2 +100,11",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     2,
+     11
+    ],
+    "carry_vector": [
+     2,
+     10,
+     2,
+     10
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17",
+    "date": "2026-07-27T21:11:48+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P7: partition close-out — completeness verified, docs consolidated (pre-switch state)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-121,2 +130,3",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     2,
+     3
+    ],
+    "carry_vector": [
+     2,
+     3,
+     2,
+     3
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17",
+    "date": "2026-07-27T21:11:48+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P7: partition close-out — completeness verified, docs consolidated (pre-switch state)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-130,3 +140,2",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     3,
+     2
+    ],
+    "carry_vector": [
+     3,
+     2,
+     3,
+     2
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17",
+    "date": "2026-07-27T21:11:48+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P7: partition close-out — completeness verified, docs consolidated (pre-switch state)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-152,2 +161,2",
+    "hunk_ordinal_in_the_commit": 3,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     2,
+     2
+    ],
+    "carry_vector": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17",
+    "date": "2026-07-27T21:11:48+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P7: partition close-out — completeness verified, docs consolidated (pre-switch state)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-177,2 +186,2",
+    "hunk_ordinal_in_the_commit": 4,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     2,
+     2
+    ],
+    "carry_vector": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17",
+    "date": "2026-07-27T21:11:48+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P7: partition close-out — completeness verified, docs consolidated (pre-switch state)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-199,4 +208",
+    "hunk_ordinal_in_the_commit": 5,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     4,
+     1
+    ],
+    "carry_vector": [
+     4,
+     1,
+     4,
+     1
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17",
+    "date": "2026-07-27T21:11:48+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P7: partition close-out — completeness verified, docs consolidated (pre-switch state)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-204,2 +210,2",
+    "hunk_ordinal_in_the_commit": 6,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     2,
+     2
+    ],
+    "carry_vector": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17",
+    "date": "2026-07-27T21:11:48+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "notation seams-2 P7: partition close-out — completeness verified, docs consolidated (pre-switch state)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-223,0 +230,13",
+    "hunk_ordinal_in_the_commit": 7,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     13
+    ],
+    "carry_vector": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "look_alike_signals": [
+     "banner-or-status",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 4967d6b724ba8bcb7dd0cbdfbc0ab4898bb66a17 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "2a81af273ee9b9339736f6e03b0fc96b55bc5005",
+    "date": "2026-07-27T22:58:27+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "THE NOTATION SWITCH: the record path is the production notation analysis (user-ratified 2026-07-27) — flag default ON; goldens refreshed against the P6-classified record output; staged scope CLOSED",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-100,8 +100,9",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     8,
+     9
+    ],
+    "carry_vector": [
+     8,
+     9,
+     8,
+     9
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 2a81af273ee9b9339736f6e03b0fc96b55bc5005 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "2a81af273ee9b9339736f6e03b0fc96b55bc5005",
+    "date": "2026-07-27T22:58:27+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "THE NOTATION SWITCH: the record path is the production notation analysis (user-ratified 2026-07-27) — flag default ON; goldens refreshed against the P6-classified record output; staged scope CLOSED",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-231,12 +232,18",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     12,
+     18
+    ],
+    "carry_vector": [
+     12,
+     18,
+     12,
+     18
+    ],
+    "look_alike_signals": [
+     "banner-or-status",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 2a81af273ee9b9339736f6e03b0fc96b55bc5005 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "2a81af273ee9b9339736f6e03b0fc96b55bc5005",
+    "date": "2026-07-27T22:58:27+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "THE NOTATION SWITCH: the record path is the production notation analysis (user-ratified 2026-07-27) — flag default ON; goldens refreshed against the P6-classified record output; staged scope CLOSED",
+    "file": "CLAUDE.md",
+    "hunk_header": "-269,4 +269,16",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     4,
+     16
+    ],
+    "carry_vector": [
+     4,
+     16,
+     4,
+     16
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 2a81af273ee9b9339736f6e03b0fc96b55bc5005 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "5135764ed7f8d7b992ed5f1c3b4c2fecab7f5d35",
+    "date": "2026-07-28T12:53:29+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "OI-206 analysis-cost Task 6: dated notes + doc sync (READ-ONLY)",
+    "file": "docs/score_inventory.md",
+    "hunk_header": "-234 +234,18",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "specification-or-docs",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     18
+    ],
+    "carry_vector": [
+     1,
+     16,
+     1,
+     16
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "unmarked-in-the-commit-subject",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 5135764ed7f8d7b992ed5f1c3b4c2fecab7f5d35 --no-color -U0 -- docs/score_inventory.md"
+   },
+   {
+    "commit": "8c8e57eab9c031bb126f2521f378382e8fead1e6",
+    "date": "2026-07-28T20:07:02+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "docs(cc): decision harvest — register rows + OI-207/208 notes (Task 0)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-720,0 +721,19",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     19
+    ],
+    "carry_vector": [
+     0,
+     19,
+     0,
+     19
+    ],
+    "look_alike_signals": [
+     "rule-force-word",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "cc-authored",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 8c8e57eab9c031bb126f2521f378382e8fead1e6 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "8c8e57eab9c031bb126f2521f378382e8fead1e6",
+    "date": "2026-07-28T20:07:02+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "docs(cc): decision harvest — register rows + OI-207/208 notes (Task 0)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-724,0 +744,51",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     51
+    ],
+    "carry_vector": [
+     0,
+     51,
+     0,
+     51
+    ],
+    "look_alike_signals": [
+     "rule-force-word",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "cc-authored",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 8c8e57eab9c031bb126f2521f378382e8fead1e6 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "80ad92f9d3dae1d0d51a696e402734215529ac24",
+    "date": "2026-08-01T12:40:46+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "docs(cc): decisions register — Task 1 corrections (provenance re-aims, anchors, rewordings, derivation flags, STATUS order)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-795,0 +796,14",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     14
+    ],
+    "carry_vector": [
+     0,
+     13,
+     0,
+     13
+    ],
+    "look_alike_signals": [
+     "rule-force-word"
+    ],
+    "authoring_side": "cc-authored",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show 80ad92f9d3dae1d0d51a696e402734215529ac24 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4",
+    "date": "2026-08-01T23:46:58+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "docs(cowork): the decisions register RATIFIED and made the LIVING SURFACE; OI-234/OI-241 ruled; the four-perspective review pass rowed (OI-243..OI-257)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-721,0 +722,12",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     12
+    ],
+    "carry_vector": [
+     0,
+     10,
+     0,
+     10
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance",
+     "preserved-former-wording"
+    ],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4",
+    "date": "2026-08-01T23:46:58+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "docs(cowork): the decisions register RATIFIED and made the LIVING SURFACE; OI-234/OI-241 ruled; the four-perspective review pass rowed (OI-243..OI-257)",
+    "file": "ARCHITECTURE.md",
+    "hunk_header": "-956,0 +969,27",
+    "hunk_ordinal_in_the_commit": 1,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     27
+    ],
+    "carry_vector": [
+     0,
+     23,
+     0,
+     23
+    ],
+    "look_alike_signals": [
+     "example-updated-to-behaviour",
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4 --no-color -U0 -- ARCHITECTURE.md"
+   },
+   {
+    "commit": "a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4",
+    "date": "2026-08-01T23:46:58+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "docs(cowork): the decisions register RATIFIED and made the LIVING SURFACE; OI-234/OI-241 ruled; the four-perspective review pass rowed (OI-243..OI-257)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-151,0 +152,15",
+    "hunk_ordinal_in_the_commit": 2,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     15
+    ],
+    "carry_vector": [
+     0,
+     13,
+     0,
+     13
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4",
+    "date": "2026-08-01T23:46:58+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "docs(cowork): the decisions register RATIFIED and made the LIVING SURFACE; OI-234/OI-241 ruled; the four-perspective review pass rowed (OI-243..OI-257)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-189 +204",
+    "hunk_ordinal_in_the_commit": 3,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "modification",
+    "lines_removed_added": [
+     1,
+     1
+    ],
+    "carry_vector": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4",
+    "date": "2026-08-01T23:46:58+02:00",
+    "stratum": "S3-open-items-register-split",
+    "commit_subject": "docs(cowork): the decisions register RATIFIED and made the LIVING SURFACE; OI-234/OI-241 ruled; the four-perspective review pass rowed (OI-243..OI-257)",
+    "file": "CLAUDE.md",
+    "hunk_header": "-192,0 +208,2",
+    "hunk_ordinal_in_the_commit": 4,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     2
+    ],
+    "carry_vector": [
+     0,
+     2,
+     0,
+     2
+    ],
+    "look_alike_signals": [],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": false,
+    "retrieve": "git show a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4 --no-color -U0 -- CLAUDE.md"
+   },
+   {
+    "commit": "b006dc15b5f696f2fc86ad72b97fae58d2119cd7",
+    "date": "2026-08-02T00:00:30+02:00",
+    "stratum": "S4-D231-phase-1",
+    "commit_subject": "docs(cowork): the three-phase sequencing rule ratified (D-231): specification completion, then issue-exhaustion, then ONE fix plan - no fix design before",
+    "file": "CLAUDE.md",
+    "hunk_header": "-826,0 +827,19",
+    "hunk_ordinal_in_the_commit": 0,
+    "role": "governing",
+    "surface_class": "prose",
+    "file_status_in_the_commit": "M",
+    "change_shape": "addition-only",
+    "lines_removed_added": [
+     0,
+     19
+    ],
+    "carry_vector": [
+     0,
+     18,
+     0,
+     18
+    ],
+    "look_alike_signals": [
+     "measured-value-or-provenance"
+    ],
+    "authoring_side": "cowork-authored, CC-committed",
+    "in_a_preserved_former_wording_context": false,
+    "added_by_the_ruled_cut": true,
+    "retrieve": "git show b006dc15b5f696f2fc86ad72b97fae58d2119cd7 --no-color -U0 -- CLAUDE.md"
+   }
+  ]
+ },
+ "reconciliation_against_the_input_artifacts_own_totals": {
+  "flags_by_stratum": "reconciles exactly",
+  "flags_by_document_role": "reconciles exactly",
+  "★_what_a_disagreement_would_have_meant": "The two inputs come from one generator in one act. A difference between what this tool counts and what that artifact publishes of itself would mean one of the two files had been edited by hand since the other was written, which is why it is a STOP here rather than a reported difference."
+ },
+ "P1_the_registered_expectation_graded": {
+  "★_what_this_grading_is_and_is_not": "The expectation is the ad-hoc split the decision surface declared as assumption A1. It carries no authority. Where a cell differs, the derived value governs and the difference is a FINDING published per cell — it is never reconciled towards the expectation, and nothing here is adjusted to make a cell agree.",
+  "flagged_hunks_by_stratum": {
+   "per_cell": {
+    "S1-open-items-register": {
+     "registered_expectation": 705,
+     "derived": 705,
+     "agrees": true,
+     "difference_derived_minus_expectation": 0
+    },
+    "S2-status-handoff-doc-split": {
+     "registered_expectation": 378,
+     "derived": 378,
+     "agrees": true,
+     "difference_derived_minus_expectation": 0
+    },
+    "S3-open-items-register-split": {
+     "registered_expectation": 1279,
+     "derived": 1279,
+     "agrees": true,
+     "difference_derived_minus_expectation": 0
+    },
+    "S4-D231-phase-1": {
+     "registered_expectation": 19836,
+     "derived": 19836,
+     "agrees": true,
+     "difference_derived_minus_expectation": 0
+    }
+   },
+   "every_cell_agrees": true
+  },
+  "specification_bearing_flagged_by_stratum": {
+   "per_cell": {
+    "S1-open-items-register": {
+     "registered_expectation": 22,
+     "derived": 22,
+     "agrees": true,
+     "difference_derived_minus_expectation": 0
+    },
+    "S2-status-handoff-doc-split": {
+     "registered_expectation": 17,
+     "derived": 17,
+     "agrees": true,
+     "difference_derived_minus_expectation": 0
+    },
+    "S3-open-items-register-split": {
+     "registered_expectation": 28,
+     "derived": 28,
+     "agrees": true,
+     "difference_derived_minus_expectation": 0
+    },
+    "S4-D231-phase-1": {
+     "registered_expectation": 247,
+     "derived": 247,
+     "agrees": true,
+     "difference_derived_minus_expectation": 0
+    }
+   },
+   "every_cell_agrees": true
+  }
+ },
+ "what_this_does_NOT_do": "It restores nothing, reverts nothing, corrects nothing and resolves nothing. It makes no comparison against the code in either direction. It takes no view on the period question, on whether any enumerated change should have happened, or on what the screen will find. It closes no open-items row and writes no register entry."
+}
