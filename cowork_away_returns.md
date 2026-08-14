@@ -9795,3 +9795,264 @@ names and on nothing else, and **the row it was meant to unblock does not close*
 file carries further statements of the same defect that the licence does not reach, which is a
 condition rather than a doubt and is written at the row so the next act does not have to rediscover
 it.
+
+---
+
+# ═══ THE CLASS LICENCE — the class enumerated at the code, four comments corrected, one member found in a PRODUCTION HEADER no account had named, and [[OI-315]] FLIPPED (dispatch `cc_instruction_oi315_class_licence.md`, performed 2026-08-13) ═══
+
+> The user's SECOND ratified `src/` licence, bounded by a class enumerated before it was spent. The
+> sections above are earlier batches' and are not rewritten. **Acts are dated from the clock:
+> 2026-08-13. NO STOP rule fired**, and §0e's six conditions are answered one by one in the
+> self-check below.
+
+## 4 (continued). The start state, recorded before any act
+
+**The working tree carried no tracked modification at all** — enumerated through the sanctioned tool
+before anything was read for the edit, and again before each commit. No golden, nothing under
+`tools/corpus/` or `tools/robust_stop/` at any point.
+
+**The guard set at the opening**, run before any file was read for the edit: **exactly the two
+standing recorded reds and nothing else** — the filing-convention application's `--check` failure
+([[OI-372]]) and the runner's STOP on a derived guard candidate with no authored invocation
+([[OI-373]]), the STOP naming the same tool that row names. **The guard state's own artifact
+re-derived at this tree**, so this batch inherited no regeneration debt — and that fact is what later
+answers the [[OI-374]] hazard at the one place this batch had to write to that artifact.
+
+## 1 (continued). What needs the user
+
+### ★ (i) [[OI-315]] NEEDS NOTHING FURTHER — IT IS CLOSED, AND THE CHOICE THE PREVIOUS BATCH PUT TO THE USER IS SPENT
+
+The previous close left one thing on this row and made it a choice rather than a report: a further
+licence, a ruling that the sibling comments were outside the row, or waiting for the freeze to lift.
+**The user took the first**, and the licence has now been spent on exactly the class it names.
+**Both halves' closing conditions are met, the held set is empty, and the row is flipped.**
+
+### ★ (ii) A THIRD STANDING CC FINDING IS HELD FOR COWORK, AND IT IS NOT ROWED HERE
+
+The two findings CC was already holding are unchanged. **A third joins them**, found while grading
+the class and established at the code rather than left as a suspicion: **the `KeyResolveDump`
+diagnostic structure documents its `candidates` field as *"(empty on anchor/fallback)"*, and BOTH
+halves of that clause are wrong at HEAD.** *"anchor"* names the path Stage 4b-i removed — which the
+same structure's own `pathTaken` comment records two entries above it — and *"empty on fallback"* is
+**false on the ordinary fallback**: `analyzeKeyMode` clears the dump at entry and returns early ONLY
+when the window has no notes at all, so whenever the insufficient-pitch-classes fallback is taken
+with notes present — which is exactly what the frozen test file's own fallback fixture is, a unison —
+the loop has already filled `candidates` before the fallback check reads it. **It is REPORTED AND NOT
+CORRECTED** because the licence does not reach it: the clause's subject is a diagnostic field's
+contract, not the piece-start shortcut, and §0d says a member outside the enumerated class is
+reported, never corrected. **It is not rowed either**, on the shape this record already uses — a
+finding surfaced inside a dispatch sent for something else is the user's to place, and whether this
+one is worth fixing is amended #10's test, which is not this dispatch's to apply.
+
+**★ ONE CORRECTION OF RECORD, MADE HERE BECAUSE THE CHECK CAME AFTER THE COMMIT.** The clause written
+into [[OI-315]]'s resolved cell and into its detail note says this finding *"is not established at
+HEAD"*. That was true when it was written and it is not false now — a clause established FALSE is
+certainly not established — but **it understates what the check then found**, and this paragraph is
+the stronger statement. Nothing else in either surface depends on it.
+
+**Nothing else is added to what was already waiting**, and everything the previous batches left is
+left where it was — [[OI-179]] included, which stays **OPEN** and **GATES**. [[OI-274]]'s banner half,
+the `docs/scoring_model.md` pass and [[OI-207]] are untouched, and [[OI-321]] stays open on its parked
+item, which is a user ruling.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+### ★ (i) THE ROW'S ENUMERATION WAS NOT SHORT BY A COUNT — IT WAS WRONG ABOUT WHERE THE STATEMENT STOOD
+
+**This is the finding of the batch, and it is the vindication of A1's own instruction** — *enumerate
+at the code, not from any row's list.* Every account of this row placed the remaining `src/` residue
+**in the frozen test file**: the row's own text, its detail file, its sizing's second half, the
+false-statements pass, and the batch that spent the first licence. **One member of the class is in a
+PRODUCTION HEADER** — `keyresolver.h`'s `prevResult` parameter comment, which told a reader the
+piece-start shortcut *"may apply"* a few lines below that same header's own note that Stage 4b-i
+removed it. **A header contradicting itself inside one file is the exact defect this row was opened
+for**, recorded there of a design document; it was also standing in the production source the row
+never looked at. **Had the class been taken from the row's list, the licence would have been spent
+and the statement would still be in the tree.**
+
+### ★ (ii) THE TWO ACCOUNTS OF THE TEST FILE DO ENUMERATE THE SAME SET, AND THAT IS NOW ESTABLISHED RATHER THAN LEFT OPEN
+
+The previous close recorded that the false-statements pass reported **three** stale comments in that
+file where the row names one, and declared that **whether the two accounts enumerate the same set is
+not established**. Read at the code: the file carries exactly **three** comments of the class besides
+the one the row names, and they are the same three that batch read while locating its site. That is
+consistent with the pass's sentence read as *three besides the named one*, and off by one against the
+file on the other reading. **The pass listed no identities, so what IT counted remains its own** — no
+claim is made about that. What is established is the set at HEAD, which is what the closing act
+needed.
+
+### ★ (iii) TWO SHELL READS WERE ATTEMPTED AT REPOSITORY PATHS AND THE GUARD DENIED BOTH — DECLARED, NOT DEFENDED
+
+**CC's own, at this batch's opening:** a listing and a search, each aimed at a repository path, each
+**DENIED by the guard**, and **neither retried in another dialect** — the file tools answered the same
+questions and every read of repository content in this batch went through them. This is recorded
+rather than glossed because the guard's silence on an unwatched surface is not compliance (#19), and
+a denial that goes unreported reads as a batch that never reached for the wrong tool.
+
+**★ COWORK'S TWO DECLARED SHELL READS, CARRIED HERE BECAUSE THE DISPATCH'S BANNER PUTS THEM HERE.**
+After the last close was written, Cowork made **two shell reads of a repository file** — `head -4` and
+`head -2` on `cc_instruction_oi315_licence_and_cells.md` — **at the user's explicit direction**, to
+test whether a guard he had attempted was in place, on a file Cowork itself authored so that nothing
+could rest on the result. **It was not in place; the reads succeeded.** Recorded as **Cowork's own**,
+beside the branch-tip lapse the previous close already carries, and **not rowed**.
+
+## 3 (continued). Per-task log — the class licence
+
+### Task 1 — COMPLETE. The class enumerated and graded at the code; read-only, no commit
+
+**A1 HOLDS and its STOP did not fire.** The class was enumerated by searching `src/` whole for the
+mechanism's own names and for the increment that removed it, then reading each site in its enclosing
+declaration; the resolver function was read whole beside it. **Four members were found.** A1's check
+asks for two reports and both are made: **the member the row does not name** is the `prevResult`
+parameter comment in `keyresolver.h`, reported at §2(i) above as the batch's finding; and **the site
+the row DOES name no longer carries the statement**, having been corrected under the first licence,
+which is what the row's own most recent clause already records.
+
+**A2 HOLDS. Every member graded MECHANICAL, and the grading is stated per member** — the comment
+plainly asserts the shortcut as live, and `resolveKeyAndModeRanked` plainly carries no piece-start
+branch, its only early return being the insufficient-pitch-classes fallback, gated on the window's
+distinct-pitch-class count and on nothing about the tick and nothing about the key signature. **THE
+HELD SET IS EMPTY:** no member's falsity required judgment about the analysis, which is Ruling 16's
+own test for holding one.
+
+**One candidate was graded OUT OF THE CLASS and is reported rather than corrected** — the
+`KeyResolveDump::candidates` clause at §1(ii) above. Its subject is a diagnostic field's contract,
+not the shortcut; and the finding riding on it is a different subject again, which the licence does
+not reach in either direction. **§0e's first condition — the enumeration reaching a file or a subject
+the class's plain reading does not cover — did not fire, and the production header is why that is
+worth stating:** the class is defined by SUBJECT and not by file, and its plain reading is *every
+comment under `src/`*, so a header comment stating the shortcut as live is squarely inside it. What
+is outside is a comment about something else, which is the one this batch left.
+
+### Task 2 — COMPLETE. Four comments corrected, comment-only established at the commit object. `7b802ec4a5`
+
+**A3 HOLDS, and the ORDER IS DECLARED RATHER THAN GLOSSED.** The comment-only property was
+established **mechanically at the COMMIT OBJECT** — the commit read back by its own hash, every
+changed line tested for a comment marker: **every changed line a comment line, zero otherwise, and
+exactly two paths**. It was **not** established from a working-tree diff, which is precisely the read
+**D-253** forbids. The check runs after the commit and **before the push**, which is the act that
+would have rested on it; had it failed, nothing would have left this tree, and §0e's
+comment-only condition would have halted the batch instead.
+
+**What each correction says.** Each stands where the statement stood and states what the code does
+instead — the hysteresis block guards on `prevResult != nullptr`, the lookback window start clamps to
+tick 0, the opening is note-based and the declared mode reaches it only as the small hint — **with the
+former wording quoted inside the corrected comment (#12)**, so no reader meets a correction sitting
+sections away from what it refutes. **No fifth `src/` edit under any justification.**
+
+### Task 3 — COMPLETE. Both halves met, the row FLIPPED, the derived views moved by their own generators. `568d3c9863`
+
+**A4 — the condition each half met, stated per half.** **FIRST HALF, the items the row names: MET** —
+the specification and the register entry on 2026-08-04; the design document's self-contradiction and
+the two dated reports, bannered with their bodies untouched, at `d9f674e0ec`; the one `src/` comment
+the row names at `65f2f2b86f`. **SECOND HALF, the further `src/` comments of the same class: MET** at
+this batch's own commit. **The held set is empty**, so A4's other branch — the row stays open and the
+report says so — does not arise, and the row flips whole.
+
+**The former status is preserved BYTE-VERBATIM IN PLACE (#12)** — the resolution is written in front
+of the former cell and the former cell is quoted rather than retyped, so nothing it said while it
+stood can have drifted in the copying. **The detail file gains a dated note and NO status**, which is
+the whole of what rule (d) allows it, and the index lint passes: the cell opens with the canonical
+resolved mark, so every derivation reads the same state.
+
+**★ THE DERIVED VIEWS WERE REGENERATED BY THEIR OWN GENERATORS AND NEVER REPAIRED BY HAND, and the
+movement is exactly one row.** A closing row leaves the derived gating population, so the two tools
+carrying an authored judgment about it STOP until that judgment is moved out **whole** (#12,
+**D-648**): the apparatus declaration's verdict and the sizing pass's sizing each moved into that
+tool's own retired block with the reason it left, and the apparatus declaration, the completion
+inventory, the finish line and the sizing pass then re-derived. **Established at the artifacts rather
+than asserted:** the row now appears in the apparatus declaration only under its retired verdicts, and
+in the sizing pass only under its retired sizings. **The finish line's falsification test runs inside
+its own build before anything is written, and it passed.**
+
+**★ THE SIZING'S RETIREMENT RECORDS THE DEPARTURE RATHER THAN SMOOTHING IT.** Its main half named
+exactly the act that was performed, and predicted correctly that the load-bearing surface would need
+a qualification rather than a deletion. **Its second half under-named the work** by the one member no
+account had found. **The SIZE it predicted nevertheless held**, and the record says so: all four
+members are comment corrections, and the whole act landed comment-only.
+
+**One further artifact was written to, and the reason is stated because it was a judgment.** The
+guard set's own state artifact stopped re-deriving once the regenerated tools' captured output moved,
+which is this batch's own regeneration debt. It was regenerated by its own generator rather than left
+stale, and the one hazard against doing so — that captured text follows the environment ([[OI-374]])
+— was answered by evidence rather than by assumption: the same artifact re-derived byte-identically
+**in this environment** at this batch's opening.
+
+### Task 4 — this close. Two `STATUS.md` pointer entries and nothing else in that file
+
+Two rather than three, and the reason is stated: **Task 1 is read-only and produced no commit**, so
+its report rides in the entry for the commit that carries its grading. `STATUS.md` remains unreadable
+in full ([[OI-370]] open and gating), so the entries were written by locating the head of the file
+rather than by reading it whole, and the `Last updated:` prefix moved onto the new topmost entry on
+the precedent this file's own previous closes record.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**★ ON THE GUARD SET — IT ENDS EXACTLY WHERE IT WAS FOUND, ESTABLISHED BY COMPARISON AND NOT BY
+ASSERTION.** The full set was run before any edit, again after the row edits, and again after the
+guard state was regenerated; **the first and the last runs are LINE-IDENTICAL** — the same one FAIL
+([[OI-372]]), the same one STOP ([[OI-373]]), the guard state re-deriving, every other guard passing.
+The one intermediate difference was the guard state's own staleness, which this batch caused and this
+batch cleared. **§0e's last condition — a guard red for a cause that is neither this dispatch's edits
+nor already recorded — did not fire.**
+
+**★ ON THE FIGURES RULE (D-431) AND ON POSITIONAL COUNTS (D-307, D-432).** No population, count or
+verdict of a derived cut is restated anywhere in this batch. The small numbers that appear are counts
+of what this batch itself read at the objects — the members of the class it enumerated, and the
+comments of the class the frozen test file carries — never values taken from an artifact. **The
+dispatch is cited by its exact filename throughout, no positional count appears anywhere, and no file
+is cited by line number in anything written here** (D-307); the corrections and the findings point at
+functions, structures, fields and test names.
+
+**★ ON D-253 IN EVERY DIALECT.** Every read of repository content went through Read/Grep/Glob —
+`CLAUDE.md`, both registers, the detail files, the dispatch, the ruling records, the source files, the
+generators and the artifacts, **including the reads a shell would have been quicker for: the long
+INDEX rows, the source functions and the JSON artifacts.** **Two shell reads WERE attempted at
+repository paths and the guard DENIED both**, and neither was retried in another dialect — declared at
+§2(iii) above. **The shell was used for six things only:** the clock, the sanctioned changed-path
+enumeration, the committed tools (the guard-set runner, the index lint and the four generators), two
+`git show` reads of objects named by **explicit hash**, the `git add` / `git commit -F` / `git push`
+acts, and small checks over files **outside** the repository. **Every tool output was written to an
+absolute scratchpad path outside the repository and read back from that same path.** **No branch-tip
+or index read was made** — no `git log`, no `git status`, no `git rev-parse` — and **push state is
+established without one**: each push reported its own ancestor-to-new range, the first push's ancestor
+is byte-equal to the commit the environment's session-start record names as most recent, and the
+second push's ancestor is byte-equal to the first push's new commit, so the chain closes on two
+independent accounts.
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense (*corpus of
+scores* throughout); bare *key* and *key signature* carry the tonal sense, which is what the corrected
+comments are about; bare *note* is a pitch event, and *dated note* is carried knowingly as the
+open-items register's own rule (d) wording; bare *measure*, *beat*, *scale*, *interval*, *root*,
+*part*, *rest*, *figure*, *flat* and *mode* appear in no non-musical sense — *measurement* carries the
+gauging sense, *value* the numeric one, and *tool*, *check*, *runner* and *generator* stand where the
+collided word would have been. Two further inherited compounds are carried knowingly: **register
+entry** / **the open-items register**, and **test comment**, where *comment* is unambiguous.
+
+**★ ON WHAT WAS DELIBERATELY NOT DONE (§0c and §0d, item by item).** **No third licence and no
+widening of this one** — the one candidate outside the enumerated class is reported and untouched, and
+so is the separate finding riding on it. **No sweep for other stale-comment classes.** **No golden, no
+test changed, skipped, marked or re-blessed, no corpus of scores, nothing under `tools/corpus/` or
+`tools/robust_stop/`, no measurement of the analysis built, designed, scoped or run, no design, no fix
+to inference, no behaviour change.** A comment inside a test file is still only a comment, and the
+comment-only property is established rather than claimed. **No row was written or discarded**, and the
+one row flipped is the row the dispatch is about; **no gating verdict was hand-added or hand-removed**
+— the cut was re-derived and the authored judgments moved whole to their retired blocks. [[OI-274]]'s
+banner half, the `docs/scoring_model.md` pass and [[OI-207]] are untouched; [[OI-321]] stays open on
+its parked item; CC's standing findings are held, and this batch adds a third. [[OI-179]] stays
+**OPEN** and **GATES**.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+---
+
+# THE CLOSE — the class was enumerated at the code before the licence was spent, which is what found the member no account had named, and [[OI-315]] is CLOSED
+
+**Recorded 2026-08-13 (CC) under `cc_instruction_oi315_class_licence.md`. Four tasks, three commits,
+all pushed to `origin`. No STOP rule fired.** The licence reached every comment under `src/` stating
+the removed piece-start shortcut as live and nothing else, the held set came back empty, and both of
+the row's halves closed. **The finding worth carrying past this batch is not that the row closed — it
+is that the row's own list of where the statement stood was wrong**, and that the instruction to
+enumerate at the code rather than from the list is what caught it one act before the licence would
+have been spent and the tree left still saying it.
