@@ -8,8 +8,15 @@
 > *Banner ratified by the user, 2026-08-03 — drafted at phase 1j, presented at
 > `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1, applied at phase 1k. It makes this document a
 > contract home for the decisions registered against it (the fifth home case, `CLAUDE.md`
-> decisions-register rule (g)). The body's present tense is NOT corrected by this banner —
-> `OPEN_ITEMS.md` OI-274 stays open for that.*
+> decisions-register rule (g)).*
+>
+> *★ **The body's present tense is now SCOPED, at the §1 scoping sentence** (added 2026-08-14 at
+> `cc_instruction_scoring_model_pass.md`). **The former wording of the sentence this replaces,
+> preserved (#12), was:** "The body's present tense is NOT corrected by this banner —
+> `OPEN_ITEMS.md` OI-274 stays open for that." That was true until the scoping sentence landed.
+> **OI-274 stays open for its SECOND half only** — whether `CLAUDE.md`'s mandatory-read instruction
+> should also name the joint estimator's own specification, which is a governing-document question
+> and therefore the user's.*
 
 > **Read this at the start of any session that touches scoring logic in
 > `src/composing/analysis/chord/chordanalyzer.cpp`.** It exists because three
@@ -36,9 +43,54 @@ invariants that future changes must respect.
 > stable integration boundary. The competition / function layer was already external
 > (`function/harmonicfunctionlayer.cpp`). See `cc_refactor1_split_design_dossier.md`.
 
+> **★ CODE LOCATORS — EVERY RAW LINE-NUMBER ANCHOR IN THIS DOCUMENT WAS RE-AIMED TO A NAMED CODE
+> REGION (2026-08-14, at `cc_instruction_scoring_model_pass.md`; `OPEN_ITEMS.md` OI-45).** A
+> specification cites code **by function or by section anchor, never by a raw line number**
+> (register entry **D-307**) — a coordinate goes stale the moment anything above it changes, and
+> §6's Location column had already been converted on exactly that ground. The eight raw anchors this
+> document carried are gone from the body; **their former wordings are preserved verbatim here
+> (#12)**, with the section each stood in:
+>
+> | § | Former wording | Now named as |
+> |---|---|---|
+> | §2 | "the comparator at `~L2412` prefers lower values" | the winning-bass comparator in `applyHarmonicFunction` (`harmonicfunctionlayer.cpp`) |
+> | §3 | "three 12 × 17 matrices declared at `~L2014–L2016`" | declared in `analyzeChord` (`chordanalyzer.cpp`) |
+> | §4 | "In the `(rootPc, tplIdx)` loop at `chordanalyzer.cpp:~L2026`" | the `(rootPc, tplIdx)` scoring loop in `analyzeChord` (`chordanalyzer.cpp`) |
+> | §4 | "the `ChordAnalyzerPreferences` declaration (`chordanalyzer.h:411`)" | the `ChordAnalyzerPreferences` declaration (`analysis/types/analysistypes.h`) — the file was wrong as well as the line |
+> | §5 | "**`hasStructuralBass`** (`~L1935`)" | `hasStructuralBass`, computed in `analyzeChord` (`chordanalyzer.cpp`) |
+> | §7 | "The "bias correction" entry above (`~L2867`)" | the bias-correction block of `applyPostScoringGates` (`postscoringgates.cpp`) |
+> | §7 | "At `~L2647–L2651`, **before** the sort can run" | in that same block's outer guard, before the sort can run |
+> | §7 | "Gate G-E (`~L2910`) reads" | Gate G-E (`postscoringgates.cpp`) reads |
+>
+> **Four of the eight had drifted across a FILE boundary and not merely down a file** — the §4 prefs
+> declaration (now in `analysis/types/analysistypes.h`) and the three §7 anchors, which refactor #1
+> moved out of `chordanalyzer.cpp` into `postscoringgates.cpp`. **This note records a re-aim of
+> locators only: no term, value, guard, gate or template is added, changed or removed by it.**
+
 ---
 
 ## 1. Overview
+
+> **★ SCOPING SENTENCE — THE SCORER DESCRIBED BELOW IS DORMANT ON BOTH PRODUCTION SURFACES, AND THE
+> BODY'S PRESENT TENSE IS THE TENSE OF ITS SPECIFICATION RATHER THAN A STATEMENT ABOUT WHAT RUNS
+> (added 2026-08-14 at `cc_instruction_scoring_model_pass.md`; it discharges the first half of
+> `OPEN_ITEMS.md` OI-274, and it is the same form OI-232 and OI-265 were resolved by, one document
+> over).** Everything from here on — this section's pipeline, §2's templates, §3's matrices, §4's
+> bonus and penalty terms, §5's joint scoring, §6's post-scoring gates and §7's inversion
+> correction — **remains accurate for the LEGACY vertical scorer it describes, and is NOT a
+> description of the code that produces a committed chord today.** The production inference layer is
+> the joint estimator: on the batch and corpus surface since 2026-07-26 (register entry **D-005**)
+> and on the notation surface since 2026-07-27 (**D-010**), with this path compiled and selected
+> only by an explicit `useJointNotationRecord = false`.
+>
+> **§8's constraints and dead ends remain in force regardless of that dormancy** — they bind what a
+> future change may attempt, and they must not be retried; each carries its own ⚠ LEGACY-subject
+> mark where its subject is this scorer.
+>
+> *A reader who needs what RUNS reads the joint estimator's section of `ARCHITECTURE.md`. **That
+> pointer is a pointer and nothing more:** it does not amend `CLAUDE.md`'s mandatory-read
+> instruction, and whether that instruction should also name the joint estimator's own specification
+> is OI-274's second half — a governing-document question, and therefore the user's.*
 
 `RuleBasedChordAnalyzer::analyzeChord` is a **bottom-up** vertical-sonority
 scorer: pitch-class evidence → chord identity. It performs no harmonic-function
@@ -131,7 +183,8 @@ production pipeline, so the mirror is gone — there is one template array.)
 
 **Template ordering matters.** When two candidates score identically, the
 template with the lower index wins (`RawCandidate::tiePriority` is the
-template index; the comparator at ~L2412 prefers lower values). Key
+template index; the winning-bass comparator in `applyHarmonicFunction`
+(`harmonicfunctionlayer.cpp`) prefers lower values). Key
 intentional placements:
 
 - Sus4♭5 (7) precedes HalfDim (8): the full interval sets differ (`{0,5,6,10}` vs
@@ -152,7 +205,7 @@ the production guards — that divergence, which mis-led two investigations, is 
 ## 3. Score matrix structure
 
 The bass-independent terms are computed once per `(rootPc, templateIdx)` and
-stored in three 12 × 17 matrices declared at ~L2014–L2016:
+stored in three 12 × 17 matrices declared in `analyzeChord` (`chordanalyzer.cpp`):
 
 - **`basisIndepMatrix[rootPc][tplIdx]`** — additive base score:
   `scoreTemplateTones + scoreExtraNotes + dim7CharacteristicBonus
@@ -604,7 +657,7 @@ Both variants run Pass B (step bonus + surgical guard) independently.
 
 ### B2 aug7 guard
 
-In the `(rootPc, tplIdx)` loop at chordanalyzer.cpp:~L2026. Skips the 4-tone
+In the `(rootPc, tplIdx)` scoring loop in `analyzeChord` (`chordanalyzer.cpp`). Skips the 4-tone
 Augmented template (#10, `{0,4,8,10}`) for any root where **either** M3
 (rootPc+4) **or** aug5 (rootPc+8) is at or below `extensionThreshold`. The
 `||` (fire if EITHER is absent) means BOTH must be present for the template
@@ -621,11 +674,25 @@ Corelli G-major snapshots flipped to aug7 under the relaxed guard. The dual
 ### `ScoringPhase` (ChordAnalyzerPreferences::scoringPhase)
 
 `function::ScoringPhase scoringPhase = function::ScoringPhase::Final`
-(`ChordAnalyzerPreferences`, `chordanalyzer.h`). The enum is defined in
-`chordanalyzer.h` (in the `mu::composing::function` namespace, alongside the
-`ScoringSnapshot` forward declaration) rather than in `harmonicfunctionlayer.h`, because
-the include chain runs `harmonicfunctionlayer.h → chordanalyzer.h` and the
-`= ScoringPhase::Final` default member initializer needs the complete enum.
+(`ChordAnalyzerPreferences`, `analysis/types/analysistypes.h`). The enum is defined in that
+same leaf header (in the `mu::composing::function` namespace) rather than in
+`harmonicfunctionlayer.h`, because the include chain runs `harmonicfunctionlayer.h →
+chordanalyzer.h → analysistypes.h` and the `= ScoringPhase::Final` default member
+initializer needs the complete enum.
+
+*(★ Locator re-aimed 2026-08-14 at `cc_instruction_scoring_model_pass.md` — a stale FILE
+citation of the same class as OI-45's line anchors, found by enumerating at the document
+rather than from the row's list. **The former wording, preserved (#12), was:** "…
+(`ChordAnalyzerPreferences`, `chordanalyzer.h`). The enum is defined in `chordanalyzer.h`
+(in the `mu::composing::function` namespace, alongside the `ScoringSnapshot` forward
+declaration) rather than in `harmonicfunctionlayer.h`, because the include chain runs
+`harmonicfunctionlayer.h → chordanalyzer.h` and the `= ScoringPhase::Final` default member
+initializer needs the complete enum." Two things in it are false at HEAD: both the enum and
+the prefs field live in `analysis/types/analysistypes.h`, and the `ScoringSnapshot` forward
+declaration is no longer beside the enum — it stayed in `chordanalyzer.h`. The reason clause
+is unchanged in substance, and the header's own comment states it: `analysistypes.h` is the
+leaf `chordanalyzer.h` includes, and `chordanalyzer.h` cannot include
+`harmonicfunctionlayer.h` because the include runs the other way.)*
 
 Set to `ScoringPhase::Segmentation` by `greedyExpandSegmentation` for internal
 boundary-exploration `analyzeChord` calls (Round 1 head/tail synthesis + Round 2 region
@@ -673,7 +740,7 @@ bonus functions and the single control point.
 **`maxTotalInversionContextBonus` is currently inert (verified 2026-06-10).** No code
 path sets a non-default value: both presets inherit the 2.0 default — the
 `batch_analyze.cpp` preset builder sets neither, and the only other appearances are
-the `ChordAnalyzerPreferences` declaration (`chordanalyzer.h:411`), the optimizer
+the `ChordAnalyzerPreferences` declaration (`analysis/types/analysistypes.h`), the optimizer
 range entry, and the two `std::min` clamp sites. The previously documented
 "Baroque=2.5 / Jazz=0.6" values were aspirational: they entered the field's
 doc-comment at its introduction (`46c76ad67f`, 2026-05-05) as planned "Iteration 4"
@@ -685,6 +752,43 @@ behavior comes from its **reduced individual bonuses** (0.20/0.20/0.15/0.20, set
 `batch_analyze.cpp`), not from this cap. The field stays documented because it exists
 in prefs and the optimizer range table — treat it as an untuned safety net, not a
 load-bearing per-preset value.
+
+### The registered scoring constants this document does not table above
+
+**★ ADDED 2026-08-14 at `cc_instruction_scoring_model_pass.md`, discharging `OPEN_ITEMS.md`
+OI-183.** Every hand-chosen scoring constant on this surface is registered by name for the
+Stage-5 override mechanism (§1's note). Twelve of them had **no by-name mention anywhere in
+this document**, so the staleness check — which greps the document by symbol — could not see
+them. Each is named here with the site it acts at and, where the document already describes
+its effect without naming it, the cell or prose that covers it. That second column is
+OI-183's own alternative and not a lesser outcome: several of these were never a substantive
+gap, only an ungreppable one.
+
+**No value is transcribed into this table, deliberately.** A hand-typed constant is a future
+staleness site of exactly the class this pass was sent to remove (OI-45), and each value has
+one home already — the literal beside the constant in its owning translation unit, which the
+override registry names and `--param-override` reads. Where this document *already* carries a
+value in prose, the last column says so and that prose stays the citation.
+
+| Constant | Acts at | Already described here by |
+|---|---|---|
+| `kTemplateToneWeightCap` | `scoreTemplateTones` (`chordanalyzer.cpp`) — clamps each template tone's `pcWeight` before its per-position factor multiplies it | the `kRootToneFactor / kSecondToneFactor / kOtherToneFactor` cell names the factors, not the clamp |
+| `kExtraNoteWeightCap` | `scoreExtraNotes` — the same clamp for every NON-template pitch class, applied before the extension factor, the contradiction penalty or the foreign penalty | nothing above; the three terms it bounds each have a cell, the clamp has none |
+| `kExtensionFactorFlat13` | `scoreExtraNotes` — the extension weight at rel 8 (♭13 / ♯5) | the combined cell `kExtensionFactor7th / Flat13 / Default` |
+| `kExtensionFactorDefault` | `scoreExtraNotes` — the extension weight for everything else (9th, 11th, ♯11 …) | the same combined cell |
+| `kSus4FlatThirdFactor` | `scoreExtraNotes` — REPLACES the extension factor at the m3/♯9 position when the note's TPC spells a **flat** third (E♭ over C: `noteTpc == rootTpc - 3`), i.e. minor intent, which suppresses the Sus4 reading | nothing above — the TPC-based sus4-vs-minor disambiguation is not otherwise described in this document |
+| `kSus4SharpThirdFactor` | the same site, **sharp** spelling (D♯ over C: `noteTpc == rootTpc + 9`), i.e. ♯9 intent, which is compatible with Sus4 | as above — not otherwise described |
+| `kSus4StructuralFourthThreshold` | `structuralPenalties` — the `pcWeight` bar the defining P4 must clear before a Sus4 (excluding Sus4♭5) escapes `kSus4MissingFourth`; passing and ornamental fourths clear the general extension bar but rarely reach this one | the `kSus4MissingFourth` cell — its "without P4 above 0.50" **is** this threshold |
+| `kBassSupportPresenceThreshold` | `bassRootBonusMultiplier` — the `pcWeight` bar at which a pitch class counts as PRESENT when the bass-root bonus multiplier is chosen | the `bassNoteRootBonus` cell lists the multipliers (full triad / third-only or root+5 / bass alone); the presence bar behind them is unnamed |
+| `kSeventhThreshold` | `detectExtensions` — the separate, lower presence bar for a m7 (+10) or M7 (+11) to register as a seventh, because lightly-voiced sevenths sit below the general extension bar | nothing above |
+| `kExtensionThreshold` | the **default argument** of `detectExtensions` / `dim7CharacteristicBonus` / `structuralPenalties`. **Distinct from `prefs.extensionThreshold`**, the preferences field this document names throughout: every `analyzeChord` call site passes the prefs field explicitly, so this default binds only where a caller omits the parameter | nothing above; the body's `prefs.extensionThreshold` is the other thing |
+| `kComplexityEvidenceFloor` | the `complexityFactorMatrix` shaping constant — it is BOTH the evidence-ratio threshold and the additive floor (one constant, two roles) | §3's `complexityFactorMatrix` bullet describes both roles with the value inline and no name |
+| `kAugThinEvidenceFactor` | the `augFactorMatrix` multiplier, applied at BOTH thin-evidence sites — sparse bare-root augmented, and augmented with no third / fifth / seventh above the threshold | §3's `augFactorMatrix` bullet and §2's template-9 note, both describing the effect without the name |
+
+The remaining registered constants are each already named in this document: §4's terms table
+and term sections carry the `chordanalyzer.cpp` scoring constants, §6 carries the
+`postscoringgates.cpp` gate margins, and §4's `w_stepIn` / `w_stepOut` / `w_seq` / `w_dim`
+sections carry the `harmonicfunctionlayer.h` progression constants and `kStepBudget`.
 
 ---
 
@@ -716,7 +820,8 @@ bass voice moves within the region:
 
 Otherwise the analyzer falls back to legacy single-bass selection.
 
-**`hasStructuralBass`** (~L1935). True when `lowestPitch <= 60` (middle C) OR
+**`hasStructuralBass`** (computed in `analyzeChord`, `chordanalyzer.cpp`). True when
+`lowestPitch <= 60` (middle C) OR
 `distinctPcs >= 3`. Since Stage 3.3 the oracle ANDs it into the per-cell
 `supportsInversionBonuses` / `qualifiesCompleteTriad` flags it publishes on each
 `ScoringCell`, so the migrated inversion bonuses still respect it — sparse
@@ -925,15 +1030,37 @@ rules NOT retired, the 2.2b cross-carrier evidence (`cc_stage5_phase2_2b_report.
   (augmented-rotation class-(a) coin-flip), **GateGD** (1 held-out site), **GateGE** (class-b→class-a
   reshuffle). None retired this arc.
 
-**`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the enharmonic-flip
-block.** When the `preferMinorOverMajorAdd6` path (Gate-A / G-family region) identifies
-a HalfDiminished **first-inversion** alternative as the best Minor-preferring reading,
-its score is raised by `kHalfDimFirstInversionBonus` before the re-sort, so a genuine
-Cm6 reading outranks the enharmonic Aø7/C first-inversion (Iter-61 "Option B", which
-moved BIR=true 7→6). Located in `postscoringgates.cpp` (relocated to a file-scope
-constant for the Stage-5 override mechanism — see the §1 note); fires only under the
-`preferMinorOverMajorAdd6` flag (Baroque/Standard true, Jazz/Default false). It is a
+**`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the BIAS-CORRECTION
+block.** When the bias correction's best-alternative scan has found a HalfDiminished
+reading with all four chord tones present whose root differs from the winner's and whose
+third, fifth or seventh IS the winner's bass, and `preferMinorOverMajorAdd6` is set, that
+alternative's score is raised by `kHalfDimFirstInversionBonus` **after the winner's bass-root
+deduction and before the bias re-sort** — so a genuine Cm6 reading outranks the enharmonic
+Aø7/C first-inversion (Iter-61 "Option B", which moved BIR=true 7→6). The deduction alone
+does not flip it: the bass-root Minor/Major reading keeps residual scoring advantages (an
+AddedSixth extension fit, for one). Located in `postscoringgates.cpp` (relocated to a
+file-scope constant for the Stage-5 override mechanism — see the §1 note); fires only under
+the `preferMinorOverMajorAdd6` flag (Baroque/Standard true, Jazz/Default false). **The
+`BiasCorrection` rule owns it** — `paramoverride.h`'s enum says so in terms, so
+`disable_rule BiasCorrection` suppresses this bonus along with the deduction. It is a
 §6-block dissolution target (Stage-5 family 2).
+
+*(★ Location corrected 2026-08-14 at `cc_instruction_scoring_model_pass.md`, at the code
+(`OPEN_ITEMS.md` OI-45, whose own cell says this constant is "missing from §6 entirely" — at
+HEAD the entry EXISTS; what was wrong was where it said the bonus fires). **The former
+wording, preserved (#12), was:** "**`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus
+inside the enharmonic-flip block.** When the `preferMinorOverMajorAdd6` path (Gate-A /
+G-family region) identifies a HalfDiminished **first-inversion** alternative as the best
+Minor-preferring reading, its score is raised by `kHalfDimFirstInversionBonus` before the
+re-sort…". The bonus is not in the enharmonic-flip block and not in the G-family region: it
+sits inside the bias correction's `!didEnharmonicFlip` branch, which by construction runs
+only when the flip did NOT fire. **What this correction does NOT touch:** the value (0.55 —
+checked at the constant and unchanged), and the Iter-61 provenance, the preset gating and the
+dissolution-target status, which are carried over from the former wording and were not
+re-verified by this pass. **One naming observation, declared and NOT acted on:** the constant's
+name says *first inversion* while the code admits the alt's third, fifth OR seventh in the
+bass — the code's own comment carries the same wording, so the name is inherited rather than
+a defect this pass may re-specify.)*
 
 **Known asymmetries (pinned as-is in `postscoringgates_tests.cpp`, Stage-1b F4–F8):**
 
@@ -957,7 +1084,8 @@ constant for the Stage-5 override mechanism — see the §1 note); fires only un
 
 ## 7. Inversion correction
 
-The "bias correction" entry above (~L2867) deducts the bass-root bonus and
+The "bias correction" entry above — the bias-correction block of
+`applyPostScoringGates` (`postscoringgates.cpp`) — deducts the bass-root bonus and
 re-sorts via `std::stable_sort`:
 
 ```cpp
@@ -971,7 +1099,7 @@ promoted.
 
 ### Pre-sort capture: `originalWinnerRootPc`
 
-At ~L2647–L2651, **before** the sort can run:
+In that same block's outer guard, **before** the sort can run:
 
 ```cpp
 const ChordAnalysisResult& winner = results[0];   // LIVE reference
@@ -981,7 +1109,7 @@ const bool originalWinnerHasAddedSixth = hasExtension(...);
 ```
 
 `winner` is a **live reference** to `results[0]`. After the sort it points to
-whatever ended up in slot 0. Gate G-E (~L2910) reads
+whatever ended up in slot 0. Gate G-E (`postscoringgates.cpp`) reads
 `originalWinnerRootPc` to compute `gExpectedAltRoot = (originalWinnerRootPc
 + 9) % 12`.
 
@@ -1582,7 +1710,34 @@ basisDep (reconstructed-credit, §4) — byte-identical, closing the cross-layer
 
 ---
 
-*Last updated: 2026-06-12 — Stage 3.1: winner selection + commit chain now flow through the
+*Last updated: **2026-08-14** — the `docs/scoring_model.md` pass at
+`cc_instruction_scoring_model_pass.md`, over `OPEN_ITEMS.md` OI-45, OI-183 and OI-274's first half:
+the **§1 scoping sentence** saying the scorer described here is dormant on both production surfaces
+and that the body's present tense is a specification's tense; the **eight raw line-number anchors
+re-aimed** to named code regions (**D-307**), their former wordings preserved verbatim in the "Code
+locators" note (#12); the **`ScoringPhase` file citation corrected** (both the enum and the prefs
+field live in `analysis/types/analysistypes.h`); **`kHalfDimFirstInversionBonus`'s §6 entry
+corrected** from the enharmonic-flip block to the bias-correction block, read at the code; and the
+**twelve registered constants with no by-name mention given a §4 table**. **No term, value, guard,
+gate or template was added, changed or removed** — the sync rule runs the other way, and this was a
+documentation pass over a document that describes them.*
+
+*★ **The re-stamp itself closes the third thing OI-274 found.** This footer read "Last updated:
+2026-06-12 — Stage 3.1" while the body already carried everything listed below, so a reader who
+trusted it under-read the document. The acts the body carries that the stale stamp omitted, dated
+as the body dates them: **refactor #1**, the byte-identical layer split out of `chordanalyzer.cpp`
+(top block, undated in the body); **Stage 3.3**, the oracle temporal-signal migration into the
+competition pipeline and Gate R's reconstructed-credit redesign (§4/§11, undated in the body); the
+**2.2e `kWStepIn` adoption**, user-ratified **2026-07-05** (§4); the **Stage-5 gate retirements** of
+**2026-07-05** — F, G-B, G-C and K with `kGateKMargin` (§6); the **Gate A unification** into
+`promoteToWinner`/FM2, **2026-07-06** (§6/§6a); the **OI-168 signature-mask fix**, **2026-07-14**
+(§4); the **OI-170 measurement** of the three remaining tonic-anchored sites, **2026-07-16** (§4);
+the **status banner**, user-ratified **2026-08-03**; and the decision re-homings of **2026-08-07**
+(§4 Gate R, §4 `w_complete`, §5, §6a) and **2026-08-07/08** (§8's six standing constraints, the
+fine-grain override findings, the bass-as-root shelving, the quality-overwrite acceptance, the four
+segmentation dead ends, the four archive-only dead ends, and the void validation basis).*
+
+*Prior: 2026-06-12 — Stage 3.1: winner selection + commit chain now flow through the
 beam-1 chord-path decoder (`analysis/decode/chordpathdecoder.h`) behind the
 `decodeQualityLevel` knob (default `FastBeam1`); byte-identical re-expression of the greedy
 commit chain (no score computed in the decoder), cache-ready but not cached, levels > 0 not yet
