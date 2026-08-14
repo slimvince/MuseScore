@@ -10359,3 +10359,284 @@ graded WORTH FIXING on a measured consequence, and it could have been performed 
 re-bannered, the document refiled. It was not, because a *different* open row reserves that filing
 decision, and a session may not take it. **The false statements are gone and the decision is still the
 user's**, which is the shape the record should have wherever an act and a decision overlap.
+
+---
+
+## 1 (continued). What needs the user
+
+*(Recorded 2026-08-14, CC, under `cc_instruction_evidence_candidate_pass.md`. Every count referred
+to below lives at `tools/audit/doc_change_candidates.json` and its hunk file; **none is restated
+here** — **D-431**.)*
+
+### 1.x THE PERIOD'S START IS A BOUND, NOT A DATE — and only a ruling settles it
+
+**A1 is PARTIAL and the pass says so rather than choosing.** The record names **no** start for
+"the restructuring period". What it names is **four restructuring acts**, each citable at
+`CLAUDE.md`: the open-items register's creation, the STATUS/handoff doc split, the register's split
+into an index plus detail files, and D-231's ratification, which opens phase 1 and whose truth-sync
+half is the code-versus-documentation comparison ruling 1 places in the audit's hands rather than
+in a restructuring wave's.
+
+**What was done, on the dispatch's own instruction for exactly this case** — *go back further, not
+less; err early; report the bound and what would settle it.* The population opens at the
+**earliest** of the four, and the other three are published as **strata carried on every hunk**.
+**A narrower reading therefore costs no re-run**: keeping only the strata at or after a chosen
+bound is a filter over an enumeration that excluded nothing.
+
+**What would settle it: a ruling naming the start.** **What bounds the error in the other
+direction, stated so the choice is not open-ended:** no act of that shape is named earlier
+anywhere in the record, and because principle #10 has demanded documentation-code sync since long
+before any of the four, an earlier start has **no establishable boundary at all** — it would make
+the period the whole repository history.
+
+**★ AND THE DISPATCH ITSELF IS DIVIDED ON WHAT TO DO ABOUT IT, WHICH THE USER SHOULD SEE HERE
+RATHER THAN ONLY IN THE SELF-CHECK.** §0h's first stop rule and assumption A1 say to **halt** when
+the start cannot be established; §0d's first bullet, on the same fact, says to **go back further
+and report the bound**. §0d's was followed — it is the specific clause, and read the other way it
+could never be reached. **The pass therefore ran where one reading of its own dispatch would have
+had it stop, and that is the user's to confirm or overturn.** What hangs on it is only whether the
+enumeration should exist yet; under any narrower start the published population still contains the
+answer, because nothing was excluded.
+
+### 1.y THE MAJORITY OF THE CANDIDATE LIST IS ONE SHAPE, AND WHETHER TO SETTLE IT IS A COMMISSIONING DECISION
+
+**The largest shape inside the flagged set is a line-coordinate re-aim** — hunks whose removed and
+added text are identical once every run of digits is masked, overwhelmingly the decisions
+register's `home`, `anchor` and `delegation` coordinates moving as the documents they point into
+grew, together with the same fields in the surfaces rendered from that register. It is the
+**majority** of the candidate list.
+
+**The pass reports it and does not classify it**, and the reason is the whole of why it is put
+here. The OK list admits *"Re-aiming a drifted pointer or anchor **at the same content**"* — the
+qualifier is the clause, and nothing mechanical establishes it. Arguing from the shape to the
+clause is what mechanism 4's stretch stop forbids, and **the record already carries the argument
+failing**: a commit whose subject is *fix the two over-shifted `CLAUDE.md` anchors the guard
+caught*.
+
+**The act that would settle the class is named at the artifact and NOT started**: resolve each old
+coordinate in its target document at the parent commit and each new one at the child commit, and
+compare the text they land on. It is mechanical, it is a different act from this pass, and whether
+it is worth commissioning is the user's — **it would decide the disposition of most of the
+candidate list in one derivation.**
+
+### 1.z THE GENERATED-ARTIFACT CLASS IS UNESTABLISHED, PER FAMILY, DELIBERATELY
+
+**A3 is marked UNESTABLISHED for every generator family, without exception.** The assumption is
+that a generated artifact's content is recoverable from its inputs, and the dispatch says in terms
+that this is a claim about **each** generator and is not assumed. Establishing it means running
+each family's generator at the relevant commits and showing byte-identity — an act this pass did
+not perform for any family. **It is marked unestablished rather than assumed**, which is what A3
+requires, and the establishing act is named beside it.
+
+**The one bound worth the user's sight:** the class is cut by file type, and exactly one authored
+data surface was identified inside it and pulled out — the decisions register's own source of
+record, which `CLAUDE.md` rule (d) makes the thing a human edits. **Whether another authored file
+sits inside that class unidentified is stated as a bound, not claimed away**; what would settle it
+is a per-file check of which committed generator writes which path.
+
+---
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+### 2.x The arc's documentation changes are dominated by GROWTH, not by relocation — which is what makes the candidate list large
+
+Measured on the population rather than assumed: across every flagged hunk, the text **not**
+accounted for by a carry elsewhere in the same commit is the large majority of the text changed.
+The homing acts, which are the arc's characteristic move, mostly **write** a rule into a
+specification rather than **carry** it there — the register entry stays where it was. Under the
+classification rule that is a content change, because **growth counts**, and it is why the
+candidate list is the size it is rather than a residue after relocation is netted out.
+
+**Why this is surfaced rather than filed as apparatus:** it bears directly on how the restoration
+criterion will behave. *Restore if and only if the documentation was copied from the
+implementation* is a test about **origin**, and a population dominated by newly written text is a
+population where that test needs the code comparison the flag test deliberately avoided — for
+most of its members, not a few.
+
+### 2.y The whole population is SELF-CLASSIFIED, and it is declared as such rather than marked on a subset
+
+Mechanism 5 asks that a change graded by the side that made it says so per hunk. **Every commit in
+this population was made by an executing session of the same kind as the one classifying it** —
+the git author is one identity throughout — and the prose inside many was authored by Cowork and
+committed by CC. So the marker is not a subset: **every hunk carries it**, with the authoring side
+read from the commit subject and published so the user can weight it. Reporting a partial
+self-classification would have understated the exposure.
+
+---
+
+## 3 (continued). Per-task log — the candidate pass
+
+### Task 1 — the enumeration, published whole
+
+`tools/audit/gen_doc_change_candidates.py`, writing `tools/audit/doc_change_candidates.json` and
+`tools/audit/doc_change_candidates_hunks.jsonl`, with its own `--check` that re-derives both from
+git objects and exits non-zero on any drift. **It re-derives byte-identically.**
+
+**Derived from git objects and from nothing else** — never from a list, never from anything the
+writing side has said, which is what §0d requires and §0e's premise ledger explains. Rename and
+copy detection is on for every commit, so a document that changed name is followed instead of
+reading as an unrelated deletion and addition; deletions are in the walk by construction, and the
+files that no longer exist at the range end are present with their statuses.
+
+**The unit is one `-U0` hunk.** Zero context was chosen deliberately: with context lines a nearby
+content change merges into a neighbouring pure one, which is mechanism 1's objection at file and
+commit level applied one level down.
+
+**One class has its hunks deliberately not enumerated, and it is named, counted and grouped by
+generator family rather than dropped** — generated artifacts and data, which §0d makes a separate
+class with recoverability stated per family. Its file changes are enumerated with the rest. **The
+reason is stated rather than left silent:** that class carries a change volume orders of magnitude
+larger than the prose it derives from, and per-hunk records for it would bury the candidate list
+inside regenerated output.
+
+**Source files are in the population, and the split is published:** a hunk whose changed lines are
+all comments, or which mixes comments with code, is documentation and is classified; a code-only
+hunk is marked out of population with its reason rather than dropped. **This is not a formality** —
+the record carries recent commits that corrected `src/` comments to match the code, which is
+exactly the act ruling 2 is about.
+
+### Task 2 — the classification, per hunk
+
+**PURE is emitted only where a mechanical recognizer fires**, and each cites the OK-list clause it
+used **by name**; a PURE carrying no clause **stops the tool**. Four recognizers exist and each is
+a textual identity, not an argument: content identical after whitespace normalization; content
+carried whole elsewhere in the same commit; a `~L####` locator deletion; and a footer date
+re-stamp, held narrow enough that a date inside a ruling sentence is a datum rather than a stamp.
+**The stretch stop is encoded as the absence of a fifth recognizer** — there is no clause in the
+tool that reasons a change into the OK class.
+
+**Everything else is FLAGGED.** That is §0's asymmetry applied: over-flagging costs review time,
+under-flagging costs the objective, and the two are not comparable.
+
+**Three things ride on every hunk so the flagged set can be triaged without this pass deciding
+anything.** A **carry measurement** — how much of the hunk's changed text is accounted for by a
+counterpart elsewhere in the same commit — so a hunk that is mostly relocation is visible as one
+rather than wearing its whole size. The **look-alike signals** the dispatch names, plus two factual
+shape signals. And the **document role and surface class**, reported and used to exclude nothing,
+which is ruling 4.
+
+**The preservation filter is deliberately broad and its cost is published.** A hunk whose
+counterpart lands inside a *former wording preserved* block is **not** called a move: the words
+survive as a quotation while the rule they stated may not, and the tool cannot tell those apart.
+The artifact publishes the count of hunks that filter holds back, so the choice is auditable rather
+than buried.
+
+**The decisions register's mirror is measured, not netted out.** A change to the register's data
+appears once in the authored source and again in the surfaces rendered from it. Both are
+enumerated — choosing which is the real change is a decision ruling 4 forbids this tool — and the
+two counts are published so a reader can net it out deliberately.
+
+### Task 3 — the close
+
+Two `STATUS.md` pointer entries, one per task, and nothing else in that file; this section appended
+to `cowork_away_returns.md`; the report made at the objects with commit hashes.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**Five things the check caught in this batch's own work, every one corrected before the commit:**
+
+- **The tool's own docstring claimed a reconciliation STOP the code did not implement.** Found by
+  reading the docstring against the code rather than trusting it. The STOP was added, so the
+  claim is true rather than softened.
+- **`CMakeLists.txt` was classified as generated data on the strength of a `.txt` suffix**, which
+  would have put build-script comments in the class whose hunks are not enumerated — a naming
+  accident deciding a population. Found by reading that class's own membership. Corrected, with
+  the reason written where the correction lives.
+- **The first correction of it silently enumerated nothing**, because the pathspec matched only the
+  repository top level. Found because the hunk count did not move when it should have.
+- **Reserved-word collisions in this batch's own new prose** — a numeric *score*, *figure* for a
+  number, an unqualified *mode*, *part* meaning a portion. Corrected before the commit, not after.
+- **The largest shape in the flagged set was invisible until the output was sampled by hand.**
+  Reading sixteen hunks and their verdicts is what produced the digit-only sub-class; the summary
+  counts alone would have shipped a candidate list whose majority nobody had characterised.
+
+**★ TWO DEPARTURES ARE DECLARED RATHER THAN DEFENDED.**
+
+- **The range end was resolved from the branch tip.** `CLAUDE.md`'s D-253 paragraph names
+  `git rev-parse HEAD` among the reads never trusted for what is current, and the dispatch requires
+  a population *derived mechanically from git*, which needs a range end. **The mitigation is
+  structural rather than a promise:** the resolved value is written into the artifact as an
+  explicit hash, `--check` re-derives at that recorded hash and not at the tip, and every other
+  git read in the tool names a commit explicitly. It is declared because a session that resolves a
+  tip and one that is handed a hash must be distinguishable in the record.
+- **Ad-hoc analysis scripts read this batch's own generated artifacts through an interpreter.** That
+  is inside the family the 2026-08-08 widening names — the restriction is on **what** is read, not
+  on which utility spells it. The reads were of files generated moments earlier in the same
+  session, and the generator's own `--check` re-derives them from git objects, so a stale read
+  would have surfaced as a check failure rather than as a quiet wrong answer. **That is a
+  mitigation, not a discharge**, and the founding hazard — a stale mount returning wrong content —
+  is exactly why it is written down instead of noticed later.
+
+**★ §0h's FIRST STOP RULE AND §0d's FIRST BULLET GIVE OPPOSITE INSTRUCTIONS FOR THE CASE THAT
+AROSE, AND THE READING TAKEN IS DECLARED RATHER THAN GLOSSED.** §0h says *halt with a STOP if the
+period's start cannot be established*, and assumption A1 says *if not, STOP and report the
+available bound.* §0d, on the same fact, says *if it cannot be established, **go back further, not
+less** — err early. Report the bound and what would settle it.* The start **could not be
+established**, so the two clauses point in opposite directions on the one question the pass had to
+answer first.
+
+**The reading taken: §0d's, and the ground is that it is the more specific clause and the only one
+that can ever apply.** §0d's sentence exists for exactly the not-established case and prescribes an
+action for it — go back further, report the bound. Read §0h's way, that sentence could never be
+reached, because the pass would have halted at the same fact that triggers it. So the enumeration
+proceeded at the **widest establishable bound**, with the inner bounds published as strata and the
+bound itself and its settling act reported, which is what §0d asks for word for word.
+
+**What it costs if the other reading was meant, stated so it can be weighed rather than
+discovered:** the pass would have produced no enumeration and no candidate list, and returned the
+start question alone. **Nothing in this pass depends on the choice being right** — the population
+is the widest of the four candidates and every hunk carries its stratum, so under any narrower
+start the answer is a filter over what is already published, not a re-derivation. **The
+under-flagging error §0 warns of cannot arise from this reading**, because erring early can only
+enumerate more than the period holds, never less.
+
+**§0h's remaining stop rules, each answered.** Rename and cross-file-move detection **runs and
+found instances in both limbs**; every hunk received a verdict and FLAG misdescribed none of them,
+since FLAG's own meaning here is *not mechanically shown to be pure*; the enumeration **is
+published whole**; and no change was argued into the OK class — the one shape that invited it is
+reported as a shape and left flagged.
+
+**§0g, what was deliberately not done.** Nothing restored, reverted, corrected or resolved. **No
+change judged legitimate or illegitimate** — PURE and CONTENT CHANGE describe what an edit did.
+**No comparison against the code, in either direction, for any purpose.** No opinion on the
+effort's size beyond what the counts state. **No row, no register entry, no discard.** **[[OI-179]]
+stays OPEN and GATES.** No `src/` change, no golden, no test touched, nothing under `tools/corpus/`
+or `tools/robust_stop/`, no measurement of the analysis built, designed, scoped or run, no design,
+no fix to inference, no behaviour change. **D-231 and #8 stand; phase 1 is open and its completion
+statement is not written, drafted or partially written by this batch.**
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears only of a musical score, in the class
+name for `.mscz` and `.mscx` files; git's similarity value is called a *percentage*. Bare *key*,
+*note*, *measure*, *mode*, *part*, *rest*, *root*, *beat*, *scale*, *interval*, *figure*, *stem*,
+*tie* and *flat* appear in no non-musical sense — *measurement*, *value*, *count*, *portion*,
+*operating mode*, *repository top* and *tool* stand where the collided word would have been. **One
+compound is carried knowingly:** *the open-items register* and *register entry*, the inherited
+names of the things themselves.
+
+---
+
+# THE CLOSE — the candidate list exists, and the majority of it is one question the user can settle in a single derivation
+
+**Recorded 2026-08-14 (CC) under `cc_instruction_evidence_candidate_pass.md`. Three tasks, two
+commits, both pushed to `origin`.** The enumeration is published whole and every enumerated hunk
+carries a verdict. **One stop rule was reached and NOT taken, declared above with its ground and
+its cost**: §0h's first and §0d's first give opposite instructions for the case that arose, and
+§0d's was followed because it is the specific clause and the only one that can ever apply. No
+other stop rule fired.
+
+**The finding worth carrying past this batch is that the candidate list is not shapeless.** The
+dispatch was written on the expectation that under-flagging is the catastrophic error and
+over-flagging merely expensive, and the pass was built entirely on that asymmetry — with the
+consequence, foreseen and accepted, that the flagged set would be large. **What was not foreseen
+is that most of it is a single mechanical shape**: coordinates re-aimed as documents grew. That
+shape is on the OK list, and it is on the OK list *with a qualifier nothing mechanical can check*.
+So the pass leaves it flagged, names it, counts it, and names the derivation that would settle the
+whole class at once. **The sizing is therefore not one number but two questions** — the coordinate
+class, which one act disposes of, and the remainder, which is dominated by text that was newly
+written rather than moved.
+
+**The second thing worth carrying is about where the pass had to stop.** The period's start is not
+in the record. Erring early and publishing the strata is what the dispatch asked for, and it is
+also what makes the choice reversible: **the user can narrow the period afterwards without
+anything being re-derived, because nothing was excluded to begin with.** That is the shape the
+record should have wherever a session must act before a decision has been taken.
