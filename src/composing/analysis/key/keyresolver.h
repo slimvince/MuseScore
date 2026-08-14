@@ -113,7 +113,14 @@ KeySignatureContext resolveKeySignatureContext(
 ///
 /// `staffIdx` selects which staff supplies the key signature.
 /// `prevResult` is the previous region's chosen result for hysteresis, or
-/// nullptr at the first region (piece-start shortcut may apply).
+/// nullptr at the first region. A null `prevResult` takes no separate path: the
+/// hysteresis block simply does not run (it guards on `prevResult != nullptr`)
+/// and the note-based dynamic-lookahead path resolves the opening window like
+/// any other, its window start clamped to tick 0.
+/// (Stage 4b-i removed the declared-mode piece-start short-circuit — see the
+/// resolver note at the top of this header — so there is no piece-start branch
+/// left for a first region to enter. Former wording, preserved: "nullptr at the
+/// first region (piece-start shortcut may apply)".)
 ///
 /// `dumpOut` is diagnostic-only: when non-null it is filled with the resolver
 /// trace and the final analyzeKeyMode per-candidate breakdown. Pass nullptr (the

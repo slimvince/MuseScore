@@ -75,9 +75,14 @@ const KeyModeAnalyzerPreferences kKeyPrefs {};
 // absorbShortRegions duration threshold pinned below.
 constexpr int kMinRegionTicks = 480;
 
-// A previous-region result that is deliberately unbeatable: used to skip the
-// piece-start shortcut AND guarantee any mode-switch challenger fails the
-// hysteresis margin, forcing promoteWinnerInPlace to fire.
+// A previous-region result that is deliberately unbeatable: it guarantees any
+// mode-switch challenger fails the hysteresis margin, forcing
+// promoteWinnerInPlace to fire. Supplying a non-null prevResult is also what
+// lets the hysteresis block run at all — it guards on `prevResult != nullptr`.
+// (Stage 4b-i removed the declared-mode piece-start short-circuit, so there is
+// no piece-start branch here for a non-null prevResult to skip. Former wording,
+// preserved: "used to skip the piece-start shortcut AND guarantee any
+// mode-switch challenger fails the hysteresis margin".)
 KeyModeAnalysisResult dominantPrev(KeySigMode mode, int fifths, int tonicPc)
 {
     KeyModeAnalysisResult r;
@@ -190,8 +195,13 @@ TEST(Composing_KeyresolverTests, RankedOutput_FrontIsRankZeroAndScoreOrdered)
     MasterScore* score = ScoreRW::readScore(u"data/s1c_c_major.mscx");
     ASSERT_TRUE(score);
 
-    // Non-null prevResult (same Ionian mode as the natural winner) skips the
-    // piece-start shortcut without triggering any promotion.
+    // Non-null prevResult (same Ionian mode as the natural winner): the
+    // hysteresis comparison is reached, but its mode-switch condition is false
+    // (front mode == prev mode), so promoteWinnerInPlace never fires.
+    // (Stage 4b-i removed the declared-mode piece-start short-circuit, so a
+    // non-null prevResult skips no piece-start branch. Former wording,
+    // preserved: "Non-null prevResult (same Ionian mode as the natural winner)
+    // skips the piece-start shortcut without triggering any promotion".)
     const KeyModeAnalysisResult prev = dominantPrev(KeySigMode::Ionian, 0, 0);
     const auto ranked = kr::resolveKeyAndModeRanked(
         score, Fraction(0, 1), 0, kNoExclude, kKeyPrefs, &prev);
@@ -268,9 +278,14 @@ TEST(Composing_KeyresolverTests, PromoteWinnerInPlace_HysteresisDoesNotRecompute
     MasterScore* score = ScoreRW::readScore(u"data/s1c_a_minor_amb.mscx");
     ASSERT_TRUE(score);
 
-    // Natural ranking (no prior, no declared mode → no shortcut, no promotion):
-    // the C-major / A-minor relative pair with C major (Ionian) at rank 0 and a
-    // minor mode at rank 1 carrying a much lower local-gap confidence.
+    // Natural ranking (no prior → the hysteresis block does not run, so no
+    // promotion): the C-major / A-minor relative pair with C major (Ionian) at
+    // rank 0 and a minor mode at rank 1 carrying a much lower local-gap
+    // confidence.
+    // (Stage 4b-i removed the declared-mode piece-start short-circuit, so
+    // whether a declared mode is present no longer decides that no shortcut
+    // fires — there is none to fire. Former wording, preserved: "(no prior, no
+    // declared mode → no shortcut, no promotion)".)
     const auto natural = kr::resolveKeyAndModeRanked(
         score, Fraction(0, 1), 0, kNoExclude, kKeyPrefs, nullptr);
     ASSERT_GE(natural.size(), 2u);
