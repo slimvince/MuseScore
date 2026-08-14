@@ -68,7 +68,8 @@ THE STOPS, so this cannot silently stop being a screen:
   5. a verdict with no ground STOPS it.
 
 WHAT THIS DOES NOT DO.  It edits no screened document.  It restores nothing, reverts nothing and
-corrects nothing.  It closes no open-items row and writes no register entry.  It does not re-open
+corrects nothing.  It closes no open-items row and writes no decisions-register entry.  It does not
+re-open
 the period question — it reports what would, and the act is the user's.
 
 Usage:
@@ -94,8 +95,8 @@ IN_SPLIT = ROOT / "tools" / "audit" / "period_stratum_split.json"
 OUT_JSON = ROOT / "tools" / "audit" / "july_screen.json"
 OUT_REPORT = ROOT / "tools" / "audit" / "july_screen_report.md"
 
-CODE_INFLUENCED = "POSITIVELY-CODE-INFLUENCED"
-RATIFIED = "RATIFIED-ACT-EDIT"
+CODE_INFLUENCED = "POSITIVELY CODE-INFLUENCED"
+RATIFIED = "RATIFIED-ACT EDIT"
 RESTRUCTURING = "RESTRUCTURING-SHAPED"
 UNDETERMINED = "UNDETERMINED"
 CLASSES = (CODE_INFLUENCED, RATIFIED, RESTRUCTURING, UNDETERMINED)
@@ -135,9 +136,9 @@ SHAPES = {
 V: dict[tuple[str, str, str], dict] = {}
 
 
-def v(commit, path, header, verdict, ground, shape, act=None, ratification_at=None, note=None):
+def v(commit, path, header, verdict, ground, shape, act=None, ratification_at=None, remark=None):
     V[(commit, path, header)] = {"verdict": verdict, "ground": ground, "shape": shape,
-                                 "act": act, "ratification_at": ratification_at, "note": note}
+                                 "act": act, "ratification_at": ratification_at, "remark": remark}
 
 
 # --- 2026-07-11 · the open-items register stratum -------------------------------------------------
@@ -224,7 +225,7 @@ v("153d45e78c5162c17844c7a488f9e9901b524141", "docs/scoring_model.md", "-262,0 +
   "removed — so it is not a correction; it is also not cleared. This is the largest instance of the "
   "shape in the whole screened population and it is reported as one.",
   "describes-pre-existing-implementation-behaviour",
-  note="Ruling 4 of the eighteenth stop is what keeps this in view: an addition can make a correct "
+  remark="Ruling 4 of the eighteenth stop is what keeps this in view: an addition can make a correct "
        "specification wrong without removing a word. Whether a specification that states what the "
        "code does — even while calling it a defect — pre-empts the comparison a later audit would "
        "have made is not establishable from the text, which is why the verdict is NOT CLEARED "
@@ -240,7 +241,7 @@ v("153d45e78c5162c17844c7a488f9e9901b524141", "docs/scoring_model.md", "-556 +57
   "branch is the same test as before. That is a standing documentation statement altered against "
   "the implementation, which is this class.",
   "describes-pre-existing-implementation-behaviour",
-  note="THE COUNTER-CONSIDERATION, recorded because the user's act rests on this hunk: the "
+  remark="THE COUNTER-CONSIDERATION, recorded because the user's act rests on this hunk: the "
        "replacement does not ERASE the discrepancy — it names the defect, points at the §4 block "
        "that measures it, and the same commit builds a default-OFF measurement of it. The "
        "substance of the first clause may also be unchanged, since \"scale member of the current "
@@ -327,7 +328,7 @@ v("4f2c5ddfdb0ecd2e4363982b0dc722dd9e7e52e0", "docs/research_papers/BIBLIOGRAPHY
 v("4f2c5ddfdb0ecd2e4363982b0dc722dd9e7e52e0", "docs/research_papers/README.md", "-0,0 +1,27",
   RESTRUCTURING,
   "A new document indexing the locally held copies and what each settled in the theory grounding, "
-  "plus the note that the binaries live only in a private repository. Its subject is the "
+  "plus the statement that the binaries live only in a private repository. Its subject is the "
   "literature and file handling; no fact from the implementation is its source.",
   "new-document-content")
 
@@ -401,7 +402,8 @@ v("56439ebad7f5010013cec41eab834d39189f52f6", "ARCHITECTURE.md", "-44,0 +45,22",
 v("e336bd034837cfc4e81cf1c5bb4b00d611c283b4", "ARCHITECTURE.md", "-66,0 +67,27", UNDETERMINED,
   "An as-built block is added for the notation record §3.1–§3.6 delivered across this commit and "
   "its predecessors, with its establishment. The commit's account names a ratified decision (C1) "
-  "for ONE part of what the block describes — the modal reading — and no user act for the rest, so "
+  "for ONE PORTION of what the block describes — the modal reading — and no user act for the "
+  "remainder, so "
   "the RATIFIED-ACT class is not admitted for the hunk as a whole (assumption A3). NOT CLEARED.",
   "same-commit-code-documentation")
 
@@ -476,7 +478,7 @@ for hdr, what in (
     ("-204,2 +210,2", "a per-unit heading becomes numbered subsection (5)"),
 ):
     v(*_P7, hdr, RESTRUCTURING,
-      f"Part of the P7 consolidation: {what}. The commit's account states the act and its own "
+      f"One step of the P7 consolidation: {what}. The commit's account states the act and its own "
       "no-loss claim — \"the five accumulated per-unit record-path blocks consolidated into ONE "
       "coherent as-built section (nothing historical removed)\". No fact newly read in the "
       "implementation is the source of the change.",
@@ -507,7 +509,7 @@ for path, hdr in (("ARCHITECTURE.md", "-100,8 +100,9"),
 # --- 2026-07-28 · the score inventory --------------------------------------------------------------
 v("5135764ed7f8d7b992ed5f1c3b4c2fecab7f5d35", "docs/score_inventory.md", "-234 +234,18", UNDETERMINED,
   "A subfolder of large scores is added to the inventory with measured counts, the licence read "
-  "from each file's own metadata, and a closing note that the joint decoder returns an EMPTY "
+  "from each file's own metadata, and a closing statement that the joint decoder returns an EMPTY "
   "analysis on 13 of the 23. That last clause is a measured fact about the implementation's "
   "behaviour. Nothing standing is withdrawn and no user act is cited. NOT CLEARED.",
   "describes-pre-existing-implementation-behaviour")
@@ -562,11 +564,12 @@ for hdr, what in (("-151,0 +152,15", "the decisions-register section with its ru
     v("a3f0a7f0e7ee70d4f9b534b08278d5370a928ab4", "CLAUDE.md", hdr, RATIFIED,
       f"The change adds {what}. The section's own heading carries \"(shape user-ratified "
       "2026-07-28; content + living surface 2026-08-02)\", and the commit's account records the "
-      "register's 228 entries as user-ratified and the living surface as landing in this commit.",
+      "decisions register's 228 entries as user-ratified and the living surface as landing in "
+      "this commit.",
       "governing-decision-record",
       act="the decisions register ratified and made the living surface (its session-start read)",
       ratification_at="the section heading itself at CLAUDE.md at HEAD, and the ratification "
-                      "recorded in the register INDEX's preamble")
+                      "recorded in the decisions register's INDEX preamble")
 
 # --- 2026-08-02 · D-231 itself, the commit the period opens at ------------------------------------
 v("b006dc15b5f696f2fc86ad72b97fae58d2119cd7", "CLAUDE.md", "-826,0 +827,19", RATIFIED,
@@ -664,7 +667,7 @@ def build() -> dict:
             "ground": rec["ground"],
             "the_act": rec["act"],
             "where_its_ratification_is_recorded": rec["ratification_at"],
-            "note": rec["note"],
+            "remark": rec["remark"],
             "A2_retrieval": {
                 "retrieved": resolved,
                 "command": h["retrieve"],
@@ -784,8 +787,8 @@ def build() -> dict:
         "the_reported_shapes": SHAPES,
         "what_this_does_NOT_do": (
             "No screened document is edited. Nothing is restored, reverted, reconciled or "
-            "corrected. No open-items row is marked, flipped or discarded; no register entry is "
-            "written. No fix, design or measurement of the analysis is authorized or performed. The "
+            "corrected. No open-items row is marked, flipped or discarded; no decisions-register "
+            "entry is written. No fix, design or measurement of the analysis is authorized or performed. The "
             "period question is not re-opened here — the report says what would re-open it, and the "
             "act is the user's."),
         "verdicts": rows,
@@ -871,8 +874,8 @@ def render_report(art: dict) -> str:
             L.append("")
             L.append(f"**Ground.** {r['ground']}")
             L.append("")
-            if r.get("note"):
-                L.append(f"**{r['note']}**")
+            if r.get("remark"):
+                L.append(f"**{r['remark']}**")
                 L.append("")
             L.append("**Removed:**")
             L.append("")
@@ -925,8 +928,8 @@ def render_report(art: dict) -> str:
             L.append(f"- **The act:** {r['the_act']}")
             L.append(f"- **Where its ratification is recorded:** "
                      f"{r['where_its_ratification_is_recorded']}")
-        if r.get("note"):
-            L.append(f"- **Note.** {r['note']}")
+        if r.get("remark"):
+            L.append(f"- **Remark.** {r['remark']}")
         L.append(f"- *Retrieve:* `{r['A2_retrieval']['command']}`")
         L.append("")
     L.append("## What this screen does not do")

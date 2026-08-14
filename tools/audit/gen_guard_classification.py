@@ -321,6 +321,40 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "and a guard set carrying a member that fails by design teaches a reader to ignore the set. "
         "Classified for completeness on the same footing as the ratification-surface census above."),
 
+    # ---- AUTHORED 2026-08-15, cc_instruction_period_checks.md Task 3 -------------------------
+    # Both tools were added by this dispatch's own Tasks 1 and 2 and are classified in the same act
+    # that registers them, so R4's per-tool condition is met before either enters the run rather
+    # than after a later pass's STOP finds them.
+    "tools/audit/gen_period_stratum_split.py": (
+        LIVE, "gen_period_stratum_split.py:14-22 (what is derived), :37-47 (the five STOPs)",
+        "LIVE on the ruling's own operational form — can this check pass forever while the tree "
+        "moves on correctly? It can: its inputs are two committed artifacts and its output is a "
+        "derived view of them, so it passes indefinitely and fails exactly when an input moves "
+        "without the view being regenerated. Nothing in it is dated: every count is recomputed from "
+        "the artifacts on every run, and the AUTHORED half is three citations — the ruled start "
+        "commit, the two specification-bearing roles, and a registered expectation that is graded "
+        "and never used as an input. Its STOPs are demands about the artifacts as they stand, and "
+        "the sharpest is the reconciliation: the totals it derives must equal the totals the input "
+        "artifact publishes of itself, so a hand edit to either file halts it rather than moving "
+        "the split silently. ★ WHAT IT DOES NOT ASSERT: the enumeration underneath its inputs is "
+        "UNESTABLISHED (#19) and the artifact says so in its own words — a green check here means "
+        "the split follows from those artifacts, never that they are complete or correct."),
+    "tools/audit/gen_july_screen.py": (
+        LIVE, "gen_july_screen.py:22-30 (what is derived), :59-69 (the five STOPs), and its "
+        "`retrieve()` function (the per-run git-object retrieval)",
+        "LIVE, and the verdict is worth stating because the artifact's CONTENT is authored "
+        "judgment about documentation changes — which a tool cannot check. What the check asserts "
+        "is two demands about the record as it stands TODAY. Its POPULATION is IMPORTED from the "
+        "split artifact on every run and reconciled with the authored verdicts in BOTH directions, "
+        "so a hunk entering or leaving the screened population halts it rather than being graded "
+        "silently or quietly dropped. And every screened hunk's TEXT is RE-RETRIEVED from the git "
+        "object by explicit hash on every run, its recorded header located and its line counts "
+        "cross-checked against the population's own record — so a coordinate that stops "
+        "identifying the change it was read at is reported rather than trusted. Neither is a dated "
+        "reading. Its other STOPs ride with it: the four-class vocabulary and the shape vocabulary "
+        "are closed, a RATIFIED-ACT verdict must name the act AND where its ratification is "
+        "recorded, and a verdict with no ground halts it."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

@@ -10640,3 +10640,259 @@ in the record. Erring early and publishing the strata is what the dispatch asked
 also what makes the choice reversible: **the user can narrow the period afterwards without
 anything being re-derived, because nothing was excluded to begin with.** That is the shape the
 record should have wherever a session must act before a decision has been taken.
+
+---
+
+# ═══ THE PERIOD CHECKS (dispatch `cc_instruction_period_checks.md`, performed 2026-08-15) ═══
+
+*(Every count referred to below lives at `tools/audit/period_stratum_split.json`,
+`tools/audit/july_screen.json` and `tools/audit/july_screen_report.md`; **none is restated here** —
+**D-431**.)*
+
+## 4 (continued). The start state, recorded before any act
+
+**Derived at the objects and at the artifacts, not carried from the dispatch.**
+
+- **The full guard set was RUN before any file was written** (`gen_guard_state.py --check`), and it
+  ended where the previous batch's close said it would: the filing-convention application's
+  `--check` FAILING ([[OI-372]]), and the runner's STOP on derived guard candidates with no
+  authored invocation ([[OI-373]]) — **which now names TWO tools rather than one**, the second
+  added by the candidate pass itself. The runner also reported the committed
+  `tools/audit/guard_state.json` STALE against its own run.
+- **The two candidate artifacts were read at the artifact**, and the four documents the dispatch
+  orders read first were read in full.
+- **The ruling records this dispatch executes are UNTRACKED on disk** —
+  `cowork_rulings_2026_08_15_period_start.md`, `cowork_rulings_2026_08_13_eighteenth_stop.md` and
+  the decision surface the first was taken on. They are the writing side's own records; nothing was
+  committed on their behalf, and the fact is surfaced at §2.4 rather than acted on.
+
+---
+
+## 1 (continued). What needs the user
+
+### 1.a ★ THE RULED FALSIFICATION RULE FIRES — the period question is RE-OPENED, and the re-opening is yours
+
+**The screen found one hunk in the class the rule names.** It is a table entry in
+`docs/scoring_model.md`, replaced at the OI-168 measurement build of 2026-07-14 — a commit that is
+outside the ruled period and cites no user act — so that the entry names the code-level predicate
+the term shares with its sibling and the defect that predicate carries. **The commit's own account
+states the doc-sync documents the predicate and the defect, and states that the unified predicate's
+committed branch is the same test as before** — so the behaviour the entry was aligned to is not
+behaviour that commit introduced. The hunk is quoted whole, removed and added, at the top of
+`tools/audit/july_screen_report.md`.
+
+**The counter-consideration is recorded beside it, because your act rests on this hunk and not on
+the screen's framing of it.** The replacement does **not** erase the discrepancy — it NAMES the
+defect, points at the section that measures it, and the same commit builds a default-OFF
+measurement of it. The substance of the entry's first clause may also be unchanged. **What fires is
+the test as the dispatch states it**, not a finding that evidence was destroyed here.
+
+**So the question that comes back to you is not "was the period ruling wrong".** It is narrower:
+*does a documentation statement aligned to unchanged implementation behaviour, in a commit outside
+the ruled period and outside any ratified act, count as the shape the period exists to catch — when
+the alignment records the defect rather than hiding it?* Either answer is available on this
+evidence, and nothing in this batch prejudges it.
+
+### 1.b THE WIDTH OF "INFLUENCE" IS THE REAL DECISION, and the not-cleared class is where it bites
+
+Ruling 5 asks whether **any fact in the code influenced the change**. Read at its widest, that
+reaches every documentation change written in the same commit as the code it describes — and the
+standing sync rules (#10, and the scoring-model sync rule) **require** exactly those. The screen
+therefore applied a narrower operational test for the firing class and put the rest in the
+not-cleared class, **published whole with its shapes named**.
+
+**Why this matters for the period question specifically:** if the wide reading is meant, no start
+date survives it — the candidate artifact already records that #10 has demanded documentation-code
+sync since long before any of the four restructuring bounds, so the wide reading makes the period
+the whole repository history. **The narrow reading is what makes the period a decidable question at
+all.** Which width binds is yours; the screen states the one it used, in the artifact and in the
+report, so a different width can be applied to the same published population without re-reading a
+hunk.
+
+### 1.c ★ A STOP: THE GUARD CLASSIFICATION HAS BEEN UNABLE TO RUN SINCE 2026-08-13, AND NO RECORD CARRIED IT
+
+**Found while regenerating a derived view this batch's own act had moved.**
+`tools/audit/gen_guard_classification.py` STOPs at HEAD on its own per-tool condition — a tool in
+the guard-state population with no authored verdict. **Established at the git objects by explicit
+hash, not inferred:** that tool entered `gen_guard_state.AUTHORED` on 2026-08-13, and the
+classification's artifact was last written on 2026-08-11. So the artifact has been stale, and the
+check unable to run, for the two days since — through several batches, none of which reported it.
+
+**What was NOT done, and why.** No verdict was authored for another dispatch's tool: the ruling
+that governs that file requires the classification to be made by reading the tool it grades, with
+its evidence, and that is an act this dispatch was not sent to perform. `guard_classification.json`
+is therefore left exactly as committed. **This is a third standing red beside [[OI-372]] and
+[[OI-373]], of the same family as [[OI-373]] — an authored table and a derived population drifting
+apart — and it is surfaced rather than cleared.**
+
+### 1.d THE RULED CUT AND THE STRATUM LABEL ARE NOT THE SAME POPULATION
+
+The ruling opens the period **EXCLUSIVE** at its boundary commit; the candidate artifact labels that
+same commit with the stratum it opens, because a stratum boundary is inclusive of the act that opens
+it. **The difference is not empty** — the boundary commit contributes a specification-bearing
+flagged hunk of its own, and it is the hunk that writes D-231 into `CLAUDE.md`. Both readings are
+published; the screen was taken at the ruled cut, which can only add members. **Nothing here changes
+what was ruled** — it names a distinction a later act reading "S4" as "the period" would otherwise
+get wrong.
+
+---
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+### 2.1 The ad-hoc split reproduces EXACTLY — assumption A1's check is discharged in the direction that costs nothing
+
+Every cell of both registered tables agrees with the checked derivation. That is worth recording
+because the check was owed whatever it found: had a cell differed, the derived value would have
+governed and the difference would have been published per cell. **The agreement establishes the
+split, not the enumeration underneath it** — the inherited #19 caveat is carried in the artifact's
+own words and is not discharged by anything here.
+
+### 2.2 The out-of-period specification-bearing population is dominated by two shapes, and neither is a quiet correction
+
+Read at the hunks rather than assumed: the population is mostly **governing-decision records** —
+principles, corollaries, conventions and rulings written into `CLAUDE.md` and `ARCHITECTURE.md`
+with their own dated user attributions — and **measured-value re-stamps** of gate block (A) at
+ratified re-baselines, each preserving its superseded column in place (#12). The re-stamps are the
+class a wide reading of *influence* would reach first, and they are named as a shape for exactly
+that reason.
+
+### 2.3 The largest not-cleared shape is documentation written in the same commit as the code it describes
+
+It is what the standing sync rules require, and it destroys no discrepancy — documentation and
+implementation move together in one authored act. **It is nonetheless not cleared**, because
+whether such an addition pre-empts a comparison a later audit would have made is not establishable
+from the text (Ruling 4: an addition can make a correct specification wrong without removing a
+word). The class is published whole rather than argued down.
+
+### 2.4 The ruling records this dispatch executes are not in the repository
+
+Three of the four documents the dispatch orders read first are **untracked**. A session inheriting a
+fresh clone would not have them, and the eighteenth-stop record says of itself that it exists
+because almost nothing in it was on disk. **Surfaced, not acted on:** they are the writing side's
+records, and committing another side's record is an act a dispatch has to name.
+
+---
+
+## 3 (continued). Per-task log — the period checks
+
+### Task 1 — COMPLETE. The split re-derived, the screen population published whole
+
+`tools/audit/gen_period_stratum_split.py` → `tools/audit/period_stratum_split.json`, with a
+`--check` that re-derives from the two candidate artifacts and exits non-zero on drift. **It
+re-derives byte-identically.** Every count is DERIVED from those artifacts alone; three inputs are
+AUTHORED and each carries the record it was taken at — the ruled start commit, the two
+specification-bearing document roles, and the registered expectation the tool grades and never
+reconciles towards. The artifact states the inherited #19 caveat in its own words, and names the act
+that would settle it. Commit **`e924e24cf6`**, pushed.
+
+### Task 2 — COMPLETE. Every out-of-period specification-bearing flagged hunk read at its own text
+
+`tools/audit/gen_july_screen.py` → `tools/audit/july_screen.json` +
+`tools/audit/july_screen_report.md`, with a `--check` that re-derives both. **It re-derives
+byte-identically.** The population is IMPORTED from Task 1's artifact and never re-listed (#6), and
+reconciled with the authored verdicts in BOTH directions as a STOP. Every hunk's text was retrieved
+from the git object by explicit hash, its recorded header located, and its retrieved line counts
+cross-checked against the population's own record — **A2 performed, not asserted**, and performed
+again on every run. Every verdict names its ground; a ratified-act verdict that does not name the
+act AND where its ratification is recorded halts the tool, which is assumption A3 made mechanical.
+Commit **`273e19b27c`**, pushed.
+
+### Task 3 — COMPLETE. The guard set refreshed by its own generator, the two new tools registered, one red surfaced
+
+The two tools this batch built are registered in the guard set **in the act that created them** —
+invocation and classification verdict both — so neither reaches a later pass's derived population
+unclassified, which is the condition [[OI-373]] already carries for two other tools. Both run and
+both PASS. `tools/audit/guard_state.json` was stale at HEAD and is refreshed by its own generator;
+`tools/audit/guard_classification.json` is NOT, for the reason at §1.c, and is left exactly as
+committed.
+
+---
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+**Five things the check caught in this batch's own work.** Four were corrected in the close commit,
+after the two task commits had landed — which is stated plainly rather than smoothed: the check ran
+before the work was reported, which is what the rule requires, and not before the work was
+committed.
+
+- **Two of the four class names were spelled with a hyphen the dispatch does not use.** A class name
+  is the dispatch's, and re-spelling one is the self-invented-label defect in miniature. Corrected
+  to the dispatch's own spelling and both artifacts regenerated.
+- **Reserved-word collisions in this batch's own new prose** — a bare *note* used for a remark, in a
+  field name and in the report's own headings; a bare *part* for a portion; a bare *register* where
+  the decisions register was meant. Corrected at the source so the generated surfaces follow.
+- **The screen population was taken at the RULED cut rather than at the dispatch's phrase.** The
+  dispatch names the pre-S4 slice; the ruled cut adds the boundary commit's own hunk. **Declared
+  rather than assumed**, with the ground stated in the artifact: taking the ruled cut can only add
+  members and never drop one, and under-screening is the direction that costs the objective. Both
+  slices are published and the added member is marked as such.
+- **The four classes do not cover documentation written in the same commit as the code it
+  describes**, which is a large share of this population. The reading applied — that such a hunk is
+  NOT CLEARED rather than either clear class — is **authored, declared in the tool's own docstring
+  and in the artifact**, and is not presented as the dispatch's own words.
+- **The order the classes are applied in is authored too**, because the dispatch fixes the classes
+  and not the order, and the order decides cases. It is declared, with its ground: the
+  code-influenced test runs first so a ratified act cannot launder a correction made under it.
+
+**★ TWO DEPARTURES ARE DECLARED RATHER THAN DEFENDED.**
+
+- **The guard-set registration is an act the dispatch does not name.** Adding a tool with a
+  `--check` to `tools/audit/` puts it in the guard runner's derived candidate population, and
+  leaving it there unregistered reproduces exactly the condition [[OI-373]] records. Registering it
+  in the same act is what the record's own rule asks for, and it is nonetheless an edit to two
+  AUTHORED tables and a classification verdict is a judgment. Declared here rather than folded into
+  the task log.
+- **One interpreter script naming repository paths was attempted and DENIED by the shell-read
+  guard**, correctly, and the work was done with the file tools instead. Recorded because a guard
+  that fires is evidence about the session as much as about the tree.
+
+**★ THE DISPATCH'S §0e STOP RULES, EACH ANSWERED.** The screen population **was** derivable (A1
+held); both new tools' `--check` reproduce their own output; Task 1's split **reconciles** with the
+input artifact's own published totals, by stratum and by document role; **no act required editing a
+screened document, `src/`, or a scoring value**, and none was made; and the guard set ends at the
+two standing reds with **no new red caused by this batch's edits** — the third red at §1.c is
+established to predate this batch by two days, and is surfaced as a STOP under this same rule rather
+than cleared.
+
+**★ §0d, what was deliberately not done.** **No repair** — nothing restored, reverted, reconciled or
+corrected in any screened document, in any specification, or anywhere else. **No open-items row
+marked, flipped or discarded.** **No decisions-register entry written.** **The phases are not
+defined and D-231 is not rephrased.** [[OI-179]] stays OPEN and GATES. No `src/` change, no golden,
+no test touched, nothing under `tools/corpus/` or `tools/robust_stop/`, no measurement of the
+analysis built, designed, scoped or run, no design, no fix to inference, no behaviour change.
+**D-231 and #8 stand; phase 1's completion statement is not written, not drafted and not partially
+written by this batch.**
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears only of a musical score, in the
+inventory hunk's own subject; the numerical sense is written *content score* where it appears at all
+and otherwise stands inside a quotation of the document being screened. Bare *key*, *mode*, *root*
+and *scale* appear only in their musical senses or inside quoted text. *The decisions register* and
+*the open-items register* are written in full throughout; a remark is a *remark*; a portion is a
+*portion*; a tool is a *tool*, a *check* or a *generator*. Quoted text from the screened documents
+and from commit accounts is reproduced verbatim, collisions included, because fidelity to a quote
+outranks the convention for words this batch did not write.
+
+---
+
+# THE CLOSE — the split reproduces exactly, and the screen returns a question rather than a verdict
+
+**Recorded 2026-08-15 (CC) under `cc_instruction_period_checks.md`. Three tasks, three commits, all
+pushed to `origin`.** Both checks the ruling attached are run. **One STOP was surfaced** — the guard
+classification, unable to run since 2026-08-13 for a cause established to predate this batch — and
+no other stop rule fired.
+
+**The finding worth carrying past this batch is that the screen's result is a question, not a
+verdict.** The ruled falsification rule fires on a single hunk, and that hunk is the awkward kind:
+it altered a standing documentation statement against implementation behaviour the commit did not
+change, and it did so **by naming the defect it found rather than by hiding it**. Read as the
+dispatch's test states it, the rule fires. Read as the eighteenth stop's diagnosis intends —
+evidence destroyed by bringing documentation quietly into line — it may not. **The screen reports
+the evidence whole, both readings named, and leaves the act where the ruling put it: with the
+user.**
+
+**The second thing worth carrying is about what the not-cleared class is for.** Most of the
+out-of-period specification-bearing population is documentation written in the same commit as the
+code it describes — because the standing rules require exactly that. Under the widest reading of
+*influence* that class is influence; under the narrowest it is nothing. **Neither reading is taken
+here.** The class is published whole with its shapes named, so the width the user fixes can be
+applied to the same evidence without a hunk being read twice.

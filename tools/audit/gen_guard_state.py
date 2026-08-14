@@ -182,6 +182,27 @@ AUTHORED = [
      "OI-301/OI-305 shape. What it re-verifies is that the snapshot's own bytes still hash to the "
      "established value and that it still parses and carries the fields OI-291 and D-432 cite "
      "(#19)"),
+    # ---- AUTHORED 2026-08-15, cc_instruction_period_checks.md Task 3 -------------------------
+    # Both tools are added by this dispatch's own Tasks 1 and 2, so each is registered in the act
+    # that creates it rather than reaching a later pass's derived population unclassified — which
+    # is the condition `OPEN_ITEMS.md` OI-373 already carries for two other tools.
+    ("tools/audit/gen_period_stratum_split.py", ["--check"],
+     "the ruled period's split re-derives from the two candidate artifacts, and the screen "
+     "population still follows from them. Its five STOPs are what make it a guard rather than a "
+     "record: the ruled start commit must be in the commits table, every hunk record must carry "
+     "every field the derivation needs and is never skipped, every commit and file index must "
+     "resolve, the position cut and the stratum cut must agree away from the boundary commit, and "
+     "the derived flagged totals must reconcile with the input artifact's own published totals — "
+     "so an input edited by hand halts it instead of moving the split silently"),
+    ("tools/audit/gen_july_screen.py", ["--check"],
+     "the July screen re-derives — its population still imported whole from the split artifact and "
+     "reconciled with the authored verdicts in BOTH directions, and every screened hunk's text "
+     "still retrievable at its recorded coordinates from the git object by explicit hash, with the "
+     "retrieved line counts cross-checked against the population's own record. What it guards is "
+     "not the verdicts, which are authored judgments about documentation changes, but that no hunk "
+     "enters or leaves the screened population ungraded and that no coordinate stops identifying "
+     "the change it was read at"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

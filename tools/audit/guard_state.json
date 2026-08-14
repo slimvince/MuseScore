@@ -38,9 +38,12 @@
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_arm_comment_sweep.py",
       "tools/audit/gen_discard_records.py",
+      "tools/audit/gen_doc_change_candidates.py",
       "tools/audit/gen_filing_convention_application.py",
       "tools/audit/gen_gating_row_sizing.py",
+      "tools/audit/gen_july_screen.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
+      "tools/audit/gen_period_stratum_split.py",
       "tools/audit/gen_phase1_completion_inventory.py",
       "tools/audit/gen_phase1_finish_line.py",
       "tools/audit/gen_phase3_gate_partition.py",
@@ -54,8 +57,9 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 55,
+    "authored_entries": 57,
     "unclassified_candidates": [
+      "tools/audit/gen_doc_change_candidates.py",
       "tools/audit/gen_status_archive_pass.py"
     ],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
@@ -538,6 +542,32 @@
       "what_it_checks": "the phase-1q snapshot's establishment record re-verifies. Its two moment-in-time checks are FROZEN and read back -- they are statements about the tree before the apply ran, and re-running them would make this guard fail forever after the act it licensed, which is the OI-301/OI-305 shape. What it re-verifies is that the snapshot's own bytes still hash to the established value and that it still parses and carries the fields OI-291 and D-432 cite (#19)"
     },
     {
+      "tool": "tools/audit/gen_period_stratum_split.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: the period split re-derives byte-identically."
+      ],
+      "stderr": [],
+      "what_it_checks": "the ruled period's split re-derives from the two candidate artifacts, and the screen population still follows from them. Its five STOPs are what make it a guard rather than a record: the ruled start commit must be in the commits table, every hunk record must carry every field the derivation needs and is never skipped, every commit and file index must resolve, the position cut and the stratum cut must agree away from the boundary commit, and the derived flagged totals must reconcile with the input artifact's own published totals — so an input edited by hand halts it instead of moving the split silently"
+    },
+    {
+      "tool": "tools/audit/gen_july_screen.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: the July screen re-derives byte-identically."
+      ],
+      "stderr": [],
+      "what_it_checks": "the July screen re-derives — its population still imported whole from the split artifact and reconciled with the authored verdicts in BOTH directions, and every screened hunk's text still retrievable at its recorded coordinates from the git object by explicit hash, with the retrieved line counts cross-checked against the population's own record. What it guards is not the verdicts, which are authored judgments about documentation changes, but that no hunk enters or leaves the screened population ungraded and that no coordinate stops identifying the change it was read at"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -806,8 +836,8 @@
     }
   ],
   "summary": {
-    "run": 41,
-    "passing": 40,
+    "run": 43,
+    "passing": 42,
     "failing": 1,
     "failing_tools": [
       {

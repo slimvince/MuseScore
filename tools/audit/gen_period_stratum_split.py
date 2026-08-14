@@ -398,7 +398,8 @@ def build() -> dict:
             "It restores nothing, reverts nothing, corrects nothing and resolves nothing. It makes "
             "no comparison against the code in either direction. It takes no view on the period "
             "question, on whether any enumerated change should have happened, or on what the "
-            "screen will find. It closes no open-items row and writes no register entry."),
+            "screen will find. It closes no open-items row and writes no decisions-register "
+            "entry."),
     }
     return art
 
