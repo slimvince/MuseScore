@@ -10,7 +10,7 @@
   "the_population": {
     "what_it_is": "The open rows the gating split puts on the GATING side — the rows a stage waits on.",
     "derived_from": "tools/audit/phase1_completion_inventory.json → the_gating_split.gates.ids",
-    "count": 33,
+    "count": 32,
     "ids": [
       "OI-105",
       "OI-107",
@@ -32,7 +32,6 @@
       "OI-292",
       "OI-309",
       "OI-311",
-      "OI-315",
       "OI-321",
       "OI-341",
       "OI-352",
@@ -51,8 +50,27 @@
   "retired_sizings": {
     "what_this_is": "Sizings for rows that have LEFT the gating population, kept whole and counted nowhere (#12, D-648). They are history: a sizing named the act a row needed, and keeping it is what lets a later reader see whether the act performed is the act that was owed.",
     "the_stop_in_the_other_direction": "A retired sizing naming a row this pass sizes again halts the run. A sizing made of a row as it stood is not evidence about a row that has since changed, so such a row is RE-READ and re-authored, never restored.",
-    "count": 13,
+    "count": 14,
     "entries": [
+      {
+        "row": "OI-315",
+        "why_it_retired": "The row RESOLVED 2026-08-13 (`cc_instruction_oi315_class_licence.md`, Tasks 1-3). **The MAIN half's act is exactly the act this sizing named** and it was performed at commit `d9f674e0ec`: the design document's self-contradiction corrected, and the two dated reports bannered rather than rewritten — which is the branch the load-bearing surface needed, and this sizing predicted that the correction there would be a qualification rather than a deletion. **The SECOND half's act is where the sizing under-named the work, and the departure is worth reading.** It named one stale comment in the frozen test file; the class enumerated at the code under the user's second `src/` licence held four members, three of them in that file and **one in a PRODUCTION HEADER** (`keyresolver.h`'s `prevResult` parameter comment) that no account of this row — neither the row, nor the sizing, nor the two earlier passes — had named, every one of them having confined the `src/` residue to the test file. **The SIZE nevertheless held**: all four are comment corrections, the whole act landed comment-only at commit `7b802ec4a5`, and the blocker named here — the freeze on `src/` — is exactly what the user lifted for this class and nothing else.",
+        "the_sizing_as_it_stood": {
+          "row": "OI-315",
+          "anchor_quote": "THE ROW STAYS OPEN ON ITS DOCUMENT HALF",
+          "the_act_owed": "Correct `docs/key_path_design.md`'s §2.1/§5 self-contradiction and the two further `docs/` surfaces that still state the removed piece-start shortcut as live.",
+          "sizing": "SESSION-SMALL",
+          "whose_act_it_is": "a session on this side",
+          "what_blocks_it": "nothing beyond capacity",
+          "why_that_size": "Three located surfaces, each a wording correction against a removal the specification and the code already record. One of them is load-bearing for its document's whole explanation, so the correction there is a qualification rather than a deletion — still bounded, and named in the row's own enumeration.",
+          "the_second_half": {
+            "what_it_is": "The stale comment in `src/composing/tests/regionanalysis_tests.cpp`, the fourth surface the row enumerates.",
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "the freeze on `src/`"
+          }
+        }
+      },
       {
         "row": "OI-90",
         "why_it_retired": "★ NOT BECAUSE THE ROW CLOSED, WHICH IS WHAT EVERY OTHER RETIREMENT HERE MEANS — and that difference is the whole reason this record is worth reading. **The row is OPEN, its status cell is untouched, and nothing this sizing describes has been done.** It left this pass's population because the user's **Ruling 69** of 2026-08-13 (`cowork_rulings_2026_08_13_seventeenth_stop.md`, register entry **D-677**) makes a DISCARD verdict an INPUT to the derivation that decides gating, and this row carries one — put to the worth test at `CLAUDE.md` principle #10 (**D-174**) and discarded on 2026-08-13, its finding, its date and its reason each located at the record by `tools/audit/gen_discard_records.py`. This pass sizes the DERIVED gating population, so a row that stops gating stops being sized. **The sizing below is not withdrawn and was not wrong**: it is kept whole (#12) because it describes an act that is still available to anyone who wants it, and because a discard is re-openable by challenging its recorded reason rather than by rediscovering the issue — at which point this pass's own STOP fires and asks for a FRESH sizing rather than the restoration of this one, which is the right demand: a sizing made of a row as it stood is not evidence about a row whose standing has moved.",
@@ -616,24 +634,6 @@
       "what_the_blocker_means": "The act itself is a session's, but it may not start until the user rules — a mechanism change (D-436), a licence for a bounded run, or a decision about whether to build at all."
     },
     {
-      "row": "OI-315",
-      "anchor_quote": "THE ROW STAYS OPEN ON ITS DOCUMENT HALF",
-      "the_act_owed": "Correct `docs/key_path_design.md`'s §2.1/§5 self-contradiction and the two further `docs/` surfaces that still state the removed piece-start shortcut as live.",
-      "sizing": "SESSION-SMALL",
-      "whose_act_it_is": "a session on this side",
-      "what_blocks_it": "nothing beyond capacity",
-      "why_that_size": "Three located surfaces, each a wording correction against a removal the specification and the code already record. One of them is load-bearing for its document's whole explanation, so the correction there is a qualification rather than a deletion — still bounded, and named in the row's own enumeration.",
-      "the_second_half": {
-        "what_it_is": "The stale comment in `src/composing/tests/regionanalysis_tests.cpp`, the fourth surface the row enumerates.",
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "the freeze on `src/`"
-      },
-      "detail_file": "open_items/OI-315.md",
-      "what_the_label_means": "A session's act, small: a bounded documentation, comment or data correction, complete in itself.",
-      "what_the_blocker_means": "The act is available now; what it waits on is a session's capacity."
-    },
-    {
       "row": "OI-321",
       "anchor_quote": "whether the implode path applying the gate is the rule being discharged",
       "the_act_owed": "Correct the two plainly false statements — the header calling a phase deferred that the code says was executed, and the named directory that does not exist.",
@@ -731,15 +731,15 @@
     }
   ],
   "counted": {
-    "rows_sized": 33,
+    "rows_sized": 32,
     "by_label": {
       "NEEDS-RULING": 2,
       "REAL-WORK": 13,
       "SESSION-LARGE": 5,
-      "SESSION-SMALL": 13
+      "SESSION-SMALL": 12
     },
     "by_blocker": {
-      "nothing beyond capacity": 7,
+      "nothing beyond capacity": 6,
       "the freeze on `src/`": 3,
       "the phase order (D-231 and #8)": 4,
       "an event the record schedules elsewhere": 6,
@@ -747,12 +747,12 @@
       "the role separation": 1
     },
     "by_owner": {
-      "a session on this side": 30,
+      "a session on this side": 29,
       "the writing side (Cowork)": 1,
       "the user": 2
     },
-    "rows_carrying_a_second_half_of_a_different_kind": 4,
-    "rows_available_now": 7
+    "rows_carrying_a_second_half_of_a_different_kind": 3,
+    "rows_available_now": 6
   },
   "rows_by_label": {
     "NEEDS-RULING": [
@@ -791,7 +791,6 @@
       "OI-274",
       "OI-283",
       "OI-311",
-      "OI-315",
       "OI-321",
       "OI-341",
       "OI-352"
@@ -804,7 +803,6 @@
       "OI-183",
       "OI-207",
       "OI-274",
-      "OI-315",
       "OI-321"
     ],
     "the freeze on `src/`": [
@@ -847,7 +845,6 @@
   "rows_with_a_second_half": [
     "OI-109",
     "OI-274",
-    "OI-315",
     "OI-321"
   ],
   "rows_available_now": [
@@ -856,7 +853,6 @@
     "OI-183",
     "OI-207",
     "OI-274",
-    "OI-315",
     "OI-321"
   ],
   "★_what_the_shape_says": {

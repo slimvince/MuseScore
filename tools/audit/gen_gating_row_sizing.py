@@ -606,32 +606,7 @@ SIZINGS = [
         "the_second_half": None,
     },
     {
-        "row": "OI-315",
-        "anchor_quote": "THE ROW STAYS OPEN ON ITS DOCUMENT HALF",
-        "the_act_owed": (
-            "Correct `docs/key_path_design.md`'s §2.1/§5 self-contradiction and the two further "
-            "`docs/` surfaces that still state the removed piece-start shortcut as live."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "Three located surfaces, each a wording correction against a removal the specification "
-            "and the code already record. One of them is load-bearing for its document's whole "
-            "explanation, so the correction there is a qualification rather than a deletion — still "
-            "bounded, and named in the row's own enumeration."
-        ),
-        "the_second_half": {
-            "what_it_is": (
-                "The stale comment in `src/composing/tests/regionanalysis_tests.cpp`, the fourth "
-                "surface the row enumerates."
-            ),
-            "sizing": "SESSION-SMALL",
-            "whose_act_it_is": "a session on this side",
-            "what_blocks_it": "the freeze on `src/`",
-        },
-    },
-    {
+        # OI-315's sizing moved to RETIRED_SIZINGS on 2026-08-13, when the row closed.
         # OI-318's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the row closed.
         # OI-320's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the user's Ruling 62 closed
         # the row.
@@ -788,6 +763,53 @@ SIZINGS = [
 # declaration's.
 # ---------------------------------------------------------------------------
 RETIRED_SIZINGS = [
+    {
+        "row": "OI-315",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-13 (`cc_instruction_oi315_class_licence.md`, Tasks 1-3). "
+            "**The MAIN half's act is exactly the act this sizing named** and it was performed at "
+            "commit `d9f674e0ec`: the design document's self-contradiction corrected, and the two "
+            "dated reports bannered rather than rewritten — which is the branch the load-bearing "
+            "surface needed, and this sizing predicted that the correction there would be a "
+            "qualification rather than a deletion. **The SECOND half's act is where the sizing "
+            "under-named the work, and the departure is worth reading.** It named one stale "
+            "comment in the frozen test file; the class enumerated at the code under the user's "
+            "second `src/` licence held four members, three of them in that file and **one in a "
+            "PRODUCTION HEADER** (`keyresolver.h`'s `prevResult` parameter comment) that no "
+            "account of this row — neither the row, nor the sizing, nor the two earlier passes — "
+            "had named, every one of them having confined the `src/` residue to the test file. "
+            "**The SIZE nevertheless held**: all four are comment corrections, the whole act "
+            "landed comment-only at commit `7b802ec4a5`, and the blocker named here — the freeze "
+            "on `src/` — is exactly what the user lifted for this class and nothing else."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-315",
+            "anchor_quote": "THE ROW STAYS OPEN ON ITS DOCUMENT HALF",
+            "the_act_owed": (
+                "Correct `docs/key_path_design.md`'s §2.1/§5 self-contradiction and the two "
+                "further `docs/` surfaces that still state the removed piece-start shortcut as "
+                "live."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "Three located surfaces, each a wording correction against a removal the "
+                "specification and the code already record. One of them is load-bearing for its "
+                "document's whole explanation, so the correction there is a qualification rather "
+                "than a deletion — still bounded, and named in the row's own enumeration."
+            ),
+            "the_second_half": {
+                "what_it_is": (
+                    "The stale comment in `src/composing/tests/regionanalysis_tests.cpp`, the "
+                    "fourth surface the row enumerates."
+                ),
+                "sizing": "SESSION-SMALL",
+                "whose_act_it_is": "a session on this side",
+                "what_blocks_it": "the freeze on `src/`",
+            },
+        },
+    },
     {
         "row": "OI-90",
         "why_it_retired": (

@@ -539,7 +539,7 @@
   },
   "the_narrow_cut": {
    "what_it_is": "Open rows whose SUBJECT COLUMN carries the documentation vocabulary - the same first cut the apparatus declaration uses.",
-   "count": 32,
+   "count": 31,
    "ids": [
     "OI-105",
     "OI-107",
@@ -558,7 +558,6 @@
     "OI-290",
     "OI-296",
     "OI-299",
-    "OI-315",
     "OI-317",
     "OI-321",
     "OI-338",
@@ -586,7 +585,7 @@
     "where_the_finding_was_made": "`cowork_away_returns.md`, the STOP section of the abandoned reach derivation batch, which states the finding and the three routes out in full; none is restated here (#6). The abandonment and its ground are recorded at that same section.",
     "what_this_record_does_NOT_move": "No member enters or leaves this cut, no gate verdict moves, no row is written and no status cell changes. It is not a mechanism change: what the cut selects is untouched, and D-436 reserves a mechanism change to the user."
    },
-   "count": 51,
+   "count": 50,
    "ids": [
     "OI-105",
     "OI-107",
@@ -616,7 +615,6 @@
     "OI-299",
     "OI-309",
     "OI-311",
-    "OI-315",
     "OI-317",
     "OI-321",
     "OI-338",
@@ -1446,30 +1444,6 @@
     }
    },
    {
-    "id": "OI-315",
-    "title": "The piece-start shortcut was removed from the code on 2026-06-14, is still specified in the present tense, is registered LIVE as **D-058**, and is contradicted twice inside one design document",
-    "subject_column": "F — doc-sync debt (#10)",
-    "matched_on_the_subject_column": [
-     "doc",
-     "doc-sync"
-    ],
-    "matched_falsity_signals": [
-     "doc-sync",
-     "present tense",
-     "stale"
-    ],
-    "gate": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "a statement about the analysis's build state"
-    },
-    "★_the_same_verdict_with_the_discard_input_OFF": {
-     "verdict": "GATES",
-     "source": "the committed non-gating apparatus declaration (authored, D-438)",
-     "ground": "a statement about the analysis's build state"
-    }
-   },
-   {
     "id": "OI-317",
     "title": "`docs/key_path_design.md`’s banner says the document is UNCOMMITTED and under a commit hold; it is committed at HEAD and names no ratification addendum",
     "subject_column": "F — doc-sync debt (#10)",
@@ -1751,7 +1725,7 @@
   "the_test": "D-438: does the row's subject bear on the analysis, its inputs, or an instrument a measurement depends on? If yes it gates. An establishment obligation (#19) always gates, whatever its subject.",
   "applied_over": "the wide cut",
   "gates": {
-   "count": 33,
+   "count": 32,
    "ids": [
     "OI-105",
     "OI-107",
@@ -1773,7 +1747,6 @@
     "OI-292",
     "OI-309",
     "OI-311",
-    "OI-315",
     "OI-321",
     "OI-341",
     "OI-352",
@@ -1823,7 +1796,7 @@
    "why": "Ruling 69 changes what a derivation READS, so the movement it causes is shown rather than asserted: the same cut is recomputed with the input OFF and the two are diffed. The pre-input cut is kept beside the result (#12) so a reader comparing artifacts can see exactly what moved and by what.",
    "with_the_input_OFF": {
     "gates": {
-     "count": 34,
+     "count": 33,
      "ids": [
       "OI-105",
       "OI-107",
@@ -1845,7 +1818,6 @@
       "OI-292",
       "OI-309",
       "OI-311",
-      "OI-315",
       "OI-321",
       "OI-341",
       "OI-352",
@@ -1886,7 +1858,7 @@
    },
    "with_the_input_ON": {
     "gates": {
-     "count": 33,
+     "count": 32,
      "ids": [
       "OI-105",
       "OI-107",
@@ -1908,7 +1880,6 @@
       "OI-292",
       "OI-309",
       "OI-311",
-      "OI-315",
       "OI-321",
       "OI-341",
       "OI-352",
@@ -2018,7 +1989,6 @@
     "OI-292",
     "OI-296",
     "OI-299",
-    "OI-315",
     "OI-317",
     "OI-321",
     "OI-338",
@@ -2152,8 +2122,8 @@
    "of_which_a_widening_would_move": 1
   },
   "true_half": {
-   "open_rows_in_the_wide_cut": 51,
-   "of_which_gate": 33,
+   "open_rows_in_the_wide_cut": 50,
+   "of_which_gate": 32,
    "of_which_apparatus_and_therefore_non_gating": 17,
    "rows_the_records_own_authored_classification_puts_on_specification_truth": 5
   },
@@ -2227,7 +2197,6 @@
    "OI-292",
    "OI-309",
    "OI-311",
-   "OI-315",
    "OI-317",
    "OI-321",
    "OI-338",
@@ -2255,9 +2224,9 @@
  },
  "counted": {
   "decisions_recorded": 677,
-  "open_rows_in_the_index": 246,
-  "true_half_wide_cut": 51,
-  "true_half_gating": 33,
+  "open_rows_in_the_index": 245,
+  "true_half_wide_cut": 50,
+  "true_half_gating": 32,
   "complete_half_gap": 27,
   "complete_half_unhomed": 1,
   "complete_half_defense_gaps": 0

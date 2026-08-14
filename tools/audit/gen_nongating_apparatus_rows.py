@@ -584,6 +584,28 @@ RETIRED_VERDICTS = {
                "[[OI-148]], the four xfails themselves, still failing by design and still owned by "
                "the key-layer build - naming them in a baseline line neither fixes nor re-blesses "
                "them."),
+    "OI-315": (GATES, "a statement about the analysis's build state",
+               "The canonical specification describes a key-layer behaviour in the present tense "
+               "that the code removed on 2026-06-14, and register entry D-058 carries it LIVE. "
+               "D-438's line inside the documentation rows makes a correction to a statement about "
+               "the analysis or its BUILD STATE gating, and this is one with a live register entry "
+               "riding on it -- the same clause as OI-303 and OI-304, one surface further in.",
+               "RESOLVED 2026-08-13 - both halves closed "
+               "(`cc_instruction_oi315_class_licence.md`, Tasks 1-3): the specification and the "
+               "register entry on 2026-08-04, the design document and the two dated reports at "
+               "commit d9f674e0ec, the one `src/` comment this row names at commit 65f2f2b86f "
+               "under the user's FIRST `src/` licence, and the remaining `src/` comments of the "
+               "same class at commit 7b802ec4a5 under the SECOND. THE VERDICT WAS CORRECT WHILE IT "
+               "STOOD and is kept whole (#12); it is retired because the row closed, never because "
+               "it was wrong. * ITS GROUND IS WHAT THE CLOSING ACTS TURNED OUT TO NEED: the "
+               "verdict graded the row on a statement about the analysis's BUILD STATE, and every "
+               "closing act was exactly a correction of such a statement - including the last one, "
+               "which corrected a PRODUCTION HEADER's parameter comment that no account of this "
+               "row had named, the earlier ones having confined the `src/` residue to the test "
+               "file. WHAT THE CLOSURE DOES NOT DISCHARGE: the `KeyResolveDump::candidates` "
+               "comment's 'empty on fallback' half, reported at the row as a finding about a "
+               "different subject and deliberately not corrected under a licence that does not "
+               "reach it."),
 }
 
 # Verdicts a USER RULING has RE-CLASSED. Distinct from RETIRED_VERDICTS in both directions: there
@@ -803,12 +825,7 @@ V = {
                "it says about the piece-start shortcut -- is a separate row, OI-315, which gates."),
     # OI-318's verdict moved to RETIRED_VERDICTS on 2026-08-11 when the row closed.
     # ---------------------------------------------------------------------- GATES
-    "OI-315": (GATES, "a statement about the analysis's build state",
-               "The canonical specification describes a key-layer behaviour in the present tense "
-               "that the code removed on 2026-06-14, and register entry D-058 carries it LIVE. "
-               "D-438's line inside the documentation rows makes a correction to a statement about "
-               "the analysis or its BUILD STATE gating, and this is one with a live register entry "
-               "riding on it -- the same clause as OI-303 and OI-304, one surface further in."),
+    # OI-315's verdict moved to RETIRED_VERDICTS on 2026-08-13 when the row closed.
     "OI-45": (GATES, "specification completeness",
               "Half of it is stale anchors, which would be apparatus - but the other half is a "
               "scoring constant with no entry in the scoring specification at all, and phase 1 "
