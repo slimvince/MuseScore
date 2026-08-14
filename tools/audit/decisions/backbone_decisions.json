@@ -205,22 +205,22 @@
         "delegation_scope": "document",
         "section_kind": [
           {
-            "heading_line": 210,
+            "heading_line": 263,
             "heading_text": "Floating-point tie policy",
             "states_rules": true,
-            "why": "States the comparator, the no-epsilon policy, and the requirement that any change to optimization flags or arithmetic order takes a full corpus A/B. Read :210-243."
+            "why": "States the comparator, the no-epsilon policy, and the requirement that any change to optimization flags or arithmetic order takes a full corpus A/B. Read :263-296."
           },
           {
-            "heading_line": 246,
+            "heading_line": 299,
             "heading_text": "`dim7CharacteristicBonus` — `kDim7CharacteristicBonus = 0.75`",
             "states_rules": true,
-            "why": "States the bonus's definition, the do-not-suppress prohibition, and the collection-not-tonic membership rule with its do-not-reintroduce clause. Read :246-310."
+            "why": "States the bonus's definition, the do-not-suppress prohibition, and the collection-not-tonic membership rule with its do-not-reintroduce clause. Read :299-363."
           },
           {
-            "heading_line": 800,
+            "heading_line": 905,
             "heading_text": "§6a. The unified promotion primitive `promoteToWinner()`",
             "states_rules": true,
-            "why": "States the one-primitive promotion contract and the global-retirement rule. Read :752-781, :828-843."
+            "why": "States the one-primitive promotion contract and the global-retirement rule. Read :857-886, :933-948."
           }
         ]
       },
@@ -6007,7 +6007,7 @@
       "verbatim": "- **`dim7CharacteristicBonus` is the dim7 rotation selector.** Do not\n  suppress without replacing the non-diatonic-♭♭7 mechanism (B3 lesson).",
       "plain": "The bonus that makes a diminished-seventh chord prefer one rotation over another is what selects the rotation. Removing it without putting an equivalent mechanism in its place breaks the choice.",
       "rationale": "Measurement named in the record: the B3 lesson - an attempt that suppressed it and had no replacement for the non-diatonic double-flat-seventh mechanism.",
-      "home": "docs/scoring_model.md:1006",
+      "home": "docs/scoring_model.md:1134",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6025,7 +6025,7 @@
       "verbatim": "- **`rootContinuityBonus` sparse-predecessor gate is a dead end** (Iter 98).\n  Both density-based and inversion-aware variants tried; both regress\n  mozart_k280-1 IV→V65 Alberti bass.",
       "plain": "Making the bonus that rewards keeping the same root depend on how much evidence the previous chord had was tried in two forms and abandoned.",
       "rationale": "Measurement named in the record: both the density-based and the inversion-aware variants regress the same passage - a Mozart sonata movement's Alberti-bass progression from the subdominant to the dominant in first inversion.",
-      "home": "docs/scoring_model.md:1009",
+      "home": "docs/scoring_model.md:1137",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6043,7 +6043,7 @@
       "verbatim": "- **`w_stepIn`/`w_stepOut` has four gates, each load-bearing** — the\n  `ScoringPhase::Final` call-site gate, root-position guard,\n  first-inversion-m7-family surgical guard, power-quality exclusion. Each prevents\n  a specific documented regression.\n",
       "plain": "The bonus for a bass moving by step is switched off in four situations, and each of the four is there because it prevented a specific regression that was actually observed.",
       "rationale": "Measurement named in the record: each gate prevents a specific documented regression.",
-      "home": "docs/scoring_model.md:1013",
+      "home": "docs/scoring_model.md:1141",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6061,7 +6061,7 @@
       "verbatim": "  seq, and dim bonuses plus Gate R are all skipped in the Segmentation phase (gated at\n  the `applyHarmonicFunction` call site, not inside the now-stateless bonus functions).\n  Adding a new context bonus without gating it on `applyProgressionSignals` /\n  `ScoringPhase::Final` will cause segmentation regressions.\n\n- **Template arrays update atomically under `analysis::kTemplateCount`.** All",
       "plain": "While the analysis is still deciding where one chord ends and the next begins, none of the bonuses that look at neighbouring chords may score anything. Adding a new context bonus without that gate will make the segmentation worse.",
       "rationale": "Stated constraint: where a boundary falls decides which notes each candidate sees, and chord identity is itself a signal for where boundaries belong (ARCHITECTURE.md:693-696), so a context bonus scoring the exploratory passes lets the answer choose its own input. Its specification home is D-062.",
-      "home": "docs/scoring_model.md:1019",
+      "home": "docs/scoring_model.md:1147",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6079,7 +6079,7 @@
       "verbatim": "  constant since `a236a0ff21`, so the compiler enforces sizes. Adding a template =\n  bump the constant + add the template/mask entries in the same edit (§9 step 5).\n  The historical silent stack-buffer overrun from a missed matrix size is closed.\n  (Stage 2.3 removed the `kDiagTemplates` mirror — one fewer site to keep in sync.)\n\n- **Gate A subsumed Gates B/C/D — now removed (Stage 3.4b, historical); Gate A itself\n  unified into `promoteToWinner`/FM2 (2026-07-06, §6a).** Gate A's entry conditions were a",
       "plain": "Every array whose length must equal the number of chord templates takes that length from a single named constant. Adding a template means changing the constant and adding the template in the same edit.",
       "rationale": "Measurement named in the record: the historical failure was a silent stack buffer overrun from a missed matrix resize, caught during an attempted template addition; deriving the extents from the constant closes it.",
-      "home": "docs/scoring_model.md:1026",
+      "home": "docs/scoring_model.md:1154",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6097,7 +6097,7 @@
       "verbatim": "  removed in the Stage-3 per-gate retirement audit (roadmap 3.4b) as a byte-identical change\n  (0/353 × 3 configs, snapshots zero-diff). Gate A's swap later became the present branch of\n  the unified `promoteToWinner()` primitive under the FM2 rule (byte-identical, full surface).\n  Constraint going forward: do not add temporal conditions to the enharmonic flip — there is\n  no longer a B/C/D safety net; any forward/window/consecutive-stepwise variant of the\n  Major-add6 ↔ Minor flip must be reintroduced explicitly and tested.\n\n- **B2 aug7 guard requires BOTH M3 and aug5** (`||` not `&&`). M3-only was\n  tried and reverted (Schumann D-major, Corelli G-major snapshot flips).\n\n- **Gate thresholds are Baroque-calibrated.** Do not widen Baroque-tuned\n  thresholds to accommodate Jazz or other styles (see CLAUDE.md \"Gate\n  threshold and preset policy\"). Use a tighter structural guard or a\n  preset-specific override instead.",
       "plain": "Three post-scoring gates turned out to be unreachable, because the conditions of the gate before them were a strict subset of theirs, and they were deleted. The constraint that follows: nothing that depends on time or on neighbouring chords may be added to the major-with-added-sixth against minor flip, because the safety net those gates provided is gone.",
       "rationale": "Measurement named in the record: the removal was proven byte-identical - 0 differences across 353 pieces in three configurations, with the snapshot tests showing no difference either.",
-      "home": "docs/scoring_model.md:1034",
+      "home": "docs/scoring_model.md:1162",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6115,7 +6115,7 @@
       "verbatim": "- **B2 aug7 guard requires BOTH M3 and aug5** (`||` not `&&`). M3-only was\n  tried and reverted (Schumann D-major, Corelli G-major snapshot flips).",
       "plain": "The guard fires only when both intervals are present, not when either one is. Requiring only the third was tried and reverted.",
       "rationale": "Measurement named in the record: the either-one form flipped snapshots on a Schumann piece in D major and a Corelli piece in G major.",
-      "home": "docs/scoring_model.md:1041-1042",
+      "home": "docs/scoring_model.md:1169-1170",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6133,7 +6133,7 @@
       "verbatim": "- **`hasStructuralBass` gates inversion bonuses.** Sparse upper-register\n  \"bass\" notes do not get inversion bonuses (Corelli op01n08d m2 b3).",
       "plain": "A low note that is thin and high in the texture is not treated as a structural bass, so the bonuses that reward a recognisable inversion do not fire for it.",
       "rationale": "Measurement named in the record: a Corelli trio-sonata movement, measure 2 beat 3.",
-      "home": "docs/scoring_model.md:1049-1050",
+      "home": "docs/scoring_model.md:1177-1178",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6151,7 +6151,7 @@
       "verbatim": "- **Post-bonus winner quality guard for `w_dim`.** The bonus can rotate the\n  global winner across bass candidates; if the post-bonus winner is not\n  Dim/HalfDim, fall back to the without-wDim variant.",
       "plain": "The bonus that favours diminished readings can, in the course of comparing bass notes, end up electing a winner that is not diminished at all. When that happens the analysis falls back to the answer it had before the bonus was applied.",
       "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation for this fallback. What stands in its place is the section's BLANKET ground, which covers every bullet in it equally rather than this one in particular: these are load-bearing design decisions that future changes must respect or risk documented regressions. The rule's own text at the home states the DEFECT IT GUARDS AGAINST — the bonus can rotate the global winner across bass candidates, so a post-bonus winner that is not diminished or half-diminished falls back to the variant computed without it — which is the failure it prevents rather than an argument for this remedy over another. ⚠ Legacy subject. ★ AND THIS ENTRY'S RECORDED VERBATIM QUOTES A DIFFERENT RULE THAN ITS TITLE, RESTATEMENT AND DEFENSE DESCRIBE — rowed at `OPEN_ITEMS.md` OI-358. This field is written against the decision the title, restatement and defense identify, which is the post-bonus winner-quality guard at the home, and NOT against the quoted text.",
-      "home": "docs/scoring_model.md:1052-1054",
+      "home": "docs/scoring_model.md:1180-1182",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6169,7 +6169,7 @@
       "verbatim": "- **Pre-sort capture for original-winner gates.** Gates that compute against\n  the pre-correction winner must read `originalWinner*` snapshots, not the\n  live `results[0]` reference (Sub-9a lesson).",
       "plain": "Where a gate has to compare against whatever the analysis thought before a correction was applied, it reads a copy taken beforehand rather than the current top result, which the correction may already have changed.",
       "rationale": "Measurement named in the record: the lesson came from a specific numbered attempt in which the live reference had already moved.",
-      "home": "docs/scoring_model.md:1056-1058",
+      "home": "docs/scoring_model.md:1184-1186",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -6187,7 +6187,7 @@
       "verbatim": "- **Joint scoring requires regional accumulation.** `jointScoringEnabled`\n  fires only when at least one tone has `onsetAtRegionStart == true` or\n  `distinctMetricPositions > 0` (i.e. came from `collectRegionTones`).\n  Single-tick / status-bar / unit-test paths use the legacy single-bass path.",
       "plain": "The scoring that considers the bass note and the chord together only switches on when the notes came from accumulating a whole stretch of music. The single-moment paths - the status bar, a unit test - use the simpler single-bass scoring.",
       "rationale": "SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no derivation. The rule's own text at the home states the CONDITION and its consequence — joint scoring fires only where at least one tone carries evidence of regional accumulation, and the single-tick, status-bar and unit-test paths therefore use the legacy single-bass path — which is the rule restated rather than a ground for it; nothing says why those paths must fall back rather than accumulate, and no alternative is weighed. The section's blanket statement that its bullets are load-bearing decisions covers every bullet equally and is not this entry's own defense. ⚠ Legacy subject. ★ AND THIS ENTRY'S RECORDED VERBATIM QUOTES A SECTION-OPENING CHECKLIST RATHER THAN THIS RULE — rowed at `OPEN_ITEMS.md` OI-358. This field is written against the decision the title, restatement and defense identify, and NOT against the quoted text.",
-      "home": "docs/scoring_model.md:1060-1063",
+      "home": "docs/scoring_model.md:1188-1191",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "not stated",
@@ -8476,7 +8476,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:1285-1289",
+      "home": "docs/scoring_model.md:1413-1417",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8, which the record itself names as the standing home for scoring dead ends — the archive it lived in is NOT part of the session-start read and is not a home for a standing decision. The archive is untouched (#12). The `ARCHITECTURE.md` chord-layer NAMING is unchanged and is now a pointer to a section that states the rule rather than to a tracking surface. FORMER HOME, PRESERVED (#12): `cowork_handoff_archive.md:4967`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): \"**Do NOT add a negative-margin guard** — would break Gate J and all other\\nintentional backward-swap gates (B/C/D/E/F/G/H/I/K/L, Iter 91).\" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The gate letters and the iteration number stay in the archive that recorded them and are not carried into the specification (D-431). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
@@ -8503,7 +8503,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:1290-1296",
+      "home": "docs/scoring_model.md:1418-1424",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8. **The entry's own provenance is what settled the owner:** it recorded, checked and not assumed, that §8 — *\"the standing home for scoring dead ends\"* — did not mention this one; that gap is what has now been closed, and the sentence recording it is superseded in fact by the act it called for. The archive is untouched (#12) and the `ARCHITECTURE.md` chord-layer naming is unchanged. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:1147`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): \"**Gate M (Minor→Diminished TYPE-A): DEFERRED — do not retry.** See Iter 37 entry above.\\nRequires DCML harmonic context not available at runtime.\" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The measured counts stay in the archive that recorded them and are not carried into the specification (D-431); the gate LETTER is likewise not carried, being an identifier of the machinery awaiting deletion rather than of the prohibition. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
@@ -8530,7 +8530,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:1297-1302",
+      "home": "docs/scoring_model.md:1425-1430",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8, the record's own named home for scoring dead ends. The entry's *\"Absent from `docs/scoring_model.md` §8 — checked\"* is what identified the owner, and that absence is what this act closed. The archive is untouched (#12) and the `ARCHITECTURE.md` chord-layer naming is unchanged. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:1149`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): \"**Gate N (Major→Minor TYPE-A): DEFERRED — do not retry.** See Iter 39 entry above.\\nFP:genuine = 45:1 (270:6 at threshold=0.30). Same limitation as Gate M.\\nThe 6 genuine cases (vi/3 in major key) remain as unresolvable BIR=true errors.\" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The ratio, the threshold and the piece count stay in the archive that measured them and are not carried into the specification (D-431). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
@@ -8557,7 +8557,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:1303-1311",
+      "home": "docs/scoring_model.md:1431-1439",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8, the record's own named home for scoring dead ends; the entry's *\"Absent from `docs/scoring_model.md` §8\"* identified the owner and that absence is what this act closed. The archive is untouched (#12) and the `ARCHITECTURE.md` chord-layer naming is unchanged. ★ THE HOMED WORDING SAYS *LOCAL* IN TERMS, because the former verbatim's first sentence — that the then-current baseline is the correct production one — is a statement about a baseline that has since been re-based twice, and carrying it into a live specification would have written a stale claim into the compliance surface. What is standing is the prohibition, and the prohibition is on the LOCAL fix. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:2779`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): \"**Current baseline is the correct production baseline. Do not attempt\\nfurther local scoring fixes for inversions.**\" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The percentage and the regression counts stay in the archive that measured them and are not carried into the specification (D-431). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
@@ -8992,7 +8992,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:1247-1253",
+      "home": "docs/scoring_model.md:1375-1381",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
@@ -9020,7 +9020,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:1254-1257",
+      "home": "docs/scoring_model.md:1382-1385",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02) as a LEGACY-scoped dead end with no effect on the going solution; plain restatement rephrased at the user's direction to preclude the temporal-context misreading. ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
@@ -9048,7 +9048,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:1258-1264",
+      "home": "docs/scoring_model.md:1386-1392",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
@@ -9076,7 +9076,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:1265-1271",
+      "home": "docs/scoring_model.md:1393-1399",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/redesign_plan.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
@@ -9104,7 +9104,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:212-225",
+      "home": "docs/scoring_model.md:265-278",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
@@ -9119,7 +9119,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 210,
+        "heading_line": 263,
         "section": "### Floating-point tie policy",
         "label": "“Floating-point tie policy”",
         "delegated": true,
@@ -9145,7 +9145,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:233-238",
+      "home": "docs/scoring_model.md:286-291",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
@@ -9160,7 +9160,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 210,
+        "heading_line": 263,
         "section": "### Floating-point tie policy",
         "label": "“Floating-point tie policy”",
         "delegated": true,
@@ -9186,7 +9186,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:303-307",
+      "home": "docs/scoring_model.md:356-360",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
@@ -9200,7 +9200,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 246,
+        "heading_line": 299,
         "section": "### `dim7CharacteristicBonus` — `kDim7CharacteristicBonus = 0.75`",
         "label": "“`dim7CharacteristicBonus`”",
         "delegated": true,
@@ -9226,7 +9226,7 @@
       "ratified_by": [
         "the user"
       ],
-      "home": "docs/scoring_model.md:921-922",
+      "home": "docs/scoring_model.md:1026-1027",
       "home_is_layer_spec": false,
       "nonspec_kind": "contract-home",
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/scoring_model.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ RE-CLASSIFIED contract-home 2026-08-03 (CC, phase 1k): the user RATIFIED this document's status banner on 2026-08-03 (drafted at phase 1j, presented at `ratification_surfaces/cowork_pending_ratifications_next_session.md` §1). The document therefore satisfies the fifth home case in full — a status banner, the ratification, and the delegation pointer from the owning surface (`CLAUDE.md` decisions-register rule (g), user-ratified 2026-08-02 at `open_items/OI-268.md`). The `gap` classification it carried is discharged; its LEGACY mark, where it carries one, is untouched.",
@@ -9241,7 +9241,7 @@
         ]
       },
       "home_section": {
-        "heading_line": 800,
+        "heading_line": 905,
         "section": "### §6a. The unified promotion primitive `promoteToWinner()`",
         "label": "“§6a. The unified promotion primitive `promoteToWinner()`”",
         "delegated": true,
@@ -9267,7 +9267,7 @@
       "ratified_by": [
         "Cowork"
       ],
-      "home": "docs/scoring_model.md:1070-1077",
+      "home": "docs/scoring_model.md:1198-1205",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). Routed under the scoring-surface rule to `docs/scoring_model.md` §8, which exists to collect this document's standing constraints and dead ends, in that document's own voice, with its defense and with the alternative the record says was considered and not taken. The edit is ADD-ONLY. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `docs/decoder_design.md:675-678`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {\"heading_line\": 644, \"section\": \"## 13. Open Questions — DECIDED (Cowork ratification, 2026-06-12)\", \"label\": \"§13\", \"delegated\": null, \"delegation\": \"named in no user-ratified surface\", \"states_rules\": null, \"verdict\": \"EXCLUDE\", \"decided_by\": \"clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade\", \"former_class\": \"gap\", \"class_before_phase1q\": \"gap\", \"class_before_phase1r\": \"gap\"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): \"  **DECIDED (Cowork ratification, 2026-06-12):** (a) — identity-mutating gates are\n  retired/folded BEFORE the beam widens past them; **3.4 leads 3.2 for those gates** (a\n  gate that mutates root/quality/bass feeds backward edges, so it cannot be cleanly\n  separated from a wider-beam decode). §12 sequencing note updated to match.\" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).",
@@ -9321,7 +9321,7 @@
       "ratified_by": [
         "Cowork"
       ],
-      "home": "docs/scoring_model.md:425-437",
+      "home": "docs/scoring_model.md:478-490",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ HOMED 2026-08-07 (CC, the owner-rulings homing wave, executing the user's ruling of 2026-08-07 recorded at `cowork_owner_rulings_2026_08_07.md`). The recorded owner question was the two-candidate one D-490 carries. The user ruled THE SCORING-SURFACE RULE: rules, policies, falsifications, dead ends, promotion carries and retirement conditions of the legacy scoring surface home in `docs/scoring_model.md` — the governing document for the scoring pipeline and a mandatory read for scoring sessions, which is criterion C4 at the reader's actual location — with LEGACY and DEFERRED markings riding along unchanged. Written into §4, immediately beside the Gate R block that specifies the guard, in that document's own voice; the derivation already stated there is POINTED AT and not repeated (#6), and the ⚠ LEGACY subject is stated with it. The edit is ADD-ONLY: no existing line of `docs/scoring_model.md` is modified or deleted. Assumption A1 discharged before writing. FORMER HOME, PRESERVED (#12): `docs/decoder_design.md:408-416`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {\"heading_line\": 385, \"section\": \"### §6 amendment — Gate R reconstructed-credit (2026-06-12, Stage 3.3 implementation)\", \"label\": \"“§6 amendment”\", \"delegated\": null, \"delegation\": \"named in no user-ratified surface\", \"states_rules\": null, \"verdict\": \"EXCLUDE\", \"decided_by\": \"clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade\", \"former_class\": \"gap\", \"class_before_phase1q\": \"gap\", \"class_before_phase1r\": \"gap\"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): \"**Ratified form (Cowork, 2026-06-12).** Gate R reads the **pipeline-reconstructed full\nbasisDep** (`cell.basisDep + fn::inversionContextBonus(...)`, which Pass A computes for the\nscore anyway) via the 3-arg `gateRZeroesRootContinuity` overload. This is byte-identical to\nthe old proxy on every quality (it reads the same total credit), is fully intra-layer\n(closes the cross-layer dependency the redesign set out to remove — audit Finding 6), and\nhas no Dim gap. The \"direct pcWeight third\" mechanism was an approximation of the proxy's\ntrue semantics (`cappedInv == 0`); reading the true semantics is the faithful execution of\nthe redesign's *intent*. The originally designed mechanism text is retained above for the\nrecord but is not what shipped.\" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).",
@@ -9348,7 +9348,7 @@
       "ratified_by": [
         "not stated"
       ],
-      "home": "docs/scoring_model.md:1079-1088",
+      "home": "docs/scoring_model.md:1207-1216",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status_source": "Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *\"Tried and closed on the chord layer — do not retry\"*; the search (at line 315 on 2026-08-03), under *\"Tried and closed on the search — do not retry\"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.",
@@ -13044,7 +13044,7 @@
       "verbatim": "- **Three prohibitions hold through every stage, and the per-gate RETIREMENT STAGE is the only\n  sanctioned way these gates change:** no new gates, no threshold widening, no gating of the\n  root-continuity bonus. *Why:* each prohibition carries its own defense elsewhere — accumulating\n  gates are a warning sign and the answer is iteration rather than more gates; gate thresholds are\n  Baroque-calibrated and are not loosened for another style; gating the root-continuity bonus on a\n  sparse predecessor was measured a dead end (the bullet above). What this constraint adds is the\n  **single sanctioned channel** — the retirement stage's per-gate differential proof obligation —\n  which is what stops the gate layer changing by accretion.",
       "plain": "LEGACY (the chord analyzer awaiting deletion): three prohibitions hold for the whole programme — no new after-the-fact correction rules, no widening of a threshold, and no gating of the root-continuity bonus. The only sanctioned way any of those correction rules changes is the deliberate per-rule retirement stage, where a rule is removed only once the replacement reproduces the fixes it was pinned to.",
       "rationale": "Each prohibition carries its defense elsewhere in the register rather than here: accumulating gates are a warning sign, and the answer is iteration rather than more gates (D-036); gate thresholds are calibrated against the Baroque corpus and must not be loosened for another style (D-061); gating the root-continuity bonus on a sparse predecessor was measured a dead end (D-215). What this statement adds is the single sanctioned channel — the retirement stage's per-gate differential proof obligation (`:414`) — which is what stops the rules changing by accretion.",
-      "home": "docs/scoring_model.md:1090-1097",
+      "home": "docs/scoring_model.md:1218-1225",
       "home_is_layer_spec": true,
       "nonspec_kind": null,
       "status": "live",
@@ -14228,7 +14228,7 @@
       "title": "The temporal signals sitting in the vertical scorer are left where they are, and the gate that depends on them must move with them",
       "verbatim": "- **The temporal signals sitting inside the vertical scorer STAY WHERE THEY ARE, and the gate that\n  depends on one MOVES WITH THEM.** Several signals that look backward or forward in time are\n  computed inside the part of the scorer that is supposed to judge only what sounds at one moment.\n  They are known, documented debt and are **not** to be moved before a scoring-stabilisation phase;\n  when they do migrate, Gate R has to move or adapt **simultaneously**. *Why:* stated with the\n  recommendation and grounded in the mechanism — Gate R's test uses a score component as a stand-in\n  for *this candidate has a sounding third*, and it carries that meaning only because one of those\n  signals is computed where it is. Removing the debt without touching the gate would silently\n  change what the gate tests: a cross-layer dependency invisible to anyone reading the gate's own",
       "plain": "Five signals that look backward or forward in time are computed inside the part of the scorer that is supposed to judge only what sounds at one moment. They are known debt and are not to be moved yet. When they are eventually moved, the gate whose test depends on one of them has to be changed at the same time.",
-      "home": "docs/scoring_model.md:1099-1107",
+      "home": "docs/scoring_model.md:1227-1235",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-06-09",
@@ -14276,7 +14276,7 @@
       "title": "The policy for judging a proposed post-scoring gate: another bias correction gets the bias fixed first, a structural condition is sound, and a cascade means the missing thing is functional context",
       "verbatim": "- **The policy for judging a PROPOSED post-scoring gate — three tests.** (1) If the proposal is\n  another variant of correcting the bass-as-root bias, first ask whether the bias itself can be\n  reduced, or whether functional context would remove the ambiguity; add the gate only if the fix\n  is genuinely local. (2) If it turns on a **structural** condition — pitch-class arithmetic plus a\n  presence constraint, not temporal evidence — it is likely architecturally sound. (3) If it needs\n  the three-step cascade shape, that is a strong signal that the real problem is missing functional\n  context, and the gate is the wrong answer. *Why:* derived from a systematic read of the whole\n  gate population — two thirds of the gates were solving one problem, the scorer's bass-as-root\n  pull, and three separate cascades were each built up step by step for the same shape of failure,\n  which the canonical specification already names as the warning sign that accumulating gates\n  signal an unresolved architectural problem. The two gates that read came out architecturally\n  healthier both turn on structural conditions rather than compensating for the bias, which is\n  where test (2) comes from.",
       "plain": "Three tests decide whether a proposed gate should be added. If it is one more variant of correcting the scorer's pull toward reading the bass as the root, first ask whether the pull itself can be reduced or whether functional context would remove the ambiguity — add the gate only if the fix really is local. If it turns on pitch arithmetic and what is present rather than on what came before or after, it is likely sound. And if it needs the whole three-step cascade shape, that is a strong sign the real problem is missing functional context.",
-      "home": "docs/scoring_model.md:1110-1122",
+      "home": "docs/scoring_model.md:1238-1250",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-06-09",
@@ -15023,7 +15023,7 @@
       "title": "FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from",
       "verbatim": "- **FALSIFIED — no threshold can make the override net-positive.** Whether a fire helps or hurts is\n  unrelated to either quantity its trigger is built from: the incumbent reading's confidence and\n  the strength of the progression contradiction. Since the only tunable knob scales the bar by that\n  confidence, **no setting separates the cases it fixes from the cases it breaks**, and the best\n  measurable setting simply switches the pass off. *Why:* measured and stratified rather than\n  argued, on a ground-truth-aligned population of fires — the harm rate is essentially flat across\n  the contradiction value and **rises** with the incumbent's confidence, so the one available lever\n  pushes the wrong way; the mechanism of the harm is named too, the fourth- and fifth-related root\n  moves the progression score rewards accounting for most of both the fires and the harms.",
       "plain": "A late correction pass overturns a committed chord when the surrounding progression argues against it. Whether it helps or hurts turns out to be unrelated to either quantity its trigger is made of — how confident the earlier reading was, and how strongly the progression contradicts it. So no setting of the trigger separates the cases it fixes from the cases it breaks, and the best available setting simply switches the pass off.",
-      "home": "docs/scoring_model.md:1148-1156",
+      "home": "docs/scoring_model.md:1276-1284",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-06",
@@ -15047,7 +15047,7 @@
       "title": "REFUTED: making the override's comparison vertically fair does not repair it — even where the alternative fits the notes at least as well, it is still about 71 % harmful",
       "verbatim": "- **REFUTED — making the comparison vertically fair does not repair it.** The obvious repair is to\n  let the pass overturn a reading only when the replacement fits the sounding notes at least as\n  well. Measured, that band is still overwhelmingly harmful. The problem is not that the comparison\n  was unfair; it is that **the progression contradiction does not predict which root is correct at\n  these moments**. *Why:* measured across bands of the vertical gap, every one net-negative, with\n  the count and harm rate per band; the conclusion drawn is the one the numbers support and no more\n  — the earlier layer's vertical commit is a better predictor of the annotated root than the\n  progression re-pick, even where the alternative is its vertical equal.",
       "plain": "The obvious repair was to let the pass overturn a chord only when the replacement fits the sounding notes at least as well as the reading it displaces. Measured, that band is still wrong about seven times in ten. The problem is not that the comparison was unfair; it is that the progression argument does not predict which root is correct at these moments.",
-      "home": "docs/scoring_model.md:1157-1164",
+      "home": "docs/scoring_model.md:1285-1292",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-06",
@@ -15071,7 +15071,7 @@
       "title": "The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it",
       "verbatim": "- **RECOMMENDED AND NOT ADOPTED — demote the override to an ANNOTATION.** The recommendation on the\n  evidence above is to stop overturning the committed chord and instead **record that the\n  surrounding progression disagrees**, leaving the chord alone — accuracy-equivalent to simply\n  disabling the pass, while keeping the disagreement as calibrated uncertainty a later stage can\n  use. Tightening the trigger and repairing the comparison are both rejected as measured\n  net-negative. **This is a PROPOSAL, not a specification of this document: it is NOT adopted, and\n  no reader may implement it from this paragraph.** It is recorded as an INPUT to the one\n  prioritized fix plan, and the row that owns the demotion carries the cross-reference on the\n  plan's side. *Why:* every clause of the recommendation is measured and cited in the bullets\n  above; the loss it accepts — a modest number of genuine corrections given up — is stated and kept\n  in view rather than netted away.",
       "plain": "Instead of overturning the committed chord, the pass should record that the surrounding progression disagrees and leave the chord alone. That matches simply switching the pass off on accuracy, while keeping the disagreement as information a later stage can use. Tightening the trigger and repairing the comparison are both rejected: they were measured and both lose.",
-      "home": "docs/scoring_model.md:1174-1184",
+      "home": "docs/scoring_model.md:1302-1312",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-06",
@@ -15095,7 +15095,7 @@
       "title": "Restricting the override to the genuinely-coupled key-and-chord minority is UN-COMPUTABLE, not merely unmeasured: its trigger is not computed anywhere and building it is the still-owed joint step",
       "verbatim": "- **UN-COMPUTABLE, not merely unmeasured — the principled restriction cannot be built today.**\n  Restricting the override to the genuinely coupled key-and-chord minority is the principled form,\n  and its trigger **is not computed anywhere**. The binding blocker is the component that asks\n  whether a different carried KEY alternative flips the chord reading: that needs a per-key chord\n  re-decode, which **is** the joint key-and-chord step the record says is still owed, and the\n  closest existing mechanism explicitly leaves the chord unchanged. *Why:* established at the code,\n  both components separately; surfacing the trigger would mean **building** the joint step, which\n  the standing sequencing rules forbid at this stage. So the verdict is un-computable rather than\n  unmeasured, and this option is a long-run successor rather than a near-term choice.",
       "plain": "The principled home for this correction is the small set of moments where the key and the chord genuinely depend on each other. That set cannot be measured today, and not for want of a dump: half of the trigger requires re-deciding the chord under a different candidate key, which is precisely the joint step the project has not built. So this option is a long-run successor, not a near-term choice.",
-      "home": "docs/scoring_model.md:1165-1173",
+      "home": "docs/scoring_model.md:1293-1301",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-06",
@@ -15609,7 +15609,7 @@
       "title": "The correct carry is the one that keeps the distinct alternative reading, not the one that appends a near-duplicate of the winner — chosen on the carry's purpose, not on which code is at HEAD",
       "verbatim": "- **Which carry is correct is decided on the carry's PURPOSE, not on which code happened to be at\n  HEAD: the correct carry is the one that KEEPS the distinct alternative reading.** Two promotion\n  idioms were in use — one swaps a reading already carried in `results[]` to the front, leaving the\n  displaced reading in place; the other builds a fresh copy and appends it. The swap idiom is\n  correct. *Why:* argued from what the carry is FOR, and the design says so in terms — the\n  alternatives exist so the later layer can select among the **distinct** readings, and a copy of\n  the winner is not a distinct reading. Measured on the full output surface across the whole\n  corpus, the append idiom injects that near-copy and displaces the genuinely different partner,\n  which is an information-loss regression under #12. The same principle is already applied\n  elsewhere in this layer, where a non-promoting raw pull is popped so it does not pollute the\n  list. This is explicitly **not** \"prefer the idiom that is at HEAD\".",
       "plain": "Two ways of promoting a chord to winner were in use. One swaps an alternative already on the list to the front and leaves the displaced reading in place; the other builds a fresh copy and appends it. Measured, the second injects a near-copy of the winner into the alternatives and pushes out the genuinely different reading. The first is therefore the correct behaviour to unify on.",
-      "home": "docs/scoring_model.md:831-841",
+      "home": "docs/scoring_model.md:936-946",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-06",
@@ -15627,7 +15627,7 @@
       "title": "One promotion primitive with a present-first dedup guard replaces the two ad-hoc promotion idioms; the append branch fires only when the target is genuinely absent",
       "verbatim": "- **ONE promotion primitive, with a PRESENT-FIRST dedup guard — the append branch fires only when\n  the target is genuinely absent.** The ordering is the whole fix: present-first makes an\n  already-carried partner *swapped* rather than *appended*, so no duplicate can enter. *Why:* the\n  design shows the equivalence rather than claiming it — for the enharmonic flip the caller has\n  already computed the in-`results[]` partner index, and the primitive swaps that exact index, so\n  the produced permutation is byte-identical to the behaviour it replaces. That is what makes\n  retiring the separate rule a no-op on the output rather than a change to be argued about.",
       "plain": "Promoting a chord to winner becomes a single shared operation. If the reading is already among the alternatives it is swapped to the front; only if it is genuinely absent is a fresh one built and appended. That ordering is the whole fix, and it reproduces the existing behaviour exactly where the reading is already present.",
-      "home": "docs/scoring_model.md:842-848",
+      "home": "docs/scoring_model.md:947-953",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-06",
@@ -15645,7 +15645,7 @@
       "title": "Gate A becomes removable only once the unified promotion reproduces its carry byte-for-byte — that reproduction IS the retirement condition, not the winner-inertness that preceded it",
       "verbatim": "- **The retirement condition for the separate Gate A rule is BYTE-FOR-BYTE REPRODUCTION OF ITS\n  CARRY — not the winner-inertness that preceded it.** Once the flip is one promotion call with\n  present-first branching, the former \"partner present\" and \"partner absent\" rules are two branches\n  of the same promotion and the separate rule — its enum member, its guard, its name-map entry and\n  its dedicated fixtures — is redundant. It is removable **because** the primitive reproduces the\n  swap byte-for-byte on the present branch, which leaves winner AND carry byte-identical. *Why:*\n  the condition is quoted from the earlier ruling it discharges — the rule retires when the\n  promotion machinery unifies into one path producing one carry — and the design shows why the\n  earlier winner-only inertness was **not** enough: the naive removal was inert on the winner\n  across the whole corpus while changing the carry on a named subset of scores. That gap is exactly\n  why this document's evidence rule is inertness on the **full** output surface, winner AND\n  alternatives, and never the winner alone (#15).",
       "plain": "The rule could not simply be deleted: deleting it left the winner unchanged but changed the alternatives on a number of scores. It is removable once the shared promotion produces exactly the same alternatives, at which point exactly one rule name survives for the flip.",
-      "home": "docs/scoring_model.md:849-860",
+      "home": "docs/scoring_model.md:954-965",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-06",
@@ -16343,7 +16343,7 @@
       "title": "The bass note and the chord are chosen TOGETHER — the winner is the (bass, root, template) triple — replacing the sequential commit-the-bass-then-score pipeline",
       "verbatim": "**★ THE DECISION THIS SECTION RECORDS, STATED AS A RULE — the bass and the chord are chosen\nTOGETHER, as one (bass, root, template) triple (re-homed into this specification 2026-08-07 on the\nuser's ruling). ⚠ LEGACY subject — this scorer is dormant on both production surfaces.** The\nanalyzer does **not** commit to a bass and then score chords against it. It enumerates the\nplausible bass candidates and the whole root × template grid against each, and the winner is the\nbest **(bass, root, template)** triple under the composite score. *Why:* both defects that forced\nit are diagnosed to the same cause and named with it — a passing note that happens to be the\nabsolute lowest pitch wins bass selection over the beat-onset bass a step above it, flipping the\nchord root; and an incomplete slash-chord reading beats a complete root-position triad because\nroot-position completeness earned no advantage. **Neither is reachable while the bass is committed\nbefore the chord is scored**, which is what makes this a structural decision rather than a\nweighting one. The cost is stated with it and judged acceptable: a few times the scoring loop. It\nis the same principle the production estimator carries on its own terms — coupled quantities are\ndecided together rather than one being committed early.",
       "plain": "The analyzer used to pick the bass note first and only then score chords against it. Two confirmed misreadings both came from that order. It now enumerates the plausible bass notes and the chord candidates together and takes the best combination.",
-      "home": "docs/scoring_model.md:738-751",
+      "home": "docs/scoring_model.md:843-856",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-05-16",
@@ -16362,7 +16362,7 @@
       "title": "The completeness bonus fires ONLY for a root-position reading whose three triad tones are all present — the guard that stops it from demoting genuine slash chords",
       "verbatim": "**★ THE GUARD IS THE DECISION, AND IT IS STRUCTURAL RATHER THAN A THRESHOLD (re-homed into this\nspecification 2026-08-07 on the user's ruling). ⚠ LEGACY subject.** The completeness bonus fires\n**only** for a **root-position** reading — the candidate bass IS the triad root — whose three triad\ntones are all present above the presence threshold. A genuine slash chord therefore neither gains\nthe bonus nor is beaten by a rival reading that gains it wrongly. *Why:* derived from a measured\nfailure rather than chosen. The previous, unconditional version of the same idea caused large\nregressions in both directions because it promoted cases where the slash-chord reading was the\ncorrect one; the design works the guard through the exact case that failed and shows that a genuine\nslash chord with its own fifth present does not collect the root-position bonus for the rival\nreading. It is an early instance of the standing rule that a correction is given a **structural\nentry condition** rather than a widened threshold (`CLAUDE.md`, the gate and preset policy).",
       "plain": "The bonus that rewards a chord for having all of its notes present applies only when the candidate bass IS the chord's root and all three tones are above threshold. A genuine slash chord therefore neither gains it nor is beaten by a reading that gains it wrongly.",
-      "home": "docs/scoring_model.md:496-506",
+      "home": "docs/scoring_model.md:549-559",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-05-16",
@@ -17578,7 +17578,7 @@
       "verbatim": "- **Two of the post-scoring gates are PURELY-LOCAL VERTICAL refinements and must SURVIVE the\n  dissolution; the others dissolve into the competition. Recorded DEFERRED.** Most of the\n  after-the-fact repair steps exist only because the decision preceding them could not see enough\n  context, and they disappear once that decision can. Two do not: they refine the reading from the\n  notes alone and compensate for nothing, so they are carried across rather than deleted alongside\n  the others. *Why:* measured at the code rather than assumed from the design — of the live gates,\n  ten read context from beyond their own stretch and are compensation by construction, three were\n  already dead code, and the two named ones read nothing outside the sonority. **The dissolution\n  was never executed on this path** — the production estimator replaced the pipeline instead — so\n  the constraint stands DEFERRED and what it says about those two gates is a fact about this code\n  that the retirement map still has to dispose of (#12). One bookkeeping fact a reader needs: the\n  *partner-present* half of one of the two named gates has since been unified into the single\n  promotion primitive (§6a), so the surviving rule name for that flip is FM2; the unification did\n  not perform the dissolution and does not discharge this constraint.",
       "plain": "Most of the after-the-fact repair steps in the old chord path exist only because the decision that preceded them could not see enough context, and they disappear once that decision can. Two do not: they refine the reading from the notes alone and are not compensation for anything. Those two must be carried across, not deleted alongside the others.",
       "rationale": "Measured at the code rather than assumed from the design: of the twelve live gates, ten read context from beyond their own stretch and are therefore compensation by construction, three were already dead code, and the two named ones read nothing outside the sonority. The review records the tally as verified at HEAD.",
-      "home": "docs/scoring_model.md:1124-1137",
+      "home": "docs/scoring_model.md:1252-1265",
       "home_is_layer_spec": true,
       "status": "deferred",
       "date": "2026-06-20",
@@ -17951,7 +17951,7 @@
       "verbatim": "- **The information that disambiguates the third-above reading is NON-LOCAL, so no local\n  discriminator can exist — the approach is shelved, the problem is not.** Where C-E-G may be a C\n  chord or an E-minor chord inside something larger, and A-C-E likewise, nothing this scorer can see\n  at the moment of scoring — the sounding pitch classes, their weights, the templates, the key —\n  separates the two readings. What separates them is the surrounding music: the following chord's\n  root, the preceding chord's identity, and whether the bass falls on a strong beat.",
       "plain": "When the notes sounding are C, E and G, the reading could be a C chord or an E-minor chord embedded in something else; the same holds for A, C, E. Nothing the chord scorer can see at that moment — the notes, their weights, the chord templates, the key — separates the two. What separates them is the music around it: the next chord's root, the previous chord's identity, and whether the bass falls on a strong beat.",
       "rationale": "Measured, twice, and both attempts regressed: a simple discriminator stack moved the wrong-root count up on the primary corpus, and a more elaborate one moved it up further, with the wider score-gap overpowering its own added tightenings. The document also records that the cases where the third-above reading is CORRECT are indistinguishable from the cases where it is wrong on local evidence, and that a sample of the regressions flipped one wrong answer into a different wrong answer.",
-      "home": "docs/scoring_model.md:1193-1207",
+      "home": "docs/scoring_model.md:1321-1335",
       "home_is_layer_spec": true,
       "status": "shelved-with-evidence",
       "date": "2026-05-15",
@@ -17978,7 +17978,7 @@
       "verbatim": "- **A chord-level change is NOT confined to the cases it fires on: chord identity drives boundary\n  placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never touched.**\n  Where one region ends and the next begins depends partly on what the chords are, so changing one\n  chord's identity — even changing it correctly — makes the adjacent regions re-merge differently,\n  and readings that were right can become wrong where the change never looked. **Counting only the\n  cases a change fires on therefore understates its effect, and this is structural rather than a\n  condition that can be tightened away.** *Why it is stated here as a standing constraint:* it was\n  measured at the attempt above, where some of the regressions were not gate fires at all; and it is\n  the reason the governing regression stop is an EXPLAINED PER-RUN DIFF rather than a count — an\n  effect outside the cases a change fires on is exactly what an enumeration of added and removed\n  runs catches and a count does not.",
       "plain": "Where one chord ends and the next begins is decided partly by what the chords are. So changing one chord's name — even changing it correctly — makes the program cut the music differently nearby, and readings that were right can become wrong in places the change never looked at. Counting only the cases a change fires on therefore understates its effect.",
       "rationale": "Measured at the attempt that produced it: of the regressions the second variant caused, some were not cases the mechanism fired on at all. The document states the consequence plainly — this is structural, not a condition that can be tightened away.",
-      "home": "docs/scoring_model.md:1208-1218",
+      "home": "docs/scoring_model.md:1336-1346",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-05-15",
@@ -18113,7 +18113,7 @@
       "verbatim": "Two post-scoring passes change the chord quality the scorer committed and keep no record of what\nthey replaced, which is an information-loss violation (#12). **The verdict is to TOLERATE it until\nthe gate-dissolution step, with the violation kept VISIBLE in the open-items register — tolerated is\nnot forgotten.** *Why, as a derivation from three principles rather than a preference:* removing the\noverwrites now would be a production behaviour change with no replacement owner, since no component\nyet owns deciding quality from the key — which is the cross-layer patch layer adherence forbids\n(#7); and #8 puts the structural work first. Deferring to the step that gives the concern a single\nhome makes the removal ONE ratified, revertible change under the regression stop (#14/#15). The\nalternative — ripping the overwrites out now — was considered and rejected on exactly that ground.\n**The open-items register row is the mechanism that makes this an acceptance rather than an\noversight**, and it gates the dissolution.",
       "plain": "Two later passes change the chord quality the chord stage committed and keep no record of what they replaced, which is information loss. It is left in place for now rather than ripped out, because there is no other component yet that owns deciding quality from the key, and removing it now would be a patch across stages. The violation is kept on the open-items list so that leaving it is a decision and not an oversight.",
       "rationale": "Stated as a derivation from three principles and recorded as such: removing the overwrites now would be a production behaviour change with no replacement owner, which is the cross-layer patch layer adherence forbids; tolerating it until the step that gives the concern a single home makes it one ratified, revertible change under the regression stop. The alternative considered and rejected is recorded with it.",
-      "home": "docs/scoring_model.md:1227-1237",
+      "home": "docs/scoring_model.md:1355-1365",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-10",
@@ -18558,7 +18558,7 @@
       "verbatim": "**Nearly every live scoring magnitude on this surface was hand-set, and the only check that ever\nvalidated it was a regression gate later proven to under-count true per-onset root error by a large\nfactor and to have been reading a then-buggy ground-truth parser. Under #19 the validation basis of\nthese values is therefore retroactively void: they are UNFALSIFIED, NOT ESTABLISHED.** *Why the\nreading is \"unestablished\" rather than \"wrong\", which is a different claim and the record supports\nonly the first:* the same audit measured a third of the reachable constants inert at the root\nobjective, and both high-leverage re-fit candidates regressed held out. So nothing here says the\nvalues are bad; what it says is that nothing in the record shows they are good. The under-count\nfactor and the inert fraction are in the audit that measured them and are not restated (D-431).",
       "plain": "Almost every number in the chord scorer was set by hand, and the only thing that ever checked those numbers was a measurement later shown to miss most of the real error and to have been reading a faulty reference. So the check they passed does not establish them. They may still be good values — nothing here says they are bad — but nothing in the record shows that they are.",
       "rationale": "It follows from the establishment principle applied backwards, and the audit states the mechanism rather than asserting the conclusion: the only instrument that ever graded these values was later measured to under-count the true per-onset root error by a factor of fifteen to fifty-six and to have been reading a ground-truth parser since fixed. The audit also records what bounds the alarm — one third of the reachable constants were measured inert at the root objective, and both high-leverage re-fit candidates regressed held-out — so the reading is 'unestablished', not 'wrong'.",
-      "home": "docs/scoring_model.md:1319-1327",
+      "home": "docs/scoring_model.md:1447-1455",
       "home_is_layer_spec": true,
       "status": "live",
       "date": "2026-07-10",

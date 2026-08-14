@@ -39,7 +39,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1006`
+**Home.** `docs/scoring_model.md:1134`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -57,7 +57,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1009`
+**Home.** `docs/scoring_model.md:1137`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
@@ -76,7 +76,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1013`
+**Home.** `docs/scoring_model.md:1141`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -97,7 +97,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1019`
+**Home.** `docs/scoring_model.md:1147`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -119,7 +119,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1026`
+**Home.** `docs/scoring_model.md:1154`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -148,7 +148,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1034`
+**Home.** `docs/scoring_model.md:1162`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry.
 
@@ -165,7 +165,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1041-1042`
+**Home.** `docs/scoring_model.md:1169-1170`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry. ★ **THE VERBATIM AND THE HOME ANCHOR WERE RE-TAKEN 2026-08-09** (CC, `cc_instruction_return_continuation_4.md` Task 1) on the user's **Ruling 24(a)** of `cowork_rulings_2026_08_09_fourth_stop.md`, which repairs the five corrupted pairs `OPEN_ITEMS.md` **OI-358** found. This entry's quote was taken from the bullet its own TITLE and DEFENSE describe, read in place at the home: the title names the augmented-seventh guard requiring both intervals, and the recorded defense names the Schumann D-major and Corelli G-major snapshot flips — both of which are in the bullet now quoted and in no other. **NOTHING ELSE MOVED**: the title, the plain restatement, the defense, the status, the date, the ratifier and the LEGACY mark are untouched, because those were never wrong — what was wrong was the quote and the line. **THE FORMER, INCORRECT VERBATIM, PRESERVED WHOLE (#12):** "- **`hasStructuralBass` gates inversion bonuses.** Sparse upper-register\n  \"bass\" notes do not get inversion bonuses (Corelli op01n08d m2 b3).\n" — which is the bullet belonging to **D-221**. **FORMER HOME ANCHOR, PRESERVED (#12):** `docs/scoring_model.md:1049`. The `verbatim` field carries ONE quote, the correct one (#6); the former quote lives here, in the provenance, which is where a superseded field belongs.
 
@@ -182,7 +182,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1049-1050`
+**Home.** `docs/scoring_model.md:1177-1178`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry. ★ **THE VERBATIM AND THE HOME ANCHOR WERE RE-TAKEN 2026-08-09** (CC, `cc_instruction_return_continuation_4.md` Task 1) on the user's **Ruling 24(a)** of `cowork_rulings_2026_08_09_fourth_stop.md`, repairing one of the five corrupted pairs `OPEN_ITEMS.md` **OI-358** found. The quote was taken from the bullet this entry's own TITLE and DEFENSE describe, read in place: the title names a sparse upper-register lowest note earning no inversion bonuses, and the recorded defense names the Corelli trio-sonata measure — both are in the bullet now quoted. **NOTHING ELSE MOVED**; the title, restatement, defense, status and mark were never wrong. **THE FORMER, INCORRECT VERBATIM, PRESERVED WHOLE (#12):** "  live `results[0]` reference (Sub-9a lesson).\n" — a two-line FRAGMENT of the pre-sort capture bullet, which belongs to **D-223**. **FORMER HOME ANCHOR, PRESERVED (#12):** `docs/scoring_model.md:1058`. The `verbatim` field carries ONE quote (#6).
 
@@ -200,7 +200,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1052-1054`
+**Home.** `docs/scoring_model.md:1180-1182`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry. ★ **THE VERBATIM AND THE HOME ANCHOR WERE RE-TAKEN 2026-08-09** (CC, `cc_instruction_return_continuation_4.md` Task 1) on the user's **Ruling 24(a)** of `cowork_rulings_2026_08_09_fourth_stop.md`, repairing one of the five corrupted pairs `OPEN_ITEMS.md` **OI-358** found. The quote was taken from the bullet this entry's own TITLE and RESTATEMENT describe, read in place: the diminished bonus rotating the winner off a diminished reading, and the fallback to the variant computed without it. **NOTHING ELSE MOVED.** **THE FORMER, INCORRECT VERBATIM, PRESERVED WHOLE (#12):** "  fires only when at least one tone has `onsetAtRegionStart == true` or\n  `distinctMetricPositions > 0` (i.e. came from `collectRegionTones`).\n  Single-tick / status-bar / unit-test paths use the legacy single-bass path." — the tail of the joint-scoring bullet, which belongs to **D-224**. **FORMER HOME ANCHOR, PRESERVED (#12):** `docs/scoring_model.md:1061`. **ONE FURTHER NOTE, because this entry's `rationale` mentions the mismatch:** that field was written on 2026-08-09 by the defense-gap task, deliberately against the decision the title identifies rather than against the then-quoted text, and it carries a marker saying so. It is left exactly as written — the repair does not rewrite a field that was already correct about which decision this entry records. The `verbatim` field carries ONE quote (#6).
 
@@ -218,7 +218,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1056-1058`
+**Home.** `docs/scoring_model.md:1184-1186`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry. ★ **THE VERBATIM AND THE HOME ANCHOR WERE RE-TAKEN 2026-08-09** (CC, `cc_instruction_return_continuation_4.md` Task 1) on the user's **Ruling 24(a)** of `cowork_rulings_2026_08_09_fourth_stop.md`, repairing THE SHARPEST of the five corrupted pairs `OPEN_ITEMS.md` **OI-358** found. The quote was taken from the bullet this entry's own TITLE and DEFENSE describe, read in place: the title names a gate judging the pre-correction winner reading a snapshot, and the recorded defense names the numbered attempt in which the live reference had already moved — the bullet now quoted names that attempt in terms. **NOTHING ELSE MOVED.** **THE FORMER, INCORRECT VERBATIM, PRESERVED WHOLE (#12):** "---\n\n## 9. How to add a new template safely (checklist)" — **a horizontal rule and a section heading, which is not a decision at all.** That is what made this the case a reader could see without any comparison, and it is preserved because a defect's own evidence is information (#12). **FORMER HOME ANCHOR, PRESERVED (#12):** `docs/scoring_model.md:1329`. The `verbatim` field carries ONE quote (#6).
 
@@ -237,7 +237,7 @@
 
 **Status.** LIVE · date not stated · ratifier not stated
 
-**Home.** `docs/scoring_model.md:1060-1063`
+**Home.** `docs/scoring_model.md:1188-1191`
 
 **Provenance.** docs/scoring_model.md:907-979 (§8, known constraints and dead ends), whose own opening states that these are load-bearing design decisions future changes must respect. No date or ratifier stated per entry. ★ **THE VERBATIM AND THE HOME ANCHOR WERE RE-TAKEN 2026-08-09** (CC, `cc_instruction_return_continuation_4.md` Task 1) on the user's **Ruling 24(a)** of `cowork_rulings_2026_08_09_fourth_stop.md`, repairing the last of the five corrupted pairs `OPEN_ITEMS.md` **OI-358** found. The quote was taken from the bullet this entry's own TITLE and RESTATEMENT describe, read in place: joint bass-and-chord scoring firing only on accumulated regional evidence, with the single-moment paths falling back to the single-bass path. **NOTHING ELSE MOVED.** **THE FORMER, INCORRECT VERBATIM, PRESERVED WHOLE (#12):** "Derived from the B1, B2, and B3 lessons.\n\n1. **Read the existing template nearest to yours.** Understand its intervals,\n   TPC deltas, and which existing terms / guards apply to it.\n" — the opening of the template checklist in the FOLLOWING section, which is a procedure and not a decision. **FORMER HOME ANCHOR, PRESERVED (#12):** `docs/scoring_model.md:1333`. **ONE FURTHER NOTE:** this entry's `rationale` was written on 2026-08-09 by the defense-gap task, deliberately against the decision the title identifies rather than against the then-quoted text, and it carries a marker saying so; it is left exactly as written. The `verbatim` field carries ONE quote (#6).
 

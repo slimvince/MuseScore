@@ -211,23 +211,7 @@ SIZINGS = [
         ),
         "the_second_half": None,
     },
-    {
-        "row": "OI-45",
-        "anchor_quote": "fix at the next scoring_model touch",
-        "the_act_owed": (
-            "Re-aim the stale §4/§6 anchors in `docs/scoring_model.md` and give "
-            "`kHalfDimFirstInversionBonus` its §6 entry."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "Two located corrections in one document, each verifiable at the object it points at. It "
-            "shares a document with OI-183 and OI-274, so one pass over that document closes three "
-            "rows' worth of act."
-        ),
-        "the_second_half": None,
-    },
+    # OI-45's sizing moved to RETIRED_SIZINGS on 2026-08-14, when the row closed.
     {
         "row": "OI-57",
         "anchor_quote": "ASSIGNED: the corpus-onboarding event (OI-38)",
@@ -379,23 +363,7 @@ SIZINGS = [
         "the_second_half": None,
     },
     # OI-150's sizing moved to RETIRED_SIZINGS on 2026-08-13, when the row closed.
-    {
-        "row": "OI-183",
-        "anchor_quote": "a small doc pass at the next scoring_model.md touch; no code effect",
-        "the_act_owed": (
-            "Give the twelve unmentioned scoring constants a by-name mention in "
-            "`docs/scoring_model.md`, or state per constant which table cell already covers it."
-        ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
-        "why_that_size": (
-            "The row's own words are a small doc pass with no code effect, and the population is "
-            "already enumerated by a mechanical check — so the act is bounded before it starts. It "
-            "shares its document with OI-45 and OI-274."
-        ),
-        "the_second_half": None,
-    },
+    # OI-183's sizing moved to RETIRED_SIZINGS on 2026-08-14, when the row closed.
     {
         "row": "OI-207",
         "anchor_quote": "the residual second pass is this row's remaining scope",
@@ -506,29 +474,62 @@ SIZINGS = [
     },
     {
         "row": "OI-274",
-        "anchor_quote": "a doc-sync act at the document's next touch",
+        "anchor_quote": "a GOVERNING-DOCUMENT question and therefore the user's",
         "the_act_owed": (
-            "Give `docs/scoring_model.md` the scoping sentence its two sibling rows closed on, "
-            "re-stamp its footer date, and correct the two DRAFT-UNCOMMITTED banners standing on "
-            "tracked files."
+            "Rule whether `CLAUDE.md`'s mandatory-read instruction should also name the joint "
+            "estimator's own specification. That is the WHOLE of what this row still waits on: its "
+            "main half — the scoping sentence, the re-stamped footer and the two banners standing "
+            "on tracked files — was PERFORMED 2026-08-14 "
+            "(`cc_instruction_scoring_model_pass.md`, Tasks 2 and 3, commits `b366d44947` and "
+            "`814286c1c3`), and the row's cell records it."
         ),
-        "sizing": "SESSION-SMALL",
-        "whose_act_it_is": "a session on this side",
-        "what_blocks_it": "nothing beyond capacity",
+        "sizing": "NEEDS-RULING",
+        "whose_act_it_is": "the user",
+        "what_blocks_it": "a user ruling",
         "why_that_size": (
-            "The row's own remedy is a doc-sync act, and the shape is established: both sibling rows "
-            "closed by adding one scoping sentence. The three smaller instances are located."
+            "What remains is a change to a governing document, which only the user may make, so no "
+            "session can make the act larger or smaller. **This entry was RE-ANCHORED and its act "
+            "narrowed on 2026-08-14, and the ground is that the row itself moved:** the sizing that "
+            "stood was authored against a row whose main half was still owed, and it is preserved "
+            "whole below (#12). Narrowing it here is not the silent narrowing this pass forbids — "
+            "that prohibition is against a sizing pass slipping a population movement in unremarked, "
+            "and this entry follows an act that accounts for itself at the row, in two commits and "
+            "in `STATUS.md`. **The row is NOT flipped and no status moved.**"
         ),
-        "the_second_half": {
-            "what_it_is": (
-                "Whether `CLAUDE.md`'s mandatory-read instruction should also name the joint "
-                "estimator's specification — which the row calls a governing-document question and "
-                "therefore the user's."
+        "the_sizing_as_it_stood_before_2026_08_14": {
+            "anchor_quote": "a doc-sync act at the document's next touch",
+            "the_act_owed": (
+                "Give `docs/scoring_model.md` the scoping sentence its two sibling rows closed on, "
+                "re-stamp its footer date, and correct the two DRAFT-UNCOMMITTED banners standing "
+                "on tracked files."
             ),
-            "sizing": "NEEDS-RULING",
-            "whose_act_it_is": "the user",
-            "what_blocks_it": "a user ruling",
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "The row's own remedy is a doc-sync act, and the shape is established: both sibling "
+                "rows closed by adding one scoping sentence. The three smaller instances are located."
+            ),
+            "the_second_half": {
+                "what_it_is": (
+                    "Whether `CLAUDE.md`'s mandatory-read instruction should also name the joint "
+                    "estimator's specification — which the row calls a governing-document question "
+                    "and therefore the user's."
+                ),
+                "sizing": "NEEDS-RULING",
+                "whose_act_it_is": "the user",
+                "what_blocks_it": "a user ruling",
+            },
+            "what_the_act_actually_needed": (
+                "The SIZE held — one pass over one document, plus two banner corrections — but the "
+                "sizing under-named the banner half in one respect it could not have seen: the "
+                "closing line of `docs/key_path_design.md` repeats the banner's claim, so "
+                "correcting the banner alone would have left the falsity in the document. And the "
+                "correction had to be MINIMAL rather than a re-banner, because OI-317's own cell "
+                "reserves what that banner should BECOME as a filing decision no session may take."
+            ),
         },
+        "the_second_half": None,
     },
     {
         # OI-282's sizing moved to RETIRED_SIZINGS on 2026-08-11, when the row closed.
@@ -763,6 +764,74 @@ SIZINGS = [
 # declaration's.
 # ---------------------------------------------------------------------------
 RETIRED_SIZINGS = [
+    {
+        "row": "OI-45",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-14 (`cc_instruction_scoring_model_pass.md`, Task 2, commit "
+            "`b366d44947`). **The SIZE held exactly** — one pass over one document, blocked by "
+            "nothing, and the shared-document economy this sizing predicted is what the dispatch "
+            "grouped the three rows for. **Where the sizing departed from what the act needed is "
+            "in its ACT OWED, and it departed because it took the row at its word.** It named two "
+            "corrections: re-aim the stale anchors, and give the constant its entry. Read at the "
+            "document, the anchors were in five sections and not the two the row names — the gate "
+            "section carried none, its Location column having already been converted to named code "
+            "regions (the document does not date that conversion, so its ordering against the row "
+            "is NOT established and is not claimed) — and the constant's "
+            "entry EXISTS, so nothing had to be given it; what was false was where that entry said "
+            "the bonus fires. The act performed was therefore an anchor re-aim of wider reach plus "
+            "a TRUTH correction, not the completeness act named here. **Two further stale locators "
+            "no account of this row had named were found the same way and corrected with them.**"
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-45",
+            "anchor_quote": "fix at the next scoring_model touch",
+            "the_act_owed": (
+                "Re-aim the stale §4/§6 anchors in `docs/scoring_model.md` and give "
+                "`kHalfDimFirstInversionBonus` its §6 entry."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "Two located corrections in one document, each verifiable at the object it points "
+                "at. It shares a document with OI-183 and OI-274, so one pass over that document "
+                "closes three rows' worth of act."
+            ),
+            "the_second_half": None,
+        },
+    },
+    {
+        "row": "OI-183",
+        "why_it_retired": (
+            "The row RESOLVED 2026-08-14 (`cc_instruction_scoring_model_pass.md`, Task 2, commit "
+            "`b366d44947`). **Both the SIZE and the ACT OWED held**, including the alternative "
+            "limb: the twelve are given a by-name table that also states, per constant, which cell "
+            "or prose already covered its effect. It was performed in the same pass as OI-45's, "
+            "which is the shared-document economy this sizing named. **One departure, in the "
+            "population rather than the act:** the row's own figure does not reproduce at HEAD — "
+            "the scorer's translation unit registers one fewer name than the row gives it, and the "
+            "function layer's progression constants are outside the row's population altogether "
+            "though the document already names every one of them, so none is a gap and the outcome "
+            "is unchanged."
+        ),
+        "the_sizing_as_it_stood": {
+            "row": "OI-183",
+            "anchor_quote": "a small doc pass at the next scoring_model.md touch; no code effect",
+            "the_act_owed": (
+                "Give the twelve unmentioned scoring constants a by-name mention in "
+                "`docs/scoring_model.md`, or state per constant which table cell already covers it."
+            ),
+            "sizing": "SESSION-SMALL",
+            "whose_act_it_is": "a session on this side",
+            "what_blocks_it": "nothing beyond capacity",
+            "why_that_size": (
+                "The row's own words are a small doc pass with no code effect, and the population "
+                "is already enumerated by a mechanical check — so the act is bounded before it "
+                "starts. It shares its document with OI-45 and OI-274."
+            ),
+            "the_second_half": None,
+        },
+    },
     {
         "row": "OI-315",
         "why_it_retired": (
@@ -1312,6 +1381,23 @@ RECORD_MAY_BE_STALE = {
         "row's MAIN half is untouched by that ruling and is still owed in full** — the scoping "
         "sentence, the re-stamped footer and the two banners standing on tracked files — so this "
         "flag narrows what the row waits on and nothing else."
+        " ★ TWO CORRECTIONS TO THIS FLAG, 2026-08-14, AND THEY ARE DELIBERATELY UNEQUAL. "
+        "**(a) THE MAIN-HALF CLAUSE IS FALSE AT HEAD AND IS CORRECTED HERE:** the main half was "
+        "PERFORMED on 2026-08-14 (`cc_instruction_scoring_model_pass.md`, Tasks 2 and 3, commits "
+        "`b366d44947` and `814286c1c3`) — the scoping sentence, the re-stamped footer and both "
+        "banners — so it is no longer owed at all, and the sizing above is re-anchored to what "
+        "remains. The former wording stands immediately above (#12) and was true when written. "
+        "**(b) THE ANSWERED PREMISE IS NOT CORRECTED, AND THAT IS THE POINT OF SPLITTING THE TWO.** "
+        "A later session REFUTED it at the objects on 2026-08-13 and recorded the refutation in "
+        "`STATUS.md`: Ruling 64's instruction fires on a session touching the JOINT ESTIMATOR's "
+        "behaviour, while this row's subject is a session touching scoring logic in "
+        "`chordanalyzer.cpp` — so what stands in `CLAUDE.md` is a SECOND instruction beside the "
+        "first, on a different trigger, not a widening of it. That session left this flag standing "
+        "on the express ground that correcting an authored flag on a committed tool is a separate "
+        "ruling, and this batch — which reached the same reading independently at the two "
+        "instructions — leaves it standing for the same reason. **So the flag's ANSWERED claim is "
+        "recorded here as REFUTED-BUT-UNCORRECTED, and no session should read it as settling the "
+        "row's second half.**"
     ),
     "OI-220": (
         "Its live remainder is SMALLER than the row states, and the row does not say so. Of the six "

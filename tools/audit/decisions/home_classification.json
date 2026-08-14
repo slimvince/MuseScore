@@ -338,7 +338,7 @@
       "delegation_line": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "sections": {
         "“Floating-point tie policy”": {
-          "heading_line": 210,
+          "heading_line": 263,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -348,7 +348,7 @@
           "class_after": "contract-home"
         },
         "“`dim7CharacteristicBonus`”": {
-          "heading_line": 246,
+          "heading_line": 299,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -357,7 +357,7 @@
           "class_after": "contract-home"
         },
         "“§6a. The unified promotion primitive `promoteToWinner()`”": {
-          "heading_line": 800,
+          "heading_line": 905,
           "delegated": true,
           "states_rules": true,
           "entries": [
@@ -2445,9 +2445,9 @@
       "id": "D-321",
       "title": "Winner selection compares candidate scores exactly, with no epsilon anywhere in the ranking",
       "document": "docs/scoring_model.md",
-      "home": "docs/scoring_model.md:212-225",
+      "home": "docs/scoring_model.md:265-278",
       "section": "“Floating-point tie policy”",
-      "section_heading_line": 210,
+      "section_heading_line": 263,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "CLAUDE.md:1287",
@@ -2467,9 +2467,9 @@
       "id": "D-322",
       "title": "Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets",
       "document": "docs/scoring_model.md",
-      "home": "docs/scoring_model.md:233-238",
+      "home": "docs/scoring_model.md:286-291",
       "section": "“Floating-point tie policy”",
-      "section_heading_line": 210,
+      "section_heading_line": 263,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "CLAUDE.md:1287",
@@ -2489,9 +2489,9 @@
       "id": "D-323",
       "title": "Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return",
       "document": "docs/scoring_model.md",
-      "home": "docs/scoring_model.md:303-307",
+      "home": "docs/scoring_model.md:356-360",
       "section": "“`dim7CharacteristicBonus`”",
-      "section_heading_line": 246,
+      "section_heading_line": 299,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "CLAUDE.md:1287",
@@ -2511,9 +2511,9 @@
       "id": "D-324",
       "title": "Retirement of a post-scoring rule is global — a rule still doing work on any one preset is retained for all",
       "document": "docs/scoring_model.md",
-      "home": "docs/scoring_model.md:921-922",
+      "home": "docs/scoring_model.md:1026-1027",
       "section": "“§6a. The unified promotion primitive `promoteToWinner()`”",
-      "section_heading_line": 800,
+      "section_heading_line": 905,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "CLAUDE.md:1287",

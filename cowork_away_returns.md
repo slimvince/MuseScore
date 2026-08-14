@@ -10056,3 +10056,306 @@ the row's halves closed. **The finding worth carrying past this batch is not tha
 is that the row's own list of where the statement stood was wrong**, and that the instruction to
 enumerate at the code rather than from the list is what caught it one act before the licence would
 have been spent and the tree left still saying it.
+
+---
+
+# ═══ THE `docs/scoring_model.md` PASS — the cheap look, three rows over one document, and two banners corrected only as far as a session may (dispatch `cc_instruction_scoring_model_pass.md`, performed 2026-08-14) ═══
+
+> The sections above are earlier batches' and are not rewritten. **Acts are dated from the clock:
+> 2026-08-14. NO STOP rule fired**, and §0e's five conditions are answered one by one in the
+> self-check below. **One process deviation is declared rather than glossed** — see the start state.
+
+## 4 (continued). The start state, and the one thing this batch did NOT establish before acting
+
+**★ THE OPENING GUARD SET WAS NOT RUN BEFORE THIS BATCH'S FIRST EDIT, AND THAT IS A DEVIATION FROM
+WHAT THE PRECEDING BATCHES DID.** It is declared here rather than smoothed over, because a batch that
+reports its guard set "ends where it found it" without having looked at the start is reporting a
+comparison it did not make. What was actually available, and what was done with it:
+
+- **The committed `tools/audit/guard_state.json` was READ** — it records exactly one `FAIL`, the
+  filing-convention application's `--check` ([[OI-372]]), and the runner's STOP on a derived guard
+  candidate with no authored invocation ([[OI-373]]) is recorded beside it. Those are the **two
+  standing reds** the dispatch's §0e names, and the preceding batch's close names the same two.
+- **The full guard set was then run AFTER Task 2's commit, and again after each round of repair.**
+  Across those sweeps **six checks went red beyond the two standing ones** — four surfacing in the
+  first sweep and two more behind them, each uncovered only once the one in front of it was repaired.
+  Every one is traced below to this batch's own edits, and every one is repaired by its own generator.
+  **None of them is a cause §0e would halt on** — §0e halts on a red whose cause is neither this
+  dispatch's edits nor already recorded, and these are the first kind.
+- **What is therefore established is weaker than a before-and-after comparison and is stated as
+  such:** the end state is *the two standing reds and nothing else*, read at a full run; that the
+  start state was the same rests on the committed artifact and on the preceding batch's close, not on
+  a run this batch made.
+- **And one consequence of that gap is carried rather than hidden.** `tools/audit/guard_state.json`
+  captures each guard's own output text, and two rows closing moved the counts several of them print,
+  so the artifact had to be refreshed rather than left stale. The [[OI-374]] hazard — captured text
+  following the environment — was answered by the preceding batch with **its own opening run's**
+  byte-identical re-derivation in this environment. **This batch has no such opening run.** What it
+  has instead is the evidence taken at the other end: the refreshed artifact was **immediately
+  re-derived and came back byte-identical**, so the capture is stable in this environment. **That is
+  weaker than the opening evidence in one specific way and the difference is stated rather than
+  glossed:** it establishes that the capture does not drift between runs here, and it does NOT rule
+  out that the committed text differed from this environment for some reason other than this batch's
+  edits.
+- **THE END STATE, read at a full run with nothing changing under it: the two standing reds and
+  nothing else** — the filing-convention `--check` FAIL and the runner's STOP on the same
+  no-authored-invocation candidate. Both sweeps exit non-zero for that STOP alone, which is the
+  recorded state and not a new failure.
+
+**The working tree's tracked-modification state was likewise not enumerated before the first edit.**
+What IS established, through the sanctioned tool, is that each commit's changed-path set is exactly
+the files named for it and nothing else. No golden, no test, no corpus of scores, and nothing under
+`tools/corpus/` or `tools/robust_stop/` at any point.
+
+## 1 (continued). What needs the user
+
+### ★ (i) [[OI-274]]'s SECOND HALF IS THE ONLY THING THAT ROW NOW WAITS ON — AND AN AUTHORED FLAG STILL ASSERTS IT IS ANSWERED
+
+The row's main half is performed: the scoping sentence, the re-stamped footer, and both banners. What
+remains is the question the row assigns to the user — **whether `CLAUDE.md`'s mandatory-read
+instruction should also name the joint estimator's own specification.**
+
+**The reason this is not merely "still open" is worth the user's attention.**
+`tools/audit/gen_gating_row_sizing.py` carries an authored staleness flag asserting that Ruling 64 of
+2026-08-11 ANSWERED this half. **A session on 2026-08-13 refuted that at the objects** and recorded
+the refutation in `STATUS.md`: Ruling 64's instruction fires on a session touching the **joint
+estimator's** behaviour, while this row's subject is a session touching **scoring logic in
+`chordanalyzer.cpp`** — so what stands in `CLAUDE.md` is a **second instruction beside the first, on
+a different trigger**, not a widening of it. That session left the flag standing on the express
+ground that correcting an authored flag on a committed tool is a separate ruling.
+
+**This batch reached the same reading independently**, at the two instructions, before finding either
+the flag or that record — and it has left the ANSWERED premise standing for the same reason, while
+correcting the flag's *other* clause, which this batch's own act made false. **So the record now
+carries the refutation in three places and the refuted claim in one, deliberately.** The user's
+ruling would settle both at once.
+
+### ★ (ii) [[OI-317]]'s FILING DECISION — WHICH IS WHY THE BANNER CORRECTION STOPS WHERE IT DOES
+
+`docs/key_path_design.md`'s banner is [[OI-317]]'s own subject, and that row's status cell reserves
+**what the banner should become** — retained as a superseded design record, or re-bannered — as a
+filing decision. This batch struck the false statements and took no filing decision, so the row does
+not close. **Its lapse under D-676 is unaffected**: it stays open, gates nothing and is not owed.
+What changed is that an act authorized by [[OI-274]] removed part of its subject, which is recorded
+on the row so it is not left silently overtaken.
+
+### ★ (iii) THE `KeyResolveDump::candidates` COMMENT — TASK 1 ANSWERS THE CONSUMER QUESTION AND THE WORTH TEST IS THE USER'S
+
+Task 1's answer is below and it is unambiguous: **nothing consumes the field's emptiness.** The
+dispatch says in terms that what the look cannot settle is whether the comment should be corrected —
+that is amended #10's worth test, and it is not this dispatch's to apply. **No fix, no licence, no
+row and no discard was made.**
+
+### ★ (iv) A FALSE STATEMENT IN A MANDATED SESSION-START READ, FOUND OUTSIDE THIS DISPATCH'S SCOPE AND NOT CORRECTED
+
+`BUILD_AND_TEST.md` — which `CLAUDE.md` makes one of the three session-start reads — carries a note
+stating that **the Jazz preset's low `maxTotalInversionContextBonus` suppresses inversions**, and
+gives the value. **That premise is refuted twice in the record and once at the code.** `CLAUDE.md`'s
+own preset-caps correction and `docs/scoring_model.md` §4 both state that the field is **never set on
+any code path**, that both presets inherit the default, and that the per-preset values it names were
+aspirational and never implemented; read at the code, the field has no assignment anywhere — only its
+declaration default and an optimizer range entry. Jazz's different inversion behaviour comes from its
+reduced individual bonuses.
+
+**It is reported and NOT corrected**, on the dispatch's own rule: no sweep beyond the three rows'
+subjects, and that document is not among them. It is placed here rather than rowed because a finding
+surfaced inside a dispatch sent for something else is the user's to place.
+
+## 2 (continued). Surfaced findings
+
+**★ (a) BOTH OF [[OI-45]]'s HALVES WERE WRONG ABOUT THEIR OWN SUBJECT — which is the previous batch's
+method result reproducing.** The dispatch carried that result forward as an instruction (A2:
+enumerate at the document, not from the rows' lists) and it earned its place twice in one row. **The
+anchor half named the wrong sections:** at HEAD the raw line-number anchors stood in **five sections**
+— §2, §3, §4, §5 and §7 — while the row names §4 and §6, and **§6 carried none**: its Location column
+had already been converted to named code regions, on exactly the ground the row exists for. *(The
+document records that conversion without dating it, so whether it happened before or after this row
+was written is NOT established here and is not claimed.)* **The constant half named a gap that does
+not exist:** `kHalfDimFirstInversionBonus` HAS an entry in §6, and §1's override list names the
+constant too. What was false is **where the entry said the bonus fires**.
+
+**★ (b) AND THE CONSTANT'S ENTRY WAS WRONG IN A WAY THAT MATTERS TO A READER OF THE MECHANISM.** It
+placed the bonus "inside the enharmonic-flip block", in the "Gate-A / G-family region". Read at the
+code, it is applied inside the **bias-correction** block — after the winner's bass-root deduction,
+before the bias re-sort, in the `!didEnharmonicFlip` branch that by construction runs **only when the
+enharmonic flip did NOT fire**. `paramoverride.h`'s rule enum is the second witness: the
+`BiasCorrection` rule owns it, so disabling that rule suppresses this bonus with the deduction.
+
+**★ (c) [[OI-183]]'s TWELVE REPRODUCE EXACTLY; ITS POPULATION FIGURE DOES NOT.** Every constant the
+row names is registered and appears nowhere in the document, and no thirteenth was found. But the
+scorer's translation unit registers **one fewer name** than the row gives it, and the function
+layer's progression constants — registered through the same registry — are outside the row's
+population altogether, though the document already names every one of them, so none is a gap. The
+outcome is unchanged; the count is not the row's. No speculation is offered about the difference: the
+row's figure was measured on 2026-07-18 and what is established here is the count at HEAD.
+
+**★ (d) TWO STALE LOCATORS NO ROW NAMES**, found by the same enumeration and corrected with the
+eight: §4's `ScoringPhase` citation, which named `chordanalyzer.h` for **both** the enum and the
+prefs field (both live in `analysis/types/analysistypes.h`) and placed the `ScoringSnapshot` forward
+declaration beside the enum, where it no longer is; and §4's `chordanalyzer.h:411` for the
+`ChordAnalyzerPreferences` declaration — wrong in the file as well as the line. **Four of the eight
+anchors had drifted across a FILE boundary and not merely down a file.**
+
+**★ (e) A NAMING OBSERVATION, DECLARED AND NOT ACTED ON.** `kHalfDimFirstInversionBonus` says *first
+inversion* while the code admits the alternative's third, fifth OR seventh in the bass. The code's own
+comment carries the same wording, so the name is inherited rather than a defect this pass could
+re-specify.
+
+## 3 (continued). Per-task log
+
+### Task 1 — the cheap look (A1), read-only, no commit
+
+**The prediction at §0a is MET at the moderate confidence it was registered with, and its refutation
+condition did not fire.** The enumeration was made **at the call graph**, not from any document's
+account of what reads the field:
+
+- **Every site that materializes a `KeyResolveDump` at all was located first** — there are three: the
+  key-candidate dump writer in `tools/batch_analyze.cpp`, and two coverage tests in
+  `src/composing/tests/l3_coverage_tests.cpp`.
+- **Exactly one reader of the field exists outside the producing function**, the dump writer, and it
+  **does not branch on emptiness**: it walks the vector by index, using its size as a loop bound and
+  as a separator test. An empty vector emits an empty JSON array and nothing else changes. The layer
+  audit's own branch disposition classes that one ternary a serialization guard.
+- **The two test sites read `declaredModeOrdinal` and `lookaheadBeatsUsed` and never touch this
+  field.**
+- **No production caller supplies the structure at all.** Every call site — the region analyzer's two,
+  the notation bridge helper's, the batch tool's two non-dump ones, and every test outside the two
+  above — passes the default null, which is the byte-identity the header itself claims.
+- **No document or tool states the emptiness as a contract it relies on.** The layer's own field
+  disposition classes it a diagnostic dump member with no derived-fact publication concern, and no
+  tool reads the emitted JSON at all — the flag that produces it has no downstream consumer in the
+  tree.
+
+**What the look could not settle is not over-read**: whether the comment should be corrected is the
+worth test's call and is the user's.
+
+### Task 2 — the one-document pass (A2, A3), commit `b366d44947`, pushed
+
+One pass over `docs/scoring_model.md`, which is the economy the three rows were grouped for.
+[[OI-274]]'s scoping sentence and footer, [[OI-45]]'s anchors and constant entry, [[OI-183]]'s twelve
+constants. **Every correction carries its former wording in place (#12)**, the eight anchors' former
+wordings collected in ONE "Code locators" note with the section each stood in — which is the
+document's own precedent, its gate section having been converted the same way. **No scoring value,
+threshold, gate or template was added, changed or removed**; the sync rule runs the other way.
+
+**One choice inside the act is worth recording because it could have gone the other way.** The
+[[OI-183]] table gives **no values**. A hand-typed constant is a future staleness site of exactly the
+class [[OI-45]] exists against, each value has one home already in the literal the override registry
+names, and where the document already carries a value in prose the table points at that prose instead.
+
+### Task 3 — the banners and the flips (A3, A4), commit `814286c1c3`, pushed
+
+**A3 was checked BEFORE the act and at the objects:** both files are tracked blobs, read by explicit
+hash rather than inferred from a working-tree status, and each banner's falsity is about the file it
+stands on. `docs/key_path_design.md`'s **closing line went with its banner**, since it repeats the
+claim and correcting the banner alone would have left the falsity in the document.
+
+**A4, per row:** [[OI-45]] and [[OI-183]] flip on conditions met; [[OI-274]] does not, on its second
+half; [[OI-317]] does not, on the filing decision. Each detail file gains a dated note and **no
+status**, which is the whole of what rule (d) allows it.
+
+### The derived views — six reds, each from this batch's own edits, each repaired by its own generator
+
+**Nothing was repaired by hand.** In the order they were met — and the order matters, because two of
+the six were invisible until the one in front of them was repaired:
+
+- **The apparatus declaration STOPPED** on two live verdicts naming rows the INDEX no longer carries
+  open — which is that tool's designed behaviour and the way a stale declaration would otherwise
+  survive an unnoticed resolution. Each verdict moved **WHOLE** into its own `RETIRED_VERDICTS` block
+  with the reason it left (#12, **D-648**), by the pattern that block documents and has exercised
+  before.
+- **The phase-1 completion inventory and the finish line** re-derived once the INDEX settled; the
+  finish line's **falsification test PASSED** inside its own build.
+- **The decisions register's home anchors drifted** — inevitably, since `docs/scoring_model.md` is a
+  contract home and this batch inserted into it. They were re-aimed **per citation by the tool that
+  owns that job**, never by an assumed uniform shift, and the drift was indeed not uniform. The
+  verifier then reported every verbatim found at its home and every cited line correct.
+- **The home classification STOPPED** on three authored section-kind judgments whose heading lines had
+  moved. Each was re-aimed to the heading text it records — the invariant the tool checks — and the
+  "Read :x-y" ranges in their prose with them, each range's new endpoints **located at the content**
+  rather than shifted by a guessed constant.
+- **The gating-row sizing STOPPED twice.** First on the two closed rows: each sizing moved whole to
+  `RETIRED_SIZINGS` with the reason it left, and **both retirements record where the sizing and the
+  row parted company** — [[OI-45]]'s named a completeness act whose half was already met, so the row
+  closed on a truth defect instead; [[OI-183]]'s was exactly right, including its alternative limb.
+  Then on [[OI-274]], whose anchor quote this batch had removed from the INDEX by rewriting the cell.
+  That entry is **re-anchored and its act narrowed to what remains**, with the sizing that stood
+  preserved whole beneath it (#12) and the ground stated: the prohibition this pass carries is against
+  a sizing slipping a population movement in unremarked, and this entry follows an act that accounts
+  for itself in two commits, at the row, and in `STATUS.md`. **The row is not flipped and no status
+  moved.**
+- **The rendered decisions register went stale** behind the anchor re-aim and the applied home
+  classification, both of which write into the register's source data. Regenerated from that data —
+  never hand-edited, which rule (d) forbids — after which the verifier passes again.
+- **`guard_state.json` itself went stale**, because the counts several guards print moved when two
+  rows closed. Refreshed, then **immediately re-derived byte-identically** — with the [[OI-374]]
+  caveat recorded above stated at its own width rather than borrowed from the preceding batch's
+  evidence.
+
+**★ AND ONE OF THIS BATCH'S OWN CLAIMS WAS WITHDRAWN BY ITS SELF-CHECK, AFTER IT HAD ALREADY BEEN
+COMMITTED IN TWO PLACES.** Re-reading the diff against the sources, the assertion that §6's Location
+column *"had already been converted before this row was written"* turned out to rest on nothing: the
+document records the conversion and does not date it. **The claim is WITHDRAWN rather than restated
+in weaker words**, its former wording preserved at each site (#12), and the finding it supported
+stands on what IS established — the section list at HEAD. The correction reaches the row's cell, its
+detail note, both derived tools' authored text, this section and `STATUS.md`.
+
+### Task 4 — the close
+
+One `STATUS.md` pointer entry per task and nothing else in that file; this section appended to
+`cowork_away_returns.md`; the report made at the objects with commit hashes.
+
+## The self-check (§0e, item by item, and §0d)
+
+**§0e's five halt conditions, each answered.** **(1)** No reader of the field branches on emptiness —
+Task 1's enumeration found exactly one reader and it uses the size as a loop bound. **(2)** Task 2's
+enumeration disagreed with the rows in three places and **A2 resolved every one by reporting** — the
+anchors' sections, the constant's existing entry, and the population figure — which is what A2
+provides for. **(3)** No item required touching `src/` or a scoring value; nothing under `src/` was
+edited, and no scoring value, threshold, gate or template moved. **(4)** Both banners' falsity is
+about the file each stands on, established at the git object. **(5)** Six guards went red and **every
+one traces to this batch's own edits**, which §0e distinguishes from a halt; the two standing reds are
+unchanged, and the guard set ends at those two and nothing else.
+
+**§0d, what was deliberately not done.** **No `src/` edit and no third licence** — the header comment
+stands as it is, and Task 1's answer is an input to a worth test this dispatch does not apply. **No
+scoring value, threshold, gate or template added, changed or removed.** **No sweep beyond the three
+rows' subjects** — the `BUILD_AND_TEST.md` finding above is reported and untouched for exactly that
+reason. **[[OI-274]]'s second half is untouched.** **[[OI-207]] is not begun.** **[[OI-179]] stays
+OPEN and GATES.** No golden, no test changed, skipped or re-blessed, no corpus of scores, nothing
+under `tools/corpus/` or `tools/robust_stop/`, no measurement of the analysis built, designed, scoped
+or run, no design, no fix to inference, no behaviour change.
+
+**Phase 1's completion statement is not written, not drafted and not partially written by this batch.
+D-231 stands and phase 1 is open; #8's three-clause gate stands.**
+
+**★ ON THE RESERVED-WORD CONVENTION.** Bare *score* appears in no non-musical sense; bare *key* and
+*key signature* carry the tonal sense; bare *note* is a pitch event, with *dated note* carried
+knowingly as the open-items register's own rule (d) wording; bare *measure*, *beat*, *scale*,
+*interval*, *root*, *part*, *rest*, *figure*, *flat* and *mode* appear in no non-musical sense —
+*measurement* carries the gauging sense, *value* the numeric one, and *tool*, *check*, *generator* and
+*lint* stand where the collided word would have been. **Two collisions are carried knowingly because
+they are the names of the things themselves:** *inversion* and *bass*, which are musical here anyway;
+and **register entry** / **the open-items register**, the inherited compound.
+
+---
+
+# THE CLOSE — the rows were wrong about their own subjects twice more, and the banner correction stopped where a session's authority stops
+
+**Recorded 2026-08-14 (CC) under `cc_instruction_scoring_model_pass.md`. Four tasks, two commits, both
+pushed to `origin`. No STOP rule fired.** Two rows closed, two stayed open with what remains named on
+each.
+
+**The finding worth carrying past this batch is the same one the previous batch left, arriving in a
+different form.** There, a row's list was wrong about *where* a statement stood. Here, one row's list
+was wrong about **which sections** carried its defect *and* about **whether the gap it names exists
+at all** — the entry it calls missing is present, and what was actually wrong was a mechanism
+statement inside it that no account of the row had looked at. A second row's population figure does
+not reproduce at HEAD. **In both batches the instruction to enumerate at the object rather than from
+the row is what found it**, and in this one it also found two stale locators no row names.
+
+**The second thing worth carrying is about authority rather than method.** The banner correction was
+graded WORTH FIXING on a measured consequence, and it could have been performed in full — struck,
+re-bannered, the document refiled. It was not, because a *different* open row reserves that filing
+decision, and a session may not take it. **The false statements are gone and the decision is still the
+user's**, which is the shape the record should have wherever an act and a decision overlap.

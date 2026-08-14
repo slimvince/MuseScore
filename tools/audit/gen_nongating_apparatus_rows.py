@@ -626,8 +626,10 @@ RETIRED_VERDICTS = {
               "beside it. * AND THE ANCHOR HALF WAS WRONG ABOUT ITS OWN SECTIONS: the raw "
               "line-number anchors stood in the overview, the matrix section, the terms section, "
               "the joint-scoring section AND the inversion-correction section - not the two the "
-              "row names, whose gate section had already been converted before the row was "
-              "written. Enumerating at the document rather than from the row's list is what found "
+              "row names, whose gate section carried none at all, its location column having "
+              "already been converted to named code regions (the document does not date that "
+              "conversion, so its ordering against the row is NOT established and is not claimed). "
+              "Enumerating at the document rather than from the row's list is what found "
               "both, and is why the dispatch required it."),
     "OI-183": (GATES, "specification completeness",
                "Twelve of thirty-two override-registered scoring constants have no by-name "
