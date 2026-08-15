@@ -1,7 +1,135 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (THIRTEENTH) — THE APPARATUS STREAM IS CLOSED AT ITS SOURCE; PHASE 1 IS **CHOOSABLE** AND NOT NEARER; THE PLAN, NOT THE LAST FINDING, IS WHAT THE NEXT SESSION WORKS. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (FIFTEENTH, 2026-08-15) — THE PERIOD IS RULED AND ITS FALSIFICATION RULE FIRED THE SAME NIGHT; THE REPAIR IS RE-SHAPED TO DERIVATION-FIRST BY USER DIRECTION; THE ARTIFACT INVENTORY COMES BEFORE THE PHASES. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first, then the ordered list below, before you obey
+`CLAUDE.md` — whose D-231 truth half and phase structure remain superseded and not yet rewritten
+(the fourteenth block's diagnosis and its bar STAND: make no correction to any document on the
+ground that the code says otherwise).**
+
+**★ READ, IN ORDER:** (1) `cowork_rulings_2026_08_13_eighteenth_stop.md` IN FULL — still the
+diagnosis everything rests on. (2) **`cowork_rulings_2026_08_15_method_directions.md` IN FULL —
+the user's re-shaping of the whole repair, taken in conversation 2026-08-15 and carried nowhere
+else.** (3) `cowork_rulings_2026_08_15_period_start.md` — the period ruling and its two attached
+checks. (4) This block. (5) `CLAUDE.md`, with the caveats above. (6)
+`tools/audit/period_stratum_split.json` and `tools/audit/july_screen_report.md` — the two checks'
+artifacts, verified at the objects. (7) `OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is still under
+the filtering ruling and is not authority.** The writing side is bound by
+`cowork_rulings_2026_08_15_session_length.md` (the degradation tells and the handover rule).
+
+**★ WHAT WAS RULED AND RUN 2026-08-15.** The restructuring period **opens EXCLUSIVE at
+`b006dc15b5`** (Alternative B, on the surface in `ratification_surfaces/`), with two checks
+attached; CC ran both (commits `e924e24cf6`, `273e19b27c`, `e66bd1b2c5`, verified at the
+objects). The split reproduced the registered prediction **in every cell**. The July screen read
+all 68 out-of-period specification-bearing hunks: **1 fires the ruled falsification rule** (a
+`docs/scoring_model.md` table entry aligned to the implementation at the OI-168 measurement
+build, 2026-07-14 — quoted whole at the top of the screen report, WITH the counter-consideration
+that it named the defect rather than hiding it), 40 ratified-act edits, 12 restructuring-shaped,
+15 not cleared. **So the period question is RE-OPENED and is the user's FIRST ruling: the WIDTH
+of "influence", then the instance.** The writing side's recommendation is on record in the
+method-directions record §3 — narrow width; period stands; the fired hunk and the fifteen
+not-cleared carried by name — **and no ruling is taken.**
+
+**★ THE RE-SHAPE, in one sentence each — the method-directions record is the authority, this is
+the map.** Derivation-first: every specification's design REDONE from clean sources; the current
+text an untrusted witness. Clean room: deriving sessions NEVER read the implementation —
+world-not-mirror, derive-before-compare, curated boot replacing `CLAUDE.md` temporarily.
+Evidence (published research AND our own findings, via an airlocked ledger that also carries
+ANTIPATTERNS) is input, never the decision — at most one candidate per concern, or none.
+Top-down: framework (charters, boundary contracts) before detail specs. Every replacement runs
+the disposition discipline (five fates, transfer list, arithmetic completeness). Restructuring is
+superseded by construction, closure ruling owed. Pilot on `docs/scoring_model.md` only to prove
+method and size, output quarantined.
+
+**★ THE SEQUENCE AS DIRECTED:** the **ARTIFACT INVENTORY FIRST** — the active dispatch is
+**`cc_instruction_artifact_inventory.md`** (Task 0 lands the writing-side records, making the
+record handover-safe; then the derived inventory and its ruling surface) → the user rules the
+class verdicts → the phase-definition surface (discharging eighteenth-stop Rulings 6 and 7) →
+the preparation acts (register filter, rulings sort, findings ledger) → the pilot → the framework
+→ the detail specs → the audit.
+
+**★ STANDING HAZARDS, none new this block:** three guard reds — [[OI-372]], [[OI-373]], and the
+UNROWED stall of `gen_guard_classification.py` since 2026-08-13 (surfaced in the period-checks
+close §1.c; needs a row or a discard-with-record). `STATUS.md` is still unreadable as a mandatory
+read ([[OI-370]]). [[OI-179]] stays OPEN and GATES.
+
+**★ WORKING RULES RE-EVIDENCED THIS SESSION:** read CC's FULL close in `cowork_away_returns.md`
+and PROVE it by quotation — this session worked from the chat summary once, was caught by the
+user, and the full close carried a second user decision (the width ruling) the summary had
+compressed away. Verify every CC report at the objects — the fired hunk was re-retrieved
+byte-identically, the split checked cell by cell. Rulings are cited as "eighteenth-stop ruling N"
+versus "principle #N" — the bare collision cost a turn.
+
+*(The fourteenth block below is superseded as the entry point. Its diagnosis, its reading order
+for the eighteenth-stop record, and its bar on code-ground corrections remain binding.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FOURTEENTH) — ★ STOP: THE RESTRUCTURING PHASE HAS BEEN RUNNING THE AUDIT EARLY, AND THE INSTRUCTION THAT CAUSED IT IS STILL LIVE IN A MANDATORY READ. (SUPERSEDED as the entry point by the fifteenth block above.)
+
+**You start clueless. Read this block before you read anything else, and read it before you obey
+`CLAUDE.md`.**
+
+**★ THE DIAGNOSIS, FIRST, BECAUSE THE REPOSITORY STILL DESCRIBES THE SUPERSEDED PLAN.** A
+code-versus-documentation comparison is what the **AUDIT** does. This arc performed those
+comparisons during **restructuring** — so the audit ran early, against an instrument not yet fit for
+it. **The fault is TIMING, not direction.** Worse: **a discrepancy between specification and code is
+EVIDENCE, not a defect.** Where they disagree we get a chance to evaluate which is wrong; where they
+agree we learn nothing. **Every correction that brought them into line destroyed a signal**, at
+exactly the highest-information sites. And a specification amended to match the implementation makes
+the audit **worth less than nothing** — it returns a false clean result, and a wrong algorithm
+passes through certified correct.
+
+**★ DO NOT OBEY D-231's TRUTH HALF. It is the bug and it is still in force.** `CLAUDE.md` currently
+instructs that *the specification text is corrected wherever it states something false at HEAD*.
+**The user has ruled that it must be rephrased or removed** and it has not been. Until it is: **make
+no correction to any document on the ground that the code says otherwise.** An inconsistency between
+two documents is restructuring and is in scope; anything reaching to the code waits for the audit.
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_13_eighteenth_stop.md` IN FULL** — the day's
+fifteen rulings with their grounds, and §3's list of what is *not* ruled. (2) This block. (3)
+`CLAUDE.md`, **knowing that D-231 and the phase structure are superseded and not yet rewritten.**
+(4) `tools/audit/doc_change_candidates.json` — the candidate list, with the caveat below. (5)
+`OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is under a filtering ruling and is not authority until it
+has been filtered.**
+
+**★ WHAT IS ESTABLISHED, AND WHAT IS NOT, ABOUT THE ONE ARTIFACT.**
+`tools/audit/doc_change_candidates.json` enumerates 435 commits, 4,521 file changes and 23,737
+hunks, and flags 22,198 as content-changing. **Its shape matters more than its size**: 62 % differ
+only in digit runs and almost all of those are anchor or line coordinates — **one derivation, not
+thirteen thousand judgments**; the two largest roles are generated artifacts and register detail
+files; and **the specification-bearing slice is 314 hunks — governing 239, specification-or-docs
+75.** **NOT ESTABLISHED:** the measurement tool that produced every one of those numbers was written
+in one batch and has never been checked against anything (#19); the *register-detail* role conflates
+the two registers, so how much is open-items is unknown; and **the restructuring period's start is
+not established** — the population opens at the earliest of four bounds, erring early.
+
+**★ THE PLAN AS IT NOW STANDS, none of it authorized.** **Reconciliation, not rollback**: compare
+the pre-pollution baseline against the current text, write a coherent new version, fix the pointers
+in other documents as part of the act. The test is **CHARACTER, not provenance** — *does this text
+express a design intent, or describe an implementation?* — because provenance is invisible in the
+text. **A pilot on one file establishes the method first (#19)**, delivering a proposal per
+difference and never a silent rewrite. **The phases must be re-ruled** before anything else lands.
+
+**★ WHAT AWAITS THE USER:** the new phase definitions; D-231's rephrasing or removal; the pilot's
+file and its result; the decisions-register filter; and whether the two `src/` comment edits are
+marked, which needs a ruling permitting a named edit.
+
+**★ WORKING RULES THIS ARC EARNED THE HARD WAY.** **Read CC's FULL close in
+`cowork_away_returns.md`, never the chat summary — and prove it** by quoting something from the
+close that was not in the summary; several of this arc's errors came from working off summaries.
+**Grep locates; it does not establish.** **Write a premise ledger for your OWN claims, not only for
+CC's** — every one of the writing side's ten errors this arc was a claim put to the user with no
+check attached. **Plain vocabulary**: *HEAD* is the current commit of everything and never means the
+code; say *a ruling permitting a named act*, not *licence*; *instrument* means a violin. **Present
+every decision with alternatives, each pro and con naming its principle, guardrail or rule, and each
+rated against the ultimate objective — always.**
+
+*(The thirteenth block below is superseded in its plan and its priorities. Its account of phase 1's
+remaining distance is measured against a structure the user has replaced.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (THIRTEENTH) — THE APPARATUS STREAM IS CLOSED AT ITS SOURCE; PHASE 1 IS **CHOOSABLE** AND NOT NEARER. (SUPERSEDED as the entry point by the block above.)
 
 **You start clueless — this block is your boot. No population appears here by design (D-431);
 every quantity is an artifact you read at HEAD. Nothing is running.**
