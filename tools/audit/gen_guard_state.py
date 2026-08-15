@@ -202,6 +202,18 @@ AUTHORED = [
      "not the verdicts, which are authored judgments about documentation changes, but that no hunk "
      "enters or leaves the screened population ungraded and that no coordinate stops identifying "
      "the change it was read at"),
+    # ---- AUTHORED 2026-08-15, cc_instruction_artifact_inventory.md ---------------------------
+    # Registered in the act that creates it, for the reason stated three entries above.
+    ("tools/audit/gen_artifact_inventory.py", ["--check"],
+     "the artifact inventory re-derives at the commit its own artifact RECORDS -- so it passes "
+     "indefinitely rather than going red at the next commit -- and, separately, its signature "
+     "table still covers the tree AS IT STANDS with nothing unclassified. The second half is the "
+     "live one and the reason this is a guard at all: a file added by a later commit in a "
+     "top-level directory no rule names halts this tool instead of reaching a later pass ungraded. "
+     "Its last rule is bounded on purpose so that STOP can fire, and the artifact carries the "
+     "probes that establish it does (#19). The untracked appendix is a reading of the working "
+     "tree and is excluded from the byte comparison, so writing a scratch file does not turn this "
+     "guard red"),
 
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "

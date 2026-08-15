@@ -355,6 +355,26 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "are closed, a RATIFIED-ACT verdict must name the act AND where its ratification is "
         "recorded, and a verdict with no ground halts it."),
 
+    # ---- AUTHORED 2026-08-15, cc_instruction_artifact_inventory.md ---------------------------
+    # Classified in the act that registers it, so R4's per-tool condition is met before it enters
+    # the run rather than after a later pass's STOP finds it.
+    "tools/audit/gen_artifact_inventory.py": (
+        LIVE, "gen_artifact_inventory.py:36-46 (the four STOPs), and its `--check` branch",
+        "LIVE, and the verdict turns on a design choice made to earn it. An inventory of a tree is "
+        "a dated thing by nature: re-derive it at the CURRENT commit and it fails the moment "
+        "anyone commits anything, which is the OI-301/OI-305 shape exactly. So `--check` "
+        "re-derives at the commit the committed artifact RECORDS -- that half passes indefinitely "
+        "and fails only if the artifact or the table was edited by hand -- and then runs the "
+        "classification AGAIN over the tree as it stands. That second run asserts a property of "
+        "the repository TODAY: every file it carries is named by some rule. It is the "
+        "`claude_md_rule_triage.py` shape -- a DERIVED population that grows as the tree grows, "
+        "with an unclassified member a STOP. The last rule in the table is deliberately bounded "
+        "rather than a catch-all so that STOP can fire, and the artifact carries probes that "
+        "establish both halves: that a path in an unnamed top-level directory comes back "
+        "unclassified, and that the tool then raises. ★ WHAT IT DOES NOT ASSERT: that any file is "
+        "in the RIGHT class. The table is authored and only its coverage is checked, which the "
+        "artifact states of itself."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",
