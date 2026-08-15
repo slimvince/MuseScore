@@ -113,7 +113,6 @@ compile_commands.json
 .claude/settings.local.json
 
 # Working-process instruction and report files (CC / Cowork session artifacts)
-/cc_instruction_*.md
 /cc_e2d_*.md
 ai-assistant/CC_INSTRUCTION_*.md
 # Transient tools/cc_* scratch (consistent with root /cc_*): cc_*.py / cc_*.json /
