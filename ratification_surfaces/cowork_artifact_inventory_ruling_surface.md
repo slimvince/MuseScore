@@ -6,7 +6,7 @@
 >
 > **★ THE ONE THING TO READ BEFORE THE CLASSES**, because it changes what the inventory means: a large body of this project's dispatches and reports is **not in git at all** — see *The untracked appendix* at the end. It is a finding, not a proposal.
 >
-> *Dispatch: `cc_instruction_artifact_inventory.md`, Task 2. Derived from the tracked tree at `363f935732`.*
+> *Dispatch: `cc_instruction_artifact_inventory.md`, Task 2. Derived from the tracked tree at `31c573b06e`.*
 
 ## 0. What this surface is asking for
 
@@ -24,7 +24,7 @@ Three things are proposed per class, in the vocabulary the direction names:
 
 ## 1. The population, and what the classification does and does not establish
 
-- **12,566 tracked entries** at `363f935732`, **12,566 classified**, **0 unclassified**, in **44 classes**, 845,105 KiB in total.
+- **12,570 tracked entries** at `31c573b06e`, **12,570 classified**, **0 unclassified**, in **44 classes**, 846,153 KiB in total.
 - The signature is **path and extension only**. No file's content was read to class it.
 - The unclassified bucket being empty is a **STOP that did not fire**, not a remainder — and the last rule in the table is deliberately bounded so that the STOP *can* fire.
 
@@ -233,9 +233,9 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 ### 15. `ratification-surfaces`
 
-**17 files, 729 KiB.** *Signature (AUTHORED):* anywhere below `ratification_surfaces/` — the reading surfaces a ruling was taken on
+**18 files, 804 KiB.** *Signature (AUTHORED):* anywhere below `ratification_surfaces/` — the reading surfaces a ruling was taken on
 
-*Example members (DERIVED):* `ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md`, `ratification_surfaces/cowork_decisions_pending_ratification.md`, `ratification_surfaces/cowork_decisions_pending_ratification_2.md`, `ratification_surfaces/cowork_decisions_pending_ratification_3.md`, `ratification_surfaces/cowork_decisions_pending_ratification_4.md`, `ratification_surfaces/cowork_decisions_pending_ratification_5.md`
+*Example members (DERIVED):* `ratification_surfaces/cowork_artifact_inventory_ruling_surface.md`, `ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md`, `ratification_surfaces/cowork_decisions_pending_ratification.md`, `ratification_surfaces/cowork_decisions_pending_ratification_2.md`, `ratification_surfaces/cowork_decisions_pending_ratification_3.md`, `ratification_surfaces/cowork_decisions_pending_ratification_4.md`
 
 - **PROPOSED role (AUTHORED):** clean-room admissible
 - **PROPOSED mining verdict (AUTHORED):** mine directly
@@ -727,7 +727,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 ### 27. `audit-apparatus-generators`
 
-**101 files, 2,857 KiB.** *Signature (AUTHORED):* every `*.py` anywhere below `tools/audit/`
+**103 files, 2,968 KiB.** *Signature (AUTHORED):* every `*.py` anywhere below `tools/audit/`
 
 *Example members (DERIVED):* `tools/audit/apply_l5_pass2_verdicts.py`, `tools/audit/changed_paths.py`, `tools/audit/claude_md_rule_triage.py`, `tools/audit/compare_blind_rerun.py`, `tools/audit/corpus_arm_stamp.py`, `tools/audit/decisions/gen_apply_field_diff.py`
 
@@ -741,9 +741,9 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 ### 28. `audit-apparatus-artifacts`
 
-**256 files, 85,613 KiB.** *Signature (AUTHORED):* everything else below `tools/audit/` — the generated JSON, JSONL, Markdown and text these generators write
+**257 files, 86,476 KiB.** *Signature (AUTHORED):* everything else below `tools/audit/` — the generated JSON, JSONL, Markdown and text these generators write
 
-*Example members (DERIVED):* `tools/audit/arm_comment_sweep.json`, `tools/audit/changed_paths_away_task0.json`, `tools/audit/changed_paths_away_task1.json`, `tools/audit/changed_paths_away_task2.json`, `tools/audit/changed_paths_backlog_commit.json`, `tools/audit/changed_paths_c1_ruling_item1c.json`
+*Example members (DERIVED):* `tools/audit/arm_comment_sweep.json`, `tools/audit/artifact_inventory.json`, `tools/audit/changed_paths_away_task0.json`, `tools/audit/changed_paths_away_task1.json`, `tools/audit/changed_paths_away_task2.json`, `tools/audit/changed_paths_backlog_commit.json`
 
 - **PROPOSED role (AUTHORED):** operational apparatus
 - **PROPOSED mining verdict (AUTHORED):** mine via the airlock
@@ -1163,7 +1163,7 @@ These classes carry no proposal. Each sits on a ruling the record already leaves
 
 Assumption A2 of the dispatch: the population is the **tracked** tree, and an untracked file is either scratch or an un-landed record — both for the user to see, not for a tool to grade. So these are listed, never classified.
 
-- **2** untracked, not ignored, outside any scratch directory
+- **0** untracked, not ignored, outside any scratch directory
 - **8,283** untracked inside a scratch directory
 - **571** **ignored** files at the repository root
 - **424** ignored directories, listed collapsed (build output, dependency trees, editor state)
@@ -1172,7 +1172,138 @@ Assumption A2 of the dispatch: the population is the **tracked** tree, and an un
 
 `.gitignore` carries the rule `/cc_*.md`. That rule covers **every** dispatch written to the coding side and **every** report written back. The tracked tree nonetheless carries 95 dispatches and 82 reports — added with an explicit override at some point — while **571 more sit on disk, ignored, outside git.**
 
-**Why this is not a housekeeping remark.** Documents in that ignored set are cited as provenance by the governing record itself — including by gate block (A) of `CLAUDE.md` and by rulings of the eighteenth stop. A fresh clone of this repository does not contain them. They are therefore **not available to any phase that reads only what git carries**, and the handover-safety the method-directions record requires does not currently extend to them.
+**Why this is not a housekeeping remark — and the number that says so, DERIVED by the same citation scan the classes above are split by:**
+
+> **122 of those 571 ignored files are NAMED by the governing record.**
+
+These are documents the governing documents and the two registers cite as provenance — including by gate block (A) of `CLAUDE.md`, which names the measurement provenance of the ratified baselines, and by rulings of the eighteenth stop. **A fresh clone of this repository does not contain them.** They are therefore not available to any phase whose inputs are what git carries, and the handover-safety the method-directions record requires does not currently extend to the evidence the governing record leans on.
+
+<details><summary>The cited-and-ignored files (DERIVED)</summary>
+
+- `cc_adoption_measurement_report.md`
+- `cc_cadence_key_investigation_dossier.md`
+- `cc_cadence_precision_investigation_dossier.md`
+- `cc_e0_fullspine_report.md`
+- `cc_foundation_stage3b_report.md`
+- `cc_functional_residual_dossier.md`
+- `cc_gap_analysis_report.md`
+- `cc_gap_analysis_v2_report.md`
+- `cc_gate_rebaseline_verify_report.md`
+- `cc_instruction_analysis_cost_profile.md`
+- `cc_instruction_apply_the_bearing_cut.md`
+- `cc_instruction_away_execution.md`
+- `cc_instruction_c1_ruling_and_item1c.md`
+- `cc_instruction_census_delegation_and_commit.md`
+- `cc_instruction_commit_and_finish_line.md`
+- `cc_instruction_decision_clustering.md`
+- `cc_instruction_decision_harvest.md`
+- `cc_instruction_decisions_register_completion.md`
+- `cc_instruction_document_routes_and_d472.md`
+- `cc_instruction_evidence_candidate_pass.md`
+- `cc_instruction_false_statements_pass.md`
+- `cc_instruction_finish_line_item1.md`
+- `cc_instruction_finish_line_item1b.md`
+- `cc_instruction_five_rulings.md`
+- `cc_instruction_guard_dialect_close_and_push.md`
+- `cc_instruction_guard_fix_and_item1d.md`
+- `cc_instruction_item7_reach_derivation.md`
+- `cc_instruction_licensed_homing_and_oi344.md`
+- `cc_instruction_marginals.md`
+- `cc_instruction_module_layering_assessment.md`
+- `cc_instruction_notation_noteseam.md`
+- `cc_instruction_notation_p4.md`
+- `cc_instruction_notation_p6.md`
+- `cc_instruction_notation_p7.md`
+- `cc_instruction_notation_pstrings.md`
+- `cc_instruction_notation_record_assembly.md`
+- `cc_instruction_notation_seams_1.md`
+- `cc_instruction_notation_switch.md`
+- `cc_instruction_oi150_baselines.md`
+- `cc_instruction_oi179_reply_and_phase2_surface.md`
+- `cc_instruction_oi199_joint_p3_p4.md`
+- `cc_instruction_oi199_pass1.md`
+- `cc_instruction_oi206_investigation.md`
+- `cc_instruction_oi207_adjudication.md`
+- `cc_instruction_oi207_residual_pass.md`
+- `cc_instruction_oi315_class_licence.md`
+- `cc_instruction_oi315_licence_and_cells.md`
+- `cc_instruction_oi375_width_correction.md`
+- `cc_instruction_owner_rulings_homing.md`
+- `cc_instruction_pack_section7_and_errata_state.md`
+- `cc_instruction_phase1_completion_inventory.md`
+- `cc_instruction_phase1_delegations_and_corrections.md`
+- `cc_instruction_phase1f_final_partition.md`
+- `cc_instruction_phase1g_triage.md`
+- `cc_instruction_phase1j_homing_and_reads.md`
+- `cc_instruction_phase1m_dispositions_and_measurements.md`
+- `cc_instruction_phase1n_criterion_premise_and_reading_regime.md`
+- `cc_instruction_phase1o_gate_partition_and_probe_rerun.md`
+- `cc_instruction_phase1p_home_rulings_and_mechanisms.md`
+- `cc_instruction_phase1q_reclassification_and_guards.md`
+- `cc_instruction_phase1r_commit_and_reclassify.md`
+- `cc_instruction_phase1s_stale_rules_and_enumeration.md`
+- `cc_instruction_phase1t_restatement_and_pruning.md`
+- `cc_instruction_phase1u_partition_record_and_directory.md`
+- `cc_instruction_phase1v_channel_ratification.md`
+- `cc_instruction_phase1w_legacy_mark_verification.md`
+- `cc_instruction_phase1x_guard_visibility_and_commit.md`
+- `cc_instruction_phase1y_corpus_arm_stamping.md`
+- `cc_instruction_phase1z_commit_and_instrument_record.md`
+- `cc_instruction_posterior_slice.md`
+- `cc_instruction_reads_1.md`
+- `cc_instruction_reads_2.md`
+- `cc_instruction_reads_3.md`
+- `cc_instruction_reads_4.md`
+- `cc_instruction_reads_5.md`
+- `cc_instruction_reads_6.md`
+- `cc_instruction_resume_lapse_records.md`
+- `cc_instruction_return_continuation.md`
+- `cc_instruction_return_continuation_10.md`
+- `cc_instruction_return_continuation_11.md`
+- `cc_instruction_return_continuation_12.md`
+- `cc_instruction_return_continuation_13.md`
+- `cc_instruction_return_continuation_14.md`
+- `cc_instruction_return_continuation_2.md`
+- `cc_instruction_return_continuation_3.md`
+- `cc_instruction_return_continuation_4.md`
+- `cc_instruction_return_continuation_5.md`
+- `cc_instruction_return_continuation_6.md`
+- `cc_instruction_return_continuation_7.md`
+- `cc_instruction_return_continuation_8.md`
+- `cc_instruction_return_continuation_9.md`
+- `cc_instruction_row_landing_and_oi141_arm_check.md`
+- `cc_instruction_ruling69_discard_input.md`
+- `cc_instruction_scoring_model_pass.md`
+- `cc_instruction_sitting_outcome_and_bound.md`
+- `cc_instruction_sizing_regen_and_readme.md`
+- `cc_instruction_spec_completion.md`
+- `cc_instruction_stage3_design_ratification.md`
+- `cc_instruction_stop_record_and_enumeration.md`
+- `cc_instruction_three_owner_rulings.md`
+- `cc_instruction_worth_test.md`
+- `cc_key_emission_headroom_dossier.md`
+- `cc_keyregression_diagnosis_report.md`
+- `cc_layer1_coverage_report.md`
+- `cc_layer1_impl_report.md`
+- `cc_layer2_audit_dossier.md`
+- `cc_layer2_impl_report.md`
+- `cc_layer3_error_decomposition_report.md`
+- `cc_layer3_jazz_churn_investigation.md`
+- `cc_layer3_sweep_report.md`
+- `cc_layer3_tpc_keymeasure_report.md`
+- `cc_layer3_wiring_report.md`
+- `cc_metric_rebaseline_report.md`
+- `cc_module_layering_assessment_dossier.md`
+- `cc_note_table_fit_report.md`
+- `cc_phase_d_merger_report.md`
+- `cc_refactor1_split_build_report.md`
+- `cc_refactor1_split_design_dossier.md`
+- `cc_stage2_2_ab_dossier.md`
+- `cc_stage4a_mode_import_report.md`
+- `cc_tonicization_modulation_metric_dossier.md`
+- `cc_uncertain_resolver_measurement_report.md`
+
+</details>
 
 **What this surface does about it: nothing.** It is stated, not fixed. Landing them is a commit that names its own act, and it is the user's to order.
 

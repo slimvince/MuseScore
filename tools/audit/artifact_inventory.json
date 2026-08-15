@@ -3,7 +3,7 @@
  "dispatch": "cc_instruction_artifact_inventory.md",
  "generator": "tools/audit/gen_artifact_inventory.py",
  "reproduce": "python tools/audit/gen_artifact_inventory.py --check   # re-derives at the commit recorded below and exits 1 on drift, then re-runs the classification at the current tree and stops if anything is unclassified",
- "derived_at_commit": "363f935732959a9183db10da8dd680c2fbbb2590",
+ "derived_at_commit": "31c573b06eef24920c4acc755771e0a7e34dc48c",
  "★_the_establishment_caveat_of_the_signature_table": "#19, NOT DISCHARGED HERE. The signature table above is AUTHORED, and the only thing that checks it is the unclassified STOP — which establishes that every file matched SOME rule, and nothing at all about whether it matched the RIGHT one. A file sitting in a directory whose name misdescribes it is classed by the misdescription, and this tool cannot know. What would settle the other half is a reading of a sample of members per class against the class's own stated signature, which is an act named here and not started. A reader may not take an empty unclassified bucket as evidence that the classification is correct.",
  "what_is_AUTHORED_here": {
   "the_signature_table": "Which path shapes name which class, in which order, and what each class is called. Published in full beside every class as its `signature`, so the rule can be checked against the members without reading the generator.",
@@ -17,12 +17,12 @@
   "the untracked appendix, which is a dated reading of the working tree"
  ],
  "the_population": {
-  "entries_in_the_tree": 12566,
-  "classified": 12566,
+  "entries_in_the_tree": 12570,
+  "classified": 12570,
   "unclassified": 0,
   "★_unclassified_is_a_STOP_not_a_bucket": "The dispatch's own stop rule. A non-empty bucket halts this tool before it writes, so a committed artifact carrying an empty bucket is the only kind that can exist.",
   "classes_in_the_signature_table": 44,
-  "total_bytes": 865387582
+  "total_bytes": 866461121
  },
  "the_signature_tables_own_establishment": {
   "★_what_these_probes_establish_and_what_they_do_not": "They establish that the unclassified STOP CAN fire — the first probe is a path in a top-level directory no rule names, and it must come back unclassified — and that eight ordering-sensitive placements land where the table says they do. They establish NOTHING about whether any real file is in the right class; that is the caveat above, and it is not discharged by a green probe.",
@@ -3256,21 +3256,25 @@
    "class": "ratification-surfaces",
    "order_in_the_signature_table": 14,
    "signature": "anywhere below `ratification_surfaces/` — the reading surfaces a ruling was taken on",
-   "files": 17,
-   "total_bytes": 746922,
+   "files": 18,
+   "total_bytes": 823822,
    "extensions_present": {
-    ".md": 17
+    ".md": 18
    },
    "example_paths": [
+    "ratification_surfaces/cowork_artifact_inventory_ruling_surface.md",
     "ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md",
     "ratification_surfaces/cowork_decisions_pending_ratification.md",
     "ratification_surfaces/cowork_decisions_pending_ratification_2.md",
     "ratification_surfaces/cowork_decisions_pending_ratification_3.md",
-    "ratification_surfaces/cowork_decisions_pending_ratification_4.md",
-    "ratification_surfaces/cowork_decisions_pending_ratification_5.md"
+    "ratification_surfaces/cowork_decisions_pending_ratification_4.md"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
+    {
+     "path": "ratification_surfaces/cowork_artifact_inventory_ruling_surface.md",
+     "bytes": 76900
+    },
     {
      "path": "ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md",
      "bytes": 13997
@@ -5151,10 +5155,10 @@
    "class": "audit-apparatus-generators",
    "order_in_the_signature_table": 26,
    "signature": "every `*.py` anywhere below `tools/audit/`",
-   "files": 101,
-   "total_bytes": 2926073,
+   "files": 103,
+   "total_bytes": 3039356,
    "extensions_present": {
-    ".py": 101
+    ".py": 103
    },
    "example_paths": [
     "tools/audit/apply_l5_pass2_verdicts.py",
@@ -5323,6 +5327,14 @@
      "bytes": 39057
     },
     {
+     "path": "tools/audit/gen_artifact_inventory.py",
+     "bytes": 46248
+    },
+    {
+     "path": "tools/audit/gen_artifact_inventory_surface.py",
+     "bytes": 62445
+    },
+    {
      "path": "tools/audit/gen_blind_rerun_sample.py",
      "bytes": 33527
     },
@@ -5348,11 +5360,11 @@
     },
     {
      "path": "tools/audit/gen_guard_classification.py",
-     "bytes": 55635
+     "bytes": 58491
     },
     {
      "path": "tools/audit/gen_guard_state.py",
-     "bytes": 40916
+     "bytes": 42650
     },
     {
      "path": "tools/audit/gen_index_status_normalization.py",
@@ -5576,10 +5588,10 @@
    "class": "audit-apparatus-artifacts",
    "order_in_the_signature_table": 27,
    "signature": "everything else below `tools/audit/` — the generated JSON, JSONL, Markdown and text these generators write",
-   "files": 256,
-   "total_bytes": 87668183,
+   "files": 257,
+   "total_bytes": 88551539,
    "extensions_present": {
-    ".json": 173,
+    ".json": 174,
     ".csv": 71,
     ".txt": 6,
     ".md": 5,
@@ -5587,17 +5599,21 @@
    },
    "example_paths": [
     "tools/audit/arm_comment_sweep.json",
+    "tools/audit/artifact_inventory.json",
     "tools/audit/changed_paths_away_task0.json",
     "tools/audit/changed_paths_away_task1.json",
     "tools/audit/changed_paths_away_task2.json",
-    "tools/audit/changed_paths_backlog_commit.json",
-    "tools/audit/changed_paths_c1_ruling_item1c.json"
+    "tools/audit/changed_paths_backlog_commit.json"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
     {
      "path": "tools/audit/arm_comment_sweep.json",
      "bytes": 22748
+    },
+    {
+     "path": "tools/audit/artifact_inventory.json",
+     "bytes": 883356
     },
     {
      "path": "tools/audit/changed_paths_away_task0.json",
@@ -9295,7 +9311,7 @@
    },
    "authored_by_this_project": {
     "classes": 34,
-    "files": 2142
+    "files": 2146
    }
   },
   "limb_3_one_class_each_for_the_three_named_subjects": {
@@ -9326,11 +9342,8 @@
   "★_IGNORED_FILES_ARE_LISTED_TOO_AND_THIS_IS_WHY": "`git status` reports only untracked files that no ignore rule covers, and this repository ignores `/cc_*.md` — the whole dispatch-and-report family. Listing only the un-ignored half would therefore have hidden exactly the class A2 exists to surface: an un-landed record. The ignored half is listed at the repository root file by file; ignored DIRECTORIES are listed collapsed, because they are build output and dependency trees.",
   "untracked_candidate_records": {
    "what_they_are": "untracked, not ignored, and not inside a directory the record names as scratch",
-   "count": 2,
-   "paths": [
-    "tools/audit/artifact_inventory.json",
-    "tools/audit/gen_artifact_inventory.py"
-   ]
+   "count": 0,
+   "paths": []
   },
   "untracked_inside_a_scratch_directory": {
    "what_they_are": "untracked, not ignored, inside `scratch_artifacts/` or a dated `cowork_scratch_*` directory",

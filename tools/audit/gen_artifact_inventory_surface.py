@@ -697,6 +697,15 @@ def build() -> tuple[str, dict]:
     text, sources = governing_text()
     names = cited_names(text)
 
+    # ── the ignored-and-cited derivation ─────────────────────────────────────────────────────────
+    # The appendix reports HOW MANY files sit on disk ignored at the repository root.  This asks the
+    # question that makes that count mean something: how many of them does the governing record
+    # NAME?  A file the record cites as provenance and git does not carry is a hole in the record's
+    # own evidence, and the number is derived here rather than sampled by hand.
+    appendix = inv["appendix_untracked_and_ignored_paths_NOT_classified"]
+    ignored_root = appendix["ignored_files_at_the_repository_root"]["paths"]
+    ignored_and_cited = sorted(p for p in ignored_root if posixpath.basename(p) in names)
+
     splits = {}
     for name in MIXED_CLASSES:
         cited, uncited = [], []
@@ -719,6 +728,7 @@ def build() -> tuple[str, dict]:
         "flagged_whole": flagged_whole,
         "flagged_partly": flagged_partly,
         "questions": questions,
+        "ignored_and_cited": ignored_and_cited,
     }
     return render(inv, data), data
 
@@ -945,12 +955,26 @@ def render(inv: dict, data: dict) -> str:
         f"**{ap['ignored_files_at_the_repository_root']['count']:,} more sit on disk, ignored, "
         "outside git.**")
     add("")
-    add("**Why this is not a housekeeping remark.** Documents in that ignored set are cited as "
-        "provenance by the governing record itself — including by gate block (A) of `CLAUDE.md` "
-        "and by rulings of the eighteenth stop. A fresh clone of this repository does not contain "
-        "them. They are therefore **not available to any phase that reads only what git carries**, "
-        "and the handover-safety the method-directions record requires does not currently extend "
-        "to them.")
+    add("**Why this is not a housekeeping remark — and the number that says so, DERIVED by the "
+        "same citation scan the classes above are split by:**")
+    add("")
+    add(f"> **{len(data['ignored_and_cited']):,} of those "
+        f"{ap['ignored_files_at_the_repository_root']['count']:,} ignored files are NAMED by the "
+        f"governing record.**")
+    add("")
+    add("These are documents the governing documents and the two registers cite as provenance — "
+        "including by gate block (A) of `CLAUDE.md`, which names the measurement provenance of the "
+        "ratified baselines, and by rulings of the eighteenth stop. **A fresh clone of this "
+        "repository does not contain them.** They are therefore not available to any phase whose "
+        "inputs are what git carries, and the handover-safety the method-directions record "
+        "requires does not currently extend to the evidence the governing record leans on.")
+    add("")
+    add("<details><summary>The cited-and-ignored files (DERIVED)</summary>")
+    add("")
+    for path in data["ignored_and_cited"]:
+        add(f"- `{path}`")
+    add("")
+    add("</details>")
     add("")
     add("**What this surface does about it: nothing.** It is stated, not fixed. Landing them is a "
         "commit that names its own act, and it is the user's to order.")

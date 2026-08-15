@@ -37,6 +37,8 @@
       "tools/audit/decisions/gen_verbatim_subject_consistency.py",
       "tools/audit/decisions/reaim_home_anchors.py",
       "tools/audit/gen_arm_comment_sweep.py",
+      "tools/audit/gen_artifact_inventory.py",
+      "tools/audit/gen_artifact_inventory_surface.py",
       "tools/audit/gen_discard_records.py",
       "tools/audit/gen_doc_change_candidates.py",
       "tools/audit/gen_filing_convention_application.py",
@@ -57,7 +59,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 57,
+    "authored_entries": 59,
     "unclassified_candidates": [
       "tools/audit/gen_doc_change_candidates.py",
       "tools/audit/gen_status_archive_pass.py"
@@ -568,6 +570,33 @@
       "what_it_checks": "the July screen re-derives — its population still imported whole from the split artifact and reconciled with the authored verdicts in BOTH directions, and every screened hunk's text still retrievable at its recorded coordinates from the git object by explicit hash, with the retrieved line counts cross-checked against the population's own record. What it guards is not the verdicts, which are authored judgments about documentation changes, but that no hunk enters or leaves the screened population ungraded and that no coordinate stops identifying the change it was read at"
     },
     {
+      "tool": "tools/audit/gen_artifact_inventory.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: the inventory re-derives at 31c573b06e, and the signature table still covers the tree at 31c573b06e with nothing unclassified.",
+        "    the untracked appendix also matches — excluded from the comparison by design."
+      ],
+      "stderr": [],
+      "what_it_checks": "the artifact inventory re-derives at the commit its own artifact RECORDS -- so it passes indefinitely rather than going red at the next commit -- and, separately, its signature table still covers the tree AS IT STANDS with nothing unclassified. The second half is the live one and the reason this is a guard at all: a file added by a later commit in a top-level directory no rule names halts this tool instead of reaching a later pass ungraded. Its last rule is bounded on purpose so that STOP can fire, and the artifact carries the probes that establish it does (#19). The untracked appendix is a reading of the working tree and is excluded from the byte comparison, so writing a scratch file does not turn this guard red"
+    },
+    {
+      "tool": "tools/audit/gen_artifact_inventory_surface.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: the ruling surface re-derives from the inventory artifact."
+      ],
+      "stderr": [],
+      "what_it_checks": "the artifact inventory's ruling surface re-derives from the inventory artifact. Its four STOPs are what make it a guard: a class in the inventory with no authored proposal halts it, so a class cannot be ruled on by omission; a proposal naming a class the inventory does not carry halts it, so the two files cannot drift apart in either direction; a role or mining verdict outside the closed vocabulary the direction names halts it; and a proposal with no reason halts it. What it does NOT guard is the verdicts themselves, which are authored judgments awaiting the user"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -836,8 +865,8 @@
     }
   ],
   "summary": {
-    "run": 43,
-    "passing": 42,
+    "run": 45,
+    "passing": 44,
     "failing": 1,
     "failing_tools": [
       {
