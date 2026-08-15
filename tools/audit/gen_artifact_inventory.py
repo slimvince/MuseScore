@@ -778,8 +778,24 @@ def main(argv: list[str]) -> int:
         # the LIVE half — the classification must still cover the tree as it stands now.
         current = resolve("HEAD")
         build(current)      # raises Stop on an unclassified file or an empty class
+        # ★ THE WORD `HEAD` BEFORE THE SHA IS LOAD-BEARING AND IS NOT A WORDING CHOICE.
+        # `tools/audit/gen_guard_state.py` captures this tool's output into `guard_state.json`, and
+        # normalizes exactly one shape of commit hash in captured text — the literal word `HEAD`
+        # followed by a sha (its `HEAD_SHA` pattern, `r"\bHEAD [0-9a-f]{7,40}\b"`), for the reason
+        # written beside it there: a guard that stamps the CURRENT head into its own output makes
+        # that artifact unreproducible BY CONSTRUCTION, because committing it changes the head. This
+        # line prints the current head, and without the word it fell outside that pattern — so the
+        # guard state read STALE at every tree except the single one it was generated at, which is
+        # the failure mode the R4 ruling exists to prevent (a check red everywhere teaches a reader
+        # to ignore it). Ruled 2026-08-15 (`cowork_rulings_2026_08_15_batch_return.md` §4, a ruling
+        # permitting a named act under D-436): the fix is on the PRINTING side and the runner's
+        # normalization is NOT widened.
+        # `recorded[:10]` is deliberately left bare beside it: it comes from the committed artifact
+        # rather than from the tree, so it does not move when anything is committed, and putting it
+        # inside the pattern would hide a real change — the artifact being re-derived at a different
+        # commit is exactly what a reader of the guard state must still be able to see.
         print(f"OK: the inventory re-derives at {recorded[:10]}, and the signature table still "
-              f"covers the tree at {current[:10]} with nothing unclassified.")
+              f"covers the tree at HEAD {current[:10]} with nothing unclassified.")
         print(f"    the untracked appendix {'also matches' if appendix_agrees else 'has moved'} "
               f"— excluded from the comparison by design.")
         return 0

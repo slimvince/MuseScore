@@ -418,7 +418,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 25 gates of 50 candidates over 243 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 25 gates of 50 candidates over 242 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -432,7 +432,7 @@
       "verdict": "PASS",
       "stdout": [
         "the discard records re-derive from the record",
-        "  entered 3, conforming 3, not conforming 0"
+        "  entered 2, conforming 2, not conforming 0, retired 1"
       ],
       "stderr": [],
       "what_it_checks": "the DISCARD records the gating derivation consumes re-derive AT THE RECORD -- the user's Ruling 69 of 2026-08-13 (D-677) makes an authored discard verdict an input to a derived gate, so this is the guard that keeps the authored half honest. Its STOPs are what make it one rather than a report: a record whose quoted element is no longer in its surface, a record naming a row the INDEX does not carry open, a record naming a row the #19 carve-out keeps gating, a discard on the register's own two surfaces that the table does not enter, and a NOT-DISCARDED negative seed being read as a discard -- each halts it rather than letting an authored judgment move a gate on text nobody re-read"
@@ -575,7 +575,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "OK: the inventory re-derives at 31c573b06e, and the signature table still covers the tree at 0fcff4f6e2 with nothing unclassified.",
+        "OK: the inventory re-derives at 31c573b06e, and the signature table still covers the tree at HEAD <sha> with nothing unclassified.",
         "    the untracked appendix has moved — excluded from the comparison by design."
       ],
       "stderr": [],
