@@ -51,6 +51,7 @@
       "tools/audit/gen_phase3_gate_partition.py",
       "tools/audit/gen_reserved_word_scanner.py",
       "tools/audit/gen_status_archive_pass.py",
+      "tools/audit/gen_test_construction_evidence.py",
       "tools/audit/index_status_lint.py",
       "tools/audit/instrument_arm_declaration_effect.py",
       "tools/audit/local_patches_check.py",
@@ -59,11 +60,8 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 59,
-    "unclassified_candidates": [
-      "tools/audit/gen_doc_change_candidates.py",
-      "tools/audit/gen_status_archive_pass.py"
-    ],
+    "authored_entries": 62,
+    "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
       "tools/audit/gen_guard_classification.py",
@@ -577,8 +575,8 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "OK: the inventory re-derives at 31c573b06e, and the signature table still covers the tree at 31c573b06e with nothing unclassified.",
-        "    the untracked appendix also matches — excluded from the comparison by design."
+        "OK: the inventory re-derives at 31c573b06e, and the signature table still covers the tree at 0fcff4f6e2 with nothing unclassified.",
+        "    the untracked appendix has moved — excluded from the comparison by design."
       ],
       "stderr": [],
       "what_it_checks": "the artifact inventory re-derives at the commit its own artifact RECORDS -- so it passes indefinitely rather than going red at the next commit -- and, separately, its signature table still covers the tree AS IT STANDS with nothing unclassified. The second half is the live one and the reason this is a guard at all: a file added by a later commit in a top-level directory no rule names halts this tool instead of reaching a later pass ungraded. Its last rule is bounded on purpose so that STOP can fire, and the artifact carries the probes that establish it does (#19). The untracked appendix is a reading of the working tree and is excluded from the byte comparison, so writing a scratch file does not turn this guard red"
@@ -595,6 +593,49 @@
       ],
       "stderr": [],
       "what_it_checks": "the artifact inventory's ruling surface re-derives from the inventory artifact. Its four STOPs are what make it a guard: a class in the inventory with no authored proposal halts it, so a class cannot be ruled on by omission; a proposal naming a class the inventory does not carry halts it, so the two files cannot drift apart in either direction; a role or mining verdict outside the closed vocabulary the direction names halts it; and a proposal with no reason halts it. What it does NOT guard is the verdicts themselves, which are authored judgments awaiting the user"
+    },
+    {
+      "tool": "tools/audit/gen_status_archive_pass.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  dated entries moved: 52",
+        "  at the pass commit, the live file was exactly base-minus-range: True",
+        "  the moved block is verbatim in the archive at HEAD:             True",
+        "  the moved block is absent from the live file at HEAD:           True"
+      ],
+      "stderr": [],
+      "what_it_checks": "the 2026-08-11 STATUS.md archive pass still reconciles in both directions -- the moved block still verbatim in STATUS_ARCHIVE.md at HEAD and still absent from STATUS.md at HEAD, with the one claim about a single moment checked at that moment's own git object by explicit hash so it cannot decay as the live file legitimately grows. What it guards is that nothing left the must-read which is not in the archive and that nothing else left it (#12); it says nothing about whether STATUS.md is readable again, which is OI-370's own subject"
+    },
+    {
+      "tool": "tools/audit/gen_doc_change_candidates.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "OK: the candidate pass re-derives byte-identically."
+      ],
+      "stderr": [],
+      "what_it_checks": "the candidate pass -- every documentation change of the restructuring period, enumerated and classified per hunk -- still re-derives byte-identically FROM THE GIT OBJECTS, with the range's END read back from the committed artifact rather than taken as HEAD so a later commit does not turn it red. Its STOPs are what make it a guard rather than a record: a hunk carrying no verdict, a PURE verdict citing no clause, a boundary commit that is not an ancestor of the range end, and two reconciliations that must balance -- so the enumeration cannot quietly stop being one"
+    },
+    {
+      "tool": "tools/audit/gen_test_construction_evidence.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the class-1 construction evidence re-derives",
+        "  population 123 · spec-derived 20 · code-built 103"
+      ],
+      "stderr": [],
+      "what_it_checks": "the class-1 construction-evidence check re-derives. Its evidence is read at the commit the committed artifact inventory RECORDS, so it passes indefinitely rather than going red the first time anybody edits a test; what is LIVE is the two-way reconciliation of its graded set against that inventory's own class membership, so a member entering or leaving the class halts it instead of being graded silently or quietly dropped. Its other STOPs ride with it: a member with no verdict, a verdict outside the closed two-value vocabulary the user's ruling fixes, a SPEC-DERIVED-EVIDENCE verdict resting on no located statement, and a distribution that does not reconcile with the population"
     },
     {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
@@ -865,8 +906,8 @@
     }
   ],
   "summary": {
-    "run": 45,
-    "passing": 44,
+    "run": 48,
+    "passing": 47,
     "failing": 1,
     "failing_tools": [
       {

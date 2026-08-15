@@ -388,6 +388,99 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "vocabulary STOPs ride with it: a role or mining verdict outside the closed set the "
         "user's direction names halts it, and so does a proposal with no reason."),
 
+    # ---- AUTHORED 2026-08-15, cc_instruction_ruled_inventory_landing.md Task 2 ---------------
+    # Three tools, on the user's Ruling of 2026-08-15 (`cowork_rulings_2026_08_15_inventory_
+    # sitting.md` §5) ordering the third standing red cleared WITH its extension. The first had
+    # reached the derived population with no verdict and is this tool's own STOP working; the other
+    # two gain their invocation in the same act, so a verdict is authored for each here rather than
+    # left for a later pass to STOP on. Every citation below was READ IN FULL in this session, in
+    # the tool it names, with the file tools.
+    "tools/audit/gen_discard_records.py": (
+        LIVE, "gen_discard_records.py:31-37 (why a located pointer table and not a scanner), "
+              ":221-246 (`record_span` — the per-run location), :299-394 (the five STOPs), "
+              ":396-423 (the soundness check against its two negative seeds)",
+        "★ THE ENTRANT THIS PASS'S STOP HAD BEEN NAMING, entered 2026-08-13 by the act that "
+        "created it under the user's Ruling 69 (D-677) and reaching this table unclassified — the "
+        "same shape `gen_phase1_finish_line.py`'s entry records for an earlier entrant, and R4's "
+        "per-tool condition made mechanical. LIVE on the ruling's own operational form: can it "
+        "pass forever while the tree moves on correctly? It can, and it does at the committed "
+        "tree. NOTHING IN IT IS STORED. Each of the three elements Ruling 69 requires of a discard "
+        "record is RE-LOCATED on every run, inside the span that record's own heading opens, so a "
+        "reworded record STOPS it rather than leaving a citation to text nobody re-read; each "
+        "row's OPEN state comes from the ONE index parser it imports rather than from a copy (#6); "
+        "and the #19 carve-out is derived from the committed apparatus declaration's own recorded "
+        "gate grounds, never listed here, with a missing artifact a STOP rather than a silent "
+        "empty set. Its STOPs are demands about the record as it stands TODAY and they run in both "
+        "directions: a pointer at a row the INDEX no longer carries, a row that has RESOLVED, a "
+        "row the carve-out keeps gating, a discard on the open-items register's own two surfaces "
+        "that the table does not enter, and a NOT-DISCARDED worth-test outcome being read as a "
+        "discard. ★ WHAT IT DOES NOT ASSERT, stated so the verdict is not read wider than it is: "
+        "that any discard VERDICT is right — a worth-test judgment cannot be checked by a tool — "
+        "only that every entered record carries its three elements and that the table and the "
+        "open-items register's own surfaces agree. Its completeness is BOUNDED to those two "
+        "surfaces, which the artifact states of itself."),
+    "tools/audit/gen_status_archive_pass.py": (
+        LIVE, "gen_status_archive_pass.py:35-52 (what `--check` proves, and why the first claim is "
+              "stamped to a commit), :150-173 (the moved-set STOP), :189-191 (the three "
+              "reconciliation reads)",
+        "★ CLASSIFIED IN THE ACT THAT FINALLY REGISTERS IT — it joined the derived candidate "
+        "population on 2026-08-11 carrying a `--check` mode with no authored invocation, which is "
+        "the condition `OPEN_ITEMS.md` OI-373 records. LIVE, and the verdict turns on a design "
+        "choice the tool made to earn it. An archive pass is a completed act, so the naive check — "
+        "compare the live file against a fixed base — must fail on the first legitimate append, "
+        "which is the OI-344 shape the tool names of itself. So the ONE claim that is about a "
+        "single moment is checked at THAT MOMENT'S OWN GIT OBJECT by explicit hash and cannot "
+        "decay, while the two claims that are durable are re-read at HEAD on every run: the moved "
+        "block is still verbatim in `STATUS_ARCHIVE.md`, and it is still absent from `STATUS.md`. "
+        "Those two are a live invariant nothing else asserts — an edit that truncates the archive, "
+        "or a later act that re-introduces the block into the must-read, is caught on the next "
+        "run, forever. Its moved-set STOP is a demand of the same kind, requiring every entry in "
+        "the moved range to carry either the derived signal or an authored clause. ★ WHAT IT DOES "
+        "NOT ASSERT: that `STATUS.md` is readable again — it is not, and OI-370 stands — only "
+        "that nothing left the live file which is not in the archive, and that nothing else left "
+        "it."),
+    "tools/audit/gen_doc_change_candidates.py": (
+        LIVE, "gen_doc_change_candidates.py:15-24 (what is derived and what is authored), :62-70 "
+              "(the five STOPs), :1006-1010 (`--check` reads the range's END back from the "
+              "committed artifact)",
+        "★ CLASSIFIED IN THE SAME ACT, and for the reason `gen_july_screen.py` and "
+        "`gen_period_stratum_split.py` are LIVE: what it re-derives is not a judgment but the "
+        "enumeration itself. Every commit, every hunk, every verdict and every count is recomputed "
+        "from GIT OBJECTS on each run — the population from `rev-list`, each hunk from `show -U0 "
+        "-M -C` — and the range's END is read back from the committed artifact rather than taken "
+        "as HEAD, so a later commit does not turn it red, which is the OI-301/OI-305 shape "
+        "avoided by construction rather than tolerated. What it asserts is therefore a live "
+        "invariant: the committed candidate list still follows from the history it was drawn from, "
+        "and a hand edit to either artifact halts it instead of moving that list silently. Its "
+        "STOPs ride with it — a hunk carrying no verdict, a PURE verdict with no clause, a "
+        "boundary commit that is not an ancestor of the range end, and two reconciliations that "
+        "must balance. ★ WHAT IT DOES NOT ASSERT: that a FLAG is a defect or a PURE harmless — its "
+        "own words are that neither verdict is a view on whether a change should have happened — "
+        "and the recoverability of the generated-artifact class it does not enumerate per hunk is "
+        "published as UNESTABLISHED rather than assumed."),
+    "tools/audit/gen_test_construction_evidence.py": (
+        LIVE, "gen_test_construction_evidence.py, the `★ WHY EVERY READ IS PINNED` paragraph of "
+              "its module docstring and its `THE STOPS` list; `build()`'s two-way reconciliation "
+              "against the inventory's class membership",
+        "★ TASK 3's OWN TOOL, CLASSIFIED IN THE ACT THAT CREATES IT — the practice the two entries "
+        "above exist because two earlier acts did not follow. LIVE on the same ground "
+        "`gen_period_stratum_split.py` is: its input is a committed artifact and its output a "
+        "derived view of that artifact, so it passes indefinitely and fails exactly when the input "
+        "moves without the view being regenerated. Every reading of a test — the file's own text, "
+        "its commit subjects, the specification-document name set — is taken from GIT OBJECTS at "
+        "the commit the committed inventory RECORDS, so editing a test does not turn it red, which "
+        "is the OI-301/OI-305 shape avoided by construction. What is LIVE is the POPULATION: it is "
+        "re-read from that inventory on every run and reconciled with the graded set in BOTH "
+        "directions, so a member entering or leaving the class halts it rather than being graded "
+        "silently or quietly dropped. Its other STOPs are demands of the same kind — a member with "
+        "no verdict, a verdict outside the closed two-value vocabulary the user's ruling fixes, a "
+        "SPEC-DERIVED-EVIDENCE verdict resting on no located statement, and a distribution that "
+        "does not reconcile. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that the "
+        "recognizers are complete. Their reach is UNMEASURED, and what bounds the error is the "
+        "ruling's own default — an unestablished construction is treated as code-built, so a "
+        "missed statement errs toward exclusion, which the ruling records as the recoverable "
+        "direction."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

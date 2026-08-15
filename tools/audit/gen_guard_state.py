@@ -223,6 +223,44 @@ AUTHORED = [
      "reason halts it. What it does NOT guard is the verdicts themselves, which are authored "
      "judgments awaiting the user"),
 
+    # ---- AUTHORED 2026-08-15, cc_instruction_ruled_inventory_landing.md Task 2 ---------------
+    # THE TWO TOOLS THIS RUN'S OWN STOP HAS BEEN NAMING. Each joined the derived candidate
+    # population in the act that created it, carrying a `--check` mode, and neither invocation was
+    # authored with it — which is the condition `OPEN_ITEMS.md` OI-373 records and the reason this
+    # runner could not exit on its guards' verdicts alone. Authored on the user's ruling of
+    # 2026-08-15 (`cowork_rulings_2026_08_15_inventory_sitting.md` §5, the extension riding with
+    # the third red's clearing), each after reading its tool IN FULL, and each classified in the
+    # same act at `gen_guard_classification.py` — which STOPs if the two tables disagree (#6).
+    # BOTH TAKE `--check` AND NOT THE BARE INVOCATION, for a reason about the tools: run with no
+    # flag each REWRITES its committed artifact, so a bare run would fold whatever the tree
+    # currently says into the record of a completed act, which is the OI-301 hazard exactly.
+    ("tools/audit/gen_status_archive_pass.py", ["--check"],
+     "the 2026-08-11 STATUS.md archive pass still reconciles in both directions -- the moved block "
+     "still verbatim in STATUS_ARCHIVE.md at HEAD and still absent from STATUS.md at HEAD, with "
+     "the one claim about a single moment checked at that moment's own git object by explicit hash "
+     "so it cannot decay as the live file legitimately grows. What it guards is that nothing left "
+     "the must-read which is not in the archive and that nothing else left it (#12); it says "
+     "nothing about whether STATUS.md is readable again, which is OI-370's own subject"),
+    ("tools/audit/gen_doc_change_candidates.py", ["--check"],
+     "the candidate pass -- every documentation change of the restructuring period, enumerated and "
+     "classified per hunk -- still re-derives byte-identically FROM THE GIT OBJECTS, with the "
+     "range's END read back from the committed artifact rather than taken as HEAD so a later "
+     "commit does not turn it red. Its STOPs are what make it a guard rather than a record: a hunk "
+     "carrying no verdict, a PURE verdict citing no clause, a boundary commit that is not an "
+     "ancestor of the range end, and two reconciliations that must balance -- so the enumeration "
+     "cannot quietly stop being one"),
+    # Task 3's own tool, registered in the act that creates it -- the practice the two entries above
+    # exist because two earlier acts did not follow.
+    ("tools/audit/gen_test_construction_evidence.py", ["--check"],
+     "the class-1 construction-evidence check re-derives. Its evidence is read at the commit the "
+     "committed artifact inventory RECORDS, so it passes indefinitely rather than going red the "
+     "first time anybody edits a test; what is LIVE is the two-way reconciliation of its graded "
+     "set against that inventory's own class membership, so a member entering or leaving the class "
+     "halts it instead of being graded silently or quietly dropped. Its other STOPs ride with it: "
+     "a member with no verdict, a verdict outside the closed two-value vocabulary the user's "
+     "ruling fixes, a SPEC-DERIVED-EVIDENCE verdict resting on no located statement, and a "
+     "distribution that does not reconcile with the population"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

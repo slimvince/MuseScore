@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 50,
-    "re_derives_a_live_invariant": 38,
+    "tools_classified": 58,
+    "re_derives_a_live_invariant": 46,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -297,6 +297,38 @@
       "state_at_the_committed_tree": "PASS"
     },
     {
+      "tool": "tools/audit/gen_artifact_inventory.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_artifact_inventory.py:36-46 (the four STOPs), and its `--check` branch",
+      "why": "LIVE, and the verdict turns on a design choice made to earn it. An inventory of a tree is a dated thing by nature: re-derive it at the CURRENT commit and it fails the moment anyone commits anything, which is the OI-301/OI-305 shape exactly. So `--check` re-derives at the commit the committed artifact RECORDS -- that half passes indefinitely and fails only if the artifact or the table was edited by hand -- and then runs the classification AGAIN over the tree as it stands. That second run asserts a property of the repository TODAY: every file it carries is named by some rule. It is the `claude_md_rule_triage.py` shape -- a DERIVED population that grows as the tree grows, with an unclassified member a STOP. The last rule in the table is deliberately bounded rather than a catch-all so that STOP can fire, and the artifact carries probes that establish both halves: that a path in an unnamed top-level directory comes back unclassified, and that the tool then raises. ★ WHAT IT DOES NOT ASSERT: that any file is in the RIGHT class. The table is authored and only its coverage is checked, which the artifact states of itself.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_artifact_inventory_surface.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_artifact_inventory_surface.py:40-49 (the four STOPs), and its `build()` two-way reconciliation against the inventory's class list",
+      "why": "LIVE, and for the same reason `gen_july_screen.py` is: what it re-derives is not the verdicts, which are authored judgments about how artifacts should be used, but that the surface and the inventory still describe the same population. Its POPULATION is IMPORTED from the inventory artifact on every run and reconciled with the authored proposals in BOTH directions, so a class entering or leaving the inventory halts it rather than being left unproposed or proposed for nothing. Its citation split is RE-SCANNED at the governing record on every run, so a document that stops being cited moves side rather than staying where a dated reading put it. Neither is a point-in-time reading. Its vocabulary STOPs ride with it: a role or mining verdict outside the closed set the user's direction names halts it, and so does a proposal with no reason.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_discard_records.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_discard_records.py:31-37 (why a located pointer table and not a scanner), :221-246 (`record_span` — the per-run location), :299-394 (the five STOPs), :396-423 (the soundness check against its two negative seeds)",
+      "why": "★ THE ENTRANT THIS PASS'S STOP HAD BEEN NAMING, entered 2026-08-13 by the act that created it under the user's Ruling 69 (D-677) and reaching this table unclassified — the same shape `gen_phase1_finish_line.py`'s entry records for an earlier entrant, and R4's per-tool condition made mechanical. LIVE on the ruling's own operational form: can it pass forever while the tree moves on correctly? It can, and it does at the committed tree. NOTHING IN IT IS STORED. Each of the three elements Ruling 69 requires of a discard record is RE-LOCATED on every run, inside the span that record's own heading opens, so a reworded record STOPS it rather than leaving a citation to text nobody re-read; each row's OPEN state comes from the ONE index parser it imports rather than from a copy (#6); and the #19 carve-out is derived from the committed apparatus declaration's own recorded gate grounds, never listed here, with a missing artifact a STOP rather than a silent empty set. Its STOPs are demands about the record as it stands TODAY and they run in both directions: a pointer at a row the INDEX no longer carries, a row that has RESOLVED, a row the carve-out keeps gating, a discard on the open-items register's own two surfaces that the table does not enter, and a NOT-DISCARDED worth-test outcome being read as a discard. ★ WHAT IT DOES NOT ASSERT, stated so the verdict is not read wider than it is: that any discard VERDICT is right — a worth-test judgment cannot be checked by a tool — only that every entered record carries its three elements and that the table and the open-items register's own surfaces agree. Its completeness is BOUNDED to those two surfaces, which the artifact states of itself.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_doc_change_candidates.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_doc_change_candidates.py:15-24 (what is derived and what is authored), :62-70 (the five STOPs), :1006-1010 (`--check` reads the range's END back from the committed artifact)",
+      "why": "★ CLASSIFIED IN THE SAME ACT, and for the reason `gen_july_screen.py` and `gen_period_stratum_split.py` are LIVE: what it re-derives is not a judgment but the enumeration itself. Every commit, every hunk, every verdict and every count is recomputed from GIT OBJECTS on each run — the population from `rev-list`, each hunk from `show -U0 -M -C` — and the range's END is read back from the committed artifact rather than taken as HEAD, so a later commit does not turn it red, which is the OI-301/OI-305 shape avoided by construction rather than tolerated. What it asserts is therefore a live invariant: the committed candidate list still follows from the history it was drawn from, and a hand edit to either artifact halts it instead of moving that list silently. Its STOPs ride with it — a hunk carrying no verdict, a PURE verdict with no clause, a boundary commit that is not an ancestor of the range end, and two reconciliations that must balance. ★ WHAT IT DOES NOT ASSERT: that a FLAG is a defect or a PURE harmless — its own words are that neither verdict is a view on whether a change should have happened — and the recoverability of the generated-artifact class it does not enumerate per hunk is published as UNESTABLISHED rather than assumed.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
       "tool": "tools/audit/gen_filing_convention_application.py",
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_filing_convention_application.py:14-40",
@@ -313,10 +345,26 @@
       "state_at_the_committed_tree": "PASS"
     },
     {
+      "tool": "tools/audit/gen_july_screen.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_july_screen.py:22-30 (what is derived), :59-69 (the five STOPs), and its `retrieve()` function (the per-run git-object retrieval)",
+      "why": "LIVE, and the verdict is worth stating because the artifact's CONTENT is authored judgment about documentation changes — which a tool cannot check. What the check asserts is two demands about the record as it stands TODAY. Its POPULATION is IMPORTED from the split artifact on every run and reconciled with the authored verdicts in BOTH directions, so a hunk entering or leaving the screened population halts it rather than being graded silently or quietly dropped. And every screened hunk's TEXT is RE-RETRIEVED from the git object by explicit hash on every run, its recorded header located and its line counts cross-checked against the population's own record — so a coordinate that stops identifying the change it was read at is reported rather than trusted. Neither is a dated reading. Its other STOPs ride with it: the four-class vocabulary and the shape vocabulary are closed, a RATIFIED-ACT verdict must name the act AND where its ratification is recorded, and a verdict with no ground halts it.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
       "tool": "tools/audit/gen_nongating_apparatus_rows.py",
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_nongating_apparatus_rows.py:13-21",
       "why": "It PARSES `OPEN_ITEMS.md` on every run for the row population and which rows are open, and STOPS if any candidate has no authored verdict or any verdict names a row the index no longer carries open. Both stops are about the register as it stands today.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_period_stratum_split.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_period_stratum_split.py:14-22 (what is derived), :37-47 (the five STOPs)",
+      "why": "LIVE on the ruling's own operational form — can this check pass forever while the tree moves on correctly? It can: its inputs are two committed artifacts and its output is a derived view of them, so it passes indefinitely and fails exactly when an input moves without the view being regenerated. Nothing in it is dated: every count is recomputed from the artifacts on every run, and the AUTHORED half is three citations — the ruled start commit, the two specification-bearing roles, and a registered expectation that is graded and never used as an input. Its STOPs are demands about the artifacts as they stand, and the sharpest is the reconciliation: the totals it derives must equal the totals the input artifact publishes of itself, so a hand edit to either file halts it rather than moving the split silently. ★ WHAT IT DOES NOT ASSERT: the enumeration underneath its inputs is UNESTABLISHED (#19) and the artifact says so in its own words — a green check here means the split follows from those artifacts, never that they are complete or correct.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },
@@ -359,6 +407,22 @@
       "why": "★ CLASSIFIED LIVE DESPITE BEING REGISTERED NOT RUN, and the two facts are about different things. Its POPULATION is DERIVED from the tree on every run — the project's own musical vocabulary intersected with the words its governance surfaces use — and the invariant it asserts is about that population TODAY: every derived candidate carries an authored verdict, with an unclassified candidate a STOP. That is the `claude_md_rule_triage.py` shape exactly, and it was demonstrated rather than assumed: writing new governance prose in this very task moved the derived counts, which is what register entry D-661 means by *re-derived as the tree grows*. It is NOT RUN in the guard set for a separate and recorded reason — its STOP is its headline and it fails by design until the verdicts are authored, and a guard set carrying a member that fails by design teaches a reader to ignore the set. Classified for completeness on the same footing as the ratification-surface census above.",
       "in_the_live_guard_list_after_this_classification": false,
       "state_at_the_committed_tree": "NOT RUN"
+    },
+    {
+      "tool": "tools/audit/gen_status_archive_pass.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_status_archive_pass.py:35-52 (what `--check` proves, and why the first claim is stamped to a commit), :150-173 (the moved-set STOP), :189-191 (the three reconciliation reads)",
+      "why": "★ CLASSIFIED IN THE ACT THAT FINALLY REGISTERS IT — it joined the derived candidate population on 2026-08-11 carrying a `--check` mode with no authored invocation, which is the condition `OPEN_ITEMS.md` OI-373 records. LIVE, and the verdict turns on a design choice the tool made to earn it. An archive pass is a completed act, so the naive check — compare the live file against a fixed base — must fail on the first legitimate append, which is the OI-344 shape the tool names of itself. So the ONE claim that is about a single moment is checked at THAT MOMENT'S OWN GIT OBJECT by explicit hash and cannot decay, while the two claims that are durable are re-read at HEAD on every run: the moved block is still verbatim in `STATUS_ARCHIVE.md`, and it is still absent from `STATUS.md`. Those two are a live invariant nothing else asserts — an edit that truncates the archive, or a later act that re-introduces the block into the must-read, is caught on the next run, forever. Its moved-set STOP is a demand of the same kind, requiring every entry in the moved range to carry either the derived signal or an authored clause. ★ WHAT IT DOES NOT ASSERT: that `STATUS.md` is readable again — it is not, and OI-370 stands — only that nothing left the live file which is not in the archive, and that nothing else left it.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_test_construction_evidence.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_test_construction_evidence.py, the `★ WHY EVERY READ IS PINNED` paragraph of its module docstring and its `THE STOPS` list; `build()`'s two-way reconciliation against the inventory's class membership",
+      "why": "★ TASK 3's OWN TOOL, CLASSIFIED IN THE ACT THAT CREATES IT — the practice the two entries above exist because two earlier acts did not follow. LIVE on the same ground `gen_period_stratum_split.py` is: its input is a committed artifact and its output a derived view of that artifact, so it passes indefinitely and fails exactly when the input moves without the view being regenerated. Every reading of a test — the file's own text, its commit subjects, the specification-document name set — is taken from GIT OBJECTS at the commit the committed inventory RECORDS, so editing a test does not turn it red, which is the OI-301/OI-305 shape avoided by construction. What is LIVE is the POPULATION: it is re-read from that inventory on every run and reconciled with the graded set in BOTH directions, so a member entering or leaving the class halts it rather than being graded silently or quietly dropped. Its other STOPs are demands of the same kind — a member with no verdict, a verdict outside the closed two-value vocabulary the user's ruling fixes, a SPEC-DERIVED-EVIDENCE verdict resting on no located statement, and a distribution that does not reconcile. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that the recognizers are complete. Their reach is UNMEASURED, and what bounds the error is the ruling's own default — an unestablished construction is treated as code-built, so a missed statement errs toward exclusion, which the ruling records as the recoverable direction.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
     },
     {
       "tool": "tools/audit/guard_armed_check.py",
