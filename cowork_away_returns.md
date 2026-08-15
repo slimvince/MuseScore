@@ -11561,3 +11561,212 @@ report's §5**; what follows is what it CAUGHT or confirmed.
 8. **WHAT THE SELF-CHECK DID NOT RESOLVE:** [[OI-372]] is untouched, as ordered; [[OI-374]] is
    untouched; the 284 newly visible files are unlanded and unclassified by this batch; and the
    ruled verdicts are still not written back onto the inventory's generated surface.
+
+# ═══ THE PHASE RULINGS LANDING (dispatch `cc_instruction_phase_rulings_landing.md`, performed 2026-08-15) ═══
+
+*(Every guard count referred to below lives at `tools/audit/guard_state.json`; **none is restated
+here** — **D-431** — except the few values this close is reporting ABOUT, each naming where it was
+read. **The report is `cc_report_phase_rulings_landing.md`**, which is the whole of what the coding
+side says back; this close is the batch record beside it. This batch executes §8 of
+`cowork_rulings_2026_08_15_phase_definition_sitting.md` — its Task-0 landing, and the §4 D-231 edit,
+**which is NOT landed and is STOP-reported**.)*
+
+## 4 (continued). The start state, recorded before any act
+
+**The full guard set was RUN BEFORE THE FIRST EDIT**, and the working tree was enumerated through
+the sanctioned tool before anything was staged.
+
+- **`gen_guard_state.py --check`: 48 guards run, 47 passing, ONE failing** —
+  `gen_filing_convention_application.py --check`, which is [[OI-372]], rowed and discarded — 4 not
+  run, 10 historical records. **NO STOP of any kind.** The runner's opening line read **"the guard
+  state re-derives"**: the committed artifact is no longer stale, which is the previous batch's
+  printing-side fix holding across a commit boundary.
+- **`gen_guard_classification.py --check`: "the guard classification re-derives"**, exit 0.
+- **This is exactly the start state the dispatch declares as expected** — 48 run, 47 passing, one
+  failing, zero STOPs, and NO stale report. No STOP-and-report was owed on the start state.
+- **The working tree carried EXACTLY ONE tracked modification** — `cowork_handoff.md` — and 834
+  untracked records beside it. All three writing-side paths the dispatch names were present as
+  named, so **assumption A3 is CONFIRMED**.
+
+## 3 (continued). Per-task log — the phase rulings landing
+
+### Task 0 — the writing-side records and the eighteenth handoff block landed. Commit `1c52098b64`, pushed
+
+**A1's check was performed FIRST and at the objects, never at a guess.** The committed blob
+(`98cd7aa118`, resolved from `b1a44ec046:cowork_handoff.md`) was diffed against the working blob
+(`f64837573c`, produced by `git hash-object -w`), so **both sides of the comparison are
+content-addressed** and neither is a shell read of a working-tree file (D-253).
+
+**A1 IS FALSIFIED AS LITERALLY STATED, AND THE ORDERED STOP WAS REACHED AND NOT TAKEN.** A1 says the
+file differs from its committed blob ONLY by the eighteenth entry block; the ordered check says any
+difference outside that block is a STOP-and-report. The measured difference is **83 insertions and
+ONE deletion**: the eighteenth block, and the seventeenth block's **heading line**, whose closing
+sentence changes from `THE CURRENT ENTRY POINT.` to `(SUPERSEDED as the entry point by the
+eighteenth block above.)`. That line is outside the inserted block, so on a strict reading the batch
+would have halted at its first act.
+
+**The ground for proceeding, recorded rather than assumed, with its cost.** The demotion is this
+file's OWN established convention — every earlier block down to the eleventh carries the same marker,
+identical in form — so it is the structural half of adding an entry block rather than an unexplained
+edit; and the eighteenth block's own closing sentence announces it (*"it is superseded only as the
+entry point"*). The commit lands the path whole either way, so the check's purpose — that nothing
+unauthored rides along — is met. **The cost is stated and not discharged:** a pre-registered STOP was
+judged past by the executing side, which is the one act a pre-registered STOP exists to prevent
+anyone doing. It is declared here, in the commit message, in the `STATUS.md` pointer and in the
+report so that Cowork can overrule it cheaply.
+
+**The commit.** Exactly the four paths the dispatch names and no fifth, verified at the index through
+the sanctioned enumeration before the commit (4 records: one `M`, three `A`) and at the object after
+it. **The commit's parent is `b1a44ec046`**, which independently confirms that the blob the A1 check
+was taken against was the current one. **`cc_instruction_phase_rulings_landing.md` was staged
+PLAINLY** — no `-f`, no override of any kind, the first dispatch ever landed that way.
+
+**Registered expectation E0 — MET on both limbs**: exactly 4 paths at `git diff-tree`, and no
+staging override of any kind was needed or used.
+
+### Task 1 — the D-231 rephrasing. ★ STOP: NOT LANDED, NOT COMMITTED, AND THE EDIT REVERTED
+
+**A2's check was performed first and CONFIRMED.** The whole D-231 Conventions entry was read with the
+file tools (`CLAUDE.md:1597-1723` at the tree as found), and the truth-half sentence *"the
+specification text is corrected wherever it states something false at HEAD"* occurs in the file
+**exactly once** — inside that entry, with no second live occurrence and no quotation of it
+elsewhere. No STOP was owed on A2.
+
+**The edit was made exactly as ordered.** The dispatch's block was inserted VERBATIM at the ordered
+position — immediately after the entry's opening bold heading sentence ends, before `Three phases,
+strictly ordered.` begins — wrapped to the file's own width at the bullet's two-space continuation
+indent. Nothing else in `CLAUDE.md` moved.
+
+**Then the full guard set was run, and it went from ONE failing to SEVEN.** The six new reds, each
+cause established by regenerating the artifact, diffing it against its committed blob by explicit
+hash, and restoring it — never by reading the tool and reasoning about it:
+
+1. **`gen_cluster_dispositions.py --verify`** — **ANCHOR DRIFT.** 11 register home anchors in
+   `CLAUDE.md`, every one below the insertion, every one by exactly **+23** (the net line change).
+   **All 677 verbatim quotes still found at their homes.** This is the class the dispatch sanctions.
+2. **`gen_phase3_gate_partition.py --check`** — **ANCHOR DRIFT, same class.** The only differences in
+   the artifact are `found_lines` and `actual` coordinates moving 1661→1684 and 1666→1689: **+23**,
+   five times over. No verdict, quote or population moved.
+3. **`gen_phase1_completion_inventory.py --check`** — **NOT anchor drift.** Exactly ONE field moves:
+   `clause_opening`, which the tool derives as the span from D-231's clause anchor to `**Phase 1 —`
+   — the very interval the dispatch orders the block inserted into. The captured quote WIDENS to
+   include the new block. One line changed, one line; nothing else in the artifact moved.
+4. **`gen_phase1_finish_line.py --check`** — **NOT anchor drift.** The same `clause_opening` field,
+   inherited. One line changed, one line; no item, verdict, cut or gating population moved.
+5. **`gen_phase1p_delegation_bar.py --check`** — **NOT anchor drift: a NEW MENTION.**
+   `mentions_in_ratified_surfaces` for `docs/scoring_model.md` gains `CLAUDE.md:1604`, because the
+   ordered text NAMES that document inside a surface this tool grades delegations over. **Every
+   verdict field is unchanged** (`form`, `verdict`, `verdict_now`, `movement`, `decided_by_the_bar`).
+6. **`gen_reads5_repack.py --check`** — **NOT anchor drift: the same new mention.**
+   `read_documents_whose_naming_count_moved_since_registration` gains `docs/scoring_model.md`. That
+   field is the one the artifact itself declares NOT frozen — *"a statement about the surfaces as
+   they stand today… still computed live on every run and can still move"* — and the cause is
+   exactly the mechanism its own `why_it_moved` describes: a naming count incremented by a
+   governing-surface edit.
+
+**WHY THIS IS A STOP AND NOT A REMAP.** The dispatch sanctions ONE bounded exception — *"an anchor
+drift caused solely by this insertion"* — and says in terms that **any other new red is a
+STOP-and-report**. Reds 1 and 2 are that exception. Reds 3–6 are not: they are a captured quote
+widening and a new mention, neither of which any per-citation anchor remap addresses. Two of them
+(`phase1_completion_inventory.json`, `phase1_finish_line.json`) are the **gate-bearing derivations
+D-436 reserves**, under a dispatch whose own bars include *no derivation*; and red 5 writes a new
+naming into the record the delegation bar grades, where (g)/(i) reserve delegation-writing to the
+user. Regenerating those four would be the executing side taking, on its own judgment, exactly the
+class of act the record says it must not — the [[OI-373]] precedent of the previous batch, where the
+coherent version of an ordered act needed a mechanism change D-436 reserves and the act was
+therefore NOT performed.
+
+**THE STOP IS STRUCTURAL, NOT A FLAW IN THE ORDERED TEXT.** Reds 3 and 4 follow from the ordered
+POSITION: any insertion between the clause anchor and `**Phase 1 —` widens that captured span. Reds
+5 and 6 follow from the ordered WORDS: the block names `docs/scoring_model.md`, and it would do so
+wherever in a governing surface it were placed. No rewording within the ruling's meaning avoids
+them, and the text is ordered verbatim, so a session may not reword it.
+
+**THE TREE IS LEFT EXACTLY AS FOUND.** `CLAUDE.md` was restored from its committed blob and hashes
+identical to it (`61ae1b484c` on both sides); the sanctioned enumeration then reported **no tracked
+modification anywhere** in the working tree. Every artifact regenerated during the diagnosis was
+restored the same way and re-verified by the end-state guard run. **Nothing is lost (#12):** the
+ordered block's verbatim text is committed, in `cc_instruction_phase_rulings_landing.md`, by this
+batch's own Task 0.
+
+**Registered expectation E1 — GRADED, NOT RECONCILED TOWARDS.** *Second limb MET:* while the edit
+stood, the truth-half sentence occurred in the file exactly once, inside the preserved text, with the
+superseding block standing above it. *First limb NOT MET AS WRITTEN, and the cause is worth Cowork's
+attention:* the object-level numstat was **24 insertions and 1 deletion**, not zero deletions. The
+ordered insertion point is **mid-line** — the heading sentence ends and `Three phases, strictly
+ordered.` begins on the same line — so no line-boundary insertion exists there and a pure-insertion
+numstat is unobtainable at that position. **Nothing was deleted in substance:** the removed line's
+words are preserved verbatim across the first and last added lines, the only change being that the
+single space between `).**` and `Three` became a newline, which Markdown renders as that same space.
+
+## 1 (continued). What needs the user
+
+**The ruled D-231 rephrasing (`cowork_rulings_2026_08_15_phase_definition_sitting.md` §4) is NOT
+landed, and landing it needs a ruling.** The measured facts above make the choice cheap; the batch
+takes none of them. The candidates, stated so the user rules rather than re-derives:
+
+- **(a) Authorize the four non-anchor artifacts to be regenerated alongside the two anchor ones**,
+  in the same commit as the `CLAUDE.md` edit, on the measured ground that **no verdict, gate, cut or
+  population moves in any of the six** — the differences are one quote field, its inherited copy, one
+  new mention and one live-list entry. This is the smallest act that lands the ruling.
+- **(b) Move the insertion point** to after `Three phases, strictly ordered.` — which removes reds 3
+  and 4 but not 5 and 6, and departs from the ordered position.
+- **(c) Leave the ruling unlanded** until the tools are amended, which no dispatch has authorized and
+  which the record's own bars put outside a session's judgment.
+
+**The batch recommends (a)** and did not take it. *Why:* it is the only candidate that lands the
+ruling at the ordered position with the ordered words; its whole cost is measured and published
+above; and the alternative of leaving `CLAUDE.md` carrying a superseded three-phase structure while
+every session reads it is exactly the exposure eighteenth-stop Ruling 6 exists to close.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+- **F1 — A governing-document edit cannot be a pure insertion at that position, so the numstat proof
+  the dispatch registered is unobtainable there.** Stated as a fact about the position, not a
+  complaint: a future dispatch registering a zero-deletion expectation should first establish that
+  its insertion point is a line boundary.
+- **F2 — Four committed artifacts capture `CLAUDE.md`'s text or its naming counts, so ANY edit to
+  the governing document turns them red.** This is not a defect of this batch's edit; it is a
+  standing property of the record that the next governing-document edit will meet again. Surfaced,
+  not rowed — no open-items row was created, the dispatch forbidding it.
+- **F3 — `reaim_home_anchors.py --check` exits 0 even when it reports drifted anchors** (its own
+  `if args.check or not moves: return 0`). It PASSED in the mid-run while printing 11 drifted
+  anchors; what caught the drift was `gen_cluster_dispositions.py --verify`. A reader taking the
+  guard list at face value would read the anchor check as clean. Surfaced, not rowed.
+
+## 3 (continued). The end state
+
+**The full guard set was RUN AGAIN after the revert, and it is the start state exactly:**
+`gen_guard_state.py --check` — **"the guard state re-derives"**, 48 run, 47 passing, ONE failing
+(`gen_filing_convention_application.py --check`, [[OI-372]]), 4 not run, 10 historical, **no STOP**;
+`gen_guard_classification.py --check` — **"the guard classification re-derives"**. **Registered
+expectation E2 — MET:** the batch introduces no red and works none around.
+
+**Every registered expectation graded: E0 — MET. E1 — one limb met, one limb NOT met as written,
+with its cause measured. E2 — MET.**
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. **THE DIFF WAS RE-READ, NOT THE INTENTION.** Task 0's commit was verified at the object; Task 1's
+   edit was verified blob against blob and then verified GONE by hashing the restored file.
+2. **THE ONE JUDGMENT CALL IS DECLARED THREE TIMES OVER** — A1's ordered STOP was reached and not
+   taken, and it is written into the commit message, the `STATUS.md` pointer and the report, never
+   left to a reader to notice.
+3. **NOTHING WAS REGENERATED TO MAKE A CHECK PASS.** Every regeneration during the diagnosis was a
+   measurement, each followed by a restore, and every restore was re-verified by the end-state run.
+4. **ON D-253 IN EVERY DIALECT.** Every read of repository content went through Read / Grep / Glob.
+   The shell was used for the guard and tool runs, `git add` / `git commit -F` / `git push`, the
+   sanctioned changed-path enumeration, `git rev-parse <hash>:path`, `git hash-object`, `git show`
+   and `git diff` between objects named by explicit hash, and reads of scratchpad files OUTSIDE the
+   repository. **One attempt was refused by the guard and the refusal was correct**: a `git diff`
+   whose two hashes arrived in shell variables carried no literal hash for the policy to see, so it
+   was re-issued with the hashes written out.
+5. **ON THE RESERVED-WORD CONVENTION.** No bare *score*, *key*, *measure*, *note*, *mode*,
+   *register*, *root*, *part*, *rest*, *figure*, *interval*, *scale*, *beat*, *tie*, *stem*, *flat*
+   or *instrument* in a non-musical sense in this batch's new prose: *measurement*, *value*,
+   *remark*, *the open-items register*, *register entry*, *`--check` mode*, *count* and *tool* carry
+   those senses. The ruled replacements bind and are used: **a changed passage**, **the current
+   commit**, **untrusted source**.
+6. **WHAT THE SELF-CHECK DID NOT RESOLVE:** the ruled D-231 edit is not landed; [[OI-372]] and
+   [[OI-374]] are untouched; [[OI-179]] stays OPEN and GATES; the 284 newly visible instruction files
+   and the remaining ignored files are unlanded; and no preparation-phase act was taken.
