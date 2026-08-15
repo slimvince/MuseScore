@@ -343,5 +343,14 @@ surfaced, unfixed and unrowed.
 *Provenance: CC, 2026-08-15, dispatch `cc_instruction_preparation_opening.md`. Task 0 is commit
 `54eb257a6f` (parent `02636987b0`), pushed. Task 1 is `a150bd8acf` (parent `54eb257a6f`), pushed.
 Task 2 is `0a2cc3f86a` (parent `a150bd8acf`), pushed. Task 3 is `0305d495bb` (parent `0a2cc3f86a`),
-pushed. Task 4's close commit and the E5 run that follows it are recorded in the close and in one
-further commit, so that every content SHA is on the record rather than left to be looked up.*
+pushed. Task 4's close is `4f3214cf22` (parent `0305d495bb`), pushed, three paths; **E5's run and
+that SHA are recorded in `5c384d8966`** (parent `4f3214cf22`), pushed, two paths — the further commit
+the dispatch's ordering rule requires, so that no graded value was on disk before the run that
+produced it.*
+
+*★ WHERE THE RECORDING TERMINATES, STATED RATHER THAN LEFT AS A GAP. The dispatch asks that every
+commit be verified at the object and its SHA recorded in the close. That is done for every commit
+above. It cannot be done for the LAST one — a commit cannot contain its own identity — so the
+recursion stops at the commit carrying this sentence, whose SHA is the one value of this batch that
+no commit of it can carry. Every earlier SHA is on the record; this is not an omission but the
+terminus, and it is named so a reader does not go looking for it.*
