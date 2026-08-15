@@ -513,7 +513,7 @@ and, after both, the completion statement the user commissions.
 awaits the user is superseded entirely.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-08-11 (TWELFTH) — THE FOURTEENTH CONTINUATION IS COMPLETE AND **VERIFIED AT THE OBJECTS**; ONE DEFECT FOUND AND IT IS A MISCOUNT, NOT A WRONG ACT; THE QUEUE'S §21 AND OI-141's SITTING BOTH AWAIT THE USER. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE 2026-08-11 (TWELFTH) — THE FOURTEENTH CONTINUATION IS COMPLETE AND **VERIFIED AT THE OBJECTS**; ONE DEFECT FOUND AND IT IS A MISCOUNT, NOT A WRONG ACT; THE QUEUE'S §21 AND OI-141's SITTING BOTH AWAIT THE USER. (SUPERSEDED as the entry point by the thirteenth block above.)
 
 **You (the next session) start clueless — this block is your boot; no population is restated
 here by design (D-431); every figure is an artifact you read at HEAD. Your first act is NOT a
