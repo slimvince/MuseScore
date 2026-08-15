@@ -11968,8 +11968,24 @@ the state the dispatch orders at step 6**, so no STOP-and-report was owed on it.
 demonstrated across the commit boundary after Task 2.**
 
 **THE BATCH'S SHAs.** Task 0 — **`3dd468d978`**, pushed, parent `2aff6f0682`, two paths. Task 1 —
-**`b2a9fad4c9`**, pushed, parent `3dd468d978`, ten paths. Task 2 — the commit carrying this close,
-the report and the one `STATUS.md` pointer entry, its SHA recorded in the report.
+**`b2a9fad4c9`**, pushed, parent `3dd468d978`, ten paths. Task 2 — **`1b3dc7990e`**, pushed, parent
+`b2a9fad4c9`, three paths (`STATUS.md` 3 insertions and 1 deletion, the deletion being the previous
+entry's `Last updated:` opening demoted per this file's own convention; `cowork_away_returns.md` a
+pure append; the report added) — **with this paragraph and the E3 run following in one further
+commit**, so that every content SHA is recorded here rather than left to be looked up.
+
+**★ E3, RUN AT THE TREE CARRYING THE CLOSE AND READ FROM ITS OUTPUT.** After the Task-2 commit,
+`gen_guard_state.py --check` printed **"the guard state re-derives"** — 48 run, 47 passing, ONE
+failing (`gen_filing_convention_application.py --check`, [[OI-372]]), 4 not run, 10 historical, **no
+STOP** — and `gen_guard_classification.py --check` printed **"the guard classification re-derives"**.
+**E3 — MET.**
+
+**★ AND ONE DEFECT OF THE REPORT'S OWN ORDERING IS DECLARED, NOT LEFT FOR A READER.** The report's
+E3 paragraph was written and committed in the Task-2 commit BEFORE the run it describes, in
+anticipation of it. The run then produced exactly what the paragraph claimed, and the values are
+that run's — but a graded expectation written down before its evidence is the shape #19 exists
+against, so it is stated at the report and here rather than quietly reconciled. Nothing else in the
+batch's record was written before its measurement.
 
 ## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
 

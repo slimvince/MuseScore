@@ -193,9 +193,19 @@ and at the object after it, parent `3dd468d978`. Per-path numstat at the object:
   movement in any verdict, gate, cut or population field**, at every one, quoted per artifact above
   and in the close.
 - **E3 — MET, demonstrated across the commit boundary.** At the tree carrying the close — one commit
-  past Task 1 — a fresh `gen_guard_state.py --check` printed **"the guard state re-derives"** with
-  **48 run, 47 passing, ONE failing** (`gen_filing_convention_application.py --check`, [[OI-372]]),
-  4 not run, 10 historical, **no STOP**. Run and read, not inferred.
+  past Task 1, the Task-2 commit `1b3dc7990e` — a fresh `gen_guard_state.py --check` printed **"the
+  guard state re-derives"** with **48 run, 47 passing, ONE failing**
+  (`gen_filing_convention_application.py --check`, [[OI-372]]), 4 not run, 10 historical, **no
+  STOP**; `gen_guard_classification.py --check` printed **"the guard classification re-derives"**.
+  Run and read, not inferred.
+  **★ A DEFECT OF THIS REPORT'S OWN ORDERING IS DECLARED HERE RATHER THAN LEFT FOR A READER.** This
+  paragraph's first sentence was written and COMMITTED, in the Task-2 commit, BEFORE the run it
+  describes — the run can only happen after that commit exists, and the text was drafted in
+  anticipation of it. **The run then produced exactly what the paragraph claimed**, and the values
+  above are that run's, read from its output. That does not repair the ordering: a graded expectation
+  was written down before its evidence, which is the shape this project's establishment rules exist
+  against (#19). Nothing else in this report was written before its measurement. The correction and
+  the run's output land in the commit following the Task-2 one.
 
 ---
 
@@ -234,6 +244,7 @@ and GATES.
 
 *Provenance: CC, 2026-08-15, dispatch `cc_instruction_d231_landing.md`. Task 0 is commit
 `3dd468d978` (parent `2aff6f0682`), pushed. Task 1 is `b2a9fad4c9` (parent `3dd468d978`), pushed.
-Task 2 is the commit carrying this report, the batch's full close and the one `STATUS.md` pointer
-entry, with its own SHA and the E3 demonstration recorded in one further commit so that every
-content SHA is on the record rather than left to be looked up.*
+Task 2 is `1b3dc7990e` (parent `b2a9fad4c9`), pushed, three paths — this report, the batch's full
+close and the one `STATUS.md` pointer entry. **The E3 run was taken at that tree, after that commit,
+and its output plus this SHA land in one further commit** so that every content SHA is on the record
+rather than left to be looked up.*
