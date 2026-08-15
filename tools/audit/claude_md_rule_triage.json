@@ -306,7 +306,7 @@
     {
       "id": "D-196",
       "title": "The self-check: re-read the diff against the principles before reporting",
-      "home": "CLAUDE.md:1823",
+      "home": "CLAUDE.md:1846",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "NEW at phase 1p, and only for the document half: `tools/audit/process_check.py` reports a missing self-check section (D-434). Whether the check was actually run over the diff is not mechanical."
@@ -338,7 +338,7 @@
     {
       "id": "D-200",
       "title": "Make it work first; compromise on performance only if performance proves a problem",
-      "home": "CLAUDE.md:1725-1727",
+      "home": "CLAUDE.md:1748-1750",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "A sequencing rule about when a trade-off may be considered."
@@ -346,7 +346,7 @@
     {
       "id": "D-203",
       "title": "Candidate admission is completion, not refinement - so #8 permits fixing it now",
-      "home": "CLAUDE.md:1735-1737",
+      "home": "CLAUDE.md:1758-1760",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "A ruling about what another rule permits."
@@ -354,7 +354,7 @@
     {
       "id": "D-204",
       "title": "One fix is designed once over the whole enumerated family, never per symptom",
-      "home": "CLAUDE.md:1746-1748",
+      "home": "CLAUDE.md:1769-1771",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether two faults share a cause is the diagnosis itself."
@@ -402,7 +402,7 @@
     {
       "id": "D-249",
       "title": "The whole decision surface is delivered as user-visible text before any choice question",
-      "home": "CLAUDE.md:1755-1767",
+      "home": "CLAUDE.md:1778-1790",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether the user has actually seen a surface is not a property of any file."
@@ -410,7 +410,7 @@
     {
       "id": "D-253",
       "title": "Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash",
-      "home": "CLAUDE.md:1769-1787",
+      "home": "CLAUDE.md:1792-1810",
       "nonspec_kind": "process",
       "class": "MECHANISABLE-AND-NOT",
       "mechanism_or_ground": "NEW at phase 1p; BUILT and ESTABLISHED then, ARMED by the user at phase 1r, WIDENED at phase 1s. It stays in the defect class on ONE ground, and the ground is stated so it is not read as a backlog item: `tools/audit/shell_read_guard.py` binds the EXECUTING side only — the hook matcher names that side's shell tools and the writing side's carries a different name — so the rule is enforced on one side and must not be described as enforced. Two coverage limits closed 2026-08-03 (phase 1s, user ruling Y1): `git status` is now DENIED, which became affordable only once `tools/audit/changed_paths.py` gave a sanctioned way to enumerate changed paths; and the measured FALSE DENY on a quoted grep pattern is fixed and re-established. `git log` and `git rev-parse HEAD` remain deliberately unenforced — nothing replaces them, so denying them would fire on legitimate work. `tools/audit/guard_armed_check.py` puts the arming requirement in the record while `.claude/settings.json` stays out of it, which answers the OI-285 objection that kept it unarmed."
@@ -418,7 +418,7 @@
     {
       "id": "D-254",
       "title": "Investigate by default; never ask the user whether to investigate or proceed",
-      "home": "CLAUDE.md:1812-1819",
+      "home": "CLAUDE.md:1835-1842",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Recognising that a step could be measured first is the judgment."
@@ -490,7 +490,7 @@
     {
       "id": "D-437",
       "title": "Phase 3 waits on the phase-2 items that could find another member of the family being designed for, not on all of phase 2",
-      "home": "CLAUDE.md:1672-1690",
+      "home": "CLAUDE.md:1695-1713",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "PARTIAL, and the mechanical half is the one that could rot silently. `tools/audit/gen_phase3_gate_partition.py --check` re-derives the registered partition: every per-item verdict carries its reason, every source quote is LOCATED in the file it cites, and the STOP the ruling attaches — a NON-GATING item that yields a family member falsifies the partition — is recorded with it. So the prediction cannot be quietly re-authored after the items run, which is what makes it falsifiable. What is NOT mechanical: whether a family design actually waited for the gating searches, and whether a given item's search space could contain a fact about what the model reads — the second is the judgment the ruling is."
@@ -506,7 +506,7 @@
     {
       "id": "D-439",
       "title": "The perspective inventory's §4 is the one home for the enumerated discovery channels, and CLAUDE.md's phase-2 clause points at it instead of listing its own subjects",
-      "home": "CLAUDE.md:1694-1706",
+      "home": "CLAUDE.md:1717-1729",
       "nonspec_kind": "process",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "It settles WHERE an enumeration lives and WHICH of its members a pointing clause reaches. Nothing mechanical separates a clause that POINTS at a section from one that RESTATES it — that distinction is #6 applied by a reader — and the four per-channel scope verdicts each rest on a reading of the channel's own text. A checker could at best assert that the clause names no subjects of its own, which would fire on any legitimate rewording."
@@ -642,7 +642,7 @@
     {
       "id": "D-639",
       "title": "Phase 1's doc-sync half reaches a document's account of ITSELF only where that account changes how its analysis content is read — with three worked examples that are the test, and a fallback ruled with it",
-      "home": "CLAUDE.md:1606-1625",
+      "home": "CLAUDE.md:1629-1648",
       "nonspec_kind": "project-convention",
       "class": "KNOWLEDGE",
       "mechanism_or_ground": "Whether a document's account of ITSELF changes how a reader reads its analysis content is a judgment about that document's content, and the ruling settles it by giving three worked examples rather than a predicate. A mechanical form would have to decide, for an arbitrary banner or note, whether a reader would conclude something false about the system — which is the point of the rule, not an incidental difficulty. What IS mechanical is already built and is not this rule: D-307's anchor convention removes the whole OUT class at its source, and `gen_true_half_reach.py` refuses to record a verdict that names no worked example, so a case the test did not decide cannot be argued into one silently — which is how the ruling's own FALLBACK is enforced."
@@ -714,7 +714,7 @@
     {
       "id": "D-675",
       "title": "Phase 1 completes when the INFERENCE-BEARING obligations are discharged — the finish line is cut by D-438's test, the apparatus residue does not gate the completion, and the cut carries a falsification test",
-      "home": "CLAUDE.md:1633-1660",
+      "home": "CLAUDE.md:1656-1683",
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "PARTIAL, and the split is stated so the un-mechanised half is not hidden. WHAT IS ENFORCED at this tree: the cut is DERIVED and never hand-classified — tools/audit/gen_nongating_apparatus_rows.py is the ONE place a verdict is authored, and it STOPS both on a first-cut candidate with no verdict and on a verdict for a row the INDEX no longer carries open, so a gating verdict cannot be hand-added; and tools/audit/gen_phase1_finish_line.py derives every population and every gate verdict and STOPS on a population no item carries, so the list cannot quietly stop being exhaustive. WHAT IS NOT yet enforced: the finish line's own PER-ITEM gate is not cut by D-438's test, the #19 carve-out is not encoded in that cut, and the falsification test the ruling requires does not run on regeneration. All three are named by the ruling's own text and are owed to it."

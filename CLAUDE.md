@@ -1596,7 +1596,30 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
 
 - **ISSUE-EXHAUSTION AND SPECIFICATION COMPLETION BEFORE ANY FIX DESIGN (user-directed,
   2026-08-02; sharpens #8, which forbade inference-problem coding before layer completion — this
-  forbids fix DESIGN before knowledge completion).** Three phases, strictly ordered. **Phase 1 —
+  forbids fix DESIGN before knowledge completion).**
+  **★ THE THREE-PHASE STRUCTURE BELOW IS SUPERSEDED AND ITS TRUTH HALF IS REPLACED (user-ruled
+  2026-08-15; the ruling record is `cowork_rulings_2026_08_15_phase_definition_sitting.md`; the ruled
+  definitions' ONE home is `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3 —
+  a pointer, never a copy, #6).** The governing structure is now SIX PHASES — preparation → the pilot
+  (on `docs/scoring_model.md`) → the framework → the detail specifications → measurement design → the
+  audit — with the fix plan after the audit unchanged: #8's three-clause gate and the
+  one-prioritized-fix-plan rule stand exactly as below. Every phase closes with a recorded
+  retrospective (lessons of any kind, with evidence, routed to their homes; amendments only by the
+  user's ratification). **The rule that replaces the truth half, stated here because it must bind
+  even a session that reads nothing else: A DISAGREEMENT BETWEEN SPECIFICATION AND CODE IS EVIDENCE,
+  RESERVED FOR THE AUDIT; NO DOCUMENT IS CORRECTED ON THE GROUND THAT THE CODE SAYS OTHERWISE.** The
+  COMPLETE half survives as a property, not a program: the detail-specification phase derives
+  specifications that are born complete — every decision in its owning specification, with its
+  defense. **The former three-phase text below is PRESERVED IN PLACE (#12) and is no longer the
+  governing structure.** Its embedded sub-rulings keep their own recorded standing and none is edited
+  by this supersession: old phase 2's exhaustion duty (measured coverage, every channel enumerated,
+  the bounded trust statement) is inherited by the audit phase; old phase 3 and its family-gate
+  qualification are the unchanged fix-plan territory; a sub-ruling whose subject was the superseded
+  truth half (D-639's reach test) loses its subject with it, its record untouched and its register
+  standing settled at the register's own discharge, not here. The abbreviation HEAD in the preserved
+  text below is read under the ruled vocabulary: the current commit of everything, never the code
+  alone.
+  Three phases, strictly ordered. **Phase 1 —
   the specifications are made COMPLETE and TRUE:** every recorded decision is written into its
   owning specification (the homing acts), with its defense, so that conformance is thereafter
   measured against the specifications themselves — the decisions register remains the status
