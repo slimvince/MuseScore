@@ -285,10 +285,18 @@ neither task.
   appeared at any point in the batch**, so no STOP-and-report was owed.
 - **E5 — see below, and the ordering rule the dispatch imposed was obeyed.**
 
-**★ E5, RUN AT THE TREE CARRYING THE CLOSE AND AFTER THE COMMIT THAT CARRIES IT.** Per the dispatch's
-rule taken from this side's own E3 ordering defect — *no graded value is committed before the run
-that produced it* — the run's output and the final SHAs land in **one further commit** after the
-close. Its values are recorded in that commit and in the close, read from the run's output.
+**★ E5 — MET, RUN AT THE TREE CARRYING THE CLOSE AND AFTER THE COMMIT THAT CARRIES IT.** Task 4's
+close is commit **`4f3214cf22`**, pushed, parent `0305d495bb`, three paths. At that tree, after that
+commit existed, `gen_guard_state.py --check` printed **"the guard state re-derives"** — **50 guards
+run, 49 passing, ONE failing** (`gen_filing_convention_application.py --check`, [[OI-372]]), 4 not
+run, 10 historical, **no STOP** — and `gen_guard_classification.py --check` printed **"the guard
+classification re-derives"**. **Run and read, never inferred.**
+
+Per the dispatch's rule, taken from this side's own declared E3 ordering defect — *no graded value is
+committed before the run that produced it* — this paragraph and the SHA in it land in **one further
+commit** after the close, so nothing here was on disk before the run that produced it. **The defect
+that rule exists against is not repeated in this batch:** no expectation anywhere in this report was
+written before its measurement.
 
 ---
 

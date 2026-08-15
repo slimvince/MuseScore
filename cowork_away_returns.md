@@ -12226,6 +12226,17 @@ No graded value in this close was written before the run that produced it. E5's 
 anticipated anywhere above: the run happens after the close commit, and its output plus the final
 SHAs land in the commit that follows — exactly the shape the dispatch orders.
 
+**★ E5, RUN AT THE TREE CARRYING THE CLOSE AND AFTER THE COMMIT THAT CARRIES IT — READ FROM ITS
+OUTPUT, NEVER INFERRED.** Task 4's close is commit **`4f3214cf22`**, pushed, parent `0305d495bb`,
+three paths (`STATUS.md` 11 insertions and 1 deletion, the deletion being the previous entry's
+`Last updated:` opening demoted per that file's own convention; `cowork_away_returns.md` a pure
+append of 241 lines; the report added). At that tree, **after that commit existed**,
+`gen_guard_state.py --check` printed **"the guard state re-derives"** — **50 guards run, 49 passing,
+ONE failing** (`gen_filing_convention_application.py --check`, [[OI-372]]), 4 not run, 10 historical,
+**no STOP** — and `gen_guard_classification.py --check` printed **"the guard classification
+re-derives"**. **E5 — MET.** This paragraph and the SHA above land in ONE FURTHER COMMIT, which is
+why no value in it was on disk before the run that produced it.
+
 ## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
 
 1. **THE DIFFERENCE WAS RE-READ, NOT THE INTENTION.** Every commit was verified at the object after
