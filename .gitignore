@@ -115,7 +115,6 @@ compile_commands.json
 # Working-process instruction and report files (CC / Cowork session artifacts)
 /cc_instruction_*.md
 /cc_e2d_*.md
-/cc_*.md
 ai-assistant/CC_INSTRUCTION_*.md
 # Transient tools/cc_* scratch (consistent with root /cc_*): cc_*.py / cc_*.json /
 # cc_*.err / dumps. Load-bearing harnesses already tracked (cc_layer3_*) are
