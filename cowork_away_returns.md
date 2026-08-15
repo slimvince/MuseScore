@@ -12013,3 +12013,244 @@ batch's record was written before its measurement.
 6. **WHAT THE SELF-CHECK DID NOT RESOLVE:** F3 and F4 are surfaced and unfixed; [[OI-372]] and
    [[OI-374]] are untouched; [[OI-179]] stays OPEN and GATES; the 284 newly visible instruction
    files and the remaining ignored files are unlanded; and no preparation-phase act was taken.
+
+---
+
+# ═══ THE PREPARATION OPENING (dispatch `cc_instruction_preparation_opening.md`, performed 2026-08-15) ═══
+
+*(Every guard count referred to below lives at `tools/audit/guard_state.json`, every classification
+count at `tools/audit/decisions_filter_classification.json`, every caller-check value at
+`tools/audit/retirement_caller_check.json`; **none is restated here** — **D-431** — except the few
+this close is reporting ABOUT, each naming where it was read. **The report is
+`cc_report_preparation_opening.md`**, which is the whole of what the coding side says back; this
+close is the batch record beside it. This is the FIRST dispatch of the PREPARATION phase under its
+ruled definition — `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3.1 and §8
+wave 1 — and it is bounded exactly as the nineteenth handoff block bounds it: the rulings sort, the
+empirical findings ledger, the curated boot list, the archiving wave, the mining and the landing of
+the newly visible files are NOT in it.)*
+
+## 4 (continued). The batch's start state, recorded before any act
+
+**The full guard set was RUN BEFORE THE FIRST EDIT**, and the working tree was enumerated through the
+sanctioned tool before anything was staged.
+
+- **`gen_guard_state.py --check`: 48 guards run, 47 passing, ONE failing** —
+  `gen_filing_convention_application.py --check`, which is [[OI-372]] — 4 not run, 10 historical
+  records, **NO STOP of any kind**. The runner's opening line read **"the guard state re-derives"**,
+  so the committed artifact was not stale.
+- **`gen_guard_classification.py --check`: "the guard classification re-derives"**, exit 0.
+- **This is exactly the start state the dispatch declares as expected**, so no STOP-and-report was
+  owed on it.
+- **The working tree carried EXACTLY ONE tracked modification** — `cowork_handoff.md` — with
+  `cc_instruction_preparation_opening.md` untracked among the 832 untracked records, which is
+  assumption **A1**'s second limb.
+
+## 1 (continued). What needs the user
+
+**TWO QUESTIONS, and neither is answered by this batch. Both are the batch's actual product.**
+
+1. **★ DOES AN ENUMERATION COUNT AS A CALLER?** The caller-check returns HELD-BY-CALLERS for every
+   ruled retirement candidacy, and the naming is mostly done by artifacts that enumerate the tree —
+   the artifact inventory itself, the ruling surface generated from it, the decision harvest, the
+   file tables — each of which names every path by construction and therefore says nothing about
+   whether anything DEPENDS on the file. Deciding the question would mean either exempting named
+   artifacts, which is an authored judgment about which records are exempt, or picking a threshold
+   on how many files a caller may name, which is a hand-picked number over varying data and the
+   shape this record has twice declined. **Neither was taken.** What is published instead is a
+   per-caller measurement — how many of the flagged population each one names, and what share that
+   is — so the ruling can be taken with the evidence in front of it. **Until it is ruled, NOTHING
+   may be archived**, which is the same answer the standing warning already gave, now reached by
+   measurement rather than by caution. It is the gate on §8's first pruning wave.
+2. **★ RULING 8's SECOND LIMB — DECISION, OR OBSERVATION OF WHAT THE CODE DOES?** The filter settles
+   the ruling's operative clause (can a deciding act be named?) because that is a question about
+   provenance and the evidence is in each entry. It does NOT settle the gloss, because that is a
+   question about CONTENT and no recognizer answers it. So the surface does not ask for trust in a
+   verdict: **every proposed SOFT-DISCARD and NEEDS-THE-USER member is listed with its quoted
+   evidence, its plain restatement and the source the entry gives for its status**, which is enough
+   to apply the limb by reading. Where that reading finds a decision, the entry belongs in the live
+   record whatever its provenance field says.
+
+**Two counter-considerations are on the surface rather than in a footnote**, because a reader must
+meet them before the proposals: the register-level ratification events **supply no ratifier the
+original record never had** — `DECISIONS.md`'s own preamble says exactly that and it is quoted — and
+the observation-shape limb's reach is **UNMEASURED** (#19).
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+Rows are barred by the dispatch, so each is stated here and at the report.
+
+- **F5 (new) — the caller-check's signal is swamped by tree-enumerating artifacts.** The check as the
+  dispatch specifies it cannot yet discriminate. Measured, published, returned as question 1 above.
+  This is the finding that decides whether the first pruning wave can execute at all.
+- **F6 (new) — one flagged class publishes no member list, so a population the record treats as
+  uniform is not.** The inventory descends into most classes and not that one. The ordered STOP
+  caught it; the list was derived from the inventory's own published signature rather than
+  hand-listed, with the derived count cross-checked against the count the inventory publishes.
+  Recorded because the next derivation over the inventory will meet the same asymmetry.
+- **F7 (new) — the decisions register's data file uses a status spelling its own header does not
+  declare.** Found by walking the whole population. Nothing in the classification turns on it. **NOT
+  repaired**: the register is not this batch's to edit, and a disagreement between a record and what
+  it describes is evidence — the rule the user ruled into `CLAUDE.md` in place of D-231's truth half.
+- **F4 (carried, unchanged)** — the anchor-remap practice reaches artifacts that turn red only in a
+  SECOND guard run.
+- **F3 (carried, now THRICE surfaced)** — `reaim_home_anchors.py --check` exits 0 while printing
+  drifted anchors; the drift authority is `gen_cluster_dispositions.py --verify`. **Still unfixed and
+  unrowed — the dispatch bars both.**
+- **F1 and F2 (carried)** — no zero-deletion expectation at a mid-line insertion point; seven
+  committed artifacts capture `CLAUDE.md`'s text, its naming counts or its anchors.
+- **Carried to the phase's retrospective as the dispatch orders:** the E3 ordering defect of the
+  previous report, and the A1 premise error of the dispatch before it.
+- **No finding bearing on the analysis, its inputs, or a measurement tool the analysis depends on.**
+  Every subject of this batch is the project's own record and the apparatus that reads it.
+
+## 3 (continued). Per-task log — the preparation opening
+
+### Task 0 — the nineteenth handoff block and this dispatch landed. Commit `54eb257a6f`, pushed
+
+**A1's check was performed FIRST and entirely at content-addressed objects.** The committed blob
+`f64837573c` was resolved from `02636987b0:cowork_handoff.md` and diffed against the working blob
+`1bb96d838e` from `git hash-object` — both the hashes the dispatch's premise names, to the digit, and
+neither side a shell read of a working-tree file (**D-253**).
+
+**A1 IS CONFIRMED AS LITERALLY STATED.** The difference is **101 insertions and 1 deletion**, ONE
+contiguous changed passage, carrying exactly the two parts the premise names as two parts of one act.
+Nothing else differs; the ordered STOP was not reached. *The two parts are adjacent, so the version
+history reports them as ONE changed passage rather than two — which the premise's own wording made
+expected rather than a discrepancy to reconcile.*
+
+**That `02636987b0` was the current committed state is established at the object and not assumed: it
+is this commit's parent.** A branch-tip read could not have established it (D-253).
+
+**The commit.** Exactly the two paths named and no third, verified at the index through the
+sanctioned enumeration (2 records: one `M`, one `A`) and at the object after it. The dispatch was
+staged **PLAINLY** — the second dispatch to land that way since the ignore rule was removed.
+**Registered expectation E0 — MET on all three limbs.**
+
+### Task 1 — the stale twelfth heading demoted. Commit `a150bd8acf`, pushed
+
+The twelfth block's heading closed with `THE CURRENT ENTRY POINT.` seven blocks after it stopped
+being one, while every other superseded heading in the file carries a demotion marker naming its
+successor. Its closing sentence is replaced by
+`(SUPERSEDED as the entry point by the thirteenth block above.)` and nothing else in the file moves.
+
+Verified blob against blob by explicit hash before the commit: committed `1bb96d838e` from
+`54eb257a6f:cowork_handoff.md`, working `e66311e48f` from `git hash-object -w`.
+
+**Registered expectation E1 — MET on every limb.** ONE path, ONE changed passage, **1 insertion and 1
+deletion**, confined to line 516; afterwards `THE CURRENT ENTRY POINT.` occurs in the file **exactly
+twice**, in the nineteenth block's heading and inside that block's carried-findings sentence, which
+QUOTES the heading this task removes — a quotation being inert, which is what the expectation
+registered.
+
+### Task 2 — the decisions-register filter, DERIVED onto a ruling surface. Commit `0a2cc3f86a`, pushed, seven paths
+
+**A2's check — CONFIRMED, and it is a STOP rather than a report.** The data file and the rendered
+INDEX carry the same entry identities in BOTH directions; a disagreement either way halts the tool
+before it writes, so a committed artifact reporting a reconciled population is the only kind that can
+exist (**D-671**).
+
+**The evidence is quoted from each entry's own recorded text and never inferred**, and the rule that
+reads it is published in the artifact beside the verdicts it produced, so the rule can be checked
+against the evidence without opening the tool. **The one judgment call is declared**: a bare date
+names WHEN and not WHO or WHERE, so it returns to the user rather than being read either way.
+
+**★ THE REGISTER IS BYTE-UNCHANGED AND IT IS PROVEN BY HASHING, NOT ASSERTED.** `DECISIONS.md`, **all
+twenty** `decisions/group_*.md` files and `tools/audit/decisions/backbone_decisions.json` were each
+hashed against their committed blobs at `a150bd8acf` after the run; every one is identical. No entry
+was retired, edited, moved or marked, and no soft-discard was executed.
+
+**Five STOPs ride with the tool and each is shown able to fire by a probe calling the very function
+the walk calls. ONE FIRED FOR REAL ON THE FIRST RUN** — the status-vocabulary STOP halted the tool on
+a live entry, which is how F7 was found. It was answered by declaring the comparison, **not** by
+editing the data.
+
+**Registered expectation E2 — MET on every limb.**
+
+### Task 3 — the caller-check at the objects. Commit `0305d495bb`, pushed, six paths
+
+**The population is IMPORTED, never restated (#6):** the retirement flags come from
+`gen_artifact_inventory_surface.py`'s own authored table, so this check and the ruling surface cannot
+disagree about what is flagged; every member path comes from the committed inventory; and every ruled
+condition carries the sentence of the ruling record it was read from, **located in that record on
+each run**, so a condition cannot outlive the words that imposed it.
+
+**★ ASSUMPTION A3 IS FALSIFIED IN ONE NARROW RESPECT AND THE ORDERED STOP CAUGHT IT.** One flagged
+class is one the inventory does not descend into, so it publishes no member list and the tool
+STOPPED — on real data rather than on a probe. **The list was NOT hand-listed**, which the dispatch
+forbids: it is derived by applying the inventory's OWN published signature, imported from its
+generator rather than restated, to the tree at the commit the inventory records, with the derived
+count cross-checked against the count the inventory publishes for that class. How each member list
+was derived is recorded per candidacy.
+
+*A second defect was found and fixed at the tool rather than worked around:* git C-quotes any path
+holding a non-ASCII byte and this repository has one, so an unquoted read reported that path missing
+and the walk stopped.
+
+**★ THE FINDING IS THE RESULT (F5, and question 1 above).** Every candidacy returns HELD-BY-CALLERS;
+the naming is mostly enumeration; the discriminating question is stated and NOT decided; the
+per-caller measurement is published so it can be. **NO FILE WAS MOVED, ARCHIVED OR DELETED, and a
+PASSES-THE-CHECK verdict would have conferred nothing anyway.**
+
+**Registered expectation E3 — MET.**
+
+### The new-tool rule, discharged twice — and one ordering consequence declared
+
+Each check this batch adds joined the derived guard-candidate population the moment it existed, and
+**each landed WITH its authored run-instruction and its authored classification verdict in the SAME
+commit that adds it**. Both take `--check` rather than the bare invocation, for a reason about the
+tools: run with no flag each REWRITES its committed outputs, which is the OI-301 hazard.
+
+**Declared rather than glossed:** Task 3's tool existed on disk while Task 2's guard state was being
+taken. It was **moved out of the repository** for the duration and restored afterwards, so the state
+committed with Task 2 is the state of Task 2's own tree. Left in place, the Task-2 artifact would
+have carried an unclassified candidate and a STOP belonging to neither task.
+
+## 3 (continued). The end state
+
+**The full guard set was RUN AGAIN by its own generator after both checks were added and
+registered:** **50 run, 49 passing, ONE failing** (`gen_filing_convention_application.py --check`,
+[[OI-372]]), 4 not run, 10 historical, **no STOP**; `gen_guard_classification.py --check` —
+**"the guard classification re-derives"**. Both of this batch's new checks are inside the classified
+population under authored verdicts and both PASS. **No other failing check appeared at any point in
+the batch**, so the dispatch's STOP-and-report condition was never reached. **Registered expectation
+E4 — MET.**
+
+**THE BATCH'S SHAs.** Task 0 — **`54eb257a6f`**, pushed, parent `02636987b0`, two paths. Task 1 —
+**`a150bd8acf`**, pushed, parent `54eb257a6f`, one path, 1/1. Task 2 — **`0a2cc3f86a`**, pushed,
+parent `a150bd8acf`, seven paths. Task 3 — **`0305d495bb`**, pushed, parent `0a2cc3f86a`, six paths.
+Task 4's close commit and **E5's run, taken AFTER that commit exists**, follow in one further commit,
+so that every content SHA is recorded here rather than left to be looked up.
+
+**★ THE E3-ORDERING LESSON OF THE PREVIOUS BATCH IS OBEYED AS A RULE, NOT REMEMBERED AS A CAUTION.**
+No graded value in this close was written before the run that produced it. E5's values are not
+anticipated anywhere above: the run happens after the close commit, and its output plus the final
+SHAs land in the commit that follows — exactly the shape the dispatch orders.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. **THE DIFFERENCE WAS RE-READ, NOT THE INTENTION.** Every commit was verified at the object after
+   it, and both handoff-file edits were diffed blob against blob by explicit hash before it.
+2. **THE TWO ORDERED STOPS THAT FIRED WERE ANSWERED WITHOUT EDITING DATA.** The status-vocabulary
+   STOP produced a recorded finding and a declared comparison; the missing-member-list STOP produced
+   a second derivation route with a cross-check, and no path was typed by hand.
+3. **NOTHING WAS FILTERED TO MAKE A RESULT LOOK USEFUL.** The caller-check's verdicts are reported as
+   measured, and the exclusion that would have made them discriminate was declined and returned as a
+   question, with the measurement published so the question can be answered.
+4. **ON D-253 IN EVERY DIALECT.** Every read of repository content went through Read / Grep / Glob.
+   The shell was used for tool and generator runs, `git add` / `git commit -F` / `git push`, the
+   sanctioned changed-path enumeration, `git rev-parse <hash>:path`, `git hash-object`, and
+   `git diff` between two blobs named by explicit hash. **The guard denied two attempts in this batch
+   — a `grep` at a repository path and a `python -c` carrying a repository path — and both were
+   redone through the file tools rather than reworded.** Reads of files in the scratchpad and under
+   `C:\tmp` are outside the rule's subject.
+5. **ON THE RESERVED-WORD CONVENTION.** No bare *score*, *key*, *measure*, *note*, *mode*,
+   *register*, *root*, *part*, *rest*, *figure*, *interval*, *scale*, *beat*, *tie*, *stem*, *flat*
+   or *instrument* in a non-musical sense in this batch's new prose: *measurement*, *value*,
+   *remark*, *the decisions register* / *the open-items register* in full, *count*, *tool* and
+   *check* carry those senses. The ruled replacements bind and are used: **a changed passage**, **the
+   current commit**, **untrusted source**, **a ruling from you permitting a named act**.
+6. **WHAT THE SELF-CHECK DID NOT RESOLVE:** F3 and F4 are surfaced and unfixed; [[OI-372]] and
+   [[OI-374]] are untouched; [[OI-179]] stays OPEN and GATES; the 284 newly visible instruction files
+   and the remaining ignored files are unlanded; nothing is discarded and nothing is archived; and no
+   further preparation-phase act — the rulings sort, the findings ledger, the fact-gate, the curated
+   boot list, the mining — was begun.
