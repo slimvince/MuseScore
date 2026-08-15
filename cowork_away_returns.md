@@ -11116,3 +11116,251 @@ Run against the diff on disk rather than against the memory of writing it (**D-4
 **What the self-check did NOT resolve**, stated rather than left implicit: the signature table's
 own establishment (#19) — coverage is checked, correctness of placement is not — and the citation
 scan's reach, which sees only the governing record. Both are stated in the artifacts themselves.
+
+---
+
+# ═══ THE RULED LANDING, THE GUARD CLEARING AND THE CLASS-1 CHECK (dispatch `cc_instruction_ruled_inventory_landing.md`, performed 2026-08-15) ═══
+
+*(Every count referred to below lives at `tools/audit/test_construction_evidence.json`,
+`tools/audit/guard_state.json`, `tools/audit/guard_classification.json` and
+`ratification_surfaces/cowork_artifact_inventory_ruling_surface.md`; **none is restated here** —
+**D-431** — except the few figures this close is reporting ABOUT, each naming the artifact it was
+read from, and the one member list the dispatch orders published by name. **The report is
+`cc_report_ruled_inventory_landing.md`**, which is the whole of what the coding side says back; this
+close is the batch record beside it.)*
+
+## 4 (continued). The start state, recorded before any act
+
+**The full guard set was RUN BEFORE THE FIRST EDIT** — the inventory batch's declared departure is
+not repeated — and the two assumptions the dispatch attaches to Task 2 were checked at the tools'
+own messages before anything was written.
+
+- **`gen_guard_state.py --check`: 45 guards run, 44 passing, ONE failing** —
+  `gen_filing_convention_application.py --check`, which is [[OI-372]], rowed and discarded. **One
+  STOP**, the runner's own: *"derived candidate(s) with no authored invocation:
+  ['tools/audit/gen_doc_change_candidates.py', 'tools/audit/gen_status_archive_pass.py']"* —
+  **assumption A2 CONFIRMED**, exactly the two tools the inventory batch's close names. The runner
+  also reported the committed `guard_state.json` STALE against its own run.
+- **`gen_guard_classification.py --check`: STOP, verbatim** — *"tool(s) in the guard-state
+  population with no authored verdict: ['tools/audit/gen_discard_records.py']"* — **assumption A1
+  CONFIRMED**: exactly one tool, the 2026-08-13 entrant, created under the user's Ruling 69
+  (**D-677**).
+- **The working tree carried exactly what Task 0 expected**, read through the sanctioned
+  enumeration: `cowork_handoff.md` modified, `cowork_rulings_2026_08_15_inventory_sitting.md`
+  untracked, and the ruling surface UNMODIFIED — so the dispatch's fourth Task-0 path was the no-op
+  it says it is.
+
+### 4.b The end state, run after the last content commit
+
+**48 guards run, 47 passing, ONE failing — the same one the batch found, [[OI-372]] — and NO STOP of
+any kind.** The classification re-derives beside it. **The set ends with two reds fewer:** the
+runner's own STOP is gone and the classification's STOP is gone, and nothing new is red. **The batch
+introduced no red and worked none around.**
+
+**★ AND THE ONE REMAINING DIFFERENCE IS DIAGNOSED RATHER THAN LEFT AS AN ODDITY.** The runner also
+reports the committed `guard_state.json` **STALE** — at BOTH ends of this batch, opening and final,
+with **every verdict identical** and only captured text differing. The cause is established at the
+code: `tools/audit/gen_artifact_inventory.py`'s live half resolves the CURRENT HEAD and prints its
+short hash, and the runner normalizes only the literal word `HEAD` followed by a sha, which that
+line does not carry. **So committing anything makes the artifact stale by construction** — the
+failure the runner's own comment beside that normalization describes, in a form the pattern does not
+reach — and it is also what the previous batch's undiagnosed opening STALE was. **Not fixed and not
+papered over:** widening the normalization or changing what the check prints is a mechanism change
+**D-436** reserves, and regenerating a second time would hold for exactly as long as it takes to
+commit. The committed artifact is this batch's full 48-guard run with its verdicts. Reported at the
+report's §4.a; **no row was opened, this batch's bars forbidding it.**
+
+---
+
+## 1 (continued). What needs the user
+
+### 1.a ★ THE CLASS-1 CONDITION IS NOT MET AS STATED — twenty members carry specification-derived evidence, and they return to the user
+
+§3.1 ruled class 1 conditionally: *"IFF the regression test were constructed based solely on code
+and not at all on specs - I agree with you (A)."* **The check has run and the condition does not
+hold as written.** Population 123: **20 SPEC-DERIVED-EVIDENCE**, **103 CODE-BUILT** (52 with
+positive evidence of construction beside or from the code, 51 with none establishable — the
+ruling's own default, recorded as a distinct sub-case). **The 20 are named in the report at §1 and
+in the artifact**, split by whether the evidence sits in the file itself (18) or only in a commit
+subject (2).
+
+**The evidence is of the kind the ruling anticipated**: eighteen of the twenty carry an in-file
+remark naming the specification their expectations came from — `functionromannumeral_tests.cpp`
+carries *"// Spec: cowork_layer5_function_design.md §5.1."* — which is design intent sitting inside
+a test.
+
+**Two limits are published rather than argued away.** A commit subject describes the COMMIT and not
+one file inside it, so the two members whose only statement is a commit subject are established
+more weakly, and every row records which case it is. And the recognizers' REACH is UNMEASURED
+(#19) — what bounds the error is the ruling's own default, since a missed statement errs toward
+exclusion, the direction the ruling records as recoverable.
+
+**The catalogs, which §3.1 asks about separately, do NOT differ from the tests in the direction the
+question anticipated:** both are CODE-BUILT, one with positive evidence and one by default.
+
+### 1.b ★ THE GUARD CLEARING'S SECOND HALF IS STOPPED AND REPORTED — [[OI-373]] IS UNTOUCHED
+
+The invocations are authored and **the runner's STOP is cleared**, so the substance of [[OI-373]] is
+discharged. **The ordered flip is not performed**, and the reason is at the code rather than in an
+opinion: `tools/audit/gen_discard_records.py` carries an authored discard pointer for that row and
+refuses on any entered row RESOLVED at the INDEX — *"A discard is not a resolution and a resolved
+row does not need one — the two states have come apart and are not reconciled here."* A row's state
+is its status cell's leading token (register rule (f)), so **the flip turns that guard red by
+construction**, leaving TWO standing reds against the ruling's own words that [[OI-372]] is the one,
+and against the dispatch's registered expectation E2.
+
+**The coherent act — flip the row AND retire the discard pointer whole, with the reason it left
+(#12) — is a change to a mechanism's structure that D-436 reserves to the user.** So the row is left
+entirely alone: no status cell moved, no dated remark added. **The cost of that is nil while the
+user decides**, because the row is discarded under the worth test and therefore gates nothing and
+draws no capacity. The two available acts are stated at the report's §2, and neither is taken.
+
+### 1.c ★ THE RULED `.gitignore` EDIT IS PARTIAL, AND THE RESIDUE IS DECLARED
+
+The rule `/cc_*.md` is removed exactly as §1 orders and no other line moved, as the dispatch orders.
+**But the narrower rule `/cc_instruction_*.md` stands two lines above it**, so 92 of the 122 files
+landing under §1 were still ignored and were staged with an explicit override, and **a dispatch
+written after this batch is still silently outside git** — the rule-versus-practice disagreement
+the ruling set out to end, surviving in its narrower form. The landed 122 are tracked and safe; what
+stays exposed is new files. Not fixed here: removing a second ignore rule changes what the ruling
+decided. Detail at the report's §3.
+
+---
+
+## 2 (continued). What each task did
+
+**The commits, all pushed to `origin`, each verified at the object by explicit hash through
+`changed_paths.py --commit`:** Task 0 `dfea49b7a5` (3 paths), Task 1 `0fcff4f6e2` (123 paths),
+Task 3 `811244d57c` (2 paths), Task 2 `4a65a40e03` (4 paths), and this close's own commit.
+
+### 2.1 Task 0 — the writing-side records landed. `dfea49b7a5`
+
+Exactly the three named paths, verified at the index through `changed_paths.py --staged` before the
+commit and at the object after it. The dispatch file was staged with `-f` — for what the dispatch
+calls the last time, which §1.c shows is true only of the rule Task 1 removes. **E0 (three paths)
+MET.**
+
+### 2.2 Task 1 — the ruled landing. `0fcff4f6e2`
+
+The landing list parsed from the ruling surface's own derived section and **counted exactly 122**,
+which is the dispatch's STOP condition met rather than assumed. `.gitignore` staged with them as ONE
+commit. **Every one of the 123 staged records was an ADDITION** — the finding that a fresh clone
+lacked them, re-established at the index rather than carried from the report — and that is also
+**assumption A3 CONFIRMED** mechanically, since git resolved all 122 pathspecs. **E1 MET on both
+limbs**: 123 paths at the object, and `git log --all` for `cc_adoption_measurement_report.md`
+showing exactly one commit, this one.
+
+### 2.3 Task 2 — the guard clearing. `4a65a40e03`
+
+**Every tool was read IN FULL with the file tools before anything was written about it**, which is
+what the ruling governing the classification requires of a verdict. **Three classification verdicts
+and three invocations authored, all LIVE**, each with its evidence citation, its reason and its own
+statement of what it does NOT assert.
+
+**★ BOTH DIRECTIONS OF THE MECHANISM WERE SEEN WORKING RATHER THAN TRUSTED, and neither was
+contrived.** After the verdicts and before the invocations, the classification STOPped with its
+OTHER stop — *"verdict(s) naming a tool the guard state does not carry"* — which is the two tables
+refusing to drift apart. And the confirming run made before Task 3's tool was registered STOPped
+naming `tools/audit/gen_test_construction_evidence.py`.
+
+**★ THAT SECOND STOP IS WHY TASK 3's TOOL IS REGISTERED IN THE ACT THAT CREATES IT** — invocation
+and classification verdict both. The absence of exactly that practice is what produced the condition
+[[OI-373]] records, twice over.
+
+### 2.4 Task 3 — the class-1 construction-evidence check. `811244d57c`
+
+`tools/audit/gen_test_construction_evidence.py` → `tools/audit/test_construction_evidence.json`.
+**The population is read from the committed inventory's own class membership and never hand-listed**,
+and is reconciled with the graded set in BOTH directions on every run — the tool's live half.
+**Every reading is pinned to the commit that inventory records** and taken from git objects, so
+editing a test does not turn the check red: the [[OI-301]]/[[OI-305]] shape avoided by construction
+rather than tolerated. **No test was edited, moved or run.**
+
+**★ THE LIMITATION THE TOOL PUBLISHES WAS FOUND BY READING THIS BATCH'S OWN OUTPUT**, not designed
+in: a build file came back SPEC-DERIVED on a commit subject alone, which is what put the per-row
+record of WHERE each statement was located, and the published limitation beside it, into the
+artifact.
+
+### 2.5 The commit ORDER of Tasks 2 and 3 is inverted, deliberately, and it is declared
+
+**Task 3's commit precedes Task 2's.** Task 3's tool carries a `--check` mode, so it joins the
+runner's DERIVED candidate population **by existing**; its invocation and its classification verdict
+belong to Task 2. Committing Task 2 first would have committed a guard table naming a file the tree
+did not carry — **the phase-1r failure the runner's existence STOP was built against**. Committing
+Task 3 first leaves one intermediate commit at which a guard exists unregistered, which is the
+ordinary sequence every such tool has entered by and which the very next commit closes. **Each task
+is still ONE commit, which is what the dispatch asks; only their order is swapped**, and each
+commit's own message says so.
+
+---
+
+## 3 (continued). The registered expectations, graded
+
+- **E0 — the Task 0 commit lists exactly 3 paths: MET**, at the object.
+- **E1 — path count 123, and one commit for `cc_adoption_measurement_report.md` afterwards: MET**,
+  both limbs at the object.
+- **E2 — the end-state guard run reports one FAIL ([[OI-372]]), zero STOPs, and both runs of the
+  state generator derive line-identical artifacts: MET** — 48 guards run, 47 passing, one failing,
+  **no STOP of any kind**, and the second run's opening words are *"the guard state re-derives"*.
+  The classification likewise regenerates and re-derives. **What E2 is silent about is the flip §5
+  also orders, and that is §1.b:** had it been performed, E2 would have been unmeetable by
+  construction — which is why it was stopped and reported instead.
+- **E3 — the large majority classify CODE-BUILT, and any SPEC-DERIVED-EVIDENCE member is a finding
+  for the user rather than a defect: MET** — 103 of 123, with 20 returned at §1.a.
+
+---
+
+## 5 (continued). What was deliberately not done
+
+- **No `src/` edit, no golden, no test changed, moved or run**; nothing under `tools/corpus/` or
+  `tools/robust_stop/`; **no measurement of the analysis built, designed, scoped or run; no design,
+  no repair, no fix to inference.**
+- **No open-items row created, flipped or discarded** — [[OI-372]] stays exactly as found, and
+  [[OI-373]] is untouched for the reason at §1.b.
+- **No decisions-register entry written** (the filtering ruling stands).
+- **No file archived, retired, renamed or deleted**; every retirement flag still waits behind the
+  caller-check, which is NOT started; **the remaining 449 ignored files are NOT landed.**
+- **No verdict authored for any tool this batch did not read in full.**
+- **No ruled verdict written back onto the inventory's generated surface or its artifact** — the
+  ruling record stays the carrier, as its own §7 says.
+- **[[OI-179]] stays OPEN and GATES. D-231 and #8 stand.**
+
+---
+
+## 6 (continued). The standing self-check (D-434) over this batch's own work
+
+Run against the diff on disk rather than against the memory of writing it. **Its full form is the
+report's §7**; what follows is what it CAUGHT.
+
+1. **★ AN ORDERED ACT THAT COULD NOT BE PERFORMED COHERENTLY WAS STOPPED RATHER THAN FORCED** —
+   §1.b. Performing the flip and reporting the new red afterwards would have been the
+   workaround-then-declare shape the record forbids.
+2. **★ THE RULED EDIT'S RESIDUE WAS DECLARED RATHER THAN QUIETLY WIDENED** — §1.c. Staging with
+   `-f` is the repository's own practice; using it silently would have hidden that the ruled remedy
+   is partial. (The record already shows the confusion: the previous batch's Task 0 commit message
+   attributes that same override to `/cc_*.md` alone, which was never the whole cause.)
+3. **THE NEW TOOL'S REGISTRATION WAS PROVED NECESSARY RATHER THAN ASSUMED** — the run that STOPped
+   on it was made and read (§2.3).
+4. **A PER-FILE EVIDENCE LIMITATION WAS FOUND IN THIS BATCH'S OWN OUTPUT** and published in the
+   artifact rather than corrected away (§2.4).
+5. **ON D-253 IN EVERY DIALECT.** Every read of repository content went through Read / Grep / Glob.
+   The shell was used for the guard runs and the new tools' own runs, `git add` / `git commit -F` /
+   `git push`, the sanctioned changed-path enumeration, one `git show -s` by explicit hash, and line
+   counts on a scratchpad file OUTSIDE the repository. **Two attempts were refused by the guard and
+   both refusals were correct or conservative**: an interpreter heredoc carrying a literal
+   repository path — the edit was made with the file tools instead — and a `tail` whose path was a
+   shell variable pointing outside the repository, read with Read instead.
+6. **ON THE RESERVED-WORD CONVENTION.** No bare *score*, *key*, *measure*, *note*, *mode*,
+   *register*, *root*, *part*, *rest*, *figure*, *interval*, *scale*, *beat*, *tie*, *stem* or
+   *flat* in a non-musical sense in this batch's new prose: *measurement*, *value*, *remark*, *the
+   open-items register*, *register entry*, *`--check` mode*, *verify-only mode* and *tool* carry
+   those senses. **Two inherited terms are carried knowingly**: a row's *resolution*, the
+   open-items register's own word for the act rule (d) names, and *contract*, the record's own name
+   for a ratified specification document.
+7. **★ A RECURRING UNEXPLAINED GUARD CONDITION WAS DIAGNOSED RATHER THAN REGENERATED AWAY** —
+   §4.b. The obvious move was to re-run the generator until the artifact matched; why that is the
+   wrong act is written into the runner itself, and reading it turned a STALE two batches have now
+   reported into a located cause.
+8. **WHAT THE SELF-CHECK DID NOT RESOLVE:** the class-1 recognizers' reach is unmeasured, and the
+   artifact says so of itself; the guard set's own encoding exposure ([[OI-374]]) is untouched, as
+   it was found; and §4.b's condition is declared, not repaired.
