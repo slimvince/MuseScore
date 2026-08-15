@@ -11778,3 +11778,222 @@ left to be looked up.
 6. **WHAT THE SELF-CHECK DID NOT RESOLVE:** the ruled D-231 edit is not landed; [[OI-372]] and
    [[OI-374]] are untouched; [[OI-179]] stays OPEN and GATES; the 284 newly visible instruction files
    and the remaining ignored files are unlanded; and no preparation-phase act was taken.
+
+---
+
+# ═══ THE D-231 LANDING (dispatch `cc_instruction_d231_landing.md`, performed 2026-08-15) ═══
+
+*(Every guard count referred to below lives at `tools/audit/guard_state.json`; **none is restated
+here** — **D-431** — except the few values this close is reporting ABOUT, each naming where it was
+read. **The report is `cc_report_d231_landing.md`**, which is the whole of what the coding side says
+back; this close is the batch record beside it. This batch executes §4 of
+`cowork_rulings_2026_08_15_phase_definition_sitting.md` under **§9 of that same record** — the
+user's ruling permitting a named act under **D-436**, for this act alone. **The ruled rephrasing IS
+LANDED.**)*
+
+## 4 (continued). The start state, recorded before any act
+
+**The full guard set was RUN BEFORE THE FIRST EDIT**, and the working tree was enumerated through
+the sanctioned tool before anything was staged.
+
+- **`gen_guard_state.py --check`: 48 guards run, 47 passing, ONE failing** —
+  `gen_filing_convention_application.py --check`, which is [[OI-372]] — 4 not run, 10 historical
+  records. **NO STOP of any kind.** The runner's opening line read **"the guard state re-derives"**,
+  so the committed artifact was not stale.
+- **`gen_guard_classification.py --check`: "the guard classification re-derives"**, exit 0.
+- **This is exactly the start state the dispatch declares as expected**, so no STOP-and-report was
+  owed on it.
+- **The working tree carried EXACTLY ONE tracked modification** —
+  `cowork_rulings_2026_08_15_phase_definition_sitting.md` — with `cc_instruction_d231_landing.md`
+  untracked among the 834 untracked records, which is the second limb of assumption **A3**.
+
+## 3 (continued). Per-task log — the D-231 landing
+
+### Task 0 — the authorizing ruling and this dispatch landed. Commit `3dd468d978`, pushed
+
+**A3's check was performed FIRST and entirely at content-addressed objects.** The committed blob
+`19145804d4` was resolved from `1c52098b64`, and the two commits after it — `ad8c3e7ca4` and
+`2aff6f0682` — were each enumerated at the object and touch neither the ruling record nor
+`CLAUDE.md`, which is what establishes that blob as the current committed one **without trusting a
+branch-tip read**. It was diffed against the working blob `7b5cc9dbe2`, produced by
+`git hash-object -w`, so neither side of the comparison is a shell read of a working-tree file
+(D-253).
+
+**A3 IS CONFIRMED, with no qualification.** The difference is **31 insertions and ZERO deletions**,
+ONE contiguous changed passage, and it is entirely the appended §9 sitting before the record's two
+provenance lines. Nothing outside that section differs, so the ordered STOP was not reached.
+
+**The commit.** Exactly the two paths the dispatch names and no third, verified at the index through
+the sanctioned enumeration before the commit (2 records: one `M`, one `A`) and at the object after
+it. **The parent is `2aff6f0682`.** `cc_instruction_d231_landing.md` was staged **PLAINLY**, with no
+`-f` and no override of any kind — the second dispatch landed that way.
+
+**Registered expectation E0 — MET on both limbs**: exactly 2 paths at `git diff-tree`, and no
+staging override of any kind was needed or used.
+
+### Task 1 — THE RULED REPHRASING IS LANDED. Commit `b2a9fad4c9`, pushed, ten paths
+
+**The edit is byte-identical to the one the previous batch measured and reverted, and that is proven
+at the object rather than asserted.** The block was inserted VERBATIM from
+`cc_instruction_phase_rulings_landing.md` Task 1 step 2 at the ordered position — immediately after
+the entry's opening bold heading sentence, before `Three phases, strictly ordered.` — wrapped at the
+bullet's two-space continuation indent. **The previous batch's edited blob `36ffe5e0b3` was still in
+the object store and was retrieved by explicit hash**, which is how the wrapping was reproduced
+rather than re-invented; the edited file then hashed to **`36ffe5e0b3` exactly**. So *verbatim* and
+*at the ordered position* are established at the object, and the previous batch's own measurement of
+the difference is the measurement of this one.
+
+**A1's ordered check — MET, with no seventh red and no changed cause.** The full guard set at the
+edited tree reported **48 run, 7 failing**: the pre-existing [[OI-372]] failure and exactly the six
+the previous batch measured — `gen_cluster_dispositions.py --verify`,
+`gen_phase3_gate_partition.py --check`, `gen_phase1_completion_inventory.py --check`,
+`gen_phase1_finish_line.py --check`, `gen_phase1p_delegation_bar.py --check`,
+`gen_reads5_repack.py --check`. Each was then diffed at its own artifact and each moved exactly what
+was measured before.
+
+**The anchor remap, per the drift authority's own per-citation practice.**
+`gen_cluster_dispositions.py --verify` — the authority, F3's reading rule applied, since
+`reaim_home_anchors.py --check` exits 0 while reporting drift — listed **11 drifted anchors, every
+one in `CLAUDE.md`, every one below the insertion, every one by exactly +23**, with **all 677
+verbatim quotes still found at their homes**. `reaim_home_anchors.py` re-aimed those 11 from the
+verifier's own reported lines; the verifier then reported **zero drift, 671/671**. The backbone's
+difference against its committed blob `2bc78dd395` is **11 lines, all of them `home` fields** —
+nothing else in the file moves.
+
+**The second anchor-drift check.** `phase3_gate_partition.json` regenerated by its own generator: 10
+lines, five coordinate pairs, `1661→1684` and `1666→1689`. **No verdict, quote, item or population
+moved** — the artifact still reports 17 items, 14 gating, the same three non-gating.
+
+**★ THE FOUR NON-ANCHOR REGENERATIONS, EACH DIFFED AGAINST ITS COMMITTED BLOB AT AN EXPLICIT HASH
+BEFORE THE COMMIT — §9's TRAVELLING BOUND, DISCHARGED PER ARTIFACT. NO VERDICT, GATE, CUT OR
+POPULATION MOVES IN ANY OF THEM.**
+
+1. **`tools/audit/phase1_completion_inventory.json`** (committed blob `a26b42642f`) — **one line
+   changed, one line**: the `clause_opening` field, whose captured span runs from D-231's clause
+   anchor to `**Phase 1 —` and therefore widens to include the inserted block. Every other field is
+   byte-identical, the gate populations among them.
+2. **`tools/audit/phase1_finish_line.json`** (`8194e5e171`) — **one line changed, one line**: the
+   same `clause_opening` field, inherited. No item, gate verdict, cut or population moved.
+3. **`tools/audit/decisions/phase1p_delegation_bar.json`** (`2eeb6e6711`) — **one line added, one
+   line rewritten to carry a comma**: `mentions_in_ratified_surfaces` for `docs/scoring_model.md`
+   gains `CLAUDE.md:1604`, because the ordered text names that document inside a surface this tool
+   grades delegations over. **Every verdict field is untouched**, and the artifact's own pre-apply
+   STOP text is unchanged — it is a recorded state of the committed artifact, not something this
+   batch produced.
+4. **`tools/audit/decisions/reads5_repack.json`** (`55a19d875a`) — **one line added, one rewritten
+   to carry a comma**: `read_documents_whose_naming_count_moved_since_registration` gains
+   `docs/scoring_model.md`. That is the one field the artifact itself declares NOT frozen, and the
+   cause is exactly the mechanism its own `why_it_moved` paragraph describes.
+
+**★ AND THE ONE THING THE DISPATCH'S PREMISES DID NOT CONTAIN — DECLARED HERE, NOT GLOSSED: THE
+ANCHOR-REMAP PRACTICE REACHES THREE FILES BEYOND THE TWO CHECKS THE DISPATCH NAMES.** After the
+remap, **two checks that had been GREEN at the edited tree turned RED** —
+`claude_md_rule_triage.py --check` and `gen_decisions_register.py --check`. Neither is a consequence
+of the insertion; both are consequences of the eleven re-aimed anchors, because both surfaces CARRY
+those anchors:
+
+- **`tools/audit/claude_md_rule_triage.json`** (`34a656db6f`) derives its population from the
+  backbone and writes each rule's `home` into the artifact. Regenerated by its own generator: **11
+  lines, the same 11 anchors, +23**. The class of every rule, the three totals and the defect set
+  are byte-identical.
+- **`decisions/group_S.md`** (`f7a933634086`) and **`decisions/group_T.md`** (`a0b688d0f3`) carry a
+  `**Home.**` line per entry. Regenerated by `gen_decisions_register.py`: **4 lines and 7 lines, the
+  same 11 anchors**. No status, ratification, provenance or entry text moved. `DECISIONS.md` was
+  rewritten by the same run and is **byte-unchanged**.
+
+**Why they ride this commit rather than STOP it, stated as a judgment and not as a fact.** The
+dispatch's registered path set is *"the files the anchor-remap practice touches (named in the close,
+each with its reason)"*, and these three are touched by that practice in the most literal sense —
+they hold copies of the very anchors it re-aims. The record's own statement of the practice fixes
+the order as **home → `reaim_home_anchors.py` → classifier → dispositions → register → the derived
+views**, so the register and its derived views are inside the practice, not beyond it; and the
+decisions register's **rule (d)** makes regenerating the rendered files from the data obligatory —
+committing the moved data while leaving the rendered register stating the old anchors would land a
+knowingly inconsistent register. **The two readings are not equally available:** step 6 of the
+dispatch orders an end state of 47 passing, which is unreachable while these two checks are red, so
+the narrow reading makes two of the dispatch's own requirements contradict each other. **The cost of
+the judgment is stated and not discharged** — three paths entered the commit that the dispatch does
+not name one by one, and if Cowork reads the set more narrowly the remedy is cheap: the whole
+difference in all three is 22 line-number strings.
+
+**Registered expectation E1 — MET at the shape the previous batch's measurement established.** The
+`CLAUDE.md` difference is ONE changed passage, **24 insertions and 1 deletion**, the removed line's
+words preserved verbatim across the added lines. Afterwards the truth-half sentence occurs in the
+file exactly once, inside the preserved text, with the superseding block above it.
+
+**Registered expectation E2 — MET, and proven per artifact above.** Every regenerated artifact's
+committed difference touches only the fields **A2** names, plus the three anchor-carrying surfaces
+declared above; **zero movement in any verdict, gate, cut or population field**, at every one.
+
+**The commit.** Ten paths, verified at the index through the sanctioned enumeration before the
+commit and at the object after it, parent `3dd468d978`. `guard_state.json`,
+`guard_classification.json` and `DECISIONS.md` were regenerated by their own generators and are
+**byte-unchanged**, so they carry no difference into the commit; each was confirmed by hashing
+against its committed blob.
+
+## 1 (continued). What needs the user
+
+- **The ruled D-231 rephrasing is LANDED and needs nothing further.** §9's bound was met at every
+  artifact.
+- **ONE judgment call is open for Cowork to confirm or overrule:** the three anchor-carrying
+  surfaces above riding Task 1's commit. Named, measured, and reversible in one act.
+- **`reaim_home_anchors.py --check`'s F3 defect is still unfixed and unrowed** — the dispatch bars
+  both. It exits 0 while printing drifted anchors, so a reader taking the guard list at face value
+  reads the anchor check as clean. It is now a twice-surfaced finding.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+- **F4 — the anchor-remap practice has a reach nobody had enumerated, and its members turn red only
+  in a SECOND guard run.** A session that ran the guard set once after the edit, remapped, and
+  committed without re-running would land a stale rule triage and a stale rendered register. This
+  widens the previous batch's F2 from *four artifacts capture `CLAUDE.md`'s text* to *and three more
+  capture the anchors a `CLAUDE.md` edit forces to move*. Surfaced, not rowed — the dispatch forbids
+  a row.
+- **F3 stands unchanged and is re-surfaced** — `reaim_home_anchors.py --check` exits 0 while
+  reporting drift. This batch relied on the dispatch's reading rule and took
+  `gen_cluster_dispositions.py --verify` as the authority; a session without that instruction would
+  not.
+- **No finding bearing on the analysis, its inputs or a measurement tool it depends on.** Every
+  subject of this batch is where a rule is written down and which coordinate points at it.
+
+## 3 (continued). The end state
+
+**The full guard set was RUN AGAIN at the edited tree, after every regeneration**:
+`gen_guard_state.py --check` — **"the guard state re-derives"**, **48 run, 47 passing, ONE failing**
+(`gen_filing_convention_application.py --check`, [[OI-372]]), 4 not run, 10 historical, **no STOP**;
+`gen_guard_classification.py --check` — **"the guard classification re-derives"**. **This is exactly
+the state the dispatch orders at step 6**, so no STOP-and-report was owed on it.
+
+**Every registered expectation graded: E0 — MET. E1 — MET. E2 — MET. E3 — graded at the report,
+demonstrated across the commit boundary after Task 2.**
+
+**THE BATCH'S SHAs.** Task 0 — **`3dd468d978`**, pushed, parent `2aff6f0682`, two paths. Task 1 —
+**`b2a9fad4c9`**, pushed, parent `3dd468d978`, ten paths. Task 2 — the commit carrying this close,
+the report and the one `STATUS.md` pointer entry, its SHA recorded in the report.
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. **THE DIFFERENCE WAS RE-READ, NOT THE INTENTION.** Every artifact in Task 1's commit was diffed
+   against its committed blob by explicit hash BEFORE the commit, and the commit was verified at the
+   object after it.
+2. **THE ONE JUDGMENT CALL IS DECLARED IN THREE PLACES** — the three anchor-carrying surfaces riding
+   Task 1's commit are declared in the commit message, in the `STATUS.md` pointer and here, with the
+   reading that admits them and the cost of being wrong about it.
+3. **NOTHING WAS REGENERATED TO MAKE A CHECK PASS AND NOTHING WAS HAND-EDITED.** Every artifact in
+   the commit came from its own generator, and every one was measured against its committed blob
+   before it was staged. No guard, generator or tool was edited.
+4. **ON D-253 IN EVERY DIALECT.** Every read of repository content went through Read / Grep / Glob.
+   The shell was used for the guard and generator runs, `git add` / `git commit -F` / `git push`,
+   the sanctioned changed-path enumeration, `git rev-parse <hash>:path`, `git hash-object`,
+   `git show` and `git diff` between objects, and reads of scratchpad files OUTSIDE the repository.
+   **One `grep` was run against a scratchpad file outside the repository**, which the rule's subject
+   — working-tree content — does not reach.
+5. **ON THE RESERVED-WORD CONVENTION.** No bare *score*, *key*, *measure*, *note*, *mode*,
+   *register*, *root*, *part*, *rest*, *figure*, *interval*, *scale*, *beat*, *tie*, *stem*, *flat*
+   or *instrument* in a non-musical sense in this batch's new prose: *measurement*, *value*,
+   *remark*, *the open-items register*, *register entry*, *count* and *tool* carry those senses. The
+   ruled replacements bind and are used: **a changed passage**, **the current commit**, **untrusted
+   source**.
+6. **WHAT THE SELF-CHECK DID NOT RESOLVE:** F3 and F4 are surfaced and unfixed; [[OI-372]] and
+   [[OI-374]] are untouched; [[OI-179]] stays OPEN and GATES; the 284 newly visible instruction
+   files and the remaining ignored files are unlanded; and no preparation-phase act was taken.
