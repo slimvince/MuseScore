@@ -1,7 +1,128 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTEENTH, 2026-08-15) — THE PERIOD IS RULED AND ITS FALSIFICATION RULE FIRED THE SAME NIGHT; THE REPAIR IS RE-SHAPED TO DERIVATION-FIRST BY USER DIRECTION; THE ARTIFACT INVENTORY COMES BEFORE THE PHASES. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (SEVENTEENTH, 2026-08-15) — THE INVENTORY SITTING IS HELD AND EVERYTHING PUT WAS RULED: THE 122-FILE LANDING AND THE `.gitignore` RULE REMOVAL, ALL 44 CLASSES (ONE CONDITIONALLY), THE MEASUREMENT-LAYER SCOPE, THE PERIOD (STANDS, NARROW WIDTH, NAMED CARRY), AND THE GUARD CLEARING WITH ITS EXTENSION. THE ACTIVE DISPATCH IS `cc_instruction_ruled_inventory_landing.md`. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. Everything the sixteenth and fifteenth blocks say
+about `CLAUDE.md`'s superseded D-231 truth half and the standing bars REMAINS BINDING and is not
+restated here.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether
+`cc_instruction_ruled_inventory_landing.md` has completed — its close appended to
+`cowork_away_returns.md`, one `STATUS.md` pointer entry per task, its commits verified at the
+objects by explicit hash. **If it still runs you are READ-ONLY on the repository until it
+stops.** If it has completed, VERIFY ITS REPORT AT THE OBJECTS before trusting any of it, read
+its FULL close and prove the reading by quotation (eighteenth-stop Ruling 15).
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_15_inventory_sitting.md` IN FULL** — the
+sitting's rulings, INCLUDING the vocabulary replacements that now govern all plan prose
+(implementation-derived material / independent sources / fact-gate / implementation-blind
+redesign). (2) `cowork_rulings_2026_08_13_eighteenth_stop.md` and
+`cowork_rulings_2026_08_15_method_directions.md` IN FULL, as before. (3) This block. (4) The
+active dispatch and, if returned, its report and full close. (5)
+`ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` — now the RULED enumeration,
+the ruling record §3 carrying the verdicts. (6) `CLAUDE.md` with the standing caveats. (7)
+`OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is still under the filtering ruling and is not
+authority.** The writing side is bound by `cowork_rulings_2026_08_15_session_length.md`.
+
+**★ WHAT HAPPENED IN THIS SESSION.** The sitting walked every awaiting decision in the
+recommended order, each presented as a full visible decision surface (restarted once on the
+user's correction — vocabulary and form; two presentation-form corrections total, which is why
+this session closed at this stop). Ruled: **(1)** the `.gitignore` finding — Alternative A,
+land the 122 cited files, remove `/cc_*.md`, the 449 wait; **(2)** all 44 inventory classes —
+class 1 CONDITIONAL on the construction-evidence check (Task 3 of the dispatch; SPEC-DERIVED
+members return to the user), the measurement-layer scope ruled as SPLIT-BY-KIND-AND-SEQUENCED
+(design content in scope as a later stage; machinery runs untouched throughout), the estimator
+class split (tables operational/excluded, fit ledgers fact-gate); **(3)** the period — NARROW
+width, the period STANDS at `b006dc15b5`, the fired hunk and the fifteen not-cleared carried BY
+NAME into the examination set; **(4)** the third guard red — the clearing ordered WITH the
+[[OI-373]] extension; after the batch, [[OI-372]] is the one standing red. Also recorded: the
+pruning note (noise costs context and can mislead — meets the phase drafting), the class-3
+fresh-reference question DEFERRED to new-spec ratification, and the two-papers finding riding
+class 24.
+
+**★ WHAT AWAITS THE USER:** the dispatch's returns — above all any SPEC-DERIVED test members
+(a follow-up ruling) and anything the batch STOP-reports. Then nothing further awaits a ruling
+from this sitting: **the next writing-side act is the PHASE-DEFINITION SURFACE, drafted citing
+the ruled classes** (discharging eighteenth-stop Rulings 6 and 7), then the preparation acts
+(register filter, rulings sort, findings ledger), the pilot on `docs/scoring_model.md`, the
+framework, the detail specs, the audit — the §2 sequence unchanged.
+
+**★ STANDING HAZARDS:** [[OI-372]] red (real, rowed). `STATUS.md` still unreadable as a
+mandatory read ([[OI-370]]). [[OI-179]] OPEN and GATES. The ruled verdicts are NOT yet written
+back onto the generated surface (the ruling record is the carrier; regeneration with RULED
+markers is a later act). Every retirement flag waits behind the caller-check at the objects,
+which is NOT started.
+
+**★ WHY THE SESSION CLOSED HERE:** under the session-length standing instruction — two
+presentation-form corrections by the user in one sitting are two tells — the session closed at
+this verified stop with every ruling on disk. A successor verifies before it trusts: at the
+objects, full closes, never summaries.
+
+*(The sixteenth block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+
+---
+## ★★★★★ COWORK SESSION CLOSE (SIXTEENTH, 2026-08-15) — THE ARTIFACT INVENTORY IS COMPLETE AND VERIFIED AT THE OBJECTS; THE RULING SURFACE AWAITS THE USER, AND ★ 122 FILES THE GOVERNING RECORD CITES ARE IN NO COMMIT AT ALL. (SUPERSEDED as the entry point by the seventeenth block above.)
+
+**You start clueless. Read this block first, then the ordered list below. Everything the
+fifteenth block says about `CLAUDE.md`'s superseded D-231 truth half, the derivation-first
+re-shape and the standing bars REMAINS BINDING and is not restated here.**
+
+**★ READ, IN ORDER:** (1) `cowork_rulings_2026_08_13_eighteenth_stop.md` IN FULL. (2)
+`cowork_rulings_2026_08_15_method_directions.md` IN FULL — the re-shaped plan's authority. (3)
+This block, then the fifteenth below. (4)
+**`ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` — the deliverable awaiting
+the user.** (5) `cc_artifact_inventory_report.md` AND the batch's FULL close in
+`cowork_away_returns.md` (the ARTIFACT INVENTORY section) — read the close, never a summary, and
+prove it by quotation (eighteenth-stop Ruling 15). (6) `CLAUDE.md` with the standing caveats.
+(7) `OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is still under the filtering ruling and is not
+authority.** The writing side is bound by `cowork_rulings_2026_08_15_session_length.md`.
+
+**★ WHAT HAPPENED SINCE THE FIFTEENTH BLOCK.** The inventory batch ran whole: four commits
+(`363f935732` Task 0 — the writing-side records landed, exactly the eight named files;
+`460df30c16` the inventory tool; `31c573b06e` the ruling surface; `b1d48d6c87` the close), all
+pushed. **Verified by the writing side at the objects before this block was written:** Task 0's
+stat is exactly eight files; the inventory classifies 12,570 of 12,570 tracked entries in 44
+classes with the unclassified STOP established ABLE TO FIRE (the committed artifact's
+load-bearing probe); the untracked appendix is present and deliberately lists the ignored files
+too. The signature table's own #19 caveat stands in the artifact's words: coverage is checked,
+correctness of placement is not.
+
+**★ THE FINDING, RE-ESTABLISHED INDEPENDENTLY AT THE GIT OBJECTS:** `.gitignore`'s `/cc_*.md`
+rule silently excludes the dispatch-and-report family, and **122 files the governing record
+cites as provenance exist in NO commit** — among them the measurement provenance gate block (A)
+cites for the ratified joint-estimator baselines, and the dossier D-656 names as the ONE home of
+that measurement's values. A fresh clone lacks them. The list is on the ruling surface. **No row
+was opened and nothing was landed, deliberately — the landing is a commit over an unruled
+population and is the user's to order.**
+
+**★ WHAT AWAITS THE USER, in the writing side's recommended order:** (1) the `.gitignore`
+finding — land the cited files or rule otherwise, and amend the ignore rule; (2) **the ruling
+surface — a ruling per class (44 classes, 8 presented as open QUESTIONS**, including the
+`tools/robust_stop/` gate-versus-evidence split and the measurement-layer scope); (3) **the
+re-opened period question** — the WIDTH of "influence", then the fired instance — recommendation
+in the method-directions record §3, no ruling taken; (4) a row or discard-with-record for the
+third guard red (`gen_guard_classification.py`, stalled since 2026-08-13, still rowless). **Then
+the phase-definition surface is drafted citing the ruled classes** (eighteenth-stop Rulings 6
+and 7 discharge there), then the preparation acts, the pilot, the framework, the detail specs,
+the audit.
+
+**★ THIS BLOCK IS UNCOMMITTED AT ITS OWN CLOSE** — the next batch's FIRST task lands it, the
+Task-0 pattern of `cc_instruction_artifact_inventory.md`, naming this file explicitly.
+
+**★ WHY THE SESSION CLOSED HERE:** under the session-length standing instruction, two
+degradation tells had fired (a summary read instead of the full close, caught by the user; and
+three compact-word turns the user had to query). The session closed at this verified stop with
+the record complete on disk. A successor session verifies before it trusts, exactly as this one
+did: at the objects, full closes, never summaries.
+
+*(The fifteenth block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FIFTEENTH, 2026-08-15) — THE PERIOD IS RULED AND ITS FALSIFICATION RULE FIRED THE SAME NIGHT; THE REPAIR IS RE-SHAPED TO DERIVATION-FIRST BY USER DIRECTION; THE ARTIFACT INVENTORY COMES BEFORE THE PHASES. (SUPERSEDED as the entry point by the sixteenth block above.)
 
 **You start clueless. Read this block first, then the ordered list below, before you obey
 `CLAUDE.md` — whose D-231 truth half and phase structure remain superseded and not yet rewritten
