@@ -374,6 +374,19 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "unclassified, and that the tool then raises. ★ WHAT IT DOES NOT ASSERT: that any file is "
         "in the RIGHT class. The table is authored and only its coverage is checked, which the "
         "artifact states of itself."),
+    "tools/audit/gen_artifact_inventory_surface.py": (
+        LIVE, "gen_artifact_inventory_surface.py:40-49 (the four STOPs), and its `build()` "
+        "two-way reconciliation against the inventory's class list",
+        "LIVE, and for the same reason `gen_july_screen.py` is: what it re-derives is not the "
+        "verdicts, which are authored judgments about how artifacts should be used, but that the "
+        "surface and the inventory still describe the same population. Its POPULATION is IMPORTED "
+        "from the inventory artifact on every run and reconciled with the authored proposals in "
+        "BOTH directions, so a class entering or leaving the inventory halts it rather than being "
+        "left unproposed or proposed for nothing. Its citation split is RE-SCANNED at the "
+        "governing record on every run, so a document that stops being cited moves side rather "
+        "than staying where a dated reading put it. Neither is a point-in-time reading. Its "
+        "vocabulary STOPs ride with it: a role or mining verdict outside the closed set the "
+        "user's direction names halts it, and so does a proposal with no reason."),
 
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (

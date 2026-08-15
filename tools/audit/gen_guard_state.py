@@ -214,6 +214,14 @@ AUTHORED = [
      "probes that establish it does (#19). The untracked appendix is a reading of the working "
      "tree and is excluded from the byte comparison, so writing a scratch file does not turn this "
      "guard red"),
+    ("tools/audit/gen_artifact_inventory_surface.py", ["--check"],
+     "the artifact inventory's ruling surface re-derives from the inventory artifact. Its four "
+     "STOPs are what make it a guard: a class in the inventory with no authored proposal halts it, "
+     "so a class cannot be ruled on by omission; a proposal naming a class the inventory does not "
+     "carry halts it, so the two files cannot drift apart in either direction; a role or mining "
+     "verdict outside the closed vocabulary the direction names halts it; and a proposal with no "
+     "reason halts it. What it does NOT guard is the verdicts themselves, which are authored "
+     "judgments awaiting the user"),
 
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
