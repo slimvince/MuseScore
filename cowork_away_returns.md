@@ -11745,6 +11745,14 @@ expectation E2 — MET:** the batch introduces no red and works none around.
 **Every registered expectation graded: E0 — MET. E1 — one limb met, one limb NOT met as written,
 with its cause measured. E2 — MET.**
 
+**THE BATCH'S SHAs, ALL OF THEM.** Task 0 — **`1c52098b64`**, pushed, parent `b1a44ec046`, four
+paths. **Task 1 — NO COMMIT**, deliberately: the act is STOP-reported above and the edit reverted.
+Task 2 — **`ad8c3e7ca4`**, pushed, three paths (`STATUS.md` 5 insertions and 1 deletion, the
+deletion being the previous entry's `Last updated:` opening demoted per this file's convention;
+`cowork_away_returns.md` 209 insertions and 0 deletions, a pure append; the report added), with this
+paragraph following in one further commit so that every content SHA is recorded here rather than
+left to be looked up.
+
 ## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
 
 1. **THE DIFF WAS RE-READ, NOT THE INTENTION.** Task 0's commit was verified at the object; Task 1's

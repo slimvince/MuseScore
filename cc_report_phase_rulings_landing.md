@@ -224,7 +224,8 @@ edited. [[OI-372]] and [[OI-374]] stay exactly as found; [[OI-179]] stays OPEN a
 it stands, and #8, are untouched.
 
 *Provenance: CC, 2026-08-15, dispatch `cc_instruction_phase_rulings_landing.md`. Task 0 is commit
-`1c52098b64`, pushed. **Task 1 has no commit, deliberately.** This report and the batch's full close
-ride Task 2's commit, and the END-state guard run reported in §3 was taken TWICE — once immediately
-after the revert, and once again at the tree carrying this report, the close and the `STATUS.md`
-entries, with the same result both times.*
+`1c52098b64` (parent `b1a44ec046`), pushed. **Task 1 has no commit, deliberately.** Task 2 is
+`ad8c3e7ca4`, pushed, carrying this report, the batch's full close and the two `STATUS.md` pointer
+entries. The END-state guard run reported in §3 was taken TWICE — once immediately after the revert,
+and once again at the tree carrying this report, the close and the `STATUS.md` entries — with the
+same result both times.*
