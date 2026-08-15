@@ -261,6 +261,23 @@ AUTHORED = [
      "ruling fixes, a SPEC-DERIVED-EVIDENCE verdict resting on no located statement, and a "
      "distribution that does not reconcile with the population"),
 
+    # ---- AUTHORED 2026-08-15, cc_instruction_preparation_opening.md Task 2 -------------------
+    # Added by this dispatch's own Task 2 and registered in the act that creates it, rather than
+    # reaching a later pass's derived population unclassified — the condition `OPEN_ITEMS.md`
+    # OI-373 recorded for two other tools, made a standing rule by this dispatch. It takes
+    # `--check` and not the bare invocation, for a reason about the tool: run with no flag it
+    # REWRITES its committed outputs, so a bare run would fold whatever the tree currently says
+    # into the record of a completed act, which is the OI-301 hazard exactly.
+    ("tools/audit/gen_decisions_filter.py", ["--check"],
+     "the decisions-register filter re-derives — every entry of the register's data file walked, "
+     "its deciding-act evidence quoted from its own recorded text, and one proposed class per "
+     "entry. What it guards is not the proposals, which are a reading awaiting the user, but "
+     "three demands on the record as it stands: the population and the rendered INDEX must carry "
+     "the same entries in BOTH directions, so a derivation over a derived population cannot be "
+     "published in part (D-671); every entry must carry the fields the classification reads, so "
+     "one it cannot classify at all halts it rather than being skipped; and the distribution must "
+     "account for the population exactly. Its other STOPs ride with it — a duplicate entry "
+     "identity, and a status outside the vocabulary the data file's own header declares"),
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

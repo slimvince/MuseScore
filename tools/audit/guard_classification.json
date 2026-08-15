@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 58,
-    "re_derives_a_live_invariant": 46,
+    "tools_classified": 59,
+    "re_derives_a_live_invariant": 47,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -309,6 +309,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_artifact_inventory_surface.py:40-49 (the four STOPs), and its `build()` two-way reconciliation against the inventory's class list",
       "why": "LIVE, and for the same reason `gen_july_screen.py` is: what it re-derives is not the verdicts, which are authored judgments about how artifacts should be used, but that the surface and the inventory still describe the same population. Its POPULATION is IMPORTED from the inventory artifact on every run and reconciled with the authored proposals in BOTH directions, so a class entering or leaving the inventory halts it rather than being left unproposed or proposed for nothing. Its citation split is RE-SCANNED at the governing record on every run, so a document that stops being cited moves side rather than staying where a dated reading put it. Neither is a point-in-time reading. Its vocabulary STOPs ride with it: a role or mining verdict outside the closed set the user's direction names halts it, and so does a proposal with no reason.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_decisions_filter.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_decisions_filter.py, the `THE STOPS` list of its module docstring and its `build()` two-way reconciliation of the population against the rendered INDEX",
+      "why": "LIVE, and the verdict is worth stating because the artifact's CONTENT is a PROPOSAL awaiting the user — a reading of whether each entry's record names a deciding act — which no tool can check. What the check asserts is three demands about the decisions register AS IT STANDS. Its POPULATION is the register's whole data file, re-read on every run and reconciled with the rendered INDEX's entry identities in BOTH directions, so an entry entering or leaving either surface halts it rather than being classified silently or quietly dropped — which is D-671 made mechanical. Every entry must carry the fields the classification reads, so one it cannot classify at all stops it instead of being skipped. And the distribution must account for the population exactly. None of the three is a dated reading: each is re-answered against the register as it stands, and an entry added tomorrow is classified tomorrow. Its other STOPs ride with it — a duplicate entry identity, and a status outside the vocabulary the data file's own header declares. ★ WHAT IT DOES NOT ASSERT: that any entry is in the right class. The recognizers are authored and only their application is checked, and the observation-shape limb of the ruling it serves has UNMEASURED reach, which the artifact states of itself (#19).",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

@@ -481,6 +481,28 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "missed statement errs toward exclusion, which the ruling records as the recoverable "
         "direction."),
 
+    # ---- AUTHORED 2026-08-15, cc_instruction_preparation_opening.md Task 2 -------------------
+    # Task 2's own tool, classified in the act that creates it — the practice the entries above
+    # exist because two earlier acts did not follow, and which this dispatch makes a standing rule.
+    "tools/audit/gen_decisions_filter.py": (
+        LIVE, "gen_decisions_filter.py, the `THE STOPS` list of its module docstring and its "
+              "`build()` two-way reconciliation of the population against the rendered INDEX",
+        "LIVE, and the verdict is worth stating because the artifact's CONTENT is a PROPOSAL "
+        "awaiting the user — a reading of whether each entry's record names a deciding act — which "
+        "no tool can check. What the check asserts is three demands about the decisions register "
+        "AS IT STANDS. Its POPULATION is the register's whole data file, re-read on every run and "
+        "reconciled with the rendered INDEX's entry identities in BOTH directions, so an entry "
+        "entering or leaving either surface halts it rather than being classified silently or "
+        "quietly dropped — which is D-671 made mechanical. Every entry must carry the fields the "
+        "classification reads, so one it cannot classify at all stops it instead of being skipped. "
+        "And the distribution must account for the population exactly. None of the three is a "
+        "dated reading: each is re-answered against the register as it stands, and an entry added "
+        "tomorrow is classified tomorrow. Its other STOPs ride with it — a duplicate entry "
+        "identity, and a status outside the vocabulary the data file's own header declares. "
+        "★ WHAT IT DOES NOT ASSERT: that any entry is in the right class. The recognizers are "
+        "authored and only their application is checked, and the observation-shape limb of the "
+        "ruling it serves has UNMEASURED reach, which the artifact states of itself (#19)."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",
