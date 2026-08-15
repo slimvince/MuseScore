@@ -278,6 +278,22 @@ AUTHORED = [
      "one it cannot classify at all halts it rather than being skipped; and the distribution must "
      "account for the population exactly. Its other STOPs ride with it — a duplicate entry "
      "identity, and a status outside the vocabulary the data file's own header declares"),
+    # ---- AUTHORED 2026-08-15, cc_instruction_preparation_opening.md Task 3 -------------------
+    # Task 3's own tool, on the same practice as the entry above.
+    ("tools/audit/gen_retirement_caller_check.py", ["--check"],
+     "the caller-check over every ruled retirement candidacy re-derives. Its reference readings "
+     "are taken at the commit its own artifact RECORDS, so it passes indefinitely rather than "
+     "going red the first time anybody writes a file naming a flagged one — the OI-301/OI-305 "
+     "shape avoided by construction. What is LIVE is the population: the flags are re-imported "
+     "from the ruling surface's generator on every run and the citation split is re-scanned at "
+     "the governing record, so a candidacy entering or leaving the ruled set, or a member "
+     "changing side, halts it instead of being graded silently. Its STOPs ride with it: a flagged "
+     "class the inventory does not carry, a mixed class the inventory publishes no members for, a "
+     "member list whose derived count disagrees with the count the inventory publishes, an "
+     "authored condition and a derived candidacy disagreeing in either direction, a condition "
+     "whose quoted sentence is no longer in the ruling record, a verdict outside the closed "
+     "three-value vocabulary, and a tally that does not account for the candidacies"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

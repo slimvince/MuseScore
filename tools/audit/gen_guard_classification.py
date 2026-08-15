@@ -503,6 +503,30 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "authored and only their application is checked, and the observation-shape limb of the "
         "ruling it serves has UNMEASURED reach, which the artifact states of itself (#19)."),
 
+    # ---- AUTHORED 2026-08-15, cc_instruction_preparation_opening.md Task 3 -------------------
+    "tools/audit/gen_retirement_caller_check.py": (
+        LIVE, "gen_retirement_caller_check.py, the `WHY THE READING IS PINNED TO A COMMIT` "
+              "paragraph of its module docstring and its `THE STOPS` list; `candidacies()`'s "
+              "two-way reconciliation of the derived flags against the authored conditions",
+        "LIVE, on the same ground `gen_test_construction_evidence.py` is. The REFERENCE reading is "
+        "a statement about one tree and is taken at the commit the committed artifact RECORDS, so "
+        "it re-derives forever instead of going red the first time anybody writes a file that "
+        "names a flagged one — the OI-301/OI-305 shape avoided by construction rather than "
+        "tolerated. What is LIVE is the POPULATION, and it is live twice over: the retirement "
+        "flags are re-imported from `gen_artifact_inventory_surface.py`'s own authored table on "
+        "every run, so this check and the ruling surface cannot disagree about what is flagged "
+        "(#6); and the citation split that decides which members of a mixed class are flagged is "
+        "RE-SCANNED at the governing record, so a document that starts or stops being cited moves "
+        "side here exactly as it does there. Its STOPs are demands of the same kind — a flagged "
+        "class the inventory does not carry, a mixed class it publishes no members for, a derived "
+        "member count disagreeing with the count the inventory publishes, the authored conditions "
+        "and the derived candidacies disagreeing in either direction, a condition whose quoted "
+        "sentence is no longer in the ruling record, a verdict outside the closed vocabulary, and "
+        "a tally that does not account for the candidacies. ★ WHAT IT DOES NOT ASSERT, and its "
+        "own artifact says so: that NONE FOUND means nothing depends on a file. A reference built "
+        "at run time carries no literal to find and a binary blob is not searched, so the reading "
+        "is generous in the safe direction and its limits are published above its first use."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

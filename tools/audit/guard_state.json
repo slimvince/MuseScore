@@ -51,6 +51,7 @@
       "tools/audit/gen_phase1_finish_line.py",
       "tools/audit/gen_phase3_gate_partition.py",
       "tools/audit/gen_reserved_word_scanner.py",
+      "tools/audit/gen_retirement_caller_check.py",
       "tools/audit/gen_status_archive_pass.py",
       "tools/audit/gen_test_construction_evidence.py",
       "tools/audit/index_status_lint.py",
@@ -61,7 +62,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 63,
+    "authored_entries": 64,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -652,6 +653,19 @@
       "what_it_checks": "the decisions-register filter re-derives — every entry of the register's data file walked, its deciding-act evidence quoted from its own recorded text, and one proposed class per entry. What it guards is not the proposals, which are a reading awaiting the user, but three demands on the record as it stands: the population and the rendered INDEX must carry the same entries in BOTH directions, so a derivation over a derived population cannot be published in part (D-671); every entry must carry the fields the classification reads, so one it cannot classify at all halts it rather than being skipped; and the distribution must account for the population exactly. Its other STOPs ride with it — a duplicate entry identity, and a status outside the vocabulary the data file's own header declares"
     },
     {
+      "tool": "tools/audit/gen_retirement_caller_check.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the retirement caller-check re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the caller-check over every ruled retirement candidacy re-derives. Its reference readings are taken at the commit its own artifact RECORDS, so it passes indefinitely rather than going red the first time anybody writes a file naming a flagged one — the OI-301/OI-305 shape avoided by construction. What is LIVE is the population: the flags are re-imported from the ruling surface's generator on every run and the citation split is re-scanned at the governing record, so a candidacy entering or leaving the ruled set, or a member changing side, halts it instead of being graded silently. Its STOPs ride with it: a flagged class the inventory does not carry, a mixed class the inventory publishes no members for, a member list whose derived count disagrees with the count the inventory publishes, an authored condition and a derived candidacy disagreeing in either direction, a condition whose quoted sentence is no longer in the ruling record, a verdict outside the closed three-value vocabulary, and a tally that does not account for the candidacies"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -920,8 +934,8 @@
     }
   ],
   "summary": {
-    "run": 49,
-    "passing": 48,
+    "run": 50,
+    "passing": 49,
     "failing": 1,
     "failing_tools": [
       {
