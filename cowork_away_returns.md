@@ -11481,6 +11481,15 @@ the previous tree was checked at a DIFFERENT commit and the runner printed, in i
 **"the guard state re-derives"**. `guard_classification.json` is byte-unchanged, which is the expected
 outcome when only captured text moves and never a verdict.
 
+**Registered expectation E3, graded by running it after the final content commit (`7bd59e14a2`).**
+**HARD LIMB MET** — a fresh `gen_guard_state.py --check` at that tree prints **"the guard state
+re-derives"**, so the commit-hash line is no longer a difference, and the classification re-derives
+beside it. **REPORT LIMB: NO staleness remains at that tree, on any line**, which CONFIRMS assumption
+**A3** here — the commit-hash line was the only cross-commit staleness cause. The second candidate A3
+names, the untracked-appendix line, varies with the working tree but is stable at *"has moved"* and
+moved across no commit in this batch; that it can never flip is **not** claimed, and no regeneration
+loop was run to make any check pass. The full grading is at the report's §3.a.
+
 ## 4.b The end state
 
 **48 guards run, 47 passing, ONE failing — the same one the batch found, [[OI-372]] — and NO STOP of
