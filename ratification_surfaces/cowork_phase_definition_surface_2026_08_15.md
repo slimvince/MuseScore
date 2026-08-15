@@ -1,0 +1,601 @@
+# The phase-definition surface — new phases proposed from the ultimate objective, the rephrasing of D-231, the closure of the restructuring phase, and the header-set question
+
+> **STATUS: RULING SURFACE, awaiting the user. NOTHING HERE IS RULED, AND NOTHING HERE HAS BEEN
+> DONE.** Drafted by the writing side (Cowork) on 2026-08-15, as the act the eighteenth handoff
+> block names as the next writing-side act. Every proposal below is **AUTHORED by the writing side
+> and marked as such**; every citation names the ruling record or generated artifact it was read
+> from. This surface discharges eighteenth-stop Rulings 6 and 7 (defined in §0), records the two
+> formal acts the method-directions record reserves to this surface (§5 and §6 below), and puts
+> the header-set question the same record leaves open (§7). It is written in the vocabulary the
+> user ruled at the inventory sitting, and — per the standing presentation rule of
+> `cowork_rulings_2026_08_15_batch_return.md` §5 — **every identifier it uses is re-explained from
+> scratch in §0 before any question rests on it.**
+>
+> **REVISED 2026-08-15 after the user's first reading:** three further vocabulary replacements,
+> user-directed at that reading and proposed by the writing side (§0, marked as such) — *hunk* →
+> **a changed passage**; bare *HEAD* → **the current commit**; *witness* → **untrusted source**
+> (and *the witness tree* → **the preserved pre-restructuring version**) — applied throughout;
+> and the pruning direction, previously present only as constraints, made concrete as its own
+> plan (§8).
+>
+> **PARTIALLY RULED 2026-08-15 (the phase-definition sitting; the ruling record is
+> `cowork_rulings_2026_08_15_phase_definition_sitting.md`):** DECISION 1 is RULED — Alternative
+> A whole, with the measurement-design stage AFTER the detail specifications — **and the user
+> added a sixth mandatory element: every phase CLOSES WITH A RETROSPECTIVE** (lessons of any
+> kind, with evidence, routed to their homes, amendments by ratification only — §3.9 below,
+> added on that ruling). Decisions 2–5 remain open on this surface.
+>
+> Per the standing full-decision-surface rule, this text is delivered for reading FIRST; the
+> choice questions are put separately, after the user has read it. Nothing is assumed answered.
+
+## 0. The referents, re-explained from scratch (read this section first)
+
+Three vocabulary replacements, user-directed at the first reading of this surface and proposed
+by the writing side (acceptance pending in sequence, like the inventory sitting's §2 set):
+
+- **A changed passage** (replaces *hunk*): one contiguous block of changed lines in one
+  document, as the version history reports it. The July screen counted such passages; the one it
+  established as positively code-influenced, and the fifteen it could not clear, are carried by
+  name below.
+- **The current commit** (replaces bare *HEAD*): the repository's current committed state —
+  records, documentation and code together, never the code alone. The bare abbreviation is not
+  used in this project's plan prose from this date; where an older ruling's text quotes it
+  verbatim, the quote stands and carries a gloss.
+- **Untrusted source** (replaces *witness*): a document read because it may hold information of
+  design or specification value, whose every claim is checked before use — never an authority.
+  "Untrusted" states the reading discipline, not a suspicion about any particular document. The
+  former phrase *the witness tree* becomes **the preserved pre-restructuring version** — the
+  tree at commit `b006dc15b5`, kept for comparison.
+
+The referents:
+
+- **The ultimate objective** — maximum-precision harmonic inference (guiding principle #4): the
+  analysis should infer keys, chords and their functions as correctly as possible. Every proposal
+  below is rated against it.
+- **D-231** — the three-phase sequencing rule the user ratified 2026-08-02, recorded in
+  `CLAUDE.md`'s Conventions ("ISSUE-EXHAUSTION AND SPECIFICATION COMPLETION BEFORE ANY FIX
+  DESIGN"). Its phase 1 had two halves: make the specifications COMPLETE (every recorded decision
+  written into its owning specification) and make them TRUE — *"the specification text is
+  corrected wherever it states something false at HEAD"* (that quoted abbreviation, glossed per
+  the replacement above: the current commit of everything, never the code alone). Its phase 2 was
+  issue-finding exhausted with measured coverage; its phase 3 one prioritized fix plan, and only
+  then design.
+- **The eighteenth stop** — the user's rulings of 2026-08-13
+  (`cowork_rulings_2026_08_13_eighteenth_stop.md`). The diagnosis: comparing code against
+  documentation is what the AUDIT does; this project performed those comparisons during
+  restructuring, so the audit ran early against a measurement instrument not yet fit for it. A
+  discrepancy between specification and code is EVIDENCE, not a defect — each correction that
+  brought them into line destroyed a signal. **Ruling 6:** D-231 must be rephrased or removed,
+  because its truth half is the instruction that caused this. **Ruling 7:** new phases must be
+  defined, from the ultimate objective, from what restructuring means as ruled, and from when and
+  what the audit is.
+- **Restructuring** — as ruled at the eighteenth stop (Ruling 1): reorganizing documentation so
+  it is internally consistent, findable and one-home-per-concern. It is NOT correcting — a
+  perfectly restructured specification can still be wholly wrong about music and wholly at odds
+  with the code.
+- **The audit** — the phase, defined below, in which the code is examined WITH the derived
+  documentation as the measurement instrument. It is two-directional: at each disagreement the
+  possible verdicts are code wrong, specification wrong, both wrong, both right differently, or
+  something missing entirely (eighteenth-stop Ruling 1).
+- **Derivation-first** — the user's re-shaping of the repair
+  (`cowork_rulings_2026_08_15_method_directions.md`): the design work is REDONE from clean
+  sources for every specification, and the current specification text is demoted to one untrusted
+  source among several. It supersedes the earlier reconciliation shape (eighteenth-stop
+  Ruling 10, which was explicitly pending a pilot); the formal record of that supersession is §6
+  below.
+- **Implementation-derived material** — our code, plus anything whose content reflects what that
+  code does: outputs, saved results, fitted tables, measured behaviour, and documents describing
+  the implementation (the user's ruled replacement vocabulary, inventory-sitting record §2).
+- **Independent sources** — sources whose content was not shaped by our implementation: published
+  research, the user's ratified rulings, musical scores annotated by others — in the user's own
+  gloss, "non polluted facts and data".
+- **The fact-gate** — the admission mechanism in front of the empirical findings ledger. Its
+  test: *does the fact survive the implementation being thrown away?* A gate can refuse entry;
+  that is its job.
+- **The empirical findings ledger** — the record, not yet built, of our own experimental
+  findings admitted through the fact-gate: approach-level, implementation-stripped entries, each
+  with provenance, uncertainty (#24), establishment status (#19), and its failure diagnosis or
+  "cause undiagnosed". Both polarities are carried — design antipatterns enter the ledger;
+  process antipatterns enter the phase definitions' constraints and stop rules.
+- **The implementation-blind redesign** — the derivation sessions, barred from
+  implementation-derived material, reading independent sources plus what the fact-gate has
+  admitted. Derive BEFORE comparing: the derived statement and its defense are written before the
+  current text or history is opened; implementation descriptions found in current specifications
+  are quarantined as audit questions, never absorbed as design input.
+- **The curated boot list** — the implementation-free read list an implementation-blind session
+  boots from, replacing the ordinary session-start reads (which include implementation-describing
+  text) for those sessions only. Its content is an owed ruling, NOT taken here; drafting it is a
+  preparation-phase output below.
+- **The ruled artifact inventory** — the classification of every tracked file into 44 classes
+  (`ratification_surfaces/cowork_artifact_inventory_ruling_surface.md`, derived from
+  `tools/audit/artifact_inventory.json`), whose per-class roles, mining verdicts and retirement
+  candidacies the user ruled at the inventory sitting
+  (`cowork_rulings_2026_08_15_inventory_sitting.md` §3). The phases below cite classes by their
+  ruled verdicts; no count or member list is restated (D-431 — figures enter by citation to a
+  generated artifact, never transcribed).
+- **The disposition discipline** — the rule that every statement of an outgoing text reaches ONE
+  recorded disposition — adopted / relocated (to the cross-layer transfer list) / quarantined (as
+  an audit question) / discarded (under the worth test, with finding, date, reason) /
+  historical — with completeness checked by arithmetic. The user folded the remapping of
+  open-items rows onto the new structure into this discipline, and eighteenth-stop Ruling 13
+  (rows affected by pollution marked for re-evaluation, triaged after the replacement; rows
+  closed on a contaminated act reopened with provenance) executes inside it.
+- **The pilot** — one derivation performed first to prove the method and produce sizing facts,
+  on `docs/scoring_model.md` (the ruled subject: the hardest implementation-blind case, low
+  boundary exposure, holder of the one changed passage the July screen established as positively
+  code-influenced). Its deliverable is a proposal per difference, never a silent rewrite
+  (eighteenth-stop Ruling 11), and its output is QUARANTINED as provisional until the framework
+  phase rules the charters.
+- **The cross-layer transfer list** — the parking list for content found in the wrong layer
+  during derivation, so nothing is silently dropped and nothing is absorbed into the wrong
+  charter.
+- **The period** — the restructuring period, ruled to open exclusive at commit `b006dc15b5`
+  (inventory-sitting record §4); the tree at that commit is the preserved pre-restructuring
+  version, the most valuable single untrusted source of the pre-pollution text. The fired
+  changed passage and the fifteen not-cleared changed passages of the July screen are carried BY
+  NAME into the examination set and re-examined during the derivation.
+- **Retirement** — always archive-with-record, out of every phase's inputs, destroying nothing
+  (#12); every flag on the ruled inventory is a candidacy only, and no archiving executes before
+  the caller-check at the objects (named, not started).
+- **The worth test** — principle #10's second half: an issue is worth fixing when leaving it
+  unfixed risks (a) something being built that does not serve maximum-precision inference, or
+  (b) code no longer being comparable against a correct and complete specification; an issue
+  bearing on neither is DISCARDED with its finding, date and reason.
+- **[[OI-179]]** — the open-items row tracking the ground-truth ceiling: no published per-axis
+  annotator-agreement value exists for this repertoire (D-474), so measuring it ourselves is the
+  only route to the quantity principle #21 demands. It is OPEN, GATES as an establishment
+  obligation (#19), and its measurement is commissioned to open with what D-231 called phase 2 —
+  a mapping this surface must carry into the new structure (§4, the audit-preparation input).
+
+## 1. What this surface asks for
+
+Five decisions, each presented with alternatives in the sections named:
+
+1. **The new phase structure** (§3) — the definitions that replace D-231's phases.
+2. **D-231's rephrasing or removal** (§4) — discharging eighteenth-stop Ruling 6.
+3. **The formal closure of the restructuring phase** (§5) — the ruling the method-directions
+   record §2.7 reserves to this surface.
+4. **The formal supersession of eighteenth-stop Ruling 10** (reconciliation) by derivation-first
+   (§6) — likewise reserved to this surface by the method-directions record §1.
+5. **The header-set question** (§7) — which headers beyond the user's mandatory four the phase
+   definitions carry.
+
+The pruning direction the user recorded at the inventory sitting (§6 there: *"The sole purpose
+of pruning is to reduce unnecessary noise. Noise costs session context, can also mislead"*) is
+made concrete as its own plan in §8 — what is removed from whose inputs, at which phase, by
+which recorded act — and additionally binds every phase as a standing constraint (§3.8). It is
+carried as a plan rather than as a sixth decision because every act in it executes a candidacy
+or a fate the user has already ruled; anything in §8 the user wants ruled separately can be
+lifted out.
+
+## 2. How the phases were derived (AUTHORED), and the shape in one paragraph
+
+Ruling 7 orders the derivation from three fixed points: the ultimate objective; restructuring as
+ruled (organizing, never correcting — and now superseded by construction, §5); and when and what
+the audit is (code examined against a trustworthy specification, two-directional). From those
+three points the shape follows: first make the RECORD usable without touching any design content
+(preparation); then prove the derivation method cheaply before trusting it (#19 — the pilot);
+then derive top-down, framework before detail, because every layer specification depends on
+boundary decisions between layers (the user's own ground, method-directions §2.5); then design
+the measurement layer's own content as a later stage of the same derivation (the user's §3.12
+scope ruling: split by kind and sequenced); and only when the specifications are derived,
+ratified and trustworthy does the audit run — because running it earlier against an untrusted
+measurement instrument is precisely the eighteenth-stop diagnosis. The fix plan stays last,
+exactly as D-231's phase 3 and #8's three-clause gate already order. Six phases, in order:
+**preparation → pilot → framework → detail specifications → measurement design → audit**, with
+**the fix plan** following as the already-ruled #8/D-231-phase-3 territory this surface does not
+re-define.
+
+## 3. DECISION 1 — the proposed phase definitions
+
+Each definition carries the user's four mandatory headers (method-directions §2.9): purpose,
+prerequisites and inputs, postcondition and outputs, constraints. Additional headers appear only
+where §7's keep-test admits them (a recorded failure justifies them); those appear as "Stop
+rules", "Reading rules" and "Record and handover" lines where present. **And — user-directed at
+this surface's sitting, so ruled rather than proposed — every phase CLOSES WITH A
+RETROSPECTIVE (§3.9): lessons of any kind learned, recorded with evidence before the next
+phase opens.** The retrospective is stated once at §3.9 rather than repeated in each
+definition (#6, one home per concern); it binds all six phases equally.
+
+### 3.1 The PREPARATION phase — the record made ready
+
+- **Purpose:** turn the project's own record into usable inputs for the derivation, without
+  deriving anything: separate what was DECIDED from what was merely OBSERVED, collect the
+  empirical findings that deserve to survive the implementation being thrown away, and cut the
+  noise the user's pruning direction names.
+- **Prerequisites:** this surface ruled. **Inputs (by ruled class):** the recorded decisions
+  (class 14, via the fact-gate until filtered); the writing-side ruling records and decision
+  surfaces (classes 15–16, directly readable); the two archives and superseded halves (classes
+  12, 23, via the fact-gate); the coding-side reports (class 21, via the fact-gate, the uncited
+  side mined for design antipatterns); the dispatches (class 20, mined for process antipatterns);
+  the measurement outputs and probe records (classes 28, 36, 38, via the fact-gate); the fit
+  ledgers (class 30's fact-gate half).
+- **Postcondition:** the derivation can boot from clean inputs. **Outputs:** (a) the FILTERED
+  decisions register — soft-discard of entries where no deciding act can be named
+  (eighteenth-stop Ruling 8), nothing destroyed; (b) the RULINGS SORT — surviving rulings sorted
+  into design intent (seed material for the framework) versus management of the implementation
+  (not design input); (c) the EMPIRICAL FINDINGS LEDGER, built with its fact-gate, seeded from
+  `DEFECT_TYPES.md`, `docs/scoring_model.md` §8 and the refuted-repair entries, and fed by the
+  mining verdicts above — antipatterns carried in both kinds; (d) the CURATED BOOT LIST for
+  implementation-blind sessions, DRAFTED here and RULED by the user before any derivation session
+  boots from it; (e) the FIRST PRUNING WAVE of §8 executed: the caller-check at the objects
+  run, and the ruled retirement candidacies that pass it advanced to archive-with-record.
+- **Constraints:** NOT DONE here: no design derived, no specification touched, no phase-3 fix
+  work. NOT ALLOWED: destroying anything (#12); admitting any fact to the ledger that fails the
+  fact-gate's test; archiving on the citation-scan signal alone (the caller-check comes first);
+  reviving the lapsed upkeep of the record-keeping apparatus (the lapse ruling stands).
+- **Stop rules (recorded failure: the register's own origin —
+  `cc_instruction_decision_harvest.md` harvested code comments as decision candidates, so
+  observation-recorded-as-decision exists by construction):** a filter verdict that cannot name
+  the deciding act STOPS to the user rather than guessing; a fact-gate refusal is recorded, never
+  argued around.
+
+### 3.2 The PILOT — the method proved before it is trusted
+
+- **Purpose:** establish the derivation method (#19) and produce sizing facts (eighteenth-stop
+  Ruling 12) before the framework phase pays for the method at full width.
+- **Prerequisites:** the preparation outputs the pilot consumes exist — at minimum the ruled
+  curated boot list; the full register filter need not be complete if the boot list is ruled
+  (stated so the pilot is not serialized behind every preparation act; the user may tighten
+  this). **Inputs:** independent sources (class 24 and fetched literature; class 33's annotated
+  musical scores); the ratified design-intent rulings; the fact-gate's admitted facts;
+  `docs/scoring_model.md`'s subject, derived blind; then — only after the derived statement is
+  written — the current text and its history at the preserved pre-restructuring version
+  (`b006dc15b5`), the fired changed passage met at full strength.
+- **Postcondition:** the method is ruled usable, amended, or refuted by the user on evidence.
+  **Outputs:** a proposal per difference (never a rewrite); a sizing record — time per statement,
+  differences per document, share needing a user ruling — that decides the sequencing and
+  ratification granularity the method-directions record parks until sizing exists; the pilot's
+  derived text QUARANTINED as provisional until the framework rules the charters.
+- **Constraints:** NOT DONE: no landing of the pilot's text as a specification; no charter
+  decided from the pilot alone. NOT ALLOWED: reading implementation-derived material inside the
+  deriving session; treating the current text as authority rather than as an untrusted source.
+
+### 3.3 The FRAMEWORK phase — the architecture decided before the details
+
+- **Purpose:** decide the all-encompassing analysis architecture: the layer decomposition, each
+  layer's charter (the question it answers, the evidence it consumes, the facts it publishes),
+  and the boundary contracts between layers — so detail specifications are derived INSIDE ruled
+  charters and are born one-home-per-concern.
+- **Prerequisites:** the pilot's method verdict; the rulings sort (design-intent seeds
+  available). **Inputs:** the ratified design-intent rulings — the joint estimator decision
+  (option A, 2026-07-17) above all; published research fetched and read (#1/#2, the
+  theory-grounding corollary); the empirical findings ledger; the fact-gate's admissions from
+  ground-truth corpora and their annotator conventions. The class-24 finding is met here
+  immediately: the research-papers class holds two files against a method resting on
+  fetched-and-read literature, so the framework phase begins by establishing which of the
+  literature this project rests on is reachable at all.
+- **Postcondition:** a ratified framework: decomposition, charters, boundary contracts.
+  **Outputs:** the framework document (a design document, bound by the fourteen-section
+  standard); the cross-layer transfer list OPENED; per design point, candidates enumerated from
+  both source kinds with establishment status, at most one chosen per concern (#6) or NONE —
+  "underived: open, needs a ruling or new research" — rivals recorded in the defense (the
+  constrained-optimum ledger shape).
+- **Constraints:** NOT DONE: no detail specification derived; no measurement-layer design (that
+  is its own later stage); no fix plan. NOT ALLOWED: implementation-derived material as design
+  input; evidence treated as the decision (method-directions §2.3 — evidence is input, the
+  choice is made against the objective and the principles).
+- **Reading rules (recorded failure: the writing side worked from a chat summary and was caught
+  by the user; the full-close rule is eighteenth-stop Ruling 15):** a deriving session reads
+  sources whole, never summaries; every load-bearing claim labeled FACT / THEORY / CONJECTURE.
+
+### 3.4 The DETAIL-SPECIFICATION phase — every specification re-derived inside its charter
+
+- **Purpose:** derive each layer's and component's specification inside its ruled charter, and
+  dispose of every statement of the outgoing texts so nothing is lost silently and nothing wrong
+  is absorbed silently.
+- **Prerequisites:** the ratified framework. **Inputs:** per specification, the same independent
+  sources and ledger as the framework phase; the outgoing text and its history as WITNESSES only,
+  read after the derived statement is written (derive-before-compare); the mining map — the
+  candidate artifacts and the July screen (class 28's evidence-enumeration carve-out) — pointing
+  at where design content may be buried.
+- **Postcondition:** every specification derived, its dispositions complete by arithmetic, and
+  the set ratified by the user at the granularity the pilot's sizing decided. **Outputs:** the
+  derived specifications; the disposition record per outgoing text (adopted / relocated /
+  quarantined / discarded / historical); the transfer list worked to empty or explicitly carried;
+  the open-items remapping executed inside the discipline — including eighteenth-stop
+  Ruling 13: rows affected by pollution marked for re-evaluation and triaged AFTER the
+  replacement, rows closed on a contaminated act reopened with provenance; the quarantined audit
+  questions accumulated for the audit phase.
+- **Constraints:** NOT DONE: no correction of any document on the ground that the code says
+  otherwise (the audit's business); no code change. NOT ALLOWED: implementation-derived material
+  in the deriving sessions; a silent rewrite where a proposal per difference is owed; a
+  disposition class invented beyond the five.
+- **Record and handover (recorded failure: the eighteenth stop exists because almost nothing was
+  on disk — a session inheriting the repository would have resumed the superseded plan):** every
+  session of this phase lands its derivations and dispositions on disk before it closes;
+  handover-safety at the latest by the next handover.
+
+### 3.5 The MEASUREMENT-DESIGN stage — the measurement layer's design content, in scope and sequenced
+
+- **Purpose:** derive the measurement layer's DESIGN content — metric definitions, grading
+  conventions, what-is-ground-truth decisions — as ruled at inventory-sitting §3.12
+  (Alternative C: split by kind and sequenced).
+- **Prerequisites:** the analysis framework ruled (§3.12's own sequencing: "as its own later
+  stage after the analysis framework phase"); proposed here to run after the analysis detail
+  specifications, with the alternative (immediately after the framework, beside the detail
+  specifications) named in the rating below. **Inputs:** the ruled grading conventions (the
+  user's rulings survive the sort as design intent); the fit ledgers and measurement records via
+  the fact-gate; [[OI-179]]'s commissioned ceiling measurement — the commissioning that D-231
+  attached to "phase 2" maps HERE, desk simulation first, because this is where
+  what-is-ground-truth is decided (AUTHORED mapping, the user rules it with this surface).
+- **Postcondition:** the measurement layer's specifications derived and ratified; the ceiling
+  measurement designed (not necessarily run — its own gates govern). **Outputs:** the
+  measurement-design specifications; at this stage the operational files ruled excluded (the
+  fitted tables, the calibration maps, the hard-stop reference) become untrusted sources and audit
+  subjects, exactly as §3.13's recorded consequence states.
+- **Constraints:** NOT DONE: no change to any running measurement tool, gate or committed
+  reference — the operational machinery keeps running unchanged throughout (the §3.12 ruling's
+  second half). NOT ALLOWED: anything measurement-produced reaching the analysis redesign except
+  through the fact-gate.
+
+### 3.6 The AUDIT — the code examined, two-directionally, with the derived specifications as the measurement instrument
+
+- **Purpose:** establish, disagreement by disagreement, whether the code or the specification or
+  both are wrong, both right differently, or something is missing entirely — producing the
+  complete finding list the fix plan consumes.
+- **Prerequisites:** the derived specifications ratified (analysis and measurement-design);
+  without that the audit's instrument is untrustworthy and the eighteenth-stop diagnosis
+  recurs. **Inputs:** the code (class 2 — the audit's subject, as its ruled verdict states); the
+  derived specifications; the quarantined audit questions from every earlier phase; the
+  examination set carried by name (the fired changed passage in `docs/scoring_model.md` and the
+  fifteen not-cleared changed passages of the July screen); the 20 specification-derived test
+  members recorded at the
+  batch-return ruling §1 as three-way comparison points (specification versus test versus code);
+  the open-items detail files (class 13) as the audit's question feed.
+- **Postcondition:** issue-finding exhausted with measured coverage — every channel enumerated,
+  every miss rate measured, every finding rowed — ending in a bounded trust statement.
+  **Outputs:** the finding list, each finding two-directionally classified; restored evidence
+  where restructuring-era corrections destroyed signals (eighteenth-stop Ruling 5's restoration
+  duty, testable now by CHARACTER against the derived specification); the marked `src/` comment
+  edits (Ruling 9) settled.
+- **Constraints:** NOT DONE: no fix designed or applied during the audit (the timing fault, not
+  repeated). NOT ALLOWED: a specification amended to match the implementation (the false-clean
+  result); self-annotation as a standard of correctness (gate block (A)'s convention); class 3
+  (the saved earlier results) read as evidence of correctness — it stays a change detector only.
+- **Stop rules (recorded failure: declared STOPs have caught every premise error this side has
+  made; unregistered expectations caught none):** every audit measurement registers its
+  expectations before running; a surprise is a STOP (#13).
+
+### 3.7 The FIX PLAN — unchanged territory, restated for continuity only
+
+D-231's phase 3 and #8's three-clause gate already govern what follows the audit: ONE
+prioritized fix plan over the complete list — each fix at its proper layer, grouped with its
+family, ordered, refits named — and only then design and build, under the unchanged gates (#14,
+#15, #19, the hard stop, the ratification discipline). This surface proposes no change there and
+defines no seventh phase; it records the continuity so the mapping from D-231 is total.
+
+### 3.8 Standing constraints over EVERY phase (AUTHORED, all restating ruled ground)
+
+The implementation-blind rule binds every deriving session; the operational machinery — guards,
+gates, the hard-stop reference, the committed corpora — keeps running unchanged throughout; no
+golden-refresh reflex, no behaviour change outside the ruled process; D-436 (a derived cut is
+never hand-edited) stands; the session-length standing instruction binds the writing side; the
+pruning plan (§8) binds every phase — noise costs session context and can mislead, and each
+phase's outputs name what they retire from their successors' inputs; [[OI-179]] gates as an
+establishment obligation until discharged; retirement stays archive-with-record behind the
+caller-check; every phase's user rulings land on disk in the turn they are taken.
+
+### 3.9 The per-phase RETROSPECTIVE — the closing act of every phase (user-directed 2026-08-15, this sitting; RULED)
+
+The user's direction, verbatim: *"a phase should also at end include a retrospective > lessons
+(of any kind) learned - that might influence way-of-working, phases, target architecture
+etc..."* Operationalized, accepted in sequence:
+
+- **Every phase closes with a recorded retrospective before the next phase opens**, asking:
+  what did this phase teach — of any kind — that should change how we work, what the phases
+  are, or what the target architecture is?
+- **Each lesson carries its evidence** — the act or finding that taught it — never impression
+  alone.
+- **Each lesson's consequence is routed to its proper home:** a way-of-working lesson becomes a
+  proposed amendment to the phase definitions' constraints or stop rules; a design or
+  architecture lesson enters the empirical findings ledger through the fact-gate, or stands as
+  a framework amendment proposal; a process antipattern joins the phase definitions'
+  constraints (method-directions §2.4, second kind).
+- **The retrospective proposes; only ratification moves anything** — the phase definitions,
+  the target architecture and the way of working are amended by the user's ruling, never
+  silently.
+- **The retrospective lands on disk and is named in the phase's handover** — a lesson living
+  only in conversation is the eighteenth stop's founding failure repeated.
+
+### 3.10 The alternatives to this structure, each rated (AUTHORED)
+
+- **Alternative A — the six phases above (RECOMMENDED).** Pro: it is the ruled sequence made
+  formal — every element cites a ruling already taken, so adopting it creates no new design
+  freedom to misuse (#14's spirit: deliberate, ratified change); the audit waits for a
+  trustworthy instrument, which is the whole eighteenth-stop lesson; top-down ordering follows
+  the user's own §2.5 ground. Rated against the ultimate objective: highest — precision work
+  (the fix plan) starts from a complete, trusted finding list. Con: six phases is more sequencing
+  overhead than three; mitigated by the pilot's sizing facts governing granularity.
+- **Alternative B — fold measurement design into the detail-specification phase (five phases).**
+  Pro: fewer boundaries, less sequencing overhead. Con: it blurs the §3.12 ruling's split by
+  kind — the user ruled the measurement layer's design content a LATER stage, and folding it in
+  invites measurement decisions to be taken with analysis-derivation habits and inputs; the
+  operational-machinery wall is easier to breach by accident. Rated: lower — the wall between
+  running machinery and redesigned content is load-bearing for #19.
+- **Alternative C — run the audit incrementally, per specification as each is ratified, instead
+  of as one phase.** Pro: findings arrive earlier; sizing risk spread. Con: it re-creates the
+  early-audit shape at smaller width — code comparisons running while neighbouring
+  specifications are still being derived, with cross-layer findings landing against instruments
+  not yet fit (#7's layer adherence applies to the audit too: a finding at one layer often
+  implicates a boundary whose other side is underived). Rated: lower for trust, though the user
+  may permit named early comparisons where a charter is closed; presented so the exclusion is on
+  record.
+- **The placement question inside Alternative A (a genuine sub-choice):** the measurement-design
+  stage after the detail specifications (as written) versus immediately after the framework,
+  running beside them. Beside: shortens the calendar; after: keeps deriving sessions
+  single-subject and keeps the fact-gate's traffic one-directional. The writing side recommends
+  AFTER, on the pruning ground (parallel streams cost session context) — but records that §3.12's
+  text requires only "after the analysis framework phase", so beside is lawful if the user
+  prefers it.
+
+## 4. DECISION 2 — D-231: rephrase or remove (eighteenth-stop Ruling 6)
+
+D-231's home is the Conventions entry in `CLAUDE.md`. What must go is its truth half — *"the
+specification text is corrected wherever it states something false at HEAD"* (quoted verbatim;
+the abbreviation is glossed at §0 and does not survive into the replacement text) — the
+instruction the eighteenth stop diagnosed as the cause of the early audit, still live in a
+mandatory session-start read. What must replace it must state the new phases' rule: **a disagreement
+between specification and code is evidence, reserved for the audit; no document is corrected on
+the ground that the code says otherwise.**
+
+- **Alternative A — REPHRASE in place (RECOMMENDED).** The Conventions entry is rewritten to
+  state the ruled phase structure (pointing at this surface's ruled form as the one home of the
+  definitions, #6), the former wording preserved in place (#12) exactly as #8's and #10's own
+  amendments were handled. The COMPLETE half of old phase 1 (every recorded decision written into
+  its owning specification, with its defense) survives restated as a property the
+  detail-specification phase delivers by construction — derived specifications are born complete
+  — not as a separate homing program. Pro: the rule stays where every session already reads it;
+  the supersession is visible at the site of the superseded text; no dangling references (D-231
+  is cited across the record). Rated against the objective: highest — the correction reaches
+  every future session mechanically.
+- **Alternative B — REMOVE the entry, leaving a pointer.** Pro: the file shrinks (the pruning
+  direction). Con: a session meeting a bare pointer at a mandatory read learns the phases exist
+  but not the one rule that must bind even a session that reads nothing else — that
+  specification-versus-code disagreements are evidence, not defects; and removal of a
+  principle-adjacent entry is the heavier act (#12) for no gain the pointer does not already
+  give. Rated: lower.
+- **What is NOT proposed:** editing D-231's register entry's history — the register records the
+  supersession by its own mechanism (rule (c)) when the ruling lands; and no other Conventions
+  entry moves under this decision.
+
+## 5. DECISION 3 — the formal closure of the restructuring phase (method-directions §2.7)
+
+The proposal, AUTHORED, restating the user's direction for formal ratification: **the
+restructuring phase is CLOSED, superseded by construction.** The framework phase decides the
+target structure, so derived specifications are born one-home-per-concern; the unfinished
+reorganization of the old text is not completed and never resumes. What survives, with changed
+jobs: the candidate artifacts and the July screen as the MINING MAP; the preserved
+pre-restructuring version at `b006dc15b5` as the most valuable single untrusted source;
+eighteenth-stop Ruling 13's row marking at full force (executed inside the disposition
+discipline); ordinary upkeep of the operational surfaces. The alternative — completing the
+reorganization first and then deriving — is declined on the eighteenth stop's own ground: a
+perfectly restructured text is still an untrusted source, so the completion buys ordering the
+derivation does not need, at the cost of
+further sessions handling exactly the text whose influence the period exists to bound. Rated
+against the objective: closure is strictly better — no derivation input improves by the old text
+being tidier.
+
+## 6. DECISION 4 — the formal supersession of eighteenth-stop Ruling 10
+
+Ruling 10 made the repair *reconciliation, not rollback — pending a pilot*: compare the
+pre-pollution baseline against the current text and write a coherent new version, judging each
+difference by CHARACTER. The user's derivation-first direction extends that character test to
+its limit: the design is re-derived from independent sources, and the comparison against the
+current text happens AFTER derivation, inside the disposition discipline, where CHARACTER is
+judged against a derived statement rather than against the reader's sense of design intent. The
+proposal: **Ruling 10 is formally SUPERSEDED by derivation-first as defined in §3**, its record
+untouched (#12), the supersession recorded here and in the register by the ordinary mechanism
+when this surface's rulings land. This is the recording of a supersession the user has already
+directed in substance (method-directions §1 states the relation); it is put as a decision because
+the method-directions record explicitly reserves the formal act to this surface.
+
+## 7. DECISION 5 — the header-set question (method-directions §2.9)
+
+The user's four mandatory headers are used in every §3 definition: purpose; prerequisites and
+inputs; postcondition and outputs; constraints (not done versus not allowed). *(The per-phase
+retrospective of §3.9 sits beside them as a fifth mandatory element, user-directed at this
+sitting — it is ruled, not proposed, and the keep-test below does not govern it.)* The writing side
+had proposed ten more; the user did not rule on them and the proposed keep-test was: **does the
+header's absence have a recorded failure?** Applying that test (AUTHORED):
+
+- **ADMITTED by the test, and used above where they bind:** *stop rules and escalation*
+  (recorded: declared STOPs in dispatches have caught every premise error this side has made;
+  confidence without a stop caught almost none); *reading rules* (recorded: the summary-read
+  failures, caught by the user twice, eighteenth-stop Ruling 15); *record and handover
+  requirements* (recorded: the eighteenth stop's founding failure — almost nothing was on disk).
+- **NOT admitted — no recorded failure names their absence:** completion test with verifier;
+  roles and reserved acts; invalidation and re-entry; forward gating; watchers for constraints;
+  progress measurement; amendment rule. Each is a real header a mature process might carry, but
+  adopting headers without a recorded failure is exactly the unbounded-apparatus shape the lapse
+  ruling closed; any of them can be adopted later the moment a failure is recorded, by amendment
+  of the ruled definitions.
+- **The alternatives:** adopt the full set of ten (pro: completeness; con: apparatus without
+  evidence, against the pruning direction — rated lower); adopt none beyond the four (pro:
+  minimal; con: discards three headers whose absence HAS recorded failures — rated lower);
+  **adopt the three admitted by the test (RECOMMENDED, and what §3 implements).**
+
+## 8. The pruning plan — what is removed from whose inputs, at which phase, by which recorded act
+
+The user's direction, verbatim (inventory-sitting record §6): *"The sole purpose of pruning is
+to reduce unnecessary noise. Noise costs session context, can also mislead."* This section makes
+that direction operational. Every act below executes a candidacy, a fate or a filter the user
+has already ruled; nothing is destroyed anywhere (#12 — every removal is archive-with-record or
+a recorded soft-discard), and no archiving executes on the citation-scan signal alone — the
+caller-check at the objects precedes every wave.
+
+**Wave 1 — at the PREPARATION phase (the bulk of the noise leaves before derivation starts):**
+
+- The caller-check at the objects runs over every ruled retirement candidacy, then the
+  candidacies that pass are ARCHIVED with record: the six whole-class flags and the three
+  partial (uncited-side) flags gathered at the ruled inventory surface §4 — the scratch
+  directories, the triage prompts, the loose measurement outputs, the idiom-discovery workspace,
+  the separate-assistant notes, the stray root files, and the uncited sides of the prose,
+  measurement-tools and coding-side-reports classes — the mined-for-antipatterns members only
+  AFTER their mining has run (their ruled condition).
+- The decisions-register filter soft-discards every entry where no deciding act can be named
+  (eighteenth-stop Ruling 8) — the register shrinks to decisions, and the discarded class stops
+  costing reading time in every later session.
+- The curated boot list replaces the broad session-start reads for implementation-blind
+  sessions — the largest single context-noise cut available, since a deriving session stops
+  paying for implementation-describing text it must not use anyway.
+- The 284 newly visible instruction files and the remaining ignored files reach their ruled
+  classes' fates here: mined where their class verdict says mine, then landed or archived as
+  their candidacies rule — not left indefinitely as an untracked backlog.
+
+**Wave 2 — at the PILOT:** the pilot's sizing record includes a noise measurement — which
+inputs the deriving session actually consulted against what its boot list carried — feeding a
+second cut of the boot list before the framework phase pays full width.
+
+**Continuous — at the DERIVATION phases:** the disposition discipline's DISCARDED fate (worth
+test; finding, date, reason) and HISTORICAL fate are pruning acts performed statement by
+statement; when a specification's dispositions complete and the derived text is ratified, the
+outgoing text is archived with record — the old and new never coexist as live surfaces (#6, one
+home per concern).
+
+**Wave 3 — after RATIFICATION of the derived set:** the mining sources that have yielded what
+they hold (per their recorded mining completion) advance from candidacy to archive under their
+ruled flags; the class-3 deferred question — whether a fresh comparison reference is wanted just
+before code moves again — is met here by name, as the inventory sitting carried it.
+
+**The standing duty:** every phase's record-and-handover names what it has retired from its
+successors' inputs, so the pruning is visible in the record rather than inferred from absence.
+
+## 9. Sizing, stated where it exists and owed where it does not (eighteenth-stop Ruling 12)
+
+What is sized now, by citation: the derivation's input and untrusted-source populations are the ruled
+inventory's per-class counts (`tools/audit/artifact_inventory.json`; the surface renders them);
+the mining map's populations are at `tools/audit/doc_change_candidates.json` (the candidate
+enumeration and its specification-bearing slice) and `tools/audit/july_screen_report.md`. What
+is NOT sized and cannot honestly be sized before the pilot: time per derived statement, the
+share of differences needing a user ruling, and therefore the ratification granularity and the
+calendar shape of the framework and detail phases — producing exactly these numbers is the
+pilot's bounded objective, and the method-directions record parks ratification granularity until
+that sizing exists. No estimate is invented here in its place.
+
+## 10. What this surface does NOT do, and must not be read as doing
+
+- **It derives nothing, repairs nothing, and lands nothing.** No specification text moves under
+  any decision here; no deriving session boots until the curated boot list is ruled.
+- **It does not touch the period ruling** (stands, narrow width, open exclusive at
+  `b006dc15b5`), the class verdicts (ruled), the class-3 deferred fresh-reference question
+  (carried by name to the ratification of the new specifications), [[OI-372]] (the one standing
+  red), [[OI-374]], [[OI-370]], or [[OI-179]] (OPEN, GATES).
+- **It writes no decisions-register entry** — the register is under the filtering ruling; the
+  rulings taken on this surface land as a ruling record first, entries following the discharge
+  rule once the filter has run.
+- **The 284 newly visible instruction files and the remaining ignored files stay unlanded by
+  this surface** — they reach their ruled fates in §8's first wave once the preparation phase
+  runs; the write-back of ruled verdicts onto the inventory's generated surface stays a later
+  act; the caller-check at the objects stays named and not started (it becomes a
+  preparation-phase act under §3.1 and §8 if this surface is ruled as proposed).
+- **The `src/` tree-hash tripwire** (method-directions §2.11) remains proposed and not ruled;
+  it is not smuggled in here.
+
+*Provenance: Cowork, 2026-08-15. Drafted after the mandated boot reads of the eighteenth handoff
+block, all performed this session: the batch-return and inventory-sitting ruling records, the
+eighteenth-stop and method-directions and session-length records, the batch report
+`cc_report_batch_return_rulings.md` and its full close in `cowork_away_returns.md` (read whole,
+proved by quotation at the session's own record), the ruled inventory surface, `CLAUDE.md` in
+full, the open-items INDEX and the `STATUS.md` header. Every proposal is AUTHORED and awaits the
+user; every ruled fact cites its record.*

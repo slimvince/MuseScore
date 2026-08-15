@@ -1,7 +1,89 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (SEVENTEENTH, 2026-08-15) — THE INVENTORY SITTING IS HELD AND EVERYTHING PUT WAS RULED: THE 122-FILE LANDING AND THE `.gitignore` RULE REMOVAL, ALL 44 CLASSES (ONE CONDITIONALLY), THE MEASUREMENT-LAYER SCOPE, THE PERIOD (STANDS, NARROW WIDTH, NAMED CARRY), AND THE GUARD CLEARING WITH ITS EXTENSION. THE ACTIVE DISPATCH IS `cc_instruction_ruled_inventory_landing.md`. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (EIGHTEENTH, 2026-08-15) — EVERY RULING OF THE INVENTORY SITTING AND OF THE BATCH RETURN IS EXECUTED AND VERIFIED AT THE OBJECTS; NOTHING IS RUNNING, NOTHING AWAITS A USER RULING; THE NEXT WRITING-SIDE ACT IS THE PHASE-DEFINITION SURFACE. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. Everything the seventeenth, sixteenth and fifteenth
+blocks say about `CLAUDE.md`'s superseded D-231 truth half and the standing bars REMAINS BINDING
+and is not restated here.**
+
+**★ NO BRANCH CHECK IS OWED AND YOU ARE NOT READ-ONLY.** The last dispatch,
+`cc_instruction_batch_return_rulings.md`, HAS COMPLETED: six commits (`06cc33427d` the two
+records, `e1a313925e` the ignore rule, `83312c18b6` the clearing act, `0895883778` the
+printing-side fix, `7bd59e14a2` the close, `b1a44ec046` the report — the first report ever to
+land as an ordinary tracked file), all pushed to `origin/master`, its close appended to
+`cowork_away_returns.md` (the BATCH RETURN RULINGS section), one `STATUS.md` pointer entry per
+task. **The writing side verified all of it at the objects before this block was written** —
+path counts, the one-line `.gitignore` deletion, the two derived counting artifacts moving by
+exactly one line each, the row flip, the one-word printing fix — and ran
+`gen_discard_records.py --check` itself (passes). Verify before you trust, as ever: at the
+objects, full closes, never summaries, proved by quotation (eighteenth-stop Ruling 15).
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_15_batch_return.md` IN FULL** — the four
+return rulings AND the standing presentation rule its §5 records: **every decision surface is
+self-contained — each identifier's referent re-explained from scratch in plain terms before its
+question is put; never assume the user remembers a class number, an open-items number or a
+section mark.** (2) `cowork_rulings_2026_08_15_inventory_sitting.md` IN FULL. (3)
+`cowork_rulings_2026_08_13_eighteenth_stop.md` and `cowork_rulings_2026_08_15_method_directions.md`
+IN FULL, as before. (4) This block. (5) `cc_report_batch_return_rulings.md` and the batch's FULL
+close. (6) `ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` — the ruled
+enumeration; the inventory-sitting record §3 carries the verdicts, the batch-return record §1
+the class-1 follow-up. (7) `CLAUDE.md` with the standing caveats — **read it IN FULL before
+drafting anything; the closing session deferred that read and a drafting session must not
+inherit the deferral.** (8) `OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is still under the
+filtering ruling and is not authority.** The writing side is bound by
+`cowork_rulings_2026_08_15_session_length.md`.
+
+**★ WHAT HAPPENED IN THIS SESSION.** The ruled-inventory-landing batch returned and was verified
+at the objects; its three findings and one follow-up were put to the user as four self-contained
+decision surfaces (restated once on the user's correction — the presentation rule above is that
+correction, recorded). The user ruled all four: *"I agree on all recommendations."* **(1)** The
+class-1 follow-up, Alternative B: all 123 test-class members stay EXCLUDED from the
+implementation-blind redesign; the 20 members with specification-derived evidence are recorded
+as audit material of a sharper kind (specification-versus-test-versus-code comparison points);
+the two commit-subject-only members keep the weaker marking; **class 1's conditional verdict now
+CARRIES LOAD.** **(2)** The [[OI-373]] clearing act, the coherent one-act version — EXECUTED:
+the discard pointer retired WHOLE into a retired block the tool now carries (with its own two
+STOPs so it cannot become a hole), the row RESOLVED with provenance, the discard verdict
+superseded and not withdrawn. **(3)** The second ignore rule `/cc_instruction_*.md` REMOVED —
+284 instruction files thereby became visible as untracked (counted in the batch's close),
+**deliberately NOT landed**; they ride the ruled mining sequence. **(4)** The guard-staleness
+cause FIXED at the printing side only (the one load-bearing word, its reason in a comment),
+demonstrated across a real commit boundary; the committed guard state no longer reads stale
+after a commit. The executing batch STOP-reported NOTHING; every registered expectation MET.
+
+**★ WHAT AWAITS: no user ruling.** **The next writing-side act is the PHASE-DEFINITION
+SURFACE**, drafted citing the ruled classes, discharging eighteenth-stop Rulings 6 and 7
+(D-231's rephrasing-or-removal and the new phases), written in the sitting's ruled vocabulary
+(implementation-derived material / independent sources / fact-gate / implementation-blind
+redesign) and carrying the pruning note and the mandatory-header question (method-directions
+§2.9, adoption of the full header set NOT ruled). Then the preparation acts (register filter,
+rulings sort, findings ledger), the pilot on `docs/scoring_model.md`, the framework, the detail
+specs, the audit — the §2 sequence unchanged.
+
+**★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red (rowed, discarded, parked — its
+closing acts are D-436-reserved and named on the row). [[OI-374]] untouched. `STATUS.md` still
+unreadable as a mandatory read ([[OI-370]]). [[OI-179]] OPEN and GATES. The ruled verdicts are
+STILL NOT written back onto the generated surface — the ruling records are the carrier;
+regeneration with RULED markers is a later act. Every retirement flag waits behind the
+caller-check at the objects, NOT started. The 284 newly visible files and the remaining ignored
+files are unlanded. The class-1 recognizers' reach is unmeasured (#19), the artifact saying so
+of itself.
+
+**★ THIS BLOCK IS UNCOMMITTED AT ITS OWN CLOSE** — the next batch's FIRST task lands it, the
+Task-0 pattern, naming this file explicitly. No staging override is needed anymore; the rules
+that required one are gone.
+
+**★ WHY THE SESSION CLOSED HERE:** user-directed, at a verified stop with every ruling executed,
+every record on disk and nothing in flight — the cheapest handover this arc has had. One
+presentation-form correction had fired (the self-contained-surfaces rule above); the deferred
+`CLAUDE.md`/`OPEN_ITEMS.md` full reads made closing before the drafting act the honest choice.
+
+*(The seventeenth block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (SEVENTEENTH, 2026-08-15) — THE INVENTORY SITTING IS HELD AND EVERYTHING PUT WAS RULED: THE 122-FILE LANDING AND THE `.gitignore` RULE REMOVAL, ALL 44 CLASSES (ONE CONDITIONALLY), THE MEASUREMENT-LAYER SCOPE, THE PERIOD (STANDS, NARROW WIDTH, NAMED CARRY), AND THE GUARD CLEARING WITH ITS EXTENSION. THE ACTIVE DISPATCH IS `cc_instruction_ruled_inventory_landing.md`. (SUPERSEDED as the entry point by the eighteenth block above.)
 
 **You start clueless. Read this block first. Everything the sixteenth and fifteenth blocks say
 about `CLAUDE.md`'s superseded D-231 truth half and the standing bars REMAINS BINDING and is not
