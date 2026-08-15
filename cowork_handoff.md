@@ -1,7 +1,107 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (EIGHTEENTH, 2026-08-15) — EVERY RULING OF THE INVENTORY SITTING AND OF THE BATCH RETURN IS EXECUTED AND VERIFIED AT THE OBJECTS; NOTHING IS RUNNING, NOTHING AWAITS A USER RULING; THE NEXT WRITING-SIDE ACT IS THE PHASE-DEFINITION SURFACE. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (NINETEENTH, 2026-08-15) — THE PHASE-DEFINITION SITTING IS HELD AND ALL FIVE DECISIONS ARE RULED; THE SIX PHASES GOVERN; THE D-231 REPHRASING IS LANDED IN `CLAUDE.md` AND VERIFIED AT THE OBJECTS; EIGHTEENTH-STOP RULINGS 6 AND 7 ARE DISCHARGED. THE NEXT WRITING-SIDE ACT IS THE PREPARATION PHASE'S OPENING DISPATCH. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING — with ONE standing caveat now DISCHARGED: `CLAUDE.md`'s D-231 entry no longer needs a
+warning from this file, because the entry itself now opens with the ruled supersession block
+(the three-phase structure superseded in place, the truth half replaced by the evidence rule:
+a disagreement between specification and code is EVIDENCE, reserved for the audit).**
+
+**★ NO BRANCH CHECK IS OWED AND YOU ARE NOT READ-ONLY.** The last dispatch,
+`cc_instruction_d231_landing.md`, HAS COMPLETED: commits `3dd468d978` (the §9 ruling and the
+dispatch), `b2a9fad4c9` (the D-231 edit plus the six affected artifacts and the three
+anchor-carrying register surfaces, ten paths), `1b3dc7990e` (the close) and `02636987b0` (the
+E3 run and SHAs), all pushed to `origin/master`. **The writing side verified the batch at the
+objects before this block was written** — the edited `CLAUDE.md` blob byte-identical to the
+previously measured `36ffe5e0b3`, every per-path numstat to the digit, content-level
+spot-checks showing no verdict, gate, cut or population movement — and **CONFIRMED the batch's
+one declared judgment call** (the three anchor-carrying surfaces riding the Task-1 commit:
+inside the dispatch's registered set on the only self-consistent reading, and obliged by the
+decisions register's rule (d)). Verify before you trust, as ever: at the objects, full closes,
+never summaries, proved by quotation (eighteenth-stop Ruling 15).
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_15_phase_definition_sitting.md` IN FULL**
+— the sitting's nine sections: the three further vocabulary replacements (*a changed passage*
+for hunk; *the current commit* for bare HEAD; *untrusted source* for witness, with *the
+preserved pre-restructuring version* for the tree at `b006dc15b5`), the six-phase ruling with
+measurement design AFTER the detail specifications, the per-phase RETROSPECTIVE (a ruled
+closing element of every phase), D-231's rephrasing, the restructuring closure, the Ruling-10
+supersession, the three-header adoption, and §9's ruling that landed the edit. (2)
+**`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md`** — the ruled
+definitions' ONE home: §3 the six phases with their headers and §3.9 the retrospective, §8 the
+pruning plan (three waves plus continuous), §10 what it does not do. (3) The still-binding
+records as before, IN FULL when their subject is touched:
+`cowork_rulings_2026_08_15_batch_return.md` (its §5 presentation rule — every decision surface
+self-contained), `cowork_rulings_2026_08_15_inventory_sitting.md` (the class verdicts and first
+vocabulary set), `cowork_rulings_2026_08_13_eighteenth_stop.md`,
+`cowork_rulings_2026_08_15_method_directions.md`. (4) This block. (5)
+`cc_report_d231_landing.md` AND the batch's FULL close (the D-231 LANDING section of
+`cowork_away_returns.md`), plus `cc_report_phase_rulings_landing.md` — the first attempt's
+STOP, whose measured six reds became §9's ground. (6) `CLAUDE.md` — its D-231 entry now
+carries the supersession at its own head. (7) `OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is
+still under the filtering ruling and is not authority.** The writing side is bound by
+`cowork_rulings_2026_08_15_session_length.md`.
+
+**★ WHAT HAPPENED IN THIS SESSION.** The phase-definition surface was drafted (the eighteenth
+block's ordered act), revised once on the user's vocabulary correction (hunk / HEAD / witness)
+and once for a concrete pruning plan, then walked decision by decision, each self-contained.
+**The user ruled all five decisions** and added the retrospective. Two batches then ran: the
+first landed the sitting's records (Task 0, `1c52098b64`) and correctly STOP-reported the
+D-231 edit when it turned six checks red — four outside the sanctioned anchor-drift class,
+two of them the old phase-1 gate derivations D-436 reserves; the user ruled §9 (candidate (a):
+the four regenerated alongside, bound to zero verdict movement); the second batch landed the
+edit byte-identically to the measured blob, the bound discharged per artifact at the objects.
+**Two writing-side errors this session, owned and recorded:** assumption A1 of the first
+dispatch was stated too narrowly (it omitted the seventeenth heading's authored demotion — the
+executing side's declared judgment call over the fired STOP was materially correct), and the
+first dispatch registered a zero-deletion numstat that is unobtainable at a mid-line insertion
+point (CC's finding F1).
+
+**★ WHAT AWAITS: no user ruling.** **The next writing-side act is the PREPARATION PHASE'S
+OPENING DISPATCH**, under the ruled definition (the surface's §3.1 and §8 wave 1): the
+decisions-register filter (soft-discard where no deciding act can be named), the rulings sort
+(design intent versus management of the implementation), the empirical findings ledger built
+behind its fact-gate, the curated boot list DRAFTED for the user's ruling, and the first
+pruning wave behind the caller-check at the objects. Likely more than one dispatch; bound the
+first one. Then the pilot on `docs/scoring_model.md` → the framework → the detail
+specifications → measurement design → the audit, the fix plan after it — every phase closing
+with its retrospective.
+
+**★ CARRIED TO THE PREPARATION PHASE'S RETROSPECTIVE AND LEDGER (surfaced, none rowed —
+dispatches barred rows):** F1 (no zero-deletion expectation at a mid-line insertion), F2/F4
+(seven committed artifacts capture `CLAUDE.md`'s text, naming counts or anchors, so ANY
+governing-document edit turns them red, and the remap's reach members turn red only in a
+SECOND guard run), F3 (twice surfaced: `reaim_home_anchors.py --check` exits 0 while printing
+drifted anchors — the drift authority is `gen_cluster_dispositions.py --verify`), CC's declared
+E3 ordering defect (a graded expectation committed before its run), the A1 premise error, and
+the TWELFTH block's stale `THE CURRENT ENTRY POINT.` heading below (pre-existing, noted for
+upkeep).
+
+**★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red. [[OI-374]] untouched. `STATUS.md`
+still unreadable as a mandatory read ([[OI-370]]). [[OI-179]] OPEN and GATES. The ruled
+inventory verdicts are STILL NOT written back onto the generated surface — the ruling records
+are the carrier. The 284 newly visible instruction files and the remaining ignored files are
+unlanded; every retirement flag waits behind the caller-check, NOT started. The class-1
+recognizers' reach is unmeasured (#19).
+
+**★ THIS BLOCK IS UNCOMMITTED AT ITS OWN CLOSE** — the next batch's FIRST task lands it, the
+Task-0 pattern, naming this file explicitly. **State the diff precisely in that dispatch's
+premise: this block inserted AND the eighteenth heading's demotion marker — two parts of one
+act** (the A1 lesson applied).
+
+**★ WHY THE SESSION CLOSED HERE:** user-directed, at a verified stop with every ruling
+executed and verified, every record on disk and nothing in flight. One user
+presentation-form correction had fired (the vocabulary set); the two writing-side errors above
+are recorded; no two-tell threshold was reached — the close is the cheap-handover choice, not
+a degradation stop.
+
+*(The eighteenth block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (EIGHTEENTH, 2026-08-15) — EVERY RULING OF THE INVENTORY SITTING AND OF THE BATCH RETURN IS EXECUTED AND VERIFIED AT THE OBJECTS; NOTHING IS RUNNING, NOTHING AWAITS A USER RULING; THE NEXT WRITING-SIDE ACT IS THE PHASE-DEFINITION SURFACE. (SUPERSEDED as the entry point by the nineteenth block above.)
 
 **You start clueless. Read this block first. Everything the seventeenth, sixteenth and fifteenth
 blocks say about `CLAUDE.md`'s superseded D-231 truth half and the standing bars REMAINS BINDING
