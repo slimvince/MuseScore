@@ -23,7 +23,7 @@
  },
  "population": {
   "rows_parsed": 375,
-  "open_rows": 243,
+  "open_rows": 242,
   "first_cut_candidates": 50,
   "first_cut_vocabulary": [
    "doc-sync",

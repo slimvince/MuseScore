@@ -5,7 +5,7 @@
   "the_ruling": "User, 2026-08-13, Ruling 69 of `cowork_rulings_2026_08_13_seventeenth_stop.md`, homed at `CLAUDE.md`'s open-items register section, register entry D-677: a DISCARD verdict on an already-rowed item is an INPUT to the derivation that decides gating — never an edit to a gating verdict. Quoted in full at its home and not restated here (#6, D-643).",
   "what_this_file_does_NOT_do": "It authors no discard, tests no row, closes no row, moves no status cell and writes no gating verdict. The gate is derived by the completion inventory, which reads the conforming set below as ONE of its inputs. It authorizes no fix, no design and no inference change.",
   "what_is_authored_and_what_is_derived": {
-    "authored": "a POINTER per record — the row, the surface, and the quote that locates each of the three elements. No verdict.",
+    "authored": "a POINTER per record — the row, the surface, and the quote that locates each of the three elements. No verdict. And, for a pointer whose row has since been RESOLVED, its RETIREMENT — the pointer kept whole with the reason it left, the date and the retiring act.",
     "derived": "every element's presence inside the record's own span; the row's open state, from the ONE index parser; the #19 carve-out, from the committed apparatus declaration; the completeness scan; the soundness check."
   },
   "★_the_guard": {
@@ -120,84 +120,6 @@
           ],
           "located": [
             "the tool still STOPs, its authored verdict still names a document its derivation no longer carries, and it still has no retired block."
-          ],
-          "present": true
-        },
-        "date": {
-          "quotes": [
-            "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)"
-          ],
-          "located": [
-            "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)"
-          ],
-          "present": true
-        },
-        "reason": {
-          "quotes": [
-            "**Limb (a) — does leaving it unfixed risk something being built that does not serve",
-            "**Limb (b) — does it risk code no longer being comparable against a correct and complete",
-            "**The consumer, named rather than guessed.**"
-          ],
-          "located": [
-            "**Limb (a) — does leaving it unfixed risk something being built that does not serve",
-            "**Limb (b) — does it risk code no longer being comparable against a correct and complete",
-            "**The consumer, named rather than guessed.**"
-          ],
-          "present": true
-        }
-      },
-      "also_located_but_not_required": {
-        "the_verdict": {
-          "quotes": [
-            "this finding is **DISCARDED** — it is not an open obligation: no gate, no capacity."
-          ],
-          "located": [
-            "this finding is **DISCARDED** — it is not an open obligation: no gate, no capacity."
-          ],
-          "present": true
-        },
-        "the_records_own_19_sentence": {
-          "quotes": [
-            "**The #19 check, taken FIRST and answered at the objects.**"
-          ],
-          "located": [
-            "**The #19 check, taken FIRST and answered at the objects.**"
-          ],
-          "present": true
-        }
-      },
-      "the_19_carve_out": {
-        "kept_gating_by_the_carve_out": false,
-        "how_that_was_derived": "the committed apparatus declaration's own recorded gate ground, read on every run — never the record's prose about itself"
-      },
-      "record_heading_depth": 2,
-      "conforms": true,
-      "elements_not_located": []
-    },
-    {
-      "row": "OI-373",
-      "surface": "open_items/OI-373.md",
-      "record_opens_at": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
-      "the_verdict": "this finding is **DISCARDED** — it is not an open obligation: no gate, no capacity.",
-      "finding": "no invocation was authored, nothing about the guard set was adjusted, and the runner still cannot exit clean.",
-      "date": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
-      "date_value": "2026-08-12",
-      "the_records_own_19_sentence": "**The #19 check, taken FIRST and answered at the objects.**",
-      "recorded_by": "CC, 2026-08-12, `cc_instruction_worth_test.md` Task 2",
-      "under": "the worth test at `CLAUDE.md` principle #10 (D-174), the user's Ruling 68",
-      "why_the_surface_is_not_the_row": "It IS the row, on the same route as the entry above.",
-      "reason_quotes": [
-        "**Limb (a) — does leaving it unfixed risk something being built that does not serve",
-        "**Limb (b) — does it risk code no longer being comparable against a correct and complete",
-        "**The consumer, named rather than guessed.**"
-      ],
-      "the_three_elements_required_by_the_ruling": {
-        "finding": {
-          "quotes": [
-            "no invocation was authored, nothing about the guard set was adjusted, and the runner still cannot exit clean."
-          ],
-          "located": [
-            "no invocation was authored, nothing about the guard set was adjusted, and the runner still cannot exit clean."
           ],
           "present": true
         },
@@ -409,92 +331,54 @@
       "record_heading_depth": 2,
       "conforms": true,
       "elements_not_located": []
-    },
-    {
-      "row": "OI-373",
-      "surface": "open_items/OI-373.md",
-      "record_opens_at": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
-      "the_verdict": "this finding is **DISCARDED** — it is not an open obligation: no gate, no capacity.",
-      "finding": "no invocation was authored, nothing about the guard set was adjusted, and the runner still cannot exit clean.",
-      "date": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
-      "date_value": "2026-08-12",
-      "the_records_own_19_sentence": "**The #19 check, taken FIRST and answered at the objects.**",
-      "recorded_by": "CC, 2026-08-12, `cc_instruction_worth_test.md` Task 2",
-      "under": "the worth test at `CLAUDE.md` principle #10 (D-174), the user's Ruling 68",
-      "why_the_surface_is_not_the_row": "It IS the row, on the same route as the entry above.",
-      "reason_quotes": [
-        "**Limb (a) — does leaving it unfixed risk something being built that does not serve",
-        "**Limb (b) — does it risk code no longer being comparable against a correct and complete",
-        "**The consumer, named rather than guessed.**"
-      ],
-      "the_three_elements_required_by_the_ruling": {
-        "finding": {
-          "quotes": [
-            "no invocation was authored, nothing about the guard set was adjusted, and the runner still cannot exit clean."
-          ],
-          "located": [
-            "no invocation was authored, nothing about the guard set was adjusted, and the runner still cannot exit clean."
-          ],
-          "present": true
-        },
-        "date": {
-          "quotes": [
-            "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)"
-          ],
-          "located": [
-            "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)"
-          ],
-          "present": true
-        },
-        "reason": {
-          "quotes": [
-            "**Limb (a) — does leaving it unfixed risk something being built that does not serve",
-            "**Limb (b) — does it risk code no longer being comparable against a correct and complete",
-            "**The consumer, named rather than guessed.**"
-          ],
-          "located": [
-            "**Limb (a) — does leaving it unfixed risk something being built that does not serve",
-            "**Limb (b) — does it risk code no longer being comparable against a correct and complete",
-            "**The consumer, named rather than guessed.**"
-          ],
-          "present": true
-        }
-      },
-      "also_located_but_not_required": {
-        "the_verdict": {
-          "quotes": [
-            "this finding is **DISCARDED** — it is not an open obligation: no gate, no capacity."
-          ],
-          "located": [
-            "this finding is **DISCARDED** — it is not an open obligation: no gate, no capacity."
-          ],
-          "present": true
-        },
-        "the_records_own_19_sentence": {
-          "quotes": [
-            "**The #19 check, taken FIRST and answered at the objects.**"
-          ],
-          "located": [
-            "**The #19 check, taken FIRST and answered at the objects.**"
-          ],
-          "present": true
-        }
-      },
-      "the_19_carve_out": {
-        "kept_gating_by_the_carve_out": false,
-        "how_that_was_derived": "the committed apparatus declaration's own recorded gate ground, read on every run — never the record's prose about itself"
-      },
-      "record_heading_depth": 2,
-      "conforms": true,
-      "elements_not_located": []
     }
   ],
+  "retired_records": {
+    "what_this_is": "Pointers whose rows have since been RESOLVED at the INDEX. A discard is not a resolution, so such a pointer cannot stay in the live table — the resolved-at-the-INDEX refusal fires on it, which is that refusal working. Deleting it would destroy the record that the discard was entered at all (#12), so it is preserved here WHOLE with the reason it left, the date and the retiring act. NEVER counted, never re-located, and it reaches neither the conforming set nor the cut.",
+    "the_two_stops_that_guard_it": [
+      "a retired pointer naming a row that is OPEN at the INDEX stops the tool — the one case in which retiring would remove a record from the cut while its row still gates",
+      "a row carrying a pointer in both tables stops it — one record per row"
+    ],
+    "and_the_negative_seeds_are_tested_against_it_too": "The soundness check below asks of each NOT-DISCARDED seed whether the retired block carries it, beside asking whether the live table does. Retiring a pointer for a negative outcome is the only way this block could satisfy the completeness STOP with a record that was never a discard.",
+    "count": 1,
+    "rows": [
+      "OI-373"
+    ],
+    "entries": [
+      {
+        "row": "OI-373",
+        "retired_on": "2026-08-15",
+        "retired_by": "CC, `cc_instruction_batch_return_rulings.md` Task 2, on the user's ruling of 2026-08-15 (`cowork_rulings_2026_08_15_batch_return.md` §2 — a ruling permitting a named act under D-436, for that act alone)",
+        "retired_because": "THE ROW WAS RESOLVED, so the pointer had to leave the live table or turn a passing guard red by construction. Two things happened to it, in this order and by two different acts. FIRST the SUBSTANCE was discharged: the two run-instructions whose absence kept the guard-set runner from exiting on its guards' verdicts alone were authored on 2026-08-15 (`cc_instruction_ruled_inventory_landing.md` Task 2, under `cowork_rulings_2026_08_15_inventory_sitting.md` §5's extension), each after its tool was read in full, and the runner's STOP cleared. THEN the row was flipped RESOLVED with provenance, in the same act that retires this pointer. THE DISCARD VERDICT IS SUPERSEDED BY THAT RESOLUTION and is NOT withdrawn: it was correct while it stood — the finding was not worth fixing under the worth test, and then it was fixed anyway as the extension of another ruling. What retires it is the row closing, never the verdict being wrong.",
+        "what_this_does_NOT_do": "It withdraws no discard verdict, re-opens no row, and changes nothing about the refusal that caught the incoherence — a pointer for a row RESOLVED at the INDEX still halts this tool if it is left in the live table above. It says nothing about OI-372, whose pointer stands live and whose row stays open and undischarged.",
+        "the_pointer_whole": {
+          "row": "OI-373",
+          "surface": "open_items/OI-373.md",
+          "record_opens_at": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
+          "the_verdict": "this finding is **DISCARDED** — it is not an open obligation: no gate, no capacity.",
+          "finding": "no invocation was authored, nothing about the guard set was adjusted, and the runner still cannot exit clean.",
+          "date": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
+          "date_value": "2026-08-12",
+          "reason": [
+            "**Limb (a) — does leaving it unfixed risk something being built that does not serve",
+            "**Limb (b) — does it risk code no longer being comparable against a correct and complete",
+            "**The consumer, named rather than guessed.**"
+          ],
+          "the_records_own_19_sentence": "**The #19 check, taken FIRST and answered at the objects.**",
+          "recorded_by": "CC, 2026-08-12, `cc_instruction_worth_test.md` Task 2",
+          "under": "the worth test at `CLAUDE.md` principle #10 (D-174), the user's Ruling 68",
+          "why_the_surface_is_not_the_row": "It IS the row, on the same route as the OI-372 entry.",
+          "it_conformed_while_it_stood": "All three of Ruling 69's elements were located inside the record's own span on every run up to and including the one taken at the start of the retiring batch, and the record itself is untouched by the retirement — it stands in `open_items/OI-373.md` exactly as it was written."
+        },
+        "the_rows_state_at_the_INDEX": "RESOLVED"
+      }
+    ]
+  },
   "counted": {
-    "records_entered": 3,
-    "conforming": 3,
+    "records_entered": 2,
+    "conforming": 2,
     "conforming_ids": [
       "OI-372",
-      "OI-373",
       "OI-90"
     ],
     "not_conforming": 0,
@@ -524,10 +408,9 @@
     "why_it_is_here": "A pattern's reach against the text it scans is exactly what this project has twice been caught not measuring, so this tool publishes what its patterns do against records the record actually holds rather than asserting they are right.",
     "positive": {
       "what_it_asserts": "every entered record is located, and its three elements fall inside the record's own span",
-      "records_located": 3,
+      "records_located": 2,
       "conforming": [
         "OI-372",
-        "OI-373",
         "OI-90"
       ],
       "not_conforming": []
@@ -542,6 +425,7 @@
           "why_it_is_a_seed": "The worth test was applied to it in the same act as OI-372 and OI-373 and returned NOT DISCARDED on the #19 carve-out. A tool that cannot tell this record from theirs would discard an establishment obligation, which amended #10 forbids outright.",
           "the_record_is_still_there": true,
           "in_the_authored_table": false,
+          "in_the_retired_table": false,
           "pulled_in_by_the_completeness_scan": false
         },
         {
@@ -551,6 +435,7 @@
           "why_it_is_a_seed": "A second NOT-DISCARDED outcome, written in a DIFFERENT form from the seed above — so the two together test the scan against both shapes the record actually uses for a negative outcome, not one shape twice.",
           "the_record_is_still_there": true,
           "in_the_authored_table": false,
+          "in_the_retired_table": false,
           "pulled_in_by_the_completeness_scan": false
         }
       ],

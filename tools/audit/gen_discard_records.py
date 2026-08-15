@@ -28,6 +28,16 @@ WHAT IS AUTHORED AND WHAT IS DERIVED — the difference is the whole value.
             carve-out, from the committed apparatus declaration; and the conforming set the gating
             derivation consumes.
 
+AND WHERE A POINTER GOES WHEN ITS ROW CLOSES (the RETIRED block, added 2026-08-15).  A discard is
+not a resolution, so a pointer whose row has since been RESOLVED at the INDEX cannot stay in the live
+table: the resolved-at-the-INDEX refusal fires on it, which is that refusal working rather than
+failing.  Deleting the pointer would destroy the record that the discard was ever entered (#12), and
+would leave the completeness scan below finding the record on the register's own surfaces with
+nothing accounting for it.  So the pointer MOVES WHOLE into `RETIRED`, with the reason it left, the
+date, and the act that retired it — the shape two sibling tools already use for the same case.  A
+retired pointer is never re-located and never reaches the cut: it was correct while it stood, and
+what is kept is what it said, not a live claim about the record.
+
 WHY A LOCATED POINTER TABLE RATHER THAN A SCANNER OVER THE RECORD.  A scanner would have to invent
 a grammar for a discard record and would then carry an UNMEASURED REACH — the defect the record has
 met twice already, at a family enumerated by an unmeasured pattern (`OPEN_ITEMS.md` OI-367) and at a
@@ -161,30 +171,85 @@ AUTHORED: list[dict] = [
             "completeness scan below finds it on both surfaces."
         ),
     },
+    # OI-373's pointer moved to RETIRED on 2026-08-15 when the user's ruling resolved the row.
+]
+
+# ═══════════════════════════════════ AUTHORED: the retired pointers ══════════════════════════════
+#
+# Pointers whose rows have since been RESOLVED at the INDEX. Preserved WHOLE (#12), carried into the
+# artifact as history, and NEVER counted: a retired pointer reaches neither the conforming set nor
+# the cut, and its quotes are not re-located, because what is kept here is what the pointer said
+# while it stood rather than a live claim about the record.
+#
+# THE TWO STOPS THAT MAKE THIS A MECHANISM AND NOT A HOLE — the mirror of the live table's own, and
+# the reason a pointer can be retired without opening a route by which a discard record stops
+# reaching the cut unnoticed:
+#   * a retired pointer naming a row that is OPEN at the INDEX halts this tool. That is the case the
+#     block must never be used for: while the row is open its record belongs in the live table, and
+#     retiring it there would remove it from the cut with nothing saying so.
+#   * a row carrying a pointer in BOTH tables halts it. One record per row, in exactly one table.
+# The completeness scan's own STOP is satisfied by a retired pointer exactly as by a live one — its
+# wording already admits either entering a record or saying at the row why it is not one, and a
+# retired pointer with its reason is the second of those.
+RETIRED: list[dict] = [
     {
         "row": "OI-373",
-        "surface": "open_items/OI-373.md",
-        "record_opens_at": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` "
-                           "Task 2)",
-        "the_verdict": "this finding is **DISCARDED** — it is not an open obligation: no gate, no "
-                       "capacity.",
-        "finding": "no invocation was authored, nothing about the guard set was adjusted, and the "
-                   "runner still cannot exit clean.",
-        "date": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
-        "date_value": "2026-08-12",
-        "reason": [
-            "**Limb (a) — does leaving it unfixed risk something being built that does not serve",
-            "**Limb (b) — does it risk code no longer being comparable against a correct and "
-            "complete",
-            "**The consumer, named rather than guessed.**",
-        ],
-        "the_records_own_19_sentence": "**The #19 check, taken FIRST and answered at the "
-                                       "objects.**",
-        "recorded_by": "CC, 2026-08-12, `cc_instruction_worth_test.md` Task 2",
-        "under": "the worth test at `CLAUDE.md` principle #10 (D-174), the user's Ruling 68",
-        "why_the_surface_is_not_the_row": (
-            "It IS the row, on the same route as the entry above."
+        "retired_on": "2026-08-15",
+        "retired_by": "CC, `cc_instruction_batch_return_rulings.md` Task 2, on the user's ruling "
+                      "of 2026-08-15 (`cowork_rulings_2026_08_15_batch_return.md` §2 — a ruling "
+                      "permitting a named act under D-436, for that act alone)",
+        "retired_because": (
+            "THE ROW WAS RESOLVED, so the pointer had to leave the live table or turn a passing "
+            "guard red by construction. Two things happened to it, in this order and by two "
+            "different acts. FIRST the SUBSTANCE was discharged: the two run-instructions whose "
+            "absence kept the guard-set runner from exiting on its guards' verdicts alone were "
+            "authored on 2026-08-15 (`cc_instruction_ruled_inventory_landing.md` Task 2, under "
+            "`cowork_rulings_2026_08_15_inventory_sitting.md` §5's extension), each after its tool "
+            "was read in full, and the runner's STOP cleared. THEN the row was flipped RESOLVED "
+            "with provenance, in the same act that retires this pointer. THE DISCARD VERDICT IS "
+            "SUPERSEDED BY THAT RESOLUTION and is NOT withdrawn: it was correct while it stood — "
+            "the finding was not worth fixing under the worth test, and then it was fixed anyway "
+            "as the extension of another ruling. What retires it is the row closing, never the "
+            "verdict being wrong."
         ),
+        "what_this_does_NOT_do": (
+            "It withdraws no discard verdict, re-opens no row, and changes nothing about the "
+            "refusal that caught the incoherence — a pointer for a row RESOLVED at the INDEX still "
+            "halts this tool if it is left in the live table above. It says nothing about OI-372, "
+            "whose pointer stands live and whose row stays open and undischarged."
+        ),
+        "the_pointer_whole": {
+            "row": "OI-373",
+            "surface": "open_items/OI-373.md",
+            "record_opens_at": "## ★ DISCARD RECORD — 2026-08-12 (CC, "
+                               "`cc_instruction_worth_test.md` Task 2)",
+            "the_verdict": "this finding is **DISCARDED** — it is not an open obligation: no gate, "
+                           "no capacity.",
+            "finding": "no invocation was authored, nothing about the guard set was adjusted, and "
+                       "the runner still cannot exit clean.",
+            "date": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
+            "date_value": "2026-08-12",
+            "reason": [
+                "**Limb (a) — does leaving it unfixed risk something being built that does not "
+                "serve",
+                "**Limb (b) — does it risk code no longer being comparable against a correct and "
+                "complete",
+                "**The consumer, named rather than guessed.**",
+            ],
+            "the_records_own_19_sentence": "**The #19 check, taken FIRST and answered at the "
+                                           "objects.**",
+            "recorded_by": "CC, 2026-08-12, `cc_instruction_worth_test.md` Task 2",
+            "under": "the worth test at `CLAUDE.md` principle #10 (D-174), the user's Ruling 68",
+            "why_the_surface_is_not_the_row": (
+                "It IS the row, on the same route as the OI-372 entry."
+            ),
+            "it_conformed_while_it_stood": (
+                "All three of Ruling 69's elements were located inside the record's own span on "
+                "every run up to and including the one taken at the start of the retiring batch, "
+                "and the record itself is untouched by the retirement — it stands in "
+                "`open_items/OI-373.md` exactly as it was written."
+            ),
+        },
     },
 ]
 
@@ -384,14 +449,40 @@ def build() -> dict:
         }
         conforming.append(entry)
 
+    # ── the retired pointers: preserved, never counted, and guarded in both directions ───────────
+    retired_rows: list[str] = []
+    retired_entries: list[dict] = []
+    for r in RETIRED:
+        row = r["row"]
+        if row in retired_rows:
+            raise SystemExit(f"STOP: {row} carries two retired pointers. One record per row.")
+        if row in seen:
+            raise SystemExit(
+                f"STOP: {row} carries a pointer in BOTH tables. A record is live or it is retired, "
+                "never both — otherwise this tool publishes a discard it also says it withdrew.")
+        rec = rows_by_id.get(row)
+        if rec is None:
+            raise SystemExit(
+                f"STOP: a retired pointer names {row}, which the open-items INDEX does not carry. "
+                "Retirement rests on the row's recorded state, so that state may not be unreadable.")
+        if rec["open"]:
+            raise SystemExit(
+                f"STOP: a retired pointer names {row}, which is OPEN at the INDEX. A pointer is "
+                "retired because its row was RESOLVED; while the row is open its discard record "
+                "belongs in the live table, or it has stopped reaching the cut with nothing saying "
+                "so.")
+        retired_rows.append(row)
+        retired_entries.append({**r, "the_rows_state_at_the_INDEX": "RESOLVED"})
+
     scan = completeness_scan(rows_by_id)
-    unentered = sorted(r for r in scan["found"] if r not in seen)
+    accounted = seen | set(retired_rows)
+    unentered = sorted(r for r in scan["found"] if r not in accounted)
     if unentered:
         raise SystemExit(
             "STOP: the register's own surfaces carry a discard record for row(s) this table does "
             "not enter: " + ", ".join(unentered) + ". A discard on the register's own route may "
-            "not be left out of the table silently — enter it with its three located elements, or "
-            "say at the row why it is not one.")
+            "not be left out of the table silently — enter it with its three located elements, "
+            "retire it with the reason it left, or say at the row why it is not one.")
 
     # ── the soundness check (#19): both directions, against seeds that are in the record ─────────
     seed_rows: list[dict] = []
@@ -411,9 +502,14 @@ def build() -> dict:
             **s,
             "the_record_is_still_there": present,
             "in_the_authored_table": s["row"] in seen,
+            # The retired block is tested beside the live table for the same reason the live table
+            # is tested at all: retiring a pointer for a NOT-DISCARDED outcome would satisfy the
+            # completeness STOP with a record that was never a discard, which is the one way the
+            # block could launder a negative outcome into the discard population.
+            "in_the_retired_table": s["row"] in retired_rows,
             "pulled_in_by_the_completeness_scan": s["row"] in scan["found"],
         })
-    caught = [s for s in seed_rows if s["in_the_authored_table"]
+    caught = [s for s in seed_rows if s["in_the_authored_table"] or s["in_the_retired_table"]
               or s["pulled_in_by_the_completeness_scan"]]
     if caught:
         raise SystemExit(
@@ -447,7 +543,9 @@ def build() -> dict:
         ),
         "what_is_authored_and_what_is_derived": {
             "authored": "a POINTER per record — the row, the surface, and the quote that locates "
-                        "each of the three elements. No verdict.",
+                        "each of the three elements. No verdict. And, for a pointer whose row has "
+                        "since been RESOLVED, its RETIREMENT — the pointer kept whole with the "
+                        "reason it left, the date and the retiring act.",
             "derived": "every element's presence inside the record's own span; the row's open "
                        "state, from the ONE index parser; the #19 carve-out, from the committed "
                        "apparatus declaration; the completeness scan; the soundness check.",
@@ -469,6 +567,32 @@ def build() -> dict:
         },
         "records": conforming,
         "conforming": [e for e in conforming if e["conforms"]],
+        "retired_records": {
+            "what_this_is": (
+                "Pointers whose rows have since been RESOLVED at the INDEX. A discard is not a "
+                "resolution, so such a pointer cannot stay in the live table — the "
+                "resolved-at-the-INDEX refusal fires on it, which is that refusal working. "
+                "Deleting it would destroy the record that the discard was entered at all (#12), "
+                "so it is preserved here WHOLE with the reason it left, the date and the retiring "
+                "act. NEVER counted, never re-located, and it reaches neither the conforming set "
+                "nor the cut."
+            ),
+            "the_two_stops_that_guard_it": [
+                "a retired pointer naming a row that is OPEN at the INDEX stops the tool — the one "
+                "case in which retiring would remove a record from the cut while its row still "
+                "gates",
+                "a row carrying a pointer in both tables stops it — one record per row",
+            ],
+            "and_the_negative_seeds_are_tested_against_it_too": (
+                "The soundness check below asks of each NOT-DISCARDED seed whether the retired "
+                "block carries it, beside asking whether the live table does. Retiring a pointer "
+                "for a negative outcome is the only way this block could satisfy the completeness "
+                "STOP with a record that was never a discard."
+            ),
+            "count": len(retired_entries),
+            "rows": sorted(retired_rows),
+            "entries": retired_entries,
+        },
         "counted": {
             "records_entered": len(conforming),
             "conforming": len(conforming_ids),
@@ -523,7 +647,8 @@ def main(argv=None) -> int:
         print("the discard records re-derive from the record")
         print(f"  entered {art['counted']['records_entered']}, "
               f"conforming {art['counted']['conforming']}, "
-              f"not conforming {art['counted']['not_conforming']}")
+              f"not conforming {art['counted']['not_conforming']}, "
+              f"retired {art['retired_records']['count']}")
         return 0
 
     OUT.write_text(text, encoding="utf-8", newline="\n")
@@ -531,6 +656,8 @@ def main(argv=None) -> int:
     print(f"  records entered: {art['counted']['records_entered']}; "
           f"conforming: {art['counted']['conforming']}; "
           f"not conforming: {art['counted']['not_conforming']}")
+    print(f"  retired pointers (preserved, never counted): "
+          f"{art['retired_records']['count']} — {', '.join(art['retired_records']['rows']) or 'none'}")
     print(f"  the bounded completeness scan found: "
           f"{len(art['the_bounded_completeness_scan']['found'])} on the register's own surfaces")
     print(f"  negative seeds: {art['the_soundness_check']['negative']['verdict']}")
