@@ -492,18 +492,6 @@ THE_PREDICTION = {
 # Every row is authored. The tool refuses to emit if a derived entry has no row, or a row
 # names an entry that is not in the derived set.
 VERDICTS = [
-    ('D-051', 'The legacy Layer-3 sequence decoder as the production key path',
-     'false-negative-path', ['L3_LEGACY_ENTRY', 'L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
-     'none-found',
-     'ARCHITECTURE.md:1414 cites it only as the precedent SHAPE for a supersession in fact, not as a '
-     'principle carried across.'),
-    ('D-052', 'The shared signature-read + declared-mode function (resolveKeySignatureContext)',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
-     'none-found',
-     'OBSERVATION, not a mark error: the joint fact adapter performs its OWN signature and '
-     'declared-mode read (JOINT_SIG_READ), so the "ONE shared function" property D-052 records does '
-     'not extend across the live path. Whether that is a #6 duplication of concern or two different '
-     'concerns is not settled here.'),
     ('D-053', 'The P4 tick-local path keeping the older resolver',
      'false-negative-path', ['FLAG_DEFAULT', 'NOTE_SEAM_RECORD', 'NOTE_SEAM_LEGACY', 'TESTS_KEY'],
      'none-found',
@@ -522,36 +510,6 @@ VERDICTS = [
     ('D-058', 'The legacy key resolver\'s piece-start shortcut',
      'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
      'none-found', ''),
-    ('D-059', 'The legacy key window — 16 beats back, 8 forward, decayed',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
-     'none-found', ''),
-    ('D-060', 'The legacy chord analyzer\'s vertical-only boundary',
-     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'undetermined',
-     'The boundary rule is #7 applied to the legacy analyzer. Whether the live estimator inherits a '
-     'boundary statement of the same kind was not established this wave; no ruling names D-060.'),
-    ('D-061', 'The Baroque-calibrated gate thresholds and the never-widen rule',
-     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'undetermined',
-     'CLAUDE.md\'s gate-threshold policy states the same prohibition as a STANDING instruction, and '
-     'D-423 names it as one of three holding "for the whole programme" — while D-423 is itself '
-     'LEGACY-marked. Whether the prohibition reaches the live design is a ruling the record does not '
-     'contain.'),
-    ('D-062', 'Withholding progression signals during segmentation',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found', ''),
-    ('D-063', 'The tick-local path\'s cold-context contract',
-     'false-negative-path', ['FLAG_DEFAULT', 'NOTE_SEAM_RECORD', 'NOTE_SEAM_LEGACY', 'TESTS_CHORD'],
-     'none-found', ''),
-    ('D-064', 'The chord-scoring presets as a measurement-tool-only artifact',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT'],
-     'none-found',
-     'Production inference is preset-independent (CLAUDE.md gate block (A)), so the presets have no '
-     'production consumer at all — which is the same conclusion the entry\'s superseded-in-fact status '
-     'already records.'),
-    ('D-065', 'The deliberate look-ahead divergence between the measurement tool and the app',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'NOTE_SEAM_LEGACY'],
-     'none-found', ''),
     ('D-068', 'The legacy analyzer\'s three-distinct-pitch-class minimum',
      'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
      'undetermined',
@@ -563,25 +521,8 @@ VERDICTS = [
      'none-found',
      'Split subject: the built half is legacy code on the false-negative paths; the second mode is not '
      'built at all.'),
-    ('D-089', 'The legacy 0.5 / 0.8 confidence exposure gates',
-     'false-negative-path', ['NOTE_SEAM_LEGACY', 'RECORD_EXPOSURE', 'BATCH_LEGACY_DEFAULT'],
-     'none-found',
-     'The record arm declares its own constant on its own gap scale (RECORD_EXPOSURE) rather than '
-     'reusing these, which is why the entry is superseded-by rather than transferred.'),
-    ('D-101', 'Restricting contextual inversion bonuses to major and minor candidates',
-     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found', ''),
-    ('D-102', 'Extending the inversion bonuses to augmented and half-diminished candidates',
-     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found', ''),
     ('D-103', 'The pedal-point second pass and its two acceptance conditions',
      'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found', ''),
-    ('D-104', 'Conditioning the bass-is-root bonus on corroborating support',
-     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found', ''),
-    ('D-214', 'The dim7 characteristic bonus as the rotation selector',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
      'none-found', ''),
     ('D-215', 'Gating the root-continuity bonus on a sparse predecessor',
      'none', ['SPEC_DONOTRETRY_CHORD', 'BATCH_LEGACY_DEFAULT'],
@@ -589,21 +530,6 @@ VERDICTS = [
      'The GATING was tried in two forms and abandoned, so nothing at HEAD implements the subject; the '
      'bonus it would have gated is legacy code. ARCHITECTURE.md:1420 lists it as a live do-not-retry, '
      'and D-423 names it as one of three programme-wide prohibitions.'),
-    ('D-216', 'The stepwise-bass bonus\'s four load-bearing gates',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found', ''),
-    ('D-217', 'Suppressing every context-dependent bonus during segmentation',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found',
-     'The same rule as D-062 at a second home; its specification home is D-062 by the entry\'s own text.'),
-    ('D-218', 'Deriving every template-sized array extent from one constant',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found', ''),
-    ('D-219', 'The removal of Gates B/C/D and the standing bar on a temporal condition in the flip',
-     'false-negative-path', ['FM2_FLIP', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found',
-     'Split subject: the three removed gates are gone, but the flip the standing half constrains '
-     'survives at HEAD as FM2, so the prohibition governs code that exists.'),
     ('D-220', 'The augmented-seventh guard requiring both intervals',
      'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
      'none-found', ''),
@@ -619,14 +545,6 @@ VERDICTS = [
     ('D-224', 'Joint bass-and-chord scoring gated on accumulated regional evidence',
      'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
      'none-found', ''),
-    ('D-235', 'The bound on what tonal-centre disambiguation may overturn',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
-     'none-found', ''),
-    ('D-243', 'The planning band for the vertical engine and the corpora excluded from it',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'L4_SPEC_DORMANT'],
-     'none-found',
-     'The subject is the engine the band bands. Status superseded-in-fact — the production surface is '
-     'measured on the robust unit, not this band.'),
     ('D-248', 'The legacy ChordFunction structure carrying no relative-root field',
      'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'L5_DIAG_ONLY', 'JOINT_APPLIED_RN'],
      'assigns-live-work',
@@ -748,9 +666,6 @@ VERDICTS = [
      'Production inference is preset-independent (CLAUDE.md gate block (A)), so on the live arm the '
      'preset has no entry point at all — the decision describes an arrangement the live system does '
      'not have, which is what the mark is for.'),
-    ('D-346', 'The union-of-stretch-bests candidate set for the whole-run tonality decision',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
-     'none-found', ''),
     ('D-347', 'The change-cost shape: cheap-to-stay plus distance plus a relative-pair penalty',
      'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
      'none-found', ''),
@@ -760,32 +675,12 @@ VERDICTS = [
     ('D-349', 'Whole-reading key confidence rather than a per-stretch top-two gap',
      'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
      'none-found', ''),
-    ('D-350', 'The whole-run margin as the published key confidence',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
-     'none-found',
-     'Its citations outside the register mechanics are all tooling discussions of home classification, '
-     'not rulings about its content.'),
     ('D-351', 'The key/mode search as its own decoder, not the chord decoder reused',
      'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
      'none-found',
      'OBSERVATION: the live estimator decides key and chord inside ONE decode, which is the opposite '
      'arrangement. The mark is right — the decision is about the legacy pair — and a reader should not '
      'read it as describing what runs.'),
-    ('D-354', 'The exhaustion of the key/mode decoder\'s private settings',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT'],
-     'none-found', ''),
-    ('D-355', 'The scale-membership term as the identified key/mode lever',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
-     'none-found',
-     'The lever is a term in the legacy shared key scorer, and the wiring step it was to be applied at '
-     'is the legacy one.'),
-    ('D-356', 'The brittleness of the leading-note presence gate',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
-     'none-found', ''),
-    ('D-357', 'Reading notated spelling as tonality evidence at the function layer',
-     'none', ['L5_DIAG_ONLY', 'L3_SPEC_DORMANT'],
-     'none-found',
-     'Not built on either layer — the decision places the evidence at a layer that is itself dormant.'),
     ('D-358', 'Dominant-shaped sonority as note-level tonality evidence',
      'none', ['L3_SPEC_DORMANT', 'ARCH_L3_DELEGATION'],
      'undetermined',
@@ -798,11 +693,6 @@ VERDICTS = [
      'Neither shape exists as described — the coupling was shelved. The entry\'s own title records that '
      'the REJECTED option is the shape the production engine now has, which is a statement about the '
      'live design inside a LEGACY-marked entry.'),
-    ('D-378', 'Re-deciding a chord under a different tonality, well-defined only on the decoder path',
-     'none', ['JKEY_NO_REEMIT', 'JKEY_WIRING_FLAG'],
-     'assigns-live-work',
-     'The naive re-emit is not built — the wiring leaves the chord as the production chord. The entry '
-     'names the decoder path as where the question IS well defined.'),
     ('D-380', 'The carry\'s distinct-root axis and graded confidence',
      'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'L4_SPEC_DORMANT', 'ARCH_L5_ENGAGEMENT_DELEGATION'],
      'undetermined',
@@ -813,9 +703,6 @@ VERDICTS = [
      'assigns-live-work',
      'The owed shape is not built; the existing voicing-keyed cap is legacy code. The entry leaves the '
      'limit\'s value "to the fitting phase", which is live work.'),
-    ('D-402', 'The inversion-append as a cap artifact, and the surviving bass promotion',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found', ''),
     ('D-403', 'The four best-different-root scans as four decisions, not one',
      'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
      'none-found', ''),
@@ -826,9 +713,6 @@ VERDICTS = [
      'as the owner of regional temporal context — an assignment to the live design, made in the '
      'decision itself rather than by a later ruling. OI-165 puts it the same way: D-404 defers rather '
      'than forbids.'),
-    ('D-405', 'Keeping the full ranked key resolve as a segmentation seed',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT'],
-     'none-found', ''),
     ('D-428', 'The owed iteration-vocabulary API renames',
      'false-negative-path', ['NOTE_SEAM_LEGACY', 'FIND_TEMPORAL_LEGACY', 'BATCH_LEGACY_DEFAULT'],
      'none-found',
@@ -950,16 +834,6 @@ VERDICTS = [
      'estimator handles the convention AT ALL is NOT settled by this entry and is not asserted here." '
      'Unsettled is not the same as not-transferred, so the weaker verdict is the honest one. The live '
      'open question this exposes is rowed at OPEN_ITEMS.md OI-357.'),
-    ('D-579', 'The anchor obligation: compute the chord ONCE against its region\'s FINAL notes, with '
-     'tonality an explicit input',
-     'none', ['BATCH_JOINT', 'RECORD_SECTION'],
-     'carried-elsewhere',
-     'Reach `none` on this pass\'s own D-215 precedent — the obligation was never executed on the path '
-     'it was written for, so nothing at HEAD implements the subject. Its two anchors are the '
-     'production-path anchors, and they are the evidence for the transfer as much as for the reach: '
-     'the record states the obligation "was met by replacement rather than by repair" — the live arm '
-     'is one joint decode over key, mode, chord and segmentation together (D-001), which is the '
-     'ordering this step asked for, reached by a different route.'),
     ('D-580', 'Two of the twelve post-scoring gates are purely-local and MUST survive the '
      'dissolution; the other ten dissolve',
      'false-negative-path', ['FM2_FLIP', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
@@ -997,6 +871,164 @@ VERDICTS = [
      'while the behaviour it characterizes is legacy. Under bound (i) a general condition no ruling '
      'carries is `none-found` — but a reader should not take the condition itself for legacy-scoped, '
      'and that is said here rather than folded into a verdict.'),
+]
+
+# ── RETIRED SUBJECTS — verdicts whose subject entry has left the LIVE register ───────────
+#
+# WHY THIS SECTION EXISTS (user, 2026-08-16, §6 kind 2 of
+# `cowork_rulings_2026_08_16_preparation_return.md`).  The ruled soft-discard retires a
+# register entry from the LIVE record into the data file's retired-entries block — retired,
+# never destroyed (#12), and individually revivable.  A verdict whose subject entry is retired
+# is no longer a verdict about the derived marked set, and this tool STOPS on authored verdicts
+# for entries that are NOT in that set, which is that guard working.  The ruled treatment is
+# neither to delete the verdict (#12 forbids it) nor to switch the check off (#19's
+# silent-failure direction): it MOVES here, verbatim, with the subject reference it was
+# authored against, and the check keeps watching the live marked set.
+#
+# NOTHING HERE IS RE-AUTHORED, RE-READ OR RE-GRADED.  Each row is the six-part tuple exactly as
+# it stood in VERDICTS.  Nothing counts it: no tally, no anchor-use check and no comparison
+# against the registered prediction reads this list.
+#
+# MEMBERSHIP IS DERIVED, NOT AUTHORED: `gen_retired_subject_moves.py` derives which verdicts
+# belong here from the data file's own retired block and re-verifies this section in BOTH
+# directions on every run.  A subject in both sections, in neither, or on the wrong side halts
+# that derivation.
+RETIRED_VERDICTS_RETIREMENT = (
+    "CC, dispatch `cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings "
+    "of 2026-08-16 — §3 the soft-discard, §4 its reach, §6 the STANDING checks' treatment. "
+    "Every subject entry below was SOFT-DISCARDED into the decisions register's "
+    "retired-entries block: a provenance verdict, not a judgment on soundness or usefulness. "
+    "Each verdict is moved here whole; if an entry is ever revived, its verdict is read back "
+    "into VERDICTS deliberately rather than resurrected by this copy."
+)
+
+RETIRED_VERDICTS = [
+    ('D-051', 'The legacy Layer-3 sequence decoder as the production key path',
+     'false-negative-path', ['L3_LEGACY_ENTRY', 'L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found',
+     'ARCHITECTURE.md:1414 cites it only as the precedent SHAPE for a supersession in fact, not as a '
+     'principle carried across.'),
+    ('D-052', 'The shared signature-read + declared-mode function (resolveKeySignatureContext)',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found',
+     'OBSERVATION, not a mark error: the joint fact adapter performs its OWN signature and '
+     'declared-mode read (JOINT_SIG_READ), so the "ONE shared function" property D-052 records does '
+     'not extend across the live path. Whether that is a #6 duplication of concern or two different '
+     'concerns is not settled here.'),
+    ('D-059', 'The legacy key window — 16 beats back, 8 forward, decayed',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found', ''),
+    ('D-060', 'The legacy chord analyzer\'s vertical-only boundary',
+     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'undetermined',
+     'The boundary rule is #7 applied to the legacy analyzer. Whether the live estimator inherits a '
+     'boundary statement of the same kind was not established this wave; no ruling names D-060.'),
+    ('D-061', 'The Baroque-calibrated gate thresholds and the never-widen rule',
+     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'undetermined',
+     'CLAUDE.md\'s gate-threshold policy states the same prohibition as a STANDING instruction, and '
+     'D-423 names it as one of three holding "for the whole programme" — while D-423 is itself '
+     'LEGACY-marked. Whether the prohibition reaches the live design is a ruling the record does not '
+     'contain.'),
+    ('D-062', 'Withholding progression signals during segmentation',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found', ''),
+    ('D-063', 'The tick-local path\'s cold-context contract',
+     'false-negative-path', ['FLAG_DEFAULT', 'NOTE_SEAM_RECORD', 'NOTE_SEAM_LEGACY', 'TESTS_CHORD'],
+     'none-found', ''),
+    ('D-064', 'The chord-scoring presets as a measurement-tool-only artifact',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT'],
+     'none-found',
+     'Production inference is preset-independent (CLAUDE.md gate block (A)), so the presets have no '
+     'production consumer at all — which is the same conclusion the entry\'s superseded-in-fact status '
+     'already records.'),
+    ('D-065', 'The deliberate look-ahead divergence between the measurement tool and the app',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'NOTE_SEAM_LEGACY'],
+     'none-found', ''),
+    ('D-089', 'The legacy 0.5 / 0.8 confidence exposure gates',
+     'false-negative-path', ['NOTE_SEAM_LEGACY', 'RECORD_EXPOSURE', 'BATCH_LEGACY_DEFAULT'],
+     'none-found',
+     'The record arm declares its own constant on its own gap scale (RECORD_EXPOSURE) rather than '
+     'reusing these, which is why the entry is superseded-by rather than transferred.'),
+    ('D-101', 'Restricting contextual inversion bonuses to major and minor candidates',
+     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found', ''),
+    ('D-102', 'Extending the inversion bonuses to augmented and half-diminished candidates',
+     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found', ''),
+    ('D-104', 'Conditioning the bass-is-root bonus on corroborating support',
+     'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found', ''),
+    ('D-214', 'The dim7 characteristic bonus as the rotation selector',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found', ''),
+    ('D-216', 'The stepwise-bass bonus\'s four load-bearing gates',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found', ''),
+    ('D-217', 'Suppressing every context-dependent bonus during segmentation',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found',
+     'The same rule as D-062 at a second home; its specification home is D-062 by the entry\'s own text.'),
+    ('D-218', 'Deriving every template-sized array extent from one constant',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found', ''),
+    ('D-219', 'The removal of Gates B/C/D and the standing bar on a temporal condition in the flip',
+     'false-negative-path', ['FM2_FLIP', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found',
+     'Split subject: the three removed gates are gone, but the flip the standing half constrains '
+     'survives at HEAD as FM2, so the prohibition governs code that exists.'),
+    ('D-235', 'The bound on what tonal-centre disambiguation may overturn',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found', ''),
+    ('D-243', 'The planning band for the vertical engine and the corpora excluded from it',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'L4_SPEC_DORMANT'],
+     'none-found',
+     'The subject is the engine the band bands. Status superseded-in-fact — the production surface is '
+     'measured on the robust unit, not this band.'),
+    ('D-346', 'The union-of-stretch-bests candidate set for the whole-run tonality decision',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found', ''),
+    ('D-350', 'The whole-run margin as the published key confidence',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found',
+     'Its citations outside the register mechanics are all tooling discussions of home classification, '
+     'not rulings about its content.'),
+    ('D-354', 'The exhaustion of the key/mode decoder\'s private settings',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT'],
+     'none-found', ''),
+    ('D-355', 'The scale-membership term as the identified key/mode lever',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found',
+     'The lever is a term in the legacy shared key scorer, and the wiring step it was to be applied at '
+     'is the legacy one.'),
+    ('D-356', 'The brittleness of the leading-note presence gate',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found', ''),
+    ('D-357', 'Reading notated spelling as tonality evidence at the function layer',
+     'none', ['L5_DIAG_ONLY', 'L3_SPEC_DORMANT'],
+     'none-found',
+     'Not built on either layer — the decision places the evidence at a layer that is itself dormant.'),
+    ('D-378', 'Re-deciding a chord under a different tonality, well-defined only on the decoder path',
+     'none', ['JKEY_NO_REEMIT', 'JKEY_WIRING_FLAG'],
+     'assigns-live-work',
+     'The naive re-emit is not built — the wiring leaves the chord as the production chord. The entry '
+     'names the decoder path as where the question IS well defined.'),
+    ('D-402', 'The inversion-append as a cap artifact, and the surviving bass promotion',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found', ''),
+    ('D-405', 'Keeping the full ranked key resolve as a segmentation seed',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT'],
+     'none-found', ''),
+    ('D-579', 'The anchor obligation: compute the chord ONCE against its region\'s FINAL notes, with '
+     'tonality an explicit input',
+     'none', ['BATCH_JOINT', 'RECORD_SECTION'],
+     'carried-elsewhere',
+     'Reach `none` on this pass\'s own D-215 precedent — the obligation was never executed on the path '
+     'it was written for, so nothing at HEAD implements the subject. Its two anchors are the '
+     'production-path anchors, and they are the evidence for the transfer as much as for the reach: '
+     'the record states the obligation "was met by replacement rather than by repair" — the live arm '
+     'is one joint decode over key, mode, chord and segmentation together (D-001), which is the '
+     'ordering this step asked for, reached by a different route.'),
 ]
 
 # ── A side finding this wave met while tracing the two production surfaces ───────────────
@@ -1132,8 +1164,19 @@ def main():
 
     # ── The authored table must cover the derived set exactly ────────────────────────────
     verdict_ids = [v[0] for v in VERDICTS]
+    retired_verdict_ids = [v[0] for v in RETIRED_VERDICTS]
+    retired_entry_ids = {r['the_entry']['id']
+                         for r in data.get('retired_entries', {}).get('entries', [])}
     if len(verdict_ids) != len(set(verdict_ids)):
         raise Stop('the authored verdict table has a duplicate id')
+    if len(retired_verdict_ids) != len(set(retired_verdict_ids)):
+        raise Stop('the RETIRED verdict table has a duplicate id')
+    # A verdict in BOTH sections would be two copies free to drift apart; a verdict in NEITHER is
+    # the ruled STOP — the check must not be able to lose a judgment because its subject went away.
+    both = sorted(set(verdict_ids) & set(retired_verdict_ids))
+    if both:
+        raise Stop('verdicts carried in BOTH the live table and RETIRED_VERDICTS: %s'
+                   % ', '.join(both))
     missing = [i for i in marked_ids if i not in set(verdict_ids)]
     if missing:
         raise Stop('derived entries with NO authored verdict (the tool will not guess one): %s'
@@ -1142,6 +1185,16 @@ def main():
     if extra:
         raise Stop('authored verdicts for entries that are NOT in the derived marked set: %s'
                    % ', '.join(extra))
+    # The retirement STOP in the OTHER direction, on the delegation bar's established pattern.
+    resurrected = [i for i in retired_verdict_ids if i in set(marked_ids)]
+    if resurrected:
+        raise Stop('RETIRED verdicts for entries that are in the derived marked set again: %s — '
+                   'read the verdict back into VERDICTS rather than relying on the retired copy'
+                   % ', '.join(resurrected))
+    orphaned = [i for i in retired_verdict_ids if i not in retired_entry_ids]
+    if orphaned:
+        raise Stop('RETIRED verdicts for entries the decisions register carries neither live nor '
+                   'retired, so the subject cannot be placed at all: %s' % ', '.join(orphaned))
 
     # ── Every anchor located at the object ───────────────────────────────────────────────
     anchors_out = {}
@@ -1215,6 +1268,26 @@ def main():
             'derivation': "every decision in backbone_decisions.json whose `legacy_subject` field is "
                           "truthy; no figure in the record is used or quoted (D-431, and OI-289's own "
                           "instruction to re-derive).",
+        },
+        'retired_subjects': {
+            'what_this_is': 'Verdicts whose subject entry was SOFT-DISCARDED out of the LIVE '
+                            'record on 2026-08-16 (the user\'s ruling §3, its reach §4, the '
+                            'STANDING checks\' treatment §6). Each is carried WHOLE, in the words '
+                            'it was authored in, and is neither re-read nor re-graded (#12). '
+                            'NOTHING COUNTS IT: the derived set, the tallies, the anchor-use '
+                            'check and the comparison against the registered prediction are the '
+                            'LIVE marked set\'s.',
+            'the_retirement': RETIRED_VERDICTS_RETIREMENT,
+            'membership_is_derived': 'tools/audit/decisions/gen_retired_subject_moves.py derives '
+                                     'which verdicts belong here from the data file\'s own '
+                                     'retired block and re-verifies this section in both '
+                                     'directions.',
+            'the_stop_in_the_other_direction': 'A retired subject that is in the derived marked '
+                                               'set again halts this tool until the verdict is '
+                                               'read back into VERDICTS deliberately.',
+            'count': len(retired_verdict_ids),
+            'verdicts': [{'id': v[0], 'subject': v[1], 'reachability': v[2], 'anchors': v[3],
+                          'transfer': v[4], 'note': v[5]} for v in RETIRED_VERDICTS],
         },
         'recorded_figures_that_do_not_match': figures,
         'when_the_set_last_changed': SET_HISTORY,

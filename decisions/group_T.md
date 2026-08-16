@@ -326,25 +326,6 @@
 
 **Provenance.** cowork_prune_pass_checklist.md:3 records it as a standing deferral in the user's own words ('back up now, tidy up files we don't want to publish later'), with the date and ratifier stated. Status is DEFERRED because the record says the pass has not run (:5 - 'Nothing here is to be acted on now - it is the to-do for the prune pass'). Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
 
-### D-259 — Every upstream contribution is checked against the distribution constraint before it is posted
-
-> ## 6. Standing guard (not a prune item — a permanent rule)
-> - **Any** upstream GitHub comment / PR / contribution must be checked against the CLAUDE.md distribution constraint
->   **before** posting. A draft carrying a fork-local-constrained patch (`cfc7eb5e39`, #9444) is a **HARD STOP** — never
->   post. Non-constrained reports (e.g. #24673) are the user's normal call.
-
-**In plain words.** Any comment, pull request or contribution aimed at the upstream MuseScore project is checked against the distribution constraint first. A draft carrying the fork-local import-fix patch is a hard stop and is never posted; a contribution carrying none of it is an ordinary decision for the user.
-
-**Why.** The instance that produced it is recorded in the same file (cowork_prune_pass_checklist.md:7-18): a draft comment for the upstream issue was written carrying the constrained patch's content, before the constraint existed, and survives in the fork's history. The rule generalizes the one-patch prohibition into a pre-post check on every upstream contribution.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_prune_pass_checklist.md:43-46`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** cowork_prune_pass_checklist.md:43 states it as 'a permanent rule' explicitly distinguished from the prune items around it; no date or ratifier is stated at this home. It operationalizes register entry D-197, the ratified distribution constraint, by naming the check that has to happen and when. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
-
 ### D-279 — The Stage-3 entry gate - seven conditions before any engagement wiring reaches production
 
 > **★ STAGE-3 ENTRY GATE (ratified 2026-07-10 with #17–#19; evidence `cowork_l1_l5_premise_debt_audit.md`).**
@@ -767,99 +748,6 @@
 
 **Provenance.** ★ SUPERSEDED INTO **D-172** ON 2026-08-04, on the user's ruling R3 (READ WAVE 6, dispatch `cc_instruction_reads_6.md` Task 3; `OPEN_ITEMS.md` OI-329). The 2026-08-04 re-homing below put this rule at `CLAUDE.md` principle #8, where **D-172** already stood as that principle's entry — so two live entries recorded ONE rule at ONE home, the duplication #6 forbids. The user ruled that **D-172 survives** and this entry is recorded superseded into it, with its former home and its former text preserved here (#12). **NOTHING ABOUT THE DECISION IS WITHDRAWN OR WEAKENED:** the rule is in force at D-172, at the full three-clause width, and this entry's 2026-06-25 user-ratification of that width is carried into D-172's own provenance so the record does not read as if the widened rule were decided on 2026-08-04. This supersession is a FILING act between two entries of the same rule, not a supersession of the rule by a later ruling. ★ RE-HOMED AND WIDENED 2026-08-04 on the user's ruling (READ WAVE 5, dispatch `cc_instruction_reads_5.md` §0a ruling R2): the rule is now `CLAUDE.md` principle #8 — the ONE home (#6) — and `cowork_l1l3_stabilization_plan.md` points at it and does not restate it. The verbatim and the home above are re-taken at the new home. **THE FORMER VERBATIM, PRESERVED (#12)** — quoted from `cowork_l1l3_stabilization_plan.md:14-22` as it stood until this date: "## Ordering principle — build-it-right BEFORE tune-precision (user-ratified 2026-06-25) Two phases, strictly in order: - **Build-it-right** — refactoring + architectural design + algorithmic completion, building each layer to use **all   available evidence** (the **maximal-information** principle — *including the notated spelling / tpc capability*). This   plan's Phases 1–4, then the L4/L5/L6 algorithmic builds. **No reactive precision-chasing here.** - **Tune-precision (Phase B — LAST, after the whole L1–L6 stack is built)** — the reactive *"actively understand why   inference isn't as good as we hoped"* work: the measured key-quality levers (scale-membership), the leading-tone   de-brittling, the L3 tpc-weight calibration. **No inference-problem-fixing happens until all refactoring,   architectural design, and algorithmic completion is done.**" **THE FORMER HOME, PRESERVED:** cowork_l1l3_stabilization_plan.md:14-22. **THE FORMER PROVENANCE SENTENCE, PRESERVED:** `cowork_l1l3_stabilization_plan.md`, the ordering plan for bringing Layers 1–3 to production shape before Layer 4 is built. Read in full by READ WAVE 4, 2026-08-04. The record marks the ordering principle *user-ratified 2026-06-25*. It is the layer-stack instance of `CLAUDE.md` principle #8 and of the standing issue-exhaustion-before-fix-design rule (**D-231**), stated for this plan a month before that rule was generalized. *(Nothing about the DECISION changed: it was user-ratified 2026-06-25 in the fuller three-clause form, and the 2026-08-04 act moved that form into the governing document and widened the narrower statement standing there. The date and ratifier fields are unmoved, because a re-homing supplies neither.)*
 
-### D-558 — An unhit branch is routed one of three ways, and defensive can't-happen code is ANNOTATED, never deleted — removing safety code to lift a coverage number is forbidden
-
-> - **Resolve the staged scaffolding + dead branches (audit Q5 + the branch-coverage triage):** `chordslicedecoder`,
->   `redecodeRange`, `tonicizationlabeler`, and the inert `DecodeQualityLevel::Normal/Deep` each reach a **wired-or-removed**
->   verdict (decided by the Phase-5b build). The branch-coverage map's unhit directions are routed **three ways**: *add a
->   test* → fold back to the coverage backfill; *wire-or-remove* → here; *exclude as intentional-unreachable* → defensive
->   "can't-happen" code is **annotated, never deleted** (removing safety code to lift a coverage number is forbidden).
-
-**In plain words.** Where a branch of the code is never exercised by the tests, there are exactly three lawful answers: write a test for it; decide the code should be wired up or removed; or mark it as deliberately unreachable safety code and exclude it from the count. Deleting a guard against a case that cannot happen, in order to make the coverage figure look better, is not one of them.
-
-**Why.** Stated with the rule as a prohibition rather than a preference. The coverage figure is a measurement of the tests, so improving it by removing code measures nothing and costs the guard.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `cowork_l1l3_stabilization_plan.md:158-162`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_l1l3_stabilization_plan.md`, the ordering plan for bringing Layers 1–3 to production shape before Layer 4 is built. Read in full by READ WAVE 4, 2026-08-04. Stated in the plan's Phase-6 seal, where the branch-coverage triage is routed. The record states no date and no ratifier for this clause.
-
-### D-559 — Movement in the corpus numbers is classified BY PHASE: in the foundation phases any movement at all is a bug and a STOP, in the build phases it is gated, and only the last phase tunes
-
-> - **Three movement classes, by phase:** **Phases 1–4 do not move the numbers** (1–3 byte-identical; 4 BIR-flat, term
->   defaulted) — any movement there is a bug, STOP. **Phases 5b–8 are behaviour-changing build-it-right** (engagement,
->   legacy retirement, the L4/L5/L6 builds): they run under the **two-tier BIR gate** — **zero** class-(b)
->   (pitch-class-decidable) regressions ever; only small, every-case-verified class-(a) symmetric churn is tolerated.
->   This is *correctness/architecture* movement, **not** precision-chasing. **Phase B is the only precision-tuning** — the
->   reactive "better the inference" work, last, over the whole sealed stack.
-
-**In plain words.** Which phase a change belongs to decides what a change in the measured numbers means. The foundation phases are supposed to leave the output identical, so any movement there is a defect to investigate rather than a result to accept. The building phases do change behaviour and run under the regression gate. Only the final phase is allowed to be about improving the numbers.
-
-**Why.** It makes the same measurement mean different things at different times deliberately, so that a byte-identity guard cannot be quietly reinterpreted as an acceptable small regression. The plan states the consequence in terms: if the foundation phases move a number, do not refresh the pinned outputs to make it agree.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `cowork_l1l3_stabilization_plan.md:218-223`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_l1l3_stabilization_plan.md`, the ordering plan for bringing Layers 1–3 to production shape before Layer 4 is built. Read in full by READ WAVE 4, 2026-08-04. Stated in the plan's own Notes. The record states no date and no ratifier for this clause; the ordering it rests on is **D-557**.
-
-### D-561 — A probe arm may not carry a component already measured net-harmful — it runs with that component disabled, and the verdict declares what it therefore does not exercise
-
-> | G3 | **Selection:** the E0 chain runs the AS-BUILT resolver — progression-first + `attemptFineGrainOverride` UNCONDITIONAL (the Tier-1 traps, `functionresolver.cpp:221-246/529-531`) — NOT the intended selection (arc #9) | the override is measured net-harmful (−756): running it in the probe poisons the rebuilt arm with a known-bad component | **the probe arm must run with the override DISABLED** (the Phase-3 finding: "best measurable θ disables it") and must declare that the channel re-ordering is NOT exercised — the probe measures *decoder carry + argmax (+key/cadence arms as-built minus override)*, a LOWER BOUND on the intended selection |
-
-**In plain words.** When a measurement compares a rebuilt path against the existing one, the rebuilt side is not run with a part that has already been measured to make things worse. That part is switched off for the measurement, and the report says plainly which behaviour was consequently never tested — so the result is read as a lower bound on the intended design rather than as a measurement of it.
-
-**Why.** Stated with the gap it addresses: running the known-bad component would poison the arm under test, so a loss could not be attributed. The declaration half is what stops the lower bound being read as the thing itself.
-
-**Status.** LIVE · decided 2026-07-10 · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `cowork_eg2_scoping.md:47`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_eg2_scoping.md`, the first work item opened under the Premise Gate (Cowork, 2026-07-10, session 36). Read in full by READ WAVE 4, 2026-08-04. Recorded as gap G3 of the document's proxy-to-target ledger, which #17(d) requires each such gap to be. The record states no ratifier.
-
-### D-562 — Where a measurement carries a declared handicap, the verdict is read ASYMMETRICALLY and the asymmetry is declared before the measurement runs
-
-> | G1 | **Key feed:** E0 gives the decoder ONE home key (`inferLocalKey[0]`, `cc_e0_fullspine_report.md:51`); E4 feeds per-slice L3 keys | **Handicaps the rebuilt path on modulating pieces** — a rebuilt WIN under G1 is strong evidence; a LOSS is ambiguous (could be the handicap) | asymmetric read of the verdict, declared up front |
-
-**In plain words.** If the arm under test is deliberately given less than it will eventually have, then a win is strong evidence and a loss proves little, because the loss might be the handicap. Which way the result may be read is written down before the measurement, not decided once the number is in.
-
-**Why.** The declaration's timing is what makes it a rule rather than an excuse: an asymmetry argued after an unwelcome result is indistinguishable from special pleading, and the Premise Gate (#17b) requires the prediction to be recorded before measuring.
-
-**Status.** LIVE · decided 2026-07-10 · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `cowork_eg2_scoping.md:45`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_eg2_scoping.md`, the first work item opened under the Premise Gate (Cowork, 2026-07-10, session 36). Read in full by READ WAVE 4, 2026-08-04. Recorded as gap G1 of the proxy-to-target ledger, whose own column reads *asymmetric read of the verdict, declared up front*. The record states no ratifier.
-
-### D-563 — The funnel's stages run strictly cheapest-first, and the plan is committed with its prediction section EMPTY before any measurement exists
-
-> **Strictly sequential, per the #17 funnel: (1) commit this doc with §5 EMPTY (pre-registration —
-> the plan is provenance-stamped before any measurement, #16/#17(b)); (2) desk sim (§4) — the
-> cheapest stage runs first and may kill or reshape the probe before the establishment re-dumps
-> are paid for; (3) instrument establishment (§3) only if the desk sim's filled predictions
-> warrant a probe; (4) probe spec, then run.** The probe itself is read-only (explorational
-
-**In plain words.** The order is fixed: first commit the plan itself, with the predictions deliberately blank, so that the plan is time-stamped before anything is measured; then run the paper simulation, which is the cheapest stage and may kill or reshape the measurement before the expensive preparation is paid for; then establish the measuring tool, but only if the simulation's filled-in predictions still warrant it; then specify and run the measurement.
-
-**Why.** Two principles combined and stated as one order: reproducibility (#16) requires the plan to be stamped before any measurement, and the Premise Gate's funnel (#17) requires each stage to kill bad premises before the next one pays for them. The record calls the order a correction made at pre-registration.
-
-**Status.** LIVE · decided 2026-07-10 · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `cowork_eg2_scoping.md:147-151`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_eg2_scoping.md`, the first work item opened under the Premise Gate (Cowork, 2026-07-10, session 36). Read in full by READ WAVE 4, 2026-08-04. Recorded as the document's §6, headed *Sequencing (corrected at pre-registration)*. The record states no ratifier.
-
 ### D-566 — STRUCTURAL fixes come before correctness fixes: never tune an inference decision while a responsibility is still in the wrong place
 
 > **★ SEQUENCING GATE (user, 2026-06-17): STRUCTURAL fixes BEFORE inference.** This audit is QA on the
@@ -945,46 +833,6 @@
 
 **Provenance.** `docs/stage4b_design.md`, the Stage-4b design implementing the user's ratified Stage-4 redirect; the staged approach was chosen by the user 2026-06-14. Read in full by READ WAVE 4, 2026-08-04. **Its subject is the LEGACY key path** (`keymodeanalyzer` / `keyresolver`), which the joint estimator replaced on both surfaces. Recorded as disposition OQ6 of the document's open-question table, and confirmed in its §6 ratification asks. Like **D-573** this is a measurement rule rather than a scoring term and is not legacy-scoped. It stands beside the standing requirement that a fit declares its held-out data and capacity budget BEFORE fitting (#20) — that rule fixes what is declared early, this one fixes what may not be.
 
-### D-577 — An audit verdict distinguishes DESIGN debt from MIGRATION debt — the wrong cut, versus the right cut whose legacy is not yet retired
-
-> dirs) and `src/composing/tests/`. Built from three parallel source audits, with every load-bearing claim re-verified
-> by Cowork at the file. Each finding is cited; verdicts distinguish **design debt** (wrong cut) from **migration debt**
-> (right cut, legacy not yet retired) — almost everything here is the latter.
-
-**In plain words.** When an audit finds the code departing from the intended architecture, it says which of two things it found: that the division of responsibilities is itself wrong, or that the division is right and the old implementation simply has not been removed yet. The two need entirely different work and must not be reported as one kind of finding.
-
-**Why.** The distinction earns its place in the audit's own result: almost every deviation it found was the second kind, so a report without the distinction would have read as an indictment of the architecture when the architecture was sound and the schedule was the issue. The audit states that conclusion as its through-line.
-
-**Status.** LIVE · decided 2026-06-26 · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `cowork_l1l4_architecture_audit.md:13-15`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_l1l4_architecture_audit.md`, the read-only L1–L4 audit of 2026-06-26. Read in full by READ WAVE 4, 2026-08-04. Recorded in the document's own status banner as the vocabulary its verdicts use. The record states no ratifier.
-
-### D-578 — An orphan claim requires a WHOLE-REPOSITORY search; a per-directory one produces false orphans
-
-> - **Orphaned test fixtures — CORRECTED 2026-06-26 (the original list was partly wrong; CC re-verified whole-repo).**
->   Confirmed orphan, zero references: **only** `chord_analysis_test.{musicxml,_expected.json,py}` (literal "content
->   moved" stubs). **NOT orphans:** `mono_smoke_test.musicxml` is loaded and asserted by
->   `tools/test_batch_analyze_regressions.py:117,137` *(Cowork-verified)* — the original audit used a negative-grep
->   scoped to `src/composing/tests/` and missed the `tools/` caller; `data/solid theory.musicxml` is provenance-
->   referenced in `note_model_tests.cpp` comments (not a clean orphan). Lesson: orphan claims need a **whole-repo** grep,
->   not a per-dir one.
-
-**In plain words.** Saying that a test fixture or a file is unused is a claim about the entire repository, so it has to be checked against the entire repository. Checking only the directory the file lives in reports files as unused when the thing using them lives somewhere else.
-
-**Why.** Measured on this audit's own error: a search scoped to one test directory reported a fixture as an orphan when a script in the tools directory loads and asserts it, and a second file was called an orphan while being referenced from a test's comments. The audit records the correction and states the lesson in its own words.
-
-**Status.** LIVE · decided 2026-06-26 · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `cowork_l1l4_architecture_audit.md:110-116`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_l1l4_architecture_audit.md`, the read-only L1–L4 audit of 2026-06-26. Read in full by READ WAVE 4, 2026-08-04. Recorded as the correction to the audit's own orphaned-fixture finding, with the two false orphans named. The record states no ratifier. It is the search-scope instance of the general defect the catalog carries as scope-assumed enumeration (`DEFECT_TYPES.md` DT-26).
-
 ### D-592 — What FINISHED means for a layer, as the user's standing bar: restructured, built, dead code resolved, legacy retired, regression- and reachable-branch-tested, specs synced — nothing left
 
 > **Purpose.** Enumerate **everything** still outstanding on L1–L4 so "finished" is well-defined and nothing falls
@@ -1048,28 +896,6 @@
 **Home.** `docs/layer_audit_plan.md:11-17`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `docs/layer_audit_plan.md`, the combined layer-audit plan. Read in full by READ WAVE 5, 2026-08-04. Marked *user, 2026-06-17* in the plan's own header block. It states for the AUDIT what the grading conventions in `CLAUDE.md` gate block (A) state for the measurement — the human annotation is the only ground truth — and it is the standard the obligations this plan produced were written against. The algorithmic second opinion it names beside the human annotation is a noise filter under that convention, not a standard of correctness.
-
-### D-597 — The layer audit runs in two phases in a fixed order — every layer audited ALONE first, the architecture reviewed second on the accumulated findings
-
-> - **Phase 1 — per-layer isolation audits.** Each layer audited alone: state its single responsibility, audit
->   correctness + completeness against THAT responsibility only (inputs assumed correct, consumers ignored),
->   pin gaps as that layer's obligations. Order within phase 1 is pure prioritization (each audit is
->   independent) — sequenced by value below, but any order is valid.
-> - **Phase 2 — architecture review.** AFTER phase 1, using its accumulated findings: are these the *right*
->   layers, is any responsibility split / duplicated / misplaced across layers, and do the layers depend +
->   compose correctly (feed-forward vs circular, the seams, the bolt-ons). Phase 1's depth feeds phase 2.
-
-**In plain words.** Each stage of the analysis is examined on its own first: what is it responsible for, does it do that correctly, does it cover every case its responsibility implies — with its inputs taken as given and its consumers ignored. Only afterwards is the question asked whether these are the right stages at all and whether they fit together. The order matters between the two; inside the first it does not.
-
-**Why.** Stated with the decision: phase 1's depth is what phase 2 reasons from — whether a responsibility is split or misplaced is only visible once each layer's own responsibility has been stated and tested. Interaction gaps are explicitly excluded from phase 1 for the same reason.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `docs/layer_audit_plan.md:23-29`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `docs/layer_audit_plan.md`, the combined layer-audit plan. Read in full by READ WAVE 5, 2026-08-04. Recorded in the plan's §1. Distinct from **D-552**, which fixes the order of the TWO RUNS of a single audit (blind enumeration first, then the contract-driven pass); this fixes the order of the two PHASES of the layer-audit programme. The record states neither a date nor a ratifier for this item.
 
 ### D-599 — Adjudication method: apply the standing principles FIRST, and only where they do not decide is there a genuine user choice — what remains for the user is ratifying the derivation, not picking an option
 
@@ -1180,102 +1006,6 @@
 **Home.** `cowork_tpc_capability_design.md:53-58`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `cowork_tpc_capability_design.md` §2, marked *scope ratified (option B, 2026-06-26)* in the document's own status block. Read in full by READ WAVE 6, 2026-08-04. It qualifies **D-172** / `CLAUDE.md` #8 at the seam where the two phases meet: the ordering defers tuning, and this says a term whose only content is its tuning defers with it rather than landing inert ahead of it. Distinct from **D-558**, which forbids DELETING an unexercised branch; this governs whether one is created.
-
-### D-627 — The CONTRACT ships first behind a correct byte-identical interim; the efficiency is a separate deferred step that never blocks the layers above it
-
-> - **1a — the contract, with an interim that is correct and byte-identical.** `build(selection)` and `extend` present
->   the full bounded-context API, but **internally may still walk the whole score and retain the notes overlapping the
->   loaded span**, and **rebuild the static index** over the loaded set on build and on each extend. This is trivially
->   correct (the whole-score walk already captures every note, including sustained-in ones — Section 4 is free), it is
->   **byte-identical to today on the degenerate case** (selection = score → retain everything → identical), and it gives
->   the layers above the real API to build against. Performance is *not* improved yet — that is the point: ship the
->   contract, not the optimisation.
-> - **1b — the efficiency, byte-identical, DEFERRED (can land after L4).** Replace the interim with (i) a walk scoped to
->   the loaded span plus a leading-edge "sounding-at-`loadedStart`" lookup (Section 4), and (ii) an **extensible index**
->   (Section 5). **Gate:** byte-identical to 1a, and `index ≡ linear scan` over extended spans. Because 1b changes no
->   behaviour, it is purely a performance step and never blocks the layers above.
-
-**In plain words.** The interface a stage promises is delivered first, with an implementation behind it that is obviously correct and produces exactly today's answers even though it does no less work than before. The faster implementation is a separate step, judged only on producing the same bytes, and because it changes nothing it can be done at any time without holding up the stages built on top.
-
-**Why.** The reason is stated with the split and it is a risk argument: the genuinely hard parts — capturing a note that sounds across the edge of the loaded span without walking the whole score, and an index that accepts insertions — are isolated from the contract, so the foundational correction lands immediately while the tricky code waits behind a byte-identity gate. It is the same sequencing the make-it-work-first rule states generally: work that only makes the same computation faster is exhausted last, and never before the contract it serves exists.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `cowork_layer1_extend_design.md:60-70`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_layer1_extend_design.md` §3, the Layer-1 build-over-a-selection and extend detail design, DRAFT for sign-off. Read in full by READ WAVE 6, 2026-08-04. The record shows the split was carried out — the register already carries the as-built note that the span-scoped walk is what remains — and the same two-level shape is used one layer up for the incremental re-slice. The record states neither a date nor a ratifier for this item.
-
-### D-633 — A cause-classifier is established BEFORE its results are read — its totals must reconcile exactly with the established agreement column, and every failing run gets exactly one cause from a closed list
-
-> 2. A classifier over the existing dumps and the ground truth: every
->    key-disagreeing run labeled with exactly one primary cause from the closed list
->    above, plus the carried/absent and outranked flags and the leading-tone
->    presence test. No new production output surface — read what is already dumped.
-> 3. Establishment before reading results: the classifier's totals must reconcile
->    exactly with the established key-agreement column (classified failing duration
->    equals the reference failing duration, per preset), and grading coverage is
->    reported beside every figure (the abstention caveat, row OI-33).
-
-**In plain words.** Before any conclusion is drawn from a tool that sorts failures into causes, the tool has to account for exactly the amount of failure the established measurement reports — no more and no less. Each failing stretch gets one cause and only one, chosen from a list fixed in advance, and how much of the material could be graded at all is reported next to every figure.
-
-**Why.** It is the establishment principle applied to a diagnostic rather than to an inference: a classifier whose totals do not reconcile with the measurement it decomposes is unfalsified rather than established, and its shares would be shares of an unknown denominator. The single-cause rule and the closed list are what make the shares add up at all; the coverage report is the abstention convention, without which a share can be moved by declining to grade.
-
-**Status.** LIVE · decided 2026-07-12 · ratifier not stated
-
-**Home.** `cowork_key_mode_inference_diagnosis.md:87-94`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_key_mode_inference_diagnosis.md` §3, the Premise-Gate opening for the key/mode diagnosis, written 2026-07-12 with its predictions registered before any measurement (#17b). Read in full by READ WAVE 6, 2026-08-04. The document is otherwise a registered PREDICTION rather than a decision surface — its candidate causes carry written quantitative ranges precisely so they can fail — and this is the one clause in it that binds any future diagnostic of the same shape. The record states no ratifier.
-
-### D-634 — Where the specification and the code diverge on a music-theoretic question, THE SPECIFICATION IS THE CORRECT REFERENCE and the code goes on the build backlog
-
-> - **D1 — membership cue-combination.** The **spec is the correct reference**, not the code. Music-theoretically the
->   code's `weak OR stepwise → NCT` is wrong in two quadrants: it marks a *weak leap* (an arpeggiated extension) a
->   non-chord tone, and it marks *every* strong-stepwise note a non-chord tone rather than only the accented passing
->   tone over a clear prevailing chord. The spec's `weak AND stepwise` rule plus its two hard cases is the right
->   behaviour. → **L4 code backlog; no spec change.**
-
-**In plain words.** When the written design and the built code disagree about a question of music theory, the design is treated as right and the code as owing a fix — not the other way round. The disagreement is written down as work, and the design is left alone.
-
-**Why.** Decided at the music rather than by precedence, which is what makes it a disposition rather than a preference: the code's rule was traced through the cases it decides and found wrong in two of the four, marking an arpeggiated leap a decoration and marking every accented step one regardless of the harmony under it. The design's rule handles both. The second finding disposed the same way is sharper still — the built penalty charges the opposite of what the design specifies, so it cannot make the discrimination the design exists for.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `cowork_delta_check_dispositions.md:21-25`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_delta_check_dispositions.md`, the Cowork verification and per-layer disposition of the Layer-1-to-Layer-4 specification-versus-implementation delta check. Read in full by READ WAVE 6, 2026-08-04. Both dispositions were verified at the source by Cowork directly rather than taken from the report they respond to. ⚠ The code they dispose is the DORMANT Layer-4 decoder, which the document states affects no shipped output. The record states neither a date nor a ratifier. It is the resolution rule the doc-sync principle #10 leaves open: sync says the two must agree, this says which one moves.
-
-### D-636 — The per-step build method: INVESTIGATE, BUILD, VERIFY, ASSESS-FOR-AMENDMENT — no step starts before the prior step's assessment, and a surprise pauses the sequence
-
-> **Method per step (non-negotiable):** **INVESTIGATE (CC, read-only) → BUILD → VERIFY (Cowork, by-sha + source) →
-> ASSESS-FOR-AMENDMENT.** No step starts before the prior step's assessment is in. A surprising finding pauses the
-> sequence and re-plans — that is the point of going incremental.
-
-**In plain words.** Each step of a staged build runs in the same four parts: find out what is actually there, build, check the result at the committed code rather than at a report, and then ask whether what was learnt changes the steps still to come. The next step waits for that last part, and anything surprising stops the sequence rather than being worked around.
-
-**Why.** The reason is stated with the method: going incrementally buys nothing unless each step's findings can amend the steps after it, so the assessment is what the increments are for. Its worth is on the record in the same plan — the grounding step measured the new path fifteen points behind the old and located the whole gap in one unbuilt mechanism, which re-ordered the remaining steps to attack that mechanism first.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `cowork_phase5b_l4_build_plan.md:8-10`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_phase5b_l4_build_plan.md`, the Phase-5b incremental Layer-4 build plan. Read in full by READ WAVE 6, 2026-08-04. Marked *non-negotiable* in the plan's own header block. It is the staged-build instance of the surprise-is-a-STOP rule (#13) and of the funnel #17 states — desk-simulate, probe, build — with the addition that names it: the assessment step, which is what lets a finding amend the plan rather than only the code. The record states neither a date nor a ratifier.
-
-### D-637 — Engaging a different DECOMPOSITION will move the corpus output — that movement is the gated behaviour change, not a byte-identity violation
-
-> The legacy path is **per-region** (`greedyExpandSegmentation` + `analyzeChord` + `ChordPathDecoder`). The new path is
-> **per-slice** (`changePointSlices` + `chordslicedecoder`). They are *different decompositions*, so engaging the new path
-> **will move the corpus output** — that movement is the behaviour change we gate, not a byte-identity violation. We build
-> and prove the new path **before** any switch.
-
-**In plain words.** The old and new ways of analysing chords divide the music up differently, so switching to the new one is bound to change the answers. That change is the thing the regression gate exists to judge; it is not a sign that something went wrong with a change meant to produce identical output. Until the switch, the new path is built beside the old and produces nothing.
-
-**Why.** It follows from what the two paths ARE, and the plan states it so the gate is not misread: one groups the music into regions and the other into change-point slices, so identical output would be a coincidence rather than a target. Naming the distinction in advance is what keeps a byte-identity gate meaningful for the increments that precede the switch — each of those really is byte-identical, because the new path is dormant.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `cowork_phase5b_l4_build_plan.md:18-21`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `cowork_phase5b_l4_build_plan.md`, the incremental shape section. Read in full by READ WAVE 6, 2026-08-04. It is the distinction the migration-state principle #23 needs to be operable — a declared parallel build produces two paths, and the switch between them is a ratified behaviour change rather than a broken invariant. The same shape governed the notation switch, whose diffs were reconciled against classified evidence rather than expected to vanish. The record states neither a date nor a ratifier.
 
 ### D-640 — A count of outstanding work is derived from state at HEAD, never taken from the membership of a list of asks or from an authored disposition beside a row
 

@@ -108,7 +108,7 @@
   "the_kind_tally": {
    "ENUMERATOR": 7,
    "GENERATED-BUT-NOT-ENUMERATING": 14,
-   "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY": 464,
+   "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY": 465,
    "KIND-UNDERIVABLE": 8
   },
   "★_the_KIND_UNDERIVABLE_list_returning_to_the_user": {
@@ -257,9 +257,9 @@
   "what_the_fourth_bucket_is": "A holder that is none of the ruling's three kinds — chiefly a DATA record (`.json`, `.csv`, a text dump) that names a flagged file without reading it as a tool and without citing it as prose. It is published rather than forced into one of the three, because forcing it would inflate the kind a reader is most likely to take for a real dependency.",
   "the_holder_kind_tally": {
    "a tool reading the file by name": 82,
-   "a mandatory-read or boot listing": 27,
-   "a prose citation": 343,
-   "outside the three kinds the ruling names": 1201
+   "a mandatory-read or boot listing": 28,
+   "a prose citation": 346,
+   "outside the three kinds the ruling names": 1210
   },
   "holders_by_kind": {
    "a tool reading the file by name": [
@@ -842,6 +842,12 @@
      "the_line_the_naming_was_found_on": "- Genuine BIR=true characterization: `tools/iter63_genuine6_characterization.txt`"
     },
     {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "decisions/group_Q.md",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "...Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated con..."
+    },
+    {
      "flagged_file": "cowork_scratch_2026_08_08/README.md",
      "held_by": "OPEN_ITEMS.md",
      "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
@@ -1241,12 +1247,6 @@
     },
     {
      "flagged_file": "tools/build_score_census_registry.py",
-     "held_by": "cc_corpus_wave3_report.md",
-     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-     "the_line_the_naming_was_found_on": "| 1 | registry `wave3_sources` + provenance | `63de0df27a` | `tools/build_score_census_registry.py`, `tools/score_census_registry.json`, `tools/REPRODUCIBILITY.md`, `docs/score_inventory.m..."
-    },
-    {
-     "flagged_file": "tools/build_score_census_registry.py",
      "held_by": "docs/score_inventory.md",
      "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
      "the_line_the_naming_was_found_on": "`tools/build_score_census_registry.py`. Pins + reproduction are in"
@@ -1637,12 +1637,6 @@
     },
     {
      "flagged_file": "tools/REPRODUCIBILITY.md",
-     "held_by": "cc_corpus_wave3_report.md",
-     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-     "the_line_the_naming_was_found_on": "(`total=78`, two runs byte-identical). Census + REPRODUCIBILITY.md + score_inventory.md updated."
-    },
-    {
-     "flagged_file": "tools/REPRODUCIBILITY.md",
      "held_by": "cc_instruction_acquisition_round.md",
      "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
      "the_line_the_naming_was_found_on": "3. `tools/REPRODUCIBILITY.md` (`corpora/gt|plain/` sections) + `cowork_score_census.md` §3/§4/§8c (intake"
@@ -1880,6 +1874,48 @@
      "held_by": "docs/score_inventory.md",
      "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
      "the_line_the_naming_was_found_on": "full inventory in `cc_corpus_wave2_report.md`."
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "STATUS_ARCHIVE.md",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "...rk files. **★ WAVE 3 LANDED + COWORK-VERIFIED AT OBJECTS + RATIFIED (same day):** report `cc_corpus_wave3_report.md` (312 lines, read in full); commits verified (`63de0df27a` registry+provenance, exactly 4..."
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "cc_instruction_acquisition_round.md",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "rule: full N1–N20 needs note per row) + `cc_corpus_wave3_report.md` §0 (the row conventions)."
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "cc_instruction_corpus_wave3.md",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "6. Report `cc_corpus_wave3_report.md` (force-added per the `/cc_*.md` convention): per-source results, the"
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "cc_instruction_wave3_addendum.md",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "2. `cc_corpus_wave3_report.md` — the wave this addendum extends (esp. §6 the WiR/KMT correction, §7 the"
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "cowork_score_census.md",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "...ED by enumerating `humdrum-tools/humdrum-data` = 71 repos/16 orgs (cloned nothing) — see `cc_corpus_wave3_report.md`] |"
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "docs/score_inventory.md",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "full inventory + paper-claim verification + the gated/unavailable/enumerated records in `cc_corpus_wave3_report.md`"
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "ratification_surfaces/cowork_decisions_pending_ratification_7.md",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "...Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated con..."
     },
     {
      "flagged_file": "cc_direct_metric_search_report.md",
@@ -2645,12 +2681,6 @@
     },
     {
      "flagged_file": "cowork_scratch_2026_08_08/README.md",
-     "held_by": "cc_corpus_wave3_report.md",
-     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-     "the_line_the_naming_was_found_on": "contains **only `README.md`** at HEAD *and in its entire history* (`git log --all` — the 41 MusicXML + analysis file..."
-    },
-    {
-     "flagged_file": "cowork_scratch_2026_08_08/README.md",
      "held_by": "cc_instruction_design_pass_commit.md",
      "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
      "the_line_the_naming_was_found_on": "Task 2), possibly small residual diffs in `docs/research_papers/README.md` / `BIBLIOGRAPHY.md`"
@@ -2804,12 +2834,6 @@
      "held_by": "buildscripts/ci/crashdumps/README.md",
      "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
      "the_line_the_naming_was_found_on": "...rash dumps we use [Crashpad](https://chromium.googlesource.com/crashpad/crashpad/+/master/README.md)."
-    },
-    {
-     "flagged_file": "cowork_scratch_2026_08_11/README.md",
-     "held_by": "cc_corpus_wave3_report.md",
-     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-     "the_line_the_naming_was_found_on": "contains **only `README.md`** at HEAD *and in its entire history* (`git log --all` — the 41 MusicXML + analysis file..."
     },
     {
      "flagged_file": "cowork_scratch_2026_08_11/README.md",
@@ -6588,6 +6612,60 @@
      "the_line_the_naming_was_found_on": "\"annotation_beds (Wave-2, cc_corpus_wave2_report.md): expert LABEL layers over scores (schema/texture) or a standalone phrase-marked melody b..."
     },
     {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "tools/audit/decisions/backbone_decisions.json",
+     "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
+     "the_line_the_naming_was_found_on": "...\"Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated con..."
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "tools/audit/decisions/cluster_dispositions.csv",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "...12,,cc_reports,heading;paragraph,cc_acquisition_round_report.md;cc_corpus_wave2_report.md;cc_corpus_wave3_report.md;cc_stage5_phase0_report.md;cc_stage5_phase1_report.md"
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "tools/audit/decisions/cluster_dispositions.json",
+     "caller_kind": "KIND-UNDERIVABLE",
+     "the_line_the_naming_was_found_on": "\"cc_corpus_wave3_report.md\","
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "tools/audit/decisions/decision_clusters.csv",
+     "caller_kind": "KIND-UNDERIVABLE",
+     "the_line_the_naming_was_found_on": "DC-05309,1-text,1,1,1,,,,,,DH-05542,cc_corpus_wave3_report.md,15,Claude Code session report or dispatch (a restatement by construction),,,DH-05542,"
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "tools/audit/decisions/decision_clusters.json",
+     "caller_kind": "KIND-UNDERIVABLE",
+     "the_line_the_naming_was_found_on": "\"cc_corpus_wave3_report.md\","
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "tools/audit/decisions/snapshot_2026-08-07_pre_oi333_repair/cluster_dispositions.csv",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "...12,,cc_reports,heading;paragraph,cc_acquisition_round_report.md;cc_corpus_wave2_report.md;cc_corpus_wave3_report.md;cc_stage5_phase0_report.md;cc_stage5_phase1_report.md"
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "tools/audit/decisions/snapshot_2026-08-07_pre_oi333_repair/cluster_dispositions.json",
+     "caller_kind": "KIND-UNDERIVABLE",
+     "the_line_the_naming_was_found_on": "\"cc_corpus_wave3_report.md\","
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "tools/audit/decisions/snapshot_2026-08-08_pre_home_classification_apply/backbone_decisions.json",
+     "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+     "the_line_the_naming_was_found_on": "...\"Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated con..."
+    },
+    {
+     "flagged_file": "cc_corpus_wave3_report.md",
+     "held_by": "tools/score_census_registry.json",
+     "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
+     "the_line_the_naming_was_found_on": "\"wave3_sources (Wave-3, cc_corpus_wave3_report.md): jazz/pop GT (CoCoPops, OpenEWLD, WJD native, ChoCo jazz-corpus/weimar slices) + cadence..."
+    },
+    {
      "flagged_file": "cc_direct_metric_search_report.md",
      "held_by": "tools/audit/decisions/cluster_dispositions.csv",
      "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
@@ -10195,7 +10273,7 @@
    "caller": "tools/audit/retirement_caller_check.json",
    "caller_kind": "ENUMERATOR",
    "holder_kind_if_it_holds": null,
-   "flagged_files_it_names": 408,
+   "flagged_files_it_names": 409,
    "share_of_the_flagged_population": 0.9903,
    "why_this_kind": "its generator enumerates the tracked tree, so it names paths because they exist rather than because anyone chose them: tools/audit/gen_retirement_caller_check.py — its own source enumerates the tracked tree; tools/audit/gen_retirement_caller_check.py — its own source enumerates the tracked tree",
    "producers_found": [
@@ -10215,8 +10293,8 @@
    "caller": "tools/audit/artifact_inventory.json",
    "caller_kind": "ENUMERATOR",
    "holder_kind_if_it_holds": null,
-   "flagged_files_it_names": 283,
-   "share_of_the_flagged_population": 0.6869,
+   "flagged_files_it_names": 284,
+   "share_of_the_flagged_population": 0.6877,
    "why_this_kind": "its generator enumerates the tracked tree, so it names paths because they exist rather than because anyone chose them: tools/audit/gen_artifact_inventory.py — its own source enumerates the tracked tree; tools/audit/gen_artifact_inventory.py — its own source enumerates the tracked tree",
    "producers_found": [
     {
@@ -10235,8 +10313,8 @@
    "caller": "ratification_surfaces/cowork_artifact_inventory_ruling_surface.md",
    "caller_kind": "ENUMERATOR",
    "holder_kind_if_it_holds": null,
-   "flagged_files_it_names": 183,
-   "share_of_the_flagged_population": 0.4442,
+   "flagged_files_it_names": 184,
+   "share_of_the_flagged_population": 0.4455,
    "why_this_kind": "it DECLARES ITSELF rendered from an artifact that is itself an enumeration of the tracked tree — the ruling's *or a surface rendered from one* limb, taken from the surface's own words: tools/audit/artifact_inventory.json",
    "producers_found": [
     {
@@ -10255,8 +10333,8 @@
    "caller": "tools/audit/decisions/decision_candidates.json",
    "caller_kind": "ENUMERATOR",
    "holder_kind_if_it_holds": null,
-   "flagged_files_it_names": 121,
-   "share_of_the_flagged_population": 0.2937,
+   "flagged_files_it_names": 122,
+   "share_of_the_flagged_population": 0.2954,
    "why_this_kind": "its generator enumerates the tracked tree, so it names paths because they exist rather than because anyone chose them: tools/audit/decisions/gen_decision_harvest.py — its own source enumerates the tracked tree; tools/audit/decisions/gen_decision_harvest.py — its own source enumerates the tracked tree",
    "producers_found": [
     {
@@ -10275,8 +10353,8 @@
    "caller": "tools/audit/decisions/decision_candidates.csv",
    "caller_kind": "ENUMERATOR",
    "holder_kind_if_it_holds": null,
-   "flagged_files_it_names": 117,
-   "share_of_the_flagged_population": 0.284,
+   "flagged_files_it_names": 118,
+   "share_of_the_flagged_population": 0.2857,
    "why_this_kind": "its generator enumerates the tracked tree, so it names paths because they exist rather than because anyone chose them: tools/audit/decisions/gen_decision_harvest.py — its own source enumerates the tracked tree",
    "producers_found": [
     {
@@ -10290,8 +10368,8 @@
    "caller": "tools/audit/decisions/decision_clusters.json",
    "caller_kind": "KIND-UNDERIVABLE",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
-   "flagged_files_it_names": 98,
-   "share_of_the_flagged_population": 0.2379,
+   "flagged_files_it_names": 99,
+   "share_of_the_flagged_population": 0.2397,
    "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: tools/audit/decisions/gen_decision_clusters.py produces this caller and it reads `tools/audit/decisions/decision_candidates.json`, which tools/audit/decisions/gen_decision_harvest.py produces from a tree enumeration, and nothing in the source establishes whether the enumeration passes through into its own output",
    "producers_found": [
     {
@@ -10311,7 +10389,7 @@
    "caller_kind": "KIND-UNDERIVABLE",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 98,
-   "share_of_the_flagged_population": 0.2379,
+   "share_of_the_flagged_population": 0.2373,
    "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: no producer resolved for this caller, but the enumerating generator tools/audit/gen_inventory.py carries a write site naming 'file_table.csv' whose path could not be resolved — so it cannot be established that nothing produces it",
    "producers_found": []
   },
@@ -10320,7 +10398,7 @@
    "caller_kind": "KIND-UNDERIVABLE",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 98,
-   "share_of_the_flagged_population": 0.2379,
+   "share_of_the_flagged_population": 0.2373,
    "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: no producer resolved for this caller, but the enumerating generator tools/audit/gen_inventory.py carries a write site naming 'inventory.json' whose path could not be resolved — so it cannot be established that nothing produces it",
    "producers_found": []
   },
@@ -10328,8 +10406,8 @@
    "caller": "tools/audit/decisions/manifest.json",
    "caller_kind": "ENUMERATOR",
    "holder_kind_if_it_holds": null,
-   "flagged_files_it_names": 79,
-   "share_of_the_flagged_population": 0.1917,
+   "flagged_files_it_names": 80,
+   "share_of_the_flagged_population": 0.1937,
    "why_this_kind": "its generator enumerates the tracked tree, so it names paths because they exist rather than because anyone chose them: tools/audit/decisions/gen_decision_harvest.py — its own source enumerates the tracked tree; tools/audit/decisions/gen_decision_harvest.py — its own source enumerates the tracked tree",
    "producers_found": [
     {
@@ -10348,8 +10426,8 @@
    "caller": "tools/audit/decisions/cluster_dispositions.csv",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
-   "flagged_files_it_names": 77,
-   "share_of_the_flagged_population": 0.1869,
+   "flagged_files_it_names": 78,
+   "share_of_the_flagged_population": 0.1889,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10357,8 +10435,8 @@
    "caller": "tools/audit/decisions/cluster_dispositions.json",
    "caller_kind": "KIND-UNDERIVABLE",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
-   "flagged_files_it_names": 77,
-   "share_of_the_flagged_population": 0.1869,
+   "flagged_files_it_names": 78,
+   "share_of_the_flagged_population": 0.1889,
    "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: tools/audit/decisions/gen_cluster_dispositions.py produces this caller and it reads `tools/audit/decisions/decision_candidates.json`, which tools/audit/decisions/gen_decision_harvest.py produces from a tree enumeration, and nothing in the source establishes whether the enumeration passes through into its own output",
    "producers_found": [
     {
@@ -10377,8 +10455,8 @@
    "caller": "tools/audit/decisions/decision_clusters.csv",
    "caller_kind": "KIND-UNDERIVABLE",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
-   "flagged_files_it_names": 77,
-   "share_of_the_flagged_population": 0.1869,
+   "flagged_files_it_names": 78,
+   "share_of_the_flagged_population": 0.1889,
    "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: tools/audit/decisions/gen_decision_clusters.py produces this caller and it reads `tools/audit/decisions/decision_candidates.json`, which tools/audit/decisions/gen_decision_harvest.py produces from a tree enumeration, and nothing in the source establishes whether the enumeration passes through into its own output",
    "producers_found": [
     {
@@ -10392,8 +10470,8 @@
    "caller": "tools/audit/decisions/snapshot_2026-08-07_pre_oi333_repair/cluster_dispositions.csv",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
-   "flagged_files_it_names": 77,
-   "share_of_the_flagged_population": 0.1869,
+   "flagged_files_it_names": 78,
+   "share_of_the_flagged_population": 0.1889,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10401,8 +10479,8 @@
    "caller": "tools/audit/decisions/snapshot_2026-08-07_pre_oi333_repair/cluster_dispositions.json",
    "caller_kind": "KIND-UNDERIVABLE",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
-   "flagged_files_it_names": 77,
-   "share_of_the_flagged_population": 0.1869,
+   "flagged_files_it_names": 78,
+   "share_of_the_flagged_population": 0.1889,
    "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: tools/audit/decisions/gen_cluster_dispositions.py produces this caller and it reads `tools/audit/decisions/decision_candidates.json`, which tools/audit/decisions/gen_decision_harvest.py produces from a tree enumeration, and nothing in the source establishes whether the enumeration passes through into its own output",
    "producers_found": [
     {
@@ -10416,8 +10494,8 @@
    "caller": "STATUS_ARCHIVE.md",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 62,
-   "share_of_the_flagged_population": 0.1505,
+   "flagged_files_it_names": 63,
+   "share_of_the_flagged_population": 0.1525,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10426,7 +10504,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 34,
-   "share_of_the_flagged_population": 0.0825,
+   "share_of_the_flagged_population": 0.0823,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10435,7 +10513,7 @@
    "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 28,
-   "share_of_the_flagged_population": 0.068,
+   "share_of_the_flagged_population": 0.0678,
    "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
    "producers_found": [
     {
@@ -10451,20 +10529,20 @@
    ]
   },
   {
-   "caller": "cowork_stage5_fitter_design.md",
+   "caller": "tools/REPRODUCIBILITY.md",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 20,
-   "share_of_the_flagged_population": 0.0485,
+   "flagged_files_it_names": 21,
+   "share_of_the_flagged_population": 0.0508,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
   {
-   "caller": "tools/REPRODUCIBILITY.md",
+   "caller": "cowork_stage5_fitter_design.md",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 20,
-   "share_of_the_flagged_population": 0.0485,
+   "share_of_the_flagged_population": 0.0484,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10472,8 +10550,8 @@
    "caller": "docs/score_inventory.md",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 18,
-   "share_of_the_flagged_population": 0.0437,
+   "flagged_files_it_names": 19,
+   "share_of_the_flagged_population": 0.046,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10482,7 +10560,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 15,
-   "share_of_the_flagged_population": 0.0364,
+   "share_of_the_flagged_population": 0.0363,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10491,7 +10569,7 @@
    "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 13,
-   "share_of_the_flagged_population": 0.0316,
+   "share_of_the_flagged_population": 0.0315,
    "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
    "producers_found": [
     {
@@ -10556,38 +10634,11 @@
    "producers_found": []
   },
   {
-   "caller": "cc_acquisition_round_report.md",
-   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-   "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 7,
-   "share_of_the_flagged_population": 0.017,
-   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-   "producers_found": []
-  },
-  {
-   "caller": "cc_vl_idiom_discovery_report.md",
-   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-   "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 7,
-   "share_of_the_flagged_population": 0.017,
-   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-   "producers_found": []
-  },
-  {
-   "caller": "cowork_voiceleading_axis_design.md",
-   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-   "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 7,
-   "share_of_the_flagged_population": 0.017,
-   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-   "producers_found": []
-  },
-  {
    "caller": "tools/build_score_census_registry.py",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
-   "flagged_files_it_names": 7,
-   "share_of_the_flagged_population": 0.017,
+   "flagged_files_it_names": 8,
+   "share_of_the_flagged_population": 0.0194,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10595,8 +10646,8 @@
    "caller": "tools/score_census_registry.json",
    "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
-   "flagged_files_it_names": 7,
-   "share_of_the_flagged_population": 0.017,
+   "flagged_files_it_names": 8,
+   "share_of_the_flagged_population": 0.0194,
    "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
    "producers_found": [
     {
@@ -10607,11 +10658,38 @@
    ]
   },
   {
+   "caller": "cc_acquisition_round_report.md",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "a prose citation",
+   "flagged_files_it_names": 7,
+   "share_of_the_flagged_population": 0.0169,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
+   "caller": "cc_vl_idiom_discovery_report.md",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "a prose citation",
+   "flagged_files_it_names": 7,
+   "share_of_the_flagged_population": 0.0169,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
+   "caller": "cowork_voiceleading_axis_design.md",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "a prose citation",
+   "flagged_files_it_names": 7,
+   "share_of_the_flagged_population": 0.0169,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
    "caller": "META-INF/container.xml",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10620,7 +10698,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10629,7 +10707,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10638,7 +10716,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10647,7 +10725,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10656,7 +10734,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10665,7 +10743,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10674,7 +10752,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10683,7 +10761,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10692,7 +10770,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10701,7 +10779,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 6,
-   "share_of_the_flagged_population": 0.0146,
+   "share_of_the_flagged_population": 0.0145,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -10745,6 +10823,15 @@
    "caller": "src/composing/analysis/CMakeLists.txt",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
+   "flagged_files_it_names": 5,
+   "share_of_the_flagged_population": 0.0121,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
+   "caller": "tools/audit/decisions/snapshot_2026-08-08_pre_home_classification_apply/backbone_decisions.json",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 5,
    "share_of_the_flagged_population": 0.0121,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
@@ -10860,6 +10947,15 @@
   },
   {
    "caller": "cowork_prune_pass_checklist.md",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "a prose citation",
+   "flagged_files_it_names": 4,
+   "share_of_the_flagged_population": 0.0097,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
+   "caller": "cowork_score_census.md",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 4,
@@ -11795,13 +11891,29 @@
    "producers_found": []
   },
   {
-   "caller": "tools/audit/decisions/snapshot_2026-08-08_pre_home_classification_apply/backbone_decisions.json",
-   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "caller": "tools/audit/decisions/backbone_decisions.json",
+   "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 4,
    "share_of_the_flagged_population": 0.0097,
-   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-   "producers_found": []
+   "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
+   "producers_found": [
+    {
+     "generator": "tools/audit/decisions/gen_home_classification.py",
+     "link": "route B — this tracked Python source writes the caller's path, resolved from its own write site",
+     "evidence": "a write site in tools/audit/decisions/gen_home_classification.py resolves to tools/audit/decisions/backbone_decisions.json"
+    },
+    {
+     "generator": "tools/audit/decisions/gen_live_prohibition_pointers.py",
+     "link": "route B — this tracked Python source writes the caller's path, resolved from its own write site",
+     "evidence": "a write site in tools/audit/decisions/gen_live_prohibition_pointers.py resolves to tools/audit/decisions/backbone_decisions.json"
+    },
+    {
+     "generator": "tools/audit/decisions/reaim_home_anchors.py",
+     "link": "route B — this tracked Python source writes the caller's path, resolved from its own write site",
+     "evidence": "a write site in tools/audit/decisions/reaim_home_anchors.py resolves to tools/audit/decisions/backbone_decisions.json"
+    }
+   ]
   },
   {
    "caller": "tools/audit/filing_convention_application.json",
@@ -11889,6 +12001,24 @@
    "producers_found": []
   },
   {
+   "caller": "cc_instruction_acquisition_round.md",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "a prose citation",
+   "flagged_files_it_names": 3,
+   "share_of_the_flagged_population": 0.0073,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
+   "caller": "cc_instruction_corpus_wave3.md",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "a prose citation",
+   "flagged_files_it_names": 3,
+   "share_of_the_flagged_population": 0.0073,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
    "caller": "cc_instruction_stage5_phase1.md",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
@@ -11908,6 +12038,15 @@
   },
   {
    "caller": "cc_instruction_vl_docs_fold.md",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "a prose citation",
+   "flagged_files_it_names": 3,
+   "share_of_the_flagged_population": 0.0073,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
+   "caller": "cc_instruction_wave3_addendum.md",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 3,
@@ -11953,15 +12092,6 @@
   },
   {
    "caller": "cowork_layer5_engagement_design.md",
-   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-   "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 3,
-   "share_of_the_flagged_population": 0.0073,
-   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-   "producers_found": []
-  },
-  {
-   "caller": "cowork_score_census.md",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 3,
@@ -12087,6 +12217,15 @@
    "producers_found": []
   },
   {
+   "caller": "ratification_surfaces/cowork_decisions_pending_ratification_7.md",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "a prose citation",
+   "flagged_files_it_names": 3,
+   "share_of_the_flagged_population": 0.0073,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
    "caller": "src/engraving/tests/playback/playbackeventsrenderer_data/single_note_tenuto_accent/META-INF/container.xml",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
@@ -12112,31 +12251,6 @@
    "share_of_the_flagged_population": 0.0073,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
-  },
-  {
-   "caller": "tools/audit/decisions/backbone_decisions.json",
-   "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
-   "holder_kind_if_it_holds": "outside the three kinds the ruling names",
-   "flagged_files_it_names": 3,
-   "share_of_the_flagged_population": 0.0073,
-   "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
-   "producers_found": [
-    {
-     "generator": "tools/audit/decisions/gen_home_classification.py",
-     "link": "route B — this tracked Python source writes the caller's path, resolved from its own write site",
-     "evidence": "a write site in tools/audit/decisions/gen_home_classification.py resolves to tools/audit/decisions/backbone_decisions.json"
-    },
-    {
-     "generator": "tools/audit/decisions/gen_live_prohibition_pointers.py",
-     "link": "route B — this tracked Python source writes the caller's path, resolved from its own write site",
-     "evidence": "a write site in tools/audit/decisions/gen_live_prohibition_pointers.py resolves to tools/audit/decisions/backbone_decisions.json"
-    },
-    {
-     "generator": "tools/audit/decisions/reaim_home_anchors.py",
-     "link": "route B — this tracked Python source writes the caller's path, resolved from its own write site",
-     "evidence": "a write site in tools/audit/decisions/reaim_home_anchors.py resolves to tools/audit/decisions/backbone_decisions.json"
-    }
-   ]
   },
   {
    "caller": "tools/audit/gen_artifact_inventory.py",
@@ -12170,7 +12284,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a mandatory-read or boot listing",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12179,7 +12293,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a mandatory-read or boot listing",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12188,7 +12302,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12197,7 +12311,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12206,7 +12320,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12215,7 +12329,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12224,25 +12338,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
-   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-   "producers_found": []
-  },
-  {
-   "caller": "cc_instruction_acquisition_round.md",
-   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-   "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
-   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-   "producers_found": []
-  },
-  {
-   "caller": "cc_instruction_corpus_wave3.md",
-   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-   "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12251,7 +12347,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12260,7 +12356,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12269,7 +12365,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12278,7 +12374,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12287,7 +12383,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12296,7 +12392,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12305,7 +12401,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12314,7 +12410,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12323,7 +12419,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12332,16 +12428,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
-   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-   "producers_found": []
-  },
-  {
-   "caller": "cc_instruction_wave3_addendum.md",
-   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-   "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12350,7 +12437,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12359,7 +12446,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12368,7 +12455,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12377,7 +12464,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12386,7 +12473,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12395,7 +12482,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12404,7 +12491,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12413,7 +12500,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12422,7 +12509,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12431,7 +12518,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12440,7 +12527,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12449,7 +12536,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12458,7 +12545,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12467,7 +12554,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12476,7 +12563,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12485,7 +12572,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12494,7 +12581,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12503,7 +12590,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12512,7 +12599,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a mandatory-read or boot listing",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12521,7 +12608,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12530,7 +12617,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12539,7 +12626,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12548,7 +12635,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12557,7 +12644,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12566,7 +12653,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12575,7 +12662,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12584,7 +12671,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12593,7 +12680,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12602,7 +12689,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12611,7 +12698,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12620,7 +12707,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12629,7 +12716,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12638,7 +12725,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12647,7 +12734,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12656,7 +12743,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12665,7 +12752,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12674,7 +12761,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12683,7 +12770,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12692,7 +12779,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12701,7 +12788,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12710,16 +12797,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
-   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-   "producers_found": []
-  },
-  {
-   "caller": "ratification_surfaces/cowork_decisions_pending_ratification_7.md",
-   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-   "holder_kind_if_it_holds": "a prose citation",
-   "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12728,7 +12806,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12737,7 +12815,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12746,7 +12824,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12755,7 +12833,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12764,7 +12842,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12773,7 +12851,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12782,7 +12860,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12791,7 +12869,7 @@
    "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
    "producers_found": [
     {
@@ -12811,7 +12889,7 @@
    "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
    "producers_found": [
     {
@@ -12831,7 +12909,7 @@
    "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
    "producers_found": [
     {
@@ -12851,7 +12929,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12860,7 +12938,7 @@
    "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
    "producers_found": [
     {
@@ -12880,7 +12958,7 @@
    "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
    "producers_found": [
     {
@@ -12895,7 +12973,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12904,7 +12982,7 @@
    "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
    "producers_found": [
     {
@@ -12924,7 +13002,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12933,7 +13011,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12942,7 +13020,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12951,7 +13029,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12960,7 +13038,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "outside the three kinds the ruling names",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12969,7 +13047,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12978,7 +13056,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12987,7 +13065,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -12996,7 +13074,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -13005,7 +13083,7 @@
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a tool reading the file by name",
    "flagged_files_it_names": 2,
-   "share_of_the_flagged_population": 0.0049,
+   "share_of_the_flagged_population": 0.0048,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
    "producers_found": []
   },
@@ -13562,6 +13640,15 @@
    "caller": "cowork_union_search_record.md",
    "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
    "holder_kind_if_it_holds": "a prose citation",
+   "flagged_files_it_names": 1,
+   "share_of_the_flagged_population": 0.0024,
+   "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+   "producers_found": []
+  },
+  {
+   "caller": "decisions/group_Q.md",
+   "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "holder_kind_if_it_holds": "a mandatory-read or boot listing",
    "flagged_files_it_names": 1,
    "share_of_the_flagged_population": 0.0024,
    "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
@@ -14442,7 +14529,7 @@
    "producers_found": []
   }
  ],
- "the_flagged_population_size": 412,
+ "the_flagged_population_size": 413,
  "candidacies": [
   {
    "candidacy": "ai-assistant-design-notes",
@@ -31953,13 +32040,6 @@
      "its_base_name_is_unique_in_the_tracked_tree": true,
      "holding_callers": [
       {
-       "caller": "cc_corpus_wave3_report.md",
-       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-       "holder_kind": "a prose citation",
-       "the_line_the_naming_was_found_on": "| 1 | registry `wave3_sources` + provenance | `63de0df27a` | `tools/build_score_census_registry.py`, `tools/score_census_registry.json`, `tools/REPRODUCIBILITY.md`, `docs/score_inventory.m..."
-      },
-      {
        "caller": "docs/score_inventory.md",
        "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
        "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
@@ -32183,6 +32263,7 @@
      "namings_from_fellow_flagged_files_set_aside_not_dropped": [
       "cc_acquisition_round_report.md",
       "cc_corpus_wave2_report.md",
+      "cc_corpus_wave3_report.md",
       "cc_wave3_addendum_report.md",
       "tools/REPRODUCIBILITY.md"
      ],
@@ -47021,13 +47102,6 @@
        "the_line_the_naming_was_found_on": "...SES and parses that NO contract document (the tool's own help text, `BUILD_AND_TEST.md`, `REPRODUCIBILITY.md`) lists, so a runnable measurement path exists that was never surfaced in the instrument'..."
       },
       {
-       "caller": "cc_corpus_wave3_report.md",
-       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-       "holder_kind": "a prose citation",
-       "the_line_the_naming_was_found_on": "(`total=78`, two runs byte-identical). Census + REPRODUCIBILITY.md + score_inventory.md updated."
-      },
-      {
        "caller": "cc_instruction_acquisition_round.md",
        "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
        "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
@@ -47400,6 +47474,7 @@
      "namings_from_fellow_flagged_files_set_aside_not_dropped": [
       "cc_acquisition_round_report.md",
       "cc_corpus_wave2_report.md",
+      "cc_corpus_wave3_report.md",
       "cc_wave3_addendum_report.md",
       "tools/build_score_census_registry.py"
      ],
@@ -48609,7 +48684,7 @@
    "candidacy": "reports-from-the-coding-side",
    "what_is_flagged": "the uncited side of the citation split",
    "how_the_member_list_was_derived": "published by the inventory as `every_member`, then split by the citation scan re-run at the governing record — the same scan the ruling surface splits by (#6)",
-   "members_flagged": 30,
+   "members_flagged": 31,
    "ruled_condition": "mined first — the uncited side becomes a candidacy only once it has been mined",
    "the_ruling_sentence_it_was_read_from": "Class 21's split stands; the uncited 30 are retirement candidates once mined.",
    "verdict": "HELD-BY-CALLERS",
@@ -48618,6 +48693,7 @@
     "cc_acquisition_round_report.md",
     "cc_c1_fold_report.md",
     "cc_corpus_wave2_report.md",
+    "cc_corpus_wave3_report.md",
     "cc_direct_metric_search_report.md",
     "cc_dl3a_closeout_report.md",
     "cc_engage_fanout_measure_data.json",
@@ -49377,6 +49453,287 @@
         }
        ],
        "the_line_the_naming_was_found_on": "\"caller\": \"cc_corpus_wave2_report.md\","
+      }
+     ],
+     "namings_from_fellow_flagged_files_set_aside_not_dropped": [
+      "tools/REPRODUCIBILITY.md",
+      "tools/build_score_census_registry.py"
+     ],
+     "references_from_inside_its_own_class_set_aside_not_dropped": [],
+     "member_verdict": "HELD-BY-CALLERS"
+    },
+    {
+     "path": "cc_corpus_wave3_report.md",
+     "its_base_name_is_unique_in_the_tracked_tree": true,
+     "holding_callers": [
+      {
+       "caller": "STATUS_ARCHIVE.md",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "a prose citation",
+       "the_line_the_naming_was_found_on": "...rk files. **★ WAVE 3 LANDED + COWORK-VERIFIED AT OBJECTS + RATIFIED (same day):** report `cc_corpus_wave3_report.md` (312 lines, read in full); commits verified (`63de0df27a` registry+provenance, exactly 4..."
+      },
+      {
+       "caller": "cc_instruction_acquisition_round.md",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "a prose citation",
+       "the_line_the_naming_was_found_on": "rule: full N1–N20 needs note per row) + `cc_corpus_wave3_report.md` §0 (the row conventions)."
+      },
+      {
+       "caller": "cc_instruction_corpus_wave3.md",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "a prose citation",
+       "the_line_the_naming_was_found_on": "6. Report `cc_corpus_wave3_report.md` (force-added per the `/cc_*.md` convention): per-source results, the"
+      },
+      {
+       "caller": "cc_instruction_wave3_addendum.md",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "a prose citation",
+       "the_line_the_naming_was_found_on": "2. `cc_corpus_wave3_report.md` — the wave this addendum extends (esp. §6 the WiR/KMT correction, §7 the"
+      },
+      {
+       "caller": "cowork_score_census.md",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "a prose citation",
+       "the_line_the_naming_was_found_on": "...ED by enumerating `humdrum-tools/humdrum-data` = 71 repos/16 orgs (cloned nothing) — see `cc_corpus_wave3_report.md`] |"
+      },
+      {
+       "caller": "decisions/group_Q.md",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "a mandatory-read or boot listing",
+       "the_line_the_naming_was_found_on": "...Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated con..."
+      },
+      {
+       "caller": "docs/score_inventory.md",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "a prose citation",
+       "the_line_the_naming_was_found_on": "full inventory + paper-claim verification + the gated/unavailable/enumerated records in `cc_corpus_wave3_report.md`"
+      },
+      {
+       "caller": "ratification_surfaces/cowork_decisions_pending_ratification_7.md",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "a prose citation",
+       "the_line_the_naming_was_found_on": "...Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated con..."
+      },
+      {
+       "caller": "tools/audit/decisions/backbone_decisions.json",
+       "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
+       "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
+       "holder_kind": "outside the three kinds the ruling names",
+       "the_line_the_naming_was_found_on": "...\"Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated con..."
+      },
+      {
+       "caller": "tools/audit/decisions/cluster_dispositions.csv",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "outside the three kinds the ruling names",
+       "the_line_the_naming_was_found_on": "...12,,cc_reports,heading;paragraph,cc_acquisition_round_report.md;cc_corpus_wave2_report.md;cc_corpus_wave3_report.md;cc_stage5_phase0_report.md;cc_stage5_phase1_report.md"
+      },
+      {
+       "caller": "tools/audit/decisions/cluster_dispositions.json",
+       "caller_kind": "KIND-UNDERIVABLE",
+       "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: tools/audit/decisions/gen_cluster_dispositions.py produces this caller and it reads `tools/audit/decisions/decision_candidates.json`, which tools/audit/decisions/gen_decision_harvest.py produces from a tree enumeration, and nothing in the source establishes whether the enumeration passes through into its own output",
+       "holder_kind": "outside the three kinds the ruling names",
+       "the_line_the_naming_was_found_on": "\"cc_corpus_wave3_report.md\","
+      },
+      {
+       "caller": "tools/audit/decisions/decision_clusters.csv",
+       "caller_kind": "KIND-UNDERIVABLE",
+       "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: tools/audit/decisions/gen_decision_clusters.py produces this caller and it reads `tools/audit/decisions/decision_candidates.json`, which tools/audit/decisions/gen_decision_harvest.py produces from a tree enumeration, and nothing in the source establishes whether the enumeration passes through into its own output",
+       "holder_kind": "outside the three kinds the ruling names",
+       "the_line_the_naming_was_found_on": "DC-05309,1-text,1,1,1,,,,,,DH-05542,cc_corpus_wave3_report.md,15,Claude Code session report or dispatch (a restatement by construction),,,DH-05542,"
+      },
+      {
+       "caller": "tools/audit/decisions/decision_clusters.json",
+       "caller_kind": "KIND-UNDERIVABLE",
+       "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: tools/audit/decisions/gen_decision_clusters.py produces this caller and it reads `tools/audit/decisions/decision_candidates.json`, which tools/audit/decisions/gen_decision_harvest.py produces from a tree enumeration, and nothing in the source establishes whether the enumeration passes through into its own output",
+       "holder_kind": "outside the three kinds the ruling names",
+       "the_line_the_naming_was_found_on": "\"cc_corpus_wave3_report.md\","
+      },
+      {
+       "caller": "tools/audit/decisions/snapshot_2026-08-07_pre_oi333_repair/cluster_dispositions.csv",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "outside the three kinds the ruling names",
+       "the_line_the_naming_was_found_on": "...12,,cc_reports,heading;paragraph,cc_acquisition_round_report.md;cc_corpus_wave2_report.md;cc_corpus_wave3_report.md;cc_stage5_phase0_report.md;cc_stage5_phase1_report.md"
+      },
+      {
+       "caller": "tools/audit/decisions/snapshot_2026-08-07_pre_oi333_repair/cluster_dispositions.json",
+       "caller_kind": "KIND-UNDERIVABLE",
+       "why_this_kind": "the derivation reached a producer relation it could not resolve, and the ruling forbids guessing: tools/audit/decisions/gen_cluster_dispositions.py produces this caller and it reads `tools/audit/decisions/decision_candidates.json`, which tools/audit/decisions/gen_decision_harvest.py produces from a tree enumeration, and nothing in the source establishes whether the enumeration passes through into its own output",
+       "holder_kind": "outside the three kinds the ruling names",
+       "the_line_the_naming_was_found_on": "\"cc_corpus_wave3_report.md\","
+      },
+      {
+       "caller": "tools/audit/decisions/snapshot_2026-08-08_pre_home_classification_apply/backbone_decisions.json",
+       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
+       "holder_kind": "outside the three kinds the ruling names",
+       "the_line_the_naming_was_found_on": "...\"Established by walking the repository, at the third corpus wave, 2026-07-04, provenance `cc_corpus_wave3_report.md`; the finding also promoted the row out of the residual-risk list into the enumerated con..."
+      },
+      {
+       "caller": "tools/score_census_registry.json",
+       "caller_kind": "GENERATED-BUT-NOT-ENUMERATING",
+       "why_this_kind": "a generator is established for it and no generator of it enumerates the tracked tree, so its naming carries information about a dependency",
+       "holder_kind": "outside the three kinds the ruling names",
+       "the_line_the_naming_was_found_on": "\"wave3_sources (Wave-3, cc_corpus_wave3_report.md): jazz/pop GT (CoCoPops, OpenEWLD, WJD native, ChoCo jazz-corpus/weimar slices) + cadence..."
+      }
+     ],
+     "enumerator_namings_published_as_data_holding_nothing": [
+      {
+       "caller": "ratification_surfaces/cowork_artifact_inventory_ruling_surface.md",
+       "how_its_generator_enumerates": [
+        {
+         "rendered_from": "tools/audit/artifact_inventory.json",
+         "quoted": "*Generated by `tools/audit/gen_artifact_inventory_surface.py` from `tools/audit/artifact_inventory.json`"
+        }
+       ],
+       "the_line_the_naming_was_found_on": "- `cc_corpus_wave3_report.md`"
+      },
+      {
+       "caller": "tools/audit/artifact_inventory.json",
+       "how_its_generator_enumerates": [
+        {
+         "generator": "tools/audit/gen_artifact_inventory.py",
+         "route": "its own source enumerates the tracked tree",
+         "evidence": [
+          {
+           "signal": "git ls-files — every tracked path",
+           "the_string_constant_it_was_found_as": "ls-files"
+          },
+          {
+           "signal": "git ls-tree — every path of a commit's tree",
+           "the_string_constant_it_was_found_as": "ls-tree"
+          }
+         ]
+        },
+        {
+         "generator": "tools/audit/gen_artifact_inventory.py",
+         "route": "its own source enumerates the tracked tree",
+         "evidence": [
+          {
+           "signal": "git ls-files — every tracked path",
+           "the_string_constant_it_was_found_as": "ls-files"
+          },
+          {
+           "signal": "git ls-tree — every path of a commit's tree",
+           "the_string_constant_it_was_found_as": "ls-tree"
+          }
+         ]
+        }
+       ],
+       "the_line_the_naming_was_found_on": "\"path\": \"cc_corpus_wave3_report.md\","
+      },
+      {
+       "caller": "tools/audit/decisions/decision_candidates.csv",
+       "how_its_generator_enumerates": [
+        {
+         "generator": "tools/audit/decisions/gen_decision_harvest.py",
+         "route": "its own source enumerates the tracked tree",
+         "evidence": [
+          {
+           "signal": "git ls-files — every tracked path",
+           "the_string_constant_it_was_found_as": "ls-files"
+          }
+         ]
+        }
+       ],
+       "the_line_the_naming_was_found_on": "...rk files. **★ WAVE 3 LANDED + COWORK-VERIFIED AT OBJECTS + RATIFIED (same day):** report `cc_corpus_wave3_report.md` (312 lines, read in full); commits verified (`63de0df27a` registry+provenance, exactly 4..."
+      },
+      {
+       "caller": "tools/audit/decisions/decision_candidates.json",
+       "how_its_generator_enumerates": [
+        {
+         "generator": "tools/audit/decisions/gen_decision_harvest.py",
+         "route": "its own source enumerates the tracked tree",
+         "evidence": [
+          {
+           "signal": "git ls-files — every tracked path",
+           "the_string_constant_it_was_found_as": "ls-files"
+          }
+         ]
+        },
+        {
+         "generator": "tools/audit/decisions/gen_decision_harvest.py",
+         "route": "its own source enumerates the tracked tree",
+         "evidence": [
+          {
+           "signal": "git ls-files — every tracked path",
+           "the_string_constant_it_was_found_as": "ls-files"
+          }
+         ]
+        }
+       ],
+       "the_line_the_naming_was_found_on": "...les. **\\u2605 WAVE 3 LANDED + COWORK-VERIFIED AT OBJECTS + RATIFIED (same day):** report `cc_corpus_wave3_report.md` (312 lines, read in full); commits verified (`63de0df27a` registry+provenance, exactly 4..."
+      },
+      {
+       "caller": "tools/audit/decisions/manifest.json",
+       "how_its_generator_enumerates": [
+        {
+         "generator": "tools/audit/decisions/gen_decision_harvest.py",
+         "route": "its own source enumerates the tracked tree",
+         "evidence": [
+          {
+           "signal": "git ls-files — every tracked path",
+           "the_string_constant_it_was_found_as": "ls-files"
+          }
+         ]
+        },
+        {
+         "generator": "tools/audit/decisions/gen_decision_harvest.py",
+         "route": "its own source enumerates the tracked tree",
+         "evidence": [
+          {
+           "signal": "git ls-files — every tracked path",
+           "the_string_constant_it_was_found_as": "ls-files"
+          }
+         ]
+        }
+       ],
+       "the_line_the_naming_was_found_on": "\"cc_corpus_wave3_report.md\": 28,"
+      },
+      {
+       "caller": "tools/audit/retirement_caller_check.json",
+       "how_its_generator_enumerates": [
+        {
+         "generator": "tools/audit/gen_retirement_caller_check.py",
+         "route": "its own source enumerates the tracked tree",
+         "evidence": [
+          {
+           "signal": "git ls-tree — every path of a commit's tree",
+           "the_string_constant_it_was_found_as": "ls-tree"
+          },
+          {
+           "signal": "git grep over the tree — every path whose text matches",
+           "the_string_constant_it_was_found_as": "grep",
+           "and_it_counted_because": "the source hands it to git as an argument"
+          }
+         ]
+        },
+        {
+         "generator": "tools/audit/gen_retirement_caller_check.py",
+         "route": "its own source enumerates the tracked tree",
+         "evidence": [
+          {
+           "signal": "git ls-tree — every path of a commit's tree",
+           "the_string_constant_it_was_found_as": "ls-tree"
+          },
+          {
+           "signal": "git grep over the tree — every path whose text matches",
+           "the_string_constant_it_was_found_as": "grep",
+           "and_it_counted_because": "the source hands it to git as an argument"
+          }
+         ]
+        }
+       ],
+       "the_line_the_naming_was_found_on": "\"caller\": \"cc_corpus_wave3_report.md\","
       }
      ],
      "namings_from_fellow_flagged_files_set_aside_not_dropped": [
@@ -61894,13 +62251,6 @@
        "the_line_the_naming_was_found_on": "README.md"
       },
       {
-       "caller": "cc_corpus_wave3_report.md",
-       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-       "holder_kind": "a prose citation",
-       "the_line_the_naming_was_found_on": "contains **only `README.md`** at HEAD *and in its entire history* (`git log --all` — the 41 MusicXML + analysis file..."
-      },
-      {
        "caller": "cc_instruction_design_pass_commit.md",
        "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
        "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
@@ -62251,6 +62601,7 @@
      ],
      "namings_from_fellow_flagged_files_set_aside_not_dropped": [
       "cc_corpus_wave2_report.md",
+      "cc_corpus_wave3_report.md",
       "docs/prompts/llm_triage_v0_format_emitter.md",
       "docs/prompts/phase_1b_snapshot_harness.md",
       "docs/prompts/phase_2_type_introduction.md",
@@ -63104,13 +63455,6 @@
        "the_line_the_naming_was_found_on": "README.md"
       },
       {
-       "caller": "cc_corpus_wave3_report.md",
-       "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
-       "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
-       "holder_kind": "a prose citation",
-       "the_line_the_naming_was_found_on": "contains **only `README.md`** at HEAD *and in its entire history* (`git log --all` — the 41 MusicXML + analysis file..."
-      },
-      {
        "caller": "cc_instruction_design_pass_commit.md",
        "caller_kind": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
        "why_this_kind": "no tracked Python source writes this path and the caller declares no generator, so the record's own machinery does not produce it",
@@ -63461,6 +63805,7 @@
      ],
      "namings_from_fellow_flagged_files_set_aside_not_dropped": [
       "cc_corpus_wave2_report.md",
+      "cc_corpus_wave3_report.md",
       "docs/prompts/llm_triage_v0_format_emitter.md",
       "docs/prompts/phase_1b_snapshot_harness.md",
       "docs/prompts/phase_2_type_introduction.md",

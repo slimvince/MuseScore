@@ -13,24 +13,24 @@
   ],
   "the_reading_of_a_whole_document_delegation": "A delegation that names a DOCUMENT and no section reaches EVERY section of it; a delegation that names SECTIONS reaches those sections and their subsections and no others; and the rule-stating half is judged PER SECTION in both cases. **THIS IS NOW PART OF THE RULE, NOT AN INTERPRETATION OF IT (user, 2026-08-03, phase 1r).** At phase 1q it was this pass's reading of D-430's \"delegates a stated concern to that section BY NAME\", taken on the record's own precedent rather than a preference — `OPEN_ITEMS.md` OI-290 states in terms that \"`ARCHITECTURE.md:1331` delegates 'this layer' and admits all sixteen of that document's entries\" — and the strict alternative was recorded as available to the user. The user then WROTE the reading into `CLAUDE.md` rule (h) itself as the GRANULARITY clause, so D-430's verbatim now carries it and the strict alternative is CLOSED. Its defense, stated with it: the strict reading would evict every document delegated as a whole, signed layer specifications among them, on the accident of how a pointer happens to be phrased, making the rule retroactively destructive rather than refining. THE STRICT ALTERNATIVE, PRESERVED (#12): read literally, a whole-document delegation names no section, so no section of it would be admitted and the seven whole-document homes would lose every entry between them.",
   "population": {
-    "entries": 190,
-    "documents": 38
+    "entries": 151,
+    "documents": 35
   },
   "totals": {
     "class_before": {
-      "contract-home": 88,
-      "gap": 102
+      "contract-home": 73,
+      "gap": 78
     },
     "class_after": {
-      "contract-home": 163,
-      "gap": 27
+      "contract-home": 131,
+      "gap": 20
     },
-    "entries_moved": 83,
+    "entries_moved": 66,
     "moved_to_gap": 4,
-    "moved_to_contract_home": 79,
+    "moved_to_contract_home": 62,
     "decided_by": {
-      "D-430, the section-level unit": 173,
-      "clause (a), the fifth home case (OI-268)": 17
+      "D-430, the section-level unit": 136,
+      "clause (a), the fifth home case (OI-268)": 15
     }
   },
   "by_document": {
@@ -368,12 +368,12 @@
       }
     },
     "cowork_layer4_chordsymbol_design.md": {
-      "entries": 6,
+      "entries": 5,
       "before": {
-        "contract-home": 6
+        "contract-home": 5
       },
       "after": {
-        "contract-home": 6
+        "contract-home": 5
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -410,25 +410,16 @@
             "D-334"
           ],
           "class_after": "contract-home"
-        },
-        "§7": {
-          "heading_line": 349,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-332"
-          ],
-          "class_after": "contract-home"
         }
       }
     },
     "cowork_layer5_function_design.md": {
-      "entries": 8,
+      "entries": 7,
       "before": {
-        "contract-home": 8
+        "contract-home": 7
       },
       "after": {
-        "contract-home": 8
+        "contract-home": 7
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -447,15 +438,6 @@
             "D-337",
             "D-338",
             "D-339"
-          ],
-          "class_after": "contract-home"
-        },
-        "§7": {
-          "heading_line": 546,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-340"
           ],
           "class_after": "contract-home"
         },
@@ -478,15 +460,15 @@
           "class_after": "contract-home"
         }
       },
-      "moves_in_since_phase1q": 8
+      "moves_in_since_phase1q": 7
     },
     "cowork_layer3_keymode_design.md": {
-      "entries": 16,
+      "entries": 10,
       "before": {
-        "contract-home": 16
+        "contract-home": 10
       },
       "after": {
-        "contract-home": 16
+        "contract-home": 10
       },
       "moves_out": 0,
       "moves_in": 0,
@@ -514,15 +496,6 @@
           ],
           "class_after": "contract-home"
         },
-        "§5": {
-          "heading_line": 240,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-346"
-          ],
-          "class_after": "contract-home"
-        },
         "§9": {
           "heading_line": 311,
           "delegated": true,
@@ -543,15 +516,6 @@
           ],
           "class_after": "contract-home"
         },
-        "§0": {
-          "heading_line": 42,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-350"
-          ],
-          "class_after": "contract-home"
-        },
         "§10": {
           "heading_line": 333,
           "delegated": true,
@@ -562,94 +526,33 @@
           ],
           "class_after": "contract-home"
         },
-        "§11": {
-          "heading_line": 365,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-354",
-            "D-355",
-            "D-356"
-          ],
-          "class_after": "contract-home"
-        },
         "§15": {
           "heading_line": 496,
           "delegated": true,
           "states_rules": true,
           "entries": [
-            "D-357",
             "D-358"
           ],
           "class_after": "contract-home"
         }
-      },
-      "moves_in_since_phase1q": 1
+      }
     },
     "cowork_score_census.md": {
-      "entries": 24,
+      "entries": 11,
       "before": {
-        "gap": 13,
-        "contract-home": 11
+        "contract-home": 4,
+        "gap": 7
       },
       "after": {
-        "contract-home": 24
+        "contract-home": 11
       },
       "moves_out": 0,
-      "moves_in": 13,
+      "moves_in": 7,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:370",
       "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
       "sections": {
-        "§1": {
-          "heading_line": 13,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-359"
-          ],
-          "class_after": "contract-home"
-        },
-        "§3": {
-          "heading_line": 65,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-360",
-            "D-513"
-          ],
-          "class_after": "contract-home"
-        },
-        "§4": {
-          "heading_line": 81,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-361",
-            "D-514"
-          ],
-          "class_after": "contract-home"
-        },
-        "§8": {
-          "heading_line": 154,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-362",
-            "D-363"
-          ],
-          "class_after": "contract-home"
-        },
-        "§8b": {
-          "heading_line": 187,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-364"
-          ],
-          "class_after": "contract-home"
-        },
         "§8c": {
           "heading_line": 224,
           "delegated": true,
@@ -659,13 +562,6 @@
             "D-366",
             "D-367",
             "D-368",
-            "D-369",
-            "D-370",
-            "D-371",
-            "D-372",
-            "D-373",
-            "D-374",
-            "D-375",
             "D-515",
             "D-614",
             "D-665"
@@ -681,20 +577,38 @@
             "D-500"
           ],
           "class_after": "contract-home"
+        },
+        "§3": {
+          "heading_line": 65,
+          "delegated": true,
+          "states_rules": true,
+          "entries": [
+            "D-513"
+          ],
+          "class_after": "contract-home"
+        },
+        "§4": {
+          "heading_line": 81,
+          "delegated": true,
+          "states_rules": true,
+          "entries": [
+            "D-514"
+          ],
+          "class_after": "contract-home"
         }
       },
-      "moves_in_since_phase1q": 13
+      "moves_in_since_phase1q": 7
     },
     "cowork_joint_key_chord_design.md": {
-      "entries": 4,
+      "entries": 1,
       "before": {
-        "gap": 4
+        "gap": 1
       },
       "after": {
-        "contract-home": 4
+        "contract-home": 1
       },
       "moves_out": 0,
-      "moves_in": 4,
+      "moves_in": 1,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "cowork_engage_arc_plan.md:44",
@@ -708,36 +622,9 @@
             "D-376"
           ],
           "class_after": "contract-home"
-        },
-        "“§1.3 How it avoids re-introducing a cross-layer cycle”": {
-          "heading_line": 128,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-377"
-          ],
-          "class_after": "contract-home"
-        },
-        "“§2.2 The chord re-decoded under each carried key”": {
-          "heading_line": 174,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-378"
-          ],
-          "class_after": "contract-home"
-        },
-        "“§3.1 The trigger, grounded in C3”": {
-          "heading_line": 259,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-379"
-          ],
-          "class_after": "contract-home"
         }
       },
-      "moves_in_since_phase1q": 4
+      "moves_in_since_phase1q": 1
     },
     "cowork_layer5_engagement_design.md": {
       "entries": 8,
@@ -898,13 +785,13 @@
       "moves_in_since_phase1q": 8
     },
     "cowork_structural_integrity_audit.md": {
-      "entries": 5,
+      "entries": 3,
       "before": {
-        "gap": 5
+        "gap": 3
       },
       "after": {
         "contract-home": 1,
-        "gap": 4
+        "gap": 2
       },
       "moves_out": 0,
       "moves_in": 1,
@@ -922,38 +809,28 @@
           ],
           "class_after": "contract-home"
         },
-        "§1.2": {
-          "heading_line": 69,
-          "delegated": false,
-          "states_rules": null,
-          "entries": [
-            "D-402"
-          ],
-          "class_after": "gap"
-        },
         "§3.1": {
           "heading_line": 251,
           "delegated": true,
           "states_rules": false,
           "entries": [
             "D-403",
-            "D-404",
-            "D-405"
+            "D-404"
           ],
           "class_after": "gap"
         }
       }
     },
     "cowork_progression_schema_dictionary.md": {
-      "entries": 9,
+      "entries": 5,
       "before": {
-        "gap": 9
+        "gap": 5
       },
       "after": {
-        "contract-home": 9
+        "contract-home": 5
       },
       "moves_out": 0,
-      "moves_in": 9,
+      "moves_in": 5,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:5687",
@@ -973,7 +850,6 @@
           "delegated": true,
           "states_rules": true,
           "entries": [
-            "D-407",
             "D-408"
           ],
           "class_after": "contract-home"
@@ -983,7 +859,6 @@
           "delegated": true,
           "states_rules": true,
           "entries": [
-            "D-409",
             "D-410"
           ],
           "class_after": "contract-home"
@@ -993,17 +868,7 @@
           "delegated": true,
           "states_rules": true,
           "entries": [
-            "D-411",
-            "D-412"
-          ],
-          "class_after": "contract-home"
-        },
-        "§5.3": {
-          "heading_line": 200,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-413"
+            "D-411"
           ],
           "class_after": "contract-home"
         },
@@ -1459,48 +1324,20 @@
       }
     },
     "cowork_layer1_note_model_design.md": {
-      "entries": 4,
+      "entries": 1,
       "before": {
-        "gap": 4
-      },
-      "after": {
-        "contract-home": 3,
         "gap": 1
       },
+      "after": {
+        "contract-home": 1
+      },
       "moves_out": 0,
-      "moves_in": 3,
+      "moves_in": 1,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:1569",
       "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer1_note_model_design.md` (AS-BUILT — built, reviewed and accepted, `:3`) — D-517…D-520 — which this section points at and does not restate.",
       "sections": {
-        "§9": {
-          "heading_line": 194,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-517"
-          ],
-          "class_after": "contract-home"
-        },
-        "§13": {
-          "heading_line": 252,
-          "delegated": true,
-          "states_rules": false,
-          "entries": [
-            "D-518"
-          ],
-          "class_after": "gap"
-        },
-        "§1": {
-          "heading_line": 26,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-519"
-          ],
-          "class_after": "contract-home"
-        },
         "§11": {
           "heading_line": 221,
           "delegated": true,
@@ -1511,7 +1348,7 @@
           "class_after": "contract-home"
         }
       },
-      "moves_in_since_phase1q": 3
+      "moves_in_since_phase1q": 1
     },
     "cowork_evidence_inventory.md": {
       "entries": 3,
@@ -1558,13 +1395,12 @@
       }
     },
     "cowork_joint_estimator_architecture.md": {
-      "entries": 7,
+      "entries": 5,
       "before": {
-        "gap": 7
+        "gap": 5
       },
       "after": {
-        "contract-home": 5,
-        "gap": 2
+        "contract-home": 5
       },
       "moves_out": 0,
       "moves_in": 5,
@@ -1585,16 +1421,6 @@
             "D-528"
           ],
           "class_after": "contract-home"
-        },
-        "§6": {
-          "heading_line": 192,
-          "delegated": true,
-          "states_rules": false,
-          "entries": [
-            "D-529",
-            "D-530"
-          ],
-          "class_after": "gap"
         }
       },
       "moves_in_since_phase1q": 5
@@ -1650,34 +1476,6 @@
           "class_after": "gap"
         }
       }
-    },
-    "cowork_layer2_slicing_design.md": {
-      "entries": 2,
-      "before": {
-        "gap": 2
-      },
-      "after": {
-        "contract-home": 2
-      },
-      "moves_out": 0,
-      "moves_in": 2,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1695",
-      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*",
-      "sections": {
-        "§8": {
-          "heading_line": 121,
-          "delegated": true,
-          "states_rules": true,
-          "entries": [
-            "D-540",
-            "D-541"
-          ],
-          "class_after": "contract-home"
-        }
-      },
-      "moves_in_since_phase1q": 2
     },
     "cowork_joint_estimator_factorization.md": {
       "entries": 1,
@@ -1762,58 +1560,6 @@
           "states_rules": null,
           "entries": [
             "D-571"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
-    "cowork_phase2_architecture_review.md": {
-      "entries": 1,
-      "before": {
-        "gap": 1
-      },
-      "after": {
-        "gap": 1
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "“§5”": {
-          "heading_line": 108,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-579"
-          ],
-          "class_after": "gap"
-        }
-      }
-    },
-    "cowork_types_header_design.md": {
-      "entries": 1,
-      "before": {
-        "gap": 1
-      },
-      "after": {
-        "gap": 1
-      },
-      "moves_out": 0,
-      "moves_in": 0,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "sections": {
-        "“The leaf header”": {
-          "heading_line": 13,
-          "delegated": null,
-          "states_rules": null,
-          "entries": [
-            "D-610"
           ],
           "class_after": "gap"
         }
@@ -2596,28 +2342,6 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-332",
-      "title": "A carried alternative's added notes are marked UNKNOWN rather than asserted absent — never synthesized",
-      "document": "cowork_layer4_chordsymbol_design.md",
-      "home": "cowork_layer4_chordsymbol_design.md:366-368",
-      "section": "§7",
-      "section_heading_line": 349,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1946",
-      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-333",
       "title": "The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed",
       "document": "cowork_layer4_chordsymbol_design.md",
@@ -2772,28 +2496,6 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-340",
-      "title": "The reading the function layer emits IS the selected source's committed identity, carried whole — never rebuilt field by field",
-      "document": "cowork_layer5_function_design.md",
-      "home": "cowork_layer5_function_design.md:556-563",
-      "section": "§7",
-      "section_heading_line": 546,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:2086",
-      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-341",
       "title": "The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added",
       "document": "cowork_layer5_function_design.md",
@@ -2904,28 +2606,6 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-346",
-      "title": "The candidate set for the whole-run tonality decision is the UNION of every stretch's best candidates, made available at every stretch",
-      "document": "cowork_layer3_keymode_design.md",
-      "home": "cowork_layer3_keymode_design.md:246-255",
-      "section": "§5",
-      "section_heading_line": 240,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1742",
-      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-347",
       "title": "The cost of changing tonality is cheap-to-stay plus a term growing with tonal distance plus a large extra penalty on the relative major/minor switch",
       "document": "cowork_layer3_keymode_design.md",
@@ -2989,28 +2669,6 @@
       "moves": false,
       "moves_since_phase1q": false,
       "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-350",
-      "title": "Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic",
-      "document": "cowork_layer3_keymode_design.md",
-      "home": "cowork_layer3_keymode_design.md:55",
-      "section": "§0",
-      "section_heading_line": 42,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1742",
-      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": true,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -3080,94 +2738,6 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-354",
-      "title": "The key/mode decoder's own settings are exhausted — no setting of its own moves the fixable error set, so the remaining headroom is not a decoder setting",
-      "document": "cowork_layer3_keymode_design.md",
-      "home": "cowork_layer3_keymode_design.md:418-426",
-      "section": "§11",
-      "section_heading_line": 365,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1742",
-      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-355",
-      "title": "The identified key/mode lever is the shared scorer's scale-membership term, applied once to the shared scorer at the wiring step and gated on the corpus stop and the pinned outputs",
-      "document": "cowork_layer3_keymode_design.md",
-      "home": "cowork_layer3_keymode_design.md:427-434",
-      "section": "§11",
-      "section_heading_line": 365,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1742",
-      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-356",
-      "title": "The leading-note presence gate is brittle and its fix is a later key/mode emission step, not a foundation patch — and the scale-membership lever is measured NOT to fix it",
-      "document": "cowork_layer3_keymode_design.md",
-      "home": "cowork_layer3_keymode_design.md:399-413",
-      "section": "§11",
-      "section_heading_line": 365,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1742",
-      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-357",
-      "title": "Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch",
-      "document": "cowork_layer3_keymode_design.md",
-      "home": "cowork_layer3_keymode_design.md:513-522",
-      "section": "§15",
-      "section_heading_line": 496,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1742",
-      "delegation_line": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-358",
       "title": "A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first",
       "document": "cowork_layer3_keymode_design.md",
@@ -3186,138 +2756,6 @@
       "class_after": "contract-home",
       "moves": false,
       "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-359",
-      "title": "Discovering a new corpus counts as a CENSUS DEFECT — the fix is to enumerate its container to closure, never to ingest the one repository",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:30-33",
-      "section": "§1",
-      "section_heading_line": 13,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-360",
-      "title": "A corpus enters the registry only with all five admission fields decided — annotation type, score alignment, format, licence class, decision tier",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:67-70",
-      "section": "§3",
-      "section_heading_line": 65,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-361",
-      "title": "Corpora are de-duplicated by WORK, not by container — and a work in the regression corpus is excluded as reference data from every other container",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:83-86",
-      "section": "§4",
-      "section_heading_line": 81,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-362",
-      "title": "What the census may claim, stated exactly: closure over the enumerated containers, a citation-closure argument for gradable harmony reference data, and a BOUNDED claim for everything else",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:156-161",
-      "section": "§8",
-      "section_heading_line": 154,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-363",
-      "title": "Four named reasons license leaving a source un-enumerated — and non-Western symbolic music is closed by RULING, not by enumeration",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:163-168",
-      "section": "§8",
-      "section_heading_line": 154,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-364",
-      "title": "Every new analysis purpose triggers its own corpus sweep BEFORE its design document is signed — having enumerated the container does not discharge the duty to ask the new question of it",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:203-208",
-      "section": "§8b",
-      "section_heading_line": 187,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
       "moves_since_phase1r": false,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
@@ -3410,232 +2848,12 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-369",
-      "title": "The DCML figured-bass repository is a REALIZATION SCRIPT, not reference data — walked and recorded so it is never mistaken for reference data again",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:268",
-      "section": "§8c",
-      "section_heading_line": 224,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-370",
-      "title": "Reference data for implied polyphony does not exist and the negative is FINAL — the two candidate sets were never released",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:267",
-      "section": "§8c",
-      "section_heading_line": 224,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-371",
-      "title": "No dataset pairs an ornament sign with its written-out realization — confirmed absent, so the ornament expansion ships rule-based and unvalidated, as predicted",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:271",
-      "section": "§8c",
-      "section_heading_line": 224,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-372",
-      "title": "Marked part-writing errors must be BUILT, not downloaded — no public dataset exists and the two commercial holders keep theirs closed",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:277",
-      "section": "§8c",
-      "section_heading_line": 224,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-373",
-      "title": "The only dual-annotator reference data actually on disk is the 27 TAVERN A/B pairs — the assumed second source was measured to have ZERO overlap",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:260",
-      "section": "§8c",
-      "section_heading_line": 224,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-374",
-      "title": "The flexible multi-reading chorale annotations are RECORD-ONLY — they overlap the regression repertoire, so any use over those pieces is a future user ruling",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:260",
-      "section": "§8c",
-      "section_heading_line": 224,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-375",
-      "title": "Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold",
-      "document": "cowork_score_census.md",
-      "home": "cowork_score_census.md:272",
-      "section": "§8c",
-      "section_heading_line": 224,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:370",
-      "delegation_line": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "contract-home",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-376",
       "title": "The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture",
       "document": "cowork_joint_key_chord_design.md",
       "home": "cowork_joint_key_chord_design.md:87-106",
       "section": "“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”",
       "section_heading_line": 80,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "cowork_engage_arc_plan.md:44",
-      "delegation_line": "- **arc #10 — the joint key-and-chord step.** The ratified contract for the coupled key↔chord decision, and for its",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-377",
-      "title": "The forbidden back-edge, stated concretely: a chord decision may NOT write into the committed tonality and re-run the tonality decode — a coupled decision is OWNED by its own bounded box, never patched backward",
-      "document": "cowork_joint_key_chord_design.md",
-      "home": "cowork_joint_key_chord_design.md:146-150",
-      "section": "“§1.3 How it avoids re-introducing a cross-layer cycle”",
-      "section_heading_line": 128,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "cowork_engage_arc_plan.md:44",
-      "delegation_line": "- **arc #10 — the joint key-and-chord step.** The ratified contract for the coupled key↔chord decision, and for its",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-378",
-      "title": "Re-deciding a chord under a different tonality is well-defined ONLY on the decoder path — the legacy multi-pass emission cannot be faithfully re-decoded, and a naive re-emit injects a measured ~6 % same-tonality root-flip artifact",
-      "document": "cowork_joint_key_chord_design.md",
-      "home": "cowork_joint_key_chord_design.md:183-190",
-      "section": "“§2.2 The chord re-decoded under each carried key”",
-      "section_heading_line": 174,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "cowork_engage_arc_plan.md:44",
-      "delegation_line": "- **arc #10 — the joint key-and-chord step.** The ratified contract for the coupled key↔chord decision, and for its",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-379",
-      "title": "Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured",
-      "document": "cowork_joint_key_chord_design.md",
-      "home": "cowork_joint_key_chord_design.md:276-282",
-      "section": "“§3.1 The trigger, grounded in C3”",
-      "section_heading_line": 259,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "cowork_engage_arc_plan.md:44",
@@ -4092,28 +3310,6 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-402",
-      "title": "The inversion-append is a pure cap artifact that dissolves when the cap is removed; the below-threshold bass promotion is a targeted promotion that stays",
-      "document": "cowork_structural_integrity_audit.md",
-      "home": "cowork_structural_integrity_audit.md:87-92",
-      "section": "§1.2",
-      "section_heading_line": 69,
-      "delegation_form": "named-home-with-sections",
-      "delegation_scope": "sections",
-      "delegation_at": "cowork_engage_arc_plan.md:4",
-      "delegation_line": "> precision phase. It does not re-derive the fix details — those live in `cowork_structural_integrity_audit.md`",
-      "section_delegated": false,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section"
-    },
-    {
       "id": "D-403",
       "title": "STOP, not forced: the four best-different-root scans are NOT one decision at code, so the one-decision-four-sites premise over-counts",
       "document": "cowork_structural_integrity_audit.md",
@@ -4158,28 +3354,6 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
     },
     {
-      "id": "D-405",
-      "title": "The full ranked key resolve retained as a segmentation seed is KEPT — adjudicated load-bearing, not dead scoring work",
-      "document": "cowork_structural_integrity_audit.md",
-      "home": "cowork_structural_integrity_audit.md:260-262",
-      "section": "§3.1",
-      "section_heading_line": 251,
-      "delegation_form": "named-home-with-sections",
-      "delegation_scope": "sections",
-      "delegation_at": "cowork_engage_arc_plan.md:4",
-      "delegation_line": "> precision phase. It does not re-derive the fix details — those live in `cowork_structural_integrity_audit.md`",
-      "section_delegated": true,
-      "section_states_rules": false,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
-    },
-    {
       "id": "D-406",
       "title": "The catalog owns the NAMED progressions and substitutions; the pairwise licensing grammar is owned by the function layer — the two are never derived from each other",
       "document": "cowork_progression_schema_dictionary.md",
@@ -4202,56 +3376,12 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-407",
-      "title": "The vocabulary supplies ranked candidates and DECIDES nothing — the threshold, the style weighting and what to do with a candidate are the consumer's",
-      "document": "cowork_progression_schema_dictionary.md",
-      "home": "cowork_progression_schema_dictionary.md:53-54",
-      "section": "§2",
-      "section_heading_line": 48,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:5687",
-      "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-408",
       "title": "Voice-leading is a DIFFERENT DIMENSION and is not held in the harmonic vocabulary — a schema defined by its voice-leading is present only by its harmonic pattern",
       "document": "cowork_progression_schema_dictionary.md",
       "home": "cowork_progression_schema_dictionary.md:55-59",
       "section": "§2",
       "section_heading_line": 48,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:5687",
-      "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-409",
-      "title": "There is no binary match or no-match — only a score on a ranked list, and the list may be EMPTY",
-      "document": "cowork_progression_schema_dictionary.md",
-      "home": "cowork_progression_schema_dictionary.md:121-124",
-      "section": "§4",
-      "section_heading_line": 84,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:5687",
@@ -4296,50 +3426,6 @@
       "home": "cowork_progression_schema_dictionary.md:185-188",
       "section": "§5.2",
       "section_heading_line": 168,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:5687",
-      "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-412",
-      "title": "The circle-of-fifths entry is the FULL cycle, and a realisation may enter at any member and run contiguously to the final tonic",
-      "document": "cowork_progression_schema_dictionary.md",
-      "home": "cowork_progression_schema_dictionary.md:179-181",
-      "section": "§5.2",
-      "section_heading_line": 168,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:5687",
-      "delegation_line": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "contract-home",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-413",
-      "title": "Upper-structure and rootless VOICING substitution is outside the harmonic vocabulary — it is a voicing, not a function",
-      "document": "cowork_progression_schema_dictionary.md",
-      "home": "cowork_progression_schema_dictionary.md:220-222",
-      "section": "§5.3",
-      "section_heading_line": 200,
       "delegation_form": "explicit-delegation-clause",
       "delegation_scope": "document",
       "delegation_at": "ARCHITECTURE.md:5687",
@@ -5412,72 +4498,6 @@
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
-      "id": "D-517",
-      "title": "The note model's span query uses a start-time-ordered list plus a running latest-end-time tree, chosen because it is the simplest structure that is fast AND returns notes in scan order",
-      "document": "cowork_layer1_note_model_design.md",
-      "home": "cowork_layer1_note_model_design.md:204-206",
-      "section": "§9",
-      "section_heading_line": 194,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1569",
-      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer1_note_model_design.md` (AS-BUILT — built, reviewed and accepted, `:3`) — D-517…D-520 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-518",
-      "title": "The planned cue-note flag was specified and then REMOVED: after import a cue note cannot be told from a muted note, and the does-it-sound flag already covers both",
-      "document": "cowork_layer1_note_model_design.md",
-      "home": "cowork_layer1_note_model_design.md:261-263",
-      "section": "§13",
-      "section_heading_line": 252,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1569",
-      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer1_note_model_design.md` (AS-BUILT — built, reviewed and accepted, `:3`) — D-517…D-520 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": false,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
-    },
-    {
-      "id": "D-519",
-      "title": "Only TIES join written notes into one sounding note — slurred notes stay separate, whatever their pitches",
-      "document": "cowork_layer1_note_model_design.md",
-      "home": "cowork_layer1_note_model_design.md:43-47",
-      "section": "§1",
-      "section_heading_line": 26,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1569",
-      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer1_note_model_design.md` (AS-BUILT — built, reviewed and accepted, `:3`) — D-517…D-520 — which this section points at and does not restate.",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-520",
       "title": "Widening the loaded span was built DECOUPLED from the whole-score-read fix — superseding the recorded framing that the two were one coupled change",
       "document": "cowork_layer1_note_model_design.md",
@@ -5676,50 +4696,6 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-529",
-      "title": "The joint architecture's expected win is ASYMMETRIC — large on key and mode, modest on chord root — and the written predictions must say so, because a large root claim would itself be a surprise",
-      "document": "cowork_joint_estimator_architecture.md",
-      "home": "cowork_joint_estimator_architecture.md:200-206",
-      "section": "§6",
-      "section_heading_line": 192,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:3",
-      "delegation_line": "> **★★ GOVERNING DECISION (user-ratified 2026-07-17): the key/mode/chord estimator is JOINT — see",
-      "section_delegated": true,
-      "section_states_rules": false,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
-    },
-    {
-      "id": "D-530",
-      "title": "The joint architecture is a CONSTRAINED optimum, not a global one: the learned shared-representation models measure better and are excluded because they are un-establishable and undiagnosable",
-      "document": "cowork_joint_estimator_architecture.md",
-      "home": "cowork_joint_estimator_architecture.md:208-214",
-      "section": "§6",
-      "section_heading_line": 192,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:3",
-      "delegation_line": "> **★★ GOVERNING DECISION (user-ratified 2026-07-17): the key/mode/chord estimator is JOINT — see",
-      "section_delegated": true,
-      "section_states_rules": false,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS"
-    },
-    {
       "id": "D-535",
       "title": "The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong",
       "document": "cowork_sensitive_cell_probe.md",
@@ -5762,50 +4738,6 @@
       "moves_since_phase1q": false,
       "moves_since_phase1r": false,
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
-      "id": "D-540",
-      "title": "A slice is a unit of constant CONTENT, not of constant musical TIME — the layers above must never treat slices as equal-weight units, and a slice's metric extent is evidence weighted by metric structure, not by tempo",
-      "document": "cowork_layer2_slicing_design.md",
-      "home": "cowork_layer2_slicing_design.md:130-139",
-      "section": "§8",
-      "section_heading_line": 121,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1695",
-      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-541",
-      "title": "The metric weight of a slice IS the beat-strength at its start tick, taken from one shared preference-free notation primitive that no consuming layer re-defines",
-      "document": "cowork_layer2_slicing_design.md",
-      "home": "cowork_layer2_slicing_design.md:140-148",
-      "section": "§8",
-      "section_heading_line": 121,
-      "delegation_form": "explicit-delegation-clause",
-      "delegation_scope": "document",
-      "delegation_at": "ARCHITECTURE.md:1695",
-      "delegation_line": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*",
-      "section_delegated": true,
-      "section_states_rules": true,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "contract-home",
-      "class_after": "contract-home",
-      "moves": true,
-      "moves_since_phase1q": true,
-      "moves_since_phase1r": false,
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
       "id": "D-565",
@@ -5896,28 +4828,6 @@
       "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
-      "id": "D-579",
-      "title": "The anchor obligation: compute the chord ONCE against its region's FINAL notes, with the tonality as an explicit input rather than frozen mid-pipeline",
-      "document": "cowork_phase2_architecture_review.md",
-      "home": "cowork_phase2_architecture_review.md:127-132",
-      "section": "“§5”",
-      "section_heading_line": 108,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
-    },
-    {
       "id": "D-601",
       "title": "Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation",
       "document": "cowork_confidence_contract.md",
@@ -5938,28 +4848,6 @@
       "moves_since_phase1q": true,
       "moves_since_phase1r": true,
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-610",
-      "title": "The value-type relocation is ZERO-CHURN by construction: the leaf spans both namespaces and the un-nested type keeps a member alias, so no call site changes and the move is byte-identical",
-      "document": "cowork_types_header_design.md",
-      "home": "cowork_types_header_design.md:16-17",
-      "section": "“The leaf header”",
-      "section_heading_line": 13,
-      "delegation_form": "not-named-in-any-ratified-surface",
-      "delegation_scope": "none",
-      "delegation_at": null,
-      "delegation_line": null,
-      "section_delegated": null,
-      "section_states_rules": null,
-      "class_before_phase1q": "gap",
-      "class_before_phase1r": "gap",
-      "class_before_the_2026_08_08_apply": "gap",
-      "class_after": "gap",
-      "moves": false,
-      "moves_since_phase1q": false,
-      "moves_since_phase1r": false,
-      "decided_by": "clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade"
     },
     {
       "id": "D-613",
@@ -6030,7 +4918,7 @@
   ],
   "the_phase_1r_re_run": {
     "why": "The user WROTE delegations on 2026-08-03 (the OI-293 write list) for the six documents this pass had reported losing entries. The pass therefore runs a SECOND time, over classes it had itself moved. `class_before_phase1q` still holds the state before the FIRST run, so `totals` and `by_document` below are unchanged in meaning; this block is the movement caused by the written delegations alone.",
-    "entries_moved_since_phase1q": 92,
+    "entries_moved_since_phase1q": 77,
     "moved_to_contract_home": [
       {
         "id": "D-270",
@@ -6131,13 +5019,6 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
       {
-        "id": "D-340",
-        "document": "cowork_layer5_function_design.md",
-        "section": "§7",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
         "id": "D-341",
         "document": "cowork_layer5_function_design.md",
         "section": "§5.0",
@@ -6152,79 +5033,9 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
       {
-        "id": "D-350",
-        "document": "cowork_layer3_keymode_design.md",
-        "section": "§0",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-359",
-        "document": "cowork_score_census.md",
-        "section": "§1",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-360",
-        "document": "cowork_score_census.md",
-        "section": "§3",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-361",
-        "document": "cowork_score_census.md",
-        "section": "§4",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-362",
-        "document": "cowork_score_census.md",
-        "section": "§8",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-363",
-        "document": "cowork_score_census.md",
-        "section": "§8",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-364",
-        "document": "cowork_score_census.md",
-        "section": "§8b",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
         "id": "D-376",
         "document": "cowork_joint_key_chord_design.md",
         "section": "“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-377",
-        "document": "cowork_joint_key_chord_design.md",
-        "section": "“§1.3 How it avoids re-introducing a cross-layer cycle”",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-378",
-        "document": "cowork_joint_key_chord_design.md",
-        "section": "“§2.2 The chord re-decoded under each carried key”",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-379",
-        "document": "cowork_joint_key_chord_design.md",
-        "section": "“§3.1 The trigger, grounded in C3”",
         "from": "gap",
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
@@ -6579,20 +5390,6 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
       {
-        "id": "D-517",
-        "document": "cowork_layer1_note_model_design.md",
-        "section": "§9",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-519",
-        "document": "cowork_layer1_note_model_design.md",
-        "section": "§1",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
         "id": "D-520",
         "document": "cowork_layer1_note_model_design.md",
         "section": "§11",
@@ -6635,20 +5432,6 @@
         "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
       },
       {
-        "id": "D-540",
-        "document": "cowork_layer2_slicing_design.md",
-        "section": "§8",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
-        "id": "D-541",
-        "document": "cowork_layer2_slicing_design.md",
-        "section": "§8",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
-      {
         "id": "D-565",
         "document": "cowork_joint_estimator_factorization.md",
         "section": "§5",
@@ -6679,21 +5462,13 @@
     ],
     "moved_to_gap": [],
     "write_list_documents_that_did_not_move_in_whole": [
-      "cowork_layer1_note_model_design.md",
       "cowork_layer1_tone_collection_design.md"
     ]
   },
   "the_2026_08_08_apply": {
     "why": "The user WROTE three more delegations on 2026-08-08 (the document-route ruling, route (i)) and every read wave since phase 1r entered register entries whose `home_section` had no writer while the applying run was held. This block is the movement caused by everything since the phase-1r pass — graded against `class_before_the_2026_08_08_apply`, the fourth frozen epoch, which is read back from each entry and never overwritten (#12).",
-    "entries_moved_since_phase1r": 24,
+    "entries_moved_since_phase1r": 23,
     "moved_to_contract_home": [
-      {
-        "id": "D-350",
-        "document": "cowork_layer3_keymode_design.md",
-        "section": "§0",
-        "from": "gap",
-        "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-      },
       {
         "id": "D-398",
         "document": "cowork_voiceleading_axis_design.md",
@@ -6904,63 +5679,9 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-359",
-      "document": "cowork_score_census.md",
-      "section": "§1",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-360",
-      "document": "cowork_score_census.md",
-      "section": "§3",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-361",
-      "document": "cowork_score_census.md",
-      "section": "§4",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-362",
-      "document": "cowork_score_census.md",
-      "section": "§8",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-363",
-      "document": "cowork_score_census.md",
-      "section": "§8",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-364",
-      "document": "cowork_score_census.md",
-      "section": "§8b",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-376",
       "document": "cowork_joint_key_chord_design.md",
       "section": "“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-377",
-      "document": "cowork_joint_key_chord_design.md",
-      "section": "“§1.3 How it avoids re-introducing a cross-layer cycle”",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-378",
-      "document": "cowork_joint_key_chord_design.md",
-      "section": "“§2.2 The chord re-decoded under each carried key”",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-379",
-      "document": "cowork_joint_key_chord_design.md",
-      "section": "“§3.1 The trigger, grounded in C3”",
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -6976,21 +5697,9 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-407",
-      "document": "cowork_progression_schema_dictionary.md",
-      "section": "§2",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-408",
       "document": "cowork_progression_schema_dictionary.md",
       "section": "§2",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-409",
-      "document": "cowork_progression_schema_dictionary.md",
-      "section": "§4",
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -7003,18 +5712,6 @@
       "id": "D-411",
       "document": "cowork_progression_schema_dictionary.md",
       "section": "§5.2",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-412",
-      "document": "cowork_progression_schema_dictionary.md",
-      "section": "§5.2",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-413",
-      "document": "cowork_progression_schema_dictionary.md",
-      "section": "§5.3",
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
@@ -7276,18 +5973,6 @@
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {
-      "id": "D-517",
-      "document": "cowork_layer1_note_model_design.md",
-      "section": "§9",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-519",
-      "document": "cowork_layer1_note_model_design.md",
-      "section": "§1",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
       "id": "D-520",
       "document": "cowork_layer1_note_model_design.md",
       "section": "§11",
@@ -7321,18 +6006,6 @@
       "id": "D-528",
       "document": "cowork_joint_estimator_architecture.md",
       "section": "§5a",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-540",
-      "document": "cowork_layer2_slicing_design.md",
-      "section": "§8",
-      "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
-    },
-    {
-      "id": "D-541",
-      "document": "cowork_layer2_slicing_design.md",
-      "section": "§8",
       "decided_by": "D-430, the section-level unit — the delegation reaches this section and it STATES RULES"
     },
     {

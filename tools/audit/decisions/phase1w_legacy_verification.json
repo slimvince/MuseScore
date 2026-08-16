@@ -30,41 +30,21 @@
   ]
  },
  "derived_set": {
-  "count": 92,
+  "count": 62,
   "ids": [
-   "D-051",
-   "D-052",
    "D-053",
    "D-054",
    "D-055",
    "D-058",
-   "D-059",
-   "D-060",
-   "D-061",
-   "D-062",
-   "D-063",
-   "D-064",
-   "D-065",
    "D-068",
    "D-069",
-   "D-089",
-   "D-101",
-   "D-102",
    "D-103",
-   "D-104",
-   "D-214",
    "D-215",
-   "D-216",
-   "D-217",
-   "D-218",
-   "D-219",
    "D-220",
    "D-221",
    "D-222",
    "D-223",
    "D-224",
-   "D-235",
-   "D-243",
    "D-248",
    "D-278",
    "D-284",
@@ -91,25 +71,16 @@
    "D-342",
    "D-344",
    "D-345",
-   "D-346",
    "D-347",
    "D-348",
    "D-349",
-   "D-350",
    "D-351",
-   "D-354",
-   "D-355",
-   "D-356",
-   "D-357",
    "D-358",
    "D-376",
-   "D-378",
    "D-380",
    "D-381",
-   "D-402",
    "D-403",
    "D-404",
-   "D-405",
    "D-423",
    "D-428",
    "D-429",
@@ -121,7 +92,6 @@
    "D-571",
    "D-572",
    "D-575",
-   "D-579",
    "D-580",
    "D-583"
   ],
@@ -129,8 +99,364 @@
    "D-329",
    "D-429"
   ],
-  "register_size_at_this_tree": 673,
+  "register_size_at_this_tree": 512,
   "derivation": "every decision in backbone_decisions.json whose `legacy_subject` field is truthy; no figure in the record is used or quoted (D-431, and OI-289's own instruction to re-derive)."
+ },
+ "retired_subjects": {
+  "what_this_is": "Verdicts whose subject entry was SOFT-DISCARDED out of the LIVE record on 2026-08-16 (the user's ruling §3, its reach §4, the STANDING checks' treatment §6). Each is carried WHOLE, in the words it was authored in, and is neither re-read nor re-graded (#12). NOTHING COUNTS IT: the derived set, the tallies, the anchor-use check and the comparison against the registered prediction are the LIVE marked set's.",
+  "the_retirement": "CC, dispatch `cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of 2026-08-16 — §3 the soft-discard, §4 its reach, §6 the STANDING checks' treatment. Every subject entry below was SOFT-DISCARDED into the decisions register's retired-entries block: a provenance verdict, not a judgment on soundness or usefulness. Each verdict is moved here whole; if an entry is ever revived, its verdict is read back into VERDICTS deliberately rather than resurrected by this copy.",
+  "membership_is_derived": "tools/audit/decisions/gen_retired_subject_moves.py derives which verdicts belong here from the data file's own retired block and re-verifies this section in both directions.",
+  "the_stop_in_the_other_direction": "A retired subject that is in the derived marked set again halts this tool until the verdict is read back into VERDICTS deliberately.",
+  "count": 30,
+  "verdicts": [
+   {
+    "id": "D-051",
+    "subject": "The legacy Layer-3 sequence decoder as the production key path",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_LEGACY_ENTRY",
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_KEY"
+    ],
+    "transfer": "none-found",
+    "note": "ARCHITECTURE.md:1414 cites it only as the precedent SHAPE for a supersession in fact, not as a principle carried across."
+   },
+   {
+    "id": "D-052",
+    "subject": "The shared signature-read + declared-mode function (resolveKeySignatureContext)",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_KEY"
+    ],
+    "transfer": "none-found",
+    "note": "OBSERVATION, not a mark error: the joint fact adapter performs its OWN signature and declared-mode read (JOINT_SIG_READ), so the \"ONE shared function\" property D-052 records does not extend across the live path. Whether that is a #6 duplication of concern or two different concerns is not settled here."
+   },
+   {
+    "id": "D-059",
+    "subject": "The legacy key window — 16 beats back, 8 forward, decayed",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_KEY"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-060",
+    "subject": "The legacy chord analyzer's vertical-only boundary",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "NOTE_SEAM_LEGACY",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "undetermined",
+    "note": "The boundary rule is #7 applied to the legacy analyzer. Whether the live estimator inherits a boundary statement of the same kind was not established this wave; no ruling names D-060."
+   },
+   {
+    "id": "D-061",
+    "subject": "The Baroque-calibrated gate thresholds and the never-widen rule",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "NOTE_SEAM_LEGACY",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "undetermined",
+    "note": "CLAUDE.md's gate-threshold policy states the same prohibition as a STANDING instruction, and D-423 names it as one of three holding \"for the whole programme\" — while D-423 is itself LEGACY-marked. Whether the prohibition reaches the live design is a ruling the record does not contain."
+   },
+   {
+    "id": "D-062",
+    "subject": "Withholding progression signals during segmentation",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-063",
+    "subject": "The tick-local path's cold-context contract",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "FLAG_DEFAULT",
+     "NOTE_SEAM_RECORD",
+     "NOTE_SEAM_LEGACY",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-064",
+    "subject": "The chord-scoring presets as a measurement-tool-only artifact",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "BATCH_LEGACY_DEFAULT"
+    ],
+    "transfer": "none-found",
+    "note": "Production inference is preset-independent (CLAUDE.md gate block (A)), so the presets have no production consumer at all — which is the same conclusion the entry's superseded-in-fact status already records."
+   },
+   {
+    "id": "D-065",
+    "subject": "The deliberate look-ahead divergence between the measurement tool and the app",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "BATCH_LEGACY_DEFAULT",
+     "NOTE_SEAM_LEGACY"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-089",
+    "subject": "The legacy 0.5 / 0.8 confidence exposure gates",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "NOTE_SEAM_LEGACY",
+     "RECORD_EXPOSURE",
+     "BATCH_LEGACY_DEFAULT"
+    ],
+    "transfer": "none-found",
+    "note": "The record arm declares its own constant on its own gap scale (RECORD_EXPOSURE) rather than reusing these, which is why the entry is superseded-by rather than transferred."
+   },
+   {
+    "id": "D-101",
+    "subject": "Restricting contextual inversion bonuses to major and minor candidates",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "NOTE_SEAM_LEGACY",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-102",
+    "subject": "Extending the inversion bonuses to augmented and half-diminished candidates",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "NOTE_SEAM_LEGACY",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-104",
+    "subject": "Conditioning the bass-is-root bonus on corroborating support",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "NOTE_SEAM_LEGACY",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-214",
+    "subject": "The dim7 characteristic bonus as the rotation selector",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-216",
+    "subject": "The stepwise-bass bonus's four load-bearing gates",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-217",
+    "subject": "Suppressing every context-dependent bonus during segmentation",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": "The same rule as D-062 at a second home; its specification home is D-062 by the entry's own text."
+   },
+   {
+    "id": "D-218",
+    "subject": "Deriving every template-sized array extent from one constant",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-219",
+    "subject": "The removal of Gates B/C/D and the standing bar on a temporal condition in the flip",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "FM2_FLIP",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": "Split subject: the three removed gates are gone, but the flip the standing half constrains survives at HEAD as FM2, so the prohibition governs code that exists."
+   },
+   {
+    "id": "D-235",
+    "subject": "The bound on what tonal-centre disambiguation may overturn",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_KEY"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-243",
+    "subject": "The planning band for the vertical engine and the corpora excluded from it",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "BATCH_LEGACY_DEFAULT",
+     "L4_SPEC_DORMANT"
+    ],
+    "transfer": "none-found",
+    "note": "The subject is the engine the band bands. Status superseded-in-fact — the production surface is measured on the robust unit, not this band."
+   },
+   {
+    "id": "D-346",
+    "subject": "The union-of-stretch-bests candidate set for the whole-run tonality decision",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_KEY"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-350",
+    "subject": "The whole-run margin as the published key confidence",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_KEY"
+    ],
+    "transfer": "none-found",
+    "note": "Its citations outside the register mechanics are all tooling discussions of home classification, not rulings about its content."
+   },
+   {
+    "id": "D-354",
+    "subject": "The exhaustion of the key/mode decoder's private settings",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-355",
+    "subject": "The scale-membership term as the identified key/mode lever",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_KEY"
+    ],
+    "transfer": "none-found",
+    "note": "The lever is a term in the legacy shared key scorer, and the wiring step it was to be applied at is the legacy one."
+   },
+   {
+    "id": "D-356",
+    "subject": "The brittleness of the leading-note presence gate",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_KEY"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-357",
+    "subject": "Reading notated spelling as tonality evidence at the function layer",
+    "reachability": "none",
+    "anchors": [
+     "L5_DIAG_ONLY",
+     "L3_SPEC_DORMANT"
+    ],
+    "transfer": "none-found",
+    "note": "Not built on either layer — the decision places the evidence at a layer that is itself dormant."
+   },
+   {
+    "id": "D-378",
+    "subject": "Re-deciding a chord under a different tonality, well-defined only on the decoder path",
+    "reachability": "none",
+    "anchors": [
+     "JKEY_NO_REEMIT",
+     "JKEY_WIRING_FLAG"
+    ],
+    "transfer": "assigns-live-work",
+    "note": "The naive re-emit is not built — the wiring leaves the chord as the production chord. The entry names the decoder path as where the question IS well defined."
+   },
+   {
+    "id": "D-402",
+    "subject": "The inversion-append as a cap artifact, and the surviving bass promotion",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "BATCH_LEGACY_DEFAULT",
+     "TESTS_CHORD"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-405",
+    "subject": "Keeping the full ranked key resolve as a segmentation seed",
+    "reachability": "false-negative-path",
+    "anchors": [
+     "L3_SPEC_DORMANT",
+     "BATCH_LEGACY_DEFAULT"
+    ],
+    "transfer": "none-found",
+    "note": ""
+   },
+   {
+    "id": "D-579",
+    "subject": "The anchor obligation: compute the chord ONCE against its region's FINAL notes, with tonality an explicit input",
+    "reachability": "none",
+    "anchors": [
+     "BATCH_JOINT",
+     "RECORD_SECTION"
+    ],
+    "transfer": "carried-elsewhere",
+    "note": "Reach `none` on this pass's own D-215 precedent — the obligation was never executed on the path it was written for, so nothing at HEAD implements the subject. Its two anchors are the production-path anchors, and they are the evidence for the transfer as much as for the reach: the record states the obligation \"was met by replacement rather than by repair\" — the live arm is one joint decode over key, mode, chord and segmentation together (D-001), which is the ordering this step asked for, reached by a different route."
+   }
+  ]
  },
  "recorded_figures_that_do_not_match": [
   {
@@ -141,8 +467,8 @@
     "line_text": "the set is **80 entries** (81 before D-311's mark was removed on the established evidence above —"
    },
    "note": "The row that owns this verification. TRUE WHEN WRITTEN (phase 1m); it first went stale at phase 1n (see when_the_set_last_changed) and the set has GROWN AGAIN since — which is the OPEN_ITEMS.md OI-354 finding, and why the discrepancy field beside this note is computed from the derived set rather than read off any recorded figure. This tool records WHEN the set last changed only up to phase 1n; the later growth is dated on OI-354's own row and is not re-measured here.",
-   "derived_count": 92,
-   "discrepancy": 12
+   "derived_count": 62,
+   "discrepancy": -18
   },
   {
    "recorded_figure": 80,
@@ -152,8 +478,8 @@
     "line_text": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified — and two of them were wrong | The marker is generated text, one fixed sentence on every marked entry, and until 2026-08-03 it ended \"**it has no effect on the live solution**\" — a claim about the LIVE system that the marking pass never checked, since the set was drawn by asking what each decision is ABOUT. It failed twice: **D-329**, whose PRINCIPLE the [[OI-275]] ruling carried across to the live family design (patched then with a second marker variant, which fixed the instance and left the clause standing everywhere else), and **D-311**, whose subject `chordanalyzer.cpp` `STATUS_ARCHIVE.md:114` records as surviving the engagement and one of whose five produced translation units, `chordsymbolformatter.cpp`, the record arm runs (`notationimplodebridge.cpp:1170`). **The user ruled the clause REMOVED rather than re-argued** — a swept population with two demonstrated errors is not established (#19) — executed in the GENERATOR so one change covers all 80 and cannot drift (#17f). This row carries the full re-verification against a live-reachability test. **[[OI-288]]'s finding may bear on a whole CLASS of them:** the legacy notation arm's reachability turns on one runtime flag defaulting `true` and four branch points, not on compilation, so \"dormant\" is a statement about a DEFAULT with an enumerated false-negative path, and each verdict must say which it means. NOT in doubt: the marking convention itself (`CLAUDE.md` rule (f), user-ratified 2026-08-02) — what is withdrawn is an unchecked assertion riding along with it | E — verification owed / decisions register | ✅ VERIFIED 2026-08-03 (CC, phase 1w) — the full re-verification is DELIVERED as the generated artifact `tools/audit/decisions/phase1w_legacy_verification.json` (every count, verdict and citation there, none restated; D-431). **0 marks established wrong, so 0 corrected, and the marking convention is NOT in question.** The set is DERIVED, and **five** recorded figures disagree with it — all located, none corrected here (that is action, and this wave gathers). **★ The two results the family design needs. (1) \"Dormant\" is far weaker than it reads:** NO entry is unreachable at any setting on the notation flag and NONE is dormant-behind-the-default alone — every marked subject with code at HEAD is reached by plain `batch_analyze` (`--joint-inference` defaults OFF), by a batch diagnostic dump flag, or by the test suites. **(2) The largest transfer class was not predicted:** entries a LIVE specification section restates as standing do-not-retry prohibitions, where the mark is RIGHT about the subject and the entry still binds what a future designer may attempt — a third thing a mark can be, which the register has no field for. Both false-negative enumerations in this row are short (the batch diagnostic flags; and `jointKeyWiringEnabled()`, a second default-OFF flag inside the legacy arm). *Historical, preserved (#12): the row was opened saying* \"Set size **80**, counted from the data\" — *true at phase 1m and stale by one since phase 1n, when D-428 gained the mark; the register's own preamble says 79 and `STATUS.md` + the phase-1m dispatch say 75.* Residues: [[OI-302]] (the third mark class, D-055, and the undetermined transfers), [[OI-303]], [[OI-304]]. **★ AND THE VERDICT ABOVE IS TRUE OF THE POPULATION IT COVERED AND OF NO LARGER ONE — [[OI-354]], opened 2026-08-09.** Entries have carried the legacy mark since this pass ran, and the verification holds no verdict for them; the tool that exists to notice that had been stopping earlier, on a drifted citation, so the growth was invisible. **The ✅ above is NOT withdrawn** — what it verified, it verified — but it must not be read as a statement about the marked set at HEAD | [detail](open_items/OI-289.md) |"
    },
    "note": "The INDEX row, which the register's own rule makes the authoritative status surface. Same staleness as the detail file.",
-   "derived_count": 92,
-   "discrepancy": 12
+   "derived_count": 62,
+   "discrepancy": -18
   },
   {
    "recorded_figure": 79,
@@ -163,19 +489,19 @@
     "line_text": "> 2026-08-02:** the 5 phase-1i entries (D-401…D-405), the 79-entry LEGACY-marked set confirmed"
    },
    "note": "The register's own ratified preamble (eighth ratification event, 2026-08-02). Rendered from the generator's PREAMBLE constant, so correcting it means editing ratified text — reported, not touched.",
-   "derived_count": 92,
-   "discrepancy": 13
+   "derived_count": 62,
+   "discrepancy": -17
   },
   {
    "recorded_figure": 75,
    "located_at": {
     "file": "STATUS.md",
-    "line": 271,
+    "line": 339,
     "line_text": "occurrences; register `--check` across 21 files; open-items living check 278/278). **NEXT: the user ratifies (or corrects) D-401…D-405 and the 75-entry LEGACY"
    },
    "note": "The phase-1i entry. Still in the live STATUS entries, not archived.",
-   "derived_count": 92,
-   "discrepancy": 17
+   "derived_count": 62,
+   "discrepancy": -13
   },
   {
    "recorded_figure": 75,
@@ -185,8 +511,8 @@
     "line_text": "**The row.** Open a phase-2 row for the full re-verification: all **75** LEGACY-marked entries"
    },
    "note": "The phase-1m dispatch that opened OI-289 — so the row was sized from a figure that was already wrong by five when the row was written, which is why the row says to re-derive.",
-   "derived_count": 92,
-   "discrepancy": 17
+   "derived_count": 62,
+   "discrepancy": -13
   }
  ],
  "when_the_set_last_changed": {
@@ -466,42 +792,19 @@
  "anchors_declared_but_unused": {
   "why_they_exist": "These anchors establish the two PRODUCTION paths themselves — what the record arm and --joint-inference actually call — rather than any one entry's subject. Every per-entry verdict rests on them collectively: the reason no marked subject is reachable on a production path is that these paths were traced and none of them enters the legacy scorer or the legacy key layer. They are listed separately rather than attached to every row of derived_set.ids, and they are located at the object exactly like the cited ones, so a change to any of them stops this tool. (The former wording named a row count, which the 2026-08-09 application of the OI-354 verdict set made stale; it is replaced by a pointer to the derived list rather than re-typed, D-431.)",
   "keys": [
+   "BATCH_JOINT",
    "CSF_RECORD_ARM",
    "IMPLODE_RECORD",
    "JOINT_SIG_READ",
+   "L3_LEGACY_ENTRY",
+   "RECORD_EXPOSURE",
    "RECORD_GROUPKEYAREAS",
+   "RECORD_SECTION",
    "SPAN_RECORD",
    "TUNING_RECORD"
   ]
  },
  "entries": [
-  {
-   "id": "D-051",
-   "subject": "The legacy Layer-3 sequence decoder as the production key path",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_LEGACY_ENTRY",
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_KEY"
-   ],
-   "transfer": "none-found",
-   "note": "ARCHITECTURE.md:1414 cites it only as the precedent SHAPE for a supersession in fact, not as a principle carried across.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-052",
-   "subject": "The shared signature-read + declared-mode function (resolveKeySignatureContext)",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_KEY"
-   ],
-   "transfer": "none-found",
-   "note": "OBSERVATION, not a mark error: the joint fact adapter performs its OWN signature and declared-mode read (JOINT_SIG_READ), so the \"ONE shared function\" property D-052 records does not extend across the live path. Whether that is a #6 duplication of concern or two different concerns is not settled here.",
-   "carries_transfer_variant_in_the_data": false
-  },
   {
    "id": "D-053",
    "subject": "The P4 tick-local path keeping the older resolver",
@@ -556,94 +859,6 @@
    "carries_transfer_variant_in_the_data": false
   },
   {
-   "id": "D-059",
-   "subject": "The legacy key window — 16 beats back, 8 forward, decayed",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_KEY"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-060",
-   "subject": "The legacy chord analyzer's vertical-only boundary",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "NOTE_SEAM_LEGACY",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "undetermined",
-   "note": "The boundary rule is #7 applied to the legacy analyzer. Whether the live estimator inherits a boundary statement of the same kind was not established this wave; no ruling names D-060.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-061",
-   "subject": "The Baroque-calibrated gate thresholds and the never-widen rule",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "NOTE_SEAM_LEGACY",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "undetermined",
-   "note": "CLAUDE.md's gate-threshold policy states the same prohibition as a STANDING instruction, and D-423 names it as one of three holding \"for the whole programme\" — while D-423 is itself LEGACY-marked. Whether the prohibition reaches the live design is a ruling the record does not contain.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-062",
-   "subject": "Withholding progression signals during segmentation",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-063",
-   "subject": "The tick-local path's cold-context contract",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "FLAG_DEFAULT",
-    "NOTE_SEAM_RECORD",
-    "NOTE_SEAM_LEGACY",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-064",
-   "subject": "The chord-scoring presets as a measurement-tool-only artifact",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "BATCH_LEGACY_DEFAULT"
-   ],
-   "transfer": "none-found",
-   "note": "Production inference is preset-independent (CLAUDE.md gate block (A)), so the presets have no production consumer at all — which is the same conclusion the entry's superseded-in-fact status already records.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-065",
-   "subject": "The deliberate look-ahead divergence between the measurement tool and the app",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "BATCH_LEGACY_DEFAULT",
-    "NOTE_SEAM_LEGACY"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
    "id": "D-068",
    "subject": "The legacy analyzer's three-distinct-pitch-class minimum",
    "reachability": "false-negative-path",
@@ -669,75 +884,11 @@
    "carries_transfer_variant_in_the_data": false
   },
   {
-   "id": "D-089",
-   "subject": "The legacy 0.5 / 0.8 confidence exposure gates",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "NOTE_SEAM_LEGACY",
-    "RECORD_EXPOSURE",
-    "BATCH_LEGACY_DEFAULT"
-   ],
-   "transfer": "none-found",
-   "note": "The record arm declares its own constant on its own gap scale (RECORD_EXPOSURE) rather than reusing these, which is why the entry is superseded-by rather than transferred.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-101",
-   "subject": "Restricting contextual inversion bonuses to major and minor candidates",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "NOTE_SEAM_LEGACY",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-102",
-   "subject": "Extending the inversion bonuses to augmented and half-diminished candidates",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "NOTE_SEAM_LEGACY",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
    "id": "D-103",
    "subject": "The pedal-point second pass and its two acceptance conditions",
    "reachability": "false-negative-path",
    "anchors": [
     "NOTE_SEAM_LEGACY",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-104",
-   "subject": "Conditioning the bass-is-root bonus on corroborating support",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "NOTE_SEAM_LEGACY",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-214",
-   "subject": "The dim7 characteristic bonus as the rotation selector",
-   "reachability": "false-negative-path",
-   "anchors": [
     "BATCH_LEGACY_DEFAULT",
     "TESTS_CHORD"
    ],
@@ -755,55 +906,6 @@
    ],
    "transfer": "live-prohibition-in-spec",
    "note": "The GATING was tried in two forms and abandoned, so nothing at HEAD implements the subject; the bonus it would have gated is legacy code. ARCHITECTURE.md:1420 lists it as a live do-not-retry, and D-423 names it as one of three programme-wide prohibitions.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-216",
-   "subject": "The stepwise-bass bonus's four load-bearing gates",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-217",
-   "subject": "Suppressing every context-dependent bonus during segmentation",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "The same rule as D-062 at a second home; its specification home is D-062 by the entry's own text.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-218",
-   "subject": "Deriving every template-sized array extent from one constant",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-219",
-   "subject": "The removal of Gates B/C/D and the standing bar on a temporal condition in the flip",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "FM2_FLIP",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "Split subject: the three removed gates are gone, but the flip the standing half constrains survives at HEAD as FM2, so the prohibition governs code that exists.",
    "carries_transfer_variant_in_the_data": false
   },
   {
@@ -865,31 +967,6 @@
    ],
    "transfer": "none-found",
    "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-235",
-   "subject": "The bound on what tonal-centre disambiguation may overturn",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_KEY"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-243",
-   "subject": "The planning band for the vertical engine and the corpora excluded from it",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "BATCH_LEGACY_DEFAULT",
-    "L4_SPEC_DORMANT"
-   ],
-   "transfer": "none-found",
-   "note": "The subject is the engine the band bands. Status superseded-in-fact — the production surface is measured on the robust unit, not this band.",
    "carries_transfer_variant_in_the_data": false
   },
   {
@@ -1205,19 +1282,6 @@
    "carries_transfer_variant_in_the_data": false
   },
   {
-   "id": "D-346",
-   "subject": "The union-of-stretch-bests candidate set for the whole-run tonality decision",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_KEY"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
    "id": "D-347",
    "subject": "The change-cost shape: cheap-to-stay plus distance plus a relative-pair penalty",
    "reachability": "false-negative-path",
@@ -1257,19 +1321,6 @@
    "carries_transfer_variant_in_the_data": false
   },
   {
-   "id": "D-350",
-   "subject": "The whole-run margin as the published key confidence",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_KEY"
-   ],
-   "transfer": "none-found",
-   "note": "Its citations outside the register mechanics are all tooling discussions of home classification, not rulings about its content.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
    "id": "D-351",
    "subject": "The key/mode search as its own decoder, not the chord decoder reused",
    "reachability": "false-negative-path",
@@ -1280,56 +1331,6 @@
    ],
    "transfer": "none-found",
    "note": "OBSERVATION: the live estimator decides key and chord inside ONE decode, which is the opposite arrangement. The mark is right — the decision is about the legacy pair — and a reader should not read it as describing what runs.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-354",
-   "subject": "The exhaustion of the key/mode decoder's private settings",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-355",
-   "subject": "The scale-membership term as the identified key/mode lever",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_KEY"
-   ],
-   "transfer": "none-found",
-   "note": "The lever is a term in the legacy shared key scorer, and the wiring step it was to be applied at is the legacy one.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-356",
-   "subject": "The brittleness of the leading-note presence gate",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_KEY"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-357",
-   "subject": "Reading notated spelling as tonality evidence at the function layer",
-   "reachability": "none",
-   "anchors": [
-    "L5_DIAG_ONLY",
-    "L3_SPEC_DORMANT"
-   ],
-   "transfer": "none-found",
-   "note": "Not built on either layer — the decision places the evidence at a layer that is itself dormant.",
    "carries_transfer_variant_in_the_data": false
   },
   {
@@ -1354,18 +1355,6 @@
    ],
    "transfer": "assigns-live-work",
    "note": "Neither shape exists as described — the coupling was shelved. The entry's own title records that the REJECTED option is the shape the production engine now has, which is a statement about the live design inside a LEGACY-marked entry.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-378",
-   "subject": "Re-deciding a chord under a different tonality, well-defined only on the decoder path",
-   "reachability": "none",
-   "anchors": [
-    "JKEY_NO_REEMIT",
-    "JKEY_WIRING_FLAG"
-   ],
-   "transfer": "assigns-live-work",
-   "note": "The naive re-emit is not built — the wiring leaves the chord as the production chord. The entry names the decoder path as where the question IS well defined.",
    "carries_transfer_variant_in_the_data": false
   },
   {
@@ -1395,18 +1384,6 @@
    "carries_transfer_variant_in_the_data": false
   },
   {
-   "id": "D-402",
-   "subject": "The inversion-append as a cap artifact, and the surviving bass promotion",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "BATCH_LEGACY_DEFAULT",
-    "TESTS_CHORD"
-   ],
-   "transfer": "none-found",
-   "note": "",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
    "id": "D-403",
    "subject": "The four best-different-root scans as four decisions, not one",
    "reachability": "false-negative-path",
@@ -1428,18 +1405,6 @@
    ],
    "transfer": "assigns-live-work",
    "note": "The violating primitive is at HEAD on the legacy arm. The decision names the replacement decoder as the owner of regional temporal context — an assignment to the live design, made in the decision itself rather than by a later ruling. OI-165 puts it the same way: D-404 defers rather than forbids.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
-   "id": "D-405",
-   "subject": "Keeping the full ranked key resolve as a segmentation seed",
-   "reachability": "false-negative-path",
-   "anchors": [
-    "L3_SPEC_DORMANT",
-    "BATCH_LEGACY_DEFAULT"
-   ],
-   "transfer": "none-found",
-   "note": "",
    "carries_transfer_variant_in_the_data": false
   },
   {
@@ -1579,18 +1544,6 @@
    "carries_transfer_variant_in_the_data": false
   },
   {
-   "id": "D-579",
-   "subject": "The anchor obligation: compute the chord ONCE against its region's FINAL notes, with tonality an explicit input",
-   "reachability": "none",
-   "anchors": [
-    "BATCH_JOINT",
-    "RECORD_SECTION"
-   ],
-   "transfer": "carried-elsewhere",
-   "note": "Reach `none` on this pass's own D-215 precedent — the obligation was never executed on the path it was written for, so nothing at HEAD implements the subject. Its two anchors are the production-path anchors, and they are the evidence for the transfer as much as for the reach: the record states the obligation \"was met by replacement rather than by repair\" — the live arm is one joint decode over key, mode, chord and segmentation together (D-001), which is the ordering this step asked for, reached by a different route.",
-   "carries_transfer_variant_in_the_data": false
-  },
-  {
    "id": "D-580",
    "subject": "Two of the twelve post-scoring gates are purely-local and MUST survive the dissolution; the other ten dissolve",
    "reachability": "false-negative-path",
@@ -1619,21 +1572,21 @@
  ],
  "counts": {
   "reachability": {
-   "false-negative-path": 71,
-   "none": 20,
+   "false-negative-path": 44,
+   "none": 17,
    "production": 1
   },
   "transfer": {
-   "none-found": 50,
+   "none-found": 24,
    "live-prohibition-in-spec": 14,
-   "undetermined": 11,
-   "carried-elsewhere": 7,
-   "assigns-live-work": 6,
+   "undetermined": 9,
+   "carried-elsewhere": 6,
+   "assigns-live-work": 5,
    "ruling-transferred": 2,
    "explicitly-not-transferred": 1,
    "scoped-to-an-act-that-never-ran": 1
   },
-  "entries_whose_transfer_half_bears_on_live_work": 29
+  "entries_whose_transfer_half_bears_on_live_work": 27
  },
  "prediction_outcome": {
   "reachability": "HELD in shape. 0 entries reachable on a default production path except the single partial case D-055 (a preference registration, not an inference path); the large majority reached only by an enumerated non-default path; a minority with no code at all; and 0 UNDETERMINED, at the bottom of the predicted 0-3 band.",

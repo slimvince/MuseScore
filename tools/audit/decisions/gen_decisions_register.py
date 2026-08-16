@@ -581,7 +581,56 @@ def render_group_file(g: dict, members: list[dict]) -> str:
     return "\n".join(out) + "\n"
 
 
+RETIRED_BLOCK = "retired_entries"
+
+
+class Stop(Exception):
+    """A demand of the retired-entries block is unmet. Never a warning, never a silent render."""
+
+
+def check_retired_block(backbone: dict) -> None:
+    """The retired-entries block's own STOPs, at the ONE place that renders the live record.
+
+    THE RULING THIS EXISTS FOR (user, 2026-08-16, §4 limb 4 of
+    `cowork_rulings_2026_08_16_preparation_return.md`, executed under §6): the soft-discard moves
+    entries WHOLE into a retired block of the same data file — retired, never destroyed (#12).
+    The block is a mechanism and not a hole only while these demands hold, and this renderer is
+    where they are made, because it is the one place the LIVE record is produced from the data.
+
+      * an entry identity in BOTH blocks — a retired entry re-appearing live is the failure the
+        block exists to make impossible, and it would render silently;
+      * the arithmetic not accounting for the population the block records as its own former one —
+        which is how an entry in NEITHER block is caught, and the reason that number is recorded
+        in the block rather than remembered;
+      * a retired record with no entry, or with no identity on the entry it carries, so the block
+        cannot quietly hold something that is not a retired decision.
+
+    A data file with no retired block is the state before any retirement, and is not a fault.
+    """
+    block = backbone.get(RETIRED_BLOCK)
+    if not block:
+        return
+    live = [d["id"] for d in backbone["decisions"]]
+    retired = []
+    for record in block["entries"]:
+        entry = record.get("the_entry")
+        if not entry or not entry.get("id"):
+            raise Stop("the retired-entries block carries a record with no entry identity")
+        retired.append(entry["id"])
+    both = sorted(set(live) & set(retired))
+    if both:
+        raise Stop(f"{both} appear in BOTH the live entries and the retired block. An entry is "
+                   f"live or it is retired; rendering either way would state something false.")
+    if len(set(retired)) != len(retired):
+        raise Stop("an entry identity is carried twice inside the retired-entries block")
+    before = block["the_population_before_this_retirement"]
+    if len(live) + len(retired) != before:
+        raise Stop(f"the arithmetic does not account for the former population: {len(live)} live + "
+                   f"{len(retired)} retired against {before} before. An entry is in neither block.")
+
+
 def emit_all(backbone: dict, disp: dict) -> dict[Path, str]:
+    check_retired_block(backbone)
     files: dict[Path, str] = {OUT: render(backbone, disp)}
     for g in backbone["groups"]:
         members = [d for d in backbone["decisions"] if d["group"] == g["id"]]
@@ -621,4 +670,8 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except Stop as exc:
+        print(f"STOP: {exc}")
+        sys.exit(2)

@@ -22,52 +22,6 @@
 
 **Provenance.** ARCHITECTURE.md:6158-6162 (§12.1); the panels themselves are planned (§12.2-§12.5). No date or ratifier stated.
 
-### D-155 — Every user-visible string goes through MuseScore's localization, in English and Swedish
-
-> All user-visible strings use MuseScore's existing Qt localization infrastructure
-> (`.ts` files, Qt Linguist). English and Swedish translations provided for all new strings.
-
-**In plain words.** Text a user can read is translatable through MuseScore's own translation system, and every new string is supplied in English and Swedish.
-
-**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND IT IS ONE SENTENCE ABOVE THE DECISION — which is exactly the placement this task exists to distinguish from an absent one. The section states the ground for its whole family of follow-the-host rules before applying it: new panels follow MuseScore's existing panel architecture, and "Do not create parallel infrastructure. Read how existing MuseScore panels are implemented before creating new ones." Using the host's own localization infrastructure is that rule applied to user-visible strings. WHAT IS NOT DEFENDED is the choice of the two languages: for English and Swedish specifically the record holds nothing, and no date or ratifier is stated.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:7489`
-
-**Provenance.** ARCHITECTURE.md:6164-6165 (§12.1); listed in the Core scope at ARCHITECTURE.md:6617-6618. No date or ratifier stated.
-
-### D-156 — Accessibility follows MuseScore's existing patterns
-
-> Accessibility follows MuseScore's existing Qt accessibility patterns — focus
-> management, keyboard navigation, screen reader hooks.
-
-**In plain words.** Keyboard navigation, focus handling and screen-reader support are done the way MuseScore already does them.
-
-**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND IT IS TWO SENTENCES ABOVE THE DECISION — the same paragraph and the same ground as D-155, which is why the two are recorded alike: "Do not create parallel infrastructure. Read how existing MuseScore panels are implemented before creating new ones." Following the host's accessibility patterns is that rule applied to focus management, keyboard navigation and screen-reader hooks. No separate derivation is stated for the accessibility case, and no date or ratifier is stated.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:7492`
-
-**Provenance.** ARCHITECTURE.md:6167-6168 (§12.1); listed in the Core scope at ARCHITECTURE.md:6618. No date or ratifier stated.
-
-### D-157 — The harmonic-display preference exists for clarity, not for cost
-
-> A user preference controls whether harmonic analysis is shown in the status bar. This
-> preference exists for UI clarity — some users find the chord and key information
-> distracting, particularly when doing work unrelated to harmony.
-
-**In plain words.** The setting that hides the harmonic information from the status bar is there because some users find it distracting, not because the analysis is expensive. Switching it off does not skip the analysis.
-
-**Why.** Measurement named in the record, ARCHITECTURE.md:6174-6174: the analysis cost at this seam is 'well under 1ms'. ★ That number is the LEGACY bounded-window path's; open_items/OI-203 and OI-206 record the record arm running a whole-score decode per selection, measured in seconds on large scores - so the reason this preference is not a performance control no longer holds as stated.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:7497-7499`
-
-**Provenance.** ARCHITECTURE.md:6170-6199 (§12.1a). No date or ratifier stated. ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the paragraph's second half — 'It is not a performance control: analysis cost is negligible (well under 1ms) and suppressing the display does not require skipping the analysis' — is FALSE at HEAD on both clauses and is corrected in place (OPEN_ITEMS OI-242 discharged). The surviving quote is the decision proper: the preference exists for clarity. Whether it should also become a performance control is left OPEN at the home, not decided.
-
 ### D-158 — Our data lives in separate files inside the score archive; the score file is never touched
 
 > MuseScore's MSCZ format is a ZIP archive. Our metadata lives as additional files

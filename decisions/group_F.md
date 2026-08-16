@@ -6,41 +6,6 @@
 > generator is `tools/audit/decisions/gen_decisions_register.py`. To change an
 > entry, edit the data and regenerate.
 
-### D-051 — The production key/mode path is the sequence decoder, not the per-stretch resolver
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> **The production region key/mode path is the decoder, not the per-region resolver.**
-
-**In plain words.** The tonality is worked out for the whole piece at once, as a sequence, rather than separately for each stretch.
-
-**Why.** SEARCHED 2026-08-09 and the record holds NO derivation for this decision at its own home. The home text (`ARCHITECTURE.md`, the Layer-3 wiring block) states WHAT the step-1 wiring did — the per-region `resolveKeyAndModeRanked` call replaced by a single whole-score decode — and what that connected (Layer 1's note model and Layer 2's slicer, so neither is isolated any longer). It states no reason for preferring a whole-score sequence decision to a per-region one AT THIS SITE. What stands in its place is a SUPERSESSION, not a defense: this entry is superseded by **D-001**, and the ground for deciding tonality as a sequence lives with the joint estimator's own decisions. Recorded as an established gap in this entry's record rather than filled from D-001, which would attribute to a 2026-06 wiring step a reason written for a later design.
-
-**Status.** SUPERSEDED BY D-001 · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:1810`
-
-**Provenance.** The joint estimator now decides key on both surfaces (D-005, D-010). The Layer-3 section still reads 'Built+Live' - see OPEN_ITEMS OI-232
-
-### D-052 — The signature read and declared-mode mapping live in ONE shared function
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> The signature read + declared-mode
-> mapping + declared-gated Baroque `partialSignatureCorrection` was lifted verbatim into a shared
-> public `resolveKeySignatureContext`, **called by both** the resolver and the wiring — so no
-> signature/partial-correction logic is duplicated.
-
-**In plain words.** Reading the printed key signature and turning it into a starting assumption happens in one place that both callers use, so the two cannot drift apart.
-
-**Why.** SEARCHED 2026-08-09 and the record HOLDS one, stated as a CONSEQUENCE in the decision's own home text rather than as a separate clause — which is why an empty field misrepresented it. The text ends *"so no signature/partial-correction logic is duplicated"*: the reason for lifting the signature read, the declared-mode mapping and the declared-gated partial-signature correction into one shared public function called by both the resolver and the wiring is that two copies of that logic can drift apart. That is principle #6 (one path per concern) applied at a named seam, and it is the whole of what the record states — no measurement is attached and none is invented.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:1832-1835`
-
-**Provenance.** ARCHITECTURE.md:1291-1296
-
 ### D-053 — The tick-local path keeps the older resolver (the ratified P4-defer)
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
@@ -139,44 +104,6 @@
 **Home.** `ARCHITECTURE.md:4321-4322`
 
 **Provenance.** ARCHITECTURE.md:3387-3392 calls it 'a deliberate pragmatic choice for the score opening, not a general bypass'. NOT catchable by the harvest's signature net ★ SUPERSEDED IN FACT — recorded 2026-08-04 (phase 1z, dispatch cc_instruction_phase1z_commit_and_instrument_record.md Task 3.4; OPEN_ITEMS.md OI-315). The mechanism this decision records was REMOVED from the code in Stage 4b-i on 2026-06-14: src/composing/analysis/key/keyresolver.cpp:291-301 states the removal in its own comment, and docs/key_path_design.md:65-73 dates it and names the re-targeted pins (Composing_KeyresolverTests.PieceStartOpening_NoteBased_DeclaredMinor/_DeclaredMajor). It is NOT falsified: nothing showed the decision wrong, a later BUILD replaced what it governs without a ruling that names it — which is what this register's status vocabulary calls superseded-in-fact. The ⚠ LEGACY mark STAYS: the subject is still the legacy key path, and the mark states what the decision is ABOUT. ★ Verbatim RE-TAKEN 2026-08-04 from the corrected specification text. The sentence this entry quoted — 'when the analysis tick is within the first 16 quarter-note beats (a separate constant from the 16-beat lookback window below — they coincide in value, not by design), no prior result exists (`prevResult == nullptr`), and the key signature carries an explicit mode, the function returns the declared mode immediately (confidence 0.5) rather than waiting for pitch evidence that cannot yet exist.' — was false at HEAD and is corrected in place at ARCHITECTURE.md §5.2, which now states that there is no piece-start exception, that the opening is note-based, and that the removal is tried and closed; the former wording is preserved here rather than deleted (#12). What did NOT change: the decision's own date and ratifier remain 'not stated', and no defense is supplied that the record never had.
-
-### D-059 — The temporal window - 16 beats back, 8 beats forward, decayed
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> The bridge uses a 16-beat lookback + 8-beat lookahead window:
-
-**In plain words.** To judge the key at a point, the program looks about four bars back and two bars forward, giving less weight to music further away.
-
-**Why.** SEARCHED 2026-08-09 and the record holds NO DERIVATION for either number — an established gap, and the search names exactly what stands in place of one. The ONLY stated basis for 16 and 8 anywhere the search reached is an in-code gloss reproduced at `ARCHITECTURE.md:3428-3429`, *"~4 measures in 4/4"* and *"~2 measures ahead"*: a restatement of the values in bars, not a reason for them. There is no theory citation, no measurement, and no alternative window considered. It is one of the founding instances `CLAUDE.md`'s carry-its-defense rule names in its own text. The values are legacy-arm only since the notation switch (**D-010**), which bounds what the gap costs without closing it.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:4389`
-
-**Provenance.** ARCHITECTURE.md:3423-3435; legacy-arm only since the switch (D-010). Derivation not recorded: the only stated basis for 16 and 8 is the in-code gloss '~4 measures in 4/4' / '~2 measures ahead' (ARCHITECTURE.md:3428-3429) - no theory citation and no measurement
-
-### D-235 — Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> The key-signature path uses a separate focussed `tonalCenterScore` formula for the
-> final same-key-signature family decision, independent of the main scoring weights so
-> both can be tuned without cross-interference. For diatonic family decisions, tonal-
-> centre disambiguation is now guarded by the raw candidate score: it may break close
-> same-key-signature ties, but it must not overturn a materially stronger raw winner.
-
-**In plain words.** The same-key-signature family decision is scored by its own formula, separate from the main key weights. On diatonic families that separate decision is allowed to settle a near-tie, but a candidate that already wins the raw scoring by a clear margin stands.
-
-**Why.** The constraint stated in the record: the two formulas are kept independent so both can be tuned without cross-interference; the raw-score guard bounds what the secondary formula may do. The measurement that set the guard's bar is not recorded.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:3277-3281`
-
-**Provenance.** ARCHITECTURE.md:2414-2418; the same guard is listed among the key-path scoring terms at :2480-2482 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-287 — Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found
 
@@ -344,35 +271,6 @@
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. **Flagged in the phase-1h report as an instance of the [[OI-275]] question** — it sits against **D-003** (inference is preset-independent; presets are presentation concerns), and the record contains no ruling that names either statement against the other. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ RATIFIED (user, 2026-08-02) UNDER THE OI-275 TRANSFER TREATMENT, as offered with the queue and adopted in the blanket ratification: the letter (the preset as a weak mode prior) stays home to the LEGACY Layer-3 path, LEGACY-marked; the live estimator is governed by D-003's measured preset-independence. The second instance of the OI-275 governing question, treated identically.
 
-### D-346 — The candidate set for the whole-run tonality decision is the UNION of every stretch's best candidates, made available at every stretch
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> **The candidate set for the sequence decision (the as-built rule,
->    verified at `keymodesequence.cpp` `buildLattice`):** take each slice's top-K best-scoring candidates, and form the
->    **union of those top-K sets across all slices** (plus any pinned candidates a sub-range re-decision must keep,
->    §5's last paragraph); every candidate in that union is then available **at every slice**. This is how the
->    established key survives a brief excursion: a key that made the top K anywhere in the run remains selectable at
->    the slices where it locally scored below the top K, so the change cost — not candidate elimination — decides
->    whether the excursion switches the key. *(A per-slice alternative — explicitly injecting only the incumbent
->    decoded key into each slice's list rather than the whole union — is not decidable by argument against the union;
->    ruled 2026-07-02 (gap-analysis ruling #2, `cc_gap_analysis_report.md`) to be resolved by a decode-only A/B at the
->    next Layer-3-touching increment. The union is the as-built and the spec's normative rule until that measurement rules otherwise.)*
-
-**In plain words.** Each stretch of music proposes its own few best-fitting tonalities; the decision then pools all of those proposals and lets every one of them be chosen at every stretch. That is what lets an established tonality survive a brief excursion — a tonality that scored well anywhere in the passage stays available where it locally scored badly, so the cost of changing tonality, not the loss of the candidate, decides whether the excursion counts as a change.
-
-**Why.** The record states the mechanism as the reason: pooling is how the established tonality survives a brief excursion, so that the change cost — 'not candidate elimination' — decides the outcome. The narrower alternative (injecting only the incumbent tonality into each stretch's list) is recorded as not decidable by argument and is assigned to a measurement: ruled 2026-07-02 (gap-analysis ruling #2, `cc_gap_analysis_report.md`) to be settled by a decode-only A/B at the next key/mode increment, with the pooled rule normative until then.
-
-**Status.** LIVE · decided 2026-07-02 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_layer3_keymode_design.md:246-255`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§5** — `## 5. Building-block view (static / internal structure)` (heading at line 240). A delegation at ARCHITECTURE.md:1742 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The date given is the date of the recorded ruling that the narrower alternative is to be settled by measurement and that the pooled rule is normative until then; the pooled rule itself is recorded as as-built and is not dated in the record. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
-
 ### D-347 — The cost of changing tonality is cheap-to-stay plus a term growing with tonal distance plus a large extra penalty on the relative major/minor switch
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
@@ -446,26 +344,6 @@
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
-### D-350 — Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> **As-built (D-L3a CLOSED, 2026-07-04): this sequence margin (`HarmonicRegion.keyConfidence`) IS the layer's published boundary confidence**; the per-slice emission sigmoid (`normalizedConfidence`) is an internal gate input (the downstream 0.8 KeyArea/cadence annotate gate) + diagnostic, NOT the boundary confidence.
-
-**In plain words.** The tonality stage computes two different measures of how sure it is. The one that crosses the boundary to any other stage is the whole-run margin; the per-stretch one is kept only as an input to an internal threshold and for diagnosis. Only calibrating the published margin remains to be done.
-
-**Why.** derivation not recorded — the record states the closure and the outcome but gives no defense for choosing the whole-run margin over the per-stretch sigmoid. The neighbouring defense that IS recorded is for the margin's FORM, not for its selection as the published number (**D-349**), and the classification that constrains it is the cross-layer confidence contract's Class M — a ranking margin, never a calibrated probability (**D-267**, `cowork_layer3_keymode_design.md:39`).
-
-**Status.** LIVE · decided 2026-07-04 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_layer3_keymode_design.md:55`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§0** — `## 0. Terms (read first — nothing below uses a term before its row)` (heading at line 42). A delegation at ARCHITECTURE.md:1742 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record labels the closure `D-L3a` — a label from the document's own design-decision series, not a register identifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ HOME MOVED 2026-08-11 (CC, `cc_instruction_return_continuation_13.md` Task 1), under the registered homing procedure D-668, by its STEP 1 — the pointer move, tried before any write and taken because it applies. NO TEXT WAS WRITTEN INTO THE SPECIFICATION and none was moved: §0's terms row already STATED this rule, in both of its halves and with the closure label, so writing it a second time somewhere else would have put two copies of one rule into one document (#6). THE FORMER HOME, PRESERVED (#12): `cowork_layer3_keymode_design.md:32-34`, the document's opening STATUS BANNER — whose own authored section judgment says in terms that *the one rule it does carry (which of the two boundary numbers is THE Layer-3 confidence) is a decision recorded in a banner rather than in a rule-stating section*, which is what put this entry in the findings-not-rules item and is what this act discharges. THE FORMER VERBATIM, PRESERVED (#12): "(The **sequence-margin confidence redesign** — which of the two boundary numbers is THE Layer-3\nconfidence — is **CLOSED by D-L3a, 2026-07-04**: the sequence margin is declared THE boundary confidence and the\nemission sigmoid demoted to gate-input/diagnostic; only the Stage-5 calibration of the margin remains.)" ★ WHAT THE NEW HOME DOES NOT CARRY, stated because a pointer move must not narrow an entry silently: the former banner's closing rider — *only the Stage-5 calibration of the margin remains* — is a statement of OUTSTANDING WORK rather than of the rule, and it is untouched where it stands, in the banner and in the plain restatement above. The banner text is not edited by this act. The entry's DEFENSE is likewise not supplied by the move and is not invented: the rationale below records the established gap and names what stands in its place.
-
 ### D-351 — The key/mode search is its own decoder; the chord decoder is not reused for it
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
@@ -534,124 +412,6 @@
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The document's banner records `Status: SIGNED (user, 2026-06-22)`. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
-### D-354 — The key/mode decoder's own settings are exhausted — no setting of its own moves the fixable error set, so the remaining headroom is not a decoder setting
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> - **The decoder-private settings are exhausted (sweep, 2026-06-22).** A bounded sweep of every decoder-private
->   setting found none that moves the **clean set** (§0; the fixable-within-key/mode miss subset defined in
->   `cc_layer3_error_decomposition_report.md`) net-positive — sweep record: `cc_layer3_sweep_report.md`. Widening the
->   per-slice window recovers the **stable measurement category** (the grading corpus's spans whose ground-truth key is
->   constant) but destroys tracking on the **modulation category** (spans containing a ground-truth key change);
->   lowering the change cost is net-negative on Baroque (a Jazz-only gain that would need
->   preset-conditioning the decoder settings — deferred); the candidate count is already saturated; the
->   alternatives-kept count is output-only. So the bounded-headroom fix is **not** a decoder knob — it is the one shared
->   lever below.
-
-**In plain words.** Every setting private to the tonality decoder was swept, and none of them improves the part of the error that is genuinely fixable from the notes. Widening the per-stretch listening window helps passages of constant tonality but wrecks passages that change tonality; lowering the change cost is a net loss on the Baroque material; the number of candidates kept is already saturated; the number of runners-up carried only affects output. So the remaining headroom lies outside the decoder.
-
-**Why.** Measured: a bounded sweep of every decoder-private setting, 2026-06-22, graded against the fixable-error subset defined in `cc_layer3_error_decomposition_report.md`; sweep record `cc_layer3_sweep_report.md`. The per-setting outcomes are enumerated in the entry itself, so the conclusion is stated with the evidence that produced it.
-
-**Status.** LIVE · decided 2026-06-22 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_layer3_keymode_design.md:418-426`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 365). A delegation at ARCHITECTURE.md:1742 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
-
-### D-355 — The identified key/mode lever is the shared scorer's scale-membership term, applied once to the shared scorer at the wiring step and gated on the corpus stop and the pinned outputs
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> - **The identified shared-scorer lever, measured.** The stable-category under-weighting is carried by the scorer's
->   *scale-membership* term, not its (inert) leading-tone term. Sharpening the out-of-candidate-scale penalty lifts
->   *both* stable- and modulation-category accuracy with no trade-off (measured decode-only on the held-out test set at
->   coarse-region granularity: a net +57…+73 regions corrected on Baroque / +38…+68 on Jazz, depending on the sharpen
->   step — `cc_layer3_sweep_report.md` §3);
->   raising the leading-tone weight instead collapses accuracy. This is the change handed to the wiring increment, where
->   it is applied once to the shared scorer and must clear the project BIR gate and the snapshots (its production-side
->   magnitude is a wiring-time calibration; only its direction is validated so far).
-
-**In plain words.** The under-weighting on passages of constant tonality is carried by the term that asks how well the sounding notes belong to a candidate's scale, not by the leading-note term, which is inert. Sharpening the penalty for notes outside the candidate scale improves both constant-tonality and changing-tonality passages with no trade-off; raising the leading-note weight instead collapses accuracy. The change is applied once, to the one shared scorer, at the step that replaces the older per-stretch code, and must clear the project's corpus regression stop and the pinned outputs.
-
-**Why.** Measured decode-only on the held-out test set: a net gain of roughly 57 to 73 corrected stretches on the Baroque material and 38 to 68 on the Jazz material depending on the sharpening step (`cc_layer3_sweep_report.md` §3). The entry states its own limit: only the direction is validated so far, the production-side magnitude being a calibration at the wiring step.
-
-**Status.** LIVE · decided 2026-06-22 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_layer3_keymode_design.md:427-434`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 365). A delegation at ARCHITECTURE.md:1742 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
-
-### D-356 — The leading-note presence gate is brittle and its fix is a later key/mode emission step, not a foundation patch — and the scale-membership lever is measured NOT to fix it
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> - **★ Brittle leading-tone presence-gate — a non-Bach key regression (diagnosed 2026-06-25; verified at source).** The
->   characteristic-pitch and true-leading-tone scorer terms are **hard-gated** on a `>0.1` window weight
->   (`keymodeanalyzer.cpp`, the char/leading-tone term gates — cited by function per the no-raw-line-numbers policy): a
->   key's leading tone that is *present but weak* (below the gate) is treated as
->   **absent**, so the key is denied its anchors *and* penalized. On the Mozart K279 opening the C-major leading tone
->   (B♮) carries weight **0.093** — a hair under the gate — so C major is flipped to **F major** (whose leading tone E
->   is C's ever-present third). The old 24-beat resolver cleared the gate; the wired 4-beat window does not, and the
->   window-width relation is **non-monotonic**, so simply widening it is not a clean fix. This is a **general
->   non-Bach-opening fragility**, structurally **invisible to the Bach-only BIR gate** (the notation tests are the guard
->   that caught it). The **scale-membership lever does NOT fix it** (measured: 15× the scale penalty never flips F→C —
->   the char/lt terms are *presence-gated*, not weight-scaled). **Fix = de-brittle the gate (weight-scale the char/lt
->   terms); a Layer-3 emission increment scheduled for **Phase B, item B2** of the stabilization plan
->   (`cowork_l1l3_stabilization_plan.md`) — leading-tone de-brittling is inference-quality, behind the inference
->   firewall (§0), *not* the Phase-4 tpc (tonal pitch class, §0) capability foundation —
->   not a foundation patch.** Full diagnosis: `cc_keyregression_diagnosis_report.md`.
-
-**In plain words.** Two of the scoring terms treat a leading note that is present but faint as if it were absent, so the tonality is denied its anchor and penalised as well. On the opening of Mozart's K279 the C major leading note carries just under the threshold, and C major is read as F major instead. The older wide listening window cleared the threshold and the narrower one in use does not, and the relation to window width is not monotone, so simply widening it is not a clean fix. Making the terms scale with weight instead of switching on a threshold is scheduled as a later tonality-quality step, behind the rule that separates structural work from tuning. Sharpening the scale-membership penalty — the lever that helps elsewhere — was measured at fifteen times its strength and never fixes this case.
-
-**Why.** Measured and verified at source, 2026-06-25: the leading note carries weight 0.093 against a threshold of 0.1; the scale-membership lever was tested at fifteen times the penalty and never flips the reading, because the two terms are gated on presence rather than scaled by weight. Full diagnosis `cc_keyregression_diagnosis_report.md`. The entry also records that this fragility is structurally invisible to the Bach-only corpus stop and was caught by the notation tests instead.
-
-**Status.** LIVE · decided 2026-06-25 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_layer3_keymode_design.md:399-413`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 365). A delegation at ARCHITECTURE.md:1742 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
-
-### D-357 — Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> **MEASURED (read-only, 2026-06-22, `cc_layer3_tpc_keymeasure_report.md`):** a decode-only line-of-fifths tpc term is
->   **genuine spelling signal** (its modulation-gain/stable-loss frontier beats a change-cost control on both presets)
->   and helps modulation regions cleanly (+2–8 pts), **but** as a *standalone Layer-3* term it is only **marginal
->   overall** (best net +0.5 Baroque / +0.6 Jazz at a low weight) because it **hurts stable regions** — it over-switches
->   on tonicizations. That stable cost is exactly the **tonicization-vs-modulation discriminator that function (Layer 5)
->   supplies**, and the term is structurally **blind to same-signature ambiguity** (relative-pair / modal rotation). So
->   the right home for this retrofit is **Architectural Layer 5 (function)**, where function gates the
->   spelling signal — admitting the clean modulation gain without the stable cost — **not** a standalone Layer-3 emission
->   patch. This is why L4-first is the disciplined order (no clean standalone L3 win is being skipped). (Upper-bound
->   caveat: engraved corpus; MIDI spelling would see less.)
-
-**In plain words.** Using how an accidental is written — G sharp against A flat — as evidence for the tonality is real signal and helps passages that change tonality cleanly, but on its own at the tonality stage it is barely a net gain, because it over-switches on passing tonicizations and is blind to the cases where two tonalities share the same key signature. Telling a passing tonicization from a real change is exactly what the later function stage supplies, so that is where this evidence is read.
-
-**Why.** Measured read-only, 2026-06-22, `cc_layer3_tpc_keymeasure_report.md`: a decode-only line-of-fifths term beats a change-cost control on both style settings and gains two to eight points on changing-tonality passages, but nets only about +0.5 and +0.6 overall because of what it costs on constant-tonality passages. The entry states its own limit: an engraved corpus is an upper bound, and material without written spelling would see less.
-
-**Status.** LIVE · decided 2026-06-22 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_layer3_keymode_design.md:513-522`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 496). A delegation at ARCHITECTURE.md:1742 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The surrounding deferred-enhancement entry is recorded per the user, 2026-06-22; the measured placement conclusion quoted here names no ratifier. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
-
 ### D-358 — A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
@@ -684,28 +444,6 @@
 **Home section.** **§15** — `## 15. To do — deferred enhancements (this layer is built; these are revisions on record)` (heading at line 496). A delegation at ARCHITECTURE.md:1742 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer3_keymode_design.md` IN FULL. The record states the amendment (A-3) was ratified 2026-07-02 but does not name the ratifier at this home; the amendment set's own document banner is quoted in the phase-1g triage as `AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02)`, and that document is in the phase-1h full-read set. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
-
-### D-405 — The full ranked key resolve retained as a segmentation seed is KEPT — adjudicated load-bearing, not dead scoring work
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> - **FQ-7 — ✅ RESOLVED `56b06462db`.** S8 constants sourced from the shared symbols. **S9 adjudicated
->   KEPT (load-bearing, NOT dead):** the `resolveKeyAndModeRanked@585` feeds `greedyExpandSegmentation@851`
->   + `findTemporalContext@900` (the grid); dropping it would move the grid. Report-only, no change.
-
-**In plain words.** The legacy region path runs the heavy ranked key resolution and appears to use only its top answer as a starting point for cutting the music into regions, which looked like retained work with no purpose. It was checked and kept: its result feeds the region-grid expansion and the neighbour-chord context, so removing it would move the grid — a behavior change, not a cleanup.
-
-**Why.** Adjudicated at the code during the pre-Layer-5 refactor stage, with the two consumers named (the greedy segmentation expansion and the temporal-context walk) and the consequence stated: dropping it would move the grid. Recorded as report-only, with no change made.
-
-**Status.** LIVE · decided 2026-07-07 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_structural_integrity_audit.md:260-262`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
-
-**Home section.** **§3.1** — `### 3.1 Stage-1 build status (Engage arc #7, 2026-07-07 — `cc_engage_pre_l5_refactor_report.md`)` (heading at line 251). A delegation at cowork_engage_arc_plan.md:4 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
-
-**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. Recorded in the Stage-1 build-status section beside the resolved constant-sourcing item; the byte-identity of that stage is stated in the same section (0-diff `.ours.json` 352x3, robust stop PASS, the batch case-identity sets 52/24/52). ★ RATIFIED (user, 2026-08-02, the phase-1i queue).
 
 ### D-494 — RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans
 
@@ -1031,35 +769,6 @@ breaks the relative-pair tie — **NOT** a per-candidate local-salience term ins
 fails like 4b-ii's levers. Concretely: apply a cadence-anchor bonus at the **resolver / section level**
 (the scope the removed declared anchor occupied), gating the relative-pair choice; keep `analyzeKeyMode`'s
 per-window scoring unchanged." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance — the wave and its dispatch — is recorded in this field and NOT in the specification text, on the ruling record's own instruction: a file name written into a governing document reads as a new naming and moves a measured population (the OI-330 / OI-328 lesson).
-
-### D-618 — The notated key signature is NOT a hard fact — its fifths were measured to pin wrong about one time in six, so the home key is note-derived and never signature-pinned
-
-> - **The notated key signature is NOT a hard fact, so the home key is derived from the notes and is
->   never signature-pinned.** The signature's fifths were measured against the true home key and pin
->   the wrong one on a substantial minority of the material, concentrated in modal and partial
->   signatures; the signature is therefore soft evidence that leans. *Why:* this is the rule above
->   working rather than an exception to it — a candidate hard constraint measured to pin a wrong
->   answer is demoted to a score. The measured rate is in the record that produced it and is not
->   restated (D-431). **Scope, stated because it decides how the finding is read:** it is a property
->   of the written music and its human analyses, not of any one of our pipelines, so it survives the
->   arm change; the mis-keying case that shows it in the score is recorded with the legacy key path
->   and carries its own ⚠ LEGACY mark there.
-
-**In plain words.** Some evidence is decisive enough to rule readings out outright — which pitches sound, when, how long, and a complete unambiguous triad on a strong beat. The written key signature is not in that class: it names the wrong home key about one time in six, mostly in modal and partial signatures. So the home key is worked out from the notes, and the signature only leans.
-
-**Why.** Measured, and the measurement is what moved it: the signature's fifths were tested against the true home key and pinned wrong on roughly seventeen per cent of the material, concentrated in modal and partial signatures. The demotion is not an exception to the scheme but the scheme working — a candidate hard constraint that is measured to pin a wrong answer becomes a soft score, because a wrong constraint pinning a wrong answer is the failure the hard/soft split exists to prevent.
-
-**Status.** LIVE · decided 2026-06-15 · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:521-530`
-
-**Provenance.** `docs/architecture_joint_inference.md` §2, the constrained-joint-inference architecture direction, investigation-confirmed 2026-06-15 and marked ratifiable-but-not-built. Read in full by READ WAVE 6, 2026-08-04. ⚠ The DOCUMENT is superseded as an architecture proposal — `ARCHITECTURE.md` §2.14 records the joint-decode synthesis as superseded by the effort-preset design and retained only as history, and the ratified estimator is **D-001** — but this measured fact about the key signature is not a proposal and is carried by no other home. It is the same class of finding as **D-575**/the partial-signature mis-keying record. The record states no ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). ★ ASSUMPTION A4 DISCHARGED BY READING, NOT ASSUMED: the supersession was read at `ARCHITECTURE.md:960-961` — *"The `docs/architecture_joint_inference.md` joint-decode synthesis is **superseded** by this, retained only as history"* — and it reaches the PROPOSAL's shape, not this measurement. The content is therefore LIVE and is homed; the supersession is stated at the new home so no reader takes the surrounding proposal for a specification. Routed to the joint-estimator section of `ARCHITECTURE.md`, in a subsection of its own, with the general rule it is an instance of (D-619) beside it. THE MEASURED RATE IS NOT CARRIED ACROSS (D-431) — the direction and the concentrated class are stated and the number stays in the record. FORMER HOME, PRESERVED (#12): `docs/architecture_joint_inference.md:45-51`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 41, "section": "## §2 — The structure: CONSTRAINED joint inference (hard constraints + soft scores)", "label": "“§2”", "delegated": null, "delegation": "ARCHITECTURE.md:858", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "- **Hard constraints** — decisive evidence that **disqualifies** alternatives outright or **pins** a
-  solution: \"this IS C major, whatever the soft hints say.\" These are the **raw facts** (which pitches
-  sound, when, with what duration / metric weight / bass) plus the genuinely-unambiguous analyses (a
-  complete clear triad on a strong beat). They **prune** the hypothesis space. **⚠ Note (J-key-i,
-  2026-06-15): the notated key signature is NOT among the hard facts** — its fifths were measured to pin
-  wrong ~17% (modal/partial signatures), so the home key is soft / note-based, not signature-pinned. The
-  safety gate doing its job: a candidate hard constraint that pins wrong is demoted to soft (§5)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-622 — The reach-back convergence PROXY was measured FALSE and dropped — the as-built tracks the leading-edge key itself and stops when it stops changing
 

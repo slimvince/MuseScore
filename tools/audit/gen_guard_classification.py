@@ -135,34 +135,64 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "STOPS if any candidate has no authored verdict or any verdict names a row the index no "
         "longer carries open. Both stops are about the register as it stands today."),
     "tools/audit/gen_phase1_completion_inventory.py": (
-        LIVE, "gen_phase1_completion_inventory.py:11-26",
-        "It RE-DERIVES on every run: D-231's clause is located in `CLAUDE.md` by anchor string and "
-        "must still be findable or the tool STOPS; every home class, defense gap and "
-        "section-criterion verdict is read off the register as it stands; the open-row population "
-        "and each row's gate verdict come from `OPEN_ITEMS.md` and the apparatus declaration as "
-        "they stand today, and a verdict naming a row the index no longer carries open is a STOP. "
-        "Nothing in it is a measurement taken at a point in time — a later wave that homes an entry "
-        "or closes a row SHOULD move its output, and the check is what makes that movement visible."),
+        POINT, "gen_phase1_completion_inventory.py:11-26; "
+               "cowork_rulings_2026_08_16_preparation_return.md §4",
+        "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING AND NOT ON THIS TOOL'S JUDGMENT. Its "
+        "SUBJECT — D-231's three-phase structure and what its phase 1 still required — was "
+        "SUPERSEDED on 2026-08-15 when the user ruled the six-phase structure. What re-derives is "
+        "not the question: a check can re-derive perfectly and still grade a program that no "
+        "longer governs, and the ruling's own words are that the superseded phase-1 apparatus "
+        "follows its phase into historical status. The ruled soft-discard then made it STOP rather "
+        "than drift — the delegation grading it imports refuses to run for a document the "
+        "retirement empties. ★ IT ASSERTS NOTHING ABOUT WHETHER PHASE 1'S OBLIGATIONS WERE "
+        "DISCHARGED, and no completion claim rides the reclassification. ★ THE FORMER VERDICT, "
+        "PRESERVED (#12): LIVE — \"It RE-DERIVES on every run: D-231's clause is located in "
+        "`CLAUDE.md` by anchor string and must still be findable or the tool STOPS; every home "
+        "class, defense gap and section-criterion verdict is read off the register as it stands; "
+        "the open-row population and each row's gate verdict come from `OPEN_ITEMS.md` and the "
+        "apparatus declaration as they stand today, and a verdict naming a row the index no longer "
+        "carries open is a STOP. Nothing in it is a measurement taken at a point in time — a later "
+        "wave that homes an entry or closes a row SHOULD move its output, and the check is what "
+        "makes that movement visible.\" It was true of the tool and remains true of it; what "
+        "changed is that the PROGRAM it grades was superseded, which the former verdict could not "
+        "have anticipated."),
     "tools/audit/gen_phase1_finish_line.py": (
-        LIVE, "gen_phase1_finish_line.py:18-34",
-        "Authored 2026-08-04 in answer to this tool's own per-tool STOP — it entered the guard "
-        "population two waves ago and had never been classified. It IMPORTS both populations "
-        "rather than storing them, locates D-231's clause by anchor at HEAD, and carries a STOP "
-        "that is a live demand in the strongest form the population has: a population that grows "
-        "WITHOUT AN ITEM TO CARRY IT stops the tool, which is what makes the list a finish line "
-        "rather than a selection. It re-derives as the record moves under it, and it passes."),
+        POINT, "gen_phase1_finish_line.py:18-34; "
+               "cowork_rulings_2026_08_16_preparation_return.md §4",
+        "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. Same ground as the completion inventory "
+        "it imports: its subject is the SUPERSEDED phase 1's finish line, and the program it "
+        "measures no longer governs. It STOPS for the same cause. Its last derivable state stands "
+        "frozen on disk as the record of that program, and nothing in this reclassification says "
+        "the program finished. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — \"Authored 2026-08-04 "
+        "in answer to this tool's own per-tool STOP — it entered the guard population two waves ago "
+        "and had never been classified. It IMPORTS both populations rather than storing them, "
+        "locates D-231's clause by anchor at HEAD, and carries a STOP that is a live demand in the "
+        "strongest form the population has: a population that grows WITHOUT AN ITEM TO CARRY IT "
+        "stops the tool, which is what makes the list a finish line rather than a selection. It "
+        "re-derives as the record moves under it, and it passes.\""),
     "tools/audit/decisions/gen_finish_line_item1_routes.py": (
-        LIVE, "gen_finish_line_item1_routes.py:8-17",
-        "Authored 2026-08-04 in answer to the same STOP. Its population is IMPORTED from the "
+        POINT, "gen_finish_line_item1_routes.py:8-17; "
+               "cowork_rulings_2026_08_16_preparation_return.md §4",
+        "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. A view of the superseded phase-1 gate — "
+        "it imports the finish line transitively — so its subject went with its phase, and its "
+        "inputs STOP. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — "
+        "\"Authored 2026-08-04 in answer to the same STOP. Its population is IMPORTED from the "
         "finish-line generator and never re-listed (#6), so it shrinks as entries are homed; and "
         "it REFUSES to run if any entry has no authored route or if a route names an entry the "
         "population no longer carries — in its own words, 'so the register moving under the table "
         "is a STOP rather than a silent partial answer'. That is a demand about today, not a dated "
         "reading: the AUTHORED half is the route per entry, and the tool will not let that half go "
-        "stale silently. It passes at the committed tree."),
+        "stale silently. It passes at the committed tree.\""),
     "tools/audit/decisions/gen_r1_superseded_reach.py": (
-        LIVE, "gen_r1_superseded_reach.py:22-38",
-        "Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. It "
+        POINT, "gen_r1_superseded_reach.py:22-38; "
+               "cowork_rulings_2026_08_16_preparation_return.md §4",
+        "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. Same family and same import chain: it "
+        "applies a ruling to the superseded finish line's item-1 NO-HOME class, so its subject "
+        "went with its phase and its inputs STOP. NO LIVE COVERAGE IS LOST — that every register "
+        "cross-reference still resolves is asserted live by `gen_cluster_dispositions.py --verify`, "
+        "which stays in the list and now consults the retired-entries block beside the live "
+        "entries. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — "
+        "\"Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. It "
         "IMPORTS its population from the route table rather than storing one, and re-reads the "
         "register on every run for each entry's status and each successor's home CLASS — so the "
         "HOMED verdict and the disposition move the day a successor is homed, which is exactly "
@@ -170,26 +200,42 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "record rather than on the tree's history: every AUTHORED successor must still be NAMED "
         "IN THE SUPERSEDED ENTRY'S OWN TEXT, so a session cannot nominate one the register does "
         "not name, and a reworded supersession stops the tool instead of silently keeping a "
-        "verdict the record no longer supports. It re-derives and it passes."),
+        "verdict the record no longer supports. It re-derives and it passes.\""),
     "tools/audit/decisions/gen_item1_rehome_blocker.py": (
-        LIVE, "gen_item1_rehome_blocker.py:32-42",
-        "Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. Every "
+        POINT, "gen_item1_rehome_blocker.py:32-42; "
+               "cowork_rulings_2026_08_16_preparation_return.md §4",
+        "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. Same family, same import, same STOP: "
+        "what it measures is what blocked the SUPERSEDED finish line's item-1 re-home class. Its "
+        "one live-looking assertion — that the standing autonomous-operation authorization is "
+        "still locatable in `CLAUDE.md` by its anchor — is not lost: `CLAUDE.md`'s own anchors are "
+        "asserted live by `claude_md_rule_triage.py` and by the register's home-anchor checks, all "
+        "of which stay in the list. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — "
+        "\"Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. Every "
         "half of it is a demand about TODAY: the population is IMPORTED from the route table and "
         "shrinks as entries are homed; each row's blocker is re-cut from that row's own recorded "
         "reason on every run, so a reworded reason moves the verdict instead of leaving a stale one "
         "standing; and the STANDING AUTHORIZATION it compares against is located in `CLAUDE.md` BY "
         "ANCHOR and quoted at HEAD, with a STOP if it cannot be found — so a change to what a "
         "session may edit moves this artifact rather than being silently outrun by it. It stores no "
-        "dated reading of anything."),
+        "dated reading of anything.\""),
     "tools/audit/decisions/gen_outstanding_delegations.py": (
-        LIVE, "gen_outstanding_delegations.py:36-46",
-        "It RE-DERIVES the whole partition on every run, from the delegation grades it IMPORTS "
+        POINT, "gen_outstanding_delegations.py:36-46; "
+               "cowork_rulings_2026_08_16_preparation_return.md §4; "
+               "tools/audit/discard_reach_split.json",
+        "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. It is the FEEDER whose only importers "
+        "are the two superseded gate derivations and nothing else, which is the limb of the "
+        "derived split that placed it here rather than among the standing checks. It is also the "
+        "tool that STOPS FIRST: the authored draft it needs is for a document the retirement "
+        "empties. NO LIVE COVERAGE IS LOST — the home rules it served are asserted live by "
+        "`gen_home_classification.py` and `gen_phase1p_delegation_bar.py`, both of which stay in "
+        "the list. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — "
+        "\"It RE-DERIVES the whole partition on every run, from the delegation grades it IMPORTS "
         "(`gen_phase1p_delegation_bar.FORMS`) and the home population it IMPORTS "
         "(`gen_home_classification.home_population`) — never from a stored figure. Three STOPs are "
         "about the record as it stands today: a write-list member with no authored state label, a "
         "label naming a non-member, and a class-C document with no authored draft. A later wave "
         "that writes a delegation or widens one SHOULD move its output, which is the point of it "
-        "(D-640 / OI-335)."),
+        "(D-640 / OI-335).\""),
     "tools/audit/decisions/gen_true_half_reach.py": (
         LIVE, "gen_true_half_reach.py:22-30",
         "It LOCATES ruling R1 in `CLAUDE.md` by anchor string on every run and STOPS if it has "
@@ -663,6 +709,22 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "bound the retirement caller-check publishes of itself. It also asserts nothing about "
         "whether a verdict is RIGHT — the ground of each and the naming line are published beside "
         "it, so the reading is the user's."),
+    "tools/audit/gen_census_movement_classification.py": (
+        LIVE, "gen_census_movement_classification.py, the THREE CATEGORIES and THE STOPS of its "
+              "module docstring; `build()`, which re-runs the citation scan at both states and "
+              "classes every difference",
+        "LIVE. Both sides of its comparison are re-computed on every run: the earlier state from "
+        "the git objects at a named commit, the later one from the governing record AS IT STANDS. "
+        "So an edit that removes a document's last naming from `CLAUDE.md` tomorrow moves its "
+        "output tomorrow, and the classification either places that movement in one of the three "
+        "ruled categories or STOPS. That is a demand about today's record, not a dated reading of "
+        "it. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: the BEFORE "
+        "commit is the state the movement is measured against, and a comparison whose baseline "
+        "moved would measure nothing. It is named in the tool rather than resolved from a branch "
+        "tip, because a branch read is not trusted for what is current (D-253). ★ WHAT IT DOES "
+        "NOT ASSERT: that a moved document is worth retiring, or that nothing depends on it — the "
+        "citation scan sees the governing record only, which is the bound the census publishes of "
+        "itself and this tool repeats rather than quietly drops."),
     "tools/audit/gen_discard_reach_split.py": (
         LIVE, "gen_discard_reach_split.py, the `★ WHERE THE POPULATION COMES FROM` and `THE "
               "VERDICT RULE` paragraphs of its module docstring and its `THE STOPS` list; "
@@ -688,6 +750,24 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "at the act and not before it."),
 
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
+    "tools/audit/decisions/gen_retired_subject_moves.py": (
+        LIVE, "gen_retired_subject_moves.py, the two MEMBERSHIP RULES and THE STOPS of its module "
+              "docstring; `partition()`, which applies both directions; `section_kind()`, which "
+              "imports the home classifier's own move derivation",
+        "LIVE. Every value it publishes is re-derived at HEAD from the decisions register's data "
+        "file as it stands and from the five authored tables as they stand: which judgment watches "
+        "a live subject, which has followed its subject into the retired-entries block, and which "
+        "entries emptied each moved document or section. Nothing in it is dated. A later act that "
+        "retires an entry, revives one, or writes a new authored judgment SHOULD move its output, "
+        "and the check is what makes that movement visible — which is the R4 test in the form the "
+        "ruling states it. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a moved "
+        "judgment is RIGHT. A retired subject is a provenance outcome, and the judgment is carried "
+        "whole, unread and unre-graded (#12). ★ ONE LIMIT DECLARED RATHER THAN GLOSSED: a "
+        "judgment already on a retired side for an EARLIER act's reason — the re-homing waves — is "
+        "left where that act's own record put it and is not re-derived here, because this tool is "
+        "not the authority for retirements it did not perform. What it does still ask of every one "
+        "of them is the direction that must never go unnoticed: that the subject has not become "
+        "live again."),
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",
         "The register is GENERATED from its data, and `--check` regenerates and diffs ALL emitted "

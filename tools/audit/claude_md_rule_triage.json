@@ -8,17 +8,16 @@
   },
   "totals": {
     "MECHANISM-EXISTS": 32,
-    "MECHANISABLE-AND-NOT": 10,
+    "MECHANISABLE-AND-NOT": 9,
     "KNOWLEDGE": 46
   },
-  "rules_total": 88,
+  "rules_total": 87,
   "the_defect_set": {
-    "count": 10,
+    "count": 9,
     "rowed_at": "OPEN_ITEMS.md OI-292",
     "ids": [
       "D-113",
       "D-187",
-      "D-192",
       "D-193",
       "D-194",
       "D-230",
@@ -30,6 +29,19 @@
     "strongest_candidate": "BUILT at phase 1q. It was D-197/D-198/D-199/D-316, the local patches, stated as do-not-revert against a dependency update — the silent failure a check catches and a reader does not. `tools/audit/local_patches_check.py` now covers them, so they have left the defect set; what remains of D-197 is its distribution constraint, which no check can enforce."
   },
   "what_was_executed": "NO CLAUDE.md TEXT WAS RETIRED, at phase 1p or at phase 1q. That was recorded here as a failure under the test then in force — a mechanism must retire the prose it replaces, or it is apparatus growth — and the USER WITHDREW THAT TEST on 2026-08-03 as a structural proxy standing in for a behavioral quantity, unvalidated (#17d). The test from here is three measured conditions (register entry D-436, homed at cowork_audit_protocol.md): runs automatically with no human step; a measured detection rate against known instances; a measured false-positive rate at or near zero. Four mechanisms now stand against rules in this table (D-196, D-253, D-430/D-432, D-197's group), each with an establishment artifact; none retires prose, and under D-436 that is no longer a defect.",
+  "retired_subjects": {
+    "what_this_is": "Triage verdicts whose subject register entry was SOFT-DISCARDED out of the LIVE record on 2026-08-16 (the user's ruling §3, its reach §4, the STANDING checks' treatment §6). Each is carried WHOLE with its subject reference and is neither re-read nor re-graded (#12). Nothing counts it: the totals, the defect set and the rule rows above are the LIVE population's.",
+    "the_retirement": "CC, dispatch `cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of 2026-08-16 — §3 the soft-discard, §4 its reach, §6 the STANDING checks' treatment. The subject entry was SOFT-DISCARDED into the decisions register's retired-entries block: a provenance verdict, not a judgment on soundness or usefulness. The triage verdict is moved here whole and is neither re-read nor re-graded; if the entry is ever revived, the verdict is read back into TRIAGE deliberately rather than resurrected by this copy.",
+    "membership_is_derived": "tools/audit/decisions/gen_retired_subject_moves.py derives which verdicts belong here from the data file's own retired block and re-verifies this section in both directions.",
+    "the_stop_in_the_other_direction": "A retired subject that is a CLAUDE.md rule again halts this tool until the verdict is read back into the live table deliberately.",
+    "verdicts": [
+      {
+        "id": "D-192",
+        "class": "MECHANISABLE-AND-NOT",
+        "mechanism_or_ground": "A pre-commit check: a diff that touches a scoring term in `chordanalyzer.cpp` must also touch `docs/scoring_model.md`. The rule states the condition in exactly that form, and the staleness check it names — the template count in §2 against `kTemplateCount` — is arithmetic. Nothing implements either."
+      }
+    ]
+  },
   "rules": [
     {
       "id": "D-112",
@@ -270,14 +282,6 @@
       "nonspec_kind": "process",
       "class": "MECHANISM-EXISTS",
       "mechanism_or_ground": "`tools/robust_stop_diff.py` — the class-(a)/(b) split, with the class-(a) INVESTIGATE flag at its declared threshold."
-    },
-    {
-      "id": "D-192",
-      "title": "A scoring change and its documentation land in the same commit",
-      "home": "CLAUDE.md:1309",
-      "nonspec_kind": "process",
-      "class": "MECHANISABLE-AND-NOT",
-      "mechanism_or_ground": "A pre-commit check: a diff that touches a scoring term in `chordanalyzer.cpp` must also touch `docs/scoring_model.md`. The rule states the condition in exactly that form, and the staleness check it names — the template count in §2 against `kTemplateCount` — is arithmetic. Nothing implements either."
     },
     {
       "id": "D-193",

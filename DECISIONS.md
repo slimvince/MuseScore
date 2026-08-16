@@ -205,30 +205,30 @@ project's own and are defined here because they are used before any entry explai
 
 ## What is in this register, counted
 
-**677 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
+**512 decisions**, grouped by subject. They were enumerated by reading `ARCHITECTURE.md` and `CLAUDE.md` in full, because a decision written as plain specification carries no ruling vocabulary and no text search can find it, and by following the recorded rulings that live only in an open-item row, a handoff block, or one of the standing decision-bearing surfaces. Every verbatim quote below is mechanically checked to exist at the place it is cited to, and to start at the line it is cited to (`gen_cluster_dispositions.py --verify`), and every `D-…` and `OI-…` cross-reference is checked to resolve.
 
 | | Count |
 |---|---|
-| Decisions recorded | **677** |
-| — of which live | 586 |
-| — of which superseded in fact | 11 |
-| — of which superseded by | 12 |
+| Decisions recorded | **512** |
+| — of which live | 431 |
+| — of which superseded in fact | 8 |
+| — of which superseded by | 9 |
 | — of which deferred | 51 |
-| — of which shelved with evidence | 3 |
-| Decisions whose date is not stated in the record | 239 |
-| Decisions whose ratifier is not stated in the record | 366 |
-| Decisions recorded outside the specification that owns them | 380 |
-| — of which a documentation gap | 27 |
+| — of which shelved with evidence | 2 |
+| Decisions whose date is not stated in the record | 128 |
+| Decisions whose ratifier is not stated in the record | 201 |
+| Decisions recorded outside the specification that owns them | 319 |
+| — of which a documentation gap | 20 |
 | — of which recorded only on a tracking surface, with no home at all | 1 |
-| — of which a project-wide convention, correctly homed | 45 |
-| — of which a decision about the process, correctly homed | 144 |
+| — of which a project-wide convention, correctly homed | 43 |
+| — of which a decision about the process, correctly homed | 124 |
 | Decisions whose defense the record does not state | 0 |
-| Entries whose own ratification the provenance records | 315 |
-| Entries whose home is recorded at SECTION granularity | 190 |
+| Entries whose own ratification the provenance records | 257 |
+| Entries whose home is recorded at SECTION granularity | 151 |
 
-The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **315 of 677** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 362 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
+The second-to-last row is about the DECISIONS; the last is about the ENTRIES. **257 of 512** entries carry a recorded event at which the entry itself — this quote, this restatement, this status — was reviewed and ratified. The remaining 255 do not carry one in their own provenance; the register-level ratification events listed in the preamble are the place to look for those, and nothing is inferred from them into the per-entry field.
 
-That last row is the one meant to fall. **677 of 677** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
+That last row is the one meant to fall. **512 of 512** decisions here can point at the research, the measurement, or the constraint that decided them; the rest cannot, and say so. Filling a gap means recording the defense where the decision lives — never writing one afterwards from memory.
 
 Alongside the register, every one of the harvested statements about decisions in this repository has been given a recorded disposition, so that none was silently passed over:
 
@@ -263,7 +263,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 **Not read in full.** Both archives (STATUS_ARCHIVE.md, cowork_handoff_archive.md) and the cc_* session reports. Each was opened where a specific citation required it and is not claimed to be swept. ★ CORRECTED 2026-08-04: this sentence previously also named the per-layer and per-component design documents, and that half became false — the OI-207 reading programme read every one of them IN FULL, finishing with read wave 6 on 2026-08-04, and each document's yield is on the record. The enumeration, per document, is derived at `tools/audit/phase1_completion_inventory.json` -> `what_the_register_says_about_itself_that_is_no_longer_true.statement_1_not_read_in_full` and at `tools/audit/decisions/phase1n_reading_regime.json` plus the six `reads<n>_yield.json` artifacts; no list or count is restated here (D-431).
 
-**The remainder, measured.** The harvest holds 15,224 candidate statements, grouped into 14,460 groups of near-identical statements, and every one of those groups carries a recorded disposition, so none was silently passed over. 2,644 of them carry the 'unresolved' disposition: statements the pass could not mechanically classify as either restating a register decision or not being a decision. Sampling shows that residual is genuinely mixed — real rulings, deferred designs and ordinary narrative in one population. Every harvested statement sourced to `ARCHITECTURE.md` falls inside the range read in full, that file being read in full in its entirety (above). ★ WHICH LAYER THIS FIGURE IS THE FIGURE OF, and how the two numbers below are read together. **It is the LAYER OF RECORD's figure** — the disposition layer regenerated on 2026-08-07 and ADOPTED as the layer of record by the user's ruling of that date (`OPEN_ITEMS.md` OI-333), with the outgoing layer kept beside it as a snapshot (#16), and it may be published as CURRENT. It is derived at a backbone of 673 entries; this register records 677. **Where those two are equal the residual is current as it stands. Where the register has since grown, the older reading applies again**: every group that restates an entry entered since the derivation still reads 'unresolved', so the figure OVERSTATES what is unresolved at HEAD, in a known direction, by an amount only a re-derivation would give. What the figure is NOT, in either case: a judgment that any one group's disposition has been read — each is exactly as mechanical as the numbered rule that produced it — so the residual is a bound on what this register may claim about the documents it did not read in full, not a measurement of the record's quality. ★ THE FORMER WORDING IS PRESERVED VERBATIM (#12) at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.measured_remainder_former_wording_2026_08_04_preserved_12`. It was true when it was written; what changed under it is that the layer it called un-re-derivable was repaired and its regeneration adopted.
+**The remainder, measured.** The harvest holds 15,224 candidate statements, grouped into 14,460 groups of near-identical statements, and every one of those groups carries a recorded disposition, so none was silently passed over. 2,644 of them carry the 'unresolved' disposition: statements the pass could not mechanically classify as either restating a register decision or not being a decision. Sampling shows that residual is genuinely mixed — real rulings, deferred designs and ordinary narrative in one population. Every harvested statement sourced to `ARCHITECTURE.md` falls inside the range read in full, that file being read in full in its entirety (above). ★ WHICH LAYER THIS FIGURE IS THE FIGURE OF, and how the two numbers below are read together. **It is the LAYER OF RECORD's figure** — the disposition layer regenerated on 2026-08-07 and ADOPTED as the layer of record by the user's ruling of that date (`OPEN_ITEMS.md` OI-333), with the outgoing layer kept beside it as a snapshot (#16), and it may be published as CURRENT. It is derived at a backbone of 673 entries; this register records 512. **Where those two are equal the residual is current as it stands. Where the register has since grown, the older reading applies again**: every group that restates an entry entered since the derivation still reads 'unresolved', so the figure OVERSTATES what is unresolved at HEAD, in a known direction, by an amount only a re-derivation would give. What the figure is NOT, in either case: a judgment that any one group's disposition has been read — each is exactly as mechanical as the numbered rule that produced it — so the residual is a bound on what this register may claim about the documents it did not read in full, not a measurement of the record's quality. ★ THE FORMER WORDING IS PRESERVED VERBATIM (#12) at `tools/audit/decisions/backbone_decisions.json` -> `header.scope.measured_remainder_former_wording_2026_08_04_preserved_12`. It was true when it was written; what changed under it is that the layer it called un-re-derivable was repaired and its regeneration adopted.
 
 *Why this is stated at all:* DEFECT_TYPES.md DT-26 — scope-assumed enumeration. A sweep that is complete inside its own file set reads as complete about the whole question. The scope and its measured remainder are therefore stated rather than left implicit.
 
@@ -302,7 +302,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-283 | Meta-finding: never learn keys, the lever is keychain structure - superseded by the joint estimator and the forms-from-theory rule | SUPERSEDED BY D-001 and D-096 | — | `cowork_architecture_reassessment.md` §4 ⚠gap |
 | D-285 | Meta-finding: embellishment is chord-first, never a richer vocabulary - absorbed by the emission design and the ornament-label increment | SUPERSEDED BY the ratified factorization emission design (D-004 and D-426, the OI-194 ornament-label increment) | — | `cowork_architecture_reassessment.md` §4 ⚠gap |
 | D-376 | The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture | SHELVED WITH EVIDENCE ⚠LEGACY | 2026-08-02 · user | `cowork_joint_key_chord_design.md` “§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state” |
-| D-379 | Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured | LIVE | 2026-08-02 · user | `cowork_joint_key_chord_design.md` “§3.1 The trigger, grounded in C3” |
 | D-449 | Factor granularity is fixed: the bass factor is evaluated per event, the missing-tone penalty per event of segment length, the emission per tone, and the boundary-family factors per boundary | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-450 | The key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-451 | A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win | LIVE | 2026-08-04 · user | `CLAUDE.md` |
@@ -313,14 +312,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-526 | The joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the chord symbol is a DERIVED fact published once | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |
 | D-527 | There is NO live non-chord-tone cleaning stage: each tone is emitted by category inside the one decode, conditioned on chord-independent melodic and metric covariates, and ornament labels are derived AFTER it | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |
 | D-528 | The key signature and declared mode enter as a WEAK FITTED SOFT PRIOR with no conditional gate anywhere — the probability calculus delivers 'consult it only when unsure', and the hard declared-mode wall is formally retired | LIVE | — | `cowork_joint_estimator_architecture.md` §5a |
-| D-529 | The joint architecture's expected win is ASYMMETRIC — large on key and mode, modest on chord root — and the written predictions must say so, because a large root claim would itself be a surprise | LIVE | — | `cowork_joint_estimator_architecture.md` §6 ⚠gap |
-| D-530 | The joint architecture is a CONSTRAINED optimum, not a global one: the learned shared-representation models measure better and are excluded because they are un-establishable and undiagnosable | LIVE | — | `cowork_joint_estimator_architecture.md` §6 ⚠gap |
 | D-532 | The chord-transition table gains one pooling level that groups a secondary dominant's continuations by their RELATION to its target — restoring from counts the one behaviour that defines the chord class | LIVE | — | `ARCHITECTURE.md` |
 | D-533 | A continuation too rare to have its own stored probability is scored by dividing the row's leftover in PROPORTION to each chord's overall frequency — never evenly, and never as impossible | LIVE | — | `ARCHITECTURE.md` |
 | D-534 | The penalty for a chord tone that never sounds is COUNTED per chord factor — root, third, fifth, seventh — replacing one invented blanket number; the per-factor asymmetry then comes free | LIVE | — | `ARCHITECTURE.md` |
 | D-535 | The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong | LIVE | — | `cowork_sensitive_cell_probe.md` “For the record” ⚠gap |
 | D-565 | Exact score ties in the decode are real and are broken by a declared TOTAL ORDER on paths, implemented identically in every decoder — no epsilon, no platform dependence | LIVE | 2026-08-04 · user | `cowork_joint_estimator_factorization.md` §5 |
-| D-621 | Hand-built versus learned is a question about the EMISSION alone — the decoding structure is decided and accommodates either | LIVE | — | `ARCHITECTURE.md` |
 
 ## B. The notation output surface and the record path — [full entries](decisions/group_B.md)
 
@@ -333,9 +329,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-013 | Which staves feed the analysis is decided at the fact adapter, not by a later filter | LIVE | — | `ARCHITECTURE.md` |
 | D-014 | The two seams read the record as pure views - no recomputation | LIVE | — | `ARCHITECTURE.md` |
 | D-015 | A boundary tick belongs to the segment it starts | LIVE | — | `ARCHITECTURE.md` |
-| D-016 | Display renderings are presentation; facts are published | LIVE | — | `ARCHITECTURE.md` |
-| D-017 | The inference/presentation boundary is guarded mechanically, both ways | LIVE | — | `ARCHITECTURE.md` |
-| D-018 | The key-exposure bucket is decided once, at one site | LIVE | — | `ARCHITECTURE.md` |
 | D-019 | The record arm publishes the raw key-axis gap, with no remapping to 0..1 | LIVE | — | `ARCHITECTURE.md` |
 | D-020 | The interactive path bypasses the old window cache and has none of its own | LIVE | — | `ARCHITECTURE.md` |
 | D-021 | The pedal-point fields are suspended on the record arm | DEFERRED | — | `ARCHITECTURE.md` |
@@ -362,7 +355,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-033 | Each layer owns one evidence-source-times-question contribution and uses all of L1's information | LIVE | — | `ARCHITECTURE.md` |
 | D-034 | A new layer or axis is admitted only through three co-equal gates | LIVE | — | `ARCHITECTURE.md` |
 | D-035 | The effort setting - every cost-driving choice is a setting, never a hardcoded constant | LIVE | — | `ARCHITECTURE.md` |
-| D-036 | Accumulating gates are a warning sign - add iteration, not more gates | LIVE | — | `ARCHITECTURE.md` |
 | D-099 | Negative evidence is information - a ruled-out possibility is carried, not dropped | LIVE | — | `ARCHITECTURE.md` |
 | D-100 | Every derived fact is published exactly once, on the producing layer's output surface | LIVE | — | `ARCHITECTURE.md` |
 | D-115 | The regression stop is the granularity-robust unit; root governs, key and Roman numeral ride beside | LIVE | — | `CLAUDE.md` |
@@ -370,7 +362,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-210 | An exotic mode is graded against its parent collection's minor key, not its own tonic triad | LIVE | — | `CLAUDE.md` |
 | D-211 | Key agreement is reported against both the global home key and the local key | LIVE | — | `CLAUDE.md` |
 | D-212 | The regression stop is abstain-aware: an abstention counts as disagreement on root | LIVE | — | `CLAUDE.md` |
-| D-243 | The planning band for the vertical engine, and the corpora excluded from it | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-260 | Analysis output covers exactly the selection; everything loaded beyond it is evidence, never a result | LIVE | 2026-08-02 · user | `cowork_bounded_context_design.md` §2 |
 | D-261 | A layer never guesses how much context it needs - the amount is discovered by convergence | LIVE | 2026-08-02 · user | `cowork_bounded_context_design.md` §3 |
 | D-262 | The extension increment is chosen by the requesting layer, not by the layer that supplies the notes | LIVE | 2026-08-02 · user | `cowork_bounded_context_design.md` §3 |
@@ -391,7 +382,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-297 | Correction of record: never computing a possibility is not information loss; only discarding a computed one is | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-313 | A confidence map is monotone or it is not fitted — a non-monotone curve is an upstream finding, not a mapping target | LIVE | 2026-08-02 · user | `cowork_stage5_fitter_design.md` §9 |
 | D-339 | A confident earlier decision can be overturned by decisive later evidence, through ONE confidence-weighted forward-recompute mechanism — architecture-wide | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §9 |
-| D-377 | The forbidden back-edge, stated concretely: a chord decision may NOT write into the committed tonality and re-run the tonality decode — a coupled decision is OWNED by its own bounded box, never patched backward | LIVE | 2026-08-02 · user | `cowork_joint_key_chord_design.md` “§1.3 How it avoids re-introducing a cross-layer cycle” |
 | D-422 | The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom is fitted now | DEFERRED | 2026-08-03 · user | `cowork_score_census.md` §5 |
 | D-466 | Forward-only is a strong DEFAULT, not dogma — a backward edge is admissible only as a deliberate, surfaced, measured, documented exception | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-468 | The pinned block-(A) instrument declares which inference arm its baselines were measured on, and refuses a corpus whose stamp disagrees | LIVE | — | `CLAUDE.md` |
@@ -408,7 +398,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-564 | Correction of record: the 'function-only' share of the legacy residual was overstated, because over-grabbed segmentation corrupts the BASS and not only the pitch-class window | LIVE ⚠LEGACY | 2026-08-04 · user | `CLAUDE.md` |
 | D-568 | The two-track remedy: the chord axis is completed by hand-built rules, the key axis by soft-evidence quality and calibration — and NOT by a wider search on either | LIVE ⚠LEGACY | 2026-08-04 · user | `cowork_engage_arc_plan.md` |
 | D-576 | The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent | LIVE | 2026-08-04 · user | `CLAUDE.md` |
-| D-579 | The anchor obligation: compute the chord ONCE against its region's FINAL notes, with the tonality as an explicit input rather than frozen mid-pipeline | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `cowork_phase2_architecture_review.md` “§5” ⚠gap |
 | D-581 | Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
 | D-582 | A collapse that is RECOMPUTABLE from what is kept is not information loss — not every collapse is a defect | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-600 | The quality-overwrite information-loss violation is TOLERATED until the gate-dissolution step and stays VISIBLE in the open-items register — tolerated is not forgotten | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
@@ -416,9 +405,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-604 | A defensible modal reading the major/minor ground truth cannot represent is a GROUND-TRUTH LIMITATION, not a defect to optimise away | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-608 | The symmetric-root spelling pin's entry premise was measured FALSE — it is unreachable because the scorer rarely chooses the diminished quality; the remedy is enumerated and NOT decided | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-609 | The abstention rate rides on an arbitrary, never-fitted seed constant — a whole probe's metric-moving behaviour sat downstream of an unestablished value | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-615 | Under #19 the validation basis of every Iter-era hand-set scoring magnitude is retroactively VOID — the values are unfalsified, not established | LIVE | — | `docs/scoring_model.md` |
-| D-619 | Over-claiming a constraint as HARD re-creates the override failure in reverse — and a sounding note is not automatically a chord tone | LIVE | — | `ARCHITECTURE.md` |
-| D-620 | The reading-shaped evidence producers were each measured to pin WRONG and must stay SOFT — a cadence anchor, a modulation detector and a bass-is-root rule are scores, never constraints | LIVE | — | `ARCHITECTURE.md` |
 | D-624 | The hard bound and the score start are SAFETY CAPS for a loop that never settles — never the amount of context a layer needs | LIVE | — | `ARCHITECTURE.md` |
 | D-628 | The finest meaningful extension step is the change-point — within a slice the sounding set is constant, so a finer request loads no note and changes no answer | LIVE | — | `ARCHITECTURE.md` |
 | D-630 | Minimality sets the default and the burden — do not add a component; a new one is earned only by exhibiting a residual class a separable criterion resolves | LIVE | — | `cowork_uncertain_resolver_investigation.md` |
@@ -431,17 +417,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
 | D-037 | The note model is the single source of truth for what sounds, and reads the score once | LIVE | — | `ARCHITECTURE.md` |
-| D-038 | Tied notes are one event; spans are answered by overlap with no horizon | LIVE | — | `ARCHITECTURE.md` |
 | D-039 | Ineligible notes are kept and flagged, never dropped | LIVE | — | `ARCHITECTURE.md` |
 | D-040 | The tie-unresolved atoms are republished additively for the joint estimator | LIVE | — | `ARCHITECTURE.md` |
-| D-517 | The note model's span query uses a start-time-ordered list plus a running latest-end-time tree, chosen because it is the simplest structure that is fast AND returns notes in scan order | NOT STATED | — | `cowork_layer1_note_model_design.md` §9 |
-| D-518 | The planned cue-note flag was specified and then REMOVED: after import a cue note cannot be told from a muted note, and the does-it-sound flag already covers both | NOT STATED | — | `cowork_layer1_note_model_design.md` §13 ⚠gap |
-| D-519 | Only TIES join written notes into one sounding note — slurred notes stay separate, whatever their pitches | NOT STATED | — | `cowork_layer1_note_model_design.md` §1 |
 | D-520 | Widening the loaded span was built DECOUPLED from the whole-score-read fix — superseding the recorded framing that the two were one coupled change | DEFERRED | — | `cowork_layer1_note_model_design.md` §11 |
 | D-569 | Collecting, filtering and weighting are THREE separate responsibilities; the collection layer collects and annotates, and does nothing else | LIVE | 2026-08-04 · user | `cowork_layer1_tone_collection_design.md` the opening block (above the first section heading) ⚠gap |
 | D-570 | An upstream layer's correctness oracle is the SCORE, not the Roman-numeral ground truth | LIVE | 2026-08-04 · user | `cowork_layer1_tone_collection_design.md` “§5” ⚠gap |
-| D-594 | Bass-as-root promotion is SHELVED WITH EVIDENCE — the information that disambiguates the third-above reading is non-local, so no local discriminator can exist | SHELVED WITH EVIDENCE | 2026-08-04 · user | `docs/scoring_model.md` |
-| D-595 | A chord-level change is not confined to the cases it fires on: chord identity drives boundary placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never touched | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
 | D-606 | The binding metric for the modulation detector is modulation CORRECTNESS — explicitly not the agreement percentage, which the change under test can game | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-625 | Spelling presence is tested with the validity predicate, never with a non-negative test — the flat side of the line of fifths is negative and a non-negative guard silently drops it | LIVE | — | `ARCHITECTURE.md` |
 
@@ -449,36 +429,18 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-041 | The slicer output covers the domain with no gaps and no overlaps | LIVE | — | `ARCHITECTURE.md` |
-| D-042 | Slice boundaries are every onset AND every release | LIVE | — | `ARCHITECTURE.md` |
-| D-043 | Slice identity IS the eligible sounding-note set | LIVE | — | `ARCHITECTURE.md` |
-| D-044 | A note that opens no boundary still rides along in the slice's sounding set | LIVE | — | `ARCHITECTURE.md` |
-| D-045 | The slicer re-decides nothing about eligibility | LIVE | — | `ARCHITECTURE.md` |
-| D-046 | Zero interpretation - the slicer applies no thresholds and no musical judgment | LIVE | — | `ARCHITECTURE.md` |
-| D-047 | No special-casing of any note kind | LIVE | — | `ARCHITECTURE.md` |
-| D-048 | Boundaries are necessary but not sufficient; over-grab is structurally impossible | LIVE | — | `ARCHITECTURE.md` |
-| D-049 | An interior stretch where everything rests is an explicit empty slice, not a gap | LIVE | — | `ARCHITECTURE.md` |
-| D-050 | Slicing is clipped to the loaded span and never drags outside it | LIVE | — | `ARCHITECTURE.md` |
-| D-540 | A slice is a unit of constant CONTENT, not of constant musical TIME — the layers above must never treat slices as equal-weight units, and a slice's metric extent is evidence weighted by metric structure, not by tempo | LIVE | — | `cowork_layer2_slicing_design.md` §8 |
-| D-541 | The metric weight of a slice IS the beat-strength at its start tick, taken from one shared preference-free notation primitive that no consuming layer re-defines | LIVE | — | `cowork_layer2_slicing_design.md` §8 |
 | D-605 | The local-key hypothesis derives from key-agnostic signals ONLY and never from the key-area grouping, which is a post-grouping of the resolved key — a hard design rule, not a preference | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-631 | The boundary at the loaded edge is ARTIFICIAL and vanishes on extension — so the edge slice grows, and an old-slices-byte-identical assertion is false and must not be written as a test | LIVE | — | `ARCHITECTURE.md` |
-| D-632 | The slice stays minimal — no in-selection-or-context tag; the consumer derives it, because the slicer owns no selection semantics | LIVE | — | `ARCHITECTURE.md` |
 
 ## F. Layer 3 — key and mode — [full entries](decisions/group_F.md)
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-051 | The production key/mode path is the sequence decoder, not the per-stretch resolver | SUPERSEDED BY D-001 ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-052 | The signature read and declared-mode mapping live in ONE shared function | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-053 | The tick-local path keeps the older resolver (the ratified P4-defer) | SUPERSEDED IN FACT ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-054 | All 21 modes are scored against all 12 tonics; the harmonic major family is deferred | DEFERRED ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-055 | The 21 mode priors are independent and user-configurable | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-056 | Notes always win - the notated key signature is a weak hint, not a bypass | LIVE | — | `ARCHITECTURE.md` |
 | D-057 | The priority of evidence - actual sounding notes are the strongest evidence | LIVE | — | `ARCHITECTURE.md` |
 | D-058 | The piece-start shortcut | SUPERSEDED IN FACT ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-059 | The temporal window - 16 beats back, 8 beats forward, decayed | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-235 | Tonal-centre disambiguation may break a close tie but may not overturn a stronger raw winner | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-287 | Key-as-distribution is SHELVED - its motivating case was already fixed and no live target was found | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-290 | The key-agnostic local cadence approach is FALSIFIED at its precision ceiling | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-306 | The key layer's backward re-reading stays switched off in the shipped configuration | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
@@ -486,20 +448,13 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-343 | The key/mode layer owns the candidate space and the note-evidence model outright; the residual is SELECTED from its carried alternatives, never re-scored | LIVE | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §1 |
 | D-344 | A scale outside the twenty-one recognized modes is reported as the best-fitting recognized mode, never as the unrecognized scale | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §1 |
 | D-345 | The style preset first enters the analysis at the key/mode layer, as a deliberately weak prior over the modes that the note evidence overrides | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §2 |
-| D-346 | The candidate set for the whole-run tonality decision is the UNION of every stretch's best candidates, made available at every stretch | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §5 |
 | D-347 | The cost of changing tonality is cheap-to-stay plus a term growing with tonal distance plus a large extra penalty on the relative major/minor switch | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §9 |
 | D-348 | Tonal distance in the change cost is circle-of-fifths distance — not semitone distance, not differing scale tones — and brief-versus-sustained has no duration threshold at all | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §4 |
 | D-349 | The key/mode confidence compares whole readings — the winning run against the best run forced to a different tonality there — not the top two candidates at that stretch | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §9 |
-| D-350 | Of the layer's two confidence numbers, the whole-run margin is the published one; the per-stretch emission sigmoid is demoted to a gate input and a diagnostic | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §0 |
 | D-351 | The key/mode search is its own decoder; the chord decoder is not reused for it | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §9 |
 | D-352 | The key/mode grading bar splits the cases first: agreement where the published analyses are unanimous, any recorded reading (or an uncertain mark) where they are not | LIVE | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §10 |
 | D-353 | The key/mode layer is graded on two goals kept apart — agreement where the notes decide, and whether its own uncertainty lands on the genuinely ambiguous cases | LIVE | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §10 |
-| D-354 | The key/mode decoder's own settings are exhausted — no setting of its own moves the fixable error set, so the remaining headroom is not a decoder setting | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §11 |
-| D-355 | The identified key/mode lever is the shared scorer's scale-membership term, applied once to the shared scorer at the wiring step and gated on the corpus stop and the pinned outputs | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §11 |
-| D-356 | The leading-note presence gate is brittle and its fix is a later key/mode emission step, not a foundation patch — and the scale-membership lever is measured NOT to fix it | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §11 |
-| D-357 | Reading the notated spelling as tonality evidence belongs at the function layer, where function gates it — NOT as a standalone key/mode emission patch | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §15 |
 | D-358 | A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first | DEFERRED ⚠LEGACY | 2026-08-02 · user | `cowork_layer3_keymode_design.md` §15 |
-| D-405 | The full ranked key resolve retained as a segmentation seed is KEPT — adjudicated load-bearing, not dead scoring work | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` §3.1 ⚠gap |
 | D-494 | RATIFIED AMENDMENT A-4: the function layer must gain key-confirmation channels that do not require a cadence, plus an enharmonic-identity rule for key spans | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-571 | The declared-mode influence becomes a small additive hint, and SMALLNESS IS THE GATE — no separate confidence test is added | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `docs/stage4b_design.md` §2.1 ⚠gap |
 | D-572 | The hard post-hoc declared-mode promotion is REMOVED OUTRIGHT rather than kept in a gated form | SUPERSEDED IN FACT ⚠LEGACY | 2026-08-04 · user | `ARCHITECTURE.md` |
@@ -511,27 +466,15 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-591 | The licence split for the style system: the ANCHORS are the shipped licence-constrained fitted parameters, and the mixture weights are free user configuration | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-598 | The style taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate third thing that needs annotated scores and is not delivered by the clustering | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-616 | A global tonic anchor enters key scoring at RESOLVER/SECTION scope — never as one more local term inside the window scorer, which is what re-enters the coupling that defeated the local levers | LIVE | — | `ARCHITECTURE.md` |
-| D-618 | The notated key signature is NOT a hard fact — its fifths were measured to pin wrong about one time in six, so the home key is note-derived and never signature-pinned | LIVE | — | `ARCHITECTURE.md` |
 | D-622 | The reach-back convergence PROXY was measured FALSE and dropped — the as-built tracks the leading-edge key itself and stops when it stops changing | LIVE | — | `ARCHITECTURE.md` |
 
 ## G. Layer 4 — chord identity — [full entries](decisions/group_G.md)
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-060 | The legacy chord analyzer is a vertical sonority analyzer - keep the boundary clean | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-061 | Gate thresholds are Baroque-calibrated and must not be loosened for other styles | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-062 | Progression signals are withheld while segmentation is being explored | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-063 | Cold context on the tick-local path is the accepted contract | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-064 | The chord-scoring presets are a measurement-only artifact | SUPERSEDED IN FACT ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-065 | The look-ahead divergence between the two paths is intentional and load-bearing | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-066 | Chord symbols written in the score are never analyzer input | LIVE | — | `ARCHITECTURE.md` |
-| D-067 | Jazz mode (chord-symbol-driven boundaries) is retired | LIVE | — | `ARCHITECTURE.md` |
 | D-068 | The chord identifier needs at least three distinct pitch classes | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-069 | Two identity modes for merged stretches - harmonic summary and as-written | DEFERRED ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-101 | Contextual inversion bonuses fire only for major and minor candidates | SUPERSEDED BY D-102 ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-102 | Augmented and half-diminished candidates receive the inversion bonuses too (Iter 46) | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-103 | Pedal-point detection is a second pass, accepted only on two conditions | SUPERSEDED BY D-207 ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-104 | The bass-is-root bonus is conditioned on corroborating support | LIVE ⚠LEGACY | — | `ARCHITECTURE.md` |
 | D-105 | The spelling written in the score is read through ONE shared interpreter | LIVE | — | `ARCHITECTURE.md` |
 | D-207 | The pedal-point class is defined voice-independently, superseding the bass-only fact | DEFERRED | — | `ARCHITECTURE.md` |
 | D-236 | Chord-symbol trust is per symbol, not a per-score preference | DEFERRED | 2026-08-02 · user | `ARCHITECTURE.md` |
@@ -548,7 +491,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-301 | Gate N (major read as an inverted minor) is DEFERRED and must not be retried without a multi-region model | DEFERRED ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
 | D-302 | No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
 | D-303 | Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact | DEFERRED | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-305 | The ban on reading written harmony as analyzer input is decided by what an annotation says, not by how it is stored | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-312 | The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change | LIVE | 2026-08-02 · user | `cowork_stage5_fitter_design.md` “§15 Open items & ratification asks” |
 | D-317 | The backward-walk boundary change is a dead end — do not retry it | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
 | D-318 | A short-region external merger is a dead end — do not retry it | LIVE ⚠LEGACY | 2026-08-02 · user | `docs/scoring_model.md` |
@@ -564,15 +506,12 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-329 | Completeness of the candidate list is the priority — a chord never listed can never be chosen | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §4 |
 | D-330 | Never a pooled recompute — the chord is never re-derived from several stretches' notes thrown together | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §8 |
 | D-331 | Every chord decision carries its ranked alternatives and its confidence — committed, inherited, and abstained alike, never pruned | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §15 |
-| D-332 | A carried alternative's added notes are marked UNKNOWN rather than asserted absent — never synthesized | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §7 |
 | D-333 | The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §15 |
 | D-334 | The bare-fifth chord type stays in the catalogue structurally; whether it wins is an idiom-calibrated number | LIVE | 2026-08-02 · user | `cowork_layer4_chordsymbol_design.md` §15 |
-| D-378 | Re-deciding a chord under a different tonality is well-defined ONLY on the decoder path — the legacy multi-pass emission cannot be faithfully re-decoded, and a naive re-emit injects a measured ~6 % same-tonality root-flip artifact | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_joint_key_chord_design.md` “§2.2 The chord re-decoded under each carried key” |
 | D-380 | The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§2.2 The exclusion tail is load-bearing and must be carried” |
 | D-381 | The carry must cap on DISTINCT ROOTS, not on voicings — the existing voicing-keyed cap gives no structural guarantee that a third root survives | DEFERRED ⚠LEGACY | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§2.3 Does the decoder's governed carry provide this? The distinct-root guarantee is OWED [code]” |
 | D-385 | Pedal-point detection's home is DECIDED: a reader over the chord layer's carry that annotates a carried reading — never a second analysis that overwrites the winner | LIVE | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§6.3 Placement” |
 | D-386 | No fourth hand-rolled scan for the best different-root alternative — the pedal reader consumes the carry's own ranking, or the one unified primitive | LIVE | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§6.5 The diff-root need is served by the carry / FQ-1” |
-| D-402 | The inversion-append is a pure cap artifact that dissolves when the cap is removed; the below-threshold bass promotion is a targeted promotion that stays | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` §1.2 ⚠gap |
 | D-403 | STOP, not forced: the four best-different-root scans are NOT one decision at code, so the one-decision-four-sites premise over-counts | LIVE ⚠LEGACY | 2026-08-02 · user | `cowork_structural_integrity_audit.md` §3.1 ⚠gap |
 | D-423 | The gate-retirement stage is the only sanctioned way the post-scoring gates change, and three do-not rules hold through every stage | LIVE ⚠LEGACY | 2026-08-03 · user | `docs/scoring_model.md` |
 | D-463 | The temporal signals sitting in the vertical scorer are left where they are, and the gate that depends on them must move with them | LIVE | 2026-08-04 · user | `docs/scoring_model.md` |
@@ -586,7 +525,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-536 | The bass note and the chord are chosen TOGETHER — the winner is the (bass, root, template) triple — replacing the sequential commit-the-bass-then-score pipeline | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-537 | The completeness bonus fires ONLY for a root-position reading whose three triad tones are all present — the guard that stops it from demoting genuine slash chords | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-538 | A multi-signal scoring change lands one signal at a time, with the corpus check re-run after each step and any increase in errors a hard stop before the next | SUPERSEDED BY D-177 and D-115 ⚠LEGACY | 2026-08-07 · user | `docs/iter92_joint_bass_chord_scoring.md` “Implementation insertion point” ⚠gap |
-| D-560 | Voice slots and stem direction are STRUCTURAL notational metadata, not user-written analytical claims, so the analysis may read them | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-580 | Two of the twelve post-scoring gates are purely-local vertical refinements and MUST survive the dissolution; the other ten dissolve into the competition | DEFERRED ⚠LEGACY | 2026-08-04 · user | `docs/scoring_model.md` |
 | D-583 | A known deferred loss is KEPT only while it stays characterized EXACTLY, and is re-adjudicated the moment its form changes | LIVE ⚠LEGACY | 2026-08-04 · user | `cowork_audit_protocol.md` |
 | D-638 | The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change | LIVE | — | `CLAUDE.md` |
@@ -595,11 +533,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-079 | The function layer annotates and resolves; it never rewrites the committed chord | LIVE | — | `ARCHITECTURE.md` |
-| D-080 | Carried abstentions are resolved by selecting among the carried readings, never re-derived | LIVE | — | `ARCHITECTURE.md` |
 | D-081 | The cadence detector is key-agnostic | LIVE | — | `ARCHITECTURE.md` |
 | D-082 | The grouping layer is additive, read-only, with no feedback | LIVE | — | `ARCHITECTURE.md` |
-| D-083 | Hierarchy, periods and prolongation are out of the validatable core | LIVE | — | `ARCHITECTURE.md` |
 | D-084 | The progression-schema recognizer is a consumer of the function layer, not a new layer | DEFERRED | — | `ARCHITECTURE.md` |
 | D-085 | The voice-leading axis is a separate axis with its own layers | LIVE | — | `ARCHITECTURE.md` |
 | D-248 | Tonicization labels are not implemented and are deferred | DEFERRED ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
@@ -608,7 +543,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-336 | Cadence detection is key-agnostic and votes for the key rather than reading one | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §9 |
 | D-337 | A lean toward another degree is a tonicization by default; a key change needs a confirming cadence AND persistence, expressed as a change-cost | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §9 |
 | D-338 | The function layer selects among the chord layer's carried readings and never re-derives a chord from the notes | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §9 |
-| D-340 | The reading the function layer emits IS the selected source's committed identity, carried whole — never rebuilt field by field | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §7 |
 | D-341 | The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added | LIVE | 2026-08-02 · user | `cowork_layer5_function_design.md` §5.0 |
 | D-342 | Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation | DEFERRED ⚠LEGACY | 2026-08-02 · user | `cowork_layer5_function_design.md` §11 |
 | D-382 | The function layer selects by JOINT CONSISTENCY across tonality, root, inversion and bass — not by maximizing any one score — and every ambiguity kind reasons over the full carried distribution | LIVE | 2026-08-02 · user | `cowork_layer5_engagement_design.md` “§3.1 The objective: select by JOINT CONSISTENCY, not by strengthening one score” |
@@ -661,20 +595,10 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
 | D-070 | Style behaviour is fully data-driven - no conditional logic on style identity | LIVE | — | `ARCHITECTURE.md` |
-| D-071 | The analysis layer never produces display strings | LIVE | — | `ARCHITECTURE.md` |
 | D-072 | The dependency rule - the analysis library knows nothing about the score format | LIVE | — | `ARCHITECTURE.md` |
 | D-073 | Single implementation for shared logic; mirroring is a last resort | LIVE | — | `ARCHITECTURE.md` |
-| D-074 | Analyze and suggest - never modify the score without explicit user action | LIVE | — | `ARCHITECTURE.md` |
-| D-075 | Interface-based design for machine-learning substitutability | LIVE | — | `ARCHITECTURE.md` |
-| D-076 | Score inspection before diagnosis | LIVE | — | `ARCHITECTURE.md` |
-| D-077 | The configuration interface is split into two narrow IoC interfaces | LIVE | — | `ARCHITECTURE.md` |
-| D-078 | The cross-layer value types live in a dependency-free leaf header | LIVE | — | `ARCHITECTURE.md` |
 | D-107 | American English throughout | LIVE | — | `ARCHITECTURE.md` |
-| D-108 | Cross-platform by default | LIVE | — | `ARCHITECTURE.md` |
-| D-227 | Read how MuseScore already does it, and never invent parallel infrastructure | LIVE | — | `ARCHITECTURE.md` |
-| D-228 | The bridge pattern - engraving types enter and leave at named free functions in the notation namespace | LIVE | — | `ARCHITECTURE.md` |
 | D-229 | The MuseScore-dependency rule - one general rule for what our code may depend on | LIVE | — | `ARCHITECTURE.md` |
-| D-233 | Build and test commands run synchronously; one run, one result | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-296 | READING MuseScore's engraving code is allowed from anywhere we may edit; only EDITING the notation and engraving code is off limits | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-311 | The chord-analyzer file split happens once — the SEQUENCING is spent (the split happened first, not last); the once-only LESSON is what carries forward | SUPERSEDED IN FACT | 2026-08-02 · user | `cowork_engage_arc_plan.md` “The stages” |
 | D-401 | The refactor sequencing call — the portable unification wins run before Layer 5, the legacy-path tangles fold into the decoder engagement, and the file split is last | LIVE | 2026-08-02 · user | `cowork_structural_integrity_audit.md` “The one coherent order” |
@@ -691,15 +615,8 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-086 | Roman numerals and Nashville numbers are presentation choices, not separate analyses | LIVE | — | `ARCHITECTURE.md` |
-| D-087 | Display options live with the formatter, not with the analyzer preferences | LIVE | — | `ARCHITECTURE.md` |
-| D-088 | No automatic key signature injection | LIVE | — | `ARCHITECTURE.md` |
-| D-089 | The legacy confidence exposure gates - 0.5 tentative, 0.8 assertive | SUPERSEDED BY D-018 ⚠LEGACY | — | `ARCHITECTURE.md` |
-| D-090 | Abstention is a valid outcome - high precision before coverage | LIVE | — | `ARCHITECTURE.md` |
 | D-106 | The augmented-sixth labels are gated to the Standard and Baroque presets | SUPERSEDED IN FACT | — | `ARCHITECTURE.md` |
-| D-234 | A chord symbol string must be valid under chords_std.xml; chords.xml is not relied on | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-295 | Zero information loss to the end user - every inferred object must be displayable | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-304 | The analyzer always emits its fullest reading; simplifying it happens only when comparing against a corpus, never in the product | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-471 | The sub-beat annotation duration gate is not retired on argument — it is kept or dropped on a measured observation run, with the verdict stated in advance | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 | D-498 | RATIFIED AMENDMENT A-9: a product stance is owed for output that is mostly uncertain, and for music outside the tonal vocabulary altogether | LIVE | 2026-08-04 · user | `cowork_architecture_review_2026_07.md` §9 ⚠gap |
 | D-584 | The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
@@ -712,20 +629,15 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 |---|---|---|---|---|
 | D-091 | ARCHITECTURE.md is the canonical architecture document and wins every disagreement | LIVE | — | `ARCHITECTURE.md` |
 | D-092 | A cross-cutting contract is stated once and never redefined in a layer document | LIVE | — | `ARCHITECTURE.md` |
-| D-093 | STATUS.md wins on current state; ARCHITECTURE.md on design | LIVE | — | `ARCHITECTURE.md` |
-| D-094 | Each layer carries exactly one build state | LIVE | — | `ARCHITECTURE.md` |
 | D-109 | The open-items register is the one home for every unresolved issue, and the index is the status of record | LIVE | — | `OPEN_ITEMS.md` |
 | D-110 | The decisions register records what was decided and its status - nothing else | LIVE | — | `open_items/OI-208.md` |
 | D-111 | A decision belongs in the owning layer's specification; the register is an index | LIVE | — | `open_items/OI-208.md` |
 | D-112 | Never work from memory instead of documented facts | LIVE | — | `CLAUDE.md` |
 | D-113 | Music-theory words are reserved for their music-theory meaning | LIVE | — | `CLAUDE.md` |
-| D-127 | An architectural decision that changes is documented in the same commit | LIVE | — | `ARCHITECTURE.md` |
-| D-192 | A scoring change and its documentation land in the same commit | LIVE | — | `CLAUDE.md` |
 | D-193 | The writing standards live in one place, and predicates must be qualified | LIVE | — | `CLAUDE.md` |
 | D-194 | No self-invented labels, abbreviations, numbering schemes or jargon | LIVE | — | `CLAUDE.md` |
 | D-195 | Every design decision carries its defense at its home | LIVE | — | `CLAUDE.md` |
 | D-230 | The decisions register is a mandatory session-start read, and a new ruling lands in the register in the commit that records it | LIVE | — | `CLAUDE.md` |
-| D-232 | The section numbers are authoritative; the "Rule N" labels are a legacy flat numbering | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-255 | Every design document follows one fourteen-section structure, synthesized from three published standards | LIVE | 2026-08-02 · user | `cowork_design_doc_template.md` |
 | D-256 | Every design document opens with one of four declared status banners | LIVE | 2026-08-02 · user | `cowork_design_doc_template.md` |
 | D-257 | A specification carries a locator to its code and tests; code mechanics never do the explaining | LIVE | 2026-08-02 · user | `cowork_design_doc_template.md` |
@@ -751,20 +663,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-116 | The system is a module inside MuseScore Studio, not a plugin | LIVE | — | `ARCHITECTURE.md` |
-| D-117 | The long-term intent is an official contribution to MuseScore Studio | LIVE | — | `ARCHITECTURE.md` |
 | D-118 | GPL v3, and every external library must be GPL v3 compatible | LIVE | — | `ARCHITECTURE.md` |
 | D-119 | The MuseScore contributor licence agreement is signed before any pull request | LIVE | — | `ARCHITECTURE.md` |
-| D-120 | MuseScore's coding style is followed, with clang-format run before every commit | LIVE | — | `ARCHITECTURE.md` |
-| D-121 | Where MuseScore's documentation practice is minimal, the higher standard applies | LIVE | — | `ARCHITECTURE.md` |
-| D-122 | Every public class and method is documented in musical terms | LIVE | — | `ARCHITECTURE.md` |
 | D-123 | Every non-obvious scoring weight or threshold explains its musical reasoning | LIVE | — | `ARCHITECTURE.md` |
-| D-124 | The analyzer code must be readable by a musician | LIVE | — | `ARCHITECTURE.md` |
-| D-125 | Every test documents the musical situation, the expected result, and what a failure means | LIVE | — | `ARCHITECTURE.md` |
-| D-126 | One coherent piece of functionality per pull request | LIVE | — | `ARCHITECTURE.md` |
 | D-292 | The fitting-pool licence constraint - values that ship are fitted only on freely-licensed music | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-315 | A one-line fix was made to MuseScore's own chord-symbol parser and is live in the fork | LIVE | 2026-08-02 · user | `CLAUDE.md` |
-| D-375 | Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-489 | The snapshot sources are hash-pinned rather than copied in-tree, because their licences make an in-tree copy incompatible with this project's licence | LIVE | 2026-08-04 · user | `docs/score_inventory.md` |
 | D-614 | Every real difficulty-grade label source is research-only or proprietary at origin — a commercial grading feature needs a licence path or its own labels | LIVE | — | `cowork_score_census.md` §8c |
 
@@ -772,20 +675,12 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-128 | Styles are defined entirely in data; adding one never requires code changes | LIVE | — | `ARCHITECTURE.md` |
-| D-129 | Style conflicts resolve by a declared priority - explicit overrides always win | LIVE | — | `ARCHITECTURE.md` |
-| D-130 | The style loader never names a style in code | LIVE | — | `ARCHITECTURE.md` |
 | D-131 | One shared style taxonomy, not two parallel vocabularies | LIVE | — | `ARCHITECTURE.md` |
 | D-132 | The remaining empirical grounding is the per-preset WEIGHTS alone; the clusters half is delivered by the ratified five-idiom set | DEFERRED | — | `ARCHITECTURE.md` |
-| D-133 | The harmonic vocabulary is a queried reference component, not a layer of the analysis | LIVE | — | `ARCHITECTURE.md` |
 | D-406 | The catalog owns the NAMED progressions and substitutions; the pairwise licensing grammar is owned by the function layer — the two are never derived from each other | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §1 |
-| D-407 | The vocabulary supplies ranked candidates and DECIDES nothing — the threshold, the style weighting and what to do with a candidate are the consumer's | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §2 |
 | D-408 | Voice-leading is a DIFFERENT DIMENSION and is not held in the harmonic vocabulary — a schema defined by its voice-leading is present only by its harmonic pattern | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §2 |
-| D-409 | There is no binary match or no-match — only a score on a ranked list, and the list may be EMPTY | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §4 |
 | D-410 | The first version matches EXACTLY AND WHOLE; the partial matcher is deferred with its decision structure already fixed and only its constants left open | DEFERRED | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §4 |
 | D-411 | The Axis loop is ONE entry in one canonical rotation — its other rotations become rotation-tolerant matching on that entry, never three more entries | DEFERRED | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §5.2 |
-| D-412 | The circle-of-fifths entry is the FULL cycle, and a realisation may enter at any member and run contiguously to the final tonic | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §5.2 |
-| D-413 | Upper-structure and rootless VOICING substitution is outside the harmonic vocabulary — it is a voicing, not a function | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §5.3 |
 | D-414 | The catalog is GENERATIVE where it can be and enumerated only where it must be | LIVE | 2026-08-03 · user | `cowork_progression_schema_dictionary.md` §7 |
 | D-421 | Idiom re-discovery rides every corpus wave, on research material only, and a changed cluster set is its own ratification event | LIVE | 2026-08-03 · user | `ARCHITECTURE.md` |
 | D-496 | RATIFIED AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store is decided at the recognition-consumer build, explicitly | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
@@ -801,16 +696,11 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-543 | The encoding is key-normalised tonal-pitch-class TRANSITIONS — spelled where spelling is reliable, mod-12 only where it is genuinely absent — run as two complementary views | NOT STATED | — | `ARCHITECTURE.md` |
 | D-544 | Confound control is a FIRST-CLASS GATE, and the source-leakage test decides validity: if the clusters are explained by which corpus a piece came from, the result is bookkeeping and not idiom | NOT STATED | — | `ARCHITECTURE.md` |
 | D-545 | The uniform mechanical extractor for idiom discovery is the external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference must NEVER touch the extraction | NOT STATED | — | `ARCHITECTURE.md` |
-| D-554 | The voice-leading axis's independence from the harmonic axis is MEASURED, not assumed — cross-agreement between the two clusterings is at the level of statistical independence | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-555 | The voice-leading layer's feature set is MOTION-TYPE-led, with the interval profile a secondary descriptor, and its coverage is notated music only | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-556 | Texture and era are declared per-source interpretation lenses, applied after the fact and never given to the clustering as input | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
 
 ## N. Generation, constraints, visualization, and the LLM integration — [full entries](decisions/group_N.md)
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-134 | A voicing type is never requested directly; the style selects it | LIVE | — | `ARCHITECTURE.md` |
-| D-135 | A fixed element is a hard constraint the optimizer may never modify | LIVE | — | `ARCHITECTURE.md` |
 | D-136 | The inference demo view is a developer tool and is not shipped | DEFERRED | — | `ARCHITECTURE.md` |
 | D-137 | The harmony maps are our own visual design, and are chosen partly to avoid intellectual-property claims | DEFERRED | — | `ARCHITECTURE.md` |
 | D-138 | Chord preview uses MuseScore's note-input pathway, not the playback pipeline | DEFERRED | — | `ARCHITECTURE.md` |
@@ -833,20 +723,9 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-144 | Percussion is excluded from analysis and tuning; fixed-pitch instruments are the tuning anchor | LIVE | — | `ARCHITECTURE.md` |
-| D-145 | One preference chooses the tuning system, and no tuning code hardcodes one | LIVE | — | `ARCHITECTURE.md` |
-| D-146 | A tie chain is one indivisible tuning event, and its tuning comes from one authority note | LIVE | — | `ARCHITECTURE.md` |
-| D-147 | A slur, not a tie, joins the halves of a split note | LIVE | — | `ARCHITECTURE.md` |
-| D-148 | The split is visible in the score; the invisible alternative is deferred | LIVE | — | `ARCHITECTURE.md` |
-| D-149 | Only visible, sounding notes enter the pitch-class collection | LIVE | — | `ARCHITECTURE.md` |
-| D-150 | The chord staff is the output, never an input to the analysis that fills it | LIVE | — | `ARCHITECTURE.md` |
-| D-151 | Populating the chord staff overwrites whatever is in the selected range | LIVE | — | `ARCHITECTURE.md` |
-| D-152 | Roman numerals and Nashville numbers are never shown together on one staff | LIVE | — | `ARCHITECTURE.md` |
-| D-153 | Interactive annotations are written in the score's normal colour; the batch pipeline writes red | LIVE | — | `ARCHITECTURE.md` |
 | D-244 | Choosing an interval family for an ambiguous sonority is deferred; fixed tables are used | DEFERRED | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-245 | Voice role comes from staff position or explicit assignment; automatic melody detection is deferred | DEFERRED | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-246 | Fixed-pitch instruments are deferred, and will never receive tuning offsets | DEFERRED | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-247 | An anchor note stays at 12-TET, is never split, and is excluded from drift and centering | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-366 | Recorded-performance intonation material is OUT of corpus scope — the intonation features are validated by theory and by listening | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 
 ## P. The user interface, persistence, and machine-learning readiness — [full entries](decisions/group_P.md)
@@ -854,9 +733,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
 | D-154 | New panels use MuseScore's own panel and interface infrastructure | DEFERRED | — | `ARCHITECTURE.md` |
-| D-155 | Every user-visible string goes through MuseScore's localization, in English and Swedish | LIVE | — | `ARCHITECTURE.md` |
-| D-156 | Accessibility follows MuseScore's existing patterns | LIVE | — | `ARCHITECTURE.md` |
-| D-157 | The harmonic-display preference exists for clarity, not for cost | LIVE | — | `ARCHITECTURE.md` |
 | D-158 | Our data lives in separate files inside the score archive; the score file is never touched | DEFERRED | — | `ARCHITECTURE.md` |
 | D-159 | Every custom file carries a format version, and the score file is never rewritten by our persistence | DEFERRED | — | `ARCHITECTURE.md` |
 | D-160 | Arranger interactions are logged from the start, with consent, as future training data | DEFERRED | — | `ARCHITECTURE.md` |
@@ -866,35 +742,16 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
-| D-162 | The development tools are not part of the shipping product | LIVE | — | `ARCHITECTURE.md` |
-| D-163 | The batch tool deliberately skips post-load layout | LIVE | — | `ARCHITECTURE.md` |
-| D-164 | What is out of scope, and what degrades gracefully at the boundary | LIVE | — | `ARCHITECTURE.md` |
 | D-308 | A newly acquired corpus enters as research material; the frozen regression corpus stays the gate until a deliberate re-baseline | LIVE | 2026-08-02 · user | `CLAUDE.md` |
-| D-309 | A corpus the analysis handles badly stays on the roadmap marked deferred; it is more valuable than one that confirms what already works | LIVE | 2026-08-02 · user | `docs/score_inventory.md` |
-| D-310 | Jazz accuracy is not measurable on the corpora held: the low agreement is missing bass and piano voicings, not a scoring failure | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-359 | Discovering a new corpus counts as a CENSUS DEFECT — the fix is to enumerate its container to closure, never to ingest the one repository | LIVE | 2026-08-02 · user | `cowork_score_census.md` §1 |
-| D-360 | A corpus enters the registry only with all five admission fields decided — annotation type, score alignment, format, licence class, decision tier | LIVE | 2026-08-02 · user | `cowork_score_census.md` §3 |
-| D-361 | Corpora are de-duplicated by WORK, not by container — and a work in the regression corpus is excluded as reference data from every other container | LIVE | 2026-08-02 · user | `cowork_score_census.md` §4 |
-| D-362 | What the census may claim, stated exactly: closure over the enumerated containers, a citation-closure argument for gradable harmony reference data, and a BOUNDED claim for everything else | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8 |
-| D-363 | Four named reasons license leaving a source un-enumerated — and non-Western symbolic music is closed by RULING, not by enumeration | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8 |
-| D-364 | Every new analysis purpose triggers its own corpus sweep BEFORE its design document is signed — having enumerated the container does not discharge the duty to ask the new question of it | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8b |
 | D-365 | A corpus search driven by the SUM of all needs is worth running, but it is step 3 of 3 — the needs list and the re-scoring of what is already enumerated come first | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-367 | A corpus found FOR one need is scored against the WHOLE needs list at intake, and every annotation layer it carries is inventoried — never tagged to the purpose that found it | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-368 | When new material bears on an already-settled conclusion, the rework question is settled by a recorded protocol — record, measure cheaply, then fork on whether it CONTRADICTS or merely enriches | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
-| D-369 | The DCML figured-bass repository is a REALIZATION SCRIPT, not reference data — walked and recorded so it is never mistaken for reference data again | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
-| D-370 | Reference data for implied polyphony does not exist and the negative is FINAL — the two candidate sets were never released | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
-| D-371 | No dataset pairs an ornament sign with its written-out realization — confirmed absent, so the ornament expansion ships rule-based and unvalidated, as predicted | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
-| D-372 | Marked part-writing errors must be BUILT, not downloaded — no public dataset exists and the two commercial holders keep theirs closed | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
-| D-373 | The only dual-annotator reference data actually on disk is the 27 TAVERN A/B pairs — the assumed second source was measured to have ZERO overlap | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
-| D-374 | The flexible multi-reading chorale annotations are RECORD-ONLY — they overlap the regression repertoire, so any use over those pieces is a future user ruling | LIVE | 2026-08-02 · user | `cowork_score_census.md` §8c |
 | D-487 | The eleven snapshot source scores are frozen and hash-pinned; changing the set or bumping a pin is a deliberate golden and gate re-baseline | LIVE | 2026-08-04 · user | `docs/score_inventory.md` |
 | D-488 | The two Bach chorale collections are independent selections, not sub- and superset — and the diff between them is not recoverable in-repo | LIVE | 2026-08-04 · user | `docs/score_inventory.md` |
 | D-513 | A corpus registry's content summary is enumeration provenance, not evidence that an annotation layer is present — per-slice presence must be measured | LIVE | — | `cowork_score_census.md` §3 |
 | D-514 | A newly acquired annotation set whose works OVERLAP the regression corpus is RECORD-ONLY: it may not be wired to, compared against, or bulk-diffed with the gate corpus without a user ruling | LIVE | — | `cowork_score_census.md` §4 |
 | D-515 | A ground-truth class with a named consumer gets its OWN row in the needs vector, never a remark under a neighbouring row — ruled generally after being decided for pedal-point ground truth | LIVE | — | `cowork_score_census.md` §8c |
 | D-516 | Two ground-truth classes with named consumers but no needs row were ADOPTED at the first full-needs audit — contrapuntal/imitative structure, and marked part-writing errors | LIVE | — | `cowork_census_full_needs_audit.md` §6 ⚠gap |
-| D-553 | A reference corpus's notation convention is DISCOVERED per entry by the comparison run, never declared as an input to it | LIVE | 2026-08-04 · user | `docs/extension_stripping_policy.md` |
-| D-612 | The corpus-search convention: a NEGATIVE is recorded so it is never re-searched, and every claim is RE-VERIFIED at acquisition rather than trusted from the search | LIVE | — | `cowork_union_search_record.md` |
 | D-613 | Ground truth for IMPLIED polyphony is confirmed ABSENT — do not re-search it | LIVE | — | `cowork_union_search_record.md` §1 ⚠gap |
 | D-665 | What a voice/stream label set actually MEASURES is said at intake — the labels obtainable today come from engraved notation, not from a listener's judgment | LIVE | — | `cowork_score_census.md` §8c |
 
@@ -937,7 +794,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-206 | Intonation is held as a future feature, and is a declared future consumer of the analysis | DEFERRED | — | `ARCHITECTURE.md` |
 | D-277 | Measure before build - and a byte-identical structural refactor is exempt, because byte-identity is its prediction | LIVE | 2026-08-02 · user | `cowork_engage_arc_plan.md` |
 | D-586 | "Function" in the machine-learning literature names the Roman-numeral components, not Riemann's function theory — and this project's own function layer is misnamed for the same confusion | LIVE | 2026-08-04 · user | `ARCHITECTURE.md` |
-| D-610 | The value-type relocation is ZERO-CHURN by construction: the leaf spans both namespaces and the un-nested type keeps a member alias, so no call site changes and the move is byte-identical | LIVE | 2026-08-04 · user | `cowork_types_header_design.md` “The leaf header” ⚠gap |
 | D-639 | Phase 1's doc-sync half reaches a document's account of ITSELF only where that account changes how its analysis content is read — with three worked examples that are the test, and a fallback ruled with it | LIVE | — | `CLAUDE.md` |
 
 ## T. Standing process rules and local patches — [full entries](decisions/group_T.md)
@@ -958,7 +814,6 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-253 | Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash | LIVE | 2026-08-02 · user | `CLAUDE.md` |
 | D-254 | Investigate by default; never ask the user whether to investigate or proceed | LIVE | 2026-08-02 · user | `CLAUDE.md` |
 | D-258 | A prune and tidy pass runs before any publish of the fork, and nothing on its list is acted on before it | DEFERRED | 2026-08-02 · user | `cowork_prune_pass_checklist.md` |
-| D-259 | Every upstream contribution is checked against the distribution constraint before it is posted | LIVE | 2026-08-02 · user | `cowork_prune_pass_checklist.md` |
 | D-279 | The Stage-3 entry gate - seven conditions before any engagement wiring reaches production | LIVE | 2026-08-02 · user | `cowork_engage_arc_plan.md` “The stages” |
 | D-298 | The layer-by-layer audit - each layer is audited once its pieces are in place | LIVE | 2026-08-02 · user | `cowork_audit_protocol.md` |
 | D-314 | A correction rule kept for structural reasons must keep producing evidence that it still fires | LIVE | 2026-08-02 · user | `cowork_stage5_fitter_design.md` “§15 Open items & ratification asks” |
@@ -980,32 +835,19 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-551 | The audit is itself established with a MEASURED residual-error rate; an audit whose error rate is unknown certifies nothing | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
 | D-552 | An audit is TWO runs in a fixed order — blind enumeration first, then the known-problem signature sweep — and certification requires both | LIVE | 2026-08-04 · user | `cowork_audit_protocol.md` |
 | D-557 | Build-it-right comes BEFORE tune-precision, strictly — no inference-problem fixing anywhere until the refactoring, the architectural design and the algorithmic completion are done | SUPERSEDED BY D-172 | 2026-08-04 · user | `CLAUDE.md` |
-| D-558 | An unhit branch is routed one of three ways, and defensive can't-happen code is ANNOTATED, never deleted — removing safety code to lift a coverage number is forbidden | LIVE | 2026-08-04 · user | `cowork_l1l3_stabilization_plan.md` |
-| D-559 | Movement in the corpus numbers is classified BY PHASE: in the foundation phases any movement at all is a bug and a STOP, in the build phases it is gated, and only the last phase tunes | LIVE | 2026-08-04 · user | `cowork_l1l3_stabilization_plan.md` |
-| D-561 | A probe arm may not carry a component already measured net-harmful — it runs with that component disabled, and the verdict declares what it therefore does not exercise | LIVE | 2026-08-04 · user | `cowork_eg2_scoping.md` |
-| D-562 | Where a measurement carries a declared handicap, the verdict is read ASYMMETRICALLY and the asymmetry is declared before the measurement runs | LIVE | 2026-08-04 · user | `cowork_eg2_scoping.md` |
-| D-563 | The funnel's stages run strictly cheapest-first, and the plan is committed with its prediction section EMPTY before any measurement exists | LIVE | 2026-08-04 · user | `cowork_eg2_scoping.md` |
 | D-566 | STRUCTURAL fixes come before correctness fixes: never tune an inference decision while a responsibility is still in the wrong place | LIVE | 2026-08-04 · user | `cowork_audit_obligation_map.md` |
 | D-567 | An audit document labels each claim TRUTH or PROVISIONAL — a claim read from the source this session stands; any quantity carried from memory of an earlier investigation does not | LIVE | 2026-08-04 · user | `cowork_audit_obligation_map.md` |
 | D-573 | A floor measurement that collapses is a FINDING, not a failure — it is reported, not papered over | LIVE | 2026-08-04 · user | `docs/stage4b_design.md` |
 | D-574 | The pass-bar for a measured change is set AFTER the baseline measurement, so the threshold is data-grounded rather than guessed | LIVE | 2026-08-04 · user | `docs/stage4b_design.md` |
-| D-577 | An audit verdict distinguishes DESIGN debt from MIGRATION debt — the wrong cut, versus the right cut whose legacy is not yet retired | LIVE | 2026-08-04 · user | `cowork_l1l4_architecture_audit.md` |
-| D-578 | An orphan claim requires a WHOLE-REPOSITORY search; a per-directory one produces false orphans | LIVE | 2026-08-04 · user | `cowork_l1l4_architecture_audit.md` |
 | D-592 | What FINISHED means for a layer, as the user's standing bar: restructured, built, dead code resolved, legacy retired, regression- and reachable-branch-tested, specs synced — nothing left | LIVE | 2026-08-04 · user | `cowork_l1l4_completion_ledger.md` |
 | D-593 | The line inside the build-it-right firewall: plain correctness bugs are allowed now, accuracy on hard cases is not — and a KNOWN WRONG ANSWER on the key axis is on the forbidden side | LIVE | 2026-08-04 · user | `cowork_l1l4_completion_ledger.md` |
 | D-596 | The north star: BEST means CORRECT — every obligation is judged against the ground-truth oracle and never against whether it passes a proxy gate | LIVE | 2026-08-04 · user | `docs/layer_audit_plan.md` |
-| D-597 | The layer audit runs in two phases in a fixed order — every layer audited ALONE first, the architecture reviewed second on the accumulated findings | LIVE | 2026-08-04 · user | `docs/layer_audit_plan.md` |
 | D-599 | Adjudication method: apply the standing principles FIRST, and only where they do not decide is there a genuine user choice — what remains for the user is ratifying the derivation, not picking an option | LIVE | 2026-08-04 · user | `cowork_adjudication_dossier.md` |
 | D-602 | A layer's measurement is judged on coverage-matched accuracy AND correct abstention, never on raw coverage — abstaining on a genuinely undecidable case is a RIGHT outcome | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-603 | While the pipeline is being rebuilt, a behaviour-changing increment is graded DIRECTIONALLY and not against a fixed bar — meaningful comparison happens only against the fully reconstructed pipeline | LIVE | 2026-08-04 · user | `CLAUDE.md` |
 | D-611 | The tidy guardrails, in three tiers — and the dormant path and its staged scaffolding are DEFERRED-ENGAGEMENT, not dead code: removing them is a STOP | LIVE | 2026-08-04 · user | `cowork_l1l4_review_charter.md` |
 | D-617 | A perfect-detection CEILING is never banked — the realized fraction is measured before the mechanism is wired into production scoring | LIVE | — | `docs/stage4c_cadence_key_design.md` |
 | D-626 | A scoring term lands together with its tuning — a dormant weight-zero term is code with no effect and no test that exercises its effect | LIVE | — | `cowork_tpc_capability_design.md` |
-| D-627 | The CONTRACT ships first behind a correct byte-identical interim; the efficiency is a separate deferred step that never blocks the layers above it | LIVE | — | `cowork_layer1_extend_design.md` |
-| D-633 | A cause-classifier is established BEFORE its results are read — its totals must reconcile exactly with the established agreement column, and every failing run gets exactly one cause from a closed list | LIVE | — | `cowork_key_mode_inference_diagnosis.md` |
-| D-634 | Where the specification and the code diverge on a music-theoretic question, THE SPECIFICATION IS THE CORRECT REFERENCE and the code goes on the build backlog | LIVE | — | `cowork_delta_check_dispositions.md` |
-| D-636 | The per-step build method: INVESTIGATE, BUILD, VERIFY, ASSESS-FOR-AMENDMENT — no step starts before the prior step's assessment, and a surprise pauses the sequence | LIVE | — | `cowork_phase5b_l4_build_plan.md` |
-| D-637 | Engaging a different DECOMPOSITION will move the corpus output — that movement is the gated behaviour change, not a byte-identity violation | LIVE | — | `cowork_phase5b_l4_build_plan.md` |
 | D-640 | A count of outstanding work is derived from state at HEAD, never taken from the membership of a list of asks or from an authored disposition beside a row | LIVE | — | `cowork_audit_protocol.md` |
 | D-641 | A finding that bears on the analysis is surfaced to the user whatever its size; a finding about this project's own apparatus is rowed and left, and gets no wave | LIVE | — | `cowork_audit_protocol.md` |
 | D-642 | Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor, and is discharged only where that successor is homed | LIVE | — | `cowork_audit_protocol.md` |
@@ -1039,19 +881,12 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | ID | Decision | Status | Entry ratified | Home |
 |---|---|---|---|---|
 | D-213 | The defect-type catalog is the living list of every problem type, and it is added to at discovery | LIVE | — | `DEFECT_TYPES.md` |
-| D-214 | The dim7 characteristic bonus is the rotation selector and may not simply be removed | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-215 | Gating the root-continuity bonus on a sparse predecessor is a dead end | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
-| D-216 | The stepwise-bass bonus's four gates are each load-bearing | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
-| D-217 | The segmentation phase must suppress every context-dependent bonus | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
-| D-218 | Template array sizes derive from one constant, so the compiler enforces them | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
-| D-219 | Gates B, C and D were unreachable and were removed; no temporal condition may be added to the enharmonic flip | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-220 | The augmented-seventh guard requires both the major third and the augmented fifth | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-221 | A sparse upper-register lowest note does not earn inversion bonuses | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-222 | If the diminished bonus rotates the winner to a non-diminished chord, the result without it is used | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-223 | A gate that judges the pre-correction winner reads a snapshot, not the live result | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
 | D-224 | Joint bass-and-chord scoring requires accumulated regional evidence | LIVE ⚠LEGACY | — | `docs/scoring_model.md` |
-| D-225 | A corpus is regenerated before its baseline figures are updated | LIVE | — | `BUILD_AND_TEST.md` |
-| D-226 | The music21 export is version-pinned; regenerating it is a deliberate re-baseline | LIVE | — | `tools/REPRODUCIBILITY.md` |
 | D-281 | The batch measurement tool must emit the structured fields on every alternative, or the corpus figures silently revert | LIVE | 2026-08-02 · user | `BUILD_AND_TEST.md` |
 
 ## Provenance of this register

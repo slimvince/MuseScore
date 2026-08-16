@@ -427,6 +427,38 @@ AUTHORED = [
      "a STANDING member whose red the enumerated-movement bound cannot explain halts it, which is "
      "the ruling's own STOP; and the tally must account for the population"),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fifth.md Task 1 --------------------
+    # The tool is added by that task and registered in the act that creates it — the standing
+    # new-tool rule. It takes `--check` and never the bare invocation, for the ordinary reason:
+    # run with no flag it REWRITES its committed artifact.
+    ("tools/audit/decisions/gen_retired_subject_moves.py", ["--check"],
+     "the ruled kind-2 move list re-derives, and every one of the five authored judgment tables "
+     "agrees with it in BOTH directions. What it guards is which AUTHORED judgment watches a live "
+     "subject and which has followed its subject into the decisions register's retired-entries "
+     "block: a judgment in both sections halts it; a judgment whose subject the discard retired "
+     "and which is still in a live table halts it; a retired judgment whose subject is LIVE again "
+     "halts it, so a judgment cannot be resurrected without being re-read; a live judgment whose "
+     "subject is neither live nor retired by this act halts it, because its membership cannot be "
+     "derived and the ruling's instruction is a STOP to the user rather than a guess; a retired "
+     "section-kind judgment carrying no subject reference halts it; and every sentence of the "
+     "ruling that ordered the treatment must still be in its ruling record. The section-grain "
+     "derivation is IMPORTED from the home classifier that owns it rather than restated (#6), so "
+     "the move list and that tool's own STOP cannot disagree about which judgments move"),
+
+    ("tools/audit/gen_census_movement_classification.py", ["--check"],
+     "every value the ruled soft-discard moved in the two derived censuses re-derives, and every "
+     "one of them is inside the ruled bound. The comparison is the CITATION SCAN itself, re-run "
+     "over the governing record at both states — the earlier one from the git objects at the "
+     "commit before the act — rather than two rendered surfaces being diffed, and the scan and the "
+     "governing-record definition are IMPORTED from the census that owns them (#6). Its STOPs are "
+     "the ruling's own: a moved value none of the three categories reaches halts it, because the "
+     "ruling's instruction on any other movement is a STOP-and-report and this tool may not widen "
+     "the bound on its own authority; a name ENTERING the citation scan halts it, since the "
+     "discard only ever removes an entry's text from the rendered register; and a census whose "
+     "scan cannot be read at either state halts it. What it does NOT assert is that a moved "
+     "document is worth retiring: a crossing confers CANDIDACY only, and every ruled condition on "
+     "a candidacy stands untouched"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "
@@ -560,6 +592,67 @@ AUTHORED = [
 # in either direction (#6).  What lives here is the INVOCATION consequence — that the tool is not
 # run — because this file owns the invocation table.
 HISTORICAL: dict[str, str] = {
+    # ── THE SUPERSEDED PHASE-1 GATE FAMILY ────────────────────────────────────────────────────
+    # RECLASSIFIED 2026-08-16 by `cc_instruction_preparation_fifth.md` Task 1, on the user's
+    # ruling of 2026-08-16 §4 ("the superseded phase-1 apparatus follows its phase into HISTORICAL
+    # status") executed under §6.  On 2026-08-15 the user ruled the SIX-PHASE structure and D-231's
+    # three phases were superseded; these six tools exist only to derive the OLD phase 1's gate.
+    # The ruled soft-discard then retired every entry homed in `cowork_structural_integrity_audit.md`,
+    # so that document stops being class C and the delegation grading they all import REFUSES to
+    # run: they do not go stale, they STOP.
+    #
+    # ★ WHAT HISTORICAL STATUS ASSERTS HERE, IN THE RULING'S OWN TERMS: that these checks graded a
+    # SUPERSEDED PROGRAM.  It asserts NOTHING about whether that program's obligations were
+    # discharged, and no completion claim of any kind rides it.  Each artifact stays on disk
+    # exactly as the wave that produced it wrote it, frozen as record (#12); the pre-discard
+    # derivation state stands at the git objects; and reviving a retired entry revives its
+    # consumers' inputs with it.
+    #
+    # ★ THE READER ENUMERATION RAN BEFORE ANYTHING FROZE, and is the reason this is not a guess:
+    # every tracked file naming any of the six artifacts was enumerated at the recorded commit and
+    # the LIVE-consumer class came back EMPTY (`tools/audit/phase1_gate_readers.json`).  The one
+    # downstream consequence is published rather than left to be found (F22): the phase-1 completion
+    # inventory feeds `gen_true_half_reach_rows.py`, whose artifact `gen_nongating_apparatus_rows.py`
+    # reads to derive D-438's live declaration.  Nothing halts; what stops is future MOVEMENT of
+    # that frozen population, and the user ACCEPTED that as a named cost.
+    "tools/audit/gen_phase1_completion_inventory.py":
+        "HISTORICAL RECORD: what the SUPERSEDED phase 1 of D-231's three-phase structure still "
+        "required. The six-phase structure the user ruled on 2026-08-15 replaced that program, and "
+        "the ruled soft-discard of 2026-08-16 makes this derivation STOP rather than drift — the "
+        "document its delegation grading needs is no longer class C, because every entry homed in "
+        "it was retired. Re-deriving it would mean re-authoring drafts for a superseded program, "
+        "which is the capacity sink the apparatus-lapse ruling closed. It asserts NOTHING about "
+        "whether phase 1's obligations were discharged. NO LIVE COVERAGE IS LOST: no reader of its "
+        "artifact outside the superseded program exists, measured at the objects before it froze.",
+    "tools/audit/gen_phase1_finish_line.py":
+        "HISTORICAL RECORD: the FINISH LINE for the SUPERSEDED phase 1 — what was still required "
+        "and what act would close each item. Same ground as the completion inventory it imports, "
+        "and it STOPS for the same reason. Its last derivable state stands frozen on disk as the "
+        "record of that program; nothing here says the program finished. NO LIVE COVERAGE IS LOST.",
+    "tools/audit/decisions/gen_outstanding_delegations.py":
+        "HISTORICAL RECORD: the outstanding-delegation population of the SUPERSEDED phase 1, and "
+        "the FEEDER whose only importers are the two gate derivations above — which is what places "
+        "it here rather than among the standing checks (the derived split, "
+        "`tools/audit/discard_reach_split.json`). It is the tool that STOPS first: the authored "
+        "draft it needs is for a document the retirement empties. NO LIVE COVERAGE IS LOST — the "
+        "home rules it served are asserted live by gen_home_classification.py and "
+        "gen_phase1p_delegation_bar.py, both of which stay in the list.",
+    "tools/audit/decisions/gen_finish_line_item1_routes.py":
+        "HISTORICAL RECORD: the closing ROUTE for every entry of the superseded finish line's item "
+        "1 — a view of the same derivation, which it imports transitively. Its subject is a "
+        "program that no longer governs, and its inputs STOP. NO LIVE COVERAGE IS LOST.",
+    "tools/audit/decisions/gen_item1_rehome_blocker.py":
+        "HISTORICAL RECORD: what blocked the superseded finish line's item-1 re-home class. Same "
+        "family, same import, same STOP. Its one live-looking assertion — that the standing "
+        "autonomous-operation authorization is still locatable in CLAUDE.md by its anchor — is not "
+        "lost: CLAUDE.md's own anchors are asserted live by claude_md_rule_triage.py and by the "
+        "register's home-anchor checks, all of which stay in the list.",
+    "tools/audit/decisions/gen_r1_superseded_reach.py":
+        "HISTORICAL RECORD: ruling R1's application to the superseded finish line's item-1 "
+        "NO-HOME class. Same family, same import, same STOP. NO LIVE COVERAGE IS LOST: that every "
+        "register cross-reference still resolves is asserted live by "
+        "gen_cluster_dispositions.py --verify, which stays in the list and which now consults the "
+        "retired-entries block beside the live entries.",
     "tools/audit/decisions/gen_phase1n_reading_regime.py":
         "HISTORICAL RECORD: the reading regime is a REGISTRATION — an ordering, a predicted band "
         "per owed document and a wave schedule, all recorded BEFORE the reads they govern (#17b). "

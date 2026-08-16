@@ -502,17 +502,29 @@
    "superseded-in-fact": 3
   }
  },
- "★_the_act_was_PLANNED_AND_MEASURED_AND_NOT_PERFORMED": {
-  "state": "NOT APPLIED",
-  "what_happened": "The act was applied to the working tree, the whole guard set was run at the edited tree, the reach was read off it, and the edit was REVERTED — every touched file proven byte-identical to its committed blob by hashing both. Nothing was committed.",
-  "why": "Assumption A3 of the dispatch that ordered the act — that the mutation's reach is the decisions-register family and its derived views ONLY — is FALSIFIED by that run, and the dispatch's own instruction on that outcome is a STOP-and-report. The reach includes both gate-bearing phase-1 derivations, which do not merely go stale: they HALT.",
-  "where_the_measurement_is_recorded": "cc_report_preparation_third.md §4, and THE PREPARATION THIRD BATCH section of cowork_away_returns.md — the complete captured output of every check that turned red, quoted from the run.",
-  "★_what_a_reader_must_not_conclude": "That the ruling is in doubt. The user ruled the discard; what this measurement establishes is that performing it inside the bounds the dispatch set is not possible, because the act reaches authored judgments and gate-bearing derivations the dispatch does not authorize touching. What is owed is a ruling on that reach, not a re-decision of the discard."
- },
  "★_what_this_act_does_NOT_do": {
   "it_destroys_nothing": "Every retired entry is moved WHOLE and unchanged into a retired block of the same data file. Nothing is deleted and every discard is individually revivable (#12).",
   "it_judges_no_decision": "The ruled clause every record carries says it: a provenance verdict, not a judgment on soundness or usefulness. The statement stands at its home.",
   "it_touches_no_other_field": "The ten provenance stamps append to `status_source` and to nothing else; no other field of any entry, retired or surviving, is altered.",
   "it_rules_nothing_about_the_62": "The entries the user's (B2) limb left unruled are untouched by this act."
+ },
+ "★_the_act_was_PLANNED_MEASURED_TWICE_AND_THEN_PERFORMED": {
+  "state": "APPLIED",
+  "applied_on": "2026-08-16",
+  "applied_by": "CC, `cc_instruction_preparation_fifth.md` Task 1, on the user's rulings of 2026-08-16 (§3 the discard, §4 its reach, §6 the STANDING checks' treatment)",
+  "the_authority": "cowork_rulings_2026_08_16_preparation_return.md §3 (A)",
+  "the_arithmetic_of_the_act": {
+   "the_live_record_before": 677,
+   "retired_by_this_act": 165,
+   "the_live_record_after": 512
+  },
+  "★_why_this_block_was_rewritten_rather_than_left_standing": "It was the plan's statement about its own STATE, and it said NOT APPLIED. The act happened, so leaving it would put a false statement about the record inside the record (#10). The plan cannot be regenerated after the act — its population is no longer live and `population()` STOPs — so the block is rewritten at the moment the state changes rather than by a later re-derivation that cannot exist.",
+  "the_former_block_preserved_verbatim_#12": {
+   "state": "NOT APPLIED",
+   "what_happened": "The act was applied to the working tree, the whole guard set was run at the edited tree, the reach was read off it, and the edit was REVERTED — every touched file proven byte-identical to its committed blob by hashing both. Nothing was committed.",
+   "why": "Assumption A3 of the dispatch that ordered the act — that the mutation's reach is the decisions-register family and its derived views ONLY — is FALSIFIED by that run, and the dispatch's own instruction on that outcome is a STOP-and-report. The reach includes both gate-bearing phase-1 derivations, which do not merely go stale: they HALT.",
+   "where_the_measurement_is_recorded": "cc_report_preparation_third.md §4, and THE PREPARATION THIRD BATCH section of cowork_away_returns.md — the complete captured output of every check that turned red, quoted from the run.",
+   "★_what_a_reader_must_not_conclude": "That the ruling is in doubt. The user ruled the discard; what this measurement establishes is that performing it inside the bounds the dispatch set is not possible, because the act reaches authored judgments and gate-bearing derivations the dispatch does not authorize touching. What is owed is a ruling on that reach, not a re-decision of the discard."
+  }
  }
 }

@@ -6,38 +6,6 @@
 > generator is `tools/audit/decisions/gen_decisions_register.py`. To change an
 > entry, edit the data and regenerate.
 
-### D-116 — The system is a module inside MuseScore Studio, not a plugin
-
-> This system is implemented as a new module (`composing`) within MuseScore Studio's
-> existing C++ codebase. It is not a plugin. It integrates directly with MuseScore's
-> score model, rendering pipeline, playback engine, and UI infrastructure.
-
-**In plain words.** The harmonic analysis is built into MuseScore Studio's own program code as a new component of it, not added on afterwards as a plugin. It uses MuseScore's own score model, engraving, playback and interface directly.
-
-**Why.** Stated constraint, ARCHITECTURE.md:422-426: the analysis library itself has NO engraving dependency and is pure music theory; the bridge layer is what touches the engraving model. Being a module rather than a plugin is what lets that bridge exist at all.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:626`
-
-**Provenance.** ARCHITECTURE.md:374-378 (§1.2). No date or ratifier stated.
-
-### D-117 — The long-term intent is an official contribution to MuseScore Studio
-
-> The long-term intent is for this to become an official contribution to MuseScore Studio.
-> All code follows MuseScore's coding standards, licensing requirements, and contribution
-> guidelines.
-
-**In plain words.** The aim is for this work eventually to become part of MuseScore Studio proper, so it is written to MuseScore's own coding, licensing and contribution rules from the start.
-
-**Why.** Derivation not recorded for the intent itself. What the record does state is the consequence it carries (ARCHITECTURE.md:381-382): following MuseScore's standards from the start is what keeps the contribution possible.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:630`
-
-**Provenance.** ARCHITECTURE.md:380-382 (§1.2); restated at ARCHITECTURE.md:6821-6823 (the composing module is 'intended as a future contribution'). ★ READ WITH the CLAUDE.md DISTRIBUTION CONSTRAINT (D-197): the MusicXML declared-mode import patch cfc7eb5e39 is FORK-LOCAL ONLY and must NEVER reach musescore/MuseScore. Two recorded positions - a general intent and a one-patch exception - and the record does not state how the general intent applies to the rest of the tree.
-
 ### D-118 — GPL v3, and every external library must be GPL v3 compatible
 
 > All code is licensed under **GPL v3** — consistent with MuseScore Studio's open source
@@ -68,56 +36,6 @@
 
 **Provenance.** ARCHITECTURE.md:389-390 (§1.3), restated at ARCHITECTURE.md:6750-6752 (§18.3). No date or ratifier stated.
 
-### D-120 — MuseScore's coding style is followed, with clang-format run before every commit
-
-> Follow MuseScore's existing coding style throughout:
-> - Formatting defined in `.clang-format` — run clang-format before every commit
-> - Naming conventions — consistent with existing MuseScore code
-> - File headers — GPL v3 license header on every file (see existing files for template)
-> - Include ordering — follow MuseScore's convention
-
-**In plain words.** The code looks like MuseScore's own code: the formatter configuration in the repository is run before every commit, names follow MuseScore's conventions, every file carries the GPL v3 header, and includes are ordered MuseScore's way.
-
-**Why.** Stated constraint, ARCHITECTURE.md:519-523 (§2.8): read how MuseScore already does a thing and follow the same pattern rather than inventing parallel infrastructure - the same reason that governs panels, score traversal, playback, settings and localization.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:7976`
-
-**Provenance.** ARCHITECTURE.md:6649-6655 (§17.1). No date or ratifier stated.
-
-### D-121 — Where MuseScore's documentation practice is minimal, the higher standard applies
-
-> Where MuseScore's documentation practice is minimal, use good practice instead.
-
-**In plain words.** Following MuseScore's conventions does not mean copying how little it documents. Where MuseScore documents sparsely, this project documents properly instead.
-
-**Why.** Stated constraint, ARCHITECTURE.md:6709-6712 (§17.3): the analyzers are the most complex components in the codebase, and a musician with reasonable theoretical knowledge must be able to read them and understand why each decision was made.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:7982`
-
-**Provenance.** ARCHITECTURE.md:6649-6657 (§17.1). No date or ratifier stated.
-
-### D-122 — Every public class and method is documented in musical terms
-
-> Every public class must have a documentation comment explaining:
-> - What musical concept it implements
-> - What it receives as input (in musical terms)
-> - What it produces as output (in musical terms)
-> - What it does not handle (important for setting expectations)
-
-**In plain words.** A public class must say which musical idea it implements, what music it takes in, what it produces, and what it deliberately does not handle. A public method must say the same about the musical operation it performs, in musical terms rather than programming terms.
-
-**Why.** Stated constraint, ARCHITECTURE.md:504-508 (§2.6) with :6322-6323: the documentation is written so a person with reasonable musical knowledge and basic programming familiarity can read it, including MuseScore contributors with no familiarity with this codebase at all.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:7986`
-
-**Provenance.** ARCHITECTURE.md:6659-6671 (§17.2). No date or ratifier stated.
-
 ### D-123 — Every non-obvious scoring weight or threshold explains its musical reasoning
 
 > Every non-obvious scoring weight or threshold must explain its musical reasoning.
@@ -130,56 +48,7 @@
 
 **Home.** `ARCHITECTURE.md:7998`
 
-**Provenance.** ARCHITECTURE.md:6673 (§17.2). No date or ratifier stated. ★ This is the rule the 2026-08-01 CLAUDE.md Conventions entry generalizes from scoring values to design decisions as a class (D-195) - and the rule this register's rationale field serves.
-
-### D-124 — The analyzer code must be readable by a musician
-
-> Every scoring weight, threshold, and heuristic must be documented with its musical
-> rationale. A musician with reasonable theoretical knowledge must be able to read the
-> analyzer code and understand why each decision was made.
-
-**In plain words.** Every weight, threshold and rule of thumb in the chord and key analyzers carries its musical reason, to the standard that a musician with ordinary theoretical training can read the code and see why each choice was made.
-
-**Why.** Stated constraint, ARCHITECTURE.md:6709: these are the most complex components in the codebase, so they are where readability is worth the most.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:8035`
-
-**Provenance.** ARCHITECTURE.md:6707-6719 (§17.3), which gives a worked example from existing code (the circle-of-fifths interval deltas). No date or ratifier stated.
-
-### D-125 — Every test documents the musical situation, the expected result, and what a failure means
-
-> Every test must document:
-> - What musical situation is being tested
-> - What the expected result is and why it is musically correct
-> - What a failure would indicate about the system's behavior
-
-**In plain words.** A test says which musical situation it exercises, what the right answer is and why it is musically right, and what it would mean about the system if the test failed.
-
-**Why.** Stated constraint, ARCHITECTURE.md:6728-6729: the tests must be readable by MuseScore contributors with no deep familiarity with this codebase.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:8048`
-
-**Provenance.** ARCHITECTURE.md:6721-6729 (§17.4). No date or ratifier stated.
-
-### D-126 — One coherent piece of functionality per pull request
-
-> Each pull request should implement one coherent piece of functionality. Large
-> pull requests are hard to review. The phased plan in Section 15 defines natural
-> PR boundaries.
-
-**In plain words.** Each contribution offered back to MuseScore does one thing.
-
-**Why.** Stated constraint, ARCHITECTURE.md:6744-6746: large pull requests are hard to review, and the phased plan defines where the natural boundaries fall.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:8069`
-
-**Provenance.** ARCHITECTURE.md:6742-6746 (§18.2). No date or ratifier stated.
+**Provenance.** ARCHITECTURE.md:6673 (§17.2). No date or ratifier stated. ★ This is the rule the 2026-08-01 CLAUDE.md Conventions entry generalizes from scoring values to design decisions as a class (D-195) - and the rule this register's rationale field serves. ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `CLAUDE.md` line 1583, carrying a user-act marker and matching the decisions register's own recogniser `musical reasoning`, reads — "- **EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME (user-directed, 2026-08-01, at the decisions-register ratification review).** Wherever a design decision is recorded — the owning layer's specification in `ARCHITECTURE.md` first — the record states WHY the decision was made: the published research or algorithm adopted (#1/#2), the measurement that decided it, or the constraint that forced it. Every design decision must be defendable, and its defense documented where the decision lives. This generalizes `ARCHITECTURE.md` §17.2 (every non-obvious scoring weight or threshold must explain its musical reasoning) from scoring values to design decisions as a class. The decisions register (`DECISIONS.md`) points at the defense; where a decision's derivation is not in the record, the register says **"derivation not recorded"** — the gap is stated, never filled in retroactively from memory" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-292 — The fitting-pool licence constraint - values that ship are fitted only on freely-licensed music
 
@@ -215,25 +84,7 @@
 
 **Home.** `CLAUDE.md:1431-1433`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md`. VERIFIED AT THE OBJECTS 2026-08-02: commit `b1ba746` deletes exactly that one line from `src/engraving/dom/chordlist.cpp`, only an upstream header-update commit has touched the file since, and the line is absent at HEAD. This is a THIRD edit to MuseScore's own code beside **D-198** and **D-199**, and it is not in `CLAUDE.md`'s “Local patches — do not revert” section, which carries exactly two subsections; the non-conformance against the ruled **D-229** is rowed at [[OI-273]]. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `CLAUDE.md`'s local-patches section, beside **D-316**, which records the same patch's distribution disposition. **The entry's own text is what settled the owner and what dated it:** it recorded that the section carried exactly two subsections and not this one — true when written, and closed the same day by the subsection the [[OI-273]] ruling added, which is why the home now exists to move into. NO NEW TEXT STATES THE FIX: the subsection already states it, so the homing act is the NAMING that makes the entry findable from the section (#6 — the rule is published once, there), and the verbatim is re-taken from that existing text rather than a copy being written beside it. Its class moves to `process` for the same reason D-316 carries that class: the decision is a record of an edit to a dependency, which the local-patches section is the declared home for. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:2262`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "One-line fix in MuseScore core `src/engraving/dom/chordlist.cpp:993` — removed `tok1 = u\"sus\"` from the susPending re-attachment block in `ParsedChord::parse()`. This was a genuine MuseScore core bug causing double-sus render for all sus+alteration chord suffixes. Should be reported upstream." Its closing sentence — that the fix should be reported upstream — is NOT lost by the move: it is the subject of D-316, which rules the disposition UPSTREAMABLE and sits in the same section.
-
-### D-375 — Every real source of difficulty labels is research-only or proprietary — a difficulty-grading feature needs a licence path before it can be sold
-
-> **T-32 caveat: all real label sources research-only/proprietary — commercial use needs a license path.**
-
-**In plain words.** For rating how hard a piece is to play, every collection that carries real labels is either restricted to research or is commercial property; no machine-readable dump from the examination boards or the standard publisher grading exists. So the feature can be built and studied, but shipping it commercially needs a licence arranged first.
-
-**Why.** Established by the union search of 2026-07-04, recorded in `cowork_union_search_record.md` §3, which enumerates the four candidate sources and the restriction on each. The caveat is the harder sibling of the shipped-parameter licence constraint (**D-292**): there the freely-licensed pool exists and merely has to be declared; here no commercially usable label source exists at all.
-
-**Status.** LIVE · decided 2026-07-04 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_score_census.md:272`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§8c** — `## 8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)` (heading at line 224). A delegation at ARCHITECTURE.md:370 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Its class before the phase-1n staged application was `gap`.
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_score_census.md` IN FULL. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
+**Provenance.** Recorded in `STATUS_ARCHIVE.md`. VERIFIED AT THE OBJECTS 2026-08-02: commit `b1ba746` deletes exactly that one line from `src/engraving/dom/chordlist.cpp`, only an upstream header-update commit has touched the file since, and the line is absent at HEAD. This is a THIRD edit to MuseScore's own code beside **D-198** and **D-199**, and it is not in `CLAUDE.md`'s “Local patches — do not revert” section, which carries exactly two subsections; the non-conformance against the ruled **D-229** is rowed at [[OI-273]]. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `CLAUDE.md`'s local-patches section, beside **D-316**, which records the same patch's distribution disposition. **The entry's own text is what settled the owner and what dated it:** it recorded that the section carried exactly two subsections and not this one — true when written, and closed the same day by the subsection the [[OI-273]] ruling added, which is why the home now exists to move into. NO NEW TEXT STATES THE FIX: the subsection already states it, so the homing act is the NAMING that makes the entry findable from the section (#6 — the rule is published once, there), and the verbatim is re-taken from that existing text rather than a copy being written beside it. Its class moves to `process` for the same reason D-316 carries that class: the decision is a record of an edit to a dependency, which the local-patches section is the declared home for. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:2262`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "One-line fix in MuseScore core `src/engraving/dom/chordlist.cpp:993` — removed `tok1 = u\"sus\"` from the susPending re-attachment block in `ParsedChord::parse()`. This was a genuine MuseScore core bug causing double-sus render for all sus+alteration chord suffixes. Should be reported upstream." Its closing sentence — that the fix should be reported upstream — is NOT lost by the move: it is the subject of D-316, which rules the disposition UPSTREAMABLE and sits in the same section. ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `CLAUDE.md` line 1438, carrying a user-act marker and matching the entry's own identity, reads — "**★ DISTRIBUTION DISPOSITION (user-ratified 2026-08-02): UPSTREAMABLE** — a general parser defect fix with no fork-specific content; contributing it to `musescore/MuseScore` is permitted and consistent with the §1.2 contribution intent (contrast the MusicXML mode-import patch above, which stays fork-local). **Do not revert; do not let dependency updates overwrite without approval.** Register entries **D-315** — the fix itself, that it was made and is live in this fork — and **D-316**, its distribution disposition. *(D-315 homed here 2026-08-08: until then it was recorded ONLY in `STATUS_ARCHIVE.md`, which is reference-only and not among the session-start reads, while the record that a live edit to MuseScore's own code exists is exactly what this section is for. Its own provenance said this section carried two subsections and not this one — true when written, and closed by the subsection " The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-489 — The snapshot sources are hash-pinned rather than copied in-tree, because their licences make an in-tree copy incompatible with this project's licence
 

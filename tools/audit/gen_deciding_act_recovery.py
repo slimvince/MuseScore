@@ -68,6 +68,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -77,12 +78,36 @@ from output_encoding import use_utf8_output                       # noqa: E402  
 use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-FILTER = ROOT / "tools" / "audit" / "decisions_filter_classification.json"
-BACKBONE = ROOT / "tools" / "audit" / "decisions" / "backbone_decisions.json"
+FILTER = "tools/audit/decisions_filter_classification.json"
+BACKBONE = "tools/audit/decisions/backbone_decisions.json"
 RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
 OUT = ROOT / "tools" / "audit" / "deciding_act_recovery.json"
 SURFACE = (ROOT / "ratification_surfaces"
            / "cowork_deciding_act_recovery_surface_2026_08_16.md")
+
+# ── PINNED READING (user, 2026-08-16, §6 kind 1 of the preparation-return rulings) ────────────
+#
+# ★ WHY THIS PASS IS READ AT A COMMIT AND NOT AT THE TREE.  Its 72 ACT-FOUND / 194 NOTHING-FOUND
+# result IS the evidence the soft-discard was ruled over, and the discard then retires 165 of the
+# very entries this pass walked.  Read live, the pass would restate a completed measurement against
+# the population the act it authorized changed — and every document it searched is a document a
+# later session may edit.  Pinned, the artifact stands permanently as that evidence, still guarded
+# against corruption, and permanently insensitive to the acts it authorized.
+#
+# ★ WHAT STAYS LIVE, DELIBERATELY.  The sentences of the ruling that ordered this pass are located
+# in the ruling record AS IT STANDS on every run, exactly as before: the pass may not outlive the
+# words that ordered it, and that assertion is about today's record rather than about the measured
+# state.  It is the same split the sole-carrier tool draws.
+#
+# ★ WHY THE COMMIT IS NAMED HERE AND NOT INSIDE THE ARTIFACT.  The artifact carries no
+# `derived_at_commit` field and MAY NOT GAIN ONE — the ruling requires it byte-unchanged, and
+# adding a field is a change.  So the pin lives in the tool, and `establish_the_pin()` proves it on
+# every run by reading THIS ARTIFACT ITSELF out of the git object at the pinned commit and
+# requiring it to match the artifact on disk.
+PINNED_COMMIT = "ddbf89d002b95ea4efc80e0833d903bc08ca00d1"
+PINNED_COMMIT_IS = ("the commit that produced and committed this artifact — "
+                    "`cc_instruction_preparation_second.md` Task 2, the run the user read before "
+                    "ruling the soft-discard (`cc_report_preparation_second.md` §4)")
 
 # The filter's own class names. This pass may not widen them and does not re-classify with them.
 NO_ACT = "NO-DECIDING-ACT-FOUND"
@@ -256,22 +281,68 @@ def _window(text: str, match: re.Match, width: int = 80) -> str:
             + ("..." if end < len(text) else ""))
 
 
+def git(*args: str) -> bytes:
+    proc = subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True)
+    if proc.returncode != 0:
+        raise Stop(f"git {' '.join(args)} failed: "
+                   f"{proc.stderr.decode('utf-8', 'replace').strip()}")
+    return proc.stdout
+
+
+_TREE: dict[str, None] | None = None
+
+
+def pinned_tree() -> dict[str, None]:
+    """Every tracked path at the pinned commit — the file population this pass may search."""
+    global _TREE
+    if _TREE is None:
+        listing = git("ls-tree", "-r", "--name-only", PINNED_COMMIT).decode("utf-8", "replace")
+        _TREE = {line.strip().strip('"'): None for line in listing.split("\n") if line.strip()}
+    return _TREE
+
+
+def pinned_text(path: str, what: str) -> str:
+    """One input, read from the git OBJECT at the pinned commit and never from the tree."""
+    try:
+        return git("show", f"{PINNED_COMMIT}:{path}").decode("utf-8", "replace")
+    except Stop:
+        raise Stop(f"{what} is not in the tree at the pinned commit "
+                   f"{PINNED_COMMIT[:10]}: {path}")
+
+
+def establish_the_pin() -> None:
+    """The pin proves itself, on every run, before anything rests on it."""
+    if not OUT.exists():
+        raise Stop(f"the committed artifact is missing: {OUT}")
+    rel = OUT.relative_to(ROOT).as_posix()
+    # As TEXT rather than as bytes: the working tree carries the platform's line endings while a
+    # git object carries the blob's own, so a byte comparison would report every artifact as moved.
+    if git("show", f"{PINNED_COMMIT}:{rel}").decode("utf-8") != OUT.read_text(encoding="utf-8"):
+        raise Stop(
+            f"the committed artifact is NOT byte-identical to its own blob at the pinned commit "
+            f"{PINNED_COMMIT[:10]}. Either the pin names the wrong commit or the artifact has been "
+            f"rewritten since; both are STOPs, because this artifact is a ruling's evidence and "
+            f"the ruling requires it byte-unchanged.")
+
+
 def resolve(citation: dict) -> list[str]:
     """The repository files a citation points at, or an empty list where it points at nothing."""
     kind, cited = citation["kind"], citation["cited"]
+    tree = pinned_tree()
     if kind == "a document":
         candidate = cited.split(":")[0].strip().strip(".,;)`\"'")
         if not candidate:
             return []
-        path = ROOT / candidate
-        return [candidate] if path.is_file() else []
+        return [candidate] if candidate.replace("\\", "/") in tree else []
     if kind == "an open-items row":
         candidate = f"open_items/{cited}.md"
-        return [candidate] if (ROOT / candidate).is_file() else []
+        return [candidate] if candidate in tree else []
     if kind == "a date":
         year, month, day = DATE_CITATION.match(cited).groups()
         stamp = f"{year}_{month}_{day}"
-        return sorted(p.name for p in ROOT.glob("cowork_rulings_*.md") if stamp in p.name)
+        return sorted(p for p in tree
+                      if "/" not in p and p.startswith("cowork_rulings_") and p.endswith(".md")
+                      and stamp in p)
     return []
 
 
@@ -434,14 +505,11 @@ def probes() -> list[dict]:
 # ── the build ────────────────────────────────────────────────────────────────────────────────────
 
 def build() -> tuple[dict, str]:
-    if not FILTER.exists():
-        raise Stop(f"the committed filter artifact is missing: {FILTER}")
-    if not BACKBONE.exists():
-        raise Stop(f"the decisions register's data file is missing: {BACKBONE}")
+    establish_the_pin()
 
     ruling = locate_ruling()
 
-    classified = json.loads(FILTER.read_text(encoding="utf-8"))
+    classified = json.loads(pinned_text(FILTER, "the committed filter artifact"))
     imported = {row["id"]: row for row in classified["entries"]
                 if row["proposed_class"] in NON_KEEP}
     if not imported:
@@ -449,7 +517,7 @@ def build() -> tuple[dict, str]:
                    "there is no population to recover over — the import is not what this pass "
                    "assumes it is")
 
-    data = json.loads(BACKBONE.read_text(encoding="utf-8"))
+    data = json.loads(pinned_text(BACKBONE, "the decisions register's data file"))
     by_id = {}
     for entry in data["decisions"]:
         require_fields(entry)
@@ -467,9 +535,8 @@ def build() -> tuple[dict, str]:
     unreadable: list[str] = []
     for path in sorted(wanted):
         try:
-            documents[path] = act_bearing_blocks(
-                (ROOT / path).read_text(encoding="utf-8", errors="replace"))
-        except OSError as exc:
+            documents[path] = act_bearing_blocks(pinned_text(path, "a cited document"))
+        except Stop as exc:
             unreadable.append(f"{path} — {exc}")
 
     rows = [recover(by_id[entry_id], documents) for entry_id in sorted(imported)]

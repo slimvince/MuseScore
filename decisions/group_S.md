@@ -608,25 +608,6 @@ exactly: our ground truth (DCML/music21) and our output (`formatRomanNumeral`) a
 itself (scale-degree + quality + applied/secondary), and our `harmonicfunctionlayer` is **misnamed** — it does chord-
 identity competition, with cadence + functional labeling marked "E4 (planned)" = L5.” — `cowork_layer5_function_methods.md`, the research-first methods catalog that grounds the Layer-5 specification (2026-06-26). Read in full by READ WAVE 5, 2026-08-04. This is the vocabulary finding behind **D-335** (the function layer outputs the Roman numeral; the three-role summary is a derived read-out). It is entered separately because it carries a second thing D-335 does not: a NAMING defect in this repository's own code, which the catalog's §9 lists as a structural step to schedule. The record states no ratifier for the naming half. The rename is unscheduled at HEAD and this entry does not schedule it; it also sits against `CLAUDE.md`'s reserved-word convention, under which a collision already in the tree is not renamed unilaterally.
 
-### D-610 — The value-type relocation is ZERO-CHURN by construction: the leaf spans both namespaces and the un-nested type keeps a member alias, so no call site changes and the move is byte-identical
-
-> - **Holds the closure, EACH IN ITS EXISTING NAMESPACE** (so every qualified name — `analysis::KeySigMode`,
->   `function::ScoringPhase`, … — is *unchanged* → zero call-site churn):
-
-**In plain words.** When the shared value types were moved into their own dependency-free file, none of them was renamed or moved to a different namespace — the new file deliberately spans both namespaces so that every name spelled anywhere in the code still resolves. The one type that was lifted out of a class keeps an alias in its old place. So the move touches no call site and cannot change behaviour.
-
-**Why.** The constraint that forced it is the gate the refactor was held to: a pure relocation must be byte-identical, and the only way to move a type without touching its users is to leave its qualified name unchanged. The document states the cost this accepts — a value-types leaf spanning two namespaces — and accepts it explicitly as required to keep the names unchanged.
-
-**Status.** LIVE · decided 2026-06-26 · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `cowork_types_header_design.md:16-17`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
-
-**Home section.** **“The leaf header”** — `## The leaf header` (heading at line 13). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_types_header_design.md`, BUILT / AS-BUILT 2026-06-26. Read in full by READ WAVE 5, 2026-08-04. **D-078** already carries the decision that the cross-layer value types live in a dependency-free leaf header; this carries the separate rule about HOW they got there, which is what made the move byte-identical. The document's two ratification items — relocate only the parameter-bound types and defer the rest, and give the un-nested type a member alias rather than renaming its forty-odd uses — are both instances of it. The record states no ratifier.
-
 ### D-639 — Phase 1's doc-sync half reaches a document's account of ITSELF only where that account changes how its analysis content is read — with three worked examples that are the test, and a fallback ruled with it
 
 >   **★ HOW FAR THE DOC-SYNC HALF REACHES INTO A DOCUMENT'S ACCOUNT OF ITSELF (user-ruled 2026-08-04;

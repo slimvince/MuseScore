@@ -6,143 +6,6 @@
 > generator is `tools/audit/decisions/gen_decisions_register.py`. To change an
 > entry, edit the data and regenerate.
 
-### D-060 — The legacy chord analyzer is a vertical sonority analyzer - keep the boundary clean
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> Do not
-> attempt to improve corpus agreement by adding heuristics to `RuleBasedChordAnalyzer`
-> that embed contextual assumptions — keep the vertical/contextual boundary clean.
-
-**In plain words.** The chord identifier is meant to say what chord the notes sounding at one moment spell, and nothing more. Improving its score by teaching it about what came before or after was explicitly forbidden.
-
-**Why.** Measurement, ARCHITECTURE.md:2099-2119: the boundary is recorded as empirically validated against DCML annotations over four corpora (2026-04-06), and the residual disagreement is diagnosed rather than assumed - 95.8 % of the bass-is-root disagreements are three-note triads in inversion, which local note content cannot resolve. Improving past that ceiling is stated to need a contextual harmony layer, NOT heuristics inside the vertical analyzer. (The same section then specifies contextual bonuses - open_items/OI-235.)
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2980-2982`
-
-**Provenance.** ARCHITECTURE.md:2093-2119. Contradicted by the same document's §4.1b/§4.1d contextual bonuses, which score a candidate from the neighbouring chords - see OPEN_ITEMS OI-235
-
-### D-061 — Gate thresholds are Baroque-calibrated and must not be loosened for other styles
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> They must not be
-> loosened to accommodate other styles. When a gate causes regressions in a non-Baroque
-> preset, the fix is either (a) a tighter structural entry condition that excludes the
-> problematic chord type in all styles, or (b) a preset-specific threshold value
-
-**In plain words.** The adjustable cut-offs in the chord scorer were tuned on Baroque music. If they misbehave on other music, tighten the entry condition for everyone or give that style its own value - never widen the Baroque one.
-
-**Why.** Measurement, ARCHITECTURE.md:1787-1795 and `CLAUDE.md` gate policy: the values are empirically calibrated against the Baroque corpus and are Baroque-specific, so loosening one to accommodate another style silently re-tunes the style they were measured on; the two sanctioned fixes are a tighter structural entry condition that excludes the chord type in all styles, or a preset-specific override leaving the Baroque default unchanged.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2652-2656`
-
-**Provenance.** ARCHITECTURE.md:1787-1795; the same policy is in CLAUDE.md 'Gate threshold and preset policy'
-
-### D-062 — Progression signals are withheld while segmentation is being explored
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> the progression signals are withheld
-> during `greedyExpandSegmentation`'s internal boundary-exploration calls, which run in
-> `ScoringPhase::Segmentation` — prevents the bonus from biasing segmentation
-> before the final per-region pass
-
-**In plain words.** While the program is still deciding where one chord ends and the next begins, the bonuses that reward a chord for fitting its neighbours are switched off, so that the answer does not bias the question.
-
-**Why.** Stated constraint, ARCHITECTURE.md:2016-2019 (the withheld signals 'prevent the bonus from biasing segmentation before the final per-region pass') with :641-644: where a boundary falls decides which pitch classes land in each candidate's input, and chord identity is itself a signal for where boundaries should be - so letting progression signals score the exploratory passes would let the answer decide its own input.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2879-2882`
-
-**Provenance.** ARCHITECTURE.md:2016-2019, :1816-1822; the residual coupling is recorded as debt at :2105-2112
-
-### D-063 — Cold context on the tick-local path is the accepted contract
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> Cold context on P4 is the **current contract**, documented and accepted (the same
-> precedent as the Stage 2.3 diagnose context banner: a path may legitimately analyze with less
-> context, provided that is stated, not silent).
-
-**In plain words.** One narrow path analyses a moment without knowing what came before. That is allowed because it is written down, not hidden.
-
-**Why.** SEARCHED 2026-08-09 and the record HOLDS one — two grounds, both in the decision's own home text, which is why an empty field misrepresented it. **(1) A PRECEDENT, named in the decision sentence itself:** *"the same precedent as the Stage 2.3 diagnose context banner: a path may legitimately analyze with less context, provided that is stated, not silent."* The defensible thing is not the reduced context but its being declared. **(2) A SEQUENCING REASON, stated immediately after it:** *"No pre-pass is built now: Stage 3's lattice makes accumulated context a decode product, and any context pre-pass built against the greedy pipeline would be discarded at Stage 3"* — build-it-right before tune-precision (#8), applied to a specific piece of work that a later layer would throw away. The home also carries the FACTS the decision rests on (the fallback fires only when the regional path returns no region, structurally rare, exact live frequency **unmeasured**) and a REVISIT TRIGGER, which the record separately notes has not been discharged. No measured value is carried here (**D-431**).
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2342-2344`
-
-**Provenance.** ARCHITECTURE.md:1485-1502. Its revisit trigger - 'Stage 3 design must state explicitly what P4 (and the bridge) consume from the decode' (:1299-1300) - has not been discharged by the joint/record design
-
-### D-064 — The chord-scoring presets are a measurement-only artifact
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> The
-> chord-scoring preset system is currently a **measurement-only artifact** of `batch_analyze`. Do
-> **not** silently flip the live product onto preset chordPrefs
-
-**In plain words.** The Baroque and Jazz chord-scoring settings exist only in the measurement tool. The program the user runs has never used them, and switching it over would be a product decision, not a code tidy-up.
-
-**Why.** SEARCHED 2026-08-09 and the record HOLDS one, stated in the decision's own home text as the KIND of decision this would be: *"whether the product should expose a chord-scoring style is a deliberate **product decision**, deferred."* The ground is therefore not that the presets are wrong but that flipping the live product onto them is not a code change at all — the home opens by recording the whole thing as *"a **product-level finding**, not a code change"* — so it may not be done silently as tidy-up. A second, doc-sync clause rides with it and belongs to the decision: every document implying that Jazz/Baroque chord tuning ships to users is to be corrected to batch-measurement only, because the live product analyzes chords with struct defaults. No measured value is carried here (**D-431**).
-
-**Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2405-2408`
-
-**Provenance.** D-003 makes inference preset-independent on the production path, so the divergence this decision manages no longer exists there; it still describes the legacy path
-
-### D-065 — The look-ahead divergence between the two paths is intentional and load-bearing
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> **D1 — `excludeLookAheadOnDenseStart`** is **intentionally divergent and load-bearing.**
-
-**In plain words.** One setting deliberately differs between the measurement tool and the program, because making them the same made the program worse on a specific repertoire.
-
-**Why.** SEARCHED 2026-08-09 and the record HOLDS one, and it is a MEASURED one stated in the decision's own home text: *"This is not an oversight: unifying it regresses the bridge/Corelli trio-sonata dominants."* The divergence is kept because the unified setting was tried and made the in-app path worse on a named repertoire — which is the reason the same home restates a second time at the Stage-2.4 block (*"unifying it regresses the Corelli trio-sonata dominants on the bridge"*), adding the disposition *"Keep diverged; keep documented."* The home also names where the flag's contract is written down, which is what makes the divergence declared rather than silent. No measured value is carried here (**D-431**) — the home states the direction of the regression, not a magnitude, and none is invented.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2312`
-
-**Provenance.** ARCHITECTURE.md:1464-1467, restated at :1363-1366
-
-### D-066 — Chord symbols written in the score are never analyzer input
-
-> chord symbols must never be used as analyzer input in
-> production because they are user content and may be incorrect.
-
-**In plain words.** The chord names already written in a score are the user's own text and may be wrong. The analysis reads only the notes, the key signature and the settings.
-
-**Why.** Stated constraint, ARCHITECTURE.md:2546-2548: written chord symbols are USER CONTENT and may be incorrect, so reading them back as input would make the analyzer agree with whatever it was given rather than with the notes. The `--inject-written-root` flag is kept as a diagnostic upper bound and is explicitly not a production path.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:3410-3411`
-
-**Provenance.** ARCHITECTURE.md:2546-2548, restated as the retirement rationale's 'Core principle' at :2335-2337
-
-### D-067 — Jazz mode (chord-symbol-driven boundaries) is retired
-
-> **Status: Retired** — production analysis paths in commit 02e3733afb, tool-side surfaces in 69716deead. Chord symbols are no longer read by any analysis or tool path.
-
-**In plain words.** The separate jazz analysis mode that took its stretch boundaries from written chord symbols has been removed entirely.
-
-**Why.** SEARCHED 2026-08-09 and the record HOLDS one, in full, at a *Retirement rationale* block in the same specification — which is why an empty field misrepresented it. The block does not argue the retirement directly; it takes the three reasons the mode had EXISTED for and dismantles each. **Reason 1, redundancy** — a value judgment rather than a structural one: symbol-derived boundaries remain computable, so the question was whether their output is BETTER than note-derived output, never whether it is possible. **Reason 2, rootless voicings** — concerns chord IDENTITY and not boundaries, so it never justified symbol-driven boundaries at all; the identity problem exists however stretches are delimited. **Reason 3, monophonic and sparse voicings** — load-bearing only if identity inference from sparse notes also succeeded, and it does not, so boundaries without usable identity yield symbol-echoed output rather than analysis. **And a CORE PRINCIPLE the block states as the ground the three reasons are measured against:** chord symbols are user-written instructions, not analysis results, and analyzer output is a pure function of notes plus key signature plus preferences. That principle is what the tool-side half of the retirement completed. It is stated independently as **D-066**, and is cited here rather than restated (#6).
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:3378`
-
-**Provenance.** ARCHITECTURE.md:2515, retirement rationale at :2324-2339
-
 ### D-068 — The chord identifier needs at least three distinct pitch classes
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
@@ -176,41 +39,6 @@
 
 **Provenance.** ARCHITECTURE.md:1962 'Region identity modes (decided 2026-04-11)'; :1734-1736 records as-written mode deferred
 
-### D-101 — Contextual inversion bonuses fire only for major and minor candidates
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> **Safety constraints (lesson from three-attempt history) — ⚠ SUPERSEDED BY ITER 46, see §4.1g.** As
-> originally written: bonuses never fire for Diminished, HalfDiminished, Augmented, or Suspended
-> candidates — only Major and Minor. The existing `inversionSuspicionMargin` /
-
-**In plain words.** The bonuses that let a neighbouring chord tip an inversion reading were restricted to plain major and minor chords, after three earlier attempts without that restriction all made things worse.
-
-**Why.** Stated constraint, ARCHITECTURE.md:1867-1867: recorded as a hard-won safety constraint, the lesson of a three-attempt history in which the bonuses fired on qualities they were not measured on.
-
-**Status.** SUPERSEDED BY D-102 · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2730-2732`
-
-**Provenance.** ARCHITECTURE.md:2171-2179 records Iter 46 extending the same helpers to Augmented and HalfDiminished. The §4.1b statement carries no supersession note - see OPEN_ITEMS OI-236 ★ Verbatim RE-TAKEN 2026-08-02 (the phase-1 truth-sync): the §4.1b passage now carries the supersession note it lacked, and states the constraint that actually survives at HEAD, which differs between the two helper predicates (OPEN_ITEMS OI-236 discharged). The decision's own words are preserved in place, marked 'As originally written'.
-
-### D-102 — Augmented and half-diminished candidates receive the inversion bonuses too (Iter 46)
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> Extending these gates put Augmented and
-> HalfDiminished inversion candidates on equal footing with Major/Minor.
-
-**In plain words.** The restriction above was later relaxed for augmented and half-diminished chords, because without the bonuses their correct inverted readings never reached the shortlist at all. It was the single largest improvement of that iteration path.
-
-**Why.** Measurement, ARCHITECTURE.md:2171-2179: keeping D-101's constraint made correct inverted readings unreachable, and extending the two helper predicates to augmented and half-diminished was 'the largest single improvement of iteration path 1'.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:3041-3042`
-
-**Provenance.** ARCHITECTURE.md:2169-2182 (Iter 46, commit 36bf4738a8)
-
 ### D-103 — Pedal-point detection is a second pass, accepted only on two conditions
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
@@ -227,23 +55,6 @@
 **Home.** `ARCHITECTURE.md:4893-4894`
 
 **Provenance.** ARCHITECTURE.md:3882-3917 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021. SUPERSEDED BY D-207 - open_items/OI-194.md:7 records the ratified successor (user, 2026-07-26): the voice-independent pedal-point class replaces this bass-only second pass and the `isPedalPoint`/`pedalBassPc` fact it produces
-
-### D-104 — The bass-is-root bonus is conditioned on corroborating support
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> `bassNoteRootBonus` is now conditioned on corroborating root-position support in the
-> accumulated tones:
-
-**In plain words.** Being the lowest note no longer counts as strong evidence of being the chord's root unless the chord above actually supports that reading. Without a third or fifth above it, the bonus almost vanishes.
-
-**Why.** Measurement, ARCHITECTURE.md:3667-3686: four corpora (Chopin mazurka, Mozart sonata, Corelli trio sonata, Beethoven quartet) were inspected at the score and found to share ONE mechanism - the bass moves faster than the harmonic rhythm, so each bass note independently takes the bonus and overrides the root the chord tones above already identify. The fix conditions the bonus on corroborating root-position support rather than shrinking it.
-
-**Status.** LIVE · decided 2026-04-09 · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:4674-4675`
-
-**Provenance.** ARCHITECTURE.md:3662-3710; the failure it fixed is documented across four corpora at :3406-3419
 
 ### D-105 — The spelling written in the score is read through ONE shared interpreter
 
@@ -566,24 +377,6 @@
 **Home.** `ARCHITECTURE.md:1963-1965`
 
 **Provenance.** Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It is load-bearing now: the non-chord-tone filter is the named lever at [[OI-55]] and [[OI-68]], and `docs/nct_detection_design.md` exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into the Layer-4 section of `ARCHITECTURE.md` §3.3 as a deferred capability with its shape constrained in advance. The defense stays 'derivation not recorded' — the record gives none and none was invented. Former home preserved (#12): `STATUS_ARCHIVE.md:963`, the architectural-memos list.
-
-### D-305 — The ban on reading written harmony as analyzer input is decided by what an annotation says, not by how it is stored
-
-> **The ban is decided by WHAT AN ANNOTATION SAYS, not by how the score stores it.** No harmonic
-> annotation already written in a score may be read as analyzer input — not a chord symbol, not a
-> Roman numeral, not a function, cadence or key label — whatever kind of score object happens to
-
-**In plain words.** Our analysis must not read any harmonic annotation already in the score — not a chord symbol, not a Roman numeral, not a function, cadence or key label — whatever kind of score object holds it. Ordinary notational metadata such as the key signature is still allowed.
-
-**Why.** derivation not recorded
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:3413-3415`
-
-**Provenance.** Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It sharpens **D-066** (chord symbols written in the score are never analyzer input) from one annotation kind to a content test over all of them. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written beside D-066 in `ARCHITECTURE.md` §4.2, where the chord-symbol ban it generalizes already stood. The defense stays 'derivation not recorded'. Former home preserved (#12): `STATUS_ARCHIVE.md:961`.
 
 ### D-312 — The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change
 
@@ -968,26 +761,6 @@ record but is not what shipped." The verbatim above is RE-TAKEN from the new hom
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
-### D-332 — A carried alternative's added notes are marked UNKNOWN rather than asserted absent — never synthesized
-
-> `extensionsKnown` = true); a carried *alternative*'s extensions are copied from the scorer's own ranked result where
-> that cell produced one, else left **honest-carry** (extensions = 0, `extensionsKnown` = **false** — the seventh is
-> *unknown*, never asserted absent, and never synthesized). A Layer-5 consumer reads the extensions only when
-
-**In plain words.** When the chord layer carries a reading it did not choose, it states its added notes (the seventh, ninth and so on) only where they were genuinely worked out. Otherwise it says they are unknown — it never claims there are none, and never invents them.
-
-**Why.** The information-loss principle applied to the carry: an unknown that is recorded as an absence would be read downstream as a fact. A consumer reads the added notes only when they are marked known and otherwise stays at triad level, so an honest gap is a coverage limit rather than a wrong answer.
-
-**Status.** LIVE · decided 2026-07-02 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_layer4_chordsymbol_design.md:366-368`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§7** — `## 7. Data design` (heading at line 349). A delegation at ARCHITECTURE.md:1946 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
-
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
-
 ### D-333 — The membership tie-break's direction is an idiom-calibrated number, never a branch on style — the three-tier structure is fixed
 
 >   **idiom-calibrated** (the style-only-in-calibration contract, ARCHITECTURE.md §2.15) — record the threshold as a
@@ -1027,33 +800,6 @@ record but is not what shipped." The verbatim above is RE-TAKEN from the new hom
 **Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 559). A delegation at ARCHITECTURE.md:1946 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
-
-### D-378 — Re-deciding a chord under a different tonality is well-defined ONLY on the decoder path — the legacy multi-pass emission cannot be faithfully re-decoded, and a naive re-emit injects a measured ~6 % same-tonality root-flip artifact
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> **Faithfulness (the J-key-iii constraint, discharged).** J-key-iii deferred the chord axis because a *faithful*
-> per-region re-emission "cannot reproduce the multi-pass pipeline chord" — the legacy production chord is emitted
-> mid-pipeline (before Pass-3 tone merging), so a naïve re-emit injects ~6% same-key root-flip artifact `[code]`
-> (`regionanalyzer.cpp:388-393`). The **faithful mechanism it named is the engaged `ChordSliceDecoder`**: a **pure
-> function of (slices, key)**, so re-decoding under a different key is well-defined and reproducible — no multi-pass
-> artifact. **This is why the joint step is E4-adjacent** (§4): it builds on the engaged decoder, not the retiring
-> legacy `analyzeChord` seam. On the legacy path a faithful re-decode does not exist; on the decoder path it is
-> the decoder's own contract.
-
-**In plain words.** Asking what chord the analysis would name if the tonality were different is a meaningful question only where the chord decision is a pure function of the notes and the tonality. On the older multi-stage path it is not: the chord is emitted part-way through, before a later merging step, so simply re-emitting it produces about six per cent of root changes that have nothing to do with the tonality at all. On the decoder path the same question is well defined and reproducible, because answering it is what that decoder's own contract already promises.
-
-**Why.** Measured: the naive re-emit's artifact rate on the older path is stated as about six per cent of same-tonality root flips, cited at the orchestrator source that records the deferral. The record uses it to discharge a deferral made earlier by name — the earlier wiring deferred the chord axis for want of a faithful mechanism, and this identifies that mechanism as the engaged decoder rather than declaring the problem solved.
-
-**Status.** LIVE · decided 2026-07-07 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_joint_key_chord_design.md:183-190`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **“§2.2 The chord re-decoded under each carried key”** — `### §2.2 The chord re-decoded under each carried key (the OWED axis)` (heading at line 174). A delegation at cowork_engage_arc_plan.md:44 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about the two code paths and not about that step. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-380 — The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices
 
@@ -1156,31 +902,6 @@ record but is not what shipped." The verbatim above is RE-TAKEN from the new hom
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_layer5_engagement_design.md` IN FULL. The unification it defers to is tracked as [[OI-11]]. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue). ★ FLAG (CC, 2026-08-02, the phase-1i full read of `cowork_structural_integrity_audit.md`): the SECOND alternative this entry offers — 'through the one unified primitive' — was measured at the code NOT to exist. The four different-root scans are not one decision (divergent predicate: root-only at three sites, root+quality at the fourth; divergent element type and result-use), and the promote-to-front primitive is not the vehicle; the unification was reported as a STOP and declared for an adjudication the record does not show being made (**D-403**; rowed [[OI-278]]). The FIRST alternative — reading the margin off the carry's own ranking — is untouched. Recorded as a flag, not as a status change: the entry is not withdrawn and nothing is inferred about what replaces the second alternative. ★ ANNOTATED (user ruling 2026-08-02, OI-278): the second alternative struck (D-403's measurement); the first alternative is the decision's operative content. ★ RE-CLASSIFIED contract-home 2026-08-02 (CC, phase 1j, under the TRANSITIVE-AUTHORITY refinement of the fifth home case, user 2026-08-02): `cowork_layer5_engagement_design.md` carries a status banner and its authority is the user's transitively — the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arc #9 to it by name (`:41`), arc #11 to it by name (`:46`), and states that the Stage-3 build inventory 'is enumerated at `cowork_layer5_engagement_design.md` §9.2' (`:53-55`). The missing `ARCHITECTURE.md` delegation pointer — the gap the ruling says a missing delegation owes — was written into the Layer-5 section in the same commit.
 
-### D-402 — The inversion-append is a pure cap artifact that dissolves when the cap is removed; the below-threshold bass promotion is a targeted promotion that stays
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> **One honest discrimination (a true cap-artifact vs a legitimate targeted promotion):** Iter 91 (#6) uses
-> `kPromoteAppendOnly` with `stopBelowThreshold=false` — it can pull a **below-threshold** bass-rooted target.
-> That reach is **not** dissolved by uncapping-at-threshold; it is a genuinely different, deliberate targeted
-> promotion (it wants a specific structural target regardless of score). So: the **inversion-append (#4) is a
-> pure cap-artifact that dissolves**; Iter 91's below-threshold pull is a targeted promotion that stays. This
-> is exactly the VIOLATION-vs-legitimate line the audit must draw.
-
-**In plain words.** The legacy chord path keeps at most three readings per stretch, and a patch was added to reach past that limit and re-insert the best reading with a DIFFERENT root, which the limit was routinely crowding out. Removing the limit makes that patch dead code by construction, because an uncapped build already pushes every above-threshold reading in score order — so limit and patch cancel. One thing does NOT cancel with them: the separate promotion that can pull a bass-rooted reading scoring BELOW the threshold, which wants a specific structural target regardless of score and therefore survives the uncapping as a deliberate rule in its own right.
-
-**Why.** Derived from the code and then measured, not assumed: the append only ever pulls a candidate already at or above the threshold, so an uncapped threshold-only build is a strict superset of what the append can add (§1.2, cited to `harmonicfunctionlayer.cpp:521-547`); and the workaround is load-bearing rather than an edge case — it fires on 36.2 % of Baroque and 36.1 % of Default regions (§1.5, measured over all three per-preset corpora, and declared a floor because the untruncated candidate set is not serialized).
-
-**Status.** LIVE · decided 2026-07-07 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_structural_integrity_audit.md:87-92`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
-
-**Home section.** **§1.2** — `### 1.2 The cap→append chain — dissolution hypothesis TESTED at code (CONFIRMED)` (heading at line 69). The delegation names sections, and no delegation names this one. Decided by **D-430, the section-level unit — the delegation reaches named sections only, and no delegation names this section**.
-
-**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. The same section states the consequence that keeps this from being a free edit: removing the cap changes the SERIALIZED carry, which is a behavior change on `.ours.json` bytes and therefore a ratified adoption under the robust-stop explained-diff and re-baseline discipline (`CLAUDE.md` gate block (A)). Nothing was changed. ★ RATIFIED (user, 2026-08-02, the phase-1i queue). ★ NO DELEGATION IS DRAFTED OR WRITTEN FOR THIS DOCUMENT, AND THAT IS A RULING (user, 2026-08-04, ruling R3, dispatch `cc_instruction_census_delegation_and_commit.md`): this entry stays `gap` deliberately. Its home section §1.2 reports the result of a test run against the code, and the register's own `not_write_list_cases` already rules on that shape — 'A delegation cannot repair that; the remedy is the same as OI-290's — at the document, or by homing those verdicts where the concern is owned.' THE REMEDY IS AT THE DOCUMENT and is not a delegation act. NOT A DEFERRAL: no later wave owes a delegation here.
-
 ### D-403 — STOP, not forced: the four best-different-root scans are NOT one decision at code, so the one-decision-four-sites premise over-counts
 
 ⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
@@ -1203,7 +924,7 @@ record but is not what shipped." The verbatim above is RE-TAKEN from the new hom
 
 **Home section.** **§3.1** — `### 3.1 Stage-1 build status (Engage arc #7, 2026-07-07 — `cc_engage_pre_l5_refactor_report.md`)` (heading at line 251). A delegation at cowork_engage_arc_plan.md:4 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
 
-**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. The record says this was 'declared for Cowork adjudication (report §5)' and the adjudication is not recorded anywhere this pass read — rowed at [[OI-278]]. It bears on **D-386**, which permits the pedal reader to take its margin either from the carry's own ranking or 'through the one unified primitive': the first alternative stands, the second was measured not to exist at code, and D-386's own record does not say so. ★ RATIFIED (user, 2026-08-02, the phase-1i queue). ★ THE DECLARED ADJUDICATION IS NOW MADE (user, 2026-08-02, OI-278 option (a)): FQ-1 LAPSES WITH THE LEGACY PATH — the four-sites-one-decision premise is measured false, three of the four sites retire at the OI-180 map, and the live concern (the pedal reader's input) is served by D-386's first alternative. The measurement stands as this entry's content (#12); no unification is built.
+**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. The record says this was 'declared for Cowork adjudication (report §5)' and the adjudication is not recorded anywhere this pass read — rowed at [[OI-278]]. It bears on **D-386**, which permits the pedal reader to take its margin either from the carry's own ranking or 'through the one unified primitive': the first alternative stands, the second was measured not to exist at code, and D-386's own record does not say so. ★ RATIFIED (user, 2026-08-02, the phase-1i queue). ★ THE DECLARED ADJUDICATION IS NOW MADE (user, 2026-08-02, OI-278 option (a)): FQ-1 LAPSES WITH THE LEGACY PATH — the four-sites-one-decision premise is measured false, three of the four sites retire at the OI-180 map, and the live concern (the pedal reader's input) is served by D-386's first alternative. The measurement stands as this entry's content (#12); no unification is built. ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `open_items/OI-278.md` line 80, carrying a user-act marker, a ratification event named, an explicit RULED marker and matching the entry's own identity, reads — "**Dated note — 2026-08-02 (Cowork): RULED by the user — option (a).** FQ-1 lapses with the legacy path: the premise is measured false, the sites retire, and building the unification would rest on a verified-false premise (#18) in retiring code (the OI-84 A1 rule) for zero live gain. D-386's second alternative is struck by annotation (the first — the ranked distinct roots — is the operative content); D-403 now carries the made adjudication. The measurement survives as register content (#12). Applied in the ruling's commit with the eighth ratification event." The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-423 — The gate-retirement stage is the only sanctioned way the post-scoring gates change, and three do-not rules hold through every stage
 
@@ -1568,37 +1289,6 @@ complete_bonus applies when:
 **Home section.** **“Implementation insertion point”** — `## Implementation insertion point` (heading at line 169). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
 **Provenance.** The four-step implementation and validation order of the same design. ⚠ LEGACY subject. It is an early, concrete form of the discipline the project later stated generally — one revertible provenance-stamped commit per behaviour change (#14) and a measured non-increase before proceeding (the gate block (A) hard stop). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue. ★ RATIFIED AND RULED SUPERSEDED IN THE SAME ACT (user, 2026-08-07, ruling R2, the three-owner-rulings wave). THE SENTENCE IMMEDIATELY ABOVE — 'NOT ratified … goes to the user in this wave's ratification queue' — IS SUPERSEDED BY THIS ACT and is kept only as the record of what the entering wave wrote (#12); the queue it names is the one the user has now answered. The entry is ratified as CORRECTLY RECORDED, and its content is ruled superseded by the general discipline the project later stated — the two successors this field already named before the ruling, and it names them rather than any session nominating them: principle #14, every behaviour change one revertible, provenance-stamped, user-ratified commit (D-177), and gate block (A)'s measured non-increase (D-115). Both are homed in `CLAUDE.md`, so under D-642 the criterion-C1 obligation moves to them and is discharged at their home; NO SPECIFICATION IS EDITED FOR THIS ENTRY, which is the ruling's own point. THE EXCLUDED ALTERNATIVE, RECORDED WITH THE RULING (#12): homing this entry's early concrete form beside gate block (A) would put a second copy of in-force discipline into a live specification (#6), under a ⚠ LEGACY subject a reader could misapply to the live solution. The early concrete form stays in the register verbatim (#12) and the ⚠ LEGACY mark stays. The home, the home class and the verbatim are UNCHANGED by this act.
-
-### D-560 — Voice slots and stem direction are STRUCTURAL notational metadata, not user-written analytical claims, so the analysis may read them
-
-> **★ VOICE SLOTS AND STEM DIRECTION ARE STRUCTURAL NOTATIONAL METADATA, NOT USER-WRITTEN ANALYTICAL
-> CLAIMS — SO THIS LAYER MAY READ THEM (re-homed into this specification 2026-08-08 on the user's
-> ruling).** Which voice a note was entered in, and which way its stem points, belong to how the
-> music was written down — the same category as the key signature, the time signature, a tie or a
-> pedal marking, all of which this layer already reads. They are not somebody's claim about the
-> harmony. **The analysis may therefore consume them.** *Why:* it is the line the chord-symbol
-> prohibition already draws, applied to a new pair of fields — the analysis may read what the score IS
-> and may not read what a user has CLAIMED about it — and voice slot and stem direction fall on the
-> first side. The rule binds any voice-tracking work whether or not the non-chord-tone detector that
-> raised the question is ever built; it decides what such a detector would be ALLOWED to read and
-> settles nothing about whether it is built, which is a separate deferral recorded at the chord layer.
-
-**In plain words.** Which voice a note was entered in, and which way its stem points, are part of how the music was written down — the same kind of thing as a time signature or a tie. They are not somebody's opinion about the harmony. So the analysis is allowed to read them, unlike a chord symbol the user typed.
-
-**Why.** The line it draws is the one the chord-symbol prohibition already draws (**D-501**, **D-066**): the analysis may read what the score IS, and may not read what the user has CLAIMED about it. The record places voice slots and stem direction on the first side explicitly, and notes that the existing architecture already consumes notes plus structural metadata of exactly this kind.
-
-**Status.** LIVE · decided 2026-04-26 · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `ARCHITECTURE.md:1626-1637`
-
-**Provenance.** `docs/nct_detection_design.md`, the deferred non-chord-tone design; `ARCHITECTURE.md` names the document's existence beside **D-303**, which carries the deferral and the constraint on its shape. This clause is separate from the deferral: it settles what evidence such a detector would be ALLOWED to read, and it binds any voice-tracking work whether or not the detector is built. The record states no ratifier. Read in full by READ WAVE 4, 2026-08-04. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii), which routes this document to *the layer that reads the notation — structural notational metadata*). That layer is Layer 1, the lossless note model: it is the layer that reads the score and already consumes the structural metadata this rule extends. Written into the Layer-1 section in that section's own voice, with its defense stated as the line the chord-symbol prohibition already draws, and with the separation from D-303's deferral stated so no reader takes the rule for a schedule. FORMER HOME, PRESERVED (#12): `docs/nct_detection_design.md:184-189`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 147, "section": "## Voice-leading detection — the piano problem", "label": "“Voice-leading detection”", "delegated": null, "delegation": "ARCHITECTURE.md:1503", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "The structural-data approach is consistent with the analyzer's
-existing architecture: it consumes notes + structural metadata
-(key signature, time signature, ties, pedal) and infers analytical
-content. Voice slots and stem direction belong in the same
-\"structural metadata\" category — already in the score, not
-user-written analytical claims." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-580 — Two of the twelve post-scoring gates are purely-local vertical refinements and MUST survive the dissolution; the other ten dissolve into the competition
 

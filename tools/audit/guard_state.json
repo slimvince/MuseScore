@@ -33,6 +33,7 @@
       "tools/audit/decisions/gen_reads5_repack.py",
       "tools/audit/decisions/gen_reads5_yield.py",
       "tools/audit/decisions/gen_reads6_yield.py",
+      "tools/audit/decisions/gen_retired_subject_moves.py",
       "tools/audit/decisions/gen_true_half_reach.py",
       "tools/audit/decisions/gen_true_half_reach_rows.py",
       "tools/audit/decisions/gen_verbatim_subject_consistency.py",
@@ -40,6 +41,7 @@
       "tools/audit/gen_arm_comment_sweep.py",
       "tools/audit/gen_artifact_inventory.py",
       "tools/audit/gen_artifact_inventory_surface.py",
+      "tools/audit/gen_census_movement_classification.py",
       "tools/audit/gen_deciding_act_recovery.py",
       "tools/audit/gen_decisions_filter.py",
       "tools/audit/gen_discard_reach_split.py",
@@ -69,7 +71,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 71,
+    "authored_entries": 73,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -105,6 +107,30 @@
     "what_leaving_the_list_means_and_does_not_mean": "The artifact is PRESERVED exactly as the wave that produced it wrote it, and is marked historical. The tool is not repaired, not deleted and not excused; it is simply no longer asked to re-derive, because re-deriving it would destroy the measurement it records. Nothing here fixes OPEN_ITEMS.md OI-309 or OI-330 — those rows stay open on their own subjects.",
     "the_per_tool_evidence_lives_at": "tools/audit/guard_classification.json (gen_guard_classification.py), which authors the verdict and its evidence for EVERY tool in this list and STOPS if its verdict set and the table here disagree in either direction (#6).",
     "tools": [
+      {
+        "tool": "tools/audit/gen_phase1_completion_inventory.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: what the SUPERSEDED phase 1 of D-231's three-phase structure still required. The six-phase structure the user ruled on 2026-08-15 replaced that program, and the ruled soft-discard of 2026-08-16 makes this derivation STOP rather than drift — the document its delegation grading needs is no longer class C, because every entry homed in it was retired. Re-deriving it would mean re-authoring drafts for a superseded program, which is the capacity sink the apparatus-lapse ruling closed. It asserts NOTHING about whether phase 1's obligations were discharged. NO LIVE COVERAGE IS LOST: no reader of its artifact outside the superseded program exists, measured at the objects before it froze.",
+        "what_it_checked": "the phase-1 completion inventory re-derives -- D-231's clause still locatable by its anchors, and every home class, defense gap, open-row cut and gate verdict unchanged"
+      },
+      {
+        "tool": "tools/audit/gen_phase1_finish_line.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: the FINISH LINE for the SUPERSEDED phase 1 — what was still required and what act would close each item. Same ground as the completion inventory it imports, and it STOPS for the same reason. Its last derivable state stands frozen on disk as the record of that program; nothing here says the program finished. NO LIVE COVERAGE IS LOST.",
+        "what_it_checked": "the phase-1 FINISH LINE re-derives -- the scope ruling R2 of 2026-08-04 fixed. Its three STOPs ride with it and are the reason it is a guard rather than a report: an item carrying no closing act stops it, a row named as a user ruling that is no longer in the derived gating set stops it, and -- the one that matters -- a population NO ITEM CARRIES stops it, so the list cannot quietly stop being exhaustive as the register and the open-items index move under it"
+      },
+      {
+        "tool": "tools/audit/decisions/gen_outstanding_delegations.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: the outstanding-delegation population of the SUPERSEDED phase 1, and the FEEDER whose only importers are the two gate derivations above — which is what places it here rather than among the standing checks (the derived split, `tools/audit/discard_reach_split.json`). It is the tool that STOPS first: the authored draft it needs is for a document the retirement empties. NO LIVE COVERAGE IS LOST — the home rules it served are asserted live by gen_home_classification.py and gen_phase1p_delegation_bar.py, both of which stay in the list.",
+        "what_it_checked": "the outstanding-delegation population still derives at HEAD from the delegation grades and the home data (D-640/OI-335). Its own STOPs ride with it: a write-list member with no authored state label, a label for a non-member, and a class-C document with no authored draft each stop it, so the derived view cannot drift away from the write list in either direction"
+      },
       {
         "tool": "tools/audit/decisions/gen_phase1n_reading_regime.py",
         "retired_invocation": [
@@ -176,6 +202,30 @@
         ],
         "why": "HISTORICAL RECORD: read wave 4's measured yield, the same construction and the same ground as wave 2's. NO LIVE COVERAGE IS LOST, on the same three live guards.",
         "what_it_checked": "READ WAVE 4's measured yield still matches the bands registered before the reads, every entry it names is still in the register at the home it records, and its running read count still derives from the regime's own partition plus waves 1, 2 and 3"
+      },
+      {
+        "tool": "tools/audit/decisions/gen_finish_line_item1_routes.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: the closing ROUTE for every entry of the superseded finish line's item 1 — a view of the same derivation, which it imports transitively. Its subject is a program that no longer governs, and its inputs STOP. NO LIVE COVERAGE IS LOST.",
+        "what_it_checked": "every entry of finish-line item 1 still carries an authored closing route, no route names an entry the item no longer carries other than the ones this wave re-homed, and the route population still re-derives from the finish line rather than from a stored list"
+      },
+      {
+        "tool": "tools/audit/decisions/gen_item1_rehome_blocker.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: what blocked the superseded finish line's item-1 re-home class. Same family, same import, same STOP. Its one live-looking assertion — that the standing autonomous-operation authorization is still locatable in CLAUDE.md by its anchor — is not lost: CLAUDE.md's own anchors are asserted live by claude_md_rule_triage.py and by the register's home-anchor checks, all of which stay in the list.",
+        "what_it_checked": "what actually blocks finish-line item 1's re-home class still re-derives — the standing autonomous-operation authorization still locatable in CLAUDE.md by its anchor, every open re-home row's owning specification still naming at least one file, and every row's blocker still cut from that row's own recorded reason rather than from a stored verdict"
+      },
+      {
+        "tool": "tools/audit/decisions/gen_r1_superseded_reach.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: ruling R1's application to the superseded finish line's item-1 NO-HOME class. Same family, same import, same STOP. NO LIVE COVERAGE IS LOST: that every register cross-reference still resolves is asserted live by gen_cluster_dispositions.py --verify, which stays in the list and which now consults the retired-entries block beside the live entries.",
+        "what_it_checked": "ruling R1's application re-derives — every member of item 1's NO-HOME class still carries an authored successor record, no successor record names an entry the class no longer carries, every authored successor is still NAMED IN THE SUPERSEDED ENTRY'S OWN TEXT, and every one that resolves to a register identifier still resolves to an entry the register holds"
       },
       {
         "tool": "tools/audit/decisions/gen_reads4_oi326_application.py",
@@ -447,45 +497,6 @@
       "what_it_checks": "the DISCARD records the gating derivation consumes re-derive AT THE RECORD -- the user's Ruling 69 of 2026-08-13 (D-677) makes an authored discard verdict an input to a derived gate, so this is the guard that keeps the authored half honest. Its STOPs are what make it one rather than a report: a record whose quoted element is no longer in its surface, a record naming a row the INDEX does not carry open, a record naming a row the #19 carve-out keeps gating, a discard on the register's own two surfaces that the table does not enter, and a NOT-DISCARDED negative seed being read as a discard -- each halts it rather than letting an authored judgment move a gate on text nobody re-read"
     },
     {
-      "tool": "tools/audit/gen_phase1_completion_inventory.py",
-      "args": [
-        "--check"
-      ],
-      "exit_code": 0,
-      "verdict": "PASS",
-      "stdout": [
-        "OK: phase-1 completion inventory re-derives byte-identically."
-      ],
-      "stderr": [],
-      "what_it_checks": "the phase-1 completion inventory re-derives -- D-231's clause still locatable by its anchors, and every home class, defense gap, open-row cut and gate verdict unchanged"
-    },
-    {
-      "tool": "tools/audit/gen_phase1_finish_line.py",
-      "args": [
-        "--check"
-      ],
-      "exit_code": 0,
-      "verdict": "PASS",
-      "stdout": [
-        "OK: the phase-1 finish line re-derives byte-identically."
-      ],
-      "stderr": [],
-      "what_it_checks": "the phase-1 FINISH LINE re-derives -- the scope ruling R2 of 2026-08-04 fixed. Its three STOPs ride with it and are the reason it is a guard rather than a report: an item carrying no closing act stops it, a row named as a user ruling that is no longer in the derived gating set stops it, and -- the one that matters -- a population NO ITEM CARRIES stops it, so the list cannot quietly stop being exhaustive as the register and the open-items index move under it"
-    },
-    {
-      "tool": "tools/audit/decisions/gen_outstanding_delegations.py",
-      "args": [
-        "--check"
-      ],
-      "exit_code": 0,
-      "verdict": "PASS",
-      "stdout": [
-        "the outstanding-delegation derivation re-derives from the files"
-      ],
-      "stderr": [],
-      "what_it_checks": "the outstanding-delegation population still derives at HEAD from the delegation grades and the home data (D-640/OI-335). Its own STOPs ride with it: a write-list member with no authored state label, a label for a non-member, and a class-C document with no authored draft each stop it, so the derived view cannot drift away from the write list in either direction"
-    },
-    {
       "tool": "tools/audit/decisions/gen_true_half_reach.py",
       "args": [
         "--check"
@@ -533,7 +544,7 @@
       "verdict": "FAIL",
       "stdout": [],
       "stderr": [
-        "STOP: authored verdicts for documents the derivation does not carry: STATUS_ARCHIVE.md -- the tree has moved under the table."
+        "STOP: authored verdicts for documents the derivation does not carry: STATUS_ARCHIVE.md, cowork_phase2_architecture_review.md -- the tree has moved under the table."
       ],
       "what_it_checks": "the filing convention's candidate set re-derives. What it guards is not the verdicts, which are authored judgments about documents, but three demands on the record as it stands: every derived candidate carries an authored verdict, so an unclassified candidate halts the run rather than passing silently; no verdict names a document the derivation no longer carries, so the tree moving under the table halts it too; and the derivation's SOUNDNESS against its seeds is re-computed on every run and published, so a signature that stops finding what the record already holds is reported rather than quietly trusted"
     },
@@ -654,7 +665,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "the decisions-register filter re-derives"
+        "the decisions-register filter re-derives at the pinned commit 0a2cc3f86a, whose blob of this artifact is byte-identical to the one on disk"
       ],
       "stderr": [],
       "what_it_checks": "the decisions-register filter re-derives — every entry of the register's data file walked, its deciding-act evidence quoted from its own recorded text, and one proposed class per entry. What it guards is not the proposals, which are a reading awaiting the user, but three demands on the record as it stands: the population and the rendered INDEX must carry the same entries in BOTH directions, so a derivation over a derived population cannot be published in part (D-671); every entry must carry the fields the classification reads, so one it cannot classify at all halts it rather than being skipped; and the distribution must account for the population exactly. Its other STOPs ride with it — a duplicate entry identity, and a status outside the vocabulary the data file's own header declares"
@@ -732,7 +743,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "no retirement has been applied, and the planned one re-derives"
+        "the soft-discard re-checks: 512 live + 165 retired = 677 before, no entry in both blocks and none in neither, every retired record carrying its finding, its date, its authority and the ruled clause"
       ],
       "stderr": [],
       "what_it_checks": "the ruled soft-discard's PLAN re-derives, and no retirement has been applied. Before the act this is what is live: every sentence of the ruling that ordered the discard must still be in its ruling record; the population must still be DERIVABLE from the committed recovery and sole-carrier artifacts — the entries the recovery pass returned NOTHING-FOUND for minus the members the guard withheld, with a member that is BOTH halting it and a member the decisions register's data file does not carry live halting it too (D-671); and the committed plan must still re-derive from those inputs. AFTER the act, the plan cannot be re-derived by construction, and what this checks instead is the applied state: live plus retired accounting for the whole former population BY ARITHMETIC, no entry in both blocks and none in neither, and every retired record carrying its finding, its date, its retiring authority and the ruled clause verbatim — the four the ruling requires of every record"
@@ -764,6 +775,32 @@
       "what_it_checks": "the R2 derived split re-derives — every check the ruled soft-discard's application turns red, classified SUPERSEDED (serves only the old phase-1 gate) or STANDING (serves a rule of the current record), each with its imports, its own stated purpose, and the derived explanation of its red. What it guards is not the verdicts but five demands: the ruling's sentences must still be in its ruling record; the population must still be IMPORTABLE from the `[FAIL]` block of the committed report that measured it, and a block that is missing, empty, or names a check the tree no longer carries halts it rather than letting the population shrink to what still parses; every member must be placeable by the verdict rule; a STANDING member whose red the enumerated-movement bound cannot explain halts it, which is the ruling's own STOP; and the tally must account for the population"
     },
     {
+      "tool": "tools/audit/decisions/gen_retired_subject_moves.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the retired-subject move list re-derives, and every table agrees with it"
+      ],
+      "stderr": [],
+      "what_it_checks": "the ruled kind-2 move list re-derives, and every one of the five authored judgment tables agrees with it in BOTH directions. What it guards is which AUTHORED judgment watches a live subject and which has followed its subject into the decisions register's retired-entries block: a judgment in both sections halts it; a judgment whose subject the discard retired and which is still in a live table halts it; a retired judgment whose subject is LIVE again halts it, so a judgment cannot be resurrected without being re-read; a live judgment whose subject is neither live nor retired by this act halts it, because its membership cannot be derived and the ruling's instruction is a STOP to the user rather than a guess; a retired section-kind judgment carrying no subject reference halts it; and every sentence of the ruling that ordered the treatment must still be in its ruling record. The section-grain derivation is IMPORTED from the home classifier that owns it rather than restated (#6), so the move list and that tool's own STOP cannot disagree about which judgments move"
+    },
+    {
+      "tool": "tools/audit/gen_census_movement_classification.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the census movement classification re-derives, and every moved value is inside the ruled bound"
+      ],
+      "stderr": [],
+      "what_it_checks": "every value the ruled soft-discard moved in the two derived censuses re-derives, and every one of them is inside the ruled bound. The comparison is the CITATION SCAN itself, re-run over the governing record at both states — the earlier one from the git objects at the commit before the act — rather than two rendered surfaces being diffed, and the scan and the governing-record definition are IMPORTED from the census that owns them (#6). Its STOPs are the ruling's own: a moved value none of the three categories reaches halts it, because the ruling's instruction on any other movement is a STOP-and-report and this tool may not widen the bound on its own authority; a name ENTERING the citation scan halts it, since the discard only ever removes an entry's text from the rendered register; and a census whose scan cannot be read at either state halts it. What it does NOT assert is that a moved document is worth retiring: a crossing confers CANDIDACY only, and every ruled condition on a candidacy stands untouched"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -784,10 +821,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 677",
+        "backbone decisions: 512",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 677/677",
-        "cited line numbers correct: 671/671   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 512/512",
+        "cited line numbers correct: 506/506   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -815,7 +852,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "register patterns compiling: 1219/1219",
+        "register patterns compiling: 854/854",
         "derivation dry-run: 14460/14460 clusters, 15224/15224 occurrences — nothing written",
         "OVERALL PASS"
       ],
@@ -830,47 +867,44 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "population: 190 entries / 38 documents",
-        "  before: {'contract-home': 88, 'gap': 102}",
-        "  after:  {'contract-home': 163, 'gap': 27}",
-        "  moved:  83  (to gap 4, to contract-home 79)",
+        "population: 151 entries / 35 documents",
+        "  before: {'contract-home': 73, 'gap': 78}",
+        "  after:  {'contract-home': 131, 'gap': 20}",
+        "  moved:  66  (to gap 4, to contract-home 62)",
         "    cowork_architecture_reassessment.md: −4 / +0",
         "    cowork_confidence_contract.md: −0 / +1",
         "    cowork_engage_arc_plan.md: −0 / +3",
         "    cowork_joint_estimator_architecture.md: −0 / +5",
         "    cowork_joint_estimator_factorization.md: −0 / +1",
-        "    cowork_joint_key_chord_design.md: −0 / +4",
-        "    cowork_layer1_note_model_design.md: −0 / +3",
-        "    cowork_layer2_slicing_design.md: −0 / +2",
+        "    cowork_joint_key_chord_design.md: −0 / +1",
+        "    cowork_layer1_note_model_design.md: −0 / +1",
         "    cowork_layer6_grouping_design.md: −0 / +9",
         "    cowork_notation_adoption_increment.md: −0 / +3",
         "    cowork_phrase_boundary_design.md: −0 / +10",
         "    cowork_progression_schema_design.md: −0 / +8",
-        "    cowork_progression_schema_dictionary.md: −0 / +9",
-        "    cowork_score_census.md: −0 / +13",
+        "    cowork_progression_schema_dictionary.md: −0 / +5",
+        "    cowork_score_census.md: −0 / +7",
         "    cowork_structural_integrity_audit.md: −0 / +1",
         "    docs/llm_integration.md: −0 / +7",
-        "  since phase 1q (the written delegations alone): 92 moved (to contract-home 92, to gap 0)",
+        "  since phase 1q (the written delegations alone): 77 moved (to contract-home 77, to gap 0)",
         "    cowork_confidence_contract.md: −0 / +1",
         "    cowork_engage_arc_plan.md: −0 / +3",
         "    cowork_joint_estimator_architecture.md: −0 / +5",
         "    cowork_joint_estimator_factorization.md: −0 / +1",
-        "    cowork_joint_key_chord_design.md: −0 / +4",
-        "    cowork_layer1_note_model_design.md: −0 / +3",
-        "    cowork_layer2_slicing_design.md: −0 / +2",
-        "    cowork_layer3_keymode_design.md: −0 / +1",
-        "    cowork_layer5_function_design.md: −0 / +8",
+        "    cowork_joint_key_chord_design.md: −0 / +1",
+        "    cowork_layer1_note_model_design.md: −0 / +1",
+        "    cowork_layer5_function_design.md: −0 / +7",
         "    cowork_layer6_grouping_design.md: −0 / +9",
         "    cowork_notation_adoption_increment.md: −0 / +3",
         "    cowork_notation_output_contract.md: −0 / +1",
         "    cowork_phrase_boundary_design.md: −0 / +10",
         "    cowork_prefit_gates.md: −0 / +5",
         "    cowork_progression_schema_design.md: −0 / +8",
-        "    cowork_score_census.md: −0 / +13",
+        "    cowork_score_census.md: −0 / +7",
         "    cowork_voiceleading_axis_design.md: −0 / +8",
         "    docs/llm_integration.md: −0 / +7",
-        "  write-list documents still holding a `gap` entry: cowork_layer1_note_model_design.md, cowork_layer1_tone_collection_design.md",
-        "  since phase 1r (the 2026-08-08 apply): 24 moved (to contract-home 24, to gap 0)",
+        "  write-list documents still holding a `gap` entry: cowork_layer1_tone_collection_design.md",
+        "  since phase 1r (the 2026-08-08 apply): 23 moved (to contract-home 23, to gap 0)",
         "the home classification and its artifact re-derive from the files"
       ],
       "stderr": [],
@@ -930,49 +964,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "phase1w: A1 held; 92 entries derived; 35 anchors located; 5 recorded figures located"
+        "phase1w: A1 held; 62 entries derived; 35 anchors located; 5 recorded figures located"
       ],
       "stderr": [],
       "what_it_checks": "the legacy-mark verification re-derives, and its declared premises still hold"
-    },
-    {
-      "tool": "tools/audit/decisions/gen_finish_line_item1_routes.py",
-      "args": [
-        "--check"
-      ],
-      "exit_code": 0,
-      "verdict": "PASS",
-      "stdout": [
-        "PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 8 documents; 69 re-home / 8 delegation / 17 no-home)"
-      ],
-      "stderr": [],
-      "what_it_checks": "every entry of finish-line item 1 still carries an authored closing route, no route names an entry the item no longer carries other than the ones this wave re-homed, and the route population still re-derives from the finish line rather than from a stored list"
-    },
-    {
-      "tool": "tools/audit/decisions/gen_item1_rehome_blocker.py",
-      "args": [
-        "--check"
-      ],
-      "exit_code": 0,
-      "verdict": "PASS",
-      "stdout": [
-        "PASS: item1_rehome_blocker.json re-derives byte-identically (0 open re-home rows)"
-      ],
-      "stderr": [],
-      "what_it_checks": "what actually blocks finish-line item 1's re-home class still re-derives — the standing autonomous-operation authorization still locatable in CLAUDE.md by its anchor, every open re-home row's owning specification still naming at least one file, and every row's blocker still cut from that row's own recorded reason rather than from a stored verdict"
-    },
-    {
-      "tool": "tools/audit/decisions/gen_r1_superseded_reach.py",
-      "args": [
-        "--check"
-      ],
-      "exit_code": 0,
-      "verdict": "PASS",
-      "stdout": [
-        "PASS: r1_superseded_reach.json re-derives byte-identically (18 entries; 8 leave / 0 route-changed / 10 neither)"
-      ],
-      "stderr": [],
-      "what_it_checks": "ruling R1's application re-derives — every member of item 1's NO-HOME class still carries an authored successor record, no successor record names an entry the class no longer carries, every authored successor is still NAMED IN THE SUPERSEDED ENTRY'S OWN TEXT, and every one that resolves to a register identifier still resolves to an entry the register holds"
     },
     {
       "tool": "tools/audit/decisions/reaim_home_anchors.py",
@@ -1032,8 +1027,8 @@
     }
   ],
   "summary": {
-    "run": 57,
-    "passing": 56,
+    "run": 53,
+    "passing": 52,
     "failing": 1,
     "failing_tools": [
       {
@@ -1044,6 +1039,6 @@
       }
     ],
     "not_run": 4,
-    "historical_records": 10
+    "historical_records": 16
   }
 }

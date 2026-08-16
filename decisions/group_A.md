@@ -65,7 +65,7 @@
 
 **Home.** `ARCHITECTURE.md:31-33`
 
-**Provenance.** ARCHITECTURE.md:48-49 cites cowork_joint_estimator_factorization.md as the full specification. The cap's FORM is the established semi-Markov default (cowork_joint_estimator_factorization.md:112-114); the VALUE 4 has no recorded derivation anywhere in the record - derivation not recorded
+**Provenance.** ARCHITECTURE.md:48-49 cites cowork_joint_estimator_factorization.md as the full specification. The cap's FORM is the established semi-Markov default (cowork_joint_estimator_factorization.md:112-114); the VALUE 4 has no recorded derivation anywhere in the record - derivation not recorded ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ARCHITECTURE.md` line 3, carrying a user-act marker and matching the decisions register's own recogniser `semi-Markov`, reads — "**★★ GOVERNING DECISION (user-ratified 2026-07-17): the key/mode/chord estimator is JOINT — see `cowork_joint_estimator_architecture.md`.** Key, mode, and chord are inferred by ONE probabilistic decode over `(tonic, mode, chord)` with segmentation as a modeled (semi-Markov) variable and every enumerated clue as a theory-grounded factor — NOT the feed-forward, per-layer pipeline the layer sections below still describe. Those layer sections (L1–L6) remain the accurate description of the CURRENT code and its retirements, but the TARGET architecture is the joint estimator; the layer specs are updated to it as the design pass proceeds. Theory basis: `cowork_key_chord_joint_inference_grounding.md`." The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-005 — The joint estimator is the production inference layer on the batch and corpus surface
 
@@ -125,7 +125,7 @@
 
 **Home.** `ARCHITECTURE.md:66`
 
-**Provenance.** open_items/OI-193 (OPEN)
+**Provenance.** open_items/OI-193 (OPEN) ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ARCHITECTURE.md` line 11, carrying a user-act marker, a ratification event named and matching the decisions register's own recogniser `forward-backward marginal`, reads — "**★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the joint estimator is now the PRODUCTION inference layer on the batch/corpus surface.** As-built module `src/composing/analysis/joint/`: the **L1 fact adapter** (`jointfactadapter` — score → `Piece` from the published `notemodel::notatedNotes()` tie-unresolved surface + the score's structural facts, per the OI-180 sanction: no module-private raw-note walk); the **event lattice + exact block-factorized semi-Markov Viterbi decoder** (`jointdecoder`) with the ratified **§5 total-order tie-break**; the **factor log-probability provider** (`jointadapter` — the ten-factor log-linear score, Katz leftover option 2a); the frozen generative **tables** (`jointtables` — the committed all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` / `fermata_boundary_addendum.json`); and the **wei" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-095 — The dual path during the joint-estimator build is a declared, bounded, pre-ratified migration state
 
@@ -394,30 +394,6 @@
 **Home section.** **“§1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state”** — `### §1.1 The decision: a BOUNDED coupling step, NOT a unified `(key,chord)` hidden state` (heading at line 80). A delegation at cowork_engage_arc_plan.md:44 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step this decision places was shelved against measurement and that shelving is register entry **D-278** (user-ratified 2026-07-07, re-ratified 2026-08-02), so the placement is shelved with it; the document's own banner says it is retained as the record and that the step is off the build inventory. **Reported, not statused as a supersession:** the option this decision REJECTED — one decision over a combined tonality-and-chord state — is what **D-001** later adopts as the production architecture, and no record connects the two; the user ruled at D-278's ratification that the shelving does not bear on D-001, and the two objections raised here are answered elsewhere in the record (the decision-neutrality corollary answers the rebuild objection; the adoption measurement answers the magnitude objection). NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
-
-### D-379 — Whether an alternative tonality would change the chord CANNOT be measured without re-deciding under it — the exact coupled-case condition is not computable read-only, which is why it stayed unmeasured
-
-> **(b) — the chord actually flips — computed BY the step's own per-key re-decode (§2.2).** This is the exact
->   condition, and it is **not pre-computable read-only** — you can only know the winner flips under a carried key
->   by *re-decoding under it*. This is precisely why C3 was found "un-computable read-only"
->   (`cc_engage_c3_measurement_report.md` §2.3): (b) IS the owed build. In the engaged step it is computed on the
->   pre-filtered (a)∧(a′) candidate set, and the step **commits a coupled (re-ranked) decision only where (b)
->   holds** (the winner root differs across the carried keys); where (b) is false the re-decode agrees with the
->   L3-argmax decode and the step passes through.
-
-**In plain words.** The population that a tonality-and-chord coupling would actually help is the set of places where naming a different tonality would change the chord. There is no way to identify that set by inspection: the only way to know the chord changes under an alternative tonality is to re-decide it under that tonality. So the exact condition cannot be measured before the re-decision exists, and every number quoted for it before then is a structural stand-in, not the quantity itself.
-
-**Why.** Established by the attempt: the measurement report that went looking for this population found it computable nowhere, and the record names that finding as the reason. The consequence is designed around rather than assumed away — a cheap two-stage filter narrows the candidates first, the exact condition is computed only on those, and the coupled decision is committed only where it holds.
-
-**Status.** LIVE · decided 2026-07-07 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_joint_key_chord_design.md:276-282`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **“§3.1 The trigger, grounded in C3”** — `### §3.1 The trigger, grounded in C3` (heading at line 259). A delegation at cowork_engage_arc_plan.md:44 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this statement is about what is and is not measurable, and stands independently of it — the same document records the shelving probe's own fire-rate as a structural proxy rather than the exact condition. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
 
 ### D-449 — Factor granularity is fixed: the bass factor is evaluated per event, the missing-tone penalty per event of segment length, the emission per tone, and the boundary-family factors per boundary
 
@@ -703,50 +679,6 @@ names this as settled-by-desk-sim." The verbatim above is RE-TAKEN from the new 
 
 **Provenance.** The fifth of the five ratified design decisions, and the one that discharges the mid-piece signature-change deferral. It is ledgered as OUR form, with the literature's absence of any signature prior explicitly cited. Whether the prior conditions the initial state only or acts as a persistent pull was deliberately left to the desk simulation, which settled it as **D-450**. The standing rule it must not contradict is **D-056** — notes always win. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
 
-### D-529 — The joint architecture's expected win is ASYMMETRIC — large on key and mode, modest on chord root — and the written predictions must say so, because a large root claim would itself be a surprise
-
-> **Reservation 1 — the joint win is asymmetric (grounding doc §2b/§2c), and the predictions must say so.**
-> Ni et al.: key ~77→84 %, chord +≈1 pp. Wu et al.: key +3.5 pp, chord ≈flat. RNBERT: explicit joint-decoding
-> machinery gave a small degradation. A is the established route to **mode/key** precision; on the **chord
-> root** it buys coherence more than accuracy. The root-agree residual (~34 %) is more plausibly dominated by
-> emission quality, segmentation, and GT-granularity noise than by missing coupling. The #17b written
-> predictions for A's adoption must reflect this asymmetry — large movement expected on the key columns,
-> modest on root; a large root claim would itself be a surprise (#3).
-
-**In plain words.** The published results this architecture is grounded in improve tonality substantially and chord identity barely. The predictions written before its adoption must reflect that. If the chord-root number moved a lot, that would be a warning rather than a success.
-
-**Why.** Read off the primary sources rather than hoped for: two of the three cited studies report a large key gain with a flat or near-flat chord gain, and the third records that explicit joint-decoding machinery gave a small degradation. The document draws the further consequence for our own residual — the root disagreement is more plausibly dominated by emission quality, segmentation and ground-truth granularity than by missing coupling.
-
-**Status.** LIVE · decided 2026-07-18 · ratifier not stated
-
-**Home.** `cowork_joint_estimator_architecture.md:200-206`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
-
-**Home section.** **§6** — `## 6. Recorded assessment (Cowork, 2026-07-18) — agreement, two reservations, one refinement` (heading at line 192). A delegation at ARCHITECTURE.md:3 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
-
-**Provenance.** The first of two reservations Cowork recorded at the user's request after the architecture ratification, as design-pass input. It is #3 applied in advance: the shape of the expected movement is written down so that an unexpected shape is recognisable as a failure of the premises rather than celebrated. The adoption measurement it governs is the OI-178 re-baseline recorded in `CLAUDE.md` gate block (A). Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
-
-### D-530 — The joint architecture is a CONSTRAINED optimum, not a global one: the learned shared-representation models measure better and are excluded because they are un-establishable and undiagnosable
-
-> **Reservation 2 — A is a constrained optimum, not a global one (stated for honesty of the record).** On
-> pure measured precision the published state of the art for symbolic Roman-numeral analysis is the learned
-> shared-representation models (AugmentedNet, RNBERT, AnalysisGNN — grounding doc §2c), trained on the same
-> DCML corpora used here as ground truth, so "data we lack" is only partially true. A is chosen because those
-> models are un-establishable and undiagnosable under #1/#18/#19 — and because their absolute RN accuracy
-> (~45–50 %) leaves the gap plausibly small on this domain. The decision stands; its basis is the
-> methodology, not a claim that A out-measures the learned systems.
-
-**In plain words.** On measured accuracy alone the best published systems for this task are learned models trained on the same annotated corpora we grade against. They are not chosen. The reason is that they cannot be established or diagnosed under this project's own rules, not that they perform worse.
-
-**Why.** Stated for honesty of the record, with the counter-argument to our own earlier justification included: those models are trained on the very corpora used here as ground truth, so 'data we lack' is only partially true. The remaining ground for the choice is the methodology — #1, #18 and #19 — together with the observation that their absolute accuracy leaves the gap plausibly small on this domain.
-
-**Status.** LIVE · decided 2026-07-18 · ratifier not stated
-
-**Home.** `cowork_joint_estimator_architecture.md:208-214`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
-
-**Home section.** **§6** — `## 6. Recorded assessment (Cowork, 2026-07-18) — agreement, two reservations, one refinement` (heading at line 192). A delegation at ARCHITECTURE.md:3 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
-
-**Provenance.** The second recorded reservation, and an instance of the standing ledger corollary to #17: where a design is chosen for methodology-compliance rather than raw measured performance, the record names the unconstrained best known alternative and why it is excluded, so a future reader can re-test whether the constraint still binds. The same fork was ruled on measured evidence a month earlier as **D-531**. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
-
 ### D-532 — The chord-transition table gains one pooling level that groups a secondary dominant's continuations by their RELATION to its target — restoring from counts the one behaviour that defines the chord class
 
 > **The chord-transition table carries one pooling level for a secondary dominant's continuations,
@@ -888,31 +820,4 @@ observations in THIS corpus." The verbatim above is RE-TAKEN from the new home, 
 **Home section.** **§5** — `## 5. The decode` (heading at line 147). A delegation at ARCHITECTURE.md:276 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
 
 **Provenance.** `cowork_joint_estimator_factorization.md` §5, the user-ratified structure-design specification of 2026-07-19; this clause is marked *user-ratified 2026-07-20 at the C++ module build's parity finding*, so it entered the specification a day after the structure was ratified and on a measurement made during the build. Read in full by READ WAVE 4, 2026-08-04.
-
-### D-621 — Hand-built versus learned is a question about the EMISSION alone — the decoding structure is decided and accommodates either
-
-> - **Hand-built versus learned is a question about the EMISSION alone; the decoding structure is
->   decided and accommodates either.** The machinery that searches for the best reading consumes
->   scores and constraints and is indifferent to how they were produced, so a learned scorer could
->   replace a hand-built one without rebuilding anything around it. *Why:* it follows from where the
->   two halves sit — replacing a producer changes no structure — and the choice is sized by
->   measurement rather than preference: a learned emission pays on the ambiguous remainder, not on the
->   majority the constraints already pin. **This separation survives the supersession** and is the one
->   the ratified estimator makes in its own terms, its factors being the emission and its exact decode
->   the machinery.
-
-**In plain words.** The long-standing question of whether the analysis should be written by hand or trained from data is not a question about the machinery that searches for the best reading — that machinery is settled and works either way. It is a question only about how each candidate reading is scored. So a trained scorer could be dropped in later without rebuilding anything around it.
-
-**Why.** It follows from where the two halves sit, which the decision states: the decoder consumes scores and constraints and is indifferent to how they were produced, so replacing their producer changes no structure. The measurement that sizes the choice is named with it — the residual decomposition tells where a trained scorer would actually pay, which is the ambiguous remainder rather than the majority the constraints already pin.
-
-**Status.** LIVE · decided 2026-06-15 · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:541-549`
-
-**Provenance.** `docs/architecture_joint_inference.md` §7. Read in full by READ WAVE 6, 2026-08-04. ⚠ The document is superseded as an architecture proposal (`ARCHITECTURE.md` §2.14; the ratified estimator is **D-001**), and the SHAPE it proposes was replaced — but the separation this clause states survives into the ratified estimator, whose factors are the emission and whose decode is the machinery. It sits beside the later measured verdict to keep the hand-written scorer with the learned option retained as a stated fallback. The record states no ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). ★ ASSUMPTION A4 DISCHARGED BY READING, AND THIS IS THE ENTRY IT MATTERED MOST FOR: the supersession at `ARCHITECTURE.md:960-961` reaches the shape this clause's own document proposed, so what is homed is only the SEPARATION, stated as one the ratified estimator makes in its own terms — the superseded proposal's structure is not copied. Routed to the joint-estimator section of `ARCHITECTURE.md`. FORMER HOME, PRESERVED (#12): `docs/architecture_joint_inference.md:100-105`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 98, "section": "## §7 — Where A-vs-B (hand-built vs learned) lives", "label": "“§7”", "delegated": null, "delegation": "ARCHITECTURE.md:858", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "The **structure** is decided: constrained joint inference. **A-vs-B lives entirely in the EMISSION** — the
-soft scoring and the constraint definitions. Hand-built features now (explainable, no training data); a
-learned emission later (higher ceiling, decoded by the *same* constrained-joint machinery — part-1 rec.5).
-The architecture is agnostic to that choice and accommodates both; the §9 residual sizing tells us where a
-learned emission would actually buy something (the soft-ambiguous + floor slice) versus where hand-built
-constraints already suffice (the pinned majority)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 

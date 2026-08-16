@@ -287,7 +287,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 *Why it is mixed (AUTHORED):* One naming convention covers ratified contract documents that governing surfaces delegate to, and exploratory drafts that were superseded the week they were written. The user's own direction is that these are NOT direct witnesses and that their value is measured rather than presumed.
 
-**NAMED in the governing record — 84 of 113 files.**
+**NAMED in the governing record — 82 of 113 files.**
 
 - **PROPOSED role (AUTHORED):** mining witness
 - **PROPOSED mining verdict (AUTHORED):** mine via the airlock
@@ -332,7 +332,6 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cowork_key_mode_inference_diagnosis.md`
 - `cowork_l1_l5_premise_debt_audit.md`
 - `cowork_l1l3_stabilization_plan.md`
-- `cowork_l1l4_architecture_audit.md`
 - `cowork_l1l4_completion_ledger.md`
 - `cowork_l1l4_review_charter.md`
 - `cowork_layer1_extend_design.md`
@@ -377,14 +376,13 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cowork_target_architecture_review.md`
 - `cowork_term_theory_grounding.md`
 - `cowork_tpc_capability_design.md`
-- `cowork_types_header_design.md`
 - `cowork_uncertain_resolver_investigation.md`
 - `cowork_union_search_record.md`
 - `cowork_voiceleading_axis_design.md`
 
 </details>
 
-**NAMED NOWHERE in the governing record — 29 of 113 files.**
+**NAMED NOWHERE in the governing record — 31 of 113 files.**
 
 - **PROPOSED role (AUTHORED):** airlock input
 - **PROPOSED mining verdict (AUTHORED):** mine via the airlock
@@ -410,6 +408,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cowork_corpus_audit.md`
 - `cowork_extent_decision_surface.md`
 - `cowork_implementation_review.md`
+- `cowork_l1l4_architecture_audit.md`
 - `cowork_l1l4_review_note.md`
 - `cowork_layer4_spec_review.md`
 - `cowork_layer5_spec_review.md`
@@ -422,6 +421,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cowork_spec_polish_findings_a.md`
 - `cowork_spec_polish_findings_b.md`
 - `cowork_target_document_structure_2026_08_09.md`
+- `cowork_types_header_design.md`
 - `cowork_upstream_merge_risk.md`
 
 </details>
@@ -470,7 +470,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 *Why it is mixed (AUTHORED):* One naming convention covers measurement reports the gate block cites as provenance and one-off diagnostic write-ups. The first kind is evidence for the empirical findings ledger; the second is at most an antipattern source.
 
-**NAMED in the governing record — 52 of 82 files.**
+**NAMED in the governing record — 51 of 82 files.**
 
 - **PROPOSED role (AUTHORED):** airlock input
 - **PROPOSED mining verdict (AUTHORED):** mine via the airlock
@@ -483,7 +483,6 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cc_a8_rebaseline_measure_report.md`
 - `cc_backlog_triage_report.md`
 - `cc_c1_reliability_report.md`
-- `cc_corpus_wave3_report.md`
 - `cc_eg2_probe_report.md`
 - `cc_engage_c3_measurement_report.md`
 - `cc_engage_pre_l5_refactor_report.md`
@@ -535,7 +534,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 </details>
 
-**NAMED NOWHERE in the governing record — 30 of 82 files.**
+**NAMED NOWHERE in the governing record — 31 of 82 files.**
 
 - **PROPOSED role (AUTHORED):** airlock input
 - **PROPOSED mining verdict (AUTHORED):** mine via the airlock for antipatterns
@@ -548,6 +547,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cc_acquisition_round_report.md`
 - `cc_c1_fold_report.md`
 - `cc_corpus_wave2_report.md`
+- `cc_corpus_wave3_report.md`
 - `cc_direct_metric_search_report.md`
 - `cc_dl3a_closeout_report.md`
 - `cc_engage_fanout_measure_data.json`
@@ -1142,7 +1142,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 - `documentation-directory-prose` — 15 of 47 files (uncited side)
 - `measurement-and-analysis-tools` — 100 of 130 files (uncited side)
-- `reports-from-the-coding-side` — 30 of 82 files (uncited side)
+- `reports-from-the-coding-side` — 31 of 82 files (uncited side)
 
 **★ THE STANDING WARNING ON ALL OF THEM:** the uncited side is derived from a scan that sees only the governing record. Before any retirement is executed, callers and references should be checked at the objects. That act is named here and is not started.
 
@@ -1174,7 +1174,7 @@ Assumption A2 of the dispatch: the population is the **tracked** tree, and an un
 
 **Why this is not a housekeeping remark — and the number that says so, DERIVED by the same citation scan the classes above are split by:**
 
-> **122 of those 571 ignored files are NAMED by the governing record.**
+> **117 of those 571 ignored files are NAMED by the governing record.**
 
 These are documents the governing documents and the two registers cite as provenance — including by gate block (A) of `CLAUDE.md`, which names the measurement provenance of the ratified baselines, and by rulings of the eighteenth stop. **A fresh clone of this repository does not contain them.** They are therefore not available to any phase whose inputs are what git carries, and the handover-safety the method-directions record requires does not currently extend to the evidence the governing record leans on.
 
@@ -1183,10 +1183,8 @@ These are documents the governing documents and the two registers cite as proven
 - `cc_adoption_measurement_report.md`
 - `cc_cadence_key_investigation_dossier.md`
 - `cc_cadence_precision_investigation_dossier.md`
-- `cc_e0_fullspine_report.md`
 - `cc_foundation_stage3b_report.md`
 - `cc_functional_residual_dossier.md`
-- `cc_gap_analysis_report.md`
 - `cc_gap_analysis_v2_report.md`
 - `cc_gate_rebaseline_verify_report.md`
 - `cc_instruction_analysis_cost_profile.md`
@@ -1287,10 +1285,7 @@ These are documents the governing documents and the two registers cite as proven
 - `cc_layer1_impl_report.md`
 - `cc_layer2_audit_dossier.md`
 - `cc_layer2_impl_report.md`
-- `cc_layer3_error_decomposition_report.md`
 - `cc_layer3_jazz_churn_investigation.md`
-- `cc_layer3_sweep_report.md`
-- `cc_layer3_tpc_keymeasure_report.md`
 - `cc_layer3_wiring_report.md`
 - `cc_metric_rebaseline_report.md`
 - `cc_module_layering_assessment_dossier.md`

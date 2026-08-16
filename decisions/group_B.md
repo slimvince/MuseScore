@@ -20,7 +20,7 @@
 
 **Home.** `ARCHITECTURE.md:82-84`
 
-**Provenance.** ARCHITECTURE.md:73 names 'Decision A2' and cites cowork_notation_output_contract.md §3.1-§3.4
+**Provenance.** ARCHITECTURE.md:73 names 'Decision A2' and cites cowork_notation_output_contract.md §3.1-§3.4 ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ARCHITECTURE.md` line 11, carrying a user-act marker, a ratification event named and matching the decisions register's own recogniser `Decision A2`, reads — "**★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the joint estimator is now the PRODUCTION inference layer on the batch/corpus surface.** As-built module `src/composing/analysis/joint/`: the **L1 fact adapter** (`jointfactadapter` — score → `Piece` from the published `notemodel::notatedNotes()` tie-unresolved surface + the score's structural facts, per the OI-180 sanction: no module-private raw-note walk); the **event lattice + exact block-factorized semi-Markov Viterbi decoder** (`jointdecoder`) with the ratified **§5 total-order tie-break**; the **factor log-probability provider** (`jointadapter` — the ten-factor log-linear score, Katz leftover option 2a); the frozen generative **tables** (`jointtables` — the committed all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` / `fermata_boundary_addendum.json`); and the **wei" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-010 — The switch - the record path is the production in-app notation analysis
 
@@ -110,49 +110,6 @@
 
 **Provenance.** ARCHITECTURE.md:132-134. Derivation not recorded: the convention is stated as a definition, with no alternative considered and no reason given
 
-### D-016 — Display renderings are presentation; facts are published
-
-> display renderings are presentation, facts are published
-
-**In plain words.** The Roman numeral is a fact the estimator publishes. The chord symbol you read on screen and the Nashville number are ways of showing that fact, produced by the display code.
-
-**Why.** Stated constraint, ARCHITECTURE.md:154-155 (Decision D2 + the contract §3.3 amendment), resting on §2.3 (ARCHITECTURE.md:483-485): the analysis layer produces structured data and never display strings, a separation `ChordSymbolFormatter` already establishes.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:162`
-
-**Provenance.** ARCHITECTURE.md:154 names 'Decision D2 + the contract §3.3 amendment'
-
-### D-017 — The inference/presentation boundary is guarded mechanically, both ways
-
-> **THE BOUNDARY
-> IS PERMANENTLY GUARDED both ways** by a mechanical include-closure test
-
-**In plain words.** A test enforces that the analysis code cannot reach the display code and the display code cannot reach the analysis internals. The test itself is checked by deliberately breaking it.
-
-**Why.** Stated constraint, ARCHITECTURE.md:161-166: the boundary D-071 draws is enforceable only mechanically, so an include-closure test asserts it in both directions and carries a negative control that fires on a perturbed include.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:167-168`
-
-**Provenance.** ARCHITECTURE.md:160-167; the guard carries a negative control
-
-### D-018 — The key-exposure bucket is decided once, at one site
-
-> The implode reads the stored bucket (#6 — one thresholding site per gate).
-
-**In plain words.** How confident the program is about the tonality is turned into 'below tentative / tentative / assertive' in exactly one place, and everything downstream reads that answer instead of deciding again.
-
-**Why.** Stated constraint, ARCHITECTURE.md:178 - #6, one thresholding site per gate: the bucket is set once at the section-layer set site and the implode reads it, instead of each consumer re-thresholding.
-
-**Status.** LIVE · decided 2026-07-27 · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:185`
-
-**Provenance.** ARCHITECTURE.md:172-178; open_items/OI-182 (EXECUTED at the record surface)
-
 ### D-019 — The record arm publishes the raw key-axis gap, with no remapping to 0..1
 
 > `keyConfidence` = the RAW §3.3
@@ -196,7 +153,7 @@
 
 **Home.** `ARCHITECTURE.md:213`
 
-**Provenance.** open_items/OI-194 (OPEN - its own increment after the switch)
+**Provenance.** open_items/OI-194 (OPEN - its own increment after the switch) ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ARCHITECTURE.md` line 11, carrying a user-act marker, a ratification event named and matching the decisions register's own recogniser `OI-194`, reads — "**★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the joint estimator is now the PRODUCTION inference layer on the batch/corpus surface.** As-built module `src/composing/analysis/joint/`: the **L1 fact adapter** (`jointfactadapter` — score → `Piece` from the published `notemodel::notatedNotes()` tie-unresolved surface + the score's structural facts, per the OI-180 sanction: no module-private raw-note walk); the **event lattice + exact block-factorized semi-Markov Viterbi decoder** (`jointdecoder`) with the ratified **§5 total-order tie-break**; the **factor log-probability provider** (`jointadapter` — the ten-factor log-linear score, Katz leftover option 2a); the frozen generative **tables** (`jointtables` — the committed all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` / `fermata_boundary_addendum.json`); and the **wei" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-275 — Every published record carries its own instrument provenance; a provenance-less analysis cannot exist
 

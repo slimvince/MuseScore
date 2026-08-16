@@ -6,35 +6,6 @@
 > generator is `tools/audit/decisions/gen_decisions_register.py`. To change an
 > entry, edit the data and regenerate.
 
-### D-079 — The function layer annotates and resolves; it never rewrites the committed chord
-
-> additive over L4 (it annotates and resolves; it never
-> rewrites the committed chord identity)
-
-**In plain words.** The stage that works out a chord's role in the key may label it and settle open questions, but it may not change which chord was identified.
-
-**Why.** SEARCHED 2026-08-09 and the record holds NO derivation for the prohibition itself, though it states the rule sharply and in a form that shows what it protects. The home says the function layer *"reads the L4 chord **in** the L3 key"* and is *"additive over L4"*, and it names the two things the layer MAY do — annotate, and resolve carried abstentions by selecting among readings already handed to it (**D-080**). No reason is given for the boundary: nothing says why an annotating layer must not overturn the chord identity, no alternative is recorded as considered, and no measurement is attached. The general grounds that would supply one — #7's layer adherence, and the fact that a downstream rewrite would make the committed chord unfalsifiable at the layer that committed it — are nowhere stated as THIS decision's ground, and are not written in as one. Recorded as an established gap. Its live counterpart, which is a DIFFERENT decision and does carry a defense, is the confidence-weighted forward-override the same section names: where a later layer may move an earlier commitment, the record says so explicitly and bounds it.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2078-2079`
-
-**Provenance.** ARCHITECTURE.md:1389-1398 (Layer 5 - Built+Dormant, design ratified)
-
-### D-080 — Carried abstentions are resolved by selecting among the carried readings, never re-derived
-
-> the carried L4 abstentions are resolved by **selecting** among the carried readings (never re-derived)
-
-**In plain words.** Where the chord stage could not decide, the function stage picks from the options it was handed. It does not work the chord out again from the notes.
-
-**Why.** SEARCHED 2026-08-09. The record holds NO derivation as a stated reason, and it holds one STRUCTURAL fact that the rule follows from and that the home makes visible: the layer *"reads the L4 chord **in** the L3 key"* and is *"additive over L4"* (**D-079**), so re-deriving a reading from the notes would be the chord analysis run a second time, in a layer whose whole contract is that it does not do that. That is the rule restated at the boundary rather than a reason for drawing the boundary there, and the two are not conflated here. Nothing in the record says why SELECTING among carried readings is the right resolution rather than, say, re-deciding with the key now known; no alternative is recorded as considered and no measurement is attached. Recorded as an established gap. **What the record DOES establish, elsewhere and as a separate finding, is that this layer is the right OWNER of the resolution** — the same section states that the resolver of carried uncertain readings is this layer itself and not a distinct gated box, which answers WHERE and not WHY-BY-SELECTION.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2082-2083`
-
-**Provenance.** ARCHITECTURE.md:1389-1398
-
 ### D-081 — The cadence detector is key-agnostic
 
 > The cadence
@@ -63,21 +34,6 @@
 **Home.** `ARCHITECTURE.md:2197`
 
 **Provenance.** ARCHITECTURE.md:1400-1407 (Layer 6 - Design-only, v1 spec)
-
-### D-083 — Hierarchy, periods and prolongation are out of the validatable core
-
-> Hierarchy,
-> periods/sentences, and prolongation are out of the validatable core (verifiability contract, §2.15).
-
-**In plain words.** Deeper structural theory - nested hierarchy, periods, prolongation - is deliberately left out, because we have no annotated music to check it against.
-
-**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home NAMES A GROUND rather than stating a derivation, and that is more than an empty field but less than a reason: the exclusion is given as following from the "verifiability contract" (§2.15), in a parenthetical inside the decision's own sentence. So the defense is BY REFERENCE — the contract is what decides what sits inside the validatable core, and these three are outside it. Checked rather than assumed: the phrase "validatable core" occurs nowhere else in the document, so §2.15 is named as the governing contract rather than restating this exclusion, and no derivation is stated at the home itself.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2202-2203`
-
-**Provenance.** ARCHITECTURE.md:1400-1407, deriving from D-029
 
 ### D-084 — The progression-schema recognizer is a consumer of the function layer, not a new layer
 
@@ -126,7 +82,7 @@
 
 **Home.** `ARCHITECTURE.md:7294-7296`
 
-**Provenance.** ARCHITECTURE.md:6012-6014. Section 5.10 (ARCHITECTURE.md:3860) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented). ★ SCOPE CORRECTED 2026-08-02 (CC, at the phase-1i delivery acts, on Cowork's measured probe finding B-1, user-reviewed): the entry's verbatim is a statement about the LEGACY `ChordFunction` structure, and its plain restatement wrongly generalized it to the whole system. The production joint estimator — the inference layer on both surfaces since the OI-178 adoption — DOES emit applied labels (`src/composing/analysis/joint/jointrender.h:62-63`; measured 8.62 % of scored duration, with exact matches against applied ground truth: `tools/joint_estimator/applied_chord_stake_2026_08_02/`). The OI-53 tension named above is therefore substantially ANSWERED: the joint surface emits applied labels, the legacy `ChordFunction` structure does not carry them. The decision itself is unchanged and stays DEFERRED for the surface it governs; what changed is the recorded scope.
+**Provenance.** ARCHITECTURE.md:6012-6014. Section 5.10 (ARCHITECTURE.md:3860) is the tonicization section; the memory-held backlog item is recorded in the same terms. ★ RATIFIED (user, 2026-08-02) with the revisit to be PLANNED: for the ultimate objective (maximum-precision inference) the feature may be needed — the ground truth annotates applied chords, so not producing them costs Roman-numeral agreement wherever the annotator wrote one. Row OI-267 carries the planning obligation, including the OI-53 tension (a live classifier emitting V7/x was found on the legacy path while this entry's home says not implemented). ★ SCOPE CORRECTED 2026-08-02 (CC, at the phase-1i delivery acts, on Cowork's measured probe finding B-1, user-reviewed): the entry's verbatim is a statement about the LEGACY `ChordFunction` structure, and its plain restatement wrongly generalized it to the whole system. The production joint estimator — the inference layer on both surfaces since the OI-178 adoption — DOES emit applied labels (`src/composing/analysis/joint/jointrender.h:62-63`; measured 8.62 % of scored duration, with exact matches against applied ground truth: `tools/joint_estimator/applied_chord_stake_2026_08_02/`). The OI-53 tension named above is therefore substantially ANSWERED: the joint surface emits applied labels, the legacy `ChordFunction` structure does not carry them. The decision itself is unchanged and stays DEFERRED for the surface it governs; what changed is the recorded scope. ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `open_items/OI-267.md` line 8, carrying a user-act marker and matching the entry's own identity, reads — "The user ratified D-248 (applied-chord labels such as V/V are not produced; the feature is deferred) with the direction that its revisit be PLANNED rather than left open-ended, because for the ultimate objective — maximum-precision inference — the feature may be needed. The precision connection is concrete: the ground truth annotates applied chords, so an analysis that never produces them disagrees with the annotator wherever an applied label is the right reading — a bounded, measurable share of the Roman-numeral column." The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-291 — The tonicization labeller is NOT wired - wiring it would raise the reported agreement while hiding a real key error
 
@@ -231,31 +187,6 @@
 **Home.** `cowork_layer5_function_design.md:636-639`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
 
 **Home section.** **§9** — `## 9. Architecture decisions (with the alternatives weighed)` (heading at line 620). A delegation at ARCHITECTURE.md:2086 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
-
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
-
-### D-340 — The reading the function layer emits IS the selected source's committed identity, carried whole — never rebuilt field by field
-
-> **The carried chord identity is emitted VERBATIM (carry-fix 2, 2026-07-02).** "Additive, does not replace" is literal at
-> the struct level: the reading this layer emits for a slice is the *selected source's committed identity carried whole*
-> (root + quality + committed **bass/inversion** + the Layer-4-carried **extensions** with their natural-fifth and
-> extensions-known flags),
-> never a reconstruction from the §5.0 `{root, quality}` progression projection. A standing commit emits its own `chosen`;
-> a neighbour-selected override emits that neighbour's identity as-is; an abstain resolution emits the selected carried
-> reading — honest-carry `extensionsKnown=false` (unknown, not asserted-absent) states included. This is what lets the
-> downstream base Roman numeral render the figured-bass inversion (65/43/42) and the applied-seventh (`V7/x`) from the
-
-**In plain words.** When this layer keeps, overrides or resolves a reading, it passes on the chosen reading's own record intact — its bass, its inversion, its added notes. It never reassembles a reading from the root and quality alone, which would silently drop the rest.
-
-**Why.** Stated with the loss it prevents: rebuilding from the progression's root-and-quality projection would flatten the committed bass and inversion and the carried added notes, so the figured-bass inversion and the applied seventh could no longer be rendered from what the chord layer actually committed. A neighbour-root with this stretch's bass is not a carried candidate, so it is not synthesized.
-
-**Status.** LIVE · decided 2026-07-02 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_layer5_function_design.md:556-563`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§7** — `## 7. Data design` (heading at line 546). A delegation at ARCHITECTURE.md:2086 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 

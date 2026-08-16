@@ -1,0 +1,499 @@
+{
+ "what_this_is": "THE DERIVED MOVE LIST for the ruled kind-2 treatment: which authored judgment moves into its table's RETIRED-SUBJECTS section because the soft-discard retired its subject, and which keeps watching a live subject. DERIVED on every run from the decisions register's own data file, never hand-listed, and re-verified in BOTH directions against the four tables as they stand.",
+ "generator": "tools/audit/decisions/gen_retired_subject_moves.py",
+ "dispatch": "cc_instruction_preparation_fifth.md, Task 1",
+ "the_ruling_that_ordered_it": {
+  "source": "cowork_rulings_2026_08_16_preparation_return.md §6 (kind 2)",
+  "every_sentence_located_in_that_record_on_this_run": {
+   "what the four tables gain": "gain RETIRED-SUBJECTS sections",
+   "what moves and how": "every judgment whose subject the discard retires moves verbatim WITH its subject reference",
+   "what the checks keep doing": "the checks keep watching live subjects; a judgment in neither section halts",
+   "how membership is settled": "membership is DERIVED and published, and a judgment whose membership cannot be derived STOPS to the user"
+  }
+ },
+ "the_retirement_this_is_about": {
+  "the_live_record": 512,
+  "the_retired_block": 165,
+  "★_the_source": "the decisions register's own data file; no entry identity is restated here (D-431)."
+ },
+ "★_what_this_derivation_does_NOT_do": "It moves nothing and re-authors nothing. Every moved judgment is carried WHOLE, in its own table's retired-subjects section, in the words it was authored in (#12); this file says which, and re-checks that the tables agree with it. It also asserts nothing about whether a judgment is RIGHT — a retired subject is a provenance outcome, not a verdict on the judgment.",
+ "tables": [
+  {
+   "the_table": "tools/audit/claude_md_rule_triage.py :: TRIAGE",
+   "the_membership_rule": {
+    "kind": "entry-keyed",
+    "the_rule": "the judgment's subject register entry is in the retired block",
+    "the_live_population": [
+     "D-112",
+     "D-113",
+     "D-115",
+     "D-165",
+     "D-166",
+     "D-167",
+     "D-168",
+     "D-169",
+     "D-170",
+     "D-171",
+     "D-172",
+     "D-173",
+     "D-174",
+     "D-175",
+     "D-176",
+     "D-177",
+     "D-178",
+     "D-179",
+     "D-180",
+     "D-181",
+     "D-182",
+     "D-183",
+     "D-184",
+     "D-185",
+     "D-186",
+     "D-187",
+     "D-188",
+     "D-189",
+     "D-190",
+     "D-191",
+     "D-193",
+     "D-194",
+     "D-195",
+     "D-196",
+     "D-197",
+     "D-198",
+     "D-199",
+     "D-200",
+     "D-203",
+     "D-204",
+     "D-210",
+     "D-211",
+     "D-212",
+     "D-230",
+     "D-231",
+     "D-249",
+     "D-253",
+     "D-254",
+     "D-294",
+     "D-308",
+     "D-315",
+     "D-316",
+     "D-430",
+     "D-432",
+     "D-433",
+     "D-435",
+     "D-437",
+     "D-438",
+     "D-439",
+     "D-451",
+     "D-452",
+     "D-468",
+     "D-473",
+     "D-474",
+     "D-486",
+     "D-546",
+     "D-557",
+     "D-564",
+     "D-576",
+     "D-582",
+     "D-602",
+     "D-603",
+     "D-604",
+     "D-606",
+     "D-638",
+     "D-639",
+     "D-651",
+     "D-652",
+     "D-656",
+     "D-660",
+     "D-662",
+     "D-664",
+     "D-666",
+     "D-667",
+     "D-675",
+     "D-676",
+     "D-677"
+    ]
+   },
+   "judgments_watching_live_subjects": 87,
+   "judgments_moved_to_the_retired_subjects_section": [
+    "D-192"
+   ],
+   "the_move_count": 1
+  },
+  {
+   "the_table": "tools/audit/decisions/gen_phase1w_legacy_verification.py :: VERDICTS",
+   "the_membership_rule": {
+    "kind": "entry-keyed",
+    "the_rule": "the judgment's subject register entry is in the retired block",
+    "the_live_population": [
+     "D-053",
+     "D-054",
+     "D-055",
+     "D-058",
+     "D-068",
+     "D-069",
+     "D-103",
+     "D-215",
+     "D-220",
+     "D-221",
+     "D-222",
+     "D-223",
+     "D-224",
+     "D-248",
+     "D-278",
+     "D-284",
+     "D-287",
+     "D-288",
+     "D-290",
+     "D-299",
+     "D-300",
+     "D-301",
+     "D-302",
+     "D-306",
+     "D-317",
+     "D-318",
+     "D-319",
+     "D-320",
+     "D-321",
+     "D-322",
+     "D-324",
+     "D-325",
+     "D-326",
+     "D-327",
+     "D-328",
+     "D-329",
+     "D-342",
+     "D-344",
+     "D-345",
+     "D-347",
+     "D-348",
+     "D-349",
+     "D-351",
+     "D-358",
+     "D-376",
+     "D-380",
+     "D-381",
+     "D-403",
+     "D-404",
+     "D-423",
+     "D-428",
+     "D-429",
+     "D-536",
+     "D-537",
+     "D-538",
+     "D-564",
+     "D-568",
+     "D-571",
+     "D-572",
+     "D-575",
+     "D-580",
+     "D-583"
+    ]
+   },
+   "judgments_watching_live_subjects": 62,
+   "judgments_moved_to_the_retired_subjects_section": [
+    "D-051",
+    "D-052",
+    "D-059",
+    "D-060",
+    "D-061",
+    "D-062",
+    "D-063",
+    "D-064",
+    "D-065",
+    "D-089",
+    "D-101",
+    "D-102",
+    "D-104",
+    "D-214",
+    "D-216",
+    "D-217",
+    "D-218",
+    "D-219",
+    "D-235",
+    "D-243",
+    "D-346",
+    "D-350",
+    "D-354",
+    "D-355",
+    "D-356",
+    "D-357",
+    "D-378",
+    "D-402",
+    "D-405",
+    "D-579"
+   ],
+   "the_move_count": 30
+  },
+  {
+   "the_table": "tools/audit/decisions/backbone_decisions.json :: section_home_criterion.documents",
+   "the_membership_rule": {
+    "kind": "document-keyed",
+    "the_rule": "the subject document homes at least one RETIRED entry and no LIVE entry of this table's own population",
+    "the_live_population_size": 151,
+    "the_documents_homing_a_retired_entry": {
+     "cowork_joint_estimator_architecture.md": [
+      "D-529",
+      "D-530"
+     ],
+     "cowork_joint_key_chord_design.md": [
+      "D-377",
+      "D-378",
+      "D-379"
+     ],
+     "cowork_layer1_note_model_design.md": [
+      "D-517",
+      "D-518",
+      "D-519"
+     ],
+     "cowork_layer2_slicing_design.md": [
+      "D-540",
+      "D-541"
+     ],
+     "cowork_layer3_keymode_design.md": [
+      "D-346",
+      "D-350",
+      "D-354",
+      "D-355",
+      "D-356",
+      "D-357"
+     ],
+     "cowork_layer4_chordsymbol_design.md": [
+      "D-332"
+     ],
+     "cowork_layer5_function_design.md": [
+      "D-340"
+     ],
+     "cowork_phase2_architecture_review.md": [
+      "D-579"
+     ],
+     "cowork_progression_schema_dictionary.md": [
+      "D-407",
+      "D-409",
+      "D-412",
+      "D-413"
+     ],
+     "cowork_score_census.md": [
+      "D-359",
+      "D-360",
+      "D-361",
+      "D-362",
+      "D-363",
+      "D-364",
+      "D-369",
+      "D-370",
+      "D-371",
+      "D-372",
+      "D-373",
+      "D-374",
+      "D-375"
+     ],
+     "cowork_structural_integrity_audit.md": [
+      "D-402",
+      "D-405"
+     ],
+     "cowork_types_header_design.md": [
+      "D-610"
+     ]
+    }
+   },
+   "judgments_watching_live_subjects": 35,
+   "judgments_moved_to_the_retired_subjects_section": [
+    "cowork_layer2_slicing_design.md",
+    "cowork_phase2_architecture_review.md",
+    "cowork_types_header_design.md"
+   ],
+   "the_move_count": 3,
+   "the_entries_whose_retirement_emptied_each_moved_document": {
+    "cowork_layer2_slicing_design.md": [
+     "D-540",
+     "D-541"
+    ],
+    "cowork_phase2_architecture_review.md": [
+     "D-579"
+    ],
+    "cowork_types_header_design.md": [
+     "D-610"
+    ]
+   }
+  },
+  {
+   "the_table": "tools/audit/decisions/gen_phase1p_delegation_bar.py :: FORMS",
+   "the_membership_rule": {
+    "kind": "document-keyed",
+    "the_rule": "the subject document homes at least one RETIRED entry and no LIVE entry of this table's own population",
+    "the_live_population_size": 151,
+    "the_documents_homing_a_retired_entry": {
+     "cowork_joint_estimator_architecture.md": [
+      "D-529",
+      "D-530"
+     ],
+     "cowork_joint_key_chord_design.md": [
+      "D-377",
+      "D-378",
+      "D-379"
+     ],
+     "cowork_layer1_note_model_design.md": [
+      "D-517",
+      "D-518",
+      "D-519"
+     ],
+     "cowork_layer2_slicing_design.md": [
+      "D-540",
+      "D-541"
+     ],
+     "cowork_layer3_keymode_design.md": [
+      "D-346",
+      "D-350",
+      "D-354",
+      "D-355",
+      "D-356",
+      "D-357"
+     ],
+     "cowork_layer4_chordsymbol_design.md": [
+      "D-332"
+     ],
+     "cowork_layer5_function_design.md": [
+      "D-340"
+     ],
+     "cowork_phase2_architecture_review.md": [
+      "D-579"
+     ],
+     "cowork_progression_schema_dictionary.md": [
+      "D-407",
+      "D-409",
+      "D-412",
+      "D-413"
+     ],
+     "cowork_score_census.md": [
+      "D-359",
+      "D-360",
+      "D-361",
+      "D-362",
+      "D-363",
+      "D-364",
+      "D-369",
+      "D-370",
+      "D-371",
+      "D-372",
+      "D-373",
+      "D-374",
+      "D-375"
+     ],
+     "cowork_structural_integrity_audit.md": [
+      "D-402",
+      "D-405"
+     ],
+     "cowork_types_header_design.md": [
+      "D-610"
+     ]
+    }
+   },
+   "judgments_watching_live_subjects": 35,
+   "judgments_moved_to_the_retired_subjects_section": [
+    "cowork_layer2_slicing_design.md",
+    "cowork_phase2_architecture_review.md",
+    "cowork_types_header_design.md"
+   ],
+   "the_move_count": 3,
+   "the_entries_whose_retirement_emptied_each_moved_document": {
+    "cowork_layer2_slicing_design.md": [
+     "D-540",
+     "D-541"
+    ],
+    "cowork_phase2_architecture_review.md": [
+     "D-579"
+    ],
+    "cowork_types_header_design.md": [
+     "D-610"
+    ]
+   }
+  },
+  {
+   "the_table": "tools/audit/decisions/backbone_decisions.json :: section_home_criterion.documents[*].section_kind",
+   "the_membership_rule": {
+    "kind": "section-keyed",
+    "the_rule": "the judgment decides no LIVE population entry and DID decide at least one RETIRED one — the document-level rule at section grain",
+    "derived_by": "tools/audit/decisions/gen_home_classification.py :: derive_kind_moves, imported rather than restated (#6); the classifier STOPS on any judgment that still owes a move, and on a retired judgment that decides a live entry again"
+   },
+   "judgments_watching_live_subjects": 88,
+   "judgments_moved_to_the_retired_subjects_section": [
+    "cowork_joint_estimator_architecture.md:192",
+    "cowork_joint_key_chord_design.md:128",
+    "cowork_joint_key_chord_design.md:174",
+    "cowork_joint_key_chord_design.md:259",
+    "cowork_layer1_note_model_design.md:194",
+    "cowork_layer1_note_model_design.md:252",
+    "cowork_layer1_note_model_design.md:26",
+    "cowork_layer3_keymode_design.md:240",
+    "cowork_layer3_keymode_design.md:365",
+    "cowork_layer3_keymode_design.md:42",
+    "cowork_layer4_chordsymbol_design.md:349",
+    "cowork_layer5_function_design.md:546",
+    "cowork_progression_schema_dictionary.md:200",
+    "cowork_score_census.md:13",
+    "cowork_score_census.md:154",
+    "cowork_score_census.md:187"
+   ],
+   "the_move_count": 16,
+   "the_entries_whose_retirement_emptied_each_moved_section": {
+    "cowork_joint_estimator_architecture.md:192": [
+     "D-529",
+     "D-530"
+    ],
+    "cowork_joint_key_chord_design.md:128": [
+     "D-377"
+    ],
+    "cowork_joint_key_chord_design.md:174": [
+     "D-378"
+    ],
+    "cowork_joint_key_chord_design.md:259": [
+     "D-379"
+    ],
+    "cowork_layer1_note_model_design.md:26": [
+     "D-519"
+    ],
+    "cowork_layer1_note_model_design.md:194": [
+     "D-517"
+    ],
+    "cowork_layer1_note_model_design.md:252": [
+     "D-518"
+    ],
+    "cowork_layer3_keymode_design.md:42": [
+     "D-350"
+    ],
+    "cowork_layer3_keymode_design.md:240": [
+     "D-346"
+    ],
+    "cowork_layer3_keymode_design.md:365": [
+     "D-354",
+     "D-355",
+     "D-356"
+    ],
+    "cowork_layer4_chordsymbol_design.md:349": [
+     "D-332"
+    ],
+    "cowork_layer5_function_design.md:546": [
+     "D-340"
+    ],
+    "cowork_progression_schema_dictionary.md:200": [
+     "D-413"
+    ],
+    "cowork_score_census.md:13": [
+     "D-359"
+    ],
+    "cowork_score_census.md:154": [
+     "D-362",
+     "D-363"
+    ],
+    "cowork_score_census.md:187": [
+     "D-364"
+    ]
+   }
+  }
+ ],
+ "the_tally": {
+  "tables_treated": 5,
+  "judgments_moved": 53,
+  "judgments_still_watching_live_subjects": 307
+ }
+}

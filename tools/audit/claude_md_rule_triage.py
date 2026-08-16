@@ -135,11 +135,6 @@ TRIAGE: dict[str, tuple[str, str]] = {
     "D-190": (KNOWLEDGE, "Weighing designs is the judgment the rule constrains."),
     "D-191": (EXISTS, "`tools/robust_stop_diff.py` — the class-(a)/(b) split, with the "
                       "class-(a) INVESTIGATE flag at its declared threshold."),
-    "D-192": (OWED, "A pre-commit check: a diff that touches a scoring term in "
-                    "`chordanalyzer.cpp` must also touch `docs/scoring_model.md`. The rule "
-                    "states the condition in exactly that form, and the staleness check it "
-                    "names — the template count in §2 against `kTemplateCount` — is arithmetic. "
-                    "Nothing implements either."),
     "D-193": (OWED, "SPLIT BY USER RULING, AND THE ENTRY IS IN THE DEFECT CLASS ON THE MECHANICAL "
                     "SUBSET ONLY (Rulings 28, 29 and 32 of 2026-08-09, "
                     "`cowork_rulings_2026_08_09_fifth_stop.md`). **The DEEP half is ruled "
@@ -608,6 +603,41 @@ TRIAGE: dict[str, tuple[str, str]] = {
 }
 
 
+# ── RETIRED SUBJECTS — triage verdicts whose subject rule has left the LIVE register ─────────
+#
+# WHY THIS SECTION EXISTS (user, 2026-08-16, §6 kind 2 of
+# `cowork_rulings_2026_08_16_preparation_return.md`).  The ruled soft-discard retires a register
+# entry from the LIVE record into the data file's retired-entries block — retired, never destroyed
+# (#12), and individually revivable.  A triage verdict whose subject entry is retired has no live
+# subject left, and this tool STOPS on a verdict for a rule that is not homed in CLAUDE.md, which
+# is that guard working.  The ruling's treatment is neither to delete the verdict (#12 forbids it)
+# nor to switch the check off (#19's silent-failure direction): the verdict MOVES here, verbatim,
+# with the subject reference it was authored against, and the check keeps watching the live rules.
+#
+# NOTHING HERE IS RE-AUTHORED OR RE-READ.  Each verdict is the four-part tuple exactly as it stood
+# in TRIAGE, with the retirement that moved it recorded beside it.
+#
+# MEMBERSHIP IS DERIVED, NOT AUTHORED: `gen_retired_subject_moves.py` derives which verdicts belong
+# here from the data file's own retired block and re-verifies this section in BOTH directions on
+# every run.  A subject in both sections, in neither, or on the wrong side halts that derivation.
+RETIRED_2026_08_16 = (
+    "CC, dispatch `cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of "
+    "2026-08-16 — §3 the soft-discard, §4 its reach, §6 the STANDING checks' treatment. The "
+    "subject entry was SOFT-DISCARDED into the decisions register's retired-entries block: a "
+    "provenance verdict, not a judgment on soundness or usefulness. The triage verdict is moved "
+    "here whole and is neither re-read nor re-graded; if the entry is ever revived, the verdict is "
+    "read back into TRIAGE deliberately rather than resurrected by this copy."
+)
+
+RETIRED_TRIAGE: dict[str, tuple] = {
+    "D-192": (OWED, "A pre-commit check: a diff that touches a scoring term in "
+                    "`chordanalyzer.cpp` must also touch `docs/scoring_model.md`. The rule "
+                    "states the condition in exactly that form, and the staleness check it "
+                    "names — the template count in §2 against `kTemplateCount` — is arithmetic. "
+                    "Nothing implements either."),
+}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
@@ -618,12 +648,35 @@ def main() -> int:
              if e["home"].split(":")[0].replace("\\", "/") == "CLAUDE.md"]
     rules.sort(key=lambda e: int(e["id"].split("-")[1]))
 
+    live_ids = {e["id"] for e in rules}
+    retired_ids = {r["the_entry"]["id"]
+                   for r in b.get("retired_entries", {}).get("entries", [])}
+
+    # A verdict in BOTH sections would be counted once and read twice, and the two copies could
+    # drift apart. A verdict in NEITHER is the ruling's own STOP: the check must not be able to
+    # lose a judgment by the subject simply going away.
+    overlap = sorted(set(TRIAGE) & set(RETIRED_TRIAGE))
+    if overlap:
+        raise SystemExit(f"triage carried in BOTH the live table and RETIRED_TRIAGE: {overlap}")
     missing = [e["id"] for e in rules if e["id"] not in TRIAGE]
     if missing:
         raise SystemExit(f"CLAUDE.md rule(s) with no authored triage: {missing}")
-    extra = sorted(set(TRIAGE) - {e["id"] for e in rules})
+    extra = sorted(set(TRIAGE) - live_ids)
     if extra:
         raise SystemExit(f"triage for a rule that is not homed in CLAUDE.md: {extra}")
+
+    # The retirement STOP in the OTHER direction, on the delegation bar's established pattern: a
+    # retired verdict whose subject is LIVE again is a judgment nobody re-read. It is read back
+    # into TRIAGE deliberately, never relied on where it lies.
+    resurrected = sorted(set(RETIRED_TRIAGE) & live_ids)
+    if resurrected:
+        raise SystemExit(f"RETIRED triage for a rule that is homed in CLAUDE.md again: "
+                         f"{resurrected} — read the verdict back into TRIAGE rather than relying "
+                         f"on the retired copy")
+    orphaned = sorted(s for s in RETIRED_TRIAGE if s not in retired_ids)
+    if orphaned:
+        raise SystemExit(f"RETIRED triage for {orphaned}, which the decisions register carries "
+                         f"neither live nor retired — the subject cannot be placed at all")
 
     rows, tally = [], collections.Counter()
     for e in rules:
@@ -676,6 +729,23 @@ def main() -> int:
                              "against rules in this table (D-196, D-253, D-430/D-432, "
                              "D-197's group), each with an establishment artifact; none retires "
                              "prose, and under D-436 that is no longer a defect.",
+        "retired_subjects": {
+            "what_this_is": "Triage verdicts whose subject register entry was SOFT-DISCARDED out "
+                            "of the LIVE record on 2026-08-16 (the user's ruling §3, its reach "
+                            "§4, the STANDING checks' treatment §6). Each is carried WHOLE with "
+                            "its subject reference and is neither re-read nor re-graded (#12). "
+                            "Nothing counts it: the totals, the defect set and the rule rows "
+                            "above are the LIVE population's.",
+            "the_retirement": RETIRED_2026_08_16,
+            "membership_is_derived": "tools/audit/decisions/gen_retired_subject_moves.py derives "
+                                     "which verdicts belong here from the data file's own retired "
+                                     "block and re-verifies this section in both directions.",
+            "the_stop_in_the_other_direction": "A retired subject that is a CLAUDE.md rule again "
+                                               "halts this tool until the verdict is read back "
+                                               "into the live table deliberately.",
+            "verdicts": [{"id": rid, "class": cls, "mechanism_or_ground": ground}
+                         for rid, (cls, ground) in sorted(RETIRED_TRIAGE.items())],
+        },
         "rules": rows,
     }
     text = json.dumps(artifact, indent=2, ensure_ascii=False) + "\n"

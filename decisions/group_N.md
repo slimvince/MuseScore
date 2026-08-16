@@ -6,36 +6,6 @@
 > generator is `tools/audit/decisions/gen_decisions_register.py`. To change an
 > entry, edit the data and regenerate.
 
-### D-134 — A voicing type is never requested directly; the style selects it
-
->     // Style determines which voicing types are used and in what proportion.
->     // Never call with a specific voicing type directly — encode that in the style.
-
-**In plain words.** A caller asking for a voicing says which style it wants, never which voicing technique. The style decides whether the answer is a drop-2, a shell, a chorale spacing or something else, and in what proportion.
-
-**Why.** Stated constraint, ARCHITECTURE.md:4555-4558: keeping the interface voicing-type agnostic is what lets a new voicing type be added as a generator implementation plus a style parameter, without the interface changing.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:5837`
-
-**Provenance.** ARCHITECTURE.md:4550-4572 (§8.2); the principle it realizes is D-070 (§2.1). No date or ratifier stated.
-
-### D-135 — A fixed element is a hard constraint the optimizer may never modify
-
-> Fixed elements are hard constraints in the voice leading optimizer — they anchor
-> the dynamic programming search. The optimizer guarantees never modifying them.
-
-**In plain words.** Anything the user has pinned - a note, a voice, a chord, a passage - anchors the search for good voice leading. The optimizer works around it and never changes it.
-
-**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The home states a ROLE, which is the nearest thing to a reason and is recorded as that rather than upgraded to a derivation: fixed elements are hard constraints "— they anchor the dynamic programming search". That says what the constraint is FOR. What it does not say is why the guarantee is ABSOLUTE — why the optimizer may never modify them at all, rather than modifying them at a cost the search weighs — which is the part of the decision that binds, and no alternative is considered. The persistence section immediately below adds mechanism (constraints keyed by element identifiers, which are stable within a score; fixed elements visually indicated in the score view) and not ground.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:6006`
-
-**Provenance.** ARCHITECTURE.md:4694-4733 (§9.1-§9.2). No date or ratifier stated.
-
 ### D-136 — The inference demo view is a developer tool and is not shipped
 
 > A step-through visualization of the inference pipeline, for use by developers

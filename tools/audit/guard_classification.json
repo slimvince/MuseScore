@@ -26,23 +26,29 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 67,
-    "re_derives_a_live_invariant": 55,
-    "records_a_point_in_time_measurement": 10,
+    "tools_classified": 69,
+    "re_derives_a_live_invariant": 51,
+    "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
   },
   "tools_that_leave_the_live_guard_list": [
+    "tools/audit/decisions/gen_finish_line_item1_routes.py",
+    "tools/audit/decisions/gen_item1_rehome_blocker.py",
+    "tools/audit/decisions/gen_outstanding_delegations.py",
     "tools/audit/decisions/gen_phase1g_triage.py",
     "tools/audit/decisions/gen_phase1m_measurements.py",
     "tools/audit/decisions/gen_phase1n_reading_regime.py",
+    "tools/audit/decisions/gen_r1_superseded_reach.py",
     "tools/audit/decisions/gen_reads1_yield.py",
     "tools/audit/decisions/gen_reads2_yield.py",
     "tools/audit/decisions/gen_reads3_yield.py",
     "tools/audit/decisions/gen_reads4_oi326_application.py",
     "tools/audit/decisions/gen_reads4_yield.py",
     "tools/audit/decisions/gen_reads5_yield.py",
-    "tools/audit/decisions/gen_reads6_yield.py"
+    "tools/audit/decisions/gen_reads6_yield.py",
+    "tools/audit/gen_phase1_completion_inventory.py",
+    "tools/audit/gen_phase1_finish_line.py"
   ],
   "live_tools_that_fail_and_stay": [
     "tools/audit/gen_filing_convention_application.py"
@@ -106,11 +112,11 @@
     },
     {
       "tool": "tools/audit/decisions/gen_finish_line_item1_routes.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_finish_line_item1_routes.py:8-17",
-      "why": "Authored 2026-08-04 in answer to the same STOP. Its population is IMPORTED from the finish-line generator and never re-listed (#6), so it shrinks as entries are homed; and it REFUSES to run if any entry has no authored route or if a route names an entry the population no longer carries — in its own words, 'so the register moving under the table is a STOP rather than a silent partial answer'. That is a demand about today, not a dated reading: the AUTHORED half is the route per entry, and the tool will not let that half go stale silently. It passes at the committed tree.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_finish_line_item1_routes.py:8-17; cowork_rulings_2026_08_16_preparation_return.md §4",
+      "why": "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. A view of the superseded phase-1 gate — it imports the finish line transitively — so its subject went with its phase, and its inputs STOP. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — \"Authored 2026-08-04 in answer to the same STOP. Its population is IMPORTED from the finish-line generator and never re-listed (#6), so it shrinks as entries are homed; and it REFUSES to run if any entry has no authored route or if a route names an entry the population no longer carries — in its own words, 'so the register moving under the table is a STOP rather than a silent partial answer'. That is a demand about today, not a dated reading: the AUTHORED half is the route per entry, and the tool will not let that half go stale silently. It passes at the committed tree.\"",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_home_classification.py",
@@ -122,11 +128,11 @@
     },
     {
       "tool": "tools/audit/decisions/gen_item1_rehome_blocker.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_item1_rehome_blocker.py:32-42",
-      "why": "Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. Every half of it is a demand about TODAY: the population is IMPORTED from the route table and shrinks as entries are homed; each row's blocker is re-cut from that row's own recorded reason on every run, so a reworded reason moves the verdict instead of leaving a stale one standing; and the STANDING AUTHORIZATION it compares against is located in `CLAUDE.md` BY ANCHOR and quoted at HEAD, with a STOP if it cannot be found — so a change to what a session may edit moves this artifact rather than being silently outrun by it. It stores no dated reading of anything.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_item1_rehome_blocker.py:32-42; cowork_rulings_2026_08_16_preparation_return.md §4",
+      "why": "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. Same family, same import, same STOP: what it measures is what blocked the SUPERSEDED finish line's item-1 re-home class. Its one live-looking assertion — that the standing autonomous-operation authorization is still locatable in `CLAUDE.md` by its anchor — is not lost: `CLAUDE.md`'s own anchors are asserted live by `claude_md_rule_triage.py` and by the register's home-anchor checks, all of which stay in the list. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — \"Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. Every half of it is a demand about TODAY: the population is IMPORTED from the route table and shrinks as entries are homed; each row's blocker is re-cut from that row's own recorded reason on every run, so a reworded reason moves the verdict instead of leaving a stale one standing; and the STANDING AUTHORIZATION it compares against is located in `CLAUDE.md` BY ANCHOR and quoted at HEAD, with a STOP if it cannot be found — so a change to what a session may edit moves this artifact rather than being silently outrun by it. It stores no dated reading of anything.\"",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_live_prohibition_pointers.py",
@@ -138,11 +144,11 @@
     },
     {
       "tool": "tools/audit/decisions/gen_outstanding_delegations.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_outstanding_delegations.py:36-46",
-      "why": "It RE-DERIVES the whole partition on every run, from the delegation grades it IMPORTS (`gen_phase1p_delegation_bar.FORMS`) and the home population it IMPORTS (`gen_home_classification.home_population`) — never from a stored figure. Three STOPs are about the record as it stands today: a write-list member with no authored state label, a label naming a non-member, and a class-C document with no authored draft. A later wave that writes a delegation or widens one SHOULD move its output, which is the point of it (D-640 / OI-335).",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_outstanding_delegations.py:36-46; cowork_rulings_2026_08_16_preparation_return.md §4; tools/audit/discard_reach_split.json",
+      "why": "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. It is the FEEDER whose only importers are the two superseded gate derivations and nothing else, which is the limb of the derived split that placed it here rather than among the standing checks. It is also the tool that STOPS FIRST: the authored draft it needs is for a document the retirement empties. NO LIVE COVERAGE IS LOST — the home rules it served are asserted live by `gen_home_classification.py` and `gen_phase1p_delegation_bar.py`, both of which stay in the list. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — \"It RE-DERIVES the whole partition on every run, from the delegation grades it IMPORTS (`gen_phase1p_delegation_bar.FORMS`) and the home population it IMPORTS (`gen_home_classification.home_population`) — never from a stored figure. Three STOPs are about the record as it stands today: a write-list member with no authored state label, a label naming a non-member, and a class-C document with no authored draft. A later wave that writes a delegation or widens one SHOULD move its output, which is the point of it (D-640 / OI-335).\"",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_phase1g_triage.py",
@@ -194,11 +200,11 @@
     },
     {
       "tool": "tools/audit/decisions/gen_r1_superseded_reach.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_r1_superseded_reach.py:22-38",
-      "why": "Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. It IMPORTS its population from the route table rather than storing one, and re-reads the register on every run for each entry's status and each successor's home CLASS — so the HOMED verdict and the disposition move the day a successor is homed, which is exactly the event the ruling makes the owed act. Its sharpest STOP is a live demand on the record rather than on the tree's history: every AUTHORED successor must still be NAMED IN THE SUPERSEDED ENTRY'S OWN TEXT, so a session cannot nominate one the register does not name, and a reworded supersession stops the tool instead of silently keeping a verdict the record no longer supports. It re-derives and it passes.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_r1_superseded_reach.py:22-38; cowork_rulings_2026_08_16_preparation_return.md §4",
+      "why": "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. Same family and same import chain: it applies a ruling to the superseded finish line's item-1 NO-HOME class, so its subject went with its phase and its inputs STOP. NO LIVE COVERAGE IS LOST — that every register cross-reference still resolves is asserted live by `gen_cluster_dispositions.py --verify`, which stays in the list and now consults the retired-entries block beside the live entries. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — \"Authored 2026-08-04 with the tool, so R4's per-tool condition was a design input. It IMPORTS its population from the route table rather than storing one, and re-reads the register on every run for each entry's status and each successor's home CLASS — so the HOMED verdict and the disposition move the day a successor is homed, which is exactly the event the ruling makes the owed act. Its sharpest STOP is a live demand on the record rather than on the tree's history: every AUTHORED successor must still be NAMED IN THE SUPERSEDED ENTRY'S OWN TEXT, so a session cannot nominate one the register does not name, and a reworded supersession stops the tool instead of silently keeping a verdict the record no longer supports. It re-derives and it passes.\"",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/decisions/gen_reads1_yield.py",
@@ -265,6 +271,14 @@
       "state_at_the_committed_tree": "HISTORICAL"
     },
     {
+      "tool": "tools/audit/decisions/gen_retired_subject_moves.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_retired_subject_moves.py, the two MEMBERSHIP RULES and THE STOPS of its module docstring; `partition()`, which applies both directions; `section_kind()`, which imports the home classifier's own move derivation",
+      "why": "LIVE. Every value it publishes is re-derived at HEAD from the decisions register's data file as it stands and from the five authored tables as they stand: which judgment watches a live subject, which has followed its subject into the retired-entries block, and which entries emptied each moved document or section. Nothing in it is dated. A later act that retires an entry, revives one, or writes a new authored judgment SHOULD move its output, and the check is what makes that movement visible — which is the R4 test in the form the ruling states it. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a moved judgment is RIGHT. A retired subject is a provenance outcome, and the judgment is carried whole, unread and unre-graded (#12). ★ ONE LIMIT DECLARED RATHER THAN GLOSSED: a judgment already on a retired side for an EARLIER act's reason — the re-homing waves — is left where that act's own record put it and is not re-derived here, because this tool is not the authority for retirements it did not perform. What it does still ask of every one of them is the direction that must never go unnoticed: that the subject has not become live again.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
       "tool": "tools/audit/decisions/gen_true_half_reach.py",
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_true_half_reach.py:22-30",
@@ -317,6 +331,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_artifact_inventory_surface.py:40-49 (the four STOPs), and its `build()` two-way reconciliation against the inventory's class list",
       "why": "LIVE, and for the same reason `gen_july_screen.py` is: what it re-derives is not the verdicts, which are authored judgments about how artifacts should be used, but that the surface and the inventory still describe the same population. Its POPULATION is IMPORTED from the inventory artifact on every run and reconciled with the authored proposals in BOTH directions, so a class entering or leaving the inventory halts it rather than being left unproposed or proposed for nothing. Its citation split is RE-SCANNED at the governing record on every run, so a document that stops being cited moves side rather than staying where a dated reading put it. Neither is a point-in-time reading. Its vocabulary STOPs ride with it: a role or mining verdict outside the closed set the user's direction names halts it, and so does a proposal with no reason.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_census_movement_classification.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_census_movement_classification.py, the THREE CATEGORIES and THE STOPS of its module docstring; `build()`, which re-runs the citation scan at both states and classes every difference",
+      "why": "LIVE. Both sides of its comparison are re-computed on every run: the earlier state from the git objects at a named commit, the later one from the governing record AS IT STANDS. So an edit that removes a document's last naming from `CLAUDE.md` tomorrow moves its output tomorrow, and the classification either places that movement in one of the three ruled categories or STOPS. That is a demand about today's record, not a dated reading of it. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: the BEFORE commit is the state the movement is measured against, and a comparison whose baseline moved would measure nothing. It is named in the tool rather than resolved from a branch tip, because a branch read is not trusted for what is current (D-253). ★ WHAT IT DOES NOT ASSERT: that a moved document is worth retiring, or that nothing depends on it — the citation scan sees the governing record only, which is the bound the census publishes of itself and this tool repeats rather than quietly drops.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },
@@ -402,19 +424,19 @@
     },
     {
       "tool": "tools/audit/gen_phase1_completion_inventory.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_phase1_completion_inventory.py:11-26",
-      "why": "It RE-DERIVES on every run: D-231's clause is located in `CLAUDE.md` by anchor string and must still be findable or the tool STOPS; every home class, defense gap and section-criterion verdict is read off the register as it stands; the open-row population and each row's gate verdict come from `OPEN_ITEMS.md` and the apparatus declaration as they stand today, and a verdict naming a row the index no longer carries open is a STOP. Nothing in it is a measurement taken at a point in time — a later wave that homes an entry or closes a row SHOULD move its output, and the check is what makes that movement visible.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_phase1_completion_inventory.py:11-26; cowork_rulings_2026_08_16_preparation_return.md §4",
+      "why": "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING AND NOT ON THIS TOOL'S JUDGMENT. Its SUBJECT — D-231's three-phase structure and what its phase 1 still required — was SUPERSEDED on 2026-08-15 when the user ruled the six-phase structure. What re-derives is not the question: a check can re-derive perfectly and still grade a program that no longer governs, and the ruling's own words are that the superseded phase-1 apparatus follows its phase into historical status. The ruled soft-discard then made it STOP rather than drift — the delegation grading it imports refuses to run for a document the retirement empties. ★ IT ASSERTS NOTHING ABOUT WHETHER PHASE 1'S OBLIGATIONS WERE DISCHARGED, and no completion claim rides the reclassification. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — \"It RE-DERIVES on every run: D-231's clause is located in `CLAUDE.md` by anchor string and must still be findable or the tool STOPS; every home class, defense gap and section-criterion verdict is read off the register as it stands; the open-row population and each row's gate verdict come from `OPEN_ITEMS.md` and the apparatus declaration as they stand today, and a verdict naming a row the index no longer carries open is a STOP. Nothing in it is a measurement taken at a point in time — a later wave that homes an entry or closes a row SHOULD move its output, and the check is what makes that movement visible.\" It was true of the tool and remains true of it; what changed is that the PROGRAM it grades was superseded, which the former verdict could not have anticipated.",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/gen_phase1_finish_line.py",
-      "verdict": "re-derives-a-live-invariant",
-      "evidence": "gen_phase1_finish_line.py:18-34",
-      "why": "Authored 2026-08-04 in answer to this tool's own per-tool STOP — it entered the guard population two waves ago and had never been classified. It IMPORTS both populations rather than storing them, locates D-231's clause by anchor at HEAD, and carries a STOP that is a live demand in the strongest form the population has: a population that grows WITHOUT AN ITEM TO CARRY IT stops the tool, which is what makes the list a finish line rather than a selection. It re-derives as the record moves under it, and it passes.",
-      "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "verdict": "records-a-point-in-time-measurement",
+      "evidence": "gen_phase1_finish_line.py:18-34; cowork_rulings_2026_08_16_preparation_return.md §4",
+      "why": "★ RE-CLASSIFIED 2026-08-16, ON THE USER'S RULING. Same ground as the completion inventory it imports: its subject is the SUPERSEDED phase 1's finish line, and the program it measures no longer governs. It STOPS for the same cause. Its last derivable state stands frozen on disk as the record of that program, and nothing in this reclassification says the program finished. ★ THE FORMER VERDICT, PRESERVED (#12): LIVE — \"Authored 2026-08-04 in answer to this tool's own per-tool STOP — it entered the guard population two waves ago and had never been classified. It IMPORTS both populations rather than storing them, locates D-231's clause by anchor at HEAD, and carries a STOP that is a live demand in the strongest form the population has: a population that grows WITHOUT AN ITEM TO CARRY IT stops the tool, which is what makes the list a finish line rather than a selection. It re-derives as the record moves under it, and it passes.\"",
+      "in_the_live_guard_list_after_this_classification": false,
+      "state_at_the_committed_tree": "HISTORICAL"
     },
     {
       "tool": "tools/audit/gen_phase1_gate_readers.py",

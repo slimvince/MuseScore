@@ -214,11 +214,89 @@ def home_population(backbone: dict) -> list[dict]:
             and d.get("nonspec_kind") in ("contract-home", "gap")]
 
 
+# The section-kind judgments this run finds have lost their subject to the retirement, and the
+# retired entries that were their subjects.  DERIVED by `classify` below; published by
+# `gen_retired_subject_moves.py`, which imports it rather than restating the derivation (#6).
+# `COLLECT_ONLY` lets that publisher run the same code path without the STOP, so the move list and
+# the STOP can never disagree about which judgments move.
+KIND_MOVES: dict[tuple[str, int], list[str]] = {}
+COLLECT_ONLY = False
+
+
+def derive_kind_moves(backbone: dict) -> dict[tuple[str, int], list[str]]:
+    """Run the classification for its MOVE LIST only, over a copy, changing nothing."""
+    global COLLECT_ONLY
+    KIND_MOVES.clear()
+    COLLECT_ONLY = True
+    try:
+        classify(json.loads(json.dumps(backbone)))
+    finally:
+        COLLECT_ONLY = False
+    return dict(KIND_MOVES)
+
+
+def retired_population(backbone: dict) -> list[dict]:
+    """The same home-class predicate, applied to the entries the soft-discard RETIRED.
+
+    A retired entry has left the LIVE record and is not classified — but it is still the SUBJECT
+    an authored judgment was written about, and the ruled kind-2 treatment needs to know which
+    judgments those were.  Factored beside `home_population` so the predicate has one home (#6).
+    """
+    retired = [r["the_entry"] for r in backbone.get("retired_entries", {}).get("entries", [])]
+    return [d for d in retired
+            if not d.get("home_is_layer_spec")
+            and d.get("nonspec_kind") in ("contract-home", "gap")]
+
+
+def sections_used(entries: list[dict], doc_state: dict, heads: dict,
+                  known: set[tuple[str, int]]) -> dict[tuple[str, int], list[str]]:
+    """Which authored section-kind judgments a set of entries would decide, and by which entry.
+
+    The same three conditions the classification itself applies — the document is somebody's home,
+    the delegation ADMITS and REACHES the section, and the entry's cited home line falls inside it.
+    Nothing here STOPS: an entry this cannot place simply decides no judgment, which is the honest
+    answer for a set that is no longer classified.
+    """
+    out: dict[tuple[str, int], list[str]] = {}
+    for d in entries:
+        doc = d["home"].split(":")[0].replace("\\", "/")
+        st = doc_state.get(doc)
+        if st is None or st["verdict"] != "ADMIT":
+            continue
+        line = cited_line(d["home"])
+        if line is None:
+            continue
+        enc = enclosing(heads[doc], line)
+        if enc is None:
+            continue
+        hline = enc[0]
+        if hline not in st["reached"] or (doc, hline) not in known:
+            continue
+        out.setdefault((doc, hline), []).append(d["id"])
+    return out
+
+
 def classify(backbone: dict) -> tuple[list[dict], list[dict]]:
     crit = backbone["section_home_criterion"]
     authored = crit["documents"]
 
     population = home_population(backbone)
+
+    # ── The RETIRED-SUBJECTS side of the authored input ──────────────────────────────────────
+    # Every judgment the record has ever authored here is in exactly one of two places: `documents`
+    # (a live home) or the retired block beside it (a document no entry homes any more, emptied
+    # either by a re-homing wave or, since 2026-08-16, by the ruled soft-discard). The two STOPs
+    # below are the ruled shape (user, 2026-08-16, §6 kind 2), and they are the delegation bar's
+    # own — a judgment in BOTH sections is two copies free to drift apart, and a RETIRED judgment
+    # whose document is somebody's home again is a judgment nobody re-read.
+    retired_block = crit["documents_retired_when_their_last_entry_was_re_homed"]
+    retired_authored = {d for key, value in retired_block.items()
+                        if key.startswith("judgments") and isinstance(value, dict)
+                        for d in value}
+    both = sorted(set(authored) & retired_authored)
+    if both:
+        raise SystemExit(f"authored judgment carried in BOTH `documents` and the retired "
+                         f"block: {both}")
 
     docs = sorted({d["home"].split(":")[0].replace("\\", "/") for d in population})
     missing = [x for x in docs if x not in authored]
@@ -227,7 +305,13 @@ def classify(backbone: dict) -> tuple[list[dict], list[dict]]:
     stale = [x for x in authored if x not in docs]
     if stale:
         raise SystemExit(f"authored judgment for a document that is nobody's home: {stale}")
+    resurrected = sorted(retired_authored & set(docs))
+    if resurrected:
+        raise SystemExit(f"RETIRED authored judgment for a document that is somebody's home "
+                         f"again: {resurrected} — move the judgment back into `documents` rather "
+                         f"than relying on the retired copy")
 
+    KIND_MOVES.clear()
     heads: dict[str, list[tuple[int, int, str]]] = {d: headings_of(d) for d in docs}
     changed: list[dict] = []
     rows: list[dict] = []
@@ -383,7 +467,65 @@ def classify(backbone: dict) -> tuple[list[dict], list[dict]]:
             "decided_by": decided_by,
         })
 
-    unused = [f"{k[0]}:{k[1]}" for k, v in used_kind.items() if not v]
+    # ── The same treatment, ONE GRAIN FINER: a section-kind judgment whose subject retired ────
+    #
+    # A section-kind judgment's subject is a SECTION that holds an entry. The ruled soft-discard
+    # can empty a section without emptying its document, so a document stays somebody's home while
+    # one of its sections stops deciding anything — and the STOP below fires on exactly that, which
+    # is that guard working. The ruled treatment (user, 2026-08-16, §6 kind 2) is the document-level
+    # one at section grain: the judgment MOVES into the authored block's `section_kind_retired`
+    # list, verbatim, WITH its subject reference — the retired entries that used to sit in it —
+    # and the check keeps deciding live sections.
+    #
+    # MEMBERSHIP IS DERIVED, never authored: a judgment moves if and only if it decides no LIVE
+    # population entry and DID decide at least one RETIRED one. A judgment that decides neither is
+    # not this act's to place and STOPS to the user, exactly as it did before.
+    retired_keys: set[tuple[str, int]] = set()
+    for doc in docs:
+        for k in authored[doc].get("section_kind_retired", []):
+            h = next((x for x in heads[doc] if x[0] == k["heading_line"]), None)
+            if h is None:
+                raise SystemExit(f"{doc}: no heading at line {k['heading_line']} "
+                                 "(a RETIRED section-kind judgment points at it)")
+            if h[2] != k["heading_text"]:
+                raise SystemExit(f"{doc}:{k['heading_line']}: heading is {h[2]!r}, the RETIRED "
+                                 f"kind judgment records {k['heading_text']!r}")
+            key = (doc, k["heading_line"])
+            if key in used_kind:
+                raise SystemExit(f"{doc}:{k['heading_line']}: a section-kind judgment is carried "
+                                 "in BOTH `section_kind` and `section_kind_retired`")
+            retired_keys.add(key)
+
+    retired_used = sections_used(retired_population(backbone), doc_state, heads,
+                                 set(used_kind) | retired_keys)
+    retired_kind = {key: sorted(retired_used.get(key, [])) for key in retired_keys}
+
+    resurrected_kind = sorted(f"{d}:{ln}" for (d, ln) in retired_kind
+                              if used_kind.get((d, ln)))
+    if resurrected_kind:
+        raise SystemExit("RETIRED section-kind judgment(s) that decide a LIVE entry again: "
+                         f"{resurrected_kind} — move the judgment back into `section_kind` rather "
+                         "than relying on the retired copy")
+    orphaned_kind = sorted(f"{d}:{ln}" for (d, ln), subj in retired_kind.items() if not subj)
+    if orphaned_kind:
+        raise SystemExit("RETIRED section-kind judgment(s) whose subject cannot be derived — no "
+                         f"retired entry sat in the section: {orphaned_kind}")
+
+    unused = []
+    for k, v in used_kind.items():
+        if v:
+            continue
+        if retired_used.get(k):
+            KIND_MOVES[k] = sorted(retired_used[k])
+            continue
+        unused.append(f"{k[0]}:{k[1]}")
+    if KIND_MOVES and not COLLECT_ONLY:
+        raise SystemExit(
+            "authored section-kind judgment(s) that decide no LIVE entry, because the entries "
+            "they decided are RETIRED — move each into `section_kind_retired` with its subject "
+            "reference (the user's ruling of 2026-08-16, §6 kind 2); neither dropped nor kept by "
+            "guess: " + "; ".join(f"{d}:{ln} <- {', '.join(subj)}"
+                                  for (d, ln), subj in sorted(KIND_MOVES.items())))
     if unused:
         raise SystemExit("authored section-kind judgment(s) that decide no entry — remove them or "
                          f"say why they are kept: {unused}")

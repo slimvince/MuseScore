@@ -72,8 +72,13 @@ RETIRED_BLOCK = "retired_entries"
 NOTHING_FOUND = "NOTHING-FOUND"
 SOLE_CARRIER = "SOLE-CARRIER"
 RETIRED_ON = "2026-08-16"
-RETIRING_ACT = ("CC, `cc_instruction_preparation_third.md` Task 3, on the user's ruling of "
-                "2026-08-16")
+# The act that PERFORMED the retirement, not the one that planned it. The third batch's Task 3
+# derived and measured the act and REVERTED it; the fourth batch's Task 2 did the same. What
+# performs it is the fifth batch's Task 1, under the reach ruling (§4) and the STANDING checks'
+# treatment ruling (§6) that the third and fourth batches' STOPs made necessary. A record naming
+# the planning dispatch as the retiring one would state something false about who did it.
+RETIRING_ACT = ("CC, `cc_instruction_preparation_fifth.md` Task 1, on the user's rulings of "
+                "2026-08-16 (§3 the discard, §4 its reach, §6 the STANDING checks' treatment)")
 AUTHORITY = "cowork_rulings_2026_08_16_preparation_return.md §3 (A)"
 
 RULED_CLAUSE = ("a provenance verdict, not a judgment on soundness or usefulness; the statement "
@@ -411,8 +416,54 @@ def apply_it() -> dict:
 
     BACKBONE.write_text(json.dumps(backbone, indent=2, ensure_ascii=False) + "\n",
                         encoding="utf-8", newline="")
+    restamp_plan(len(retired), len(surviving), before)
     return {"retired": len(retired), "live": len(surviving), "before": before,
             "stamped": len(kept)}
+
+
+APPLIED_STATE_KEY = "★_the_act_was_PLANNED_AND_MEASURED_AND_NOT_PERFORMED"
+PERFORMED_STATE_KEY = "★_the_act_was_PLANNED_MEASURED_TWICE_AND_THEN_PERFORMED"
+
+
+def restamp_plan(retired: int, live: int, before: int) -> None:
+    """Re-stamp the committed plan's state block, because the act it describes has happened.
+
+    The plan cannot be REGENERATED after the act — its population is no longer live, so
+    `population()` STOPs by construction, which is that guard working. What would otherwise
+    survive is a committed artifact whose own state block says NOT APPLIED about an act that was
+    applied, and a check that no longer looks at it. So the one block whose subject is the act's
+    STATE is rewritten here, at the moment the state changes, and `--check` reads it back. No
+    other field of the plan moves: the population, the arithmetic, the ten stamps and the measured
+    reach are the planning act's record and are not re-derived against the record the act changed.
+    """
+    if not PLAN.exists():
+        raise Stop(f"the committed plan is missing, so the act cannot record that it happened: "
+                   f"{PLAN}")
+    plan = json.loads(PLAN.read_text(encoding="utf-8"))
+    if APPLIED_STATE_KEY not in plan:
+        raise Stop(f"the committed plan carries no `{APPLIED_STATE_KEY}` block, so this act cannot "
+                   f"find the statement about its own state that it must correct")
+    former = plan.pop(APPLIED_STATE_KEY)
+    plan[PERFORMED_STATE_KEY] = {
+        "state": "APPLIED",
+        "applied_on": RETIRED_ON,
+        "applied_by": RETIRING_ACT,
+        "the_authority": AUTHORITY,
+        "the_arithmetic_of_the_act": {
+            "the_live_record_before": before,
+            "retired_by_this_act": retired,
+            "the_live_record_after": live,
+        },
+        "★_why_this_block_was_rewritten_rather_than_left_standing":
+            "It was the plan's statement about its own STATE, and it said NOT APPLIED. The act "
+            "happened, so leaving it would put a false statement about the record inside the "
+            "record (#10). The plan cannot be regenerated after the act — its population is no "
+            "longer live and `population()` STOPs — so the block is rewritten at the moment the "
+            "state changes rather than by a later re-derivation that cannot exist.",
+        "the_former_block_preserved_verbatim_#12": former,
+    }
+    PLAN.write_text(json.dumps(plan, indent=1, ensure_ascii=False) + "\n",
+                    encoding="utf-8", newline="")
 
 
 # ── the check ────────────────────────────────────────────────────────────────────────────────────
@@ -463,6 +514,24 @@ def check_applied() -> int:
         if record["the_ruled_clause_verbatim"] != RULED_CLAUSE:
             raise Stop(f"the retired record for {record['the_entry']['id']} does not carry the "
                        f"ruled clause verbatim")
+
+    # The plan's own statement about the act's STATE must agree with the state on disk. A plan
+    # still saying NOT APPLIED beside an applied retirement is a false statement about the record
+    # inside the record, and nothing else would catch it — the plan cannot be re-derived once the
+    # act has happened.
+    if not PLAN.exists():
+        raise Stop(f"the committed plan is missing: {PLAN}")
+    plan = json.loads(PLAN.read_text(encoding="utf-8"))
+    if APPLIED_STATE_KEY in plan:
+        raise Stop("the retirement is applied, but the committed plan still carries its "
+                   "NOT-APPLIED state block")
+    performed = plan.get(PERFORMED_STATE_KEY)
+    if not performed or performed.get("state") != "APPLIED":
+        raise Stop("the committed plan does not record that this act was performed")
+    if performed["the_arithmetic_of_the_act"] != {"the_live_record_before": before,
+                                                  "retired_by_this_act": len(retired),
+                                                  "the_live_record_after": len(live)}:
+        raise Stop("the committed plan's recorded arithmetic disagrees with the data file's")
 
     locate_ruling()
     print(f"the soft-discard re-checks: {len(live)} live + {len(retired)} retired = {before} "

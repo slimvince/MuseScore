@@ -80,6 +80,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -89,11 +90,78 @@ from output_encoding import use_utf8_output                       # noqa: E402  
 use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-BACKBONE = ROOT / "tools" / "audit" / "decisions" / "backbone_decisions.json"
-INDEX = ROOT / "DECISIONS.md"
+BACKBONE = "tools/audit/decisions/backbone_decisions.json"
+INDEX = "DECISIONS.md"
 OUT = ROOT / "tools" / "audit" / "decisions_filter_classification.json"
 SURFACE = (ROOT / "ratification_surfaces"
            / "cowork_decisions_filter_surface_2026_08_15.md")
+
+# ── PINNED READING (user, 2026-08-16, §6 kind 1 of the preparation-return rulings) ────────────
+#
+# ★ WHY THIS MEASUREMENT IS READ AT A COMMIT AND NOT AT THE TREE.  This classification IS a
+# ruling's evidence: the user read its 411 / 182 / 84 split and RATIFIED the keep side on it, and
+# the soft-discard that followed was ruled over the non-keep residue it defines.  The discard then
+# retires 165 of the very entries this artifact classifies — so a live reading would restate a
+# completed measurement against the population the act it authorized changed, which destroys the
+# record of the ruling (the OI-330 refusal, and the OI-301 hazard exactly).  Pinned, the artifact
+# stands permanently as that evidence, still guarded against corruption, and permanently
+# insensitive to the acts it authorized.
+#
+# ★ WHY THE COMMIT IS NAMED HERE AND NOT INSIDE THE ARTIFACT.  The established pinned-reading tools
+# read their commit out of their own artifact's `derived_at_commit` field.  This artifact carries no
+# such field and MAY NOT GAIN ONE: the ruling requires it byte-unchanged, and adding a field is a
+# change.  So the pin lives in the tool — and it is not taken on trust.  `establish_the_pin()` below
+# reads THIS ARTIFACT ITSELF out of the git object at the pinned commit and requires it to be
+# byte-identical to the artifact on disk.  A pin naming the wrong commit, or an artifact that has
+# moved off its pin, therefore STOPS rather than silently re-deriving against the wrong state.
+PINNED_COMMIT = "0a2cc3f86a2b212851b2e7324fcae31deaac7ac6"
+PINNED_COMMIT_IS = ("the commit that produced and committed this artifact — "
+                    "`cc_instruction_preparation_opening.md` Task 2, the run the user read before "
+                    "ratifying the keep side (`cc_report_preparation_opening.md` §3)")
+
+
+def git(*args: str) -> bytes:
+    proc = subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True)
+    if proc.returncode != 0:
+        raise Stop(f"git {' '.join(args)} failed: "
+                   f"{proc.stderr.decode('utf-8', 'replace').strip()}")
+    return proc.stdout
+
+
+def pinned_text(path: str, what: str) -> str:
+    """One input, read from the git OBJECT at the pinned commit and never from the tree."""
+    try:
+        return git("show", f"{PINNED_COMMIT}:{path}").decode("utf-8", "replace")
+    except Stop:
+        raise Stop(f"{what} is not in the tree at the pinned commit "
+                   f"{PINNED_COMMIT[:10]}: {path}")
+
+
+def establish_the_pin() -> dict:
+    """The pin proves itself, on every run, before anything rests on it."""
+    if not OUT.exists():
+        raise Stop(f"the committed artifact is missing: {OUT}")
+    rel = OUT.relative_to(ROOT).as_posix()
+    # Compared as TEXT, not as bytes: the working tree is checked out with the platform's line
+    # endings while a git object carries the blob's own, so a byte comparison would report every
+    # artifact as moved on this platform. Text comparison is the same reading `--check` already
+    # uses for every other file this tool emits.
+    at_pin = git("show", f"{PINNED_COMMIT}:{rel}").decode("utf-8")
+    on_disk = OUT.read_text(encoding="utf-8")
+    if at_pin != on_disk:
+        raise Stop(
+            f"the committed artifact is NOT byte-identical to its own blob at the pinned commit "
+            f"{PINNED_COMMIT[:10]}. Either the pin names the wrong commit or the artifact has been "
+            f"rewritten since; both are STOPs, because this artifact is a ruling's evidence and "
+            f"the ruling requires it byte-unchanged.")
+    return {
+        "the_pinned_commit": PINNED_COMMIT,
+        "what_that_commit_is": PINNED_COMMIT_IS,
+        "how_the_pin_is_established_on_every_run":
+            "this artifact's own blob at the pinned commit is read from the git object store and "
+            "compared byte for byte with the artifact on disk; a difference STOPS the tool",
+        "the_artifact_characters": len(on_disk),
+    }
 
 # The three proposed classes. The vocabulary is the dispatch's own and this tool may not widen it.
 NAMED = "DECIDING-ACT-NAMED"
@@ -389,12 +457,9 @@ def probes(vocabulary: set[str]) -> list[dict]:
 
 
 def build() -> tuple[dict, str]:
-    if not BACKBONE.exists():
-        raise Stop(f"the decisions register's data file is missing: {BACKBONE}")
-    if not INDEX.exists():
-        raise Stop(f"the rendered INDEX is missing: {INDEX}")
+    establish_the_pin()
 
-    data = json.loads(BACKBONE.read_text(encoding="utf-8"))
+    data = json.loads(pinned_text(BACKBONE, "the decisions register's data file"))
     entries = data["decisions"]
     vocabulary = set(data["header"]["status_vocabulary"].keys())
 
@@ -403,7 +468,7 @@ def build() -> tuple[dict, str]:
         require_fields(entry)
         require_known_status(entry, vocabulary)
 
-    rendered = set(INDEX_ROW.findall(INDEX.read_text(encoding="utf-8")))
+    rendered = set(INDEX_ROW.findall(pinned_text(INDEX, "the rendered INDEX")))
     population = {e["id"] for e in entries}
     reconcile(population, rendered)
 
@@ -773,7 +838,9 @@ def main(argv: list[str]) -> int:
             print("FAIL: the ruling surface does not re-derive:", SURFACE)
             drift = 1
         if not drift:
-            print("the decisions-register filter re-derives")
+            print(f"the decisions-register filter re-derives at the pinned commit "
+                  f"{PINNED_COMMIT[:10]}, whose blob of this artifact is byte-identical to the "
+                  f"one on disk")
         return drift
 
     OUT.write_text(text, encoding="utf-8", newline="")

@@ -220,22 +220,6 @@
 
 **Provenance.** ARCHITECTURE.md:801-805. Not implemented: the effort setting does not exist and the decode's cost drivers (segment cap, key prune width) are compiled-in constants - tracked at OI-209/OI-210
 
-### D-036 — Accumulating gates are a warning sign - add iteration, not more gates
-
-> When a feedforward layer acquires many gates
-> and guards to compensate for missing upstream feedback, that is a symptom of missing
-> iteration — not a sign that the layer needs more gates.
-
-**In plain words.** If a stage keeps needing new special cases, the problem is that it is missing information from elsewhere. Adding another special case makes it worse.
-
-**Why.** Stated constraint, ARCHITECTURE.md:709-713: each gate is a heuristic patch on a structural limitation, so a rising gate count is a symptom of missing iteration rather than an argument for more gates.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:976-978`
-
-**Provenance.** ARCHITECTURE.md:709-713; restated as an ongoing concern at :2131-2136
-
 ### D-099 — Negative evidence is information - a ruled-out possibility is carried, not dropped
 
 > **Negative evidence is information — a ruled-out reading is carried, not dropped.** A layer that
@@ -348,32 +332,6 @@
 **Home.** `CLAUDE.md:949-951`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:217 (OI-33), resolved 2026-07-12 in the key-layer readiness wave 1. Its current reading on the production arm is D-114 - the decoder commits its best path, so the abstain counter reads zero. OPEN_ITEMS OI-240 closes on this move
-
-### D-243 — The planning band for the vertical engine, and the corpora excluded from it
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> For planning purposes, the current vertical tertian engine plus targeted texture
-> fixes should be expected to plateau around 65–75% exact external root+quality
-> agreement on **full-texture tonal corpora** (SATB choral, chamber, full piano
-> accompaniment). This band applies specifically to region-centric DCML comparison
-> methodology. Thin-texture corpora (Mozart piano sonatas, C.P.E. Bach keyboard,
-> solo melody) are excluded from this target — they require a separate inference
-> strategy and should not be compared against the same band. The When in Rome and
-> music21-surface comparisons use different methodologies and are not directly
-> comparable to this figure.
-
-**In plain words.** For planning, the vertical engine plus texture fixes is expected to settle around 65-75 % exact root-and-quality agreement on full-texture tonal music, measured region-centrically against DCML annotations. Thin-texture corpora are outside that target and are not judged against it, and figures from other comparison methods are not comparable to it.
-
-**Why.** The constraint stated in the record: the band is tied to one comparison methodology (region-centric DCML), and mixing methodologies is what makes a figure incomparable (ARCHITECTURE.md:3570-3575).
-
-**Status.** SUPERSEDED IN FACT · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:4556-4564`
-
-**Provenance.** The band is stated at ARCHITECTURE.md:3567-3575. The governing measurement surface is now the robust unit ratified at R10-b (CLAUDE.md gate block (A)), whose figures are reported per preset on a different unit; no ruling names this band as replaced. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-260 — Analysis output covers exactly the selection; everything loaded beyond it is evidence, never a result
 
@@ -831,28 +789,6 @@
 
 **Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer5_function_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
 
-### D-377 — The forbidden back-edge, stated concretely: a chord decision may NOT write into the committed tonality and re-run the tonality decode — a coupled decision is OWNED by its own bounded box, never patched backward
-
-> **A placement that WOULD violate acyclicity** (flagged so the build does not drift there): letting L4's chord
-> decision write back into L3's *committed* region key as a side effect and then re-running L3's whole-score
-> Viterbi — that is the back-edge #7 forbids. The design avoids it by making the joint step the **owner** of the
-> coupled (key,chord) decision (it does the re-rank locally, in its own bounded beam) rather than a **feedback
-> patch** on L3.
-
-**In plain words.** There is one shape that would break the rule against a later stage feeding an earlier one, and it is named so that no build drifts into it: letting the chord decision alter the tonality that has already been committed, and then re-running the whole tonality search over the piece. The permitted shape is the opposite — whatever owns the coupled decision makes it locally, inside its own bounded search, and publishes one settled answer forward. A new decision box, never a feedback patch on an existing stage.
-
-**Why.** It is the concrete form of the forward-only control-flow contract the architecture already carries, written down at the one place a design could plausibly have violated it. The record states why the permitted shape is safe: the coupled box reads only what the earlier stage has already emitted and carried — the ranked alternatives it published as its exclusion tail — and drives the later decoder forward as a pure function, so neither direction is a cycle.
-
-**Status.** LIVE · decided 2026-07-07 · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `cowork_joint_key_chord_design.md:146-150`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **“§1.3 How it avoids re-introducing a cross-layer cycle”** — `### §1.3 How it avoids re-introducing a cross-layer cycle (#7)` (heading at line 128). A delegation at cowork_engage_arc_plan.md:44 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
-
-**Provenance.** Found by the phase-1h continuation wave, 2026-08-02, reading `cowork_joint_key_chord_design.md` IN FULL. The step the document designs is shelved (**D-278**); this prohibition is not about that step — it is stated as what any placement must avoid, and is flagged in the record as written so the build does not drift there. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1h ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1h queue).
-
 ### D-422 — The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom is fitted now
 
 > **★ AND TIER J GATES A FIT — stated here because that is what the tier is FOR: THE JAZZ FIT IS DEFERRED TO THE
@@ -1250,31 +1186,6 @@ triggered.**" The verbatim above is RE-TAKEN from the new home, read out of the 
 
 **Provenance.** ★ RE-HOMED 2026-08-04 on the user's ruling (READ WAVE 5, dispatch `cc_instruction_reads_5.md` §0a ruling R3): the caveat is recorded BESIDE THE FIGURES IT QUALIFIES, in `CLAUDE.md` gate block (A), which is the surface that publishes them — the same act phase 1j performed for the four grading conventions in the same block. The verbatim and home above are re-taken there; the entry's class moves from `gap` to `project-convention`, because the concern is how ANY root-governed figure is read and gate block (A) is where that is owned. **THE FORMER VERBATIM, PRESERVED (#12)** — quoted from `docs/key_detection_baroque_partial_signature.md:121-127` as it stood: "**Why the Baroque BIR baseline (27/23) doesn't expose it:** BIR measures root-pc / bass-is-root agreement, which is largely **key-independent** — a chord's root/bass can be right while the key label is wrong. The wrong key corrupts **quality** (F vs Fm), **Roman numerals**, and some **inversions** — exactly what the Corelli *notation* tests assert (chord symbols + romans), which is why they catch it while BIR does not. So the corpus metric understates the real-world quality impact for Baroque material." **THE FORMER HOME, PRESERVED:** docs/key_detection_baroque_partial_signature.md:121-127. **THE FORMER PROVENANCE SENTENCE, PRESERVED:** `docs/key_detection_baroque_partial_signature.md`, the 2026-05-23 read-only investigation and its resolution banner. Read in full by READ WAVE 4, 2026-08-04. Recorded in the document's own scope section. Unlike **D-575** this is a statement about a MEASUREMENT and not about the legacy key path, so it is not legacy-scoped: it bears on how any root-governed figure is read, including the granularity-robust unit, whose Roman-numeral and key columns are tracked beside the root for a related reason (**D-115**, **D-211**). The record states no ratifier. *(The original 2026-05-23 investigation document is unchanged and remains the evidence the block now cites; what moved is where the RULE is recorded, not where the measurement that produced it lives. The record still states no ratifier for the DECISION, and the 2026-08-04 act supplies none — what the user ruled is where it is written down.)*
 
-### D-579 — The anchor obligation: compute the chord ONCE against its region's FINAL notes, with the tonality as an explicit input rather than frozen mid-pipeline
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> 3. **★ ANCHOR — compute the chord ONCE against final region tones, with the key as an explicit input [BS, DEEP]**
->    `[CC sixth issue, VERIFIED]`. This composes the old S2 (chord-identity ≠ final-region) and the frozen-key
->    half of X2 into the single highest-leverage structural obligation. Re-layer so: segmentation → final tones →
->    chord(key) — the chord is a clean function of its final region AND the key is an explicit variable, not
->    frozen into `basisIndep` mid-pipeline. This is what makes a joint fixpoint *possible*; it unblocks BOTH steps
->    5 and the eventual joint-key activation. The deepest structural fix; measure-gated.
-
-**In plain words.** The old pipeline named the chord before its stretch of music was finished being assembled, and it baked in the tonality before the competition between readings ran. The fix is to order it properly — settle the stretch, then its notes, then decide the chord with the tonality passed in as an ordinary input. Only then is the chord a clean function of what it is a chord of.
-
-**Why.** Its position in the order is argued rather than asserted: the review places it first among the deep fixes because both of the other structural obligations depend on it — readings cannot be folded into a competition whose stretches are still being mutated underneath it, and no joint settling is possible while the tonality is frozen before the chord is chosen. The two halves were verified verbatim at the committed object, including the source's own comment that the joint re-key runs once with no fixpoint and cannot re-emit the chord.
-
-**Status.** SUPERSEDED IN FACT · decided 2026-06-20 · ratifier not stated
-
-**Entry ratified.** 2026-08-04 · by user
-
-**Home.** `cowork_phase2_architecture_review.md:127-132`  ⚠ **home is not the specification that owns it** — a documentation gap; see `OPEN_ITEMS.md`.
-
-**Home section.** **“§5”** — `## §5 — The structural fix-first ORDER (the phase-2 deliverable)` (heading at line 108). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
-
-**Provenance.** `cowork_phase2_architecture_review.md`, the phase-2 architecture review (Cowork-led, reconciled against CC's empirical pass at committed HEAD `a03c2493bb`). Read in full by READ WAVE 4, 2026-08-04. **Its subject is the LEGACY multi-pass pipeline**, which the joint estimator replaced on both surfaces. Recorded as step 3 of the review's fix-first order, marked its anchor. **The obligation was met by replacement rather than by repair**: the production arm is now one joint decode over key, mode, chord and segmentation together (**D-001**), which is the ordering this step asked for arrived at by a different route. Recorded *superseded in fact* — no ruling names it. The record states no ratifier.
-
 ### D-581 — Information not yet consumed is NOT automatically a defect: every site is classified preserved-awaiting-consumer, lost, should-already, or unclear — and unclear is recorded for adjudication, never guessed
 
 > **★ THE RUBRIC FOR AN INFORMATION-LOSS SWEEP, AND ITS FOURTH VERDICT (user-ratified 2026-07-06;
@@ -1447,82 +1358,6 @@ chosen quality is Diminished"* — was an unlabeled ASSUMPTION, and the probe me
 **Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule (e) prefers this route in terms, and D-231's purposive clause (criterion C4) is why it is preferred over a delegation: at completion the specifications must suffice to measure conformance against WITHOUT consulting the register, and a decision reachable only by following a pointer satisfies C1's letter and defeats C4. The classification that selected this entry, with its reason and the whole 94-entry population, is `tools/audit/decisions/finish_line_item1_routes.json`. Its former home class was `gap` — a decision governing a layer but not findable from that layer's section — which is precisely what the re-homing discharges; the field is cleared because a layer-specification home is not a non-specification home. **THE FORMER HOME, CLASS AND VERBATIM, PRESERVED (#12)** — former home `cowork_eg1_premise_checks.md:55-57`; former verbatim: “1. The abstain rate rides on **`uncertaintyMargin` = 0.5 — an arbitrary, never-fit Tier-3 seed**
    (`chordslicedecoder.h:174`). The metric-moving behavior of the whole EG-2 probe sits
    downstream of an unestablished constant.” — `cowork_eg1_premise_checks.md`, the read-only at-code premise checks written before the EG-1 build (2026-07-10). Read in full by READ WAVE 5, 2026-08-04. Recorded as the first of three ledger facts under premise check PC-2. ⚠ The constant is in the DORMANT Layer-4 decoder. The third fact recorded beside it — that a ratified abstain-aware stop convention was owed before any abstaining path could be adoption-gated — is **D-212**, ruled and enforced two days later, and is not re-entered here (#6). The record states no ratifier.
-
-### D-615 — Under #19 the validation basis of every Iter-era hand-set scoring magnitude is retroactively VOID — the values are unfalsified, not established
-
-> **Nearly every live scoring magnitude on this surface was hand-set, and the only check that ever
-> validated it was a regression gate later proven to under-count true per-onset root error by a large
-> factor and to have been reading a then-buggy ground-truth parser. Under #19 the validation basis of
-> these values is therefore retroactively void: they are UNFALSIFIED, NOT ESTABLISHED.** *Why the
-> reading is "unestablished" rather than "wrong", which is a different claim and the record supports
-> only the first:* the same audit measured a third of the reachable constants inert at the root
-> objective, and both high-leverage re-fit candidates regressed held out. So nothing here says the
-> values are bad; what it says is that nothing in the record shows they are good. The under-count
-> factor and the inert fraction are in the audit that measured them and are not restated (D-431).
-
-**In plain words.** Almost every number in the chord scorer was set by hand, and the only thing that ever checked those numbers was a measurement later shown to miss most of the real error and to have been reading a faulty reference. So the check they passed does not establish them. They may still be good values — nothing here says they are bad — but nothing in the record shows that they are.
-
-**Why.** It follows from the establishment principle applied backwards, and the audit states the mechanism rather than asserting the conclusion: the only instrument that ever graded these values was later measured to under-count the true per-onset root error by a factor of fifteen to fifty-six and to have been reading a ground-truth parser since fixed. The audit also records what bounds the alarm — one third of the reachable constants were measured inert at the root objective, and both high-leverage re-fit candidates regressed held-out — so the reading is 'unestablished', not 'wrong'.
-
-**Status.** LIVE · decided 2026-07-10 · ratifier not stated
-
-**Home.** `docs/scoring_model.md:1447-1455`
-
-**Provenance.** `cowork_l1_l5_premise_debt_audit.md` Tier 2, the retroactive premise ledger commissioned by the user immediately after ratifying `CLAUDE.md` #17-#19 (2026-07-10). Read in full by READ WAVE 6, 2026-08-04. The audit's Tier-1 and Tier-3 findings are already tracked as the Stage-3 entry-gate rows `OPEN_ITEMS.md` OI-1 through OI-7 and are not re-entered here (#6); this Tier-2 statement is the one that no row carries as a standing consequence. The record states no ratifier. ⚠ The magnitudes it describes are the LEGACY chord scorer's; the joint estimator is the production inference layer (**D-001**), and whether its fitted tables inherit the same standing is NOT stated here and is not asserted. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii), which routes this document PER ENTRY to the subject's owning section). The subject is the standing of the magnitudes ON THIS SCORING SURFACE, so the standing scoring-surface family rule sites it at `docs/scoring_model.md` §8 — the document that specifies those magnitudes and whose §8 collects its standing constraints. The ⚠ LEGACY subject and the not-asserted clause about the estimator's fitted tables are both written into the home text. THE PARAMETER-LOCATION LIST IS NOT CARRIED ACROSS: it is a pointer into a manifest and into this document itself, so restating it at the new home would be a second copy of a list the file already is (#6). THE UNDER-COUNT FACTOR AND THE INERT FRACTION ARE NOT RESTATED (D-431). FORMER HOME, PRESERVED (#12): `cowork_l1_l5_premise_debt_audit.md:63-67`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 61, "section": "## Tier 2 — the Class-B MASS: live constants tuned against instruments later proven broken", "label": "“Tier 2”", "delegated": null, "delegation": "cowork_engage_arc_plan.md:69", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12), AND IT IS WHERE THE UNDER-COUNT FACTOR REMAINS ON THE RECORD: "**Nearly every live scoring magnitude was hand-set in the Iter/B-era (pre-2026-06-13), and its
-only validation instrument was the batch BIR gate + catalog/snapshot pins — the gate later
-proven to under-count true per-onset root error ~15–56× and to sit on a then-buggy GT parser.**
-Under #19 the validation basis of these values is retroactively void: they are *unfalsified,
-not established*. The set (locations per `tools/param_manifest.json` + `docs/scoring_model.md`):" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
-
-### D-619 — Over-claiming a constraint as HARD re-creates the override failure in reverse — and a sounding note is not automatically a chord tone
-
-> - **Over-claiming a constraint as HARD re-creates the override failure in reverse, and a sounding
->   tone is not automatically a chord tone.** Evidence splits into constraints that disqualify
->   readings outright and scores that only lean. A hard constraint is safe precisely because no amount
->   of soft evidence can overturn it — which is exactly what makes a mis-declared one unrecoverable, a
->   wrong certainty forcing a wrong answer. Whether a sounding pitch belongs to the chord is therefore
->   never a raw fact: the same four sounding pitches may be one chord with an added fourth or a chord
->   with a suspension that resolves away, so chord membership is decided inside the analysis rather
->   than before it. *Why:* it follows from what the split is FOR, and the worked case is the defense —
->   a sounding set that admits two readings cannot be a constraint on either.
-
-**In plain words.** Treating a judgment as if it were a fact is as damaging as letting a global guess overrule the notes — it just fails in the other direction, with a wrong certainty forcing a wrong answer. Which notes belong to the chord is one of those judgments: the same four sounding pitches can be one chord with an added note or a chord with a note that resolves away.
-
-**Why.** The reason is derived from what the hard/soft split is FOR, and stated with the rule: a hard constraint is safe precisely because no amount of soft evidence can overturn it, which is exactly what makes a mis-declared one unrecoverable. The worked case is the defense — the same sounding set admits two readings, so chord membership cannot be a raw fact.
-
-**Status.** LIVE · decided 2026-06-15 · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:512-520`
-
-**Provenance.** `docs/architecture_joint_inference.md` §5, the calibration precondition. Read in full by READ WAVE 6, 2026-08-04. ⚠ The document is superseded as an architecture proposal (`ARCHITECTURE.md` §2.14; the ratified estimator is **D-001**), and this clause is not a proposal but a constraint on how any evidence is classified — it is the general form of the demotion **D-618** records for one specific candidate. The record states no ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). ★ ASSUMPTION A4 DISCHARGED BY READING: the supersession was read at `ARCHITECTURE.md:960-961` and reaches the proposal's SHAPE, not this classification rule, which is therefore LIVE. Routed to the joint-estimator section of `ARCHITECTURE.md`, where it leads the subsection because the two measurements beside it are instances of it. FORMER HOME, PRESERVED (#12): `docs/architecture_joint_inference.md:83-89`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 81, "section": "## §5 — The calibration precondition (the load-bearing skill)", "label": "“§5”", "delegated": null, "delegation": "ARCHITECTURE.md:858", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "Getting \"hard\" right is the whole game. **A sounding note is not automatically a chord tone** — a C-E-G
-with an F may be an added-fourth chord or an F suspension to be explained away. So the truly hard
-constraints are the **raw facts** + the genuinely-unambiguous analyses; chord-tone-vs-non-chord-tone is
-itself part of the soft/joint analysis operating *within* those facts. **Over-claiming \"hard\" on a soft
-case re-creates the override problem in reverse** — a wrong constraint pinning a wrong answer." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
-
-### D-620 — The reading-shaped evidence producers were each measured to pin WRONG and must stay SOFT — a cadence anchor, a modulation detector and a bass-is-root rule are scores, never constraints
-
-> - **Three reading-shaped producers were each measured to pin WRONG and must stay SOFT: a
->   cadence-based tonic anchor, a modulation detector, and the rule that the lowest sounding pitch is
->   the chord's root.** Each was tested for how often the reading it would force is the wrong one, and
->   all three came back with error rates that disqualify them from ruling anything out. *Why:* the
->   classification of an evidence source as decisive or merely suggestive is measured against the
->   ground truth rather than assumed from how authoritative the source sounds — which is the rule
->   above run over the candidate set. The rates are in the record that measured them (D-431).
->   **⚠ LEGACY SCOPE:** the three producers named are legacy-era mechanisms, so the measurements are
->   of those producers and are not claims about the estimator specified above; what carries forward is
->   the verdict that a reading-shaped producer is a score and never a constraint.
-
-**In plain words.** Three mechanisms that each produce a candidate reading were tested for how often the reading they force is wrong: a cadence-based tonic anchor about two times in five, a modulation detector about half the time, and the rule that the lowest note is the chord's root about one time in five. None of them may rule a reading out; all three may only lean.
-
-**Why.** Measured per producer, which is the whole point of the check: the classification of each evidence source as decisive or merely suggestive was tested against the ground truth rather than assumed from how authoritative the source sounds, and all three reading-shaped producers came back with error rates that disqualify them from ruling anything out. This is the safety measurement **D-619** demands, run over the candidate set.
-
-**Status.** LIVE · decided 2026-06-15 · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:531-540`
-
-**Provenance.** `docs/architecture_joint_inference.md`, the status block's investigation findings. Read in full by READ WAVE 6, 2026-08-04. ⚠ The document is superseded as an architecture proposal (`ARCHITECTURE.md` §2.14; **D-001**), but these are measured error rates rather than a proposal, and no other home carries them. The bass-is-root value is the measured counterpart of **D-585**, which admits the bass prior as a tie-break only; the cadence value sits beside **D-290**, the falsification of the local key-agnostic cadence approach. The record states no ratifier. ★ HOMED 2026-08-08 (CC, executing the user's document-route ruling of 2026-08-08, route (ii)). ★ ASSUMPTION A4 DISCHARGED BY READING: the supersession at `ARCHITECTURE.md:960-961` reaches the proposal's shape, not these measurements, which are LIVE and homed. Routed to the joint-estimator section of `ARCHITECTURE.md` beside the rule they instantiate. TWO THINGS ARE STATED AT THE NEW HOME RATHER THAN LEFT IMPLICIT: the three RATES ARE NOT CARRIED ACROSS (D-431) — the verdict is, the numbers stay in the record — and a **⚠ LEGACY SCOPE** mark rides along, because the three producers named are legacy-era mechanisms and the measurements are of them, not of the production estimator. FORMER HOME, PRESERVED (#12): `docs/architecture_joint_inference.md:16-17`. FORMER CLASS, PRESERVED (#12): `gap`. FORMER HOME-SECTION BLOCK, PRESERVED (#12) — removed because the home-class criteria do not reach this entry at its new home: {"heading_line": 1, "section": "# Architecture — Constrained Joint Inference (the back-half target)", "label": "the opening block (above the first section heading)", "delegated": null, "delegation": "ARCHITECTURE.md:858", "states_rules": null, "verdict": "EXCLUDE", "decided_by": "D-432, the delegation bar — the strongest delegation is a provenance-attribution, which the bar does not admit", "former_class": "gap", "class_before_phase1q": "gap", "class_before_phase1r": "gap"}. THE FORMER VERBATIM, PRESERVED WHOLE (#12), AND IT IS WHERE THE THREE RATES REMAIN ON THE RECORD: "> - **The reading-shaped producers are correctly SOFT** — measured to pin WRONG: cadence anchor 44%,
->   modulation detector 53%, bass-is-root 17–23%. They must be soft scores, never hard constraints." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. Provenance is recorded in this field and NOT in the specification text (the OI-330 / OI-328 lesson).
 
 ### D-624 — The hard bound and the score start are SAFETY CAPS for a loop that never settles — never the amount of context a layer needs
 

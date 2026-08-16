@@ -36,37 +36,6 @@
 
 **Provenance.** ARCHITECTURE.md:308-316
 
-### D-093 — STATUS.md wins on current state; ARCHITECTURE.md on design
-
-> Where a
-> heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.
-
-**In plain words.** For what is built right now, read STATUS.md. For what was decided, read this document. Where they disagree about built-or-not, STATUS.md is right.
-
-**Why.** Stated constraint, ARCHITECTURE.md:303-306 and :3102-3103: the two documents move on different clocks - current state changes every session, design changes only when a decision changes - so each owns the question it can keep current.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:4265-4266`
-
-**Provenance.** ARCHITECTURE.md:3363-3365, consistent with :251-254
-
-### D-094 — Each layer carries exactly one build state
-
-> Each layer below is tagged with exactly one build state: **Built+Live** (wired into the
-> production pipeline), **Built+Dormant** (built and tested but not wired — reachable only via diagnostics, byte-identical on
-> production), or **Design-only** (specified, not yet built).
-
-**In plain words.** Every stage is labelled as live, built-but-not-connected, or designed-only - one label each, no ambiguity.
-
-**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). The record holds no reason for the exactly-one-state rule. The three state names are DEFINED at the home — wired into production; built and tested but not wired, reachable only through diagnostics and byte-identical on production; specified and not yet built — and a definition is not a ground. What stands beside it is a DIVISION OF RECORD rather than a defense: per-date and per-commit provenance lives in the status document and the session reports, "not here", which says what the legend does not carry rather than why each layer carries exactly one state. No alternative is considered.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:1549-1551`
-
-**Provenance.** ARCHITECTURE.md:1151-1154. Three layer tags and two prose statements are stale after the switch - see OPEN_ITEMS OI-232
-
 ### D-109 — The open-items register is the one home for every unresolved issue, and the index is the status of record
 
 > this file is the complete INDEX and
@@ -143,45 +112,6 @@
 **Home.** `CLAUDE.md`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md Conventions, user-directed 2026-07-28; open_items/OI-229 records the convention STANDING for new writing and the tree-wide cleanup as an unratified future work item
-
-### D-127 — An architectural decision that changes is documented in the same commit
-
-> When an architectural decision changes — update this document in the same commit.
-> Stale documentation is worse than no documentation because it actively misleads.
-> Claude Code should update relevant sections of this document as its last act when
-> a session changes an architectural decision.
-
-**In plain words.** When a design decision changes, the change to this document goes in the same commit as the change to the code.
-
-**Why.** Stated constraint, ARCHITECTURE.md:6757: stale documentation is worse than no documentation, because it actively misleads.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:8081`
-
-**Provenance.** ARCHITECTURE.md:6754-6759 (§18.4); the standing principle is CLAUDE.md #10 (D-174). No date or ratifier stated.
-
-### D-192 — A scoring change and its documentation land in the same commit
-
-> **Sync rule — mandatory:** Any commit that adds or modifies a template, bonus,
-> guard, gate, or other scoring term in `chordanalyzer.cpp` **must** include a
-> corresponding update to `docs/scoring_model.md` in the same commit. The two
-> must never drift apart. Specifically:
->
-> - Adding a template: update the Templates section (§2), increment the template
->   count in the array-size comment, add the guard description if applicable
-> - Adding or changing a bonus/gate: update the relevant §4 or §6 entry
-> - Adding a new constraint or dead end: add it to §8
-
-**In plain words.** Any commit that adds or changes a template, bonus, guard, gate or other scoring term in the chord analyzer must carry the matching update to the scoring-model document. They may never drift apart.
-
-**Why.** Stated constraint, CLAUDE.md:625-630: violating the scoring model's invariants without reading it first has caused several failed attempts, named in the record - the leading-tone ambiguity attempt, four attempts at one bonus, and a rotation-selector bypass. The staleness check is mechanical: the template count in the document must equal the array size in the code (CLAUDE.md:642-645).
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `CLAUDE.md:1309`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** CLAUDE.md:621-660. The document itself is `docs/scoring_model.md`.
 
 ### D-193 — The writing standards live in one place, and predicates must be qualified
 
@@ -263,24 +193,6 @@
 **Home.** `CLAUDE.md`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** User ruling 2026-08-02 (the living-surface half of OI-208, all recommendations adopted); the CLAUDE.md decisions-register section + the session-start read list, edited in the same commit.
-
-### D-232 — The section numbers are authoritative; the "Rule N" labels are a legacy flat numbering
-
-> *The "Rule N" labels in §2.11–§2.12 are a legacy flat numbering of the coding/process rules and do not align with the
-> §-numbers (and appear out of order); the **§-numbers are authoritative**. Read each "Rule N" as a local name for the
-> rule stated beside it, not a cross-reference to a numbered list.*
-
-**In plain words.** Where a coding or process rule in sections 2.11-2.12 carries a "Rule N" label, that label is only a local name for the rule beside it. The section number is what identifies the rule.
-
-**Why.** The constraint that forced it, stated in the quote: the flat numbering does not align with the section numbers and appears out of order, so reading a "Rule N" label as a cross-reference sends the reader to the wrong rule.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:868-870`
-
-**Provenance.** ARCHITECTURE.md:601-603 (stated as a standing reading instruction in the document itself) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-255 — Every design document follows one fourteen-section structure, synthesized from three published standards
 

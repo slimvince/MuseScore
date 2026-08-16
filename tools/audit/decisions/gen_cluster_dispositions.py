@@ -369,7 +369,16 @@ def verify_backbone(backbone: dict) -> int:
     # pointing at the wrong OPEN_ITEMS row, because they were written before the rows existed
     # and never reconciled — including one to a number no row ever received.  A reference that
     # names nothing is mechanically catchable, so it is caught here rather than by reading.
+    # ★ THE RETIRED BLOCK IS CONSULTED BESIDE THE LIVE ENTRIES (user, 2026-08-16, §4 limb 4 of
+    # `cowork_rulings_2026_08_16_preparation_return.md`).  A soft-discarded entry is RETIRED from
+    # the live record and NOT destroyed (#12): it stays in the same data file, whole, and stays
+    # revivable.  A surviving entry that names one is therefore pointing at something the record
+    # still holds, and reporting it DANGLING would say the opposite.  What this does not do is
+    # widen anything else: nothing below reads the retired block, so no retired entry's verbatim
+    # is located, no retired home is checked, and no count moves.
     known_d = {d["id"] for d in backbone["decisions"]}
+    known_d |= {r["the_entry"]["id"]
+                for r in backbone.get("retired_entries", {}).get("entries", [])}
     index_text = (REPO / "OPEN_ITEMS.md").read_text(encoding="utf-8", errors="replace")
     known_oi = set(re.findall(r"^\| (OI-\d+) \|", index_text, re.M))
     dangling = []

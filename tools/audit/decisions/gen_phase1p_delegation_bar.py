@@ -316,8 +316,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
     # Each grade was made by reading the located line in place, exactly as the phase-1p grades
     # were.  Eight are NOT_NAMED, three reach the bar, and all three come out EXCLUDE — so no
     # section-kind judgment is reached for any of the eleven.
-    "cowork_types_header_design.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "cowork_architecture_review_2026_07.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
 
@@ -374,23 +372,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "terms that nothing in it is a build decision, so the kind half is where its entries "
         "will be decided. The form is graded here; the kind half is still not reached, because "
         "it is judged PER SECTION by the classification pass and that pass stays unrun."),
-    "cowork_layer2_slicing_design.md": (
-        CLAUSE, "ARCHITECTURE.md",
-        "The ratified contract for this layer is `cowork_layer2_slicing_design.md`",
-        "★ MOVED 2026-08-04 (READ WAVE 5, ruling R4): THE USER WROTE THE DELEGATION. It is the "
-        "bar's first named form, word for word, in the Layer-2 section, SUPPLEMENTING the "
-        "'See ...' citation rather than replacing it — which is why this document is now named "
-        "TWICE in `ARCHITECTURE.md`, once in each form. Under `CLAUDE.md` rule (k1) the "
-        "STRONGEST naming governs, so the weaker citation does not undo the delegation, and the "
-        "anchor above is deliberately the delegation's own sentence rather than the bare "
-        "filename, which is no longer unique in that file. The former grade, preserved (#12): "
-        "BARE_CITATION — 'The only naming is inside a \"See ...\" list of two documents appended "
-        "to a paragraph reporting a measurement result. A bare appended citation, which the bar "
-        "does not admit — and notably weaker than the sibling Layer-1 document, which is not "
-        "named in any of the three surfaces at all. ★ THE DOC-GOVERNANCE GLOB "
-        "`cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING (user, 2026-08-04, "
-        "OI-326 ruling R1; `CLAUDE.md` rule (k), **D-546**), so this grade is unchanged and the "
-        "document is on the OI-293 write list instead.'"),
 
     "cowork_census_full_needs_audit.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
@@ -454,8 +435,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
         "as a RULING rather than as an unanswered question, and the document's own banner now "
         "records the absorption and its historical status. Its two entries stay `gap`, which is "
         "the correct class for a decision whose concern is homed elsewhere."),
-    "cowork_phase2_architecture_review.md": (
-        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "docs/stage4b_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
 
@@ -529,7 +508,45 @@ RETIRED_2026_08_09_EIGHTH_RETURN = (
     "unchanged and is not re-read or re-graded; the roadmap's own text is untouched."
 )
 
+RETIRED_2026_08_16_THE_SOFT_DISCARD = (
+    "CC, dispatch `cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of "
+    "2026-08-16 -- §3 the soft-discard, §4 its reach, §6 the STANDING checks' treatment (kind 2). "
+    "THREE documents: `cowork_layer2_slicing_design.md` (D-540, D-541), "
+    "`cowork_phase2_architecture_review.md` (D-579) and `cowork_types_header_design.md` (D-610). "
+    "They are emptied NOT by a re-homing but by the ruled SOFT-DISCARD: every register entry they "
+    "homed was retired out of the live record into the data file's retired-entries block -- "
+    "retired, never destroyed (#12), and individually revivable. This tool STOPPED on their "
+    "grades as FORM judgments for documents that are nobody's home, which is that guard working. "
+    "The grades are moved unchanged and are neither re-read nor re-graded; each document's own "
+    "text is untouched, and each retired entry's statement still stands at it -- a provenance "
+    "verdict, not a judgment on soundness or usefulness. Membership is DERIVED, never authored: "
+    "`gen_retired_subject_moves.py` derives it from the retired block and re-verifies this table "
+    "in both directions."
+)
+
 RETIRED_FORMS: dict[str, tuple[str, str, str, str]] = {
+    # retired 2026-08-16, the ruled soft-discard (see RETIRED_2026_08_16_THE_SOFT_DISCARD)
+    "cowork_types_header_design.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
+    "cowork_layer2_slicing_design.md": (
+        CLAUSE, "ARCHITECTURE.md",
+        "The ratified contract for this layer is `cowork_layer2_slicing_design.md`",
+        "★ MOVED 2026-08-04 (READ WAVE 5, ruling R4): THE USER WROTE THE DELEGATION. It is the "
+        "bar's first named form, word for word, in the Layer-2 section, SUPPLEMENTING the "
+        "'See ...' citation rather than replacing it — which is why this document is now named "
+        "TWICE in `ARCHITECTURE.md`, once in each form. Under `CLAUDE.md` rule (k1) the "
+        "STRONGEST naming governs, so the weaker citation does not undo the delegation, and the "
+        "anchor above is deliberately the delegation's own sentence rather than the bare "
+        "filename, which is no longer unique in that file. The former grade, preserved (#12): "
+        "BARE_CITATION — 'The only naming is inside a \"See ...\" list of two documents appended "
+        "to a paragraph reporting a measurement result. A bare appended citation, which the bar "
+        "does not admit — and notably weaker than the sibling Layer-1 document, which is not "
+        "named in any of the three surfaces at all. ★ THE DOC-GOVERNANCE GLOB "
+        "`cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING (user, 2026-08-04, "
+        "OI-326 ruling R1; `CLAUDE.md` rule (k), **D-546**), so this grade is unchanged and the "
+        "document is on the OI-293 write list instead.'"),
+    "cowork_phase2_architecture_review.md": (
+        NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     # retired 2026-08-09, the eighth return continuation (see RETIRED_2026_08_09_EIGHTH_RETURN)
     "docs/implementation_roadmap.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
@@ -969,9 +986,11 @@ def main() -> int:
         },
         "verdict_totals": dict(tally),
         "retired_form_judgments": {
-            "what_this_is": "FORM judgments for documents that are NOBODY'S HOME any more, "
+            "what_this_is": "FORM judgments for documents that are NOBODY'S HOME any more — "
                             "every entry they held having been re-homed into the specification "
-                            "that owns its subject. Each judgment records a READING made at a "
+                            "that owns its subject, or, since 2026-08-16, RETIRED out of the "
+                            "live record by the ruled soft-discard. Each judgment records a "
+                            "READING made at a "
                             "surface, which no derivation reproduces, so it is moved WHOLE "
                             "rather than deleted (#12). It is carried here as history: nothing "
                             "counts it, no verdict reads it, and `mentions()` does not "
@@ -989,6 +1008,12 @@ def main() -> int:
                 RETIRED_2026_08_09_SEVENTH_RETURN,
             "retired_2026_08_09_the_eighth_return_continuation":
                 RETIRED_2026_08_09_EIGHTH_RETURN,
+            "retired_2026_08_16_the_ruled_soft_discard": RETIRED_2026_08_16_THE_SOFT_DISCARD,
+            "membership_is_derived": "tools/audit/decisions/gen_retired_subject_moves.py derives "
+                                     "which judgments belong here from the decisions register's "
+                                     "own retired block and re-verifies this table in both "
+                                     "directions on every run (the user's ruling of 2026-08-16, "
+                                     "§6 kind 2).",
             "judgments": {
                 doc: {"form": f, "surface": s or None, "anchor": a or None, "why": w}
                 for doc, (f, s, a, w) in sorted(RETIRED_FORMS.items())

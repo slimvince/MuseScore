@@ -22,21 +22,6 @@
 
 **Provenance.** ARCHITECTURE.md:433-436 states the §2 principles are 'hard constraints, not guidelines'; restated at §2.4 :435-438
 
-### D-071 — The analysis layer never produces display strings
-
-> Analysis components produce structured data — they never produce display strings.
-> Formatting is handled by separate formatter classes.
-
-**In plain words.** The analysis returns facts. Turning those facts into text on screen is somebody else's job.
-
-**Why.** Stated constraint, ARCHITECTURE.md:483-485: the separation is already established by `ChordSymbolFormatter`, and keeping it means the same analysis can be rendered several ways without the analysis knowing about any of them.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:750-751`
-
-**Provenance.** ARCHITECTURE.md:481-485; mechanically guarded for the joint module by D-017
-
 ### D-072 — The dependency rule - the analysis library knows nothing about the score format
 
 > This dependency order is **enforced**. Any code that would invert it (e.g. a composing header forward-declaring `mu::engraving::Note`) must be moved to the notation bridge layer.
@@ -67,79 +52,6 @@
 
 **Provenance.** ARCHITECTURE.md:534-567; the standing project-wide form is CLAUDE.md #6 (total unification)
 
-### D-074 — Analyze and suggest - never modify the score without explicit user action
-
-> The system presents analytical findings and suggestions. It never modifies the main score
-> automatically. All score modifications require explicit user action.
-
-**In plain words.** The program tells you what it thinks. It never changes your music unless you ask it to.
-
-**Why.** Stated constraint, ARCHITECTURE.md:527-532: the chord staff, the status bar and the panels are informational - they show what was inferred - and every change to the music is the user's explicit act through standard MuseScore editing.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:794-796`
-
-**Provenance.** ARCHITECTURE.md:525-532
-
-### D-075 — Interface-based design for machine-learning substitutability
-
-> Every component that may eventually be replaced or augmented by a machine learning
-> model must be defined behind a pure abstract interface.
-
-**In plain words.** Anything that might one day be replaced by a trained model is hidden behind an interface, so the replacement can be dropped in without touching everything else.
-
-**Why.** Stated constraint, ARCHITECTURE.md:458-460: the rest of the system depends only on the interface, so a machine-learning implementation can replace a rule-based one without any consumer changing.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:708-709`
-
-**Provenance.** ARCHITECTURE.md:456-479; the substitution points are listed at §14.1
-
-### D-076 — Score inspection before diagnosis
-
-> Claude Code does not have direct score access and must not substitute
-> statistical inference for visual score inspection.
-
-**In plain words.** When a corpus number looks odd, somebody opens the actual music and looks at it before anyone changes code or runs more statistics.
-
-**Why.** Stated constraint, ARCHITECTURE.md:576-597: score inspection takes two minutes and answers what corpus statistics cannot - the actual texture, whether the chord staff is over-segmenting, whether the opening key is right - and Claude Code has no score access, so it must not substitute statistical inference for looking.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:863-864`  — a project-wide convention with no owning layer; this is its correct home.
-
-**Provenance.** ARCHITECTURE.md:569-597
-
-### D-077 — The configuration interface is split into two narrow IoC interfaces
-
-> The implode bridge has no business knowing about status-bar display preferences; the analysis bridge has no business knowing about chord-staff output settings.
-
-**In plain words.** Settings are exposed through two small interfaces rather than one big one, so each component can only see the settings it actually needs.
-
-**Why.** SEARCHED 2026-08-09 (CC, `cc_instruction_return_continuation_3.md` Task 2). THE RECORD HOLDS A DEFENSE AND THE EMPTY FIELD MISREPRESENTED IT — it sits at the home in a paragraph whose own heading is "Why split?": the implode bridge has no business knowing about status-bar display preferences and the analysis bridge none about chord-staff output settings, and then the general ground those two instances rest on — "Narrow interfaces make the dependency of each component explicit and keep the IoC registrations clean." The recorded verbatim is in fact the FIRST HALF of that justification rather than the rule itself, which is why the entry reads as undefended. A SECOND, structural reason is stated in the next paragraph, for the related choice not to register the combined interface: it inherits from both sub-interfaces, so the IoC static member would be ambiguous with two global-interface bases.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2453`
-
-**Provenance.** ARCHITECTURE.md:1595-1607, restated at :2967-2978
-
-### D-078 — The cross-layer value types live in a dependency-free leaf header
-
-> **The cross-layer value-types LEAF** — a dependency-free header (STL only; no `chord/`, `key/`, or engraving includes) holding the value types that cross the L1.5 / L3 / L4 boundaries
-
-**In plain words.** The small data types that several stages share live in one header that depends on nothing, which removed two places where a lower stage had to include a higher one.
-
-**Why.** SEARCHED 2026-08-09 and the record HOLDS one, stated in the paragraph immediately below the decision at its own home — which is why an empty field misrepresented it. The leaf exists to KILL TWO HEADER BACK-EDGES a layering audit had found: with the value types in a dependency-free header, the L1.5 and L3 headers compile **without** including the L4 chord headers, so the two type-only back-edges the audit named are gone. That is #7 (layer adherence) enforced at the include graph rather than by convention. Two properties are recorded with it and belong to the defense, because they are what make the move safe: each type is a **pure relocation** — same name, same namespace, same layout — and the former homes now include the leaf, so every existing includer gets the types transitively and unchanged. No measured value is carried here (**D-431**).
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2287`
-
-**Provenance.** ARCHITECTURE.md:1439-1447
-
 ### D-107 — American English throughout
 
 > All identifiers, comments, and documentation use American English spelling.
@@ -153,57 +65,6 @@
 **Home.** `ARCHITECTURE.md:761`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** ARCHITECTURE.md:492-502; restated in CLAUDE.md Conventions
-
-### D-108 — Cross-platform by default
-
-> All code must run on every platform officially supported by MuseScore Studio: Windows,
-> macOS, and Linux.
-
-**In plain words.** Everything must work on Windows, macOS and Linux; platform-specific code is allowed only where unavoidable and must be walled off.
-
-**Why.** Stated constraint, ARCHITECTURE.md:676-682: the code must run on every platform MuseScore Studio officially supports, so platform-specific code is permitted only when unavoidable and must be abstracted so the rest of the module stays platform-agnostic.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:945-946`  — a project-wide convention with no owning layer; this is its correct home.
-
-**Provenance.** ARCHITECTURE.md:676-682
-
-### D-227 — Read how MuseScore already does it, and never invent parallel infrastructure
-
-> Before implementing anything that touches MuseScore's existing infrastructure —
-> UI panels, score traversal, playback, settings, localization — read how MuseScore
-> already does it and follow the same pattern. Do not invent parallel infrastructure.
-
-**In plain words.** Before touching anything MuseScore already provides - panels, walking the score, playback, settings, translation - the existing MuseScore code for it is read and followed. A second, parallel mechanism of our own is never created.
-
-**Why.** Derivation not recorded as a separate defense. Its consequences are recorded across the document and are what the rule buys: the panel infrastructure (§12.1), the localization path (§12.1), the accessibility patterns (§12.1), the coding style (§17.1), and the preview pathway (§10.5) all resolve by this rule rather than by separate argument.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:788`
-
-**Provenance.** ARCHITECTURE.md:519-523 (§2.8). No date or ratifier stated. This is the GENERAL form of the relationship to existing MuseScore code; the two scoped forms are D-072 (the analysis library depends on no engraving type) and D-073 (shared logic has one implementation). What none of the three states is which MuseScore interfaces our bridge code may call - see OPEN_ITEMS OI-241.
-
-### D-228 — The bridge pattern - engraving types enter and leave at named free functions in the notation namespace
-
-> - Takes engraving types as input (Note*, Score*, Fraction, …)
-> - Produces composing-domain results (ChordAnalysisResult, HarmonicRegion, …)
-> - Lives in `mu::notation` namespace
-> - Is declared in a `notation/internal/notation*bridge.h` header
-> - Is defined in the corresponding `notation/internal/notation*bridge.cpp`
->
-> **Callers** of bridge functions include only the notation-side bridge header, not composing headers, for the function itself. They may still include composing headers for the composing types in the function signature.
-
-**In plain words.** The only code that may take MuseScore's own score objects and turn them into analysis results is a plain function living on the notation side, declared in a bridge header and defined in the matching bridge source file. Whoever calls it includes the bridge header, not the analysis headers, for the call itself.
-
-**Why.** Stated constraint, ARCHITECTURE.md:1123-1127: the analysis library is pure music theory and can be unit-tested in complete isolation - no score, no staves, no interface - which is what makes its test suite fast and reliable. If analysis headers imported engraving types the tests would have to link the whole engraving library, and more fundamentally the music theory would carry knowledge of one particular score format, a coupling that makes the algorithms harder to reuse or replace.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:1529`
-
-**Provenance.** ARCHITECTURE.md:1129-1140 (§3.3, the bridge pattern), with the enforcement statement at :955 (D-072) - any code that would invert the dependency order must be moved to the bridge layer. The bridge file inventory at :977-985 is the as-built list. No date or ratifier stated.
 
 ### D-229 — The MuseScore-dependency rule - one general rule for what our code may depend on
 
@@ -231,24 +92,6 @@
 **Home.** `ARCHITECTURE.md:1460-1473`
 
 **Provenance.** User ruling 2026-08-02 at the OI-241 adjudication (all recommendations adopted); written into ARCHITECTURE.md §3.3 in the same commit (the register's same-commit rule, D-230). open_items/OI-241.md records the gap this closes.
-
-### D-233 — Build and test commands run synchronously; one run, one result
-
-> **Rule 14 — Shell discipline for long-running commands**
->
-> All build and test commands must run synchronously (foreground). Never use background jobs or split output.
-
-**In plain words.** Every build and test command is run in the foreground and its output is read whole. A command is never backgrounded, never killed and re-run differently, and never silently re-run: unexpected output is reported and instructions asked for.
-
-**Why.** Derivation not recorded. The record states the rule and its correct/incorrect patterns (ARCHITECTURE.md:627-649) but not the incident or measurement that produced it.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:890-892`
-
-**Provenance.** ARCHITECTURE.md:623-625 (Rule 14) and :649 (the one-run-one-result statement) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-296 — READING MuseScore's engraving code is allowed from anywhere we may edit; only EDITING the notation and engraving code is off limits
 
