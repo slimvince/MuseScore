@@ -356,6 +356,26 @@ AUTHORED = [
      "of the three signals must be shown BOTH to fire and to stay quiet, so a signal that came "
      "back empty over the population cannot be mistaken for one that cannot fire at all (#19)"),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 2 --------------------
+    # Task 2's own tool, registered in the act that creates it, on the same practice and for the
+    # same reason as the entry above: run with no flag it REWRITES its committed outputs.
+    ("tools/audit/gen_ratified_document_check.py", ["--check"],
+     "the ratified-document subject check re-derives, and with it the residue surface both this "
+     "batch's returns are carried on. For the 62 entries the user's Ruling of 2026-08-16 §3(B2) "
+     "did NOT rule, each recovered act is established as a document ratification or not, and where "
+     "it is, the ratified document is searched for that entry's OWN subject recognizers — the "
+     "decisions register's `patterns`, which is what the ruling asks for in its own words. What it "
+     "guards is not the results, which are evidence awaiting the user, but six demands on the "
+     "record: the population must be derivable at all, which means the ten (B1) keeps must still "
+     "be PARSED from the ruling record's own bullet — a bullet naming any number other than ten, "
+     "or naming an entry the recovery pass did not return ACT-FOUND for, halts it rather than "
+     "being corrected; every entry must carry the fields the pass reads; every result must be one "
+     "of the closed three values with a distribution that accounts for the population; every "
+     "sentence of the ruling that ordered the derivation must still be in its ruling record AS IT "
+     "STANDS; and every recorded act coordinate is re-read at the measured commit and "
+     "cross-checked against the quote the recovery pass published, so a document that has moved "
+     "under a line cannot be graded silently as though it had not"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

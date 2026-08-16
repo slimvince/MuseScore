@@ -596,6 +596,29 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "sole-carrier verdict is a statement about WHERE THE CONTENT LIVES and about nothing "
         "else."),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 2 ---------------------
+    "tools/audit/gen_ratified_document_check.py": (
+        LIVE, "gen_ratified_document_check.py, the `THE STOPS` list of its module docstring; "
+              "`b1_keeps()`, which PARSES the ten keeps from the ruling record and halts on any "
+              "other number; `locate_ruling()`, which locates every ordering sentence; "
+              "`passage_of()`, which re-reads each recorded coordinate and cross-checks it",
+        "LIVE, and its live half is the strongest of the three passes this preparation phase has "
+        "added. Its POPULATION is parsed from the ruling record on every run: the ten entries the "
+        "(B1) limb kept are read out of the ruling's own bullet, and a bullet naming any number "
+        "other than ten, or naming an entry the recovery pass did not return ACT-FOUND for, halts "
+        "it rather than being corrected — so the population cannot drift away from the words that "
+        "fixed it, and the derivation cannot outlive them. Live too is the coordinate "
+        "cross-check: every act the recovery pass recorded as a document, a line and a span is "
+        "re-read and compared with the quote that pass published, so a document that has moved "
+        "under a line is reported rather than graded as though it had not. ★ WHAT IT DELIBERATELY "
+        "DOES NOT ASSERT: that its evidence re-derives against the CURRENT decisions register. "
+        "Its inputs are read from the git objects at the commit the artifact records, on the same "
+        "ground its sibling guard states — the soft-discard this evidence is gathered for moves "
+        "those very inputs (#12; the OI-301 hazard). It asserts nothing about whether any entry's "
+        "result is right: the ratification recognizer is authored, its reach is unmeasured (#19), "
+        "and every result is published with the passage quoted at its line so the reading is the "
+        "user's and not this tool's."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

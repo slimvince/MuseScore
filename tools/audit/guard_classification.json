@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 63,
-    "re_derives_a_live_invariant": 51,
+    "tools_classified": 64,
+    "re_derives_a_live_invariant": 52,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -415,6 +415,14 @@
       "why": "Classified for completeness though it is NOT RUN. Its three readings — the class, the direct namings, the reached namings — are all derived by SCANNING THE TREE, so it is a live census. Its defect is the missing verify-only mode, which is why the guard state carries it as not-run with that reason; the defect is not that it is historical.",
       "in_the_live_guard_list_after_this_classification": false,
       "state_at_the_committed_tree": "NOT RUN"
+    },
+    {
+      "tool": "tools/audit/gen_ratified_document_check.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_ratified_document_check.py, the `THE STOPS` list of its module docstring; `b1_keeps()`, which PARSES the ten keeps from the ruling record and halts on any other number; `locate_ruling()`, which locates every ordering sentence; `passage_of()`, which re-reads each recorded coordinate and cross-checks it",
+      "why": "LIVE, and its live half is the strongest of the three passes this preparation phase has added. Its POPULATION is parsed from the ruling record on every run: the ten entries the (B1) limb kept are read out of the ruling's own bullet, and a bullet naming any number other than ten, or naming an entry the recovery pass did not return ACT-FOUND for, halts it rather than being corrected — so the population cannot drift away from the words that fixed it, and the derivation cannot outlive them. Live too is the coordinate cross-check: every act the recovery pass recorded as a document, a line and a span is re-read and compared with the quote that pass published, so a document that has moved under a line is reported rather than graded as though it had not. ★ WHAT IT DELIBERATELY DOES NOT ASSERT: that its evidence re-derives against the CURRENT decisions register. Its inputs are read from the git objects at the commit the artifact records, on the same ground its sibling guard states — the soft-discard this evidence is gathered for moves those very inputs (#12; the OI-301 hazard). It asserts nothing about whether any entry's result is right: the ratification recognizer is authored, its reach is unmeasured (#19), and every result is published with the passage quoted at its line so the reading is the user's and not this tool's.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
     },
     {
       "tool": "tools/audit/gen_reserved_word_scanner.py",
