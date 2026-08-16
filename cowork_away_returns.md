@@ -12455,6 +12455,19 @@ hazard. **One ordering consequence is declared rather than glossed**: Task 3's t
 while Task 2's guard state was being taken, and it was moved OUT of the repository for the duration
 and restored for its own task, so the state committed with Task 2 is the state of Task 2's own tree.
 
+**Task 4 — the close.** Commit `4926284de7`, parent `2fa6ffcbf9`, pushed, three paths: the five
+`STATUS.md` pointer entries, this section of `cowork_away_returns.md`, and the report
+`cc_report_preparation_second.md`.
+
+**★ E5 — MET, RUN AT THE TREE CARRYING THE CLOSE AND AFTER THE COMMIT THAT CARRIES IT.** At that
+tree, after `4926284de7` existed, `gen_guard_state.py --check` printed **"the guard state
+re-derives"** — **52 guards run, 51 passing, ONE failing** (`gen_filing_convention_application.py
+--check`, [[OI-372]]), 4 not run, 10 historical, **no STOP** — and
+`gen_guard_classification.py --check` printed **"the guard classification re-derives"**. The
+sanctioned enumeration at the same tree reported **no tracked modification anywhere**. **Run and
+read, never inferred**, and this paragraph lands in the ONE FURTHER commit after the close, so no
+graded value was committed before the run that produced it.
+
 ## 5 (continued). What this batch did NOT do
 
 **Nothing was discarded, archived, moved or deleted.** No soft-discard executed; no

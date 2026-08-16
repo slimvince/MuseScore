@@ -334,10 +334,18 @@ self-check on this batch's own new prose.
   appeared at the end of any task**, so no STOP-and-report was owed.
 - **E5 — see below, and the ordering rule the dispatch imposes was obeyed.**
 
-**★ E5 — MET, RUN AT THE TREE CARRYING THE CLOSE AND AFTER THE COMMIT THAT CARRIES IT.** The values
-of that run, and the close commit's own SHA, land in **one further commit** after the close, so
-nothing here was on disk before the run that produced it. **The E3-ordering defect that rule exists
-against is not repeated in this batch: no expectation anywhere in this report was written before its
+**★ E5 — MET, RUN AT THE TREE CARRYING THE CLOSE AND AFTER THE COMMIT THAT CARRIES IT.** Task 4's
+close is commit **`4926284de7`**, pushed, parent `2fa6ffcbf9`, three paths. At that tree, after that
+commit existed, `gen_guard_state.py --check` printed **"the guard state re-derives"** — **52 guards
+run, 51 passing, ONE failing** (`gen_filing_convention_application.py --check`, [[OI-372]]), 4 not
+run, 10 historical, **no STOP** — and `gen_guard_classification.py --check` printed **"the guard
+classification re-derives"**. The sanctioned enumeration at the same tree reported **no tracked
+modification anywhere**: every record it returned was untracked. **Run and read, never inferred.**
+
+Per the dispatch's ordering rule — *no graded value is committed before the run that produced it* —
+this paragraph and the SHA in it land in **one further commit** after the close, so nothing here was
+on disk before the run that produced it. **The E3-ordering defect that rule exists against is not
+repeated in this batch: no expectation anywhere in this report was written before its
 measurement.**
 
 ---
@@ -392,8 +400,8 @@ discarded** — [[OI-372]] and [[OI-374]] stay exactly as found, [[OI-179]] stay
 *Provenance: CC, 2026-08-16, dispatch `cc_instruction_preparation_second.md`. Task 0 is commit
 `6529d10ae4` (parent `c2213b52fb`), pushed. Task 1 is `7e400491f9` (parent `6529d10ae4`), pushed.
 Task 2 is `ddbf89d002` (parent `7e400491f9`), pushed. Task 3 is `2fa6ffcbf9` (parent `ddbf89d002`),
-pushed. Task 4's close and this report land next, and **E5's run and the close's own SHA are
-recorded in the one further commit after it** — the ordering the dispatch imposes, so that no graded
+pushed. Task 4's close is **`4926284de7`** (parent `2fa6ffcbf9`), pushed, three paths; **E5's run
+and that SHA are recorded in the one further commit after it** — the ordering the dispatch imposes, so that no graded
 value is committed before the run that produced it. As the previous batch's report recorded of
 itself, the recursion stops at the commit carrying that sentence: a commit cannot contain its own
 identity, and that terminus is named rather than left as a gap.*
