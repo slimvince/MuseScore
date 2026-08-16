@@ -402,7 +402,11 @@ discarded** — [[OI-372]] and [[OI-374]] stay exactly as found, [[OI-179]] stay
 `6529d10ae4` (parent `c2213b52fb`), pushed. Task 1 is `7e400491f9` (parent `6529d10ae4`), pushed.
 Task 2 is `ddbf89d002` (parent `7e400491f9`), pushed. Task 3 is `2fa6ffcbf9` (parent `ddbf89d002`),
 pushed. Task 4's close is **`4926284de7`** (parent `2fa6ffcbf9`), pushed, three paths; **E5's run
-and that SHA are recorded in the one further commit after it** — the ordering the dispatch imposes, so that no graded
-value is committed before the run that produced it. As the previous batch's report recorded of
-itself, the recursion stops at the commit carrying that sentence: a commit cannot contain its own
-identity, and that terminus is named rather than left as a gap.*
+and that SHA are recorded in `0fcddd3fac`** (parent `4926284de7`), pushed, two paths — the one
+further commit the dispatch's ordering rule requires, so that no graded value is committed before
+the run that produced it. **`8ee16dca1a`** (parent `0fcddd3fac`), pushed, two paths, carries the
+self-check's four reserved-word corrections to this report and the close, which move no claim, value
+or grading. **★ WHERE THE RECORDING TERMINATES, STATED RATHER THAN LEFT AS A GAP.** Every commit of
+this batch is verified at the object and named above except the LAST one — the commit carrying this
+sentence — because a commit cannot contain its own identity. That is the terminus, not an omission,
+and it is named so a reader does not go looking for it.*
