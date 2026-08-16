@@ -126,8 +126,56 @@ Adopted whole:
   all 72 (throws away the ten clear recoveries); walking the 62 by hand (the long-session
   degradation cost for a question a derivation mostly answers).
 
+## 4. Ruling — the soft-discard's REACH: the superseded phase-1 apparatus follows its phase into historical status (Alternative A as recommended)
+
+Taken at the third batch's return, over its STOP — finding F13 of `cc_report_preparation_third.md`:
+the ruled soft-discard was derived, applied, measured against the whole guard set and REVERTED,
+because assumption A3 (the mutation's reach is the decisions-register family and its derived views
+only) was falsified — fourteen checks red from three measured causes, among them both old phase-1
+gate derivations D-436 reserves, which HALT rather than drift. The decision surface is
+`ratification_surfaces/cowork_discard_reach_surface_2026_08_16.md`, delivered as visible text and
+read by the user before the question was put in a separate turn. **The user's words, verbatim:
+"A as recommended." RULED — adopted whole, a ruling permitting a named act under D-436, for this
+act alone:**
+
+- **The derived split comes first (the surface's R2 check).** The executing dispatch derives,
+  publishes and commits the classification of every check the discard's application turns red —
+  SUPERSEDED (serves only the old phase-1 gate) or STANDING (serves a rule of the current
+  record) — each member with its evidence (its imports and its own stated purpose). A member the
+  derivation cannot place, and any STANDING member whose red the enumerated-movement bound cannot
+  explain, STOPS to the user. The surface's R1 check — the enumeration of every reader of the old
+  phase-1 gate artifacts at the current commit — runs BEFORE anything freezes; a live consumer
+  outside the superseded program is a STOP-and-report.
+- **The SUPERSEDED members move to the guard set's historical class** by an authored
+  classification change committed with the act, their committed artifacts frozen in place as
+  record (#12), never regenerated again; the close names every member. **Historical status
+  records that these checks graded a superseded program — it asserts NOTHING about whether that
+  program's obligations were discharged**, and no completion claim of any kind rides this
+  ruling. A historical reclassification the guard mechanism's own records cannot express is a
+  STOP, not an improvisation.
+- **The STANDING members are regenerated alongside the discard in the same commit**, under the
+  bound that travels with the act: movement ONLY in values whose subject is a discard-population
+  entry, or a document whose class or home standing those entries alone carried; every moved
+  value enumerated in the close and diffed at explicit hashes; any other movement is a
+  STOP-and-report.
+- **The mechanism work lands with the discard commit** — the retired block's own STOPs in the
+  renderer, the establishment pass consulting the retired block beside the live entries, and
+  F15's anchored-quote remap under the ordinary per-citation drift discipline
+  (`gen_cluster_dispositions.py --verify` the authority; F3's reading rule standing).
+- **Untouched by this ruling:** the soft-discard's own ruling (§3 above), which stands exactly as
+  taken and is not re-opened; the 29 withheld sole-carriers and the 62 (their surface awaits its
+  own sitting); the eight KIND-UNDERIVABLE callers and the prose-citation question; [[OI-179]],
+  which gates under #19 independently of any phase apparatus; [[OI-372]] and [[OI-374]];
+  everything under `src/`, `tools/corpus/` and `tools/robust_stop/`, every golden and every test.
+- Alternatives B (re-author the affected apparatus so everything re-derives — fresh judgment
+  work for a superseded program, unboundable by diff) and C (carve the colliding entries out of
+  the discard — entries kept live solely because superseded tooling reads them, the reach
+  question returning undiminished later) are DECLINED as rated on the surface.
+
 *Provenance: Cowork, 2026-08-16, recorded in the turns the rulings were given. The user's
 verbatim words are marked as such; everything else is the writing side's operationalization,
 accepted in sequence. The executing dispatch for §1 and §2's ordered acts was
-`cc_instruction_preparation_second.md` (returned and verified); for §3 it is
-`cc_instruction_preparation_third.md`; this record's §3 rides that dispatch's Task 0.*
+`cc_instruction_preparation_second.md` (returned and verified); for §3 it was
+`cc_instruction_preparation_third.md` (returned and verified; its Task 3 STOP-reported, and the
+reach was then ruled at §4); for §4 it is `cc_instruction_preparation_fourth.md`; this record's
+§4 rides that dispatch's Task 0.*

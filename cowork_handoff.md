@@ -1,7 +1,104 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (NINETEENTH, 2026-08-15) — THE PHASE-DEFINITION SITTING IS HELD AND ALL FIVE DECISIONS ARE RULED; THE SIX PHASES GOVERN; THE D-231 REPHRASING IS LANDED IN `CLAUDE.md` AND VERIFIED AT THE OBJECTS; EIGHTEENTH-STOP RULINGS 6 AND 7 ARE DISCHARGED. THE NEXT WRITING-SIDE ACT IS THE PREPARATION PHASE'S OPENING DISPATCH. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (TWENTIETH, 2026-08-16) — THE PREPARATION PHASE IS MID-FLIGHT: THREE BATCHES RETURNED AND VERIFIED AT THE OBJECTS; THE FILTER'S KEEP SIDE IS RATIFIED AND THE SOFT-DISCARD IS RULED BUT ★ NOT EXECUTED — ITS MEASURED REACH FALSIFIED THE DISPATCH'S BOUND AND AWAITS THE USER'S RULING. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the PREPARATION phase is open and mid-flight; nothing is
+running and you are not read-only.**
+
+**★ NO BRANCH CHECK IS OWED.** Three preparation batches (`cc_instruction_preparation_opening.md`,
+`_second.md`, `_third.md`) have COMPLETED and were each verified by the writing side at the
+objects before this block was written — path sets, numstats, artifact populations recounted at
+the artifacts, the decisions register's byte-identity proven by hashing at every mutation claim.
+The third batch's terminus is `1b824b23b1` plus its two recording commits, pushed to
+`origin/master`; the guard set stands at 55 run, 54 passing, ONE failing ([[OI-372]]'s tool), no
+STOP. **Do not name terminus commits as premises in a dispatch — pin content blobs instead; see
+the errors block below.**
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_16_preparation_return.md` IN FULL** — the
+sitting record: §1 the caller-check ruling (an enumeration does not hold; derived caller-kind;
+the prose-citation question deferred to evidence), §2 the filter's keep side RATIFIED (the 411;
+recovery pass ordered; the rulings sort permitted; the provenance-not-soundness clause), §3 the
+soft-discard rulings (A: the 194 behind the sole-carrier guard; B1: ten clear recoveries kept —
+D-004, D-008, D-009, D-021, D-123, D-248, D-315, D-403, D-410, D-411; B2: the 62 checked before
+ruling). (2) **`cc_report_preparation_third.md` IN FULL, §4 above all** — the STOP that is the
+current center of gravity — AND the batch's FULL close (THE PREPARATION THIRD BATCH section of
+`cowork_away_returns.md`), proved by quotation (eighteenth-stop Ruling 15). (3)
+**`ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md`** — awaiting the user: the
+29 withheld sole-carriers and the 62's check results. (4)
+`ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md` — proposed, awaiting its
+sitting (220 design-intent / 131 management / 60 needs-the-user, most decided by the register's
+own fields). (5) This block. (6) The nineteenth block below and everything it binds — the
+phase-definition surface §3.1 and §8 remain the phase's ruled definition; the still-binding
+records as listed there. `CLAUDE.md` in full before drafting anything.
+
+**★ WHAT HAPPENED AFTER THE NINETEENTH BLOCK.** Batch 1 landed the nineteenth block, derived the
+decisions-register filter (677 = 411 act-named / 182 none-found / 84 ambiguous) and ran the
+caller-check (all held — swamped by tree-enumerating artifacts, finding F5). The user ruled the
+enumeration question (§1) and ratified the keep side (§2). Batch 2 re-ran the caller-check under
+the ruled reading (it now discriminates: one candidacy passes; eight callers KIND-UNDERIVABLE
+return to the user; holders published by kind — 82 tool-reads / 27 boot listings / 343 prose
+citations / 1201 data records), ran the deciding-act recovery pass (72 ACT-FOUND / 194
+NOTHING-FOUND) and proposed the rulings sort. The user ruled the soft-discard sitting (§3, with
+the sole-carrier guard born of the user's own risk question). Batch 3 derived the sole-carrier
+subclass (39 of 266, ALL via the deferred-status signal — the other two signals empty,
+corroborated, finding F14), ran the ratified-document check over the 62 (47 subject-in-ratified-
+document / 9 not-found-there / 6 no-ratification-act) — **and STOP-reported the discard itself.**
+
+**★ THE STOP (F13), WHICH IS THE NEXT SITTING'S SUBJECT.** The discard is derivable and balanced
+(194 = 29 withheld + 165 to retire; live 677 → 512; the plan committed at
+`tools/audit/soft_discard_application.json`, executable the moment the reach is ruled). But
+applying it turned FOURTEEN checks red across three measured causes: (1) documents whose only
+homed entries are in the discard population stop being contract homes or class-C documents, so
+the OLD PHASE-1 GATE DERIVATIONS (completion inventory, finish line, and the delegation family
+that feeds them) HALT rather than drift — the superseded phase-1 apparatus is load-bearing on
+entries nobody decided; (2) authored judgment tables (the `CLAUDE.md` rule triage, the home
+classifications) lose their subjects; (3) the decisions register's own generator is one of its
+own homes (F15), so teaching it the retired block moves an anchored quote. CC correctly reverted
+everything (proven byte-identical by hashing) and reported. **What is owed is a ruling on the
+REACH — most naturally whether the superseded phase-1 apparatus follows its phase into
+historical status — NOT a re-decision of the discard.** The writing side drafts that decision
+surface as the next writing-side act.
+
+**★ WHAT AWAITS THE USER, in recommended order:** (1) the REACH ruling above; (2) the residue
+surface — the 29 sole-carriers (which keepers become framework candidate material) and the 62
+(47/9/6); (3) the eight KIND-UNDERIVABLE callers and the deferred prose-citation question (they
+gate the archiving wave); (4) the rulings-sort sitting. Then the phase's remaining outputs: the
+empirical findings ledger behind its fact-gate, the curated boot list DRAFTED for ruling, and
+the pruning wave once its gates clear.
+
+**★ WRITING-SIDE ERRORS OF THIS ARC, recorded so the successor does not repeat them:** F12 and
+F17 are ONE defect made TWICE — a dispatch FACT naming a terminus commit one behind the record
+(a correction commit follows every batch; pin content blobs, never terminus commits). F18 — a
+premise whose two clauses contradicted each other as literally worded (re-read every premise for
+internal consistency before dispatch). The A1 premise error and the E3 ordering defect of the
+earlier batches ride with these to the preparation phase's retrospective, none rowed (dispatches
+barred rows). **This session closed on the session-length standing instruction after the repeat
+was recognized — the errors were reported unprompted and the close taken at a verified stop.**
+
+**★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red. [[OI-374]] untouched. `STATUS.md`
+unreadable as a mandatory read ([[OI-370]]). [[OI-179]] OPEN and GATES. F3 five times surfaced,
+unfixed, unrowed. The 284 newly visible instruction files and the remaining ignored files
+unlanded; every retirement flag a candidacy behind the ruled conditions; nothing archived,
+nothing discarded, the register byte-unchanged.
+
+**★ THIS BLOCK IS UNCOMMITTED AT ITS OWN CLOSE** — the next batch's FIRST task lands it, the
+Task-0 pattern, naming this file explicitly. **State the diff precisely in that dispatch's
+premise: this block inserted AND the nineteenth heading's demotion marker — two parts of one
+act, reported by the version history as ONE changed passage because they are adjacent.**
+
+**★ WHY THE SESSION CLOSED HERE:** the writing side recognized a repeated premise error (F12 →
+F17) plus an inconsistent premise (F18) — two-plus tells under
+`cowork_rulings_2026_08_15_session_length.md` — reported them unprompted and recommended the
+handover itself. Every ruling is on disk in the turn it was taken; every batch is closed and
+verified; nothing is in flight.
+
+*(The nineteenth block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (NINETEENTH, 2026-08-15) — THE PHASE-DEFINITION SITTING IS HELD AND ALL FIVE DECISIONS ARE RULED; THE SIX PHASES GOVERN; THE D-231 REPHRASING IS LANDED IN `CLAUDE.md` AND VERIFIED AT THE OBJECTS; EIGHTEENTH-STOP RULINGS 6 AND 7 ARE DISCHARGED. THE NEXT WRITING-SIDE ACT IS THE PREPARATION PHASE'S OPENING DISPATCH. (SUPERSEDED as the entry point by the twentieth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — with ONE standing caveat now DISCHARGED: `CLAUDE.md`'s D-231 entry no longer needs a
