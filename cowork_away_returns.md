@@ -12656,3 +12656,164 @@ pilot act. **No `src/` change, no golden, no test changed, moved or run, nothing
 `tools/corpus/` or `tools/robust_stop/`, no measurement of the analysis.** **No open-items row
 created, flipped or discarded** — [[OI-372]] and [[OI-374]] stay exactly as found, [[OI-179]] stays
 OPEN and GATES, and `reaim_home_anchors.py`'s F3 defect stays surfaced, unfixed and unrowed.
+
+# ═══ THE PREPARATION FOURTH BATCH (dispatch `cc_instruction_preparation_fourth.md`, performed 2026-08-16) ═══
+
+*(Every guard count referred to below lives at `tools/audit/guard_state.json`, the reader
+enumeration at `tools/audit/phase1_gate_readers.json`, the derived split at
+`tools/audit/discard_reach_split.json`, the whole discard derivation at
+`tools/audit/soft_discard_application.json`; **none is restated here** — **D-431** — except the few
+this close is reporting ABOUT, each naming where it was read, and the captured run output, which is
+QUOTED rather than transcribed. **The report is `cc_report_preparation_fourth.md`**, which is the
+whole of what the coding side says back; this close is the batch record beside it. This is the
+FOURTH dispatch of the PREPARATION phase, executing §4 of
+`cowork_rulings_2026_08_16_preparation_return.md` — the ruling on the soft-discard's REACH,
+Alternative A as recommended — and it is bounded exactly as that dispatch bounds it: the archiving
+wave, the empirical findings ledger, the fact-gate, the curated boot list, the mining, the landing of
+the newly visible files, the eight KIND-UNDERIVABLE callers, the prose-citation question, the residue
+surface's sitting and the rulings-sort sitting are NOT in it.)*
+
+## 4 (continued). The batch's start state, recorded before any act
+
+Taken **before the first edit**, as the dispatch orders. `gen_guard_state.py --check` printed **"the
+guard state re-derives"** — **55 guards run, 54 passing, ONE failing**
+(`gen_filing_convention_application.py --check`, which is [[OI-372]]), 4 not run, 10 historical
+records, **no STOP**, and no stale report. `gen_guard_classification.py --check` printed **"the guard
+classification re-derives"**. **This is exactly the state the dispatch declares as expected**, so no
+STOP-and-report was owed on it.
+
+The end state, taken at the tree carrying this close and AFTER the commit that carries it, is at
+§5 below, under the ordering rule.
+
+## 1 (continued). What needs the user
+
+**THE BATCH RETURNS A STOP, AND IT IS A NARROWER AND SHARPER ONE THAN THE THIRD BATCH'S.** The user
+ruled the reach; three of that ruling's four limbs are measured SOUND. What the measurement
+establishes is that **the class of check the ruling calls STANDING is not one class**:
+
+- **Five of the nine cannot be regenerated at all.** Four refuse in WRITE mode — not merely under
+  `--check` — and write nothing; a fifth halts on its imported population. Their authored tables lose
+  their subjects to the retirement, and each refuses rather than silently dropping a judgment whose
+  subject has gone. **The ruling's limb 3 describes a route that does not exist for them.**
+- **One regenerates cleanly and would replace the ratified classification the discard ruling itself
+  rests on** — 411 / 182 / 84 becoming 421 / 63 / 28 — and rewrite the ruling surface the user read
+  before ruling: 8298 lines removed from the artifact, 2128 from the surface.
+- **One regenerates cleanly and moves a user-ruled retirement candidacy set**, three documents
+  crossing to the retirement-candidate side. Two of those are inside the bound; the third
+  (`cc_corpus_wave3_report.md`) is not — no decisions-register entry is homed there at all, and it
+  moves because the only citation of it sat inside a retired entry's text. Its standing was carried by
+  discard-population entries **by CITATION**, which is neither of the bound's two named categories.
+- **Two regenerate as the ruling expects.**
+
+So **assumption A3 is falsified** — reds survive beyond [[OI-372]] — and the dispatch's own
+instruction on that outcome is a STOP-and-report. **What is owed is a ruling on the treatment of the
+authored tables whose subjects the retirement removes, and on the two artifacts that record acts the
+user has already taken. It is NOT a re-decision of the discard, and not of the reach ruling's other
+three limbs.**
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+Stated here and at the report's §8; **none is rowed** — the dispatch bars it.
+
+- **F19 (new, the largest)** — the ruling's REGENERATE limb does not exist for five of the nine
+  STANDING members; four refuse in WRITE mode, writing nothing, and a fifth halts.
+- **F20 (new)** — regenerating the one member that does regenerate cleanly replaces the ratified
+  classification the ruling rests on and rewrites the surface the user read.
+- **F21 (new)** — the regeneration that IS available moves a user-ruled retirement candidacy set, one
+  member of it outside the bound's two named categories.
+- **F22 (new)** — freezing the phase-1 completion inventory ossifies a population two links below a
+  LIVE rule: `gen_true_half_reach_rows.py` reads it as its population, and its own artifact is read
+  by `gen_nongating_apparatus_rows.py`, which derives **D-438**'s declaration. Nothing halts; what
+  stops is movement. Published in the R1 artifact rather than left to be found later.
+- **F23 (new)** — the third batch's captured `[FAIL]` block abbreviates two of its reasons, so a
+  split derived from that prose alone cannot place them; the ruling's own STOP fired for real on the
+  first run and was answered by deriving the explanation from each check's own inputs as well.
+- **F24 (new)** — a captured `[FAIL]` line records only the FIRST halt a check reaches;
+  `gen_phase1w_legacy_verification.py` has a second, larger one that a reader of that line never
+  meets.
+- **F25 (new, small)** — A1's *"ONE contiguous changed passage"* is a count the difference does not
+  have, though its content is exactly what A1 names. The F18 family in smaller form.
+- **F26 (new, small)** — the R1 check's first implementation made the guard set unusable (about five
+  minutes for one check); the `git grep` form runs in 14.6 seconds with a byte-identical artifact.
+- **F1–F18 carried unchanged**, including **F3**, now six times surfaced. **F17 did NOT repeat** —
+  this dispatch's premise ledger pins content rather than a terminus commit, and the lesson held.
+- **The E3 ordering defect and the A1 premise error** of the earlier batches ride to the phase's
+  retrospective.
+- **No finding bearing on the analysis, its inputs, or a measurement tool the analysis depends on.**
+
+## 3 (continued). What each task did
+
+**Task 0 — commit `f92f27fc3b`, parent `660aa4609e`, pushed, four paths.** The reach ruling (§4 of
+the 2026-08-16 sitting), its decision surface, the twentieth handoff block and this dispatch enter
+git. A1 checked FIRST and entirely at content-addressed objects: exactly two tracked modifications
+and no third, each diffed blob against blob by explicit hash. **E0 MET.**
+
+**Task 1 — commit `5a687aea9c`, parent `f92f27fc3b`, pushed, eight paths.** Both ordered derivations,
+published and committed before any mutation.
+
+- **R1** (`gen_phase1_gate_readers.py` → `phase1_gate_readers.json`): 122 naming files — 12 the
+  superseded program's own apparatus, 110 citations — and **ZERO LIVE CONSUMERS** outside the
+  superseded program, so the ruling's ordered STOP is not reached and its assumption R1 holds. Each
+  generator's own output artifact is DERIVED from that generator's source; every reading is taken
+  from the git objects at the commit the artifact records. The one judgment the ruling's three-value
+  vocabulary forces is DECLARED, not buried, and every citation carries its subkind and its quoted
+  naming line.
+- **R2** (`gen_discard_reach_split.py` → `discard_reach_split.json`): **6 SUPERSEDED, 9 STANDING**,
+  each with its imports, its own stated purpose and the derived explanation of its red. The
+  population is IMPORTED — parsed from the committed report's `[FAIL]` block, never retyped — and the
+  static route is recorded as TRIED AND REJECTED with its reason. The feeder limb is deliberately not
+  computed to a fixed point, on a measured ground.
+
+Both checks registered in the guard mechanism in the act that creates them, invocation and
+classification verdict both. **E1 MET.**
+
+**Task 2 — NO COMMIT. The act was derived, applied, measured and REVERTED.** The revert is proven at
+the objects: every touched file hashed against its committed blob at `5a687aea9c` and found
+identical, all twenty group files included, with the sanctioned enumeration reporting no tracked
+modification left behind. **What the measurement establishes as WORKING:** the discard applies (165
+retired, 512 live, 10 stamps); the renderer regenerates over the shrunken record and its `--check`
+passes; the ruling's one named mechanism item works — with the retired block consulted the
+establishment pass prints `cross-references resolving: ALL` at 512/512, against `38 DANGLING`
+without it; the SUPERSEDED limb is sound, all six halting for the same reason; and **R2's population
+is CONFIRMED at the applied tree — exactly fifteen failing, no sixteenth and none missing.** What it
+falsifies is A3, on the three grounds at §1 above. **E2 NOT MET, and not attempted to be met.**
+
+**Task 3 — this close, the report, and the `STATUS.md` pointers.**
+
+## 5 (continued). Every registered expectation, graded
+
+- **E0 — MET.** Exactly 4 paths at `git diff-tree`; two modifications matching A1's stated shapes by
+  content, two additions; no staging override of any kind. The hunk-count remark is **F25** and is
+  about the premise's wording, not about the difference.
+- **E1 — MET.** Every red check covered with one verdict and its evidence; R1 published with zero
+  LIVE consumers; no decisions-register file and no guard-classification record touched beyond the
+  ordinary registration of the two new checks.
+- **E2 — NOT MET, AND NOT ATTEMPTED TO BE MET.** The act it grades was not performed; what is
+  recorded instead is the measurement, the revert proven at the objects, and the three grounds. Both
+  register checks pass at the end state **at the UNCHANGED decisions register**, which is a different
+  fact and is not offered as E2.
+- **E3 — the end-state run**, taken at the tree carrying this close and AFTER the commit that carries
+  it, lands in ONE FURTHER commit with the final SHAs, per the ordering rule.
+
+## 6 (continued). What this batch did NOT do
+
+**No entry was discarded, retired, edited, moved or marked, and no decisions-register file was
+changed — proven by hashing every touched file against its committed blob after the revert.** **No
+check was reclassified historical and no artifact was frozen.** The 29 withheld sole-carriers and the
+62 are not ruled and not touched; the residue surface and the rulings-sort surface stand awaiting
+their own sittings. No archiving, no file moved, renamed or deleted; no mining, no landing; the eight
+KIND-UNDERIVABLE callers and the prose-citation question stay open; every retirement flag stays a
+candidacy. No empirical findings ledger, no fact-gate admission, no curated boot list. **No
+completion claim of any kind about the superseded phase-1 program.** No derivation of any
+specification, no design, no repair, no pilot act. **No `src/` change, no golden, no test changed,
+moved or run, nothing under `tools/corpus/` or `tools/robust_stop/`, no measurement of the
+analysis.** **No open-items row created, flipped or discarded** — [[OI-372]] and [[OI-374]] stay
+exactly as found, [[OI-179]] stays OPEN and GATES, and `reaim_home_anchors.py`'s F3 defect stays
+surfaced, unfixed and unrowed.
+
+*Provenance: CC, 2026-08-16, dispatch `cc_instruction_preparation_fourth.md`. Task 0 is commit
+`f92f27fc3b` (parent `660aa4609e`), pushed, four paths. Task 1 is `5a687aea9c`, pushed, eight paths.
+Task 2 carries no commit — it is a STOP, and its revert is proven at the objects. Task 3's close is
+the next commit; E3's run and that SHA are recorded in the one further commit after it. **★ WHERE THE
+RECORDING TERMINATES:** every commit is verified at the object and named except the LAST one, which
+cannot contain its own identity.*
