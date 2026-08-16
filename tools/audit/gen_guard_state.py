@@ -281,7 +281,10 @@ AUTHORED = [
     # ---- AUTHORED 2026-08-15, cc_instruction_preparation_opening.md Task 3 -------------------
     # Task 3's own tool, on the same practice as the entry above.
     ("tools/audit/gen_retirement_caller_check.py", ["--check"],
-     "the caller-check over every ruled retirement candidacy re-derives. Its reference readings "
+     "the caller-check over every ruled retirement candidacy re-derives — SINCE 2026-08-16 under "
+     "the ruled reading of `cowork_rulings_2026_08_16_preparation_return.md` §1, so what it "
+     "re-derives now includes the DERIVED caller-kind classification: which callers are tree "
+     "enumerations whose namings hold nothing, and which are not. Its reference readings "
      "are taken at the commit its own artifact RECORDS, so it passes indefinitely rather than "
      "going red the first time anybody writes a file naming a flagged one — the OI-301/OI-305 "
      "shape avoided by construction. What is LIVE is the population: the flags are re-imported "
@@ -291,8 +294,11 @@ AUTHORED = [
      "class the inventory does not carry, a mixed class the inventory publishes no members for, a "
      "member list whose derived count disagrees with the count the inventory publishes, an "
      "authored condition and a derived candidacy disagreeing in either direction, a condition "
-     "whose quoted sentence is no longer in the ruling record, a verdict outside the closed "
-     "three-value vocabulary, and a tally that does not account for the candidacies"),
+     "whose quoted sentence is no longer in the ruling record, A SENTENCE OF THE RULED READING NO "
+     "LONGER IN ITS OWN RULING RECORD — so a reading cannot outlive the words that imposed it, the "
+     "same shape the conditions already carry — a caller kind outside the closed four-value "
+     "vocabulary, a kind tally that does not account for the callers found, a verdict outside the "
+     "closed three-value vocabulary, and a tally that does not account for the candidacies"),
 
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
