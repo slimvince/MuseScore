@@ -12481,3 +12481,163 @@ act. **No `src/` change, no golden, no test changed, moved or run, nothing under
 `tools/robust_stop/`, no measurement of the analysis.** **No open-items row created, flipped or
 discarded** — [[OI-372]] and [[OI-374]] stay exactly as found, [[OI-179]] stays OPEN and GATES, and
 `reaim_home_anchors.py`'s F3 defect stays surfaced, unfixed and unrowed.
+
+# ═══ THE PREPARATION THIRD BATCH (dispatch `cc_instruction_preparation_third.md`, performed 2026-08-16) ═══
+
+*(Every guard count referred to below lives at `tools/audit/guard_state.json`, every sole-carrier
+value at `tools/audit/sole_carrier_subclass.json`, every ratified-document result at
+`tools/audit/ratified_document_check.json`, the whole discard derivation at
+`tools/audit/soft_discard_application.json`; **none is restated here** — **D-431** — except the few
+this close is reporting ABOUT, each naming where it was read. **The report is
+`cc_report_preparation_third.md`**, which is the whole of what the coding side says back; this close
+is the batch record beside it. This is the THIRD dispatch of the PREPARATION phase, executing §3 of
+`cowork_rulings_2026_08_16_preparation_return.md` — the soft-discard sitting's rulings A, B1 and
+B2 — and it is bounded exactly as that dispatch bounds it: the archiving wave, the empirical
+findings ledger, the fact-gate, the curated boot list, the mining, the landing of the newly visible
+files, the eight KIND-UNDERIVABLE callers and the prose-citation question are NOT in it.)*
+
+## 4 (continued). The batch's start state, recorded before any act
+
+**The full guard set was RUN BEFORE THE FIRST EDIT**, and the working tree was enumerated through
+the sanctioned tool before anything was staged.
+
+- **`gen_guard_state.py --check`: 52 guards run, 51 passing, ONE failing** —
+  `gen_filing_convention_application.py --check`, which is [[OI-372]] — 4 not run, 10 historical
+  records, **NO STOP of any kind**. The runner's opening line read **"the guard state re-derives"**,
+  so the committed artifact was not stale.
+- **`gen_guard_classification.py --check`: "the guard classification re-derives"**, exit 0.
+- **This is exactly the start state the dispatch declares as expected**, so no STOP-and-report was
+  owed on it.
+- **The working tree carried exactly ONE tracked modification** —
+  `cowork_rulings_2026_08_16_preparation_return.md` — with `cc_instruction_preparation_third.md`
+  untracked and every other record untracked. The difference was taken **blob against blob by
+  explicit hash**: 43 insertions, 2 deletions, ONE contiguous changed passage. That is assumption
+  **A1** at the shape its own sentence describes.
+
+## 1 (continued). What needs the user
+
+**★ THE FIRST THING IS A STOP, AND IT IS THE BATCH'S HEADLINE.**
+
+1. **★ THE RULED SOFT-DISCARD IS NOT EXECUTED, BECAUSE ASSUMPTION A3 IS FALSIFIED BY MEASUREMENT.**
+   The act was derived, applied to the working tree, measured against the whole guard set, and
+   **REVERTED** — every touched file proven byte-identical to its committed blob by hashing both
+   sides. **Fourteen checks turn red where one was expected, and the reach is not the
+   decisions-register family**: the phase-1 completion inventory and the phase-1 finish line — both
+   named in A3 — do not go stale, they **HALT**, because a document the retirement empties stops
+   being class C and the delegations derivation both import refuses to run. Three more importers
+   halt with it; three authored tables lose their subjects; and the decisions register's own
+   generator turns out to be one of its own homes, so teaching it about a retired block moves an
+   anchored quote. **None
+   of it clears "after its regeneration"**, which is what the dispatch expects of a
+   register-consuming red: they are STOPs inside derivations whose authored halves the retirement
+   invalidates, two of them the gate-bearing ones **D-436** reserves. **What is owed is a ruling on
+   that reach — not a re-decision of the discard.** The complete captured output is at
+   `cc_report_preparation_third.md` §4.c.
+2. **★ THE DISCARD ITSELF IS DERIVABLE AND THE ARITHMETIC BALANCES TO THE DIGIT.** 194 entries
+   returned NOTHING-FOUND by the recovery pass = **29** the sole-carrier guard withholds + **165**
+   the discard would retire; the live record would go 677 → 512. Nothing about the ruling or the
+   population is in doubt, and the plan is committed so the act can be performed the moment its
+   reach is ruled on.
+3. **★ THE RESIDUE SURFACE CARRIES BOTH RETURNS AND AWAITS THE USER** —
+  `ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md`. The entries the guard
+   withheld, each with the signals that fired and its plain restatement; and the 62 of the (B2)
+   limb, each with the result of the check the ruling ordered and the passage quoted at its line. It
+   is GENERATED from the two artifacts, so no count on it is typed by hand; it re-explains every
+   identifier from scratch; its banner states NOTHING HERE IS RULED and quotes the user's own clause
+   verbatim.
+4. **★ THE SOLE-CARRIER GUARD REDUCES IN PRACTICE TO ONE OF ITS THREE LIMBS, and that is measured
+   rather than assumed.** Signal (i) — the recorded status is deferred — fires for 39 of the 266.
+   Signals (ii) and (iii) fire for none. Each of the three is nonetheless shown able BOTH to fire and
+   to stay quiet, so an empty signal cannot be mistaken for one that cannot fire (#19), and two
+   standing checks corroborate the emptiness by different routes.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+Rows are barred by the dispatch, so each is stated here and at the report.
+
+- **F13 (new, the largest) — the soft-discard's reach is NOT the decisions-register family.**
+  Fourteen reds, three causes, two gate-bearing derivations that halt rather than drift.
+- **F14 (new) — two of the sole-carrier guard's three signals come back empty**, corroborated by two
+  standing checks and established able to fire.
+- **F15 (new) — the decisions register's own GENERATOR is one of its own homes**, so teaching it about a
+  retired block moves an anchored quote and halts the legacy verification.
+- **F16 (new) — "the ratified document" has a wide and a narrow reading.** The first version of the
+  check took the wide one and its own output refuted it; the narrow reading governs and the wider set
+  is published rather than discarded.
+- **F17 (new, small) — the dispatch's FACT again names a commit one behind the record's head.** This
+  is F12 repeating.
+- **F18 (new, small) — assumption A1 as literally worded is internally inconsistent**, saying both
+  that there is no tracked modification and that one file differs from its committed blob.
+- **F1–F12 (carried, unchanged)**, including **F3**, now five times surfaced —
+  `reaim_home_anchors.py --check` exits 0 while printing drifted anchors, and
+  `gen_cluster_dispositions.py --verify` is the drift authority. **Still unfixed and unrowed: the
+  dispatch bars both.**
+- **The E3 ordering defect and the A1 premise error of the earlier batches** ride to the phase's
+  retrospective as the dispatch orders.
+- **No finding bearing on the analysis, its inputs, or a measurement tool the analysis depends on.**
+
+## 3 (continued). What each task did
+
+**Task 0 — the ruling record's §3 and the dispatch enter git.** Commit `cb5070c106`, parent
+`17f0a9e04b`, pushed, exactly the two paths named and no third, both staged plainly with no override.
+A1's check came first and entirely at content-addressed objects.
+
+**Task 1 — the sole-carrier subclass, derived over the whole non-keep population.** Commit
+`a88d793021`, pushed, six paths. Three signals per entry, each with its evidence, over all 266 — not
+the 194 — so the 62 reuse the derivation rather than needing a second one (**D-671**). Signal (i)
+reads the status vocabulary the data file's own header declares; signal (iii) uses the decisions
+register's OWN quotation normalization, imported rather than re-implemented (#6). All three inputs are read
+from the git objects at the commit the artifact records, because the discard MOVES those inputs and
+an input read live would be changed by the act the artifact authorizes. The decisions-register family
+is drawn WIDER than the ruling's words require, in the direction that withholds rather than discards.
+
+**Task 2 — the ratified-document subject check, and the residue surface.** Commit `81e2ef1c23`,
+pushed, seven paths. The population is the ACT-FOUND entries minus the ten the (B1) limb kept, the
+second side **PARSED from the ruling record's own bullet on every run**; a bullet naming any other
+number, or naming an entry the recovery pass did not return ACT-FOUND for, halts the derivation. Every
+recorded act coordinate is re-read at the measured commit and cross-checked against the quote the
+recovery pass published — none had moved. **The one judgment that decides what the check means was
+corrected mid-run**: a document counts as ratified when it is named in a SENTENCE carrying a
+ratification word, not merely somewhere in the passage, and what the wider reading would have admitted
+is published per act rather than discarded.
+
+**Task 3 — the act NOT performed.** Commit `db5978168c`, pushed, six paths: the derived plan, the
+tool that derives it, and the guard registration. It writes no decisions-register file without
+`--apply`.
+The mechanism work the act needs — the retired block's own STOPs in the renderer, and the
+establishment pass consulting the retired block beside the live entries — was written, measured
+working (`--verify` passing at 512/512 with 33 surviving entries naming a retired one), and reverted
+with the rest rather than landed ahead of the ruling it waits on.
+
+**All three new checks were REGISTERED IN THE GUARD SET IN THE ACT THAT CREATED THEM**, invocation and
+classification verdict both, per the standing new-tool rule — each taking `--check` and never the bare
+invocation, because run with no flag each REWRITES its committed outputs. The runner's own STOP fired
+for real once, on Task 3's tool before it was registered, which is that mechanism working.
+
+## 5 (continued). Every registered expectation, graded
+
+- **E0 — MET.** Exactly 2 paths at `git diff-tree` on `cb5070c106`; no staging override.
+- **E1 — MET.** All 266 covered, each with the three signals and a verdict, every signal carrying its
+  evidence; no decisions-register file in the commit.
+- **E2 — MET.** Exactly the 62 covered, each with a per-act establishment and one per-entry result;
+  the scope block names its population by citation and by the bullet it parsed; no decisions-register
+  file in the commit.
+- **E3 — NOT MET, AND NOT ATTEMPTED TO BE MET.** The act it grades was not performed. Every limb of
+  it describes a commit that does not exist. What is recorded instead is the derivation, the
+  measurement, the revert proven at the objects, and the falsified assumption.
+- **E4 — MET at every task's end**, and at the end state: **55 run, 54 passing, ONE failing**
+  ([[OI-372]]'s tool), zero STOPs, all three new checks classified and passing.
+- **E5 — recorded in the ONE FURTHER commit after this close**, per the dispatch's ordering rule.
+
+## 6 (continued). What this batch did NOT do
+
+**No entry was discarded, retired, edited, moved or marked, and no decisions-register file was
+changed — proven by hashing all four touched files against their committed blobs after the revert.**
+The 62 are not ruled and not touched. No archiving, no file moved, renamed or deleted; no mining, no
+landing; the eight KIND-UNDERIVABLE callers and the prose-citation question stay open; every
+retirement flag stays a candidacy. No empirical findings ledger, no fact-gate admission, no curated
+boot list, no rulings-sort execution. No derivation of any specification, no design, no repair, no
+pilot act. **No `src/` change, no golden, no test changed, moved or run, nothing under
+`tools/corpus/` or `tools/robust_stop/`, no measurement of the analysis.** **No open-items row
+created, flipped or discarded** — [[OI-372]] and [[OI-374]] stay exactly as found, [[OI-179]] stays
+OPEN and GATES, and `reaim_home_anchors.py`'s F3 defect stays surfaced, unfixed and unrowed.
