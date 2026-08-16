@@ -12351,7 +12351,7 @@ Rows are barred by the dispatch, so each is stated here and at the report.
 - **F10 (new) — the decisions register's data file uses `nonspec_kind` values its own header does
   not define.** The header says the field says which of THREE cases an entry is and names three;
   the entries use more. The undefined values are not mapped by name and fall through to the
-  recognizers. Not repaired: this batch edits no register file, and the disagreement is evidence.
+  recognizers. Not repaired: this batch edits no decisions-register file, and it is evidence.
   It is the sibling of **F7**, the status-spelling disagreement the filter pass recorded.
 - **F11 (new) — the dispatch's Task 1 step 3 and its registered expectation E1 cannot both be
   satisfied literally.** Step 3 says the KIND-UNDERIVABLE list is published "on the artifact and the
@@ -12471,7 +12471,7 @@ graded value was committed before the run that produced it.
 ## 5 (continued). What this batch did NOT do
 
 **Nothing was discarded, archived, moved or deleted.** No soft-discard executed; no
-decisions-register entry written, edited or retired; no register file touched — proven by hashing on
+decisions-register entry written, edited or retired; no decisions-register file touched — proven by hashing on
 two separate occasions. No file moved, renamed, retired, archived or deleted; every retirement flag
 stays a candidacy and the re-derived PASSES verdict confers nothing; the ruled conditions
 (mined-first; members-seen-by-the-user-first) stand untouched. The newly visible instruction files

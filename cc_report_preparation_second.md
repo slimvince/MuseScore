@@ -242,7 +242,8 @@ one is byte-identical.** No entry was retired, edited, moved or marked, and no s
 executed.
 
 **Registered expectation E2 — MET on every limb.** The artifact covers the whole non-keep
-population, each entry in exactly one of the three result classes with its evidence; the register's
+population, each entry in exactly one of the three result classes with its evidence; the decisions
+register's
 rendered and data files are byte-identical to their committed blobs; `--check` re-derives.
 
 ---
@@ -386,7 +387,7 @@ The dispatch bars creating an open-items row, so each is stated here and in the 
 ## 9. What this batch did NOT do
 
 **Nothing was discarded and nothing was archived.** No soft-discard executed, no decisions-register
-entry written, edited or retired, **no register file touched — proven by hashing on two separate
+entry written, edited or retired, **no decisions-register file touched — proven by hashing on two separate
 occasions**. No file moved, renamed, retired, archived or deleted; every retirement flag stays a
 candidacy, the re-derived PASSES verdict confers nothing, and the ruled conditions (mined-first;
 members-seen-by-the-user-first) stand untouched. The newly visible instruction files and the
