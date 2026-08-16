@@ -1,0 +1,4067 @@
+{
+ "what_this_is": "Every reader, at one commit, of the old phase-1 gate artifacts and their derivation family's outputs — the R1 check the user's ruling of 2026-08-16 §4 orders to run BEFORE anything freezes.",
+ "generator": "tools/audit/gen_phase1_gate_readers.py",
+ "dispatch": "cc_instruction_preparation_fourth.md, Task 1 (R1)",
+ "the_ruling_that_ordered_it": {
+  "source": "cowork_rulings_2026_08_16_preparation_return.md §4",
+  "every_sentence_located_in_that_record_on_this_run": {
+   "what runs before anything freezes": "The surface's R1 check — the enumeration of every reader of the old phase-1 gate artifacts at the current commit — runs BEFORE anything freezes; a live consumer outside the superseded program is a STOP-and-report.",
+   "what happens to the superseded members": "The SUPERSEDED members move to the guard set's historical class by an authored classification change committed with the act, their committed artifacts frozen in place as record (#12), never regenerated again; the close names every member."
+  }
+ },
+ "measured_at_commit": "f92f27fc3bb53cbeafc797bf44823fa82c8af979",
+ "★_why_the_reading_is_pinned_to_that_commit": "Read at whatever the current commit happens to be, this check would go red the first time anybody writes a file naming one of these artifacts — the OI-301 / OI-305 shape. Every reading below is taken from the git objects at the commit recorded above, so it re-derives forever. What stays LIVE is the apparatus: a named generator the tree no longer carries, or one that no longer names its own artifact, halts this check.",
+ "the_family": {
+  "★_what_is_authored_here": "the six generators, named by the ruling and by the executing dispatch. Nothing else on this page is authored.",
+  "generators": [
+   "tools/audit/gen_phase1_completion_inventory.py",
+   "tools/audit/gen_phase1_finish_line.py",
+   "tools/audit/decisions/gen_outstanding_delegations.py",
+   "tools/audit/decisions/gen_finish_line_item1_routes.py",
+   "tools/audit/decisions/gen_item1_rehome_blocker.py",
+   "tools/audit/decisions/gen_r1_superseded_reach.py"
+  ],
+  "the_two_the_ruling_calls_the_gate_derivations": [
+   "tools/audit/gen_phase1_completion_inventory.py",
+   "tools/audit/gen_phase1_finish_line.py"
+  ],
+  "each_generators_own_output_artifact_DERIVED_from_its_source": {
+   "tools/audit/gen_phase1_completion_inventory.py": "tools/audit/phase1_completion_inventory.json",
+   "tools/audit/gen_phase1_finish_line.py": "tools/audit/phase1_finish_line.json",
+   "tools/audit/decisions/gen_outstanding_delegations.py": "tools/audit/decisions/outstanding_delegations.json",
+   "tools/audit/decisions/gen_finish_line_item1_routes.py": "tools/audit/decisions/finish_line_item1_routes.json",
+   "tools/audit/decisions/gen_item1_rehome_blocker.py": "tools/audit/decisions/item1_rehome_blocker.json",
+   "tools/audit/decisions/gen_r1_superseded_reach.py": "tools/audit/decisions/r1_superseded_reach.json"
+  }
+ },
+ "the_verdict_vocabulary": {
+  "the-superseded-programs-own-apparatus": "the naming file is part of the phase-1 gate derivation family — a generator, one of their artifacts, a transitive importer of a generator, or a check whose own POPULATION is a gate artifact.",
+  "a-historical-record": "the naming is a CITATION and not a read. It is inert under a freeze, because the artifact is frozen IN PLACE and stays readable. ★ THE JUDGMENT, DECLARED: the ruling's vocabulary has no fourth value for a citation inside a LIVE governing surface, and this pass invents none; `citation_subkind` says which kind each citation is and the naming line is quoted, so a reader who would class a pointer differently can see every one without re-deriving anything.",
+  "a-LIVE-consumer": "a check that reads a frozen artifact, or imports a frozen generator, and takes its population from somewhere else — so it needs the derivation to keep moving. NON-EMPTY IS A STOP, which is the ruling's own instruction."
+ },
+ "the_tally": {
+  "a-historical-record": 110,
+  "the-superseded-programs-own-apparatus": 12
+ },
+ "★_the_LIVE_consumer_class": {
+  "count": 0,
+  "members": [],
+  "what_a_non_empty_class_means": "the ruling's STOP: the assumption R1 that no live consumer outside the superseded program reads these artifacts would be falsified."
+ },
+ "★_the_downstream_fact_a_reader_must_meet": [
+  {
+   "the_check": "tools/audit/decisions/gen_true_half_reach_rows.py",
+   "its_population_comes_from": [
+    "phase1_completion_inventory.json"
+   ],
+   "its_own_artifact": "true_half_reach_rows.json",
+   "checks_that_read_that_artifact": [
+    "tools/audit/gen_nongating_apparatus_rows.py",
+    "tools/audit/gen_phase1_finish_line.py"
+   ],
+   "★_what_this_means_under_a_freeze": "This check is NOT frozen and keeps running; what freezes is its INPUT. Its population therefore stops moving, and any check listed above inherits that frozen population one link further down. Nothing halts and nothing is destroyed; what is lost is the population's future movement, which is stated here rather than left for a reader to discover."
+  },
+  {
+   "the_check": "tools/audit/gen_gating_row_sizing.py",
+   "its_population_comes_from": [
+    "phase1_completion_inventory.json"
+   ],
+   "its_own_artifact": "gating_row_sizing.json",
+   "checks_that_read_that_artifact": [],
+   "★_what_this_means_under_a_freeze": "This check is NOT frozen and keeps running; what freezes is its INPUT. Its population therefore stops moving, and any check listed above inherits that frozen population one link further down. Nothing halts and nothing is destroyed; what is lost is the population's future movement, which is stated here rather than left for a reader to discover."
+  }
+ ],
+ "★_what_this_enumeration_does_NOT_assert": "That a file naming none of these artifacts depends on none of them. A path built at run time carries no literal to find, and a naming inside a binary blob is not read here — the same bound the retirement caller-check publishes of itself. It also asserts nothing about whether any verdict is RIGHT: the ground of each is published beside it and the naming is quoted, so the reading is the user's.",
+ "readers": [
+  {
+   "path": "CLAUDE.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 1683,
+      "text": "`tools/audit/phase1_finish_line.json`."
+     }
+    ]
+   }
+  },
+  {
+   "path": "DECISIONS.md",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 264,
+      "text": "**Not read in full.** Both archives (STATUS_ARCHIVE.md, cowork_handoff_archive.md) and the cc_* session reports. Each was opened where a specific citation required it and is not claimed to be swept. ★ CORRECTED 2026-0..."
+     },
+     {
+      "line": 274,
+      "text": "> - **The home-granularity claim** — that every `contract-home` or `gap` entry carries a `home_section` block — was false of the entries the six read waves entered, whose only writer is `gen_home_classification.py`'s ..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "OPEN_ITEMS.md",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 381,
+      "text": "| OI-342 | **An audit artifact's \"owner is unambiguous\" column is carrying \"outside this dispatch's edit surface\"** — for which the same artifact already has a separate field | Found deriving item 1's remaining execut..."
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 381,
+      "text": "| OI-342 | **An audit artifact's \"owner is unambiguous\" column is carrying \"outside this dispatch's edit surface\"** — for which the same artifact already has a separate field | Found deriving item 1's remaining execut..."
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 373,
+      "text": "| OI-335 | **A count of OUTSTANDING work was the MEMBERSHIP of a list of asks** — inside the artifact a phase-1 completion statement would rest on; and the per-row state was an authored field a later wave superseded b..."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 372,
+      "text": "| OI-334 | **The decisions register's own published account of itself is FALSE at HEAD in three places** — and one of the three is a figure its own computed table contradicts | Found deriving what **D-231**'s phase-1 ..."
+     },
+     {
+      "line": 376,
+      "text": "| OI-338 | **The phase-1 completion inventory publishes as an OPEN QUESTION one the user has since ruled** — its derived half moved with HEAD and its authored half did not, so `--check` passes over a self-contradictio..."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 376,
+      "text": "| OI-338 | **The phase-1 completion inventory publishes as an OPEN QUESTION one the user has since ruled** — its derived half moved with HEAD and its authored half did not, so `--check` passes over a self-contradictio..."
+     },
+     {
+      "line": 406,
+      "text": "| OI-369 | ★ **The finish line's LAST homing item counts one entry, and the user has already ruled that entry SUPERSEDED with no home owed — the subtraction its sibling item performs by machinery, this one does not pe..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 378,
+      "text": "| OI-340 | ★ **Whether criterion C1 reaches SUPERSEDED register entries is UNRULED** — the per-kind scheme said to settle it does not carry that kind, and read at its own text it routes those entries the OPPOSITE way ..."
+     },
+     {
+      "line": 406,
+      "text": "| OI-369 | ★ **The finish line's LAST homing item counts one entry, and the user has already ruled that entry SUPERSEDED with no home owed — the subtraction its sibling item performs by machinery, this one does not pe..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "STATUS.md",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 172,
+      "text": "*Last updated: 2026-08-07, LATEST+++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE FORTY-EIGHT OWNER RULINGS ARE APPLIED: THE JOINT ESTIMATOR GAINS A SECTION A DECISION CAN BE SITED INSIDE — BUILT BY ADDING A ..."
+     },
+     {
+      "line": 174,
+      "text": "*Last updated: 2026-08-07, LATEST++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE THREE OWNER QUESTIONS THE PREVIOUS WAVE REFUSED TO GUESS AT COME BACK ANSWERED, AND EVERY ASSUMPTION HOLDS THIS TIME: TWO ENTRI..."
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 172,
+      "text": "*Last updated: 2026-08-07, LATEST+++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE FORTY-EIGHT OWNER RULINGS ARE APPLIED: THE JOINT ESTIMATOR GAINS A SECTION A DECISION CAN BE SITED INSIDE — BUILT BY ADDING A ..."
+     },
+     {
+      "line": 174,
+      "text": "*Last updated: 2026-08-07, LATEST++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE THREE OWNER QUESTIONS THE PREVIOUS WAVE REFUSED TO GUESS AT COME BACK ANSWERED, AND EVERY ASSUMPTION HOLDS THIS TIME: TWO ENTRI..."
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 190,
+      "text": "*Last updated: 2026-08-04, LATEST++++++++++++++++++++++++++++++++++ (CC — **★ THE CENSUS DELEGATION IS WRITTEN AND EVERY ENTRY IT WAS WRITTEN FOR MOVES; THE TWO DECLINES ARE RECORDED AS RULINGS RATHER THAN DEFERRALS, ..."
+     },
+     {
+      "line": 192,
+      "text": "*Last updated: 2026-08-04, LATEST+++++++++++++++++++++++++++++++++ (CC — **★ THE REAL DELEGATION POPULATION IS DERIVED AT HEAD AND IT IS NOT THE WRITE LIST; THE HOME-CLASSIFICATION APPLY HAS RUN, BEHIND AN ESTABLISHED..."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 100,
+      "text": "*2026-08-13 (CC — **★ THE GATING DERIVATION NOW TAKES DISCARD VERDICTS AS AN INPUT — THE GATE STAYS DERIVED, THE MOVEMENT IS REPORTED BOTH WAYS, AND THE FALSIFICATION TEST RUNS OVER THE RESULT.** No `src/` change, no ..."
+     },
+     {
+      "line": 118,
+      "text": "*2026-08-12 (CC — **★ THE ITEM-7 REACH DERIVATION IS ABANDONED WITH ITS GROUND, AND THE CUT'S OVER-INCLUSION IS RECORDED AS A STATED BOUND THROUGH ITS GENERATOR.** No `src/` change, no golden, nothing promoted, no `to..."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 144,
+      "text": "*2026-08-12 (CC — **★ RULING 66'S PER-ROW LAPSE RECORDS ARE WRITTEN, FOR THE WHOLE POPULATION, EACH NAMING THE DERIVATION THAT GRADED IT.** No `src/` change, no golden, nothing promoted, no `tools/corpus/` or `tools/r..."
+     },
+     {
+      "line": 146,
+      "text": "*2026-08-12 (CC — **★ THE CUT RE-RUN OVER THE ENLARGED POPULATION: THE MOVEMENT IS THE OPEN-ROW COUNT AND NOTHING ELSE, AND THE FALSIFICATION TEST PASSES AGAIN.** Same dispatch, Task 2, and the finding its own verific..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 174,
+      "text": "*Last updated: 2026-08-07, LATEST++++++++++++++++++++++++++++++++++++++++++ (CC — **★ THE THREE OWNER QUESTIONS THE PREVIOUS WAVE REFUSED TO GUESS AT COME BACK ANSWERED, AND EVERY ASSUMPTION HOLDS THIS TIME: TWO ENTRI..."
+     },
+     {
+      "line": 178,
+      "text": "*Last updated: 2026-08-07, LATEST++++++++++++++++++++++++++++++++++++++++ (CC — **★ FIVE RULINGS OF 2026-08-07 RECORDED AND APPLIED: THE HOMING EDIT SURFACE IS WIDENED AND DELIBERATELY NOT EXERCISED; THE SUCCESSOR A S..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "STATUS_ARCHIVE.md",
+   "names": [
+    "finish_line_item1_routes.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 84,
+      "text": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ RULING 40 IS EXECUTED OVER ALL NINE CENSUS ENTRIES: FIVE CLOSE INTO THE CENSUS'S OWN RULE-STATING SE..."
+     },
+     {
+      "line": 92,
+      "text": "*Last updated: 2026-08-09, LATEST+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ (CC — **★ RULING 39's DELEGATION IS WRITTEN AND ITS PREDICTED OUTCOME IS REFUTED BY MEASUREMENT: A DELEGATION TO T..."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 46,
+      "text": "*2026-08-11 (CC — **★ THE THIRTEENTH CONTINUATION'S CLOSE — THE COMMISSIONING SURFACE IS HANDED OVER, AND NOT ONE SENTENCE OF THE COMPLETION STATEMENT IS WRITTEN.** No `src/` change, no golden, nothing promoted, no `t..."
+     },
+     {
+      "line": 48,
+      "text": "*2026-08-11 (CC — **★ THE THIRTEENTH CONTINUATION, TASK 2 — [[OI-303]] CLOSES BY PERFORMING EXACTLY THE ACT ITS OWN SIZING NAMED.** No `src/` change, no golden, nothing promoted, no `tools/corpus/` or `tools/robust_st..."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 30,
+      "text": "> that population is at `tools/audit/phase1_finish_line.json` and is not restated here). **Why it"
+     },
+     {
+      "line": 36,
+      "text": "*2026-08-11 (CC — **★ THE FOURTEENTH CONTINUATION'S CLOSE — THE FIRST COMMISSIONING SITTING'S WHOLE RULING SET APPLIED, SEVEN GATING ROWS CLOSED, AND OI-346's MARKS REACHED AFTER SIX CONTINUATIONS RECORDED THAT THEY W..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 44,
+      "text": "*2026-08-11 (CC — **★ THE FOURTEENTH CONTINUATION, TASK 0 — THE FIRST COMMISSIONING SITTING'S FIVE RULINGS ALL APPLIED IN ONE COMMIT, AND TWO GATING ROWS CLOSE.** No `src/` change, no golden, nothing promoted, no `too..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_apply_the_bearing_cut.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 13,
+      "text": "> `DECISIONS.md` (INDEX); `OPEN_ITEMS.md` (INDEX); `tools/audit/phase1_finish_line.json` and"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_census_delegation_and_commit.md",
+   "names": [
+    "outstanding_delegations.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 41,
+      "text": "(*\"Inclusion criteria\"*) — `tools/audit/decisions/outstanding_delegations.json:514-535`."
+     },
+     {
+      "line": 83,
+      "text": "**2.3** Update `outstanding_delegations.json`'s classes to reflect both rulings — **derived, not"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_commit_and_finish_line.md",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 45,
+      "text": "- **A2.** That `phase1_completion_inventory.json`'s COMPLETE-half figures are now **stale** — the"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_document_routes_and_d472.md",
+   "names": [
+    "item1_rehome_blocker.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "item1_rehome_blocker.json": [
+     {
+      "line": 56,
+      "text": "held-entry record in `tools/audit/decisions/item1_rehome_blocker.json`."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 54,
+      "text": "`tools/audit/phase1_finish_line.json`, the class-2 item."
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_finish_line_item1.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 14,
+      "text": "> **★ THE FINISH LINE IS THE SCOPE.** Nothing outside `tools/audit/phase1_finish_line.json` gets work"
+     },
+     {
+      "line": 74,
+      "text": "**3.1 Discharge A2** at `tools/audit/phase1_finish_line.json`: report item 1's actual definition and"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_finish_line_item1b.md",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 36,
+      "text": "- **F1.** `tools/audit/decisions/finish_line_item1_routes.json:168-201` records the superseded class"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_five_rulings.md",
+   "names": [
+    "item1_rehome_blocker.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "item1_rehome_blocker.json": [
+     {
+      "line": 40,
+      "text": "`tools/audit/decisions/item1_rehome_blocker.json` — the licensing class is the minority, the"
+     },
+     {
+      "line": 91,
+      "text": "- **F1.** The blocker partition and its file list: `tools/audit/decisions/item1_rehome_blocker.json`"
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 93,
+      "text": "- **F2.** D-285's successor block: `tools/audit/decisions/r1_superseded_reach.json`, the D-285"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_item7_reach_derivation.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 10,
+      "text": "> rule, including its three worked examples and its fallback; `tools/audit/phase1_finish_line.json`"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_licensed_homing_and_oi344.md",
+   "names": [
+    "item1_rehome_blocker.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "item1_rehome_blocker.json": [
+     {
+      "line": 43,
+      "text": "`tools/audit/decisions/item1_rehome_blocker.json` (the entries whose recorded blocker is"
+     },
+     {
+      "line": 70,
+      "text": "`tools/audit/decisions/item1_rehome_blocker.json`, read in full."
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_owner_rulings_homing.md",
+   "names": [
+    "item1_rehome_blocker.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "item1_rehome_blocker.json": [
+     {
+      "line": 53,
+      "text": "`tools/audit/decisions/item1_rehome_blocker.json`."
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_phase1_delegations_and_corrections.md",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 41,
+      "text": "- **F3.** `tools/audit/phase1_completion_inventory.json` → `the_shape_of_what_remains.complete_half`"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_preparation_fourth.md",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 106,
+      "text": "`tools/audit/phase1_completion_inventory.json`, `tools/audit/phase1_finish_line.json`, and"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 106,
+      "text": "`tools/audit/phase1_completion_inventory.json`, `tools/audit/phase1_finish_line.json`, and"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_return_continuation_10.md",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 31,
+      "text": "`finish_line_item1_routes.json`; OI-366's reproducing failure with its unasserted candidate"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_return_continuation_8.md",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 33,
+      "text": "entries with both routes named per row (`finish_line_item1_routes.json`; returns §1.12);"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_row_landing_and_oi141_arm_check.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 9,
+      "text": "> `OPEN_ITEMS.md` (INDEX); `tools/audit/phase1_finish_line.json` at HEAD — THE SCOPE;"
+     },
+     {
+      "line": 115,
+      "text": "operational clauses at `tools/audit/phase1_finish_line.json` → `the_scope_rule`."
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_sitting_outcome_and_bound.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 12,
+      "text": "> routes; `tools/audit/phase1_finish_line.json` item 7's scope field; `open_items/OI-141.md` and"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_status_touch_and_oi141_premise_repin.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 10,
+      "text": "> `OPEN_ITEMS.md` (INDEX); `tools/audit/phase1_finish_line.json` at HEAD;"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_instruction_three_owner_rulings.md",
+   "names": [
+    "item1_rehome_blocker.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "item1_rehome_blocker.json": [
+     {
+      "line": 69,
+      "text": "`tools/audit/decisions/item1_rehome_blocker.json` at HEAD."
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_report_batch_return_rulings.md",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 91,
+      "text": "`tools/audit/nongating_apparatus_rows.json` and `tools/audit/phase1_completion_inventory.json`"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_report_d231_landing.md",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 156,
+      "text": "| `tools/audit/phase1_completion_inventory.json` | `a26b42642f` | 1 line / 1 line | `clause_opening` — the span from D-231's clause anchor to `**Phase 1 —`, which the block is ordered into, widens to include it |"
+     },
+     {
+      "line": 179,
+      "text": "2/1; `phase1_completion_inventory.json` 1/1; `phase1_finish_line.json` 1/1."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 157,
+      "text": "| `tools/audit/phase1_finish_line.json` | `8194e5e171` | 1 line / 1 line | the same `clause_opening`, inherited |"
+     },
+     {
+      "line": 179,
+      "text": "2/1; `phase1_completion_inventory.json` 1/1; `phase1_finish_line.json` 1/1."
+     }
+    ]
+   }
+  },
+  {
+   "path": "cc_report_phase_rulings_landing.md",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 136,
+      "text": "`tools/audit/phase1_completion_inventory.json` and `tools/audit/phase1_finish_line.json` carry the"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 136,
+      "text": "`tools/audit/phase1_completion_inventory.json` and `tools/audit/phase1_finish_line.json` carry the"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_audit_protocol.md",
+   "names": [
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-document-citation",
+   "the_naming_quoted": {
+    "item1_rehome_blocker.json": [
+     {
+      "line": 954,
+      "text": "item 1's re-home class is partitioned at `tools/audit/decisions/item1_rehome_blocker.json`, derived"
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 320,
+      "text": "the STATE is derived, at `tools/audit/decisions/outstanding_delegations.json`. This is the general"
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 729,
+      "text": "at HEAD, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.phase_1_verbatim`,"
+     },
+     {
+      "line": 743,
+      "text": "itself — `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1 — and"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 653,
+      "text": "SCOPE — `tools/audit/phase1_finish_line.json`, regenerated by"
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 745,
+      "text": "`tools/audit/decisions/r1_superseded_reach.json`; no verdict or count is restated here (**D-431**)."
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_away_returns.md",
+   "names": [
+    "finish_line_item1_routes.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 2555,
+      "text": "`tools/audit/decisions/finish_line_item1_routes.json` and in the queue's §9.4. **Choosing between a"
+     },
+     {
+      "line": 3009,
+      "text": "`tools/audit/decisions/finish_line_item1_routes.json` → `ruling_40_step_taken`."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 782,
+      "text": "Every count lives in `tools/audit/phase1_completion_inventory.json` and none is restated here"
+     },
+     {
+      "line": 965,
+      "text": "`tools/audit/phase1_completion_inventory.json` → `entries_with_no_rationale_at_all`, not carried"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 1382,
+      "text": "`tools/audit/phase1_finish_line.json` (**D-431**)."
+     },
+     {
+      "line": 1867,
+      "text": "derived at `tools/audit/phase1_finish_line.json` (**D-431**)."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 5018,
+      "text": "would empty this one — importing `r1_superseded_reach.json` and publishing **D-642**'s words beside"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_document_route_rulings_2026_08_08.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-document-citation",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 9,
+      "text": "> bar excludes\" (population at `tools/audit/phase1_finish_line.json`, that item's"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_handoff.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 552,
+      "text": "`tools/audit/phase1_finish_line.json` and `tools/audit/gating_row_sizing.json` at HEAD."
+     },
+     {
+      "line": 627,
+      "text": "(3) `OPEN_ITEMS.md` (INDEX). (4) `tools/audit/phase1_finish_line.json` at HEAD — THE SCOPE."
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_instruction_return_session.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 34,
+      "text": "(the INDEX; statuses authoritative there only). (5) `tools/audit/phase1_finish_line.json` at"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_owner_rulings_2026_08_07.md",
+   "names": [
+    "item1_rehome_blocker.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-document-citation",
+   "the_naming_quoted": {
+    "item1_rehome_blocker.json": [
+     {
+      "line": 13,
+      "text": "> item1_rehome_blocker.json` holds outside the licensing class. (The licensing class's three"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_phase1_commissioning_surface_2026_08_11.md",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-document-citation",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 17,
+      "text": "> and `tools/audit/phase1_completion_inventory.json`, never a second home for what they hold (#6). The"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 16,
+      "text": "> file is a READING of `tools/audit/phase1_finish_line.json`, `tools/audit/gating_row_sizing.json`"
+     },
+     {
+      "line": 44,
+      "text": "**Read it at `tools/audit/phase1_finish_line.json`.** What follows is a guide to its shape, not a"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_rulings_2026_08_15_phase_definition_sitting.md",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-record-of-an-act",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 186,
+      "text": "position sits inside (`tools/audit/phase1_completion_inventory.json`,"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 187,
+      "text": "`tools/audit/phase1_finish_line.json` — the old phase-1 gate derivations D-436 reserves), and"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_scratch_2026_08_11/cowork_verification_plan_continuation_14.md",
+   "names": [
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-document-citation",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 25,
+      "text": "> `tools/audit/phase1_finish_line.json` is committed, so its pre-batch value is recoverable"
+     },
+     {
+      "line": 70,
+      "text": "**Source: `tools/audit/phase1_finish_line.json`, read at HEAD 2026-08-11.**"
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 116,
+      "text": "reading `tools/audit/decisions/r1_superseded_reach.json`, **whose population is item 1's"
+     }
+    ]
+   }
+  },
+  {
+   "path": "cowork_target_document_structure_2026_08_09.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-document-citation",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 65,
+      "text": "the remaining distance is derived at `tools/audit/phase1_finish_line.json` and no"
+     }
+    ]
+   }
+  },
+  {
+   "path": "decisions/group_A.md",
+   "names": [
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "r1_superseded_reach.json": [
+     {
+      "line": 357,
+      "text": "**Provenance.** Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave's..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "decisions/group_C.md",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 1424,
+      "text": "**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule..."
+     },
+     {
+      "line": 1447,
+      "text": "**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule..."
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 1367,
+      "text": "**Provenance.** `cowork_adjudication_dossier.md`, the 2026-07-10 user-directed adjudication of the structural audit's open rows and the siloed-fact findings. Read in full by READ WAVE 5, 2026-08-04. Recorded as adjudi..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "decisions/group_I.md",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 478,
+      "text": "**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "decisions/group_J.md",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 240,
+      "text": "**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule..."
+     },
+     {
+      "line": 265,
+      "text": "**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "decisions/group_S.md",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 605,
+      "text": "**Provenance.** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register rule..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "decisions/group_T.md",
+   "names": [
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "item1_rehome_blocker.json": [
+     {
+      "line": 1532,
+      "text": "> item 1's re-home class is partitioned at `tools/audit/decisions/item1_rehome_blocker.json`, derived"
+     },
+     {
+      "line": 1546,
+      "text": "**Why.** Criterion C1 names an owning specification per entry, and for part of finish-line item 1 that specification is a section of one of these three files — so the owed act could be identified and not performed, th..."
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 1310,
+      "text": "> the STATE is derived, at `tools/audit/decisions/outstanding_delegations.json`. This is the general"
+     },
+     {
+      "line": 1317,
+      "text": "**Why.** Measured at the instance that produced the ruling, and stated with it: the OI-293 / OI-327 write list was read both ways at once, and both readings overstated the work. The completion inventory reported the c..."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 1403,
+      "text": "> at HEAD, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.phase_1_verbatim`,"
+     },
+     {
+      "line": 1417,
+      "text": "> itself — `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1 — and"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 1364,
+      "text": "> SCOPE — `tools/audit/phase1_finish_line.json`, regenerated by"
+     },
+     {
+      "line": 1384,
+      "text": "**Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_commit_and_finish_line.md` §0a as R3 — 'A finding whose subject bears on the analysis, its inputs, or an instrument a measurement ..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 1419,
+      "text": "> `tools/audit/decisions/r1_superseded_reach.json`; no verdict or count is restated here (**D-431**)."
+     },
+     {
+      "line": 1431,
+      "text": "**Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_c1_ruling_and_item1c.md` §0a as R1, which carries its own withdrawal of the basis previously claimed for it. Homed in `cowork_audi..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-205.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 72,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-219.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 53,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-229.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 118,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-233.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 92,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-280.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 86,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-281.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 274,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-290.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 138,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-296.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 90,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-297.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 170,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-299.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 120,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-301.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 96,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-317.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 78,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-327.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 235,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-329.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 136,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-333.md",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 162,
+      "text": "`tools/audit/phase1_completion_inventory.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-334.md",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 21,
+      "text": "generated at `tools/audit/phase1_completion_inventory.json` →"
+     },
+     {
+      "line": 36,
+      "text": "`phase1_completion_inventory.json` → `...statement_2_measured_remainder`; neither is restated here"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-335.md",
+   "names": [
+    "outstanding_delegations.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 27,
+      "text": "`tools/audit/decisions/outstanding_delegations.json`; none is restated here (**D-431**)."
+     },
+     {
+      "line": 53,
+      "text": "So: the state is derived at `tools/audit/decisions/outstanding_delegations.json`"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-338.md",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 10,
+      "text": "`tools/audit/phase1_completion_inventory.json` publishes a block named"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 56,
+      "text": "`tools/audit/phase1_finish_line.json` → `the_re_reading_of_the_clause`, which is where the dispatch"
+     },
+     {
+      "line": 122,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-340.md",
+   "names": [
+    "finish_line_item1_routes.json",
+    "phase1_completion_inventory.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 67,
+      "text": "`tools/audit/decisions/finish_line_item1_routes.json` records it."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 108,
+      "text": "`tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1, which quotes it"
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 110,
+      "text": "derived quote of the clause. Applied per entry at `tools/audit/decisions/r1_superseded_reach.json`;"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-342.md",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 11,
+      "text": "`tools/audit/decisions/finish_line_item1_routes.json` carries two authored fields that answer"
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 86,
+      "text": "are generated at `tools/audit/decisions/item1_rehome_blocker.json`, and none is restated here"
+     },
+     {
+      "line": 110,
+      "text": "dispatch's edit surface\"* now number **none** — `tools/audit/decisions/item1_rehome_blocker.json`"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-346.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 154,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-347.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 71,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-350.md",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 64,
+      "text": "- `tools/audit/decisions/finish_line_item1_routes.json`"
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 65,
+      "text": "- `tools/audit/decisions/item1_rehome_blocker.json`"
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 63,
+      "text": "- `tools/audit/decisions/outstanding_delegations.json`"
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 66,
+      "text": "- `tools/audit/phase1_completion_inventory.json` and `tools/audit/phase1_finish_line.json`"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 66,
+      "text": "- `tools/audit/phase1_completion_inventory.json` and `tools/audit/phase1_finish_line.json`"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-364.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 108,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-367.md",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 83,
+      "text": "that task's population from `tools/audit/phase1_completion_inventory.json` and reading each row of it"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-369.md",
+   "names": [
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 13,
+      "text": "**The item, read at the artifact.** `tools/audit/phase1_finish_line.json` carries an item named"
+     },
+     {
+      "line": 139,
+      "text": "`tools/audit/phase1_finish_line.json` and `tools/audit/decisions/r1_superseded_reach.json`."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 35,
+      "text": "`tools/audit/decisions/r1_superseded_reach.json` and publishes, beside it, **D-642**'s own words —"
+     },
+     {
+      "line": 43,
+      "text": "from `r1_superseded_reach.json` — whose own population is **item 1's NO-HOME class and nothing else**."
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-46.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 33,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-48.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 35,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-49.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 33,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-50.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 33,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-58.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 34,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-85.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 30,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "open_items/OI-99.md",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-governing-or-tracking-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 32,
+      "text": "**Where the population lives.** `tools/audit/phase1_finish_line.json` →"
+     }
+    ]
+   }
+  },
+  {
+   "path": "ratification_surfaces/cowork_deciding_act_recovery_surface_2026_08_16.md",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-ruling-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 119,
+      "text": "| `tools/audit/decisions/finish_line_item1_routes.json` line 1 | 1,309 | 8 |"
+     },
+     {
+      "line": 726,
+      "text": "- **`tools/audit/decisions/finish_line_item1_routes.json` line 1** (a passage of 1,309 lines) — carries a user-act marker, a numbered ruling named, a ratification event named, a ruling record named, an explicit RULED ..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "ratification_surfaces/cowork_decisions_filter_surface_2026_08_15.md",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-ruling-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 1912,
+      "text": "- **The source the entry gives for its status:** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice..."
+     },
+     {
+      "line": 1935,
+      "text": "- **The source the entry gives for its status:** ★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-ruling-surface-pointer",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 410,
+      "text": "> declared-mode piece-start shortcut (`OPEN_ITEMS.md` OI-315, register entry **D-058**), and the ruling names that act as its own source. The precedent is quoted **in full**, located by its own anchors and re-read fro..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md",
+   "names": [
+    "finish_line_item1_routes.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-ruling-surface-pointer",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 524,
+      "text": "`tools/audit/decisions/finish_line_item1_routes.json` and at `cowork_away_returns.md` §1.12."
+     },
+     {
+      "line": 580,
+      "text": "are recorded at their own subjects, not here**: Ruling 40 at `tools/audit/decisions/finish_line_item1_routes.json`"
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 648,
+      "text": "one: the other finish-line items are counted at `tools/audit/phase1_finish_line.json` and none of"
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/artifact_inventory.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 5755,
+      "text": "\"path\": \"tools/audit/decisions/finish_line_item1_routes.json\","
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 5763,
+      "text": "\"path\": \"tools/audit/decisions/item1_rehome_blocker.json\","
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 5775,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\","
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 5679,
+      "text": "\"path\": \"tools/audit/changed_paths_phase1_completion_inventory.json\","
+     },
+     {
+      "line": 6483,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\","
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 6487,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\","
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 5803,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_away_task0.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 141,
+      "text": "\"path\": \"tools/audit/decisions/finish_line_item1_routes.json\""
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 157,
+      "text": "\"path\": \"tools/audit/decisions/item1_rehome_blocker.json\""
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 161,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 185,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 189,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 165,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_away_task1.json",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 45,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_away_task2.json",
+   "names": [
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 125,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 141,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 145,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 129,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_backlog_commit.json",
+   "names": [
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 253,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 193,
+      "text": "\"path\": \"tools/audit/changed_paths_phase1_completion_inventory.json\""
+     },
+     {
+      "line": 333,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_c1_ruling_item1c.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 193,
+      "text": "\"path\": \"tools/audit/decisions/finish_line_item1_routes.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 137,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 141,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 205,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_finish_line.json",
+   "names": [
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 305,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 269,
+      "text": "\"path\": \"tools/audit/changed_paths_phase1_completion_inventory.json\""
+     },
+     {
+      "line": 349,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_finish_line_item1b.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 165,
+      "text": "\"path\": \"tools/audit/decisions/finish_line_item1_routes.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 125,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_finish_line_wave.json",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 57,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 89,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_five_rulings.json",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 125,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 129,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 93,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_guard_dialect_close.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 165,
+      "text": "\"path\": \"tools/audit/decisions/finish_line_item1_routes.json\""
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 189,
+      "text": "\"path\": \"tools/audit/decisions/item1_rehome_blocker.json\""
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 193,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 237,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 241,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 201,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_guard_fix_item1d.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 217,
+      "text": "\"path\": \"tools/audit/decisions/finish_line_item1_routes.json\""
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 233,
+      "text": "\"path\": \"tools/audit/decisions/item1_rehome_blocker.json\""
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 109,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 149,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 153,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 237,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_licensed_homing.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 105,
+      "text": "\"path\": \"tools/audit/decisions/finish_line_item1_routes.json\""
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 125,
+      "text": "\"path\": \"tools/audit/decisions/item1_rehome_blocker.json\""
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 129,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 173,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 177,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 137,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_owner_rulings_homing.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 161,
+      "text": "\"path\": \"tools/audit/decisions/finish_line_item1_routes.json\""
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 185,
+      "text": "\"path\": \"tools/audit/decisions/item1_rehome_blocker.json\""
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 189,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 233,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 237,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 197,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_phase1_completion_inventory.json",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 241,
+      "text": "\"path\": \"tools/audit/changed_paths_phase1_completion_inventory.json\""
+     },
+     {
+      "line": 297,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_return_continuation.json",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 33,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 37,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/changed_paths_three_owner_rulings.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 121,
+      "text": "\"path\": \"tools/audit/decisions/finish_line_item1_routes.json\""
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 141,
+      "text": "\"path\": \"tools/audit/decisions/item1_rehome_blocker.json\""
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 145,
+      "text": "\"path\": \"tools/audit/decisions/outstanding_delegations.json\""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 189,
+      "text": "\"path\": \"tools/audit/phase1_completion_inventory.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 193,
+      "text": "\"path\": \"tools/audit/phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 153,
+      "text": "\"path\": \"tools/audit/decisions/r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/deciding_act_recovery.json",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 208,
+      "text": "\"document\": \"tools/audit/decisions/finish_line_item1_routes.json\","
+     },
+     {
+      "line": 731,
+      "text": "\"tools/audit/decisions/finish_line_item1_routes.json\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/backbone_decisions.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 17693,
+      "text": "\"status_source\": \"★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register ru..."
+     },
+     {
+      "line": 17720,
+      "text": "\"status_source\": \"★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register ru..."
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 18151,
+      "text": "\"status_source\": \"`cowork_adjudication_dossier.md`, the 2026-07-10 user-directed adjudication of the structural audit's open rows and the siloed-fact findings. Read in full by READ WAVE 5, 2026-08-04. Recorded as adju..."
+     },
+     {
+      "line": 19212,
+      "text": "\"verbatim\": \"### A homing dispatch may edit three further files, and the license is scoped to homing acts alone\\n\\n**Ruled by the user, 2026-08-07** (dispatch `cc_instruction_five_rulings.md`, §0a R1). **The edit\\nsur..."
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 1219,
+      "text": "\"where_the_state_lives\": \"tools/audit/decisions/outstanding_delegations.json\","
+     },
+     {
+      "line": 19107,
+      "text": "\"verbatim\": \"### A count of OUTSTANDING work is DERIVED from state, never taken from the membership of a list of asks\\n\\n**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_phase1_delegations_and_corrections.m..."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 17,
+      "text": "\"not_read_in_full\": \"Both archives (STATUS_ARCHIVE.md, cowork_handoff_archive.md) and the cc_* session reports. Each was opened where a specific citation required it and is not claimed to be swept. ★ CORRECTED 2026-08..."
+     },
+     {
+      "line": 27,
+      "text": "\"**The home-granularity claim** — that every `contract-home` or `gap` entry carries a `home_section` block — was false of the entries the six read waves entered, whose only writer is `gen_home_classification.py`'s app..."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 19128,
+      "text": "\"verbatim\": \"### A finding that bears on the analysis is SURFACED whatever its size; an apparatus finding is ROWED AND LEFT\\n\\n**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_commit_and_finish_line.md`, R3..."
+     },
+     {
+      "line": 19139,
+      "text": "\"status_source\": \"User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_commit_and_finish_line.md` §0a as R3 — 'A finding whose subject bears on the analysis, its inputs, or an instrument a measuremen..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 8102,
+      "text": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave..."
+     },
+     {
+      "line": 19149,
+      "text": "\"verbatim\": \"### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor\\n\\n**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.m..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/finish_line_item1_routes.json",
+   "names": [
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of those generators' own output artifacts",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": true,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 105,
+      "text": "\"what_an_EMPTY_remainder_does_and_does_not_mean\": \"It means item 1 carries no entry with an act still owed on it. It does NOT mean the finish line is closed, and it is not a completion statement: the other items are c..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 57,
+      "text": "\"what_it_does_NOT_move_and_why\": \"The NO HOME EXISTS class. Those rows do not record a choice between a delegation and a re-home; they record that NEITHER applies — the entry's live content is carried by a homed succe..."
+     },
+     {
+      "line": 101,
+      "text": "\"what_this_counts\": \"Open rows of item 1 that carry an ACTIONABLE closing route — that is, every row still in the item whose route is not NO HOME EXISTS. The NO HOME EXISTS rows are excluded because they record that N..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/gen_finish_line_item1_routes.py",
+   "names": [
+    "finish_line_item1_routes.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of the six generators the ruling names",
+   "is_one_of_the_six_generators": true,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [
+    "finish_line_item1_routes.json"
+   ],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [
+    "tools/audit/decisions/gen_outstanding_delegations.py",
+    "tools/audit/gen_phase1_completion_inventory.py",
+    "tools/audit/gen_phase1_finish_line.py"
+   ],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 40,
+      "text": "OUT = HERE / \"finish_line_item1_routes.json\""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 4,
+      "text": "Item 1 of `tools/audit/phase1_finish_line.json` is \"Register entries whose home document is"
+     },
+     {
+      "line": 1575,
+      "text": "\"are counted at tools/audit/phase1_finish_line.json and none of them is spoken \""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 908,
+      "text": "\"D-642 is DERIVED at tools/audit/decisions/r1_superseded_reach.json and is not \""
+     },
+     {
+      "line": 1263,
+      "text": "\"tools/audit/decisions/r1_superseded_reach.json.\")"
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/gen_item1_rehome_blocker.py",
+   "names": [
+    "item1_rehome_blocker.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of the six generators the ruling names",
+   "is_one_of_the_six_generators": true,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [
+    "item1_rehome_blocker.json"
+   ],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [
+    "tools/audit/decisions/gen_finish_line_item1_routes.py",
+    "tools/audit/decisions/gen_outstanding_delegations.py",
+    "tools/audit/gen_phase1_completion_inventory.py",
+    "tools/audit/gen_phase1_finish_line.py"
+   ],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "item1_rehome_blocker.json": [
+     {
+      "line": 58,
+      "text": "OUT = HERE / \"item1_rehome_blocker.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/gen_outstanding_delegations.py",
+   "names": [
+    "outstanding_delegations.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of the six generators the ruling names",
+   "is_one_of_the_six_generators": true,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [
+    "outstanding_delegations.json"
+   ],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 68,
+      "text": "OUT = os.path.join(HERE, \"outstanding_delegations.json\")"
+     },
+     {
+      "line": 568,
+      "text": "print(\"STALE vs the files: outstanding_delegations.json does not re-derive\")"
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/gen_r1_superseded_reach.py",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of the six generators the ruling names",
+   "is_one_of_the_six_generators": true,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [
+    "r1_superseded_reach.json"
+   ],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [
+    "tools/audit/decisions/gen_finish_line_item1_routes.py",
+    "tools/audit/decisions/gen_outstanding_delegations.py",
+    "tools/audit/gen_phase1_completion_inventory.py",
+    "tools/audit/gen_phase1_finish_line.py"
+   ],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 6,
+      "text": "live: `tools/audit/phase1_completion_inventory.json` → `the_requirement.criteria` → C1 →"
+     },
+     {
+      "line": 635,
+      "text": "\"tools/audit/phase1_completion_inventory.json → the_requirement.criteria → C1 → \""
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 739,
+      "text": "\"`tools/audit/phase1_finish_line.json`, which still carries every entry above.\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 57,
+      "text": "OUT = HERE / \"r1_superseded_reach.json\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/gen_true_half_reach_rows.py",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file READS a phase-1 gate artifact as its own POPULATION — its subject IS that population, so it belongs to the same program: ['phase1_completion_inventory.json']",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [
+    "phase1_completion_inventory.json"
+   ],
+   "reads_a_gate_artifact_as_its_population": [
+    "phase1_completion_inventory.json"
+   ],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 52,
+      "text": "INVENTORY = os.path.join(ROOT, \"tools\", \"audit\", \"phase1_completion_inventory.json\")"
+     },
+     {
+      "line": 672,
+      "text": "\"derived_from\": \"tools/audit/phase1_completion_inventory.json → \""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/r1_superseded_reach.json",
+   "names": [
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of those generators' own output artifacts",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": true,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 19,
+      "text": "\"the_ruling_is_recorded_elsewhere_and_is_not_restated_here\": \"tools/audit/phase1_completion_inventory.json → the_requirement.criteria → C1 → ★_the_reach_of_C1_over_SUPERSEDED_entries, which carries R1's text, the sent..."
+     },
+     {
+      "line": 72,
+      "text": "\"source\": \"the C1 criterion's own words at tools/audit/phase1_completion_inventory.json → the_requirement.criteria\","
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 97,
+      "text": "\"what\": \"The DERIVED population of finish-line item 1 at `tools/audit/phase1_finish_line.json`, which still carries every entry above.\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/snapshot_2026-08-08_pre_home_classification_apply/backbone_decisions.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 17521,
+      "text": "\"status_source\": \"★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register ru..."
+     },
+     {
+      "line": 17548,
+      "text": "\"status_source\": \"★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice, with its defense. Register ru..."
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 17979,
+      "text": "\"status_source\": \"`cowork_adjudication_dossier.md`, the 2026-07-10 user-directed adjudication of the structural audit's open rows and the siloed-fact findings. Read in full by READ WAVE 5, 2026-08-04. Recorded as adju..."
+     },
+     {
+      "line": 19037,
+      "text": "\"verbatim\": \"### A homing dispatch may edit three further files, and the license is scoped to homing acts alone\\n\\n**Ruled by the user, 2026-08-07** (dispatch `cc_instruction_five_rulings.md`, §0a R1). **The edit\\nsur..."
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 1196,
+      "text": "\"where_the_state_lives\": \"tools/audit/decisions/outstanding_delegations.json\","
+     },
+     {
+      "line": 18932,
+      "text": "\"verbatim\": \"### A count of OUTSTANDING work is DERIVED from state, never taken from the membership of a list of asks\\n\\n**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_phase1_delegations_and_corrections.m..."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 17,
+      "text": "\"not_read_in_full\": \"Both archives (STATUS_ARCHIVE.md, cowork_handoff_archive.md) and the cc_* session reports. Each was opened where a specific citation required it and is not claimed to be swept. ★ CORRECTED 2026-08..."
+     },
+     {
+      "line": 27,
+      "text": "\"**The home-granularity claim** — that every `contract-home` or `gap` entry carries a `home_section` block — was false of the entries the six read waves entered, whose only writer is `gen_home_classification.py`'s app..."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 18953,
+      "text": "\"verbatim\": \"### A finding that bears on the analysis is SURFACED whatever its size; an apparatus finding is ROWED AND LEFT\\n\\n**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_commit_and_finish_line.md`, R3..."
+     },
+     {
+      "line": 18964,
+      "text": "\"status_source\": \"User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_commit_and_finish_line.md` §0a as R3 — 'A finding whose subject bears on the analysis, its inputs, or an instrument a measuremen..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 8033,
+      "text": "\"status_source\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_items/OI-270.md, the phase-1d wave..."
+     },
+     {
+      "line": 18974,
+      "text": "\"verbatim\": \"### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor\\n\\n**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.m..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions/true_half_reach_rows.json",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 18,
+      "text": "\"derived_from\": \"tools/audit/phase1_completion_inventory.json → the_gating_split.non_gating.ids\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/decisions_filter_classification.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 17968,
+      "text": "\"recorded_status_source_quoted_from_the_entry\": \"★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice..."
+     },
+     {
+      "line": 17991,
+      "text": "\"recorded_status_source_quoted_from_the_entry\": \"★ RE-HOMED 2026-08-04 (CC, dispatch `cc_instruction_finish_line_item1.md`, Task 3.3, ruling R3): written into the OWNING LAYER SPECIFICATION in that section's own voice..."
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 18413,
+      "text": "\"recorded_status_source_quoted_from_the_entry\": \"`cowork_adjudication_dossier.md`, the 2026-07-10 user-directed adjudication of the structural audit's open rows and the siloed-fact findings. Read in full by READ WAVE ..."
+     },
+     {
+      "line": 19823,
+      "text": "\"recorded_status_source_quoted_from_the_entry\": \"User ruling of 2026-08-07, transmitted in the dispatch `cc_instruction_five_rulings.md` §0a as R1 and taken on Cowork's decision surface of the same day, after the surf..."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 19718,
+      "text": "\"recorded_status_source_quoted_from_the_entry\": \"User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_c1_ruling_and_item1c.md` §0a as R1, which carries its own withdrawal of the basis previously clai..."
+     },
+     {
+      "line": 19788,
+      "text": "\"recorded_status_source_quoted_from_the_entry\": \"User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_guard_fix_and_item1d.md` §0a as R2, which states in the same act that it is precedent and names t..."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 19683,
+      "text": "\"recorded_status_source_quoted_from_the_entry\": \"User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_commit_and_finish_line.md` §0a as R3 — 'A finding whose subject bears on the analysis, its inputs..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 8616,
+      "text": "\"recorded_status_source_quoted_from_the_entry\": \"Stated 2026-06-20 in cowork_architecture_reassessment.md §4 ('Meta-findings to institutionalize'); put to the user in §5 ('Ratify: …') with NO recorded answer (open_ite..."
+     },
+     {
+      "line": 19718,
+      "text": "\"recorded_status_source_quoted_from_the_entry\": \"User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_c1_ruling_and_item1c.md` §0a as R1, which carries its own withdrawal of the basis previously clai..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/doc_change_candidates.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 11012,
+      "text": "\"tools/audit/decisions/finish_line_item1_routes.json\","
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 11016,
+      "text": "\"tools/audit/decisions/item1_rehome_blocker.json\","
+     }
+    ],
+    "outstanding_delegations.json": [
+     {
+      "line": 10969,
+      "text": "\"tools/audit/decisions/outstanding_delegations.json\","
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 10960,
+      "text": "\"tools/audit/changed_paths_phase1_completion_inventory.json\","
+     },
+     {
+      "line": 10981,
+      "text": "\"tools/audit/phase1_completion_inventory.json\","
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 10991,
+      "text": "\"tools/audit/phase1_finish_line.json\","
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 11017,
+      "text": "\"tools/audit/decisions/r1_superseded_reach.json\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/gating_row_sizing.json",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 12,
+      "text": "\"derived_from\": \"tools/audit/phase1_completion_inventory.json → the_gating_split.gates.ids\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/gen_gating_row_sizing.py",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file READS a phase-1 gate artifact as its own POPULATION — its subject IS that population, so it belongs to the same program: ['phase1_completion_inventory.json']",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [
+    "phase1_completion_inventory.json"
+   ],
+   "reads_a_gate_artifact_as_its_population": [
+    "phase1_completion_inventory.json"
+   ],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 61,
+      "text": "INVENTORY = os.path.join(HERE, \"phase1_completion_inventory.json\")"
+     },
+     {
+      "line": 1565,
+      "text": "\"derived_from\": \"tools/audit/phase1_completion_inventory.json → the_gating_split.gates.ids\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/gen_guard_classification.py",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-document-citation",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 748,
+      "text": "POINT, \"gen_reads5_yield.py:2-15; finish_line_item1_routes.json → executed_this_wave\","
+     },
+     {
+      "line": 757,
+      "text": "POINT, \"gen_reads6_yield.py:2-25; finish_line_item1_routes.json → executed_this_wave\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/gen_phase1_completion_inventory.py",
+   "names": [
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of the six generators the ruling names",
+   "is_one_of_the_six_generators": true,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [
+    "phase1_completion_inventory.json"
+   ],
+   "reads_a_gate_artifact_as_its_population": [
+    "phase1_completion_inventory.json"
+   ],
+   "imports_a_family_generator_transitively": [
+    "tools/audit/decisions/gen_outstanding_delegations.py"
+   ],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 1039,
+      "text": "\"derived_at\": \"tools/audit/decisions/outstanding_delegations.json\","
+     },
+     {
+      "line": 1340,
+      "text": "\"`tools/audit/decisions/outstanding_delegations.json`; the full partition, \""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 63,
+      "text": "OUT = ROOT / \"tools\" / \"audit\" / \"phase1_completion_inventory.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 385,
+      "text": "\"tools/audit/decisions/r1_superseded_reach.json, over the member of item 1's NO-HOME \""
+     },
+     {
+      "line": 498,
+      "text": "\"tools/audit/decisions/r1_superseded_reach.json, over finish-line item 1's NO-HOME \""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/gen_phase1_finish_line.py",
+   "names": [
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of the six generators the ruling names",
+   "is_one_of_the_six_generators": true,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "reads_a_gate_artifact_as_its_population": [
+    "phase1_finish_line.json"
+   ],
+   "imports_a_family_generator_transitively": [
+    "tools/audit/decisions/gen_outstanding_delegations.py",
+    "tools/audit/gen_phase1_completion_inventory.py"
+   ],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 876,
+      "text": "\"`tools/audit/decisions/outstanding_delegations.json` → \""
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 154,
+      "text": "\"`tools/audit/phase1_completion_inventory.json` → the_requirement.criteria → C1.\""
+     },
+     {
+      "line": 980,
+      "text": "\"derived_from\": \"tools/audit/phase1_completion_inventory.json → the_gating_split\","
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 57,
+      "text": "OUT = ROOT / \"tools\" / \"audit\" / \"phase1_finish_line.json\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 63,
+      "text": "R1_APPLICATION = ROOT / \"tools\" / \"audit\" / \"decisions\" / \"r1_superseded_reach.json\""
+     },
+     {
+      "line": 149,
+      "text": "\"source\": \"tools/audit/decisions/r1_superseded_reach.json → counted.ids_that_leave\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/guard_classification.json",
+   "names": [
+    "finish_line_item1_routes.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 22,
+      "text": "\"measured_rather_than_argued\": \"The previous wave re-homed ten entries into `ARCHITECTURE.md` (`finish_line_item1_routes.json` → `executed_this_wave`). Six of them are named by read wave 5 and four by read wave 6, and..."
+     },
+     {
+      "line": 254,
+      "text": "\"evidence\": \"gen_reads5_yield.py:2-15; finish_line_item1_routes.json → executed_this_wave\","
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/guard_state.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "item1_rehome_blocker.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 918,
+      "text": "\"PASS: finish_line_item1_routes.json re-derives byte-identically (94 entries over 8 documents; 69 re-home / 8 delegation / 17 no-home)\""
+     }
+    ],
+    "item1_rehome_blocker.json": [
+     {
+      "line": 931,
+      "text": "\"PASS: item1_rehome_blocker.json re-derives byte-identically (0 open re-home rows)\""
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 944,
+      "text": "\"PASS: r1_superseded_reach.json re-derives byte-identically (18 entries; 8 leave / 0 route-changed / 10 neither)\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/phase1_completion_inventory.json",
+   "names": [
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of those generators' own output artifacts",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": true,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 378,
+      "text": "\"derived_at\": \"tools/audit/decisions/outstanding_delegations.json\","
+     },
+     {
+      "line": 2062,
+      "text": "\"★_that_figure_is_now_DERIVED_not_the_write_lists_membership\": \"It is the count of documents that still lose entries to the DELEGATION HALF where an admitting delegation already exists - the only class a delegation th..."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 25,
+      "text": "\"the_ruling_quoted_IN_FULL_from_its_home\": \"### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor **Ruled by the user, 2026-08-04** (dispatch `cc_instru..."
+     },
+     {
+      "line": 50,
+      "text": "\"the_ruling_quoted_IN_FULL_from_its_home\": \"### Where a superseded decision's content is a REMOVAL, the specification states the current behaviour and records the removal as a tried-and-closed line **Ruled by the user..."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 15,
+      "text": "\"phase_1_verbatim\": \"**Phase 1 — the specifications are made COMPLETE and TRUE:** every recorded decision is written into its owning specification (the homing acts), with its defense, so that conformance is thereafter..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 25,
+      "text": "\"the_ruling_quoted_IN_FULL_from_its_home\": \"### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor **Ruled by the user, 2026-08-04** (dispatch `cc_instru..."
+     },
+     {
+      "line": 47,
+      "text": "\"where_it_is_applied\": \"tools/audit/decisions/r1_superseded_reach.json, over finish-line item 1's NO-HOME class. No verdict or count is restated here (D-431).\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/phase1_finish_line.json",
+   "names": [
+    "outstanding_delegations.json",
+    "phase1_completion_inventory.json",
+    "phase1_finish_line.json",
+    "r1_superseded_reach.json"
+   ],
+   "verdict": "the-superseded-programs-own-apparatus",
+   "the_ground": "the file IS a member of the phase-1 gate derivation family — one of those generators' own output artifacts",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": true,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": null,
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 936,
+      "text": "\"the_widening_question_is_ALREADY_RULED\": \"This is the only class a widening moves, and the user ruled BOTH its documents on 2026-08-04 (rulings R2 and R3 of `cc_instruction_census_delegation_and_commit.md`): the voic..."
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 29,
+      "text": "\"the_ruling_quoted_IN_FULL_from_its_home\": \"### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor **Ruled by the user, 2026-08-04** (dispatch `cc_instru..."
+     },
+     {
+      "line": 54,
+      "text": "\"the_ruling_quoted_IN_FULL_from_its_home\": \"### Where a superseded decision's content is a REMOVAL, the specification states the current behaviour and records the removal as a tried-and-closed line **Ruled by the user..."
+     }
+    ],
+    "phase1_finish_line.json": [
+     {
+      "line": 19,
+      "text": "\"phase_1_verbatim\": \"**Phase 1 — the specifications are made COMPLETE and TRUE:** every recorded decision is written into its owning specification (the homing acts), with its defense, so that conformance is thereafter..."
+     },
+     {
+      "line": 102,
+      "text": "\"ruling_65_quoted_IN_FULL_from_its_home\": \"**★ WHEN PHASE 1 IS COMPLETE — THE FINISH LINE IS CUT BY D-438'S TEST, AND THE APPARATUS RESIDUE DOES NOT GATE THE COMPLETION (user-ruled 2026-08-11; the ruling record is `co..."
+     }
+    ],
+    "r1_superseded_reach.json": [
+     {
+      "line": 29,
+      "text": "\"the_ruling_quoted_IN_FULL_from_its_home\": \"### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor **Ruled by the user, 2026-08-04** (dispatch `cc_instru..."
+     },
+     {
+      "line": 51,
+      "text": "\"where_it_is_applied\": \"tools/audit/decisions/r1_superseded_reach.json, over finish-line item 1's NO-HOME class. No verdict or count is restated here (D-431).\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/process_check_census_delegation_dispatch.json",
+   "names": [
+    "outstanding_delegations.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "outstanding_delegations.json": [
+     {
+      "line": 56,
+      "text": "\"sentence\": \"**2.3** Update `outstanding_delegations.json`'s classes to reflect both rulings — **derived, not\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/process_check_finish_line_item1_dispatch.json",
+   "names": [
+    "phase1_finish_line.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "phase1_finish_line.json": [
+     {
+      "line": 49,
+      "text": "\"sentence\": \"**3.1 Discharge A2** at `tools/audit/phase1_finish_line.json`: report item 1's actual definition and\""
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/ratified_document_check.json",
+   "names": [
+    "finish_line_item1_routes.json",
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "finish_line_item1_routes.json": [
+     {
+      "line": 22596,
+      "text": "\"the_act_is_at\": \"tools/audit/decisions/finish_line_item1_routes.json line 1\","
+     },
+     {
+      "line": 22798,
+      "text": "\"the_act_is_at\": \"tools/audit/decisions/finish_line_item1_routes.json line 1\","
+     }
+    ],
+    "phase1_completion_inventory.json": [
+     {
+      "line": 4380,
+      "text": "\"the_passage_quoted\": \"declared-mode piece-start shortcut (`OPEN_ITEMS.md` OI-315, register entry **D-058**), and the ruling names that act as its own source. The precedent is quoted **in full**, located by its own an..."
+     },
+     {
+      "line": 4749,
+      "text": "\"the_passage_quoted\": \"declared-mode piece-start shortcut (`OPEN_ITEMS.md` OI-315, register entry **D-058**), and the ruling names that act as its own source. The precedent is quoted **in full**, located by its own an..."
+     }
+    ]
+   }
+  },
+  {
+   "path": "tools/audit/retirement_caller_check.json",
+   "names": [
+    "phase1_completion_inventory.json"
+   ],
+   "verdict": "a-historical-record",
+   "the_ground": "the naming is a CITATION and not a read: the file names the artifact in text and carries it in no string constant it opens",
+   "is_one_of_the_six_generators": false,
+   "is_one_of_their_artifacts": false,
+   "reads_it_as_a_string_constant": [],
+   "reads_a_gate_artifact_as_its_population": [],
+   "imports_a_family_generator_transitively": [],
+   "citation_subkind": "a-row-of-a-generated-census-or-enumeration",
+   "the_naming_quoted": {
+    "phase1_completion_inventory.json": [
+     {
+      "line": 3592,
+      "text": "\"held_by\": \"tools/audit/changed_paths_phase1_completion_inventory.json\","
+     },
+     {
+      "line": 3640,
+      "text": "\"held_by\": \"tools/audit/changed_paths_phase1_completion_inventory.json\","
+     }
+    ]
+   }
+  }
+ ]
+}

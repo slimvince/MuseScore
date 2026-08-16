@@ -396,6 +396,37 @@ AUTHORED = [
      "and every retired record carrying its finding, its date, its retiring authority and the ruled "
      "clause verbatim — the four the ruling requires of every record"),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fourth.md Task 1 -------------------
+    # Both tools are added by this dispatch's own Task 1 and registered in the act that creates
+    # them, rather than reaching a later pass's derived population unclassified — the standing
+    # new-tool rule. Each takes `--check` and never the bare invocation, for a reason about the
+    # tools: run with no flag each REWRITES its committed artifact, and both artifacts are read
+    # BEFORE an irreversible act rather than after it, which is the OI-301 hazard at its sharpest.
+    ("tools/audit/gen_phase1_gate_readers.py", ["--check"],
+     "the R1 reader enumeration re-derives — every tracked file naming any of the old phase-1 gate "
+     "artifacts or their derivation family's outputs, classified the superseded program's own "
+     "apparatus, a historical record, or a LIVE consumer. What it guards is not the verdicts, "
+     "which carry their ground and their quoted naming line beside them, but four demands on the "
+     "record as it stands: every sentence of the ruling that ordered the enumeration must still be "
+     "in its ruling record, so the pass cannot outlive the words that ordered it; every generator "
+     "the ruling names must still exist AND must still name its own output artifact, so a "
+     "generator that has gone halts it instead of shrinking the population silently; every naming "
+     "must be placeable; and a NON-EMPTY live-consumer class halts it, which is the ruling's own "
+     "instruction. Its readings are taken from the git objects at the commit its artifact RECORDS, "
+     "so writing a file that names one of these artifacts does not turn it red — the OI-301 / "
+     "OI-305 shape avoided by construction"),
+    ("tools/audit/gen_discard_reach_split.py", ["--check"],
+     "the R2 derived split re-derives — every check the ruled soft-discard's application turns "
+     "red, classified SUPERSEDED (serves only the old phase-1 gate) or STANDING (serves a rule of "
+     "the current record), each with its imports, its own stated purpose, and the derived "
+     "explanation of its red. What it guards is not the verdicts but five demands: the ruling's "
+     "sentences must still be in its ruling record; the population must still be IMPORTABLE from "
+     "the `[FAIL]` block of the committed report that measured it, and a block that is missing, "
+     "empty, or names a check the tree no longer carries halts it rather than letting the "
+     "population shrink to what still parses; every member must be placeable by the verdict rule; "
+     "a STANDING member whose red the enumerated-movement bound cannot explain halts it, which is "
+     "the ruling's own STOP; and the tally must account for the population"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

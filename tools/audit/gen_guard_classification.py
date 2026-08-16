@@ -639,6 +639,54 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "SHOULD be performed. It was not: the dispatch's assumption A3 was falsified by the "
         "measurement, and what is committed is the plan and the tool, never a mutation."),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fourth.md Task 1 --------------------
+    # Task 1's own two tools, classified in the act that creates them — the standing practice.
+    # Every citation below was READ IN THIS SESSION, in the tool it names, with the file tools.
+    "tools/audit/gen_phase1_gate_readers.py": (
+        LIVE, "gen_phase1_gate_readers.py, the `★ WHY THE ENUMERATION IS PINNED TO A COMMIT` "
+              "paragraph of its module docstring and its `THE STOPS` list; `build()`, which "
+              "derives each generator's own output artifact from that generator's source and "
+              "halts if it cannot; `locate_ruling()`, which locates every ordering sentence",
+        "LIVE, on the same ground `gen_test_construction_evidence.py` is, and the live half is "
+        "named rather than implied. The ENUMERATION is a statement about one tree and is taken "
+        "from the git objects at the commit the artifact RECORDS, so it re-derives forever instead "
+        "of going red the first time anybody writes a file naming one of these artifacts — the "
+        "OI-301 / OI-305 shape avoided by construction rather than tolerated. What is LIVE is the "
+        "APPARATUS and the words that ordered the pass: every sentence of the ruling must still be "
+        "in `cowork_rulings_2026_08_16_preparation_return.md`, and every generator the ruling "
+        "names must still exist and must still name its own output artifact — a generator that has "
+        "gone, or one whose artifact can no longer be derived from its source, halts this check "
+        "rather than shrinking the population silently. Its LIVE-consumer STOP is a demand of the "
+        "same kind and is the ruling's own. ★ WHAT IT DOES NOT ASSERT, and its own artifact says "
+        "so: that a file naming none of these artifacts depends on none of them. A path built at "
+        "run time carries no literal to find and a binary blob is not searched, which is the same "
+        "bound the retirement caller-check publishes of itself. It also asserts nothing about "
+        "whether a verdict is RIGHT — the ground of each and the naming line are published beside "
+        "it, so the reading is the user's."),
+    "tools/audit/gen_discard_reach_split.py": (
+        LIVE, "gen_discard_reach_split.py, the `★ WHERE THE POPULATION COMES FROM` and `THE "
+              "VERDICT RULE` paragraphs of its module docstring and its `THE STOPS` list; "
+              "`measured_population()`, which parses the population out of the committed report's "
+              "own captured run; `explain()`, which places each red against the committed plan",
+        "LIVE. Its POPULATION is a measurement and is imported rather than re-taken — parsed on "
+        "every run out of the `[FAIL]` lines of the committed report that recorded it, read at the "
+        "commit the artifact records — but everything it asserts ABOUT that population is "
+        "re-derived at HEAD and becomes false the moment the record moves: every verdict comes "
+        "from the import graph among the checks as they stand, every stated purpose is quoted from "
+        "the check's own module docstring and from the guard set's own authored invocation table "
+        "(imported, never restated, #6), and every red's explanation is derived from the committed "
+        "discard plan together with the decisions register's home data. Its STOPs are demands of "
+        "the same kind: the ruling's sentences must still be in its ruling record; a `[FAIL]` "
+        "block that is missing, empty, or names a check the tree no longer carries halts it rather "
+        "than letting the population shrink to what still parses; a member the verdict rule cannot "
+        "place halts it; and a STANDING member whose red the enumerated-movement bound cannot "
+        "explain halts it, which is the ruling's own STOP and the one that fired for real on this "
+        "tool's first run. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a "
+        "SUPERSEDED verdict says anything about whether the superseded phase 1's obligations were "
+        "discharged — the ruling states in terms that historical status asserts nothing of the "
+        "kind — and that the population has been re-confirmed at the applied tree, which is owed "
+        "at the act and not before it."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

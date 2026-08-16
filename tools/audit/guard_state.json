@@ -42,6 +42,7 @@
       "tools/audit/gen_artifact_inventory_surface.py",
       "tools/audit/gen_deciding_act_recovery.py",
       "tools/audit/gen_decisions_filter.py",
+      "tools/audit/gen_discard_reach_split.py",
       "tools/audit/gen_discard_records.py",
       "tools/audit/gen_doc_change_candidates.py",
       "tools/audit/gen_filing_convention_application.py",
@@ -51,6 +52,7 @@
       "tools/audit/gen_period_stratum_split.py",
       "tools/audit/gen_phase1_completion_inventory.py",
       "tools/audit/gen_phase1_finish_line.py",
+      "tools/audit/gen_phase1_gate_readers.py",
       "tools/audit/gen_phase3_gate_partition.py",
       "tools/audit/gen_ratified_document_check.py",
       "tools/audit/gen_reserved_word_scanner.py",
@@ -67,7 +69,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 69,
+    "authored_entries": 71,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -736,6 +738,32 @@
       "what_it_checks": "the ruled soft-discard's PLAN re-derives, and no retirement has been applied. Before the act this is what is live: every sentence of the ruling that ordered the discard must still be in its ruling record; the population must still be DERIVABLE from the committed recovery and sole-carrier artifacts — the entries the recovery pass returned NOTHING-FOUND for minus the members the guard withheld, with a member that is BOTH halting it and a member the decisions register's data file does not carry live halting it too (D-671); and the committed plan must still re-derive from those inputs. AFTER the act, the plan cannot be re-derived by construction, and what this checks instead is the applied state: live plus retired accounting for the whole former population BY ARITHMETIC, no entry in both blocks and none in neither, and every retired record carrying its finding, its date, its retiring authority and the ruled clause verbatim — the four the ruling requires of every record"
     },
     {
+      "tool": "tools/audit/gen_phase1_gate_readers.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the phase-1 gate reader enumeration re-derives: 122 naming file(s), 0 live consumer(s)"
+      ],
+      "stderr": [],
+      "what_it_checks": "the R1 reader enumeration re-derives — every tracked file naming any of the old phase-1 gate artifacts or their derivation family's outputs, classified the superseded program's own apparatus, a historical record, or a LIVE consumer. What it guards is not the verdicts, which carry their ground and their quoted naming line beside them, but four demands on the record as it stands: every sentence of the ruling that ordered the enumeration must still be in its ruling record, so the pass cannot outlive the words that ordered it; every generator the ruling names must still exist AND must still name its own output artifact, so a generator that has gone halts it instead of shrinking the population silently; every naming must be placeable; and a NON-EMPTY live-consumer class halts it, which is the ruling's own instruction. Its readings are taken from the git objects at the commit its artifact RECORDS, so writing a file that names one of these artifacts does not turn it red — the OI-301 / OI-305 shape avoided by construction"
+    },
+    {
+      "tool": "tools/audit/gen_discard_reach_split.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the discard reach split re-derives: STANDING 9 · SUPERSEDED 6"
+      ],
+      "stderr": [],
+      "what_it_checks": "the R2 derived split re-derives — every check the ruled soft-discard's application turns red, classified SUPERSEDED (serves only the old phase-1 gate) or STANDING (serves a rule of the current record), each with its imports, its own stated purpose, and the derived explanation of its red. What it guards is not the verdicts but five demands: the ruling's sentences must still be in its ruling record; the population must still be IMPORTABLE from the `[FAIL]` block of the committed report that measured it, and a block that is missing, empty, or names a check the tree no longer carries halts it rather than letting the population shrink to what still parses; every member must be placeable by the verdict rule; a STANDING member whose red the enumerated-movement bound cannot explain halts it, which is the ruling's own STOP; and the tally must account for the population"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1004,8 +1032,8 @@
     }
   ],
   "summary": {
-    "run": 55,
-    "passing": 54,
+    "run": 57,
+    "passing": 56,
     "failing": 1,
     "failing_tools": [
       {

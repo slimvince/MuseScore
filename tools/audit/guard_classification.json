@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 65,
-    "re_derives_a_live_invariant": 53,
+    "tools_classified": 67,
+    "re_derives_a_live_invariant": 55,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -337,6 +337,14 @@
       "state_at_the_committed_tree": "PASS"
     },
     {
+      "tool": "tools/audit/gen_discard_reach_split.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_discard_reach_split.py, the `★ WHERE THE POPULATION COMES FROM` and `THE VERDICT RULE` paragraphs of its module docstring and its `THE STOPS` list; `measured_population()`, which parses the population out of the committed report's own captured run; `explain()`, which places each red against the committed plan",
+      "why": "LIVE. Its POPULATION is a measurement and is imported rather than re-taken — parsed on every run out of the `[FAIL]` lines of the committed report that recorded it, read at the commit the artifact records — but everything it asserts ABOUT that population is re-derived at HEAD and becomes false the moment the record moves: every verdict comes from the import graph among the checks as they stand, every stated purpose is quoted from the check's own module docstring and from the guard set's own authored invocation table (imported, never restated, #6), and every red's explanation is derived from the committed discard plan together with the decisions register's home data. Its STOPs are demands of the same kind: the ruling's sentences must still be in its ruling record; a `[FAIL]` block that is missing, empty, or names a check the tree no longer carries halts it rather than letting the population shrink to what still parses; a member the verdict rule cannot place halts it; and a STANDING member whose red the enumerated-movement bound cannot explain halts it, which is the ruling's own STOP and the one that fired for real on this tool's first run. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a SUPERSEDED verdict says anything about whether the superseded phase 1's obligations were discharged — the ruling states in terms that historical status asserts nothing of the kind — and that the population has been re-confirmed at the applied tree, which is owed at the act and not before it.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
       "tool": "tools/audit/gen_discard_records.py",
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_discard_records.py:31-37 (why a located pointer table and not a scanner), :221-246 (`record_span` — the per-run location), :299-394 (the five STOPs), :396-423 (the soundness check against its two negative seeds)",
@@ -405,6 +413,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_phase1_finish_line.py:18-34",
       "why": "Authored 2026-08-04 in answer to this tool's own per-tool STOP — it entered the guard population two waves ago and had never been classified. It IMPORTS both populations rather than storing them, locates D-231's clause by anchor at HEAD, and carries a STOP that is a live demand in the strongest form the population has: a population that grows WITHOUT AN ITEM TO CARRY IT stops the tool, which is what makes the list a finish line rather than a selection. It re-derives as the record moves under it, and it passes.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_phase1_gate_readers.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_phase1_gate_readers.py, the `★ WHY THE ENUMERATION IS PINNED TO A COMMIT` paragraph of its module docstring and its `THE STOPS` list; `build()`, which derives each generator's own output artifact from that generator's source and halts if it cannot; `locate_ruling()`, which locates every ordering sentence",
+      "why": "LIVE, on the same ground `gen_test_construction_evidence.py` is, and the live half is named rather than implied. The ENUMERATION is a statement about one tree and is taken from the git objects at the commit the artifact RECORDS, so it re-derives forever instead of going red the first time anybody writes a file naming one of these artifacts — the OI-301 / OI-305 shape avoided by construction rather than tolerated. What is LIVE is the APPARATUS and the words that ordered the pass: every sentence of the ruling must still be in `cowork_rulings_2026_08_16_preparation_return.md`, and every generator the ruling names must still exist and must still name its own output artifact — a generator that has gone, or one whose artifact can no longer be derived from its source, halts this check rather than shrinking the population silently. Its LIVE-consumer STOP is a demand of the same kind and is the ruling's own. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a file naming none of these artifacts depends on none of them. A path built at run time carries no literal to find and a binary blob is not searched, which is the same bound the retirement caller-check publishes of itself. It also asserts nothing about whether a verdict is RIGHT — the ground of each and the naming line are published beside it, so the reading is the user's.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },
