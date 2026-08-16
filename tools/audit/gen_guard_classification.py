@@ -527,6 +527,28 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "at run time carries no literal to find and a binary blob is not searched, so the reading "
         "is generous in the safe direction and its limits are published above its first use."),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_second.md Task 2 --------------------
+    "tools/audit/gen_deciding_act_recovery.py": (
+        LIVE, "gen_deciding_act_recovery.py, the `THE STOPS` list of its module docstring; "
+              "`reconcile()`, which is called on the imported population in both directions; "
+              "`locate_ruling()`, which locates every sentence of the ruling in its record",
+        "LIVE. Everything it asserts is a demand about the record AS IT STANDS, and each becomes "
+        "false the moment the record moves under it: the non-keep population imported from the "
+        "committed filter artifact and the decisions register's data file must carry the same "
+        "entries in BOTH directions, so an entry entering or leaving that population halts it "
+        "rather than being recovered silently or quietly dropped; every entry must carry the "
+        "fields the pass reads; every result must be one of the closed three values and the "
+        "distribution must account for the population; and every sentence of the ruling that "
+        "ordered the pass must still be in its ruling record, which is the same shape the "
+        "retirement caller-check's conditions carry — a pass may not outlive the words that "
+        "ordered it. It is NOT a dated reading: it re-follows every citation and re-searches every "
+        "document on each run, so a user act written into a cited document tomorrow is recovered "
+        "tomorrow, and a citation that stops resolving is reported tomorrow. ★ WHAT IT DOES NOT "
+        "ASSERT, and its own artifact says so: that an ACT-FOUND is a verdict, or that a "
+        "NOTHING-FOUND means no act exists. The first is evidence for the user to read; the second "
+        "is a statement about the documents one entry's OWN citations reach, at one level, and the "
+        "one-level bound is published above the first result."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

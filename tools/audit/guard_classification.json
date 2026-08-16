@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 60,
-    "re_derives_a_live_invariant": 48,
+    "tools_classified": 61,
+    "re_derives_a_live_invariant": 49,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -309,6 +309,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_artifact_inventory_surface.py:40-49 (the four STOPs), and its `build()` two-way reconciliation against the inventory's class list",
       "why": "LIVE, and for the same reason `gen_july_screen.py` is: what it re-derives is not the verdicts, which are authored judgments about how artifacts should be used, but that the surface and the inventory still describe the same population. Its POPULATION is IMPORTED from the inventory artifact on every run and reconciled with the authored proposals in BOTH directions, so a class entering or leaving the inventory halts it rather than being left unproposed or proposed for nothing. Its citation split is RE-SCANNED at the governing record on every run, so a document that stops being cited moves side rather than staying where a dated reading put it. Neither is a point-in-time reading. Its vocabulary STOPs ride with it: a role or mining verdict outside the closed set the user's direction names halts it, and so does a proposal with no reason.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_deciding_act_recovery.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_deciding_act_recovery.py, the `THE STOPS` list of its module docstring; `reconcile()`, which is called on the imported population in both directions; `locate_ruling()`, which locates every sentence of the ruling in its record",
+      "why": "LIVE. Everything it asserts is a demand about the record AS IT STANDS, and each becomes false the moment the record moves under it: the non-keep population imported from the committed filter artifact and the decisions register's data file must carry the same entries in BOTH directions, so an entry entering or leaving that population halts it rather than being recovered silently or quietly dropped; every entry must carry the fields the pass reads; every result must be one of the closed three values and the distribution must account for the population; and every sentence of the ruling that ordered the pass must still be in its ruling record, which is the same shape the retirement caller-check's conditions carry — a pass may not outlive the words that ordered it. It is NOT a dated reading: it re-follows every citation and re-searches every document on each run, so a user act written into a cited document tomorrow is recovered tomorrow, and a citation that stops resolving is reported tomorrow. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that an ACT-FOUND is a verdict, or that a NOTHING-FOUND means no act exists. The first is evidence for the user to read; the second is a statement about the documents one entry's OWN citations reach, at one level, and the one-level bound is published above the first result.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

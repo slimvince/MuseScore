@@ -300,6 +300,25 @@ AUTHORED = [
      "vocabulary, a kind tally that does not account for the callers found, a verdict outside the "
      "closed three-value vocabulary, and a tally that does not account for the candidacies"),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_second.md Task 2 -------------------
+    # Added by this dispatch's own Task 2 and registered in the act that creates it, rather than
+    # reaching a later pass's derived population unclassified — the standing new-tool rule. It
+    # takes `--check` and not the bare invocation, for a reason about the tool: run with no flag it
+    # REWRITES its committed outputs, so a bare run would fold whatever the record currently says
+    # into a completed pass, which is the OI-301 hazard exactly.
+    ("tools/audit/gen_deciding_act_recovery.py", ["--check"],
+     "the deciding-act recovery pass re-derives — for every entry the decisions-register filter "
+     "could not name a deciding act for, the entry's OWN cited sources followed through the record "
+     "and searched for a user act naming that entry's subject. What it guards is not the results, "
+     "which are evidence awaiting the user, but four demands on the record as it stands: the "
+     "non-keep population imported from the committed filter artifact and the register's data file "
+     "must carry the same entries in BOTH directions, so a derivation over a derived population "
+     "cannot be published in part (D-671); every entry must carry the fields the pass reads, so one "
+     "it cannot read halts it rather than being skipped; every result must be one of the closed "
+     "three values and the distribution must account for the population; and every sentence of the "
+     "ruling that ordered the pass must still be in its ruling record, so the pass cannot outlive "
+     "the words that ordered it"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

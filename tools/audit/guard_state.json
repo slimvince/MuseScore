@@ -39,6 +39,7 @@
       "tools/audit/gen_arm_comment_sweep.py",
       "tools/audit/gen_artifact_inventory.py",
       "tools/audit/gen_artifact_inventory_surface.py",
+      "tools/audit/gen_deciding_act_recovery.py",
       "tools/audit/gen_decisions_filter.py",
       "tools/audit/gen_discard_records.py",
       "tools/audit/gen_doc_change_candidates.py",
@@ -62,7 +63,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 64,
+    "authored_entries": 65,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -666,6 +667,19 @@
       "what_it_checks": "the caller-check over every ruled retirement candidacy re-derives — SINCE 2026-08-16 under the ruled reading of `cowork_rulings_2026_08_16_preparation_return.md` §1, so what it re-derives now includes the DERIVED caller-kind classification: which callers are tree enumerations whose namings hold nothing, and which are not. Its reference readings are taken at the commit its own artifact RECORDS, so it passes indefinitely rather than going red the first time anybody writes a file naming a flagged one — the OI-301/OI-305 shape avoided by construction. What is LIVE is the population: the flags are re-imported from the ruling surface's generator on every run and the citation split is re-scanned at the governing record, so a candidacy entering or leaving the ruled set, or a member changing side, halts it instead of being graded silently. Its STOPs ride with it: a flagged class the inventory does not carry, a mixed class the inventory publishes no members for, a member list whose derived count disagrees with the count the inventory publishes, an authored condition and a derived candidacy disagreeing in either direction, a condition whose quoted sentence is no longer in the ruling record, A SENTENCE OF THE RULED READING NO LONGER IN ITS OWN RULING RECORD — so a reading cannot outlive the words that imposed it, the same shape the conditions already carry — a caller kind outside the closed four-value vocabulary, a kind tally that does not account for the callers found, a verdict outside the closed three-value vocabulary, and a tally that does not account for the candidacies"
     },
     {
+      "tool": "tools/audit/gen_deciding_act_recovery.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the deciding-act recovery re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the deciding-act recovery pass re-derives — for every entry the decisions-register filter could not name a deciding act for, the entry's OWN cited sources followed through the record and searched for a user act naming that entry's subject. What it guards is not the results, which are evidence awaiting the user, but four demands on the record as it stands: the non-keep population imported from the committed filter artifact and the register's data file must carry the same entries in BOTH directions, so a derivation over a derived population cannot be published in part (D-671); every entry must carry the fields the pass reads, so one it cannot read halts it rather than being skipped; every result must be one of the closed three values and the distribution must account for the population; and every sentence of the ruling that ordered the pass must still be in its ruling record, so the pass cannot outlive the words that ordered it"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -934,8 +948,8 @@
     }
   ],
   "summary": {
-    "run": 50,
-    "passing": 49,
+    "run": 51,
+    "passing": 50,
     "failing": 1,
     "failing_tools": [
       {
