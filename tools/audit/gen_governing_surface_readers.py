@@ -71,9 +71,13 @@ OUT = HERE / "governing_surface_readers.json"
 SPANS = HERE / "governing_surface_spans.json"
 SURFACE = (ROOT / "ratification_surfaces"
            / "cowork_governing_surface_split_2026_08_16.md")
-BACKBONE = HERE / "decisions" / "backbone_decisions.json"
+BACKBONE = "tools/audit/decisions/backbone_decisions.json"
 
 FILES = spans.FILES          # IMPORTED, never restated (#6)
+# The pin is the span decomposition's, imported rather than restated (#6): the two artifacts are
+# one measurement and the surface is generated from both, so a disagreement about WHEN they were
+# taken would make the surface a statement about two different trees.
+PINNED_COMMIT = spans.PINNED_COMMIT
 
 # ★ THIS MEASUREMENT'S OWN OUTPUTS ARE NOT READERS OF THE FILES IT MEASURES, and counting them
 # would make the artifact unreproducible BY CONSTRUCTION: each of the three names all five files,
@@ -106,21 +110,27 @@ def git(*args: str) -> str:
 
 
 def namings(name: str) -> list[tuple[str, int, str]]:
-    """Every tracked line naming the file — ONE `git grep` for the whole tree (the F26 lesson)."""
+    """Every tracked line naming the file — ONE `git grep` for the whole tree (the F26 lesson).
+
+    Read AT THE PINNED COMMIT, for the reason the module docstring states: this measurement is
+    evidence for a ruling and may not move under it. At the live tree it went red at the batch's
+    own close, and would at every close after.
+    """
     out = []
-    for line in git("grep", "-n", "-I", "-F", "--", name).split("\n"):
+    for line in git("grep", "-n", "-I", "-F", "-e", name, PINNED_COMMIT).split("\n"):
         if not line.strip():
             continue
-        parts = line.split(":", 2)
-        if len(parts) != 3 or not parts[1].isdigit():
+        # With a commit named, git prefixes every hit with `<commit>:`.
+        parts = line.split(":", 3)
+        if len(parts) != 4 or not parts[2].isdigit():
             continue
-        path, lineno, text = parts[0], int(parts[1]), parts[2]
+        path, lineno, text = parts[1], int(parts[2]), parts[3]
         out.append((path.replace("\\", "/"), lineno, text))
     return out
 
 
 def register_homes(name: str) -> list[dict]:
-    data = json.loads(BACKBONE.read_text(encoding="utf-8"))
+    data = json.loads(git("show", f"{PINNED_COMMIT}:{BACKBONE}"))
     rows = []
     for entry in data["decisions"]:
         home = entry["home"]
@@ -132,8 +142,7 @@ def register_homes(name: str) -> list[dict]:
 
 
 def measure(name: str) -> dict:
-    if not (ROOT / name).is_file():
-        raise Stop(f"a file the ruling names for the measurement is missing: {name}")
+    git("cat-file", "-e", f"{PINNED_COMMIT}:{name}")
     anchor = re.compile(re.escape(name) + r":\d+")
 
     found = [row for row in namings(name) if row[0] not in OWN_OUTPUTS]
@@ -198,6 +207,13 @@ def build() -> dict:
             "ruled read-only pruning batch delivers.",
         "generator": "tools/audit/gen_governing_surface_readers.py",
         "dispatch": "cc_instruction_preparation_fifth.md, Task 2",
+        "measured_at_commit": PINNED_COMMIT,
+        "★_why_the_reading_is_pinned":
+            "This measurement is evidence for a ruling and may not move under the ruling it "
+            "supports. The pin is the span decomposition's own, imported rather than restated "
+            "(#6), because the surface is generated from both artifacts and they must be a "
+            "statement about ONE tree. Measured rather than anticipated: taken at the live tree "
+            "it went red at this batch's own close, and would at every close after.",
         "the_ruling_that_ordered_it": {
             "source": "cowork_rulings_2026_08_16_preparation_return.md §5(A)",
             "why_it_runs_BEFORE_any_act":

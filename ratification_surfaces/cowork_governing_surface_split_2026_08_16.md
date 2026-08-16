@@ -142,11 +142,11 @@ silently re-points it at something else.
 
 | file | files naming it | namings | anchored namings | files carrying an anchor | tools that read or parse it |
 |---|---:|---:|---:|---:|---:|
-| `CLAUDE.md` | 779 | 8,921 | 1,354 | 63 | 4 |
-| `OPEN_ITEMS.md` | 713 | 5,821 | 129 | 21 | 9 |
-| `DECISIONS.md` | 147 | 364 | 0 | 0 | 2 |
-| `STATUS.md` | 466 | 3,109 | 79 | 24 | 1 |
-| `BUILD_AND_TEST.md` | 192 | 885 | 34 | 17 | 0 |
+| `CLAUDE.md` | 781 | 8,928 | 1,354 | 63 | 4 |
+| `OPEN_ITEMS.md` | 715 | 5,824 | 129 | 21 | 9 |
+| `DECISIONS.md` | 149 | 367 | 0 | 0 | 2 |
+| `STATUS.md` | 468 | 3,119 | 79 | 24 | 1 |
+| `BUILD_AND_TEST.md` | 194 | 887 | 34 | 17 | 0 |
 
 **The tools that read or parse each file**, which are what a change of SHAPE breaks rather than a
 change of line numbers:

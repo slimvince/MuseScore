@@ -81,6 +81,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -95,6 +96,29 @@ use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 import index_status_lint as lint                                   # noqa: E402  (path set above)
 
 OUT = HERE / "governing_surface_spans.json"
+
+# ── PINNED READING, and why a measurement for a ruling may not be taken at the live tree ──────
+#
+# ★ THE DEFECT THIS CLOSES, MEASURED RATHER THAN ANTICIPATED.  This decomposition was first taken
+# at the working tree.  The batch's OWN CLOSE then wrote four dated entries into `STATUS.md` — one
+# of the five files — and the check went red at the very next commit, with nothing about the
+# measurement having been questioned.  Every future batch close would do the same, and a check that
+# is red at every tree teaches a reader to ignore it, which is the failure the guard set exists
+# against.
+#
+# ★ AND THE DEEPER REASON, which is why the remedy is a PIN rather than a re-run.  This artifact is
+# EVIDENCE FOR A RULING: the user rules the surface generated from it, and the pruning act follows
+# from that ruling.  A measurement that moves under the ruling it supports is the [[OI-330]] shape —
+# a completed measurement restated against a changed population — and the same hazard §6 kind 1
+# closed for the two artifacts the soft-discard rested on.  So the five files are read from the git
+# OBJECTS at the commit that carries this measurement, and the artifact re-derives indefinitely.
+#
+# WHAT IS LOST BY PINNING, stated so it is chosen rather than slid into: the decomposition stops
+# describing the five files as they stand.  That is correct here — its subject is the state the
+# user rules on — and a later pruning wave takes its own measurement at its own commit.
+PINNED_COMMIT = "c4f15a7b3224b2709ecc278010e8ac93e0b3a979"
+PINNED_COMMIT_IS = ("the commit that carries this measurement and the ruling surface generated "
+                    "from it — `cc_instruction_preparation_fifth.md` Task 2")
 
 # The five mandatory session-start reads, in the ruling's own scope: the three CLAUDE.md names,
 # plus DECISIONS.md "as the measurement warrants" and STATUS.md per ruling (C).
@@ -266,11 +290,20 @@ def classify(span: dict, filename: str) -> tuple[str, dict, bool]:
     return OPERATIVE, {"no_recognizer_placed_it": True}, True
 
 
+def git(*args: str) -> str:
+    proc = subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True)
+    if proc.returncode != 0:
+        raise Stop(f"git {' '.join(args)} failed: "
+                   f"{proc.stderr.decode('utf-8', 'replace').strip()}")
+    return proc.stdout.decode("utf-8", "replace")
+
+
 def measure(filename: str) -> dict:
-    path = ROOT / filename
-    if not path.is_file():
-        raise Stop(f"a file the ruling names for the measurement is missing: {filename}")
-    text = path.read_text(encoding="utf-8")
+    try:
+        text = git("show", f"{PINNED_COMMIT}:{filename}")
+    except Stop:
+        raise Stop(f"a file the ruling names for the measurement is not in the tree at the pinned "
+                   f"commit {PINNED_COMMIT[:10]}: {filename}")
     total_characters = len(text)
 
     rows, by_class, doubt_characters = [], {}, 0
@@ -324,6 +357,18 @@ def build() -> dict:
             "read-only pruning batch delivers.",
         "generator": "tools/audit/gen_governing_surface_spans.py",
         "dispatch": "cc_instruction_preparation_fifth.md, Task 2",
+        "measured_at_commit": PINNED_COMMIT,
+        "★_why_the_reading_is_pinned": {
+            "what_that_commit_is": PINNED_COMMIT_IS,
+            "the_reason": "This artifact is EVIDENCE FOR A RULING — the user rules the surface "
+                          "generated from it — so it may not move under the ruling it supports. "
+                          "Measured rather than anticipated: taken at the working tree, it went "
+                          "red at the batch's own close, which wrote four entries into STATUS.md, "
+                          "and every future close would do the same.",
+            "what_pinning_costs": "the decomposition stops describing the five files as they "
+                                  "stand. That is correct here, and a later pruning wave takes "
+                                  "its own measurement at its own commit.",
+        },
         "the_ruling_that_ordered_it": {
             "source": "cowork_rulings_2026_08_16_preparation_return.md §5(A)",
             "the_ordered_batch_quoted":

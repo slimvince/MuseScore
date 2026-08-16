@@ -2,6 +2,12 @@
  "what_this_is": "THE FIVE MANDATORY-READ FILES, DECOMPOSED SPAN BY SPAN AND CLASSED, with byte counts per class per file. A MEASUREMENT ONLY: no governing file is edited, no fate is decided, and nothing is moved. It is the first of the two artifacts the ruled read-only pruning batch delivers.",
  "generator": "tools/audit/gen_governing_surface_spans.py",
  "dispatch": "cc_instruction_preparation_fifth.md, Task 2",
+ "measured_at_commit": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979",
+ "★_why_the_reading_is_pinned": {
+  "what_that_commit_is": "the commit that carries this measurement and the ruling surface generated from it — `cc_instruction_preparation_fifth.md` Task 2",
+  "the_reason": "This artifact is EVIDENCE FOR A RULING — the user rules the surface generated from it — so it may not move under the ruling it supports. Measured rather than anticipated: taken at the working tree, it went red at the batch's own close, which wrote four entries into STATUS.md, and every future close would do the same.",
+  "what_pinning_costs": "the decomposition stops describing the five files as they stand. That is correct here, and a later pruning wave takes its own measurement at its own commit."
+ },
  "the_ruling_that_ordered_it": {
   "source": "cowork_rulings_2026_08_16_preparation_return.md §5(A)",
   "the_ordered_batch_quoted": "The next batch after the fourth is READ-ONLY: a per-file decomposition by span (operative rule text; preserved former wordings; defenses and declined-alternatives records; self-declared historical or superseded blocks; resolved rows) and the reader/anchor/quote inventory over all five files, delivering a ratification surface with per-span fates.",

@@ -437,12 +437,51 @@ STOPs**, with all four of this batch's new checks inside the classified populati
 verdicts and all four passing. **No failing check other than [[OI-372]] survives in the committed
 tree.**
 
-**★ E3 — TO BE GRADED ON THE RUN TAKEN AFTER THE COMMIT THAT CARRIES THIS SECTION.** Per the
-dispatch's ordering rule — *no graded value is committed before the run that produced it* — the
-end-state run demonstrated across the commit boundary is taken AFTER Task 3's close commit exists,
-and its output and the final SHAs land in **one further commit**. **The E3-ordering defect that rule
-exists against is not repeated: no expectation anywhere in this report was written before its
-measurement.**
+**★ E3 — MET ON THE SECOND RUN, AND THE FIRST RUN'S FAILURE IS THE REASON THE ORDERING RULE EXISTS
+(F32).** The run ordered at the tree carrying the close, taken AFTER commit **`1d8919feb1`** existed,
+came back **RED on three of this batch's own new checks** — the census-movement classification and
+both pruning-measurement tools — with `gen_filing_convention_application.py` the fourth. **Had E3
+been graded before the run, it would have been graded MET and been false.**
+
+**The cause was one defect with one shape, and it was in the tools rather than in the record.** All
+three read the LIVE tree. The close then wrote four dated entries into `STATUS.md`, which is one of
+the five files the pruning measurement decomposes and one of the seven the citation scan reads — so
+**the batch's own close invalidated its own measurements**, and every future batch close would do
+the same. A check that is red at every tree teaches a reader to ignore it, which is the failure the
+guard set exists against.
+
+**The remedy is a PIN, not a re-run, and the reason is the deeper one.** Each of the three is
+**EVIDENCE FOR A RULING**: the user rules the pruning surface generated from two of them, and the
+third states what one COMPLETED act moved. A measurement that moves under the ruling it supports is
+the [[OI-330]] shape — the very hazard §6 kind 1 closed for the two artifacts the soft-discard
+rested on — so the same treatment applies here on the same ground. The census-movement
+classification is worse than noisy if left live: a naming that a LATER edit removes would be
+reported as moved BY THE DISCARD, which is a false statement rather than a stale one.
+
+- the two pruning tools read the five files and scan the tree **at `c4f15a7b32`**, the commit that
+  carries the measurement and the surface generated from it;
+- the census-movement classification pins its AFTER side to **`26afbc0f75`**, the commit that
+  PERFORMED the act, beside the BEFORE side it already pinned.
+
+**No measured value moved.** The span decomposition is character-for-character what it was, its only
+difference the provenance block naming the pin; the census movement is the same 26 values, the same
+2 home-standing and 24 citation-carried, with the same difference. The reader inventory grew by the
+two tools themselves, which are tracked at the pin commit and were untracked when it was first
+taken — a change in the population, not in the finding.
+
+**The re-taken run, at the same tree, after the fix:**
+
+```
+the guard state re-derives
+55 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** —
+**every run check passing except [[OI-372]]'s tool, the six SUPERSEDED members historical among the
+sixteen, zero STOPs.** **Run and read, never inferred.** Per the ordering rule this paragraph and the
+final SHAs land in **one further commit** after the close, together with the fix that made the run
+honest.
 
 ---
 
@@ -466,6 +505,11 @@ The dispatch bars creating an open-items row, so each is stated here and in the 
 - **F31 (new, small) — a committed plan's own statement about its state can outlive the act it
   plans**, and cannot be corrected by regeneration once the act has happened. The state block is now
   rewritten at the moment the state changes, its former text preserved (#12). §2.
+- **F32 (new) — A BATCH'S OWN CLOSE INVALIDATED THE MEASUREMENTS THAT BATCH TOOK, and only the
+  ordering rule caught it.** Three checks added by this batch read the live tree; the close wrote
+  four entries into `STATUS.md`; the first E3 run came back red on all three. Had E3 been graded
+  before the run it would have been graded MET and been false. The remedy is the pinning §6 kind 1
+  applies to a measurement that is a ruling's evidence — which all three are. §7.
 - **F1–F26 (carried, unchanged)**, including **F3**, now seven times surfaced —
   `reaim_home_anchors.py --check` exits 0 while printing drifted anchors, and
   `gen_cluster_dispositions.py --verify` is the drift authority. **Still unfixed and unrowed: the
@@ -495,8 +539,10 @@ stays surfaced, unfixed and unrowed.
 *Provenance: CC, 2026-08-16, dispatch `cc_instruction_preparation_fifth.md`. Task 0 is commit
 `b73d1c7b4e` (parent `338fa9fe82`), pushed, four paths. Task 1 is `26afbc0f75` (parent
 `b73d1c7b4e`), pushed, 46 paths. Task 2 is `c4f15a7b32` (parent `26afbc0f75`), pushed, nine paths.
-Task 3's close and this report are the next commit; **E3's run and the final SHAs are recorded in
-the ONE FURTHER commit after it**, so no graded value is committed before the run that produced it.
+Task 3's close and this report are `1d8919feb1` (parent `c4f15a7b32`), pushed, three paths. **E3's
+run and the final SHAs are recorded in the ONE FURTHER commit after it**, so no graded value is
+committed before the run that produced it — and that ordering is what caught F32, the first E3 run
+having come back red on three of this batch's own checks.
 **★ WHERE THE RECORDING TERMINATES, STATED RATHER THAN LEFT AS A GAP:** every commit of this batch is
 verified at the object and named except the LAST one — the commit carrying this sentence — because a
 commit cannot contain its own identity. That is the terminus, not an omission.*

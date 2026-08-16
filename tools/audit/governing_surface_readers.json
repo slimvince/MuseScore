@@ -2,22 +2,24 @@
  "what_this_is": "WHO READS, ANCHORS INTO, QUOTES OR PARSES THE FIVE MANDATORY-READ FILES, measured at the current tree BEFORE any pruning act. A MEASUREMENT ONLY: nothing is edited, no reader is retired, no anchor is re-aimed. It is the second of the two artifacts the ruled read-only pruning batch delivers.",
  "generator": "tools/audit/gen_governing_surface_readers.py",
  "dispatch": "cc_instruction_preparation_fifth.md, Task 2",
+ "measured_at_commit": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979",
+ "★_why_the_reading_is_pinned": "This measurement is evidence for a ruling and may not move under the ruling it supports. The pin is the span decomposition's own, imported rather than restated (#6), because the surface is generated from both artifacts and they must be a statement about ONE tree. Measured rather than anticipated: taken at the live tree it went red at this batch's own close, and would at every close after.",
  "the_ruling_that_ordered_it": {
   "source": "cowork_rulings_2026_08_16_preparation_return.md §5(A)",
   "why_it_runs_BEFORE_any_act": "these are the most anchored, quoted and parsed files in the tree (the F2/F4 findings; the one index parser; the register's anchors), so the split's full reach is MEASURED before any act"
  },
  "★_what_this_measurement_does_NOT_establish": "That a naming is a DEPENDENCY, or that a file naming none of these depends on none of them. The scan sees TRACKED files only, and a path composed at run time carries no literal to find — the same bound the retirement caller-check publishes of itself.",
  "the_totals": {
-  "namers": 2297,
-  "namings": 19100,
+  "namers": 2307,
+  "namings": 19125,
   "anchored_namings": 1596,
   "register_entries_homed_in_these_files": 89
  },
  "per_file": [
   {
    "file": "CLAUDE.md",
-   "namers": 779,
-   "namings": 8921,
+   "namers": 781,
+   "namings": 8928,
    "anchored_namings": 1354,
    "files_carrying_an_anchor": 63,
    "tools_that_parse_or_read_it": [
@@ -9121,6 +9123,16 @@
      "anchored_namings": 0,
      "an_example": "so here it is carried in its own field. `CLAUDE.md`'s Conventions forbid self-invented labels, and a"
     },
+    "tools/audit/gen_governing_surface_readers.py": {
+     "namings": 2,
+     "anchored_namings": 0,
+     "an_example": "add(\"five files before it does anything else: `CLAUDE.md` (the standing rules), \""
+    },
+    "tools/audit/gen_governing_surface_spans.py": {
+     "namings": 5,
+     "anchored_namings": 0,
+     "an_example": "invention: `CLAUDE.md` opens each amendment, each preserved former wording and each"
+    },
     "tools/audit/gen_guard_classification.py": {
      "namings": 9,
      "anchored_namings": 0,
@@ -9715,8 +9727,8 @@
   },
   {
    "file": "OPEN_ITEMS.md",
-   "namers": 713,
-   "namings": 5821,
+   "namers": 715,
+   "namings": 5824,
    "anchored_namings": 129,
    "files_carrying_an_anchor": 21,
    "tools_that_parse_or_read_it": [
@@ -13521,6 +13533,16 @@
      "anchored_namings": 0,
      "an_example": "INDEX = os.path.join(ROOT, \"OPEN_ITEMS.md\")"
     },
+    "tools/audit/gen_governing_surface_readers.py": {
+     "namings": 1,
+     "anchored_namings": 0,
+     "an_example": "\"`OPEN_ITEMS.md` (the\")"
+    },
+    "tools/audit/gen_governing_surface_spans.py": {
+     "namings": 2,
+     "anchored_namings": 0,
+     "an_example": "FILES = (\"CLAUDE.md\", \"OPEN_ITEMS.md\", \"DECISIONS.md\", \"STATUS.md\", \"BUILD_AND_TEST.md\")"
+    },
     "tools/audit/gen_guard_classification.py": {
      "namings": 15,
      "anchored_namings": 0,
@@ -13865,8 +13887,8 @@
   },
   {
    "file": "DECISIONS.md",
-   "namers": 147,
-   "namings": 364,
+   "namers": 149,
+   "namings": 367,
    "anchored_namings": 0,
    "files_carrying_an_anchor": 0,
    "tools_that_parse_or_read_it": [
@@ -14519,6 +14541,16 @@
      "anchored_namings": 0,
      "an_example": "if base in (\"OPEN_ITEMS.md\", \"DECISIONS.md\"):"
     },
+    "tools/audit/gen_governing_surface_readers.py": {
+     "namings": 1,
+     "anchored_namings": 0,
+     "an_example": "add(\"open-issues index), `DECISIONS.md` (the index of what was decided), `STATUS.md` (what \""
+    },
+    "tools/audit/gen_governing_surface_spans.py": {
+     "namings": 2,
+     "anchored_namings": 0,
+     "an_example": "# plus DECISIONS.md \"as the measurement warrants\" and STATUS.md per ruling (C)."
+    },
     "tools/audit/gen_phase1_completion_inventory.py": {
      "namings": 4,
      "anchored_namings": 0,
@@ -14628,8 +14660,8 @@
   },
   {
    "file": "STATUS.md",
-   "namers": 466,
-   "namings": 3109,
+   "namers": 468,
+   "namings": 3119,
    "anchored_namings": 79,
    "files_carrying_an_anchor": 24,
    "tools_that_parse_or_read_it": [
@@ -17119,6 +17151,16 @@
      "anchored_namings": 0,
      "an_example": "\"in `STATUS.md`. **The row is NOT flipped and no status moved.**\""
     },
+    "tools/audit/gen_governing_surface_readers.py": {
+     "namings": 4,
+     "anchored_namings": 0,
+     "an_example": "add(\"open-issues index), `DECISIONS.md` (the index of what was decided), `STATUS.md` (what \""
+    },
+    "tools/audit/gen_governing_surface_spans.py": {
+     "namings": 6,
+     "anchored_namings": 0,
+     "an_example": "a dated STATUS.md entry that is a POINTER under the OI-222"
+    },
     "tools/audit/gen_guard_classification.py": {
      "namings": 2,
      "anchored_namings": 0,
@@ -17298,8 +17340,8 @@
   },
   {
    "file": "BUILD_AND_TEST.md",
-   "namers": 192,
-   "namings": 885,
+   "namers": 194,
+   "namings": 887,
    "anchored_namings": 34,
    "files_carrying_an_anchor": 17,
    "tools_that_parse_or_read_it": [],
@@ -18306,6 +18348,16 @@
      "namings": 2,
      "anchored_namings": 0,
      "an_example": "\"were run, both `BUILD_AND_TEST.md` baselines were written from those runs and from \""
+    },
+    "tools/audit/gen_governing_surface_readers.py": {
+     "namings": 1,
+     "anchored_namings": 0,
+     "an_example": "add(\"work is in) and `BUILD_AND_TEST.md` (how to build, test and measure). They are the \""
+    },
+    "tools/audit/gen_governing_surface_spans.py": {
+     "namings": 1,
+     "anchored_namings": 0,
+     "an_example": "FILES = (\"CLAUDE.md\", \"OPEN_ITEMS.md\", \"DECISIONS.md\", \"STATUS.md\", \"BUILD_AND_TEST.md\")"
     },
     "tools/audit/gen_nongating_apparatus_rows.py": {
      "namings": 1,

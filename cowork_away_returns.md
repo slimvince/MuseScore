@@ -12917,6 +12917,10 @@ deliver, plus three things the work surfaced that the user may want to rule on.
   regenerated: its population is no longer live, so the tool STOPs by construction. The one block
   whose subject is the act's STATE is now rewritten at the moment the state changes, its former text
   preserved (#12), and the tool's own check reads it back.
+- **F32 (new) — A BATCH'S OWN CLOSE INVALIDATED THE MEASUREMENTS THAT BATCH TOOK**, and only the
+  E-ordering rule caught it: the first end-state run came back red on three of this batch's own new
+  checks, all of which read the live tree. Had E3 been graded before the run it would have been
+  graded MET and been false. §5 below.
 - **F1–F26 (carried, unchanged)**, including **F3**, now seven times surfaced —
   `reaim_home_anchors.py --check` exits 0 while printing drifted anchors, and
   `gen_cluster_dispositions.py --verify` is the drift authority. **Still unfixed and unrowed: the
@@ -13053,9 +13057,24 @@ This section, the `STATUS.md` pointer entries, and the report `cc_report_prepara
 ## 5 (continued). The end state, under the ordering rule
 
 **The E-ordering rule the dispatch imposes — no graded value is committed before the run that
-produced it — is obeyed.** The end-state guard run demonstrated across the commit boundary is taken
-AFTER the Task 3 commit exists, and its output and the final SHAs land in ONE FURTHER commit. E3 is
-graded at `cc_report_preparation_fifth.md` §7 on that run and on nothing else.
+produced it — is obeyed, and it EARNED ITS KEEP in this batch (F32).** The end-state run taken at
+the tree carrying this close, AFTER commit `1d8919feb1` existed, came back **RED on three of this
+batch's own new checks**: the census-movement classification and both pruning-measurement tools all
+read the LIVE tree, and this close wrote four dated entries into `STATUS.md` — one of the five files
+the pruning measurement decomposes. **The batch's own close invalidated the batch's own
+measurements**, and every future close would do the same. **Had E3 been graded before the run it
+would have been graded MET and been false.**
+
+The remedy is the PINNING §6 kind 1 applies to a measurement that is a ruling's evidence, on the
+same ground: the user rules the surface generated from two of these artifacts, and the third states
+what one completed act moved, so none of them may move under the ruling it supports. **No measured
+value moved** — the span decomposition is character-for-character what it was and the census
+movement is the same 26 values classed the same way; what changed is where they read from. The
+re-taken run at the same tree prints **"the guard state re-derives"** — 55 run, ONE failing
+([[OI-372]]), 4 not run, 16 historical, no STOP — with the guard classification re-deriving too.
+
+E3 is graded at `cc_report_preparation_fifth.md` §7 on that second run and on nothing else, and the
+fix that made it honest lands in the same one further commit.
 
 ## 6 (continued). What this batch did NOT do
 
@@ -13075,7 +13094,8 @@ surfaced, unfixed and unrowed.
 *Provenance: CC, 2026-08-16, dispatch `cc_instruction_preparation_fifth.md`. Task 0 is commit
 `b73d1c7b4e` (parent `338fa9fe82`), pushed, four paths. Task 1 is `26afbc0f75` (parent
 `b73d1c7b4e`), pushed, 46 paths. Task 2 is `c4f15a7b32` (parent `26afbc0f75`), pushed, nine paths.
-Task 3's close is the next commit; **E3's run and that SHA are recorded in the ONE FURTHER commit
-after it**, so no graded value is committed before the run that produced it. **★ WHERE THE RECORDING
+Task 3's close is `1d8919feb1` (parent `c4f15a7b32`), pushed, three paths; **E3's run and that SHA
+are recorded in the ONE FURTHER commit after it**, so no graded value is committed before the run
+that produced it — and that ordering is what caught F32. **★ WHERE THE RECORDING
 TERMINATES:** every commit of this batch is verified at the object and named except the LAST one,
 which cannot contain its own identity.*
