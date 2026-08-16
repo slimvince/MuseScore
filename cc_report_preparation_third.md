@@ -338,10 +338,20 @@ STOPs**, with all three of this batch's new checks inside the classified populat
 verdicts and all three passing. **No failing check other than [[OI-372]] survives in the committed
 tree**, so no further STOP-and-report is owed on the end state itself.
 
-**★ E5 — run at the tree carrying the close and AFTER the commit that carries it.** Its values and
-the final SHAs land in **one further commit**, per the dispatch's E3-ordering rule, so that no graded
-value is committed before the run that produced it. That paragraph is written in that further commit
-and nowhere else.
+**★ E5 — MET, RUN AT THE TREE CARRYING THE CLOSE AND AFTER THE COMMIT THAT CARRIES IT.** Task 4's
+close is commit **`1b824b23b1`**, parent `db5978168c`, pushed, three paths, verified at the object.
+At that tree, after that commit existed, `gen_guard_state.py --check` printed **"the guard state
+re-derives"** — **55 guards run, 54 passing, ONE failing** (`gen_filing_convention_application.py
+--check`, [[OI-372]], the only `[FAIL]` line in the whole run), 4 not run, 10 historical, **no
+STOP** — and `gen_guard_classification.py --check` printed **"the guard classification
+re-derives"**. The sanctioned enumeration at the same tree reported **no tracked modification
+anywhere**: every record it returned was untracked. **Run and read, never inferred.**
+
+Per the dispatch's ordering rule — *no graded value is committed before the run that produced it* —
+this paragraph and the SHA in it land in **one further commit** after the close. **The E3-ordering
+defect that rule exists against is not repeated: no expectation anywhere in this report was written
+before its measurement, and the one expectation this batch does not meet is graded NOT MET rather
+than reconciled towards.**
 
 ---
 
@@ -390,7 +400,9 @@ moved or run, nothing under `tools/corpus/` or `tools/robust_stop/`, no measurem
 *Provenance: CC, 2026-08-16, dispatch `cc_instruction_preparation_third.md`. Task 0 is commit
 `cb5070c106` (parent `17f0a9e04b`), pushed, two paths. Task 1 is `a88d793021` (parent `cb5070c106`),
 pushed, six paths. Task 2 is `81e2ef1c23` (parent `a88d793021`), pushed, seven paths. Task 3's STOP is
-`db5978168c` (parent `81e2ef1c23`), pushed, six paths. Task 4's close and this report land next, and
-E5's run and the final SHAs in one further commit after them. **★ WHERE THE RECORDING TERMINATES:**
-every commit of this batch is verified at the object and named except the last one, which cannot
-contain its own identity.*
+`db5978168c` (parent `81e2ef1c23`), pushed, six paths. Task 4's close is **`1b824b23b1`** (parent
+`db5978168c`), pushed, three paths; **E5's run and that SHA are recorded in the ONE FURTHER commit
+after it**, so no graded value was committed before the run that produced it. **★ WHERE THE RECORDING
+TERMINATES, STATED RATHER THAN LEFT AS A GAP:** every commit of this batch is verified at the object
+and named above except the LAST one — the commit carrying this sentence — because a commit cannot
+contain its own identity. That is the terminus, not an omission.*

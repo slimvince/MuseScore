@@ -12627,7 +12627,22 @@ for real once, on Task 3's tool before it was registered, which is that mechanis
   measurement, the revert proven at the objects, and the falsified assumption.
 - **E4 — MET at every task's end**, and at the end state: **55 run, 54 passing, ONE failing**
   ([[OI-372]]'s tool), zero STOPs, all three new checks classified and passing.
-- **E5 — recorded in the ONE FURTHER commit after this close**, per the dispatch's ordering rule.
+- **E5 — MET, RUN AT THE TREE CARRYING THE CLOSE AND AFTER THE COMMIT THAT CARRIES IT.** Task 4's
+  close is commit **`1b824b23b1`**, parent `db5978168c`, pushed, three paths, verified at the object.
+  At that tree, after that commit existed, `gen_guard_state.py --check` printed **"the guard state
+  re-derives"** — **55 guards run, 54 passing, ONE failing** (`gen_filing_convention_application.py
+  --check`, [[OI-372]], the only `[FAIL]` line in the whole run), 4 not run, 10 historical, **no
+  STOP** — and `gen_guard_classification.py --check` printed **"the guard classification
+  re-derives"**. The sanctioned enumeration at the same tree reported **no tracked modification
+  anywhere**. **Run and read, never inferred**, and this paragraph lands in the ONE FURTHER commit
+  after the close, so no graded value was committed before the run that produced it.
+
+*Provenance: CC, 2026-08-16, dispatch `cc_instruction_preparation_third.md`. Task 0 is commit
+`cb5070c106` (parent `17f0a9e04b`), pushed, two paths. Task 1 is `a88d793021`, pushed, six paths.
+Task 2 is `81e2ef1c23`, pushed, seven paths. Task 3's STOP is `db5978168c`, pushed, six paths.
+Task 4's close is `1b824b23b1`, pushed, three paths; E5's run and that SHA are recorded in the one
+further commit after it. **★ WHERE THE RECORDING TERMINATES:** every commit is verified at the object
+and named except the LAST one, which cannot contain its own identity.*
 
 ## 6 (continued). What this batch did NOT do
 
