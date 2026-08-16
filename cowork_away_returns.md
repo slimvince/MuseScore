@@ -12823,3 +12823,259 @@ Task 2 carries no commit — it is a STOP, and its revert is proven at the objec
 the next commit; E3's run and that SHA are recorded in the one further commit after it. **★ WHERE THE
 RECORDING TERMINATES:** every commit is verified at the object and named except the LAST one, which
 cannot contain its own identity.*
+
+# ═══ THE PREPARATION FIFTH BATCH (dispatch `cc_instruction_preparation_fifth.md`, performed 2026-08-16) ═══
+
+*(Every guard count referred to below lives at `tools/audit/guard_state.json`, the derived split at
+`tools/audit/discard_reach_split.json`, the whole discard derivation at
+`tools/audit/soft_discard_application.json`, the kind-2 move list at
+`tools/audit/decisions/retired_subject_moves.json`, the kind-3 movement classification at
+`tools/audit/census_movement_classification.json`, and the pruning measurement at
+`tools/audit/governing_surface_spans.json` and `tools/audit/governing_surface_readers.json`;
+**none is restated here** — **D-431** — except the few this close is reporting ABOUT, each naming
+where it was read, and the captured run output, which is QUOTED rather than transcribed. **The
+report is `cc_report_preparation_fifth.md`**, which is the whole of what the coding side says back;
+this close is the batch record beside it. This is the FIFTH dispatch of the PREPARATION phase,
+executing §3, §4 and §6 of `cowork_rulings_2026_08_16_preparation_return.md` together — the ruled
+soft-discard, complete, under the reach ruling and the STANDING checks' treatment ruling — and
+§5(A)'s ordered read-only pruning measurement. It is bounded exactly as that dispatch bounds it:
+the archiving wave, the empirical findings ledger, the fact-gate, the curated boot list, the mining,
+the landing of the newly visible files, the eight KIND-UNDERIVABLE callers, the prose-citation
+question, the residue surface's sitting, the rulings-sort sitting and EVERY pruning fate are NOT in
+it.)*
+
+**★ THE SESSION-START READS RAN UNDER THE RULED INTERIM READING SCOPE** (§5(B) of that ruling
+record): in `CLAUDE.md`, the blocks that state of themselves that they are historical or superseded
+— the frozen historical case enumerations, the superseded baseline narratives, the preserved former
+wordings of amended rules — were SKIPPED. `STATUS.md` was read at its header, and
+`BUILD_AND_TEST.md` in full. What was skipped is on the record here, as the ruling requires.
+
+## 4 (continued). The batch's start state, recorded before any act
+
+Taken **before the first edit**, as the dispatch orders. `gen_guard_state.py --check` printed **"the
+guard state re-derives"** — **57 guards run, 56 passing, ONE failing**
+(`gen_filing_convention_application.py --check`, which is [[OI-372]]), 4 not run, 10 historical
+records, **no STOP**, and no stale report. `gen_guard_classification.py --check` printed **"the guard
+classification re-derives"**. **This is exactly the state the dispatch declares as expected**, so no
+STOP-and-report was owed on it.
+
+The end state, taken at the tree carrying this close and AFTER the commit that carries it, is at
+§5 below, under the ordering rule.
+
+## 1 (continued). What needs the user
+
+**THE RULED ACT IS PERFORMED. Nothing in this batch is a STOP.** Two batches derived, applied,
+measured and reverted this act; this one carried it through. What returns to the user is therefore
+not a question about the discard but the ONE surface the read-only measurement was ordered to
+deliver, plus three things the work surfaced that the user may want to rule on.
+
+1. **`ratification_surfaces/cowork_governing_surface_split_2026_08_16.md` — the pruning surface,
+   GENERATED from both measurement artifacts, awaiting the user.** It carries the per-class proposed
+   fates under §5(E)'s ruled test, the doubt default written in, and every doubt-defaulted span
+   marked as such. **Nothing on it is ruled and no governing file was edited to produce it.**
+2. **One class on that surface returns UNDECIDED rather than stretched to a verdict.** The
+   `STATUS.md` dated entries recording completed batches are the single largest block of the five
+   files. The readership test does not settle them, and `STATUS.md` carries its OWN archive rule
+   which ruling (C) already brings into the executing act — so the surface asks the question instead
+   of answering it.
+3. **The doubt-defaulted share is the largest share of every one of the five files**, which is the
+   number that decides whether the measurement is worth acting on as it stands or wants a further
+   measured pass first. The surface asks that too.
+4. **F27, surfaced and not rowed: the ruled kind-2 treatment has a grain the ruling's own wording
+   does not reach.** The discard empties a SECTION without emptying its document, so a section-kind
+   judgment can lose its subject while its document keeps live entries. The ruling names documents
+   and entries; it does not name sections. The treatment was applied at that grain on the ruling's
+   own logic and its membership derived exactly as the ruling requires, with a per-judgment subject
+   reference. It is declared because it is an extension of a ruled treatment by reasoning rather
+   than by the ruling's words.
+
+## 2 (continued). Surfaced findings
+
+- **F27 (new) — the kind-2 treatment needed a grain the ruling does not name** (above). Sixteen
+  section-kind judgments, in eight documents that remain live homes, lost their deciding entries to
+  the discard. Their membership is DERIVED by the classifier that owns the section assignment, and
+  each moved judgment carries the retired entries it decided.
+- **F28 (new) — F15's anchored-quote remap was NOT owed, and the reason is where the STOPs were
+  placed.** The third batch measured that teaching the register's renderer about the retired block
+  moved an anchored quote from line 514 to 576. This batch's insertion sits BELOW the anchored
+  lines, so nothing moved: `gen_cluster_dispositions.py --verify` reports every cited line correct,
+  and `reaim_home_anchors.py --check` reports zero drift. **No remap was performed and none was
+  owed** — stated because the dispatch orders a remap and a silent omission would read as one done.
+- **F29 (new) — the span decomposition's first unit was too coarse for `CLAUDE.md`, and the error
+  ran in the ARCHIVE direction.** A principle of that file carries no blank line from end to end, so
+  one preserved-former-wording marker inside it classed 26.8% of the file as archive material. The
+  span rule now cuts again at the record's own star marker, and the doubt-defaulted share rose
+  accordingly. The residual risk is the same shape at a finer grain and it is written into the
+  surface: the executing dispatch reads every span it archives rather than trusting its class.
+- **F30 (new) — a line number inside a GENERATED file makes an artifact unreproducible by
+  construction.** The reader inventory first recorded the line each naming was found on; a single
+  field drifted by one line between two runs of the guard classification, with nothing in the record
+  having moved. Struck rather than tolerated: a naming is located by its content, which is the
+  record's own rule (D-307) and the OI-301/OI-305 shape avoided.
+- **F31 (new, small) — a committed plan's own statement about its state can outlive the act it
+  plans.** `soft_discard_application.json` said NOT APPLIED, and after the act it cannot be
+  regenerated: its population is no longer live, so the tool STOPs by construction. The one block
+  whose subject is the act's STATE is now rewritten at the moment the state changes, its former text
+  preserved (#12), and the tool's own check reads it back.
+- **F1–F26 (carried, unchanged)**, including **F3**, now seven times surfaced —
+  `reaim_home_anchors.py --check` exits 0 while printing drifted anchors, and
+  `gen_cluster_dispositions.py --verify` is the drift authority. **Still unfixed and unrowed: the
+  dispatch bars both.** **F17 and F25 did not repeat.**
+- **The E3 ordering defect and the A1 premise error of the earlier batches** ride to the phase's
+  retrospective as the dispatch orders.
+- **No finding bearing on the analysis, its inputs, or a measurement tool the analysis depends on.**
+  Every subject of this batch is the project's own record and the apparatus that reads it.
+
+## 3 (continued). Per-task log — the preparation fifth batch
+
+### Task 0 — the rulings, the treatment surface, the twenty-first handoff block and the dispatch land
+
+**Commit `b73d1c7b4e`**, parent `338fa9fe82`, pushed, **exactly four paths and no fifth**, all
+staged plainly with no override of any kind.
+
+**A1 was checked FIRST and entirely at content-addressed objects.** The sanctioned enumeration
+reported **exactly TWO tracked modifications in the whole working tree** and no third, with the
+dispatch and the treatment surface untracked. Each difference was then taken **blob against blob by
+explicit hash**:
+
+- `cowork_handoff.md` — **98 insertions, 1 deletion in ONE hunk**: the twenty-first session-close
+  block inserted, and the twentieth block's heading replaced by the same heading carrying this
+  file's own demotion marker. **Exactly the two parts of one act A1 names.**
+- `cowork_rulings_2026_08_16_preparation_return.md` — **193 insertions, 2 deletions in two hunks**:
+  §5, §6 and §7 inserted before the provenance block, and that block rewritten in place. **Exactly
+  the shape A1 names**, and the two-hunk count is what A1's own sentence describes rather than the
+  F25 mismatch of the previous batch.
+
+**E0 is MET.**
+
+### Task 1 — the ruled soft-discard, EXECUTED, complete, in ONE commit
+
+**Commit `26afbc0f75`**, parent `b73d1c7b4e`, pushed, **46 paths**, verified at the object.
+
+**THE DISCARD, through the register's own mechanism.** `apply_soft_discard.py --apply` printed
+`applied: 165 entries retired, 512 live (was 677), 10 provenance stamps written`, and its `--check`
+then printed the applied state re-checking: **512 live + 165 retired = 677 before**, no entry in
+both blocks and none in neither, every retired record carrying its finding, its date, its retiring
+authority and the ruled clause verbatim. The register was regenerated BY ITS OWN GENERATOR — 21
+files, 512 decisions — and its `--check` passes.
+
+**NOTHING WAS DESTROYED, AND IT IS PROVEN RATHER THAN ASSERTED.** Every retired entry was compared
+against its own blob at the pre-act commit: **165 of 165 byte-preserved**. Exactly **ten** live
+entries changed, each by an APPENDED provenance stamp on `status_source` and nothing else; **no
+live entry changed in any other way**.
+
+**THE RETIRING ACT IS NAMED FOR WHAT IT IS.** The tool recorded the THIRD batch as the retiring
+dispatch — the batch that planned the act and reverted it. It now names this one. A record saying
+the third dispatch retired these entries would state something false about who did it.
+
+**KIND 1 — the two completed measurements that are rulings' evidence are PINNED.** Both now read
+their inputs from the git objects at the commit each artifact was produced at, and **each run proves
+its own pin**: the tool reads ITS OWN ARTIFACT out of that commit and STOPs unless it is identical
+to the artifact on disk. The commit lives in the tool rather than in the artifact, because the
+ruling requires the artifact byte-unchanged and adding a field is a change. **Both artifacts and
+both ruling surfaces are byte-identical to their pre-act blobs, proven by hash.**
+
+**KIND 2 — the authored judgment tables gain RETIRED-SUBJECTS sections, and there are FIVE of
+them.** The move list is DERIVED and published at
+`tools/audit/decisions/retired_subject_moves.json`; **53 judgments moved**, and every one is
+byte-preserved against its pre-act text with no surviving live judgment changed:
+
+- the `CLAUDE.md` rule triage — **1** verdict, its subject entry retired;
+- the legacy-mark verification — **30** verdicts (F24's set exactly);
+- the register data's authored home judgments — **3** documents;
+- the delegation bar's FORM judgments — the same **3** documents;
+- **and the fifth, one grain finer (F27): 16 section-kind judgments** in eight documents that
+  remain live homes, whose deciding entries the discard retired.
+
+Every table carries STOPs in both directions: a judgment in both sections halts, a judgment whose
+subject is live again halts, and a judgment whose membership cannot be derived STOPS to the user.
+
+**KIND 3 — the two censuses regenerated under the widened bound, and every moved value is
+enumerated and classed.** `tools/audit/census_movement_classification.json` re-runs the citation
+scan itself at both states — the earlier one from the git objects — rather than diffing rendered
+surfaces, and classes every difference: **26 moved values, 2 home standing, 24 citation-carried
+standing, none outside the bound.** A name ENTERING the scan would halt it; none did. **A crossing
+confers CANDIDACY only**, and every ruled condition on a candidacy stands untouched.
+
+**THE SIX SUPERSEDED CHECKS ARE HISTORICAL**, through the guard mechanism's own two records — the
+invocation consequence in the runner and the verdict with its evidence in the classification, which
+STOP if they disagree in either direction. Each former verdict is preserved verbatim (#12).
+**Historical status records that they graded a SUPERSEDED PROGRAM; it asserts nothing about whether
+that program's obligations were discharged, and no completion claim rides it.** All six committed
+artifacts are byte-identical to their pre-act blobs, proven by hash.
+
+**F22's ossification is accepted as the ruling records it**, and **[[OI-372]]'s tool is untouched.**
+
+**A2's check, ordered as Task 1's last step: MET.** The full guard set at the edited tree reported
+**exactly the fifteen reds the split carries and no sixteenth** before the treatments, and after
+them **one failing check — [[OI-372]]'s — and no other**, with zero STOPs.
+
+**E1 is MET.**
+
+### Task 2 — the governing-surface pruning, MEASURED, read-only
+
+**Commit `c4f15a7b32`**, parent `26afbc0f75`, pushed, **9 paths**, verified at the object.
+
+**NOT ONE OF THE FIVE GOVERNING FILES WAS EDITED**, and the sanctioned enumeration says so: the only
+tracked modifications in this task are the guard set's own two registration files and their two
+artifacts.
+
+**The decomposition** cuts all five files span by span and classes each from its own text, with the
+matched marker published beside every verdict and byte counts per class per file, none typed by
+hand. Its load-bearing STOP — the per-class counts must account for the file EXACTLY — **fired for
+real on the first run**, off by four characters, and the cause was a blank line inside a fenced
+block counted twice.
+
+**Two corrections were made at the tool rather than lived with, and both were measured** (F29 and
+the ordering correction): the span rule now cuts a block again at the record's own star marker,
+because a `CLAUDE.md` principle carries no blank line from end to end and one marker inside it
+classed 26.8% of the file as archive material — an error in the direction the doubt default exists
+to prevent; and a `STATUS.md` entry is now classed as its batch's entry before any phrase it merely
+contains.
+
+**The reader inventory** is the F13 lesson applied prospectively: every naming, every anchored
+citation INTO each file, every tool that reads or parses it, and every register entry homed in it,
+measured BEFORE anything moves. **No naming is recorded by the line it was found on** (F30).
+
+**The ratification surface is GENERATED from both artifacts**, is self-contained in plain language,
+carries **NOTHING HERE IS RULED** on its banner, writes the doubt default in, and returns one class
+to the user undecided rather than stretching to a verdict.
+
+**Both new tools are registered in the act that creates them**, each with its authored invocation
+and its authored classification verdict, and each takes `--check` and never the bare invocation.
+
+**E2 is MET.**
+
+### Task 3 — the close
+
+This section, the `STATUS.md` pointer entries, and the report `cc_report_preparation_fifth.md`.
+
+## 5 (continued). The end state, under the ordering rule
+
+**The E-ordering rule the dispatch imposes — no graded value is committed before the run that
+produced it — is obeyed.** The end-state guard run demonstrated across the commit boundary is taken
+AFTER the Task 3 commit exists, and its output and the final SHAs land in ONE FURTHER commit. E3 is
+graded at `cc_report_preparation_fifth.md` §7 on that run and on nothing else.
+
+## 6 (continued). What this batch did NOT do
+
+**No pruning fate was executed and no governing file was edited by Task 2** — the surface proposes,
+the user rules, a LATER dispatch executes. **No sole-carrier member was discarded; the 62 are not
+ruled; the residue and rulings-sort surfaces stand awaiting their sittings.** No archiving, no file
+moved, renamed or deleted; no mining, no landing; the eight KIND-UNDERIVABLE callers and the
+prose-citation question stay open; **every retirement flag stays a candidacy — a census crossing
+confers candidacy only.** No empirical findings ledger, no fact-gate admission, no curated boot
+list. **No completion claim of any kind about the superseded phase-1 program.** No derivation of any
+specification, no design, no repair, no pilot act. **No `src/` change, no golden, no test changed,
+moved or run, nothing under `tools/corpus/` or `tools/robust_stop/`, no measurement of the
+analysis.** **No open-items row created, flipped or discarded** — [[OI-372]] and [[OI-374]] stay
+exactly as found, [[OI-179]] stays OPEN and GATES, and `reaim_home_anchors.py`'s F3 defect stays
+surfaced, unfixed and unrowed.
+
+*Provenance: CC, 2026-08-16, dispatch `cc_instruction_preparation_fifth.md`. Task 0 is commit
+`b73d1c7b4e` (parent `338fa9fe82`), pushed, four paths. Task 1 is `26afbc0f75` (parent
+`b73d1c7b4e`), pushed, 46 paths. Task 2 is `c4f15a7b32` (parent `26afbc0f75`), pushed, nine paths.
+Task 3's close is the next commit; **E3's run and that SHA are recorded in the ONE FURTHER commit
+after it**, so no graded value is committed before the run that produced it. **★ WHERE THE RECORDING
+TERMINATES:** every commit of this batch is verified at the object and named except the LAST one,
+which cannot contain its own identity.*
