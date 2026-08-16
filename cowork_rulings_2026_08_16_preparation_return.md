@@ -172,10 +172,201 @@ act alone:**
   the discard — entries kept live solely because superseded tooling reads them, the reach
   question returning undiminished later) are DECLINED as rated on the surface.
 
+## 5. Rulings — the governing-surface pruning: the split joins wave 1, the interim reading scope, and `STATUS.md` in scope (taken 2026-08-16 while the fourth batch ran; landed at its return)
+
+Taken in conversation while `cc_instruction_preparation_fourth.md` executed — the writing side
+read-only on the repository throughout, this section drafted in the turn each ruling was given
+and landed at the batch's verified return, which is the earliest lawful landing.
+
+**The direction and its ground, in the user's words.** *"we need to prune (at least) claude.md
+and open_items.md because the mandatory reads at session start for you and CC are too large (we
+are already hitting quality problems - and there are also other issues like real monetary cost
+and response times)."* And, correcting the writing side's framing of the interim measure as an
+exception to the read-in-full orders: *"'standing orders that currently say "read in full"' -
+this is based on the fact that (of course) all of their contents are still useful and not
+'noise'."* **So the orders' own premise is what has failed** — text that is noise was never
+inside their purpose — and the rulings below enforce that premise rather than excepting it. The
+session's preliminary size readings are NOT restated here (D-431); the measurement batch below
+re-derives every quantity into a committed artifact, which is then the authority.
+
+**(A) The governing-surface split is RULED as a new act of pruning wave 1** (extending the ruled
+pruning plan, `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §8, on the
+same ground its preamble quotes: noise costs session context and can mislead). In scope: the
+mandatory session-start reads — `CLAUDE.md`, `OPEN_ITEMS.md`, `DECISIONS.md` as the measurement
+warrants, and `STATUS.md` per (C). **The sequence is measure → propose → rule → execute, and the
+third batch's F13 lesson binds it prospectively: these are the most anchored, quoted and parsed
+files in the tree (the F2/F4 findings; the one index parser; the register's anchors), so the
+split's full reach is MEASURED before any act.** The next batch after the fourth is READ-ONLY:
+a per-file decomposition by span (operative rule text; preserved former wordings; defenses and
+declined-alternatives records; self-declared historical or superseded blocks; resolved rows) and
+the reader/anchor/quote inventory over all five files, delivering a ratification surface with
+per-span fates. The user rules that surface; ONE dispatch then executes — verbatim
+byte-reconciled moves on the register-split precedent (#12 satisfied by preservation
+elsewhere-with-record), per-citation anchor remaps, every affected artifact regenerated under an
+enumerated-movement bound, and a permanent reconciliation check on the split-check pattern.
+
+**(B) The INTERIM READING SCOPE is RULED (Decision 1, Alternative A of the conversational
+surface).** Until the split lands: in `CLAUDE.md`, the blocks that state of themselves that they
+are historical or superseded — the frozen historical case enumerations, the superseded baseline
+narratives, the preserved former wordings of amended rules — are skipped at session start;
+everything else is read as before. In `OPEN_ITEMS.md`, the rows whose status cell opens with the
+resolved mark are skipped; every open row is read as before. **Every dispatch states this scope
+in its read-first block, citing this ruling, so what was skipped is on the record and
+checkable.** The scope binds the writing side's own session-start reading equally. It expires
+without further ruling when the executed split makes the boundary physical. Declined: no interim
+change (every session until the split knowingly continues at the observed degraded quality and
+full cost — certain ongoing harm against a bounded, recorded risk, rated against the ultimate
+objective in the surface as presented).
+
+**(C) `STATUS.md` IS IN SCOPE (Decision 2, Alternative A of the conversational surface).** The
+measurement batch measures it with the others, and the executing dispatch applies the file's own
+archive rule (the established both-directions byte-reconciling pass) as part of the same act,
+discharging the open half of [[OI-370]]'s remedy. Declined: leaving it to its row (the
+mandatory-read set stays broken at exactly one member for no gain beyond a smaller dispatch).
+
+**(D) CONTINUOUS PRUNING AT THE POINT OF AMENDMENT is RULED — the user's words, verbatim:**
+*"Also - if we are editing some part of these documents - do the pruning directly - anything
+that at that moment while amending part of a document becomes 'noise' - move the noise to where
+it should be archived. The need for separate pruning iterations will decrease."* Operationalized:
+
+- **From this ruling, any edit to a governing document that supersedes, amends or closes some
+  part of it MOVES the newly superseded text, in the SAME act, to its archive home** — verbatim,
+  with the move recorded, on the established archive pattern. The site keeps a **compact, dated
+  supersession pointer naming where the former text now lives**, so the supersession stays
+  visible where it happened.
+- **This SUPERSEDES the preserve-in-place default** for governing-document amendments (the
+  pattern principles #8's and #10's own amendments used, and which the D-231 rephrasing was
+  ruled under — "the former wording preserved in place"). #12 is satisfied exactly as the
+  register split satisfied it: preservation elsewhere-with-record, byte-faithful; the
+  preserve-in-place pattern's own stated purpose — the supersession visible at the site — is
+  met by the pointer. Amendments already ruled but not yet landed execute under this rule's
+  form; their substance is unchanged.
+- **Where the archive home for a class of text does not yet exist, the amending act creates it**
+  on the established pattern (an archive file receiving verbatim moves — the shape
+  `STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` were each born in); once the wave-1 split
+  lands, its ruled destinations are the homes.
+- **The ordinary edit discipline rides every such move undiminished:** anchor remaps
+  per-citation where the moved text is an anchored home, affected artifacts regenerated under
+  their bounds, byte-reconciliation proven where a mechanical check exists — a move is an edit
+  to a governing document and pays everything such an edit pays.
+- **The intended effect is the user's stated one:** the split clears the backlog; this rule
+  stops the flow; separate pruning iterations are expected to become rarer, and the per-phase
+  retrospectives are where that expectation is checked against what actually happened.
+
+**(E) THE ARCHIVABILITY TEST — the ruled starting point for what is pruned and what stays.**
+The user put the question that sharpened it, verbatim: *"'keeping things at site' - things that
+are needed to enable the ultimate objective should stay 'at site' - but maybe it is not easy to
+determine what can genuinely be 'archived'?"* The writing side's answer, accepted: the line is
+NOT current-versus-old — the record's own proof is principle #10, which as five words with no
+purpose attached produced the unbounded documentation stream, so a rule's defense is often
+operative text. **The test is READERSHIP: who needs this span, and when.**
+
+- **STAYS AT SITE:** a span that changes what a working session does or how it reads a rule
+  today — the rule itself, the purpose that bounds its application, live caveats, STOP
+  conditions.
+- **ARCHIVES, with a dated pointer at the site:** a span whose only reader is someone re-opening
+  the decision or auditing its history — preserved former wordings, declined alternatives,
+  accepted costs, founding narratives, superseded baselines. That reader needs it at the moment
+  of re-opening, not at session start, and the pointer takes them there.
+- **MOVES TO ITS PROPER HOME:** a span that is not archive material but mis-homed — founding
+  failures, dead ends and antipatterns embedded in governing-document defenses are the empirical
+  findings ledger's material; there they are read by the design and audit sessions that need
+  them instead of by every session at boot.
+- **THE DOUBT DEFAULT: a span the test cannot place STAYS AT SITE** — a wrongly archived
+  operative span fails silently (a rule misapplied, nothing flags it) while wrongly kept noise
+  fails visibly and cheaply, and staying is the recoverable direction (the next measured pass
+  can still move it). The same shape as D-639's ruled fallback. The split's ratification surface
+  carries the test with worked examples and this default written in, so the executing dispatch
+  never stretches a judgment to reach a verdict; the same test binds (D)'s amendment-time
+  pruning, doubt keeping the text at site, flagged for the next measured pass.
+
+**The user's acceptance and its stated horizon, verbatim:** *"Yes, this is a starting point for
+'what to prune and not'. Maybe at a later stage when the design/spec does not move anymore we
+can have more liberal pruning rules/guidelines."* Recorded as ruled ground: the test above is
+the STARTING POINT, binding now; a more liberal regime is a possibility tied to the design and
+specifications no longer moving, is NOT ruled here, and would come to the user as its own
+surface — the per-phase retrospectives being the expected place the case for it gets made.
+
+**What these rulings do NOT do.** No document is edited by them; nothing is skipped
+retroactively in any record; the curated boot list for implementation-blind sessions stays a
+separate ruled output (the interim scope is not it and does not preempt it); the residue,
+callers and rulings-sort sittings are untouched; no open-items row is created, flipped or
+discarded by this section — [[OI-370]]'s discharge happens at the executing dispatch, through
+the register's ordinary mechanism, not here.
+
+*The user's verbatim words in this section are marked as such; everything else is the writing
+side's operationalization, accepted in sequence — the two conversational decision surfaces were
+presented in full (background from scratch, both alternatives with costs named to principles,
+rated against the ultimate objective, recommendation stated) after the user corrected a first,
+too-compressed presentation; that correction is recorded here as this sitting's
+presentation-form tell under the session-length standing instruction.*
+
+## 6. Ruling — the STANDING checks' treatment: each kind by its own nature (Alternative A as recommended)
+
+Taken at the fourth batch's verified return, over its STOP — findings F19, F20 and F21 of
+`cc_report_preparation_fourth.md`: the reach ruling's regenerate limb describes a route that does
+not exist for five of the nine STANDING checks, would destroy a ruling's evidence for one, and
+moves a ruled candidacy set partly outside the bound for another. The decision surface is
+`ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md`, RE-PRESENTED in plain
+language after two presentation-form corrections (recorded at §7). **The user's words, verbatim:
+"I agree with you recommendation (A)." RULED — adopted whole:**
+
+- **Kind 1 — the two completed measurements that are rulings' evidence**
+  (`gen_decisions_filter.py`, `gen_deciding_act_recovery.py`) **are PINNED**: their checks read
+  inputs from the git objects at the commit each committed artifact records; the artifacts stand
+  byte-unchanged as the rulings' permanent evidence, still guarded against corruption,
+  permanently insensitive to the acts they authorized.
+- **Kind 2 — the four authored judgment tables** (`claude_md_rule_triage.py`,
+  `gen_home_classification.py`, `gen_phase1p_delegation_bar.py`,
+  `gen_phase1w_legacy_verification.py`) **gain RETIRED-SUBJECTS sections** on the retired-block
+  pattern: every judgment whose subject the discard retires moves verbatim WITH its subject
+  reference (#12 — nothing dropped, nothing re-authored); the checks keep watching live subjects;
+  a judgment in neither section halts; membership is DERIVED and published, and a judgment whose
+  membership cannot be derived STOPS to the user.
+- **Kind 3 — the two derived censuses** (`gen_artifact_inventory_surface.py`,
+  `gen_retirement_caller_check.py`) **regenerate under the bound WIDENED BY ONE NAMED CATEGORY**
+  — citation-carried standing (the document's naming in the governing record sat inside a
+  retired entry's own text) beside the ruled class standing and home standing; every moved value
+  enumerated and classed; movement outside all three a STOP; a census crossing confers candidacy
+  only — every ruled condition on candidacies stands untouched.
+- **[[OI-372]]'s tool is untouched** (the pre-existing red). **F22's ossification is ACCEPTED AS
+  A NAMED COST**: the frozen phase-1 completion inventory stops the movement of a population
+  that feeds D-438's live derivation two links down; nothing halts; revival re-opens it if ever
+  needed — the acceptance recorded here so it is challengeable rather than discovered.
+- **Everything else of §4 stands unchanged and executes with this ruling:** the discard through
+  the register's own mechanism with the ten B1 provenance stamps; the six SUPERSEDED checks
+  reclassified historical with artifacts frozen; the establishment pass consulting the retired
+  block; F15's anchored-quote remap per-citation; the arithmetic to the digit
+  (677 = 512 live + 165 retired).
+- Alternatives B (switch off all nine — removes live guards from the current record's own rules,
+  #19's silent-failure direction), C (delete the judgments whose subjects retired — #12 forbids
+  outright), and D (postpone the removal a third time — the reach is measured twice over,
+  nothing learned, the noise continues) are DECLINED as rated on the surface.
+
+## 7. Direction — fresh sessions every dispatch cycle until the pruning lands; this session closes on two tells (user-directed at the close)
+
+**The user's words, verbatim:** *"Yes, a new session is needed. It looks like we currently
+really should start a new session both here and for CC every dispatch. To me - it looks like
+pruning is VERY much needed."* Operationalized: the coding side already starts fresh per
+dispatch by design; **the writing side now also HANDS OVER at every dispatch cycle** — the
+session that writes a dispatch closes at that verified stop, and a fresh session verifies the
+return, holds the sittings and writes the next dispatch — **until the governing-surface pruning
+(§5) lands** and the session-start cost supports longer sittings again. This session closed
+under that direction AND under the session-length standing instruction's two-tell rule: two
+presentation-form corrections in one sitting — a too-brief decision-point presentation, and a
+jargon-dense surface presentation — each re-presented in full plain-language form before its
+ruling was taken. Both are recorded for the successor: **the presentation rules demand
+self-contained, plain-language surfaces EVERY time, and compression is the recorded failure
+shape.**
+
 *Provenance: Cowork, 2026-08-16, recorded in the turns the rulings were given. The user's
 verbatim words are marked as such; everything else is the writing side's operationalization,
 accepted in sequence. The executing dispatch for §1 and §2's ordered acts was
 `cc_instruction_preparation_second.md` (returned and verified); for §3 it was
 `cc_instruction_preparation_third.md` (returned and verified; its Task 3 STOP-reported, and the
-reach was then ruled at §4); for §4 it is `cc_instruction_preparation_fourth.md`; this record's
-§4 rides that dispatch's Task 0.*
+reach was then ruled at §4); for §4 it was `cc_instruction_preparation_fourth.md` (returned and
+verified; its Task 2 STOP-reported — the STANDING class is not one class — and §6's treatment
+sitting followed). §5's rulings were taken in conversation while the fourth batch ran; §6 at
+that batch's verified return; §7 at the session's close. The executing dispatch for §3, §4 and
+§6 together, and for §5(A)'s ordered measurement, is `cc_instruction_preparation_fifth.md`;
+this record's §5–§7 ride its Task 0.*

@@ -1,7 +1,104 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTIETH, 2026-08-16) — THE PREPARATION PHASE IS MID-FLIGHT: THREE BATCHES RETURNED AND VERIFIED AT THE OBJECTS; THE FILTER'S KEEP SIDE IS RATIFIED AND THE SOFT-DISCARD IS RULED BUT ★ NOT EXECUTED — ITS MEASURED REACH FALSIFIED THE DISPATCH'S BOUND AND AWAITS THE USER'S RULING. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-FIRST, 2026-08-16) — THE FOURTH BATCH RETURNED, WAS VERIFIED AT THE OBJECTS, AND STOP-REPORTED AGAIN (THE STANDING CLASS IS NOT ONE CLASS); THE TREATMENT IS RULED, THE GOVERNING-SURFACE PRUNING IS RULED IN FIVE LIMBS, AND ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_fifth.md` — THE DISCARD COMPLETE PLUS THE PRUNING MEASUREMENT. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
+
+**★ YOUR SESSION-START READS RUN UNDER THE RULED INTERIM READING SCOPE**
+(`cowork_rulings_2026_08_16_preparation_return.md` §5(B)): in `CLAUDE.md`, SKIP the blocks that
+state of themselves that they are historical or superseded (the frozen historical case
+enumerations, the superseded baseline narratives, the preserved former wordings of amended
+rules); in `OPEN_ITEMS.md`, SKIP the rows whose status cell opens with the resolved mark. The
+orders' own premise — that everything read is useful and not noise — is the ruled ground; state
+the scope in every dispatch's read-first block, citing §5(B).
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether `cc_instruction_preparation_fifth.md`
+has completed — its close appended to `cowork_away_returns.md` (a PREPARATION FIFTH BATCH
+section), one `STATUS.md` pointer entry per task, its commits verified at the objects by
+explicit hash. **If it still runs you are READ-ONLY on the repository until it stops.** If it
+has completed, VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove
+the reading by quotation. Its Task 1 is the discard COMPLETE (the third attempt, under the
+completed ruling); its Task 2 is the READ-ONLY governing-surface pruning measurement, returning
+`ratification_surfaces/cowork_governing_surface_split_2026_08_16.md` for the user's ruling.
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_16_preparation_return.md` IN FULL, §§1–7**
+— the day's whole record: §3 the soft-discard, §4 the reach (Alternative A), §5 the pruning
+rulings (A the wave-1 split act, B the interim scope above, C `STATUS.md` in scope, D
+continuous pruning at the point of amendment — superseding preserve-in-place, a dated pointer
+at the site, the archive home created where none exists — E the archivability test: readership
+decides, three fates, DOUBT STAYS AT SITE), §6 the STANDING treatment (kind 1 the two
+ruling-evidence checks PINNED to the commit their artifacts record; kind 2 the four authored
+tables gain RETIRED-SUBJECTS sections, moves derived and published; kind 3 the two censuses
+regenerate under the THREE-category bound, citation-carried standing added; F22's ossification
+an ACCEPTED NAMED COST), §7 fresh sessions every dispatch cycle until the pruning lands.
+(2) `ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md` and
+`ratification_surfaces/cowork_discard_reach_surface_2026_08_16.md` — the two ruled surfaces.
+(3) **`cc_report_preparation_fourth.md` IN FULL, §4 above all** — what is measured working and
+the three grounds (F19 five checks cannot regenerate; F20 one would replace the ratified
+classification; F21 one moves a candidacy set partly outside the bound) — AND the batch's FULL
+close (THE PREPARATION FOURTH BATCH section of `cowork_away_returns.md`), proved by quotation.
+(4) The two surfaces awaiting the user, listed below. (5) This block. (6) The twentieth block
+below and everything it binds. `CLAUDE.md` (under the interim scope) in full before drafting
+anything.
+
+**★ WHAT HAPPENED AFTER THE TWENTIETH BLOCK.** The successor booted per that block, drafted the
+reach surface; the user ruled it (§4, "A as recommended"); the fourth batch executed §4 and
+STOP-reported correctly: three limbs sound (zero live consumers of the old phase-1 gate
+artifacts; the split 6 SUPERSEDED / 9 STANDING confirmed at the applied tree; the discard,
+renderer and establishment pass all measured working at 512/512) but the regenerate limb does
+not fit the nine — five authored tables refuse rather than drop judgments, one regeneration
+would destroy the ruling's own evidence, one moves a ruled candidacy set for an unanticipated
+cause. The treatment surface was drafted, RE-PRESENTED after two presentation-form corrections,
+and ruled (§6, "I agree with you recommendation (A)"). While the batch ran, the user directed
+the governing-surface pruning (§5, all five limbs, the user's ground verbatim: the mandatory
+session-start reads are too large — quality problems, monetary cost, response times — and the
+read-in-full orders' premise is that contents are useful, not noise). The user then directed
+fresh sessions per dispatch cycle (§7) and this session closed on that plus two tells.
+
+**★ WHAT AWAITS THE USER, in recommended order:** (1) the fifth batch's return — verify first;
+(2) **the governing-surface split surface** (its Task 2 deliverable) — the per-span fates under
+§5(E)'s test; (3) **the residue surface** — the 29 withheld sole-carriers and the 62's results
+(47 / 9 / 6), `ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md`; (4) the
+eight KIND-UNDERIVABLE callers and the deferred prose-citation question (they gate the
+archiving wave); (5) the rulings-sort sitting (220 / 131 / 60, proposed). Then the phase's
+remaining outputs: the empirical findings ledger behind its fact-gate, the curated boot list
+DRAFTED for ruling, and the pruning wave once its gates clear.
+
+**★ WRITING-SIDE ERRORS OF THIS SESSION, recorded so the successor does not repeat them:** TWO
+presentation-form tells — a decision put in two compressed paragraphs, and a surface presented
+in repository jargon — both corrected by the user, both re-presented in full plain language
+before their rulings. **The presentation rules demand self-contained, plain-language surfaces
+EVERY time; the reader knows music theory, not this repository's internals; compression is the
+recorded failure shape.** Also carried: the fourth dispatch's A1 asserted a changed-passage
+COUNT the difference did not have (F25, the F18 family) — state a difference's CONTENT, never
+its passage count. These ride to the preparation phase's retrospective with F1–F26, the E3
+ordering defect and the A1 premise error (dispatches barred rows).
+
+**★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red. [[OI-374]] untouched. `STATUS.md`
+unreadable as a mandatory read ([[OI-370]]; its archive pass is inside the ruled pruning act).
+[[OI-179]] OPEN and GATES. F3 six times surfaced, unfixed, unrowed. The 284 newly visible
+instruction files and the remaining ignored files unlanded; every retirement flag a candidacy
+behind the ruled conditions; nothing archived; the register byte-unchanged until the fifth
+batch's Task 1 lands.
+
+**★ THIS BLOCK IS UNCOMMITTED AT ITS OWN CLOSE** — the fifth dispatch's Task 0 lands it, naming
+this file explicitly. **State the diff by its CONTENT in any later premise: this block inserted
+AND the twentieth heading's demotion marker — two parts of one act; never assert a
+changed-passage count (the F25 lesson).**
+
+**★ WHY THE SESSION CLOSED HERE:** the user directed fresh sessions per dispatch cycle until
+the pruning lands (§7), and the session-length standing instruction's two-tell threshold was
+reached (the two presentation corrections above) — both reported unprompted, the close taken at
+a verified stop with every ruling on disk in the turn it was taken, the fifth dispatch written
+and ready, and nothing in flight.
+
+*(The twentieth block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (TWENTIETH, 2026-08-16) — THE PREPARATION PHASE IS MID-FLIGHT: THREE BATCHES RETURNED AND VERIFIED AT THE OBJECTS; THE FILTER'S KEEP SIDE IS RATIFIED AND THE SOFT-DISCARD IS RULED BUT ★ NOT EXECUTED — ITS MEASURED REACH FALSIFIED THE DISPATCH'S BOUND AND AWAITS THE USER'S RULING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-first block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight; nothing is
