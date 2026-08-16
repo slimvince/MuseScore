@@ -619,6 +619,26 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "and every result is published with the passage quoted at its line so the reading is the "
         "user's and not this tool's."),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 3 ---------------------
+    "tools/audit/decisions/apply_soft_discard.py": (
+        LIVE, "apply_soft_discard.py, the `THE STOPS` list of its module docstring; "
+              "`population()`, which derives the discard set and halts on a sole-carrier inside it "
+              "or on an entry the data file does not carry live; `check_applied()`, whose "
+              "docstring states which half is live in which of the two states this act can be in",
+        "LIVE in BOTH of the states this tool can be in, which is why it is a guard rather than a "
+        "record of an act. BEFORE the act — the state at this commit, the act having been planned, "
+        "measured and reverted — what re-derives is the PLAN: the ruling's sentences must still be "
+        "in its ruling record, the population must still be derivable from the committed recovery "
+        "and sole-carrier artifacts in both directions against the decisions register's data file "
+        "(D-671), and the committed plan must still match that derivation, so an artifact moving "
+        "under the plan turns this red instead of leaving a stale plan to be executed later. AFTER "
+        "the act the plan is un-derivable by construction, and the live assertion becomes the "
+        "applied state's own arithmetic: live plus retired accounting for the recorded former "
+        "population, no entry in both blocks and none in neither, and every retired record "
+        "carrying the four things the ruling requires. ★ WHAT IT DOES NOT ASSERT: that the act "
+        "SHOULD be performed. It was not: the dispatch's assumption A3 was falsified by the "
+        "measurement, and what is committed is the plan and the tool, never a mutation."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

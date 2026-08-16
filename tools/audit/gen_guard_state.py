@@ -376,6 +376,26 @@ AUTHORED = [
      "cross-checked against the quote the recovery pass published, so a document that has moved "
      "under a line cannot be graded silently as though it had not"),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 3 --------------------
+    # Task 3's own tool, registered in the act that creates it. THE ACT IT PERFORMS WAS NOT
+    # PERFORMED: it was planned, applied to the working tree, measured against the whole guard set,
+    # and REVERTED, because the dispatch's assumption A3 was falsified by that run. What is
+    # committed is the PLAN and the tool, and this invocation checks the plan rather than an act.
+    # It takes `--check` and never the bare invocation for the ordinary reason — the bare
+    # invocation rewrites the committed plan — and never `--apply`, which is the act itself.
+    ("tools/audit/decisions/apply_soft_discard.py", ["--check"],
+     "the ruled soft-discard's PLAN re-derives, and no retirement has been applied. Before the act "
+     "this is what is live: every sentence of the ruling that ordered the discard must still be in "
+     "its ruling record; the population must still be DERIVABLE from the committed recovery and "
+     "sole-carrier artifacts — the entries the recovery pass returned NOTHING-FOUND for minus the "
+     "members the guard withheld, with a member that is BOTH halting it and a member the decisions "
+     "register's data file does not carry live halting it too (D-671); and the committed plan must "
+     "still re-derive from those inputs. AFTER the act, the plan cannot be re-derived by "
+     "construction, and what this checks instead is the applied state: live plus retired accounting "
+     "for the whole former population BY ARITHMETIC, no entry in both blocks and none in neither, "
+     "and every retired record carrying its finding, its date, its retiring authority and the ruled "
+     "clause verbatim — the four the ruling requires of every record"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

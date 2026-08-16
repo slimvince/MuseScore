@@ -1,0 +1,518 @@
+{
+ "what_this_is": "THE RULED SOFT-DISCARD, DERIVED AND PLANNED. The population, the arithmetic, the shape of every retired record, the ten provenance stamps, and the measured reach of the act over the record that consumes the decisions register. Running this file without `--apply` writes NO register file of any kind.",
+ "generator": "tools/audit/decisions/apply_soft_discard.py",
+ "dispatch": "cc_instruction_preparation_third.md, Task 3",
+ "the_ruling_that_ordered_it": {
+  "source": "cowork_rulings_2026_08_16_preparation_return.md §3 (A)",
+  "every_sentence_located_in_that_record_on_this_run": {
+   "what was ruled": "The 194 NOTHING-FOUND entries are SOFT-DISCARDED — behind the sole-carrier guard.",
+   "what a discard record must carry": "a provenance verdict, not a judgment on soundness or usefulness; the statement stands at its home and is met by the derivation",
+   "nothing is destroyed": "Nothing destroyed (#12); every discard individually revivable when a deciding act is later named.",
+   "what a sole-carrier member does not do": "Sole-carrier members do NOT ride the discard — they return to the user as a list"
+  },
+  "★_the_clause_every_retired_record_carries_verbatim": "a provenance verdict, not a judgment on soundness or usefulness; the statement stands at its home and is met by the derivation"
+ },
+ "the_inputs_pinned_by_hash": {
+  "the_recovery_artifact": {
+   "file": "tools/audit/deciding_act_recovery.json",
+   "sha256": "f998ef10a8de6d0db2d4fc03610ba7df0cc87b85c74f9676bda7a547625e7928"
+  },
+  "the_sole_carrier_artifact": {
+   "file": "tools/audit/sole_carrier_subclass.json",
+   "sha256": "08a7af53ce1e8dea48043d28792d19be96e8a22b168598a6c5d8f16405fc531d"
+  },
+  "the_decisions_register_data_file": {
+   "file": "tools/audit/decisions/backbone_decisions.json",
+   "sha256": "d3e56dcb180851f233592eab5f4669b5bd8c721735061e4744547377e68c3c41"
+  }
+ },
+ "the_arithmetic": {
+  "★_how_the_population_is_derived": "The entries the deciding-act recovery pass returned NOTHING-FOUND for, MINUS the members the sole-carrier guard withheld. Never hand-listed, and a member that is both halts this act.",
+  "returned_NOTHING_FOUND_by_the_recovery_pass": 194,
+  "withheld_by_the_sole_carrier_guard": 29,
+  "the_executed_discard_population": 165,
+  "it_balances": true,
+  "the_live_record_before_this_act": 677,
+  "the_live_record_after_this_act": 512,
+  "a_retired_block_already_exists": false
+ },
+ "the_entries_withheld_by_the_guard_and_NOT_discarded": [
+  "D-054",
+  "D-136",
+  "D-137",
+  "D-138",
+  "D-139",
+  "D-140",
+  "D-141",
+  "D-142",
+  "D-143",
+  "D-154",
+  "D-158",
+  "D-159",
+  "D-160",
+  "D-161",
+  "D-236",
+  "D-237",
+  "D-238",
+  "D-239",
+  "D-240",
+  "D-241",
+  "D-242",
+  "D-244",
+  "D-245",
+  "D-246",
+  "D-303",
+  "D-342",
+  "D-358",
+  "D-520",
+  "D-523"
+ ],
+ "the_entries_this_act_would_retire": [
+  "D-016",
+  "D-017",
+  "D-018",
+  "D-036",
+  "D-038",
+  "D-041",
+  "D-042",
+  "D-043",
+  "D-044",
+  "D-045",
+  "D-046",
+  "D-047",
+  "D-048",
+  "D-049",
+  "D-050",
+  "D-051",
+  "D-052",
+  "D-059",
+  "D-060",
+  "D-061",
+  "D-062",
+  "D-063",
+  "D-064",
+  "D-065",
+  "D-066",
+  "D-067",
+  "D-071",
+  "D-074",
+  "D-075",
+  "D-076",
+  "D-077",
+  "D-078",
+  "D-079",
+  "D-080",
+  "D-083",
+  "D-086",
+  "D-087",
+  "D-088",
+  "D-089",
+  "D-090",
+  "D-093",
+  "D-094",
+  "D-101",
+  "D-102",
+  "D-104",
+  "D-108",
+  "D-116",
+  "D-117",
+  "D-120",
+  "D-121",
+  "D-122",
+  "D-124",
+  "D-125",
+  "D-126",
+  "D-127",
+  "D-128",
+  "D-129",
+  "D-130",
+  "D-133",
+  "D-134",
+  "D-135",
+  "D-144",
+  "D-145",
+  "D-146",
+  "D-147",
+  "D-148",
+  "D-149",
+  "D-150",
+  "D-151",
+  "D-152",
+  "D-153",
+  "D-155",
+  "D-156",
+  "D-157",
+  "D-162",
+  "D-163",
+  "D-164",
+  "D-192",
+  "D-214",
+  "D-216",
+  "D-217",
+  "D-218",
+  "D-219",
+  "D-225",
+  "D-226",
+  "D-227",
+  "D-228",
+  "D-232",
+  "D-233",
+  "D-234",
+  "D-235",
+  "D-243",
+  "D-247",
+  "D-259",
+  "D-304",
+  "D-305",
+  "D-309",
+  "D-310",
+  "D-332",
+  "D-340",
+  "D-346",
+  "D-350",
+  "D-354",
+  "D-355",
+  "D-356",
+  "D-357",
+  "D-359",
+  "D-360",
+  "D-361",
+  "D-362",
+  "D-363",
+  "D-364",
+  "D-369",
+  "D-370",
+  "D-371",
+  "D-372",
+  "D-373",
+  "D-374",
+  "D-375",
+  "D-377",
+  "D-378",
+  "D-379",
+  "D-402",
+  "D-405",
+  "D-407",
+  "D-409",
+  "D-412",
+  "D-413",
+  "D-517",
+  "D-518",
+  "D-519",
+  "D-529",
+  "D-530",
+  "D-540",
+  "D-541",
+  "D-553",
+  "D-554",
+  "D-555",
+  "D-556",
+  "D-558",
+  "D-559",
+  "D-560",
+  "D-561",
+  "D-562",
+  "D-563",
+  "D-577",
+  "D-578",
+  "D-579",
+  "D-594",
+  "D-595",
+  "D-597",
+  "D-610",
+  "D-612",
+  "D-615",
+  "D-618",
+  "D-619",
+  "D-620",
+  "D-621",
+  "D-627",
+  "D-631",
+  "D-632",
+  "D-633",
+  "D-634",
+  "D-636",
+  "D-637"
+ ],
+ "the_ten_B1_keeps_whose_provenance_is_stamped": {
+  "★_how_they_are_derived": "PARSED from the ruling record's own (B1) bullet on every run; a bullet naming any number other than ten, or naming an entry the recovery pass did not return ACT-FOUND for, halts this act rather than being corrected.",
+  "entries": [
+   "D-004",
+   "D-008",
+   "D-009",
+   "D-021",
+   "D-123",
+   "D-248",
+   "D-315",
+   "D-403",
+   "D-410",
+   "D-411"
+  ],
+  "the_stamp_each_would_receive": {
+   "D-004": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ARCHITECTURE.md` line 3, carrying a user-act marker and matching the decisions register's own recogniser `semi-Markov`, reads — \"**★★ GOVERNING DECISION (user-ratified 2026-07-17): the key/mode/chord estimator is JOINT — see `cowork_joint_estimator_architecture.md`.** Key, mode, and chord are inferred by ONE probabilistic decode over `(tonic, mode, chord)` with segmentation as a modeled (semi-Markov) variable and every enumerated clue as a theory-grounded factor — NOT the feed-forward, per-layer pipeline the layer sections below still describe. Those layer sections (L1–L6) remain the accurate description of the CURRENT code and its retirements, but the TARGET architecture is the joint estimator; the layer specs are updated to it as the design pass proceeds. Theory basis: `cowork_key_chord_joint_inference_grounding.md`.\" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.",
+   "D-008": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ARCHITECTURE.md` line 11, carrying a user-act marker, a ratification event named and matching the decisions register's own recogniser `forward-backward marginal`, reads — \"**★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the joint estimator is now the PRODUCTION inference layer on the batch/corpus surface.** As-built module `src/composing/analysis/joint/`: the **L1 fact adapter** (`jointfactadapter` — score → `Piece` from the published `notemodel::notatedNotes()` tie-unresolved surface + the score's structural facts, per the OI-180 sanction: no module-private raw-note walk); the **event lattice + exact block-factorized semi-Markov Viterbi decoder** (`jointdecoder`) with the ratified **§5 total-order tie-break**; the **factor log-probability provider** (`jointadapter` — the ten-factor log-linear score, Katz leftover option 2a); the frozen generative **tables** (`jointtables` — the committed all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` / `fermata_boundary_addendum.json`); and the **wei\" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.",
+   "D-009": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ARCHITECTURE.md` line 11, carrying a user-act marker, a ratification event named and matching the decisions register's own recogniser `Decision A2`, reads — \"**★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the joint estimator is now the PRODUCTION inference layer on the batch/corpus surface.** As-built module `src/composing/analysis/joint/`: the **L1 fact adapter** (`jointfactadapter` — score → `Piece` from the published `notemodel::notatedNotes()` tie-unresolved surface + the score's structural facts, per the OI-180 sanction: no module-private raw-note walk); the **event lattice + exact block-factorized semi-Markov Viterbi decoder** (`jointdecoder`) with the ratified **§5 total-order tie-break**; the **factor log-probability provider** (`jointadapter` — the ten-factor log-linear score, Katz leftover option 2a); the frozen generative **tables** (`jointtables` — the committed all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` / `fermata_boundary_addendum.json`); and the **wei\" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.",
+   "D-021": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ARCHITECTURE.md` line 11, carrying a user-act marker, a ratification event named and matching the decisions register's own recogniser `OI-194`, reads — \"**★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the joint estimator is now the PRODUCTION inference layer on the batch/corpus surface.** As-built module `src/composing/analysis/joint/`: the **L1 fact adapter** (`jointfactadapter` — score → `Piece` from the published `notemodel::notatedNotes()` tie-unresolved surface + the score's structural facts, per the OI-180 sanction: no module-private raw-note walk); the **event lattice + exact block-factorized semi-Markov Viterbi decoder** (`jointdecoder`) with the ratified **§5 total-order tie-break**; the **factor log-probability provider** (`jointadapter` — the ten-factor log-linear score, Katz leftover option 2a); the frozen generative **tables** (`jointtables` — the committed all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` / `fermata_boundary_addendum.json`); and the **wei\" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.",
+   "D-123": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `CLAUDE.md` line 1583, carrying a user-act marker and matching the decisions register's own recogniser `musical reasoning`, reads — \"- **EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME (user-directed, 2026-08-01, at the decisions-register ratification review).** Wherever a design decision is recorded — the owning layer's specification in `ARCHITECTURE.md` first — the record states WHY the decision was made: the published research or algorithm adopted (#1/#2), the measurement that decided it, or the constraint that forced it. Every design decision must be defendable, and its defense documented where the decision lives. This generalizes `ARCHITECTURE.md` §17.2 (every non-obvious scoring weight or threshold must explain its musical reasoning) from scoring values to design decisions as a class. The decisions register (`DECISIONS.md`) points at the defense; where a decision's derivation is not in the record, the register says **\"derivation not recorded\"** — the gap is stated, never filled in retroactively from memory\" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.",
+   "D-248": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `open_items/OI-267.md` line 8, carrying a user-act marker and matching the entry's own identity, reads — \"The user ratified D-248 (applied-chord labels such as V/V are not produced; the feature is deferred) with the direction that its revisit be PLANNED rather than left open-ended, because for the ultimate objective — maximum-precision inference — the feature may be needed. The precision connection is concrete: the ground truth annotates applied chords, so an analysis that never produces them disagrees with the annotator wherever an applied label is the right reading — a bounded, measurable share of the Roman-numeral column.\" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.",
+   "D-315": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `CLAUDE.md` line 1438, carrying a user-act marker and matching the entry's own identity, reads — \"**★ DISTRIBUTION DISPOSITION (user-ratified 2026-08-02): UPSTREAMABLE** — a general parser defect fix with no fork-specific content; contributing it to `musescore/MuseScore` is permitted and consistent with the §1.2 contribution intent (contrast the MusicXML mode-import patch above, which stays fork-local). **Do not revert; do not let dependency updates overwrite without approval.** Register entries **D-315** — the fix itself, that it was made and is live in this fork — and **D-316**, its distribution disposition. *(D-315 homed here 2026-08-08: until then it was recorded ONLY in `STATUS_ARCHIVE.md`, which is reference-only and not among the session-start reads, while the record that a live edit to MuseScore's own code exists is exactly what this section is for. Its own provenance said this section carried two subsections and not this one — true when written, and closed by the subsection \" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.",
+   "D-403": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `open_items/OI-278.md` line 80, carrying a user-act marker, a ratification event named, an explicit RULED marker and matching the entry's own identity, reads — \"**Dated note — 2026-08-02 (Cowork): RULED by the user — option (a).** FQ-1 lapses with the legacy path: the premise is measured false, the sites retire, and building the unification would rest on a verified-false premise (#18) in retiring code (the OI-84 A1 rule) for zero live gain. D-386's second alternative is struck by annotation (the first — the ranked distinct roots — is the operative content); D-403 now carries the made adjudication. The measurement survives as register content (#12). Applied in the ruling's commit with the eighth ratification event.\" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.",
+   "D-410": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ratification_surfaces/cowork_pending_ratifications_next_session.md` line 3, carrying a user-act marker, a ratification event named, an explicit RULED marker and matching the entry's own identity, reads — \"**STATUS: RULED AND APPLIED (user, 2026-08-03) — SUPERSEDED BY ITS OWN EXECUTION.** Everything below was read and ruled by the user on 2026-08-03; the rulings were applied at phase 1k (dispatch `cc_instruction_phase1k_apply_rulings.md`). **Nothing here is pending.** Retained unedited beneath, under #12, as the record of what was put to the user and in what words — the ruling is only readable against the surface it answered. **What was ruled, section by section.** §1 the four status banners — **RATIFIED as drafted**, written verbatim at the head of each document, converting fourteen register entries to contract-home (`OPEN_ITEMS.md` OI-274 does NOT close: the `docs/scoring_model.md` body tense and its three smaller instances stay open). §2 **D-406…D-414 RATIFIED**, each with the status the record states (D-410 and D-411 DEFERRED, the rest LIVE); the nine keep their home-gap flag, which be\" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.",
+   "D-411": " ★ THE DECIDING ACT RECOVERED AND KEPT (user's ruling of 2026-08-16, cowork_rulings_2026_08_16_preparation_return.md §3 (B1)): a passage at `ratification_surfaces/cowork_pending_ratifications_next_session.md` line 3, carrying a user-act marker, a ratification event named, an explicit RULED marker and matching the entry's own identity, reads — \"**STATUS: RULED AND APPLIED (user, 2026-08-03) — SUPERSEDED BY ITS OWN EXECUTION.** Everything below was read and ruled by the user on 2026-08-03; the rulings were applied at phase 1k (dispatch `cc_instruction_phase1k_apply_rulings.md`). **Nothing here is pending.** Retained unedited beneath, under #12, as the record of what was put to the user and in what words — the ruling is only readable against the surface it answered. **What was ruled, section by section.** §1 the four status banners — **RATIFIED as drafted**, written verbatim at the head of each document, converting fourteen register entries to contract-home (`OPEN_ITEMS.md` OI-274 does NOT close: the `docs/scoring_model.md` body tense and its three smaller instances stay open). §2 **D-406…D-414 RATIFIED**, each with the status the record states (D-410 and D-411 DEFERRED, the rest LIVE); the nine keep their home-gap flag, which be\" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched."
+  }
+ },
+ "what_the_act_reaches": {
+  "★_why_this_block_exists": "Removing entries from the live record reaches every derivation over that record. The reach is MEASURED here, before anything moves, rather than discovered by a guard turning red after the act.",
+  "surviving_entries_that_NAME_a_retired_entry": {
+   "★_why_it_matters": "The decisions register's own establishment pass checks that every `D-…` cross-reference in an entry resolves to an entry the record holds. A surviving entry naming a retired one would report as DANGLING unless the retired block is among the entries that pass consults — which is what makes teaching that pass about the block a requirement of the act rather than a tidy-up after it.",
+   "count": 33,
+   "entries": [
+    {
+     "the_surviving_entry": "D-053",
+     "names_retired_entries": [
+      "D-063"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-114",
+     "names_retired_entries": [
+      "D-090"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-195",
+     "names_retired_entries": [
+      "D-059"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-236",
+     "names_retired_entries": [
+      "D-066"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-237",
+     "names_retired_entries": [
+      "D-066"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-257",
+     "names_retired_entries": [
+      "D-124"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-264",
+     "names_retired_entries": [
+      "D-050"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-280",
+     "names_retired_entries": [
+      "D-016",
+      "D-017",
+      "D-066"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-284",
+     "names_retired_entries": [
+      "D-036"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-289",
+     "names_retired_entries": [
+      "D-036"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-308",
+     "names_retired_entries": [
+      "D-225"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-411",
+     "names_retired_entries": [
+      "D-412"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-419",
+     "names_retired_entries": [
+      "D-407"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-421",
+     "names_retired_entries": [
+      "D-359"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-422",
+     "names_retired_entries": [
+      "D-310"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-423",
+     "names_retired_entries": [
+      "D-036",
+      "D-061"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-444",
+     "names_retired_entries": [
+      "D-227"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-456",
+     "names_retired_entries": [
+      "D-083"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-469",
+     "names_retired_entries": [
+      "D-063"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-487",
+     "names_retired_entries": [
+      "D-226"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-496",
+     "names_retired_entries": [
+      "D-133"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-497",
+     "names_retired_entries": [
+      "D-310"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-501",
+     "names_retired_entries": [
+      "D-066",
+      "D-067",
+      "D-305"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-513",
+     "names_retired_entries": [
+      "D-373"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-514",
+     "names_retired_entries": [
+      "D-361"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-516",
+     "names_retired_entries": [
+      "D-372"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-521",
+     "names_retired_entries": [
+      "D-377"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-523",
+     "names_retired_entries": [
+      "D-226"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-531",
+     "names_retired_entries": [
+      "D-075"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-569",
+     "names_retired_entries": [
+      "D-038"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-580",
+     "names_retired_entries": [
+      "D-579"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-611",
+     "names_retired_entries": [
+      "D-558"
+     ]
+    },
+    {
+     "the_surviving_entry": "D-626",
+     "names_retired_entries": [
+      "D-558"
+     ]
+    }
+   ]
+  },
+  "the_discard_population_by_group": {
+   "A": 4,
+   "B": 3,
+   "C": 7,
+   "D": 6,
+   "E": 14,
+   "F": 12,
+   "G": 16,
+   "H": 4,
+   "I": 10,
+   "J": 7,
+   "K": 5,
+   "L": 9,
+   "M": 11,
+   "N": 2,
+   "O": 11,
+   "P": 3,
+   "Q": 19,
+   "S": 1,
+   "T": 14,
+   "U": 7
+  },
+  "the_discard_population_by_recorded_status": {
+   "live": 155,
+   "not stated": 3,
+   "shelved-with-evidence": 1,
+   "superseded-by": 3,
+   "superseded-in-fact": 3
+  }
+ },
+ "★_the_act_was_PLANNED_AND_MEASURED_AND_NOT_PERFORMED": {
+  "state": "NOT APPLIED",
+  "what_happened": "The act was applied to the working tree, the whole guard set was run at the edited tree, the reach was read off it, and the edit was REVERTED — every touched file proven byte-identical to its committed blob by hashing both. Nothing was committed.",
+  "why": "Assumption A3 of the dispatch that ordered the act — that the mutation's reach is the decisions-register family and its derived views ONLY — is FALSIFIED by that run, and the dispatch's own instruction on that outcome is a STOP-and-report. The reach includes both gate-bearing phase-1 derivations, which do not merely go stale: they HALT.",
+  "where_the_measurement_is_recorded": "cc_report_preparation_third.md §4, and THE PREPARATION THIRD BATCH section of cowork_away_returns.md — the complete captured output of every check that turned red, quoted from the run.",
+  "★_what_a_reader_must_not_conclude": "That the ruling is in doubt. The user ruled the discard; what this measurement establishes is that performing it inside the bounds the dispatch set is not possible, because the act reaches authored judgments and gate-bearing derivations the dispatch does not authorize touching. What is owed is a ruling on that reach, not a re-decision of the discard."
+ },
+ "★_what_this_act_does_NOT_do": {
+  "it_destroys_nothing": "Every retired entry is moved WHOLE and unchanged into a retired block of the same data file. Nothing is deleted and every discard is individually revivable (#12).",
+  "it_judges_no_decision": "The ruled clause every record carries says it: a provenance verdict, not a judgment on soundness or usefulness. The statement stands at its home.",
+  "it_touches_no_other_field": "The ten provenance stamps append to `status_source` and to nothing else; no other field of any entry, retired or surviving, is altered.",
+  "it_rules_nothing_about_the_62": "The entries the user's (B2) limb left unruled are untouched by this act."
+ }
+}

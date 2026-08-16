@@ -9,6 +9,7 @@
       "tools/audit/changed_paths.py",
       "tools/audit/claude_md_rule_triage.py",
       "tools/audit/corpus_arm_stamp.py",
+      "tools/audit/decisions/apply_soft_discard.py",
       "tools/audit/decisions/gen_cluster_dispositions.py",
       "tools/audit/decisions/gen_decision_clusters.py",
       "tools/audit/decisions/gen_decisions_register.py",
@@ -66,7 +67,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 68,
+    "authored_entries": 69,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -722,6 +723,19 @@
       "what_it_checks": "the ratified-document subject check re-derives, and with it the residue surface both this batch's returns are carried on. For the 62 entries the user's Ruling of 2026-08-16 §3(B2) did NOT rule, each recovered act is established as a document ratification or not, and where it is, the ratified document is searched for that entry's OWN subject recognizers — the decisions register's `patterns`, which is what the ruling asks for in its own words. What it guards is not the results, which are evidence awaiting the user, but six demands on the record: the population must be derivable at all, which means the ten (B1) keeps must still be PARSED from the ruling record's own bullet — a bullet naming any number other than ten, or naming an entry the recovery pass did not return ACT-FOUND for, halts it rather than being corrected; every entry must carry the fields the pass reads; every result must be one of the closed three values with a distribution that accounts for the population; every sentence of the ruling that ordered the derivation must still be in its ruling record AS IT STANDS; and every recorded act coordinate is re-read at the measured commit and cross-checked against the quote the recovery pass published, so a document that has moved under a line cannot be graded silently as though it had not"
     },
     {
+      "tool": "tools/audit/decisions/apply_soft_discard.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "no retirement has been applied, and the planned one re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the ruled soft-discard's PLAN re-derives, and no retirement has been applied. Before the act this is what is live: every sentence of the ruling that ordered the discard must still be in its ruling record; the population must still be DERIVABLE from the committed recovery and sole-carrier artifacts — the entries the recovery pass returned NOTHING-FOUND for minus the members the guard withheld, with a member that is BOTH halting it and a member the decisions register's data file does not carry live halting it too (D-671); and the committed plan must still re-derive from those inputs. AFTER the act, the plan cannot be re-derived by construction, and what this checks instead is the applied state: live plus retired accounting for the whole former population BY ARITHMETIC, no entry in both blocks and none in neither, and every retired record carrying its finding, its date, its retiring authority and the ruled clause verbatim — the four the ruling requires of every record"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -990,8 +1004,8 @@
     }
   ],
   "summary": {
-    "run": 54,
-    "passing": 53,
+    "run": 55,
+    "passing": 54,
     "failing": 1,
     "failing_tools": [
       {

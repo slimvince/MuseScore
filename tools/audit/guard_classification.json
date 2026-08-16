@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 64,
-    "re_derives_a_live_invariant": 52,
+    "tools_classified": 65,
+    "re_derives_a_live_invariant": 53,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -69,6 +69,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "corpus_arm_stamp.py:18-28",
       "why": "The arm of a corpus is readable AT THE OBJECT, per file, from a field each `.ours.json` stamps; `--check` re-reads the corpus directories the block-(A) hard stop consumes. A regeneration on the wrong arm tomorrow is caught tomorrow.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/decisions/apply_soft_discard.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "apply_soft_discard.py, the `THE STOPS` list of its module docstring; `population()`, which derives the discard set and halts on a sole-carrier inside it or on an entry the data file does not carry live; `check_applied()`, whose docstring states which half is live in which of the two states this act can be in",
+      "why": "LIVE in BOTH of the states this tool can be in, which is why it is a guard rather than a record of an act. BEFORE the act — the state at this commit, the act having been planned, measured and reverted — what re-derives is the PLAN: the ruling's sentences must still be in its ruling record, the population must still be derivable from the committed recovery and sole-carrier artifacts in both directions against the decisions register's data file (D-671), and the committed plan must still match that derivation, so an artifact moving under the plan turns this red instead of leaving a stale plan to be executed later. AFTER the act the plan is un-derivable by construction, and the live assertion becomes the applied state's own arithmetic: live plus retired accounting for the recorded former population, no entry in both blocks and none in neither, and every retired record carrying the four things the ruling requires. ★ WHAT IT DOES NOT ASSERT: that the act SHOULD be performed. It was not: the dispatch's assumption A3 was falsified by the measurement, and what is committed is the plan and the tool, never a mutation.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },
