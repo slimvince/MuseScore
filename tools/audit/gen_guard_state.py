@@ -319,6 +319,22 @@ AUTHORED = [
      "ruling that ordered the pass must still be in its ruling record, so the pass cannot outlive "
      "the words that ordered it"),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_second.md Task 3 -------------------
+    # Task 3's own tool, registered in the act that creates it, on the same practice and for the
+    # same reason as the entry above: run with no flag it REWRITES its committed outputs.
+    ("tools/audit/gen_rulings_sort.py", ["--check"],
+     "the rulings sort re-derives — every entry on the confirmed side of the decisions-register "
+     "filter carrying one PROPOSED class, design intent or management of the implementation, or "
+     "NEEDS-THE-USER where the rule reaches no verdict. What it guards is not the proposals, which "
+     "await the user, but five demands on the record as it stands: the confirmed population "
+     "imported from the committed filter artifact and the decisions register's data file must "
+     "carry the same entries in BOTH directions; every entry must carry the fields the rule reads; "
+     "a `nonspec_kind` value the pass neither maps nor deliberately leaves to the recognizers halts "
+     "it, so a new value cannot be classified by silence; every definition the mapping quotes must "
+     "still be in the data file's own header, so the mapping cannot rest on words the record has "
+     "dropped; and every class must be one of the ruled three with a distribution that accounts "
+     "for the population"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

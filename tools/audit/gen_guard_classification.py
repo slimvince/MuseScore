@@ -549,6 +549,26 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "is a statement about the documents one entry's OWN citations reach, at one level, and the "
         "one-level bound is published above the first result."),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_second.md Task 3 --------------------
+    "tools/audit/gen_rulings_sort.py": (
+        LIVE, "gen_rulings_sort.py, the `THE STOPS` list of its module docstring; "
+              "`require_known_nonspec()`, which refuses a value the pass has not ruled on; "
+              "`locate_definitions()`, which locates every quoted header definition",
+        "LIVE. Its subject is the decisions register AS IT STANDS, and every demand it makes "
+        "becomes false the moment that record moves: the confirmed population imported from the "
+        "committed filter artifact and the register's data file must carry the same entries in "
+        "BOTH directions, so an entry entering or leaving the confirmed side halts it rather than "
+        "being sorted silently or quietly dropped; a `nonspec_kind` value the pass neither maps "
+        "nor deliberately leaves to the recognizers halts it, so a value entered tomorrow is ruled "
+        "on tomorrow instead of being classified by silence; and every definition the mapping "
+        "quotes must still be in the data file's own header, which is the same shape the "
+        "retirement caller-check's conditions and the recovery pass's ruling sentences carry — a "
+        "mapping may not rest on words the record has dropped. ★ WHAT IT DOES NOT ASSERT: that "
+        "any entry is in the right class. The word recognizers are authored, they decide only what "
+        "the register's own home classification leaves undecided, and neither their reach nor "
+        "their error rate is measured (#19) — which is why the entries they cannot place return to "
+        "the user rather than being placed."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

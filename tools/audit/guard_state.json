@@ -53,6 +53,7 @@
       "tools/audit/gen_phase3_gate_partition.py",
       "tools/audit/gen_reserved_word_scanner.py",
       "tools/audit/gen_retirement_caller_check.py",
+      "tools/audit/gen_rulings_sort.py",
       "tools/audit/gen_status_archive_pass.py",
       "tools/audit/gen_test_construction_evidence.py",
       "tools/audit/index_status_lint.py",
@@ -63,7 +64,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 65,
+    "authored_entries": 66,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -680,6 +681,19 @@
       "what_it_checks": "the deciding-act recovery pass re-derives — for every entry the decisions-register filter could not name a deciding act for, the entry's OWN cited sources followed through the record and searched for a user act naming that entry's subject. What it guards is not the results, which are evidence awaiting the user, but four demands on the record as it stands: the non-keep population imported from the committed filter artifact and the register's data file must carry the same entries in BOTH directions, so a derivation over a derived population cannot be published in part (D-671); every entry must carry the fields the pass reads, so one it cannot read halts it rather than being skipped; every result must be one of the closed three values and the distribution must account for the population; and every sentence of the ruling that ordered the pass must still be in its ruling record, so the pass cannot outlive the words that ordered it"
     },
     {
+      "tool": "tools/audit/gen_rulings_sort.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the rulings sort re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the rulings sort re-derives — every entry on the confirmed side of the decisions-register filter carrying one PROPOSED class, design intent or management of the implementation, or NEEDS-THE-USER where the rule reaches no verdict. What it guards is not the proposals, which await the user, but five demands on the record as it stands: the confirmed population imported from the committed filter artifact and the decisions register's data file must carry the same entries in BOTH directions; every entry must carry the fields the rule reads; a `nonspec_kind` value the pass neither maps nor deliberately leaves to the recognizers halts it, so a new value cannot be classified by silence; every definition the mapping quotes must still be in the data file's own header, so the mapping cannot rest on words the record has dropped; and every class must be one of the ruled three with a distribution that accounts for the population"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -948,8 +962,8 @@
     }
   ],
   "summary": {
-    "run": 51,
-    "passing": 50,
+    "run": 52,
+    "passing": 51,
     "failing": 1,
     "failing_tools": [
       {
