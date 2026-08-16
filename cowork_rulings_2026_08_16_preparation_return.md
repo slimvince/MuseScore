@@ -86,7 +86,48 @@ I'll go with your recommendation: A."** Adopted whole:
 - Alternatives B (ratify nothing until the recovery pass returns) and C (soft-discard the 266
   today, skipping recovery) are DECLINED as rated on the surface.
 
+## 3. Rulings — the soft-discard sitting: the 194 discarded behind the sole-carrier guard, the ten clear recoveries kept, the 62 checked before ruling (Alternatives A, B1, B2 as recommended)
+
+Taken at the second batch's return, over the recovery pass's evidence (`tools/audit/deciding_act_recovery.json`:
+72 ACT-FOUND, 194 NOTHING-FOUND, 0 CITATIONS-UNRESOLVED), after the writing side read all 72
+recovered acts against the concentration measurement and presented the sitting's surface with the
+three-shape finding (ten clear recoveries; recoveries that evidence the opposite — D-011's best
+passage records an act's ABSENCE; broad matches pointing at document-level ratifications whose
+ratified documents were not themselves checked). **Two user questions sharpened the ruling before
+it was taken**, in the user's words: *"is there a risk we lose something of value (=a genuinely
+good idea that should have been been used as input when designing and/or building the
+inferrers)?"* — answered with the three structural nets (the disposition discipline over every
+spec statement; the audit's something-missing verdict; the fact-gate) and the ONE residual class
+they miss: an idea whose sole carrier is the register entry, typically a deferred never-implemented
+proposal — from which the SOLE-CARRIER GUARD below was proposed and accepted (*"then i am happy
+:)"*). **The user's ruling, confirmed explicitly on the three-decision restatement: "yes."**
+Adopted whole:
+
+- **(A) The 194 NOTHING-FOUND entries are SOFT-DISCARDED — behind the sole-carrier guard.**
+  Before execution, a derived SOLE-CARRIER subclass is computed over the whole non-keep
+  population: an entry whose status is DEFERRED, or whose home cannot be located, or whose
+  content is found nowhere outside the register family. **Sole-carrier members do NOT ride the
+  discard — they return to the user as a list**, the keepers carried explicitly into the
+  framework phase's candidate enumeration as untrusted candidates, never decisions. Every
+  executed discard record carries its finding, date and reason AND the ruled clause verbatim:
+  **a provenance verdict, not a judgment on soundness or usefulness; the statement stands at its
+  home and is met by the derivation.** Nothing destroyed (#12); every discard individually
+  revivable when a deciding act is later named.
+- **(B1) The ten clear recoveries are KEPT** — D-004, D-008, D-009, D-021, D-123, D-248, D-315,
+  D-403, D-410, D-411 — each with its recovered act recorded as the entry's provenance at the
+  discharge (the act quoted, its document and location named, from the recovery artifact).
+- **(B2) The 62 remaining ACT-FOUND entries are NOT ruled** — one further bounded derivation
+  first: for each entry whose recovered act is a document-ratification passage, the RATIFIED
+  DOCUMENT ITSELF is checked for the entry's subject recognizers (the register's own, again);
+  subject found and quoted, or not found. The 62 are ruled at that return, the sole-carrier
+  guard applying to their eventual residue.
+- Declined as rated on the surface: keeping the 194 live (observation-as-decision, the Ruling-8
+  shape); blanket-keeping all 72 (weak matches as authority — the false-clean shape); discarding
+  all 72 (throws away the ten clear recoveries); walking the 62 by hand (the long-session
+  degradation cost for a question a derivation mostly answers).
+
 *Provenance: Cowork, 2026-08-16, recorded in the turns the rulings were given. The user's
 verbatim words are marked as such; everything else is the writing side's operationalization,
-accepted in sequence. The executing dispatch for the ordered acts is
-`cc_instruction_preparation_second.md`; this record rides its Task 0.*
+accepted in sequence. The executing dispatch for §1 and §2's ordered acts was
+`cc_instruction_preparation_second.md` (returned and verified); for §3 it is
+`cc_instruction_preparation_third.md`; this record's §3 rides that dispatch's Task 0.*
