@@ -49,6 +49,8 @@
       "tools/audit/gen_doc_change_candidates.py",
       "tools/audit/gen_filing_convention_application.py",
       "tools/audit/gen_gating_row_sizing.py",
+      "tools/audit/gen_governing_surface_readers.py",
+      "tools/audit/gen_governing_surface_spans.py",
       "tools/audit/gen_july_screen.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
       "tools/audit/gen_period_stratum_split.py",
@@ -71,7 +73,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 73,
+    "authored_entries": 75,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -801,6 +803,32 @@
       "what_it_checks": "every value the ruled soft-discard moved in the two derived censuses re-derives, and every one of them is inside the ruled bound. The comparison is the CITATION SCAN itself, re-run over the governing record at both states — the earlier one from the git objects at the commit before the act — rather than two rendered surfaces being diffed, and the scan and the governing-record definition are IMPORTED from the census that owns them (#6). Its STOPs are the ruling's own: a moved value none of the three categories reaches halts it, because the ruling's instruction on any other movement is a STOP-and-report and this tool may not widen the bound on its own authority; a name ENTERING the citation scan halts it, since the discard only ever removes an entry's text from the rendered register; and a census whose scan cannot be read at either state halts it. What it does NOT assert is that a moved document is worth retiring: a crossing confers CANDIDACY only, and every ruled condition on a candidacy stands untouched"
     },
     {
+      "tool": "tools/audit/gen_governing_surface_spans.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the governing-surface span decomposition re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the five mandatory-read files still decompose span by span into the same classes with the same byte counts. What it guards is the DECOMPOSITION rather than the classes' verdicts, which are recognizers over prose and say so of themselves: a file the ruling names that the tree no longer carries halts it, and — the one that matters — the per-class byte counts must account for the file EXACTLY, so a span cannot be silently dropped from the decomposition, which is the single failure that would make every number in it meaningless. That STOP fired for real on the tool's first run. The row split and the resolved-mark test are IMPORTED from the one index lint that owns them (#6)"
+    },
+    {
+      "tool": "tools/audit/gen_governing_surface_readers.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the governing-surface reader inventory and its ruling surface re-derive"
+      ],
+      "stderr": [],
+      "what_it_checks": "who reads, anchors into, quotes or parses each of the five mandatory-read files still re-derives at the tree, and the ruling surface generated from it and from the span decomposition still re-derives with it. It is the F13 lesson applied prospectively: a mutation's reach is MEASURED before the act, so the anchored namings, the tools that read each file by path and the register entries homed in it are all published before any span moves. Its STOPs: a named file the tree does not carry halts it; a span decomposition that is missing or covers a different file set halts it, because the surface is generated from BOTH artifacts and may not be built from half of them; and a per-file naming tally that stops accounting for the scan halts it. What it does NOT assert is that a naming is a dependency — the scan sees tracked files only and a computed path carries no literal to find, which it publishes of itself"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1027,8 +1055,8 @@
     }
   ],
   "summary": {
-    "run": 53,
-    "passing": 52,
+    "run": 55,
+    "passing": 54,
     "failing": 1,
     "failing_tools": [
       {

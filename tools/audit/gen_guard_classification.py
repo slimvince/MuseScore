@@ -709,6 +709,32 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "bound the retirement caller-check publishes of itself. It also asserts nothing about "
         "whether a verdict is RIGHT — the ground of each and the naming line are published beside "
         "it, so the reading is the user's."),
+    "tools/audit/gen_governing_surface_spans.py": (
+        LIVE, "gen_governing_surface_spans.py, the WHAT A SPAN IS and THE CLASSES paragraphs of "
+              "its module docstring and its THE STOPS list; `measure()`, whose reconciliation "
+              "compares the decomposition against the file's own measured size",
+        "LIVE. It re-reads all five governing files AS THEY STAND on every run and re-cuts and "
+        "re-classes every span from their current text, so an edit to any of them moves its "
+        "output the day the edit lands — which is the point of it, because the pruning act it "
+        "measures for has not happened and the files keep moving under it. Its load-bearing STOP "
+        "is a demand about the tree rather than a dated reading: the per-class byte counts must "
+        "account for the file EXACTLY. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: "
+        "that a span classed `operative-rule-text` IS operative. The classes are recognizers over "
+        "prose, their reach is UNMEASURED (#19), and the direction of their error is the "
+        "recoverable one — a missed marker keeps a span at site, which is the ruled doubt default."),
+    "tools/audit/gen_governing_surface_readers.py": (
+        LIVE, "gen_governing_surface_readers.py, the WHAT IS DERIVED and WHAT IT DOES NOT "
+              "ESTABLISH paragraphs of its module docstring; `measure()`, which scans the tracked "
+              "tree; `render_surface()`, which builds the ruling surface from both artifacts",
+        "LIVE. Every naming, anchor, parser and register home it publishes is re-scanned at the "
+        "tracked tree on every run, so a file that starts naming `CLAUDE.md` tomorrow appears "
+        "tomorrow. That is not the OI-301 shape it would be if the artifact were a completed "
+        "measurement someone had ruled on: nothing has been ruled from it, the pruning act it "
+        "measures for has not happened, and a reach that has changed since the measurement is "
+        "exactly what a session about to move a span needs to be told. ★ WHAT IT DOES NOT ASSERT: "
+        "that a naming is a DEPENDENCY, or that a file naming none of the five depends on none of "
+        "them — the scan sees tracked files only and a path composed at run time carries no "
+        "literal to find, the same bound the retirement caller-check publishes of itself."),
     "tools/audit/gen_census_movement_classification.py": (
         LIVE, "gen_census_movement_classification.py, the THREE CATEGORIES and THE STOPS of its "
               "module docstring; `build()`, which re-runs the citation scan at both states and "

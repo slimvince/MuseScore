@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 69,
-    "re_derives_a_live_invariant": 51,
+    "tools_classified": 71,
+    "re_derives_a_live_invariant": 53,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -395,6 +395,22 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_gating_row_sizing.py:30-44",
       "why": "LIVE, and the verdict is worth stating because the artifact's CONTENT is authored judgment. What the check asserts is not that the sizes are right — a size cannot be checked — but three demands about the record as it stands TODAY. Its POPULATION is read at the completion inventory on every run and reconciled with the authored sizings in BOTH directions, so a row entering or leaving the gating set halts it rather than being sized silently or quietly dropped. Every label, owner and blocker must come from the closed vocabulary the file declares, so a later wave cannot widen the label set by writing one. And every row's quoted words must still be in the INDEX, so a sizing cannot outlive the text it was read from. None of that is a dated reading.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_governing_surface_readers.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_governing_surface_readers.py, the WHAT IS DERIVED and WHAT IT DOES NOT ESTABLISH paragraphs of its module docstring; `measure()`, which scans the tracked tree; `render_surface()`, which builds the ruling surface from both artifacts",
+      "why": "LIVE. Every naming, anchor, parser and register home it publishes is re-scanned at the tracked tree on every run, so a file that starts naming `CLAUDE.md` tomorrow appears tomorrow. That is not the OI-301 shape it would be if the artifact were a completed measurement someone had ruled on: nothing has been ruled from it, the pruning act it measures for has not happened, and a reach that has changed since the measurement is exactly what a session about to move a span needs to be told. ★ WHAT IT DOES NOT ASSERT: that a naming is a DEPENDENCY, or that a file naming none of the five depends on none of them — the scan sees tracked files only and a path composed at run time carries no literal to find, the same bound the retirement caller-check publishes of itself.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_governing_surface_spans.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_governing_surface_spans.py, the WHAT A SPAN IS and THE CLASSES paragraphs of its module docstring and its THE STOPS list; `measure()`, whose reconciliation compares the decomposition against the file's own measured size",
+      "why": "LIVE. It re-reads all five governing files AS THEY STAND on every run and re-cuts and re-classes every span from their current text, so an edit to any of them moves its output the day the edit lands — which is the point of it, because the pruning act it measures for has not happened and the files keep moving under it. Its load-bearing STOP is a demand about the tree rather than a dated reading: the per-class byte counts must account for the file EXACTLY. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a span classed `operative-rule-text` IS operative. The classes are recognizers over prose, their reach is UNMEASURED (#19), and the direction of their error is the recoverable one — a missed marker keeps a span at site, which is the ruled doubt default.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

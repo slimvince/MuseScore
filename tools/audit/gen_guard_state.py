@@ -459,6 +459,32 @@ AUTHORED = [
      "document is worth retiring: a crossing confers CANDIDACY only, and every ruled condition on "
      "a candidacy stands untouched"),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fifth.md Task 2 --------------------
+    # The ruled READ-ONLY pruning measurement's two tools, registered in the act that creates them.
+    # Each takes `--check` and never the bare invocation: run with no flag each REWRITES its
+    # committed artifact, and the second rewrites a ruling surface awaiting the user as well.
+    ("tools/audit/gen_governing_surface_spans.py", ["--check"],
+     "the five mandatory-read files still decompose span by span into the same classes with the "
+     "same byte counts. What it guards is the DECOMPOSITION rather than the classes' verdicts, "
+     "which are recognizers over prose and say so of themselves: a file the ruling names that the "
+     "tree no longer carries halts it, and — the one that matters — the per-class byte counts must "
+     "account for the file EXACTLY, so a span cannot be silently dropped from the decomposition, "
+     "which is the single failure that would make every number in it meaningless. That STOP fired "
+     "for real on the tool's first run. The row split and the resolved-mark test are IMPORTED from "
+     "the one index lint that owns them (#6)"),
+    ("tools/audit/gen_governing_surface_readers.py", ["--check"],
+     "who reads, anchors into, quotes or parses each of the five mandatory-read files still "
+     "re-derives at the tree, and the ruling surface generated from it and from the span "
+     "decomposition still re-derives with it. It is the F13 lesson applied prospectively: a "
+     "mutation's reach is MEASURED before the act, so the anchored namings, the tools that read "
+     "each file by path and the register entries homed in it are all published before any span "
+     "moves. Its STOPs: a named file the tree does not carry halts it; a span decomposition that "
+     "is missing or covers a different file set halts it, because the surface is generated from "
+     "BOTH artifacts and may not be built from half of them; and a per-file naming tally that "
+     "stops accounting for the scan halts it. What it does NOT assert is that a naming is a "
+     "dependency — the scan sees tracked files only and a computed path carries no literal to "
+     "find, which it publishes of itself"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "
