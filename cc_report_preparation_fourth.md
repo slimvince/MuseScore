@@ -400,12 +400,20 @@ After Task 1's commit the guard set stands at **57 run, 56 passing, ONE failing*
 STOPs**, with both of this batch's new checks inside the classified population under authored
 verdicts and both passing. **No failing check other than [[OI-372]] survives in the committed tree.**
 
+**★ E3 — MET, RUN AT THE TREE CARRYING THE CLOSE AND AFTER THE COMMIT THAT CARRIES IT.** Task 3's
+close is commit **`bfbdac5c0c`**, parent `5a687aea9c`, pushed, three paths, verified at the object.
+At that tree, after that commit existed, `gen_guard_state.py --check` printed **"the guard state
+re-derives"** — **57 guards run, ONE failing** (`gen_filing_convention_application.py --check`,
+[[OI-372]], the only `[FAIL]` line in the whole run), 4 not run, 10 historical, **no STOP** — and
+`gen_guard_classification.py --check` printed **"the guard classification re-derives"**. The
+sanctioned enumeration at the same tree reported **no tracked modification anywhere**: every record
+it returned was untracked. **Run and read, never inferred.**
+
 Per the dispatch's ordering rule — *no graded value is committed before the run that produced it* —
-the end-state run demonstrated across the commit boundary is taken AFTER the Task 3 commit exists,
-and its output and the final SHAs land in **one further commit**. **The E3-ordering defect that rule
-exists against is not repeated: no expectation anywhere in this report was written before its
-measurement, and the one expectation this batch does not meet is graded NOT MET rather than
-reconciled towards.**
+this paragraph and the SHA in it land in **one further commit** after the close. **The E3-ordering
+defect that rule exists against is not repeated: no expectation anywhere in this report was written
+before its measurement, and the one expectation this batch does not meet is graded NOT MET rather
+than reconciled towards.**
 
 ---
 

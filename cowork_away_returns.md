@@ -12792,8 +12792,14 @@ falsifies is A3, on the three grounds at §1 above. **E2 NOT MET, and not attemp
   recorded instead is the measurement, the revert proven at the objects, and the three grounds. Both
   register checks pass at the end state **at the UNCHANGED decisions register**, which is a different
   fact and is not offered as E2.
-- **E3 — the end-state run**, taken at the tree carrying this close and AFTER the commit that carries
-  it, lands in ONE FURTHER commit with the final SHAs, per the ordering rule.
+- **E3 — MET.** Taken at the tree carrying this close and AFTER the commit that carries it
+  (**`bfbdac5c0c`**, parent `5a687aea9c`, pushed, three paths, verified at the object):
+  `gen_guard_state.py --check` printed **"the guard state re-derives"** — **57 guards run, ONE
+  failing** (`gen_filing_convention_application.py --check`, [[OI-372]], the only `[FAIL]` line in
+  the whole run), 4 not run, 10 historical, **no STOP** — and `gen_guard_classification.py --check`
+  printed **"the guard classification re-derives"**, with the sanctioned enumeration reporting no
+  tracked modification anywhere. Run and read, never inferred; this paragraph lands in the ONE
+  FURTHER commit after the close, per the ordering rule.
 
 ## 6 (continued). What this batch did NOT do
 
