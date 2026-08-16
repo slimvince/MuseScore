@@ -12265,3 +12265,206 @@ why no value in it was on disk before the run that produced it.
    and the remaining ignored files are unlanded; nothing is discarded and nothing is archived; and no
    further preparation-phase act — the rulings sort, the findings ledger, the fact-gate, the curated
    boot list, the mining — was begun.
+
+# ═══ THE PREPARATION SECOND BATCH (dispatch `cc_instruction_preparation_second.md`, performed 2026-08-16) ═══
+
+*(Every guard count referred to below lives at `tools/audit/guard_state.json`, every caller-check
+value at `tools/audit/retirement_caller_check.json`, every recovery result at
+`tools/audit/deciding_act_recovery.json`, every sort proposal at
+`tools/audit/rulings_sort_classification.json`; **none is restated here** — **D-431** — except the
+few this close is reporting ABOUT, each naming where it was read. **The report is
+`cc_report_preparation_second.md`**, which is the whole of what the coding side says back; this
+close is the batch record beside it. This is the SECOND dispatch of the PREPARATION phase under its
+ruled definition, executing the two rulings of `cowork_rulings_2026_08_16_preparation_return.md`,
+and it is bounded exactly as that dispatch bounds it: the archiving wave, the empirical findings
+ledger, the fact-gate, the curated boot list, the mining and the landing of the newly visible files
+are NOT in it, and no soft-discard is executed by it.)*
+
+## 4 (continued). The batch's start state, recorded before any act
+
+**The full guard set was RUN BEFORE THE FIRST EDIT**, and the working tree was enumerated through
+the sanctioned tool before anything was staged.
+
+- **`gen_guard_state.py --check`: 50 guards run, 49 passing, ONE failing** —
+  `gen_filing_convention_application.py --check`, which is [[OI-372]] — 4 not run, 10 historical
+  records, **NO STOP of any kind**. The runner's opening line read **"the guard state re-derives"**,
+  so the committed artifact was not stale.
+- **`gen_guard_classification.py --check`: "the guard classification re-derives"**, exit 0.
+- **This is exactly the start state the dispatch declares as expected**, so no STOP-and-report was
+  owed on it.
+- **The working tree carried NO tracked modification at all** — every record the sanctioned
+  enumeration returned was untracked, with `cowork_rulings_2026_08_16_preparation_return.md` and
+  `cc_instruction_preparation_second.md` among them. That is assumption **A1** exactly as stated.
+
+## 1 (continued). What needs the user
+
+**FOUR THINGS GO BACK, ACROSS THREE SURFACES OF EVIDENCE, AND NOT ONE OF THEM ASKS FOR TRUST IN A
+VERDICT.**
+
+1. **★ EIGHT CALLERS WHOSE KIND THE DERIVATION COULD NOT ESTABLISH — and the ruling's own STOP is
+   why they are here.** The re-run classifies every caller by kind, and the line where it is honest
+   or not is the difference between a generator that ENUMERATES the tracked tree and one that
+   merely TOUCHES an enumeration — imports a module that has one, or reads an artifact one
+   produced. Nothing in a source separates *passing the enumeration through* from *consuming it for
+   something else*, so the weaker relation establishes nothing: the caller HOLDS and returns to the
+   user, which is what the ruling requires of a kind that cannot be derived. Every one is listed
+   with the exact relation that could not be resolved. **Ruling on those eight is what would let
+   the check discriminate further.**
+2. **★ THE DEFERRED PROSE-CITATION QUESTION, now with the evidence the ruling deferred it to.**
+   Every surviving holder is published BY KIND — a tool reading the file by name, a mandatory-read
+   or boot listing, a prose citation — with the line its naming was found on. A fourth bucket is
+   published rather than forced into the three: a DATA record that is none of them. It is not
+   decided here, and the ruling says it is not this batch's to decide.
+3. **★ THE SOFT-DISCARD RULING IS NOW PUT OVER EVIDENCE.** The recovery pass covers the whole
+   non-keep population and recovers a user act, in a document the entry itself cites, for a
+   substantial minority of it — the split by the filter's own class is on the surface. Nothing is
+   re-classified and nothing is proposed: the filter's class rides beside every result, and reading
+   the quoted acts is the user's act. **The user's own clause is quoted verbatim in the surface's
+   banner**, so whoever rules meets it before the members: a soft-discard record is a PROVENANCE
+   verdict and not a judgment on soundness or usefulness.
+4. **★ THE SORT IS PROPOSED, AND THE SEED LIST IS VISIBLE IN FULL.** Every design-intent member and
+   every NEEDS-THE-USER member is listed with what the decisions register itself says the decision
+   is, because the design-intent side becomes the framework phase's seed list and a decision
+   wrongly placed there seeds the architecture with something nobody meant to seed it with. The
+   distribution BY THE ROUTE THAT DECIDED IT is published beside it, so the user can see how much
+   of the sort is the record's own recorded judgment and how much is this side's authored words.
+
+## 2 (continued). Surfaced findings (D-641, #13, #19)
+
+Rows are barred by the dispatch, so each is stated here and at the report.
+
+- **F8 (new) — a derivation over the record's own machinery is fragile in three separate ways, and
+  all three were measured in this batch's own first runs rather than reasoned about.** A generator's
+  source carries the field literal it writes into its artifact, so a generator read as declaring
+  ITSELF became a generated artifact. A coding-side report says in prose that a DIFFERENT file is
+  generated by a tool, and that sentence read as a declaration about itself. And an enumeration
+  signal sought in source TEXT fired on a registry builder's notes field and on the shell-read
+  guard's forbidden-utility list. Each was corrected at the tool — a self-reference excluded, a
+  declaration required to open its line, the signal sought among string CONSTANTS — and each is
+  recorded because the next derivation over this machinery will meet the same three shapes.
+- **F9 (new) — the recovery pass's locality rule is VACUOUS on a document with no blank lines.** A
+  JSON artifact is one block, so an act marker anywhere in it and a subject match anywhere in it
+  read as being in the same place. **No size threshold was imposed to patch it** — a hand-picked
+  number over varying data is the shape this record has twice declined — and instead every
+  recovered passage publishes how many lines it spans, with the same span beside the concentration
+  table.
+- **F10 (new) — the decisions register's data file uses `nonspec_kind` values its own header does
+  not define.** The header says the field says which of THREE cases an entry is and names three;
+  the entries use more. The undefined values are not mapped by name and fall through to the
+  recognizers. Not repaired: this batch edits no register file, and the disagreement is evidence.
+  It is the sibling of **F7**, the status-spelling disagreement the filter pass recorded.
+- **F11 (new) — the dispatch's Task 1 step 3 and its registered expectation E1 cannot both be
+  satisfied literally.** Step 3 says the KIND-UNDERIVABLE list is published "on the artifact and the
+  surface"; E1 bounds the commit to the tool, its artifact and the guard-mechanism records, and no
+  caller-check surface exists in the record. The list is published on the artifact, and returns to
+  the user through this close and the report. Declared rather than resolved by a session.
+- **F12 (new, small) — the dispatch's own FACT names `5c384d8966` as the terminus of the previous
+  batch, and the current commit was one further on**, `c2213b52fb`, whose subject is a correction to
+  that same batch's report. Nothing turned on it: the working tree was clean and A1 held. Recorded
+  because a premise about where the record ends was slightly behind the record.
+- **F5, F6, F7 (carried from the previous batch).** F5 — the caller-check's signal swamped by
+  tree-enumerating artifacts — is the finding the user's caller-check ruling ANSWERS, and this batch
+  is that answer applied; it is carried to the retrospective as a closed loop rather than as an open
+  defect.
+- **F4, F3, F2, F1 (carried, unchanged).** F3 — `reaim_home_anchors.py --check` exits 0 while
+  printing drifted anchors — **stays unfixed and unrowed; both bars stand.**
+- **The E3 ordering defect and the A1 premise error of the earlier batches** ride to the phase's
+  retrospective as the dispatch orders.
+- **No finding bearing on the analysis, its inputs, or a measurement tool the analysis depends on.**
+  Every subject of this batch is the project's own record and the apparatus that reads it.
+
+## 3 (continued). Per-task log — the preparation second batch
+
+**Task 0 — the sitting's ruling record and this dispatch enter git.** Commit `6529d10ae4`, parent
+`c2213b52fb`, pushed. **A1's check first**, through `tools/audit/changed_paths.py`: no tracked
+modification anywhere, both files untracked. Exactly the two paths the dispatch names and no third,
+both additions, **staged plainly with no override of any kind** — both ignore rules over this family
+are gone. **E0 MET on all three limbs.**
+
+**Task 1 — the caller-check RE-RUN under the ruled reading.** Commit `7e400491f9`, parent
+`6529d10ae4`, pushed, four paths — the tool, its artifact, and the two guard-mechanism records — and
+no fifth, which is E1's path bound.
+
+The kind classification is DERIVED in two links, each published per caller with its evidence. Link
+1, caller to generator, by two routes: the caller's own text declaring its generator, and a tracked
+Python source whose WRITE SITE resolves to the caller's repository-relative path — taken from the
+syntax tree and resolved through the name chain, never matched by base name, because matching by
+base name confuses a reader of a file with its writer. Link 2, generator to enumerating: a
+tracked-tree enumeration among the generator's own string CONSTANTS, or the caller's own declaration
+that it is rendered from an artifact that is one, which is the ruling's *or a surface rendered from
+one* limb taken from the surface's own words.
+
+**It is neither of the two shapes the ruling forbids**: no count of how many files a caller names
+enters the rule anywhere, and no caller is named in the tool.
+
+**The measured result is that the check now discriminates.** One candidacy comes back
+PASSES-THE-CHECK. Eight callers are KIND-UNDERIVABLE and return to the user. Namings from fellow
+flagged files are set aside into their own field, like same-class namings, and every one stays
+published (#12). Every surviving holder is published BY KIND with the line its naming was found on,
+centred on the naming rather than truncated from the start of the line.
+
+**Two evidence-quality facts are now measured rather than left as caveats**: each flagged member
+carries whether its base name is unique in the tracked tree — the reference test is a base-name
+match by design, so a member sharing a base name is named by every mention of any file with that
+name — and the generators that would not parse are published, because a caller one of them writes
+keeps holding.
+
+**NOTHING IS ARCHIVED, MOVED, RENAMED OR DELETED, and a PASSES verdict confers nothing.**
+
+**Task 2 — the deciding-act recovery pass.** Commit `ddbf89d002`, parent `7e400491f9`, pushed,
+seven paths: the tool, its artifact, its surface, and the four guard-mechanism records.
+
+The population is IMPORTED from the committed filter artifact and never restated (#6), reconciled
+against the decisions register's data file in BOTH directions as a STOP. For every member the pass
+follows the entry's OWN cited sources — the documents its home, status source, recorded reasoning
+and verbatim quotation name, plus the dated ruling records where it records a date — and searches
+them for a passage carrying a user-act marker AND matching that entry's own subject recognizers.
+**The subject test is the record's own**: the `patterns` list the decisions register carries per
+entry, authored when the entry was written.
+
+**Every entry of the whole non-keep population resolved at least one citation**, so the
+CITATIONS-UNRESOLVED class is empty and assumption **A3** held in the direction it predicted. No
+malformed entry was met, so its STOP was not reached.
+
+**Two limits are stated before the first result.** The walk is ONE LEVEL, so an act recorded
+somewhere the entry does not cite is outside the pass by construction. And the block rule is
+vacuous on a document with no blank lines — F9 above.
+
+**The decisions register is byte-unchanged and it is proven by hashing**: the INDEX, the data file
+and every rendered group file each hashed against their committed blobs after the run, every one
+identical.
+
+**Task 3 — the rulings sort, proposed over the ratified confirmed side.** Commit `2fa6ffcbf9`,
+parent `ddbf89d002`, pushed, seven paths: the tool, its artifact, its surface, and the four
+guard-mechanism records.
+
+The rule leans FIRST on two fields the decisions register already carries — `home_is_layer_spec`,
+and `nonspec_kind` read by the definitions the data file's OWN HEADER gives those values, quoted
+rather than interpreted. Only what those leave undecided reaches the authored word recognizers, and
+what those leave undecided is proposed NEEDS-THE-USER, never guessed. **The distribution by the
+route that decided it is published**, so a reader sees how much of the sort is the record's own
+judgment and how much is this side's words.
+
+**Nothing is executed**: no entry retired, edited, moved or marked; nothing seeded; the framework
+phase not begun. The decisions register is byte-unchanged, proven by hashing.
+
+**Both new tools were REGISTERED IN THE GUARD SET IN THE ACT THAT CREATED THEM**, invocation and
+classification verdict both, per the standing new-tool rule — and each takes `--check` and not the
+bare invocation, because run with no flag each REWRITES its committed outputs, which is the OI-301
+hazard. **One ordering consequence is declared rather than glossed**: Task 3's tool existed on disk
+while Task 2's guard state was being taken, and it was moved OUT of the repository for the duration
+and restored for its own task, so the state committed with Task 2 is the state of Task 2's own tree.
+
+## 5 (continued). What this batch did NOT do
+
+**Nothing was discarded, archived, moved or deleted.** No soft-discard executed; no
+decisions-register entry written, edited or retired; no register file touched — proven by hashing on
+two separate occasions. No file moved, renamed, retired, archived or deleted; every retirement flag
+stays a candidacy and the re-derived PASSES verdict confers nothing; the ruled conditions
+(mined-first; members-seen-by-the-user-first) stand untouched. The newly visible instruction files
+and the remaining ignored files stay unlanded. No mining, no empirical findings ledger, no fact-gate
+admission, no curated boot list. No derivation of any specification, no design, no repair, no pilot
+act. **No `src/` change, no golden, no test changed, moved or run, nothing under `tools/corpus/` or
+`tools/robust_stop/`, no measurement of the analysis.** **No open-items row created, flipped or
+discarded** — [[OI-372]] and [[OI-374]] stay exactly as found, [[OI-179]] stays OPEN and GATES, and
+`reaim_home_anchors.py`'s F3 defect stays surfaced, unfixed and unrowed.
