@@ -54,6 +54,7 @@
       "tools/audit/gen_reserved_word_scanner.py",
       "tools/audit/gen_retirement_caller_check.py",
       "tools/audit/gen_rulings_sort.py",
+      "tools/audit/gen_sole_carrier_subclass.py",
       "tools/audit/gen_status_archive_pass.py",
       "tools/audit/gen_test_construction_evidence.py",
       "tools/audit/index_status_lint.py",
@@ -64,7 +65,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 66,
+    "authored_entries": 67,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -694,6 +695,19 @@
       "what_it_checks": "the rulings sort re-derives — every entry on the confirmed side of the decisions-register filter carrying one PROPOSED class, design intent or management of the implementation, or NEEDS-THE-USER where the rule reaches no verdict. What it guards is not the proposals, which await the user, but five demands on the record as it stands: the confirmed population imported from the committed filter artifact and the decisions register's data file must carry the same entries in BOTH directions; every entry must carry the fields the rule reads; a `nonspec_kind` value the pass neither maps nor deliberately leaves to the recognizers halts it, so a new value cannot be classified by silence; every definition the mapping quotes must still be in the data file's own header, so the mapping cannot rest on words the record has dropped; and every class must be one of the ruled three with a distribution that accounts for the population"
     },
     {
+      "tool": "tools/audit/gen_sole_carrier_subclass.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the sole-carrier subclass re-derives at cb5070c106"
+      ],
+      "stderr": [],
+      "what_it_checks": "the sole-carrier subclass re-derives — the guard the user's Ruling of 2026-08-16 §3(A) put in front of the soft-discard, derived over the whole non-keep population of the decisions register at the commit the artifact RECORDS. What it guards is not the verdicts, which are a derivation the user reads, but five demands on the record: the population imported from the committed filter artifact must reconcile with the committed recovery artifact and with the decisions register's data file in BOTH directions (D-671); every entry must carry the fields the pass reads, so one it cannot read halts it rather than being skipped; every verdict must be one of the closed two values with a distribution that accounts for the population; every sentence of the ruling that DEFINES the subclass must still be in its ruling record AS IT STANDS, so the guard cannot outlive the words that imposed it; and each of the three signals must be shown BOTH to fire and to stay quiet, so a signal that came back empty over the population cannot be mistaken for one that cannot fire at all (#19)"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -962,8 +976,8 @@
     }
   ],
   "summary": {
-    "run": 52,
-    "passing": 51,
+    "run": 53,
+    "passing": 52,
     "failing": 1,
     "failing_tools": [
       {

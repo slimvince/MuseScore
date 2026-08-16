@@ -569,6 +569,33 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "their error rate is measured (#19) — which is why the entries they cannot place return to "
         "the user rather than being placed."),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 1 ---------------------
+    "tools/audit/gen_sole_carrier_subclass.py": (
+        LIVE, "gen_sole_carrier_subclass.py, the `THE STOPS` list of its module docstring; "
+              "`locate_ruling()`, which locates every sentence of the ruling in its record on "
+              "every run; `signal_probes()`, which requires each signal to fire and to stay quiet; "
+              "`json_at()`, whose own comment states which half is frozen and why",
+        "LIVE, and the live half is narrower than most here, so it is named rather than implied. "
+        "What re-derives against the record AS IT STANDS is the ruling itself: every sentence that "
+        "DEFINES the sole-carrier subclass is located in `cowork_rulings_2026_08_16_"
+        "preparation_return.md` on each run, and a ruling record edited to drop the guard's "
+        "definition turns this red — the same shape the retirement caller-check's conditions and "
+        "the recovery pass's ruling sentences carry, and it matters more here than in either, "
+        "because this artifact is what WITHHOLDS entries from a discard. Live too are the five "
+        "signal establishments: each of the three signals must be shown both to fire on a case "
+        "that should fire it and to stay quiet on one that should not, so a signal returning empty "
+        "over the whole population cannot be mistaken for one that cannot fire at all (#19) — "
+        "which is exactly the state two of the three are in. ★ WHAT IT DELIBERATELY DOES NOT "
+        "ASSERT, stated because the omission is a design decision and not an oversight: that the "
+        "subclass re-derives against the CURRENT decisions register. Its three inputs are read "
+        "from the git objects at the commit the artifact records, because the discard this guard "
+        "stands in front of MOVES those very inputs — an input read live would be changed by the "
+        "act this artifact authorizes, and the published record of which entries were withheld "
+        "would be destroyed by the act it guarded (#12; the OI-301 hazard). It also asserts "
+        "nothing about whether any entry's verdict is right, and nothing about worth: a "
+        "sole-carrier verdict is a statement about WHERE THE CONTENT LIVES and about nothing "
+        "else."),
+
     # ---- tools/audit/decisions — the register's own checks -----------------------------------
     "tools/audit/decisions/gen_decisions_register.py": (
         LIVE, "gen_decisions_register.py:11-16",

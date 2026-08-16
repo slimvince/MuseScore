@@ -335,6 +335,27 @@ AUTHORED = [
      "dropped; and every class must be one of the ruled three with a distribution that accounts "
      "for the population"),
 
+    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 1 --------------------
+    # Added by this dispatch's own Task 1 and registered in the act that creates it, rather than
+    # reaching a later pass's derived population unclassified — the standing new-tool rule. It
+    # takes `--check` and not the bare invocation, for a reason about the tool: run with no flag it
+    # REWRITES its committed artifact, and that artifact is the GUARD the ruled soft-discard runs
+    # behind, so a bare run would fold whatever the record currently says into the record of which
+    # entries the guard withheld — the OI-301 hazard at its most damaging.
+    ("tools/audit/gen_sole_carrier_subclass.py", ["--check"],
+     "the sole-carrier subclass re-derives — the guard the user's Ruling of 2026-08-16 §3(A) put "
+     "in front of the soft-discard, derived over the whole non-keep population of the decisions "
+     "register at the commit the artifact RECORDS. What it guards is not the verdicts, which are "
+     "a derivation the user reads, but five demands on the record: the population imported from "
+     "the committed filter artifact must reconcile with the committed recovery artifact and with "
+     "the decisions register's data file in BOTH directions (D-671); every entry must carry the "
+     "fields the pass reads, so one it cannot read halts it rather than being skipped; every "
+     "verdict must be one of the closed two values with a distribution that accounts for the "
+     "population; every sentence of the ruling that DEFINES the subclass must still be in its "
+     "ruling record AS IT STANDS, so the guard cannot outlive the words that imposed it; and each "
+     "of the three signals must be shown BOTH to fire and to stay quiet, so a signal that came "
+     "back empty over the population cannot be mistaken for one that cannot fire at all (#19)"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

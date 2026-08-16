@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 62,
-    "re_derives_a_live_invariant": 50,
+    "tools_classified": 63,
+    "re_derives_a_live_invariant": 51,
     "records_a_point_in_time_measurement": 10,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -437,6 +437,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_rulings_sort.py, the `THE STOPS` list of its module docstring; `require_known_nonspec()`, which refuses a value the pass has not ruled on; `locate_definitions()`, which locates every quoted header definition",
       "why": "LIVE. Its subject is the decisions register AS IT STANDS, and every demand it makes becomes false the moment that record moves: the confirmed population imported from the committed filter artifact and the register's data file must carry the same entries in BOTH directions, so an entry entering or leaving the confirmed side halts it rather than being sorted silently or quietly dropped; a `nonspec_kind` value the pass neither maps nor deliberately leaves to the recognizers halts it, so a value entered tomorrow is ruled on tomorrow instead of being classified by silence; and every definition the mapping quotes must still be in the data file's own header, which is the same shape the retirement caller-check's conditions and the recovery pass's ruling sentences carry — a mapping may not rest on words the record has dropped. ★ WHAT IT DOES NOT ASSERT: that any entry is in the right class. The word recognizers are authored, they decide only what the register's own home classification leaves undecided, and neither their reach nor their error rate is measured (#19) — which is why the entries they cannot place return to the user rather than being placed.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_sole_carrier_subclass.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_sole_carrier_subclass.py, the `THE STOPS` list of its module docstring; `locate_ruling()`, which locates every sentence of the ruling in its record on every run; `signal_probes()`, which requires each signal to fire and to stay quiet; `json_at()`, whose own comment states which half is frozen and why",
+      "why": "LIVE, and the live half is narrower than most here, so it is named rather than implied. What re-derives against the record AS IT STANDS is the ruling itself: every sentence that DEFINES the sole-carrier subclass is located in `cowork_rulings_2026_08_16_preparation_return.md` on each run, and a ruling record edited to drop the guard's definition turns this red — the same shape the retirement caller-check's conditions and the recovery pass's ruling sentences carry, and it matters more here than in either, because this artifact is what WITHHOLDS entries from a discard. Live too are the five signal establishments: each of the three signals must be shown both to fire on a case that should fire it and to stay quiet on one that should not, so a signal returning empty over the whole population cannot be mistaken for one that cannot fire at all (#19) — which is exactly the state two of the three are in. ★ WHAT IT DELIBERATELY DOES NOT ASSERT, stated because the omission is a design decision and not an oversight: that the subclass re-derives against the CURRENT decisions register. Its three inputs are read from the git objects at the commit the artifact records, because the discard this guard stands in front of MOVES those very inputs — an input read live would be changed by the act this artifact authorizes, and the published record of which entries were withheld would be destroyed by the act it guarded (#12; the OI-301 hazard). It also asserts nothing about whether any entry's verdict is right, and nothing about worth: a sole-carrier verdict is a statement about WHERE THE CONTENT LIVES and about nothing else.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },
