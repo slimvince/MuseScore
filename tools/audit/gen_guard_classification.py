@@ -750,6 +750,21 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "ASSERT: that the must-read is small enough to read, which is [[OI-370]]'s own subject, or "
         "that every superseded entry has moved — it proves only that what left is in the archive "
         "and that nothing else left."),
+    "tools/audit/gen_retirement_census_movement.py": (
+        LIVE, "gen_retirement_census_movement.py, THE THREE CLASSES paragraph of its module "
+              "docstring; `movements()`, which re-derives every difference on every run; "
+              "`Classifier.place()`, which tests each relation against the two trees",
+        "LIVE. It asserts an invariant about the tree rather than reporting a dated reading: "
+        "EVERY difference between the two censuses places in one of the three ruled classes, and "
+        "a movement that places in none halts it. The population is re-derived on every run from "
+        "the two readings and the two trees, so a relation that stops holding — a companion "
+        "edited, a retired entry revived — fails on the day it happens. ★ ONE HALF IS "
+        "DELIBERATELY FIXED AND IS NOT A DATED READING EITHER: WHICH two readings are compared is "
+        "the subject of the comparison, so both are read from git objects at the commits they "
+        "were measured at, and the check re-derives forever instead of going red the next time "
+        "anything is written. ★ WHAT IT DOES NOT ASSERT: that a class is a movement's cause, or "
+        "that a movement moves any verdict — a census crossing confers CANDIDACY only, which the "
+        "artifact states of itself."),
     "tools/audit/gen_status_residue_move.py": (
         LIVE, "gen_status_residue_move.py, THE STOPS of its module docstring; `build()`, which "
               "re-reads both live files on every run; `candidates()`, which re-derives the "

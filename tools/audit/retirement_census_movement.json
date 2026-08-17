@@ -1,0 +1,526 @@
+{
+ "what_this_is": "WHAT MOVED IN THE RETIREMENT CALLER-CHECK WHEN IT WAS RE-PINNED, at four units of identity, with every movement placed in one of the three classes the ruling names and a STOP on any that fits none. A COMPARISON ONLY: it archives, moves, renames and deletes nothing, and it moves no verdict — a census crossing confers CANDIDACY only. Every figure here is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_retirement_census_movement.py",
+ "dispatch": "cc_instruction_preparation_seventh.md, Task 2",
+ "the_ruling": "Ruling 2 of cowork_rulings_2026_08_17_sixth_return.md: the census is regenerated fresh at this task's own commit, every movement published and classed — the split's effect, the discard's residue, and the tree's ordinary growth separated — and the artifact re-pinned there.",
+ "the_outgoing_reading": {
+  "measured_at_commit": "6529d10ae42e6e14c96fd9f974011b9713206241",
+  "read_from_the_git_object_at": "5c38b41166e79faeb8a539994dbee16290404f15"
+ },
+ "the_incoming_reading": {
+  "measured_at_commit": "5c38b41166e79faeb8a539994dbee16290404f15"
+ },
+ "★_what_the_classes_are_and_are_not": "Each class is a derived RELATION between a movement and the tree — a path that appeared or vanished, a naming's line now sitting in an archive companion or in the register's retired records. A relation is evidence about a movement's origin, not proof of its cause, and the relations are tested in a fixed order with the first that holds recorded WITH its evidence, so a placement can be checked rather than trusted.",
+ "the_units_of_identity": {
+  "HOLDING NAMING": "a (flagged file, holder) pair — a naming that HOLDS the file, with the line it was found on",
+  "CALLER KIND": "a caller and the kind the ruled reading derived for it",
+  "FLAGGED MEMBER": "a file in some candidacy's flagged population, with its member verdict",
+  "CANDIDACY VERDICT": "a candidacy and its verdict"
+ },
+ "the_tree_delta_between_the_two_measured_commits": {
+  "paths_added": 50,
+  "paths_removed": 0,
+  "how": "git diff --name-status between the two measured commits, both named by explicit hash"
+ },
+ "movements": 41,
+ "movements_by_class": {
+  "(ii) the discard's residue": {
+   "HOLDING NAMING": 2,
+   "CALLER KIND": 2
+  },
+  "(i) the split's effect": {
+   "HOLDING NAMING": 13,
+   "FLAGGED MEMBER": 1,
+   "CALLER KIND": 2
+  },
+  "(iii) the tree's ordinary growth": {
+   "HOLDING NAMING": 8,
+   "CALLER KIND": 13
+  }
+ },
+ "movements_that_fit_none_of_the_three": 0,
+ "★_the_scalars_that_moved_are_published_and_NOT_classed": "Every scalar below is a SUM over the units above, so its movement is already accounted for by the itemized movements that produced it. Classing it as well would count the same cause twice.",
+ "the_scalars_that_moved": {
+  "the_kind_tally": {
+   "before": {
+    "ENUMERATOR": 7,
+    "GENERATED-BUT-NOT-ENUMERATING": 14,
+    "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY": 465,
+    "KIND-UNDERIVABLE": 8
+   },
+   "after": {
+    "ENUMERATOR": 15,
+    "GENERATED-BUT-NOT-ENUMERATING": 14,
+    "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY": 467,
+    "KIND-UNDERIVABLE": 9
+   }
+  },
+  "tracked_python_sources_parsed": {
+   "before": 328,
+   "after": 342
+  },
+  "generators_whose_own_source_enumerates_the_tracked_tree": {
+   "before": 7,
+   "after": 13
+  },
+  "KIND_UNDERIVABLE_callers_returning_to_the_user": {
+   "before": 8,
+   "after": 9
+  },
+  "the_flagged_population_size": {
+   "before": 413,
+   "after": 414
+  },
+  "the_holder_kind_tally": {
+   "before": {
+    "a tool reading the file by name": 82,
+    "a mandatory-read or boot listing": 28,
+    "a prose citation": 346,
+    "outside the three kinds the ruling names": 1210
+   },
+   "after": {
+    "a tool reading the file by name": 85,
+    "a mandatory-read or boot listing": 21,
+    "a prose citation": 356,
+    "outside the three kinds the ruling names": 1213
+   }
+  }
+ },
+ "★_the_KIND_UNDERIVABLE_population_at_the_new_pin": {
+  "the_ruling": "A census crossing confers CANDIDACY only — every ruled condition on candidacies stands untouched, and no fate moves by this artifact.",
+  "count": 9,
+  "callers": [
+   "tools/audit/decisions/cluster_dispositions.json",
+   "tools/audit/decisions/decision_clusters.csv",
+   "tools/audit/decisions/decision_clusters.json",
+   "tools/audit/decisions/snapshot_2026-08-07_pre_oi333_repair/cluster_dispositions.json",
+   "tools/audit/discard_reach_split.json",
+   "tools/audit/l5/file_table.csv",
+   "tools/audit/l5/inventory.json",
+   "tools/audit/l5/sweep_results.json",
+   "tools/audit/l5/sweep_results.txt"
+  ]
+ },
+ "the_movements": [
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cc_corpus_wave3_report.md held by decisions/group_Q.md",
+   "the_direction": "removed",
+   "the_subject_path": "decisions/group_Q.md",
+   "before": "holds",
+   "after": "does not hold",
+   "the_class": "(ii) the discard's residue",
+   "the_evidence": "the naming left a RENDERED register surface while its subject is still named inside the register data's `retired_entries` block, whose own words are that nothing in it is rendered into the INDEX or the group files — so the entry carrying the naming was retired by the soft-discard"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_08/README.md held by STATUS.md",
+   "the_direction": "removed",
+   "the_subject_path": "STATUS.md",
+   "before": "holds",
+   "after": "does not hold",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "the naming's own line is byte-present in `STATUS_ARCHIVE.md` at the new commit, so the span carrying it was archived. Archived by: Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit",
+   "which_act_archived_it": "Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_11/README.md held by STATUS.md",
+   "the_direction": "removed",
+   "the_subject_path": "STATUS.md",
+   "before": "holds",
+   "after": "does not hold",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "the naming's own line is byte-present in `STATUS_ARCHIVE.md` at the new commit, so the span carrying it was archived. Archived by: Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit",
+   "which_act_archived_it": "Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_11/cowork_oi141_sitting_pack.md held by STATUS.md",
+   "the_direction": "removed",
+   "the_subject_path": "STATUS.md",
+   "before": "holds",
+   "after": "does not hold",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "the naming's own line is byte-present in `STATUS_ARCHIVE.md` at the new commit, so the span carrying it was archived. Archived by: Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit",
+   "which_act_archived_it": "Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_11/draft_row_status_md_unreadable.md held by STATUS.md",
+   "the_direction": "removed",
+   "the_subject_path": "STATUS.md",
+   "before": "holds",
+   "after": "does not hold",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "the naming's own line is byte-present in `STATUS_ARCHIVE.md` at the new commit, so the span carrying it was archived. Archived by: Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit",
+   "which_act_archived_it": "Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "scratch_artifacts/robust_stop_cells_dumps/WHAT_THESE_ARE.md held by STATUS.md",
+   "the_direction": "removed",
+   "the_subject_path": "STATUS.md",
+   "before": "holds",
+   "after": "does not hold",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "the naming's own line is byte-present in `STATUS_ARCHIVE.md` at the new commit, so the span carrying it was archived. Archived by: Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit",
+   "which_act_archived_it": "Ruling 3's residue move, which completes the same split under Ruling 4's own line — the span reaches the companion only at the new commit"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "tools/REPRODUCIBILITY.md held by decisions/group_U.md",
+   "the_direction": "removed",
+   "the_subject_path": "decisions/group_U.md",
+   "before": "holds",
+   "after": "does not hold",
+   "the_class": "(ii) the discard's residue",
+   "the_evidence": "the naming left a RENDERED register surface while its subject is still named inside the register data's `retired_entries` block, whose own words are that nothing in it is rendered into the INDEX or the group files — so the entry carrying the naming was retired by the soft-discard"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cc_corpus_wave3_report.md held by cc_report_preparation_fifth.md",
+   "the_direction": "added",
+   "the_subject_path": "cc_report_preparation_fifth.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`cc_report_preparation_fifth.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cc_corpus_wave3_report.md held by cc_report_preparation_fourth.md",
+   "the_direction": "added",
+   "the_subject_path": "cc_report_preparation_fourth.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`cc_report_preparation_fourth.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cc_corpus_wave3_report.md held by cowork_away_returns.md",
+   "the_direction": "added",
+   "the_subject_path": "cowork_away_returns.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`cowork_away_returns.md` gained the naming in its own text between the two measured commits — the line is byte-present there now and absent at the outgoing commit"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cc_corpus_wave3_report.md held by ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md",
+   "the_direction": "added",
+   "the_subject_path": "ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cc_oi207_residual_pass_report.md held by STATUS_ARCHIVE.md",
+   "the_direction": "added",
+   "the_subject_path": "STATUS_ARCHIVE.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "the naming ARRIVED in the archive companion `STATUS_ARCHIVE.md`: its line is byte-present there at the new commit and absent at the outgoing reading's own commit, so a span carrying it was archived into it"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cc_oi207_residual_pass_report.md held by tools/audit/doc_change_candidates.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/doc_change_candidates.json",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "`cc_oi207_residual_pass_report.md` is NAMED by the governing record at the outgoing measured commit, is named by none of the five governing files at the new one, and IS named in an archive companion there — so its naming left the governing record with an archived span (finding F35)"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cc_oi207_residual_pass_report.md held by tools/audit/filing_convention_application.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/filing_convention_application.json",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "`cc_oi207_residual_pass_report.md` is NAMED by the governing record at the outgoing measured commit, is named by none of the five governing files at the new one, and IS named in an archive companion there — so its naming left the governing record with an archived span (finding F35)"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cc_oi207_residual_pass_report.md held by tools/audit/gen_filing_convention_application.py",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/gen_filing_convention_application.py",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "`cc_oi207_residual_pass_report.md` is NAMED by the governing record at the outgoing measured commit, is named by none of the five governing files at the new one, and IS named in an archive companion there — so its naming left the governing record with an archived span (finding F35)"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_08/README.md held by cc_report_preparation_second.md",
+   "the_direction": "added",
+   "the_subject_path": "cc_report_preparation_second.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`cc_report_preparation_second.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_08/README.md held by tools/audit/gen_retirement_caller_check.py",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/gen_retirement_caller_check.py",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`tools/audit/gen_retirement_caller_check.py` gained the naming in its own text between the two measured commits — the line is byte-present there now and absent at the outgoing commit"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_11/README.md held by cc_report_preparation_second.md",
+   "the_direction": "added",
+   "the_subject_path": "cc_report_preparation_second.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`cc_report_preparation_second.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_11/README.md held by tools/audit/gen_retirement_caller_check.py",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/gen_retirement_caller_check.py",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "`cowork_scratch_2026_08_11/README.md` is NAMED by the governing record at the outgoing measured commit, is named by none of the five governing files at the new one, and IS named in an archive companion there — so its naming left the governing record with an archived span (finding F35)"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_11/cowork_oi141_sitting_pack.md held by STATUS_ARCHIVE.md",
+   "the_direction": "added",
+   "the_subject_path": "STATUS_ARCHIVE.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "the naming ARRIVED in the archive companion `STATUS_ARCHIVE.md`: its line is byte-present there at the new commit and absent at the outgoing reading's own commit, so a span carrying it was archived into it"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "cowork_scratch_2026_08_11/draft_row_status_md_unreadable.md held by STATUS_ARCHIVE.md",
+   "the_direction": "added",
+   "the_subject_path": "STATUS_ARCHIVE.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "the naming ARRIVED in the archive companion `STATUS_ARCHIVE.md`: its line is byte-present there at the new commit and absent at the outgoing reading's own commit, so a span carrying it was archived into it"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "scratch_artifacts/robust_stop_cells_dumps/WHAT_THESE_ARE.md held by STATUS_ARCHIVE.md",
+   "the_direction": "added",
+   "the_subject_path": "STATUS_ARCHIVE.md",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "the naming ARRIVED in the archive companion `STATUS_ARCHIVE.md`: its line is byte-present there at the new commit and absent at the outgoing reading's own commit, so a span carrying it was archived into it"
+  },
+  {
+   "the_unit": "HOLDING NAMING",
+   "the_identity": "tools/REPRODUCIBILITY.md held by tools/audit/discard_reach_split.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/discard_reach_split.json",
+   "before": "does not hold",
+   "after": "holds",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`tools/audit/discard_reach_split.json` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "FLAGGED MEMBER",
+   "the_identity": "cc_oi207_residual_pass_report.md",
+   "the_direction": "added",
+   "the_subject_path": "cc_oi207_residual_pass_report.md",
+   "before": null,
+   "after": "reports-from-the-coding-side / HELD-BY-CALLERS",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "`cc_oi207_residual_pass_report.md` is NAMED by the governing record at the outgoing measured commit, is named by none of the five governing files at the new one, and IS named in an archive companion there — so its naming left the governing record with an archived span (finding F35)"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "STATUS.md",
+   "the_direction": "removed",
+   "the_subject_path": "STATUS.md",
+   "before": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "after": null,
+   "the_class": "(i) the split's effect",
+   "the_evidence": "inherited from this caller's own namings — a caller's kind appears or vanishes with the namings that put it in the table"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "decisions/group_Q.md",
+   "the_direction": "removed",
+   "the_subject_path": "decisions/group_Q.md",
+   "before": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "after": null,
+   "the_class": "(ii) the discard's residue",
+   "the_evidence": "inherited from this caller's own namings — a caller's kind appears or vanishes with the namings that put it in the table"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "decisions/group_U.md",
+   "the_direction": "removed",
+   "the_subject_path": "decisions/group_U.md",
+   "before": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "after": null,
+   "the_class": "(ii) the discard's residue",
+   "the_evidence": "inherited from this caller's own namings — a caller's kind appears or vanishes with the namings that put it in the table"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "cc_report_preparation_fifth.md",
+   "the_direction": "added",
+   "the_subject_path": "cc_report_preparation_fifth.md",
+   "before": null,
+   "after": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`cc_report_preparation_fifth.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "cc_report_preparation_fourth.md",
+   "the_direction": "added",
+   "the_subject_path": "cc_report_preparation_fourth.md",
+   "before": null,
+   "after": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`cc_report_preparation_fourth.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "cc_report_preparation_second.md",
+   "the_direction": "added",
+   "the_subject_path": "cc_report_preparation_second.md",
+   "before": null,
+   "after": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`cc_report_preparation_second.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "ratification_surfaces/cowork_deciding_act_recovery_surface_2026_08_16.md",
+   "the_direction": "added",
+   "the_subject_path": "ratification_surfaces/cowork_deciding_act_recovery_surface_2026_08_16.md",
+   "before": null,
+   "after": "ENUMERATOR",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`ratification_surfaces/cowork_deciding_act_recovery_surface_2026_08_16.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md",
+   "the_direction": "added",
+   "the_subject_path": "ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md",
+   "before": null,
+   "after": "ENUMERATOR",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md",
+   "the_direction": "added",
+   "the_subject_path": "ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md",
+   "before": null,
+   "after": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "tools/audit/census_movement_classification.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/census_movement_classification.json",
+   "before": null,
+   "after": "ENUMERATOR",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`tools/audit/census_movement_classification.json` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "tools/audit/deciding_act_recovery.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/deciding_act_recovery.json",
+   "before": null,
+   "after": "ENUMERATOR",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`tools/audit/deciding_act_recovery.json` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "tools/audit/discard_reach_split.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/discard_reach_split.json",
+   "before": null,
+   "after": "KIND-UNDERIVABLE",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`tools/audit/discard_reach_split.json` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "tools/audit/gen_retirement_caller_check.py",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/gen_retirement_caller_check.py",
+   "before": null,
+   "after": "NOT-PRODUCED-BY-THE-RECORD'S-OWN-MACHINERY",
+   "the_class": "(i) the split's effect",
+   "the_evidence": "inherited from this caller's own namings — a caller's kind appears or vanishes with the namings that put it in the table",
+   "★_it_inherits_more_than_one_class": [
+    "(i) the split's effect",
+    "(iii) the tree's ordinary growth"
+   ],
+   "★_why_this_one": "the ruling's own order runs from the specific cause to the general, so a movement with a specific cause among its causes is not merely growth; every class it inherits is published above"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "tools/audit/governing_surface_readers.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/governing_surface_readers.json",
+   "before": null,
+   "after": "ENUMERATOR",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`tools/audit/governing_surface_readers.json` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "tools/audit/phase1_gate_readers.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/phase1_gate_readers.json",
+   "before": null,
+   "after": "ENUMERATOR",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`tools/audit/phase1_gate_readers.json` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "tools/audit/ratified_document_check.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/ratified_document_check.json",
+   "before": null,
+   "after": "ENUMERATOR",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`tools/audit/ratified_document_check.json` was ADDED to the tracked tree between the two measured commits"
+  },
+  {
+   "the_unit": "CALLER KIND",
+   "the_identity": "tools/audit/sole_carrier_subclass.json",
+   "the_direction": "added",
+   "the_subject_path": "tools/audit/sole_carrier_subclass.json",
+   "before": null,
+   "after": "ENUMERATOR",
+   "the_class": "(iii) the tree's ordinary growth",
+   "the_evidence": "`tools/audit/sole_carrier_subclass.json` was ADDED to the tracked tree between the two measured commits"
+  }
+ ]
+}

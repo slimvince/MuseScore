@@ -62,6 +62,7 @@
       "tools/audit/gen_ratified_document_check.py",
       "tools/audit/gen_reserved_word_scanner.py",
       "tools/audit/gen_retirement_caller_check.py",
+      "tools/audit/gen_retirement_census_movement.py",
       "tools/audit/gen_rulings_sort.py",
       "tools/audit/gen_sole_carrier_subclass.py",
       "tools/audit/gen_status_archive_pass.py",
@@ -76,7 +77,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 82,
+    "authored_entries": 83,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -680,10 +681,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "FAIL: the caller-check does not re-derive: C:\\s\\MS\\tools\\audit\\retirement_caller_check.json"
+        "the retirement caller-check re-derives"
       ],
       "stderr": [],
       "what_it_checks": "the caller-check over every ruled retirement candidacy re-derives — SINCE 2026-08-16 under the ruled reading of `cowork_rulings_2026_08_16_preparation_return.md` §1, so what it re-derives now includes the DERIVED caller-kind classification: which callers are tree enumerations whose namings hold nothing, and which are not. Its reference readings are taken at the commit its own artifact RECORDS, so it passes indefinitely rather than going red the first time anybody writes a file naming a flagged one — the OI-301/OI-305 shape avoided by construction. What is LIVE is the population: the flags are re-imported from the ruling surface's generator on every run and the citation split is re-scanned at the governing record, so a candidacy entering or leaving the ruled set, or a member changing side, halts it instead of being graded silently. Its STOPs ride with it: a flagged class the inventory does not carry, a mixed class the inventory publishes no members for, a member list whose derived count disagrees with the count the inventory publishes, an authored condition and a derived candidacy disagreeing in either direction, a condition whose quoted sentence is no longer in the ruling record, A SENTENCE OF THE RULED READING NO LONGER IN ITS OWN RULING RECORD — so a reading cannot outlive the words that imposed it, the same shape the conditions already carry — a caller kind outside the closed four-value vocabulary, a kind tally that does not account for the callers found, a verdict outside the closed three-value vocabulary, and a tally that does not account for the candidacies"
@@ -944,6 +945,23 @@
       "what_it_checks": "the dated `STATUS.md` entries the executed split left at site — those whose own wording predates or paraphrases the OI-222 pointer remedy, so the pinned measurement did not place them — are still byte-present in `STATUS_ARCHIVE.md` exactly once, still absent from the must-read, and the ONE candidate the reading flagged is still at site. All three directions are proven rather than asserted, and the third is the one that matters most: a check that only proved the move would stay green if a later act quietly archived the flagged span too. The population is DERIVED as the pinned decomposition's own residue — the operative-classed spans at or after the file's first dated entry — and cross-checked in BOTH directions against the split-application artifact, so this act and the split account for the file together. Every entry's text is read from the git OBJECT at the pinned commit, so the claim re-derives forever as later batches legitimately append their own entries (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: a candidate with no authored reading verdict halts it, so no entry is moved unread (Ruling 3's own safeguard); a verdict naming a span the decomposition does not carry halts it; a candidate already in the split's moved set halts it; the two acts not accounting for every span of the decomposition halts it; and an entry not present exactly once in the live file when the move is applied halts it"
     },
     {
+      "tool": "tools/audit/gen_retirement_census_movement.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the retirement-census movement re-derives",
+        "  movements: 41, unclassed: 0",
+        "  (i) the split's effect: CALLER KIND 2, FLAGGED MEMBER 1, HOLDING NAMING 13",
+        "  (ii) the discard's residue: CALLER KIND 2, HOLDING NAMING 2",
+        "  (iii) the tree's ordinary growth: CALLER KIND 13, HOLDING NAMING 8"
+      ],
+      "stderr": [],
+      "what_it_checks": "every difference between the retirement census's outgoing reading and its re-pinned one still places in one of the three classes Ruling 2 names — the split's effect, the discard's residue, and the tree's ordinary growth — at four units of identity, with ZERO fitting none of them. Its STOP is the guard: a movement the derivation cannot place halts it and prints the unplaced records WHOLE, so a fourth class or a too-narrow relation is reported rather than absorbed. Both readings and both trees are read from git OBJECTS at the commits the readings were MEASURED at — never at the working tree and never at the commit that happens to carry an artifact — so the comparison re-derives forever (D-646, the epoch pattern). ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a class is a movement's CAUSE. Each class is a derived RELATION between the movement and the two trees, tested in a fixed order with the first that holds recorded WITH its evidence"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1170,18 +1188,12 @@
     }
   ],
   "summary": {
-    "run": 62,
-    "passing": 60,
-    "failing": 2,
+    "run": 63,
+    "passing": 62,
+    "failing": 1,
     "failing_tools": [
       {
         "tool": "tools/audit/gen_filing_convention_application.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/gen_retirement_caller_check.py",
         "args": [
           "--check"
         ]

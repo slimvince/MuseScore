@@ -26,11 +26,11 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 74,
-    "re_derives_a_live_invariant": 56,
+    "tools_classified": 75,
+    "re_derives_a_live_invariant": 57,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 2
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_finish_line_item1_routes.py",
@@ -51,8 +51,7 @@
     "tools/audit/gen_phase1_finish_line.py"
   ],
   "live_tools_that_fail_and_stay": [
-    "tools/audit/gen_filing_convention_application.py",
-    "tools/audit/gen_retirement_caller_check.py"
+    "tools/audit/gen_filing_convention_application.py"
   ],
   "rows": [
     {
@@ -509,7 +508,15 @@
       "evidence": "gen_retirement_caller_check.py, the `WHY THE READING IS PINNED TO A COMMIT` paragraph of its module docstring and its `THE STOPS` list; `candidacies()`'s two-way reconciliation of the derived flags against the authored conditions",
       "why": "LIVE, on the same ground `gen_test_construction_evidence.py` is. The REFERENCE reading is a statement about one tree and is taken at the commit the committed artifact RECORDS, so it re-derives forever instead of going red the first time anybody writes a file that names a flagged one — the OI-301/OI-305 shape avoided by construction rather than tolerated. What is LIVE is the POPULATION, and it is live twice over: the retirement flags are re-imported from `gen_artifact_inventory_surface.py`'s own authored table on every run, so this check and the ruling surface cannot disagree about what is flagged (#6); and the citation split that decides which members of a mixed class are flagged is RE-SCANNED at the governing record, so a document that starts or stops being cited moves side here exactly as it does there. Its STOPs are demands of the same kind — a flagged class the inventory does not carry, a mixed class it publishes no members for, a derived member count disagreeing with the count the inventory publishes, the authored conditions and the derived candidacies disagreeing in either direction, a condition whose quoted sentence is no longer in the ruling record, a verdict outside the closed vocabulary, and a tally that does not account for the candidacies. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that NONE FOUND means nothing depends on a file. A reference built at run time carries no literal to find and a binary blob is not searched, so the reading is generous in the safe direction and its limits are published above its first use.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "FAIL"
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_retirement_census_movement.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_retirement_census_movement.py, THE THREE CLASSES paragraph of its module docstring; `movements()`, which re-derives every difference on every run; `Classifier.place()`, which tests each relation against the two trees",
+      "why": "LIVE. It asserts an invariant about the tree rather than reporting a dated reading: EVERY difference between the two censuses places in one of the three ruled classes, and a movement that places in none halts it. The population is re-derived on every run from the two readings and the two trees, so a relation that stops holding — a companion edited, a retired entry revived — fails on the day it happens. ★ ONE HALF IS DELIBERATELY FIXED AND IS NOT A DATED READING EITHER: WHICH two readings are compared is the subject of the comparison, so both are read from git objects at the commits they were measured at, and the check re-derives forever instead of going red the next time anything is written. ★ WHAT IT DOES NOT ASSERT: that a class is a movement's cause, or that a movement moves any verdict — a census crossing confers CANDIDACY only, which the artifact states of itself.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
     },
     {
       "tool": "tools/audit/gen_rulings_sort.py",

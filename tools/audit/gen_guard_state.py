@@ -550,6 +550,23 @@ AUTHORED = [
      "decomposition halts it; and an entry not present exactly once in the live file when the "
      "move is applied halts it"),
 
+    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_seventh.md Task 2 ------------------
+    # THE RE-PINNED CENSUS'S MOVEMENT, registered in the act that creates it — the standing
+    # new-tool rule. It takes `--check` and never the bare invocation, for the ordinary reason:
+    # run with no flag it REWRITES its committed artifact.
+    ("tools/audit/gen_retirement_census_movement.py", ["--check"],
+     "every difference between the retirement census's outgoing reading and its re-pinned one "
+     "still places in one of the three classes Ruling 2 names — the split's effect, the discard's "
+     "residue, and the tree's ordinary growth — at four units of identity, with ZERO fitting none "
+     "of them. Its STOP is the guard: a movement the derivation cannot place halts it and prints "
+     "the unplaced records WHOLE, so a fourth class or a too-narrow relation is reported rather "
+     "than absorbed. Both readings and both trees are read from git OBJECTS at the commits the "
+     "readings were MEASURED at — never at the working tree and never at the commit that happens "
+     "to carry an artifact — so the comparison re-derives forever (D-646, the epoch pattern). "
+     "★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a class is a movement's "
+     "CAUSE. Each class is a derived RELATION between the movement and the two trees, tested in a "
+     "fixed order with the first that holds recorded WITH its evidence"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "
