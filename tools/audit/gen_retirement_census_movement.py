@@ -83,13 +83,39 @@ use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 CENSUS = "tools/audit/retirement_caller_check.json"
 OUT = os.path.join(HERE, "retirement_census_movement.json")
 
-# AUTHORED — the commit whose git object carries the OUTGOING census. Task 1 of this dispatch,
-# which is the last commit before the re-pin. An explicit hash, the only git read D-253 permits.
-OUTGOING_COMMIT = "5c38b41166e79faeb8a539994dbee16290404f15"
+# AUTHORED — the commit whose git object carries the OUTGOING census: the last commit before this
+# re-pin, at which the artifact still holds the previous reading. An explicit hash, the only git
+# read D-253 permits.
+#
+# ★ IT MOVES WITH EVERY RE-PIN, AND THE PREVIOUS VALUE IS RECORDED RATHER THAN OVERWRITTEN (#12).
+# The seventh batch's Task 2 compared against `5c38b41166` (its own Task 1's commit, at which the
+# census still held the reading measured at `6529d10ae4`). This batch's Task 3 compares against
+# Task 2's commit below, at which the census still holds the reading measured at `5c38b41166`.
+OUTGOING_COMMIT = "b0b51ee657e2fb988a999215a4c2bef567958756"
+OUTGOING_COMMIT_HISTORY = [
+    {"dispatch": "cc_instruction_preparation_seventh.md, Task 2",
+     "outgoing_commit": "5c38b41166e79faeb8a539994dbee16290404f15",
+     "the_reading_it_carried_was_measured_at": "6529d10ae4"},
+]
 
 GROWTH = "(iii) the tree's ordinary growth"
 SPLIT = "(i) the split's effect"
 DISCARD = "(ii) the discard's residue"
+
+# ★★ A FOURTH CLASS, ADDED 2026-08-17 FOR THE EIGHTH BATCH'S RE-PIN, AND DECLARED RATHER THAN
+# TAKEN SILENTLY. The three classes above were authored for the SEVENTH batch's re-pin, whose
+# causes were the split, the earlier discard and the tree's growth. THIS re-pin has a fourth cause
+# and it is the act the batch was dispatched to perform: the census is regenerated under the four
+# USER-RULED inputs of the 2026-08-17 callers sitting — the nine KIND-UNDERIVABLE callers ruled
+# ENUMERATOR-class, and the ruling that a prose citation and a data-record naming hold nothing.
+# A naming that stopped HOLDING for that reason is none of the three: it did not leave a governing
+# file, it did not leave a rendered register surface, and neither it nor its caller left the tree.
+#
+# ★ IT IS DERIVED, NOT AUTHORED PER MOVEMENT, on the same shape as the other three: the relation
+# is tested against the NEW census's OWN published fields, which name every such naming, with the
+# ruled input that placed it quoted from the artifact. So a movement placed here can be checked at
+# the artifact rather than trusted, and a movement the relation does not reach still STOPS.
+RULED = "(iv) the callers sitting's ruled inputs"
 
 # AUTHORED — where an archived span went. The five parent/companion pairs the ruled split created
 # or continued; a naming that left a parent and is byte-present in its companion left BY THAT ACT.
@@ -158,6 +184,36 @@ def verdicts(census: dict) -> dict[str, str]:
     return {row["candidacy"]: row["verdict"] for row in census["candidacies"]}
 
 
+RULED_NOTHING = "namings_whose_HOLDER_KIND_was_ruled_to_hold_nothing_published_not_dropped"
+RULED_ENUMERATOR = "enumerator_namings_published_as_data_holding_nothing"
+USER_RULED_MARK = "USER-RULED at the 2026-08-17 callers sitting"
+
+
+def ruled_to_hold_nothing(census: dict) -> dict[tuple[str, str], str]:
+    """Every (flagged file, caller) pair the callers sitting's inputs stopped from holding.
+
+    Read from the NEW census's own published fields — the two the regeneration added and the one
+    it already carried — so the relation is a fact about the artifact rather than a judgment here.
+    """
+    out: dict[tuple[str, str], str] = {}
+    for row in census["candidacies"]:
+        for member in row["every_member"]:
+            for entry in member.get(RULED_NOTHING, []):
+                out[(member["path"], entry["caller"])] = entry["why_it_holds_nothing"]
+            for entry in member.get(RULED_ENUMERATOR, []):
+                if entry.get("how_the_caller_kind_was_settled") == USER_RULED_MARK:
+                    out[(member["path"], entry["caller"])] = (
+                        USER_RULED_MARK + " (§1): the caller is one of the nine the derivation "
+                        "could not place, ruled ENUMERATOR-class at its published reason, so its "
+                        "namings are published as data and hold nothing")
+    return out
+
+
+def candidacy_of_member(census: dict) -> dict[str, str]:
+    return {member["path"]: row["candidacy"]
+            for row in census["candidacies"] for member in row["every_member"]}
+
+
 def scalars(census: dict) -> dict[str, object]:
     kinds = census[KINDS]
     return {
@@ -198,8 +254,10 @@ class Classifier:
     """The three ruled classes, derived from the tree. Nothing is placed by hand."""
 
     def __init__(self, added: set[str], removed: set[str],
-                 old_commit: str, new_commit: str) -> None:
+                 old_commit: str, new_commit: str,
+                 ruled_nothing: dict[tuple[str, str], str] | None = None) -> None:
         self.added, self.removed = added, removed
+        self.ruled_nothing = ruled_nothing or {}
         # BOTH sides are read at the commits the two READINGS were MEASURED at, never at the
         # working tree and never at the commit that happens to carry an artifact. A relation
         # between two measurements must be taken at the two trees they describe, or it is a
@@ -272,12 +330,26 @@ class Classifier:
                 f"commit and IS named by one at the new one — the governing record grew to name "
                 f"it")
 
-    def retired_text(self) -> str:
-        if "all" not in self._retired:
-            data = json.loads(read(REGISTER_DATA))
-            self._retired["all"] = json.dumps(data.get("retired_entries", {}),
-                                              ensure_ascii=False)
-        return self._retired["all"]
+    def retired_text(self, when: str = "now") -> str:
+        """The register's `retired_entries` block, at one of the two measured commits.
+
+        ★ TAKEN AT THE COMMITS RATHER THAN AT THE WORKING TREE, AND THE REASON IS THE SAME ONE THE
+        COMPANION SPLIT USES. The block now holds MORE THAN ONE retirement — the fifth batch's
+        soft-discard and the eighth batch's residue discard — so a single read of the tree can say
+        that a subject is retired but not BY WHICH ACT. Reading it at both measured commits
+        separates them: a subject already in the block at the outgoing reading's own commit was
+        retired by the earlier act; one that reaches it only at the new commit was retired by the
+        later one.
+        """
+        if when not in self._retired:
+            source = (self.text_now(REGISTER_DATA) if when == "now"
+                      else self.text_before(REGISTER_DATA))
+            try:
+                data = json.loads(source) if source else {}
+            except json.JSONDecodeError:
+                data = {}
+            self._retired[when] = json.dumps(data.get("retired_entries", {}), ensure_ascii=False)
+        return self._retired[when]
 
     @staticmethod
     def probe_of(line: str) -> str:
@@ -298,6 +370,19 @@ class Classifier:
     def place(self, subject: str, direction: str, line: str | None,
               named: str | None = None) -> dict:
         """`subject` is the path the movement is about; `line` its naming text if it had one."""
+        # ★ THE RULED RELATION IS TESTED FIRST, and only where the NEW census still PUBLISHES the
+        # naming. A pair that appears in one of the ruled-nothing fields is one the scan still
+        # finds and the ruling stopped from holding — so neither the caller nor the named file can
+        # have left the tree, and there is no relation for it to compete with.
+        if direction == "removed" and named is not None:
+            why = self.ruled_nothing.get((named, subject))
+            if why:
+                return {"the_class": RULED,
+                        "the_evidence": "the naming is still found at the new commit and is "
+                                        "PUBLISHED in the new census beside the member it names — "
+                                        "what changed is that it no longer HOLDS, by a ruled "
+                                        f"input: {why}",
+                        "the_ruled_input_that_placed_it": why}
         if direction == "added" and subject in self.added:
             return {"the_class": GROWTH,
                     "the_evidence": f"`{subject}` was ADDED to the tracked tree between the two "
@@ -329,14 +414,29 @@ class Classifier:
                                         f"`{COMPANION[subject]}` at the new commit, so the span "
                                         f"carrying it was archived. Archived by: {which}",
                         "which_act_archived_it": which}
-            if REGISTER_RENDERED.match(subject) and named and named in self.retired_text():
+            # ★ THE FLAGGED FILE IS SOUGHT BY ITS BASE NAME, NOT BY ITS PATH, and the correction is
+            # the census's own test rather than a widening invented here (#6): the census defines a
+            # REFERENCE as a base-name match, and a register entry that names a measurement tool
+            # writes the tool's name, not its directory. Measured rather than reasoned about — with
+            # the path test this relation missed a naming that left `decisions/group_H.md` because
+            # the entry carrying it (D-399, whose verbatim names the tool) was retired by this
+            # batch's own Task 2, and the movement fell through to the content-level growth
+            # relation, which is true of it and is not its cause.
+            base = os.path.basename(named) if named else None
+            if REGISTER_RENDERED.match(subject) and base and base in self.retired_text():
+                which = ("the fifth batch's soft-discard — the subject was already inside the "
+                         "retired block at the outgoing reading's own commit"
+                         if base in self.retired_text("before") else
+                         "THIS batch's Task 2, the residue sitting's discard — the subject reaches "
+                         "the retired block only at the new commit")
                 return {"the_class": DISCARD,
                         "the_evidence": "the naming left a RENDERED register surface while its "
                                         "subject is still named inside the register data's "
                                         "`retired_entries` block, whose own words are that "
                                         "nothing in it is rendered into the INDEX or the group "
                                         "files — so the entry carrying the naming was retired by "
-                                        "the soft-discard"}
+                                        f"a soft-discard. Retired by: {which}",
+                        "which_act_retired_it": which}
 
         # A naming that ARRIVED in an archive companion arrived because a span was archived into
         # it. Tested before the growth relation below, so an archiving act is never reported as a
@@ -388,6 +488,7 @@ class Classifier:
 
 def movements(old: dict, new: dict, cls: Classifier) -> tuple[list[dict], list[dict]]:
     rows, unclassed = [], []
+    member_candidacy = candidacy_of_member(new)
 
     def add(unit: str, identity: str, direction: str, subject: str,
             before, after, line: str | None = None, named: str | None = None,
@@ -411,14 +512,32 @@ def movements(old: dict, new: dict, cls: Classifier) -> tuple[list[dict], list[d
         add("HOLDING NAMING", f"{key[0]} held by {key[1]}", "added", key[1], "does not hold",
             "holds", line=new_n[key], named=key[0])
 
+    # ★ A MEMBER VERDICT THAT MOVED BECAUSE ITS OWN HOLDINGS WERE RULED TO HOLD NOTHING INHERITS
+    # THAT CLASS, and the inheritance is derived rather than authored: the member's holdings are
+    # already placed above, so its own movement takes their class instead of being placed again.
+    ruled_members = {path for (path, _caller) in cls.ruled_nothing}
+
+    def add_member(path: str, direction: str, before, after) -> None:
+        if direction == "changed" and path in ruled_members:
+            rows.append({
+                "the_unit": "FLAGGED MEMBER", "the_identity": path,
+                "the_direction": direction, "the_subject_path": path,
+                "before": before, "after": after, "the_class": RULED,
+                "the_evidence": "its member verdict moved because the namings that held it were "
+                                "ruled to hold nothing; each of those namings is placed above and "
+                                "is still published beside this member in the new census",
+            })
+            return
+        add("FLAGGED MEMBER", path, direction, path, before, after, named=path)
+
     old_m, new_m = flagged_members(old), flagged_members(new)
     for path in sorted(set(old_m) - set(new_m)):
-        add("FLAGGED MEMBER", path, "removed", path, old_m[path], None, named=path)
+        add_member(path, "removed", old_m[path], None)
     for path in sorted(set(new_m) - set(old_m)):
-        add("FLAGGED MEMBER", path, "added", path, None, new_m[path], named=path)
+        add_member(path, "added", None, new_m[path])
     for path in sorted(set(old_m) & set(new_m)):
         if old_m[path] != new_m[path]:
-            add("FLAGGED MEMBER", path, "changed", path, old_m[path], new_m[path], named=path)
+            add_member(path, "changed", old_m[path], new_m[path])
 
     # ★ CALLER KIND is placed LAST and by INHERITANCE, because a caller's kind does not move on
     # its own: it appears or vanishes because that caller started or stopped naming a flagged
@@ -435,10 +554,27 @@ def movements(old: dict, new: dict, cls: Classifier) -> tuple[list[dict], list[d
         (rec["the_subject_path"], rec["the_direction"]): rec["the_class"]
         for rec in rows if rec["the_unit"] == "FLAGGED MEMBER"}
 
+    ruled_callers = {caller: why for (_member, caller), why in cls.ruled_nothing.items()}
+
     def add_kind(caller: str, direction: str, before, after) -> None:
         rec = {"the_unit": "CALLER KIND", "the_identity": caller, "the_direction": direction,
                "the_subject_path": caller, "before": before, "after": after}
         side = direction if direction != "changed" else "added"
+
+        # ★ A KIND THAT *CHANGED* RATHER THAN APPEARED OR VANISHED CANNOT INHERIT FROM ONE SIDE.
+        # The inheritance below reads the namings that put a caller INTO or OUT OF the table; a
+        # caller whose kind moved while it kept naming the same files has no such naming, and the
+        # seventh batch never met the case because no kind changed at that re-pin. Here nine did,
+        # by the ruled input that changed them, so the class is taken from the same published
+        # evidence that placed their namings — derived at the artifact, not authored here.
+        if direction == "changed" and caller in ruled_callers:
+            rec["the_class"] = RULED
+            rec["the_evidence"] = ("this caller's kind moved by a ruled input, and the same input "
+                                   "is published in the new census beside every naming of its "
+                                   f"that stopped holding: {ruled_callers[caller]}")
+            rec["the_ruled_input_that_placed_it"] = ruled_callers[caller]
+            rows.append(rec)
+            return
 
         placed = cls.place(caller, direction, None, None)
         if placed:
@@ -469,7 +605,7 @@ def movements(old: dict, new: dict, cls: Classifier) -> tuple[list[dict], list[d
             # runs from the specific cause to the general one — while EVERY class it inherits is
             # published beside the verdict. Counting it once keeps the tally a partition; printing
             # all of them keeps the mixture visible, which a single label would hide.
-            rec["the_class"] = next(k for k in (SPLIT, DISCARD, GROWTH) if k in classes)
+            rec["the_class"] = next(k for k in (RULED, SPLIT, DISCARD, GROWTH) if k in classes)
             rec["the_evidence"] = (f"inherited from {inherited_from} — a caller's kind appears or "
                                    f"vanishes with the namings that put it in the table")
             if len(classes) > 1:
@@ -492,11 +628,41 @@ def movements(old: dict, new: dict, cls: Classifier) -> tuple[list[dict], list[d
         if old_k[caller] != new_k[caller]:
             add_kind(caller, "changed", old_k[caller], new_k[caller])
 
+    # ★ A CANDIDACY VERDICT IS PLACED LAST AND BY INHERITANCE, for the reason the caller kind is:
+    # a candidacy's verdict does not move on its own — it moves because its MEMBERS' verdicts did,
+    # and those are already placed above. The classes its members carry are read off the rows just
+    # written, so the placement stays derived; a mixed inheritance is recorded exactly as it is for
+    # a caller kind, taking the ruling's own order from the specific cause to the general.
+    by_member_class: dict[str, set[str]] = {}
+    for rec in rows:
+        if rec["the_unit"] == "FLAGGED MEMBER":
+            candidacy = member_candidacy.get(rec["the_subject_path"])
+            if candidacy:
+                by_member_class.setdefault(candidacy, set()).add(rec["the_class"])
+
     old_v, new_v = verdicts(old), verdicts(new)
     for candidacy in sorted(set(old_v) | set(new_v)):
-        if old_v.get(candidacy) != new_v.get(candidacy):
-            add("CANDIDACY VERDICT", candidacy, "changed", candidacy,
-                old_v.get(candidacy), new_v.get(candidacy))
+        if old_v.get(candidacy) == new_v.get(candidacy):
+            continue
+        rec = {"the_unit": "CANDIDACY VERDICT", "the_identity": candidacy,
+               "the_direction": "changed", "the_subject_path": candidacy,
+               "before": old_v.get(candidacy), "after": new_v.get(candidacy)}
+        classes = by_member_class.get(candidacy, set())
+        if classes:
+            rec["the_class"] = next(k for k in (RULED, SPLIT, DISCARD, GROWTH) if k in classes)
+            rec["the_evidence"] = ("inherited from the movements of this candidacy's own members — "
+                                   "a candidacy's verdict appears or moves with the member "
+                                   "verdicts that produce it")
+            if len(classes) > 1:
+                rec["★_it_inherits_more_than_one_class"] = sorted(classes)
+                rec["★_why_this_one"] = ("the order runs from the specific cause to the general, "
+                                         "so a movement with a specific cause among its causes is "
+                                         "not merely growth; every class it inherits is published "
+                                         "above")
+            rows.append(rec)
+        else:
+            rec["what_it_could_inherit_from_carries"] = sorted(classes)
+            unclassed.append(rec)
 
     return rows, unclassed
 
@@ -509,7 +675,7 @@ def build() -> dict:
         raise Stop(f"both readings are measured at {old_at[:10]} — there is no re-pin to report")
 
     added, removed = tree_delta(old_at, new_at)
-    cls = Classifier(added, removed, old_at, new_at)
+    cls = Classifier(added, removed, old_at, new_at, ruled_to_hold_nothing(new))
     rows, unclassed = movements(old, new, cls)
     if unclassed:
         # The STOP prints the unplaced records WHOLE. A halt that names a count and five
@@ -538,14 +704,18 @@ def build() -> dict:
             "deletes nothing, and it moves no verdict — a census crossing confers CANDIDACY only. "
             "Every figure here is computed; none is transcribed (D-431).",
         "generated_by": "tools/audit/gen_retirement_census_movement.py",
-        "dispatch": "cc_instruction_preparation_seventh.md, Task 2",
+        "dispatch": "cc_instruction_preparation_eighth.md, Task 3; first run "
+                    "cc_instruction_preparation_seventh.md, Task 2",
         "the_ruling": "Ruling 2 of cowork_rulings_2026_08_17_sixth_return.md: the census is "
                       "regenerated fresh at this task's own commit, every movement published and "
                       "classed — the split's effect, the discard's residue, and the tree's "
-                      "ordinary growth separated — and the artifact re-pinned there.",
+                      "ordinary growth separated — and the artifact re-pinned there. This run "
+                      "carries it forward for the eighth batch's re-pin, which regenerates the "
+                      "census under the four USER-RULED inputs of the 2026-08-17 callers sitting.",
         "the_outgoing_reading": {
             "measured_at_commit": old_at,
             "read_from_the_git_object_at": OUTGOING_COMMIT,
+            "★_the_previous_comparisons_this_tool_made": OUTGOING_COMMIT_HISTORY,
         },
         "the_incoming_reading": {"measured_at_commit": new_at},
         "★_what_the_classes_are_and_are_not":

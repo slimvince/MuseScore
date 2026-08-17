@@ -984,10 +984,10 @@
       "verdict": "PASS",
       "stdout": [
         "the retirement-census movement re-derives",
-        "  movements: 41, unclassed: 0",
-        "  (i) the split's effect: CALLER KIND 2, FLAGGED MEMBER 1, HOLDING NAMING 13",
-        "  (ii) the discard's residue: CALLER KIND 2, HOLDING NAMING 2",
-        "  (iii) the tree's ordinary growth: CALLER KIND 13, HOLDING NAMING 8"
+        "  movements: 855, unclassed: 0",
+        "  (ii) the discard's residue: HOLDING NAMING 1",
+        "  (iii) the tree's ordinary growth: CALLER KIND 3, HOLDING NAMING 164",
+        "  (iv) the callers sitting's ruled inputs: CALLER KIND 9, FLAGGED MEMBER 146, HOLDING NAMING 532"
       ],
       "stderr": [],
       "what_it_checks": "every difference between the retirement census's outgoing reading and its re-pinned one still places in one of the three classes Ruling 2 names — the split's effect, the discard's residue, and the tree's ordinary growth — at four units of identity, with ZERO fitting none of them. Its STOP is the guard: a movement the derivation cannot place halts it and prints the unplaced records WHOLE, so a fourth class or a too-narrow relation is reported rather than absorbed. Both readings and both trees are read from git OBJECTS at the commits the readings were MEASURED at — never at the working tree and never at the commit that happens to carry an artifact — so the comparison re-derives forever (D-646, the epoch pattern). ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a class is a movement's CAUSE. Each class is a derived RELATION between the movement and the two trees, tested in a fixed order with the first that holds recorded WITH its evidence"

@@ -65,6 +65,27 @@ and what it forbids:
     mandatory-read or boot listing, a prose citation — and **the follow-up question, whether a
     prose citation holds, is DEFERRED to that evidence and is NOT decided here.**
 
+★★ THE DEFERRED QUESTION IS ANSWERED, AND THE NINE UNDERIVABLE CALLERS ARE RULED — 2026-08-17,
+`cowork_rulings_2026_08_17_callers_sitting.md`, held at the census's own published evidence.  Four
+rulings, all four USER-RULED INPUTS rather than derived classifications, and each is marked as such
+wherever it changes a verdict here:
+
+  * **the nine KIND-UNDERIVABLE callers are ENUMERATOR-class** (§1), *"on the published
+    evidence ... Their namings are published as data and hold nothing"*.  The membership is
+    DERIVED from the census reading the sitting was held over, read at the git object of the
+    commit that carries it, and each derived caller is then LOCATED in the sitting record itself —
+    never retyped;
+  * **a prose citation does NOT hold a candidate** (§2) — the deferred question, answered;
+  * **a naming outside the ruling's three kinds — a data record — does NOT hold** (§3), on the
+    same ground and more strongly;
+  * **a tool reading the file by name, and a mandatory-read or boot listing, HOLD** (§4), *"under
+    every part of this sitting"* — each breaks in fact when the file moves.
+
+★ WHAT §1 DOES NOT DO, in the ruling's own words: *"A future caller the derivation cannot place
+still STOPS to the user; nothing here creates a precedent for guessing."*  So the override reaches
+exactly the nine callers the sitting read and no others: a caller this derivation cannot place
+today is KIND-UNDERIVABLE, HOLDS, and returns to the user exactly as before.
+
 ★ HOW A CALLER'S KIND IS DERIVED, in two links, each published per caller with its evidence.  The
 dispatch's own assumption A2 names both: *"a generated file names its generator ... and whether
 that generator enumerates the tracked tree is readable at the generator's own source"*.
@@ -131,7 +152,13 @@ use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 ROOT = Path(__file__).resolve().parent.parent.parent
 RULING = ROOT / "cowork_rulings_2026_08_15_inventory_sitting.md"
 READING_RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+CALLERS_RULING = ROOT / "cowork_rulings_2026_08_17_callers_sitting.md"
 OUT = ROOT / "tools" / "audit" / "retirement_caller_check.json"
+
+# The commit whose git OBJECT carries the census reading the callers sitting was held over. Its
+# KIND-UNDERIVABLE list is exactly the population §1 rules on, so the nine are DERIVED from it
+# rather than typed here. An explicit hash, the only git read D-253 permits.
+CALLERS_RULING_EVIDENCE_COMMIT = "e94f765c25b49d2c9ffa47b1a296302debc25ce6"
 
 PASSES = "PASSES-THE-CHECK"
 HELD_CALLERS = "HELD-BY-CALLERS"
@@ -156,6 +183,14 @@ HOLDER_MANDATORY = "a mandatory-read or boot listing"
 HOLDER_PROSE = "a prose citation"
 HOLDER_OTHER = "outside the three kinds the ruling names"
 HOLDER_KINDS = (HOLDER_TOOL, HOLDER_MANDATORY, HOLDER_PROSE, HOLDER_OTHER)
+
+# ── THE USER-RULED HALF of the holder vocabulary (the callers sitting, 2026-08-17, §§2-4) ────────
+# Exactly two of the four HOLD. This is a RULED input, not a derivation: the tool derives which
+# kind a holder is, and the ruling decides which kinds hold. Both halves are published per member.
+HOLDER_KINDS_THAT_HOLD = (HOLDER_TOOL, HOLDER_MANDATORY)
+HOLDER_KINDS_THAT_HOLD_NOTHING = (HOLDER_PROSE, HOLDER_OTHER)
+USER_RULED = "USER-RULED at the 2026-08-17 callers sitting"
+DERIVED_KIND = "derived by this tool's own two links"
 
 
 class Stop(Exception):
@@ -347,6 +382,84 @@ def locate_reading() -> dict[str, str]:
         raise Stop("a sentence of the ruled reading is no longer in its ruling record, so the "
                    f"reading would outlive the words that imposed it: {missing}")
     return dict(READING_SENTENCES)
+
+
+# AUTHORED and published: the sentences of the CALLERS SITTING this run's four USER-RULED inputs
+# are taken from, LOCATED in that record on every run — a ruling may not outlive its own words.
+CALLERS_SENTENCES = {
+    "the nine are ENUMERATOR-class":
+        "All nine are ruled ENUMERATOR-class on the published evidence",
+    "what their namings do":
+        "Their namings are published as data and hold nothing.",
+    "a prose citation":
+        "The 356 prose-citation namings stay published; they hold nothing.",
+    "the fourth bucket":
+        "hold nothing, on the same ground as §2 and more strongly",
+    "what continues to hold":
+        "A tool reading the file by name, and a mandatory-read or boot listing, HOLD under every "
+        "part of this sitting",
+    "what it does not license":
+        "A future caller the derivation cannot place still STOPS to the user; nothing here creates "
+        "a precedent for guessing.",
+}
+
+
+def locate_callers_ruling() -> dict[str, str]:
+    """Every sentence of the callers sitting, LOCATED in its record. A missing one STOPS."""
+    if not CALLERS_RULING.exists():
+        raise Stop(f"the callers sitting's ruling record is missing: {CALLERS_RULING}")
+    text = normalized(CALLERS_RULING.read_text(encoding="utf-8"))
+    missing = [name for name, quote in CALLERS_SENTENCES.items() if normalized(quote) not in text]
+    if missing:
+        raise Stop("a sentence of the callers sitting is no longer in its ruling record, so this "
+                   f"run's ruled inputs would outlive the words that imposed them: {missing}")
+    return dict(CALLERS_SENTENCES)
+
+
+def user_ruled_enumerators() -> tuple[set[str], list[dict]]:
+    """The nine callers §1 rules ENUMERATOR-class — DERIVED from the evidence, never typed here.
+
+    ★ WHERE THE MEMBERSHIP COMES FROM, and why it is not a list in this file. The sitting was held
+    at the census's own published KIND-UNDERIVABLE population, read by the writing side at the git
+    object of the commit that carries that reading. So the membership IS that list, taken from the
+    same object; nothing is retyped and nothing is matched by hand.
+
+    ★ AND THE RECORD IS ASKED TO AGREE. Each derived caller's base name is then LOCATED in the
+    sitting record itself. A derived set the record does not describe halts this tool instead of
+    ruling on a population the user never saw — which is the same shape every other ruled input
+    here carries, applied to a membership rather than to a sentence.
+    """
+    raw = git("show", f"{CALLERS_RULING_EVIDENCE_COMMIT}:tools/audit/retirement_caller_check.json")
+    if not raw.strip():
+        raise Stop("the census reading the callers sitting was held over is not in the tree at "
+                   f"{CALLERS_RULING_EVIDENCE_COMMIT[:10]} — §1's population cannot be derived")
+    evidence = json.loads(raw)
+    listed = evidence["★_the_caller_kind_classification"][
+        "★_the_KIND_UNDERIVABLE_list_returning_to_the_user"]["callers"]
+    if not listed:
+        raise Stop("the census reading the sitting was held over carries no KIND-UNDERIVABLE "
+                   "caller, so §1 would rule on an empty population")
+
+    record = CALLERS_RULING.read_text(encoding="utf-8")
+    rows, absent = [], []
+    for entry in listed:
+        path = entry["caller"]
+        base = posixpath.basename(path)
+        if base not in record:
+            absent.append(path)
+            continue
+        rows.append({
+            "caller": path,
+            "how_the_kind_was_settled": USER_RULED,
+            "the_ruling": "cowork_rulings_2026_08_17_callers_sitting.md §1",
+            "the_reason_the_derivation_published_when_the_sitting_read_it": entry["why"],
+            "located_in_the_sitting_record_by": base,
+        })
+    if absent:
+        raise Stop(f"the derived §1 population names {absent}, which the callers sitting's own "
+                   f"record does not describe — the derivation and the ruling have drifted apart, "
+                   f"and this tool does not rule on a population the user never saw")
+    return {r["caller"] for r in rows}, rows
 
 
 def _norm_path(value: str) -> str:
@@ -717,14 +830,35 @@ def producers_of(path: str, facts: dict[str, SourceFacts], declared: list[dict],
 
 def classify_caller(path: str, facts: dict[str, SourceFacts], enumerating: dict[str, dict],
                     ambiguous: dict[str, dict], declared: list[dict], rendered_from: list[dict],
-                    tracked: set[str], enumerator_artifacts: set[str]) -> dict:
+                    tracked: set[str], enumerator_artifacts: set[str],
+                    ruled_enumerators: set[str]) -> dict:
     """ONE caller's kind, with the evidence for each link. Exactly one kind, never a default."""
     base = posixpath.basename(path)
     producers, unresolved = producers_of(path, facts, declared, tracked)
 
+    # ★ THE USER-RULED INPUT COMES FIRST, AND IT IS MARKED AS ONE. §1 of the callers sitting ruled
+    # the nine callers this derivation could not place ENUMERATOR-class at their published reasons.
+    # It is a RULING over a named population, not a rule this tool derives, so the verdict carries
+    # `how_the_kind_was_settled` and every derived verdict carries it too — a reader can tell which
+    # is which without reading this file. It reaches those nine and no others: a caller the
+    # derivation cannot place TODAY still returns to the user, which §1 says in terms.
+    if path in ruled_enumerators:
+        return {"caller_kind": KIND_ENUMERATOR,
+                "how_the_kind_was_settled": USER_RULED,
+                "producers": producers,
+                "why": "USER-RULED at the 2026-08-17 callers sitting (§1): the derivation could "
+                       "not place this caller, the reason it published was put to the user with "
+                       "the eight others, and the user ruled all nine ENUMERATOR-class on that "
+                       "published evidence — five produced by generators consuming a "
+                       "tree-enumeration product, four named as write targets by enumerating "
+                       "generators through paths the parser could not resolve. Its namings are "
+                       "published as data and hold nothing.",
+                "holds": False}
+
     established = [p for p in producers if p["generator"] in enumerating]
     if established:
-        return {"caller_kind": KIND_ENUMERATOR, "producers": producers,
+        return {"caller_kind": KIND_ENUMERATOR, "how_the_kind_was_settled": DERIVED_KIND,
+                "producers": producers,
                 "why": "its generator enumerates the tracked tree, so it names paths because they "
                        "exist rather than because anyone chose them: "
                        + "; ".join(f"{p['generator']} — {enumerating[p['generator']]['route']}"
@@ -736,7 +870,8 @@ def classify_caller(path: str, facts: dict[str, SourceFacts], enumerating: dict[
 
     rendered = [r for r in rendered_from if _norm_path(r["source"]) in enumerator_artifacts]
     if rendered:
-        return {"caller_kind": KIND_ENUMERATOR, "producers": producers,
+        return {"caller_kind": KIND_ENUMERATOR, "how_the_kind_was_settled": DERIVED_KIND,
+                "producers": producers,
                 "why": "it DECLARES ITSELF rendered from an artifact that is itself an "
                        "enumeration of the tracked tree — the ruling's *or a surface rendered from "
                        "one* limb, taken from the surface's own words: "
@@ -759,18 +894,21 @@ def classify_caller(path: str, facts: dict[str, SourceFacts], enumerating: dict[
                     f"resolved — so it cannot be established that nothing produces it")
 
     if unresolved:
-        return {"caller_kind": KIND_UNDERIVABLE, "producers": producers,
+        return {"caller_kind": KIND_UNDERIVABLE, "how_the_kind_was_settled": DERIVED_KIND,
+                "producers": producers,
                 "why": "the derivation reached a producer relation it could not resolve, and the "
                        "ruling forbids guessing: " + "; ".join(sorted(set(unresolved))),
                 "holds": True}
 
     if not producers:
-        return {"caller_kind": KIND_NOT_GENERATED, "producers": [],
+        return {"caller_kind": KIND_NOT_GENERATED, "how_the_kind_was_settled": DERIVED_KIND,
+                "producers": [],
                 "why": "no tracked Python source writes this path and the caller declares no "
                        "generator, so the record's own machinery does not produce it",
                 "holds": True}
 
-    return {"caller_kind": KIND_GENERATED_NOT_ENUMERATING, "producers": producers,
+    return {"caller_kind": KIND_GENERATED_NOT_ENUMERATING, "how_the_kind_was_settled": DERIVED_KIND,
+            "producers": producers,
             "why": "a generator is established for it and no generator of it enumerates the "
                    "tracked tree, so its naming carries information about a dependency",
             "holds": True}
@@ -982,6 +1120,9 @@ def build(commit: str) -> dict:
 
     quotes = locate_conditions()
     reading = locate_reading()
+    callers_ruling = locate_callers_ruling()
+    ruled_enumerator_rows_all: list[dict]
+    ruled_enumerators, ruled_enumerator_rows_all = user_ruled_enumerators()
     population = candidacies(inv)
     owner = class_of_every_path(inv)
 
@@ -1008,8 +1149,12 @@ def build(commit: str) -> dict:
     callers_found = sorted({p for base in bases for p in hits.get(base, set())})
     kinds = {path: classify_caller(path, facts, enumerating, ambiguous,
                                    declarations.get(path, []), rendered_from.get(path, []),
-                                   tracked, enumerator_artifacts)
+                                   tracked, enumerator_artifacts, ruled_enumerators)
              for path in callers_found}
+    # The ruled nine, restricted to the callers this run actually found. A ruled caller the scan no
+    # longer sees is published rather than dropped, so the ruling's reach stays readable (#12).
+    ruled_enumerator_rows = [r for r in ruled_enumerator_rows_all if r["caller"] in kinds]
+    ruled_but_not_found = [r["caller"] for r in ruled_enumerator_rows_all if r["caller"] not in kinds]
     unknown_kind = sorted(k["caller_kind"] for k in kinds.values()
                           if k["caller_kind"] not in CALLER_KINDS)
     if unknown_kind:
@@ -1028,19 +1173,48 @@ def build(commit: str) -> dict:
             outside = [p for p in remainder if p not in every_member]
             enumerator_namings = [p for p in outside
                                   if kinds[p]["caller_kind"] == KIND_ENUMERATOR]
-            holders = [p for p in outside if kinds[p]["caller_kind"] in KINDS_THAT_HOLD]
+            by_kind = [p for p in outside if kinds[p]["caller_kind"] in KINDS_THAT_HOLD]
+            # ★ THE SECOND FILTER IS THE CALLERS SITTING'S §§2-4, AND IT IS A RULED INPUT.
+            # Surviving the caller-kind derivation is no longer enough: of the four HOLDER kinds
+            # the ruling's own vocabulary carries, exactly two HOLD — a tool reading the file by
+            # name, and a mandatory-read or boot listing. A prose citation and a naming outside
+            # those three kinds stay PUBLISHED and hold nothing.
+            holders = [p for p in by_kind
+                       if holder_kind(p, governing, governing_dirs) in HOLDER_KINDS_THAT_HOLD]
+            not_holding_by_holder_kind = [p for p in by_kind if p not in holders]
             members.append({
                 "path": path,
                 "its_base_name_is_unique_in_the_tracked_tree": base_counts[base] == 1,
                 "holding_callers": [
                     {"caller": p,
                      "caller_kind": kinds[p]["caller_kind"],
+                     "how_the_caller_kind_was_settled": kinds[p]["how_the_kind_was_settled"],
                      "why_this_kind": kinds[p]["why"],
                      "holder_kind": holder_kind(p, governing, governing_dirs),
+                     "why_this_holder_kind_HOLDS": USER_RULED + " (§4): a tool reading the file by "
+                                                   "name, and a mandatory-read or boot listing, "
+                                                   "HOLD — each breaks in fact when the file moves",
                      "the_line_the_naming_was_found_on": evidence.get((base, p), "")}
                     for p in holders],
+                "namings_whose_HOLDER_KIND_was_ruled_to_hold_nothing_published_not_dropped": [
+                    {"caller": p,
+                     "caller_kind": kinds[p]["caller_kind"],
+                     "holder_kind": holder_kind(p, governing, governing_dirs),
+                     "why_it_holds_nothing": USER_RULED
+                     + (" (§2): archive-with-record keeps every citation resolvable — the dated "
+                        "pointer takes a reader to the moved target — and the prose-naming "
+                        "population moves with the record's layout rather than with any dependency "
+                        "(finding F35, measured twice in both directions)"
+                        if holder_kind(p, governing, governing_dirs) == HOLDER_PROSE else
+                        " (§3): a data record that names a flagged file without reading it as a "
+                        "tool and without citing it as prose holds nothing, on the same ground as "
+                        "§2 and more strongly — such namings are overwhelmingly enumeration "
+                        "echoes"),
+                     "the_line_the_naming_was_found_on": evidence.get((base, p), "")}
+                    for p in not_holding_by_holder_kind],
                 "enumerator_namings_published_as_data_holding_nothing": [
                     {"caller": p,
+                     "how_the_caller_kind_was_settled": kinds[p]["how_the_kind_was_settled"],
                      "how_its_generator_enumerates": kinds[p].get(
                          "how_the_generator_enumerates", []),
                      "the_line_the_naming_was_found_on": evidence.get((base, p), "")}
@@ -1051,15 +1225,17 @@ def build(commit: str) -> dict:
             })
             if holders:
                 held.append(path)
-            elif inside or fellow or enumerator_namings:
+            elif inside or fellow or enumerator_namings or not_holding_by_holder_kind:
                 internal_only.append(path)
 
         if held:
             verdict = HELD_CALLERS
             ground = ("at least one member is named at the measured commit by a caller that HOLDS "
-                      "under the ruled reading — a caller outside its own class, not a fellow "
-                      "flagged file, and not established as an enumerator; each is listed per "
-                      "member with its kind, its holder kind and the line the naming was found on")
+                      "under the ruled reading AND under the callers sitting's ruled holder kinds "
+                      "— a caller outside its own class, not a fellow flagged file, not an "
+                      "enumerator, and reading the file as a tool or listing it as a mandatory "
+                      "read; each is listed per member with its kind, its holder kind and the "
+                      "line the naming was found on")
         elif condition != NO_CONDITION:
             verdict = HELD_CONDITION
             ground = ("no member is named from outside its own class at the measured commit, and "
@@ -1088,6 +1264,8 @@ def build(commit: str) -> dict:
             "members_with_no_naming_found_anywhere":
                 sorted(m["path"] for m in members
                        if not m["holding_callers"]
+                       and not m[
+                           "namings_whose_HOLDER_KIND_was_ruled_to_hold_nothing_published_not_dropped"]
                        and not m["enumerator_namings_published_as_data_holding_nothing"]
                        and not m["namings_from_fellow_flagged_files_set_aside_not_dropped"]
                        and not m["references_from_inside_its_own_class_set_aside_not_dropped"]),
@@ -1112,8 +1290,12 @@ def build(commit: str) -> dict:
     flagged_total = sum(len(c["members"]) for c in population.values())
     who = [{"caller": c,
             "caller_kind": kinds[c]["caller_kind"],
+            "how_the_caller_kind_was_settled": kinds[c]["how_the_kind_was_settled"],
             "holder_kind_if_it_holds": (holder_kind(c, governing, governing_dirs)
                                         if kinds[c]["caller_kind"] in KINDS_THAT_HOLD else None),
+            "it_holds": (kinds[c]["caller_kind"] in KINDS_THAT_HOLD
+                         and holder_kind(c, governing, governing_dirs)
+                         in HOLDER_KINDS_THAT_HOLD),
             "flagged_files_it_names": n,
             "share_of_the_flagged_population": round(n / flagged_total, 4),
             "why_this_kind": kinds[c]["why"],
@@ -1128,9 +1310,14 @@ def build(commit: str) -> dict:
     holder_tally: dict[str, int] = {k: 0 for k in HOLDER_KINDS}
     holders_by_kind: dict[str, list[dict]] = {k: [] for k in HOLDER_KINDS}
     seen_holder: set[tuple[str, str]] = set()
+    # ★ BOTH SIDES ARE TALLIED, and that is deliberate. The callers sitting decided which holder
+    # kinds HOLD; it did not un-publish the others — its own words are that they stay published.
+    # So every surviving naming of every kind is counted here with a `does_it_hold` bit, and the
+    # per-member `holding_callers` field is where the ruling's effect is visible.
+    NOTHING = "namings_whose_HOLDER_KIND_was_ruled_to_hold_nothing_published_not_dropped"
     for row in rows:
         for member in row["every_member"]:
-            for entry in member["holding_callers"]:
+            for entry in member["holding_callers"] + member[NOTHING]:
                 key = (member["path"], entry["caller"])
                 if key in seen_holder:
                     continue
@@ -1139,6 +1326,7 @@ def build(commit: str) -> dict:
                 holders_by_kind[entry["holder_kind"]].append(
                     {"flagged_file": member["path"], "held_by": entry["caller"],
                      "caller_kind": entry["caller_kind"],
+                     "does_it_hold": entry["holder_kind"] in HOLDER_KINDS_THAT_HOLD,
                      "the_line_the_naming_was_found_on":
                          entry["the_line_the_naming_was_found_on"]})
     unparsed = sorted(p for p, f in facts.items() if not f.parsed)
@@ -1157,8 +1345,10 @@ def build(commit: str) -> dict:
             "verdict confers nothing — archiving is a later dispatch's act, taken after this "
             "artifact is verified at the objects.",
         "generator": "tools/audit/gen_retirement_caller_check.py",
-        "dispatch": "cc_instruction_preparation_second.md, Task 1 (the RE-RUN under the ruled "
-                    "reading); first run cc_instruction_preparation_opening.md, Task 3",
+        "dispatch": "cc_instruction_preparation_eighth.md, Task 3 (the regeneration under the "
+                    "2026-08-17 callers sitting's four ruled inputs); the RE-RUN under the "
+                    "2026-08-16 ruled reading was cc_instruction_preparation_second.md, Task 1; "
+                    "first run cc_instruction_preparation_opening.md, Task 3",
         "the_standing_warning_this_discharges": {
             "source": "cowork_rulings_2026_08_15_inventory_sitting.md §3.16",
             "quoted": "every flag is a CANDIDACY; retirement is archive-with-record, nothing "
@@ -1345,13 +1535,63 @@ def build(commit: str) -> dict:
                                              "writes keeps holding. The list is published so the "
                                              "cost is visible rather than assumed to be zero.",
         },
+        "★_THE_FOUR_USER_RULED_INPUTS_OF_THE_2026_08_17_CALLERS_SITTING": {
+            "★_why_they_are_published_apart_from_everything_else_in_this_artifact":
+                "They are RULINGS, not derivations. Everywhere one of them changes a verdict, the "
+                "verdict carries `how_the_kind_was_settled` or a `why_it_holds_nothing` naming the "
+                "sitting, so a reader can tell a ruled input from a derived classification without "
+                "reading the generator. The distinction is the dispatch's own requirement.",
+            "authority": "cowork_rulings_2026_08_17_callers_sitting.md (the user's word: \"I agree "
+                         "on yor recommendations\" — quoted verbatim in that record's §0)",
+            "every_sentence_located_in_that_record_on_this_run": callers_ruling,
+            "★_1_the_nine_KIND_UNDERIVABLE_callers_are_ENUMERATOR_class": {
+                "the_ruling": callers_ruling["the nine are ENUMERATOR-class"],
+                "★_how_the_membership_is_DERIVED_and_never_retyped":
+                    "The sitting was held at the census's own published KIND-UNDERIVABLE "
+                    "population, read by the writing side at the git object of the commit that "
+                    "carries that reading. The membership IS that list, taken from the same "
+                    "object; each derived caller's base name is then LOCATED in the sitting record "
+                    "itself, and a derived set the record does not describe HALTS this tool rather "
+                    "than ruling on a population the user never saw.",
+                "the_evidence_commit": CALLERS_RULING_EVIDENCE_COMMIT,
+                "count": len(ruled_enumerator_rows),
+                "callers": ruled_enumerator_rows,
+                "ruled_callers_this_run_no_longer_finds":
+                    {"count": len(ruled_but_not_found), "callers": ruled_but_not_found,
+                     "why_published": "a ruled caller the naming scan no longer sees is published "
+                                      "rather than dropped, so the ruling's reach stays readable "
+                                      "(#12)"},
+                "★_what_it_does_NOT_license": callers_ruling["what it does not license"],
+            },
+            "★_2_and_3_which_HOLDER_KINDS_hold": {
+                "a_prose_citation": callers_ruling["a prose citation"],
+                "a_naming_outside_the_three_kinds": callers_ruling["the fourth bucket"],
+                "what_holds": callers_ruling["what continues to hold"],
+                "the_kinds_that_HOLD": list(HOLDER_KINDS_THAT_HOLD),
+                "the_kinds_that_HOLD_NOTHING": list(HOLDER_KINDS_THAT_HOLD_NOTHING),
+                "★_nothing_is_dropped":
+                    "Every naming whose holder kind was ruled to hold nothing stays PUBLISHED, per "
+                    "member, in its own field with the line it was found on and the ground it was "
+                    "ruled on (#12). What changed is what a naming DOES, never whether it is "
+                    "recorded.",
+            },
+            "★_what_this_sitting_did_NOT_do":
+                "It archives nothing. A verdict that flips toward PASSES-THE-CHECK by these inputs "
+                "confers CANDIDACY only, and every ruled condition on the archiving wave — "
+                "mined-first, members-seen-by-the-user-first for the stray root files — stands "
+                "untouched.",
+        },
         "★_every_surviving_holder_BY_KIND_and_the_question_DEFERRED_to_it": {
             "the_ruling": reading["the deferred question"],
-            "★_the_question_is_NOT_decided_here": "Whether a PROSE CITATION holds, given that "
-                                                  "archive-with-record keeps a citation "
-                                                  "resolvable, is deferred by the ruling to this "
-                                                  "evidence. This artifact supplies the evidence "
-                                                  "and takes no position.",
+            "★_THE_DEFERRED_QUESTION_IS_ANSWERED": "It was deferred by the 2026-08-16 ruling to "
+                                                   "this evidence and ANSWERED at the 2026-08-17 "
+                                                   "callers sitting: a prose citation does NOT "
+                                                   "hold, nor does a naming outside the three "
+                                                   "kinds. The tallies below are unchanged — every "
+                                                   "holder of every kind is still counted and "
+                                                   "published — and what the answer changes is "
+                                                   "which of them reaches a member's "
+                                                   "`holding_callers`.",
             "what_the_fourth_bucket_is": "A holder that is none of the ruling's three kinds — "
                                          "chiefly a DATA record (`.json`, `.csv`, a text dump) "
                                          "that names a flagged file without reading it as a tool "
