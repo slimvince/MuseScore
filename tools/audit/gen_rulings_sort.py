@@ -46,6 +46,30 @@ into an entry:
 Only what those leave undecided reaches the authored word recognizers, and what THOSE leave
 undecided is proposed **NEEDS-THE-USER** — never guessed.
 
+★★ THE SORT IS RULED — 2026-08-17, `cowork_rulings_2026_08_17_rulings_sort_sitting.md`.  Two
+rulings, and this pass now carries both:
+
+  * **§1 — the rule-placed 351 are RATIFIED as proposed.**  The proposed DESIGN-INTENT entries are
+    the framework phase's seed list as proposed; the proposed IMPLEMENTATION-MANAGEMENT entries are
+    not design input.  The ratification is recorded in the artifact's own header; it changes no
+    verdict, because the verdicts it ratifies are the ones this rule already produces.
+  * **§2 — the 60 returned entries are PLACED by the ruled criterion**, *"an entry whose statement
+    binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose
+    statement binds the WORK (how we decide, verify, record, sequence) is
+    IMPLEMENTATION-MANAGEMENT"*.  They enter as a DISTINCT ROUTE — *"USER-RULED at the 2026-08-17
+    sitting"* — beside the rule's own three, and the ruling asks for exactly that: *"so a later
+    reader sees where the judgment came from."*
+
+★ THE 60 ARE DERIVED FROM THE SITTING RECORD AND NEVER RETYPED HERE.  The record carries the two
+identity lists with their counts in its own headings; both are parsed on every run, both counts are
+checked against the headings that state them, and every placed identity must be one this rule
+returned as NEEDS-THE-USER.  A placement naming an entry the rule placed itself, or a list whose
+size disagrees with its own heading, HALTS this pass rather than being reconciled.
+
+★ AND A MANAGEMENT PLACING REMOVES NOTHING, in the sitting's own words: *"A management placement of
+a standing principle removes none of its force — the principles govern every session through the
+standing rules regardless of the sort."*
+
 ★ A DISAGREEMENT THIS PASS RECORDS AND DOES NOT REPAIR.  The data file's header says
 `nonspec_kind` *"says which of three cases it is"* and names three; the entries use five.  The two
 the header does not define are not mapped by their name here — they fall through to the
@@ -91,12 +115,17 @@ OUT = ROOT / "tools" / "audit" / "rulings_sort_classification.json"
 SURFACE = (ROOT / "ratification_surfaces"
            / "cowork_rulings_sort_surface_2026_08_16.md")
 
+SORT_RULING = ROOT / "cowork_rulings_2026_08_17_rulings_sort_sitting.md"
+
 CONFIRMED = "DECIDING-ACT-NAMED"
 
 DESIGN = "DESIGN-INTENT"
 MANAGEMENT = "IMPLEMENTATION-MANAGEMENT"
 NEEDS_USER = "NEEDS-THE-USER"
 CLASSES = (DESIGN, MANAGEMENT, NEEDS_USER)
+
+# AUTHORED — the name of the fourth route, the ruling's own words for it.
+USER_RULED_ROUTE = "USER-RULED at the 2026-08-17 sitting"
 
 WHAT_EACH_CLASS_IS = {
     DESIGN: "a decision about what the analysis is or does — seed material for the framework "
@@ -122,7 +151,39 @@ SOURCE_SENTENCES = {
     "what the confirmed side is": (
         RULING,
         "The 411 DECIDING-ACT-NAMED entries are RATIFIED as the live record's confirmed side."),
+    "the ratification of the rule-placed entries": (
+        SORT_RULING,
+        "The 220 proposed DESIGN-INTENT entries are the framework phase's seed list as proposed; "
+        "the 131 proposed IMPLEMENTATION-MANAGEMENT entries are not design input."),
+    "the criterion the 60 returned entries were placed by": (
+        SORT_RULING,
+        "an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) "
+        "is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, "
+        "sequence) is IMPLEMENTATION-MANAGEMENT."),
+    "how the ruled placements are to be recorded": (
+        SORT_RULING,
+        "The executing act records these placements into the sort's classification artifact as "
+        "USER-RULED placements, distinguished from the rule's own routes, so a later reader sees "
+        "where the judgment came from."),
+    "what a management placement does not do": (
+        SORT_RULING,
+        "A management placement of a standing principle removes none of its force — the principles "
+        "govern every session through the standing rules regardless of the sort."),
+    "the totals the sitting states": (
+        SORT_RULING,
+        "the sort's totals become 244 DESIGN-INTENT / 167 IMPLEMENTATION-MANAGEMENT / 0 unplaced, "
+        "244 + 167 = 411."),
 }
+
+# The sitting record's two identity lists, each with the count its own heading states. Nothing
+# below is a list of identities: the pattern finds the heading and the run of `D-…` tokens under
+# it, and the count in the heading is checked against the identities actually found.
+RULED_LIST = re.compile(r"\*\*(DESIGN-INTENT|IMPLEMENTATION-MANAGEMENT) \((\d+)\):\*\*"
+                        r"((?:[^\n]*\n)+?)\n")
+IDENTITY = re.compile(r"\bD-\d+\b")
+RULED_TOTALS = re.compile(r"the sort's totals become (\d+) DESIGN-INTENT / "
+                          r"(\d+) IMPLEMENTATION-MANAGEMENT / (\d+) unplaced, "
+                          r"(\d+) \+ (\d+) = (\d+)")
 
 # AUTHORED: the mapping from the decisions register's OWN `nonspec_kind` value to a proposed class, each
 # carrying the definition it rests on VERBATIM from the data file's own header. A value mapped to
@@ -196,6 +257,68 @@ def locate_definitions(header: dict) -> dict[str, str]:
                        f"dropped: {definition!r}")
         located[value] = definition
     return located
+
+
+def ruled_placements() -> tuple[dict[str, str], dict]:
+    """The 60 USER-RULED placements of §2 — PARSED from the sitting record, never retyped here.
+
+    ★ WHAT IS CHECKED, AND WHY EACH CHECK IS A STOP RATHER THAN A RECONCILIATION. Each list's own
+    heading states how many identities it carries; a list whose size disagrees with its heading is
+    a record that no longer describes itself, and placing entries out of it would put the user's
+    name on a population the user never saw. An identity in both lists is a contradiction the pass
+    does not resolve. And the two lists together must be exactly the population the rule returned
+    as NEEDS-THE-USER, in BOTH directions — a placement for an entry the rule placed itself would
+    silently overrule a route the ruling ratified.
+    """
+    if not SORT_RULING.exists():
+        raise Stop(f"the sitting record the placements are read from is missing: {SORT_RULING}")
+    text = SORT_RULING.read_text(encoding="utf-8")
+
+    lists: dict[str, dict] = {}
+    for match in RULED_LIST.finditer(text):
+        cls, stated, body = match.group(1), int(match.group(2)), match.group(3)
+        found = IDENTITY.findall(body)
+        if cls in lists:
+            raise Stop(f"the sitting record carries more than one {cls} list, so the placements "
+                       f"cannot be taken from it without choosing between them")
+        if len(found) != len(set(found)):
+            raise Stop(f"the sitting record's {cls} list repeats an identity")
+        if len(found) != stated:
+            raise Stop(f"the sitting record's {cls} list carries {len(found)} identities where its "
+                       f"own heading states {stated} — the record no longer describes itself, and "
+                       f"this pass does not reconcile it")
+        lists[cls] = {"stated_in_its_own_heading": stated, "identities": found}
+
+    missing = [cls for cls in (DESIGN, MANAGEMENT) if cls not in lists]
+    if missing:
+        raise Stop(f"the sitting record carries no {missing} identity list, so §2's placements "
+                   f"cannot be derived from it")
+
+    both = sorted(set(lists[DESIGN]["identities"]) & set(lists[MANAGEMENT]["identities"]))
+    if both:
+        raise Stop(f"{both} appear in BOTH of the sitting record's identity lists")
+
+    placements = {i: DESIGN for i in lists[DESIGN]["identities"]}
+    placements.update({i: MANAGEMENT for i in lists[MANAGEMENT]["identities"]})
+
+    totals = RULED_TOTALS.search(normalized(text))
+    if not totals:
+        raise Stop("the sitting record no longer states the totals its own arithmetic rests on, so "
+                   "the reconciliation this pass owes cannot be taken from it")
+    design_total, management_total, unplaced_total = (int(totals.group(1)), int(totals.group(2)),
+                                                      int(totals.group(3)))
+    return placements, {
+        "the_route": USER_RULED_ROUTE,
+        "the_record": SORT_RULING.name,
+        "★_how_the_membership_is_derived_and_never_retyped":
+            "The sitting record carries the two identity lists with the count each states in its "
+            "own heading. Both are parsed on every run; a list whose size disagrees with its "
+            "heading, an identity in both lists, or a placement for an entry this rule placed "
+            "itself HALTS this pass rather than being reconciled.",
+        "the_lists_as_the_record_carries_them": lists,
+        "the_totals_the_sitting_states": {
+            DESIGN: design_total, MANAGEMENT: management_total, "unplaced": unplaced_total},
+    }
 
 
 def require_fields(entry: dict) -> None:
@@ -366,10 +489,33 @@ def build() -> tuple[dict, str]:
         by_id[entry["id"]] = entry
     reconcile(set(imported), {i for i in imported if i in by_id})
 
+    placements, placement_record = ruled_placements()
+
     rows = []
     for entry_id in sorted(imported):
         entry = by_id[entry_id]
         verdict = classify(entry, definitions)
+        # ★ THE RULED PLACEMENT IS APPLIED HERE AND MARKED AS A DISTINCT ROUTE. It reaches only an
+        # entry the rule itself returned; the check that it reaches no other is below, in both
+        # directions, and it HALTS rather than preferring one source over the other.
+        if entry_id in placements and verdict["proposed_class"] == NEEDS_USER:
+            verdict = {
+                "proposed_class": placements[entry_id],
+                "decided_by": USER_RULED_ROUTE,
+                "why": "the rule returned this entry rather than guessing, and the user placed it "
+                       "at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry "
+                       "whose statement binds the SYSTEM (what the analysis is, does, or must "
+                       "satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we "
+                       "decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+                "evidence": [{"the_route": USER_RULED_ROUTE,
+                              "the_record": SORT_RULING.name,
+                              "the_list_it_was_read_from": placements[entry_id],
+                              "★_what_the_rule_had_returned": NEEDS_USER,
+                              "★_the_rules_own_evidence_is_kept":
+                                  "the recognizer hits the rule found are preserved below, so the "
+                                  "placement can be read against what the rule saw"}]
+                + verdict["evidence"],
+            }
         rows.append({
             "id": entry["id"],
             "group": entry["group"],
@@ -384,7 +530,35 @@ def build() -> tuple[dict, str]:
         })
     require_reconciled_distribution(rows, len(imported))
 
+    # ★ THE PLACEMENTS AND THE RULE'S OWN RETURNED POPULATION, RECONCILED IN BOTH DIRECTIONS.
+    placed_here = {r["id"] for r in rows if r["decided_by"] == USER_RULED_ROUTE}
+    stray = sorted(set(placements) - placed_here)
+    if stray:
+        raise Stop(f"the sitting record places {stray}, which this rule did not return as "
+                   f"{NEEDS_USER} — a ruled placement that overrules a route the same sitting "
+                   f"ratified is a STOP, not a preference")
+    unplaced = sorted(r["id"] for r in rows if r["proposed_class"] == NEEDS_USER)
+    if unplaced:
+        raise Stop(f"the rule returned {unplaced} and the sitting record places none of them — the "
+                   f"derivation and the ruling have drifted apart")
+
     distribution = {cls: sum(1 for r in rows if r["proposed_class"] == cls) for cls in CLASSES}
+
+    # ★ AND THE SITTING'S OWN TOTALS, RECONCILED AGAINST THE POPULATION IN BOTH DIRECTIONS. The
+    # sitting states them; this pass computes them; a disagreement halts rather than adjusts.
+    stated = placement_record["the_totals_the_sitting_states"]
+    computed = {DESIGN: distribution[DESIGN], MANAGEMENT: distribution[MANAGEMENT],
+                "unplaced": distribution[NEEDS_USER]}
+    if computed != stated:
+        raise Stop(f"the computed totals {computed} disagree with the ones the sitting record "
+                   f"states {stated} — a derivation that does not reconcile is a STOP, not an "
+                   f"adjustment")
+    if stated[DESIGN] + stated[MANAGEMENT] != len(imported):
+        raise Stop(f"the sitting's totals sum to {stated[DESIGN] + stated[MANAGEMENT]} against a "
+                   f"confirmed population of {len(imported)}")
+    placement_record["the_totals_this_pass_computes"] = computed
+    placement_record["they_reconcile_in_both_directions"] = True
+    placement_record["against_the_confirmed_population"] = len(imported)
     by_route: dict[str, dict[str, int]] = {}
     for row in rows:
         route = by_route.setdefault(row["decided_by"], {cls: 0 for cls in CLASSES})
@@ -394,13 +568,39 @@ def build() -> tuple[dict, str]:
 
     artifact = {
         "what_this_is":
-            "THE RULINGS SORT, PROPOSED AND NOT EXECUTED. Every entry on the confirmed side of the "
-            "decisions-register filter, with ONE proposed class from the ruled two-value vocabulary "
-            "— design intent, or management of the implementation — or NEEDS-THE-USER where the "
-            "rule reaches no verdict. NOTHING IS EXECUTED BY IT: no entry is retired, edited, moved "
-            "or marked, and the decisions register's files are untouched.",
+            "THE RULINGS SORT, RULED. Every entry on the confirmed side of the decisions-register "
+            "filter, with ONE class from the ruled two-value vocabulary — design intent, or "
+            "management of the implementation. The rule places most of them and the user ruled the "
+            "rest at the 2026-08-17 sitting, which also RATIFIED the rule-placed side as proposed. "
+            "NOTHING IS EXECUTED BY IT: no entry is retired, edited, moved or marked, the decisions "
+            "register's files are untouched, and a class here grades no decision's worth.",
         "generator": "tools/audit/gen_rulings_sort.py",
-        "dispatch": "cc_instruction_preparation_second.md, Task 3",
+        "dispatch": "cc_instruction_preparation_eighth.md, Task 4 (the ruled placements recorded); "
+                    "first run cc_instruction_preparation_second.md, Task 3",
+        "★_THE_SITTING_THAT_RULED_THIS_SORT": {
+            "authority": "cowork_rulings_2026_08_17_rulings_sort_sitting.md (the user's word: \"I "
+                         "agree with your recommendations\" — quoted verbatim in that record's §0)",
+            "★_1_the_rule_placed_entries_are_RATIFIED_as_proposed":
+                "The proposed DESIGN-INTENT entries are the framework phase's seed list as "
+                "proposed; the proposed IMPLEMENTATION-MANAGEMENT entries are not design input. "
+                "The ratification moves no verdict — the verdicts it ratifies are the ones this "
+                "rule already produces — so it is recorded here rather than applied. Its ground, "
+                "from the sitting: most of the rule-placed side rests on the decisions register's "
+                "own recorded judgments, the recognizer-placed remainder is correctable at "
+                "consumption, and the seed list stays amendable when the framework phase consumes "
+                "it, an amendment there being its own recorded act.",
+            "★_2_the_returned_entries_are_PLACED_by_the_ruled_criterion": placement_record,
+            "★_3_the_nonspec_kind_header_disagreement_STAYS_AS_EVIDENCE":
+                "\"No repair is ordered.\" The mismatch rides to the phase's retrospective as "
+                "evidence — a disagreement between a record and what it describes — exactly as "
+                "this pass already treated it: values the header does not define were never "
+                "mapped by name. It is published unchanged below.",
+            "★_what_a_management_placement_does_NOT_do":
+                "A management placement of a standing principle removes none of its force — the "
+                "principles govern every session through the standing rules regardless of the "
+                "sort. The sort classifies; it retires nothing, edits nothing and grades no "
+                "decision's worth.",
+        },
         "the_authority": {
             "sentences_located_in_their_own_records_on_this_run": located,
             "★_what_the_design_intent_side_becomes":
@@ -502,16 +702,37 @@ def render(a: dict) -> str:
     def add(line: str = "") -> None:
         L.append(line)
 
-    add("# The rulings sort — design intent, or management of the implementation, proposed for "
-        "every confirmed decision")
+    ruled = a["★_THE_SITTING_THAT_RULED_THIS_SORT"]
+    add("# The rulings sort — design intent, or management of the implementation, RULED for every "
+        "confirmed decision")
     add()
-    add("> **STATUS: RULING SURFACE, awaiting the user. NOTHING HERE IS RULED AND NOTHING IS")
-    add("> EXECUTED.** No entry is retired, edited, moved or marked; the decisions register's data")
-    add("> file and every file rendered from it are byte-unchanged. Generated by")
+    add("> **STATUS: RULED, 2026-08-17. NOTHING IS EXECUTED BY IT.** This surface was a ruling")
+    add("> surface awaiting the user; the user ruled it at the rulings-sort sitting")
+    add("> (`cowork_rulings_2026_08_17_rulings_sort_sitting.md`), and this rendering carries the")
+    add("> ruled state rather than the proposal. **The banner it replaces said the surface was")
+    add("> awaiting the user and that nothing here was ruled — true when it was written, and made")
+    add("> untrue by the sitting; the former rendering stands in git at the commits that carried")
+    add("> it (#12).** What the sitting did NOT do is unchanged: no entry is retired, edited, moved")
+    add("> or marked; the decisions register's data file and every file rendered from it are")
+    add("> byte-unchanged by the sort; and a class here grades no decision's worth. Generated by")
     add("> `tools/audit/gen_rulings_sort.py` from `tools/audit/rulings_sort_classification.json`,")
     add("> which it writes in the same run. Per the standing presentation rule")
     add("> (`cowork_rulings_2026_08_15_batch_return.md` §5) every identifier used below is")
     add("> re-explained from scratch in §0 before any question rests on it.")
+    add()
+    add("> **THE SITTING'S THREE RULINGS.** *(1)* " + ruled[
+        "★_1_the_rule_placed_entries_are_RATIFIED_as_proposed"])
+    add(">")
+    add("> *(2)* The entries the rule RETURNED rather than guessed are placed by the ruled")
+    add("> criterion, entering as a distinct route — **" + USER_RULED_ROUTE + "** — beside the")
+    add("> rule's own, so a later reader sees where the judgment came from. Their membership is")
+    add("> parsed from the sitting record itself and never retyped here; the totals the sitting")
+    add("> states are reconciled against the population in both directions as a STOP.")
+    add(">")
+    add("> *(3)* " + ruled["★_3_the_nonspec_kind_header_disagreement_STAYS_AS_EVIDENCE"])
+    add(">")
+    add("> **★ AND A MANAGEMENT PLACEMENT REMOVES NOTHING.** "
+        + ruled["★_what_a_management_placement_does_NOT_do"])
     add()
 
     add("## 0. The referents, re-explained from scratch (read this section first)")
@@ -611,29 +832,46 @@ def render(a: dict) -> str:
         add(f"| {route} | " + " | ".join(f"{counts[c]:,}" for c in CLASSES) + " |")
     add()
 
-    add("## 5. Every proposed DESIGN-INTENT entry — the seed list the user must see")
+    add("## 5. Every DESIGN-INTENT entry — the seed list, as ruled")
     add()
-    add("These are the decisions proposed as seed material for the framework phase. **This is the")
-    add("payload of the sort**: a decision listed here is one a derivation would be allowed to")
-    add("start from, so it is listed with what the decisions register says the decision is.")
+    add("These are the decisions the sitting ruled to be seed material for the framework phase.")
+    add("**This is the payload of the sort**: a decision listed here is one a derivation is allowed")
+    add("to start from, so it is listed with what the decisions register says the decision is. The")
+    add("list remains amendable when the framework phase consumes it; an amendment there is its own")
+    add("recorded act.")
     add()
     _members(add, a, DESIGN)
 
-    add("## 6. Every proposed NEEDS-THE-USER entry")
+    add("## 6. The entries the rule RETURNED, and where the sitting placed them")
     add()
-    add("The rule reached no verdict for these: the decisions register's own home classification does not")
-    add("place them, and their own restatement carries both subjects or neither. They are returned")
-    add("rather than guessed.")
+    add("The rule reached no verdict for these: the decisions register's own home classification")
+    add("does not place them, and their own restatement carries both subjects or neither. They were")
+    add("returned rather than guessed, and the user placed them at the 2026-08-17 sitting by the")
+    add("ruled criterion — an entry whose statement binds the SYSTEM is DESIGN-INTENT; one whose")
+    add("statement binds the WORK is IMPLEMENTATION-MANAGEMENT. Each appears in §5 or §7 with its")
+    add(f"route recorded as *{USER_RULED_ROUTE}*, and the rule's own recognizer evidence is kept")
+    add("beside the placement so it can be read against what the rule saw.")
+    add()
+    for cls in (DESIGN, MANAGEMENT):
+        placed = [r for r in a["entries"]
+                  if r["decided_by"] == USER_RULED_ROUTE and r["proposed_class"] == cls]
+        add(f"**Placed {cls} ({len(placed)}):** "
+            + (", ".join(f"`{r['id']}`" for r in placed) if placed else "*none*"))
+        add()
+    add("**Left unplaced by the sitting: "
+        f"{a['the_distribution'][NEEDS_USER]}.**")
     add()
     _members(add, a, NEEDS_USER)
 
-    add("## 7. The proposed IMPLEMENTATION-MANAGEMENT entries")
+    add("## 7. The IMPLEMENTATION-MANAGEMENT entries")
     add()
     add("Listed by identity: decisions about process, apparatus, workflow, record-keeping or")
     add("sequencing. **This is not a judgment on their worth** — they are simply not design input")
-    add("to the framework phase, and nothing is proposed to happen to them.")
+    add("to the framework phase, and nothing happens to them. A management placement of a standing")
+    add("principle removes none of its force: the principles govern every session through the")
+    add("standing rules regardless of the sort.")
     add()
-    add("<details><summary>The proposed IMPLEMENTATION-MANAGEMENT entries (DERIVED)</summary>")
+    add("<details><summary>The IMPLEMENTATION-MANAGEMENT entries</summary>")
     add()
     for row in a["entries"]:
         if row["proposed_class"] == MANAGEMENT:
@@ -644,13 +882,14 @@ def render(a: dict) -> str:
 
     add("## 8. What this surface does NOT do, and must not be read as doing")
     add()
-    add("- **It executes nothing.** The sort is proposed and the user rules.")
-    add("- **It edits no decisions-register file.** The data file, the rendered INDEX and the rendered group")
-    add("  files are byte-unchanged by the run that produced this surface.")
+    add("- **It executes nothing.** The sort classifies; it retires nothing and moves nothing.")
+    add("- **It edits no decisions-register file.** The data file, the rendered INDEX and the")
+    add("  rendered group files are byte-unchanged by the run that produced this surface.")
     add("- **It re-opens no filter verdict.** The confirmed side is taken as ratified.")
-    add("- **It grades no decision's worth.** A management placing is not a demotion.")
-    add("- **It seeds nothing.** The framework phase has not begun and no derivation reads this")
-    add("  list until the user rules on it.")
+    add("- **It grades no decision's worth.** A management placing is not a demotion, and it")
+    add("  removes none of a standing principle's force.")
+    add("- **It seeds nothing yet.** The framework phase has not begun; the seed list is ruled and")
+    add("  waits for the phase that consumes it, where it remains amendable.")
     add()
     add("*Generated by `tools/audit/gen_rulings_sort.py` from")
     add("`tools/audit/rulings_sort_classification.json`. Reproduce:")

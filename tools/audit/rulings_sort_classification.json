@@ -1,7 +1,102 @@
 {
- "what_this_is": "THE RULINGS SORT, PROPOSED AND NOT EXECUTED. Every entry on the confirmed side of the decisions-register filter, with ONE proposed class from the ruled two-value vocabulary — design intent, or management of the implementation — or NEEDS-THE-USER where the rule reaches no verdict. NOTHING IS EXECUTED BY IT: no entry is retired, edited, moved or marked, and the decisions register's files are untouched.",
+ "what_this_is": "THE RULINGS SORT, RULED. Every entry on the confirmed side of the decisions-register filter, with ONE class from the ruled two-value vocabulary — design intent, or management of the implementation. The rule places most of them and the user ruled the rest at the 2026-08-17 sitting, which also RATIFIED the rule-placed side as proposed. NOTHING IS EXECUTED BY IT: no entry is retired, edited, moved or marked, the decisions register's files are untouched, and a class here grades no decision's worth.",
  "generator": "tools/audit/gen_rulings_sort.py",
- "dispatch": "cc_instruction_preparation_second.md, Task 3",
+ "dispatch": "cc_instruction_preparation_eighth.md, Task 4 (the ruled placements recorded); first run cc_instruction_preparation_second.md, Task 3",
+ "★_THE_SITTING_THAT_RULED_THIS_SORT": {
+  "authority": "cowork_rulings_2026_08_17_rulings_sort_sitting.md (the user's word: \"I agree with your recommendations\" — quoted verbatim in that record's §0)",
+  "★_1_the_rule_placed_entries_are_RATIFIED_as_proposed": "The proposed DESIGN-INTENT entries are the framework phase's seed list as proposed; the proposed IMPLEMENTATION-MANAGEMENT entries are not design input. The ratification moves no verdict — the verdicts it ratifies are the ones this rule already produces — so it is recorded here rather than applied. Its ground, from the sitting: most of the rule-placed side rests on the decisions register's own recorded judgments, the recognizer-placed remainder is correctable at consumption, and the seed list stays amendable when the framework phase consumes it, an amendment there being its own recorded act.",
+  "★_2_the_returned_entries_are_PLACED_by_the_ruled_criterion": {
+   "the_route": "USER-RULED at the 2026-08-17 sitting",
+   "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+   "★_how_the_membership_is_derived_and_never_retyped": "The sitting record carries the two identity lists with the count each states in its own heading. Both are parsed on every run; a list whose size disagrees with its heading, an identity in both lists, or a placement for an entry this rule placed itself HALTS this pass rather than being reconciled.",
+   "the_lists_as_the_record_carries_them": {
+    "DESIGN-INTENT": {
+     "stated_in_its_own_heading": 24,
+     "identities": [
+      "D-170",
+      "D-171",
+      "D-260",
+      "D-261",
+      "D-264",
+      "D-268",
+      "D-275",
+      "D-313",
+      "D-321",
+      "D-383",
+      "D-390",
+      "D-394",
+      "D-395",
+      "D-443",
+      "D-444",
+      "D-447",
+      "D-448",
+      "D-456",
+      "D-478",
+      "D-481",
+      "D-482",
+      "D-484",
+      "D-485",
+      "D-614"
+     ]
+    },
+    "IMPLEMENTATION-MANAGEMENT": {
+     "stated_in_its_own_heading": 36,
+     "identities": [
+      "D-112",
+      "D-165",
+      "D-166",
+      "D-167",
+      "D-169",
+      "D-173",
+      "D-174",
+      "D-176",
+      "D-178",
+      "D-179",
+      "D-181",
+      "D-183",
+      "D-184",
+      "D-186",
+      "D-187",
+      "D-188",
+      "D-189",
+      "D-255",
+      "D-266",
+      "D-272",
+      "D-273",
+      "D-274",
+      "D-311",
+      "D-312",
+      "D-314",
+      "D-366",
+      "D-367",
+      "D-368",
+      "D-401",
+      "D-422",
+      "D-424",
+      "D-426",
+      "D-473",
+      "D-483",
+      "D-513",
+      "D-639"
+     ]
+    }
+   },
+   "the_totals_the_sitting_states": {
+    "DESIGN-INTENT": 244,
+    "IMPLEMENTATION-MANAGEMENT": 167,
+    "unplaced": 0
+   },
+   "the_totals_this_pass_computes": {
+    "DESIGN-INTENT": 244,
+    "IMPLEMENTATION-MANAGEMENT": 167,
+    "unplaced": 0
+   },
+   "they_reconcile_in_both_directions": true,
+   "against_the_confirmed_population": 411
+  },
+  "★_3_the_nonspec_kind_header_disagreement_STAYS_AS_EVIDENCE": "\"No repair is ordered.\" The mismatch rides to the phase's retrospective as evidence — a disagreement between a record and what it describes — exactly as this pass already treated it: values the header does not define were never mapped by name. It is published unchanged below.",
+  "★_what_a_management_placement_does_NOT_do": "A management placement of a standing principle removes none of its force — the principles govern every session through the standing rules regardless of the sort. The sort classifies; it retires nothing, edits nothing and grades no decision's worth."
+ },
  "the_authority": {
   "sentences_located_in_their_own_records_on_this_run": {
    "the ruling that permits the sort": {
@@ -15,6 +110,26 @@
    "what the confirmed side is": {
     "source": "cowork_rulings_2026_08_16_preparation_return.md",
     "quoted": "The 411 DECIDING-ACT-NAMED entries are RATIFIED as the live record's confirmed side."
+   },
+   "the ratification of the rule-placed entries": {
+    "source": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+    "quoted": "The 220 proposed DESIGN-INTENT entries are the framework phase's seed list as proposed; the 131 proposed IMPLEMENTATION-MANAGEMENT entries are not design input."
+   },
+   "the criterion the 60 returned entries were placed by": {
+    "source": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+    "quoted": "an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT."
+   },
+   "how the ruled placements are to be recorded": {
+    "source": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+    "quoted": "The executing act records these placements into the sort's classification artifact as USER-RULED placements, distinguished from the rule's own routes, so a later reader sees where the judgment came from."
+   },
+   "what a management placement does not do": {
+    "source": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+    "quoted": "A management placement of a standing principle removes none of its force — the principles govern every session through the standing rules regardless of the sort."
+   },
+   "the totals the sitting states": {
+    "source": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+    "quoted": "the sort's totals become 244 DESIGN-INTENT / 167 IMPLEMENTATION-MANAGEMENT / 0 unplaced, 244 + 167 = 411."
    }
   },
   "★_what_the_design_intent_side_becomes": "The framework phase's SEED LIST — the decisions a derivation may start from. A decision wrongly placed there seeds the architecture with something nobody meant to seed it with; one wrongly placed on the other side is simply not consulted. That asymmetry is why every design-intent member is listed on the surface with its plain restatement."
@@ -88,9 +203,9 @@
   "the_recognizers_reach_is_UNMEASURED": "The word recognizers decide only the entries the decisions register's own home classification leaves undecided, and neither their reach nor their error rate is measured (#19). Where they leave an entry, it returns to the user rather than being placed."
  },
  "the_distribution": {
-  "DESIGN-INTENT": 220,
-  "IMPLEMENTATION-MANAGEMENT": 131,
-  "NEEDS-THE-USER": 60
+  "DESIGN-INTENT": 244,
+  "IMPLEMENTATION-MANAGEMENT": 167,
+  "NEEDS-THE-USER": 0
  },
  "the_distribution_by_the_route_that_decided_it": {
   "the decisions register's own `home_is_layer_spec`": {
@@ -103,10 +218,10 @@
    "IMPLEMENTATION-MANAGEMENT": 120,
    "NEEDS-THE-USER": 0
   },
-  "nothing — the rule reached no verdict and returns the entry": {
-   "DESIGN-INTENT": 0,
-   "IMPLEMENTATION-MANAGEMENT": 0,
-   "NEEDS-THE-USER": 60
+  "USER-RULED at the 2026-08-17 sitting": {
+   "DESIGN-INTENT": 24,
+   "IMPLEMENTATION-MANAGEMENT": 36,
+   "NEEDS-THE-USER": 0
   },
   "the authored word recognizers, over the decisions register's own restatement": {
    "DESIGN-INTENT": 92,
@@ -763,10 +878,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "If a document records something, read it and quote it rather than remembering it. Being right from memory does not count, because correct memory and incorrect memory look the same until you check.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-113",
@@ -883,10 +1006,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Nothing is built on a hunch. Every method comes from published research, a public algorithm, or public software. Investigating to find out what the facts are is a separate, permitted activity.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-166",
@@ -898,10 +1029,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Research effort goes to the exact question in front of us, not to the surrounding subject generally or to something already handled.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-167",
@@ -913,10 +1052,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Being surprised means the facts and theory we built on were incomplete. Surprise is treated as a defect in our own understanding, not as an interesting result.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-168",
@@ -948,10 +1095,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "If it is unclear whether we know enough about something, the answer is to go and find out, not to proceed on what we have.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-170",
@@ -963,10 +1118,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "There is exactly one implementation of any given concern. No duplicated code, no second place the same question is answered.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-171",
@@ -978,10 +1141,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "A stage of the analysis gets only the methods that are properly its own. If the right method does not belong there, the layers are redesigned rather than the method smuggled across.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-172",
@@ -1013,10 +1184,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "A measurement is only run against music whose annotations are current and correct.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-174",
@@ -1028,10 +1207,17 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The documents describing the system never lag behind the system — and the principle now says what that is FOR: so that the code can always be held up against its specification, and so that the specification is as correct and complete as it can be, in order that the code may be. That purpose is also the test of which discrepancies are worth fixing. An issue is worth fixing if leaving it alone risks something being built that does not serve the most precise inference achievable, or risks the code no longer being comparable against a correct and complete specification. An issue that risks neither is written down as DISCARDED — what was found, when, and why it was discarded — and is then not work anybody owes: it gets no row in the open-items register, blocks no stage, and draws no capacity. Two exceptions: an obligation to establish that something works is never discarded, whatever its subject; and where the consequence can neither be named nor cheaply established, the thing is looked at once, cheaply, because being unable to imagine a consumer is not evidence that there is none.",
    "the_evidence_shape_the_filter_recorded": "a numbered ruling named+a ratification event named+a recorded ratifier+a ruling record named+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the inference machinery",
      "matched": "inference"
@@ -1072,10 +1258,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "When something unexpected turns up, work halts and it is reported. It is never quietly worked around.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-177",
@@ -1111,10 +1305,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "A result is confirmed by looking at the actual data it produced, across everything it produced - the chosen reading and the alternatives carried beside it - not by a test that asserts what was expected.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-179",
@@ -1126,10 +1328,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "A measurement records which music it was run on and which version of the measuring code produced it, and the previous reference numbers are saved before new ones replace them.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-180",
@@ -1161,10 +1371,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "No design may rest on a claim about how our own system or data behaves when that claim could be checked and has not been.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-182",
@@ -1196,10 +1414,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "No number is graded on the same music that helped choose it. Before any fitting, the held-back music and the budget of how many free values may be fitted are declared; the headline figure is always the one measured on the held-back music.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-184",
@@ -1211,10 +1437,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "How right the reference annotations are is itself something to be measured - how far annotators agree with each other, axis by axis - not assumed. Every precision target and every claim that a remaining error is irreducible is read against that measured ceiling.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-185",
@@ -1246,10 +1480,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "When a planned piece of work must temporarily break a principle that describes the finished state - such as building a second analysis path beside the first - the breach is declared, bounded, and approved in advance together with the plan for removing it.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-187",
@@ -1261,10 +1503,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "How much a measured number could move by chance, given how much music it was measured on, is quantified and reported with it. A difference inside that range is not a finding and no decision may rest on one.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-188",
@@ -1276,10 +1526,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "When a design is chosen because it complies with the method rather than because it measured best, the record must name what the best-performing alternative actually was and why it is ruled out.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-189",
@@ -1291,10 +1549,17 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Being surprised is allowed - expected, even - in exploratory work whose whole purpose is to remove ignorance. It is not allowed while building the analysis itself: there a surprise stops the work and shows the Premise Gate was not satisfied. The order of work is: trace it by hand for hours, then probe it read-only for a session, then build it.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the inference machinery",
      "matched": "Gate"
@@ -2076,10 +2341,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Every architecture or design document in this project uses the same section order, taken from arc42, IEEE 1016 and ISO/IEC/IEEE 42010. The two arc42 sections that do not apply to a backend analysis module - deployment view and human-interface design - are declared not applicable once per document instead of being padded out.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-257",
@@ -2133,10 +2406,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The user's selection is the output span: labels are emitted only for it. Music loaded from outside the selection is pulled in as evidence for judging the selection's edges and is never itself labelled.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-261",
@@ -2148,10 +2429,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "A layer knows what evidence it needs but not how far away it is, so it never picks an amount. It extends the loaded span incrementally and stops on a principled condition: convergence, meaning its in-selection output stops changing as more context arrives. The layer applies that test directly, on the quantity it asked for more context about, and stops when that quantity repeats.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-262",
@@ -2207,10 +2496,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The result after any sequence of extensions must equal a single fresh run over the final loaded span. Extension exists to avoid recomputing from scratch; it is never allowed to be a different computation, and the analysis must not depend on how many steps reached a given span.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-265",
@@ -2246,10 +2543,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The grouping layer's track does not resume until this cross-layer design is ratified, implemented across Layers 1 to 5, and regression-tested against the listed acceptance conditions - including the equivalence invariant, step-size independence, denial provenance, termination, and byte-identity of the whole-score degenerate case against the corpus gate. RULING (user, 2026-08-02): the gate itself STANDS and transfers to the current architecture; the design's §11 acceptance list is DEPRECATED — not to be used, not even relevant — and the acceptance conditions are restated against the current stack in the phase-3 plan (with OI-259).",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the inference machinery",
      "matched": "Layer 6"
@@ -2294,10 +2598,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Five rules of use. A confidence belongs to a named decision, never to a layer in general. At a layer boundary it is zero-to-one, class-declared and decision-named. A consumer may compare two confidences only within one class and one declared comparison frame. A carried-forward confidence keeps its source layer, decision and class, with no silent reinterpretation. An abstention means the decision's confidence is below that layer's declared bar - the same meaning everywhere, not a separate ad-hoc judgment.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-269",
@@ -2369,10 +2681,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The numeric choices inside the pre-fit protocols - the fold count, the cell-count threshold, the confidence level - become binding when the protocols are ratified but remain protocol constants rather than fitted values. Changing one later is a governance amendment, not an act of tuning.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-273",
@@ -2384,10 +2704,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Adopting an architecture replacement in place of the incremental hard stop requires all of: the held-out key agreement against the local key beating the baseline beyond the stated confidence interval on every preset with root and Roman-numeral agreement not degrading beyond it; a modulation-rate guard keeping key changes per piece within a quarter of the ground truth's rate; a net decrease in the class-(b) root-disagree duration on every preset with every added failing run enumerated, classified and individually diagnosed; class-(a) tracked; and user ratification of the whole record as one revertible commit that re-baselines the reference.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the tonal subject",
      "matched": "key"
@@ -2412,10 +2739,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Non-adoption has a declared lawful exit, written at the same time as the adoption path: the new module is removed in one revertible commit, the fold and fit artifacts are kept as measurement history, and the retirement map that would have deleted the superseded code never executes.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the inference machinery",
      "matched": "estimator"
@@ -2436,10 +2770,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Each record published for the notation path carries the source-artifact hashes of the fitted table set, the identity of the selected weight vector, and the decoder's version. A consumer, or any later measurement, can always answer which fitted values produced a given analysis from the analysis itself.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the inference machinery",
      "matched": "weight"
@@ -2955,10 +3296,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Breaking the large chord-analysis source file into smaller ones was to wait until the code destined for deletion had been deleted, so that it happened once rather than twice. It did happen once — but in June 2026, BEFORE those deletions, not after. So the ordering instruction no longer governs anything: there is nothing left to sequence. What survives is the lesson it was an instance of — restructure once, after the boundaries have stabilized — which is what later work cites it for.",
    "the_evidence_shape_the_filter_recorded": "a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the tonal subject",
      "matched": "chord"
@@ -2979,10 +3327,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "When a change is claimed to leave the analysis untouched, the claim covers the ranked runner-up readings as well as the chosen one. A change that keeps the same answer but alters the alternatives beneath it is a change in behaviour and must be ratified as one.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-313",
@@ -2994,10 +3350,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Turning a layer's internal confidence number into a statement about how often it is right is only done when a higher number really does mean more often right. Where the measured curve goes the wrong way in places, that is reported as a fault in the layer, not smoothed over by the map.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-314",
@@ -3009,10 +3373,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "When a rule is kept because it encodes something structural rather than because a fitted number could replace it, its firing counts are re-measured at every adoption event. A kept rule that has quietly stopped firing then shows up at the next checkpoint instead of being discovered much later.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-316",
@@ -3130,10 +3502,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Two candidate readings are ordered by comparing their numbers exactly, with no tolerance band; exact ties are broken by a declared order. This is deliberate.",
    "the_evidence_shape_the_filter_recorded": "a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-322",
@@ -3720,10 +4100,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Reference material for how performers actually tune is audio, not notation, and is ruled outside what the corpus collection covers. The two intonation features that would have consumed it are validated instead against tuning theory and by ear.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-367",
@@ -3735,10 +4123,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "When a collection is acquired for one purpose, it is assessed against every need the project has, not just that one. Three things follow and all bind: a need already considered covered stays open to being covered better or more cheaply; a need not yet active gets its coverage recorded now, so that when its own sweep runs it starts non-empty; and every distinct layer of annotation the collection carries is inventoried, not only the layer that motivated acquiring it.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-368",
@@ -3750,10 +4146,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "If material turns up that bears on a question already considered closed, whether to go back and redo the work is never decided by enthusiasm or by saying nothing. The finding is recorded first, so it cannot be lost either way. Then a cheap read-only check asks one question: does the new material contradict a conclusion the design rests on, or does it only enrich the checking of it. A contradiction is surfaced at once as a tripwire, naming the later work that would compound, and the user decides between redoing it now and accepting it with the caveat recorded. Enrichment alone is postponed by default to the component's next natural touch. In both branches the decision is the user's; the protocol fixes only what gets measured and what gets written down.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-376",
@@ -3861,10 +4265,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The built resolver leads with whether one chord progresses plausibly into the next, and that is the wrong lead. The evidence that actually carries root correctness is the bass and inversion, the written spelling, and how well a root fits the tonality of the passage. Whether the progression is a licensed one is a tidy signal that turns out to be uncorrelated with getting the root right, so it is demoted: it may separate readings that are already equally consistent, and it may never overturn a root the vertical evidence committed to. Only the ordering is fixed here; the weights are left to the fitting phase.",
    "the_evidence_shape_the_filter_recorded": "a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the tonal subject",
      "matched": "tonal"
@@ -4025,10 +4436,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The study that established the texture classes measured whole pieces. Whether the same statistics, computed over a moving window, would find the places where the texture changes inside a piece has not been measured. So the first version gives the whole selection one texture, and finding several within it waits on that measurement. Shipping the windowed version now was considered and rejected as building on an assumption.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-391",
@@ -4108,10 +4527,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Where a written voice carries chords rather than single notes, anything needing one line from it must name the rule that picks that line, and the rule travels with the answer as provenance. There is one rule in the first version: take the highest sounding pitch. It is applied the same way everywhere, which is what removes the uneven treatment the exploratory study had between its sources.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the tonal subject",
      "matched": "chord"
@@ -4136,10 +4562,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The texture stage declines to answer under three named conditions: too few motion samples to support any decision, too small a lead of the best class over the second, or too poor an absolute fit of the best class. The third is the one that matters for music the taxonomy does not cover: without it, a passage unlike every known class would still be assigned to whichever class it least resembled, because a lead over the second-best says nothing about whether either fits.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-396",
@@ -4237,10 +4671,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The structural debt found across the built layers is ordered into one sequence rather than fixed as it was found. What is independent of which analysis path runs — the shared different-root scan, moving the neighbour-chord computation out of the derived-view layer, the duplicated fact-layer helpers, the two disagreeing alternative-list views, and sourcing the key decoder's constants from shared symbols — is done first, because none of it depends on the replacement decoder. The tangles that live in the legacy chord path fold into the engagement that retires that path, because fixing them separately would be work thrown away. Splitting the large chord-analysis source file comes last, after the deletions, so it is split once.",
    "the_evidence_shape_the_filter_recorded": "a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the tonal subject",
      "matched": "chord"
@@ -4445,10 +4886,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Fitting the analysis constants for jazz waits until jazz music with published human analyses can be converted into a form the fitter can use. What is fitted now is the one idiom the held annotated music covers — the classical common-practice one, which is what the two non-jazz presets deliver.",
    "the_evidence_shape_the_filter_recorded": "a numbered ruling named+a ratification event named+a ruling record named+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-423",
@@ -4481,10 +4930,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "When a choice is put to the user, each advantage and each disadvantage has to say which rule or principle makes it one, and every option is scored twice over: once against the rules and safeguards, and once against what the whole project is for — getting the analysis as right as it can be. An argument that names no rule is not an argument the surface may carry.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-425",
@@ -4520,10 +4977,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Of the two publications the record already promised, the one describing a passage's modal colour ships with this piece of work, because everything it is computed from is already checked. The one naming ornamental notes becomes a separate piece of work, because the material that would independently validate it is not held; its tracking entry is opened at the moment the decision is made, so the gap has a named way out rather than becoming something forgotten.",
    "the_evidence_shape_the_filter_recorded": "a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the tonal subject",
      "matched": "modal"
@@ -4896,10 +5360,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The user picks which language-model provider to use. The only thing the system demands of a provider is that it can call tools. One that cannot may still be used to answer questions about the music, but it may not be used to change the music.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-444",
@@ -4911,10 +5383,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The shared foundation the language-model bridge and any future plugin interface both sit on is not new machinery. An audit of the existing internal interfaces found they already cover almost everything it needs, so the layer is a clean face over what is there.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-445",
@@ -4970,10 +5450,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "What the model is told it can do is derived from the operations themselves. Adding an operation makes it available to the model with no second list to keep in step.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-448",
@@ -4985,10 +5473,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The model gets a chosen set of about forty editing operations covering the changes that matter, rather than everything the editor can do. Which ones are chosen is decided by watching what the read-only phases actually reach for.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-449",
@@ -5144,10 +5640,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Larger formal structures — sections, periods, sentences — are left out of the grouping stage's core because that stage assembles the flat grouping and formal structure is a bigger thing belonging higher up. They are NOT rejected for being uncheckable against our annotated music: the standing contract says that alone never disqualifies sound theory. They may be built when a need arises, with a chosen way of gaining confidence in them and an explicit mark that they are empirically unchecked.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named+a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-457",
@@ -5494,10 +5998,18 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "When published research is used to justify a design, each claim is marked as either measured in a paper that was actually read, established theory, or a guess. The main papers are read by more than one pass and the readings compared. If a paper could not be obtained, nothing is copied from it — the gap is stated instead.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-474",
@@ -5599,10 +6111,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Rather than declaring a phrase end wherever any one signal fires, the program computes how strongly each moment is marked as an ending and then picks the peaks. The all-or-nothing version is the special case that cannot express 'a bigger gap than its neighbours', and it finds too many endings.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named+a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-479",
@@ -5658,10 +6178,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "A fermata, a breath mark, a structural barline and the other written signs are facts, not evidence to be weighed — so each one is reported as a phrase end directly. Only the computed strength has to clear a local-maximum test and a threshold.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named+a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-482",
@@ -5673,10 +6201,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The same fermata-finding code existed twice, kept in step by hand. Both copies are replaced by the single owned component and every consumer re-pointed at it. Because the marker-only behaviour is unchanged, the swap produces identical results — the new behaviour is a separate, measured step.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named+a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-483",
@@ -5688,10 +6224,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "To check whether the phrase ends are right, they are compared with the phrase marks the human analysts wrote in the annotated corpora. A list of phrases derived from fermatas could not be used, because the program reads fermatas itself — it would be marking its own homework.",
    "the_evidence_shape_the_filter_recorded": "a ratification event named+a recorded ratifier",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-484",
@@ -5703,10 +6247,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "When only part of a score is loaded, this component does not ask for more music. Its profile simply ends where the loaded stretch ends; a consumer that wants boundary evidence further out asks for the extension itself and this component recomputes. Its published strength is comparable only within one score's own profile — it never overrides another layer's answer.",
    "the_evidence_shape_the_filter_recorded": "a numbered ruling named+a ratification event named+a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-485",
@@ -5718,10 +6270,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "The markers that produce a phrase end are of two kinds: some apply to the whole ensemble by notation (a structural barline), and some are written on one instrument (a breath mark). Today both are treated as whole-texture endings, so a local breath is promoted to a global boundary and the fact that it was local is lost. A boundary should record which signal produced it and at what scope — recorded as owed, and deliberately not built yet.",
    "the_evidence_shape_the_filter_recorded": "a numbered ruling named+a ratification event named+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the inference machinery",
      "matched": "inference"
@@ -6326,10 +6885,17 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "A one-line description of what a corpus contains records where the corpus came from. It does not establish that a particular kind of annotation is actually in it. Whether a layer is present is a measurement, made file by file.",
    "the_evidence_shape_the_filter_recorded": "a numbered ruling named+a ruling record named+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the note-level subject",
      "matched": "slice"
@@ -7816,10 +8382,18 @@
    "nonspec_kind": "contract-home",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "Every collection that says how hard a piece is to play is either restricted to research use or belongs to somebody who sells it. So a difficulty feature in a shipped product would need either a licence agreement or labels of our own; the held material is enough to check the idea works and not enough to ship it.",
    "the_evidence_shape_the_filter_recorded": "a numbered ruling named+a recorded ratifier+a ruling record named+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.",
-   "evidence": []
+   "proposed_class": "DESIGN-INTENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
+   "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "DESIGN-INTENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    }
+   ]
   },
   {
    "id": "D-616",
@@ -8002,10 +8576,17 @@
    "nonspec_kind": "project-convention",
    "what_the_entry_says_the_decision_is_quoted_from_the_register": "D-231's phase-1 rule says the specifications must be corrected wherever they state something false at HEAD. Documents also state things about themselves — a status banner, an as-built marker, a code line number, a missing note that a plan was superseded — and the user ruled how far that obligation reaches into those: only where the document's account of itself changes how a reader reads its analysis content. Three worked examples settle it rather than illustrate it: an as-built banner over a mechanism that is dormant is IN; a superseded plan with no note saying so is IN; a code anchor that has drifted, or a formatting artifact, is OUT. And if a session finds the test needs argument on the first cases it meets, it falls back to the narrow reading — the obligation covers only what a document says about the analysis — and says that it did so.",
    "the_evidence_shape_the_filter_recorded": "a dated user ruling named+a recorded ratifier+a user-act marker",
-   "proposed_class": "NEEDS-THE-USER",
-   "decided_by": "nothing — the rule reached no verdict and returns the entry",
-   "why": "the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.",
+   "proposed_class": "IMPLEMENTATION-MANAGEMENT",
+   "decided_by": "USER-RULED at the 2026-08-17 sitting",
+   "why": "the rule returned this entry rather than guessing, and the user placed it at the 2026-08-17 rulings-sort sitting by the ruled criterion: an entry whose statement binds the SYSTEM (what the analysis is, does, or must satisfy) is DESIGN-INTENT; one whose statement binds the WORK (how we decide, verify, record, sequence) is IMPLEMENTATION-MANAGEMENT",
    "evidence": [
+    {
+     "the_route": "USER-RULED at the 2026-08-17 sitting",
+     "the_record": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "the_list_it_was_read_from": "IMPLEMENTATION-MANAGEMENT",
+     "★_what_the_rule_had_returned": "NEEDS-THE-USER",
+     "★_the_rules_own_evidence_is_kept": "the recognizer hits the rule found are preserved below, so the placement can be read against what the rule saw"
+    },
     {
      "recogniser": "the note-level subject",
      "matched": "note"
