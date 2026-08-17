@@ -1492,7 +1492,7 @@ recorded act.
 
 ### D-576 — The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent
 
-- **Recorded at:** `CLAUDE.md:773-777` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:793-797` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** A chord's root and its lowest note can both be named correctly while the key is wrong. So a measurement built on root agreement barely moves when the tonality is misread — but the quality of the chord, its Roman numeral and some of its inversions are all corrupted. The measurement therefore reports less damage than a listener or reader would see.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -1606,13 +1606,13 @@ recorded act.
 
 ### D-656 — The crediting rule is NOT amended to count a tonicization label as agreeing with the annotator's modulated numeral; only a diagnostic partial-sub-split is defensible
 
-- **Recorded at:** `CLAUDE.md:991-1000` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:1011-1020` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** Where our analysis names an applied chord relative to the home key and the human annotator has changed key, the accuracy comparison is not to be altered so that our label counts as agreeing. Only a diagnostic that splits such cases out and exposes the masking is defensible. This is the measurement half of a decision whose build half — leaving the labeller unwired — belongs to the function layer's specification.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-660 — A research-tied name is not renamed but is governed by a two-tier rule, and the terminology cleanup runs in a fixed order with no tree-wide rename
 
-- **Recorded at:** `CLAUDE.md:1508-1519` · **status:** `live` · **group:** K
+- **Recorded at:** `CLAUDE.md:1528-1539` · **status:** `live` · **group:** K
 - **What the entry says the decision is:** A term borrowed from the published research that collides with this project's vocabulary is not renamed. Instead: where the research is actually discussed, the collision is explained and our own synonym stated; and every later use of the borrowed term outside our vocabulary carries a short inline note pointing at the research, so an unannotated repeat use is a flag. The wider terminology cleanup runs in a fixed order — the derived inventory first, then per-word batches the user rules, governing surfaces first — and there is no tree-wide rename.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 

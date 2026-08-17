@@ -556,7 +556,7 @@
       "verdict": "FAIL",
       "stdout": [],
       "stderr": [
-        "STOP: derived candidates with no authored verdict: BUILD_AND_TEST_ARCHIVE.md, CLAUDE_ARCHIVE.md, OPEN_ITEMS_ARCHIVE.md. An unclassified candidate is a STOP, never a silent pass (D-661)."
+        "STOP: derived candidates with no authored verdict: BUILD_AND_TEST_ARCHIVE.md, OPEN_ITEMS_ARCHIVE.md. An unclassified candidate is a STOP, never a silent pass (D-661)."
       ],
       "what_it_checks": "the filing convention's candidate set re-derives. What it guards is not the verdicts, which are authored judgments about documents, but three demands on the record as it stands: every derived candidate carries an authored verdict, so an unclassified candidate halts the run rather than passing silently; no verdict names a document the derivation no longer carries, so the tree moving under the table halts it too; and the derivation's SOUNDNESS against its seeds is re-computed on every run and published, so a signature that stops finding what the record already holds is reported rather than quietly trusted"
     },

@@ -132,7 +132,7 @@
 
 **Status.** LIVE · decided 2026-07-02 · ratified by user
 
-**Home.** `CLAUDE.md:1457`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1477`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:821-821; predicate qualification user-directed 2026-06-24, defined terms user-directed 2026-07-02. The ONE home is `cowork_design_doc_template.md`, which also carries the fourteen-section document structure, the status-banner convention and the implementation/test locator rule. Conformance of the existing tree is open at OPEN_ITEMS OI-230.
 
@@ -149,7 +149,7 @@
 
 **Status.** LIVE · decided 2026-07-11 · ratified by user
 
-**Home.** `CLAUDE.md:1453`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1473`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:817-811, user-directed repeatedly and recorded 2026-07-11.
 
@@ -175,7 +175,7 @@
 
 **Status.** LIVE · decided 2026-08-01 · ratified by user
 
-**Home.** `CLAUDE.md:1533`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1553`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** CLAUDE.md:873-876, user-directed 2026-08-01 at the decisions-register ratification review. The register's rationale field is what serves it; the founding instances the entry names are D-004's segment-cap value, D-059's window and D-015's boundary-tick convention.
 
@@ -512,7 +512,7 @@
 
 **Status.** LIVE · decided 2026-08-09 · ratified by user
 
-**Home.** `CLAUDE.md:1508-1519`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:1528-1539`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-09, Ruling 30 of `cowork_rulings_2026_08_09_fifth_stop.md`, whose two-tier test for research-tied names is the user's own; recorded on `OPEN_ITEMS.md` OI-229's row by `cc_instruction_return_continuation_5.md` Task 0, which stays OPEN because the cleanup itself is not done. CLASSIFIED as a DECISION by the user's Ruling 36 of 2026-08-09 (`cowork_rulings_2026_08_09_sixth_stop.md`), queue §7 entry 30, on the ground that nothing in the register says what a session may do with a research-tied name while #1/#2 make those names load-bearing. Homed by that same ruling in `CLAUDE.md`'s Conventions reserved-word block beside the disambiguation convention — the site the queue named, and a USER-ONLY text the ratification is the scoped licence for — written in that block's own voice, provenance here and never in the convention text. THE ENTRY ITSELF CARRIES NO SEPARATE RATIFICATION EVENT (#14). Cross-ref D-113 (the reserved-vocabulary convention it completes), D-661 (the completeness rule governing the inventory it orders), D-431 (why the inventory's counts stay in the artifact).
 

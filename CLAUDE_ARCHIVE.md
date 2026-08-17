@@ -114,3 +114,21 @@ prior 53/24/53 is preserved in the following paragraph.
 **THE SUPERSEDED WORDING, VERBATIM (#12):** *"(a) **read the INDEX `OPEN_ITEMS.md` at session
 start** (open detail files as needed)"*
 
+> **From `CLAUDE.md`, the build-and-test section's opening list, superseded 2026-08-17 by
+> `cc_instruction_preparation_ninth.md` Task 3 under the CONTINUOUS-PRUNING rule (§5(D) of
+> `cowork_rulings_2026_08_16_preparation_return.md`), executing Ruling 3 of
+> `cowork_rulings_2026_08_17_session_start_read_sitting.md`.** **What replaced it:** the list names
+> TWO unconditional session-start reads, and `BUILD_AND_TEST.md` becomes a CONDITIONAL read —
+> mandatory for a session that builds, tests, or runs a measurement tool whose command lives there.
+> `DECISIONS.md` was considered for the same treatment and RULED OUT, its ground recorded at the
+> site.
+
+**THE SUPERSEDED WORDING, VERBATIM (#12):**
+
+*"**Always read these three files at the start of every session:**
+- `C:\s\MS\BUILD_AND_TEST.md` — authoritative commands for all build variants, both test suites, and all Python tools
+- `C:\s\MS\STATUS.md` — lean since the 2026-07-18 doc split: the current entries, active iteration/next
+  action, and pointers to the ratified baselines (gate block (A) below)
+- `C:\s\MS\DECISIONS.md` — the decisions register's INDEX (see the register section above); rulings
+  bind mechanically only if every session reads them"*
+

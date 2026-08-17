@@ -668,12 +668,32 @@ Only stop and ask if:
 
 ## Build and test commands
 
-**Always read these three files at the start of every session:**
-- `C:\s\MS\BUILD_AND_TEST.md` — authoritative commands for all build variants, both test suites, and all Python tools
+**Always read these two files at the start of every session:**
 - `C:\s\MS\STATUS.md` — lean since the 2026-07-18 doc split: the current entries, active iteration/next
   action, and pointers to the ratified baselines (gate block (A) below)
 - `C:\s\MS\DECISIONS.md` — the decisions register's INDEX (see the register section above); rulings
   bind mechanically only if every session reads them
+
+**And read this one CONDITIONALLY — it is MANDATORY for a session that builds, tests, or runs a
+measurement tool whose command lives there:**
+- `C:\s\MS\BUILD_AND_TEST.md` — authoritative commands for all build variants, both test suites, and all Python tools
+
+*★ `BUILD_AND_TEST.md` WAS DEMOTED from an unconditional session-start read to a conditional one on
+2026-08-17, on the user's Ruling 3 of `cowork_rulings_2026_08_17_session_start_read_sitting.md`,
+executed by `cc_instruction_preparation_ninth.md` Task 3. It is the twice-ruled CONDITIONAL-READ
+pattern — the `docs/scoring_model.md` conditional and Ruling 64's conditional read — applied for
+the first time to DEMOTE rather than to add. The superseded wording moved verbatim to
+`CLAUDE_ARCHIVE.md` in the same act, under the continuous-pruning rule (§5(D) of
+`cowork_rulings_2026_08_16_preparation_return.md`).*
+
+*★ AND `DECISIONS.md` WAS CONSIDERED FOR THE SAME TREATMENT AND RULED OUT, the ground recorded here
+because a later ruling may revisit it and must have the ground to answer.* Its rule (a) rests on a
+stated premise — **rulings bind mechanically only if every session reads them** — and a condition
+would replace a mechanical bind with a judgment each session makes about its own work BEFORE
+reading the thing that would tell it whether the judgment is right. That is the
+never-work-from-memory rule's own failure shape and #19's silent-failure direction. **Nothing about
+`DECISIONS.md`'s session-start read is changed; what is recorded is that the question was put and
+answered.**
 
 Do not rely on memory of previous sessions for baseline numbers or iteration state — read STATUS.md.
 `STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` hold the superseded historical entries moved out
