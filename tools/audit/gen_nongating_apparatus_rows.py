@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
-"""Derive the NON-GATING apparatus set: open register rows that gate no stage.
+"""Derive the NON-GATING apparatus set, and publish THE LIVE GATING ANSWER by identity.
 
 THE RULING (user, 2026-08-03): rows whose subject is this project's own tracking and
 documentation apparatus are declared NON-GATING - worked in leftover capacity, gating nothing.
+
+★ AND THE SECOND RULING THIS FILE NOW SERVES (user, 2026-08-17, Ruling 1 of
+`cowork_rulings_2026_08_17_session_start_read_sitting.md`): "A session no longer reads the whole
+index at session start. It reads the derived gating answer, and opens the INDEX when it needs a
+row."  The gating side is the COMPLEMENT of the non-gating verdicts over the open rows this tool
+already parses, so publishing it authors no verdict; it publishes what this derivation already
+computes.  It is established under #19 on every run, reconciled in BOTH directions against the
+INDEX itself, and a row it cannot place HALTS the run.  The full statement of what is derived,
+what would falsify it and what it does NOT do is at `the_live_gating_answer` below and is
+published into the artifact at `★_the_live_gating_answer`.
 
 THE CRITERION, as ruled: does the row's subject bear on the analysis, its inputs, or an
 instrument a measurement depends on?  IF YES IT GATES.
@@ -49,9 +59,19 @@ OUT = ROOT / "tools" / "audit" / "nongating_apparatus_rows.json"
 # D-639's SECOND application — the reach derivation over the apparatus-classed rows. Its IN set is
 # what the user's Ruling 56 APPLIES here, and it is read on every run rather than transcribed.
 REACH = ROOT / "tools" / "audit" / "decisions" / "true_half_reach_rows.json"
+# READ FOR COMPARISON ONLY, never to reach the live answer. Its generator is frozen HISTORICAL; the
+# reason and the bound are at `frozen_gating_enumeration` below.
+FROZEN_INVENTORY = ROOT / "tools" / "audit" / "phase1_completion_inventory.json"
 
 GATES = "GATES"
 NON_GATING = "NON-GATING"
+
+# The ground a gating row carries when it is gating because it is OUTSIDE the over-inclusive
+# apparatus first cut. It is a distinct string so the two ways a row reaches the gating side can be
+# told apart at the artifact without opening this file.
+OUTSIDE_THE_CUT_GROUND = (
+    "the ruled default - the row is outside the over-inclusive apparatus first cut, so the "
+    "non-gating declaration does not reach it at all")
 
 # The gate ground a row carries when it is here because D-639's reach derivation put it INSIDE the
 # doc-sync half and the user's Ruling 56 applied that. It is a distinct string so the authored table
@@ -1249,6 +1269,213 @@ def reach_rows_inside() -> list:
             f"`rows_inside_the_doc_sync_half` ({exc}), which is the field Ruling 56 applies.")
 
 
+def frozen_gating_enumeration() -> tuple[list | None, str]:
+    """The FROZEN phase-1 enumeration of gating rows, read for COMPARISON only.
+
+    ★ THE LIVE ANSWER DOES NOT DEPEND ON THIS AND MUST NOT. `the_live_gating_answer` is computed
+    entirely from the INDEX as it stands and from the verdicts in this file; this read exists so
+    the difference between the live answer and the frozen record can be PUBLISHED as evidence for
+    the phase's retrospective. An absent frozen artifact therefore does not halt the derivation —
+    it is reported as unreadable, in terms, so it can never be mistaken for "no difference".
+    """
+    if not FROZEN_INVENTORY.exists():
+        return None, (f"{FROZEN_INVENTORY.relative_to(ROOT).as_posix()} is absent, so the "
+                      "comparison could NOT be taken. This is not a statement that the two agree.")
+    art = json.loads(FROZEN_INVENTORY.read_text(encoding="utf-8"))
+    try:
+        return list(art["the_gating_split"]["gates"]["ids"]), ""
+    except KeyError as exc:
+        return None, (f"{FROZEN_INVENTORY.relative_to(ROOT).as_posix()} carries no "
+                      f"`the_gating_split.gates.ids` ({exc}), so the comparison could NOT be "
+                      "taken. This is not a statement that the two agree.")
+
+
+def the_live_gating_answer(open_rows: list, items: list, ng_ids: list) -> dict:
+    """★ THE LIVE GATING ANSWER, PUBLISHED BY IDENTITY — Ruling 1 of the session-start-read sitting.
+
+    WHAT THIS IS AND WHY IT IS A PUBLICATION RATHER THAN A JUDGMENT. Rule (b) of the open-items
+    register is *a stage may not open while a register item gating it is open*, so a session needs
+    to know WHICH ROWS GATE. This derivation already determines that for every open row, and until
+    2026-08-17 it published only one side of it: the NON-GATING identities, plus a count and a
+    per-ground listing of the GATES verdicts INSIDE its own over-inclusive first cut. The gating
+    side as a whole was never enumerated.
+
+    It needs no new verdict. The first cut is deliberately OVER-INCLUSIVE — the module docstring
+    says so and the tool STOPs unless every candidate in it carries an authored verdict — so an
+    open row OUTSIDE the cut is not an apparatus candidate at all, and THE RULED DEFAULT already
+    answers it: *a row that is not apparatus, or whose subject the row does not settle, GATES.*
+    The gating set is therefore the COMPLEMENT of the non-gating verdicts over the open rows this
+    tool already parses, and publishing it is publishing what the derivation computes.
+
+    ★ WHAT WOULD FALSIFY IT, recorded with it so a later session can challenge the derivation
+    rather than rediscover the question:
+      * an open row placed in NEITHER side, or in BOTH — the partition is asserted in both
+        directions on every run and a row it cannot place HALTS the run;
+      * a gating identity that is not an OPEN row of `OPEN_ITEMS.md` — asserted against the parsed
+        population itself, not against a copy of it;
+      * a gating row carrying no ground — asserted per row;
+      * the ruled default ceasing to be *GATES* for a row outside the apparatus cut, which would
+        make the complement the wrong operation. That is a USER RULING and not a drift: it would
+        be visible at `THE_DEFAULT` above, which is quoted into the artifact on every run.
+
+    ★ WHAT IT DOES NOT DO. It does not make this artifact a second home for status: the INDEX
+    remains the authoritative status surface (#6), and this is a route to ONE question the INDEX
+    answers. It closes no row, flips none, and creates none. It does not reach an establishment
+    obligation (#19), which always gates.
+    """
+    open_ids = sorted(r["id"] for r in open_rows)
+    ng_set = set(ng_ids)
+    cut_ground = {i["id"]: i.get("gate_ground") for i in items if i["verdict"] == GATES}
+    in_cut = {i["id"] for i in items}
+
+    gating, unplaceable = [], []
+    for rid in open_ids:
+        if rid in ng_set:
+            continue
+        if rid in in_cut:
+            ground = cut_ground.get(rid)
+            how = "the authored verdict at the row, inside the apparatus first cut"
+            if not ground:
+                unplaceable.append(rid)
+                continue
+        else:
+            ground = OUTSIDE_THE_CUT_GROUND
+            how = "the ruled default, the row being outside the over-inclusive apparatus first cut"
+        gating.append({"id": rid, "gate_ground": ground, "how_it_was_placed": how})
+
+    gating_ids = [g["id"] for g in gating]
+    # ── the #19 establishment: reconciled in BOTH directions against the INDEX itself ────────────
+    if unplaceable:
+        raise SystemExit(
+            "STOP: open row(s) the gating derivation cannot place: " + ", ".join(unplaceable)
+            + ". A row the derivation cannot place halts the run rather than being defaulted "
+              "silently — the gating answer is only established while every open row is accounted "
+              "for.")
+    both = sorted(set(gating_ids) & ng_set)
+    if both:
+        raise SystemExit("STOP: open row(s) on BOTH sides of the gating split: "
+                         + ", ".join(both) + ". A row gates or it does not.")
+    neither = sorted(set(open_ids) - set(gating_ids) - ng_set)
+    if neither:
+        raise SystemExit("STOP: open row(s) on NEITHER side of the gating split: "
+                         + ", ".join(neither) + ". Every open row is accounted for or nothing is "
+                         "written.")
+    not_open = sorted(set(gating_ids) - set(open_ids))
+    if not_open:
+        raise SystemExit("STOP: gating identity/identities that are not open rows of the INDEX: "
+                         + ", ".join(not_open))
+    groundless = sorted(g["id"] for g in gating if not g["gate_ground"])
+    if groundless:
+        raise SystemExit("STOP: gating row(s) carrying no ground: " + ", ".join(groundless))
+
+    frozen, why_not = frozen_gating_enumeration()
+    comparison = {
+        "what_this_is": (
+            "THE MEASUREMENT OF WHAT THE OSSIFICATION HAS BEEN HIDING, and it is EVIDENCE FOR THE "
+            "PHASE'S RETROSPECTIVE — never an act. No row is flipped, created or discarded by it, "
+            "and the frozen artifact's own population is left exactly as it stands."),
+        "the_frozen_record": FROZEN_INVENTORY.relative_to(ROOT).as_posix()
+                             + " → the_gating_split.gates.ids",
+        "why_it_is_frozen": (
+            "its generator `tools/audit/gen_phase1_completion_inventory.py` carries the verdict "
+            "`records-a-point-in-time-measurement` in the committed guard classification and "
+            "stands HISTORICAL, because its subject is the three-phase structure the six phases "
+            "superseded. It is a historical record and not a live answer."),
+        "★_the_two_populations_are_different_BY_CONSTRUCTION_and_that_is_the_finding": (
+            "the frozen split is applied over `the wide cut` — an authored keyword selection of "
+            "open rows, whose own over-inclusion that artifact declares unmeasured — while this "
+            "derivation's population is EVERY OPEN ROW of the INDEX as it stands. So the "
+            "difference below is not drift between two answers to one question: it is the gap "
+            "between a frozen answer over a narrow authored cut and the live answer over the "
+            "whole open register."),
+    }
+    if frozen is None:
+        comparison["the_comparison_could_not_be_taken"] = why_not
+    else:
+        frozen_set, live_set = set(frozen), set(gating_ids)
+        comparison["frozen_gating_rows"] = len(frozen)
+        comparison["live_gating_rows"] = len(gating_ids)
+        comparison["in_the_frozen_record_and_still_gating_live"] = sorted(frozen_set & live_set)
+        comparison["in_the_frozen_record_but_NOT_gating_live"] = sorted(frozen_set - live_set)
+        comparison["gating_live_but_NOT_in_the_frozen_record"] = sorted(live_set - frozen_set)
+        comparison["★_what_each_difference_side_means"] = (
+            "A row in the frozen record but not gating live has either RESOLVED since the freeze "
+            "or been re-classed NON-GATING by a verdict in this file — read its side at the INDEX "
+            "and at the items above, never from this list alone. A row gating live but absent "
+            "from the frozen record is one the frozen wide cut never selected, or one opened "
+            "since the freeze. NEITHER side is acted on here.")
+
+    return {
+        "what_this_is": (
+            "THE LIVE GATING ANSWER: which OPEN rows of `OPEN_ITEMS.md` a stage waits on, derived "
+            "at the INDEX as it stands today and published BY IDENTITY. This is the artifact a "
+            "session reads at session start under rule (a) of the open-items register section of "
+            "`CLAUDE.md`; it opens the INDEX when it needs a row."),
+        "the_ruling_that_ordered_it": (
+            "Ruling 1 of `cowork_rulings_2026_08_17_session_start_read_sitting.md`: \"A session no "
+            "longer reads the whole index at session start. It reads the derived gating answer, "
+            "and opens the INDEX when it needs a row.\" The ruling's own #19 precondition is that "
+            "the artifact must be POSITIVELY ESTABLISHED before anything relies on it."),
+        "the_question_it_answers": (
+            "Rule (b) of the open-items register: a stage may not open while a register item "
+            "gating it is open. A count does not answer that question; identities do."),
+        "★_how_it_is_derived_and_why_it_is_a_publication_and_not_a_judgment": (
+            "The gating set is the COMPLEMENT of this file's non-gating verdicts over the open "
+            "rows this tool already parses. No new verdict is authored: the apparatus first cut is "
+            "deliberately OVER-INCLUSIVE and every candidate in it must carry an authored verdict "
+            "or the tool STOPs, so an open row outside the cut is not an apparatus candidate and "
+            "THE RULED DEFAULT already gates it. Nothing is imported from any frozen artifact to "
+            "reach this answer."),
+        "★_the_establishment_under_#19_taken_POSITIVELY_on_every_run": {
+            "reconciled_in_both_directions_against_the_INDEX_itself": [
+                "every gating identity is an OPEN row of the parsed INDEX population",
+                "every open row is accounted for as gating or non-gating — none in both, none in "
+                "neither",
+                "every gating row carries a ground",
+            ],
+            "a_row_the_derivation_cannot_place_HALTS_the_run": True,
+            "what_would_falsify_it": [
+                "an open row placed in neither side, or in both",
+                "a gating identity that is not an open row of the INDEX",
+                "a gating row carrying no ground",
+                "the ruled default ceasing to be GATES for a row outside the apparatus cut, which "
+                "would make the complement the wrong operation — a USER RULING, visible at "
+                "`the_default` in this artifact, and not a drift",
+            ],
+            "what_it_does_NOT_establish": (
+                "That any individual GATES verdict is right — a verdict about a row's subject is "
+                "authored and is challengeable at the row. What is established is that the "
+                "partition is complete, that every identity is a live open row, and that every "
+                "gating row carries a ground."),
+        },
+        "the_default_that_places_every_row_outside_the_apparatus_cut": THE_DEFAULT,
+        "gating_rows": len(gating_ids),
+        "non_gating_rows": len(ng_ids),
+        "open_rows": len(open_ids),
+        "gating_ids": gating_ids,
+        "gating_rows_by_how_they_were_placed": {
+            "the_authored_verdict_inside_the_apparatus_first_cut":
+                sorted(g["id"] for g in gating
+                       if g["how_it_was_placed"].startswith("the authored verdict")),
+            "the_ruled_default_outside_the_apparatus_first_cut":
+                sorted(g["id"] for g in gating
+                       if g["how_it_was_placed"].startswith("the ruled default")),
+        },
+        "the_gating_rows": gating,
+        "★_the_frozen_enumeration_measured_against_this_one": comparison,
+        "★_what_this_answer_does_NOT_do": [
+            "It does not change rule (a)'s authority: the INDEX remains the AUTHORITATIVE STATUS "
+            "SURFACE, and this is a route to one question it answers, never a second home for "
+            "status (#6).",
+            "It flips no row, creates none and discards none.",
+            "It does not reach an establishment obligation (#19), which always gates.",
+            "It says nothing about a row's SIZE or its owner — that is "
+            "`tools/audit/gating_row_sizing.json`, whose own population comes from the frozen "
+            "record and is deliberately left exactly as it stands.",
+        ],
+    }
+
+
 def build():
     rows = parse_rows()
     by_id = {r["id"]: r for r in rows}
@@ -1365,6 +1592,8 @@ def build():
     a3_refuted = [i for i in a3_live if i not in ng_ids]
     a3_missed = [i for i in ng_ids if i not in a3_ids]
 
+    live_answer = the_live_gating_answer(open_rows, items, ng_ids)
+
     return {
         "purpose": (
             "The NON-GATING apparatus declaration: which OPEN register rows gate no stage and "
@@ -1449,6 +1678,7 @@ def build():
                 for g in sorted({i["gate_ground"] for i in gates})
             },
         },
+        "★_the_live_gating_answer": live_answer,
         "items": items,
         "superseded_verdicts": {
             "what_this_is": (

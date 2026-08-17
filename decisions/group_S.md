@@ -459,7 +459,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1687-1689`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1698-1700`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md (the user's rulings at the analysis-cost session, 2026-07-28), a session handoff block that ages into an archive outside the session-start read. It corrects a Cowork misreading of 'implementation efficiency is not very relevant', which meant BUILD effort, not runtime. OPEN_ITEMS OI-240 closes on this move
 
@@ -505,7 +505,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1697-1699`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1708-1710`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, the user's ruling at the OI-199 pass-2 session, 2026-07-28. Homed beside #8 in CLAUDE.md because it is a ruling about what #8 permits; what the admission rule IS, and that it has no specified form, is in the estimator's own specification (D-098) and at OPEN_ITEMS OI-226. Cross-read with STATUS.md's earlier note that the classification 'is the user's to settle' - this row records that it was settled. OPEN_ITEMS OI-240 closes on this move
 
@@ -521,7 +521,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1708-1710`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1719-1721`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, recorded at the OI-199 pass-2 session, 2026-07-28. OPEN_ITEMS OI-240 closes on this move
 
@@ -637,7 +637,7 @@ identity competition, with cadence + functional labeling marked "E4 (planned)" =
 
 **Status.** LIVE · decided 2026-08-04 · ratified by user
 
-**Home.** `CLAUDE.md:1568-1587`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:1579-1598`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_phase1_delegations_and_corrections.md` §0a as R1, which states both the test and its fallback. Homed at the D-231 phase-1 clause in `CLAUDE.md`, which is where the obligation it bounds is defined — the dispatch's own instruction was to record it 'where the TRUE half is defined, so a later row is classifiable without a fresh ruling'. The ruling ALSO moves a gate verdict (OI-332 classes itself apparatus on one half of D-438's line, whose other half makes a correction to a statement about the build state gating); that consequence is REPORTED at `tools/audit/decisions/true_half_reach.json` and rowed at `OPEN_ITEMS.md` OI-336, not applied here, because a non-gating verdict is derived from a cut and never hand-added.
 

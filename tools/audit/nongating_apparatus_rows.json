@@ -159,6 +159,1791 @@
    ]
   }
  },
+ "★_the_live_gating_answer": {
+  "what_this_is": "THE LIVE GATING ANSWER: which OPEN rows of `OPEN_ITEMS.md` a stage waits on, derived at the INDEX as it stands today and published BY IDENTITY. This is the artifact a session reads at session start under rule (a) of the open-items register section of `CLAUDE.md`; it opens the INDEX when it needs a row.",
+  "the_ruling_that_ordered_it": "Ruling 1 of `cowork_rulings_2026_08_17_session_start_read_sitting.md`: \"A session no longer reads the whole index at session start. It reads the derived gating answer, and opens the INDEX when it needs a row.\" The ruling's own #19 precondition is that the artifact must be POSITIVELY ESTABLISHED before anything relies on it.",
+  "the_question_it_answers": "Rule (b) of the open-items register: a stage may not open while a register item gating it is open. A count does not answer that question; identities do.",
+  "★_how_it_is_derived_and_why_it_is_a_publication_and_not_a_judgment": "The gating set is the COMPLEMENT of this file's non-gating verdicts over the open rows this tool already parses. No new verdict is authored: the apparatus first cut is deliberately OVER-INCLUSIVE and every candidate in it must carry an authored verdict or the tool STOPs, so an open row outside the cut is not an apparatus candidate and THE RULED DEFAULT already gates it. Nothing is imported from any frozen artifact to reach this answer.",
+  "★_the_establishment_under_#19_taken_POSITIVELY_on_every_run": {
+   "reconciled_in_both_directions_against_the_INDEX_itself": [
+    "every gating identity is an OPEN row of the parsed INDEX population",
+    "every open row is accounted for as gating or non-gating — none in both, none in neither",
+    "every gating row carries a ground"
+   ],
+   "a_row_the_derivation_cannot_place_HALTS_the_run": true,
+   "what_would_falsify_it": [
+    "an open row placed in neither side, or in both",
+    "a gating identity that is not an open row of the INDEX",
+    "a gating row carrying no ground",
+    "the ruled default ceasing to be GATES for a row outside the apparatus cut, which would make the complement the wrong operation — a USER RULING, visible at `the_default` in this artifact, and not a drift"
+   ],
+   "what_it_does_NOT_establish": "That any individual GATES verdict is right — a verdict about a row's subject is authored and is challengeable at the row. What is established is that the partition is complete, that every identity is a live open row, and that every gating row carries a ground."
+  },
+  "the_default_that_places_every_row_outside_the_apparatus_cut": "A row that is not apparatus, or whose subject the row does not settle, GATES. The declaration only ever removes a wait where the row's own text supports removing it.",
+  "gating_rows": 216,
+  "non_gating_rows": 25,
+  "open_rows": 241,
+  "gating_ids": [
+   "OI-1",
+   "OI-10",
+   "OI-101",
+   "OI-102",
+   "OI-103",
+   "OI-104",
+   "OI-105",
+   "OI-106",
+   "OI-107",
+   "OI-108",
+   "OI-109",
+   "OI-11",
+   "OI-111",
+   "OI-113",
+   "OI-114",
+   "OI-115",
+   "OI-117",
+   "OI-118",
+   "OI-119",
+   "OI-12",
+   "OI-120",
+   "OI-121",
+   "OI-122",
+   "OI-125",
+   "OI-127",
+   "OI-13",
+   "OI-131",
+   "OI-14",
+   "OI-141",
+   "OI-145",
+   "OI-146",
+   "OI-147",
+   "OI-148",
+   "OI-149",
+   "OI-15",
+   "OI-152",
+   "OI-154",
+   "OI-156",
+   "OI-158",
+   "OI-16",
+   "OI-161",
+   "OI-162",
+   "OI-163",
+   "OI-164",
+   "OI-165",
+   "OI-166",
+   "OI-167",
+   "OI-169",
+   "OI-17",
+   "OI-170",
+   "OI-171",
+   "OI-172",
+   "OI-173",
+   "OI-174",
+   "OI-175",
+   "OI-176",
+   "OI-177",
+   "OI-179",
+   "OI-18",
+   "OI-180",
+   "OI-182",
+   "OI-185",
+   "OI-186",
+   "OI-188",
+   "OI-189",
+   "OI-19",
+   "OI-190",
+   "OI-191",
+   "OI-192",
+   "OI-193",
+   "OI-194",
+   "OI-196",
+   "OI-198",
+   "OI-199",
+   "OI-2",
+   "OI-20",
+   "OI-200",
+   "OI-201",
+   "OI-203",
+   "OI-206",
+   "OI-207",
+   "OI-209",
+   "OI-21",
+   "OI-210",
+   "OI-211",
+   "OI-212",
+   "OI-213",
+   "OI-214",
+   "OI-215",
+   "OI-216",
+   "OI-217",
+   "OI-218",
+   "OI-22",
+   "OI-220",
+   "OI-221",
+   "OI-222",
+   "OI-223",
+   "OI-224",
+   "OI-225",
+   "OI-226",
+   "OI-227",
+   "OI-228",
+   "OI-23",
+   "OI-231",
+   "OI-235",
+   "OI-239",
+   "OI-24",
+   "OI-243",
+   "OI-244",
+   "OI-245",
+   "OI-246",
+   "OI-247",
+   "OI-248",
+   "OI-249",
+   "OI-25",
+   "OI-250",
+   "OI-251",
+   "OI-252",
+   "OI-253",
+   "OI-254",
+   "OI-255",
+   "OI-256",
+   "OI-258",
+   "OI-259",
+   "OI-26",
+   "OI-261",
+   "OI-262",
+   "OI-263",
+   "OI-264",
+   "OI-267",
+   "OI-27",
+   "OI-271",
+   "OI-274",
+   "OI-277",
+   "OI-28",
+   "OI-283",
+   "OI-288",
+   "OI-29",
+   "OI-292",
+   "OI-3",
+   "OI-30",
+   "OI-302",
+   "OI-306",
+   "OI-307",
+   "OI-308",
+   "OI-309",
+   "OI-31",
+   "OI-310",
+   "OI-311",
+   "OI-312",
+   "OI-313",
+   "OI-314",
+   "OI-316",
+   "OI-32",
+   "OI-321",
+   "OI-323",
+   "OI-325",
+   "OI-328",
+   "OI-330",
+   "OI-339",
+   "OI-34",
+   "OI-341",
+   "OI-352",
+   "OI-357",
+   "OI-359",
+   "OI-36",
+   "OI-360",
+   "OI-363",
+   "OI-365",
+   "OI-37",
+   "OI-371",
+   "OI-372",
+   "OI-374",
+   "OI-38",
+   "OI-39",
+   "OI-4",
+   "OI-40",
+   "OI-5",
+   "OI-55",
+   "OI-57",
+   "OI-6",
+   "OI-61",
+   "OI-63",
+   "OI-64",
+   "OI-65",
+   "OI-66",
+   "OI-67",
+   "OI-68",
+   "OI-69",
+   "OI-7",
+   "OI-70",
+   "OI-72",
+   "OI-73",
+   "OI-74",
+   "OI-75",
+   "OI-76",
+   "OI-77",
+   "OI-78",
+   "OI-79",
+   "OI-8",
+   "OI-80",
+   "OI-81",
+   "OI-82",
+   "OI-83",
+   "OI-86",
+   "OI-87",
+   "OI-9",
+   "OI-90",
+   "OI-91",
+   "OI-92",
+   "OI-93",
+   "OI-94",
+   "OI-95",
+   "OI-96",
+   "OI-97",
+   "OI-98"
+  ],
+  "gating_rows_by_how_they_were_placed": {
+   "the_authored_verdict_inside_the_apparatus_first_cut": [
+    "OI-105",
+    "OI-107",
+    "OI-121",
+    "OI-146",
+    "OI-154",
+    "OI-207",
+    "OI-220",
+    "OI-222",
+    "OI-223",
+    "OI-239",
+    "OI-256",
+    "OI-259",
+    "OI-267",
+    "OI-274",
+    "OI-283",
+    "OI-292",
+    "OI-302",
+    "OI-321",
+    "OI-359",
+    "OI-360",
+    "OI-371",
+    "OI-57",
+    "OI-63",
+    "OI-95"
+   ],
+   "the_ruled_default_outside_the_apparatus_first_cut": [
+    "OI-1",
+    "OI-10",
+    "OI-101",
+    "OI-102",
+    "OI-103",
+    "OI-104",
+    "OI-106",
+    "OI-108",
+    "OI-109",
+    "OI-11",
+    "OI-111",
+    "OI-113",
+    "OI-114",
+    "OI-115",
+    "OI-117",
+    "OI-118",
+    "OI-119",
+    "OI-12",
+    "OI-120",
+    "OI-122",
+    "OI-125",
+    "OI-127",
+    "OI-13",
+    "OI-131",
+    "OI-14",
+    "OI-141",
+    "OI-145",
+    "OI-147",
+    "OI-148",
+    "OI-149",
+    "OI-15",
+    "OI-152",
+    "OI-156",
+    "OI-158",
+    "OI-16",
+    "OI-161",
+    "OI-162",
+    "OI-163",
+    "OI-164",
+    "OI-165",
+    "OI-166",
+    "OI-167",
+    "OI-169",
+    "OI-17",
+    "OI-170",
+    "OI-171",
+    "OI-172",
+    "OI-173",
+    "OI-174",
+    "OI-175",
+    "OI-176",
+    "OI-177",
+    "OI-179",
+    "OI-18",
+    "OI-180",
+    "OI-182",
+    "OI-185",
+    "OI-186",
+    "OI-188",
+    "OI-189",
+    "OI-19",
+    "OI-190",
+    "OI-191",
+    "OI-192",
+    "OI-193",
+    "OI-194",
+    "OI-196",
+    "OI-198",
+    "OI-199",
+    "OI-2",
+    "OI-20",
+    "OI-200",
+    "OI-201",
+    "OI-203",
+    "OI-206",
+    "OI-209",
+    "OI-21",
+    "OI-210",
+    "OI-211",
+    "OI-212",
+    "OI-213",
+    "OI-214",
+    "OI-215",
+    "OI-216",
+    "OI-217",
+    "OI-218",
+    "OI-22",
+    "OI-221",
+    "OI-224",
+    "OI-225",
+    "OI-226",
+    "OI-227",
+    "OI-228",
+    "OI-23",
+    "OI-231",
+    "OI-235",
+    "OI-24",
+    "OI-243",
+    "OI-244",
+    "OI-245",
+    "OI-246",
+    "OI-247",
+    "OI-248",
+    "OI-249",
+    "OI-25",
+    "OI-250",
+    "OI-251",
+    "OI-252",
+    "OI-253",
+    "OI-254",
+    "OI-255",
+    "OI-258",
+    "OI-26",
+    "OI-261",
+    "OI-262",
+    "OI-263",
+    "OI-264",
+    "OI-27",
+    "OI-271",
+    "OI-277",
+    "OI-28",
+    "OI-288",
+    "OI-29",
+    "OI-3",
+    "OI-30",
+    "OI-306",
+    "OI-307",
+    "OI-308",
+    "OI-309",
+    "OI-31",
+    "OI-310",
+    "OI-311",
+    "OI-312",
+    "OI-313",
+    "OI-314",
+    "OI-316",
+    "OI-32",
+    "OI-323",
+    "OI-325",
+    "OI-328",
+    "OI-330",
+    "OI-339",
+    "OI-34",
+    "OI-341",
+    "OI-352",
+    "OI-357",
+    "OI-36",
+    "OI-363",
+    "OI-365",
+    "OI-37",
+    "OI-372",
+    "OI-374",
+    "OI-38",
+    "OI-39",
+    "OI-4",
+    "OI-40",
+    "OI-5",
+    "OI-55",
+    "OI-6",
+    "OI-61",
+    "OI-64",
+    "OI-65",
+    "OI-66",
+    "OI-67",
+    "OI-68",
+    "OI-69",
+    "OI-7",
+    "OI-70",
+    "OI-72",
+    "OI-73",
+    "OI-74",
+    "OI-75",
+    "OI-76",
+    "OI-77",
+    "OI-78",
+    "OI-79",
+    "OI-8",
+    "OI-80",
+    "OI-81",
+    "OI-82",
+    "OI-83",
+    "OI-86",
+    "OI-87",
+    "OI-9",
+    "OI-90",
+    "OI-91",
+    "OI-92",
+    "OI-93",
+    "OI-94",
+    "OI-96",
+    "OI-97",
+    "OI-98"
+   ]
+  },
+  "the_gating_rows": [
+   {
+    "id": "OI-1",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-10",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-101",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-102",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-103",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-104",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-105",
+    "gate_ground": "specification truth",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-106",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-107",
+    "gate_ground": "specification truth",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-108",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-109",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-11",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-111",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-113",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-114",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-115",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-117",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-118",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-119",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-12",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-120",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-121",
+    "gate_ground": "specification truth",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-122",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-125",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-127",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-13",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-131",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-14",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-141",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-145",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-146",
+    "gate_ground": "the analysis",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-147",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-148",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-149",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-15",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-152",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-154",
+    "gate_ground": "the default - out of the declared class",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-156",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-158",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-16",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-161",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-162",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-163",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-164",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-165",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-166",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-167",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-169",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-17",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-170",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-171",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-172",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-173",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-174",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-175",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-176",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-177",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-179",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-18",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-180",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-182",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-185",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-186",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-188",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-189",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-19",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-190",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-191",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-192",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-193",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-194",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-196",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-198",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-199",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-2",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-20",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-200",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-201",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-203",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-206",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-207",
+    "gate_ground": "the analysis",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-209",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-21",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-210",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-211",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-212",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-213",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-214",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-215",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-216",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-217",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-218",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-22",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-220",
+    "gate_ground": "specification truth",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-221",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-222",
+    "gate_ground": "an instrument a measurement depends on",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-223",
+    "gate_ground": "an instrument a measurement depends on",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-224",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-225",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-226",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-227",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-228",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-23",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-231",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-235",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-239",
+    "gate_ground": "the analysis's inputs",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-24",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-243",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-244",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-245",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-246",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-247",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-248",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-249",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-25",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-250",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-251",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-252",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-253",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-254",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-255",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-256",
+    "gate_ground": "an instrument a measurement depends on",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-258",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-259",
+    "gate_ground": "the record already names it a phase-3 input",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-26",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-261",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-262",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-263",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-264",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-267",
+    "gate_ground": "the record already names it a phase-3 input",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-27",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-271",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-274",
+    "gate_ground": "specification truth",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-277",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-28",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-283",
+    "gate_ground": "#19 establishment obligation",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-288",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-29",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-292",
+    "gate_ground": "the default - the row's scope does not settle it",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-3",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-30",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-302",
+    "gate_ground": "the default - the row's own scope does not settle it",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-306",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-307",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-308",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-309",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-31",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-310",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-311",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-312",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-313",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-314",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-316",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-32",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-321",
+    "gate_ground": "a statement about the analysis's build state",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-323",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-325",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-328",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-330",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-339",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-34",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-341",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-352",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-357",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-359",
+    "gate_ground": "the criterion - the subject is an instrument a measurement of the analysis depends on",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-36",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-360",
+    "gate_ground": "the clause that overrides the criterion - an establishment obligation (#19) always gates, whatever its subject",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-363",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-365",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-37",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-371",
+    "gate_ground": "a statement about the analysis's build state",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-372",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-374",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-38",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-39",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-4",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-40",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-5",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-55",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-57",
+    "gate_ground": "the analysis's inputs",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-6",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-61",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-63",
+    "gate_ground": "the analysis",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-64",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-65",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-66",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-67",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-68",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-69",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-7",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-70",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-72",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-73",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-74",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-75",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-76",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-77",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-78",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-79",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-8",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-80",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-81",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-82",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-83",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-86",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-87",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-9",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-90",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-91",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-92",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-93",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-94",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-95",
+    "gate_ground": "an instrument a measurement depends on",
+    "how_it_was_placed": "the authored verdict at the row, inside the apparatus first cut"
+   },
+   {
+    "id": "OI-96",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-97",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
+    "id": "OI-98",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   }
+  ],
+  "★_the_frozen_enumeration_measured_against_this_one": {
+   "what_this_is": "THE MEASUREMENT OF WHAT THE OSSIFICATION HAS BEEN HIDING, and it is EVIDENCE FOR THE PHASE'S RETROSPECTIVE — never an act. No row is flipped, created or discarded by it, and the frozen artifact's own population is left exactly as it stands.",
+   "the_frozen_record": "tools/audit/phase1_completion_inventory.json → the_gating_split.gates.ids",
+   "why_it_is_frozen": "its generator `tools/audit/gen_phase1_completion_inventory.py` carries the verdict `records-a-point-in-time-measurement` in the committed guard classification and stands HISTORICAL, because its subject is the three-phase structure the six phases superseded. It is a historical record and not a live answer.",
+   "★_the_two_populations_are_different_BY_CONSTRUCTION_and_that_is_the_finding": "the frozen split is applied over `the wide cut` — an authored keyword selection of open rows, whose own over-inclusion that artifact declares unmeasured — while this derivation's population is EVERY OPEN ROW of the INDEX as it stands. So the difference below is not drift between two answers to one question: it is the gap between a frozen answer over a narrow authored cut and the live answer over the whole open register.",
+   "frozen_gating_rows": 30,
+   "live_gating_rows": 216,
+   "in_the_frozen_record_and_still_gating_live": [
+    "OI-105",
+    "OI-107",
+    "OI-109",
+    "OI-11",
+    "OI-12",
+    "OI-121",
+    "OI-141",
+    "OI-146",
+    "OI-207",
+    "OI-220",
+    "OI-223",
+    "OI-224",
+    "OI-239",
+    "OI-249",
+    "OI-274",
+    "OI-283",
+    "OI-292",
+    "OI-309",
+    "OI-311",
+    "OI-321",
+    "OI-341",
+    "OI-352",
+    "OI-357",
+    "OI-359",
+    "OI-360",
+    "OI-363",
+    "OI-371",
+    "OI-57",
+    "OI-95"
+   ],
+   "in_the_frozen_record_but_NOT_gating_live": [
+    "OI-370"
+   ],
+   "gating_live_but_NOT_in_the_frozen_record": [
+    "OI-1",
+    "OI-10",
+    "OI-101",
+    "OI-102",
+    "OI-103",
+    "OI-104",
+    "OI-106",
+    "OI-108",
+    "OI-111",
+    "OI-113",
+    "OI-114",
+    "OI-115",
+    "OI-117",
+    "OI-118",
+    "OI-119",
+    "OI-120",
+    "OI-122",
+    "OI-125",
+    "OI-127",
+    "OI-13",
+    "OI-131",
+    "OI-14",
+    "OI-145",
+    "OI-147",
+    "OI-148",
+    "OI-149",
+    "OI-15",
+    "OI-152",
+    "OI-154",
+    "OI-156",
+    "OI-158",
+    "OI-16",
+    "OI-161",
+    "OI-162",
+    "OI-163",
+    "OI-164",
+    "OI-165",
+    "OI-166",
+    "OI-167",
+    "OI-169",
+    "OI-17",
+    "OI-170",
+    "OI-171",
+    "OI-172",
+    "OI-173",
+    "OI-174",
+    "OI-175",
+    "OI-176",
+    "OI-177",
+    "OI-179",
+    "OI-18",
+    "OI-180",
+    "OI-182",
+    "OI-185",
+    "OI-186",
+    "OI-188",
+    "OI-189",
+    "OI-19",
+    "OI-190",
+    "OI-191",
+    "OI-192",
+    "OI-193",
+    "OI-194",
+    "OI-196",
+    "OI-198",
+    "OI-199",
+    "OI-2",
+    "OI-20",
+    "OI-200",
+    "OI-201",
+    "OI-203",
+    "OI-206",
+    "OI-209",
+    "OI-21",
+    "OI-210",
+    "OI-211",
+    "OI-212",
+    "OI-213",
+    "OI-214",
+    "OI-215",
+    "OI-216",
+    "OI-217",
+    "OI-218",
+    "OI-22",
+    "OI-221",
+    "OI-222",
+    "OI-225",
+    "OI-226",
+    "OI-227",
+    "OI-228",
+    "OI-23",
+    "OI-231",
+    "OI-235",
+    "OI-24",
+    "OI-243",
+    "OI-244",
+    "OI-245",
+    "OI-246",
+    "OI-247",
+    "OI-248",
+    "OI-25",
+    "OI-250",
+    "OI-251",
+    "OI-252",
+    "OI-253",
+    "OI-254",
+    "OI-255",
+    "OI-256",
+    "OI-258",
+    "OI-259",
+    "OI-26",
+    "OI-261",
+    "OI-262",
+    "OI-263",
+    "OI-264",
+    "OI-267",
+    "OI-27",
+    "OI-271",
+    "OI-277",
+    "OI-28",
+    "OI-288",
+    "OI-29",
+    "OI-3",
+    "OI-30",
+    "OI-302",
+    "OI-306",
+    "OI-307",
+    "OI-308",
+    "OI-31",
+    "OI-310",
+    "OI-312",
+    "OI-313",
+    "OI-314",
+    "OI-316",
+    "OI-32",
+    "OI-323",
+    "OI-325",
+    "OI-328",
+    "OI-330",
+    "OI-339",
+    "OI-34",
+    "OI-36",
+    "OI-365",
+    "OI-37",
+    "OI-372",
+    "OI-374",
+    "OI-38",
+    "OI-39",
+    "OI-4",
+    "OI-40",
+    "OI-5",
+    "OI-55",
+    "OI-6",
+    "OI-61",
+    "OI-63",
+    "OI-64",
+    "OI-65",
+    "OI-66",
+    "OI-67",
+    "OI-68",
+    "OI-69",
+    "OI-7",
+    "OI-70",
+    "OI-72",
+    "OI-73",
+    "OI-74",
+    "OI-75",
+    "OI-76",
+    "OI-77",
+    "OI-78",
+    "OI-79",
+    "OI-8",
+    "OI-80",
+    "OI-81",
+    "OI-82",
+    "OI-83",
+    "OI-86",
+    "OI-87",
+    "OI-9",
+    "OI-90",
+    "OI-91",
+    "OI-92",
+    "OI-93",
+    "OI-94",
+    "OI-96",
+    "OI-97",
+    "OI-98"
+   ],
+   "★_what_each_difference_side_means": "A row in the frozen record but not gating live has either RESOLVED since the freeze or been re-classed NON-GATING by a verdict in this file — read its side at the INDEX and at the items above, never from this list alone. A row gating live but absent from the frozen record is one the frozen wide cut never selected, or one opened since the freeze. NEITHER side is acted on here."
+  },
+  "★_what_this_answer_does_NOT_do": [
+   "It does not change rule (a)'s authority: the INDEX remains the AUTHORITATIVE STATUS SURFACE, and this is a route to one question it answers, never a second home for status (#6).",
+   "It flips no row, creates none and discards none.",
+   "It does not reach an establishment obligation (#19), which always gates.",
+   "It says nothing about a row's SIZE or its owner — that is `tools/audit/gating_row_sizing.json`, whose own population comes from the frozen record and is deliberately left exactly as it stands."
+  ]
+ },
  "items": [
   {
    "id": "OI-99",

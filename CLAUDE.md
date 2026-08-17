@@ -307,8 +307,12 @@ found 91 open items scattered across 12 surfaces with 11 status contradictions; 
 index + per-item detail files on 2026-07-26, user-ratified option 1, when the single file grew too
 large to render). Each item's full original row (text + source + status) lives verbatim in its
 detail file `open_items/OI-<n>.md`, which carries narrative and provenance only and **never a status
-of record**. Rules: (a) **read the INDEX `OPEN_ITEMS.md` at session start** (open detail files as
-needed); (b) **a stage may not open while a register item gating it is open**; (c) every newly
+of record**. Rules: (a) **read the DERIVED GATING ANSWER at session start —
+`tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` — and OPEN THE INDEX
+`OPEN_ITEMS.md` WHEN YOU NEED A ROW** (and its detail file as needed); **the INDEX remains the
+AUTHORITATIVE STATUS SURFACE, and the derived answer is a route to ONE question it answers — which
+rows gate — never a second home for status (#6)**; (b) **a stage may not open while a
+register item gating it is open**; (c) every newly
 discovered issue gets an **index row AND its detail file** **in the same commit** that records the
 discovery; (d) every resolution **flips the INDEX row** with provenance (the detail file gains a
 dated resolution note, never a status of its own); (e) tracking an owed/deferred/TODO item in
@@ -316,6 +320,13 @@ prose only, without a register row, is a doc-sync violation (#10). "Deal with ev
 discovered" means: every item has ONE index row, an owning layer, and a blocking gate — fixed at its
 #8-correct stage, never silently forgotten. (The byte-level split reconciliation instrument is
 `tools/open_items_split_check.py` → `open_items/split_reconciliation.json`.)
+
+*★ RULE (a) AMENDED 2026-08-17 on the user's Ruling 1 of
+`cowork_rulings_2026_08_17_session_start_read_sitting.md`, executed by
+`cc_instruction_preparation_ninth.md` Task 1 — and only after the substitute was POSITIVELY
+ESTABLISHED under #19, which is the ruling's own precondition. The superseded wording moved
+verbatim to `CLAUDE_ARCHIVE.md` in the same act, under the continuous-pruning rule (§5(D) of
+`cowork_rulings_2026_08_16_preparation_return.md`).*
 
 **★ QUALIFICATION OF RULE (b) — THE APPARATUS ROWS ARE DECLARED NON-GATING (user-ruled
 2026-08-03).** Rule (b) says a stage may not open while a register item gating it is open; it does

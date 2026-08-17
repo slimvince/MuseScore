@@ -101,3 +101,16 @@ delta vs the prior `53 / 24 / 53`: **removal-only
 unchanged (byte-identical). The identity sets below are the 52/24/52 form; the history that produced the
 prior 53/24/53 is preserved in the following paragraph.
 
+> **From `CLAUDE.md`, the open-items register section, rule (a), superseded 2026-08-17 by
+> `cc_instruction_preparation_ninth.md` Task 1 under the CONTINUOUS-PRUNING rule (§5(D) of
+> `cowork_rulings_2026_08_16_preparation_return.md`), executing Ruling 1 of
+> `cowork_rulings_2026_08_17_session_start_read_sitting.md`.** The amending act moves the newly
+> superseded text here in the SAME act and leaves a compact dated pointer at the site, which is
+> that rule's own shape. **What replaced it:** a session reads the DERIVED GATING ANSWER at
+> session start and opens the INDEX when it needs a row; the INDEX remains the authoritative
+> status surface. The substitute was POSITIVELY ESTABLISHED under #19 before anything relied on
+> it, which is the ruling's own precondition.
+
+**THE SUPERSEDED WORDING, VERBATIM (#12):** *"(a) **read the INDEX `OPEN_ITEMS.md` at session
+start** (open detail files as needed)"*
+
