@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 77,
-    "re_derives_a_live_invariant": 59,
+    "tools_classified": 78,
+    "re_derives_a_live_invariant": 60,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -339,6 +339,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_census_movement_classification.py, the THREE CATEGORIES and THE STOPS of its module docstring; `build()`, which re-runs the citation scan at both states and classes every difference",
       "why": "LIVE. Both sides of its comparison are re-computed on every run: the earlier state from the git objects at a named commit, the later one from the governing record AS IT STANDS. So an edit that removes a document's last naming from `CLAUDE.md` tomorrow moves its output tomorrow, and the classification either places that movement in one of the three ruled categories or STOPS. That is a demand about today's record, not a dated reading of it. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: the BEFORE commit is the state the movement is measured against, and a comparison whose baseline moved would measure nothing. It is named in the tool rather than resolved from a branch tip, because a branch read is not trusted for what is current (D-253). ★ WHAT IT DOES NOT ASSERT: that a moved document is worth retiring, or that nothing depends on it — the citation scan sees the governing record only, which is the bound the census publishes of itself and this tool repeats rather than quietly drops.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_claude_md_finer_archive.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_claude_md_finer_archive.py, THE STOPS of its module docstring; `build()`, which re-reads both live files on every run; `ruled_population()`, which re-derives the ruled archive and refused sets from the pinned artifact's own conflict evidence",
+      "why": "LIVE. Every one of its claims is re-answered against the tree AS IT STANDS on every run — each moved span byte-present in `CLAUDE_ARCHIVE.md` exactly once and absent from `CLAUDE.md`, each span the reading flagged and each span the ruling REFUSED still present at site exactly once and in the companion not at all. At this tree the safeguard returned STAY on both archive candidates, so nothing moved, and the flagged and refused directions are what the check is actually holding: a later act that archived a refused span would fail on the day it happened, which is the direction the ruled doubt default exists to protect. The population is DERIVED on every run rather than listed, and its own STOPs fire against the tree — an unverdicted archive candidate, a verdict naming a span the derivation does not carry, or a derived shape that disagrees with Ruling 1's own words. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: WHICH spans the ruling is about is a statement about the measurement the user ruled on, so it is read from that artifact's pinned commit rather than from a file later acts may legitimately edit. ★ WHAT IT DOES NOT ASSERT: that either flagged span is unarchivable, or that `CLAUDE.md` is small enough to read — the first is a later ruling's, the second is [[OI-370]]'s own subject.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

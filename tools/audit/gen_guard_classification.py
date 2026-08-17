@@ -773,6 +773,26 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "against the tracked tree at the pinned commit on every run. ★ WHAT IT DOES NOT ASSERT: "
         "that a naming is a dependency, or that the parser list is complete — the bound is the "
         "imported scan's own and is published on the surface itself."),
+    "tools/audit/gen_claude_md_finer_archive.py": (
+        LIVE, "gen_claude_md_finer_archive.py, THE STOPS of its module docstring; `build()`, which "
+              "re-reads both live files on every run; `ruled_population()`, which re-derives the "
+              "ruled archive and refused sets from the pinned artifact's own conflict evidence",
+        "LIVE. Every one of its claims is re-answered against the tree AS IT STANDS on every run — "
+        "each moved span byte-present in `CLAUDE_ARCHIVE.md` exactly once and absent from "
+        "`CLAUDE.md`, each span the reading flagged and each span the ruling REFUSED still present "
+        "at site exactly once and in the companion not at all. At this tree the safeguard returned "
+        "STAY on both archive candidates, so nothing moved, and the flagged and refused directions "
+        "are what the check is actually holding: a later act that archived a refused span would "
+        "fail on the day it happened, which is the direction the ruled doubt default exists to "
+        "protect. The population is DERIVED on every run rather than listed, and its own STOPs "
+        "fire against the tree — an unverdicted archive candidate, a verdict naming a span the "
+        "derivation does not carry, or a derived shape that disagrees with Ruling 1's own words. "
+        "★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: WHICH spans the "
+        "ruling is about is a statement about the measurement the user ruled on, so it is read "
+        "from that artifact's pinned commit rather than from a file later acts may legitimately "
+        "edit. ★ WHAT IT DOES NOT ASSERT: that either flagged span is unarchivable, or that "
+        "`CLAUDE.md` is small enough to read — the first is a later ruling's, the second is "
+        "[[OI-370]]'s own subject."),
     "tools/audit/gen_retirement_census_movement.py": (
         LIVE, "gen_retirement_census_movement.py, THE THREE CLASSES paragraph of its module "
               "docstring; `movements()`, which re-derives every difference on every run; "

@@ -592,6 +592,22 @@ AUTHORED = [
      "DOES NOT ASSERT: that a naming is a DEPENDENCY, or that the parser list is complete — a "
      "tool reaches it only when the line naming the file also carries a read signal"),
 
+    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_eighth.md Task 1 -------------------
+    # THE TWO RULED `CLAUDE.md` SPANS AND THEIR READING, registered in the act that creates the
+    # tool — the standing new-tool rule. It takes `--check` and never the bare invocation, for the
+    # ordinary reason: run with no flag it REWRITES its committed artifact.
+    ("tools/audit/gen_claude_md_finer_archive.py", ["--check"],
+     "where every span of Ruling 1's own population actually stands: the spans the ruling places "
+     "in the archive, the spans it REFUSED, and — at this tree, where the read-before-move "
+     "safeguard returned STAY on both archive candidates — that every flagged and every refused "
+     "span is still byte-present at site exactly once and in the companion not at all. Those last "
+     "two directions are the load-bearing ones here, because a check that only proved a move would "
+     "be green at a tree where the refusals had been overridden. The population is DERIVED on "
+     "every run from the pinned finer decomposition and that artifact's own published conflict "
+     "evidence, and the derivation reproducing Ruling 1's stated shape — two archive, four refused "
+     "— is a STOP rather than an assumption. ★ WHAT IT DOES NOT ASSERT: that either flagged span "
+     "is unarchivable; only what the imported reading test asks of each"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

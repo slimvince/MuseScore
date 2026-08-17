@@ -42,6 +42,7 @@
       "tools/audit/gen_artifact_inventory.py",
       "tools/audit/gen_artifact_inventory_surface.py",
       "tools/audit/gen_census_movement_classification.py",
+      "tools/audit/gen_claude_md_finer_archive.py",
       "tools/audit/gen_claude_md_finer_spans.py",
       "tools/audit/gen_claude_md_finer_surface.py",
       "tools/audit/gen_deciding_act_recovery.py",
@@ -79,7 +80,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 85,
+    "authored_entries": 86,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -995,6 +996,27 @@
       "what_it_checks": "the refreshed reach for `CLAUDE.md` — who names it, who anchors into it at a LINE, which tools parse it, which register entries are homed in it — still re-derives at the finer pass's own commit, and the ruling surface generated from it and the span artifact still re-derives BYTE-IDENTICALLY. The second half is the load-bearing one: the surface is what the user rules, so a surface that has drifted from the artifacts it claims to be generated from would put a hand-edited proposal in front of a ruling. The scan itself is IMPORTED from `gen_governing_surface_readers.measure` rather than re-implemented (#6). ★ WHAT IT DOES NOT ASSERT: that a naming is a DEPENDENCY, or that the parser list is complete — a tool reaches it only when the line naming the file also carries a read signal"
     },
     {
+      "tool": "tools/audit/gen_claude_md_finer_archive.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  ruled to archive: 2, moved 0, left at site by the reading 2; refused by the ruling 4",
+        "  characters moved: 0",
+        "  moved spans byte-present in the companion exactly once  True",
+        "  moved spans absent from the must-read                   True",
+        "  every flagged span still at site exactly once           True",
+        "  no flagged span in the companion                        True",
+        "  every REFUSED span still at site exactly once           True",
+        "  no REFUSED span in the companion                        True",
+        "  moved + kept accounts for the base blob                 True"
+      ],
+      "stderr": [],
+      "what_it_checks": "where every span of Ruling 1's own population actually stands: the spans the ruling places in the archive, the spans it REFUSED, and — at this tree, where the read-before-move safeguard returned STAY on both archive candidates — that every flagged and every refused span is still byte-present at site exactly once and in the companion not at all. Those last two directions are the load-bearing ones here, because a check that only proved a move would be green at a tree where the refusals had been overridden. The population is DERIVED on every run from the pinned finer decomposition and that artifact's own published conflict evidence, and the derivation reproducing Ruling 1's stated shape — two archive, four refused — is a STOP rather than an assumption. ★ WHAT IT DOES NOT ASSERT: that either flagged span is unarchivable; only what the imported reading test asks of each"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1221,8 +1243,8 @@
     }
   ],
   "summary": {
-    "run": 65,
-    "passing": 64,
+    "run": 66,
+    "passing": 65,
     "failing": 1,
     "failing_tools": [
       {

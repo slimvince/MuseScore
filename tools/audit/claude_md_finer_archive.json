@@ -1,0 +1,101 @@
+{
+ "what_this_is": "THE TWO RULED `CLAUDE.md` SPANS, READ BEFORE THEY MOVE: which span the ruling places in the archive, what the reading found in each, and the mechanical proof of where every span of this act's population actually stands. Every figure here is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_claude_md_finer_archive.py",
+ "dispatch": "cc_instruction_preparation_eighth.md, Task 1",
+ "the_ruling": "Ruling 1 of cowork_rulings_2026_08_17_seventh_return.md: two spans ARCHIVE with a dated pointer at each site; the four contested proposals are REFUSED and their spans stay at site; the executing act derives them from the finer decomposition and never retypes them; a span that does not read at execution time as the ruling assumes is a STOP-and-report, never a forced move.",
+ "measured_at_commit": "e94f765c25b49d2c9ffa47b1a296302debc25ce6",
+ "base_commit": "570f2b63b14ad7bcf09e0014c96d3f1d1aa90fa3",
+ "★_how_the_population_is_derived_rather_than_listed": "The archive-class spans come from the pinned finer decomposition. Which of them the ruling archives and which it refuses is then derived from that artifact's OWN published conflict evidence under the surface's own conflict-reading rule: a span the A4 safeguard never read is the uncontested remainder and is archived; a span the safeguard read and kept is archived only where its stated reason was an OVERRUN into live rule text, which the finer cut answers, and refused where the reason was that the span itself states a rule, which no cut answers. The derivation reproducing Ruling 1's own stated shape — two archive, four refused — is a STOP, not an assumption.",
+ "the_reading_test_applied": "A span MOVES only when (1) it IS, read whole, a record of the kind its class names — a span that merely POINTS AT such material preserved elsewhere fails this half — and (2) no part of it states a rule, a STOP condition, a live caveat or a prohibition that a working session acts on today. Anything else stays: the ruled doubt default (§5(E)), whose recorded ground is that a wrongly archived operative span fails silently while wrongly kept noise fails visibly and cheaply. The test is IMPORTED from the executed split, which the ruling names as the discipline this act runs under.",
+ "★_the_outcome_of_this_run": "BOTH ruled spans carry a STAY verdict from the reading, so NOTHING MOVED and `CLAUDE.md` is unedited by this act. That is Ruling 1's own provided outcome rather than a refusal of it: the ruling names the read-before-move safeguard as this act's discipline and states what happens when a span fails it. The per-span reasons are published below with mechanical evidence, so the user can overrule either verdict in one edit — the tool's --apply path is complete and would perform the move.",
+ "★_what_this_act_does_NOT_establish": "That either span is unarchivable. What is established per span is narrower and is what the imported test asks: for lines 53-60, that the class is supplied entirely by two archive pointers inside the span and that the span's own text states a live supersession; for lines 194-213, that its closing sentence is a live status statement about a running clock on a gating obligation. A later ruling, or a re-homing of that sentence, can move either.",
+ "the_ruled_population": {
+  "archive_class_spans_in_the_pinned_decomposition": 6,
+  "ruled_to_archive": 2,
+  "ruled_refused_and_untouched": 4
+ },
+ "spans_moved": 0,
+ "spans_left_at_site_by_the_reading": 2,
+ "characters_moved": 0,
+ "characters_left_at_site_by_the_reading": 2750,
+ "the_moved": [],
+ "the_left_at_site_by_the_reading": [
+  {
+   "first_line_at_the_pin": 53,
+   "last_line_at_the_pin": 60,
+   "the_class_the_measurement_gave_it": "defense-and-declined-alternatives",
+   "characters": 845,
+   "why_the_ruling_places_it_here": "the A4 safeguard never read this span, so the ruling archives it as the uncontested remainder — the only proposal asking the user for something no reading at the file had already refused",
+   "the_verdict": "STAYS AT SITE — flagged by the reading (A3)",
+   "why": "★ FAILS TEST (1) AND TEST (2), and the class itself is an artifact of the recognizer. READ WHOLE the span is two different things and neither is a declined-alternatives record. Lines 53-58 are a LIVE supersession statement — `★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6)` — telling a session that R3's clause making an apparatus finding's row mandatory no longer holds for a finding the worth test discards, that R3 is otherwise untouched, and where R3 lives. A session reading principle #10 acts on that. Lines 59-60 are TWO ARCHIVE POINTERS left by the executed split, each naming its companion, its size, its class and the opening of what moved. ★ AND THE TWO POINTERS ARE WHERE THE CLASS COMES FROM: the only occurrence of `DECLINED` in the span is at offset 637, inside the first pointer, and the only occurrence of `THE COSTS THE USER ACCEPTED` is at offset 785, inside the second. The span contains no alternative and no cost of its own. This is finding F41 measured again and NOT covered by the pass's own structural guard, which fires only when a span BEGINS with a pointer; here the pointers sit at the span's END and lend their quoted class name and quoted opening to the classifier. Archiving the span would delete both pointers, removing the only breadcrumbs back to two spans the split already moved — the exact harm the structural guard was written against.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "**★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus finding's row is **mandatory** no longer holds for a finding the worth te",
+   "text_sha256": "886a1e11e25f69b7dde7c34a72df2b1b1250404073c3c1cec9a8203d7c8f75fd"
+  },
+  {
+   "first_line_at_the_pin": 194,
+   "last_line_at_the_pin": 213,
+   "the_class_the_measurement_gave_it": "preserved-former-wording",
+   "characters": 1905,
+   "why_the_ruling_places_it_here": "the A4 safeguard read this span and kept it, and its stated reason was that the span OVERRAN into live rule text — which the finer cut answers, by the surface's own conflict-reading rule, so the ruling archives it",
+   "the_verdict": "STAYS AT SITE — flagged by the reading (A3)",
+   "why": "★ FAILS TEST (2) ON ITS CLOSING SENTENCE, and the failure is at the margin, so the ruled doubt default decides it rather than a stretched judgment (D-639's fallback shape). Lines 194-211 are what the ruling assumes and are archive material by §5(E)'s own naming: principle #21's replaced paragraph quoted verbatim, why it was replaced, and the two declined alternatives. Lines 212-213 are neither — `The errata limb of the contact was RE-ASKED 2026-08-11 and AWAITS REPLY; clause (a)'s reasonable-wait clock runs from that date.` That is a LIVE status statement about a running clock, and the rule it qualifies STAYS AT SITE: clause (a) of the commissioning block in this same principle provides that SILENCE AFTER A REASONABLE WAIT closes the route by exhaustion, and this sentence is the only statement in `CLAUDE.md` of when that clock started. The obligation it bears on is [[OI-179]], which is OPEN and GATES under #19. ★ WHAT IS NOT CLAIMED: that the sentence is its SOLE carrier — its tracking home is `open_items/OI-179.md` and D-475's verdict, so #12 would be satisfied by an archive-with-record move. What is claimed is narrower and is what test (2) asks: one part of the span is live. ★ AND THE COUNTER-EVIDENCE IS RECORDED RATHER THAN SUPPRESSED: the A4 safeguard's own reading of the coarse span placed exactly these twenty lines — the closing sentence included — under `principle #21's preserved former wording runs from line 228 to 247`, and gave the overrun into principles 22-24 as its ONLY reason to keep. That reading supports the move; this one finds a live remainder it did not name. Two readings at the file disagree at the margin, which IS the doubt the default exists for, and the recoverable direction is to stay.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "**★ THAT PARAGRAPH REPLACED A NARROWER ONE, AND THE FORMER WORDING STANDS IN PLACE (#12; user-ruled 2026-08-11 on a surface carrying three alternatives with the",
+   "text_sha256": "5a2f8532d2e5681276c15f0e86b02716babec157e07a50e9f4e9ade189a79aa2"
+  }
+ ],
+ "the_refused_by_the_ruling": [
+  {
+   "first_line_at_the_pin": 344,
+   "last_line_at_the_pin": 374,
+   "the_class_the_measurement_gave_it": "defense-and-declined-alternatives",
+   "characters": 2930,
+   "why_the_ruling_refused_it": "the A4 safeguard read this span and kept it because the span ITSELF states a rule, which no cut answers — so the ruling REFUSES the proposal and the span stays at site",
+   "the_safeguards_own_reason": "★ FAILS TEST (2). Classed by an accepted-costs marker inside it, but the span STATES THE RULE: an apparatus row stays open, stops gating any stage and stops being owed, with the per-row lapse record and the #19 bound. That rule is stated nowhere else, so a session reading CLAUDE.md would stop meeting it.",
+   "the_opening": "**★ AND WHAT SUCH A ROW IS OWED — IT STOPS BEING OWED, WITH A PER-ROW LAPSE RECORD (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fifte",
+   "text_sha256": "9417eb75e4441967bd0ec3c0aa61d0252c16c53e97f676c3655a4f18285fa66e"
+  },
+  {
+   "first_line_at_the_pin": 796,
+   "last_line_at_the_pin": 816,
+   "the_class_the_measurement_gave_it": "self-declared-historical-or-superseded",
+   "characters": 2231,
+   "why_the_ruling_refused_it": "the A4 safeguard read this span and kept it because the span ITSELF states a rule, which no cut answers — so the ruling REFUSES the proposal and the span stays at site",
+   "the_safeguards_own_reason": "★ FAILS TEST (2). It self-declares as superseded and historical, and it closes with a LIVE caveat and a live prohibition — the OI-170 carry-forward, and \"L4 is NOT tonic-independent; no design may assume it is\". A design session must meet that prohibition at the site.",
+   "the_opening": "*★ [SUPERSEDED by the OI-178 adoption 2026-07-26 — historical] THE OI-168 RE-BASELINE (2026-07-14; report `cc_oi168_fix_report.md`; outgoing reference preserved",
+   "text_sha256": "a7e9579652801a55916cf1fbac58f7d5e0e1ddc3c487b43818da41898a909635"
+  },
+  {
+   "first_line_at_the_pin": 1008,
+   "last_line_at_the_pin": 1044,
+   "the_class_the_measurement_gave_it": "self-declared-historical-or-superseded",
+   "characters": 3642,
+   "why_the_ruling_refused_it": "the A4 safeguard read this span and kept it because the span ITSELF states a rule, which no cut answers — so the ruling REFUSES the proposal and the span stays at site",
+   "the_safeguards_own_reason": "★ FAILS TEST (2). Classed historical on a `retained for provenance` marker that governs only the recitation in its second half. Its first half STATES the A-8 dual-track's ratified baselines and the hard stop that governs when it governs — live figures a measurement session reads.",
+   "the_opening": "**★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The **primary reported metric AND the Stage-5 fitting-object",
+   "text_sha256": "b036cf0489111824e0f9a6052865bd32fac05ef7b45af50fd4ddd384cec3b370"
+  },
+  {
+   "first_line_at_the_pin": 1750,
+   "last_line_at_the_pin": 1772,
+   "the_class_the_measurement_gave_it": "preserved-former-wording",
+   "characters": 1989,
+   "why_the_ruling_refused_it": "the A4 safeguard read this span and kept it because the span ITSELF states a rule, which no cut answers — so the ruling REFUSES the proposal and the span stays at site",
+   "the_safeguards_own_reason": "★ FAILS TEST (2). Classed on a former wording preserved inside it, but the span STATES THE RULE'S REACH — that the shell-read restriction covers every read mechanism and every dialect, what the guard watches, and that its silence on an unwatched surface is not compliance (#19). A working session acts on all three.",
+   "the_opening": "**★ THE RULE COVERS EVERY READ MECHANISM AND EVERY DIALECT (recorded 2026-08-08 on the user's direction, at the third measured instance family).** The restricti",
+   "text_sha256": "2d7baca9e5a1722aae09ec638b919b6a2f7867c07af81dbb856ee0d243a03a99"
+  }
+ ],
+ "reconciliation": {
+  "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
+  "every_moved_span_is_absent_from_the_parent": true,
+  "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
+  "no_span_the_reading_flagged_is_in_the_companion": true,
+  "every_span_the_ruling_REFUSED_is_still_present_at_site_exactly_once": true,
+  "no_span_the_ruling_REFUSED_is_in_the_companion": true,
+  "moved_plus_kept_accounts_for_the_base_blob_to_the_character": true,
+  "the_base_blob_sha256": "32185ac840bbf8d0e4e93f515529f094637ca444675f1c7be3491ade26418df4",
+  "what_that_proves_together": "Nothing left the must-read that is not in the archive; every span the reading flagged and every span the ruling refused is still exactly where it was; and no flagged or refused span was quietly archived alongside a moved one. The last two are the directions that matter at this run, because nothing moved: a check that only proved a move would be green at a tree where the refusals had been overridden. All are byte comparisons against the files as they stand and against the git objects named by explicit hash — never against the memory of performing the act (#15)."
+ }
+}
