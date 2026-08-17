@@ -952,7 +952,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 5, 7,581 characters",
+        "  entries moved: 6, 8,292 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],
@@ -1051,12 +1051,12 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  proposed 19, moved 1, left at site by the reading 18",
+        "  proposed 19, moved 1, left at site by the reading 12",
         "  characters moved: 3,542",
         "  CLAUDE.md: proposed 2, moved 0, stayed 2, all six directions True",
         "  OPEN_ITEMS.md: proposed 8, moved 1, stayed 7, all six directions True",
         "  DECISIONS.md: proposed 3, moved 0, stayed 3, all six directions True",
-        "  STATUS.md: proposed 6, moved 0, stayed 6, all six directions True"
+        "  STATUS.md: proposed 6, moved 0, stayed 0, all six directions True"
       ],
       "stderr": [],
       "what_it_checks": "where every span of Ruling 2's own population actually stands: the spans the ruled archivability test PLACES across the five mandatory-read files at this act's pin, the reading verdict authored for each, and — per file, in both directions — that every moved span is byte-present in its companion exactly once and absent from its parent, and that every span the reading LEFT AT SITE is still byte-present at site exactly once and in the companion not at all. The second direction is the load-bearing one here, because eighteen of the nineteen proposals stayed: a check that only proved the one move would be green at a tree where a refusal had been overridden. The population is DERIVED on every run from the imported span cut and recognizers, with three ruled exclusions each derived rather than listed — a span a previous act already archived, the six `CLAUDE.md` spans the two return sittings settled, and a span classified by text inside an archive pointer. A proposed span with no authored reading verdict, and an authored verdict naming a span the derivation does not carry, each STOP it. ★ WHAT IT DOES NOT ASSERT: that any span left at site is unarchivable; only what the imported reading test asks of each"

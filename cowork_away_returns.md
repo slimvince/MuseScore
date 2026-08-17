@@ -13799,3 +13799,283 @@ pushed, 3 paths. Task 5's close and the report are `6bacb9bb9e` (parent `a21a55f
 paths. The commit carrying this sentence is the E-ordering terminus. **★ WHERE THE RECORDING
 TERMINATES:** every commit of this batch is verified at the object and named except the LAST one,
 which cannot contain its own identity — that is the terminus, not an omission.*
+
+# ★ CLOSE — THE PREPARATION NINTH BATCH (2026-08-17)
+
+> **Dispatch:** `cc_instruction_preparation_ninth.md`, executing Rulings 1–3 of
+> `cowork_rulings_2026_08_17_session_start_read_sitting.md`, the two acts
+> `cowork_rulings_2026_08_17_eighth_return.md` leaves for its successor (Ruling 1's standing
+> constraint and F49's correction at its generator), and the F51 correction at its three remaining
+> sites.
+> **The report is `cc_report_preparation_ninth.md`.** Every verdict, movement, population and count
+> lives in the generated artifacts and is not restated here (**D-431**).
+
+## 0. The reading, the start state, and Task 0a
+
+`CLAUDE.md`, `STATUS.md` and `BUILD_AND_TEST.md` were read **as they now stand, in full** —
+`BUILD_AND_TEST.md` unconditionally, as the dispatch's read-first block orders for THIS batch — and
+no archive companion was opened, because no decision was re-opened. Then, as the dispatch orders:
+`cowork_rulings_2026_08_17_session_start_read_sitting.md` whole;
+`cowork_rulings_2026_08_17_eighth_return.md` whole, its §6 above all;
+`cowork_rulings_2026_08_16_preparation_return.md` §§5–6;
+`cowork_rulings_2026_08_17_callers_sitting.md` §4; `cc_report_preparation_eighth.md` §§2–4 and §9;
+and the five artifacts the tasks bind at.
+
+**The start-state guard run, taken BEFORE the first edit and at a quiet tree**, printed exactly
+what the dispatch declares:
+
+```
+68 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** — 67
+passing, **zero STOPs**. The runner rewrote its own artifact byte-identically, so the tree was
+unmoved by the measurement.
+
+**Assumption A1 held at the shape its own sentence describes**, checked first, entirely at
+content-addressed objects, under the declared line-ending caveat.
+`tools/audit/changed_paths.py` reported **exactly ONE tracked modification in the whole working
+tree** — `cowork_handoff.md` — with the two ruling records and the dispatch untracked. Committed
+blob `a87846b199` from the explicit commit `f27c3ded70`, working blob `ec4ccf405c`; **ONE
+contiguous changed passage**, 368 insertions and 1 deletion, carrying every part A1's sentence
+names — the TWENTY-FIFTH, TWENTY-SIXTH and TWENTY-SEVENTH close blocks inserted, and the
+TWENTY-SIXTH, TWENTY-FIFTH and TWENTY-FOURTH headings each gaining an entry-point demotion marker.
+No changed-passage count was asserted in advance (the F25 lesson).
+
+**Task 0a — commit `ff99a71a22`** (parent `f27c3ded70`), pushed, **4 paths**, verified at the
+object. **E0a — MET**: exactly 4 paths at the enumeration, one modification whose content matches
+A1's stated shape, three additions, no staging override.
+
+## 1. Task 0b — the three recorded corrections, in ONE commit
+
+**Commit `514b0dbc19`** (parent `ff99a71a22`), pushed, **10 paths**, verified at the object.
+**`CLAUDE.md` is BYTE-UNCHANGED by this task, proven by hash** (blob `8230aa91b6`).
+
+**F49.** ONE qualifying sentence APPENDED to the retired block's `what_this_is`, written at the
+generator and rendered into the data file in the same act, because that tool's `--apply` path
+cannot run again by construction. The former wording is **unchanged and stands as the opening of
+the string** — nothing is deleted, which is how #12 is met here. Generator literal and data-file
+value compared and **agree**; `apply_soft_discard.py --check`, `gen_decisions_register.py --check`
+and `gen_cluster_dispositions.py --verify` all pass. No verdict, population, arithmetic or entry
+identity moves.
+
+**F51 at its three remaining sites.** `cowork_rulings_2026_08_17_seventh_return.md` gains a new §5
+CORRECTION appended after its provenance, quoting the sentence it corrects — a ruling record is
+corrected by appending, never by rewriting the ruled text, so §3 stands exactly as written. The
+TWENTY-FOURTH and TWENTY-FIFTH handover blocks each gain a dated correction note beneath the
+widened parenthesis, quoting it. Each names F51, quotes the ruled definition from the 2026-08-15
+ratified surface, and states that Rulings 1–3 of the session-start-read sitting are the route for
+ordinary sessions.
+
+**★ THE STANDING ARCHIVE-POINTER CONSTRAINT IS WRITTEN AT THE RECOGNIZER AND ANSWERED BY IT.**
+`gen_claude_md_finer_spans.py` carries Ruling 1's constraint verbatim and now locates every
+archive-pointer LINE in a span wherever it sits; a marker — or, for a preserved former wording, its
+accompanying quotation — lying inside one may not place the span, while a marker of the same class
+found outside every pointer still places it. Re-derived, the widening moves **exactly ONE span**:
+the F44 span at pinned lines 53–60, 845 characters, falls to the ruled doubt default with its two
+refused markers and the constraint published beside it; the doubt-defaulted share rises
+135,341 → 136,186 characters (89.6 % → 90.2 %). **The recognizer independently reproduces the
+verdict Ruling 1 gave that span.** It is a recognizer change and it moves no fate: `--apply` was
+not run and `CLAUDE.md` is byte-unchanged.
+
+**E0b — MET.**
+
+## 2. Task 1 — the live gating answer, DERIVED and ESTABLISHED under #19
+
+**Commit `4667816255`** (parent `514b0dbc19`), pushed, **20 paths**, verified at the object.
+
+**A3 re-established at the objects** at the base commit, by explicit hash: the split is exactly as
+the premise ledger states.
+
+**★ THE DISPATCH'S KNOWN SHAPE IS CONFIRMED, AT THE TOOLS AND NOT AT THEIR HEADERS.**
+`gen_nongating_apparatus_rows.py` parses the INDEX on every run and published the non-gating side
+by identity, the gating side only by count and by ground — and that per-ground listing reaches only
+rows inside its own over-inclusive apparatus first cut, so **the open rows outside that cut were
+never enumerated at all**. `gen_gating_row_sizing.py` draws its population from the FROZEN phase-1
+completion inventory. **So the one artifact enumerating gating rows by identity drew that
+enumeration from a superseded record — F22's ossification reaching the answer this ruling needs.**
+
+**The bounded act is a PUBLICATION and not a judgment.** The gating set is the COMPLEMENT of the
+non-gating verdicts over the open rows the tool already parses; no new verdict is authored, nothing
+is imported from any frozen artifact to reach it, and no ruled criterion, exemption or default is
+widened. **None of the three STOP conditions the dispatch names was met.**
+
+**★ ESTABLISHED UNDER #19, POSITIVELY AND ON EVERY RUN**, reconciled in BOTH directions against the
+INDEX itself — every gating identity an OPEN row, every open row accounted for as gating or
+non-gating with none in both and none in neither, every gating row carrying a ground, and **a row
+the derivation cannot place HALTING the run**. What would falsify it is recorded with it.
+**216 gating + 25 non-gating = 241 open rows**, and [[OI-179]] is in the gating set with its
+ground.
+
+**★ THE FROZEN ENUMERATION MEASURED AGAINST THE LIVE ONE, AND ACTED ON IN NO DIRECTION.** The
+frozen record enumerates 30; the live derivation determines 216. Of the frozen 30, 29 still gate
+live and ONE — OI-370 — does not, because it RESOLVED after the freeze. **187 rows gate live and
+are absent from the frozen record, [[OI-179]] among them.** The populations differ BY CONSTRUCTION
+and that is the finding. No row is flipped, created or discarded by it, and
+`gen_gating_row_sizing.py`'s frozen population is left exactly as it stands.
+
+**The read-regime change, taken only because the establishment succeeded.** `CLAUDE.md` rule (a)
+now reads the derived gating answer at session start and opens the INDEX when it needs a row, with
+rule (a)'s authority untouched and stated at the site. The superseded wording moved verbatim to
+`CLAUDE_ARCHIVE.md` in the same act under the continuous-pruning rule.
+
+**E1 — MET.**
+
+## 3. Task 2 — the archiving pass, whose largest finding is a refusal
+
+**Commit `b8f5aaf268`** (parent `4667816255`), pushed, **9 paths**, verified at the object.
+
+**No new mechanism**: the cut, the classes, the recognizers, the pointer shape, the companions, the
+standing pointer constraint and the six settled `CLAUDE.md` spans are all IMPORTED (#6); only WHEN
+the measurement is taken is new. The three ruled exclusions are each DERIVED, and the settled-span
+exclusion tests containment in both directions because the two acts cut at different grains.
+
+**Nineteen spans placed by the test, every one READ WHOLE, ONE moved** — [[OI-370]]'s resolved row,
+3,542 characters, the single genuine member of the ruling's own named subject. The site keeps the
+row, so the register's bijection, its canonical status opening, its gate cell and its detail link
+all survive. **The one hesitation is published rather than suppressed.**
+
+**★ THE LARGEST FINDING IS A REFUSAL, MEASURED ON THE REGISTER'S OWN ROWS.** The standing
+recognizers proposed **SEVEN LIVE OPEN ROWS** for archiving — **[[OI-179]] among them**, OPEN and
+GATING under #19 — each placed by a `#12` preservation phrase or a supersession phrase sitting
+INSIDE its own status cell and describing one of that cell's own sentences. **F33's mis-class shape
+reappearing on the register's rows**, and the safeguard refused every one. The other refusals are
+the same family: the ENTIRE decisions-register section of `CLAUDE.md`, a bare heading, and three
+live `DECISIONS.md` spans.
+
+**★ A THIRD VERDICT VALUE IS DECLARED** for the six `STATUS.md` entries the standing forward bound
+already owns and Task 5 moves: they did not FAIL the reading, and moving them here would put a
+second path on one concern (#6) and race that mechanism inside one batch.
+
+**★ THE DECLARED LINE-ENDING CAVEAT WAS MEASURED, NOT ASSUMED** — the first run reported spans
+absent from a file that carries them — and every comparison and replacement now normalises the form
+first, with the parent edited in its own line-ending form rather than rewritten from the pinned
+blob.
+
+**★ AND THE OWNED VERDICT'S OWN RECONCILIATION WAS CORRECTED AT TASK 5, BY THE MECHANISM IT
+NAMED.** The six OWNED spans stayed FOR the forward bound, and at Task 5 that bound moved them; the
+pass's at-site direction then went red, because **asserting of an OWNED span that it is still at
+site is asserting that the owning mechanism had NOT run** — the opposite of what the pass found.
+The at-site directions now apply to the spans the READING flagged; an OWNED span carries what this
+pass is responsible for, that **this pass moved none of them**, with where it stands now published
+as DATA and proven by the owning mechanism's own check.
+
+**E2 — MET**, both directions proven per file, the second being the load-bearing one at a pass that
+moved one of nineteen. **The new-tool rule is discharged in the same commit.**
+
+## 4. Task 3 — `BUILD_AND_TEST.md` demoted, `DECISIONS.md` explicitly not
+
+**Commit `15dfb0e172`** (parent `b8f5aaf268`), pushed, **19 paths**, verified at the object.
+
+The condition is written in the ruled words and no others; it is the twice-ruled conditional-read
+pattern applied for the FIRST time to DEMOTE rather than to add; the superseded wording moved
+verbatim to the companion with a dated pointer at the site; and **`DECISIONS.md` was considered and
+RULED OUT with its ground recorded at the site**, because a later ruling must have something to
+answer. This batch's own reading is unaffected. **E3 — MET.**
+
+## 5. Task 4 — the census re-pinned at the moved read regime
+
+**Commit `e36168ec33`** (parent `15dfb0e172`), pushed, **4 paths**, verified at the object.
+
+**★ A FIFTH MOVEMENT CLASS IS DECLARED AND IT PLACED NOTHING, WHICH IS THE FINDING.** Derived on
+the same shape as the other four and tested BEFORE the growth relation (F47's lesson applied), it
+held for no movement: the read regime moved twice and moved no candidacy, because the files it
+re-classed are governing documents rather than retirement candidates. **An empty class is published
+as a MEASUREMENT**, so the absence of a cause cannot be mistaken for nobody having looked.
+
+**294 movements at four units of identity, ZERO fitting none**, all placed by the tree's ordinary
+growth. **No candidacy verdict flipped** — there is no CANDIDACY VERDICT movement at all — and a
+crossing would confer CANDIDACY ONLY in any case. **The KIND-UNDERIVABLE population returns to the
+user as published data: it stands at ONE.** The outgoing commit moved and the previous value is
+recorded rather than overwritten (#12); a first run left it unmoved and re-derived the eighth
+batch's own movements a second time, corrected before anything was committed. **E4 — MET.**
+
+## 6. Task 5 — the close, and Ruling 4's forward bound
+
+Six `STATUS.md` pointer entries, one per task. **In the same act, Ruling 4's forward bound moved
+the EIGHTH batch's six entries verbatim to `STATUS_ARCHIVE.md`** — 8,292 characters, byte-present
+in the archive exactly once and absent from the must-read, **both directions proven**. The declared
+`Last updated: ` prefix adjustment F48 names was **imported, not re-decided** (#6), and no entry
+needed a second adjustment.
+
+## 7. The guard set, and assumption A2
+
+| when | run | failing | not run | historical | STOPs |
+|---|---:|---:|---:|---:|---:|
+| before the first edit | 68 | 1 | 4 | 16 | 0 |
+| at the Task 0b tree | 68 | 1 | 4 | 16 | 0 |
+| at the Task 1 tree | 68 | 1 | 4 | 16 | 0 |
+| at the Task 2 tree | 69 | 1 | 4 | 16 | 0 |
+| at the Task 3 tree | 69 | 1 | 4 | 16 | 0 |
+| at the Task 4 tree | 69 | 1 | 4 | 16 | 0 |
+| **the end state** | *recorded in the ONE FURTHER commit the E-ordering rule requires* | | | | |
+
+**★ ASSUMPTION A2 HELD.** Seven reds appeared across the batch and **every one is inside this
+batch's own acts' subjects** — one from the ordered recognizer widening, four from the ordered
+`CLAUDE.md` edits (the F15 anchored-quote class), one from the ordered archiving move, and one from
+Ruling 4's forward bound moving the very spans the archiving pass had marked OWNED for it. Each
+cleared by a ruled treatment; **none by an adjustment made to turn a check green**. Every run was
+taken at a quiet tree.
+
+## 8. Surfaced findings — surfaced, not rowed; the row bar stands whole this batch
+
+- **F52 (new, the largest) — THE STANDING RECOGNIZERS PROPOSE LIVE OPEN REGISTER ROWS FOR
+  ARCHIVING, [[OI-179]] AMONG THEM.** Seven open rows placed in an archive class by a `#12` or
+  supersession phrase inside their own status cells. The read-before-move safeguard was the only
+  thing between a recognizer and a live gating obligation.
+- **F53 (new) — THE ONE ARTIFACT ENUMERATING GATING ROWS BY IDENTITY DREW THAT ENUMERATION FROM A
+  FROZEN RECORD, AND THE GAP IS LARGE** — 30 against 216, over populations that differ by
+  construction. Measured, published, acted on in no direction.
+- **F54 (new) — A RULED RATIFICATION SURFACE WOULD HAVE BEEN SILENTLY REWRITTEN BY AN ORDERED
+  RECOGNIZER CHANGE.** Measured before it was decided. The general form: **a surface generated from
+  a live artifact is not evidence of what was PUT unless its generation is pinned.**
+- **F55 (new, small) — A CHECK THAT LOCATES A QUOTE IN ONE FILE BREAKS WHEN THE RULED ARCHIVING
+  PASS MOVES THE TEXT.** The general form: **a locate-in-a-named-file check needs the
+  archive-with-record route written into it, or every archiving act creates a red.**
+- **F1–F51 carried unchanged**, including **F3**, now **eleven times surfaced** and still unfixed
+  and unrowed — the dispatch bars both. **F25 did not repeat.** **F35 recurred and was answered by
+  its own machinery.**
+- **The E3 ordering defect and the A1 premise error** ride to the phase's retrospective.
+- **F56 (new, small) — A CHECK CAN ASSERT THAT A STANDING MECHANISM HAS NOT RUN.** The archiving
+  pass's at-site direction, applied to a span it had itself marked OWNED by another mechanism,
+  asserted exactly that, and went red the moment the owning mechanism did its job. The general
+  form: **an at-site assertion belongs only to spans the ASSERTING act is responsible for.**
+- **★ THE DEPARTURES FROM THE DISPATCH'S WORDS ARE DECLARED** — the narrowed drift STOP
+  (`gen_claude_md_finer_archive.py`), the PINNED ruling surface (`gen_claude_md_finer_surface.py`,
+  a ruled treatment applied to a third tool, which is a classification the user has not made and is
+  returned here for the user's ruling), the fifth movement class that placed nothing, the third
+  verdict value, and the OWNED reconciliation correction — each in its commit message, the report,
+  and the `STATUS.md` entry where it bears on a task's result.
+- **No finding bears on the analysis, its inputs, or a measurement tool the analysis depends on.**
+
+## 9. What this batch did NOT do
+
+**No curated boot list** — it stays at its ruled definition; Ruling 4 orders no act. **No fate on
+any `CLAUDE.md` span ruled at the eighth-return sitting**: both stay at site, that question is
+CLOSED, and `gen_claude_md_finer_archive.py --apply` was not run. **No candidacy acted on and no
+verdict flipped. No document archived, moved or deleted AS A FILE. No mining, no empirical findings
+ledger, no fact-gate admission; no completion claim about the superseded phase-1 program; no
+derivation, design, repair or pilot act; no `src/` change, no golden, no test changed, moved or
+run, nothing under `tools/corpus/` or `tools/robust_stop/`, no measurement of the analysis.** **NO
+open-items row was created, flipped or discarded** — [[OI-372]] and [[OI-374]] stand exactly as
+found, [[OI-179]] stays OPEN and GATES, [[OI-370]] keeps the status it already had, and F3 stays
+surfaced, unfixed and unrowed. **`gen_gating_row_sizing.py`'s frozen population was measured and
+left alone.**
+
+## 10. ★ ONE ORDERING DECLARATION, MADE BEFORE IT COULD BE NOTICED
+
+The Task-5 `STATUS.md` entry closes with *"THE EXPECTED END STATE IS REACHED"*, and it is written
+**before** the end-state run exists. That is the smaller-grain instance the dispatch names — a
+batch-level summary sentence written in the same commit as the work it summarizes — and it is
+DECLARED here rather than left to be found: the sentence is a PREDICTION at the moment it is
+committed, and the run in the ONE FURTHER commit is what confirms or refutes it.
+
+*Provenance: CC, 2026-08-17, dispatch `cc_instruction_preparation_ninth.md`. Task 0a is commit
+`ff99a71a22` (parent `f27c3ded70`), pushed, 4 paths. Task 0b is `514b0dbc19` (parent `ff99a71a22`),
+pushed, 10 paths. Task 1 is `4667816255` (parent `514b0dbc19`), pushed, 20 paths. Task 2 is
+`b8f5aaf268` (parent `4667816255`), pushed, 9 paths. Task 3 is `15dfb0e172` (parent `b8f5aaf268`),
+pushed, 19 paths. Task 4 is `e36168ec33` (parent `15dfb0e172`), pushed, 4 paths. Task 5's close and
+the report are the commit carrying this sentence, whose own identity it cannot contain — that is
+the E-ordering terminus, not an omission — and the end-state guard run lands in ONE FURTHER commit
+after it.*

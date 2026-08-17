@@ -460,18 +460,42 @@ def build() -> dict:
         live = read(name)
         archive = read(f["companion"]) if os.path.exists(
             os.path.join(ROOT, f["companion"])) else ""
-        mine_stay = [r for r in p["stayed"] if r["file"] == name]
+        # ★ THE OWNED SPANS ARE RECONCILED SEPARATELY, AND THE REASON IS THE VERDICT'S OWN.
+        # A span carrying OWNED did not fail the reading: a STANDING MECHANISM owns it, and this
+        # pass said in terms that it stays FOR that mechanism. The mechanism then ran — Task 5's
+        # forward bound moved the six `STATUS.md` entries to their archive in the same batch — so
+        # asserting "still at site" of them would be asserting that the owning mechanism had NOT
+        # done its job, which is the opposite of what this pass found. What IS this pass's to
+        # assert is that IT moved none of them, and that is asserted below; where the span now
+        # lives is published as DATA and is proven by the owning mechanism's own check, named per
+        # span in the verdict.
+        mine_stay = [r for r in p["stayed"] if r["file"] == name and r["the_verdict"] == STAY]
+        mine_owned = [r for r in p["stayed"] if r["file"] == name and r["the_verdict"] == OWNED]
         files[name] = {
             "companion": f["companion"],
             "spans_proposed_by_the_test": sum(1 for r in p["proposed"] if r["file"] == name),
             "spans_moved": len(f["moved"]),
             "spans_left_at_site_by_the_reading": len(mine_stay),
+            "spans_owned_by_a_standing_mechanism": len(mine_owned),
             "characters_moved": f["characters_moved"],
             "characters_left_at_site_by_the_reading": sum(r["characters"] for r in mine_stay),
             "the_moved": [{k: v for k, v in r.items() if k != "_text"} for r in f["moved"]],
             "the_left_at_site_by_the_reading":
                 [{k: v for k, v in r.items() if k != "_text"} for r in mine_stay],
+            "the_owned_by_a_standing_mechanism":
+                [dict({k: v for k, v in r.items() if k != "_text"},
+                      where_it_stands_now=("at site" if live.count(line_form(live, r["_text"])) == 1
+                                           else "not at site — the owning mechanism has moved it"))
+                 for r in mine_owned],
+            "★_what_is_asserted_about_an_OWNED_span_and_what_is_not": (
+                "ASSERTED: this pass moved none of them — no OWNED span appears in `the_moved` "
+                "above. NOT ASSERTED: where it stands now. That belongs to the standing mechanism "
+                "named in the span's own verdict, and is proven by that mechanism's own check. "
+                "Asserting `still at site` of an OWNED span would assert that the owning mechanism "
+                "had not run, which is the opposite of what this pass found."),
             "reconciliation": {
+                "this_pass_moved_none_of_the_spans_a_standing_mechanism_owns":
+                    not any(r["the_verdict"] == OWNED for r in f["moved"]),
                 "every_moved_span_is_byte_present_in_the_companion_exactly_once":
                     all(archive.count(line_form(archive, r["_text"])) == 1 for r in f["moved"]),
                 "every_moved_span_is_absent_from_the_parent":
@@ -531,9 +555,13 @@ def build() -> dict:
         "totals": {
             "spans_proposed_by_the_test": len(p["proposed"]),
             "spans_moved": len(p["moved"]),
-            "spans_left_at_site_by_the_reading": len(p["stayed"]),
+            "spans_left_at_site_by_the_reading":
+                sum(1 for r in p["stayed"] if r["the_verdict"] == STAY),
+            "spans_owned_by_a_standing_mechanism":
+                sum(1 for r in p["stayed"] if r["the_verdict"] == OWNED),
             "characters_moved": sum(r["characters"] for r in p["moved"]),
-            "characters_left_at_site_by_the_reading": sum(r["characters"] for r in p["stayed"]),
+            "characters_left_at_site_by_the_reading":
+                sum(r["characters"] for r in p["stayed"] if r["the_verdict"] == STAY),
         },
         "per_file": files,
         "★_what_this_pass_does_NOT_do": [

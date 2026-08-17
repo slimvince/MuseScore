@@ -23,9 +23,10 @@
  "totals": {
   "spans_proposed_by_the_test": 19,
   "spans_moved": 1,
-  "spans_left_at_site_by_the_reading": 18,
+  "spans_left_at_site_by_the_reading": 12,
+  "spans_owned_by_a_standing_mechanism": 6,
   "characters_moved": 3542,
-  "characters_left_at_site_by_the_reading": 72368
+  "characters_left_at_site_by_the_reading": 64062
  },
  "per_file": {
   "CLAUDE.md": {
@@ -33,6 +34,7 @@
    "spans_proposed_by_the_test": 2,
    "spans_moved": 0,
    "spans_left_at_site_by_the_reading": 2,
+   "spans_owned_by_a_standing_mechanism": 0,
    "characters_moved": 0,
    "characters_left_at_site_by_the_reading": 15500,
    "the_moved": [],
@@ -72,7 +74,10 @@
      "text_sha256": "2c6c545e9a97932c8212308a4f63ae1c2ab238a2f71788ee72ad3f276fcb7a67"
     }
    ],
+   "the_owned_by_a_standing_mechanism": [],
+   "★_what_is_asserted_about_an_OWNED_span_and_what_is_not": "ASSERTED: this pass moved none of them — no OWNED span appears in `the_moved` above. NOT ASSERTED: where it stands now. That belongs to the standing mechanism named in the span's own verdict, and is proven by that mechanism's own check. Asserting `still at site` of an OWNED span would assert that the owning mechanism had not run, which is the opposite of what this pass found.",
    "reconciliation": {
+    "this_pass_moved_none_of_the_spans_a_standing_mechanism_owns": true,
     "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
     "every_moved_span_is_absent_from_the_parent": true,
     "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
@@ -87,6 +92,7 @@
    "spans_proposed_by_the_test": 8,
    "spans_moved": 1,
    "spans_left_at_site_by_the_reading": 7,
+   "spans_owned_by_a_standing_mechanism": 0,
    "characters_moved": 3542,
    "characters_left_at_site_by_the_reading": 39083,
    "the_moved": [
@@ -231,7 +237,10 @@
      "text_sha256": "b4771e457bf6d1866139d1328066d21a9e802111fa4581b011c980cf02732710"
     }
    ],
+   "the_owned_by_a_standing_mechanism": [],
+   "★_what_is_asserted_about_an_OWNED_span_and_what_is_not": "ASSERTED: this pass moved none of them — no OWNED span appears in `the_moved` above. NOT ASSERTED: where it stands now. That belongs to the standing mechanism named in the span's own verdict, and is proven by that mechanism's own check. Asserting `still at site` of an OWNED span would assert that the owning mechanism had not run, which is the opposite of what this pass found.",
    "reconciliation": {
+    "this_pass_moved_none_of_the_spans_a_standing_mechanism_owns": true,
     "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
     "every_moved_span_is_absent_from_the_parent": true,
     "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
@@ -246,6 +255,7 @@
    "spans_proposed_by_the_test": 3,
    "spans_moved": 0,
    "spans_left_at_site_by_the_reading": 3,
+   "spans_owned_by_a_standing_mechanism": 0,
    "characters_moved": 0,
    "characters_left_at_site_by_the_reading": 9479,
    "the_moved": [],
@@ -302,7 +312,10 @@
      "text_sha256": "3dbb53b5544b0fb6f9fb29ef17848321b2fbb6734b363197daf91d52f4bfa8f6"
     }
    ],
+   "the_owned_by_a_standing_mechanism": [],
+   "★_what_is_asserted_about_an_OWNED_span_and_what_is_not": "ASSERTED: this pass moved none of them — no OWNED span appears in `the_moved` above. NOT ASSERTED: where it stands now. That belongs to the standing mechanism named in the span's own verdict, and is proven by that mechanism's own check. Asserting `still at site` of an OWNED span would assert that the owning mechanism had not run, which is the opposite of what this pass found.",
    "reconciliation": {
+    "this_pass_moved_none_of_the_spans_a_standing_mechanism_owns": true,
     "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
     "every_moved_span_is_absent_from_the_parent": true,
     "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
@@ -316,11 +329,13 @@
    "companion": "STATUS_ARCHIVE.md",
    "spans_proposed_by_the_test": 6,
    "spans_moved": 0,
-   "spans_left_at_site_by_the_reading": 6,
+   "spans_left_at_site_by_the_reading": 0,
+   "spans_owned_by_a_standing_mechanism": 6,
    "characters_moved": 0,
-   "characters_left_at_site_by_the_reading": 8306,
+   "characters_left_at_site_by_the_reading": 0,
    "the_moved": [],
-   "the_left_at_site_by_the_reading": [
+   "the_left_at_site_by_the_reading": [],
+   "the_owned_by_a_standing_mechanism": [
     {
      "file": "STATUS.md",
      "first_line_at_the_pin": 8,
@@ -336,7 +351,8 @@
      "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
      "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
      "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
-     "text_sha256": "24f977a275330a6b3a6584af157f0cc4035d1666136a68060a5da95b1c0b796d"
+     "text_sha256": "24f977a275330a6b3a6584af157f0cc4035d1666136a68060a5da95b1c0b796d",
+     "where_it_stands_now": "not at site — the owning mechanism has moved it"
     },
     {
      "file": "STATUS.md",
@@ -353,7 +369,8 @@
      "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
      "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
      "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
-     "text_sha256": "b2dc591c710b2feb7d3391ac928099dd306f759fda3896990ff252ad8fd2ddf7"
+     "text_sha256": "b2dc591c710b2feb7d3391ac928099dd306f759fda3896990ff252ad8fd2ddf7",
+     "where_it_stands_now": "not at site — the owning mechanism has moved it"
     },
     {
      "file": "STATUS.md",
@@ -370,7 +387,8 @@
      "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
      "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
      "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
-     "text_sha256": "a266def36549ec1189768f9fe64a667186e007a2839ecc2be4b5f48916cfa6d1"
+     "text_sha256": "a266def36549ec1189768f9fe64a667186e007a2839ecc2be4b5f48916cfa6d1",
+     "where_it_stands_now": "not at site — the owning mechanism has moved it"
     },
     {
      "file": "STATUS.md",
@@ -387,7 +405,8 @@
      "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
      "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
      "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
-     "text_sha256": "b3a9351318fe68ea71d99db1e47025401ea7fc71eaa3c315a406ed73028d1bc9"
+     "text_sha256": "b3a9351318fe68ea71d99db1e47025401ea7fc71eaa3c315a406ed73028d1bc9",
+     "where_it_stands_now": "not at site — the owning mechanism has moved it"
     },
     {
      "file": "STATUS.md",
@@ -404,7 +423,8 @@
      "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
      "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
      "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
-     "text_sha256": "62376f9fb20a9a2efeba730daa2c55391da056944890d9d75caf540ba8e8b81b"
+     "text_sha256": "62376f9fb20a9a2efeba730daa2c55391da056944890d9d75caf540ba8e8b81b",
+     "where_it_stands_now": "not at site — the owning mechanism has moved it"
     },
     {
      "file": "STATUS.md",
@@ -421,10 +441,13 @@
      "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
      "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
      "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
-     "text_sha256": "7b4cfb1bd62aad7964e82ad29e7025c3079b096cbd62fadf2fc9732bb35c13ce"
+     "text_sha256": "7b4cfb1bd62aad7964e82ad29e7025c3079b096cbd62fadf2fc9732bb35c13ce",
+     "where_it_stands_now": "not at site — the owning mechanism has moved it"
     }
    ],
+   "★_what_is_asserted_about_an_OWNED_span_and_what_is_not": "ASSERTED: this pass moved none of them — no OWNED span appears in `the_moved` above. NOT ASSERTED: where it stands now. That belongs to the standing mechanism named in the span's own verdict, and is proven by that mechanism's own check. Asserting `still at site` of an OWNED span would assert that the owning mechanism had not run, which is the opposite of what this pass found.",
    "reconciliation": {
+    "this_pass_moved_none_of_the_spans_a_standing_mechanism_owns": true,
     "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
     "every_moved_span_is_absent_from_the_parent": true,
     "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
@@ -439,11 +462,15 @@
    "spans_proposed_by_the_test": 0,
    "spans_moved": 0,
    "spans_left_at_site_by_the_reading": 0,
+   "spans_owned_by_a_standing_mechanism": 0,
    "characters_moved": 0,
    "characters_left_at_site_by_the_reading": 0,
    "the_moved": [],
    "the_left_at_site_by_the_reading": [],
+   "the_owned_by_a_standing_mechanism": [],
+   "★_what_is_asserted_about_an_OWNED_span_and_what_is_not": "ASSERTED: this pass moved none of them — no OWNED span appears in `the_moved` above. NOT ASSERTED: where it stands now. That belongs to the standing mechanism named in the span's own verdict, and is proven by that mechanism's own check. Asserting `still at site` of an OWNED span would assert that the owning mechanism had not run, which is the opposite of what this pass found.",
    "reconciliation": {
+    "this_pass_moved_none_of_the_spans_a_standing_mechanism_owns": true,
     "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
     "every_moved_span_is_absent_from_the_parent": true,
     "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
