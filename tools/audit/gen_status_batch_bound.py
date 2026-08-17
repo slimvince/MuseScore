@@ -54,14 +54,17 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 
 # The commit this move is performed on top of: Task 1 of the executing dispatch, pushed before the
 # close began. An explicit hash, which is the only git read D-253 permits.
-BASE_COMMIT = "53e552296ff47d74a7481ef2272682c82531de46"
+# Re-aimed 2026-08-17 at the seventh batch's close: Task 3 of `cc_instruction_preparation_seventh.md`,
+# pushed before this close began. The forward bound is applied once per batch, and its two authored
+# inputs are the base commit and the then-previous batch — nothing else about the tool moves.
+BASE_COMMIT = "cfb69a7ecb21351382b25206616a0349214e44f8"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_preparation_fifth.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_preparation_sixth.md"
 
 ACT_DATE = "2026-08-17"
-DISPATCH = "cc_instruction_preparation_sixth.md"
+DISPATCH = "cc_instruction_preparation_seventh.md"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 ARCHIVE_HEADER = (

@@ -1,40 +1,33 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_preparation_sixth.md, Task 2",
+ "dispatch": "cc_instruction_preparation_seventh.md, Task 2",
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "53e552296ff47d74a7481ef2272682c82531de46",
- "the_then_previous_batch": "cc_instruction_preparation_fifth.md",
- "entries_moved": 4,
- "characters_moved": 6718,
+ "base_commit": "cfb69a7ecb21351382b25206616a0349214e44f8",
+ "the_then_previous_batch": "cc_instruction_preparation_sixth.md",
+ "entries_moved": 3,
+ "characters_moved": 4932,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1776,
-   "sha256": "f09c6860aab5c9bd8f4902cc968e1f3ff3c4f7dc436df36c8af311b73f919166",
+   "characters": 1951,
+   "sha256": "f90ebb6075be79c00e630d67033f4be0c4c462b7e611f2f1e0bbeff492165f0b",
    "membership": "names the dispatch",
-   "opening": "*Last updated: 2026-08-16 (CC — **★ THE PREPARATION PHASE'S FIFTH BATCH CLOSES WITH THE RULED ACT PERFORMED: THE SOFT-DISCARD IS EXECUTED COMPLETE, AN"
+   "opening": "*Last updated: 2026-08-17 (CC — **★ THE PREPARATION PHASE'S SIXTH BATCH CLOSES WITH THE RULED SPLIT EXECUTED — AND WITH THE SAFEGUARD'S VERDICT AS ITS"
   },
   {
    "line_at_base": 10,
-   "characters": 1816,
-   "sha256": "87ba7b0f89780156f5408db013f8787310d24582d94b218898f922f19f74b45d",
+   "characters": 1835,
+   "sha256": "9891821248fc38e29c045374365ba6e82b85040f918c501db07efe8a845b2369",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "opening": "*2026-08-16 (CC — **★ THE GOVERNING-SURFACE PRUNING IS MEASURED, READ-ONLY: EVERY SPAN OF THE FIVE MANDATORY READS CLASSED, AND EVERY READER OF THEM F"
+   "opening": "*2026-08-17 (CC — **★ THE RULED GOVERNING-SURFACE SPLIT IS EXECUTED, COMPLETE: 281 SPANS ARCHIVED VERBATIM, 17 LEFT AT SITE BECAUSE THE SAFEGUARD READ"
   },
   {
    "line_at_base": 12,
-   "characters": 1883,
-   "sha256": "39baae01b5a89e1451bbb843f149b1e039466df87377644ee0feaa472dc1da62",
+   "characters": 1146,
+   "sha256": "f8fed70cf07f3eea66659031018eaa47e95c3ed09c6036506f8a07bf27a4533e",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "opening": "*2026-08-16 (CC — **★ THE RULED SOFT-DISCARD IS EXECUTED, COMPLETE: 165 ENTRIES RETIRED, 512 LIVE, AND EVERY STANDING CHECK TREATED BY ITS OWN KIND.**"
-  },
-  {
-   "line_at_base": 14,
-   "characters": 1243,
-   "sha256": "f47589160b655dee9f1fc0f70801c4b6b0ac8eadaf2c57baf8a217a1c10f1425",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "opening": "*2026-08-16 (CC — **★ THE TREATMENT RULING, THE FIVE-LIMBED PRUNING RULINGS, THE TWENTY-FIRST HANDOFF BLOCK AND THE DISPATCH THAT EXECUTES THEM ENTER "
+   "opening": "*2026-08-17 (CC — **★ THE GOVERNING-SURFACE SPLIT SITTING'S FOUR RULINGS, THE TWENTY-SECOND HANDOFF BLOCK AND THE DISPATCH THAT EXECUTES THEM ENTER GI"
   }
  ],
  "reconciliation": {

@@ -13273,3 +13273,141 @@ landed".)*
 sentence. **★ WHERE THE RECORDING TERMINATES:** every commit of this batch is verified at the object
 and named except the LAST one, which cannot contain its own identity — that is the terminus, not an
 omission.*
+
+---
+
+# ═══ THE PREPARATION SEVENTH BATCH (dispatch `cc_instruction_preparation_seventh.md`, performed 2026-08-17) ═══
+
+*(Every per-span verdict, every classed movement and every reconciliation lives in the generated
+artifacts — `tools/audit/status_residue_move.json`, `tools/audit/retirement_census_movement.json`,
+`tools/audit/claude_md_finer_spans.json`, `tools/audit/claude_md_finer_readers.json`,
+`tools/audit/guard_state.json` — and **none is restated here** (**D-431**) except the few this close
+reports ABOUT, each naming where it was read, and the captured run output, which is QUOTED rather
+than transcribed. **The report is `cc_report_preparation_seventh.md`**, which is the whole of what
+the coding side says back; this close is the batch record beside it. This is the SEVENTH dispatch of
+the PREPARATION phase, executing the four rulings of `cowork_rulings_2026_08_17_sixth_return.md`. It
+is bounded exactly as that dispatch bounds it: the archiving wave for whole DOCUMENTS, the empirical
+findings ledger, the fact-gate, the curated boot list, the mining, the landing of the newly visible
+files, the eight-or-nine KIND-UNDERIVABLE callers' sitting, the prose-citation question, the residue
+surface's sitting, the rulings-sort sitting, and EVERY fate on the finer surface Task 3 delivers are
+NOT in it.)*
+
+**★ THE INTERIM READING SCOPE HAD EXPIRED BEFORE THIS BATCH BEGAN**, by its own ruled terms and as
+the sixth batch's close records. The five mandatory files were read AS THEY NOW STAND, in full; no
+archive companion was opened, because no decision was re-opened.
+
+## 4 (continued). The batch's start state, recorded before any act
+
+Taken **before the first edit**, as the dispatch orders. `gen_guard_state.py` reported **61 guards
+run, 58 passing, THREE failing** — `gen_filing_convention_application.py --check` ([[OI-372]]),
+`gen_retirement_caller_check.py --check` (F37) and
+`decisions/gen_phase1w_legacy_verification.py --check` (F36) — 4 not run, 16 historical records,
+**no STOP**; `gen_guard_classification.py --check` printed **"the guard classification re-derives"**.
+**This is exactly the state the dispatch declares as expected**, and no STOP-and-report was owed on
+it. The runner rewrote its own artifact **byte-identically**, established by the sanctioned
+enumeration reporting no tracked change from it, so the tree was unmoved by the measurement.
+
+## 1 (continued). What needs the user
+
+**ALL FOUR RULINGS ARE EXECUTED. The batch carries NO STOP-and-report.** Five things want the user.
+
+**(a) ★ THE COMMISSIONED FINER PASS ANSWERS ITS OWN QUESTION, AND THE ANSWER IS NEGATIVE.** Ruling 4
+commissioned a finer measured pass over `CLAUDE.md` because the coarse one predicted about 23% and
+the executed split moved 3.2%. At the finer grain and under stricter recognizers, **9.0% of the file
+— 13,542 characters in six spans — is placeable as archive material by evidence.** But the number
+that decides the question is smaller: **five of those six spans were already READ AT THE FILE by the
+split's own A4 safeguard and deliberately KEPT**, and of those five conflicts **exactly one is
+answered by the finer cut** — the principle-#21 overrun. The other four were kept because the span
+ITSELF states a rule, which no cut answers. **One span, 845 characters, is proposed on ground no
+reading has yet refused.** The surface says in terms what follows: if the goal is a materially
+smaller `CLAUDE.md`, the recognizers are not the route — what remains is rule text and amendment
+records that no pattern over prose separates from the rules they amend. **What the user rules:**
+`ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md`, per span, with every conflict
+named and the safeguard's own reason quoted beside it.
+
+**(b) ★ THE RESIDUE IS 17 CANDIDATES OF WHICH 16 ARE DATED ENTRIES — THE RECORD'S OWN COUNT IS ONE
+TOO MANY.** Ruling 3 names *"the 17 dated entries"*. Derived from the pinned decomposition, the
+residue is 17 CANDIDATES — the operative-classed spans at or after the file's first dated entry —
+and the seventeenth is not a dated entry at all: it is the live navigational paragraph at the foot of
+`STATUS.md`, pointing at the archive, at `CLAUDE.md` gate block (A) and at `BUILD_AND_TEST.md`. It
+does not read as a completed batch's dated record, so **the read-before-move safeguard left it at
+site and flagged it** — A3's own instruction exercised rather than recorded. Nothing is owed here;
+it is reported so the count is not carried forward wrong.
+
+**(c) ★ TWO EXTENSIONS BEYOND A RULING'S LETTER, EACH DECLARED RATHER THAN TAKEN SILENTLY.** Ruling
+1 names ONE citation; the same act broke a SECOND citation in the same tool in the same way, and
+`--check` cannot pass while it points at a file its quote has left — so the same remedy was applied
+and is declared, together with the correction of a note that had become false. And Ruling 2 orders
+the census regenerated *"at this task's own commit"*, which cannot hold together with *"in ONE
+commit"*: a commit cannot name its own hash. The pin is **Task 1's commit**, which is this batch's
+own state, is content-addressed, and carries an independent merit — a census may not measure its own
+output, and Task 2's commit adds a tool and two artifacts that name candidates.
+
+**(d) ★ THE KIND-UNDERIVABLE POPULATION IS 9 AT THE NEW PIN, AND IT CONFERS CANDIDACY ONLY.** The
+callers sitting, when the user holds it, reads this population. No fate moved, no flag was acted on,
+and every ruled condition on candidacies stands untouched.
+
+**(e) ★ F35 RECURRED TWICE MORE, IN BOTH DIRECTIONS.** Archiving a span removes namings from the
+governing record: one file left the NAMED population because its only naming was inside a moved
+entry, and the artifact-inventory ruling surface moved with it. It is inside the ruled bound — the
+subject is a moved entry — and it changes no verdict.
+
+## 2 (continued). Surfaced findings — surfaced, not rowed
+
+The dispatch bars creating an open-items row. **F40–F43 are stated in full at
+`cc_report_preparation_seventh.md` §7** and are not restated here (**D-431**): the residue's
+seventeenth candidate (F40), the two structural spans the finer pass's own self-check caught before
+they shipped (F41), the finer pass's negative answer and its conflict cross-check (F42), and a new
+false deny measured live at the shell-read guard (F43). **F1–F39 ride unchanged**, F3 now nine times
+surfaced. **F36 and F37 are DISCHARGED by this batch's own acts** and are recorded as such rather
+than dropped. **F25 did not repeat** — no changed-passage count was asserted in advance. **No finding
+bears on the analysis, its inputs, or a measurement tool the analysis depends on.**
+
+## 3 (continued). Per-task log — the preparation seventh batch
+
+**Task 0 — the ruling record, the handover block and the dispatch enter git.** Commit
+`ec953b4cef` (parent `6d11d3f8e6`), pushed, **3 paths**, verified at the object. **A1's check came
+first and entirely at content-addressed objects**: the sanctioned enumeration reported exactly ONE
+tracked modification in the whole working tree, and the difference — committed blob `06cffd9484`
+against working blob `5c46cd44e3` — is **ONE contiguous changed passage**, 93 insertions and 1
+deletion, carrying both parts A1's own sentence names. **E0 MET.**
+
+**Task 1 — the taught citation and the residue.** Commit `5c38b41166` (parent `ec953b4cef`),
+pushed, **11 paths**, verified at the object. The legacy-mark verification's citation now points at
+`OPEN_ITEMS_ARCHIVE.md` and the check PASSES; the tool's diff is confined to its two citation
+records, proven at the objects, and the artifact moves by exactly five lines. The residue's 16 dated
+entries moved verbatim — 46,105 characters — each READ WHOLE first under a test stated once in the
+tool, with the seventeenth candidate flagged and proven still at site. `STATUS.md` fell from 157
+lines to 19. **E1 MET**, with one A3 flag enumerated.
+
+**Task 2 — the census re-pinned and its movement classed.** Commit `e94f765c25` (parent
+`5c38b41166`), pushed, **7 paths**, verified at the object. The check is GREEN at the new pin after
+standing red since the sixth batch. All **41** movements place in the three ruled classes at four
+units of identity, **zero fitting none**, each with its evidence; the scalars that moved are
+published and deliberately NOT classed, being sums over those units. **E2 MET.**
+
+**Task 3 — the finer `CLAUDE.md` measurement, read-only.** Commit `cfb69a7ecb` (parent
+`e94f765c25`), pushed, **10 paths**, verified at the object. `CLAUDE.md` is **byte-unchanged, proven
+by hash** — blob `8230aa91b6` at the pin and in the working tree. Two recognizer changes, each
+grounded in F33's own measured cases; two structural spans placed at site positively after this
+pass's own self-check caught them; the reach refreshed at the pass's own commit through an IMPORTED
+scan whose own artifacts re-derive byte-identically; the surface GENERATED from both artifacts.
+**E3 MET.**
+
+**Task 4 — the close.** This section, the report, the five `STATUS.md` pointer entries, and
+**Ruling 4's FORWARD BOUND applied for the second time**: the then-previous batch's three entries
+moved verbatim to `STATUS_ARCHIVE.md` in the same act that wrote this batch's own, by the tool that
+owns that bound, its two authored inputs re-aimed and nothing else about it touched.
+
+## 5 (continued). The end state, under the ordering rule
+
+Recorded in the ONE FURTHER commit after this close, per the E-ordering rule — no graded value is
+committed before the run that produced it.
+
+*Provenance: CC, 2026-08-17, dispatch `cc_instruction_preparation_seventh.md`. Task 0 is commit
+`ec953b4cef` (parent `6d11d3f8e6`), pushed, three paths. Task 1 is `5c38b41166` (parent
+`ec953b4cef`), pushed, 11 paths. Task 2 is `e94f765c25` (parent `5c38b41166`), pushed, 7 paths.
+Task 3 is `cfb69a7ecb` (parent `e94f765c25`), pushed, 10 paths. Task 4's close and the report are
+the commit carrying this sentence. **★ WHERE THE RECORDING TERMINATES:** every commit of this batch
+is verified at the object and named except the LAST one, which cannot contain its own identity —
+that is the terminus, not an omission.*
