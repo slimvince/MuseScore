@@ -1,0 +1,46 @@
+{
+ "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_status_batch_bound.py",
+ "dispatch": "cc_instruction_preparation_sixth.md, Task 2",
+ "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
+ "base_commit": "53e552296ff47d74a7481ef2272682c82531de46",
+ "the_then_previous_batch": "cc_instruction_preparation_fifth.md",
+ "entries_moved": 4,
+ "characters_moved": 6718,
+ "the_moved": [
+  {
+   "line_at_base": 8,
+   "characters": 1776,
+   "sha256": "f09c6860aab5c9bd8f4902cc968e1f3ff3c4f7dc436df36c8af311b73f919166",
+   "membership": "names the dispatch",
+   "opening": "*Last updated: 2026-08-16 (CC — **★ THE PREPARATION PHASE'S FIFTH BATCH CLOSES WITH THE RULED ACT PERFORMED: THE SOFT-DISCARD IS EXECUTED COMPLETE, AN"
+  },
+  {
+   "line_at_base": 10,
+   "characters": 1816,
+   "sha256": "87ba7b0f89780156f5408db013f8787310d24582d94b218898f922f19f74b45d",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "opening": "*2026-08-16 (CC — **★ THE GOVERNING-SURFACE PRUNING IS MEASURED, READ-ONLY: EVERY SPAN OF THE FIVE MANDATORY READS CLASSED, AND EVERY READER OF THEM F"
+  },
+  {
+   "line_at_base": 12,
+   "characters": 1883,
+   "sha256": "39baae01b5a89e1451bbb843f149b1e039466df87377644ee0feaa472dc1da62",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "opening": "*2026-08-16 (CC — **★ THE RULED SOFT-DISCARD IS EXECUTED, COMPLETE: 165 ENTRIES RETIRED, 512 LIVE, AND EVERY STANDING CHECK TREATED BY ITS OWN KIND.**"
+  },
+  {
+   "line_at_base": 14,
+   "characters": 1243,
+   "sha256": "f47589160b655dee9f1fc0f70801c4b6b0ac8eadaf2c57baf8a217a1c10f1425",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "opening": "*2026-08-16 (CC — **★ THE TREATMENT RULING, THE FIVE-LIMBED PRUNING RULINGS, THE TWENTY-FIRST HANDOFF BLOCK AND THE DISPATCH THAT EXECUTES THEM ENTER "
+  }
+ ],
+ "reconciliation": {
+  "every_moved_entry_is_byte_present_in_STATUS_ARCHIVE_md_exactly_once": true,
+  "every_moved_entry_is_absent_from_STATUS_md": true,
+  "what_that_proves_together": "Nothing left the must-read that is not in the archive, and each entry was MOVED rather than copied. Both are byte comparisons against the file at HEAD and against the git object at the base commit named by explicit hash — never against the memory of performing the move (#15).",
+  "★_why_the_moved_set_is_read_from_a_git_object": "The set is a statement about the file as it stood when the act ran. Reading it from the base commit's own object makes this check re-derive forever as later batches legitimately append their own entries — the OI-344 shape avoided by construction, on the precedent gen_status_archive_pass.py sets (D-646)."
+ }
+}

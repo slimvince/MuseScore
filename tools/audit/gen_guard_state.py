@@ -510,6 +510,23 @@ AUTHORED = [
       for pair in ("CLAUDE.md", "OPEN_ITEMS.md", "DECISIONS.md", "STATUS.md",
                    "BUILD_AND_TEST.md")],
 
+    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_sixth.md Task 2 --------------------
+    # Ruling 4's FORWARD BOUND, applied for the first time at this batch's close and registered in
+    # the act that creates it — the standing new-tool rule. It takes `--check` and never the bare
+    # invocation, for the ordinary reason: run with no flag it REWRITES its committed artifact.
+    ("tools/audit/gen_status_batch_bound.py", ["--check"],
+     "the then-previous batch's `STATUS.md` entries are still byte-present in `STATUS_ARCHIVE.md` "
+     "exactly once and still absent from the must-read — Ruling 4's forward bound, proven in both "
+     "directions rather than asserted. The moved set is read from the git OBJECT at the commit the "
+     "move was performed on top of, so the claim re-derives forever as later batches legitimately "
+     "append their own entries (D-646, the epoch pattern). Its STOPs are what make it a guard "
+     "rather than a record: a dispatch naming NO entry at that commit halts it, because moving "
+     "nothing silently would leave the bound unmet without saying so; an entry not present exactly "
+     "once in the live file when the move is applied halts it; and an entry already in the archive "
+     "halts it. Membership is DERIVED from the entries' own words — the one naming the dispatch, "
+     "plus the run below it saying `Same dispatch` — so no entry is listed by hand, and the dated "
+     "entry pattern is IMPORTED from the archive pass that owns it (#6)"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

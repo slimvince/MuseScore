@@ -13099,3 +13099,153 @@ are recorded in the ONE FURTHER commit after it**, so no graded value is committ
 that produced it — and that ordering is what caught F32. **★ WHERE THE RECORDING
 TERMINATES:** every commit of this batch is verified at the object and named except the LAST one,
 which cannot contain its own identity.*
+
+# ═══ THE PREPARATION SIXTH BATCH (dispatch `cc_instruction_preparation_sixth.md`, performed 2026-08-17) ═══
+
+*(Every per-span verdict, the per-file arithmetic and the reconciliation live at
+`tools/audit/governing_surface_split_application.json`; the population this act executed over is
+`tools/audit/governing_surface_spans.json`, which is PINNED; the guard state is at
+`tools/audit/guard_state.json`; **none is restated here** — **D-431** — except the few this close
+reports ABOUT, each naming where it was read, and the captured run output, which is QUOTED rather
+than transcribed. **The report is `cc_report_preparation_sixth.md`**, which is the whole of what the
+coding side says back; this close is the batch record beside it. This is the SIXTH dispatch of the
+PREPARATION phase, executing the four rulings of
+`cowork_rulings_2026_08_17_governing_surface_split.md`. It is bounded exactly as that dispatch
+bounds it: the archiving wave for whole DOCUMENTS, the empirical findings ledger, the fact-gate, the
+curated boot list, the mining, the landing of the newly visible files, the eight KIND-UNDERIVABLE
+callers, the prose-citation question, the residue surface's sitting and the rulings-sort sitting are
+NOT in it.)*
+
+**★ THE SESSION-START READS RAN UNDER THE RULED INTERIM READING SCOPE** (§5(B) of
+`cowork_rulings_2026_08_16_preparation_return.md`): in `CLAUDE.md`, the blocks that state of
+themselves that they are historical or superseded were SKIPPED; in `OPEN_ITEMS.md`, the rows whose
+status cell opens with the resolved mark. `STATUS.md` was read at its header, `BUILD_AND_TEST.md` in
+full. **★ AND THE SCOPE HAS NOW EXPIRED, BY ITS OWN RULED TERMS** — it ends without further ruling
+when the executed split makes the boundary physical, and Task 1's commit `53e552296f` is that act. A
+session after this batch reads the five files as they stand, and reaches an archive companion only
+when it re-opens a decision.
+
+## 4 (continued). The batch's start state, recorded before any act
+
+Taken **before the first edit**, as the dispatch orders. `gen_guard_state.py` reported **55 guards
+run, 54 passing, ONE failing** (`gen_filing_convention_application.py --check`, which is
+[[OI-372]]), 4 not run, 16 historical records, **no STOP**; `gen_guard_classification.py --check`
+printed **"the guard classification re-derives"**, so no stale report. **This is exactly the state
+the dispatch declares as expected**, and no STOP-and-report was owed on it.
+
+## 1 (continued). What needs the user
+
+**THE RULED ACT IS PERFORMED IN FULL. The batch carries ONE STOP-and-report, and it is about a
+consequence of the act rather than about the act.** Four things want a ruling.
+
+**(a) ★ THE PINNED MEASUREMENT OVER-CLASSES, AND THE SAFEGUARD IS WHAT STOOD BETWEEN THE RULING AND
+A BAD ACT.** Ruling 1 binds the executing dispatch to READ every span it archives. **17 of the 298
+archive-class spans do not read as their class says**, and they carry more characters than
+`CLAUDE.md` actually gave up. Four cases show the shape:
+
+- **`CLAUDE.md` 490–649 — the decisions register's rules (a) through (n)**, 15,395 characters,
+  classed `preserved-former-wording` on two sentences that merely POINT AT former wordings held in
+  the register's own provenance. Nearly a tenth of that file, and live governing rule text.
+- **`CLAUDE.md` 228–260 — principle #21's amendment record TOGETHER WITH PRINCIPLES 22, 23 AND
+  24.** Those three carry no blank line above them, so the span rule swept them into the archive
+  class. Archiving it would have removed three standing principles from the list.
+- **`OPEN_ITEMS.md` — seven OPEN INDEX ROWS**, [[OI-179]] among them, each placed in an archive
+  class by a phrase inside its own narrative. [[OI-179]] is OPEN and GATES (#19); archiving it
+  would have taken a gating establishment obligation out of the register.
+- **`DECISIONS.md` — all three of its archive-class spans**, each pointing at archive material held
+  in the register's data file or stating the home criterion in force. **So the register's own
+  mechanism was never exercised: assumption A3 is MOOT, not met.**
+
+Every one of the 17 is left at site, flagged doubt-defaulted-at-execution, and enumerated with its
+reason. **The measurement's error runs entirely in the ARCHIVE direction — the one the ruled doubt
+default exists to prevent — which is finding F29's residual risk realised.** It is also why
+`CLAUDE.md` shrank about 3% where the surface's class shares predicted about 23%. **What the user
+may want to rule:** whether a finer measured pass over `CLAUDE.md` is now worth commissioning, which
+Ruling 2 explicitly left available and pointed at the phase retrospective.
+
+**(b) ★ ONE STOP-AND-REPORT: A STANDING CHECK QUOTES A ROW THIS ACT ARCHIVED, AND THE REMEDY IS AN
+EDIT THE DISPATCH FORBIDS.** `gen_phase1w_legacy_verification.py --check` STOPs: *"recorded figure
+80: quote not at OPEN_ITEMS.md:327. It is nowhere in the file — the premise has changed."* The quote
+is [[OI-289]]'s row, archived by the ruled act and byte-present in `OPEN_ITEMS_ARCHIVE.md`, so
+nothing is lost. The remedy is one line in that tool — point its `where` at the companion — and
+clause 5 says in terms that **a parser halting on the new shape is a STOP, not an improvised tool
+edit**. So the check is LEFT RED and reported. **The user's choices:** teach that tool about the
+archive; class the check historical; or revisit the resolved-row fate. **Nothing was adjusted to
+make it green.**
+
+**(c) ★ RULING 4's BOUND IS REACHED OVER THE MEASURED POPULATION AND NOT OVER THE FILE.** 131 spans
+moved — the 129 the decomposition classes as completed batches' pointer entries, plus the two dated
+entries the pointer test did not reach. **17 dated entries REMAIN at the site**, because the
+recognizer matches the OI-222 remedy's own sentence and those entries predate it, so they fell to
+`operative-rule-text` — and the dispatch's own bar is that **no span moves that the pinned artifact
+does not class into an archive class, and every doubt-defaulted span stays.** `STATUS.md` is 89.3%
+smaller and readable again; it does **not** hold only the latest batch's entries. One act closes it
+either way: a later measurement that recognises a pre-OI-222 entry, or a ruling naming the residue.
+
+**(d) ★ ARCHIVING A SPAN REMOVES NAMINGS FROM THE GOVERNING RECORD, AND RETIREMENT CANDIDACY MOVES
+WITH THEM.** The artifact-inventory ruling surface moves from *"NAMED in the governing record — 51
+of 82 files"* to 50, and from *"117 of those 571 ignored files are NAMED"* to 109. **Nine files
+stopped being named because their only naming was inside an archived resolved row.** It is inside
+the ruled bound (the subject is a moved span) and it changes no verdict by itself — a crossing
+confers CANDIDACY only — but the archiving wave must know it before it runs.
+
+## 2 (continued). Surfaced findings — surfaced, not rowed
+
+The dispatch bars creating an open-items row. F33–F39 are stated in full at
+`cc_report_preparation_sixth.md` §7 and are not restated here (**D-431**): the measurement's
+over-classification (F33), Ruling 4's unreached bound (F34), the governing-record naming loss (F35),
+the standing check broken by an archived row (F36), the artifact that cannot be regenerated inside
+the act that moves it (F37), the pinned reader inventory under-naming the reach (F38), and the
+hardening battery's `calib` gate failing at HEAD on artifacts this act did not touch (F39). **F1–F32
+ride unchanged**, F3 now eight times surfaced. **F25 did not repeat** — no changed-passage count was
+asserted in advance — and **F32 did not repeat**: the three pinned tools passed at every run of this
+batch, which is that remedy working. **No finding bears on the analysis, its inputs, or a
+measurement tool the analysis depends on.**
+
+## 3 (continued). Per-task log — the preparation sixth batch
+
+**Task 0 — the ruling record, the handover block and the dispatch enter git.** Commit
+`1f84f5d621` (parent `9fb1ba01bf`), pushed, **3 paths**, verified at the object. **A1's check came
+first and entirely at content-addressed objects**: the sanctioned enumeration reported exactly ONE
+tracked modification in the whole working tree, and the difference — committed blob `ca64770a19`
+against working blob `06cffd9484` — is ONE contiguous changed passage, 79 insertions and 1 deletion,
+carrying both parts A1's own sentence names. **E0 MET.**
+
+**Task 1 — the split EXECUTED.** Commit `53e552296f` (parent `1f84f5d621`), pushed, **39 paths**,
+verified at the object. The four companions created on the established pattern; 281 spans moved
+verbatim with a compact dated pointer left at each site naming its own companion; `STATUS_ARCHIVE.md`
+continuing as `STATUS.md`'s home with this act's block appended beneath its own history. **The five
+files fall from 1,452,264 to 713,680 bytes** — `STATUS.md` −89.3%, `OPEN_ITEMS.md` −44.1%,
+`CLAUDE.md` −3.2%, `BUILD_AND_TEST.md` −2.8%, `DECISIONS.md` unchanged. **Moved + kept accounts for
+each parent's pre-act committed blob TO THE CHARACTER**, which is a STOP in the tool rather than a
+reported figure. The 73 drifted home anchors were re-aimed per citation and the register regenerated
+through its own mechanism: **verbatim quotes found at their cited home 512/512, cited line numbers
+correct 506/506**. Every named parser ran at the edited tree; the three that halt are HISTORICAL
+members whose halt the guard set's own table records as caused by the fifth batch's soft-discard,
+and the one-off correction pass halts at a state-movement check DOWNSTREAM of the two that would
+catch a malformed shape — both of which passed, which is the direct proof that the new pointer rows
+split into six cells and open canonically. **[[OI-370]] flipped, its condition TESTED**: after the
+act the file tools read `STATUS.md` without refusing. **E1 MET**, with A3 moot. Guard set at the
+edited tree: **60 run, 3 failing, 4 not run, 16 historical, zero STOPs**.
+
+**Task 2 — the close.** This section, the report, the three `STATUS.md` pointer entries, and
+**Ruling 4's FORWARD BOUND applied for the first time**: the then-previous batch's four entries
+moved verbatim to `STATUS_ARCHIVE.md` in the same act that wrote this batch's own, by a tool rather
+than by hand — because retyping a several-thousand-character entry to move it is the transcription
+the record forbids. Membership is DERIVED from the entries' own words (the one naming the dispatch,
+plus the run below it saying *Same dispatch*), never listed by hand, and the reconciliation is
+re-derived by `tools/audit/gen_status_batch_bound.py --check`.
+
+## 5 (continued). The end state, under the ordering rule
+
+Recorded in the ONE FURTHER commit after this close, per the E-ordering rule — no graded value is
+committed before the run that produced it. **`gen_retirement_caller_check.py`'s artifact is
+regenerated in that same further commit**, because its write mode requires the commit its reading
+belongs to and that commit does not exist until the close has landed (F37).
+
+*Provenance: CC, 2026-08-17, dispatch `cc_instruction_preparation_sixth.md`. Task 0 is commit
+`1f84f5d621` (parent `9fb1ba01bf`), pushed, three paths. Task 1 is `53e552296f` (parent
+`1f84f5d621`), pushed, 39 paths. Task 2's close and the report are the commit carrying this
+sentence. **★ WHERE THE RECORDING TERMINATES:** every commit of this batch is verified at the object
+and named except the LAST one, which cannot contain its own identity — that is the terminus, not an
+omission.*

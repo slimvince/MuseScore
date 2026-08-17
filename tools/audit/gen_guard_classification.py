@@ -735,6 +735,21 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "that a naming is a DEPENDENCY, or that a file naming none of the five depends on none of "
         "them — the scan sees tracked files only and a path composed at run time carries no "
         "literal to find, the same bound the retirement caller-check publishes of itself."),
+    "tools/audit/gen_status_batch_bound.py": (
+        LIVE, "gen_status_batch_bound.py, THE STOPS of its module docstring; `build()`, which "
+              "re-reads both live files on every run; `moved_entries()`, which derives membership "
+              "from the entries' own words at the base commit's git object",
+        "LIVE. Both of its claims are re-answered against the tree AS IT STANDS on every run — the "
+        "moved entries still byte-present in `STATUS_ARCHIVE.md` exactly once, and still absent "
+        "from `STATUS.md` — so an entry put back into the must-read, or quietly dropped from the "
+        "archive, fails on the day it happens. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A "
+        "DATED READING EITHER: WHICH entries moved is a statement about the file as it stood when "
+        "the act ran, so it is derived from that commit's own git object rather than from a file "
+        "that legitimately grows by every later batch's entries — the OI-344 shape avoided by "
+        "construction, on the precedent `gen_status_archive_pass.py` sets. ★ WHAT IT DOES NOT "
+        "ASSERT: that the must-read is small enough to read, which is [[OI-370]]'s own subject, or "
+        "that every superseded entry has moved — it proves only that what left is in the archive "
+        "and that nothing else left."),
     "tools/audit/gen_governing_surface_split.py": (
         LIVE, "gen_governing_surface_split.py, THE STOPS of its module docstring; `plan_for()`, "
               "which re-locates every moved span in the pre-act blob and re-checks the arithmetic; "
