@@ -635,6 +635,26 @@ AUTHORED = [
      "— is a STOP rather than an assumption. ★ WHAT IT DOES NOT ASSERT: that either flagged span "
      "is unarchivable; only what the imported reading test asks of each"),
 
+    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_ninth.md Task 2 --------------------
+    # THE POST-SPLIT ARCHIVING PASS, registered in the act that creates the tool — the standing
+    # new-tool rule. `--check` and never the bare invocation, for the ordinary reason: run with no
+    # flag it REWRITES its committed artifact; run with `--apply` it MOVES text.
+    ("tools/audit/gen_post_split_archive.py", ["--check"],
+     "where every span of Ruling 2's own population actually stands: the spans the ruled "
+     "archivability test PLACES across the five mandatory-read files at this act's pin, the "
+     "reading verdict authored for each, and — per file, in both directions — that every moved "
+     "span is byte-present in its companion exactly once and absent from its parent, and that "
+     "every span the reading LEFT AT SITE is still byte-present at site exactly once and in the "
+     "companion not at all. The second direction is the load-bearing one here, because eighteen of "
+     "the nineteen proposals stayed: a check that only proved the one move would be green at a tree "
+     "where a refusal had been overridden. The population is DERIVED on every run from the imported "
+     "span cut and recognizers, with three ruled exclusions each derived rather than listed — a "
+     "span a previous act already archived, the six `CLAUDE.md` spans the two return sittings "
+     "settled, and a span classified by text inside an archive pointer. A proposed span with no "
+     "authored reading verdict, and an authored verdict naming a span the derivation does not "
+     "carry, each STOP it. ★ WHAT IT DOES NOT ASSERT: that any span left at site is unarchivable; "
+     "only what the imported reading test asks of each"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

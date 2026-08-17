@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 80,
-    "re_derives_a_live_invariant": 62,
+    "tools_classified": 81,
+    "re_derives_a_live_invariant": 63,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -515,6 +515,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_phase3_gate_partition.py:4-16",
       "why": "★ A REGISTERED PREDICTION, and still live — the case R4's per-tool condition exists for. Its artifact carries verdicts fixed before the classified items run, but its --check LOCATES every source quote IN THE FILE IT CITES and STOPS on one that has drifted, and its per-item check column is filled in as each item runs. It is a LIVING register with a frozen prediction inside it, not a dated measurement, and the drift check is a live invariant nothing else asserts.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_post_split_archive.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_post_split_archive.py, THE STOPS of its module docstring; `build()`, which re-reads every live parent and companion on every run; `proposals()`, which re-derives the placed population from the imported cut and recognizers and takes the three ruled exclusions by derivation rather than from a list",
+      "why": "LIVE. Every one of its claims is re-answered against the tree AS IT STANDS on every run, per file and in both directions: each moved span byte-present in its companion exactly once and absent from its parent, and each span the reading LEFT AT SITE still present at site exactly once and in the companion not at all. Eighteen of its nineteen proposals stayed, so the second direction is what the check is actually holding: a later act that archived one of them would fail on the day it happened, which is the direction the ruled doubt default exists to protect. Its own STOPs fire against the tree — a proposed span with no authored reading verdict, an authored verdict naming a span the derivation does not carry, a move span not byte-present exactly once, a move span already in its companion. The line-ending form is normalised before any comparison decides, which is the declared caveat that would otherwise make it red at a clean tree. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: the five files are read at this act's own pin, so the act's own writes cannot move the measurement under it — the defect the split's own pinning comment records. ★ WHAT IT DOES NOT ASSERT: that any span left at site is unarchivable, or that the recognizers' reach is measured — the first is a later ruling's and the second is the imported measurement's own stated bound.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

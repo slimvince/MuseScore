@@ -57,6 +57,19 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 INDEX = os.path.join(ROOT, "OPEN_ITEMS.md")
+# ★ THE ARCHIVE COMPANION IS READ BESIDE THE INDEX FOR ONE PURPOSE ONLY — locating an anchor quote
+# (2026-08-17, `cc_instruction_preparation_ninth.md` Task 2). A row the ruled archiving pass moves
+# keeps a STUB at its site carrying its identity, its gate cell, its detail link and its status
+# cell's own opening, while the BULK of the row moves here verbatim under a dated pointer. An
+# anchor quote taken from the bulk is then absent from the INDEX and present in the companion, and
+# the STOP below fired on exactly that. What the STOP exists for is unchanged: the quote must be
+# REAL and locatable in the record, so that a sizing cannot rest on a reading of a row nobody
+# opened. Archive-with-record keeps every citation resolvable — the #12 ground the
+# continuous-pruning ruling rests on, and the ground the callers sitting gave for prose citations —
+# so the quote is sought in the INDEX first and in the companion the INDEX's own pointer names
+# second, and a quote in NEITHER still halts the run. NOTHING ELSE MOVES: the population is
+# untouched, no sizing is re-authored and no status is read from the companion.
+ARCHIVE = os.path.join(ROOT, "OPEN_ITEMS_ARCHIVE.md")
 OPEN_ITEMS_DIR = os.path.join(ROOT, "open_items")
 INVENTORY = os.path.join(HERE, "phase1_completion_inventory.json")
 OUT = os.path.join(HERE, "gating_row_sizing.json")
@@ -1459,6 +1472,7 @@ def check_vocabularies(entry: dict, where: str) -> None:
 
 def build() -> dict:
     index_text = read(INDEX)
+    archive_text = read(ARCHIVE) if os.path.exists(ARCHIVE) else ""
     population = derived_population()
 
     authored = [s["row"] for s in SIZINGS]
@@ -1500,10 +1514,11 @@ def build() -> dict:
         detail = os.path.join(OPEN_ITEMS_DIR, f"{where}.md")
         if not os.path.exists(detail):
             raise SystemExit(f"STOP: {where} has no detail file at {detail}.")
-        if s["anchor_quote"] not in index_text:
+        if s["anchor_quote"] not in index_text and s["anchor_quote"] not in archive_text:
             raise SystemExit(
-                f"STOP: {where}'s quoted words are not in the INDEX — a sizing may not rest on a "
-                "reading of a row nobody opened."
+                f"STOP: {where}'s quoted words are in NEITHER the INDEX nor its archive companion "
+                f"{os.path.relpath(ARCHIVE, ROOT)} — a sizing may not rest on a reading of a row "
+                "nobody opened."
             )
         check_vocabularies(s, where)
         half = s["the_second_half"]

@@ -826,6 +826,27 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "edit. ★ WHAT IT DOES NOT ASSERT: that either flagged span is unarchivable, or that "
         "`CLAUDE.md` is small enough to read — the first is a later ruling's, the second is "
         "[[OI-370]]'s own subject."),
+    "tools/audit/gen_post_split_archive.py": (
+        LIVE, "gen_post_split_archive.py, THE STOPS of its module docstring; `build()`, which "
+              "re-reads every live parent and companion on every run; `proposals()`, which "
+              "re-derives the placed population from the imported cut and recognizers and takes "
+              "the three ruled exclusions by derivation rather than from a list",
+        "LIVE. Every one of its claims is re-answered against the tree AS IT STANDS on every run, "
+        "per file and in both directions: each moved span byte-present in its companion exactly "
+        "once and absent from its parent, and each span the reading LEFT AT SITE still present at "
+        "site exactly once and in the companion not at all. Eighteen of its nineteen proposals "
+        "stayed, so the second direction is what the check is actually holding: a later act that "
+        "archived one of them would fail on the day it happened, which is the direction the ruled "
+        "doubt default exists to protect. Its own STOPs fire against the tree — a proposed span "
+        "with no authored reading verdict, an authored verdict naming a span the derivation does "
+        "not carry, a move span not byte-present exactly once, a move span already in its "
+        "companion. The line-ending form is normalised before any comparison decides, which is the "
+        "declared caveat that would otherwise make it red at a clean tree. ★ ONE HALF IS "
+        "DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: the five files are read at this "
+        "act's own pin, so the act's own writes cannot move the measurement under it — the defect "
+        "the split's own pinning comment records. ★ WHAT IT DOES NOT ASSERT: that any span left at "
+        "site is unarchivable, or that the recognizers' reach is measured — the first is a later "
+        "ruling's and the second is the imported measurement's own stated bound."),
     "tools/audit/gen_retirement_census_movement.py": (
         LIVE, "gen_retirement_census_movement.py, THE THREE CLASSES paragraph of its module "
               "docstring; `movements()`, which re-derives every difference on every run; "

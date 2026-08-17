@@ -1,0 +1,463 @@
+{
+ "what_this_is": "THE POST-SPLIT ARCHIVING PASS: every span of the five mandatory-read files the ruled archivability test places, READ WHOLE before it moves, with the mechanical proof of where every span of this act's population actually stands. Every figure here is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_post_split_archive.py",
+ "dispatch": "cc_instruction_preparation_ninth.md, Task 2",
+ "the_ruling": "Ruling 2 of `cowork_rulings_2026_08_17_session_start_read_sitting.md`: the archivability test (§5(E) of the 2026-08-16 record) is applied to what has accumulated since the split — the resolved-opening rows still in `OPEN_ITEMS.md`, `DECISIONS.md` exhaustively, and any span in the five that the test places. A modest yield is the expectation, not a transformative one, and a pass that returns little is this ruling working rather than failing.",
+ "measured_at_commit": "466781625554dc252dd1146a0425bc29086d0884",
+ "★_why_the_reading_is_pinned": {
+  "what_that_commit_is": "cc_instruction_preparation_ninth.md Task 1, pushed before this task began",
+  "the_reason": "the five files are read at a git OBJECT so this act's own writes cannot move the measurement under it, which is the defect the split's own pinning comment records; a later pruning wave takes its own measurement at its own commit, which is what this pass is."
+ },
+ "the_reading_test_applied": "A span MOVES only when (1) it IS, read whole, a record of the kind its class names — a span that merely POINTS AT such material preserved elsewhere fails this half — and (2) no part of it states a rule, a STOP condition, a live caveat or a prohibition that a working session acts on today. Anything else stays: the ruled doubt default (§5(E)), whose recorded ground is that a wrongly archived operative span fails silently while wrongly kept noise fails visibly and cheaply. The test is IMPORTED from the executed split, which is the discipline Ruling 2 names for this pass.",
+ "★_what_is_imported_rather_than_re_decided_(#6)": {
+  "the_span_cut_the_six_classes_and_the_recognizers": "gen_governing_surface_spans.py",
+  "the_compact_dated_pointer_and_the_companions": "gen_governing_surface_split.py",
+  "the_standing_archive_pointer_constraint": "gen_claude_md_finer_spans.py — a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17",
+  "the_six_settled_CLAUDE_md_spans": "gen_claude_md_finer_archive.py, its own ruled population read at its own pin"
+ },
+ "the_three_exclusions_taken_before_any_reading": {
+  "already_archived_by_a_previous_act": "recognised by the pointer the split itself writes at a site, imported from that tool",
+  "settled_at_the_seventh_and_eighth_return_sittings": "the four REFUSED spans and the two RULED to stay; the dispatch forbids re-proposing them and this batch does not answer their recorded reasons",
+  "classified_by_text_inside_an_archive_pointer": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+ },
+ "totals": {
+  "spans_proposed_by_the_test": 19,
+  "spans_moved": 1,
+  "spans_left_at_site_by_the_reading": 18,
+  "characters_moved": 3542,
+  "characters_left_at_site_by_the_reading": 72368
+ },
+ "per_file": {
+  "CLAUDE.md": {
+   "companion": "CLAUDE_ARCHIVE.md",
+   "spans_proposed_by_the_test": 2,
+   "spans_moved": 0,
+   "spans_left_at_site_by_the_reading": 2,
+   "characters_moved": 0,
+   "characters_left_at_site_by_the_reading": 15500,
+   "the_moved": [],
+   "the_left_at_site_by_the_reading": [
+    {
+     "file": "CLAUDE.md",
+     "first_line_at_the_pin": 457,
+     "last_line_at_the_pin": 616,
+     "kind": "block",
+     "characters": 15395,
+     "the_class": "preserved-former-wording",
+     "the_evidence": {
+      "the_marker_matched": "former wording"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "**The register is `DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` (full entries: the verbatim decision, plain restatement, why, status, home, provena",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "★ FAILS TEST (1), AND IT IS THE MEASURED F33 CASE BY NAME. Read whole, this span is the ENTIRE decisions-register section of `CLAUDE.md` — rules (a) through (n), the live governing rules a session applies when it decides where a decision is homed. It was placed by the two words `former wording` occurring inside rule (i)'s and rule (j)'s defenses, each of which POINTS AT a former wording preserved in the register's own provenance rather than carrying one. The finer pass measured exactly this and recorded it: \"the coarse pass placed 15,395 characters of live governing rule text — the decisions register's rules (a) through (n) — on exactly this signal.\" TEST (2) fails too, and comprehensively: every clause of the span states a rule.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "c68121254f299e73565ca23e0b59d00d303d056493f9280838d4f3216a4b8aea"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line_at_the_pin": 1100,
+     "last_line_at_the_pin": 1100,
+     "kind": "block",
+     "characters": 105,
+     "the_class": "self-declared-historical-or-superseded",
+     "the_evidence": {
+      "the_marker_matched": "RETROSPECTIVE"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "### (C) RETROSPECTIVE — the batch 52/24/52 stop (superseded at R10-b, 2026-07-06 — historical reference)",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "★ FAILS TEST (1) ON THE STRUCTURAL GROUND THE MACHINERY ALREADY NAMES. The span is a BARE `###` HEADING and nothing else — `(C) RETROSPECTIVE — the batch 52/24/52 stop` — classed by the word `RETROSPECTIVE` in its own title. A heading is a span of its own and its section body is a different span, so archiving it would move the heading while everything under it stayed: a headless section here, and a heading filed alone in the companion. That is the second of the two structural spans `gen_claude_md_finer_spans.py` places positively at site, and the ground is imported from there rather than re-argued. The section's own archived material already left under a pointer sitting directly beneath this heading.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "2c6c545e9a97932c8212308a4f63ae1c2ab238a2f71788ee72ad3f276fcb7a67"
+    }
+   ],
+   "reconciliation": {
+    "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
+    "every_moved_span_is_absent_from_the_parent": true,
+    "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
+    "no_span_the_reading_flagged_is_in_the_companion": true,
+    "moved_plus_kept_accounts_for_the_base_blob_to_the_character": true,
+    "the_base_blob_sha256": "67fa43aa365121fdf7b22bbe807ed052d4ccd3c2f89ee5a992bff46d8e1dfbda",
+    "★_the_line_ending_form_was_normalised_before_any_of_these_decided": true
+   }
+  },
+  "OPEN_ITEMS.md": {
+   "companion": "OPEN_ITEMS_ARCHIVE.md",
+   "spans_proposed_by_the_test": 8,
+   "spans_moved": 1,
+   "spans_left_at_site_by_the_reading": 7,
+   "characters_moved": 3542,
+   "characters_left_at_site_by_the_reading": 39083,
+   "the_moved": [
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line_at_the_pin": 408,
+     "last_line_at_the_pin": 408,
+     "kind": "table-row",
+     "characters": 3542,
+     "the_class": "resolved-row",
+     "the_evidence": {
+      "the_row": "OI-370",
+      "its_status_cell_opens_with": "✅",
+      "read_by": "tools/audit/index_status_lint.py — the ONE index parser, imported rather than re-implemented (#6)"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "| OI-370 | A mandatory session-start read cannot be performed — `STATUS.md` has accumulated past the point where the file tools can read it | `CLAUDE.md` makes ",
+     "the_verdict": "MOVE",
+     "why": "[[OI-370]]. ★ PASSES BOTH HALVES, AND IT IS THE ONE GENUINE MEMBER OF THE RULING'S OWN NAMED SUBJECT. Read whole, the row is RESOLVED — its status cell opens with the resolved mark, read through the ONE index parser — and its body is entirely the record of that resolution: what was archived, under which ruling, by which act, and the both-directions reconciliation that proves nothing was lost. TEST (1): it IS a resolved row, which §5(E) names as archive material in terms — its only reader is someone auditing the history of an issue that is closed. TEST (2): it states no rule, no STOP, no caveat and no prohibition. ★ THE ONE HESITATION IS RECORDED RATHER THAN SUPPRESSED: the cell's closing clause says closing act (b), the size guard, `stays PROPOSED and untaken`. That is a record of this resolution's own limits, which is what an auditor of the closed issue needs; it is carried by the row's detail file, which the site keeps a link to; and the site keeps the row itself — its identity, its gate cell, its detail link and its status cell's own opening — so the register's bijection, its canonical status opening and the row's resolved state all survive the move.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "cdbc74b64cd92663635c3806a4ce8fea64c2c3d2b8006152c43ad77c11a01cfe"
+    }
+   ],
+   "the_left_at_site_by_the_reading": [
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line_at_the_pin": 235,
+     "last_line_at_the_pin": 235,
+     "kind": "table-row",
+     "characters": 5709,
+     "the_class": "self-declared-historical-or-superseded",
+     "the_evidence": {
+      "the_marker_matched": "is SUPERSEDED"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "| OI-179 | Ground-truth ceiling unmeasured — and measuring it here is the ONLY route, because the field has published nothing to cite | DCML annotator agreement",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "[[OI-179]]. ★ FAILS TEST (1) AND TEST (2), AND THE ROW IS OPEN. Read whole, this is a LIVE OPEN row of the register — it appears in the derived live gating answer's open population — and the marker that placed it sits INSIDE its status cell, describing one of the cell's own sentences or a former wording preserved ELSEWHERE, not the row. TEST (1): the row is not a preserved former wording or a self-declared historical block; it is a tracked issue that is not resolved. TEST (2): its status cell is what a working session reads to know what the row is waiting on. This is finding F33's mis-class shape reappearing on the register's own rows: a #12 preservation phrase inside a live cell places the whole cell in an archive class. ★ AND THIS ONE IS THE SHARPEST INSTANCE THE PASS COULD HAVE PRODUCED: the row is OPEN and GATES under #19, every ruling this batch executes names it as untouched, and the marker that proposed it — `is SUPERSEDED` — describes two of the cell's OWN earlier sentences, each preserved in place under #12 because a later act answered it. The row is the register's live record of the ground-truth ceiling obligation.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "6baa638a84c837f46d8dd99693e8b9620dd0a7e5e04d848bbe7a4b9b4bf4cf9d"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line_at_the_pin": 314,
+     "last_line_at_the_pin": 314,
+     "kind": "table-row",
+     "characters": 2787,
+     "the_class": "preserved-former-wording",
+     "the_evidence": {
+      "the_marker_matched": "former wording"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "| OI-274 | `docs/scoring_model.md` describes the legacy scorer as WHAT RUNS, in a document `CLAUDE.md` makes a mandatory session-start read | §1 opens \"`RuleBas",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "[[OI-274]]. ★ FAILS TEST (1) AND TEST (2), AND THE ROW IS OPEN. Read whole, this is a LIVE OPEN row of the register — it appears in the derived live gating answer's open population — and the marker that placed it sits INSIDE its status cell, describing one of the cell's own sentences or a former wording preserved ELSEWHERE, not the row. TEST (1): the row is not a preserved former wording or a self-declared historical block; it is a tracked issue that is not resolved. TEST (2): its status cell is what a working session reads to know what the row is waiting on. This is finding F33's mis-class shape reappearing on the register's own rows: a #12 preservation phrase inside a live cell places the whole cell in an archive class.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "a21a008e7c58a227ab613a26d94ea89f08ad2d95c986ce122d94abb96d01858e"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line_at_the_pin": 355,
+     "last_line_at_the_pin": 355,
+     "kind": "table-row",
+     "characters": 2801,
+     "the_class": "preserved-former-wording",
+     "the_evidence": {
+      "the_marker_matched": "former wording"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "| OI-317 | `docs/key_path_design.md`’s banner says the document is UNCOMMITTED and under a commit hold; it is committed at HEAD and names no ratification addend",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "[[OI-317]]. ★ FAILS TEST (1) AND TEST (2), AND THE ROW IS OPEN. Read whole, this is a LIVE OPEN row of the register — it appears in the derived live gating answer's open population — and the marker that placed it sits INSIDE its status cell, describing one of the cell's own sentences or a former wording preserved ELSEWHERE, not the row. TEST (1): the row is not a preserved former wording or a self-declared historical block; it is a tracked issue that is not resolved. TEST (2): its status cell is what a working session reads to know what the row is waiting on. This is finding F33's mis-class shape reappearing on the register's own rows: a #12 preservation phrase inside a live cell places the whole cell in an archive class.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "044c7435e1156d023e3605200ddd13545ab5d158091fa110ebb671a581e1135f"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line_at_the_pin": 359,
+     "last_line_at_the_pin": 359,
+     "kind": "table-row",
+     "characters": 3491,
+     "the_class": "preserved-former-wording",
+     "the_evidence": {
+      "the_marker_matched": "FORMER WORDING"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "| OI-321 | `docs/unified_analysis_pipeline.md` states three things as current that are false at HEAD, including a phase it calls deferred that the code says was",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "[[OI-321]]. ★ FAILS TEST (1) AND TEST (2), AND THE ROW IS OPEN. Read whole, this is a LIVE OPEN row of the register — it appears in the derived live gating answer's open population — and the marker that placed it sits INSIDE its status cell, describing one of the cell's own sentences or a former wording preserved ELSEWHERE, not the row. TEST (1): the row is not a preserved former wording or a self-declared historical block; it is a tracked issue that is not resolved. TEST (2): its status cell is what a working session reads to know what the row is waiting on. This is finding F33's mis-class shape reappearing on the register's own rows: a #12 preservation phrase inside a live cell places the whole cell in an archive class.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "42140e3e332e5b162d3ad0ccfcd35fced5991ac0502822763b17beadecab8a60"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line_at_the_pin": 384,
+     "last_line_at_the_pin": 384,
+     "kind": "table-row",
+     "characters": 4402,
+     "the_class": "preserved-former-wording",
+     "the_evidence": {
+      "the_marker_matched": "former wording"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "| OI-346 | **The empirically-unvalidated mark is SPECIFIED but not APPLIED** — the Jazz preset constants and the ground-truth-less idioms carry no mark and name",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "[[OI-346]]. ★ FAILS TEST (1) AND TEST (2), AND THE ROW IS OPEN. Read whole, this is a LIVE OPEN row of the register — it appears in the derived live gating answer's open population — and the marker that placed it sits INSIDE its status cell, describing one of the cell's own sentences or a former wording preserved ELSEWHERE, not the row. TEST (1): the row is not a preserved former wording or a self-declared historical block; it is a tracked issue that is not resolved. TEST (2): its status cell is what a working session reads to know what the row is waiting on. This is finding F33's mis-class shape reappearing on the register's own rows: a #12 preservation phrase inside a live cell places the whole cell in an archive class.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "b9021b049e7ebe0744dc4f8dbb614b1db651deaa0c3cc6e90b4ffd06ab986d51"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line_at_the_pin": 395,
+     "last_line_at_the_pin": 395,
+     "kind": "table-row",
+     "characters": 11090,
+     "the_class": "preserved-former-wording",
+     "the_evidence": {
+      "the_marker_matched": "FORMER WORDING"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "| OI-357 | ★ **The Baroque partial-signature correction lives in the LEGACY key resolver, which the production arm does not run — and whether the joint estimato",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "[[OI-357]]. ★ FAILS TEST (1) AND TEST (2), AND THE ROW IS OPEN. Read whole, this is a LIVE OPEN row of the register — it appears in the derived live gating answer's open population — and the marker that placed it sits INSIDE its status cell, describing one of the cell's own sentences or a former wording preserved ELSEWHERE, not the row. TEST (1): the row is not a preserved former wording or a self-declared historical block; it is a tracked issue that is not resolved. TEST (2): its status cell is what a working session reads to know what the row is waiting on. This is finding F33's mis-class shape reappearing on the register's own rows: a #12 preservation phrase inside a live cell places the whole cell in an archive class.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "3c5faafe801c40d20c2600e8f3ca8a10dc4702ef89d3687640bf164233bd3b86"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line_at_the_pin": 401,
+     "last_line_at_the_pin": 401,
+     "kind": "table-row",
+     "characters": 8803,
+     "the_class": "preserved-former-wording",
+     "the_evidence": {
+      "the_marker_matched": "FORMER WORDING"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "| OI-363 | ★ **The Baroque partial-signature correction is recorded as RESOLVED on one anchor case, and over the DERIVED population at committed outputs it leav",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "[[OI-363]]. ★ FAILS TEST (1) AND TEST (2), AND THE ROW IS OPEN. Read whole, this is a LIVE OPEN row of the register — it appears in the derived live gating answer's open population — and the marker that placed it sits INSIDE its status cell, describing one of the cell's own sentences or a former wording preserved ELSEWHERE, not the row. TEST (1): the row is not a preserved former wording or a self-declared historical block; it is a tracked issue that is not resolved. TEST (2): its status cell is what a working session reads to know what the row is waiting on. This is finding F33's mis-class shape reappearing on the register's own rows: a #12 preservation phrase inside a live cell places the whole cell in an archive class.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "b4771e457bf6d1866139d1328066d21a9e802111fa4581b011c980cf02732710"
+    }
+   ],
+   "reconciliation": {
+    "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
+    "every_moved_span_is_absent_from_the_parent": true,
+    "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
+    "no_span_the_reading_flagged_is_in_the_companion": true,
+    "moved_plus_kept_accounts_for_the_base_blob_to_the_character": true,
+    "the_base_blob_sha256": "d811baef2f40e460107b52d41f24b2aa806ade457dfd6ecf6fcecb5330b3a5b7",
+    "★_the_line_ending_form_was_normalised_before_any_of_these_decided": true
+   }
+  },
+  "DECISIONS.md": {
+   "companion": "DECISIONS_ARCHIVE.md",
+   "spans_proposed_by_the_test": 3,
+   "spans_moved": 0,
+   "spans_left_at_site_by_the_reading": 3,
+   "characters_moved": 0,
+   "characters_left_at_site_by_the_reading": 9479,
+   "the_moved": [],
+   "the_left_at_site_by_the_reading": [
+    {
+     "file": "DECISIONS.md",
+     "first_line_at_the_pin": 252,
+     "last_line_at_the_pin": 258,
+     "kind": "block",
+     "characters": 5094,
+     "the_class": "defense-and-declined-alternatives",
+     "the_evidence": {
+      "the_marker_matched": "TRIED AND CLOSED"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "> **The criterion, as ruled.** A home is a SECTION of a document. It is admitted when a user-ratified surface delegates a stated concern to that section by name",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "★ FAILS TEST (1) AND TEST (2). Read whole, the span is the block quote that STATES the ruled home criterion (D-430), what it supersedes, how a whole-document delegation is read, and the scope of its application — live rules a session applies whenever it asks whether a document is a contract home. It was placed by the phrase `TRIED AND CLOSED` in its final paragraph, which records two alternatives tried for a FILE REMOVAL inside an otherwise rule-stating block. A declined-alternative sentence inside a rule does not make the rule a declined-alternatives record — the class is deliberately narrow and this is the narrowness failing in the direction the doubt default exists for.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "00828f40707ef23e4f6e0f96de501c750f8b837d677deefb25c5fa395a11e920"
+    },
+    {
+     "file": "DECISIONS.md",
+     "first_line_at_the_pin": 266,
+     "last_line_at_the_pin": 266,
+     "kind": "block",
+     "characters": 2093,
+     "the_class": "preserved-former-wording",
+     "the_evidence": {
+      "the_marker_matched": "FORMER WORDING"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "**The remainder, measured.** The harvest holds 15,224 candidate statements, grouped into 14,460 groups of near-identical statements, and every one of those grou",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "★ FAILS TEST (1) AND TEST (2). Read whole, the span is `The remainder, measured.` — the register's own live BOUND on what it may claim about the documents it did not read in full, with the two qualifications that say how the figure is read at HEAD. It was placed by the sentence `THE FORMER WORDING IS PRESERVED VERBATIM (#12) at backbone_decisions.json`, which POINTS AT a former wording held elsewhere and carries none — F33's signal exactly. A working session reads this paragraph to know what the register's scope claim is worth.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "1ef53ba6370d9c4950965b37549f48c34c506cefeb4c714bb6cf2e712a634e05"
+    },
+    {
+     "file": "DECISIONS.md",
+     "first_line_at_the_pin": 270,
+     "last_line_at_the_pin": 276,
+     "kind": "block",
+     "characters": 2292,
+     "the_class": "preserved-former-wording",
+     "the_evidence": {
+      "the_marker_matched": "former wording"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "> **★ Corrections to this scope block, 2026-08-04.** User, 2026-08-04 (R3), dispatch `cc_instruction_phase1_delegations_and_corrections.md`: the three statement",
+     "the_verdict": "STAYS AT SITE — flagged by the reading (A4)",
+     "why": "★ FAILS TEST (1). Read whole, the span records three corrections made to the scope block on a named date and states where each former wording is preserved — in `backbone_decisions.json`, not here. So it POINTS AT preserved wordings rather than carrying one, which is the half of TEST (1) that a pointer fails. It also carries live material a session acts on: the third bullet names the computed check that measures the home-granularity claim and asserts that claim true at HEAD.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "3dbb53b5544b0fb6f9fb29ef17848321b2fbb6734b363197daf91d52f4bfa8f6"
+    }
+   ],
+   "reconciliation": {
+    "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
+    "every_moved_span_is_absent_from_the_parent": true,
+    "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
+    "no_span_the_reading_flagged_is_in_the_companion": true,
+    "moved_plus_kept_accounts_for_the_base_blob_to_the_character": true,
+    "the_base_blob_sha256": "e7c5b75078f3175757468e799a609b7698f6a8e1bfe92aa187f6a3b45cf797c9",
+    "★_the_line_ending_form_was_normalised_before_any_of_these_decided": true
+   }
+  },
+  "STATUS.md": {
+   "companion": "STATUS_ARCHIVE.md",
+   "spans_proposed_by_the_test": 6,
+   "spans_moved": 0,
+   "spans_left_at_site_by_the_reading": 6,
+   "characters_moved": 0,
+   "characters_left_at_site_by_the_reading": 8306,
+   "the_moved": [],
+   "the_left_at_site_by_the_reading": [
+    {
+     "file": "STATUS.md",
+     "first_line_at_the_pin": 8,
+     "last_line_at_the_pin": 8,
+     "kind": "block",
+     "characters": 1886,
+     "the_class": "pointer-entry-of-a-completed-batch",
+     "the_evidence": {
+      "the_marker_matched": "this entry is a **POINTER**"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "*Last updated: 2026-08-17 (CC — **★ THE PREPARATION PHASE'S EIGHTH BATCH CLOSES WITH ALL FOUR SITTINGS EXECUTED — AND WITH THE READ-BEFORE-MOVE SAFEGUARD REFUSI",
+     "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
+     "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "24f977a275330a6b3a6584af157f0cc4035d1666136a68060a5da95b1c0b796d"
+    },
+    {
+     "file": "STATUS.md",
+     "first_line_at_the_pin": 10,
+     "last_line_at_the_pin": 10,
+     "kind": "block",
+     "characters": 1185,
+     "the_class": "pointer-entry-of-a-completed-batch",
+     "the_evidence": {
+      "the_marker_matched": "this entry is a **POINTER**"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "*2026-08-17 (CC — **★ THE SORT'S 60 USER-RULED PLACEMENTS RECORDED AS THEIR OWN ROUTE, AND THE SURFACE'S BANNER CORRECTED FROM AWAITING TO RULED.** No `src/` ch",
+     "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
+     "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "b2dc591c710b2feb7d3391ac928099dd306f759fda3896990ff252ad8fd2ddf7"
+    },
+    {
+     "file": "STATUS.md",
+     "first_line_at_the_pin": 12,
+     "last_line_at_the_pin": 12,
+     "kind": "block",
+     "characters": 1425,
+     "the_class": "pointer-entry-of-a-completed-batch",
+     "the_evidence": {
+      "the_marker_matched": "this entry is a **POINTER**"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "*2026-08-17 (CC — **★ THE CENSUS TAUGHT THE CALLERS SITTING'S FOUR RULED INPUTS AND RE-PINNED — 855 MOVEMENTS, NONE LEFT OVER.** No `src/` change, no golden, no",
+     "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
+     "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "a266def36549ec1189768f9fe64a667186e007a2839ecc2be4b5f48916cfa6d1"
+    },
+    {
+     "file": "STATUS.md",
+     "first_line_at_the_pin": 14,
+     "last_line_at_the_pin": 14,
+     "kind": "block",
+     "characters": 1321,
+     "the_class": "pointer-entry-of-a-completed-batch",
+     "the_evidence": {
+      "the_marker_matched": "this entry is a **POINTER**"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "*2026-08-17 (CC — **★ THE RESIDUE SITTING EXECUTED: 38 ENTRIES RETIRED, 53 KEEPS GIVEN THEIR RECORDED ACTS, 30 UNTRUSTED CANDIDATES CARRIED.** No `src/` change,",
+     "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
+     "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "b3a9351318fe68ea71d99db1e47025401ea7fc71eaa3c315a406ed73028d1bc9"
+    },
+    {
+     "file": "STATUS.md",
+     "first_line_at_the_pin": 16,
+     "last_line_at_the_pin": 16,
+     "kind": "block",
+     "characters": 1413,
+     "the_class": "pointer-entry-of-a-completed-batch",
+     "the_evidence": {
+      "the_marker_matched": "this entry is a **POINTER**"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "*2026-08-17 (CC — **★ THE TWO RULED `CLAUDE.md` SPANS, READ WHOLE — AND BOTH STAY AT SITE, ONE OF THEM A RECOGNIZER ARTIFACT.** No `src/` change, no golden, no ",
+     "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
+     "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "62376f9fb20a9a2efeba730daa2c55391da056944890d9d75caf540ba8e8b81b"
+    },
+    {
+     "file": "STATUS.md",
+     "first_line_at_the_pin": 18,
+     "last_line_at_the_pin": 18,
+     "kind": "block",
+     "characters": 1076,
+     "the_class": "pointer-entry-of-a-completed-batch",
+     "the_evidence": {
+      "the_marker_matched": "this entry is a **POINTER**"
+     },
+     "placed_by_the_doubt_default": false,
+     "the_opening": "*2026-08-17 (CC — **★ THE FOUR SITTINGS OF 2026-08-17, THE TWENTY-FOURTH HANDOVER BLOCK AND THE DISPATCH THAT EXECUTES THEM ENTER GIT.** No `src/` change, no go",
+     "the_verdict": "STAYS AT SITE — owned by a standing mechanism (#6)",
+     "why": "★ IT DID NOT FAIL THE READING — A STANDING MECHANISM ALREADY OWNS IT. This is one of the EIGHTH batch's dated entries, and the standing forward bound of Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to `STATUS_ARCHIVE.md` the moment a later batch's close exists — executed by `tools/audit/gen_status_batch_bound.py`, which THIS dispatch's Task 5 runs in the same act that writes this batch's own entries. Moving it here would put a second path on one concern (#6) and would race that mechanism inside one batch. It stays for Task 5.",
+     "how_the_verdict_was_made": "authored per span, read in the file itself (A4)",
+     "text_sha256": "7b4cfb1bd62aad7964e82ad29e7025c3079b096cbd62fadf2fc9732bb35c13ce"
+    }
+   ],
+   "reconciliation": {
+    "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
+    "every_moved_span_is_absent_from_the_parent": true,
+    "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
+    "no_span_the_reading_flagged_is_in_the_companion": true,
+    "moved_plus_kept_accounts_for_the_base_blob_to_the_character": true,
+    "the_base_blob_sha256": "dfa6a086da1a7ca1f15e83eec59aff3f9c74059dcf917e341021c455e11ccf74",
+    "★_the_line_ending_form_was_normalised_before_any_of_these_decided": true
+   }
+  },
+  "BUILD_AND_TEST.md": {
+   "companion": "BUILD_AND_TEST_ARCHIVE.md",
+   "spans_proposed_by_the_test": 0,
+   "spans_moved": 0,
+   "spans_left_at_site_by_the_reading": 0,
+   "characters_moved": 0,
+   "characters_left_at_site_by_the_reading": 0,
+   "the_moved": [],
+   "the_left_at_site_by_the_reading": [],
+   "reconciliation": {
+    "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
+    "every_moved_span_is_absent_from_the_parent": true,
+    "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
+    "no_span_the_reading_flagged_is_in_the_companion": true,
+    "moved_plus_kept_accounts_for_the_base_blob_to_the_character": true,
+    "the_base_blob_sha256": "0c4be54787089eb6a0770c5dd6a5295e2dbf237c6947eed7914e9283ab93491d",
+    "★_the_line_ending_form_was_normalised_before_any_of_these_decided": true
+   }
+  }
+ },
+ "★_what_this_pass_does_NOT_do": [
+  "It moves no verdict, no gate, no cut and no population: a row's status token, its identity, its gate cell and its detail link all survive a move, which is what the imported pointer shape is for.",
+  "It archives, moves or deletes NO document AS A FILE.",
+  "It creates, flips or discards NO open-items row.",
+  "It re-proposes none of the six `CLAUDE.md` spans the two return sittings settled."
+ ]
+}

@@ -64,6 +64,7 @@
       "tools/audit/gen_phase1_finish_line.py",
       "tools/audit/gen_phase1_gate_readers.py",
       "tools/audit/gen_phase3_gate_partition.py",
+      "tools/audit/gen_post_split_archive.py",
       "tools/audit/gen_ratified_document_check.py",
       "tools/audit/gen_reserved_word_scanner.py",
       "tools/audit/gen_retirement_caller_check.py",
@@ -82,7 +83,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 88,
+    "authored_entries": 89,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -1045,6 +1046,24 @@
       "what_it_checks": "where every span of Ruling 1's own population actually stands: the spans the ruling places in the archive, the spans it REFUSED, and — at this tree, where the read-before-move safeguard returned STAY on both archive candidates — that every flagged and every refused span is still byte-present at site exactly once and in the companion not at all. Those last two directions are the load-bearing ones here, because a check that only proved a move would be green at a tree where the refusals had been overridden. The population is DERIVED on every run from the pinned finer decomposition and that artifact's own published conflict evidence, and the derivation reproducing Ruling 1's stated shape — two archive, four refused — is a STOP rather than an assumption. ★ WHAT IT DOES NOT ASSERT: that either flagged span is unarchivable; only what the imported reading test asks of each"
     },
     {
+      "tool": "tools/audit/gen_post_split_archive.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  proposed 19, moved 1, left at site by the reading 18",
+        "  characters moved: 3,542",
+        "  CLAUDE.md: proposed 2, moved 0, stayed 2, all six directions True",
+        "  OPEN_ITEMS.md: proposed 8, moved 1, stayed 7, all six directions True",
+        "  DECISIONS.md: proposed 3, moved 0, stayed 3, all six directions True",
+        "  STATUS.md: proposed 6, moved 0, stayed 6, all six directions True"
+      ],
+      "stderr": [],
+      "what_it_checks": "where every span of Ruling 2's own population actually stands: the spans the ruled archivability test PLACES across the five mandatory-read files at this act's pin, the reading verdict authored for each, and — per file, in both directions — that every moved span is byte-present in its companion exactly once and absent from its parent, and that every span the reading LEFT AT SITE is still byte-present at site exactly once and in the companion not at all. The second direction is the load-bearing one here, because eighteen of the nineteen proposals stayed: a check that only proved the one move would be green at a tree where a refusal had been overridden. The population is DERIVED on every run from the imported span cut and recognizers, with three ruled exclusions each derived rather than listed — a span a previous act already archived, the six `CLAUDE.md` spans the two return sittings settled, and a span classified by text inside an archive pointer. A proposed span with no authored reading verdict, and an authored verdict naming a span the derivation does not carry, each STOP it. ★ WHAT IT DOES NOT ASSERT: that any span left at site is unarchivable; only what the imported reading test asks of each"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1269,8 +1288,8 @@
     }
   ],
   "summary": {
-    "run": 68,
-    "passing": 67,
+    "run": 69,
+    "passing": 68,
     "failing": 1,
     "failing_tools": [
       {
