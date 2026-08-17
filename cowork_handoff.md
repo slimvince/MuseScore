@@ -1,7 +1,103 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-THIRD, 2026-08-17) — THE SIXTH BATCH RETURNED (THE SPLIT EXECUTED: 281 SPANS ARCHIVED, THE FIVE MANDATORY READS HALVED; THE SAFEGUARD HELD BACK 17 MIS-CLASSED SPANS — THE MEASUREMENT'S ERROR RAN ENTIRELY IN THE ARCHIVE DIRECTION), WAS VERIFIED AT THE OBJECTS; THE INTERIM READING SCOPE HAS EXPIRED; THE RETURN SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_seventh.md`. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-FOURTH, 2026-08-17) — THE SEVENTH BATCH RETURNED COMPLETE (TWO REDS CLEARED BY THE RULED ACTS; THE PREDICTED END STATE REACHED FOR THE FIRST TIME IN THREE BATCHES; THE COMMISSIONED FINER PASS ANSWERED IN THE NEGATIVE — F42) AND WAS VERIFIED AT THE OBJECTS; ALL FOUR AWAITING SITTINGS ARE HELD AND EVERY RECOMMENDATION RULED AS PUT; ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_eighth.md` — THE FOUR SITTINGS EXECUTED. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether
+`cc_instruction_preparation_eighth.md` has completed — its close appended to
+`cowork_away_returns.md` (a PREPARATION EIGHTH BATCH section), `STATUS.md` pointer entries
+(under the standing Ruling-4 bound the file keeps only the latest batch's entries), its commits
+verified at the objects by explicit hash. **If it still runs you are READ-ONLY on the
+repository until it stops.** If it has completed, VERIFY AT THE OBJECTS before trusting any of
+it, read its FULL close and prove the reading by quotation. Its Tasks: 0 — this block, the FOUR
+sitting records of 2026-08-17 and the dispatch enter git; 1 — the two ruled `CLAUDE.md` spans
+archived with dated pointers, the four refused spans untouched; 2 — the residue executed (the
+29 + 9 discarded by the register's own mechanism, the untrusted-candidate artifact publishing
+exactly 30, the 47 + 6 keeps gaining their recorded acts; keep 474 / retired 203, the live
+register 512 → 474, reconciled as a STOP); 3 — the census regenerated under the ruled kinds at
+Task 2's pin, every movement classed; 4 — the sort's 60 USER-RULED placements recorded (totals
+244 / 167 / 0); 5 — the close. Expected end state: ONE failing check ([[OI-372]]'s tool) and
+zero STOPs.
+
+**★ READ, IN ORDER:** (1) **the FOUR sitting records of 2026-08-17 IN FULL** —
+`cowork_rulings_2026_08_17_seventh_return.md`, `cowork_rulings_2026_08_17_residue_sitting.md`,
+`cowork_rulings_2026_08_17_callers_sitting.md`,
+`cowork_rulings_2026_08_17_rulings_sort_sitting.md` — the day's whole authority. (2)
+`cowork_rulings_2026_08_17_sixth_return.md`, `cowork_rulings_2026_08_17_governing_surface_split.md`
+and `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (3)
+**`cc_report_preparation_seventh.md` IN FULL — §4 and §7 above all (F40–F43)** — AND the
+batch's FULL close (THE PREPARATION SEVENTH BATCH section of `cowork_away_returns.md`), proved
+by quotation. (4) This block. (5) The twenty-third block below and everything it binds.
+`CLAUDE.md` in full before drafting anything.
+
+**★ WHAT HAPPENED AFTER THE TWENTY-THIRD BLOCK.** The seventh batch ran and closed COMPLETE —
+no STOP: the taught citation applied plus a second same-cause citation the ruling did not name,
+DECLARED (the check could not pass otherwise); the residue moved — 16 entries, 46,105
+characters, with **F40**: the record's own count of *17 dated entries* was one too many, the
+seventeenth being the live navigational paragraph at the foot of `STATUS.md`, caught by the
+read-before-move safeguard and flagged at site; the census re-pinned with all 41 movements
+classed and zero unclassed (the pin at Task 1's commit — a declared, confirmed departure: a
+commit cannot name its own hash); and the finer `CLAUDE.md` measurement, read-only, the file
+byte-unchanged proven by hash, **answering Ruling 4's commission in the NEGATIVE (F42)**: 9.0%
+placeable by evidence, but five of the six proposals already read-and-kept by the split's A4
+safeguard, exactly one conflict answered by the finer cut, ONE span (845 characters) proposed
+on unrefused ground — the recognizers are not the route to a materially smaller `CLAUDE.md`.
+F41 (pointers mis-classed as their targets, caught by the pass's own self-check) and F43 (a new
+shell-read-guard false deny, measured, not tuned away) surfaced. **The predicted and reached
+end states matched for the first time in three batches** (one red, [[OI-372]]'s tool, zero
+STOPs). The writing side verified everything at the objects — the commit chain `ec953b4cef` →
+`5c38b41166` → `e94f765c25` → `cfb69a7ecb` → `97b3792521` → the terminus `56ad941ee7`,
+`CLAUDE.md`'s blob `8230aa91b6` identical before and after, the artifacts read at their values
+— and CONFIRMED both declared departures as materially correct. **Then all four awaiting
+sittings were held in one session, each in the ruled form (the full self-contained surface, the
+user's confirmed reading, the questions in their own later turn), and the user ruled every
+recommendation as put** — the words verbatim in each record: the finer surface (two spans
+archive, four proposals REFUSED with the refusals recorded so a later pass must answer them;
+the recognizer changes accepted; **the recognizer route CLOSED — the curated boot list is the
+standing route to a smaller session-start read**, carrying the recorded input on
+`BUILD_AND_TEST.md`'s possible demotion to a conditional read); the residue (the 29 and the 9
+discarded, 30 untrusted candidates carried to the framework phase, the 47 kept on
+document-ratification acts, the 6 kept on their original acts); the callers (the nine
+KIND-UNDERIVABLE callers ruled ENUMERATOR-class at their published reasons; **the deferred
+prose-citation question RULED: a prose citation does not hold, nor does a data-record naming;
+tool-reads and boot listings hold**); and the rulings sort (the 351 ratified as proposed, the
+60 placed 24 DESIGN-INTENT / 36 IMPLEMENTATION-MANAGEMENT by the ruled
+binds-the-system-versus-binds-the-work criterion, totals 244 / 167 / 0; the `nonspec_kind`
+header disagreement kept as evidence). The eighth dispatch was drafted over the whole of it and
+dispatched; this session closed on the user's direction with the batch in flight.
+
+**★ WHAT AWAITS THE USER:** (1) the eighth batch's return — verify first; (2) then the phase's
+remaining outputs, NONE of which awaits a sitting today: the empirical findings ledger behind
+its fact-gate; **the curated boot list DRAFTED for ruling** (the standing route to the smaller
+session-start read, with the `BUILD_AND_TEST.md` conditional-read input recorded in the
+seventh-return record §3); the archiving wave once its ruled conditions clear — read the
+candidacies at the REGENERATED census, never at a stale one; the mining and the landing of the
+284 newly visible instruction files. **The prose-citation question is no longer open** — ruled
+at the callers sitting.
+
+**★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red expected after the batch. [[OI-374]]
+untouched. [[OI-179]] OPEN and GATES. F3 nine times surfaced, unfixed, unrowed. F1–F43, the E3
+ordering defect and the A1 premise error ride to the phase's retrospective. The 284 newly
+visible instruction files and the remaining ignored files unlanded; every candidacy behind the
+ruled conditions.
+
+**★ THIS BLOCK IS UNCOMMITTED AT ITS OWN CLOSE** — the eighth dispatch's Task 0 lands it,
+naming this file explicitly. **State the diff by its CONTENT in any later premise: this block
+inserted AND the twenty-third heading's demotion marker — two parts of one act; never assert a
+changed-passage count (the F25 lesson).**
+
+**★ WHY THE SESSION CLOSED HERE:** user-directed, per §7's fresh-session-per-dispatch-cycle
+direction, with the eighth batch dispatched and in flight, every ruling on disk in the turn it
+was taken, and ZERO presentation-form tells fired this session.
+
+*(The twenty-third block below remains binding in everything it states; it is superseded only
+as the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-THIRD, 2026-08-17) — THE SIXTH BATCH RETURNED (THE SPLIT EXECUTED: 281 SPANS ARCHIVED, THE FIVE MANDATORY READS HALVED; THE SAFEGUARD HELD BACK 17 MIS-CLASSED SPANS — THE MEASUREMENT'S ERROR RAN ENTIRELY IN THE ARCHIVE DIRECTION), WAS VERIFIED AT THE OBJECTS; THE INTERIM READING SCOPE HAS EXPIRED; THE RETURN SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_seventh.md`. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-fourth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
