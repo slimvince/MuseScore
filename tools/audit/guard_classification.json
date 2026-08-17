@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 72,
-    "re_derives_a_live_invariant": 54,
+    "tools_classified": 73,
+    "re_derives_a_live_invariant": 55,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 3
@@ -533,6 +533,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_status_archive_pass.py:35-52 (what `--check` proves, and why the first claim is stamped to a commit), :150-173 (the moved-set STOP), :189-191 (the three reconciliation reads)",
       "why": "★ CLASSIFIED IN THE ACT THAT FINALLY REGISTERS IT — it joined the derived candidate population on 2026-08-11 carrying a `--check` mode with no authored invocation, which is the condition `OPEN_ITEMS.md` OI-373 records. LIVE, and the verdict turns on a design choice the tool made to earn it. An archive pass is a completed act, so the naive check — compare the live file against a fixed base — must fail on the first legitimate append, which is the OI-344 shape the tool names of itself. So the ONE claim that is about a single moment is checked at THAT MOMENT'S OWN GIT OBJECT by explicit hash and cannot decay, while the two claims that are durable are re-read at HEAD on every run: the moved block is still verbatim in `STATUS_ARCHIVE.md`, and it is still absent from `STATUS.md`. Those two are a live invariant nothing else asserts — an edit that truncates the archive, or a later act that re-introduces the block into the must-read, is caught on the next run, forever. Its moved-set STOP is a demand of the same kind, requiring every entry in the moved range to carry either the derived signal or an authored clause. ★ WHAT IT DOES NOT ASSERT: that `STATUS.md` is readable again — it is not, and OI-370 stands — only that nothing left the live file which is not in the archive, and that nothing else left it.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_status_batch_bound.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_status_batch_bound.py, THE STOPS of its module docstring; `build()`, which re-reads both live files on every run; `moved_entries()`, which derives membership from the entries' own words at the base commit's git object",
+      "why": "LIVE. Both of its claims are re-answered against the tree AS IT STANDS on every run — the moved entries still byte-present in `STATUS_ARCHIVE.md` exactly once, and still absent from `STATUS.md` — so an entry put back into the must-read, or quietly dropped from the archive, fails on the day it happens. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: WHICH entries moved is a statement about the file as it stood when the act ran, so it is derived from that commit's own git object rather than from a file that legitimately grows by every later batch's entries — the OI-344 shape avoided by construction, on the precedent `gen_status_archive_pass.py` sets. ★ WHAT IT DOES NOT ASSERT: that the must-read is small enough to read, which is [[OI-370]]'s own subject, or that every superseded entry has moved — it proves only that what left is in the archive and that nothing else left.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

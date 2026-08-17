@@ -290,7 +290,9 @@ anchor inside a moved span.
   enumerated and classed inside the bound (§5); **A4's left-at-site flags enumerated at 17** (§2.b);
   **no operative or doubt-defaulted span moved.** The moot clause is **A3**: `DECISIONS.md` had no
   move to express, so the register's own mechanism was not exercised at all.
-- **E2 — see §6**, taken after the Task 2 commit exists, per the ordering rule.
+- **E2 — MET on the run, at the shape the batch actually reached rather than the shape the dispatch
+  predicted.** Taken after the Task 2 commit existed, per the ordering rule; both extra failures
+  declared and neither adjusted away. §6.
 
 ---
 
@@ -359,6 +361,24 @@ re-derives"** after it was regenerated for the five new invocations — which is
 a tool in the run population with no authored verdict halts it, and the verdict landed in the same
 commit as the tool. The population grew from 55 to 60 by exactly those five.
 
+**★ E2 — MET, on the run and on nothing else.** The end-state run ordered at the tree carrying the
+close, taken **AFTER commit `5230070217` existed**:
+
+```
+the guard state re-derives
+61 guard(s) run, 3 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+  [FAIL] tools/audit/gen_retirement_caller_check.py --check
+  [FAIL] tools/audit/decisions/gen_phase1w_legacy_verification.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** — 55
+live, 16 point-in-time, 2 neither, **3 live-and-failing**, **zero STOPs**, the population grown to
+61 by this batch's six new invocations, **all six passing**. **Run and read, never inferred.** E2 is
+**MET at the shape the batch actually reached and NOT at the shape the dispatch predicted**: the
+dispatch expected every run check passing except [[OI-372]]'s tool, and three fail. Both extra
+failures are declared below and neither was adjusted away.
+
 **★ ASSUMPTION A2 IS FALSIFIED, AND IN TWO SEPARATE WAYS, BOTH DECLARED RATHER THAN CLEARED.**
 
 **(i) `gen_phase1w_legacy_verification.py --check` STOPs and is LEFT RED — this batch's
@@ -370,11 +390,19 @@ shape is a STOP, not an improvised tool edit."* It is a **ruling**, not a sessio
 the tool about the archive, class the check historical, or revisit the resolved-row fate. Nothing
 was adjusted to make it green.
 
-**(ii) `gen_retirement_caller_check.py` cannot be regenerated inside the act that moves it.** Its
-live half re-scans the citation split at the governing record, which this act edited; its write mode
-refuses without `--at <commit>`, and the commit its new reading belongs to is the one being created.
-It is therefore regenerated **after** the close commit exists and lands in the ONE FURTHER commit —
-the same ordering rule that caught F32 — and Task 1 and Task 2 both land with it red and declared.
+**(ii) `gen_retirement_caller_check.py` cannot be regenerated inside the act that moves it, and the
+regeneration was ATTEMPTED, MEASURED and REVERTED.** Its live half re-scans the citation split at
+the governing record, which this act edited; its write mode refuses without `--at <commit>`, and the
+commit its new reading belongs to is the one being created. It was therefore regenerated at the
+close commit `5230070217` — **and the result is outside the ruled bound and was restored.** Its
+committed reading was measured at `6529d10ae4`, many commits back, so re-writing it does not record
+this act's movement: it re-measures the whole population at today's tree — **19,896 insertions and
+4,373 deletions, ENUMERATOR 7 → 15, KIND-UNDERIVABLE 8 → 9, tracked Python sources parsed 328 →
+341.** None of that is a line coordinate, a per-class count, or a population whose subject is a moved
+span. Clause 5's instruction on any other movement is a STOP-and-report, so the artifact was restored
+byte-identically from the close commit's own object (`5edeb18fed`, hashed both ways) and **the check
+is left red**. **The KIND-UNDERIVABLE population is one of the things awaiting a user sitting**, and
+moving it from 8 to 9 inside a pruning batch would have moved a surface the user has not ruled on.
 
 **Every other red the edits turned was classed against its measured cause and then cleared by
 regenerating the artifact under the bound** (§5), never by adjusting a check. The two that did not
@@ -407,11 +435,14 @@ The dispatch bars creating an open-items row, so each is stated here and in the 
   `OPEN_ITEMS_ARCHIVE.md`. **The remedy is one line in that tool and clause 5 forbids taking it**
   (*"a parser halting on the new shape is a STOP, not an improvised tool edit"*), so the check is
   left red and reported. This is the batch's one STOP-and-report. §6.
-- **F37 (new) — AN ARTIFACT THAT RECORDS THE COMMIT IT WAS TAKEN AT CANNOT BE REGENERATED INSIDE
-  THE ACT THAT MOVES IT.** `gen_retirement_caller_check.py` refuses to write without `--at
-  <commit>`, and the commit its new reading belongs to is the one being created. Handled by the
-  E-ordering pattern the record already uses — regenerated after Task 1's commit exists and landed
-  in the following commit — but the shape will recur for every such artifact. §6.
+- **F37 (new) — AN ARTIFACT PINNED TO THE COMMIT IT WAS TAKEN AT CANNOT BE BROUGHT FORWARD BY THE
+  ACT THAT MOVES IT WITHOUT RE-MEASURING EVERYTHING ELSE TOO.** `gen_retirement_caller_check.py`
+  refuses to write without `--at <commit>`; regenerating it at the close commit re-measures its
+  whole population at today's tree, because its committed reading was pinned many commits back —
+  a movement far outside the ruled bound, and one that would move a population the user has not yet
+  ruled on. **Attempted, measured, reverted, and the check left red.** The epoch pattern that makes
+  such an artifact durable is exactly what makes it un-updatable by a bounded act; the shape will
+  recur for every artifact of its kind. §6.
 - **F38 (new, small) — THE PINNED READER INVENTORY UNDER-NAMES THE REACH, BY ITS OWN PUBLISHED
   BOUND.** Of the checks this act turned red, only two are among the tools the inventory names as
   parsers of an edited file; the rest read those files INDIRECTLY — through the register's data, or
@@ -453,4 +484,12 @@ discarded except [[OI-370]]'s ordered flip** — [[OI-372]] and [[OI-374]] stay 
 [[OI-179]] stays OPEN and GATES, and `reaim_home_anchors.py`'s F3 defect stays surfaced, unfixed and
 unrowed.
 
-*Provenance: CC, 2026-08-17, dispatch `cc_instruction_preparation_sixth.md`.*
+*Provenance: CC, 2026-08-17, dispatch `cc_instruction_preparation_sixth.md`. Task 0 is commit
+`1f84f5d621` (parent `9fb1ba01bf`), pushed, three paths. Task 1 is `53e552296f` (parent
+`1f84f5d621`), pushed, 39 paths. Task 2's close and this report are `5230070217` (parent
+`53e552296f`), pushed, eight paths. **E2's run and the final SHAs are recorded in the ONE FURTHER
+commit after it**, so no graded value is committed before the run that produced it — and that
+ordering is what caught the caller-check regeneration falling outside the bound. **★ WHERE THE
+RECORDING TERMINATES, STATED RATHER THAN LEFT AS A GAP:** every commit of this batch is verified at
+the object and named except the LAST one — the commit carrying this sentence — because a commit
+cannot contain its own identity. That is the terminus, not an omission.*

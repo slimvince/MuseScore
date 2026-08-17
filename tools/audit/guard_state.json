@@ -65,6 +65,7 @@
       "tools/audit/gen_rulings_sort.py",
       "tools/audit/gen_sole_carrier_subclass.py",
       "tools/audit/gen_status_archive_pass.py",
+      "tools/audit/gen_status_batch_bound.py",
       "tools/audit/gen_test_construction_evidence.py",
       "tools/audit/index_status_lint.py",
       "tools/audit/instrument_arm_declaration_effect.py",
@@ -74,7 +75,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 80,
+    "authored_entries": 81,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -910,6 +911,21 @@
       "what_it_checks": "the ruled split of `BUILD_AND_TEST.md` against its archive companion still reconciles in BOTH directions: every archived span byte-present in the companion exactly once, every archived span absent from the parent, and moved + kept accounting for the parent's pre-act committed blob TO THE CHARACTER. The pre-act blob and the register's home anchors are read from the GIT OBJECTS at the commit the act was performed on top of, so the claim re-derives forever rather than decaying as the parent legitimately grows (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: an archive-class span with no authored reading verdict halts it, so a span cannot be archived unread (Ruling 1's own safeguard); a verdict naming a span the pinned decomposition does not carry halts it, so the two cannot drift apart; a moved span whose text is not present exactly once in the pre-act blob halts it; the arithmetic not accounting for that blob to the character halts it; and a register HOME anchor falling inside a moved span halts it, which is clause 4's own condition that no operative span may have moved"
     },
     {
+      "tool": "tools/audit/gen_status_batch_bound.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  entries moved: 4, 6,718 characters",
+        "  byte-present in the archive exactly once: True",
+        "  absent from the must-read:                True"
+      ],
+      "stderr": [],
+      "what_it_checks": "the then-previous batch's `STATUS.md` entries are still byte-present in `STATUS_ARCHIVE.md` exactly once and still absent from the must-read — Ruling 4's forward bound, proven in both directions rather than asserted. The moved set is read from the git OBJECT at the commit the move was performed on top of, so the claim re-derives forever as later batches legitimately append their own entries (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: a dispatch naming NO entry at that commit halts it, because moving nothing silently would leave the bound unmet without saying so; an entry not present exactly once in the live file when the move is applied halts it; and an entry already in the archive halts it. Membership is DERIVED from the entries' own words — the one naming the dispatch, plus the run below it saying `Same dispatch` — so no entry is listed by hand, and the dated entry pattern is IMPORTED from the archive pass that owns it (#6)"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1136,8 +1152,8 @@
     }
   ],
   "summary": {
-    "run": 60,
-    "passing": 57,
+    "run": 61,
+    "passing": 58,
     "failing": 3,
     "failing_tools": [
       {

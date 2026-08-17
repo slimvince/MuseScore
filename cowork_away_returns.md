@@ -13239,9 +13239,33 @@ re-derived by `tools/audit/gen_status_batch_bound.py --check`.
 ## 5 (continued). The end state, under the ordering rule
 
 Recorded in the ONE FURTHER commit after this close, per the E-ordering rule — no graded value is
-committed before the run that produced it. **`gen_retirement_caller_check.py`'s artifact is
-regenerated in that same further commit**, because its write mode requires the commit its reading
-belongs to and that commit does not exist until the close has landed (F37).
+committed before the run that produced it. The run ordered at the tree carrying this close, taken
+**AFTER commit `5230070217` existed**, printed **"the guard state re-derives"**:
+
+```
+61 guard(s) run, 3 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+  [FAIL] tools/audit/gen_retirement_caller_check.py --check
+  [FAIL] tools/audit/decisions/gen_phase1w_legacy_verification.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** — **zero
+STOPs**, the population grown to 61 by this batch's six new invocations, **all six passing**. **Run
+and read, never inferred. E2 is MET on that run and on nothing else** — at the shape the batch
+actually reached, not the shape the dispatch predicted, which expected one failing check and got
+three.
+
+**★ A CORRECTION TO THIS SECTION'S OWN PLAN, MADE BY THE RUN THE ORDERING RULE REQUIRES.** The
+sentence this paragraph replaces said `gen_retirement_caller_check.py`'s artifact would be
+regenerated in the further commit. **It was regenerated, measured, and REVERTED.** Its committed
+reading was pinned many commits back, so re-writing it does not record this act's movement — it
+re-measures the whole population at today's tree (**19,896 insertions, 4,373 deletions; ENUMERATOR
+7 → 15; KIND-UNDERIVABLE 8 → 9**), which is far outside the ruled bound and would move a population
+the user has not yet ruled on. The artifact was restored byte-identically from the close commit's own
+object and **the check is left red and reported (F37)**. *(The former wording is preserved by this
+note itself: it said the artifact "is regenerated in that same further commit, because its write mode
+requires the commit its reading belongs to and that commit does not exist until the close has
+landed".)*
 
 *Provenance: CC, 2026-08-17, dispatch `cc_instruction_preparation_sixth.md`. Task 0 is commit
 `1f84f5d621` (parent `9fb1ba01bf`), pushed, three paths. Task 1 is `53e552296f` (parent
