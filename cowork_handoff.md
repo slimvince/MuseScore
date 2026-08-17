@@ -1,7 +1,85 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-FIRST, 2026-08-16) — THE FOURTH BATCH RETURNED, WAS VERIFIED AT THE OBJECTS, AND STOP-REPORTED AGAIN (THE STANDING CLASS IS NOT ONE CLASS); THE TREATMENT IS RULED, THE GOVERNING-SURFACE PRUNING IS RULED IN FIVE LIMBS, AND ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_fifth.md` — THE DISCARD COMPLETE PLUS THE PRUNING MEASUREMENT. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-SECOND, 2026-08-17) — THE FIFTH BATCH RETURNED COMPLETE (THE DISCARD EXECUTED: 165 RETIRED, 512 LIVE; THE PRUNING MEASURED) AND WAS VERIFIED AT THE OBJECTS BY A FRESH SESSION AFTER A CRASH TOOK THE PRIOR SESSION'S HISTORY — THE RECORD LOST NOTHING; THE GOVERNING-SURFACE SPLIT SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_sixth.md` — THE SPLIT EXECUTED. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
+
+**★ YOUR SESSION-START READS RUN UNDER THE RULED INTERIM READING SCOPE**
+(`cowork_rulings_2026_08_16_preparation_return.md` §5(B)) — UNTIL the active dispatch's Task 1
+lands, at which point the scope EXPIRES by its own ruled terms (the executed split makes the
+boundary physical). Check the branch below before assuming either state.
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether `cc_instruction_preparation_sixth.md`
+has completed — its close appended to `cowork_away_returns.md` (a PREPARATION SIXTH BATCH
+section), `STATUS.md` pointer entries (NOTE: under Ruling 4 of the 2026-08-17 record,
+`STATUS.md` now keeps ONLY the latest batch's entries — an older batch's absence is the rule
+working, not a gap), its commits verified at the objects by explicit hash. **If it still runs
+you are READ-ONLY on the repository until it stops.** If it has completed, VERIFY AT THE
+OBJECTS before trusting any of it, read its FULL close and prove the reading by quotation. Its
+Task 1 is the split executed (four archive companions created, the spans moved verbatim with
+dated pointers, the `STATUS.md` backlog cleared, [[OI-370]] flipped); its Task 2 is the close
+under the new standing `STATUS.md` bound.
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_17_governing_surface_split.md` IN FULL** —
+the sitting record: the per-class fates (operative and doubt-defaulted spans stay; four classes
+archive with dated pointers), the doubt-defaulted share accepted, the per-file archive
+companions, and the `STATUS.md` superseded-entry rule (latest batch only, maintained at every
+future close). (2) `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding in
+full. (3) **`cc_report_preparation_fifth.md` IN FULL, §4 and §7 above all** — the discard's
+execution proofs, the pins, and F27–F32 — AND the batch's FULL close (THE PREPARATION FIFTH
+BATCH section of `cowork_away_returns.md`), proved by quotation. (4)
+`ratification_surfaces/cowork_governing_surface_split_2026_08_16.md` — the ruled surface. (5)
+This block. (6) The twenty-first block below and everything it binds. `CLAUDE.md` (under the
+interim scope while it lasts) in full before drafting anything.
+
+**★ WHAT HAPPENED AFTER THE TWENTY-FIRST BLOCK.** The fifth batch ran 2026-08-16 21:20 →
+00:01 and closed COMPLETE — no STOP: the discard executed to the digit (677 = 512 + 165, every
+retired entry byte-preserved, the ten B1 stamps), every STANDING check treated by its ruled
+kind, the six SUPERSEDED checks historical, the pruning measured read-only and its surface
+generated. Six findings surfaced (F27–F32), the sharpest F32: the batch's own close invalidated
+its own measurements, caught only by the E-ordering rule, remedied by pinning the three
+evidence tools to their commits. **The writing session that should have verified the return
+CRASHED with loss of its session history** (the CC client's transcript view was lost too — the
+last visible CC transcript predates seven completed batches). **The record lost nothing**: a
+fresh session on 2026-08-17 re-established everything at the objects (the arithmetic re-derived
+at the data file, the guard artifact read at its values, all five commits named and pushed),
+read the full close and proved it by quotation, then held the governing-surface split sitting.
+**The user ruled all four decisions, Alternative A each time** (the user's words, verbatim:
+"agree", then "A", "A", "A"). Zero presentation-form tells fired. The sixth dispatch was
+drafted and this session closed per §7's fresh-session-per-dispatch-cycle direction.
+
+**★ WHAT AWAITS THE USER, in recommended order:** (1) the sixth batch's return — verify first;
+(2) **the residue surface** — the 29 withheld sole-carriers and the 62's results (47 / 9 / 6),
+`ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md`; (3) the eight
+KIND-UNDERIVABLE callers and the deferred prose-citation question (they gate the archiving
+wave); (4) the rulings-sort sitting (220 / 131 / 60, proposed). Then the phase's remaining
+outputs: the empirical findings ledger behind its fact-gate, the curated boot list DRAFTED for
+ruling, and the archiving wave once its gates clear.
+
+**★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red. [[OI-374]] untouched. [[OI-179]]
+OPEN and GATES. F3 seven times surfaced, unfixed, unrowed. [[OI-370]]'s discharge is INSIDE the
+active dispatch (its clause 8), not done until that batch lands. F1–F32, the E3 ordering defect
+and the A1 premise error ride to the phase's retrospective. The 284 newly visible instruction
+files and the remaining ignored files unlanded; every retirement flag a candidacy behind the
+ruled conditions.
+
+**★ THIS BLOCK IS UNCOMMITTED AT ITS OWN CLOSE** — the sixth dispatch's Task 0 lands it, naming
+this file explicitly. **State the diff by its CONTENT in any later premise: this block inserted
+AND the twenty-first heading's demotion marker — two parts of one act; never assert a
+changed-passage count (the F25 lesson).**
+
+**★ WHY THE SESSION CLOSED HERE:** §7's ruled direction — fresh sessions every dispatch cycle
+until the pruning lands — with the sitting complete, every ruling on disk in the turn it was
+taken, zero tells under the session-length standing instruction, the sixth dispatch written and
+ready, and nothing in flight.
+
+*(The twenty-first block below remains binding in everything it states; it is superseded only
+as the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-FIRST, 2026-08-16) — THE FOURTH BATCH RETURNED, WAS VERIFIED AT THE OBJECTS, AND STOP-REPORTED AGAIN (THE STANDING CLASS IS NOT ONE CLASS); THE TREATMENT IS RULED, THE GOVERNING-SURFACE PRUNING IS RULED IN FIVE LIMBS, AND ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_fifth.md` — THE DISCARD COMPLETE PLUS THE PRUNING MEASUREMENT. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-second block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
