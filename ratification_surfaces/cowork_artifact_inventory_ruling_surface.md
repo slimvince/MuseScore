@@ -287,7 +287,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 *Why it is mixed (AUTHORED):* One naming convention covers ratified contract documents that governing surfaces delegate to, and exploratory drafts that were superseded the week they were written. The user's own direction is that these are NOT direct witnesses and that their value is measured rather than presumed.
 
-**NAMED in the governing record — 82 of 113 files.**
+**NAMED in the governing record — 81 of 113 files.**
 
 - **PROPOSED role (AUTHORED):** mining witness
 - **PROPOSED mining verdict (AUTHORED):** mine via the airlock
@@ -366,7 +366,6 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cowork_score_census.md`
 - `cowork_sensitive_cell_probe.md`
 - `cowork_siloed_facts_audit.md`
-- `cowork_spec_code_audit_adjudication_method.md`
 - `cowork_spec_language_sweep.md`
 - `cowork_stage5_fitter_design.md`
 - `cowork_structural_integrity_audit.md`
@@ -382,7 +381,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 </details>
 
-**NAMED NOWHERE in the governing record — 31 of 113 files.**
+**NAMED NOWHERE in the governing record — 32 of 113 files.**
 
 - **PROPOSED role (AUTHORED):** airlock input
 - **PROPOSED mining verdict (AUTHORED):** mine via the airlock
@@ -418,6 +417,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cowork_polyphony_phrase_harmony_research.md`
 - `cowork_score_census_gt_draft.md`
 - `cowork_score_census_plain_draft.md`
+- `cowork_spec_code_audit_adjudication_method.md`
 - `cowork_spec_polish_findings_a.md`
 - `cowork_spec_polish_findings_b.md`
 - `cowork_target_document_structure_2026_08_09.md`
@@ -1174,7 +1174,7 @@ Assumption A2 of the dispatch: the population is the **tracked** tree, and an un
 
 **Why this is not a housekeeping remark — and the number that says so, DERIVED by the same citation scan the classes above are split by:**
 
-> **109 of those 571 ignored files are NAMED by the governing record.**
+> **107 of those 571 ignored files are NAMED by the governing record.**
 
 These are documents the governing documents and the two registers cite as provenance — including by gate block (A) of `CLAUDE.md`, which names the measurement provenance of the ratified baselines, and by rulings of the eighteenth stop. **A fresh clone of this repository does not contain them.** They are therefore not available to any phase whose inputs are what git carries, and the handover-safety the method-directions record requires does not currently extend to the evidence the governing record leans on.
 
@@ -1207,7 +1207,6 @@ These are documents the governing documents and the two registers cite as proven
 - `cc_instruction_notation_noteseam.md`
 - `cc_instruction_notation_p4.md`
 - `cc_instruction_notation_p6.md`
-- `cc_instruction_notation_p7.md`
 - `cc_instruction_notation_pstrings.md`
 - `cc_instruction_notation_record_assembly.md`
 - `cc_instruction_notation_seams_1.md`
@@ -1217,7 +1216,6 @@ These are documents the governing documents and the two registers cite as proven
 - `cc_instruction_oi199_joint_p3_p4.md`
 - `cc_instruction_oi199_pass1.md`
 - `cc_instruction_oi206_investigation.md`
-- `cc_instruction_oi207_adjudication.md`
 - `cc_instruction_oi207_residual_pass.md`
 - `cc_instruction_oi315_class_licence.md`
 - `cc_instruction_oi315_licence_and_cells.md`

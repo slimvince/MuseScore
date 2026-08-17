@@ -94,12 +94,20 @@ RECORDED_FIGURES = [
     },
     {
         'figure': 80,
-        'where': 'OPEN_ITEMS.md',
+        # ★ TAUGHT WHERE THE ROW NOW LIVES, 2026-08-17, on the user's Ruling 1 of
+        # `cowork_rulings_2026_08_17_sixth_return.md` (the user's word: "A."). The ruled
+        # governing-surface split archived OI-289's resolved INDEX row, and this citation halted:
+        # *"recorded figure 80: quote not at OPEN_ITEMS.md:327. It is nowhere in the file — the
+        # premise has changed."* The row is byte-present in the companion, so nothing was lost and
+        # the remedy is the pointer-follows-the-move discipline the split itself rests on. THE
+        # QUOTE IS UNTOUCHED; only where it is looked for moves.
+        'where': 'OPEN_ITEMS_ARCHIVE.md',
         # Re-aimed 2026-08-09 (318 -> 319 -> 327) per this tool's own reported line, twice in one
         # session: the OI-365 row inserted above it by `cc_instruction_return_continuation_5.md`
         # Task 0 shifted it by one, and that dispatch's Task 1 added eight lines to the INDEX
-        # preamble. Authored-input maintenance (D-648), not a mechanism change.
-        'line': 327,
+        # preamble. Authored-input maintenance (D-648), not a mechanism change. Re-aimed AGAIN
+        # 2026-08-17 (327 -> 333) with the move above, at the companion's own line.
+        'line': 333,
         'quote': 'Set size **80**, counted from the data',
         'note': 'The INDEX row, which the register\'s own rule makes the authoritative status '
                 'surface. Same staleness as the detail file.',
@@ -115,10 +123,19 @@ RECORDED_FIGURES = [
     },
     {
         'figure': 75,
-        'where': 'STATUS.md',
+        # ★ THE SAME ACT BROKE THIS CITATION IN THE SAME WAY, and it is taught the same lesson.
+        # Ruling 1 names the OI-289 figure; the split archived the phase-1i STATUS entry too, and
+        # `--check` cannot pass while a second citation points at a file the quote left. The
+        # remedy is identical and is the ruling's own stated discipline — the pointer follows the
+        # move — so it is applied here and DECLARED in the report rather than taken silently. THE
+        # QUOTE IS UNTOUCHED.
+        'where': 'STATUS_ARCHIVE.md',
         'line': None,
         'quote': 'the 75-entry LEGACY',
-        'note': 'The phase-1i entry. Still in the live STATUS entries, not archived.',
+        'note': 'The phase-1i entry, moved verbatim to `STATUS_ARCHIVE.md` by the ruled '
+                'governing-surface split of 2026-08-17; this citation follows it. *(Former '
+                'wording, preserved in place (#12): "The phase-1i entry. Still in the live STATUS '
+                'entries, not archived." — true when written, and made untrue by that act.)*',
     },
     {
         'figure': 75,

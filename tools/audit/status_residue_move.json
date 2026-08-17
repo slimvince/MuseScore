@@ -1,0 +1,221 @@
+{
+ "what_this_is": "THE PRE-CONVENTION `STATUS.md` RESIDUE, MOVED UNDER RULING 4's OWN LINE: which candidate moved, which was LEFT AT SITE by the reading Ruling 3 requires, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_status_residue_move.py",
+ "dispatch": "cc_instruction_preparation_seventh.md, Task 1",
+ "the_ruling": "Ruling 3 of cowork_rulings_2026_08_17_sixth_return.md: the dated entries the split left at site move to STATUS_ARCHIVE.md under Ruling 4's own line, each entry READ before it moves, each move byte-faithful.",
+ "measured_at_commit": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979",
+ "base_commit": "ec953b4cef423fba606cf84e89acbcda32fd8d6e",
+ "★_why_the_population_is_the_pinned_measurement's_residue": "The executed split moved the spans the PINNED decomposition places in an archive class, so what it left behind is defined by that same measurement and by nothing else. Deriving the candidates as its complement — the operative-classed spans at or after the file's first dated entry — makes the two acts account for the file together, which is checked in both directions rather than asserted.",
+ "the_reading_test_applied": "A candidate MOVES only when (1) it IS, read whole, a dated record of a COMPLETED batch or session — the dispatch it names has finished and the work it points forward to has been overtaken — and (2) it carries no rule, STOP, prohibition or live caveat whose ONLY home is this entry. A rule the entry states AND names a home for is not a sole carrier: the move is archive-with-record and the pointer resolves (#12). Anything else STAYS: the ruled doubt default, flagged.",
+ "★_what_this_act_does_NOT_establish": "That every moved entry's substance is carried elsewhere in full. What is established per entry is narrower and is what clause (2) asks: no rule, STOP, prohibition or live caveat whose ONLY home is that entry. The move is archive-with-record, so an entry's own substance remains readable at the companion whatever else is true.",
+ "the_derivation_bounds": {
+  "the_first_dated_entry_at_the_pin": 8,
+  "spans_the_decomposition_carries": 150,
+  "moved_by_the_split": 131,
+  "the_files_head_before_the_first_dated_entry": 2,
+  "candidates": 17
+ },
+ "candidates": 17,
+ "entries_moved": 16,
+ "left_at_site_by_the_reading": 1,
+ "characters_moved": 46105,
+ "characters_left_at_site_by_the_reading": 572,
+ "the_moved": [
+  {
+   "first_line_at_the_pin": 142,
+   "last_line_at_the_pin": 142,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 1552,
+   "the_verdict": "MOVE",
+   "why": "The phase-2 adjudication-method surface's commit entry. A dated record of a completed task that calls itself a POINTER in those words and names the method's one home; it missed the recognizer only because it does not carry the remedy's own sentence verbatim. Every rule it mentions is stated at that home and not here.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*2026-08-12 (CC — **★ THE PHASE-2 ADJUDICATION-METHOD SURFACE IS COMMITTED AND POINTED AT FROM THE AUDIT PROTOCOL'S OWN P3 — A POINTER, NEVER A COPY.** No `src/",
+   "text_sha256": "dc63c27f5b69bf23284a101777538df829c6a5752b50e0bce7e9df106ab50557"
+  },
+  {
+   "first_line_at_the_pin": 144,
+   "last_line_at_the_pin": 144,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 1421,
+   "the_verdict": "MOVE",
+   "why": "The proxy-premise entry. Same shape: a completed task's dated record, saying in its own words that the premise is written in full as a dated note on `open_items/OI-179.md` and nothing is restated here. The premise's home is that row, which is OPEN and unmoved.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*2026-08-12 (CC — **★ THE PROXY PREMISE IS WRITTEN BEFORE PHASE 2 OPENS: WHAT THE COMMISSIONED MEASUREMENT YIELDS, WHAT #21 DEMANDS, AND THAT THE LINK BETWEEN T",
+   "text_sha256": "d1348e97523e308a7b26f8a89724b614e15e1a0082f6c648c8628b2fb7007e3e"
+  },
+  {
+   "first_line_at_the_pin": 154,
+   "last_line_at_the_pin": 154,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 1621,
+   "the_verdict": "MOVE",
+   "why": "The re-run-cut entry. A completed task's dated record pointing at three generated artifacts for every population and count; the finding it reports is rowed at [[OI-374]], which is untouched by this act.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*2026-08-12 (CC — **★ THE CUT RE-RUN OVER THE ENLARGED POPULATION: THE MOVEMENT IS THE OPEN-ROW COUNT AND NOTHING ELSE, AND THE FALSIFICATION TEST PASSES AGAIN.",
+   "text_sha256": "c5dcbcd6fc88d59acfd578b31cc9291c4d8633a4eb293045c24444c04fc10762"
+  },
+  {
+   "first_line_at_the_pin": 156,
+   "last_line_at_the_pin": 156,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 1710,
+   "the_verdict": "MOVE",
+   "why": "The halt-released entry. A completed task's dated record; the two rows it opened ([[OI-372]], [[OI-373]]) carry their own narrative in their detail files, and the closing observation it makes about its own cuts is about work already done.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*2026-08-12 (CC — **★ THE HALT IS RELEASED ON THE USER'S RULING 67 AND THE GUARD DEFECT IS ROWED — AND NEITHER NEW ROW NEEDED AN AUTHORED VERDICT.** Same dispat",
+   "text_sha256": "19f886bca4c2b5a17dd6393e01cf07d860cad133c17286a6892dc8181dc2a567"
+  },
+  {
+   "first_line_at_the_pin": 222,
+   "last_line_at_the_pin": 222,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 5551,
+   "the_verdict": "MOVE",
+   "why": "The phase-1w delivery entry. A dated record of a completed wave: its result lives in the generated artifact it names, and every owed item in its closing list is a register row, which the register's own rule makes the authoritative status surface. Nothing in it is the sole carrier of a rule.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-08-03, LATEST++++++++++++++++++++++ (CC — **★ PHASE 1w: THE LEGACY-MARKED SET IS VERIFIED AGAINST LIVE REACHABILITY — 0 MARKS ESTABLISHED WR",
+   "text_sha256": "3f48ad9bfdb7d45ff20b6d1112698d2047d7be5f618626d39f8563cd095e00dd"
+  },
+  {
+   "first_line_at_the_pin": 650,
+   "last_line_at_the_pin": 650,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 745,
+   "the_verdict": "MOVE",
+   "why": "A Cowork session close recording an adjudication IN FLIGHT. The dispatch it names has completed and its successor waves are themselves archived; the handover it points at is a block of `cowork_handoff.md`, which is unmoved.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-28, prior (Cowork session close — **THE OI-207 DECISION-CONFORMANCE ADJUDICATION IS IN FLIGHT** on the higher-capacity session, dispatch ",
+   "text_sha256": "d82c4463b02a540b0e1318a7c209c108a5700ba393311d2f65bbb8e0e6e51270"
+  },
+  {
+   "first_line_at_the_pin": 652,
+   "last_line_at_the_pin": 652,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 3371,
+   "the_verdict": "MOVE",
+   "why": "The OI-199 pass-2 receipt. A dated record of a completed verification. The user ruling it reports — dispositions not redone, the two arms completed, the instruments partition carrying the sealed test — is a scheduling ruling about work that has since been done, and OI-199's own row carries the state.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-28, prior (Cowork — **OI-199 pass 2 RECEIVED and VERIFIED at the objects (`a5d10a328d`/`e6fe053ad7`/`383429961f`; revert proven — `git di",
+   "text_sha256": "9e8dbea2975f02e4319ec6c0bef6ac7f9aecfdf210375760ba5dfd7859c61250"
+  },
+  {
+   "first_line_at_the_pin": 654,
+   "last_line_at_the_pin": 654,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 3227,
+   "the_verdict": "MOVE",
+   "why": "The OI-199 pass-1 receipt. It states the standing structural remedy — withheld findings never enter a mandatory session-start read — AND names its home in the same sentence: *rowed by CC as OI-222*. That row is OPEN in `OPEN_ITEMS.md` at this tree, so the entry is not the rule's sole carrier and clause (2) is met rather than stretched.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-28, prior (Cowork — **OI-199 pass 1 RECEIVED and verified at the objects (`0ea3d31204` freeze / `c7d9e81218` unblind / `b14a523112`). Two",
+   "text_sha256": "f628917ab273e55dc2e99f1e6a37a6318dc3dafd818807275462c6651af159a8"
+  },
+  {
+   "first_line_at_the_pin": 656,
+   "last_line_at_the_pin": 656,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 3373,
+   "the_verdict": "MOVE",
+   "why": "The analysis-cost receipt. The user rulings it reports are homed: correctness before performance compromise is a standing rule of `CLAUDE.md` dated to this very session, and the OI-199 pull-forward is a scheduling fact about a completed review.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-28, prior (Cowork — **THE ANALYSIS-COST DISPATCH RETURNED AND WAS VERIFIED AT THE OBJECTS (`9f7a4cc4de`…`5135764ed7`; read-only scope hel",
+   "text_sha256": "162d673a547bab1e3bb3023740bfe9e7b6882637b5686cb6c9d3b2fd9f8fdc6d"
+  },
+  {
+   "first_line_at_the_pin": 658,
+   "last_line_at_the_pin": 687,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 2955,
+   "the_verdict": "MOVE",
+   "why": "The OI-199 pass-1 delivery entry. A completed wave's dated record; every finding it reports was rowed in the same act ([[OI-215]]…[[OI-223]]) and the rows are the state.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-28, LATEST+ (CC — **OI-199 PASS 1 (blind enumerative) DELIVERED — READ-ONLY; NO src/ change, NO constant tuned, NO golden/`tools/corpus/`",
+   "text_sha256": "b5de0f86232e9ce668e2d957cd29072366312f67d4310772f4503eec0c9a6716"
+  },
+  {
+   "first_line_at_the_pin": 689,
+   "last_line_at_the_pin": 689,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 2791,
+   "the_verdict": "MOVE",
+   "why": "The OI-206 re-framing entry. Its user standing additions — very large scores must be handled; the effort control is one setting whose dials must bound temporally — are homed in `ARCHITECTURE.md`, in the decisions register and on [[OI-206]] / [[OI-209]]'s own detail files, so the entry restates them rather than carrying them.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-28, prior (Cowork — **CC's OI-206 investigation below was received and VERIFIED at the objects; then the problem RE-FRAMED TWICE and the ",
+   "text_sha256": "8e78b77285c4cc7d07716fb074ba2e32afa4fb23f094e31407124a06c868e288"
+  },
+  {
+   "first_line_at_the_pin": 691,
+   "last_line_at_the_pin": 727,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 3799,
+   "the_verdict": "MOVE",
+   "why": "The analysis-cost profile delivery entry. A completed wave's dated record: every measured value it reports lives in the artifacts it names under `tools/notation_seams/` and `tools/joint_estimator/`, and the register rows it opened carry the consequences.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-28, later (CC — **THE ANALYSIS-COST PROFILE DELIVERED (READ-ONLY; test-layer + tools/ instruments only; NO src/ change, NO golden/corpus/",
+   "text_sha256": "c88d6e8f94914e5ed24830fb7a16f5d5e5e72abbfa99c1e2f45bb66423591ba5"
+  },
+  {
+   "first_line_at_the_pin": 729,
+   "last_line_at_the_pin": 757,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 2966,
+   "the_verdict": "MOVE",
+   "why": "The OI-206 investigation delivery entry. A completed wave's dated record, its two studies published as generated artifacts and its dated notes written onto [[OI-206]] and [[OI-203]].",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-28 (CC — **THE OI-206 INVESTIGATION DELIVERED (READ-ONLY; investigate-by-default, NO fix).** Dispatch `cc_instruction_oi206_investigation",
+   "text_sha256": "59eda1c0aac295275109d6442800e797904e069f9e41b40d0aeb4a0836a222cf"
+  },
+  {
+   "first_line_at_the_pin": 759,
+   "last_line_at_the_pin": 774,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 1364,
+   "the_verdict": "MOVE",
+   "why": "A Cowork session close written mid-flight. The dispatch it calls in flight has completed, the notation switch it reports is recorded in `CLAUDE.md` gate block (A) and `ARCHITECTURE.md`, and the handover it points at is a block of `cowork_handoff.md`.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-28, first entry (Cowork — session close mid-flight. **The notation-layer adoption increment is COMPLETE and SWITCHED (`2a81af273e`); the ",
+   "text_sha256": "21279e0ffa681e79d81aa6abb3459c313613413351c6e6c829bb59bd2cf99640"
+  },
+  {
+   "first_line_at_the_pin": 776,
+   "last_line_at_the_pin": 776,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 4370,
+   "the_verdict": "MOVE",
+   "why": "The notation-switch entry. It is the fullest record of a completed, ratified act — and the act's standing consequences are homed: the staged scope's closure in `CLAUDE.md` gate block (A), the as-built record path in `ARCHITECTURE.md`, the retirement map on [[OI-180]]. What moves is the narrative of the act, not the rules it installed.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-27, thirteenth entry (CC — **★ THE NOTATION SWITCH — the joint estimator's record path is now the PRODUCTION in-app notation analysis (us",
+   "text_sha256": "fa328498033b51a1c126ccaa80604922d7d2e81f3bb5579ac8e5293e3cafa181"
+  },
+  {
+   "first_line_at_the_pin": 778,
+   "last_line_at_the_pin": 778,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 5289,
+   "the_verdict": "MOVE",
+   "why": "The seams P7 close-out entry. A completed partition's dated record; its completeness verification is the generated artifact it names, and the post-switch agenda it lists is carried on the register rows it names.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*Last updated: 2026-07-27, twelfth entry (CC — **★ SEAMS PART 2 — P7: THE PARTITION CLOSE-OUT — completeness verified, docs consolidated (pre-switch state).** D",
+   "text_sha256": "6337ff91a91cdc1726264726a778adf503e7e666e8bf0f3b4a7d633789cc96a6"
+  }
+ ],
+ "the_left_at_site": [
+  {
+   "first_line_at_the_pin": 780,
+   "last_line_at_the_pin": 780,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 572,
+   "the_verdict": "STAYS AT SITE — flagged by the reading (A3)",
+   "why": "★ FAILS TEST (1). It is not a dated record of anything: it is the LIVE navigational paragraph at the foot of the file, telling a reader that the older entries and every historical section are in `STATUS_ARCHIVE.md`, that the ratified robust-unit baselines, the hard stop and the gate policy live in `CLAUDE.md` gate block (A), and that the build/test commands live in `BUILD_AND_TEST.md`. A working session acts on it today. ★ AND IT IS THE SEVENTEENTH MEMBER: the residue is 17 CANDIDATES, of which 16 are dated entries and this one is not — which is why the record's own count of *17 dated entries* is one too many, reported rather than quietly reconciled.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "*(All older dated entries — the seams P0–P6 and the whole joint-estimator arc, 2026-07-27 back to 2026-04 — and every historical section (old current-state summ",
+   "text_sha256": "59ce1af6360d90b9bb66d23fc31e5b8febddb418d18cfe72e118d57ca3d7eb75"
+  }
+ ],
+ "reconciliation": {
+  "every_moved_entry_is_byte_present_in_STATUS_ARCHIVE_md_exactly_once": true,
+  "every_moved_entry_is_absent_from_STATUS_md": true,
+  "every_entry_left_at_site_is_still_present_exactly_once": true,
+  "what_that_proves_together": "Nothing left the must-read that is not in the archive; each entry was MOVED rather than copied; and the reading's flag was honoured rather than recorded and then overridden. All three are byte comparisons against the files at HEAD and against the git objects named by explicit hash — never against the memory of performing the move (#15).",
+  "★_why_the_moved_text_is_read_from_a_git_object": "The entries are single lines of several thousand characters. Reading each from the pinned commit's own object and requiring exactly one occurrence in the live file makes the move byte-faithful by construction, and makes this check re-derive forever as later batches legitimately append their own entries — the OI-344 shape avoided by construction, on the precedent gen_status_archive_pass.py sets (D-646)."
+ }
+}

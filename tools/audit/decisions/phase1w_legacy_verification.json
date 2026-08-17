@@ -473,8 +473,8 @@
   {
    "recorded_figure": 80,
    "located_at": {
-    "file": "OPEN_ITEMS.md",
-    "line": 327,
+    "file": "OPEN_ITEMS_ARCHIVE.md",
+    "line": 333,
     "line_text": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified — and two of them were wrong | The marker is generated text, one fixed sentence on every marked entry, and until 2026-08-03 it ended \"**it has no effect on the live solution**\" — a claim about the LIVE system that the marking pass never checked, since the set was drawn by asking what each decision is ABOUT. It failed twice: **D-329**, whose PRINCIPLE the [[OI-275]] ruling carried across to the live family design (patched then with a second marker variant, which fixed the instance and left the clause standing everywhere else), and **D-311**, whose subject `chordanalyzer.cpp` `STATUS_ARCHIVE.md:114` records as surviving the engagement and one of whose five produced translation units, `chordsymbolformatter.cpp`, the record arm runs (`notationimplodebridge.cpp:1170`). **The user ruled the clause REMOVED rather than re-argued** — a swept population with two demonstrated errors is not established (#19) — executed in the GENERATOR so one change covers all 80 and cannot drift (#17f). This row carries the full re-verification against a live-reachability test. **[[OI-288]]'s finding may bear on a whole CLASS of them:** the legacy notation arm's reachability turns on one runtime flag defaulting `true` and four branch points, not on compilation, so \"dormant\" is a statement about a DEFAULT with an enumerated false-negative path, and each verdict must say which it means. NOT in doubt: the marking convention itself (`CLAUDE.md` rule (f), user-ratified 2026-08-02) — what is withdrawn is an unchecked assertion riding along with it | E — verification owed / decisions register | ✅ VERIFIED 2026-08-03 (CC, phase 1w) — the full re-verification is DELIVERED as the generated artifact `tools/audit/decisions/phase1w_legacy_verification.json` (every count, verdict and citation there, none restated; D-431). **0 marks established wrong, so 0 corrected, and the marking convention is NOT in question.** The set is DERIVED, and **five** recorded figures disagree with it — all located, none corrected here (that is action, and this wave gathers). **★ The two results the family design needs. (1) \"Dormant\" is far weaker than it reads:** NO entry is unreachable at any setting on the notation flag and NONE is dormant-behind-the-default alone — every marked subject with code at HEAD is reached by plain `batch_analyze` (`--joint-inference` defaults OFF), by a batch diagnostic dump flag, or by the test suites. **(2) The largest transfer class was not predicted:** entries a LIVE specification section restates as standing do-not-retry prohibitions, where the mark is RIGHT about the subject and the entry still binds what a future designer may attempt — a third thing a mark can be, which the register has no field for. Both false-negative enumerations in this row are short (the batch diagnostic flags; and `jointKeyWiringEnabled()`, a second default-OFF flag inside the legacy arm). *Historical, preserved (#12): the row was opened saying* \"Set size **80**, counted from the data\" — *true at phase 1m and stale by one since phase 1n, when D-428 gained the mark; the register's own preamble says 79 and `STATUS.md` + the phase-1m dispatch say 75.* Residues: [[OI-302]] (the third mark class, D-055, and the undetermined transfers), [[OI-303]], [[OI-304]]. **★ AND THE VERDICT ABOVE IS TRUE OF THE POPULATION IT COVERED AND OF NO LARGER ONE — [[OI-354]], opened 2026-08-09.** Entries have carried the legacy mark since this pass ran, and the verification holds no verdict for them; the tool that exists to notice that had been stopping earlier, on a drifted citation, so the growth was invisible. **The ✅ above is NOT withdrawn** — what it verified, it verified — but it must not be read as a statement about the marked set at HEAD | [detail](open_items/OI-289.md) |"
    },
    "note": "The INDEX row, which the register's own rule makes the authoritative status surface. Same staleness as the detail file.",
@@ -495,11 +495,11 @@
   {
    "recorded_figure": 75,
    "located_at": {
-    "file": "STATUS.md",
-    "line": 339,
+    "file": "STATUS_ARCHIVE.md",
+    "line": 4727,
     "line_text": "occurrences; register `--check` across 21 files; open-items living check 278/278). **NEXT: the user ratifies (or corrects) D-401…D-405 and the 75-entry LEGACY"
    },
-   "note": "The phase-1i entry. Still in the live STATUS entries, not archived.",
+   "note": "The phase-1i entry, moved verbatim to `STATUS_ARCHIVE.md` by the ruled governing-surface split of 2026-08-17; this citation follows it. *(Former wording, preserved in place (#12): \"The phase-1i entry. Still in the live STATUS entries, not archived.\" — true when written, and made untrue by that act.)*",
    "derived_count": 62,
    "discrepancy": -13
   },

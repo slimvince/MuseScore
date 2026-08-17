@@ -527,6 +527,29 @@ AUTHORED = [
      "plus the run below it saying `Same dispatch` — so no entry is listed by hand, and the dated "
      "entry pattern is IMPORTED from the archive pass that owns it (#6)"),
 
+    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_seventh.md Task 1 ------------------
+    # THE PRE-CONVENTION RESIDUE MOVE, registered in the act that creates it — the standing
+    # new-tool rule. It takes `--check` and never the bare invocation, for the ordinary reason:
+    # run with no flag it REWRITES its committed artifact.
+    ("tools/audit/gen_status_residue_move.py", ["--check"],
+     "the dated `STATUS.md` entries the executed split left at site — those whose own wording "
+     "predates or paraphrases the OI-222 pointer remedy, so the pinned measurement did not place "
+     "them — are still byte-present in `STATUS_ARCHIVE.md` exactly once, still absent from the "
+     "must-read, and the ONE candidate the reading flagged is still at site. All three directions "
+     "are proven rather than asserted, and the third is the one that matters most: a check that "
+     "only proved the move would stay green if a later act quietly archived the flagged span too. "
+     "The population is DERIVED as the pinned decomposition's own residue — the operative-classed "
+     "spans at or after the file's first dated entry — and cross-checked in BOTH directions "
+     "against the split-application artifact, so this act and the split account for the file "
+     "together. Every entry's text is read from the git OBJECT at the pinned commit, so the claim "
+     "re-derives forever as later batches legitimately append their own entries (D-646, the epoch "
+     "pattern). Its STOPs are what make it a guard rather than a record: a candidate with no "
+     "authored reading verdict halts it, so no entry is moved unread (Ruling 3's own safeguard); "
+     "a verdict naming a span the decomposition does not carry halts it; a candidate already in "
+     "the split's moved set halts it; the two acts not accounting for every span of the "
+     "decomposition halts it; and an entry not present exactly once in the live file when the "
+     "move is applied halts it"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

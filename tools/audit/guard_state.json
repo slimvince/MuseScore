@@ -66,6 +66,7 @@
       "tools/audit/gen_sole_carrier_subclass.py",
       "tools/audit/gen_status_archive_pass.py",
       "tools/audit/gen_status_batch_bound.py",
+      "tools/audit/gen_status_residue_move.py",
       "tools/audit/gen_test_construction_evidence.py",
       "tools/audit/index_status_lint.py",
       "tools/audit/instrument_arm_declaration_effect.py",
@@ -75,7 +76,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 81,
+    "authored_entries": 82,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -926,6 +927,23 @@
       "what_it_checks": "the then-previous batch's `STATUS.md` entries are still byte-present in `STATUS_ARCHIVE.md` exactly once and still absent from the must-read — Ruling 4's forward bound, proven in both directions rather than asserted. The moved set is read from the git OBJECT at the commit the move was performed on top of, so the claim re-derives forever as later batches legitimately append their own entries (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: a dispatch naming NO entry at that commit halts it, because moving nothing silently would leave the bound unmet without saying so; an entry not present exactly once in the live file when the move is applied halts it; and an entry already in the archive halts it. Membership is DERIVED from the entries' own words — the one naming the dispatch, plus the run below it saying `Same dispatch` — so no entry is listed by hand, and the dated entry pattern is IMPORTED from the archive pass that owns it (#6)"
     },
     {
+      "tool": "tools/audit/gen_status_residue_move.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  candidates: 17, moved 16, left at site by the reading 1",
+        "  characters moved: 46,105",
+        "  byte-present in the companion exactly once: True",
+        "  absent from the must-read:                  True",
+        "  every flagged entry still at site:          True"
+      ],
+      "stderr": [],
+      "what_it_checks": "the dated `STATUS.md` entries the executed split left at site — those whose own wording predates or paraphrases the OI-222 pointer remedy, so the pinned measurement did not place them — are still byte-present in `STATUS_ARCHIVE.md` exactly once, still absent from the must-read, and the ONE candidate the reading flagged is still at site. All three directions are proven rather than asserted, and the third is the one that matters most: a check that only proved the move would stay green if a later act quietly archived the flagged span too. The population is DERIVED as the pinned decomposition's own residue — the operative-classed spans at or after the file's first dated entry — and cross-checked in BOTH directions against the split-application artifact, so this act and the split account for the file together. Every entry's text is read from the git OBJECT at the pinned commit, so the claim re-derives forever as later batches legitimately append their own entries (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: a candidate with no authored reading verdict halts it, so no entry is moved unread (Ruling 3's own safeguard); a verdict naming a span the decomposition does not carry halts it; a candidate already in the split's moved set halts it; the two acts not accounting for every span of the decomposition halts it; and an entry not present exactly once in the live file when the move is applied halts it"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1086,10 +1104,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 2,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "STOP: recorded figure 80: quote not at OPEN_ITEMS.md:327. It is nowhere in the file — the premise has changed."
+        "phase1w: A1 held; 62 entries derived; 35 anchors located; 5 recorded figures located"
       ],
       "stderr": [],
       "what_it_checks": "the legacy-mark verification re-derives, and its declared premises still hold"
@@ -1152,9 +1170,9 @@
     }
   ],
   "summary": {
-    "run": 61,
-    "passing": 58,
-    "failing": 3,
+    "run": 62,
+    "passing": 60,
+    "failing": 2,
     "failing_tools": [
       {
         "tool": "tools/audit/gen_filing_convention_application.py",
@@ -1164,12 +1182,6 @@
       },
       {
         "tool": "tools/audit/gen_retirement_caller_check.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/decisions/gen_phase1w_legacy_verification.py",
         "args": [
           "--check"
         ]

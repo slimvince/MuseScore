@@ -750,6 +750,27 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "ASSERT: that the must-read is small enough to read, which is [[OI-370]]'s own subject, or "
         "that every superseded entry has moved — it proves only that what left is in the archive "
         "and that nothing else left."),
+    "tools/audit/gen_status_residue_move.py": (
+        LIVE, "gen_status_residue_move.py, THE STOPS of its module docstring; `build()`, which "
+              "re-reads both live files on every run; `candidates()`, which re-derives the "
+              "population from the pinned decomposition and cross-checks it in both directions "
+              "against the split-application artifact",
+        "LIVE. All three of its claims are re-answered against the tree AS IT STANDS on every run "
+        "— every moved entry still byte-present in `STATUS_ARCHIVE.md` exactly once, still absent "
+        "from `STATUS.md`, and the ONE candidate the reading flagged still present at site. The "
+        "third is what makes it more than a move record: a later act that archived the flagged "
+        "span too would fail on the day it happened, which is the direction the ruled doubt "
+        "default exists to protect. Its population is DERIVED on every run rather than listed, and "
+        "the derivation's own STOPs fire against the tree: an unverdicted candidate, a verdict "
+        "naming a span the decomposition does not carry, or the two acts failing to account for "
+        "the file together. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING "
+        "EITHER: WHICH spans are the residue, and their text, are statements about the file as the "
+        "pinned measurement found it, so both are read from git objects rather than from a file "
+        "that legitimately grows by every later batch's entries — the same epoch pattern "
+        "`gen_status_batch_bound.py` and `gen_status_archive_pass.py` use. ★ WHAT IT DOES NOT "
+        "ASSERT: that every moved entry's substance is carried elsewhere in full. What it "
+        "establishes per entry is narrower and is what its reading test asks — no rule, STOP, "
+        "prohibition or live caveat whose ONLY home is that entry."),
     "tools/audit/gen_governing_surface_split.py": (
         LIVE, "gen_governing_surface_split.py, THE STOPS of its module docstring; `plan_for()`, "
               "which re-locates every moved span in the pre-act blob and re-checks the arithmetic; "
