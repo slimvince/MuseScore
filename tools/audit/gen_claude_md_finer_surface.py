@@ -23,9 +23,16 @@ does not arise here: this pass reads at a PINNED COMMIT at which its own outputs
 the reach reported below counts every tracked naming there is, the coarse pass's own artifacts
 among them, and is a wider figure than that pass's for that reason.
 
+★ THE SPAN ARTIFACT IS PINNED (2026-08-17).  This surface has been PUT AND RULED, so it may not be
+rewritten by a later change to the artifact it was generated from.  The span artifact is read at
+the git object of the commit the ruling record names as where the surface was ruled; the full
+reason, and the declared departure it was taken under, are at `SPANS_PINNED_AT` below.
+
 THE STOPS:
   * the span artifact missing, or covering a different file, STOPS it — the surface is generated
     from both artifacts and may not be built from half of them;
+  * the PINNED span artifact unreadable at its commit STOPS it, and so does a pinned artifact
+    whose own reading commit is not the finer pass's pin;
   * a per-file naming tally that does not account for the namings found STOPS it (imported).
 
 Run:
@@ -36,6 +43,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -53,14 +61,62 @@ import gen_governing_surface_spans as coarse                       # noqa: E402 
 
 OUT = HERE / "claude_md_finer_readers.json"
 SPANS = HERE / "claude_md_finer_spans.json"
+SPANS_PATH = "tools/audit/claude_md_finer_spans.json"
 SURFACE = ROOT / "ratification_surfaces" / "cowork_claude_md_finer_split_2026_08_17.md"
 
 SUBJECT = finer.SUBJECT
 PINNED_COMMIT = finer.PINNED_COMMIT
 
+# ★ THE SPAN ARTIFACT IS READ AT THE COMMIT THE SURFACE WAS RULED AT, NOT FROM THE WORKING TREE
+# (`cc_instruction_preparation_ninth.md` Task 0b; a DECLARED DEPARTURE from that dispatch's words,
+# reported for the user's ruling and taken in the recoverable direction).
+#
+# WHAT THIS SURFACE IS. It is a RATIFICATION SURFACE that has been PUT AND RULED: Rulings 1-3 of
+# `cowork_rulings_2026_08_17_seventh_return.md` were taken against it, and Rulings 1-2 of
+# `cowork_rulings_2026_08_17_eighth_return.md` closed the two spans it proposed. That record's own
+# §5 states the finer-archive question is CLOSED.
+#
+# WHAT FORCED THE PIN. Ruling 1 of the eighth-return record ordered a STANDING CONSTRAINT written
+# into `gen_claude_md_finer_spans.py` — a span whose archive classification derives from text
+# inside an archive pointer is not archivable wherever the pointer sits. Answering it moved the
+# span at pinned lines 53-60 out of the archive classes, which is the ruling working. Regenerating
+# THIS surface from the moved artifact would have rewritten the proposal the user actually ruled
+# on: the 53-60 row would read STAYS AT SITE, and the surface's own answer sentence would fall
+# from "1 span, 845 characters ... proposed on ground no reading has yet refused" to zero. That
+# destroys the evidence of what was PUT, which is what #12 and the ruled Kind-1 treatment of
+# `cowork_rulings_2026_08_16_preparation_return.md` §6 both exist to prevent, and the executing
+# dispatch's own registered expectation forbids moving a population anywhere in that act.
+#
+# THE PIN'S SHAPE IS THE RULED ONE, applied to a third tool: the check reads its input from the
+# git OBJECT at the commit the committed surface records, so the surface stands byte-unchanged as
+# the ruling's permanent evidence, still guarded against corruption, permanently insensitive to
+# the acts it authorized. The commit is the one the ruling record's own provenance names as where
+# the surface was ruled. A later ruling can unpin this in one edit; nothing is lost either way.
+SPANS_PINNED_AT = "cfb69a7ecb21351382b25206616a0349214e44f8"
+SPANS_PINNED_AT_IS = (
+    "the commit `cowork_rulings_2026_08_17_seventh_return.md` names in its own provenance as where "
+    "the surface was ruled: \"The surface ruled is "
+    "`ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md` at commit `cfb69a7ecb`\"")
+
 
 class Stop(Exception):
     """A demand of the measurement is unmet. Never a warning."""
+
+
+def pinned_spans() -> str:
+    """The span artifact AS THE RULED SURFACE WAS GENERATED FROM IT, read at the git object.
+
+    A content-addressed read by explicit hash — the one shell mechanism the standing rule permits —
+    so this tool cannot be moved by a later change to the working-tree artifact. The reason is at
+    `SPANS_PINNED_AT` above.
+    """
+    proc = subprocess.run(["git", "-C", str(ROOT), "show", f"{SPANS_PINNED_AT}:{SPANS_PATH}"],
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    if proc.returncode != 0:
+        raise Stop(f"the pinned span artifact could not be read at "
+                   f"{SPANS_PINNED_AT[:10]}:{SPANS_PATH} — "
+                   f"{proc.stderr.decode('utf-8', 'replace').strip()}")
+    return proc.stdout.decode("utf-8")
 
 
 def build_readers() -> dict:
@@ -365,9 +421,13 @@ def main(argv: list[str]) -> int:
     args = ap.parse_args(argv)
 
     reach = build_readers()
-    spans = json.loads(SPANS.read_text(encoding="utf-8"))
+    spans = json.loads(pinned_spans())
     if spans["generator"] != "tools/audit/gen_claude_md_finer_spans.py":
         raise Stop("the span artifact is not the finer pass's own")
+    if spans.get("measured_at_commit") != PINNED_COMMIT:
+        raise Stop("the pinned span artifact's own reading commit is not the finer pass's pin — "
+                   f"artifact says {spans.get('measured_at_commit')}, this tool says "
+                   f"{PINNED_COMMIT}")
     text = json.dumps(reach, indent=1, ensure_ascii=False) + "\n"
     surface = render(spans, reach)
 

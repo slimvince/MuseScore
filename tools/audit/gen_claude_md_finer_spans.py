@@ -129,6 +129,32 @@ ACCEPTED_COSTS = (r"THE COSTS THE USER ACCEPTED", r"an accepted cost is not a di
 #      So a recognizer reading the pointer's words places it in the class of the thing it points
 #      at — and archiving a pointer removes the one breadcrumb a reader has back to the moved
 #      span, which is the opposite of what the pointer discipline is for.
+#
+#      ★ THE STANDING CONSTRAINT, ruled 2026-08-17 — Ruling 1 of
+#      `cowork_rulings_2026_08_17_eighth_return.md`, quoted verbatim:
+#
+#          "a span whose archive classification derives from text inside an archive pointer is
+#           NOT archivable, wherever in the span the pointer sits."
+#
+#      and, of the guard as it stood when that ruling was given: "The finer pass's own structural
+#      guard fires only when a span BEGINS with a pointer; that guard is hereby insufficient as
+#      written."
+#
+#      WHY THE GUARD WAS INSUFFICIENT, measured rather than argued (finding F44): the ONE span
+#      this pass proposed for archiving on ground no reading had refused was classed
+#      `defense-and-declined-alternatives` entirely by two archive pointers occupying its LAST TWO
+#      LINES — the only occurrence of `DECLINED` and the only occurrence of `THE COSTS THE USER
+#      ACCEPTED` both sat inside those pointers, and the span carried no alternative and no cost
+#      of its own. `re.match` is anchored at the start of the span, so the guard could not see it.
+#
+#      WHAT THE WIDENED GUARD DOES: every archive-pointer LINE in a span is located, wherever it
+#      sits, and a recognizer marker (or, for a preserved former wording, its accompanying
+#      quotation) lying inside one of those lines MAY NOT PLACE THE SPAN. A marker of the same
+#      class found OUTSIDE every pointer still places it — the constraint is about where the
+#      classifying text sits, not about a span merely containing a pointer. A span left with no
+#      admissible marker falls to the ruled DOUBT DEFAULT and stays at site, with the declined
+#      placement published beside it, so nothing is dropped and the widening errs only in the
+#      recoverable direction.
 #   2. A BARE HEADING. A markdown heading line is a span of its own, and its section body is a
 #      different span. A heading classed by its own words — "RETROSPECTIVE ... superseded ...
 #      historical reference" — would move while everything under it stayed, leaving a headless
@@ -139,6 +165,13 @@ ACCEPTED_COSTS = (r"THE COSTS THE USER ACCEPTED", r"an accepted cost is not a di
 # absence of one.
 ARCHIVE_POINTER = re.compile(r"^\s*\*★ ARCHIVED \d{4}-\d{2}-\d{2}")
 BARE_HEADING = re.compile(r"^#{1,6}\s")
+
+# The ruled constraint, quoted verbatim wherever this pass refuses a placement under it, so a
+# reader of the artifact meets the rule and not only its effect.
+POINTER_CONSTRAINT = (
+    "a span whose archive classification derives from text inside an archive pointer is NOT "
+    "archivable, wherever in the span the pointer sits — Ruling 1 of "
+    "`cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17")
 
 
 class Stop(Exception):
@@ -212,6 +245,45 @@ def first_match(text: str, patterns):
     return None
 
 
+def archive_pointer_regions(text: str) -> list[tuple[int, int]]:
+    """Every archive-pointer LINE in the span, as character ranges into the span's own text.
+
+    The unit is the LINE because that is what the executed split writes: one compact dated pointer
+    per archived span, on a line of its own. Locating them by line rather than by the whole span's
+    opening is exactly what the standing constraint of 2026-08-17 requires — a pointer anywhere in
+    the span disqualifies the text inside it from classifying the span.
+    """
+    regions, at = [], 0
+    for line in text.splitlines(keepends=True):
+        if ARCHIVE_POINTER.match(line):
+            regions.append((at, at + len(line)))
+        at += len(line)
+    return regions
+
+
+def inside_a_pointer(at: int, regions: list[tuple[int, int]]) -> bool:
+    return any(lo <= at < hi for lo, hi in regions)
+
+
+def matches_split_by_pointer(text: str, patterns, regions: list[tuple[int, int]]):
+    """The first match OUTSIDE every archive pointer, and the first one inside — both published.
+
+    Returning both is what makes the constraint auditable rather than silent: a span declined
+    because its only classifying text sits inside a pointer publishes the marker that was refused,
+    so a reader sees a decision instead of an absence of one.
+    """
+    outside = inside = None
+    for pattern in patterns:
+        for found in re.finditer(pattern, text):
+            if inside_a_pointer(found.start(), regions):
+                inside = inside or found
+            else:
+                outside = outside or found
+        if outside:
+            return outside, inside
+    return outside, inside
+
+
 def former_wording_hits(text: str) -> list[re.Match]:
     """EVERY former-wording marker in the span, in order — not merely the first.
 
@@ -224,8 +296,11 @@ def former_wording_hits(text: str) -> list[re.Match]:
     return sorted(found, key=lambda m: m.start())
 
 
-def quotation_near(text: str, at: re.Match) -> str | None:
+def quotation_near(text: str, at: re.Match) -> re.Match | None:
     """A quotation that BEGINS within the window of the marker — however long it runs.
+
+    Returns the MATCH rather than its text, because the standing constraint of 2026-08-17 needs
+    the quotation's OFFSET: a quotation lying inside an archive pointer may not place a span.
 
     The window bounds where a quotation may START, never where it may END. A preserved wording is
     often several sentences long and runs past any window one could pick, so requiring it to
@@ -238,36 +313,73 @@ def quotation_near(text: str, at: re.Match) -> str | None:
     for found in QUOTATION.finditer(text, lo):
         if found.start() >= hi:
             break
-        return found.group(0)[:120]
+        return found
     return None
 
 
 def shape_of(text: str) -> dict:
-    """The four parts of an amendment record the ruling names, each looked for on its own."""
+    """The four parts of an amendment record the ruling names, each looked for on its own.
+
+    ★ EVERY PART IS LOOKED FOR OUTSIDE THE SPAN'S ARCHIVE POINTERS FIRST, under the standing
+    constraint of 2026-08-17 stated at the top of this file. Where a part exists ONLY inside a
+    pointer, the part is recorded as POINTER-CARRIED and does not place the span; the refused
+    marker is published beside it so the decline is readable rather than silent.
+    """
     head = text[:HEADER_WINDOW]
+    regions = archive_pointer_regions(text)
     attribution = ATTRIBUTION.search(head)
     date = RULED_DATE.search(head)
     parts: dict[str, object] = {}
+    if regions:
+        parts["archive_pointer_lines_inside_this_span"] = len(regions)
     if attribution and date:
         parts["ruled_date_header"] = {"the_attribution_matched": attribution.group(0),
                                       "the_date_matched": date.group(0)}
     hits = former_wording_hits(text)
     if hits:
-        placing = next(((m, quotation_near(text, m)) for m in hits
-                        if quotation_near(text, m) is not None), (hits[0], None))
-        marker, quoted = placing
-        parts["former_wording_marker"] = {
+        # A marker places the span only when BOTH it and its accompanying quotation lie outside
+        # every archive pointer. Preferring a clean placement over the first one found is what
+        # keeps the widening from refusing a span that genuinely carries a preserved wording of
+        # its own beside a pointer.
+        placings = [(m, quotation_near(text, m)) for m in hits]
+        clean = next(((m, q) for m, q in placings
+                      if q is not None
+                      and not inside_a_pointer(m.start(), regions)
+                      and not inside_a_pointer(q.start(), regions)), None)
+        carried = next(((m, q) for m, q in placings
+                        if q is not None
+                        and (inside_a_pointer(m.start(), regions)
+                             or inside_a_pointer(q.start(), regions))), None)
+        marker, quoted = clean or (hits[0], None)
+        part = {
             "the_marker_matched": marker.group(0),
             "markers_found_in_the_span": len(hits),
-            "a_quotation_accompanies_it": quoted is not None,
-            "the_quotation": quoted,
+            "a_quotation_accompanies_it": clean is not None,
+            "the_quotation": quoted.group(0)[:120] if quoted is not None else None,
         }
-    declined = first_match(text, DECLINED)
+        if clean is None and carried is not None:
+            part["★_a_placing_marker_was_REFUSED_as_pointer_carried"] = {
+                "the_refused_marker": carried[0].group(0),
+                "the_refused_quotation": carried[1].group(0)[:120],
+                "the_constraint": POINTER_CONSTRAINT,
+            }
+        parts["former_wording_marker"] = part
+    declined, declined_carried = matches_split_by_pointer(text, DECLINED, regions)
     if declined:
         parts["declined_alternatives_paragraph"] = {"the_marker_matched": declined.group(0)}
-    costs = first_match(text, ACCEPTED_COSTS)
+    elif declined_carried:
+        parts["declined_alternatives_paragraph_REFUSED_as_pointer_carried"] = {
+            "the_refused_marker": declined_carried.group(0),
+            "the_constraint": POINTER_CONSTRAINT,
+        }
+    costs, costs_carried = matches_split_by_pointer(text, ACCEPTED_COSTS, regions)
     if costs:
         parts["accepted_costs_paragraph"] = {"the_marker_matched": costs.group(0)}
+    elif costs_carried:
+        parts["accepted_costs_paragraph_REFUSED_as_pointer_carried"] = {
+            "the_refused_marker": costs_carried.group(0),
+            "the_constraint": POINTER_CONSTRAINT,
+        }
     return parts
 
 
@@ -298,7 +410,10 @@ def classify(text: str, shape: dict) -> tuple[str, dict, bool]:
             "the_marker_matched": former["the_marker_matched"],
             "the_quotation_that_places_it": former["the_quotation"],
         }, False
-    hit = first_match(text, coarse.HISTORICAL_MARKERS)
+    # ★ The historical recognizer runs under the standing constraint too: a marker found ONLY
+    # inside an archive pointer may not place the span, and the refused marker is published.
+    regions = archive_pointer_regions(text)
+    hit, hit_carried = matches_split_by_pointer(text, coarse.HISTORICAL_MARKERS, regions)
     if hit:
         return coarse.HISTORICAL, {"the_marker_matched": hit.group(0)}, False
     if "declined_alternatives_paragraph" in shape:
@@ -318,6 +433,35 @@ def classify(text: str, shape: dict) -> tuple[str, dict, bool]:
                 "elsewhere rather than carrying one. This is finding F33's largest mis-class "
                 "answered: the coarse pass placed 15,395 characters of live governing rule text "
                 "on exactly this signal.",
+        }
+    # ★ EVERY PLACEMENT THE STANDING CONSTRAINT REFUSED IS PUBLISHED HERE, so a span that would
+    # have been proposed for archiving before 2026-08-17 shows WHY it is now doubt-defaulted
+    # rather than simply disappearing from the archive classes.
+    refused = {}
+    for key, part in (("a_preserved_former_wording", former),
+                      ("a_declined_alternatives_record",
+                       shape.get("declined_alternatives_paragraph_REFUSED_as_pointer_carried")),
+                      ("an_accepted_costs_record",
+                       shape.get("accepted_costs_paragraph_REFUSED_as_pointer_carried"))):
+        if key == "a_preserved_former_wording":
+            carried = (part or {}).get("★_a_placing_marker_was_REFUSED_as_pointer_carried")
+            if carried:
+                refused[key] = carried
+        elif part:
+            refused[key] = part
+    if hit_carried:
+        refused["a_self_declared_historical_block"] = {
+            "the_refused_marker": hit_carried.group(0),
+            "the_constraint": POINTER_CONSTRAINT,
+        }
+    if refused:
+        evidence["★_an_archive_placement_was_REFUSED_by_the_standing_pointer_constraint"] = {
+            "the_constraint": POINTER_CONSTRAINT,
+            "archive_pointer_lines_inside_this_span": len(regions),
+            "the_refused_placements": refused,
+            "what_follows": "the span falls to the ruled DOUBT DEFAULT and STAYS AT SITE. It is "
+                            "not dropped: the refused marker stands above, so the user can "
+                            "overrule this in one edit rather than rediscover the question.",
         }
     return coarse.OPERATIVE, evidence, True
 
@@ -470,6 +614,33 @@ def build() -> dict:
                               "so a recognizer reading its words places it in the class of the "
                               "thing it points at. Archiving a pointer removes the one breadcrumb "
                               "back to the moved span.",
+                "★_the_standing_constraint_ruled_2026_08_17": {
+                    "the_constraint_verbatim": POINTER_CONSTRAINT,
+                    "the_ruling": "Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, which "
+                                  "also states of the guard as it then stood: \"The finer pass's "
+                                  "own structural guard fires only when a span BEGINS with a "
+                                  "pointer; that guard is hereby insufficient as written.\"",
+                    "what_was_insufficient": "the guard is anchored at the START of a span, so a "
+                                             "pointer sitting anywhere else in the span was "
+                                             "invisible to it. Measured at finding F44: the ONE "
+                                             "span this pass proposed for archiving on ground no "
+                                             "reading had refused was classed entirely by two "
+                                             "pointers occupying its LAST TWO LINES.",
+                    "what_the_widened_guard_does": "every archive-pointer LINE in a span is "
+                                                   "located wherever it sits, and a recognizer "
+                                                   "marker — or, for a preserved former wording, "
+                                                   "its accompanying quotation — lying inside one "
+                                                   "of those lines MAY NOT PLACE THE SPAN. A "
+                                                   "marker of the same class found OUTSIDE every "
+                                                   "pointer still places it.",
+                    "what_it_costs": "a span left with no admissible marker falls to the ruled "
+                                     "DOUBT DEFAULT and stays at site, with the refused placement "
+                                     "published beside it. The widening errs only in the "
+                                     "recoverable direction and drops nothing.",
+                    "★_it_moves_no_fate": "this is a RECOGNIZER change. "
+                                          "`gen_claude_md_finer_archive.py --apply` is not run by "
+                                          "it, and `CLAUDE.md` is not touched by it.",
+                },
             },
             "a_bare_heading": {
                 "the_pattern": BARE_HEADING.pattern,

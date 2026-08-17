@@ -27,7 +27,15 @@
   "found_by": "this pass's own self-check, reading the surface it had just generated. Both were proposed for archiving on the first run.",
   "an_archive_pointer": {
    "the_pattern": "^\\s*\\*★ ARCHIVED \\d{4}-\\d{2}-\\d{2}",
-   "the_ground": "the executed split leaves a compact dated pointer at every site it archives, and that pointer QUOTES its target's class and opening, so a recognizer reading its words places it in the class of the thing it points at. Archiving a pointer removes the one breadcrumb back to the moved span."
+   "the_ground": "the executed split leaves a compact dated pointer at every site it archives, and that pointer QUOTES its target's class and opening, so a recognizer reading its words places it in the class of the thing it points at. Archiving a pointer removes the one breadcrumb back to the moved span.",
+   "★_the_standing_constraint_ruled_2026_08_17": {
+    "the_constraint_verbatim": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17",
+    "the_ruling": "Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, which also states of the guard as it then stood: \"The finer pass's own structural guard fires only when a span BEGINS with a pointer; that guard is hereby insufficient as written.\"",
+    "what_was_insufficient": "the guard is anchored at the START of a span, so a pointer sitting anywhere else in the span was invisible to it. Measured at finding F44: the ONE span this pass proposed for archiving on ground no reading had refused was classed entirely by two pointers occupying its LAST TWO LINES.",
+    "what_the_widened_guard_does": "every archive-pointer LINE in a span is located wherever it sits, and a recognizer marker — or, for a preserved former wording, its accompanying quotation — lying inside one of those lines MAY NOT PLACE THE SPAN. A marker of the same class found OUTSIDE every pointer still places it.",
+    "what_it_costs": "a span left with no admissible marker falls to the ruled DOUBT DEFAULT and stays at site, with the refused placement published beside it. The widening errs only in the recoverable direction and drops nothing.",
+    "★_it_moves_no_fate": "this is a RECOGNIZER change. `gen_claude_md_finer_archive.py --apply` is not run by it, and `CLAUDE.md` is not touched by it."
+   }
   },
   "a_bare_heading": {
    "the_pattern": "^#{1,6}\\s",
@@ -86,19 +94,19 @@
     "characters": 3894
    },
    "defense-and-declined-alternatives": {
-    "spans": 2,
-    "characters": 3775
+    "spans": 1,
+    "characters": 2930
    },
    "pointer-entry-of-a-completed-batch": {
     "spans": 0,
     "characters": 0
    },
    "operative-rule-text": {
-    "spans": 179,
-    "characters": 137376
+    "spans": 180,
+    "characters": 138221
    }
   },
-  "characters_placed_by_the_doubt_default": 135341
+  "characters_placed_by_the_doubt_default": 136186
  },
  "★_where_this_pass_proposes_archiving_a_span_the_A4_SAFEGUARD_READ_AND_KEPT": {
   "what_this_is": "The executed split's own read-before-move safeguard left 17 spans at site because they do not read as their class says (finding F33). Where this pass proposes archiving one of them, the user is being asked to overturn a reading already performed AT THE FILE — so the conflict is named here, with the safeguard's own reason quoted, rather than left to be noticed.",
@@ -153,8 +161,8 @@
   ],
   "★_the_uncontested_remainder": {
    "what_it_is": "the spans this pass proposes to archive that the safeguard did NOT read and keep — the only proposals that ask the user for something no reading at the file has already refused",
-   "spans": 1,
-   "characters": 845
+   "spans": 0,
+   "characters": 0
   }
  },
  "against_the_coarse_pass": {
@@ -170,8 +178,8 @@
    "measured_at_commit": "e94f765c25b49d2c9ffa47b1a296302debc25ce6",
    "characters": 151045,
    "spans": 185,
-   "characters_placed_by_the_doubt_default": 135341,
-   "share_placed_by_the_doubt_default": 89.6
+   "characters_placed_by_the_doubt_default": 136186,
+   "share_placed_by_the_doubt_default": 90.2
   }
  },
  "the_spans": [
@@ -336,7 +344,9 @@
    "the_evidence": {
     "no_recognizer_placed_it": true
    },
-   "the_amendment_record_shape_it_carries": {},
+   "the_amendment_record_shape_it_carries": {
+    "archive_pointer_lines_inside_this_span": 1
+   },
    "placed_by_the_doubt_default": true,
    "the_proposed_fate": "STAYS AT SITE",
    "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
@@ -401,7 +411,9 @@
    "the_evidence": {
     "no_recognizer_placed_it": true
    },
-   "the_amendment_record_shape_it_carries": {},
+   "the_amendment_record_shape_it_carries": {
+    "archive_pointer_lines_inside_this_span": 1
+   },
    "placed_by_the_doubt_default": true,
    "the_proposed_fate": "STAYS AT SITE",
    "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
@@ -412,22 +424,39 @@
    "last_line": 60,
    "kind": "star-marked sub-block",
    "characters": 845,
-   "the_class": "defense-and-declined-alternatives",
+   "the_class": "operative-rule-text",
    "the_evidence": {
-    "the_marker_matched": "DECLINED",
-    "which_part": "a declined-alternatives record"
-   },
-   "the_amendment_record_shape_it_carries": {
-    "declined_alternatives_paragraph": {
-     "the_marker_matched": "DECLINED"
-    },
-    "accepted_costs_paragraph": {
-     "the_marker_matched": "THE COSTS THE USER ACCEPTED"
+    "no_recognizer_placed_it": true,
+    "★_an_archive_placement_was_REFUSED_by_the_standing_pointer_constraint": {
+     "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17",
+     "archive_pointer_lines_inside_this_span": 2,
+     "the_refused_placements": {
+      "a_declined_alternatives_record": {
+       "the_refused_marker": "DECLINED",
+       "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+      },
+      "an_accepted_costs_record": {
+       "the_refused_marker": "THE COSTS THE USER ACCEPTED",
+       "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+      }
+     },
+     "what_follows": "the span falls to the ruled DOUBT DEFAULT and STAYS AT SITE. It is not dropped: the refused marker stands above, so the user can overrule this in one edit rather than rediscover the question."
     }
    },
-   "placed_by_the_doubt_default": false,
-   "the_proposed_fate": "ARCHIVES, with a dated pointer at the site",
-   "why_that_fate": "It carries an explicit declined-alternative or accepted-cost record, which §5(E) names by name. NOTE THE NARROWNESS: a rule's PURPOSE stays at site.",
+   "the_amendment_record_shape_it_carries": {
+    "archive_pointer_lines_inside_this_span": 2,
+    "declined_alternatives_paragraph_REFUSED_as_pointer_carried": {
+     "the_refused_marker": "DECLINED",
+     "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+    },
+    "accepted_costs_paragraph_REFUSED_as_pointer_carried": {
+     "the_refused_marker": "THE COSTS THE USER ACCEPTED",
+     "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
    "the_opening": "**★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus finding's row is **mandatory** no longer holds for a finding the worth te"
   },
   {
@@ -1147,12 +1176,14 @@
     "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
    },
    "the_amendment_record_shape_it_carries": {
+    "archive_pointer_lines_inside_this_span": 1,
     "ruled_date_header": {
      "the_attribution_matched": "recorded",
      "the_date_matched": "2026-08-17"
     },
-    "declined_alternatives_paragraph": {
-     "the_marker_matched": "DECLINED"
+    "declined_alternatives_paragraph_REFUSED_as_pointer_carried": {
+     "the_refused_marker": "DECLINED",
+     "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
     }
    },
    "placed_by_the_doubt_default": false,
@@ -1171,8 +1202,10 @@
     "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
    },
    "the_amendment_record_shape_it_carries": {
-    "accepted_costs_paragraph": {
-     "the_marker_matched": "THE COSTS THE USER ACCEPTED"
+    "archive_pointer_lines_inside_this_span": 1,
+    "accepted_costs_paragraph_REFUSED_as_pointer_carried": {
+     "the_refused_marker": "THE COSTS THE USER ACCEPTED",
+     "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
     }
    },
    "placed_by_the_doubt_default": false,
@@ -1717,7 +1750,9 @@
     "it_is_an_archive_pointer_left_by_a_previous_act": true,
     "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
    },
-   "the_amendment_record_shape_it_carries": {},
+   "the_amendment_record_shape_it_carries": {
+    "archive_pointer_lines_inside_this_span": 1
+   },
    "placed_by_the_doubt_default": false,
    "the_proposed_fate": "STAYS AT SITE",
    "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
@@ -2081,7 +2116,9 @@
     "it_is_an_archive_pointer_left_by_a_previous_act": true,
     "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
    },
-   "the_amendment_record_shape_it_carries": {},
+   "the_amendment_record_shape_it_carries": {
+    "archive_pointer_lines_inside_this_span": 1
+   },
    "placed_by_the_doubt_default": false,
    "the_proposed_fate": "STAYS AT SITE",
    "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
@@ -2147,7 +2184,9 @@
     "it_is_an_archive_pointer_left_by_a_previous_act": true,
     "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
    },
-   "the_amendment_record_shape_it_carries": {},
+   "the_amendment_record_shape_it_carries": {
+    "archive_pointer_lines_inside_this_span": 1
+   },
    "placed_by_the_doubt_default": false,
    "the_proposed_fate": "STAYS AT SITE",
    "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",

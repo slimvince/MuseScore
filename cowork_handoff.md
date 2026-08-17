@@ -356,6 +356,25 @@ ruled conditions clear — read the candidacies at the REGENERATED census, never
 the mining and the landing of the 284 newly visible instruction files. **The prose-citation
 question is CLOSED** — ruled at the callers sitting.
 
+> **★ CORRECTION, appended 2026-08-17 by `cc_instruction_preparation_ninth.md` Task 0b — F51.**
+> The corrected wording stands above rather than being deleted (#12). The parenthesis quoted
+> verbatim — *"(the standing route to the smaller session-start read, with the
+> `BUILD_AND_TEST.md` conditional-read input recorded in the seventh-return record §3)"* — is
+> WRONG at the boot list's own ruled definition, and it was inherited from
+> `cowork_rulings_2026_08_17_seventh_return.md` §3, whose own correction is that record's §5.
+> **THE RULED DEFINITION**, at the surface the user ratified 2026-08-15
+> (`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md`): the curated boot list
+> is *"the implementation-free read list an implementation-blind session boots from, replacing
+> the ordinary session-start reads (which include implementation-describing text) **for those
+> sessions only.**"* Ruling 4 of
+> `cowork_rulings_2026_08_17_session_start_read_sitting.md` confirms it and states that the boot
+> list *"is NOT widened to ordinary sessions."* **THE ROUTE FOR ORDINARY SESSIONS IS RULINGS 1–3
+> of that same sitting record** — the derived gating answer replacing the whole-index read behind
+> its #19 precondition, the archiving pass the standing archivability test already authorises,
+> and `BUILD_AND_TEST.md` demoted to a conditional read with `DECISIONS.md` explicitly not
+> demoted. **The `BUILD_AND_TEST.md` input named in the parenthesis is an ORDINARY-session
+> question**, so it belongs to Ruling 3 of that sitting and never belonged to the boot list's.
+
 **★ STANDING HAZARDS: unchanged.** [[OI-372]] is the ONE standing red expected after the batch.
 [[OI-374]] untouched. [[OI-179]] OPEN and GATES. F3 nine times surfaced, unfixed, unrowed.
 F1–F43, the E3 ordering defect and the A1 premise error ride to the phase's retrospective. The
@@ -457,6 +476,25 @@ seventh-return record §3); the archiving wave once its ruled conditions clear �
 candidacies at the REGENERATED census, never at a stale one; the mining and the landing of the
 284 newly visible instruction files. **The prose-citation question is no longer open** — ruled
 at the callers sitting.
+
+> **★ CORRECTION, appended 2026-08-17 by `cc_instruction_preparation_ninth.md` Task 0b — F51.**
+> The corrected wording stands above rather than being deleted (#12). The parenthesis quoted
+> verbatim — *"(the standing route to the smaller session-start read, with the
+> `BUILD_AND_TEST.md` conditional-read input recorded in the seventh-return record §3)"* — is
+> WRONG at the boot list's own ruled definition, and it was inherited from
+> `cowork_rulings_2026_08_17_seventh_return.md` §3, whose own correction is that record's §5.
+> **THE RULED DEFINITION**, at the surface the user ratified 2026-08-15
+> (`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md`): the curated boot list
+> is *"the implementation-free read list an implementation-blind session boots from, replacing
+> the ordinary session-start reads (which include implementation-describing text) **for those
+> sessions only.**"* Ruling 4 of
+> `cowork_rulings_2026_08_17_session_start_read_sitting.md` confirms it and states that the boot
+> list *"is NOT widened to ordinary sessions."* **THE ROUTE FOR ORDINARY SESSIONS IS RULINGS 1–3
+> of that same sitting record** — the derived gating answer replacing the whole-index read behind
+> its #19 precondition, the archiving pass the standing archivability test already authorises,
+> and `BUILD_AND_TEST.md` demoted to a conditional read with `DECISIONS.md` explicitly not
+> demoted. **The `BUILD_AND_TEST.md` input named in the parenthesis is an ORDINARY-session
+> question**, so it belongs to Ruling 3 of that sitting and never belonged to the boot list's.
 
 **★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red expected after the batch. [[OI-374]]
 untouched. [[OI-179]] OPEN and GATES. F3 nine times surfaced, unfixed, unrowed. F1–F43, the E3

@@ -385,13 +385,26 @@ def apply_it() -> dict:
                    f"{len(retired)} retired against {before} before")
 
     backbone["decisions"] = surviving
+    # ★ CORRECTION OF RECORD, 2026-08-17, answering F49 (`cowork_rulings_2026_08_17_eighth_return.md`
+    # §4): the sentence below attributed the WHOLE block to one ruling, while the block also holds
+    # the entries the 2026-08-17 residue sitting retired. The former wording is UNCHANGED and stands
+    # as the opening of the string (#12 — nothing is deleted); ONE qualifying sentence is APPENDED to
+    # it, and the same string is rendered into the data file in the same act, because this act's
+    # `--apply` path cannot run again by construction. No verdict, population, arithmetic or entry
+    # identity moves. The block's correcting field `★_this_block_now_holds_more_than_one_retirement`
+    # already said this at the FIELD level; what it did not reach is `what_this_is`, which is the
+    # prose a reader meets first.
     backbone[RETIRED_BLOCK] = {
         "what_this_is":
             "THE RETIRED-ENTRIES BLOCK. Entries SOFT-DISCARDED from the live record by the user's "
             "ruling of 2026-08-16 §3(A) — retired, NOT destroyed (#12), each moved here WHOLE and "
             "unchanged, and each individually revivable the moment a deciding act is named for it. "
             "Nothing in this block is rendered into the register's INDEX or its group files: a "
-            "retired entry has left the LIVE record, which is what the discard is.",
+            "retired entry has left the LIVE record, which is what the discard is. "
+            "★ QUALIFICATION (2026-08-17, answering F49): the sentence above names the FIRST "
+            "retirement only, and this block NOW HOLDS MORE THAN ONE — each act that has retired "
+            "entries into it records itself in the `acts` list below, and every record carries its "
+            "own `retired_on`, `retired_by` and `the_retiring_authority`.",
         "the_retiring_authority": AUTHORITY,
         "retired_on": RETIRED_ON,
         "retired_by": RETIRING_ACT,

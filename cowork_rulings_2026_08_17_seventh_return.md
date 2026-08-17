@@ -101,3 +101,36 @@ phase's retrospective.
 ruling in conversation. The surface ruled is
 `ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md` at commit `cfb69a7ecb`;
 the user's words are quoted verbatim in §0.*
+
+## 5. ★ CORRECTION, appended 2026-08-17 by `cc_instruction_preparation_ninth.md` Task 0b — F51, the widened sentence this record originated
+
+**This section corrects §3 of this record. The ruled text of §3 is NOT edited: the corrected
+wording stands where it was written and is quoted here (#12), because a ruling record is
+corrected by appending a dated correction, never by rewriting what was ruled.**
+
+**THE SENTENCE CORRECTED, quoted verbatim from §3 above:** *"**The standing route to a materially
+smaller session-start read is the CURATED BOOT LIST**, the preparation-phase output already
+commissioned and awaiting its drafting and sitting."*
+
+**THE FINDING IT ANSWERS — F51**, recorded at §6 of `cowork_rulings_2026_08_17_eighth_return.md`:
+that sentence is the writing side's, not a ruling, and it widened the curated boot list from one
+class of session to the session-start read generally. It then propagated to three further sites.
+
+**THE BOOT LIST'S RULED DEFINITION**, at the surface the user ratified 2026-08-15
+(`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md`): *"The curated boot list —
+the implementation-free read list an implementation-blind session boots from, replacing the
+ordinary session-start reads (which include implementation-describing text) **for those sessions
+only.**"* Ruling 4 of `cowork_rulings_2026_08_17_session_start_read_sitting.md` has since confirmed
+that definition and stated in terms that the boot list *"is NOT widened to ordinary sessions."*
+
+**THE ROUTE FOR ORDINARY SESSIONS IS RULINGS 1–3 of
+`cowork_rulings_2026_08_17_session_start_read_sitting.md`** — the derived gating answer replacing
+the whole-index read behind its #19 precondition (Ruling 1), the archiving pass the standing
+archivability test already authorises (Ruling 2), and `BUILD_AND_TEST.md` demoted to a conditional
+read with `DECISIONS.md` explicitly not demoted (Ruling 3).
+
+**WHAT THIS CORRECTION DOES NOT TOUCH.** Ruling 3's own substance stands whole on its measured
+evidence: recognizers over prose are not the route to a materially smaller `CLAUDE.md`, whatever
+the replacement turns out to be. The `BUILD_AND_TEST.md` input §3 carried is an ORDINARY-session
+question and was parked in the wrong sitting; it is answered by Ruling 3 of the session-start-read
+sitting, not by the boot list's.

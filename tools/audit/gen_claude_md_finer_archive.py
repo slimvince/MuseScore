@@ -96,6 +96,37 @@ ACT_DATE = "2026-08-17"
 DISPATCH = "cc_instruction_preparation_eighth.md"
 RULINGS = "cowork_rulings_2026_08_17_seventh_return.md"
 
+# ★ THE LATER RULING THAT CLOSED BOTH SPANS' FATES, and the reason this tool's own drift STOP had
+# to be narrowed rather than left as written (`cc_instruction_preparation_ninth.md` Task 0b).
+#
+# Ruling 1 of the record below made the recognizer defect this act MEASURED into a STANDING
+# CONSTRAINT — "a span whose archive classification derives from text inside an archive pointer is
+# NOT archivable, wherever in the span the pointer sits" — and `gen_claude_md_finer_spans.py` now
+# answers it. The span at pinned lines 53-60 was classed entirely by two archive pointers inside
+# it, so the widened recognizer no longer places it in an archive class at all: it falls to the
+# ruled doubt default and stays at site, with the refused markers published beside it.
+#
+# WHAT THAT DID TO THE STOP BELOW. It asserted that the derivation places exactly two spans to
+# archive and refuses exactly four — the seventh-return Ruling 1's own shape, and TRUE while that
+# was the last word. It is FALSE the moment a later ruling removes one of the two from the archive
+# classes by ordering a recognizer change. Re-derived after that change it reported a disagreement
+# THAT IS NOT ONE: the seventh-return ruling's figures were, and remain, a true statement about the
+# derivation as the recognizer then stood.
+#
+# WHAT IS ASSERTED INSTEAD is narrower and stays true across the later ruling: the archive-class
+# spans PLUS the spans the standing constraint removed from the archive classes must still be the
+# seventh-return ruling's two, and the refused set must still be its four. A span that simply
+# VANISHED from the population still halts this tool, which is what the STOP exists for. Nothing
+# about either span's FATE moves: both were read and both STAY, which is what the eighth-return
+# sitting then ruled.
+EIGHTH_RULINGS = "cowork_rulings_2026_08_17_eighth_return.md"
+
+# The evidence key the widened recognizer publishes on a span whose archive placement it refused.
+# IMPORTED as a literal rather than re-decided: the shape is that module's, and a rename there that
+# this tool did not follow shows up immediately as a drift STOP rather than as a silent miscount.
+CONSTRAINT_REFUSED_KEY = (
+    "★_an_archive_placement_was_REFUSED_by_the_standing_pointer_constraint")
+
 MOVE = "MOVE"
 STAY = "STAYS AT SITE — flagged by the reading (A3)"
 
@@ -198,8 +229,14 @@ VERDICTS: dict[tuple[int, int], tuple[str, str]] = {
 }
 
 
-def ruled_population() -> tuple[list[dict], list[dict]]:
-    """(ruled_to_archive, refused), DERIVED from the pinned artifact's own published evidence."""
+def ruled_population() -> tuple[list[dict], list[dict], list[dict]]:
+    """(ruled_to_archive, refused, constraint_refused), DERIVED from the artifact's own evidence.
+
+    The third list is the eighth-return Ruling 1's own consequence: a span the STANDING POINTER
+    CONSTRAINT removed from the archive classes. It is carried rather than dropped so the
+    arithmetic still reconciles to the seventh-return ruling's stated shape, and so a span that
+    vanished for any OTHER reason still halts this tool.
+    """
     if not os.path.exists(SPANS):
         raise Stop(f"the finer decomposition is missing: {os.path.relpath(SPANS, ROOT)} — this "
                    f"act's population is derived from it and may not be listed by hand")
@@ -211,6 +248,21 @@ def ruled_population() -> tuple[list[dict], list[dict]]:
                    f"{PINNED_COMMIT}")
 
     archive_class = [s for s in data["the_spans"] if s["the_class"] != coarse.OPERATIVE]
+
+    constraint_refused = []
+    for span in data["the_spans"]:
+        refusal = (span.get("the_evidence") or {}).get(CONSTRAINT_REFUSED_KEY)
+        if refusal is None:
+            continue
+        span["_why_the_ruling_places_it"] = (
+            "the STANDING POINTER CONSTRAINT ruled at Ruling 1 of "
+            f"`{EIGHTH_RULINGS}` removed this span from the archive classes: its archive "
+            "classification derived from text inside archive pointers sitting in the span, and "
+            "such a classification may not archive a span wherever in it the pointer sits. It "
+            "falls to the ruled doubt default and STAYS AT SITE. The reading verdict this act "
+            "authored for it stands beside that, and the two agree.")
+        span["_the_refusal_the_recognizer_published"] = refusal
+        constraint_refused.append(span)
 
     to_archive, refused = [], []
     for span in archive_class:
@@ -237,23 +289,32 @@ def ruled_population() -> tuple[list[dict], list[dict]]:
                 "stays at site")
             refused.append(span)
 
-    if len(to_archive) != RULED_TO_ARCHIVE or len(refused) != RULED_REFUSED:
-        raise Stop(f"the derivation places {len(to_archive)} span(s) to archive and "
-                   f"{len(refused)} refused, where Ruling 1's own words are two archive and four "
-                   f"refused. The derivation and the ruling have drifted apart, which is a "
-                   f"STOP rather than an adjustment")
+    read_before_moving = to_archive + constraint_refused
+    if len(read_before_moving) != RULED_TO_ARCHIVE or len(refused) != RULED_REFUSED:
+        raise Stop(f"the derivation places {len(to_archive)} span(s) to archive, "
+                   f"{len(constraint_refused)} removed from the archive classes by the standing "
+                   f"pointer constraint and {len(refused)} refused, where Ruling 1's own words are "
+                   f"two archive and four refused. The two populations no longer account for the "
+                   f"ruling's own shape, which is a STOP rather than an adjustment")
 
-    unverdicted = [(s["first_line"], s["last_line"]) for s in to_archive
+    unverdicted = [(s["first_line"], s["last_line"]) for s in read_before_moving
                    if (s["first_line"], s["last_line"]) not in VERDICTS]
     if unverdicted:
         raise Stop(f"span(s) with no authored reading verdict: {unverdicted} — Ruling 1 binds this "
                    f"act to READ every span before it moves, so an unread span halts it")
-    carried = {(s["first_line"], s["last_line"]) for s in to_archive}
+    carried = {(s["first_line"], s["last_line"]) for s in read_before_moving}
     stray = sorted(k for k in VERDICTS if k not in carried)
     if stray:
         raise Stop(f"authored verdict(s) naming a span the derivation does not carry: {stray} — "
                    f"the verdicts and the measurement have drifted apart")
-    return to_archive, refused
+    for span in constraint_refused:
+        verdict, _ = VERDICTS[(span["first_line"], span["last_line"])]
+        if verdict == MOVE:
+            raise Stop(f"the span at pinned lines {span['first_line']}-{span['last_line']} carries "
+                       f"a MOVE verdict while the standing pointer constraint removed it from the "
+                       f"archive classes — the reading and the constraint disagree, which is a "
+                       f"STOP rather than an adjustment")
+    return to_archive, refused, constraint_refused
 
 
 def with_text(spans: list[dict]) -> list[dict]:
@@ -273,13 +334,14 @@ def with_text(spans: list[dict]) -> list[dict]:
 
 
 def plan() -> dict:
-    to_archive, refused = ruled_population()
+    to_archive, refused, constraint_refused = ruled_population()
     to_archive = with_text(to_archive)
     refused = with_text(refused)
+    constraint_refused = with_text(constraint_refused)
     base = git_show(BASE_COMMIT, PARENT)
 
     moved, stayed = [], []
-    for span in to_archive:
+    for span in to_archive + constraint_refused:
         verdict, why = VERDICTS[(span["first_line"], span["last_line"])]
         rec = {
             "first_line_at_the_pin": span["first_line"],
@@ -294,6 +356,9 @@ def plan() -> dict:
             "text_sha256": sha(span["_text"]),
             "_text": span["_text"],
         }
+        if "_the_refusal_the_recognizer_published" in span:
+            rec["★_the_standing_pointer_constraint_removed_it_from_the_archive_classes"] = (
+                span["_the_refusal_the_recognizer_published"])
         if verdict == MOVE:
             if base.count(span["_text"]) != 1:
                 raise Stop(f"{PARENT} lines {span['first_line']}-{span['last_line']}: the span's "
@@ -411,6 +476,29 @@ def build() -> dict:
                       f"site; the executing act derives them from the finer decomposition and "
                       f"never retypes them; a span that does not read at execution time as the "
                       f"ruling assumes is a STOP-and-report, never a forced move.",
+        "★_the_LATER_ruling_that_closed_both_spans_fates": {
+            "the_record": EIGHTH_RULINGS,
+            "what_it_ruled": "Ruling 1 — the span at pinned lines 53-60 STAYS AT SITE, and the "
+                             "recognizer defect that proposed it becomes a STANDING CONSTRAINT: "
+                             "\"a span whose archive classification derives from text inside an "
+                             "archive pointer is NOT archivable, wherever in the span the pointer "
+                             "sits.\" Ruling 2 — the whole span at pinned lines 194-213 stays at "
+                             "site. The record's own §5 states that both fates are RULED and the "
+                             "finer-archive question is CLOSED.",
+            "what_it_did_to_this_tool": "the constraint is now answered by "
+                                        "`gen_claude_md_finer_spans.py`, so the span at 53-60 is "
+                                        "no longer in an archive class at all. This tool's drift "
+                                        "STOP was narrowed at "
+                                        "`cc_instruction_preparation_ninth.md` Task 0b to stay "
+                                        "true across that later ruling: the archive-class spans "
+                                        "PLUS the spans the constraint removed must still be the "
+                                        "seventh-return ruling's two, and the refused set must "
+                                        "still be its four. A span that simply vanished still "
+                                        "halts the tool.",
+            "★_no_fate_moved_by_it": "both spans were READ and both STAY, which is what this act "
+                                     "already found and what the later ruling then ruled. "
+                                     "`CLAUDE.md` is untouched by the narrowing.",
+        },
         "measured_at_commit": PINNED_COMMIT,
         "base_commit": BASE_COMMIT,
         "★_how_the_population_is_derived_rather_than_listed":

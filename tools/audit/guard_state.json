@@ -1001,11 +1001,11 @@
       "verdict": "PASS",
       "stdout": [
         "the finer CLAUDE.md decomposition re-derives",
-        "  151,045 characters, 185 spans, 135,341 by the doubt default (89.6%)",
+        "  151,045 characters, 185 spans, 136,186 by the doubt default (90.2%)",
         "    self-declared-historical-or-superseded      2 spans    5,873 characters",
         "    preserved-former-wording                    2 spans    3,894 characters",
-        "    defense-and-declined-alternatives           2 spans    3,775 characters",
-        "    operative-rule-text                       179 spans  137,376 characters"
+        "    defense-and-declined-alternatives           1 spans    2,930 characters",
+        "    operative-rule-text                       180 spans  138,221 characters"
       ],
       "stderr": [],
       "what_it_checks": "the finer decomposition of `CLAUDE.md` still re-derives at its pinned commit, with every span classed from its own text, its placing evidence published beside it, and the per-class byte counts accounting for the file TO THE CHARACTER — the STOP that makes the measurement worth anything, since a silently dropped span would make every count in it meaningless. The reading is pinned because the artifact is EVIDENCE FOR A RULING and may not move under the ruling it supports. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a span classed `operative-rule-text` IS operative — only that no recognizer placed it elsewhere; the recognizers are patterns over prose and their reach is UNMEASURED (#19), with the direction of their error the recoverable one"

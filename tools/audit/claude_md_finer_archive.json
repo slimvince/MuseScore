@@ -3,6 +3,12 @@
  "generated_by": "tools/audit/gen_claude_md_finer_archive.py",
  "dispatch": "cc_instruction_preparation_eighth.md, Task 1",
  "the_ruling": "Ruling 1 of cowork_rulings_2026_08_17_seventh_return.md: two spans ARCHIVE with a dated pointer at each site; the four contested proposals are REFUSED and their spans stay at site; the executing act derives them from the finer decomposition and never retypes them; a span that does not read at execution time as the ruling assumes is a STOP-and-report, never a forced move.",
+ "★_the_LATER_ruling_that_closed_both_spans_fates": {
+  "the_record": "cowork_rulings_2026_08_17_eighth_return.md",
+  "what_it_ruled": "Ruling 1 — the span at pinned lines 53-60 STAYS AT SITE, and the recognizer defect that proposed it becomes a STANDING CONSTRAINT: \"a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits.\" Ruling 2 — the whole span at pinned lines 194-213 stays at site. The record's own §5 states that both fates are RULED and the finer-archive question is CLOSED.",
+  "what_it_did_to_this_tool": "the constraint is now answered by `gen_claude_md_finer_spans.py`, so the span at 53-60 is no longer in an archive class at all. This tool's drift STOP was narrowed at `cc_instruction_preparation_ninth.md` Task 0b to stay true across that later ruling: the archive-class spans PLUS the spans the constraint removed must still be the seventh-return ruling's two, and the refused set must still be its four. A span that simply vanished still halts the tool.",
+  "★_no_fate_moved_by_it": "both spans were READ and both STAY, which is what this act already found and what the later ruling then ruled. `CLAUDE.md` is untouched by the narrowing."
+ },
  "measured_at_commit": "e94f765c25b49d2c9ffa47b1a296302debc25ce6",
  "base_commit": "570f2b63b14ad7bcf09e0014c96d3f1d1aa90fa3",
  "★_how_the_population_is_derived_rather_than_listed": "The archive-class spans come from the pinned finer decomposition. Which of them the ruling archives and which it refuses is then derived from that artifact's OWN published conflict evidence under the surface's own conflict-reading rule: a span the A4 safeguard never read is the uncontested remainder and is archived; a span the safeguard read and kept is archived only where its stated reason was an OVERRUN into live rule text, which the finer cut answers, and refused where the reason was that the span itself states a rule, which no cut answers. The derivation reproducing Ruling 1's own stated shape — two archive, four refused — is a STOP, not an assumption.",
@@ -21,18 +27,6 @@
  "the_moved": [],
  "the_left_at_site_by_the_reading": [
   {
-   "first_line_at_the_pin": 53,
-   "last_line_at_the_pin": 60,
-   "the_class_the_measurement_gave_it": "defense-and-declined-alternatives",
-   "characters": 845,
-   "why_the_ruling_places_it_here": "the A4 safeguard never read this span, so the ruling archives it as the uncontested remainder — the only proposal asking the user for something no reading at the file had already refused",
-   "the_verdict": "STAYS AT SITE — flagged by the reading (A3)",
-   "why": "★ FAILS TEST (1) AND TEST (2), and the class itself is an artifact of the recognizer. READ WHOLE the span is two different things and neither is a declined-alternatives record. Lines 53-58 are a LIVE supersession statement — `★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6)` — telling a session that R3's clause making an apparatus finding's row mandatory no longer holds for a finding the worth test discards, that R3 is otherwise untouched, and where R3 lives. A session reading principle #10 acts on that. Lines 59-60 are TWO ARCHIVE POINTERS left by the executed split, each naming its companion, its size, its class and the opening of what moved. ★ AND THE TWO POINTERS ARE WHERE THE CLASS COMES FROM: the only occurrence of `DECLINED` in the span is at offset 637, inside the first pointer, and the only occurrence of `THE COSTS THE USER ACCEPTED` is at offset 785, inside the second. The span contains no alternative and no cost of its own. This is finding F41 measured again and NOT covered by the pass's own structural guard, which fires only when a span BEGINS with a pointer; here the pointers sit at the span's END and lend their quoted class name and quoted opening to the classifier. Archiving the span would delete both pointers, removing the only breadcrumbs back to two spans the split already moved — the exact harm the structural guard was written against.",
-   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
-   "the_opening": "**★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus finding's row is **mandatory** no longer holds for a finding the worth te",
-   "text_sha256": "886a1e11e25f69b7dde7c34a72df2b1b1250404073c3c1cec9a8203d7c8f75fd"
-  },
-  {
    "first_line_at_the_pin": 194,
    "last_line_at_the_pin": 213,
    "the_class_the_measurement_gave_it": "preserved-former-wording",
@@ -43,6 +37,33 @@
    "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
    "the_opening": "**★ THAT PARAGRAPH REPLACED A NARROWER ONE, AND THE FORMER WORDING STANDS IN PLACE (#12; user-ruled 2026-08-11 on a surface carrying three alternatives with the",
    "text_sha256": "5a2f8532d2e5681276c15f0e86b02716babec157e07a50e9f4e9ade189a79aa2"
+  },
+  {
+   "first_line_at_the_pin": 53,
+   "last_line_at_the_pin": 60,
+   "the_class_the_measurement_gave_it": "operative-rule-text",
+   "characters": 845,
+   "why_the_ruling_places_it_here": "the STANDING POINTER CONSTRAINT ruled at Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md` removed this span from the archive classes: its archive classification derived from text inside archive pointers sitting in the span, and such a classification may not archive a span wherever in it the pointer sits. It falls to the ruled doubt default and STAYS AT SITE. The reading verdict this act authored for it stands beside that, and the two agree.",
+   "the_verdict": "STAYS AT SITE — flagged by the reading (A3)",
+   "why": "★ FAILS TEST (1) AND TEST (2), and the class itself is an artifact of the recognizer. READ WHOLE the span is two different things and neither is a declined-alternatives record. Lines 53-58 are a LIVE supersession statement — `★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6)` — telling a session that R3's clause making an apparatus finding's row mandatory no longer holds for a finding the worth test discards, that R3 is otherwise untouched, and where R3 lives. A session reading principle #10 acts on that. Lines 59-60 are TWO ARCHIVE POINTERS left by the executed split, each naming its companion, its size, its class and the opening of what moved. ★ AND THE TWO POINTERS ARE WHERE THE CLASS COMES FROM: the only occurrence of `DECLINED` in the span is at offset 637, inside the first pointer, and the only occurrence of `THE COSTS THE USER ACCEPTED` is at offset 785, inside the second. The span contains no alternative and no cost of its own. This is finding F41 measured again and NOT covered by the pass's own structural guard, which fires only when a span BEGINS with a pointer; here the pointers sit at the span's END and lend their quoted class name and quoted opening to the classifier. Archiving the span would delete both pointers, removing the only breadcrumbs back to two spans the split already moved — the exact harm the structural guard was written against.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself (A3)",
+   "the_opening": "**★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus finding's row is **mandatory** no longer holds for a finding the worth te",
+   "text_sha256": "886a1e11e25f69b7dde7c34a72df2b1b1250404073c3c1cec9a8203d7c8f75fd",
+   "★_the_standing_pointer_constraint_removed_it_from_the_archive_classes": {
+    "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17",
+    "archive_pointer_lines_inside_this_span": 2,
+    "the_refused_placements": {
+     "a_declined_alternatives_record": {
+      "the_refused_marker": "DECLINED",
+      "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+     },
+     "an_accepted_costs_record": {
+      "the_refused_marker": "THE COSTS THE USER ACCEPTED",
+      "the_constraint": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+     }
+    },
+    "what_follows": "the span falls to the ruled DOUBT DEFAULT and STAYS AT SITE. It is not dropped: the refused marker stands above, so the user can overrule this in one edit rather than rediscover the question."
+   }
   }
  ],
  "the_refused_by_the_ruling": [
