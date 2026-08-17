@@ -254,10 +254,13 @@ provenance naming this act, the detail file gains a dated resolution note, and t
 
 ---
 
-## 3. The new-tool rule, discharged once
+## 3. The new-tool rule, discharged twice
 
-`tools/audit/gen_governing_surface_split.py` is this batch's only new tool, and it landed **with its
-authored run-instruction and its authored classification verdict in the SAME commit that adds it**.
+This batch adds **two** tools, and each landed **with its authored run-instruction and its authored
+classification verdict in the SAME commit that adds it** — six invocations between them, all six
+passing at the end-state run.
+
+### 3.a `tools/audit/gen_governing_surface_split.py` — the split, and its permanent reconciliation
 Clause 7 orders ONE CHECK PER PARENT/COMPANION PAIR: there are five pairs and one concern
 (reconcile a parent against its companion), so the check has **one home** (#6) and is **invoked once
 per pair** with `--check --pair <FILE>` — five entries in the guard set, which is the shape
@@ -277,6 +280,29 @@ and the OI-344 shape avoided by construction. Its STOPs ride with it: an archive
 authored reading verdict, a verdict naming a span the decomposition does not carry, a moved span not
 present exactly once in the pre-act blob, an arithmetic that does not balance, and a register home
 anchor inside a moved span.
+
+### 3.b `tools/audit/gen_status_batch_bound.py` — Ruling 4's forward bound, applied for the first time
+
+Ruling 4 installs a standing bound: *every future batch close, in the same act that writes its own
+entries, moves the then-previous batch's entries to the archive.* Task 2 is the first act to owe it,
+and it is performed by a tool rather than by hand **for a reason about the entries**: each is a
+single line of several thousand characters, and retyping one to move it is the transcription the
+record forbids — a move that is not byte-faithful is what #12 exists against.
+
+**Membership is DERIVED from the entries' own words, never listed by hand.** A batch writes ONE
+entry naming its dispatch — the close — and one per earlier task saying *Same dispatch* instead of
+repeating the name; both halves are the entries' own text, so the tool takes the entry that names
+the dispatch plus the run of dated entries immediately below it that say *Same dispatch*. **That
+derivation is what the precedent had to author a clause for**: `gen_status_archive_pass.py` carries
+an AUTHORED_CLAUSE for exactly one such per-task entry because its rule could not see them. Here the
+first run moved **1** entry; the derivation was corrected at the tool and the second moved **4**,
+which is the batch. The dated-entry pattern is IMPORTED from that archive pass rather than
+re-implemented (#6).
+
+Its `--check` proves both directions at HEAD — each moved entry byte-present in `STATUS_ARCHIVE.md`
+exactly once and absent from `STATUS.md` — while WHICH entries moved is read from the git object at
+the commit the move was performed on top of, so the claim re-derives forever as later batches
+legitimately append their own.
 
 ---
 
