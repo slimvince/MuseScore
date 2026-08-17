@@ -13769,14 +13769,33 @@ unfixed and unrowed. **No document was archived, moved or deleted AS A FILE.**
 
 ## 9. The end-state guard run
 
-*(The E-ordering rule: the run is taken AFTER the Task 5 commit exists, and its output and the
-final SHAs land in ONE FURTHER commit. This section is completed there.)*
+**★ E5 — MET, on the run and on nothing else.** The run ordered at the tree carrying the close,
+taken **AFTER commit `6bacb9bb9e` existed**, printed:
+
+```
+68 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"**.
+**Every run check passes except [[OI-372]]'s tool, zero STOPs** — the shape the dispatch predicted,
+reached for the second batch running. Run and read, never inferred; the values are committed only
+after the run that produced them.
+
+**★ AND ONE ORDERING SLIP IS DECLARED RATHER THAN LEFT TO BE NOTICED.** The Task-5 `STATUS.md`
+entry closes with *"THE EXPECTED END STATE IS REACHED: one failing check, zero STOPs"*, and it was
+written **before** this run existed. The run confirms it exactly, so the entry is true — but it was
+true by prediction at the moment it was committed, which is the E3 ordering defect's own shape
+recurring at a smaller grain. It is recorded here so the retrospective meets it beside the earlier
+instance rather than instead of it. The remedy the record already has is the E-ordering rule this
+section discharges; what it does not yet reach is a batch-level summary sentence written in the
+same commit as the work it summarizes.
 
 *Provenance: CC, 2026-08-17, dispatch `cc_instruction_preparation_eighth.md`. Task 0 is commit
 `570f2b63b1` (parent `56ad941ee7`), pushed, 6 paths. Task 1 is `dd698031df` (parent `570f2b63b1`),
 pushed, 6 paths. Task 2 is `b0b51ee657` (parent `dd698031df`), pushed, 34 paths. Task 3 is
 `d499027a8c` (parent `b0b51ee657`), pushed, 5 paths. Task 4 is `a21a55fc12` (parent `d499027a8c`),
-pushed, 3 paths. Task 5's close and the report are the commit carrying this sentence, and the
-E-ordering commit follows it. **★ WHERE THE RECORDING TERMINATES:** every commit of this batch is
-verified at the object and named except the LAST one, which cannot contain its own identity — that
-is the terminus, not an omission.*
+pushed, 3 paths. Task 5's close and the report are `6bacb9bb9e` (parent `a21a55fc12`), pushed, 6
+paths. The commit carrying this sentence is the E-ordering terminus. **★ WHERE THE RECORDING
+TERMINATES:** every commit of this batch is verified at the object and named except the LAST one,
+which cannot contain its own identity — that is the terminus, not an omission.*

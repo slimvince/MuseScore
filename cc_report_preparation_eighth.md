@@ -358,11 +358,30 @@ authored classification verdict in the SAME commit that adds it**.
 | at the Task 2 tree | 68 | 1 | 4 | 16 | 0 |
 | at the Task 3 tree | 68 | 1 | 4 | 16 | 0 |
 | at the Task 4 tree | 68 | 1 | 4 | 16 | 0 |
-| **the end state**, after the Task 5 commit exists | *recorded in the E-ordering commit* | | | | |
+| **the end state**, after the Task 5 commit existed | **68** | **1** | 4 | 16 | **0** |
+
+**★ E5 — MET, on the run and on nothing else.** The end-state run, taken **AFTER commit
+`6bacb9bb9e` existed**, printed:
+
+```
+68 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** —
+**every run check passing except [[OI-372]]'s tool, zero STOPs**, the shape the dispatch predicted,
+reached for the second batch running. Run and read, never inferred.
 
 The population grows by exactly this batch's three new invocations. **The one failing check is
 [[OI-372]]'s tool and no other**, at every state. `gen_guard_classification.py --check` printed
 *"the guard classification re-derives"* after every regeneration.
+
+**★ ONE ORDERING SLIP IS DECLARED.** The Task-5 `STATUS.md` entry closes with *"THE EXPECTED END
+STATE IS REACHED"*, and it was written **before** this run existed. The run confirms it exactly, so
+the entry is true — but it was true by prediction when it was committed, which is the E3 ordering
+defect's own shape at a smaller grain. Recorded here and in the close so the retrospective meets it
+beside the earlier instance; the E-ordering rule reaches the guard output and does not yet reach a
+batch-level summary sentence written in the same commit as the work it summarizes.
 
 **★ ASSUMPTION A2 HELD.** Its check is that any red other than [[OI-372]]'s is classed by its
 measured cause, and one outside the acts' own subjects is a STOP-and-report. The six reds that
