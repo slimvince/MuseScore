@@ -9,6 +9,7 @@
       "tools/audit/changed_paths.py",
       "tools/audit/claude_md_rule_triage.py",
       "tools/audit/corpus_arm_stamp.py",
+      "tools/audit/decisions/apply_residue_discard.py",
       "tools/audit/decisions/apply_soft_discard.py",
       "tools/audit/decisions/gen_cluster_dispositions.py",
       "tools/audit/decisions/gen_decision_clusters.py",
@@ -51,6 +52,7 @@
       "tools/audit/gen_discard_records.py",
       "tools/audit/gen_doc_change_candidates.py",
       "tools/audit/gen_filing_convention_application.py",
+      "tools/audit/gen_framework_untrusted_candidates.py",
       "tools/audit/gen_gating_row_sizing.py",
       "tools/audit/gen_governing_surface_readers.py",
       "tools/audit/gen_governing_surface_spans.py",
@@ -80,7 +82,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 86,
+    "authored_entries": 88,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -752,10 +754,36 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "the soft-discard re-checks: 512 live + 165 retired = 677 before, no entry in both blocks and none in neither, every retired record carrying its finding, its date, its authority and the ruled clause"
+        "the soft-discard re-checks: 474 live + 203 retired = 677 before, no entry in both blocks and none in neither, every retired record carrying its finding, its date, its authority and the ruled clause"
       ],
       "stderr": [],
       "what_it_checks": "the ruled soft-discard's PLAN re-derives, and no retirement has been applied. Before the act this is what is live: every sentence of the ruling that ordered the discard must still be in its ruling record; the population must still be DERIVABLE from the committed recovery and sole-carrier artifacts — the entries the recovery pass returned NOTHING-FOUND for minus the members the guard withheld, with a member that is BOTH halting it and a member the decisions register's data file does not carry live halting it too (D-671); and the committed plan must still re-derive from those inputs. AFTER the act, the plan cannot be re-derived by construction, and what this checks instead is the applied state: live plus retired accounting for the whole former population BY ARITHMETIC, no entry in both blocks and none in neither, and every retired record carrying its finding, its date, its retiring authority and the ruled clause verbatim — the four the ruling requires of every record"
+    },
+    {
+      "tool": "tools/audit/decisions/apply_residue_discard.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the residue discard re-checks: 474 live + 203 retired = 677 before; this act retired 38; the sitting's sums reconcile (keep 474, retired 203, total 677); every ruled keep carries its recorded deciding act"
+      ],
+      "stderr": [],
+      "what_it_checks": "the residue sitting's applied state re-checks: the two retirements accounting for the whole former population BY ARITHMETIC, no entry in both blocks and none in neither, every record THIS act retired carrying its finding, its date, its retiring authority, the ruling that retired it and the ruled clause verbatim, and every one of the fifty-three ruled KEEPS still carrying the deciding act recorded for it — re-quoted on every run from the artifact it was taken from, so a stamp removed or rewritten fails on the day it happens. THE SITTING'S OWN ARITHMETIC IS RE-RECONCILED against the record as it stands, and the ruling makes that a STOP rather than an adjustment in its own words. Every population is DERIVED on every run and never listed: the 29 from the sole-carrier guard crossed with the recovery pass, the 9, the 47 and the 6 from the ratified-document check's own per-entry result, and the one candidate carried from the nine as the sole-carrier member among them — any other number halting it"
+    },
+    {
+      "tool": "tools/audit/gen_framework_untrusted_candidates.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the framework phase's untrusted-candidate carry re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the framework phase's untrusted-candidate carry still re-derives — the 29 the sole-carrier guard withheld plus the one member carried from the nine, each with the title, restatement, recorded home and status the decisions register gives it, read from that register whether the entry is live or retired. A hand edit to the published list fails on the next run, which is what makes the carry a derivation rather than a transcription. ★ WHAT IT DOES NOT ASSERT: that any member is a decision, is authority, or is sound — the retirement that produced the list is a PROVENANCE verdict, which the artifact states of itself"
     },
     {
       "tool": "tools/audit/gen_phase1_gate_readers.py",
@@ -1024,7 +1052,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "the register matches the data (21 files: the index + 20 group files)"
+        "the register matches the data (20 files: the index + 19 group files)"
       ],
       "stderr": [],
       "what_it_checks": "the rendered register matches its source data across every emitted file"
@@ -1037,10 +1065,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 512",
+        "backbone decisions: 474",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 512/512",
-        "cited line numbers correct: 506/506   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 474/474",
+        "cited line numbers correct: 468/468   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -1068,7 +1096,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "register patterns compiling: 854/854",
+        "register patterns compiling: 775/775",
         "derivation dry-run: 14460/14460 clusters, 15224/15224 occurrences — nothing written",
         "OVERALL PASS"
       ],
@@ -1083,17 +1111,16 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "population: 151 entries / 35 documents",
-        "  before: {'contract-home': 73, 'gap': 78}",
-        "  after:  {'contract-home': 131, 'gap': 20}",
-        "  moved:  66  (to gap 4, to contract-home 62)",
+        "population: 146 entries / 34 documents",
+        "  before: {'contract-home': 70, 'gap': 76}",
+        "  after:  {'contract-home': 127, 'gap': 19}",
+        "  moved:  65  (to gap 4, to contract-home 61)",
         "    cowork_architecture_reassessment.md: −4 / +0",
         "    cowork_confidence_contract.md: −0 / +1",
         "    cowork_engage_arc_plan.md: −0 / +3",
         "    cowork_joint_estimator_architecture.md: −0 / +5",
         "    cowork_joint_estimator_factorization.md: −0 / +1",
         "    cowork_joint_key_chord_design.md: −0 / +1",
-        "    cowork_layer1_note_model_design.md: −0 / +1",
         "    cowork_layer6_grouping_design.md: −0 / +9",
         "    cowork_notation_adoption_increment.md: −0 / +3",
         "    cowork_phrase_boundary_design.md: −0 / +10",
@@ -1102,14 +1129,13 @@
         "    cowork_score_census.md: −0 / +7",
         "    cowork_structural_integrity_audit.md: −0 / +1",
         "    docs/llm_integration.md: −0 / +7",
-        "  since phase 1q (the written delegations alone): 77 moved (to contract-home 77, to gap 0)",
+        "  since phase 1q (the written delegations alone): 75 moved (to contract-home 75, to gap 0)",
         "    cowork_confidence_contract.md: −0 / +1",
         "    cowork_engage_arc_plan.md: −0 / +3",
         "    cowork_joint_estimator_architecture.md: −0 / +5",
         "    cowork_joint_estimator_factorization.md: −0 / +1",
         "    cowork_joint_key_chord_design.md: −0 / +1",
-        "    cowork_layer1_note_model_design.md: −0 / +1",
-        "    cowork_layer5_function_design.md: −0 / +7",
+        "    cowork_layer5_function_design.md: −0 / +6",
         "    cowork_layer6_grouping_design.md: −0 / +9",
         "    cowork_notation_adoption_increment.md: −0 / +3",
         "    cowork_notation_output_contract.md: −0 / +1",
@@ -1180,7 +1206,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "phase1w: A1 held; 62 entries derived; 35 anchors located; 5 recorded figures located"
+        "phase1w: A1 held; 57 entries derived; 35 anchors located; 5 recorded figures located"
       ],
       "stderr": [],
       "what_it_checks": "the legacy-mark verification re-derives, and its declared premises still hold"
@@ -1243,8 +1269,8 @@
     }
   ],
   "summary": {
-    "run": 66,
-    "passing": 65,
+    "run": 68,
+    "passing": 67,
     "failing": 1,
     "failing_tools": [
       {

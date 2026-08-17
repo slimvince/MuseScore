@@ -509,13 +509,6 @@ THE_PREDICTION = {
 # Every row is authored. The tool refuses to emit if a derived entry has no row, or a row
 # names an entry that is not in the derived set.
 VERDICTS = [
-    ('D-053', 'The P4 tick-local path keeping the older resolver',
-     'false-negative-path', ['FLAG_DEFAULT', 'NOTE_SEAM_RECORD', 'NOTE_SEAM_LEGACY', 'TESTS_KEY'],
-     'none-found',
-     'The clearest flag-default case in the set: the subject sits directly below the record return.'),
-    ('D-054', 'The legacy key scorer\'s 21-mode x 12-tonic grid; harmonic major deferred',
-     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
-     'none-found', ''),
     ('D-055', 'The 21 mode priors as independent, user-configurable values',
      'production', ['MODE_PRIOR_SETTING', 'L3_SPEC_DORMANT', 'TESTS_KEY'],
      'none-found',
@@ -533,11 +526,6 @@ VERDICTS = [
      'A minimum-content admission rule is the same KIND of rule the live family design is about '
      '(OI-226 records the joint decoder\'s admission as having no ratified basis). No ruling names '
      'D-068, so a transfer cannot be asserted — but a reader designing admission should see it.'),
-    ('D-069', 'Merged-stretch identity: the harmonic-summary mode built, the as-written mode not',
-     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
-     'none-found',
-     'Split subject: the built half is legacy code on the false-negative paths; the second mode is not '
-     'built at all.'),
     ('D-103', 'The pedal-point second pass and its two acceptance conditions',
      'false-negative-path', ['NOTE_SEAM_LEGACY', 'BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
      'none-found', ''),
@@ -666,11 +654,6 @@ VERDICTS = [
      'ruling-transferred',
      'The known case. The user\'s OI-275 ruling of 2026-08-02 (reading 1-with-transfer) carried the '
      'principle to the live family design; the entry already carries the transfer variant of the mark.'),
-    ('D-342', 'Putting the Layer-5 function layer into production',
-     'false-negative-path', ['L5_DIAG_ONLY', 'BATCH_LEGACY_DEFAULT', 'ARCH_BATCH_DIAGNOSTICS'],
-     'carried-elsewhere',
-     'The module is built and reached only by batch_analyze diagnostic dumps and the test suites. The '
-     'entry\'s own text enumerates where each of its concerns is handled on the live implementation.'),
     ('D-344', 'Reporting an unrecognized scale as the best-fitting recognized mode',
      'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
      'undetermined',
@@ -698,12 +681,6 @@ VERDICTS = [
      'OBSERVATION: the live estimator decides key and chord inside ONE decode, which is the opposite '
      'arrangement. The mark is right — the decision is about the legacy pair — and a reader should not '
      'read it as describing what runs.'),
-    ('D-358', 'Dominant-shaped sonority as note-level tonality evidence',
-     'none', ['L3_SPEC_DORMANT', 'ARCH_L3_DELEGATION'],
-     'undetermined',
-     'Deferred and not built. The question it raises — under-modulation where tonics are withheld — is '
-     'live for whatever engine decides key, and ARCHITECTURE.md:1342 delegates this layer\'s contract '
-     'to the document holding it; no ruling carries it across.'),
     ('D-376', 'The bounded-coupling shape chosen over a unified single state',
      'none', ['JKEY_WIRING_FLAG', 'JKEY_NO_REEMIT'],
      'assigns-live-work',
@@ -911,15 +888,57 @@ VERDICTS = [
 # directions on every run.  A subject in both sections, in neither, or on the wrong side halts
 # that derivation.
 RETIRED_VERDICTS_RETIREMENT = (
-    "CC, dispatch `cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings "
-    "of 2026-08-16 — §3 the soft-discard, §4 its reach, §6 the STANDING checks' treatment. "
-    "Every subject entry below was SOFT-DISCARDED into the decisions register's "
+    "TWO ACTS have moved verdicts here, and the section names both because a note naming one "
+    "would say something false about the rows the other moved (#10). (1) CC, dispatch "
+    "`cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of 2026-08-16 — "
+    "§3 the soft-discard, §4 its reach, §6 the STANDING checks' treatment. (2) CC, dispatch "
+    "`cc_instruction_preparation_eighth.md` Task 2, executing the user's rulings of 2026-08-17 "
+    "(`cowork_rulings_2026_08_17_residue_sitting.md`, Rulings 1 and 3 — the 29 withheld "
+    "sole-carriers and the 9 SUBJECT-NOT-FOUND-THERE entries), under the same §6 kind-2 "
+    "treatment. Every subject entry below was SOFT-DISCARDED into the decisions register's "
     "retired-entries block: a provenance verdict, not a judgment on soundness or usefulness. "
     "Each verdict is moved here whole; if an entry is ever revived, its verdict is read back "
-    "into VERDICTS deliberately rather than resurrected by this copy."
+    "into VERDICTS deliberately rather than resurrected by this copy. WHICH act retired which "
+    "subject is readable from the data file's own retired records, each carrying its own "
+    "`retired_by`; nothing about that is restated here (D-431). ★ THE FORMER WORDING, "
+    "PRESERVED VERBATIM (#12), NAMED ONLY THE FIRST ACT: \"CC, dispatch "
+    "`cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of 2026-08-16 "
+    "— §3 the soft-discard, §4 its reach, §6 the STANDING checks' treatment. Every subject "
+    "entry below was SOFT-DISCARDED into the decisions register's retired-entries block: a "
+    "provenance verdict, not a judgment on soundness or usefulness. Each verdict is moved here "
+    "whole; if an entry is ever revived, its verdict is read back into VERDICTS deliberately "
+    "rather than resurrected by this copy.\""
 )
 
 RETIRED_VERDICTS = [
+    # ---- moved 2026-08-17 by the residue sitting's Rulings 1 and 3 (act (2) above) ----------
+    # Each tuple is verbatim as it stood in VERDICTS; nothing is re-authored, re-read or
+    # re-graded, and the subject reference each was authored against travels with it (#12).
+    ('D-053', 'The P4 tick-local path keeping the older resolver',
+     'false-negative-path', ['FLAG_DEFAULT', 'NOTE_SEAM_RECORD', 'NOTE_SEAM_LEGACY', 'TESTS_KEY'],
+     'none-found',
+     'The clearest flag-default case in the set: the subject sits directly below the record return.'),
+    ('D-054', 'The legacy key scorer\'s 21-mode x 12-tonic grid; harmonic major deferred',
+     'false-negative-path', ['L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
+     'none-found', ''),
+    ('D-069', 'Merged-stretch identity: the harmonic-summary mode built, the as-written mode not',
+     'false-negative-path', ['BATCH_LEGACY_DEFAULT', 'TESTS_CHORD'],
+     'none-found',
+     'Split subject: the built half is legacy code on the false-negative paths; the second mode is not '
+     'built at all.'),
+    ('D-342', 'Putting the Layer-5 function layer into production',
+     'false-negative-path', ['L5_DIAG_ONLY', 'BATCH_LEGACY_DEFAULT', 'ARCH_BATCH_DIAGNOSTICS'],
+     'carried-elsewhere',
+     'The module is built and reached only by batch_analyze diagnostic dumps and the test suites. The '
+     'entry\'s own text enumerates where each of its concerns is handled on the live implementation.'),
+    ('D-358', 'Dominant-shaped sonority as note-level tonality evidence',
+     'none', ['L3_SPEC_DORMANT', 'ARCH_L3_DELEGATION'],
+     'undetermined',
+     'Deferred and not built. The question it raises — under-modulation where tonics are withheld — is '
+     'live for whatever engine decides key, and ARCHITECTURE.md:1342 delegates this layer\'s contract '
+     'to the document holding it; no ruling carries it across.'),
+
+    # ---- moved 2026-08-16 by the first soft-discard (act (1) above) -------------------------
     ('D-051', 'The legacy Layer-3 sequence decoder as the production key path',
      'false-negative-path', ['L3_LEGACY_ENTRY', 'L3_SPEC_DORMANT', 'BATCH_LEGACY_DEFAULT', 'TESTS_KEY'],
      'none-found',

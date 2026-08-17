@@ -206,7 +206,7 @@
 
 **Home.** `cowork_audit_protocol.md:203-211`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1606-1616, stated as standing rules under the handoff's standing-rules block - a session handoff block. Homed in the new dispatch-protocol section of the audit protocol. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1606-1616, stated as standing rules under the handoff's standing-rules block - a session handoff block. Homed in the new dispatch-protocol section of the audit protocol. ★ RATIFIED (user, 2026-08-02, the residual-pass queue). ★ THE DECIDING ACT KEPT ON THE RECOVERY PASS'S ORIGINAL EVIDENCE (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §4 (Ruling 4)): the tested document-ratification shape is not present for this entry, so the recovery pass's evidence stands exactly as it stood. A passage at `open_items/OI-266.md` line 15, carrying a user-act marker and matching the entry's own identity, reads — "| entry | the rule | ratifier and date in the record | |---|---|---| | D-249 | The whole decision surface is delivered as user-visible text before any choice question | user mandate 2026-07-05 | | D-250 | Dispatches are written only when they are next; a parked instruction is revalidated first | not stated | | D-251 | A running dispatch is never interrupted or steered mid-flight | user, 2026-07-05 | | D-252 | One side writes the instruction files and the other executes them, never the reverse | not stated | | D-253 | Working-tree files are read with the file tools; shell access is limited to git object queries by explicit hash | user mandate 2026-06-21 | | D-254 | Investigate by default; never ask the user whether to investigate or proceed | user mandate 2026-06-14 |" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-251 — A running dispatch is never interrupted or steered mid-flight; every instruction is self-sufficient
 
@@ -249,7 +249,7 @@
 
 **Home.** `cowork_audit_protocol.md:193-199`  — a decision about how the work is done, not about the system; this is its correct home.
 
-**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1630-1638, under 'STANDING RULE FOR COWORK (read every session)' at cowork_handoff.md:1628 - a session handoff block. Homed in the new dispatch-protocol section of the audit protocol, beside P5's withheld-finding rule and P8's pass ordering, which are already rules about how a dispatch is written and sequenced; that section's lead-in states that these three rules govern every dispatch and not only the audits above it. ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
+**Provenance.** Re-homed 2026-08-02 (the phase-1d enumeration wave; OPEN_ITEMS OI-266 closes on this move): formerly recorded only at cowork_handoff.md:1630-1638, under 'STANDING RULE FOR COWORK (read every session)' at cowork_handoff.md:1628 - a session handoff block. Homed in the new dispatch-protocol section of the audit protocol, beside P5's withheld-finding rule and P8's pass ordering, which are already rules about how a dispatch is written and sequenced; that section's lead-in states that these three rules govern every dispatch and not only the audits above it. ★ RATIFIED (user, 2026-08-02, the residual-pass queue). ★ THE DECIDING ACT KEPT ON THE RECOVERY PASS'S ORIGINAL EVIDENCE (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §4 (Ruling 4)): the tested document-ratification shape is not present for this entry, so the recovery pass's evidence stands exactly as it stood. A passage at `open_items/OI-266.md` line 15, carrying a user-act marker and matching the entry's own identity, reads — "| entry | the rule | ratifier and date in the record | |---|---|---| | D-249 | The whole decision surface is delivered as user-visible text before any choice question | user mandate 2026-07-05 | | D-250 | Dispatches are written only when they are next; a parked instruction is revalidated first | not stated | | D-251 | A running dispatch is never interrupted or steered mid-flight | user, 2026-07-05 | | D-252 | One side writes the instruction files and the other executes them, never the reverse | not stated | | D-253 | Working-tree files are read with the file tools; shell access is limited to git object queries by explicit hash | user mandate 2026-06-21 | | D-254 | Investigate by default; never ask the user whether to investigate or proceed | user mandate 2026-06-14 |" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-253 — Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash
 
@@ -970,23 +970,6 @@
 **Home.** `cowork_l1l4_review_charter.md:22-25`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `cowork_l1l4_review_charter.md`, the step-3 QA charter, context ratified 2026-06-26. Read in full by READ WAVE 5, 2026-08-04. Recorded in the charter's Standards block, which states the three tiers together: freely tidy, tidy only byte-identical or gated, and must not touch. ⚠ The components it names are on the LEGACY/dormant side; their retirement is the OI-180 map's business and this entry does not schedule it.
-
-### D-617 — A perfect-detection CEILING is never banked — the realized fraction is measured before the mechanism is wired into production scoring
-
-> **The risk.** The investigation's "≈91% / ~1259 regions addressable" is a **perfect-detection CEILING**
-> (hint-parity). A real note-derived cadence detector is imperfect; the **realized** fraction is bounded by
-> detection reliability, which is **unmeasured**. So this design's first obligation is to **measure realized
-> detection BEFORE wiring it into production scoring** — never bank the 91%.
-
-**In plain words.** A figure saying how much of a problem a mechanism could address if it worked perfectly is not a figure for how much it will address. The share it actually reaches depends on how reliably it fires, and that is a separate measurement, taken before the mechanism is connected to anything that decides an answer.
-
-**Why.** The reason is stated with the rule: the addressable figure was computed at hint-parity — as if detection were perfect — while real detection reliability was unmeasured, so the two quantities differ by exactly the unmeasured term. The design also names what a shortfall MEANS rather than treating it as failure: a realized fraction far below the ceiling is itself the finding, and the answer is richer detection or an escalation of the architecture question, never wiring a weak detector through.
-
-**Status.** LIVE · decided 2026-06-14 · ratifier not stated
-
-**Home.** `docs/stage4c_cadence_key_design.md:46-51`  — a decision about how the work is done, not about the system; this is its correct home.
-
-**Provenance.** `docs/stage4c_cadence_key_design.md` §1, DRAFT and ratification-gated, 2026-06-14. Read in full by READ WAVE 6, 2026-08-04. Recorded as the design's own first obligation and repeated in its §8 stop conditions. It is the measure-before-build gate (**D-279**) stated for a specific quantity, and it is the discipline the case that follows vindicated: the local key-agnostic cadence approach was later measured at its precision ceiling and falsified (**D-290**) rather than shipped on the ceiling figure. The record states no ratifier.
 
 ### D-626 — A scoring term lands together with its tuning — a dormant weight-zero term is code with no effect and no test that exercises its effect
 

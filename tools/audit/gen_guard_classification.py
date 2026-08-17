@@ -685,6 +685,39 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "SHOULD be performed. It was not: the dispatch's assumption A3 was falsified by the "
         "measurement, and what is committed is the plan and the tool, never a mutation."),
 
+    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_eighth.md Task 2 --------------------
+    # Task 2's own two tools, classified in the act that creates them — the standing practice.
+    # Every citation below was READ IN THIS SESSION, in the tool it names, with the file tools.
+    "tools/audit/decisions/apply_residue_discard.py": (
+        LIVE, "apply_residue_discard.py, the `THE STOPS` list of its module docstring; "
+              "`populations()`, which derives all four sets on every run and halts on an overlap "
+              "or on an entry the data file does not carry live; `the_arithmetic()`, which "
+              "re-reconciles the sitting's own sums; `check_applied()`, which re-quotes every "
+              "ruled keep's stamp from the artifact it came from",
+        "LIVE. Its claims are re-answered against the record AS IT STANDS on every run: the two "
+        "retirements accounting for the former population, no entry in both blocks and none in "
+        "neither, every record this act retired carrying what the ruling requires of it, and — the "
+        "half nothing else asserts — every one of the fifty-three ruled KEEPS still carrying the "
+        "deciding act recorded for it, re-derived from the check and recovery artifacts rather "
+        "than compared with a copy. A stamp removed, rewritten, or drifting from its source fails "
+        "on the day it happens. The sitting's arithmetic is re-reconciled too, and the ruling "
+        "makes a disagreement a STOP rather than an adjustment. ★ WHAT IT DOES NOT ASSERT: that "
+        "any retired entry's statement is unsound or unwanted — the ruled clause every record "
+        "carries says the opposite in terms, and the statement stands at its home."),
+    "tools/audit/gen_framework_untrusted_candidates.py": (
+        LIVE, "gen_framework_untrusted_candidates.py, THE STOPS of its module docstring; "
+              "`build()`, which re-derives the population from the three committed artifacts and "
+              "reads every published field from the decisions register on every run",
+        "LIVE. The invariant is about the record as it stands: the carried population is what the "
+        "sole-carrier guard crossed with the recovery pass and the ratified-document check "
+        "produces TODAY, and every published field is read from the decisions register — live "
+        "entry or retired record — rather than copied. So a hand edit to the list fails, an entry "
+        "revived out of the retired block moves its own row rather than leaving a stale one, and a "
+        "derived population other than the one the ruling states halts the tool instead of being "
+        "adjusted. ★ WHAT IT DOES NOT ASSERT: that any member is a decision, is authority, or is "
+        "sound. It is a list of statements whose deciding act nobody could name, published so the "
+        "framework phase's candidate enumeration meets them."),
+
     # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fourth.md Task 1 --------------------
     # Task 1's own two tools, classified in the act that creates them — the standing practice.
     # Every citation below was READ IN THIS SESSION, in the tool it names, with the file tools.

@@ -18,21 +18,7 @@
 
 **Home.** `ARCHITECTURE.md:1575`
 
-**Provenance.** ARCHITECTURE.md:1162-1173 (Layer 1 - Built+Live)
-
-### D-039 — Ineligible notes are kept and flagged, never dropped
-
-> Grace / non-playing / invisible / staff-ineligible notes are **kept and flagged, never dropped**.
-
-**In plain words.** Notes that should not drive the analysis - grace notes, hidden notes, notes on a non-musical staff - are still recorded, marked as such. Nothing is thrown away.
-
-**Why.** Stated constraint, ARCHITECTURE.md:1173, and #12: a dropped note is information lost for good, so ineligible notes are kept and flagged and each consumer decides what to do with them.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:1575`
-
-**Provenance.** ARCHITECTURE.md:1173; the standing no-information-loss principle is CLAUDE.md #12
+**Provenance.** ARCHITECTURE.md:1162-1173 (Layer 1 - Built+Live) ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `OPEN_ITEMS.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `note model` at line 208, reading — "| OI-241 | ★ A MISSING RULING (the user's to make): no GENERAL rule states which existing MuseScore code our code may depend on — only scoped forms exist | Checked rather than assumed, at the dispatch's direction. What EXISTS: D-227 (§2.8 — follow MuseScore's patterns, never invent parallel infrastructure: a rule about imitation), D-072 (§3.3 — the dependency ORDER is enforced, analysis depends on no engraving type), D-228 (§3.3 — the bridge PATTERN: shape and location of the functions that touch engraving types), D-073 (§2.10 — shared logic has one implementation), D-120 (§17.1 — coding style), D-143 (§19.4 — the future language-model module confined to the Core Access Layer, the ONE permitted-interface rule stated anywhere, scoped to a module that does not exist yet). What does NOT exist: any statement of which MuseScore interfaces the BRIDGE layer may call — whether it must go through" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-040 — The tie-unresolved atoms are republished additively for the joint estimator
 
@@ -46,31 +32,7 @@
 
 **Home.** `ARCHITECTURE.md:1575`
 
-**Provenance.** ARCHITECTURE.md:1173 records it as 'Purely additive' under the OI-180 dual-path sanction
-
-### D-520 — Widening the loaded span was built DECOUPLED from the whole-score-read fix — superseding the recorded framing that the two were one coupled change
-
-> - **The build currently reads the whole score even when only part of it is queried** — an **interim** behaviour, not
->   the target. The product is selection-based (`cowork_bounded_context_design.md`): the target is *build over the
->   selection, then extend on request*. Loading the whole score is the degenerate case (selection = score) and is what
->   keeps the batch-testing path (the offline corpus harness, `batch_analyze`) unchanged. The *extend* operation (§3) is **now built** (Phase-1a), so the whole-score
->   build no longer masks a missing capability — it only means *extend*'s interim implementation re-walks the whole score
->   rather than a span-scoped slice. The earlier framing that "fixing the whole-score build and building *extend* are one
->   coupled change" is **superseded**: *extend* was built **decoupled** (Phase-1a, whole-score re-walk, byte-identical),
->   with the span-scoped walk deferred to Phase-1b. The build-selection + extend **contract** is what every layer above
->   is written against, so the interim is invisible to them.
-
-**In plain words.** The note model still reads the whole score even when only part of it is asked about. That is interim. The operation that widens the covered music was expected to have to wait for it; it was built first instead, re-walking the whole score and filtering to the enlarged span, which produces exactly what a fresh build over that span would. The span-scoped walk is what remains.
-
-**Why.** The decoupling is justified by the equivalence rather than asserted: the interim implementation is byte-identical to a fresh build over the enlarged span, so the layers above are written against the contract and cannot see the difference. The superseded framing is recorded rather than deleted, which is what lets a reader see that the coupling claim was tested and dropped.
-
-**Status.** DEFERRED · date not stated · ratifier not stated
-
-**Home.** `cowork_layer1_note_model_design.md:230-238`  — homed in a RATIFIED CONTRACT SURFACE the owning `ARCHITECTURE.md` section points to: a proper home (the fifth home case, user-ratified 2026-08-02 at OI-268; its unit narrowed from the document to the SECTION by the user's ruling of 2026-08-03 — see *Home section* below where the entry carries one).
-
-**Home section.** **§11** — `## 11. Risks & technical debt` (heading at line 221). A delegation at ARCHITECTURE.md:1569 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**. Home class **re-classified 2026-08-03** (the one re-classification pass) from `gap` to `contract-home`; the former class is kept here rather than overwritten (#12).
-
-**Provenance.** Recorded in the as-built specification's risks section, which states plainly that the whole-score read is an interim behaviour and not the target. The bounded-context contract it is written against is `cowork_bounded_context_design.md` (**D-260**…**D-265**); the remaining half is the span-scoped walk the document names Phase-1b. Entered by the phase-1 reads WAVE 3 (dispatch `cc_instruction_reads_3.md`) from the full read of the document. NOT ratified — it enters with the record's own status and goes to the user in this wave's ratification queue.
+**Provenance.** ARCHITECTURE.md:1173 records it as 'Purely additive' under the OI-180 dual-path sanction ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `cowork_handoff.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `notatedNotes` at line 2407, reading — "`notatedNotes()` additive publication landed under both proofs, catching and fixing a latent infinite-loop on partial ties. Task C DELIVERED and verified (`8416b2c84c`, `020baca347`, pushed): the fact adapter reads only the published surface; input parity 300/326 byte-perfect with ONE mechanically-unmappable class (metric position — music21 read the xml's EDITORIAL measure bookkeeping, the production engraving model normalizes it; ~26 pathological-measure pieces; end-to-end 320/326 identity, 316/326" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-569 — Collecting, filtering and weighting are THREE separate responsibilities; the collection layer collects and annotates, and does nothing else
 
@@ -123,7 +85,7 @@
 
 **Home section.** **“§5”** — `## §5 — Proposed target design (for ratification/amendment)` (heading at line 171). Not reached: the document's delegation is graded before any section question arises. Decided by **clause (a), the fifth home case (OI-268) — this document is named in none of the three user-ratified surfaces, so no delegation exists to grade**.
 
-**Provenance.** `cowork_layer1_tone_collection_design.md`, the Layer-1 tone-collection design put to the user for sign-off. Read in full by READ WAVE 4, 2026-08-04. Recorded as the document's §6, headed in terms *it is NOT the RN oracle*. The record states no date and no ratifier for this clause. It is the layer-level statement of the standing rule that ground truth is itself an instrument (`CLAUDE.md` #21).
+**Provenance.** `cowork_layer1_tone_collection_design.md`, the Layer-1 tone-collection design put to the user for sign-off. Read in full by READ WAVE 4, 2026-08-04. Recorded as the document's §6, headed in terms *it is NOT the RN oracle*. The record states no date and no ratifier for this clause. It is the layer-level statement of the standing rule that ground truth is itself an instrument (`CLAUDE.md` #21). ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `OPEN_ITEMS.md`, and that document carries this entry's own subject recogniser the entry's own identity at line 371, reading — "| OI-333 | **The cluster-disposition layer CANNOT BE REGENERATED at HEAD** — six register patterns are invalid regular expressions, and the guard that watches that tool is structurally incapable of seeing it | Found by ATTEMPTING the regeneration (CC, READ WAVE 6, 2026-08-04), not by reading. The write mode of `tools/audit/decisions/gen_cluster_dispositions.py` terminates with an uncaught `re.PatternError: multiple repeat at position 3`, raised at `:407` where each entry's `patterns` are compiled. **The cause, enumerated at the data:** six entries carry a pattern containing UNESCAPED markdown emphasis — a literal `**`, which the compiler reads as a repeat applied to a repeat — and all six were authored by READ WAVE 5 on 2026-08-04: **D-555**, **D-570**, **D-576**, **D-577**, **D-578**, **D-581**. Every other pattern in the register escapes its emphasis or avoids it, which is what makes t" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-606 — The binding metric for the modulation detector is modulation CORRECTNESS — explicitly not the agreement percentage, which the change under test can game
 

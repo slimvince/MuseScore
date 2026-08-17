@@ -20,24 +20,7 @@
 
 **Home.** `ARCHITECTURE.md:2691`
 
-**Provenance.** ARCHITECTURE.md:1828
-
-### D-069 — Two identity modes for merged stretches - harmonic summary and as-written
-
-⚠ **LEGACY** — this decision's subject is the dormant pipeline awaiting deletion at the retirement map (marking convention user-ratified 2026-08-02; wording weakened by the user's ruling of 2026-08-03 — the mark states what the decision is ABOUT, and makes no claim about the live solution).
-
-> **Harmonic summary mode** (status bar, analysis, tuning): region identity = root pitch
-> class + quality.
-
-**In plain words.** When neighbouring stretches are merged, they count as the same chord if the root and the major/minor character match. A second mode that would also require the exact voicing to match is designed but not built.
-
-**Why.** SEARCHED 2026-08-09. The record holds NO derivation for the identity rule itself, and it DOES hold a stated ground for the deferral of the second mode plus a consequence the deferral is known to cost. **What is not recorded:** why a merged stretch's identity is root pitch class plus quality — why extensions, inversions and slash-chord bass notes are secondary metadata rather than identity keys. The home states the rule and the two modes' contents, and no alternative is recorded as considered. **What IS recorded, and is not the same thing:** the as-written mode is deferred because it *"requires a mode flag in the implode bridge and a separate merge pass"* — a cost, which is a ground for not building it yet rather than a derivation of the rule that ships. **And the deferral's price is stated with it**, which is why the entry is worth reading whole: the chord-track octave-deduplication limitation is named as *"the primary consequence of this deferral"*. Recorded as an established gap on the identity rule; nothing is invented for it.
-
-**Status.** DEFERRED · decided 2026-04-11 · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:2829-2830`
-
-**Provenance.** ARCHITECTURE.md:1962 'Region identity modes (decided 2026-04-11)'; :1734-1736 records as-written mode deferred
+**Provenance.** ARCHITECTURE.md:1828 ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `ARCHITECTURE.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `Minimum 3 distinct pitch classes` at line 2691, reading — "Minimum 3 distinct pitch classes required. Returns empty vector if insufficient data. Callers instantiate `RuleBasedChordAnalyzer{}` or hold an `IChordAnalyzer*` for dependency injection (e.g. future ML-based analyzer). #### Factory — `ChordAnalyzerFactory` (P4b)" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-103 — Pedal-point detection is a second pass, accepted only on two conditions
 
@@ -54,7 +37,7 @@
 
 **Home.** `ARCHITECTURE.md:4893-4894`
 
-**Provenance.** ARCHITECTURE.md:3882-3917 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021. SUPERSEDED BY D-207 - open_items/OI-194.md:7 records the ratified successor (user, 2026-07-26): the voice-independent pedal-point class replaces this bass-only second pass and the `isPedalPoint`/`pedalBassPc` fact it produces
+**Provenance.** ARCHITECTURE.md:3882-3917 'Status: Implemented (Session 18, master fb9a27ce9a)'. Suspended on the record arm - see D-021. SUPERSEDED BY D-207 - open_items/OI-194.md:7 records the ratified successor (user, 2026-07-26): the voice-independent pedal-point class replaces this bass-only second pass and the `isPedalPoint`/`pedalBassPc` fact it produces ★ THE DECIDING ACT KEPT ON THE RECOVERY PASS'S ORIGINAL EVIDENCE (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §4 (Ruling 4)): the tested document-ratification shape is not present for this entry, so the recovery pass's evidence stands exactly as it stood. A passage at `ARCHITECTURE.md` line 4873, carrying a user-act marker and matching the decisions register's own recogniser `Two-Pass`, reads — "**Status: Implemented (Session 18, master `fb9a27ce9a`).** **Superseded as a design by the voice-independent pedal-point class of the ornament vocabulary (§7.4, user-ratified 2026-07-26):** the two-pass detector described below can only see the lowest voice, and it retires with the legacy analysis path. The ornament class that replaces it is DEFERRED to its own increment (`OPEN_ITEMS.md` OI-194), so the two-pass detector below is still the code on the legacy arm; on the production record path the pedal fields are left empty." The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-105 — The spelling written in the score is read through ONE shared interpreter
 
@@ -69,7 +52,7 @@
 
 **Home.** `ARCHITECTURE.md:2007-2008`
 
-**Provenance.** ARCHITECTURE.md:1368-1371. ARCHITECTURE.md:1379-1383 records the unification residual: the legacy scorer still carries its own second reader until the legacy path retires
+**Provenance.** ARCHITECTURE.md:1368-1371. ARCHITECTURE.md:1379-1383 records the unification residual: the legacy scorer still carries its own second reader until the legacy path retires ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `OPEN_ITEMS.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `lineOfFifths` at line 385, reading — "| OI-347 | **The two Layer-1.5 primitives are sited in different sections of the canonical architecture document**, and only one of the two sitings states its reason | Found 2026-08-07 (CC, `cc_instruction_owner_rulings_homing.md`) discharging the STOP the homing of **D-625** carries — *STOP if the primitive is specified elsewhere*. `ARCHITECTURE.md` §3.3's terminology note names exactly two L1.5 primitives, *"the shared `lineOfFifths` spelling interpreter, the phrase-boundary primitive."* The **phrase-boundary** primitive's contract pointer sits at **Layer 1** and states its reason in full — the document defines L1.5 as the thin derived-view layer over the L1 note model and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The **spelling** primitive is named in three places and **specified in none**: the §3.3 terminology note " The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-207 — The pedal-point class is defined voice-independently, superseding the bass-only fact
 
@@ -87,139 +70,6 @@
 **Home.** `ARCHITECTURE.md:5774-5777`
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at open_items/OI-194.md:7, sharpened at the P1 pedal-point ruling, user-ratified 2026-07-26 at the consumption-audit verification (`cowork_notation_adoption_increment.md` §7 + §10). DEFERRED: it lands with the ornament-label publication, its own increment after the notation switch; until then the record arm leaves the pedal fields empty (D-021) and the 'X ped.' annotation is a declared gap. §5.12, which specifies the superseded two-pass detector, now carries a pointer to §7.4. OPEN_ITEMS OI-237 closes on this move
-
-### D-236 — Chord-symbol trust is per symbol, not a per-score preference
-
-> **Per-symbol trust, not per-score preference.** A per-score toggle is explicitly
-> rejected — too coarse-grained, since a single score may contain both trusted
-> lead-sheet-style annotations and untrusted draft symbols.
-
-**In plain words.** If written chord symbols are ever treated as authoritative input, the authority is carried by each symbol. A single switch for a whole score is rejected.
-
-**Why.** The reason is stated with the decision: one score may carry both trusted lead-sheet annotations and untrusted draft symbols, so a per-score toggle is too coarse-grained (ARCHITECTURE.md:2609-2611).
-
-**Status.** DEFERRED · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:3495-3497`
-
-**Provenance.** ARCHITECTURE.md:2587 heads the section "Future: Authoritative Chord Symbol Mode"; the current rule is that written symbols are never analyzer input (register entry D-066) ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
-
-### D-237 — Only a symbol marked trusted becomes analyzer input; an untrusted symbol is never read
-
-> **Analyzer semantics:** Only when a `Harmony` element has `trusted = true` does it
-> become boundary AND identity input for the harmonic region it opens. The analyzed
-> root and quality are taken from the written symbol, not from note-based inference.
-> Untrusted symbols remain comparison metadata only and are never read by the analysis
-> pipeline.
-
-**In plain words.** Under the planned authoritative-symbol mode, a written chord symbol opens a region and names its chord only when it is marked trusted. An untrusted symbol stays comparison metadata and the analysis never reads it.
-
-**Why.** Derivation not recorded. The record states the semantics but not the evidence or constraint that fixed them.
-
-**Status.** DEFERRED · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:3506-3510`
-
-**Provenance.** ARCHITECTURE.md:2587 (the section is headed Future); register entry D-066 records the rule in force today ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
-
-### D-238 — Two pitch classes may nominate a chord but may not finalize one; one pitch class may not
-
-> Initial rule:
-> - 2 distinct pitch classes may nominate a candidate set
-> - 2-PC evidence alone must not finalize a chord without contextual support
-> - 1-PC evidence is insufficient for independent chord resolution and may only
->   participate in continuity-preserving abstention logic
-
-**In plain words.** In the monophonic fallback, a slice with only two distinct pitch classes can propose candidates but cannot settle the chord without context; a single pitch class cannot settle one at all and may only keep an existing reading alive.
-
-**Why.** The reason is stated beside the rule: it avoids over-interpretation of isolated tones (ARCHITECTURE.md:2771-2772).
-
-**Status.** DEFERRED · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:3651-3655`
-
-**Provenance.** ARCHITECTURE.md:2735 heads the section "Phase 1b - Minimal Monophonic Fallback Without Chord Symbols"; ARCHITECTURE.md:3507-3514 records monophonic input as planned ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
-
-### D-239 — Chord identity stays local; expansion is by one neighbouring region and is bounded
-
-> **Bounded expansion in Phase 1b:**
-> Chord identity should remain local. When a local group is too weak to resolve,
-> the analyzer may expand by one neighboring region and re-score. Expansion is
-> bounded and should stop when:
-> - confidence crosses threshold
-> - top-vs-second margin crosses threshold
-> - the same winner survives repeated expansion
-> - the hard expansion cap is reached
-
-**In plain words.** When a group of notes is too weak to resolve on its own, the analyzer may take in one neighbouring region and score again. It stops as soon as confidence or the margin crosses its threshold, the winner repeats, or the expansion cap is reached.
-
-**Why.** Derivation not recorded. The stop conditions are stated; the thresholds and the cap are left to be calibrated (see register entry D-240).
-
-**Status.** DEFERRED · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:3660-3667`
-
-**Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the stop conditions are stated with the rule ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
-
-### D-240 — The monophonic smoothing terms are tunable parameters, not prose-only rules
-
-> These terms must be implemented as tunable parameters rather than prose-only
-> rules.
-
-**In plain words.** The margins and thresholds that govern the monophonic fallback's smoothing are implemented as named settings, so they can be changed and measured rather than being buried in prose.
-
-**Why.** Derivation not recorded. The record states the requirement and names the parameters it produces, but not the incident or principle that forced it.
-
-**Status.** DEFERRED · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:3677-3678`
-
-**Provenance.** ARCHITECTURE.md:2735 (the Phase 1b section heading); the named parameters are listed at :2783-2790 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
-
-### D-241 — The monophonic local-grouping problem is deferred to Phase 2
-
-> The local grouping problem is intentionally deferred to Phase 2 because it is
-> the hardest part of monophonic inference.
-
-**In plain words.** Deciding how to group a single melodic line into harmonic units is left to the later, full monophonic engine rather than attempted in the minimal fallback.
-
-**Why.** The reason is stated with the deferral: local grouping is the hardest part of monophonic inference (ARCHITECTURE.md:2821-2822).
-
-**Status.** DEFERRED · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:3707-3708`
-
-**Provenance.** ARCHITECTURE.md:2807 heads "Phase 2 - Full Monophonic Engine" ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
-
-### D-242 — Vertical and monophonic raw scores are never compared directly
-
-> The unified layer must not compare vertical and monophonic raw scores directly.
-> The two engines use different evidence models and therefore require explicit
-> confidence calibration.
-
-**In plain words.** The layer that combines the two chord engines may not put their raw numbers side by side. The two engines weigh different evidence, so their confidences must be calibrated onto a common footing first.
-
-**Why.** The reason is stated with the rule: the two engines use different evidence models (ARCHITECTURE.md:2850-2851). It is the same commensurability constraint the cross-layer confidence contract states generally (register entry D-032).
-
-**Status.** DEFERRED · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:3735-3737`
-
-**Provenance.** ARCHITECTURE.md:2824 heads "Unified Orchestration Layer", part of the provisional phased plan recorded at :3498-3503 ★ RATIFIED (user, 2026-08-02, the residual-pass queue).
 
 ### D-280 — Gates read structured fields only - never a chord symbol string and never a Roman numeral
 
@@ -285,7 +135,7 @@
 
 **Home.** `docs/scoring_model.md:1413-1417`
 
-**Provenance.** Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8, which the record itself names as the standing home for scoring dead ends — the archive it lived in is NOT part of the session-start read and is not a home for a standing decision. The archive is untouched (#12). The `ARCHITECTURE.md` chord-layer NAMING is unchanged and is now a pointer to a section that states the rule rather than to a tracking surface. FORMER HOME, PRESERVED (#12): `cowork_handoff_archive.md:4967`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Do NOT add a negative-margin guard** — would break Gate J and all other\nintentional backward-swap gates (B/C/D/E/F/G/H/I/K/L, Iter 91)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The gate letters and the iteration number stay in the archive that recorded them and are not carried into the specification (D-431). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Recorded in `cowork_handoff_archive.md` (the failure-cluster block). This is the statement the 2026-08-02 residual pass cited as its worked example of a real ruling sitting inside the unresolved residual (`open_items/OI-207.md`, the residual-pass note), now entered. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8, which the record itself names as the standing home for scoring dead ends — the archive it lived in is NOT part of the session-start read and is not a home for a standing decision. The archive is untouched (#12). The `ARCHITECTURE.md` chord-layer NAMING is unchanged and is now a pointer to a section that states the rule rather than to a tracking surface. FORMER HOME, PRESERVED (#12): `cowork_handoff_archive.md:4967`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Do NOT add a negative-margin guard** — would break Gate J and all other\nintentional backward-swap gates (B/C/D/E/F/G/H/I/K/L, Iter 91)." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The gate letters and the iteration number stay in the archive that recorded them and are not carried into the specification (D-431). ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `ARCHITECTURE.md`, and that document carries this entry's own subject recogniser the entry's own identity at line 1948, reading — "**Tried and closed on the chord layer — do not retry; the register carries each with its measurement: D-215, D-299, D-300, D-301, D-302, D-317, D-318, D-319, D-320, D-328.** **★ A REBUILT OR RE-TUNED CHORD SCORING MUST NOT RELY ON THE HELD-NOTE REPETITION BONUS THE FAITHFUL NOTE MODEL REMOVED (re-homed into this specification 2026-08-08 on the user's ruling).** Before the note reader was rebuilt, a note held across a tie was counted more than once, and that spurious extra" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-300 — Gate M (minor read as diminished) is DEFERRED and must not be retried without a new runtime signal
 
@@ -309,7 +159,7 @@
 
 **Home.** `docs/scoring_model.md:1418-1424`
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8. **The entry's own provenance is what settled the owner:** it recorded, checked and not assumed, that §8 — *"the standing home for scoring dead ends"* — did not mention this one; that gap is what has now been closed, and the sentence recording it is superseded in fact by the act it called for. The archive is untouched (#12) and the `ARCHITECTURE.md` chord-layer naming is unchanged. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:1147`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Gate M (Minor→Diminished TYPE-A): DEFERRED — do not retry.** See Iter 37 entry above.\nRequires DCML harmonic context not available at runtime." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The measured counts stay in the archive that recorded them and are not carried into the specification (D-431); the gate LETTER is likewise not carried, being an identifier of the machinery awaiting deletion rather than of the prohibition. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-37 carried-forward block and its fenced deferral record at `:1090-1106`). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8. **The entry's own provenance is what settled the owner:** it recorded, checked and not assumed, that §8 — *"the standing home for scoring dead ends"* — did not mention this one; that gap is what has now been closed, and the sentence recording it is superseded in fact by the act it called for. The archive is untouched (#12) and the `ARCHITECTURE.md` chord-layer naming is unchanged. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:1147`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Gate M (Minor→Diminished TYPE-A): DEFERRED — do not retry.** See Iter 37 entry above.\nRequires DCML harmonic context not available at runtime." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The measured counts stay in the archive that recorded them and are not carried into the specification (D-431); the gate LETTER is likewise not carried, being an identifier of the machinery awaiting deletion rather than of the prohibition. ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `ARCHITECTURE.md`, and that document carries this entry's own subject recogniser the entry's own identity at line 1948, reading — "**Tried and closed on the chord layer — do not retry; the register carries each with its measurement: D-215, D-299, D-300, D-301, D-302, D-317, D-318, D-319, D-320, D-328.** **★ A REBUILT OR RE-TUNED CHORD SCORING MUST NOT RELY ON THE HELD-NOTE REPETITION BONUS THE FAITHFUL NOTE MODEL REMOVED (re-homed into this specification 2026-08-08 on the user's ruling).** Before the note reader was rebuilt, a note held across a tie was counted more than once, and that spurious extra" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-301 — Gate N (major read as an inverted minor) is DEFERRED and must not be retried without a multi-region model
 
@@ -332,7 +182,7 @@
 
 **Home.** `docs/scoring_model.md:1425-1430`
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8, the record's own named home for scoring dead ends. The entry's *"Absent from `docs/scoring_model.md` §8 — checked"* is what identified the owner, and that absence is what this act closed. The archive is untouched (#12) and the `ARCHITECTURE.md` chord-layer naming is unchanged. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:1149`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Gate N (Major→Minor TYPE-A): DEFERRED — do not retry.** See Iter 39 entry above.\nFP:genuine = 45:1 (270:6 at threshold=0.30). Same limitation as Gate M.\nThe 6 genuine cases (vi/3 in major key) remain as unresolvable BIR=true errors." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The ratio, the threshold and the piece count stay in the archive that measured them and are not carried into the specification (D-431). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` (the Iter-39 carried-forward block and its fenced deferral record at `:1110-1131`). Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8, the record's own named home for scoring dead ends. The entry's *"Absent from `docs/scoring_model.md` §8 — checked"* is what identified the owner, and that absence is what this act closed. The archive is untouched (#12) and the `ARCHITECTURE.md` chord-layer naming is unchanged. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:1149`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Gate N (Major→Minor TYPE-A): DEFERRED — do not retry.** See Iter 39 entry above.\nFP:genuine = 45:1 (270:6 at threshold=0.30). Same limitation as Gate M.\nThe 6 genuine cases (vi/3 in major key) remain as unresolvable BIR=true errors." The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The ratio, the threshold and the piece count stay in the archive that measured them and are not carried into the specification (D-431). ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `ARCHITECTURE.md`, and that document carries this entry's own subject recogniser the entry's own identity at line 1948, reading — "**Tried and closed on the chord layer — do not retry; the register carries each with its measurement: D-215, D-299, D-300, D-301, D-302, D-317, D-318, D-319, D-320, D-328.** **★ A REBUILT OR RE-TUNED CHORD SCORING MUST NOT RELY ON THE HELD-NOTE REPETITION BONUS THE FAITHFUL NOTE MODEL REMOVED (re-homed into this specification 2026-08-08 on the user's ruling).** Before the note reader was rebuilt, a note held across a tie was counted more than once, and that spurious extra" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-302 — No further local scoring fix for inversions may be attempted — the remaining divergence is not an analyzer defect
 
@@ -358,25 +208,7 @@
 
 **Home.** `docs/scoring_model.md:1431-1439`
 
-**Provenance.** Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8, the record's own named home for scoring dead ends; the entry's *"Absent from `docs/scoring_model.md` §8"* identified the owner and that absence is what this act closed. The archive is untouched (#12) and the `ARCHITECTURE.md` chord-layer naming is unchanged. ★ THE HOMED WORDING SAYS *LOCAL* IN TERMS, because the former verbatim's first sentence — that the then-current baseline is the correct production one — is a statement about a baseline that has since been re-based twice, and carrying it into a live specification would have written a stale claim into the compliance surface. What is standing is the prohibition, and the prohibition is on the LOCAL fix. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:2779`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Current baseline is the correct production baseline. Do not attempt\nfurther local scoring fixes for inversions.**" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The percentage and the regression counts stay in the archive that measured them and are not carried into the specification (D-431). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
-
-### D-303 — Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact
-
-> **Deciding which sounding notes do not belong to the chord is DEFERRED — and when it is built, the
-> knowledge enters the chord decision itself, never a removal afterwards.** Non-chord-tone detection waits
-> for the annotated material it needs. Its shape is constrained in advance: chord identification that knows
-
-**In plain words.** Deciding which sounding notes do not belong to the chord is postponed. When it is built, the knowledge must enter the chord decision itself; removing notes from an answer after the chord has been named is ruled out.
-
-**Why.** derivation not recorded
-
-**Status.** DEFERRED · date not stated · ratifier not stated
-
-**Entry ratified.** 2026-08-02 · by user
-
-**Home.** `ARCHITECTURE.md:1963-1965`
-
-**Provenance.** Recorded in `STATUS_ARCHIVE.md`'s “architectural memos retained as guardrails” list. It is load-bearing now: the non-chord-tone filter is the named lever at [[OI-55]] and [[OI-68]], and `docs/nct_detection_design.md` exists on disk. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-02 (CC, phase 1j, executing the user's per-kind ruling on [[OI-272]]): written into the Layer-4 section of `ARCHITECTURE.md` §3.3 as a deferred capability with its shape constrained in advance. The defense stays 'derivation not recorded' — the record gives none and none was invented. Former home preserved (#12): `STATUS_ARCHIVE.md:963`, the architectural-memos list.
+**Provenance.** Recorded in `STATUS_ARCHIVE.md` as the closing statement of the “Inversion Fix — Final Conclusion” block. Found by the phase-1f final-partition wave, 2026-08-02, reading `STATUS_ARCHIVE.md` lines 119-300 and 930-3,861 in full — the file is now read in full across the phase-1e and phase-1f waves. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1f ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1f queue). ★ HOMED 2026-08-08 (CC, `cc_instruction_away_execution.md` Task 2) into `docs/scoring_model.md` §8, the record's own named home for scoring dead ends; the entry's *"Absent from `docs/scoring_model.md` §8"* identified the owner and that absence is what this act closed. The archive is untouched (#12) and the `ARCHITECTURE.md` chord-layer naming is unchanged. ★ THE HOMED WORDING SAYS *LOCAL* IN TERMS, because the former verbatim's first sentence — that the then-current baseline is the correct production one — is a statement about a baseline that has since been re-based twice, and carrying it into a live specification would have written a stale claim into the compliance surface. What is standing is the prohibition, and the prohibition is on the LOCAL fix. FORMER HOME, PRESERVED (#12): `STATUS_ARCHIVE.md:2779`. FORMER CLASS, PRESERVED (#12): `unhomed`. THE FORMER VERBATIM, PRESERVED WHOLE (#12): "**Current baseline is the correct production baseline. Do not attempt\nfurther local scoring fixes for inversions.**" The verbatim above is RE-TAKEN from the new home, read out of the file rather than transcribed. The percentage and the regression counts stay in the archive that measured them and are not carried into the specification (D-431). ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `ARCHITECTURE.md`, and that document carries this entry's own subject recogniser the entry's own identity at line 1948, reading — "**Tried and closed on the chord layer — do not retry; the register carries each with its measurement: D-215, D-299, D-300, D-301, D-302, D-317, D-318, D-319, D-320, D-328.** **★ A REBUILT OR RE-TUNED CHORD SCORING MUST NOT RELY ON THE HELD-NOTE REPETITION BONUS THE FAITHFUL NOTE MODEL REMOVED (re-homed into this specification 2026-08-08 on the user's ruling).** Before the note reader was rebuilt, a note held across a tie was counted more than once, and that spurious extra" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-312 — The carried alternative readings are inside the byte-identity acceptance contract — same winner with different alternatives is a behavior change
 
@@ -692,7 +524,7 @@ record but is not what shipped." The verbatim above is RE-TAKEN from the new hom
 
 **Home.** `docs/scoring_model.md:1207-1216`
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*; the search (at line 315 on 2026-08-03), under *"Tried and closed on the search — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `docs/decoder_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `OPEN_ITEMS.md`, and that document carries this entry's own subject recogniser the entry's own identity at line 312, reading — "| OI-272 | Fourteen standing decisions are recorded ONLY in the session-handoff ARCHIVE — a surface two governing documents declare outside the session-start read | [[OI-266]]'s class one level out (and [[OI-268]]'s sibling): reading `cowork_handoff_archive.md` IN FULL entered **D-286…D-299**, every one `nonspec_kind: "unhomed"`, raising the register's tracking-surface-only count 0 → 14. Three are SHELVINGS WITH EVIDENCE (D-286 whole-score interactive analysis — **the founding case of [[OI-207]] itself**; D-287 key-as-distribution; D-288 beam widening), one a FALSIFICATION (D-290), two standing PROHIBITIONS (D-291, D-299), four binding CONSTRAINTS (D-292 → [[OI-271]]; D-293; D-294; D-295), two scoping CORRECTIONS of other decisions (D-296 bears on the ruled D-229; D-297 scopes D-099 / principle #12), one meta-principle (D-289) and one standing method (D-298). The archive is worse than th" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched. **A LIVE specification section restates this as binding:** `ARCHITECTURE.md` — the chord layer (at line 1948 on 2026-08-03), under *"Tried and closed on the chord layer — do not retry"*; the search (at line 315 on 2026-08-03), under *"Tried and closed on the search — do not retry"*. The LEGACY mark above says this decision's SUBJECT is dormant; what is named there says the prohibition still constrains what a future design may attempt, and the two are not the same claim. Pointer only — the rule is published once, there (#6). See `OPEN_ITEMS.md` OI-302.
 
 ### D-329 — Completeness of the candidate list is the priority — a chord never listed can never be chosen
 
@@ -778,7 +610,7 @@ record but is not what shipped." The verbatim above is RE-TAKEN from the new hom
 
 **Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 559). A delegation at ARCHITECTURE.md:1946 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ THE DECIDING ACT KEPT ON THE RECOVERY PASS'S ORIGINAL EVIDENCE (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §4 (Ruling 4)): the tested document-ratification shape is not present for this entry, so the recovery pass's evidence stands exactly as it stood. A passage at `cowork_layer4_chordsymbol_design.md` line 561, carrying a user-act marker and matching the decisions register's own recogniser `never a structural branch`, reads — "- **O1 — the destination of "uncertain" (RESOLVED, user-ratified 2026-06-24).** The step that resolves a slice marked "uncertain" — selecting among the carried readings on functional/cadential evidence — **is Architectural Layer 5 (function) itself**, performed at its gated entry; there is no distinct box between the note-layers and Layer 5. The reason is structural: the only single-slice note cues that exist (spelling, bass/inversion, metric weight, local voice-leading) are all already owned by Layers 1–4, so a case separable by a note cue is Layer-4 work and a case not so separable is function — leaving no third `(evidence × question)` for a separate box. The measured residual confirms it: function-only on the chord side (pc-identical share-tone chords such as Am6↔F♯ø7) and structural on the key side (the relative-major/minor and tonicization-vs-modulation classes are note-identical, s" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-334 — The bare-fifth chord type stays in the catalogue structurally; whether it wins is an idiom-calibrated number
 
@@ -799,7 +631,7 @@ record but is not what shipped." The verbatim above is RE-TAKEN from the new hom
 
 **Home section.** **§15** — `## 15. Open items & deferred refinements` (heading at line 559). A delegation at ARCHITECTURE.md:1946 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it STATES RULES**.
 
-**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping).
+**Provenance.** Found by the phase-1g triage wave, 2026-08-02, reading `cowork_layer4_chordsymbol_design.md` IN FULL. NOT RATIFIED — entered with the record's own status and put to the user in the phase-1g ratification queue. ★ RATIFIED (user, 2026-08-02, the phase-1g queue — the ratification is of the RULE itself; home and provenance are bookkeeping). ★ THE DECIDING ACT KEPT ON THE RECOVERY PASS'S ORIGINAL EVIDENCE (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §4 (Ruling 4)): the tested document-ratification shape is not present for this entry, so the recovery pass's evidence stands exactly as it stood. A passage at `cowork_layer4_chordsymbol_design.md` line 561, carrying a user-act marker and matching the decisions register's own recogniser `never a structural per-idiom branch`, reads — "- **O1 — the destination of "uncertain" (RESOLVED, user-ratified 2026-06-24).** The step that resolves a slice marked "uncertain" — selecting among the carried readings on functional/cadential evidence — **is Architectural Layer 5 (function) itself**, performed at its gated entry; there is no distinct box between the note-layers and Layer 5. The reason is structural: the only single-slice note cues that exist (spelling, bass/inversion, metric weight, local voice-leading) are all already owned by Layers 1–4, so a case separable by a note cue is Layer-4 work and a case not so separable is function — leaving no third `(evidence × question)` for a separate box. The measured residual confirms it: function-only on the chord side (pc-identical share-tone chords such as Am6↔F♯ø7) and structural on the key side (the relative-major/minor and tonicization-vs-modulation classes are note-identical, s" The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-380 — The carry's meaningful axis is DISTINCT ROOTS, and every above-threshold root is carried at graded confidence — a carry of winner-plus-one discards the third root on about a quarter of slices
 

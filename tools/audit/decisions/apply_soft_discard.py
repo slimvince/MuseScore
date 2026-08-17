@@ -528,10 +528,28 @@ def check_applied() -> int:
     performed = plan.get(PERFORMED_STATE_KEY)
     if not performed or performed.get("state") != "APPLIED":
         raise Stop("the committed plan does not record that this act was performed")
-    if performed["the_arithmetic_of_the_act"] != {"the_live_record_before": before,
-                                                  "retired_by_this_act": len(retired),
-                                                  "the_live_record_after": len(live)}:
-        raise Stop("the committed plan's recorded arithmetic disagrees with the data file's")
+    # ★ THE PLAN'S ARITHMETIC IS ABOUT *THIS* ACT, AND THE BLOCK MAY HOLD MORE THAN ONE.
+    # This comparison formerly read the block's WHOLE retired population and the WHOLE live record
+    # back into the plan's three recorded figures — which is right while the block holds exactly one
+    # retirement and false the moment a second, separately ruled act appends to it (the residue
+    # sitting's, 2026-08-17). Re-derived after that act, `len(retired)` is every retirement's total
+    # and `len(live)` is the record after all of them, so the check reported a disagreement that is
+    # not one: the plan's figures were, and remain, a true statement about the act it planned.
+    # WHAT IS ASSERTED INSTEAD is narrower and stays true across every later retirement: the number
+    # of records in the block that THIS act retired, read off their own `retired_by` field, must be
+    # the number the plan records; the plan's before-figure must still be the block's former
+    # population; and its own two figures must be self-consistent. A plan whose arithmetic was
+    # rewritten still fails, which is what this check exists for. The block-level arithmetic — live
+    # plus retired accounting for the former population — is asserted above and is untouched.
+    mine = [r for r in block["entries"] if r.get("retired_by") == RETIRING_ACT]
+    recorded = performed["the_arithmetic_of_the_act"]
+    if (recorded.get("the_live_record_before") != before
+            or recorded.get("retired_by_this_act") != len(mine)
+            or recorded.get("the_live_record_after")
+            != recorded.get("the_live_record_before", 0) - len(mine)):
+        raise Stop("the committed plan's recorded arithmetic disagrees with the data file's: the "
+                   f"plan records {recorded}, while the block's former population is {before} and "
+                   f"{len(mine)} record(s) carry this act's own `retired_by`")
 
     locate_ruling()
     print(f"the soft-discard re-checks: {len(live)} live + {len(retired)} retired = {before} "

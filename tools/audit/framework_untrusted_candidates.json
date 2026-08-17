@@ -1,0 +1,417 @@
+{
+ "what_this_is": "THE FRAMEWORK PHASE'S UNTRUSTED CANDIDATES — the register entries the sole-carrier guard identified and the residue sitting ordered carried into the framework phase's candidate enumeration when it retired them. A member here is NOT a decision, NOT authority for anything, and carries NO provenance: that is what the retirement found. It is raw material for a later design to judge on its merits. Every field is read from a committed artifact; none is transcribed (D-431).",
+ "generator": "tools/audit/gen_framework_untrusted_candidates.py",
+ "dispatch": "cc_instruction_preparation_eighth.md, Task 2",
+ "the_rulings_that_ordered_the_carry": {
+  "source": "cowork_rulings_2026_08_17_residue_sitting.md",
+  "Ruling_1": "All 29 ride the soft-discard, and each is carried into the framework phase's candidate enumeration as an UNTRUSTED CANDIDATE, never as a decision.",
+  "Ruling_3": "The sole-carrier guard applies as it applied before: the one `deferred` member, D-069, is carried into the framework phase's candidate enumeration as an untrusted candidate exactly as Ruling 1 carries the 29 (making the carried candidate population 30, derived — not typed — at execution)."
+ },
+ "★_why_this_class_exists_at_all": "The sole-carrier guard was proposed and accepted at the soft-discard sitting to answer the user's own question — whether the discard risks losing a genuinely good idea that should have been used as input when designing or building the inferrers. The three structural nets named in the answer (the disposition discipline over every specification statement, the audit's something-missing verdict, the fact-gate) miss exactly ONE class: an idea whose SOLE CARRIER is the register entry, typically a deferred proposal that was never implemented. This file is that class.",
+ "★_how_the_population_is_derived_rather_than_listed": {
+  "Ruling_1's_29": "the entries the deciding-act recovery pass returned NOTHING-FOUND for that the sole-carrier guard also marks SOLE-CARRIER",
+  "Ruling_3's_carry": "the sole-carrier member among the ratified-document check's SUBJECT-NOT-FOUND-THERE entries",
+  "the_entry_fields": "read from the decisions register's own data file, LIVE or RETIRED — which is what makes this file re-derive identically before and after the retirement that made them candidates",
+  "the_STOP": "a derived population other than 30 halts this tool rather than being adjusted, and a hand edit to the artifact fails `--check` on the next run"
+ },
+ "★_what_a_member_of_this_list_is_NOT": "It is not a decision, not authority, and not a finding that the statement is good. The retirement that produced it is a PROVENANCE verdict — 'not a judgment on soundness or usefulness; the statement stands at its home and is met by the derivation' — so a framework-phase reader judges each on its merits and cites the home document, never this file, if any of it is adopted.",
+ "the_population": {
+  "carried_by_Ruling_1": 29,
+  "carried_by_Ruling_3": 1,
+  "the_total": 30,
+  "the_total_the_ruling_states": 30,
+  "it_reconciles": true
+ },
+ "the_candidates": [
+  {
+   "id": "D-054",
+   "the_title_the_register_gives_it": "All 21 modes are scored against all 12 tonics; the harmonic major family is deferred",
+   "the_restatement_the_register_gives_it": "The key finder considers 21 scale types on each of the 12 possible tonics. The harmonic major family was left out because it is rare and we have no annotated music to calibrate it against.",
+   "the_home_the_register_records": "ARCHITECTURE.md:3323-3325",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-136",
+   "the_title_the_register_gives_it": "The inference demo view is a developer tool and is not shipped",
+   "the_restatement_the_register_gives_it": "The step-by-step view of the analysis making its decisions exists so a developer can watch and judge it by eye and ear. It is not part of what a user gets.",
+   "the_home_the_register_records": "ARCHITECTURE.md:6021",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-137",
+   "the_title_the_register_gives_it": "The harmony maps are our own visual design, and are chosen partly to avoid intellectual-property claims",
+   "the_restatement_the_register_gives_it": "The planned map of harmonic function draws on published chord-scale theory but is laid out our own way, not copied from the commercial product that inspired it.",
+   "the_home_the_register_records": "ARCHITECTURE.md:6180",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-138",
+   "the_title_the_register_gives_it": "Chord preview uses MuseScore's note-input pathway, not the playback pipeline",
+   "the_restatement_the_register_gives_it": "Clicking a chord on a harmony map plays it through the same quick path MuseScore uses when you hear a note as you enter it, not through full score playback.",
+   "the_home_the_register_records": "ARCHITECTURE.md:6211",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-139",
+   "the_title_the_register_gives_it": "The language model holds no object references - every tool call carries its own musical address",
+   "the_restatement_the_register_gives_it": "When a language model asks the program to do something, it names the place in the music each time. It never holds a handle to an object in the score.",
+   "the_home_the_register_records": "ARCHITECTURE.md:8118",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-140",
+   "the_title_the_register_gives_it": "The language model is a search agent and is never given the whole score",
+   "the_restatement_the_register_gives_it": "Rather than being handed the entire score, the language model is given tools to find what it needs and fetches it piece by piece - the way a person reads a large document by searching it.",
+   "the_home_the_register_records": "ARCHITECTURE.md:8123",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-141",
+   "the_title_the_register_gives_it": "The language model sees what the user set, not what the engraving engine derived",
+   "the_restatement_the_register_gives_it": "The model is shown the composer's own choices - pitches, dynamics, articulation, colour, lyrics, visibility - and not the results of laying the music out, such as positions, beam geometry or stem lengths.",
+   "the_home_the_register_records": "ARCHITECTURE.md:8129",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-142",
+   "the_title_the_register_gives_it": "The composing module is the language model's context provider; the model never re-derives harmony",
+   "the_restatement_the_register_gives_it": "Every stretch of music sent to a language model arrives with our harmonic analysis already attached - chord symbols, Roman numerals, key, harmonic rhythm. The model reads that; it does not work the harmony out from the notes itself.",
+   "the_home_the_register_records": "ARCHITECTURE.md:8142",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-143",
+   "the_title_the_register_gives_it": "The language-model bridge is built as a module but confined to the core access layer, so it can become a plugin",
+   "the_restatement_the_register_gives_it": "It is written inside the program for speed of development, but restricted to the same narrow interface a plugin would have, so that moving it out to a plugin later is straightforward.",
+   "the_home_the_register_records": "ARCHITECTURE.md:8163",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-154",
+   "the_title_the_register_gives_it": "New panels use MuseScore's own panel and interface infrastructure",
+   "the_restatement_the_register_gives_it": "Any new panel is built with the same window-docking and interface technology MuseScore already uses, after reading how MuseScore's existing panels are built. No parallel machinery is created.",
+   "the_home_the_register_records": "ARCHITECTURE.md:7485",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-158",
+   "the_title_the_register_gives_it": "Our data lives in separate files inside the score archive; the score file is never touched",
+   "the_restatement_the_register_gives_it": "Constraints, branches, cached analysis and preferences travel with the score as extra files inside its archive, beside the standard MuseScore score file, which our code never modifies.",
+   "the_home_the_register_records": "ARCHITECTURE.md:7603",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-159",
+   "the_title_the_register_gives_it": "Every custom file carries a format version, and the score file is never rewritten by our persistence",
+   "the_restatement_the_register_gives_it": "Each of our own files records which version of its format it is, so older files can be migrated when the format changes; the standard MuseScore score file inside the archive is never rewritten by us.",
+   "the_home_the_register_records": "ARCHITECTURE.md:7623",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-160",
+   "the_title_the_register_gives_it": "Arranger interactions are logged from the start, with consent, as future training data",
+   "the_restatement_the_register_gives_it": "Every suggestion a user accepts, changes or rejects is recorded - with their consent - as a labelled example for future machine learning.",
+   "the_home_the_register_records": "ARCHITECTURE.md:7666",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-161",
+   "the_title_the_register_gives_it": "Chord symbols already in a score are a second analyst's opinion, not ground truth",
+   "the_restatement_the_register_gives_it": "When the automated review meets a score that already carries chord symbols, it treats them as another analyst's reading. Disagreements are discussed, not scored as our errors.",
+   "the_home_the_register_records": "ARCHITECTURE.md:7698",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-236",
+   "the_title_the_register_gives_it": "Chord-symbol trust is per symbol, not a per-score preference",
+   "the_restatement_the_register_gives_it": "If written chord symbols are ever treated as authoritative input, the authority is carried by each symbol. A single switch for a whole score is rejected.",
+   "the_home_the_register_records": "ARCHITECTURE.md:3495-3497",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-237",
+   "the_title_the_register_gives_it": "Only a symbol marked trusted becomes analyzer input; an untrusted symbol is never read",
+   "the_restatement_the_register_gives_it": "Under the planned authoritative-symbol mode, a written chord symbol opens a region and names its chord only when it is marked trusted. An untrusted symbol stays comparison metadata and the analysis never reads it.",
+   "the_home_the_register_records": "ARCHITECTURE.md:3506-3510",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-238",
+   "the_title_the_register_gives_it": "Two pitch classes may nominate a chord but may not finalize one; one pitch class may not",
+   "the_restatement_the_register_gives_it": "In the monophonic fallback, a slice with only two distinct pitch classes can propose candidates but cannot settle the chord without context; a single pitch class cannot settle one at all and may only keep an existing reading alive.",
+   "the_home_the_register_records": "ARCHITECTURE.md:3651-3655",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-239",
+   "the_title_the_register_gives_it": "Chord identity stays local; expansion is by one neighbouring region and is bounded",
+   "the_restatement_the_register_gives_it": "When a group of notes is too weak to resolve on its own, the analyzer may take in one neighbouring region and score again. It stops as soon as confidence or the margin crosses its threshold, the winner repeats, or the expansion cap is reached.",
+   "the_home_the_register_records": "ARCHITECTURE.md:3660-3667",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-240",
+   "the_title_the_register_gives_it": "The monophonic smoothing terms are tunable parameters, not prose-only rules",
+   "the_restatement_the_register_gives_it": "The margins and thresholds that govern the monophonic fallback's smoothing are implemented as named settings, so they can be changed and measured rather than being buried in prose.",
+   "the_home_the_register_records": "ARCHITECTURE.md:3677-3678",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-241",
+   "the_title_the_register_gives_it": "The monophonic local-grouping problem is deferred to Phase 2",
+   "the_restatement_the_register_gives_it": "Deciding how to group a single melodic line into harmonic units is left to the later, full monophonic engine rather than attempted in the minimal fallback.",
+   "the_home_the_register_records": "ARCHITECTURE.md:3707-3708",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-242",
+   "the_title_the_register_gives_it": "Vertical and monophonic raw scores are never compared directly",
+   "the_restatement_the_register_gives_it": "The layer that combines the two chord engines may not put their raw numbers side by side. The two engines weigh different evidence, so their confidences must be calibrated onto a common footing first.",
+   "the_home_the_register_records": "ARCHITECTURE.md:3735-3737",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-244",
+   "the_title_the_register_gives_it": "Choosing an interval family for an ambiguous sonority is deferred; fixed tables are used",
+   "the_restatement_the_register_gives_it": "When more than one pure interval could be targeted - a 5-limit minor seventh against a septimal one, and the same choice for tritones, minor and altered sonorities - the tuning systems keep their fixed lookup tables. A style-aware choice is left for later.",
+   "the_home_the_register_records": "ARCHITECTURE.md:6354-6363",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-245",
+   "the_title_the_register_gives_it": "Voice role comes from staff position or explicit assignment; automatic melody detection is deferred",
+   "the_restatement_the_register_gives_it": "Which voice counts as the melody is taken from where it sits in the score or from what the user says. Working it out automatically is left for later, as is a per-staff override.",
+   "the_home_the_register_records": "ARCHITECTURE.md:6477-6479",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-246",
+   "the_title_the_register_gives_it": "Fixed-pitch instruments are deferred, and will never receive tuning offsets",
+   "the_restatement_the_register_gives_it": "Piano, organ and fretted guitar are not handled yet. When they are, they will be the fixed reference other instruments tune to, and will not be retuned themselves.",
+   "the_home_the_register_records": "ARCHITECTURE.md:6578-6580",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-303",
+   "the_title_the_register_gives_it": "Non-chord-tone detection is deferred, and if built it must be chord identification that knows about non-chord tones, never stripping after the fact",
+   "the_restatement_the_register_gives_it": "Deciding which sounding notes do not belong to the chord is postponed. When it is built, the knowledge must enter the chord decision itself; removing notes from an answer after the chord has been named is ruled out.",
+   "the_home_the_register_records": "ARCHITECTURE.md:1963-1965",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-342",
+   "the_title_the_register_gives_it": "Putting the function layer into production is DEFERRED INDEFINITELY — the posture is a dormant build with ground-truth validation",
+   "the_restatement_the_register_gives_it": "Switching the function layer on in the product is not scheduled. It is built and checked against published human analyses, and stays inactive; the conditions written for a switch apply if one is ever made, and are not outstanding work. THIS IS NOT THE INFERENCE-ENGINE SWITCH - that happened (D-010): the joint estimator is production and the legacy pipeline is dormant. This entry concerns the separate Layer-5 function-annotation module, built and validated but never in production in either era. Its concerns are handled by the LIVE implementation natively or by schedule: degree-in-key Roman numerals are the estimator's own state; key changes are decided inside the decode; applied-chord labels are emitted by the live renderer (the D-248/OI-267 revisit covers the remainder); cadence is a fitted factor inside the model and a marker on the presentation surface; carried-abstention resolution is obviated by the full-posterior publication (D-006); the ornament labels are the ratified OI-194 increment; and the complete concern-by-concern mapping of the legacy layer's remaining scope is the OI-259 phase-3 re-disposition.",
+   "the_home_the_register_records": "cowork_layer5_function_design.md:705-707",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-358",
+   "the_title_the_register_gives_it": "A sonority shaped like a dominant is note-level evidence for the tonality it implies, and belongs in the key/mode emission — deferred, design-first",
+   "the_restatement_the_register_gives_it": "As built, the per-stretch tonality score asks only how well the sounding notes fit each candidate's scale, and carries nothing about the shape of the sonority. But a chord shaped like a dominant seventh or a leading-note seventh points at one major and one minor tonic, and that is readable from the notes alone, before any chord is named — so it belongs in the tonality stage without breaking the evidence split. It is deferred, to be designed and measured before it is wired, and the measurement must include what it costs on passages of constant tonality, not only what it gains on passages that change.",
+   "the_home_the_register_records": "cowork_layer3_keymode_design.md:523-536",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-520",
+   "the_title_the_register_gives_it": "Widening the loaded span was built DECOUPLED from the whole-score-read fix — superseding the recorded framing that the two were one coupled change",
+   "the_restatement_the_register_gives_it": "The note model still reads the whole score even when only part of it is asked about. That is interim. The operation that widens the covered music was expected to have to wait for it; it was built first instead, re-walking the whole score and filtering to the enlarged span, which produces exactly what a fresh build over that span would. The span-scoped walk is what remains.",
+   "the_home_the_register_records": "cowork_layer1_note_model_design.md:230-238",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-523",
+   "the_title_the_register_gives_it": "If the algorithmic second opinion's LOCAL key is ever adopted it enters UNVALIDATED, and adopting it is a corroborator re-baseline under user ratification — not a refresh",
+   "the_restatement_the_register_gives_it": "Whether to consult the second-opinion library for a local, moving key rather than only a single key for the whole piece is left open. If it is ever taken up, the field arrives explicitly unvalidated and no consumer may lean on it until it is established. Turning it on changes the committed second-opinion files, so it is a deliberate re-baseline the user ratifies.",
+   "the_home_the_register_records": "cowork_evidence_inventory.md:241-248",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 1 of cowork_rulings_2026_08_17_residue_sitting.md — one of the 29 withheld sole-carriers",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  },
+  {
+   "id": "D-069",
+   "the_title_the_register_gives_it": "Two identity modes for merged stretches - harmonic summary and as-written",
+   "the_restatement_the_register_gives_it": "When neighbouring stretches are merged, they count as the same chord if the root and the major/minor character match. A second mode that would also require the exact voicing to match is designed but not built.",
+   "the_home_the_register_records": "ARCHITECTURE.md:2829-2830",
+   "the_status_the_register_records": "deferred",
+   "where_the_register_holds_it_now": "retired from the decisions register",
+   "carried_by": "Ruling 3 of cowork_rulings_2026_08_17_residue_sitting.md — the sole-carrier member among the nine SUBJECT-NOT-FOUND-THERE entries, carried exactly as Ruling 1 carries the 29",
+   "why_the_guard_marked_it_a_sole_carrier": "at least one of the three signals fired, so this entry may be the only place its content is carried; it is WITHHELD from the discard and returns to the user",
+   "the_signals_that_fired": [
+    "(i) the recorded status is DEFERRED"
+   ]
+  }
+ ]
+}

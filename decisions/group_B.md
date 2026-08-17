@@ -49,21 +49,7 @@
 
 **Home.** `ARCHITECTURE.md:126-127`
 
-**Provenance.** Recorded as specification, no ratification named. Conflicts with D-030 (bounded context) - see OPEN_ITEMS OI-210 (the extent question) and OI-212 (the whole-score analysis input); the no-caching half is OI-203 (the deferred record cache) and OI-213 (the per-command multiplier)
-
-### D-012 — Failure is unambiguous - never a partial record, never a silent fallback
-
-> never a partial record, never a silent fallback (#13).
-
-**In plain words.** If the analysis cannot be produced, the program says so and returns nothing. It never returns half an answer or quietly falls back to the old method.
-
-**Why.** Stated constraint, ARCHITECTURE.md:122 - #13, a surprise is surfaced as a stop rather than built around: a partial record or a silent fallback would hide the failure from the caller.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:129`
-
-**Provenance.** ARCHITECTURE.md:121-122; restated at :205-206 for the note seam
+**Provenance.** Recorded as specification, no ratification named. Conflicts with D-030 (bounded context) - see OPEN_ITEMS OI-210 (the extent question) and OI-212 (the whole-score analysis input); the no-caching half is OI-203 (the deferred record cache) and OI-213 (the per-command multiplier) ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `OPEN_ITEMS.md`, and that document carries this entry's own subject recogniser the entry's own identity at line 205, reading — "| OI-238 | §5.13's analyze-at-tick path table predates the record arm: it asserts "no path-selection flag" while a flag selects between two arms, and its entry-point list describes the arm that is not running | `ARCHITECTURE.md:3688-3690` states "no path-selection flag"; `notationcomposingbridge.cpp:728-738` branches on `useJointNotationRecord` (default ON, `composingconfiguration.cpp:178`) and returns from the record arm before any legacy code. Sharper consequence: the table's `analyzeHarmonicRhythm(score, start, end, …)` row is the only place a reader is told an analyze-at-tick path takes a TIME RANGE — on the record arm no such narrowing exists (D-011), which is the [[OI-212]] input-scope question arriving on the note seam through a stale table. Third item the table should record: D-063's revisit trigger was never discharged AND the P4 fallback is now unreachable from the production f" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-013 — Which staves feed the analysis is decided at the fact adapter, not by a later filter
 
@@ -79,7 +65,7 @@
 
 **Home.** `ARCHITECTURE.md:131-133`
 
-**Provenance.** open_items/OI-204 (RESOLVED 2026-07-27); confirmed at jointnotationproducer.h:72-73
+**Provenance.** open_items/OI-204 (RESOLVED 2026-07-27); confirmed at jointnotationproducer.h:72-73 ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `OPEN_ITEMS.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `excludeStaves` at line 168, reading — "| OI-212 | The record producer analyzes the WHOLE SCORE regardless of the requested span | `produceNotationRecord(score, stem, excludeStaves)` takes NO tick range; all four record-arm seams (annotation emit `notationcomposingbridge.cpp:1495`, implode `:1420`, tuning `:777`, note-seam `:732`) analyze the entire score and narrow by view AFTERWARD, while every legacy arm passed the actual span into `analyzeHarmonicRhythm` (+~8-bar RN lookahead). Both a cost multiplier on every seam AND a silent analysis-INPUT-SCOPE change made without a ruling; the contract's span seam specifies the opposite. The layer-correct fix (if the extent ruling calls for it) is a span input at the producer/adapter (input-scoping, NOT inference — the OI-204 pattern for the temporal axis). | composing / the record producer's input surface | OPEN — the cost side quantified by the analysis-cost phase profile; the scope-" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-014 — The two seams read the record as pure views - no recomputation
 
@@ -93,22 +79,7 @@
 
 **Home.** `ARCHITECTURE.md:137`
 
-**Provenance.** ARCHITECTURE.md:130-136; confirmed at jointnotationproducer.h:86-90
-
-### D-015 — A boundary tick belongs to the segment it starts
-
-> a boundary
-> tick belongs to the segment it STARTS
-
-**In plain words.** When a moment is exactly where one chord ends and the next begins, it counts as belonging to the new chord.
-
-**Why.** SEARCHED 2026-08-09 and the record holds NO DERIVATION — an established gap, not an unexamined field. The convention is stated as a DEFINITION at its home and at `ARCHITECTURE.md:132-134`: no alternative is considered, no reason is given, and no measurement or citation is attached anywhere the search reached. It is one of the founding instances `CLAUDE.md`'s carry-its-defense rule names in its own text. The gap is stated rather than filled: a boundary convention of this shape has obvious pragmatic grounds a session could invent, and inventing one is what the never-work-from-memory rule forbids.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:140-141`
-
-**Provenance.** ARCHITECTURE.md:132-134. Derivation not recorded: the convention is stated as a definition, with no alternative considered and no reason given
+**Provenance.** ARCHITECTURE.md:130-136; confirmed at jointnotationproducer.h:86-90 ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `cowork_handoff.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `noteView` at line 2033, reading — "chorale → ~27 s sonata); memoized `noteView` sub-microsecond — the ~10⁷–10⁸× gap that is the cache design's bound. The marginals oracle PASSES on all 326 (fwd==bwd 8.5e-14; max-plus == decoder Δ=0; fit-arc logZ tie Δ=0; normalization 5.6e-16; synthetic hand-trace 3.3e-16; MAP-consistency positive) — OI-193's publication gate is established; Tasks 3–4 (C++ + record fields) partitioned to a follow-up. **Cowork's logsumexp ruling (dated amendment on" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-019 — The record arm publishes the raw key-axis gap, with no remapping to 0..1
 
@@ -123,7 +94,7 @@
 
 **Home.** `ARCHITECTURE.md:212-213`
 
-**Provenance.** ARCHITECTURE.md:176-177 and :198-199; confirmed at sectionrecordadapter.cpp:293. CONFLICTS with the ratified confidence contract rule U2 (D-032) and with the declared range of the field it is written into (keymodeanalyzer.h:111) - see OPEN_ITEMS OI-231
+**Provenance.** ARCHITECTURE.md:176-177 and :198-199; confirmed at sectionrecordadapter.cpp:293. CONFLICTS with the ratified confidence contract rule U2 (D-032) and with the declared range of the field it is written into (keymodeanalyzer.h:111) - see OPEN_ITEMS OI-231 ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `OPEN_ITEMS.md`, and that document carries this entry's own subject recogniser the entry's own identity at line 190, reading — "| OI-231 | ★ NON-CONFORMANCE: the production notation path publishes an UNBOUNDED score gap (nats) in a field whose declared contract is [0,1] — against the ratified cross-layer confidence contract | The confidence contract is RATIFIED (user 2026-07-02, `cowork_confidence_contract.md:3`) and its rule U2 (`:39-40`) requires every confidence crossing a layer boundary to be `[0,1]`, class-declared, decision-named; U4 forbids silent re-interpretation downstream. The record arm writes the raw §3.3 key-axis gap straight into `KeyModeAnalysisResult::normalizedConfidence` (`sectionrecordadapter.cpp:293`), a field whose own type header (`keymodeanalyzer.h:111`) and the canonical architecture document (`ARCHITECTURE.md:2224`) both declare `[0,1]`, and carries it across the module boundary as `NoteHarmonicContext::keyConfidence`. NOT a live defect — the one in-tree consumer reads the STORED `hasAss" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-020 — The interactive path bypasses the old window cache and has none of its own
 
@@ -139,7 +110,7 @@
 
 **Home.** `ARCHITECTURE.md:220-222`
 
-**Provenance.** open_items/OI-203 (OPEN, priority raised post-switch); open_items/OI-206
+**Provenance.** open_items/OI-203 (OPEN, priority raised post-switch); open_items/OI-206 ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `cc_instruction_notation_switch.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `OI-203` at line 81, reading — "(this commit), half (b) open; `open_items/OI-203.md` dated note — the latency is now on the DEFAULT path, the cache increment's priority rises. INDEX rows only where status actually changes. 6. **Commit + push origin only.** Message: `THE NOTATION SWITCH: the record path is the production notation analysis (user-ratified 2026-07-27) — flag default ON; goldens" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-021 — The pedal-point fields are suspended on the record arm
 

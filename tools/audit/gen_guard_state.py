@@ -396,6 +396,33 @@ AUTHORED = [
      "and every retired record carrying its finding, its date, its retiring authority and the ruled "
      "clause verbatim — the four the ruling requires of every record"),
 
+    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_eighth.md Task 2 -------------------
+    # THE RESIDUE SITTING'S DISCARDS, CARRIES AND KEEPS, registered in the act that creates the
+    # tool — the standing new-tool rule. Both take `--check` and never the bare invocation, for the
+    # ordinary reason: run with no flag each REWRITES its committed artifact; and the first never
+    # takes `--apply`, which is the act itself.
+    ("tools/audit/decisions/apply_residue_discard.py", ["--check"],
+     "the residue sitting's applied state re-checks: the two retirements accounting for the whole "
+     "former population BY ARITHMETIC, no entry in both blocks and none in neither, every record "
+     "THIS act retired carrying its finding, its date, its retiring authority, the ruling that "
+     "retired it and the ruled clause verbatim, and every one of the fifty-three ruled KEEPS still "
+     "carrying the deciding act recorded for it — re-quoted on every run from the artifact it was "
+     "taken from, so a stamp removed or rewritten fails on the day it happens. THE SITTING'S OWN "
+     "ARITHMETIC IS RE-RECONCILED against the record as it stands, and the ruling makes that a "
+     "STOP rather than an adjustment in its own words. Every population is DERIVED on every run "
+     "and never listed: the 29 from the sole-carrier guard crossed with the recovery pass, the 9, "
+     "the 47 and the 6 from the ratified-document check's own per-entry result, and the one "
+     "candidate carried from the nine as the sole-carrier member among them — any other number "
+     "halting it"),
+    ("tools/audit/gen_framework_untrusted_candidates.py", ["--check"],
+     "the framework phase's untrusted-candidate carry still re-derives — the 29 the sole-carrier "
+     "guard withheld plus the one member carried from the nine, each with the title, restatement, "
+     "recorded home and status the decisions register gives it, read from that register whether "
+     "the entry is live or retired. A hand edit to the published list fails on the next run, which "
+     "is what makes the carry a derivation rather than a transcription. ★ WHAT IT DOES NOT ASSERT: "
+     "that any member is a decision, is authority, or is sound — the retirement that produced the "
+     "list is a PROVENANCE verdict, which the artifact states of itself"),
+
     # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fourth.md Task 1 -------------------
     # Both tools are added by this dispatch's own Task 1 and registered in the act that creates
     # them, rather than reaching a later pass's derived population unclassified — the standing

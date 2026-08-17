@@ -375,17 +375,6 @@ FORMS: dict[str, tuple[str, str, str, str]] = {
 
     "cowork_census_full_needs_audit.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
-    "cowork_layer1_note_model_design.md": (
-        CLAUSE, "ARCHITECTURE.md",
-        "The ratified contract for this layer is `cowork_layer1_note_model_design.md`",
-        "★ MOVED 2026-08-04 (READ WAVE 5, ruling R4): THE USER WROTE THE DELEGATION. It is the "
-        "bar's first named form, word for word, in the Layer-1 section — the same wording the "
-        "Layer-3/4/5 sections already carry. The former grade, preserved (#12): NOT_NAMED — "
-        "'Named in none of the three surfaces; verified mechanically here. ★ THE DOC-GOVERNANCE "
-        "GLOB `cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING (user, "
-        "2026-08-04, OI-326 ruling R1; `CLAUDE.md` rule (k), **D-546**), so the grade stands "
-        "and the document is on the OI-293 write list instead.' That is R2 working exactly as "
-        "ruled: a delegation the user writes settles the document without touching the bar."),
     "cowork_sensitive_cell_probe.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
     "docs/iter92_joint_bass_chord_scoring.md": (
@@ -524,7 +513,37 @@ RETIRED_2026_08_16_THE_SOFT_DISCARD = (
     "in both directions."
 )
 
+RETIRED_2026_08_17_THE_RESIDUE_DISCARD = (
+    "CC, dispatch `cc_instruction_preparation_eighth.md` Task 2, executing the user's rulings of "
+    "2026-08-17 (`cowork_rulings_2026_08_17_residue_sitting.md`, Rulings 1 and 3 -- the 29 "
+    "withheld sole-carriers and the 9 SUBJECT-NOT-FOUND-THERE entries), under the same §6 kind-2 "
+    "treatment of 2026-08-16. ONE document: `cowork_layer1_note_model_design.md`. It is emptied "
+    "NOT by a re-homing but by that second SOFT-DISCARD: every register entry it homed has now "
+    "been retired out of the live record into the data file's retired-entries block -- retired, "
+    "never destroyed (#12), and individually revivable. This tool STOPPED on its grade as a FORM "
+    "judgment for a document that is nobody's home, which is that guard working. The grade is "
+    "moved unchanged and is neither re-read nor re-graded -- note that it records the user's own "
+    "2026-08-04 delegation, which is exactly why it is preserved rather than dropped; the "
+    "document's own text is untouched, and every retired entry's statement still stands at it -- "
+    "a provenance verdict, not a judgment on soundness or usefulness. Membership is DERIVED, "
+    "never authored: `gen_retired_subject_moves.py` derives it from the retired block and "
+    "re-verifies this table in both directions."
+)
+
 RETIRED_FORMS: dict[str, tuple[str, str, str, str]] = {
+    # retired 2026-08-17, the residue discard (see RETIRED_2026_08_17_THE_RESIDUE_DISCARD)
+    "cowork_layer1_note_model_design.md": (
+        CLAUSE, "ARCHITECTURE.md",
+        "The ratified contract for this layer is `cowork_layer1_note_model_design.md`",
+        "★ MOVED 2026-08-04 (READ WAVE 5, ruling R4): THE USER WROTE THE DELEGATION. It is the "
+        "bar's first named form, word for word, in the Layer-1 section — the same wording the "
+        "Layer-3/4/5 sections already carry. The former grade, preserved (#12): NOT_NAMED — "
+        "'Named in none of the three surfaces; verified mechanically here. ★ THE DOC-GOVERNANCE "
+        "GLOB `cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING (user, "
+        "2026-08-04, OI-326 ruling R1; `CLAUDE.md` rule (k), **D-546**), so the grade stands "
+        "and the document is on the OI-293 write list instead.' That is R2 working exactly as "
+        "ruled: a delegation the user writes settles the document without touching the bar."),
+
     # retired 2026-08-16, the ruled soft-discard (see RETIRED_2026_08_16_THE_SOFT_DISCARD)
     "cowork_types_header_design.md": (
         NOT_NAMED, "", "", "Named in none of the three surfaces; verified mechanically here."),
@@ -1009,6 +1028,7 @@ def main() -> int:
             "retired_2026_08_09_the_eighth_return_continuation":
                 RETIRED_2026_08_09_EIGHTH_RETURN,
             "retired_2026_08_16_the_ruled_soft_discard": RETIRED_2026_08_16_THE_SOFT_DISCARD,
+            "retired_2026_08_17_the_residue_discard": RETIRED_2026_08_17_THE_RESIDUE_DISCARD,
             "membership_is_derived": "tools/audit/decisions/gen_retired_subject_moves.py derives "
                                      "which judgments belong here from the decisions register's "
                                      "own retired block and re-verifies this table in both "

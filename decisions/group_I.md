@@ -6,22 +6,6 @@
 > generator is `tools/audit/decisions/gen_decisions_register.py`. To change an
 > entry, edit the data and regenerate.
 
-### D-070 — Style behaviour is fully data-driven - no conditional logic on style identity
-
-> The C++ implementation contains no conditional logic based on style identity. All
-> behavioral differences between musical styles are expressed as parameter values in
-> style JSON files.
-
-**In plain words.** Nowhere does the code ask 'is this jazz?'. Differences between styles are numbers in a settings file.
-
-**Why.** Stated constraint, ARCHITECTURE.md:440-442 with the worked wrong/correct pair at :392-402: if behaviour branched on a style's identity, adding or renaming a style would require C++ changes; driving it from parameters means it never does.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:690-692`
-
-**Provenance.** ARCHITECTURE.md:433-436 states the §2 principles are 'hard constraints, not guidelines'; restated at §2.4 :435-438
-
 ### D-072 — The dependency rule - the analysis library knows nothing about the score format
 
 > This dependency order is **enforced**. Any code that would invert it (e.g. a composing header forward-declaring `mu::engraving::Note`) must be moved to the notation bridge layer.
@@ -50,7 +34,7 @@
 
 **Home.** `ARCHITECTURE.md:803-805`
 
-**Provenance.** ARCHITECTURE.md:534-567; the standing project-wide form is CLAUDE.md #6 (total unification)
+**Provenance.** ARCHITECTURE.md:534-567; the standing project-wide form is CLAUDE.md #6 (total unification) ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `cowork_l1l3_stabilization_plan.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `total unification` at line 9, reading — "design precedes each non-trivial step); total unification (one path per concern); byte-identity guards where a step must not move output; the two-tier BIR gate + both test suites + pinned snapshots as the standing safety net. Each step below becomes its **own** gated Claude-Code instruction when we reach it — this document is the **sequence and the gates**, not the build instructions." The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-107 — American English throughout
 
@@ -64,7 +48,7 @@
 
 **Home.** `ARCHITECTURE.md:761`  — a project-wide convention with no owning layer; this is its correct home.
 
-**Provenance.** ARCHITECTURE.md:492-502; restated in CLAUDE.md Conventions
+**Provenance.** ARCHITECTURE.md:492-502; restated in CLAUDE.md Conventions ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `cowork_rulings_2026_08_11_fourteenth_stop.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `behaviour` at line 30, reading — "behaviours across five siblings, and a permanently unclosable entry misread as population. ## Ruling 62 — the FILING CONVENTION: two branches by document kind **Branch one — dated reports** (completed audits, probe reports, falsified or superseded" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-229 — The MuseScore-dependency rule - one general rule for what our code may depend on
 
@@ -172,7 +156,7 @@
 
 **Home section.** **§3.1** — `### 3.1 Stage-1 build status (Engage arc #7, 2026-07-07 — `cc_engage_pre_l5_refactor_report.md`)` (heading at line 251). A delegation at cowork_engage_arc_plan.md:4 reaches this section. Decided by **D-430, the section-level unit — the delegation reaches this section and it RECORDS FINDINGS**.
 
-**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. Recorded as '⛔ STOP-and-deferred to E4'. The deferral's target — the engagement of the dormant decoder with the function layer — was itself overtaken by the joint estimator without any ruling that names it (`ARCHITECTURE.md`'s Layer-4 plan correction, 2026-08-02; `OPEN_ITEMS.md` OI-259 re-dispositions the engage-era agenda), so what becomes of this deferral is open. ★ RATIFIED (user, 2026-08-02, the phase-1i queue).
+**Provenance.** Found by the phase-1i continuation wave, 2026-08-02, reading `cowork_structural_integrity_audit.md` IN FULL. The document's banner records `Status: read-only grounded catalogue (CC, 2026-07-07; Engage arc #6)` — an authored catalogue, not a ratified contract. NOT RATIFIED as a register entry — entered with the record's own status and put to the user in the phase-1i ratification queue. Recorded as '⛔ STOP-and-deferred to E4'. The deferral's target — the engagement of the dormant decoder with the function layer — was itself overtaken by the joint estimator without any ruling that names it (`ARCHITECTURE.md`'s Layer-4 plan correction, 2026-08-02; `OPEN_ITEMS.md` OI-259 re-dispositions the engage-era agenda), so what becomes of this deferral is open. ★ RATIFIED (user, 2026-08-02, the phase-1i queue). ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `cowork_structural_integrity_audit.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `STOP-and-deferred to E4` at line 270, reading — "- **FQ-3 — ⛔ STOP-and-deferred to E4 (UNCLEAR-7 resolved → fold into E4).** Byte-identically relocatable and decoder-independent, BUT E4-entangled: the decoder (already seeded by `findTemporalContext` at `regionanalyzer.cpp:899-902`, `decoder.commit()≡advanceTemporalContext`) is the E4-decided owner of regional temporal context (ARCHITECTURE.md D-P4/D-BRIDGE/1068: the cold walk is superseded). Relocating to an interim L4 home now is the "redone at E4" case; most-invasive item (new region unit + notation" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-416 — Two structural refactors are DEFERRED and OWED, and must be surfaced at every planning checkpoint until done
 

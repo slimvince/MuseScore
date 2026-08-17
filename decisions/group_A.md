@@ -96,22 +96,7 @@
 
 **Home.** `ARCHITECTURE.md:58-60`
 
-**Provenance.** ARCHITECTURE.md:51 names it 'the notation output-surface contract §3.3 GROUP (i)'
-
-### D-007 — The published scores are log-scores, not probabilities
-
-> The scores are LOG-scores, NOT probabilities, and gaps
-> are score differences
-
-**In plain words.** The numbers beside each alternative are not chances of being right. They are model scores, and the difference between two of them is a score gap, not a percentage.
-
-**Why.** Stated constraint, ARCHITECTURE.md:58-60: the published numbers are within-segment content scores re-scored by `segmentContentScore`, so they are log-scores and gaps are score differences; turning them into probabilities needs the forward-backward marginals, which are a separate later step.
-
-**Status.** LIVE · date not stated · ratifier not stated
-
-**Home.** `ARCHITECTURE.md:65-66`
-
-**Provenance.** ARCHITECTURE.md:59-61; the true-probability step is deferred to OI-193
+**Provenance.** ARCHITECTURE.md:51 names it 'the notation output-surface contract §3.3 GROUP (i)' ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `cowork_handoff.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `posterior slice` at line 1527, reading — "posterior slice (bit-parity); the record assembly (spelling establishment 99.985 %, modal counter); the seams (producer + views; consumer re-plumb P0–P7 with the §4.1 gap-scale constants, the P2a/P4 gate unifications, P-strings presentation formatters + the permanent inference↔presentation boundary guard, OI-204 input-scoping); P6's dual-arm classified evidence (identical 2053 / inference-driven 6029 / presentation-rule 220 / unexplained 0);" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-008 — The true probabilities are deferred to a later step
 
@@ -170,7 +155,7 @@
 
 **Home.** `ARCHITECTURE.md:289-290`
 
-**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:123 (open_items/OI-176 and OI-177, PROTOCOL RATIFIED 2026-07-19, protocols in `cowork_prefit_gates.md`). The standing principle is CLAUDE.md #20. OPEN_ITEMS OI-237 closes on this move
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:123 (open_items/OI-176 and OI-177, PROTOCOL RATIFIED 2026-07-19, protocols in `cowork_prefit_gates.md`). The standing principle is CLAUDE.md #20. OPEN_ITEMS OI-237 closes on this move ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `CLAUDE.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `held-out` at line 157, reading — "event declares its held-out data (split or k-fold) and its capacity budget (parameter count, regularization, justified against corpus size) BEFORE fitting; the headline claim is the held-out figure. A fitted-and-self-measured number is not established (#19). 21. **Ground truth is an instrument too.** The accuracy of ground truth is itself a measured quantity — per-axis annotator agreement, not an assumed binary (sharpens #9's "accurate")." The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-098 — The exact-decode reserve - the declared prune was never adopted
 
@@ -185,7 +170,7 @@
 
 **Home.** `ARCHITECTURE.md:303-304`
 
-**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:211 (open_items/OI-188, OPEN - 'bounds every ceiling claim'); the admission rule actually in production still has no ratified basis (open_items/OI-226). OPEN_ITEMS OI-237 closes on this move
+**Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at OPEN_ITEMS.md:211 (open_items/OI-188, OPEN - 'bounds every ceiling claim'); the admission rule actually in production still has no ratified basis (open_items/OI-226). OPEN_ITEMS OI-237 closes on this move ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `OPEN_ITEMS.md`, and that document carries this entry's own subject recogniser the entry's own identity at line 204, reading — "| OI-237 | ★ DOCUMENTATION GAP ([[OI-208]] ruling 2): sixteen load-bearing decisions have no layer-specification home; SEVEN of them govern a layer's behaviour and are unfindable from that layer's section | Of the 115 decisions in `DECISIONS.md`, 16 are recorded outside any layer specification. Seven are genuine gaps — D-032 (the [0,1] boundary-confidence contract, departed from at [[OI-231]]), D-096 (forms from theory, values fit ONCE), D-097 (held-out evaluation + capacity budget), D-098 (the exact-decode reserve; what the decoder actually prunes has NO specified form — the [[OI-226]] question), D-099 (negative evidence is information), D-100 (publish once, consumers read never re-derive — created BECAUSE facts were being siloed, and the specification of every layer it governs is silent on it), D-114 (no key abstention, in tension with D-090 which IS in a layer spec). The other nine ar" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-114 — The decoder commits its best path; there is no abstention on the key axis
 

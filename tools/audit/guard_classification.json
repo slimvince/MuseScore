@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 78,
-    "re_derives_a_live_invariant": 60,
+    "tools_classified": 80,
+    "re_derives_a_live_invariant": 62,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -75,6 +75,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "corpus_arm_stamp.py:18-28",
       "why": "The arm of a corpus is readable AT THE OBJECT, per file, from a field each `.ours.json` stamps; `--check` re-reads the corpus directories the block-(A) hard stop consumes. A regeneration on the wrong arm tomorrow is caught tomorrow.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/decisions/apply_residue_discard.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "apply_residue_discard.py, the `THE STOPS` list of its module docstring; `populations()`, which derives all four sets on every run and halts on an overlap or on an entry the data file does not carry live; `the_arithmetic()`, which re-reconciles the sitting's own sums; `check_applied()`, which re-quotes every ruled keep's stamp from the artifact it came from",
+      "why": "LIVE. Its claims are re-answered against the record AS IT STANDS on every run: the two retirements accounting for the former population, no entry in both blocks and none in neither, every record this act retired carrying what the ruling requires of it, and — the half nothing else asserts — every one of the fifty-three ruled KEEPS still carrying the deciding act recorded for it, re-derived from the check and recovery artifacts rather than compared with a copy. A stamp removed, rewritten, or drifting from its source fails on the day it happens. The sitting's arithmetic is re-reconciled too, and the ruling makes a disagreement a STOP rather than an adjustment. ★ WHAT IT DOES NOT ASSERT: that any retired entry's statement is unsound or unwanted — the ruled clause every record carries says the opposite in terms, and the statement stands at its home.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },
@@ -413,6 +421,14 @@
       "why": "LIVE, and for the same reason its sibling sizing pass is: the artifact's CONTENT is authored judgment about documents, so what the check asserts is not that the verdicts are right — a verdict about a document cannot be checked by a tool — but three demands about the record as it stands TODAY. Its POPULATION is re-derived over the named surface set on every run and reconciled with the authored verdicts in BOTH directions, so a document entering or leaving the candidate set halts it rather than being verdicted silently or quietly dropped. And its SOUNDNESS against the seeds is re-computed on every run and published, so a signature that stops finding what the record already holds is reported rather than trusted. ★ ONE THING IS STATED PLAINLY BECAUSE THE ARTIFACT SAYS IT OF ITSELF: the derivation's REACH is unmeasured and is BOUNDED on the artifact rather than measured, under D-673 — so a green check here means the enumeration re-derives and its verdicts reconcile, never that the population is complete.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "FAIL"
+    },
+    {
+      "tool": "tools/audit/gen_framework_untrusted_candidates.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_framework_untrusted_candidates.py, THE STOPS of its module docstring; `build()`, which re-derives the population from the three committed artifacts and reads every published field from the decisions register on every run",
+      "why": "LIVE. The invariant is about the record as it stands: the carried population is what the sole-carrier guard crossed with the recovery pass and the ratified-document check produces TODAY, and every published field is read from the decisions register — live entry or retired record — rather than copied. So a hand edit to the list fails, an entry revived out of the retired block moves its own row rather than leaving a stale one, and a derived population other than the one the ruling states halts the tool instead of being adjusted. ★ WHAT IT DOES NOT ASSERT: that any member is a decision, is authority, or is sound. It is a list of statements whose deciding act nobody could name, published so the framework phase's candidate enumeration meets them.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
     },
     {
       "tool": "tools/audit/gen_gating_row_sizing.py",

@@ -19,7 +19,7 @@
 
 **Home.** `ARCHITECTURE.md:565-566`
 
-**Provenance.** ARCHITECTURE.md:308-316 'Doc governance (2026-06-29) - the hierarchy'
+**Provenance.** ARCHITECTURE.md:308-316 'Doc governance (2026-06-29) - the hierarchy' ★ THE DECIDING ACT KEPT ON THE RECOVERY PASS'S ORIGINAL EVIDENCE (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §4 (Ruling 4)): the tested document-ratification shape is not present for this entry, so the recovery pass's evidence stands exactly as it stood. A passage at `ARCHITECTURE.md` line 558, carrying a ratification event named and matching the decisions register's own recogniser `canonical architecture doc`, reads — "**Doc governance (2026-06-29) — the hierarchy.** This is **THE canonical architecture doc**. The **per-layer / per-component design docs** (`cowork_layer*_design.md`, `cowork_progression_schema_dictionary.md`, `cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail** for their own scope — the rules, the mechanisms, the per-layer decisions-with-alternatives — and are **referenced** from here. They are **not** rival architecture docs: a **cross-cutting contract is stated once, here (§2.15), and never redefined in a layer doc** (a layer doc may *use* the span typology or the verifiability contract, not *redefine* it). `cowork_target_architecture.md` is **demoted** to the detailed-rationale reference for those contracts (the historical north-star, the full statements, the supporting evidence) — not a second canonical doc. **When any doc disagrees " The act is quoted from `tools/audit/deciding_act_recovery.json`; no other field of this entry is touched.
 
 ### D-092 — A cross-cutting contract is stated once and never redefined in a layer document
 
@@ -34,7 +34,7 @@
 
 **Home.** `ARCHITECTURE.md:562-563`
 
-**Provenance.** ARCHITECTURE.md:308-316
+**Provenance.** ARCHITECTURE.md:308-316 ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `cowork_confidence_contract.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `stated once` at line 63, reading — "## 4. The comparison frames (the §8 override arithmetic, stated once) A **frame** is a declared triple *(incumbent confidence, contradiction-strength measure, conversion)* under which one comparison is defined. The general §8 rule, stated once for all instances:" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-109 — The open-items register is the one home for every unresolved issue, and the index is the status of record
 
@@ -231,7 +231,7 @@
 
 **Home.** `cowork_design_doc_template.md:161-164`  — a project-wide convention with no owning layer; this is its correct home.
 
-**Provenance.** cowork_design_doc_template.md:75-78, stated as a convention in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards; no date or ratifier is stated at this home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue).
+**Provenance.** cowork_design_doc_template.md:75-78, stated as a convention in the file CLAUDE.md's Conventions entry names as the ONE home for writing standards; no date or ratifier is stated at this home. Found by the phase-1d enumeration wave, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1d queue). ★ THE DECIDING ACT RECORDED AND KEPT (user's ruling of 2026-08-17, cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2) — a ratification of a document reaches the decisions that document carries): the recovered act ratifies `OPEN_ITEMS.md`, and that document carries this entry's own subject recogniser the decisions register's own recogniser `Status-banner convention` at line 189, reading — "| OI-230 | The writing-standards conformance question — DEFERRED by the user to the Friday discussion | Recorded so it does not live only in conversation (rule (e)). `cowork_design_doc_template.md` is the ratified home of the project's writing standards: predicate-qualification (user 2026-06-24), defined-terms/plain-vocabulary/no-shorthand (user 2026-07-02, rule 5's own examples key/bar/measure), the fourteen-section document structure (arc42 + IEEE 1016), the status-banner convention, the implementation/test locator rule (+ two worked examples not yet read: `cowork_spec_language_sweep.md`, `cowork_layer3_spec_language_sweep.md`). Open FOR FRIDAY, not this dispatch: (a) does the current documentation tree conform (several decision-surface docs plainly do not follow the fourteen-section structure — gap or deliberate exemption unjudged); (b) are DOCUMENTS in or out of the conformance enume" The match is quoted from `tools/audit/ratified_document_check.json`; no other field of this entry is touched.
 
 ### D-257 — A specification carries a locator to its code and tests; code mechanics never do the explaining
 

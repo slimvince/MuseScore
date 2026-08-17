@@ -12,8 +12,8 @@
   }
  },
  "the_retirement_this_is_about": {
-  "the_live_record": 512,
-  "the_retired_block": 165,
+  "the_live_record": 474,
+  "the_retired_block": 203,
   "★_the_source": "the decisions register's own data file; no entry identity is restated here (D-431)."
  },
  "★_what_this_derivation_does_NOT_do": "It moves nothing and re-authors nothing. Every moved judgment is carried WHOLE, in its own table's retired-subjects section, in the words it was authored in (#12); this file says which, and re-checks that the tables agree with it. It also asserts nothing about whether a judgment is RIGHT — a retired subject is a provenance outcome, not a verdict on the judgment.",
@@ -125,12 +125,9 @@
     "kind": "entry-keyed",
     "the_rule": "the judgment's subject register entry is in the retired block",
     "the_live_population": [
-     "D-053",
-     "D-054",
      "D-055",
      "D-058",
      "D-068",
-     "D-069",
      "D-103",
      "D-215",
      "D-220",
@@ -161,14 +158,12 @@
      "D-327",
      "D-328",
      "D-329",
-     "D-342",
      "D-344",
      "D-345",
      "D-347",
      "D-348",
      "D-349",
      "D-351",
-     "D-358",
      "D-376",
      "D-380",
      "D-381",
@@ -189,10 +184,12 @@
      "D-583"
     ]
    },
-   "judgments_watching_live_subjects": 62,
+   "judgments_watching_live_subjects": 57,
    "judgments_moved_to_the_retired_subjects_section": [
     "D-051",
     "D-052",
+    "D-053",
+    "D-054",
     "D-059",
     "D-060",
     "D-061",
@@ -200,6 +197,7 @@
     "D-063",
     "D-064",
     "D-065",
+    "D-069",
     "D-089",
     "D-101",
     "D-102",
@@ -211,26 +209,31 @@
     "D-219",
     "D-235",
     "D-243",
+    "D-342",
     "D-346",
     "D-350",
     "D-354",
     "D-355",
     "D-356",
     "D-357",
+    "D-358",
     "D-378",
     "D-402",
     "D-405",
     "D-579"
    ],
-   "the_move_count": 30
+   "the_move_count": 35
   },
   {
    "the_table": "tools/audit/decisions/backbone_decisions.json :: section_home_criterion.documents",
    "the_membership_rule": {
     "kind": "document-keyed",
     "the_rule": "the subject document homes at least one RETIRED entry and no LIVE entry of this table's own population",
-    "the_live_population_size": 151,
+    "the_live_population_size": 146,
     "the_documents_homing_a_retired_entry": {
+     "cowork_evidence_inventory.md": [
+      "D-523"
+     ],
      "cowork_joint_estimator_architecture.md": [
       "D-529",
       "D-530"
@@ -243,7 +246,8 @@
      "cowork_layer1_note_model_design.md": [
       "D-517",
       "D-518",
-      "D-519"
+      "D-519",
+      "D-520"
      ],
      "cowork_layer2_slicing_design.md": [
       "D-540",
@@ -255,13 +259,15 @@
       "D-354",
       "D-355",
       "D-356",
-      "D-357"
+      "D-357",
+      "D-358"
      ],
      "cowork_layer4_chordsymbol_design.md": [
       "D-332"
      ],
      "cowork_layer5_function_design.md": [
-      "D-340"
+      "D-340",
+      "D-342"
      ],
      "cowork_phase2_architecture_review.md": [
       "D-579"
@@ -293,17 +299,27 @@
      ],
      "cowork_types_header_design.md": [
       "D-610"
+     ],
+     "cowork_voiceleading_axis_design.md": [
+      "D-399"
      ]
     }
    },
-   "judgments_watching_live_subjects": 35,
+   "judgments_watching_live_subjects": 34,
    "judgments_moved_to_the_retired_subjects_section": [
+    "cowork_layer1_note_model_design.md",
     "cowork_layer2_slicing_design.md",
     "cowork_phase2_architecture_review.md",
     "cowork_types_header_design.md"
    ],
-   "the_move_count": 3,
+   "the_move_count": 4,
    "the_entries_whose_retirement_emptied_each_moved_document": {
+    "cowork_layer1_note_model_design.md": [
+     "D-517",
+     "D-518",
+     "D-519",
+     "D-520"
+    ],
     "cowork_layer2_slicing_design.md": [
      "D-540",
      "D-541"
@@ -321,8 +337,11 @@
    "the_membership_rule": {
     "kind": "document-keyed",
     "the_rule": "the subject document homes at least one RETIRED entry and no LIVE entry of this table's own population",
-    "the_live_population_size": 151,
+    "the_live_population_size": 146,
     "the_documents_homing_a_retired_entry": {
+     "cowork_evidence_inventory.md": [
+      "D-523"
+     ],
      "cowork_joint_estimator_architecture.md": [
       "D-529",
       "D-530"
@@ -335,7 +354,8 @@
      "cowork_layer1_note_model_design.md": [
       "D-517",
       "D-518",
-      "D-519"
+      "D-519",
+      "D-520"
      ],
      "cowork_layer2_slicing_design.md": [
       "D-540",
@@ -347,13 +367,15 @@
       "D-354",
       "D-355",
       "D-356",
-      "D-357"
+      "D-357",
+      "D-358"
      ],
      "cowork_layer4_chordsymbol_design.md": [
       "D-332"
      ],
      "cowork_layer5_function_design.md": [
-      "D-340"
+      "D-340",
+      "D-342"
      ],
      "cowork_phase2_architecture_review.md": [
       "D-579"
@@ -385,17 +407,27 @@
      ],
      "cowork_types_header_design.md": [
       "D-610"
+     ],
+     "cowork_voiceleading_axis_design.md": [
+      "D-399"
      ]
     }
    },
-   "judgments_watching_live_subjects": 35,
+   "judgments_watching_live_subjects": 34,
    "judgments_moved_to_the_retired_subjects_section": [
+    "cowork_layer1_note_model_design.md",
     "cowork_layer2_slicing_design.md",
     "cowork_phase2_architecture_review.md",
     "cowork_types_header_design.md"
    ],
-   "the_move_count": 3,
+   "the_move_count": 4,
    "the_entries_whose_retirement_emptied_each_moved_document": {
+    "cowork_layer1_note_model_design.md": [
+     "D-517",
+     "D-518",
+     "D-519",
+     "D-520"
+    ],
     "cowork_layer2_slicing_design.md": [
      "D-540",
      "D-541"
@@ -415,20 +447,20 @@
     "the_rule": "the judgment decides no LIVE population entry and DID decide at least one RETIRED one — the document-level rule at section grain",
     "derived_by": "tools/audit/decisions/gen_home_classification.py :: derive_kind_moves, imported rather than restated (#6); the classifier STOPS on any judgment that still owes a move, and on a retired judgment that decides a live entry again"
    },
-   "judgments_watching_live_subjects": 88,
+   "judgments_watching_live_subjects": 84,
    "judgments_moved_to_the_retired_subjects_section": [
+    "cowork_evidence_inventory.md:226",
     "cowork_joint_estimator_architecture.md:192",
     "cowork_joint_key_chord_design.md:128",
     "cowork_joint_key_chord_design.md:174",
     "cowork_joint_key_chord_design.md:259",
-    "cowork_layer1_note_model_design.md:194",
-    "cowork_layer1_note_model_design.md:252",
-    "cowork_layer1_note_model_design.md:26",
     "cowork_layer3_keymode_design.md:240",
     "cowork_layer3_keymode_design.md:365",
     "cowork_layer3_keymode_design.md:42",
+    "cowork_layer3_keymode_design.md:496",
     "cowork_layer4_chordsymbol_design.md:349",
     "cowork_layer5_function_design.md:546",
+    "cowork_layer5_function_design.md:678",
     "cowork_progression_schema_dictionary.md:200",
     "cowork_score_census.md:13",
     "cowork_score_census.md:154",
@@ -436,6 +468,9 @@
    ],
    "the_move_count": 16,
    "the_entries_whose_retirement_emptied_each_moved_section": {
+    "cowork_evidence_inventory.md:226": [
+     "D-523"
+    ],
     "cowork_joint_estimator_architecture.md:192": [
      "D-529",
      "D-530"
@@ -449,14 +484,9 @@
     "cowork_joint_key_chord_design.md:259": [
      "D-379"
     ],
-    "cowork_layer1_note_model_design.md:26": [
-     "D-519"
-    ],
-    "cowork_layer1_note_model_design.md:194": [
-     "D-517"
-    ],
-    "cowork_layer1_note_model_design.md:252": [
-     "D-518"
+    "cowork_layer3_keymode_design.md:496": [
+     "D-357",
+     "D-358"
     ],
     "cowork_layer3_keymode_design.md:42": [
      "D-350"
@@ -471,6 +501,9 @@
     ],
     "cowork_layer4_chordsymbol_design.md:349": [
      "D-332"
+    ],
+    "cowork_layer5_function_design.md:678": [
+     "D-342"
     ],
     "cowork_layer5_function_design.md:546": [
      "D-340"
@@ -493,7 +526,7 @@
  ],
  "the_tally": {
   "tables_treated": 5,
-  "judgments_moved": 53,
-  "judgments_still_watching_live_subjects": 307
+  "judgments_moved": 60,
+  "judgments_still_watching_live_subjects": 296
  }
 }
