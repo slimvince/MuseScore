@@ -14009,7 +14009,22 @@ needed a second adjustment.
 | at the Task 2 tree | 69 | 1 | 4 | 16 | 0 |
 | at the Task 3 tree | 69 | 1 | 4 | 16 | 0 |
 | at the Task 4 tree | 69 | 1 | 4 | 16 | 0 |
-| **the end state** | *recorded in the ONE FURTHER commit the E-ordering rule requires* | | | | |
+| **the end state**, after the Task 5 commit existed | **69** | **1** | 4 | 16 | **0** |
+
+**★ E5 — MET, on the run and on nothing else.** The end-state run, taken **AFTER commit
+`ccb3131725` existed**, printed:
+
+```
+69 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** —
+**every run check passing except [[OI-372]]'s tool, zero STOPs**, the shape the dispatch predicted,
+reached for the third batch running. Run and read, never inferred; the values are committed only
+after the run that produced them. **The §10 declaration's prediction is CONFIRMED exactly, and it
+was declared as a prediction before this run existed** — which is the E-ordering rule reaching the
+smaller grain the eighth batch could only name.
 
 **★ ASSUMPTION A2 HELD.** Seven reds appeared across the batch and **every one is inside this
 batch's own acts' subjects** — one from the ordered recognizer widening, four from the ordered

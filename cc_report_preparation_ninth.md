@@ -397,7 +397,21 @@ in the same commit that created it. The guard population grows by exactly that o
 | at the Task 2 tree | 69 | 1 | 4 | 16 | 0 |
 | at the Task 3 tree | 69 | 1 | 4 | 16 | 0 |
 | at the Task 4 tree | 69 | 1 | 4 | 16 | 0 |
-| **the end state**, after the Task 5 commit existed | *recorded in the ONE FURTHER commit* | | | | |
+| **the end state**, after the Task 5 commit existed | **69** | **1** | 4 | 16 | **0** |
+
+**★ E5 — MET, on the run and on nothing else.** The end-state run, taken **AFTER commit
+`ccb3131725` existed**, printed:
+
+```
+69 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** —
+**every run check passing except [[OI-372]]'s tool, zero STOPs**, the shape the dispatch predicted,
+reached for the third batch running. Run and read, never inferred; the values are committed only
+after the run that produced them. **The Task-5 `STATUS.md` entry's prediction is CONFIRMED exactly,
+and it was declared as a prediction before this run existed.**
 
 **★ ASSUMPTION A2 HELD.** Its check is that any red other than [[OI-372]]'s is classed by its
 measured cause, and one outside this batch's own acts' subjects is a STOP-and-report. **Seven reds
