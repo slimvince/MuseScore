@@ -51,6 +51,7 @@
       "tools/audit/gen_gating_row_sizing.py",
       "tools/audit/gen_governing_surface_readers.py",
       "tools/audit/gen_governing_surface_spans.py",
+      "tools/audit/gen_governing_surface_split.py",
       "tools/audit/gen_july_screen.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
       "tools/audit/gen_period_stratum_split.py",
@@ -73,7 +74,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 75,
+    "authored_entries": 80,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -479,7 +480,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 25 gates of 50 candidates over 242 open rows)"
+        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 24 gates of 49 candidates over 241 open rows)"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -546,7 +547,7 @@
       "verdict": "FAIL",
       "stdout": [],
       "stderr": [
-        "STOP: authored verdicts for documents the derivation does not carry: STATUS_ARCHIVE.md, cowork_phase2_architecture_review.md -- the tree has moved under the table."
+        "STOP: derived candidates with no authored verdict: BUILD_AND_TEST_ARCHIVE.md, CLAUDE_ARCHIVE.md, OPEN_ITEMS_ARCHIVE.md. An unclassified candidate is a STOP, never a silent pass (D-661)."
       ],
       "what_it_checks": "the filing convention's candidate set re-derives. What it guards is not the verdicts, which are authored judgments about documents, but three demands on the record as it stands: every derived candidate carries an authored verdict, so an unclassified candidate halts the run rather than passing silently; no verdict names a document the derivation no longer carries, so the tree moving under the table halts it too; and the derivation's SOUNDNESS against its seeds is re-computed on every run and published, so a signature that stops finding what the record already holds is reported rather than quietly trusted"
     },
@@ -677,10 +678,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
-        "the retirement caller-check re-derives"
+        "FAIL: the caller-check does not re-derive: C:\\s\\MS\\tools\\audit\\retirement_caller_check.json"
       ],
       "stderr": [],
       "what_it_checks": "the caller-check over every ruled retirement candidacy re-derives — SINCE 2026-08-16 under the ruled reading of `cowork_rulings_2026_08_16_preparation_return.md` §1, so what it re-derives now includes the DERIVED caller-kind classification: which callers are tree enumerations whose namings hold nothing, and which are not. Its reference readings are taken at the commit its own artifact RECORDS, so it passes indefinitely rather than going red the first time anybody writes a file naming a flagged one — the OI-301/OI-305 shape avoided by construction. What is LIVE is the population: the flags are re-imported from the ruling surface's generator on every run and the citation split is re-scanned at the governing record, so a candidacy entering or leaving the ruled set, or a member changing side, halts it instead of being graded silently. Its STOPs ride with it: a flagged class the inventory does not carry, a mixed class the inventory publishes no members for, a member list whose derived count disagrees with the count the inventory publishes, an authored condition and a derived candidacy disagreeing in either direction, a condition whose quoted sentence is no longer in the ruling record, A SENTENCE OF THE RULED READING NO LONGER IN ITS OWN RULING RECORD — so a reading cannot outlive the words that imposed it, the same shape the conditions already carry — a caller kind outside the closed four-value vocabulary, a kind tally that does not account for the callers found, a verdict outside the closed three-value vocabulary, and a tally that does not account for the candidacies"
@@ -827,6 +828,86 @@
       ],
       "stderr": [],
       "what_it_checks": "who reads, anchors into, quotes or parses each of the five mandatory-read files still re-derives at the tree, and the ruling surface generated from it and from the span decomposition still re-derives with it. It is the F13 lesson applied prospectively: a mutation's reach is MEASURED before the act, so the anchored namings, the tools that read each file by path and the register entries homed in it are all published before any span moves. Its STOPs: a named file the tree does not carry halts it; a span decomposition that is missing or covers a different file set halts it, because the surface is generated from BOTH artifacts and may not be built from half of them; and a per-file naming tally that stops accounting for the scan halts it. What it does NOT assert is that a naming is a dependency — the scan sees tracked files only and a computed path carries no literal to find, which it publishes of itself"
+    },
+    {
+      "tool": "tools/audit/gen_governing_surface_split.py",
+      "args": [
+        "--check",
+        "--pair",
+        "CLAUDE.md"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  CLAUDE.md / CLAUDE_ARCHIVE.md: moved 9 span(s), 6,540 characters | in companion: True | absent from parent: True | arithmetic balances: True",
+        "  TOTAL moved 281 span(s), 793,066 characters; LEFT AT SITE by the reading 17 span(s), 77,794 characters"
+      ],
+      "stderr": [],
+      "what_it_checks": "the ruled split of `CLAUDE.md` against its archive companion still reconciles in BOTH directions: every archived span byte-present in the companion exactly once, every archived span absent from the parent, and moved + kept accounting for the parent's pre-act committed blob TO THE CHARACTER. The pre-act blob and the register's home anchors are read from the GIT OBJECTS at the commit the act was performed on top of, so the claim re-derives forever rather than decaying as the parent legitimately grows (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: an archive-class span with no authored reading verdict halts it, so a span cannot be archived unread (Ruling 1's own safeguard); a verdict naming a span the pinned decomposition does not carry halts it, so the two cannot drift apart; a moved span whose text is not present exactly once in the pre-act blob halts it; the arithmetic not accounting for that blob to the character halts it; and a register HOME anchor falling inside a moved span halts it, which is clause 4's own condition that no operative span may have moved"
+    },
+    {
+      "tool": "tools/audit/gen_governing_surface_split.py",
+      "args": [
+        "--check",
+        "--pair",
+        "OPEN_ITEMS.md"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  OPEN_ITEMS.md / OPEN_ITEMS_ARCHIVE.md: moved 133 span(s), 326,334 characters | in companion: True | absent from parent: True | arithmetic balances: True",
+        "  TOTAL moved 281 span(s), 793,066 characters; LEFT AT SITE by the reading 17 span(s), 77,794 characters"
+      ],
+      "stderr": [],
+      "what_it_checks": "the ruled split of `OPEN_ITEMS.md` against its archive companion still reconciles in BOTH directions: every archived span byte-present in the companion exactly once, every archived span absent from the parent, and moved + kept accounting for the parent's pre-act committed blob TO THE CHARACTER. The pre-act blob and the register's home anchors are read from the GIT OBJECTS at the commit the act was performed on top of, so the claim re-derives forever rather than decaying as the parent legitimately grows (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: an archive-class span with no authored reading verdict halts it, so a span cannot be archived unread (Ruling 1's own safeguard); a verdict naming a span the pinned decomposition does not carry halts it, so the two cannot drift apart; a moved span whose text is not present exactly once in the pre-act blob halts it; the arithmetic not accounting for that blob to the character halts it; and a register HOME anchor falling inside a moved span halts it, which is clause 4's own condition that no operative span may have moved"
+    },
+    {
+      "tool": "tools/audit/gen_governing_surface_split.py",
+      "args": [
+        "--check",
+        "--pair",
+        "DECISIONS.md"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  DECISIONS.md / DECISIONS_ARCHIVE.md: moved 0 span(s), 0 characters | in companion: True | absent from parent: True | arithmetic balances: True",
+        "  TOTAL moved 281 span(s), 793,066 characters; LEFT AT SITE by the reading 17 span(s), 77,794 characters"
+      ],
+      "stderr": [],
+      "what_it_checks": "the ruled split of `DECISIONS.md` against its archive companion still reconciles in BOTH directions: every archived span byte-present in the companion exactly once, every archived span absent from the parent, and moved + kept accounting for the parent's pre-act committed blob TO THE CHARACTER. The pre-act blob and the register's home anchors are read from the GIT OBJECTS at the commit the act was performed on top of, so the claim re-derives forever rather than decaying as the parent legitimately grows (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: an archive-class span with no authored reading verdict halts it, so a span cannot be archived unread (Ruling 1's own safeguard); a verdict naming a span the pinned decomposition does not carry halts it, so the two cannot drift apart; a moved span whose text is not present exactly once in the pre-act blob halts it; the arithmetic not accounting for that blob to the character halts it; and a register HOME anchor falling inside a moved span halts it, which is clause 4's own condition that no operative span may have moved"
+    },
+    {
+      "tool": "tools/audit/gen_governing_surface_split.py",
+      "args": [
+        "--check",
+        "--pair",
+        "STATUS.md"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  STATUS.md / STATUS_ARCHIVE.md: moved 131 span(s), 457,949 characters | in companion: True | absent from parent: True | arithmetic balances: True",
+        "  TOTAL moved 281 span(s), 793,066 characters; LEFT AT SITE by the reading 17 span(s), 77,794 characters"
+      ],
+      "stderr": [],
+      "what_it_checks": "the ruled split of `STATUS.md` against its archive companion still reconciles in BOTH directions: every archived span byte-present in the companion exactly once, every archived span absent from the parent, and moved + kept accounting for the parent's pre-act committed blob TO THE CHARACTER. The pre-act blob and the register's home anchors are read from the GIT OBJECTS at the commit the act was performed on top of, so the claim re-derives forever rather than decaying as the parent legitimately grows (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: an archive-class span with no authored reading verdict halts it, so a span cannot be archived unread (Ruling 1's own safeguard); a verdict naming a span the pinned decomposition does not carry halts it, so the two cannot drift apart; a moved span whose text is not present exactly once in the pre-act blob halts it; the arithmetic not accounting for that blob to the character halts it; and a register HOME anchor falling inside a moved span halts it, which is clause 4's own condition that no operative span may have moved"
+    },
+    {
+      "tool": "tools/audit/gen_governing_surface_split.py",
+      "args": [
+        "--check",
+        "--pair",
+        "BUILD_AND_TEST.md"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "  BUILD_AND_TEST.md / BUILD_AND_TEST_ARCHIVE.md: moved 8 span(s), 2,243 characters | in companion: True | absent from parent: True | arithmetic balances: True",
+        "  TOTAL moved 281 span(s), 793,066 characters; LEFT AT SITE by the reading 17 span(s), 77,794 characters"
+      ],
+      "stderr": [],
+      "what_it_checks": "the ruled split of `BUILD_AND_TEST.md` against its archive companion still reconciles in BOTH directions: every archived span byte-present in the companion exactly once, every archived span absent from the parent, and moved + kept accounting for the parent's pre-act committed blob TO THE CHARACTER. The pre-act blob and the register's home anchors are read from the GIT OBJECTS at the commit the act was performed on top of, so the claim re-derives forever rather than decaying as the parent legitimately grows (D-646, the epoch pattern). Its STOPs are what make it a guard rather than a record: an archive-class span with no authored reading verdict halts it, so a span cannot be archived unread (Ruling 1's own safeguard); a verdict naming a span the pinned decomposition does not carry halts it, so the two cannot drift apart; a moved span whose text is not present exactly once in the pre-act blob halts it; the arithmetic not accounting for that blob to the character halts it; and a register HOME anchor falling inside a moved span halts it, which is clause 4's own condition that no operative span may have moved"
     },
     {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
@@ -989,10 +1070,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 2,
+      "verdict": "FAIL",
       "stdout": [
-        "phase1w: A1 held; 62 entries derived; 35 anchors located; 5 recorded figures located"
+        "STOP: recorded figure 80: quote not at OPEN_ITEMS.md:327. It is nowhere in the file — the premise has changed."
       ],
       "stderr": [],
       "what_it_checks": "the legacy-mark verification re-derives, and its declared premises still hold"
@@ -1055,12 +1136,24 @@
     }
   ],
   "summary": {
-    "run": 55,
-    "passing": 54,
-    "failing": 1,
+    "run": 60,
+    "passing": 57,
+    "failing": 3,
     "failing_tools": [
       {
         "tool": "tools/audit/gen_filing_convention_application.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/gen_retirement_caller_check.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/gen_phase1w_legacy_verification.py",
         "args": [
           "--check"
         ]

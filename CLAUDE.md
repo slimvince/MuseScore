@@ -24,17 +24,7 @@ override convenience.
    algorithmic completion are done.** Build-it-right comes BEFORE tune-precision, strictly. All
    three must be finished, not the last alone: every method and algorithm implemented in its
    correct layer, the architecture designed, and the refactoring carried out.
-   **★ WIDENED HERE 2026-08-04 ON THE USER'S RULING; THIS IS NOW THE RULE'S ONE HOME (#6).** The
-   former wording, preserved verbatim (#12), was *"No inference-problem-driven coding until all
-   methods and algorithms are implemented in their correct layer."* It was narrower than the
-   statement being applied in practice: `cowork_l1l3_stabilization_plan.md` has carried the fuller
-   three-clause form — refactoring + architectural design + algorithmic completion — user-ratified
-   2026-06-25, and that plan is **D-557**'s home no longer; it now POINTS here and does not restate
-   (#6). *Why it was widened rather than left standing beside the fuller statement:* a session
-   reading only this file would have applied the narrow width and concluded that refactoring and
-   architectural design were not among the things that must finish first — so the governing
-   document and the practice disagreed about the size of the gate, which is the one disagreement a
-   governing document may not carry.
+   *★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 11 line(s), `preserved-former-wording`, opening "**★ WIDENED HERE 2026-08-04 ON THE USER'S RULING; THIS IS NO…"*
    **★ THIS PRINCIPLE POINTS AT ITS OPERATIONAL HALF — D-592 AND D-593 (written 2026-08-04 on the
    user's ruling; a POINTER, never a copy, because both are already homed, #6).** The three clauses
    above say WHEN inference work may start. They do not say when a layer counts as FINISHED, and
@@ -59,39 +49,15 @@ override convenience.
     discarded, whatever its subject**; and where the consequence can neither be named nor cheaply
     established, **it is looked at once, cheaply (#5)** — being unable to imagine a consumer is not
     evidence there is none.
-    **★ #10 GAINED ITS SECOND HALF HERE, AND THIS IS THE RULE'S ONE HOME (user-ruled 2026-08-11;
-    the ruling record is `cowork_rulings_2026_08_11_sixteenth_stop.md`, Ruling 68; register entry
-    D-174, whose verbatim is re-taken at the text above).** The ruled text is the user's own and
-    stands verbatim. **THE FORMER WORDING, PRESERVED IN PLACE (#12), WAS:** *"Documentation always
-    in sync with code."* — five words with no purpose attached. *Why the amendment was made at the
-    principle rather than at a process rule beside it (#6):* because nothing in those five words
-    said what being in sync is FOR, **every discrepancy read as owed, and a session that rowed a
-    stale banner was obeying the principle exactly as written** — so the unbounded documentation
-    stream is #10 working as written, and a remedy anywhere else would leave the principle still
-    demanding it. *The user's own statement of the objective, recorded verbatim because it is the
-    ground of the rule:* **"The objective is NOT to create to ultimate documentation. The objective
-    with fixing documentation is to make sure we always can compare code with specification, and
-    that the spec should always be as correct and complete as possible - in order to facilitate the
-    code to be as complete and correct as possible."**
+    *★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 14 line(s), `preserved-former-wording`, opening "**★ #10 GAINED ITS SECOND HALF HERE, AND THIS IS THE RULE'S …"*
     **★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus
     finding's row is **mandatory** no longer holds for a finding the worth test above discards.
     **R3 is otherwise untouched** — it still decides whether a finding is surfaced or rowed, and
     its own #19 sentence is reinforced rather than weakened. R3's home is `cowork_audit_protocol.md`
     (register entry **D-641**), where the supersession is recorded at the clause itself and is not
     restated here.
-    **★ THE THREE ALTERNATIVES DECLINED, recorded because an excluded alternative is evidence about
-    the choice.** *Keeping rows for the discarded class* was declined as achieving nothing **D-676**
-    had not already achieved — every row of the batch that prompted this would still exist.
-    *Placing the test at R3 instead of here* was declined on #6: the test would live at the process
-    rule while the purpose it serves lived nowhere, so a session reading the principle would still
-    meet an unbounded demand — the same disagreement between a governing document and practice that
-    forced #8's widening. *Doing nothing and letting **D-675** and **D-676** drain* was declined
-    because it changes the backlog and not the rate.
-    **★ THE COSTS THE USER ACCEPTED, stated before the ruling and recorded because an accepted cost
-    is not a discharged one.** **#12 is weakened:** a discarded finding is harder to retrieve than a
-    row, and the finding-by-exclusion clause holds that negative evidence is information — mitigated,
-    not erased, by the discard record carrying the finding and its reason. And it **amends a standing
-    principle**, which is the heaviest change available.
+    *★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 8 line(s), `defense-and-declined-alternatives`, opening "**★ THE THREE ALTERNATIVES DECLINED, recorded because an exc…"*
+    *★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 5 line(s), `defense-and-declined-alternatives`, opening "**★ THE COSTS THE USER ACCEPTED, stated before the ruling an…"*
     **★ WHAT IT DOES NOT DO.** It authorizes no fix, no design and no inference change. It moves
     neither **D-231**'s phases nor #8's three-clause gate. It touches no measured value, no golden,
     no corpus of scores and nothing under `tools/robust_stop/`. And **it does not retroactively
@@ -464,19 +430,9 @@ what a derived cut carries, and a hand-removed gate would be the same act as a h
 which the record forbids. Making the verdict an input keeps the gate derived, and answers the
 objection rather than overriding it.
 
-**THE THREE ALTERNATIVES DECLINED, recorded because an excluded alternative is evidence about the
-choice.** *Leaving the discard record standing beside the gate* was declined on **#10** — the
-record would then state two incompatible things about one row — and on **#4**, since the row
-becomes a permanent block. *Withdrawing the discard and working the row* was declined on **#4**,
-spending capacity on free-text reason strings in an audit artifact, and because it would empty the
-worth test of force on its second application. *Ruling that the worth test reaches new findings
-only* was declined as the first option restated as policy: the gating population could then shrink
-only by being worked, while containing rows nobody thinks worth working.
+*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 8 line(s), `defense-and-declined-alternatives`, opening "**THE THREE ALTERNATIVES DECLINED, recorded because an exclu…"*
 
-**THE COSTS THE USER ACCEPTED, stated before the ruling and recorded because an accepted cost is
-not a discharged one.** It **extends the retroactivity disclaimer** the worth test's own ruling
-carries, which was written to prevent exactly a sweep. And it makes the gating population sensitive
-to an **AUTHORED** verdict, which the guard above bounds but does not remove.
+*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 4 line(s), `defense-and-declined-alternatives`, opening "**THE COSTS THE USER ACCEPTED, stated before the ruling and …"*
 
 **★ WHAT IT DOES NOT DO.** It authorizes **NO SWEEP** — it states how a discard verdict is
 consumed, not that any row should be discarded. It moves **D-231**'s phases and #8's three-clause
@@ -835,11 +791,7 @@ regressions` passes, no `tools/corpus/` or `tools/robust_stop/` diff). Provenanc
 `cc_instruction_notation_switch.md`; the P6 report `tools/notation_seams/dualarm_classified_report.json`; the
 OI-178 adoption record `tools/joint_estimator/adoption_record.json`.
 
-**Superseded columns preserved (#12):** the OI-168 LEGACY-ANALYSIS baselines (root 66.04 / 64.98 / 65.93,
-RN 46.33 / 44.10 / 46.23, key-home 71.42 / 67.83 / 70.65, key-local 65.99 / 62.98 / 65.71) live in the
-manifest's `reproduce_status.superseded_oi168` and the O-12 snapshot
-`tools/robust_stop/snapshot_2026-07-26_pre_oi178_adoption/`. **The OI-168 narrative below is now HISTORICAL
-(the superseded legacy-analysis reference), retained for provenance.**
+*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 5 line(s), `self-declared-historical-or-superseded`, opening "**Superseded columns preserved (#12):** the OI-168 LEGACY-AN…"*
 
 *★ [SUPERSEDED by the OI-178 adoption 2026-07-26 — historical] THE OI-168 RE-BASELINE (2026-07-14; report `cc_oi168_fix_report.md`; outgoing reference preserved at
 `tools/robust_stop/snapshot_2026-07-13_pre_oi168/`, O-12). **Every published column above is UNCHANGED at
@@ -1136,14 +1088,7 @@ symmetric-rotation churn.** A *new* BIR=false case is one of two classes:
 
 ### (C) RETROSPECTIVE — the batch 52/24/52 stop (superseded at R10-b, 2026-07-06 — historical reference)
 
-> The `52/24/52` `stem@tick` case-identity sets below and their full L3-wiring / 2.2e / corrected-parser
-> history were **THE hard regression stop through Stages 2–5**. They are **superseded** by the robust-unit
-> stop (block (A)) at R10-b and are preserved here as historical reference only. Machine-readable snapshot:
-> `tools/robust_stop/batch_stop_frozen_history.json`. Full handover provenance:
-> `cc_stage5_r10b_ratification_report.md` (+ assembly `cc_stage5_r10_assembly_report.md`). **Why it was
-> replaced:** the batch (cross-barline) region gate under-counted the true per-onset root error **~15–56×**
-> — it measured a small music21-filtered reachable corner (class-(a) was ≈53 % of that residual vs ~3.5 % on
-> the robust unit) — so the robust-unit stop replaced it at R10-b.
+*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 8 line(s), `self-declared-historical-or-superseded`, opening "> The `52/24/52` `stem@tick` case-identity sets below and th…"*
 
 **The batch stop's diagnostic form — KEPT (no longer the stop).** `characterise_bir_false.py` remains a
 runnable per-region diagnostic (useful for triage and for cross-checking the robust unit); it is no longer
@@ -1178,13 +1123,7 @@ structurally unresolvable by pitch class and are the seed of a future **two-tier
 spelling-aware** gate (Stage 5/6 — noted, not built). Full provenance:
 `cc_metric_rebaseline_report.md` + `cc_gate_rebaseline_verify_report.md`.
 
-**★ (Historical — the batch stop's FINAL frozen state before R10-b) `52 / 24 / 52` (re-baselined at the
-ratified 2.2e kWStepIn adoption, 2026-07-05, commit `c50002fee1` + the corpus chore below; frozen as history
-at R10-b, 2026-07-06 — machine-readable at `tools/robust_stop/batch_stop_frozen_history.json`).** The 2.2e
-delta vs the prior `53 / 24 / 53`: **removal-only
-`{bwv244.32@5760}`** on Baroque + Default (the class-(b) case the kWStepIn 0.10→0.125 adoption fixed); Jazz
-unchanged (byte-identical). The identity sets below are the 52/24/52 form; the history that produced the
-prior 53/24/53 is preserved in the following paragraph.
+*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 7 line(s), `self-declared-historical-or-superseded`, opening "**★ (Historical — the batch stop's FINAL frozen state before…"*
 
 **★ (History) Corrected to the ratified post-L3-wiring state `53 / 24 / 53` (Stage-0 measurement, commit `b57dbfa7a8`,
 2026-06-25).** The `57/23/57` sets previously listed here predated the **already-ratified L3-wiring delta**

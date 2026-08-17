@@ -485,6 +485,31 @@ AUTHORED = [
      "dependency — the scan sees tracked files only and a computed path carries no literal to "
      "find, which it publishes of itself"),
 
+    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_sixth.md Task 1 --------------------
+    # THE PERMANENT RECONCILIATION CHECK ON THE RULED GOVERNING-SURFACE SPLIT, registered in the
+    # act that creates it — the standing new-tool rule. Clause 7 of the dispatch orders ONE CHECK
+    # PER PARENT/COMPANION PAIR; there are five pairs and one concern (reconcile a parent against
+    # its companion), so the check has ONE home (#6) and is INVOKED once per pair, which is the
+    # shape `local_patches_check.py` and `corpus_arm_stamp.py` already use here. It takes `--check`
+    # and never the bare invocation, for the ordinary reason: run with no flag it REWRITES its
+    # committed artifact.
+    *[("tools/audit/gen_governing_surface_split.py", ["--check", "--pair", pair],
+       f"the ruled split of `{pair}` against its archive companion still reconciles in BOTH "
+       f"directions: every archived span byte-present in the companion exactly once, every "
+       f"archived span absent from the parent, and moved + kept accounting for the parent's "
+       f"pre-act committed blob TO THE CHARACTER. The pre-act blob and the register's home anchors "
+       f"are read from the GIT OBJECTS at the commit the act was performed on top of, so the claim "
+       f"re-derives forever rather than decaying as the parent legitimately grows (D-646, the "
+       f"epoch pattern). Its STOPs are what make it a guard rather than a record: an archive-class "
+       f"span with no authored reading verdict halts it, so a span cannot be archived unread "
+       f"(Ruling 1's own safeguard); a verdict naming a span the pinned decomposition does not "
+       f"carry halts it, so the two cannot drift apart; a moved span whose text is not present "
+       f"exactly once in the pre-act blob halts it; the arithmetic not accounting for that blob to "
+       f"the character halts it; and a register HOME anchor falling inside a moved span halts it, "
+       f"which is clause 4's own condition that no operative span may have moved")
+      for pair in ("CLAUDE.md", "OPEN_ITEMS.md", "DECISIONS.md", "STATUS.md",
+                   "BUILD_AND_TEST.md")],
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

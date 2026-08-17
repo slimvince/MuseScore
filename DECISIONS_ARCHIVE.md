@@ -1,0 +1,8 @@
+# DECISIONS.md — ARCHIVE (historical, reference-only)
+
+> **The archive companion of `DECISIONS.md`.** Created 2026-08-17 by `cc_instruction_preparation_sixth.md` Task 1, executing Rulings 1, 2 and 3 of `cowork_rulings_2026_08_17_governing_surface_split.md` over the ratification surface `ratification_surfaces/cowork_governing_surface_split_2026_08_16.md`. It receives spans moved VERBATIM out of `DECISIONS.md`, in the order they left it, each under a provenance line naming its position in the parent's pre-act blob. **NOT part of the session-start read** — read `DECISIONS.md` for what governs.
+>
+> **Nothing was edited in transit.** The reconciliation is re-derived by `tools/audit/gen_governing_surface_split.py --check --pair DECISIONS.md` and proves both directions: every archived span is byte-present here and absent from the parent, and moved + kept accounts for the parent's pre-act committed blob to the character (#12, preservation elsewhere-with-record on the register-split precedent).
+>
+> **This act moved NOTHING into this file, and that is a result rather than an omission.** Every span of `DECISIONS.md` the pinned measurement placed in an archive class failed the reading Ruling 1's safeguard requires — each POINTS AT archive material preserved elsewhere, or states a rule in force — so each was left at site under the ruled doubt default. The per-span verdicts and their reasons are at `tools/audit/governing_surface_split_application.json`. The file is created because Ruling 3 orders one companion per governing file, and it is the home the continuous-pruning rule (§5(D)) will use for the next amendment that supersedes part of `DECISIONS.md`.
+

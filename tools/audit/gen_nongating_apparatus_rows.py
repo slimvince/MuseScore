@@ -109,6 +109,44 @@ FIRST_CUT_VOCAB = [
 # unnoticed resolution. But deleting the reasoning would lose it (#12), so a closed row's
 # verdict moves here: preserved, carried into the artifact as history, and never counted.
 RETIRED_VERDICTS = {
+    "OI-370": (GATES, "the default - the row's own text does not settle its subject",
+               "A MANDATORY SESSION-START READ CANNOT BE PERFORMED: `CLAUDE.md` names `STATUS.md` "
+               "among the three files every session reads and forbids relying on memory for "
+               "baselines or iteration state, and the file tools refuse the file. THE FIRST-CUT "
+               "CLASSIFICATION REACHED THIS ROW and the verdict is authored for it here, which is "
+               "what the tool requires; no non-gating verdict is hand-added, which is the act the "
+               "record forbids. WHAT DECIDES IT IS THE DECLARATION'S OWN DEFAULT, and that is said "
+               "plainly rather than argued around: the row states BOTH readings and settles "
+               "neither, in its own words -- the subject is the record's own apparatus, which the "
+               "declaration classes non-gating, but the consequence is that a session may not know "
+               "the analysis's current state, and D-438's second half reaches a statement about "
+               "the analysis or its build state -- and it ends 'Left for the derivation.' A row "
+               "whose subject its own text does not settle GATES, because the declaration only "
+               "ever removes a wait where the row supports removing it. The two readings pull "
+               "opposite ways on the apparatus line itself: what is OWED reads as apparatus (a "
+               "filing act under the file's own archive rule, or a size guard), while what the row "
+               "ESTABLISHES is that a governing instruction cannot be carried out at all. NOT an "
+               "establishment obligation (#19), which would override the criterion whatever the "
+               "subject: the size guard's own establishment would be owed BY that check if it were "
+               "ever built, which is a condition on a future act rather than an obligation "
+               "standing now -- the same distinction that keeps [[OI-364]] off the exemption. "
+               "★ ITS FIRST REMEDY HAS ALREADY RUN AND THE ROW SURVIVED IT: the archive rule was "
+               "applied and the read failed again, which is why the row is still open and why the "
+               "verdict is made on the row as it stands rather than on the remedy proposed for "
+               "it. Distinct from the retired [[OI-47]], which was four SECTIONS of that file "
+               "contradicting the governing documents; this is the file's accumulation against its "
+               "own archive rule, and the two rows say so of each other.",
+               "RESOLVED 2026-08-17 - the row's SECOND remedy ran and the read succeeded "
+               "(`cc_instruction_preparation_sixth.md` Task 1, executing Ruling 4 of "
+               "`cowork_rulings_2026_08_17_governing_surface_split.md`). THE VERDICT WAS CORRECT "
+               "WHILE IT STOOD and is kept whole (#12); it is retired because the row closed, "
+               "never because it was wrong. ★ WHAT THE CLOSING ACT SUPPLIED IS EXACTLY WHAT THE "
+               "VERDICT SAID THE ROW LACKED: the verdict rests on the row settling neither "
+               "reading, and the row's first remedy had already run without closing it because "
+               "the archive rule never defined which entries count as superseded. The user's "
+               "Ruling 4 defines it - an entry is superseded the moment a later batch's close "
+               "exists - and the read was then re-attempted and succeeded, which is the row's own "
+               "closing condition tested rather than assumed (#19)."),
     "OI-47": (GATES, RULING_56_GROUND,
               "★ RE-CLASSED 2026-08-11 by the user's Ruling 56 of "
               "`cowork_rulings_2026_08_11_twelfth_stop.md`, which APPLIES D-639's reach derivation "
@@ -1106,33 +1144,9 @@ V = {
     # to go through the cut like any other row, taking whatever verdict it gives them. Both come
     # out GATES, on DIFFERENT grounds, which is the criterion doing its job rather than a close
     # call. Each verdict is made against the row's SUBJECT, never its remedy.
-    "OI-370": (GATES, "the default - the row's own text does not settle its subject",
-               "A MANDATORY SESSION-START READ CANNOT BE PERFORMED: `CLAUDE.md` names `STATUS.md` "
-               "among the three files every session reads and forbids relying on memory for "
-               "baselines or iteration state, and the file tools refuse the file. THE FIRST-CUT "
-               "CLASSIFICATION REACHED THIS ROW and the verdict is authored for it here, which is "
-               "what the tool requires; no non-gating verdict is hand-added, which is the act the "
-               "record forbids. WHAT DECIDES IT IS THE DECLARATION'S OWN DEFAULT, and that is said "
-               "plainly rather than argued around: the row states BOTH readings and settles "
-               "neither, in its own words -- the subject is the record's own apparatus, which the "
-               "declaration classes non-gating, but the consequence is that a session may not know "
-               "the analysis's current state, and D-438's second half reaches a statement about "
-               "the analysis or its build state -- and it ends 'Left for the derivation.' A row "
-               "whose subject its own text does not settle GATES, because the declaration only "
-               "ever removes a wait where the row supports removing it. The two readings pull "
-               "opposite ways on the apparatus line itself: what is OWED reads as apparatus (a "
-               "filing act under the file's own archive rule, or a size guard), while what the row "
-               "ESTABLISHES is that a governing instruction cannot be carried out at all. NOT an "
-               "establishment obligation (#19), which would override the criterion whatever the "
-               "subject: the size guard's own establishment would be owed BY that check if it were "
-               "ever built, which is a condition on a future act rather than an obligation "
-               "standing now -- the same distinction that keeps [[OI-364]] off the exemption. "
-               "★ ITS FIRST REMEDY HAS ALREADY RUN AND THE ROW SURVIVED IT: the archive rule was "
-               "applied and the read failed again, which is why the row is still open and why the "
-               "verdict is made on the row as it stands rather than on the remedy proposed for "
-               "it. Distinct from the retired [[OI-47]], which was four SECTIONS of that file "
-               "contradicting the governing documents; this is the file's accumulation against its "
-               "own archive rule, and the two rows say so of each other."),
+    # OI-370's verdict moved to RETIRED_VERDICTS on 2026-08-17, when the user's Ruling 4 of
+    # `cowork_rulings_2026_08_17_governing_surface_split.md` supplied the boundary the row's first
+    # remedy lacked and the mandatory read succeeded, closing the row.
     "OI-371": (GATES, "a statement about the analysis's build state",
                "A set of comment blocks was graded HELD pending a call-graph answer, that answer "
                "is now established, and the row that recorded the hold is RESOLVED -- so a "

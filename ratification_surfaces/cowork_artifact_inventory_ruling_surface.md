@@ -470,7 +470,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 *Why it is mixed (AUTHORED):* One naming convention covers measurement reports the gate block cites as provenance and one-off diagnostic write-ups. The first kind is evidence for the empirical findings ledger; the second is at most an antipattern source.
 
-**NAMED in the governing record — 51 of 82 files.**
+**NAMED in the governing record — 50 of 82 files.**
 
 - **PROPOSED role (AUTHORED):** airlock input
 - **PROPOSED mining verdict (AUTHORED):** mine via the airlock
@@ -524,7 +524,6 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cc_oi170_measurements.txt`
 - `cc_oi199_joint_p3_p4_report.md`
 - `cc_oi199_pass1_report.md`
-- `cc_oi207_residual_pass_report.md`
 - `cc_phase1d_enumeration_wave_report.md`
 - `cc_stage5_r10_assembly_report.md`
 - `cc_stage5_r10b_ratification_report.md`
@@ -534,7 +533,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 </details>
 
-**NAMED NOWHERE in the governing record — 31 of 82 files.**
+**NAMED NOWHERE in the governing record — 32 of 82 files.**
 
 - **PROPOSED role (AUTHORED):** airlock input
 - **PROPOSED mining verdict (AUTHORED):** mine via the airlock for antipatterns
@@ -561,6 +560,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 - `cc_engage_l5_pedal_annotate_design_report.md`
 - `cc_engage_structural_integrity_audit_report.md`
 - `cc_oi168_magnitude_measurements.txt`
+- `cc_oi207_residual_pass_report.md`
 - `cc_stage5_phase0_report.md`
 - `cc_stage5_phase1_report.md`
 - `cc_stage5_phase2_1_report.md`
@@ -1142,7 +1142,7 @@ Four classes interleave material that cannot share a verdict. They are split by 
 
 - `documentation-directory-prose` — 15 of 47 files (uncited side)
 - `measurement-and-analysis-tools` — 100 of 130 files (uncited side)
-- `reports-from-the-coding-side` — 31 of 82 files (uncited side)
+- `reports-from-the-coding-side` — 32 of 82 files (uncited side)
 
 **★ THE STANDING WARNING ON ALL OF THEM:** the uncited side is derived from a scan that sees only the governing record. Before any retirement is executed, callers and references should be checked at the objects. That act is named here and is not started.
 
@@ -1174,7 +1174,7 @@ Assumption A2 of the dispatch: the population is the **tracked** tree, and an un
 
 **Why this is not a housekeeping remark — and the number that says so, DERIVED by the same citation scan the classes above are split by:**
 
-> **117 of those 571 ignored files are NAMED by the governing record.**
+> **109 of those 571 ignored files are NAMED by the governing record.**
 
 These are documents the governing documents and the two registers cite as provenance — including by gate block (A) of `CLAUDE.md`, which names the measurement provenance of the ratified baselines, and by rulings of the eighteenth stop. **A fresh clone of this repository does not contain them.** They are therefore not available to any phase whose inputs are what git carries, and the handover-safety the method-directions record requires does not currently extend to the evidence the governing record leans on.
 
@@ -1193,18 +1193,14 @@ These are documents the governing documents and the two registers cite as proven
 - `cc_instruction_c1_ruling_and_item1c.md`
 - `cc_instruction_census_delegation_and_commit.md`
 - `cc_instruction_commit_and_finish_line.md`
-- `cc_instruction_decision_clustering.md`
 - `cc_instruction_decision_harvest.md`
-- `cc_instruction_decisions_register_completion.md`
 - `cc_instruction_document_routes_and_d472.md`
-- `cc_instruction_evidence_candidate_pass.md`
 - `cc_instruction_false_statements_pass.md`
 - `cc_instruction_finish_line_item1.md`
 - `cc_instruction_finish_line_item1b.md`
 - `cc_instruction_five_rulings.md`
 - `cc_instruction_guard_dialect_close_and_push.md`
 - `cc_instruction_guard_fix_and_item1d.md`
-- `cc_instruction_item7_reach_derivation.md`
 - `cc_instruction_licensed_homing_and_oi344.md`
 - `cc_instruction_marginals.md`
 - `cc_instruction_module_layering_assessment.md`
@@ -1233,11 +1229,9 @@ These are documents the governing documents and the two registers cite as proven
 - `cc_instruction_phase1f_final_partition.md`
 - `cc_instruction_phase1g_triage.md`
 - `cc_instruction_phase1j_homing_and_reads.md`
-- `cc_instruction_phase1m_dispositions_and_measurements.md`
 - `cc_instruction_phase1n_criterion_premise_and_reading_regime.md`
 - `cc_instruction_phase1o_gate_partition_and_probe_rerun.md`
 - `cc_instruction_phase1p_home_rulings_and_mechanisms.md`
-- `cc_instruction_phase1q_reclassification_and_guards.md`
 - `cc_instruction_phase1r_commit_and_reclassify.md`
 - `cc_instruction_phase1s_stale_rules_and_enumeration.md`
 - `cc_instruction_phase1t_restatement_and_pruning.md`
@@ -1273,10 +1267,8 @@ These are documents the governing documents and the two registers cite as proven
 - `cc_instruction_ruling69_discard_input.md`
 - `cc_instruction_scoring_model_pass.md`
 - `cc_instruction_sitting_outcome_and_bound.md`
-- `cc_instruction_sizing_regen_and_readme.md`
 - `cc_instruction_spec_completion.md`
 - `cc_instruction_stage3_design_ratification.md`
-- `cc_instruction_stop_record_and_enumeration.md`
 - `cc_instruction_three_owner_rulings.md`
 - `cc_instruction_worth_test.md`
 - `cc_key_emission_headroom_dossier.md`

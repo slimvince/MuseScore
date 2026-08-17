@@ -26,11 +26,11 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 71,
-    "re_derives_a_live_invariant": 53,
+    "tools_classified": 72,
+    "re_derives_a_live_invariant": 54,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 3
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_finish_line_item1_routes.py",
@@ -51,7 +51,9 @@
     "tools/audit/gen_phase1_finish_line.py"
   ],
   "live_tools_that_fail_and_stay": [
-    "tools/audit/gen_filing_convention_application.py"
+    "tools/audit/decisions/gen_phase1w_legacy_verification.py",
+    "tools/audit/gen_filing_convention_application.py",
+    "tools/audit/gen_retirement_caller_check.py"
   ],
   "rows": [
     {
@@ -196,7 +198,7 @@
       "evidence": "gen_phase1w_legacy_verification.py:9-22",
       "why": "★ CLASSIFIED LIVE DESPITE FAILING, and its failure is the live invariant FIRING. It DERIVES the marked set from the backbone rather than from a recorded figure, LOCATES every recorded figure and every code anchor an entry rests on, and STOPS when a quote is not at its cited line — \"so the evidence cannot go stale silently\", in its own words. That is exactly what it reported: one anchor drifted by 23 lines. Re-aiming it is a lawful repair and is NOT done here (the freeze). It is also load-bearing live — `gen_live_prohibition_pointers.py` derives its class from this artifact. It stays, failing.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "state_at_the_committed_tree": "FAIL"
     },
     {
       "tool": "tools/audit/decisions/gen_r1_superseded_reach.py",
@@ -415,6 +417,14 @@
       "state_at_the_committed_tree": "PASS"
     },
     {
+      "tool": "tools/audit/gen_governing_surface_split.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_governing_surface_split.py, THE STOPS of its module docstring; `plan_for()`, which re-locates every moved span in the pre-act blob and re-checks the arithmetic; `build()`, which re-reads both live files on every run",
+      "why": "LIVE. Two of its three claims are re-answered against the tree AS IT STANDS on every run — every archived span still byte-present in its companion exactly once, and still absent from its parent — so a later edit that put an archived span back into a must-read, or that quietly dropped one from an archive, fails on the day it happens. Its STOPs are live demands too: they re-derive the population from the pinned decomposition and halt if a span reaches an archive class with no authored reading verdict, or if a verdict names a span the decomposition no longer carries. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: the pre-act blob and the register's home anchors are read from the git objects at the commit the act was performed on top of, because moved-plus-kept accounting for that blob is a fact about ONE MOMENT — checked at that moment's own object (D-646, the epoch pattern) rather than against a file that legitimately grows, which is the OI-344 shape avoided by construction and the precedent `gen_status_archive_pass.py` already sets. ★ WHAT IT DOES NOT ASSERT: that a span left at site is operative, or that a span moved is noise — the reading verdicts are authored judgments made by reading each span, published beside the spans they moved.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
       "tool": "tools/audit/gen_july_screen.py",
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_july_screen.py:22-30 (what is derived), :59-69 (the five STOPs), and its `retrieve()` function (the per-run git-object retrieval)",
@@ -500,7 +510,7 @@
       "evidence": "gen_retirement_caller_check.py, the `WHY THE READING IS PINNED TO A COMMIT` paragraph of its module docstring and its `THE STOPS` list; `candidacies()`'s two-way reconciliation of the derived flags against the authored conditions",
       "why": "LIVE, on the same ground `gen_test_construction_evidence.py` is. The REFERENCE reading is a statement about one tree and is taken at the commit the committed artifact RECORDS, so it re-derives forever instead of going red the first time anybody writes a file that names a flagged one — the OI-301/OI-305 shape avoided by construction rather than tolerated. What is LIVE is the POPULATION, and it is live twice over: the retirement flags are re-imported from `gen_artifact_inventory_surface.py`'s own authored table on every run, so this check and the ruling surface cannot disagree about what is flagged (#6); and the citation split that decides which members of a mixed class are flagged is RE-SCANNED at the governing record, so a document that starts or stops being cited moves side here exactly as it does there. Its STOPs are demands of the same kind — a flagged class the inventory does not carry, a mixed class it publishes no members for, a derived member count disagreeing with the count the inventory publishes, the authored conditions and the derived candidacies disagreeing in either direction, a condition whose quoted sentence is no longer in the ruling record, a verdict outside the closed vocabulary, and a tally that does not account for the candidacies. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that NONE FOUND means nothing depends on a file. A reference built at run time carries no literal to find and a binary blob is not searched, so the reading is generous in the safe direction and its limits are published above its first use.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "state_at_the_committed_tree": "FAIL"
     },
     {
       "tool": "tools/audit/gen_rulings_sort.py",

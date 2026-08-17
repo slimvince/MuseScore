@@ -306,25 +306,25 @@ start from, so it is listed with what the decisions register says the decision i
 
 ### D-180 — #17 - the Premise Gate
 
-- **Recorded at:** `CLAUDE.md:120` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:86` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** Before anything that affects the analysis is built or even probed: every load-bearing causal claim is written down and labelled as an established fact, a published theory, or an assumption; every assumption gets a written numerical prediction BEFORE anything is measured; the mechanism is traced by hand through three to five real failing cases, asking first whether it fires at all and only then what it changes; any stand-in quantity must itself be justified; any claim that one thing cannot affect another must name how it could; and no number enters a document by being typed in by hand.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-182 — #19 - an unestablished measurement tool is forbidden (Class B)
 
-- **Recorded at:** `CLAUDE.md:152` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:118` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** A measuring script, a corpus, a gate or a recorded figure is trusted only once it has been positively shown to be right - checked against an independent oracle, with a derivation of what its unit actually measures, and a reproduce-check. Never merely because nothing has contradicted it.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-185 — #22 - every hard gate declares in advance how it handles the largest change it will meet
 
-- **Recorded at:** `CLAUDE.md:248` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:214` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** A rule that decides whether a change may ship must say, before the fact, what it does when the change is far bigger than the incremental ones it was written for. It must never be rewritten while such a change is sitting in front of it.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-190 — The decision-neutrality corollary - what exists carries no weight in choosing a design
 
-- **Recorded at:** `CLAUDE.md:288` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:254` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** A design is chosen on the principles and the goal of the best possible analysis, and on nothing else. What it would cost to make existing code obsolete is a secondary consideration that can only break a tie between designs already equal; how many places downstream would have to change counts for nothing; and a change in what the user sees counts for nothing either - though every such change still needs ratifying and verifying exactly as before. The best design is chosen first, and what exists then either serves it or is retired.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -870,13 +870,13 @@ start from, so it is listed with what the decisions register says the decision i
 
 ### D-451 — A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win
 
-- **Recorded at:** `CLAUDE.md:134-136` · **status:** `live` · **group:** A
+- **Recorded at:** `CLAUDE.md:100-102` · **status:** `live` · **group:** A
 - **What the entry says the decision is:** When a mechanism is traced by hand, the numbers used are stand-ins declared up front whose only job is to let the mechanism be followed. None of them may become a fitted value later. And if a trace's answer would change had a stand-in been chosen differently within its believable range, the trace reports a near-tie and names the deciding cell rather than claiming a winner.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-452 — Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting
 
-- **Recorded at:** `CLAUDE.md:144-146` · **status:** `live` · **group:** A
+- **Recorded at:** `CLAUDE.md:110-112` · **status:** `live` · **group:** A
 - **What the entry says the decision is:** Each hand trace is run with every weight set to one, which is the baseline the design already requires be measured. That way what the trace checks is whether the shape of the model and its tables behave, and not whether a weighting was chosen well.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -984,7 +984,7 @@ start from, so it is listed with what the decisions register says the decision i
 
 ### D-474 — No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field
 
-- **Recorded at:** `CLAUDE.md:165-175` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:131-141` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** Principle #21 says the accuracy of the human annotation is itself something to measure, so that an error we cannot fix is told apart from two experts simply disagreeing. Searching the literature found that nobody has published such a figure for this repertoire — so the ceiling cannot be cited from anywhere and would have to be measured here.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -1314,7 +1314,7 @@ start from, so it is listed with what the decisions register says the decision i
 
 ### D-576 — The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent
 
-- **Recorded at:** `CLAUDE.md:806-810` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:762-766` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** A chord's root and its lowest note can both be named correctly while the key is wrong. So a measurement built on root agreement barely moves when the tonality is misread — but the quality of the chord, its Roman numeral and some of its inversions are all corrupted. The measurement therefore reports less damage than a listener or reader would see.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -1422,13 +1422,13 @@ start from, so it is listed with what the decisions register says the decision i
 
 ### D-656 — The crediting rule is NOT amended to count a tonicization label as agreeing with the annotator's modulated numeral; only a diagnostic partial-sub-split is defensible
 
-- **Recorded at:** `CLAUDE.md:1028-1037` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:980-989` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** Where our analysis names an applied chord relative to the home key and the human annotator has changed key, the accuracy comparison is not to be altered so that our label counts as agreeing. Only a diagnostic that splits such cases out and exposes the masking is defensible. This is the measurement half of a decision whose build half — leaving the labeller unwired — belongs to the function layer's specification.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-660 — A research-tied name is not renamed but is governed by a two-tier rule, and the terminology cleanup runs in a fixed order with no tree-wide rename
 
-- **Recorded at:** `CLAUDE.md:1558-1569` · **status:** `live` · **group:** K
+- **Recorded at:** `CLAUDE.md:1497-1508` · **status:** `live` · **group:** K
 - **What the entry says the decision is:** A term borrowed from the published research that collides with this project's vocabulary is not renamed. Instead: where the research is actually discussed, the collision is explained and our own synonym stated; and every later use of the borrowed term outside our vocabulary carries a short inline note pointing at the research, so an unannotated repeat use is a flag. The wider terminology cleanup runs in a fixed order — the derived inventory first, then per-word batches the user rules, governing surfaces first — and there is no tree-wide rename.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -1488,73 +1488,73 @@ rather than guessed.
 
 ### D-173 — #9 - measure only on corpora known to be non-stale and accurate
 
-- **Recorded at:** `CLAUDE.md:50` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:40` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** A measurement is only run against music whose annotations are current and correct.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-174 — #10 - documentation is kept in sync with code SO THAT code can always be compared against its specification, and that purpose is the test of what is worth fixing
 
-- **Recorded at:** `CLAUDE.md:51-61` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:41-51` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** The documents describing the system never lag behind the system — and the principle now says what that is FOR: so that the code can always be held up against its specification, and so that the specification is as correct and complete as it can be, in order that the code may be. That purpose is also the test of which discrepancies are worth fixing. An issue is worth fixing if leaving it alone risks something being built that does not serve the most precise inference achievable, or risks the code no longer being comparable against a correct and complete specification. An issue that risks neither is written down as DISCARDED — what was found, when, and why it was discarded — and is then not work anybody owes: it gets no row in the open-items register, blocks no stage, and draws no capacity. Two exceptions: an obligation to establish that something works is never discarded, whatever its subject; and where the consequence can neither be named nor cheaply established, the thing is looked at once, cheaply, because being unable to imagine a consumer is not evidence that there is none.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.
 
 ### D-176 — #13 - surface a surprise as a stop before building around it
 
-- **Recorded at:** `CLAUDE.md:114` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:80` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** When something unexpected turns up, work halts and it is reported. It is never quietly worked around.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-178 — #15 - verify at the objects on the full output surface, never at an assertion
 
-- **Recorded at:** `CLAUDE.md:116` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:82` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** A result is confirmed by looking at the actual data it produced, across everything it produced - the chosen reading and the alternatives carried beside it - not by a test that asserts what was expected.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-179 — #16 - every measurement is stamped to its corpus and its tooling, and the outgoing reference is snapshotted
 
-- **Recorded at:** `CLAUDE.md:118` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:84` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** A measurement records which music it was run on and which version of the measuring code produced it, and the previous reference numbers are saved before new ones replace them.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-181 — #18 - an unverified causal premise is forbidden (Class A)
 
-- **Recorded at:** `CLAUDE.md:150` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:116` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** No design may rest on a claim about how our own system or data behaves when that claim could be checked and has not been.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-183 — #20 - fit and evaluation are separated
 
-- **Recorded at:** `CLAUDE.md:156` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:122` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** No number is graded on the same music that helped choose it. Before any fitting, the held-back music and the budget of how many free values may be fitted are declared; the headline figure is always the one measured on the held-back music.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-184 — #21 - ground truth is a measurement tool too, and its accuracy is measured
 
-- **Recorded at:** `CLAUDE.md:160` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:126` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** How right the reference annotations are is itself something to be measured - how far annotators agree with each other, axis by axis - not assumed. Every precision target and every claim that a remaining error is irreducible is read against that measured ceiling.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-186 — #23 - an end-state principle needs a lawful transition
 
-- **Recorded at:** `CLAUDE.md:253` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:219` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** When a planned piece of work must temporarily break a principle that describes the finished state - such as building a second analysis path beside the first - the breach is declared, bounded, and approved in advance together with the plan for removing it.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-187 — #24 - every reported figure carries its uncertainty
 
-- **Recorded at:** `CLAUDE.md:257` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:223` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** How much a measured number could move by chance, given how much music it was measured on, is quantified and reported with it. A difference inside that range is not a finding and no decision may rest on one.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-188 — The constrained-optimum ledger corollary
 
-- **Recorded at:** `CLAUDE.md:262` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:228` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** When a design is chosen because it complies with the method rather than because it measured best, the record must name what the best-performing alternative actually was and why it is ruled out.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
 ### D-189 — The scope of surprise, and the three-stage funnel
 
-- **Recorded at:** `CLAUDE.md:267` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:233` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** Being surprised is allowed - expected, even - in exploratory work whose whole purpose is to remove ignorance. It is not allowed while building the analysis itself: there a surprise stops the work and shows the Premise Gate was not satisfied. The order of work is: trace it by hand for hours, then probe it read-only for a session, then build it.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.
 
@@ -1746,7 +1746,7 @@ rather than guessed.
 
 ### D-473 — A theory-grounding pass labels every load-bearing claim FACT / THEORY / CONJECTURE, cross-checks its central sources independently, and carries no equation out of a text it could not fetch
 
-- **Recorded at:** `CLAUDE.md:302-304` · **status:** `live` · **group:** T
+- **Recorded at:** `CLAUDE.md:268-270` · **status:** `live` · **group:** T
 - **What the entry says the decision is:** When published research is used to justify a design, each claim is marked as either measured in a paper that was actually read, established theory, or a guess. The main papers are read by more than one pass and the readings compared. If a paper could not be obtained, nothing is copied from it — the gap is stated instead.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry NEITHER subject. Guessing is what the phase's stop rule forbids.
 
@@ -1800,7 +1800,7 @@ rather than guessed.
 
 ### D-639 — Phase 1's doc-sync half reaches a document's account of ITSELF only where that account changes how its analysis content is read — with three worked examples that are the test, and a fallback ruled with it
 
-- **Recorded at:** `CLAUDE.md:1629-1648` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:1568-1587` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** D-231's phase-1 rule says the specifications must be corrected wherever they state something false at HEAD. Documents also state things about themselves — a status banner, an as-built marker, a code line number, a missing note that a plan was superseded — and the user ruled how far that obligation reaches into those: only where the document's account of itself changes how a reader reads its analysis content. Three worked examples settle it rather than illustrate it: an as-built banner over a mechanism that is dormant is IN; a superseded plan with no note saying so is IN; a code anchor that has drifted, or a formatting artifact, is OUT. And if a session finds the test needs argument on the first cases it meets, it falls back to the narrow reading — the obligation covers only what a document says about the analysis — and says that it did so.
 - **Decided by:** nothing — the rule reached no verdict and returns the entry — the decisions register's own home classification does not place this entry, and its title and plain restatement carry BOTH subjects. Guessing is what the phase's stop rule forbids.
 

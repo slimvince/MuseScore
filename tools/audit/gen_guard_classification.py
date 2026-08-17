@@ -735,6 +735,25 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "that a naming is a DEPENDENCY, or that a file naming none of the five depends on none of "
         "them — the scan sees tracked files only and a path composed at run time carries no "
         "literal to find, the same bound the retirement caller-check publishes of itself."),
+    "tools/audit/gen_governing_surface_split.py": (
+        LIVE, "gen_governing_surface_split.py, THE STOPS of its module docstring; `plan_for()`, "
+              "which re-locates every moved span in the pre-act blob and re-checks the arithmetic; "
+              "`build()`, which re-reads both live files on every run",
+        "LIVE. Two of its three claims are re-answered against the tree AS IT STANDS on every run "
+        "— every archived span still byte-present in its companion exactly once, and still absent "
+        "from its parent — so a later edit that put an archived span back into a must-read, or that "
+        "quietly dropped one from an archive, fails on the day it happens. Its STOPs are live "
+        "demands too: they re-derive the population from the pinned decomposition and halt if a "
+        "span reaches an archive class with no authored reading verdict, or if a verdict names a "
+        "span the decomposition no longer carries. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT "
+        "A DATED READING EITHER: the pre-act blob and the register's home anchors are read from "
+        "the git objects at the commit the act was performed on top of, because moved-plus-kept "
+        "accounting for that blob is a fact about ONE MOMENT — checked at that moment's own object "
+        "(D-646, the epoch pattern) rather than against a file that legitimately grows, which is "
+        "the OI-344 shape avoided by construction and the precedent "
+        "`gen_status_archive_pass.py` already sets. ★ WHAT IT DOES NOT ASSERT: that a span left at "
+        "site is operative, or that a span moved is noise — the reading verdicts are authored "
+        "judgments made by reading each span, published beside the spans they moved."),
     "tools/audit/gen_census_movement_classification.py": (
         LIVE, "gen_census_movement_classification.py, the THREE CATEGORIES and THE STOPS of its "
               "module docstring; `build()`, which re-runs the citation scan at both states and "

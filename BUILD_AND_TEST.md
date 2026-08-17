@@ -133,9 +133,7 @@ on the ground that re-typing a 2026-07-13 measurement as if it were current is e
 transcription the standing rule against hand-copied measurement values forbids — and that refusal
 was correct. The remedy is to build and run, which is what was done here (`OPEN_ITEMS.md` OI-150).
 
-*Former wording, preserved in place (#12): "**Current baseline: 974/974** passing, 2 disabled (verify
-with CC — count changes as tests are added)." The 974 value was measured on 2026-07-13 and was stale
-at HEAD; its "verify with CC" caveat went unexercised from then until this re-stamp.*
+*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 3 line(s), `preserved-former-wording`, opening "*Former wording, preserved in place (#12): "**Current baseli…"*
 
 Tests `analyzeChord()` directly in the composing module. Run after any change to `src/composing/`.
 After each run, read `src/composing/tests/chord_mismatch_report.txt`.
@@ -170,11 +168,7 @@ the 61 and no for these four** — which is what a `53/53` line could not say. T
 `OPEN_ITEMS.md` OI-148, which owns them and their scheduled fix; nothing else about them is restated
 here (#6).
 
-*Former wording, preserved in place (#12): "**Current baseline: 53/53** passing (verify with CC —
-count changes as tests are added)." It reported a clean suite: the count was stale at HEAD **and** it
-named none of the four xfails, so a reader checking whether the tests pass was told yes and never
-learned that four DCML-checked cases were failing by design. That concealment, not the stale count,
-is the harm `OPEN_ITEMS.md` OI-150 rowed as the harmful one of its two halves.*
+*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 5 line(s), `preserved-former-wording`, opening "*Former wording, preserved in place (#12): "**Current baseli…"*
 
 Run after any change to bridge code (`notationharmonicrhythmbridge.cpp`,
 `notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`, etc.) **and** after
@@ -320,19 +314,14 @@ Update rationale: Iteration 61 added the HalfDim first-inversion bonus
 (Option B), moving BIR=true 7→6 and BIR=false 132→125 without regressions in
 Jazz. Iter 62 was a tools-only parallelization with no chord-output impact.
 
-Previous baseline (Iteration 54, corpus regeneration 2026-05-11):
-- 3-way genuine BIR=true: 14
-- 3-way genuine BIR=false: 132
-- Commit: f92a4f1a3b (greedy-expand segmentation, batch path)
+*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 4 line(s), `self-declared-historical-or-superseded`, opening "Previous baseline (Iteration 54, corpus regeneration 2026-05…"*
 
 Iteration 54 switched `batch_analyze` from Jaccard-based segmentation
 to greedy-expand, producing different (improved) chord boundaries. The bridge path
 (`notationcomposingbridgehelpers.cpp`) still uses Jaccard; bridge replacement is in
 progress (Task #62).
 
-Previous baseline (Iteration 46, corpus regeneration 2026-05-09):
-- 3-way genuine BIR=true: 21
-- 3-way genuine BIR=false: 128
+*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 3 line(s), `self-declared-historical-or-superseded`, opening "Previous baseline (Iteration 46, corpus regeneration 2026-05…"*
 
 Iteration 46 extended `supportsContextualInversionBonuses` and
 `qualifiesForCompleteTriadInversionBonus` to include Augmented and HalfDiminished quality
@@ -341,9 +330,7 @@ candidates from appearing in results[]. The extension reduced bassIsRoot=true er
 and bassIsRoot=false errors by 49 without introducing regressions.
 Commit: 36bf4738a8
 
-Previous baseline (Iteration 36, corpus regeneration 2026-05-08 with new alternatives JSON):
-- 3-way genuine BIR=true: 32
-- 3-way genuine BIR=false: 177
+*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 3 line(s), `self-declared-historical-or-superseded`, opening "Previous baseline (Iteration 36, corpus regeneration 2026-05…"*
 
 NOTE — counting methodology changed in Iteration 36: `batch_analyze` now emits
 `rootPitchClass`, `bassPitchClass`, `quality`, and `bassIsRoot` on each alternative
@@ -391,18 +378,12 @@ annotation with itself. Read the rule at its home; this line points at it and do
 - 3-way genuine BIR=false: 12  ← hard stop: must remain ≤ 75 for any gate
 - Commit: f92a4f1a3b
 
-Previous Jazz baseline (Iteration 46 binary, validated 2026-05-09):
-- 3-way genuine BIR=true: 106  (Jazz harmony is outside Baroque gate scope — not a target)
-- 3-way genuine BIR=false: 20
-- Total regions: 9389 across 353 scores; chord identity agreement 80.3%
+*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 4 line(s), `self-declared-historical-or-superseded`, opening "Previous Jazz baseline (Iteration 46 binary, validated 2026-…"*
 
 Note: The Jazz preset's low maxTotalInversionContextBonus (0.6) suppresses inversions,
 so most Jazz errors are root-position misidentifications (BIR=true), not inversion errors.
 
-Previous figures for reference (Iteration 32, Baroque):**
-- 3-way genuine BIR=true: 48
-- 3-way genuine BIR=false: 787
-(With _matches_alternative disabled these are still recoverable from the Iter 36 corpus.)
+*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 4 line(s), `self-declared-historical-or-superseded`, opening "Previous figures for reference (Iteration 32, Baroque):** - …"*
 
 Iteration 32 changes:
 Gate L — prefer same-root Major over root-position Augmented plain triad (TYPE-A quality
@@ -413,14 +394,7 @@ to the Major reading.
 4 BIR=true fixes (bwv144.6 B+→B, bwv245.15 E+→E, bwv312 E+→E, bwv245.37 F+→F);
 BIR=false unchanged at 787.
 
-Previous baselines for reference:
-Iteration 30 (2026-05-08): BIR=true=52, BIR=false=787.
-Gate K — prefer first-inversion augmented over root-position augmented. When the
-winner is Augmented bassIsRoot=true and a runner-up has the same bass note at interval+4
-from its own root (I4 = major-third inversion), the runner-up quality is Augmented or
-Major+SharpFifth, the runner-up's root is diatonic to the key, and the score margin
-is ≤ 0.20, swap to the first-inversion reading.
-1 BIR=true fix (bwv40.6 m=6: A+ → F#5/A); BIR=false unchanged.
+*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 8 line(s), `self-declared-historical-or-superseded`, opening "Previous baselines for reference: Iteration 30 (2026-05-08):…"*
 
 **IMPORTANT — corpus JSONs must be regenerated before updating baselines.**
 `analyze_inversion_errors.py` reads existing `.ours.json` files and will silently
