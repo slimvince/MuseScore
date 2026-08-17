@@ -47,29 +47,43 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 sys.path.insert(0, HERE)
 from output_encoding import use_utf8_output      # noqa: E402  (path set above)
 from gen_status_archive_pass import ENTRY        # noqa: E402  the ONE dated-entry pattern (#6)
+from gen_governing_surface_split import PREFIX_ADJUSTMENT   # noqa: E402  the ONE declared shift (#6)
 
 use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 
 OUT = os.path.join(HERE, "status_batch_bound.json")
 
-# The commit this move is performed on top of: Task 1 of the executing dispatch, pushed before the
-# close began. An explicit hash, which is the only git read D-253 permits.
-# Re-aimed 2026-08-17 at the seventh batch's close: Task 3 of `cc_instruction_preparation_seventh.md`,
-# pushed before this close began. The forward bound is applied once per batch, and its two authored
-# inputs are the base commit and the then-previous batch — nothing else about the tool moves.
-BASE_COMMIT = "cfb69a7ecb21351382b25206616a0349214e44f8"
+# The commit this move is performed on top of: the last task commit of the executing dispatch,
+# pushed before the close began. An explicit hash, which is the only git read D-253 permits.
+#
+# ★ THE FORWARD BOUND IS APPLIED ONCE PER BATCH, AND EXACTLY THREE INPUTS MOVE WITH IT — the base
+# commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
+# every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
+# maintained rather than a value that keeps changing for no stated reason.
+BASE_COMMIT = "a21a55fc125fa58531b724f22918b29f0a1d0efc"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_preparation_sixth.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_preparation_seventh.md"
 
 ACT_DATE = "2026-08-17"
-DISPATCH = "cc_instruction_preparation_seventh.md"
+DISPATCH = "cc_instruction_preparation_eighth.md"
+TASK = "Task 5"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
+
+# Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
+PREVIOUS_AIMINGS = [
+    {"executing_act": "cc_instruction_preparation_sixth.md, Task 1",
+     "base_commit": "1f84f5d62107bde86ddd09317282be1642feb9da",
+     "the_then_previous_batch": "the backlog, cleared by gen_governing_surface_split.py"},
+    {"executing_act": "cc_instruction_preparation_seventh.md, Task 2",
+     "base_commit": "cfb69a7ecb21351382b25206616a0349214e44f8",
+     "the_then_previous_batch": "cc_instruction_preparation_sixth.md"},
+]
 
 ARCHIVE_HEADER = (
     f"> **★ RULING 4's FORWARD BOUND, {ACT_DATE}.** The entries below are the PREVIOUS batch's "
-    f"(`{PREVIOUS_BATCH_DISPATCH}`), moved verbatim out of `STATUS.md` by `{DISPATCH}` Task 2 in "
+    f"(`{PREVIOUS_BATCH_DISPATCH}`), moved verbatim out of `STATUS.md` by `{DISPATCH}` {TASK} in "
     f"the same act that wrote this batch's own entries — Ruling 4 of `{RULINGS}`: *an entry is "
     f"SUPERSEDED the moment a later batch's close exists, and the site keeps only the latest "
     f"batch's entries.* Nothing was edited in transit; the reconciliation is re-derived by "
@@ -131,12 +145,29 @@ def moved_entries() -> list[dict]:
     while i < len(dated) and SAME_DISPATCH in dated[i][1]:
         members.append(i)
         i += 1
-    return [{"line_at_base": dated[i][0], "characters": len(dated[i][1]),
-             "sha256": sha(dated[i][1]),
-             "membership": ("names the dispatch" if PREVIOUS_BATCH_DISPATCH in dated[i][1]
-                            else "says `Same dispatch`, in the run below the entry that names it"),
-             "opening": dated[i][1][:150].rstrip("\r\n"),
-             "_text": dated[i][1]} for i in members]
+    # ★ THE ONE DECLARED TEXTUAL ADJUSTMENT, IMPORTED RATHER THAN RESTATED (#6). The newest entry
+    # of a batch carries the `Last updated: ` prefix; the NEXT batch's close writes its own entries
+    # above it and the prefix moves to the newest of those, so the entry this act must find in the
+    # live file differs from the base commit's by exactly that prefix and nothing else. The split
+    # tool met the same shift and declared the same constant; it is imported here rather than
+    # re-decided. Any entry needing a SECOND adjustment is a STOP, not a second constant: the
+    # occurrence test below fires on it.
+    out = []
+    for i in members:
+        text = dated[i][1]
+        adjusted = False
+        if PREFIX_ADJUSTMENT in text:
+            text = text.replace(PREFIX_ADJUSTMENT, "", 1)
+            adjusted = True
+        out.append({"line_at_base": dated[i][0], "characters": len(text),
+                    "sha256": sha(text),
+                    "membership": ("names the dispatch" if PREVIOUS_BATCH_DISPATCH in dated[i][1]
+                                   else "says `Same dispatch`, in the run below the entry that "
+                                        "names it"),
+                    "the_one_declared_adjustment_applied": adjusted,
+                    "opening": text[:150].rstrip("\r\n"),
+                    "_text": text})
+    return out
 
 
 def apply_move() -> None:
@@ -173,7 +204,8 @@ def build() -> dict:
             "was lost or altered in transit (#12). Every figure here is computed; none is "
             "transcribed (D-431).",
         "generated_by": "tools/audit/gen_status_batch_bound.py",
-        "dispatch": f"{DISPATCH}, Task 2",
+        "dispatch": f"{DISPATCH}, {TASK}",
+        "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": PREVIOUS_AIMINGS,
         "the_ruling": f"Ruling 4 of {RULINGS}: an entry is SUPERSEDED the moment a later batch's "
                       f"close exists; the site keeps only the latest batch's entries, and every "
                       f"future batch close moves the then-previous batch's entries in the same act "

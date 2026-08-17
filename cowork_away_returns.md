@@ -13423,3 +13423,360 @@ Task 3 is `cfb69a7ecb` (parent `e94f765c25`), pushed, 10 paths. Task 4's close a
 the commit carrying this sentence. **★ WHERE THE RECORDING TERMINATES:** every commit of this batch
 is verified at the object and named except the LAST one, which cannot contain its own identity —
 that is the terminus, not an omission.*
+
+---
+
+# ★ CLOSE — THE PREPARATION EIGHTH BATCH (2026-08-17)
+
+> **Dispatch:** `cc_instruction_preparation_eighth.md`, executing the four sitting records of
+> 2026-08-17 — `cowork_rulings_2026_08_17_seventh_return.md` §1,
+> `cowork_rulings_2026_08_17_residue_sitting.md`, `cowork_rulings_2026_08_17_callers_sitting.md`
+> and `cowork_rulings_2026_08_17_rulings_sort_sitting.md`.
+> **The report is `cc_report_preparation_eighth.md`.** Every verdict, movement, population and
+> count lives in the generated artifacts and is not restated here (**D-431**).
+
+## 0. The reading, the start state, and Task 0
+
+`CLAUDE.md`, `STATUS.md` and `BUILD_AND_TEST.md` were read **as they now stand, in full**; no
+archive companion was opened, because no decision was re-opened. Then, as the dispatch orders: the
+FOUR sitting records of 2026-08-17 whole; `cowork_rulings_2026_08_17_sixth_return.md` and
+`cowork_rulings_2026_08_16_preparation_return.md` §§3–6; `cc_report_preparation_seventh.md` whole;
+and the four artifacts the tasks bind at.
+
+**The start-state guard run, taken BEFORE the first edit and at a quiet tree**, printed exactly
+what the dispatch declares:
+
+```
+65 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** — 64
+passing, **zero STOPs**. The runner rewrote its own artifact byte-identically, so the tree was
+unmoved by the measurement.
+
+**Assumption A1 held at the shape its own sentence describes.** `tools/audit/changed_paths.py`
+reported **exactly ONE tracked modification in the whole working tree** — `cowork_handoff.md` —
+with the four sitting records and the dispatch untracked. The difference was taken **blob against
+blob by explicit hash**: the committed blob resolved from the explicit commit `56ad941ee7`
+(`5c46cd44e3`), the working blob `a87846b199`. **ONE contiguous changed passage**, 97 insertions
+and 1 deletion, carrying both parts A1's sentence names — the twenty-fourth session-close block
+inserted, and the twenty-third heading gaining its entry-point demotion marker. No changed-passage
+count was asserted in advance (the F25 lesson).
+
+**Task 0 — commit `570f2b63b1`** (parent `56ad941ee7`), pushed, **6 paths**, verified at the
+object. **E0 — MET**: one modification whose content matches A1's stated shape, five additions, no
+staging override.
+
+## 1. Task 1 — the two ruled `CLAUDE.md` spans, READ WHOLE, and BOTH refused
+
+**`CLAUDE.md` is BYTE-UNCHANGED by this batch, proven by hash** — blob `8230aa91b6` at the pin, at
+the base commit and in the working tree. The four REFUSED spans are untouched.
+
+### 1.a The safeguard fired on both, and that is Ruling 1's own provided outcome
+
+Ruling 1 binds this act to the read-before-move safeguard *"exactly as the split did"* and states
+in terms what happens when a span fails it: *"A span that does not read at execution time as this
+ruling assumes is a STOP-and-report, never a forced move."* Both spans failed. The reading test is
+IMPORTED from the executed split rather than restated (#6), and the outcome is reported with
+mechanical evidence per span, so the user can overrule either verdict in one edit; the tool's
+`--apply` path is complete and would perform the move.
+
+### 1.b ★ The finer pass's ONE uncontested proposal is a recognizer artifact
+
+The span at lines 53–60, read whole, is two different things and neither is a
+declined-alternatives record.
+
+- **Lines 53–58** are a LIVE supersession statement — *"★ WHAT IT SUPERSEDES — A POINTER, NEVER A
+  COPY (#6)"* — telling a session that R3's clause making an apparatus finding's row mandatory no
+  longer holds for a finding the worth test discards, that R3 is otherwise untouched, and where R3
+  lives. A session reading principle #10 acts on that.
+- **Lines 59–60 are TWO ARCHIVE POINTERS** left by the executed split.
+- **AND THE POINTERS ARE WHERE THE CLASS COMES FROM.** Measured at the pinned blob: the only
+  occurrence of `DECLINED` in the span is at offset 637, inside the first pointer; the only
+  occurrence of `THE COSTS THE USER ACCEPTED` is at offset 785, inside the second. The span
+  contains no alternative and no cost of its own.
+
+Archiving it would delete both pointers, removing the only breadcrumbs back to two spans the split
+already moved — the exact harm the finer pass's own structural rule was written against.
+
+**★ THIS IS F41 ESCALATED, AND IT IS THE BATCH'S LARGEST FINDING.** The pass's structural guard for
+archive pointers fires only when a span **BEGINS** with one; here the pointers sit at the span's
+END and lend their quoted class name and quoted opening to the classifier. So F42's negative answer
+is stronger than it was reported: the ONE span the finer pass proposed on ground no reading had
+refused was itself produced by the defect F41 names.
+
+### 1.c The second span closes with a live status sentence, and the doubt default decides it
+
+Lines 194–211 are what the ruling assumes and are archive material by the ruled test's own naming:
+principle #21's replaced paragraph quoted verbatim, why it was replaced, and the two declined
+alternatives. **Lines 212–213 are neither** — *"The errata limb of the contact was RE-ASKED
+2026-08-11 and AWAITS REPLY; clause (a)'s reasonable-wait clock runs from that date."* The rule it
+qualifies STAYS AT SITE: clause (a) of the commissioning block in this same principle closes the
+route by exhaustion after a reasonable wait, and this sentence is the only statement in `CLAUDE.md`
+of when that clock started, on an obligation ([[OI-179]]) that is OPEN and GATES under #19.
+
+**★ THE COUNTER-EVIDENCE IS RECORDED RATHER THAN SUPPRESSED.** The A4 safeguard's own reading of
+the coarse span placed exactly these twenty lines — the closing sentence included — under
+*"principle #21's preserved former wording runs from line 228 to 247"*, and gave the overrun into
+principles 22–24 as its ONLY reason to keep. That reading supports the move; this one finds a live
+remainder it did not name. **Two readings at the file disagree at the margin, which IS the doubt
+the ruled default exists for**, and staying is the recoverable direction (D-639's fallback shape,
+applied and said so rather than stretched).
+
+### 1.d What the reconciliation proves at a tree where nothing moved
+
+Every flagged span and every REFUSED span is still byte-present at site exactly once and in the
+companion not at all. **Those are the load-bearing directions here**: a check that only proved a
+move would be green at a tree where the refusals had been overridden.
+
+**Task 1 — commit `dd698031df`** (parent `570f2b63b1`), pushed, **6 paths**, verified at the
+object. **E1 — NOT MET AS WRITTEN, and the reason is the ruling's own.** The reconciliation proves
+its directions and no verdict, gate, cut or population moved; but *"the archived total is exactly
+the two ruled spans' characters"* is unmet because the safeguard archived neither, and no anchor
+needed re-aiming because nothing moved.
+
+## 2. Task 2 — the residue sitting's four rulings executed
+
+### 2.a The arithmetic, which the ruling makes a STOP rather than an adjustment
+
+Keep side 411 + 10 + 47 + 6 = **474**; discarded 165 + 29 + 9 = **203**; 474 + 203 = **677**, the
+register's whole non-trivial population; the live register **512 → 474**. Every figure is derived
+on the run from a committed artifact, and a disagreement at any of the four halts the tool.
+
+### 2.b The discards, the carry and the keeps
+
+- **THE DISCARDS.** Ruling 1's 29 withheld sole-carriers and Ruling 3's 9 SUBJECT-NOT-FOUND-THERE
+  entries retire into the register data file's existing retired block by the register's own
+  mechanism, byte-preserved and individually revivable. Each record carries its finding, its date,
+  its retiring authority, the ruling of the sitting that retired it, its own reason, and **the
+  ruled clause verbatim**.
+- **THE CARRY.** A new generated artifact publishes the framework phase's untrusted-candidate list
+  — the 29 plus the one member carried from the nine, exactly **30** — each with the title,
+  restatement, recorded home and status the register gives it, read from the register whether the
+  entry is live or retired. A derived population other than the one the ruling states halts the
+  tool; a hand edit fails its check.
+- **THE KEEPS.** The 47 gain their deciding act as the document-ratification the check located,
+  with the subject match quoted and located in the ratified document. The 6 gain theirs from the
+  recovery pass's original quoted acts, unchanged. **Every stamp is re-quoted from its source
+  artifact on every check**, so one removed or rewritten fails on the day it happens.
+
+### 2.c ★ Six checks went red at the applied tree and all six cleared by their own ruled treatments
+
+None by an adjustment.
+
+1. **`gen_retired_subject_moves` and `gen_phase1w_legacy_verification`** — five verdicts whose
+   subjects retired moved verbatim into `RETIRED_VERDICTS` with their subject references. The
+   section note now names BOTH retiring acts, its former single-act wording preserved verbatim
+   (#12), because a note naming one would say something false about the rows the other moved.
+2. **`gen_home_classification` and `gen_phase1p_delegation_bar`** —
+   `cowork_layer1_note_model_design.md` stopped being anybody's home, so its delegation-scope
+   judgment and its FORM grade moved whole into their retired sections; three section-kind
+   judgments whose entries retired moved into `section_kind_retired` with the subjects they were
+   authored against. Membership is DERIVED throughout and re-verified in both directions.
+3. **`gen_live_prohibition_pointers`** — **★ A REAL COLLISION, FOUND BY THE GUARD RATHER THAN
+   REASONED ABOUT.** That tool appends its pointer to the same provenance field and keeps itself
+   idempotent by truncating at its own marker and re-appending, which assumes its pointer is last.
+   A stamp appended after it would be silently deleted by its next run. The stamps therefore go
+   BEFORE that marker where a field carries one, and the marker is imported from the tool that owns
+   it rather than retyped (#6); the other tool's invariant is left exactly as it was.
+4. **`apply_soft_discard`** — its check compared the block's WHOLE retired population and the WHOLE
+   live record against the plan's three recorded figures, which is right while the block holds one
+   retirement and false the moment a second, separately ruled act appends to it. It now asserts
+   something narrower that stays true across every later retirement: the count of records carrying
+   THIS act's own `retired_by`, the block's former population, and the plan's own two figures being
+   self-consistent. A plan whose arithmetic was rewritten still fails.
+
+**Task 2 — commit `b0b51ee657`** (parent `dd698031df`), pushed, **34 paths**, verified at the
+object. **E2 — MET**: the sums reconcile exactly; every retired entry is accounted for by the
+block's own arithmetic with none in both blocks and none in neither; the candidate artifact lists
+exactly 30 and its check passes; every keep's recorded act quotes and locates a real passage,
+re-derived from its source artifact rather than compared with a copy.
+
+## 3. Task 3 — the census under the ruled kinds, re-pinned, every movement classed
+
+### 3.a The four ruled inputs are taught as RULINGS, not as derivations
+
+Every caller kind now carries `how_the_kind_was_settled` — either *"derived by this tool's own two
+links"* or *"USER-RULED at the 2026-08-17 callers sitting"* — and every naming the sitting stopped
+from holding carries the ground it was ruled on. The distinction is readable at the artifact
+without opening the generator, which is the dispatch's own requirement.
+
+- **§1, the nine KIND-UNDERIVABLE callers are ENUMERATOR-class.** **THE MEMBERSHIP IS DERIVED AND
+  NEVER RETYPED:** it is read from the census reading the sitting was held over, at the git object
+  of the commit that carries it, and each derived caller's base name is then LOCATED in the sitting
+  record itself. A derived set the record does not describe halts the tool rather than ruling on a
+  population the user never saw. **The override reaches those nine and no others** — §1's own words
+  are that a future caller the derivation cannot place still returns to the user, and one does.
+- **§2 and §3, the deferred question ANSWERED:** a prose citation holds nothing, and neither does a
+  naming outside the ruling's three kinds. **Both stay PUBLISHED**, per member, with the line each
+  was found on and the ground it was ruled on (#12). What changed is what a naming DOES, never
+  whether it is recorded.
+- **§4:** a tool reading the file by name and a mandatory-read or boot listing HOLD, and the
+  surviving holds rest on those two kinds alone.
+
+### 3.b ★ A fourth movement class was needed, and is declared rather than taken silently
+
+The three ruled classes were authored for the seventh batch's re-pin, whose causes were the split,
+the earlier discard and the tree's growth. **This re-pin has a fourth cause and it is the act the
+batch was dispatched to perform.** Run against the three, **687 movements fit none**: a naming that
+stopped holding by a ruled input did not leave a governing file, did not leave a rendered register
+surface, and neither it nor its caller left the tree. The new class is DERIVED on the same shape as
+the other three — the relation is tested against the new census's OWN published fields, which name
+every such naming, with the ruled input quoted from the artifact — and a movement it does not reach
+still STOPS.
+
+### 3.c ★ And a defect in an inherited relation was measured and corrected
+
+The discard relation sought the flagged file by its **PATH** inside the register's retired block,
+while the census defines a reference as a **BASE-NAME** match and a register entry that names a
+measurement tool writes the tool's name, not its directory. With the path test it missed the one
+naming that left `decisions/group_H.md` because the entry carrying it — D-399, whose verbatim names
+the tool — was retired by this batch's own Task 2; the movement fell through to the content-level
+growth relation, which is true of it and is not its cause. The relation now uses the census's own
+test, and the discard's residue is separated by WHICH act retired it, both readings taken at the
+two measured commits rather than at the working tree, because the retired block now holds two
+retirements.
+
+### 3.d The movement
+
+**855 movements at four units of identity, ZERO fitting none.** The discard's residue 1; the tree's
+ordinary growth 167; the callers sitting's ruled inputs 687. The split's effect is empty, which is
+what the seventh batch's re-pin having already accounted for it looks like. **No candidacy verdict
+flipped** — one PASSES-THE-CHECK and eight HELD-BY-CALLERS before and after — and a crossing would
+confer CANDIDACY only in any case. The KIND-UNDERIVABLE population falls to one, published as data
+and returning to the user.
+
+**Task 3 — commit `d499027a8c`** (parent `b0b51ee657`), pushed, **5 paths**, verified at the
+object. **E3 — MET**: the check PASSES at the new pin; the movement artifact classes every
+difference with zero unclassed; every set-aside naming stays published; zero verdict flips.
+
+## 4. Task 4 — the sort's ruled placements recorded
+
+The 60 returned entries are placed as a **distinct route** — *"USER-RULED at the 2026-08-17
+sitting"* — beside the rule's own three, with the ruled criterion quoted at the placement and the
+rule's own recognizer evidence KEPT beneath it, so the placement can be read against what the rule
+saw. **The membership is parsed from the sitting record and never retyped**: each list is checked
+against the count its own heading states, and four things halt the pass rather than being
+reconciled — a list whose size disagrees with its heading, an identity in both lists, a placement
+for an entry the rule placed itself, and a returned entry the sitting leaves unplaced. The last two
+are the load-bearing pair.
+
+**The arithmetic reconciles in both directions, as a STOP:** the sitting's own stated totals are
+parsed from its record, this pass computes its own, and a disagreement halts — **244 DESIGN-INTENT
+/ 167 IMPLEMENTATION-MANAGEMENT / 0 unplaced**, and 244 + 167 = 411 against the confirmed
+population the filter artifact carries.
+
+**The ratification of the rule-placed side is recorded in the artifact's own header**, with its
+ground from the sitting. It moves no verdict, because the verdicts it ratifies are the ones the
+rule already produces. **The `nonspec_kind` header disagreement is left exactly as found** — no
+repair ordered, values the header does not define still unmapped by name, still riding to the
+retrospective as evidence.
+
+**★ THE SURFACE'S BANNER IS CORRECTED, WHICH IS DOC-SYNC RATHER THAN A CHOICE.** It said the
+surface was awaiting the user and that nothing here was ruled — true when written, made untrue by
+the sitting, and a governing surface may not state something false about itself. The new banner
+carries the ruled state, names the three rulings, and says what the former banner said and why it
+no longer holds; the former rendering stands in git (#12).
+
+**Task 4 — commit `a21a55fc12`** (parent `d499027a8c`), pushed, **3 paths**, verified at the
+object. **E4 — MET**: the totals reconcile; every USER-RULED placement carries its route marker;
+the surface re-derives from the artifact byte-identically under its own check.
+
+## 5. Task 5 — the close, and Ruling 4's forward bound
+
+Six `STATUS.md` pointer entries — one per task — and, per the standing Ruling-4 bound, **the same
+act moved the SEVENTH batch's five entries verbatim to `STATUS_ARCHIVE.md`**, both directions
+proven. The tool's three authored inputs are re-aimed and **every previous aiming is kept rather
+than replaced** (#12), so a reader sees the bound being maintained rather than a value that keeps
+changing for no stated reason.
+
+**★ ONE DECLARED ADDITION TO THAT TOOL.** The newest entry of a batch carries the `Last updated: `
+prefix, and the next batch's close writes its own entries above it, so the entry the bound must
+find in the live file differs from the base commit's by exactly that prefix. The tool STOPPED on
+it — correctly, its occurrence test being what it is — and the remedy is the ONE declared textual
+adjustment the split tool already carries, **IMPORTED rather than re-decided** (#6). An entry
+needing a second adjustment still halts.
+
+## 6. The guard set
+
+| when | run | failing | not run | historical | STOPs |
+|---|---:|---:|---:|---:|---:|
+| before the first edit | 65 | 1 | 4 | 16 | 0 |
+| at the Task 1 tree | 66 | 1 | 4 | 16 | 0 |
+| at the Task 2 tree | 68 | 1 | 4 | 16 | 0 |
+| at the Task 3 tree | 68 | 1 | 4 | 16 | 0 |
+| at the Task 4 tree | 68 | 1 | 4 | 16 | 0 |
+
+The population grows by exactly this batch's three new invocations. **The one failing check is
+[[OI-372]]'s tool and no other**, at every state, which is what assumption A2 predicts. **Every run
+was taken at a quiet tree**, and `gen_guard_classification.py --check` printed *"the guard
+classification re-derives"* after every regeneration.
+
+**★ ASSUMPTION A2 HELD.** Its check is that any red other than [[OI-372]]'s is classed by its
+measured cause, and one outside the acts' own subjects is a STOP-and-report. The six reds that
+appeared at the Task 2 tree are all inside this batch's own subjects — the F35 class and the ruled
+kind-2 treatment, both of which A2 names in advance — and every one cleared by its ruled treatment.
+
+## 7. Surfaced findings (D-641, #13, #19) — surfaced, not rowed
+
+The dispatch bars creating an open-items row. Each is stated here and in the report.
+
+- **F44 (new, the largest) — THE FINER PASS'S ONE UNCONTESTED PROPOSAL IS A RECOGNIZER ARTIFACT,
+  AND THE PASS'S OWN STRUCTURAL GUARD DOES NOT COVER IT.** The span's whole archive class comes
+  from two ARCHIVE POINTERS inside it, measured at the pinned blob by offset; the guard fires only
+  when a span BEGINS with a pointer. **F42's negative answer is therefore stronger than reported.**
+  §1.b.
+- **F45 (new) — A LIVE STATUS SENTENCE RIDES INSIDE AN OTHERWISE ARCHIVABLE AMENDMENT RECORD.**
+  Principle #21's replaced paragraph closes with the errata limb's clock, which bears on a gating
+  obligation and has no other at-site home in `CLAUDE.md`. Two readings at the file disagree at the
+  margin; the ruled doubt default decides it and the disagreement is published. §1.c.
+- **F46 (new) — TWO TOOLS APPEND TO ONE PROVENANCE FIELD AND ONE OF THEM TRUNCATES AT ITS OWN
+  MARKER.** A stamp written after the live-prohibition pointer would be silently deleted by that
+  tool's next run. Found by the guard on the day it happened, not reasoned about. §2.c.
+- **F47 (new) — AN INHERITED CLASSIFYING RELATION USED A STRICTER TEST THAN THE CENSUS IT IS
+  ABOUT.** The discard relation matched a flagged file by PATH where the census defines a reference
+  as a BASE-NAME match, and mis-placed the one movement this batch's own discard caused. §3.c.
+- **F48 (new, small) — A GENERATED CLOSE-ENTRY PREFIX BREAKS A BYTE-FAITHFUL MOVE.** Ruling 4's
+  forward bound STOPPED because the `Last updated: ` prefix migrates to the newest entry. The
+  remedy already existed in the split tool and is imported; the general form is that a
+  byte-faithful move over a file with a MIGRATING marker needs that marker declared. §5.
+- **F1–F43 (carried, unchanged)**, including **F3**, now **ten times surfaced** —
+  `reaim_home_anchors.py --check` exits 0 while printing drifted anchors, and
+  `gen_cluster_dispositions.py --verify` is the drift authority. **Still unfixed and unrowed: the
+  dispatch bars both.** **F35 did not recur in this batch's own acts**, and **F25 did not repeat**:
+  no changed-passage count was asserted in advance.
+- **The E3 ordering defect and the A1 premise error of the earlier batches** ride to the phase's
+  retrospective as the dispatch orders.
+- **★ A CONCURRENT MODIFICATION IS DECLARED RATHER THAN LANDED.** `cowork_handoff.md` gained a
+  TWENTY-FIFTH Cowork session-close block while this batch was in flight — an act of the writing
+  side, not of this batch. It is deliberately left unstaged and uncommitted at every task: landing
+  another session's interim carrier is the next dispatch's Task 0, not this batch's.
+- **No finding bears on the analysis, its inputs, or a measurement tool the analysis depends on.**
+  Every subject of this batch is the project's own record and the apparatus that reads it.
+
+## 8. What this batch did NOT do
+
+**No fate beyond the two ruled spans was considered, and neither of those moved** — `CLAUDE.md` is
+byte-unchanged, proven by hash, and the four refused spans are proven still at site. **No candidacy
+acted on**: the census's verdicts confer candidacy only, and none flipped. **No mining, no curated
+boot list, no empirical findings ledger, no fact-gate admission; no completion claim about the
+superseded phase-1 program; no derivation, design, repair or pilot act; no `src/` change, no
+golden, no test changed, moved or run, nothing under `tools/corpus/` or `tools/robust_stop/`, no
+measurement of the analysis.** **No open-items row was created, flipped or discarded** — [[OI-372]]
+and [[OI-374]] stand exactly as found, [[OI-179]] stays OPEN and GATES, and F3 stays surfaced,
+unfixed and unrowed. **No document was archived, moved or deleted AS A FILE.**
+
+## 9. The end-state guard run
+
+*(The E-ordering rule: the run is taken AFTER the Task 5 commit exists, and its output and the
+final SHAs land in ONE FURTHER commit. This section is completed there.)*
+
+*Provenance: CC, 2026-08-17, dispatch `cc_instruction_preparation_eighth.md`. Task 0 is commit
+`570f2b63b1` (parent `56ad941ee7`), pushed, 6 paths. Task 1 is `dd698031df` (parent `570f2b63b1`),
+pushed, 6 paths. Task 2 is `b0b51ee657` (parent `dd698031df`), pushed, 34 paths. Task 3 is
+`d499027a8c` (parent `b0b51ee657`), pushed, 5 paths. Task 4 is `a21a55fc12` (parent `d499027a8c`),
+pushed, 3 paths. Task 5's close and the report are the commit carrying this sentence, and the
+E-ordering commit follows it. **★ WHERE THE RECORDING TERMINATES:** every commit of this batch is
+verified at the object and named except the LAST one, which cannot contain its own identity — that
+is the terminus, not an omission.*

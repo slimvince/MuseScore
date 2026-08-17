@@ -1,33 +1,64 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_preparation_seventh.md, Task 2",
+ "dispatch": "cc_instruction_preparation_eighth.md, Task 5",
+ "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
+  {
+   "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
+   "base_commit": "1f84f5d62107bde86ddd09317282be1642feb9da",
+   "the_then_previous_batch": "the backlog, cleared by gen_governing_surface_split.py"
+  },
+  {
+   "executing_act": "cc_instruction_preparation_seventh.md, Task 2",
+   "base_commit": "cfb69a7ecb21351382b25206616a0349214e44f8",
+   "the_then_previous_batch": "cc_instruction_preparation_sixth.md"
+  }
+ ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "cfb69a7ecb21351382b25206616a0349214e44f8",
- "the_then_previous_batch": "cc_instruction_preparation_sixth.md",
- "entries_moved": 3,
- "characters_moved": 4932,
+ "base_commit": "a21a55fc125fa58531b724f22918b29f0a1d0efc",
+ "the_then_previous_batch": "cc_instruction_preparation_seventh.md",
+ "entries_moved": 5,
+ "characters_moved": 7581,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1951,
-   "sha256": "f90ebb6075be79c00e630d67033f4be0c4c462b7e611f2f1e0bbeff492165f0b",
+   "characters": 2035,
+   "sha256": "4fecf666f310bb0cc01e9600c3ca67e2c65a6c303729a4ad549c1454b23bb9bb",
    "membership": "names the dispatch",
-   "opening": "*Last updated: 2026-08-17 (CC — **★ THE PREPARATION PHASE'S SIXTH BATCH CLOSES WITH THE RULED SPLIT EXECUTED — AND WITH THE SAFEGUARD'S VERDICT AS ITS"
+   "the_one_declared_adjustment_applied": true,
+   "opening": "*2026-08-17 (CC — **★ THE PREPARATION PHASE'S SEVENTH BATCH CLOSES WITH ALL FOUR RETURN RULINGS EXECUTED — AND WITH THE COMMISSIONED FINER PASS ANSWER"
   },
   {
    "line_at_base": 10,
-   "characters": 1835,
-   "sha256": "9891821248fc38e29c045374365ba6e82b85040f918c501db07efe8a845b2369",
+   "characters": 1701,
+   "sha256": "8a1f6e604a4212c26742ccb08f2da0c48eddd3c6bd950c1766538817c9df8954",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "opening": "*2026-08-17 (CC — **★ THE RULED GOVERNING-SURFACE SPLIT IS EXECUTED, COMPLETE: 281 SPANS ARCHIVED VERBATIM, 17 LEFT AT SITE BECAUSE THE SAFEGUARD READ"
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-17 (CC — **★ THE FINER `CLAUDE.md` MEASUREMENT, READ-ONLY: THE FILE IS BYTE-UNCHANGED AND THE SURFACE SAYS THE RECOGNIZERS ARE NOT THE ROUTE "
   },
   {
    "line_at_base": 12,
-   "characters": 1146,
-   "sha256": "f8fed70cf07f3eea66659031018eaa47e95c3ed09c6036506f8a07bf27a4533e",
+   "characters": 1362,
+   "sha256": "51f15e9a121d39eeae2e20936155c7fde9cff0f7e7a1d327e2636496ed9bde1f",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "opening": "*2026-08-17 (CC — **★ THE GOVERNING-SURFACE SPLIT SITTING'S FOUR RULINGS, THE TWENTY-SECOND HANDOFF BLOCK AND THE DISPATCH THAT EXECUTES THEM ENTER GI"
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-17 (CC — **★ THE RETIREMENT CENSUS IS REGENERATED AND RE-PINNED, AND ALL 41 OF ITS MOVEMENTS ARE CLASSED WITH NONE LEFT OVER.** No `src/` cha"
+  },
+  {
+   "line_at_base": 14,
+   "characters": 1453,
+   "sha256": "06a2ffac1d2c3fb98bb0d20858787ef2ab9709000784fb053c1aebd880b7ff6a",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-17 (CC — **★ THE TAUGHT CITATION AND THE PRE-CONVENTION RESIDUE: 16 ENTRIES MOVED AFTER READING, THE SEVENTEENTH FLAGGED AND LEFT AT SITE.** "
+  },
+  {
+   "line_at_base": 16,
+   "characters": 1030,
+   "sha256": "ce10ed26bc4878a893741d81867939b363b74a65aacbca56ac5613628269e602",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-17 (CC — **★ THE RETURN SITTING'S FOUR RULINGS, THE TWENTY-THIRD HANDOFF BLOCK AND THE DISPATCH THAT EXECUTES THEM ENTER GIT.** No `src/` cha"
   }
  ],
  "reconciliation": {
