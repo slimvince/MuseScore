@@ -922,7 +922,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 4, 6,718 characters",
+        "  entries moved: 3, 4,932 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],

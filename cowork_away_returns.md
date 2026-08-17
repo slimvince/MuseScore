@@ -13402,7 +13402,19 @@ owns that bound, its two authored inputs re-aimed and nothing else about it touc
 ## 5 (continued). The end state, under the ordering rule
 
 Recorded in the ONE FURTHER commit after this close, per the E-ordering rule — no graded value is
-committed before the run that produced it.
+committed before the run that produced it. The run ordered at the tree carrying this close, taken
+**AFTER commit `97b3792521` existed**:
+
+```
+65 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** — **zero
+STOPs**, the population grown to 65 by this batch's four new invocations, **all four passing**, and
+**the ONE failing check is [[OI-372]]'s tool and no other**. **Run and read, never inferred. E4 is
+MET at the shape the dispatch predicted** — every run check passing except that one — which is the
+first time in three batches that the predicted end state and the reached one are the same.
 
 *Provenance: CC, 2026-08-17, dispatch `cc_instruction_preparation_seventh.md`. Task 0 is commit
 `ec953b4cef` (parent `6d11d3f8e6`), pushed, three paths. Task 1 is `5c38b41166` (parent

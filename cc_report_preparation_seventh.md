@@ -350,6 +350,20 @@ coarse pass uses — one owns the decomposition, the other the reach and the ren
 | at the Task 1 tree | 62 | 2 | 4 | 16 | 0 |
 | at the Task 2 tree | 63 | 1 | 4 | 16 | 0 |
 | at the Task 3 tree | 65 | 1 | 4 | 16 | 0 |
+| **the end state**, after the Task 4 commit existed | **65** | **1** | 4 | 16 | **0** |
+
+**★ E4 — MET, on the run and on nothing else.** The end-state run ordered at the tree carrying the
+close, taken **AFTER commit `97b3792521` existed**, printed:
+
+```
+65 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"**. **Every
+run check passes except [[OI-372]]'s tool, zero STOPs** — the shape the dispatch predicted, reached
+for the first time in three batches. Run and read, never inferred; the values are committed only
+after the run that produced them.
 
 The population grows by exactly this batch's four new invocations. **Two of the three opening reds
 CLEARED by the acts that were ruled to clear them** — the legacy-mark verification at Task 1 (F36
