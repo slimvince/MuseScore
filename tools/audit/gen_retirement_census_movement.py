@@ -91,11 +91,16 @@ OUT = os.path.join(HERE, "retirement_census_movement.json")
 # The seventh batch's Task 2 compared against `5c38b41166` (its own Task 1's commit, at which the
 # census still held the reading measured at `6529d10ae4`). This batch's Task 3 compares against
 # Task 2's commit below, at which the census still holds the reading measured at `5c38b41166`.
-OUTGOING_COMMIT = "b0b51ee657e2fb988a999215a4c2bef567958756"
+# The NINTH batch's Task 4 compares against Task 3's commit below, at which the census still holds
+# the reading measured at `d499027a8c`.
+OUTGOING_COMMIT = "15dfb0e1729c3d34bcef18ab37415909139c69a8"
 OUTGOING_COMMIT_HISTORY = [
     {"dispatch": "cc_instruction_preparation_seventh.md, Task 2",
      "outgoing_commit": "5c38b41166e79faeb8a539994dbee16290404f15",
      "the_reading_it_carried_was_measured_at": "6529d10ae4"},
+    {"dispatch": "cc_instruction_preparation_eighth.md, Task 3",
+     "outgoing_commit": "b0b51ee657e2fb988a999215a4c2bef567958756",
+     "the_reading_it_carried_was_measured_at": "5c38b41166"},
 ]
 
 GROWTH = "(iii) the tree's ordinary growth"
@@ -116,6 +121,31 @@ DISCARD = "(ii) the discard's residue"
 # ruled input that placed it quoted from the artifact. So a movement placed here can be checked at
 # the artifact rather than trusted, and a movement the relation does not reach still STOPS.
 RULED = "(iv) the callers sitting's ruled inputs"
+
+# ★★ A FIFTH CLASS, ADDED 2026-08-17 FOR THE NINTH BATCH'S RE-PIN, AND DECLARED RATHER THAN TAKEN
+# SILENTLY. Its dispatch names the cause in terms: the callers sitting ruled that a MANDATORY-READ
+# OR BOOT LISTING HOLDS a retirement candidate, so changing the read regime moves what holds
+# candidates. This batch changed it twice — Task 1 amended the open-items register's rule (a) so a
+# session reads the derived gating answer and opens the INDEX when it needs a row, and Task 3
+# demoted `BUILD_AND_TEST.md` from an unconditional session-start read to a conditional one.
+#
+# ★ IT IS DERIVED, NOT AUTHORED PER MOVEMENT, on the same shape as the other four: the relation is
+# that the governing document's OWN NAMING LINES for the named file DIFFER between the two measured
+# commits while the file was neither added to nor removed from the tree and is named at both. The
+# before and after lines are published per movement, so a placement can be checked at the objects
+# rather than trusted, and a movement the relation does not reach still falls through to the tests
+# below and, failing all of them, still STOPS.
+#
+# ★ IT IS TESTED BEFORE THE GROWTH RELATION, and that ordering is finding F47's lesson applied
+# rather than rediscovered: a broader relation that is TRUE OF a movement is not its cause, and the
+# growth relation is broad enough to swallow this one.
+#
+# ★ AN EMPTY CLASS IS A MEASUREMENT AND IS PUBLISHED AS ONE. If no movement satisfies the relation,
+# that is the finding — the read regime changed and moved no candidacy, because the files it
+# re-classed are governing documents rather than retirement candidates — and it is published rather
+# than left as the silence of a class nobody looked for.
+READ_REGIME = "(v) the read-regime change"
+READ_REGIME_SUBJECT = "CLAUDE.md"
 
 # AUTHORED — where an archived span went. The five parent/companion pairs the ruled split created
 # or continued; a naming that left a parent and is byte-present in its companion left BY THAT ACT.
@@ -367,6 +397,35 @@ class Classifier:
             probe = probe[:-3].rstrip()
         return probe
 
+    def read_regime_moved(self, named: str | None) -> dict | None:
+        """Did the GOVERNING DOCUMENT's own naming lines for this file change between the two trees?
+
+        The relation, stated so a placement can be checked rather than trusted: `CLAUDE.md` names
+        the file at BOTH measured commits, and the SET of its lines that name the file DIFFERS
+        between them. A file that entered or left the tree is excluded by the caller, and a file
+        the governing document names at only one of the two commits is left to the relations that
+        already answer that case. What a read-regime change looks like is exactly this: the file is
+        still there, still named, and the line naming it has moved between a mandatory listing and
+        a conditional one.
+        """
+        if not named:
+            return None
+        before_text = self.text_before(READ_REGIME_SUBJECT)
+        after_text = self.text_now(READ_REGIME_SUBJECT)
+        before = sorted(ln.strip() for ln in before_text.splitlines() if named in ln)
+        after = sorted(ln.strip() for ln in after_text.splitlines() if named in ln)
+        if not before or not after or before == after:
+            return None
+        return {
+            "evidence": (f"`{READ_REGIME_SUBJECT}` names `{named}` at BOTH measured commits and "
+                         f"the set of lines naming it DIFFERS between them, while the file was "
+                         f"neither added to nor removed from the tracked tree — the shape a "
+                         f"read-regime change makes. The two line sets are published beside this "
+                         f"so the placement can be checked at the objects."),
+            "before": before,
+            "after": after,
+        }
+
     def place(self, subject: str, direction: str, line: str | None,
               named: str | None = None) -> dict:
         """`subject` is the path the movement is about; `line` its naming text if it had one."""
@@ -383,6 +442,13 @@ class Classifier:
                                         "what changed is that it no longer HOLDS, by a ruled "
                                         f"input: {why}",
                         "the_ruled_input_that_placed_it": why}
+        # ★ THE READ-REGIME RELATION IS TESTED BEFORE GROWTH (F47's lesson): the growth relation is
+        # broad enough to be true of a read-regime movement without being its cause.
+        regime = self.read_regime_moved(named)
+        if regime is not None and named not in self.added and named not in self.removed:
+            return {"the_class": READ_REGIME, "the_evidence": regime["evidence"],
+                    "the_naming_lines_before": regime["before"],
+                    "the_naming_lines_after": regime["after"]}
         if direction == "added" and subject in self.added:
             return {"the_class": GROWTH,
                     "the_evidence": f"`{subject}` was ADDED to the tracked tree between the two "
@@ -741,6 +807,16 @@ def build() -> dict:
         },
         "movements": len(rows),
         "movements_by_class": by_class,
+        "★_every_class_this_tool_tests_including_the_ones_that_placed_nothing": {
+            name: by_class.get(name, {}) for name in
+            (SPLIT, DISCARD, GROWTH, RULED, READ_REGIME)
+        },
+        "★_why_an_empty_class_is_published_rather_than_omitted":
+            "A class with no members is a MEASUREMENT — the relation was tested against every "
+            "movement and held for none — and omitting it would make the absence of a cause "
+            "indistinguishable from nobody having looked for it. `movements_by_class` above "
+            "carries only what placed something, which is what a reader counts with; this field "
+            "carries what was TESTED.",
         "movements_that_fit_none_of_the_three": len(unclassed),
         "★_the_scalars_that_moved_are_published_and_NOT_classed":
             "Every scalar below is a SUM over the units above, so its movement is already "
