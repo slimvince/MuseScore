@@ -1,7 +1,99 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-SECOND, 2026-08-17) — THE FIFTH BATCH RETURNED COMPLETE (THE DISCARD EXECUTED: 165 RETIRED, 512 LIVE; THE PRUNING MEASURED) AND WAS VERIFIED AT THE OBJECTS BY A FRESH SESSION AFTER A CRASH TOOK THE PRIOR SESSION'S HISTORY — THE RECORD LOST NOTHING; THE GOVERNING-SURFACE SPLIT SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_sixth.md` — THE SPLIT EXECUTED. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-THIRD, 2026-08-17) — THE SIXTH BATCH RETURNED (THE SPLIT EXECUTED: 281 SPANS ARCHIVED, THE FIVE MANDATORY READS HALVED; THE SAFEGUARD HELD BACK 17 MIS-CLASSED SPANS — THE MEASUREMENT'S ERROR RAN ENTIRELY IN THE ARCHIVE DIRECTION), WAS VERIFIED AT THE OBJECTS; THE INTERIM READING SCOPE HAS EXPIRED; THE RETURN SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_seventh.md`. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
+
+**★ THE INTERIM READING SCOPE (§5(B) of the 2026-08-16 record) HAS EXPIRED** — the executed
+split made the boundary physical at the sixth batch's Task 1. Read the five mandatory files as
+they now stand (they are half their former size); an archive companion (`CLAUDE_ARCHIVE.md`,
+`OPEN_ITEMS_ARCHIVE.md`, `DECISIONS_ARCHIVE.md`, `BUILD_AND_TEST_ARCHIVE.md`,
+`STATUS_ARCHIVE.md`) is reached only when a decision is re-opened — every archived span left a
+dated pointer at its site.
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether
+`cc_instruction_preparation_seventh.md` has completed — its close appended to
+`cowork_away_returns.md` (a PREPARATION SEVENTH BATCH section), `STATUS.md` pointer entries
+(under the standing Ruling-4 bound the file keeps only the latest batch's entries), its commits
+verified at the objects by explicit hash. **If it still runs you are READ-ONLY on the
+repository until it stops.** If it has completed, VERIFY AT THE OBJECTS before trusting any of
+it, read its FULL close and prove the reading by quotation. Its Tasks: 1 — the phase1w check's
+taught citation plus the 17 pre-convention `STATUS.md` entries moved; 2 — the retirement
+caller-check regenerated and re-pinned at its own commit, every movement classed in three named
+classes; 3 — the finer `CLAUDE.md` measurement, READ-ONLY, returning
+`ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md` for the user's ruling; 4 —
+the close. Expected end state: ONE failing check ([[OI-372]]'s tool) and zero STOPs.
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_17_sixth_return.md` IN FULL** — the return
+sitting: the taught citation, the census regeneration, the residue move, the commissioned finer
+pass, and §5's note that §7's fresh-session condition is MET (session length returns to the
+standing two-tell instruction alone). (2) `cowork_rulings_2026_08_17_governing_surface_split.md`
+and `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (3)
+**`cc_report_preparation_sixth.md` IN FULL — §2.b, §6 and §7 above all (F33–F39)** — AND the
+batch's FULL close (THE PREPARATION SIXTH BATCH section of `cowork_away_returns.md`), proved by
+quotation. (4) This block. (5) The twenty-second block below and everything it binds.
+`CLAUDE.md` in full before drafting anything.
+
+**★ WHAT HAPPENED AFTER THE TWENTY-SECOND BLOCK.** The sixth batch executed the split: 281
+spans moved verbatim into the five archive companions (four created by the act), the five
+mandatory reads falling 1,452,264 → 713,680 bytes (`STATUS.md` −89%, `OPEN_ITEMS.md` −44%),
+every move byte-reconciled to the character, 73 anchors re-aimed per citation, [[OI-370]]
+flipped with its condition tested. **The A4 read-before-move safeguard fired for real (F33, the
+batch's largest finding): 17 of 298 archive-class spans — the register's rules (a)–(n),
+principles 22–24, seven OPEN rows including the gating [[OI-179]], all three of
+`DECISIONS.md`'s — do not read as their class says and were LEFT AT SITE**, which is why
+`CLAUDE.md` shed only 3.2% against a predicted 23%. Two checks were left red and declared, not
+cleared: `gen_phase1w_legacy_verification.py` (F36 — quotes a row the act archived; the remedy
+forbidden to the batch) and `gen_retirement_caller_check.py` (F37 — its regeneration measured
+outside the bound and REVERTED). The writing side verified all of it at the objects (sizes,
+guard summary, the 17's presence, the 281/17 arithmetic), read the full close and proved it by
+quotation, then held the return sitting. **The user ruled all four decisions, Alternative A
+each time** (the user's words, verbatim: "A", "A", "A", "A"): the one-line taught citation; the
+census regenerated as a named act at its own commit; the 17 residue entries moved under Ruling
+4's own line; and the finer `CLAUDE.md` pass COMMISSIONED now (a timing change to the split
+record's Ruling 2, its ground stated in the record). **★ AT THE CLOSE THE USER IDENTIFIED
+PRESENTATION-FORM TELLS THE SESSION HAD NOT CAUGHT ITSELF: the writing side a couple of times
+ignored the agreed way of presenting decisions with alternatives — identifiably, the choice
+question put in the SAME turn as the surface where the ruled form for a consequential decision
+is a SEPARATE, LATER turn. Two-plus tells; the user directed the fresh session. The successor
+holds every sitting to the ruled form: full self-contained surface first, the question in its
+own later turn.** The seventh dispatch was drafted and the session closed on that direction.
+
+**★ WHAT AWAITS THE USER, in recommended order:** (1) the seventh batch's return — verify
+first; (2) **the finer `CLAUDE.md` surface** (its Task 3 deliverable) — the per-span fates at
+the finer grain; (3) **the residue surface** — the 29 withheld sole-carriers and the 62's
+results (47 / 9 / 6), `ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md`;
+(4) the KIND-UNDERIVABLE callers' sitting, read at the CURRENT population the re-pinned census
+publishes (8 → 9 expected), with the deferred prose-citation question — they gate the archiving
+wave, and F35 (namings leave the record with archived spans) is standing input to it; (5) the
+rulings-sort sitting (220 / 131 / 60, proposed). Then the phase's remaining outputs: the
+empirical findings ledger behind its fact-gate, the curated boot list DRAFTED for ruling.
+
+**★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red expected after the batch. [[OI-374]]
+untouched. [[OI-179]] OPEN and GATES. F3 eight times surfaced, unfixed, unrowed. F1–F39, the E3
+ordering defect and the A1 premise error ride to the phase's retrospective. The 284 newly
+visible instruction files and the remaining ignored files unlanded; every retirement flag a
+candidacy behind the ruled conditions; F35's nine unnamed files and F39's `calib` observation
+recorded, undiagnosed, unrowed.
+
+**★ THIS BLOCK IS UNCOMMITTED AT ITS OWN CLOSE** — the seventh dispatch's Task 0 lands it,
+naming this file explicitly. **State the diff by its CONTENT in any later premise: this block
+inserted AND the twenty-second heading's demotion marker — two parts of one act; never assert a
+changed-passage count (the F25 lesson).**
+
+**★ WHY THE SESSION CLOSED HERE:** user-directed, on the presentation-form tells recorded
+above — two-plus under the session-length standing instruction, identified by the user rather
+than reported unprompted, which is itself the instruction's predicted failure shape. The stop
+is verified: every ruling on disk in the turn it was taken, the seventh dispatch written and
+ready, nothing in flight.
+
+*(The twenty-second block below remains binding in everything it states; it is superseded only
+as the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-SECOND, 2026-08-17) — THE FIFTH BATCH RETURNED COMPLETE (THE DISCARD EXECUTED: 165 RETIRED, 512 LIVE; THE PRUNING MEASURED) AND WAS VERIFIED AT THE OBJECTS BY A FRESH SESSION AFTER A CRASH TOOK THE PRIOR SESSION'S HISTORY — THE RECORD LOST NOTHING; THE GOVERNING-SURFACE SPLIT SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_sixth.md` — THE SPLIT EXECUTED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-third block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
