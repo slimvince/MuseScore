@@ -567,6 +567,31 @@ AUTHORED = [
      "CAUSE. Each class is a derived RELATION between the movement and the two trees, tested in a "
      "fixed order with the first that holds recorded WITH its evidence"),
 
+    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_seventh.md Task 3 ------------------
+    # THE FINER `CLAUDE.md` MEASUREMENT AND ITS RULING SURFACE, registered in the act that creates
+    # them — the standing new-tool rule. Both take `--check` and never the bare invocation, for
+    # the ordinary reason: run with no flag each REWRITES its committed artifact.
+    ("tools/audit/gen_claude_md_finer_spans.py", ["--check"],
+     "the finer decomposition of `CLAUDE.md` still re-derives at its pinned commit, with every "
+     "span classed from its own text, its placing evidence published beside it, and the per-class "
+     "byte counts accounting for the file TO THE CHARACTER — the STOP that makes the measurement "
+     "worth anything, since a silently dropped span would make every count in it meaningless. "
+     "The reading is pinned because the artifact is EVIDENCE FOR A RULING and may not move under "
+     "the ruling it supports. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a "
+     "span classed `operative-rule-text` IS operative — only that no recognizer placed it "
+     "elsewhere; the recognizers are patterns over prose and their reach is UNMEASURED (#19), "
+     "with the direction of their error the recoverable one"),
+    ("tools/audit/gen_claude_md_finer_surface.py", ["--check"],
+     "the refreshed reach for `CLAUDE.md` — who names it, who anchors into it at a LINE, which "
+     "tools parse it, which register entries are homed in it — still re-derives at the finer "
+     "pass's own commit, and the ruling surface generated from it and the span artifact still "
+     "re-derives BYTE-IDENTICALLY. The second half is the load-bearing one: the surface is what "
+     "the user rules, so a surface that has drifted from the artifacts it claims to be generated "
+     "from would put a hand-edited proposal in front of a ruling. The scan itself is IMPORTED "
+     "from `gen_governing_surface_readers.measure` rather than re-implemented (#6). ★ WHAT IT "
+     "DOES NOT ASSERT: that a naming is a DEPENDENCY, or that the parser list is complete — a "
+     "tool reaches it only when the line naming the file also carries a read signal"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

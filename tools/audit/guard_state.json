@@ -42,6 +42,8 @@
       "tools/audit/gen_artifact_inventory.py",
       "tools/audit/gen_artifact_inventory_surface.py",
       "tools/audit/gen_census_movement_classification.py",
+      "tools/audit/gen_claude_md_finer_spans.py",
+      "tools/audit/gen_claude_md_finer_surface.py",
       "tools/audit/gen_deciding_act_recovery.py",
       "tools/audit/gen_decisions_filter.py",
       "tools/audit/gen_discard_reach_split.py",
@@ -77,7 +79,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 83,
+    "authored_entries": 85,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -962,6 +964,37 @@
       "what_it_checks": "every difference between the retirement census's outgoing reading and its re-pinned one still places in one of the three classes Ruling 2 names — the split's effect, the discard's residue, and the tree's ordinary growth — at four units of identity, with ZERO fitting none of them. Its STOP is the guard: a movement the derivation cannot place halts it and prints the unplaced records WHOLE, so a fourth class or a too-narrow relation is reported rather than absorbed. Both readings and both trees are read from git OBJECTS at the commits the readings were MEASURED at — never at the working tree and never at the commit that happens to carry an artifact — so the comparison re-derives forever (D-646, the epoch pattern). ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a class is a movement's CAUSE. Each class is a derived RELATION between the movement and the two trees, tested in a fixed order with the first that holds recorded WITH its evidence"
     },
     {
+      "tool": "tools/audit/gen_claude_md_finer_spans.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the finer CLAUDE.md decomposition re-derives",
+        "  151,045 characters, 185 spans, 135,341 by the doubt default (89.6%)",
+        "    self-declared-historical-or-superseded      2 spans    5,873 characters",
+        "    preserved-former-wording                    2 spans    3,894 characters",
+        "    defense-and-declined-alternatives           2 spans    3,775 characters",
+        "    operative-rule-text                       179 spans  137,376 characters"
+      ],
+      "stderr": [],
+      "what_it_checks": "the finer decomposition of `CLAUDE.md` still re-derives at its pinned commit, with every span classed from its own text, its placing evidence published beside it, and the per-class byte counts accounting for the file TO THE CHARACTER — the STOP that makes the measurement worth anything, since a silently dropped span would make every count in it meaningless. The reading is pinned because the artifact is EVIDENCE FOR A RULING and may not move under the ruling it supports. ★ WHAT IT DOES NOT ASSERT, and its own artifact says so: that a span classed `operative-rule-text` IS operative — only that no recognizer placed it elsewhere; the recognizers are patterns over prose and their reach is UNMEASURED (#19), with the direction of their error the recoverable one"
+    },
+    {
+      "tool": "tools/audit/gen_claude_md_finer_surface.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the finer CLAUDE.md reader inventory and its ruling surface re-derive"
+      ],
+      "stderr": [],
+      "what_it_checks": "the refreshed reach for `CLAUDE.md` — who names it, who anchors into it at a LINE, which tools parse it, which register entries are homed in it — still re-derives at the finer pass's own commit, and the ruling surface generated from it and the span artifact still re-derives BYTE-IDENTICALLY. The second half is the load-bearing one: the surface is what the user rules, so a surface that has drifted from the artifacts it claims to be generated from would put a hand-edited proposal in front of a ruling. The scan itself is IMPORTED from `gen_governing_surface_readers.measure` rather than re-implemented (#6). ★ WHAT IT DOES NOT ASSERT: that a naming is a DEPENDENCY, or that the parser list is complete — a tool reaches it only when the line naming the file also carries a read signal"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1188,8 +1221,8 @@
     }
   ],
   "summary": {
-    "run": 63,
-    "passing": 62,
+    "run": 65,
+    "passing": 64,
     "failing": 1,
     "failing_tools": [
       {

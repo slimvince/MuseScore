@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 75,
-    "re_derives_a_live_invariant": 57,
+    "tools_classified": 77,
+    "re_derives_a_live_invariant": 59,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -339,6 +339,22 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_census_movement_classification.py, the THREE CATEGORIES and THE STOPS of its module docstring; `build()`, which re-runs the citation scan at both states and classes every difference",
       "why": "LIVE. Both sides of its comparison are re-computed on every run: the earlier state from the git objects at a named commit, the later one from the governing record AS IT STANDS. So an edit that removes a document's last naming from `CLAUDE.md` tomorrow moves its output tomorrow, and the classification either places that movement in one of the three ruled categories or STOPS. That is a demand about today's record, not a dated reading of it. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: the BEFORE commit is the state the movement is measured against, and a comparison whose baseline moved would measure nothing. It is named in the tool rather than resolved from a branch tip, because a branch read is not trusted for what is current (D-253). ★ WHAT IT DOES NOT ASSERT: that a moved document is worth retiring, or that nothing depends on it — the citation scan sees the governing record only, which is the bound the census publishes of itself and this tool repeats rather than quietly drops.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_claude_md_finer_spans.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_claude_md_finer_spans.py, THE STOPS of its module docstring; `build()`, which re-cuts and re-classes the file on every run and STOPs unless the per-class byte counts account for it to the character",
+      "why": "LIVE, on exactly the ground the coarse decomposition is live on. Its subject is a PINNED reading, but the demand it asserts is about the tree rather than a dated finding: the decomposition must re-derive and the per-class byte counts must account for the file EXACTLY, so a change to the cut rules or the recognizers that dropped a span would fail on the day it was made. The pin is what stops it going red at every later commit, the artifact being evidence for a ruling the user has not yet given. ★ WHAT IT DOES NOT ASSERT: that a span classed `operative-rule-text` IS operative, and that a span cut inside a block is readable on its own — which is why every fate it computes is a PROPOSAL rather than an act.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_claude_md_finer_surface.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_claude_md_finer_surface.py, WHAT IT DOES of its module docstring; `build_readers()`, which re-scans the tracked tree through the imported measure; `render()`, which rebuilds the surface from both artifacts on every run",
+      "why": "LIVE. Its second claim is a live invariant nothing else asserts: the ruling surface the user reads still re-derives BYTE-IDENTICALLY from the two committed artifacts, so a hand-edited proposal cannot reach a ruling unnoticed. The reach half is re-scanned against the tracked tree at the pinned commit on every run. ★ WHAT IT DOES NOT ASSERT: that a naming is a dependency, or that the parser list is complete — the bound is the imported scan's own and is published on the surface itself.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

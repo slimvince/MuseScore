@@ -1,0 +1,3347 @@
+{
+ "what_this_is": "`CLAUDE.md`, DECOMPOSED AT A FINER GRAIN AND CLASSED, with a proposed fate per span under the ruled archivability test. A MEASUREMENT ONLY: `CLAUDE.md` is not edited, no span is moved, and no fate is decided — the user rules the surface generated from this artifact, and a LATER dispatch executes what is ruled. Every figure here is computed; none is transcribed (D-431).",
+ "generator": "tools/audit/gen_claude_md_finer_spans.py",
+ "dispatch": "cc_instruction_preparation_seventh.md, Task 3",
+ "the_ruling_that_commissioned_it": {
+  "source": "cowork_rulings_2026_08_17_sixth_return.md §4 (the user's word: \"A.\")",
+  "quoted": "The finer measured pass over `CLAUDE.md` is COMMISSIONED, read-only, riding the next dispatch: the span unit cuts inside blocks at the record's own ★ amendment markers and recognizes the amendment-record shape (ruled-date header, former-wording quote, declined-alternatives paragraph); it delivers a new ratification surface with per-span fates; every doubt still defaults to STAYS AT SITE and every doubt-defaulted span is marked; the F29/F33 evidence is input to the recognizers; nothing moves until the user rules that surface."
+ },
+ "measured_at_commit": "e94f765c25b49d2c9ffa47b1a296302debc25ce6",
+ "★_why_the_reading_is_pinned": {
+  "what_that_commit_is": "Task 2 of `cc_instruction_preparation_seventh.md` — the commit this read-only measurement is performed on top of. `CLAUDE.md` is untouched by this batch, so the pin and the working tree carry the same file.",
+  "the_reason": "This artifact is EVIDENCE FOR A RULING, so it may not move under the ruling it supports — the same reason the coarse pass pins its own reading, measured there rather than anticipated."
+ },
+ "the_cut_rules": {
+  "imported_from_the_coarse_pass": {
+   "a_block": "a maximal run of consecutive non-blank lines",
+   "a_fenced_code_block": "ONE span whatever blank lines it contains",
+   "a_table_row": "its own span",
+   "a_star_marked_sub_block": "a block is cut again at every line opening with the record's own ★ marker"
+  },
+  "★_this_pass_own_cut": {
+   "a_numbered_principle_opener": "^\\d{1,2}\\.\\s",
+   "the_ground": "finding F33's second case, measured: an amendment record's span OVERRAN into principles 22, 23 and 24, which carry no blank line above them, so the coarse pass placed three standing principles in an archive class."
+  }
+ },
+ "★_the_two_structural_spans_that_are_never_classed_by_their_words": {
+  "found_by": "this pass's own self-check, reading the surface it had just generated. Both were proposed for archiving on the first run.",
+  "an_archive_pointer": {
+   "the_pattern": "^\\s*\\*★ ARCHIVED \\d{4}-\\d{2}-\\d{2}",
+   "the_ground": "the executed split leaves a compact dated pointer at every site it archives, and that pointer QUOTES its target's class and opening, so a recognizer reading its words places it in the class of the thing it points at. Archiving a pointer removes the one breadcrumb back to the moved span."
+  },
+  "a_bare_heading": {
+   "the_pattern": "^#{1,6}\\s",
+   "the_ground": "a heading is a span of its own and its section body is another, so classing the heading by its own words would move it while everything under it stayed — a headless section, and a heading filed alone in the companion."
+  },
+  "★_why_they_are_placed_POSITIVELY_rather_than_left_to_the_doubt_default": "the doubt default records an absence of evidence; these two are decisions with a reason, and publishing the reason is what lets the user overrule either in one edit rather than rediscover it."
+ },
+ "the_recognizer_change_and_its_ground": {
+  "what_changed": "a former-wording marker no longer places a span on its own: a QUOTATION must accompany it, within a published window.",
+  "the_quotation_pattern": "[\\\"“][^\\\"”]{40,}[\\\"”]",
+  "the_window_in_characters": 300,
+  "the_ground": "finding F33's largest mis-class, measured: 15,395 characters of live governing rule text — the decisions register's rules (a) through (n) — were classed `preserved-former-wording` on two sentences that POINT AT former wordings preserved in the register's own provenance, the span containing none.",
+  "★_what_the_floor_costs": "a genuinely preserved wording shorter than the floor, or beginning further from every one of its markers than the window, is NOT placed and falls to the doubt default — it stays at site, which is the recoverable direction. A preservation marked by italics alone, with no quotation marks, is likewise not placed."
+ },
+ "the_amendment_record_shape": {
+  "what_it_is": "the four parts the ruling names, each looked for independently and published per span with its own marker quoted",
+  "ruled_date_header": {
+   "attribution": "(user-ruled|user-ratified|user-directed|the user's ruling|user's own ruling|\\buser,\\s|ratified by the user|recorded|ruled|corrected|homed here|written into)",
+   "date": "\\b20\\d\\d-\\d\\d-\\d\\d\\b",
+   "looked_for_in_the_first_characters": 400
+  },
+  "former_wording_quote": "a former-wording marker WITH a quotation attached",
+  "declined_alternatives_paragraph": [
+   "\\bDECLINED\\b",
+   "\\bdeclined as rated on the surface\\b",
+   "\\bALTERNATIVES? (?:B|C|D)\\b",
+   "an excluded alternative is evidence about the choice",
+   "\\bTRIED AND CLOSED\\b",
+   "\\bwas declined\\b",
+   "\\bwere declined\\b",
+   "\\bDeclined:"
+  ],
+  "accepted_costs_paragraph": [
+   "THE COSTS THE USER ACCEPTED",
+   "an accepted cost is not a discharged one"
+  ],
+  "★_why_it_is_published_beside_the_class_and_never_as_one": "a shape is evidence about what a span IS; a class carries a fate. Publishing the parts separately lets a reader see a span that is an amendment record WITHOUT a preserved wording — which is the exact case the coarse pass got wrong."
+ },
+ "★_what_this_measurement_does_NOT_establish": "That a span classed `operative-rule-text` IS operative — only that no recognizer placed it elsewhere. The recognizers are patterns over prose and their reach is UNMEASURED (#19). And the finer cut does not make every span self-contained: a cut inside a block yields a span whose sentence may continue in the next one, which is why every fate here is a PROPOSAL the user rules.",
+ "the_totals": {
+  "characters": 151045,
+  "lines": 1792,
+  "spans": 185,
+  "characters_in_the_blank_lines_between_spans": 127,
+  "by_class": {
+   "resolved-row": {
+    "spans": 0,
+    "characters": 0
+   },
+   "self-declared-historical-or-superseded": {
+    "spans": 2,
+    "characters": 5873
+   },
+   "preserved-former-wording": {
+    "spans": 2,
+    "characters": 3894
+   },
+   "defense-and-declined-alternatives": {
+    "spans": 2,
+    "characters": 3775
+   },
+   "pointer-entry-of-a-completed-batch": {
+    "spans": 0,
+    "characters": 0
+   },
+   "operative-rule-text": {
+    "spans": 179,
+    "characters": 137376
+   }
+  },
+  "characters_placed_by_the_doubt_default": 135341
+ },
+ "★_where_this_pass_proposes_archiving_a_span_the_A4_SAFEGUARD_READ_AND_KEPT": {
+  "what_this_is": "The executed split's own read-before-move safeguard left 17 spans at site because they do not read as their class says (finding F33). Where this pass proposes archiving one of them, the user is being asked to overturn a reading already performed AT THE FILE — so the conflict is named here, with the safeguard's own reason quoted, rather than left to be noticed.",
+  "★_how_to_read_a_conflict": "the safeguard's reason either IS or IS NOT answered by this pass's finer cut, and that is the question. Where the reason was that a span OVERRAN into live rule text, the finer cut answers it. Where the reason was that the span ITSELF states a rule, no cut answers it and the proposal should be refused.",
+  "count": 5,
+  "the_conflicts": [
+   {
+    "the_finer_span": [
+     194,
+     213
+    ],
+    "the_class_this_pass_gives_it": "preserved-former-wording",
+    "the_opening": "**★ THAT PARAGRAPH REPLACED A NARROWER ONE, AND THE FORMER WORDING STANDS IN PLACE (#12; user-ruled 2026-08-11 on a surface carrying three alternatives with the",
+    "the_safeguards_own_reason": "★ FAILS TEST (1). The span OVERRUNS the amendment record it is classed for: principle #21's preserved former wording runs from line 228 to 247, and lines 248-260 are PRINCIPLES 22, 23 AND 24 — three live standing principles carrying no blank line above them, so the span rule carried them into the archive class. Archiving this span would remove three principles from the standing list. This is finding F29's residual risk realised."
+   },
+   {
+    "the_finer_span": [
+     344,
+     374
+    ],
+    "the_class_this_pass_gives_it": "defense-and-declined-alternatives",
+    "the_opening": "**★ AND WHAT SUCH A ROW IS OWED — IT STOPS BEING OWED, WITH A PER-ROW LAPSE RECORD (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fifte",
+    "the_safeguards_own_reason": "★ FAILS TEST (2). Classed by an accepted-costs marker inside it, but the span STATES THE RULE: an apparatus row stays open, stops gating any stage and stops being owed, with the per-row lapse record and the #19 bound. That rule is stated nowhere else, so a session reading CLAUDE.md would stop meeting it."
+   },
+   {
+    "the_finer_span": [
+     796,
+     816
+    ],
+    "the_class_this_pass_gives_it": "self-declared-historical-or-superseded",
+    "the_opening": "*★ [SUPERSEDED by the OI-178 adoption 2026-07-26 — historical] THE OI-168 RE-BASELINE (2026-07-14; report `cc_oi168_fix_report.md`; outgoing reference preserved",
+    "the_safeguards_own_reason": "★ FAILS TEST (2). It self-declares as superseded and historical, and it closes with a LIVE caveat and a live prohibition — the OI-170 carry-forward, and \"L4 is NOT tonic-independent; no design may assume it is\". A design session must meet that prohibition at the site."
+   },
+   {
+    "the_finer_span": [
+     1008,
+     1044
+    ],
+    "the_class_this_pass_gives_it": "self-declared-historical-or-superseded",
+    "the_opening": "**★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The **primary reported metric AND the Stage-5 fitting-object",
+    "the_safeguards_own_reason": "★ FAILS TEST (2). Classed historical on a `retained for provenance` marker that governs only the recitation in its second half. Its first half STATES the A-8 dual-track's ratified baselines and the hard stop that governs when it governs — live figures a measurement session reads."
+   },
+   {
+    "the_finer_span": [
+     1750,
+     1772
+    ],
+    "the_class_this_pass_gives_it": "preserved-former-wording",
+    "the_opening": "**★ THE RULE COVERS EVERY READ MECHANISM AND EVERY DIALECT (recorded 2026-08-08 on the user's direction, at the third measured instance family).** The restricti",
+    "the_safeguards_own_reason": "★ FAILS TEST (2). Classed on a former wording preserved inside it, but the span STATES THE RULE'S REACH — that the shell-read restriction covers every read mechanism and every dialect, what the guard watches, and that its silence on an unwatched surface is not compliance (#19). A working session acts on all three."
+   }
+  ],
+  "★_the_uncontested_remainder": {
+   "what_it_is": "the spans this pass proposes to archive that the safeguard did NOT read and keep — the only proposals that ask the user for something no reading at the file has already refused",
+   "spans": 1,
+   "characters": 845
+  }
+ },
+ "against_the_coarse_pass": {
+  "★_the_two_are_measured_at_DIFFERENT_TREES_and_the_comparison_is_of_shape_not_size": "the coarse decomposition was taken BEFORE the executed split, so its character counts include the 6,540 characters that act archived. What is comparable is the SHAPE: how much of the file each pass places by evidence rather than by the doubt default.",
+  "coarse": {
+   "measured_at_commit": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979",
+   "characters": 156068,
+   "spans": 156,
+   "characters_placed_by_the_doubt_default": 120169,
+   "share_placed_by_the_doubt_default": 77.0
+  },
+  "finer": {
+   "measured_at_commit": "e94f765c25b49d2c9ffa47b1a296302debc25ce6",
+   "characters": 151045,
+   "spans": 185,
+   "characters_placed_by_the_doubt_default": 135341,
+   "share_placed_by_the_doubt_default": 89.6
+  }
+ },
+ "the_spans": [
+  {
+   "first_line": 1,
+   "last_line": 1,
+   "kind": "block",
+   "characters": 58,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "# Claude Code — Standing Instructions for This Repository"
+  },
+  {
+   "first_line": 3,
+   "last_line": 3,
+   "kind": "block",
+   "characters": 22,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## Guiding principles"
+  },
+  {
+   "first_line": 5,
+   "last_line": 7,
+   "kind": "block",
+   "characters": 197,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "The standing decision guides for all work in this repository. Every design, build, and measurement choice is checked against them; they are the guide for making"
+  },
+  {
+   "first_line": 9,
+   "last_line": 11,
+   "kind": "numbered-principle sub-block",
+   "characters": 197,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "1. **Fact- and theory-based coding only.** Build only on established fact and theory — published research, public algorithms, public software. Fact-finding (inv"
+  },
+  {
+   "first_line": 12,
+   "last_line": 13,
+   "kind": "numbered-principle sub-block",
+   "characters": 145,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "2. **Specific research over general.** Most research so far has been general or on already-handled topics; target the specific open question."
+  },
+  {
+   "first_line": 14,
+   "last_line": 16,
+   "kind": "numbered-principle sub-block",
+   "characters": 199,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "3. **An unexpected finding means we have failed #1** (and possibly #2, #4, #6). Surprise signals that the fact/theory basis was incomplete — treat it as a failu"
+  },
+  {
+   "first_line": 17,
+   "last_line": 17,
+   "kind": "numbered-principle sub-block",
+   "characters": 52,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "4. **Long-term goal: maximum-precision inference.**"
+  },
+  {
+   "first_line": 18,
+   "last_line": 19,
+   "kind": "numbered-principle sub-block",
+   "characters": 110,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "5. **Investigate when facts may be scarce.** If we are unsure whether facts are scarce, gather more facts."
+  },
+  {
+   "first_line": 20,
+   "last_line": 20,
+   "kind": "numbered-principle sub-block",
+   "characters": 77,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "6. **Total unification — no duplication of any code.** One path per concern."
+  },
+  {
+   "first_line": 21,
+   "last_line": 22,
+   "kind": "numbered-principle sub-block",
+   "characters": 180,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "7. **Adhere to layers.** Enhance a layer only with algorithms/methods that belong to it, nothing else. Worst case, this forces a layer redesign rather than a cr"
+  },
+  {
+   "first_line": 23,
+   "last_line": 27,
+   "kind": "numbered-principle sub-block",
+   "characters": 525,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "8. **No inference-problem-driven coding until the refactoring, the architectural design and the algorithmic completion are done.** Build-it-right comes BEFORE t"
+  },
+  {
+   "first_line": 28,
+   "last_line": 34,
+   "kind": "star-marked sub-block",
+   "characters": 657,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THIS PRINCIPLE POINTS AT ITS OPERATIONAL HALF — D-592 AND D-593 (written 2026-08-04 on the user's ruling; a POINTER, never a copy, because both are already "
+  },
+  {
+   "first_line": 35,
+   "last_line": 39,
+   "kind": "star-marked sub-block",
+   "characters": 491,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "recorded",
+     "the_date_matched": "2026-08-04"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ AND THE ENTRY IS D-172, ONCE (user's ruling, 2026-08-04, `OPEN_ITEMS.md` OI-329).** The widening above briefly gave this one principle two live register ent"
+  },
+  {
+   "first_line": 40,
+   "last_line": 40,
+   "kind": "numbered-principle sub-block",
+   "characters": 76,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "9. **Test and measure only on corpora known to be non-stale and accurate.**"
+  },
+  {
+   "first_line": 41,
+   "last_line": 52,
+   "kind": "numbered-principle sub-block",
+   "characters": 1159,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "10. Documentation is kept in sync with code **so that code can always be compared against its specification, and so that the specification is as correct and com"
+  },
+  {
+   "first_line": 53,
+   "last_line": 60,
+   "kind": "star-marked sub-block",
+   "characters": 845,
+   "the_class": "defense-and-declined-alternatives",
+   "the_evidence": {
+    "the_marker_matched": "DECLINED",
+    "which_part": "a declined-alternatives record"
+   },
+   "the_amendment_record_shape_it_carries": {
+    "declined_alternatives_paragraph": {
+     "the_marker_matched": "DECLINED"
+    },
+    "accepted_costs_paragraph": {
+     "the_marker_matched": "THE COSTS THE USER ACCEPTED"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "ARCHIVES, with a dated pointer at the site",
+   "why_that_fate": "It carries an explicit declined-alternative or accepted-cost record, which §5(E) names by name. NOTE THE NARROWNESS: a rule's PURPOSE stays at site.",
+   "the_opening": "**★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus finding's row is **mandatory** no longer holds for a finding the worth te"
+  },
+  {
+   "first_line": 61,
+   "last_line": 65,
+   "kind": "star-marked sub-block",
+   "characters": 420,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ WHAT IT DOES NOT DO.** It authorizes no fix, no design and no inference change. It moves neither **D-231**'s phases nor #8's three-clause gate. It touches n"
+  },
+  {
+   "first_line": 66,
+   "last_line": 66,
+   "kind": "numbered-principle sub-block",
+   "characters": 92,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "11. **Regression test cases always in sync with code; regression-test between iterations.**"
+  },
+  {
+   "first_line": 67,
+   "last_line": 69,
+   "kind": "numbered-principle sub-block",
+   "characters": 236,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "12. **No information loss.** Negative/exclusion evidence is information (\"finding by exclusion\") — carry a ruled-out possibility at low confidence rather than d"
+  },
+  {
+   "first_line": 70,
+   "last_line": 79,
+   "kind": "star-marked sub-block",
+   "characters": 942,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THE RECOMPUTABLE CLAUSE ABOVE REACHES EVERY COLLAPSE, NOT ONLY AN EXCLUSION (2026-07-06; the record states no ratifier).** The *unless* is written for exclu"
+  },
+  {
+   "first_line": 80,
+   "last_line": 80,
+   "kind": "numbered-principle sub-block",
+   "characters": 93,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "13. **Surface a surprise as a STOP before building around it** (the operational form of #3)."
+  },
+  {
+   "first_line": 81,
+   "last_line": 81,
+   "kind": "numbered-principle sub-block",
+   "characters": 93,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "14. **Every behavior change is user-ratified as one revertible, provenance-stamped commit.**"
+  },
+  {
+   "first_line": 82,
+   "last_line": 83,
+   "kind": "numbered-principle sub-block",
+   "characters": 126,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "15. **Verify at objects/data on the full output surface, never at assertion** (winner *and* carry, not the winner alone)."
+  },
+  {
+   "first_line": 84,
+   "last_line": 85,
+   "kind": "numbered-principle sub-block",
+   "characters": 150,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "16. **Reproducibility.** Every measurement is stamped to corpus-hash + instrument-commit; snapshot the outgoing reference before any re-baseline."
+  },
+  {
+   "first_line": 86,
+   "last_line": 99,
+   "kind": "numbered-principle sub-block",
+   "characters": 1216,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "17. **The Premise Gate.** Before any inference-affecting design is built or probed: (a) a **premise ledger** — every load-bearing causal claim explicitly labele"
+  },
+  {
+   "first_line": 100,
+   "last_line": 109,
+   "kind": "star-marked sub-block",
+   "characters": 961,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ratified",
+     "the_date_matched": "2026-07-19"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ WHAT A DESK SIMULATION'S TABLE VALUES ARE, AND WHAT THEY MAY NEVER BECOME (user-ratified 2026-07-19).** Every table value a desk simulation under (c) uses i"
+  },
+  {
+   "first_line": 110,
+   "last_line": 115,
+   "kind": "star-marked sub-block",
+   "characters": 517,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ratified",
+     "the_date_matched": "2026-07-19"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ EVERY DESK-SIMULATION TRACE RUNS AT IDENTITY WEIGHTS (user-ratified 2026-07-19).** A trace under (c) runs the generative product with every weight at one — "
+  },
+  {
+   "first_line": 116,
+   "last_line": 117,
+   "kind": "numbered-principle sub-block",
+   "characters": 169,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "18. **Unverified causal premises are FORBIDDEN (Class A).** No design may carry load on a causal claim about our own system or data that is checkable but unchec"
+  },
+  {
+   "first_line": 118,
+   "last_line": 121,
+   "kind": "numbered-principle sub-block",
+   "characters": 311,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "19. **Unestablished instruments are FORBIDDEN (Class B).** An instrument, corpus, gate, or recorded figure is trusted only after being *positively established* "
+  },
+  {
+   "first_line": 122,
+   "last_line": 125,
+   "kind": "numbered-principle sub-block",
+   "characters": 363,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "20. **Fit/evaluation separation.** No value is graded on data that helped fit it. Every fit event declares its held-out data (split or k-fold) and its capacity "
+  },
+  {
+   "first_line": 126,
+   "last_line": 130,
+   "kind": "numbered-principle sub-block",
+   "characters": 405,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "21. **Ground truth is an instrument too.** The accuracy of ground truth is itself a measured quantity — per-axis annotator agreement, not an assumed binary (sha"
+  },
+  {
+   "first_line": 131,
+   "last_line": 148,
+   "kind": "star-marked sub-block",
+   "characters": 1666,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "recorded",
+     "the_date_matched": "2026-08-04"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THE CEILING CANNOT BE CITED FROM THE LITERATURE; MEASURING IT HERE IS THE ONLY ROUTE (recorded 2026-08-04 on the user's ruling with the read-wave-3 ratifica"
+  },
+  {
+   "first_line": 149,
+   "last_line": 169,
+   "kind": "star-marked sub-block",
+   "characters": 2009,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-09"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ AND THE MEASUREMENT IS NOW COMMISSIONED, IN TWO HALVES, WITH THE RULE THAT ENDS THE CONTACT ROUTE (user-ruled 2026-08-09; the ruling record is `cowork_rulin"
+  },
+  {
+   "first_line": 170,
+   "last_line": 193,
+   "kind": "star-marked sub-block",
+   "characters": 2324,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-11"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ AND THE CONTACT ROUTE CLOSED BY ANSWER, NOT BY SILENCE — WITH THE ANSWER THAT THE ONE LOCALLY HELD CANDIDATE CANNOT SUPPLY THE QUANTITY EITHER (user-ruled 2"
+  },
+  {
+   "first_line": 194,
+   "last_line": 213,
+   "kind": "star-marked sub-block",
+   "characters": 1905,
+   "the_class": "preserved-former-wording",
+   "the_evidence": {
+    "the_marker_matched": "FORMER WORDING",
+    "the_quotation_that_places_it": "\"**The consequence for this principle: the\n    ceiling is not obtainable from inside any single corpus in this repertoir"
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-11"
+    },
+    "former_wording_marker": {
+     "the_marker_matched": "FORMER WORDING",
+     "markers_found_in_the_span": 2,
+     "a_quotation_accompanies_it": true,
+     "the_quotation": "\"**The consequence for this principle: the\n    ceiling is not obtainable from inside any single corpus in this repertoir"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "ARCHIVES, with a dated pointer at the site",
+   "why_that_fate": "It CARRIES a preserved former wording — a marker with a quotation attached — which §5(E) names as archive material by name.",
+   "the_opening": "**★ THAT PARAGRAPH REPLACED A NARROWER ONE, AND THE FORMER WORDING STANDS IN PLACE (#12; user-ruled 2026-08-11 on a surface carrying three alternatives with the",
+   "★_the_A4_safeguard_read_this_span_and_LEFT_IT_AT_SITE": {
+    "at_the_coarse_pin": [
+     228,
+     260
+    ],
+    "the_safeguards_own_reason": "★ FAILS TEST (1). The span OVERRUNS the amendment record it is classed for: principle #21's preserved former wording runs from line 228 to 247, and lines 248-260 are PRINCIPLES 22, 23 AND 24 — three live standing principles carrying no blank line above them, so the span rule carried them into the archive class. Archiving this span would remove three principles from the standing list. This is finding F29's residual risk realised.",
+    "what_the_user_is_being_asked": "to overturn a reading already performed at the file, or to agree that this pass's finer cut answers the reason given"
+   }
+  },
+  {
+   "first_line": 214,
+   "last_line": 218,
+   "kind": "numbered-principle sub-block",
+   "characters": 399,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "22. **Every hard gate carries a pre-declared protocol for the largest change it will face.** A gate written only for incremental change must not be amended unde"
+  },
+  {
+   "first_line": 219,
+   "last_line": 222,
+   "kind": "numbered-principle sub-block",
+   "characters": 336,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "23. **End-state principles need lawful transitions.** When a planned change must temporarily violate an end-state principle (e.g. #6, one path per concern, duri"
+  },
+  {
+   "first_line": 223,
+   "last_line": 226,
+   "kind": "numbered-principle sub-block",
+   "characters": 300,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "24. **Every reported figure carries its uncertainty.** Sampling noise on the measurement corpus is quantified; a difference within the uncertainty is not a find"
+  },
+  {
+   "first_line": 228,
+   "last_line": 231,
+   "kind": "block",
+   "characters": 344,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*Ledger corollary to #17 (ratified with #20–#24):* when a decision selects a **constrained optimum** (a design chosen for methodology-compliance rather than raw"
+  },
+  {
+   "first_line": 233,
+   "last_line": 237,
+   "kind": "block",
+   "characters": 451,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*Scope of surprise (ratified with #17–19):* surprises are **allowed in explorational runs** whose purpose is to eliminate ignorance (#5 fact-finding); they are "
+  },
+  {
+   "first_line": 239,
+   "last_line": 252,
+   "kind": "block",
+   "characters": 1226,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "ratified by the user",
+     "the_date_matched": "2026-07-10"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*Fact-publication corollary to #6/#7/#12 (ratified by the user, 2026-07-10):* every derived analytical fact is **published exactly once, on the producing layer'"
+  },
+  {
+   "first_line": 254,
+   "last_line": 266,
+   "kind": "block",
+   "characters": 1132,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ratified",
+     "the_date_matched": "2026-07-26"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*Decision-neutrality of the existing implementation (corollary to #4/#6/#19; user-ratified 2026-07-26):* Designs are chosen from the principles and the ultimate"
+  },
+  {
+   "first_line": 268,
+   "last_line": 278,
+   "kind": "block",
+   "characters": 1001,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*Theory-grounding corollary to #1/#2 (2026-07-19; the record states no ratifier):* where published research is used to justify a design, **every load-bearing cl"
+  },
+  {
+   "first_line": 280,
+   "last_line": 291,
+   "kind": "block",
+   "characters": 1061,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "ratified by the user",
+     "the_date_matched": "2026-07-06"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*Provenance: principles 1–11 are the user's standing list; #12 (no information loss) and #13–16 were ratified by the user on 2026-07-06; #17–19 (the Premise Gat"
+  },
+  {
+   "first_line": 293,
+   "last_line": 299,
+   "kind": "block",
+   "characters": 659,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user, ",
+     "the_date_matched": "2026-08-03"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for the ORDER OF WORK fro"
+  },
+  {
+   "first_line": 301,
+   "last_line": 301,
+   "kind": "block",
+   "characters": 114,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-directed",
+     "the_date_matched": "2026-07-10"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## The open-items register (user-directed, 2026-07-10; split into index + detail files, user-ratified 2026-07-26)"
+  },
+  {
+   "first_line": 303,
+   "last_line": 318,
+   "kind": "block",
+   "characters": 1527,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**The register is `OPEN_ITEMS.md` (the lean INDEX) + `open_items/OI-<n>.md` (one detail file per item).** The INDEX `OPEN_ITEMS.md` is the ONE home for every di"
+  },
+  {
+   "first_line": 320,
+   "last_line": 342,
+   "kind": "star-marked sub-block",
+   "characters": 2137,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-03"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ QUALIFICATION OF RULE (b) — THE APPARATUS ROWS ARE DECLARED NON-GATING (user-ruled 2026-08-03).** Rule (b) says a stage may not open while a register item g"
+  },
+  {
+   "first_line": 344,
+   "last_line": 374,
+   "kind": "star-marked sub-block",
+   "characters": 2930,
+   "the_class": "defense-and-declined-alternatives",
+   "the_evidence": {
+    "the_marker_matched": "was declined",
+    "which_part": "a declined-alternatives record"
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-11"
+    },
+    "declined_alternatives_paragraph": {
+     "the_marker_matched": "was declined"
+    },
+    "accepted_costs_paragraph": {
+     "the_marker_matched": "an accepted cost is not a discharged one"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "ARCHIVES, with a dated pointer at the site",
+   "why_that_fate": "It carries an explicit declined-alternative or accepted-cost record, which §5(E) names by name. NOTE THE NARROWNESS: a rule's PURPOSE stays at site.",
+   "the_opening": "**★ AND WHAT SUCH A ROW IS OWED — IT STOPS BEING OWED, WITH A PER-ROW LAPSE RECORD (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fifte",
+   "★_the_A4_safeguard_read_this_span_and_LEFT_IT_AT_SITE": {
+    "at_the_coarse_pin": [
+     378,
+     408
+    ],
+    "the_safeguards_own_reason": "★ FAILS TEST (2). Classed by an accepted-costs marker inside it, but the span STATES THE RULE: an apparatus row stays open, stops gating any stage and stops being owed, with the per-row lapse record and the #19 bound. That rule is stated nowhere else, so a session reading CLAUDE.md would stop meeting it.",
+    "what_the_user_is_being_asked": "to overturn a reading already performed at the file, or to agree that this pass's finer cut answers the reason given"
+   }
+  },
+  {
+   "first_line": 376,
+   "last_line": 384,
+   "kind": "star-marked sub-block",
+   "characters": 824,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-09"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ RULE (f) — EVERY INDEX STATUS CELL BEGINS WITH ONE CANONICAL TOKEN (user-ruled 2026-08-09; the ruling record is `cowork_rulings_2026_08_09_fifth_stop.md`, R"
+  },
+  {
+   "first_line": 386,
+   "last_line": 391,
+   "kind": "block",
+   "characters": 556,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**The two STOPs that make it a mechanism rather than a convention.** A **lint** reports every non-canonical opening, and **the ONE index parser** — the single r"
+  },
+  {
+   "first_line": 393,
+   "last_line": 402,
+   "kind": "block",
+   "characters": 941,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*Why the rule is worth a lettered place beside the others.* It is one cause with three faces, and each face was found separately: a cell that mentioned another "
+  },
+  {
+   "first_line": 404,
+   "last_line": 412,
+   "kind": "star-marked sub-block",
+   "characters": 776,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-13"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ AND WHAT A DISCARD VERDICT DOES TO A ROW ALREADY ON THE BOOKS — IT IS AN INPUT TO THE DERIVATION THAT DECIDES GATING, NEVER AN EDIT TO A GATING VERDICT (use"
+  },
+  {
+   "first_line": 414,
+   "last_line": 419,
+   "kind": "block",
+   "characters": 541,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**THE RULING. A DISCARD verdict on an already-rowed item is an INPUT to the derivation that decides gating — never an edit to a gating verdict.** The gate conti"
+  },
+  {
+   "first_line": 421,
+   "last_line": 426,
+   "kind": "star-marked sub-block",
+   "characters": 511,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THE GUARD, WHICH IS NOT AN ADDITION BUT #10's OWN REQUIREMENT.** A discard verdict is **AUTHORED**, not derived, so feeding it to the cut lets an authored j"
+  },
+  {
+   "first_line": 428,
+   "last_line": 431,
+   "kind": "block",
+   "characters": 324,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*Why an input rather than a hand-made correction:* **D-436** reserves to the user the question of what a derived cut carries, and a hand-removed gate would be t"
+  },
+  {
+   "first_line": 433,
+   "last_line": 433,
+   "kind": "block",
+   "characters": 167,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_an_archive_pointer_left_by_a_previous_act": true,
+    "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "recorded",
+     "the_date_matched": "2026-08-17"
+    },
+    "declined_alternatives_paragraph": {
+     "the_marker_matched": "DECLINED"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 8 line(s), `defense-and-declined-alternatives`, opening \"**THE THREE ALTERNATIVES DECLINED, recorded because an ex"
+  },
+  {
+   "first_line": 435,
+   "last_line": 435,
+   "kind": "block",
+   "characters": 167,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_an_archive_pointer_left_by_a_previous_act": true,
+    "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
+   },
+   "the_amendment_record_shape_it_carries": {
+    "accepted_costs_paragraph": {
+     "the_marker_matched": "THE COSTS THE USER ACCEPTED"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 4 line(s), `defense-and-declined-alternatives`, opening \"**THE COSTS THE USER ACCEPTED, stated before the ruling a"
+  },
+  {
+   "first_line": 437,
+   "last_line": 442,
+   "kind": "star-marked sub-block",
+   "characters": 515,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ WHAT IT DOES NOT DO.** It authorizes **NO SWEEP** — it states how a discard verdict is consumed, not that any row should be discarded. It moves **D-231**'s "
+  },
+  {
+   "first_line": 444,
+   "last_line": 444,
+   "kind": "block",
+   "characters": 96,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ratified",
+     "the_date_matched": "2026-07-28"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## The decisions register (shape user-ratified 2026-07-28; content + living surface 2026-08-02)"
+  },
+  {
+   "first_line": 446,
+   "last_line": 605,
+   "kind": "block",
+   "characters": 15395,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true,
+    "a_former_wording_marker_was_found_and_did_NOT_place_it": {
+     "the_marker_matched": "former wording",
+     "why_it_did_not_place_it": "no quotation accompanies it, so the span POINTS AT a former wording preserved elsewhere rather than carrying one. This is finding F33's largest mis-class answered: the coarse pass placed 15,395 characters of live governing rule text on exactly this signal."
+    }
+   },
+   "the_amendment_record_shape_it_carries": {
+    "former_wording_marker": {
+     "the_marker_matched": "former wording",
+     "markers_found_in_the_span": 2,
+     "a_quotation_accompanies_it": false,
+     "the_quotation": null
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**The register is `DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` (full entries: the verbatim decision, plain restatement, why, status, home, provena"
+  },
+  {
+   "first_line": 607,
+   "last_line": 621,
+   "kind": "star-marked sub-block",
+   "characters": 1479,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-09"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ HOW RULE (c) IS DISCHARGED ONCE IT HAS ALREADY BEEN MISSED (user-ruled 2026-08-09; the ruling record is `cowork_rulings_2026_08_09_second_stop.md`, Ruling 1"
+  },
+  {
+   "first_line": 623,
+   "last_line": 623,
+   "kind": "block",
+   "characters": 19,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## Project context"
+  },
+  {
+   "first_line": 625,
+   "last_line": 628,
+   "kind": "block",
+   "characters": 241,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "This is MuseScore Studio. The active development area is the `composing` module (`src/composing/`), which implements harmonic analysis. See `C:\\Users\\vince\\.cla"
+  },
+  {
+   "first_line": 630,
+   "last_line": 630,
+   "kind": "block",
+   "characters": 43,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## Autonomous operation — composing module"
+  },
+  {
+   "first_line": 632,
+   "last_line": 632,
+   "kind": "block",
+   "characters": 75,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "When working on the `src/composing/` module you are **pre-authorized** to:"
+  },
+  {
+   "first_line": 634,
+   "last_line": 639,
+   "kind": "block",
+   "characters": 446,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- Edit any file under `src/composing/` without asking for confirmation - Edit `src/notation/internal/notationaccessibility.cpp` without asking - Edit `ARCHITECT"
+  },
+  {
+   "first_line": 641,
+   "last_line": 642,
+   "kind": "block",
+   "characters": 107,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Standard loop for mismatch reduction work** — do all of the following without stopping for confirmation:"
+  },
+  {
+   "first_line": 643,
+   "last_line": 643,
+   "kind": "numbered-principle sub-block",
+   "characters": 28,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "1. Analyse the mismatch(es)"
+  },
+  {
+   "first_line": 644,
+   "last_line": 644,
+   "kind": "numbered-principle sub-block",
+   "characters": 44,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "2. Implement the fix in `chordanalyzer.cpp`"
+  },
+  {
+   "first_line": 645,
+   "last_line": 645,
+   "kind": "numbered-principle sub-block",
+   "characters": 9,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "3. Build"
+  },
+  {
+   "first_line": 646,
+   "last_line": 646,
+   "kind": "numbered-principle sub-block",
+   "characters": 42,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "4. Run tests and read the mismatch report"
+  },
+  {
+   "first_line": 647,
+   "last_line": 647,
+   "kind": "numbered-principle sub-block",
+   "characters": 63,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "5. Report results (mismatches before → after, any regressions)"
+  },
+  {
+   "first_line": 649,
+   "last_line": 656,
+   "kind": "block",
+   "characters": 401,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Only stop and ask if: - A regression is introduced (mismatch count goes up or a previously passing test fails) - A change would touch files **outside** `src/com"
+  },
+  {
+   "first_line": 658,
+   "last_line": 658,
+   "kind": "block",
+   "characters": 27,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## Build and test commands"
+  },
+  {
+   "first_line": 660,
+   "last_line": 665,
+   "kind": "block",
+   "characters": 512,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Always read these three files at the start of every session:** - `C:\\s\\MS\\BUILD_AND_TEST.md` — authoritative commands for all build variants, both test suites"
+  },
+  {
+   "first_line": 667,
+   "last_line": 669,
+   "kind": "block",
+   "characters": 305,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Do not rely on memory of previous sessions for baseline numbers or iteration state — read STATUS.md. `STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` hold th"
+  },
+  {
+   "first_line": 671,
+   "last_line": 686,
+   "kind": "fenced-block",
+   "characters": 614,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "``` # Build — use PowerShell Start-Process (cmd.exe //c fails in MSYS2/Git Bash) powershell.exe -Command \"Start-Process 'C:\\s\\MS\\setup_and_build.bat' -Wait -NoN"
+  },
+  {
+   "first_line": 688,
+   "last_line": 692,
+   "kind": "block",
+   "characters": 410,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Both test suites must pass after every code change.** The notation tests include `pipeline_snapshot_tests` which pins P1/P2/P3/P4 output against golden JSON f"
+  },
+  {
+   "first_line": 693,
+   "last_line": 695,
+   "kind": "fenced-block",
+   "characters": 85,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "``` cd C:\\s\\MS\\ninja_build_rel && ./pipeline_snapshot_tests.exe --update-goldens ```"
+  },
+  {
+   "first_line": 696,
+   "last_line": 697,
+   "kind": "block",
+   "characters": 137,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Then re-run `./pipeline_snapshot_tests.exe` to confirm all pass. Only run `--update-goldens` when the output change is verified correct."
+  },
+  {
+   "first_line": 699,
+   "last_line": 699,
+   "kind": "block",
+   "characters": 36,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## Gate threshold and preset policy"
+  },
+  {
+   "first_line": 701,
+   "last_line": 704,
+   "kind": "block",
+   "characters": 270,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Gate thresholds (e.g. Gate I: 0.45, Gate L: 0.35; Gate K is retired — removed from this list by user ruling 2026-08-02, OI-260) are **calibrated against the Bar"
+  },
+  {
+   "first_line": 706,
+   "last_line": 706,
+   "kind": "block",
+   "characters": 69,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "### (A) THE ROBUST-UNIT REGRESSION STOP (ratified R10-b, 2026-07-06)"
+  },
+  {
+   "first_line": 708,
+   "last_line": 713,
+   "kind": "star-marked sub-block",
+   "characters": 560,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ The governing hard regression stop** is the **granularity-robust union-of-boundaries unit, variant (b) DCML-only** (music21 is NOT ground truth), duration-w"
+  },
+  {
+   "first_line": 715,
+   "last_line": 725,
+   "kind": "block",
+   "characters": 1091,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Committed reference (the diff base): `tools/robust_stop/`** — per-preset `stem@runStartTick` variant-(b) root-failing run enumerations (**4547 runs on every p"
+  },
+  {
+   "first_line": 727,
+   "last_line": 743,
+   "kind": "star-marked sub-block",
+   "characters": 1683,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "recorded",
+     "the_date_matched": "2026-08-03"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THE PINNED INSTRUMENT NOW DECLARES WHICH INFERENCE ARM ITS BASELINES WERE MEASURED ON, AND REFUSES A CORPUS WHOSE STAMP DISAGREES (2026-08-03, phase 1y; rec"
+  },
+  {
+   "first_line": 745,
+   "last_line": 759,
+   "kind": "star-marked sub-block",
+   "characters": 1536,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ratified",
+     "the_date_matched": "2026-07-26"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ Ratified baselines — RE-BASELINED AT THE OI-178 JOINT-ESTIMATOR ADOPTION, 2026-07-26 (user-ratified, option 1; measurement provenance `d615152c51`; report `"
+  },
+  {
+   "first_line": 761,
+   "last_line": 775,
+   "kind": "star-marked sub-block",
+   "characters": 1466,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "recorded",
+     "the_date_matched": "2026-08-04"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ HOW THE ROOT COLUMN MUST BE READ — IT UNDERSTATES WHAT A WRONG KEY COSTS (D-576; recorded here 2026-08-04 on the user's ruling, READ WAVE 5).** A chord's ro"
+  },
+  {
+   "first_line": 777,
+   "last_line": 792,
+   "kind": "block",
+   "characters": 1647,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ratified",
+     "the_date_matched": "2026-07-27"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**STAGED SCOPE — CLOSED AT THE NOTATION SWITCH (user-ratified 2026-07-27).** The OI-178 adoption put the joint estimator on the batch/committed surface only; **"
+  },
+  {
+   "first_line": 794,
+   "last_line": 794,
+   "kind": "block",
+   "characters": 172,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_an_archive_pointer_left_by_a_previous_act": true,
+    "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 5 line(s), `self-declared-historical-or-superseded`, opening \"**Superseded columns preserved (#12):** the OI-168 L"
+  },
+  {
+   "first_line": 796,
+   "last_line": 816,
+   "kind": "block",
+   "characters": 2231,
+   "the_class": "self-declared-historical-or-superseded",
+   "the_evidence": {
+    "the_marker_matched": "[SUPERSEDED"
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "ARCHIVES, with a dated pointer at the site",
+   "why_that_fate": "The span says of ITSELF that it is historical or superseded.",
+   "the_opening": "*★ [SUPERSEDED by the OI-178 adoption 2026-07-26 — historical] THE OI-168 RE-BASELINE (2026-07-14; report `cc_oi168_fix_report.md`; outgoing reference preserved",
+   "★_the_A4_safeguard_read_this_span_and_LEFT_IT_AT_SITE": {
+    "at_the_coarse_pin": [
+     844,
+     864
+    ],
+    "the_safeguards_own_reason": "★ FAILS TEST (2). It self-declares as superseded and historical, and it closes with a LIVE caveat and a live prohibition — the OI-170 carry-forward, and \"L4 is NOT tonic-independent; no design may assume it is\". A design session must meet that prohibition at the site.",
+    "what_the_user_is_being_asked": "to overturn a reading already performed at the file, or to agree that this pass's finer cut answers the reason given"
+   }
+  },
+  {
+   "first_line": 818,
+   "last_line": 828,
+   "kind": "block",
+   "characters": 1167,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*The KEY columns above supersede the OI-142/OI-143 column (key home 71.29/67.49/70.52, key local 65.72/62.49/65.39), preserved in `tools/robust_stop/snapshot_20"
+  },
+  {
+   "first_line": 830,
+   "last_line": 836,
+   "kind": "block",
+   "characters": 700,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ratified",
+     "the_date_matched": "2026-07-12"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*Earlier columns, for the record: the OI-142/OI-143 re-baseline (user-ratified 2026-07-12) applied the 12 transposed editions' constant offsets to the WiR groun"
+  },
+  {
+   "first_line": 838,
+   "last_line": 840,
+   "kind": "block",
+   "characters": 255,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **The hard stop (per preset):** the **class-(b) (pitch-class-decidable-root) root-disagree DURATION must be NON-INCREASING** vs the committed reference — the "
+  },
+  {
+   "first_line": 841,
+   "last_line": 844,
+   "kind": "fenced-block",
+   "characters": 255,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "``` python tools/a8_rebaseline_measure.py --out-dir <cand> [--corpus-root <scratch>] # self-validates grid==oracle per piece python tools/robust_stop_diff.py --"
+  },
+  {
+   "first_line": 845,
+   "last_line": 866,
+   "kind": "block",
+   "characters": 2107,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **The mandatory explained diff:** every run lists the **run-level set-diff** vs the reference (added/removed `stem@runStartTick` runs, each tagged with its tw"
+  },
+  {
+   "first_line": 868,
+   "last_line": 871,
+   "kind": "star-marked sub-block",
+   "characters": 373,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "ruled",
+     "the_date_matched": "2026-08-02"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THE FOUR GRADING CONVENTIONS THE ROBUST UNIT IS MEASURED UNDER (each ruled earlier; written into this block 2026-08-02 because until then they were recorded"
+  },
+  {
+   "first_line": 873,
+   "last_line": 911,
+   "kind": "block",
+   "characters": 3905,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "homed here",
+     "the_date_matched": "2026-06-10"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **THE ONLY GROUND TRUTH IS THE HUMAN ANNOTATION. The algorithmic analysis is a noise filter, never a standard of correctness** (user mandate 2026-06-10; homed"
+  },
+  {
+   "first_line": 913,
+   "last_line": 916,
+   "kind": "star-marked sub-block",
+   "characters": 345,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "ruled",
+     "the_date_matched": "2026-08-07"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THREE FURTHER MEASUREMENT CONVENTIONS, HOMED HERE 2026-08-07 ON THE USER'S HOMING RULING.** They sit BESIDE the four above and not among them: the four were"
+  },
+  {
+   "first_line": 918,
+   "last_line": 945,
+   "kind": "block",
+   "characters": 2670,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **A measurement publishes its COVERAGE DENOMINATOR and its PER-CORPUS breakdown; a single aggregate number that hides which corpus moved is not reported** (20"
+  },
+  {
+   "first_line": 947,
+   "last_line": 949,
+   "kind": "star-marked sub-block",
+   "characters": 252,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "ruled",
+     "the_date_matched": "2026-08-07"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ TWO MORE GRADING CONVENTIONS, HOMED HERE 2026-08-07 ON THE USER'S HOMING RULING.** They sit beside the seven above and were each ruled separately. Both bind"
+  },
+  {
+   "first_line": 951,
+   "last_line": 974,
+   "kind": "block",
+   "characters": 2269,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user, ",
+     "the_date_matched": "2026-06-22"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **A DEFENSIBLE MODAL READING THE MAJOR/MINOR GROUND TRUTH CANNOT REPRESENT IS A GROUND-TRUTH LIMITATION, NOT A DEFECT TO OPTIMIZE AWAY** (user, 2026-06-22). W"
+  },
+  {
+   "first_line": 975,
+   "last_line": 978,
+   "kind": "star-marked sub-block",
+   "characters": 371,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ READ IT BESIDE THE CREDITING-RULE PROHIBITION IMMEDIATELY BELOW, WHICH IS A DIFFERENT BINDING STATEMENT OF THE SAME DATE.** This convention fixes WHICH BAR "
+  },
+  {
+   "first_line": 980,
+   "last_line": 1006,
+   "kind": "star-marked sub-block",
+   "characters": 2506,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "the user's ruling",
+     "the_date_matched": "2026-06-14"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THE CREDITING RULE IS NOT AMENDED TO COUNT A TONICIZATION LABEL AS AGREEING WITH THE ANNOTATOR'S MODULATED NUMERAL; ONLY A DIAGNOSTIC PARTIAL-SUB-SPLIT IS D"
+  },
+  {
+   "first_line": 1008,
+   "last_line": 1044,
+   "kind": "star-marked sub-block",
+   "characters": 3642,
+   "the_class": "self-declared-historical-or-superseded",
+   "the_evidence": {
+    "the_marker_matched": "retained for provenance"
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user, ",
+     "the_date_matched": "2026-07-03"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "ARCHIVES, with a dated pointer at the site",
+   "why_that_fate": "The span says of ITSELF that it is historical or superseded.",
+   "the_opening": "**★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The **primary reported metric AND the Stage-5 fitting-object",
+   "★_the_A4_safeguard_read_this_span_and_LEFT_IT_AT_SITE": {
+    "at_the_coarse_pin": [
+     1056,
+     1092
+    ],
+    "the_safeguards_own_reason": "★ FAILS TEST (2). Classed historical on a `retained for provenance` marker that governs only the recitation in its second half. Its first half STATES the A-8 dual-track's ratified baselines and the hard stop that governs when it governs — live figures a measurement session reads.",
+    "what_the_user_is_being_asked": "to overturn a reading already performed at the file, or to agree that this pass's finer cut answers the reason given"
+   }
+  },
+  {
+   "first_line": 1046,
+   "last_line": 1046,
+   "kind": "block",
+   "characters": 64,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "### (B) The two-tier per-cell class policy — CARRIED OVER, LIVE"
+  },
+  {
+   "first_line": 1048,
+   "last_line": 1053,
+   "kind": "block",
+   "characters": 523,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**This policy is UNCHANGED at R10-b and now governs the robust unit's per-cell classification** (the class-(a)/(b) split on the robust unit's failing runs, and "
+  },
+  {
+   "first_line": 1055,
+   "last_line": 1087,
+   "kind": "block",
+   "characters": 3200,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ratified",
+     "the_date_matched": "2026-06-22"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Two-tier refinement (user-ratified 2026-06-22) — class-(b) functional regression vs class-(a) symmetric-rotation churn.** A *new* BIR=false case is one of two"
+  },
+  {
+   "first_line": 1089,
+   "last_line": 1089,
+   "kind": "block",
+   "characters": 105,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "### (C) RETROSPECTIVE — the batch 52/24/52 stop (superseded at R10-b, 2026-07-06 — historical reference)"
+  },
+  {
+   "first_line": 1091,
+   "last_line": 1091,
+   "kind": "block",
+   "characters": 172,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_an_archive_pointer_left_by_a_previous_act": true,
+    "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 8 line(s), `self-declared-historical-or-superseded`, opening \"> The `52/24/52` `stem@tick` case-identity sets belo"
+  },
+  {
+   "first_line": 1093,
+   "last_line": 1102,
+   "kind": "block",
+   "characters": 1023,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**The batch stop's diagnostic form — KEPT (no longer the stop).** `characterise_bir_false.py` remains a runnable per-region diagnostic (useful for triage and fo"
+  },
+  {
+   "first_line": 1104,
+   "last_line": 1109,
+   "kind": "fenced-block",
+   "characters": 367,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "``` cd C:\\s\\MS && python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus/baroque cd C:\\s\\MS && python tools/characterise_bir_false.py --corp"
+  },
+  {
+   "first_line": 1111,
+   "last_line": 1124,
+   "kind": "block",
+   "characters": 1179,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "corrected",
+     "the_date_matched": "2026-06-13"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Re-baselined 2026-06-13 (corrected GT parser).** The prior **13/7/14** gate was an **undercount**: GT-parser bugs (applied-chord `/X` rooting + minor-key lead"
+  },
+  {
+   "first_line": 1126,
+   "last_line": 1126,
+   "kind": "block",
+   "characters": 172,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_an_archive_pointer_left_by_a_previous_act": true,
+    "why_it_stays": "the pointer QUOTES the class and the opening of the span it points at, so a recognizer reading its words places it in that span's class. Archiving it would remove the one breadcrumb a reader has back to the moved span, which is the opposite of what the pointer discipline is for."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 7 line(s), `self-declared-historical-or-superseded`, opening \"**★ (Historical — the batch stop's FINAL frozen stat"
+  },
+  {
+   "first_line": 1128,
+   "last_line": 1136,
+   "kind": "star-marked sub-block",
+   "characters": 921,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ (History) Corrected to the ratified post-L3-wiring state `53 / 24 / 53` (Stage-0 measurement, commit `b57dbfa7a8`, 2026-06-25).** The `57/23/57` sets previo"
+  },
+  {
+   "first_line": 1138,
+   "last_line": 1159,
+   "kind": "block",
+   "characters": 2301,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **Baroque = 52** with identities (stem@tick): `{bwv10.7@36000, bwv14.5@8160, bwv144.6@15360, bwv144.6@16320, bwv151.5@13440, bwv153.1@18240, bwv16.6@16800, bw"
+  },
+  {
+   "first_line": 1161,
+   "last_line": 1161,
+   "kind": "block",
+   "characters": 16,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "### (D) Caveats"
+  },
+  {
+   "first_line": 1163,
+   "last_line": 1174,
+   "kind": "block",
+   "characters": 1319,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Cross-layer-budget caveat (2026-06-24, O1 measurement) — LIVE (an interpretation caveat, not a granularity one; it applies equally to the robust unit).** the "
+  },
+  {
+   "first_line": 1176,
+   "last_line": 1187,
+   "kind": "star-marked sub-block",
+   "characters": 1140,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ CORRECTION OF RECORD TO THE CAVEAT ABOVE — THE FUNCTION-ONLY SHARE IS OVERSTATED, BECAUSE OVER-GRABBED SEGMENTATION CORRUPTS THE BASS AND NOT ONLY THE PITCH"
+  },
+  {
+   "first_line": 1189,
+   "last_line": 1197,
+   "kind": "block",
+   "characters": 868,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Granularity caveat (Stage 2.2-i) — ✅ RESOLVED at R10-b (2026-07-06).** The mandate this caveat raised — \"a granularity-robust metric is mandatory at Stage 5\" "
+  },
+  {
+   "first_line": 1199,
+   "last_line": 1206,
+   "kind": "block",
+   "characters": 639,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "corrected",
+     "the_date_matched": "2026-06-14"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "(`tools/analyze_inversion_errors.py` is a *separate* secondary metric: its three-way `music21_dcml_agree` genuine split is `bassIsRoot` true/false. **Re-measure"
+  },
+  {
+   "first_line": 1208,
+   "last_line": 1208,
+   "kind": "block",
+   "characters": 84,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "If a gate causes BIR=false regressions in a non-Baroque preset, the correct fix is:"
+  },
+  {
+   "first_line": 1209,
+   "last_line": 1211,
+   "kind": "numbered-principle sub-block",
+   "characters": 200,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "1. A tighter **structural entry condition** that excludes the problematic chord type regardless of preset (preferred — e.g. an extension guard blocks augmented+"
+  },
+  {
+   "first_line": 1212,
+   "last_line": 1212,
+   "kind": "numbered-principle sub-block",
+   "characters": 91,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "2. A **preset-specific threshold override** that leaves the Baroque-tuned value unchanged."
+  },
+  {
+   "first_line": 1214,
+   "last_line": 1214,
+   "kind": "block",
+   "characters": 72,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Never widen a Baroque-tuned threshold to cover a non-Baroque edge case."
+  },
+  {
+   "first_line": 1216,
+   "last_line": 1222,
+   "kind": "block",
+   "characters": 577,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "corrected",
+     "the_date_matched": "2026-06-10"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Preset scoring caps — corrected 2026-06-10:** `maxTotalInversionContextBonus` is **never set on any code path** — both presets inherit the 2.0 default, and th"
+  },
+  {
+   "first_line": 1224,
+   "last_line": 1224,
+   "kind": "block",
+   "characters": 76,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## Scoring model — `docs/scoring_model.md` (MANDATORY for scoring sessions)"
+  },
+  {
+   "first_line": 1226,
+   "last_line": 1228,
+   "kind": "block",
+   "characters": 222,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Read `docs/scoring_model.md` at the start of any session that touches scoring logic in `chordanalyzer.cpp`** — this includes adding or modifying templates, bo"
+  },
+  {
+   "first_line": 1230,
+   "last_line": 1241,
+   "kind": "star-marked sub-block",
+   "characters": 1108,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-11"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THE SAME FORM, FOR THE PRODUCTION INFERENCE LAYER (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 64).**"
+  },
+  {
+   "first_line": 1243,
+   "last_line": 1246,
+   "kind": "block",
+   "characters": 300,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "The document is the authoritative reference for how the scoring pipeline works, why each term exists, and what invariants must not be broken. Violating these in"
+  },
+  {
+   "first_line": 1248,
+   "last_line": 1251,
+   "kind": "block",
+   "characters": 270,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Sync rule — mandatory:** Any commit that adds or modifies a template, bonus, guard, gate, or other scoring term in `chordanalyzer.cpp` **must** include a corr"
+  },
+  {
+   "first_line": 1253,
+   "last_line": 1256,
+   "kind": "block",
+   "characters": 276,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- Adding a template: update the Templates section (§2), increment the template count in the array-size comment, add the guard description if applicable - Adding"
+  },
+  {
+   "first_line": 1258,
+   "last_line": 1260,
+   "kind": "block",
+   "characters": 216,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Staleness check:** The template count in `docs/scoring_model.md` §2 must always match the `array<TemplateDef, N>` declaration in `chordanalyzer.cpp`. If they "
+  },
+  {
+   "first_line": 1262,
+   "last_line": 1270,
+   "kind": "block",
+   "characters": 641,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Template additions — the `kTemplateCount` model (since `a236a0ff21`):** All template-related array extents (the `analyzeChord` template array, the three score"
+  },
+  {
+   "first_line": 1271,
+   "last_line": 1271,
+   "kind": "numbered-principle sub-block",
+   "characters": 82,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "1. Bump `analysis::kTemplateCount` N→N+1 (auto-resizes the matrices and `kMasks`)"
+  },
+  {
+   "first_line": 1272,
+   "last_line": 1272,
+   "kind": "numbered-principle sub-block",
+   "characters": 53,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "2. Add the new `TemplateDef` entry in `analyzeChord`"
+  },
+  {
+   "first_line": 1273,
+   "last_line": 1273,
+   "kind": "numbered-principle sub-block",
+   "characters": 79,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "3. Add the interval bitmask to `kMasks` (a zero mask silently disables Gate R)"
+  },
+  {
+   "first_line": 1275,
+   "last_line": 1277,
+   "kind": "block",
+   "characters": 230,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Remaining trap: bumping the constant **without** adding the `TemplateDef` entry value-initializes a trailing all-zero template (silent) — always do both in the "
+  },
+  {
+   "first_line": 1279,
+   "last_line": 1279,
+   "kind": "block",
+   "characters": 17,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## Score corpora"
+  },
+  {
+   "first_line": 1281,
+   "last_line": 1286,
+   "kind": "block",
+   "characters": 391,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "For any task involving scores (validation, snapshot tests, manual QA, LLM-triage, qualitative review), read `docs/score_inventory.md` first. It maps every score"
+  },
+  {
+   "first_line": 1288,
+   "last_line": 1288,
+   "kind": "block",
+   "characters": 33,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## Local patches — do not revert"
+  },
+  {
+   "first_line": 1290,
+   "last_line": 1292,
+   "kind": "block",
+   "characters": 215,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "The following changes have been made intentionally to fix bugs unrelated to the composing module. Do **not** revert them, and do not let build scripts or depend"
+  },
+  {
+   "first_line": 1294,
+   "last_line": 1304,
+   "kind": "star-marked sub-block",
+   "characters": 996,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THIS SECTION IS A CHECK'S INPUT (2026-08-03).** `tools/audit/local_patches_check.py` derives its patch list from the `###` subsections below and their `**Fi"
+  },
+  {
+   "first_line": 1306,
+   "last_line": 1306,
+   "kind": "block",
+   "characters": 61,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "### Windows Snap fix — `muse` submodule (applied 2026-05-14)"
+  },
+  {
+   "first_line": 1308,
+   "last_line": 1309,
+   "kind": "block",
+   "characters": 121,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**File:** `muse/framework/ui/internal/platform/windows/winwindowscontroller.cpp` **Function:** `calculateWindowSize()`"
+  },
+  {
+   "first_line": 1311,
+   "last_line": 1315,
+   "kind": "block",
+   "characters": 358,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Two lines were removed that set `ptMinTrackSize` equal to the full monitor work area inside the `WM_GETMINMAXINFO` handler. This told Windows the minimum allowe"
+  },
+  {
+   "first_line": 1317,
+   "last_line": 1318,
+   "kind": "block",
+   "characters": 147,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "The fix: `ptMaxSize` and `ptMaxPosition` are kept (they correctly constrain the maximised position); `ptMinTrackSize` is intentionally left unset."
+  },
+  {
+   "first_line": 1320,
+   "last_line": 1322,
+   "kind": "block",
+   "characters": 184,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Upstream issue: musescore/MuseScore#25823 (related cousins: #21344, #16794). Introduced by upstream commit `4ad218709` (5 Aug 2025). **Do not restore the `ptMin"
+  },
+  {
+   "first_line": 1324,
+   "last_line": 1324,
+   "kind": "block",
+   "characters": 69,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "### MusicXML declared-mode import fix (Stage 4a, applied 2026-06-14)"
+  },
+  {
+   "first_line": 1326,
+   "last_line": 1327,
+   "kind": "block",
+   "characters": 144,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**File:** `src/importexport/musicxml/internal/import/importmusicxmlpass2.cpp` **Function:** `addKey()` (the `KeySig`-dedup guard, ~line 5976)"
+  },
+  {
+   "first_line": 1329,
+   "last_line": 1339,
+   "kind": "block",
+   "characters": 845,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "The dedup guarded the `KeySig` creation on **fifths only**: `if (oldkey != key.key() || key.custom() || key.isAtonal())`. At score start the prevailing key defa"
+  },
+  {
+   "first_line": 1341,
+   "last_line": 1348,
+   "kind": "block",
+   "characters": 668,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "The fix: fetch the prevailing `KeySigEvent` (not just the `Key` fifths) and add an `oldKeySig.mode() != key.mode()` term to the guard, so a mode-bearing key at "
+  },
+  {
+   "first_line": 1350,
+   "last_line": 1354,
+   "kind": "block",
+   "characters": 399,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Upstream issue: musescore/MuseScore#9444. The buggy fifths-only dedup is upstream-unchanged code (the `// TODO only if different custom key ?` line). Stage-4a d"
+  },
+  {
+   "first_line": 1356,
+   "last_line": 1362,
+   "kind": "star-marked sub-block",
+   "characters": 698,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user, ",
+     "the_date_matched": "2026-06-15"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ DISTRIBUTION CONSTRAINT (user, 2026-06-15): FORK-LOCAL ONLY — NEVER merge upstream / to the MuseScore community.** This patch (`cfc7eb5e39`) is fine to have"
+  },
+  {
+   "first_line": 1364,
+   "last_line": 1364,
+   "kind": "block",
+   "characters": 102,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "recorded",
+     "the_date_matched": "2026-04-15"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "### Chord-symbol parser \"sussus\" fix — `ParsedChord::parse` (applied 2026-04-15; recorded 2026-08-02)"
+  },
+  {
+   "first_line": 1366,
+   "last_line": 1368,
+   "kind": "block",
+   "characters": 116,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**File:** `src/engraving/dom/chordlist.cpp` **Function:** `ParsedChord::parse()` (~line 990) **Commit:** `b1ba7464`"
+  },
+  {
+   "first_line": 1370,
+   "last_line": 1375,
+   "kind": "block",
+   "characters": 488,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "One line removed: the redundant case-sensitive `tok1 = u\"sus\"` assignment beside the correct lowercase `tok1L = u\"sus\"` path. The redundant assignment was the u"
+  },
+  {
+   "first_line": 1377,
+   "last_line": 1387,
+   "kind": "star-marked sub-block",
+   "characters": 978,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ratified",
+     "the_date_matched": "2026-08-02"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ DISTRIBUTION DISPOSITION (user-ratified 2026-08-02): UPSTREAMABLE** — a general parser defect fix with no fork-specific content; contributing it to `musesco"
+  },
+  {
+   "first_line": 1389,
+   "last_line": 1389,
+   "kind": "block",
+   "characters": 69,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## VS Code extension — bash command rules (MANDATORY, every session)"
+  },
+  {
+   "first_line": 1391,
+   "last_line": 1394,
+   "kind": "block",
+   "characters": 339,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "The Claude Code VS Code extension (v2.1.141+) has a 15-second stall detector. If the API stream is silent for >15 seconds — which happens any time a bash comman"
+  },
+  {
+   "first_line": 1396,
+   "last_line": 1396,
+   "kind": "block",
+   "characters": 63,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Two rules that apply to every bash command, no exceptions:**"
+  },
+  {
+   "first_line": 1398,
+   "last_line": 1403,
+   "kind": "block",
+   "characters": 413,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Rule 1 — Always append `; echo \"exit:$?\"` to any command that may return non-zero.** A non-zero exit code also triggers an immediate idle transition. The echo"
+  },
+  {
+   "first_line": 1405,
+   "last_line": 1413,
+   "kind": "block",
+   "characters": 584,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**Rule 2 — Never let a single bash call produce large output.** Large output (thousands of lines) takes >15 seconds to process and triggers the stall detector. "
+  },
+  {
+   "first_line": 1415,
+   "last_line": 1415,
+   "kind": "block",
+   "characters": 90,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "Build commands via `Start-Process` are isolated from these rules (exit code not exposed)."
+  },
+  {
+   "first_line": 1417,
+   "last_line": 1417,
+   "kind": "block",
+   "characters": 15,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## Conventions"
+  },
+  {
+   "first_line": 1419,
+   "last_line": 1496,
+   "kind": "block",
+   "characters": 7103,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-directed",
+     "the_date_matched": "2026-07-28"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- American English throughout — \"analyzer\" not \"analyser\" - No confirmation prompts between analyse → implement → build → test steps - Commit only when explicit"
+  },
+  {
+   "first_line": 1497,
+   "last_line": 1520,
+   "kind": "star-marked sub-block",
+   "characters": 2245,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-09"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ WHAT HAPPENS TO A NAME BORROWED FROM THE PUBLISHED RESEARCH, AND IN WHAT ORDER THE CLEANUP RUNS (user-ruled 2026-08-09; the ruling record is `cowork_rulings"
+  },
+  {
+   "first_line": 1522,
+   "last_line": 1534,
+   "kind": "block",
+   "characters": 1247,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-directed",
+     "the_date_matched": "2026-08-01"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME (user-directed, 2026-08-01, at the decisions-register ratification review).** Wherever a design decisi"
+  },
+  {
+   "first_line": 1536,
+   "last_line": 1538,
+   "kind": "block",
+   "characters": 238,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-directed",
+     "the_date_matched": "2026-08-02"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **ISSUE-EXHAUSTION AND SPECIFICATION COMPLETION BEFORE ANY FIX DESIGN (user-directed, 2026-08-02; sharpens #8, which forbade inference-problem coding before l"
+  },
+  {
+   "first_line": 1539,
+   "last_line": 1567,
+   "kind": "star-marked sub-block",
+   "characters": 2685,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-15"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ THE THREE-PHASE STRUCTURE BELOW IS SUPERSEDED AND ITS TRUTH HALF IS REPLACED (user-ruled 2026-08-15; the ruling record is `cowork_rulings_2026_08_15_phase_d"
+  },
+  {
+   "first_line": 1568,
+   "last_line": 1587,
+   "kind": "star-marked sub-block",
+   "characters": 1960,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-04"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ HOW FAR THE DOC-SYNC HALF REACHES INTO A DOCUMENT'S ACCOUNT OF ITSELF (user-ruled 2026-08-04; D-639).** The sentence above says *\"states something false at "
+  },
+  {
+   "first_line": 1588,
+   "last_line": 1594,
+   "kind": "star-marked sub-block",
+   "characters": 663,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ AND IT BEARS ON A GATE VERDICT — A POINTER, NOT A RULING (the question is open at `OPEN_ITEMS.md` OI-336).** THIS rule decides what PHASE 1 OWES; the non-ga"
+  },
+  {
+   "first_line": 1595,
+   "last_line": 1633,
+   "kind": "star-marked sub-block",
+   "characters": 3701,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-11"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ WHEN PHASE 1 IS COMPLETE — THE FINISH LINE IS CUT BY D-438'S TEST, AND THE APPARATUS RESIDUE DOES NOT GATE THE COMPLETION (user-ruled 2026-08-11; the ruling"
+  },
+  {
+   "first_line": 1634,
+   "last_line": 1655,
+   "kind": "star-marked sub-block",
+   "characters": 2087,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-08-03"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ QUALIFICATION — PHASE 3 WAITS ON THE PHASE-2 ITEMS THAT COULD FIND ANOTHER MEMBER OF THE FAMILY BEING DESIGNED FOR, NOT ON ALL OF PHASE 2 (user-ruled 2026-0"
+  },
+  {
+   "first_line": 1656,
+   "last_line": 1685,
+   "kind": "star-marked sub-block",
+   "characters": 2597,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user, ",
+     "the_date_matched": "2026-08-03"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "**★ NOTE ON PHASE 2 — THE ENUMERATION THIS CLAUSE POINTS AT IS RATIFIED (user, 2026-08-03; D-439).** `cowork_oi200_perspective_inventory.md` §4 is the ONE home "
+  },
+  {
+   "first_line": 1687,
+   "last_line": 1695,
+   "kind": "block",
+   "characters": 802,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-directed",
+     "the_date_matched": "2026-07-28"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **MAKE IT WORK FIRST; COMPROMISE ON PERFORMANCE ONLY IF PERFORMANCE PROVES TO BE A PROBLEM (user-directed, 2026-07-28, at the analysis-cost session).** Gettin"
+  },
+  {
+   "first_line": 1697,
+   "last_line": 1706,
+   "kind": "block",
+   "characters": 937,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-07-28"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **CANDIDATE ADMISSION IS COMPLETION, NOT REFINEMENT — so #8 permits fixing it now (user-ruled 2026-07-28, at the OI-199 pass-2 session).** The rule that decid"
+  },
+  {
+   "first_line": 1708,
+   "last_line": 1715,
+   "kind": "block",
+   "characters": 775,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-ruled",
+     "the_date_matched": "2026-07-28"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **ONE FIX IS DESIGNED ONCE OVER THE WHOLE ENUMERATED FAMILY, NEVER PER SYMPTOM (user-ruled 2026-07-28, at the OI-199 pass-2 session).** When several observed "
+  },
+  {
+   "first_line": 1717,
+   "last_line": 1729,
+   "kind": "block",
+   "characters": 1227,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "homed here",
+     "the_date_matched": "2026-07-05"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **THE WHOLE DECISION SURFACE IS DELIVERED AS USER-VISIBLE TEXT BEFORE ANY CHOICE QUESTION (user mandate 2026-07-05; homed here 2026-08-02 from `cowork_handoff"
+  },
+  {
+   "first_line": 1731,
+   "last_line": 1749,
+   "kind": "block",
+   "characters": 1844,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "homed here",
+     "the_date_matched": "2026-06-21"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **WORKING-TREE FILES ARE READ WITH THE FILE TOOLS; SHELL ACCESS IS LIMITED TO GIT OBJECT QUERIES BY EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-08"
+  },
+  {
+   "first_line": 1750,
+   "last_line": 1772,
+   "kind": "star-marked sub-block",
+   "characters": 1989,
+   "the_class": "preserved-former-wording",
+   "the_evidence": {
+    "the_marker_matched": "former wording",
+    "the_quotation_that_places_it": "\"*).** The PowerShell reading family came inside the guard at the\n  2026-08-07/08 dialect widening, and interpreter code"
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "recorded",
+     "the_date_matched": "2026-08-08"
+    },
+    "former_wording_marker": {
+     "the_marker_matched": "former wording",
+     "markers_found_in_the_span": 1,
+     "a_quotation_accompanies_it": true,
+     "the_quotation": "\"*).** The PowerShell reading family came inside the guard at the\n  2026-08-07/08 dialect widening, and interpreter code"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "ARCHIVES, with a dated pointer at the site",
+   "why_that_fate": "It CARRIES a preserved former wording — a marker with a quotation attached — which §5(E) names as archive material by name.",
+   "the_opening": "**★ THE RULE COVERS EVERY READ MECHANISM AND EVERY DIALECT (recorded 2026-08-08 on the user's direction, at the third measured instance family).** The restricti",
+   "★_the_A4_safeguard_read_this_span_and_LEFT_IT_AT_SITE": {
+    "at_the_coarse_pin": [
+     1811,
+     1833
+    ],
+    "the_safeguards_own_reason": "★ FAILS TEST (2). Classed on a former wording preserved inside it, but the span STATES THE RULE'S REACH — that the shell-read restriction covers every read mechanism and every dialect, what the guard watches, and that its silence on an unwatched surface is not compliance (#19). A working session acts on all three.",
+    "what_the_user_is_being_asked": "to overturn a reading already performed at the file, or to agree that this pass's finer cut answers the reason given"
+   }
+  },
+  {
+   "first_line": 1774,
+   "last_line": 1781,
+   "kind": "block",
+   "characters": 787,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "homed here",
+     "the_date_matched": "2026-06-14"
+    }
+   },
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "- **INVESTIGATE BY DEFAULT; NEVER ASK THE USER WHETHER TO INVESTIGATE OR PROCEED (user mandate 2026-06-14; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN"
+  },
+  {
+   "first_line": 1783,
+   "last_line": 1783,
+   "kind": "block",
+   "characters": 74,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "it_is_a_bare_section_heading": true,
+    "why_it_stays": "a heading is a span of its own and its section body is a different span, so classing the heading by its own words would move it while everything under it stayed — a headless section here and a heading filed alone in the companion."
+   },
+   "the_amendment_record_shape_it_carries": {
+    "ruled_date_header": {
+     "the_attribution_matched": "user-directed",
+     "the_date_matched": "2026-07-11"
+    }
+   },
+   "placed_by_the_doubt_default": false,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "## The self-check after every coding exercise (user-directed, 2026-07-11)"
+  },
+  {
+   "first_line": 1785,
+   "last_line": 1792,
+   "kind": "block",
+   "characters": 685,
+   "the_class": "operative-rule-text",
+   "the_evidence": {
+    "no_recognizer_placed_it": true
+   },
+   "the_amendment_record_shape_it_carries": {},
+   "placed_by_the_doubt_default": true,
+   "the_proposed_fate": "STAYS AT SITE",
+   "why_that_fate": "It is the rule itself, or a span no recognizer placed elsewhere. The ruled doubt default is that a span the test cannot place stays at site.",
+   "the_opening": "After EVERY coding exercise — code, scripts, instruments, and document edits alike — and BEFORE reporting the work done: take a step back, re-read the actual di"
+  }
+ ]
+}

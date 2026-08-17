@@ -750,6 +750,29 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "ASSERT: that the must-read is small enough to read, which is [[OI-370]]'s own subject, or "
         "that every superseded entry has moved — it proves only that what left is in the archive "
         "and that nothing else left."),
+    "tools/audit/gen_claude_md_finer_spans.py": (
+        LIVE, "gen_claude_md_finer_spans.py, THE STOPS of its module docstring; `build()`, which "
+              "re-cuts and re-classes the file on every run and STOPs unless the per-class byte "
+              "counts account for it to the character",
+        "LIVE, on exactly the ground the coarse decomposition is live on. Its subject is a PINNED "
+        "reading, but the demand it asserts is about the tree rather than a dated finding: the "
+        "decomposition must re-derive and the per-class byte counts must account for the file "
+        "EXACTLY, so a change to the cut rules or the recognizers that dropped a span would fail "
+        "on the day it was made. The pin is what stops it going red at every later commit, the "
+        "artifact being evidence for a ruling the user has not yet given. ★ WHAT IT DOES NOT "
+        "ASSERT: that a span classed `operative-rule-text` IS operative, and that a span cut "
+        "inside a block is readable on its own — which is why every fate it computes is a "
+        "PROPOSAL rather than an act."),
+    "tools/audit/gen_claude_md_finer_surface.py": (
+        LIVE, "gen_claude_md_finer_surface.py, WHAT IT DOES of its module docstring; "
+              "`build_readers()`, which re-scans the tracked tree through the imported measure; "
+              "`render()`, which rebuilds the surface from both artifacts on every run",
+        "LIVE. Its second claim is a live invariant nothing else asserts: the ruling surface the "
+        "user reads still re-derives BYTE-IDENTICALLY from the two committed artifacts, so a "
+        "hand-edited proposal cannot reach a ruling unnoticed. The reach half is re-scanned "
+        "against the tracked tree at the pinned commit on every run. ★ WHAT IT DOES NOT ASSERT: "
+        "that a naming is a dependency, or that the parser list is complete — the bound is the "
+        "imported scan's own and is published on the surface itself."),
     "tools/audit/gen_retirement_census_movement.py": (
         LIVE, "gen_retirement_census_movement.py, THE THREE CLASSES paragraph of its module "
               "docstring; `movements()`, which re-derives every difference on every run; "

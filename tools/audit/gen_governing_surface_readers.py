@@ -109,15 +109,22 @@ def git(*args: str) -> str:
     return proc.stdout.decode("utf-8", "replace")
 
 
-def namings(name: str) -> list[tuple[str, int, str]]:
+def namings(name: str, commit: str = PINNED_COMMIT) -> list[tuple[str, int, str]]:
     """Every tracked line naming the file — ONE `git grep` for the whole tree (the F26 lesson).
 
-    Read AT THE PINNED COMMIT, for the reason the module docstring states: this measurement is
-    evidence for a ruling and may not move under it. At the live tree it went red at the batch's
-    own close, and would at every close after.
+    Read AT A COMMIT, for the reason the module docstring states: this measurement is evidence for
+    a ruling and may not move under it. At the live tree it went red at the batch's own close, and
+    would at every close after.
+
+    ★ THE COMMIT IS A PARAMETER, DEFAULTING TO THIS MEASUREMENT'S OWN PIN (added 2026-08-17,
+    `cc_instruction_preparation_seventh.md` Task 3). A LATER measurement over one of these files
+    needs the same reach question answered at ITS OWN commit, and re-implementing the scan there
+    would put one concern on two paths (#6). Nothing about the default changes, so this file's own
+    artifact and surface re-derive byte-identically — which its `--check` proves rather than
+    asserts.
     """
     out = []
-    for line in git("grep", "-n", "-I", "-F", "-e", name, PINNED_COMMIT).split("\n"):
+    for line in git("grep", "-n", "-I", "-F", "-e", name, commit).split("\n"):
         if not line.strip():
             continue
         # With a commit named, git prefixes every hit with `<commit>:`.
@@ -129,8 +136,8 @@ def namings(name: str) -> list[tuple[str, int, str]]:
     return out
 
 
-def register_homes(name: str) -> list[dict]:
-    data = json.loads(git("show", f"{PINNED_COMMIT}:{BACKBONE}"))
+def register_homes(name: str, commit: str = PINNED_COMMIT) -> list[dict]:
+    data = json.loads(git("show", f"{commit}:{BACKBONE}"))
     rows = []
     for entry in data["decisions"]:
         home = entry["home"]
@@ -141,11 +148,12 @@ def register_homes(name: str) -> list[dict]:
     return sorted(rows, key=lambda r: r["entry"])
 
 
-def measure(name: str) -> dict:
-    git("cat-file", "-e", f"{PINNED_COMMIT}:{name}")
+def measure(name: str, commit: str = PINNED_COMMIT,
+            own_outputs: frozenset[str] = OWN_OUTPUTS) -> dict:
+    git("cat-file", "-e", f"{commit}:{name}")
     anchor = re.compile(re.escape(name) + r":\d+")
 
-    found = [row for row in namings(name) if row[0] not in OWN_OUTPUTS]
+    found = [row for row in namings(name, commit) if row[0] not in own_outputs]
     per_file: dict[str, dict] = {}
     anchors, parsers = [], []
     for path, lineno, text in found:
@@ -166,7 +174,7 @@ def measure(name: str) -> dict:
         raise Stop(f"{name}: the per-file tally accounts for {total} namings against {counted} "
                    f"found — the tally has stopped accounting for the scan")
 
-    homes = register_homes(name)
+    homes = register_homes(name, commit)
     return {
         "file": name,
         "namers": len(per_file),
