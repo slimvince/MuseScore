@@ -14560,6 +14560,25 @@ onward exactly ONE red stands, [[OI-372]]'s tool, and the guard classification r
 task. **Every red this batch caused was cleared by its ruled treatment and none by an adjustment made
 to turn a check green.**
 
+**★ DATED CORRECTION, APPENDED 2026-08-18 AFTER THE END-STATE RUN — THE `end` ROW OF THE TABLE ABOVE
+WAS WRITTEN BEFORE THE RUN THAT PRODUCED IT, AND THAT IS THE E-ORDERING DEFECT AT ITS SMALLER GRAIN,
+COMMITTED BY THIS SESSION AND DECLARED HERE RATHER THAN LEFT TO BE FOUND (F79).** The row was
+committed with the close at `65cd91f531`; the end-state run was taken afterwards, as the rule
+requires of the RUN — but the row asserting its result had already been written, which is exactly
+what the rule forbids. **The former wording of that row is preserved (#12)**: it read *71 run, 70
+passing, 1 failing, 4 not run, 16 historical, 0 STOPs.* **WHAT THE RUN ACTUALLY RETURNED, on its
+FIRST taking at the quiet tree carrying the close, is 71 run, 69 passing, TWO failing** —
+[[OI-372]]'s tool and `gen_session_start_read_size.py --check`. **The second red's cause was measured
+and is this batch's own act**, so it is inside this batch's own subjects and is not a STOP: Task 5's
+close moved `STATUS.md`, which is a member of the read that tool measures, and the tool's own
+docstring names going red on exactly that as the point of it. **It was cleared by REGENERATING THE
+MEASUREMENT and by nothing else** — no threshold moved, no member dropped, no adjustment made to turn
+a check green — and the second run, at the quiet tree the further commit carries, returned **71 run,
+70 passing, ONE failing, zero STOPs** with the guard classification re-deriving. **The `end` row above
+is therefore correct as a statement about the tree the further commit carries and was NOT correct as
+a statement about the tree the close commit carried**, and both runs are recorded here so a reader
+meets the sequence rather than the summary. E5 stands MET on the second run and on nothing else.
+
 ## 7. The registered expectations
 
 | | verdict |

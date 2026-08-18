@@ -468,6 +468,20 @@ subject is the project's own record and the apparatus that reads it.
   **The general form: a set of hand figures erring in ONE direction is a convention difference rather
   than a set of slips, and what needs recording is the convention** — not established here, so no
   cause is asserted. §6.c.
+- **F79 (added 2026-08-18, AFTER the end-state run, and it is this session's own defect) — A SUMMARY
+  ROW ASSERTING THE END STATE WAS WRITTEN IN THE SAME COMMIT AS THE WORK IT SUMMARIZES.** The close's
+  §6 table carried an `end` row — *71 run, 70 passing, 1 failing, zero STOPs* — committed with the
+  close at `65cd91f531`, **before the run that produced it existed**. The run was correctly taken
+  afterwards, which is the rule at its larger grain; the row was not, which is the rule at its
+  smaller grain, and the dispatch names that grain in terms. **It was not merely premature: it was
+  WRONG.** The first end-state run returned **TWO** failing — [[OI-372]]'s tool and
+  `gen_session_start_read_size.py --check`, the latter because Task 5's own close moved `STATUS.md`,
+  a member of the read that tool measures. Cleared by regenerating the measurement and by nothing
+  else; the second run returned the shape the row had asserted. **The general form: the ordering rule
+  is not satisfied by taking the run late if the sentence about the run was written early — and the
+  cheapest test of whether it has been obeyed is whether the sentence could have been wrong.** A
+  dated correction is appended at the close's §6 with the former row preserved (#12), and this
+  section is amended in the same act. §12.
 - **F1–F74 ride to the preparation phase's retrospective unchanged**, with the E3 ordering defect and
   the A1 premise error. **F3 is FOURTEEN times surfaced, unfixed and unrowed** —
   `reaim_home_anchors.py --check` exits 0 while printing drifted anchors, and
@@ -543,6 +557,18 @@ batch.**
 
 **Nothing this batch did touches the analysis, its inputs, or any measurement tool the analysis
 depends on.**
+
+**★ AND ONE DEFECT OF THIS SESSION'S OWN IS DECLARED HERE, FOUND BY THE SELF-CHECK AFTER THE
+END-STATE RUN (F79).** The close's §6 table asserted the end state in the same commit as the work it
+summarizes — the E-ordering rule at its smaller grain, which the dispatch names in terms and which
+this session's two predecessors avoided. The run itself was taken afterwards, correctly; the sentence
+about it was not, and it was **wrong when written**: the first end-state run returned TWO failing,
+not one, because Task 5's own close moved `STATUS.md` and so moved the session-start read that
+`gen_session_start_read_size.py` measures. **The red was cleared by regenerating the measurement and
+by nothing else**, and the second run — at the quiet tree the further commit carries — returned the
+one-red shape. A dated correction is appended at the close's §6 with the former row preserved (#12),
+and §9 of this report carries the finding. **The remedy that would have prevented it is the one the
+tenth batch used: state that the end state is not asserted, and let the further commit carry it.**
 
 ---
 
