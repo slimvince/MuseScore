@@ -343,6 +343,27 @@ language after two presentation-form corrections (recorded at §7). **The user's
   outright), and D (postpone the removal a third time — the reach is measured twice over,
   nothing learned, the noise continues) are DECLINED as rated on the surface.
 
+**★ DATED CORRECTION, APPENDED 2026-08-18 — KIND 3 NAMES THE CENSUS'S WRITER, AND ONE OF THE TWO
+TOOLS IT NAMES DOES NOT WRITE ONE.** The ruled text above is not rewritten and the former wording
+stands in place (#12): kind 3 reads *"the two derived censuses (`gen_artifact_inventory_surface.py`,
+`gen_retirement_caller_check.py`)"*. **READ AT THE CODE, THE ARTIFACT INVENTORY'S CENSUS IS
+`tools/audit/gen_artifact_inventory.py`'s OUTPUT.** That tool writes one file,
+`tools/audit/artifact_inventory.json` — the census. `tools/audit/gen_artifact_inventory_surface.py`
+writes one file too, `ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` — the
+ratification document — and reads two input routes, the census file and a citation scan it performs
+over the governing record. **So the tree holds one output each from two tools, not two outputs of
+one tool**, and the tool this bullet should name as the re-deriving derived census is
+`gen_artifact_inventory.py`. *The establishment: both tools' write targets and read routes were read
+at their own source, at the git object `9390e2ca2c`, by the writing side and again by the executing
+side; the finding is the executing side's F68 and the correction is the user's Ruling 2 of
+`cowork_rulings_2026_08_18_eleventh_stop.md`, executed by
+`cc_instruction_preparation_eleventh_amended.md` Task 1. **Kind 3's ruling itself is unchanged**: the
+derived census regenerates under the bound widened by one named category, and nothing about
+`gen_retirement_caller_check.py` moves. **NEITHER THIS RULING NOR RULING 1 OF
+`cowork_rulings_2026_08_17_ninth_return.md` IS SUPERSEDED BY THE OTHER** — kind 3 governs the CENSUS,
+which keeps re-deriving; Ruling 1 governs the RATIFICATION DOCUMENT, whose rendering joins the pinned
+kind — and each is written at the tool that actually holds the output it is about.*
+
 ## 7. Direction — fresh sessions every dispatch cycle until the pruning lands; this session closes on two tells (user-directed at the close)
 
 **The user's words, verbatim:** *"Yes, a new session is needed. It looks like we currently

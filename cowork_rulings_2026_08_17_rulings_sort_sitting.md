@@ -76,3 +76,47 @@ caller-check regeneration under the ruled kinds, and the sort's ruled placements
 conversation; the user's words quoted verbatim in §0. The surface ruled is
 `ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md`; the population binds at
 `tools/audit/rulings_sort_classification.json` and the committed filter artifact.*
+
+*Provenance: ★ DATED CORRECTION, APPENDED 2026-08-18 — nothing above is rewritten. **The surface
+this sitting was ruled from is `ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md` at
+commit `53e552296f`.** THE DERIVATION, taken at the git objects and cited to itself rather than
+looked up: the sitting this record carries is the rulings-sort sitting of 2026-08-17, read from this
+record's own text and never from its file name; the commit that ADDED this record to git is
+`570f2b63b1` (2026-08-17T16:34:06+02:00), which is the bound; and the last commit touching that
+surface dated at or before that bound is the one named above (2026-08-17T10:00:25+02:00), selected
+from the two candidates the per-path history carries at or before the bound — `2fa6ffcbf9`
+(2026-08-16T12:25:43+02:00) and `53e552296f`. **THIS IS THE MEMBER THE LANDING-COMMIT BOUND WAS
+SHARPENED FOR**: four commits touched this document on the sitting's own day, and a
+date-granularity reading would select the last of them, `15dfb0e172` (2026-08-17T23:13:00+02:00),
+which lands after the record above reached git and after this sitting's own executing act
+`a21a55fc12` (2026-08-17T18:14:23+02:00) — that is, it would pin a POST-RULING rendering and record
+it as the evidence of what was PUT. THE INTERVAL between the selected commit and the bound is 6 h 33
+min 41 s, and the evidence bearing on whether the document moved inside it is strong: the generator
+`tools/audit/gen_rulings_sort.py` has its next commit at `a21a55fc12`, and its data file
+`tools/audit/rulings_sort_classification.json` next moves at that same commit — both after the
+bound, so neither could have moved inside the interval. WHAT IS NOT EXCLUDED: a regeneration that
+was never committed inside that interval, which is the residual risk Ruling 1 states in terms.
+AUTHORITY: Ruling 1 of `cowork_rulings_2026_08_18_tenth_return.md`, at the derivation Ruling 3 of
+`cowork_rulings_2026_08_18_eleventh_stop.md` sharpened to the landing-commit bound; executed by
+`cc_instruction_preparation_eleventh_amended.md` Task 1. The bound is cited to THIS derivation and
+to no register entry: the interim-carrier practice it rests on is written down as a rule by Ruling
+3's own forward clause, and D-230's text does not carry it (F72).*
+
+**★ THE PIN IS NOT APPLIED, AND THE MEASURED REASON IS A STOP-AND-REPORT RATHER THAN A JUDGMENT.**
+The commit above is established, so this member does not stay UNRESOLVED for want of a derivation.
+What stops the pin is that the pin is **not constructible at the generator as it now stands**,
+measured at the git objects. Two facts decide it. **(1) One of the generator's inputs did not exist
+at the commit above.** `tools/audit/gen_rulings_sort.py` reads this very record to import the sixty
+user-ruled placements of §2, and this record was added to git at `570f2b63b1` — after the pinned
+commit — so a read of its inputs at that commit STOPs the tool rather than rendering anything. **(2)
+The document standing in the tree is no longer the rendering the user ruled from, and restoring it
+would destroy this sitting's own outcome.** The surface differs from its object at the pinned commit
+by 260 inserted and 385 deleted lines, and that difference IS this sitting's executing act: the
+sixty ruled placements and the totals §2 ruled. Reverting it would remove the user's own placements
+from the record, which #12 forbids outright. The generator's object also differs at the two commits
+(`7d16bcab8d` against `37fa858472`), the later one being where the ruled-placement route was added.
+**This is the pin arriving after the ruled rendering was deliberately superseded by the ruling's own
+execution**, and it is the one member where the two things Ruling 1 protects — the evidence of what
+was PUT, and the record of what was RULED — are carried by two different renderings. The question is
+returned to the user and is not decided here; the ruled rendering stands in git at the commit named
+above and nothing has been done to it.

@@ -43,6 +43,41 @@ THE STOPS:
   3. a role or mining verdict outside the closed vocabulary the dispatch names is a STOP;
   4. a proposal with no reason is a STOP.
 
+★ THIS TOOL WRITES THE RATIFICATION DOCUMENT, AND THAT DOCUMENT IS A MEMBER OF THE EVIDENCE PIN'S
+RULED CLASS — WHILE THE CENSUS IT READS IS NOT ITS OUTPUT AND KEEPS RE-DERIVING (recorded
+2026-08-18, on the user's Rulings 1 and 2 of `cowork_rulings_2026_08_18_eleventh_stop.md`; executed
+by `cc_instruction_preparation_eleventh_amended.md` Task 1).  Two rulings meet here and **NEITHER IS
+SUPERSEDED BY THE OTHER**, because they are about two different outputs held by two different tools.
+
+  * **The CENSUS keeps re-deriving.**  §6 kind 3 of `cowork_rulings_2026_08_16_preparation_return.md`
+    rules a derived census to regenerate under a widened bound.  That census is
+    `tools/audit/artifact_inventory.json`, which **`tools/audit/gen_artifact_inventory.py` writes and
+    this file only reads**.  The bullet naming it identified the wrong tool of the two; the
+    correction is appended at §6 of that record, the former wording preserved beside it (#12).
+  * **The RATIFICATION DOCUMENT's rendering is what Ruling 1 of
+    `cowork_rulings_2026_08_17_ninth_return.md` places in the pinned kind**: a generated document put
+    to the user for a ruling joins the pinned kind at the moment it is ruled from.  That document is
+    `ratification_surfaces/cowork_artifact_inventory_ruling_surface.md`, which this file writes.
+
+★ THE PIN IS NOT APPLIED, AND THE MEASURED REASON IS RECORDED HERE RATHER THAN LEFT TO BE
+DISCOVERED.  The commit the surface was ruled at IS established — `b1d48d6c87`, derived at the git
+objects under the landing-commit bound and written as a dated correction into
+`cowork_rulings_2026_08_15_inventory_sitting.md`.  What stops the pin is that **the document standing
+in the tree is no longer the rendering the user ruled from**: the surface's git object at that commit
+is `d04aa5726b` and at the tree it is `9f76701ed4`, differing by 11 inserted and 26 deleted lines,
+every one of them citation-scan output.  This file's own object and the census it reads are
+byte-identical at both commits, so pinning **both** of its input routes — the census file AND the
+citation scan below — would render `d04aa5726b` exactly, which is not the committed document, and
+`--check` would go red.  Clearing that would mean regenerating a committed document to a different
+content, which the executing dispatch forbids in terms, so the shape is REPORTED and the pin is not
+improvised.
+
+★ WHY BOTH ROUTES ARE NAMED TOGETHER, because a pin that fixed one would be worse than none.  This
+file reads the census file AND performs a citation scan over the governing record; the scan is the
+route that has actually moved the rendering, and a pin fixing only the census would leave the
+document free to move whenever any governing document does — which is the very thing the pin exists
+to prevent.
+
 WHAT THIS DOES NOT DO.  It moves, renames, retires, archives and deletes nothing — every
 retirement on this surface is a CANDIDATE FLAG awaiting the user, and retirement itself is
 archive-with-record under #12: nothing is destroyed. It rules nothing, ratifies nothing, and

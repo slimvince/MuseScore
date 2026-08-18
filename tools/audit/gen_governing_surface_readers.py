@@ -38,10 +38,16 @@ outside the tracked tree is invisible to it. A path COMPUTED at run time carries
 find — the same bound the retirement caller-check publishes of itself, repeated here rather than
 quietly dropped.
 
+★ AND ITS RATIFICATION DOCUMENT IS A MEMBER OF THE EVIDENCE PIN'S RULED CLASS (2026-08-18).  The
+span decomposition it is generated from is read at the git object of the commit the sitting was
+ruled at, not from the working tree; the full reason, and the derivation that established the
+commit, are at `SPANS_PINNED_AT` below.
+
 THE STOPS:
   * a file the ruling names that the tree does not carry STOPS it;
-  * the span decomposition artifact missing, or covering a different file set, STOPS it — the
-    surface is generated from BOTH artifacts and may not be built from half of them;
+  * the PINNED span decomposition unreadable at its commit STOPS it, and so does a decomposition
+    covering a different file set — the surface is generated from BOTH artifacts and may not be
+    built from half of them;
   * a per-file naming tally that does not account for the namings found STOPS it.
 
 Run:
@@ -69,6 +75,7 @@ import gen_governing_surface_spans as spans                        # noqa: E402 
 
 OUT = HERE / "governing_surface_readers.json"
 SPANS = HERE / "governing_surface_spans.json"
+SPANS_PATH = "tools/audit/governing_surface_spans.json"
 SURFACE = (ROOT / "ratification_surfaces"
            / "cowork_governing_surface_split_2026_08_16.md")
 BACKBONE = "tools/audit/decisions/backbone_decisions.json"
@@ -78,6 +85,33 @@ FILES = spans.FILES          # IMPORTED, never restated (#6)
 # one measurement and the surface is generated from both, so a disagreement about WHEN they were
 # taken would make the surface a statement about two different trees.
 PINNED_COMMIT = spans.PINNED_COMMIT
+
+# ★ THE SPAN ARTIFACT'S READ IS PINNED TOO — the EVIDENCE PIN's ruled class, applied to this member
+# (`cc_instruction_preparation_eleventh_amended.md` Task 1, executing Ruling 1 of
+# `cowork_rulings_2026_08_18_tenth_return.md` at the derivation Ruling 3 of
+# `cowork_rulings_2026_08_18_eleventh_stop.md` sharpened).
+#
+# WHAT WAS STILL LIVE BEFORE THIS.  Everything this tool reads at the tracked tree — the namings,
+# the register homes — was already read at `PINNED_COMMIT` above.  ONE route was not: the span
+# decomposition artifact was read from the WORKING TREE, so a later run of
+# `gen_governing_surface_spans.py` could rewrite the ruling surface generated from it.  That is the
+# class rule's own hazard, and this closes it: *a document generated from a live data file is not
+# evidence of what was PUT in front of the user unless its generation is PINNED.*
+#
+# ★ WHAT THE PIN DOES NOT FREEZE, stated so it is not mistaken for the F22 ossification.  The
+# UNDERLYING DATA FILE is not pinned and continues to re-derive: `gen_governing_surface_spans.py`
+# re-cuts and re-classes the five mandatory reads on every run, and its own `--check` is what proves
+# the cut still accounts for them.  What is fixed here is ONE thing — the rendering of the document
+# the user ruled from.  A LATER RULING CAN UNPIN THIS MEMBER IN ONE EDIT.
+#
+# ★ THE PIN IS INERT AT APPLICATION AND THAT IS MEASURED, NOT ASSUMED: the artifact's blob at this
+# commit and at the tree are the same object, so applying the pin moved no value in the surface.
+SPANS_PINNED_AT = "9fb1ba01bf51014df1955ea558828868336e9ac6"
+SPANS_PINNED_AT_IS = (
+    "the commit the governing-surface split sitting was ruled at, DERIVED at the git objects under "
+    "the landing-commit bound: the last commit touching "
+    "`ratification_surfaces/cowork_governing_surface_split_2026_08_16.md` dated at or before the "
+    "commit that landed `cowork_rulings_2026_08_17_governing_surface_split.md` in git")
 
 # ★ THIS MEASUREMENT'S OWN OUTPUTS ARE NOT READERS OF THE FILES IT MEASURES, and counting them
 # would make the artifact unreproducible BY CONSTRUCTION: each of the three names all five files,
@@ -107,6 +141,23 @@ def git(*args: str) -> str:
         raise Stop(f"git {' '.join(args)} failed: "
                    f"{proc.stderr.decode('utf-8', 'replace').strip()}")
     return proc.stdout.decode("utf-8", "replace")
+
+
+def pinned_spans() -> dict:
+    """The span decomposition AS THE RULED SURFACE WAS GENERATED FROM IT, read at the git object.
+
+    A content-addressed read by explicit hash — the one shell mechanism the standing rule permits —
+    so this tool cannot be moved by a later run of the span generator. The reason is at
+    `SPANS_PINNED_AT` above.
+    """
+    proc = subprocess.run(
+        ["git", "-C", str(ROOT), "show", f"{SPANS_PINNED_AT}:{SPANS_PATH}"],
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    if proc.returncode != 0:
+        raise Stop(f"the pinned span decomposition could not be read at "
+                   f"{SPANS_PINNED_AT[:10]}:{SPANS_PATH} — "
+                   f"{proc.stderr.decode('utf-8', 'replace').strip()}")
+    return json.loads(proc.stdout.decode("utf-8"))
 
 
 def namings(name: str, commit: str = PINNED_COMMIT) -> list[tuple[str, int, str]]:
@@ -197,10 +248,7 @@ def measure(name: str, commit: str = PINNED_COMMIT,
 
 
 def build() -> dict:
-    if not SPANS.exists():
-        raise Stop(f"the span decomposition artifact is missing: {SPANS} — the surface is "
-                   f"generated from BOTH artifacts and may not be built from half of them")
-    decomposition = json.loads(SPANS.read_text(encoding="utf-8"))
+    decomposition = pinned_spans()
     measured = [f["file"] for f in decomposition["per_file"]]
     if measured != list(FILES):
         raise Stop(f"the span decomposition covers {measured}, and this measurement covers "
@@ -488,7 +536,7 @@ def main(argv: list[str]) -> int:
     args = ap.parse_args(argv)
 
     readers = build()
-    decomposition = json.loads(SPANS.read_text(encoding="utf-8"))
+    decomposition = pinned_spans()
     text = json.dumps(readers, indent=1, ensure_ascii=False) + "\n"
     surface = render_surface(readers, decomposition)
 

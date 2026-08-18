@@ -85,3 +85,38 @@ question stays open. [[OI-179]] stays OPEN and GATES; the row bar stands.
 conversation; the user's words quoted verbatim in §0. The surface ruled is
 `ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md`; the populations bind at
 `tools/audit/ratified_document_check.json` and `tools/audit/sole_carrier_subclass.json`.*
+
+*Provenance: ★ DATED CORRECTION, APPENDED 2026-08-18 — nothing above is rewritten. **The surface
+this sitting was ruled from is `ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md`
+at commit `81e2ef1c23`.** THE DERIVATION, taken at the git objects and cited to itself rather than
+looked up: the sitting this record carries is the residue sitting of 2026-08-17, read from this
+record's own text and never from its file name; the commit that ADDED this record to git is
+`570f2b63b1` (2026-08-17T16:34:06+02:00), which is the bound; and the last commit touching that
+surface dated at or before that bound is the one named above (2026-08-16T16:41:24+02:00) — which is
+also **the only commit that has ever touched that document**, so the candidate set has exactly one
+member and no later commit at or before the bound touched it. THE INTERVAL between the selected
+commit and the bound is 23 h 52 min 42 s, **the widest of the four members**, and the evidence
+bearing on whether the document moved inside it is: the generator
+`tools/audit/gen_ratified_document_check.py` has exactly one commit, the same one, so neither it nor
+the document moved in git inside the interval; its derived inputs are read at the commit its own
+committed artifact RECORDS and did not move; and the document's git object at the selected commit is
+the same object it is at this tree. WHAT IS NOT EXCLUDED: a regeneration that was never committed
+inside that interval, which is the residual risk Ruling 1 states in terms; on this member the
+interval is a day wide and nothing in the record narrows it further, so it is published with the pin
+rather than carried as a class caveat. AUTHORITY: Ruling 1 of
+`cowork_rulings_2026_08_18_tenth_return.md`, at the derivation Ruling 3 of
+`cowork_rulings_2026_08_18_eleventh_stop.md` sharpened to the landing-commit bound; executed by
+`cc_instruction_preparation_eleventh_amended.md` Task 1. The bound is cited to THIS derivation and
+to no register entry: the interim-carrier practice it rests on is written down as a rule by Ruling
+3's own forward clause, and D-230's text does not carry it (F72).*
+
+**★ THE PIN IS APPLIED, AND DELIBERATELY NARROW.** `tools/audit/gen_ratified_document_check.py`
+already read every derived input at the commit its own artifact records; the ONE route that reached
+the rendering from the live tree — the (B1) bullet the population is parsed from — now reads the
+ruling record at the git object of the commit named above, under `RULING_PINNED_AT`. **The pass's
+LIVE assertion is deliberately not pinned with it:** it still reads
+`cowork_rulings_2026_08_16_preparation_return.md` as it stands on every run and still STOPs when a
+sentence that ordered the derivation is no longer there, because pinning that read too would have
+destroyed a live guard rather than protected an evidence rendering. The pin is **inert at
+application, measured rather than assumed**: the artifact and the surface re-derive byte-identically
+after it. A later ruling can unpin it in one edit.

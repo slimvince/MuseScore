@@ -225,3 +225,48 @@ held the same day. The user's verbatim words are marked as such throughout. The 
 read at the git object via the screen report's quotation before Decision 4 of the sitting was
 put; the four batch commits and the inventory artifact's counts were verified at the objects at
 the sitting's opening (the session's own boot report records the checks).*
+
+*Provenance: ★ DATED CORRECTION, APPENDED 2026-08-18 — nothing above is rewritten. **The surface
+this sitting was ruled from is
+`ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` at commit `b1d48d6c87`.** THE
+DERIVATION, taken at the git objects and cited to itself rather than looked up: the sitting this
+record carries is the inventory sitting of 2026-08-15, read from this record's own text and never
+from its file name; the commit that ADDED this record to git is `dfea49b7a5`
+(2026-08-15T13:09:23+02:00), which is the bound; and the last commit touching that surface dated at
+or before that bound is the one named above (2026-08-15T10:56:13+02:00), selected from the two
+candidates the per-path history carries at or before the bound — `31c573b06e`
+(2026-08-15T10:47:01+02:00) and `b1d48d6c87`. No later commit at or before the bound touched the
+document. THE INTERVAL between the selected commit and the bound is 2 h 13 min 10 s, **the narrowest
+of the four members**, and the evidence bearing on whether the document moved inside it splits in
+two: for the generator and its census input it is strong — `tools/audit/gen_artifact_inventory.py`'s
+output `tools/audit/artifact_inventory.json` last moved at the selected commit itself, and
+`tools/audit/gen_artifact_inventory_surface.py`'s own last commit IS the selected commit, so neither
+could have moved inside the interval; for the surface generator's SECOND input route — the citation
+scan it performs over the governing record — there is no such bound at all, because that route's
+input is not a committed artifact but the governing record itself, which moves whenever any
+governing document does. WHAT IS NOT EXCLUDED: a regeneration that was never committed inside that
+interval, which is the residual risk Ruling 1 states in terms, and — on this member specifically —
+any movement of the governing record inside those 2 h 13 min. AUTHORITY: Ruling 1 of
+`cowork_rulings_2026_08_18_tenth_return.md`, at the derivation Ruling 3 of
+`cowork_rulings_2026_08_18_eleventh_stop.md` sharpened to the landing-commit bound; executed by
+`cc_instruction_preparation_eleventh_amended.md` Task 1. The bound is cited to THIS derivation and
+to no register entry: the interim-carrier practice it rests on is written down as a rule by Ruling
+3's own forward clause, and D-230's text does not carry it (F72).*
+
+**★ THE PIN IS NOT APPLIED, AND THE MEASURED REASON IS A STOP-AND-REPORT RATHER THAN A JUDGMENT.**
+The commit above is established, so this member does not stay UNRESOLVED for want of a derivation.
+What stops the pin is that **the document standing in the tree is no longer the rendering the user
+ruled from**, measured at the git objects: the surface's object at the commit named above is
+`d04aa5726b` and at this tree it is `9f76701ed4`, a difference of 11 inserted and 26 deleted lines,
+and every one of those lines is citation-scan output — two of the four mixed classes' cited/uncited
+splits moved (84/29 to 81/32 and 52/30 to 50/32) and the count of ignored files the governing record
+names fell from 122 to 107. The generator's own object is byte-identical at both commits and its
+census input is the same object at both, so pinning its two input routes at the commit above would
+render `d04aa5726b` exactly — which is **not** the committed document, so the tool's own `--check`
+would go red and could be cleared only by regenerating a committed document to a different content,
+which the executing dispatch forbids in terms. **This is Ruling 1's own hazard measured after it
+fired**, on the member whose sitting is the oldest of the four: the evidence of what was PUT has
+already been rewritten by the pruning arc's later acts, and it stands in git at the commit named
+above. The question — whether the surface is restored to the rendering it was ruled from and then
+pinned, or the pin is taken at a later commit and the ruled rendering left in git alone — is
+returned to the user and is not decided here.

@@ -126,3 +126,34 @@ return of the fifth preparation batch. The user's verbatim words are marked as s
 else is the writing side's operationalization, accepted in sequence. The presentation of each
 decision restated the surface's content self-contained in plain language with alternatives,
 costs named to principles, and a recommendation; the user ruled A on all four.*
+
+*Provenance: ★ DATED CORRECTION, APPENDED 2026-08-18 — nothing above is rewritten. **The surface
+this sitting was ruled from is `ratification_surfaces/cowork_governing_surface_split_2026_08_16.md`
+at commit `9fb1ba01bf`.** THE DERIVATION, taken at the git objects and cited to itself rather than
+looked up: the sitting this record carries is the governing-surface split sitting of 2026-08-17,
+read from this record's own text and never from its file name; the commit that ADDED this record to
+git is `1f84f5d621` (2026-08-17T09:15:30+02:00), which is the bound; and the last commit touching
+that surface dated at or before that bound is the one named above (2026-08-17T00:01:32+02:00),
+selected from the two candidates the per-path history carries at or before the bound —
+`c4f15a7b32` (2026-08-16T23:27:06+02:00) and `9fb1ba01bf`. No later commit at or before the bound
+touched the document. THE INTERVAL between the selected commit and the bound is 9 h 13 min 58 s, and
+the evidence bearing on whether the document moved inside it is strong in both directions the record
+can supply: the generator `tools/audit/gen_governing_surface_readers.py` has its next commit at
+`cfb69a7ecb` (2026-08-17T12:22:49+02:00), after the bound, and its span input
+`tools/audit/governing_surface_spans.json` is the same git object at the selected commit and at this
+tree — so neither the generator nor its input moved inside the interval. WHAT IS NOT EXCLUDED: a
+regeneration that was never committed inside that interval, which is the residual risk Ruling 1
+states in terms and which is published here with the pin so a later reader can challenge it rather
+than discover it. AUTHORITY: Ruling 1 of `cowork_rulings_2026_08_18_tenth_return.md`, at the
+derivation Ruling 3 of `cowork_rulings_2026_08_18_eleventh_stop.md` sharpened to the landing-commit
+bound; executed by `cc_instruction_preparation_eleventh_amended.md` Task 1. The bound is cited to
+THIS derivation and to no register entry: the interim-carrier practice it rests on is written down
+as a rule by Ruling 3's own forward clause, and D-230's text does not carry it (F72).*
+
+**★ THE PIN IS APPLIED.** `tools/audit/gen_governing_surface_readers.py` now reads the span
+decomposition its ruling surface is generated from at the git object of the commit named above,
+under `SPANS_PINNED_AT`, rather than from the working tree. It is **inert at application, measured
+rather than assumed**: the artifact is the same git object at that commit and at this tree, so the
+surface re-derives byte-identically and no value in it moved. What the pin does NOT freeze is stated
+at the tool: the underlying data file keeps re-deriving, only the rendering of the document the user
+ruled from is fixed, and a later ruling can unpin it in one edit.

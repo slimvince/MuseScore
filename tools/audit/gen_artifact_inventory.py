@@ -41,6 +41,25 @@ THE STOPS, so this cannot silently stop being a derivation:
      is unclassified.  The second half is the live one: a file added by a later commit that no rule
      names must halt this tool rather than enter a later pass ungraded.
 
+★ THIS TOOL WRITES THE CENSUS, AND THE CENSUS KEEPS RE-DERIVING (recorded 2026-08-18, on the user's
+Ruling 2 of `cowork_rulings_2026_08_18_eleventh_stop.md`; executed by
+`cc_instruction_preparation_eleventh_amended.md` Task 1).  §6 kind 3 of
+`cowork_rulings_2026_08_16_preparation_return.md` rules that a DERIVED CENSUS regenerates under a
+bound widened by one named category.  **The artifact inventory's census is this file's output** —
+`tools/audit/artifact_inventory.json` — and it is what that ruling governs.  The bullet naming it
+identified the wrong tool of the two; the correction is appended at §6 of that record, with the
+former wording preserved beside it (#12) and the ruled text unchanged.
+
+★ AND THE COMPANION RULING GOVERNS THE OTHER TOOL'S OUTPUT, NOT THIS ONE — NEITHER IS SUPERSEDED.
+Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md` places a GENERATED DOCUMENT PUT TO THE USER
+FOR A RULING in the pinned kind.  The document in question is
+`ratification_surfaces/cowork_artifact_inventory_ruling_surface.md`, which
+`tools/audit/gen_artifact_inventory_surface.py` writes and this file does not.  So the two rulings
+are about two different outputs held by two different tools: **the census here keeps re-deriving,
+and the ratification document's rendering is the other tool's subject.**  Each treatment is written
+at the tool that actually holds the output it is about, which is what makes both statements true
+where they stand (#10).
+
 WHAT THIS DOES NOT DO.  It moves, renames, retires, archives and deletes nothing — the dispatch
 says in terms that every retirement is a PROPOSAL on the ruling surface and that the user rules.
 It reads no file's content.  It makes no comparison against the code in either direction, takes no

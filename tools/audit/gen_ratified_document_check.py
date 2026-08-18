@@ -80,6 +80,7 @@ RECOVERY = "tools/audit/deciding_act_recovery.json"
 SOLE_CARRIER = "tools/audit/sole_carrier_subclass.json"
 BACKBONE = "tools/audit/decisions/backbone_decisions.json"
 RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+RULING_PATH = "cowork_rulings_2026_08_16_preparation_return.md"
 OUT = ROOT / "tools" / "audit" / "ratified_document_check.json"
 SURFACE = (ROOT / "ratification_surfaces"
            / "cowork_discard_residue_surface_2026_08_16.md")
@@ -93,6 +94,36 @@ NO_RATIFICATION = "NO-DOCUMENT-RATIFICATION-ACT"
 RESULTS = (IN_RATIFIED, NOT_FOUND_THERE, NO_RATIFICATION)
 
 REQUIRED_FIELDS = ("id", "group", "title", "plain", "home", "status", "patterns")
+
+# ★ THE ONE ROUTE THAT REACHED THE RENDERING FROM THE LIVE TREE IS PINNED — the EVIDENCE PIN's ruled
+# class, applied to this member (`cc_instruction_preparation_eleventh_amended.md` Task 1, executing
+# Ruling 1 of `cowork_rulings_2026_08_18_tenth_return.md` at the derivation Ruling 3 of
+# `cowork_rulings_2026_08_18_eleventh_stop.md` sharpened).
+#
+# WHAT WAS ALREADY PINNED, AND WHAT WAS NOT.  Every JSON input this pass reads — the recovery
+# artifact, the sole-carrier artifact, the decisions register's data file — and every document it
+# searches are already read at the commit the committed artifact RECORDS, and `--check` re-derives
+# there.  ONE route was not: the (B1) bullet the population is PARSED from was read from the
+# WORKING-TREE ruling record, so an edit to that record could move both the artifact and the ruling
+# surface generated from it.  That is the class rule's own hazard: *a document generated from a live
+# data file is not evidence of what was PUT in front of the user unless its generation is PINNED.*
+#
+# ★ THE PIN IS DELIBERATELY NARROW, AND THE HALF IT DOES NOT TOUCH IS THE POINT.  `locate_ruling`
+# still reads the ruling record AS IT STANDS on every run, and still STOPs when a sentence that
+# ordered this derivation is no longer there.  Pinning that read too would have destroyed a LIVE
+# guard the record values — the pass would then be unable to notice that the words permitting it had
+# gone — so the pin fixes WHAT THE RENDERING READS and leaves WHAT THE PASS ASSERTS live.
+#
+# ★ WHAT THE PIN DOES NOT FREEZE.  The ruling record itself is not frozen: it is corrected by
+# APPENDING, as this batch's own dated correction to it does, and every such correction is visible to
+# the live assertion above.  A LATER RULING CAN UNPIN THIS MEMBER IN ONE EDIT.
+RULING_PINNED_AT = "81e2ef1c2376e4dc7a5c69c62b188676239091f1"
+RULING_PINNED_AT_IS = (
+    "the commit the residue sitting was ruled at, DERIVED at the git objects under the "
+    "landing-commit bound: the last commit touching "
+    "`ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md` dated at or before the "
+    "commit that landed `cowork_rulings_2026_08_17_residue_sitting.md` in git — and the only "
+    "commit that has ever touched that document")
 
 # AUTHORED: what makes a passage a DOCUMENT RATIFICATION. Published beside every result.
 RATIFICATION_WORDS = re.compile(
@@ -222,9 +253,24 @@ def readable(text: str, width: int = 900) -> str:
 
 
 def ruling_text() -> str:
+    """The ruling record AS IT STANDS. Live on purpose — see `RULING_PINNED_AT`."""
     if not RULING.exists():
         raise Stop(f"the ruling record this pass serves is missing: {RULING}")
     return RULING.read_text(encoding="utf-8")
+
+
+def pinned_ruling_text() -> str:
+    """The ruling record AS THE RULED SURFACE WAS GENERATED FROM IT, read at the git object.
+
+    A content-addressed read by explicit hash — the one shell mechanism the standing rule permits —
+    so the population this pass parses, and the surface generated from it, cannot be moved by a
+    later edit to the record. The reason is at `RULING_PINNED_AT` above.
+    """
+    try:
+        return git("show", f"{RULING_PINNED_AT}:{RULING_PATH}")
+    except Stop:
+        raise Stop(f"the pinned ruling record could not be read at "
+                   f"{RULING_PINNED_AT[:10]}:{RULING_PATH}")
 
 
 def locate_ruling(raw: str) -> dict[str, str]:
@@ -483,7 +529,8 @@ def build(commit: str) -> tuple[dict, str]:
         raise Stop("the committed recovery artifact carries no ACT-FOUND entry, so there is no "
                    "population for this pass — the import is not what it assumes it is")
 
-    kept, kept_quoted = b1_keeps(raw_ruling, act_found)
+    # The population is parsed from the PINNED record; the assertion above is taken on the LIVE one.
+    kept, kept_quoted = b1_keeps(pinned_ruling_text(), act_found)
     population = sorted(act_found - set(kept))
 
     data = json_at(commit, BACKBONE, "the decisions register's data file")

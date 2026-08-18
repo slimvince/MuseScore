@@ -19,9 +19,9 @@
   "generated_ratification_documents": 7,
   "ruling_records_read": 38,
   "members": 7,
-  "members_pinned": 3,
-  "members_unresolved": 4,
-  "tools_carrying_a_pin_constant": 6,
+  "members_pinned": 5,
+  "members_unresolved": 0,
+  "tools_carrying_a_pin_constant": 8,
   "pinned_tools_outside_this_class": 3
  },
  "the_members": {
@@ -32,13 +32,13 @@
    "ruling_records_naming_it": [
     "cowork_rulings_2026_08_15_inventory_sitting.md"
    ],
-   "the_commit_a_record_states": null,
-   "where_the_record_states_it": null,
+   "the_commit_a_record_states": "b1d48d6c87",
+   "where_the_record_states_it": "cowork_rulings_2026_08_15_inventory_sitting.md",
    "also_named_as_pinned_by": [
     "cowork_rulings_2026_08_18_eleventh_stop.md"
    ],
    "pin_constants_the_generator_carries": {},
-   "state": "UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed"
+   "state": "NOT PINNED — a record states the commit; the pin is not applied"
   },
   "tools/audit/gen_claude_md_finer_surface.py": {
    "route": "A — a ruling record's own statement names the GENERATED DOCUMENT",
@@ -64,10 +64,12 @@
    "ruling_records_naming_it": [
     "cowork_rulings_2026_08_17_residue_sitting.md"
    ],
-   "the_commit_a_record_states": null,
-   "where_the_record_states_it": null,
-   "pin_constants_the_generator_carries": {},
-   "state": "UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed"
+   "the_commit_a_record_states": "81e2ef1c23",
+   "where_the_record_states_it": "cowork_rulings_2026_08_17_residue_sitting.md",
+   "pin_constants_the_generator_carries": {
+    "RULING_PINNED_AT": "81e2ef1c2376e4dc7a5c69c62b188676239091f1"
+   },
+   "state": "PINNED — at the commit a ruling record states"
   },
   "tools/audit/gen_governing_surface_readers.py": {
    "route": "A — a ruling record's own statement names the GENERATED DOCUMENT",
@@ -76,10 +78,12 @@
    "ruling_records_naming_it": [
     "cowork_rulings_2026_08_17_governing_surface_split.md"
    ],
-   "the_commit_a_record_states": null,
-   "where_the_record_states_it": null,
-   "pin_constants_the_generator_carries": {},
-   "state": "UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed"
+   "the_commit_a_record_states": "9fb1ba01bf",
+   "where_the_record_states_it": "cowork_rulings_2026_08_17_governing_surface_split.md",
+   "pin_constants_the_generator_carries": {
+    "SPANS_PINNED_AT": "9fb1ba01bf51014df1955ea558828868336e9ac6"
+   },
+   "state": "PINNED — at the commit a ruling record states"
   },
   "tools/audit/gen_rulings_sort.py": {
    "route": "A — a ruling record's own statement names the GENERATED DOCUMENT",
@@ -88,10 +92,10 @@
    "ruling_records_naming_it": [
     "cowork_rulings_2026_08_17_rulings_sort_sitting.md"
    ],
-   "the_commit_a_record_states": null,
-   "where_the_record_states_it": null,
+   "the_commit_a_record_states": "53e552296f",
+   "where_the_record_states_it": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
    "pin_constants_the_generator_carries": {},
-   "state": "UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed"
+   "state": "NOT PINNED — a record states the commit; the pin is not applied"
   },
   "tools/audit/gen_deciding_act_recovery.py": {
    "route": "B — a ruling record names the TOOL itself as PINNED",
@@ -250,6 +254,14 @@
     "PINNED_COMMIT": "the commit that produced and committed this artifact —"
    }
   },
+  "tools/audit/gen_governing_surface_readers.py": {
+   "pin_constants": {
+    "SPANS_PINNED_AT": "9fb1ba01bf51014df1955ea558828868336e9ac6"
+   },
+   "what_the_commit_is_per_the_tool": {
+    "SPANS_PINNED_AT": "the commit the governing-surface split sitting was ruled at, DERIVED at the git objects under"
+   }
+  },
   "tools/audit/gen_governing_surface_spans.py": {
    "pin_constants": {
     "PINNED_COMMIT": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979"
@@ -264,6 +276,14 @@
    },
    "what_the_commit_is_per_the_tool": {
     "PINNED_COMMIT": ""
+   }
+  },
+  "tools/audit/gen_ratified_document_check.py": {
+   "pin_constants": {
+    "RULING_PINNED_AT": "81e2ef1c2376e4dc7a5c69c62b188676239091f1"
+   },
+   "what_the_commit_is_per_the_tool": {
+    "RULING_PINNED_AT": "the commit the residue sitting was ruled at, DERIVED at the git objects under the"
    }
   }
  },
