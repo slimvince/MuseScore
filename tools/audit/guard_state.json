@@ -51,6 +51,7 @@
       "tools/audit/gen_discard_reach_split.py",
       "tools/audit/gen_discard_records.py",
       "tools/audit/gen_doc_change_candidates.py",
+      "tools/audit/gen_evidence_pin_membership.py",
       "tools/audit/gen_filing_convention_application.py",
       "tools/audit/gen_framework_untrusted_candidates.py",
       "tools/audit/gen_gating_row_sizing.py",
@@ -83,7 +84,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 89,
+    "authored_entries": 90,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -1062,6 +1063,29 @@
       "what_it_checks": "where every span of Ruling 2's own population actually stands: the spans the ruled archivability test PLACES across the five mandatory-read files at this act's pin, the reading verdict authored for each, and — per file, in both directions — that every moved span is byte-present in its companion exactly once and absent from its parent, and that every span the reading LEFT AT SITE is still byte-present at site exactly once and in the companion not at all. The second direction is the load-bearing one here, because eighteen of the nineteen proposals stayed: a check that only proved the one move would be green at a tree where a refusal had been overridden. The population is DERIVED on every run from the imported span cut and recognizers, with three ruled exclusions each derived rather than listed — a span a previous act already archived, the six `CLAUDE.md` spans the two return sittings settled, and a span classified by text inside an archive pointer. A proposed span with no authored reading verdict, and an authored verdict naming a span the derivation does not carry, each STOP it. ★ WHAT IT DOES NOT ASSERT: that any span left at site is unarchivable; only what the imported reading test asks of each"
     },
     {
+      "tool": "tools/audit/gen_evidence_pin_membership.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the evidence pin's class membership re-derives",
+        "  generated ratification documents 7; ruling records read 36",
+        "  members 7 — pinned 3, UNRESOLVED 4",
+        "  tools carrying a pin constant 6; outside this class 3",
+        "    tools/audit/gen_artifact_inventory_surface.py        UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed",
+        "    tools/audit/gen_claude_md_finer_surface.py           PINNED — at the commit a ruling record states",
+        "    tools/audit/gen_ratified_document_check.py           UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed",
+        "    tools/audit/gen_governing_surface_readers.py         UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed",
+        "    tools/audit/gen_rulings_sort.py                      UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed",
+        "    tools/audit/gen_deciding_act_recovery.py             PINNED — by the route the tool's own pin constant records",
+        "    tools/audit/gen_decisions_filter.py                  PINNED — by the route the tool's own pin constant records"
+      ],
+      "stderr": [],
+      "what_it_checks": "who belongs to the evidence pin's ruled class, derived on every run from the ruling records themselves rather than listed: every ratification document a tool WRITES, every root-level ruling record, and what each record says in its own two structural blocks — its leading blockquote and its provenance paragraph — that it was taken from. Its live half is that the membership tracks the record: a ruling taken tomorrow from a generated document appears tomorrow, and a member the record stops naming leaves. Its STOPs are demands about the tree AS IT STANDS — a member this artifact records as PINNED whose generator no longer carries that commit in a pin constant, a tool carrying a pin constant the run does not account for in one of its two classes, and a generated ratification document with two writers (#6). ★ WHAT IT DOES NOT ASSERT: that a member SHOULD be pinned, or that an UNRESOLVED member has no discoverable commit — only that no record states one in the form the resolution uses, which is why an unresolved member is published to the user as data and never given a guessed pin"
+    },
+    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1286,8 +1310,8 @@
     }
   ],
   "summary": {
-    "run": 69,
-    "passing": 68,
+    "run": 70,
+    "passing": 69,
     "failing": 1,
     "failing_tools": [
       {

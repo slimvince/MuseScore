@@ -114,6 +114,20 @@ SURFACE = (ROOT / "ratification_surfaces"
 # reads THIS ARTIFACT ITSELF out of the git object at the pinned commit and requires it to be
 # byte-identical to the artifact on disk.  A pin naming the wrong commit, or an artifact that has
 # moved off its pin, therefore STOPS rather than silently re-deriving against the wrong state.
+#
+# ★ THIS PIN IS NOW A MEMBER OF A RULED CLASS, RECORDED RATHER THAN RE-TAKEN (user, 2026-08-17,
+# Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`; recorded here by
+# `cc_instruction_preparation_tenth.md` Task 1).  The ruling EXTENDS the §6 kind-1 treatment this
+# pin was taken under to every generated document a ruling was taken from: *A GENERATED DOCUMENT
+# PUT TO THE USER FOR A RULING JOINS THE PINNED KIND AT THE MOMENT IT IS RULED FROM.*  The commit
+# below is unchanged.  The class rule's own home is `tools/audit/gen_guard_classification.py`; the
+# derived membership is `tools/audit/evidence_pin_membership.json`.
+#
+# ★ WHAT THE PIN DOES NOT FREEZE, stated so it is not mistaken for the F22 ossification.  The
+# UNDERLYING DATA FILE — the decisions register's `backbone_decisions.json` — is NOT pinned and
+# continues to re-derive, so the CURRENT state of every entry this artifact classifies stays
+# available at its own live surfaces.  What is fixed here is ONE thing: the rendering of the
+# classification the user read before ratifying.  A later ruling can unpin this member in one edit.
 PINNED_COMMIT = "0a2cc3f86a2b212851b2e7324fcae31deaac7ac6"
 PINNED_COMMIT_IS = ("the commit that produced and committed this artifact — "
                     "`cc_instruction_preparation_opening.md` Task 2, the run the user read before "

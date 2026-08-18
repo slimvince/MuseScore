@@ -655,6 +655,25 @@ AUTHORED = [
      "carry, each STOP it. ★ WHAT IT DOES NOT ASSERT: that any span left at site is unarchivable; "
      "only what the imported reading test asks of each"),
 
+    # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 1 ---------------------
+    # THE EVIDENCE PIN'S CLASS MEMBERSHIP, registered in the act that creates the tool — the
+    # standing new-tool rule. `--check` and never the bare invocation, for the ordinary reason: run
+    # with no flag it REWRITES its committed artifact.
+    ("tools/audit/gen_evidence_pin_membership.py", ["--check"],
+     "who belongs to the evidence pin's ruled class, derived on every run from the ruling records "
+     "themselves rather than listed: every ratification document a tool WRITES, every root-level "
+     "ruling record, and what each record says in its own two structural blocks — its leading "
+     "blockquote and its provenance paragraph — that it was taken from. Its live half is that the "
+     "membership tracks the record: a ruling taken tomorrow from a generated document appears "
+     "tomorrow, and a member the record stops naming leaves. Its STOPs are demands about the tree "
+     "AS IT STANDS — a member this artifact records as PINNED whose generator no longer carries "
+     "that commit in a pin constant, a tool carrying a pin constant the run does not account for "
+     "in one of its two classes, and a generated ratification document with two writers (#6). "
+     "★ WHAT IT DOES NOT ASSERT: that a member SHOULD be pinned, or that an UNRESOLVED member has "
+     "no discoverable commit — only that no record states one in the form the resolution uses, "
+     "which is why an unresolved member is published to the user as data and never given a "
+     "guessed pin"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

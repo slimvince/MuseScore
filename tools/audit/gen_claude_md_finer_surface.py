@@ -92,6 +92,21 @@ PINNED_COMMIT = finer.PINNED_COMMIT
 # the ruling's permanent evidence, still guarded against corruption, permanently insensitive to
 # the acts it authorized. The commit is the one the ruling record's own provenance names as where
 # the surface was ruled. A later ruling can unpin this in one edit; nothing is lost either way.
+#
+# ★ THE PIN IS NOW A RULED CLASS, AND THIS ONE IS RECORDED UNDER IT RATHER THAN RE-TAKEN (user,
+# 2026-08-17, Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`; recorded here by
+# `cc_instruction_preparation_tenth.md` Task 1).  What was a declared departure applied to a third
+# tool is the rule: *A GENERATED DOCUMENT PUT TO THE USER FOR A RULING JOINS THE PINNED KIND AT THE
+# MOMENT IT IS RULED FROM.*  The commit below is unchanged — it is already the commit the ruling
+# record names, and re-taking it would move a value for no reason.  The class rule's own home is
+# `tools/audit/gen_guard_classification.py`; the derived membership is
+# `tools/audit/evidence_pin_membership.json`.
+#
+# ★ WHAT THE PIN DOES NOT FREEZE, stated so it is not mistaken for the F22 ossification.  The
+# UNDERLYING DATA FILE is not pinned and continues to re-derive: `gen_claude_md_finer_spans.py`
+# re-cuts and re-classes `CLAUDE.md` on every run, and its own `--check` is what proves the cut
+# still accounts for the file.  What is fixed here is ONE thing — the rendering of the document the
+# user ruled from.  A later ruling can unpin this member in one edit.
 SPANS_PINNED_AT = "cfb69a7ecb21351382b25206616a0349214e44f8"
 SPANS_PINNED_AT_IS = (
     "the commit `cowork_rulings_2026_08_17_seventh_return.md` names in its own provenance as where "

@@ -104,6 +104,20 @@ SURFACE = (ROOT / "ratification_surfaces"
 # adding a field is a change.  So the pin lives in the tool, and `establish_the_pin()` proves it on
 # every run by reading THIS ARTIFACT ITSELF out of the git object at the pinned commit and
 # requiring it to match the artifact on disk.
+#
+# ★ THIS PIN IS NOW A MEMBER OF A RULED CLASS, RECORDED RATHER THAN RE-TAKEN (user, 2026-08-17,
+# Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`; recorded here by
+# `cc_instruction_preparation_tenth.md` Task 1).  The ruling EXTENDS the §6 kind-1 treatment this
+# pin was taken under to every generated document a ruling was taken from: *A GENERATED DOCUMENT
+# PUT TO THE USER FOR A RULING JOINS THE PINNED KIND AT THE MOMENT IT IS RULED FROM.*  The commit
+# below is unchanged.  The class rule's own home is `tools/audit/gen_guard_classification.py`; the
+# derived membership is `tools/audit/evidence_pin_membership.json`.
+#
+# ★ WHAT THE PIN DOES NOT FREEZE, stated so it is not mistaken for the F22 ossification.  The
+# UNDERLYING DATA FILE — the decisions register's `backbone_decisions.json` — is NOT pinned and
+# continues to re-derive, so the CURRENT state of every entry this recovery pass reports stays
+# available at its own live surfaces.  What is fixed here is ONE thing: the rendering the user read
+# before ruling the soft-discard.  A later ruling can unpin this member in one edit.
 PINNED_COMMIT = "ddbf89d002b95ea4efc80e0833d903bc08ca00d1"
 PINNED_COMMIT_IS = ("the commit that produced and committed this artifact — "
                     "`cc_instruction_preparation_second.md` Task 2, the run the user read before "

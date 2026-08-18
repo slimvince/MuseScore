@@ -1,0 +1,270 @@
+{
+ "what_this_is": "THE DERIVED MEMBERSHIP OF THE EVIDENCE PIN'S CLASS, and the whole pinned population beside it. A MEASUREMENT AND A PUBLICATION: nothing here pins anything, regenerates any document, or moves any verdict. Every member is derived from the ruling records themselves; none is listed by hand (D-431).",
+ "generated_by": "tools/audit/gen_evidence_pin_membership.py",
+ "generated_for": "cc_instruction_preparation_tenth.md, Task 1",
+ "the_class_rule_verbatim": "A GENERATED DOCUMENT PUT TO THE USER FOR A RULING JOINS THE PINNED KIND AT THE MOMENT IT IS RULED FROM: its generator thereafter reads its inputs at the git objects of the commit the ruling names.",
+ "the_general_form_verbatim": "a document generated from a live data file is not evidence of what was PUT in front of the user unless its generation is PINNED.",
+ "the_bound_verbatim": "A ratification document's job ends at the ruling. Pinning it afterwards removes nothing live — the current classification stays available in the underlying data file, which is NOT pinned and continues to re-derive.",
+ "the_ruling": "User, 2026-08-17, Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`, extending §6 kind 1 of `cowork_rulings_2026_08_16_preparation_return.md`.",
+ "how_the_membership_is_derived": {
+  "generated_documents": "every document under `ratification_surfaces/` a tool declares as a write target",
+  "ruling_records": "every root-level `cowork_rulings_*.md`",
+  "what_a_record_says_it_was_taken_from": "its LEADING BLOCKQUOTE and its PROVENANCE paragraph — the two structural places, not a vocabulary of phrases",
+  "route_A": "a generated document named in one of those two blocks",
+  "route_B": "a tool the record itself names in a sentence saying it is PINNED",
+  "the_commit": "resolved only where a record states it, in the one form the record actually uses: the document naming followed by \"at commit `<hash>`\"",
+  "the_recoverable_direction": "a differently-phrased naming reports UNRESOLVED rather than resolving to something. An unpinned member is a question; a wrongly pinned one is a false record of what was PUT."
+ },
+ "counts": {
+  "generated_ratification_documents": 7,
+  "ruling_records_read": 36,
+  "members": 7,
+  "members_pinned": 3,
+  "members_unresolved": 4,
+  "tools_carrying_a_pin_constant": 6,
+  "pinned_tools_outside_this_class": 3
+ },
+ "the_members": {
+  "tools/audit/gen_artifact_inventory_surface.py": {
+   "route": "A — a ruling record's own statement names the GENERATED DOCUMENT",
+   "document": "ratification_surfaces/cowork_artifact_inventory_ruling_surface.md",
+   "generator": "tools/audit/gen_artifact_inventory_surface.py",
+   "ruling_records_naming_it": [
+    "cowork_rulings_2026_08_15_inventory_sitting.md"
+   ],
+   "the_commit_a_record_states": null,
+   "where_the_record_states_it": null,
+   "pin_constants_the_generator_carries": {},
+   "state": "UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed"
+  },
+  "tools/audit/gen_claude_md_finer_surface.py": {
+   "route": "A — a ruling record's own statement names the GENERATED DOCUMENT",
+   "document": "ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md",
+   "generator": "tools/audit/gen_claude_md_finer_surface.py",
+   "ruling_records_naming_it": [
+    "cowork_rulings_2026_08_17_seventh_return.md"
+   ],
+   "the_commit_a_record_states": "cfb69a7ecb",
+   "where_the_record_states_it": "cowork_rulings_2026_08_17_seventh_return.md",
+   "also_named_as_pinned_by": [
+    "cowork_rulings_2026_08_17_ninth_return.md"
+   ],
+   "pin_constants_the_generator_carries": {
+    "SPANS_PINNED_AT": "cfb69a7ecb21351382b25206616a0349214e44f8"
+   },
+   "state": "PINNED — at the commit a ruling record states"
+  },
+  "tools/audit/gen_ratified_document_check.py": {
+   "route": "A — a ruling record's own statement names the GENERATED DOCUMENT",
+   "document": "ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md",
+   "generator": "tools/audit/gen_ratified_document_check.py",
+   "ruling_records_naming_it": [
+    "cowork_rulings_2026_08_17_residue_sitting.md"
+   ],
+   "the_commit_a_record_states": null,
+   "where_the_record_states_it": null,
+   "pin_constants_the_generator_carries": {},
+   "state": "UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed"
+  },
+  "tools/audit/gen_governing_surface_readers.py": {
+   "route": "A — a ruling record's own statement names the GENERATED DOCUMENT",
+   "document": "ratification_surfaces/cowork_governing_surface_split_2026_08_16.md",
+   "generator": "tools/audit/gen_governing_surface_readers.py",
+   "ruling_records_naming_it": [
+    "cowork_rulings_2026_08_17_governing_surface_split.md"
+   ],
+   "the_commit_a_record_states": null,
+   "where_the_record_states_it": null,
+   "pin_constants_the_generator_carries": {},
+   "state": "UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed"
+  },
+  "tools/audit/gen_rulings_sort.py": {
+   "route": "A — a ruling record's own statement names the GENERATED DOCUMENT",
+   "document": "ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md",
+   "generator": "tools/audit/gen_rulings_sort.py",
+   "ruling_records_naming_it": [
+    "cowork_rulings_2026_08_17_rulings_sort_sitting.md"
+   ],
+   "the_commit_a_record_states": null,
+   "where_the_record_states_it": null,
+   "pin_constants_the_generator_carries": {},
+   "state": "UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed"
+  },
+  "tools/audit/gen_deciding_act_recovery.py": {
+   "route": "B — a ruling record names the TOOL itself as PINNED",
+   "document": null,
+   "generator": "tools/audit/gen_deciding_act_recovery.py",
+   "ruling_records_naming_it": [
+    "cowork_rulings_2026_08_16_preparation_return.md"
+   ],
+   "the_naming": [
+    "(`gen_decisions_filter.py`, `gen_deciding_act_recovery.py`) **are PINNED**: their checks read"
+   ],
+   "the_commit_a_record_states": null,
+   "where_the_record_states_it": null,
+   "pin_constants_the_generator_carries": {
+    "PINNED_COMMIT": "ddbf89d002b95ea4efc80e0833d903bc08ca00d1"
+   },
+   "state": "PINNED — by the route the tool's own pin constant records"
+  },
+  "tools/audit/gen_decisions_filter.py": {
+   "route": "B — a ruling record names the TOOL itself as PINNED",
+   "document": null,
+   "generator": "tools/audit/gen_decisions_filter.py",
+   "ruling_records_naming_it": [
+    "cowork_rulings_2026_08_16_preparation_return.md"
+   ],
+   "the_naming": [
+    "(`gen_decisions_filter.py`, `gen_deciding_act_recovery.py`) **are PINNED**: their checks read"
+   ],
+   "the_commit_a_record_states": null,
+   "where_the_record_states_it": null,
+   "pin_constants_the_generator_carries": {
+    "PINNED_COMMIT": "0a2cc3f86a2b212851b2e7324fcae31deaac7ac6"
+   },
+   "state": "PINNED — by the route the tool's own pin constant records"
+  }
+ },
+ "generated_ratification_documents": {
+  "cowork_artifact_inventory_ruling_surface.md": "tools/audit/gen_artifact_inventory_surface.py",
+  "cowork_claude_md_finer_split_2026_08_17.md": "tools/audit/gen_claude_md_finer_surface.py",
+  "cowork_deciding_act_recovery_surface_2026_08_16.md": "tools/audit/gen_deciding_act_recovery.py",
+  "cowork_decisions_filter_surface_2026_08_15.md": "tools/audit/gen_decisions_filter.py",
+  "cowork_discard_residue_surface_2026_08_16.md": "tools/audit/gen_ratified_document_check.py",
+  "cowork_governing_surface_split_2026_08_16.md": "tools/audit/gen_governing_surface_readers.py",
+  "cowork_rulings_sort_surface_2026_08_16.md": "tools/audit/gen_rulings_sort.py"
+ },
+ "ruling_records_read": [
+  "cowork_rulings_2026_08_08_pre_away.md",
+  "cowork_rulings_2026_08_09_eighth_stop.md",
+  "cowork_rulings_2026_08_09_fifth_stop.md",
+  "cowork_rulings_2026_08_09_fourth_stop.md",
+  "cowork_rulings_2026_08_09_ninth_stop.md",
+  "cowork_rulings_2026_08_09_return.md",
+  "cowork_rulings_2026_08_09_second_stop.md",
+  "cowork_rulings_2026_08_09_seventh_stop.md",
+  "cowork_rulings_2026_08_09_sixth_stop.md",
+  "cowork_rulings_2026_08_09_third_stop.md",
+  "cowork_rulings_2026_08_11_eleventh_stop.md",
+  "cowork_rulings_2026_08_11_fifteenth_stop.md",
+  "cowork_rulings_2026_08_11_fourteenth_stop.md",
+  "cowork_rulings_2026_08_11_sixteenth_stop.md",
+  "cowork_rulings_2026_08_11_tenth_stop.md",
+  "cowork_rulings_2026_08_11_thirteenth_stop.md",
+  "cowork_rulings_2026_08_11_twelfth_stop.md",
+  "cowork_rulings_2026_08_13_eighteenth_stop.md",
+  "cowork_rulings_2026_08_13_seventeenth_stop.md",
+  "cowork_rulings_2026_08_15_batch_return.md",
+  "cowork_rulings_2026_08_15_inventory_sitting.md",
+  "cowork_rulings_2026_08_15_method_directions.md",
+  "cowork_rulings_2026_08_15_period_start.md",
+  "cowork_rulings_2026_08_15_phase_definition_sitting.md",
+  "cowork_rulings_2026_08_15_session_length.md",
+  "cowork_rulings_2026_08_16_preparation_return.md",
+  "cowork_rulings_2026_08_17_callers_sitting.md",
+  "cowork_rulings_2026_08_17_eighth_return.md",
+  "cowork_rulings_2026_08_17_governing_surface_split.md",
+  "cowork_rulings_2026_08_17_ninth_return.md",
+  "cowork_rulings_2026_08_17_residue_sitting.md",
+  "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+  "cowork_rulings_2026_08_17_session_start_read_sitting.md",
+  "cowork_rulings_2026_08_17_seventh_return.md",
+  "cowork_rulings_2026_08_17_sixth_return.md",
+  "cowork_rulings_oi345_oi342_2026_08_07.md"
+ ],
+ "named_in_a_ruling_record_but_not_generated": {
+  "what_this_is": "documents a ruling record states it was taken from that NO tool writes. The class rule reaches a GENERATED document only, so these are outside it — recorded rather than dropped (#12).",
+  "documents": {
+   "cowork_phase_definition_surface_2026_08_15.md": [
+    "cowork_rulings_2026_08_15_phase_definition_sitting.md"
+   ],
+   "cowork_restructuring_period_start_decision_surface.md": [
+    "cowork_rulings_2026_08_15_period_start.md"
+   ]
+  }
+ },
+ "pinned_tools_outside_this_class": {
+  "what_this_is": "tools carrying a pin constant that this class does not reach. Each is published with its own constant's description of what the commit IS, so the whole pinned population is accounted for and no pin is invisible. NO VERDICT IS TAKEN on them: whether a pin taken for another recorded reason also belongs to this class is a question for the user, not a derivation.",
+  "tools": {
+   "tools/audit/gen_claude_md_finer_spans.py": {
+    "pin_constants": {
+     "PINNED_COMMIT": "e94f765c25b49d2c9ffa47b1a296302debc25ce6"
+    },
+    "what_the_commit_is_per_the_tool": {
+     "PINNED_COMMIT": "Task 2 of `cc_instruction_preparation_seventh.md` — the commit this"
+    }
+   },
+   "tools/audit/gen_governing_surface_spans.py": {
+    "pin_constants": {
+     "PINNED_COMMIT": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979"
+    },
+    "what_the_commit_is_per_the_tool": {
+     "PINNED_COMMIT": "the commit that carries this measurement and the ruling surface generated"
+    }
+   },
+   "tools/audit/gen_governing_surface_split.py": {
+    "pin_constants": {
+     "PINNED_COMMIT": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979"
+    },
+    "what_the_commit_is_per_the_tool": {
+     "PINNED_COMMIT": ""
+    }
+   }
+  }
+ },
+ "the_whole_pin_census": {
+  "tools/audit/gen_claude_md_finer_spans.py": {
+   "pin_constants": {
+    "PINNED_COMMIT": "e94f765c25b49d2c9ffa47b1a296302debc25ce6"
+   },
+   "what_the_commit_is_per_the_tool": {
+    "PINNED_COMMIT": "Task 2 of `cc_instruction_preparation_seventh.md` — the commit this"
+   }
+  },
+  "tools/audit/gen_claude_md_finer_surface.py": {
+   "pin_constants": {
+    "SPANS_PINNED_AT": "cfb69a7ecb21351382b25206616a0349214e44f8"
+   },
+   "what_the_commit_is_per_the_tool": {
+    "SPANS_PINNED_AT": "the commit `cowork_rulings_2026_08_17_seventh_return.md` names in its own provenance as where"
+   }
+  },
+  "tools/audit/gen_deciding_act_recovery.py": {
+   "pin_constants": {
+    "PINNED_COMMIT": "ddbf89d002b95ea4efc80e0833d903bc08ca00d1"
+   },
+   "what_the_commit_is_per_the_tool": {
+    "PINNED_COMMIT": "the commit that produced and committed this artifact —"
+   }
+  },
+  "tools/audit/gen_decisions_filter.py": {
+   "pin_constants": {
+    "PINNED_COMMIT": "0a2cc3f86a2b212851b2e7324fcae31deaac7ac6"
+   },
+   "what_the_commit_is_per_the_tool": {
+    "PINNED_COMMIT": "the commit that produced and committed this artifact —"
+   }
+  },
+  "tools/audit/gen_governing_surface_spans.py": {
+   "pin_constants": {
+    "PINNED_COMMIT": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979"
+   },
+   "what_the_commit_is_per_the_tool": {
+    "PINNED_COMMIT": "the commit that carries this measurement and the ruling surface generated"
+   }
+  },
+  "tools/audit/gen_governing_surface_split.py": {
+   "pin_constants": {
+    "PINNED_COMMIT": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979"
+   },
+   "what_the_commit_is_per_the_tool": {
+    "PINNED_COMMIT": ""
+   }
+  }
+ },
+ "what_this_does_not_assert": [
+  "That a member SHOULD be pinned. The ruling says a generated document put to the user for a ruling joins the pinned kind; whether an individual member's pin collides with another live ruling about the same tool is published here as data and ruled by the user.",
+  "That an UNRESOLVED member has no discoverable commit — only that no record states one in the form the resolution uses.",
+  "That the two structural blocks are the only places a record could state what it was ruled from. They are the two the records actually use; a record that stated it somewhere else would report as not-ruled-from, which is the recoverable direction."
+ ]
+}

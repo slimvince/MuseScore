@@ -17,6 +17,35 @@ WHAT MOVING DOES NOT MEAN.  A tool classified `records-a-point-in-time-measureme
 not deleted, and not excused.  Its artifact stays on disk exactly as the wave that produced it wrote
 it, and is marked historical.  Nothing here discharges `OPEN_ITEMS.md` OI-309 or OI-330.
 
+★ THE EVIDENCE PIN, AS A CLASS — THE RULE A SESSION CLASSIFYING A NEW GENERATOR MEETS HERE RATHER
+THAN HAVING TO RECALL IT (user, 2026-08-17, Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`;
+written here by `cc_instruction_preparation_tenth.md` Task 1).  The ruling, VERBATIM:
+
+    A GENERATED DOCUMENT PUT TO THE USER FOR A RULING JOINS THE PINNED KIND AT THE MOMENT IT IS
+    RULED FROM: its generator thereafter reads its inputs at the git objects of the commit the
+    ruling names.
+
+THE GENERAL FORM IT RESTS ON, and the reason the class is ruled rather than one instance, VERBATIM:
+*a document generated from a live data file is not evidence of what was PUT in front of the user
+unless its generation is PINNED.*
+
+THE BOUND, VERBATIM, so the pin is not mistaken for the F22 ossification: *A ratification document's
+job ends at the ruling.  Pinning it afterwards removes nothing live — the current classification
+stays available in the underlying data file, which is NOT pinned and continues to re-derive.*
+
+HOW THE CLASS RELATES TO THE THREE VERDICTS BELOW.  It does not add a fourth verdict and it moves
+none of the three.  A pinned generator is still `re-derives-a-live-invariant` where what it asserts
+is a demand about the tree: the pin fixes WHAT IT READS, not WHETHER IT RE-DERIVES.  The class
+EXTENDS §6 kind 1 of `cowork_rulings_2026_08_16_preparation_return.md` — the two completed
+measurements that are rulings' evidence — from those two tools to every generated document a ruling
+was taken from.
+
+WHERE THE MEMBERSHIP LIVES.  It is DERIVED from the ruling records and published at
+`tools/audit/evidence_pin_membership.json` (generator
+`tools/audit/gen_evidence_pin_membership.py`), never hand-listed here (D-431).  A member whose
+ruling commit no record states is published UNRESOLVED and is a STOP-and-report to the user; a
+guessed pin, and a pin taken at a branch tip, are both forbidden.
+
 WHAT IS AUTHORED AND WHAT IS DERIVED.
   authored : VERDICTS — per tool, the classification, the EVIDENCE it was made from (a citation into
              the tool itself), and the reason.  Nothing else.
@@ -755,6 +784,22 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "that a span classed `operative-rule-text` IS operative. The classes are recognizers over "
         "prose, their reach is UNMEASURED (#19), and the direction of their error is the "
         "recoverable one — a missed marker keeps a span at site, which is the ruled doubt default."),
+    # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 1 ---------------------
+    "tools/audit/gen_evidence_pin_membership.py": (
+        LIVE, "gen_evidence_pin_membership.py, WHAT IS DERIVED and THE STOPS of its module "
+              "docstring; `derive_members()`, which re-reads every ruling record on every run; "
+              "`pin_census()`, which re-scans the tools for a pin constant",
+        "LIVE. Its population is the RECORD, re-read on every run: a ruling taken tomorrow from a "
+        "generated document enters the class tomorrow, and a member the record stops naming "
+        "leaves. Its STOPs are demands about the tree as it stands rather than a dated reading — a "
+        "member recorded PINNED whose generator no longer carries that commit in a pin constant "
+        "fails on the day the pin is moved, and a tool that gains a pin this run does not account "
+        "for halts it, which is the guard classification's own per-tool condition applied to pins. "
+        "★ WHAT IT DOES NOT ASSERT: that a member SHOULD be pinned, or that an UNRESOLVED member "
+        "has no discoverable commit. The resolution reads the ONE form the records actually use, "
+        "and a differently-phrased naming reports UNRESOLVED — the recoverable direction, since an "
+        "unpinned member is a question and a wrongly pinned one is a false record of what was "
+        "PUT."),
     "tools/audit/gen_governing_surface_readers.py": (
         LIVE, "gen_governing_surface_readers.py, the WHAT IS DERIVED and WHAT IT DOES NOT "
               "ESTABLISH paragraphs of its module docstring; `measure()`, which scans the tracked "
