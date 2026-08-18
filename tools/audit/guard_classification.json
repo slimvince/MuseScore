@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 82,
-    "re_derives_a_live_invariant": 64,
+    "tools_classified": 83,
+    "re_derives_a_live_invariant": 65,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -579,6 +579,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_rulings_sort.py, the `THE STOPS` list of its module docstring; `require_known_nonspec()`, which refuses a value the pass has not ruled on; `locate_definitions()`, which locates every quoted header definition",
       "why": "LIVE. Its subject is the decisions register AS IT STANDS, and every demand it makes becomes false the moment that record moves: the confirmed population imported from the committed filter artifact and the register's data file must carry the same entries in BOTH directions, so an entry entering or leaving the confirmed side halts it rather than being sorted silently or quietly dropped; a `nonspec_kind` value the pass neither maps nor deliberately leaves to the recognizers halts it, so a value entered tomorrow is ruled on tomorrow instead of being classified by silence; and every definition the mapping quotes must still be in the data file's own header, which is the same shape the retirement caller-check's conditions and the recovery pass's ruling sentences carry — a mapping may not rest on words the record has dropped. ★ WHAT IT DOES NOT ASSERT: that any entry is in the right class. The word recognizers are authored, they decide only what the register's own home classification leaves undecided, and neither their reach nor their error rate is measured (#19) — which is why the entries they cannot place return to the user rather than being placed.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_session_start_read_size.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_session_start_read_size.py, THE STOPS of its module docstring; `rule_a_pointer()`, which parses the pointer out of rule (a)'s own clause; `key_span_characters()`, which resolves that pointer inside the artifact it names",
+      "why": "LIVE. Its subject is the tree AS IT STANDS: every character count is re-measured on every run, and the pointer rule (a) sends a session to is PARSED FROM THE CLAUSE rather than listed, so a narrowing or a widening of that clause moves the measurement without the tool being edited, and a pointer that has stopped resolving in the artifact it names STOPS the run. It goes red when a governing surface changes — that is the invariant working, not noise: the session-start read moved and the record does not yet say so, and the remedy is the same regeneration the other CLAUDE.md-derived checks take. The one reading it does NOT re-measure is the recorded earlier one, which is read at an explicit git OBJECT and is therefore stable forever — the epoch pattern (D-646). ★ WHAT IT DOES NOT ASSERT: that the membership is complete, it being AUTHORED with each member's own clause cited; or that the read is small enough, which is [[OI-370]]'s subject.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

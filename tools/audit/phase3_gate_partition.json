@@ -513,14 +513,14 @@
     "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
     "expected_line": 1154,
     "found_lines": [
-     1659
+     1680
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 1154,
      "actual": [
-      1659
+      1680
      ]
     }
    },
@@ -848,14 +848,14 @@
     "quote": "**Phase 2 - issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions",
     "expected_line": 1149,
     "found_lines": [
-     1654
+     1675
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 1149,
      "actual": [
-      1654
+      1675
      ]
     }
    },
@@ -864,14 +864,14 @@
     "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
     "expected_line": 1154,
     "found_lines": [
-     1659
+     1680
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 1154,
      "actual": [
-      1659
+      1680
      ]
     }
    },
@@ -914,14 +914,14 @@
     "quote": "**Phase 2 - issue-finding is EXHAUSTED with measured coverage:** the remaining audit partitions",
     "expected_line": 1149,
     "found_lines": [
-     1654
+     1675
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 1149,
      "actual": [
-      1654
+      1675
      ]
     }
    },
@@ -1080,14 +1080,14 @@
     "quote": "each search reporting its detection power, ending in the bounded trust statement - every",
     "expected_line": 1154,
     "found_lines": [
-     1659
+     1680
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 1154,
      "actual": [
-      1659
+      1680
      ]
     }
    },

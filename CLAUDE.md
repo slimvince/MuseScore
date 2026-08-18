@@ -307,9 +307,11 @@ found 91 open items scattered across 12 surfaces with 11 status contradictions; 
 index + per-item detail files on 2026-07-26, user-ratified option 1, when the single file grew too
 large to render). Each item's full original row (text + source + status) lives verbatim in its
 detail file `open_items/OI-<n>.md`, which carries narrative and provenance only and **never a status
-of record**. Rules: (a) **read the DERIVED GATING ANSWER at session start —
-`tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` — and OPEN THE INDEX
-`OPEN_ITEMS.md` WHEN YOU NEED A ROW** (and its detail file as needed); **the INDEX remains the
+of record**. Rules: (a) **read the LIST OF GATING ROW IDENTITIES at session start —
+`tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` → `gating_ids` — and OPEN
+THE INDEX `OPEN_ITEMS.md` WHEN YOU NEED A ROW** (and its detail file as needed); **THE GROUNDS
+STAND IN THE SAME FILE, at `★_the_live_gating_answer` → `the_gating_rows`, and are OPENED WHEN A
+VERDICT IS CHALLENGED — exactly as the INDEX is opened when a row is needed**; **the INDEX remains the
 AUTHORITATIVE STATUS SURFACE, and the derived answer is a route to ONE question it answers — which
 rows gate — never a second home for status (#6)**; (b) **a stage may not open while a
 register item gating it is open**; (c) every newly
@@ -327,6 +329,25 @@ discovered" means: every item has ONE index row, an owning layer, and a blocking
 ESTABLISHED under #19, which is the ruling's own precondition. The superseded wording moved
 verbatim to `CLAUDE_ARCHIVE.md` in the same act, under the continuous-pruning rule (§5(D) of
 `cowork_rulings_2026_08_16_preparation_return.md`).*
+
+*★ AND RULE (a)'s POINTER NARROWED AGAIN 2026-08-18, on the user's Ruling 3 of
+`cowork_rulings_2026_08_17_ninth_return.md`, executed by `cc_instruction_preparation_tenth.md`
+Task 2: it names the ANSWER — the list of gating row identities — and no longer the whole section
+that carries the answer together with the evidence establishing it. The superseded wording moved
+verbatim to `CLAUDE_ARCHIVE.md` in the same act, under the same continuous-pruning rule. Nothing
+moved, was deleted, split or regenerated in the artifact itself; ONE clause changed.*
+
+**★ THE #19 DISTINCTION, WRITTEN AT THE CLAUSE SO A LATER READER CANNOT MISTAKE A NARROWER READ FOR
+A WEAKER ESTABLISHMENT.** What establishes the answer is what the GENERATOR proves ON EVERY RUN:
+reconciliation in BOTH directions against the INDEX — every gating identity an open row of the
+parsed INDEX population, every open row accounted for as gating or non-gating with none in both and
+none in neither — every gating row carrying a ground, and a HALT on any row the derivation cannot
+place. **Narrowing what a SESSION reads does not weaken what the GENERATOR establishes.** The
+grounds are not removed from the artifact, are not made optional, and are not downgraded as
+evidence: they stay exactly where the generator writes them, and a session opens them to challenge
+a verdict. *Why it is stated here rather than left to be inferred:* a pointer that names less than
+it used to reads, at a glance, like a claim that less is proven — and the opposite is the case, the
+establishment being the thing that made the narrower pointer admissible at all.
 
 **★ QUALIFICATION OF RULE (b) — THE APPARATUS ROWS ARE DECLARED NON-GATING (user-ruled
 2026-08-03).** Rule (b) says a stage may not open while a register item gating it is open; it does

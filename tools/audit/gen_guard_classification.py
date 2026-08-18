@@ -784,6 +784,23 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "that a span classed `operative-rule-text` IS operative. The classes are recognizers over "
         "prose, their reach is UNMEASURED (#19), and the direction of their error is the "
         "recoverable one — a missed marker keeps a span at site, which is the ruled doubt default."),
+    # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 2 ---------------------
+    "tools/audit/gen_session_start_read_size.py": (
+        LIVE, "gen_session_start_read_size.py, THE STOPS of its module docstring; "
+              "`rule_a_pointer()`, which parses the pointer out of rule (a)'s own clause; "
+              "`key_span_characters()`, which resolves that pointer inside the artifact it names",
+        "LIVE. Its subject is the tree AS IT STANDS: every character count is re-measured on every "
+        "run, and the pointer rule (a) sends a session to is PARSED FROM THE CLAUSE rather than "
+        "listed, so a narrowing or a widening of that clause moves the measurement without the "
+        "tool being edited, and a pointer that has stopped resolving in the artifact it names "
+        "STOPS the run. It goes red when a governing surface changes — that is the invariant "
+        "working, not noise: the session-start read moved and the record does not yet say so, and "
+        "the remedy is the same regeneration the other CLAUDE.md-derived checks take. The one "
+        "reading it does NOT re-measure is the recorded earlier one, which is read at an explicit "
+        "git OBJECT and is therefore stable forever — the epoch pattern (D-646). ★ WHAT IT DOES "
+        "NOT ASSERT: that the membership is complete, it being AUTHORED with each member's own "
+        "clause cited; or that the read is small enough, which is [[OI-370]]'s subject."),
+
     # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 1 ---------------------
     "tools/audit/gen_evidence_pin_membership.py": (
         LIVE, "gen_evidence_pin_membership.py, WHAT IS DERIVED and THE STOPS of its module "

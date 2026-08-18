@@ -1,0 +1,80 @@
+{
+ "what_this_is": "WHAT AN ORDINARY SESSION READS AT SESSION START, in characters, measured at the tree and at each recorded earlier commit's git OBJECT. A MEASUREMENT ONLY: it edits nothing, moves no rule and grades nothing. Every value is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_session_start_read_size.py",
+ "generated_for": "cc_instruction_preparation_tenth.md, Task 2, step 6",
+ "how_a_key_span_is_counted": "the artifact is written with one-space indentation, so a key's span runs from the line that opens it to the line that opens the next key at the SAME indentation, and the size is the characters of that span — what a reader reads, not a re-serialisation",
+ "what_is_authored": "the membership of whole documents, each with the clause in `CLAUDE.md` that makes it a member",
+ "what_is_derived": "the artifact-and-key pointer, parsed from rule (a)'s own clause, so a later narrowing moves this measurement without editing this tool; every character count; the total; and each earlier reading",
+ "the_membership": [
+  {
+   "document": "CLAUDE.md",
+   "the_clause_that_makes_it_a_member": "the project instructions themselves, which every clause below is written in"
+  },
+  {
+   "document": "STATUS.md",
+   "the_clause_that_makes_it_a_member": "`CLAUDE.md`, the build-and-test section's opening list: \"Always read these two files at the start of every session\""
+  },
+  {
+   "document": "DECISIONS.md",
+   "the_clause_that_makes_it_a_member": "the same list, and the decisions register's own rule (a) — \"read the INDEX `DECISIONS.md` at session start\" — explicitly NOT demoted to a conditional read on 2026-08-17"
+  }
+ ],
+ "a_conditional_read_is_not_a_member": "`BUILD_AND_TEST.md`, `docs/scoring_model.md` and the joint estimator's section of `ARCHITECTURE.md` are read by the sessions their conditions name and not by an ordinary one, which is what CONDITIONAL means. Counting them would report a read no ordinary session takes.",
+ "at_the_tree": {
+  "the_pointer_rule_a_names": {
+   "artifact": "tools/audit/nongating_apparatus_rows.json",
+   "keys": [
+    "★_the_live_gating_answer",
+    "gating_ids"
+   ],
+   "clause_characters": 603
+  },
+  "characters_per_member": {
+   "CLAUDE.md": 155067,
+   "STATUS.md": 12243,
+   "DECISIONS.md": 126774,
+   "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2748
+  },
+  "total_characters": 296832,
+  "the_section_that_carries_the_pointer": {
+   "key": "★_the_live_gating_answer",
+   "characters": 74858,
+   "what_it_is": "the whole section the artifact carries at that key — the answer TOGETHER with the grounds that establish it. A session reads the answer at boot and opens the rest to challenge a verdict."
+  },
+  "characters_the_section_carries_beyond_the_answer": 72110
+ },
+ "at_earlier_commits": [
+  {
+   "commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
+   "what_that_commit_is": "the preparation phase's NINTH batch terminus — this batch's own base, and the state rule (a)'s pointer was narrowed from",
+   "total_characters": 367121,
+   "the_pointer_rule_a_named_there": {
+    "artifact": "tools/audit/nongating_apparatus_rows.json",
+    "keys": [
+     "★_the_live_gating_answer"
+    ],
+    "clause_characters": 390
+   },
+   "characters_per_member": {
+    "CLAUDE.md": 153246,
+    "STATUS.md": 12243,
+    "DECISIONS.md": 126774,
+    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer": 74858
+   }
+  }
+ ],
+ "movement_against_each_earlier_reading": [
+  {
+   "from_commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
+   "from_total": 367121,
+   "to_total": 296832,
+   "change_in_characters": -70289,
+   "change_percent": -19.15
+  }
+ ],
+ "what_this_does_not_assert": [
+  "That the membership is complete — it is AUTHORED, and a mandatory read added to `CLAUDE.md` without being added here would not appear. Each member carries the clause it comes from so the authored half is checkable by reading three clauses.",
+  "That the read is small enough, which is [[OI-370]]'s own subject.",
+  "That a session reads nothing else. A session opens the INDEX when it needs a row, the grounds when it challenges a verdict, and whatever its own dispatch orders; none of that is the session-start read."
+ ]
+}

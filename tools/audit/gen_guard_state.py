@@ -674,6 +674,23 @@ AUTHORED = [
      "which is why an unresolved member is published to the user as data and never given a "
      "guessed pin"),
 
+    # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 2 ---------------------
+    # THE SESSION-START READ'S OWN SIZE, registered in the act that creates the tool — the standing
+    # new-tool rule. `--check` and never the bare invocation, for the ordinary reason: run with no
+    # flag it REWRITES its committed artifact.
+    ("tools/audit/gen_session_start_read_size.py", ["--check"],
+     "what an ordinary session reads at session start, in characters, measured at the tree and at "
+     "the recorded earlier commit's git object. It is the arc's own subject made checkable: the "
+     "pruning direction of 2026-08-16 is about this number, and every act in the arc has had to "
+     "state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule "
+     "(a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the "
+     "artifact it names, so a pointer that has stopped resolving fails on the day it stops rather "
+     "than being hidden inside a number. It goes red when a governing surface changes, which is "
+     "the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES "
+     "NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the "
+     "clause that makes it one so the authored half is checkable by reading three clauses; and "
+     "nothing about whether the read is small enough, which is [[OI-370]]'s own subject"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

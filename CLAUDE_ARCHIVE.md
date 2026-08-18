@@ -114,6 +114,23 @@ prior 53/24/53 is preserved in the following paragraph.
 **THE SUPERSEDED WORDING, VERBATIM (#12):** *"(a) **read the INDEX `OPEN_ITEMS.md` at session
 start** (open detail files as needed)"*
 
+> **From `CLAUDE.md`, the open-items register section, rule (a), superseded 2026-08-18 by
+> `cc_instruction_preparation_tenth.md` Task 2 under the CONTINUOUS-PRUNING rule (§5(D) of
+> `cowork_rulings_2026_08_16_preparation_return.md`), executing Ruling 3 of
+> `cowork_rulings_2026_08_17_ninth_return.md`.** This supersedes the wording immediately above it in
+> turn: that amendment moved the read from the INDEX to the derived answer's whole SECTION, and this
+> one narrows the pointer to the ANSWER inside it. **What replaced it:** rule (a) names the list of
+> gating row identities, `★_the_live_gating_answer` → `gating_ids`, and states that the grounds
+> stand in the same file at `the_gating_rows` and are opened when a verdict is CHALLENGED, exactly
+> as the INDEX is opened when a row is needed. **The #19 distinction is written at the clause and is
+> the half that binds hardest:** narrowing what a SESSION reads does not weaken what the GENERATOR
+> establishes on every run. Nothing was moved, deleted, split or regenerated in the artifact itself;
+> ONE clause changed.
+
+**THE SUPERSEDED WORDING, VERBATIM (#12):** *"(a) **read the DERIVED GATING ANSWER at session start —
+`tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` — and OPEN THE INDEX
+`OPEN_ITEMS.md` WHEN YOU NEED A ROW** (and its detail file as needed)"*
+
 > **From `CLAUDE.md`, the build-and-test section's opening list, superseded 2026-08-17 by
 > `cc_instruction_preparation_ninth.md` Task 3 under the CONTINUOUS-PRUNING rule (§5(D) of
 > `cowork_rulings_2026_08_16_preparation_return.md`), executing Ruling 3 of
