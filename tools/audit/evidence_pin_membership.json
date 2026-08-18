@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 36,
+  "ruling_records_read": 38,
   "members": 7,
   "members_pinned": 3,
   "members_unresolved": 4,
@@ -34,6 +34,9 @@
    ],
    "the_commit_a_record_states": null,
    "where_the_record_states_it": null,
+   "also_named_as_pinned_by": [
+    "cowork_rulings_2026_08_18_eleventh_stop.md"
+   ],
    "pin_constants_the_generator_carries": {},
    "state": "UNRESOLVED — a STOP-and-report: no record states the commit it was ruled at, and a pin may not be guessed"
   },
@@ -170,6 +173,8 @@
   "cowork_rulings_2026_08_17_session_start_read_sitting.md",
   "cowork_rulings_2026_08_17_seventh_return.md",
   "cowork_rulings_2026_08_17_sixth_return.md",
+  "cowork_rulings_2026_08_18_eleventh_stop.md",
+  "cowork_rulings_2026_08_18_tenth_return.md",
   "cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
