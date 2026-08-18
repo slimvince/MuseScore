@@ -375,7 +375,7 @@ to confirm or refute.
 | at the Task 2 tree | 71 | 1 | 4 | 16 | 0 |
 | at the Task 3 tree | 71 | 1 | 4 | 16 | 0 |
 | at the Task 4 tree | 71 | 1 | 4 | 16 | 0 |
-| **the end state**, after the Task 5 commit existed | see §12 | | | | |
+| **the end state**, after the Task 5 commit existed | **71** | **1** | 4 | 16 | **0** |
 
 **★ ASSUMPTION A2 HELD.** Its check is that any red other than [[OI-372]]'s is classed by its
 measured cause, and one outside this batch's own acts' subjects is a STOP-and-report. **Eight reds
@@ -479,9 +479,27 @@ alone.**
 
 ## 12. The end state, under the E-ordering rule
 
-The end-state guard run is taken **AFTER the Task 5 commit exists**, and its output with the final
-SHAs lands in **ONE FURTHER commit**. Its values are therefore not in this section as written; the
-further commit carries them, and **E5** is graded there on the run and on nothing else.
+The end-state guard run was taken **AFTER the Task 5 commit `8f88e1a61e` existed**, at a quiet tree,
+and printed:
+
+```
+71 guard(s) run, 1 failing, 4 not run, 16 historical record(s)
+  [FAIL] tools/audit/gen_filing_convention_application.py --check
+```
+
+and `gen_guard_classification.py --check` printed **"the guard classification re-derives"** —
+**every run check passing except [[OI-372]]'s tool, zero STOPs**, the shape the dispatch predicted,
+reached for the fourth batch running. **Run and read, never inferred**, and these values are
+committed only in the commit that follows the run that produced them. The runner rewrote its own
+artifact **byte-identically**, so the tree was unmoved by the measurement and this further commit
+carries the records that state the end state rather than a changed artifact.
+
+**E5 — MET**, on the run and on nothing else.
+
+**The final chain, every commit pushed and verified at the object by explicit hash:**
+`1760d9a4a8` → **`6bd9285006`** (Task 0a, 3 paths) → **`59191d7e65`** (Task 0b, 2) →
+**`b0596b288b`** (Task 1, 9) → **`594074e1e1`** (Task 2, 24) → **`b6134f41ff`** (Task 3, 4) →
+**`30d44165cf`** (Task 4, 4) → **`8f88e1a61e`** (Task 5, 9) → this commit, the E-ordering terminus.
 
 ---
 
@@ -521,6 +539,7 @@ and threshold policies and `DEFECT_TYPES.md` before this report was written.
 *Provenance: CC, 2026-08-18, dispatch `cc_instruction_preparation_tenth.md`. Task 0a `6bd9285006`
 (parent `1760d9a4a8`), 3 paths. Task 0b `59191d7e65`, 2 paths. Task 1 `b0596b288b`, 9 paths. Task 2
 `594074e1e1`, 24 paths. Task 3 `b6134f41ff`, 4 paths. Task 4 `30d44165cf`, 4 paths. Task 5's close
-and this report are the commit carrying this sentence, whose own identity it cannot contain — that is
-the E-ordering terminus, not an omission — and the end-state guard run lands in ONE FURTHER commit.
-Every commit is pushed and verified at the object by explicit hash.*
+and this report are `8f88e1a61e`, 9 paths — that sentence could not contain its own identity when it
+was written, which is the E-ordering rule working and not an omission, and this line names it now.
+The end-state guard run is in the ONE FURTHER commit that carries this paragraph, whose own identity
+it likewise cannot contain. Every commit is pushed and verified at the object by explicit hash.*

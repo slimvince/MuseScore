@@ -14240,6 +14240,14 @@ appeared, all of them the F15 anchored-quote class caused by this batch's own or
 was cleared by its ruled treatment and none by an adjustment made to turn a check green. **Every run
 was taken at a quiet tree.**
 
+**THE END-STATE RUN, taken AFTER the Task 5 commit `8f88e1a61e` existed:** *"71 guard(s) run, 1
+failing, 4 not run, 16 historical record(s)"*, the one failure being
+`gen_filing_convention_application.py --check` ([[OI-372]]), and *"the guard classification
+re-derives"* — **every run check passing except that one, zero STOPs**, reached for the fourth batch
+running. Run and read, never inferred. **E5 — MET.** The runner rewrote its own artifact
+byte-identically, so the further commit carries the records that state the end state rather than a
+changed artifact.
+
 ## 8. Surfaced findings — surfaced, not rowed; the row bar stands whole this batch
 
 - **F60 (new, the largest) — RULING 1's CLASS RULE PRESUMES A RULING RECORD NAMES A COMMIT, AND ONLY
@@ -14298,6 +14306,7 @@ unfixed and unrowed. **`gen_gating_row_sizing.py`'s frozen population was left a
 pushed, 2 paths. Task 1 is `b0596b288b` (parent `59191d7e65`), pushed, 9 paths. Task 2 is
 `594074e1e1` (parent `b0596b288b`), pushed, 24 paths. Task 3 is `b6134f41ff` (parent `594074e1e1`),
 pushed, 4 paths. Task 4 is `30d44165cf` (parent `b6134f41ff`), pushed, 4 paths. Task 5's close and
-the report are the commit carrying this sentence, whose own identity it cannot contain — that is the
-E-ordering terminus, not an omission — and the end-state guard run lands in ONE FURTHER commit after
-it.*
+the report are `8f88e1a61e` (parent `30d44165cf`), pushed, 9 paths — that sentence could not contain
+its own identity when it was written, which is the E-ordering rule working and not an omission, and
+this line names it now. The end-state guard run is in the ONE FURTHER commit that carries this
+paragraph, whose own identity it likewise cannot contain.*
