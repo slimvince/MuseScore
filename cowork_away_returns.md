@@ -14064,6 +14064,23 @@ taken at a quiet tree.
   and the `STATUS.md` entry where it bears on a task's result.
 - **No finding bears on the analysis, its inputs, or a measurement tool the analysis depends on.**
 
+**★ CORRECTION OF RECORD, 2026-08-18, APPENDED — NOTHING ABOVE IN THIS SECTION IS EDITED, because
+everything above was true when written on the information its author had, and that is exactly what
+F58 records.** Recorded by CC, dispatch `cc_instruction_preparation_tenth.md` Task 0b, executing
+Ruling 2(b) of `cowork_rulings_2026_08_17_ninth_return.md` (ruled 2026-08-17, executed the following
+day). Two statements, and **no finding's CONTENT, weight or population moves by either.**
+
+- **F53 WAS INDEPENDENTLY SURFACED BY THE WRITING SIDE BEFORE THIS BATCH RAN**, in the
+  TWENTY-SEVENTH block of `cowork_handoff.md`. It is therefore **ONE finding surfaced independently
+  by both sides, not a new one**, and the marking of it as *new* in the entry above is corrected
+  here. Its number is unchanged.
+- **F57 IS THE WRITING SIDE'S RE-ISSUED LINE-ENDING FINDING** — *the ruled snapshot-hash
+  verification test is not line-ending-safe, and it fails in the false-alarm direction* — numbered
+  **F52** by the writing side at that same close and re-issued as **F57** on Ruling 2(b), its former
+  number preserved beside it (#12) because F52 is CC's finding above. **F57 fired for real inside
+  this batch, at its own §4.e**, where the archiving pass's first run reported passages absent from
+  a file that carries them.
+
 ## 9. What this batch did NOT do
 
 **No curated boot list** — it stays at its ruled definition; Ruling 4 orders no act. **No fate on

@@ -248,6 +248,39 @@ as live must say whether its POPULATION is live too — a check can re-derive pe
 frozen set.** Both findings are surfaced, unrowed, and ride to the phase's retrospective with
 F1–F51.
 
+**★ CORRECTION OF RECORD, 2026-08-18 — THE TWO FINDING NUMBERS IN THE PARAGRAPH ABOVE AND IN THIS
+BLOCK'S OWN HEADING ARE CORRECTED BY THIS APPENDED PASSAGE, ON RULING 2(b) OF
+`cowork_rulings_2026_08_17_ninth_return.md`. THE BLOCK'S OWN TEXT IS NOT REWRITTEN** — a handover
+block is corrected by appending, on the pattern the ninth batch's own Task 0b used. The sentence
+corrected is this block's heading, quoted verbatim: *"★ TWO WRITING-SIDE FINDINGS ADDED — **F52**
+(THE RULED SNAPSHOT-HASH TEST IS NOT LINE-ENDING-SAFE) AND **F53** (THE ONE ARTIFACT ENUMERATING
+GATING ROWS BY IDENTITY DRAWS THAT ENUMERATION FROM A FROZEN INVENTORY)."* Four corrections follow,
+and **no finding's CONTENT changes by any of them.**
+
+- **F52 AS USED HERE IS RE-ISSUED AS F57.** The line-ending finding — stated in the paragraph above
+  and named in the heading — carries the number **F57** from Ruling 2(b) onward. **Its former number
+  is preserved beside it (#12):** it was numbered F52 by the writing side at this close, and this
+  passage records that rather than erasing it.
+- **F52 BELONGS TO CC'S FINDING** of the ninth batch — *the standing recognizers propose live open
+  rows of the open-items register for archiving, [[OI-179]] among them*. CC's numbers stand because
+  theirs is the only correction that can be COMPLETED: they are already written into a pushed
+  report, a pushed close, six `STATUS.md` entries and seven commit messages, and a commit message
+  cannot be corrected without rewriting history, which this project does not do.
+- **F53 IS ONE FINDING SURFACED INDEPENDENTLY BY BOTH SIDES, NOT TWO.** The writing side surfaced it
+  here, before the ninth batch ran; CC surfaced it inside that batch and marked it *new*. **That
+  marking is corrected in the same act.** The number is unchanged and the finding is one.
+- **THE CAUSE IS F58, AND RULING 2(c) IS ITS REMEDY.** The findings series is shared between both
+  sides and had no single allocation point, so each side took the next number after the highest it
+  knew about — and the ninth dispatch ordered CC to WRITE INTO this file without ever ordering it
+  READ, so the numbers allocated three blocks above CC's own edits were invisible to it. **From
+  Ruling 2(c) onward every dispatch's read-first block names the current handover block of
+  `cowork_handoff.md`**, which is where the writing side's own additions to the series are
+  announced.
+
+*(Recorded by CC, 2026-08-18, dispatch `cc_instruction_preparation_tenth.md` Task 0b, executing
+Ruling 2 of `cowork_rulings_2026_08_17_ninth_return.md` — dated 2026-08-17, executed the following
+day. No finding is dropped, merged or graded; none is rowed; the row bar stands whole.)*
+
 **★ WHAT AWAITS THE USER:** (1) the ninth batch — dispatch it, then verify its return at the
 objects before trusting any of it; (2) the **ONE remaining KIND-UNDERIVABLE caller**, published as
 data; (3) the **curated boot list DRAFTED for ruling AT ITS RULED DEFINITION** — the
