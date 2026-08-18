@@ -219,6 +219,37 @@ verification. The only mid-run channel is the one the executing session itself o
 question, answered when it asks. *Why:* the evidence is stated with the rule — interruptions have
 several times proven disastrous.
 
+### Every dispatch's read-first block names the CURRENT HANDOVER BLOCK of `cowork_handoff.md`
+
+**Ruled by the user, 2026-08-17 — limb (c) of Ruling 2 of
+`cowork_rulings_2026_08_17_ninth_return.md`; written here 2026-08-18 by
+`cc_instruction_preparation_tenth.md` Task 3.** **Every dispatch's read-first block names the
+current handover block of `cowork_handoff.md`.** It is a rule about how a dispatch is WRITTEN, so
+it binds the writing side, and it stands beside the self-sufficiency rule above rather than inside
+it: an instruction can be self-sufficient about the work it orders and still send the executing
+session in without the one thing both sides share.
+
+**THE GROUND IS FINDING F58, and it is stated because the rule is unreadable without it.** Both
+sides record findings in ONE shared numbered series, and there is no single place where the next
+free number is allocated: each side takes the next number after the highest it knows about. The
+current handover block is where the writing side announces its own additions to that series, so a
+session that has not read it cannot know where the series stands. **The measured instance:** the
+writing side numbered two findings F52 and F53 in one handover block; the executing session, which
+knew the series stood at F51, numbered from F52 — and **F52 was double-booked across two different
+findings.**
+
+**THE SHARPER HALF, and the reason the remedy is a read rather than a numbering convention.** The
+dispatch that produced the collision named `cowork_handoff.md` three times — as something to
+commit, as the subject of an assumption's check, and as a place to WRITE two corrections — and
+never once as something to READ. **So the executing side was routed to write into the file that
+carried the number assignment, three blocks below where the assignment was made, without ever being
+routed to read it.** **The lesson, in its general form: a dispatch that orders a write into a
+document must also order the read of it.**
+
+*What this rule does not do:* it fixes no numbering scheme, allocates no number, and grades no
+finding. It names one file and one block, and the allocation follows from both sides having read
+the same thing.
+
 ### A figure enters a dispatch or a report by CITATION to a generated artifact, never by transcription
 
 **Ruled by the user, 2026-08-03.** A quantity may not be copied into a dispatch or into a session
