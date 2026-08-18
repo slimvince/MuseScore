@@ -29,10 +29,20 @@ check.  The artifact is written with one-space indentation, so a key's span runs
 opens it to the line that opens the next key at the SAME indentation.  The size is the number of
 characters of that span — what a reader actually reads, not a re-serialisation.
 
+★ AND TWO FURTHER SPANS OF THE SAME ARTIFACT ARE MEASURED BESIDE THE READ AND NEVER SUMMED INTO IT
+(2026-08-18).  They are the two published figures Ruling 3 of
+`cowork_rulings_2026_08_18_tenth_return.md` ordered corrected that this tool did not derive: the 216
+gating rows' recorded grounds, and the comparison with the frozen record.  The extension is TWO KEY
+CHAINS over the function this file already carries — it is DECLARED AS A JUDGMENT at `FURTHER_SPANS`
+below, in the commit that made it, and in that batch's close, because the standing mechanism freeze
+bars tool work that does not block the work and this work blocked a ruled act.
+
 THE STOPS
   * rule (a)'s clause naming a path the tree does not have, or a key chain the artifact does not
     carry, is a STOP: the pointer a session is told to read must resolve, and a pointer that has
     stopped resolving is exactly the failure this measurement would otherwise hide;
+  * a FURTHER SPAN's key chain that the same artifact does not carry is a STOP for the same reason —
+    a silent zero is what a measurement may never publish;
   * an authored member the tree does not have is a STOP;
   * an earlier reading whose commit cannot be read is a STOP rather than a silently dropped row —
     a comparison that quietly loses its baseline reports a saving nobody can check.
@@ -98,6 +108,40 @@ BASELINES: tuple[tuple[str, str], ...] = (
     ("594074e1e1900079e449d2b79a38920d21bca6e6",
      "the commit that narrowed rule (a)'s pointer — `cc_instruction_preparation_tenth.md` Task 2, "
      "the act this measurement was built to publish"),
+)
+
+# ── AUTHORED — two FURTHER SPANS of the SAME artifact rule (a) points at, measured beside the read
+# but NEVER counted into it.
+#
+# ★ WHY THEY ARE HERE, DECLARED AS A JUDGMENT AND NOT SLIPPED IN (2026-08-18, on the user's Ruling 4
+# of `cowork_rulings_2026_08_18_eleventh_stop.md`; executed by
+# `cc_instruction_preparation_eleventh_amended.md` Task 4).  Ruling 3 of
+# `cowork_rulings_2026_08_18_tenth_return.md` orders FIVE published figures corrected by citation to
+# this artifact, and this tool derived three of them.  The two it did not are named key spans of the
+# very artifact it already reads, and this file already carries `key_span_characters`, a function
+# general over a key chain that `measure` already calls twice with different chains.  **The extension
+# is therefore TWO KEY CHAINS and not a new capability** — which is what the standing mechanism
+# freeze turns on, the freeze barring tool work *that does not block the work*: without them the
+# ruled correction cannot be made at all, because D-431 forbids a transcribed value.  The same
+# admission the tenth batch declared at its own §9, where a whole new measurement tool was built for
+# exactly this reason.
+#
+# ★ WHAT THEY ARE NOT.  They are NOT members of the session-start read and are NOT summed into
+# `total_characters`: a session reads the ANSWER at boot and opens these to challenge a verdict,
+# which is the whole point of the narrowing rule (a) records.  Counting them would report a read no
+# ordinary session takes, which is the same error the conditional-read note above refuses.
+#
+# ★ AND THEY ARE ROOTED AT WHATEVER ARTIFACT RULE (a) NAMES, so a later narrowing that moved the
+# pointer to a different file would make these chains fail to resolve — and that is a STOP, by the
+# same clause that stops this tool when rule (a)'s own pointer stops resolving.  A silent zero is
+# what a measurement may never publish.
+FURTHER_SPANS: tuple[tuple[tuple[str, ...], str], ...] = (
+    (("★_the_live_gating_answer", "the_gating_rows"),
+     "the 216 gating rows, each carrying its recorded ground — the GROUNDS a session opens when it "
+     "challenges a verdict, and the third of the five figures Ruling 3 orders corrected"),
+    (("★_the_live_gating_answer", "★_the_frozen_enumeration_measured_against_this_one"),
+     "the comparison with the frozen record — retrospective evidence for the phase's "
+     "retrospective, and the fifth of the five figures Ruling 3 orders corrected"),
 )
 
 RULE_A = re.compile(r"Rules:\s*\(a\)(.*?);\s*\(b\)", re.S)
@@ -180,10 +224,19 @@ def measure(claude_md: str, reader) -> dict:
         per_member[path] = len(claude_md) if path == "CLAUDE.md" else len(reader(path))
     per_member[pointer["artifact"] + " → " + " → ".join(pointer["keys"])] = answer
 
+    further = {}
+    for chain, what in FURTHER_SPANS:
+        label = pointer["artifact"] + " → " + " → ".join(chain)
+        further[label] = {
+            "characters": key_span_characters(artifact_text, list(chain)),
+            "what_it_is": what,
+        }
+
     return {
         "the_pointer_rule_a_names": pointer,
         "characters_per_member": per_member,
         "total_characters": sum(per_member.values()),
+        "further_spans_of_the_same_artifact_NOT_counted_into_the_read": further,
         "the_section_that_carries_the_pointer": {
             "key": pointer["keys"][0],
             "characters": section,
@@ -207,6 +260,8 @@ def build() -> dict:
             "total_characters": reading["total_characters"],
             "the_pointer_rule_a_named_there": reading["the_pointer_rule_a_names"],
             "characters_per_member": reading["characters_per_member"],
+            "further_spans_of_the_same_artifact_NOT_counted_into_the_read":
+                reading["further_spans_of_the_same_artifact_NOT_counted_into_the_read"],
         })
 
     movement = []
@@ -237,6 +292,14 @@ def build() -> dict:
         "what_is_derived": "the artifact-and-key pointer, parsed from rule (a)'s own clause, so a "
                            "later narrowing moves this measurement without editing this tool; "
                            "every character count; the total; and each earlier reading",
+        "★_the_further_spans_and_why_they_are_here":
+            "TWO FURTHER SPANS of the SAME artifact rule (a) points at are measured beside the read "
+            "and are NEVER summed into it. They are the two of Ruling 3's five published figures "
+            "this tool did not previously derive — the 216 gating rows' recorded grounds, and the "
+            "comparison with the frozen record — and they are here because a correction ordered BY "
+            "CITATION cannot be made to a figure no generator produces (D-431). A session reads the "
+            "ANSWER at boot and opens these to challenge a verdict, which is why counting them "
+            "would report a read no ordinary session takes.",
         "the_membership": [{"document": p, "the_clause_that_makes_it_a_member": w}
                            for p, w in MEMBERS],
         "a_conditional_read_is_not_a_member":
@@ -279,6 +342,9 @@ def main(argv: list[str]) -> int:
     for name, n in now["characters_per_member"].items():
         print("    %-70s %8d" % (name, n))
     print("  total at the tree %d" % now["total_characters"])
+    print("  further spans of the same artifact, NOT counted into the read:")
+    for name, row in now["further_spans_of_the_same_artifact_NOT_counted_into_the_read"].items():
+        print("    %-70s %8d" % (name, row["characters"]))
     for row in art["movement_against_each_earlier_reading"]:
         print("  vs %s: %d -> %d  (%+d, %+.2f%%)"
               % (row["from_commit"][:10], row["from_total"], row["to_total"],

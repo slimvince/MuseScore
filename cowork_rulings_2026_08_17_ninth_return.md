@@ -185,6 +185,44 @@ evidence.
 (a)'s authority — the INDEX remains the authoritative status surface. It does not re-open Ruling 1,
 whose substance stands exactly as ruled. [[OI-179]] stays OPEN and GATES.
 
+**★ DATED CORRECTION, APPENDED 2026-08-18 — THE FIVE CHARACTER FIGURES OF THIS SECTION'S
+MEASUREMENT ARE CORRECTED OF RECORD, AND THE RULING ITSELF IS NOT RE-OPENED.** Nothing above is
+rewritten. **The figures this correction replaces are quoted here and preserved (#12):** the section
+rule (a) then named at **67,950 characters**; the list of gating identities — the answer — at
+**2,079**; the same 216 rows carrying each one's recorded ground at **56,388**; the comparison with
+the frozen record at **3,893**; and, in the sentence above them, the ordinary session-start read
+after the ninth batch at **360,213**. **THE AUTHORITY FROM HERE IS
+`tools/audit/session_start_read_size.json`**, and the corrected values are stated BY CITATION to it
+and never by transcription (**D-431**): the read total at `at_earlier_commits[0].total_characters`;
+the section at `at_earlier_commits[0].characters_per_member` → the artifact-and-key entry rule (a)
+named there; the answer at `at_the_tree.characters_per_member` → the `gating_ids` entry; the grounds
+at `at_earlier_commits[0].further_spans_of_the_same_artifact_NOT_counted_into_the_read` → the
+`the_gating_rows` entry; and the frozen comparison at the
+`★_the_frozen_enumeration_measured_against_this_one` entry beside it. Every one of them is read at
+this batch's own base commit `1760d9a4a8`, which is the commit this section's own figures were taken
+at. **THE ARITHMETIC CLOSES EXACTLY, and that is what makes the correction a correction rather than a
+second opinion:** the whole gap between the total published above and the derived total is ONE TERM —
+the section rule (a) then named — and every other member of the read agrees to the digit,
+`DECISIONS.md` most visibly. **THE FIVE HAND FIGURES ALL FALL SHORT IN THE SAME DIRECTION**, which is
+published as an observation and not as a diagnosis: no cause is asserted here, because none was
+established. **THE PERCENTAGE IS WITHDRAWN AND NOT RECOMPUTED, AND SO IS THE PRE-NINTH-BATCH TOTAL IT
+RESTS ON.** The live tool refuses that regime in its own words: *"Before the ninth batch the read
+regime named a DIFFERENT MEMBER SET — `OPEN_ITEMS.md` whole, `BUILD_AND_TEST.md` unconditionally —
+and rule (a) named no artifact-and-key pointer at all, so this measurement's shape does not reach it
+and forcing it would compare two different questions."* Correcting an unreproducible hand figure by
+writing a second unreproducible hand figure is the defect repeating itself, so what cannot be derived
+is withdrawn rather than restated — and the extension that reached the other two values does NOT
+reach this regime and no attempt was made on it. **THIS RULING IS NOT RE-OPENED AND THE CORRECTION
+SAYS SO IN TERMS:** the saving the narrowing actually delivers is LARGER than this section claimed,
+not smaller — the section falls to the answer, and both ends of that comparison are larger at the
+derived values than at the quoted ones — so the narrowing is better justified than its own record
+stated; and the ruling's prediction of approximately 294,000 holds against the derived reading. *The
+standing clause riding this correction — a published character figure names the tool that produced it
+— stands at `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431 and is not restated
+here (#6). Authority: Ruling 3 of `cowork_rulings_2026_08_18_tenth_return.md`, executed under Ruling
+4 of `cowork_rulings_2026_08_18_eleventh_stop.md` by
+`cc_instruction_preparation_eleventh_amended.md` Task 4.*
+
 ## 4. Three writing-side findings recorded at this sitting
 
 Numbered under Ruling 2's allocation, which this sitting's own act settles. All three are the

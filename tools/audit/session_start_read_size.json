@@ -5,6 +5,7 @@
  "how_a_key_span_is_counted": "the artifact is written with one-space indentation, so a key's span runs from the line that opens it to the line that opens the next key at the SAME indentation, and the size is the characters of that span — what a reader reads, not a re-serialisation",
  "what_is_authored": "the membership of whole documents, each with the clause in `CLAUDE.md` that makes it a member",
  "what_is_derived": "the artifact-and-key pointer, parsed from rule (a)'s own clause, so a later narrowing moves this measurement without editing this tool; every character count; the total; and each earlier reading",
+ "★_the_further_spans_and_why_they_are_here": "TWO FURTHER SPANS of the SAME artifact rule (a) points at are measured beside the read and are NEVER summed into it. They are the two of Ruling 3's five published figures this tool did not previously derive — the 216 gating rows' recorded grounds, and the comparison with the frozen record — and they are here because a correction ordered BY CITATION cannot be made to a figure no generator produces (D-431). A session reads the ANSWER at boot and opens these to challenge a verdict, which is why counting them would report a read no ordinary session takes.",
  "the_membership": [
   {
    "document": "CLAUDE.md",
@@ -36,6 +37,16 @@
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2748
   },
   "total_characters": 296383,
+  "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
+   "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
+    "characters": 60734,
+    "what_it_is": "the 216 gating rows, each carrying its recorded ground — the GROUNDS a session opens when it challenges a verdict, and the third of the five figures Ruling 3 orders corrected"
+   },
+   "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one": {
+    "characters": 4867,
+    "what_it_is": "the comparison with the frozen record — retrospective evidence for the phase's retrospective, and the fifth of the five figures Ruling 3 orders corrected"
+   }
+  },
   "the_section_that_carries_the_pointer": {
    "key": "★_the_live_gating_answer",
    "characters": 74858,
@@ -60,6 +71,16 @@
     "STATUS.md": 12243,
     "DECISIONS.md": 126774,
     "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer": 74858
+   },
+   "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
+    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
+     "characters": 60734,
+     "what_it_is": "the 216 gating rows, each carrying its recorded ground — the GROUNDS a session opens when it challenges a verdict, and the third of the five figures Ruling 3 orders corrected"
+    },
+    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one": {
+     "characters": 4867,
+     "what_it_is": "the comparison with the frozen record — retrospective evidence for the phase's retrospective, and the fifth of the five figures Ruling 3 orders corrected"
+    }
    }
   },
   {
@@ -79,6 +100,16 @@
     "STATUS.md": 12243,
     "DECISIONS.md": 126774,
     "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2748
+   },
+   "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
+    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
+     "characters": 60734,
+     "what_it_is": "the 216 gating rows, each carrying its recorded ground — the GROUNDS a session opens when it challenges a verdict, and the third of the five figures Ruling 3 orders corrected"
+    },
+    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one": {
+     "characters": 4867,
+     "what_it_is": "the comparison with the frozen record — retrospective evidence for the phase's retrospective, and the fifth of the five figures Ruling 3 orders corrected"
+    }
    }
   }
  ],

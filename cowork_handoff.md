@@ -654,6 +654,32 @@ nothing is in flight; no dispatch is active.
 *(The twenty-seventh block below remains binding in everything it states except the two finding
 numbers corrected above; it is superseded only as the entry point.)*
 
+**★ DATED CORRECTION, APPENDED 2026-08-18 — THE CHARACTER FIGURES THIS BLOCK PUBLISHES ARE CORRECTED
+OF RECORD, AND ONE OF THEM IS WITHDRAWN RATHER THAN CORRECTED.** Nothing above is rewritten; a
+handover block is corrected by appending, never by rewriting its own text. **The figures this
+correction replaces are quoted here and preserved (#12):** this block's own heading and opening
+sentence state the session-start read cut **656,292 → 360,213 characters (−45.1 %)**. **THE AUTHORITY
+FROM HERE IS `tools/audit/session_start_read_size.json`**, and the corrected value is stated BY
+CITATION to it and never by transcription (**D-431**): the read after the ninth batch is
+`at_earlier_commits[0].total_characters`, read at that batch's own terminus `1760d9a4a8`. The
+remaining four figures of the same measurement — the section rule (a) then named, the list of gating
+identities, the 216 rows' recorded grounds, and the comparison with the frozen record — are corrected
+in the same act at §3 of `cowork_rulings_2026_08_17_ninth_return.md`, where they are published, and
+none of them is restated here (#6). **THE ARITHMETIC CLOSES EXACTLY:** the whole gap between the
+total quoted above and the derived total is ONE TERM, the section rule (a) then named, and every
+other member of the read agrees to the digit. **THE PRE-NINTH-BATCH TOTAL AND THE PERCENTAGE DERIVED
+FROM IT ARE WITHDRAWN, NOT CORRECTED**, on the live tool's own declaration that its shape does not
+reach the regime before the ninth batch — *"the read regime named a DIFFERENT MEMBER SET …and rule
+(a) named no artifact-and-key pointer at all, so this measurement's shape does not reach it and
+forcing it would compare two different questions"* — so a corrected percentage would be a hand
+computation across two different questions. **The narrowing this block reports is not weakened by any
+of it: the saving is LARGER than the record stated, not smaller.** *Authority: Ruling 3 of
+`cowork_rulings_2026_08_18_tenth_return.md`, executed under Ruling 4 of
+`cowork_rulings_2026_08_18_eleventh_stop.md` by `cc_instruction_preparation_eleventh_amended.md`
+Task 4. The standing clause riding it — a published character figure names the tool that produced it
+— is homed at `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431 and is not restated
+here (#6).*
+
 ---
 ## ★★★★★ COWORK SESSION CLOSE (TWENTY-SEVENTH, 2026-08-17) — NO BATCH RAN AND NO SITTING WAS HELD: THE TWENTY-SIXTH BLOCK'S ORDERED READ WAS PERFORMED IN FULL AND VERIFIED AT THE OBJECTS, AND THE NINTH DISPATCH IS WRITTEN — `cc_instruction_preparation_ninth.md`, ON DISK, UNTRACKED, EXECUTING THE SESSION-START-READ SITTING'S RULINGS 1–3 AND THE EIGHTH-RETURN SITTING'S TWO REMAINING ACTS. ★ TWO WRITING-SIDE FINDINGS ADDED — **F52** (THE RULED SNAPSHOT-HASH TEST IS NOT LINE-ENDING-SAFE) AND **F53** (THE ONE ARTIFACT ENUMERATING GATING ROWS BY IDENTITY DRAWS THAT ENUMERATION FROM A FROZEN INVENTORY). ★ NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-eighth block above.)
 
