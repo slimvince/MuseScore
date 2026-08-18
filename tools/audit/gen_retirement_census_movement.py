@@ -91,9 +91,10 @@ OUT = os.path.join(HERE, "retirement_census_movement.json")
 # The seventh batch's Task 2 compared against `5c38b41166` (its own Task 1's commit, at which the
 # census still held the reading measured at `6529d10ae4`). This batch's Task 3 compares against
 # Task 2's commit below, at which the census still holds the reading measured at `5c38b41166`.
-# The NINTH batch's Task 4 compares against Task 3's commit below, at which the census still holds
-# the reading measured at `d499027a8c`.
-OUTGOING_COMMIT = "15dfb0e1729c3d34bcef18ab37415909139c69a8"
+# The NINTH batch's Task 4 compared against its own Task 3's commit, at which the census still held
+# the reading measured at `d499027a8c`. The TENTH batch's Task 4 compares against Task 3's commit
+# below, at which the census still holds the reading measured at `15dfb0e172`.
+OUTGOING_COMMIT = "b6134f41ff721fecfa319a663393cc6ec3c29415"
 OUTGOING_COMMIT_HISTORY = [
     {"dispatch": "cc_instruction_preparation_seventh.md, Task 2",
      "outgoing_commit": "5c38b41166e79faeb8a539994dbee16290404f15",
@@ -101,6 +102,9 @@ OUTGOING_COMMIT_HISTORY = [
     {"dispatch": "cc_instruction_preparation_eighth.md, Task 3",
      "outgoing_commit": "b0b51ee657e2fb988a999215a4c2bef567958756",
      "the_reading_it_carried_was_measured_at": "5c38b41166"},
+    {"dispatch": "cc_instruction_preparation_ninth.md, Task 4",
+     "outgoing_commit": "15dfb0e1729c3d34bcef18ab37415909139c69a8",
+     "the_reading_it_carried_was_measured_at": "d499027a8c"},
 ]
 
 GROWTH = "(iii) the tree's ordinary growth"
@@ -125,9 +129,14 @@ RULED = "(iv) the callers sitting's ruled inputs"
 # ★★ A FIFTH CLASS, ADDED 2026-08-17 FOR THE NINTH BATCH'S RE-PIN, AND DECLARED RATHER THAN TAKEN
 # SILENTLY. Its dispatch names the cause in terms: the callers sitting ruled that a MANDATORY-READ
 # OR BOOT LISTING HOLDS a retirement candidate, so changing the read regime moves what holds
-# candidates. This batch changed it twice — Task 1 amended the open-items register's rule (a) so a
-# session reads the derived gating answer and opens the INDEX when it needs a row, and Task 3
-# demoted `BUILD_AND_TEST.md` from an unconditional session-start read to a conditional one.
+# candidates. The NINTH batch changed it twice — its Task 1 amended the open-items register's rule
+# (a) so a session reads the derived gating answer and opens the INDEX when it needs a row, and its
+# Task 3 demoted `BUILD_AND_TEST.md` from an unconditional session-start read to a conditional one.
+# The TENTH batch changed it once more: its Task 2 narrowed rule (a)'s pointer from the whole
+# derived-gating-answer section to the list of gating row identities inside it. The RELATION below
+# is unchanged and is IMPORTED rather than re-derived (#6); only this account of which acts moved
+# the regime is brought up to date, because a tool that misdescribes its own subject is the
+# doc-sync defect at the smallest grain.
 #
 # ★ IT IS DERIVED, NOT AUTHORED PER MOVEMENT, on the same shape as the other four: the relation is
 # that the governing document's OWN NAMING LINES for the named file DIFFER between the two measured
