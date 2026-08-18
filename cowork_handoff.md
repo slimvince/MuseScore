@@ -1,7 +1,169 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-SEVENTH, 2026-08-17) — NO BATCH RAN AND NO SITTING WAS HELD: THE TWENTY-SIXTH BLOCK'S ORDERED READ WAS PERFORMED IN FULL AND VERIFIED AT THE OBJECTS, AND THE NINTH DISPATCH IS WRITTEN — `cc_instruction_preparation_ninth.md`, ON DISK, UNTRACKED, EXECUTING THE SESSION-START-READ SITTING'S RULINGS 1–3 AND THE EIGHTH-RETURN SITTING'S TWO REMAINING ACTS. ★ TWO WRITING-SIDE FINDINGS ADDED — **F52** (THE RULED SNAPSHOT-HASH TEST IS NOT LINE-ENDING-SAFE) AND **F53** (THE ONE ARTIFACT ENUMERATING GATING ROWS BY IDENTITY DRAWS THAT ENUMERATION FROM A FROZEN INVENTORY). ★ NOTHING IS RUNNING. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-EIGHTH, 2026-08-17) — THE NINTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED (ALTERNATIVE A ON ALL THREE); ★ THE SESSION-START READ IS CUT 656,292 → 360,213 CHARACTERS (−45.1 %) AND THE USER'S 2026-08-16 PRUNING DIRECTION IS DISCHARGED FOR ORDINARY SESSIONS; ★ `cc_instruction_preparation_tenth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
+
+**★ YOUR SESSION-START READ HAS MOVED, AND THIS IS THE FIRST BLOCK WRITTEN AFTER IT MOVED. READ
+THIS PARAGRAPH BEFORE YOU READ ANYTHING ELSE.** **(1)** `CLAUDE.md`, `STATUS.md` and `DECISIONS.md`
+in full, as they now stand. **(2)** `BUILD_AND_TEST.md` is now a **CONDITIONAL** read — mandatory
+only for a session that builds, tests, or runs a measurement tool whose command lives there. **(3)
+DO NOT READ THE WHOLE OPEN-ITEMS INDEX.** Rule (a) now reads the **DERIVED GATING ANSWER** —
+`tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` — and you open
+`OPEN_ITEMS.md` when you need a row. **The INDEX remains the AUTHORITATIVE STATUS SURFACE**; the
+derived answer is a route to ONE question it answers, never a second home for status (#6). An
+archive companion is reached only when a decision is re-opened.
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE.** `cc_instruction_preparation_tenth.md` was WRITTEN at this
+close and was **NOT DISPATCHED**. Establish which of three states holds: **not started** (no
+PREPARATION TENTH BATCH section in `cowork_away_returns.md`, no `STATUS.md` pointer entries for it,
+no commit on the ninth batch's terminus `1760d9a4a8`) — then it is yours to dispatch or to amend;
+**running** — then **you are READ-ONLY on the repository until it stops**; **completed** — then
+VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove the reading by
+quotation. Its tasks and its registered expectations E0a, E0b and E1–E5 are stated in the dispatch
+itself, which is the authority for them and is not restated here (#6).
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_17_ninth_return.md` IN FULL** — the three
+rulings this session took and the whole authority of the tenth dispatch. (2)
+**`cc_instruction_preparation_tenth.md` IN FULL** — what the next batch is bound to do, its premise
+ledger and its STOP conditions. (3) **`cowork_rulings_2026_08_17_session_start_read_sitting.md` IN
+FULL** — the four rulings that moved the session-start read, three of them now EXECUTED and LIVE.
+(4) `cowork_rulings_2026_08_17_eighth_return.md` IN FULL, **its §6 above all** — the correction note
+and F51. (5) The FOUR sitting records of 2026-08-17 —
+`cowork_rulings_2026_08_17_seventh_return.md` (**its §5 carries its own F51 correction, appended by
+the ninth batch**), `_residue_sitting.md`, `_callers_sitting.md`, `_rulings_sort_sitting.md`. (6)
+`cowork_rulings_2026_08_17_sixth_return.md`, `cowork_rulings_2026_08_17_governing_surface_split.md`
+and `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (7)
+`cc_report_preparation_ninth.md` IN FULL and the batch's FULL close (THE PREPARATION NINTH BATCH
+section of `cowork_away_returns.md`). (8) This block. (9) The twenty-seventh block below and
+everything it binds — **but see the numbering correction flagged below: its two finding numbers are
+corrected by the tenth dispatch's Task 0b, not by reading.** `CLAUDE.md` in full before drafting
+anything — **this session read it in full and the bar is discharged for THIS session only; it binds
+you afresh.**
+
+**★ WHAT THIS SESSION DID.** It booted in the remote Cowork environment with the ninth batch in
+flight, ran the branch rule and went read-only, performed the twenty-seventh block's ordered read in
+full while it waited, then **verified the whole return at the objects rather than trusting the
+record**: the chain `f27c3ded70` → `ff99a71a22` → `514b0dbc19` → `4667816255` → `b8f5aaf268` →
+`15dfb0e172` → `e36168ec33` → `ccb3131725` → `1760d9a4a8`, every parent confirmed and every path
+count to the digit (4, 10, 20, 9, 19, 4, 9, 2), branch and remote at the same commit. **Every
+registered expectation was re-derived at the artifacts.** E1 reconciles three independent ways — 216
+gating + 25 non-gating = 241 open rows; 24 authored + 192 ruled-default = 216; the apparatus first
+cut of 49 = 24 + 25 — with **[[OI-179]] present in the gating set with its ground**. E2 reconciles as
+19 spans = 1 moved + 12 refused + 6 owned, and per file 2 + 8 + 3 + 6 + 0 = 19. E5 reconciles at the
+guard artifact: **69 runs, 68 passing, ONE failing — [[OI-372]]'s tool and no other**, zero STOPs.
+**Then the return sitting was held in the ruled form and the user ruled every decision as put.**
+
+**★ TWO PROOFS THE WRITING SIDE TOOK THAT CC'S REPORT DOES NOT ASSERT.** (a) The open-items
+register's INDEX carries **375 table rows and 136 resolved-mark rows before and after** the batch —
+so no row was created, flipped or discarded, and the register's bijection survived the archiving
+move. (b) `STATUS.md` carries the NINTH batch's entries **alone**, the eighth's in
+`STATUS_ARCHIVE.md` — Ruling 4's forward bound working rather than asserted.
+
+**★ THE ARC'S OWN MEASUREMENT, AND IT IS THE HEADLINE.** Taken at the git objects of `f27c3ded70`
+and `1760d9a4a8`, in characters: the session-start read falls **656,292 → 360,213, a reduction of
+296,079 characters (−45.1 %)**. **The user's direction of 2026-08-16 is DISCHARGED for ordinary
+sessions.** Ruling 3 below takes it to approximately **294,000 (−55 %)** once the tenth batch
+executes.
+
+**★ THE THREE RULINGS THIS SESSION TOOK — the record is
+`cowork_rulings_2026_08_17_ninth_return.md`, which is the authority and is not restated here (#6).**
+**Ruling 1** — the evidence pin is ratified **AS A CLASS**: a generated document put to the user for
+a ruling joins the pinned kind at the moment it is ruled from, extending the Kind-1 treatment of §6
+of the 2026-08-16 record beyond the two measurements it named. **Ruling 2** — the findings series
+gains an ALLOCATION POINT: CC's numbers stand, the writing side's line-ending finding is re-issued
+as **F57** with its former number preserved, F53 is one finding surfaced by both sides, and **every
+future dispatch's read-first block names the current handover block**. **Ruling 3** — rule (a)'s
+pointer is narrowed to the list of gating identities, the grounds opened when a verdict is
+challenged, with the #19 distinction written at the clause. The user's words, verbatim: ***"I agree
+on all recommendations"***.
+
+**★ THE THREE FINDINGS THIS SESSION ADDED, ALL THE WRITING SIDE'S, NONE ROWED.** **F57 (RE-ISSUED,
+formerly numbered F52 by the writing side)** — the ruled snapshot-hash test is not line-ending-safe
+and fails in the false-alarm direction; **it fired for real inside the ninth batch** at its own
+§4.e. **F58** — a shared numbered series with no single allocation point collides whenever both
+sides work concurrently; the sharper half is that **the ninth dispatch ordered CC to WRITE INTO
+`cowork_handoff.md` without ever ordering it READ**, so the numbers allocated three blocks above
+CC's own edits were invisible to it. **The lesson: a dispatch that orders a write into a document
+must also order the read of it.** **F59** — a ruling's executing act pointed a session at the
+EVIDENCE along with the ANSWER: rule (a) as executed names a 67,950-character section to deliver a
+2,079-character answer, the 216 grounds being 56,388 of it. **This is F51's shape at one remove —
+the route sound, the POINTER too wide** — ruled and remedied by Ruling 3, and riding to the
+retrospective because the general form outlives it.
+
+**★ THE FINDING NUMBERS IN THE TWENTY-SEVENTH BLOCK BELOW ARE WRONG AND ARE CORRECTED BY ACT, NOT BY
+READING.** That block assigns **F52** to the line-ending finding and **F53** to the frozen gating
+enumeration. F52 now belongs to CC's finding of the ninth batch; the line-ending finding is **F57**;
+F53 is one finding both sides surfaced. **The tenth dispatch's Task 0b appends the dated correction
+at that block and at the ninth close's §8, the former numbers preserved (#12).** Until it runs, read
+the twenty-seventh block's two numbers through this paragraph.
+
+**★ WHAT AWAITS THE USER:** (1) the tenth batch — dispatch it, then verify its return at the objects
+before trusting any of it; (2) the **ONE remaining caller whose kind the derivation cannot place**,
+published as data; (3) the **curated boot list DRAFTED for ruling AT ITS RULED DEFINITION** — the
+implementation-free read list an implementation-blind session boots from, **for those sessions
+only**, and NOT the route to a smaller ordinary session-start read (F51), **which Rulings 1–3 of the
+session-start-read sitting have now delivered and the ninth batch has executed**; (4) the empirical
+findings ledger behind its fact-gate; (5) the archiving wave once its ruled conditions clear — read
+the candidacies at the REGENERATED census, never at a stale one; (6) the mining and the landing of
+the 284 newly visible instruction files. **The prose-citation question is CLOSED. The
+finer-`CLAUDE.md` question is CLOSED. The smaller-ordinary-session-start-read question is CLOSED and
+EXECUTED.**
+
+**★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red (`gen_filing_convention_application.py`;
+the ninth batch's proven end state is 69 guards run, 68 passing, that one failing, zero STOPs).
+[[OI-374]] untouched. [[OI-179]] OPEN and GATES — **and note that the standing recognizers proposed
+it for archiving and only the read-before-move safeguard refused it (CC's F52)**. **F3 is ELEVEN
+times surfaced, unfixed and unrowed** — `reaim_home_anchors.py --check` exits 0 while printing
+drifted anchors; `gen_cluster_dispositions.py --verify` is the drift authority. F1–F59, the E3
+ordering defect and the A1 premise error ride to the phase's retrospective. The 284 newly visible
+instruction files and the remaining ignored files unlanded; every candidacy behind its ruled
+conditions.
+
+**★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the F25
+lesson).** `cowork_handoff.md` carries **this block inserted AND the twenty-seventh heading's
+entry-point demotion marker — two parts of one act.** Two files are on disk and untracked:
+`cowork_rulings_2026_08_17_ninth_return.md` and `cc_instruction_preparation_tenth.md`. **Nothing
+else this session touched the tree.** The tenth dispatch's Task 0a lands all three paths and its
+assumption A1 states exactly this shape. **The working copy of this file was proven byte-identical
+to its committed blob at `1760d9a4a8` immediately before this block was written** (content sha256
+`f14f9944c9…`, 317,754 bytes), so the only difference it carries is the one named here.
+
+**★ THE DECLARED ENVIRONMENT DEPARTURE, CARRIED FORWARD.** This session ran in the remote Cowork
+environment, where the sanctioned file tools do not reach the repository directly. Every
+establishment above was taken either by **git OBJECT read at an explicit hash** — the one sanctioned
+shell mechanism — or by **staging a snapshot through the device bridge and reading it with the file
+tools**. No working-tree file was read through a shell. **F57 was applied rather than assumed:
+`cowork_handoff.md` was MEASURED to be stored with LF line endings (zero carriage returns) before it
+was edited, so it is written back in its own form and no line is re-line-ended.** This file, the
+ruling record and the dispatch were written by delivering each through the bridge and
+**round-tripping it back byte-identical**, never by shell redirection (the recorded 2026-08-02
+slip). **`git status` was NOT run** — the recorded index-refresh hazard on this mount, and the
+standing rule bars it; `tools/audit/changed_paths.py` was attempted and TIMED OUT, and was not
+retried. **TWO further departures are declared:** the branch tip was read (`git log`,
+`git rev-parse`, `git rev-list`) to establish that the ninth batch had stopped, there being no close
+yet to supply an explicit hash — the same departure the twenty-fifth block declared; and on the
+user's ruling this session read `CLAUDE.md` in full but **not** `OPEN_ITEMS.md` or `DECISIONS.md`,
+which the standing session-start bar still required at that moment, Ruling 1 not yet being executed.
+
+**★ WHY THE SESSION CLOSED HERE:** user-directed — the dispatch is written and the handover
+prepared, and the next session here receives CC's results on the tenth batch. **ZERO
+presentation-form tells fired, and the count is stated so it is checkable rather than asserted:**
+the return sitting's full self-contained surface was delivered as the turn's final response carrying
+NO question, and the user ruled in a LATER turn unprompted — the ruled form met without a question
+widget being needed. One working-scope question was put in the same turn as its own subject — how
+far to carry the session-start read while the batch ran — which is a question about this session's
+own reading and not a ratification, adoption, retirement or checkpoint ruling, so the
+separate-later-turn clause did not bind it. Every ruling is on disk in the turn it was taken;
+nothing is in flight; no dispatch is active.
+
+*(The twenty-seventh block below remains binding in everything it states except the two finding
+numbers corrected above; it is superseded only as the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-SEVENTH, 2026-08-17) — NO BATCH RAN AND NO SITTING WAS HELD: THE TWENTY-SIXTH BLOCK'S ORDERED READ WAS PERFORMED IN FULL AND VERIFIED AT THE OBJECTS, AND THE NINTH DISPATCH IS WRITTEN — `cc_instruction_preparation_ninth.md`, ON DISK, UNTRACKED, EXECUTING THE SESSION-START-READ SITTING'S RULINGS 1–3 AND THE EIGHTH-RETURN SITTING'S TWO REMAINING ACTS. ★ TWO WRITING-SIDE FINDINGS ADDED — **F52** (THE RULED SNAPSHOT-HASH TEST IS NOT LINE-ENDING-SAFE) AND **F53** (THE ONE ARTIFACT ENUMERATING GATING ROWS BY IDENTITY DRAWS THAT ENUMERATION FROM A FROZEN INVENTORY). ★ NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-eighth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
