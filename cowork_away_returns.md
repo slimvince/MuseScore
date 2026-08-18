@@ -14310,3 +14310,366 @@ the report are `8f88e1a61e` (parent `30d44165cf`), pushed, 9 paths — that sent
 its own identity when it was written, which is the E-ordering rule working and not an omission, and
 this line names it now. The end-state guard run is in the ONE FURTHER commit that carries this
 paragraph, whose own identity it likewise cannot contain.*
+
+---
+
+# ★ CLOSE — THE PREPARATION ELEVENTH BATCH, AMENDED (2026-08-18)
+
+**Dispatch `cc_instruction_preparation_eleventh_amended.md`, executing the four rulings of
+`cowork_rulings_2026_08_18_eleventh_stop.md` and, through them, the three rulings and the sub-ruling
+of `cowork_rulings_2026_08_18_tenth_return.md`. COMPLETE, WITH ONE RULED STOP-AND-REPORT INSIDE
+TASK 1.** Five task commits and one further commit carrying the end-state guard run. The report is
+`cc_report_preparation_eleventh_amended.md` and is the authority for everything below; nothing of it
+is restated at any width it does not already have (**D-431**). **It is a SECOND report for the
+eleventh batch and is named so that it does not overwrite `cc_report_preparation_eleventh.md`, the
+STOP report of the superseded dispatch, which Task 0 landed.**
+
+## 0. The reading, the declared start state, and Task 0
+
+The session-start read was taken under the regime the tenth batch left: `CLAUDE.md`, `STATUS.md` and
+`DECISIONS.md` in full; `BUILD_AND_TEST.md` in full, because this batch MEETS its condition;
+**the whole open-items INDEX NOT read**, rule (a)'s derived gating answer read at its identity list
+instead, with the grounds opened only to establish that the key rule (a) names resolves. **And
+`cowork_handoff.md`'s THIRTIETH block was read**, which is the standing clause the tenth batch landed
+— that is what told this session the findings series stands at **F74** and that numbering begins at
+**F75**.
+
+**★ THE DECLARED START STATE IS THE ONE THE DISPATCH DECLARES, AND IT MATCHES AT THE TREE.** Taken
+before the first edit, at a quiet tree: **71 run, 69 passing, TWO failing, 4 not run, 16 historical,
+zero STOPs**, and *"the guard classification re-derives"*. The two reds are the two the dispatch
+names with their causes — `gen_filing_convention_application.py` ([[OI-372]], the one standing red)
+and `gen_evidence_pin_membership.py`, caused by this dispatch's own untracked inputs. **This is
+Ruling 1 of the STOP sitting working rather than failing**: the same measurement that stopped the
+superseded dispatch at its first act passed its precondition here, because the declaration was
+stated at the tree the dispatch would actually meet.
+
+**ASSUMPTION A1 HELD AT THE SHAPE ITS OWN SENTENCE DESCRIBES.** Exactly ONE tracked modification in
+the whole working tree, `cowork_handoff.md`, taken blob against blob by explicit hash — committed
+`08eaff0a4e`, working copy content-addressed to `b8dd53c569` — ONE contiguous changed passage
+carrying all five parts A1 names, the single deletion being the TWENTY-EIGHTH heading in its
+undemoted form. **No changed-passage count was asserted in advance** (the F25 lesson). **The F57
+caveat was applied rather than assumed away**: the platform's own check-in warning establishes the
+working copy is stored LF, so the two blob hashes are directly comparable.
+`tools/audit/evidence_pin_membership.json` was UNMODIFIED before the act, at the committed blob
+`80e97da1f7`, exactly as A1 predicts.
+
+**THE MEMBERSHIP ARTIFACT WAS REGENERATED AND ITS DIFFERENCE MEASURED BEFORE IT WAS ACCEPTED** —
+`80e97da1f7` against `e440f83507`. **NO VERDICT MOVED**: members 7, pinned 3, UNRESOLVED 4, and every
+member's route, document, ruling records naming it, pin constant and state byte-identical.
+
+**★ AND THE DISPATCH'S PREDICTION ABOUT THAT DIFFERENCE IS INCOMPLETE — DECLARED RATHER THAN
+ABSORBED, which is finding F75.** The prediction was two added record names and a ruling-record count
+two higher; both hold. **There is a THIRD hunk**: the member `gen_artifact_inventory_surface.py`
+gains an additive cross-reference field `also_named_as_pinned_by` naming
+`cowork_rulings_2026_08_18_eleventh_stop.md`, because route B scans a record's WHOLE text and one
+line of that record carries the word *pinned* together with that tool's name. **Why this was not
+treated as a STOP, stated so the judgment is challengeable rather than asserted:** the ordered check's
+own bar names *member, route, document, ruling record, pin constant, state or count*, and the
+declared start state's restatement of the same bar names six of those seven without *ruling record* —
+because the ruling-record additions ARE the expected difference. The third hunk reaches no member, no
+route, no document, no pin constant, no state and no count; it is additive rather than a movement;
+and it has exactly the same cause the dispatch already declares, the two records landing on disk.
+**The ordered check's stated purpose — *the regeneration is a bookkeeping act and may not move a
+verdict* — is met in full.** Task 0 is `a14aff1d5f`, parent `9390e2ca2c`, pushed, **8 paths**, and
+`gen_evidence_pin_membership.py --check` PASSES at the tree it carries. **E0 — MET on its stated
+shape, with the one declared departure from its prediction recorded above.**
+
+## 1. Task 1 — the four members re-derived at the landing-commit bound, two pinned and two STOPPED on
+
+`9a78ed2fea`, parent `a14aff1d5f`, pushed, **10 paths**.
+
+**★ A3 WAS RE-DERIVED FOR ALL FOUR AT THE OBJECTS AND NONE WAS INHERITED**, which is Ruling 3's own
+instruction and the only route by which a pin rests on an establishment rather than on a claim
+neither side checked. Per member: the sitting read from that record's own text and never from its
+file name; the commit that ADDED the record to git, which is the bound; every candidate commit
+touching the surface at or before it; the one selected; and the evidence that no later commit at or
+before the bound touched the document. **A3 HOLDS for all four**, and every one of the four
+derivations reproduces the reading the STOP report published — now established rather than claimed.
+
+| member | sitting | landing-commit bound | candidates at or before it | selected | interval |
+|---|---|---|---|---|---|
+| `gen_artifact_inventory_surface.py` | the inventory sitting, 2026-08-15 | `dfea49b7a5` 13:09:23 | `31c573b06e` 10:47:01; `b1d48d6c87` 10:56:13 | **`b1d48d6c87`** | 2 h 13 min 10 s |
+| `gen_ratified_document_check.py` | the residue sitting, 2026-08-17 | `570f2b63b1` 16:34:06 | `81e2ef1c23` 2026-08-16T16:41:24 — the only commit that has ever touched the document | **`81e2ef1c23`** | 23 h 52 min 42 s |
+| `gen_governing_surface_readers.py` | the governing-surface split sitting, 2026-08-17 | `1f84f5d621` 09:15:30 | `c4f15a7b32` 2026-08-16T23:27:06; `9fb1ba01bf` 00:01:32 | **`9fb1ba01bf`** | 9 h 13 min 58 s |
+| `gen_rulings_sort.py` | the rulings-sort sitting, 2026-08-17 | `570f2b63b1` 16:34:06 | `2fa6ffcbf9` 2026-08-16T12:25:43; `53e552296f` 10:00:25 | **`53e552296f`** | 6 h 33 min 41 s |
+
+**THE RESIDUAL RISK IS MEASURED PER MEMBER AND PUBLISHED WITH EACH PIN**, never carried as a class
+caveat, and it includes whether the member's GENERATOR and its INPUTS moved inside the interval —
+which is what bounds an uncommitted regeneration. Three are bounded on both counts. **One is not, and
+it is named rather than glossed:** the artifact-inventory surface's SECOND input route is a citation
+scan over the governing record, which is not a committed artifact and therefore has no bound at all.
+
+**FOUR DATED CORRECTIONS APPENDED, NOTHING REWRITTEN, AND NONE CITES D-230 FOR THE BOUND.** Each names
+the commit in the form the derivation reads, the derivation that produced it, the interval, and its
+authority. The interim-carrier practice the bound rests on is cited to Ruling 3's own forward clause,
+which Task 2 landed, and not to D-230, whose text does not carry it (**F72**, **D-643**).
+
+**★ THE STOP-AND-REPORT, WHICH IS THIS BATCH'S LARGEST FINDING (F76).** Two members are PINNED and
+two are not, and the two that are not are STOPPED on measured evidence, with nothing adopted:
+
+- **`gen_governing_surface_readers.py` — PINNED at `9fb1ba01bf`.** Its one live route, the span
+  decomposition read from the working tree, now reads at the git object under `SPANS_PINNED_AT`.
+  **INERT AT APPLICATION and measured, not assumed:** the artifact is the same git object at that
+  commit and at the tree, so the surface re-derives byte-identically.
+- **`gen_ratified_document_check.py` — PINNED at `81e2ef1c23`, deliberately narrowly.** Its derived
+  inputs were already read at the commit its own artifact records; the one route that reached the
+  rendering live — the (B1) bullet the population is parsed from — now reads at the object under
+  `RULING_PINNED_AT`. **Its LIVE assertion is NOT pinned with it**, and that is a declared choice:
+  the pass still reads the ruling record as it stands and still STOPs when a sentence that ordered it
+  leaves the record, because pinning that read too would have destroyed a live guard rather than
+  protected an evidence rendering.
+- **`gen_artifact_inventory_surface.py` — NOT PINNED.** The commit IS established. What stops the pin
+  is that **the committed document is no longer the rendering the user ruled from**: the surface's
+  object is `d04aa5726b` at `b1d48d6c87` and `9f76701ed4` at the tree, 11 inserted and 26 deleted
+  lines, **every one of them citation-scan output** — two mixed classes' cited/uncited splits moved
+  and the count of ignored files the governing record names fell. The generator's own object and its
+  census input are byte-identical at both commits, so pinning both routes would render `d04aa5726b`
+  exactly, which is not the committed document; `--check` would go red and could be cleared only by
+  regenerating a committed document to a different content, which the dispatch forbids in terms.
+- **`gen_rulings_sort.py` — NOT PINNED, and not constructible at all.** The generator reads the
+  sitting record itself for the sixty user-ruled placements, and that record was ADDED to git at
+  `570f2b63b1`, **after** the pinned commit — so a read of its inputs there STOPs the tool. The
+  surface also differs from its pinned object by 260 inserted and 385 deleted lines, and **that
+  difference IS the sitting's own executing act**: reverting it would remove the user's own placements
+  from the record, which #12 forbids outright.
+
+**RULING 2 OF THE STOP SITTING IS EXECUTED.** A dated correction is appended at §6 of
+`cowork_rulings_2026_08_16_preparation_return.md` naming `tools/audit/gen_artifact_inventory.py` as
+the census's writer, the former wording preserved beside it (#12) and the ruled text never rewritten.
+The establishment is the two tools' own source: one writes the census, the other writes the
+ratification document and reads two input routes.
+
+**RULING 1b IS WRITTEN AT THE TWO TOOLS THAT HOLD THE TWO OUTPUTS**, with **NEITHER RULING SUPERSEDED**
+stated at both sites, and the surface generator's **two** input routes named together — because a pin
+fixing only the census would leave the rendering free to move whenever any governing document does,
+which is the thing the pin exists to prevent.
+
+**The anchored-quote consequence did not fire for this task**, and no surface was regenerated. **E1 —
+MET IN PART, and the part not met is a ruled STOP rather than an omission.**
+
+## 2. Task 2 — the four standing clauses at one home
+
+`6fe84208c0`, parent `9a78ed2fea`, pushed, **4 paths**. All four land in `cowork_audit_protocol.md`'s
+dispatch-protocol section, in ONE edit — which is what clears the F15 anchored-quote class once
+instead of four times. Each carries its named ground and its general form: **F60**, **F67**, **F72**
+and **F66**; the fourth stands BESIDE **D-431** because it is that rule's own missing half.
+
+**THE ANCHORED-QUOTE CLASS FIRED AND WAS CLEARED BY ITS RULED TREATMENT.** 27 register home anchors
+moved, all into `cowork_audit_protocol.md` and all by the same shift; re-aimed PER CITATION from the
+drift report; the drift authority `gen_cluster_dispositions.py --verify` now reports 474/474 verbatim
+quotes at their cited home and 468/468 cited line numbers correct, against 441/468 before the
+re-aim. **EVERY REGENERATED SURFACE'S OWN DIFFERENCE WAS MEASURED BEFORE IT WAS ACCEPTED**, blob
+against blob: `decisions/group_T.md` `ef488ac8fc → 2ce843999a`, the backbone `de3933f41f →
+514d1ee3ea`, the rulings-sort artifact `cc14606fac → fa2c43f608`. **Every changed line in all three
+carries a `cowork_audit_protocol.md` line coordinate and nothing else** — 54 of 54 in the backbone,
+counted rather than sampled. `DECISIONS.md` itself is byte-unchanged, the INDEX naming homes without
+a line. **★ AND THE RULINGS-SORT RATIFICATION SURFACE DID NOT MOVE THIS TIME**, which is published as
+data because it moved at the tenth batch on the same shape. **E2 — MET.**
+
+## 3. Task 3 — the three stale banners corrected at their generators
+
+`65fbef6df4`, parent `6fe84208c0`, pushed, **6 paths**. Run AFTER Task 1, which is ruled and not
+preferred. **The treatment is IMPORTED from `gen_rulings_sort.py` (#6)** and the import is stated at
+each of the three sites; each rendered banner quotes the text it replaces, says it was true when
+written and made untrue by the sitting, and states that the former rendering stands in git at the
+commits that carried it (#12). **The mechanism freeze is answered at each site**: a governing surface
+stating something false about itself is #10's own doc-truth subject, and the act creates no new
+mechanism because the treatment is imported.
+
+**EACH DOCUMENT'S DIFFERENCE WAS MEASURED BEFORE IT WAS ACCEPTED AND EVERY ONE IS CONFINED TO THE
+BANNER** — the residue surface `11faa75439 → 2084bc0ee1`, the governing-surface split surface
+`3467d0ce3b → ebe6851f2e`, the artifact-inventory ruling surface `9f76701ed4 → aa6157eb06`. The two
+derived artifacts the same runs rewrite are byte-unchanged.
+
+**★ ONE FURTHER TOOL JUDGMENT IS DECLARED, AT THE SITE AND HERE (F77).**
+`gen_ratified_document_check.py`'s WRITE path resolved HEAD while its `--check` path has always
+re-derived at the commit its committed artifact RECORDS. **Run at HEAD it does not merely differ, it
+STOPS**, because nine entries of its population are no longer live in the decisions register's data
+file — the soft-discard it was gathered for retired them. So the ruled act was not performable at all
+until the write path was agreed with the pin the check already carried. It now builds at the recorded
+commit when a committed artifact exists, and still resolves HEAD on a first run. **This REMOVES the
+OI-301 hazard the guard registry already names for this tool rather than adding one.**
+
+**THE RULINGS-SORT SURFACE IS NOT RE-CORRECTED**, and the tenth batch's characterisation of its
+correction as made *"by hand"* is CORRECTED OF RECORD here: the RULED banner text lives **at the
+generator**, in the render function's own emitted lines, and was already there at `a21a55fc12`, so it
+survives regeneration BY CONSTRUCTION. **The former characterisation is preserved beside its
+correction (#12)** — *"corrected by hand at the eighth batch"*, which is Ruling 2's own stated ground
+and the tenth batch's report. **The correction narrows a premise and does not touch Ruling 2's
+conclusion**, of which this member is the standing demonstration. **E3 — MET.**
+
+## 4. Task 4 — the generator extended, and the figures corrected of record
+
+`3a37c5d069`, parent `65fbef6df4`, pushed, **4 paths**.
+
+**★ THE TOOL WORK IS DECLARED AS A JUDGMENT — at the site, in the commit message, and here.**
+`gen_session_start_read_size.py` is extended by **TWO KEY CHAINS** over the artifact it already reads,
+using `key_span_characters`, the function it already carries and already calls twice with different
+chains. Its ground: the standing mechanism freeze bars tool work *that does not block the work*, and
+Ruling 3's ordered act was blocked without this, D-431 forbidding a transcribed value. **The
+extension creates no tool and adds no check invocation**, so the new-tool rule does not arise and the
+guard population stands where Task 3 left it.
+
+**THE READ ITSELF IS UNMOVED**, which is the point of measuring the two spans BESIDE it rather than
+into it: a session reads the ANSWER at boot and opens these to challenge a verdict, so counting them
+would report a read no ordinary session takes.
+
+**★ THE RIDER RULING 4 ORDERS SETTLED IS SETTLED AT THE ARTIFACT AND NOT BY TASTE.** Whether *"the
+grounds"* is exactly the `the_gating_rows` span or the 216 rows' recorded grounds within it: **the two
+do not differ.** The ninth-return record's own words are *"The same 216 rows carrying each one's
+recorded ground"*, and that span IS that array — 216 entries, each an identity with its gate ground
+and how it was placed, and nothing else. The value published is the span the tool measures, with the
+key chain named beside it.
+
+**A DATED CORRECTION IS APPENDED AT BOTH SITES**, neither site's own text rewritten: at §3 of
+`cowork_rulings_2026_08_17_ninth_return.md`, all five figures quoted and preserved (#12) and each
+corrected BY CITATION to `tools/audit/session_start_read_size.json` and its key path; at the
+TWENTY-EIGHTH block of `cowork_handoff.md`, the total that block publishes in its own heading and
+opening sentence, with the other four pointed at their own site and not restated (#6). **THE
+ARITHMETIC CLOSES EXACTLY:** the whole gap between the published total and the derived total is ONE
+TERM, and every other member of the read agrees to the digit.
+
+**★ AN OBSERVATION PUBLISHED WITHOUT A DIAGNOSIS (F78):** all five hand figures fall short of the
+derived values in the same direction. No cause is asserted, because none was established.
+
+**THE PERCENTAGE IS WITHDRAWN AND NOT RECOMPUTED, AND THE PRE-NINTH-BATCH TOTAL WITH IT**, on the
+live tool's own declaration — quoted verbatim at both sites — that its shape does not reach the
+regime before the ninth batch. **The extension does not reach that regime and no attempt was made on
+it.** **Ruling 3 of the ninth-return sitting is NOT re-opened and the correction says so in terms:**
+the saving is LARGER than that ruling claimed, not smaller, and its prediction holds against the
+derived reading. **E4 — MET.**
+
+## 5. Task 5 — the close
+
+The five `STATUS.md` pointer entries, one per task, and **in the same act Ruling 4's forward bound
+moves the TENTH batch's entries verbatim to `STATUS_ARCHIVE.md`** — `gen_status_batch_bound.py`
+re-aimed at this batch's own base commit, its previous aiming kept rather than replaced (#12).
+**BOTH DIRECTIONS PROVEN** by the tool's own reconciliation: every moved entry byte-present in the
+archive exactly once, and every moved entry absent from the must-read. **The declared `Last updated: `
+prefix adjustment is IMPORTED and not re-decided (#6)**, and no entry needed a second adjustment.
+
+## 6. The two guard states
+
+| | run | passing | failing | not run | historical | STOPs |
+|---|---:|---:|---:|---:|---:|---:|
+| **start**, before the first edit, at a quiet tree | 71 | 69 | 2 | 4 | 16 | 0 |
+| **end**, after the close commit existed | 71 | 70 | 1 | 4 | 16 | 0 |
+
+The start state is the one the dispatch declares, both reds named with their causes. From Task 0
+onward exactly ONE red stands, [[OI-372]]'s tool, and the guard classification re-derives at every
+task. **Every red this batch caused was cleared by its ruled treatment and none by an adjustment made
+to turn a check green.**
+
+## 7. The registered expectations
+
+| | verdict |
+|---|---|
+| **E0** | **MET** on its stated shape — 8 paths, two modifications matching A1's shape and the bounded regeneration, six additions, no staging override, the membership check passing at the resulting tree — **with one declared departure from its prediction**: the regeneration's difference carries a third, additive hunk the prediction does not name (F75). |
+| **E1** | **MET IN PART, the part not met being a ruled STOP rather than an omission.** All four derivations published and re-derived at the objects; four dated corrections with nothing rewritten and none citing D-230; §6 kind 3 corrected with the former wording preserved; Ruling 1b's two treatments at the two tools with neither ruling superseded; the surface generator's two routes named together. **NOT met:** two of the four members are not pinned. Both STOPs are measured and reported, nothing is adopted, and no verdict, population or row moves. |
+| **E2** | **MET.** Four clauses at the dispatch-protocol section, each with its named ground and general form; no other authoring rule moved; the drift authority reports every re-aimed anchor correct at its new coordinate. |
+| **E3** | **MET.** Three generators carry the qualification and three documents render it; each preserves its former banner in the imported form; each difference measured and confined to the banner; the rulings-sort treatment reported as data with the tenth batch's characterisation corrected; and for the two surfaces Task 1 pinned, this change is visible as a deliberate act rather than a silent regeneration. |
+| **E4** | **MET.** All five values derived by two key chains over the function the tool already carried, the tool work declared at three sites; both correction sites carry a dated correction with the former values quoted and preserved and nothing rewritten; every corrected value enters by citation; the percentage and the pre-ninth-batch total withdrawn with their reason; the guard count unmoved; `tools/audit/nongating_apparatus_rows.json` byte-unchanged. |
+| **E5** | **MET**, on the run recorded in the ONE FURTHER commit and on nothing else. |
+
+## 8. The declared departures
+
+1. **Two of the four pins were not applied** — a STOP-and-report inside Task 1, with the measured
+   shape reported per member and nothing adopted (§1, F76). D-672's shape: what was done and what was
+   not are both recorded, and the remainder is untouched rather than partly worked.
+2. **Task 0 proceeded past a third hunk in the membership diff** rather than STOPping, on the reading
+   set out at §0. Declared as a judgment, with the alternative reading stated.
+3. **`gen_ratified_document_check.py`'s write path was changed** so that the ruled banner could be
+   rendered at all (§3, F77). Declared as a judgment at the site, in the commit and here.
+4. **That same tool's pin is deliberately narrow** — its live assertion is not pinned with its
+   rendering-feeding read, so a live guard is preserved (§1). Declared at the site.
+5. **`gen_session_start_read_size.py` was extended by two key chains** under the mechanism freeze
+   (§4). Declared as a judgment at three sites.
+6. **Working-tree files were content-addressed into the object database** (`git hash-object -w`) so
+   that both sides of every blob comparison are content-addressed — the route the tenth and eleventh
+   batches' own reports used, imported rather than re-invented.
+7. **Per-path git history queries** were used for the four derivations and for every candidate
+   enumeration — the same declared departure the ninth, tenth and eleventh records make. They did not
+   time out on this mount, as they did on the writing side's.
+
+## 9. The findings
+
+**Numbered from F75, as the thirtieth handover block allocates.** None of them bears on the analysis,
+its inputs, or a measurement tool the analysis depends on — every subject is the project's own record
+and the apparatus that reads it. **None is rowed; the row bar stands whole this batch.**
+
+- **F75 — A DISPATCH'S PREDICTION ABOUT A DERIVED ARTIFACT'S DIFFERENCE WAS TAKEN FROM ONE ROUTE OF
+  THE DERIVATION AND THE DERIVATION HAS TWO.** The predicted difference — a count and two added names
+  — is correct as far as it goes; a third, additive hunk arrives by the derivation's OTHER route,
+  which scans a ruling record's whole text for a tool named as pinned. **The general form: where a
+  derivation reaches its inputs by more than one route, a prediction about its output must be taken
+  from every route, and a prediction from the route whose cause is known reads as complete when it is
+  not.** §0.
+- **F76 (the largest) — AN EVIDENCE PIN TAKEN AFTER THE RULED RENDERING HAS ALREADY BEEN REWRITTEN
+  CANNOT BOTH FIX ITS INPUTS AND PASS ITS OWN CHECK.** For two of the four members the commit is
+  established and the pin still cannot be applied: on one, the committed document has drifted from
+  the ruled rendering by the pruning arc's own later acts, so pinning the inputs renders a document
+  that is not the committed one; on the other, the pin is not constructible at all, because an input
+  the generator now reads did not exist at the pinned commit — and the drift there IS the sitting's
+  own executing act, so reverting it would destroy the record of what was RULED. **The general form:
+  the pin protects TWO things that are normally the same rendering — the evidence of what was PUT and
+  the record of what was RULED — and once a post-ruling regeneration has separated them, no single
+  commit can be pinned that holds both.** The question is returned to the user at each member's own
+  record and is not decided here. §1.
+- **F77 — AN EPOCH-PINNED PASS WHOSE CHECK AND WRITE PATHS ASK DIFFERENT QUESTIONS HAS A DEAD WRITE
+  PATH, AND NOBODY FINDS OUT UNTIL A RULED ACT NEEDS A RE-RENDER.** `gen_ratified_document_check.py`
+  re-derived at the commit its artifact records under `--check` while its write path resolved HEAD;
+  at HEAD it STOPS, nine of its population's entries having been retired from the register since. The
+  guard registry's own entry for it already warned that a bare run *"REWRITES its committed
+  artifact"* — the hazard was recorded, and the fact that the bare run could not run at all was not.
+  **The general form: a check that passes and a write that cannot run are not two states of one tool;
+  the second is a defect the first conceals.** §3.
+- **F78 (small) — FIVE HAND-MEASURED CHARACTER FIGURES ALL FALL SHORT IN THE SAME DIRECTION.** The
+  correction of record replaces five published figures and every one is lower than the derived value.
+  **The general form: a set of hand figures erring in ONE direction is a convention difference rather
+  than a set of slips, and what needs recording is the convention** — which was not established here,
+  so no cause is asserted. §4.
+
+**F1–F74 ride to the preparation phase's retrospective unchanged**, with the E3 ordering defect and
+the A1 premise error. **F3 is FOURTEEN times surfaced, unfixed and unrowed** —
+`reaim_home_anchors.py --check` exits 0 while printing drifted anchors, and
+`gen_cluster_dispositions.py --verify` is the drift authority, which this session used as the
+authority throughout. **F25 did not repeat**: no changed-passage count was asserted in advance.
+**F57 was applied rather than assumed** at Task 0's own check.
+
+## 10. What this batch did NOT do
+
+No curated boot list. No fate on any `CLAUDE.md` span ruled at the eighth-return sitting, and
+`gen_claude_md_finer_archive.py --apply` was not run. No archiving pass and no re-opening of Ruling 2
+of the session-start-read sitting. **No change to rule (a)** — its pointer stands exactly as the tenth
+batch narrowed it, and `tools/audit/nongating_apparatus_rows.json` is byte-unchanged at `5bb43d0b3a`
+at every task. No candidacy acted on and no census re-pin. No sweep of the audit generators for the
+F71 argument-parser class. No mining, no empirical findings ledger, no fact-gate admission, no
+derivation, design, repair or pilot act. **No `src/` change, no golden, no test changed, moved or run,
+nothing under `tools/corpus/` or `tools/robust_stop/`, no measurement of the analysis.** **No
+open-items row created, flipped or discarded** — `OPEN_ITEMS.md` is byte-unchanged at `6ae67d8603`,
+[[OI-372]] and [[OI-374]] stand exactly as found, **[[OI-179]] stays OPEN and GATES**, and F3 stays
+surfaced, unfixed and unrowed. **`gen_gating_row_sizing.py`'s frozen population was left alone.**
+
+## 11. What awaits the user
+
+1. **THE TWO PINS THIS BATCH COULD NOT APPLY (F76)**, each with its measured shape at its own ruling
+   record: whether the artifact-inventory surface is restored to the rendering it was ruled from and
+   then pinned, or the pin is taken at a later commit and the ruled rendering left in git alone; and
+   what a pin can mean for the rulings-sort surface at all, where the ruled rendering and the ruled
+   outcome are two different documents.
+2. **The F71 sweep of the audit generators**, recorded and unowned.
+3. **The ONE remaining caller whose kind the derivation cannot place**, published as data.
+4. The curated boot list at its ruled definition; the empirical findings ledger behind its fact-gate;
+   the archiving wave read at the REGENERATED census; the mining and landing of the newly visible
+   instruction files. None of them is touched by this batch.
+
+*Provenance: CC, 2026-08-18, dispatch `cc_instruction_preparation_eleventh_amended.md`. Task 0 is
+commit `a14aff1d5f` (parent `9390e2ca2c`), pushed, 8 paths. Task 1 is `9a78ed2fea` (parent
+`a14aff1d5f`), pushed, 10 paths. Task 2 is `6fe84208c0` (parent `9a78ed2fea`), pushed, 4 paths.
+Task 3 is `65fbef6df4` (parent `6fe84208c0`), pushed, 6 paths. Task 4 is `3a37c5d069` (parent
+`65fbef6df4`), pushed, 4 paths. Task 5's close and the report are the commit that carries this
+paragraph, whose own identity it cannot contain — the E-ordering rule working and not an omission.
+The end-state guard run is in the ONE FURTHER commit after it, whose identity that commit likewise
+cannot contain. Every commit hash above was read at the object by explicit hash; every character
+figure comes from `tools/audit/session_start_read_size.json`; every guard figure from the runs
+recorded at §6; every history fact from a per-path git history query taken on this mount.*
