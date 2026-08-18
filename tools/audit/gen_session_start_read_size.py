@@ -88,8 +88,16 @@ BASELINES: tuple[tuple[str, str], ...] = (
     # reach it and forcing it would compare two different questions. The cross-regime figures for
     # that arc are recorded in the ruling records that took them and are not re-derived here (#6).
     ("1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
-     "the preparation phase's NINTH batch terminus — this batch's own base, and the state rule "
-     "(a)'s pointer was narrowed from"),
+     "the preparation phase's NINTH batch terminus — the TENTH batch's own base, and the state "
+     "rule (a)'s pointer was narrowed from"),
+    # ★ THE NARROWING ACT'S OWN READING, KEPT LIVE RATHER THAN LEFT TO BE RECOVERED (#12). The
+    # reading AT THE TREE moves with every later batch that touches a member, so the act's own
+    # effect would otherwise survive only in this artifact's blob at the commit that took it. It is
+    # carried here as a baseline instead, read at the git object like every other, so a reader sees
+    # the narrowing's effect and the record's later growth as two separate movements.
+    ("594074e1e1900079e449d2b79a38920d21bca6e6",
+     "the commit that narrowed rule (a)'s pointer — `cc_instruction_preparation_tenth.md` Task 2, "
+     "the act this measurement was built to publish"),
 )
 
 RULE_A = re.compile(r"Rules:\s*\(a\)(.*?);\s*\(b\)", re.S)

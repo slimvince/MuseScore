@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_preparation_ninth.md, Task 5",
+ "dispatch": "cc_instruction_preparation_tenth.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -17,61 +17,74 @@
    "executing_act": "cc_instruction_preparation_eighth.md, Task 5",
    "base_commit": "a21a55fc125fa58531b724f22918b29f0a1d0efc",
    "the_then_previous_batch": "cc_instruction_preparation_seventh.md"
+  },
+  {
+   "executing_act": "cc_instruction_preparation_ninth.md, Task 5",
+   "base_commit": "e36168ec3333f06b4f2752d872f9169cbbe26562",
+   "the_then_previous_batch": "cc_instruction_preparation_eighth.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "e36168ec3333f06b4f2752d872f9169cbbe26562",
- "the_then_previous_batch": "cc_instruction_preparation_eighth.md",
- "entries_moved": 6,
- "characters_moved": 8292,
+ "base_commit": "30d44165cf12fcb462ed11225b024b4a86bd17c6",
+ "the_then_previous_batch": "cc_instruction_preparation_ninth.md",
+ "entries_moved": 7,
+ "characters_moved": 9640,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1872,
-   "sha256": "5937c73586d2d771ad247bfaaceac6d2e15ed60f552dc9d8a1a36d41c8ebbafc",
+   "characters": 1875,
+   "sha256": "06b8acf1e9cb1b1c66f3837c4c2b2ecb2317a92d85d8642c9938778d61e27852",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-17 (CC — **★ THE PREPARATION PHASE'S EIGHTH BATCH CLOSES WITH ALL FOUR SITTINGS EXECUTED — AND WITH THE READ-BEFORE-MOVE SAFEGUARD REFUSING B"
+   "opening": "*2026-08-17 (CC — **★ THE PREPARATION PHASE'S NINTH BATCH CLOSES WITH THE SESSION-START READ CUT AT ITS RULED ROUTE — THE LIVE GATING ANSWER DERIVED, "
   },
   {
    "line_at_base": 10,
-   "characters": 1185,
-   "sha256": "b2dc591c710b2feb7d3391ac928099dd306f759fda3896990ff252ad8fd2ddf7",
+   "characters": 1454,
+   "sha256": "50f7b631e620f07fd15a1ee4b79440caad4b7773af02b5c5a6f374bd55420b9d",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-17 (CC — **★ THE SORT'S 60 USER-RULED PLACEMENTS RECORDED AS THEIR OWN ROUTE, AND THE SURFACE'S BANNER CORRECTED FROM AWAITING TO RULED.** No"
+   "opening": "*2026-08-17 (CC — **★ THE RETIREMENT CALLER CENSUS RE-PINNED AT THE MOVED READ REGIME — 294 MOVEMENTS, NONE LEFT OVER, AND THE READ-REGIME CLASS PLACE"
   },
   {
    "line_at_base": 12,
-   "characters": 1425,
-   "sha256": "a266def36549ec1189768f9fe64a667186e007a2839ecc2be4b5f48916cfa6d1",
+   "characters": 1141,
+   "sha256": "32c5a8dc1470ca5b3eeb1e2ecde00ee2656a498c5cd1fab5191da06ee9dbbf40",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-17 (CC — **★ THE CENSUS TAUGHT THE CALLERS SITTING'S FOUR RULED INPUTS AND RE-PINNED — 855 MOVEMENTS, NONE LEFT OVER.** No `src/` change, no "
+   "opening": "*2026-08-17 (CC — **★ `BUILD_AND_TEST.md` DEMOTED TO A CONDITIONAL SESSION-START READ — AND `DECISIONS.md` EXPLICITLY NOT, ITS GROUND RECORDED AT THE "
   },
   {
    "line_at_base": 14,
-   "characters": 1321,
-   "sha256": "b3a9351318fe68ea71d99db1e47025401ea7fc71eaa3c315a406ed73028d1bc9",
+   "characters": 1472,
+   "sha256": "650e94c1d12b1e711f971b159e2ae7513f6054d5a831d5029191a4070aa01e3f",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-17 (CC — **★ THE RESIDUE SITTING EXECUTED: 38 ENTRIES RETIRED, 53 KEEPS GIVEN THEIR RECORDED ACTS, 30 UNTRUSTED CANDIDATES CARRIED.** No `src"
+   "opening": "*2026-08-17 (CC — **★ THE RULED ARCHIVABILITY TEST APPLIED TO WHAT HAS ACCUMULATED — NINETEEN SPANS READ WHOLE, ONE MOVED, AND SEVEN LIVE OPEN ROWS RE"
   },
   {
    "line_at_base": 16,
-   "characters": 1413,
-   "sha256": "62376f9fb20a9a2efeba730daa2c55391da056944890d9d75caf540ba8e8b81b",
+   "characters": 1435,
+   "sha256": "af6fe51759d07b1e47ade5d2510297f78fa35eeb237a252f2af8f0c3981ffb76",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-17 (CC — **★ THE TWO RULED `CLAUDE.md` SPANS, READ WHOLE — AND BOTH STAY AT SITE, ONE OF THEM A RECOGNIZER ARTIFACT.** No `src/` change, no g"
+   "opening": "*2026-08-17 (CC — **★ THE LIVE GATING ANSWER DERIVED, ESTABLISHED UNDER #19 AND PUBLISHED BY IDENTITY — AND THE SESSION-START READ MOVED TO IT.** No `"
   },
   {
    "line_at_base": 18,
-   "characters": 1076,
-   "sha256": "7b4cfb1bd62aad7964e82ad29e7025c3079b096cbd62fadf2fc9732bb35c13ce",
+   "characters": 1212,
+   "sha256": "42b1389f5657c71788ac361366c037a19ed896706f7487ac81eb247875e6b08b",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-17 (CC — **★ THE FOUR SITTINGS OF 2026-08-17, THE TWENTY-FOURTH HANDOVER BLOCK AND THE DISPATCH THAT EXECUTES THEM ENTER GIT.** No `src/` cha"
+   "opening": "*2026-08-17 (CC — **★ THREE RECORDED CORRECTIONS — THE RETIRED BLOCK'S OPENING SENTENCE, THE F51 SCOPE DRIFT AT ITS THREE REMAINING SITES, AND THE ARC"
+  },
+  {
+   "line_at_base": 20,
+   "characters": 1051,
+   "sha256": "120a3de779466ba00545cc8788db9e8e0bbec56dcd0ebcc0daa0b72e0b691d00",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-17 (CC — **★ THE SESSION-START-READ SITTING, THE EIGHTH-RETURN SITTING WITH ITS F51 CORRECTION, THREE HANDOVER BLOCKS AND THE NINTH DISPATCH "
   }
  ],
  "reconciliation": {

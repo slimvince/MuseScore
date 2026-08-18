@@ -14111,3 +14111,193 @@ pushed, 19 paths. Task 4 is `e36168ec33` (parent `15dfb0e172`), pushed, 4 paths.
 the report are the commit carrying this sentence, whose own identity it cannot contain — that is
 the E-ordering terminus, not an omission — and the end-state guard run lands in ONE FURTHER commit
 after it.*
+
+---
+
+# ★ CLOSE — THE PREPARATION TENTH BATCH (2026-08-18)
+
+**Dispatch `cc_instruction_preparation_tenth.md`, executing the three rulings of
+`cowork_rulings_2026_08_17_ninth_return.md`. COMPLETE.** Six task commits and one further commit
+carrying the end-state guard run. Every act was performed on 2026-08-18, the day after the rulings
+were taken; every record written is dated accordingly and no earlier dated record is re-stamped. The
+report is `cc_report_preparation_tenth.md` and is the authority for everything below; nothing of it
+is restated at any width it does not already have (**D-431**).
+
+## 0. The reading, the start state, and Task 0a
+
+The session-start read was taken under the regime the ninth batch moved it to: `CLAUDE.md`,
+`STATUS.md` and `DECISIONS.md` in full; `BUILD_AND_TEST.md` in full, because this batch MEETS its
+condition; **the whole open-items INDEX NOT read**, rule (a)'s derived gating answer read instead.
+**And `cowork_handoff.md`'s TWENTY-EIGHTH block was read**, which Ruling 2(c) adds to every
+read-first block from this dispatch onward — that is what told this session the findings series
+stands at **F59**, the fact whose absence caused F58.
+
+**The start-state guard run is exactly what the dispatch declares:** 69 run, ONE failing
+([[OI-372]]'s tool), 4 not run, 16 historical, **zero STOPs**, and *"the guard classification
+re-derives"*. Taken at a quiet tree, before the first edit; the runner rewrote its own artifact
+byte-identically, proven by re-enumerating the tree afterwards.
+
+**ASSUMPTION A1 HELD AT THE SHAPE ITS OWN SENTENCE DESCRIBES.** Exactly ONE tracked modification in
+the whole working tree, taken blob against blob by explicit hash: ONE contiguous changed passage,
+163 insertions and 1 deletion, carrying the TWENTY-EIGHTH block and the TWENTY-SEVENTH heading's
+demotion marker. **The F57 caveat did not arise for that file and was not assumed away** — the
+premise ledger measured it LF and the platform's own check-in warning confirms it.
+
+Task 0a: `6bd9285006`, parent `1760d9a4a8`, 3 paths. **E0a — MET.**
+
+## 1. Task 0b — the two recorded corrections
+
+`59191d7e65`, 2 paths. The F57 re-issue appended beneath the TWENTY-SEVENTH block's own findings
+paragraph, quoting the sentence it corrects verbatim; the note appended after the ninth close's §8.
+**Each preserves the former number beside it (#12)**, carries its date and names the finding it
+answers. **A handover block is corrected by appending, never by rewriting**, and nothing already
+written in the ninth close's section is edited. **E0b — MET.**
+
+## 2. Task 1 — the evidence pin as a class, and a STOP-and-report over most of its membership
+
+`b0596b288b`, 9 paths. The ruling's sentence stands **verbatim** at `gen_guard_classification.py`,
+with its general form and its bound; it adds no fourth verdict and moves none of the three, because
+the pin fixes WHAT A GENERATOR READS and not whether it re-derives.
+
+**The membership is DERIVED from the ruling records themselves** — new tool
+`gen_evidence_pin_membership.py`, artifact `evidence_pin_membership.json` — by two routes: a
+generated document a record names in one of its two STRUCTURAL blocks, and a tool a record names as
+PINNED.
+
+**★ SEVEN MEMBERS: THREE ALREADY PINNED AND RECORDED UNDER THE CLASS RATHER THAN RE-TAKEN, AND FOUR
+UNRESOLVED.** The four are `gen_artifact_inventory_surface.py`, `gen_ratified_document_check.py`,
+`gen_governing_surface_readers.py` and `gen_rulings_sort.py`: **their ruling records name the
+document each was taken from and NO COMMIT**, so **assumption A3 is FALSIFIED for all four** and no
+pin was applied to any of them. **Two resolution routes were considered and declined and both
+exclusions are recorded** — the last commit that touched the document, which is demonstrably wrong
+for at least one member and would record a post-ruling rendering as the evidence of what was PUT;
+and the artifact's own `derived_at_commit`, which is the commit the derivation READ at and not the
+commit the ruling was taken at.
+
+**What the pin does NOT freeze is written at each pinned generator.** No verdict, fate, population or
+row moves; no document was regenerated to a new content. **E1 — PARTLY MET, and the unmet half is
+the dispatch's own provided outcome**, E1's own words being *pinned or STOPped on*.
+
+## 3. Task 2 — rule (a)'s pointer narrowed, and the effect published
+
+`594074e1e1`, 24 paths. Rule (a) names the **list of gating row identities**; the grounds stand in
+the same file and are opened when a verdict is CHALLENGED. **The #19 distinction stands at the
+site** — narrowing what a SESSION reads does not weaken what the GENERATOR establishes — and rule
+(a)'s authority sentence is not rewritten.
+
+**The superseded wording moved verbatim to `CLAUDE_ARCHIVE.md`**, both directions proven, with the
+**retained** half of rule (a) named rather than claimed away. **The F15 anchored-quote class was
+cleared by its ruled treatment**: 48 anchors re-aimed per citation, six derivations regenerated,
+drift authority 474/474 and 468/468 against 420/468 before, and **every regenerated surface's own
+difference MEASURED blob against blob before it was accepted** — every changed line a `CLAUDE.md`
+coordinate and nothing else.
+
+**★ THE MEASURED EFFECT IS PUBLISHED AND GENERATED:** `session_start_read_size.json`, new tool
+`gen_session_start_read_size.py`. The ordinary session-start read falls **367,121 → 296,383
+characters, −70,738 and −19.27 %**, every value read at explicit git objects. The pointer is PARSED
+FROM RULE (a)'s OWN CLAUSE, so a later narrowing moves the measurement without the tool being
+edited, and a pointer that stops resolving STOPS the run. **E2 — MET**; [[OI-179]] stays OPEN and
+GATES.
+
+## 4. Task 3 — the read-first clause at a home the record already makes one
+
+`b6134f41ff`, 4 paths. **★ A DECLARED DEPARTURE: the derived home is neither candidate the dispatch
+named.** Both were read and both excluded on their own text — the design-document template scopes
+itself to architecture and design documents, and `CLAUDE.md`'s Conventions yields to the owning
+document where one exists. **The record makes `cowork_audit_protocol.md` the home and says so in its
+own words at the section that receives the clause**, with thirty-odd register entries homed there
+and classed `process`, D-250, D-251, D-252, D-431 and D-434 among them. **No home was invented.**
+
+**F58 is recorded as the clause's ground**, with the measured instance and the lesson in its general
+form. 27 anchors re-aimed, two derivations regenerated, each difference measured. **E3 — MET.** **No
+decisions-register entry is written**: the four 2026-08-17 sitting records each state the
+classification of every ruling is OWED, and D-652 is the route by which that debt is discharged.
+
+## 5. Task 4 — the census re-pinned
+
+`30d44165cf`, 4 paths. The check **passes at the new pin**. **Eight movements, ZERO unclassed**, all
+HOLDING NAMINGs in class (iii). **No CANDIDACY VERDICT unit moved at all**, so no verdict flipped
+and no candidacy was conferred. **★ The read-regime class placed NOTHING for the second re-pin
+running** — IMPORTED not re-derived, tested BEFORE the growth relation, published as a MEASUREMENT,
+and corroborated by an unmoved holder-kind tally. The outgoing commit moved with its previous value
+recorded (#12); one account inside the tool was brought up to date and the RELATION was not touched.
+**The KIND-UNDERIVABLE population returns to the user as published data at ONE.** **E4 — MET.**
+
+## 6. Task 5 — the close, and Ruling 4's forward bound
+
+Seven `STATUS.md` pointer entries, one per task. **In the same act the NINTH batch's seven entries
+moved verbatim to `STATUS_ARCHIVE.md`** — 9,640 characters, byte-present in the archive exactly once
+and absent from the must-read, **both directions proven**. The `Last updated: ` prefix adjustment was
+imported, not re-decided; no entry needed a second. **The batch-level summary sentence is AVOIDED
+rather than declared** — the close entry states that the end-state run is not asserted there and
+lands in ONE FURTHER commit, so there is no prediction to confirm.
+
+## 7. The guard set, and assumption A2
+
+69 at the start, **71 at the end** — two new tools, each registered in the act that created it.
+Failing throughout: ONE, [[OI-372]]'s tool. **Zero STOPs at every reading.** **A2 HELD:** eight reds
+appeared, all of them the F15 anchored-quote class caused by this batch's own ordered edits, and each
+was cleared by its ruled treatment and none by an adjustment made to turn a check green. **Every run
+was taken at a quiet tree.**
+
+## 8. Surfaced findings — surfaced, not rowed; the row bar stands whole this batch
+
+- **F60 (new, the largest) — RULING 1's CLASS RULE PRESUMES A RULING RECORD NAMES A COMMIT, AND ONLY
+  ONE OF FIVE DOES.** Measured over the derived membership. The general form: **a rule whose
+  operative clause names a field the records do not carry cannot be applied without amending either
+  the rule or the records.**
+- **F61 (new) — THREE OF THE FOUR GENERATED RULING SURFACES STILL SAY OF THEMSELVES THAT NOTHING ON
+  THEM IS RULED, AND EACH HAS BEEN RULED.** The residue, governing-surface-split and
+  artifact-inventory surfaces; only the rulings-sort surface was corrected, by hand, at the eighth
+  batch. The general form: **a generated document whose banner asserts its own status goes stale the
+  moment the status changes, and nothing regenerates a banner the generator hard-codes.**
+- **F62 (new) — ONE TOOL NOW SITS IN TWO RULED CLASSES AT ONCE.** §6 kind 3 rules
+  `gen_artifact_inventory_surface.py` a census that REGENERATES; Ruling 1's class rule would PIN it.
+  Incompatible for one tool writing one document. **No verdict is taken — it returns to the user as
+  data**, and is a second, independent reason no pin was applied to that member.
+- **F63 (new, small) — THE CENSUS COUNTS ITS OWN MOVEMENT ARTIFACT AS A HOLDER**, so a share of every
+  re-pin's movement is self-referential churn; all eight this batch. The general form: **a census
+  over the record counts the record OF the census.**
+- **F64 (new, small) — A TOOL'S OWN `Run:` BLOCK NAMES A FLAG ITS COMMAND LINE DOES NOT ACCEPT**
+  (`gen_retirement_census_movement.py`, `--outgoing`). Found by running the documented invocation.
+  The general form: **prose and code are two homes for one interface (#6), and the prose goes
+  stale.**
+- **F1–F59 carried unchanged**, including **F3**, now **twelve times surfaced**, still unfixed and
+  unrowed — the dispatch bars both. **F25 did not repeat. F47's lesson was applied rather than
+  rediscovered. F57 was applied rather than assumed.**
+- **The E3 ordering defect and the A1 premise error** ride to the phase's retrospective.
+- **★ TWO DEPARTURES ARE DECLARED** — the derived home that is neither candidate the dispatch named,
+  and the second new tool, built because Task 2 step 6 orders a published measurement and D-431
+  forbids a transcribed one, so the work was blocked without a generator.
+- **No finding bears on the analysis, its inputs, or a measurement tool the analysis depends on.**
+
+## 9. What this batch did NOT do
+
+**No curated boot list. No fate on any `CLAUDE.md` span ruled at the eighth-return sitting. No
+archiving pass. No candidacy acted on and no verdict flipped. No document archived, moved or deleted
+AS A FILE. No mining, no empirical findings ledger, no fact-gate admission; no completion claim about
+the superseded phase-1 program; no derivation, design, repair or pilot act; no `src/` change, no
+golden, no test changed, moved or run, nothing under `tools/corpus/` or `tools/robust_stop/`, no
+measurement of the analysis.** **NO open-items row was created, flipped or discarded** — [[OI-372]]
+and [[OI-374]] stand exactly as found, **[[OI-179]] stays OPEN and GATES**, and F3 stays surfaced,
+unfixed and unrowed. **`gen_gating_row_sizing.py`'s frozen population was left alone.**
+
+## 10. What awaits the user
+
+1. **The FOUR UNRESOLVED members of the evidence pin's class** (F60), each published with its ruling
+   record and the reason its commit cannot be derived — and **F62's collision** on one of them.
+2. **The stale ruling-surface banners** (F61), three of them, each a document saying of itself that
+   nothing on it is ruled.
+3. **The ONE remaining caller whose kind the derivation cannot place**, published as data.
+4. The curated boot list at its ruled definition; the empirical findings ledger behind its fact-gate;
+   the archiving wave read at the REGENERATED census; the mining and landing of the newly visible
+   instruction files. None of them is touched by this batch.
+
+*Provenance: CC, 2026-08-18, dispatch `cc_instruction_preparation_tenth.md`. Task 0a is commit
+`6bd9285006` (parent `1760d9a4a8`), pushed, 3 paths. Task 0b is `59191d7e65` (parent `6bd9285006`),
+pushed, 2 paths. Task 1 is `b0596b288b` (parent `59191d7e65`), pushed, 9 paths. Task 2 is
+`594074e1e1` (parent `b0596b288b`), pushed, 24 paths. Task 3 is `b6134f41ff` (parent `594074e1e1`),
+pushed, 4 paths. Task 4 is `30d44165cf` (parent `b6134f41ff`), pushed, 4 paths. Task 5's close and
+the report are the commit carrying this sentence, whose own identity it cannot contain — that is the
+E-ordering terminus, not an omission — and the end-state guard run lands in ONE FURTHER commit after
+it.*

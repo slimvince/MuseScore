@@ -31,11 +31,11 @@
   },
   "characters_per_member": {
    "CLAUDE.md": 155067,
-   "STATUS.md": 12243,
+   "STATUS.md": 11794,
    "DECISIONS.md": 126774,
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2748
   },
-  "total_characters": 296832,
+  "total_characters": 296383,
   "the_section_that_carries_the_pointer": {
    "key": "★_the_live_gating_answer",
    "characters": 74858,
@@ -46,7 +46,7 @@
  "at_earlier_commits": [
   {
    "commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
-   "what_that_commit_is": "the preparation phase's NINTH batch terminus — this batch's own base, and the state rule (a)'s pointer was narrowed from",
+   "what_that_commit_is": "the preparation phase's NINTH batch terminus — the TENTH batch's own base, and the state rule (a)'s pointer was narrowed from",
    "total_characters": 367121,
    "the_pointer_rule_a_named_there": {
     "artifact": "tools/audit/nongating_apparatus_rows.json",
@@ -61,15 +61,41 @@
     "DECISIONS.md": 126774,
     "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer": 74858
    }
+  },
+  {
+   "commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
+   "what_that_commit_is": "the commit that narrowed rule (a)'s pointer — `cc_instruction_preparation_tenth.md` Task 2, the act this measurement was built to publish",
+   "total_characters": 296832,
+   "the_pointer_rule_a_named_there": {
+    "artifact": "tools/audit/nongating_apparatus_rows.json",
+    "keys": [
+     "★_the_live_gating_answer",
+     "gating_ids"
+    ],
+    "clause_characters": 603
+   },
+   "characters_per_member": {
+    "CLAUDE.md": 155067,
+    "STATUS.md": 12243,
+    "DECISIONS.md": 126774,
+    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2748
+   }
   }
  ],
  "movement_against_each_earlier_reading": [
   {
    "from_commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
    "from_total": 367121,
-   "to_total": 296832,
-   "change_in_characters": -70289,
-   "change_percent": -19.15
+   "to_total": 296383,
+   "change_in_characters": -70738,
+   "change_percent": -19.27
+  },
+  {
+   "from_commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
+   "from_total": 296832,
+   "to_total": 296383,
+   "change_in_characters": -449,
+   "change_percent": -0.15
   }
  ],
  "what_this_does_not_assert": [
