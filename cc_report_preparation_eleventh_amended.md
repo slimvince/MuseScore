@@ -572,11 +572,32 @@ tenth batch used: state that the end state is not asserted, and let the further 
 
 ---
 
-*Provenance: CC, 2026-08-18, executing `cc_instruction_preparation_eleventh_amended.md`. Task 0
-`a14aff1d5f` (parent `9390e2ca2c`), 8 paths. Task 1 `9a78ed2fea`, 10 paths. Task 2 `6fe84208c0`, 4
-paths. Task 3 `65fbef6df4`, 6 paths. Task 4 `3a37c5d069`, 4 paths. Task 5's close and this report are
-the commit that carries them, whose identity this sentence cannot contain — the E-ordering rule
-working rather than an omission — and the end-state guard run lands in the ONE FURTHER commit after
-it. Every commit hash above was read at the object by explicit hash; every character figure comes
-from `tools/audit/session_start_read_size.json`; every guard figure from the runs recorded at §2.a
-and in the further commit; every history fact from a per-path git history query taken on this mount.*
+## 13. The chain, named in full after every commit of it existed
+
+Every commit below was verified at the object by explicit hash — its parent confirmed and its path
+count read from the object, never from the memory of making it (**#15**).
+
+| | commit | parent | paths |
+|---|---|---|---|
+| Task 0 | `a14aff1d5f` | `9390e2ca2c` | 8 |
+| Task 1 | `9a78ed2fea` | `a14aff1d5f` | 10 |
+| Task 2 | `6fe84208c0` | `9a78ed2fea` | 4 |
+| Task 3 | `65fbef6df4` | `6fe84208c0` | 6 |
+| Task 4 | `3a37c5d069` | `65fbef6df4` | 4 |
+| Task 5 — the close and this report | `65cd91f531` | `3a37c5d069` | 6 |
+| the end-state guard run, the ONE FURTHER commit | `8e76921cd8` | `65cd91f531` | 1 |
+| the F79 correction of record | `47b5da5678` | `8e76921cd8` | 2 |
+
+**This table was written after all eight existed**, which is the E-ordering rule obeyed at the grain
+F79 records rather than merely at the larger one. **The commit that carries this section is the
+terminus and its own identity is not contained in it** — the regress ends where the record's own
+precedent ends it, with git carrying what the sentence cannot.
+
+---
+
+*Provenance: CC, 2026-08-18, executing `cc_instruction_preparation_eleventh_amended.md`; §13 and the
+F79 declarations appended 2026-08-19, after the end-state run and after every commit they name
+existed. Every commit hash above was read at the object by explicit hash; every character figure
+comes from `tools/audit/session_start_read_size.json`; every guard figure from the runs recorded at
+§2.a, at §6 of the close and in the further commits; every history fact from a per-path git history
+query taken on this mount, which did not time out here as it did on the writing side's.*
