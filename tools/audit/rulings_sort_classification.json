@@ -5094,7 +5094,7 @@
    "id": "D-431",
    "group": "T",
    "title": "A figure enters a dispatch or a report by citation to a generated artifact, never by transcription — and so does a premise",
-   "home": "cowork_audit_protocol.md:255",
+   "home": "cowork_audit_protocol.md:353",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -5108,7 +5108,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:255"
+     "the_home_it_names": "cowork_audit_protocol.md:353"
     }
    ]
   },
@@ -5160,7 +5160,7 @@
    "id": "D-434",
    "group": "T",
    "title": "The writing side runs the standing self-check before a dispatch is released, and records its output",
-   "home": "cowork_audit_protocol.md:362",
+   "home": "cowork_audit_protocol.md:484",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -5174,7 +5174,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:362"
+     "the_home_it_names": "cowork_audit_protocol.md:484"
     }
    ]
   },
@@ -5204,7 +5204,7 @@
    "id": "D-436",
    "group": "T",
    "title": "A mechanism is judged on three measured conditions — automatic, detection rate, false-positive rate — and a failing one is REPORTED, not automatically removed",
-   "home": "cowork_audit_protocol.md:395",
+   "home": "cowork_audit_protocol.md:517",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -5218,7 +5218,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:395"
+     "the_home_it_names": "cowork_audit_protocol.md:517"
     }
    ]
   },
@@ -8605,7 +8605,7 @@
    "id": "D-640",
    "group": "T",
    "title": "A count of outstanding work is derived from state at HEAD, never taken from the membership of a list of asks or from an authored disposition beside a row",
-   "home": "cowork_audit_protocol.md:323-354",
+   "home": "cowork_audit_protocol.md:445-476",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8619,7 +8619,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:323-354"
+     "the_home_it_names": "cowork_audit_protocol.md:445-476"
     }
    ]
   },
@@ -8627,7 +8627,7 @@
    "id": "D-641",
    "group": "T",
    "title": "A finding that bears on the analysis is surfaced to the user whatever its size; a finding about this project's own apparatus is rowed and left, and gets no wave",
-   "home": "cowork_audit_protocol.md:647-694",
+   "home": "cowork_audit_protocol.md:769-816",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8641,7 +8641,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:647-694"
+     "the_home_it_names": "cowork_audit_protocol.md:769-816"
     }
    ]
   },
@@ -8649,7 +8649,7 @@
    "id": "D-642",
    "group": "T",
    "title": "Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor, and is discharged only where that successor is homed",
-   "home": "cowork_audit_protocol.md:745-778",
+   "home": "cowork_audit_protocol.md:867-900",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8663,7 +8663,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:745-778"
+     "the_home_it_names": "cowork_audit_protocol.md:867-900"
     }
    ]
   },
@@ -8671,7 +8671,7 @@
    "id": "D-643",
    "group": "T",
    "title": "A claim that invokes a ruling as an application of it quotes that ruling in full, never the branch of it that supports the claim",
-   "home": "cowork_audit_protocol.md:780-803",
+   "home": "cowork_audit_protocol.md:902-925",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8685,7 +8685,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:780-803"
+     "the_home_it_names": "cowork_audit_protocol.md:902-925"
     }
    ]
   },
@@ -8693,7 +8693,7 @@
    "id": "D-644",
    "group": "T",
    "title": "Where a superseded decision's content is a REMOVAL, the owning specification states the current behaviour and records the removal as a tried-and-closed line",
-   "home": "cowork_audit_protocol.md:805-832",
+   "home": "cowork_audit_protocol.md:927-954",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8707,7 +8707,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:805-832"
+     "the_home_it_names": "cowork_audit_protocol.md:927-954"
     }
    ]
   },
@@ -8715,7 +8715,7 @@
    "id": "D-645",
    "group": "T",
    "title": "A homing dispatch may edit docs/scoring_model.md, CLAUDE.md and BUILD_AND_TEST.md, and the license is scoped to homing acts alone",
-   "home": "cowork_audit_protocol.md:966-995",
+   "home": "cowork_audit_protocol.md:1088-1117",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8729,7 +8729,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:966-995"
+     "the_home_it_names": "cowork_audit_protocol.md:1088-1117"
     }
    ]
   },
@@ -8737,7 +8737,7 @@
    "id": "D-646",
    "group": "T",
    "title": "A generated record that must outlive its own writer is frozen at an established snapshot, and the freeze is enforced by a hash STOP",
-   "home": "cowork_audit_protocol.md:621-628",
+   "home": "cowork_audit_protocol.md:743-750",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8751,7 +8751,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:621-628"
+     "the_home_it_names": "cowork_audit_protocol.md:743-750"
     }
    ]
   },
@@ -8759,7 +8759,7 @@
    "id": "D-647",
    "group": "T",
    "title": "The shell-read guard denies on indeterminate as standing policy, and the ceiling it cannot see is published in the measured rate",
-   "home": "cowork_audit_protocol.md:536-547",
+   "home": "cowork_audit_protocol.md:658-669",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8773,7 +8773,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:536-547"
+     "the_home_it_names": "cowork_audit_protocol.md:658-669"
     }
    ]
   },
@@ -8781,7 +8781,7 @@
    "id": "D-648",
    "group": "T",
    "title": "Moving an authored judgment whole into a retired block is authored-input MAINTENANCE, not a mechanism change",
-   "home": "cowork_audit_protocol.md:564-572",
+   "home": "cowork_audit_protocol.md:686-694",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8795,7 +8795,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:564-572"
+     "the_home_it_names": "cowork_audit_protocol.md:686-694"
     }
    ]
   },
@@ -8803,7 +8803,7 @@
    "id": "D-649",
    "group": "T",
    "title": "Where the implementation contradicts the decision being homed, the decision is written in as what it is with the contradiction stated beside it and no verdict taken",
-   "home": "cowork_audit_protocol.md:834-842",
+   "home": "cowork_audit_protocol.md:956-964",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8817,7 +8817,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:834-842"
+     "the_home_it_names": "cowork_audit_protocol.md:956-964"
     }
    ]
   },
@@ -8825,7 +8825,7 @@
    "id": "D-650",
    "group": "T",
    "title": "Two same-dated texts are compared verbatim before either is retired into the other, and where they bind different acts they are homed side by side",
-   "home": "cowork_audit_protocol.md:856-865",
+   "home": "cowork_audit_protocol.md:978-987",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8839,7 +8839,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:856-865"
+     "the_home_it_names": "cowork_audit_protocol.md:978-987"
     }
    ]
   },
@@ -8889,7 +8889,7 @@
    "id": "D-653",
    "group": "T",
    "title": "A correction reconciling a specification to the arm that ships must carry the behavioural non-equivalence visibly, as unmeasured",
-   "home": "cowork_audit_protocol.md:948-956",
+   "home": "cowork_audit_protocol.md:1070-1078",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8903,7 +8903,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:948-956"
+     "the_home_it_names": "cowork_audit_protocol.md:1070-1078"
     }
    ]
   },
@@ -8911,7 +8911,7 @@
    "id": "D-654",
    "group": "T",
    "title": "Where a licence's letter leaves a known falsity standing in the file it licensed, the session corrects it and REPORTS the widening in the same act",
-   "home": "cowork_audit_protocol.md:997-1004",
+   "home": "cowork_audit_protocol.md:1119-1126",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8925,7 +8925,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:997-1004"
+     "the_home_it_names": "cowork_audit_protocol.md:1119-1126"
     }
    ]
   },
@@ -8933,7 +8933,7 @@
    "id": "D-655",
    "group": "T",
    "title": "A session may author an owed establishment; its verdicts clear no guard until the reviewed set is applied",
-   "home": "cowork_audit_protocol.md:721-730",
+   "home": "cowork_audit_protocol.md:843-852",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8947,7 +8947,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:721-730"
+     "the_home_it_names": "cowork_audit_protocol.md:843-852"
     }
    ]
   },
@@ -8975,7 +8975,7 @@
    "id": "D-657",
    "group": "T",
    "title": "A mechanism change is decided over its whole population both ways before it is applied, and only the members the defect's own shape names may move",
-   "home": "cowork_audit_protocol.md:588-597",
+   "home": "cowork_audit_protocol.md:710-719",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8989,7 +8989,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:588-597"
+     "the_home_it_names": "cowork_audit_protocol.md:710-719"
     }
    ]
   },
@@ -8997,7 +8997,7 @@
    "id": "D-658",
    "group": "T",
    "title": "Where the record does not settle the question, the surface that returns it to the user gathers facts and makes no recommendation",
-   "home": "cowork_audit_protocol.md:922-933",
+   "home": "cowork_audit_protocol.md:1044-1055",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9011,7 +9011,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:922-933"
+     "the_home_it_names": "cowork_audit_protocol.md:1044-1055"
     }
    ]
   },
@@ -9061,7 +9061,7 @@
    "id": "D-661",
    "group": "T",
    "title": "Complete means complete relative to a named derivation, whose measured miss rate against the record is part of its name",
-   "home": "cowork_audit_protocol.md:434-447",
+   "home": "cowork_audit_protocol.md:556-569",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9075,7 +9075,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:434-447"
+     "the_home_it_names": "cowork_audit_protocol.md:556-569"
     }
    ]
   },
@@ -9105,7 +9105,7 @@
    "id": "D-663",
    "group": "T",
    "title": "A direction with its artifact named is not a transcribed value",
-   "home": "cowork_audit_protocol.md:303-309",
+   "home": "cowork_audit_protocol.md:425-431",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9119,7 +9119,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:303-309"
+     "the_home_it_names": "cowork_audit_protocol.md:425-431"
     }
    ]
   },
@@ -9213,7 +9213,7 @@
    "id": "D-668",
    "group": "T",
    "title": "A homing act tests a section in a FIXED ORDER — pointer move first, kind half before any write — and a findings-recording owner means HELD, never written by stretch",
-   "home": "cowork_audit_protocol.md:881-887",
+   "home": "cowork_audit_protocol.md:1003-1009",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9227,7 +9227,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:881-887"
+     "the_home_it_names": "cowork_audit_protocol.md:1003-1009"
     }
    ]
   },
@@ -9235,7 +9235,7 @@
    "id": "D-669",
    "group": "T",
    "title": "A maintenance act establishes the cause BEFORE it touches the mechanism — and a cause that resists establishment is a STOP, with no fix taken on a named-but-unasserted candidate",
-   "home": "cowork_audit_protocol.md:503-509",
+   "home": "cowork_audit_protocol.md:625-631",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9249,7 +9249,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:503-509"
+     "the_home_it_names": "cowork_audit_protocol.md:625-631"
     }
    ]
   },
@@ -9257,7 +9257,7 @@
    "id": "D-670",
    "group": "T",
    "title": "A task that cannot be stopped partway is dispatched FIRST with nothing large in front of it, and the ordering is ruled rather than preferred",
-   "home": "cowork_audit_protocol.md:1019-1025",
+   "home": "cowork_audit_protocol.md:1141-1147",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9271,7 +9271,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:1019-1025"
+     "the_home_it_names": "cowork_audit_protocol.md:1141-1147"
     }
    ]
   },
@@ -9279,7 +9279,7 @@
    "id": "D-671",
    "group": "T",
    "title": "A derivation, a measurement or a sizing over a derived population is published WHOLE or not at all, and a subset only under a scope that NAMES its members",
-   "home": "cowork_audit_protocol.md:1064-1069",
+   "home": "cowork_audit_protocol.md:1186-1191",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9293,7 +9293,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:1064-1069"
+     "the_home_it_names": "cowork_audit_protocol.md:1186-1191"
     }
    ]
   },
@@ -9301,7 +9301,7 @@
    "id": "D-672",
    "group": "T",
    "title": "A per-entry pass may be stopped at any member boundary, and the stop is RECORDED — what was done, what was not, and that the remainder is untouched",
-   "home": "cowork_audit_protocol.md:1100-1104",
+   "home": "cowork_audit_protocol.md:1222-1226",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9315,7 +9315,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:1100-1104"
+     "the_home_it_names": "cowork_audit_protocol.md:1222-1226"
     }
    ]
   },
@@ -9323,7 +9323,7 @@
    "id": "D-673",
    "group": "T",
    "title": "An enumerating pattern whose reach is unmeasured may STATE its bound on its own artifact, and the test is whether an analysis decision consumes it",
-   "home": "cowork_audit_protocol.md:465-479",
+   "home": "cowork_audit_protocol.md:587-601",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9337,7 +9337,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:465-479"
+     "the_home_it_names": "cowork_audit_protocol.md:587-601"
     }
    ]
   },

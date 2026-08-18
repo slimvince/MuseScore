@@ -250,6 +250,104 @@ document must also order the read of it.**
 finding. It names one file and one block, and the allocation follows from both sides having read
 the same thing.
 
+### A ruling record taken from a GENERATED DOCUMENT names the commit it was ruled at
+
+**Ruled by the user, 2026-08-18 — the forward clause of Ruling 1 of
+`cowork_rulings_2026_08_18_tenth_return.md`; written here by
+`cc_instruction_preparation_eleventh_amended.md` Task 2.** **A ruling record whose sitting was held
+over a GENERATED document names, in that record, the commit the document was ruled at.** It is a rule
+about how a ruling record is WRITTEN, so it binds the writing side, and it stands beside the
+read-first clause above for the same reason: both are about what a document must carry so that a
+later mechanism can do its work without guessing.
+
+**THE GROUND IS FINDING F60.** A generated document is rewritten whenever the data it is generated
+from moves, so the document a ruling was actually taken over survives only at the commit that carried
+it. The rule that protects it — a generated document put to the user for a ruling joins the pinned
+kind, and its generator thereafter reads its inputs at the git objects of the commit the ruling names
+— needs that commit to be findable. **The measured instance:** of five members reached by the
+document route, exactly ONE carried the commit in its record; the other four named the document and
+no commit at all, so the rule could not be applied to any of them without either amending the rule or
+amending the records.
+
+**THE GENERAL FORM, which is what outlives the instance:** *a rule whose operative clause names a
+field the records do not carry cannot be applied without amending either the rule or the records.*
+Amending the rule leaves a second resolution mechanism standing for every future member, which is
+what #6 exists against; amending the records closes it, and the rule then needs nothing further.
+
+*What this rule does not do:* it pins nothing, resolves no member and grades no ruling. It says what
+a ruling record carries; whether any particular generator is pinned is that member's own question.
+
+### A dispatch's DECLARED START STATE is stated at the tree the dispatch will meet, including the reds its own inputs cause
+
+**Ruled by the user, 2026-08-18 — the standing clause riding Ruling 1 of
+`cowork_rulings_2026_08_18_eleventh_stop.md`; written here by
+`cc_instruction_preparation_eleventh_amended.md` Task 2.** **A dispatch's declared start state is
+stated at the tree the dispatch will actually meet, INCLUDING the reds the dispatch's own inputs
+cause, EACH NAMED WITH ITS CAUSE.** It is a rule about how a dispatch is WRITTEN, so it binds the
+writing side, and it stands beside the read-first clause above rather than inside it: a dispatch can
+name the right handover block and still declare a start state it could not have had.
+
+**THE GROUND IS FINDING F67.** A dispatch commonly lands its own authority — the sitting record it
+executes, the dispatch itself, the report that preceded it — and those files sit on disk, untracked,
+before the executing session boots. **A derivation whose population is the FILE SYSTEM rather than
+the git index is therefore already moved by them.** **The measured instance:** a dispatch declared
+the previous batch's proven end state as its start state; the executing session measured a SECOND
+red before its first edit, because the membership derivation it was told to bind at lists the
+repository root on the file system and two of the dispatch's own untracked inputs were root-level
+ruling records. The dispatch's own words made that a STOP-and-report, and the batch returned with
+nothing executed.
+
+**THE GENERAL FORM, which is what outlives the instance:** *where a derivation's population is the
+file system rather than the index, an untracked file is already inside it — so any state declared
+"the previous batch's proven end state" is false for every such derivation the moment the next
+dispatch's own inputs are written.*
+
+**THE TWO ALTERNATIVES DECLINED are recorded because an excluded alternative is evidence about the
+choice.** Deriving the population from the git index instead was declined: the artifact would then
+report fewer ruling records than sit on disk, so a measurement whose subject is the evidence a ruling
+was taken from would stop counting a ruling record that exists and was ruled from — #12's own
+direction of loss. Exempting the check was declined as #19's silent-failure direction: a standing
+exemption teaches sessions that a red on that tool means nothing, and removes the one mechanism that
+caught the false premise.
+
+*What this rule does not do:* it changes no measurement tool, exempts no check, and authorizes no
+session to work around a red. It says what the DECLARATION must contain.
+
+### A SITTING RECORD is an interim carrier, and the commit that lands it bounds when the sitting was held
+
+**Ruled by the user, 2026-08-18 — the forward clause of Ruling 3 of
+`cowork_rulings_2026_08_18_eleventh_stop.md`; written here by
+`cc_instruction_preparation_eleventh_amended.md` Task 2.** **A sitting record is an interim carrier:
+it is written in the turn its ruling is given and lands in git at the next dispatch's Task 0 — so THE
+COMMIT THAT LANDS IT BOUNDS WHEN THE SITTING WAS HELD.** This writes down a practice the record has
+followed throughout and had never stated. **It is what a dated correction under the clause two above
+may cite for its bound**, and it binds both sides.
+
+**THE GROUND IS FINDING F72.** A derivation that must locate the rendering a user actually ruled from
+needs an upper bound on when the sitting was held, and the record supplies one that is finer than the
+date: the sitting record's own landing commit. That bound was proposed with **D-230** cited as its
+authority. **D-230's verbatim text is the decisions register's rule (c)** — *"a new ratification,
+shelving or falsification gets its register entry (data + regenerated files) IN the commit that
+records it"* — and it says nothing about a sitting record, an interim carrier or a dispatch's Task 0;
+no entry in that register's INDEX states the practice either. **The practice is real, uniform across
+the arc and derivable per member at the git objects; what was missing was a rule the record carries.**
+
+**WHY THE BOUND MATTERS RATHER THAN THE DATE, measured on the member that forced it.** Four commits
+touched one ratification surface on its sitting's own day. A date-granularity reading selects the
+last of them — which lands after the sitting record reached git AND after the sitting's own executing
+act — so it pins a POST-RULING rendering and records it as the evidence of what was PUT. That is the
+precise defect the pinning rule exists against, arriving on the exact member that rule's own ground
+names as its reason for adding a date bound at all. **The bound fails on its founding case; the
+landing commit does not.**
+
+**THE GENERAL FORM, which is what outlives the instance:** *a practice every session follows and
+every record cites is not thereby a rule, and a claim invoking a ruling as its authority must be
+checkable at that ruling's own text* (**D-643**).
+
+*What this rule does not do:* it dates no sitting by itself, pins nothing, and replaces no per-member
+derivation — the landing commit is derived per member at the git objects, and the derivation is
+published with the pin it supports.
+
 ### A figure enters a dispatch or a report by CITATION to a generated artifact, never by transcription
 
 **Ruled by the user, 2026-08-03.** A quantity may not be copied into a dispatch or into a session
@@ -299,6 +397,30 @@ and not only dispatches: every one of them originated in a report's own prose an
 next dispatch as fact. `OPEN_ITEMS.md` **OI-283** is the register-side instance of the same shape — a
 hand-typed coverage claim inside a generated file — and its remedy is now one instance of this general
 rule rather than a one-off.
+
+### A published CHARACTER FIGURE names the tool that produced it
+
+**Ruled by the user, 2026-08-18 — the standing clause riding Ruling 3 of
+`cowork_rulings_2026_08_18_tenth_return.md`; written here by
+`cc_instruction_preparation_eleventh_amended.md` Task 2.** **A character figure published anywhere in
+the record — the size of a read, of a file, of a span — NAMES THE TOOL THAT PRODUCED IT.** It stands
+beside the rule immediately above because **it is that rule's own missing half: the rule above says
+where a figure comes FROM, and this says that a reader must be able to SEE where it came from.**
+
+**THE GROUND IS FINDING F66.** A figure whose producer is not named cannot be reproduced, cannot be
+challenged, and cannot be told apart from a hand measurement — and a hand measurement is admissible
+as evidence for a ruling, never as the record's published statement of a quantity. **The measured
+instance:** a session-start-read size and a reduction percentage derived from it were published in a
+handover block's opening sentence, at the top of the entry point, one turn after the measurement they
+rest on was taken by hand. When a generator was later built for the same quantity it reproduced
+neither figure; the total was low by 6,908 characters and the whole gap was one term.
+
+**THE GENERAL FORM, which is what outlives the instance:** *a figure that becomes a headline is
+checked at a generator before it becomes one.*
+
+*What this rule does not do:* it forbids no measurement and withdraws no figure. It says that a
+published one carries its producer's name, which is what makes the rule above checkable rather than
+merely obeyed.
 
 ### A DIRECTION with its artifact named is not a transcribed value
 
