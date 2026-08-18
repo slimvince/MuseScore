@@ -50,6 +50,21 @@ THE STOPS:
     built from half of them;
   * a per-file naming tally that does not account for the namings found STOPS it.
 
+★ THE SURFACE'S BANNER CARRIES ITS RULED STATE, WRITTEN HERE RATHER THAN BY HAND (2026-08-18, on
+the user's Ruling 2 of `cowork_rulings_2026_08_18_tenth_return.md`; executed by
+`cc_instruction_preparation_eleventh_amended.md` Task 3).  The surface said of itself that nothing
+on it was ruled and nothing executed, and it had been ruled — at the governing-surface split sitting
+of 2026-08-17.  **THE TREATMENT IS IMPORTED FROM `tools/audit/gen_rulings_sort.py` (#6), which
+already carries it**: the qualification is written at the GENERATOR and rendered into the document in
+the same act, and the former banner text is preserved beside it (#12) with the former rendering left
+standing in git.  It is written at the generator and not at the file because a hand edit to a
+generated document is not durable by construction.
+
+★ WHY THIS IS ADMISSIBLE UNDER THE STANDING MECHANISM FREEZE, answered at the site rather than
+assumed away.  The freeze bars tool work that does not block the work.  **A governing surface stating
+something false about itself is #10's own doc-truth subject**, not apparatus polish; and this act
+creates NO new mechanism, because the treatment is imported from a tool that already carries it.
+
 Run:
   python tools/audit/gen_governing_surface_readers.py
   python tools/audit/gen_governing_surface_readers.py --check
@@ -305,13 +320,23 @@ def render_surface(readers: dict, decomposition: dict) -> str:
     add("# The governing-surface split — what each part of the five mandatory reads is, "
         "and where it should live")
     add()
-    add("> **STATUS: RULING SURFACE, awaiting the user. NOTHING HERE IS RULED AND NOTHING IS "
-        "EXECUTED.**")
+    add("> **STATUS: RULED, 2026-08-17. NOTHING IS EXECUTED BY IT.**")
+    add("> This surface was a ruling surface awaiting the user; **the user ruled it at the "
+        "governing-surface")
+    add("> split sitting of 2026-08-17, whose record is "
+        "`cowork_rulings_2026_08_17_governing_surface_split.md`**")
+    add("> — the authority for what was ruled and what was not, none of which is restated here "
+        "(#6).")
+    add("> **The banner it replaces read \"STATUS: RULING SURFACE, awaiting the user. NOTHING HERE "
+        "IS RULED")
+    add("> AND NOTHING IS EXECUTED.\" — true when it was written, and made untrue by the sitting; "
+        "the former")
+    add("> rendering stands in git at the commits that carried it (#12).**")
     add("> No governing file is edited by the measurement this surface reports, no span is moved, "
         "and no")
-    add("> fate below is decided. Every fate is a PROPOSAL. The user rules this surface; ONE later "
-        "dispatch")
-    add("> then executes what is ruled, and nothing before that.")
+    add("> fate below is decided BY THIS SURFACE. Every fate below is the PROPOSAL the user ruled "
+        "on; ONE later")
+    add("> dispatch executed what was ruled, and this surface executes nothing.")
     add(">")
     add("> **GENERATED, not hand-written.** Every count, every span and every reader below comes "
         "from two")

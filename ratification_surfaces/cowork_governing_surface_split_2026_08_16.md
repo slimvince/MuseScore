@@ -1,9 +1,15 @@
 # The governing-surface split — what each part of the five mandatory reads is, and where it should live
 
-> **STATUS: RULING SURFACE, awaiting the user. NOTHING HERE IS RULED AND NOTHING IS EXECUTED.**
+> **STATUS: RULED, 2026-08-17. NOTHING IS EXECUTED BY IT.**
+> This surface was a ruling surface awaiting the user; **the user ruled it at the governing-surface
+> split sitting of 2026-08-17, whose record is `cowork_rulings_2026_08_17_governing_surface_split.md`**
+> — the authority for what was ruled and what was not, none of which is restated here (#6).
+> **The banner it replaces read "STATUS: RULING SURFACE, awaiting the user. NOTHING HERE IS RULED
+> AND NOTHING IS EXECUTED." — true when it was written, and made untrue by the sitting; the former
+> rendering stands in git at the commits that carried it (#12).**
 > No governing file is edited by the measurement this surface reports, no span is moved, and no
-> fate below is decided. Every fate is a PROPOSAL. The user rules this surface; ONE later dispatch
-> then executes what is ruled, and nothing before that.
+> fate below is decided BY THIS SURFACE. Every fate below is the PROPOSAL the user ruled on; ONE later
+> dispatch executed what was ruled, and this surface executes nothing.
 >
 > **GENERATED, not hand-written.** Every count, every span and every reader below comes from two
 > committed artifacts — `tools/audit/governing_surface_spans.json` and
