@@ -559,10 +559,19 @@ discovered — the shape the two preceding batches established, imported rather 
 | Task 2 — the close and this report | `d89a1e2ac8` | `ac6cacec9f` | 6 |
 | the end-state guard run, the ONE FURTHER commit — §13 and the artifacts | `9d12b41c5e` | `d89a1e2ac8` | 3 |
 | the close's own end-state block, appended after the run existed | `459074f3b1` | `9d12b41c5e` | 1 |
+| this section, in its first form | `379a8733a5` | `459074f3b1` | 1 |
+| the self-check's correction — the retired count restated and rewritten (§8(7)) | `f0d9490e30` | `379a8733a5` | 2 |
 
 **Every row was verified at the object by explicit hash** — its parent confirmed and its path count
-read from the object, never from the memory of making it (**#15**). **This table was written after all
-five commits existed.**
+read from the object, never from the memory of making it (**#15**).
+
+**★ THE LAST TWO ROWS WERE ADDED AFTER THIS SECTION WAS FIRST WRITTEN, and that is stated rather than
+smoothed over.** When this table was first committed it named the chain to `459074f3b1` and declared
+its own commit as the row it could not hold. The standing self-check then found the breach recorded at
+§8(7), whose correction is a further commit — so the table stopped one commit short of what a sentence
+could name. It is completed here, and the declaration below is unchanged in kind: **what a table
+cannot name is its own commit, not the commits after it, and a table that stops earlier than that is
+short by omission rather than by construction.**
 
 **The further commit carries THREE paths and not four**, because the guard classification artifact
 came out byte-unchanged when it was regenerated. It is stated here so that the count cannot be read as
