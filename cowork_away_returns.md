@@ -15032,3 +15032,41 @@ is in the ONE FURTHER commit after it, whose identity that commit likewise canno
 commit hash above was read at the object by explicit hash; every blob comparison was taken between
 two content-addressed objects; every guard figure comes from the runs recorded at §0 and §4, and the
 END-STATE figures are deliberately absent from this section.*
+
+## 12. ★ APPENDED AFTER THE RUN AND AFTER THE CLOSE COMMIT EXISTED — the second guard state, the close's own SHA, and E5
+
+**Nothing in this section was written before the thing it names existed.** It is appended in the ONE
+FURTHER commit, which is the tenth batch's own route and the remedy the eleventh batch's **F79**
+names.
+
+**THE CLOSE COMMIT IS `e96d80b550`, parent `18127bab01`, pushed, 6 paths** — verified at the object,
+its parent confirmed and its path count read from the object. §6 above could not contain its own
+identity when it was written; this line names it now.
+
+**THE END-STATE GUARD RUN, taken at the quiet tree that commit left. The sequence is recorded rather
+than the summary, because the sequence is the evidence:**
+
+1. **`gen_session_start_read_size.py --check` went RED on the first end-state run** — expected, and
+   **F79**'s own instance: Task 5's close moves `STATUS.md`, a member of the read that tool measures.
+   **Cleared by regenerating the measurement and by nothing else.**
+2. **The full guard set then returned `72 guard(s) run, 1 failing, 4 not run, 16 historical
+   record(s)`**, the ONE failing being `gen_filing_convention_application.py --check` — [[OI-372]]'s
+   tool and no other — with **ZERO STOPs**, and the guard classification re-deriving.
+3. **The guard registry was then regenerated in write mode at that same tree**, and the
+   classification after it. `gen_guard_state.py --check` now re-derives, **which it did NOT at this
+   batch's start state (§0, F83)**, and the `unknown` cell §8.3 declares is resolved to `PASS`.
+
+| | run | passing | failing | not run | historical | STOPs |
+|---|---:|---:|---:|---:|---:|---:|
+| start state, before any edit | 71 | 69 | 2 | 4 | 16 | 0 |
+| **end state, at the quiet tree the close left** | **72** | **71** | **1** | 4 | 16 | **0** |
+
+The population rose by **exactly the one invocation Task 3 registered**, and the two start-state reds
+are down to the one standing red the record already carries.
+
+**E5 — MET**, on that run and on nothing else. §7's row above said it would be graded here, and this
+is where it is graded. The report's §14 carries the same reading and is the authority for it.
+
+*Provenance: CC, 2026-08-19, appended in the ONE FURTHER commit after `e96d80b550`, whose own identity
+that commit cannot contain. Every value here was read from the runs recorded above; the close
+commit's hash, parent and path count were read at the object by explicit hash.*
