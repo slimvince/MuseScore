@@ -508,3 +508,55 @@ yet.
 above was read at the object by explicit hash; every blob comparison was taken between two
 content-addressed objects; every guard figure in §2.a comes from the run recorded there. **No
 end-state value is stated in the commit that carries §1–§12.***
+
+---
+
+## 13. The end state — appended AFTER the run that produced it, in the ONE FURTHER commit
+
+**The close commit is `1fdce14fdd`, parent `a33a933404`, pushed, 6 paths** — verified at the object,
+its parent confirmed and its path count read from the object. Its own identity could not be written
+into it, which is why it is stated here.
+
+**THE SEQUENCE IS RECORDED RATHER THAN THE SUMMARY, because the sequence is the evidence.** Every run
+below was taken at the quiet tree the close commit left, and every value was read off the run, never
+inferred:
+
+1. **`gen_session_start_read_size.py --check` went RED on the first end-state run** — *"STALE vs the
+   measurement"* — **expected, and F79's own instance**: Task 3's close moves `STATUS.md`, a member of
+   the read that tool measures. **Cleared by regenerating the measurement and by nothing else**; the
+   re-check then prints *"the session-start read measurement re-derives"*, with rule (a)'s
+   artifact-and-key pointer still resolving.
+2. **The full guard set then returned: `73 guard(s) run, 1 failing, 4 not run, 16 historical
+   record(s)`** — the ONE failing being `[FAIL] tools/audit/gen_filing_convention_application.py
+   --check`, [[OI-372]]'s tool and no other — with **ZERO STOPs**.
+3. **The guard registry was then regenerated in write mode at that same tree, and the classification
+   AFTER it** — the order the classification's own STOP requires. `gen_guard_state.py --check` now
+   prints *"the guard state re-derives"*, which it did **NOT** at this batch's start state (§2.a,
+   F83), and `gen_guard_classification.py --check` prints *"the guard classification re-derives"*.
+
+| | run | passing | failing | not run | historical | STOPs |
+|---|---:|---:|---:|---:|---:|---:|
+| start state, before any edit | 72 | 70 | 2 | 4 | 16 | 0 |
+| **end state, at the quiet tree the close left** | **73** | **72** | **1** | 4 | 16 | **0** |
+
+**The guard population rose by exactly one invocation**, which is Task 2's new measurement tool
+registered in the act that created it, and the two start-state reds are down to the one standing red
+the record already carries.
+
+**★ F86 DID NOT RECUR, and that is a consequence of the order rather than luck.** The new tool's
+`state_at_the_committed_tree` cell in `guard_classification.json` reads **`PASS`**, not `unknown`,
+because the registry was regenerated **before** the classification read it. The twelfth batch had to
+declare that cell as `unknown` and resolve it in its own further commit; here the ordering resolved
+it in one pass.
+
+**E3 — MET**, on that run and on nothing else.
+
+**★ THIS SECTION WAS WRITTEN AFTER THE RUNS AND AFTER THE CLOSE COMMIT EXISTED**, and the commit
+carrying it cannot contain its own identity — the regress ends where the record's own precedent ends
+it, with git carrying what a sentence cannot. **No sentence asserting the end state was written
+before the run that produced it existed**, which is the E-ordering rule at both grains and the remedy
+F79 names.
+
+*Provenance: CC, 2026-08-19, appended in the ONE FURTHER commit after `1fdce14fdd`. Every value in
+this section was read from the runs recorded above at the quiet tree that commit left; the close
+commit's hash, parent and path count were read at the object by explicit hash.*

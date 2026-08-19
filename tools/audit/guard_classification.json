@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 84,
-    "re_derives_a_live_invariant": 66,
+    "tools_classified": 85,
+    "re_derives_a_live_invariant": 67,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -555,6 +555,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_ratified_document_check.py, the `THE STOPS` list of its module docstring; `b1_keeps()`, which PARSES the ten keeps from the ruling record and halts on any other number; `locate_ruling()`, which locates every ordering sentence; `passage_of()`, which re-reads each recorded coordinate and cross-checks it",
       "why": "LIVE, and its live half is the strongest of the three passes this preparation phase has added. Its POPULATION is parsed from the ruling record on every run: the ten entries the (B1) limb kept are read out of the ruling's own bullet, and a bullet naming any number other than ten, or naming an entry the recovery pass did not return ACT-FOUND for, halts it rather than being corrected — so the population cannot drift away from the words that fixed it, and the derivation cannot outlive them. Live too is the coordinate cross-check: every act the recovery pass recorded as a document, a line and a span is re-read and compared with the quote that pass published, so a document that has moved under a line is reported rather than graded as though it had not. ★ WHAT IT DELIBERATELY DOES NOT ASSERT: that its evidence re-derives against the CURRENT decisions register. Its inputs are read from the git objects at the commit the artifact records, on the same ground its sibling guard states — the soft-discard this evidence is gathered for moves those very inputs (#12; the OI-301 hazard). It asserts nothing about whether any entry's result is right: the ratification recognizer is authored, its reach is unmeasured (#19), and every result is published with the passage quoted at its line so the reading is the user's and not this tool's.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_recognizer_establishment_sort.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_recognizer_establishment_sort.py, THE TEST and THE BOUND paragraphs of its module docstring; `build()`, which re-walks and re-parses every tool under `tools/` on every run; the seed, unplaced and self-status reconciliations in `main()`",
+      "why": "LIVE. Its population is the TOOL TREE, re-walked and re-parsed on every run: a tool that becomes a recognizer over a population enters the sort the day it does, and one that stops being one leaves. Its STOPs are demands about the tree as it stands rather than a dated reading, and all three were shown BOTH to fire and to stay quiet when it was built (#19): an establishment seed that stops deriving to the side the record establishes for it halts the run; the members the derivation cannot place must reconcile with the authored reasons in BOTH directions, so a new unrecognised shape cannot enter silently and an authored reason cannot outlive its subject; and — the one peculiar to this tool — IT IS A MEMBER OF ITS OWN POPULATION, so its declared status about itself must AGREE with the verdict its own test derives for it, and a disagreement halts it rather than letting the artifact claim something its own derivation does not support. It carries no recorded commit of its own and reads none, so the OI-301 shape does not arise for it. ★ WHAT IT DOES NOT ASSERT: that a member on the no-external-population side is WRONG, that an ESTABLISHED member's individual verdicts are right, or that the member list is COMPLETE — the membership recognizer's reach beyond the three seeds is UNMEASURED, which is why the artifact publishes a LOWER BOUND and says so of itself. ★ AND IT AUTHORIZES NOTHING: the ruling it exists for (user, 2026-08-19, Ruling 1) says in its own words that the result authorizes NOTHING, and the sort is the standing input to a later ruled act rather than a work list.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },
