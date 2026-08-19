@@ -817,6 +817,25 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "and a differently-phrased naming reports UNRESOLVED — the recoverable direction, since an "
         "unpinned member is a question and a wrongly pinned one is a false record of what was "
         "PUT."),
+    # ---- AUTHORED 2026-08-19, cc_instruction_preparation_twelfth.md Task 3 -------------------
+    "tools/audit/gen_epoch_write_path.py": (
+        LIVE, "gen_epoch_write_path.py, HOW THE POPULATION IS DERIVED and THE BOUND paragraphs of "
+              "its module docstring; `build()`, which re-parses every tool under `tools/` on every "
+              "run; the seed and unplaced reconciliations in `main()`",
+        "LIVE. Its population is the TOOL TREE, re-parsed on every run from the tools' own syntax "
+        "trees: a pass that gains the epoch shape enters the artifact the day it gains it, and one "
+        "that loses it leaves. Every one of its STOPs is a demand about the tree as it stands "
+        "rather than a dated reading — an establishment seed that stops deriving to the side the "
+        "record establishes for it halts the run, and the members the recognizers cannot place "
+        "must reconcile with the authored reasons in BOTH directions, so a new unrecognised shape "
+        "cannot enter silently and an authored reason cannot outlive its subject. It carries no "
+        "recorded commit of its own and reads none, so the OI-301 shape does not arise for it. "
+        "★ WHAT IT DOES NOT ASSERT: that an ASYMMETRIC member is broken, that a SYMMETRIC one "
+        "needs nothing, or that the population is complete — the recognizers' reach beyond the two "
+        "seeds is UNMEASURED and the artifact states it. ★ AND IT AUTHORIZES NOTHING: the ruling "
+        "it exists for (user, 2026-08-19, Ruling 3) says each pass is corrected only when a ruled "
+        "act needs its write path, and the enumeration is the standing input to that act rather "
+        "than a work list."),
     "tools/audit/gen_governing_surface_readers.py": (
         LIVE, "gen_governing_surface_readers.py, the WHAT IS DERIVED and WHAT IT DOES NOT "
               "ESTABLISH paragraphs of its module docstring; `measure()`, which scans the tracked "

@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 83,
-    "re_derives_a_live_invariant": 65,
+    "tools_classified": 84,
+    "re_derives_a_live_invariant": 66,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -413,6 +413,14 @@
       "why": "★ CLASSIFIED IN THE SAME ACT, and for the reason `gen_july_screen.py` and `gen_period_stratum_split.py` are LIVE: what it re-derives is not a judgment but the enumeration itself. Every commit, every hunk, every verdict and every count is recomputed from GIT OBJECTS on each run — the population from `rev-list`, each hunk from `show -U0 -M -C` — and the range's END is read back from the committed artifact rather than taken as HEAD, so a later commit does not turn it red, which is the OI-301/OI-305 shape avoided by construction rather than tolerated. What it asserts is therefore a live invariant: the committed candidate list still follows from the history it was drawn from, and a hand edit to either artifact halts it instead of moving that list silently. Its STOPs ride with it — a hunk carrying no verdict, a PURE verdict with no clause, a boundary commit that is not an ancestor of the range end, and two reconciliations that must balance. ★ WHAT IT DOES NOT ASSERT: that a FLAG is a defect or a PURE harmless — its own words are that neither verdict is a view on whether a change should have happened — and the recoverability of the generated-artifact class it does not enumerate per hunk is published as UNESTABLISHED rather than assumed.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_epoch_write_path.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_epoch_write_path.py, HOW THE POPULATION IS DERIVED and THE BOUND paragraphs of its module docstring; `build()`, which re-parses every tool under `tools/` on every run; the seed and unplaced reconciliations in `main()`",
+      "why": "LIVE. Its population is the TOOL TREE, re-parsed on every run from the tools' own syntax trees: a pass that gains the epoch shape enters the artifact the day it gains it, and one that loses it leaves. Every one of its STOPs is a demand about the tree as it stands rather than a dated reading — an establishment seed that stops deriving to the side the record establishes for it halts the run, and the members the recognizers cannot place must reconcile with the authored reasons in BOTH directions, so a new unrecognised shape cannot enter silently and an authored reason cannot outlive its subject. It carries no recorded commit of its own and reads none, so the OI-301 shape does not arise for it. ★ WHAT IT DOES NOT ASSERT: that an ASYMMETRIC member is broken, that a SYMMETRIC one needs nothing, or that the population is complete — the recognizers' reach beyond the two seeds is UNMEASURED and the artifact states it. ★ AND IT AUTHORIZES NOTHING: the ruling it exists for (user, 2026-08-19, Ruling 3) says each pass is corrected only when a ruled act needs its write path, and the enumeration is the standing input to that act rather than a work list.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "unknown"
     },
     {
       "tool": "tools/audit/gen_evidence_pin_membership.py",

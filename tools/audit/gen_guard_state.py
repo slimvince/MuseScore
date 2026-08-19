@@ -691,6 +691,28 @@ AUTHORED = [
      "clause that makes it one so the authored half is checkable by reading three clauses; and "
      "nothing about whether the read is small enough, which is [[OI-370]]'s own subject"),
 
+    # ---- AUTHORED 2026-08-19, cc_instruction_preparation_twelfth.md Task 3 -------------------
+    # THE EPOCH-PINNED PASSES AND WHAT THEIR WRITE PATHS RESOLVE, registered in the act that
+    # creates the tool — the standing new-tool rule. `--check` and never the bare invocation, for
+    # the ordinary reason: run with no flag it REWRITES its committed artifact.
+    ("tools/audit/gen_epoch_write_path.py", ["--check"],
+     "which passes are EPOCH-PINNED — their `--check` re-deriving at the commit their own "
+     "committed artifact RECORDS rather than at the tree — and, per member, whether the WRITE path "
+     "reads that same recorded commit back or carries the literal HEAD instead. The population is "
+     "DERIVED on every run from the tools' own syntax trees and never listed, so a pass that gains "
+     "or loses the epoch shape moves the artifact on the day it happens. What it guards is not the "
+     "verdicts, which are a reading returned to the user, but three demands on the tree AS IT "
+     "STANDS: the two establishment seeds — one member per verdict, each established at the code — "
+     "must still derive to the side the record establishes for them, so a recognizer that has "
+     "stopped recognizing the shape it was built for HALTS rather than publishing a smaller "
+     "population; and the members the recognizers CANNOT place must reconcile with the authored "
+     "reasons in BOTH directions, so a new unrecognised shape cannot enter silently and an "
+     "authored reason cannot outlive its subject. ★ WHAT IT DOES NOT ASSERT: that an ASYMMETRIC "
+     "member is broken, that a SYMMETRIC one needs nothing, or that the population is complete — "
+     "it is complete relative to recognizers whose reach beyond the two seeds is UNMEASURED and "
+     "stated as such. ★ AND IT AUTHORIZES NOTHING: the ruling it exists for says each pass is "
+     "corrected only when a ruled act needs its write path"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

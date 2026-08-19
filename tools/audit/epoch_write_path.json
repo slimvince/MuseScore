@@ -1,0 +1,233 @@
+{
+ "what_this_is": "THE EPOCH-PINNED PASSES AND WHAT EACH ONE'S WRITE PATH RESOLVES. A MEASUREMENT AND A PUBLICATION: nothing here corrects a write path, edits an enumerated pass, or grades a member as owed. Every member is derived from the tools' own syntax trees; none is listed by hand (D-431).",
+ "generated_by": "tools/audit/gen_epoch_write_path.py",
+ "generated_for": "cc_instruction_preparation_twelfth.md, Task 3",
+ "the_ruling_verbatim": "The enumeration is published as data. Each pass is corrected only when a ruled act needs its write path, and the published enumeration is the standing input to that act rather than a work list.",
+ "the_ruling": "User, 2026-08-19, Ruling 3 of `cowork_rulings_2026_08_19_eleventh_return.md`.",
+ "what_this_authorizes": "NOTHING. No write path is corrected here, no member is acted on, and no member is owed by appearing here. A member is corrected only when a ruled act needs its write path.",
+ "how_it_is_derived": {
+  "population": "every `*.py` under `tools/`, parsed with the standard library's own syntax tree",
+  "own_outputs": "a module-level constant bound to a path AND used as a write target, in the two idioms the tools actually use — `NAME.write_text(...)` and `open(NAME, \"w\"...)`",
+  "the_split": "inside `main`, every top-level `if` whose test carries the literal `--check` or `--verify`, or a local name bound from such a literal; those bodies are the CHECK path and everything else in `main`, including such an `if`'s `else`, is the WRITE path",
+  "a_read_back": "a `.get(\"…commit…\")` or `[\"…commit…\"]` whose receiver traces to one of that tool's own outputs being read — directly, through a local bound from one, or through a `with open(OUT) as fh` handle",
+  "a_member": "a tool whose CHECK path carries a read-back — which is what makes it epoch-pinned",
+  "the_verdict": "SYMMETRIC where the WRITE path carries a read-back too; ASYMMETRIC where it does not and carries the literal `HEAD` instead; UNPLACED where it carries neither"
+ },
+ "the_bound_what_it_cannot_see": [
+  "It reads SOURCE, never a run. It reports what each path is written to resolve, not what a run would do — and it cannot tell an asymmetric member that would merely DIFFER from one that would STOP, which turns on the population the pass reads at HEAD and is a property of the tree on the day of the run. That an asymmetric run may STOP rather than differ is F77's measured instance.",
+  "It reads the statements of `main` only. A commit resolved inside a helper `main` calls — a builder's own default argument, for instance — is invisible to it, and so is a tool whose check/write split lives outside `main`. A member of that shape lands in UNPLACED rather than being guessed.",
+  "It reads a tool's OWN outputs. A pass pinned at the commit ANOTHER tool's artifact records is outside this population by construction, having no self-recorded commit for its two paths to disagree about.",
+  "A computed key name or a computed output path carries no literal to find.",
+  "It recognises a read-back by the KEY carrying the word `commit`. A pass recording its epoch under a differently-worded key reports as a non-member — the recoverable direction, a missing member being a question and a wrongly placed one a false statement about a write path."
+ ],
+ "counts": {
+  "tools_walked": 338,
+  "members": 7,
+  "symmetric": 1,
+  "asymmetric": 3,
+  "unplaced": 3
+ },
+ "the_members": {
+  "tools/audit/gen_artifact_inventory.py": {
+   "verdict": "ASYMMETRIC — the write path carries the literal HEAD and no read-back",
+   "own_outputs_the_derivation_found": [
+    "OUT"
+   ],
+   "the_key_the_check_path_reads_back": [
+    "derived_at_commit"
+   ],
+   "the_key_the_write_path_reads_back": [],
+   "the_write_path_carries_the_literal_HEAD": true,
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_discard_reach_split.py": {
+   "verdict": "UNPLACED — the write path carries neither, and the resolution is outside what `main` shows",
+   "own_outputs_the_derivation_found": [
+    "OUT"
+   ],
+   "the_key_the_check_path_reads_back": [
+    "measured_at_commit"
+   ],
+   "the_key_the_write_path_reads_back": [],
+   "the_write_path_carries_the_literal_HEAD": false,
+   "why_the_derivation_cannot_place_it": "its write path calls its builder with NO argument, so whatever commit the write resolves is the builder's own default and sits outside `main`. What `main` shows is that the two paths do NOT pass the same thing: the check path passes the recorded commit explicitly and the write path passes nothing."
+  },
+  "tools/audit/gen_doc_change_candidates.py": {
+   "verdict": "ASYMMETRIC — the write path carries the literal HEAD and no read-back",
+   "own_outputs_the_derivation_found": [
+    "OUT_HUNKS",
+    "OUT_MAIN"
+   ],
+   "the_key_the_check_path_reads_back": [
+    "end_commit"
+   ],
+   "the_key_the_write_path_reads_back": [],
+   "the_write_path_carries_the_literal_HEAD": true,
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_phase1_gate_readers.py": {
+   "verdict": "UNPLACED — the write path carries neither, and the resolution is outside what `main` shows",
+   "own_outputs_the_derivation_found": [
+    "OUT"
+   ],
+   "the_key_the_check_path_reads_back": [
+    "measured_at_commit"
+   ],
+   "the_key_the_write_path_reads_back": [],
+   "the_write_path_carries_the_literal_HEAD": false,
+   "why_the_derivation_cannot_place_it": "the same shape as the member above: its write path calls its builder with NO argument, so the resolution is the builder's own default and sits outside `main`, while the check path passes the recorded commit explicitly."
+  },
+  "tools/audit/gen_ratified_document_check.py": {
+   "verdict": "SYMMETRIC — the write path reads the commit the committed artifact records",
+   "own_outputs_the_derivation_found": [
+    "OUT",
+    "SURFACE"
+   ],
+   "the_key_the_check_path_reads_back": [
+    "derived_at_commit"
+   ],
+   "the_key_the_write_path_reads_back": [
+    "derived_at_commit"
+   ],
+   "the_write_path_carries_the_literal_HEAD": true,
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_retirement_caller_check.py": {
+   "verdict": "UNPLACED — the write path carries neither, and the resolution is outside what `main` shows",
+   "own_outputs_the_derivation_found": [
+    "OUT"
+   ],
+   "the_key_the_check_path_reads_back": [
+    "measured_at_commit"
+   ],
+   "the_key_the_write_path_reads_back": [],
+   "the_write_path_carries_the_literal_HEAD": false,
+   "why_the_derivation_cannot_place_it": "its write path takes the commit from the command line — `--at <commit>` — and REFUSES to write without one, on its own stated ground that the reading is a statement about one tree and the commit is part of the finding. So it resolves neither the recorded commit nor HEAD, and the shape is a third one this recognizer does not name."
+  },
+  "tools/audit/gen_sole_carrier_subclass.py": {
+   "verdict": "ASYMMETRIC — the write path carries the literal HEAD and no read-back",
+   "own_outputs_the_derivation_found": [
+    "OUT"
+   ],
+   "the_key_the_check_path_reads_back": [
+    "derived_at_commit"
+   ],
+   "the_key_the_write_path_reads_back": [],
+   "the_write_path_carries_the_literal_HEAD": true,
+   "why_the_derivation_cannot_place_it": null
+  }
+ },
+ "★_the_unplaced_members_returned_to_the_user": {
+  "what_this_is": "members the recognizers cannot place. Each is a STANDING STOP-AND-REPORT to the user and is never guessed into one of the two verdicts. The authored set and the derived set are reconciled BOTH ways on every run: an unplaced member not in the authored set halts the run, so a new unrecognised shape cannot enter silently; and an authored member the derivation now places halts it too, so an authored reason cannot outlive its subject.",
+  "members": {
+   "tools/audit/gen_discard_reach_split.py": "its write path calls its builder with NO argument, so whatever commit the write resolves is the builder's own default and sits outside `main`. What `main` shows is that the two paths do NOT pass the same thing: the check path passes the recorded commit explicitly and the write path passes nothing.",
+   "tools/audit/gen_phase1_gate_readers.py": "the same shape as the member above: its write path calls its builder with NO argument, so the resolution is the builder's own default and sits outside `main`, while the check path passes the recorded commit explicitly.",
+   "tools/audit/gen_retirement_caller_check.py": "its write path takes the commit from the command line — `--at <commit>` — and REFUSES to write without one, on its own stated ground that the reading is a statement about one tree and the commit is part of the finding. So it resolves neither the recorded commit nor HEAD, and the shape is a third one this recognizer does not name."
+  }
+ },
+ "the_establishment": {
+  "what_this_is": "two members the record already establishes at the code, one per verdict, re-checked on every run. A disagreement HALTS the derivation rather than being published (#19).",
+  "seeds": {
+   "tools/audit/gen_artifact_inventory.py": {
+    "expected": "ASYMMETRIC — the write path carries the literal HEAD and no read-back",
+    "derived": "ASYMMETRIC — the write path carries the literal HEAD and no read-back",
+    "agrees": true,
+    "why_the_record_establishes_it": "its write path resolves HEAD unconditionally and reads no recorded commit back, while its check path re-derives at the commit its committed artifact records — read at the code, 2026-08-19"
+   },
+   "tools/audit/gen_ratified_document_check.py": {
+    "expected": "SYMMETRIC — the write path reads the commit the committed artifact records",
+    "derived": "SYMMETRIC — the write path reads the commit the committed artifact records",
+    "agrees": true,
+    "why_the_record_establishes_it": "corrected to the symmetric shape at `cc_instruction_preparation_eleventh_amended.md` Task 3 and DECLARED as a judgment there, in that batch's report and close; the comment block above its write path states the correction and its measured ground"
+   }
+  }
+ },
+ "what_the_derivation_passed_over": {
+  "what_this_is": "tools it could not reach, recorded rather than dropped (#12). None is a finding: each is a shape the recognizers do not read.",
+  "source_would_not_parse": [],
+  "no_main_function": [
+   "tools/joint_estimator/adoption_measure.py"
+  ],
+  "no_check_write_split_in_main": [
+   "tools/audit/claude_md_rule_triage.py",
+   "tools/audit/decisions/gen_apply_field_diff.py",
+   "tools/audit/decisions/gen_cluster_dispositions.py",
+   "tools/audit/decisions/gen_home_classification.py",
+   "tools/audit/decisions/gen_homing_edit_shape.py",
+   "tools/audit/decisions/gen_live_prohibition_pointers.py",
+   "tools/audit/decisions/gen_oi333_repair.py",
+   "tools/audit/decisions/gen_outstanding_delegations.py",
+   "tools/audit/decisions/gen_phase1g_triage.py",
+   "tools/audit/decisions/gen_phase1m_measurements.py",
+   "tools/audit/decisions/gen_phase1n_reading_regime.py",
+   "tools/audit/decisions/gen_phase1p_delegation_bar.py",
+   "tools/audit/decisions/gen_phase1q_record_divergence.py",
+   "tools/audit/decisions/gen_phase1w_legacy_verification.py",
+   "tools/audit/decisions/gen_reads1_yield.py",
+   "tools/audit/decisions/gen_reads2_yield.py",
+   "tools/audit/decisions/gen_reads3_yield.py",
+   "tools/audit/decisions/gen_reads4_oi326_application.py",
+   "tools/audit/decisions/gen_reads4_yield.py",
+   "tools/audit/decisions/gen_reads5_repack.py",
+   "tools/audit/decisions/gen_reads5_yield.py",
+   "tools/audit/decisions/gen_reads6_yield.py",
+   "tools/audit/decisions/gen_retired_subject_moves.py",
+   "tools/audit/decisions/gen_route_homing_edit_shape.py",
+   "tools/audit/decisions/gen_true_half_reach.py",
+   "tools/audit/decisions/gen_true_half_reach_rows.py",
+   "tools/audit/decisions/gen_verbatim_subject_consistency.py",
+   "tools/audit/decisions/reaim_home_anchors.py",
+   "tools/audit/gen_arm_comment_sweep.py",
+   "tools/audit/gen_census_movement_classification.py",
+   "tools/audit/gen_claude_md_finer_archive.py",
+   "tools/audit/gen_claude_md_finer_spans.py",
+   "tools/audit/gen_claude_md_finer_surface.py",
+   "tools/audit/gen_discard_records.py",
+   "tools/audit/gen_framework_untrusted_candidates.py",
+   "tools/audit/gen_gating_row_sizing.py",
+   "tools/audit/gen_governing_surface_readers.py",
+   "tools/audit/gen_governing_surface_spans.py",
+   "tools/audit/gen_governing_surface_split.py",
+   "tools/audit/gen_index_status_normalization.py",
+   "tools/audit/gen_oi356_parser_correction.py",
+   "tools/audit/gen_oi367_opening_correction.py",
+   "tools/audit/gen_post_split_archive.py",
+   "tools/audit/gen_ratification_surface_set.py",
+   "tools/audit/gen_reserved_word_scanner.py",
+   "tools/audit/gen_retirement_census_movement.py",
+   "tools/audit/gen_status_archive_pass.py",
+   "tools/audit/gen_status_batch_bound.py",
+   "tools/audit/gen_status_residue_move.py",
+   "tools/audit/gen_test_construction_evidence.py",
+   "tools/audit/local_patches_check.py",
+   "tools/audit/oi199/gen_joint_disposition_annotations.py",
+   "tools/audit/oi349_record_arm_precondition_probe.py",
+   "tools/audit/process_check.py",
+   "tools/audit/reaim_ratification_surface_paths.py",
+   "tools/audit/shell_read_guard.py",
+   "tools/build_score_census_registry.py",
+   "tools/joint_estimator/adoption_measure_b.py",
+   "tools/joint_estimator/fit_run.py",
+   "tools/joint_estimator/gen_fermata_boundary.py",
+   "tools/joint_estimator/gen_input_parity.py",
+   "tools/joint_estimator/gen_marginals_ref.py",
+   "tools/joint_estimator/gen_note_events.py",
+   "tools/joint_estimator/gen_posterior_slice.py",
+   "tools/joint_estimator/gen_window_study.py",
+   "tools/joint_estimator/search_run.py",
+   "tools/notation_seams/choose_exposure_constants.py",
+   "tools/notation_seams/gen_callpath_facts.py",
+   "tools/open_items_split_check.py",
+   "tools/run_diag20_targeted.py",
+   "tools/stage5_2_2c_sweep.py",
+   "tools/stage5_2_2d_surface.py",
+   "tools/stage5_2_2d_sweep.py",
+   "tools/stage5_2_2e_liveness.py"
+  ]
+ },
+ "what_this_does_not_assert": [
+  "That an ASYMMETRIC member is broken. Its check path passes and its artifact stands; what is asymmetric is which question each path asks.",
+  "That a SYMMETRIC member needs nothing. It asserts only that both paths read the same recorded commit back.",
+  "That the population is complete. It is complete relative to the recognizers named above, whose reach is stated in the bound and is UNMEASURED beyond the two seeds."
+ ]
+}
