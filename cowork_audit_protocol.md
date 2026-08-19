@@ -188,6 +188,52 @@ handover, not a home for a standing rule — the finding that produced this sect
 wider than this document's audits**: they govern every dispatch, and this document is their home
 because it is where the project's dispatch-construction rules already live.
 
+**★ HOW THE STANDING CLAUSES ARE OBTAINED, AND WHY NO NUMBER IS WRITTEN ANYWHERE (user-ruled
+2026-08-19 — Ruling 3 of `cowork_rulings_2026_08_19_thirteenth_return.md`; written here by
+`cc_instruction_preparation_fourteenth.md` Task 1).** **THE STANDING CLAUSES ARE THE `###` SECTIONS
+OF THIS SECTION THAT CARRY THE MEMBERSHIP MARKER, AND A SESSION OBTAINS THEM BY READING THEM HERE.**
+Every member carries the same one-line marker directly above its own heading, so the population is
+greppable by a reader with no tool at all, and a section written later is a member exactly when
+someone writes the marker on it. **The marker sits ABOVE the heading rather than beneath it, and the
+position is load-bearing rather than a matter of taste:** many register entries quote one of these
+sections verbatim FROM ITS HEADING, so a line inserted beneath a heading falls inside the quoted
+block and the quote stops existing at its own home — measured, on this file, when the marker was
+first written beneath the headings. **THE NUMBER IS NEVER RESTATED — not in a dispatch, not in a
+handover block, not in a session report and not in a close** (**#6**, **D-431**). A dispatch's
+read-first block therefore names the MARKER and never a number.
+
+**THE GROUND IS FINDING F88.** Every dispatch had carried a mandatory instruction of the form *meet
+all N of them before another is written*, and the population that instruction named was enumerated
+nowhere: the number lived only in prose, copied from each dispatch to the next; nothing in this file
+marked a section as a member; and no derivation produced them. **A number carried under a MANDATORY
+obligation is a second home for a population that has no first home, and the obligation is
+unfalsifiable until the population is written down.**
+
+**WHY THE MARKER RATHER THAN A GENERATOR.** A recognizer over prose is the route **F42** already
+refuted at the cost of a whole pass, and such a recognizer would have no independently-known
+population to reconcile against — so its output would publish as a LOWER BOUND with its reach
+declared UNMEASURED, which is a floor used to police a mandatory obligation, and that is answering
+**F84** by doing the thing F84 warns against. **The section population, by contrast, is externally
+enumerable** — the `###` headings of one section of one file, obtainable by anyone who reads it — so
+a placement over it reconciles BOTH WAYS against a side the placement does not author, with a halt
+on any section the test cannot place.
+
+**THE TEST A PLACEMENT APPLIES, so that a later marker is written to the same test rather than to a
+fresh one.** A section is a member when all three hold: it STATES A RULE rather than recording a
+finding; the rule BINDS how a dispatch, a session report or a ruling record is written, sequenced or
+executed — that is, it binds one of the two sides in the conduct of a dispatch cycle; and THIS
+SECTION IS THAT RULE'S HOME rather than a pointer to it. A section failing any of the three carries
+no marker, and a section the test cannot place is a STOP back to the user, never defaulted to either
+side.
+
+**★ WHAT THE MARKER IS, HONESTLY.** The placement is **AUTHORED per section** and it is **NOT a
+per-run guard**: nothing re-checks a placement on a later run, and a section written later carries no
+marker until someone writes one. What is established is that the population it is placed against is
+externally enumerable and that the placement reconciled against it in both directions on the day it
+was made — not that any one section's placement is right, which stays challengeable at the section.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### One side writes the instruction files and the other executes them, never the reverse
 
 **Cowork writes instruction files. CC executes them. Never the other way around.** When the user
@@ -197,6 +243,8 @@ read source files via the file tools, write `.md` instruction files, and update 
 and `STATUS.md` after a report lands. It **must not** edit anything under `src/`, run builds, or
 spawn agents that run build commands or modify `src/`. *Why:* violating this rule has broken the
 codebase twice, at the E1 and E2b increments — the evidence is stated with the rule itself.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### Dispatches are written only when they are next; a parked instruction is revalidated first
 
@@ -210,6 +258,8 @@ a dated dispatch note; an executing session must not run a parked instruction wi
 *Why:* the three failure modes are stated with the rule — a pre-written instruction goes stale as
 its premises change under it, risks being skipped, and risks out-of-order execution.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A running dispatch is never interrupted or steered mid-flight
 
 **No mid-flight steering (user, 2026-07-05):** a running session is never interrupted or relayed to.
@@ -218,6 +268,8 @@ it as a stop or branch rule, and anything not covered waits for the report and i
 verification. The only mid-run channel is the one the executing session itself opens, its own STOP
 question, answered when it asks. *Why:* the evidence is stated with the rule — interruptions have
 several times proven disastrous.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### Every dispatch's read-first block names the CURRENT HANDOVER BLOCK of `cowork_handoff.md`
 
@@ -250,6 +302,8 @@ document must also order the read of it.**
 finding. It names one file and one block, and the allocation follows from both sides having read
 the same thing.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A ruling record taken from a GENERATED DOCUMENT names the commit it was ruled at
 
 **Ruled by the user, 2026-08-18 — the forward clause of Ruling 1 of
@@ -276,6 +330,8 @@ what #6 exists against; amending the records closes it, and the rule then needs 
 
 *What this rule does not do:* it pins nothing, resolves no member and grades no ruling. It says what
 a ruling record carries; whether any particular generator is pinned is that member's own question.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### Where the ruled rendering and the committed document have SEPARATED, the ruling record names the BLOB and the member stays unpinned
 
@@ -316,6 +372,8 @@ property **D-253** already rests on.
 *What this rule does not do:* it unpins nothing and re-takes no pin — a member already carrying one
 is untouched — and it authorizes no restore, no overwrite and no regeneration of any document.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A dispatch's DECLARED START STATE is stated at the tree the dispatch will meet, including the reds its own inputs cause
 
 **Ruled by the user, 2026-08-18 — the standing clause riding Ruling 1 of
@@ -352,6 +410,8 @@ caught the false premise.
 *What this rule does not do:* it changes no measurement tool, exempts no check, and authorizes no
 session to work around a red. It says what the DECLARATION must contain.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### Where a derivation reaches its inputs by MORE THAN ONE ROUTE, a prediction about its output is taken from EVERY route
 
 **Ruled by the user, 2026-08-19 — the second clause of Ruling 2 of
@@ -375,6 +435,8 @@ cause is known reads as complete when it is not.*
 
 *What this rule does not do:* it changes no derivation, adds no check and grades no difference. It
 says what a prediction about a derived artifact's difference must cover before it is stated.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A check on a derived artifact's difference bars the MOVEMENT of a value, not the ADDITION of a derived cross-reference the ordered act causes
 
@@ -407,6 +469,8 @@ mechanical and resolves case by case.
 
 *What this rule does not do:* it widens no check, exempts no artifact and admits no movement of a
 value. An addition still enters the report, with its cause established at the record's own text.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A SITTING RECORD is an interim carrier, and the commit that lands it bounds when the sitting was held
 
@@ -442,6 +506,8 @@ checkable at that ruling's own text* (**D-643**).
 *What this rule does not do:* it dates no sitting by itself, pins nothing, and replaces no per-member
 derivation — the landing commit is derived per member at the git objects, and the derivation is
 published with the pin it supports.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A figure enters a dispatch or a report by CITATION to a generated artifact, never by transcription
 
@@ -493,6 +559,8 @@ next dispatch as fact. `OPEN_ITEMS.md` **OI-283** is the register-side instance 
 hand-typed coverage claim inside a generated file — and its remedy is now one instance of this general
 rule rather than a one-off.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A published CHARACTER FIGURE names the tool that produced it
 
 **Ruled by the user, 2026-08-18 — the standing clause riding Ruling 3 of
@@ -517,6 +585,8 @@ checked at a generator before it becomes one.*
 published one carries its producer's name, which is what makes the rule above checkable rather than
 merely obeyed.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A DIRECTION with its artifact named is not a transcribed value
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 35(c)). A
@@ -536,6 +606,8 @@ words; the artifact and the field remain the only place a quantity is read. And 
 **#24**: a DIFFERENCE asserted between two measured quantities still carries its uncertainty, or is
 not asserted — a direction is a statement about one result, not a licence for an unqualified
 comparison.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A count of OUTSTANDING work is DERIVED from state, never taken from the membership of a list of asks
 
@@ -569,6 +641,8 @@ the STATE is derived, at `tools/audit/decisions/outstanding_delegations.json`. T
 form of the same shape `OPEN_ITEMS.md` **OI-283** and the figures rule above already carry: a
 recorded finding that is never marked discharged becomes a count of work that is no longer owed.
 Tracked at `OPEN_ITEMS.md` **OI-335**.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### The writing side runs the standing self-check too, before a dispatch is released
 
@@ -606,6 +680,8 @@ differently (OI-289); **(g)** a reading-coverage count carried forward for three
 between three proxies asserted without its uncertainty, against #24
 (`tools/audit/decisions/phase1n_reading_regime.json` → `proxy.ordering_decision`). Every one of the
 eight was found by the EXECUTING side, running the check the writing side had not.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### The three measured conditions a mechanism is judged on — and who decides when one fails
 
@@ -648,6 +724,8 @@ retires any prose, which is why they failed the withdrawn test and is not a defe
 The guard's third condition is met only while it is ARMED; until it is, that is recorded as an
 expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292).
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### "Complete" means complete relative to a NAMED DERIVATION, whose measured miss rate against the record is part of its name
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 31; restated as
@@ -678,6 +756,8 @@ unfalsified, and the register states the test nowhere else.
 **What it does not authorize.** No rename, no guard, no fix to the analysis, no design and no
 inference change. Adoption of a derived population as a diff-time check remains conditional on
 MEASURED clean separation, which is the third of the conditions above.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### An ENUMERATING PATTERN whose reach has never been measured may STATE its bound on its own artifact instead of owing a detection measurement — and the test is whether an ANALYSIS DECISION consumes it
 
@@ -716,6 +796,8 @@ output is read by sessions maintaining the record — so the ruling stated the b
 artifact and declined to seed the measurement. **The excluded alternative is recorded:** owing the
 measurement, which is the reading the record already carried and which had produced no measurement
 in any of the waves that met the pattern.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A RECOGNIZER OVER A POPULATION states, at its own artifact, whether an INDEPENDENTLY-KNOWN population exists to reconcile against — and where none does, it publishes its output as a LOWER BOUND with its reach declared UNMEASURED, never as a census
 
@@ -775,6 +857,8 @@ UNMEASURED declaration is what keeps that residual visible rather than closing i
 *What this rule does not do:* it edits, widens or acts on no recognizer, orders no re-establishment
 pass, and grades no existing artifact. It says what a recognizer's own artifact must state about
 itself, and nothing else.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A maintenance act ESTABLISHES THE CAUSE before it touches the mechanism — and a cause that resists establishment is a STOP, with no fix taken on a named-but-unasserted candidate
 
@@ -837,6 +921,8 @@ the published rate as covering more than it does.**
 **What this does not authorize.** No fix to the analysis, no design, no inference change, and no
 further widening of the guard: a widening is a mechanism change, which stays the user's.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### Moving an authored judgment WHOLE into a retired block is MAINTENANCE, not a mechanism change
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_return.md`, Ruling 4(b)). A generated
@@ -860,6 +946,8 @@ apart either returns to the user on every stale authored input or edits mechanis
 of maintenance. It is recorded because the same shape recurred repeatedly across consecutive
 batches, each time as a pass REFUSING TO RUN rather than as a defect a reader happened to notice —
 which is those passes' own STOPs working.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A mechanism change is decided over its WHOLE population BOTH WAYS before it is applied, and only the members the defect's own shape names may move
 
@@ -894,6 +982,8 @@ worse than it had been recorded to be rather than better.
 changes at all stays the user's, as the reservation above states. This says what the evidence must
 look like before the question is put.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A generated record that must outlive its own writer is FROZEN at an established snapshot, and the freeze is a hash STOP
 
 **Ruled by the user, 2026-08-08** (`cowork_rulings_2026_08_08_pre_away.md`, Ruling 1). **Where a
@@ -919,6 +1009,8 @@ register points at rather than a second copy of the rule (#6).
 
 **What it does not authorize.** No fix to the analysis, no design and no inference change. It says
 how a record-bearing generated artifact is kept, and nothing else.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A finding that bears on the analysis is SURFACED whatever its size; an apparatus finding is ROWED AND LEFT
 
@@ -994,6 +1086,8 @@ that what a stage waits on and what phase 1 owes are different tests with differ
 > inside a decision ruled 2026-08-04 — so it takes the form the overtaking block at the end of the
 > ordering-rule section below already uses.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A session may AUTHOR an establishment; its verdicts clear no guard until the reviewed set is applied
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_third_stop.md`, Ruling 18). The block
@@ -1017,6 +1111,8 @@ is one line in a reading file rather than an edit that has to be unwritten.
 a verdict authored outside the originating pass's method — a session meeting a case that method does
 not cover states the gap rather than substituting a method of its own — and it moves no status that
 the reviewed application does not move. No fix to the analysis, no design, no inference change.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor
 
@@ -1053,6 +1149,8 @@ applied per entry over finish-line item 1's no-home class at
 It authorizes no fix to the analysis, no design, no inference change, and no re-classification of any
 entry's home class. It decides which entries criterion C1 reaches, and nothing else.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A claim that invokes a ruling AS AN APPLICATION quotes that ruling in full, not the branch that supports the claim
 
 **Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.md`, §0a R2). **A
@@ -1077,6 +1175,8 @@ stating separately rather than being read into D-431.
 
 **Both sides are bound**, the writing side's dispatches and the executing side's reports alike, on
 the same ground D-431 gives: a dispatch's premise becomes the next session's starting assumption.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### Where a superseded decision's content is a REMOVAL, the specification states the current behaviour and records the removal as a tried-and-closed line
 
@@ -1107,6 +1207,8 @@ misdescribing the code.
 re-classification of any entry's home class. It says what the owning specification owes for one shape
 of entry, and nothing else.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### Where the implementation CONTRADICTS the decision being homed, the shelving is written in AS a shelving, the contradiction stated beside it, and the questions POINTED at their rows
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_return.md`, Ruling 5). Same family as
@@ -1128,6 +1230,8 @@ the analysis that a filing act may not take. The form lets the record become COM
 becoming untrue — **both facts visible, neither adjudicated** — which is exactly the split D-231's
 own phase 1 draws between making the specifications complete and true, and fixing what they then
 expose. It is now a twice-ruled, named pattern rather than a one-off treatment.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### Two same-dated texts are compared VERBATIM before either is retired into the other; where they bind different acts they are homed SIDE BY SIDE
 
@@ -1153,6 +1257,8 @@ of two prohibitions — a session could have obeyed the surviving text in full w
 about to be retired into it. Without the condition in the record, the next session meeting two
 same-dated texts has only the temptation to tidy them into one; without the remedy beside it, a
 session that runs the test correctly is left with a STOP and no form to write the answer in.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A homing act tests a section in a FIXED ORDER — pointer move first, kind half before any write — and a findings-recording owner means HELD, never written by stretch
 
@@ -1195,6 +1301,8 @@ relaxing it: three needed no home at all, and the fourth closed by a write only 
 MADE the general rule a session may not compose. A procedure whose STOP is confirmed by every case
 it stopped on is not a formality.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### Where the record does not settle the question, the surface that returns it to the user gathers FACTS and makes NO recommendation
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 27), on the
@@ -1221,6 +1329,8 @@ side by side, with two readings visible and neither chosen. A pass permitted to 
 have chosen one, and the conflict would have been resolved by a session's reading of intent rather
 than by the user on facts.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A correction that reconciles a specification to the arm that SHIPS carries the behavioural non-equivalence visibly, as unmeasured
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_second_stop.md`, Ruling 15). The
@@ -1238,6 +1348,8 @@ an equivalence nobody measured (#24), on the surface a later design will treat a
 reference. The instance that produced the ruling had that shape precisely: two mechanisms meet one
 requirement, one erasing a condition unconditionally and the other only making it expensive, with no
 comparison of the two outputs taken.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A homing dispatch may edit three further files, and the license is scoped to homing acts alone
 
@@ -1270,6 +1382,8 @@ than a homing act. **The dispatch that records the license performs no homing un
 and its first exercise are deliberately separate acts, so that what the license permits is on the
 record before anything is written under it.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### Where a licence's letter leaves a known falsity standing in the file it licensed, the session CORRECTS it and REPORTS the widening in the same act
 
 **Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_third_stop.md`, Ruling 17). The
@@ -1291,6 +1405,8 @@ is false at HEAD, in the very file being edited because its account of itself wa
 doc-sync half of phase 1 does not admit. The excluded alternative is recorded with the ruling —
 reverting the second correction, which would knowingly re-insert a false statement in order to make a
 process point.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A task that CANNOT BE STOPPED PARTWAY is dispatched FIRST, with nothing large in front of it — and the ordering is RULED, never left to a preference
 
@@ -1337,6 +1453,8 @@ because homing them is a separate act nobody has ruled.
 > arbitrates between are governed text rather than dispatch prose, which is what made the arbitration
 > readable only through this entry.
 
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
+
 ### A derivation, a measurement or a sizing over a derived population is published WHOLE or not at all — and a subset is published only under a scope that NAMES its members
 
 **Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_twelfth_stop.md`, Ruling 55), which
@@ -1372,6 +1490,8 @@ to pay rather than an argument against this one.
 members are complete in themselves, so stopping inside one publishes nothing partial. And a
 deliberately bounded population — a derivation whose OWN declared scope is a subset — is not a
 partial publication of a larger one, provided the boundary is declared where the artifact is read.
+
+*★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
 ### A PER-ENTRY PASS may be stopped at any member boundary, and the stop is RECORDED — what was done, what was not, and that the remainder is untouched rather than partly worked
 
