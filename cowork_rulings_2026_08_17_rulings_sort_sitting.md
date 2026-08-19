@@ -120,3 +120,33 @@ execution**, and it is the one member where the two things Ruling 1 protects —
 was PUT, and the record of what was RULED — are carried by two different renderings. The question is
 returned to the user and is not decided here; the ruled rendering stands in git at the commit named
 above and nothing has been done to it.
+
+*Provenance: ★ DATED CORRECTION, APPENDED 2026-08-19 — nothing above is rewritten, and the dated
+correction of 2026-08-18 stands exactly as it was written. **THE RULED RENDERING IS NAMED AT THE
+OBJECT.** The surface this sitting was ruled from stands at blob
+`dfbe91b747d1b967837d3d261e1b35737e6b3174`, beside the commit `53e552296f` the correction above
+already names. A LATER READER OBTAINS THE OBJECT RATHER THAN TRUSTING A HASH, with `git cat-file
+blob dfbe91b747d1b967837d3d261e1b35737e6b3174` — content-addressed and self-verifying, so git
+either produces that object or errors loudly — and `git show
+53e552296f:ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md` produces the same
+object. THE DERIVATION, taken at the git objects and cited to itself rather than looked up: the
+commit is the one the correction above derived under the landing-commit bound and is NOT re-taken
+here; the blob is that document's tree entry at that commit, read with `git ls-tree`. THE MEASURED
+REASON THE PIN IS NOT APPLIED, re-established at the objects rather than inherited from any earlier
+reading, in two facts. FIRST, IT IS NOT CONSTRUCTIBLE AT ALL: `git ls-tree 53e552296f --
+cowork_rulings_2026_08_17_rulings_sort_sitting.md` returns nothing, and that record is present at
+`570f2b63b1`; the sort surface's generator
+(`tools/audit/gen_rulings_sort.py`, the constant `SORT_RULING`) binds that record as an input and
+reads it for the sixty user-ruled placements of §2, so a read of its inputs at the commit above
+halts the tool rather than rendering anything. SECOND, THE COMMITTED DOCUMENT IS THIS SITTING'S OWN
+OUTCOME: at commit `e3583c2720`, the tree this derivation was taken at, that document's object is
+`5c62e70a387a6591d2474f147606000718ac4293`, and its difference from the ruled rendering IS the
+executing act of §2 — reverting it would remove the user's own placements, which #12 forbids
+outright. THE CONSEQUENCE, ruled AS A CLASS and not for this member: the member is recorded NOT
+PINNED with the measured reason above; no document is restored, overwritten or regenerated; and the
+evidence is preserved by naming the object, git supplying exactly and self-verifyingly the end a
+pin was only ever a means to. AUTHORITY: Ruling 1 of
+`cowork_rulings_2026_08_19_eleventh_return.md`, standing on Ruling 1 of
+`cowork_rulings_2026_08_18_tenth_return.md` as amended by Ruling 3 of
+`cowork_rulings_2026_08_18_eleventh_stop.md`. The five members already carrying a pin are untouched
+by it.*

@@ -270,3 +270,34 @@ already been rewritten by the pruning arc's later acts, and it stands in git at 
 above. The question — whether the surface is restored to the rendering it was ruled from and then
 pinned, or the pin is taken at a later commit and the ruled rendering left in git alone — is
 returned to the user and is not decided here.
+
+*Provenance: ★ DATED CORRECTION, APPENDED 2026-08-19 — nothing above is rewritten, and the dated
+correction of 2026-08-18 stands exactly as it was written. **THE RULED RENDERING IS NAMED AT THE
+OBJECT.** The surface this sitting was ruled from stands at blob
+`d04aa5726b2cd9a398e093928f7d4bbe2b6063ff`, beside the commit `b1d48d6c87` the correction above
+already names. A LATER READER OBTAINS THE OBJECT RATHER THAN TRUSTING A HASH, with `git cat-file
+blob d04aa5726b2cd9a398e093928f7d4bbe2b6063ff` — content-addressed and self-verifying, so git
+either produces that object or errors loudly — and `git show
+b1d48d6c87:ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` produces the same
+object. THE DERIVATION, taken at the git objects and cited to itself rather than looked up: the
+commit is the one the correction above derived under the landing-commit bound and is NOT re-taken
+here; the blob is that document's tree entry at that commit, read with `git ls-tree`. THE MEASURED
+REASON THE PIN IS NOT APPLIED, re-established at the objects rather than inherited from any earlier
+reading: the committed document has SEPARATED from the ruled rendering — at commit `e3583c2720`,
+the tree this derivation was taken at, that document's object is
+`aa6157eb061955f584d3cd7a8ad7addc0c2d17f4` against the ruled rendering's
+`d04aa5726b2cd9a398e093928f7d4bbe2b6063ff` — so no single commit carries both the evidence of what
+was PUT in front of the user and the document as the record now holds it, and fixing the
+generator's two input routes at the commit above would render a document that is not the committed
+one. THE CONSEQUENCE, ruled AS A CLASS and not for this member: the member is recorded NOT
+PINNED with the measured reason above; no document is restored, overwritten or regenerated; and the
+evidence is preserved by naming the object, git supplying exactly and self-verifyingly the end a
+pin was only ever a means to. AUTHORITY: Ruling 1 of
+`cowork_rulings_2026_08_19_eleventh_return.md`, standing on Ruling 1 of
+`cowork_rulings_2026_08_18_tenth_return.md` as amended by Ruling 3 of
+`cowork_rulings_2026_08_18_eleventh_stop.md`. The five members already carrying a pin are untouched
+by it. ★ AND ONE READING INSIDE THE CORRECTION ABOVE IS GIVEN THE TREE IT WAS TAKEN AT rather than
+left to be reconciled against this one: its `9f76701ed4` is that document's object at the tree the
+eleventh batch's Task 1 met, before that same batch's later task wrote the ruled banner
+qualification into the document; the two readings are of one document at two different trees, and
+neither corrects the other.*
