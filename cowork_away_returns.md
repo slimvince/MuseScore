@@ -15651,3 +15651,51 @@ the preceding batches rather than re-invented.
 above was read at the object by explicit hash; every blob comparison was taken between two
 content-addressed objects; every guard figure in §0 comes from the run recorded there. **No end-state
 value is stated in the commit that carries this section.***
+
+## 9. The end state — appended AFTER the runs, in a further commit
+
+**The close commit is `d89a1e2ac8`, parent `ac6cacec9f`, pushed, 6 paths**, verified at the object;
+its own identity could not be written into it, which is why §8 above could not name it and this line
+does. **The ONE FURTHER commit carrying the report's §13 and the artifacts the runs produced is
+`9d12b41c5e`, parent `d89a1e2ac8`, pushed, 3 paths.**
+
+**★ AND THE E-ORDERING IS PROVEN IN THE TEXT AT THE CLOSE COMMIT, not only in its path-set** — the
+test the writing side applied to the preceding batch. The report BLOB at `d89a1e2ac8` is `966536140f`
+and carries **no `## 13.` heading, no `## 14.` heading and not one occurrence of the string
+`guard(s) run`**, counted at the object.
+
+**THE END-STATE GUARD RUN, taken at the quiet tree the close commit left. The sequence is recorded
+rather than the summary, because the sequence is the evidence:**
+
+1. **`gen_session_start_read_size.py --check` went RED on the first end-state run** — expected, and
+   **F79**'s own instance: Task 2's close moves `STATUS.md`, a member of the read that tool measures.
+   **Cleared by regenerating the measurement and by nothing else.**
+2. **The full guard set then returned `73 guard(s) run, 1 failing, 4 not run, 16 historical
+   record(s)`**, the ONE failing being `gen_filing_convention_application.py --check` — [[OI-372]]'s
+   tool and no other — with **ZERO STOPs**.
+3. **The guard registry was then regenerated in write mode at that same tree, and the classification
+   AFTER it** — the order the classification's own STOP requires. `gen_guard_state.py --check` now
+   re-derives, **which it did NOT at this batch's start state (§0, F83)**, and the classification
+   re-derives with it.
+
+| | run | passing | failing | not run | historical | STOPs |
+|---|---:|---:|---:|---:|---:|---:|
+| start state, before any edit | 73 | 71 | 2 | 4 | 16 | 0 |
+| **end state, at the quiet tree the close left** | **73** | **72** | **1** | 4 | 16 | **0** |
+
+**The population did not move**, this batch having built no measurement tool, and the two start-state
+reds are down to the one standing red the record already carries — the membership check cleared at
+Task 0 and nothing else added. **The classification artifact came out byte-unchanged**, which is why
+the further commit carries three paths rather than four, and it is stated rather than left as a
+discrepancy between this table and that commit's path count.
+
+**★ F86 DID NOT RECUR**, the registry having been regenerated **before** the classification read it —
+the order the classification's own STOP requires rather than luck.
+
+**E2 — MET**, on that run and on nothing else. §5's row above said it would be graded here, and this
+is where it is graded. The report's §13 carries the same reading and is the authority for it.
+
+*Provenance: CC, 2026-08-19, appended after the further commit `9d12b41c5e` existed, in a commit whose
+own identity it cannot contain. Every value here was read from the runs recorded above; the close
+commit's and the further commit's hashes, parents and path counts were read at the object by explicit
+hash.*
