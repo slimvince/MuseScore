@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 38,
+  "ruling_records_read": 39,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -179,6 +179,7 @@
   "cowork_rulings_2026_08_17_sixth_return.md",
   "cowork_rulings_2026_08_18_eleventh_stop.md",
   "cowork_rulings_2026_08_18_tenth_return.md",
+  "cowork_rulings_2026_08_19_eleventh_return.md",
   "cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
