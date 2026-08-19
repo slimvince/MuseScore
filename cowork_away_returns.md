@@ -15478,7 +15478,8 @@ placed exactly once, none in both, none in neither, and the two sides summing to
 record and were not re-decided** — the read-first clause and the sitting-record interim-carrier
 clause.
 
-**EXACTLY ONE SECTION IS OUT, and the reason is recorded rather than left to be inferred:** the
+**THE OUT SIDE IS A NAMED SECTION AND NO OTHER, and the reason is recorded rather than left to be
+inferred:** the
 shell-read policy's section, whose own opening sentence names its subject as *the guard that enforces
 the working-tree-read rule*. Its two operative statements bind a running mechanism — the guard denies
 where it cannot decide, and its establishment artifact publishes the ceiling it cannot see — while the

@@ -189,8 +189,8 @@ defeated the test, so no STOP was owed.**
 **The two disputed members are IN by the record and were not re-argued** — the read-first clause and
 the sitting-record interim-carrier clause. Ruling 3 states the reason for each; it was imported.
 
-**★ EXACTLY ONE SECTION IS OUT, and its reason is recorded per member rather than left to be
-inferred.** It is the shell-read policy's section, whose own opening sentence names its subject: *two
+**★ THE OUT SIDE IS A NAMED SECTION AND NO OTHER, and its reason is recorded at that member rather
+than left to be inferred.** It is the shell-read policy's section, whose own opening sentence names its subject: *two
 standing statements about the guard that enforces the working-tree-read rule*. Its two operative
 statements bind a **running mechanism** — the guard denies where it cannot decide, and its
 establishment artifact publishes the ceiling it cannot see — whereas the rule that binds a SIDE is the
@@ -374,6 +374,16 @@ and by the bound being published rather than hidden — and **not** discharged.
 6. **One commit message was attempted with a PowerShell here-string in the Bash tool and failed**
    before any commit was made. It was re-taken through a message file written with the file tools, and
    **no write was made through shell redirection.**
+7. **★ THE STANDING SELF-CHECK CAUGHT THIS REPORT BREACHING THE VERY RULE THE BATCH WROTE, AND THE
+   CORRECTION IS DECLARED RATHER THAN SILENTLY APPLIED (#12).** Re-reading the diff after the close was
+   committed, §10 of this report stated the IN and OUT sides **as a count** — which is exactly the
+   second home the retirement convention exists to remove, restated in a session report, one of the
+   four surfaces that convention names. Two further phrasings in this report and one in the close
+   carried a count of the OUT side. All four were rewritten to NAME the section placed OUT and to say
+   that no other was, so the population is obtained by reading the markers and by nothing else. **The
+   correction lands in its own commit after the close**, and is recorded here rather than absorbed,
+   because a rule its own author breaches on the day it is written is evidence about how easily it is
+   breached.
 
 ---
 
@@ -403,11 +413,11 @@ and the writing side is better placed than this session to judge whether it dese
 
 The record does not settle these, so no recommendation is made (**D-658**).
 
-1. **One section is OUT and thirty-eight are IN.** The test placed every section without ambiguity by
-   its own terms, but a placement so lopsided invites the question whether limb (ii) is being read as
-   widely as the ruling meant. **The question is whether the writing side wants the OUT placement
-   reviewed** — its reason is recorded per member at §3.c, and reversing it would add a member without
-   removing one, which is the harmless direction.
+1. **Only the shell-read policy's section was placed OUT; every other section is IN.** The test placed
+   every section without ambiguity by its own terms, but a placement that lopsided invites the question
+   whether limb (ii) is being read as widely as the ruling meant. **The question is whether the writing
+   side wants the OUT placement reviewed** — its reason is recorded at that member in §3.c, and
+   reversing it would add a member without removing one, which is the harmless direction.
 2. **The marker is authored and is not a per-run guard** (§3.e). Nothing re-checks a placement, and a
    section written later carries no marker until someone writes one. Ruling 3 refuses a recognizer over
    prose, and this session did not build one. **Whether anything mechanical is wanted at the boundary —
