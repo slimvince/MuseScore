@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_preparation_twelfth.md, Task 5",
+ "dispatch": "cc_instruction_preparation_thirteenth.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -32,61 +32,66 @@
    "executing_act": "cc_instruction_preparation_eleventh_amended.md, Task 5",
    "base_commit": "3a37c5d06901821eaed3224865a5bcc57630c883",
    "the_then_previous_batch": "cc_instruction_preparation_tenth.md"
+  },
+  {
+   "executing_act": "cc_instruction_preparation_twelfth.md, Task 5",
+   "base_commit": "18127bab0160d21aa0ced9170a9fe3c968888673",
+   "the_then_previous_batch": "cc_instruction_preparation_eleventh_amended.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "18127bab0160d21aa0ced9170a9fe3c968888673",
- "the_then_previous_batch": "cc_instruction_preparation_eleventh_amended.md",
+ "base_commit": "a33a933404507c855201c35e36df23b38470946f",
+ "the_then_previous_batch": "cc_instruction_preparation_twelfth.md",
  "entries_moved": 6,
- "characters_moved": 8489,
+ "characters_moved": 7017,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1749,
-   "sha256": "6e93fcf68899dab4d1b3bcdee8c64cf4734bf6e1ea78565a18b55ddbd3a7610e",
+   "characters": 1474,
+   "sha256": "6e059b3582593e4e6f21b898debe083d5b4c834ddb804da01a6d975e2463aa58",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-18 (CC — **★ THE PREPARATION PHASE'S ELEVENTH BATCH (AMENDED) CLOSES — TWO OF THE FOUR EVIDENCE-PIN MEMBERS PINNED AT THE LANDING-COMMIT BOUN"
+   "opening": "*2026-08-19 (CC — **★ THE PREPARATION PHASE'S TWELFTH BATCH CLOSES — THE TWO SEPARATED RENDERINGS CLOSED BY NAMING THE OBJECT, THREE STANDING CLAUSES "
   },
   {
    "line_at_base": 10,
-   "characters": 1460,
-   "sha256": "f44d9c5fd382777ebc5b361809d10879009feb75aec8b3eaaf7c5ebc80e44d8e",
+   "characters": 1003,
+   "sha256": "6d4d6e5fc8ddcfd7c711c17b22df58bb805e56db6b8423f719bc4b1be30d8124",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ THE SESSION-START-READ FIGURES CORRECTED OF RECORD AT BOTH SITES — THE GENERATOR EXTENDED BY TWO KEY CHAINS SO THE TWO HOMELESS "
+   "opening": "*2026-08-19 (CC — **★ THE TWO CORRECTIONS OF RECORD — THE OVERTAKEN EVIDENCE UNDER A QUESTION PUT TO THE USER, AND THE COUNT THAT DISAGREES WITH THE T"
   },
   {
    "line_at_base": 12,
-   "characters": 1314,
-   "sha256": "092c78dae9c46273bfc11fd542f13005cccbf09d31d1983cfbf75ea059b78fb4",
+   "characters": 1078,
+   "sha256": "e15e3e32fda6abf2ac78867b7232d7b05e196fcf67189d14b090b8bfb4ddde50",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ THE THREE RULED SURFACES STOP SAYING NOTHING ON THEM IS RULED — CORRECTED AT THEIR GENERATORS, ON THE TREATMENT ALREADY IN THE T"
+   "opening": "*2026-08-19 (CC — **★ THE EPOCH-PINNED PASSES AND WHAT EACH ONE'S WRITE PATH RESOLVES — DERIVED, PUBLISHED AS DATA, AUTHORIZING NOTHING.** No `src/` c"
   },
   {
    "line_at_base": 14,
-   "characters": 1228,
-   "sha256": "bcc1405e73366a1ffc04f5566c54ff7d925a8a308bbf116a5a17ced92bb869e1",
+   "characters": 1234,
+   "sha256": "2d82e65f13988f34e1b24a673e86a8a852427accca0d21740ae6e6ed771b0d02",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ THE FOUR STANDING CLAUSES LAND AT ONE HOME, IN ONE EDIT — SO THE ANCHORED-QUOTE CLASS CLEARS ONCE INSTEAD OF FOUR TIMES.** No `s"
+   "opening": "*2026-08-19 (CC — **★ THREE STANDING CLAUSES LAND AT ONE HOME IN ONE EDIT — SO THE ANCHORED-QUOTE CLASS CLEARS ONCE INSTEAD OF THREE TIMES.** No `src/"
   },
   {
    "line_at_base": 16,
-   "characters": 1493,
-   "sha256": "707eb6321ced0ac0db64fe24c9c6e591e012618ba9ff4559dc45b31cdb5f7d65",
+   "characters": 1180,
+   "sha256": "dac732024bf15032db25bde6e5b390925574699a3ba2036e61a6b0d0d19e5119",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ THE FOUR EVIDENCE-PIN MEMBERS RE-DERIVED AT THE LANDING-COMMIT BOUND AND CORRECTED AT THEIR RECORDS — TWO PINNED, TWO STOPPED ON"
+   "opening": "*2026-08-19 (CC — **★ THE TWO SEPARATED MEMBERS CLOSED BY NAMING THE BLOB OF THE RULED RENDERING, WITH THE COMMAND THAT OBTAINS IT.** No `src/` change"
   },
   {
    "line_at_base": 18,
-   "characters": 1245,
-   "sha256": "999a03e31c38e229a301492e72ea0edfa3c8f6c6c5f9527ecc516c3a26a9f7bb",
+   "characters": 1048,
+   "sha256": "73a68e51281b2a6b1b69f0575fe963125bc38b00f53f4b6fc55d5b543609b6c3",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ THE ELEVENTH BATCH'S AUTHORITY ENTERS GIT — THE STOP SITTING'S RECORD, THE SUPERSEDED DISPATCH, THE STOP REPORT, AND THE MEMBERS"
+   "opening": "*2026-08-19 (CC — **★ THE TWELFTH BATCH'S AUTHORITY ENTERS GIT — THE RETURN SITTING'S RECORD, THE DISPATCH, THE HANDOVER BLOCK, AND THE MEMBERSHIP ART"
   }
  ],
  "reconciliation": {

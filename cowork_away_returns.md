@@ -15070,3 +15070,279 @@ is where it is graded. The report's §14 carries the same reading and is the aut
 *Provenance: CC, 2026-08-19, appended in the ONE FURTHER commit after `e96d80b550`, whose own identity
 that commit cannot contain. Every value here was read from the runs recorded above; the close
 commit's hash, parent and path count were read at the object by explicit hash.*
+
+---
+
+# ★ CLOSE — THE PREPARATION THIRTEENTH BATCH (2026-08-19)
+
+**Dispatch `cc_instruction_preparation_thirteenth.md`, executing the three rulings of
+`cowork_rulings_2026_08_19_twelfth_return.md`. COMPLETE.** Four task commits, Tasks 0 through 3, the
+close being a task commit with its own entry. The report is `cc_report_preparation_thirteenth.md` and
+is the authority for everything below; nothing of it is restated at any width it does not already
+have (**D-431**).
+
+**★ THE END STATE IS NOT ASSERTED IN THIS CLOSE.** The end-state guard run is taken AFTER the commit
+carrying this section exists, and its values land in ONE FURTHER commit. No row, no table cell and no
+sentence here states what that run returned — which is the E-ordering rule at the smaller grain
+**F79** records, and the route the two preceding batches took.
+
+**★ AND TWO OF THE THREE RULINGS ORDER NOTHING. THEY ARE RECORDED HERE AS DECISIONS, at §4, so that a
+later reader meets a decision rather than an omission.**
+
+## 0. The reading, and the start state
+
+`CLAUDE.md` and `STATUS.md` as they stood, in full. `DECISIONS.md` in full — unconditional and
+explicitly not demoted. `BUILD_AND_TEST.md` in full, this batch MEETING its condition by running the
+guard set. **The whole open-items INDEX was NOT read:** rule (a)'s derived gating answer was read at
+`tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` → `gating_ids`, narrowed to
+its identity list, and no verdict was challenged, so the grounds at `the_gating_rows` were not
+opened. The standing clause was obeyed — `cowork_handoff.md`'s **THIRTY-SECOND** block was read,
+which is what told this session the series stands at **F87** and that numbering begins at **F88**.
+Then, as ordered, in full: `cowork_rulings_2026_08_19_twelfth_return.md`;
+`cc_report_preparation_twelfth.md`, its §5 and §10 above all;
+`cowork_rulings_2026_08_19_eleventh_return.md`; and `cowork_audit_protocol.md`'s dispatch-protocol
+section in full, so that all SEVEN standing clauses were met before an eighth was written.
+
+**THE DECLARED START STATE MATCHED AT THE TREE**, taken before any edit at a quiet tree by
+`gen_guard_state.py --check` followed by `gen_guard_classification.py --check`: **72 run, 70 passing,
+TWO failing, 4 not run, 16 historical, ZERO STOPs**, and *"the guard classification re-derives"*. Both
+reds are the ones the dispatch names with their causes — [[OI-372]]'s tool, and
+`gen_evidence_pin_membership.py --check` reporting its artifact STALE because this dispatch's own
+untracked ruling record already sits inside a derivation whose population is the file system. **The
+guard registry's own drift was named by the dispatch rather than left (F83 applied rather than
+repeated), and it is not a third failing check.**
+
+## 1. Task 0 — the four paths, and the membership check cleared in the same act
+
+**`ae55748557`, parent `16a172715a`, pushed, 4 paths** (2 modifications, 2 additions; no staging
+override).
+
+**A1 HELD, checked first and entirely at content-addressed objects.** Exactly ONE tracked
+modification in the whole working tree — `cowork_handoff.md`, committed blob `bf31a8007e` against the
+working copy's content-address `ada40e3602` — and the difference is ONE contiguous changed passage,
+**181 insertions and 1 deletion**, carrying both parts of one act: the THIRTY-SECOND block inserted,
+and the THIRTY-FIRST heading's entry-point demotion marker, the single deletion being that heading in
+its undemoted form. `tools/audit/evidence_pin_membership.json` was UNMODIFIED at its committed blob
+`bb3a43237d`, which is A1's expected-unmodified path holding. **The F57 caveat was applied rather
+than assumed.** **No changed-passage count was asserted in advance** (the F25 lesson). The two
+invariant paths were content-addressed in the same act and match the terminus: `OPEN_ITEMS.md` at
+`6ae67d8603` and `tools/audit/nongating_apparatus_rows.json` at `5bb43d0b3a`.
+
+**THE REGENERATION'S DIFFERENCE WAS MEASURED BEFORE IT WAS ACCEPTED**, blob against blob by explicit
+hash — `bb3a43237d` → `28d6b7f048` — and it is **TWO hunks**, matching **both** halves of the
+dispatch's prediction: `ruling_records_read` rises by one and one record name is added (route A), and
+**route B adds nothing, so there is no third hunk**. Route B's half was established AT THE NEW
+RECORD'S OWN TEXT BEFORE THE RUN: the record carries three lines containing *pinned*, and the only one
+also carrying a backtick-quoted name names a `.json` artifact, which the tool's resolver does not
+reach. NO member, route, document, pin constant, state or count moved. At the tree this commit
+carries, `gen_evidence_pin_membership.py --check` re-derives.
+
+## 2. Task 1 — Ruling 1's forward clause, the EIGHTH standing clause, in one commit
+
+**`2a909b47c2`, parent `ae55748557`, pushed, 4 paths.**
+
+The clause stands at `cowork_audit_protocol.md`'s dispatch-protocol section: **a recognizer over a
+population states, at its own artifact, whether an independently-known population exists to
+reconcile against — and where none does, it publishes its output as a LOWER BOUND with its reach
+declared UNMEASURED, never as a census.**
+
+**THE PLACEMENT IS STATED AT THE SITE rather than left to be inferred**, on the siting logic its own
+neighbours use of themselves: it stands beside the three sections saying what a MECHANISM, a
+COMPLETENESS CLAIM and an ENUMERATING PATTERN are each worth unmeasured, and it supplies the test the
+completeness rule leaves open — that rule demands a measured miss rate against a seed and does not
+say what is owed where the record holds no second enumeration to measure against.
+
+**BOTH NAMED GROUNDS CARRY THEIR GENERAL FORMS.** **F84** is recorded as the ground with its measured
+instance; **F87** as the test it rests on, measured on three. The two general forms are stated: *a
+recognizer's reach is measured by the instances it FAILS to find, never by the ones it does*, and
+*establishment needs a SECOND, INDEPENDENT enumeration of the same population.*
+
+**THE BOUND IS STATED AT THE SITE, because a reader would otherwise take the clause for a sweep:** it
+binds a recognizer written or touched from here, and existing recognizers' own artifacts are NOT
+retro-fitted — the sort carries the per-recognizer verdict so the information has ONE home (**#6**),
+and retro-fitting a population under the standing mechanism freeze would be tool work that blocks
+nothing. **The cost the user accepted is recorded with it:** the clause CLASSIFIES exposure and does
+not MEASURE it.
+
+**THE ANCHORED-QUOTE CLASS FIRED AND WAS CLEARED BY ITS RULED TREATMENT.** 20 register home anchors
+drifted, all into this file; every one was re-aimed **per citation** from the drift report's own
+reported start line, through the applier that reads the verifier's own machinery, never by an assumed
+uniform shift. The drift authority reports **474/474** verbatim quotes at their cited home and
+**468/468** cited line numbers correct, against **448/468** after the edit and before the re-aim.
+
+**EVERY REGENERATED ARTIFACT'S DIFFERENCE WAS MEASURED BEFORE IT WAS ACCEPTED**, blob against blob,
+and every changed line carries a `cowork_audit_protocol.md` coordinate and nothing else — **counted,
+not sampled**: `backbone_decisions.json` `ec760474d6` → `f4b452fa93`, 40/40; `decisions/group_T.md`
+`ca85557b1f` → `97a721c1ac`, 40/40; `rulings_sort_classification.json` `2ab15465ce` → `de49e85312`,
+80/80, twice the others because each entry carries the coordinate in two fields. `DECISIONS.md` is
+**byte-unchanged** and no other group file moved.
+
+**ONE DEPARTURE, F85 RECURRING AND DECLARED:** the sort generator has ONE write path for TWO outputs,
+so regenerating the classification also rewrote the ruling surface it renders. That surface came out
+**BYTE-IDENTICAL** to its committed object `5c62e70a38`, proven rather than assumed, and **all 27
+documents under `ratification_surfaces/` match their committed objects exactly.**
+
+## 3. Task 2 — Ruling 1's ordered derivation: the recognizer sort, published as data
+
+**`a33a933404`, parent `2a909b47c2`, pushed, 5 paths.**
+
+**A3 WAS CHECKED FIRST** — the walk enumerates, and a walk that enumerated nothing would halt with
+nothing published. The population is **DERIVED from the tools' own syntax trees, never hand-listed**,
+and the walk and the own-output recognizer are **IMPORTED** from `gen_epoch_write_path.py`, which
+owns them, rather than written a second time (**#6**). Every count is at
+`tools/audit/recognizer_establishment_sort.json` and none is restated here (**D-431**).
+
+**MIXED IS EXPRESSIBLE AND IS USED.** `gen_evidence_pin_membership.py` — the known instance — derives
+MIXED: established on its population, an external file-system enumeration published whole, and
+unestablished on its classification, which is its own recognizers over record text.
+
+**THE FIRST EXPECTATION IS DERIVED AND NOT INHERITED.** `gen_nongating_apparatus_rows.py` derives
+**ESTABLISHED**, read at the tool and at its artifact rather than taken from the dispatch or the
+ruling record: its candidates are the PARSED INDEX (`INDEX = ROOT / "OPEN_ITEMS.md"`, read with
+`read_text`) and it reconciles against that parse in both directions with a halt. **So the derived
+gating answer a session reads at boot is on the ESTABLISHED side and F84 does not reach it.**
+
+**★ THE SORT DECLARES ITS OWN STATUS UNDER THE TEST IT APPLIES, AND THAT IS DERIVED RATHER THAN
+ASSERTED.** It is a member of its own population and places **itself** MIXED — its population
+externally enumerable and published whole, its classification its own — so **its member list is
+published as a LOWER BOUND with its reach declared UNMEASURED, never as a census.** A disagreement
+between what it declares about itself and what its own test derives for it **HALTS the run**, so the
+artifact cannot claim a status its own derivation does not support.
+
+**ALL THREE STOPS WERE SHOWN BOTH TO FIRE AND TO STAY QUIET (#19)**, by probes run outside the
+repository: a seed that stops deriving to its established side, an authored unplaced reason naming a
+member the derivation now places, and a self-declaration its own test does not support.
+
+**TWO CORRECTIONS TO THE MEMBER TEST ARE RECORDED AT THE TOOL AS CORRECTIONS, with ONE ground between
+them, and NOT to make a seed pass — which would be DT-2.** Parts (ii) and (iii) first read a tool's
+own source alone; under that reading the first seed derived as NOT A MEMBER, its recognizer being
+imported from `index_status_lint.py` under an explicit **#6** comment, and **this derivation could not
+see ITSELF**, its walk being imported from the tool that owns it. The ground is #6 itself: a walk or a
+recognizer with several users is given ONE home, so a test reading a tool's own source alone reports
+every tool that FOLLOWS that rule as drawing on nothing and recognizing nothing. The two cases are
+published **separately** per member and never collapsed.
+
+**THIS TASK AUTHORIZED NOTHING AND FIXED NOTHING.** No recognizer was edited, widened or acted on, no
+enumerated member's artifact was written, and no member is owed by appearing.
+
+**THE NEW-TOOL RULE IS DISCHARGED IN THE SAME COMMIT** — the authored run-instruction in
+`gen_guard_state.py` and the authored classification verdict in `gen_guard_classification.py` — and
+the guard count rises by **exactly that one invocation, 72 to 73**.
+
+**ONE CONSEQUENCE MEASURED AND DECLARED.** `tools/audit/epoch_write_path.json` was regenerated because
+its population is the FILE SYSTEM and this task's own new tool entered it. Its whole difference,
+`253ad79963` → `4debec9910`, is **ONE hunk** — `tools_walked` rising by one — with no member, verdict,
+seed or unplaced entry moving, and the new tool correctly not an epoch member. **That is an ADDITION
+caused by the ordered act, which is the sharpened bar's own case rather than an exception to it.**
+
+## 4. ★ THE TWO DO-NOTHINGS, RECORDED AS RULED DECISIONS
+
+Two of this batch's three rulings order nothing. Both are recorded here as **decisions taken**, not as
+work omitted.
+
+**(a) RULING 2 — the three UNPLACED members of `tools/audit/epoch_write_path.json` STAY UNPLACED.**
+No verdict was added, no recognizer was widened, and no member was acted on. **The ground recorded
+with the ruling:** the unplaced set is **self-maintaining** through its both-ways halt — an unplaced
+member with no authored reason halts the run, and an authored reason naming a member the derivation
+now places halts it too — so a new unrecognised shape cannot enter silently and an authored reason
+cannot outlive its subject. **#19** is already served, the members having been returned rather than
+guessed. And widening the recognizer to place the two builder-default members was declined because
+**it is F84's own hazard repeated**: a widened recognizer still has no independently-known population,
+so widening buys coverage nobody can measure while making the artifact read as more complete than it
+is.
+
+**(b) RULING 3 — NO BLOB RESOLUTION FORM WAS ADDED to `gen_evidence_pin_membership.py`.** The ruling
+record is the authority for the blob of a separated rendering, and the membership artifact points at
+the record. **The ground recorded with the ruling:** this is the **index-plus-detail shape this record
+already uses twice** — the open-items register's INDEX with its detail files, and the decisions
+register's INDEX with its group files — the index naming the subject and the detail carrying the
+content. Adding a resolution form would spend tool work that blocks nothing, and would widen a
+recognizer's resolution forms in the very sitting that ruled recognizer-widening the thing to be
+careful about. **The cost accepted:** a reader of the membership artifact alone must open the ruling
+record to obtain the ruled rendering — bounded, and identical to the cost the register split already
+accepted twice. **NOTHING IS FORECLOSED:** a later ruling can add the form in one edit; what is
+settled is that nothing is OWED.
+
+## 5. Task 3 — the close
+
+**Four `STATUS.md` pointer entries, one per task**, and **in the same act Ruling 4's forward bound
+moves the TWELFTH batch's entries verbatim to `STATUS_ARCHIVE.md`**. `gen_status_batch_bound.py` was
+re-aimed at this batch's own base commit `a33a933404`, its every previous aiming kept rather than
+replaced (**#12**). The tool reports **6 entries moved, 7,017 characters**, and **both directions
+proven**: every moved entry byte-present in the archive exactly once, and every moved entry absent
+from the must-read. **The declared `Last updated: ` prefix adjustment is IMPORTED and not re-decided
+(#6)**, and no entry needed a second adjustment — the tool's own occurrence test would have STOPPED
+on one.
+
+## 6. The registered expectations
+
+| | verdict |
+|---|---|
+| **E0** | **MET.** Exactly 4 paths — two modifications matching A1's shape and the bounded regeneration, two additions, no staging override — and the membership check passing at the resulting tree, so the guard set stands at 72 run, 71 passing, ONE failing from Task 0 onward. The prediction held on BOTH routes, with no third hunk, and route B's half was established at the record's own text before the run. |
+| **E1** | **MET.** The clause stands at the dispatch-protocol section with its two named grounds, its two general forms and its bound; no other authoring rule moved; the drift authority reports every re-aimed anchor correct at its new coordinate. |
+| **E2** | **MET.** The population is derived and every member placed with its evidence; MIXED is expressible and is used where it applies; `gen_nongating_apparatus_rows.py` derived as ESTABLISHED at the tool and at its artifact rather than inherited; the sort's own status declared under its own test as a lower bound with UNMEASURED reach, and DERIVED rather than asserted with a halt behind it; no recognizer edited or acted on; the new measurement tool registered in the act that created it, with the guard count's movement caused and named. |
+| **E3** | **NOT GRADED IN THIS COMMIT, BY DESIGN.** The end-state run is taken after the commit carrying this close exists, and its values and E3's grade land in ONE FURTHER commit. Grading it here would be the very defect **F79** records. |
+
+## 7. The declared departures
+
+1. **A new measurement tool was built under the standing mechanism freeze** (Task 2), declared as a
+   judgment at the site, in the commit message, here and in the report. A DERIVED enumeration
+   published as data is not performable without one, and the dispatch's own step 6 anticipates it.
+2. **`tools/audit/epoch_write_path.json` was regenerated inside Task 2**, its difference measured
+   before acceptance and its cause named — this task's own new tool entering a population that is the
+   file system.
+3. **A generator with one write path for two outputs also rewrote a ruling surface** (Task 1); the
+   surface came out byte-identical, proven rather than assumed (F85).
+4. **The guard registry and its classification are regenerated in the FURTHER commit**, at the quiet
+   tree, together with the end-state run that produces their values — never before it. They were
+   deliberately restored to their committed state before Task 2 was committed.
+5. **Working-tree files were content-addressed into the object database** (`git hash-object -w`) so
+   that both sides of every blob comparison are content-addressed — the route the three preceding
+   batches used, imported rather than re-invented.
+6. **Three shell invocations were refused by the armed guard** — a variable-carrying path and two
+   interpreter bodies naming repository paths. Each was re-taken through the sanctioned route and
+   **none was worked around**; the deny-on-indeterminate policy behaved exactly as **D-647** states.
+7. **One write was attempted through shell redirection and ABANDONED rather than retried:** this
+   close was written with the file tools, the recorded 2026-08-02 slip not repeated and the twelfth
+   batch's own remedy imported.
+
+## 8. The findings carried
+
+**F1–F87 ride to the preparation phase's retrospective unchanged**, with the E3 ordering defect and
+the A1 premise error. **THE ROW BAR STANDS WHOLE THIS BATCH: no open-items row was created, flipped
+or discarded, and no finding is rowed.** [[OI-372]] and [[OI-374]] stand exactly as found;
+[[OI-179]] stays OPEN and GATES.
+
+**F3 FIRED AGAIN, in Task 1** — `reaim_home_anchors.py --check` exited 0 while printing 20 drifted
+anchors — and stays surfaced, unfixed and unrowed; `gen_cluster_dispositions.py --verify` was the
+drift authority throughout. **F25 did not repeat; F57 was applied rather than assumed; F79 did not
+repeat**, the end state not being asserted in this close.
+
+**This batch allocated no new finding number.** What it met were existing ones: **F84** as the
+ground of the clause it landed, **F87** as the test that clause rests on, **F83** applied rather than
+repeated in the dispatch's own declared start state, **F82** applied rather than repeated in A1's
+untracked half, and **F85** recurring as a declared departure.
+
+## 9. The chain, named as far as a sentence can name it — and the one commit it cannot
+
+| | commit | parent | paths |
+|---|---|---|---|
+| Task 0 | `ae55748557` | `16a172715a` | 4 |
+| Task 1 | `2a909b47c2` | `ae55748557` | 4 |
+| Task 2 | `a33a933404` | `2a909b47c2` | 5 |
+| Task 3 — the close | the commit that carries this section, whose own identity it cannot contain | `a33a933404` | — |
+
+**Every row above was verified at the object by explicit hash** — its parent confirmed and its path
+count read from the object, never from the memory of making it (**#15**).
+
+**★ THE COMMIT CARRYING THIS SECTION CANNOT NAME ITSELF, AND THE ONE AFTER IT IS NOT WRITTEN YET.**
+The end-state guard run is taken after this commit exists, at the quiet tree it leaves, and lands in
+ONE FURTHER commit — so at the moment this table is written the chain is complete up to this commit
+and one short of the branch tip **by construction, not by omission**. **Read the chain at the branch
+tip, never at this table or at any report.** That is the whole content of the warning, imported from
+the twelfth batch's §15 rather than re-invented, and stated here so no later session rediscovers it.
+
+*Provenance: CC, 2026-08-19, executing `cc_instruction_preparation_thirteenth.md`. Every commit hash
+above was read at the object by explicit hash; every blob comparison was taken between two
+content-addressed objects; every guard figure in §0 comes from the run recorded there. **No
+end-state value is stated in the commit that carries this section.***
