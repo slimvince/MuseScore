@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_preparation_eleventh_amended.md, Task 5",
+ "dispatch": "cc_instruction_preparation_twelfth.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -27,69 +27,66 @@
    "executing_act": "cc_instruction_preparation_tenth.md, Task 5",
    "base_commit": "30d44165cf12fcb462ed11225b024b4a86bd17c6",
    "the_then_previous_batch": "cc_instruction_preparation_ninth.md"
+  },
+  {
+   "executing_act": "cc_instruction_preparation_eleventh_amended.md, Task 5",
+   "base_commit": "3a37c5d06901821eaed3224865a5bcc57630c883",
+   "the_then_previous_batch": "cc_instruction_preparation_tenth.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "3a37c5d06901821eaed3224865a5bcc57630c883",
- "the_then_previous_batch": "cc_instruction_preparation_tenth.md",
- "entries_moved": 7,
- "characters_moved": 9191,
+ "base_commit": "18127bab0160d21aa0ced9170a9fe3c968888673",
+ "the_then_previous_batch": "cc_instruction_preparation_eleventh_amended.md",
+ "entries_moved": 6,
+ "characters_moved": 8489,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1870,
-   "sha256": "a8ea5dc4868375cc4b8ff10b9be13fed6fdceb6670a682677b4edd0267306371",
+   "characters": 1749,
+   "sha256": "6e93fcf68899dab4d1b3bcdee8c64cf4734bf6e1ea78565a18b55ddbd3a7610e",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-18 (CC — **★ THE PREPARATION PHASE'S TENTH BATCH CLOSES — THE EVIDENCE PIN RULED AS A CLASS, THE FINDINGS SERIES GIVEN ITS ALLOCATION POINT, "
+   "opening": "*2026-08-18 (CC — **★ THE PREPARATION PHASE'S ELEVENTH BATCH (AMENDED) CLOSES — TWO OF THE FOUR EVIDENCE-PIN MEMBERS PINNED AT THE LANDING-COMMIT BOUN"
   },
   {
    "line_at_base": 10,
-   "characters": 1366,
-   "sha256": "c474661b83db5746638e720ccbf48fa05872cf2c85778ce3a789928e0953552c",
+   "characters": 1460,
+   "sha256": "f44d9c5fd382777ebc5b361809d10879009feb75aec8b3eaaf7c5ebc80e44d8e",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ THE RETIREMENT CALLER CENSUS RE-PINNED AT THE MOVED READ REGIME — EIGHT MOVEMENTS, NONE LEFT OVER, AND THE READ-REGIME CLASS PLA"
+   "opening": "*2026-08-18 (CC — **★ THE SESSION-START-READ FIGURES CORRECTED OF RECORD AT BOTH SITES — THE GENERATOR EXTENDED BY TWO KEY CHAINS SO THE TWO HOMELESS "
   },
   {
    "line_at_base": 12,
-   "characters": 1231,
-   "sha256": "f58b0719c1ebe50696be9d1391b38d80d52f6a969a23ae3f601eb849bdb04688",
+   "characters": 1314,
+   "sha256": "092c78dae9c46273bfc11fd542f13005cccbf09d31d1983cfbf75ea059b78fb4",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ THE READ-FIRST STANDING CLAUSE WRITTEN AT ITS DERIVED HOME — AND THE HOME IS NEITHER CANDIDATE THE DISPATCH NAMED, WHICH IS A DE"
+   "opening": "*2026-08-18 (CC — **★ THE THREE RULED SURFACES STOP SAYING NOTHING ON THEM IS RULED — CORRECTED AT THEIR GENERATORS, ON THE TREATMENT ALREADY IN THE T"
   },
   {
    "line_at_base": 14,
-   "characters": 1304,
-   "sha256": "eed1ed00d8d5dda7f82d59121879e979ca7c2a4ae11fab2fe8be7a1acd4ec49a",
+   "characters": 1228,
+   "sha256": "bcc1405e73366a1ffc04f5566c54ff7d925a8a308bbf116a5a17ced92bb869e1",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ RULE (a)'s POINTER NARROWED TO THE ANSWER — THE LIST OF GATING ROW IDENTITIES — WITH THE #19 DISTINCTION WRITTEN AT THE CLAUSE.*"
+   "opening": "*2026-08-18 (CC — **★ THE FOUR STANDING CLAUSES LAND AT ONE HOME, IN ONE EDIT — SO THE ANCHORED-QUOTE CLASS CLEARS ONCE INSTEAD OF FOUR TIMES.** No `s"
   },
   {
    "line_at_base": 16,
-   "characters": 1284,
-   "sha256": "677be71802215001bcda9216e84b6e43524f234137ea28fc05216f32a3fce579",
+   "characters": 1493,
+   "sha256": "707eb6321ced0ac0db64fe24c9c6e591e012618ba9ff4559dc45b31cdb5f7d65",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ THE EVIDENCE PIN RULED AS A CLASS, ITS MEMBERSHIP DERIVED AND PUBLISHED — THREE PINNED, FOUR UNRESOLVED AND RETURNED TO THE USER"
+   "opening": "*2026-08-18 (CC — **★ THE FOUR EVIDENCE-PIN MEMBERS RE-DERIVED AT THE LANDING-COMMIT BOUND AND CORRECTED AT THEIR RECORDS — TWO PINNED, TWO STOPPED ON"
   },
   {
    "line_at_base": 18,
-   "characters": 1013,
-   "sha256": "18e1e2251a4407dbe781410984c6f07643aa648c23d73e2d34eea73a1c6d1d14",
+   "characters": 1245,
+   "sha256": "999a03e31c38e229a301492e72ea0edfa3c8f6c6c5f9527ecc516c3a26a9f7bb",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ TWO RECORDED CORRECTIONS OF THE FINDINGS SERIES — F52 RE-ISSUED AS F57, AND F53 RECORDED AS ONE FINDING SURFACED BY BOTH SIDES.*"
-  },
-  {
-   "line_at_base": 20,
-   "characters": 1123,
-   "sha256": "c350c49ec58b8ba12ef68c5b851d37be1aecb1a56bbc0161012b06f7c56724d1",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-18 (CC — **★ THE NINTH BATCH'S RETURN SITTING, THE TWENTY-EIGHTH HANDOVER BLOCK AND THE TENTH DISPATCH ENTER GIT.** No `src/` change, no gold"
+   "opening": "*2026-08-18 (CC — **★ THE ELEVENTH BATCH'S AUTHORITY ENTERS GIT — THE STOP SITTING'S RECORD, THE SUPERSEDED DISPATCH, THE STOP REPORT, AND THE MEMBERS"
   }
  ],
  "reconciliation": {
