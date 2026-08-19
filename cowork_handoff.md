@@ -1,7 +1,187 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (THIRTY-FIRST, 2026-08-19) — THE AMENDED ELEVENTH BATCH RETURNED COMPLETE WITH ONE RULED STOP INSIDE TASK 1 AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED; ★ THE TWO SEPARATED RENDERINGS ARE CLOSED BY **NAMING THE OBJECT** RATHER THAN BY PINNING, RULED AS A CLASS; THE BOOKKEEPING BAR IS SHARPENED; THE WRITE-PATH ENUMERATION AUTHORIZES NOTHING; TWO STATEMENTS ARE CORRECTED OF RECORD; ★ `cc_instruction_preparation_twelfth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (THIRTY-SECOND, 2026-08-19) — THE TWELFTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED; ★ THE RECOGNIZER ESTABLISHMENT TEST IS RULED AS A CLASS — AN INDEPENDENTLY-KNOWN POPULATION OR A DECLARED LOWER BOUND; TWO RULINGS ORDER NOTHING AND SAY SO; ★ `cc_instruction_preparation_thirteenth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. ★ THIS BLOCK IS A HANDOVER TO A FRESH SESSION, BY THE USER'S DIRECTION.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
+
+**★ YOUR SESSION-START READ, as it now stands.** **(1)** `CLAUDE.md`, `STATUS.md` and
+`DECISIONS.md` in full. **(2)** `BUILD_AND_TEST.md` is a **CONDITIONAL** read — mandatory only for a
+session that builds, tests, or runs a measurement tool whose command lives there. **(3) DO NOT READ
+THE WHOLE OPEN-ITEMS INDEX.** Rule (a) reads the **DERIVED GATING ANSWER, narrowed to its identity
+list** — `tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` → `gating_ids` —
+and the grounds stand at `the_gating_rows` in the same file, opened when a verdict is CHALLENGED.
+**The INDEX remains the AUTHORITATIVE STATUS SURFACE.** The measured size of this read is published at
+`tools/audit/session_start_read_size.json` and is not restated here (D-431).
+
+**★ AND ONE THING ABOUT THAT ANSWER IS NOW ESTABLISHED RATHER THAN ASSUMED, because you rely on it at
+boot.** `gen_nongating_apparatus_rows.py` reconciles **both ways against the parsed INDEX** — every
+gating identity an open row of it, every open row placed as gating or non-gating with none in both and
+none in neither, every gating row carrying a ground, and **a HALT on any row it cannot place**. Under
+the test ruled at this sitting that makes it **ESTABLISHED**, and F84 does not reach it. **The
+thirteenth dispatch's Task 2 DERIVES this rather than inheriting it, and a failure to derive it is
+that batch's largest possible return.**
+
+**★ EIGHT STANDING CLAUSES WILL GOVERN EVERY DISPATCH ONCE THE THIRTEENTH BATCH LANDS THE LAST, and
+their home is `cowork_audit_protocol.md`'s dispatch-protocol section. SEVEN stand there now:** a
+dispatch's read-first block names the current handover block; a ruling record taken from a generated
+document names the commit it was ruled at; a dispatch's declared start state is stated at the tree it
+will meet, including the reds its own inputs cause; a published character figure names the tool that
+produced it; where a generated document's committed content has separated from the rendering a ruling
+was taken over, the record names the BLOB and the member is NOT PINNED; a prediction about a
+derivation's output is taken from EVERY route; and a check on a derived artifact bars the MOVEMENT of
+a value, not the ADDITION of a derived cross-reference the ordered act causes. **The eighth, which the
+thirteenth batch lands, is the recognizer clause ruled at this sitting.**
+
+**★ THE FINDINGS SERIES STANDS AT F87.** The executing side allocated F82–F86 at the twelfth batch;
+this session allocated **F87** at the return sitting. **The thirteenth dispatch numbers from F88.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE.** `cc_instruction_preparation_thirteenth.md` was WRITTEN at
+this close and was **NOT DISPATCHED**. Establish which of three states holds: **not started** (no
+PREPARATION THIRTEENTH BATCH section in `cowork_away_returns.md`, no `STATUS.md` pointer entries for
+it, no commit on the twelfth batch's terminus `16a172715a`) — then it is yours to dispatch or to
+amend; **running** — then **you are READ-ONLY on the repository until it stops**; **completed** — then
+VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove the reading by
+quotation. Its tasks and its registered expectations E0–E3 are stated in the dispatch itself, which is
+the authority for them and is not restated here (#6).
+
+**★ AND READ THE CHAIN AT THE BRANCH TIP, NEVER AT A CLOSE OR A REPORT.** The twelfth batch's terminus
+is `16a172715a`, and it carries the report alone: a commit cannot contain its own identity, so **every
+close and every report is one commit short of the tip BY CONSTRUCTION, not by omission.** The eleventh
+batch left that hazard undeclared and a reader taking its close's provenance as naming the last commit
+was one commit short; the twelfth declared it. **Take it as standing.**
+
+**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_19_twelfth_return.md` IN FULL** — the three
+rulings this session took and the whole authority of the thirteenth dispatch. (2)
+**`cc_instruction_preparation_thirteenth.md` IN FULL** — what the next batch is bound to do, its
+premise ledger, its declared start state and its STOP conditions. (3)
+**`cc_report_preparation_twelfth.md` IN FULL, its §5 and §10 above all** — §10 carries **F84**, which
+is the ground of the clause the thirteenth batch lands, and §5 is the derivation it generalizes. (4)
+**The FULL close of that batch** — THE PREPARATION TWELFTH BATCH section of `cowork_away_returns.md`.
+(5) **`cowork_rulings_2026_08_19_eleventh_return.md` IN FULL** — Ruling 1 there is the
+name-the-object ruling this arc now rests on, **and it is PROVEN at the objects (see below)**. (6)
+`cowork_rulings_2026_08_18_eleventh_stop.md` and `cowork_rulings_2026_08_18_tenth_return.md` IN FULL —
+**not re-opened at this close.** (7) `cowork_rulings_2026_08_17_ninth_return.md` IN FULL. (8)
+`cowork_rulings_2026_08_17_session_start_read_sitting.md` and
+`cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all**. (9) The FOUR sitting records of
+2026-08-17 and `cowork_rulings_2026_08_15_inventory_sitting.md` — **the last, the residue and the
+rulings-sort records now carry the eleventh and twelfth batches' dated corrections.** (10)
+`cowork_rulings_2026_08_17_sixth_return.md`,
+`cowork_rulings_2026_08_17_governing_surface_split.md` and
+`cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding, **its §6 carrying the
+correction of the kind-3 tool identification.** (11) **`cowork_audit_protocol.md`'s dispatch-protocol
+section IN FULL** — seven standing clauses live there. (12) This block. (13) The thirty-first block
+below and everything it binds. `CLAUDE.md` in full before drafting anything — **this session read it
+in full and the bar is discharged for THIS session only; it binds you afresh.**
+
+**★ WHAT THIS SESSION DID.** It read the twelfth batch's report IN FULL through the device bridge with
+the file tools, **on the user's standing direction that local files are never read through a shell**,
+and **verified the whole return at the objects rather than trusting the record**: the chain
+`46d68a146d` → `e3583c2720` → `5f275463b0` → `bd3961c975` → `25cde8bc62` → `18127bab01` →
+`e96d80b550` → `1530162032` → `10921a0cb0` → `16a172715a`, every parent confirmed and every path count
+to the digit (4, 2, 4, 5, 2, 6, 4, 1). **Then the return sitting was held in the ruled form and the
+user ruled every decision as put.**
+
+**★ SIX PROOFS THIS SESSION TOOK THAT THE REPORT DOES NOT ASSERT, and two of them are the ones a
+successor most needs.** (a) `OPEN_ITEMS.md` **byte-identical** base to terminus (`6ae67d8603`) — no
+row could have been created, flipped or discarded. (b) `tools/audit/nongating_apparatus_rows.json`
+**byte-identical** (`5bb43d0b3a`). **(c) RULING 1 OF THE ELEVENTH-RETURN SITTING IS PROVEN TO WORK** —
+both blobs the twelfth batch named reproduce **exactly** at the objects and both are type `blob`,
+`d04aa5726b2cd9a398e093928f7d4bbe2b6063ff` and `dfbe91b747d1b967837d3d261e1b35737e6b3174`. **The bet
+that naming the object preserves the evidence as well as a pin would, and self-verifyingly, pays.**
+**(d) THE E-ORDERING IS PHYSICALLY PROVEN** — the close commit's own message states the end state is
+not asserted there; the further commit carries exactly the report plus the three artifacts the run
+produced; the close's end-state block lands after that. (e) §2.a's *"this runner is not a subject of
+its own run"* is **not an invented exemption**: `guard_state.json` carries a
+`not_a_subject_of_this_run` field with a recorded reason predating that batch. (f) Task 4's three
+generator objects reproduce this session's own independent measurements exactly.
+
+**★ ONE LIMIT DECLARED RATHER THAN PAPERED OVER, AND IT IS STANDING RATHER THAN THIS BATCH'S.** **E5
+rests on runs that cannot be re-derived at the objects.** A guard run is a transient result and not a
+git object, and `guard_state.json` is a registry of runs rather than a record of their outcomes.
+Verifying an end state means re-running the guard set, which touches the tree and meets the
+`BUILD_AND_TEST.md` condition. **Proof (d) establishes the ORDER the commits were made in — which is
+what F79 was about — and NOT the values.**
+
+**★ THE THREE RULINGS THIS SESSION TOOK — the record is
+`cowork_rulings_2026_08_19_twelfth_return.md`, which is the authority and is not restated here (#6).**
+**Ruling 1** — a recognizer is established only by both-ways reconciliation against an
+**independently-known population**; where none exists its output IS the population, no seed set can
+establish it, and it publishes as a **LOWER BOUND with its reach declared UNMEASURED**. Ruled as a
+class; the sort is ordered by D-254 and **authorizes nothing**; the clause **binds forward only** and
+existing artifacts are not retro-fitted. **Ruling 2** — nothing is owed for the three UNPLACED members
+of the write-path enumeration; widening the recognizer was declined because **it would answer F84 by
+doing the thing F84 warns against**. **Ruling 3** — the blob's one home is the ruling record, settled
+rather than left open, on the index-plus-detail shape this record already uses twice; nothing
+foreclosed. The user's words, verbatim: ***"read, and i agree with recommendations"***.
+
+**★ THE ONE FINDING THIS SESSION ADDED, THE WRITING SIDE'S, NOT ROWED.** **F87** — a recognizer is
+established by reconciliation against an independently-known population; where none exists, the
+recognizer's output IS the population and no seed set can establish it. **This is the test that says
+which recognizers F84 reaches**, and it is not seeds-versus-none. Measured on three: the gating answer
+is **ESTABLISHED**; the epoch enumeration has no external population and its both-ways check catches
+only future drift; and the evidence-pin membership is **MIXED** — established on its population,
+unestablished on its classification. *General form: establishment needs a SECOND, INDEPENDENT
+enumeration of the same population.* **F1–F86 ride unchanged. F3 fired again in the twelfth batch's
+Task 2 and is now FIFTEEN times surfaced, unfixed and unrowed.**
+
+**★ WHAT AWAITS THE USER:** (1) the thirteenth batch — dispatch it, then verify its return at the
+objects before trusting any of it; (2) **the F71 sweep of the audit generators, RECORDED AND
+UNOWNED** — a generator with no argument parser treats every unrecognised flag as the write; (3) the
+**ONE remaining caller whose kind the derivation cannot place**, published as data; (4) the **curated
+boot list DRAFTED for ruling AT ITS RULED DEFINITION** — the implementation-free read list an
+implementation-blind session boots from, **for those sessions only**, and NOT the route to a smaller
+ordinary session-start read; (5) the empirical findings ledger behind its fact-gate; (6) the archiving
+wave once its ruled conditions clear — read the candidacies at the REGENERATED census, never at a
+stale one; (7) the mining and the landing of the newly visible instruction files.
+
+**★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red (`gen_filing_convention_application.py`).
+**[[OI-374]] untouched. [[OI-179]] OPEN and GATES. F3 is FIFTEEN times surfaced, unfixed and
+unrowed** — `reaim_home_anchors.py --check` exits 0 while printing drifted anchors;
+`gen_cluster_dispositions.py --verify` is the drift authority. F1–F87, the E3 ordering defect and the
+A1 premise error ride to the phase's retrospective. **And one hazard is live rather than standing:
+`gen_evidence_pin_membership.py --check` is RED at this close and its cause is this session's own
+ruling record** — the thirteenth dispatch's Task 0 clears it, and its declared start state names it
+with its cause, **together with the guard registry's own drift, which the same input causes** (F83
+applied rather than repeated).
+
+**★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the F25
+lesson).** `cowork_handoff.md` carries **two parts of one act**: this block inserted, and the
+THIRTY-FIRST heading's entry-point demotion marker. **TWO files are on disk and untracked:**
+`cowork_rulings_2026_08_19_twelfth_return.md` and `cc_instruction_preparation_thirteenth.md`.
+**Nothing else this session touched the tree.** **And the REST of the untracked population is named as
+the tree carries it rather than as a class — F82 applied rather than repeated:** newly visible
+`cc_instruction_*.md` files, `cc_*_report.md` and `cc_*_dossier.md` files, and a scratch directory,
+none of which this session touched. The thirteenth dispatch's Task 0 lands three paths plus the
+regenerated membership artifact — four in all — and its assumption A1 states exactly this shape.
+
+**★ THE DECLARED ENVIRONMENT DEPARTURE, CARRIED FORWARD.** This session ran in the remote Cowork
+environment. **No working-tree file was read through a shell**: the report and every governing
+document were read from snapshots staged through the device bridge and opened with the file tools.
+Every establishment above was taken by **git OBJECT read at an explicit hash**. **`git status` was NOT
+run.** **F57 was applied rather than assumed: `cowork_handoff.md` was MEASURED UNMODIFIED at the
+terminus immediately before it was edited** — reproducing the committed blob `bf31a8007e` exactly, at
+392,730 bytes with ZERO carriage returns — and both files this session wrote were delivered through
+the bridge and **round-tripped back byte-identical to the content the act INTENDED, whose hash was
+measured before the delivery (F74)**, never by shell redirection. **TWO further departures are
+declared:** the branch tip was read (`git rev-parse`) to establish the terminus; and **E5 was NOT
+verified**, for the reason recorded above.
+
+**★ WHY THIS SESSION CLOSES HERE, AND IT IS USER-DIRECTED.** The user directed a fresh session after
+this dispatch was written, and this block is written to be booted from cold. **ZERO
+presentation-form tells fired across every sitting this session held:** each full self-contained
+surface was delivered as the turn's final response carrying NO question, and the user ruled in a LATER
+turn each time. **Every ruling is on disk in the turn it was taken; nothing is in flight; no dispatch
+is active.** The fresh-session-per-dispatch-cycle direction of §7 of the 2026-08-16 record remains
+discharged by its own condition, so this handover is the user's choice rather than a rule's demand —
+recorded so a successor does not read it as one.
+
+*(The thirty-first block below remains binding in everything it states; it is superseded only as the
+entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (THIRTY-FIRST, 2026-08-19) — THE AMENDED ELEVENTH BATCH RETURNED COMPLETE WITH ONE RULED STOP INSIDE TASK 1 AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED; ★ THE TWO SEPARATED RENDERINGS ARE CLOSED BY **NAMING THE OBJECT** RATHER THAN BY PINNING, RULED AS A CLASS; THE BOOKKEEPING BAR IS SHARPENED; THE WRITE-PATH ENUMERATION AUTHORIZES NOTHING; TWO STATEMENTS ARE CORRECTED OF RECORD; ★ `cc_instruction_preparation_twelfth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirty-second block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
