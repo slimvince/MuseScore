@@ -585,3 +585,36 @@ remedy F79 names.
 *Provenance: CC, 2026-08-19, appended in the ONE FURTHER commit after `e96d80b550`. Every value in
 this section was read from the runs recorded above at the quiet tree that commit left; the close
 commit's hash, parent and path count were read at the object by explicit hash.*
+
+---
+
+## 15. The whole chain, named as far as a sentence can name it — and the one commit it cannot
+
+**Written because the eleventh batch's own terminus was a commit no close and no report named**, and
+a reader who took the close's provenance as naming the last commit was one commit short. That hazard
+is reduced here to the single commit the regress cannot escape, and it is DECLARED rather than left
+to be discovered.
+
+| | commit | parent | paths |
+|---|---|---|---|
+| Task 0 | `e3583c2720` | `46d68a146d` | 4 |
+| Task 1 | `5f275463b0` | `e3583c2720` | 2 |
+| Task 2 | `bd3961c975` | `5f275463b0` | 4 |
+| Task 3 | `25cde8bc62` | `bd3961c975` | 5 |
+| Task 4 | `18127bab01` | `25cde8bc62` | 2 |
+| Task 5 — the close and this report | `e96d80b550` | `18127bab01` | 6 |
+| the end-state guard run, the ONE FURTHER commit — §14 and the three artifacts | `1530162032` | `e96d80b550` | 4 |
+| the close's own end-state block, appended after the run existed | `10921a0cb0` | `1530162032` | 1 |
+
+**Every row was verified at the object by explicit hash** — its parent confirmed and its path count
+read from the object, never from the memory of making it (**#15**). **This table was written after
+all eight commits existed.**
+
+**★ THE COMMIT THAT CARRIES THIS SECTION IS THE TERMINUS, AND IT IS THE ONE ROW THE TABLE CANNOT
+HOLD.** A commit cannot contain its own identity, so the chain is complete up to it and one commit
+short of the branch tip **by construction, not by omission**. **Read the chain at the branch tip, not
+at this table** — that is the whole content of the warning, and it is stated here so that no later
+session has to rediscover it.
+
+*Provenance: CC, 2026-08-19, appended in the commit that is this batch's terminus. Every hash above
+was read at the git object by explicit hash.*
