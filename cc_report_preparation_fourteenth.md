@@ -480,3 +480,55 @@ yet.
 above was read at the object by explicit hash; every blob comparison was taken between two
 content-addressed objects; every guard value in §2.a comes from the run recorded there. **No end-state
 value is stated in the commit that carries §1–§12.***
+
+---
+
+## 13. The end state — appended AFTER the run that produced it, in the ONE FURTHER commit
+
+**The close commit is `d89a1e2ac8`, parent `ac6cacec9f`, pushed, 6 paths** — verified at the object,
+its parent confirmed and its path count read from the object. Its own identity could not be written
+into it, which is why it is stated here.
+
+**AND THE E-ORDERING IS PROVEN IN THE TEXT AT THAT COMMIT, not only in the path-set.** The report BLOB
+at `d89a1e2ac8` is `966536140f`, and it carries **no `## 13.` heading, no `## 14.` heading and not one
+occurrence of the string `guard(s) run`** — counted at the object. **No sentence asserting the end
+state existed anywhere before the run that produced it.**
+
+**THE SEQUENCE IS RECORDED RATHER THAN THE SUMMARY, because the sequence is the evidence.** Every run
+below was taken at the quiet tree the close commit left, and every value was read off the run, never
+inferred:
+
+1. **`gen_session_start_read_size.py --check` went RED on the first end-state run** — *"STALE vs the
+   measurement"* — **expected, and F79's own instance**: Task 2's close moves `STATUS.md`, a member of
+   the read that tool measures. **Cleared by regenerating the measurement and by nothing else**; the
+   re-check then prints *"the session-start read measurement re-derives"*, with rule (a)'s
+   artifact-and-key pointer still resolving.
+2. **The full guard set then returned `73 guard(s) run, 1 failing, 4 not run, 16 historical
+   record(s)`** — the ONE failing being `[FAIL] tools/audit/gen_filing_convention_application.py
+   --check`, [[OI-372]]'s tool and no other — with **ZERO STOPs**.
+3. **The guard registry was then regenerated in write mode at that same tree, and the classification
+   AFTER it** — the order the classification's own STOP requires. `gen_guard_state.py --check` now
+   prints *"the guard state re-derives"*, which it did **NOT** at this batch's start state (§2.a, F83),
+   and `gen_guard_classification.py --check` prints *"the guard classification re-derives"*.
+
+| | run | passing | failing | not run | historical | STOPs |
+|---|---:|---:|---:|---:|---:|---:|
+| start state, before any edit | 73 | 71 | 2 | 4 | 16 | 0 |
+| **end state, at the quiet tree the close left** | **73** | **72** | **1** | 4 | 16 | **0** |
+
+**The guard population did not move**, this batch having built no measurement tool, and the two
+start-state reds are down to the one standing red the record already carries — the membership check
+cleared at Task 0 and nothing else added.
+
+**★ F86 DID NOT RECUR**, the registry having been regenerated **before** the classification read it,
+which is the order the classification's own STOP requires rather than luck.
+
+**E2 — MET**, on that run and on nothing else.
+
+**★ THIS SECTION WAS WRITTEN AFTER THE RUNS AND AFTER THE CLOSE COMMIT EXISTED**, and the commit
+carrying it cannot contain its own identity — the regress ends where the record's own precedent ends
+it, with git carrying what a sentence cannot.
+
+*Provenance: CC, 2026-08-19, appended in the ONE FURTHER commit after `d89a1e2ac8`. Every value in this
+section was read from the runs recorded above at the quiet tree that commit left; the close commit's
+hash, parent, path count and report blob were read at the object by explicit hash.*
