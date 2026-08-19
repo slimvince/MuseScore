@@ -277,6 +277,45 @@ what #6 exists against; amending the records closes it, and the rule then needs 
 *What this rule does not do:* it pins nothing, resolves no member and grades no ruling. It says what
 a ruling record carries; whether any particular generator is pinned is that member's own question.
 
+### Where the ruled rendering and the committed document have SEPARATED, the ruling record names the BLOB and the member stays unpinned
+
+**Ruled by the user, 2026-08-19 — the forward clause of Ruling 1 of
+`cowork_rulings_2026_08_19_eleventh_return.md`, ruled AS A CLASS; written here by
+`cc_instruction_preparation_twelfth.md` Task 2.** **WHERE A GENERATED DOCUMENT'S COMMITTED CONTENT
+HAS SEPARATED FROM THE RENDERING A RULING WAS TAKEN OVER, THE RULING RECORD NAMES THE BLOB OF THE
+RULED RENDERING AND THE MEMBER IS RECORDED NOT PINNED WITH ITS REASON.** It stands beside the clause
+immediately above because that clause says a ruling record names the COMMIT, and this says what the
+same record carries once the commit alone no longer reaches the rendering. **It reaches only the
+separated case:** where the ruled rendering and the committed document are still ONE document, a pin
+also buys per-run enforcement and continues to be taken exactly as the rule that orders it says.
+
+**THE GROUND IS FINDING F76.** A pin taken after the ruled rendering has already been rewritten
+cannot both fix its inputs and pass its own check. **The measured instance:** of four members
+re-derived at the git objects under the landing-commit bound, two could not be pinned although both
+commits were established. On one, the committed document had drifted from the ruled rendering
+through a later act of the same arc, so fixing the generator's input routes at the ruled commit
+would render a document that is not the committed one. On the other the pin is not constructible at
+all — an input the generator now reads did not exist at that commit — and the drift there IS the
+sitting's own executing act, so reverting it would destroy the record of what was RULED.
+
+**THE GENERAL FORM, which is what outlives the instance:** *the pin protects TWO things that are
+normally one rendering — the evidence of what was PUT and the record of what was RULED — and once a
+post-ruling regeneration has separated them, no single commit holds both.*
+
+**WHY NAMING THE OBJECT ANSWERS IT.** The pin was only ever a means; its end is that a later reader
+can obtain the rendering the user ruled from, and git already provides that end exactly and
+self-verifyingly, provided the record names the object. **#12** is met in the shape this project
+already uses everywhere else — the former rendering stands in git at the commits that carried it —
+and **#19** more strictly than a pin meets it, a blob being content-addressed and self-verifying
+where a pin's guarantee is only as good as the check that enforces it. **THE COST THE USER ACCEPTED,
+recorded because an accepted cost is not a discharged one:** a pin re-proves the evidence on every
+run, and a named blob is proved only when a reader goes and looks. It is bounded by the fact that a
+blob cannot silently rot — git either produces that object or errors loudly, the same self-verifying
+property **D-253** already rests on.
+
+*What this rule does not do:* it unpins nothing and re-takes no pin — a member already carrying one
+is untouched — and it authorizes no restore, no overwrite and no regeneration of any document.
+
 ### A dispatch's DECLARED START STATE is stated at the tree the dispatch will meet, including the reds its own inputs cause
 
 **Ruled by the user, 2026-08-18 — the standing clause riding Ruling 1 of
@@ -312,6 +351,62 @@ caught the false premise.
 
 *What this rule does not do:* it changes no measurement tool, exempts no check, and authorizes no
 session to work around a red. It says what the DECLARATION must contain.
+
+### Where a derivation reaches its inputs by MORE THAN ONE ROUTE, a prediction about its output is taken from EVERY route
+
+**Ruled by the user, 2026-08-19 — the second clause of Ruling 2 of
+`cowork_rulings_2026_08_19_eleventh_return.md`; written here by
+`cc_instruction_preparation_twelfth.md` Task 2.** **WHERE A DERIVATION REACHES ITS INPUTS BY MORE
+THAN ONE ROUTE, A PREDICTION ABOUT ITS OUTPUT IS TAKEN FROM EVERY ROUTE.** **It stands beside the
+declared-start-state clause immediately above because it is the second half of the same lesson:**
+that clause says a dispatch declares the reds its own inputs cause, and this says that where the
+dispatch also predicts WHAT those inputs will change, the prediction is taken from every route by
+which they reach the derivation.
+
+**THE GROUND IS FINDING F75.** A dispatch predicted a regenerated artifact's whole difference as a
+count and two added names. **The measured instance:** the difference carried a third hunk as well,
+additive, arriving by the derivation's OTHER route — a scan of a ruling record's entire text for a
+measurement tool the record names as fixed to a commit, where the predicted route was the population
+of ruling records themselves. The route the dispatch predicted from was the one whose cause it
+already knew.
+
+**THE GENERAL FORM, which is what outlives the instance:** *a prediction drawn from the route whose
+cause is known reads as complete when it is not.*
+
+*What this rule does not do:* it changes no derivation, adds no check and grades no difference. It
+says what a prediction about a derived artifact's difference must cover before it is stated.
+
+### A check on a derived artifact's difference bars the MOVEMENT of a value, not the ADDITION of a derived cross-reference the ordered act causes
+
+**Ruled by the user, 2026-08-19 — the sharpened bar of Ruling 2 of
+`cowork_rulings_2026_08_19_eleventh_return.md`; written here by
+`cc_instruction_preparation_twelfth.md` Task 2.** **A CHECK ON A DERIVED ARTIFACT'S DIFFERENCE BARS
+THE MOVEMENT OF AN EXISTING VALUE, AND DOES NOT BAR THE ADDITION OF A DERIVED CROSS-REFERENCE WHOSE
+CAUSE IS THE ACT THE DISPATCH ITSELF ORDERS.** It stands beside the two clauses above because all
+three govern the same moment: a dispatch's ordered check over an artifact its own act regenerates.
+
+**THE GROUND IS THE MEASURED EPISODE THAT FORCED IT.** A dispatch's ordered check listed the kinds of
+thing a bookkeeping regeneration may not move, and stated its own purpose in terms — *the
+regeneration is a bookkeeping act and may not move a verdict*. The regeneration added ONE field
+cross-referencing a ruling record the same dispatch had just landed, and moved no member, no route,
+no document, no pin constant, no state and no count: **the stated purpose was met in full.** Read
+strictly, the added field named one of the listed kinds in a second place, so a session could have
+STOPPED — and that reading would have returned a second consecutive batch with nothing executed, over
+an additive cross-reference produced by the very act the dispatch ordered.
+
+**THE GENERAL FORM, which is what outlives the instance:** *enforcing a bar past its own stated
+purpose is how a STOP becomes ritual rather than a guard.* The narrowing is stated in those terms —
+**added, derived, and caused by the ordered act** — rather than left as discretion, because a STOP
+condition exists precisely to remove a judgment from the executing side, which is **D-251**'s own
+shape.
+
+**THE ALTERNATIVE DECLINED, recorded because an excluded alternative is evidence about the choice:**
+leaving the bar as written and judging each case was declined as the *"stable enough to be cited"*
+failure the record already names and **D-639**'s own worked example — a criterion that reads as
+mechanical and resolves case by case.
+
+*What this rule does not do:* it widens no check, exempts no artifact and admits no movement of a
+value. An addition still enters the report, with its cause established at the record's own text.
 
 ### A SITTING RECORD is an interim carrier, and the commit that lands it bounds when the sitting was held
 
