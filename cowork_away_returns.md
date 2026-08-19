@@ -15388,3 +15388,266 @@ is where it is graded. The report's §13 carries the same reading and is the aut
 whose own identity it cannot contain. Every value here was read from the runs recorded above; the
 close commit's and the further commit's hashes, parents and path counts were read at the object by
 explicit hash.*
+
+---
+
+# ★ CLOSE — THE PREPARATION FOURTEENTH BATCH (2026-08-19)
+
+**Dispatch `cc_instruction_preparation_fourteenth.md`, executing the three rulings of
+`cowork_rulings_2026_08_19_thirteenth_return.md`. COMPLETE.** Three task commits, Tasks 0 through 2,
+the close being a task commit with its own entry. The report is `cc_report_preparation_fourteenth.md`
+and is the authority for everything below; nothing of it is restated at any width it does not already
+have (**D-431**).
+
+**★ THE END STATE IS NOT ASSERTED IN THIS CLOSE.** The end-state guard run is taken AFTER the commit
+carrying this section exists, and its values land in ONE FURTHER commit. No row, no table cell and no
+sentence here states what that run returned — the E-ordering rule at the smaller grain **F79**
+records, and the route the three preceding batches took. The writing side verified the preceding
+batch's compliance by reading the report BLOB at each commit rather than its path-set, so the test is
+on the text; it is met here on the text.
+
+**★ AND TWO OF THE THREE RULINGS ORDER NOTHING. THEY ARE RECORDED HERE AS DECISIONS, at §3, so that a
+later reader meets a decision rather than an omission.**
+
+## 0. The reading, and the start state
+
+`CLAUDE.md` and `STATUS.md` as they stood, in full. `DECISIONS.md` in full — unconditional and
+explicitly not demoted. `BUILD_AND_TEST.md` in full, this batch MEETING its condition by running the
+guard set. **The whole open-items INDEX was NOT read:** rule (a)'s derived gating answer was read at
+`tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` → `gating_ids`, narrowed to
+its identity list, and no verdict was challenged, so the grounds at `the_gating_rows` were not opened.
+The standing clause was obeyed — `cowork_handoff.md`'s **THIRTY-THIRD** block was read, which is what
+told this session the series stands at **F88** and that numbering begins at **F89**. Then, as ordered,
+in full: `cowork_rulings_2026_08_19_thirteenth_return.md`, its §3 above all;
+`cc_report_preparation_thirteenth.md`, its §4.e, §4.f and §10 above all;
+`cowork_rulings_2026_08_19_twelfth_return.md`; and `cowork_audit_protocol.md`'s dispatch-protocol
+section **IN FULL, at the file and not at a count** — which is this batch's own subject, and is why
+the sentence you are reading names no number.
+
+**THE DECLARED START STATE MATCHED AT THE TREE**, taken before any edit at a quiet tree by
+`gen_guard_state.py --check` followed by `gen_guard_classification.py --check`: **73 run, 71 passing,
+TWO failing, 4 not run, 16 historical, ZERO STOPs**, and *"the guard classification re-derives"*. Both
+reds are the ones the dispatch names with their causes — [[OI-372]]'s tool, and
+`gen_evidence_pin_membership.py --check` reporting its artifact STALE because this dispatch's own
+untracked ruling record already sits inside a derivation whose population is the file system. **The
+guard registry's own drift was named by the dispatch rather than left (F83 applied rather than
+repeated), and it is not a third failing check.**
+
+## 1. Task 0 — the four paths, and the membership check cleared in the same act
+
+**`3a2cb46225`, parent `4e93ee84c3`, pushed, 4 paths** (2 modifications, 2 additions; no staging
+override).
+
+**A1 HELD, checked first and entirely at content-addressed objects.** Exactly ONE tracked modification
+in the whole working tree — `cowork_handoff.md`, committed blob `ada40e3602` against the working
+copy's content-address `4a958576a7` — and the difference is ONE contiguous changed passage carrying
+both parts of one act: the THIRTY-THIRD block inserted, and the THIRTY-SECOND heading's entry-point
+demotion marker, the single deletion being that heading in its undemoted form.
+`tools/audit/evidence_pin_membership.json` was UNMODIFIED at its committed blob `28d6b7f048`, which is
+A1's expected-unmodified path holding. **The F57 caveat was applied rather than assumed** — the
+filtered and unfiltered content-addresses of the working copy are the same object, so the file is
+stored LF and the two blob hashes are directly comparable. **No changed-passage count was asserted in
+advance** (the F25 lesson). The two invariant paths were content-addressed in the same act and match
+the terminus: `OPEN_ITEMS.md` at `6ae67d8603` and `tools/audit/nongating_apparatus_rows.json` at
+`5bb43d0b3a`, with `gen_nongating_apparatus_rows.py` at `43ae5e1d15`.
+
+**THE REGENERATION'S DIFFERENCE WAS MEASURED BEFORE IT WAS ACCEPTED**, blob against blob by explicit
+hash — `28d6b7f048` → `b4c63513a9` — and it is **TWO hunks**, matching **both** halves of the
+dispatch's prediction: `ruling_records_read` rises by one and one record name is added (route A), and
+**route B adds nothing, so there is no third hunk**. Route B's half was established AT THE NEW
+RECORD'S OWN TEXT BEFORE THE RUN: exactly one line of that record carries the word *pinned*, and it
+carries no backtick-quoted tool name, which is what the tool's route-B resolver requires. NO member,
+route, document, pin constant, state or count moved. At the tree this commit carries,
+`gen_evidence_pin_membership.py --check` re-derives.
+
+## 2. Task 1 — Ruling 3: the population marked at its own sites, the count retired
+
+**`ac6cacec9f`, parent `3a2cb46225`, pushed, 4 paths.**
+
+**A3 WAS CHECKED FIRST.** The dispatch-protocol section's bounds were established from the headings
+alone — its own `##` heading is the last in the file, so the section runs to end of file — and **the
+section population was DERIVED at the tree rather than inherited from the dispatch**, agreeing with
+what the premise ledger names.
+
+**EVERY SECTION IS PLACED IN OR OUT BY THE TEST THE RULING STATES**, imported and not invented: it
+states a rule rather than recording a finding; the rule binds how a dispatch, a session report or a
+ruling record is written, sequenced or executed; and this section is that rule's home rather than a
+pointer to it. **THE PLACEMENT RECONCILES BOTH WAYS AGAINST THE SECTION POPULATION** — every section
+placed exactly once, none in both, none in neither, and the two sides summing to the enumeration.
+**No section defeated the test, so no STOP was owed.** **The two disputed members are IN by the
+record and were not re-decided** — the read-first clause and the sitting-record interim-carrier
+clause.
+
+**EXACTLY ONE SECTION IS OUT, and the reason is recorded rather than left to be inferred:** the
+shell-read policy's section, whose own opening sentence names its subject as *the guard that enforces
+the working-tree-read rule*. Its two operative statements bind a running mechanism — the guard denies
+where it cannot decide, and its establishment artifact publishes the ceiling it cannot see — while the
+rule that binds a SIDE is the working-tree-read rule itself, homed in `CLAUDE.md` (**D-253**) and not
+here. It therefore fails the second limb of the test, and it is the only section in the population
+whose operative content is a mechanism's decision policy rather than either side's conduct.
+
+**EVERY MEMBER CARRIES THE IDENTICAL ONE-LINE MARKER**, carrying nothing but the membership — no
+count, no ordinal, and no cross-reference to another member, because an ordinal is a second value that
+goes stale on the next insertion.
+
+**★ THE MARKER'S POSITION WAS FORCED BY MEASUREMENT AND NOT CHOSEN, AND THE EPISODE IS RECORDED
+BECAUSE IT IS EVIDENCE.** Written first BENEATH each heading, the marker fell inside the verbatim
+blocks that many register entries quote from those headings, and the drift authority reported those
+quotes as **no longer existing at their own home** — a strictly worse failure than line drift, because
+a re-aiming tool moves an anchor and cannot restore a quote. The repositioning was **proven on two
+sections before it was applied to the rest**, and the marker now sits ABOVE its heading with that
+ground stated at the convention itself, so a later marker is not written back into the same defect.
+
+**THE COUNT IS RETIRED RATHER THAN RESTATED, WHICH IS THE HALF THAT DISCHARGES F88.** The convention
+at the section's own head states that the standing clauses are the sections carrying the marker, that
+a session obtains them by reading them there, and that **the number is never restated in a dispatch, a
+handover block, a session report or a close** (**#6**, **D-431**) — so a dispatch's read-first block
+from here names the MARKER and never a number. **No count was written anywhere in the act.** The
+convention also records why no generator was built: a recognizer over prose is the route **F42**
+already refuted, and such a recognizer would have no independently-known population, so its output
+would publish as a lower bound with its reach declared UNMEASURED — a floor used to police a mandatory
+obligation, which is answering **F84** by doing the thing F84 warns against.
+
+**★ WHAT THIS PLACEMENT IS, STATED HONESTLY AND NOT DRESSED UP.** The section population is
+**externally enumerable**, so the placement reconciles both ways against a side this act does not
+author. **But the placement itself is AUTHORED per section and is NOT a per-run guard:** nothing
+re-checks it on a later run, and a section written later carries no marker until someone writes one.
+That is stated at the convention as well as here, so a reader of the file meets it without reading
+this close.
+
+**THE ANCHORED-QUOTE CLASS FIRED AND WAS CLEARED BY ITS RULED TREATMENT.** After the repositioning the
+residue was **line drift alone**, with every register verbatim found at its cited home; every drifted
+anchor cited this one file and no other, **counted rather than sampled**; and every one was re-aimed
+**per citation** from the drift authority's own reported start line, through the applier that reads the
+verifier's own machinery — never by an assumed uniform shift, which mattered more here than in the
+preceding batch because this edit inserts at MANY points and no uniform shift exists. The drift
+authority then reports zero drift and every verbatim at its home.
+
+**EVERY REGENERATED ARTIFACT'S DIFFERENCE WAS MEASURED BEFORE IT WAS ACCEPTED**, blob against blob,
+and **every changed line carries a `cowork_audit_protocol.md` coordinate and nothing else — counted,
+not sampled, with zero lines failing that test in either artifact**: `backbone_decisions.json`
+`f4b452fa93` → `8ed5196bb5`, and `rulings_sort_classification.json` `de49e85312` → `1659e79970`, the
+latter carrying twice as many changed lines because each entry names the coordinate in two fields.
+`decisions/group_T.md` `97a721c1ac` → `f59126b9ba` on the same test. **`DECISIONS.md` is byte-unchanged
+and no other group file moved.**
+
+**ONE DEPARTURE, F85 RECURRING AND DECLARED:** the rulings-sort generator has ONE write path for TWO
+outputs, so regenerating the classification also rewrote the ruling surface it renders — and this
+batch's bars forbid moving a ratification document. Its `--check` named only the classification, and
+the surface was **content-addressed before and after the run and is BYTE-IDENTICAL at `5c62e70a38`**,
+proven at the object rather than assumed. The bar's purpose is met in full and measurably: no
+ratification document's content moved, and no pin was taken, restored, moved or re-taken.
+
+## 3. ★ THE TWO DO-NOTHINGS, RECORDED AS RULED DECISIONS
+
+Two of this batch's three rulings order nothing. Both are recorded here as **decisions taken**, not as
+work omitted.
+
+**(a) RULING 1 — the sort's member-test widenings STAND AS EXECUTED.** No review pass was run, the
+narrow own-source-only test was not restored, and `tools/audit/recognizer_establishment_sort.json` and
+`tools/audit/gen_recognizer_establishment_sort.py` are **untouched — proven byte-unchanged at every
+commit of this batch against the base**. **The ground recorded with the ruling is the ERROR DIRECTION
+rather than the argument:** the sort publishes as a **LOWER BOUND with its reach declared UNMEASURED**,
+so a wider member test **raises a declared floor**, and a floor that rises cannot be wrong in the
+damaging direction — the damaging direction being a claim of coverage that is not held, which this
+claims none of. **The general form, which is the whole of what that ruling adds, is homed at the ruling
+record and is NOT to be written to a second site (#6):** *a static test over a single source file
+systematically misreads exactly the code that obeys a one-home rule, so the blind spot is CORRELATED
+WITH COMPLIANCE and the members it drops are the conforming ones.* **The cost the user accepted:** the
+widened test's reach is asserted rather than measured, a residual under **#19**, bounded only by the
+UNMEASURED declaration that keeps it visible.
+
+**(b) RULING 2 — the ESTABLISHED-side check STAYS a hand-check.** No mechanism was built for the
+ESTABLISHED direction, **no verdict was re-taken and no bound was re-published**; the bound stands as
+declared at the artifact, in the dangerous direction, in its own words. **The ground recorded with the
+ruling is the POPULATION rather than the principle:** it carries **three** members — one the
+establishment seed, the other two read at their source by the executing side against the guard
+registry's own independently authored entries, with the seed separately derived at its source by the
+writing side — and a mechanism to check three members is tool work that blocks nothing, which is the
+standing mechanism freeze's own test applied to the freeze's own question. **★ THE FORWARD TRIGGER IS
+NAMED so this is not re-decided by feel: when the ESTABLISHED population grows beyond what can be read
+by hand, the route is the MECHANISM and not the provisional status** — the provisional route excluded
+now rather than left available, because it would put one verdict in two states, which **#6** forbids.
+**The cost the user accepted:** three ESTABLISHED verdicts rest on a hand-check rather than a per-run
+guard, thin under **#19**, bounded by the population's size and by the bound being published rather
+than hidden — and **not** discharged.
+
+## 4. Task 2 — the close
+
+**Three `STATUS.md` pointer entries, one per task**, and **in the same act Ruling 4's forward bound
+moves the THIRTEENTH batch's entries verbatim to `STATUS_ARCHIVE.md`**. `gen_status_batch_bound.py`
+was re-aimed at this batch's own base commit `ac6cacec9f`, its every previous aiming kept rather than
+replaced (**#12**). **Both directions are proven by the tool itself**: every moved entry byte-present
+in the archive exactly once, and every moved entry absent from the must-read. **The declared
+`Last updated: ` prefix adjustment is IMPORTED and not re-decided (#6)**, and no entry needed a second
+adjustment — the tool's own occurrence test would have STOPPED on one. Every value of the move is at
+`tools/audit/status_batch_bound.json` and none is restated here (**D-431**).
+
+## 5. The registered expectations
+
+| | verdict |
+|---|---|
+| **E0** | **MET.** Exactly 4 paths — two modifications matching A1's shape and step 2's bounded regeneration, two additions, no staging override — and the membership check passing at the resulting tree. The prediction held on BOTH routes, with no third hunk, and route B's half was established at the record's own text before the run. |
+| **E1** | **MET.** Every `###` section of the dispatch-protocol section is enumerated and placed exactly once, none in both and none in neither, with no section defeating the test and so no STOP owed; every IN section carries the identical one-line marker and no member carries a count, an ordinal or a cross-reference; the two disputed members are IN; the retirement convention stands at the section's head and NO count is written anywhere in the act; the placement's authored, non-guard character is stated in the report and at the convention; and the drift authority reports every re-aimed anchor correct at its new coordinate. |
+| **E2** | **NOT GRADED IN THIS COMMIT, BY DESIGN.** The end-state run is taken after the commit carrying this close exists, and its values and E2's grade land in ONE FURTHER commit. Grading it here would be the very defect **F79** records. The two do-nothings ARE recorded as decisions with their grounds and the forward trigger named, at §3 above. |
+
+## 6. The declared departures
+
+1. **The marker was first written beneath the headings and repositioned above them** — the correction
+   is declared rather than presented as the first writing (**#12**), its cause measured at the drift
+   authority and its ground stated at the convention itself.
+2. **A generator with one write path for two outputs also rewrote a ruling surface** (Task 1); the
+   surface came out byte-identical, proven at the object rather than assumed (**F85**), so no
+   ratification document's content moved.
+3. **The guard registry and its classification are regenerated in the FURTHER commit**, at the quiet
+   tree, together with the end-state run that produces their values — never before it.
+4. **Working-tree files were content-addressed into the object database** (`git hash-object -w`) so
+   that both sides of every blob comparison are content-addressed — the route the preceding batches
+   used, imported rather than re-invented.
+5. **Two shell invocations were refused by the armed guard** — a `Get-Content` line-count and a `sed`
+   aimed at a repository path. Each was re-taken through the file tools and **neither was worked
+   around**; the deny policy behaved exactly as the record states.
+6. **One commit message was attempted with a PowerShell here-string in the Bash tool and failed**
+   before any commit was made; it was re-taken through a message file written with the file tools, and
+   **no write was made through shell redirection.**
+
+## 7. The findings carried
+
+**F1–F88 ride to the preparation phase's retrospective unchanged**, with the E3 ordering defect and
+the A1 premise error. **THE ROW BAR STANDS WHOLE THIS BATCH: no open-items row was created, flipped or
+discarded, and no finding is rowed.** [[OI-372]] and [[OI-374]] stand exactly as found; [[OI-179]]
+stays OPEN and GATES.
+
+**F3 did NOT fire in this batch** — `reaim_home_anchors.py --check` reported drift and this session
+used `gen_cluster_dispositions.py --verify` as the drift authority throughout, which is the ruled
+reading rather than a lucky one. **F25 did not repeat; F57 was applied rather than assumed; F79 did
+not repeat**, the end state not being asserted in this close. **F88 is what Task 1 discharges**, and
+**F84** is what the convention's own refusal of a generator rests on.
+
+**This batch allocated no new finding number.** The nearest candidate was declared instead as a
+departure at §6(1): a marker position that had to be corrected because a register entry's quoted
+verbatim runs from a section heading. It is recorded at the convention, where the next writer of a
+marker will meet it.
+
+## 8. The chain, named as far as a sentence can name it — and the one commit it cannot
+
+| | commit | parent | paths |
+|---|---|---|---|
+| Task 0 | `3a2cb46225` | `4e93ee84c3` | 4 |
+| Task 1 | `ac6cacec9f` | `3a2cb46225` | 4 |
+| Task 2 — the close | the commit that carries this section, whose own identity it cannot contain | `ac6cacec9f` | — |
+
+**Every row above was verified at the object by explicit hash** — its parent confirmed and its path
+count read from the object, never from the memory of making it (**#15**).
+
+**★ THE COMMIT CARRYING THIS SECTION CANNOT NAME ITSELF, AND THE ONE AFTER IT IS NOT WRITTEN YET.**
+The end-state guard run is taken after this commit exists, at the quiet tree it leaves, and lands in
+ONE FURTHER commit — so at the moment this table is written the chain is complete up to this commit
+and one short of the branch tip **by construction, not by omission**. **Read the chain at the branch
+tip, never at this table or at any report.** That is the whole content of the warning, imported from
+the preceding batches rather than re-invented.
+
+*Provenance: CC, 2026-08-19, executing `cc_instruction_preparation_fourteenth.md`. Every commit hash
+above was read at the object by explicit hash; every blob comparison was taken between two
+content-addressed objects; every guard figure in §0 comes from the run recorded there. **No end-state
+value is stated in the commit that carries this section.***
