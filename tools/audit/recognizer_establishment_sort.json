@@ -1,0 +1,2733 @@
+{
+ "what_this_is": "THE RECOGNIZERS THE RECORD LEANS ON, SORTED BY WHETHER AN INDEPENDENTLY-KNOWN POPULATION EXISTS TO RECONCILE AGAINST. A MEASUREMENT AND A PUBLICATION: nothing here edits, widens or acts on any recognizer, writes any enumerated member's artifact, or grades any member as owed. Every member is derived from the tools' own syntax trees; none is listed by hand (D-431).",
+ "generated_by": "tools/audit/gen_recognizer_establishment_sort.py",
+ "generated_for": "cc_instruction_preparation_thirteenth.md, Task 2",
+ "the_ruling_verbatim": "A recognizer over a population is established only by both-ways reconciliation against an independently-known population. Where no such population exists, the recognizer's output IS the population, no seed set can establish it, and its output stands as a LOWER BOUND with its reach declared UNMEASURED — never as a census.",
+ "the_ruling": "User, 2026-08-19, Ruling 1 of `cowork_rulings_2026_08_19_twelfth_return.md`. The clause it lands stands at `cowork_audit_protocol.md`'s dispatch-protocol section.",
+ "what_this_authorizes": "NOTHING. The ruling's own words: 'What is ruled is what its result authorizes: NOTHING.' No recognizer is corrected here, no member is acted on, and no member is owed by appearing here. The published sort is the STANDING INPUT to a later ruled act, never a work list.",
+ "★_this_sorts_own_status_under_its_own_test": {
+  "the_verdict_on_itself": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+  "★_and_it_is_DERIVED_rather_than_asserted": {
+   "what_this_is": "This tool is a member of its OWN population, and the derivation places it like any other member. The declared verdict above and the derived one must AGREE, and a disagreement HALTS the run — so this artifact cannot claim a status about itself that its own test does not give it.",
+   "the_derived_verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "they_agree": true
+  },
+  "and_therefore": "ITS MEMBER LIST IS PUBLISHED AS A LOWER BOUND WITH ITS REACH DECLARED UNMEASURED, NEVER AS A CENSUS.",
+  "the_population_half": "every `*.py` under `tools/` — an external file-system enumeration, published whole below at `the_candidate_population_walked`, so the membership is checkable by anyone who walks the same directory.",
+  "the_classification_half": "WHICH of those tools is a recognizer over a population is THIS TOOL'S OWN classification, decided by the three-part member test above, and NOTHING OUTSIDE IT ENUMERATES THAT. No seed set can establish it: the three seeds prove the recognizer is not broken and say nothing about what it covers, which is finding F84's own general form.",
+  "so_what_a_reader_may_take_from_it": "That every member listed IS one, on the evidence published beside it. NOT that the list is complete: a recognizer over a population this derivation's member test does not reach is absent from it, and how many such there are is UNMEASURED."
+ },
+ "the_test": {
+  "the_question": "Does something other than this recognizer enumerate the population it claims to describe?",
+  "ESTABLISHED": "it reconciles its published population in BOTH DIRECTIONS against a side that is NOT a collection authored inside the tool itself, and it HALTS on a member it cannot place.",
+  "MIXED": "not that — but the candidate enumeration it draws from is external and is PUBLISHED WHOLE in its own artifact, so it is established on its POPULATION and unestablished on its CLASSIFICATION.",
+  "NO INDEPENDENTLY-KNOWN POPULATION": "neither. The published class IS the recognizer's own output, no seed set can establish it, and it stands as a LOWER BOUND with its reach UNMEASURED.",
+  "UNPLACED": "the derivation cannot decide. Returned to the user as a standing STOP-and-report, never guessed into one of the three."
+ },
+ "how_it_is_derived": {
+  "population": "every `*.py` under `tools/`, walked and parsed with the standard library's own syntax tree. The walk and the own-output recognizer are IMPORTED from `gen_epoch_write_path.py`, which owns them (#6).",
+  "a_member": "a tool that (i) writes an artifact of its own, (ii) draws its candidates from an enumeration source it does not itself write, and (iii) decides membership or class with a recognizer — a regular expression or a syntax tree applied to what it read. FOR BOTH (ii) AND (iii) THE SOURCE MAY BE CARRIED IN THE TOOL'S OWN TEXT OR IN A HELPER IT IMPORTS, on this project's own #6: a walk or a recognizer with several users is given ONE home and imported, so a test reading a tool's own source alone would report every tool that FOLLOWS that rule as drawing on nothing and recognizing nothing — and this derivation could not see ITSELF. The two cases are published separately per member, at `found_in` and at `where_its_placement_recognizer_lives`, never collapsed.",
+  "the_population_it_claims_to_describe": "the first sentence of the tool's own module docstring, quoted — the tool's own words for its own subject, never authored here.",
+  "the_reconciliation": "every set difference or intersection GUARDED BY A RAISE, quoted verbatim; whether two of them form a reversed operand pair; and whether a side of that pair traces, at ONE level of local assignment, to a collection authored inside the tool.",
+  "the_candidate_enumeration_is_published_whole": "the candidate collection itself — not its length — assigned to a key of the artifact the tool builds."
+ },
+ "the_bound_what_it_cannot_see": [
+  "It reads SOURCE, never a run. It reports what a tool is written to do, not what a run does.",
+  "The authored-side test expands ONE LEVEL of local assignment. A collection authored inside a tool and reached through two or more intermediate names reads as non-authored, which would place a member ESTABLISHED that is not — the DANGEROUS direction, and the reason the three seeds are re-checked on every run.",
+  "It recognises a reconciliation only where the set operation is GUARDED BY A RAISE in the same `if`. A tool that reconciles and reports without raising reads as not reconciling.",
+  "A computed path, a computed key, or a collection built through a helper this derivation does not follow, carries no literal to find.",
+  "It takes a tool's declared subject from its module docstring's first sentence. A tool with no docstring publishes an empty declaration rather than one this derivation invents.",
+  "AND THE MEMBERSHIP RECOGNIZER'S OWN REACH IS UNMEASURED beyond the three seeds. That is the ruled clause applied to this artifact itself, and it is why the member list is a LOWER BOUND."
+ ],
+ "counts": {
+  "tools_walked": 339,
+  "members": 50,
+  "established": 3,
+  "mixed": 9,
+  "no_independently_known_population": 38,
+  "unplaced": 0
+ },
+ "the_candidate_population_walked": [
+  "tools/a8_rebaseline_measure.py",
+  "tools/analyze_bir_true_iter19.py",
+  "tools/analyze_cat1_minor_iter24.py",
+  "tools/analyze_diag20.py",
+  "tools/analyze_inversion_errors.py",
+  "tools/analyze_iter90_regressions.py",
+  "tools/analyze_pdmx.py",
+  "tools/analyze_wrong_root_iter90.py",
+  "tools/audit/apply_l5_pass2_verdicts.py",
+  "tools/audit/changed_paths.py",
+  "tools/audit/claude_md_rule_triage.py",
+  "tools/audit/compare_blind_rerun.py",
+  "tools/audit/corpus_arm_stamp.py",
+  "tools/audit/decisions/apply_residue_discard.py",
+  "tools/audit/decisions/apply_soft_discard.py",
+  "tools/audit/decisions/gen_apply_field_diff.py",
+  "tools/audit/decisions/gen_cluster_dispositions.py",
+  "tools/audit/decisions/gen_decision_clusters.py",
+  "tools/audit/decisions/gen_decision_harvest.py",
+  "tools/audit/decisions/gen_decisions_register.py",
+  "tools/audit/decisions/gen_finish_line_item1_routes.py",
+  "tools/audit/decisions/gen_home_classification.py",
+  "tools/audit/decisions/gen_homing_edit_shape.py",
+  "tools/audit/decisions/gen_item1_rehome_blocker.py",
+  "tools/audit/decisions/gen_live_prohibition_pointers.py",
+  "tools/audit/decisions/gen_oi333_repair.py",
+  "tools/audit/decisions/gen_outstanding_delegations.py",
+  "tools/audit/decisions/gen_phase1g_triage.py",
+  "tools/audit/decisions/gen_phase1m_measurements.py",
+  "tools/audit/decisions/gen_phase1n_reading_regime.py",
+  "tools/audit/decisions/gen_phase1p_delegation_bar.py",
+  "tools/audit/decisions/gen_phase1q_record_divergence.py",
+  "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
+  "tools/audit/decisions/gen_phase1w_legacy_verification.py",
+  "tools/audit/decisions/gen_r1_superseded_reach.py",
+  "tools/audit/decisions/gen_reads1_yield.py",
+  "tools/audit/decisions/gen_reads2_yield.py",
+  "tools/audit/decisions/gen_reads3_yield.py",
+  "tools/audit/decisions/gen_reads4_oi326_application.py",
+  "tools/audit/decisions/gen_reads4_yield.py",
+  "tools/audit/decisions/gen_reads5_repack.py",
+  "tools/audit/decisions/gen_reads5_yield.py",
+  "tools/audit/decisions/gen_reads6_yield.py",
+  "tools/audit/decisions/gen_retired_subject_moves.py",
+  "tools/audit/decisions/gen_route_homing_edit_shape.py",
+  "tools/audit/decisions/gen_true_half_reach.py",
+  "tools/audit/decisions/gen_true_half_reach_rows.py",
+  "tools/audit/decisions/gen_verbatim_subject_consistency.py",
+  "tools/audit/decisions/reaim_home_anchors.py",
+  "tools/audit/gen_arm_comment_sweep.py",
+  "tools/audit/gen_artifact_inventory.py",
+  "tools/audit/gen_artifact_inventory_surface.py",
+  "tools/audit/gen_blind_rerun_sample.py",
+  "tools/audit/gen_census_movement_classification.py",
+  "tools/audit/gen_claude_md_finer_archive.py",
+  "tools/audit/gen_claude_md_finer_spans.py",
+  "tools/audit/gen_claude_md_finer_surface.py",
+  "tools/audit/gen_deciding_act_recovery.py",
+  "tools/audit/gen_decisions_filter.py",
+  "tools/audit/gen_discard_reach_split.py",
+  "tools/audit/gen_discard_records.py",
+  "tools/audit/gen_dispositions.py",
+  "tools/audit/gen_doc_change_candidates.py",
+  "tools/audit/gen_epoch_write_path.py",
+  "tools/audit/gen_evidence_pin_membership.py",
+  "tools/audit/gen_filing_convention_application.py",
+  "tools/audit/gen_framework_untrusted_candidates.py",
+  "tools/audit/gen_gating_row_sizing.py",
+  "tools/audit/gen_governing_surface_readers.py",
+  "tools/audit/gen_governing_surface_spans.py",
+  "tools/audit/gen_governing_surface_split.py",
+  "tools/audit/gen_guard_classification.py",
+  "tools/audit/gen_guard_state.py",
+  "tools/audit/gen_index_status_normalization.py",
+  "tools/audit/gen_inventory.py",
+  "tools/audit/gen_july_screen.py",
+  "tools/audit/gen_l3_pass2_sample.py",
+  "tools/audit/gen_nongating_apparatus_rows.py",
+  "tools/audit/gen_oi356_parser_correction.py",
+  "tools/audit/gen_oi357_partial_signature_establishment.py",
+  "tools/audit/gen_oi357_production_arm_run.py",
+  "tools/audit/gen_oi367_opening_correction.py",
+  "tools/audit/gen_pass2_sample.py",
+  "tools/audit/gen_pass2_sample_l4.py",
+  "tools/audit/gen_pass2_sample_l5.py",
+  "tools/audit/gen_period_stratum_split.py",
+  "tools/audit/gen_phase1_completion_inventory.py",
+  "tools/audit/gen_phase1_finish_line.py",
+  "tools/audit/gen_phase1_gate_readers.py",
+  "tools/audit/gen_phase3_gate_partition.py",
+  "tools/audit/gen_post_split_archive.py",
+  "tools/audit/gen_ratification_surface_set.py",
+  "tools/audit/gen_ratified_document_check.py",
+  "tools/audit/gen_recognizer_establishment_sort.py",
+  "tools/audit/gen_reserved_word_scanner.py",
+  "tools/audit/gen_retirement_caller_check.py",
+  "tools/audit/gen_retirement_census_movement.py",
+  "tools/audit/gen_rulings_sort.py",
+  "tools/audit/gen_session_start_read_size.py",
+  "tools/audit/gen_signature_sweep.py",
+  "tools/audit/gen_sole_carrier_subclass.py",
+  "tools/audit/gen_status_archive_pass.py",
+  "tools/audit/gen_status_batch_bound.py",
+  "tools/audit/gen_status_residue_move.py",
+  "tools/audit/gen_test_construction_evidence.py",
+  "tools/audit/guard_armed_check.py",
+  "tools/audit/hardening_battery.py",
+  "tools/audit/index_status_lint.py",
+  "tools/audit/instrument_arm_declaration_effect.py",
+  "tools/audit/l3/crosstab_fine_vs_pass1.py",
+  "tools/audit/l3/gen_l3_dispositions.py",
+  "tools/audit/l3/measure_l3_firerate.py",
+  "tools/audit/l3/relabel_fine.py",
+  "tools/audit/l4/pass1_decoder_aggregate_decode.py",
+  "tools/audit/l4/pass1_decoder_aggregate_fullspine.py",
+  "tools/audit/l4/pass1_oracle_corpus_agg.py",
+  "tools/audit/l4/pass1_oracle_dispositions.py",
+  "tools/audit/l4/pass1_satellites_dispositions.py",
+  "tools/audit/l4/pass1_satellites_firerate.py",
+  "tools/audit/l5/gen_grading_fitting_dispositions.py",
+  "tools/audit/l5/gen_harness_dispositions.py",
+  "tools/audit/l5/gen_instruments_core_dispositions.py",
+  "tools/audit/l5/gen_resolver_dispositions.py",
+  "tools/audit/local_patches_check.py",
+  "tools/audit/notation_surface/gen_notation_surface_audit.py",
+  "tools/audit/oi199/gen_joint_disposition_annotations.py",
+  "tools/audit/oi199/gen_joint_dispositions.py",
+  "tools/audit/oi349_record_arm_precondition_probe.py",
+  "tools/audit/output_encoding.py",
+  "tools/audit/pass2_apply_errorrate.py",
+  "tools/audit/pass2_apply_verdicts.py",
+  "tools/audit/pass2_compare.py",
+  "tools/audit/pass2_compare_l3.py",
+  "tools/audit/pass2_compare_l4.py",
+  "tools/audit/pass2_judge_l4.py",
+  "tools/audit/process_check.py",
+  "tools/audit/reaim_ratification_surface_paths.py",
+  "tools/audit/register_lint.py",
+  "tools/audit/shell_read_guard.py",
+  "tools/build_score_census_registry.py",
+  "tools/c1_gen_devbed.py",
+  "tools/c1_gen_substrate.py",
+  "tools/c1_reliability.py",
+  "tools/calibration_fit.py",
+  "tools/cc_audit_cadence_anchor_accuracy.py",
+  "tools/cc_audit_localmodulation_accuracy.py",
+  "tools/cc_b2_subdominant_guard_measure.py",
+  "tools/cc_b_guard_separability.py",
+  "tools/cc_cadence_aggregate_prototype.py",
+  "tools/cc_cadence_anchor_measure.py",
+  "tools/cc_cadence_precision_investigation.py",
+  "tools/cc_decomp_measure.py",
+  "tools/cc_e0_fullspine_measure.py",
+  "tools/cc_eg2_probe.py",
+  "tools/cc_floor_classify.py",
+  "tools/cc_j_key_i_byteid.py",
+  "tools/cc_j_key_i_measure.py",
+  "tools/cc_j_key_ii_redux_step1.py",
+  "tools/cc_j_key_ii_safety.py",
+  "tools/cc_j_key_iii_decision_diff.py",
+  "tools/cc_j_key_iii_invariant_check.py",
+  "tools/cc_j_key_iii_mode_collapse.py",
+  "tools/cc_joint_residual_probe.py",
+  "tools/cc_kma_relpair_probe.py",
+  "tools/cc_layer3_keymode_baseline.py",
+  "tools/cc_layer3_sweep_grade.py",
+  "tools/cc_layer4_chord_baseline.py",
+  "tools/cc_layer4_residual_decompose.py",
+  "tools/cc_oi125_extrapolation_probe.py",
+  "tools/cc_oi168_probe_report.py",
+  "tools/cc_oracle_crosscheck.py",
+  "tools/cc_round2_genre_cov.py",
+  "tools/cc_round2_measure.py",
+  "tools/cc_round2_onset.py",
+  "tools/cc_round3_measure.py",
+  "tools/cc_stage4d_i_modulation_measure.py",
+  "tools/cc_stepM_l5_measure.py",
+  "tools/cc_tonicization_measure.py",
+  "tools/cc_tonicization_modulation_probe.py",
+  "tools/cc_uncertain_resolver_inspect.py",
+  "tools/cc_uncertain_resolver_measure.py",
+  "tools/characterise_bir_false.py",
+  "tools/check_corelli_g.py",
+  "tools/check_corelli_mscx.py",
+  "tools/check_corelli_tick.py",
+  "tools/check_iter46_candidates.py",
+  "tools/check_parity.py",
+  "tools/classify_key_disagreement.py",
+  "tools/compare_analyses.py",
+  "tools/compare_bach_wir.py",
+  "tools/compare_gatej.py",
+  "tools/compare_inversion_regressions.py",
+  "tools/compare_l6_oracle.py",
+  "tools/compare_omnibook.py",
+  "tools/compare_progressions_oracle.py",
+  "tools/compare_rn.py",
+  "tools/compare_vl_parity.py",
+  "tools/compare_when_in_rome.py",
+  "tools/conformal_check.py",
+  "tools/coverage/parse_cobertura.py",
+  "tools/dcml_parser.py",
+  "tools/decode_chord_corpus.py",
+  "tools/decode_keymode_corpus.py",
+  "tools/diag_genuine32_characterize.py",
+  "tools/diag_iter28_gate_k.py",
+  "tools/diag_iter32_gate_l.py",
+  "tools/diag_iter47_gate_m.py",
+  "tools/diag_iter47_gate_q.py",
+  "tools/diag_iter48_step2.py",
+  "tools/diag_iter48_step3.py",
+  "tools/diag_iter54_alts_full.py",
+  "tools/diag_iter54_bir_false_enumerate.py",
+  "tools/diag_iter63_genuine6_enumerate.py",
+  "tools/diag_iter8_bir_false.py",
+  "tools/diag_iter8_gates_detailed.py",
+  "tools/diff_iter90_classification.py",
+  "tools/diff_iter90_flips.py",
+  "tools/dump_birfalse_cases.py",
+  "tools/enumerate_near_agree_iter38.py",
+  "tools/filter_effendi.py",
+  "tools/find_enharmonic_errors_temp.py",
+  "tools/find_maj_to_dom7.py",
+  "tools/fix_keysig.py",
+  "tools/gate_n_fp_scan_iter39.py",
+  "tools/grieg_modal_diagnostic.py",
+  "tools/harmony_to_diagram/parse_mscx.py",
+  "tools/inject_dcml_rn.py",
+  "tools/inject_dcml_rn_qa.py",
+  "tools/inject_m21_rn.py",
+  "tools/iter45_cluster_a_diagnostic.py",
+  "tools/iter45_step4_cluster_b.py",
+  "tools/iter45_step4_detail.py",
+  "tools/iter58_diagnostic.py",
+  "tools/iter92_jazz_bir_true_analysis.py",
+  "tools/iter94_birtrue_dump.py",
+  "tools/iter94_jazz_regression_analysis.py",
+  "tools/iter95_enumerate_errors.py",
+  "tools/iter97_categorize_birfalse.py",
+  "tools/joint_estimator/adoption_measure.py",
+  "tools/joint_estimator/adoption_measure_b.py",
+  "tools/joint_estimator/fit_run.py",
+  "tools/joint_estimator/fit_weights.py",
+  "tools/joint_estimator/gen_content_dp_split.py",
+  "tools/joint_estimator/gen_count_inventory.py",
+  "tools/joint_estimator/gen_decode_parity_ref.py",
+  "tools/joint_estimator/gen_embedded_tables.py",
+  "tools/joint_estimator/gen_factor_presence.py",
+  "tools/joint_estimator/gen_fermata_boundary.py",
+  "tools/joint_estimator/gen_fold_assignment.py",
+  "tools/joint_estimator/gen_input_parity.py",
+  "tools/joint_estimator/gen_label_tables.py",
+  "tools/joint_estimator/gen_marginals_ref.py",
+  "tools/joint_estimator/gen_mode_marginal.py",
+  "tools/joint_estimator/gen_note_events.py",
+  "tools/joint_estimator/gen_note_tables.py",
+  "tools/joint_estimator/gen_posterior_slice.py",
+  "tools/joint_estimator/gen_spelling_establishment.py",
+  "tools/joint_estimator/gen_window_study.py",
+  "tools/joint_estimator/gen_wir_alignment_probe.py",
+  "tools/joint_estimator/normalize.py",
+  "tools/joint_estimator/probe_decoder.py",
+  "tools/joint_estimator/probe_desksim.py",
+  "tools/joint_estimator/probe_run.py",
+  "tools/joint_estimator/search_direct.py",
+  "tools/joint_estimator/search_run.py",
+  "tools/joint_estimator/transposition_probe_2026_08_02/run_probe.py",
+  "tools/joint_estimator/transposition_probe_rerun_2026_08_03/analyze_rerun.py",
+  "tools/joint_estimator/transposition_probe_rerun_2026_08_03/rerun_repo_side.py",
+  "tools/l15_split.py",
+  "tools/measure_fanout.py",
+  "tools/measure_joint_probe.py",
+  "tools/mode_grading_adjudication_probe.py",
+  "tools/music21_batch.py",
+  "tools/notation_seams/analyze_cost_profile.py",
+  "tools/notation_seams/choose_exposure_constants.py",
+  "tools/notation_seams/classify_dualarm.py",
+  "tools/notation_seams/gen_callpath_facts.py",
+  "tools/notation_seams/gen_editing_cycle.py",
+  "tools/notation_seams/gen_ground_truth_inventory.py",
+  "tools/notation_seams/reconcile_switch_goldens.py",
+  "tools/open_items_split_check.py",
+  "tools/oracle_root_metric.py",
+  "tools/pdmx_jazz_candidates.py",
+  "tools/pdmx_spot_check.py",
+  "tools/producer_key_modes.py",
+  "tools/reconcile_counts.py",
+  "tools/refresh_divergence_20260424/compare.py",
+  "tools/refresh_divergence_20260424/corpus_sweep.py",
+  "tools/release_notes/release_notes_fetcher.py",
+  "tools/rerun_dcml_comparison.py",
+  "tools/robust_stop_diff.py",
+  "tools/robust_stop_restamp.py",
+  "tools/run_bach_preset.py",
+  "tools/run_bach_suites_validation.py",
+  "tools/run_beethoven_validation.py",
+  "tools/run_chopin_validation.py",
+  "tools/run_corelli_validation.py",
+  "tools/run_cpe_bach_validation.py",
+  "tools/run_diag20_targeted.py",
+  "tools/run_dlc_baseline.py",
+  "tools/run_dvorak_validation.py",
+  "tools/run_grieg_validation.py",
+  "tools/run_mozart_validation.py",
+  "tools/run_schumann_validation.py",
+  "tools/run_tchaikovsky_validation.py",
+  "tools/run_validation.py",
+  "tools/section_7_3_diagnostic.py",
+  "tools/soundfonts/preset_categories/generate_cpp_from_json.py",
+  "tools/stage5_15_13_population.py",
+  "tools/stage5_2_2b_analyze.py",
+  "tools/stage5_2_2b_dlc_probe.py",
+  "tools/stage5_2_2b_evidence.py",
+  "tools/stage5_2_2b_jointfit.py",
+  "tools/stage5_2_2b_snapshot_preview.py",
+  "tools/stage5_2_2b_surface.py",
+  "tools/stage5_2_2c_3way.py",
+  "tools/stage5_2_2c_byteproof.py",
+  "tools/stage5_2_2c_sweep.py",
+  "tools/stage5_2_2c_winnerdiff.py",
+  "tools/stage5_2_2d_surface.py",
+  "tools/stage5_2_2d_sweep.py",
+  "tools/stage5_2_2e_liveness.py",
+  "tools/stage5_fit_driver.py",
+  "tools/status_archive_sweep_check.py",
+  "tools/survey_1pc_dominant_slices.py",
+  "tools/survey_iii_slash_correct_iter90.py",
+  "tools/survey_pc8_flat_authored_bass.py",
+  "tools/term_inventory/gen_term_inventory.py",
+  "tools/test_batch_analyze_regressions.py",
+  "tools/test_dcml_parser.py",
+  "tools/tests/test_cross_language_constants.py",
+  "tools/tests/test_dcml_parser_figbass_pedal.py",
+  "tools/tests/test_metric_primitives_l0l1.py",
+  "tools/tests/test_metric_scripts.py",
+  "tools/tests/test_oracle_root_metric.py",
+  "tools/tests/test_snapshot_sources.py",
+  "tools/theta_fit.py",
+  "tools/translations/process_source_ts_files.py",
+  "tools/validate_slices_corpus.py"
+ ],
+ "the_members": {
+  "tools/audit/corpus_arm_stamp.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE INFERENCE ARM OF A CORPUS: READ IT, RECORD IT, AND REFUSE TO CONFUSE THE TWO.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/run_bach_preset.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.listdir(corpus_dir)"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.listdir(CORPUS_ROOT)"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/characterise_bir_false.py",
+     "the_call": "corpus_dir.glob('*.ours.json')"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/run_bach_preset.py",
+     "the_call": "corpus_dir.glob('*.xml')"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/run_bach_preset.py",
+     "the_call": "out_dir.glob('*.ours.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "GATE_PRESETS",
+     "WRITER_CITATIONS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": false,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/apply_residue_discard.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE RESIDUE SITTING'S DISCARDS, CARRIES AND KEEPS — planned, applied, and afterwards re-checked.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/audit/decisions/apply_soft_discard.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_17_residue_sitting.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(nothing_found & sole_carriers)",
+     "sorted(set(withheld) & set(not_found))",
+     "sorted(discard & already)",
+     "sorted(set(not_found) & sole_carriers)",
+     "sorted(set(live) & set(retired))"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "RULING_SENTENCES"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/apply_soft_discard.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE RULED SOFT-DISCARD — planned, applied, and afterwards re-checked.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_16_preparation_return.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(set(discard) & withheld)",
+     "sorted(set(live) & set(retired))",
+     "recorded.get('the_live_record_before') != before or recorded.get('retired_by_this_act') != len(mine) or recorded.get('the_live_record_after') != recorded.get('the_live_record_before', 0) - len(mine)"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "REFERENCE_FIELDS",
+     "RULING_SENTENCES"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/gen_cluster_dispositions.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "OI-207 adjudication, Task 3 — give every harvested cluster a recorded disposition.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "HERE / 'backbone_decisions.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CANDIDATES",
+     "bound_to": "HERE / 'decision_candidates.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CLUSTERS",
+     "bound_to": "HERE / 'decision_clusters.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "DISPOSITIONS",
+     "HEADING_KINDS",
+     "REPORT_NARRATIVE_PATTERNS",
+     "RULES",
+     "RULING_VOCABULARY",
+     "SESSION_INSTRUCTION_PATTERNS",
+     "UNRESOLVED_RESERVATIONS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": false,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/gen_home_classification.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE ONE HOME-CLASSIFICATION PASS — every ratified criterion applied at once, to every entry.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "SNAPSHOT",
+     "bound_to": "os.path.join(HERE, 'snapshot_2026-08-04_pre_home_classification_apply', 'phase1q_reclassification.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(set(authored) & retired_authored)",
+     "sorted(retired_authored & set(docs))"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "KIND_MOVES"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/gen_item1_rehome_blocker.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "What actually blocks finish-line item 1's RE-HOME class — licensing, or a soft owner.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CLAUDE_MD",
+     "bound_to": "ROOT / 'CLAUDE.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "BACKREF_RX",
+     "INDETERMINACY_PHRASES"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/gen_oi333_repair.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE OI-333 REPAIR RECORD — what the escape changed in the cluster-disposition layer.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "LAYER",
+     "bound_to": "HERE / 'cluster_dispositions.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "MANIFEST",
+     "bound_to": "HERE / 'disposition_manifest.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "REGISTER",
+     "bound_to": "HERE / 'backbone_decisions.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "ASSUMPTIONS",
+     "FORMER_PATTERNS",
+     "THE_ONE_PLACE_THE_ESCAPE_DID_MORE"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/gen_outstanding_delegations.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE OUTSTANDING DELEGATION POPULATION, DERIVED AT HEAD — never taken from the write list.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/audit/decisions/gen_home_classification.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "os.path.join(HERE, 'backbone_decisions.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "CLASS_C_DRAFT",
+     "RETIRED_CLASS_C_DRAFT",
+     "SETTLED_BY_A_WRITTEN_DELEGATION",
+     "WRITE_LIST_STATE"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/gen_phase1m_measurements.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "Generate `tools/audit/decisions/phase1m_measurements.json` — the phase-1m measurements.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "os.path.join(HERE, 'backbone_decisions.json')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CLUSTERS",
+     "bound_to": "os.path.join(HERE, 'decision_clusters.json')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "DISPOS",
+     "bound_to": "os.path.join(HERE, 'cluster_dispositions.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(set(per_doc) - set(DELEGATION))"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "DELEGATION",
+     "KIND",
+     "RATIFIED_SURFACES",
+     "READ_WAVES"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/gen_reads4_oi326_application.py": {
+   "verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "the_population_it_claims_to_describe": "READ WAVE 4, Task 1 — the OI-326 ruling MEASURED before it is applied (the user's R5).",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "globmod.glob(os.path.join(ROOT, pattern))"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "os.path.join(HERE, 'backbone_decisions.json')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "REGIME",
+     "bound_to": "os.path.join(HERE, 'phase1n_reading_regime.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "[i for i in range(first, last + 1) if LIST_SUBJECT in lines[i - 1]]",
+     "[i for i in range(first, last + 1) if SENTENCE_END in lines[i - 1]]"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "ROUTE_VERDICT"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [
+    "filename_candidates_on_disk"
+   ],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/gen_retired_subject_moves.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "WHICH AUTHORED JUDGMENTS THE SOFT-DISCARD RETIRES — DERIVED, never hand-listed.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/audit/decisions/gen_home_classification.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "HERE / 'backbone_decisions.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_16_preparation_return.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(set(live_table) & set(retired_table))",
+     "sorted(set(should_move) & set(live_table))"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "RULING_SENTENCES"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/decisions/gen_verbatim_subject_consistency.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "DOES EACH REGISTER ENTRY'S QUOTED DECISION MATCH THE DECISION THE ENTRY IS ABOUT?",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "os.path.join(HERE, 'backbone_decisions.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "KNOWN_BAD",
+     "STOPWORDS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_arm_comment_sweep.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "RULING 16's SWEEP — every `src/` comment claiming an arm, a flag default or a build state that the notation switch made false, enumerated before anything is edited.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.walk(SRC)"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CONFIG_FILE",
+     "bound_to": "os.path.join(ROOT, 'src', 'composing', 'composingconfiguration.cpp')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "CORRECTED",
+     "VERDICTS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_artifact_inventory_surface.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE RULING SURFACE FOR THE ARTIFACT INVENTORY — one section per class, every verdict PROPOSED.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "base.rglob('*.md')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "INVENTORY",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'artifact_inventory.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "GOVERNING_DIRECTORIES",
+     "GOVERNING_DOCUMENTS",
+     "MINING",
+     "MIXED_CLASSES",
+     "PROPOSALS",
+     "ROLES",
+     "SPLIT_PROPOSALS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_census_movement_classification.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "EVERY VALUE THE RULED SOFT-DISCARD MOVED IN THE TWO DERIVED CENSUSES, ENUMERATED AND CLASSED.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/audit/gen_artifact_inventory_surface.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/audit/gen_artifact_inventory_surface.py",
+     "the_call": "base.rglob('*.md')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "'tools/audit/decisions/backbone_decisions.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(after_names - before_names)"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": []
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_claude_md_finer_archive.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE TWO RULED `CLAUDE.md` SPANS — read before they move, and the reading published.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/audit/gen_claude_md_finer_spans.py",
+     "tools/audit/gen_governing_surface_spans.py",
+     "tools/audit/gen_governing_surface_split.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "COMPANION",
+     "bound_to": "'CLAUDE_ARCHIVE.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "PARENT",
+     "bound_to": "'CLAUDE.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "SPANS",
+     "bound_to": "os.path.join(HERE, 'claude_md_finer_spans.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "''.join(pinned_lines[span['first_line'] - 1:span['last_line']])"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "VERDICTS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_deciding_act_recovery.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "CAN A USER ACT BE RECOVERED FOR AN ENTRY THE DECISIONS REGISTER'S FIELDS COULD NOT NAME ONE FOR?",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "'tools/audit/decisions/backbone_decisions.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "FILTER",
+     "bound_to": "'tools/audit/decisions_filter_classification.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_16_preparation_return.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(imported - in_the_data_file)",
+     "sorted(in_the_data_file - imported)",
+     "sorted({r['result'] for r in rows} - set(RESULTS))"
+    ],
+    "a_reversed_operand_pair": {
+     "one_direction": "sorted(imported - in_the_data_file)",
+     "the_other_direction": "sorted(in_the_data_file - imported)",
+     "the_pair": [
+      "imported",
+      "in_the_data_file"
+     ]
+    },
+    "a_side_of_that_pair_is_authored_inside_this_tool": [
+     "imported"
+    ],
+    "collections_authored_inside_this_tool": [
+     "CITATION_FIELDS",
+     "NON_KEEP",
+     "REQUIRED_FIELDS",
+     "RESULTS",
+     "RULING_SENTENCES",
+     "USER_ACT_MARKERS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_decisions_filter.py": {
+   "verdict": "ESTABLISHED — it reconciles BOTH WAYS against a side not authored inside itself, and halts on a member it cannot place",
+   "the_population_it_claims_to_describe": "CAN A DECIDING ACT BE NAMED FOR EACH ENTRY OF THE DECISIONS REGISTER — and what is the evidence?",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "'tools/audit/decisions/backbone_decisions.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(population - rendered)",
+     "sorted(rendered - population)"
+    ],
+    "a_reversed_operand_pair": {
+     "one_direction": "sorted(population - rendered)",
+     "the_other_direction": "sorted(rendered - population)",
+     "the_pair": [
+      "population",
+      "rendered"
+     ]
+    },
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "ABSENT_TOKENS",
+     "CONTEXT_MARKERS",
+     "NEGATIVE_BUILD_STATE",
+     "NEGATIVE_NO_RATIFIER_CLAUSE",
+     "POSITIVE_RULING_RECORD",
+     "POSITIVE_USER_ACT",
+     "PROPOSED_FATE",
+     "PROVENANCE_FIELDS",
+     "REQUIRED_FIELDS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_discard_reach_split.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE DERIVED SPLIT — every check the ruled soft-discard turns red, SUPERSEDED or STANDING.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": [
+     "tools/audit/gen_guard_state.py",
+     "tools/audit/gen_phase1_gate_readers.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/audit/gen_guard_state.py",
+     "the_call": "os.walk(HERE)"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted({row['tool'] for row in population} - set(tracked))"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "RULING_SENTENCES"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_discard_records.py": {
+   "verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "the_population_it_claims_to_describe": "THE DISCARD RECORDS THE GATING DERIVATION MAY CONSUME — located, validated, published.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "OPEN_ITEMS_DIR.glob('OI-*.md')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "APPARATUS",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'nongating_apparatus_rows.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "AUTHORED",
+     "NEGATIVE_SEEDS",
+     "RETIRED"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [
+    "the_bounded_completeness_scan"
+   ],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_epoch_write_path.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE EPOCH-PINNED PASSES, AND WHAT EACH ONE'S WRITE PATH RESOLVES — derived, published, and authorizing nothing.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.walk(os.path.join(ROOT, base))"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "derived_unplaced - authored_unplaced",
+     "authored_unplaced - derived_unplaced"
+    ],
+    "a_reversed_operand_pair": {
+     "one_direction": "derived_unplaced - authored_unplaced",
+     "the_other_direction": "authored_unplaced - derived_unplaced",
+     "the_pair": [
+      "derived_unplaced",
+      "authored_unplaced"
+     ]
+    },
+    "a_side_of_that_pair_is_authored_inside_this_tool": [
+     "authored_unplaced"
+    ],
+    "collections_authored_inside_this_tool": [
+     "CHECK_FLAGS",
+     "READ_IDIOMS",
+     "SEEDS",
+     "SKIP_DIRS",
+     "TOOL_DIRS",
+     "UNPLACED_RETURNED_TO_THE_USER"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_evidence_pin_membership.py": {
+   "verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "the_population_it_claims_to_describe": "THE EVIDENCE PIN'S CLASS MEMBERSHIP — derived from the ruling records, never hand-listed.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.walk(os.path.join(ROOT, base))"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.listdir(ROOT)"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "SKIP_DIRS",
+     "TOOL_DIRS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [
+    "ruling_records_read"
+   ],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_filing_convention_application.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "gen_filing_convention_application.py -- the DERIVED candidate set for the filing convention.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "ROOT.glob(pattern)"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "REGISTER",
+     "bound_to": "HERE / 'decisions' / 'backbone_decisions.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "EXCLUDED_DIRS",
+     "EXCLUDED_NAMES",
+     "NAMED_BY_THE_RULING_BUT_NOT_DERIVED",
+     "SEEDS",
+     "SUPERSEDED_STATUSES",
+     "SURFACE_GLOBS",
+     "VERDICTS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_governing_surface_readers.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "WHO READS, ANCHORS INTO, QUOTES OR PARSES THE FIVE MANDATORY-READ FILES — measured before any act.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": [
+     "tools/audit/gen_governing_surface_spans.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "'tools/audit/decisions/backbone_decisions.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "PROPOSED_FATES"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_governing_surface_split.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE RULED GOVERNING-SURFACE SPLIT — perform it, and re-derive that it lost nothing.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "SPANS",
+     "bound_to": "os.path.join(HERE, 'governing_surface_spans.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "''.join(pinned_lines[span['first_line'] - 1:span['last_line']])"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "ARCHIVE_CLASSES",
+     "CLASS_VERDICTS",
+     "COMPANION",
+     "SPAN_VERDICTS",
+     "TRAILING_BLANK_MOVES_WITH_THE_SPAN"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_guard_classification.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "CLASSIFY EVERY GUARD: does it RE-DERIVE A LIVE INVARIANT, or RECORD A POINT-IN-TIME MEASUREMENT?",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/audit/gen_guard_state.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/audit/gen_guard_state.py",
+     "the_call": "os.walk(HERE)"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "STATE",
+     "bound_to": "os.path.join(HERE, 'guard_state.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "VERDICTS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_guard_state.py": {
+   "verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "the_population_it_claims_to_describe": "RUN EVERY GUARD AND RECORD WHAT EACH ONE SAID.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.walk(HERE)"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "AUTHORED",
+     "HISTORICAL",
+     "NOT_A_SUBJECT"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [
+    "derived"
+   ],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_july_screen.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE JULY SCREEN — every out-of-period specification-bearing flagged hunk read one at a time.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "IN_SPLIT",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'period_stratum_split.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(pop_ids - set(V))",
+     "sorted(set(V) - pop_ids)"
+    ],
+    "a_reversed_operand_pair": {
+     "one_direction": "sorted(pop_ids - set(V))",
+     "the_other_direction": "sorted(set(V) - pop_ids)",
+     "the_pair": [
+      "pop_ids",
+      "V"
+     ]
+    },
+    "a_side_of_that_pair_is_authored_inside_this_tool": [
+     "V"
+    ],
+    "collections_authored_inside_this_tool": [
+     "CLASSES",
+     "SHAPES",
+     "V",
+     "_P7"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_nongating_apparatus_rows.py": {
+   "verdict": "ESTABLISHED — it reconciles BOTH WAYS against a side not authored inside itself, and halts on a member it cannot place",
+   "the_population_it_claims_to_describe": "Derive the NON-GATING apparatus set, and publish THE LIVE GATING ANSWER by identity.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/audit/index_status_lint.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "FROZEN_INVENTORY",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'phase1_completion_inventory.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "INDEX",
+     "bound_to": "ROOT / 'OPEN_ITEMS.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "REACH",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'decisions' / 'true_half_reach_rows.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(set(gating_ids) & ng_set)",
+     "sorted(set(open_ids) - set(gating_ids) - ng_set)",
+     "sorted(set(open_ids) - set(gating_ids) - ng_set)",
+     "sorted(set(gating_ids) - set(open_ids))"
+    ],
+    "a_reversed_operand_pair": {
+     "one_direction": "sorted(set(open_ids) - set(gating_ids) - ng_set)",
+     "the_other_direction": "sorted(set(gating_ids) - set(open_ids))",
+     "the_pair": [
+      "open_ids",
+      "gating_ids"
+     ]
+    },
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "A3",
+     "FIRST_CUT_VOCAB",
+     "RETIRED_VERDICTS",
+     "SUPERSEDED_VERDICTS",
+     "V"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_oi356_parser_correction.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "EVERY OPEN-ITEMS INDEX ROW, DECIDED BOTH WAYS — before the parser correction and after it.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "INDEX",
+     "bound_to": "os.path.join(ROOT, 'OPEN_ITEMS.md')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": []
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_phase1_completion_inventory.py": {
+   "verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "the_population_it_claims_to_describe": "Derive what D-231's PHASE 1 completion statement still requires.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": [
+     "tools/audit/gen_discard_records.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/audit/gen_discard_records.py",
+     "the_call": "OPEN_ITEMS_DIR.glob('OI-*.md')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "APPARATUS",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'nongating_apparatus_rows.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "ARCHITECTURE_MD",
+     "bound_to": "ROOT / 'ARCHITECTURE.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CLAUDE_MD",
+     "bound_to": "ROOT / 'CLAUDE.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "DECISIONS_MD",
+     "bound_to": "ROOT / 'DECISIONS.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "DISPOSITION_MANIFEST",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'decisions' / 'disposition_manifest.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "OI340",
+     "bound_to": "ROOT / 'open_items' / 'OI-340.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "PROTOCOL_MD",
+     "bound_to": "ROOT / 'cowork_audit_protocol.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "REGIME",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'decisions' / 'phase1n_reading_regime.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "REGISTER",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'decisions' / 'backbone_decisions.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(set(gating) - set(gating_off))"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "A1",
+     "A2_RECOLLECTED",
+     "CRITERIA",
+     "FALSITY_SIGNALS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [
+    "what_the_register_says_about_itself_that_is_no_longer_true"
+   ],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_phase1_finish_line.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "The FINISH LINE for D-231's phase 1: what is still required, and what act would close each item.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": [
+     "tools/audit/gen_phase1_completion_inventory.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "APPARATUS",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'nongating_apparatus_rows.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CLAUDE_MD",
+     "bound_to": "ROOT / 'CLAUDE.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "PHASE3",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'phase3_gate_partition.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "R1_APPLICATION",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'decisions' / 'r1_superseded_reach.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "REACH_OVER_ROWS",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'decisions' / 'true_half_reach_rows.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(ruling_rows - set(split['gates']['ids']))",
+     "sorted(ruled & set(split['gates']['ids']))",
+     "sorted(ruled & ruling_rows)"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "MEASUREMENT_LAYER_SUBJECT_VOCAB",
+     "ROWS_THAT_ARE_USER_RULINGS",
+     "THE_CONDITION_NOT_AN_ITEM",
+     "THE_RE_READING",
+     "THE_SCOPE_RULE"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_ratification_surface_set.py": {
+   "verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "the_population_it_claims_to_describe": "Derive the ratification-surface set for the OI-287 directory, and enumerate every citation of every member so the move can re-aim PER CITATION.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.walk(REPO)"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.listdir(d)"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "REGISTER_DATA",
+     "bound_to": "os.path.join(REPO, 'tools', 'audit', 'decisions', 'backbone_decisions.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "CENSUS_EXTS",
+     "SELF_ARTIFACTS",
+     "SKIP_DIRS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": false,
+   "the_candidate_enumeration_is_published_whole_at": [
+    "detail"
+   ],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_ratified_document_check.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE RATIFIED-DOCUMENT SUBJECT CHECK — for the 62 entries whose recovered act points at a document ratification, is the entry's own subject actually IN the document that was ratified?",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_16_preparation_return.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted({r['result'] for r in rows} - set(RESULTS))"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "REQUIRED_FIELDS",
+     "RESULTS",
+     "RULING_SENTENCES"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_recognizer_establishment_sort.py": {
+   "verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "the_population_it_claims_to_describe": "THE RECOGNIZERS THE RECORD LEANS ON, SORTED BY WHETHER AN INDEPENDENTLY-KNOWN POPULATION EXISTS TO RECONCILE AGAINST — derived, published, and authorizing nothing.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": [
+     "tools/audit/gen_epoch_write_path.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/audit/gen_epoch_write_path.py",
+     "the_call": "os.walk(os.path.join(ROOT, base))"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "derived_unplaced - authored_unplaced",
+     "authored_unplaced - derived_unplaced"
+    ],
+    "a_reversed_operand_pair": {
+     "one_direction": "derived_unplaced - authored_unplaced",
+     "the_other_direction": "authored_unplaced - derived_unplaced",
+     "the_pair": [
+      "derived_unplaced",
+      "authored_unplaced"
+     ]
+    },
+    "a_side_of_that_pair_is_authored_inside_this_tool": [
+     "authored_unplaced"
+    ],
+    "collections_authored_inside_this_tool": [
+     "READ_IDIOMS",
+     "RECOGNIZER_IDIOMS",
+     "SEEDS",
+     "UNPLACED_RETURNED_TO_THE_USER",
+     "WALK_CALLS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [
+    "the_candidate_population_walked"
+   ],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_reserved_word_scanner.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE RESERVED-WORD SCANNER — a DERIVED candidate population, authored verdicts, advisory output.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.walk(base)"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.walk(os.path.join(ROOT, rel))"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "CAUGHT_COLLISIONS",
+     "CODE_ROOTS",
+     "GOVERNANCE_DOCS",
+     "MUSIC_DOCS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_retirement_caller_check.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "DOES ANYTHING STILL POINT AT A FILE FLAGGED FOR RETIREMENT — established at the objects?",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": [
+     "tools/audit/gen_artifact_inventory_surface.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/audit/gen_artifact_inventory_surface.py",
+     "the_call": "base.rglob('*.md')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CALLERS_RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_17_callers_sitting.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "READING_RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_16_preparation_return.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_15_inventory_sitting.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "BUILD_FILE_NAMES",
+     "CALLERS_SENTENCES",
+     "CALLER_KINDS",
+     "CONDITIONS",
+     "DECLARATION_KEYS",
+     "GIT_BASE",
+     "GIT_CONTEXT_CONSTANTS",
+     "HOLDER_KINDS",
+     "HOLDER_KINDS_THAT_HOLD",
+     "HOLDER_KINDS_THAT_HOLD_NOTHING",
+     "KINDS_THAT_HOLD",
+     "PROSE_EXTENSIONS",
+     "READING_SENTENCES",
+     "STRONG_ENUMERATION_CONSTANTS",
+     "TOOL_EXTENSIONS",
+     "VERDICTS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_retirement_census_movement.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "WHAT MOVED IN THE RETIREMENT CENSUS WHEN IT WAS RE-PINNED — every difference classed, or a STOP.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CENSUS",
+     "bound_to": "'tools/audit/retirement_caller_check.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "COMPANION",
+     "OUTGOING_COMMIT_HISTORY"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_rulings_sort.py": {
+   "verdict": "ESTABLISHED — it reconciles BOTH WAYS against a side not authored inside itself, and halts on a member it cannot place",
+   "the_population_it_claims_to_describe": "THE RULINGS SORT — is a confirmed decision DESIGN INTENT, or MANAGEMENT OF THE IMPLEMENTATION?",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "BACKBONE",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'decisions' / 'backbone_decisions.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "FILTER",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'decisions_filter_classification.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "SORT_RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_17_rulings_sort_sitting.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(set(lists[DESIGN]['identities']) & set(lists[MANAGEMENT]['identities']))",
+     "sorted(imported - in_the_data_file)",
+     "sorted(in_the_data_file - imported)",
+     "sorted({r['proposed_class'] for r in rows} - set(CLASSES))",
+     "sorted(set(placements) - placed_here)"
+    ],
+    "a_reversed_operand_pair": {
+     "one_direction": "sorted(imported - in_the_data_file)",
+     "the_other_direction": "sorted(in_the_data_file - imported)",
+     "the_pair": [
+      "imported",
+      "in_the_data_file"
+     ]
+    },
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "CLASSES",
+     "DESIGN_WORDS",
+     "MANAGEMENT_WORDS",
+     "NONSPEC_MAPPING",
+     "REQUIRED_FIELDS",
+     "SOURCE_SENTENCES",
+     "WHAT_EACH_CLASS_IS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_sole_carrier_subclass.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE SOLE-CARRIER SUBCLASS — which non-keep entries of the decisions register are the ONLY place their content is carried, so that they do NOT ride the ruled soft-discard.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": [
+     "tools/audit/decisions/gen_cluster_dispositions.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "RULING",
+     "bound_to": "ROOT / 'cowork_rulings_2026_08_16_preparation_return.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(imported - in_the_data_file)",
+     "sorted(in_the_data_file - imported)",
+     "sorted({r['verdict'] for r in rows} - set(VERDICTS))"
+    ],
+    "a_reversed_operand_pair": {
+     "one_direction": "sorted(imported - in_the_data_file)",
+     "the_other_direction": "sorted(in_the_data_file - imported)",
+     "the_pair": [
+      "imported",
+      "in_the_data_file"
+     ]
+    },
+    "a_side_of_that_pair_is_authored_inside_this_tool": [
+     "imported"
+    ],
+    "collections_authored_inside_this_tool": [
+     "NON_KEEP",
+     "REGISTER_FAMILY_EXACT",
+     "REGISTER_FAMILY_PREFIXES",
+     "REQUIRED_FIELDS",
+     "RULING_SENTENCES",
+     "SEARCHED_EXTENSIONS",
+     "VERDICTS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_status_residue_move.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE PRE-CONVENTION `STATUS.md` RESIDUE, MOVED UNDER RULING 4's OWN LINE — read before it moves.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/audit/gen_governing_surface_spans.py",
+     "tools/audit/gen_status_archive_pass.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "COMPANION",
+     "bound_to": "'STATUS_ARCHIVE.md'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "PARENT",
+     "bound_to": "'STATUS.md'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "VERDICTS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_test_construction_evidence.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "HOW WAS EACH TEST OF THE COMPOSING MODULE CONSTRUCTED — from a specification, or beside the code?",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "INVENTORY",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'artifact_inventory.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "BINARY_EXT",
+     "REMARK_BASENAME",
+     "REMARK_PREFIX"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/local_patches_check.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "Are the local patches to MuseScore's own code still present at HEAD?",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "CLAUDE_MD",
+     "bound_to": "os.path.join(ROOT, 'CLAUDE.md')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "MARKERS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/joint_estimator/adoption_measure_b.py": {
+   "verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "the_population_it_claims_to_describe": "adoption_measure_b.py — the OI-178 adoption measurement's GRADE + DIFF + RECORD phase.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/compare_analyses.py",
+     "tools/compare_rn.py",
+     "tools/dcml_parser.py",
+     "tools/robust_stop_diff.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/a8_rebaseline_measure.py",
+     "the_call": "corpus_dir.glob('*.ours.json')"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/compare_rn.py",
+     "the_call": "ours_dir.glob('*.ours.json')"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/compare_rn.py",
+     "the_call": "root.glob(cfg['ours_glob'])"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/dcml_parser.py",
+     "the_call": "os.listdir(chorales_dir)"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/joint_estimator/adoption_measure.py",
+     "the_call": "d.glob('*.ours.json')"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "MOD_BAND"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [
+    "R_ceiling_decomposition"
+   ],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/joint_estimator/fit_run.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "fit_run.py — the weight fit's MEASUREMENT side (algorithm-completion step 2, Task 3).",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/dcml_parser.py",
+     "tools/joint_estimator/gen_label_tables.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/a8_rebaseline_measure.py",
+     "the_call": "corpus_dir.glob('*.ours.json')"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/dcml_parser.py",
+     "the_call": "os.listdir(chorales_dir)"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/joint_estimator/fit_weights.py",
+     "the_call": "_HERE.glob('weight_fit_part_*.json')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "WEIGHT_FIT",
+     "bound_to": "_HERE / 'weight_fit.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "AXES",
+     "MECHANISM_STEMS",
+     "PREDICTION_BANDS",
+     "SENSITIVE_CASES",
+     "STEP1_IDENTITY",
+     "_NUM"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/joint_estimator/gen_fermata_boundary.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "gen_fermata_boundary.py — the fermata-conditioned boundary cells (algorithm-completion step 1; Cowork dispatch 2026-07-19, Task 1).",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/joint_estimator/gen_label_tables.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "FOLD_ARTIFACT",
+     "bound_to": "_HERE / 'fold_assignment.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "NOTE_EVENTS",
+     "bound_to": "_HERE / 'note_events' / 'note_events.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": []
+   },
+   "it_halts_on_a_member_it_cannot_place": false,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/joint_estimator/gen_note_events.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "gen_note_events.py — the note-event extraction (the note-side table fit, part 2 of 2; §1).",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/joint_estimator/gen_label_tables.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "FOLD_ARTIFACT",
+     "bound_to": "_ROOT / 'tools' / 'joint_estimator' / 'fold_assignment.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "EVENT_FIELDS",
+     "NOTE_FIELDS",
+     "_MC",
+     "_MV",
+     "_STEP_LOF"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/joint_estimator/gen_window_study.py": {
+   "verdict": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+   "the_population_it_claims_to_describe": "gen_window_study.py — OI-206 Task 2: the windowed-vs-whole-piece decode study.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/compare_analyses.py",
+     "tools/compare_rn.py",
+     "tools/dcml_parser.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/compare_rn.py",
+     "the_call": "ours_dir.glob('*.ours.json')"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/compare_rn.py",
+     "the_call": "root.glob(cfg['ours_glob'])"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/dcml_parser.py",
+     "the_call": "os.listdir(chorales_dir)"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "ACC_SPANS",
+     "PREDICTIONS",
+     "SPANS",
+     "_CONTENT_MEMO",
+     "_MEMO_ON"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": false,
+   "the_candidate_enumeration_is_published_whole_at": [
+    "predictions_recorded_before_measuring"
+   ],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/joint_estimator/search_run.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "search_run.py — THE DIRECT-METRIC SEARCH'S MEASUREMENT SIDE (Task 2 of the ratified fallback's dispatch, `cc_instruction_direct_metric_search.md`).",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": false,
+    "imported_from": [
+     "tools/dcml_parser.py",
+     "tools/joint_estimator/gen_label_tables.py"
+    ]
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/dcml_parser.py",
+     "the_call": "os.listdir(chorales_dir)"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/joint_estimator/fit_weights.py",
+     "the_call": "_HERE.glob('weight_fit_part_*.json')"
+    },
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "a helper it imports: tools/joint_estimator/search_direct.py",
+     "the_call": "_HERE.glob('weight_search_part_*.json')"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "FIT_GRADING",
+     "bound_to": "_HERE / 'fit_grading.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
+     "the_constant": "SEARCH_ARTIFACT",
+     "bound_to": "_HERE / 'weight_search.json'"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "PREDICTION_BANDS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/open_items_split_check.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "Register integrity check for OPEN_ITEMS.md (index + per-item detail files).",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.listdir(DETAIL_DIR)"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": []
+   },
+   "it_halts_on_a_member_it_cannot_place": false,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  }
+ },
+ "★_the_unplaced_members_returned_to_the_user": {
+  "what_this_is": "members the derivation cannot place. Each is a STANDING STOP-AND-REPORT to the user and is never guessed into one of the three verdicts. The authored set and the derived set are reconciled BOTH ways on every run: an unplaced member not in the authored set halts the run, so a new unrecognised shape cannot enter silently; and an authored member the derivation now places halts it too, so an authored reason cannot outlive its subject.",
+  "members": {}
+ },
+ "the_establishment": {
+  "what_this_is": "three members the record establishes at the code and at their own artifacts, ONE PER VERDICT, re-checked on every run. A disagreement HALTS the derivation rather than being published (#19). ★ AND A SEED SET PROVES ONLY THAT THE RECOGNIZER IS NOT BROKEN: it says nothing about what the recognizer covers, which is finding F84 and the reason this artifact publishes a lower bound.",
+  "seeds": {
+   "tools/audit/gen_epoch_write_path.py": {
+    "expected": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+    "derived": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+    "agrees": true,
+    "why_the_record_establishes_it": "it reconciles both ways and halts, but against `UNPLACED_RETURNED_TO_THE_USER`, a set AUTHORED INSIDE THE TOOL — so the check catches future drift and establishes no coverage — and its candidate enumeration is published as a length rather than whole; its own artifact concedes the point"
+   },
+   "tools/audit/gen_evidence_pin_membership.py": {
+    "expected": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+    "derived": "MIXED — established on its POPULATION, which is an external enumeration published whole; unestablished on its CLASSIFICATION, which is its own recognizers",
+    "agrees": true,
+    "why_the_record_establishes_it": "its candidate population is an external file-system enumeration published WHOLE as `ruling_records_read`, while which route places a member is decided by its own regular expressions over the records' text; its one set-difference is single-directional and is published rather than raised on"
+   },
+   "tools/audit/gen_nongating_apparatus_rows.py": {
+    "expected": "ESTABLISHED — it reconciles BOTH WAYS against a side not authored inside itself, and halts on a member it cannot place",
+    "derived": "ESTABLISHED — it reconciles BOTH WAYS against a side not authored inside itself, and halts on a member it cannot place",
+    "agrees": true,
+    "why_the_record_establishes_it": "its candidate population is the PARSED INDEX (`INDEX = ROOT / \"OPEN_ITEMS.md\"`, read with `read_text`) and it reconciles against that parse in both directions with a halt — none in both, none in neither, every gating identity an open row of it, every gating row carrying a ground, and a row it cannot place raising rather than being defaulted"
+   }
+  }
+ },
+ "what_the_derivation_passed_over": {
+  "what_this_is": "tools it did not reach, recorded rather than dropped (#12). None is a finding: each fails one part of the three-part member test, or is a shape the recognizers do not read.",
+  "source_would_not_parse": [],
+  "writes_no_artifact_of_its_own": [
+   "tools/a8_rebaseline_measure.py",
+   "tools/analyze_bir_true_iter19.py",
+   "tools/analyze_cat1_minor_iter24.py",
+   "tools/analyze_diag20.py",
+   "tools/analyze_inversion_errors.py",
+   "tools/analyze_iter90_regressions.py",
+   "tools/analyze_pdmx.py",
+   "tools/analyze_wrong_root_iter90.py",
+   "tools/audit/apply_l5_pass2_verdicts.py",
+   "tools/audit/changed_paths.py",
+   "tools/audit/compare_blind_rerun.py",
+   "tools/audit/decisions/gen_decision_clusters.py",
+   "tools/audit/decisions/gen_decision_harvest.py",
+   "tools/audit/decisions/gen_decisions_register.py",
+   "tools/audit/gen_blind_rerun_sample.py",
+   "tools/audit/gen_dispositions.py",
+   "tools/audit/gen_inventory.py",
+   "tools/audit/gen_l3_pass2_sample.py",
+   "tools/audit/gen_oi357_partial_signature_establishment.py",
+   "tools/audit/gen_oi357_production_arm_run.py",
+   "tools/audit/gen_pass2_sample.py",
+   "tools/audit/gen_pass2_sample_l4.py",
+   "tools/audit/gen_pass2_sample_l5.py",
+   "tools/audit/gen_signature_sweep.py",
+   "tools/audit/guard_armed_check.py",
+   "tools/audit/hardening_battery.py",
+   "tools/audit/index_status_lint.py",
+   "tools/audit/l3/crosstab_fine_vs_pass1.py",
+   "tools/audit/l3/gen_l3_dispositions.py",
+   "tools/audit/l3/measure_l3_firerate.py",
+   "tools/audit/l3/relabel_fine.py",
+   "tools/audit/l4/pass1_decoder_aggregate_decode.py",
+   "tools/audit/l4/pass1_decoder_aggregate_fullspine.py",
+   "tools/audit/l4/pass1_oracle_corpus_agg.py",
+   "tools/audit/l4/pass1_oracle_dispositions.py",
+   "tools/audit/l4/pass1_satellites_dispositions.py",
+   "tools/audit/l4/pass1_satellites_firerate.py",
+   "tools/audit/l5/gen_grading_fitting_dispositions.py",
+   "tools/audit/l5/gen_harness_dispositions.py",
+   "tools/audit/l5/gen_instruments_core_dispositions.py",
+   "tools/audit/l5/gen_resolver_dispositions.py",
+   "tools/audit/notation_surface/gen_notation_surface_audit.py",
+   "tools/audit/oi199/gen_joint_dispositions.py",
+   "tools/audit/pass2_apply_errorrate.py",
+   "tools/audit/pass2_apply_verdicts.py",
+   "tools/audit/pass2_compare.py",
+   "tools/audit/pass2_compare_l3.py",
+   "tools/audit/pass2_compare_l4.py",
+   "tools/audit/pass2_judge_l4.py",
+   "tools/audit/register_lint.py",
+   "tools/c1_gen_devbed.py",
+   "tools/c1_gen_substrate.py",
+   "tools/c1_reliability.py",
+   "tools/calibration_fit.py",
+   "tools/cc_audit_cadence_anchor_accuracy.py",
+   "tools/cc_audit_localmodulation_accuracy.py",
+   "tools/cc_b2_subdominant_guard_measure.py",
+   "tools/cc_b_guard_separability.py",
+   "tools/cc_cadence_aggregate_prototype.py",
+   "tools/cc_cadence_anchor_measure.py",
+   "tools/cc_cadence_precision_investigation.py",
+   "tools/cc_decomp_measure.py",
+   "tools/cc_e0_fullspine_measure.py",
+   "tools/cc_eg2_probe.py",
+   "tools/cc_floor_classify.py",
+   "tools/cc_j_key_i_byteid.py",
+   "tools/cc_j_key_i_measure.py",
+   "tools/cc_j_key_ii_redux_step1.py",
+   "tools/cc_j_key_ii_safety.py",
+   "tools/cc_j_key_iii_decision_diff.py",
+   "tools/cc_j_key_iii_invariant_check.py",
+   "tools/cc_j_key_iii_mode_collapse.py",
+   "tools/cc_joint_residual_probe.py",
+   "tools/cc_kma_relpair_probe.py",
+   "tools/cc_layer3_keymode_baseline.py",
+   "tools/cc_layer3_sweep_grade.py",
+   "tools/cc_layer4_chord_baseline.py",
+   "tools/cc_layer4_residual_decompose.py",
+   "tools/cc_oi125_extrapolation_probe.py",
+   "tools/cc_oi168_probe_report.py",
+   "tools/cc_oracle_crosscheck.py",
+   "tools/cc_round2_genre_cov.py",
+   "tools/cc_round2_measure.py",
+   "tools/cc_round2_onset.py",
+   "tools/cc_round3_measure.py",
+   "tools/cc_stage4d_i_modulation_measure.py",
+   "tools/cc_stepM_l5_measure.py",
+   "tools/cc_tonicization_measure.py",
+   "tools/cc_tonicization_modulation_probe.py",
+   "tools/cc_uncertain_resolver_inspect.py",
+   "tools/cc_uncertain_resolver_measure.py",
+   "tools/characterise_bir_false.py",
+   "tools/check_corelli_g.py",
+   "tools/check_corelli_mscx.py",
+   "tools/check_corelli_tick.py",
+   "tools/check_iter46_candidates.py",
+   "tools/check_parity.py",
+   "tools/classify_key_disagreement.py",
+   "tools/compare_analyses.py",
+   "tools/compare_bach_wir.py",
+   "tools/compare_gatej.py",
+   "tools/compare_inversion_regressions.py",
+   "tools/compare_l6_oracle.py",
+   "tools/compare_omnibook.py",
+   "tools/compare_progressions_oracle.py",
+   "tools/compare_rn.py",
+   "tools/compare_vl_parity.py",
+   "tools/compare_when_in_rome.py",
+   "tools/conformal_check.py",
+   "tools/coverage/parse_cobertura.py",
+   "tools/dcml_parser.py",
+   "tools/decode_chord_corpus.py",
+   "tools/decode_keymode_corpus.py",
+   "tools/diag_genuine32_characterize.py",
+   "tools/diag_iter28_gate_k.py",
+   "tools/diag_iter32_gate_l.py",
+   "tools/diag_iter47_gate_m.py",
+   "tools/diag_iter47_gate_q.py",
+   "tools/diag_iter48_step2.py",
+   "tools/diag_iter48_step3.py",
+   "tools/diag_iter54_alts_full.py",
+   "tools/diag_iter54_bir_false_enumerate.py",
+   "tools/diag_iter63_genuine6_enumerate.py",
+   "tools/diag_iter8_bir_false.py",
+   "tools/diag_iter8_gates_detailed.py",
+   "tools/diff_iter90_classification.py",
+   "tools/diff_iter90_flips.py",
+   "tools/dump_birfalse_cases.py",
+   "tools/enumerate_near_agree_iter38.py",
+   "tools/filter_effendi.py",
+   "tools/find_enharmonic_errors_temp.py",
+   "tools/find_maj_to_dom7.py",
+   "tools/fix_keysig.py",
+   "tools/gate_n_fp_scan_iter39.py",
+   "tools/grieg_modal_diagnostic.py",
+   "tools/harmony_to_diagram/parse_mscx.py",
+   "tools/inject_dcml_rn.py",
+   "tools/inject_dcml_rn_qa.py",
+   "tools/inject_m21_rn.py",
+   "tools/iter45_cluster_a_diagnostic.py",
+   "tools/iter45_step4_cluster_b.py",
+   "tools/iter45_step4_detail.py",
+   "tools/iter58_diagnostic.py",
+   "tools/iter92_jazz_bir_true_analysis.py",
+   "tools/iter94_birtrue_dump.py",
+   "tools/iter94_jazz_regression_analysis.py",
+   "tools/iter95_enumerate_errors.py",
+   "tools/iter97_categorize_birfalse.py",
+   "tools/joint_estimator/fit_weights.py",
+   "tools/joint_estimator/gen_content_dp_split.py",
+   "tools/joint_estimator/gen_count_inventory.py",
+   "tools/joint_estimator/gen_decode_parity_ref.py",
+   "tools/joint_estimator/gen_embedded_tables.py",
+   "tools/joint_estimator/gen_factor_presence.py",
+   "tools/joint_estimator/gen_fold_assignment.py",
+   "tools/joint_estimator/gen_label_tables.py",
+   "tools/joint_estimator/gen_mode_marginal.py",
+   "tools/joint_estimator/gen_note_tables.py",
+   "tools/joint_estimator/gen_spelling_establishment.py",
+   "tools/joint_estimator/gen_wir_alignment_probe.py",
+   "tools/joint_estimator/normalize.py",
+   "tools/joint_estimator/probe_decoder.py",
+   "tools/joint_estimator/probe_desksim.py",
+   "tools/joint_estimator/probe_run.py",
+   "tools/joint_estimator/search_direct.py",
+   "tools/joint_estimator/transposition_probe_2026_08_02/run_probe.py",
+   "tools/joint_estimator/transposition_probe_rerun_2026_08_03/rerun_repo_side.py",
+   "tools/l15_split.py",
+   "tools/measure_fanout.py",
+   "tools/measure_joint_probe.py",
+   "tools/mode_grading_adjudication_probe.py",
+   "tools/music21_batch.py",
+   "tools/notation_seams/analyze_cost_profile.py",
+   "tools/notation_seams/classify_dualarm.py",
+   "tools/notation_seams/gen_editing_cycle.py",
+   "tools/notation_seams/gen_ground_truth_inventory.py",
+   "tools/notation_seams/reconcile_switch_goldens.py",
+   "tools/oracle_root_metric.py",
+   "tools/pdmx_jazz_candidates.py",
+   "tools/pdmx_spot_check.py",
+   "tools/producer_key_modes.py",
+   "tools/reconcile_counts.py",
+   "tools/refresh_divergence_20260424/compare.py",
+   "tools/refresh_divergence_20260424/corpus_sweep.py",
+   "tools/release_notes/release_notes_fetcher.py",
+   "tools/rerun_dcml_comparison.py",
+   "tools/robust_stop_diff.py",
+   "tools/robust_stop_restamp.py",
+   "tools/run_bach_preset.py",
+   "tools/run_bach_suites_validation.py",
+   "tools/run_beethoven_validation.py",
+   "tools/run_chopin_validation.py",
+   "tools/run_corelli_validation.py",
+   "tools/run_cpe_bach_validation.py",
+   "tools/run_dlc_baseline.py",
+   "tools/run_dvorak_validation.py",
+   "tools/run_grieg_validation.py",
+   "tools/run_mozart_validation.py",
+   "tools/run_schumann_validation.py",
+   "tools/run_tchaikovsky_validation.py",
+   "tools/run_validation.py",
+   "tools/section_7_3_diagnostic.py",
+   "tools/soundfonts/preset_categories/generate_cpp_from_json.py",
+   "tools/stage5_15_13_population.py",
+   "tools/stage5_2_2b_analyze.py",
+   "tools/stage5_2_2b_dlc_probe.py",
+   "tools/stage5_2_2b_evidence.py",
+   "tools/stage5_2_2b_jointfit.py",
+   "tools/stage5_2_2b_snapshot_preview.py",
+   "tools/stage5_2_2b_surface.py",
+   "tools/stage5_2_2c_3way.py",
+   "tools/stage5_2_2c_byteproof.py",
+   "tools/stage5_2_2c_winnerdiff.py",
+   "tools/stage5_fit_driver.py",
+   "tools/status_archive_sweep_check.py",
+   "tools/survey_1pc_dominant_slices.py",
+   "tools/survey_iii_slash_correct_iter90.py",
+   "tools/survey_pc8_flat_authored_bass.py",
+   "tools/term_inventory/gen_term_inventory.py",
+   "tools/test_batch_analyze_regressions.py",
+   "tools/test_dcml_parser.py",
+   "tools/tests/test_cross_language_constants.py",
+   "tools/tests/test_dcml_parser_figbass_pedal.py",
+   "tools/tests/test_metric_primitives_l0l1.py",
+   "tools/tests/test_metric_scripts.py",
+   "tools/tests/test_oracle_root_metric.py",
+   "tools/tests/test_snapshot_sources.py",
+   "tools/theta_fit.py",
+   "tools/translations/process_source_ts_files.py",
+   "tools/validate_slices_corpus.py"
+  ],
+  "no_external_candidate_source_found": [
+   "tools/audit/decisions/gen_apply_field_diff.py",
+   "tools/audit/decisions/gen_finish_line_item1_routes.py",
+   "tools/audit/decisions/gen_homing_edit_shape.py",
+   "tools/audit/decisions/gen_phase1n_reading_regime.py",
+   "tools/audit/decisions/gen_phase1q_record_divergence.py",
+   "tools/audit/decisions/gen_reads1_yield.py",
+   "tools/audit/decisions/gen_reads2_yield.py",
+   "tools/audit/decisions/gen_reads3_yield.py",
+   "tools/audit/decisions/gen_reads4_yield.py",
+   "tools/audit/decisions/gen_reads5_repack.py",
+   "tools/audit/decisions/gen_reads5_yield.py",
+   "tools/audit/decisions/gen_reads6_yield.py",
+   "tools/audit/decisions/gen_route_homing_edit_shape.py",
+   "tools/audit/decisions/reaim_home_anchors.py",
+   "tools/audit/gen_artifact_inventory.py",
+   "tools/audit/gen_claude_md_finer_spans.py",
+   "tools/audit/gen_claude_md_finer_surface.py",
+   "tools/audit/gen_doc_change_candidates.py",
+   "tools/audit/gen_framework_untrusted_candidates.py",
+   "tools/audit/gen_governing_surface_spans.py",
+   "tools/audit/gen_index_status_normalization.py",
+   "tools/audit/gen_oi367_opening_correction.py",
+   "tools/audit/gen_phase1_gate_readers.py",
+   "tools/audit/gen_phase3_gate_partition.py",
+   "tools/audit/gen_post_split_archive.py",
+   "tools/audit/gen_session_start_read_size.py",
+   "tools/audit/gen_status_archive_pass.py",
+   "tools/audit/gen_status_batch_bound.py",
+   "tools/audit/instrument_arm_declaration_effect.py",
+   "tools/audit/oi349_record_arm_precondition_probe.py",
+   "tools/audit/output_encoding.py",
+   "tools/audit/process_check.py",
+   "tools/audit/shell_read_guard.py",
+   "tools/joint_estimator/gen_posterior_slice.py",
+   "tools/joint_estimator/transposition_probe_rerun_2026_08_03/analyze_rerun.py",
+   "tools/notation_seams/gen_callpath_facts.py",
+   "tools/run_diag20_targeted.py"
+  ],
+  "no_recognizer_idiom_found": [
+   "tools/audit/claude_md_rule_triage.py",
+   "tools/audit/decisions/gen_live_prohibition_pointers.py",
+   "tools/audit/decisions/gen_phase1g_triage.py",
+   "tools/audit/decisions/gen_phase1p_delegation_bar.py",
+   "tools/audit/decisions/gen_phase1q_snapshot_establishment.py",
+   "tools/audit/decisions/gen_phase1w_legacy_verification.py",
+   "tools/audit/decisions/gen_r1_superseded_reach.py",
+   "tools/audit/decisions/gen_true_half_reach.py",
+   "tools/audit/decisions/gen_true_half_reach_rows.py",
+   "tools/audit/gen_gating_row_sizing.py",
+   "tools/audit/gen_period_stratum_split.py",
+   "tools/audit/oi199/gen_joint_disposition_annotations.py",
+   "tools/audit/reaim_ratification_surface_paths.py",
+   "tools/build_score_census_registry.py",
+   "tools/joint_estimator/adoption_measure.py",
+   "tools/joint_estimator/gen_input_parity.py",
+   "tools/joint_estimator/gen_marginals_ref.py",
+   "tools/notation_seams/choose_exposure_constants.py",
+   "tools/stage5_2_2c_sweep.py",
+   "tools/stage5_2_2d_surface.py",
+   "tools/stage5_2_2d_sweep.py",
+   "tools/stage5_2_2e_liveness.py"
+  ]
+ },
+ "what_this_does_not_assert": [
+  "That a member on the NO INDEPENDENTLY-KNOWN POPULATION side is WRONG, or that its artifact is unusable. It asserts that the artifact is a floor and that how far below the truth it sits is unknown.",
+  "That an ESTABLISHED member's individual verdicts are right. What is established is that its partition is complete against a population something other than it enumerates.",
+  "That any member is OWED anything. The ruling that ordered this derivation says in its own words that the result authorizes NOTHING.",
+  "That the member list is complete. It is complete relative to the three-part member test above, whose reach beyond the three seeds is UNMEASURED and stated as such."
+ ]
+}

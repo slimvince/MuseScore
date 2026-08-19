@@ -713,6 +713,32 @@ AUTHORED = [
      "stated as such. ★ AND IT AUTHORIZES NOTHING: the ruling it exists for says each pass is "
      "corrected only when a ruled act needs its write path"),
 
+    # ---- AUTHORED 2026-08-19, cc_instruction_preparation_thirteenth.md Task 2 ----------------
+    # THE RECOGNIZERS THE RECORD LEANS ON, SORTED BY WHETHER AN INDEPENDENTLY-KNOWN POPULATION
+    # EXISTS, registered in the act that creates the tool — the standing new-tool rule. `--check`
+    # and never the bare invocation, for the ordinary reason: run with no flag it REWRITES its
+    # committed artifact.
+    ("tools/audit/gen_recognizer_establishment_sort.py", ["--check"],
+     "which tools are RECOGNIZERS OVER A POPULATION, and for each whether an INDEPENDENTLY-KNOWN "
+     "population exists to reconcile against — the test the user ruled as a class on 2026-08-19. "
+     "The population is DERIVED on every run from the tools' own syntax trees and never listed, so "
+     "a tool that becomes or stops being a recognizer over a population moves the artifact on the "
+     "day it happens. What it guards is not the verdicts, which are a reading returned to the "
+     "user, but three demands on the tree AS IT STANDS: the three establishment seeds — one member "
+     "per verdict, each read at its own tool and its own artifact — must still derive to the side "
+     "the record establishes for them, so a recognizer that has stopped recognizing the shape it "
+     "was built for HALTS rather than publishing a smaller population; the members it CANNOT place "
+     "must reconcile with the authored reasons in BOTH directions, so a new unrecognised shape "
+     "cannot enter silently and an authored reason cannot outlive its subject; and — the one "
+     "peculiar to this tool — IT IS A MEMBER OF ITS OWN POPULATION, so the status it declares "
+     "about itself must AGREE with the verdict its own test derives for it. All three were shown "
+     "both to FIRE and to stay QUIET when it was built (#19). ★ WHAT IT DOES NOT ASSERT: that a "
+     "member on the no-external-population side is wrong, that an ESTABLISHED member's individual "
+     "verdicts are right, or that the member list is complete — the membership recognizer's reach "
+     "beyond the three seeds is UNMEASURED, which is why the artifact publishes a LOWER BOUND and "
+     "declares that of itself. ★ AND IT AUTHORIZES NOTHING: the ruling it exists for says in its "
+     "own words that the result authorizes NOTHING."),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

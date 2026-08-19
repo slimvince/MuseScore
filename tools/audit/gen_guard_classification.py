@@ -836,6 +836,30 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "it exists for (user, 2026-08-19, Ruling 3) says each pass is corrected only when a ruled "
         "act needs its write path, and the enumeration is the standing input to that act rather "
         "than a work list."),
+    # ---- AUTHORED 2026-08-19, cc_instruction_preparation_thirteenth.md Task 2 ----------------
+    "tools/audit/gen_recognizer_establishment_sort.py": (
+        LIVE, "gen_recognizer_establishment_sort.py, THE TEST and THE BOUND paragraphs of its "
+              "module docstring; `build()`, which re-walks and re-parses every tool under `tools/` "
+              "on every run; the seed, unplaced and self-status reconciliations in `main()`",
+        "LIVE. Its population is the TOOL TREE, re-walked and re-parsed on every run: a tool that "
+        "becomes a recognizer over a population enters the sort the day it does, and one that "
+        "stops being one leaves. Its STOPs are demands about the tree as it stands rather than a "
+        "dated reading, and all three were shown BOTH to fire and to stay quiet when it was built "
+        "(#19): an establishment seed that stops deriving to the side the record establishes for "
+        "it halts the run; the members the derivation cannot place must reconcile with the "
+        "authored reasons in BOTH directions, so a new unrecognised shape cannot enter silently "
+        "and an authored reason cannot outlive its subject; and — the one peculiar to this tool — "
+        "IT IS A MEMBER OF ITS OWN POPULATION, so its declared status about itself must AGREE with "
+        "the verdict its own test derives for it, and a disagreement halts it rather than letting "
+        "the artifact claim something its own derivation does not support. It carries no recorded "
+        "commit of its own and reads none, so the OI-301 shape does not arise for it. ★ WHAT IT "
+        "DOES NOT ASSERT: that a member on the no-external-population side is WRONG, that an "
+        "ESTABLISHED member's individual verdicts are right, or that the member list is COMPLETE — "
+        "the membership recognizer's reach beyond the three seeds is UNMEASURED, which is why the "
+        "artifact publishes a LOWER BOUND and says so of itself. ★ AND IT AUTHORIZES NOTHING: the "
+        "ruling it exists for (user, 2026-08-19, Ruling 1) says in its own words that the result "
+        "authorizes NOTHING, and the sort is the standing input to a later ruled act rather than a "
+        "work list."),
     "tools/audit/gen_governing_surface_readers.py": (
         LIVE, "gen_governing_surface_readers.py, the WHAT IS DERIVED and WHAT IT DOES NOT "
               "ESTABLISH paragraphs of its module docstring; `measure()`, which scans the tracked "

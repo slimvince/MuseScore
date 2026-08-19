@@ -21,7 +21,7 @@
   "It recognises a read-back by the KEY carrying the word `commit`. A pass recording its epoch under a differently-worded key reports as a non-member — the recoverable direction, a missing member being a question and a wrongly placed one a false statement about a write path."
  ],
  "counts": {
-  "tools_walked": 338,
+  "tools_walked": 339,
   "members": 7,
   "symmetric": 1,
   "asymmetric": 3,
