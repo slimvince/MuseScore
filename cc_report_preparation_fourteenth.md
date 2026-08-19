@@ -532,3 +532,34 @@ it, with git carrying what a sentence cannot.
 *Provenance: CC, 2026-08-19, appended in the ONE FURTHER commit after `d89a1e2ac8`. Every value in this
 section was read from the runs recorded above at the quiet tree that commit left; the close commit's
 hash, parent, path count and report blob were read at the object by explicit hash.*
+
+---
+
+## 14. The whole chain, named as far as a sentence can name it — and the one commit it cannot
+
+**Written because the eleventh batch's own terminus was a commit no close and no report named**, and a
+reader who took the close's provenance as naming the last commit was one commit short. That hazard is
+reduced here to the single commit the regress cannot escape, and it is DECLARED rather than left to be
+discovered — the shape the two preceding batches established, imported rather than re-invented.
+
+| | commit | parent | paths |
+|---|---|---|---|
+| Task 0 | `3a2cb46225` | `4e93ee84c3` | 4 |
+| Task 1 | `ac6cacec9f` | `3a2cb46225` | 4 |
+| Task 2 — the close and this report | `d89a1e2ac8` | `ac6cacec9f` | 6 |
+| the end-state guard run, the ONE FURTHER commit — §13 and the artifacts | `9d12b41c5e` | `d89a1e2ac8` | 3 |
+| the close's own end-state block, appended after the run existed | `459074f3b1` | `9d12b41c5e` | 1 |
+
+**Every row was verified at the object by explicit hash** — its parent confirmed and its path count
+read from the object, never from the memory of making it (**#15**). **This table was written after all
+five commits existed.**
+
+**The further commit carries THREE paths and not four**, because the guard classification artifact
+came out byte-unchanged when it was regenerated. It is stated here so that the count cannot be read as
+a missing path.
+
+**★ THE COMMIT THAT CARRIES THIS SECTION IS THE TERMINUS, AND IT IS THE ONE ROW THE TABLE CANNOT
+HOLD.** A commit cannot contain its own identity, so the chain is complete up to it and one commit
+short of the branch tip **by construction, not by omission**. **Read the chain at the branch tip, not
+at this table** — that is the whole content of the warning, and it is stated here so that no later
+session has to rediscover it.
