@@ -18,6 +18,18 @@
 > longer the renderings the user ruled from**, and on one member the pin is not constructible at all.
 > That is §3 below and finding **F76**.
 
+> **★ DATED CORRECTION, APPENDED 2026-08-19 — the opening block above is not rewritten.** Executing
+> Ruling 4(ii) of `cowork_rulings_2026_08_19_eleventh_return.md`, and recorded as finding **F81**.
+> **THE FORMER WORDING, QUOTED AND PRESERVED (#12):** *"Five task commits and one further commit
+> carrying the end-state guard run."* **THERE ARE SIX TASK COMMITS** — Tasks 0 through 5, the close
+> being a task commit with its own entry — and the corrected count is stated BY CITATION to the
+> enumeration rather than asserted: §13's chain table below carries one row per task commit, Task 0
+> through Task 5, and two further rows for the end-state guard run and the F79 correction. **THERE
+> ARE ALSO SIX `STATUS.md` POINTER ENTRIES, one per task commit**, enumerated at `STATUS.md`'s own
+> eleventh-batch entries, each naming this dispatch and the task it closes. *The general form: a
+> count stated in prose beside a population enumerated elsewhere is a second home for one value
+> (#6), and the prose is the one that goes stale.*
+
 ---
 
 ## 1. The reading
@@ -233,6 +245,39 @@ content … never adopted"*), so the shape is reported and the pin is not improv
    its object at the pinned commit by 260 inserted and 385 deleted lines, and that difference IS the
    sitting's executing act. The generator's own object differs too (`7d16bcab8d` against
    `37fa858472`). Reverting would remove the user's own placements — **#12 forbids it outright.**
+
+> **★ DATED CORRECTION, APPENDED 2026-08-19 — nothing in §3.c above is rewritten.** Executing
+> Ruling 4(i) of `cowork_rulings_2026_08_19_eleventh_return.md`, and recorded as finding **F80**:
+> a measurement taken mid-batch and published as a present-tense statement about HEAD names the tree
+> it was taken at, because a report is read at the terminus and the batch's own acts sit in between.
+>
+> **THE FORMER WORDING, QUOTED AND PRESERVED (#12)** — the table row and the inference drawn from it:
+> *"the generator at `b1d48d6c87` / at HEAD | `9a98c96729` / `9a98c96729` — **identical**"*, and
+> *"Since the generator and route 1 are byte-identical at both commits, pinning both routes at the
+> selected commit renders `d04aa5726b` exactly."*
+>
+> **WHAT IS CORRECTED: THE TREE THAT COLUMN WAS MEASURED AT.** It was measured at the tree Task 1 met
+> **before its own edits**, and by the terminus it is false. Every object below is stated BY CITATION
+> to the git object, obtained with `git rev-parse <commit>:<path>` and never transcribed from any
+> surface that repeats it (**D-431**): `tools/audit/gen_artifact_inventory_surface.py` stands at
+> `9a98c9672912fbe1dcda2c93b7b300025bf22bde` at the selected commit `b1d48d6c87` and at this batch's
+> base `9390e2ca2c`; at `610a3fbe78085406fac69ab0931ce0c2abd1e7e9` from `9a78ed2fea` — **Task 1's own
+> commit** — onward, that task having written Ruling 1b's split into it; and at
+> `e985f5d7047a70067d3314889ed1e51269134fd1` from `65fbef6df4` — **Task 3's own commit** — onward,
+> that task having written the banner qualification into it, which is the object it carries at the
+> terminus `46d68a146d`.
+>
+> **THE CONCLUSION SURVIVES AND IS STRENGTHENED; ONLY THE INFERENCE IS CORRECTED.** §3.c's conclusion
+> is that the pin is not applied because the committed document is no longer the ruled rendering, and
+> that stands untouched: the surface is `d04aa5726b2cd9a398e093928f7d4bbe2b6063ff` at `b1d48d6c87`,
+> `9f76701ed40d12f2f216c2aca2397053478af9d1` at `9390e2ca2c` and
+> `aa6157eb061955f584d3cd7a8ad7addc0c2d17f4` at the terminus. What no longer holds is the reasoning
+> that a render at the selected commit would produce `d04aa5726b` **exactly** — that rested on the
+> generator being one object at both commits, and it is two. **A RENDER TODAY WOULD PRODUCE NEITHER
+> THE RULED RENDERING NOR THE COMMITTED DOCUMENT**, which is a stronger ground for not pinning than
+> the one §3.c gave. The census input is unmoved and that half of §3.c stands as written:
+> `tools/audit/artifact_inventory.json` is `dc7d15e7b44e07386b03ef5e9df46ac40ed2f319` at both
+> `b1d48d6c87` and the terminus.
 
 ### 3.d The rest of Task 1
 

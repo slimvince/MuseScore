@@ -14692,3 +14692,17 @@ The end-state guard run is in the ONE FURTHER commit after it, whose identity th
 cannot contain. Every commit hash above was read at the object by explicit hash; every character
 figure comes from `tools/audit/session_start_read_size.json`; every guard figure from the runs
 recorded at §6; every history fact from a per-path git history query taken on this mount.*
+
+**★ DATED CORRECTION, APPENDED 2026-08-19 — nothing in this close is rewritten.** Executing Ruling
+4(ii) of `cowork_rulings_2026_08_19_eleventh_return.md`, and recorded as finding **F81**. **THE
+FORMER WORDINGS, QUOTED AND PRESERVED (#12)**, both of them: this close's opening block reads *"Five
+task commits and one further commit carrying the end-state guard run."*, and its §5 reads *"The five
+`STATUS.md` pointer entries, one per task"*. **THERE ARE SIX OF EACH** — Tasks 0 through 5, the close
+being a task commit with its own entry — and the corrected count is stated BY CITATION to the
+enumeration rather than asserted: the chain table at §13 of `cc_report_preparation_eleventh_amended.md`
+carries one row per task commit, Task 0 through Task 5, and two further rows for the end-state guard
+run and the F79 correction; and the pointer entries are enumerated at `STATUS.md`'s own eleventh-batch
+entries, each naming this batch's dispatch and the task it closes. **Nothing else in this close moves,
+and no verdict, value or expectation is touched.** *The general form: a count stated in prose beside a
+population enumerated elsewhere is a second home for one value (#6), and the prose is the one that
+goes stale.*
