@@ -560,3 +560,34 @@ F79 names.
 *Provenance: CC, 2026-08-19, appended in the ONE FURTHER commit after `1fdce14fdd`. Every value in
 this section was read from the runs recorded above at the quiet tree that commit left; the close
 commit's hash, parent and path count were read at the object by explicit hash.*
+
+---
+
+## 14. The whole chain, named as far as a sentence can name it — and the one commit it cannot
+
+**Written because the eleventh batch's own terminus was a commit no close and no report named**, and a
+reader who took the close's provenance as naming the last commit was one commit short. That hazard is
+reduced here to the single commit the regress cannot escape, and it is DECLARED rather than left to
+be discovered — the shape the twelfth batch's §15 established, imported rather than re-invented.
+
+| | commit | parent | paths |
+|---|---|---|---|
+| Task 0 | `ae55748557` | `16a172715a` | 4 |
+| Task 1 | `2a909b47c2` | `ae55748557` | 4 |
+| Task 2 | `a33a933404` | `2a909b47c2` | 5 |
+| Task 3 — the close and this report | `1fdce14fdd` | `a33a933404` | 6 |
+| the end-state guard run, the ONE FURTHER commit — §13 and the three artifacts | `9fbe98a305` | `1fdce14fdd` | 4 |
+| the close's own end-state block, appended after the run existed | `54874000cb` | `9fbe98a305` | 1 |
+
+**Every row was verified at the object by explicit hash** — its parent confirmed and its path count
+read from the object, never from the memory of making it (**#15**). **This table was written after
+all six commits existed.**
+
+**★ THE COMMIT THAT CARRIES THIS SECTION IS THE TERMINUS, AND IT IS THE ONE ROW THE TABLE CANNOT
+HOLD.** A commit cannot contain its own identity, so the chain is complete up to it and one commit
+short of the branch tip **by construction, not by omission**. **Read the chain at the branch tip, not
+at this table** — that is the whole content of the warning, and it is stated here so that no later
+session has to rediscover it.
+
+*Provenance: CC, 2026-08-19, appended in the commit that is this batch's terminus. Every hash above
+was read at the git object by explicit hash.*
