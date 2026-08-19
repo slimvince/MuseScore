@@ -717,6 +717,65 @@ artifact and declined to seed the measurement. **The excluded alternative is rec
 measurement, which is the reading the record already carried and which had produced no measurement
 in any of the waves that met the pattern.
 
+### A RECOGNIZER OVER A POPULATION states, at its own artifact, whether an INDEPENDENTLY-KNOWN population exists to reconcile against — and where none does, it publishes its output as a LOWER BOUND with its reach declared UNMEASURED, never as a census
+
+**Ruled by the user, 2026-08-19 — the forward clause of Ruling 1 of
+`cowork_rulings_2026_08_19_twelfth_return.md`, ruled AS A CLASS; written here by
+`cc_instruction_preparation_thirteenth.md` Task 1.** **A RECOGNIZER OVER A POPULATION STATES, AT ITS
+OWN ARTIFACT, WHETHER AN INDEPENDENTLY-KNOWN POPULATION EXISTS TO RECONCILE AGAINST — AND WHERE NONE
+DOES, IT PUBLISHES ITS OUTPUT AS A LOWER BOUND WITH ITS REACH DECLARED UNMEASURED, NEVER AS A
+CENSUS.**
+
+**IT STANDS BESIDE THE THREE SECTIONS ABOVE, and the siting is the one those sections use of
+themselves.** They say what a MECHANISM is worth unmeasured, what a COMPLETENESS CLAIM is worth
+unmeasured, and what an ENUMERATING PATTERN is worth unmeasured. **This says what a RECOGNIZER OVER
+A POPULATION is worth unmeasured, and it supplies the test the first of those three leaves open:**
+the completeness rule immediately above demands a measured miss rate against a seed, and this says
+what is owed where the record holds no second enumeration to measure a miss rate against.
+
+**THE TEST, AND IT IS MECHANICAL RATHER THAN A MATTER OF TASTE: DOES SOMETHING OTHER THAN THIS
+RECOGNIZER ENUMERATE THE POPULATION IT CLAIMS TO DESCRIBE?** Where something does, the recognizer is
+**established** by both-ways reconciliation against it. Where nothing does, **the recognizer's output
+IS the population, no seed set can establish it**, and the honest publication is a floor.
+
+**THE GROUND IS FINDING F84, MEASURED RATHER THAN ARGUED.** A recognizer written from its known
+instances recognises its known instances. **The measured instance:** a derivation over the tools' own
+syntax trees was first written from the two members the record already establishes, and it reproduced
+both — while missing three real idioms the same population uses. Published as written it would have
+named three members instead of seven and read as complete, and every miss was found only by seeking
+candidates the recognizer did NOT return. **A seed set therefore proves that a recognizer is not
+broken and says nothing about what it covers**, which is precisely the *merely unfalsified* that
+**#19** exists against.
+
+**THE TEST IT RESTS ON IS FINDING F87**, which is what says WHICH recognizers F84 reaches, and it is
+not seeds-versus-none. **Measured on three.** The derived gating answer a session reads at boot
+reconciles both ways against the parsed INDEX, with a halt on any row it cannot place, and the INDEX
+is enumerated by something other than that recognizer — **established, and F84 does not reach it**.
+The epoch-pinned write-path enumeration has no external population, so its both-ways check runs
+against an authored set the same session completed and catches only future drift, as its own artifact
+concedes. The evidence-pin membership is **MIXED** — established on its population, which is an
+external file-system enumeration, and unestablished on its classification, which is recognizers over
+record text.
+
+**THE TWO GENERAL FORMS, which are what outlive the instances:** *a recognizer's reach is measured by
+the instances it FAILS to find, never by the ones it does*; and *establishment needs a SECOND,
+INDEPENDENT enumeration of the same population.*
+
+**★ THE BOUND, STATED HERE BECAUSE A READER WILL OTHERWISE TAKE THE CLAUSE FOR A SWEEP: IT BINDS A
+RECOGNIZER WRITTEN OR TOUCHED FROM HERE. EXISTING RECOGNIZERS' OWN ARTIFACTS ARE NOT RETRO-FITTED
+WITH THE STATEMENT.** The read-only sort ordered with this ruling carries the per-recognizer verdict,
+so the information has ONE home (**#6**), and retro-fitting a population under the standing mechanism
+freeze would be tool work that blocks nothing — the freeze's own test.
+
+**THE COST THE USER ACCEPTED, recorded because an accepted cost is not a discharged one:** this
+clause **CLASSIFIES** exposure and does not **MEASURE** it. A recognizer on the
+no-external-population side is known to be a lower bound and is **not** known by how much. The
+UNMEASURED declaration is what keeps that residual visible rather than closing it.
+
+*What this rule does not do:* it edits, widens or acts on no recognizer, orders no re-establishment
+pass, and grades no existing artifact. It says what a recognizer's own artifact must state about
+itself, and nothing else.
+
 ### A maintenance act ESTABLISHES THE CAUSE before it touches the mechanism — and a cause that resists establishment is a STOP, with no fix taken on a named-but-unasserted candidate
 
 **Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_eleventh_stop.md`, Ruling 52, taking
