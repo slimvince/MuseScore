@@ -414,6 +414,27 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "the split silently. ★ WHAT IT DOES NOT ASSERT: the enumeration underneath its inputs is "
         "UNESTABLISHED (#19) and the artifact says so in its own words — a green check here means "
         "the split follows from those artifacts, never that they are complete or correct."),
+    # ---- AUTHORED 2026-08-21, cc_instruction_successor_plan_landing_and_step_zero.md Task 1 ---
+    "tools/audit/gen_specification_document_set.py": (
+        LIVE, "gen_specification_document_set.py, the WHAT IS DERIVED AND WHAT IS AUTHORED "
+              "paragraph and THE STOPS list of its module docstring; `build()`, which scans the "
+              "population out of `ARCHITECTURE.md` and reconciles it with the authored grades in "
+              "both directions; `locate()`, which halts on a missing or ambiguous anchor",
+        "LIVE on the ruling's own operational form — can this check pass forever while the tree "
+        "moves on correctly? It can, and it fails exactly when the tree moves in a way that "
+        "matters. Its POPULATION is DERIVED from `ARCHITECTURE.md` by scanning that file on every "
+        "run, so it grows as the canonical document names more documents, and a target with no "
+        "authored grade halts the run — the `claude_md_rule_triage.py` shape, a derived population "
+        "that tracks the tree. Every CITATION it emits is LOCATED at run time rather than stored: "
+        "the governing naming per admitted target, the five deciding clauses in `CLAUDE.md`, the "
+        "eight limb-1 region headings and each member's two declared-property quotes, each with a "
+        "missing or ambiguous anchor halting the run — so no coordinate can drift into a stale "
+        "citation, which is the same property `gen_phase1p_delegation_bar.py` is LIVE for. The "
+        "delegation SEED is re-read and reconciled BOTH WAYS on every run, so a seed-admitted "
+        "delegation the text no longer carries halts it. Nothing in it is dated. ★ WHAT IT DOES "
+        "NOT ASSERT: that any one grade is RIGHT — whether a naming delegates a concern is an "
+        "authored judgment, challengeable at the grade — and the artifact declares its one "
+        "near-tie with both readings and the consequence of each rather than hiding it."),
     "tools/audit/gen_july_screen.py": (
         LIVE, "gen_july_screen.py:22-30 (what is derived), :59-69 (the five STOPs), and its "
         "`retrieve()` function (the per-run git-object retrieval)",

@@ -1,0 +1,2520 @@
+{
+ "what_this_is": "THE SPECIFICATION DOCUMENT SET, derived from `ARCHITECTURE.md`'s admitted delegations under Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md`. It derives no specification, admits no fact, and takes no view on whether any member's content is right.",
+ "dispatch": "cc_instruction_successor_plan_landing_and_step_zero.md",
+ "ruling": "Ruling 6 (Alternative A): \"Three limbs, as plan §5 states them: `ARCHITECTURE.md` (the analysis layers' sections, the joint estimator's standing-rules section, document governance); every document `ARCHITECTURE.md` delegates to in a form the delegation-form rule admits (`CLAUDE.md` decisions-register rule (i)), each delegating line quoted; and `docs/scoring_model.md`. The decisions register's home population is NOT the source. Whether `ARCHITECTURE.md`'s delegations are complete is recorded as a finding, not assumed. Three properties travel with every member: its pollution distribution (Ruling 7), LIVE or DORMANT, and its declared establishment status.\"",
+ "generator": "tools/audit/gen_specification_document_set.py",
+ "reproduce": "python tools/audit/gen_specification_document_set.py --check   # re-derives and exits 1 on any drift",
+ "what_is_DERIVED": [
+  "the candidate population — every naming of another .md document in ARCHITECTURE.md, scanned from the file, with the line and the line's own text",
+  "the member list, from the authored grades",
+  "the three limb-1 regions' line ranges, from the file's own headings",
+  "every count",
+  "the both-ways reconciliation against the delegation seed and its miss rate",
+  "whether each member's file exists at the tree",
+  "every quoted passage and every quoted property, read from the file at HEAD"
+ ],
+ "what_is_AUTHORED": [
+  "the grade per named target under CLAUDE.md rule (i), with (h) and (k)/(k1)",
+  "for an ADMITTED target, the anchor of the naming that GOVERNS, and the scope",
+  "the two declared properties per member, each as an anchor into the declaring file",
+  "the three limb-1 regions' heading list"
+ ],
+ "the_form_vocabulary": {
+  "admitted": [
+   "explicit-delegation-clause",
+   "named-home-with-sections"
+  ],
+  "excluded": [
+   "bare-appended-citation",
+   "naming-that-delegates-no-concern",
+   "provenance-attribution"
+  ],
+  "★_four_of_the_five_are_the_bar's_own": "explicit-delegation-clause, named-home-with-sections, bare-appended-citation and provenance-attribution are `CLAUDE.md` rule (i)'s own four forms, quoted below. naming-that-delegates-no-concern is THIS TOOL'S OWN residue class, declared as such: a naming that is neither a citation nor a delegation — a filename inside a directory listing, a document named as superseded, a document named as one to be created. It admits nothing, so it can only narrow the set, never widen it."
+ },
+ "the_deciding_clauses_located_in_CLAUDE.md": {
+  "rule_(i)_admitted": {
+   "citation": "CLAUDE.md:526",
+   "text": "wordings do that, and it is the clause (h) deliberately did not touch. **ADMITTED:** an **explicit"
+  },
+  "rule_(i)_not_admitted": {
+   "citation": "CLAUDE.md:530",
+   "text": "ADMITTED:** a **bare appended citation** — *\"Full spec: X.\"* — or a **provenance attribution**,"
+  },
+  "rule_(h)_granularity": {
+   "citation": "CLAUDE.md:502",
+   "text": "phase-1q whole-document reading): a delegation naming a DOCUMENT reaches ALL of its sections; a"
+  },
+  "rule_(k)_a_glob_confers_nothing": {
+   "citation": "CLAUDE.md:567",
+   "text": "the members it names EXPLICITLY. A glob pattern and a trailing ellipsis CONFER NOTHING.** *Why:* a"
+  },
+  "rule_(k1)_the_strongest_naming_governs": {
+   "citation": "CLAUDE.md:573",
+   "text": "AND AN EXCLUDED FORM, THE STRONGEST NAMING GOVERNS**; being cited elsewhere in a weaker form does not"
+  }
+ },
+ "counted": {
+  "targets_named_in_ARCHITECTURE.md": 68,
+  "namings_scanned": 199,
+  "targets_by_form": {
+   "bare-appended-citation": 17,
+   "explicit-delegation-clause": 23,
+   "named-home-with-sections": 2,
+   "naming-that-delegates-no-concern": 5,
+   "provenance-attribution": 21
+  },
+  "targets_ADMITTED": 25,
+  "members_total": 27,
+  "members_by_limb": {
+   "limb 1 — the canonical specification": 1,
+   "limb 2 — an admitted delegation target": 25,
+   "limb 3 — the ruled pilot subject": 1
+  },
+  "members_by_delegation_scope": {
+   "document": 23,
+   "sections": 4
+  },
+  "members_with_no_file": 0,
+  "members_by_live_or_dormant": {
+   "DORMANT": 8,
+   "DORMANT (as declared at the naming)": 1,
+   "DORMANT (its mechanism content)": 1,
+   "DORMANT (nothing built)": 1,
+   "LIVE": 6,
+   "LIVE (as the standard, with a declared departure)": 1,
+   "UNDECLARED": 9
+  },
+  "members_by_declared_establishment_status": {
+   "DECLARED NOT ESTABLISHED": 1,
+   "Provisional, easy to revise.": 1,
+   "UNDECLARED": 23,
+   "Values remain unfit.": 1,
+   "protocol ratified — pending execution": 1
+  }
+ },
+ "the_limb_1_regions": [
+  {
+   "region": "the analysis layers' sections (filed as children of §3.3)",
+   "sections": [
+    {
+     "heading": "#### Layer 1 — the lossless note model (Built+Live)",
+     "first_line": 1560,
+     "last_line": 1637,
+     "lines": 78
+    },
+    {
+     "heading": "#### Layer 2 — the deterministic change-point slicer (Built+Live — consumed by L3)",
+     "first_line": 1638,
+     "last_line": 1727,
+     "lines": 90
+    },
+    {
+     "heading": "#### Layer 3 — key/mode is the sequence decoder (Built+Dormant)",
+     "first_line": 1728,
+     "last_line": 1934,
+     "lines": 207
+    },
+    {
+     "heading": "#### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired)",
+     "first_line": 1935,
+     "last_line": 2074,
+     "lines": 140
+    },
+    {
+     "heading": "#### Layer 5 — the function/cadence layer (Built+Dormant — design ratified; consumed by L6)",
+     "first_line": 2075,
+     "last_line": 2191,
+     "lines": 117
+    },
+    {
+     "heading": "#### Layer 6 — the grouping layer (Design-only — v1 spec)",
+     "first_line": 2192,
+     "last_line": 2256,
+     "lines": 65
+    }
+   ],
+   "lines_total": 697
+  },
+  {
+   "region": "the joint estimator's standing-rules section (above the table of contents)",
+   "sections": [
+    {
+     "heading": "## The joint estimator — the standing rules of the production inference layer",
+     "first_line": 265,
+     "last_line": 550,
+     "lines": 286
+    }
+   ],
+   "lines_total": 286
+  },
+  {
+   "region": "document governance",
+   "sections": [
+    {
+     "heading": "## Document governance and the standing architecture notes",
+     "first_line": 551,
+     "last_line": 581,
+     "lines": 31
+    }
+   ],
+   "lines_total": 31
+  }
+ ],
+ "the_grades": [
+  {
+   "target": "CLAUDE.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Every naming cites a standing rule, a principle or the gate block — 'CLAUDE.md gate block (A)', '`CLAUDE.md` rule (i)', '(`CLAUDE.md` #8; `DEFECT_TYPES.md` DT-2)'. A naming inside a list of citations or a parenthetical recording where a rule lives; the bar's second excluded form. ★ The plan's §5 additionally EXCLUDES this document's gate block and grading conventions by name, as measurement content belonging to the measurement-design stage.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 55,
+     "line_text": "> above is a citation inside a list; `CLAUDE.md` rule (i) does not admit that form as a delegation.)*"
+    },
+    {
+     "line": 270,
+     "line_text": "> 2026-08-02 recorded only on tracking surfaces or in `CLAUDE.md`, which is why they are stated here — this"
+    },
+    {
+     "line": 284,
+     "line_text": "> that passage and measures nothing on the next one (`CLAUDE.md` #8; `DEFECT_TYPES.md` DT-2). Ratified by the"
+    },
+    {
+     "line": 296,
+     "line_text": "> at most 12 weights. *Why:* `CLAUDE.md` #20 — no value is graded on data that helped fit it, so a"
+    },
+    {
+     "line": 333,
+     "line_text": "> zero on the production arm. Recorded at the OI-178 adoption, user-ratified 2026-07-26 (`CLAUDE.md` gate"
+    },
+    {
+     "line": 1240,
+     "line_text": "surface does keep. *Why:* guiding principle #12 (`CLAUDE.md`), ratified by the user 2026-07-06 — finding"
+    },
+    {
+     "line": 1261,
+     "line_text": "2026-07-12 (`CLAUDE.md`, the fact-publication corollary); the user's recorded reason for the broad-"
+    },
+    {
+     "line": 1469,
+     "line_text": "instance is recorded in `CLAUDE.md`'s local-patches section with a do-not-revert note and an"
+    },
+    {
+     "line": 1558,
+     "line_text": "case counts (e.g. `53/24/53`); the \"class-(a)/(b)\" split and the full definition live in the gate policy (CLAUDE.md)."
+    },
+    {
+     "line": 1695,
+     "line_text": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*"
+    },
+    {
+     "line": 1856,
+     "line_text": "construction). The Jazz +1 is accepted under the two-tier BIR-gate amendment (CLAUDE.md, \"Gate"
+    },
+    {
+     "line": 2086,
+     "line_text": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*"
+    },
+    {
+     "line": 2206,
+     "line_text": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes."
+    },
+    {
+     "line": 2396,
+     "line_text": "> 57/23/57 → 53/24/53; CLAUDE.md is authoritative for the current integers and `stem@tick`"
+    },
+    {
+     "line": 2403,
+     "line_text": "> the CLAUDE.md gate section for the authoritative identity sets."
+    },
+    {
+     "line": 2666,
+     "line_text": "retired threshold is still listed in the `CLAUDE.md` gate-threshold policy; correcting a governing"
+    }
+   ],
+   "namings_counted": 16
+  },
+  {
+   "target": "DEFECT_TYPES.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, inside a two-item citation list beside `CLAUDE.md` #8. ★ The plan's §5 additionally EXCLUDES this document by name, as a catalog of engineering and method defects carrying almost no musical knowledge.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 284,
+     "line_text": "> that passage and measures nothing on the next one (`CLAUDE.md` #8; `DEFECT_TYPES.md` DT-2). Ratified by the"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "OPEN_ITEMS.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Every naming is a citation of a tracking row — 'tracked at `OPEN_ITEMS.md` OI-nnn', '(`OPEN_ITEMS.md` OI-nnn item n)' — recording where an open question or a correction is tracked. A provenance attribution, and the register's own index rather than a specification of the analysis.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 39,
+     "line_text": "> **STAGED SCOPE — CLOSED AT THE NOTATION SWITCH, 2026-07-27 (corrected 2026-08-02, `OPEN_ITEMS.md` OI-232 item 1;"
+    },
+    {
+     "line": 152,
+     "line_text": "> (Corrected 2026-08-02, `OPEN_ITEMS.md` OI-232 item 2; the sentence this replaces had the two surfaces the wrong"
+    },
+    {
+     "line": 285,
+     "line_text": "> user 2026-07-17, with the governing decision at the head of this document (`OPEN_ITEMS.md:24-25`)."
+    },
+    {
+     "line": 311,
+     "line_text": "> architecture and no recorded basis. Both facts are open and are tracked at `OPEN_ITEMS.md` OI-188 (the"
+    },
+    {
+     "line": 348,
+     "line_text": "> design; reaffirmed as written by the user 2026-08-02 at the `OPEN_ITEMS.md` OI-271 ruling. The constraint's"
+    },
+    {
+     "line": 388,
+     "line_text": "closing `OPEN_ITEMS.md` OI-324). The six rules above govern how the estimator's values are fitted,"
+    },
+    {
+     "line": 422,
+     "line_text": "sounding — is `OPEN_ITEMS.md` OI-228, and it remains a conformance gap DECLARED and not fixed, whose"
+    },
+    {
+     "line": 1094,
+     "line_text": "2026-07-02** — corrected 2026-08-02, `OPEN_ITEMS.md` OI-232 item 5: this parenthetical read"
+    },
+    {
+     "line": 1102,
+     "line_text": "documents and the schema dictionary**. **Scope correction, 2026-08-02 (`OPEN_ITEMS.md` OI-233): this clause"
+    },
+    {
+     "line": 1109,
+     "line_text": "(`OPEN_ITEMS.md` OI-229), under which existing names are not renamed unilaterally, and it is a judgment call in"
+    },
+    {
+     "line": 1112,
+     "line_text": "WAS A DIFFERENT BANNED WORD (added 2026-08-11, `OPEN_ITEMS.md` OI-318 item (1)): the LAYER-6 PARAGRAPH used the bare"
+    },
+    {
+     "line": 1235,
+     "line_text": "`OPEN_ITEMS.md` OI-231; this contract is the standard that departure is measured against, not a"
+    },
+    {
+     "line": 1288,
+     "line_text": "nor established on. Tracked at `OPEN_ITEMS.md` OI-209; the measured collision is OI-215 and OI-227 —"
+    },
+    {
+     "line": 1299,
+     "line_text": "separable on/off stage. Tracked at `OPEN_ITEMS.md` OI-209."
+    },
+    {
+     "line": 1323,
+     "line_text": "> tracked at `OPEN_ITEMS.md` **OI-210** — which names the whole-score implementation as its own row"
+    },
+    {
+     "line": 1730,
+     "line_text": "**Build-state correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232 item 3; the tag read \"Built+Live\", which the"
+    },
+    {
+     "line": 1937,
+     "line_text": "**Plan correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232 item 3; the heading read \"engages with L5\", which"
+    },
+    {
+     "line": 1968,
+     "line_text": "load-bearing now: the non-chord-tone filter is the named lever at `OPEN_ITEMS.md` OI-55 and OI-68, and"
+    },
+    {
+     "line": 1971,
+     "line_text": "**Scope of the description below, 2026-08-02 (`OPEN_ITEMS.md` OI-265).** As on Layer 3, **the"
+    },
+    {
+     "line": 2197,
+     "line_text": "additive, read-only, no feedback into L5. **(Corrected 2026-08-11, `OPEN_ITEMS.md` OI-318 item (1): this paragraph"
+    },
+    {
+     "line": 2266,
+     "line_text": "per-voice motion the L1 note model already carries losslessly. **Corrected 2026-08-02 (`OPEN_ITEMS.md` OI-232"
+    },
+    {
+     "line": 2528,
+     "line_text": "// Bit order corrected 2026-08-02 (OPEN_ITEMS.md OI-107(b)): bits 4/5, 9/10 and 14/15"
+    },
+    {
+     "line": 2550,
+     "line_text": "// Field list re-synced 2026-08-02 (OPEN_ITEMS.md OI-107(d)): naturalFifthPresent,"
+    },
+    {
+     "line": 2601,
+     "line_text": "// (corrected 2026-08-02, OPEN_ITEMS.md OI-107(a):"
+    },
+    {
+     "line": 2636,
+     "line_text": "2026-08-11 (`OPEN_ITEMS.md` OI-346, the application half of D-497).** The affected values are the"
+    },
+    {
+     "line": 2660,
+     "line_text": "**Two corrections, 2026-08-02 (`OPEN_ITEMS.md` OI-107(d)).** (1) The gates do not live in"
+    },
+    {
+     "line": 2735,
+     "line_text": "**Correction, 2026-08-02 (`OPEN_ITEMS.md` OI-236; the prohibition above carried no supersession note,"
+    },
+    {
+     "line": 3199,
+     "line_text": "(`OPEN_ITEMS.md` OI-112(a)).** Refactor-1 moved the IMPLEMENTATION to"
+    },
+    {
+     "line": 3436,
+     "line_text": "`OPEN_ITEMS.md` OI-7 (establish a jazz ground-truth corpus or de-scope the Jazz correctness"
+    },
+    {
+     "line": 3808,
+     "line_text": "`OPEN_ITEMS.md` OI-112(a): the single \"File:\" line predated refactor-1, which split the"
+    },
+    {
+     "line": 3860,
+     "line_text": "**Roman numeral scope (corrected 2026-08-02, `OPEN_ITEMS.md` OI-112(b) — this paragraph said"
+    },
+    {
+     "line": 4029,
+     "line_text": "`OPEN_ITEMS.md` OI-107(c): the path was given without the `chord/` component and three functions"
+    },
+    {
+     "line": 4208,
+     "line_text": "`OPEN_ITEMS.md` OI-346, the application half of D-497).** §6.6 states the rule and is not restated"
+    },
+    {
+     "line": 4299,
+     "line_text": "closing `OPEN_ITEMS.md` OI-324) — WHAT THE SCOPING SENTENCE ABOVE DOES AND DOES NOT SCOPE. The note"
+    },
+    {
+     "line": 4316,
+     "line_text": "**★ CORRECTED 2026-08-04 (phase 1z; `OPEN_ITEMS.md` OI-315, register entry D-058). The paragraph"
+    },
+    {
+     "line": 4351,
+     "line_text": "user's Ruling 63; `OPEN_ITEMS.md` OI-324. The sentence read \"which now has no exception\", whose"
+    },
+    {
+     "line": 4375,
+     "line_text": "phase 1z, `OPEN_ITEMS.md` OI-315: the list read \"two\" and named the removed piece-start shortcut"
+    },
+    {
+     "line": 4862,
+     "line_text": "**Preset gating is NOT implemented — corrected 2026-08-02 (`OPEN_ITEMS.md` OI-112(c); this section"
+    },
+    {
+     "line": 4876,
+     "line_text": "path. The ornament class that replaces it is DEFERRED to its own increment (`OPEN_ITEMS.md` OI-194), so the"
+    },
+    {
+     "line": 4954,
+     "line_text": "**★ Table re-synced 2026-08-02 (`OPEN_ITEMS.md` OI-238 and its dated note).** The paragraph above"
+    },
+    {
+     "line": 4988,
+     "line_text": "the `analyzeHarmonicRhythm` row. The input-scope consequence is the same question `OPEN_ITEMS.md`"
+    },
+    {
+     "line": 5438,
+     "line_text": "**★ HOW FAR THE APPLICATION HAS GOT, corrected 2026-08-11 (`OPEN_ITEMS.md` OI-346). The clause above"
+    },
+    {
+     "line": 5785,
+     "line_text": "declared gap. Tracked at `OPEN_ITEMS.md` OI-194."
+    },
+    {
+     "line": 6111,
+     "line_text": "**Premise correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232, dated-note item 1).** The prerequisite and"
+    },
+    {
+     "line": 6229,
+     "line_text": "later design can recognize facts it would never have thought to ask for. Tracked at `OPEN_ITEMS.md` OI-62."
+    },
+    {
+     "line": 7036,
+     "line_text": "(`OPEN_ITEMS.md` OI-232, dated-note item 2):** what the action runs is the joint estimator's record"
+    },
+    {
+     "line": 7501,
+     "line_text": "**Corrected 2026-08-02 (`OPEN_ITEMS.md` OI-242).** This paragraph continued: *\"It is not a"
+    },
+    {
+     "line": 7509,
+     "line_text": "seconds-to-tens-of-seconds range on the committed large scores (`OPEN_ITEMS.md` OI-206 for the"
+    },
+    {
+     "line": 7528,
+     "line_text": "**Completed 2026-08-02 (`OPEN_ITEMS.md` OI-257): this table listed two actions; the code registers"
+    },
+    {
+     "line": 7559,
+     "line_text": "is OPEN** (`OPEN_ITEMS.md` OI-257) and is not settled here."
+    },
+    {
+     "line": 7855,
+     "line_text": "**Corrected 2026-08-02 (`OPEN_ITEMS.md` OI-232, dated-note item 3):** this phase was marked *(next)*,"
+    },
+    {
+     "line": 7930,
+     "line_text": "event and is itself open (`OPEN_ITEMS.md` OI-38; the deciding row is OI-56)."
+    },
+    {
+     "line": 8170,
+     "line_text": "*(Renumbered from a second `19.4` on 2026-08-11, `OPEN_ITEMS.md` OI-318 item (2). Two sections"
+    }
+   ],
+   "namings_counted": 53
+  },
+  {
+   "target": "STATUS.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "A subject-is-in-X naming with a delegating predicate and a precedence rule beside it: 'the authoritative, current implemented/planned state lives in STATUS.md. Where a heading's status and STATUS.md disagree, STATUS.md wins.' The canonical document's own living-document banner adds the two halves the seed's `docs/scoring_model.md` grade turns on — it makes the document a mandatory session-start read and binds an update rule to it ('Update STATUS.md as your last act when anything changes') — and §15 repeats the authority clause. Graded on the strongest of those namings. ★ ABSENT FROM THE SEED (A3: this document is nobody's home in the register), and ★ CARRIED INTO THE MEMBER LIST WITH A FINDING BESIDE IT: its subject is current implementation STATUS, not a specification of the analysis, and Ruling 6's mechanism carries no exclusion for it. The finding is reported, not acted on.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 115,
+     "line_text": "> seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). At the switch the migration posture"
+    },
+    {
+     "line": 553,
+     "line_text": "> **Living design document.** Read this AND STATUS.md at the start of every development"
+    },
+    {
+     "line": 554,
+     "line_text": "> session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current"
+    },
+    {
+     "line": 555,
+     "line_text": "> implementation status and immediate next steps. Update STATUS.md as your last act when"
+    },
+    {
+     "line": 679,
+     "line_text": "see STATUS.md.*"
+    },
+    {
+     "line": 924,
+     "line_text": "- Record the failing tests in STATUS.md current state summary"
+    },
+    {
+     "line": 1551,
+     "line_text": "production), or **Design-only** (specified, not yet built). Per-date and per-commit provenance lives in STATUS.md and the"
+    },
+    {
+     "line": 4265,
+     "line_text": "> kept here only for orientation; the **authoritative, current** implemented/planned state lives in STATUS.md. Where a"
+    },
+    {
+     "line": 4266,
+     "line_text": "> heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.*"
+    },
+    {
+     "line": 4266,
+     "line_text": "> heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.*"
+    },
+    {
+     "line": 4736,
+     "line_text": "> STATUS.md.*"
+    },
+    {
+     "line": 4783,
+     "line_text": "music21 ground truth — STATUS.md expectation corrected 2026-04-13)"
+    },
+    {
+     "line": 7742,
+     "line_text": "*Current implementation status, remaining items, and immediate next steps are in STATUS.md.*"
+    },
+    {
+     "line": 7810,
+     "line_text": "implemented and passing all targeted tests. See STATUS.md for test counts."
+    },
+    {
+     "line": 7858,
+     "line_text": "**when it becomes next is OPEN** and is not settled here. `STATUS.md` is the authority on what the"
+    },
+    {
+     "line": 7859,
+     "line_text": "current next action actually is (§doc governance: `STATUS.md` wins on current state)."
+    }
+   ],
+   "namings_counted": 16,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:4265",
+    "passage_verbatim": "> *The per-feature \"Implemented / Pending / Planned\" tags in the §5 sub-headings are **status**, not design, and are\n> kept here only for orientation; the **authoritative, current** implemented/planned state lives in STATUS.md. Where a\n> heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.*"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "STYLE_AUTHORING_GUIDE.md",
+   "form": "naming-that-delegates-no-concern",
+   "admitted": false,
+   "why_this_grade": "Named once, as a filename inside the planned styles-directory listing in a code block. Not a naming of a repository document in prose.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 5370,
+     "line_text": "STYLE_AUTHORING_GUIDE.md   — Human-readable guide for style authors"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "_design.md",
+   "form": "naming-that-delegates-no-concern",
+   "admitted": false,
+   "why_this_grade": "★ NOT A DOCUMENT NAMING AT ALL: this is the tail of the document-governance clause's GLOB `cowork_layer*_design.md`, which the scan sees as a filename because the glob's asterisk is not a filename character. Rule (k) settles what it confers: 'A glob pattern and a trailing ellipsis CONFER NOTHING.' It is graded rather than filtered out so that the scan's own population stays the population.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 559,
+     "line_text": "> per-component design docs** (`cowork_layer*_design.md`, `cowork_progression_schema_dictionary.md`,"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "backlog_drift_reset.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, '(see X)' appended to a sentence about a future marker.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 6755,
+     "line_text": "(see `backlog_drift_reset.md`) will allow composers to insert deliberate"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "backlog_invisible_split.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, 'See X.' — the bar's first excluded form, word for word.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 6977,
+     "line_text": "`backlog_invisible_split.md`."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cc_adoption_measurement_report.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, inside the adoption banner's citation list, as the adoption record.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 49,
+     "line_text": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cc_instruction_notation_switch.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in a parenthesis recording which dispatch performed the switch.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 249,
+     "line_text": "> green; NO finding), and the switch — ONE revertible, user-ratified commit (dispatch `cc_instruction_notation_switch.md`)"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cc_layer1_coverage_report.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in the same 'See …' citation list.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1600,
+     "line_text": "`cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD)."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cc_layer1_impl_report.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in a 'See …' citation list of session reports.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1600,
+     "line_text": "`cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD)."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cc_layer2_audit_dossier.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in the same 'See …' citation list.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1693,
+     "line_text": "`cc_layer2_audit_dossier.md`."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cc_layer2_impl_report.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in a 'See …' citation list of three documents.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1692,
+     "line_text": "0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cc_layer3_wiring_report.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in a 'Full provenance:' citation list.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1859,
+     "line_text": "key moves with **P4 untouched**. Full provenance: `cc_layer3_wiring_report.md` (HELD),"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cc_tonicization_modulation_metric_dossier.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, as the record every figure of that measurement lives in and is not restated from (#17f, D-431). A provenance attribution.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2185,
+     "line_text": "> every one lives in `cc_tonicization_modulation_metric_dossier.md` (#17f, **D-431**)."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_bounded_context_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's second named form, word for word: 'The ONE detailed cross-layer spec for this contract is X'. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1176,
+     "line_text": "detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-"
+    }
+   ],
+   "namings_counted": 1,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:1176",
+    "passage_verbatim": "  fixed margin plus lazy extension). Whole-score analysis is the degenerate case (selection = score). *(The ONE\n  detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`** — the request→supply→bounded-\n  recompute protocol, the per-layer discovery rules incl. the pinned L5 decision-context extent, denial provenance,\n  and the §11 acceptance list. Per the 2026-07-02 user directive it is the **hard gate before L6**: ratify → code →\n  regression-test L1–L5, then L6 resumes. A short-lived duplicate contract doc was killed into it same day.)*"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity"
+  },
+  {
+   "target": "cowork_confidence_contract.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "An instruction to read the document instead of the section — the delegation clause's shape, in different words: 'the class vocabulary, the squashing rules and the declared comparison frames are stated in full in X, which this contract points at rather than restates'. Same grade and same ground as the seed's. The parenthetical naming at the head of the same section records where the contract was ratified and is the excluded provenance form; (k1) makes this one govern.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1093,
+     "line_text": "& calibration contract** (`cowork_confidence_contract.md`, review amendment A-1, **RATIFIED by the user"
+    },
+    {
+     "line": 1230,
+     "line_text": "it (`cowork_confidence_contract.md:13-21`). Ratified by the user 2026-07-02; the class vocabulary, the"
+    },
+    {
+     "line": 1231,
+     "line_text": "squashing rules and the declared comparison frames are stated in full in `cowork_confidence_contract.md`,"
+    }
+   ],
+   "namings_counted": 3,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:1231",
+    "passage_verbatim": "  it (`cowork_confidence_contract.md:13-21`). Ratified by the user 2026-07-02; the class vocabulary, the\n  squashing rules and the declared comparison frames are stated in full in `cowork_confidence_contract.md`,\n  which this contract points at rather than restates. **The production notation record path departs from"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_engage_arc_plan.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, inside a sentence establishing that the Layer-5 engagement design's authority is TRANSITIVE — 'the user-ratified X (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name'. That is a statement about a delegation the ARC PLAN writes, not a delegation this document writes TO the arc plan. Rule (j) is the ruling that keeps the two roles apart: delegating to a document and being a home are different tests with different subjects.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2106,
+     "line_text": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`)."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_evidence_inventory.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "A subject-is-X naming with a delegating predicate — 'The catalog of what each layer discovers is X' — the same shape as the bar's first admitted form, and it binds an obligation to the document (kept in step with the layer specifications as facts are adopted). Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1264,
+     "line_text": "`cowork_evidence_inventory.md`, kept in step with these layer specifications as facts are adopted."
+    }
+   ],
+   "namings_counted": 1,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:1264",
+    "passage_verbatim": "  it would never have thought to ask for. The catalog of what each layer discovers is\n  `cowork_evidence_inventory.md`, kept in step with these layer specifications as facts are adopted."
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity"
+  },
+  {
+   "target": "cowork_handoff.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, 'per-unit provenance in STATUS.md / `cowork_handoff.md`' — a parenthetical recording where per-unit provenance is written down.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 115,
+     "line_text": "> seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). At the switch the migration posture"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_idiom_discovery_findings.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, as a parenthetical citation by document AND line recording where a measurement is written down. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 5478,
+     "line_text": "(`cowork_idiom_discovery_findings.md:122`, v1.5, cap-robust) found that harmony is **not organised by genre** —"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_idiom_entry_mapping.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "A subject-is-X naming with a naming predicate — 'the per-entry re-tag is X' — which is grammatically the bar's first admitted form (subject, copula, name) rather than the excluded LABEL-plus-name shape of 'Full spec: X.'. ★ THIS IS THE ONE NEAR-TIE IN THIS GRADING AND IT IS DECLARED RATHER THAN DEFAULTED. The competing reading: the clause is semicolon-joined to a sentence reporting what was ratified, so it can be read as an appended citation of where an artifact lives, which the bar excludes. Under that reading the document leaves the member list. The verdict taken is ADMITTED, on the form-first precedence the register applies (form first, kind second and last) and on the register's own precedent of admitting 'The catalog of what each layer discovers is X'. What turns on it: this member alone, whose subject is a per-entry data mapping rather than a specification of the analysis.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 5473,
+     "line_text": "`cowork_idiom_entry_mapping.md` (`cowork_style_taxonomy_proposal.md:3-9`;"
+    }
+   ],
+   "namings_counted": 1,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:5473",
+    "passage_verbatim": "**Ratified by the user 2026-06-30 and ENCODED.** The placeholder `{Baroque, Jazz, Default}` StyleTag is **retired**,\nreplaced in the dormant `harmonicvocabulary` component by `enum class Idiom` + `IdiomSet`; the per-entry re-tag is\n`cowork_idiom_entry_mapping.md` (`cowork_style_taxonomy_proposal.md:3-9`;\n`cowork_progression_schema_dictionary.md:317-330`, `:239`)."
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity"
+  },
+  {
+   "target": "cowork_joint_estimator_architecture.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The canonical document's own opening banner declares a user-ratified GOVERNING DECISION and names this document as where it is read. Graded a delegation clause on the strength of what is delegated — the governing architecture decision itself — rather than on the word 'see'. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 4,
+     "line_text": "> `cowork_joint_estimator_architecture.md`.** Key, mode, and chord are inferred by ONE probabilistic decode"
+    },
+    {
+     "line": 48,
+     "line_text": "> spec: `cowork_joint_estimator_architecture.md`, `cowork_joint_estimator_factorization.md`; pre-fit gates"
+    }
+   ],
+   "namings_counted": 2,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:4",
+    "passage_verbatim": "> **★★ GOVERNING DECISION (user-ratified 2026-07-17): the key/mode/chord estimator is JOINT — see\n> `cowork_joint_estimator_architecture.md`.** Key, mode, and chord are inferred by ONE probabilistic decode"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_joint_estimator_factorization.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form: 'The ratified contract for the estimator's factor structure — … — is X, which this section points at and does not restate'. It supplements two weaker namings (a 'spec:' line and a parenthetical citation with line numbers), so (k1) governs and the strongest naming decides.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 48,
+     "line_text": "> spec: `cowork_joint_estimator_architecture.md`, `cowork_joint_estimator_factorization.md`; pre-fit gates"
+    },
+    {
+     "line": 276,
+     "line_text": "> is `cowork_joint_estimator_factorization.md`, which this section points at and does not restate.** *The six"
+    },
+    {
+     "line": 308,
+     "line_text": "> (`cowork_joint_estimator_factorization.md:170-173`). It was never adopted: measured at the fitted weights"
+    }
+   ],
+   "namings_counted": 3,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:276",
+    "passage_verbatim": "> 2026-08-08 on the user's ruling — a POINTER, never a copy, #6).* **The ratified contract for the estimator's\n> factor structure — the factor set, the per-factor granularity, the emission design and the §5 decode plan —\n> is `cowork_joint_estimator_factorization.md`, which this section points at and does not restate.** *The six"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_key_chord_joint_inference_grounding.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "The only naming is 'Theory basis: X.' appended to the governing-decision banner — the bar's first excluded form, a label followed by a name.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 9,
+     "line_text": "> design pass proceeds. Theory basis: `cowork_key_chord_joint_inference_grounding.md`."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_l1l4_review_charter.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in a parenthesis recording where the L4-build grading was reported.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2011,
+     "line_text": "engage-with-L5 ratification (`cowork_l1l4_review_charter.md`): the decoder is materially better than"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_layer1_note_model_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form, word for word, in the Layer-1 section — the same wording the Layer-2/3/4/5/6 sections carry. ★ ABSENT FROM THE LIVE SEED, and the reason is not that the text lost the delegation: the seed RETIRED its grade on 2026-08-17 when the last register entry homed in this document was soft-discarded, so the document stopped being anybody's home and left the seed's population. The delegation itself stands at the text, unchanged, and the seed's retired block records the same ADMITTED grade.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1569,
+     "line_text": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer1_note_model_design.md` (AS-BUILT — built, reviewed and accepted, `:3`) — D-517…D-520 — which this section points at and does not restate."
+    }
+   ],
+   "namings_counted": 1,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:1569",
+    "passage_verbatim": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer1_note_model_design.md` (AS-BUILT — built, reviewed and accepted, `:3`) — D-517…D-520 — which this section points at and does not restate."
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity"
+  },
+  {
+   "target": "cowork_layer2_reslice_design.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "The only naming is a parenthetical citation appended to a sentence the canonical document states in its own voice about how the slicer clips to the loaded span. It names a SECTION, which is why it is graded rather than waved past — but the bar's admitting second form is a NAMED HOME with sections, and this is a citation supporting a restatement, not a home. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1663,
+     "line_text": "slicing never drags outside the loaded span (Phase 2; `cowork_layer2_reslice_design.md` §2). On a"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_layer2_slicing_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form, word for word, in the Layer-2 section, SUPPLEMENTING the 'See …' citation above it — so the document is named twice, once in each form, and (k1) makes the delegation govern. ★ ABSENT FROM THE LIVE SEED for the same reason as the Layer-1 note model's: the seed RETIRED its grade on 2026-08-16 when the ruled soft-discard emptied the document of register entries. The delegation stands at the text.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1692,
+     "line_text": "0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,"
+    },
+    {
+     "line": 1695,
+     "line_text": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*"
+    }
+   ],
+   "namings_counted": 2,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:1695",
+    "passage_verbatim": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The \"See …\" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_layer3_keymode_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form, word for word. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1742,
+     "line_text": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate."
+    },
+    {
+     "line": 1813,
+     "line_text": "key/mode design — `cowork_layer3_keymode_design.md`). This is the first rebuilt analysis **decision** layer to go **live** in the"
+    },
+    {
+     "line": 1860,
+     "line_text": "`cowork_layer3_keymode_design.md`."
+    }
+   ],
+   "namings_counted": 3,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:1742",
+    "passage_verbatim": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer3_keymode_design.md` (SIGNED, user, 2026-06-22) — D-343…D-358 — which this section points at and does not restate."
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_layer4_chordsymbol_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form, word for word. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1946,
+     "line_text": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate."
+    },
+    {
+     "line": 2023,
+     "line_text": "`cowork_layer4_chordsymbol_design.md`, `cowork_phase5b_l4_build_plan.md`, the Phase-5b commits"
+    }
+   ],
+   "namings_counted": 2,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:1946",
+    "passage_verbatim": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and does not restate."
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_layer5_engagement_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form, and it names its target's sections as well (Part 1 §1–§5, Part 2 §6–§10). Same grade and same ground as the seed's; the scope is SECTIONS because the delegation names them.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2106,
+     "line_text": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`)."
+    },
+    {
+     "line": 2106,
+     "line_text": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`)."
+    }
+   ],
+   "namings_counted": 2,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:2106",
+    "passage_verbatim": "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for how this layer ENGAGES with the chord layer's carry — the carry's distinct-root axis, selection by joint consistency, pedal detection's home, and the open-mark — is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10) — D-380…D-387 — which this section points at and does not restate. Its authority is TRANSITIVE: the user-ratified `cowork_engage_arc_plan.md` (RATIFIED by the user, 2026-07-07) delegates arcs #9 and #11 to it by name (`:41`, `:46`) and states that the Stage-3 build inventory \"is enumerated at `cowork_layer5_engagement_design.md` §9.2\" (`:53-55`)."
+   },
+   "delegation_scope": "sections",
+   "delegated_sections": [
+    "§1",
+    "§2",
+    "§3",
+    "§4",
+    "§5",
+    "§6",
+    "§7",
+    "§8",
+    "§9",
+    "§10"
+   ],
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_layer5_function_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form, word for word. The 'Full spec:' line two paragraphs above is the bar's excluded example word for word, and the delegating paragraph says so itself; (k1) makes the delegation govern. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2084,
+     "line_text": "`cowork_layer5_function_design.md`."
+    },
+    {
+     "line": 2086,
+     "line_text": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*"
+    }
+   ],
+   "namings_counted": 2,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:2086",
+    "passage_verbatim": "**Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-335…D-342 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph is the delegation the record relied on and never had.)*"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_layer6_grouping_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form, word for word, SUPPLEMENTING the 'Full spec:' citation two paragraphs above rather than replacing it — so the document is named in both an admitting and an excluded form and (k1) governs.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1133,
+     "line_text": "see `cowork_layer6_grouping_design.md` §0) · the **decision-context span** (the"
+    },
+    {
+     "line": 1196,
+     "line_text": "anticipated *above* L6 (`cowork_layer6_grouping_design.md` §9-D3), deferred, not forbidden."
+    },
+    {
+     "line": 2204,
+     "line_text": "`cowork_layer6_grouping_design.md`."
+    },
+    {
+     "line": 2206,
+     "line_text": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes."
+    }
+   ],
+   "namings_counted": 4,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:2206",
+    "passage_verbatim": "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02 — built dormant and oracle-validated after the extension gate passed, `:3`) — D-454…D-462 — which this section points at and does not restate. *(The \"Full spec:\" line above is a citation, not a delegation; `CLAUDE.md` rule (i) distinguishes the two forms, and this paragraph supplements that line rather than replacing it.)* **★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on 2026-08-04 and which the user has now answered.** **D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: their wire-or-remove verdict belongs to a named later step, and removing them is a STOP. Deferred work is therefore a state the record keeps decisions for, not an absence of them, and a contract home for it is the same posture rather than a new one — which is why **D-266**'s prohibition does not forbid this pointer. **D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for Layers 1–5. This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what the analysis computes."
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_notation_adoption_increment.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form: 'The ratified contract for the notation-surface adoption increment — its scope, its increments and their tracking — is X, which this section points at and does not restate'. It supplements the two provenance attributions elsewhere in the file, so (k1) governs. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 5782,
+     "line_text": "pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7 + §10)."
+    },
+    {
+     "line": 7054,
+     "line_text": "`cowork_notation_adoption_increment.md`, which this section points at and does not restate.** *That"
+    }
+   ],
+   "namings_counted": 2,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:7054",
+    "passage_verbatim": "*Delegation pointer (the fifth home case, rule (g), user-ratified 2026-08-02; this delegation\nwritten 2026-08-08 on the user's ruling — a POINTER, never a copy, #6).* **The ratified contract\nfor the notation-surface adoption increment — its scope, its increments and their tracking — is\n`cowork_notation_adoption_increment.md`, which this section points at and does not restate.** *That"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_notation_output_contract.md",
+   "form": "named-home-with-sections",
+   "admitted": true,
+   "why_this_grade": "A JUDGMENT, recorded as one, and the seed's: the naming sits inside a parenthesis, which the bar associates with the excluded provenance form — but it names the document's ROLE ('contract') and the SECTIONS it delegates, and it records no ratification event. The excluded parenthetical form is the one that records WHERE SOMETHING WAS RATIFIED; this one names a home. The section list is §2–§3.4, widened 2026-08-03 from §3.1–§3.4 on the user's direction, as the naming's own parenthesis states.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 79,
+     "line_text": "> **NOTATION OUTPUT-SURFACE RECORD — the A-native record (as-built, DORMANT; contract `cowork_notation_output_contract.md`"
+    }
+   ],
+   "namings_counted": 1,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:79",
+    "passage_verbatim": "> **NOTATION OUTPUT-SURFACE RECORD — the A-native record (as-built, DORMANT; contract `cowork_notation_output_contract.md`\n> §2–§3.4 — widened 2026-08-03 on the user's direction, the OI-293 write list, from §3.1–§3.4: the provenance rule that\n> §3.1's own text depends on is in §2).** `joint::assembleNotationRecord(piece, result, sigFifths, declaredMode, adapter, vocab, cache)`"
+   },
+   "delegation_scope": "sections",
+   "delegated_sections": [
+    "§2",
+    "§3.1",
+    "§3.2",
+    "§3.3",
+    "§3.4"
+   ],
+   "scope_decided_by": "rule_(h)_granularity"
+  },
+  {
+   "target": "cowork_phase5b_l4_build_plan.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in a 'Full provenance:' citation list beside the Layer-4 contract and the Phase-5b commits.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2023,
+     "line_text": "`cowork_layer4_chordsymbol_design.md`, `cowork_phase5b_l4_build_plan.md`, the Phase-5b commits"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_phrase_boundary_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form, word for word, sited in the Layer-1 section because this document specifies the Layer-1.5 primitive and the canonical document carries no section of its own for L1.5 — a choice the delegating paragraph states rather than leaves to be inferred. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1571,
+     "line_text": "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate. *(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as \"the thin derived-view layer over the L1 note model\" and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so siting a contract pointer there would attach it to a question the user deliberately left open. Naming the document by filename also closes the prose-reference question the write list carried: the doc-governance clause's phrase \"the phrase-boundary design\" had more than one candidate in the tree.)*"
+    }
+   ],
+   "namings_counted": 1,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:1571",
+    "passage_verbatim": "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate. *(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as \"the thin derived-view layer over the L1 note model\" and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so siting a contract pointer there would attach it to a question the user deliberately left open. Naming the document by filename also closes the prose-reference question the write list carried: the doc-governance clause's phrase \"the phrase-boundary design\" had more than one candidate in the tree.)*"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity"
+  },
+  {
+   "target": "cowork_prefit_gates.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form: 'The ratified contract for the PRE-FIT PROTOCOLS … is X, which this section points at and does not restate'. The paragraph itself says that the weaker naming two lines above it is a citation inside a list, which rule (i) does not admit — so the document states its own application of (k1).",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 49,
+     "line_text": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`."
+    },
+    {
+     "line": 53,
+     "line_text": "> cell-count threshold, the tokens-per-parameter floor and the piece-bootstrap interval — is `cowork_prefit_gates.md`"
+    },
+    {
+     "line": 298,
+     "line_text": "> (`cowork_prefit_gates.md`; tracked at `open_items/OI-176.md` and `open_items/OI-177.md`); the ratifier of"
+    }
+   ],
+   "namings_counted": 3,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:53",
+    "passage_verbatim": "> **Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The\n> ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — the five-fold split, the\n> cell-count threshold, the tokens-per-parameter floor and the piece-bootstrap interval — is `cowork_prefit_gates.md`\n> (USER-RATIFIED 2026-07-19, `:1`) — D-270…D-274 — which this section points at and does not restate. *(The naming\n> above is a citation inside a list; `CLAUDE.md` rule (i) does not admit that form as a delegation.)*"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_progression_schema_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The document-governance hierarchy names this document BY FILENAME among the per-component design docs that 'are the authoritative detail for their own scope — the rules, the mechanisms, the per-layer decisions-with-alternatives'. Graded a delegation clause because the predicate delegates a stated concern rather than appending a pointer. Rule (k) admits the members named EXPLICITLY and withholds the glob and the trailing ellipsis, neither of which this grade rests on. The document's own weaker naming, 'Spec: <doc>.', is the bar's not-admitted example word for word, and (k1) makes the stronger govern.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 560,
+     "line_text": "> `cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail** for their own"
+    },
+    {
+     "line": 2262,
+     "line_text": "Scaffolding-first, deferred. Spec: `cowork_progression_schema_design.md`."
+    }
+   ],
+   "namings_counted": 2,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:560",
+    "passage_verbatim": "> per-component design docs** (`cowork_layer*_design.md`, `cowork_progression_schema_dictionary.md`,\n> `cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail** for their own\n> scope — the rules, the mechanisms, the per-layer decisions-with-alternatives — and are **referenced** from here. They"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_progression_schema_dictionary.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's third named form, word for word: 'formalised as an independent knowledge-base component with its own spec (X)'. The document-governance clause names it EXPLICITLY as well, by filename, which rule (k) admits; both namings admit and this is the stronger.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 559,
+     "line_text": "> per-component design docs** (`cowork_layer*_design.md`, `cowork_progression_schema_dictionary.md`,"
+    },
+    {
+     "line": 5466,
+     "line_text": "(`cowork_progression_schema_dictionary.md:227-229`, `:258-260`) — principle #6, one path per concern, applied to a"
+    },
+    {
+     "line": 5468,
+     "line_text": "`cowork_progression_schema_dictionary.md:229-237`; it is not restated here (a cross-cutting definition is stated once,"
+    },
+    {
+     "line": 5474,
+     "line_text": "`cowork_progression_schema_dictionary.md:317-330`, `:239`)."
+    },
+    {
+     "line": 5498,
+     "line_text": "(`cowork_progression_schema_dictionary.md:317-330`). The **clusters half is delivered**: the clusters *are* the five"
+    },
+    {
+     "line": 5508,
+     "line_text": "Full proposal + the surveyed corpora: `cowork_progression_schema_dictionary.md` §6/§12,"
+    },
+    {
+     "line": 5688,
+     "line_text": "(`cowork_progression_schema_dictionary.md`): a static, curated, **style-tagged** catalog of progressions, schemas, and"
+    }
+   ],
+   "namings_counted": 7,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:5688",
+    "passage_verbatim": "recurring progressions are formalised as an **independent knowledge-base component** with its own spec\n(`cowork_progression_schema_dictionary.md`): a static, curated, **style-tagged** catalog of progressions, schemas, and"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_rulings_2026_08_09_second_stop.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in a parenthesis recording which ruling corrected a passage.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2224,
+     "line_text": "`cowork_rulings_2026_08_09_second_stop.md` — after the read-only probe the open-items register had"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_rulings_2026_08_11_fourteenth_stop.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named twice, each time in a parenthesis recording where a user ruling was taken — the bar's second excluded form, word for word.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 387,
+     "line_text": "**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63,"
+    },
+    {
+     "line": 4298,
+     "line_text": "**★ ANNOTATION (2026-08-11, the user's Ruling 63 of `cowork_rulings_2026_08_11_fourteenth_stop.md`,"
+    }
+   ],
+   "namings_counted": 2
+  },
+  {
+   "target": "cowork_score_census.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's first named form — 'The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is X' — and DOCUMENT-LEVEL by its own terms. It is the strongest of three admitting namings: the §8c pool-table pointer and the §1/§3/§4/§8/§8b/§8c section list are both weaker, and (k1) makes the strongest govern. The reach is judged PER SECTION under rule (h), which the delegation's own sentence says.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 349,
+     "line_text": "> own detailed block, with the per-licence-class pool table, is `cowork_score_census.md` §8c. **Which class"
+    },
+    {
+     "line": 357,
+     "line_text": "> Beside the licence-pool block §8c, `cowork_score_census.md` states the rules that govern the corpus census"
+    },
+    {
+     "line": 363,
+     "line_text": "> corpus census and its admission rules is `cowork_score_census.md` §1/§3/§4/§8/§8b/§8c**, which this section"
+    },
+    {
+     "line": 371,
+     "line_text": "> `cowork_score_census.md` — a document-level delegation whose reach is judged per section under the"
+    },
+    {
+     "line": 2641,
+     "line_text": "converted and score-aligned (§4.1c; `cowork_score_census.md` Tier J). **The establishment is the"
+    },
+    {
+     "line": 4202,
+     "line_text": "| Jazz | ⚠ **EMPIRICALLY UNVALIDATED** — LydianDominant=−0.20, Altered=−0.50, MelodicMinor=−0.50, DorianB2=−1.00, PhrygianDominant=−0.80, HarmonicMinor=−0.50; diatonic at standard weights. **Validation path:** jazz ground truth carrying written-out bass and piano voicings, converted and score-aligned (§4.1c; `cowork_score_census.md` Tier J) |"
+    },
+    {
+     "line": 5444,
+     "line_text": "`cowork_score_census.md` Tier J). **THE IDIOM HALF IS NOT APPLIED AND IS HELD RATHER THAN GUESSED**,"
+    }
+   ],
+   "namings_counted": 7,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:371",
+    "passage_verbatim": "> *The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is\n> `cowork_score_census.md` — a document-level delegation whose reach is judged per section under the\n> register's rule (h), so its rule-stating sections (the §8c shipped-parameter licence-pool constraint and\n> the decision-tier block among them) are homes and its findings tables are not (user-ratified 2026-08-09;\n> the Ruling 39 exception to the Ruling 38 re-homing default).*"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_siloed_facts_audit.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, as the evidence behind a rule — 'Why: X found 17 instances of a fact being re-derived by a consumer instead of read from its producer.' Naming a document as the evidence for a rule records where the reasoning lives; it delegates no concern.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1259,
+     "line_text": "consumer named, or removed. *Why:* `cowork_siloed_facts_audit.md` found 17 instances of a fact being"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_stage5_fitter_design.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "A delegation clause of the 'the X for this Y is Z' shape — 'the fitting event's own design contract is X … which this specification points at and does not restate'. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 301,
+     "line_text": "> *Delegation pointer (the fifth home case, user-ratified 2026-08-02): the fitting event's own design contract is `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) — D-312…D-314 — which this specification points at and does not restate.*"
+    }
+   ],
+   "namings_counted": 1,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:301",
+    "passage_verbatim": "> *Delegation pointer (the fifth home case, user-ratified 2026-08-02): the fitting event's own design contract is `cowork_stage5_fitter_design.md` (SIGNED, user, 2026-07-04) — D-312…D-314 — which this specification points at and does not restate.*"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity"
+  },
+  {
+   "target": "cowork_style_clustering_plan.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named twice, both parenthetical citations recording where the committed clustering work is described — once inside a 'Full proposal + the surveyed corpora:' list.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 5496,
+     "line_text": "clustering corpora is the committed work (`cowork_style_clustering_plan.md`); the weighting itself is a joint decision"
+    },
+    {
+     "line": 5509,
+     "line_text": "`cowork_style_taxonomy_proposal.md`, `cowork_style_clustering_plan.md`."
+    }
+   ],
+   "namings_counted": 2
+  },
+  {
+   "target": "cowork_style_taxonomy_proposal.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named five times, every one a parenthetical citation with line numbers recording where the taxonomy proposal, its corroborations, its admission basis and its retired genre list are written down — with one 'Full proposal + the surveyed corpora:' citation list. All excluded forms.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 5473,
+     "line_text": "`cowork_idiom_entry_mapping.md` (`cowork_style_taxonomy_proposal.md:3-9`;"
+    },
+    {
+     "line": 5482,
+     "line_text": "Chromatic-coloristic (`cowork_style_taxonomy_proposal.md:11-30`)."
+    },
+    {
+     "line": 5488,
+     "line_text": "(`cowork_style_taxonomy_proposal.md:58-61`). The two cross-axes are kept separate on the no-information-loss principle"
+    },
+    {
+     "line": 5506,
+     "line_text": "structure (`cowork_style_taxonomy_proposal.md:87-99`)."
+    },
+    {
+     "line": 5509,
+     "line_text": "`cowork_style_taxonomy_proposal.md`, `cowork_style_clustering_plan.md`."
+    }
+   ],
+   "namings_counted": 5
+  },
+  {
+   "target": "cowork_target_architecture.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "A subject-is-X naming with a delegating predicate: the document IS 'the detailed-rationale reference for those contracts (the historical north-star, the full statements, the supporting evidence)'. That is the shape of the bar's first admitted form, and the concern it delegates is stated in the same breath. §2.15 restates the same delegation in its own voice ('Their detailed statements live in the target-architecture doc'), and the target document's own banner agrees in terms ('demoted to a detailed design & rationale reference — it holds the full statements of the contracts'). The three weaker namings — 'full ratified statements: X §2', a parenthetical recording a ratification, and a parenthetical citation of the 4-layer target — are excluded forms, and (k1) makes this one govern. ★ ABSENT FROM THE SEED, and the reason is A3: the seed's population is the register entries' HOME documents, and this document is nobody's home.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 564,
+     "line_text": "> `cowork_target_architecture.md` is **demoted** to the detailed-rationale reference for those contracts (the historical"
+    },
+    {
+     "line": 578,
+     "line_text": "> `cowork_target_architecture.md` §2."
+    },
+    {
+     "line": 1058,
+     "line_text": "`cowork_target_architecture.md` §2) is **forward-only**:"
+    },
+    {
+     "line": 1075,
+     "line_text": "### 2.15 The core principle and the cross-cutting analysis contracts (ratified; full statements in `cowork_target_architecture.md`)"
+    },
+    {
+     "line": 1563,
+     "line_text": "(`cowork_target_architecture.md`): **note model (L1, DONE) → change-point slicing (L2, BUILT —"
+    }
+   ],
+   "namings_counted": 5,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:564",
+    "passage_verbatim": "> `cowork_target_architecture.md` is **demoted** to the detailed-rationale reference for those contracts (the historical\n> north-star, the full statements, the supporting evidence) — not a second canonical doc. **When any doc disagrees with"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "cowork_target_architecture_review.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, 'Full rationale and literature comparison: X' — a label followed by a name, inside a block the document marks SUPERSEDED.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1037,
+     "line_text": "`cowork_target_architecture_review.md`; adopted Phase E direction:"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "cowork_voiceleading_axis_design.md",
+   "form": "named-home-with-sections",
+   "admitted": true,
+   "why_this_grade": "The bar's second named form, word for word — it is the bar's own worked example, 'Criterion + build home: X §0/§5.3', here widened on the user's direction to §0/§5.1/§5.3/§8/§9. The passage states which sections are deliberately NOT named and why, so the section list is the delegation's own and not this tool's reading of it.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1148,
+     "line_text": "`cowork_voiceleading_axis_design.md` §0/§5.1/§5.3/§8/§9 (AS-BUILT) — **widened 2026-08-03 on the user's direction"
+    },
+    {
+     "line": 1166,
+     "line_text": "`cowork_voiceleading_axis_design.md` under the delegation stated immediately above."
+    },
+    {
+     "line": 1194,
+     "line_text": "VL-D/E/F/G/H named + design-gated (`cowork_voiceleading_axis_design.md`)** — and higher grouping structure (sections /"
+    },
+    {
+     "line": 2270,
+     "line_text": "and `cowork_voiceleading_axis_design.md`."
+    }
+   ],
+   "namings_counted": 4,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:1148",
+    "passage_verbatim": "  (one span) until the §15-1 per-span measurement refines it. Criterion + build home:\n  `cowork_voiceleading_axis_design.md` §0/§5.1/§5.3/§8/§9 (AS-BUILT) — **widened 2026-08-03 on the user's direction\n  (the OI-293 write list) from §0/§5.3, which named too few sections**: the VL-A representation contract (§5.1), the\n  crosscutting rules (§8) and the architecture decisions (§9) are inside the delegated concern and sat outside the\n  named ones. §15/§16 are deliberately NOT named — they are ratification asks, not rule-stating sections."
+   },
+   "delegation_scope": "sections",
+   "delegated_sections": [
+    "§0",
+    "§5.1",
+    "§5.3",
+    "§8",
+    "§9"
+   ],
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "docs/architecture_joint_inference.md",
+   "form": "naming-that-delegates-no-concern",
+   "admitted": false,
+   "why_this_grade": "Named once, as the subject of a supersession: 'The X joint-decode synthesis is superseded by this, retained only as history.' It delegates nothing; it records that a document is no longer to be built to.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1072,
+     "line_text": "stage. The `docs/architecture_joint_inference.md` joint-decode synthesis is **superseded** by this, retained only as"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/chordlist_bug_report.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in the same version-history paragraph.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 8264,
+     "line_text": "*Document version: 3.34 — May 2026: §4.1g gate table extended with kCleanQualities guard (Iter 60) and HalfDim first-inversion bonus (Iters 61/65); Task #62 segmentation replacement marked IMPLEMENTED (batch path, Iter 54); Genuine-21 residual section updated to reflect Path 1 history only; §4.1h added with Path 2 current state (BIR=true=5, BIR=false=125, Jazz=12, tests 407/407 + 53/53), Genuine-5 breakdown, Path 2 fix log, and pending Iter 64 performance work. previous: 3.33 — Session 26: D#/G#/A#→Eb/Ab/Bb enharmonic normalization in `pitchClassNameFromTpc()` for sharp TPC (≥20) in keys below diatonic threshold (block placed before `keySignatureFifths==0` early-return); status-bar alternatives sorted by `normalizedConfidence` (positions 1+ only, position 0 fixed); declared-mode hard override in `resolveKeyAndMode()` from key-signature Mode property; Pass2b iterative bass-movement detection (`kMaxBassMovementPasses=8`); track-specific annotation removal in `addAnalyzedHarmony`; REST context-menu harmonic inference (`analyzeRestHarmonicContextDetails`); §5.16 added; 3 new `Composing_EnharmonicSpellingTests`; corpus: Corelli 70.9%, Bach 75.2%, Beethoven 65.2%. Composing tests: 381/381 (master). Notation tests: 51/51 (master). previous: 3.32 — Session 25: `kSus4MissingFourth = 0.70` penalty added to `structuralPenalties()` in `chordanalyzer.cpp`; fires when Sus4 template lacks detectable P4 (pcWeight < extThreshold), excludes Sus4b5; root-only single-note gap carry blocked in `inferGapRegion` (notationcomposingbridgehelpers.cpp); §5.15 \"Sus4 Structural Penalty\" added; 2 new `Composing_Sus4RequiresFourthTests` + 3 new `Composing_EnharmonicSpellingTests`; corpus: Corelli 70.9%, Bach 75.2%, Beethoven 65.18% (all improved). Composing tests: 378/378 (master), 320/320 (submission-phase1). Notation tests: 51/51 (master). previous: 3.31 — Session 24: `pitchClassNameFromTpc()` added to `chordanalyzer.cpp`; TPC consulted only when `keyFifths==0` (C major/A minor); `ChordIdentity.rootTpc` field added; `formatSymbol()`/`formatRomanNumeral()` pass rootTpc through; 7 new `Composing_EnharmonicSpellingTests` unit tests; §5.14 \"Enharmonic Root Spelling\" added. Composing tests: 373/373 (master), 315/315 (submission-phase1). Notation tests: 51/51 (master). previous: 3.30 — Session 20: `ChordAnalyzerPreferences` gains `extensionThreshold = 0.20`; Jazz preset uses 0.12 (`kSeventhThreshold`) to detect lightly-voiced ninths; Standard/Baroque keep 0.20 to suppress counterpoint passing tones; documented in §4.6 `ChordAnalyzerPreferences`. previous: 3.29 — Session 19 (continued): order-of-annotation violation fix (`forceClassicalPath=true` in `addHarmonicAnnotationsToSelection`); Unknown quality Roman numeral fallback added to annotation path (`notationcomposingbridge.cpp`); §5.13 \"Analyze-at-Tick Path Table\" added; new test `AnnotationOrderDoesNotAffectRomanNumeralOutput`; notation test count 50/50 (all passing). previous: 3.28 — Session 19 (continued): two further chord-track annotation fixes bringing notation tests to 49/49 (all passing): (1) `forceChordTrackQualityFromKeyContext()` helper (in `notationcomposingbridgehelpers.cpp`) re-derives diatonic quality from degree+mode when `formatRomanNumeral` returns empty because quality is `ChordQuality::Unknown` — occurs for lone Aeolian tonic/dominant bare fifths; (2) `kSameChordReannotationGap = 2 * Constants::DIVISION` (960 ticks = 2 quarter notes) threshold in the coalescing pass: consecutive same-chord sub-regions are re-annotated when their gap from the previous annotation equals or exceeds the threshold, enabling the Corelli m24 beat-3 Fm re-annotation (gap=960 ≥ 960 → keep) while preserving the sustained-support merge (gap=480 < 960 → merge). previous: 3.27 — Session 19: two §5.12 regressions resolved: (1) `populateChordTrack()` now runs a post-populate cleanup pass that removes Rest segments sitting inside a Chord's stored time span (artefact of `makeGap`'s \"removed too much\" restore path on triplet Fractions); (2) `populateChordTrack()` now coalesces consecutive regions with the same user-facing chord identity before the populate loop, preventing over-segmentation when tied-note continuations create extra inference ticks within a single display region. Notation test count: 47/49 (up from 45/49). previous: 3.26 — Campania font rendering artifact (`Dsdim`/`Fsdim`) documented as MuseScore core issue in §5.8; complete-voicing jazz QA evidence added (MFV 185-measure three-layer comparison, 75–80% agreement); `isValidBassNoteName` guard added to `formatSymbol` suppressing slash chord when bass name is not a plain note name; chord name in bass field bug documented and fixed; RFC draft at `docs/rfc_musescore_forum_post.md`; chordlist.cpp upstream bug report draft at `docs/chordlist_bug_report.md`; previous: 3.25 — cadence markers (PAC/HC/DC/PC) and pivot chord labels (vi → ii format, U+2192) wired into annotate path via `detectCadences()`/`detectPivotChords()` helpers; tonicization and augmented sixth labels deferred (no classifier implemented); pivot annotation format updated from verbose \"pivot: vi in C → ii in G\" to concise \"vi → ii\"; `kMaxPivotLookaheadRegions = 8` lookahead for pivot confirmation; 13 new notation unit tests (45/49 passing, 4 deferred); previous: 3.24 — B/H naming convention fix for German locale chord names in jazz path; previous: 3.23 — annotation color policy documented (black for human use, red for headless pipeline); auto_review.py three-mode design and report format requirements added; previous: 3.22 — annotate path Roman numeral layer extended to include cadence markers, pivot labels, tonicization labels, and augmented sixth chord labels (Standard/Baroque presets only); automated annotation review tool design recorded; Session 5 jazz QA outcomes documented; previous: 3.21 — the plateau target is now qualified for full-texture tonal corpora only, the highest-ROI roadmap is reordered so texture fixes precede evaluation separation and confidence calibration, Rule 12 adds a permanent benchmark score set for visual review, region identity modes are now decided conceptually (harmonic summary vs as-written), and the Mozart 26.7% direct-DCML figure is explicitly marked as a thin-texture/non-comparable case; previous: 3.20 — confidence interpretation is now documented explicitly as heuristic rather than probabilistic, a reasonable \"good enough\" plateau is defined for the current vertical tertian engine, the highest-ROI pre-plateau roadmap is recorded, and the stale Mozart `59.4%` agreement reference is corrected to the current 26.7% direct-DCML root-agreement figure; previous: 3.19 — `batch_analyze` now skips forced post-load layout in headless mode because analysis uses logical score data only; this avoids the legacy native MSCX cache-overflow crash on Mozart `K533-3` while preserving JSON output parity with the mirrored `score.mxl` path; previous: 3.18 — same-key-signature key-mode selection now uses tonal-center comparison with a diatonic raw-score guard, preventing the Mozart `K279-1` opening from flipping to spurious `F Lydian`, while Roman/Nashville analysis annotations are excluded from chord-symbol-driven path activation; previous: 3.17 — Milestone A3 confidence gating is implemented for chord-track exposure, the key-confidence thresholds now suppress low-confidence key-dependent annotations, and the Dvorak `op08n06` regression locks that behavior in; previous: 3.16 — Milestone A benchmark passages are recorded, the reusable batch/notation parity harness is documented, and BWV 227.7 plus Chopin BI16-1 now pass exact parity gates; previous: 3.15 — final post-`bassNoteRootBonus` corpus baselines are recorded, Schumann slash-chord spellings are confirmed not to be a comparator artifact, Dvorak op08n06 is accepted as genuine ambiguity, and Corelli walking-bass sus/slash artifacts are documented as a deferred limitation; previous: 3.14 — `populateChordTrack()` now absorbs sparse intra-measure gaps into neighboring written regions so BI16-style chord-track generation does not leave mixed chord/rest measures; previous: 3.13 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the Chopin BI16-1 notation mismatch is resolved by aligning `PreserveAllChanges` collapse semantics with the batch path; previous: 3.12 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the remaining Chopin BI16-1 boundary issue is separated from the root-scoring fix; previous: 3.11 — four-corpus score inspection now documents the shared `bassNoteRootBonus` failure mechanism and a concrete conditioning strategy for the fix; previous: 3.10 — 2026-04-09 score inspection confirms `bassNoteRootBonus` as the primary cross-corpus failure mode and the highest-priority next action; previous: 3.9 — removed the false pedal-marking analyzer limitation after Rule 11 score inspection confirmed sparse texture rather than analyzer failure; previous: 3.8 — Rule 11 added: representative MuseScore Studio score inspection is required before diagnosis when corpus statistics are anomalous or a texture-specific failure mode is suspected; previous: 3.6 — §5.8 now records two next-session analyzer limitations: pedal-aware Jaccard boundary detection for piano beat-1 accompaniment patterns and the cross-corpus `bassNoteRootBonus` miscalibration signal; previous: 3.5 — Rule 10 added: shared note collection, boundary detection, key/mode resolution, and chord-scoring logic must live in `src/composing/` whenever bridge and batch_analyze must agree; §4.1c duplicate-path technical debt now references Rule 10 explicitly; Bach baseline corrected to 50.0% WIR structural (2026-04-09), superseding the older 83.7% onset-only/music21 figure; previous: 3.4 — §4.1c batch classical path now uses Jaccard boundaries plus smoothed regional accumulation, reducing note-collection divergence from three active paths to two duplicate regional collectors; previous: 3.3 — §4.1c duplicate note-collection-path technical debt documented, including the batch_analyze jazz-path duplicate regional collector and the onset-only classical batch path that bypasses regional accumulation; previous: 3.2 — §4.1c piano pedal-sustain gap documented as the remaining Romantic-piano accumulator limitation; previous: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from \"design complete\" to \"implemented\"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673) in the now-retired onset-only/music21 Bach workflow; previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 \"Remaining Gap\" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/extension_stripping_policy.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, 'with the design memo X' appended to a sentence stating how the rule is implemented.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1273,
+     "line_text": "(`stripSymbol`, `classifyComparison`) with the design memo `docs/extension_stripping_policy.md`; the"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/iter90_bass_as_root_promotion_shelved.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, 'see X for characterization and Iter 91 design' appended to a sentence about where a fix belongs.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 4837,
+     "line_text": "`docs/iter90_bass_as_root_promotion_shelved.md` for characterization and Iter 91 design)."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/key_path_design.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, with line numbers, inside a parenthesis recording where a removal is dated and its re-targeted pins named.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 4337,
+     "line_text": "opening; the removal is dated and its re-targeted pins named at `docs/key_path_design.md:65-73`).**"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/llm_integration.md",
+   "form": "explicit-delegation-clause",
+   "admitted": true,
+   "why_this_grade": "The bar's second named form of clause — 'The ONE detailed design for this section's scope is X, which this section points at and does not restate' — the same shape as the bounded-context delegation the bar admits word for word. It supplements the 'Full design document:' line above it and the two 'See X §n' citations below, so (k1) governs. Same grade and same ground as the seed's.",
+   "decided_by": "rule_(i)_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 3234,
+     "line_text": "(`docs/llm_integration.md`) and the Authoritative Chord Symbol Mode (§4.1f)"
+    },
+    {
+     "line": 8090,
+     "line_text": "> **Full design document:** `docs/llm_integration.md`"
+    },
+    {
+     "line": 8096,
+     "line_text": "> for this section's scope is `docs/llm_integration.md`, which this section points at and does not"
+    },
+    {
+     "line": 8166,
+     "line_text": "straightforward. See `docs/llm_integration.md §11` for the full argument."
+    },
+    {
+     "line": 8183,
+     "line_text": "Estimates assume vibe-coding with Claude Code. See `docs/llm_integration.md §8`"
+    }
+   ],
+   "namings_counted": 5,
+   "the_governing_naming": {
+    "citation": "ARCHITECTURE.md:8096",
+    "passage_verbatim": "> *Delegation pointer (the fifth home case, rule (g), user-ratified 2026-08-02; this delegation\n> written 2026-08-08 on the user's ruling — a POINTER, never a copy, #6).* **The ONE detailed design\n> for this section's scope is `docs/llm_integration.md`, which this section points at and does not\n> restate.** *The subsections below are the summary the line above promises; the detail — the tool"
+   },
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "scope_decided_by": "rule_(h)_granularity",
+   "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+  },
+  {
+   "target": "docs/nct_detection_design.md",
+   "form": "naming-that-delegates-no-concern",
+   "admitted": false,
+   "why_this_grade": "Named once, in a sentence recording that the document EXISTS — 'the non-chord-tone filter is the named lever at OI-55 and OI-68, and X exists'. It delegates nothing.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1969,
+     "line_text": "`docs/nct_detection_design.md` exists. The record states neither a date nor a ratifier."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/p3_granularity_ab_3_1b.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, as the committed evidence a shelving rests on, with the figures deliberately not carried across. A provenance attribution.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1311,
+     "line_text": "subset; the figures live in the committed evidence `docs/p3_granularity_ab_3_1b.md` and are"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/prompts/iteration_64_root_present_prefilter.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, 'Instruction at X.' — a label followed by a name.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 3163,
+     "line_text": "- **Iter 64 (not yet committed)** — Root-present pre-filter: `if (pcWeight[rootPc] <= 0.0) continue` before inner template loop in the 12×16 candidate scoring loop. Output-neutral; expected ~50–65% candidate elimination. Primary benefit: real-time bridge path latency. Instruction at `docs/prompts/iteration_64_root_present_prefilter.md`."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/quality_observations_iter76.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, 'See X for the recommended workflow.'",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 7716,
+     "line_text": "inspection alone. See `docs/quality_observations_iter76.md` for the"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/redesign_plan.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named three times as an appended design reference — 'Design reference: X Step 4 (Phase D)', 'X (\"single comprehensive pass…\")', 'adopted Phase E direction: X'. All three are labels followed by a name, and all three sit inside blocks the document itself marks SUPERSEDED.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1013,
+     "line_text": "arpeggio-resolved chord identities as input. Design reference: `docs/redesign_plan.md`"
+    },
+    {
+     "line": 1027,
+     "line_text": "section and `docs/redesign_plan.md` (\"single comprehensive pass; iteration is not a design"
+    },
+    {
+     "line": 1038,
+     "line_text": "`docs/redesign_plan.md` \"Architecture review addendum (2026-06-10)\"."
+    }
+   ],
+   "namings_counted": 3
+  },
+  {
+   "target": "docs/rfc_musescore_forum_post.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in the document's own version-history paragraph, recording where an RFC draft was written.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 8264,
+     "line_text": "*Document version: 3.34 — May 2026: §4.1g gate table extended with kCleanQualities guard (Iter 60) and HalfDim first-inversion bonus (Iters 61/65); Task #62 segmentation replacement marked IMPLEMENTED (batch path, Iter 54); Genuine-21 residual section updated to reflect Path 1 history only; §4.1h added with Path 2 current state (BIR=true=5, BIR=false=125, Jazz=12, tests 407/407 + 53/53), Genuine-5 breakdown, Path 2 fix log, and pending Iter 64 performance work. previous: 3.33 — Session 26: D#/G#/A#→Eb/Ab/Bb enharmonic normalization in `pitchClassNameFromTpc()` for sharp TPC (≥20) in keys below diatonic threshold (block placed before `keySignatureFifths==0` early-return); status-bar alternatives sorted by `normalizedConfidence` (positions 1+ only, position 0 fixed); declared-mode hard override in `resolveKeyAndMode()` from key-signature Mode property; Pass2b iterative bass-movement detection (`kMaxBassMovementPasses=8`); track-specific annotation removal in `addAnalyzedHarmony`; REST context-menu harmonic inference (`analyzeRestHarmonicContextDetails`); §5.16 added; 3 new `Composing_EnharmonicSpellingTests`; corpus: Corelli 70.9%, Bach 75.2%, Beethoven 65.2%. Composing tests: 381/381 (master). Notation tests: 51/51 (master). previous: 3.32 — Session 25: `kSus4MissingFourth = 0.70` penalty added to `structuralPenalties()` in `chordanalyzer.cpp`; fires when Sus4 template lacks detectable P4 (pcWeight < extThreshold), excludes Sus4b5; root-only single-note gap carry blocked in `inferGapRegion` (notationcomposingbridgehelpers.cpp); §5.15 \"Sus4 Structural Penalty\" added; 2 new `Composing_Sus4RequiresFourthTests` + 3 new `Composing_EnharmonicSpellingTests`; corpus: Corelli 70.9%, Bach 75.2%, Beethoven 65.18% (all improved). Composing tests: 378/378 (master), 320/320 (submission-phase1). Notation tests: 51/51 (master). previous: 3.31 — Session 24: `pitchClassNameFromTpc()` added to `chordanalyzer.cpp`; TPC consulted only when `keyFifths==0` (C major/A minor); `ChordIdentity.rootTpc` field added; `formatSymbol()`/`formatRomanNumeral()` pass rootTpc through; 7 new `Composing_EnharmonicSpellingTests` unit tests; §5.14 \"Enharmonic Root Spelling\" added. Composing tests: 373/373 (master), 315/315 (submission-phase1). Notation tests: 51/51 (master). previous: 3.30 — Session 20: `ChordAnalyzerPreferences` gains `extensionThreshold = 0.20`; Jazz preset uses 0.12 (`kSeventhThreshold`) to detect lightly-voiced ninths; Standard/Baroque keep 0.20 to suppress counterpoint passing tones; documented in §4.6 `ChordAnalyzerPreferences`. previous: 3.29 — Session 19 (continued): order-of-annotation violation fix (`forceClassicalPath=true` in `addHarmonicAnnotationsToSelection`); Unknown quality Roman numeral fallback added to annotation path (`notationcomposingbridge.cpp`); §5.13 \"Analyze-at-Tick Path Table\" added; new test `AnnotationOrderDoesNotAffectRomanNumeralOutput`; notation test count 50/50 (all passing). previous: 3.28 — Session 19 (continued): two further chord-track annotation fixes bringing notation tests to 49/49 (all passing): (1) `forceChordTrackQualityFromKeyContext()` helper (in `notationcomposingbridgehelpers.cpp`) re-derives diatonic quality from degree+mode when `formatRomanNumeral` returns empty because quality is `ChordQuality::Unknown` — occurs for lone Aeolian tonic/dominant bare fifths; (2) `kSameChordReannotationGap = 2 * Constants::DIVISION` (960 ticks = 2 quarter notes) threshold in the coalescing pass: consecutive same-chord sub-regions are re-annotated when their gap from the previous annotation equals or exceeds the threshold, enabling the Corelli m24 beat-3 Fm re-annotation (gap=960 ≥ 960 → keep) while preserving the sustained-support merge (gap=480 < 960 → merge). previous: 3.27 — Session 19: two §5.12 regressions resolved: (1) `populateChordTrack()` now runs a post-populate cleanup pass that removes Rest segments sitting inside a Chord's stored time span (artefact of `makeGap`'s \"removed too much\" restore path on triplet Fractions); (2) `populateChordTrack()` now coalesces consecutive regions with the same user-facing chord identity before the populate loop, preventing over-segmentation when tied-note continuations create extra inference ticks within a single display region. Notation test count: 47/49 (up from 45/49). previous: 3.26 — Campania font rendering artifact (`Dsdim`/`Fsdim`) documented as MuseScore core issue in §5.8; complete-voicing jazz QA evidence added (MFV 185-measure three-layer comparison, 75–80% agreement); `isValidBassNoteName` guard added to `formatSymbol` suppressing slash chord when bass name is not a plain note name; chord name in bass field bug documented and fixed; RFC draft at `docs/rfc_musescore_forum_post.md`; chordlist.cpp upstream bug report draft at `docs/chordlist_bug_report.md`; previous: 3.25 — cadence markers (PAC/HC/DC/PC) and pivot chord labels (vi → ii format, U+2192) wired into annotate path via `detectCadences()`/`detectPivotChords()` helpers; tonicization and augmented sixth labels deferred (no classifier implemented); pivot annotation format updated from verbose \"pivot: vi in C → ii in G\" to concise \"vi → ii\"; `kMaxPivotLookaheadRegions = 8` lookahead for pivot confirmation; 13 new notation unit tests (45/49 passing, 4 deferred); previous: 3.24 — B/H naming convention fix for German locale chord names in jazz path; previous: 3.23 — annotation color policy documented (black for human use, red for headless pipeline); auto_review.py three-mode design and report format requirements added; previous: 3.22 — annotate path Roman numeral layer extended to include cadence markers, pivot labels, tonicization labels, and augmented sixth chord labels (Standard/Baroque presets only); automated annotation review tool design recorded; Session 5 jazz QA outcomes documented; previous: 3.21 — the plateau target is now qualified for full-texture tonal corpora only, the highest-ROI roadmap is reordered so texture fixes precede evaluation separation and confidence calibration, Rule 12 adds a permanent benchmark score set for visual review, region identity modes are now decided conceptually (harmonic summary vs as-written), and the Mozart 26.7% direct-DCML figure is explicitly marked as a thin-texture/non-comparable case; previous: 3.20 — confidence interpretation is now documented explicitly as heuristic rather than probabilistic, a reasonable \"good enough\" plateau is defined for the current vertical tertian engine, the highest-ROI pre-plateau roadmap is recorded, and the stale Mozart `59.4%` agreement reference is corrected to the current 26.7% direct-DCML root-agreement figure; previous: 3.19 — `batch_analyze` now skips forced post-load layout in headless mode because analysis uses logical score data only; this avoids the legacy native MSCX cache-overflow crash on Mozart `K533-3` while preserving JSON output parity with the mirrored `score.mxl` path; previous: 3.18 — same-key-signature key-mode selection now uses tonal-center comparison with a diatonic raw-score guard, preventing the Mozart `K279-1` opening from flipping to spurious `F Lydian`, while Roman/Nashville analysis annotations are excluded from chord-symbol-driven path activation; previous: 3.17 — Milestone A3 confidence gating is implemented for chord-track exposure, the key-confidence thresholds now suppress low-confidence key-dependent annotations, and the Dvorak `op08n06` regression locks that behavior in; previous: 3.16 — Milestone A benchmark passages are recorded, the reusable batch/notation parity harness is documented, and BWV 227.7 plus Chopin BI16-1 now pass exact parity gates; previous: 3.15 — final post-`bassNoteRootBonus` corpus baselines are recorded, Schumann slash-chord spellings are confirmed not to be a comparator artifact, Dvorak op08n06 is accepted as genuine ambiguity, and Corelli walking-bass sus/slash artifacts are documented as a deferred limitation; previous: 3.14 — `populateChordTrack()` now absorbs sparse intra-measure gaps into neighboring written regions so BI16-style chord-track generation does not leave mixed chord/rest measures; previous: 3.13 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the Chopin BI16-1 notation mismatch is resolved by aligning `PreserveAllChanges` collapse semantics with the batch path; previous: 3.12 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the remaining Chopin BI16-1 boundary issue is separated from the root-scoring fix; previous: 3.11 — four-corpus score inspection now documents the shared `bassNoteRootBonus` failure mechanism and a concrete conditioning strategy for the fix; previous: 3.10 — 2026-04-09 score inspection confirms `bassNoteRootBonus` as the primary cross-corpus failure mode and the highest-priority next action; previous: 3.9 — removed the false pedal-marking analyzer limitation after Rule 11 score inspection confirmed sparse texture rather than analyzer failure; previous: 3.8 — Rule 11 added: representative MuseScore Studio score inspection is required before diagnosis when corpus statistics are anomalous or a texture-specific failure mode is suspected; previous: 3.6 — §5.8 now records two next-session analyzer limitations: pedal-aware Jaccard boundary detection for piano beat-1 accompaniment patterns and the cross-corpus `bassNoteRootBonus` miscalibration signal; previous: 3.5 — Rule 10 added: shared note collection, boundary detection, key/mode resolution, and chord-scoring logic must live in `src/composing/` whenever bridge and batch_analyze must agree; §4.1c duplicate-path technical debt now references Rule 10 explicitly; Bach baseline corrected to 50.0% WIR structural (2026-04-09), superseding the older 83.7% onset-only/music21 figure; previous: 3.4 — §4.1c batch classical path now uses Jaccard boundaries plus smoothed regional accumulation, reducing note-collection divergence from three active paths to two duplicate regional collectors; previous: 3.3 — §4.1c duplicate note-collection-path technical debt documented, including the batch_analyze jazz-path duplicate regional collector and the onset-only classical batch path that bypasses regional accumulation; previous: 3.2 — §4.1c piano pedal-sustain gap documented as the remaining Romantic-piano accumulator limitation; previous: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from \"design complete\" to \"implemented\"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673) in the now-retired onset-only/music21 Bach workflow; previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 \"Remaining Gap\" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/scoring_model.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "The only naming in this document is 'see X §\"ScoringPhase\"' appended to a parenthesis about a replaced flag — a bare appended citation. ★ THE DOCUMENT IS A MEMBER ANYWAY, by LIMB 3 of the ruling, which names it directly; this grade decides only that `ARCHITECTURE.md` does not delegate to it.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2925,
+     "line_text": "the former `bool explorationMode` flag — see `docs/scoring_model.md` §\"ScoringPhase\".)"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "docs/submission_scope.md",
+   "form": "naming-that-delegates-no-concern",
+   "admitted": false,
+   "why_this_grade": "Named once, inside a phase checklist as a document to be CREATED — 'Create submission scope document (X)'. It delegates nothing; the document is an output of a phase that has not started.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 7850,
+     "line_text": "- Create submission scope document (`docs/submission_scope.md`)"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "open_items/OI-176.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, inside a parenthetical citation list recording where the pre-fit protocols are tracked.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 298,
+     "line_text": "> (`cowork_prefit_gates.md`; tracked at `open_items/OI-176.md` and `open_items/OI-177.md`); the ratifier of"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "open_items/OI-177.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in the same parenthetical citation list as OI-176's.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 298,
+     "line_text": "> (`cowork_prefit_gates.md`; tracked at `open_items/OI-176.md` and `open_items/OI-177.md`); the ratifier of"
+    }
+   ],
+   "namings_counted": 1
+  }
+ ],
+ "the_seed_reconciliation": {
+  "what_the_seed_is": "`tools/audit/decisions/gen_phase1p_delegation_bar.py`'s FORMS and RETIRED_FORMS tables. They were produced to answer WHERE DOES A REGISTER ENTRY LIVE, over the entries' home documents — not to enumerate every delegation `ARCHITECTURE.md` writes. Read here as a SEED and never as the population (the dispatch's assumption A3).",
+  "seed_admitted_delegations_sited_in_ARCHITECTURE.md": [
+   {
+    "document": "cowork_bounded_context_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:1176"
+   },
+   {
+    "document": "cowork_confidence_contract.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:1231"
+   },
+   {
+    "document": "cowork_evidence_inventory.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:1263"
+   },
+   {
+    "document": "cowork_joint_estimator_architecture.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:3"
+   },
+   {
+    "document": "cowork_joint_estimator_factorization.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:276"
+   },
+   {
+    "document": "cowork_layer1_note_model_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": true,
+    "re_found_at": "ARCHITECTURE.md:1569"
+   },
+   {
+    "document": "cowork_layer2_slicing_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": true,
+    "re_found_at": "ARCHITECTURE.md:1695"
+   },
+   {
+    "document": "cowork_layer3_keymode_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:1742"
+   },
+   {
+    "document": "cowork_layer4_chordsymbol_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:1946"
+   },
+   {
+    "document": "cowork_layer5_engagement_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:2106"
+   },
+   {
+    "document": "cowork_layer5_function_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:2086"
+   },
+   {
+    "document": "cowork_layer6_grouping_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:2206"
+   },
+   {
+    "document": "cowork_notation_adoption_increment.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:7054"
+   },
+   {
+    "document": "cowork_notation_output_contract.md",
+    "seed_form": "named-home-with-sections",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:79"
+   },
+   {
+    "document": "cowork_phrase_boundary_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:1571"
+   },
+   {
+    "document": "cowork_prefit_gates.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:52"
+   },
+   {
+    "document": "cowork_progression_schema_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:560"
+   },
+   {
+    "document": "cowork_progression_schema_dictionary.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:5687"
+   },
+   {
+    "document": "cowork_score_census.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:370"
+   },
+   {
+    "document": "cowork_stage5_fitter_design.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:301"
+   },
+   {
+    "document": "cowork_voiceleading_axis_design.md",
+    "seed_form": "named-home-with-sections",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:1147"
+   },
+   {
+    "document": "docs/llm_integration.md",
+    "seed_form": "explicit-delegation-clause",
+    "retired_in_the_seed": false,
+    "re_found_at": "ARCHITECTURE.md:8096"
+   }
+  ],
+  "every_one_re_found_at_the_text": true,
+  "text_found_admitted_delegations_absent_from_the_live_seed": [
+   "STATUS.md",
+   "cowork_idiom_entry_mapping.md",
+   "cowork_layer1_note_model_design.md",
+   "cowork_layer2_slicing_design.md",
+   "cowork_target_architecture.md"
+  ],
+  "miss_rate_against_the_seed": {
+   "misses": 5,
+   "of_admitted_targets": 25,
+   "rate": 0.2,
+   "★_what_a_miss_means_here": "A miss is a delegation THIS derivation finds at the text that the seed's LIVE table does not carry. It is not evidence that the seed is wrong: the seed's population is the register's home documents, so a delegation to a document that is nobody's home is outside what the seed ever looked at, and a delegation whose target was emptied by a re-homing or a soft-discard was RETIRED out of the seed's live table by design. Both causes are named per document in `the_grades`. The rate is published because a derivation's measured miss rate against the record is part of its name (D-661)."
+  }
+ },
+ "the_document_set": [
+  {
+   "member": "ARCHITECTURE.md",
+   "limb": "limb 1 — the canonical specification",
+   "delegation_scope": "sections",
+   "delegated_sections": [
+    "the analysis layers' sections (filed as children of §3.3)",
+    "the joint estimator's standing-rules section (above the table of contents)",
+    "document governance"
+   ],
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "LIVE",
+    "quote": "> **Doc governance (2026-06-29) — the hierarchy.** This is **THE canonical architecture doc**. The **per-layer /",
+    "at": "ARCHITECTURE.md:558"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "The canonical specification; its own document-governance block declares it so.",
+   "note": "The three regions the ruling names; their line ranges are above."
+  },
+  {
+   "member": "STATUS.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "LIVE",
+    "quote": "> **Living document.** Claude Code reads this at the start of every session. Update this as the",
+    "at": "STATUS.md:3"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_bounded_context_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "Its banner declares a SIGNING and the L6 gate, not a live/dormant state."
+  },
+  {
+   "member": "cowork_confidence_contract.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "LIVE (as the standard, with a declared departure)",
+    "quote": "which this contract points at rather than restates. **The production notation record path departs from",
+    "at": "ARCHITECTURE.md:1232"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "The canonical document declares the contract the standard the shipped record path is measured against, and declares the departure unresolved."
+  },
+  {
+   "member": "cowork_evidence_inventory.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "The document carries no status banner."
+  },
+  {
+   "member": "cowork_idiom_entry_mapping.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT",
+    "quote": "replaced in the dormant `harmonicvocabulary` component by `enum class Idiom` + `IdiomSet`; the per-entry re-tag is",
+    "at": "ARCHITECTURE.md:5472"
+   },
+   "declared_establishment_status": {
+    "value": "Provisional, easy to revise.",
+    "quote": "> ii–V–I is Diatonic-functional; with sevenths it is Seventh-functional). Provisional, easy to revise.",
+    "at": "cowork_idiom_entry_mapping.md:5"
+   }
+  },
+  {
+   "member": "cowork_joint_estimator_architecture.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "LIVE",
+    "quote": "> **★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the joint estimator",
+    "at": "ARCHITECTURE.md:11"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_joint_estimator_factorization.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "LIVE",
+    "quote": "> is `cowork_joint_estimator_factorization.md`, which this section points at and does not restate.** *The six",
+    "at": "ARCHITECTURE.md:276"
+   },
+   "declared_establishment_status": {
+    "value": "Values remain unfit.",
+    "quote": "case list (§6) are the governing structure. Values remain unfit. **The §6 desk simulation has RUN and",
+    "at": "cowork_joint_estimator_factorization.md:5"
+   },
+   "remark": "LIVE by the delegation's own words — it is the ratified contract for the factor structure of the production inference layer."
+  },
+  {
+   "member": "cowork_layer1_note_model_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "LIVE",
+    "quote": "#### Layer 1 — the lossless note model (Built+Live)",
+    "at": "ARCHITECTURE.md:1560"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_layer2_slicing_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "LIVE",
+    "quote": "#### Layer 2 — the deterministic change-point slicer (Built+Live — consumed by L3)",
+    "at": "ARCHITECTURE.md:1638"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_layer3_keymode_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT",
+    "quote": "#### Layer 3 — key/mode is the sequence decoder (Built+Dormant)",
+    "at": "ARCHITECTURE.md:1728"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_layer4_chordsymbol_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT",
+    "quote": "#### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired)",
+    "at": "ARCHITECTURE.md:1935"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_layer5_engagement_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "sections",
+   "delegated_sections": [
+    "§1",
+    "§2",
+    "§3",
+    "§4",
+    "§5",
+    "§6",
+    "§7",
+    "§8",
+    "§9",
+    "§10"
+   ],
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "Its banner declares a read-only design pass, not a live or dormant state."
+  },
+  {
+   "member": "cowork_layer5_function_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT",
+    "quote": "#### Layer 5 — the function/cadence layer (Built+Dormant — design ratified; consumed by L6)",
+    "at": "ARCHITECTURE.md:2075"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_layer6_grouping_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT",
+    "quote": "> **Status: AS-BUILT (2026-07-02) — built dormant + oracle-validated after the extension gate passed.**",
+    "at": "cowork_layer6_grouping_design.md:3"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_notation_adoption_increment.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "Its banner declares a user ratification, which is neither property."
+  },
+  {
+   "member": "cowork_notation_output_contract.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "sections",
+   "delegated_sections": [
+    "§2",
+    "§3.1",
+    "§3.2",
+    "§3.3",
+    "§3.4"
+   ],
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT (as declared at the naming)",
+    "quote": "> **NOTATION OUTPUT-SURFACE RECORD — the A-native record (as-built, DORMANT; contract `cowork_notation_output_contract.md`",
+    "at": "ARCHITECTURE.md:79"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "The declaration is the delegating line's own parenthesis. It describes the A-native record as as-built and dormant at the time that line was written; the record path has since become the production notation path (the same document's record-path section). Both are quoted rather than reconciled here."
+  },
+  {
+   "member": "cowork_phrase_boundary_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "Its banner declares a SIGNING and a build in progress, neither of which states a live or dormant state on a production surface."
+  },
+  {
+   "member": "cowork_prefit_gates.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "declared_establishment_status": {
+    "value": "protocol ratified — pending execution",
+    "quote": "OI-176/OI-177/OI-178/OI-180 rows read \"protocol ratified — pending execution\"; changing any protocol",
+    "at": "cowork_prefit_gates.md:5"
+   }
+  },
+  {
+   "member": "cowork_progression_schema_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT",
+    "quote": "Scaffolding-first, deferred. Spec: `cowork_progression_schema_design.md`.",
+    "at": "ARCHITECTURE.md:2262"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_progression_schema_dictionary.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT",
+    "quote": "- **Until the RECOGNITION CONSUMER is built, the function layer does not touch this vocabulary —",
+    "at": "ARCHITECTURE.md:5705"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "cowork_score_census.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "Its banner declares delivery of v1 and awaits user disposition of the acquisition tiers — neither a live/dormant nor an establishment declaration."
+  },
+  {
+   "member": "cowork_stage5_fitter_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "Its banner declares a SIGNING (user, 2026-07-04), which is a ratification status and not a live/dormant or establishment declaration."
+  },
+  {
+   "member": "cowork_target_architecture.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   },
+   "remark": "Its banner declares a governance demotion, not a live/dormant state of the analysis."
+  },
+  {
+   "member": "cowork_voiceleading_axis_design.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "sections",
+   "delegated_sections": [
+    "§0",
+    "§5.1",
+    "§5.3",
+    "§8",
+    "§9"
+   ],
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT",
+    "quote": "> **★ Status: AS-BUILT (VL-A/B/C foundation, 2026-07-03 — `cc_vl_foundation_build_report.md`).** The dormant",
+    "at": "cowork_voiceleading_axis_design.md:3"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "docs/llm_integration.md",
+   "limb": "limb 2 — an admitted delegation target",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT (nothing built)",
+    "quote": "> **Status:** Design phase. No code written yet.",
+    "at": "docs/llm_integration.md:3"
+   },
+   "declared_establishment_status": {
+    "value": "UNDECLARED",
+    "quote": null,
+    "at": null
+   }
+  },
+  {
+   "member": "docs/scoring_model.md",
+   "limb": "limb 3 — the ruled pilot subject",
+   "delegation_scope": "document",
+   "delegated_sections": null,
+   "file_exists_at_the_tree": true,
+   "live_or_dormant": {
+    "value": "DORMANT (its mechanism content)",
+    "quote": "> a required read for any session touching scoring logic). Its mechanism content describes the LEGACY",
+    "at": "docs/scoring_model.md:4"
+   },
+   "declared_establishment_status": {
+    "value": "DECLARED NOT ESTABLISHED",
+    "quote": "these values is therefore retroactively void: they are UNFALSIFIED, NOT ESTABLISHED.** *Why the",
+    "at": "docs/scoring_model.md:1450"
+   },
+   "remark": "The banner declares the DOCUMENT a live mandatory reference and its MECHANISM content dormant on both production surfaces; both halves are quoted.",
+   "note": "Named directly by Ruling 6's third limb. `ARCHITECTURE.md` does not delegate to it: its only naming there is a bare appended citation."
+  }
+ ],
+ "the_members_with_no_file": [],
+ "★_the_findings_this_derivation_records_rather_than_acts_on": [
+  "WHETHER `ARCHITECTURE.md`'S DELEGATIONS ARE COMPLETE IS NOT ASSERTED, and the ruling asks for it as a finding. What this derivation establishes is what the canonical document DOES delegate, graded naming by naming. It cannot see a specification the canonical document never names — and one class of such a document is visible from inside the derivation itself: the document-governance clause reaches its per-layer and per-component design documents through a GLOB and a trailing ELLIPSIS, both of which rule (k) makes confer nothing, so any design document that is not separately named by filename is outside the set although the clause plainly means to include it. Every layer specification in this set is in it by a separate delegation the user wrote, not by that clause.",
+  "THE SET CONTAINS A STATUS SURFACE. `STATUS.md` is a member by the ruled mechanism: `ARCHITECTURE.md` makes it a mandatory session-start read, binds an update rule to it, and gives it precedence over its own §5 headings on current state. Its subject is current implementation status, not a specification of the analysis, and the plan's §5 exclusion list does not reach it. Reported, not acted on.",
+  "THE SET CONTAINS A DATA MAPPING. `cowork_idiom_entry_mapping.md` is a member on the ONE near-tie in this grading, which is declared at its own grade with both readings and the consequence of each.",
+  "TWO MEMBERS ARE ABSENT FROM THE SEED'S LIVE TABLE BECAUSE THE SEED RETIRED THEM, NOT BECAUSE THE TEXT LOST THEM — `cowork_layer1_note_model_design.md` and `cowork_layer2_slicing_design.md`. Both delegations stand at the text word for word. The cause is that every register entry homed in each was retired by a ruled soft-discard, which emptied the document out of the seed's home population.",
+  "THE `LIVE OR DORMANT` PROPERTY IS UNDECLARED FOR SEVERAL MEMBERS AND IS NOT INFERRED. Ruling 6's own words are that it is quoted or UNDECLARED; a banner declaring a SIGNING, a RATIFICATION or a DELIVERY is neither of the two properties and is recorded as such in the member's remark."
+ ],
+ "what_this_does_NOT_do": "It edits no document. It restores nothing, reverts nothing and corrects nothing. It closes no open-items row and writes no decisions-register entry. It derives no specification statement, admits no fact into any ledger, builds no frame, and authorizes no pilot act."
+}

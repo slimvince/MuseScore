@@ -40,7 +40,7 @@
   "AND THE MEMBERSHIP RECOGNIZER'S OWN REACH IS UNMEASURED beyond the three seeds. That is the ruled clause applied to this artifact itself, and it is why the member list is a LOWER BOUND."
  ],
  "counts": {
-  "tools_walked": 339,
+  "tools_walked": 340,
   "members": 50,
   "established": 3,
   "mixed": 9,
@@ -149,6 +149,7 @@
   "tools/audit/gen_session_start_read_size.py",
   "tools/audit/gen_signature_sweep.py",
   "tools/audit/gen_sole_carrier_subclass.py",
+  "tools/audit/gen_specification_document_set.py",
   "tools/audit/gen_status_archive_pass.py",
   "tools/audit/gen_status_batch_bound.py",
   "tools/audit/gen_status_residue_move.py",
@@ -2687,6 +2688,7 @@
    "tools/audit/gen_phase3_gate_partition.py",
    "tools/audit/gen_post_split_archive.py",
    "tools/audit/gen_session_start_read_size.py",
+   "tools/audit/gen_specification_document_set.py",
    "tools/audit/gen_status_archive_pass.py",
    "tools/audit/gen_status_batch_bound.py",
    "tools/audit/instrument_arm_declaration_effect.py",

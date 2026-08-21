@@ -202,6 +202,23 @@ AUTHORED = [
      "not the verdicts, which are authored judgments about documentation changes, but that no hunk "
      "enters or leaves the screened population ungraded and that no coordinate stops identifying "
      "the change it was read at"),
+    # ---- AUTHORED 2026-08-21, cc_instruction_successor_plan_landing_and_step_zero.md Task 1 ---
+    # Registered in the act that creates the tool, for the same reason the two entries above give:
+    # a derived candidate with no authored invocation is this runner's own STOP, and a new guard may
+    # not be silently left unrun.
+    ("tools/audit/gen_specification_document_set.py", ["--check"],
+     "the specification document set re-derives from `ARCHITECTURE.md`'s admitted delegations "
+     "(Ruling 6 of 2026-08-21). What it guards is not the grades, which are authored judgments "
+     "about what a naming delegates, but four demands on the record as it stands. Every target the "
+     "scan finds in `ARCHITECTURE.md` carries an authored grade, and every authored grade names a "
+     "target the scan finds — so a document named by a later edit halts the run rather than "
+     "entering the set unclassified, and a grade cannot outlive the naming it was made on. Every "
+     "citation it emits is LOCATED in its file on every run — the governing naming, the five "
+     "deciding clauses in `CLAUDE.md`, each limb-1 region heading and each member's two property "
+     "quotes — with a missing or ambiguous anchor halting it, so no coordinate drifts into a stale "
+     "citation. Every ADMITTED anchor must sit on a line that names its own target. And the "
+     "delegation seed is reconciled in BOTH directions, so a seed-admitted delegation the text no "
+     "longer carries halts it rather than being quietly dropped"),
     # ---- AUTHORED 2026-08-15, cc_instruction_artifact_inventory.md ---------------------------
     # Registered in the act that creates it, for the reason stated three entries above.
     ("tools/audit/gen_artifact_inventory.py", ["--check"],
