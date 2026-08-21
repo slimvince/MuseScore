@@ -15700,3 +15700,186 @@ is where it is graded. The report's §13 carries the same reading and is the aut
 own identity it cannot contain. Every value here was read from the runs recorded above; the close
 commit's and the further commit's hashes, parents and path counts were read at the object by explicit
 hash.*
+
+---
+
+# ═══ STEP ZERO OF THE SUCCESSOR PLAN (dispatch `cc_instruction_successor_plan_landing_and_step_zero.md`, performed 2026-08-21) ═══
+
+> **★ ALL FIVE TASKS RAN; TASK 3 IS A PER-ENTRY PASS AND IS STOPPED AT A RECORDED BOUNDARY. NO
+> STOP-AND-REPORT RULE FIRED.** **SIX commits, all pushed to `origin/master`:** `292e4506b6` (Task 0,
+> and the push the evaluation dispatch withheld), `50e7b9fd0c` (Task 1), `f34b451fe8` (Task 2),
+> `67ecba11e1`, `ac17b7fdba` and `553dd5f405` (Task 3, the scaffold and two bounded runs). No `src/`
+> edit, no golden, **no test changed, moved or run**, nothing under `tools/corpus/` or
+> `tools/robust_stop/` moved, **no measurement of the ANALYSIS built, designed, scoped or run**, no
+> design, no repair. **No derivation of any specification, no frame, no pilot act, no fact-gate
+> admission, no ledger.** **NO open-items row created, flipped or discarded; no register entry
+> written.** **NO screened document edited** — `ARCHITECTURE.md`, `docs/scoring_model.md` and every
+> document-set member were read and never written. **No finding number allocated.** The report is
+> `cc_report_step_zero.md`, and no figure of it is restated here (**D-431**).
+
+## 1. What needs the user
+
+**Four things, none of them acted on, all four surfaced under Ruling 9's routing and none rowed.**
+They are stated in full at the report's §6 and are pointed at here rather than restated (#6):
+
+- **the coverage gap** — a third of the ruled specification document set carries no flagged hunk at
+  all, four layer specifications among them, every one for the same measured reason the enumeration
+  gives for itself. It bears on a measurement the plan depends on, which is why it is surfaced;
+- **`STATUS.md`'s membership**, which dominates the widened population and whose subject is
+  implementation status rather than the specification of the analysis. Whether it belongs in the set
+  is the user's, and the per-document distribution must be read per document until it is answered;
+- **the completeness of `ARCHITECTURE.md`'s delegations**, which Ruling 6 asks for as a finding: the
+  document-governance clause reaches the per-layer design documents only through a glob and a
+  trailing ellipsis, which rule (k) makes confer nothing;
+- **one declared near-tie in the grading**, recorded with both readings and the consequence of each.
+
+**AND THE PER-ENTRY PASS IS STOPPED, WHICH IS A RESULT AND NOT A SHORTFALL.** The remainder is
+UNTOUCHED rather than partly worked; the standing form of the stop is at the report's §4.
+
+## 2. Surfaced findings (D-641, #13, #19), and two discard records under the amended #10
+
+**No establishment obligation was met, discharged or created by this batch.** [[OI-179]] stays OPEN
+and GATES, untouched. [[OI-372]] and [[OI-374]] stand as found. **F3 is not re-surfaced here** — this
+batch did not meet it.
+
+The four surfaced findings are §1's, and the **two DISCARD records — each with its finding, its date
+and its reason** — are at the report's §7: a new tool of this batch landing in the recognizer sort's
+declared lower-bound residue, which is a confirmed instance of a declared limitation rather than a
+defect; and a stale, empty `.git/index.lock`, an environment artifact whose cause was established
+before it was touched.
+
+## 3. Per-task log — step zero
+
+### Task 0 — COMPLETE. The record landed, and the withheld push performed
+
+**The branch rule was taken at the tip and never carried.** The dispatch was NOT STARTED, so it was
+this session's to run. **A1 was checked FIRST and entirely at content-addressed objects**, by the
+per-path commands A1 names because `git status` is measured to time out on this mount, and it
+**HELD** — one tracked modification, the membership artifact unmodified, all sixteen named untracked
+paths present and absent from the tip. **The two pinned invariants were read at the tip AND in the
+working tree and are byte-identical** to the blobs the dispatch names.
+
+**THE PREDICTION HELD ON BOTH ROUTES**, and both halves were checked before the regeneration was
+accepted: route A moved by exactly the predicted amount with exactly the two predicted names, and
+route B added nothing, as predicted from the new records' own text. **No member, route, document, pin
+constant, state or count moved** beyond those two additions.
+
+Eighteen paths, staged by explicit path and never by a wildcard, with the dispatch's own subject line
+verbatim. Commit `292e4506b6`, pushed; `origin/master` verified at the object.
+`gen_evidence_pin_membership.py --check` **passes** at the resulting tree, which is the red the
+declared start state attributed to this dispatch's own inputs, cleared by the act that tracked them.
+
+### Task 1 — COMPLETE. The document set derived and published whole
+
+`ARCHITECTURE.md` read **in full** before anything was written. **The population is DERIVED and only
+the grades are AUTHORED**: every naming of another document is scanned from the file, a naming with
+no grade HALTS the derivation, a grade naming a target the scan does not find halts it too, and every
+deciding clause is LOCATED in `CLAUDE.md` at run time rather than quoted from the dispatch. Every
+ADMITTED anchor must sit on a line that names its own target.
+
+**A3 RECONCILES BOTH WAYS AND THE STOP DID NOT FIRE** — every seed-admitted delegation was re-found
+at the text — and **the miss rate is published as part of the derivation's name** (**D-661**), with
+the artifact stating in its own words that the seed answers a different question. **No member has no
+file.** The three limb-1 regions' line ranges are derived from the file's own headings, so a moved
+heading cannot leave a stale range. Commit `50e7b9fd0c`, pushed.
+
+### Task 2 — COMPLETE. The population widened, the method untouched
+
+Selection **by MEMBERSHIP and by nothing else**, across every stratum, in-period and out-of-period
+alike; the role reported and excluding nothing, which is the candidate generator's own ruling 4
+inherited rather than re-decided. **Every existing field is byte-unchanged and that is MEASURED**:
+the artifact's diff is additions plus exactly one changed line, and that line is the final existing
+field re-emitted with the trailing JSON comma an appended key requires — the removed and added forms
+were compared and differ only by it. **The relation to the existing population is taken BOTH WAYS**,
+none in both and none in neither, with a STOP on any hunk the two readings cannot reconcile. **The
+inherited establishment caveat travels verbatim** and nothing here discharges it. Commit
+`f34b451fe8`, pushed.
+
+### Task 3 — STOPPED AT A RECORDED BOUNDARY. The verdicts, and everything else accounted for
+
+**The method is inherited whole** — four classes, their order, six shapes, five STOPs, untouched.
+**Two values are added and DECLARED as additions**: `NOT YET READ`, the one exception to the
+no-verdict STOP, which is the DEFAULT for an unauthored member and **may not be authored**, so a
+member cannot be marked unread as a judgment; and `OUTSIDE NAMED SECTIONS`, recorded and not graded.
+**A widened hunk already in the existing screen INHERITS its verdict** and none of the original
+sixty-eight is re-read or re-graded.
+
+**THE EXISTING SIXTY-EIGHT ARE BYTE-UNCHANGED, MEASURED TWICE AND NOT CLAIMED:** a digest over the
+canonical form of the existing authored block, published at every run and identical across all of
+them; and the artifact's own diff at the scaffold commit, which is a **pure addition with zero
+deletions**.
+
+**THE RULED FAILURE SIGNAL IS EVALUATED AT THE ARTIFACT, NEVER AT AN IMPRESSION**, and reports
+INCONCLUSIVE-AT-THIS-COVERAGE with the read share beside it — the ruling's own treatment of a
+majority reached on a part-read population, applied mechanically rather than argued.
+
+**THE INDEPENDENCE OF EVERY AUTHORED VERDICT.** For a NEW member there is, by construction, **no
+verdict the record already carries on the same hunk** — a NEW member is precisely one the existing
+screen never held — so no authored verdict here could have been copied from or anchored on an
+existing one. **It is said rather than assumed**, because that is what the close is asked for. Every
+verdict was made by retrieving the hunk's own removed and added text from the git object by explicit
+hash and reading it together with the commit's own account, and each records what it was made from.
+
+Three commits: `67ecba11e1` (the scaffold — both populations read, every member accounted for, none
+yet graded), `ac17b7fdba` and `553dd5f405` (two bounded runs of authored verdicts). All pushed.
+
+### Task 4 — COMPLETE. The close
+
+**Four `STATUS.md` pointer entries — one per task that did work — and nothing else of substance in
+that file.** In the **same act**, Ruling 4's forward bound moved the fourteenth batch's entries
+verbatim to `STATUS_ARCHIVE.md` through `gen_status_batch_bound.py --apply`, **both directions
+proven by the tool**: byte-present in the archive exactly once, absent from the must-read. No entry
+text was retyped. The declared `Last updated:` prefix adjustment is **imported from its one home and
+not re-decided** (#6). This section is the close.
+
+## 4. The guard set — the START state, and why the END state is NOT in this commit
+
+**THE START STATE MATCHED THE DECLARATION EXACTLY.** The full set ran before the first edit: two
+failing checks, both named in the dispatch — [[OI-372]]'s tool, and the membership check STALE by
+this dispatch's own untracked inputs — and **zero STOPs**. The guard registry's own drift opened as
+the dispatch declared and is not a third failing check.
+
+**TWO CHECKS THAT WERE GREEN AT THE START WENT RED, AND BOTH CAUSES WERE ESTABLISHED AT THE OBJECT
+BEFORE EITHER ARTIFACT WAS TOUCHED (D-669).** Each derives its population from *every* `*.py` under
+`tools/`, and the only difference between the two runs is the one such file this batch was ordered to
+create. The measured diffs confirm it: the walked-tools count rises by one and the new tool appears
+in the walked population; **no member entered or left either classification and no verdict moved.**
+Both were regenerated and both re-derive. A third item — the guard runner's STOP on a derived
+candidate with no authored invocation — is the same act's consequence and was cleared by registering
+the new tool in both guard homes, which is maintenance of an authored input rather than a mechanism
+change. **All three causes are this batch's own acts**, so A2's condition — a red outside this
+batch's own acts' subjects — did not fire.
+
+**The Task-2 run then returned ONE failing check ([[OI-372]]'s tool) and ZERO STOPs.**
+
+**★ THE END STATE IS NOT ASSERTED HERE, AND THAT IS THE POINT OF THIS PARAGRAPH.** The end-state run
+is taken at the tree the commit carrying this close leaves, which does not exist while this sentence
+is being written. **Its values land in ONE FURTHER commit**, and no row, cell or sentence asserting
+them is written into the close commit. E4 is graded there and nowhere else.
+
+## 5. The plan's tell, in one sentence
+
+**Did this batch produce anything other than what the plan's §4 declares — the widened generator, the
+document-set generator, the artifacts and the report?** **Yes, and it is named:** two edits to the
+guard registry and two regenerated guard artifacts, each forced by the registry's own STOP on a tool
+this batch was ordered to create, each with its cause established at the object before it was
+touched, and each declared at the report's §8 rather than left for a reader to find.
+
+## 6. Every registered expectation, graded
+
+**E0 MET · E1 MET · E2 MET · E3 MET FOR THE MEMBERS READ, with the remainder declared as the stop
+rather than as a shortfall · E4 NOT YET ASSERTABLE HERE, BY DESIGN.** The reasons are at the report's
+§9 and are not restated (#6).
+
+## 7. Declared departures
+
+Six, all at the report's §8: the denied-and-obeyed shell-read form; the two guard-registry edits and
+the two regenerated guard artifacts, forced by the ordered act; the stale empty lock file; the guard
+set run three times rather than once per task, with the tree each run covers named; and Task 3's
+recorded stop.
+
+*Provenance: CC, 2026-08-21, executing `cc_instruction_successor_plan_landing_and_step_zero.md` under
+Rulings 6, 7, 8 and 9 of `cowork_rulings_2026_08_21_successor_plan_sitting.md`. Every commit identity
+above was read at the object by explicit hash. This section is written into the close commit, whose
+own identity it therefore cannot contain, and the end-state run's values land in the one further
+commit after it.*
