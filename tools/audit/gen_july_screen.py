@@ -907,6 +907,119 @@ w(_SYNC, "ARCHITECTURE.md", "-6307 +6512", RESTRUCTURING,
   "in implementation code is its source.",
   "document-relocation-or-re-heading")
 
+w("19fbe9e2714f3f5d65db753e4d999e57e7f15649", "ARCHITECTURE.md", "-1333,0 +1334,11",
+  CODE_INFLUENCED,
+  "The commit's own account is \"phase 1d Task 0 — the two riding acts (OI-265 truth-sync, "
+  "OI-266's six rules homed)\", and this hunk is the truth-sync half. It adds a scope note to "
+  "Layer 4 which states in terms that the section \"carries one sentence about what runs — that "
+  "production chord analysis still runs the legacy `analyzeChord` + post-scoring gates (§4.1) — "
+  "which was true when written and is **false at HEAD**\". That is a documentation statement "
+  "found false against the implementation, and the correction cites the flag default at "
+  "`composingconfiguration.cpp:178`, which this commit did not write.",
+  "describes-pre-existing-implementation-behaviour")
+
+# ── 2026-08-02 · the phase-1i POINTER pass ────────────────────────────────────────────────────────
+_PTR = "ebda0889f2f6c6076df4a0041008733b8d2296d8"
+_PTR_GROUND = (
+    "The commit's own account is \"phase 1i task 3 — the pointer pass (6 lines, pointer class "
+    "only)\", and it states its own bound: \"Every ARCHITECTURE.md insertion is the ratified "
+    "POINTER class — a one-line delegation pointer or a one-line tried-and-closed pointer. No "
+    "content was copied and no ruling was made; the whole diff is 12 added lines and nothing "
+    "else.\" The first class was applied first and does not fire: nothing standing is withdrawn "
+    "and no fact from the implementation is the source. What the hunk records is the fifth home "
+    "case, which the added line itself dates.")
+
+for _h, _which in (
+        ("-281,0 +282,2", "the delegation pointer to the fitting event's own design contract"),
+        ("-293,0 +296,2", "the tried-and-closed pointer on the search"),
+        ("-1270,0 +1275,4", "Layer 3's delegation pointer and its tried-and-closed line"),
+        ("-1333,0 +1342,4", "Layer 4's delegation pointer and its tried-and-closed line")):
+    w(_PTR, "ARCHITECTURE.md", _h, RATIFIED,
+      _PTR_GROUND + f" Here the added line is {_which}.",
+      "governing-decision-record",
+      act="the fifth home case — a ratified contract document the owning `ARCHITECTURE.md` section "
+          "points at is a proper home — and the pointer pass performed under it",
+      ratification_at="the added line's own \"(the fifth home case, user-ratified 2026-08-02)\"; "
+                      "and the same rule at `CLAUDE.md`'s decisions-register section, rule (g), at "
+                      "HEAD")
+
+# ── 2026-08-02 · the phase-1j HOMING half ─────────────────────────────────────────────────────────
+_HOME_J = "88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27"
+_HOME_J_GROUND = (
+    "The commit's own account is \"phase 1j task 1 — the OI-272 HOMING half (16 rules written into "
+    "their owning specifications)\". The hunk writes a rule the decisions register already held "
+    "into the specification that owns it, in that specification's own voice and with its defense. "
+    "The first class was applied first and does not fire: nothing the documentation already stated "
+    "is withdrawn or narrowed, and no fact read in implementation code this commit did not write "
+    "is the source of the addition.")
+
+
+def _homej(header, what, extra=""):
+    w(_HOME_J, "ARCHITECTURE.md", header, RATIFIED,
+      _HOME_J_GROUND + f" Here the rule written in is {what}." + (" " + extra if extra else ""),
+      "governing-decision-record",
+      act="the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning "
+          "specification",
+      ratification_at="D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; "
+                      "and, where the homed rule's own ratification is recorded, the date the "
+                      "added text carries")
+
+
+w(_HOME_J, "ARCHITECTURE.md", "-258,2 +258,3", RESTRUCTURING,
+  _HOME_J_GROUND[:0] + "The commit is the phase-1j homing half, and this hunk is its heading "
+  "half: the standing-rules heading is re-worded from \"Four rules\" to \"Six rules\" and its "
+  "subject list extended, to keep the heading in step with the two rules the SAME commit adds "
+  "below. Nothing outside the document is its source — not a fact read in implementation code, "
+  "and not a ruling; the source is the commit's own addition. It is a re-heading.",
+  "document-relocation-or-re-heading")
+_homej("-305,0 +307,24",
+       "rules (e) and (f) of the joint estimator's standing rules — the shipped-value licence pool "
+       "and the per-idiom fit",
+       "The added text carries its own dates: \"Ratified by the user 2026-07-04 … reaffirmed as "
+       "written by the user 2026-08-02\", and for (f) \"Ratified by the user; the record does not "
+       "date the mandate\" — the gap stated rather than filled.")
+_homej("-937,0 +963,9",
+       "the boundary of the no-information-loss rule — never COMPUTING a possibility is not loss, "
+       "only DISCARDING a computed one is",
+       "The added text records its own provenance honestly: \"Decided 2026-07-07; the record does "
+       "not name the ratifier.\"")
+_homej("-948,0 +983,10",
+       "the rule that the analysis always emits its fullest reading and that simplifying is a "
+       "comparison-side act only",
+       "The added text states \"the record states neither a date nor a ratifier for the rule "
+       "itself\", so the homing records a gap rather than inventing an attribution.")
+_homej("-1117,0 +1162,10",
+       "clause 4 of the MuseScore-dependency rule — reading and calling MuseScore's engraving code "
+       "is allowed; only editing it is off limits",
+       "The added text names the act: \"a user correction, 2026-06-14, of an over-statement that "
+       "had conflated the two\".")
+_homej("-1278,0 +1333,9",
+       "the rule that Layer 3's backward re-reading facility stays switched off in the shipped "
+       "configuration",
+       "The added text names the act and its date: \"Decided by the user 2026-07-02.\"")
+_homej("-1345,0 +1409,8",
+       "the deferral of non-chord-tone detection, with the shape it is constrained to in advance",
+       "The added text states \"**derivation not recorded**\" and \"The record states neither a "
+       "date nor a ratifier\" — the gap written down rather than filled.")
+_homej("-1411,0 +1483,2",
+       "Layer 5's delegation pointer to the engagement contract, with its TRANSITIVE authority "
+       "stated",
+       "The added line carries \"(the fifth home case, user-ratified 2026-08-02)\" and names the "
+       "user-ratified surface the authority passes through.")
+_homej("-2561,0 +2635,10",
+       "the rule that the annotation ban is decided by WHAT AN ANNOTATION SAYS rather than by how "
+       "the score stores it",
+       "The added text states \"**derivation not recorded**\" and that the record names neither a "
+       "date nor a ratifier.")
+_homej("-2565,0 +2649,13",
+       "the standing consequence that jazz accuracy is not measurable on the corpora held, and "
+       "that no jazz-specific scoring work is planned on them",
+       "The added text names the measurement it rests on — the bass-injection experiment — and "
+       "records \"Decided 2026-04-08; the record does not name the ratifier.\"")
+_homej("-6169,0 +6266,8",
+       "§12's governing requirement of zero information loss to the end user",
+       "The added text records \"Ratified by the user; the record does not date it.\"")
+
 w(_SYNC, "ARCHITECTURE.md", "-6313,0 +6519,6", RESTRUCTURING,
   _SYNC_ACCOUNT + " ★ BUT THIS HUNK'S SOURCE IS THE PROJECT'S OWN WORK HISTORY, not the code: it "
   "adds the correction paragraph for the heading above, whose ground is that \"no session since "

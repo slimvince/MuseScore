@@ -666,19 +666,19 @@ Every hunk's text was retrieved from the git object by explicit hash — `git sh
 
 The widened population is not yet read whole, so a majority over the read members cannot be reported as the ruled signal firing. The read share is published beside the majority, and the ruling's own words are that a majority reached only because few members were read is reported this way rather than as the signal firing.
 
-- Read members: **77** of **437** (read share 0.1762).
-- UNDETERMINED among the read: **14** (share of the read 0.1818).
+- Read members: **93** of **437** (read share 0.2128).
+- UNDETERMINED among the read: **14** (share of the read 0.1505).
 
 ## The widened population
 
 - **437 hunks** across **210 commits** and **18 documents** — **32** already screened and inherited, **405** new.
-- By verdict: NOT YET READ 360, POSITIVELY CODE-INFLUENCED 35, RATIFIED-ACT EDIT 17, RESTRUCTURING-SHAPED 11, UNDETERMINED 14.
+- By verdict: NOT YET READ 344, POSITIVELY CODE-INFLUENCED 36, RATIFIED-ACT EDIT 31, RESTRUCTURING-SHAPED 12, UNDETERMINED 14.
 
 ## The per-document pollution distribution
 
 | member | hunks | read | POSITIVELY CODE-INFLUENCED | RATIFIED-ACT EDIT | RESTRUCTURING-SHAPED | UNDETERMINED | NOT YET READ | OUTSIDE NAMED SECTIONS | coverage gap |
 |---|---|---|---|---|---|---|---|---|---|
-| `ARCHITECTURE.md` | 152 | 72 | 34 | 15 | 11 | 12 | 80 | 0 | — |
+| `ARCHITECTURE.md` | 152 | 88 | 35 | 29 | 12 | 12 | 64 | 0 | — |
 | `STATUS.md` | 200 | 0 | 0 | 0 | 0 | 0 | 200 | 0 | — |
 | `cowork_bounded_context_design.md` | 4 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | — |
 | `cowork_confidence_contract.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — |
@@ -726,7 +726,7 @@ Every document-set member with NO FLAG hunk in the candidate enumeration, with t
 
 Recorded so that a continuing session derives the remainder fresh rather than carrying it from this session's account of it. The order below is the artifact's own — by document, then by commit, then by hunk.
 
-- `ARCHITECTURE.md` — **80** unread
+- `ARCHITECTURE.md` — **64** unread
 - `STATUS.md` — **200** unread
 - `cowork_bounded_context_design.md` — **4** unread
 - `cowork_confidence_contract.md` — **1** unread
@@ -1075,6 +1075,146 @@ Recorded so that a continuing session derives the remainder fresh rather than ca
 - **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
 - **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. ★ BUT THIS HUNK'S SOURCE IS THE PROJECT'S OWN WORK HISTORY, not the code: it adds the correction paragraph for the heading above, whose ground is that "no session since 2026-04 has treated [Phase 3] as the next thing". It leaves when the phase becomes next OPEN and settles nothing.
 - *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1333,0 +1334,11` · 19fbe9e271
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1d Task 0 — the two riding acts (OI-265 truth-sync, OI-266's six rules homed)
+- **Ground.** The commit's own account is "phase 1d Task 0 — the two riding acts (OI-265 truth-sync, OI-266's six rules homed)", and this hunk is the truth-sync half. It adds a scope note to Layer 4 which states in terms that the section "carries one sentence about what runs — that production chord analysis still runs the legacy `analyzeChord` + post-scoring gates (§4.1) — which was true when written and is **false at HEAD**". That is a documentation statement found false against the implementation, and the correction cites the flag default at `composingconfiguration.cpp:178`, which this commit did not write.
+- *Retrieve:* `git show 19fbe9e2714f3f5d65db753e4d999e57e7f15649 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-281,0 +282,2` · ebda0889f2
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1i task 3 — the pointer pass (6 lines, pointer class only), 25 more entries contract-homed, 159 anchors re-aimed
+- **Ground.** The commit's own account is "phase 1i task 3 — the pointer pass (6 lines, pointer class only)", and it states its own bound: "Every ARCHITECTURE.md insertion is the ratified POINTER class — a one-line delegation pointer or a one-line tried-and-closed pointer. No content was copied and no ruling was made; the whole diff is 12 added lines and nothing else." The first class was applied first and does not fire: nothing standing is withdrawn and no fact from the implementation is the source. What the hunk records is the fifth home case, which the added line itself dates. Here the added line is the delegation pointer to the fitting event's own design contract.
+- **The act:** the fifth home case — a ratified contract document the owning `ARCHITECTURE.md` section points at is a proper home — and the pointer pass performed under it
+- **Where its ratification is recorded:** the added line's own "(the fifth home case, user-ratified 2026-08-02)"; and the same rule at `CLAUDE.md`'s decisions-register section, rule (g), at HEAD
+- *Retrieve:* `git show ebda0889f2f6c6076df4a0041008733b8d2296d8 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-293,0 +296,2` · ebda0889f2
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1i task 3 — the pointer pass (6 lines, pointer class only), 25 more entries contract-homed, 159 anchors re-aimed
+- **Ground.** The commit's own account is "phase 1i task 3 — the pointer pass (6 lines, pointer class only)", and it states its own bound: "Every ARCHITECTURE.md insertion is the ratified POINTER class — a one-line delegation pointer or a one-line tried-and-closed pointer. No content was copied and no ruling was made; the whole diff is 12 added lines and nothing else." The first class was applied first and does not fire: nothing standing is withdrawn and no fact from the implementation is the source. What the hunk records is the fifth home case, which the added line itself dates. Here the added line is the tried-and-closed pointer on the search.
+- **The act:** the fifth home case — a ratified contract document the owning `ARCHITECTURE.md` section points at is a proper home — and the pointer pass performed under it
+- **Where its ratification is recorded:** the added line's own "(the fifth home case, user-ratified 2026-08-02)"; and the same rule at `CLAUDE.md`'s decisions-register section, rule (g), at HEAD
+- *Retrieve:* `git show ebda0889f2f6c6076df4a0041008733b8d2296d8 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1270,0 +1275,4` · ebda0889f2
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1i task 3 — the pointer pass (6 lines, pointer class only), 25 more entries contract-homed, 159 anchors re-aimed
+- **Ground.** The commit's own account is "phase 1i task 3 — the pointer pass (6 lines, pointer class only)", and it states its own bound: "Every ARCHITECTURE.md insertion is the ratified POINTER class — a one-line delegation pointer or a one-line tried-and-closed pointer. No content was copied and no ruling was made; the whole diff is 12 added lines and nothing else." The first class was applied first and does not fire: nothing standing is withdrawn and no fact from the implementation is the source. What the hunk records is the fifth home case, which the added line itself dates. Here the added line is Layer 3's delegation pointer and its tried-and-closed line.
+- **The act:** the fifth home case — a ratified contract document the owning `ARCHITECTURE.md` section points at is a proper home — and the pointer pass performed under it
+- **Where its ratification is recorded:** the added line's own "(the fifth home case, user-ratified 2026-08-02)"; and the same rule at `CLAUDE.md`'s decisions-register section, rule (g), at HEAD
+- *Retrieve:* `git show ebda0889f2f6c6076df4a0041008733b8d2296d8 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1333,0 +1342,4` · ebda0889f2
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1i task 3 — the pointer pass (6 lines, pointer class only), 25 more entries contract-homed, 159 anchors re-aimed
+- **Ground.** The commit's own account is "phase 1i task 3 — the pointer pass (6 lines, pointer class only)", and it states its own bound: "Every ARCHITECTURE.md insertion is the ratified POINTER class — a one-line delegation pointer or a one-line tried-and-closed pointer. No content was copied and no ruling was made; the whole diff is 12 added lines and nothing else." The first class was applied first and does not fire: nothing standing is withdrawn and no fact from the implementation is the source. What the hunk records is the fifth home case, which the added line itself dates. Here the added line is Layer 4's delegation pointer and its tried-and-closed line.
+- **The act:** the fifth home case — a ratified contract document the owning `ARCHITECTURE.md` section points at is a proper home — and the pointer pass performed under it
+- **Where its ratification is recorded:** the added line's own "(the fifth home case, user-ratified 2026-08-02)"; and the same rule at `CLAUDE.md`'s decisions-register section, rule (g), at HEAD
+- *Retrieve:* `git show ebda0889f2f6c6076df4a0041008733b8d2296d8 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-258,2 +258,3` · 88fd87e9d1
+
+- **Verdict:** RESTRUCTURING-SHAPED · shape `document-relocation-or-re-heading`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit is the phase-1j homing half, and this hunk is its heading half: the standing-rules heading is re-worded from "Four rules" to "Six rules" and its subject list extended, to keep the heading in step with the two rules the SAME commit adds below. Nothing outside the document is its source — not a fact read in implementation code, and not a ruling; the source is the commit's own addition. It is a re-heading.
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-305,0 +307,24` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is rules (e) and (f) of the joint estimator's standing rules — the shipped-value licence pool and the per-idiom fit. The added text carries its own dates: "Ratified by the user 2026-07-04 … reaffirmed as written by the user 2026-08-02", and for (f) "Ratified by the user; the record does not date the mandate" — the gap stated rather than filled.
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-937,0 +963,9` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is the boundary of the no-information-loss rule — never COMPUTING a possibility is not loss, only DISCARDING a computed one is. The added text records its own provenance honestly: "Decided 2026-07-07; the record does not name the ratifier."
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-948,0 +983,10` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is the rule that the analysis always emits its fullest reading and that simplifying is a comparison-side act only. The added text states "the record states neither a date nor a ratifier for the rule itself", so the homing records a gap rather than inventing an attribution.
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-1117,0 +1162,10` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is clause 4 of the MuseScore-dependency rule — reading and calling MuseScore's engraving code is allowed; only editing it is off limits. The added text names the act: "a user correction, 2026-06-14, of an over-statement that had conflated the two".
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-1278,0 +1333,9` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is the rule that Layer 3's backward re-reading facility stays switched off in the shipped configuration. The added text names the act and its date: "Decided by the user 2026-07-02."
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-1345,0 +1409,8` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is the deferral of non-chord-tone detection, with the shape it is constrained to in advance. The added text states "**derivation not recorded**" and "The record states neither a date nor a ratifier" — the gap written down rather than filled.
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-1411,0 +1483,2` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is Layer 5's delegation pointer to the engagement contract, with its TRANSITIVE authority stated. The added line carries "(the fifth home case, user-ratified 2026-08-02)" and names the user-ratified surface the authority passes through.
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-2561,0 +2635,10` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is the rule that the annotation ban is decided by WHAT AN ANNOTATION SAYS rather than by how the score stores it. The added text states "**derivation not recorded**" and that the record names neither a date nor a ratifier.
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-2565,0 +2649,13` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is the standing consequence that jazz accuracy is not measurable on the corpora held, and that no jazz-specific scoring work is planned on them. The added text names the measurement it rests on — the bass-injection experiment — and records "Decided 2026-04-08; the record does not name the ratifier."
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-03 · `ARCHITECTURE.md` @ `-6169,0 +6266,8` · 88fd87e9d1
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1j task 1 — the OI-272 HOMING half (16 rules written into their owning specifications)". The hunk writes a rule the decisions register already held into the specification that owns it, in that specification's own voice and with its defense. The first class was applied first and does not fire: nothing the documentation already stated is withdrawn or narrowed, and no fact read in implementation code this commit did not write is the source of the addition. Here the rule written in is §12's governing requirement of zero information loss to the end user. The added text records "Ratified by the user; the record does not date it."
+- **The act:** the D-231 phase-1 homing act of 2026-08-02, writing a recorded decision into its owning specification
+- **Where its ratification is recorded:** D-231 itself at `CLAUDE.md` Conventions at HEAD, which directs the homing; and, where the homed rule's own ratification is recorded, the date the added text carries
+- *Retrieve:* `git show 88fd87e9d16e2eacca38c9dd8ea4c1e4a43d7b27 --no-color -U0 -- ARCHITECTURE.md`
 
 ## What this screen does not do
 
