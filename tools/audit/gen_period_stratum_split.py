@@ -130,6 +130,28 @@ INHERITED_CAVEAT = (
     "clean re-derivation here as evidence that it is. What would settle the inherited half is an "
     "establishment pass over that generator — an act named here and not started.")
 
+# ── AUTHORED — the widening's own inputs ─────────────────────────────────────────────────────────
+# Added 2026-08-21 by `cc_instruction_successor_plan_landing_and_step_zero.md` Task 2, executing
+# Ruling 7.  It publishes a SECOND population BESIDE the one above; every field above is untouched.
+IN_DOCSET = ROOT / "tools" / "audit" / "specification_document_set.json"
+
+WIDENING_RULING = (
+    "Ruling 7 (Alternative A) of `cowork_rulings_2026_08_21_successor_plan_sitting.md`: \"A "
+    "preparation-phase act and the one mechanism this plan runs, declared so guardrail 3 is not "
+    "breached silently. Its per-document distribution feeds the reading depth (Ruling 12) and the "
+    "ordering of units. Failure signal, ruled with it: if most passages land UNDETERMINED the "
+    "premise is not measurable, and that is a STOP to the user, not a licence to proceed.\"")
+
+WIDENING_SELECTION = (
+    "By MEMBERSHIP of `tools/audit/specification_document_set.json` and by nothing else, across "
+    "EVERY stratum, in-period and out-of-period alike. The document ROLE is REPORTED per hunk and "
+    "EXCLUDES NOTHING — the candidate generator's own ruling 4, inherited here rather than "
+    "re-decided: its role map is 'reported and NOT used to exclude anything'. Selection HAS to be "
+    "by membership rather than by role, and that is the whole of what 'widened over the document "
+    "set' means mechanically: the candidate enumeration gives every `cowork_*.md` document the "
+    "role `cowork-planning-or-ruling`, so a document-set member carrying that name sits OUTSIDE "
+    "the existing screen population BY ROLE ALONE, however plainly it specifies the analysis.")
+
 NEEDED_HUNK_FIELDS = ("c", "f", "i", "h", "v", "role")
 
 
@@ -282,6 +304,166 @@ def build() -> dict:
     p1_flagged = grade(P1_FLAGGED_BY_STRATUM, flagged_by_stratum)
     p1_spec = grade(P1_SPEC_BEARING_BY_STRATUM, spec_by_stratum)
 
+    # ── THE WIDENED SCREEN POPULATION (Task 2, Ruling 7) ─────────────────────────────────────────
+    # A SECOND population, published beside the one above and leaving every field above untouched.
+    if not IN_DOCSET.exists():
+        raise Stop(f"the document set the widening selects by is missing: {IN_DOCSET}")
+    docset = json.loads(IN_DOCSET.read_text(encoding="utf-8"))
+    member_of = {m["member"]: m for m in docset["the_document_set"]}
+    if not member_of:
+        raise Stop("the document set carries no members — the widening would select nothing")
+
+    def ident(rec: dict) -> tuple:
+        return (rec["commit"], rec["file"], rec["hunk_header"])
+
+    widened = []
+    for h in flagged:
+        m = member_of.get(files[h["f"]])
+        if m is None:
+            continue
+        rec = hunk_record(h)
+        rec["member_limb"] = m["limb"]
+        rec["member_delegation_scope"] = m["delegation_scope"]
+        rec["member_delegated_sections"] = m["delegated_sections"]
+        rec["in_period_under_the_ruling"] = in_period(h["c"])
+        widened.append(rec)
+    widened.sort(key=lambda r: (r["file"], r["date"], r["commit"],
+                                r["hunk_ordinal_in_the_commit"]))
+
+    member_paths = set(member_of)
+    screen_ids = {ident(r) for r in screen}
+    widened_ids = {ident(r) for r in widened}
+
+    # the relation to the existing population, taken BOTH WAYS
+    should_be_widened = {i for i in screen_ids if i[1] in member_paths}
+    unreconciled = sorted(should_be_widened - widened_ids)
+    if unreconciled:
+        raise Stop("hunk(s) the two readings cannot reconcile — already screened, their file IS a "
+                   f"document-set member, and yet absent from the widened population: "
+                   f"{unreconciled[:5]}")
+    already_ids = widened_ids & screen_ids
+    new_ids = widened_ids - screen_ids
+    if (already_ids | new_ids) != widened_ids or (already_ids & new_ids):
+        raise Stop("the widened population does not partition into already-screened and NEW — "
+                   "none may be in both and none in neither")
+    outside_ids = {i for i in screen_ids if i[1] not in member_paths}
+    if len(already_ids) + len(outside_ids) != len(screen_ids) or (already_ids & outside_ids):
+        raise Stop("the existing screen population does not partition against document-set "
+                   "membership — none may be in both and none in neither")
+    for r in widened:
+        r["already_screened"] = ident(r) in screen_ids
+        r["is_NEW"] = not r["already_screened"]
+
+    new_rows = [r for r in widened if r["is_NEW"]]
+
+    # the COVERAGE GAP — every member with no FLAG hunk in the candidate enumeration
+    by_path: dict[str, list] = defaultdict(list)
+    for h in hunks:
+        by_path[files[h["f"]]].append(h)
+    files_enumerated = set(files)
+    rng = main["range"]
+    gap = []
+    for path in sorted(member_paths):
+        mine = by_path.get(path, [])
+        fl = [h for h in mine if h["v"] == "FLAG"]
+        if mine and fl:
+            continue
+        if not mine:
+            reason = (
+                "NO hunk of this file is in the candidate enumeration. The enumeration's own "
+                "commit population is the restructuring period — opening EXCLUSIVE at "
+                f"{rng['start_commit_EXCLUSIVE']}, ending at {rng['end_commit']}, "
+                f"{rng['commits_in_the_population']} commits — so a file no commit of that "
+                "population touched has nothing to enumerate."
+                + ("" if path in files_enumerated else
+                   " The file does not appear in the enumeration's `files` table at all."))
+        else:
+            reason = (
+                "the file IS enumerated and every hunk of it classifies PURE, so it contributes "
+                "no FLAG hunk. The enumeration's own default is FLAG ON DOUBT, with PURE emitted "
+                "only where a mechanical recognizer fires — so this is the enumeration reporting "
+                "that every change it saw to this file in the period was a recognised pure "
+                "restructuring, not that the file went unexamined.")
+        gap.append({
+            "member": path,
+            "member_limb": member_of[path]["limb"],
+            "hunks_in_the_candidate_enumeration": len(mine),
+            "flagged_hunks": len(fl),
+            "in_the_enumerations_files_table": path in files_enumerated,
+            "the_reason_the_enumeration_gives_for_itself": reason,
+        })
+
+    widened_block = {
+        "what_it_is": (
+            "THE WIDENED SCREEN POPULATION: every FLAG hunk of the candidate enumeration whose "
+            "file is a member of the specification document set, across EVERY stratum, in-period "
+            "and out-of-period alike. It is published BESIDE the population above and replaces "
+            "nothing: the existing screen population, its counts and its enumeration are "
+            "untouched."),
+        "ruling": WIDENING_RULING,
+        "dispatch": "cc_instruction_successor_plan_landing_and_step_zero.md",
+        "★_the_selection_is_by_MEMBERSHIP_and_the_role_excludes_nothing": WIDENING_SELECTION,
+        "★_the_inherited_establishment_caveat": INHERITED_CAVEAT,
+        "the_document_set": {
+            "artifact": "tools/audit/specification_document_set.json",
+            "sha256": sha256_of(IN_DOCSET),
+            "members": sorted(member_paths),
+            "members_counted": len(member_paths),
+        },
+        "size": len(widened),
+        "already_screened": len(already_ids),
+        "NEW": len(new_ids),
+        "by_document": dict(sorted(Counter(r["file"] for r in widened).items())),
+        "by_document_NEW_only": dict(sorted(Counter(r["file"] for r in new_rows).items())),
+        "by_stratum": dict(sorted(Counter(r["stratum"] for r in widened).items())),
+        "by_stratum_NEW_only": dict(sorted(Counter(r["stratum"] for r in new_rows).items())),
+        "by_role": dict(sorted(Counter(r["role"] for r in widened).items())),
+        "by_period": {
+            "IN_PERIOD": sum(1 for r in widened if r["in_period_under_the_ruling"]),
+            "OUT_OF_PERIOD": sum(1 for r in widened if not r["in_period_under_the_ruling"]),
+        },
+        "distinct_commits": len({r["commit"] for r in widened}),
+        "the_relation_to_the_existing_screen_population": {
+            "★_taken_BOTH_WAYS": (
+                "Every hunk of the existing screen population whose file is a document-set member "
+                "must appear in the widened population, and the widened population must partition "
+                "exactly into already-screened and NEW. A hunk the two readings cannot reconcile "
+                "STOPS the tool rather than being reported as a difference."),
+            "existing_screen_population_size": len(screen_ids),
+            "of_those_ALREADY_in_the_widened_population": len(already_ids),
+            "of_those_NOT_document_set_members": len(outside_ids),
+            "the_existing_screened_members_that_are_NOT_document_set_members": {
+                "by_document": dict(sorted(Counter(i[1] for i in outside_ids).items())),
+                "★_what_they_are": (
+                    "Out-of-period specification-bearing hunks whose file the ruled document set "
+                    "does not carry — `CLAUDE.md` and the `docs/` documents `ARCHITECTURE.md` "
+                    "does not delegate to. They stay screened and their sixty-eight verdicts stay "
+                    "exactly as they are; they are named here so that no reader takes the widened "
+                    "population for a superset of the old one."),
+            },
+            "none_in_both_and_none_in_neither": True,
+        },
+        "the_coverage_gap": {
+            "★_what_this_is": (
+                "Every document-set member with NO FLAG hunk in the candidate enumeration, with "
+                "the reason the enumeration gives for ITSELF rather than a reason invented here. "
+                "This is the plan's own finding about the premise's measurability: a member with "
+                "no flagged hunk contributes nothing to the pollution distribution, and the "
+                "distribution must be read knowing which members are silent and why."),
+            "members_with_no_flagged_hunk": len(gap),
+            "of_the_members": len(member_paths),
+            "members": gap,
+        },
+        "★_the_size_the_next_task_reads": {
+            "NEW_hunks_to_be_authored_a_verdict": len(new_ids),
+            "★_read_it_here_rather_than_from_prose": (
+                "The sizing the next task reports is this field. It is published so that the "
+                "report can state a DIRECTION with its artifact named rather than transcribe a "
+                "value (D-663, D-431)."),
+        },
+        "hunks": widened,
+    }
+
     art = {
         "what_this_is": (
             "THE PERIOD SPLIT, re-derived by a checked tool from the candidate artifacts alone, "
@@ -400,6 +582,7 @@ def build() -> dict:
             "question, on whether any enumerated change should have happened, or on what the "
             "screen will find. It closes no open-items row and writes no decisions-register "
             "entry."),
+        "★_the_widened_screen_population": widened_block,
     }
     return art
 
