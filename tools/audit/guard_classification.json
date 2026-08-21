@@ -26,8 +26,8 @@
     "what_this_does_NOT_do": "It repairs nothing and discharges nothing. The six artifacts stay on disk exactly as their waves wrote them; the registered bands and every measured yield are preserved (#12); `OPEN_ITEMS.md` OI-309 and OI-330 stay open on their own subjects."
   },
   "counts": {
-    "tools_classified": 85,
-    "re_derives_a_live_invariant": 67,
+    "tools_classified": 86,
+    "re_derives_a_live_invariant": 68,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
     "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
@@ -611,6 +611,14 @@
       "verdict": "re-derives-a-live-invariant",
       "evidence": "gen_sole_carrier_subclass.py, the `THE STOPS` list of its module docstring; `locate_ruling()`, which locates every sentence of the ruling in its record on every run; `signal_probes()`, which requires each signal to fire and to stay quiet; `json_at()`, whose own comment states which half is frozen and why",
       "why": "LIVE, and the live half is narrower than most here, so it is named rather than implied. What re-derives against the record AS IT STANDS is the ruling itself: every sentence that DEFINES the sole-carrier subclass is located in `cowork_rulings_2026_08_16_preparation_return.md` on each run, and a ruling record edited to drop the guard's definition turns this red — the same shape the retirement caller-check's conditions and the recovery pass's ruling sentences carry, and it matters more here than in either, because this artifact is what WITHHOLDS entries from a discard. Live too are the five signal establishments: each of the three signals must be shown both to fire on a case that should fire it and to stay quiet on one that should not, so a signal returning empty over the whole population cannot be mistaken for one that cannot fire at all (#19) — which is exactly the state two of the three are in. ★ WHAT IT DELIBERATELY DOES NOT ASSERT, stated because the omission is a design decision and not an oversight: that the subclass re-derives against the CURRENT decisions register. Its three inputs are read from the git objects at the commit the artifact records, because the discard this guard stands in front of MOVES those very inputs — an input read live would be changed by the act this artifact authorizes, and the published record of which entries were withheld would be destroyed by the act it guarded (#12; the OI-301 hazard). It also asserts nothing about whether any entry's verdict is right, and nothing about worth: a sole-carrier verdict is a statement about WHERE THE CONTENT LIVES and about nothing else.",
+      "in_the_live_guard_list_after_this_classification": true,
+      "state_at_the_committed_tree": "PASS"
+    },
+    {
+      "tool": "tools/audit/gen_specification_document_set.py",
+      "verdict": "re-derives-a-live-invariant",
+      "evidence": "gen_specification_document_set.py, the WHAT IS DERIVED AND WHAT IS AUTHORED paragraph and THE STOPS list of its module docstring; `build()`, which scans the population out of `ARCHITECTURE.md` and reconciles it with the authored grades in both directions; `locate()`, which halts on a missing or ambiguous anchor",
+      "why": "LIVE on the ruling's own operational form — can this check pass forever while the tree moves on correctly? It can, and it fails exactly when the tree moves in a way that matters. Its POPULATION is DERIVED from `ARCHITECTURE.md` by scanning that file on every run, so it grows as the canonical document names more documents, and a target with no authored grade halts the run — the `claude_md_rule_triage.py` shape, a derived population that tracks the tree. Every CITATION it emits is LOCATED at run time rather than stored: the governing naming per admitted target, the five deciding clauses in `CLAUDE.md`, the eight limb-1 region headings and each member's two declared-property quotes, each with a missing or ambiguous anchor halting the run — so no coordinate can drift into a stale citation, which is the same property `gen_phase1p_delegation_bar.py` is LIVE for. The delegation SEED is re-read and reconciled BOTH WAYS on every run, so a seed-admitted delegation the text no longer carries halts it. Nothing in it is dated. ★ WHAT IT DOES NOT ASSERT: that any one grade is RIGHT — whether a naming delegates a concern is an authored judgment, challengeable at the grade — and the artifact declares its one near-tie with both readings and the consequence of each rather than hiding it.",
       "in_the_live_guard_list_after_this_classification": true,
       "state_at_the_committed_tree": "PASS"
     },

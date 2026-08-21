@@ -1413,7 +1413,8 @@
    "the_reconciliation": {
     "raise_guarded_set_operations": [
      "sorted(pop_ids - set(V))",
-     "sorted(set(V) - pop_ids)"
+     "sorted(set(V) - pop_ids)",
+     "sorted(set(W) - new_ids)"
     ],
     "a_reversed_operand_pair": {
      "one_direction": "sorted(pop_ids - set(V))",
@@ -1430,6 +1431,7 @@
      "CLASSES",
      "SHAPES",
      "V",
+     "W",
      "_P7"
     ]
    },

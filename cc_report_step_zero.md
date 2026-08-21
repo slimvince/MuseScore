@@ -319,6 +319,26 @@ discharged by anything in this batch.
 | **E3** | **MET FOR THE MEMBERS READ, AND THE REMAINDER IS DECLARED** | Every NEW member carries exactly one verdict in the inherited vocabulary or the declared `NOT YET READ`; the existing sixty-eight are byte-identical by published digest and by a zero-deletion diff; the per-document distribution is published by the generator; the failure signal is evaluated at the artifact and stated either way; the stop is recorded in the standing form. **It is not met for the unread remainder, and that is the stop, not a shortfall.** |
 | **E4** | **NOT YET ASSERTABLE HERE — BY DESIGN** | The end-state run is taken after the commit carrying this close exists. Its values land in ONE FURTHER commit. **No row, cell or sentence asserting the end state is written into the close commit.** |
 
+**★ E4, GRADED IN THE ONE FURTHER COMMIT — MET.** The row above is left exactly as the close commit
+carried it, because it correctly describes that commit; this addendum is the grading, and it is
+written only after the run that produces it existed. **The full guard set was run at the tree the
+close commit `a1d7d95ecc` left, and read** — every run check passes except [[OI-372]]'s tool, with
+**zero STOPs**. The population grew by one against the start state, which is this batch's own ordered
+act: the document-set generator carries a `--check` and was registered in both guard homes in the act
+that created it.
+
+**The run found a SECOND red before it found the end state, and that is reported here rather than
+quietly cleared.** Its cause was **established at the object before either artifact was touched**
+(**D-669**): the recognizer establishment sort reads each tool's own reconciliation expressions, and
+Task 3 gave the July screen a SECOND authored block with a reconciliation of its own. The measured
+difference is two added expressions and nothing else — **no member entered or left that
+classification and no verdict moved**. The artifact was regenerated and the full set re-run, so the
+committed registries record the **true** end state and not the transient one. **A2's condition — a
+red outside the subjects of this batch's own acts — did not fire at any point in the batch.**
+
+Every value is at `tools/audit/guard_state.json`, written by the run itself; the table stands in §8
+of the close and no figure is restated here (**D-431**).
+
 ---
 
 ## 10. The plan's tell, in one sentence
@@ -327,6 +347,14 @@ discharged by anything in this batch.
 document-set generator, the artifacts and the report?** Yes, and it is named: two edits to the guard
 registry and two regenerated guard artifacts, each forced by the registry's own STOP on a tool this
 batch was ordered to create, and each declared in §8 rather than left for a reader to find.
+
+**★ THE TELL, RE-TAKEN OVER THE WHOLE BATCH IN THE ONE FURTHER COMMIT.** The sentence above was
+written at the close and was true of it. Taken over the batch INCLUDING the further commit, the
+answer is unchanged in kind and larger by one item: the recognizer establishment sort was regenerated
+a SECOND time, for the reason the E4 addendum establishes at the object. The two guard registries were
+also rewritten, and that is not an extra — writing them IS what running the set does, and the
+end-state run is the thing this commit exists to carry. **Nothing else was produced, and nothing
+this batch touched lies outside the subjects of its own ordered acts.**
 
 ---
 

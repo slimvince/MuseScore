@@ -15883,3 +15883,49 @@ Rulings 6, 7, 8 and 9 of `cowork_rulings_2026_08_21_successor_plan_sitting.md`. 
 above was read at the object by explicit hash. This section is written into the close commit, whose
 own identity it therefore cannot contain, and the end-state run's values land in the one further
 commit after it.*
+
+## 8. THE END STATE — run at the tree the close commit `a1d7d95ecc` left, and written only after it existed
+
+**E4 — MET.** The full guard set was run at the close tree, read, and never inferred. **Every run
+check passes except [[OI-372]]'s tool, and there are ZERO STOPs.**
+
+| | run | passing | failing | not run | historical | STOPs |
+|---|---:|---:|---:|---:|---:|---:|
+| start state, before any edit | 73 | 71 | 2 | 4 | 16 | 0 |
+| **end state, at the tree the close left** | **74** | **73** | **1** | 4 | 16 | **0** |
+
+**The population grew by one, and that is this batch's own ordered act**: the document-set generator
+carries a `--check`, so it is a DERIVED candidate of the registry, and it was registered in both
+guard homes in the act that created it rather than being left to reach a later pass unclassified.
+**The two start-state reds are down to the one standing red the record already carries** — the
+membership check was cleared at Task 0 by the act that tracked this dispatch's own inputs, and
+nothing else was added.
+
+**★ THE END-STATE RUN ITSELF FOUND A SECOND RED, AND IT IS REPORTED RATHER THAN QUIETLY CLEARED.**
+The first end-state run returned TWO failing checks: [[OI-372]]'s tool, and the recognizer
+establishment sort. **The cause was ESTABLISHED AT THE OBJECT before either artifact was touched**
+(**D-669**), and it is this batch's own act: that sort reads each tool's own reconciliation
+expressions, and Task 3 gave the July screen a SECOND authored block with a reconciliation of its
+own, so the sort's reading of that one tool moved. The measured difference is exactly two added
+expressions and nothing else — **no member entered or left the sort's classification and no verdict
+moved**, its walked-tools count, member count and three class counts all standing unchanged. The
+artifact was regenerated and the full set re-run, so **the registries record the true end state
+rather than the transient one**. A2's condition — a red outside this batch's own acts' subjects —
+did not fire at any point in the batch.
+
+**Both registries re-derive**, and so does every generator this batch touched or created: the
+document set, the widened split, the July screen, the epoch write-path enumeration and the
+recognizer sort.
+
+**★ A READER WHO OPENS THE CLOSE COMMIT'S OWN COPY OF `guard_state.json` WILL FIND NEITHER ROW OF THE
+TABLE ABOVE, AND THAT IS THE E-ORDERING RULE WORKING RATHER THAN A DISCREPANCY.** That copy records
+a MID-BATCH run — the state after Task 0 cleared the membership check but before the document-set
+generator was registered. It cannot record the end state, because the end state is a property of the
+tree that commit LEFT, and a commit cannot contain a run over itself. Neither registry's own
+`--check` is in the run population, which is why the artifacts lag until they are regenerated; that
+was established by reading the run's check list, not assumed.
+
+*Provenance: CC, 2026-08-21, appended in the one further commit after the close commit `a1d7d95ecc`
+existed — a commit whose own identity this paragraph therefore cannot contain. Every value above was
+read from the run recorded in `tools/audit/guard_state.json`, which that run itself wrote; no value
+here was carried forward from an earlier run or inferred from a summary.*
