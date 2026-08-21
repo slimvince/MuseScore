@@ -632,6 +632,289 @@ def w(commit, path, header, verdict, ground, shape=None, act=None, ratification_
                                  "act": act, "ratification_at": ratification_at, "remark": remark}
 
 
+# ★ ONE NOTE ON THE SHAPE VOCABULARY, RECORDED ONCE HERE RATHER THAN AT EVERY VERDICT.  The six
+# shapes are the original screen's and are inherited unchanged.  The gloss of
+# `describes-pre-existing-implementation-behaviour` ends "Nothing standing is withdrawn — in the
+# instances here the behaviour is named as a DEFECT" — a description of the instances the ORIGINAL
+# screen met, not a condition of the shape: that screen's own single POSITIVELY CODE-INFLUENCED
+# verdict carries this shape.  In the widened population the dominant kind is a documentation
+# statement CORRECTED against the implementation, which withdraws something standing.  It is
+# reported under this same shape, because inventing a seventh would amend a method Ruling 7 fixes as
+# untouched, and the withdrawal is stated in each verdict's own ground.
+
+# ── 2026-08-02 · the phase-1 HOMING acts (D-231's first half) ─────────────────────────────────────
+_HOMING = "f833a2d2a9f4fd389da913fb17b9ff3b558012ec"
+_HOMING_GROUND = (
+    "The commit's own account is \"phase 1 Task 1 — the homing acts (20 decisions written into "
+    "their owning specifications)\", and it states what it is: every register entry whose home was "
+    "a documentation gap or a tracking surface is written into the specification that owns it, "
+    "\"in that specification's own voice, with its defense and its ratifying date\". The hunk adds "
+    "text that carries its own ratification date. No fact about the implementation is the source "
+    "of the addition, and nothing the documentation already stated is withdrawn or narrowed by it.")
+
+w(_HOMING, "ARCHITECTURE.md", "-250,0 +251,45", RATIFIED,
+  _HOMING_GROUND + " Here the added block is the joint estimator's standing rules, and each rule "
+  "carries its own ratifying date inside the added text — \"Ratified by the user 2026-07-17\", "
+  "\"Protocols ratified 2026-07-19\", the OI-178 adoption \"user-ratified 2026-07-26\". The block "
+  "also NAMES an unresolved tension (the key axis against §5.7a) and leaves it unsettled, which is "
+  "a homing act recording a decision rather than taking one.",
+  "governing-decision-record",
+  act="the D-231 phase-1 homing of the joint estimator's four standing rules into their owning "
+      "specification",
+  ratification_at="each rule's own ratifying date inside the added text; and D-231 itself at "
+                  "`CLAUDE.md` Conventions at HEAD")
+
+w(_HOMING, "ARCHITECTURE.md", "-843,0 +889,60", RATIFIED,
+  _HOMING_GROUND + " Here the added text is §2.15's three cross-cutting contracts and the new "
+  "§2.16, and every one carries its own attribution — \"Ratified by the user 2026-07-02\", "
+  "\"ratified by the user 2026-07-06\", \"Ratified by the user 2026-07-10 and amended 2026-07-12\", "
+  "and \"Two requirements the user stated on 2026-07-28\".",
+  "governing-decision-record",
+  act="the D-231 phase-1 homing of the cross-layer confidence contract, the negative-evidence rule, "
+      "the fact-publication corollary and the two standing design requirements",
+  ratification_at="each contract's own attribution inside the added text; and the same rules at "
+                  "`CLAUDE.md` at HEAD")
+
+w(_HOMING, "ARCHITECTURE.md", "-3654 +3759,6", RATIFIED,
+  _HOMING_GROUND + " Here the hunk QUALIFIES §5.12's Status line by recording that the two-pass "
+  "pedal detector is superseded as a DESIGN by the voice-independent class, \"user-ratified "
+  "2026-07-26\". ★ The first class was tested and does not fire: the qualification's ground — that "
+  "the two-pass detector can only see the lowest voice — is stated by §5.12's own text, which "
+  "specifies the detector on the lowest-pitched tone, so it is available from the documentation "
+  "and is not a fact read in implementation code this commit did not write.",
+  "governing-decision-record",
+  act="the voice-independent pedal-point ruling of the notation-adoption increment",
+  ratification_at="the added text's own \"user-ratified 2026-07-26\"; and §7.4 at HEAD, which "
+                  "states the ratifying surface as `cowork_notation_adoption_increment.md` §7 + §10")
+
+w(_HOMING, "ARCHITECTURE.md", "-4230,0 +4341,13", RATIFIED,
+  _HOMING_GROUND + " Here the added block is §7.4's voice-independent pedal-point class (D-207), "
+  "\"user-ratified 2026-07-26\". ★ The first class was tested and does not fire, and the call is "
+  "recorded because it is close: the added text DOES cite implementation code this commit did not "
+  "write (`chordpostpasses.cpp:275`) and DOES supersede a standing pair of published facts. What "
+  "decides it is that the code citation is offered as the DESIGN reason the legacy mechanism is "
+  "inadequate, not as a fact against which a documentation statement was found false — the "
+  "supersession's source is the user's ratification, which the text names.",
+  "governing-decision-record",
+  act="the voice-independent pedal-point class of the ornament vocabulary (D-207)",
+  ratification_at="the added text's own \"user-ratified 2026-07-26\" and its naming of the "
+                  "ratifying surface `cowork_notation_adoption_increment.md` §7 + §10")
+
+w(_HOMING, "ARCHITECTURE.md", "-4655,0 +4779,11", RATIFIED,
+  _HOMING_GROUND + " Here the added block is §11's HELD status and the declaration that intonation "
+  "is a named future CONSUMER of the analysis, \"user-decided 2026-07-13\", quoting the user's own "
+  "stated dependency.",
+  "governing-decision-record",
+  act="the user's decision of 2026-07-13 that intonation is held and is a declared future consumer "
+      "of the analysis (D-206)",
+  ratification_at="the added text's own \"user-decided 2026-07-13\"; the row it names, "
+                  "`OPEN_ITEMS.md` OI-62")
+
+w(_HOMING, "ARCHITECTURE.md", "-6239,0 +6374,11", RATIFIED,
+  _HOMING_GROUND + " Here the added block is §16's rule that a HUMAN acts as ground truth where "
+  "none is published, \"user-decided 2026-07-13\", with the language-model judge admitted as "
+  "triage and explicitly never as a grader.",
+  "governing-decision-record",
+  act="the user's decision of 2026-07-13 that a human is ground truth where none is published "
+      "(D-205)",
+  ratification_at="the added text's own \"user-decided 2026-07-13\"; the rows it names, "
+                  "`OPEN_ITEMS.md` OI-38 and OI-56")
+
+# ── 2026-08-02 · the phase-1 TRUTH-SYNC (D-231's second half) ─────────────────────────────────────
+# ★ THIS COMMIT IS THE ONE THE FIRST CLASS IS WRITTEN FOR, AND ITS OWN ACCOUNT SAYS SO.  The class's
+# second limb admits a hunk where "the change's own account states that a documentation statement
+# was corrected against the implementation".  This commit's account states exactly that, in terms:
+# "a specification cannot be the compliance standard while it misdescribes the code, so every
+# statement the named open-items rows establish as false at HEAD is corrected".  Each hunk below is
+# nonetheless graded on ITS OWN text, and three of the thirty-nine do NOT fire the first class.
+_SYNC = "ab336f43b5e5610077488117a8a3a1ea32cec440"
+_SYNC_ACCOUNT = (
+    "The commit's own account is \"phase 1 Task 2 — the truth-sync (every named false "
+    "specification statement corrected at HEAD)\", and it states the correction's direction in "
+    "terms: \"a specification cannot be the compliance standard while it misdescribes the code, so "
+    "every statement the named open-items rows establish as false at HEAD is corrected\". That is "
+    "the first class's second limb, word for word.")
+
+
+def _sync(header, subject, cites, extra=""):
+    w(_SYNC, "ARCHITECTURE.md", header, CODE_INFLUENCED,
+      _SYNC_ACCOUNT + f" This hunk {subject} The correction's own text cites {cites}, which this "
+      "commit did not write." + (" " + extra if extra else ""),
+      "describes-pre-existing-implementation-behaviour")
+
+
+_sync("-39,4 +39,9",
+      "REPLACES the STAGED-SCOPE clause, which said the in-app notation layer stays on the legacy "
+      "pipeline, with the statement that the switch closed the migration on both surfaces; its own "
+      "parenthesis says the replaced sentence \"the switch made false\".",
+      "the flag default at `composingconfiguration.cpp:178`")
+_sync("-138,2 +143,4",
+      "REPLACES the layer-sections scope note, which had the two surfaces the wrong way round; its "
+      "own parenthesis says the replaced sentence said \"the legacy pipeline was still live on the "
+      "notation path\".",
+      "the notation switch and the resulting dormant-compiled state of both surfaces")
+_sync("-1236 +1257,13",
+      "REPLACES Layer 3's build-state tag `Built+Live` with `Built+Dormant` and adds the "
+      "verification; its own heading is \"Build-state correction\" and it says the tag \"the two "
+      "adoptions made false\".",
+      "all four production call sites — `notationcomposingbridge.cpp:324-328` and `:1509-1513`, "
+      "`notationimplodebridge.cpp:1434-1441`, `notationtuningbridge.cpp:794` — and the flag default "
+      "at `composingconfiguration.cpp:178`")
+_sync("-1290 +1323,10",
+      "REPLACES Layer 4's heading clause \"engages with L5\", which \"no longer describes anything "
+      "scheduled\", and records that the plan was overtaken without any ruling naming it.",
+      "the state of the production inference layer on both surfaces since the two adoptions",
+      "The source is what the implementation became, established at the adoptions rather than at a "
+      "ruling — the hunk's own words are \"a supersession in fact, not by decision\".")
+_sync("-1362,4 +1404,8",
+      "REPLACES the voice-leading layer's description \"not built\"; its own parenthesis says the "
+      "entry \"said 'not built', contradicting §2.15 in the same document\".",
+      "the built-and-dormant state of the axis-2 foundation (VL-A/VL-B/VL-C)")
+for _h, _what in (
+        ("-1622,0 +1669,3", "ADDS the note recording that the documented bit order was wrong"),
+        ("-1628,2 +1677,2", "SWAPS the documented bits 4 and 5 of the Extension mask"),
+        ("-1633,2 +1682,2", "SWAPS the documented bits 9 and 10 of the Extension mask"),
+        ("-1638,2 +1687,2", "SWAPS the documented bits 14 and 15 of the Extension mask")):
+    _sync(_h, _what + ", correcting the listing against the header it claims to reproduce.",
+          "`chordanalyzer.h:213-230`",
+          "The added note states the consequence itself: \"a reader deriving a mask from this "
+          "listing would be wrong\".")
+_sync("-1641,0 +1691,2",
+      "ADDS the note recording that four fields were missing from the documented field list.",
+      "the `ChordIdentity` definition the listing claims to reproduce")
+for _h, _what in (
+        ("-1647,0 +1699", "`naturalFifthPresent`"),
+        ("-1648,0 +1701", "`tiePriority`"),
+        ("-1649,0 +1703,3", "`isPedalPoint` and `pedalBassPc`")):
+    _sync(_h, f"ADDS {_what} to the documented field list, re-syncing it with the struct.",
+          "the `ChordIdentity` definition in the code")
+_sync("-1643 +1694",
+      "REPLACES the documented meaning of `score` — \"Raw confidence. Higher is better. Not "
+      "normalized.\" becomes \"Raw template-match score. Higher is better. Ranking only.\"",
+      "what the field actually is in the scorer",
+      "A documented statement about what a published value MEANS, corrected against the code that "
+      "produces it.")
+_sync("-1685 +1741,4",
+      "REPLACES the documented default of `bassNoteRootBonus`, 0.65 with 0.70.",
+      "the code default at `analysis/types/analysistypes.h:196`")
+_sync("-1718 +1777",
+      "REPLACES the gates' documented home and drops Gate K from the list of live calibrated "
+      "thresholds.",
+      "`postscoringgates.cpp`, where the two surviving margin constants are declared")
+_sync("-1726,0 +1786,9",
+      "ADDS the two corrections in full — the gates' home, and Gate K's retirement, which made "
+      "listing it \"as a live calibrated threshold false\".",
+      "`postscoringgates.cpp:46`, `:47`, `:49` and `:523`",
+      "It also records that the same retired threshold is still listed in `CLAUDE.md` and that "
+      "correcting a governing document was outside the pass's scope — an owed correction named "
+      "rather than taken.")
+_sync("-1769 +1837,2",
+      "REPLACES §4.1b's restatement of the same constant, 0.65 with 0.70.",
+      "the same code default, cited as OI-107(a)")
+_sync("-1787,4 +1856,20",
+      "MARKS §4.1b's safety constraint superseded and states the constraint that actually survives, "
+      "\"read off the code\", noting that it differs between the two predicates.",
+      "`chordanalyzer.cpp:855-870` and `:829-853`",
+      "Its closing sentence states the direction of the correction exactly: \"No code change is "
+      "owed — the code is the later behaviour and is correct; what was owed was saying so here.\"")
+_sync("-2239 +2324,7",
+      "REPLACES the backlog item's status with PARTLY DONE and states which half was done.",
+      "`analysis/chord/chordsymbolformatter.cpp` and the absence of a `chordsymbolformatter.h`")
+_sync("-2818 +2909,6",
+      "REPLACES §4.3's single \"File:\" line, which \"predated refactor-1\".",
+      "the split between the declaring header and the implementing translation unit")
+_sync("-2867,3 +2963,6",
+      "REPLACES the Roman-numeral scope paragraph, which said extensions beyond the 7th are \"not "
+      "yet emitted\".",
+      "`chordsymbolformatter.cpp:590-616`")
+for _h, _what in (
+        ("-3032 +3131,3", "REPLACES AnalysisUtils' documented path, which omitted the `chord/` "
+                          "component"),
+        ("-3034 +3135,2", "REPLACES the one-line description of what the leaf is"),
+        ("-3039,0 +3142,5", "ADDS the three functions the listing was missing")):
+    _sync(_h, _what + ".", "the header as it stands at `analysis/chord/analysisutils.h`")
+_sync("-3753,3 +3860,10",
+      "REPLACES §5.11's assertion that the augmented-sixth labels are \"Gated to Standard and "
+      "Baroque presets only\", which \"the code defers exactly\".",
+      "`chordsymbolformatter.cpp:882-883`")
+for _h, _what in (
+        ("-3838,2 +3952,13", "REPLACES §5.13's claim that there is \"no path-selection flag\", "
+                             "which was \"false at HEAD\""),
+        ("-3842,0 +3968,3", "ADDS the sentence declaring what each row of the rebuilt table means "
+                            "at HEAD"),
+        ("-3845,7 +3973,27", "REPLACES the whole entry-point table, every row rebuilt against what "
+                             "runs")):
+    _sync(_h, _what + ".",
+          "`notationcomposingbridge.cpp:728-738`, `:703`, `:621`, `:1385`, "
+          "`notationimplodebridge.cpp:1409-1431`, `notationtuningbridge.cpp:794` and the flag "
+          "default at `composingconfiguration.cpp:178`")
+_sync("-4677,0 +4826,8",
+      "ADDS the premise correction to §10.0, recording that its prerequisite and \"the whole "
+      "premise above are false at HEAD\".",
+      "the production annotation path, which \"never calls `greedyExpandSegmentation()`\"")
+_sync("-5591,4 +5747,13",
+      "REPLACES §11.5's status and its account of what the implode action runs.",
+      "`notationimplodebridge.cpp:1409-1431` and `:1434-1441`, and the declared-versus-defined "
+      "split at `notationcomposingbridge.h:161` / `notationharmonicrhythmbridge.cpp:69`")
+_sync("-5998,3 +6163,22",
+      "REPLACES §12.1a's two clauses — \"analysis cost is negligible (well under 1ms)\" and "
+      "\"suppressing the display does not require skipping the analysis\" — both of which the "
+      "correction states are \"false on the production path\".",
+      "the note-seam funnel's whole-score decode and the measurement at "
+      "`tools/joint_estimator/noteseam_latency.json`")
+for _h, _what in (
+        ("-6008,2 +6192,4", "REPLACES §12.1b's claim that two actions are registered"),
+        ("-6016,3 +6202,22", "ADDS the seven further actions, each with its registration site, and "
+                             "records the right-click chord anchor with \"derivation not "
+                             "recorded\"")):
+    _sync(_h, _what + ".",
+          "`notationuiactions.cpp:1402`–`:1432`, `notationcontextmenumodel.cpp:174` and `:210-214`, "
+          "and `notationactioncontroller.cpp:387`")
+
+# ── the three hunks of the truth-sync commit where the FIRST CLASS DOES NOT FIRE ──────────────────
+w(_SYNC, "ARCHITECTURE.md", "-819 +826,4", RATIFIED,
+  _SYNC_ACCOUNT + " ★ BUT THIS HUNK IS NOT A CORRECTION AGAINST THE IMPLEMENTATION. It replaces "
+  "the parenthetical \"ratification-gated\" with \"RATIFIED by the user 2026-07-02\" — a statement "
+  "about a RULING, corrected against the ruling record, with no fact from the code in its source. "
+  "The first class was applied first and does not fire; the second does, and the hunk records what "
+  "a named user act ratified.",
+  "governing-decision-record",
+  act="the user's ratification of review amendment A-1, the cross-layer confidence and calibration "
+      "contract, on 2026-07-02",
+  ratification_at="`cowork_confidence_contract.md`'s own banner, \"Status: RATIFIED (user, "
+                  "2026-07-02)\"; and the corrected parenthesis itself at `ARCHITECTURE.md` at HEAD")
+
+w(_SYNC, "ARCHITECTURE.md", "-821 +831,2", RESTRUCTURING,
+  _SYNC_ACCOUNT + " ★ BUT THIS HUNK CARRIES NONE OF THAT. It appends one sentence re-pointing the "
+  "reader to where the contract's own rule and defense are stated, in the list below. No standing "
+  "statement is withdrawn, no code fact is its source, and no user act is recorded — it is a "
+  "pointer added inside the document.",
+  "document-relocation-or-re-heading")
+
+w(_SYNC, "ARCHITECTURE.md", "-823,2 +834,12", RESTRUCTURING,
+  _SYNC_ACCOUNT + " ★ BUT THIS HUNK CORRECTS THE DOCUMENT'S ACCOUNT OF ITSELF, NOT OF THE CODE. It "
+  "withdraws the claim that the span-typology rename was \"propagated through every layer spec\" "
+  "and states what it actually covered — established by reading THIS document, which still uses "
+  "the banned bare word in four headings the correction names. Its source is the document's own "
+  "text; nothing from the implementation appears in it. The shape is reported as a re-heading "
+  "because the subject of both the original claim and the correction is a renaming programme; it "
+  "is the nearest of the six inherited shapes and no seventh is invented.",
+  "document-relocation-or-re-heading")
+
+w(_SYNC, "ARCHITECTURE.md", "-6307 +6512", RESTRUCTURING,
+  _SYNC_ACCOUNT + " ★ BUT THIS HUNK IS A HEADING RE-MARK whose source is the project's own work "
+  "history, not the code: `*(next)*` becomes `*(not started; NOT the next thing)*`. No fact read "
+  "in implementation code is its source.",
+  "document-relocation-or-re-heading")
+
+w(_SYNC, "ARCHITECTURE.md", "-6313,0 +6519,6", RESTRUCTURING,
+  _SYNC_ACCOUNT + " ★ BUT THIS HUNK'S SOURCE IS THE PROJECT'S OWN WORK HISTORY, not the code: it "
+  "adds the correction paragraph for the heading above, whose ground is that \"no session since "
+  "2026-04 has treated [Phase 3] as the next thing\". It leaves when the phase becomes next OPEN "
+  "and settles nothing.",
+  "new-document-content")
+
+
 # ── DERIVED ──────────────────────────────────────────────────────────────────────────────────────
 _HDR = re.compile(r"^@@ (-\S+ \+\S+) @@")
 
@@ -990,6 +1273,18 @@ def build() -> dict:
                 "narrow. SO A CLEAN CLASS IS NOT A CERTIFICATE that a change was uninfluenced. "
                 "That text is INHERITED from the screen this widens and is not re-argued here."),
             "ruling": widened_block["ruling"],
+            "★_a_POSITIVELY_CODE_INFLUENCED_hunk_HERE_is_not_the_period_questions_falsification": (
+                "The falsification rule at the head of this artifact belongs to the ORIGINAL "
+                "screen and to its population, which is OUT-OF-PERIOD by construction: a "
+                "code-influenced correction found THERE would mean the ruled period start is in "
+                "the wrong place, and it re-opens that question. THIS population is deliberately "
+                "wider — every stratum, in-period and out-of-period alike — because Ruling 7 asks "
+                "it to MEASURE the pollution rather than to test the period. So an IN-PERIOD "
+                "positively-code-influenced hunk here is the measurement's own subject and is "
+                "EXPECTED: the period is defined as the programme under which the truth-sync "
+                "happened. It is not a falsification of anything, and it must not be read as one. "
+                "Each hunk records whether it is in period, so the two readings never have to be "
+                "guessed apart."),
             "★_the_method_is_inherited_whole": (
                 "The four classes, the ORDER they are applied in, the six reported shapes and the "
                 "five STOPs are the existing screen's and are unchanged — \"its method untouched\" "
@@ -1205,6 +1500,10 @@ def render_report(art: dict) -> str:
     L.append("**What this is, honestly.** " + W_ART["what_it_is_honestly"])
     L.append("")
     L.append("**The method is inherited whole.** " + W_ART["★_the_method_is_inherited_whole"])
+    L.append("")
+    L.append("**A code-influenced hunk HERE is not the period question's falsification.** "
+             + W_ART["★_a_POSITIVELY_CODE_INFLUENCED_hunk_HERE_is_not_the_period_questions_"
+                     "falsification"])
     L.append("")
     L.append("**The existing sixty-eight are not re-read or re-graded.** "
              + W_ART["★_the_existing_sixty_eight_are_not_re_read_or_re_graded"]

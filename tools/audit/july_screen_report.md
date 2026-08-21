@@ -656,6 +656,8 @@ Every hunk's text was retrieved from the git object by explicit hash — `git sh
 
 **The method is inherited whole.** The four classes, the ORDER they are applied in, the six reported shapes and the five STOPs are the existing screen's and are unchanged — "its method untouched" is Ruling 7's own clause. What is added is a SECOND POPULATION, a SECOND AUTHORED BLOCK for it, and two declared values: NOT YET READ, the one declared exception to the no-verdict STOP, and OUTSIDE NAMED SECTIONS, for a hunk of a section-scoped member falling outside the sections its delegation names.
 
+**A code-influenced hunk HERE is not the period question's falsification.** The falsification rule at the head of this artifact belongs to the ORIGINAL screen and to its population, which is OUT-OF-PERIOD by construction: a code-influenced correction found THERE would mean the ruled period start is in the wrong place, and it re-opens that question. THIS population is deliberately wider — every stratum, in-period and out-of-period alike — because Ruling 7 asks it to MEASURE the pollution rather than to test the period. So an IN-PERIOD positively-code-influenced hunk here is the measurement's own subject and is EXPECTED: the period is defined as the programme under which the truth-sync happened. It is not a falsification of anything, and it must not be read as one. Each hunk records whether it is in period, so the two readings never have to be guessed apart.
+
 **The existing sixty-eight are not re-read or re-graded.** A widened hunk that is ALREADY in the existing screen population inherits that hunk's existing verdict verbatim; no verdict of the original sixty-eight is re-authored, and the `verdicts` array above is byte-unchanged by this widening. Digest of the existing authored block: `32366793f298ff1c1d17422b61aed4660b0fdefe7aa201bc677ead0e0435320c`. Compare it across the runs of this batch. An identical value is a measurement that the existing authored block did not move; a different one means a verdict of the original sixty-eight changed, which the widening may not do.
 
 ## ★ The ruled failure signal — INCONCLUSIVE-AT-THIS-COVERAGE
@@ -664,19 +666,19 @@ Every hunk's text was retrieved from the git object by explicit hash — `git sh
 
 The widened population is not yet read whole, so a majority over the read members cannot be reported as the ruled signal firing. The read share is published beside the majority, and the ruling's own words are that a majority reached only because few members were read is reported this way rather than as the signal firing.
 
-- Read members: **32** of **437** (read share 0.0732).
-- UNDETERMINED among the read: **14** (share of the read 0.4375).
+- Read members: **77** of **437** (read share 0.1762).
+- UNDETERMINED among the read: **14** (share of the read 0.1818).
 
 ## The widened population
 
 - **437 hunks** across **210 commits** and **18 documents** — **32** already screened and inherited, **405** new.
-- By verdict: NOT YET READ 405, POSITIVELY CODE-INFLUENCED 1, RATIFIED-ACT EDIT 10, RESTRUCTURING-SHAPED 7, UNDETERMINED 14.
+- By verdict: NOT YET READ 360, POSITIVELY CODE-INFLUENCED 35, RATIFIED-ACT EDIT 17, RESTRUCTURING-SHAPED 11, UNDETERMINED 14.
 
 ## The per-document pollution distribution
 
 | member | hunks | read | POSITIVELY CODE-INFLUENCED | RATIFIED-ACT EDIT | RESTRUCTURING-SHAPED | UNDETERMINED | NOT YET READ | OUTSIDE NAMED SECTIONS | coverage gap |
 |---|---|---|---|---|---|---|---|---|---|
-| `ARCHITECTURE.md` | 152 | 27 | 0 | 8 | 7 | 12 | 125 | 0 | — |
+| `ARCHITECTURE.md` | 152 | 72 | 34 | 15 | 11 | 12 | 80 | 0 | — |
 | `STATUS.md` | 200 | 0 | 0 | 0 | 0 | 0 | 200 | 0 | — |
 | `cowork_bounded_context_design.md` | 4 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | — |
 | `cowork_confidence_contract.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — |
@@ -724,7 +726,7 @@ Every document-set member with NO FLAG hunk in the candidate enumeration, with t
 
 Recorded so that a continuing session derives the remainder fresh rather than carrying it from this session's account of it. The order below is the artifact's own — by document, then by commit, then by hunk.
 
-- `ARCHITECTURE.md` — **125** unread
+- `ARCHITECTURE.md` — **80** unread
 - `STATUS.md` — **200** unread
 - `cowork_bounded_context_design.md` — **4** unread
 - `cowork_confidence_contract.md` — **1** unread
@@ -742,6 +744,337 @@ Recorded so that a continuing session derives the remainder fresh rather than ca
 - `cowork_stage5_fitter_design.md` — **2** unread
 - `cowork_voiceleading_axis_design.md` — **5** unread
 - `docs/scoring_model.md` — **26** unread
+
+## Every NEW hunk read so far, with its verdict and its ground
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-250,0 +251,45` · f833a2d2a9
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)", and it states what it is: every register entry whose home was a documentation gap or a tracking surface is written into the specification that owns it, "in that specification's own voice, with its defense and its ratifying date". The hunk adds text that carries its own ratification date. No fact about the implementation is the source of the addition, and nothing the documentation already stated is withdrawn or narrowed by it. Here the added block is the joint estimator's standing rules, and each rule carries its own ratifying date inside the added text — "Ratified by the user 2026-07-17", "Protocols ratified 2026-07-19", the OI-178 adoption "user-ratified 2026-07-26". The block also NAMES an unresolved tension (the key axis against §5.7a) and leaves it unsettled, which is a homing act recording a decision rather than taking one.
+- **The act:** the D-231 phase-1 homing of the joint estimator's four standing rules into their owning specification
+- **Where its ratification is recorded:** each rule's own ratifying date inside the added text; and D-231 itself at `CLAUDE.md` Conventions at HEAD
+- *Retrieve:* `git show f833a2d2a9f4fd389da913fb17b9ff3b558012ec --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-843,0 +889,60` · f833a2d2a9
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)", and it states what it is: every register entry whose home was a documentation gap or a tracking surface is written into the specification that owns it, "in that specification's own voice, with its defense and its ratifying date". The hunk adds text that carries its own ratification date. No fact about the implementation is the source of the addition, and nothing the documentation already stated is withdrawn or narrowed by it. Here the added text is §2.15's three cross-cutting contracts and the new §2.16, and every one carries its own attribution — "Ratified by the user 2026-07-02", "ratified by the user 2026-07-06", "Ratified by the user 2026-07-10 and amended 2026-07-12", and "Two requirements the user stated on 2026-07-28".
+- **The act:** the D-231 phase-1 homing of the cross-layer confidence contract, the negative-evidence rule, the fact-publication corollary and the two standing design requirements
+- **Where its ratification is recorded:** each contract's own attribution inside the added text; and the same rules at `CLAUDE.md` at HEAD
+- *Retrieve:* `git show f833a2d2a9f4fd389da913fb17b9ff3b558012ec --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-3654 +3759,6` · f833a2d2a9
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)", and it states what it is: every register entry whose home was a documentation gap or a tracking surface is written into the specification that owns it, "in that specification's own voice, with its defense and its ratifying date". The hunk adds text that carries its own ratification date. No fact about the implementation is the source of the addition, and nothing the documentation already stated is withdrawn or narrowed by it. Here the hunk QUALIFIES §5.12's Status line by recording that the two-pass pedal detector is superseded as a DESIGN by the voice-independent class, "user-ratified 2026-07-26". ★ The first class was tested and does not fire: the qualification's ground — that the two-pass detector can only see the lowest voice — is stated by §5.12's own text, which specifies the detector on the lowest-pitched tone, so it is available from the documentation and is not a fact read in implementation code this commit did not write.
+- **The act:** the voice-independent pedal-point ruling of the notation-adoption increment
+- **Where its ratification is recorded:** the added text's own "user-ratified 2026-07-26"; and §7.4 at HEAD, which states the ratifying surface as `cowork_notation_adoption_increment.md` §7 + §10
+- *Retrieve:* `git show f833a2d2a9f4fd389da913fb17b9ff3b558012ec --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-4230,0 +4341,13` · f833a2d2a9
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)", and it states what it is: every register entry whose home was a documentation gap or a tracking surface is written into the specification that owns it, "in that specification's own voice, with its defense and its ratifying date". The hunk adds text that carries its own ratification date. No fact about the implementation is the source of the addition, and nothing the documentation already stated is withdrawn or narrowed by it. Here the added block is §7.4's voice-independent pedal-point class (D-207), "user-ratified 2026-07-26". ★ The first class was tested and does not fire, and the call is recorded because it is close: the added text DOES cite implementation code this commit did not write (`chordpostpasses.cpp:275`) and DOES supersede a standing pair of published facts. What decides it is that the code citation is offered as the DESIGN reason the legacy mechanism is inadequate, not as a fact against which a documentation statement was found false — the supersession's source is the user's ratification, which the text names.
+- **The act:** the voice-independent pedal-point class of the ornament vocabulary (D-207)
+- **Where its ratification is recorded:** the added text's own "user-ratified 2026-07-26" and its naming of the ratifying surface `cowork_notation_adoption_increment.md` §7 + §10
+- *Retrieve:* `git show f833a2d2a9f4fd389da913fb17b9ff3b558012ec --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-4655,0 +4779,11` · f833a2d2a9
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)", and it states what it is: every register entry whose home was a documentation gap or a tracking surface is written into the specification that owns it, "in that specification's own voice, with its defense and its ratifying date". The hunk adds text that carries its own ratification date. No fact about the implementation is the source of the addition, and nothing the documentation already stated is withdrawn or narrowed by it. Here the added block is §11's HELD status and the declaration that intonation is a named future CONSUMER of the analysis, "user-decided 2026-07-13", quoting the user's own stated dependency.
+- **The act:** the user's decision of 2026-07-13 that intonation is held and is a declared future consumer of the analysis (D-206)
+- **Where its ratification is recorded:** the added text's own "user-decided 2026-07-13"; the row it names, `OPEN_ITEMS.md` OI-62
+- *Retrieve:* `git show f833a2d2a9f4fd389da913fb17b9ff3b558012ec --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-6239,0 +6374,11` · f833a2d2a9
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)
+- **Ground.** The commit's own account is "phase 1 Task 1 — the homing acts (20 decisions written into their owning specifications)", and it states what it is: every register entry whose home was a documentation gap or a tracking surface is written into the specification that owns it, "in that specification's own voice, with its defense and its ratifying date". The hunk adds text that carries its own ratification date. No fact about the implementation is the source of the addition, and nothing the documentation already stated is withdrawn or narrowed by it. Here the added block is §16's rule that a HUMAN acts as ground truth where none is published, "user-decided 2026-07-13", with the language-model judge admitted as triage and explicitly never as a grader.
+- **The act:** the user's decision of 2026-07-13 that a human is ground truth where none is published (D-205)
+- **Where its ratification is recorded:** the added text's own "user-decided 2026-07-13"; the rows it names, `OPEN_ITEMS.md` OI-38 and OI-56
+- *Retrieve:* `git show f833a2d2a9f4fd389da913fb17b9ff3b558012ec --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-39,4 +39,9` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the STAGED-SCOPE clause, which said the in-app notation layer stays on the legacy pipeline, with the statement that the switch closed the migration on both surfaces; its own parenthesis says the replaced sentence "the switch made false". The correction's own text cites the flag default at `composingconfiguration.cpp:178`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-138,2 +143,4` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the layer-sections scope note, which had the two surfaces the wrong way round; its own parenthesis says the replaced sentence said "the legacy pipeline was still live on the notation path". The correction's own text cites the notation switch and the resulting dormant-compiled state of both surfaces, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-819 +826,4` · ab336f43b5
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. ★ BUT THIS HUNK IS NOT A CORRECTION AGAINST THE IMPLEMENTATION. It replaces the parenthetical "ratification-gated" with "RATIFIED by the user 2026-07-02" — a statement about a RULING, corrected against the ruling record, with no fact from the code in its source. The first class was applied first and does not fire; the second does, and the hunk records what a named user act ratified.
+- **The act:** the user's ratification of review amendment A-1, the cross-layer confidence and calibration contract, on 2026-07-02
+- **Where its ratification is recorded:** `cowork_confidence_contract.md`'s own banner, "Status: RATIFIED (user, 2026-07-02)"; and the corrected parenthesis itself at `ARCHITECTURE.md` at HEAD
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-821 +831,2` · ab336f43b5
+
+- **Verdict:** RESTRUCTURING-SHAPED · shape `document-relocation-or-re-heading`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. ★ BUT THIS HUNK CARRIES NONE OF THAT. It appends one sentence re-pointing the reader to where the contract's own rule and defense are stated, in the list below. No standing statement is withdrawn, no code fact is its source, and no user act is recorded — it is a pointer added inside the document.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-823,2 +834,12` · ab336f43b5
+
+- **Verdict:** RESTRUCTURING-SHAPED · shape `document-relocation-or-re-heading`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. ★ BUT THIS HUNK CORRECTS THE DOCUMENT'S ACCOUNT OF ITSELF, NOT OF THE CODE. It withdraws the claim that the span-typology rename was "propagated through every layer spec" and states what it actually covered — established by reading THIS document, which still uses the banned bare word in four headings the correction names. Its source is the document's own text; nothing from the implementation appears in it. The shape is reported as a re-heading because the subject of both the original claim and the correction is a renaming programme; it is the nearest of the six inherited shapes and no seventh is invented.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1236 +1257,13` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES Layer 3's build-state tag `Built+Live` with `Built+Dormant` and adds the verification; its own heading is "Build-state correction" and it says the tag "the two adoptions made false". The correction's own text cites all four production call sites — `notationcomposingbridge.cpp:324-328` and `:1509-1513`, `notationimplodebridge.cpp:1434-1441`, `notationtuningbridge.cpp:794` — and the flag default at `composingconfiguration.cpp:178`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1290 +1323,10` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES Layer 4's heading clause "engages with L5", which "no longer describes anything scheduled", and records that the plan was overtaken without any ruling naming it. The correction's own text cites the state of the production inference layer on both surfaces since the two adoptions, which this commit did not write. The source is what the implementation became, established at the adoptions rather than at a ruling — the hunk's own words are "a supersession in fact, not by decision".
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1362,4 +1404,8` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the voice-leading layer's description "not built"; its own parenthesis says the entry "said 'not built', contradicting §2.15 in the same document". The correction's own text cites the built-and-dormant state of the axis-2 foundation (VL-A/VL-B/VL-C), which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1622,0 +1669,3` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS the note recording that the documented bit order was wrong, correcting the listing against the header it claims to reproduce. The correction's own text cites `chordanalyzer.h:213-230`, which this commit did not write. The added note states the consequence itself: "a reader deriving a mask from this listing would be wrong".
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1628,2 +1677,2` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk SWAPS the documented bits 4 and 5 of the Extension mask, correcting the listing against the header it claims to reproduce. The correction's own text cites `chordanalyzer.h:213-230`, which this commit did not write. The added note states the consequence itself: "a reader deriving a mask from this listing would be wrong".
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1633,2 +1682,2` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk SWAPS the documented bits 9 and 10 of the Extension mask, correcting the listing against the header it claims to reproduce. The correction's own text cites `chordanalyzer.h:213-230`, which this commit did not write. The added note states the consequence itself: "a reader deriving a mask from this listing would be wrong".
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1638,2 +1687,2` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk SWAPS the documented bits 14 and 15 of the Extension mask, correcting the listing against the header it claims to reproduce. The correction's own text cites `chordanalyzer.h:213-230`, which this commit did not write. The added note states the consequence itself: "a reader deriving a mask from this listing would be wrong".
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1641,0 +1691,2` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS the note recording that four fields were missing from the documented field list. The correction's own text cites the `ChordIdentity` definition the listing claims to reproduce, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1643 +1694` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the documented meaning of `score` — "Raw confidence. Higher is better. Not normalized." becomes "Raw template-match score. Higher is better. Ranking only." The correction's own text cites what the field actually is in the scorer, which this commit did not write. A documented statement about what a published value MEANS, corrected against the code that produces it.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1647,0 +1699` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS `naturalFifthPresent` to the documented field list, re-syncing it with the struct. The correction's own text cites the `ChordIdentity` definition in the code, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1648,0 +1701` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS `tiePriority` to the documented field list, re-syncing it with the struct. The correction's own text cites the `ChordIdentity` definition in the code, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1649,0 +1703,3` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS `isPedalPoint` and `pedalBassPc` to the documented field list, re-syncing it with the struct. The correction's own text cites the `ChordIdentity` definition in the code, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1685 +1741,4` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the documented default of `bassNoteRootBonus`, 0.65 with 0.70. The correction's own text cites the code default at `analysis/types/analysistypes.h:196`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1718 +1777` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the gates' documented home and drops Gate K from the list of live calibrated thresholds. The correction's own text cites `postscoringgates.cpp`, where the two surviving margin constants are declared, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1726,0 +1786,9` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS the two corrections in full — the gates' home, and Gate K's retirement, which made listing it "as a live calibrated threshold false". The correction's own text cites `postscoringgates.cpp:46`, `:47`, `:49` and `:523`, which this commit did not write. It also records that the same retired threshold is still listed in `CLAUDE.md` and that correcting a governing document was outside the pass's scope — an owed correction named rather than taken.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1769 +1837,2` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES §4.1b's restatement of the same constant, 0.65 with 0.70. The correction's own text cites the same code default, cited as OI-107(a), which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-1787,4 +1856,20` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk MARKS §4.1b's safety constraint superseded and states the constraint that actually survives, "read off the code", noting that it differs between the two predicates. The correction's own text cites `chordanalyzer.cpp:855-870` and `:829-853`, which this commit did not write. Its closing sentence states the direction of the correction exactly: "No code change is owed — the code is the later behaviour and is correct; what was owed was saying so here."
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-2239 +2324,7` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the backlog item's status with PARTLY DONE and states which half was done. The correction's own text cites `analysis/chord/chordsymbolformatter.cpp` and the absence of a `chordsymbolformatter.h`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-2818 +2909,6` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES §4.3's single "File:" line, which "predated refactor-1". The correction's own text cites the split between the declaring header and the implementing translation unit, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-2867,3 +2963,6` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the Roman-numeral scope paragraph, which said extensions beyond the 7th are "not yet emitted". The correction's own text cites `chordsymbolformatter.cpp:590-616`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-3032 +3131,3` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES AnalysisUtils' documented path, which omitted the `chord/` component. The correction's own text cites the header as it stands at `analysis/chord/analysisutils.h`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-3034 +3135,2` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the one-line description of what the leaf is. The correction's own text cites the header as it stands at `analysis/chord/analysisutils.h`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-3039,0 +3142,5` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS the three functions the listing was missing. The correction's own text cites the header as it stands at `analysis/chord/analysisutils.h`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-3753,3 +3860,10` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES §5.11's assertion that the augmented-sixth labels are "Gated to Standard and Baroque presets only", which "the code defers exactly". The correction's own text cites `chordsymbolformatter.cpp:882-883`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-3838,2 +3952,13` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES §5.13's claim that there is "no path-selection flag", which was "false at HEAD". The correction's own text cites `notationcomposingbridge.cpp:728-738`, `:703`, `:621`, `:1385`, `notationimplodebridge.cpp:1409-1431`, `notationtuningbridge.cpp:794` and the flag default at `composingconfiguration.cpp:178`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-3842,0 +3968,3` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS the sentence declaring what each row of the rebuilt table means at HEAD. The correction's own text cites `notationcomposingbridge.cpp:728-738`, `:703`, `:621`, `:1385`, `notationimplodebridge.cpp:1409-1431`, `notationtuningbridge.cpp:794` and the flag default at `composingconfiguration.cpp:178`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-3845,7 +3973,27` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES the whole entry-point table, every row rebuilt against what runs. The correction's own text cites `notationcomposingbridge.cpp:728-738`, `:703`, `:621`, `:1385`, `notationimplodebridge.cpp:1409-1431`, `notationtuningbridge.cpp:794` and the flag default at `composingconfiguration.cpp:178`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-4677,0 +4826,8` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS the premise correction to §10.0, recording that its prerequisite and "the whole premise above are false at HEAD". The correction's own text cites the production annotation path, which "never calls `greedyExpandSegmentation()`", which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-5591,4 +5747,13` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES §11.5's status and its account of what the implode action runs. The correction's own text cites `notationimplodebridge.cpp:1409-1431` and `:1434-1441`, and the declared-versus-defined split at `notationcomposingbridge.h:161` / `notationharmonicrhythmbridge.cpp:69`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-5998,3 +6163,22` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES §12.1a's two clauses — "analysis cost is negligible (well under 1ms)" and "suppressing the display does not require skipping the analysis" — both of which the correction states are "false on the production path". The correction's own text cites the note-seam funnel's whole-score decode and the measurement at `tools/joint_estimator/noteseam_latency.json`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-6008,2 +6192,4` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk REPLACES §12.1b's claim that two actions are registered. The correction's own text cites `notationuiactions.cpp:1402`–`:1432`, `notationcontextmenumodel.cpp:174` and `:210-214`, and `notationactioncontroller.cpp:387`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-6016,3 +6202,22` · ab336f43b5
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. This hunk ADDS the seven further actions, each with its registration site, and records the right-click chord anchor with "derivation not recorded". The correction's own text cites `notationuiactions.cpp:1402`–`:1432`, `notationcontextmenumodel.cpp:174` and `:210-214`, and `notationactioncontroller.cpp:387`, which this commit did not write.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-6307 +6512` · ab336f43b5
+
+- **Verdict:** RESTRUCTURING-SHAPED · shape `document-relocation-or-re-heading`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. ★ BUT THIS HUNK IS A HEADING RE-MARK whose source is the project's own work history, not the code: `*(next)*` becomes `*(not started; NOT the next thing)*`. No fact read in implementation code is its source.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-02 · `ARCHITECTURE.md` @ `-6313,0 +6519,6` · ab336f43b5
+
+- **Verdict:** RESTRUCTURING-SHAPED · shape `new-document-content`
+- **Commit subject:** docs: phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)
+- **Ground.** The commit's own account is "phase 1 Task 2 — the truth-sync (every named false specification statement corrected at HEAD)", and it states the correction's direction in terms: "a specification cannot be the compliance standard while it misdescribes the code, so every statement the named open-items rows establish as false at HEAD is corrected". That is the first class's second limb, word for word. ★ BUT THIS HUNK'S SOURCE IS THE PROJECT'S OWN WORK HISTORY, not the code: it adds the correction paragraph for the heading above, whose ground is that "no session since 2026-04 has treated [Phase 3] as the next thing". It leaves when the phase becomes next OPEN and settles nothing.
+- *Retrieve:* `git show ab336f43b5e5610077488117a8a3a1ea32cec440 --no-color -U0 -- ARCHITECTURE.md`
 
 ## What this screen does not do
 
