@@ -80,6 +80,7 @@ from __future__ import annotations
 
 import json
 import re
+import hashlib
 import subprocess
 import sys
 from collections import Counter
@@ -100,6 +101,33 @@ RATIFIED = "RATIFIED-ACT EDIT"
 RESTRUCTURING = "RESTRUCTURING-SHAPED"
 UNDETERMINED = "UNDETERMINED"
 CLASSES = (CODE_INFLUENCED, RATIFIED, RESTRUCTURING, UNDETERMINED)
+
+# ── THE WIDENED POPULATION (added 2026-08-21 by
+#    `cc_instruction_successor_plan_landing_and_step_zero.md` Task 3, executing Ruling 7) ──────────
+#
+# THE METHOD IS INHERITED WHOLE AND UNCHANGED.  The four classes above, the ORDER they are applied
+# in, the six reported shapes and the five STOPs are Ruling 7's own clause — "its method untouched" —
+# and nothing below amends any of them.  What is added is a SECOND POPULATION and a SECOND AUTHORED
+# BLOCK for it; the existing sixty-eight verdicts are neither re-read nor re-graded, and a widened
+# hunk that is ALREADY in the existing screen population INHERITS that verdict rather than receiving
+# a new one.
+#
+# TWO FURTHER VALUES, DECLARED AS ADDITIONS RATHER THAN SMUGGLED INTO THE VOCABULARY:
+#
+#   NOT YET READ            the ONE declared exception to the STOP that a population member with no
+#                           authored verdict halts the tool.  A widened member nobody has read is
+#                           admitted to the artifact, counted in its own class, and reported as
+#                           unread — never silently absent, and NEVER counted as UNDETERMINED.  It
+#                           is the DEFAULT for an unauthored member and may not be authored, so a
+#                           member cannot be marked unread as a judgment.
+#   OUTSIDE NAMED SECTIONS  a hunk of a member whose delegation names SECTIONS, falling outside
+#                           them.  It is RECORDED and NOT GRADED, so the four classes never apply to
+#                           text the ruled document set does not reach.  It is authored, with its
+#                           ground, exactly as any other verdict.
+WIDENED_KEY = "★_the_widened_screen_population"
+NOT_YET_READ = "NOT YET READ"
+OUTSIDE_SECTIONS = "OUTSIDE NAMED SECTIONS"
+WIDENED_VOCABULARY = CLASSES + (NOT_YET_READ, OUTSIDE_SECTIONS)
 
 # AUTHORED — the reported shapes.  A shape is never a verdict; it is what a reader needs in order to
 # see WHICH KIND of change sits behind a verdict, and it is the device the candidate pass used for
@@ -581,6 +609,29 @@ v("b006dc15b5f696f2fc86ad72b97fae58d2119cd7", "CLAUDE.md", "-826,0 +827,19", RAT
   ratification_at="the added text, and the same rule at CLAUDE.md Conventions at HEAD")
 
 
+# ══ END OF THE EXISTING AUTHORED BLOCK — every verdict above is one of the original sixty-eight and
+#    is neither re-read nor re-graded by the widening.  Its digest is published in the artifact at
+#    `the_existing_verdicts_digest`, which is what makes "byte-unchanged" a measurement rather than a
+#    claim. ═════════════════════════════════════════════════════════════════════════════════════════
+
+
+# ── AUTHORED — the verdict per NEW widened hunk ──────────────────────────────────────────────────
+#
+# Keyed by (commit, file, hunk header), the identity the widened population publishes.  Every entry
+# is made by reading that hunk's own removed and added text at the git object, together with the
+# commit's own account, and nothing else — the inherited method, applied to a wider population.
+#
+# The four classes are applied in the DECLARED ORDER: POSITIVELY CODE-INFLUENCED first, so that a
+# ratified act cannot launder a correction made under it.
+W: dict[tuple[str, str, str], dict] = {}
+
+
+def w(commit, path, header, verdict, ground, shape=None, act=None, ratification_at=None,
+      remark=None):
+    W[(commit, path, header)] = {"verdict": verdict, "ground": ground, "shape": shape,
+                                 "act": act, "ratification_at": ratification_at, "remark": remark}
+
+
 # ── DERIVED ──────────────────────────────────────────────────────────────────────────────────────
 _HDR = re.compile(r"^@@ (-\S+ \+\S+) @@")
 
@@ -593,6 +644,15 @@ def git(*args: str) -> str:
 
 class Stop(Exception):
     """A demand of the screen is unmet. Never a warning."""
+
+
+def existing_verdicts_digest() -> str:
+    """sha256 over the canonical JSON of the EXISTING authored block. Published so that
+    'the existing sixty-eight verdicts are byte-unchanged' is a measurement, not a claim."""
+    canon = json.dumps(
+        sorted(([list(k), v] for k, v in V.items()), key=lambda x: x[0]),
+        ensure_ascii=False, sort_keys=True)
+    return hashlib.sha256(canon.encode("utf-8")).hexdigest()
 
 
 def retrieve(commit: str, path: str) -> dict:
@@ -679,6 +739,141 @@ def build() -> dict:
         if rec["verdict"] == CODE_INFLUENCED and resolved:
             row["the_text"] = {"removed": got["removed"], "added": got["added"]}
         rows.append(row)
+
+    # ── THE WIDENED SCREEN (Task 3, Ruling 7) ────────────────────────────────────────────────────
+    widened_block = split.get(WIDENED_KEY)
+    if widened_block is None:
+        raise Stop(f"the split artifact carries no `{WIDENED_KEY}` — the widening's population is "
+                   f"imported, never re-derived here (#6)")
+    widened_pop = widened_block["hunks"]
+    new_ids = {(h["commit"], h["file"], h["hunk_header"]) for h in widened_pop if h["is_NEW"]}
+
+    # STOP — a widened verdict naming a hunk the NEW population does not carry.
+    stray_w = sorted(set(W) - new_ids)
+    if stray_w:
+        raise Stop(f"widened verdict(s) naming a hunk the NEW population does not carry: "
+                   f"{stray_w[:5]}")
+
+    # STOPs — the vocabulary, the shape, the ground, and assumption A3's own condition, inherited.
+    for ident, rec in W.items():
+        if rec["verdict"] not in WIDENED_VOCABULARY:
+            raise Stop(f"widened verdict outside the declared vocabulary at {ident}: "
+                       f"{rec['verdict']}")
+        if rec["verdict"] == NOT_YET_READ:
+            raise Stop(f"{NOT_YET_READ} is the DEFAULT for an unauthored member and is never "
+                       f"authored — a member cannot be marked unread as a judgment: {ident}")
+        if rec["verdict"] == OUTSIDE_SECTIONS:
+            if rec["shape"] is not None:
+                raise Stop(f"{OUTSIDE_SECTIONS} is recorded and NOT graded, so it carries no "
+                           f"reported shape: {ident}")
+        elif rec["shape"] not in SHAPES:
+            raise Stop(f"widened reported shape outside the declared vocabulary at {ident}: "
+                       f"{rec['shape']}")
+        if not rec["ground"]:
+            raise Stop(f"widened verdict with no ground at {ident}")
+        if rec["verdict"] == RATIFIED and not (rec["act"] and rec["ratification_at"]):
+            raise Stop(f"widened RATIFIED-ACT-EDIT with no act or no place of ratification at "
+                       f"{ident} (assumption A3)")
+
+    wrows = []
+    for h in widened_pop:
+        ident = (h["commit"], h["file"], h["hunk_header"])
+        if h["already_screened"]:
+            rec = V[ident]
+            source = ("the existing screen's own verdict, INHERITED UNCHANGED — the widening "
+                      "re-reads and re-grades none of the original sixty-eight")
+        elif ident in W:
+            rec = W[ident]
+            source = "authored for the widened population by the inherited method"
+        else:
+            rec = {"verdict": NOT_YET_READ, "ground": None, "shape": None,
+                   "act": None, "ratification_at": None, "remark": None}
+            source = ("the declared exception: admitted UNREAD, counted in its own class and "
+                      "reported as unread — never silently absent and never counted as "
+                      f"{UNDETERMINED}")
+        pair = (h["commit"], h["file"])
+        if pair not in cache:
+            cache[pair] = retrieve(*pair)
+        got = cache[pair].get(h["hunk_header"])
+        resolved = got is not None
+        counts = [len(got["removed"]), len(got["added"])] if resolved else None
+        wrows.append({
+            "commit": h["commit"],
+            "date": h["date"],
+            "stratum": h["stratum"],
+            "commit_subject": h["commit_subject"],
+            "file": h["file"],
+            "hunk_header": h["hunk_header"],
+            "role": h["role"],
+            "member_limb": h["member_limb"],
+            "member_delegation_scope": h["member_delegation_scope"],
+            "member_delegated_sections": h["member_delegated_sections"],
+            "in_period_under_the_ruling": h["in_period_under_the_ruling"],
+            "already_screened": h["already_screened"],
+            "is_NEW": h["is_NEW"],
+            "change_shape_from_the_population": h["change_shape"],
+            "verdict": rec["verdict"],
+            "reported_shape": rec["shape"],
+            "ground": rec["ground"],
+            "the_act": rec["act"],
+            "where_its_ratification_is_recorded": rec["ratification_at"],
+            "remark": rec["remark"],
+            "where_this_verdict_comes_from": source,
+            "A2_retrieval": {
+                "retrieved": resolved,
+                "command": h["retrieve"],
+                "lines_removed_added_as_retrieved": counts,
+                "agrees_with_the_population_record": (counts == h["lines_removed_added"]
+                                                      if resolved else False),
+            },
+        })
+
+    # the per-document POLLUTION DISTRIBUTION, derived
+    per_doc: dict[str, Counter] = {}
+    for r in wrows:
+        per_doc.setdefault(r["file"], Counter())[r["verdict"]] += 1
+    gap_by_member = {g["member"]: g for g in
+                     widened_block["the_coverage_gap"]["members"]}
+    distribution = []
+    for path in sorted(set(per_doc) | set(gap_by_member)):
+        c = per_doc.get(path, Counter())
+        distribution.append({
+            "member": path,
+            "hunks": sum(c.values()),
+            "by_class": {k: c.get(k, 0) for k in WIDENED_VOCABULARY if c.get(k, 0)},
+            "read": sum(c.get(k, 0) for k in CLASSES),
+            NOT_YET_READ: c.get(NOT_YET_READ, 0),
+            OUTSIDE_SECTIONS: c.get(OUTSIDE_SECTIONS, 0),
+            "in_the_coverage_gap": path in gap_by_member,
+            "the_coverage_gap_reason": (
+                gap_by_member[path]["the_reason_the_enumeration_gives_for_itself"]
+                if path in gap_by_member else None),
+        })
+
+    # THE RULED FAILURE SIGNAL, evaluated at the artifact and not at an impression
+    wread = [r for r in wrows if r["verdict"] in CLASSES]
+    wundet = [r for r in wread if r["verdict"] == UNDETERMINED]
+    wunread = [r for r in wrows if r["verdict"] == NOT_YET_READ]
+    if not wread:
+        signal = "NOT YET EVALUABLE"
+        signal_why = ("No widened member carries a verdict in the four inherited classes, so the "
+                      "majority test has no population to run over. This is not the signal "
+                      "failing to fire; it is the test not yet having an input.")
+    elif wunread:
+        signal = "INCONCLUSIVE-AT-THIS-COVERAGE"
+        signal_why = ("The widened population is not yet read whole, so a majority over the read "
+                      "members cannot be reported as the ruled signal firing. The read share is "
+                      "published beside the majority, and the ruling's own words are that a "
+                      "majority reached only because few members were read is reported this way "
+                      "rather than as the signal firing.")
+    elif len(wundet) * 2 > len(wread):
+        signal = "FIRES"
+        signal_why = ("Over the widened population's READ members, UNDETERMINED is the majority, "
+                      "and every widened member has been read. That is the ruled failure signal.")
+    else:
+        signal = "DOES NOT FIRE"
+        signal_why = ("Over the widened population's READ members, UNDETERMINED is not the "
+                      "majority, and every widened member has been read.")
 
     by_verdict = Counter(r["verdict"] for r in rows)
     by_shape = Counter(r["reported_shape"] for r in rows)
@@ -785,6 +980,69 @@ def build() -> dict:
                 "assumption A2 asks for."),
         },
         "the_reported_shapes": SHAPES,
+        "★_the_widened_screen": {
+            "what_it_is_honestly": (
+                "An AUTHORED VERDICT PER HUNK over a DERIVED population — the FLAG hunks of the "
+                "candidate enumeration whose file is a member of the ruled specification document "
+                "set. It finds POSITIVE EVIDENCE OF INFLUENCE ONLY, and it is bounded by the "
+                "invisibility the original screen declares of itself: influence is invisible in "
+                "the text, because a narrowed rule reads exactly like a rule that was always "
+                "narrow. SO A CLEAN CLASS IS NOT A CERTIFICATE that a change was uninfluenced. "
+                "That text is INHERITED from the screen this widens and is not re-argued here."),
+            "ruling": widened_block["ruling"],
+            "★_the_method_is_inherited_whole": (
+                "The four classes, the ORDER they are applied in, the six reported shapes and the "
+                "five STOPs are the existing screen's and are unchanged — \"its method untouched\" "
+                "is Ruling 7's own clause. What is added is a SECOND POPULATION, a SECOND AUTHORED "
+                "BLOCK for it, and two declared values: NOT YET READ, the one declared exception "
+                "to the no-verdict STOP, and OUTSIDE NAMED SECTIONS, for a hunk of a "
+                "section-scoped member falling outside the sections its delegation names."),
+            "★_the_existing_sixty_eight_are_not_re_read_or_re_graded": (
+                "A widened hunk that is ALREADY in the existing screen population inherits that "
+                "hunk's existing verdict verbatim; no verdict of the original sixty-eight is "
+                "re-authored, and the `verdicts` array above is byte-unchanged by this widening."),
+            "the_existing_verdicts_digest": {
+                "value": existing_verdicts_digest(),
+                "over": ("sha256 of the canonical JSON of the existing authored block — every "
+                         "verdict, ground, shape, act, place-of-ratification and remark of the "
+                         "original sixty-eight, sorted by hunk identity."),
+                "★_how_to_use_it": (
+                    "Compare it across the runs of this batch. An identical value is a "
+                    "measurement that the existing authored block did not move; a different one "
+                    "means a verdict of the original sixty-eight changed, which the widening may "
+                    "not do."),
+            },
+            "counted": {
+                "hunks_in_the_widened_population": len(wrows),
+                "already_screened_and_inherited": sum(1 for r in wrows if r["already_screened"]),
+                "NEW": sum(1 for r in wrows if r["is_NEW"]),
+                "read": len(wread),
+                "unread": len(wunread),
+                "by_verdict": dict(sorted(Counter(r["verdict"] for r in wrows).items())),
+                "by_reported_shape": dict(sorted(
+                    Counter(r["reported_shape"] for r in wrows
+                            if r["reported_shape"]).items())),
+                "by_document": dict(sorted(Counter(r["file"] for r in wrows).items())),
+                "distinct_commits": len({r["commit"] for r in wrows}),
+            },
+            "★_the_ruled_failure_signal": {
+                "the_rule_as_ruled": (
+                    "Ruling 7, with the plan's §4: \"if most passages land UNDETERMINED the "
+                    "premise is not measurable, and that is a STOP to the user, not a licence to "
+                    "proceed.\" It is not a licence to argue the class down either."),
+                "verdict": signal,
+                "why": signal_why,
+                "read_members": len(wread),
+                "of_the_widened_population": len(wrows),
+                "read_share": (round(len(wread) / len(wrows), 4) if wrows else None),
+                "UNDETERMINED_among_the_read": len(wundet),
+                "UNDETERMINED_share_of_the_read": (round(len(wundet) / len(wread), 4)
+                                                   if wread else None),
+            },
+            "the_per_document_pollution_distribution": distribution,
+            "the_coverage_gap_beside_it": widened_block["the_coverage_gap"],
+            "the_hunks": wrows,
+        },
         "what_this_does_NOT_do": (
             "No screened document is edited. Nothing is restored, reverted, reconciled or "
             "corrected. No open-items row is marked, flipped or discarded; no decisions-register "
@@ -932,6 +1190,103 @@ def render_report(art: dict) -> str:
             L.append(f"- **Remark.** {r['remark']}")
         L.append(f"- *Retrieve:* `{r['A2_retrieval']['command']}`")
         L.append("")
+    # ── the widened screen ───────────────────────────────────────────────────────────────────────
+    W_ART = art["★_the_widened_screen"]
+    wc = W_ART["counted"]
+    sig = W_ART["★_the_ruled_failure_signal"]
+    L.append("---")
+    L.append("")
+    L.append("# The WIDENED screen — the same method, over the ruled specification document set")
+    L.append("")
+    L.append("> **The population is widened by MEMBERSHIP, not by role.** Its enumeration lives at "
+             "`tools/audit/period_stratum_split.json` → `★_the_widened_screen_population` and is "
+             "imported whole here, never re-listed (#6).")
+    L.append("")
+    L.append("**What this is, honestly.** " + W_ART["what_it_is_honestly"])
+    L.append("")
+    L.append("**The method is inherited whole.** " + W_ART["★_the_method_is_inherited_whole"])
+    L.append("")
+    L.append("**The existing sixty-eight are not re-read or re-graded.** "
+             + W_ART["★_the_existing_sixty_eight_are_not_re_read_or_re_graded"]
+             + " Digest of the existing authored block: `"
+             + W_ART["the_existing_verdicts_digest"]["value"] + "`. "
+             + W_ART["the_existing_verdicts_digest"]["★_how_to_use_it"])
+    L.append("")
+    L.append("## ★ The ruled failure signal — " + sig["verdict"])
+    L.append("")
+    L.append("*The rule as ruled.* " + sig["the_rule_as_ruled"])
+    L.append("")
+    L.append(sig["why"])
+    L.append("")
+    L.append(f"- Read members: **{sig['read_members']}** of **{sig['of_the_widened_population']}** "
+             f"(read share {sig['read_share']}).")
+    L.append(f"- {UNDETERMINED} among the read: **{sig['UNDETERMINED_among_the_read']}** "
+             f"(share of the read {sig['UNDETERMINED_share_of_the_read']}).")
+    L.append("")
+    L.append("## The widened population")
+    L.append("")
+    L.append(f"- **{wc['hunks_in_the_widened_population']} hunks** across "
+             f"**{wc['distinct_commits']} commits** and **{len(wc['by_document'])} documents** — "
+             f"**{wc['already_screened_and_inherited']}** already screened and inherited, "
+             f"**{wc['NEW']}** new.")
+    L.append("- By verdict: " + ", ".join(f"{k} {n}" for k, n in wc["by_verdict"].items()) + ".")
+    L.append("")
+    L.append("## The per-document pollution distribution")
+    L.append("")
+    L.append("| member | hunks | read | " + " | ".join(CLASSES) + f" | {NOT_YET_READ} | "
+             f"{OUTSIDE_SECTIONS} | coverage gap |")
+    L.append("|---|---|---|" + "---|" * (len(CLASSES) + 3))
+    for d in art["★_the_widened_screen"]["the_per_document_pollution_distribution"]:
+        cells = [str(d["by_class"].get(k, 0)) for k in CLASSES]
+        L.append(f"| `{d['member']}` | {d['hunks']} | {d['read']} | " + " | ".join(cells)
+                 + f" | {d[NOT_YET_READ]} | {d[OUTSIDE_SECTIONS]} | "
+                 + ("**yes**" if d["in_the_coverage_gap"] else "—") + " |")
+    L.append("")
+    gapb = W_ART["the_coverage_gap_beside_it"]
+    L.append("## The coverage gap — the members the screen cannot see at all")
+    L.append("")
+    L.append(gapb["★_what_this_is"])
+    L.append("")
+    L.append(f"**{gapb['members_with_no_flagged_hunk']} of {gapb['of_the_members']} members "
+             f"carry no flagged hunk in the candidate enumeration.**")
+    L.append("")
+    for g in gapb["members"]:
+        L.append(f"- `{g['member']}` — {g['the_reason_the_enumeration_gives_for_itself']}")
+    L.append("")
+    unread_rows = [r for r in W_ART["the_hunks"] if r["verdict"] == NOT_YET_READ]
+    if unread_rows:
+        L.append("## What remains UNREAD, per document")
+        L.append("")
+        L.append("Recorded so that a continuing session derives the remainder fresh rather than "
+                 "carrying it from this session's account of it. The order below is the "
+                 "artifact's own — by document, then by commit, then by hunk.")
+        L.append("")
+        by_doc: dict[str, int] = {}
+        for r in unread_rows:
+            by_doc[r["file"]] = by_doc.get(r["file"], 0) + 1
+        for k, n in sorted(by_doc.items()):
+            L.append(f"- `{k}` — **{n}** unread")
+        L.append("")
+    graded_w = [r for r in W_ART["the_hunks"] if r["is_NEW"] and r["verdict"] != NOT_YET_READ]
+    if graded_w:
+        L.append("## Every NEW hunk read so far, with its verdict and its ground")
+        L.append("")
+        for r in graded_w:
+            L.append(f"### {r['date'][:10]} · `{r['file']}` @ `{r['hunk_header']}` · "
+                     f"{r['commit'][:10]}")
+            L.append("")
+            L.append(f"- **Verdict:** {r['verdict']}"
+                     + (f" · shape `{r['reported_shape']}`" if r["reported_shape"] else ""))
+            L.append(f"- **Commit subject:** {r['commit_subject']}")
+            L.append(f"- **Ground.** {r['ground']}")
+            if r["the_act"]:
+                L.append(f"- **The act:** {r['the_act']}")
+                L.append(f"- **Where its ratification is recorded:** "
+                         f"{r['where_its_ratification_is_recorded']}")
+            if r.get("remark"):
+                L.append(f"- **Remark.** {r['remark']}")
+            L.append(f"- *Retrieve:* `{r['A2_retrieval']['command']}`")
+            L.append("")
     L.append("## What this screen does not do")
     L.append("")
     L.append(art["what_this_does_NOT_do"])
@@ -974,6 +1329,17 @@ def main(argv: list[str]) -> int:
     print(f"  A2: {len(a2['hunks_that_did_not_resolve'])} unresolved, "
           f"{len(a2['hunks_whose_retrieved_line_counts_disagree_with_the_population_record'])} "
           f"count disagreements")
+    wa = art["★_the_widened_screen"]
+    wc, sg = wa["counted"], wa["★_the_ruled_failure_signal"]
+    print(f"  THE WIDENED SCREEN: {wc['hunks_in_the_widened_population']} hunks — "
+          f"{wc['already_screened_and_inherited']} inherited, {wc['NEW']} new; "
+          f"read {wc['read']}, unread {wc['unread']}")
+    for k, n in wc["by_verdict"].items():
+        print(f"    {k}: {n}")
+    print(f"  THE RULED FAILURE SIGNAL: {sg['verdict']} "
+          f"(read share {sg['read_share']}, UNDETERMINED share of the read "
+          f"{sg['UNDETERMINED_share_of_the_read']})")
+    print(f"  existing-verdicts digest: {wa['the_existing_verdicts_digest']['value'][:16]}…")
     return 0
 
 

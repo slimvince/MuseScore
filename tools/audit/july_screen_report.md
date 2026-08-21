@@ -646,6 +646,103 @@ Every hunk's text was retrieved from the git object by explicit hash — `git sh
 - **Where its ratification is recorded:** the added text, and the same rule at CLAUDE.md Conventions at HEAD
 - *Retrieve:* `git show b006dc15b5f696f2fc86ad72b97fae58d2119cd7 --no-color -U0 -- CLAUDE.md`
 
+---
+
+# The WIDENED screen — the same method, over the ruled specification document set
+
+> **The population is widened by MEMBERSHIP, not by role.** Its enumeration lives at `tools/audit/period_stratum_split.json` → `★_the_widened_screen_population` and is imported whole here, never re-listed (#6).
+
+**What this is, honestly.** An AUTHORED VERDICT PER HUNK over a DERIVED population — the FLAG hunks of the candidate enumeration whose file is a member of the ruled specification document set. It finds POSITIVE EVIDENCE OF INFLUENCE ONLY, and it is bounded by the invisibility the original screen declares of itself: influence is invisible in the text, because a narrowed rule reads exactly like a rule that was always narrow. SO A CLEAN CLASS IS NOT A CERTIFICATE that a change was uninfluenced. That text is INHERITED from the screen this widens and is not re-argued here.
+
+**The method is inherited whole.** The four classes, the ORDER they are applied in, the six reported shapes and the five STOPs are the existing screen's and are unchanged — "its method untouched" is Ruling 7's own clause. What is added is a SECOND POPULATION, a SECOND AUTHORED BLOCK for it, and two declared values: NOT YET READ, the one declared exception to the no-verdict STOP, and OUTSIDE NAMED SECTIONS, for a hunk of a section-scoped member falling outside the sections its delegation names.
+
+**The existing sixty-eight are not re-read or re-graded.** A widened hunk that is ALREADY in the existing screen population inherits that hunk's existing verdict verbatim; no verdict of the original sixty-eight is re-authored, and the `verdicts` array above is byte-unchanged by this widening. Digest of the existing authored block: `32366793f298ff1c1d17422b61aed4660b0fdefe7aa201bc677ead0e0435320c`. Compare it across the runs of this batch. An identical value is a measurement that the existing authored block did not move; a different one means a verdict of the original sixty-eight changed, which the widening may not do.
+
+## ★ The ruled failure signal — INCONCLUSIVE-AT-THIS-COVERAGE
+
+*The rule as ruled.* Ruling 7, with the plan's §4: "if most passages land UNDETERMINED the premise is not measurable, and that is a STOP to the user, not a licence to proceed." It is not a licence to argue the class down either.
+
+The widened population is not yet read whole, so a majority over the read members cannot be reported as the ruled signal firing. The read share is published beside the majority, and the ruling's own words are that a majority reached only because few members were read is reported this way rather than as the signal firing.
+
+- Read members: **32** of **437** (read share 0.0732).
+- UNDETERMINED among the read: **14** (share of the read 0.4375).
+
+## The widened population
+
+- **437 hunks** across **210 commits** and **18 documents** — **32** already screened and inherited, **405** new.
+- By verdict: NOT YET READ 405, POSITIVELY CODE-INFLUENCED 1, RATIFIED-ACT EDIT 10, RESTRUCTURING-SHAPED 7, UNDETERMINED 14.
+
+## The per-document pollution distribution
+
+| member | hunks | read | POSITIVELY CODE-INFLUENCED | RATIFIED-ACT EDIT | RESTRUCTURING-SHAPED | UNDETERMINED | NOT YET READ | OUTSIDE NAMED SECTIONS | coverage gap |
+|---|---|---|---|---|---|---|---|---|---|
+| `ARCHITECTURE.md` | 152 | 27 | 0 | 8 | 7 | 12 | 125 | 0 | — |
+| `STATUS.md` | 200 | 0 | 0 | 0 | 0 | 0 | 200 | 0 | — |
+| `cowork_bounded_context_design.md` | 4 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | — |
+| `cowork_confidence_contract.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — |
+| `cowork_evidence_inventory.md` | 6 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | — |
+| `cowork_idiom_entry_mapping.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
+| `cowork_joint_estimator_architecture.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — |
+| `cowork_joint_estimator_factorization.md` | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | — |
+| `cowork_layer1_note_model_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
+| `cowork_layer2_slicing_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
+| `cowork_layer3_keymode_design.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — |
+| `cowork_layer4_chordsymbol_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
+| `cowork_layer5_engagement_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
+| `cowork_layer5_function_design.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — |
+| `cowork_layer6_grouping_design.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — |
+| `cowork_notation_adoption_increment.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — |
+| `cowork_notation_output_contract.md` | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | — |
+| `cowork_phrase_boundary_design.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — |
+| `cowork_prefit_gates.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — |
+| `cowork_progression_schema_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
+| `cowork_progression_schema_dictionary.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
+| `cowork_score_census.md` | 6 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | — |
+| `cowork_stage5_fitter_design.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — |
+| `cowork_target_architecture.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
+| `cowork_voiceleading_axis_design.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — |
+| `docs/llm_integration.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
+| `docs/scoring_model.md` | 31 | 5 | 1 | 2 | 0 | 2 | 26 | 0 | — |
+
+## The coverage gap — the members the screen cannot see at all
+
+Every document-set member with NO FLAG hunk in the candidate enumeration, with the reason the enumeration gives for ITSELF rather than a reason invented here. This is the plan's own finding about the premise's measurability: a member with no flagged hunk contributes nothing to the pollution distribution, and the distribution must be read knowing which members are silent and why.
+
+**9 of 27 members carry no flagged hunk in the candidate enumeration.**
+
+- `cowork_idiom_entry_mapping.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
+- `cowork_layer1_note_model_design.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
+- `cowork_layer2_slicing_design.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
+- `cowork_layer4_chordsymbol_design.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
+- `cowork_layer5_engagement_design.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
+- `cowork_progression_schema_design.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
+- `cowork_progression_schema_dictionary.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
+- `cowork_target_architecture.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
+- `docs/llm_integration.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
+
+## What remains UNREAD, per document
+
+Recorded so that a continuing session derives the remainder fresh rather than carrying it from this session's account of it. The order below is the artifact's own — by document, then by commit, then by hunk.
+
+- `ARCHITECTURE.md` — **125** unread
+- `STATUS.md` — **200** unread
+- `cowork_bounded_context_design.md` — **4** unread
+- `cowork_confidence_contract.md` — **1** unread
+- `cowork_evidence_inventory.md` — **6** unread
+- `cowork_joint_estimator_architecture.md` — **2** unread
+- `cowork_joint_estimator_factorization.md` — **9** unread
+- `cowork_layer3_keymode_design.md` — **1** unread
+- `cowork_layer5_function_design.md` — **5** unread
+- `cowork_layer6_grouping_design.md` — **1** unread
+- `cowork_notation_adoption_increment.md` — **2** unread
+- `cowork_notation_output_contract.md` — **3** unread
+- `cowork_phrase_boundary_design.md` — **2** unread
+- `cowork_prefit_gates.md` — **5** unread
+- `cowork_score_census.md` — **6** unread
+- `cowork_stage5_fitter_design.md` — **2** unread
+- `cowork_voiceleading_axis_design.md` — **5** unread
+- `docs/scoring_model.md` — **26** unread
+
 ## What this screen does not do
 
 No screened document is edited. Nothing is restored, reverted, reconciled or corrected. No open-items row is marked, flipped or discarded; no decisions-register entry is written. No fix, design or measurement of the analysis is authorized or performed. The period question is not re-opened here — the report says what would re-open it, and the act is the user's.
