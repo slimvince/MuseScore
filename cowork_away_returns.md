@@ -16512,3 +16512,45 @@ batch.**
 *Provenance: CC, 2026-08-22, executing `cc_instruction_pilot_preparation_withheld_family.md` as
 amended by its own governing top block. Every commit hash above was resolved at the object before it
 was written. The end state is deliberately not asserted here.*
+
+---
+
+## ★ THE END STATE — the guard set run at the tree the close left (the one further commit)
+
+**The one further commit the E-ordering rule requires.** The run below was taken **after** the commit
+carrying the close existed, so its values could not be written into that commit. It is run in write
+mode and READ.
+
+**Registered expectation E2, graded at the artifact rather than at an impression.** The verdict set
+at `tools/audit/guard_state.json` → `summary` is **every run check passing except [[OI-372]]'s tool**
+— the one standing red, unchanged all batch — with **ZERO STOP verdicts**, and the guard population
+at the value A4 predicted for it. Every figure is read at that artifact's own fields and none is
+restated here (**D-431**). *(A reader will find the string `STOP` in that file; every occurrence is
+descriptive text, a passing check's standing stop-and-report line, or the failing tool's own output.
+Zero STOP **verdicts** is the claim, and it is the field that carries it.)*
+
+**The guard population MOVED BY EXACTLY ONE THIS BATCH, and that is the whole of its movement:** the
+boot-pack generator's own check, added and registered in the act that created it, PASSING from its
+first run onward. Nothing else entered the population and nothing left it.
+
+**★ NO RED APPEARED MID-BATCH THAT THIS BATCH DID NOT CAUSE AND CLEAR.** The two start-state reds are
+down to one: the membership check was cleared at Task 0 by the act that tracked this dispatch's own
+untracked inputs, and the session-start read measurement's red — caused at Task 2 by the `STATUS.md`
+entries this close writes — was cleared in the same task by regenerating it. Every other red this
+batch caused was inside a single commit's own act and never left it.
+
+**★ A READER WHO OPENS THE CLOSE COMMIT'S OWN COPY OF `guard_state.json` WILL FIND A DIFFERENT
+SUMMARY, AND THAT IS THE E-ORDERING RULE WORKING RATHER THAN A DISCREPANCY.** That copy records a
+mid-batch run. It cannot record the end state, because the end state is a property of the tree that
+commit LEFT, and a commit cannot contain a run over itself.
+
+**★ THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** The sentence at §10 was written at the
+close and was true of it. Taken over the batch including this further commit the answer is unchanged
+in kind and larger by one item: the guard registry itself was rewritten, and that is what running the
+set does. **Nothing else was produced, and nothing this batch touched lies outside the subjects of
+its own ordered acts. No session was booted from the pack at any point.**
+
+*Provenance: CC, 2026-08-22, appended in the one further commit after the close commit `a223fe8358`
+existed — a commit whose own identity this paragraph therefore cannot contain. Every value above was
+read from the run recorded in `tools/audit/guard_state.json`, which that run itself wrote; no value
+here was carried forward from an earlier run or inferred from a summary.*
