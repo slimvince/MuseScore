@@ -2858,6 +2858,326 @@ w(_CEN9, "cowork_score_census.md", "-312,0 +328,10", RATIFIED,
                   "which names Rulings 44–48 of `cowork_rulings_2026_08_09_ninth_stop.md`; and "
                   "register entry D-665, whose home is this document's §8c")
 
+# ── `docs/scoring_model.md` ───────────────────────────────────────────────────────────────────────
+w("7454abe5db4e169fcbdc43440c018b1add4db31b", "docs/scoring_model.md", "-2,0 +3,11", RATIFIED,
+  "The hunk ADDS the status banner at the head of the document, and the banner carries its own "
+  "attribution: \"*Banner ratified by the user, 2026-08-03 — drafted at phase 1j, presented at "
+  "`cowork_pending_ratifications_next_session.md` §1, applied at phase 1k.*\" The commit's own "
+  "account states R1 in terms — \"the four status banners RATIFIED as drafted and written verbatim "
+  "at the head of each document\". ★ The first class was applied first and does NOT fire, and the "
+  "call is recorded because the banner asserts something about the implementation: \"Its mechanism "
+  "content describes the LEGACY vertical scorer, which is dormant on both production surfaces since "
+  "2026-07-26/27\". What decides it is that the dormancy is a fact the governing record already "
+  "publishes — the staged-scope clause of `CLAUDE.md` gate block (A) — rather than a fresh reading "
+  "of implementation code; that the banner ADDS and expressly declines to correct the body, saying "
+  "so in its own last sentence; and that its source is the user's ratification of the drafted "
+  "banner.",
+  "governing-decision-record",
+  act="the user's ruling R1 of 2026-08-03, ratifying the four status banners as drafted and writing "
+      "each verbatim at the head of its document",
+  ratification_at="the banner's own italic attribution; the commit's own account of R1; and the "
+                  "presentation surface the banner names, "
+                  "`ratification_surfaces/cowork_pending_ratifications_next_session.md` §1")
+
+w("1c9124f88ef07d5c2787ed717d1290f3eb1a440e", "docs/scoring_model.md", "-9 +9", RESTRUCTURING,
+  "One pointer inside the banner is re-aimed — `cowork_pending_ratifications_next_session.md` "
+  "becomes `ratification_surfaces/cowork_pending_ratifications_next_session.md` — following the "
+  "directory this commit creates and the ten files it moves into it by `git mv`. ★ The first class "
+  "was applied first and does not fire: no statement about the system is made or withdrawn, and the "
+  "source is a documentation file's own new path. The second does not fire at this hunk's own text, "
+  "which records no act. The third does, this being a re-pointing exactly — the same shape as the "
+  "existing screen's `COWORK_HANDOFF.md` verdict.",
+  "document-relocation-or-re-heading")
+
+_SMH = "d1891db1588d73fbf41789c9139006d269a1c766"
+_SMH_ACCOUNT = (
+    "The commit carries five waves as one, and this document's hunks belong to the licensed-homing "
+    "wave (`cc_instruction_licensed_homing_and_oi344.md`, named in the commit's own manifest). Each "
+    "hunk is a HOMING ACT — a decision the decisions register already holds, written into the "
+    "section of this specification that owns it, in that section's own voice, carrying its own "
+    "\"re-homed into this specification 2026-08-07 on the user's ruling\" — performed under the "
+    "licence the user ruled on 2026-08-07 widening a homing dispatch's edit surface to this file "
+    "(register entry D-645). ★ The first class was applied first at every hunk of this commit in "
+    "this document and fires at none: each ADDS a block, none withdraws a standing statement — the "
+    "originally designed mechanism text is expressly \"retained above for the record\" where one "
+    "exists — and the implementation facts each block cites are the DEFENSE of a decision the "
+    "register already holds, not facts against which a documentation statement was found false. "
+    "Neither the added text nor the account states any such correction.")
+_SMH_RAT = ("each block's own \"re-homed into this specification 2026-08-07 on the user's ruling\"; "
+            "the commit's own account, which names the licensed-homing wave; and the homing licence "
+            "itself, register entry D-645")
+
+w(_SMH, "docs/scoring_model.md", "-424,0 +425,14", RATIFIED,
+  _SMH_ACCOUNT + " This hunk homes the Gate R decision into §4: the reconstructed-credit read is the "
+  "ratified form of the guard and the originally designed literal sounding-third test is not what "
+  "shipped, with the equivalence and the one exception — Diminished — stated as the defense and the "
+  "former mechanism text kept above it.",
+  "governing-decision-record",
+  act="the user's homing ruling of 2026-08-07, executed as the homing of register entry D-327 into "
+      "the section of this specification that owns it",
+  ratification_at=_SMH_RAT + "; and register entry D-327, whose home is this document")
+
+w(_SMH, "docs/scoring_model.md", "-481,0 +496,12", RATIFIED,
+  _SMH_ACCOUNT + " This hunk homes the completeness-bonus guard: the bonus fires only for a "
+  "root-position reading whose three triad tones are all present, so a genuine slash chord neither "
+  "gains it nor is beaten by a rival that gains it wrongly. Its defense is the measured failure of "
+  "the previous unconditional version, and it is named as an early instance of the standing rule "
+  "that a correction gets a structural entry condition rather than a widened threshold.",
+  "governing-decision-record",
+  act="the user's homing ruling of 2026-08-07, executed as the homing of register entry D-537 into "
+      "the section of this specification that owns it",
+  ratification_at=_SMH_RAT + "; and register entry D-537, whose home is this document")
+
+w(_SMH, "docs/scoring_model.md", "-711,0 +738,15", RATIFIED,
+  _SMH_ACCOUNT + " This hunk homes the joint bass-and-chord decision into §5: the winner is the best "
+  "(bass, root, template) triple, not a bass committed first and chords scored against it, with "
+  "both defects that forced it diagnosed to the same cause and the accepted cost stated.",
+  "governing-decision-record",
+  act="the user's homing ruling of 2026-08-07, executed as the homing of register entry D-536 into "
+      "the section of this specification that owns it",
+  ratification_at=_SMH_RAT + "; and register entry D-536, whose home is this document")
+
+w(_SMH, "docs/scoring_model.md", "-720,0 +762,7", RATIFIED,
+  _SMH_ACCOUNT + " This hunk adds a POINTER rather than a rule — what a gate may read is fixed at "
+  "the inference/presentation boundary and published once at `ARCHITECTURE.md` §3.3, so the line "
+  "points at it and expressly does not restate it (#6). ★ The third class was also tested and "
+  "declined: the hunk is not a relocation, split, re-heading or growth of this document's own text "
+  "but the recording, under the same homing ruling, of where a binding rule lives.",
+  "governing-decision-record",
+  act="the user's homing ruling of 2026-08-07, executed as the pointer this specification owes to "
+      "register entry D-280's home",
+  ratification_at=_SMH_RAT + "; and register entry D-280, whose home is `ARCHITECTURE.md` §3.3")
+
+w(_SMH, "docs/scoring_model.md", "-778,0 +827,35", RATIFIED,
+  _SMH_ACCOUNT + " This hunk homes the three decisions the promotion primitive rests on: which carry "
+  "is correct is decided on the carry's PURPOSE and not on which code was at HEAD; one promotion "
+  "primitive with a present-first dedup guard; and the retirement condition for the separate rule is "
+  "byte-for-byte reproduction of its carry, not the winner-inertness that preceded it.",
+  "governing-decision-record",
+  act="the user's homing ruling of 2026-08-07, executed as the homing of register entries D-510, "
+      "D-511 and D-512 into the section of this specification that owns them",
+  ratification_at=_SMH_RAT + "; and register entries D-510, D-511 and D-512, whose home is this "
+                             "document")
+
+w(_SMH, "docs/scoring_model.md", "-981,0 +1065,121", RATIFIED,
+  _SMH_ACCOUNT + " This hunk homes six standing constraints and dead ends into §8, and beneath them "
+  "the four findings about the fine-grain function override, kept together as one evidence record "
+  "about one mechanism. ★ The near-miss is recorded because this block carries a REACHABILITY "
+  "reading taken at the code — the override is \"not reachable on any production surface, and not "
+  "on the plain legacy batch path either\", surviving behind a return-early diagnostic flag and the "
+  "test suites. What decides it is that the reading QUALIFIES the LEGACY mark on newly homed "
+  "material and withdraws nothing this document stated, and that each homed finding's own content "
+  "is a decision the register already holds.",
+  "governing-decision-record",
+  act="the user's homing ruling of 2026-08-07, executed as the homing of register entries D-325, "
+      "D-328, D-423, D-463, D-465 and D-580, and of the four fine-grain-override findings D-490, "
+      "D-491, D-492 and D-493, into the section of this specification that owns them",
+  ratification_at=_SMH_RAT + "; and register entries D-325, D-328, D-423, D-463, D-465, D-580, "
+                             "D-490, D-491, D-492 and D-493, whose home is this document")
+
+w("82ebfd68d9f7760396aab2b792ea3a1dce02a9e5", "docs/scoring_model.md", "-1185,0 +1186,103",
+  RATIFIED,
+  "The hunk homes FOUR blocks into §8, each carrying its own \"Re-homed into this section 2026-08-08 "
+  "on the user's ruling\": the bass-as-root promotion shelving with the cascade it exposed; the "
+  "quality-overwrite information-loss acceptance, tolerated until the gate-dissolution step and kept "
+  "visible on its row; four measured dead ends of the segmentation-and-root path; and the "
+  "retroactively void validation basis of every hand-set scoring magnitude on this surface. The "
+  "commit's own account is the away batch's Task 0 under the user's Ruling 1 of "
+  "`cowork_rulings_2026_08_08_pre_away.md`. ★ The first class was applied first and does NOT fire: "
+  "every block ADDS, none withdraws a standing statement of this document, and each states in its "
+  "own words what it does NOT assert about the arm that ships — whether the joint estimator's "
+  "modelled segmentation shows the same coupling, whether the acceptance still has a subject at "
+  "HEAD, whether the fitted tables inherit the same standing — so the measured evidence they carry "
+  "is the DEFENSE of decisions the register holds rather than a fact against which a documentation "
+  "statement was found false.",
+  "governing-decision-record",
+  act="the homing of four archive-held decisions into the section of this specification that owns "
+      "them, performed 2026-08-08 under the user's homing licence",
+  ratification_at="each block's own \"Re-homed into this section 2026-08-08 on the user's ruling\"; "
+                  "the commit's own account, which names Ruling 1 of "
+                  "`cowork_rulings_2026_08_08_pre_away.md`; the homing licence, register entry "
+                  "D-645; and register entries D-600, D-317, D-318, D-319 and D-320, whose home is "
+                  "this document")
+
+w("dfbf3ab824f0717d83cf3cce8e332c69f1074328", "docs/scoring_model.md", "-1272,0 +1273,40",
+  RATIFIED,
+  "The hunk homes four archive-only dead ends into §8 — no negative-margin guard; do not retry "
+  "reading a minor chord as a diminished one on the same root; do not retry reading a root-position "
+  "major chord as the first inversion of a minor one; do not attempt any further local scoring fix "
+  "for inversions — under \"Re-homed into this section 2026-08-08\", with every ⚠ LEGACY mark "
+  "intact. The commit's own account is the away batch's Task 2, \"nine archive-only decisions moved "
+  "into the specifications that own them\", and it records that three of these four carried in their "
+  "own provenance the statement that this section did not mention them, checked and not assumed. "
+  "★ The first class was applied first and does NOT fire: each block ADDS, none withdraws a standing "
+  "statement, and the measured evidence each carries is the DEFENSE of a decision the register "
+  "already holds — with the counts expressly left where they were measured (D-431).",
+  "governing-decision-record",
+  act="the homing of four archive-only chord-scoring dead ends into the section of this "
+      "specification that owns them, performed 2026-08-08 under the user's homing licence",
+  ratification_at="each block's own \"Re-homed into this section 2026-08-08\"; the commit's own "
+                  "account of the away batch's Task 2; the homing licence, register entry D-645; "
+                  "and register entries D-299, D-300, D-301 and D-302, whose home is this document")
+
+_SMP = "b366d44947f687245146b955475561bdb2218738"
+_SMP_LOCATOR = (
+    "★ THE FIRST CLASS FIRES. This is one of the eight raw line-number anchors the commit re-aimed "
+    "AT THE CODE: a standing statement of this document about WHERE something is, REPLACED, and the "
+    "source of the replacement is a reading of implementation code this commit did not write. The "
+    "commit's own account states it in terms — \"OI-45, re-aimed at the code (D-307 — cite by "
+    "function or section, never by raw line)\" — which is the class's second limb as well as its "
+    "first. ★ THE COUNTER-CONSIDERATION IS RECORDED ONCE HERE AND APPLIES TO EVERY LOCATOR HUNK OF "
+    "THIS COMMIT: every former wording is preserved verbatim in the same commit's \"Code locators\" "
+    "note (#12), so nothing the document stated is lost; and D-639's own worked examples place a "
+    "stale anchor OUTSIDE the doc-sync half phase 1 owes. What fires the class is the test as this "
+    "tool states it, not a judgment that a discrepancy signal was destroyed here. ")
+
+w(_SMP, "docs/scoring_model.md", "-11,2 +11,9", RESTRUCTURING,
+  "The hunk re-points the status banner's closing sentence at the §1 scoping sentence the SAME "
+  "commit adds, and the sentence it supersedes stands verbatim inside the new text — \"The former "
+  "wording of the sentence this replaces, preserved (#12), was: …\" — so nothing this document "
+  "stated is withdrawn. It also narrows the open row it names to its second half, a "
+  "governing-document question expressly left to the user. ★ The first class was applied first and "
+  "does NOT fire: the source of the change is this commit's own documentation act, not a fact read "
+  "in implementation code. ★ The second does not fire at this hunk's own text, which records no user "
+  "act and expressly reserves the remaining question to the user. ★ The third does: the hunk grows "
+  "the banner and re-points it, with the former wording standing in place.",
+  "document-relocation-or-re-heading")
+
+w(_SMP, "docs/scoring_model.md", "-38,0 +46,24", CODE_INFLUENCED,
+  "★ THE FIRST CLASS FIRES, on its SECOND limb. The hunk adds the \"Code locators\" note, whose own "
+  "heading states that EVERY raw line-number anchor in this document was re-aimed to a named code "
+  "region, and whose table gives the eight former wordings beside what each is now named as. It "
+  "states that FOUR of the eight had drifted across a FILE boundary and that one was \"wrong as well "
+  "as the line\" — so the change's own account states, in terms, that documentation statements were "
+  "corrected against the implementation, read at code this commit did not write. ★ The "
+  "counter-consideration is recorded: every former wording is preserved verbatim in this very note "
+  "(#12), and the note itself declares that \"no term, value, guard, gate or template is added, "
+  "changed or removed by it\".",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-42,0 +74,21", UNDETERMINED,
+  "The hunk adds the §1 SCOPING SENTENCE: the scorer described below is dormant on both production "
+  "surfaces, the body's present tense is the tense of its specification rather than a statement "
+  "about what runs, and §8's constraints bind regardless of that dormancy. ★ The first class was "
+  "applied first and does NOT fire: the body is untouched, no standing statement is withdrawn or "
+  "narrowed, and the dormancy is cited to the record's own adoption decisions — the batch surface at "
+  "D-005 and the notation surface at D-010 — rather than to a fresh reading of code. ★ The second "
+  "does not fire: the act is the session's, performed under a dispatch to discharge an open row, and "
+  "the added text expressly reserves the remaining half of that row to the user; no user act's "
+  "CONTENT is what the change records. ★ The third does not fire: growth qualifies only where its "
+  "source is not a fact about the implementation, and here the source IS one — that this scorer no "
+  "longer produces a committed chord. ★ NOT CLEARED, on the not-cleared class's own first branch: a "
+  "fact in the implementation is the source and the change adds material rather than replacing a "
+  "standing statement. Reported whole.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-134 +186,2", CODE_INFLUENCED,
+  _SMP_LOCATOR + "Here §2's tie-break sentence stops naming \"the comparator at ~L2412\" and names "
+  "the winning-bass comparator in `applyHarmonicFunction` (`harmonicfunctionlayer.cpp`).",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-155 +208", CODE_INFLUENCED,
+  _SMP_LOCATOR + "Here §3's three score matrices stop being \"declared at ~L2014–L2016\" and are "
+  "named as declared in `analyzeChord` (`chordanalyzer.cpp`).",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-607 +660", CODE_INFLUENCED,
+  _SMP_LOCATOR + "Here §4's scoring loop stops being \"the `(rootPc, tplIdx)` loop at "
+  "chordanalyzer.cpp:~L2026\" and is named as that loop in `analyzeChord` (`chordanalyzer.cpp`).",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-624,5 +677,19", CODE_INFLUENCED,
+  _SMP_LOCATOR + "Here the correction is substantive rather than a coordinate: §4 had the "
+  "`ScoringPhase` enum and the `ChordAnalyzerPreferences` field both in `chordanalyzer.h`, and both "
+  "live in `analysis/types/analysistypes.h`; the `ScoringSnapshot` forward declaration the sentence "
+  "placed beside the enum stayed behind in `chordanalyzer.h`; and the include-chain reason is "
+  "restated one link longer. The commit's account names this among \"two items found at the document "
+  "that no row names, both corrected\". The former wording is preserved verbatim in the added note "
+  "(#12), together with what the correction does NOT touch.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-676 +743", CODE_INFLUENCED,
+  _SMP_LOCATOR + "Here §4's `maxTotalInversionContextBonus` note stops citing the "
+  "`ChordAnalyzerPreferences` declaration at `chordanalyzer.h:411` and cites "
+  "`analysis/types/analysistypes.h` — the commit's account calling it \"wrong file as well as wrong "
+  "line\".",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-688,0 +756,37", UNDETERMINED,
+  "The hunk adds a §4 table naming twelve registered scoring constants that had no by-name mention "
+  "anywhere in this document, each with the site it acts at and, where the document already "
+  "describes its effect without naming it, the cell or prose that covers it. ★ The first class was "
+  "applied first and does NOT fire: the table ADDS and withdraws nothing — the added text says in "
+  "terms that several of these \"were never a substantive gap, only an ungreppable one\" — and no "
+  "account states a documentation statement corrected against the implementation. ★ The second does "
+  "not fire: no user act's content is recorded. ★ The third does not fire: the growth's source IS a "
+  "fact read in implementation code this commit did not write — each row names the function the "
+  "constant acts at and what it does there, read at `chordanalyzer.cpp` and its neighbours. ★ NOT "
+  "CLEARED, on the not-cleared class's own first branch. Recorded with it: no VALUE is transcribed "
+  "into the table, deliberately, which is the same staleness class the locator re-aim of this commit "
+  "exists against.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-719 +823,2", CODE_INFLUENCED,
+  _SMP_LOCATOR + "Here §5's `hasStructuralBass` stops being cited at \"~L1935\" and is named as "
+  "computed in `analyzeChord` (`chordanalyzer.cpp`).",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-928,8 +1033,13", CODE_INFLUENCED,
+  "★ THE FIRST CLASS FIRES, and this is the commit's substantive correction rather than a locator. "
+  "§6's `kHalfDimFirstInversionBonus` entry said the bonus is \"additive bonus inside the "
+  "enharmonic-flip block\", fired from the `preferMinorOverMajorAdd6` path in the Gate-A / G-family "
+  "region, on a HalfDiminished FIRST-INVERSION alternative. The replacement says it sits in the "
+  "BIAS-CORRECTION block, after the winner's bass-root deduction and before the bias re-sort, on an "
+  "alternative whose third, fifth OR seventh is the winner's bass, and that the `BiasCorrection` "
+  "rule owns it because `paramoverride.h`'s enum says so. Every element of that replacement is read "
+  "in implementation code this commit did not write, and the commit's own account states the "
+  "correction in terms — the open row said the entry was \"missing from §6 entirely\", and \"at HEAD "
+  "THE ENTRY EXISTS — what was wrong was WHERE it said the bonus fires\". ★ Recorded with it: the "
+  "former wording is preserved verbatim in the companion note (#12), and the value is unchanged.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-937,0 +1048,17", CODE_INFLUENCED,
+  "★ THE FIRST CLASS FIRES, on its SECOND limb, in the added text's own words: \"Location corrected "
+  "2026-08-14 … at the code\". The hunk is the companion note to the correction immediately above "
+  "it — it quotes the former wording whole (#12), states what in it is false at HEAD, and names "
+  "what the correction does NOT touch: the value, checked at the constant and unchanged, and the "
+  "provenance, preset gating and dissolution-target status, which are carried over and were not "
+  "re-verified. ★ Recorded with it, because the note itself declares it: one naming observation — "
+  "the constant's name says *first inversion* while the code admits the third, fifth or seventh in "
+  "the bass — is stated and expressly NOT acted on.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-960 +1087,2", CODE_INFLUENCED,
+  _SMP_LOCATOR + "Here §7's reference to \"The 'bias correction' entry above (~L2867)\" is named as "
+  "the bias-correction block of `applyPostScoringGates` (`postscoringgates.cpp`) — one of the three "
+  "§7 anchors the commit's account records as having drifted across a file boundary when refactor #1 "
+  "moved them out of `chordanalyzer.cpp`.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-974 +1102", CODE_INFLUENCED,
+  _SMP_LOCATOR + "Here §7's \"At ~L2647–L2651, before the sort can run\" becomes \"In that same "
+  "block's outer guard, before the sort can run\" — the second of the three §7 anchors that had "
+  "drifted across a file boundary.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-984 +1112", CODE_INFLUENCED,
+  _SMP_LOCATOR + "Here §7's \"Gate G-E (~L2910) reads\" becomes \"Gate G-E (`postscoringgates.cpp`) "
+  "reads\" — the third of the three §7 anchors that had drifted across a file boundary.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_SMP, "docs/scoring_model.md", "-1585 +1713,28", RESTRUCTURING,
+  "The hunk re-stamps the document's footer, which read \"Last updated: 2026-06-12 — Stage 3.1\" "
+  "while the body already carried everything the new stamp enumerates, and keeps the old stamp "
+  "beneath it as \"*Prior: 2026-06-12 …*\", so nothing is withdrawn (#12). ★ The first class was "
+  "applied first and does NOT fire: the source of the re-stamp is THIS DOCUMENT'S OWN BODY — the "
+  "added text says so, dating each act \"as the body dates them\" — and not a fact read in "
+  "implementation code. ★ The second does not fire: the stamp NAMES user-ratified acts among the "
+  "ones the body carries, but it records the document's own edit history rather than the content of "
+  "any decision, so no user act's content is what the change records. ★ The third does: the footer "
+  "grows and is re-stamped with its predecessor standing in place.",
+  "document-relocation-or-re-heading")
+
 
 # ── DERIVED ──────────────────────────────────────────────────────────────────────────────────────
 _HDR = re.compile(r"^@@ (-\S+ \+\S+) @@")
