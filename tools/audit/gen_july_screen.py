@@ -1054,6 +1054,311 @@ w(_SYNC, "ARCHITECTURE.md", "-6313,0 +6519,6", RESTRUCTURING,
   "new-document-content")
 
 
+# ══ THE PASS CONTINUED, 2026-08-22 (`cc_instruction_step_zero_exclusion_and_pass_continuation.md`
+#    Task 2, under Ruling 1 of `cowork_rulings_2026_08_22_dispatch_order_sitting.md`).  The remainder
+#    was DERIVED fresh from the artifact's own `NOT YET READ` set after the `STATUS.md` exclusion,
+#    never carried from any report's account of it, and is worked in the artifact's own order — by
+#    document, then by commit, then by changed passage.  The method is the inherited one and no
+#    other: each passage retrieved from the git object by explicit hash, read at its own removed and
+#    added text together with its commit's own account, and the four classes applied in the DECLARED
+#    ORDER with POSITIVELY CODE-INFLUENCED first. ════════════════════════════════════════════════
+
+# ── 2026-08-03 · the phase-1j self-check correction ───────────────────────────────────────────────
+w("3fbece9c1a6570df394839f4b87e9094e44eeb94", "ARCHITECTURE.md", "-970 +970", UNDETERMINED,
+  "The hunk REPLACES one word of a standing statement in §2.15 — the shelved joint step's measured "
+  "fire rate, stated as a percentage \"of slices\", becomes a percentage \"of cases\". ★ The first "
+  "class was applied first and does NOT fire: the commit's own account names the source, and it is "
+  "the record rather than the code — \"the shelved joint step's measured fire-rate is stated over "
+  "regions, and the homed §2.15 text called the same quantity a percentage of slices. Corrected to "
+  "'cases', which is what the source claim supports without asserting a unit.\" No fact read in "
+  "implementation code is its source, and the account does not say the statement was corrected "
+  "against the implementation. ★ Nor does the second class fire — no user act is named, the "
+  "correction being the standing self-check's own product — and the third does not, because the "
+  "hunk replaces a standing statement rather than relocating, splitting, re-heading or growing "
+  "text. NOT CLEARED: the statement it corrects is about MEASURED behaviour of the system, and the "
+  "screen cannot clear a correction of such a statement as restructuring.",
+  "describes-pre-existing-implementation-behaviour")
+
+# ── 2026-08-03 · phase 1k — the five 2026-08-03 rulings applied ───────────────────────────────────
+_K1 = "7454abe5db4e169fcbdc43440c018b1add4db31b"
+_K1_ACCOUNT = (
+    "The commit's own account is \"phase 1k tasks 1-4 — the five 2026-08-03 rulings APPLIED\", and "
+    "it states its own scope: \"Documentation and register work only: no src/ change, no golden "
+    "refresh, no tools/corpus/ or tools/robust_stop/ movement, no behavior change, no fix, no "
+    "design.\" The ruling this hunk carries is R3, which the account states as \"ARCHITECTURE.md "
+    "§6.7 restated over the five idioms\".")
+
+w(_K1, "ARCHITECTURE.md", "-4505,2 +4505,4", RATIFIED,
+  _K1_ACCOUNT + " Here the hunk REPLACES §6.5's terminology note, whose examples named the retired "
+  "genre families, with the five idioms — and the replacement carries its own dated attribution "
+  "inside the added text: \"(Corrected 2026-08-03 with the §6.7 restatement — this note previously "
+  "gave the retired genre families 'Baroque, swing, bebop' as its examples.)\" ★ The first class "
+  "was applied first and does not fire: a standing statement IS replaced, but its source is the "
+  "§6.7 restatement the same ruling orders, and no fact read in implementation code is cited "
+  "anywhere in the added text.",
+  "governing-decision-record",
+  act="the user's ruling R3 of 2026-08-03 — the §6.7 taxonomy restatement over the five idioms — "
+      "carried into §6.5 in the same act so the restatement does not leave the terminology note "
+      "contradicting the section it cites",
+  ratification_at="the added text's own \"(Corrected 2026-08-03 with the §6.7 restatement …)\"; the "
+                  "commit's own account naming the surface the rulings were taken at, "
+                  "`cowork_pending_ratifications_next_session.md`, and the dispatch that applied "
+                  "them, `cc_instruction_phase1k_apply_rulings.md`")
+
+w(_K1, "ARCHITECTURE.md", "-4528,9 +4530,51", RATIFIED,
+  _K1_ACCOUNT + " Here the hunk REPLACES §6.7's genre taxonomy with the five idioms and their two "
+  "orthogonal cross-attributes, and every load-bearing clause carries its own attribution inside "
+  "the added text — \"Ratified by the user 2026-06-30 and ENCODED\" — with the discovery study's "
+  "own figures as the defense and the superseded genre list preserved beneath it as historical "
+  "context (#12). ★ The first class was applied first and does not fire, and the call is recorded "
+  "because it is close: the added text DOES state something about the code — that the placeholder "
+  "`{Baroque, Jazz, Default}` StyleTag is retired and replaced in the dormant `harmonicvocabulary` "
+  "component by `enum class Idiom` + `IdiomSet`. What decides it is that every citation offered for "
+  "that statement is a record document (`cowork_style_taxonomy_proposal.md`, "
+  "`cowork_progression_schema_dictionary.md`) and none is implementation code; the encoding is "
+  "recorded as part of what the 2026-06-30 ratification settled, not as a fact against which a "
+  "documentation statement was found false.",
+  "governing-decision-record",
+  act="the user's ratification of the five-idiom taxonomy on 2026-06-30, applied to "
+      "`ARCHITECTURE.md` §6.7 by the user's ruling R3 of 2026-08-03",
+  ratification_at="the added text's own \"Ratified by the user 2026-06-30 and ENCODED\"; and the "
+                  "commit's own account of R3, taken at "
+                  "`cowork_pending_ratifications_next_session.md`")
+
+# ── 2026-08-03 · phase 1m — the D-416 disposition ─────────────────────────────────────────────────
+w("1b8ecaf685295024cdeafee067332ca38b26be04", "ARCHITECTURE.md", "-270,0 +271,2", RATIFIED,
+  "The hunk ADDS one paragraph beside the joint estimator's standing rule (a), and the added text "
+  "declares what it is in its own opening words: \"Pointer, not a seventh rule (added 2026-08-03 on "
+  "the user's D-416 ruling; register entry D-429)\". It records that the 2026-06-14 mandate to "
+  "dissolve the legacy post-hoc gate-correction layer carries a principle binding on this "
+  "estimator, and states in terms that the mandate is NOT treated as discharged. ★ The first class "
+  "was applied first and does not fire: nothing standing is withdrawn, and no fact read in "
+  "implementation code appears in the added text. The commit's account DOES report a dispatch "
+  "premise refuted at the code — that the gate layer is unreachable on the live notation arm — but "
+  "that refutation is recorded in the register entry and in the row it names, not in this hunk.",
+  "governing-decision-record",
+  act="the user's D-416 ruling of 2026-08-03 (the fourth ruling set of that date), which split the "
+      "two-deferred-refactors mandate into its three components and transferred component (2)'s "
+      "principle to the phase-3 family design",
+  ratification_at="the added text's own \"added 2026-08-03 on the user's D-416 ruling\"; the "
+                  "dispatch the commit names, "
+                  "`cc_instruction_phase1m_dispositions_and_measurements.md`; and register entry "
+                  "D-429")
+
+# ── 2026-08-03 · phase 1r — the six delegations the USER wrote (the OI-293 write list) ────────────
+_R1 = "1642c48e7f8c41f02a9ed14129ab2b9c6291b814"
+_R1_ACCOUNT = (
+    "The commit's own account opens \"The user wrote all six delegations the phase-1q write list "
+    "asked for (OI-293). This commit records them and re-runs every downstream act against them.\" "
+    "Each of this commit's `ARCHITECTURE.md` hunks carries that attribution inside its own added "
+    "text. ★ The first class was applied first and does not fire on any of them: no fact read in "
+    "implementation code is cited in any added passage, and where a standing statement IS replaced "
+    "the source is the user's own direction.")
+
+
+def _wl(header, what):
+    w(_R1, "ARCHITECTURE.md", header, RATIFIED, _R1_ACCOUNT + " " + what,
+      "governing-decision-record",
+      act="the six delegations the user wrote into `ARCHITECTURE.md` on 2026-08-03 — the OI-293 "
+          "write list, which the phase-1q classification pass asked for and only the user may write "
+          "(decisions-register rule (g))",
+      ratification_at="each hunk's own \"written 2026-08-03 on the user's direction, the OI-293 "
+                      "write list\" / \"widened 2026-08-03 on the user's direction (the OI-293 "
+                      "write list)\"; `OPEN_ITEMS.md` OI-293; and the commit's own account, which "
+                      "lists the seven write-list edits as verified present and unaltered")
+
+
+_wl("-50,0 +51,6",
+    "Here the hunk ADDS the delegation pointer for the pre-fit protocols, naming "
+    "`cowork_prefit_gates.md` (USER-RATIFIED 2026-07-19) and D-270…D-274, with its own parenthesis "
+    "recording why the weaker naming above it does not delegate under rule (i).")
+_wl("-74 +80,2",
+    "Here the hunk REPLACES the notation-record contract's section list, §3.1–§3.4 becoming "
+    "§2–§3.4, with the user's direction and the reason inside the added text: \"the provenance rule "
+    "that §3.1's own text depends on is in §2\".")
+_wl("-902 +909,5",
+    "Here the hunk REPLACES the voice-leading contract's section list, §0/§5.3 becoming "
+    "§0/§5.1/§5.3/§8/§9, and states which sections are deliberately NOT named and why — \"they are "
+    "ratification asks, not rule-stating sections\", which is the register's own kind half.")
+_wl("-1484,0 +1496,2",
+    "Here the hunk ADDS the delegation pointer for the function layer, naming "
+    "`cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26) and D-335…D-342, with its own "
+    "parenthesis recording that the \"Full spec:\" line above is a citation and not a delegation — "
+    "\"this paragraph is the delegation the record relied on and never had\".")
+
+# ── 2026-08-04 · phase 1z — §5.2 stops asserting a mechanism the code removed ─────────────────────
+_KEY = "c7d44b010e630c4a28bbb5d9faf8420aa39c7fc1"
+_KEY_ACCOUNT = (
+    "The commit's own subject states the direction of the correction in terms: \"the specification "
+    "stops asserting a mechanism the code removed\". Its Task 3 account says §5.2 \"now states what "
+    "the key opening actually does at HEAD (note-based, each clause read at the code, pins named), "
+    "with the removal recorded as a tried-and-closed line\", and the added text says it again: "
+    "\"The paragraph this replaces specified a piece-start shortcut in the present tense. The code "
+    "removed that short-circuit in Stage 4b-i on 2026-06-14 and this document went on asserting "
+    "it.\" That is the first class's second limb, word for word, and the class is applied FIRST.")
+
+
+def _key(header, what, cites):
+    w(_KEY, "ARCHITECTURE.md", header, CODE_INFLUENCED,
+      _KEY_ACCOUNT + f" This hunk {what} The correction's own text cites {cites}, which this commit "
+      "did not write.",
+      "describes-pre-existing-implementation-behaviour")
+
+
+_key("-3510,8 +3510,34",
+     "REPLACES the piece-start-shortcut paragraph outright — the exception is gone and the opening "
+     "is stated as note-based — and adds the scoping sentence saying which path §5.2 describes at "
+     "all.",
+     "`notationcomposingbridgehelpers.cpp:140`, `keyresolver.cpp:255`, `:286-289`, `:303-326`, "
+     "`:340` and `:358-367`, the flag default at `composingconfiguration.cpp:178`, and the two "
+     "regression pins at `regionanalysis_tests.cpp:122` and `:144`")
+_key("-3536,4 +3562,4",
+     "REPLACES the fallback list's count and drops the removed shortcut from it — \"the list read "
+     "'two' and named the removed piece-start shortcut as the first of them\".",
+     "the surviving fallback's own guard, `results.empty() || distinctPitchClasses(ctx) < 3`")
+_key("-3541 +3567,4",
+     "REPLACES the surviving fallback's description, adding the confidence it actually returns, the "
+     "code coordinate and the pin, and the statement that it fires at any tick and is not a "
+     "piece-start rule.",
+     "`keyresolver.cpp:328-332` and the pin at `regionanalysis_tests.cpp:164`")
+_key("-3544 +3573",
+     "REPLACES the closing back-reference, \"these two fallback paths\" becoming \"that one "
+     "fallback path\".",
+     "the same single surviving fallback")
+
+# ── 2026-08-04 · the six-wave backlog — the OI-327 write list and the census delegation ───────────
+_BL = "e10479a09f39c46419a62ada58e584a826f275ca"
+_BL_ACCOUNT = (
+    "The commit's own account states what it is and what it is not: \"Committed on the user's "
+    "ruling R1 of 2026-08-04 … This commit adds nothing to any of the six waves and changes nothing "
+    "in them. It is the authorization each of them was owed and none of them received.\" Every "
+    "`ARCHITECTURE.md` hunk of it carries its own attribution to a user act inside the added text. "
+    "★ The first class was applied first and does not fire on any of them: each ADDS a delegation "
+    "pointer, none withdraws a standing statement, and no fact read in implementation code is cited "
+    "in any added passage.")
+
+
+def _bl(header, what, act, ratification_at):
+    w(_BL, "ARCHITECTURE.md", header, RATIFIED, _BL_ACCOUNT + " " + what,
+      "governing-decision-record", act=act, ratification_at=ratification_at)
+
+
+_bl("-331,0 +332,15",
+    "Here the hunk WIDENS the census pointer to the sections holding that document's own standing "
+    "rules, and states what the widening settles and what it does not — the delegation half alone, "
+    "with the kind half left to be judged per section at the classification pass.",
+    "the user's census-delegation ruling of 2026-08-04, written under the fifth home case "
+    "(decisions-register rule (g), user-ratified 2026-08-02)",
+    "the added text's own \"written 2026-08-04 on the user's ruling; the fifth home case, rule (g), "
+    "user-ratified 2026-08-02\"; and the commit's own account of the census-delegation wave, "
+    "`cc_instruction_census_delegation_and_commit.md`")
+_bl("-1241,0 +1257,4",
+    "Here the hunk ADDS two delegation pointers — the Layer-1 note model's contract and the "
+    "Layer-1.5 phrase-boundary primitive's — the second with its siting reasoned in its own "
+    "parenthesis, including why it is not sited at the consuming Layer-6 section.",
+    "the OI-327 write list — the delegations the user wrote into `ARCHITECTURE.md` on 2026-08-04",
+    "each pointer's own \"written 2026-08-04 on the user's direction, the OI-327 write list\"; "
+    "`OPEN_ITEMS.md` OI-327; and the commit's own account of read wave 5, which records three "
+    "delegations written and two withheld")
+_bl("-1327,0 +1347,2",
+    "Here the hunk ADDS the Layer-2 slicer's delegation pointer, with its own parenthesis recording "
+    "that the \"See …\" line above is a citation of three documents and not a delegation under rule "
+    "(i).",
+    "the OI-327 write list — the delegations the user wrote into `ARCHITECTURE.md` on 2026-08-04",
+    "the pointer's own \"written 2026-08-04 on the user's direction, the OI-327 write list\"; "
+    "`OPEN_ITEMS.md` OI-327")
+_bl("-1508,0 +1530,2",
+    "Here the hunk ADDS the Layer-6 delegation pointer together with the user's answer to the "
+    "question it had been withheld over — why a contract home is coherent for a layer that may not "
+    "be built — and states in terms that D-266 is untouched and that the pointer authorizes no "
+    "build, no wiring and no change to what the analysis computes.",
+    "the OI-327 write list, together with the user's 2026-08-04 answer on the withheld Layer-6 "
+    "clause",
+    "the pointer's own \"written 2026-08-04 on the user's direction, the OI-327 write list\" and "
+    "its own \"the question this clause was withheld over on 2026-08-04 and which the user has now "
+    "answered\"; `OPEN_ITEMS.md` OI-327")
+
+# ── 2026-08-07 · three phase-1 waves committed on the user's instruction ──────────────────────────
+_TW = "bd3a608fecf82c446f959432b13e0a5944093cd2"
+_TW_ACCOUNT = (
+    "The commit's own subject is \"commit three phase-1 waves on the user's instruction\", and its "
+    "body names the three dispatches and their rulings. Every `ARCHITECTURE.md` hunk of it is a "
+    "RE-HOMING act under D-231's criterion C1 — a register decision written into the specification "
+    "that owns it — and each added block names the register entry it carries and says it was "
+    "\"re-homed into this specification 2026-08-04\".")
+
+w(_TW, "ARCHITECTURE.md", "-1289,0 +1290,24", RATIFIED,
+  _TW_ACCOUNT + " Here the added blocks carry D-628, the change-point as the finest meaningful "
+  "extension step, and D-607, the absence of any validated deterministic rule set for polyphonic "
+  "phrase-boundary detection. ★ The first class was applied first and does not fire: both ADD "
+  "material and withdraw nothing, and neither ground is a fact read in implementation code — "
+  "D-628's is what a Layer-2 slice IS as this same document specifies it, and D-607's is a stated "
+  "fact of absence established by a literature survey.",
+  "governing-decision-record",
+  act="the D-231 phase-1 re-homing of two register decisions into the specification that owns them, "
+      "performed under the user's instruction of 2026-08-04 and criterion C1 as re-issued that day",
+  ratification_at="each added block's own \"re-homed into this specification 2026-08-04\"; the "
+                  "commit's own \"on the user's instruction\"; D-231's phase-1 clause at "
+                  "`CLAUDE.md` Conventions (user-directed 2026-08-02); and the C1 ruling the commit "
+                  "names, `cc_instruction_c1_ruling_and_item1c.md` (register entry D-642)")
+
+w(_TW, "ARCHITECTURE.md", "-1375,0 +1400,30", UNDETERMINED,
+  _TW_ACCOUNT + " Here the added blocks carry D-624, D-635 and D-623. ★ The first class was applied "
+  "first and does NOT fire: all three ADD material and none withdraws a standing statement, and no "
+  "code coordinate is cited. ★ BUT THE HUNK IS NOT CLEARED EITHER, and this is the not-cleared "
+  "class's own first branch — a fact in the implementation is among the sources while the change "
+  "adds material rather than replacing a standing statement. Two of the three rest load-bearingly "
+  "on what the implementation currently does: D-635's claim that the requirement is MASKED rests on "
+  "\"the note model still loads the whole score anyway\", and D-623's claim that one path survives "
+  "rests on the capability having been built as an option on the existing driver and being off by "
+  "default. Reported whole rather than argued into either neighbouring class.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_TW, "ARCHITECTURE.md", "-1505,0 +1560,22", CODE_INFLUENCED,
+  _TW_ACCOUNT + " ★ BUT THE FIRST CLASS FIRES HERE, and it is applied first exactly so that a "
+  "ratified act cannot launder a correction made under it. The added block's own heading is \"Two "
+  "premises this decoder carries were MEASURED, and both came back against it\", and it QUALIFIES "
+  "what this section specifies: the symmetric-root spelling pin's entry premise is stated FALSE and "
+  "the mechanism effectively unreachable (D-608), and the abstention rate is stated to ride on a "
+  "never-fitted seed constant (D-609). The source is named in the added text itself — \"measured at "
+  "the probe and traced at the code\" for the first, \"established at the code — the constant is a "
+  "seed in the decoder's own header, and the control flow was traced\" for the second — and this "
+  "commit wrote none of that code.",
+  "describes-pre-existing-implementation-behaviour")
+
+w(_TW, "ARCHITECTURE.md", "-1520,0 +1597,31", RATIFIED,
+  _TW_ACCOUNT + " Here the added block carries D-584, D-585 and D-586, three standing constraints "
+  "on this layer's methods. ★ The first class was applied first and does not fire, and the call is "
+  "recorded because it is close: D-586's text DOES name our own legacy component — \"the legacy "
+  "component carrying the name compares candidate chords instead\". What decides it is that the "
+  "constraint's stated ground is a literature survey (\"established by survey — every published "
+  "autonomous Roman-numeral system the catalog names …\"), the naming of our own component being an "
+  "explanatory corollary rather than the source; and that nothing standing in the documentation is "
+  "withdrawn — the closing sentence EXPLAINS why the layer's output is already specified as the "
+  "Roman numeral rather than replacing that specification.",
+  "governing-decision-record",
+  act="the D-231 phase-1 re-homing of three method constraints into the specification that owns "
+      "them, performed under the user's instruction of 2026-08-04; the three decisions are recorded "
+      "as user-ratified on that date",
+  ratification_at="the added block's own \"re-homed into this specification 2026-08-04\"; the "
+                  "commit's own \"on the user's instruction\"; and D-231's phase-1 clause at "
+                  "`CLAUDE.md` Conventions (user-directed 2026-08-02)")
+
+w(_TW, "ARCHITECTURE.md", "-3565,0 +3673,11", UNDETERMINED,
+  _TW_ACCOUNT + " Here the added block records D-572 — the hard post-hoc declared-mode promotion — "
+  "as a tried-and-closed line beside the §5.2 correction the preceding commit made, which is the "
+  "form the commit's own body names: \"ruling R2 recorded (D-644) and applied to D-572 at "
+  "ARCHITECTURE.md §5.2\". ★ The first class was applied first and does NOT fire: the hunk ADDS the "
+  "closed line and withdraws nothing — the standing statement it belongs to was already replaced by "
+  "the preceding commit — and it cites no code coordinate. ★ BUT IT IS NOT CLEARED. Its substance "
+  "is a defense for a removal made in the implementation, and the added text attributes that "
+  "defense to \"the defense recorded with the change\" WITHOUT naming where that record is, so the "
+  "screen cannot establish whether the source is the code beside the removal or the change's own "
+  "written record. That is precisely what the not-cleared class exists for, and it is reported "
+  "whole rather than resolved by choosing the reading that would clear it.",
+  "describes-pre-existing-implementation-behaviour")
+
+
 # ── DERIVED ──────────────────────────────────────────────────────────────────────────────────────
 _HDR = re.compile(r"^@@ (-\S+ \+\S+) @@")
 
