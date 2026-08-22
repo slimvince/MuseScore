@@ -330,6 +330,24 @@ discharged by anything in this batch.
 | **E2** | **MET FOR THE MEMBERS READ, AND THE REMAINDER IS DECLARED** | Every read passage carries exactly one verdict in the inherited vocabulary; the unread remainder carries the tool's default and no hand; the existing sixty-eight are byte-identical by published digest at every commit; the per-document distribution is published by the generator; the failure signal is evaluated at the artifact and stated either way; the stop is recorded in the standing form. **It is not met for the unread remainder, and that is the stop, not a shortfall.** |
 | **E3** | **NOT YET ASSERTABLE HERE — BY DESIGN** | The end-state run is taken after the commit carrying this close exists. Its values land in ONE FURTHER commit. **No row, cell or sentence asserting the end state is written into the close commit.** |
 
+**★ E3, GRADED IN THE ONE FURTHER COMMIT — MET.** The row above is left exactly as the close commit
+carried it, because it correctly describes that commit; this addendum is the grading, and it is
+written only after the run that produced it existed. **The full guard set was run at the tree the
+close commit `d276e8afb2` left, and read** — every run check passes except [[OI-372]]'s tool, with
+**zero STOPs**, and the guard population is UNCHANGED against the start state, no tool having been
+added or removed by this batch. The two start-state reds are down to that one: the evidence-pin
+membership check was cleared at Task 0 by the act that tracked this dispatch's own untracked inputs.
+**The third red A2 named as possible could not arise**, for the reason §2 and §10 of the close both
+record. Every value is at `tools/audit/guard_state.json`, written by the run itself; the table
+stands in §10 of the close and no figure is restated here (**D-431**).
+
+**★ THE TELL, RE-TAKEN OVER THE WHOLE BATCH IN THE ONE FURTHER COMMIT.** The sentence at §12 was
+written at the close and was true of it. Taken over the batch INCLUDING the further commit, the
+answer is unchanged in kind and larger by one item: the guard registry itself was rewritten, and
+that is not an extra — writing it IS what running the set does, and the end-state run is the thing
+this commit exists to carry. **Nothing else was produced, and nothing this batch touched lies
+outside the subjects of its own ordered acts.**
+
 ---
 
 ## 12. The plan's tell, in one sentence

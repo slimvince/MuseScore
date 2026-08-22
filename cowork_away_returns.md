@@ -16078,3 +16078,42 @@ under Rulings 1(a), 1(c) and 2(b) of `cowork_rulings_2026_08_22_step_zero_return
 Ruling 1 of `cowork_rulings_2026_08_22_dispatch_order_sitting.md`. Every commit named above was read
 at the object by explicit hash. The end-state values are deliberately absent and land in the one
 further commit beneath this section.*
+
+## 10. THE END STATE, run at the tree the close commit `d276e8afb2` left — appended in the one further commit
+
+**E3 — MET.** The full guard set was run at the tree the close commit left, and read:
+
+| | run | passing | failing | not run | historical | STOPs |
+|---|---:|---:|---:|---:|---:|---:|
+| start state, before any edit | 74 | 72 | 2 | 4 | 16 | 0 |
+| **end state, at the tree the close left** | **74** | **73** | **1** | 4 | 16 | **0** |
+
+**The population is UNCHANGED at 74** — no tool was added or removed by this batch, which is A3's
+route 4 holding at the end as it held at Task 1. **The two start-state reds are down to the one
+standing red the record already carries:** the evidence-pin membership check was cleared at Task 0
+by the act that tracked this dispatch's own untracked inputs, and the one that remains is
+[[OI-372]]'s tool, exactly as the declared start state said it would be.
+
+**The one red that appeared MID-BATCH was reported rather than quietly cleared, and its cause was
+established at the object BEFORE the artifact was touched (D-669).** The recognizer establishment
+sort derives, per tool, the paths a tool READS AND DOES NOT WRITE; Task 1 step (c) is ordered to add
+exactly such a path constant to the July screen's generator, so that sort's reading of that one tool
+moved. The measured difference is **one added record naming that constant and nothing else** — no
+member entered or left the classification and no verdict moved. It was regenerated and committed
+with Task 1, and it is green here. **A2's condition — a red outside the subjects of this batch's own
+acts — did not fire at any point in the batch.**
+
+**A THIRD RED WAS NAMED AS POSSIBLE AND COULD NOT ARISE.** A2 names a check whose cause would be
+`DECISIONS.md`'s carriage returns. At the OBJECT LEVEL git reports no modification at all for that
+path — the repository normalises line endings on the way in — so no check could see the difference
+the dispatch predicted. Nothing was staged and nothing was repaired, as ordered.
+
+**★ A READER WHO OPENS THE CLOSE COMMIT'S OWN COPY OF `guard_state.json` WILL FIND NEITHER ROW OF THE
+TABLE ABOVE, AND THAT IS THE E-ORDERING RULE WORKING RATHER THAN A DISCREPANCY.** That copy records
+a mid-batch run. It cannot record the end state, because the end state is a property of the tree
+that commit LEFT, and a commit cannot contain a run over itself.
+
+*Provenance: CC, 2026-08-22, appended in the one further commit after the close commit `d276e8afb2`
+existed — a commit whose own identity this paragraph therefore cannot contain. Every value above was
+read from the run recorded in `tools/audit/guard_state.json`, which that run itself wrote; no value
+here was carried forward from an earlier run or inferred from a summary.*
