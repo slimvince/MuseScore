@@ -21,9 +21,12 @@ WHAT IS DERIVED AND WHAT IS AUTHORED, stated because the difference is the whole
               file exists at the tree.
   AUTHORED -- the GRADE per named target document, under `CLAUDE.md` decisions-register rule (i)
               with rules (h) and (k)/(k1); for an ADMITTED target, the anchor of the naming that
-              GOVERNS, and the scope (document, or the sections the naming names); and the two
+              GOVERNS, and the scope (document, or the sections the naming names); the two
               declared properties per member -- LIVE or DORMANT, and the declared establishment
-              status -- each as an anchor into the file that declares it.
+              status -- each as an anchor into the file that declares it; and the EXCLUSIONS,
+              each with its finding, its date and its reason, applied to MEMBERSHIP and never to
+              a grade (the D-677 shape: an input to the derivation, never a hand edit to its
+              output, so `--check` re-derives the set with the exclusion applied).
 
 THE GRADING UNIT IS THE TARGET DOCUMENT, NOT THE NAMING, AND THAT IS RULE (k1)'S OWN SHAPE:
 "WHERE A DOCUMENT IS NAMED IN BOTH AN ADMITTING AND AN EXCLUDED FORM, THE STRONGEST NAMING
@@ -74,6 +77,8 @@ THE STOPS, so this cannot silently stop being a derivation:
   7. a limb-1 region heading that is missing or ambiguous STOPS it;
   8. an authored property quote whose anchor is not found at its cited file STOPS it (the
      quote-fidelity check).
+  9. an exclusion naming an ungraded or non-admitted target, or lacking its finding, date or
+     reason, STOPS it.
 
 NO RECOGNIZER OVER PROSE DECIDES A GRADE (F42, F84).  The scan finds NAMINGS -- a mechanical
 identity, a filename in the text.  Every judgment about whether a naming delegates is authored,
@@ -566,6 +571,36 @@ GRADES: dict[str, dict] = {
         "Named once, in the same version-history paragraph."),
 }
 
+# ── AUTHORED — the EXCLUSIONS, fed to the derivation beside the grades (the D-677 shape) ────
+# An exclusion removes an ADMITTED target from the MEMBER LIST and changes NO grade: the
+# target stays graded, its naming stays quoted, the seed reconciliation is untouched. It is an
+# INPUT to the derivation and never a hand edit to its output, so `--check` re-derives the set
+# with the exclusion applied. Every exclusion carries its finding, its date and its reason, and
+# one lacking any of the three STOPS the tool — amended #10's own demand of a discard record.
+AUTHORED_EXCLUSIONS: dict[str, dict] = {
+    "STATUS.md": {
+        "finding": ("`cc_report_step_zero.md` §6 finding 2: `STATUS.md` is a member by the "
+                    "ruled mechanism and contributes about half of the widened screen "
+                    "population, while its subject is implementation status, not a "
+                    "specification of the analysis."),
+        "date": "2026-08-22",
+        "reason": ("The plan's own §5 exclusion ground: a process record is not a "
+                   "specification of the analysis. The user's stated ground, verbatim: "
+                   "\"Best case 'status.md' is a history of what has been done, not anything "
+                   "explaining why we do inference in a certain way\"."),
+        "ruled_at": ("Ruling 1(a) of `cowork_rulings_2026_08_22_step_zero_return_sitting.md` "
+                     "(Alternative A as amended by the user; the user's word: \"approved\")."),
+        "what_the_document_becomes": (
+            "A FACT-GATE MINING INPUT under the plan's §5 clause for process records, together "
+            "with `STATUS_ARCHIVE.md`: ONE whole read of both is owed, in its own run, AFTER the "
+            "pilot has established the method (Ruling 1(d)). A plan line, not a dispatch."),
+        "what_is_untouched": (
+            "The delegation at `ARCHITECTURE.md` (Ruling 1(b)); this tool's grade of the "
+            "target; the candidate enumeration's changed passages of the document (Ruling "
+            "1(c))."),
+    },
+}
+
 # ── AUTHORED — the two declared properties per member ─────────────────────────────────────────────
 #   member -> dict(live: (file, anchor) | None, live_value, est: (file, anchor) | None, est_value)
 # A property is UNDECLARED where no banner and no rule says it; nothing is inferred.
@@ -818,6 +853,20 @@ def build() -> dict:
 
     admitted = [r for r in graded if r["admitted"]]
 
+    # ── the authored exclusions, applied to MEMBERSHIP and to nothing else ──────────────────
+    for target, ex in AUTHORED_EXCLUSIONS.items():
+        if target not in GRADES:
+            raise Stop(f"exclusion names {target}, which carries no authored grade")
+        if GRADES[target]["form"] not in ADMITTING:
+            raise Stop(f"exclusion names {target}, whose grade is not ADMITTED — an exclusion "
+                       f"removes a member and there is none to remove")
+        for field in ("finding", "date", "reason"):
+            if not ex.get(field):
+                raise Stop(f"exclusion of {target} lacks its {field} and does not reach the "
+                           f"derivation (amended #10)")
+    excluded = [r for r in admitted if r["target"] in AUTHORED_EXCLUSIONS]
+    admitted_less_exclusions = [r for r in admitted if r["target"] not in AUTHORED_EXCLUSIONS]
+
     # ── A3: the seed, reconciled BOTH WAYS ──────────────────────────────────────────────────────
     seed = seed_admitted_in_architecture()
     seed_refound, seed_missing = [], []
@@ -885,7 +934,7 @@ def build() -> dict:
     members.append(member("ARCHITECTURE.md", "limb 1 — the canonical specification",
                           "sections", [r["region"] for r in regions],
                           note="The three regions the ruling names; their line ranges are above."))
-    for r in admitted:
+    for r in admitted_less_exclusions:
         members.append(member(r["target"], "limb 2 — an admitted delegation target",
                               r["delegation_scope"], r["delegated_sections"]))
     if LIMB_3 not in {m["member"] for m in members}:
@@ -899,7 +948,9 @@ def build() -> dict:
     return {
         "what_this_is": (
             "THE SPECIFICATION DOCUMENT SET, derived from `ARCHITECTURE.md`'s admitted delegations "
-            "under Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md`. It derives "
+            "under Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md`, LESS ONE "
+            "AUTHORED EXCLUSION under Ruling 1(a) of "
+            "`cowork_rulings_2026_08_22_step_zero_return_sitting.md`. It derives "
             "no specification, admits no fact, and takes no view on whether any member's content "
             "is right."),
         "dispatch": "cc_instruction_successor_plan_landing_and_step_zero.md",
@@ -931,6 +982,8 @@ def build() -> dict:
             "for an ADMITTED target, the anchor of the naming that GOVERNS, and the scope",
             "the two declared properties per member, each as an anchor into the declaring file",
             "the three limb-1 regions' heading list",
+            "the exclusions, each with its finding, date and reason, applied to membership and "
+            "never to a grade",
         ],
         "the_form_vocabulary": {
             "admitted": sorted(ADMITTING),
@@ -949,6 +1002,8 @@ def build() -> dict:
             "namings_scanned": sum(len(v) for v in namings.values()),
             "targets_by_form": dict(sorted(Counter(r["form"] for r in graded).items())),
             "targets_ADMITTED": len(admitted),
+            "targets_ADMITTED_less_exclusions": len(admitted_less_exclusions),
+            "authored_exclusions": len(AUTHORED_EXCLUSIONS),
             "members_total": len(members),
             "members_by_limb": dict(sorted(Counter(m["limb"] for m in members).items())),
             "members_by_delegation_scope": dict(
@@ -962,6 +1017,16 @@ def build() -> dict:
         },
         "the_limb_1_regions": regions,
         "the_grades": graded,
+        "the_authored_exclusions": [
+            {
+                "target": t,
+                "the_authored_record": AUTHORED_EXCLUSIONS[t],
+                "the_targets_grade_as_graded": next(r for r in excluded if r["target"] == t),
+                "★_applied_to": ("membership only — the grade, the quoted naming and the seed "
+                                 "reconciliation are untouched"),
+            }
+            for t in sorted(AUTHORED_EXCLUSIONS)
+        ],
         "the_seed_reconciliation": {
             "what_the_seed_is": (
                 "`tools/audit/decisions/gen_phase1p_delegation_bar.py`'s FORMS and RETIRED_FORMS "
@@ -1000,6 +1065,8 @@ def build() -> dict:
             "named by filename is outside the set although the clause plainly means to include "
             "it. Every layer specification in this set is in it by a separate delegation the user "
             "wrote, not by that clause.",
+            "★ OVERTAKEN 2026-08-22 — `STATUS.md` LEFT THE SET by the authored exclusion above "
+            "(Ruling 1(a)); the former finding stands in place (#12): "
             "THE SET CONTAINS A STATUS SURFACE. `STATUS.md` is a member by the ruled mechanism: "
             "`ARCHITECTURE.md` makes it a mandatory session-start read, binds an update rule to "
             "it, and gives it precedence over its own §5 headings on current state. Its subject "

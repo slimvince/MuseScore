@@ -666,51 +666,52 @@ Every hunk's text was retrieved from the git object by explicit hash — `git sh
 
 The widened population is not yet read whole, so a majority over the read members cannot be reported as the ruled signal firing. The read share is published beside the majority, and the ruling's own words are that a majority reached only because few members were read is reported this way rather than as the signal firing.
 
-- Read members: **93** of **437** (read share 0.2128).
+- Read members: **93** of **237** (read share 0.3924).
 - UNDETERMINED among the read: **14** (share of the read 0.1505).
 
 ## The widened population
 
-- **437 hunks** across **210 commits** and **18 documents** — **32** already screened and inherited, **405** new.
-- By verdict: NOT YET READ 344, POSITIVELY CODE-INFLUENCED 36, RATIFIED-ACT EDIT 31, RESTRUCTURING-SHAPED 12, UNDETERMINED 14.
+- **237 hunks** across **64 commits** and **17 documents** — **32** already screened and inherited, **205** new.
+- By verdict: NOT YET READ 144, POSITIVELY CODE-INFLUENCED 36, RATIFIED-ACT EDIT 31, RESTRUCTURING-SHAPED 12, UNDETERMINED 14.
 
 ## The per-document pollution distribution
 
-| member | hunks | read | POSITIVELY CODE-INFLUENCED | RATIFIED-ACT EDIT | RESTRUCTURING-SHAPED | UNDETERMINED | NOT YET READ | OUTSIDE NAMED SECTIONS | coverage gap |
-|---|---|---|---|---|---|---|---|---|---|
-| `ARCHITECTURE.md` | 152 | 88 | 35 | 29 | 12 | 12 | 64 | 0 | — |
-| `STATUS.md` | 200 | 0 | 0 | 0 | 0 | 0 | 200 | 0 | — |
-| `cowork_bounded_context_design.md` | 4 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | — |
-| `cowork_confidence_contract.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — |
-| `cowork_evidence_inventory.md` | 6 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | — |
-| `cowork_idiom_entry_mapping.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
-| `cowork_joint_estimator_architecture.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — |
-| `cowork_joint_estimator_factorization.md` | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | — |
-| `cowork_layer1_note_model_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
-| `cowork_layer2_slicing_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
-| `cowork_layer3_keymode_design.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — |
-| `cowork_layer4_chordsymbol_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
-| `cowork_layer5_engagement_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
-| `cowork_layer5_function_design.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — |
-| `cowork_layer6_grouping_design.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — |
-| `cowork_notation_adoption_increment.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — |
-| `cowork_notation_output_contract.md` | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | — |
-| `cowork_phrase_boundary_design.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — |
-| `cowork_prefit_gates.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — |
-| `cowork_progression_schema_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
-| `cowork_progression_schema_dictionary.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
-| `cowork_score_census.md` | 6 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | — |
-| `cowork_stage5_fitter_design.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — |
-| `cowork_target_architecture.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
-| `cowork_voiceleading_axis_design.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — |
-| `docs/llm_integration.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** |
-| `docs/scoring_model.md` | 31 | 5 | 1 | 2 | 0 | 2 | 26 | 0 | — |
+| member | hunks | read | POSITIVELY CODE-INFLUENCED | RATIFIED-ACT EDIT | RESTRUCTURING-SHAPED | UNDETERMINED | NOT YET READ | OUTSIDE NAMED SECTIONS | coverage gap | pollution input |
+|---|---|---|---|---|---|---|---|---|---|---|
+| `ARCHITECTURE.md` | 152 | 88 | 35 | 29 | 12 | 12 | 64 | 0 | — | MEASURED |
+| `cowork_bounded_context_design.md` | 4 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | — | MEASURED |
+| `cowork_confidence_contract.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — | MEASURED |
+| `cowork_evidence_inventory.md` | 6 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | — | MEASURED |
+| `cowork_idiom_entry_mapping.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at d9b2020623, 2026-06-30 |
+| `cowork_joint_estimator_architecture.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — | MEASURED |
+| `cowork_joint_estimator_factorization.md` | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | — | MEASURED |
+| `cowork_layer1_note_model_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at ce509b0961, 2026-07-03 |
+| `cowork_layer2_slicing_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at ce509b0961, 2026-07-03 |
+| `cowork_layer3_keymode_design.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — | MEASURED |
+| `cowork_layer4_chordsymbol_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at a31b56639d, 2026-07-05 |
+| `cowork_layer5_engagement_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at 416b7d6215, 2026-07-10 |
+| `cowork_layer5_function_design.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — | MEASURED |
+| `cowork_layer6_grouping_design.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — | MEASURED |
+| `cowork_notation_adoption_increment.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — | MEASURED |
+| `cowork_notation_output_contract.md` | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | — | MEASURED |
+| `cowork_phrase_boundary_design.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — | MEASURED |
+| `cowork_prefit_gates.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — | MEASURED |
+| `cowork_progression_schema_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at ce509b0961, 2026-07-03 |
+| `cowork_progression_schema_dictionary.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at ce509b0961, 2026-07-03 |
+| `cowork_score_census.md` | 6 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | — | MEASURED |
+| `cowork_stage5_fitter_design.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — | MEASURED |
+| `cowork_target_architecture.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at ce509b0961, 2026-07-03 |
+| `cowork_voiceleading_axis_design.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — | MEASURED |
+| `docs/llm_integration.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at 5b08465924, 2026-06-07 |
+| `docs/scoring_model.md` | 31 | 5 | 1 | 2 | 0 | 2 | 26 | 0 | — | MEASURED |
 
 ## The coverage gap — the members the screen cannot see at all
 
 Every document-set member with NO FLAG hunk in the candidate enumeration, with the reason the enumeration gives for ITSELF rather than a reason invented here. This is the plan's own finding about the premise's measurability: a member with no flagged hunk contributes nothing to the pollution distribution, and the distribution must be read knowing which members are silent and why.
 
-**9 of 27 members carry no flagged hunk in the candidate enumeration.**
+**The declared third value of the pollution input, as ruled.** Ruling 2(b) of `cowork_rulings_2026_08_22_step_zero_return_sitting.md`: "ONLY the pollution input of Ruling 12 is affected. For each of the nine, the July screen's per-document value is recorded as a DECLARED THIRD VALUE — 'NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at <commit, date>' — derived by the generator from the candidate enumeration and from git, never hand-typed (#17f, D-431). It is distinct from a measured distribution and from 'clean': the screen measures corrections made toward the code DURING the period and has never measured authoring-time influence for any member; the fact-gate tests that, per statement, for every source."
+
+**9 of 26 members carry no flagged hunk in the candidate enumeration.**
 
 - `cowork_idiom_entry_mapping.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
 - `cowork_layer1_note_model_design.md` — NO hunk of this file is in the candidate enumeration. The enumeration's own commit population is the restructuring period — opening EXCLUSIVE at 9306dc5072153dec647b227725f626f8741f8c1b, ending at f2da61f8cd142a5bd6c2bb3ee2a6539d1f5dca37, 435 commits — so a file no commit of that population touched has nothing to enumerate. The file does not appear in the enumeration's `files` table at all.
@@ -727,7 +728,6 @@ Every document-set member with NO FLAG hunk in the candidate enumeration, with t
 Recorded so that a continuing session derives the remainder fresh rather than carrying it from this session's account of it. The order below is the artifact's own — by document, then by commit, then by hunk.
 
 - `ARCHITECTURE.md` — **64** unread
-- `STATUS.md` — **200** unread
 - `cowork_bounded_context_design.md` — **4** unread
 - `cowork_confidence_contract.md` — **1** unread
 - `cowork_evidence_inventory.md` — **6** unread

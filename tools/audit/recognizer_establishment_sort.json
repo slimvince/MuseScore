@@ -1406,6 +1406,12 @@
     {
      "idiom": "a path it reads and does not write",
      "found_in": "its own source",
+     "the_constant": "IN_MAIN",
+     "bound_to": "ROOT / 'tools' / 'audit' / 'doc_change_candidates.json'"
+    },
+    {
+     "idiom": "a path it reads and does not write",
+     "found_in": "its own source",
      "the_constant": "IN_SPLIT",
      "bound_to": "ROOT / 'tools' / 'audit' / 'period_stratum_split.json'"
     }

@@ -56,6 +56,18 @@ documentation and the implementation moved together in one authored act.  It is 
 is not a correction; so it is reported in the not-cleared class with its shape named, rather than
 being waved through as restructuring or counted as a falsification.
 
+THE DECLARED THIRD VALUE OF THE POLLUTION INPUT (Ruling 2(b), 2026-08-22).  A member of the
+coverage gap -- one with no changed passage in the candidate enumeration at all -- has no measured
+pollution distribution and must not be read as clean.  Its per-document pollution input is
+therefore recorded as a DECLARED THIRD VALUE: "NOT EDITED IN THE RESTRUCTURING PERIOD; last
+authored before it, at <commit, date>".  It is DERIVED, never typed -- the period's own bounds are
+read from `tools/audit/doc_change_candidates.json` -> `range`, and the authoring commit and its
+date from `git log` at those bounds.  ITS OWN STOP: a commit strictly inside the period that
+touches the file contradicts the coverage-gap reason the enumeration gives for itself, and the two
+readings disagreeing STOPS the tool rather than declaring anything; so does a gap member the
+enumeration DOES carry (enumerated, every changed passage PURE), for which Ruling 2(b) declares
+nothing.
+
 THE STOPS, so this cannot silently stop being a screen:
   1. a population member with no authored verdict STOPS the tool — the population is imported, so a
      hunk entering it cannot be graded silently or quietly dropped;
@@ -93,6 +105,7 @@ use_utf8_output()
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 IN_SPLIT = ROOT / "tools" / "audit" / "period_stratum_split.json"
+IN_MAIN = ROOT / "tools" / "audit" / "doc_change_candidates.json"
 OUT_JSON = ROOT / "tools" / "audit" / "july_screen.json"
 OUT_REPORT = ROOT / "tools" / "audit" / "july_screen_report.md"
 
@@ -128,6 +141,19 @@ WIDENED_KEY = "★_the_widened_screen_population"
 NOT_YET_READ = "NOT YET READ"
 OUTSIDE_SECTIONS = "OUTSIDE NAMED SECTIONS"
 WIDENED_VOCABULARY = CLASSES + (NOT_YET_READ, OUTSIDE_SECTIONS)
+
+# ── AUTHORED — the DECLARED THIRD VALUE of the pollution input (Ruling 2(b), 2026-08-22) ────
+NOT_EDITED_IN_PERIOD = "NOT EDITED IN THE RESTRUCTURING PERIOD"
+THIRD_VALUE_RULING = (
+    "Ruling 2(b) of `cowork_rulings_2026_08_22_step_zero_return_sitting.md`: \"ONLY the "
+    "pollution input of Ruling 12 is affected. For each of the nine, the July screen's "
+    "per-document value is recorded as a DECLARED THIRD VALUE — 'NOT EDITED IN THE "
+    "RESTRUCTURING PERIOD; last authored before it, at <commit, date>' — derived by the "
+    "generator from the candidate enumeration and from git, never hand-typed (#17f, D-431). "
+    "It is distinct from a measured distribution and from 'clean': the screen measures "
+    "corrections made toward the code DURING the period and has never measured "
+    "authoring-time influence for any member; the fact-gate tests that, per statement, for "
+    "every source.\"")
 
 # AUTHORED — the reported shapes.  A shape is never a verdict; it is what a reader needs in order to
 # see WHICH KIND of change sits behind a verdict, and it is the device the candidate pass used for
@@ -1042,6 +1068,26 @@ class Stop(Exception):
     """A demand of the screen is unmet. Never a warning."""
 
 
+def last_authored_before_the_period(path: str, start_exclusive: str, end: str) -> dict:
+    """Ruling 2(b)'s third value, derived from git and from nothing typed: the commit that last
+    touched `path` at or before the period's end, with the check — a STOP, not a warning — that
+    no commit strictly inside the period touched it (which is what the candidate enumeration's
+    own coverage-gap reason asserts, re-measured here at the objects rather than inherited)."""
+    inside = git("log", "--format=%H", f"{start_exclusive}..{end}", "--", path).split()
+    if inside:
+        raise Stop(f"{path}: the coverage gap says no period commit touched it, but git "
+                   f"names {len(inside)} — the two readings disagree and nothing is declared")
+    last = git("log", "-1", "--format=%H %cs", end, "--", path).strip()
+    if not last:
+        raise Stop(f"{path}: no commit at or before {end} touches it — nothing to declare")
+    commit, date = last.split()
+    return {"value": NOT_EDITED_IN_PERIOD,
+            "last_authored_before_it_at": {"commit": commit, "date": date},
+            "declared_text": f"{NOT_EDITED_IN_PERIOD}; last authored before it, at {commit[:10]}, {date}",
+            "★_what_it_is_not": ("Not a measured distribution and not 'clean' — the screen has "
+                                 "never measured authoring-time influence for any member.")}
+
+
 def existing_verdicts_digest() -> str:
     """sha256 over the canonical JSON of the EXISTING authored block. Published so that
     'the existing sixty-eight verdicts are byte-unchanged' is a measurement, not a claim."""
@@ -1230,9 +1276,21 @@ def build() -> dict:
         per_doc.setdefault(r["file"], Counter())[r["verdict"]] += 1
     gap_by_member = {g["member"]: g for g in
                      widened_block["the_coverage_gap"]["members"]}
+    # the period's own bounds, read from the candidate enumeration's artifact and never typed
+    rng = json.loads(IN_MAIN.read_text(encoding="utf-8"))["range"]
     distribution = []
     for path in sorted(set(per_doc) | set(gap_by_member)):
         c = per_doc.get(path, Counter())
+        gapm = gap_by_member.get(path)
+        if gapm is None:
+            pollution_input = {"value": "MEASURED", "see": "by_class"}
+        elif gapm["hunks_in_the_candidate_enumeration"] == 0:
+            pollution_input = last_authored_before_the_period(
+                path, rng["start_commit_EXCLUSIVE"], rng["end_commit"])
+        else:
+            raise Stop(f"{path}: a coverage-gap member the enumeration DOES carry (enumerated, "
+                       f"every hunk PURE). Ruling 2(b)'s declared third value is ruled for the "
+                       f"no-commit case only, and this batch declares nothing for the other")
         distribution.append({
             "member": path,
             "hunks": sum(c.values()),
@@ -1244,6 +1302,7 @@ def build() -> dict:
             "the_coverage_gap_reason": (
                 gap_by_member[path]["the_reason_the_enumeration_gives_for_itself"]
                 if path in gap_by_member else None),
+            "pollution_input": pollution_input,
         })
 
     # THE RULED FAILURE SIGNAL, evaluated at the artifact and not at an impression
@@ -1448,6 +1507,7 @@ def build() -> dict:
                                                    if wread else None),
             },
             "the_per_document_pollution_distribution": distribution,
+            "★_the_declared_third_value": THIRD_VALUE_RULING,
             "the_coverage_gap_beside_it": widened_block["the_coverage_gap"],
             "the_hunks": wrows,
         },
@@ -1646,18 +1706,23 @@ def render_report(art: dict) -> str:
     L.append("## The per-document pollution distribution")
     L.append("")
     L.append("| member | hunks | read | " + " | ".join(CLASSES) + f" | {NOT_YET_READ} | "
-             f"{OUTSIDE_SECTIONS} | coverage gap |")
-    L.append("|---|---|---|" + "---|" * (len(CLASSES) + 3))
+             f"{OUTSIDE_SECTIONS} | coverage gap | pollution input |")
+    L.append("|---|---|---|" + "---|" * (len(CLASSES) + 4))
     for d in art["★_the_widened_screen"]["the_per_document_pollution_distribution"]:
         cells = [str(d["by_class"].get(k, 0)) for k in CLASSES]
+        pi = d["pollution_input"]
         L.append(f"| `{d['member']}` | {d['hunks']} | {d['read']} | " + " | ".join(cells)
                  + f" | {d[NOT_YET_READ]} | {d[OUTSIDE_SECTIONS]} | "
-                 + ("**yes**" if d["in_the_coverage_gap"] else "—") + " |")
+                 + ("**yes**" if d["in_the_coverage_gap"] else "—") + " | "
+                 + pi.get("declared_text", pi["value"]) + " |")
     L.append("")
     gapb = W_ART["the_coverage_gap_beside_it"]
     L.append("## The coverage gap — the members the screen cannot see at all")
     L.append("")
     L.append(gapb["★_what_this_is"])
+    L.append("")
+    L.append("**The declared third value of the pollution input, as ruled.** "
+             + W_ART["★_the_declared_third_value"])
     L.append("")
     L.append(f"**{gapb['members_with_no_flagged_hunk']} of {gapb['of_the_members']} members "
              f"carry no flagged hunk in the candidate enumeration.**")

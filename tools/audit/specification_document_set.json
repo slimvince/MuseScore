@@ -1,5 +1,5 @@
 {
- "what_this_is": "THE SPECIFICATION DOCUMENT SET, derived from `ARCHITECTURE.md`'s admitted delegations under Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md`. It derives no specification, admits no fact, and takes no view on whether any member's content is right.",
+ "what_this_is": "THE SPECIFICATION DOCUMENT SET, derived from `ARCHITECTURE.md`'s admitted delegations under Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md`, LESS ONE AUTHORED EXCLUSION under Ruling 1(a) of `cowork_rulings_2026_08_22_step_zero_return_sitting.md`. It derives no specification, admits no fact, and takes no view on whether any member's content is right.",
  "dispatch": "cc_instruction_successor_plan_landing_and_step_zero.md",
  "ruling": "Ruling 6 (Alternative A): \"Three limbs, as plan §5 states them: `ARCHITECTURE.md` (the analysis layers' sections, the joint estimator's standing-rules section, document governance); every document `ARCHITECTURE.md` delegates to in a form the delegation-form rule admits (`CLAUDE.md` decisions-register rule (i)), each delegating line quoted; and `docs/scoring_model.md`. The decisions register's home population is NOT the source. Whether `ARCHITECTURE.md`'s delegations are complete is recorded as a finding, not assumed. Three properties travel with every member: its pollution distribution (Ruling 7), LIVE or DORMANT, and its declared establishment status.\"",
  "generator": "tools/audit/gen_specification_document_set.py",
@@ -17,7 +17,8 @@
   "the grade per named target under CLAUDE.md rule (i), with (h) and (k)/(k1)",
   "for an ADMITTED target, the anchor of the naming that GOVERNS, and the scope",
   "the two declared properties per member, each as an anchor into the declaring file",
-  "the three limb-1 regions' heading list"
+  "the three limb-1 regions' heading list",
+  "the exclusions, each with its finding, date and reason, applied to membership and never to a grade"
  ],
  "the_form_vocabulary": {
   "admitted": [
@@ -64,14 +65,16 @@
    "provenance-attribution": 21
   },
   "targets_ADMITTED": 25,
-  "members_total": 27,
+  "targets_ADMITTED_less_exclusions": 24,
+  "authored_exclusions": 1,
+  "members_total": 26,
   "members_by_limb": {
    "limb 1 — the canonical specification": 1,
-   "limb 2 — an admitted delegation target": 25,
+   "limb 2 — an admitted delegation target": 24,
    "limb 3 — the ruled pilot subject": 1
   },
   "members_by_delegation_scope": {
-   "document": 23,
+   "document": 22,
    "sections": 4
   },
   "members_with_no_file": 0,
@@ -80,14 +83,14 @@
    "DORMANT (as declared at the naming)": 1,
    "DORMANT (its mechanism content)": 1,
    "DORMANT (nothing built)": 1,
-   "LIVE": 6,
+   "LIVE": 5,
    "LIVE (as the standard, with a declared departure)": 1,
    "UNDECLARED": 9
   },
   "members_by_declared_establishment_status": {
    "DECLARED NOT ESTABLISHED": 1,
    "Provisional, easy to revise.": 1,
-   "UNDECLARED": 23,
+   "UNDECLARED": 22,
    "Values remain unfit.": 1,
    "protocol ratified — pending execution": 1
   }
@@ -1854,6 +1857,102 @@
    "namings_counted": 1
   }
  ],
+ "the_authored_exclusions": [
+  {
+   "target": "STATUS.md",
+   "the_authored_record": {
+    "finding": "`cc_report_step_zero.md` §6 finding 2: `STATUS.md` is a member by the ruled mechanism and contributes about half of the widened screen population, while its subject is implementation status, not a specification of the analysis.",
+    "date": "2026-08-22",
+    "reason": "The plan's own §5 exclusion ground: a process record is not a specification of the analysis. The user's stated ground, verbatim: \"Best case 'status.md' is a history of what has been done, not anything explaining why we do inference in a certain way\".",
+    "ruled_at": "Ruling 1(a) of `cowork_rulings_2026_08_22_step_zero_return_sitting.md` (Alternative A as amended by the user; the user's word: \"approved\").",
+    "what_the_document_becomes": "A FACT-GATE MINING INPUT under the plan's §5 clause for process records, together with `STATUS_ARCHIVE.md`: ONE whole read of both is owed, in its own run, AFTER the pilot has established the method (Ruling 1(d)). A plan line, not a dispatch.",
+    "what_is_untouched": "The delegation at `ARCHITECTURE.md` (Ruling 1(b)); this tool's grade of the target; the candidate enumeration's changed passages of the document (Ruling 1(c))."
+   },
+   "the_targets_grade_as_graded": {
+    "target": "STATUS.md",
+    "form": "explicit-delegation-clause",
+    "admitted": true,
+    "why_this_grade": "A subject-is-in-X naming with a delegating predicate and a precedence rule beside it: 'the authoritative, current implemented/planned state lives in STATUS.md. Where a heading's status and STATUS.md disagree, STATUS.md wins.' The canonical document's own living-document banner adds the two halves the seed's `docs/scoring_model.md` grade turns on — it makes the document a mandatory session-start read and binds an update rule to it ('Update STATUS.md as your last act when anything changes') — and §15 repeats the authority clause. Graded on the strongest of those namings. ★ ABSENT FROM THE SEED (A3: this document is nobody's home in the register), and ★ CARRIED INTO THE MEMBER LIST WITH A FINDING BESIDE IT: its subject is current implementation STATUS, not a specification of the analysis, and Ruling 6's mechanism carries no exclusion for it. The finding is reported, not acted on.",
+    "decided_by": "rule_(i)_admitted",
+    "namings_in_ARCHITECTURE.md": [
+     {
+      "line": 115,
+      "line_text": "> seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). At the switch the migration posture"
+     },
+     {
+      "line": 553,
+      "line_text": "> **Living design document.** Read this AND STATUS.md at the start of every development"
+     },
+     {
+      "line": 554,
+      "line_text": "> session. ARCHITECTURE.md contains stable design decisions. STATUS.md contains current"
+     },
+     {
+      "line": 555,
+      "line_text": "> implementation status and immediate next steps. Update STATUS.md as your last act when"
+     },
+     {
+      "line": 679,
+      "line_text": "see STATUS.md.*"
+     },
+     {
+      "line": 924,
+      "line_text": "- Record the failing tests in STATUS.md current state summary"
+     },
+     {
+      "line": 1551,
+      "line_text": "production), or **Design-only** (specified, not yet built). Per-date and per-commit provenance lives in STATUS.md and the"
+     },
+     {
+      "line": 4265,
+      "line_text": "> kept here only for orientation; the **authoritative, current** implemented/planned state lives in STATUS.md. Where a"
+     },
+     {
+      "line": 4266,
+      "line_text": "> heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.*"
+     },
+     {
+      "line": 4266,
+      "line_text": "> heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.*"
+     },
+     {
+      "line": 4736,
+      "line_text": "> STATUS.md.*"
+     },
+     {
+      "line": 4783,
+      "line_text": "music21 ground truth — STATUS.md expectation corrected 2026-04-13)"
+     },
+     {
+      "line": 7742,
+      "line_text": "*Current implementation status, remaining items, and immediate next steps are in STATUS.md.*"
+     },
+     {
+      "line": 7810,
+      "line_text": "implemented and passing all targeted tests. See STATUS.md for test counts."
+     },
+     {
+      "line": 7858,
+      "line_text": "**when it becomes next is OPEN** and is not settled here. `STATUS.md` is the authority on what the"
+     },
+     {
+      "line": 7859,
+      "line_text": "current next action actually is (§doc governance: `STATUS.md` wins on current state)."
+     }
+    ],
+    "namings_counted": 16,
+    "the_governing_naming": {
+     "citation": "ARCHITECTURE.md:4265",
+     "passage_verbatim": "> *The per-feature \"Implemented / Pending / Planned\" tags in the §5 sub-headings are **status**, not design, and are\n> kept here only for orientation; the **authoritative, current** implemented/planned state lives in STATUS.md. Where a\n> heading's status and STATUS.md disagree, STATUS.md wins. This section describes the **designs**.*"
+    },
+    "delegation_scope": "document",
+    "delegated_sections": null,
+    "scope_decided_by": "rule_(h)_granularity",
+    "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
+   },
+   "★_applied_to": "membership only — the grade, the quoted naming and the seed reconciliation are untouched"
+  }
+ ],
  "the_seed_reconciliation": {
   "what_the_seed_is": "`tools/audit/decisions/gen_phase1p_delegation_bar.py`'s FORMS and RETIRED_FORMS tables. They were produced to answer WHERE DOES A REGISTER ENTRY LIVE, over the entries' home documents — not to enumerate every delegation `ARCHITECTURE.md` writes. Read here as a SEED and never as the population (the dispatch's assumption A3).",
   "seed_admitted_delegations_sited_in_ARCHITECTURE.md": [
@@ -2028,23 +2127,6 @@
    },
    "remark": "The canonical specification; its own document-governance block declares it so.",
    "note": "The three regions the ruling names; their line ranges are above."
-  },
-  {
-   "member": "STATUS.md",
-   "limb": "limb 2 — an admitted delegation target",
-   "delegation_scope": "document",
-   "delegated_sections": null,
-   "file_exists_at_the_tree": true,
-   "live_or_dormant": {
-    "value": "LIVE",
-    "quote": "> **Living document.** Claude Code reads this at the start of every session. Update this as the",
-    "at": "STATUS.md:3"
-   },
-   "declared_establishment_status": {
-    "value": "UNDECLARED",
-    "quote": null,
-    "at": null
-   }
   },
   {
    "member": "cowork_bounded_context_design.md",
@@ -2511,7 +2593,7 @@
  "the_members_with_no_file": [],
  "★_the_findings_this_derivation_records_rather_than_acts_on": [
   "WHETHER `ARCHITECTURE.md`'S DELEGATIONS ARE COMPLETE IS NOT ASSERTED, and the ruling asks for it as a finding. What this derivation establishes is what the canonical document DOES delegate, graded naming by naming. It cannot see a specification the canonical document never names — and one class of such a document is visible from inside the derivation itself: the document-governance clause reaches its per-layer and per-component design documents through a GLOB and a trailing ELLIPSIS, both of which rule (k) makes confer nothing, so any design document that is not separately named by filename is outside the set although the clause plainly means to include it. Every layer specification in this set is in it by a separate delegation the user wrote, not by that clause.",
-  "THE SET CONTAINS A STATUS SURFACE. `STATUS.md` is a member by the ruled mechanism: `ARCHITECTURE.md` makes it a mandatory session-start read, binds an update rule to it, and gives it precedence over its own §5 headings on current state. Its subject is current implementation status, not a specification of the analysis, and the plan's §5 exclusion list does not reach it. Reported, not acted on.",
+  "★ OVERTAKEN 2026-08-22 — `STATUS.md` LEFT THE SET by the authored exclusion above (Ruling 1(a)); the former finding stands in place (#12): THE SET CONTAINS A STATUS SURFACE. `STATUS.md` is a member by the ruled mechanism: `ARCHITECTURE.md` makes it a mandatory session-start read, binds an update rule to it, and gives it precedence over its own §5 headings on current state. Its subject is current implementation status, not a specification of the analysis, and the plan's §5 exclusion list does not reach it. Reported, not acted on.",
   "THE SET CONTAINS A DATA MAPPING. `cowork_idiom_entry_mapping.md` is a member on the ONE near-tie in this grading, which is declared at its own grade with both readings and the consequence of each.",
   "TWO MEMBERS ARE ABSENT FROM THE SEED'S LIVE TABLE BECAUSE THE SEED RETIRED THEM, NOT BECAUSE THE TEXT LOST THEM — `cowork_layer1_note_model_design.md` and `cowork_layer2_slicing_design.md`. Both delegations stand at the text word for word. The cause is that every register entry homed in each was retired by a ruled soft-discard, which emptied the document out of the seed's home population.",
   "THE `LIVE OR DORMANT` PROPERTY IS UNDECLARED FOR SEVERAL MEMBERS AND IS NOT INFERRED. Ruling 6's own words are that it is quoted or UNDECLARED; a banner declaring a SIGNING, a RATIFICATION or a DELIVERY is neither of the two properties and is recorded as such in the member's remark."
