@@ -666,13 +666,13 @@ Every hunk's text was retrieved from the git object by explicit hash — `git sh
 
 The widened population is not yet read whole, so a majority over the read members cannot be reported as the ruled signal firing. The read share is published beside the majority, and the ruling's own words are that a majority reached only because few members were read is reported this way rather than as the signal firing.
 
-- Read members: **175** of **237** (read share 0.7384).
-- UNDETERMINED among the read: **15** (share of the read 0.0857).
+- Read members: **181** of **237** (read share 0.7637).
+- UNDETERMINED among the read: **18** (share of the read 0.0994).
 
 ## The widened population
 
 - **237 hunks** across **64 commits** and **17 documents** — **32** already screened and inherited, **205** new.
-- By verdict: NOT YET READ 59, OUTSIDE NAMED SECTIONS 3, POSITIVELY CODE-INFLUENCED 49, RATIFIED-ACT EDIT 94, RESTRUCTURING-SHAPED 17, UNDETERMINED 15.
+- By verdict: NOT YET READ 53, OUTSIDE NAMED SECTIONS 3, POSITIVELY CODE-INFLUENCED 49, RATIFIED-ACT EDIT 96, RESTRUCTURING-SHAPED 18, UNDETERMINED 18.
 
 ## The per-document pollution distribution
 
@@ -681,7 +681,7 @@ The widened population is not yet read whole, so a majority over the read member
 | `ARCHITECTURE.md` | 152 | 152 | 41 | 82 | 16 | 13 | 0 | 0 | — | MEASURED |
 | `cowork_bounded_context_design.md` | 4 | 4 | 3 | 1 | 0 | 0 | 0 | 0 | — | MEASURED |
 | `cowork_confidence_contract.md` | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | — | MEASURED |
-| `cowork_evidence_inventory.md` | 6 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | — | MEASURED |
+| `cowork_evidence_inventory.md` | 6 | 6 | 0 | 2 | 1 | 3 | 0 | 0 | — | MEASURED |
 | `cowork_idiom_entry_mapping.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at d9b2020623, 2026-06-30 |
 | `cowork_joint_estimator_architecture.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — | MEASURED |
 | `cowork_joint_estimator_factorization.md` | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | — | MEASURED |
@@ -727,7 +727,6 @@ Every document-set member with NO FLAG hunk in the candidate enumeration, with t
 
 Recorded so that a continuing session derives the remainder fresh rather than carrying it from this session's account of it. The order below is the artifact's own — by document, then by commit, then by hunk.
 
-- `cowork_evidence_inventory.md` — **6** unread
 - `cowork_joint_estimator_architecture.md` — **2** unread
 - `cowork_joint_estimator_factorization.md` — **9** unread
 - `cowork_notation_adoption_increment.md` — **2** unread
@@ -1799,6 +1798,52 @@ Recorded so that a continuing session derives the remainder fresh rather than ca
 - **The act:** the user's ratification of 2026-07-10 that the commensurability premise must itself pass a premise ledger and a desk simulation before any conversion constant is fitted, re-homed 2026-08-08 under the away batch's Ruling 2
 - **Where its ratification is recorded:** the added block's own "user-ratified 2026-07-10; re-homed into this section 2026-08-08 under a one-edit authorization for this act alone"; and the ruling record the batch applies, `cowork_rulings_2026_08_08_pre_away.md`
 - *Retrieve:* `git show dfbf3ab824f0717d83cf3cce8e332c69f1074328 --no-color -U0 -- cowork_confidence_contract.md`
+
+### 2026-07-12 · `cowork_evidence_inventory.md` @ `-0,0 +1,216` · fe985ab047
+
+- **Verdict:** UNDETERMINED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs(cowork): preserve the concurrent live edits — publish-evidence-broadly rule + the evidence inventory + OI-146
+- **Ground.** The hunk CREATES this document whole. ★ The first class was applied first and does NOT fire: nothing existed here to withdraw, narrow, qualify or replace. ★ The second does not fire either, on the line stated above the block: the user's direction, quoted in the document's own preamble, is to "enumerate ALL the hints/clues each layer discovers that should be passed forward" — a directed ACT whose findings are the document's content, not a decision whose content the user settled. ★ Nor the third: growth qualifies only where its source is not a fact read in implementation code, and here the source IS that, by construction. The catalog's own status vocabulary is a vocabulary of implementation states — PUBLISHED on a layer's output surface today, SILOED or TRAPPED, DORMANT because built and gated off — and its stated sources are "the five certified audits (which dispositioned every published/siloed/trapped fact), the siloed-facts sweep, the diagnosis, the mechanism report". NOT CLEARED, on the not-cleared class's own first branch, and reported whole.
+- *Retrieve:* `git show fe985ab04757dc9eb214ed12664001fa5156238e --no-color -U0 -- cowork_evidence_inventory.md`
+
+### 2026-07-13 · `cowork_evidence_inventory.md` @ `-32 +32,8` · 3966502265
+
+- **Verdict:** UNDETERMINED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs(cowork): parent-collection RULED (OI-132) + the Baroque state-space direction (design decision 6, research-enriched) + rests-as-phrase-ends (evidence inventory) + the backlog-triage instruction
+- **Ground.** The hunk REPLACES the rests-and-silences bullet with a fuller entry. ★ The first class was applied first and does NOT fire: the standing statement is not withdrawn — it survives inside the longer bullet — so what happened is elaboration rather than replacement. ★ BUT IT IS NOT CLEARED. The added substance is read off the implementation: the dormant phrase-boundary view "is already a silence-based phrase-end detector, gated off, with 'sufficiently long' a hand-set 240-tick threshold (one of the OI-87 unfit constants)". A fact in the implementation is the source while the change adds material.
+- *Retrieve:* `git show 3966502265254dbfe721a3607b1b3c50116e030d --no-color -U0 -- cowork_evidence_inventory.md`
+
+### 2026-07-13 · `cowork_evidence_inventory.md` @ `-205,0 +206,9` · 0bc49b4b48
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): OI-56 human-as-ground-truth + judge-as-guidance (closed into OI-38) + OI-62 intonation held as declared future consumer + the combined re-baseline instruction
+- **Ground.** The hunk adds §8b, naming the intonation feature a declared future consumer of the published analysis facts. ★ The first class was applied first and does not fire: the block ADDS and withdraws nothing, and no fact read in implementation code is cited. ★ The second fires, and the distinction stated above the block is what admits it: the CONTENT here is what the user named — the section's own heading is "A declared future consumer, NAMED BY THE USER (2026-07-13)" — rather than the findings of a directed survey.
+- **The act:** the user's decision of 2026-07-13 that the intonation feature is a declared future consumer of the analysis facts, held long-horizon
+- **Where its ratification is recorded:** the added section's own heading, "A declared future consumer, named by the user (2026-07-13)", and the register row it names, `OPEN_ITEMS.md` OI-62
+- *Retrieve:* `git show 0bc49b4b48fe5b23413a82f71c906fcf3038f91d --no-color -U0 -- cowork_evidence_inventory.md`
+
+### 2026-07-13 · `cowork_evidence_inventory.md` @ `-206 +206` · 0922e2bfdc
+
+- **Verdict:** RESTRUCTURING-SHAPED · shape `document-relocation-or-re-heading`
+- **Commit subject:** docs(cowork): the register + design edits Cowork left for the harness-group dispatch
+- **Ground.** The hunk changes ONE heading from the singular to the plural — "A declared future consumer" becomes "Declared future consumers" — because a second one is added below it in the same commit. ★ The first class was applied first and does not fire: no statement about the system is made or withdrawn. The second does not fire at this hunk's own text, which records no act. The third does, this being a re-heading exactly.
+- *Retrieve:* `git show 0922e2bfdcd72563b05f8754e7c1e67eb0136718 --no-color -U0 -- cowork_evidence_inventory.md`
+
+### 2026-07-13 · `cowork_evidence_inventory.md` @ `-214,0 +215,11` · 0922e2bfdc
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): the register + design edits Cowork left for the harness-group dispatch
+- **Ground.** The hunk adds the second declared future consumer — explainability, "the end user may want to know HOW a mode, chord, or function was inferred", attributed in its own opening to "(user, 2026-07-13)". ★ The first class was applied first and does NOT fire, and the call is recorded because it is close: the block names what exists in the implementation today — "the chord-diagnosis replay, the dormant function machinery's structured open marks and ambiguity kinds, the ranked-candidates-plus-margins confidence contract". What decides it is that the block ADDS and withdraws nothing, and that those internals are named as WHY the feature is a late-bound display consumer rather than a new analysis — the reason for the user's own characterization, not a fact that found a documentation statement false.
+- **The act:** the user's naming of explainability, on 2026-07-13, as a declared future consumer of facts that already exist rather than as a new analysis
+- **Where its ratification is recorded:** the added block's own "(user, 2026-07-13)" and the heading above it, which the same commit pluralizes to carry this second consumer
+- *Retrieve:* `git show 0922e2bfdcd72563b05f8754e7c1e67eb0136718 --no-color -U0 -- cowork_evidence_inventory.md`
+
+### 2026-07-13 · `cowork_evidence_inventory.md` @ `-225,0 +226,24` · e02bbebf88
+
+- **Verdict:** UNDETERMINED · shape `same-commit-code-documentation`
+- **Commit subject:** fix(tools): OI-158 — remove the music21 corroborator's dead local-key block; the evidence question stays open
+- **Ground.** The hunk adds §8c, filing OPEN the question whether the key layer should consume an external local key as an unvalidated second opinion, and stating where the question comes from. ★ The first class was applied first and does NOT fire: the block ADDS and withdraws nothing here. ★ BUT IT IS NOT CLEARED, and the shape says which kind of not-cleared it is. This is the documentation half of a code change made in the SAME commit — the commit is a `fix(tools)` whose subject is "remove the music21 corroborator's dead local-key block; the evidence question stays open" — so the block is influenced by facts in the code by construction: the named class "does not exist in music21 9.9.1", "the constructor always raised, the exception was swallowed, and every committed region was produced at the global key". It destroys no discrepancy, because documentation and implementation moved together in one authored act, and it is reported in the not-cleared class rather than waved through.
+- *Retrieve:* `git show e02bbebf887274edd119bf72cd0f6aa1763f34dc --no-color -U0 -- cowork_evidence_inventory.md`
 
 ### 2026-08-11 · `cowork_layer3_keymode_design.md` @ `-4 +4,17` · f3c7f1afe2
 

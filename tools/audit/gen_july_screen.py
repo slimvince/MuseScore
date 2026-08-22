@@ -2250,6 +2250,97 @@ w(_LF, "cowork_layer5_function_design.md", "-888,12 +897,8", RATIFIED,
   "document-relocation-or-re-heading", act=_LF_ACT, ratification_at=_LF_RAT)
 
 
+# ── `cowork_evidence_inventory.md` ────────────────────────────────────────────────────────────────
+#
+# ★ ONE LINE OF THE INHERITED METHOD IS EXERCISED HERE FOR THE FIRST TIME IN THIS DOCUMENT AND IS
+# STATED ONCE RATHER THAN AT EVERY VERDICT.  The second class asks whether the change records WHAT A
+# NAMED USER ACT RULED, RATIFIED OR DIRECTED — the CONTENT being what the act settled.  A user
+# direction to PERFORM a survey is not that: the act is directed, and what the survey then finds is
+# its own.  So a homing act, whose content is a decision the register already holds, is a
+# ratified-act edit; a catalog of what our own layers publish, silo, trap and leave dormant, made at
+# the user's direction, is not — its content is read off this system.
+w("fe985ab04757dc9eb214ed12664001fa5156238e", "cowork_evidence_inventory.md", "-0,0 +1,216",
+  UNDETERMINED,
+  "The hunk CREATES this document whole. ★ The first class was applied first and does NOT fire: "
+  "nothing existed here to withdraw, narrow, qualify or replace. ★ The second does not fire either, "
+  "on the line stated above the block: the user's direction, quoted in the document's own preamble, "
+  "is to \"enumerate ALL the hints/clues each layer discovers that should be passed forward\" — a "
+  "directed ACT whose findings are the document's content, not a decision whose content the user "
+  "settled. ★ Nor the third: growth qualifies only where its source is not a fact read in "
+  "implementation code, and here the source IS that, by construction. The catalog's own status "
+  "vocabulary is a vocabulary of implementation states — PUBLISHED on a layer's output surface "
+  "today, SILOED or TRAPPED, DORMANT because built and gated off — and its stated sources are \"the "
+  "five certified audits (which dispositioned every published/siloed/trapped fact), the siloed-facts "
+  "sweep, the diagnosis, the mechanism report\". NOT CLEARED, on the not-cleared class's own first "
+  "branch, and reported whole.",
+  "describes-pre-existing-implementation-behaviour")
+
+w("3966502265254dbfe721a3607b1b3c50116e030d", "cowork_evidence_inventory.md", "-32 +32,8",
+  UNDETERMINED,
+  "The hunk REPLACES the rests-and-silences bullet with a fuller entry. ★ The first class was "
+  "applied first and does NOT fire: the standing statement is not withdrawn — it survives inside "
+  "the longer bullet — so what happened is elaboration rather than replacement. ★ BUT IT IS NOT "
+  "CLEARED. The added substance is read off the implementation: the dormant phrase-boundary view "
+  "\"is already a silence-based phrase-end detector, gated off, with 'sufficiently long' a hand-set "
+  "240-tick threshold (one of the OI-87 unfit constants)\". A fact in the implementation is the "
+  "source while the change adds material.",
+  "describes-pre-existing-implementation-behaviour")
+
+w("0bc49b4b48fe5b23413a82f71c906fcf3038f91d", "cowork_evidence_inventory.md", "-205,0 +206,9",
+  RATIFIED,
+  "The hunk adds §8b, naming the intonation feature a declared future consumer of the published "
+  "analysis facts. ★ The first class was applied first and does not fire: the block ADDS and "
+  "withdraws nothing, and no fact read in implementation code is cited. ★ The second fires, and the "
+  "distinction stated above the block is what admits it: the CONTENT here is what the user named — "
+  "the section's own heading is \"A declared future consumer, NAMED BY THE USER (2026-07-13)\" — "
+  "rather than the findings of a directed survey.",
+  "governing-decision-record",
+  act="the user's decision of 2026-07-13 that the intonation feature is a declared future consumer "
+      "of the analysis facts, held long-horizon",
+  ratification_at="the added section's own heading, \"A declared future consumer, named by the user "
+                  "(2026-07-13)\", and the register row it names, `OPEN_ITEMS.md` OI-62")
+
+_EX = "0922e2bfdcd72563b05f8754e7c1e67eb0136718"
+w(_EX, "cowork_evidence_inventory.md", "-206 +206", RESTRUCTURING,
+  "The hunk changes ONE heading from the singular to the plural — \"A declared future consumer\" "
+  "becomes \"Declared future consumers\" — because a second one is added below it in the same "
+  "commit. ★ The first class was applied first and does not fire: no statement about the system is "
+  "made or withdrawn. The second does not fire at this hunk's own text, which records no act. The "
+  "third does, this being a re-heading exactly.",
+  "document-relocation-or-re-heading")
+
+w(_EX, "cowork_evidence_inventory.md", "-214,0 +215,11", RATIFIED,
+  "The hunk adds the second declared future consumer — explainability, \"the end user may want to "
+  "know HOW a mode, chord, or function was inferred\", attributed in its own opening to \"(user, "
+  "2026-07-13)\". ★ The first class was applied first and does NOT fire, and the call is recorded "
+  "because it is close: the block names what exists in the implementation today — \"the "
+  "chord-diagnosis replay, the dormant function machinery's structured open marks and ambiguity "
+  "kinds, the ranked-candidates-plus-margins confidence contract\". What decides it is that the "
+  "block ADDS and withdraws nothing, and that those internals are named as WHY the feature is a "
+  "late-bound display consumer rather than a new analysis — the reason for the user's own "
+  "characterization, not a fact that found a documentation statement false.",
+  "governing-decision-record",
+  act="the user's naming of explainability, on 2026-07-13, as a declared future consumer of facts "
+      "that already exist rather than as a new analysis",
+  ratification_at="the added block's own \"(user, 2026-07-13)\" and the heading above it, which the "
+                  "same commit pluralizes to carry this second consumer")
+
+w("e02bbebf887274edd119bf72cd0f6aa1763f34dc", "cowork_evidence_inventory.md", "-225,0 +226,24",
+  UNDETERMINED,
+  "The hunk adds §8c, filing OPEN the question whether the key layer should consume an external "
+  "local key as an unvalidated second opinion, and stating where the question comes from. ★ The "
+  "first class was applied first and does NOT fire: the block ADDS and withdraws nothing here. "
+  "★ BUT IT IS NOT CLEARED, and the shape says which kind of not-cleared it is. This is the "
+  "documentation half of a code change made in the SAME commit — the commit is a `fix(tools)` whose "
+  "subject is \"remove the music21 corroborator's dead local-key block; the evidence question stays "
+  "open\" — so the block is influenced by facts in the code by construction: the named class \"does "
+  "not exist in music21 9.9.1\", \"the constructor always raised, the exception was swallowed, and "
+  "every committed region was produced at the global key\". It destroys no discrepancy, because "
+  "documentation and implementation moved together in one authored act, and it is reported in the "
+  "not-cleared class rather than waved through.",
+  "same-commit-code-documentation")
+
+
 # ── DERIVED ──────────────────────────────────────────────────────────────────────────────────────
 _HDR = re.compile(r"^@@ (-\S+ \+\S+) @@")
 
