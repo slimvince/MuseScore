@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 46,
+  "ruling_records_read": 49,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -185,7 +185,10 @@
   "cowork_rulings_2026_08_21_evaluation_brief_sitting.md",
   "cowork_rulings_2026_08_21_successor_plan_sitting.md",
   "cowork_rulings_2026_08_22_boot_list_sitting.md",
+  "cowork_rulings_2026_08_22_deriving_side_sitting.md",
   "cowork_rulings_2026_08_22_dispatch_order_sitting.md",
+  "cowork_rulings_2026_08_22_member_two_leak_sitting.md",
+  "cowork_rulings_2026_08_22_pilot_order_sitting.md",
   "cowork_rulings_2026_08_22_step_zero_return_sitting.md",
   "cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
@@ -193,7 +196,8 @@
   "what_this_is": "documents a ruling record states it was taken from that NO tool writes. The class rule reaches a GENERATED document only, so these are outside it — recorded rather than dropped (#12).",
   "documents": {
    "cowork_phase_definition_surface_2026_08_15.md": [
-    "cowork_rulings_2026_08_15_phase_definition_sitting.md"
+    "cowork_rulings_2026_08_15_phase_definition_sitting.md",
+    "cowork_rulings_2026_08_22_pilot_order_sitting.md"
    ],
    "cowork_restructuring_period_start_decision_surface.md": [
     "cowork_rulings_2026_08_15_period_start.md"

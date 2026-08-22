@@ -1,7 +1,266 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-SECOND, 2026-08-22) — THE PREVIOUS DISPATCH RETURNED AND WAS VERIFIED AT THE OBJECTS: TEN COMMITS ON `64e7d2fd7f`, TIP `40fb613060`, `origin/master` AT THE TIP; ★ ONE NEW RULING (THE CURATED BOOT LIST FOR DERIVATION SESSIONS, ALTERNATIVE A WITH THREE AMENDMENTS), RECORD `cowork_rulings_2026_08_22_boot_list_sitting.md` ON DISK, UNTRACKED; ★ THE NEXT DISPATCH IS WRITTEN — `cc_instruction_pass_continuation_second.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED (BOTH METHOD). THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (FORTY-FOURTH, 2026-08-22) — THE PILOT-PREPARATION DISPATCH WAS STARTED BY CLAUDE CODE AND INTERRUPTED BY A CRASH BEFORE ITS TASK 0 COMMIT (TIP STILL `dcbfa5fe32`, BOTH REFS AT IT, THE FOUR TASK 0 PATHS STAGED IN THE INDEX, THE MEMBERSHIP ARTIFACT REGENERATED AND NOW STALE); ★ THE DISPATCH IS RE-VALIDATED AND AMENDED IN PLACE, **READY TO DISPATCH**; ★ THREE NEW RULINGS IN TWO RECORDS (THE MEMBER (2) LEAK WITHHELD; THE DERIVING SIDE IS A FRESH COWORK SESSION; THE ANNOTATED SCORES ARE STAGED BY NAME), BOTH ON DISK, UNTRACKED; ★ THE BLIND SESSION'S BRIEF WRITTEN, ON DISK, UNTRACKED; ★ ONE TELL FIRED, THE REST DECLARED (METHOD), ONE PRESENTATION-FORM TELL CORRECTED IN THE TURN. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the successor plan EXECUTES three of them.**
+
+**★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST.** *The pilot* — the phase that proves the derivation
+method before it is trusted. *A deriving session* — an implementation-blind session that writes
+what the analysis SHOULD do for one unit without reading what the code or the specifications say it
+DOES. *The boot pack* — the rendered, self-contained directory such a session reads at boot. *The
+held-out test* — one decision derived blind with your ratified ruling WITHHELD; the withheld ruling
+is the oracle. *The withheld family* — the register identities, one document and now ONE PASSAGE
+withheld from the pack for one subject; an AUTHORED input the user rules. *The brief* — the document
+the deriving session reads first, written by this session. *The index* — git's staging area; a
+"staged" path is one `git add` has recorded for the next commit that has not been made.
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in full,
+by you; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **This session discharged all
+three itself** (`CLAUDE.md` 1–1845, `DECISIONS.md` 1–858, `STATUS.md` whole, from bridge-staged
+snapshots through the file tools) and confirmed [[OI-179]] in `gating_ids` at the tip object (line
+244). **The bar binds you afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`dcbfa5fe32`** (parent `473f287372`), both refs at it — re-read three times this session with
+`git show -s` and `git for-each-ref` at the explicit hash. **No commit was added. Nothing is
+running: the user reports Claude Code crashed.** Establish the dispatch's state by the amended
+dispatch's own top block (its items 1–5), which is the measured tree: **interrupted at Task 0 before
+the commit** — `git diff --cached --stat` (an index read, declared as such) showed exactly the four
+Task 0 paths staged; `evidence_pin_membership.json` regenerated with exactly the pilot-order record
+(46→47) and nothing else; the six other tracked paths the dispatch touches unmodified; no generator,
+no pack directory, no report. If you meet THAT state: the dispatch is yours to hand to a NEW Claude
+Code session after re-taking the branch rule and re-checking the items by content. If you meet a
+commit on `dcbfa5fe32` carrying SEVEN paths with the amended Task 0 subject, the batch has started
+since this writing — READ-ONLY until `cc_report_pilot_preparation.md` exists, then verify the close
+(THE PILOT PREPARED: THE BOOT-PACK GENERATOR AND THE WITHHELD FAMILY section of
+`cowork_away_returns.md`) whole and at the objects. **Its deliverable for the user is the reading
+file `ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md`, now with FIVE
+lists — IN, OUT, UNPLACED, LEAKS, and the withheld passage.**
+
+**★ WHAT THIS SESSION DID.** (1) Booted believing the dispatch was running (the user's word); held
+the repository READ-ONLY; wrote the brief. (2) Surfaced a finding at the tip object: boot-pack
+member (2), `CLAUDE.md`'s Conventions span, carries at lines 1489–1491 the founding instance of the
+never-work-from-memory rule, which states the held-out test's withheld answer in words ("slice
+identity IS the eligible sounding-note set with releases as boundaries; … actual sounding notes
+ranked the STRONGEST evidence"); the running dispatch's leak check was scoped to members (5) and
+(6). The user ruled A: the passage is WITHHELD from the pack by the (a1) generator as an authored
+input in the D-677 shape, `CLAUDE.md` untouched — record
+`cowork_rulings_2026_08_22_member_two_leak_sitting.md`, **read it whole.** (3) The user ruled the
+deriving side: a FRESH COWORK SESSION, booted from the brief and the pack only (Ruling 1 of
+`cowork_rulings_2026_08_22_deriving_side_sitting.md`), with three conditions quoted verbatim in that
+record — all existing knowledge scoured before a specification is done; the implementation NOT
+mined for the first derived text (Ruling 2, the user's words: code ideas surface at the audit);
+specifications correct and complete before the audit — and the empirical findings ledger therefore
+owed before the framework phase. (4) The user ruled the annotated scores: the repository's own
+human-annotation files, staged by name (Ruling 3); the enumeration was taken — the chorale clone's
+`.mscx` carries NO harmony annotation; the human analysis is the *When in Rome* `analysis.txt`
+(RomanText, beat-positioned, with analyst variants) under a folder eight deep, which the user
+connected directly in the desktop app; the staged set is the three snapshot-suite chorales 001, 003,
+137 (137 has no BCMH file). (5) At the user's direction, read `cc_report_step_zero.md` whole and its
+close whole, verified at the objects; **corrected this side's own record:** the pilot-order
+sitting's fact (i) ("complete over the whole document set") is true of the PASSAGE population and
+false of the MEMBERS — nine of twenty-six are silent at the tip, `cowork_layer2_slicing_design.md`
+among them (§2c of the deriving-side record). (6) Found the interrupted start and amended the
+dispatch in place with a governing top block: Task 0 lands SEVEN paths (the original four plus the
+two new records and the brief), the membership regeneration re-run with route A predicted +3
+(46→49) and the brief predicted NOT to enter, A1 re-stated as the measured tree, Task 1 given the
+withheld passage as a fifth list. **Read the amended dispatch's top block; do not inherit this
+summary.**
+
+**★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch — the user starts
+a new Claude Code session on the amended dispatch. **Then:** the user's ruling on the reading
+file's five lists, one list per turn; the brief's (P4) (the output file's name); the brief validated
+against the landed pack's read-me and directory name; the blind Cowork session (its desktop connects
+BOTH the repository folder and the chorale folder
+`C:\s\MS\tools\dcml\when_in_rome\Corpus\Early_Choral\Bach,_Johann_Sebastian\Chorales`); the
+comparison dispatch; the ruling on the method. **Third in the standing order:** the quarantined
+findings — now with the coverage gap's consequence for Ruling 12 stated. **The ledger** is owed
+before the framework phase (condition 1). **Last:** pruning-and-satellites.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES. **NO FINDING NUMBER ALLOCATED — F88.** The two owed dispositions of the
+plan's §2 STILL UNROWED. FIVE quarantined questions stand surfaced and unacted on. **A corrected
+belief:** the user's Claude Code history shows step zero as CC's latest dispatch; the objects show
+two later batches landed and pushed after it (`4f55fe802b`…`40fb613060`; `4547a2809f`…`dcbfa5fe32`)
+— the history view is incomplete, the tree is not.
+
+**★ THE DEGRADATION REPORT.** **(1, fired)** `git hash-object cowork_handoff.md` on the user's
+machine at boot — a working-tree content read through a shell. **Declared:** `grep`/`sed`/`python3
+-c` pipes over `git show <hash>:path` output throughout; `git diff --cached --stat` (an index read,
+used only to establish the interrupted start, every path then checked at the object); per-path
+`git diff --stat dcbfa5fe32 -- <path>` (the A1 form the dispatch itself prescribes);
+`sha256sum`/`wc -c`/`grep -c` over container and re-staged copies for every delivery; one large
+directory listing (`tools/dcml/bach_chorales/reviewed/`) pulled into context by mistake.
+**Presentation-form: ONE**, flagged by the user — the member (2) surface first put as a paragraph
+with three letters, re-put in full before the question. Every later surface: no question in its
+turn, the question next turn, one decision per turn. **The session ran long at the user's
+direction; the next return is a fresh session's.**
+
+**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked, landed by the amended Task 0:
+`cowork_rulings_2026_08_22_pilot_order_sitting.md` (staged by the crashed session; unchanged);
+`cowork_rulings_2026_08_22_member_two_leak_sitting.md` (5,785 bytes, sha256 `b0da7b9ec43c…`);
+`cowork_rulings_2026_08_22_deriving_side_sitting.md` (13,966 bytes, sha256 `43577e492e75…`);
+`cowork_blind_session_brief_harmony_boundary.md` (21,341 bytes, sha256 `97481d6a5949…`); the
+amended `cc_instruction_pilot_preparation_withheld_family.md` (its hash in the closing message).
+None of the three records carries the word `pinned` on any line (`grep -c`: 0, 0, 0). Modified
+against the tip: `cowork_handoff.md` (this block above the forty-third, both earlier headings
+marked superseded); `tools/audit/evidence_pin_membership.json` (the crashed session's stale
+regeneration, to be re-run). **Nothing committed, nothing pushed, nothing regenerated by this
+session.** Memory-filesystem: read at boot; one line appended to the project area (the user's three
+conditions and Ruling B).
+
+**★ DECLARED DEPARTURES.** `BUILD_AND_TEST.md` NOT read. `cowork_audit_protocol.md`'s
+dispatch-protocol section NOT re-read whole before amending the dispatch — the amendment is a top
+block over a dispatch written under that section by the previous session, and every clause it
+touches is named; a reader counts this for themselves. The successor plan read at §6–§7 and its
+headings; the phase-definition surface at §3.2, §3.8 and its headings; `docs/score_inventory.md`
+whole; `cc_report_step_zero.md` whole and its close whole; `cc_report_pass_continuation_second.md`
+and `cc_report_step_zero_return_executed.md` NOT read (inherited from the forty-third block as its
+reading). The forty-second and older handover blocks NOT read.
+
+**★ THE CADENCE:** the next session starts at the branch rule, establishes whether the amended
+dispatch has been started, and — if not — re-validates its top block against the tree and hands it
+to a new Claude Code session; while it runs, nothing is owed but the reading of its return.
+
+*(The forty-third block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FORTY-THIRD, 2026-08-22 — THE SAME FORTY-SECOND SESSION, CONTINUED THROUGH A SECOND CYCLE AT THE USER'S DIRECTION) — THE PER-ENTRY PASS OF THE WIDENED JULY SCREEN IS COMPLETE AND VERIFIED AT THE OBJECTS: SEVEN COMMITS ON `40fb613060`, TIP `dcbfa5fe32`, `origin/master` AT THE TIP, THE RULED FAILURE SIGNAL EVALUATED OVER THE WHOLE POPULATION AND NOT FIRING; ★ ONE NEW RULING (THE PILOT OPENS WITH THE HELD-OUT TEST FIRST), RECORD `cowork_rulings_2026_08_22_pilot_order_sitting.md` ON DISK, UNTRACKED; ★ THE NEXT DISPATCH IS WRITTEN — `cc_instruction_pilot_preparation_withheld_family.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED (BOTH METHOD), UNCHANGED ACROSS THE SECOND CYCLE. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-fourth block above.)
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the successor plan EXECUTES three of them (Ruling 1 of
+`cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
+
+**★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST.** *A changed passage* — one contiguous run of changed
+lines inside one commit's edit of one document (the tools' artifacts say "hunk"). *The widened
+screen* — the July screen's second population over the document set, one authored verdict per
+changed passage; NOW FULLY READ. *The pilot* — the phase that proves the derivation method before
+it is trusted. *A deriving session* — an implementation-blind session that writes what the analysis
+SHOULD do for one unit without reading what the code or the specifications say it DOES. *The boot
+pack* — the rendered, self-contained directory such a session reads at boot, generated from the
+curated boot list ruled this morning. *The held-out test* — one decision derived blind with your
+ratified ruling on it WITHHELD; the withheld ruling is the oracle. *The withheld family* — the
+register identities withheld from the pack for one subject; an AUTHORED input the user rules.
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in full,
+by you; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **The forty-second session
+discharged all three itself** at its boot (from bridge-staged snapshots through the file tools,
+`CLAUDE.md` 1–1845, `DECISIONS.md` 1–858, `STATUS.md` whole) and read the dispatch-protocol section
+WHOLE; it did NOT re-read them at this second cycle, and `STATUS.md` has changed since (two
+batches' pointer entries). **The bar binds you afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`dcbfa5fe32`** (parent `473f287372`), `refs/heads/master` and `refs/remotes/origin/master` both at
+it — read with `git show -s` and `git for-each-ref` at the explicit hash on the user's machine.
+**No commit was added by this Cowork session. Nothing is running. The dispatch is written and NOT
+dispatched.** Establish which state it is in: **not started** (no `cc_report_pilot_preparation.md`
+on disk, no commit on `dcbfa5fe32`) — then it is yours to dispatch after re-validating it against
+the tree (the parked-instruction clause: re-take the branch rule, re-check A1 by content, re-check
+that the sitting record carries no line with the word `pinned`); **running** — READ-ONLY on the
+repository until it stops; **completed** — its Task 0 commit sits on `dcbfa5fe32` carrying FOUR
+paths with the subject the dispatch prescribes, and the close is THE PILOT PREPARED: THE BOOT-PACK
+GENERATOR AND THE WITHHELD FAMILY section of `cowork_away_returns.md`, read WHOLE and verified at
+the objects; **its deliverable for you is a READING FILE,
+`ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md`, with four lists — IN,
+OUT, UNPLACED, LEAKS — and the user rules them before any session boots from the pack.**
+
+**★ WHAT THE SECOND CYCLE DID — STEPS (a), (b) AND (c) AGAIN, EACH VERIFIED AT THE OBJECT.** (1) The
+second pass-continuation dispatch returned: seven commits `4547a2809f` → `ed51ddd49c` → `8b0a83c71d`
+→ `3e47297a03` → `3e9410bfd7` → `473f287372` → `dcbfa5fe32`, every parent pointer read at the
+object; the sitting record and the dispatch at `4547a2809f` hash to the values this session
+delivered them with. `cc_report_pass_continuation_second.md` read whole (1–383) and the close
+section of `cowork_away_returns.md` read whole (16123–16315). Verified at objects: `july_screen.json`
+→ `★_the_widened_screen.counted` reads `unread: 0`, `read: 234` of 237; the generator diff
+`40fb613060`..`3e9410bfd7` removes exactly 53 `NOT YET READ` verdicts and adds 53, no other class
+touched; the digest `32366793f298…` unchanged; the failure-signal field reads `DOES NOT FIRE`
+(`UNDETERMINED` 20 of 234 read — the field's own figures, cited); membership +1 record as predicted;
+`guard_state.json` run 74 / passing 73 / failing 1, verdicts 73 PASS and 1 FAIL. The new quarantined
+question (report §8, `kHalfDimFirstInversionBonus`) is real at `docs/scoring_model.md` lines
+1033–1061 of the tip object. **Two readings on CC's conduct, neither a defect of the record:** its
+chat summary counted "seven commits" where its report correctly names five and declares two; and
+its close says the end-state RUN wrote one path while the end-state COMMIT carries three — both
+true of their own subjects. **One defect of the writing side's dispatch:** it barred every
+generator but the July screen's while ordering `gen_status_batch_bound.py --apply`, which needs
+its three authored inputs re-aimed; CC declared the departure (D-648). The pilot-preparation
+dispatch licenses that maintenance in terms. (2) The pilot-opening surface was put self-contained,
+the question in the next turn, and the user ruled **A**: the HELD-OUT TEST on the harmony-boundary
+decision runs FIRST, the sizing pilot on `docs/scoring_model.md` SECOND under an established
+method. Record: `cowork_rulings_2026_08_22_pilot_order_sitting.md` — **read it whole.** Its §1
+carries three facts: the prerequisite is met; the withheld family is BY SUBJECT (the surface's
+reading named D-022, D-023, D-004, D-449, D-565, D-628, D-605, D-057 and the factorization
+document — a reading, NOT an enumeration at the objects); **the identity of the deriving side is
+UNSETTLED in the record** (Claude Code by default under D-252; a fresh Cowork session was the
+evaluations' other arm). (3) The dispatch was written. **Read the dispatch; do not inherit this
+summary.** In one line per task: Task 0 lands four paths and pushes; Task 1 builds
+`tools/audit/gen_derivation_boot_pack.py` (registered in both guard registries), renders the six
+ruled members by anchor into `tools/audit/derivation_boot_pack/harmony-boundary/`, derives the
+candidate identities at the objects under a stated criterion with its reach declared unmeasured,
+and AUTHORS the withheld family — IN, OUT, UNPLACED, each with finding, date and reason, with a
+LEAKS list for entries whose rendered text points into excluded material — in ONE commit; Task 2
+writes the reading file and closes. **The batch boots NO session and derives nothing.**
+
+**★ THE NEXT DECISION SURFACES, IN THE RULED ORDER.** **Next:** the user's ruling on the withheld
+family at the reading file — that is a ruling on CC's authored lists, put ONE LIST PER TURN if the
+UNPLACED list is long; then the blind session's BRIEF (the writing side writes it: the subject in
+plain words — *how the analysis should decide where one chord ends and the next begins, and what
+evidence decides it* — the six-field form of plan §7, the pack as its only read, the stop-on-meeting-
+a-verdict clause), then the deriving side's identity, then the blind session, then the comparison
+dispatch, then the user's ruling on the method. **Third in the standing order:** the five
+quarantined findings and the two unrowed dispositions — only the question whether any is an
+establishment obligation. **Last:** pruning-and-satellites, from measured sizes.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES. F3 at sixteen surfacings. **NO FINDING NUMBER ALLOCATED — F88.** The two
+owed dispositions of the plan's §2 STILL UNROWED. The ledger hole declared, not filled (Ruling 8).
+FIVE quarantined questions stand surfaced and unacted on (four at
+`cc_report_step_zero_return_executed.md` §8, one at `cc_report_pass_continuation_second.md` §8).
+The two fact-gate whole reads remain plan lines.
+
+**★ THE DEGRADATION REPORT — ONE TELL FIRED, ONE DECLARED, BOTH METHOD, UNCHANGED ACROSS THE SECOND
+CYCLE; BELOW THE THRESHOLD.** **(1, fired, at boot)** seven working-tree files compared with the
+tip's blobs by `git hash-object` in a shell — a working-tree content read through a shell. **(2,
+declared)** fields of large JSON objects pulled out of `git show <hash>:path` output with `grep`,
+`sed` and `python3 -c` pipes, here and at the second cycle's verification — object queries by
+explicit hash, declared so a reader counts them for themselves. The second cycle added no new
+shape: every verification was a `git show`/`git diff` at explicit hashes, every file read through
+the file tools. Presentation-form tells: ZERO — two surfaces, each with no question in its turn,
+each question in the next turn, one ruling per turn. **The session was continued through a second
+cycle at the user's explicit direction ("continue"); the forty-second block's own cadence note said
+a fresh session should take the next return, and the user overrode it knowingly. The hand-over
+after THIS block is the one the cadence calls for.**
+
+**★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT.** Written by this session in
+its second cycle: `cowork_rulings_2026_08_22_pilot_order_sitting.md` (sha256 `3fcb43c1ac26…`, 6,878
+bytes, zero carriage returns, no line carrying `pinned` — `sha256sum`, `wc -c`, `grep -c` over the
+container copy, re-verified after re-staging); `cc_instruction_pilot_preparation_withheld_family.md`
+(sha256 `ae86979ee68c…`, 35,374 bytes); this block, inserted into `cowork_handoff.md` after the
+file on disk was MEASURED byte-identical to the tip's blob (`git show dcbfa5fe32:cowork_handoff.md
+| sha256sum` = `b72ae70a7d9c…`, the value this session delivered it with; 521,681 bytes, zero
+carriage returns), with the forty-second heading marked superseded in the same act. Landed by the
+previous batch and no longer untracked: `cowork_rulings_2026_08_22_boot_list_sitting.md`,
+`cc_instruction_pass_continuation_second.md`. **Nothing committed, nothing pushed, nothing
+regenerated.** Memory-filesystem: read at boot; nothing written.
+
+**★ DECLARED DEPARTURES.** `BUILD_AND_TEST.md` NOT read. `ARCHITECTURE.md` read only at lines
+394–402 and 4361–4364 of the tip object. The phase-definition surface read at §3.2 and §3.8 and its
+heading list. `backbone_decisions.json` read at one entry's field names; the sort artifact at its
+keys, distribution and the factorization-homed entries; `DEFECT_TYPES.md` at its table header;
+`gen_guard_classification.py` by search only. `docs/scoring_model.md` read only by search at the
+tip object. The forty-first and older handover blocks NOT re-read in the second cycle.
+
+**★ THE CADENCE:** the next session starts at the branch rule, establishes the dispatch's state,
+and — if not started — re-validates and dispatches it; while Claude Code works, it writes the
+blind session's BRIEF (above) so that the user's ruling on the family and the brief are ready
+together.
+
+*(The forty-second block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FORTY-SECOND, 2026-08-22) — THE PREVIOUS DISPATCH RETURNED AND WAS VERIFIED AT THE OBJECTS: TEN COMMITS ON `64e7d2fd7f`, TIP `40fb613060`, `origin/master` AT THE TIP; ★ ONE NEW RULING (THE CURATED BOOT LIST FOR DERIVATION SESSIONS, ALTERNATIVE A WITH THREE AMENDMENTS), RECORD `cowork_rulings_2026_08_22_boot_list_sitting.md` ON DISK, UNTRACKED; ★ THE NEXT DISPATCH IS WRITTEN — `cc_instruction_pass_continuation_second.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED (BOTH METHOD). THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-third block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them (Ruling 1 of
