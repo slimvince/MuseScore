@@ -1,7 +1,135 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-FIRST, 2026-08-22) — THE DISPATCH IS WRITTEN: `cc_instruction_step_zero_exclusion_and_pass_continuation.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE NEW RULING (THE DISPATCH CONTINUES THE PER-ENTRY PASS AND DOES NOT OPEN THE PILOT), RECORD `cowork_rulings_2026_08_22_dispatch_order_sitting.md` ON DISK, UNTRACKED; ★ TWO TELLS (BOTH METHOD) — THE THRESHOLD; THE SESSION HANDS OVER AT A VERIFIED STOP. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (FORTY-SECOND, 2026-08-22) — THE PREVIOUS DISPATCH RETURNED AND WAS VERIFIED AT THE OBJECTS: TEN COMMITS ON `64e7d2fd7f`, TIP `40fb613060`, `origin/master` AT THE TIP; ★ ONE NEW RULING (THE CURATED BOOT LIST FOR DERIVATION SESSIONS, ALTERNATIVE A WITH THREE AMENDMENTS), RECORD `cowork_rulings_2026_08_22_boot_list_sitting.md` ON DISK, UNTRACKED; ★ THE NEXT DISPATCH IS WRITTEN — `cc_instruction_pass_continuation_second.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED (BOTH METHOD). THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the successor plan EXECUTES three of them (Ruling 1 of
+`cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
+
+**★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST.** *A changed passage* — one contiguous run of changed
+lines inside one commit's edit of one document (the tools' artifacts say "hunk"). *The document set*
+— the members of `tools/audit/specification_document_set.json`, now twenty-six after the
+`STATUS.md` exclusion (read at the object; cite, do not carry). *The widened screen* — the July
+screen's second population over the document set, one authored verdict per changed passage. *The
+curated boot list* — the implementation-free read list an implementation-blind derivation session
+boots from; ruled this session. *The held-out test* — the pilot's third establishment test (Ruling
+4 of 2026-08-21): one decision derived blind with its user-ratified ruling WITHHELD, the withheld
+ruling being the oracle.
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in full,
+by you; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **This session discharged all
+three itself** (`CLAUDE.md` 1–1845, `DECISIONS.md` 1–858, `STATUS.md` whole, from bridge-staged
+snapshots through the file tools), read the dispatch-protocol section of `cowork_audit_protocol.md`
+WHOLE (line 180 to the end of the file, 1524) before writing the dispatch, and confirmed [[OI-179]]
+in `gating_ids` (`tools/audit/nongating_apparatus_rows.json`, the list opening at line 186, the
+identity at line 244). **The bar binds you afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`40fb613060`** (parent `d276e8afb2`), `refs/heads/master` and `refs/remotes/origin/master` both at
+it — read with `git show -s` and `git for-each-ref` at the explicit hash on the user's machine at
+boot. **No commit was added this session. Nothing is running. The dispatch is written and NOT
+dispatched.** Establish which state it is in: **not started** (no `cc_report_pass_continuation_second.md`
+on disk, no commit on `40fb613060`) — then it is yours to dispatch after re-validating it against
+the tree (the parked-instruction clause: re-take the branch rule, re-check A1 by content, re-check
+that the sitting record carries no line with the word `pinned`); **running** — READ-ONLY on the
+repository until it stops; **completed** — its Task 0 commit sits on `40fb613060` carrying FOUR
+paths with the subject the dispatch prescribes, and the close is THE PER-ENTRY PASS CONTINUED, THE
+SECOND TIME section of `cowork_away_returns.md`, read WHOLE and verified at the objects by explicit
+hash.
+
+**★ WHAT THIS SESSION DID — CADENCE STEPS (a), (b) AND (c), EACH VERIFIED AT THE OBJECT.** (1) The
+previous dispatch's return was verified: ten commits `4f55fe802b` → `beccfa14f5` → `810ff863c9` →
+`f33441940f` → `dc340d84fb` → `979436429d` → `74abd1b905` → `311dee8d11` → `d276e8afb2` →
+`40fb613060`, every parent pointer read at the object; `cc_report_step_zero_return_executed.md`
+read whole (1–407) and the close section of `cowork_away_returns.md` read whole (lines 15935–16120
+of the staged copy, §1–§10). Verified at objects: the verdict digest `32366793f298…` identical at
+`64e7d2fd7f`, `beccfa14f5` and the tip; the document set 27→26 with `targets_ADMITTED` 25
+unchanged and one authored exclusion carrying finding, date and reason; nine third-value rows in
+the report; `guard_state.json` at the tip run 74 / passing 73 / failing 1 (OI-372's tool), verdicts
+73 PASS and 1 FAIL; the six corrections of §6 are exactly six `UNDETERMINED`→`RATIFIED` changes in
+the generator diff `f33441940f`..`dc340d84fb`. *(A reader will find the string `STOP` in the tip's
+`guard_state.json`; every occurrence is descriptive text, the failing tool's own stderr, or a
+PASS check's standing stop-and-report line — zero STOP verdicts.)* (2) The user directed the order
+of the owed surfaces by the ultimate objective; this session stated it: boot-list ruling first, the
+pass continued on the coding side in parallel, the pilot's opening second, the routing of the four
+quarantined findings and the two unrowed dispositions third, pruning-and-satellites last. (3) The
+boot-list surface was put self-contained as a turn's final response, the question asked in the
+next turn, and the user ruled **A**. Record: `cowork_rulings_2026_08_22_boot_list_sitting.md` —
+**read it whole; do not inherit this summary.** In one line: the 2026-08-19 draft's six members and
+eight exclusions are the standing list, with (a1) a generated per-session WITHHELD LIST cut from the
+`DESIGN-INTENT` class by authored identities in the D-677 shape, (a2) the ledger hole carried as
+Ruling 8 declares, (a3) `DEFECT_TYPES.md` at its type and definition columns only. **The fact that
+forced (a1), measured at the objects:** the held-out test's oracle (`ARCHITECTURE.md:394-402`) says
+in terms it is register entry D-057, and D-057 is classed `DESIGN-INTENT` in
+`rulings_sort_classification.json` — so the draft's member (5) would have handed a held-out session
+its own oracle. (4) The dispatch was written after the dispatch-protocol section was read whole.
+**Read the dispatch; do not inherit this summary.** Task 0 lands four paths (the sitting record,
+the handoff, the dispatch, the regenerated evidence-pin membership) and pushes; Task 1 continues
+the per-entry pass from the artifact's own `NOT YET READ` set (the report at the tip lists seven
+members still carrying unread passages — cite, do not carry), expected to complete whole; Task 2
+closes. **No pilot act, no generator for the withheld list — that generator is dispatched WITH the
+pilot's opening (the sitting record says so).**
+
+**★ THE NEXT DECISION SURFACES, IN THE RULED ORDER.** **Second:** the pilot's opening — which of the
+two ruled subjects runs first (`docs/scoring_model.md` for sizing; the harmony-boundary decision as
+the held-out test, Ruling 3 of 2026-08-21), with the (a1) generator and the withheld identities
+named in that dispatch. **Third:** the four quarantined findings of the previous report's §8 and the
+two unrowed dispositions of the plan's §2 — evidence reserved for the audit under the phase rule;
+the only question to put is whether any is an establishment obligation, which cannot wait. **Last:**
+the pruning-and-satellites surface (thirty-ninth and fortieth blocks), built from measured sizes
+(`CLAUDE.md` 156,329; `DECISIONS.md` 129,386; this file 510,421 bytes before this block — `wc -c`
+over bridge-staged copies), with the user's verbosity-pass proposal as one alternative.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES. F3 at sixteen surfacings. **NO FINDING NUMBER ALLOCATED — F88.** The two
+owed dispositions of the plan's §2 STILL UNROWED. The ledger hole declared, not filled (Ruling 8).
+The four quarantined questions of `cc_report_step_zero_return_executed.md` §8 stand surfaced and
+unacted on. **`DECISIONS.md` on disk hashes to the tip's blob through `git hash-object`** — the
+previous batch established at the object level that the repository normalises line endings on the
+way in, so the carriage-return difference earlier blocks measured does not reach git.
+
+**★ THE DEGRADATION REPORT — ONE TELL FIRED, ONE DECLARED, BOTH METHOD; BELOW THE THRESHOLD.**
+**(1, fired)** Seven working-tree files were compared with the tip's blobs by `git hash-object` in
+a shell on the user's machine at boot — a working-tree content read through a shell, which D-253
+routes to the file tools; the rule counts what is read, not the utility. Every file so compared was
+then read through the file tools. **(2, declared)** Fields of large JSON objects were pulled out of
+`git show <hash>:path` output with `grep`, `sed` and one `python3 -c` pipe — object queries by
+explicit hash, the permitted route, declared because the fortieth block counted an interpreter read
+over a STAGED copy as a tell and a reader should count this one for themselves. Presentation-form
+tells: ZERO — one surface, no question in its turn, the question in the next. Vocabulary: every
+tool term explained at first use; "hunk" used nowhere except inside quoted field names.
+
+**★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT.** Written by this session:
+`cowork_rulings_2026_08_22_boot_list_sitting.md` (sha256 `af0f8a12f794…`, 7,965 bytes, zero
+carriage returns — `sha256sum`, `wc -c` over the container copy and over the re-staged disk copy);
+`cc_instruction_pass_continuation_second.md`; this block, inserted into `cowork_handoff.md` after
+the file was MEASURED byte-identical to the tip's blob (`git hash-object` on the user's machine
+against `git ls-tree 40fb613060`; 510,421 bytes, ZERO carriage returns — `wc -c`, `grep -c` over a
+bridge-staged copy) carrying the forty-first block as its entry point, with the forty-first heading
+marked superseded in the same act. Each file was delivered through the bridge and verified by hash
+after re-staging (the hashes of the dispatch and of this file are in the closing message, not here).
+**Nothing committed, nothing pushed, nothing regenerated.** Memory-filesystem: read at boot
+(`/preferences.md`, `/areas/musescore-arranger.md`); nothing written.
+
+**★ DECLARED DEPARTURES.** `BUILD_AND_TEST.md` NOT read. `ARCHITECTURE.md` read only at lines
+394–402 and 4361–4364 of the tip object. The successor plan read at §4, §5, §6.1 (248–289), §11 and
+its heading list. `cowork_handoff.md` read at the forty-first, fortieth, thirty-ninth and
+thirty-eighth blocks (1–512); older blocks NOT read. The previous dispatch read at 1–330 and
+440–643 (as the template for this one). `gen_july_screen.py` NOT opened except through the
+`f33441940f`..`dc340d84fb` diff. `july_screen.json`, `period_stratum_split.json` NOT opened beyond
+the fields quoted above. The two evaluation reports, the tabulation and the sealed prediction NOT
+opened.
+
+**★ THE CADENCE:** this session was steps (a), (b) and (c). The next session starts at the branch
+rule, establishes the dispatch's state, and — if not started — re-validates and dispatches it;
+while Claude Code works, it builds the pilot-opening decision surface.
+
+*(The forty-first block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FORTY-FIRST, 2026-08-22) — THE DISPATCH IS WRITTEN: `cc_instruction_step_zero_exclusion_and_pass_continuation.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE NEW RULING (THE DISPATCH CONTINUES THE PER-ENTRY PASS AND DOES NOT OPEN THE PILOT), RECORD `cowork_rulings_2026_08_22_dispatch_order_sitting.md` ON DISK, UNTRACKED; ★ TWO TELLS (BOTH METHOD) — THE THRESHOLD; THE SESSION HANDS OVER AT A VERIFIED STOP. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-second block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them (Ruling 1 of
