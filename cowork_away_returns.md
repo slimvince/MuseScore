@@ -16117,3 +16117,152 @@ that commit LEFT, and a commit cannot contain a run over itself.
 existed — a commit whose own identity this paragraph therefore cannot contain. Every value above was
 read from the run recorded in `tools/audit/guard_state.json`, which that run itself wrote; no value
 here was carried forward from an earlier run or inferred from a summary.*
+
+---
+
+# ═══ THE PER-ENTRY PASS CONTINUED, THE SECOND TIME (dispatch `cc_instruction_pass_continuation_second.md`, performed 2026-08-22) ═══
+
+> **★ THIS CLOSE DOES NOT ASSERT THE END STATE, AND THE OMISSION IS DELIBERATE.** The end-state guard
+> run is taken **after** the commit carrying this close exists, so its values cannot be written into
+> that commit. They land in **ONE FURTHER COMMIT**, appended beneath this section. No row, cell or
+> sentence anywhere in this section asserts what the guard set says at the tree this close leaves.
+>
+> **★ ALL THREE TASKS RAN, AND TASK 1 — A PER-ENTRY PASS — COMPLETED WHOLE RATHER THAN STOPPING AT A
+> BOUNDARY. NO STOP-AND-REPORT RULE FIRED.** No `src/` edit, no golden, **no test changed, moved or
+> run**, nothing under `tools/corpus/` or `tools/robust_stop/` moved, **no measurement of the
+> ANALYSIS built, designed, scoped or run**, no design, no repair. **No derivation of any
+> specification, no frame, no pilot act, no fact-gate admission, no ledger, no mining read, no
+> session booted from the curated boot list and no generator for its per-session withheld list
+> built.** **NO open-items row created, flipped or discarded; no register entry written.** **NO
+> screened document edited** — `ARCHITECTURE.md`, `docs/scoring_model.md` and every document-set
+> member were read and never written. **No re-grading of any authored grade or of any verdict
+> already authored.** **No finding number allocated; the series stands at F88.** The report is
+> `cc_report_pass_continuation_second.md`, and no figure of it is restated here (**D-431**).
+
+## 1. The chain, named as far as a sentence can name it
+
+**FIVE commits, all pushed to `origin/master` and all verified at the object by explicit hash:**
+`4547a2809f` (Task 0, the boot-list ruling landed and pushed) → `ed51ddd49c` → `8b0a83c71d` →
+`3e47297a03` → `3e9410bfd7` (Task 1, four bounded runs of the per-entry pass, the last of which
+completes it).
+
+**THE SIXTH COMMIT IS THIS CLOSE, AND A SENTENCE CANNOT NAME ITS OWN HASH.** It carries the report,
+the `STATUS.md` pointer entries, the ruled forward-bound move, the regenerated session-start read
+size and this section. **AND A SEVENTH FOLLOWS IT**, carrying the end-state guard run, for the
+reason stated at the head of this section. That is the E-ordering rule at both grains, and it is why
+this paragraph names five and declares two.
+
+## 2. The headline — the pass is COMPLETE and the ruled failure signal DOES NOT FIRE
+
+**Every member of the widened population now carries a verdict on every changed passage, and the
+unread set is EMPTY at the artifact.** The remainder was derived fresh at the artifact before the
+first passage was read and reconciled both ways against the artifact's own per-document table; it
+was worked in the artifact's own order; and the seven members this batch read whole are named one by
+one at the report's §5.
+
+**Because the population is fully read, the ruled failure signal is evaluated over the WHOLE of it
+for the first time — and it DOES NOT FIRE.** It is read at the artifact's own field, not at an
+impression, and Ruling 7 is quoted in full at the report's §6 rather than in the branch that
+supports the reading (**D-643**). No figure of it is restated here (**D-431**).
+
+**What that settles and what it does not.** It settles that the premise the successor plan rests on
+is MEASURABLE on this population. It settles nothing about what the measured pollution means for the
+reading depth or the ordering of units — that is Ruling 12's question, and this batch did not touch
+it.
+
+## 3. What needs the user
+
+**The four questions the previous batch surfaced stand exactly as found**, unrowed, unnumbered and
+unacted on. They are not restated here (#6).
+
+**ONE NEW QUARANTINED QUESTION is added beside them**, stated in full at the report's §8 and pointed
+at here rather than restated: a specification a session is required to read before touching scoring
+logic carried a wrong account of where one scoring constant acts; the correcting act fixed the
+location at the code and **recorded, expressly without acting on it, that the constant's NAME
+describes a narrower case than the code admits** — and that three further claims in the corrected
+entry were carried over and not re-verified.
+
+**And one thing the user may wish to know about this batch's own conduct:** a base-commit hash was
+written into a measurement tool's authored input by padding an abbreviation instead of resolving it
+at the object. The tool's own STOP caught it before anything moved, it was corrected by resolving
+the object, and it is reported at the report's §10 and discarded under the worth test at §9 rather
+than smoothed over.
+
+## 4. The registered expectations, graded
+
+**E0 — MET.** Exactly the four named paths; one content modification matching A1(i) and one bounded
+regeneration; two additions; no staging override; the membership check passing at the resulting
+tree; `origin/master` at the Task 0 commit.
+
+**E1 — MET, AND MET FOR THE WHOLE POPULATION.** Every read passage carries exactly one verdict in
+the inherited vocabulary; the unread remainder is EMPTY, so the clause about the tool's default has
+no subject and nothing was authored into it; the existing sixty-eight are byte-identical by
+published digest at every commit; every verdict the two previous batches authored is byte-identical;
+the per-document distribution is published by the generator; the failure signal is evaluated at the
+artifact and stated. `ARCHITECTURE.md`, `docs/scoring_model.md` and every member are byte-unchanged.
+
+**E2 — NOT YET ASSERTABLE HERE, BY DESIGN.** The end-state run is taken after the commit carrying
+this close exists; its values land in ONE FURTHER commit, and nothing in this section asserts them.
+
+## 5. A3 and A4, graded at the artifact
+
+**A3 HELD ON BOTH ROUTES.** Route A: the ruling-record count rose by exactly one and the one
+predicted record name was added. Route B: nothing, the record carrying the word `pinned` on no line
+— checked through the file tools BEFORE the run, so it is a discharged prediction rather than a
+citation. **No member, route, document, pin constant, state or count moved beyond that one
+addition**, and no derived cross-reference was added either, so the sharpened bar was not even
+reached.
+
+**A4 HELD WITH NO DEPARTURE.** No tool was added or removed, so the guard population is unchanged;
+both artifacts the assumption names were checked after the first bounded run and both pass. The
+previous batch's one departure had a path constant added to a generator as its cause; this batch
+adds none, so it could not recur and did not.
+
+## 6. The independence of every new verdict
+
+**None of this batch's verdicts is independent of the record — by construction, and the construction
+is stated rather than assumed.** Each was made by reading the changed passage's own removed and
+added text at the git object together with its commit's own account, and by applying the four
+inherited classes in their declared order. **No verdict the record already carries on the same
+passage was consulted, because none exists:** every passage this batch graded carried the tool's
+unread default, which no hand may set and which the tool forbids being authored. So the question the
+close is asked to answer — whether a new verdict is independent of an existing one on the same
+passage — has no subject here, and that is said plainly rather than answered as though it did.
+
+## 7. The plan lines, restated AS PLAN LINES and not as tasks
+
+**None of the three was touched, and none is a task of any batch until the user opens it.**
+
+- **The owed WHOLE read of `STATUS.md` + `STATUS_ARCHIVE.md`** as fact-gate mining inputs (Ruling
+  1(d) of the step-zero return sitting) — a plan line, after the pilot establishes the method.
+- **The owed WHOLE read of the five glob-only documents** (Ruling 3(b)) — a plan line, on the same
+  condition.
+- **THE PILOT'S OPENING, whose one stated hard prerequisite is now RULED AND LANDED.** The curated
+  boot list for derivation sessions was ruled 2026-08-22 and landed by this batch's Task 0. **The
+  (a1) generator — the per-session WITHHELD LIST, generated and never hand-cut — is owed AT that
+  opening and not before**, which the sitting record says in its own words; this batch built no such
+  generator and booted no session from the list. The pilot's opening is the next decision surface.
+
+## 8. The plan's tell, in one sentence
+
+**Did this batch produce anything other than the authored verdicts, the regenerated screen artifacts
+and the report?** Yes, and it is named: the regenerated evidence-pin membership artifact that Task 0
+orders, the `STATUS.md` pointer entries and the ruled forward-bound move that Task 2 orders, the
+regenerated session-start read size that A2 names, and the three re-aimed authored inputs of the
+forward-bound tool — every one of them declared at the report's §10 or §12 rather than left for a
+reader to find.
+
+## 9. Declared departures
+
+**Four, all at the report's §10 and pointed at here rather than restated (#6):** one measurement tool
+other than the July screen's generator was edited, and only at the three authored inputs its own
+docstring declares move once per batch — authored-input maintenance in D-648's shape, ordered by
+Task 2, declared because the bar's letter does not carve it out; one base-commit hash was padded
+from an abbreviation before being resolved, caught by the tool's own STOP; the guard set was run in
+`--check` mode until the end-state run; and the armed guard denied two commands and was obeyed
+rather than worked around.
+
+*Provenance: CC, 2026-08-22, executing `cc_instruction_pass_continuation_second.md` under Ruling 1
+of `cowork_rulings_2026_08_22_dispatch_order_sitting.md`. This section is written INTO the close
+commit and therefore cannot name that commit's hash or the end state of the tree it leaves; both
+follow in the one further commit beneath it.*
