@@ -302,6 +302,25 @@ discharged by anything in this batch.
 | **E1** | **MET, AND MET FOR THE WHOLE POPULATION** | Every read passage carries exactly one verdict in the inherited vocabulary; the unread remainder is EMPTY, so the clause about the tool's default has no subject and nothing was authored into it; the existing sixty-eight are byte-identical by published digest at every commit of this batch; every verdict the two previous batches authored is byte-identical; the per-document distribution is published by the generator; the failure signal is evaluated at the artifact and stated. **The pass completed, so the report says so in the standing form: every member named, the unread set EMPTY at the artifact.** `ARCHITECTURE.md`, `docs/scoring_model.md` and every member are byte-unchanged. |
 | **E2** | **NOT YET ASSERTABLE HERE — BY DESIGN** | The end-state run is taken after the commit carrying this close exists. Its values land in ONE FURTHER commit. **No row, cell or sentence asserting the end state is written into the close commit.** |
 
+**★ E2, GRADED IN THE ONE FURTHER COMMIT — MET.** The row above is left exactly as the close commit
+`473f287372` carried it, because it correctly describes that commit; this addendum is the grading,
+and it is written only after the run that produced it existed. **The full guard set was run in write
+mode at the tree that commit left, and read** — every run check passes except [[OI-372]]'s tool,
+with **zero STOP verdicts**, and the guard population is UNCHANGED against the start state, no tool
+having been added or removed by this batch. The two start-state reds are down to that one: the
+evidence-pin membership check was cleared at Task 0 by the act that tracked this dispatch's own
+untracked input. **No red appeared mid-batch, so A2's condition never fired**, and the one check A2
+named as expected to go red at the close was cleared by regenerating its measurement and by nothing
+else. Every value is at `tools/audit/guard_state.json`, written by the run itself, and no figure is
+restated here (**D-431**).
+
+**★ THE TELL, RE-TAKEN OVER THE WHOLE BATCH IN THE ONE FURTHER COMMIT.** The sentence at §12 was
+written at the close and was true of it. Taken over the batch INCLUDING this further commit, the
+answer is unchanged in kind and larger by one item: the guard registry itself was rewritten, which
+is what running the set does — measured against the close commit by explicit hash, the end-state run
+wrote exactly that one path and nothing else. **Nothing else was produced, and nothing this batch
+touched lies outside the subjects of its own ordered acts.**
+
 ---
 
 ## 12. The plan's tell, in one sentence

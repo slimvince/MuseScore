@@ -16266,3 +16266,49 @@ rather than worked around.
 of `cowork_rulings_2026_08_22_dispatch_order_sitting.md`. This section is written INTO the close
 commit and therefore cannot name that commit's hash or the end state of the tree it leaves; both
 follow in the one further commit beneath it.*
+
+## 10. THE END STATE — the guard set run at the tree the close left, and READ
+
+**This subsection is appended in the ONE FURTHER COMMIT, after the close commit `473f287372`
+existed.** Nothing above it was edited to say what follows; the close's own E2 row stands exactly as
+that commit carried it, because it correctly describes that commit.
+
+**THE FULL GUARD SET WAS RUN IN WRITE MODE AT THE TREE THE CLOSE COMMIT LEFT, AND READ.** Every run
+check passes except [[OI-372]]'s tool, **with ZERO STOP verdicts** — the verdict set is exactly the
+passing verdicts plus that one failure, and nothing else. **The guard population is UNCHANGED
+against the start state**: no tool was added or removed by this batch, and the run, not-run and
+historical populations all re-derive at the same sizes the declared start state named. Every value
+is at `tools/audit/guard_state.json`, written by the run itself, and no figure is restated here
+(**D-431**).
+
+**The two start-state reds are down to that one.** The evidence-pin membership check was cleared at
+Task 0 by the act that tracked this dispatch's own untracked input, and it has passed at every
+commit since. **The guard registry's own artifact re-derives here rather than opening STALE**,
+because this run is the one that writes it — which is the whole reason the E-ordering rule puts it
+in a further commit.
+
+**NO RED APPEARED MID-BATCH.** A2's condition — a red outside the subjects of this batch's own acts
+— did not fire at any point. The one check A2 named as expected to go red at the close,
+`gen_session_start_read_size.py`, did go red when Task 2 moved `STATUS.md` entries, and it was
+cleared by regenerating the measurement and by nothing else; that regeneration is inside the close
+commit.
+
+**★ AND THE END-STATE RUN WROTE EXACTLY ONE PATH.** Measured against the close commit by explicit
+hash: `tools/audit/guard_state.json` and nothing else. That is not an extra — writing the registry
+IS what running the set does, and this commit exists to carry it.
+
+**★ A READER WHO OPENS THE CLOSE COMMIT'S OWN COPY OF `guard_state.json` WILL FIND A DIFFERENT
+SUMMARY, AND THAT IS THE E-ORDERING RULE WORKING RATHER THAN A DISCREPANCY.** That copy records a
+mid-batch run. It cannot record the end state, because the end state is a property of the tree that
+commit LEFT, and a commit cannot contain a run over itself.
+
+**★ THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** The sentence at §8 was written at the
+close and was true of it. Taken over the batch including this further commit, the answer is
+unchanged in kind and larger by one item: the guard registry itself was rewritten, and that is what
+running the set does. **Nothing else was produced, and nothing this batch touched lies outside the
+subjects of its own ordered acts.**
+
+*Provenance: CC, 2026-08-22, appended in the one further commit after the close commit `473f287372`
+existed — a commit whose own identity this paragraph therefore cannot contain. Every value above was
+read from the run recorded in `tools/audit/guard_state.json`, which that run itself wrote; no value
+here was carried forward from an earlier run or inferred from a summary.*
