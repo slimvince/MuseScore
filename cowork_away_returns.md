@@ -15929,3 +15929,152 @@ was established by reading the run's check list, not assumed.
 existed — a commit whose own identity this paragraph therefore cannot contain. Every value above was
 read from the run recorded in `tools/audit/guard_state.json`, which that run itself wrote; no value
 here was carried forward from an earlier run or inferred from a summary.*
+
+---
+
+# ═══ THE STEP-ZERO RETURN RULINGS EXECUTED, AND THE PASS CONTINUED (dispatch `cc_instruction_step_zero_exclusion_and_pass_continuation.md`, performed 2026-08-22) ═══
+
+> **★ THIS CLOSE DOES NOT ASSERT THE END STATE, AND THE OMISSION IS DELIBERATE.** The end-state guard
+> run is taken **after** the commit carrying this close exists, so its values cannot be written into
+> that commit. They land in **ONE FURTHER COMMIT**, appended beneath this section. No row, cell or
+> sentence anywhere in this section asserts what the guard set says at the tree this close leaves.
+>
+> **★ ALL FOUR TASKS RAN; TASK 2 IS A PER-ENTRY PASS AND IS STOPPED AT A RECORDED MEMBER BOUNDARY.
+> NO STOP-AND-REPORT RULE FIRED.** No `src/` edit, no golden, **no test changed, moved or run**,
+> nothing under `tools/corpus/` or `tools/robust_stop/` moved, **no measurement of the ANALYSIS
+> built, designed, scoped or run**, no design, no repair. **No derivation of any specification, no
+> frame, no pilot act, no fact-gate admission, no ledger, no mining read.** **NO open-items row
+> created, flipped or discarded; no register entry written.** **NO screened document edited** —
+> `ARCHITECTURE.md`, `docs/scoring_model.md` and every document-set member were read and never
+> written. **No edit to the delegation at `ARCHITECTURE.md:4265`, none to the document-governance
+> clause, and no authored grade re-graded.** **No finding number allocated; the series stands at
+> F88.** The report is `cc_report_step_zero_return_executed.md`, and no figure of it is restated here
+> (**D-431**).
+
+## 1. The chain, named as far as a sentence can name it
+
+**EIGHT commits, all pushed to `origin/master` and all verified at the object by explicit hash:**
+`4f55fe802b` (Task 0, the 2026-08-22 record landed and pushed) → `beccfa14f5` (Task 1, the exclusion
+as an authored input, the three artifacts re-derived, the declared third pollution value) →
+`810ff863c9`, `f33441940f`, `dc340d84fb`, `979436429d`, `74abd1b905`, `311dee8d11` (Task 2, six
+bounded runs of the per-entry pass).
+
+**THE NINTH COMMIT IS THIS CLOSE, AND A SENTENCE CANNOT NAME ITS OWN HASH.** It carries the report,
+the `STATUS.md` pointer entries, the ruled forward-bound move and this section. **AND A TENTH FOLLOWS
+IT**, carrying the end-state guard run, for the reason stated at the head of this section. That is
+the E-ordering rule at both grains, and it is why this paragraph names eight and declares two.
+
+## 2. What needs the user
+
+**Four things, none of them acted on, all four surfaced under Ruling 9's routing and none rowed.**
+They are stated in full at the report's §8 and are pointed at here rather than restated (#6): the
+key-area grouping's two arms recorded behaviourally non-equivalent and UNMEASURED; the declared and
+unfixed conformance gap in what the emission reads; a shelving with evidence that the implementation
+at HEAD contradicts with no ruling overturning it; and the coverage gap's nine members now carrying
+a DECLARED value that is not a measurement.
+
+**And one thing the user may wish to know about this batch's own conduct:** six verdicts of its own
+first two runs were corrected against the inherited calibration, established at the step-zero
+batch's authored block read from a git object rather than argued. The correction is reported at the
+report's §6 and in the commit that carried it, not smoothed over.
+
+## 3. The registered expectations, graded
+
+**E0 — MET.** Exactly the five named paths; one content modification matching A1(i) and one bounded
+regeneration; three additions; no staging override; the membership check passing at the resulting
+tree; `origin/master` at the Task 0 commit.
+
+**E1 — MET.** The exclusion applied to membership and to nothing else, with its finding, date and
+reason published in the artifact and the derivation's name stating it; every grade, every quoted
+naming and the seed reconciliation byte-unchanged; the widened population re-derived with the
+existing fields byte-identical and the coverage gap unchanged; the July screen re-derived with the
+existing digest identical and the widened authored block unchanged; the nine third values derived
+from git with the in-period check passing; all three `--check`s passing at the commit;
+`ARCHITECTURE.md`, `STATUS.md` and every member byte-unchanged.
+
+**E2 — MET FOR THE MEMBERS READ, AND THE REMAINDER IS DECLARED.** Every read passage carries exactly
+one verdict in the inherited vocabulary; the unread remainder carries the tool's own default and no
+hand; the existing sixty-eight are byte-identical by published digest at every commit; the
+per-document distribution is published by the generator; the failure signal is evaluated at the
+artifact and stated either way; the stop is recorded in the standing form. **It is not met for the
+unread remainder, and that is the stop, not a shortfall.**
+
+**E3 — NOT ASSERTABLE IN THIS COMMIT, BY DESIGN**, for the reason at the head of this section.
+
+## 4. A3's four routes, each graded at the artifact
+
+**All four HELD.** Route 1, the document set: the member count falls by exactly one, the admitted
+target count and the seed miss rate are UNCHANGED — which is what proves membership moved and
+grading did not — and every other member and grade is byte-unchanged. Route 2, the widened
+population: size and the new-passage count fall by exactly the number of changed passages the
+previous artifact recorded for the excluded key, the already-screened count is unchanged, the
+coverage gap is unchanged in membership and in every reason, and every field above the widened block
+is byte-identical. Route 3, the July screen: the existing verdicts' digest is identical before and
+after, the widened authored block is unchanged, the unread total falls by the same number, the read
+share rises and the failure signal is unmoved. Route 4, the guard registry: no tool added or removed,
+the epoch write-path enumeration unmoved, and the one artifact that moved established at the object
+before it was touched. **No movement outside these four routes was found at any point in the batch.**
+The per-route detail is at the report's §3 and no figure is restated here (**D-431**).
+
+## 5. The independence of every new verdict
+
+**None of the verdicts authored in this batch is a second opinion on a passage the record already
+carries a verdict for, and that is true BY CONSTRUCTION rather than by inspection.** The screen's
+population partitions into already-screened passages, which INHERIT the original screen's verdict
+unchanged, and new ones, which are the only passages the widened authored block may key on — the
+tool STOPS on a widened verdict naming a passage the new population does not carry. Every passage
+this batch authored was drawn from the unread set of that new population, so no passage received two
+independent readings and none could. **The six corrections this batch made are not an exception:**
+they are re-gradings of this batch's OWN verdicts, made within the batch before it closed, and each
+replaces rather than sits beside its predecessor.
+
+## 6. The stop, recorded in the standing form
+
+**Ten document-set members are read whole**, named individually at the report's §5 so that no reader
+takes the subset for the whole. **Seven members still carry unread passages**, also named there.
+Every remaining passage is **UNTOUCHED**, not partly worked; each carries the tool's unread default,
+which no hand set and which the tool forbids being authored; and **nothing is left half-edited** —
+`--check` re-derives byte-identically at every commit of this batch. **A continuing session derives
+the remainder FRESH from the artifact**, never from the report's account of it.
+
+**Why it stopped here rather than one member further:** Task 3 binds harder, and the boundary reached
+is a clean one.
+
+## 7. The declared departures
+
+Four, each stated at the report's §10 and pointed at here (#6): one artifact the dispatch does not
+name regenerated, with its cause established at the object before it was touched (**D-669**); five
+commit hashes written from their abbreviations and replaced with the resolved objects before
+anything was run; the guard set run in check mode rather than write mode until the end-state run; and
+Task 2's recorded stop. **A fifth is stated here because it is about the dispatch's own
+prediction rather than about an act:** A1(ii) declares `DECISIONS.md` modified by carriage returns,
+and at the OBJECT LEVEL git reports no modification at all for that path, so the third red A2 names
+as possible could not arise. Nothing was staged or repaired.
+
+## 8. The three PLAN LINES, restated as plan lines and NOT as tasks
+
+None of these is dispatched, started, scoped or prepared by this batch. Each is recorded so that the
+next session meets it as a plan line and not as owed work in flight.
+
+1. **The owed whole read of `STATUS.md` and `STATUS_ARCHIVE.md` as fact-gate mining inputs** —
+   Ruling 1(d) of the step-zero return sitting. ONE whole read of both, in its own run, **AFTER the
+   pilot has established the method**, because the admission test applied in that read is what the
+   pilot exists to prove usable.
+2. **The owed whole read of the five glob-only documents as fact-gate mining inputs** — Ruling 3(b)
+   of the same sitting, on the same condition and in the same class.
+3. **The pilot's opening, with the boot-list ruling for derivation sessions owed FIRST** —
+   Ruling 1 of the dispatch-order sitting, whose own recorded ground is that the pilot's prerequisite
+   is still owed and may not be ruled by a session.
+
+## 9. The plan's tell, in one sentence
+
+**Did this batch produce anything other than the exclusion input, the third-value derivation, the
+re-derived artifacts, the authored verdicts and the report?** Yes, and it is named: one regenerated
+guard artifact, forced by the guard registry's own derivation over a path constant the dispatch
+itself ordered added — declared in the report's §10 rather than left for a reader to find.
+
+*Provenance: CC, 2026-08-22, executing `cc_instruction_step_zero_exclusion_and_pass_continuation.md`
+under Rulings 1(a), 1(c) and 2(b) of `cowork_rulings_2026_08_22_step_zero_return_sitting.md` and
+Ruling 1 of `cowork_rulings_2026_08_22_dispatch_order_sitting.md`. Every commit named above was read
+at the object by explicit hash. The end-state values are deliberately absent and land in the one
+further commit beneath this section.*

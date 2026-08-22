@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_successor_plan_landing_and_step_zero.md, Task 4",
+ "dispatch": "cc_instruction_step_zero_exclusion_and_pass_continuation.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -47,37 +47,50 @@
    "executing_act": "cc_instruction_preparation_fourteenth.md, Task 2",
    "base_commit": "ac6cacec9fb0c1f64128da87704e6e0d94e1323c",
    "the_then_previous_batch": "cc_instruction_preparation_thirteenth.md"
+  },
+  {
+   "executing_act": "cc_instruction_successor_plan_landing_and_step_zero.md, Task 4",
+   "base_commit": "553dd5f40589bed6eb1e9fc64233a4fde7096c06",
+   "the_then_previous_batch": "cc_instruction_preparation_fourteenth.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "553dd5f40589bed6eb1e9fc64233a4fde7096c06",
- "the_then_previous_batch": "cc_instruction_preparation_fourteenth.md",
- "entries_moved": 3,
- "characters_moved": 4063,
+ "base_commit": "311dee8d11d323c1cc126fc9e0a3f72be04d20aa",
+ "the_then_previous_batch": "cc_instruction_successor_plan_landing_and_step_zero.md",
+ "entries_moved": 4,
+ "characters_moved": 5698,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1514,
-   "sha256": "6a42000870ea23b4dd6a95b9bb088e082f8fc2042efb3451b429c06f80bd1248",
+   "characters": 1905,
+   "sha256": "8f01b558840da61590f83686617207556d1563b084f17f8e6c7eb317d8455390",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-19 (CC — **★ THE PREPARATION PHASE'S FOURTEENTH BATCH CLOSES — THE STANDING-CLAUSE POPULATION IS MARKED AT ITS OWN SITES, THE COUNT IS RETIRE"
+   "opening": "*2026-08-21 (CC — **★ STEP ZERO OF THE RATIFIED SUCCESSOR PLAN — THE JULY SCREEN IS WIDENED OVER THE DERIVED DOCUMENT SET, AND ITS PER-ENTRY PASS STOP"
   },
   {
    "line_at_base": 10,
-   "characters": 1508,
-   "sha256": "ef4d6e7c040853b514099a69363002f93b26105bf4ca0b3c1a7a7d982ed58207",
+   "characters": 1461,
+   "sha256": "c9bb82f2c24e791aa29a80e9b3362cfdd3c8d2dd10ca4021e2ce6d2b80345b50",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-19 (CC — **★ THE STANDING CLAUSES ARE MARKED AT THEIR OWN SITES, AND THE NUMBER IS RETIRED RATHER THAN RESTATED.** No `src/` change, no golde"
+   "opening": "*2026-08-21 (CC — **★ THE SCREEN POPULATION IS WIDENED OVER THE DOCUMENT SET BY MEMBERSHIP, AND THE COVERAGE GAP IS PUBLISHED WHOLE.** No `src/` chang"
   },
   {
    "line_at_base": 12,
-   "characters": 1041,
-   "sha256": "283bcadd4515c8e6b977682e97316427d93ee02835730db3a5fe285ce2481f0c",
+   "characters": 1319,
+   "sha256": "5f147ccffa31b341b92e019efaed09b09d6b0c931ef350490256514336eb4aa9",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-19 (CC — **★ THE FOURTEENTH BATCH'S AUTHORITY ENTERS GIT — THE RETURN SITTING'S RECORD, THE DISPATCH, THE HANDOVER BLOCK, AND THE MEMBERSHIP "
+   "opening": "*2026-08-21 (CC — **★ THE SPECIFICATION DOCUMENT SET IS DERIVED FROM `ARCHITECTURE.md`'s ADMITTED DELEGATIONS AND PUBLISHED WHOLE.** No `src/` change,"
+  },
+  {
+   "line_at_base": 14,
+   "characters": 1013,
+   "sha256": "1df4970d103f785fc120ddca8fb4192c2391836a64989ac801205a444b0f6233",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-21 (CC — **★ THE WHOLE 2026-08-21 RECORD LANDS IN GIT AND THE WITHHELD PUSH IS PERFORMED.** No `src/` change, no golden, no test changed, mov"
   }
  ],
  "reconciliation": {

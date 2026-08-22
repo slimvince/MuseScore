@@ -60,15 +60,15 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "553dd5f40589bed6eb1e9fc64233a4fde7096c06"
+BASE_COMMIT = "311dee8d11d323c1cc126fc9e0a3f72be04d20aa"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_preparation_fourteenth.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_successor_plan_landing_and_step_zero.md"
 
-ACT_DATE = "2026-08-21"
-DISPATCH = "cc_instruction_successor_plan_landing_and_step_zero.md"
-TASK = "Task 4"
+ACT_DATE = "2026-08-22"
+DISPATCH = "cc_instruction_step_zero_exclusion_and_pass_continuation.md"
+TASK = "Task 3"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -100,6 +100,9 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_preparation_fourteenth.md, Task 2",
      "base_commit": "ac6cacec9fb0c1f64128da87704e6e0d94e1323c",
      "the_then_previous_batch": "cc_instruction_preparation_thirteenth.md"},
+    {"executing_act": "cc_instruction_successor_plan_landing_and_step_zero.md, Task 4",
+     "base_commit": "553dd5f40589bed6eb1e9fc64233a4fde7096c06",
+     "the_then_previous_batch": "cc_instruction_preparation_fourteenth.md"},
 ]
 
 ARCHIVE_HEADER = (
