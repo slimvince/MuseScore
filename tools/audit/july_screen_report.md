@@ -666,19 +666,19 @@ Every hunk's text was retrieved from the git object by explicit hash — `git sh
 
 The widened population is not yet read whole, so a majority over the read members cannot be reported as the ruled signal firing. The read share is published beside the majority, and the ruling's own words are that a majority reached only because few members were read is reported this way rather than as the signal firing.
 
-- Read members: **139** of **237** (read share 0.5865).
-- UNDETERMINED among the read: **15** (share of the read 0.1079).
+- Read members: **157** of **237** (read share 0.6624).
+- UNDETERMINED among the read: **15** (share of the read 0.0955).
 
 ## The widened population
 
 - **237 hunks** across **64 commits** and **17 documents** — **32** already screened and inherited, **205** new.
-- By verdict: NOT YET READ 98, POSITIVELY CODE-INFLUENCED 41, RATIFIED-ACT EDIT 68, RESTRUCTURING-SHAPED 15, UNDETERMINED 15.
+- By verdict: NOT YET READ 80, POSITIVELY CODE-INFLUENCED 42, RATIFIED-ACT EDIT 84, RESTRUCTURING-SHAPED 16, UNDETERMINED 15.
 
 ## The per-document pollution distribution
 
 | member | hunks | read | POSITIVELY CODE-INFLUENCED | RATIFIED-ACT EDIT | RESTRUCTURING-SHAPED | UNDETERMINED | NOT YET READ | OUTSIDE NAMED SECTIONS | coverage gap | pollution input |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `ARCHITECTURE.md` | 152 | 134 | 40 | 66 | 15 | 13 | 18 | 0 | — | MEASURED |
+| `ARCHITECTURE.md` | 152 | 152 | 41 | 82 | 16 | 13 | 0 | 0 | — | MEASURED |
 | `cowork_bounded_context_design.md` | 4 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | — | MEASURED |
 | `cowork_confidence_contract.md` | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | — | MEASURED |
 | `cowork_evidence_inventory.md` | 6 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | — | MEASURED |
@@ -727,7 +727,6 @@ Every document-set member with NO FLAG hunk in the candidate enumeration, with t
 
 Recorded so that a continuing session derives the remainder fresh rather than carrying it from this session's account of it. The order below is the artifact's own — by document, then by commit, then by hunk.
 
-- `ARCHITECTURE.md` — **18** unread
 - `cowork_bounded_context_design.md` — **4** unread
 - `cowork_confidence_contract.md` — **1** unread
 - `cowork_evidence_inventory.md` — **6** unread
@@ -1611,6 +1610,164 @@ Recorded so that a continuing session derives the remainder fresh rather than ca
 - **The act:** the user's rulings of 2026-08-08, under which the owed decisions were homed into the specifications that own them and four delegations were written, D-231's phase-1 criterion C1 being the standing obligation they discharge
 - **Where its ratification is recorded:** each added block's own "re-homed into this specification 2026-08-08 on the user's ruling" / "this delegation written 2026-08-08 on the user's ruling"; the ruling record the commit names, `cowork_rulings_2026_08_08_pre_away.md`; and D-231's phase-1 clause at `CLAUDE.md` Conventions (user-directed 2026-08-02)
 - *Retrieve:* `git show 82ebfd68d9f7760396aab2b792ea3a1dce02a9e5 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-08 · `ARCHITECTURE.md` @ `-316,0 +317,14` · dfbf3ab824
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): nine archive-only decisions moved into the specifications that own them, D-601's hold ended, and three held because the act they need is a ruling
+- **Ground.** The commit's own account is "Task 2 of the away batch (`cc_instruction_away_execution.md`). D-601's homing is the one edit Ruling 2 of `cowork_rulings_2026_08_08_pre_away.md` authorizes", and it states what the act was FOR: entries that "lived ONLY in a session-handoff archive" or were "already NAMED in an `ARCHITECTURE.md` 'Tried and closed' line without the section saying what they were, so a reader met an identifier and could not learn the rule". Both `ARCHITECTURE.md` hunks say so in their own added text: "re-homed into this specification 2026-08-08". The commit's scope line is "No `src/` change, no golden, no corpus of scores, no `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design." Here the hunk adds what D-288 IS — do not retry widening the search to consider more candidate readings in parallel — behind a naming the section already carried. ★ The first class was applied first and does NOT fire, and the call is recorded because it is close: the rule's ground is a MEASUREMENT of this system's own behaviour, "the wrong reading is the highest-scoring one", cross-checked against independent earlier measurements. What decides it is that the block ADDS the content behind an existing identifier and withdraws nothing, and that the measurement is the SHELVING'S OWN SUBJECT rather than a fact against which a documentation statement was found false.
+- **The act:** the away batch's Task 2 under the user's rulings of 2026-08-08, re-homing archive-only decisions into the specifications that own them — D-231's phase-1 criterion C1 being the standing obligation discharged
+- **Where its ratification is recorded:** each added block's own "re-homed into this specification 2026-08-08"; the ruling record the batch applies, `cowork_rulings_2026_08_08_pre_away.md`; and D-231's phase-1 clause at `CLAUDE.md` Conventions (user-directed 2026-08-02)
+- *Retrieve:* `git show dfbf3ab824f0717d83cf3cce8e332c69f1074328 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-08 · `ARCHITECTURE.md` @ `-1613,0 +1628,25` · dfbf3ab824
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): nine archive-only decisions moved into the specifications that own them, D-601's hold ended, and three held because the act they need is a ruling
+- **Ground.** The commit's own account is "Task 2 of the away batch (`cc_instruction_away_execution.md`). D-601's homing is the one edit Ruling 2 of `cowork_rulings_2026_08_08_pre_away.md` authorizes", and it states what the act was FOR: entries that "lived ONLY in a session-handoff archive" or were "already NAMED in an `ARCHITECTURE.md` 'Tried and closed' line without the section saying what they were, so a reader met an identifier and could not learn the rule". Both `ARCHITECTURE.md` hunks say so in their own added text: "re-homed into this specification 2026-08-08". The commit's scope line is "No `src/` change, no golden, no corpus of scores, no `tools/robust_stop/` movement, no behaviour change to the analysis, no fix to inference, no design." Here the hunk adds what the key layer's two named dead ends ARE — the ranked key-candidate carry, and deciding the key from key-agnostic cadences one at a time — each with its stated re-open condition or its stated scope. ★ The first class was applied first and does NOT fire, on the same ground as the hunk above: both rules ADD content behind namings the section already carried, both grounds are measurements of legacy mechanisms that are the shelvings' own subjects, and one of them is explicitly re-read for the joint estimator — "that design carries a full posterior by construction, so the concern this shelving withdrew is met by a different design rather than by reviving this one".
+- **The act:** the away batch's Task 2 under the user's rulings of 2026-08-08, re-homing archive-only decisions into the specifications that own them — D-231's phase-1 criterion C1 being the standing obligation discharged
+- **Where its ratification is recorded:** each added block's own "re-homed into this specification 2026-08-08"; the ruling record the batch applies, `cowork_rulings_2026_08_08_pre_away.md`; and D-231's phase-1 clause at `CLAUDE.md` Conventions (user-directed 2026-08-02)
+- *Retrieve:* `git show dfbf3ab824f0717d83cf3cce8e332c69f1074328 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-09 · `ARCHITECTURE.md` @ `-1212,0 +1213,30` · 935efcf993
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): the ten rulings of 2026-08-09 applied through Task 3 — and one ruling's own condition is not met, so half of it stops
+- **Ground.** The commit's own account is "the ten rulings of 2026-08-09 applied through Task 3", applying `cowork_rulings_2026_08_09_return.md` read whole, and it states its scope: "No src/ change, no golden, no corpus of scores, no tools/robust_stop/ movement, no behaviour change to the analysis, no fix to inference, no design." Both `ARCHITECTURE.md` hunks carry their own attribution — "written into this section 2026-08-09 on the user's ruling". Here the hunk homes D-286 — whole-score interactive analysis SHELVED WITH EVIDENCE against a bounded window — into §2.16, with a marked block stating that the implementation at HEAD contradicts the shelving. ★ The first class was applied first and does NOT fire, and this is a close call recorded in full: the marked block IS a statement read at the implementation — "The record producer takes no tick range: every record-arm seam analyzes the whole score and narrows to the requested span afterward" — and it is offered against the very decision being homed. What decides it is that the shelving and the contradiction arrive TOGETHER in one addition, so nothing this document already stated is withdrawn, and that the block takes NO verdict — it says in terms "This section does not decide which of the two is right" and points the conformance question at its own rows. That is the ruled form for homing a decision the implementation contradicts, applied rather than improvised.
+- **The act:** the user's Ruling 5 of 2026-08-09 — where the implementation contradicts the decision being homed, the shelving is written in AS a shelving, the contradiction stated beside it and the questions pointed at their rows, with no verdict taken
+- **Where its ratification is recorded:** the added block's own "written into this section 2026-08-09 on the user's ruling"; the ruling record the commit names, `cowork_rulings_2026_08_09_return.md`; and the rule's home at `cowork_audit_protocol.md`, register entry D-649
+- *Retrieve:* `git show 935efcf99349bf414196e81613f07b9cfae99f43 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-09 · `ARCHITECTURE.md` @ `-2045,0 +2076,28` · 935efcf993
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): the ten rulings of 2026-08-09 applied through Task 3 — and one ruling's own condition is not met, so half of it stops
+- **Ground.** The commit's own account is "the ten rulings of 2026-08-09 applied through Task 3", applying `cowork_rulings_2026_08_09_return.md` read whole, and it states its scope: "No src/ change, no golden, no corpus of scores, no tools/robust_stop/ movement, no behaviour change to the analysis, no fix to inference, no design." Both `ARCHITECTURE.md` hunks carry their own attribution — "written into this section 2026-08-09 on the user's ruling". Here the hunk homes the BUILD half of D-291 — the tonicization labeller is deliberately left unwired and the real lever is a local-modulation detector at the key layer — with its measurement half explicitly left where it belongs (#6). ★ The first class was applied first and does NOT fire: the block ADDS and withdraws nothing, and its ground is a measurement of the GRADING COMPARISON against the human annotations — that the comparison scores by root and quality and therefore MASKS the key error — which is a fact about the measurement apparatus and the ground truth, not a fact read in implementation code that found a documentation statement false.
+- **The act:** the user's Ruling 11 of 2026-08-09, splitting D-291 and homing its build half at the Layer-5 function section with its defense
+- **Where its ratification is recorded:** the added block's own "written into this section 2026-08-09 on the user's ruling"; `cowork_rulings_2026_08_09_return.md`; and the measurement half's own home in `CLAUDE.md` gate block (A), which the block points at rather than restating
+- *Retrieve:* `git show 935efcf99349bf414196e81613f07b9cfae99f43 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-09 · `ARCHITECTURE.md` @ `-2115,25 +2115,48` · 4aab2ec297
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** docs(cowork): the specification now describes the arm that ships — and a ruling's own prediction is refuted, uncovering a verification that had stopped covering its population
+- **Ground.** The commit's own subject states the direction of the change in terms: "the specification now describes the arm that ships". ★ THE FIRST CLASS FIRES, on both of its limbs. The hunk REPLACES a standing statement of this document — the heading's "OVER STABILIZED REGIONS" and the whole OPEN QUESTION block beneath it, both of which this same population carries as an earlier hunk — with a corrected account of what supplies the smoothed key sequence on each arm. And the correction's source is named as a read at the code: "after the read-only probe the open-items register had reserved to the user established the answer at the code". Its own why-clause is the first class's second limb word for word — "the former text named the legacy step as THE precondition, so it described an arm that does not ship; the record arm meets the requirement by other means, and a specification that says otherwise cannot be the compliance standard (#10)". The corrected text carries the behavioural non-equivalence between the two arms visibly and calls it UNMEASURED, and the former wording stands preserved in place (#12).
+- *Retrieve:* `git show 4aab2ec297444a4a85d7b0197cf07e66fe9d5354 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-10 · `ARCHITECTURE.md` @ `-1094,0 +1095,14` · 9fe7f4561f
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(architecture): the homing default is executed for three entries — the span typology gains the per-voice kind it was told to carry, the axis's unowned objects get their owner, and a motion-type reading stops being "owed at build"
+- **Ground.** The commit's own account is "Dispatch `cc_instruction_return_continuation_6.md` Task 1, on the user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for the finish line's homing items", and both `ARCHITECTURE.md` hunks carry their own attribution — "user-ratified 2026-07-03; written here 2026-08-09". Its scope line names no `src/` change, no golden, no corpus of scores and no behaviour change to the analysis. Here the hunk adds the per-voice span kind to the span typology, with what the record deliberately does NOT assert stated beside it — that consecutive phrases within one voice tile that voice exactly. ★ The first class was applied first and does not fire: the block ADDS a member to the typology, withdraws nothing, and its ground is contrapuntal writing itself — phrases running concurrently and out of step across voices — with no fact read in implementation code cited.
+- **The act:** the user's Ruling 38 of 2026-08-09, making re-homing into the owning layer's specification the default closing route, executed here for two entries the user ratified on 2026-07-03
+- **Where its ratification is recorded:** each added block's own "user-ratified 2026-07-03; written here 2026-08-09"; the ruling record the commit names, `cowork_rulings_2026_08_09_sixth_stop.md`; and the rule's home at `CLAUDE.md`, decisions-register rule (l)
+- *Retrieve:* `git show 9fe7f4561f750de4403b9bf9cfe812e474a1a5b3 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-10 · `ARCHITECTURE.md` @ `-1124 +1138,17` · 9fe7f4561f
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(architecture): the homing default is executed for three entries — the span typology gains the per-voice kind it was told to carry, the axis's unowned objects get their owner, and a motion-type reading stops being "owed at build"
+- **Ground.** The commit's own account is "Dispatch `cc_instruction_return_continuation_6.md` Task 1, on the user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning layer's specification is the DEFAULT closing route for the finish line's homing items", and both `ARCHITECTURE.md` hunks carry their own attribution — "user-ratified 2026-07-03; written here 2026-08-09". Its scope line names no `src/` change, no golden, no corpus of scores and no behaviour change to the analysis. Here the hunk assigns four ownerless analysis objects to the voice-leading axis, each written in AS A CLAIM discharged only at that component's own ratified design. ★ The first class was applied first and does NOT fire, and the call is recorded because it is close: one ground is a check at our own built catalogue — "the built chord catalogue already records exactly that with a voice-leading-defined flag on the entries concerned, checked at the catalogue rather than assumed". What decides it is that the hunk's one replaced line is a SPLIT made to insert the block, not a withdrawal, and that the catalogue check is offered as the REASON an object belongs to the axis rather than as a fact that found a documentation statement false.
+- **The act:** the user's Ruling 38 of 2026-08-09, making re-homing into the owning layer's specification the default closing route, executed here for two entries the user ratified on 2026-07-03
+- **Where its ratification is recorded:** each added block's own "user-ratified 2026-07-03; written here 2026-08-09"; the ruling record the commit names, `cowork_rulings_2026_08_09_sixth_stop.md`; and the rule's home at `CLAUDE.md`, decisions-register rule (l)
+- *Retrieve:* `git show 9fe7f4561f750de4403b9bf9cfe812e474a1a5b3 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-10 · `ARCHITECTURE.md` @ `-369,0 +370,6` · 2fae57d212
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(architecture): Ruling 39's delegation is written verbatim — and its predicted outcome is refuted by measurement, because a delegation to the census cannot reach an entry that does not sit in the census
+- **Ground.** The commit's own account is "Ruling 39's delegation is written verbatim", performed on the user's Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`, and it records that the wording is "the user's own, approved verbatim" and that the clause "and nothing else" was written. ★ The first class was applied first and does not fire: the hunk ADDS a delegation clause beside an existing naming, withdraws nothing, and cites no fact read in implementation code. ★ The commit's own body reports that the ruling's PREDICTED OUTCOME was refuted by measurement; that refutation is about which register entries the delegation reaches and is recorded on the rows, not in this hunk's text.
+- **The act:** the user's Ruling 39 of 2026-08-09 — the exception to the Ruling 38 re-homing default, naming `cowork_score_census.md` as a document-level delegation whose reach is judged per section
+- **Where its ratification is recorded:** the added text's own "user-ratified 2026-08-09; the Ruling 39 exception to the Ruling 38 re-homing default"; and the ruling record the commit names, `cowork_rulings_2026_08_09_seventh_stop.md`
+- *Retrieve:* `git show 2fae57d21219e834a24a2e8cf391ae47cf66f63d --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-384,0 +385,42` · a74c821f89
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): the first commissioning sitting's five rulings applied in one commit — and the one closing act needed the same rule applied twice along a chain the register itself names
+- **Ground.** The commit's own account is "Rulings 60–64 of `cowork_rulings_2026_08_11_fourteenth_stop.md`, read whole (D-643), applied under `cc_instruction_return_continuation_14.md` Task 0", and all three `ARCHITECTURE.md` hunks are Ruling 63's — the priority-of-evidence rule homed for the production arm, the phase-1z scoping note annotated rather than re-worded, and one unqualified predicate corrected. Its scope line names no `src/` change, no golden, no corpus of scores and no behaviour change to the analysis. Here the hunk adds the evidential priority the emission is scored under, ruled ARM-INDEPENDENT, and states why: a premise a live open item puts under load had been stated only inside a section whose own scoping sentence disclaims describing the shipped analysis. ★ The first class was applied first and does NOT fire, and the call is recorded because it is close: the block NAMES a conformance gap in the implementation — "the pitch and bass emissions reading the STRUCK set where the design says sounding". What decides it is that the block ADDS a rule and withdraws nothing, that its two grounds are the user's own recorded position of 2026-07-28 and the Layer-2 slice-identity specification, and that the gap is named in the WHAT-THIS-DOES-NOT-DO clause as DECLARED AND NOT FIXED, with the remedy left to the one design over the whole family at its #8-correct stage.
+- **The act:** the user's Ruling 63 of 2026-08-11 — the priority-of-evidence rule homed for the production arm under D-668, the scoping note annotated rather than re-worded (#12), and the unqualified "no exception" corrected to "no PIECE-START exception"
+- **Where its ratification is recorded:** each added block's own citation of the ruling — "Ruled by the user, 2026-08-11 (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63, closing `OPEN_ITEMS.md` OI-324)" — and that ruling record itself
+- *Retrieve:* `git show a74c821f891415f42d5aa4f864901ae100c72697 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-4210,0 +4253,18` · a74c821f89
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): the first commissioning sitting's five rulings applied in one commit — and the one closing act needed the same rule applied twice along a chain the register itself names
+- **Ground.** The commit's own account is "Rulings 60–64 of `cowork_rulings_2026_08_11_fourteenth_stop.md`, read whole (D-643), applied under `cc_instruction_return_continuation_14.md` Task 0", and all three `ARCHITECTURE.md` hunks are Ruling 63's — the priority-of-evidence rule homed for the production arm, the phase-1z scoping note annotated rather than re-worded, and one unqualified predicate corrected. Its scope line names no `src/` change, no golden, no corpus of scores and no behaviour change to the analysis. Here the hunk adds an ANNOTATION beside the phase-1z scoping note saying what that note does and does not scope — the MECHANISM, not the evidential ranking — with the note itself preserved exactly as written (#12) and the excluded reading recorded. ★ The first class was applied first and does not fire: nothing is withdrawn, the annotation is explicitly chosen OVER a re-wording, and no fact read in implementation code is its source.
+- **The act:** the user's Ruling 63 of 2026-08-11 — the priority-of-evidence rule homed for the production arm under D-668, the scoping note annotated rather than re-worded (#12), and the unqualified "no exception" corrected to "no PIECE-START exception"
+- **Where its ratification is recorded:** each added block's own citation of the ruling — "Ruled by the user, 2026-08-11 (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63, closing `OPEN_ITEMS.md` OI-324)" — and that ruling record itself
+- *Retrieve:* `git show a74c821f891415f42d5aa4f864901ae100c72697 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-4245 +4305,6` · a74c821f89
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): the first commissioning sitting's five rulings applied in one commit — and the one closing act needed the same rule applied twice along a chain the register itself names
+- **Ground.** The commit's own account is "Rulings 60–64 of `cowork_rulings_2026_08_11_fourteenth_stop.md`, read whole (D-643), applied under `cc_instruction_return_continuation_14.md` Task 0", and all three `ARCHITECTURE.md` hunks are Ruling 63's — the priority-of-evidence rule homed for the production arm, the phase-1z scoping note annotated rather than re-worded, and one unqualified predicate corrected. Its scope line names no `src/` change, no golden, no corpus of scores and no behaviour change to the analysis. Here the hunk REPLACES one sentence — "the priority of evidence, which now has no exception" becomes "which now has no PIECE-START exception" — with the correction's reason in its own parenthesis. ★ The first class was applied first and does NOT fire, although a standing statement IS replaced: the correction's source is stated in the added text and it is the DOCUMENT'S OWN INCONSISTENCY — a predicate that "named no argument — no exception TO WHAT — and which read plainly as contradicting the 'all but one narrow fallback case' sentence below it". No fact read in implementation code is cited, and the added text says which neighbouring sentence establishes the intended reading.
+- **The act:** the user's Ruling 63 of 2026-08-11 — the priority-of-evidence rule homed for the production arm under D-668, the scoping note annotated rather than re-worded (#12), and the unqualified "no exception" corrected to "no PIECE-START exception"
+- **Where its ratification is recorded:** each added block's own citation of the ruling — "Ruled by the user, 2026-08-11 (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63, closing `OPEN_ITEMS.md` OI-324)" — and that ruling record itself
+- *Retrieve:* `git show a74c821f891415f42d5aa4f864901ae100c72697 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-2619,0 +2620,15` · 11af13a572
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(architecture): OI-346's marks reached at last as a dedicated task — the Jazz half applied with its establishment, the idiom half HELD because #19 forbids a verdict in either direction
+- **Ground.** The commit's own account is "OI-346's marks reached at last as a dedicated task — the Jazz half applied with its establishment, the idiom half HELD because #19 forbids a verdict in either direction", executing `cc_instruction_return_continuation_14.md` Task 1. It is the APPLICATION half of D-497, RATIFIED AMENDMENT A-7, and its scope line names no `src/` change, no golden, no corpus of scores, no constant moved and no behaviour change to the analysis. Here the hunk adds the mark on the Jazz chord-scoring constants, with the validation path named and the one thing a reader could mistake for validation named too — the Jazz regression check runs the Jazz preset over the Bach chorale corpus, which is not jazz ground truth. ★ The first class was applied first and does NOT fire, and the call is recorded because it is close: the block cites the implementation to say WHICH values are marked — the extension threshold against the default "the header declares", and the reduced inversion bonuses "set in `tools/batch_analyze.cpp`" — code this commit did not write. What decides it is that the block ADDS a mark and withdraws no statement: the citations IDENTIFY the constants the ratified rule reaches, and the establishment offered is the record's own (§4.1c and the corpus census), not a fact found in the code.
+- **The act:** the application of D-497 — RATIFIED AMENDMENT A-7, user-ratified 2026-08-04, that every uncalibrated style constant carries the empirically-unvalidated mark with its validation path named — tracked at `OPEN_ITEMS.md` OI-346
+- **Where its ratification is recorded:** each added block's own "the §6.6 rule applied, 2026-08-11 (`OPEN_ITEMS.md` OI-346, the application half of D-497)"; §6.6 itself, which states the rule and its maintenance; and D-497's own ratification at the 2026-07 architecture review
+- *Retrieve:* `git show 11af13a5729a3b06cb49c3dbfdc76f3509a7ba58 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-4172 +4187` · 11af13a572
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(architecture): OI-346's marks reached at last as a dedicated task — the Jazz half applied with its establishment, the idiom half HELD because #19 forbids a verdict in either direction
+- **Ground.** The commit's own account is "OI-346's marks reached at last as a dedicated task — the Jazz half applied with its establishment, the idiom half HELD because #19 forbids a verdict in either direction", executing `cc_instruction_return_continuation_14.md` Task 1. It is the APPLICATION half of D-497, RATIFIED AMENDMENT A-7, and its scope line names no `src/` change, no golden, no corpus of scores, no constant moved and no behaviour change to the analysis. Here the hunk REPLACES the Jazz row of the preset table to carry the empirically-unvalidated mark and its validation path. ★ The first class was applied first and does NOT fire although a standing row IS replaced: the six values themselves are unchanged, what is added is the mark the ratified rule requires, and the source of the change is that rule rather than a fact read in implementation code.
+- **The act:** the application of D-497 — RATIFIED AMENDMENT A-7, user-ratified 2026-08-04, that every uncalibrated style constant carries the empirically-unvalidated mark with its validation path named — tracked at `OPEN_ITEMS.md` OI-346
+- **Where its ratification is recorded:** each added block's own "the §6.6 rule applied, 2026-08-11 (`OPEN_ITEMS.md` OI-346, the application half of D-497)"; §6.6 itself, which states the rule and its maintenance; and D-497's own ratification at the 2026-07 architecture review
+- *Retrieve:* `git show 11af13a5729a3b06cb49c3dbfdc76f3509a7ba58 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-4176,0 +4192,15` · 11af13a572
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(architecture): OI-346's marks reached at last as a dedicated task — the Jazz half applied with its establishment, the idiom half HELD because #19 forbids a verdict in either direction
+- **Ground.** The commit's own account is "OI-346's marks reached at last as a dedicated task — the Jazz half applied with its establishment, the idiom half HELD because #19 forbids a verdict in either direction", executing `cc_instruction_return_continuation_14.md` Task 1. It is the APPLICATION half of D-497, RATIFIED AMENDMENT A-7, and its scope line names no `src/` change, no golden, no corpus of scores, no constant moved and no behaviour change to the analysis. Here the hunk adds what the mark on that row means and what it does NOT say — not that the six values are wrong, and not that anything about the analysis moves. ★ The first class was applied first and does NOT fire, and the call is recorded because the establishment offered is a MEASUREMENT — §4.1c's recorded consequence that jazz accuracy is not measurable on the corpora held, measured by the bass-injection experiment. What decides it is that the measurement is about the CORPORA HELD rather than about our code, that the block ADDS and withdraws nothing, and that it is offered as the ratified rule's own establishment requirement.
+- **The act:** the application of D-497 — RATIFIED AMENDMENT A-7, user-ratified 2026-08-04, that every uncalibrated style constant carries the empirically-unvalidated mark with its validation path named — tracked at `OPEN_ITEMS.md` OI-346
+- **Where its ratification is recorded:** each added block's own "the §6.6 rule applied, 2026-08-11 (`OPEN_ITEMS.md` OI-346, the application half of D-497)"; §6.6 itself, which states the rule and its maintenance; and D-497's own ratification at the 2026-07 architecture review
+- *Retrieve:* `git show 11af13a5729a3b06cb49c3dbfdc76f3509a7ba58 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-5391,4 +5421,20` · 11af13a572
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(architecture): OI-346's marks reached at last as a dedicated task — the Jazz half applied with its establishment, the idiom half HELD because #19 forbids a verdict in either direction
+- **Ground.** The commit's own account is "OI-346's marks reached at last as a dedicated task — the Jazz half applied with its establishment, the idiom half HELD because #19 forbids a verdict in either direction", executing `cc_instruction_return_continuation_14.md` Task 1. It is the APPLICATION half of D-497, RATIFIED AMENDMENT A-7, and its scope line names no `src/` change, no golden, no corpus of scores, no constant moved and no behaviour change to the analysis. Here the hunk REPLACES §6.6's closing clause — which said the mark was not applied at HEAD — with how far the application has got, and records the idiom half as HELD rather than guessed, because #19 forbids a verdict in either direction where no surface maps the five idiom names onto a per-idiom ground-truth verdict. The former wording stands preserved (#12). ★ The first class was applied first and does NOT fire although a standing statement IS replaced: what made it false is THIS COMMIT'S OWN documentation act, not a fact read in implementation code.
+- **The act:** the application of D-497 — RATIFIED AMENDMENT A-7, user-ratified 2026-08-04, that every uncalibrated style constant carries the empirically-unvalidated mark with its validation path named — tracked at `OPEN_ITEMS.md` OI-346
+- **Where its ratification is recorded:** each added block's own "the §6.6 rule applied, 2026-08-11 (`OPEN_ITEMS.md` OI-346, the application half of D-497)"; §6.6 itself, which states the rule and its maintenance; and D-497's own ratification at the 2026-07 architecture review
+- *Retrieve:* `git show 11af13a5729a3b06cb49c3dbfdc76f3509a7ba58 --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-1111 +1111,11` · bf48b1f834
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: the session-small drain — four gating rows closed, and one act came out different from its sizing because the drift sat inside a correction
+- **Ground.** The commit's own account is "the session-small drain — four gating rows closed", executing `cc_instruction_return_continuation_14.md` Task 3, and the three `ARCHITECTURE.md` hunks are OI-318's two label defects. Its scope line names no `src/` change, no golden, no corpus of scores and no behaviour change to the analysis. Here the hunk records that the document's own account of how far the rename reached was ONE INSTANCE SHORT, and states what that shows about the enumeration — it was built by looking for one banned word, so a second banned word was outside what it could find, and its count is not a bound on how many exist. ★ The first class was applied first and does not fire: the correction's source is a READ OF THIS DOCUMENT — a second reserved word standing in its own Layer-6 paragraph — and no fact read in implementation code is cited.
+- **The act:** the ratified terminology rename of 2026-07-01, which reserves the bare word for the accepted melodic phrase alone, applied here to the two places this document breached it — tracked at `OPEN_ITEMS.md` OI-318 item (1)
+- **Where its ratification is recorded:** each added block's own naming of "the ratified 2026-07-01 rename" and of the delegated design's terminology section, which the correction cites as the thing the breach contradicted
+- *Retrieve:* `git show bf48b1f834afe7b0b71da7473b373e37549e99ea --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-2184,3 +2194,8` · bf48b1f834
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: the session-small drain — four gating rows closed, and one act came out different from its sizing because the drift sat inside a correction
+- **Ground.** The commit's own account is "the session-small drain — four gating rows closed", executing `cc_instruction_return_continuation_14.md` Task 3, and the three `ARCHITECTURE.md` hunks are OI-318's two label defects. Its scope line names no `src/` change, no golden, no corpus of scores and no behaviour change to the analysis. Here the hunk REPLACES the Layer-6 paragraph's three uses of the reserved word with the punctuation-span, with the former wording preserved in place (#12) and the reason stated — the paragraph told a reader that the grouping layer segments melodic phrases, "the one thing the delegated design's terminology section exists to deny". ★ The first class was applied first and does NOT fire although a standing statement IS replaced: the source is the ratified rename and the delegated design's own terminology section, not a fact read in implementation code.
+- **The act:** the ratified terminology rename of 2026-07-01, which reserves the bare word for the accepted melodic phrase alone, applied here to the two places this document breached it — tracked at `OPEN_ITEMS.md` OI-318 item (1)
+- **Where its ratification is recorded:** each added block's own naming of "the ratified 2026-07-01 rename" and of the delegated design's terminology section, which the correction cites as the thing the breach contradicted
+- *Retrieve:* `git show bf48b1f834afe7b0b71da7473b373e37549e99ea --no-color -U0 -- ARCHITECTURE.md`
+
+### 2026-08-11 · `ARCHITECTURE.md` @ `-8153 +8168,7` · bf48b1f834
+
+- **Verdict:** RESTRUCTURING-SHAPED · shape `document-relocation-or-re-heading`
+- **Commit subject:** docs: the session-small drain — four gating rows closed, and one act came out different from its sizing because the drift sat inside a correction
+- **Ground.** The commit's own account is "the session-small drain — four gating rows closed", executing `cc_instruction_return_continuation_14.md` Task 3, and the three `ARCHITECTURE.md` hunks are OI-318's two label defects. Its scope line names no `src/` change, no golden, no corpus of scores and no behaviour change to the analysis. Here the hunk RENUMBERS a section heading: two sections carried the same number, and neighbouring text cites into that run by number, so a citation did not resolve. ★ The first class was applied first and does not fire — no statement about the system is made or withdrawn, and the added parenthesis says in terms that the change "changes no content and leaves nothing below it renumbered". The second does not fire either: the act cites a standing documentation rule about this document's section numbers rather than recording what any user act ruled. The third does, this being a re-heading exactly.
+- *Retrieve:* `git show bf48b1f834afe7b0b71da7473b373e37549e99ea --no-color -U0 -- ARCHITECTURE.md`
 
 ## What this screen does not do
 
