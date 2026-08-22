@@ -21,7 +21,7 @@
   "It recognises a read-back by the KEY carrying the word `commit`. A pass recording its epoch under a differently-worded key reports as a non-member — the recoverable direction, a missing member being a question and a wrongly placed one a false statement about a write path."
  ],
  "counts": {
-  "tools_walked": 340,
+  "tools_walked": 341,
   "members": 7,
   "symmetric": 1,
   "asymmetric": 3,
@@ -182,6 +182,7 @@
    "tools/audit/gen_claude_md_finer_archive.py",
    "tools/audit/gen_claude_md_finer_spans.py",
    "tools/audit/gen_claude_md_finer_surface.py",
+   "tools/audit/gen_derivation_boot_pack.py",
    "tools/audit/gen_discard_records.py",
    "tools/audit/gen_framework_untrusted_candidates.py",
    "tools/audit/gen_gating_row_sizing.py",

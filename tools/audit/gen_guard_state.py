@@ -735,6 +735,36 @@ AUTHORED = [
     # EXISTS, registered in the act that creates the tool — the standing new-tool rule. `--check`
     # and never the bare invocation, for the ordinary reason: run with no flag it REWRITES its
     # committed artifact.
+    # ---- AUTHORED 2026-08-22, cc_instruction_pilot_preparation_withheld_family.md Task 1 ------
+    # THE BOOT PACK OF THE CURATED BOOT LIST'S AMENDMENT (a1), registered in the act that creates
+    # the tool — the standing new-tool rule. `--check` and never the bare invocation, for the
+    # ordinary reason: run with no flag it REWRITES its committed manifest and re-renders the whole
+    # pack directory, so a bare run would fold whatever the record currently says into the artifact
+    # a ruling is taken over — the OI-301 hazard exactly.
+    ("tools/audit/gen_derivation_boot_pack.py", ["--check"],
+     "the derivation boot pack still re-renders BYTE-IDENTICALLY — the manifest and every file of "
+     "every subject's pack directory, with the directory's own membership compared both ways so a "
+     "file added to or removed from it is caught rather than ignored. What it guards is not the "
+     "withheld family's verdicts, which are AUTHORED and clear nothing until the user rules them "
+     "(D-655), but demands on the record AS IT STANDS. Every member span is located by its own "
+     "ANCHOR TEXT on every run and an anchor that is missing or matches twice HALTS it, so no "
+     "member is ever cut from a coordinate that has drifted and a heading moving under a governing "
+     "document is reported on the day it happens; the withheld PASSAGE is located the same way, "
+     "inside the bullet the ruling scopes it to, with a closing anchor preceding its opening a "
+     "halt as well. Its other STOPs ride with it: a derived candidate with no authored verdict and "
+     "a verdict for an entry the derivation no longer returns as a candidate each halt it — the "
+     "two directions together, so a candidate cannot be graded by silence and a verdict cannot "
+     "outlive its subject; a verdict outside the closed three-value vocabulary, or a distribution "
+     "that does not account for the candidate population, halts it; an authored withheld identity "
+     "outside the DESIGN-INTENT class, or one nobody derived as a candidate, halts it; a withheld "
+     "identity, document or passage missing its finding, its date or its reason halts it (amended "
+     "#10's own demand of a withholding record); and a member's source file the tree does not "
+     "carry halts it. ★ WHAT IT DOES NOT ASSERT: that the candidate criterion is complete — its "
+     "reach is a pattern match over the register's own text and is UNMEASURED, stated on the "
+     "artifact under D-673 with the test that clause fixes met, since no analysis decision "
+     "consumes the enumeration; that any verdict is right; or that the members rendered whole "
+     "carry no other leak, the leak check being scoped to the two members this tool GENERATES and "
+     "saying so of itself. ★ AND IT BOOTS NO SESSION: rendering the pack is not opening it"),
     ("tools/audit/gen_recognizer_establishment_sort.py", ["--check"],
      "which tools are RECOGNIZERS OVER A POPULATION, and for each whether an INDEPENDENTLY-KNOWN "
      "population exists to reconcile against — the test the user ruled as a class on 2026-08-19. "

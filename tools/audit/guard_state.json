@@ -48,6 +48,7 @@
       "tools/audit/gen_claude_md_finer_surface.py",
       "tools/audit/gen_deciding_act_recovery.py",
       "tools/audit/gen_decisions_filter.py",
+      "tools/audit/gen_derivation_boot_pack.py",
       "tools/audit/gen_discard_reach_split.py",
       "tools/audit/gen_discard_records.py",
       "tools/audit/gen_doc_change_candidates.py",
@@ -88,7 +89,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 94,
+    "authored_entries": 95,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -1091,7 +1092,7 @@
       "verdict": "PASS",
       "stdout": [
         "the evidence pin's class membership re-derives",
-        "  generated ratification documents 7; ruling records read 46",
+        "  generated ratification documents 7; ruling records read 49",
         "  members 7 — pinned 5, UNRESOLVED 0",
         "  tools carrying a pin constant 8; outside this class 3",
         "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",
@@ -1138,7 +1139,7 @@
       "verdict": "PASS",
       "stdout": [
         "the epoch-pinned write-path enumeration re-derives",
-        "  tools walked 340; members 7 — symmetric 1, asymmetric 3, unplaced 3",
+        "  tools walked 341; members 7 — symmetric 1, asymmetric 3, unplaced 3",
         "    tools/audit/gen_artifact_inventory.py                ASYMMETRIC",
         "    tools/audit/gen_discard_reach_split.py               UNPLACED",
         "    tools/audit/gen_doc_change_candidates.py             ASYMMETRIC",
@@ -1152,6 +1153,19 @@
       "what_it_checks": "which passes are EPOCH-PINNED — their `--check` re-deriving at the commit their own committed artifact RECORDS rather than at the tree — and, per member, whether the WRITE path reads that same recorded commit back or carries the literal HEAD instead. The population is DERIVED on every run from the tools' own syntax trees and never listed, so a pass that gains or loses the epoch shape moves the artifact on the day it happens. What it guards is not the verdicts, which are a reading returned to the user, but three demands on the tree AS IT STANDS: the two establishment seeds — one member per verdict, each established at the code — must still derive to the side the record establishes for them, so a recognizer that has stopped recognizing the shape it was built for HALTS rather than publishing a smaller population; and the members the recognizers CANNOT place must reconcile with the authored reasons in BOTH directions, so a new unrecognised shape cannot enter silently and an authored reason cannot outlive its subject. ★ WHAT IT DOES NOT ASSERT: that an ASYMMETRIC member is broken, that a SYMMETRIC one needs nothing, or that the population is complete — it is complete relative to recognizers whose reach beyond the two seeds is UNMEASURED and stated as such. ★ AND IT AUTHORIZES NOTHING: the ruling it exists for says each pass is corrected only when a ruled act needs its write path"
     },
     {
+      "tool": "tools/audit/gen_derivation_boot_pack.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the derivation boot pack re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the derivation boot pack still re-renders BYTE-IDENTICALLY — the manifest and every file of every subject's pack directory, with the directory's own membership compared both ways so a file added to or removed from it is caught rather than ignored. What it guards is not the withheld family's verdicts, which are AUTHORED and clear nothing until the user rules them (D-655), but demands on the record AS IT STANDS. Every member span is located by its own ANCHOR TEXT on every run and an anchor that is missing or matches twice HALTS it, so no member is ever cut from a coordinate that has drifted and a heading moving under a governing document is reported on the day it happens; the withheld PASSAGE is located the same way, inside the bullet the ruling scopes it to, with a closing anchor preceding its opening a halt as well. Its other STOPs ride with it: a derived candidate with no authored verdict and a verdict for an entry the derivation no longer returns as a candidate each halt it — the two directions together, so a candidate cannot be graded by silence and a verdict cannot outlive its subject; a verdict outside the closed three-value vocabulary, or a distribution that does not account for the candidate population, halts it; an authored withheld identity outside the DESIGN-INTENT class, or one nobody derived as a candidate, halts it; a withheld identity, document or passage missing its finding, its date or its reason halts it (amended #10's own demand of a withholding record); and a member's source file the tree does not carry halts it. ★ WHAT IT DOES NOT ASSERT: that the candidate criterion is complete — its reach is a pattern match over the register's own text and is UNMEASURED, stated on the artifact under D-673 with the test that clause fixes met, since no analysis decision consumes the enumeration; that any verdict is right; or that the members rendered whole carry no other leak, the leak check being scoped to the two members this tool GENERATES and saying so of itself. ★ AND IT BOOTS NO SESSION: rendering the pack is not opening it"
+    },
+    {
       "tool": "tools/audit/gen_recognizer_establishment_sort.py",
       "args": [
         "--check"
@@ -1160,7 +1174,7 @@
       "verdict": "PASS",
       "stdout": [
         "the recognizer establishment sort re-derives",
-        "  tools walked 340; members 50 — established 3, mixed 9, no-external 38, unplaced 0",
+        "  tools walked 341; members 51 — established 3, mixed 9, no-external 39, unplaced 0",
         "  ★ THIS SORT IS ITSELF MIXED UNDER ITS OWN TEST: its member list is a LOWER BOUND with its reach UNMEASURED, never a census."
       ],
       "stderr": [],
@@ -1391,8 +1405,8 @@
     }
   ],
   "summary": {
-    "run": 74,
-    "passing": 73,
+    "run": 75,
+    "passing": 74,
     "failing": 1,
     "failing_tools": [
       {

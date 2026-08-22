@@ -40,11 +40,11 @@
   "AND THE MEMBERSHIP RECOGNIZER'S OWN REACH IS UNMEASURED beyond the three seeds. That is the ruled clause applied to this artifact itself, and it is why the member list is a LOWER BOUND."
  ],
  "counts": {
-  "tools_walked": 340,
-  "members": 50,
+  "tools_walked": 341,
+  "members": 51,
   "established": 3,
   "mixed": 9,
-  "no_independently_known_population": 38,
+  "no_independently_known_population": 39,
   "unplaced": 0
  },
  "the_candidate_population_walked": [
@@ -107,6 +107,7 @@
   "tools/audit/gen_claude_md_finer_surface.py",
   "tools/audit/gen_deciding_act_recovery.py",
   "tools/audit/gen_decisions_filter.py",
+  "tools/audit/gen_derivation_boot_pack.py",
   "tools/audit/gen_discard_reach_split.py",
   "tools/audit/gen_discard_records.py",
   "tools/audit/gen_dispositions.py",
@@ -1081,6 +1082,42 @@
      "PROPOSED_FATE",
      "PROVENANCE_FIELDS",
      "REQUIRED_FIELDS"
+    ]
+   },
+   "it_halts_on_a_member_it_cannot_place": true,
+   "the_candidate_enumeration_is_published_whole_at": [],
+   "why_the_derivation_cannot_place_it": null
+  },
+  "tools/audit/gen_derivation_boot_pack.py": {
+   "verdict": "NO INDEPENDENTLY-KNOWN POPULATION — the recognizer's output IS the population; a LOWER BOUND with its reach UNMEASURED, never a census",
+   "the_population_it_claims_to_describe": "THE DERIVATION BOOT PACK — the curated boot list, CUT for one subject and RENDERED WHOLE.",
+   "where_its_placement_recognizer_lives": {
+    "in_its_own_source": true,
+    "imported_from": []
+   },
+   "what_enumerates_the_candidates_independently": [
+    {
+     "idiom": "a file-system enumeration",
+     "found_in": "its own source",
+     "the_call": "os.listdir(d)"
+    }
+   ],
+   "the_reconciliation": {
+    "raise_guarded_set_operations": [
+     "sorted(set(graded) - set(cand_ids))",
+     "sorted({v[0] for v in graded.values()} - set(VERDICTS_VOCABULARY))",
+     "sorted(authored_ids - di_ids)",
+     "sorted(authored_ids - set(cand_ids))"
+    ],
+    "a_reversed_operand_pair": null,
+    "a_side_of_that_pair_is_authored_inside_this_tool": [],
+    "collections_authored_inside_this_tool": [
+     "CRITERION",
+     "KEYWORDS",
+     "MEMBERS",
+     "VERDICTS",
+     "VERDICTS_VOCABULARY",
+     "WITHHELD"
     ]
    },
    "it_halts_on_a_member_it_cannot_place": true,
