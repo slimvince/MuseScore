@@ -666,13 +666,13 @@ Every hunk's text was retrieved from the git object by explicit hash — `git sh
 
 The widened population is not yet read whole, so a majority over the read members cannot be reported as the ruled signal firing. The read share is published beside the majority, and the ruling's own words are that a majority reached only because few members were read is reported this way rather than as the signal firing.
 
-- Read members: **197** of **237** (read share 0.8312).
-- UNDETERMINED among the read: **18** (share of the read 0.0914).
+- Read members: **208** of **237** (read share 0.8776).
+- UNDETERMINED among the read: **18** (share of the read 0.0865).
 
 ## The widened population
 
 - **237 hunks** across **64 commits** and **17 documents** — **32** already screened and inherited, **205** new.
-- By verdict: NOT YET READ 37, OUTSIDE NAMED SECTIONS 3, POSITIVELY CODE-INFLUENCED 50, RATIFIED-ACT EDIT 111, RESTRUCTURING-SHAPED 18, UNDETERMINED 18.
+- By verdict: NOT YET READ 26, OUTSIDE NAMED SECTIONS 3, POSITIVELY CODE-INFLUENCED 50, RATIFIED-ACT EDIT 122, RESTRUCTURING-SHAPED 18, UNDETERMINED 18.
 
 ## The per-document pollution distribution
 
@@ -695,10 +695,10 @@ The widened population is not yet read whole, so a majority over the read member
 | `cowork_notation_adoption_increment.md` | 2 | 2 | 1 | 1 | 0 | 0 | 0 | 0 | — | MEASURED |
 | `cowork_notation_output_contract.md` | 3 | 3 | 0 | 3 | 0 | 0 | 0 | 0 | — | MEASURED |
 | `cowork_phrase_boundary_design.md` | 2 | 2 | 0 | 2 | 0 | 0 | 0 | 0 | — | MEASURED |
-| `cowork_prefit_gates.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — | MEASURED |
+| `cowork_prefit_gates.md` | 5 | 5 | 0 | 5 | 0 | 0 | 0 | 0 | — | MEASURED |
 | `cowork_progression_schema_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at ce509b0961, 2026-07-03 |
 | `cowork_progression_schema_dictionary.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at ce509b0961, 2026-07-03 |
-| `cowork_score_census.md` | 6 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | — | MEASURED |
+| `cowork_score_census.md` | 6 | 6 | 0 | 6 | 0 | 0 | 0 | 0 | — | MEASURED |
 | `cowork_stage5_fitter_design.md` | 2 | 2 | 2 | 0 | 0 | 0 | 0 | 0 | — | MEASURED |
 | `cowork_target_architecture.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at ce509b0961, 2026-07-03 |
 | `cowork_voiceleading_axis_design.md` | 5 | 2 | 1 | 1 | 0 | 0 | 0 | 3 | — | MEASURED |
@@ -727,8 +727,6 @@ Every document-set member with NO FLAG hunk in the candidate enumeration, with t
 
 Recorded so that a continuing session derives the remainder fresh rather than carrying it from this session's account of it. The order below is the artifact's own — by document, then by commit, then by hunk.
 
-- `cowork_prefit_gates.md` — **5** unread
-- `cowork_score_census.md` — **6** unread
 - `docs/scoring_model.md` — **26** unread
 
 ## Every NEW hunk read so far, with its verdict and its ground
@@ -2059,6 +2057,105 @@ Recorded so that a continuing session derives the remainder fresh rather than ca
 - **The act:** the user's Ruling 38 of 2026-08-09 making re-homing into the owning specification the default closing route, executed here for two of this primitive's own entries
 - **Where its ratification is recorded:** the ruling's home at `CLAUDE.md`, decisions-register rule (l), and the ruling record `cowork_rulings_2026_08_09_sixth_stop.md`; and the commit's own subject, which names the act
 - *Retrieve:* `git show f007bc473b03643f31e33fde661d2182381d3139 --no-color -U0 -- cowork_phrase_boundary_design.md`
+
+### 2026-07-19 · `cowork_prefit_gates.md` @ `-0,0 +1,181` · 61a8ed750f
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs: the four pre-fit gates ratified — OI-176 CV protocol, OI-177 capacity budget, OI-178 adoption protocol, OI-180 dual-path sanction
+- **Ground.** The hunk CREATES the four pre-fit gates whole. The title ends "★ USER-RATIFIED 2026-07-19", the opening line is "**Ratified by the user 2026-07-19, as asked:** the four protocols including the [prov-ratify] constants", and the standing paragraph adds that ratifying the document ratifies the four protocols and that changing a protocol constant thereafter is a #22 amendment and not a tuning act. The commit's own subject is "docs: the four pre-fit gates ratified — OI-176 CV protocol, OI-177 capacity budget, OI-178 adoption protocol, OI-180 dual-path sanction", and its closing line is "all content user-ratified 2026-07-19 in the Cowork session". ★ The first class was applied first and does NOT fire: the document is created here, so nothing existed to withdraw, and what it names of our own system — the robust unit's grading substrate, the corpus's 326 pieces resolving to 324 analysis files, the BCMH overlap — are properties of the CORPUS and of the measurement chain cited to `docs/score_inventory.md`, not facts read in implementation code, and neither the added text nor the account states a documentation statement corrected against the implementation.
+- **The act:** the user's ratification of 2026-07-19 of the four pre-fit gates — the held-out evaluation protocol, the capacity budget, the robust-stop architecture-adoption protocol and the dual-path sanction with its retirement map — including the four constants the document marks provisional-until-ratified
+- **Where its ratification is recorded:** the document's own title and its opening "Ratified by the user 2026-07-19, as asked"; the commit's own subject and its closing line; and register entries D-270, D-271, D-272, D-273 and D-274, whose home is this document
+- *Retrieve:* `git show 61a8ed750f4ca5ea2465558d69bb1f80045e21cf --no-color -U0 -- cowork_prefit_gates.md`
+
+### 2026-07-20 · `cowork_prefit_gates.md` @ `-76,2 +76,6` · aef4540c0d
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** tools: the weight fit — semi-CRF conditional likelihood under the ratified gates; cadence features weighted; CV headline + identity ablation
+- **Ground.** The hunk REPLACES the capacity budget's standing cap on the combination-weight vector — "≤ 12 weights (one per factor plus the declared-mode strength)" — with "≤ 14 weights", and preserves the original wording in place (#12) inside its own amendment note. The commit's own account states "Both user rulings executed: R1 = W1 … and R2 = C1 (the capacity cap amended <=12 -> <=14; the weight vector enumerated at 13)". ★ The first class was applied first and does NOT fire, and the call is recorded because a standing statement IS replaced in a commit that writes the fitting instrument. What decides it is the ground the note itself gives: "the ratified factorization gives the four cadence features their own fitted weights, putting the enumerated vector at 12–13" — a count taken from the ratified SPECIFICATION's factor roster, not a fact read in implementation code — and the amendment is dated to a user ratification that precedes this commit.
+- **The act:** the user's ruling R2 = C1 of 2026-07-19 at the weight-fit dispatch, amending the capacity budget's cap on the combination-weight vector from twelve weights to fourteen by the lawful #22 protocol-amendment path
+- **Where its ratification is recorded:** the added note's own "(Amended ≤ 12 → ≤ 14 by user ratification 2026-07-19 at the weight-fit dispatch …)"; the commit's own account naming R2 = C1; and register entry D-271, whose home is this document's capacity-budget section
+- *Retrieve:* `git show aef4540c0d01676ac4bad326aa78ea141fc91c23 --no-color -U0 -- cowork_prefit_gates.md`
+
+### 2026-07-25 · `cowork_prefit_gates.md` @ `-147,0 +148,9` · 869e75e0a0
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** composing: joint estimator Task A — the §5 tie-break (both decoders) + the bit-identity fix → decode parity 326/326
+- **Ground.** The hunk ADDS a parenthetical amendment to the OI-180 dual-path sanction's terms: the sanctioned touchable set ALSO includes additive extension of the L1/L1.5 fact surface — publishing the missing notated-note facts once, on the fact layer's own output surface — under two proofs per commit, byte-identity for every existing consumer and full test coverage of the new published paths, with the estimator consuming published facts and never re-reading the raw score. ★ The first class was applied first and does NOT fire, and the call is recorded because it is close: the amendment's stated ground IS a fact about pre-existing implementation — "the published note model is tie-resolved and lossy for A's needs" — read at a fact layer this commit did not write. What decides it is that the fact is offered as the DESIGN reason the sanctioned set must widen, beside a principled one (a module-private raw score walk "would be the raw-source-outside-the-fact-layer defect class the certification audits condemned"), and not as a fact against which a documentation statement was found false; the widening's source is the user's ratification the added text names.
+- **The act:** the user's ratification of 2026-07-20, at the module build's input-parity finding, widening the OI-180 sanctioned touchable set to include additive extension of the fact layer's own published surface under two per-commit proofs
+- **Where its ratification is recorded:** the added block's own "(Amended by user ratification 2026-07-20, at the module build's input-parity finding …)"; the commit's own account, which names `cowork_prefit_gates.md` among its riding doc edits; and register entry D-274, whose home is this document's dual-path and retirement-map section
+- *Retrieve:* `git show 869e75e0a0cdeff78922b7d8f496d14d2f103f3c --no-color -U0 -- cowork_prefit_gates.md`
+
+### 2026-07-26 · `cowork_prefit_gates.md` @ `-117 +117` · d615152c51
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** composing: joint estimator — the OI-178 robust-stop ADOPTION MEASUREMENT (record only; NO adoption)
+- **Ground.** The two hunks of this commit in this document are ONE amendment made in two places, and the amendment's own note carries its evidence and preserves the original wording in place (#12). The commit's own account is the OI-178 adoption MEASUREMENT — "MEASUREMENT ONLY — no production wiring, no golden refresh, no `tools/robust_stop/` re-baseline, no adoption commit" — taken under "user ruling ★R=A1", and it names `cowork_prefit_gates.md` (the ★R=A1 amendment) among its riding doc edits. ★ The first class was applied first at both hunks and fires at neither, and the call is recorded because it is close: a standing PASS CONDITION is replaced, and the note's evidence is a MEASUREMENT of our own decoder at the probe and cross-validation stage, taken on code this commit did not write. What decides it is that the condition was not a description of the implementation that the implementation falsified — it was a bar the note shows to be "impossible by construction for a correct modulation-follower", a structural argument about what the column can measure — and that the amendment was ratified by the user BEFORE the measurement it governs ran, which is #22's own lawful moment and the opposite of a gate amended under the pressure of a live diff. This hunk is the condition line itself: "key-agree (local AND home)" becomes "key-agree vs the LOCAL key".
+- **The act:** the user's ruling ★R=A1 of 2026-07-20, taken before the adoption measurement ran, amending the OI-178 pass condition: key-agree against the LOCAL key must exceed the baseline beyond the confidence interval, the key-HOME column is TRACKED with a mandatory decomposition against the computed ground-truth self-agreement ceiling, and a modulation-rate guard is added
+- **Where its ratification is recorded:** the added note's own "(Amended by user ratification 2026-07-20, BEFORE the adoption measurement ran (#22's lawful moment) …)"; the commit's own account, which names the user ruling ★R=A1 and the amendment among its riding doc edits; and register entry D-273, whose home is this document's robust-stop adoption-protocol section
+- *Retrieve:* `git show d615152c513f8cee20ab4cd42a8454fcb0c76106 --no-color -U0 -- cowork_prefit_gates.md`
+
+### 2026-07-26 · `cowork_prefit_gates.md` @ `-119 +119,11` · d615152c51
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** composing: joint estimator — the OI-178 robust-stop ADOPTION MEASUREMENT (record only; NO adoption)
+- **Ground.** The two hunks of this commit in this document are ONE amendment made in two places, and the amendment's own note carries its evidence and preserves the original wording in place (#12). The commit's own account is the OI-178 adoption MEASUREMENT — "MEASUREMENT ONLY — no production wiring, no golden refresh, no `tools/robust_stop/` re-baseline, no adoption commit" — taken under "user ruling ★R=A1", and it names `cowork_prefit_gates.md` (the ★R=A1 amendment) among its riding doc edits. ★ The first class was applied first at both hunks and fires at neither, and the call is recorded because it is close: a standing PASS CONDITION is replaced, and the note's evidence is a MEASUREMENT of our own decoder at the probe and cross-validation stage, taken on code this commit did not write. What decides it is that the condition was not a description of the implementation that the implementation falsified — it was a bar the note shows to be "impossible by construction for a correct modulation-follower", a structural argument about what the column can measure — and that the amendment was ratified by the user BEFORE the measurement it governs ran, which is #22's own lawful moment and the opposite of a gate amended under the pressure of a live diff. This hunk carries the rest of the same amendment: the new modulation-rate guard, the key-HOME column made TRACKED with its mandatory explained decomposition against the computed ceiling, and the amendment note with the original condition quoted whole.
+- **The act:** the user's ruling ★R=A1 of 2026-07-20, taken before the adoption measurement ran, amending the OI-178 pass condition: key-agree against the LOCAL key must exceed the baseline beyond the confidence interval, the key-HOME column is TRACKED with a mandatory decomposition against the computed ground-truth self-agreement ceiling, and a modulation-rate guard is added
+- **Where its ratification is recorded:** the added note's own "(Amended by user ratification 2026-07-20, BEFORE the adoption measurement ran (#22's lawful moment) …)"; the commit's own account, which names the user ruling ★R=A1 and the amendment among its riding doc edits; and register entry D-273, whose home is this document's robust-stop adoption-protocol section
+- *Retrieve:* `git show d615152c513f8cee20ab4cd42a8454fcb0c76106 --no-color -U0 -- cowork_prefit_gates.md`
+
+### 2026-08-11 · `cowork_score_census.md` @ `-71,0 +72,9` · 5a004f78ac
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): Ruling 40 executed over all nine — five close into the census's own rule-stating sections, four are held at the findings-table STOP, and step 1 closed nothing
+- **Ground.** The commit's own subject is "Ruling 40 executed over all nine — five close into the census's own rule-stating sections, four are held at the findings-table STOP, and step 1 closed nothing", and its body names the authority: the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`, whose three-step procedure it executes, with the kind half judged per section before any write. Each hunk is a HOMING ACT — a decision the decisions register already holds, written into the census section that owns it, in that section's own voice, with the former home and verbatim preserved (#12). ★ The first class was applied first at every hunk of this commit and fires at none: each ADDS a rule and withdraws nothing the census stated, and every ground the added text gives is about CORPORA, LICENCES or this project's own tracking surface — never a fact read in implementation code, and the account states no documentation statement corrected against the implementation. ★ The second class fires under the calibration this block already carries: a homing act performed under a named user ruling, whose content is a decision the register holds, IS a ratified-act edit. This hunk homes the rule into §3: a registry `content` summary is enumeration provenance, and whether an annotation layer is actually present is a measurement made per slice at the files. Its defense is two of this census's own claims falsified by measurement over the sources themselves.
+- **The act:** the user's Ruling 40 of 2026-08-09, executed as the homing of register entry D-513 into the census section that owns it
+- **Where its ratification is recorded:** the commit's own account, which names Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md` as its authority; and register entry D-513, whose home is this document's §3
+- *Retrieve:* `git show 5a004f78ac2aeb80f78594c2abf9421ec898b07a --no-color -U0 -- cowork_score_census.md`
+
+### 2026-08-11 · `cowork_score_census.md` @ `-78,0 +88,10` · 5a004f78ac
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): Ruling 40 executed over all nine — five close into the census's own rule-stating sections, four are held at the findings-table STOP, and step 1 closed nothing
+- **Ground.** The commit's own subject is "Ruling 40 executed over all nine — five close into the census's own rule-stating sections, four are held at the findings-table STOP, and step 1 closed nothing", and its body names the authority: the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`, whose three-step procedure it executes, with the kind half judged per section before any write. Each hunk is a HOMING ACT — a decision the decisions register already holds, written into the census section that owns it, in that section's own voice, with the former home and verbatim preserved (#12). ★ The first class was applied first at every hunk of this commit and fires at none: each ADDS a rule and withdraws nothing the census stated, and every ground the added text gives is about CORPORA, LICENCES or this project's own tracking surface — never a fact read in implementation code, and the account states no documentation statement corrected against the implementation. ★ The second class fires under the calibration this block already carries: a homing act performed under a named user ruling, whose content is a decision the register holds, IS a ratified-act edit. This hunk homes the rule into §4: a newly acquired annotation set whose works OVERLAP the regression corpus is record-only — not wired to, not compared against, not bulk-diffed with the gate corpus over those works — and any such use is a user ruling. Its defense is the dedupe rule with time added, stated in the section's own terms.
+- **The act:** the user's Ruling 40 of 2026-08-09, executed as the homing of register entry D-514 into the census section that owns it
+- **Where its ratification is recorded:** the commit's own account, which names Ruling 40 as its authority; and register entry D-514, whose home is this document's §4
+- *Retrieve:* `git show 5a004f78ac2aeb80f78594c2abf9421ec898b07a --no-color -U0 -- cowork_score_census.md`
+
+### 2026-08-11 · `cowork_score_census.md` @ `-92,0 +112,18` · 5a004f78ac
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): Ruling 40 executed over all nine — five close into the census's own rule-stating sections, four are held at the findings-table STOP, and step 1 closed nothing
+- **Ground.** The commit's own subject is "Ruling 40 executed over all nine — five close into the census's own rule-stating sections, four are held at the findings-table STOP, and step 1 closed nothing", and its body names the authority: the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`, whose three-step procedure it executes, with the kind half judged per section before any write. Each hunk is a HOMING ACT — a decision the decisions register already holds, written into the census section that owns it, in that section's own voice, with the former home and verbatim preserved (#12). ★ The first class was applied first at every hunk of this commit and fires at none: each ADDS a rule and withdraws nothing the census stated, and every ground the added text gives is about CORPORA, LICENCES or this project's own tracking surface — never a fact read in implementation code, and the account states no documentation statement corrected against the implementation. ★ The second class fires under the calibration this block already carries: a homing act performed under a named user ruling, whose content is a decision the register holds, IS a ratified-act edit. This hunk homes TWO entries into §5 in one changed passage: the ratified corpus expansion stated as the scope the tiers implement, with research-tier-on-entry beside it; and, at Tier J, the deferral of the jazz fit to the jazz-ground-truth conversion. Both carry their own ratifying attributions inside the added text — the 2026-07-02 architecture review for the first, and the tier's own path for the second — and both are entries the register already held.
+- **The act:** the user's Ruling 40 of 2026-08-09, executed as the homing of register entries D-500 and D-422 into the census section that owns them
+- **Where its ratification is recorded:** the commit's own account, which names Ruling 40 as its authority; the added text's own naming of the 2026-07-02 architecture review as the ratifying event for the expansion; and register entries D-500 and D-422, whose home is this document's §5
+- *Retrieve:* `git show 5a004f78ac2aeb80f78594c2abf9421ec898b07a --no-color -U0 -- cowork_score_census.md`
+
+### 2026-08-11 · `cowork_score_census.md` @ `-254,0 +292,11` · 5a004f78ac
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): Ruling 40 executed over all nine — five close into the census's own rule-stating sections, four are held at the findings-table STOP, and step 1 closed nothing
+- **Ground.** The commit's own subject is "Ruling 40 executed over all nine — five close into the census's own rule-stating sections, four are held at the findings-table STOP, and step 1 closed nothing", and its body names the authority: the user's Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`, whose three-step procedure it executes, with the kind half judged per section before any write. Each hunk is a HOMING ACT — a decision the decisions register already holds, written into the census section that owns it, in that section's own voice, with the former home and verbatim preserved (#12). ★ The first class was applied first at every hunk of this commit and fires at none: each ADDS a rule and withdraws nothing the census stated, and every ground the added text gives is about CORPORA, LICENCES or this project's own tracking surface — never a fact read in implementation code, and the account states no documentation statement corrected against the implementation. ★ The second class fires under the calibration this block already carries: a homing act performed under a named user ruling, whose content is a decision the register holds, IS a ratified-act edit. This hunk homes the difficulty-grade licence rule into §8c, stated APART from the fitting-pool bullets above it and saying why: those restrict the pool a shipped fitted VALUE may be estimated on, this restricts a shipped FEATURE whose labels are somebody else's property.
+- **The act:** the user's Ruling 40 of 2026-08-09, executed as the homing of register entry D-614 into the census section that owns it
+- **Where its ratification is recorded:** the commit's own account, which names Ruling 40 as its authority; and register entry D-614, whose home is this document's §8c
+- *Retrieve:* `git show 5a004f78ac2aeb80f78594c2abf9421ec898b07a --no-color -U0 -- cowork_score_census.md`
+
+### 2026-08-11 · `cowork_score_census.md` @ `-241,0 +242,15` · 5f32da3026
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): the census item closes — the four entries Ruling 40's step 3 held are closed by FOUR DIFFERENT ACTS, and item 1's live remainder empties by derivation
+- **Ground.** The commit's own subject is "the census item closes — the four entries Ruling 40's step 3 held are closed by FOUR DIFFERENT ACTS", and its body names the authority: the user's Rulings 44–48 of `cowork_rulings_2026_08_09_ninth_stop.md`, read whole (D-643), with the kind half judged per section before each of its two writes and the needs-vector table untouched in either direction. ★ The first class was applied first at both hunks and fires at neither: each ADDS a rule, withdraws nothing the census stated, and takes its ground from this project's own tracking mechanisms and from principle #21 — no fact read in implementation code, and no account of a documentation statement corrected against the implementation. This hunk writes the rule that a ground-truth class with a named consumer gets its OWN row in the needs vector and never a remark under a neighbouring row, with its own "(user-ruled 2026-08-09)" and the reason stated in the section's own terms — the audit and the union search both operate on columns, so a need written inside a neighbour's cell is invisible to both. Its closing clause records what is NOT implied, so the rule is not read wider than it was made.
+- **The act:** the user's Ruling 45 of 2026-08-09, which MADE the general rule the previous batch's hold said a session may not compose, written here into the census section that owns it
+- **Where its ratification is recorded:** the added block's own "(user-ruled 2026-08-09)"; the commit's own account, which names Rulings 44–48 of `cowork_rulings_2026_08_09_ninth_stop.md`; and register entry D-515, whose home is this document's §8c
+- *Retrieve:* `git show 5f32da30266ffdd787a4fac828f22b89b41edd39 --no-color -U0 -- cowork_score_census.md`
+
+### 2026-08-11 · `cowork_score_census.md` @ `-312,0 +328,10` · 5f32da3026
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** docs(cowork): the census item closes — the four entries Ruling 40's step 3 held are closed by FOUR DIFFERENT ACTS, and item 1's live remainder empties by derivation
+- **Ground.** The commit's own subject is "the census item closes — the four entries Ruling 40's step 3 held are closed by FOUR DIFFERENT ACTS", and its body names the authority: the user's Rulings 44–48 of `cowork_rulings_2026_08_09_ninth_stop.md`, read whole (D-643), with the kind half judged per section before each of its two writes and the needs-vector table untouched in either direction. ★ The first class was applied first at both hunks and fires at neither: each ADDS a rule, withdraws nothing the census stated, and takes its ground from this project's own tracking mechanisms and from principle #21 — no fact read in implementation code, and no account of a documentation statement corrected against the implementation. This hunk adds the intake rule's fourth consequence: what a voice or stream label set actually MEASURES is said at intake — the labels obtainable today are derived from engraved notation rather than from a listener's judgment about heard lines, and the acceptance of that substitution for keyboard music is itself recorded rather than left unsaid. Its defense is principle #21 applied at the intake point.
+- **The act:** the user's Ruling 48 of 2026-08-09, written here into the census section that owns it as the intake rule's fourth consequence
+- **Where its ratification is recorded:** the added block's own "(user-ruled 2026-08-09)"; the commit's own account, which names Rulings 44–48 of `cowork_rulings_2026_08_09_ninth_stop.md`; and register entry D-665, whose home is this document's §8c
+- *Retrieve:* `git show 5f32da30266ffdd787a4fac828f22b89b41edd39 --no-color -U0 -- cowork_score_census.md`
 
 ### 2026-08-03 · `cowork_stage5_fitter_design.md` @ `-108,0 +109,11` · 1b8ecaf685
 
