@@ -1359,6 +1359,183 @@ w(_TW, "ARCHITECTURE.md", "-3565,0 +3673,11", UNDETERMINED,
   "describes-pre-existing-implementation-behaviour")
 
 
+# ── 2026-08-08 · five waves committed as one — the owner-rulings homings ──────────────────────────
+_OW = "d1891db1588d73fbf41789c9139006d269a1c766"
+_OW_ACCOUNT = (
+    "The commit carries five waves and names each with the dispatch that ran it; the wave whose "
+    "acts these hunks are is `cc_instruction_owner_rulings_homing.md` — \"the forty-eight owner "
+    "rulings homed; the joint estimator gains a section a decision can be sited inside\". Every "
+    "`ARCHITECTURE.md` hunk of it is a RE-HOMING act under D-231's criterion C1, and the added "
+    "blocks say so in their own words — \"re-homed into this specification 2026-08-07 on the user's "
+    "ruling\". The commit's own scope line is \"No src/ change, no goldens, no tools/corpus/ or "
+    "tools/robust_stop/ movement, no behaviour change to the analysis, no fix to inference, no "
+    "design.\"")
+_OW_ACT = ("the user's owner rulings of 2026-08-07, homed into the specifications that own them "
+           "under D-231's phase-1 criterion C1")
+_OW_RAT = ("each added block's own \"re-homed into this specification 2026-08-07 on the user's "
+           "ruling\"; the ruling record the commit lands beside them, "
+           "`cowork_owner_rulings_2026_08_07.md`; the dispatch "
+           "`cc_instruction_owner_rulings_homing.md`; and D-231's phase-1 clause at `CLAUDE.md` "
+           "Conventions (user-directed 2026-08-02)")
+
+
+def _ow(header, verdict, what, shape, act=None, rat=None):
+    w(_OW, "ARCHITECTURE.md", header, verdict, _OW_ACCOUNT + " " + what, shape,
+      act=(act if verdict == RATIFIED else None),
+      ratification_at=(rat if verdict == RATIFIED else None))
+
+
+_ow("-264,0 +265,2", RESTRUCTURING,
+    "Here the hunk adds a HEADING and nothing else — \"## The joint estimator — the standing rules "
+    "of the production inference layer\" — which is the commit's own \"the joint estimator gains a "
+    "section a decision can be sited inside\". ★ The first class was applied first and does not "
+    "fire: no statement of any kind is made, so nothing can be withdrawn and no source is cited. "
+    "The second does not fire either — a heading records no ruling's content — and the third does, "
+    "this being a re-heading whose source is not a fact read in implementation code.",
+    "document-relocation-or-re-heading")
+
+_ow("-355,0 +358,76", RATIFIED,
+    "Here the hunk adds the decode's five counted quantities — factor granularity, the "
+    "key-signature and declared-mode prior's scope, the secondary-dominant pooling level, the "
+    "leftover back-off and the per-factor missing-tone penalty — and the document-governance "
+    "heading beneath them. ★ The first class was applied first and does not fire: every block ADDS "
+    "and withdraws nothing, and each ground named in the added text is a desk simulation, a count "
+    "over the ground-truth corpus or the published back-off construction — not a fact read in "
+    "implementation code. The counting is over the annotated corpus, which is ground truth and not "
+    "our own output.",
+    "governing-decision-record", _OW_ACT, _OW_RAT)
+
+_ow("-533,0 +612,17", UNDETERMINED,
+    "Here the hunk adds the standing verdict that the hand-built analysis is CONFIRMED and the "
+    "learned replacement NOT triggered, retained as an explicit fallback with a concrete trigger. "
+    "★ The first class was applied first and does NOT fire: the block ADDS and withdraws nothing, "
+    "and no code coordinate is cited. ★ BUT IT IS NOT CLEARED, on the not-cleared class's own first "
+    "branch. Its whole ground is a MEASUREMENT of what this implementation produces — \"the error "
+    "mass decomposes into causes reachable within it\", \"the corrected metric showed the residual "
+    "had been inflated by already-correct artifacts and by mis-attributed cases\", \"the "
+    "algorithmic second opinion fails the same functional roots\" — so a fact about the "
+    "implementation is the source while the change adds material rather than replacing a standing "
+    "statement.",
+    "describes-pre-existing-implementation-behaviour")
+
+_ow("-1207,0 +1303,28", RATIFIED,
+    "Here the hunk adds the two boundary invariants that keep the rendered form from crossing back "
+    "into the analysis — structured fields only, and a written chord symbol readable only as a "
+    "comparison or ground-truth label — and states in its own text why they are sited at the "
+    "boundary's own section rather than copied (#6). ★ The first class was applied first and does "
+    "not fire: both invariants ADD, both defenses are stated as the rules' own reasoning, and "
+    "neither cites a fact read in implementation code.",
+    "governing-decision-record", _OW_ACT, _OW_RAT)
+
+_ow("-1481,0 +1605,55", UNDETERMINED,
+    "Here the hunk adds four standing rules of the key/mode layer — what a local-key hypothesis may "
+    "read, at what scope a global tonic anchor enters, the refuted reach-back proxy, and the owed "
+    "enharmonic-identity rule for key spans. ★ The first class was applied first and does NOT fire: "
+    "all four ADD and none withdraws a standing documentation statement. ★ BUT THE HUNK IS NOT "
+    "CLEARED, and the reason is in its own text: the second rule's LEGACY mark is justified by a "
+    "REACHABILITY CHECK AT THE CODE this commit did not write — \"the window scorer this rule "
+    "excludes (`KeyModeAnalyzer::analyzeKeyMode`) is reached only through the legacy resolver and "
+    "this layer's dormant sequence decoder, and the resolver is retired from the production region "
+    "path\" — and the added text says in terms that the mark \"follows a check at the code, not the "
+    "decision's age\". Two of the four rest additionally on measurements of this system's own "
+    "behaviour. A fact in the implementation is therefore among the sources while the change adds "
+    "material, which is the not-cleared class's first branch.",
+    "describes-pre-existing-implementation-behaviour")
+
+_ow("-1581,0 +1760,27", UNDETERMINED,
+    "Here the hunk adds the chord search's output-surface contract and the shared spelling "
+    "primitive's presence test. ★ The first class was applied first and does NOT fire: both ADD and "
+    "neither withdraws a standing documentation statement. ★ BUT IT IS NOT CLEARED. The presence-"
+    "test rule's own defense is \"established at the source rather than asserted\" — the source "
+    "being the shared line-of-fifths primitive, whose sign convention and whose `tpcIsValid()` "
+    "predicate this commit did not write — and it carries an honest bound read at the same place, "
+    "that the predicate cannot tell a real flattest spelling from a default-initialised field and "
+    "that what keeps an absent value out is the build-path invariant. The first rule likewise "
+    "states, as a fact about the implementation, that the search it governs is not wired. Facts in "
+    "the implementation are the source while the change adds material.",
+    "describes-pre-existing-implementation-behaviour")
+
+_ow("-1627,0 +1833,25", RATIFIED,
+    "Here the hunk adds the two ratified obligations the function layer owes — a stated fallback "
+    "for a featureless phrase-boundary profile, and key-confirmation channels that do not require a "
+    "cadence — and marks both DESIGN-ONLY in its own words, \"work this layer is required to "
+    "specify, not mechanisms it has\". ★ The first class was applied first and does not fire: both "
+    "ADD, both grounds are the architecture review's own stress simulation on resolution-denying "
+    "music, and no fact read in implementation code is cited.",
+    "governing-decision-record", _OW_ACT, _OW_RAT)
+
+_ow("-3787,0 +4018,25", UNDETERMINED,
+    "Here the hunk adds two standing rules on the temporal-context structure — what may enter it, "
+    "and that its extension fields are recorded by the producing pass and never rebuilt by a "
+    "consumer. ★ The first class was applied first and does NOT fire: both ADD and neither "
+    "withdraws a standing documentation statement. ★ BUT IT IS NOT CLEARED. The first rule's "
+    "finding is stated about the CODE and not about the record — \"Four fields describing the "
+    "previous winner's competition outcome were added to it that belong to the planned "
+    "progression-level structure instead\", with the finding given as \"one had been growing into "
+    "the other with no migration plan written down\". That is a fact about a structure this commit "
+    "did not write, and the change adds material rather than replacing a standing statement.",
+    "describes-pre-existing-implementation-behaviour")
+
+_ow("-4304,0 +4560,7", RESTRUCTURING,
+    "Here the hunk adds a POINTER and nothing else — that why the tick-local path is a separate "
+    "module at all is decided at §11.5 and stated once there (#6). ★ The first class was applied "
+    "first and does not fire: no statement about the system is made or withdrawn here, the "
+    "paragraph only re-points the reader. The second does not fire — a pointer records no ruling's "
+    "content — and the third does.",
+    "document-relocation-or-re-heading")
+
+_ow("-4330,0 +4593,7", RESTRUCTURING,
+    "Here the hunk adds a POINTER — that how a spelling's presence is tested belongs to the "
+    "Layer-4 section that specifies the shared primitive, and is stated once there (#6). ★ The "
+    "first class was applied first and does not fire, and the call is recorded because the pointer "
+    "repeats the rule's one-clause reason (\"the flat side of the line of fifths is negative\"). "
+    "What decides it is that the paragraph withdraws nothing and states no fact of its own: it "
+    "re-points, which is the third class exactly. The rule it points at is graded at its own hunk "
+    "above.",
+    "document-relocation-or-re-heading")
+
+_ow("-4712,0 +4982,18", RATIFIED,
+    "Here the hunk adds the rule that every uncalibrated style constant and idiom carries the "
+    "empirically-unvalidated mark with its validation path named beside it, and closes by stating "
+    "in terms what it does NOT claim — that the mark is applied at HEAD; it is not, and applying it "
+    "is owed work tracked in the open-items register. ★ The first class was applied first and does "
+    "not fire: the block ADDS, and its ground is the architecture review's own finding about where "
+    "the mark is ABSENT FROM THE SPECIFICATION, which is a fact about the record and not one read "
+    "in implementation code.",
+    "governing-decision-record", _OW_ACT, _OW_RAT)
+
+_ow("-4766,0 +5054,68", RATIFIED,
+    "Here the hunk adds the five rules of the method that produces and re-produces the idiom "
+    "taxonomy — discover-then-name, the key-normalised tonal-pitch-class encoding, confound control "
+    "as a validity gate, the external mechanical extractor, and re-discovery riding every corpus "
+    "wave. ★ The first class was applied first and does not fire: the block ADDS, and every ground "
+    "is methodological or prior art. Where our own tooling is named — the slicer not used for "
+    "extraction, the analyzer deliberately kept out of it — it is named as the study's own DESIGN "
+    "CHOICE and its stated reason, not as a fact against which a documentation statement was found "
+    "false.",
+    "governing-decision-record", _OW_ACT, _OW_RAT)
+
+_ow("-4789,0 +5145,25", RATIFIED,
+    "Here the hunk adds the harmonic vocabulary's declared dormancy — the function layer does not "
+    "touch it until the recognition consumer is built, and the connection is absent rather than "
+    "partial — and states the one open structural question with the trigger that decides it. ★ The "
+    "first class was applied first and does not fire: the block ADDS, and both grounds are the "
+    "ratified build order and the component's own contract, with no fact read in implementation "
+    "code cited.",
+    "governing-decision-record", _OW_ACT, _OW_RAT)
+
+_ow("-6405,0 +6786,35", RATIFIED,
+    "Here the hunk adds this pipeline's own scope statement — the point-in-time path left outside "
+    "it by design — and the pre-declared keep-or-drop rule for the sub-beat annotation duration "
+    "gate, with both branches fixed in advance and the gate recorded undischarged at HEAD. ★ The "
+    "first class was applied first and does not fire: the block ADDS and withdraws nothing, its "
+    "scope half restates a decision's own stated reason (point-in-time semantics differ too much to "
+    "force one interface), and its gate half is a protocol written BEFORE the measurement it "
+    "governs — the pre-declared-protocol discipline, which is the opposite of a correction made "
+    "against a result.",
+    "governing-decision-record", _OW_ACT, _OW_RAT)
+
+
 # ── DERIVED ──────────────────────────────────────────────────────────────────────────────────────
 _HDR = re.compile(r"^@@ (-\S+ \+\S+) @@")
 
