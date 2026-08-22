@@ -2341,6 +2341,201 @@ w("e02bbebf887274edd119bf72cd0f6aa1763f34dc", "cowork_evidence_inventory.md", "-
   "same-commit-code-documentation")
 
 
+# ══ THE PASS CONTINUED A SECOND TIME, 2026-08-22 (`cc_instruction_pass_continuation_second.md`
+#    Task 1, under Ruling 1 of `cowork_rulings_2026_08_22_dispatch_order_sitting.md`).  The remainder
+#    was DERIVED FRESH from this artifact's own unread default, in the artifact's own order — by
+#    document, then by commit, then by changed passage — and never from the previous batch's account
+#    of it.  The inherited method and no other: the four classes in their DECLARED ORDER, POSITIVELY
+#    CODE-INFLUENCED applied FIRST, so that a ratified act cannot launder a correction made under it.
+#    No verdict already in this block is re-read or re-graded. ══════════════════════════════════════
+
+# ── `cowork_joint_estimator_architecture.md` ──────────────────────────────────────────────────────
+w("06d4318bd1f322d055d04622681587c44a01bffb", "cowork_joint_estimator_architecture.md",
+  "-0,0 +1,139", RATIFIED,
+  "The hunk is the whole document as it first enters git. Its title is \"Ratified architecture — the "
+  "key/mode/chord estimator is JOINT (option A)\", its opening line is \"**Decision (user-ratified "
+  "2026-07-14).**\", its §6 is \"Recorded at the user's request after the ratification\", and its §7 "
+  "is \"Plan amendments (Cowork, 2026-07-18, user-directed)\", each amendment carrying its own "
+  "register row. The commit's own subject is \"docs: ratify principles #20-#24 + joint-estimator "
+  "plan amendments (OI-176...OI-181), user-ratified 2026-07-18\", and its body names this file's "
+  "\"section 5 amendment, section 6 recorded assessment, section 7 plan amendments\" among the "
+  "ratified edits it commits. ★ The first class was applied first and does NOT fire although the "
+  "document SUPERSEDES the incremental key-layer framing of `cowork_key_layer_design_opening.md`: "
+  "the source of that supersession is the user's ratification of 2026-07-14 on the grounding review "
+  "and the published literature the text cites, not a fact read in implementation code this commit "
+  "did not write. The findings about our own system it names — OI-175's ad-hoc iteration, the "
+  "OI-168/OI-170 collection-membership form — are register rows the record already holds, cited as "
+  "the reason the in-flight items become parts of A; neither the added text nor the account states a "
+  "documentation statement corrected against the implementation.",
+  "governing-decision-record",
+  act="the user's ratification of 2026-07-14 that key, mode and chord are inferred by ONE joint "
+      "estimate, together with the 2026-07-18 recorded assessment and the six user-directed plan "
+      "amendments (OI-176…OI-181)",
+  ratification_at="the document's own title and its opening \"Decision (user-ratified 2026-07-14)\", "
+                  "its §6 and §7 attributions and its closing provenance paragraph; the commit's own "
+                  "subject and body; and register entry D-001 at `ARCHITECTURE.md`")
+
+w("910a998e9b5c52383e6accb2460007178070352a", "cowork_joint_estimator_architecture.md",
+  "-71 +71,120", RATIFIED,
+  "The hunk REPLACES §5's standing list of undecided questions with a decided/remaining split and "
+  "adds §5a, five design decisions each carrying \"(user-ratified 2026-07-19)\" in its own opening, "
+  "under a starred line recording the factorization specification as user-ratified the same day. The "
+  "commit's own account states it: \"five design decisions plus the factorization specification were "
+  "user-ratified 2026-07-19\". ★ The first class was applied first and does NOT fire, and the call "
+  "is recorded because it is close: the added text DOES name implementation code this commit did not "
+  "write — `buildChordResult`'s degree, Gate G-E's degree condition, `applyTonicPriorToSparseChord`, "
+  "the segmenter's head-gap tonic prior, the four inequivalent `diatonicToKey` definitions, and the "
+  "−7 declared-mode wall. What decides it is that every one of those is named as a CONSEQUENCE of "
+  "the ratified design — terms that \"dissolve by construction\", a defect class \"never rebuilt\", "
+  "a wall \"formally retired\" — rather than as a fact against which a documentation statement was "
+  "found false; the replacement's source is the ratification the added text names five times.",
+  "governing-decision-record",
+  act="the five joint-estimator design decisions the user ratified on 2026-07-19 — the two-mode "
+      "axis with modal colour in the emission, the staged fitting, the scale-degree-valued chord "
+      "state, the emission-internal non-chord-tone handling, and the weak soft signature and "
+      "declared-mode prior",
+  ratification_at="each decision's own \"(user-ratified 2026-07-19)\" inside the added text; the "
+                  "commit's own account; and register entries D-524…D-528, whose home is this "
+                  "document's §5a")
+
+# ── `cowork_joint_estimator_factorization.md` ─────────────────────────────────────────────────────
+w("910a998e9b5c52383e6accb2460007178070352a", "cowork_joint_estimator_factorization.md",
+  "-0,0 +1,173", RATIFIED,
+  "The hunk is the whole specification as it first enters git. Its title ends \"(★ USER-RATIFIED "
+  "2026-07-19)\" and its opening line is \"**Ratified by the user 2026-07-19**\", naming section by "
+  "section what is ratified; its standing paragraph adds that ratifying the document ratifies the "
+  "structure and the premise ledger while all VALUES remain unfit. The commit's own account states "
+  "\"The factorization specification (cowork_joint_estimator_factorization.md) is ratified the same "
+  "day\". ★ The first class was applied first and does NOT fire: the document is created here and "
+  "withdraws nothing the documentation stated, and the facts about our own system it cites — the "
+  "OI-168 signature-mask form for the collection question, the event partition already used as the "
+  "analyzer's slice unit — are named as the derived FORM of a factor, from the published theory the "
+  "text cites, not as facts against which a documentation statement was found false.",
+  "governing-decision-record",
+  act="the user's ratification of 2026-07-19 of the factorization specification — the variable "
+      "structure, the score form, the ten-factor roster, the premise ledger P1–P8, the decode plan "
+      "and the desk-simulation forms and case list",
+  ratification_at="the document's own title and opening line; the commit's own account; and register "
+                  "entry D-565, whose home is this document's §5")
+
+_DSIM = "31b3dba6cabf87bac0dad2a0c0b95ef3d6fe30fd"
+_DSIM_ACCOUNT = (
+    "The commit's own subject is \"docs: the factorization desk simulation — run, ratified; "
+    "granularity amendment; prior settled initial-only; OI-181 closed\"; its body states that the "
+    "desk simulation \"is RUN and USER-RATIFIED\", that the one under-determination it found was "
+    "\"AMENDED with ratification\", that the prior question was \"Also settled with ratification\", "
+    "and it closes \"All content user-ratified 2026-07-19 in the Cowork session\". ★ The first class "
+    "was applied first at every hunk of this commit and fires at none: a desk simulation under "
+    "#17(c) traces the mechanism by hand through the INTENDED architecture, at identity weights and "
+    "at table values the record declares provisional, so its facts come from the specification and "
+    "from the corpus data rather than from implementation code — and neither the added text nor the "
+    "account states a documentation statement corrected against the implementation.")
+_DSIM_RUN_ACT = ("the user's ratification of 2026-07-19 of the factorization desk simulation and its "
+                 "findings")
+_DSIM_RUN_RAT = ("the added text's own \"user-ratified (2026-07-19, same day — "
+                 "`cowork_factorization_desk_simulation.md`)\"; the commit's own account; and "
+                 "register entry D-453, whose home is `cowork_factorization_desk_simulation.md` §7")
+_DSIM_GRAN_ACT = ("the factor-granularity amendment the user ratified on 2026-07-19 at the desk "
+                  "simulation")
+_DSIM_GRAN_RAT = ("the added block's own \"(amendment, user-ratified 2026-07-19 at the desk "
+                  "simulation — `cowork_factorization_desk_simulation.md` §4.1, the "
+                  "`bwv10.7@36000` length-bias finding)\"; the commit's own account; and register "
+                  "entry D-449")
+_DSIM_PRIOR_ACT = ("the user's ratification of 2026-07-19, at the desk simulation's §4.2 S3 and C5 "
+                   "traces, that the signature and declared-mode prior conditions the INITIAL key "
+                   "state only")
+_DSIM_PRIOR_RAT = ("the added text's own \"SETTLED (user-ratified 2026-07-19 at the desk simulation, "
+                   "its §4.2 — the S3/C5 traces)\"; the commit's own account; and register entry "
+                   "D-450")
+
+w(_DSIM, "cowork_joint_estimator_factorization.md", "-5,2 +5,5", RATIFIED,
+  _DSIM_ACCOUNT + " This hunk replaces the header's forward-looking next-stage sentence with the "
+  "record that the §6 desk simulation has RUN, that its findings are user-ratified the same day, "
+  "that nine of ten traces pass as specified, and that the two amendments it produced are "
+  "incorporated below with dated marks.",
+  "governing-decision-record", act=_DSIM_RUN_ACT, ratification_at=_DSIM_RUN_RAT)
+
+w(_DSIM, "cowork_joint_estimator_factorization.md", "-58,0 +62,11", RATIFIED,
+  _DSIM_ACCOUNT + " This hunk adds the factor-granularity rule to §2 — the pitch and spelling "
+  "emissions per tone, the bass factor per event, the missing-template-tone penalty normalized per "
+  "event of segment length, the transition, entry and boundary factors per boundary or event — with "
+  "the finding that forced it named in its own opening. Nothing standing is withdrawn: the "
+  "specification had been silent on granularity, which the amendment itself calls under-specified.",
+  "governing-decision-record", act=_DSIM_GRAN_ACT, ratification_at=_DSIM_GRAN_RAT)
+
+w(_DSIM, "cowork_joint_estimator_factorization.md", "-77 +91,2", RATIFIED,
+  _DSIM_ACCOUNT + " This hunk carries the same ratified amendment into factor 3's own description: "
+  "the bass and inversion factor gains \"**Evaluated per event within the segment (the 2026-07-19 "
+  "granularity amendment, §2).**\" It QUALIFIES a standing statement, and the source of the "
+  "qualification is the amendment §2 now carries.",
+  "governing-decision-record", act=_DSIM_GRAN_ACT, ratification_at=_DSIM_GRAN_RAT)
+
+w(_DSIM, "cowork_joint_estimator_factorization.md", "-112,2 +127,6", RATIFIED,
+  _DSIM_ACCOUNT + " This hunk REPLACES factor 10's open clause — \"the persistent-pull variant is a "
+  "desk-simulation question\" — with the settlement: the prior conditions the initial key state "
+  "only, re-entering at a notated mid-piece signature change, and the persistent-pull variant is "
+  "rejected. ★ The near-miss is recorded because the rejection's stated ground names a measured "
+  "defect of our own system, that persistent pull would softly re-introduce the OI-174 "
+  "signature-pull bias. What decides it is that the row is offered as the DESIGN reason the rejected "
+  "variant is undesirable — beside a theory ground, that it is a linearly growing tax with no theory "
+  "basis — and not as a fact against which a documentation statement was found false.",
+  "governing-decision-record", act=_DSIM_PRIOR_ACT, ratification_at=_DSIM_PRIOR_RAT)
+
+w(_DSIM, "cowork_joint_estimator_factorization.md", "-142,0 +162,5", RATIFIED,
+  _DSIM_ACCOUNT + " This hunk adds the marked block above §6 — \"STAGE RUN AND RATIFIED "
+  "(2026-07-19)\" — recording that the simulation was executed on paper as specified, its outcome, "
+  "the one specification under-determination found and amended, the settled prior question, and that "
+  "OI-181 is discharged. It adds and withdraws nothing.",
+  "governing-decision-record", act=_DSIM_RUN_ACT, ratification_at=_DSIM_RUN_RAT)
+
+w(_DSIM, "cowork_joint_estimator_factorization.md", "-169,2 +193,2", RATIFIED,
+  _DSIM_ACCOUNT + " This hunk WITHDRAWS one item — the persistent-versus-initial signature prior — "
+  "from the standing list of questions left open at ratification, and records in a parenthetical "
+  "that the desk simulation settled it as forecast, pointing the reader at §3.10. The withdrawal's "
+  "source is the settlement the §3.10 hunk of this same commit records, ratified the same day.",
+  "governing-decision-record", act=_DSIM_PRIOR_ACT, ratification_at=_DSIM_PRIOR_RAT)
+
+w("73c84b92d3fd3ba1a678ab90236bb40d99a97926", "cowork_joint_estimator_factorization.md",
+  "-148,0 +149,7", RATIFIED,
+  "The hunk adds the below-threshold scoring rule — where a fitted table row stores a pooled "
+  "leftover for continuations below the count-reliability threshold, a specific such continuation is "
+  "scored as that leftover apportioned in proportion to the outcome class's overall frequency in the "
+  "mode, \"never by even division and never as zero\" — carrying its own attribution "
+  "\"(user-ratified 2026-07-19 at the fitted-table probe, `cowork_sensitive_cell_probe.md` finding "
+  "2, option 2a)\". The commit's own subject names the ratified probe findings it lands. ★ The first "
+  "class was applied first and does NOT fire: the block ADDS a rule and withdraws nothing, and its "
+  "evidence is a probe over tables counted from the ground truth — the applied contexts that had "
+  "collapsed to the mode unigram — not a fact read in implementation code this commit did not write.",
+  "governing-decision-record",
+  act="the user's ratification of 2026-07-19, at the fitted-table probe, of the below-threshold "
+      "back-off scoring rule (finding 2, option 2a)",
+  ratification_at="the added block's own attribution; the commit's own subject; and register entry "
+                  "D-533")
+
+w("869e75e0a0cdeff78922b7d8f496d14d2f103f3c", "cowork_joint_estimator_factorization.md",
+  "-148,0 +149,10", RATIFIED,
+  "The hunk adds the exact-score tie-break — fewer segments first, then the earliest boundary-tick "
+  "sequence, then the canonical class-key order of the state sequence, \"No epsilon, no platform "
+  "dependence\" — carrying its own \"(user-ratified 2026-07-20 at the C++ module build's parity "
+  "finding)\". The commit's own account names it \"§5 TIE-BREAK "
+  "(cowork_joint_estimator_factorization.md §5, user-ratified 2026-07-20)\". ★ The first class was "
+  "applied first and does NOT fire, and the call is recorded because it is the closest of this "
+  "document's: the rule's OCCASION is a fact established by RUNNING a decoder — equal-score "
+  "segmentations proven at corpus pieces, and a cross-language summation drift that flips "
+  "tie-adjacent boundary decisions — and the pre-existing probe decoder is code this commit did not "
+  "write. What decides it is that the block ADDS a rule where the specification carried no tie "
+  "policy at all, so nothing standing is withdrawn, narrowed or qualified; and that the rule's "
+  "source is the user's ratification of 2026-07-20, dated five days before this commit, which both "
+  "the added text and the account name — the measured facts being the reason a tie policy is owed "
+  "rather than a fact against which a documentation statement was found false.",
+  "governing-decision-record",
+  act="the user's ratification of 2026-07-20 of the declared TOTAL ORDER on paths that resolves "
+      "exact score ties identically in every decoder of this specification",
+  ratification_at="the added block's own \"(user-ratified 2026-07-20 at the C++ module build's "
+                  "parity finding)\"; the commit's own account; and register entry D-565, whose home "
+                  "is this document's §5")
+
+
 # ── DERIVED ──────────────────────────────────────────────────────────────────────────────────────
 _HDR = re.compile(r"^@@ (-\S+ \+\S+) @@")
 
