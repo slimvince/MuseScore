@@ -666,13 +666,13 @@ Every hunk's text was retrieved from the git object by explicit hash — `git sh
 
 The widened population is not yet read whole, so a majority over the read members cannot be reported as the ruled signal firing. The read share is published beside the majority, and the ruling's own words are that a majority reached only because few members were read is reported this way rather than as the signal firing.
 
-- Read members: **192** of **237** (read share 0.8101).
-- UNDETERMINED among the read: **18** (share of the read 0.0938).
+- Read members: **197** of **237** (read share 0.8312).
+- UNDETERMINED among the read: **18** (share of the read 0.0914).
 
 ## The widened population
 
 - **237 hunks** across **64 commits** and **17 documents** — **32** already screened and inherited, **205** new.
-- By verdict: NOT YET READ 42, OUTSIDE NAMED SECTIONS 3, POSITIVELY CODE-INFLUENCED 49, RATIFIED-ACT EDIT 107, RESTRUCTURING-SHAPED 18, UNDETERMINED 18.
+- By verdict: NOT YET READ 37, OUTSIDE NAMED SECTIONS 3, POSITIVELY CODE-INFLUENCED 50, RATIFIED-ACT EDIT 111, RESTRUCTURING-SHAPED 18, UNDETERMINED 18.
 
 ## The per-document pollution distribution
 
@@ -692,8 +692,8 @@ The widened population is not yet read whole, so a majority over the read member
 | `cowork_layer5_engagement_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at 416b7d6215, 2026-07-10 |
 | `cowork_layer5_function_design.md` | 5 | 5 | 0 | 4 | 1 | 0 | 0 | 0 | — | MEASURED |
 | `cowork_layer6_grouping_design.md` | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | — | MEASURED |
-| `cowork_notation_adoption_increment.md` | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | — | MEASURED |
-| `cowork_notation_output_contract.md` | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | — | MEASURED |
+| `cowork_notation_adoption_increment.md` | 2 | 2 | 1 | 1 | 0 | 0 | 0 | 0 | — | MEASURED |
+| `cowork_notation_output_contract.md` | 3 | 3 | 0 | 3 | 0 | 0 | 0 | 0 | — | MEASURED |
 | `cowork_phrase_boundary_design.md` | 2 | 2 | 0 | 2 | 0 | 0 | 0 | 0 | — | MEASURED |
 | `cowork_prefit_gates.md` | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | — | MEASURED |
 | `cowork_progression_schema_design.md` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **yes** | NOT EDITED IN THE RESTRUCTURING PERIOD; last authored before it, at ce509b0961, 2026-07-03 |
@@ -727,8 +727,6 @@ Every document-set member with NO FLAG hunk in the candidate enumeration, with t
 
 Recorded so that a continuing session derives the remainder fresh rather than carrying it from this session's account of it. The order below is the artifact's own — by document, then by commit, then by hunk.
 
-- `cowork_notation_adoption_increment.md` — **2** unread
-- `cowork_notation_output_contract.md` — **3** unread
 - `cowork_prefit_gates.md` — **5** unread
 - `cowork_score_census.md` — **6** unread
 - `docs/scoring_model.md` — **26** unread
@@ -2000,6 +1998,49 @@ Recorded so that a continuing session derives the remainder fresh rather than ca
 - **The act:** the user's Ruling 38 of 2026-08-09 making re-homing into the owning specification the default closing route, executed here for D-458
 - **Where its ratification is recorded:** the added block's own "(Homed here 2026-08-11 from the document's own status banner, where the ruling was recorded; the banner text is untouched (#12) and this section is where the rule now lives.)"; the ruling's home at `CLAUDE.md`, decisions-register rule (l); and `cowork_rulings_2026_08_09_sixth_stop.md`
 - *Retrieve:* `git show 640d587ab9549904110453b1cbcd362c348de784 --no-color -U0 -- cowork_layer6_grouping_design.md`
+
+### 2026-07-26 · `cowork_notation_adoption_increment.md` @ `-0,0 +1,482` · 00c0df81c5
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** ratification record: notation-layer adoption increment decision surface + the decision-neutrality principles corollary (user, 2026-07-26); rows OI-193/OI-194
+- **Ground.** The hunk CREATES this decision surface whole. Its title ends "(★ USER-RATIFIED 2026-07-26)", its opening block is "★ RATIFIED BY THE USER 2026-07-26, as asked in §9" and names each ratified item — the §2 principles amendment and the five recommendations A2, B-full, C1, D1 and E — and its author line reads "Cowork, 2026-07-26, at the user's direction". The commit's own subject is "ratification record: notation-layer adoption increment decision surface + the decision-neutrality principles corollary (user, 2026-07-26); rows OI-193/OI-194". ★ The first class was applied first and does NOT fire: the document is created here, so nothing existed to withdraw, narrow, qualify or replace, and neither the added text nor the account states a documentation statement corrected against the implementation. ★ THE SECOND CLASS WAS TESTED AGAINST THE LINE THIS BLOCK ALREADY CARRIES — a catalog made at the user's direction, whose content is read off this system, is NOT a ratified-act edit — and it FIRES here for the reason that line turns on: the user's act was a RATIFICATION of five named recommendations and a principles amendment, whose content the user settled, and the document is that ratification's record. Its §1, "The verified current state (all read at source this session)", IS a read of implementation code this commit did not write; it is the surface's evidence base, one section of nine, and it withdraws nothing.
+- **The act:** the user's ratification of 2026-07-26 of the notation-layer adoption increment's decision surface — the §2 principles amendment (the decision-neutrality corollary) and all five recommendations, A2, B-full, C1, D1 and E
+- **Where its ratification is recorded:** the document's own title and its opening "★ RATIFIED BY THE USER 2026-07-26, as asked in §9", and its §9 rulings section; the commit's own subject; and register entries D-424, D-425 and D-426, whose home is this document
+- *Retrieve:* `git show 00c0df81c5682fbda0515a81cea0c3c541e8ee23 --no-color -U0 -- cowork_notation_adoption_increment.md`
+
+### 2026-07-26 · `cowork_notation_adoption_increment.md` @ `-481,2 +481,36` · 5f3362f359
+
+- **Verdict:** POSITIVELY CODE-INFLUENCED · shape `describes-pre-existing-implementation-behaviour`
+- **Commit subject:** ratification record: P1 pedal-point ruling (voice-independent ornament class, OI-194) + the notation output-surface contract (user, 2026-07-26)
+- **Ground.** ★ THE FIRST CLASS FIRES, on its SECOND limb, in the added text's own word. The hunk adds §10 and states that the consumption audit's scope check "corrected this document's §1 three ways, now record", then gives the three: there is a SECOND notation entry point, the single-note surface, consumed by `notationinteraction.cpp:8311` and `notationcontextmenumodel.cpp:194`, where §1 had said the in-app analysis enters through ONE function; the function-labeling layer is DORMANT, with the live section reads named as `sectionanalyzer.cpp` and `sectioncadencedetection.cpp`; and accessibility consumes only the pre-formatted annotation string. Every one of those is a fact read in implementation code this commit did not write, and the change's own account states that a documentation statement was corrected against it. ★ The hunk ALSO records the P1 pedal-point ruling, "user-ratified 2026-07-26, with the user's voice-independence sharpening" — and that is exactly why the declared order puts the first class first: a ratified act in the same passage does not launder a correction made under it, so the correction governs the verdict and the ratification is reported here rather than in the class it would otherwise reach.
+- *Retrieve:* `git show 5f3362f35992371c522ef1649f94598c97ac124a --no-color -U0 -- cowork_notation_adoption_increment.md`
+
+### 2026-07-26 · `cowork_notation_output_contract.md` @ `-0,0 +1,220` · 5f3362f359
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** ratification record: P1 pedal-point ruling (voice-independent ornament class, OI-194) + the notation output-surface contract (user, 2026-07-26)
+- **Ground.** INSIDE the delegated sections. This member's delegation names §2, §3.1, §3.2, §3.3 and §3.4; the section boundaries were derived from the document's own headings at this commit's own blob and the hunk's post-image line range placed against them. The hunk CREATES the contract whole, so its range covers all five named sections. Its title ends "(★ USER-RATIFIED 2026-07-26)" and its opening line is "★ RATIFIED BY THE USER 2026-07-26, as asked in §8 — as specified, no amendments."; its author line reads "Cowork, 2026-07-26, at the user's 'go' after the P1 pedal ruling". The commit's own subject names the contract as one of the two ratifications it records. ★ The first class was applied first and does NOT fire, and the call is recorded because the document names live implementation seams — "today `analyzeHarmonicRhythm` → `HarmonicRegion` vector", "today `analyzeNoteHarmonicContext[Details]`" — and takes the consumption audit as its exhaustiveness basis. What decides it is that the document is created here, so nothing standing is withdrawn, and that those names appear as the seams the contract must serve rather than as facts against which a documentation statement was found false. ★ The second class fires and the catalog line does not bar it: what the user settled here is a SPECIFICATION of what the record shall publish, ratified as specified, not the findings of a directed survey.
+- **The act:** the user's ratification of 2026-07-26, as specified and with no amendments, of the notation output-surface contract — the A-native record the in-app notation path reads
+- **Where its ratification is recorded:** the document's own title and its opening "★ RATIFIED BY THE USER 2026-07-26, as asked in §8 — as specified, no amendments"; the commit's own subject; and register entries D-275 and D-276, whose homes are this document's §2 and §3.4
+- *Retrieve:* `git show 5f3362f35992371c522ef1649f94598c97ac124a --no-color -U0 -- cowork_notation_output_contract.md`
+
+### 2026-07-26 · `cowork_notation_output_contract.md` @ `-92,5 +92,17` · 04fb57ab08
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** ratification record: contract §3.3 full-list amendment (user-ratified option 1, 2026-07-26)
+- **Ground.** INSIDE the delegated sections. This member's delegation names §2, §3.1, §3.2, §3.3 and §3.4; the section boundaries were derived from the document's own headings at this commit's own blob and the hunk's post-image line range placed against them. The hunk sits inside §3.3, the uncertainty surface. It REPLACES the established slice's two bullets — the runner-up key with its gap, and the top-N alternative chord classes — with the full scoreable candidate lists on both axes, and adds the amendment block that supersedes the former wording in terms. ★ The first class was applied first and does NOT fire, and the call is recorded because it is close: a standing statement IS superseded, and the block names the delivered build — "(commits `9849134f40`/`56439ebad7` — shared label tables + per-segment full score lists, bit-identical C++ parity)" — as "this amendment's form", which can be read as reconciling the contract to what was built. What decides it is the ground the block itself gives for the supersession: a breadth "N" or a gap-window width "would be a hand-set value with no basis, #1/#19", and nothing computed may be discarded at the boundary (#12) — a principled ground, ratified by the user, with the delivered form named as coinciding with the amendment rather than as a fact that found the contract false.
+- **The act:** the user's ratification of option 1 on 2026-07-26, at the posterior-slice delivery — both axes publish the FULL scoreable candidate lists, with no truncation constant anywhere in the publication
+- **Where its ratification is recorded:** the added block's own "★ Amendment (user-ratified option 1, 2026-07-26, at the posterior-slice delivery)"; the commit's own subject; and register entry D-006 at `ARCHITECTURE.md`
+- *Retrieve:* `git show 04fb57ab083d35fb19943c7c11e702d29d29ce51 --no-color -U0 -- cowork_notation_output_contract.md`
+
+### 2026-07-27 · `cowork_notation_output_contract.md` @ `-97,0 +98,10` · 58ac88079b
+
+- **Verdict:** RATIFIED-ACT EDIT · shape `governing-decision-record`
+- **Commit subject:** notation seams-2 P-strings Task 1: the record-arm DISPLAY chord symbol (dispatch cc_instruction_notation_pstrings.md; the D2 presentation-derivation ruling)
+- **Ground.** INSIDE the delegated sections. This member's delegation names §2, §3.1, §3.2, §3.3 and §3.4; the section boundaries were derived from the document's own headings at this commit's own blob and the hunk's post-image line range placed against them. The hunk sits inside §3.3 and ADDS the presentation-derivations amendment: the record's chord-symbol string is the GRADING form only, while the display chord symbol and the Nashville number are presentation-layer derivations from published facts, each rendered by one shared formatter and never published on the record, with a permanent dependency-direction guard both ways. ★ The first class was applied first and does NOT fire, and the call is recorded because the commit that carries it WRITES the display carriage it describes and the block's "verified fully derivable" clause rests on a read of the existing formatter. What decides it is that the amendment carries its own "(user-ratified 2026-07-26, at the P3a findings)" and its own "user directive at the D2 ruling", both dated before this commit, and that the verification is offered as the evidence FOR the ratified boundary rather than as a fact against which a documentation statement was found false; the commit's account names the amendment as a riding Cowork edit and states "NO inference change".
+- **The act:** the user's ratification of 2026-07-26 at the P3a findings that display renderings are PRESENTATION derivations, with the permanent dependency-direction guard the user directed at the D2 ruling
+- **Where its ratification is recorded:** the added block's own "★ Amendment (user-ratified 2026-07-26, at the P3a findings — display renderings are PRESENTATION derivations)" and its closing "user directive at the D2 ruling"; and the commit's own account, which names the amendment among its riding Cowork edits and cites this contract's §3.3
+- *Retrieve:* `git show 58ac88079be79bfbf6e0f084dc621cf8e457a2a5 --no-color -U0 -- cowork_notation_output_contract.md`
 
 ### 2026-08-11 · `cowork_phrase_boundary_design.md` @ `-82,0 +83,12` · f007bc473b
 
