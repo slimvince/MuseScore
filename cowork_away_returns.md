@@ -16312,3 +16312,203 @@ subjects of its own ordered acts.**
 existed — a commit whose own identity this paragraph therefore cannot contain. Every value above was
 read from the run recorded in `tools/audit/guard_state.json`, which that run itself wrote; no value
 here was carried forward from an earlier run or inferred from a summary.*
+
+---
+
+# ═══ THE PILOT PREPARED: THE BOOT-PACK GENERATOR AND THE WITHHELD FAMILY (dispatch `cc_instruction_pilot_preparation_withheld_family.md` as amended, performed 2026-08-22) ═══
+
+> **★ THIS CLOSE DOES NOT ASSERT THE END STATE, AND THE OMISSION IS DELIBERATE.** The end-state guard
+> run is taken **after** the commit carrying this close exists, so its values cannot be written into
+> that commit. They land in **ONE FURTHER COMMIT**, appended beneath this section. No row, cell or
+> sentence anywhere in this section asserts what the guard set says at the tree this close leaves.
+>
+> **★ ALL THREE TASKS RAN. NO STOP-AND-REPORT RULE FIRED.** No `src/` edit, no golden, **no test
+> changed, moved or run**, nothing under `tools/corpus/` or `tools/robust_stop/` moved, **no
+> measurement of the ANALYSIS built, designed, scoped or run**, no design, no repair. **NO SESSION
+> WAS BOOTED FROM THE PACK — no derivation, no comparison, no oracle opened, and no pilot act beyond
+> the preparation the ruling names.** **No boot-list member edited at its home; no register entry,
+> sort artifact or register data file touched; `ARCHITECTURE.md`, `CLAUDE.md`, `DEFECT_TYPES.md`,
+> `cowork_design_doc_template.md`, `cowork_audit_protocol.md`, the phase-definition surface and
+> `DECISIONS.md` are byte-unchanged.** **NO open-items row created, flipped or discarded.** **No
+> finding number allocated; the series stands at F88.** The report is
+> `cc_report_pilot_preparation.md`, and no figure of it is restated here (**D-431**).
+
+## 1. The chain, named as far as a sentence can name it
+
+**TWO commits so far, both pushed to `origin/master` and both verified at the object by explicit
+hash:** `c42f8141f46bf966e746358957b949e77c92db6c` (Task 0 — the three rulings and the brief landed
+after an interrupted start, the membership regenerated) → `a12cc0350322dd286708dcbf19d95548b01f7d55`
+(Task 1 — the generator, its two registrations, the manifest and the rendered pack, in one commit).
+
+**THE THIRD COMMIT IS THIS CLOSE, AND A SENTENCE CANNOT NAME ITS OWN HASH.** It carries the report,
+the reading file, the `STATUS.md` pointer entries, the ruled forward-bound move, the regenerated
+session-start read size and this section. **AND A FOURTH FOLLOWS IT**, carrying the end-state guard
+run, for the reason stated at the head of this section. That is the E-ordering rule at both grains,
+and it is why this paragraph names two and declares two.
+
+## 2. The headline — the pack exists, the family is AUTHORED, and nothing has been booted from it
+
+The generator amendment (a1) ordered is built and registered in both guard registries in the act that
+creates it. The curated boot list is rendered into a self-contained directory for the
+`harmony-boundary` subject, **every member span located by its own ANCHOR TEXT and never by a line
+number**, with an anchor that does not match exactly one line a halt. The withheld family for that
+subject is derived at the objects under the dispatch's own criterion and **AUTHORED whole**: every
+candidate the criterion returns carries exactly one of IN, OUT or UNPLACED with its finding, its date
+and its reason.
+
+**The family CLEARS NOTHING** (**D-655**). It is delivered as
+`ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md`, with five lists — IN,
+OUT, UNPLACED, LEAKS, and the withheld passage — and **the user rules it before any session boots**.
+
+## 3. The declared start state matched, and the tree that was actually met
+
+The dispatch declared two failing checks with their causes and made a third a STOP. Measured before
+the first edit: **exactly the two declared**, plus the guard runner's own STALE-vs-the-run line for
+the same cause, which the dispatch declares is not a third. **Zero STOP verdicts.**
+
+**A1 held item by item, entirely at content-addressed objects** — and the whole tracked-modification
+population was ENUMERATED rather than sampled, because A1 makes a modification at any other tracked
+path a STOP and a check that looks only where the dispatch points cannot see one.
+
+**★ ONE STATE THE DISPATCH DID NOT DESCRIBE.** The crashed session left a **zero-length
+`index.lock`**, which refused every staging operation. Its cause was ESTABLISHED before the mechanism
+was touched — no git process running, the lock zero bytes so nothing had been written into it, and
+the live index intact and just read successfully against the tip — and git's own message prescribes
+removing it by hand in exactly that state. It was removed; nothing was lost. **Reported here rather
+than absorbed** (**D-669**: establish the cause before touching the mechanism).
+
+## 4. What needs the user — ONE surface, and it is the whole point of the batch
+
+**The withheld family, at
+`ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md`.** Five lists. What is
+asked, per list: is every IN entry rightly withheld; is any OUT entry wrongly admitted; **for each of
+the three UNPLACED entries, IN or OUT — with NO recommendation on any of them**, because where the
+record does not settle a question the surface that returns it gathers facts and makes none; does the
+leak check keep excluding its three; and was the withheld passage applied as it was meant.
+
+**Nothing else in this batch needs a ruling.** The blind derivation, the comparison, the sizing pilot
+and the two fact-gate whole reads all remain plan lines, and none was opened.
+
+## 5. The predictions, graded at the artifacts route by route
+
+**A3 — the membership regeneration.** Route A moved by exactly the predicted amount with exactly the
+predicted names. Route B added nothing: none of the three landed ruling records carries the word that
+route matches on, checked at the records. Route C — the new tool did **not** enter the membership
+artifact. The blind session's brief did not enter either, being no ruling record. **The one further
+difference is an additive derived cross-reference caused by the ordered act itself**, which the
+standing clause admits and which is reported rather than absorbed.
+
+**A4 — the guard registry.** The population rises by exactly one, the addition PASSING, the failing
+set unchanged at [[OI-372]]'s tool. The classification gains one member with its authored verdict.
+The epoch write-path enumeration's walked count rises by one and **its members are UNCHANGED**. The
+recognizer sort gains exactly the records its derivation writes for one new tool and **no existing
+member's classification moves**. **Every movement additive, every one measured against the committed
+blob before it was accepted, none outside the prediction.**
+
+## 6. Surfaced findings (D-641, #13, #19)
+
+**★ THE ONE SURPRISE, SURFACED AND ESTABLISHED RATHER THAN EXPLAINED AWAY.** Two candidates reported
+a keyword match this session could not find in their own text. Rather than accept the tool's word or
+assume a bug, the entries were read at the register's own data file through the file tools, and the
+match is REAL: **`slice` occurs inside `isLicensedProgression`**. The pattern fires inside longer
+words, which is a property of the substring match the dispatch fixes rather than a defect in it.
+**The remedy is in the artifact, not in the pattern:** every keyword match is now published with the
+matched text IN ITS OWN CONTEXT, so a match a reader cannot see can no longer stand unchallenged.
+Three candidates reach the list only that way, and each says so in its verdict and in the reading
+file. **This bears on the record's own apparatus and not on the analysis**, and it is reported here
+rather than rowed, because it was corrected in the act that found it.
+
+**Recorded, not acted on:** the recognizer sort places the new tool on the *no independently-known
+population* side, because its candidate collection is not assigned to a key of its own artifact in
+the shape that sort's recognizer looks for — though the candidate list IS published whole, as the
+verdict rows. **Reshaping the tool to satisfy a recognizer would be fitting to the detector**, which
+the defect catalog names, so it was not done.
+
+**No quarantined audit question is added.** This batch derived nothing about the analysis and
+measured nothing about it. The five already surfaced stand unacted on and are not restated.
+
+## 7. Per-task log
+
+**Task 0.** A1 checked at the objects, item by item, with the full tracked population enumerated; the
+stale index lock established and cleared; the membership artifact regenerated and its difference
+measured against the committed blob **before** acceptance, from every route; **seven paths committed
+and no other**, each re-staged by explicit path because the crashed session's staging was not
+trusted, and the staged set enumerated before the commit; pushed; `origin/master` verified at the
+object; the membership check re-run and **PASSING**, so the guard set stands at one failing from Task
+0 onward. **E0 MET at the amended figures.**
+
+**Task 1.** One commit, as required. The generator written with its authored table and its STOPs; the
+candidates derived; the family authored over the whole candidate list; the pack rendered; the tool
+registered in both registries **by pure insertion, no line of either removed or changed**; the two
+derived artifacts it enters regenerated and their movement measured; the full guard set run. **After
+rendering, the pack itself was checked**: none of the oracle's own phrases occurs anywhere in the
+directory, and the design-intent member carries no withheld identity, no withheld document name, no
+`ARCHITECTURE.md` and no `docs/` or `src/` path. **E1 MET**, with every protected document verified
+byte-unchanged individually.
+
+**Task 2.** The reading file written in the standing ratification-surface shape; one `STATUS.md`
+pointer entry per task that did work; the previous batch's entries moved verbatim to the archive
+through the forward-bound tool at its three declared authored inputs — **authored-input maintenance,
+licensed in terms by this dispatch, so it is not a departure** — with the reconciliation proved in
+both directions by that tool's own check; the session-start read measurement regenerated, which is
+the red the dispatch predicted at the close and the act that clears it.
+
+## 8. Declared departures
+
+1. **The stale index lock removed** (§3), cause established first.
+2. **The generator publishes the matched text in its own context** — not asked for, added because a
+   match a reader cannot see is a match nobody can challenge (§6).
+3. **The manifest carries each candidate's own verbatim and plain restatement** beside its verdict,
+   so every verdict is checkable at the text it was made from. The manifest is not the pack: the pack
+   directory is what a deriving session opens, and its read-me forbids opening anything outside it.
+4. **The forward-bound tool's three authored inputs re-aimed, the previous aiming appended rather
+   than overwritten** (#12).
+5. **One accidental empty interpreter invocation** while composing a shell command; it opened an
+   interactive interpreter that errored out immediately and wrote nothing. Recorded because an
+   unrecorded stray act is worse than a recorded one.
+6. **The armed guard denied five shell reads during this batch** — a working-tree `git diff` with no
+   hash, a `wc` and a `grep` over repository paths, and two interpreter invocations carrying a
+   literal repository path. **Each was replaced with the file-tools or explicit-hash route and none
+   was worked around.**
+
+## 9. The plan lines, unchanged and unopened
+
+**The blind derivation** — opened only after the user rules the family; its deriving side is a fresh
+Cowork session under the ruling of the same day. **The comparison** — after it. **The sizing pilot on
+`docs/scoring_model.md`** — after the method is ruled. **The two fact-gate whole reads** — plan lines.
+**The empirical findings ledger** — owed before the framework phase, per the deriving-side ruling's
+first condition. None of these was opened, and none is advanced by this batch.
+
+## 10. ★ THE PLAN'S TELL, IN ONE SENTENCE
+
+**Did this batch produce anything other than the generator, its two registrations, the manifest, the
+rendered pack, the reading file and the report? YES, and it is named: the `STATUS.md` pointer entries
+and the ruled forward-bound move of the previous batch's entries, the regenerated session-start read
+measurement, the regenerated guard registry and the two derived artifacts the new tool enters, and
+this close — every one of them a standing close obligation of any batch or the direct consequence of
+adding one tool, and not one of them a new mechanism, a new artifact class or work for a later
+batch.**
+
+## 11. ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. **Principles.** **#19** — the family is authored and clears nothing; the criterion's reach is
+   declared unmeasured on its own artifact; the new tool's guard verdict states what it does NOT
+   assert. **#6** — the withheld family has one home, the generator's authored table. **#12** — OUT
+   and UNPLACED kept beside IN, the leaks listed rather than dropped, the previous aiming appended,
+   the withheld passage cut from the pack and not from its home. **#17(f)/D-431** — no count
+   transcribed in this close, the report, the reading file, the commit messages or the `STATUS.md`
+   entries. **#13** — the one surprise surfaced and established at the objects before anything was
+   built around it. **#24** — no comparison between measured quantities asserted. **Conforms.**
+2. **Conventions.** American English; no self-invented label; music-theory words in their musical
+   sense, with three bare non-musical uses found and corrected in the new prose before the commit.
+3. **Figures and premises.** Every quantity named to its artifact and field; every ruling quoted at
+   its record; the two facts about the register's own text read at the register's data file rather
+   than at a surface repeating it.
+4. **The file-tools rule.** Working-tree content read with the file tools throughout; shell limited
+   to read-only git object queries by explicit hash, the sanctioned enumeration tool, and the
+   project's own scripts. The five denials are declared at §8.
+5. **Uncertainty.** No difference between two measured quantities asserted anywhere.
+
+*Provenance: CC, 2026-08-22, executing `cc_instruction_pilot_preparation_withheld_family.md` as
+amended by its own governing top block. Every commit hash above was resolved at the object before it
+was written. The end state is deliberately not asserted here.*

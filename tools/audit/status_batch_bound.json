@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_pass_continuation_second.md, Task 2",
+ "dispatch": "cc_instruction_pilot_preparation_withheld_family.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -57,37 +57,34 @@
    "executing_act": "cc_instruction_step_zero_exclusion_and_pass_continuation.md, Task 3",
    "base_commit": "311dee8d11d323c1cc126fc9e0a3f72be04d20aa",
    "the_then_previous_batch": "cc_instruction_successor_plan_landing_and_step_zero.md"
+  },
+  {
+   "executing_act": "cc_instruction_pass_continuation_second.md, Task 2",
+   "base_commit": "3e9410bfd79e0c2bf2328f9a3c35fa7f22aea87d",
+   "the_then_previous_batch": "cc_instruction_step_zero_exclusion_and_pass_continuation.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "3e9410bfd79e0c2bf2328f9a3c35fa7f22aea87d",
- "the_then_previous_batch": "cc_instruction_step_zero_exclusion_and_pass_continuation.md",
- "entries_moved": 3,
- "characters_moved": 4469,
+ "base_commit": "a12cc0350322dd286708dcbf19d95548b01f7d55",
+ "the_then_previous_batch": "cc_instruction_pass_continuation_second.md",
+ "entries_moved": 2,
+ "characters_moved": 3226,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1826,
-   "sha256": "ed181469abf3d04bf1fa62adbb977d5e78b98b1a246e965a3ed2c15523295081",
+   "characters": 1992,
+   "sha256": "6a3120222e10238659ccf367a5d3db5f10e66bd83ff862e24acfda70723d0ba3",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-22 (CC — **★ THE PER-ENTRY PASS OF THE WIDENED JULY SCREEN IS CONTINUED AND STOPS AT A RECORDED MEMBER BOUNDARY; THE CLOSE.** No `src/` chang"
+   "opening": "*2026-08-22 (CC — **★ THE PER-ENTRY PASS OF THE WIDENED JULY SCREEN COMPLETES — EVERY MEMBER READ WHOLE, THE UNREAD SET EMPTY AT THE ARTIFACT — AND TH"
   },
   {
    "line_at_base": 10,
-   "characters": 1599,
-   "sha256": "0afb5645badf1c4afee55f5ad501c02d79804e1acbd803639b92b2afd56f7c30",
+   "characters": 1234,
+   "sha256": "a5340c36ae7e4d7b4715687715745029fcab6ca938a273513bca92267ff0ac5a",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-22 (CC — **★ `STATUS.md` LEAVES THE SPECIFICATION DOCUMENT SET BY AN AUTHORED EXCLUSION; THE THREE ARTIFACTS ARE RE-DERIVED; THE COVERAGE GAP"
-  },
-  {
-   "line_at_base": 12,
-   "characters": 1044,
-   "sha256": "2d2b8b14044324d522d92fed3defefdd87399847f61eb83a23b1802d39102f40",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-22 (CC — **★ THE 2026-08-22 RECORD LANDS IN GIT AND IS PUSHED.** No `src/` change, no golden, no test changed, moved or run, nothing under `t"
+   "opening": "*2026-08-22 (CC — **★ THE 2026-08-22 BOOT-LIST RULING FOR DERIVATION SESSIONS LANDS IN GIT AND IS PUSHED.** No `src/` change, no golden, no test chang"
   }
  ],
  "reconciliation": {
