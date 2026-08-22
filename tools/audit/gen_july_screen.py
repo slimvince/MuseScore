@@ -1995,6 +1995,261 @@ w(_DR, "ARCHITECTURE.md", "-8153 +8168,7", RESTRUCTURING,
   "document-relocation-or-re-heading")
 
 
+# ══ THE PASS MOVES OFF `ARCHITECTURE.md`, IN THE ARTIFACT'S OWN ORDER ═════════════════════════════
+
+# ── `cowork_bounded_context_design.md` ────────────────────────────────────────────────────────────
+w("d1eadc076cfb7c3923d3742ce74f3b75de4e57b4", "cowork_bounded_context_design.md", "-225 +225,8",
+  RATIFIED,
+  "The commit's own subject is \"D-278 and D-266 RULED (user 2026-08-02)\", and the added block "
+  "opens with its own attribution — \"Dated annotation (user ruling, 2026-08-02, at the D-266 "
+  "ratification)\". It records that the Layer-6 gate STANDS and transfers, while the acceptance list "
+  "above it is DEPRECATED. ★ The first class was applied first and does NOT fire although a standing "
+  "statement IS deprecated: the ground given is the RECORD'S OWN supersession — the list \"names "
+  "layers, seams and a corpus gate of the superseded legacy stack (the 53/24/53 batch stop was "
+  "itself superseded 2026-07-06)\" — and no fact read in implementation code is cited.",
+  "governing-decision-record",
+  act="the user's ruling of 2026-08-02 at the D-266 ratification — the Layer-6 gate stands and "
+      "transfers to the architecture that ships, its acceptance list deprecated and to be restated "
+      "as part of the phase-3 plan",
+  ratification_at="the added block's own \"(user ruling, 2026-08-02, at the D-266 ratification)\" "
+                  "and its closing \"Register entry D-266 carries this ruling\"; and the commit's "
+                  "own subject")
+
+_BC = "d1891db1588d73fbf41789c9139006d269a1c766"
+_BC_ACCOUNT = (
+    "The three hunks of this commit in this document are ONE correction made in three places, and "
+    "the correction's evidence is stated at the first of them: the convergence item's "
+    "domain-proxy clause is STRUCK, its former wording preserved verbatim (#12), because \"the one "
+    "time it was exercised, measurement disproved it\" and because the as-built does the direct "
+    "thing instead — \"the as-built consequence is verified in the production source at the "
+    "reach-back loop's own convergence note\", with `regionanalyzer.cpp` named as where the code "
+    "states it in its own words. ★ THE FIRST CLASS FIRES ON ALL THREE: each REPLACES a standing "
+    "statement of this document, and the source of the replacement is a fact read in implementation "
+    "code this commit did not write, together with the measurement that disproved the struck "
+    "clause.")
+
+w(_BC, "cowork_bounded_context_design.md", "-65,5 +65,26", CODE_INFLUENCED,
+  _BC_ACCOUNT + " This hunk is the strike itself: the licence to substitute a cheaper domain proxy "
+  "is withdrawn and replaced by the direct criterion the as-built implements, with the struck "
+  "clause quoted in full and the reason the strike reaches the general clause rather than only its "
+  "worked example stated with it.",
+  "describes-pre-existing-implementation-behaviour")
+w(_BC, "cowork_bounded_context_design.md", "-138 +159,5", CODE_INFLUENCED,
+  _BC_ACCOUNT + " This hunk carries the same correction into §5's extension-request line — the stop "
+  "condition formerly read \"the prevailing key before the selection is in view\", which the added "
+  "text names as \"the proxy, not the criterion\" — and states why it is corrected here rather than "
+  "left standing: \"a reader reaching §5 first would build the stop condition the strike exists to "
+  "remove\".",
+  "describes-pre-existing-implementation-behaviour")
+w(_BC, "cowork_bounded_context_design.md", "-249,2 +274,4", CODE_INFLUENCED,
+  _BC_ACCOUNT + " This hunk carries the same correction into the layer-by-layer summary bullet, "
+  "with its own \"Same correction and same ruling as the §5 bullet\" and the former wording "
+  "preserved (#12).",
+  "describes-pre-existing-implementation-behaviour")
+
+# ── `cowork_confidence_contract.md` ───────────────────────────────────────────────────────────────
+w("dfbf3ab824f0717d83cf3cce8e332c69f1074328", "cowork_confidence_contract.md", "-86,0 +87,13",
+  RATIFIED,
+  "The commit's own account is the away batch's Task 2 — \"nine archive-only decisions moved into "
+  "the specifications that own them, D-601's hold ended\" — and this is that one authorized edit. "
+  "The added block carries its own attribution: \"user-ratified 2026-07-10; re-homed into this "
+  "section 2026-08-08 under a one-edit authorization for this act alone\". ★ The first class was "
+  "applied first and does NOT fire, and the call is recorded because the block's defense is a "
+  "MEASUREMENT — \"the one calibration attempted so far failed, and it failed non-monotonically\". "
+  "What decides it is that the block ADDS a gate and withdraws nothing, and that the failed "
+  "calibration is offered as evidence about the PREMISE the gate is placed on rather than as a fact "
+  "against which a documentation statement was found false.",
+  "governing-decision-record",
+  act="the user's ratification of 2026-07-10 that the commensurability premise must itself pass a "
+      "premise ledger and a desk simulation before any conversion constant is fitted, re-homed "
+      "2026-08-08 under the away batch's Ruling 2",
+  ratification_at="the added block's own \"user-ratified 2026-07-10; re-homed into this section "
+                  "2026-08-08 under a one-edit authorization for this act alone\"; and the ruling "
+                  "record the batch applies, `cowork_rulings_2026_08_08_pre_away.md`")
+
+# ── `cowork_layer3_keymode_design.md` ─────────────────────────────────────────────────────────────
+w("f3c7f1afe24668f38b182755e58745f3a4db4aad", "cowork_layer3_keymode_design.md", "-4 +4,17",
+  CODE_INFLUENCED,
+  "★ THE FIRST CLASS FIRES. The hunk QUALIFIES a standing statement of this document — its own "
+  "as-built banner — and says so in its heading: \"THE AS-BUILT CLAUSE IMMEDIATELY BELOW IS FALSE "
+  "AT HEAD AND ITS FORMER WORDING IS PRESERVED IN PLACE (#12)\". The source is the state of the "
+  "implementation this commit did not write: \"all four of this decoder's production call sites sit "
+  "in the flag's false branch\", with the joint estimator named as the production key path on both "
+  "surfaces. The correction's own closing sentence names the obligation it discharges — the "
+  "doc-sync half's first worked example, an as-built banner over a dormant mechanism — and states "
+  "that the design content is untouched and nothing in it is withdrawn.",
+  "describes-pre-existing-implementation-behaviour")
+
+# ── `cowork_layer6_grouping_design.md` ────────────────────────────────────────────────────────────
+w("640d587ab9549904110453b1cbcd362c348de784", "cowork_layer6_grouping_design.md", "-233,0 +234,10",
+  RATIFIED,
+  "The commit's own subject is \"the homing remainder, opened — D-458 re-homed into the section "
+  "that owns its rule, with step 1 checked first and declined\", which is the fixed-order homing "
+  "procedure applied. ★ The first class was applied first and does not fire: the block ADDS the "
+  "codetta refinement's canonical reading, withdraws nothing, and its defense is the flat/total "
+  "partition law this layer is defined by — no fact read in implementation code is cited. ★ ONE "
+  "THING IS STATED SO A READER IS NOT MISLED: the decision's own ratifier is COWORK (\"ruled at "
+  "ratification, Cowork, 2026-07-02\"), not the user; what carries the user's authority is the "
+  "HOMING, under the re-homing default the user ruled on 2026-08-09.",
+  "governing-decision-record",
+  act="the user's Ruling 38 of 2026-08-09 making re-homing into the owning specification the "
+      "default closing route, executed here for D-458",
+  ratification_at="the added block's own \"(Homed here 2026-08-11 from the document's own status "
+                  "banner, where the ruling was recorded; the banner text is untouched (#12) and "
+                  "this section is where the rule now lives.)\"; the ruling's home at `CLAUDE.md`, "
+                  "decisions-register rule (l); and `cowork_rulings_2026_08_09_sixth_stop.md`")
+
+# ── `cowork_stage5_fitter_design.md` ──────────────────────────────────────────────────────────────
+w("1b8ecaf685295024cdeafee067332ca38b26be04", "cowork_stage5_fitter_design.md", "-108,0 +109,11",
+  CODE_INFLUENCED,
+  "★ THE FIRST CLASS FIRES. The added block's own heading is \"CORRECTION OF STATE\", and what it "
+  "corrects is a standing statement of this document: the scope-out line calls the "
+  "`chordanalyzer.cpp` file split \"parked by ratified R9\", and the block records that the act "
+  "\"was already DELIVERED when this design was written\". The source is the state of the "
+  "implementation this commit did not write — \"The split was committed as `41f7c65f63` on "
+  "2026-06-17, seventeen days before this design of 2026-07-04\", which the same wave's own account "
+  "records as verified at the object. The sentence itself is preserved unedited (#12) and the "
+  "scope-out is unaffected in substance, which is why the correction is an annotation rather than "
+  "an edit.",
+  "describes-pre-existing-implementation-behaviour")
+
+w("bf48b1f834afe7b0b71da7473b373e37549e99ea", "cowork_stage5_fitter_design.md", "-118,0 +119,11",
+  CODE_INFLUENCED,
+  "★ THE FIRST CLASS FIRES. The added remark records that clause (i) of the annotation above "
+  "\"ASSERTS THE OPPOSITE OF WHAT D-428 NOW RECORDS\", and the source of the refutation is a check "
+  "at the code this commit did not write: D-428 \"was corrected later the same day — at phase 1n, "
+  "against the premise AND AT THE CALL SITES — and now records that every use sits on the legacy "
+  "arm, so deleting that path discharges them\". The annotation block itself is deliberately left "
+  "as written, \"the record of what was believed when it was written\" (#12), which is why the "
+  "correction rides beside it; the commit's own account names this as the second of the two "
+  "surfaces the earlier correction never reached.",
+  "describes-pre-existing-implementation-behaviour")
+
+# ── `cowork_voiceleading_axis_design.md` — a SECTION-SCOPED member (§0, §5.1, §5.3, §8, §9) ───────
+w("9fe7f4561f750de4403b9bf9cfe812e474a1a5b3", "cowork_voiceleading_axis_design.md", "-95,2 +95,12",
+  CODE_INFLUENCED,
+  "INSIDE the delegated sections: the hunk sits in §0's accepted-music-theory subsection, and rule "
+  "(h) reaches a named section's subsections. ★ THE FIRST CLASS FIRES. The hunk REPLACES a standing "
+  "statement of this document — the bullet formerly closed \"whether 'interval preserved' is "
+  "counted in semitones or in diatonic generic size is an implementation declaration owed at build\" "
+  "— and the added text states that this \"was true when written and is FALSE at HEAD\". The source "
+  "is the implementation: the convention \"was read off the exploratory study's own motion "
+  "classifier at source and reproduced exactly in the production classification, which is "
+  "oracle-tested against it\". The commit's own account calls it in terms \"a doc-sync correction "
+  "(C3)\".",
+  "describes-pre-existing-implementation-behaviour")
+
+_VL = "f3c7f1afe24668f38b182755e58745f3a4db4aad"
+_VL_OUTSIDE = (
+    "OUTSIDE THE DELEGATED SECTIONS, so it is RECORDED and NOT GRADED. This member's delegation "
+    "names §0, §5.1, §5.3, §8 and §9; the section boundaries were derived from the document's own "
+    "headings at this commit's own blob and the hunk's post-image line range placed against them. ")
+
+w(_VL, "cowork_voiceleading_axis_design.md", "-6 +6,4", OUTSIDE_SECTIONS,
+  _VL_OUTSIDE + "This hunk sits at the head of the document, ABOVE §0 — in the status banner — so "
+  "no named section reaches it and the four classes are not applied to it.")
+w(_VL, "cowork_voiceleading_axis_design.md", "-77,2 +80,12", RATIFIED,
+  "INSIDE the delegated sections: the hunk sits in §0's own preamble, between that heading and its "
+  "first subsection. The hunk REPLACES the corpus-gate term's definition — the batch case-identity "
+  "sets give way to the robust unit, with the former wording preserved (#12) and the reason stated: "
+  "the stale sentence \"is not a description of the past, it is an ACCEPTANCE CRITERION a future "
+  "build would try to satisfy\". ★ The first class was applied first and does NOT fire although a "
+  "standing statement IS replaced: the source is the RECORD'S OWN supersession — the batch stop "
+  "\"SUPERSEDED IN WHOLE at R10-b on 2026-07-06\" — and no fact read in implementation code is "
+  "cited.",
+  "governing-decision-record",
+  act="the R10-b ratification of 2026-07-06, at which the robust-unit stop superseded the batch "
+      "case-identity gate in whole, applied here as a doc-sync correction of a stale acceptance "
+      "criterion",
+  ratification_at="the added text's own naming of `CLAUDE.md` gate block (A) as the one authority "
+                  "and of block (C) as retaining the superseded gate historically; and gate block "
+                  "(A)'s own \"Ratified at R10-b (2026-07-06)\"")
+w(_VL, "cowork_voiceleading_axis_design.md", "-219,2 +232,5", OUTSIDE_SECTIONS,
+  _VL_OUTSIDE + "This hunk sits in §2, Constraints, which the delegation does not name.")
+w(_VL, "cowork_voiceleading_axis_design.md", "-571,3 +587,7", OUTSIDE_SECTIONS,
+  _VL_OUTSIDE + "This hunk sits in §10, Quality & testing, which the delegation does not name.")
+
+# ── `cowork_phrase_boundary_design.md` ────────────────────────────────────────────────────────────
+_PB = "f007bc473b03643f31e33fde661d2182381d3139"
+_PB_ACCOUNT = (
+    "The commit's own subject is \"two entries re-homed inside their own specification\", performed "
+    "under the re-homing default the user ruled on 2026-08-09. ★ The first class was applied first "
+    "and does not fire on either hunk: both ADD and neither withdraws a standing statement of this "
+    "document.")
+_PB_ACT = ("the user's Ruling 38 of 2026-08-09 making re-homing into the owning specification the "
+           "default closing route, executed here for two of this primitive's own entries")
+_PB_RAT = ("the ruling's home at `CLAUDE.md`, decisions-register rule (l), and the ruling record "
+           "`cowork_rulings_2026_08_09_sixth_stop.md`; and the commit's own subject, which names "
+           "the act")
+
+w(_PB, "cowork_phrase_boundary_design.md", "-82,0 +83,12", RATIFIED,
+  _PB_ACCOUNT + " This hunk adds that the primitive is a DERIVED VIEW inheriting the loaded span "
+  "and requesting no extension of its own, and that its published boundary strength is a "
+  "per-profile max-normalised confidence participating in no override frame. Both defenses are "
+  "structural — a second extension policy beside its consumers' would be a #6 violation, and a "
+  "quantity not comparable across scores may not overrule one that is — with no fact read in "
+  "implementation code cited.",
+  "governing-decision-record", act=_PB_ACT, ratification_at=_PB_RAT)
+w(_PB, "cowork_phrase_boundary_design.md", "-192,0 +205,15", RATIFIED,
+  _PB_ACCOUNT + " This hunk adds the requirement that every picked boundary carries which cue fired "
+  "and at what scope. ★ The call is recorded because it is close: the block names a DEFECT in what "
+  "is built — \"The picked set is SCOPE-BLIND today\", a per-voice marker spiked onto the texture "
+  "profile so a consumer cannot tell a local breath from a global barline. What decides it is that "
+  "the block ADDS a requirement and withdraws nothing, and that it states in terms that it is NOT "
+  "BUILT and changes nothing on the gate repertoire.",
+  "governing-decision-record", act=_PB_ACT, ratification_at=_PB_RAT)
+
+# ── `cowork_layer5_function_design.md` ────────────────────────────────────────────────────────────
+_LF = "92371a01b8737976d44d0c9aaece36c6284c8f4e"
+_LF_ACCOUNT = (
+    "The commit's own subject is \"phase 1s — … and D-341 moved to the section it amends\", and the "
+    "moved text carries its own attribution: \"Homed here 2026-08-03 on the user's ruling, "
+    "`OPEN_ITEMS.md` OI-295 … moved unchanged, never rewritten, #12. Register entry D-341.\" The "
+    "move's own reason is stated with it: the rule had been recorded in §15, \"a section that "
+    "records findings\", while §5.0 is where the layer states the rule it amends (#7).")
+_LF_ACT = ("the user's ruling of 2026-08-03 at `OPEN_ITEMS.md` OI-295, moving the grammar-completion "
+           "amendment from the findings-recording open-items section into §5.0, the section it "
+           "amends — register entry D-341")
+_LF_RAT = ("the moved text's own \"Homed here 2026-08-03 on the user's ruling, `OPEN_ITEMS.md` "
+           "OI-295\" and the §15 stub's \"Ruled by the user 2026-08-03\"; and the amendment's own "
+           "\"RATIFIED by the user 2026-07-03\", which the move carries unchanged")
+
+w(_LF, "cowork_layer5_function_design.md", "-203 +203,2", RATIFIED,
+  _LF_ACCOUNT + " This hunk REPLACES the amendment's label line, the §15 cross-reference giving way "
+  "to the amendment's own name together with how it was found and when the user ratified it. ★ The "
+  "first class was applied first and does not fire: no fact read in implementation code is its "
+  "source, and the spec-ahead-of-code state it names is carried forward unchanged.",
+  "governing-decision-record", act=_LF_ACT, ratification_at=_LF_RAT)
+w(_LF, "cowork_layer5_function_design.md", "-208 +209,2", RATIFIED,
+  _LF_ACCOUNT + " This hunk adds the characterization the move carries with the rule — that the "
+  "three added root motions are \"algorithmic completion per theory, NOT tuning\". ★ The first "
+  "class was applied first and does not fire: the ground is theory, the added words are moved "
+  "unchanged from §15, and nothing standing is withdrawn.",
+  "governing-decision-record", act=_LF_ACT, ratification_at=_LF_RAT)
+w(_LF, "cowork_layer5_function_design.md", "-211 +213,8", RATIFIED,
+  _LF_ACCOUNT + " This hunk adds the amendment's EVIDENCE and the homing note. ★ The first class "
+  "was applied first and does NOT fire, and the call is recorded because the evidence is pinned in "
+  "the code — \"the 6-entry/11-motion failure table, measured, enumerated and pinned in the "
+  "consumer's consistency test (`EXPECT_EQ(failing.size(), 11u)`)\". What decides it is that the "
+  "text is MOVED UNCHANGED from §15 of this same document, so nothing is corrected against the "
+  "implementation here: the pin is the amendment's own recorded evidence travelling with it.",
+  "governing-decision-record", act=_LF_ACT, ratification_at=_LF_RAT)
+w(_LF, "cowork_layer5_function_design.md", "-226 +235", RESTRUCTURING,
+  _LF_ACCOUNT + " This hunk RE-POINTS one cross-reference — \"the ruled grammar gaps of §15-12\" "
+  "becomes \"the ruled grammar gaps of the amendment above\" — and nothing else. ★ The first class "
+  "was applied first and does not fire: no statement about the system changes. The second does not "
+  "fire AT THIS HUNK'S OWN TEXT: the added words name no act, the ruling being recorded at the two "
+  "hunks that carry the move. The third does, this being a re-pointing forced by a relocation.",
+  "document-relocation-or-re-heading")
+w(_LF, "cowork_layer5_function_design.md", "-888,12 +897,8", RATIFIED,
+  _LF_ACCOUNT + " This hunk REPLACES §15's item 12 with the record that the rule MOVED, keeping the "
+  "entry only \"so the tracking history and the cross-references to 'item 12' still resolve\" and "
+  "deliberately not restating the rule (#6). ★ The first class was applied first and does not fire: "
+  "what is withdrawn is a DUPLICATE of text that moved within the same document, and the source is "
+  "the user's ruling the added text names.",
+  "document-relocation-or-re-heading", act=_LF_ACT, ratification_at=_LF_RAT)
+
+
 # ── DERIVED ──────────────────────────────────────────────────────────────────────────────────────
 _HDR = re.compile(r"^@@ (-\S+ \+\S+) @@")
 
