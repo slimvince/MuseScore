@@ -16554,3 +16554,279 @@ its own ordered acts. No session was booted from the pack at any point.**
 existed — a commit whose own identity this paragraph therefore cannot contain. Every value above was
 read from the run recorded in `tools/audit/guard_state.json`, which that run itself wrote; no value
 here was carried forward from an earlier run or inferred from a summary.*
+
+---
+
+# ═══ THE WITHHELD FAMILY RULED AND THE PACK CORRECTED (dispatch `cc_instruction_withheld_family_correction.md`, performed 2026-08-23) ═══
+
+> **★ THIS CLOSE DOES NOT ASSERT THE END STATE, AND THE OMISSION IS DELIBERATE.** The end-state guard
+> run is taken **after** the commit carrying this close exists, so its values cannot be written into
+> that commit. They land in **ONE FURTHER COMMIT**, appended beneath this section. No row, cell or
+> sentence anywhere in this section asserts what the guard set says at the tree this close leaves.
+>
+> **★ ALL THREE TASKS RAN. NO STOP-AND-REPORT RULE FIRED.** No `src/` edit, no golden, **no test
+> changed, moved or run**, nothing under `tools/corpus/` or `tools/robust_stop/` moved, **no
+> measurement of the ANALYSIS built, designed, scoped or run**, no design, no repair. **NO SESSION
+> WAS BOOTED FROM THE PACK — no derivation, no comparison, no oracle opened, and no pilot act at
+> all.** **No boot-list member edited at its home; no register entry, sort artifact or register
+> source touched; `CLAUDE.md`, `ARCHITECTURE.md`, `DEFECT_TYPES.md`,
+> `cowork_design_doc_template.md`, `cowork_audit_protocol.md`, the phase-definition surface,
+> `DECISIONS.md`, `OPEN_ITEMS.md` and `docs/scoring_model.md` are byte-unchanged.** **NO open-items
+> row created, flipped or discarded.** **No finding number allocated; the series stands at F88.**
+> The report is `cc_report_withheld_family_correction.md`, and no figure of it is restated here
+> (**D-431**).
+>
+> **★ A DATE NOTE, BECAUSE THE RECORD WOULD OTHERWISE READ AS INCONSISTENT.** The sitting, the two
+> rulings this batch applies and the dispatch that orders it are all dated **2026-08-22**. **This
+> batch executed on 2026-08-23**, and its own acts — the `STATUS.md` entries, the forward-bound
+> move, this close — are dated that way. The verdict dates written into the generator's authored
+> table stay **2026-08-22**, because they are the dates of the RULINGS and the dispatch fixes them
+> in terms.
+
+## 1. The chain, named as far as a sentence can name it
+
+**TWO commits so far, both pushed to `origin/master` and both verified at the object by explicit
+hash:** `6e29b06a49b00a94bd03c43cde5106fbc4d5c722` (Task 0 — the sitting record and this dispatch
+landed, the membership regenerated) → `72534e5da90e5924f889f90a01547d34194c1951` (Task 1 — the
+authored table corrected, the pack re-rendered, the reading file ruled, in ONE commit).
+
+**THE THIRD COMMIT IS THIS CLOSE, AND A SENTENCE CANNOT NAME ITS OWN HASH.** It carries the report,
+the `STATUS.md` pointer entries, the ruled forward-bound move, the regenerated session-start read
+measurement and this section. **AND A FOURTH FOLLOWS IT**, carrying the end-state guard run, for the
+reason stated at the head of this section.
+
+## 2. The headline — the family is RULED, the artifact now carries the ruled set, and nothing has been booted from it
+
+The user ruled all five lists on 2026-08-22, one per turn (the record is
+`cowork_rulings_2026_08_22_withheld_family_sitting.md`; the user's words were "A", "A", "B", "A",
+"B"). **Two of the five moved the artifact and this batch applies exactly those two.**
+
+**Ruling 3 — LIST THREE.** `D-569` moves from UNPLACED to **IN** and is withheld: its verbatim
+supplies the vocabulary of the withheld passage without stating the rule, so a deriving session that
+read it would hold the oracle's own terms and the comparison could not distinguish recovery from
+recall. `D-457` and `D-526` move from UNPLACED to **OUT** and are admitted: each discloses the
+EXISTENCE of a distinction or of a prior, not its rule.
+
+**Ruling 5 — LIST FIVE.** The withheld passage is **WIDENED to the whole founding-instance clause**
+of the never-work-from-memory rule. It is **ONE passage with wider anchors, not two**: the widened
+span CONTAINS the span ruled at the member-two-leak sitting, and the entry's finding names both
+rulings. **The statement of the never-work-from-memory rule itself, above the clause, stays whole in
+the pack**, and `CLAUDE.md` is untouched.
+
+**Rulings 1, 2 and 4 moved nothing and are recorded as applied** — LIST ONE and LIST TWO stand as
+authored, and the leak check stands as it is with its three entries listed rather than rendered.
+
+## 3. The declared start state matched, and the tree that was actually met
+
+The dispatch declared two failing checks with their causes and made a third failing verdict a STOP.
+**Measured before the first edit, by running the whole guard set: exactly the two declared** —
+[[OI-372]]'s tool, the one standing red, and the evidence-pin membership check reporting its
+artifact STALE, caused by this dispatch's own untracked ruling record. **Zero STOP verdicts.**
+
+**A1 held, and the whole tracked-modification population was ENUMERATED rather than sampled**, with
+the sanctioned enumeration tool: exactly ONE tracked modification, `cowork_handoff.md`, whose
+difference against the tip is the forty-fifth block inserted above the committed content with the
+forty-fourth heading marked superseded as the entry point — one deletion, and it is that heading.
+Both named untracked paths present and absent from the tip. **No other tracked path modified
+anywhere in the tree.**
+
+**★ TWO STATES THE DISPATCH DID NOT DESCRIBE, BOTH REPORTED RATHER THAN ABSORBED.**
+
+**(a) A stale zero-length `index.lock`**, which refused every staging operation at Task 0. Its cause
+was ESTABLISHED before the mechanism was touched (**D-669**), three independent ways: no git process
+was running; the lock was zero bytes, so nothing had been written into it; and the live index was
+intact and had just been read successfully against the tip by every check A1 ordered. Its
+modification time is later than the index's own and predates this session, and the forty-fifth
+handover block declares a working-tree `git diff` in that window that **timed out** — which is
+exactly what leaves such a lock. Git's own message prescribes removing it by hand in this state. It
+was removed; nothing was lost.
+
+**(b) The guard-classification check reported STALE between the pre-edit guard run and Task 1.** Its
+cause was measured, not assumed: that tool DERIVES each guard's pass/fail verdict from the committed
+`guard_state.json` rather than re-running anything, and the pre-edit run had just rewritten that
+artifact with the membership check failing. It is a red **this batch's own act caused**, inside A2's
+own clause, and it cleared when Task 1's guard run recorded the membership check passing again —
+`--check` green, no member entering or leaving the classification.
+
+## 4. What needs the user — NOTHING from this batch
+
+**No decision surface is owed.** The family is ruled, the artifact carries the ruled set, and the
+next act is the user's to open: the blind derivation by a **FRESH COWORK SESSION** (Ruling 1 of
+`cowork_rulings_2026_08_22_deriving_side_sitting.md`), booted from
+`cowork_blind_session_brief_harmony_boundary.md` and the pack only.
+
+**A caveat carried forward on the record, because it bears on the comparison and not on this batch:**
+the sitting recorded beside Ruling 1 that `D-450` and `D-575` are withheld on a reading of the test
+wider than its words. If the blind session's specification later cites the notated key signature as
+evidence for a chord boundary, that is read against the pack's silence on those two and is **not**
+scored as a method failure.
+
+## 5. The predictions, graded at the artifacts, route by route and field by field
+
+**A2 — one red remains, zero STOPs. HELD.** After Task 1's full guard run the failing set is
+[[OI-372]]'s tool alone, at the population the dispatch declared. Every red this batch caused was
+caused by one of its own ordered acts and was cleared by the act that caused it.
+
+**A3 — the membership regeneration, from EVERY route. HELD, measured against the committed blob
+BEFORE acceptance.** Route A moved by exactly the predicted amount and added exactly the predicted
+name. Route B added nothing: the landed ruling record carries the word that route matches on nowhere
+in its text, checked at the record itself. Route C is unmoved — this batch adds no measurement tool.
+**The one further difference is an ADDITIVE DERIVED CROSS-REFERENCE caused by the ordered act
+itself** — the landed record names the reading file, which is not a generated document, so the
+derivation records the naming — which the standing clause admits and which is reported rather than
+absorbed. Nothing else moved: no member, no route, no document, no pin constant, no state, no count.
+
+**A4 — the guard registry. HELD on all four artifacts.** This batch adds no tool: the population is
+unchanged and the failing set is unchanged. `guard_classification.json`, `epoch_write_path.json` and
+`recognizer_establishment_sort.json` are **byte-unchanged against the Task 0 commit**, so no member
+entered or left any of them. `guard_state.json`'s only movement across Task 1 is the membership
+check's own printed line, which is the direct consequence of Task 0's ordered act.
+
+**A5 — the manifest after Task 1, from EVERY field of `counted`. HELD, and one field is reported
+rather than predicted.** The class size, the candidate count, the withheld document count, the
+withheld passage count, the leak count and the file count are all unmoved; the three verdict classes
+and the authored-identity count moved by exactly what the two rulings move; the rendered
+design-intent count reconciles as the dispatch's own arithmetic requires, **computed at the artifact
+and not carried**. **`withheld_identities_derived` was declared NOT predicted and ordered measured:
+it is measured, published at the artifact, and it did NOT move** — the entry ruled IN was not
+previously a derived cross-reference addition, and no entry of the class cross-references it. Every
+figure is at `tools/audit/derivation_boot_pack.json` → `subjects.harmony-boundary.counted` and none
+is restated here (**D-431**).
+
+**A5's checks at the pack files, each measured at the rendered file.** The rendered member (2)
+carries the marker **exactly once** and carries **neither anchor of the widened span** and **not**
+the phrase `documented decision the implementation contradicts`. The rendered member (5) carries
+**no** `## D-569` entry and **does** carry `## D-457` and `## D-526`. **Only four files move against
+the previous tip** — the generator, the manifest, member (2) and member (5) — so the read-me and
+members (1), (3), (4) and (6) are byte-unchanged. **Every verdict the sitting did not move is
+byte-unchanged at the manifest**, established by reading the manifest's whole difference against the
+committed blob rather than by sampling rows: no verdict row other than the three appears in it.
+
+## 6. Surfaced findings (D-641, #13, #19)
+
+**NO FINDING NUMBER IS ALLOCATED; the series stands at F88.** This batch derived nothing about the
+analysis and measured nothing about it.
+
+**★ ONE OBSERVATION, RECORDED AS DISCARDED UNDER THE AMENDED #10 — finding, date and reason.**
+*Finding (2026-08-23):* the reading file's in-word annotation set is AUTHORED, not derived. A
+mechanical test over the manifest's own published `in_context` fields — every one of a candidate's
+matches being a keyword match whose matched text is bounded by a letter — returns a strictly larger
+population than the six rows the record annotates, because it also catches ordinary plurals and
+inflections (*slices*, *segmenter*) and compound identifiers in which the keyword IS the concept
+(`chordslicedecoder`). The record's annotated set is the narrower class where the containing token
+does **not** mean the concept. *Reason for the discard:* the annotation is a reading aid on a
+ratification surface that is now ruled; it is not a specification, no analysis decision consumes it,
+and the derivation the annotation sits beside already publishes its own reach as UNMEASURED, so
+leaving it unfixed risks neither something being built that does not serve maximum-precision
+inference nor code ceasing to be comparable against a correct and complete specification. **It is
+therefore not rowed** (amended #10, and the supersession of R3's mandatory-row clause). The §4
+sentence was written to state what is true — how many rows below CARRY the annotation — rather than
+a completeness claim about the class.
+
+**No quarantined audit question is added.** The five already surfaced stand unacted on and are not
+restated here.
+
+## 7. Per-task log
+
+**Task 0.** A1 checked first and entirely at content-addressed objects, with the full tracked
+population enumerated; the stale index lock established and cleared; the membership artifact
+regenerated and its difference measured against the committed blob **before** acceptance, from every
+route, with the changed passages written to an absolute scratch path outside the repository and read
+with the file tools; **four paths committed and no other**, each staged by explicit path and the
+staged set enumerated before the commit; pushed; `origin/master` verified at the object; the
+membership check re-run and **PASSING**, so the guard set stands at one failing check from Task 0
+onward. **E0 MET in every particular**, including the committed artifact's own ruling-record count.
+
+**Task 1.** ONE commit, as the dispatch requires. **THREE EDITS TO THE AUTHORED TABLE AND NO OTHER
+CHANGE TO THE GENERATOR**: the ruled verdict moves, the two ruled admissions, and the one passage's
+widened anchors with its finding naming both rulings. **`withhold_passage()`, the marker, the
+candidate criterion, the leak check and every STOP are untouched**, which Rulings 4 and 5 decline in
+terms. The generator was run and its `--check` is **green** — which is itself the check that the
+table is consistent, because an IN verdict without its identity, an UNPLACED row left behind, or an
+anchor not resolving exactly once each halt it. A5 was then graded at the manifest and at the pack
+files, item by item. The reading file was corrected to the ruled lists and to the sitting's recorded
+discrepancy (a), and to nothing further. **E1 MET**, with every protected document and every register
+source verified byte-unchanged.
+
+**Task 2.** One `STATUS.md` pointer entry per task that did work; the previous batch's entries moved
+verbatim to `STATUS_ARCHIVE.md` through the forward-bound tool at its three declared authored inputs
+— **authored-input maintenance (D-648), licensed in terms by this dispatch, so it is not a
+departure** — with the previous aiming APPENDED rather than overwritten (#12) and the reconciliation
+proved in both directions by that tool's own check; the session-start read measurement regenerated,
+which is the red the dispatch predicted at the close and the act that clears it.
+
+## 8. Declared departures
+
+1. **The stale index lock removed** (§3a), its cause established at three independent facts first.
+2. **The pre-edit guard run was taken in WRITE mode rather than in check mode.** The invocation
+   carried `--help`, which that tool does not parse, so it ran the whole set and wrote its artifact.
+   The run itself is the one the dispatch orders and its verdicts are the declared start state; what
+   differs is that the artifact was rewritten before the first edit rather than compared. **This is
+   the cause of the guard-classification red at §3b**, and it is recorded because an unrecorded
+   stray act is worse than a recorded one.
+3. **The UNPLACED section divider inside the generator's authored table was rewritten** to record
+   that the class is now empty and why, rather than left standing over a block whose entries had
+   moved out of it. The value stays in the closed three-value vocabulary and DEFAULT NOTHING still
+   governs every later candidate. Counted as part of the table edit rather than as a fourth one, and
+   declared here so a reader can count it for themselves.
+4. **The findings of the two admitted entries were PRESERVED rather than rewritten.** The dispatch
+   names each entry's new *what it bears on instead* and does not name a finding for either, so each
+   keeps the reading made at its own verbatim, which is also what #12 asks of a recorded reading.
+5. **The reading file's H1 title still reads *put to the user for a ruling*.** It is not among the
+   changes the dispatch orders and the status banner directly beneath it now states RULED; the line
+   was left rather than widened into an unordered edit.
+6. **The armed guard denied two shell reads during this batch** — a directory listing whose path was
+   an unexpanded shell variable, denied on the standing deny-on-indeterminate policy, and one
+   interpreter invocation carrying a literal repository path. **Each was replaced with the
+   file-tools route and neither was worked around.**
+7. **One index read**, `git diff --cached --name-only`, used only to enumerate the staged set before
+   each commit; every path in it was already established at the object.
+
+## 9. The plan lines, unchanged and unopened
+
+**The blind derivation** — now UNBLOCKED, and it is a **FRESH COWORK SESSION**, booted from the
+brief and the pack only. **The comparison** — after it. **The sizing pilot on
+`docs/scoring_model.md`** — after the method is ruled. **The empirical findings ledger** — owed
+before the framework phase. **The two fact-gate whole reads** and **pruning-and-satellites** — plan
+lines. None of these was opened, and none is advanced by this batch.
+
+## 10. ★ THE PLAN'S TELL, IN ONE SENTENCE
+
+**Did this batch produce anything other than the three table edits, the re-rendered pack and
+manifest, the corrected reading file and the report? YES, and it is named: the landing of the
+sitting record and the dispatch with the regenerated evidence-pin membership at Task 0, the
+`STATUS.md` pointer entries and the ruled forward-bound move of the previous batch's entries, the
+regenerated session-start read measurement, the guard-state artifact the ordered guard runs
+rewrote, and this close — every one of them either an act the dispatch orders in terms or a standing
+close obligation of any batch, and not one of them a new mechanism, a new artifact class or work for
+a later batch.**
+
+## 11. ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. **Principles.** **#19** — the ruled set is applied and nothing wider; the criterion's reach stays
+   declared UNMEASURED on its own artifact and this batch makes no claim about it. **#6** — ONE
+   passage with wider anchors rather than two overlapping ones; the withheld identities derived from
+   the verdicts rather than kept in a second hand-list; one home for the family. **#12** — the three
+   moved verdicts keep the readings made at their own verbatim, the emptied UNPLACED class records
+   what happened to its members rather than deleting them, the previous forward-bound aiming is
+   appended rather than replaced, and the passage is cut from the pack and not from its home.
+   **#17(f)/D-431** — no count is transcribed in this close, the report, the commit messages or the
+   `STATUS.md` entries; every figure is named to an artifact and a field. **#13** — the two states
+   the dispatch did not describe were surfaced and established at the objects before anything was
+   built around them. **#24** — no comparison between measured quantities is asserted. **Conforms.**
+2. **Conventions.** American English. No self-invented label. Music-theory words in their musical
+   sense; *measurement tool* is used and never the reserved word; *the decisions register* is
+   written in full; TOWARDS, never *against*.
+3. **Figures and premises.** Every quantity is named to its artifact and field; every ruling is
+   quoted at its record; every premise the dispatch carried was re-read at the object rather than
+   accepted, including the two anchor counts in `CLAUDE.md` and the whole `counted` block.
+4. **The file-tools rule.** Working-tree content was read with the file tools throughout. Shell use
+   was limited to read-only git object queries by explicit hash, per-path diffs against an explicit
+   hash whose output was written to an absolute scratch path outside the repository and read with
+   the file tools, the sanctioned enumeration tool, and the project's own scripts. The denials and
+   the one index read are declared at §8.
+5. **Uncertainty.** No difference between two measured quantities is asserted anywhere.
+
+*Provenance: CC, 2026-08-23, executing `cc_instruction_withheld_family_correction.md` under Rulings
+3 and 5 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`. Every commit hash above was
+resolved at the object before it was written. The end state is deliberately not asserted here.*
