@@ -1,7 +1,115 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-FOURTH, 2026-08-22) — THE PILOT-PREPARATION DISPATCH WAS STARTED BY CLAUDE CODE AND INTERRUPTED BY A CRASH BEFORE ITS TASK 0 COMMIT (TIP STILL `dcbfa5fe32`, BOTH REFS AT IT, THE FOUR TASK 0 PATHS STAGED IN THE INDEX, THE MEMBERSHIP ARTIFACT REGENERATED AND NOW STALE); ★ THE DISPATCH IS RE-VALIDATED AND AMENDED IN PLACE, **READY TO DISPATCH**; ★ THREE NEW RULINGS IN TWO RECORDS (THE MEMBER (2) LEAK WITHHELD; THE DERIVING SIDE IS A FRESH COWORK SESSION; THE ANNOTATED SCORES ARE STAGED BY NAME), BOTH ON DISK, UNTRACKED; ★ THE BLIND SESSION'S BRIEF WRITTEN, ON DISK, UNTRACKED; ★ ONE TELL FIRED, THE REST DECLARED (METHOD), ONE PRESENTATION-FORM TELL CORRECTED IN THE TURN. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (FORTY-FIFTH, 2026-08-22) — THE PILOT-PREPARATION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `dcbfa5fe32`, TIP `0dcbacce2d`, BOTH REFS AT IT, GUARD POPULATION 74→75, THE ONE RED OI-372; ★ THE WITHHELD FAMILY IS RULED, ALL FIVE LISTS, ONE PER TURN (A, A, B, A, B) — RECORD `cowork_rulings_2026_08_22_withheld_family_sitting.md` ON DISK, UNTRACKED; ★ THE CORRECTION DISPATCH IS WRITTEN — `cc_instruction_withheld_family_correction.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ THREE PRESENTATION-FORM DISCREPANCIES FOUND IN THE BATCH'S OWN TEXT, NONE TOUCHING A VERDICT; ★ TELLS DECLARED (METHOD). THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the successor plan EXECUTES three of them.**
+
+**★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST.** *The pilot* — the phase that proves the derivation
+method before it is trusted. *The boot pack* — the rendered, self-contained directory an
+implementation-blind deriving session reads at boot; it now EXISTS at
+`tools/audit/derivation_boot_pack/harmony-boundary/` (seven files). *The withheld family* — the
+register identities, one document and one passage cut from the pack for one subject; AUTHORED by
+Claude Code in the previous batch and RULED by the user in this session. *The reading file* —
+`ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md`, the surface the user
+ruled on. *The correction dispatch* — the next batch, which applies the two rulings that moved
+something (Rulings 3 and 5) to the generator's authored table and re-renders the pack.
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in full,
+by you; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **This session did NOT discharge
+it** — it booted on the user's word that Claude Code was running, took the branch rule, held the
+repository read-only until the report existed, and then read the RETURN whole (below). **The bar
+binds you afresh: take the three reads before anything else.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`0dcbacce2d`** (parent `a223fe8358`), both refs at it — read with `git show -s` and
+`git for-each-ref` at the explicit hash on the user's machine. The four commits of the returned
+batch, oldest first: `c42f8141f4` (Task 0, seven paths), `a12cc03503` (Task 1), `a223fe8358`
+(close), `0dcbacce2d` (end state). **If you meet THAT tip: the correction dispatch is yours to hand
+to a new Claude Code session after re-taking the branch rule and re-validating its A1 against the
+tree.** If you meet a commit on `0dcbacce2d` with the subject `record: the 2026-08-22
+withheld-family rulings landed; evidence-pin membership regenerated`, the correction batch has
+started — READ-ONLY until `cc_report_withheld_family_correction.md` exists, then verify its close
+(THE WITHHELD FAMILY RULED AND THE PACK CORRECTED section of `cowork_away_returns.md`) whole and at
+the objects. **After it lands, the next act is the BLIND DERIVATION by a FRESH COWORK SESSION**
+(Ruling 1 of `cowork_rulings_2026_08_22_deriving_side_sitting.md`), booted from
+`cowork_blind_session_brief_harmony_boundary.md` and the pack only — NOT by you, and NOT by Claude
+Code; its desktop connects the repository folder and the chorale folder named in the forty-fourth
+block.
+
+**★ WHAT THIS SESSION DID.** (1) Took the branch rule at boot (tip then `c42f8141f4`, the batch
+in flight), and held read-only. (2) On the user's word that the batch was complete, verified the
+return at the objects: the four commits and their subjects; the 30-path diff `dcbfa5fe32..0dcbacce2d`;
+`guard_state.json` → `summary` 74/73/1 → 75/74/1 with the one failing tool OI-372's and no other
+non-PASS verdict; `epoch_write_path.json` `tools_walked` 340→341, `members` 7 unchanged; zero
+removed lines in either registry's diff; nine protected documents and register sources at identical
+blobs between `dcbfa5fe32` and the tip; membership `ruling_records_read` 46→49 with exactly the three
+predicted names and the brief absent; the manifest's `counted` reconciling (244 − 32 − 3 = 209
+rendered); the rendered member (5) carrying none of the fifteen IN identities and all three
+UNPLACED; member (2) carrying the marker once at the ruled anchors; none of the oracle's phrases in
+any pack file; the four delivered files hash-identical to the tip blobs before they were read whole.
+(3) Found three presentation-form discrepancies in the batch's own text and reported them before
+any list was put — the in-word-match count stated as three (report), two (reading file §4) and
+annotated on four rows, with D-224 and D-313 reaching the list the same way and unannotated; the
+report's "four attempts" listing five; and the residue around the withheld passage telling a
+reader that a documented decision on the subject exists and is contradicted by the implementation
+(§6 of the sitting record). (4) Put the five lists one per turn, each with the alternatives rated,
+the question in the following turn; the user ruled **A, A, B, A, B**. The two that move the
+artifact: **D-569 to IN; D-457 and D-526 to OUT** (Ruling 3); **the withheld passage WIDENED to the
+whole founding-instance clause**, ONE passage replacing the narrower anchors, both anchors verified
+to occur exactly once at `0dcbacce2d:CLAUDE.md` (Ruling 5). (5) Wrote the sitting record and the
+correction dispatch; wrote this block.
+
+**★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch — the user
+starts a new Claude Code session on `cc_instruction_withheld_family_correction.md`. **Then:** the
+reading of its return; the brief's (P4) (the output file's name) and the brief validated against
+the landed pack's read-me; the blind Cowork session; the comparison dispatch; the ruling on the
+method. **Third in the standing order:** the quarantined findings. **The ledger** is owed before
+the framework phase. **Last:** pruning-and-satellites.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (in `gating_ids` at the tip — NOT re-confirmed by this session; confirm
+it yourself). **NO FINDING NUMBER ALLOCATED — F88.** The two owed dispositions of the plan's §2
+STILL UNROWED. FIVE quarantined questions stand surfaced and unacted on. **A caveat on the record
+for the comparison** (Ruling 1 of the sitting): D-450 and D-575 are withheld on a reading wider than
+the test's words; a notated-signature citation in the blind specification is read against the
+pack's silence, not scored as a method failure.
+
+**★ THE DEGRADATION REPORT.** **Declared (method):** at boot, `wc`/`grep` over the bridge-staged
+copy of this file in the container to find the entry block (a snapshot, the same class);
+`git status --short` once at boot (ignored; state taken from the commit object); one
+`git diff --stat <tip> -- <paths>` over the working tree (timed out, unused — the check was
+`git hash-object` against `git rev-parse <tip>:<path>` for the files read whole, itself a
+working-tree content read through the shell, declared); `grep`/`sed`/`python3` pipes over
+`git show <hash>:path` output written to `/tmp` on the user's VM throughout (object reads); one
+`Read` attempted on a VM path from the container (errored, no effect). **Presentation-form:
+none flagged.** Every list: no question in its turn, the question next turn, one list per turn;
+List One through the widget, the rest answered in conversation by letter.
+
+**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked: `cowork_rulings_2026_08_22_withheld_family_sitting.md`
+and `cc_instruction_withheld_family_correction.md` (sizes and sha256 in the closing message;
+the record carries the word `pinned` on no line; the dispatch names the word twice in its route-B clause and is no ruling record). Modified against the tip: `cowork_handoff.md` (this block
+above the forty-fourth, its heading marked superseded). **Nothing committed, nothing pushed,
+nothing regenerated by this session.** Memory-filesystem: not read this session; nothing written.
+
+**★ DECLARED DEPARTURES.** The session-start read NOT taken (stated above). `BUILD_AND_TEST.md`
+NOT read. `cowork_audit_protocol.md`'s dispatch-protocol section NOT re-read before writing the
+dispatch — the dispatch copies the previous one's structure clause for clause, and every clause it
+changes is named; a reader counts this for themselves. The brief NOT read. The forty-third and
+older handover blocks NOT read. The generator read at its authored tables, `withhold_passage()`
+and `_normalize()` only.
+
+**★ THE CADENCE:** the next session starts at the branch rule, establishes whether the correction
+dispatch has been started, and — if not — re-validates its A1 against the tree and hands it to a
+new Claude Code session; while it runs, nothing is owed but the reading of its return; after it
+lands, the blind session is the user's to open.
+
+*(The forty-fourth block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FORTY-FOURTH, 2026-08-22) — THE PILOT-PREPARATION DISPATCH WAS STARTED BY CLAUDE CODE AND INTERRUPTED BY A CRASH BEFORE ITS TASK 0 COMMIT (TIP STILL `dcbfa5fe32`, BOTH REFS AT IT, THE FOUR TASK 0 PATHS STAGED IN THE INDEX, THE MEMBERSHIP ARTIFACT REGENERATED AND NOW STALE); ★ THE DISPATCH IS RE-VALIDATED AND AMENDED IN PLACE, **READY TO DISPATCH**; ★ THREE NEW RULINGS IN TWO RECORDS (THE MEMBER (2) LEAK WITHHELD; THE DERIVING SIDE IS A FRESH COWORK SESSION; THE ANNOTATED SCORES ARE STAGED BY NAME), BOTH ON DISK, UNTRACKED; ★ THE BLIND SESSION'S BRIEF WRITTEN, ON DISK, UNTRACKED; ★ ONE TELL FIRED, THE REST DECLARED (METHOD), ONE PRESENTATION-FORM TELL CORRECTED IN THE TURN. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-fifth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.**
