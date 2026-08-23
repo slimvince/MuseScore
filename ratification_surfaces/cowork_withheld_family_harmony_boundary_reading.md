@@ -1,8 +1,10 @@
 # The WITHHELD FAMILY for the harmony-boundary subject — put to the user for a ruling
 
-> **STATUS: RULED 2026-08-22 — applied by this commit; the lists below are the ruled family.** The
-> ruling record is `cowork_rulings_2026_08_22_withheld_family_sitting.md` — five rulings, one per
-> list. **No session has been booted from the pack.** This is the reading surface for one decision:
+> **STATUS: RULED 2026-08-22 and 2026-08-23 — applied by this commit; the lists below are the ruled
+> family.** The ruling records are `cowork_rulings_2026_08_22_withheld_family_sitting.md` — five
+> rulings, one per list — and `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md`, whose
+> single ruling adds a SECOND withheld passage to LIST FIVE.
+> **No session has been booted from the pack.** This is the reading surface for one decision:
 > which recorded decisions are withheld from the boot pack an implementation-blind session will
 > read, so that what that session derives can be compared against a ruled answer it has not seen.
 >
@@ -274,11 +276,16 @@ constraint is about.
 
 ---
 
-## LIST FIVE — the withheld PASSAGE
+## LIST FIVE — the withheld PASSAGES
+
+*TWO passages, each ruled by you separately. They are listed as a fifth list because they are the
+withholdings that cut into a member the boot list rules WHOLE — every other withholding removes a
+register entry from a member this tool generates.*
+
+### Passage one — the founding-instance clause of the never-work-from-memory rule
 
 *Ruled by you on 2026-08-22 (Ruling 1 of `cowork_rulings_2026_08_22_member_two_leak_sitting.md`) and
-**WIDENED by you the same day** (Ruling 5 of the withheld-family sitting, the user's word: "B"). It
-is listed as a fifth list because it is the one withholding that cuts into a member rendered whole.*
+**WIDENED by you the same day** (Ruling 5 of the withheld-family sitting, the user's word: "B").*
 
 - **Where:** `CLAUDE.md`, the Conventions span — boot-pack member (2) — inside the bullet opening
   `**NEVER WORK FROM MEMORY INSTEAD OF DOCUMENTED FACTS`.
@@ -304,9 +311,39 @@ is listed as a fifth list because it is the one withholding that cuts into a mem
   `subjects.harmony-boundary.THE_WITHHELD_FAMILY.passages`, so the cut is checkable without
   reopening the file.
 
-**The bound the ruling itself states, repeated here because it is easy to lose:** the span was
-searched for the oracle's own phrases and **not** for every paraphrase. This surface does not claim
-member (2) carries no other leak.
+### Passage two — the founding-instances sentence of the defense-at-its-home rule
+
+*Ruled by you on 2026-08-23 (Ruling 1 of
+`cowork_rulings_2026_08_23_member_two_second_leak_sitting.md`, the user's word: "B"), on a finding
+made at the rendered member (2) after the widening above had been applied.*
+
+- **Where:** `CLAUDE.md`, the Conventions span — boot-pack member (2) — inside the bullet opening
+  `**EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME`.
+- **What:** the sentence that closes that bullet, located by its own text and never by line number:
+  the span opening *"Founding instances of the gap:"* and closing *"each recorded with no
+  derivation."*
+- **Why it is withheld:** the sentence names, from its own words, a boundary-membership convention
+  — that a tick at a boundary belongs to the segment it starts — standing beside the oracle's own
+  ranking of actual sounding notes and beside the subject of withheld D-317, and it names the
+  decode segment cap's value in the same breath. It stood in member (2), which is rendered whole,
+  so it is outside the ruled leak-check scope; and it lies outside the passage above at both the
+  narrow anchors first ruled and the widened ones that replaced them. **The disclosure is content,
+  not existence:** a deriving session learns the convention from the name alone, without reading
+  anything further.
+- **How it is applied:** the span is cut from the rendered member and the omission is marked in
+  place with the same single line the passage above carries, carrying no content and no reason. The
+  bullet's own principle — that every design decision carries its defense, that a missing
+  derivation is stated as "derivation not recorded", and that none is ever written afterwards from
+  memory — **stays whole above the cut**. `CLAUDE.md` itself is untouched.
+- **The exact text matched, and its length, are published** at the same field of
+  `tools/audit/derivation_boot_pack.json` as the passage above, so this cut is checkable without
+  reopening the file either.
+
+**The bound the first ruling states, repeated here because it is easy to lose, and NOT lifted by the
+second:** the span was searched for the oracle's own phrases and **not** for every paraphrase. This
+surface does not claim member (2) carries no other leak. The second ruling records the same trade
+knowingly: each cut into a member ruled whole slightly weakens the claim that the deriving session
+read the governing conventions as they stand.
 
 ---
 

@@ -1092,7 +1092,7 @@
       "verdict": "PASS",
       "stdout": [
         "the evidence pin's class membership re-derives",
-        "  generated ratification documents 7; ruling records read 50",
+        "  generated ratification documents 7; ruling records read 51",
         "  members 7 — pinned 5, UNRESOLVED 0",
         "  tools carrying a pin constant 8; outside this class 3",
         "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",

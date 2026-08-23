@@ -113,7 +113,7 @@
         "withheld_identities_derived": 17,
         "withheld_identities_total": 33,
         "withheld_documents": 1,
-        "withheld_passages": 1,
+        "withheld_passages": 2,
         "leaks": 3,
         "design_intent_entries_rendered": 208,
         "defect_type_rows_rendered": 25,
@@ -255,6 +255,19 @@
             "finding": "Ruling 1 of `cowork_rulings_2026_08_22_member_two_leak_sitting.md`, widened by Ruling 5 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`: the founding-instance clause of the never-work-from-memory rule states both halves of the held-out test's withheld answer for this subject, and its remainder tells a deriving session that a documented decision on the subject exists and is contradicted by the implementation.",
             "date": "2026-08-22",
             "reason": "The narrower cut left a residue that discloses the existence of the ruled answer and the implementation's disagreement with it; one authored passage with wider anchors removes the clause whole, and the statement of the rule itself, above it, stays in the pack."
+          },
+          {
+            "file": "CLAUDE.md",
+            "member": 2,
+            "scope_anchor": "**EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME",
+            "opens": "Founding instances of the gap:",
+            "closes": "each recorded with no derivation.",
+            "the_text_matched": "Founding instances of the\n  gap: the decode segment cap's value (4), the legacy 16-beats-back/8-forward window, the\n  boundary-tick-belongs-to-the-segment-it-starts convention — each recorded with no derivation.",
+            "characters_omitted": 211,
+            "marked_in_place_with": "[A PASSAGE IS WITHHELD FROM THIS PACK FOR THIS SUBJECT.]",
+            "finding": "Ruling 1 of `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md`: the sentence names, from its own words, a boundary-membership convention — a tick at a boundary belongs to the segment it starts — adjacent to the oracle's ranking of actual sounding notes and to withheld D-317's subject, and names the decode segment cap's value beside it; it stands in member (2), rendered whole, outside the ruled leak-check scope and outside both passages previously ruled.",
+            "date": "2026-08-23",
+            "reason": "The disclosure is content, not existence — a deriving session learns the convention from its name alone; withholding it as an authored passage is the mechanism twice ruled for this shape, and the bullet's principle stays whole above the cut."
           }
         ],
         "derived_cross_reference_additions": {
@@ -2576,7 +2589,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 58895
+          "characters": 58747
         },
         {
           "member": 3,

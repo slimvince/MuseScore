@@ -285,6 +285,27 @@ WITHHELD: dict[str, dict] = {
                            "authored passage with wider anchors removes the clause whole, and "
                            "the statement of the rule itself, above it, stays in the pack."),
             },
+            {
+                "file": "CLAUDE.md",
+                "member": 2,
+                "scope_anchor": "**EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME",
+                "opens": "Founding instances of the gap:",
+                "closes": "each recorded with no derivation.",
+                "finding": ("Ruling 1 of "
+                            "`cowork_rulings_2026_08_23_member_two_second_leak_sitting.md`: the "
+                            "sentence names, from its own words, a boundary-membership "
+                            "convention — a tick at a boundary belongs to the segment it "
+                            "starts — adjacent to the oracle's ranking of actual sounding notes "
+                            "and to withheld D-317's subject, and names the decode segment cap's "
+                            "value beside it; it stands in member (2), rendered whole, outside "
+                            "the ruled leak-check scope and outside both passages previously "
+                            "ruled."),
+                "date": "2026-08-23",
+                "reason": ("The disclosure is content, not existence — a deriving session learns "
+                           "the convention from its name alone; withholding it as an authored "
+                           "passage is the mechanism twice ruled for this shape, and the "
+                           "bullet's principle stays whole above the cut."),
+            },
         ],
         # The identity the ruling names in terms; every other IN verdict below joins it.
         "the_identity_the_ruling_names": "D-057",
@@ -1104,10 +1125,18 @@ def render_defect_types(rows: list[list[str]], header: list[str]) -> str:
     return "\n".join(out) + "\n"
 
 
-def render_read_me(subject: str, subject_words: str) -> str:
+def render_read_me(subject: str, subject_words: str, passages: list[dict]) -> str:
     names = [READ_ME] + [m["filename"] for m in MEMBERS]
     listing = "\n".join(
         [f"{i + 1}. `{m['filename']}` — {m['title']}" for i, m in enumerate(MEMBERS)])
+    # DERIVED from the passages actually applied for this subject, so the sentence stays true at
+    # whatever count a subject's authored table carries: singular wording at one, plural at more.
+    n = len(passages)
+    passages_line = (
+        f"* one passage inside `{MEMBERS[1]['filename']}`, marked in place where it was removed."
+        if n == 1 else
+        f"* {n} passages inside `{MEMBERS[1]['filename']}`, each marked in place where it was "
+        f"removed.")
     return f"""# READ THIS FIRST — the whole of what this session opens
 
 You are an **implementation-blind deriving session**. Your work is to write what the analysis
@@ -1141,7 +1170,7 @@ compared against a ruled answer you have not read. Two kinds:
 
 * entries of the design-intent file that were not rendered — you will see identifier gaps, and
   those gaps are **not** evidence of anything;
-* one passage inside `{MEMBERS[1]['filename']}`, marked in place where it was removed.
+{passages_line}
 
 **Do not try to reconstruct any of it, and do not treat a gap as a hint.** Derive the unit from the
 domain and from what this pack does carry.
@@ -1316,7 +1345,8 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
     if len(passages_applied) != want_passages:
         raise Stop(f"{want_passages} withheld passage(s) authored, {len(passages_applied)} applied")
 
-    files[READ_ME] = render_read_me(subject, authored["the_subject_in_plain_words"])
+    files[READ_ME] = render_read_me(subject, authored["the_subject_in_plain_words"],
+                                    passages_applied)
 
     record = {
         "subject": subject,

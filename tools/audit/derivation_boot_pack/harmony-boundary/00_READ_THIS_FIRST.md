@@ -36,7 +36,7 @@ compared against a ruled answer you have not read. Two kinds:
 
 * entries of the design-intent file that were not rendered — you will see identifier gaps, and
   those gaps are **not** evidence of anything;
-* one passage inside `02_the_guiding_principles_and_the_conventions.md`, marked in place where it was removed.
+* 2 passages inside `02_the_guiding_principles_and_the_conventions.md`, each marked in place where it was removed.
 
 **Do not try to reconstruct any of it, and do not treat a gap as a hint.** Derive the unit from the
 domain and from what this pack does carry.

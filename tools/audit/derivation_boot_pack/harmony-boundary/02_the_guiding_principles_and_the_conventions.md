@@ -408,10 +408,11 @@ make it a delegation TARGET. This paragraph is what makes it one.)*
   as a class. The decisions register (`DECISIONS.md`) points at the defense; where a decision's
   derivation is not in the record, the register says **"derivation not recorded"** — the gap is
   stated, never filled in retroactively from memory (a defense written after the fact without a
-  source is invention, and the never-work-from-memory rule forbids it). Founding instances of the
-  gap: the decode segment cap's value (4), the legacy 16-beats-back/8-forward window, the
-  boundary-tick-belongs-to-the-segment-it-starts convention — each recorded with no derivation.
+  source is invention, and the never-work-from-memory rule forbids it). 
 
+  [A PASSAGE IS WITHHELD FROM THIS PACK FOR THIS SUBJECT.]
+
+  
 - **ISSUE-EXHAUSTION AND SPECIFICATION COMPLETION BEFORE ANY FIX DESIGN (user-directed,
   2026-08-02; sharpens #8, which forbade inference-problem coding before layer completion — this
   forbids fix DESIGN before knowledge completion).**
