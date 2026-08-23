@@ -1,7 +1,112 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-FIFTH, 2026-08-22) — THE PILOT-PREPARATION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `dcbfa5fe32`, TIP `0dcbacce2d`, BOTH REFS AT IT, GUARD POPULATION 74→75, THE ONE RED OI-372; ★ THE WITHHELD FAMILY IS RULED, ALL FIVE LISTS, ONE PER TURN (A, A, B, A, B) — RECORD `cowork_rulings_2026_08_22_withheld_family_sitting.md` ON DISK, UNTRACKED; ★ THE CORRECTION DISPATCH IS WRITTEN — `cc_instruction_withheld_family_correction.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ THREE PRESENTATION-FORM DISCREPANCIES FOUND IN THE BATCH'S OWN TEXT, NONE TOUCHING A VERDICT; ★ TELLS DECLARED (METHOD). THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (FORTY-SIXTH ENTRY, 2026-08-23 — THE SAME FORTY-FIFTH SESSION, CONTINUED THROUGH THE CORRECTION BATCH'S RETURN) — THE CORRECTION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `0dcbacce2d`, TIP `972ba18005`, BOTH REFS AT IT, THE MANIFEST AT THE RULED LISTS (IN 16 / OUT 59 / UNPLACED 0, THE PASSAGE WIDENED), GUARD 75/74/1; ★ ONE NEW FINDING AT THE RENDERED MEMBER (2) — THE FOUNDING-INSTANCES SENTENCE NAMES A BOUNDARY-MEMBERSHIP CONVENTION — RULED B: A SECOND AUTHORED PASSAGE, RECORD `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH IS WRITTEN — `cc_instruction_second_passage_withheld.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, NOTHING STANDS BEFORE THE BLIND SESSION. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the successor plan EXECUTES three of them.**
+
+**★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST.** *The pilot*, *the boot pack*, *the withheld
+family*, *the reading file* — as the forty-fifth block explains them, unchanged. *The
+founding-instances sentence* — the sentence of `CLAUDE.md`'s defense-at-its-home bullet that lists
+three decisions recorded with no derivation, among them "the
+boundary-tick-belongs-to-the-segment-it-starts convention"; the subject of this entry's one ruling.
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in
+full, by you; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **This session did NOT
+discharge it** (declared in the forty-fifth block; unchanged through this entry). **The bar binds
+you afresh: take the three reads before anything else.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`972ba18005`** (parent `1db5cf1e90`), both refs at it. The correction batch's four commits,
+oldest first: `6e29b06a49` (Task 0), `72534e5da9` (Task 1 — the ruled lists applied),
+`1db5cf1e90` (close), `972ba18005` (end state). **If you meet THAT tip: the dispatch
+`cc_instruction_second_passage_withheld.md` is yours to hand to a new Claude Code session after
+re-taking the branch rule and re-validating its A1 against the tree.** If you meet a commit on
+`972ba18005` with the subject `record: the 2026-08-23 second member-two leak ruling landed;
+evidence-pin membership regenerated`, the batch has started — READ-ONLY until
+`cc_report_second_passage_withheld.md` exists, then verify its close (THE SECOND PASSAGE
+WITHHELD: THE PACK AT ITS RULED STATE section of `cowork_away_returns.md`) whole and at the
+objects. **After it lands, the next act is the BLIND DERIVATION by a FRESH COWORK SESSION**
+(Ruling 1 of `cowork_rulings_2026_08_22_deriving_side_sitting.md`) — NOT you, NOT Claude Code —
+booted from `cowork_blind_session_brief_harmony_boundary.md` and the pack only; its desktop
+connects the repository folder and the chorale folder named in the forty-fourth block. Before it
+boots, the brief's (P4) (the output file's name) and the brief's validation against the landed
+pack's read-me and directory name remain the user's open surfaces (forty-fourth block, unchanged).
+
+**★ WHAT THIS ENTRY ADDS (the forty-fifth block's account stands beneath).** (1) The correction
+batch verified at the objects: the four commits and subjects; the landed record, dispatch and
+handoff byte-identical (sha256) to the delivered ones; exactly three verdict rows moved at the
+manifest (D-569→IN, D-457/D-526→OUT), the other seventy-two byte-identical; the passage widened
+(690 characters, was 229), derived additions byte-equal at 17; rendered 244−33−3=208; member (2)
+with one marker, neither widened anchor, the "documented decision the implementation contradicts"
+residue gone; member (5) without D-569, with D-457 and D-526; guard 75/74/1, population unmoved;
+the generator's only non-string change the rewritten UNPLACED divider; CC's DISCARDED observation
+(close §6) read and found fair; CC's index-lock account corroborated from this side — the
+forty-fifth block's declared working-tree `git diff` timeout is the act that leaves such a lock,
+and that one was this session's. (2) A NEW FINDING at the rendered member (2), surfaced whole
+before any question: the founding-instances sentence (quoted in the record) names a
+boundary-membership convention from its own words and the decode segment cap's value — outside
+the leak-check scope, outside both ruled passages, present in the previous render too. Three
+alternatives put (leave under the declared bound; a second authored passage; a paraphrase sweep);
+**the user ruled B** — a SECOND authored passage in the D-677 shape, the sweep declined in terms
+for the pilot (re-proposed only if the pilot's result turns on leakage). Record on disk,
+untracked. (3) The dispatch written: one authored addition, ONE licensed read-me rendering edit
+(the hardcoded "one passage" sentence made to derive its count — read at the generator's line
+1144 by this session), every A5 field predicted, no measure-and-report left open. (4) This block
+written.
+
+**★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch — the user
+starts a new Claude Code session on `cc_instruction_second_passage_withheld.md`. **Then:** the
+reading of its return; the brief's (P4) and the brief validated against the landed pack; the
+blind Cowork session; the comparison dispatch; the ruling on the method. **Third in the standing
+order:** the quarantined findings. **The ledger** before the framework phase. **Last:**
+pruning-and-satellites.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (at the tip's `gating_ids` per the batch's report; NOT re-confirmed by
+this session — confirm it yourself). **NO FINDING NUMBER ALLOCATED — F88.** The two owed
+dispositions of the plan's §2 STILL UNROWED. FIVE quarantined questions stand. The D-450/D-575
+comparison caveat (Ruling 1, withheld-family sitting) and the member (2) no-completeness bound
+both stand and are carried in the correction batch's close.
+
+**★ THE DEGRADATION REPORT (this entry's additions to the forty-fifth block's).** **Declared
+(method):** `grep`/`sed`/`awk`/`python3` pipes over `git show <hash>:path` output written to
+`/tmp` on the user's VM throughout (object reads); `git hash-object <path>` against
+`git rev-parse <tip>:<path>` per delivered file (a working-tree content read through the shell,
+the declared class, used as the byte-identity check); sha256 over the landed record, dispatch and
+handoff on the VM (same class). No working-tree `git status`/`git diff` this entry.
+**Presentation-form: none flagged.** The finding was surfaced whole in its turn with the question
+deferred to the next; the user answered by letter.
+
+**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
+`cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` and
+`cc_instruction_second_passage_withheld.md` (sizes and sha256 in the closing message; the record
+carries the word `pinned` on no line — the dispatch names the word in its route-B clause and is
+no ruling record). Modified against the tip: `cowork_handoff.md` (this block above the
+forty-fifth, its heading marked superseded). **Nothing committed, nothing pushed, nothing
+regenerated by this session.** Memory-filesystem: not read this session; nothing written.
+
+**★ DECLARED DEPARTURES.** The session-start read NOT taken (forty-fifth block; still true).
+`BUILD_AND_TEST.md` NOT read. The audit protocol's dispatch-protocol section NOT re-read before
+writing this dispatch — it copies the correction dispatch's structure clause for clause, and
+every clause it changes is named; a reader counts this for themselves. The brief NOT read. The
+close of the correction batch read whole; its report read whole; the corrected reading file read
+at its banner, §4, LIST THREE and LIST FIVE regions plus the row tables at the manifest (the
+manifest whole-diff check stands in for the unread middle). The forty-fourth and older blocks NOT
+re-read this entry.
+
+**★ THE CADENCE:** the next session starts at the branch rule, establishes whether
+`cc_instruction_second_passage_withheld.md` has been started, and — if not — re-validates its A1
+against the tree and hands it to a new Claude Code session; while it runs, nothing is owed but
+the reading of its return; after it lands, the blind session is the user's to open and NOTHING
+else stands before it.
+
+*(The forty-fifth block below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FORTY-FIFTH, 2026-08-22) — THE PILOT-PREPARATION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `dcbfa5fe32`, TIP `0dcbacce2d`, BOTH REFS AT IT, GUARD POPULATION 74→75, THE ONE RED OI-372; ★ THE WITHHELD FAMILY IS RULED, ALL FIVE LISTS, ONE PER TURN (A, A, B, A, B) — RECORD `cowork_rulings_2026_08_22_withheld_family_sitting.md` ON DISK, UNTRACKED; ★ THE CORRECTION DISPATCH IS WRITTEN — `cc_instruction_withheld_family_correction.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ THREE PRESENTATION-FORM DISCREPANCIES FOUND IN THE BATCH'S OWN TEXT, NONE TOUCHING A VERDICT; ★ TELLS DECLARED (METHOD). THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-sixth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.**
