@@ -1,7 +1,119 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-SIXTH ENTRY, 2026-08-23 — THE SAME FORTY-FIFTH SESSION, CONTINUED THROUGH THE CORRECTION BATCH'S RETURN) — THE CORRECTION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `0dcbacce2d`, TIP `972ba18005`, BOTH REFS AT IT, THE MANIFEST AT THE RULED LISTS (IN 16 / OUT 59 / UNPLACED 0, THE PASSAGE WIDENED), GUARD 75/74/1; ★ ONE NEW FINDING AT THE RENDERED MEMBER (2) — THE FOUNDING-INSTANCES SENTENCE NAMES A BOUNDARY-MEMBERSHIP CONVENTION — RULED B: A SECOND AUTHORED PASSAGE, RECORD `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH IS WRITTEN — `cc_instruction_second_passage_withheld.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, NOTHING STANDS BEFORE THE BLIND SESSION. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (FORTY-SEVENTH ENTRY, 2026-08-23 — THE SAME FORTY-FIFTH SESSION, THIRD CYCLE) — THE SECOND-PASSAGE BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `972ba18005`, TIP `d2a517c8db`, BOTH REFS AT IT, PASSAGES 1→2 THE ONLY MOVED COUNT, GUARD 75/74/1; ★ THE BRIEF WAS VALIDATED AGAINST THE LANDED PACK — ONE CONFLICT FOUND (THE READ-ME'S ABSOLUTE BOUNDARY FORBIDS THE BRIEF'S RULED INPUTS) AND THREE RULINGS TAKEN (C; P2 CONFIRMED; P4 FIXED), RECORD `cowork_rulings_2026_08_23_brief_validation_sitting.md` ON DISK, UNTRACKED; ★ THE BRIEF IS REFRESHED TO RULED ON DISK (MODIFIED, UNCOMMITTED); ★ THE DISPATCH IS WRITTEN — `cc_instruction_brief_ratification_and_readme_boundary.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, THE BLIND SESSION IS THE USER'S TO OPEN AND NOTHING STANDS BEFORE IT. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the successor plan EXECUTES three of them.**
+
+**★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST.** *The pilot*, *the boot pack*, *the withheld
+family*, *the reading file* — as the earlier blocks explain them. *The brief* —
+`cowork_blind_session_brief_harmony_boundary.md`, the blind session's first read, tracked, now
+refreshed to RULED on disk by this session (uncommitted). *The brief-validation sitting* — this
+entry's three rulings: the read-me boundary scoped and the brief refreshed in one dispatch (C);
+fetched research confirmed as §3 writes it (P2); the output name fixed,
+`cowork_blind_derivation_harmony_boundary_2026_08_23.md` (P4).
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in
+full, by you; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **This session did NOT
+discharge it** (declared since the forty-fifth block). **The bar binds you afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`d2a517c8db`** (parent `59b3c0ff33`), both refs at it. The second-passage batch's four commits,
+oldest first: `1ff83f569a` (Task 0), `cf00b6af7b` (Task 1 — the second passage cut, the read-me
+counting its passages), `59b3c0ff33` (close), `d2a517c8db` (end state). **If you meet THAT tip:
+the dispatch `cc_instruction_brief_ratification_and_readme_boundary.md` is yours to hand to a new
+Claude Code session after re-taking the branch rule and re-validating its A1 against the tree
+(NOTE its A1 carries TWO tracked modifications — the handoff AND the refreshed brief).** If you
+meet a commit on `d2a517c8db` with the subject `record: the 2026-08-23 brief-validation rulings
+landed and the blind session's brief is RULED; evidence-pin membership regenerated`, the batch
+has started — READ-ONLY until `cc_report_brief_ratification_and_readme_boundary.md` exists, then
+verify its close (THE BRIEF RULED AND THE PACK'S BOUNDARY TRUE section of
+`cowork_away_returns.md`) whole and at the objects. **After it lands: the BLIND DERIVATION, a
+FRESH COWORK SESSION the user opens** (Ruling 1 of the deriving-side sitting) — its desktop
+connects the repository folder AND the chorale folder
+`C:\s\MS\tools\dcml\when_in_rome\Corpus\Early_Choral\Bach,_Johann_Sebastian\Chorales`; it reads
+the brief FIRST, then the pack, is staged the eight files the brief's §3 names BY NAME, and
+writes ONE file, `cowork_blind_derivation_harmony_boundary_2026_08_23.md`, committed by the next
+ordinary dispatch. NOT you, NOT Claude Code.
+
+**★ WHAT THIS ENTRY ADDS (the forty-sixth and forty-fifth accounts stand beneath).** (1) The
+second-passage batch verified at the objects: four commits, subjects as prescribed; the landed
+record and dispatch byte-identical to the delivered ones; `counted` moved ONLY at
+`withheld_passages` 1→2; zero verdict rows changed; passage one byte-equal; passage two at the
+ruled anchors (211 characters); member (2) with two markers and none of the four forbidden
+strings anywhere in the pack; the read-me's count sentence derived ("2 passages"); members (1),
+(3)–(6) and thirteen protected documents byte-unchanged; guard 75/74/1. CC's report read whole —
+its write-mode-for-Task-1 resolution of the dispatch's check-mode tension was sound and declared;
+its §8 rightly flagged a wording contradiction in THIS side's second-leak record ("outside both
+passages so far ruled" vs Ruling 5's one-widened-passage) — CC kept the ruled text verbatim and
+read it as "both passage rulings"; the slip was the writing side's drafting. (2) The brief
+verified hash-identical to the tip blob, read whole, and validated against the pack: directory,
+read-me name, six-file order, subject wording, stop-on-meeting clause and §9's name-conditional
+all check; all eight staged files exist under their exact names (137 without BCMH). ONE conflict:
+the read-me's "the whole of your read" / "Nothing outside this directory is opened at all" /
+"every `cc_*` and `cowork_*` file outside this directory" — wording fixed before the
+deriving-side, staged-scores and research rulings — forbids the brief itself, the staged files
+and fetched research. Three alternatives put; **the user ruled C** (read-me reworded generically
+AND the brief refreshed, one dispatch), then **P2 confirmed** and **P4 fixed** at the widget.
+(3) The record written; the brief refreshed on disk (banner RULED; §7's name fixed; §8 all
+points RULED, P5 stated executed-and-extended; §9's dated amendment note; §§0–6 byte-untouched);
+the dispatch written — Task 1's read-me wording is constrained by content at A5 (i)–(v), the
+wording CC's; a defect CC finds in the brief is a STOP, never a fix. (4) This block written.
+
+**★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch — the user
+starts a new Claude Code session on `cc_instruction_brief_ratification_and_readme_boundary.md`.
+**Then:** the reading of its return; the BLIND SESSION (the user opens it; nothing else stands
+before it); the comparison dispatch; the ruling on the method. **Third in the standing order:**
+the quarantined findings. **The ledger** before the framework phase. **Last:**
+pruning-and-satellites.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (per the batches' reports; NOT re-confirmed by this session). **NO
+FINDING NUMBER ALLOCATED — F88.** The two owed dispositions of the plan's §2 STILL UNROWED. FIVE
+quarantined questions stand. The D-450/D-575 comparison caveat and the member (2)
+no-completeness bound stand. **A new bound of record:** the read-me's zero-passage rendering
+limit (the "Two kinds:" lead-in is hardcoded) — declared in the second-passage report §6.2, left
+for a later session that meets it.
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** `grep`/`sed`/
+`awk`/`python3` pipes over `git show <hash>:path` output on the user's VM throughout (object
+reads); `git hash-object` vs `git rev-parse <tip>:<path>` per file read whole (working-tree
+content reads through the shell, declared, used as the byte-identity check); directory listings
+of the chorale folders and `MS3/` (working-tree existence reads, declared — the staged-file
+check); sha256 over landed files on the VM. No working-tree `git status`/`git diff` this entry.
+**Presentation-form: none flagged.** The validation surface whole in its turn, the ruling next
+turn; P2/P4 through the widget after the surface had been read.
+
+**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
+`cowork_rulings_2026_08_23_brief_validation_sitting.md` and
+`cc_instruction_brief_ratification_and_readme_boundary.md` (sizes and sha256 in the closing
+message; the record carries `pinned` on no line — the dispatch names the word in its route-B
+clause and is no ruling record). Modified against the tip: `cowork_handoff.md` (this block above
+the forty-sixth, its heading marked superseded) and
+`cowork_blind_session_brief_harmony_boundary.md` (the refresh, regions named above). **Nothing
+committed, nothing pushed, nothing regenerated by this session.** Memory-filesystem: not read
+this session; nothing written.
+
+**★ DECLARED DEPARTURES.** The session-start read NOT taken (standing declaration).
+`BUILD_AND_TEST.md` NOT read. The audit protocol's dispatch-protocol section NOT re-read before
+writing this dispatch — it copies the previous dispatches' structure clause for clause. The
+oracle documents NOT opened; the pack members read only at the read-me, member (2)'s cut regions
+and the marker positions, and member (5)'s identity checks — all at objects. The forty-fourth
+and older blocks NOT re-read this entry.
+
+**★ THE CADENCE:** the next session starts at the branch rule, establishes whether
+`cc_instruction_brief_ratification_and_readme_boundary.md` has been started, and — if not —
+re-validates its A1 (TWO tracked modifications) and hands it to a new Claude Code session; while
+it runs, nothing is owed but the reading of its return; after it lands, the user opens the blind
+Cowork session, and the writing side's next act after THAT is the dispatch that commits the blind
+output and prepares the comparison.
+
+*(The forty-sixth entry below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FORTY-SIXTH ENTRY, 2026-08-23 — THE SAME FORTY-FIFTH SESSION, CONTINUED THROUGH THE CORRECTION BATCH'S RETURN) — THE CORRECTION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `0dcbacce2d`, TIP `972ba18005`, BOTH REFS AT IT, THE MANIFEST AT THE RULED LISTS (IN 16 / OUT 59 / UNPLACED 0, THE PASSAGE WIDENED), GUARD 75/74/1; ★ ONE NEW FINDING AT THE RENDERED MEMBER (2) — THE FOUNDING-INSTANCES SENTENCE NAMES A BOUNDARY-MEMBERSHIP CONVENTION — RULED B: A SECOND AUTHORED PASSAGE, RECORD `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH IS WRITTEN — `cc_instruction_second_passage_withheld.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, NOTHING STANDS BEFORE THE BLIND SESSION. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-seventh entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.**

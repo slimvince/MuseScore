@@ -1,12 +1,14 @@
 # BRIEF for the blind deriving session — the harmony-boundary subject (the held-out test of the pilot)
 
-> **STATUS: DRAFT FOR THE USER'S RULING.** Written by the writing side (Cowork, 2026-08-22, the
+> **STATUS: RULED 2026-08-23.** Written by the writing side (Cowork, 2026-08-22, the
 > forty-fourth Cowork session) while the pilot-preparation batch
-> (`cc_instruction_pilot_preparation_withheld_family.md`) was running on the coding side. **It
-> dispatches nothing and boots no session.** It becomes a session's brief only after BOTH of these
-> have happened, in this order: the user has ruled the withheld family at the reading file that
-> batch delivers, and the user has ruled this brief (including the open points in §8). Until then
-> it is a document on disk and nothing reads it.
+> (`cc_instruction_pilot_preparation_withheld_family.md`) was running on the coding side; refreshed
+> to the ruled state by the writing side on 2026-08-23. **It dispatches nothing and boots no
+> session.** Both conditions it named are now met: the user has ruled the withheld family at the
+> reading file (`cowork_rulings_2026_08_22_withheld_family_sitting.md`, applied and corrected at
+> the objects), and the user has ruled this brief — every point of §8 is RULED
+> (`cowork_rulings_2026_08_23_brief_validation_sitting.md`). **This is the brief the blind session
+> reads; the user opens that session when the user chooses.**
 >
 > **Who reads this file, and when.** The deriving session reads it FIRST, before it opens the boot
 > pack. Everything the session is allowed to read is named in §3; **this brief and that directory
@@ -199,8 +201,8 @@ incomplete.**
 ## 7. The output, and what the session does NOT do
 
 **One file.** The session writes its statements, open questions, sizing record and independence
-record to ONE new file at the repository root, whose name the user fixes at §8 (the draft name:
-`cowork_blind_derivation_harmony_boundary_<date>.md`), with the status banner *DRAFT — BLIND
+record to ONE new file at the repository root, whose name the user fixed on 2026-08-23 (Ruling 3 of the brief-validation sitting):
+**`cowork_blind_derivation_harmony_boundary_2026_08_23.md`**, with the status banner *DRAFT — BLIND
 DERIVATION, NOT COMPARED, NOT RATIFIED*. It is written for a reader who knows music theory and not
 this project: terms explained at first use, predicates qualified (every "depends", "prefers",
 "strongest" names its argument), no invented labels, music-theory words in their musical sense only.
@@ -220,13 +222,14 @@ no finding number; it takes no branch rule and reads no commit log; it derives n
 subject but the one in §2; it does not decide the deriving method's fate — that is the user's
 ruling, on the comparison session's evidence, later.
 
-## 8. The points the user rules before this brief is dispatched — their state on 2026-08-22
+## 8. The points the user rules before this brief is dispatched — ALL RULED as of 2026-08-23
 
 - **(P1) The deriving side's identity — RULED:** a fresh Cowork session
   (`cowork_rulings_2026_08_22_deriving_side_sitting.md`, Ruling 1). Applied in §7.
-- **(P2) Fetched research — allowed, as §3 is written;** not separately ruled, and open to the user's
-  word. The ground: the pilot's ruled inputs are independent sources and fetched literature, and a
-  session forbidden research would test a different method from the one under test.
+- **(P2) Fetched research — RULED:** allowed, as §3 is written (Ruling 2 of
+  `cowork_rulings_2026_08_23_brief_validation_sitting.md`). The ground: the pilot's ruled inputs
+  are independent sources and fetched literature, and a session forbidden research would test a
+  different method from the one under test.
 - **(P3) Annotated scores — RULED:** the repository's own human-annotation files, staged by name
   (same record, Ruling 3). Applied in §3 with the file list. **The route is settled:** the *When in
   Rome* analysis files sit eight folders below the repository folder and the device bridge stages at
@@ -235,12 +238,14 @@ ruling, on the comparison session's evidence, later.
   the desktop app on 2026-08-22; the five annotation files were then staged and opened by the
   writing side (chorale 137 has no BCMH file). The blind session's desktop must connect the same
   folder, and the repository folder for the three `.mscx` scores and the pack.
-- **(P4) The output file's name** — open; the draft name stands in §7 until the user fixes it. The
-  commit route is settled by Ruling 1 (the next ordinary dispatch commits it).
-- **(P5) One passage of the pack that carried the withheld content — RULED:** withheld from the pack
-  by the generator as an authored input (`cowork_rulings_2026_08_22_member_two_leak_sitting.md`),
-  executed by the next dispatch. This brief does not describe the passage; the session must not
-  learn of it from here.
+- **(P4) The output file's name — RULED:** `cowork_blind_derivation_harmony_boundary_2026_08_23.md`
+  (Ruling 3 of the same record). The commit route is settled by Ruling 1 of the deriving-side
+  sitting (the next ordinary dispatch commits it).
+- **(P5) Passages of the pack that carried withheld content — RULED and EXECUTED:** withheld from
+  the pack by the generator as authored inputs (`cowork_rulings_2026_08_22_member_two_leak_sitting.md`,
+  widened by Ruling 5 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`;
+  `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md`), applied at the objects. This
+  brief does not describe any withheld passage; the session must not learn of them from here.
 
 ## 9. Provenance — for the user and the record; NOT opened by the deriving session
 
@@ -283,3 +288,11 @@ user connected the chorale folder, all five *When in Rome* files named in §3 we
 `001/analysis.txt` read whole (768 bytes: analyst, proofreaders, time signature, form, one line per
 bar with beat-positioned Roman numerals, two analyst variants); the `.mscx` scores for 003 and 137
 are named and not yet opened by the writing side.
+
+**Amended again 2026-08-23, after the brief-validation sitting** (record
+`cowork_rulings_2026_08_23_brief_validation_sitting.md`): the banner set to RULED, §7's output
+name fixed by Ruling 3, §8 brought to the rulings' state (P2 and P4 ruled; P5 executed and
+extended of record). The same sitting's Ruling 1 orders the pack read-me's boundary wording scoped
+so that this brief, the files it stages by name, and fetched research are no longer forbidden by
+its letter; that edit is the generator's, made by the dispatch that lands this amendment, and is
+recorded here so the correction is not claimed by silence.
