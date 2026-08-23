@@ -3273,29 +3273,6 @@ proceeding.
 
 ---
 
-## D-569 — Collecting, filtering and weighting are THREE separate responsibilities; the collection layer collects and annotates, and does nothing else
-
-**As decided, in the words it was decided in:**
-
-```
-## §1 — Intended role (the single responsibility) — REVISED per user review 2026-06-21
-**Collect — and only collect — every sounding note in a region, annotated, losslessly, by ONE path.** It is the
-boundary between the engraving model (Score/Segment/Note) and the analysis types. It answers exactly one factual
-question: "for region `[startTick, endTick)`, what notes sound?" — and returns the **note set**, each note
-annotated with the facts needed downstream (pitch, tpc/spelling, staff, voice, onset, offset, in-region
-duration, `isGrace`, `plays`, `visible`, staff-eligibility). It must **NOT** filter (drop grace/non-playing/
-invisible), **NOT** weight or aggregate into pitch-class evidence, **NOT** select a bass, and **NOT** make any
-harmonic/segmentation/key decision. Those are *separate* responsibilities (see §5):
-- **Collection** (this layer): the facts — every sounding note, annotated, preserved, one path.
-- **Filtering** (a distinct, explicit decision): which annotated notes are eligible for harmonic analysis.
-- **Weighting** (a distinct derived layer): the pitch-class evidence + bass, computed as a *view* over the
-  collected notes — never replacing them.
-```
-
-**In plain words:** Finding out which notes sound in a stretch of music, deciding which of them the harmonic analysis should consider, and turning them into weighted evidence are three different jobs. The first is a matter of fact, the second a decision, the third an interpretation. The collection layer answers only the factual question and hands the notes on annotated with everything a later step could need.
-
----
-
 ## D-572 — The hard post-hoc declared-mode promotion is REMOVED OUTRIGHT rather than kept in a gated form
 
 **As decided, in the words it was decided in:**

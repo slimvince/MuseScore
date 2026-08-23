@@ -1,20 +1,25 @@
 # The WITHHELD FAMILY for the harmony-boundary subject — put to the user for a ruling
 
-> **STATUS: AWAITING THE USER. Nothing here is applied and no session has been booted.** This is the
-> reading surface for one decision: which recorded decisions are withheld from the boot pack an
-> implementation-blind session will read, so that what that session derives can be compared against
-> a ruled answer it has not seen.
+> **STATUS: RULED 2026-08-22 — applied by this commit; the lists below are the ruled family.** The
+> ruling record is `cowork_rulings_2026_08_22_withheld_family_sitting.md` — five rulings, one per
+> list. **No session has been booted from the pack.** This is the reading surface for one decision:
+> which recorded decisions are withheld from the boot pack an implementation-blind session will
+> read, so that what that session derives can be compared against a ruled answer it has not seen.
 >
 > Prepared by Claude Code, 2026-08-22, under `cc_instruction_pilot_preparation_withheld_family.md`
 > Task 1(d), executing amendment (a1) of Ruling 1 of
 > `cowork_rulings_2026_08_22_boot_list_sitting.md` and Ruling 1 of
 > `cowork_rulings_2026_08_22_pilot_order_sitting.md` — *"the dispatch derives the candidates at the
-> objects and the authored family is the user's to rule."*
+> objects and the authored family is the user's to rule."* **Corrected to the ruled lists by
+> `cc_instruction_withheld_family_correction.md` Task 1(d), in the commit that corrects the
+> generator's authored table and re-renders the pack.**
 >
-> **The verdicts below are AUTHORED and they CLEAR NOTHING.** Under the standing clause a session
-> may perform an owed establishment and author its verdicts, and those verdicts clear no guard when
-> they are written: they are delivered as a reading file, and they take effect only when the
-> reviewed set is applied. **No session boots from the pack before you rule.**
+> **The verdicts below were AUTHORED and they CLEARED NOTHING when they were written.** Under the
+> standing clause a session may perform an owed establishment and author its verdicts, and those
+> verdicts clear no guard when they are written: they were delivered as this reading file, and they
+> take effect now, because the user has ruled them and the reviewed set has been applied to the
+> generator's authored table. **The pack a deriving session boots from is the one this commit
+> renders.**
 
 ---
 
@@ -87,7 +92,9 @@ analysis decision consumes this enumeration — you do.**
 The match also fires **inside longer words**, and that is now visible rather than hidden: every
 keyword match is published with the matched text **in its own context**, so a candidate that reached
 the list only because `slice` sits inside `isLicensedProgression`, or `release` inside *released*,
-can be seen for what it is. Two of the entries below are exactly that, and each says so.
+can be seen for what it is — and so can one that reached it only because the keyword sits inside a
+code identifier, as `onset` does inside `onsetAtRegionStart` and `boundary` inside
+`combinedBoundary`. Six of the entries below are annotated as exactly that, and each says so.
 
 *Every figure about this derivation — the size of the class, of the candidate list, of each verdict
 class — is at `tools/audit/derivation_boot_pack.json` → `subjects.harmony-boundary.counted`, and
@@ -129,6 +136,7 @@ of the ruled answer.*
 | D-491 | REFUTED: making the override's comparison vertically fair does not repair it | It states, measured, that the vertical commit predicts the annotated root better than the progression re-pick — the oracle's ranking, as a measurement. |
 | D-545 | The uniform mechanical extractor stops at the note-and-slice front | It describes the extraction as "reading notes and cutting them into simultaneities" and calls our own equivalent a slicer — telling a session that a slice IS a simultaneity. |
 | D-565 | Exact score ties are broken by a declared TOTAL ORDER on paths | It decides which of two segmentations is committed — "fewer segments first; then the earliest boundary-tick sequence" — and is homed in the oracle's second-arm document. |
+| D-569 | Collecting, filtering and weighting are THREE separate responsibilities | Its verbatim supplies the vocabulary of the withheld passage — "every sounding note in a region", "eligible for harmonic analysis", onset and offset as the note's own edges — without stating the rule. A deriving session that read it would have the oracle's own terms, and the comparison could not distinguish recovery from recall. *(Ruled IN 2026-08-22, from UNPLACED — Ruling 3.)* |
 | D-575 | The Baroque partial-signature convention is handled by DETECTING it | It has the sounding weight overrule the written key signature, which is the oracle's ranking between those two evidence classes. |
 
 **Beside the identities, two further withholdings, both already ruled and both applied:**
@@ -157,14 +165,14 @@ instead.*
 | D-032 | Every confidence crossing a layer boundary is bounded and class-declared | The confidence contract between stages; its "boundary" is a LAYER boundary. |
 | D-114 | The decoder commits its best path; no abstention on the key axis | The key axis's commitment and the abstain counter. |
 | D-207 | The pedal-point class is defined voice-independently | The ornament vocabulary's pedal-point class and which voices it reaches. |
-| D-224 | Joint bass-and-chord scoring requires accumulated regional evidence | When the dormant vertical scorer's joint path switches on. |
+| D-224 | Joint bass-and-chord scoring requires accumulated regional evidence | When the dormant vertical scorer's joint path switches on. *(Reached the list only through an in-word match of `onset` inside `onsetAtRegionStart`.)* |
 | D-262 | The extension increment is chosen by the requesting layer | The bounded-context extension protocol. |
 | D-264 | Extension is an optimisation of load-more-then-rerun | The bounded-context extension's correctness guard. |
 | D-268 | A confidence attaches to a named decision and keeps its identity | The cross-layer confidence contract; "chord-of-slice" appears only as a decision's name. |
 | D-276 | Modal colour is published as un-rounded per-degree counts | What the record publishes about modal colour. |
 | D-280 | Gates read structured fields only | The inference/presentation boundary, which is the boundary its text names. |
 | D-285 | Embellishment is chord-first, never a richer vocabulary | How ornamental tones are handled; it names a segmentation step without saying where its boundaries fall. |
-| D-313 | A confidence map is monotone or it is not fitted | Confidence calibration. |
+| D-313 | A confidence map is monotone or it is not fitted | Confidence calibration. *(Reached the list only through an in-word match of `boundary` inside `combinedBoundary`.)* |
 | D-320 | The absent-root guard is REVERTED and must not be retried | Chord identity — whether a candidate whose root does not sound may win. |
 | D-327 | The root-continuity guard reads the reconstructed inversion credit | One gate of the dormant vertical scorer and what its test reads. |
 | D-329 | Completeness of the candidate list is the priority | Candidate admission for a stretch already cut, not where the cut falls. |
@@ -188,6 +196,7 @@ instead.*
 | D-425 | The uncertainty surface's contract IS the full posterior | What the analysis publishes about its own uncertainty. |
 | D-454 | The grouping layer detects nothing | The grouping layer's scope. |
 | D-455 | A cadence away from a grouping boundary is surfaced as internal | Cadence alignment to punctuation spans — a different span kind. |
+| D-457 | A group truncated by the selection edge is marked as truncated | The grouping layer's marking of a group or key area truncated by the selection edge; it discloses that the slicer distinguishes an artificial clip boundary from a musical one — the existence of a distinction, not its rule (Ruling 3 of the withheld-family sitting). *(Ruled OUT 2026-08-22, from UNPLACED.)* |
 | D-459 | The key-area confidence is a declared margin-class boundary confidence | The grouping layer's published key-area confidence. |
 | D-463 | The temporal signals in the vertical scorer stay where they are | A known structural debt in the dormant vertical scorer; it ranks no evidence class against another. |
 | D-464 | No further progression-level signal in the single-step look-around | Which structure carries progression-level signals. |
@@ -202,6 +211,7 @@ instead.*
 | D-485 | Each picked boundary should carry which cue fired and at what scope | The phrase-boundary primitive's owed provenance. |
 | D-490 | FALSIFIED: no threshold can make the fine-grain override net-positive | That override's viability; "grain" appears only inside "fine-grain". |
 | D-495 | Cadence admission relaxes when the phrase-boundary profile is flat | Cadence admission against the phrase-boundary profile. |
+| D-526 | The joint state's chord axis is SCALE-DEGREE-VALUED | The chord axis's representation as a scale degree; it names a segmenter prior at the head of a gap in order to say it dissolves — the existence of a prior, not a rule (Ruling 3 of the withheld-family sitting). *(Ruled OUT 2026-08-22, from UNPLACED.)* |
 | D-527 | There is NO live non-chord-tone cleaning stage | The emission factor and ornament labelling; it ranks no evidence class and locates no boundary. |
 | D-531 | The hand-built emission is CONFIRMED and the learned replacement is NOT triggered | Whether the scorer is replaced by a trained model. |
 | D-534 | The penalty for a chord tone that never sounds is COUNTED per chord factor | The missing-tone penalty's values. |
@@ -216,16 +226,22 @@ instead.*
 
 ## LIST THREE — UNPLACED: the entry's own text does not settle it
 
-*These three could not be defended either way in one sentence at the entry's own verbatim, so they
-were not guessed. **No recommendation is made on any of them**, in either direction — where the
-record does not settle a question, this surface gathers the facts and makes none. Each says exactly
-what was read. They are currently ADMITTED to the pack; ruling any of them IN removes it.*
+**RULED 2026-08-22 (Ruling 3, the user's word: "B"). THE LIST IS NOW EMPTY.** The three entries it
+carried could not be defended either way in one sentence at the entry's own verbatim, so they were
+not guessed and no recommendation was made on any of them. The user ruled each:
 
-| ID | Title | What was read, and why it does not settle |
-|---|---|---|
-| D-457 | A group truncated by the selection edge is marked as truncated | Its subject is the grouping layer's edge marking — `clipped-by-selection-edge` on a truncated group or key area, and an `extension-cue` tag where a span reaches the edge unclosed. But it cites, in a parenthesis, "L2's artificial-clip-boundary distinction". Whether naming the slicer's distinction between an artificial clip boundary and a musical one discloses part of the ruled boundary specification cannot be decided from this entry's own text. |
-| D-526 | The joint state's chord axis is SCALE-DEGREE-VALUED | Its subject is the chord axis's representation. But among the tonic/degree coupling terms it says dissolve by construction, it names "the segmenter's head-gap tonic prior — the gap map's group 1". Whether naming a segmenter prior that dissolves discloses part of what evidence may decide a boundary cannot be decided from this entry's own text. |
-| D-569 | Collecting, filtering and weighting are THREE separate responsibilities | Its subject is Layer 1's single responsibility — "Collect — and only collect — every sounding note in a region, annotated, losslessly, by ONE path", each note annotated with onset and offset, the layer forbidden to make "any harmonic/segmentation/key decision", and filtering named a distinct explicit decision over "which annotated notes are eligible for harmonic analysis". Whether naming the sounding-note set and a separate eligibility decision discloses part of the ruled slice identity cannot be decided from this entry's own text. |
+- **D-569 → IN**, and it is now the sixteenth row of LIST ONE. Its leak is the oracle's own
+  vocabulary, and the comparison could not distinguish recovery from recall.
+- **D-457 → OUT**, and it is now a row of LIST TWO. It discloses that the slicer distinguishes an
+  artificial clip boundary from a musical one — the existence of a distinction, not its rule.
+- **D-526 → OUT**, and it is now a row of LIST TWO. It names a segmenter prior at the head of a gap
+  in order to say it dissolves — the existence of a prior, not a rule.
+
+*The heading stays because the value stays in the generator's closed three-value vocabulary: DEFAULT
+NOTHING still governs every later candidate, so a future subject's derivation can put an entry here
+again. What was read at each of the three is preserved as that entry's finding in the generator's
+authored table and at `tools/audit/derivation_boot_pack.json` →
+`subjects.harmony-boundary.THE_CANDIDATES_AND_THEIR_VERDICTS` (#12); nothing was deleted.*
 
 ---
 
@@ -247,26 +263,40 @@ never-work-from-memory rule by design.*
 *Each match is published with its exact matched string at
 `tools/audit/derivation_boot_pack.json` → `subjects.harmony-boundary.LEAKS.entries`.* **None of the
 three bears on this subject** — the leak check is about pointing INTO the implementation's own
-documents, not about the oracle. What you are being asked is only whether you want the check to keep
-excluding them.
+documents, not about the oracle.
+
+**RULED 2026-08-22 (Ruling 4, the user's word: "A"): THE CHECK STANDS AS IT IS**, and the three stay
+listed rather than rendered. The two alternatives were declined at the ruling — rendering with the
+matched path redacted, which would be a hand edit to a ratified entry's verbatim inside a generated
+member and a second copy differing from the decisions register (#6); and dropping the `docs/`/`src/`
+path test, which is the test that catches routes into code and is what the phase definition's
+constraint is about.
 
 ---
 
 ## LIST FIVE — the withheld PASSAGE
 
 *Ruled by you on 2026-08-22 (Ruling 1 of `cowork_rulings_2026_08_22_member_two_leak_sitting.md`) and
-applied here. It is listed as a fifth list because it is the one withholding that cuts into a member
-rendered whole.*
+**WIDENED by you the same day** (Ruling 5 of the withheld-family sitting, the user's word: "B"). It
+is listed as a fifth list because it is the one withholding that cuts into a member rendered whole.*
 
 - **Where:** `CLAUDE.md`, the Conventions span — boot-pack member (2) — inside the bullet opening
   `**NEVER WORK FROM MEMORY INSTEAD OF DOCUMENTED FACTS`.
-- **What:** the founding-instance sentence, located by its own text and never by line number: the
-  span opening *"the specification states it explicitly and twice"* and closing *"ranked the
-  STRONGEST evidence)"*.
-- **Why:** it states both halves of the withheld answer for this subject — where a chord boundary
-  falls and which evidence ranks first — and it carries no withheld identity and no withheld
-  document name, so no string check would have caught it.
-- **How it was applied:** the span is cut from the rendered member and the omission is marked in
+- **What, as WIDENED:** the whole founding-instance clause, located by its own text and never by
+  line number: the span opening *"**Founding instance:** on 2026-07-28 Cowork reasoned"* and closing
+  *"which is the general case, not the exception."* **The widened span CONTAINS the span ruled at
+  the member-two-leak sitting** — which opened at *"the specification states it explicitly and
+  twice"* and closed at *"ranked the STRONGEST evidence)"* — so this is ONE authored passage with
+  wider anchors replacing the narrower ones, not a second passage (#6). **The statement of the
+  never-work-from-memory rule itself, above the clause, stays whole in the pack.**
+- **Why the narrower cut was widened:** the application was confirmed as meant, and the residue it
+  left told a deriving session that a documented decision on this subject exists, is more specific
+  than a summary of it, and is contradicted by the implementation — the existence of the ruled
+  answer, disclosed without its content. The wider anchors remove the clause whole.
+- **Why the passage is withheld at all:** it states both halves of the withheld answer for this
+  subject — where a chord boundary falls and which evidence ranks first — and it carries no withheld
+  identity and no withheld document name, so no string check would have caught it.
+- **How it is applied:** the span is cut from the rendered member and the omission is marked in
   place with one line saying that a passage is withheld for this subject, carrying no content and no
   reason. `CLAUDE.md` itself is untouched.
 - **The exact text matched, and its length, are published** at
@@ -280,19 +310,27 @@ member (2) carries no other leak.
 
 ---
 
-## What you are asked to rule
+## What was ruled
 
-**The family, as a whole or per entry.** Concretely:
+**2026-08-22, one list per turn, in the order below. The record is
+`cowork_rulings_2026_08_22_withheld_family_sitting.md`.**
 
-1. **LIST ONE** — is every entry there rightly withheld, and is any of them wrongly withheld?
-2. **LIST TWO** — is any entry there wrongly admitted?
-3. **LIST THREE** — for each of the three, IN or OUT. There is no recommendation on any of them.
-4. **LIST FOUR** — does the leak check keep excluding those three entries?
-5. **LIST FIVE** — the passage is already ruled; it is listed for confirmation that it was applied
-   as you meant.
+1. **LIST ONE — "A".** It stands as authored: all sixteen IN entries are withheld. *(Recorded beside
+   the ruling: D-450 and D-575 are withheld on a reading of the test wider than its words. If the
+   blind session's specification later cites the notated key signature as evidence for a chord
+   boundary, that is read against the pack's silence on these two and is not scored as a method
+   failure.)*
+2. **LIST TWO — "A".** It stands as authored: all OUT entries are admitted, D-339 among them as a
+   principle the derivation is meant to apply across every axis rather than an answer it is meant to
+   find.
+3. **LIST THREE — "B".** D-569 IN; D-457 and D-526 OUT. The list is now empty.
+4. **LIST FOUR — "A".** The leak check stands unchanged; the three stay listed and not rendered.
+5. **LIST FIVE — "B".** The application is confirmed as meant, **and** the withheld passage is
+   widened to the whole founding-instance clause.
 
-A ruling on the lists is enough; the generator's authored table is then corrected and the pack
-re-rendered, and the correction is one commit.
+**The two rulings that moved the artifact are 3 and 5, and this commit applies them:** the
+generator's authored table carries D-569 IN, D-457 and D-526 OUT, and one withheld passage at the
+widened anchors; the pack is re-rendered from it and its check is green.
 
 ## What the ruling does NOT do
 

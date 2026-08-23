@@ -313,15 +313,11 @@ make it a delegation TARGET. This paragraph is what makes it one.)*
   first); a ruling → the ratified `cowork_*` decision document and its dated amendments (and, once
   it exists, the decisions register, OI-208); current state and baselines → `STATUS.md` and
   `CLAUDE.md` gate block (A); an open issue → the `OPEN_ITEMS.md` INDEX and its detail file;
-  what the code does → the code. **Founding instance:** on 2026-07-28 Cowork reasoned about note
-  collection from `ARCHITECTURE.md` §2.15 and the factorization document without opening the
-  Layer-2 specification, and reported the position as ambiguous; 
+  what the code does → the code. 
 
   [A PASSAGE IS WITHHELD FROM THIS PACK FOR THIS SUBJECT.]
 
-  , which turned an "ambiguous spec, narrowed in implementation" reading into a
-  documented decision the implementation contradicts. The primary source was more specific than
-  the memory of it, which is the general case, not the exception.
+  
 - **No self-invented labels, abbreviations, numbering schemes, or jargon** — in documents,
   register rows, commit messages, and conversation alike. Use the name a thing already has
   in the repository; if it has none, describe it in plain words. (User-directed, repeatedly;

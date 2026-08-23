@@ -268,21 +268,22 @@ WITHHELD: dict[str, dict] = {
                 "file": "CLAUDE.md",
                 "member": 2,
                 "scope_anchor": "**NEVER WORK FROM MEMORY INSTEAD OF DOCUMENTED FACTS",
-                "opens": "the specification states it explicitly and twice",
-                "closes": "ranked the STRONGEST evidence)",
+                "opens": "**Founding instance:** on 2026-07-28 Cowork reasoned",
+                "closes": "which is the general case, not the exception.",
                 "finding": ("Ruling 1 of "
-                            "`cowork_rulings_2026_08_22_member_two_leak_sitting.md`: the "
-                            "founding instance of the never-work-from-memory rule states both "
-                            "halves of the held-out test's withheld answer for this subject — "
-                            "where a chord boundary falls and which evidence ranks first — "
-                            "inside member (2), which is rendered whole and whose leak check is "
-                            "scoped to members (5) and (6)."),
+                            "`cowork_rulings_2026_08_22_member_two_leak_sitting.md`, widened by "
+                            "Ruling 5 of "
+                            "`cowork_rulings_2026_08_22_withheld_family_sitting.md`: the "
+                            "founding-instance clause of the never-work-from-memory rule states "
+                            "both halves of the held-out test's withheld answer for this "
+                            "subject, and its remainder tells a deriving session that a "
+                            "documented decision on the subject exists and is contradicted by "
+                            "the implementation."),
                 "date": DATE,
-                "reason": ("The passage carries no withheld identity string and no withheld "
-                           "document name, so a string check would not catch it; withholding it "
-                           "as an authored input is the mechanism the record already ruled for "
-                           "the same shape of defect, and it measures independence at the "
-                           "artifact rather than asserting it (#19)."),
+                "reason": ("The narrower cut left a residue that discloses the existence of the "
+                           "ruled answer and the implementation's disagreement with it; one "
+                           "authored passage with wider anchors removes the clause whole, and "
+                           "the statement of the rule itself, above it, stays in the pack."),
             },
         ],
         # The identity the ruling names in terms; every other IN verdict below joins it.
@@ -430,6 +431,14 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "second arm.",
                   "It is a rule that decides which of two segmentations is committed — where a "
                   "boundary falls — and it is homed in the oracle's own document."),
+        "D-569": (VERDICT_IN,
+                  "Ruling 3 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`, ruled by "
+                  "the user over an UNPLACED verdict: its verbatim supplies the vocabulary of "
+                  "the withheld passage — 'every sounding note in a region', 'eligible for "
+                  "harmonic analysis', onset and offset as the note's own edges — without "
+                  "stating the rule.",
+                  "A deriving session that read it would have the oracle's own terms, and the "
+                  "comparison could not distinguish recovery from recall."),
         "D-575": (VERDICT_IN,
                   "Its verbatim rules that the Baroque partial signature is handled by DETECTING "
                   "'the flattened sixth degree pervasive across the sounding weight and "
@@ -438,33 +447,12 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "It states the sounding weight overruling the notated key signature, which is "
                   "the withheld oracle's own ranking between those two evidence classes."),
 
-        # ── UNPLACED — the entry's own text does not settle it; what was read is stated ────────
-        "D-457": (VERDICT_UNPLACED,
-                  "Read: its verbatim's subject is the grouping layer's edge marking — "
-                  "'clipped-by-selection-edge' on a group or key area truncated by the selection "
-                  "edge, and an 'extension-cue' tag where a span reaches the edge with no closing "
-                  "boundary and no cadence — and it cites, in a parenthesis, 'L2's "
-                  "artificial-clip-boundary distinction'.",
-                  "I cannot decide from the entry's own text whether naming the slicer's "
-                  "distinction between an artificial clip boundary and a musical one discloses "
-                  "part of the ruled boundary specification."),
-        "D-526": (VERDICT_UNPLACED,
-                  "Read: its verbatim's subject is the joint state's chord axis being "
-                  "scale-degree-valued, and among the tonic/degree coupling terms it says "
-                  "dissolve by construction it names 'the segmenter's head-gap tonic prior — the "
-                  "gap map's group 1'.",
-                  "I cannot decide from the entry's own text whether naming a segmenter prior "
-                  "that dissolves discloses part of what evidence may decide a boundary."),
-        "D-569": (VERDICT_UNPLACED,
-                  "Read: its verbatim makes Layer 1's single responsibility 'Collect — and only "
-                  "collect — every sounding note in a region, annotated, losslessly, by ONE "
-                  "path', annotates each note with onset and offset, forbids that layer to make "
-                  "'any harmonic/segmentation/key decision', and names filtering — 'which "
-                  "annotated notes are eligible for harmonic analysis' — a distinct, explicit "
-                  "decision.",
-                  "I cannot decide from the entry's own text whether naming the sounding-note set "
-                  "and a separate eligibility decision discloses part of the ruled slice "
-                  "identity."),
+        # ── UNPLACED — NONE.  The three entries this table carried UNPLACED were ruled by the
+        #    user on 2026-08-22, Ruling 3 of
+        #    `cowork_rulings_2026_08_22_withheld_family_sitting.md`: D-569 IN, D-457 and D-526
+        #    OUT.  Each now stands in its own class here, carrying what was read as its finding
+        #    (#12).  The value stays in the vocabulary above because DEFAULT NOTHING governs
+        #    every later candidate exactly as before. ──────────────────────────────────────────
 
         # ── OUT — what each bears on instead ──────────────────────────────────────────────────
         "D-032": (VERDICT_OUT,
@@ -643,6 +631,16 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim rules that a cadence away from a grouping boundary is surfaced as "
                   "internal, never snapped to the nearest boundary and never discarded.",
                   "It bears on cadence alignment to punctuation spans — a different span kind."),
+        "D-457": (VERDICT_OUT,
+                  "Read: its verbatim's subject is the grouping layer's edge marking — "
+                  "'clipped-by-selection-edge' on a group or key area truncated by the selection "
+                  "edge, and an 'extension-cue' tag where a span reaches the edge with no closing "
+                  "boundary and no cadence — and it cites, in a parenthesis, 'L2's "
+                  "artificial-clip-boundary distinction'.",
+                  "The grouping layer's marking of a group or key area truncated by the selection "
+                  "edge; it discloses that the slicer distinguishes an artificial clip boundary "
+                  "from a musical one — the existence of a distinction, not its rule (Ruling 3 of "
+                  "the withheld-family sitting)."),
         "D-459": (VERDICT_OUT,
                   "Its verbatim declares the key-area confidence a Class-M boundary confidence "
                   "whose input is the declared key confidence rather than the grading "
@@ -709,6 +707,14 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "featureless — relax cadence admission and scale the vote weight down rather "
                   "than starve.",
                   "It bears on cadence admission against the phrase-boundary profile."),
+        "D-526": (VERDICT_OUT,
+                  "Read: its verbatim's subject is the joint state's chord axis being "
+                  "scale-degree-valued, and among the tonic/degree coupling terms it says "
+                  "dissolve by construction it names 'the segmenter's head-gap tonic prior — the "
+                  "gap map's group 1'.",
+                  "The chord axis's representation as a scale degree; it names a segmenter prior "
+                  "at the head of a gap in order to say it dissolves — the existence of a prior, "
+                  "not a rule (Ruling 3 of the withheld-family sitting)."),
         "D-527": (VERDICT_OUT,
                   "Its verbatim rules that no live non-chord-tone cleaning stage exists — each "
                   "tone is emitted by category inside the one decode, conditioned on "

@@ -105,17 +105,17 @@
         "design_intent_class": 244,
         "candidates": 75,
         "verdicts": {
-          "IN": 15,
-          "OUT": 57,
-          "UNPLACED": 3
+          "IN": 16,
+          "OUT": 59,
+          "UNPLACED": 0
         },
-        "withheld_identities_authored": 15,
+        "withheld_identities_authored": 16,
         "withheld_identities_derived": 17,
-        "withheld_identities_total": 32,
+        "withheld_identities_total": 33,
         "withheld_documents": 1,
         "withheld_passages": 1,
         "leaks": 3,
-        "design_intent_entries_rendered": 209,
+        "design_intent_entries_rendered": 208,
         "defect_type_rows_rendered": 25,
         "files_in_the_pack": 7
       },
@@ -221,6 +221,13 @@
             "reason": "It is a rule that decides which of two segmentations is committed — where a boundary falls — and it is homed in the oracle's own document."
           },
           {
+            "id": "D-569",
+            "title": "Collecting, filtering and weighting are THREE separate responsibilities; the collection layer collects and annotates, and does nothing else",
+            "finding": "Ruling 3 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`, ruled by the user over an UNPLACED verdict: its verbatim supplies the vocabulary of the withheld passage — 'every sounding note in a region', 'eligible for harmonic analysis', onset and offset as the note's own edges — without stating the rule.",
+            "date": "2026-08-22",
+            "reason": "A deriving session that read it would have the oracle's own terms, and the comparison could not distinguish recovery from recall."
+          },
+          {
             "id": "D-575",
             "title": "The Baroque partial-signature convention is handled by DETECTING it and reinterpreting the signature one step, not by widening the candidate family for every score",
             "finding": "Its verbatim rules that the Baroque partial signature is handled by DETECTING 'the flattened sixth degree pervasive across the sounding weight and dominating its natural form' and reinterpreting the written signature one step accordingly.",
@@ -240,14 +247,14 @@
             "file": "CLAUDE.md",
             "member": 2,
             "scope_anchor": "**NEVER WORK FROM MEMORY INSTEAD OF DOCUMENTED FACTS",
-            "opens": "the specification states it explicitly and twice",
-            "closes": "ranked the STRONGEST evidence)",
-            "the_text_matched": "the specification states it\n  explicitly and twice (`ARCHITECTURE.md:1045-1053`, slice identity IS the eligible sounding-note\n  set with releases as boundaries; `:3134-3141`, actual sounding notes ranked the STRONGEST\n  evidence)",
-            "characters_omitted": 229,
+            "opens": "**Founding instance:** on 2026-07-28 Cowork reasoned",
+            "closes": "which is the general case, not the exception.",
+            "the_text_matched": "**Founding instance:** on 2026-07-28 Cowork reasoned about note\n  collection from `ARCHITECTURE.md` §2.15 and the factorization document without opening the\n  Layer-2 specification, and reported the position as ambiguous; the specification states it\n  explicitly and twice (`ARCHITECTURE.md:1045-1053`, slice identity IS the eligible sounding-note\n  set with releases as boundaries; `:3134-3141`, actual sounding notes ranked the STRONGEST\n  evidence), which turned an \"ambiguous spec, narrowed in implementation\" reading into a\n  documented decision the implementation contradicts. The primary source was more specific than\n  the memory of it, which is the general case, not the exception.",
+            "characters_omitted": 690,
             "marked_in_place_with": "[A PASSAGE IS WITHHELD FROM THIS PACK FOR THIS SUBJECT.]",
-            "finding": "Ruling 1 of `cowork_rulings_2026_08_22_member_two_leak_sitting.md`: the founding instance of the never-work-from-memory rule states both halves of the held-out test's withheld answer for this subject — where a chord boundary falls and which evidence ranks first — inside member (2), which is rendered whole and whose leak check is scoped to members (5) and (6).",
+            "finding": "Ruling 1 of `cowork_rulings_2026_08_22_member_two_leak_sitting.md`, widened by Ruling 5 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`: the founding-instance clause of the never-work-from-memory rule states both halves of the held-out test's withheld answer for this subject, and its remainder tells a deriving session that a documented decision on the subject exists and is contradicted by the implementation.",
             "date": "2026-08-22",
-            "reason": "The passage carries no withheld identity string and no withheld document name, so a string check would not catch it; withholding it as an authored input is the mechanism the record already ruled for the same shape of defect, and it measures independence at the artifact rather than asserting it (#19)."
+            "reason": "The narrower cut left a residue that discloses the existence of the ruled answer and the implementation's disagreement with it; one authored passage with wider anchors removes the clause whole, and the statement of the rule itself, above it, stays in the pack."
           }
         ],
         "derived_cross_reference_additions": {
@@ -1692,10 +1699,10 @@
               "in_context": "…roup reaches the edge with neither a closing boundary nor a cadence, it carries a cue saying that …"
             }
           ],
-          "verdict": "UNPLACED",
+          "verdict": "OUT",
           "finding": "Read: its verbatim's subject is the grouping layer's edge marking — 'clipped-by-selection-edge' on a group or key area truncated by the selection edge, and an 'extension-cue' tag where a span reaches the edge with no closing boundary and no cadence — and it cites, in a parenthesis, 'L2's artificial-clip-boundary distinction'.",
           "date": "2026-08-22",
-          "reason": "I cannot decide from the entry's own text whether naming the slicer's distinction between an artificial clip boundary and a musical one discloses part of the ruled boundary specification."
+          "reason": "The grouping layer's marking of a group or key area truncated by the selection edge; it discloses that the slicer distinguishes an artificial clip boundary from a musical one — the existence of a distinction, not its rule (Ruling 3 of the withheld-family sitting)."
         },
         {
           "id": "D-459",
@@ -2116,10 +2123,10 @@
               "in_context": "…ndition, `applyTonicPriorToSparseChord`, the segmenter's head-gap tonic prior — the gap map's gro…"
             }
           ],
-          "verdict": "UNPLACED",
+          "verdict": "OUT",
           "finding": "Read: its verbatim's subject is the joint state's chord axis being scale-degree-valued, and among the tonic/degree coupling terms it says dissolve by construction it names 'the segmenter's head-gap tonic prior — the gap map's group 1'.",
           "date": "2026-08-22",
-          "reason": "I cannot decide from the entry's own text whether naming a segmenter prior that dissolves discloses part of what evidence may decide a boundary."
+          "reason": "The chord axis's representation as a scale degree; it names a segmenter prior at the head of a gap in order to say it dissolves — the existence of a prior, not a rule (Ruling 3 of the withheld-family sitting)."
         },
         {
           "id": "D-527",
@@ -2332,10 +2339,10 @@
               "in_context": "…6-06-21 **Collect — and only collect — every sounding note in a region, annotated, losslessly, by …"
             }
           ],
-          "verdict": "UNPLACED",
-          "finding": "Read: its verbatim makes Layer 1's single responsibility 'Collect — and only collect — every sounding note in a region, annotated, losslessly, by ONE path', annotates each note with onset and offset, forbids that layer to make 'any harmonic/segmentation/key decision', and names filtering — 'which annotated notes are eligible for harmonic analysis' — a distinct, explicit decision.",
+          "verdict": "IN",
+          "finding": "Ruling 3 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`, ruled by the user over an UNPLACED verdict: its verbatim supplies the vocabulary of the withheld passage — 'every sounding note in a region', 'eligible for harmonic analysis', onset and offset as the note's own edges — without stating the rule.",
           "date": "2026-08-22",
-          "reason": "I cannot decide from the entry's own text whether naming the sounding-note set and a separate eligibility decision discloses part of the ruled slice identity."
+          "reason": "A deriving session that read it would have the oracle's own terms, and the comparison could not distinguish recovery from recall."
         },
         {
           "id": "D-575",
@@ -2569,7 +2576,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 59356
+          "characters": 58895
         },
         {
           "member": 3,
@@ -2612,9 +2619,9 @@
           "title": "The ratified design intent, CUT for this subject",
           "source": "tools/audit/rulings_sort_classification.json + tools/audit/decisions/backbone_decisions.json",
           "rendered_from": "GENERATED — the DESIGN-INTENT class less the withheld family, four fields per entry",
-          "entries_rendered": 209,
+          "entries_rendered": 208,
           "leak_checked": true,
-          "characters": 254036
+          "characters": 252228
         },
         {
           "member": 6,
