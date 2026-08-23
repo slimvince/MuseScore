@@ -16830,3 +16830,57 @@ a later batch.**
 *Provenance: CC, 2026-08-23, executing `cc_instruction_withheld_family_correction.md` under Rulings
 3 and 5 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`. Every commit hash above was
 resolved at the object before it was written. The end state is deliberately not asserted here.*
+
+---
+
+## ★ THE END STATE — the guard set run at the tree the close left (the one further commit)
+
+**The one further commit the E-ordering rule requires.** The run below was taken **after** the
+commit carrying the close existed, so its values could not be written into that commit. It is run in
+write mode and READ.
+
+**Registered expectation E2, graded at the artifact rather than at an impression.** The verdict set
+at `tools/audit/guard_state.json` → `summary` is **every run check passing except [[OI-372]]'s
+tool** — the one standing red, unchanged all batch — with **ZERO STOP verdicts**, and **the guard
+population at the value A4 predicted for it: UNCHANGED, because this batch added no tool.** Every
+figure is read at that artifact's own fields and none is restated here (**D-431**). The guard
+classification was re-run after it, as its own STOP requires, and it **re-derives** — so no member
+entered or left it. *(A reader will find the string `STOP` in the guard-state file; every occurrence
+is descriptive text, a passing check's standing stop-and-report line, or the failing tool's own
+output. Zero STOP **verdicts** is the claim, and it is the field that carries it.)*
+
+**THE GUARD POPULATION DID NOT MOVE AT ALL THIS BATCH.** Nothing entered it and nothing left it —
+which is what a batch that corrects an authored table rather than adding a mechanism should produce,
+and it is the prediction A4 made before the first edit.
+
+**★ NO RED APPEARED THAT THIS BATCH DID NOT CAUSE AND CLEAR, AND THERE WERE THREE.** The two
+start-state reds are down to one: the membership check was cleared at Task 0 by the act that tracked
+this dispatch's own untracked input, and the session-start read measurement's red — caused at Task 2
+by the `STATUS.md` entries the close writes — was cleared in the same task by regenerating it. **The
+third was this batch's own doing and is declared:** the guard-classification check reported STALE
+between the pre-edit guard run and Task 1, because that run was taken in write mode and rewrote the
+artifact the classification derives from; it cleared at Task 1's own guard run. Every other red this
+batch caused was inside a single commit's own act and never left it.
+
+**★ THE ONLY MOVEMENT IN THE GUARD-STATE ARTIFACT SINCE THE CLOSE COMMIT IS TWO TOOLS' OWN PRINTED
+OUTPUT**, measured against that commit's blob rather than asserted: the forward bound's moved-
+character line and the session-start read measurement's own figures, both reporting the tree Task 2
+left, both PASSING. **No verdict moved.**
+
+**★ A READER WHO OPENS THE CLOSE COMMIT'S OWN COPY OF `guard_state.json` WILL FIND A DIFFERENT
+SUMMARY IN ITS OUTPUT LINES, AND THAT IS THE E-ORDERING RULE WORKING RATHER THAN A DISCREPANCY.**
+That copy records a mid-batch run. It cannot record the end state, because the end state is a
+property of the tree that commit LEFT, and a commit cannot contain a run over itself.
+
+**★ THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** The sentence at §10 was written at
+the close and was true of it. Taken over the batch including this further commit the answer is
+unchanged in kind and larger by one item: the guard-state artifact was rewritten again, and that is
+what running the set does. **Nothing else was produced, nothing this batch touched lies outside the
+subjects of its own ordered acts, and NO SESSION WAS BOOTED FROM THE PACK at any point.**
+
+*Provenance: CC, 2026-08-23, appended in the one further commit after the close commit
+`1db5cf1e9093142dfe430e5ba9cd571b585496aa` existed — a commit whose own identity this paragraph
+therefore cannot contain. Every value above was read from the run recorded in
+`tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference
+between that artifact and the close commit's own blob; no value here was carried forward from an
+earlier run or inferred from a summary.*

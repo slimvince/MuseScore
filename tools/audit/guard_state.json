@@ -974,7 +974,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 2, 3,226 characters",
+        "  entries moved: 2, 3,883 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],
@@ -1117,15 +1117,15 @@
         "the session-start read measurement re-derives",
         "  rule (a) points at tools/audit/nongating_apparatus_rows.json -> ★_the_live_gating_answer -> gating_ids",
         "    CLAUDE.md                                                                155067",
-        "    STATUS.md                                                                  6481",
+        "    STATUS.md                                                                  6584",
         "    DECISIONS.md                                                             126774",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids     2748",
-        "  total at the tree 291070",
+        "  total at the tree 291173",
         "  further spans of the same artifact, NOT counted into the read:",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows    60734",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one     4867",
-        "  vs 1760d9a4a8: 367121 -> 291070  (-76051, -20.72%)",
-        "  vs 594074e1e1: 296832 -> 291070  (-5762, -1.94%)"
+        "  vs 1760d9a4a8: 367121 -> 291173  (-75948, -20.69%)",
+        "  vs 594074e1e1: 296832 -> 291173  (-5659, -1.91%)"
       ],
       "stderr": [],
       "what_it_checks": "what an ordinary session reads at session start, in characters, measured at the tree and at the recorded earlier commit's git object. It is the arc's own subject made checkable: the pruning direction of 2026-08-16 is about this number, and every act in the arc has had to state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule (a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the artifact it names, so a pointer that has stopped resolving fails on the day it stops rather than being hidden inside a number. It goes red when a governing surface changes, which is the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the clause that makes it one so the authored half is checkable by reading three clauses; and nothing about whether the read is small enough, which is [[OI-370]]'s own subject"
