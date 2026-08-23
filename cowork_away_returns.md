@@ -17502,3 +17502,55 @@ those acts, and NO SESSION WAS BOOTED FROM THE PACK.**
 *Provenance: Claude Code, 2026-08-23, executing `cc_instruction_brief_ratification_and_readme_boundary.md`.
 Every commit hash above was resolved at the object before it was written. TOWARDS the ultimate
 objective and TOWARDS the guiding principles.*
+
+## ★ THE END STATE — the guard set run at the tree the close left (the one further commit)
+
+**The one further commit the E-ordering rule requires.** The run below was taken **after** the commit
+carrying the close existed, so its values could not be written into that commit. It is run in write
+mode and READ, its own `--check` was re-run over it afterwards and **re-derives**, and the guard
+classification was re-run after that, as its own STOP requires, and **re-derives** too.
+
+**Registered expectation E2, graded at the artifact rather than at an impression.** The verdict set at
+`tools/audit/guard_state.json` → `summary` is **every run check passing except [[OI-372]]'s tool** —
+the one standing red, unchanged all batch — with **ZERO STOP verdicts**, established by reading
+**every** `verdict` field of the artifact one by one rather than the summary alone; and **the guard
+population is at the value A4 predicted for it: UNCHANGED, because this batch added no tool.** Every
+figure is read at that artifact's own fields and none is restated here (**D-431**).
+
+**THE GUARD POPULATION DID NOT MOVE AT ALL THIS BATCH.** Nothing entered it and nothing left it —
+which is what a batch that changes one rendering template and lands four documents should produce,
+and it is the prediction A4 made before the first edit. `guard_classification.json`,
+`epoch_write_path.json` and `recognizer_establishment_sort.json` never appear in the enumerated
+changed-path set at any point in the batch, so no member entered or left any of them either.
+
+**★ NO RED APPEARED THAT THIS BATCH DID NOT CAUSE AND CLEAR, AND THERE WERE TWO.** The two
+start-state reds are down to one: the membership check was cleared at Task 0 by the act that tracked
+this dispatch's own untracked inputs, and the session-start read measurement's red — caused at Task 2
+by the `STATUS.md` entries the close writes — was cleared in the same task by regenerating it. The
+boot-pack generator's own check was red only between the template edit and the re-render, inside
+Task 1's single commit, and was never observed red, the two acts being consecutive.
+
+**★ THE ONLY MOVEMENT IN THE GUARD-STATE ARTIFACT SINCE THE CLOSE COMMIT IS TWO TOOLS' OWN PRINTED
+OUTPUT**, measured against that commit's blob rather than asserted: the forward bound's
+moved-character line — which now reports THIS batch's move rather than the previous one's, the tool
+having been re-aimed at Task 2 — and the session-start read measurement's own figures, reporting the
+`STATUS.md` the close left. Both tools PASS. **No verdict moved.**
+
+**★ A READER WHO OPENS THE CLOSE COMMIT'S OWN COPY OF `guard_state.json` WILL FIND DIFFERENT OUTPUT
+LINES, AND THAT IS THE E-ORDERING RULE WORKING RATHER THAN A DISCREPANCY.** That copy is Task 1's
+run, taken before Task 2 re-aimed the forward bound and before the `STATUS.md` entries were written.
+It cannot record the end state, because the end state is a property of the tree the close commit
+LEFT, and a commit cannot contain a run over itself.
+
+**★ THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** The sentence at §10 was written at the
+close and was true of it. Taken over the batch including this further commit the answer is unchanged
+in kind and larger by one item: the guard-state artifact was rewritten again, and that is what
+running the set does. **Nothing else was produced, nothing this batch touched lies outside the
+subjects of its own ordered acts, and NO SESSION WAS BOOTED FROM THE PACK at any point.**
+
+*Provenance: CC, 2026-08-23, appended in the one further commit after the close commit
+`48a272d90016d8dfae58a42167c6f6682b95d44f` existed — a commit whose own identity this paragraph
+therefore cannot contain. Every value above was read from the run recorded in
+`tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference between
+that artifact and the close commit's own blob; no value here was carried forward from an earlier run
+or inferred from a summary.*
