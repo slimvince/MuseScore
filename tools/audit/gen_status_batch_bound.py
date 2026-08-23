@@ -60,14 +60,14 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "cf00b6af7b89a6599c610b31bc9f47b639ccb217"
+BASE_COMMIT = "a3ed95077697de6f75e46ecc0a0183346e6e823e"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_withheld_family_correction.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_second_passage_withheld.md"
 
 ACT_DATE = "2026-08-23"
-DISPATCH = "cc_instruction_second_passage_withheld.md"
+DISPATCH = "cc_instruction_brief_ratification_and_readme_boundary.md"
 TASK = "Task 2"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
@@ -115,6 +115,9 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_withheld_family_correction.md, Task 2",
      "base_commit": "72534e5da90e5924f889f90a01547d34194c1951",
      "the_then_previous_batch": "cc_instruction_pilot_preparation_withheld_family.md"},
+    {"executing_act": "cc_instruction_second_passage_withheld.md, Task 2",
+     "base_commit": "cf00b6af7b89a6599c610b31bc9f47b639ccb217",
+     "the_then_previous_batch": "cc_instruction_withheld_family_correction.md"},
 ]
 
 ARCHIVE_HEADER = (

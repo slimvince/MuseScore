@@ -17207,3 +17207,298 @@ therefore cannot contain. Every value above was read from the run recorded in
 `tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference
 between that artifact and the close commit's own blob; no value here was carried forward from an
 earlier run or inferred from a summary.*
+
+---
+
+# ═══ THE BRIEF RULED AND THE PACK'S BOUNDARY TRUE: NOTHING STANDS BEFORE THE BLIND SESSION (dispatch `cc_instruction_brief_ratification_and_readme_boundary.md`, performed 2026-08-23) ═══
+
+> **★ THIS CLOSE DOES NOT ASSERT THE END STATE, AND THE OMISSION IS DELIBERATE.** The end-state
+> guard run is taken **after** the commit carrying this close exists, so its values cannot be
+> written into that commit. They land in **ONE FURTHER COMMIT**, appended beneath this section. No
+> row, cell or sentence anywhere in this section asserts what the guard set says at the tree this
+> close leaves.
+>
+> **★ ALL THREE TASKS RAN. NO STOP-AND-REPORT RULE FIRED.** No `src/` edit, no golden, **no test
+> changed, moved or run**, nothing under `tools/corpus/` or `tools/robust_stop/` moved, **no
+> measurement of the ANALYSIS built, designed, scoped or run**, no design, no repair. **NO SESSION
+> WAS BOOTED FROM THE PACK — no derivation, no comparison, no oracle opened, and no pilot act at
+> all.** **No boot-list member edited at its home; no register entry, sort artifact or register
+> source touched; `CLAUDE.md`, `ARCHITECTURE.md`, `DEFECT_TYPES.md`,
+> `cowork_design_doc_template.md`, `cowork_audit_protocol.md`, the phase-definition surface,
+> `DECISIONS.md`, `OPEN_ITEMS.md` and `docs/scoring_model.md` are byte-unchanged.** **NO open-items
+> row created, flipped or discarded.** **No finding number allocated; the series stands at F88.**
+> **No line of the brief was written by this session** — it was landed as the writing side
+> delivered it. The report is `cc_report_brief_ratification_and_readme_boundary.md`, and no figure
+> of it is restated here (**D-431**).
+
+## 1. The chain, named as far as a sentence can name it
+
+**TWO commits so far, both pushed to `origin/master` and both verified at the object by explicit
+hash:** `2fddf5767f819eb4251de5923bc8946c020ec880` (Task 0 — the sitting record, this dispatch and
+the refreshed brief landed, the membership regenerated) →
+`a3ed95077697de6f75e46ecc0a0183346e6e823e` (Task 1 — the one read-me-template wording edit, the
+re-render and the guard run, in ONE commit).
+
+**★ ONE ACT INSIDE TASK 0 IS DECLARED HERE BECAUSE IT MOVED A HASH.** The Task 0 commit was written
+twice: the first attempt carried a mangled subject — a PowerShell here-string form passed to a POSIX
+shell, which left two stray `@` characters wrapping the subject — and it was **amended before
+anything was pushed**, giving the hash above. The amended commit's subject is the dispatch's exact
+prescribed wording, read back at the object; its tree, its parent and its five paths are the ones
+the dispatch names. The discarded first attempt was never pushed and reached no reader.
+
+**THE THIRD COMMIT IS THIS CLOSE, AND A SENTENCE CANNOT NAME ITS OWN HASH.** It carries the report,
+the `STATUS.md` pointer entries, the ruled forward-bound move, the regenerated session-start read
+measurement and this section. **AND A FOURTH FOLLOWS IT**, carrying the end-state guard run, for the
+reason stated at the head of this section.
+
+## 2. The headline — the pack's boundary is now TRUE of the session the brief dispatches, and the brief is RULED
+
+The user ruled three things on 2026-08-23 (the record is
+`cowork_rulings_2026_08_23_brief_validation_sitting.md`; the user's words were "C", "Yes, as §3 is
+written", and the fixed output name), and this batch lands all three and applies the first.
+
+**The conflict the sitting found.** The pack's read-me carried an ABSOLUTE boundary — that the pack
+plus the read-me are *the whole of your read*, and that *nothing outside this directory is opened at
+all* — worded before the deriving-side, staged-file and research rulings existed. Read literally it
+forbids the very inputs those later rulings grant, so a session obeying the read-me would refuse its
+own ruled inputs and a session obeying its brief would override its own pack's boundary on its own
+judgment.
+
+**What Task 1 did about it, and it is ONE rendering edit.** The read-me's whole-of-your-read sentence
+is now bounded to THIS REPOSITORY, with the brief that dispatched the session excepted; the
+NOT-opened list stands with the same exception written into it in its own words; and the boundary
+paragraph now CLOSES by saying that what the session may read beyond the pack — its brief, score and
+analysis files its brief stages to it by name, and published research — is stated by the brief and by
+nothing in that directory. **The false absolute is gone rather than qualified.**
+
+**The wording is GENERIC and names nothing**, which is what the ruling asks for: it carries no
+subject, no brief file name, no staged file name, no ruling record, and says nothing further about
+what was withheld. It is true for every future subject the generator renders.
+
+**The mechanism is UNCHANGED.** The ONLY generator lines that moved are the read-me template's. The
+authored `WITHHELD` and verdict tables, the candidate criterion, the leak check, `withhold_passage()`,
+the marker and every STOP are untouched, and **no verdict is re-graded**.
+
+**AND THE MANIFEST RE-RENDERED BYTE-IDENTICAL** — a measured outcome, not a prediction. A5 allowed a
+difference confined to what derives from the read-me's own content; the manifest carries no record of
+the read-me's bytes at all (its `the_members_as_rendered` block covers the six MEMBERS, and the
+read-me is rendered outside it), so the allowed difference is empty and the artifact is unchanged.
+**Every field of `counted` is therefore unmoved by construction, and no verdict row, identity,
+document, passage, leak or member record appears in any difference.**
+
+## 3. The declared start state matched, and the tree that was actually met
+
+The dispatch declared two failing checks with their causes and made a third failing verdict a STOP.
+**Measured before the first edit, with the whole guard set run in CHECK mode as the dispatch fixes:
+exactly the two declared** — [[OI-372]]'s tool, the one standing red, and the evidence-pin membership
+check reporting its artifact STALE, caused by this dispatch's own untracked ruling record.
+`gen_guard_state.py --check` opened "STALE vs the run" for the same cause, which the dispatch
+declares is not a third failing check. **Zero STOP verdicts.** `gen_guard_classification.py --check`
+was run separately, as its own STOP requires, and **passed**.
+
+**A1 held, and the whole tracked-modification population was ENUMERATED rather than sampled**, with
+the sanctioned enumeration tool: exactly TWO tracked modifications, and they are the two the dispatch
+names. `cowork_handoff.md`'s difference against the tip is ONE hunk — the forty-seventh block
+inserted at the file's fourth line with the forty-sixth heading marked superseded as the entry point,
+one deletion and it is that heading. **The refreshed brief's difference is FIVE hunks and every one
+of them lies inside a region A1 names** — the banner, §7's output-name sentence, §8's heading with
+its (P2) point, §8's (P4) and (P5) points, and §9's appended amendment note. **No hunk falls outside
+those regions, so §§0–6 and every other line are byte-unchanged**, established at the diff rather
+than assumed. Both named untracked paths present and absent from the tip. **No other tracked path is
+modified anywhere in the tree.**
+
+**No stale index lock was met**, and staging was refused by nothing; the **D-669** remedy the
+batch-before-last performed was neither needed nor taken. Recorded because a hazard reported once
+reads as standing until someone says it did not repeat.
+
+## 4. What needs the user — NOTHING from this batch
+
+No question is put and no surface is delivered. **The brief is RULED, its every §8 point is closed,
+and the pack's read-me no longer forbids the inputs the brief grants.** The next act is the **BLIND
+DERIVATION by a FRESH COWORK SESSION** (Ruling 1 of
+`cowork_rulings_2026_08_22_deriving_side_sitting.md`) — **the user opens it, and nothing stands
+before it.** Its output lands under the name Ruling 3 fixed and is committed by the next ordinary
+dispatch; the session itself commits nothing.
+
+## 5. The predictions, graded at the artifacts, route by route and field by field
+
+**A1 — the working tree, stated by CONTENT: HELD**, item by item, at content-addressed objects, with
+the whole tracked population enumerated and the brief's own difference read hunk by hunk (§3).
+
+**A2 — one red remains, zero STOPs: HELD.** The reds this batch caused were the declared membership
+red, cleared at Task 0 by the very act that tracked this dispatch's own untracked inputs, and the
+session-start read measurement's red at Task 2, cleared in the same task by regenerating it. The
+boot-pack generator's own `--check` was red only between the template edit and the re-render, inside
+Task 1's single commit — and in fact never observed red, the two acts being consecutive.
+
+**A3 — the membership regeneration, from EVERY route: HELD.** Route A moved by exactly the predicted
+amount and added exactly the predicted name. Route B added nothing: the landed record carries the
+word that route matches on nowhere in its text, checked at the record itself with the file tools.
+Route C is unmoved — this batch adds no measurement tool. **AND NO FURTHER DIFFERENCE AROSE AT ALL:**
+the artifact's WHOLE difference against the committed blob is the two hunks route A predicts, measured
+before the regeneration was accepted, with the difference written to an absolute scratch path outside
+the repository and read with the file tools.
+
+**A4 — the guard registry: HELD.** No tool was added. The population is UNCHANGED and the failing set
+is unchanged at [[OI-372]]'s tool. `guard_classification.json`, `epoch_write_path.json` and
+`recognizer_establishment_sort.json` are **byte-unchanged** — they do not appear in the enumerated
+changed-path set at all, so they are unchanged entirely rather than merely at a run-stamp field. No
+member entered or left any of them. `guard_state.json`'s whole difference against the Task 0 commit
+was measured and is ONE console line of the membership check, moved by the ordered Task 0 landing.
+
+**A5 — the manifest and the pack after Task 1: HELD, and more strongly than predicted.** The
+manifest's whole difference against the Task 0 commit is **EMPTY**, so every field of `counted` is
+unmoved field by field, the seventy-five verdict rows and both passages are byte-unchanged, and no
+identity, document, leak or member record moved. At the pack, **only the read-me changes**: the
+directory's own difference names exactly one file, so members (1)–(6) are byte-unchanged at the
+objects. The reworded read-me was read WHOLE and graded against A5's (i)–(v) item by item — title,
+unit sentence, six-file list and order, stop-on-meeting clause, what-was-cut section and output
+section all unchanged (i); the whole-of-your-read sentence bounded to the repository with the brief
+excepted (ii); the NOT-opened list standing with the brief excepted in its own words (iii); the
+paragraph closing on the beyond-the-pack statement (iv); and no brief file name, staged file name,
+ruling record or further word about the withheld anywhere in it (v).
+
+**The reworded boundary paragraph, quoted from the rendered file** (the report quotes it too, and
+this is the same text read at the same file):
+
+> **This directory replaces the ordinary session-start read for you.** `cowork_handoff.md`,
+> `STATUS.md`, `DECISIONS.md`, `ARCHITECTURE.md`, `docs/scoring_model.md`, the open-items register
+> and its derived gating answer, and every `cc_*` and `cowork_*` file outside this directory — the
+> brief that dispatched you excepted — are **NOT opened**. No branch rule is taken. What you may
+> read beyond this directory — your brief, score and analysis files your brief stages to you by
+> name, and published research — is stated by your brief, and by nothing in this directory.
+
+## 6. Surfaced findings (D-641, #13, #19)
+
+**No finding number is allocated; the series stands at F88.** Nothing was found that bears on the
+analysis, and nothing was rowed.
+
+**★ NO DEFECT WAS FOUND IN THE REFRESHED BRIEF, AND THE BOUND ON THAT STATEMENT IS STATED WITH IT.**
+The dispatch makes a defect in the brief a STOP-and-report. The brief was read WHOLE at the working
+tree before Task 0 and its every §8 point, its §7 output name and its §9 amendment note were checked
+against the ruling record's own text; all agree. **The bound:** this is a reading of the brief against
+the sitting record and against A1's regions, not a re-validation of the brief against the pack — that
+validation is the writing side's, already performed, and this batch did not repeat it.
+
+**★ NO FURTHER PARAPHRASE-SHAPED LEAK WAS MET, AND ITS BOUND IS NARROWER THAN THE PREVIOUS BATCH'S.**
+The dispatch asks that a leak MET in the spans this batch touches be surfaced with its verbatim and
+its location. None was met. **The bound:** this batch opened NO rendered pack member except the
+read-me; member (4)'s dispatch-protocol section was read at its own home, `cowork_audit_protocol.md`,
+because this dispatch's read-first block orders that read. **This is not a sweep and does not claim
+one**, and the standing bound that member (2) is not claimed free of other leaks is untouched.
+
+**★ ONE ACT OF THIS BATCH'S OWN IS SURFACED RATHER THAN ABSORBED: the Task 0 commit was amended
+before it was pushed.** It is recorded at §1 with its cause and its remedy. It bears on no analysis
+question and on no measurement; it is here because a hash that moved must be visible to whoever
+verifies the chain at the objects.
+
+## 7. Per-task log
+
+**Task 0 — the landing, the membership regeneration, and the push.** A1's check first and entirely at
+content-addressed objects, with the population enumerated and the brief's own difference read hunk by
+hunk; the membership artifact regenerated and its difference measured from every route before it was
+accepted; **exactly the five named paths** committed, each staged by explicit path and the staged set
+enumerated before the commit rather than assumed; the subject corrected by amendment before any push;
+pushed; `origin/master` verified at the object to name the Task 0 commit, and the commit's own path
+set re-enumerated at the commit object; the membership check re-run and **PASSING**. **E0 — MET in
+every particular**, including the ruling-record count read at the COMMITTED artifact rather than at
+the run's own console line.
+
+**Task 1 — the one template edit, the re-render, the guard run. ONE commit.** The read-me template's
+two sentences were rewritten to A5's (i)–(v) and nothing else in the generator moved, established at
+the generator's own per-path difference: ONE hunk, wholly inside the template. The generator was run
+and `--check` is **green**, its own STOPs being what makes that a check — an anchor not resolving
+exactly once inside its ruled scope, a closing anchor preceding its opening, an authored withholding
+missing any of its three fields, a candidate without a verdict, a verdict outside the vocabulary, and
+a verdict for an entry the derivation no longer returns. **None halted.** A5 was then graded at the
+manifest, at the pack directory's own difference and at the rendered read-me read whole. The full
+guard set was run in WRITE mode, as this dispatch orders in terms, so that the artifact the commit
+carries is the artifact of a real run. **E1 — MET.**
+
+**Task 2 — the pointers and the close.** One `STATUS.md` pointer entry per task that did work. The
+previous batch's entries were moved verbatim to `STATUS_ARCHIVE.md` through the forward-bound tool at
+its three declared authored inputs — **authored-input maintenance (D-648), licensed in terms by this
+dispatch, so it is not a departure** — with the previous aiming **APPENDED rather than overwritten**
+(#12) and the reconciliation proved in both directions by that tool's own check. The session-start
+read measurement was regenerated, which is the red the dispatch predicted at the close and the act
+that clears it.
+
+## 8. Declared departures
+
+1. **The Task 0 commit was AMENDED before it was pushed.** Its first attempt carried a mangled
+   subject, the cause being a PowerShell here-string form passed to a POSIX shell. Nothing was pushed
+   between the two, the amended commit carries the dispatch's exact prescribed subject read back at
+   the object, and its five paths are the ordered five. Recorded because the standing preference is a
+   new commit over an amendment, and because a discarded hash is invisible unless it is declared.
+2. **The read-me's whole-of-your-read sentence carries a forward-pointing clause A5 does not name,
+   and the reason is that without it the sentence would still be false.** A5 (ii) fixes the sentence
+   as bounded to this repository with the brief excepted; but the score and analysis files the brief
+   stages to the session by name are ALSO repository files, so a sentence excepting only the brief
+   would still assert something the ruled inputs contradict — the very defect Ruling 1 exists to
+   remove. The sentence therefore reads *"apart from the brief that dispatched you and what the
+   boundary below admits"*, and the boundary paragraph states the exception once, exactly as A5 (iv)
+   fixes it. **Nothing is added to what the read-me tells the session**; one clause points forward to
+   the paragraph that follows it. Declared rather than taken silently.
+3. **The manifest was not committed at Task 1, because it had nothing to commit.** The dispatch orders
+   the generator, the manifest, the read-me and the rewritten guard artifacts committed. The manifest
+   re-rendered byte-identical, so it is absent from the changed-path enumeration and from the commit.
+   That is A5 holding, not an omission.
+4. **Reads not performed:** no rendered pack member was opened except the read-me;
+   `cowork_joint_estimator_factorization.md` was not opened; the two `ARCHITECTURE.md` oracle spans
+   were not opened beyond what the generator's own run locates; **no oracle document was opened.**
+
+## 9. The plan lines, unchanged and unopened
+
+**The blind derivation by a FRESH COWORK SESSION is the next act, and the user opens it — nothing
+stands before it.** Its output lands under the ruled name and is committed by the next ordinary
+dispatch. The comparison dispatch follows it; the ruling on the method follows that; the sizing pilot
+after the method is ruled; the ledger before the framework phase. **None of them is opened here.**
+
+## 10. ★ THE PLAN'S TELL, IN ONE SENTENCE
+
+**Did this batch produce anything other than the landed record and refreshed brief, the one reworded
+read-me, the re-rendered manifest and the report? YES, and each is named:** the evidence-pin
+membership artifact regenerated at Task 0 with this dispatch's own inputs landed; the generator's
+read-me template, whose edit produced the reworded read-me; the forward-bound tool's three declared
+authored inputs re-aimed with its previous aiming appended; the `STATUS.md` entries written and the
+previous batch's moved to `STATUS_ARCHIVE.md`; the forward-bound and session-start read artifacts
+regenerated; and the guard-state artifact rewritten by the run that produced it. **The re-rendered
+manifest is in that list only by name — it re-rendered byte-identical and is in no commit.** **Every
+item is an ordered act of this dispatch, nothing this batch touched lies outside the subjects of
+those acts, and NO SESSION WAS BOOTED FROM THE PACK.**
+
+## 11. ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. **Principles.** **#19** — the pack's boundary claim is made TRUE rather than overridden, and the
+   blind session's inputs stay the ruled ones; nothing is claimed established that was not measured,
+   and the criterion's reach stays declared UNMEASURED on its own artifact with no claim made about
+   it here. **#6** — what the session may read beyond the pack now has ONE home, the brief, and the
+   read-me points at it instead of keeping a second list. **#12** — the read-me's other sections are
+   kept whole, the brief's §§0–6 are untouched, the brief's own §9 records the amendment rather than
+   replacing history, and the forward bound's previous aiming is appended rather than replaced.
+   **#17(f)/D-431** — no count is transcribed in this close, the report, the commit messages or the
+   `STATUS.md` entries; every figure is named to an artifact and a field. **#13** — the amended commit
+   and the forward-pointing clause were surfaced rather than absorbed. **#24** — no comparison between
+   measured quantities is asserted anywhere. **Conforms.**
+2. **Conventions.** American English. No self-invented label. Music-theory words in their musical
+   sense — *measurement tool* is used and never the reserved word; *score* appears only of the musical
+   score; *the decisions register* and *the open-items register* are written in full; TOWARDS, never
+   the other word, in every orientation phrase.
+3. **Figures and premises.** Every quantity is named to its artifact and field; the rulings are quoted
+   at their record; every premise the dispatch carried was re-read at the object rather than accepted
+   — the tip and both refs, the guard-state summary, the whole `counted` block, the read-me's two
+   sentences at the tip object and at the generator's template, and the ruling record's absence of the
+   word route B matches on.
+4. **The file-tools rule.** Working-tree content was read with the file tools throughout. Shell use
+   was limited to read-only git object queries by explicit hash, per-path diffs against an explicit
+   hash whose output was written to an absolute scratch path outside the repository and read with the
+   file tools, the sanctioned enumeration tool, and the project's own scripts. **The armed guard
+   denied two attempts** — an interpreter invocation carrying a literal repository path at the very
+   first act, and a `cat` over a scratch path whose shell variable the guard could not expand, denied
+   on the standing deny-on-indeterminate policy — and each was replaced with the file-tools route
+   rather than worked around.
+5. **Uncertainty.** No difference between two measured quantities is asserted anywhere in this batch.
+
+*Provenance: Claude Code, 2026-08-23, executing `cc_instruction_brief_ratification_and_readme_boundary.md`.
+Every commit hash above was resolved at the object before it was written. TOWARDS the ultimate
+objective and TOWARDS the guiding principles.*
