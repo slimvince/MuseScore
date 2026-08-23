@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_withheld_family_correction.md, Task 2",
+ "dispatch": "cc_instruction_second_passage_withheld.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -67,29 +67,34 @@
    "executing_act": "cc_instruction_pilot_preparation_withheld_family.md, Task 2",
    "base_commit": "a12cc0350322dd286708dcbf19d95548b01f7d55",
    "the_then_previous_batch": "cc_instruction_pass_continuation_second.md"
+  },
+  {
+   "executing_act": "cc_instruction_withheld_family_correction.md, Task 2",
+   "base_commit": "72534e5da90e5924f889f90a01547d34194c1951",
+   "the_then_previous_batch": "cc_instruction_pilot_preparation_withheld_family.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "72534e5da90e5924f889f90a01547d34194c1951",
- "the_then_previous_batch": "cc_instruction_pilot_preparation_withheld_family.md",
+ "base_commit": "cf00b6af7b89a6599c610b31bc9f47b639ccb217",
+ "the_then_previous_batch": "cc_instruction_withheld_family_correction.md",
  "entries_moved": 2,
- "characters_moved": 3883,
+ "characters_moved": 3986,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2395,
-   "sha256": "d95d6fdb700c8f4aa376190ccf99726d2e1aabaf0dfae657fb3e1a76c15c3946",
+   "characters": 2313,
+   "sha256": "32e090bb5d0fa1d23584bd0ea3612c3e16aa9131865867c647092374b810b8ce",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-22 (CC — **★ THE PILOT IS PREPARED: THE BOOT-PACK GENERATOR OF BOOT-LIST AMENDMENT (a1) IS BUILT AND REGISTERED, THE WITHHELD FAMILY FOR THE "
+   "opening": "*2026-08-23 (CC — **★ THE WITHHELD FAMILY IS RULED AND THE PACK IS CORRECTED TO THE RULED LISTS: D-569 WITHHELD, D-457 AND D-526 ADMITTED, AND THE WIT"
   },
   {
    "line_at_base": 10,
-   "characters": 1488,
-   "sha256": "c0c776addebde374b2ae0be4e58714ec41ee026672df7de46ed42f9505ef25e6",
+   "characters": 1673,
+   "sha256": "bb88530785cae36e8ac35fe35c4f79888f32526e184bd9e76462566ab796844a",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-22 (CC — **★ THE 2026-08-22 PILOT-ORDER, MEMBER-TWO-LEAK AND DERIVING-SIDE RULINGS AND THE BLIND SESSION'S BRIEF LAND IN GIT AFTER AN INTERRU"
+   "opening": "*2026-08-23 (CC — **★ THE 2026-08-22 WITHHELD-FAMILY RULING RECORD AND ITS DISPATCH LAND IN GIT, AND THE EVIDENCE-PIN MEMBERSHIP IS REGENERATED WITH I"
   }
  ],
  "reconciliation": {

@@ -16884,3 +16884,273 @@ therefore cannot contain. Every value above was read from the run recorded in
 `tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference
 between that artifact and the close commit's own blob; no value here was carried forward from an
 earlier run or inferred from a summary.*
+
+---
+
+# ═══ THE SECOND PASSAGE WITHHELD: THE PACK AT ITS RULED STATE (dispatch `cc_instruction_second_passage_withheld.md`, performed 2026-08-23) ═══
+
+> **★ THIS CLOSE DOES NOT ASSERT THE END STATE, AND THE OMISSION IS DELIBERATE.** The end-state guard
+> run is taken **after** the commit carrying this close exists, so its values cannot be written into
+> that commit. They land in **ONE FURTHER COMMIT**, appended beneath this section. No row, cell or
+> sentence anywhere in this section asserts what the guard set says at the tree this close leaves.
+>
+> **★ ALL THREE TASKS RAN. NO STOP-AND-REPORT RULE FIRED.** No `src/` edit, no golden, **no test
+> changed, moved or run**, nothing under `tools/corpus/` or `tools/robust_stop/` moved, **no
+> measurement of the ANALYSIS built, designed, scoped or run**, no design, no repair. **NO SESSION
+> WAS BOOTED FROM THE PACK — no derivation, no comparison, no oracle opened, and no pilot act at
+> all.** **No boot-list member edited at its home; no register entry, sort artifact or register
+> source touched; `CLAUDE.md`, `ARCHITECTURE.md`, `DEFECT_TYPES.md`,
+> `cowork_design_doc_template.md`, `cowork_audit_protocol.md`, the phase-definition surface,
+> `DECISIONS.md`, `OPEN_ITEMS.md` and `docs/scoring_model.md` are byte-unchanged.** **NO open-items
+> row created, flipped or discarded.** **No finding number allocated; the series stands at F88.**
+> The report is `cc_report_second_passage_withheld.md`, and no figure of it is restated here
+> (**D-431**).
+
+## 1. The chain, named as far as a sentence can name it
+
+**TWO commits so far, both pushed to `origin/master` and both verified at the object by explicit
+hash:** `1ff83f569a9c96e6cf4284e8a890e5850a9dffac` (Task 0 — the sitting record and this dispatch
+landed, the membership regenerated) → `cf00b6af7b89a6599c610b31bc9f47b639ccb217` (Task 1 — the one
+authored addition, the one licensed read-me edit, the re-rendered pack and the ruled reading file,
+in ONE commit).
+
+**THE THIRD COMMIT IS THIS CLOSE, AND A SENTENCE CANNOT NAME ITS OWN HASH.** It carries the report,
+the `STATUS.md` pointer entries, the ruled forward-bound move, the regenerated session-start read
+measurement and this section. **AND A FOURTH FOLLOWS IT**, carrying the end-state guard run, for the
+reason stated at the head of this section.
+
+## 2. The headline — the pack now cuts TWO passages out of member (2), and nothing has been booted from it
+
+The user ruled one decision on 2026-08-23 (the record is
+`cowork_rulings_2026_08_23_member_two_second_leak_sitting.md`; the user's word was "B"), and this
+batch applies exactly it.
+
+**Ruling 1 — a SECOND withheld passage.** The sentence that closes `CLAUDE.md`'s defense-at-its-home
+bullet — the one naming the founding instances of decisions recorded with no derivation — is cut
+from the rendered member (2) and the omission is marked in place. It names, from its own words, a
+boundary-membership convention standing beside the oracle's own ranking of actual sounding notes and
+beside the subject of withheld D-317, and it names the decode segment cap's value in the same
+breath; **the disclosure is content, not existence**, which is why the mechanism twice ruled for this
+shape was applied rather than the declared bound relied on.
+
+**The mechanism is UNCHANGED, which is what the ruling asks for.** The addition is ONE entry in the
+generator's authored `withheld_passages` list, in the **D-677** shape with its finding, its date and
+its reason. The candidate criterion, the leak check, `withhold_passage()`, the marker and every STOP
+are untouched, and **no verdict is re-graded**: the sixteen IN, the fifty-nine OUT and the first
+withheld passage stand byte for byte at the manifest.
+
+**The bullet's principle stays whole above the cut**, read at the rendered file rather than inferred
+— that every design decision carries its defense, that a missing derivation is stated as *derivation
+not recorded*, and that none is ever written afterwards from memory. **`CLAUDE.md` itself is
+untouched**: the sentence is cut from the PACK and not from its home (#12).
+
+**AND THE READ-ME NOW COUNTS ITS OWN PASSAGES.** Its withholding sentence had hardcoded *one
+passage*, which the second cut would have made false. Under the one licensed rendering edit it
+DERIVES the number from the passages actually applied for the subject — singular wording at one,
+plural at more — so it stays true for a subject carrying any count, and it states nothing else new.
+
+## 3. The declared start state matched, and the tree that was actually met
+
+The dispatch declared two failing checks with their causes and made a third failing verdict a STOP.
+**Measured before the first edit, with the whole guard set run in CHECK mode as the dispatch fixes
+in terms: exactly the two declared** — [[OI-372]]'s tool, the one standing red, and the evidence-pin
+membership check reporting its artifact STALE, caused by this dispatch's own untracked ruling
+record. `gen_guard_state.py --check` opened "STALE vs the run" for the same cause, which the
+dispatch declares is not a third failing check. **Zero STOP verdicts.**
+
+**A1 held, and the whole tracked-modification population was ENUMERATED rather than sampled**, with
+the sanctioned enumeration tool: exactly ONE tracked modification, `cowork_handoff.md`, whose
+difference against the tip is the forty-sixth block inserted above the committed content with the
+forty-fifth heading marked superseded as the entry point — one deletion, and it is that heading.
+Both named untracked paths present and absent from the tip. **No other tracked path modified
+anywhere in the tree.**
+
+**★ THE STATE THE PREVIOUS BATCH REPORTED DID NOT RECUR, AND ITS ABSENCE IS RECORDED RATHER THAN
+PASSED OVER.** The stale zero-length `index.lock` that refused every staging operation at the
+previous Task 0 was **not present**: staging was refused by nothing, and the removal remedy the
+previous batch performed under **D-669** was neither needed nor taken. Recorded because a hazard
+reported once reads as standing until someone says it did not repeat.
+
+## 4. What needs the user — NOTHING from this batch
+
+No question is put and no surface is delivered. The withheld family is RULED and the pack now
+carries the ruled state whole. **The next act is the BLIND DERIVATION by a FRESH COWORK SESSION**
+(Ruling 1 of `cowork_rulings_2026_08_22_deriving_side_sitting.md`) — **nothing further stands
+between it and the pack.** Before it boots, the two surfaces the forty-fourth handover block names
+remain the user's and are untouched here: the brief's (P4), and the brief validated against the
+landed pack's read-me and directory name. **The read-me changed in this batch, at one sentence**,
+which is a fact that validation should meet rather than a new obligation this batch creates.
+
+## 5. The predictions, graded at the artifacts, route by route and field by field
+
+**A1 — the working tree, stated by CONTENT: HELD**, item by item, at content-addressed objects, with
+the whole tracked population enumerated (§3). One state the dispatch did not describe: its absence,
+recorded above.
+
+**A2 — one red remains, zero STOPs: HELD.** The reds this batch caused were the declared membership
+red, cleared at Task 0 by the very act that tracked this dispatch's own untracked input, and the
+session-start read measurement's red at Task 2, cleared in the same task by regenerating it. **The
+guard-classification red the dispatch warned of did NOT occur**, because the pre-edit run was taken
+in check mode rather than in write mode — which is the correction the dispatch orders in terms, and
+it worked. The boot-pack generator's own check was red only between the table edit and the
+re-render, inside Task 1's single commit.
+
+**A3 — the membership regeneration, from EVERY route: HELD, and more cleanly than predicted.**
+Route A moved by exactly the predicted amount and added exactly the predicted name. Route B added
+nothing: the landed record carries the word that route matches on nowhere in its text, checked at
+the record itself. Route C is unmoved — this batch adds no measurement tool. **AND NO FURTHER
+DIFFERENCE AROSE AT ALL:** unlike the previous batch, the regeneration produced no additive derived
+cross-reference, so the artifact's WHOLE difference against the committed blob is the two passages
+route A predicts. Measured before the regeneration was accepted, with the changed passages written
+to an absolute scratch path outside the repository and read with the file tools.
+
+**A4 — the guard registry: HELD.** No tool was added. The population is UNCHANGED and the failing
+set is unchanged at [[OI-372]]'s tool. `guard_classification.json`, `epoch_write_path.json` and
+`recognizer_establishment_sort.json` are **byte-unchanged**, verified together and returning an
+empty difference — not merely unchanged at a run-stamp field, but unchanged entirely. No member
+entered or left any of them.
+
+**A5 — the manifest, from EVERY field of `counted`: HELD, field by field.** Every field is unmoved
+except the passage count, which is at the value A5 predicts. Every figure is at
+`tools/audit/derivation_boot_pack.json` → `subjects.harmony-boundary.counted` and none is restated
+here (**D-431**).
+
+**The manifest's WHOLE difference was measured rather than sampled**, and it is three passages: the
+passage count, the added passage record with its derived matched text and length, and member (2)'s
+own rendered character count. **No verdict row appears in that difference**, so the seventy-five
+verdict rows are byte-unchanged; nor does the first passage's record, the withheld-identity list,
+the withheld document, the leaks, the cross-reference additions or the candidate criterion.
+
+**At the pack files, read at the rendered files rather than inferred:** the rendered member (2)
+carries the marker **exactly twice**; it carries **none** of the four strings the dispatch names,
+and neither does any other file of the pack; the bullet's own statement stays whole above the second
+marker; and the first cut and its marker are unchanged. **Only four files move against the previous
+tip in this task's subject area** — the generator, the manifest, member (2) and the read-me — so
+**members (1), (3), (4), (5) and (6) are byte-unchanged**, together with every file of the pack this
+task's own acts do not name.
+
+## 6. Surfaced findings (D-641, #13, #19)
+
+**No finding number is allocated; the series stands at F88.** Nothing was found that bears on the
+analysis, and nothing was rowed.
+
+**★ NO FURTHER PARAPHRASE-SHAPED LEAK WAS MET, AND THE BOUND ON THAT STATEMENT IS STATED WITH IT.**
+The dispatch asks that a leak MET in the spans the generator renders be surfaced with its verbatim
+and its location. None was met. **The bound:** this batch read member (2) at the two cut regions and
+at the two marker positions, and member (4)'s whole dispatch-protocol section because its own
+read-first block orders that read; no other member was opened beyond the anchors the generator
+locates. **This is not a sweep and does not claim one** — the sitting declines the sweep in terms,
+and the standing bound that member (2) is not claimed free of other leaks is untouched.
+
+**★ ONE PRESENTATION-FORM OBSERVATION, RECORDED BECAUSE IT WOULD OTHERWISE READ AS A CONTRADICTION,
+AND IT MOVES NO VERDICT.** The ruling record's finding — quoted into the generator's authored table
+verbatim, as the dispatch fixes it — says the sentence stands *"outside both passages so far ruled"*.
+The record elsewhere establishes that there is **ONE** withheld passage, not two: Ruling 5 of the
+withheld-family sitting widened the first passage's anchors and says in terms that the authored table
+carries ONE passage replacing the narrower anchors, *"not a second passage (#6)"*. Read together, the
+phrase means *both passage RULINGS so far*, which is true and is how the reading file now words it.
+**The authored table keeps the ruling's own wording (#12, #14 — a ruled text is not edited by the
+session executing it); the reading file, whose words are this session's, states it accurately.**
+Surfaced rather than rowed: it is a wording in a ruling record, it bears on no analysis question, and
+correcting a ruled text is not a session's act.
+
+## 7. Per-task log
+
+**Task 0 — the landing, the membership regeneration, and the push.** A1's check first and entirely
+at content-addressed objects; the population enumerated; the membership artifact regenerated and its
+difference measured from every route before it was accepted; **exactly the four named paths**
+committed, each staged by explicit path and the staged set enumerated before the commit rather than
+assumed; pushed; `origin/master` verified at the object to name the Task 0 commit; the membership
+check re-run and **PASSING**. **E0 — MET in every particular**, including the ruling-record count
+read at the COMMITTED artifact rather than at the run's own console line.
+
+**Task 1 — the addition, the licensed edit, the re-render, the reading file. ONE commit.** The
+authored list gained one entry and lost nothing; the read-me sentence became derived; the generator
+was run and `--check` is **green**, its own STOPs being what makes that a check — an anchor not
+resolving exactly once inside its ruled scope, a closing anchor preceding its opening, an authored
+withholding missing any of its three fields, and every verdict STOP. **None halted.** A5 was graded
+at the manifest and at the rendered files; the reading file's LIST FIVE became *the withheld
+PASSAGES* with the first entry unchanged at its widened anchors and the second stating where, what,
+why and how it was applied, and the banner names both ruling records. **E1 — MET.**
+
+**Task 2 — the pointers and the close.** One `STATUS.md` pointer entry per task that did work. The
+previous batch's entries were moved verbatim to `STATUS_ARCHIVE.md` through the forward-bound tool at
+its three declared authored inputs — **authored-input maintenance (D-648), licensed in terms by this
+dispatch, so it is not a departure** — with the previous aiming **APPENDED rather than overwritten**
+(#12) and the reconciliation proved in both directions by that tool's own check. The session-start
+read measurement was regenerated, which is the red the dispatch predicted at the close and the act
+that clears it.
+
+## 8. Declared departures
+
+1. **The Task 1 guard run was taken in WRITE mode, and the pre-edit run in CHECK mode.** The
+   dispatch fixes CHECK mode for the run before the first edit and for the run at the end, and it
+   separately orders Task 1 to commit *the guard artifacts the run rewrote* — which a check-mode run
+   does not produce. The pre-edit run was therefore in check mode, exactly as ordered and exactly as
+   the predecessor's error requires; Task 1's was in write mode so that the artifact it commits is
+   the artifact of a real run. **The whole difference that run made to `guard_state.json` was
+   measured, not assumed:** one console line of the membership check, moved by the ordered Task 0
+   landing. No verdict moved, and the check is green after it.
+2. **The reading file's H1 title still reads *put to the user for a ruling*.** It is not among the
+   ordered changes and the status banner directly beneath it states RULED; the line was left rather
+   than widened into an unordered edit. The previous batch declared the same, and it is repeated
+   because a departure that stops being declared reads as fixed.
+3. **The zero-passage rendering of the read-me sentence is not reached by the licensed edit, and the
+   bound is stated.** The sentence now derives its number, but the *Two kinds:* lead-in above it is
+   hardcoded, so a future subject with NO withheld passage would need that lead-in touched as well.
+   The licence reaches one sentence and no more, so the lead-in was left; recorded so a later
+   session meets the bound rather than discovering it.
+4. **Reads not performed:** no boot-list member was opened beyond the spans the generator renders,
+   the anchors it locates and member (4)'s read-first section;
+   `cowork_blind_session_brief_harmony_boundary.md` was not opened; the pack directory was read only
+   at the two files this batch's own checks name; **no oracle document was opened.**
+
+## 9. The plan lines, unchanged and unopened
+
+**The blind derivation by a FRESH COWORK SESSION is unblocked — nothing further stands between.**
+The comparison dispatch follows it; the ruling on the method follows that; the sizing pilot after the
+method is ruled; the ledger before the framework phase. **None of them is opened here**, and this
+batch takes no step toward any of them beyond leaving the pack at its ruled state.
+
+## 10. ★ THE PLAN'S TELL, IN ONE SENTENCE
+
+**Did this batch produce anything other than the one authored addition, the one licensed read-me
+edit, the re-rendered pack and manifest, the reading-file LIST FIVE update and the report? YES, and
+each is named:** the evidence-pin membership artifact regenerated at Task 0 with this dispatch's own
+inputs landed; the forward-bound tool's three declared authored inputs re-aimed with its previous
+aiming appended; the `STATUS.md` entries written and the previous batch's moved to
+`STATUS_ARCHIVE.md`; the session-start read measurement regenerated; and the guard-state artifact
+rewritten by the run that produced it. **Every one is an ordered act of this dispatch, and nothing
+this batch touched lies outside the subjects of those acts. No session was booted from the pack.**
+
+## 11. ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. **Principles.** **#19** — one ruled withholding applied and nothing wider; the criterion's reach
+   stays declared UNMEASURED on its own artifact and this batch makes no claim about it; the
+   member-two bound is restated rather than weakened. **#6** — ONE authored list, the pack derived
+   from it; the read-me's count derived from the applied passages rather than stated a second time.
+   **#12** — the sentence is cut from the pack and not from its home, the first passage is untouched
+   at every field, nothing is re-graded, the forward bound's previous aiming is appended rather than
+   replaced, and the ruling's own wording is kept in the authored table rather than edited.
+   **#17(f)/D-431** — no count is transcribed in this close, the report, the commit messages or the
+   `STATUS.md` entries; every figure is named to an artifact and a field. **#13** — the one
+   presentation-form observation was surfaced rather than absorbed. **#24** — no comparison between
+   measured quantities is asserted. **Conforms.**
+2. **Conventions.** American English. No self-invented label. Music-theory words in their musical
+   sense — *measurement tool* is used and never the reserved word; *the decisions register* is
+   written in full; TOWARDS, never the other word, in every orientation phrase.
+3. **Figures and premises.** Every quantity is named to its artifact and field; the ruling is quoted
+   at its record; every premise the dispatch carried was re-read at the object rather than accepted
+   — the tip and both refs, the guard-state summary, the whole `counted` block, the read-me's
+   hardcoded sentence at the generator, and all three `CLAUDE.md` anchors located by their own text.
+4. **The file-tools rule.** Working-tree content was read with the file tools throughout. Shell use
+   was limited to read-only git object queries by explicit hash, per-path diffs against an explicit
+   hash whose output was written to an absolute scratch path outside the repository and read with
+   the file tools, the sanctioned enumeration tool, and the project's own scripts. **The armed guard
+   denied one attempt** — an interpreter invocation carrying a literal repository path, at the very
+   first act — and it was replaced with the file-tools route rather than worked around.
+5. **Uncertainty.** No difference between two measured quantities is asserted anywhere in this batch.
+
+*Provenance: Claude Code, 2026-08-23, executing `cc_instruction_second_passage_withheld.md`. Every
+commit hash above was resolved at the object before it was written. TOWARDS the ultimate objective
+and TOWARDS the guiding principles.*
