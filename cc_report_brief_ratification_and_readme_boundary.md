@@ -7,7 +7,10 @@
 > **Commits, resolved at the objects by explicit hash:**
 > Task 0 `2fddf5767f819eb4251de5923bc8946c020ec880` (parent `d2a517c8db2b2debb2dc41cde3aff2fc8d224d7c`);
 > Task 1 `a3ed95077697de6f75e46ecc0a0183346e6e823e` (parent `2fddf5767f…`).
-> Task 2's commit and the end-state commit are named in the close.
+> Task 2's commit and the end-state commit are named in the close; their hashes are
+> `48a272d90016d8dfae58a42167c6f6682b95d44f` and `3dcd6999291c2a00f055919146fe75b7502473e5`,
+> resolved at the objects and written here in a fifth commit, because a commit cannot carry its own
+> hash and the report is inside the third.
 >
 > **★ NO SESSION WAS BOOTED FROM THE PACK. NOTHING WAS DERIVED. NO ORACLE WAS OPENED.** Re-rendering
 > the pack is not opening it, and this batch performed only the landing the dispatch orders, the one
