@@ -225,7 +225,17 @@ SESSION** section of `cowork_away_returns.md`.
    that the read-me's *Two kinds:* lead-in is hardcoded, so a subject with NO withheld passage would
    need it touched. This batch's licence reaches the boundary wording only, so the lead-in was left.
    Repeated because a declared bound that stops being declared reads as fixed.
-5. **Reads not performed:** no rendered pack member was opened except the read-me;
+5. **TWO commits beyond the dispatch's ordered four, and both are declared here rather than left
+   silent.** The dispatch orders Task 0, Task 1, the close, and one further commit carrying the
+   end-state run. A **fifth** commit then backfilled the hash block above with the close and
+   end-state hashes, which the third commit could not carry because it contains this report; and a
+   **sixth** — the one carrying this paragraph — declares both, and adds the same declaration to the
+   close's §1. Neither touches anything else: the fifth changed only this report, the sixth changes
+   only this report and that one paragraph of the close. **The regress stops here** because this
+   paragraph is generic about itself and names no hash of its own. Declared because a commit outside
+   the ordered structure is a departure whatever its size, and because the standing preference for a
+   new commit over an amendment is what made the fifth a commit rather than an edit to the third.
+6. **Reads not performed:** no rendered pack member was opened except the read-me;
    `cowork_joint_estimator_factorization.md` was not opened; the two `ARCHITECTURE.md` oracle spans
    were not opened beyond what the generator's own run locates; member (4)'s dispatch-protocol section
    was read at its own home, `cowork_audit_protocol.md`, because this dispatch's read-first block

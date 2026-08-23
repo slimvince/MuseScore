@@ -17251,6 +17251,14 @@ the `STATUS.md` pointer entries, the ruled forward-bound move, the regenerated s
 measurement and this section. **AND A FOURTH FOLLOWS IT**, carrying the end-state guard run, for the
 reason stated at the head of this section.
 
+**★ AND TWO FURTHER COMMITS FOLLOW THE ORDERED FOUR, DECLARED HERE RATHER THAN LEFT SILENT.** A
+**fifth** backfills the report's hash block with the close and end-state hashes, which the third
+commit could not carry because it contains that report; and a **sixth** — the one carrying this
+paragraph — declares both, here and in the report's departures. Neither touches anything else, and
+**the regress stops there**: this paragraph is generic about itself and names no hash of its own. A
+commit outside a dispatch's ordered structure is a departure whatever its size, which is why it is
+recorded and not absorbed.
+
 ## 2. The headline — the pack's boundary is now TRUE of the session the brief dispatches, and the brief is RULED
 
 The user ruled three things on 2026-08-23 (the record is
