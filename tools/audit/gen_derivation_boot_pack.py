@@ -1149,14 +1149,17 @@ what any existing code or specification says it currently **does**.
 
 {listing}
 
-Read them in that order. Together with this file they are **the whole of your read**.
+Read them in that order. Together with this file they are **the whole of your read within this
+repository**, apart from the brief that dispatched you and what the boundary below admits.
 
 ## The boundary, stated once and binding
 
 **This directory replaces the ordinary session-start read for you.** `cowork_handoff.md`,
 `STATUS.md`, `DECISIONS.md`, `ARCHITECTURE.md`, `docs/scoring_model.md`, the open-items register
-and its derived gating answer, and every `cc_*` and `cowork_*` file outside this directory are
-**NOT opened**. No branch rule is taken. Nothing outside this directory is opened at all.
+and its derived gating answer, and every `cc_*` and `cowork_*` file outside this directory — the
+brief that dispatched you excepted — are **NOT opened**. No branch rule is taken. What you may
+read beyond this directory — your brief, score and analysis files your brief stages to you by
+name, and published research — is stated by your brief, and by nothing in this directory.
 
 **If you nonetheless meet a statement about how THIS project's analysis currently works — in any
 file, including one of these six — STOP READING THAT FILE AT THAT POINT and record WHERE you were
