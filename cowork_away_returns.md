@@ -17835,3 +17835,69 @@ and NO SESSION WAS BOOTED, NO COMPARISON MADE AND NO ORACLE OPENED at any point.
 *Provenance: Claude Code, 2026-08-24, executing `cc_instruction_blind_output_landing.md`. Every
 commit hash above was resolved at the object before it was written. TOWARDS the ultimate objective
 and TOWARDS the guiding principles.*
+
+## ★ THE END STATE — the guard set run at the tree the close left (the one further commit)
+
+**The one further commit the E-ordering rule requires.** The run below was taken **after** the
+commit carrying the close existed, so its values could not be written into that commit. It is run in
+WRITE mode and READ, its own `--check` was re-run over it afterwards and **re-derives**, and the
+guard classification was re-run after that, as its own STOP requires, and **re-derives** too.
+
+**Registered expectation E2, graded at the artifact rather than at an impression.** The verdict set
+at `tools/audit/guard_state.json` → `summary` is **every run check passing except [[OI-372]]'s tool**
+— the one standing red, unchanged all batch — with **ZERO STOP verdicts**, established by reading
+**every** `verdict` field of the artifact one by one rather than the summary alone; and **the guard
+population is at the value A4 predicted for it: UNCHANGED, because this batch added no tool.** Every
+figure is read at that artifact's own fields and none is restated here (**D-431**).
+
+**A2 — CLOSED AND HELD.** Exactly one red remains and it is [[OI-372]]'s tool. **Both reds this
+batch caused were cleared by the acts that caused them** — the evidence-pin membership check at
+Task 0, and the session-start read measurement at the close. **No red arose outside the subjects of
+this batch's own ordered acts, and no STOP verdict was produced at any point.**
+
+**A4 — CLOSED AND HELD.** No tool was added, so nothing entered or left the population and the
+failing set is unchanged. `guard_classification.json`, `epoch_write_path.json` and
+`recognizer_establishment_sort.json` **never appear in the enumerated changed-path set of any commit
+of this batch, nor in the working tree afterwards**, so they are byte-unchanged entirely rather than
+merely at a run-stamp field. **`guard_state.json`'s WHOLE difference against the close commit was
+measured**, written to an absolute scratch path outside the repository and read with the file tools:
+it is **six captured console lines belonging to three tools whose artifacts this batch's own ordered
+acts moved** — the forward-bound move, the evidence-pin membership regeneration and the session-start
+read measurement. **No verdict, no population entry and no summary field moved.**
+
+**A5 — RE-CONFIRMED at the commit objects.** `tools/audit/derivation_boot_pack/` and its seven
+files, `tools/audit/derivation_boot_pack.json`,
+`cowork_blind_session_brief_harmony_boundary.md` and
+`ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md` appear in the enumerated
+path set of **no commit of this batch** and in the working tree's own enumeration afterwards, so each
+is byte-unchanged entirely. **No verdict row, identity, document, passage, leak or member record
+moved anywhere.**
+
+**★ EXACTLY THREE COMMITS THIS BATCH, WHICH IS ONE FEWER THAN THE DISPATCH'S OWN ARITHMETIC AND IS
+THE DISPATCH'S OWN INSTRUCTION.** The dispatch registers "exactly FOUR commits this batch" while
+ordering only Task 0, Task 1's close, and the one further commit carrying the end state — and it
+declines, in terms, the backfill commit the previous batch used to name the close and end-state
+hashes in its report. **Both instructions cannot be met at once, and the one taken is the operative
+one: no backfill commit was written, so the ordered structure is Task 0, the close, and this
+commit.** The report's hash block says in words that a commit cannot carry its own hash and points
+at the git log, which is what the dispatch fixes for that case.
+
+**★ A READER WHO OPENS THE CLOSE COMMIT'S OWN COPY OF `guard_state.json` WILL FIND DIFFERENT OUTPUT
+LINES, AND THAT IS THE E-ORDERING RULE WORKING RATHER THAN A DISCREPANCY.** That copy is the
+PREVIOUS batch's write run — this batch committed no guard artifact before this commit — so it
+cannot record the end state, the end state being a property of the tree the close commit LEFT, and a
+commit cannot contain a run over itself.
+
+**★ THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** The sentence at §10 was written at the
+close and was true of it. Taken over the batch including this further commit the answer is unchanged
+in kind and larger by one item: the guard-state artifact was rewritten again, and that is what
+running the set does. **Nothing else was produced, nothing this batch touched lies outside the
+subjects of its own ordered acts, and the blind output was neither read, compared, judged nor
+altered at any point.**
+
+*Provenance: CC, 2026-08-24, appended in the one further commit after the close commit
+`d5d9ffe9700f4825620fc3a7b0020a4b5d7998ab` existed — a commit whose own identity this paragraph
+therefore cannot contain. Every value above was read from the run recorded in
+`tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference between
+that artifact and the close commit's own blob; no value here was carried forward from an earlier run
+or inferred from a summary.*
