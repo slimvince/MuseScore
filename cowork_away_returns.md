@@ -17771,16 +17771,32 @@ dispatch predicted at the close and the act that clears it.
    explicit hash and needs no exception; the earlier working-tree hash agrees with it exactly.
    Declared because the working-tree-read rule covers every read mechanism, and a hazard met once
    should not be silent merely because it produced the right value.
-3. **Two shell attempts were DENIED by the armed guard and neither was worked around** — an
-   interpreter invocation carrying a literal repository path at the very first act, and an `awk`
-   pipeline aimed at a repository path while resolving a staged blob id. Each was replaced with a
-   route the rule admits.
+3. **THREE shell attempts were DENIED by the armed guard and none was worked around** — an
+   interpreter invocation carrying a literal repository path at the very first act; an `awk`
+   pipeline aimed at a repository path while resolving a staged blob id; and a `head`/`cat` pair
+   over two scratch paths held in a shell variable the guard could not expand, denied on the
+   standing deny-on-indeterminate policy although both paths lie outside the repository. Each was
+   replaced with a route the rule admits. *(Corrected in this batch's fourth commit; this sentence
+   first said TWO and named the first two, the third denial having occurred after the close was
+   drafted. Declared at the end-state section below and at the report's departure 6.)*
 4. **The report's hash block names only the Task 0 commit**, on the dispatch's own instruction, and
    **no backfill commit was written** (§1).
 5. **Reads not performed:** the blind output beyond its first three lines; the brief, including its
    status banner; any rendered pack member; any oracle document; any `ARCHITECTURE.md` oracle span.
    Member (4)'s dispatch-protocol section was read at its own home, `cowork_audit_protocol.md`,
    because this dispatch's read-first block orders that read.
+6. **A FOURTH COMMIT WAS WRITTEN, TO CORRECT A FALSE STATEMENT THIS CLOSE AND THE REPORT BOTH
+   CARRIED.** The standing self-check over the batch's own diff, run before reporting the work
+   done, found that departure 3 above stated TWO guard denials where the batch produced THREE — the
+   third having happened after both texts were drafted. That commit corrects the sentence here, the
+   same sentence in the report, and the end-state section's commit-count paragraph, which the act
+   itself makes true by changing it. **Nothing else moved, no measured value moved, and no verdict
+   moved.** **It is not the backfill commit this dispatch declines:** that instruction is about a
+   hash block naming hashes a commit cannot contain, and no hash block was backfilled. **It brings
+   the batch to the FOUR commits registered expectation E2 states**, and the arithmetic is
+   reconciled in the end-state section below. Declared because a commit outside a dispatch's
+   ordered structure is a departure whatever its size, and because the departures section is the
+   one place a reader has no way to catch a miscount.
 
 ## 9. The plan lines, unchanged and unopened
 
@@ -17873,14 +17889,19 @@ path set of **no commit of this batch** and in the working tree's own enumeratio
 is byte-unchanged entirely. **No verdict row, identity, document, passage, leak or member record
 moved anywhere.**
 
-**★ EXACTLY THREE COMMITS THIS BATCH, WHICH IS ONE FEWER THAN THE DISPATCH'S OWN ARITHMETIC AND IS
-THE DISPATCH'S OWN INSTRUCTION.** The dispatch registers "exactly FOUR commits this batch" while
-ordering only Task 0, Task 1's close, and the one further commit carrying the end state — and it
+**★ FOUR COMMITS THIS BATCH, AND THE ARITHMETIC IS RECONCILED HERE RATHER THAN LEFT TO A READER.**
+The dispatch registers "exactly FOUR commits this batch" while its ordered task structure yields
+only THREE — Task 0, Task 1's close, and the one further commit carrying the end state — because it
 declines, in terms, the backfill commit the previous batch used to name the close and end-state
-hashes in its report. **Both instructions cannot be met at once, and the one taken is the operative
-one: no backfill commit was written, so the ordered structure is Task 0, the close, and this
-commit.** The report's hash block says in words that a commit cannot carry its own hash and points
-at the git log, which is what the dispatch fixes for that case.
+hashes in its report. **That declining was honored: no backfill commit was written, and the report's
+hash block says in words that a commit cannot carry its own hash and points at the git log.** The
+FOURTH commit is a different act, declared at §8.6 above and at the report's departure 6: **the
+standing self-check over the batch's own diff, run before reporting the work done, found that §8.3
+of this close and departure 3 of the report both stated TWO guard denials where the batch produced
+THREE.** That commit corrects those two sentences and this paragraph, and nothing else. *(The former
+wording of this paragraph, preserved under #12, opened "EXACTLY THREE COMMITS THIS BATCH, WHICH IS
+ONE FEWER THAN THE DISPATCH'S OWN ARITHMETIC AND IS THE DISPATCH'S OWN INSTRUCTION" — true when it
+was written and made untrue by the correcting act itself.)*
 
 **★ A READER WHO OPENS THE CLOSE COMMIT'S OWN COPY OF `guard_state.json` WILL FIND DIFFERENT OUTPUT
 LINES, AND THAT IS THE E-ORDERING RULE WORKING RATHER THAN A DISCREPANCY.** That copy is the

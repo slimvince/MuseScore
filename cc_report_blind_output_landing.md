@@ -207,10 +207,15 @@ five things was looked at, so there is nothing withheld here either.
    and needs no exception; the earlier working-tree hash agrees with it exactly. Declared because
    the working-tree-read rule covers every read mechanism, and a hazard met once should not be
    silent merely because it produced the right value.
-3. **Two of this batch's shell attempts were DENIED by the armed guard and neither was worked
-   around.** An interpreter invocation carrying a literal repository path at the very first act, and
-   an `awk` pipeline aimed at a repository path while resolving a staged blob id. Each was replaced
-   — the first with the file tools, the second with the explicit blob hash already in hand.
+3. **THREE of this batch's shell attempts were DENIED by the armed guard and none was worked
+   around.** An interpreter invocation carrying a literal repository path at the very first act; an
+   `awk` pipeline aimed at a repository path while resolving a staged blob id; and a `head`/`cat`
+   pair over two scratch paths held in a shell variable the guard could not expand, denied on the
+   standing deny-on-indeterminate policy although both paths lie outside the repository. Each was
+   replaced with a route the rule admits — the file tools, the explicit blob hash already in hand,
+   and the file tools again. *(Corrected in this batch's fourth commit; the sentence first written
+   here said TWO and named the first two, the third denial having occurred after the report was
+   drafted. Departure 6.)*
 4. **The report's hash block names only the Task 0 commit.** The dispatch's own instruction: a
    commit cannot carry its own hash, this report is inside the close commit, and this dispatch
    chooses the point-at-the-log resolution over the previous batch's two backfill commits. **No
@@ -219,6 +224,21 @@ five things was looked at, so there is nothing withheld here either.
    status banner; any rendered pack member; any oracle document; any `ARCHITECTURE.md` oracle span.
    The dispatch-protocol section was read at its own home, `cowork_audit_protocol.md`, because this
    dispatch's read-first block orders that read.
+6. **A FOURTH COMMIT WAS WRITTEN, TO CORRECT A FALSE STATEMENT THIS REPORT AND THE CLOSE BOTH
+   CARRIED, AND IT IS DECLARED RATHER THAN LEFT SILENT.** The standing self-check over the batch's
+   own diff, run before reporting the work done, found that departure 3 above stated TWO guard
+   denials where the batch produced THREE — the third having happened after the sentence was
+   written. The correction touches only that sentence in this report, the same sentence in the
+   close, and the close's own commit-count paragraph, which this act makes true by changing it.
+   **Nothing else moved, no measured value moved, and no verdict moved.** Declared because a commit
+   outside a dispatch's ordered structure is a departure whatever its size. **It is not the
+   backfill commit the dispatch declines:** that instruction is about a hash block naming hashes a
+   commit cannot contain, and no hash block was backfilled — the report's still points at the git
+   log. **And it brings the batch to the FOUR commits registered expectation E2 states**, where the
+   dispatch's own ordered task structure yields three; the arithmetic is reconciled in the close's
+   end-state section rather than here. *Why the correction rather than leaving it:* the departures
+   section exists to be accurate about what happened, and a miscount inside it is the one place a
+   reader has no way to catch.
 
 ## 7. The standing self-check over this batch's own diff
 
