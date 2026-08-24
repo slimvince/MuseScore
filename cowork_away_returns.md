@@ -17922,3 +17922,212 @@ therefore cannot contain. Every value above was read from the run recorded in
 `tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference between
 that artifact and the close commit's own blob; no value here was carried forward from an earlier run
 or inferred from a summary.*
+
+---
+
+# ═══ THE COMPARISON — the blind derivation's statements graded at the withheld oracle and at the current text, in the closed two-axis vocabulary, with NOTHING recommended about the method (dispatch `cc_instruction_comparison_harmony_boundary.md`, performed 2026-08-24) ═══
+
+# THE COMPARISON TABULATED, THE METHOD UNRULED
+
+## 0. What this batch was, and what it deliberately was not
+
+Task 0 landed the 2026-08-24 comparison-design ruling record, the modified handoff and the dispatch
+itself, and regenerated the evidence-pin membership. Task 1 performed the COMPARISON — a TEXTUAL
+grading of the blind derivation's statements against the oracle's two arms and against the current
+specifications and code — and delivered it as
+`ratification_surfaces/cowork_comparison_harmony_boundary_reading.md`. Task 2 is this close.
+
+**Nothing is recommended about the derivation method, anywhere** — not in the reading file, not in
+the report, not in a commit subject (Ruling 4). **No verdict word is attached to the blind session's
+independence record**; §8 of the reading file relays its contents as facts and says so. **No session
+was booted, no measurement of the analysis was built, designed, scoped or run, and nothing was run
+over a score or an analysis file** — the three ruled annotated pairs were available to be opened and
+cited where a statement's own text named them, and no row required opening one.
+
+## 1. The branch rule, and every SHA of this batch
+
+The branch rule was taken at the tip and at nothing else: both refs named
+`2eeacf6b7a9bc9a5f653a772935f04902c16642a`, whose parent and subject are the ones the dispatch's
+premise ledger states. The commits, oldest first:
+
+- **`35dd95e15232a89116cad257cda755aa0f77e86f`** — Task 0, subject `record: the 2026-08-24
+  comparison-design rulings landed; evidence-pin membership regenerated`; exactly the four ordered
+  paths, enumerated at the commit by the sanctioned enumeration tool.
+- **`5b994124f2d193742d4c9ca2e25f85625cd9c733`** — Task 1, subject `the comparison tabulated: the
+  blind derivation's statements graded at the oracle and the current text in the closed vocabulary —
+  NO recommendation on the method; no session booted`; exactly one path, the reading file.
+- **the close commit** — this section, the report, the two `STATUS.md` entries, the forward bound's
+  application and the regenerated read-size artifact. **A commit cannot carry its own hash; the git
+  log carries it, and no backfill commit was written — the declined resolution stays declined.**
+- **the one further commit** — the end-state guard run, which this close deliberately does not
+  assert (§9).
+
+Both refs were verified at the object after each push.
+
+## 2. The guard states
+
+**Before the first edit the FULL set was run.** 75 guards run, **two failing** and both declared:
+[[OI-372]]'s tool `gen_filing_convention_application.py --check`, the one standing red; and
+`gen_evidence_pin_membership.py --check` reporting its artifact STALE, caused by this dispatch's own
+untracked ruling record. `gen_guard_state.py`'s own comparison opened "STALE vs the run" for the same
+cause, which the dispatch declares is not a third failing check. **Zero STOP verdicts.**
+`gen_guard_classification.py --check` was run separately, as its own STOP requires, and PASSED.
+
+**At Task 1, after the reading file was written, the FULL set was run again as a check.** 75 guards
+run, **ONE failing** — [[OI-372]]'s tool alone; the membership red was cleared by Task 0 step 2 and
+now passes. Four not run and sixteen historical records, unchanged. **Zero STOP verdicts.**
+`gen_guard_classification.py --check` PASSED again, run separately.
+
+**The end-state run is §9's, and it is not asserted here.**
+
+## 3. E0–E2, graded
+
+- **E0 — MET.** Exactly the four ordered paths in the Task 0 commit; `ruling_records_read` at 54 in
+  the regenerated membership artifact; `gen_evidence_pin_membership.py --check` PASSING at the
+  resulting tree; `origin/master` at `35dd95e152`, verified at the object.
+- **E1 — MET.** The reading file is whole and in the ruled shape: the subject re-explained from
+  scratch, the oracle quoted at both arms, the vocabulary stated with its closed-ness, the caveats
+  stated, one row per statement in the output's own order, the verdict distribution counted at the
+  file's own rows, an explicit *nothing is asked of the user here*, and a *what this file does not
+  do* section. **Every statement carries exactly one verdict per axis in the closed vocabulary** —
+  no row was delivered UNGRADED — the oracle's text is quoted or characterised beside every graded
+  row, and no recommendation about the method appears anywhere.
+- **E2 — the further commit's, §9.** Not asserted here.
+
+## 4. A3–A5, graded
+
+- **A3 — HELD on every route, and the one open item measured.** Route A moved 53 → 54 by exactly the
+  one predicted name, `cowork_rulings_2026_08_24_comparison_design_sitting.md`. Route B added
+  nothing: the landed record carries the word that route matches on no line, checked at the file.
+  Route C is unmoved: this batch adds no measurement tool, and the pin-constant population is
+  unchanged. **No further difference arose** — the difference measured against the committed blob at
+  `2eeacf6b7a` is exactly two hunks, the count and the added name. **And the dispatch's one declared
+  measure-and-report item is answered: the derivation was re-run after
+  `ratification_surfaces/cowork_comparison_harmony_boundary_reading.md` existed on disk and DID NOT
+  REACT to it** — the check re-derives clean, so there was no movement to class.
+- **A4 — HELD.** No tool was added; the population stands at 75 run, 4 not run, 16 historical, at
+  both runs; the failing set is unchanged except for the membership red this batch's own Task 0
+  cleared. `gen_guard_classification.py --check` re-derives at both runs.
+- **A5 — HELD, and verified by enumeration rather than by sampling.** After the Task 0 commit the
+  tracked population carried **zero** modifications, measured with the sanctioned enumeration tool
+  immediately before the Task 1 commit; the Task 0 commit itself touched exactly the four ordered
+  paths. So the blind output, the boot pack and its manifest, the brief, the withheld-family reading
+  file, every governing document and every register source are byte-unchanged by this batch.
+
+## 5. The departures, declared
+
+1. **The ordered first read came BEFORE the session-start read**, by Ruling 2 — the blind output was
+   opened whole as this session's very first act, ahead of `CLAUDE.md`. Ruled, and stated here
+   because the ruling requires the departure to be of record.
+2. **The pre-first-edit guard run was performed in WRITE MODE rather than in the ordered check
+   invocation, and the artifact it wrote was restored before any edit.** The generator writes
+   `tools/audit/guard_state.json` unless `--check` is passed, and the invocation used to learn its
+   interface passed `--help`, which it does not accept and therefore ignored — so the whole set ran
+   and the artifact was rewritten. **The consequence was measured rather than assumed:** the
+   difference against the committed blob was exactly the declared second red and the summary counts
+   that follow from it, with no other movement anywhere in the artifact. The file was then restored
+   from the index and the tracked population re-enumerated, confirming that the tree Task 0
+   committed was exactly the tree A1 describes. **The restore is a working-tree write and is
+   declared as one.** No guard artifact was committed before the run that produced it.
+3. **Shell use.** Read-only git object queries by explicit hash; the per-path `git diff --stat <sha>
+   -- <path>` and `git diff <sha> -- <path>` forms the dispatch names in terms, with the changed
+   passages written to scratch paths OUTSIDE the repository and read there with the file tools; the
+   sanctioned enumeration tool; the project's own generators; and `head`, `tail` and `sha256sum`
+   over scratch files and over git-object output, never over working-tree content. **No working-tree
+   `git status` and no bare working-tree `git diff`.**
+4. **An attempted shell heredoc append of this close failed to parse and was abandoned** rather than
+   retried in another dialect; the close was written with the file tools instead.
+5. **No stale index lock was met**, so the **D-669** remedy was neither needed nor taken.
+
+## 6. What was established at the untrusted sources, recorded and NOT graded
+
+Opening the current specifications and the current code per statement, as §T1 orders, established
+five things about the present text. Each is recorded in its own row of the reading file and is named
+here so the writing side can see them without re-reading the tabulation. **This batch allocates NO
+finding number — the series stands at F88 — and creates NO open-items row; both are barred by the
+dispatch. None of the five is graded as a defect anywhere, and the reading file states in terms that
+a DIFFERS row is not a defect finding.**
+
+1. **The production event lattice is built from the TIE-UNRESOLVED notated atoms**, so a notated tie
+   point — a moment at which no note starts and none stops — is a lattice boundary and therefore an
+   admissible committed chord-span boundary. Layer 2's slicer, which reads the tie-RESOLVED surface,
+   has no such boundary. (Reading file, Row 1.)
+2. **A committed segment's published extent can bridge a stretch the lattice omitted for carrying no
+   sounding note**, because segments are contiguous in event INDEX while their published extent is
+   taken in ticks from the first and last event. (Row 26.)
+3. **Two adjacent committed segments carrying the same key and the same class are representable**
+   and are priced by the self-transition cell; the declared total order breaks only EXACT ties
+   toward fewer segments. (Row 2.)
+4. **The ratified pitch-emission covariate list names chromatic-neighbor motion; the shipped
+   emission call does not pass it** as an argument of its own. (Row 20.)
+5. **Candidate admission reads the ONSET pitch-class union of the segment while the missing-tone
+   term reads the SOUNDING union** — two pooled reads over the same segment, of different sets.
+   (Rows 11 and 22.)
+
+## 7. Quarantined questions
+
+**None new.** The five standing quarantined questions are untouched, and this batch neither answered
+nor added to them. [[OI-179]] stays OPEN and GATES; [[OI-372]] and [[OI-374]] stand as found.
+
+## 8. The plan lines
+
+1. **The METHOD RULING surface** — written by the writing side over this tabulation, with
+   alternatives, per Ruling 4 of the comparison-design sitting. It is the next act, and the pilot's
+   whole point.
+2. **The sizing pilot**, conditional on that ruling finding the method usable.
+3. **The ledger**, before the framework phase.
+4. Pruning-and-satellites last.
+
+## 9. The end state is NOT asserted here
+
+Per the dispatch's own clause, this close does not assert the batch's end state. The one further
+commit carries it: a fresh full guard run at the tree this close leaves, committed only after the run
+that produced it.
+
+## 10. The plan's tell, in one sentence
+
+**Did this batch produce anything other than the landed record, the reading file and the report?**
+Yes, and each item is named: the regenerated evidence-pin membership artifact and the regenerated
+session-start read-size artifact, both ordered; the forward bound's application, which moved the
+previous batch's single `STATUS.md` entry to the archive and wrote its own reconciliation artifact;
+the re-aiming of that tool's authored inputs, which is what applying it forward means; the two
+`STATUS.md` pointer entries; and the guard-state artifact, rewritten once before the first edit and
+restored, and rewritten again by the end-state run. **Nothing else was produced, nothing this batch
+touched lies outside the subjects of its own ordered acts, and the blind output was read, graded and
+left byte-unchanged.**
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. *Principles touched.* **#19** — the tabulation establishes nothing and says so; every verdict is
+   re-gradeable at the quoted texts. **#12** — the blind output was graded and never edited; SILENT
+   and the open questions are carried beside the graded rows rather than dropped; the previous
+   batch's `STATUS.md` entry moved verbatim. **#13** — the first-read-before-boot departure and the
+   write-mode guard run are both surfaced rather than absorbed. **#17(f)/D-431** — the counts of
+   record live at the reading file's own rows and manifest header; no value was transcribed into
+   this close from another surface, and the one count the reading file had transcribed — a total of
+   distinct cited identifiers — was removed by the self-check before delivery. **#24** — the two
+   axes are kept apart and no comparison between measured quantities is asserted anywhere. **#6** —
+   the verdict vocabulary has one home, the ruling's own text, and the oracle was located by its own
+   text rather than by a coordinate. Conforms.
+2. *Conventions.* American English; no self-invented labels — "row", "arm" and the five verdict
+   words are the dispatch's and the ruling's own; music-theory words in their musical sense with
+   every non-musical use qualified, the self-check over the delivered file catching three uses of
+   *beat* as a verb for "outperformed" and two numeric uses of *figure*.
+3. *Figures and premises.* The tip, the guard summary, the membership count and the blind output's
+   blob, size and hash were each re-read at the objects rather than carried from the dispatch's
+   ledger; the statement and open-question counts were re-taken at the graded file's own structure.
+4. *File-tools rule.* Declared at §5.3.
+5. *Uncertainty.* No difference between measured quantities is asserted in this batch.
+6. *Re-read from disk before release.* The delivered reading file was re-read whole after assembly,
+   and that read is what found the error §6's first item records: the production lattice's
+   tie-unresolved basis, which changed Row 1's current-text verdict and corrected the reasons given
+   at Rows 3 and 12, and the sounding-versus-onset distinction between the two pooled reads, which
+   corrected Rows 11 and 22. **The verdict distribution at §6 of the reading file was recounted
+   after those corrections.**
+
+*Provenance: CC, 2026-08-24, at the tree carrying `5b994124f2d193742d4c9ca2e25f85625cd9c733`, under
+`cc_instruction_comparison_harmony_boundary.md` Task 2, executing Rulings 1–4 and §5 of
+`cowork_rulings_2026_08_24_comparison_design_sitting.md`. Every value above was read at a
+content-addressed git object or at the artifact the run itself wrote; none was carried forward from
+an earlier run or inferred from a summary. TOWARDS the ultimate objective and TOWARDS the guiding
+principles.*
