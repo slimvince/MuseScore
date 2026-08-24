@@ -19061,3 +19061,57 @@ byte-unchanged.**
 content-addressed git object, at a measured per-path difference, or at an artifact the run itself
 wrote; none was carried forward from an earlier run or inferred from a summary. TOWARDS the ultimate
 objective and TOWARDS the guiding principles.*
+
+# THE END STATE — E2, at the tree the close left
+
+**The FULL guard set was run in write mode at the tree carrying the close commit
+`bd17eeb9c6a2b5398a3cfb189e74957b6585acfa`, and this section is committed only after that run.** The
+result:
+
+- **75 guards run** — the population UNMOVED, this batch having added no tool — with **4 not run**
+  and **16 historical records**, both unchanged.
+- **ONE failing check: `tools/audit/gen_filing_convention_application.py --check`**, [[OI-372]]'s
+  tool, the one standing red this batch met and did not touch. **Every other run check passes.**
+- **ZERO STOP verdicts.**
+- `gen_guard_classification.py --check` was run separately afterwards, as its own STOP requires, and
+  **re-derives**.
+
+**E2 — MET**, on all four of its terms.
+
+**A2 — MET.** Exactly one red remains and it is the standing one. **Both reds this batch caused were
+cleared by the acts that caused them:** the evidence-pin membership check by Task 0's regeneration,
+and the session-start read measurement by the regeneration the close performed after `STATUS.md`
+moved. **No red arose outside the subjects of this batch's own acts, so the STOP A2 reserves for one
+did not fire.**
+
+**★ THE ARTIFACT THIS RUN WROTE IS BYTE-IDENTICAL TO THE CLOSE COMMIT'S OWN COPY, AND THAT IS
+MEASURED RATHER THAN ASSUMED.** The per-path difference of `tools/audit/guard_state.json` against
+`bd17eeb9c6` is **EMPTY**, and the whole-population enumeration of tracked modifications at the tree
+after the run returns **nothing at all**. **So this further commit carries the end-state RECORD and
+no artifact change**, which is the honest outcome and not an omission.
+
+**★ WHY IT DIFFERS IN SHAPE FROM THE PREVIOUS BATCH, STATED SO A READER DOES NOT TAKE IT FOR A MISSED
+STEP.** The previous batch's end-state artifact differed from its close commit's copy in two blocks,
+because that close performed regenerations AFTER its own write-mode run. This close performed its
+write-mode run AFTER every ordered regeneration — the forward bound and the read-size measurement
+both preceded it — so the only files written between that run and this one were
+`cowork_away_returns.md` and `cc_report_sizing_brief_ruled.md`. **The byte-identity is therefore a
+positive finding about this tree: no guard's recorded output depends on the close section or on the
+session report**, and the end state the close left is the state the close commit already carries.
+
+**★ THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** The sentence at §10 was written at the
+close and was true of it. Taken over the batch including this further commit the answer is unchanged
+in kind and larger by one item: this end-state section itself. **Nothing else was produced; nothing
+this batch touched lies outside the subjects of its own ordered acts; no session was booted; the
+generator was not opened; `docs/scoring_model.md` was not opened; no pack file moved; and the
+manifest is byte-unchanged.**
+
+**THE COMMIT COUNT.** The ordered structure yields THREE, and **this batch carries THREE.** No
+correction commit was needed beyond them; had one been, both surfaces would declare it.
+
+*Provenance: CC, 2026-08-25 by the clock, recording work performed as the 2026-08-24 batch, appended
+in the one further commit after the close commit `bd17eeb9c6a2b5398a3cfb189e74957b6585acfa` existed —
+a commit whose own identity this paragraph therefore cannot contain. Every value above was read from
+the run recorded in `tools/audit/guard_state.json`, which that run itself wrote, and from the measured
+difference between that artifact and the close commit's own blob; no value here was carried forward
+from an earlier run or inferred from a summary.*
