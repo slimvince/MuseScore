@@ -18784,3 +18784,55 @@ moved, and the harmony-boundary subject's manifest block is byte-unchanged.**
 content-addressed git object or at the artifact the run itself wrote; none was carried forward from
 an earlier run or inferred from a summary. TOWARDS the ultimate objective and TOWARDS the guiding
 principles.*
+
+# THE END STATE — E2, at the tree the close left
+
+**The FULL guard set was run in write mode at the tree carrying the close commit
+`41b77c9f922c91c9d6414a83fd7dbccc75b99911`, and the artifact it wrote is committed only in the commit
+that follows that run.** The result:
+
+- **75 guards run** — the population UNMOVED, this batch having added no tool — with **4 not run**
+  and **16 historical records**, both unchanged.
+- **ONE failing check: `tools/audit/gen_filing_convention_application.py --check`**, [[OI-372]]'s
+  tool, the one standing red this batch met and did not touch. **Every other run check passes.**
+- **ZERO STOP verdicts.**
+- `gen_guard_classification.py --check` was run separately afterwards, as its own STOP requires, and
+  **re-derives**.
+
+**E2 — MET**, on all four of its terms.
+
+**A2 — MET.** Exactly one red remains and it is the standing one. **All three reds this batch caused
+were cleared by the acts that caused them:** the evidence-pin membership check by Task 0's
+regeneration; the boot-pack generator's own check — red between the two prose corrections and the
+re-render — by the render inside Task 1's own commit; and the session-start read measurement by the
+regeneration the close performed after `STATUS.md` moved.
+
+**THE ARTIFACT'S DIFFERENCE AGAINST THE CLOSE COMMIT'S OWN COPY IS TWO BLOCKS, AND BOTH ARE THIS
+BATCH'S OWN ACTS.** The forward bound's reconciliation line, now reporting the two entries this close
+moved; and the session-start read measurement, now reflecting the `STATUS.md` this close left. Both
+sit inside the recorded output of checks whose verdict is PASS in both copies. **The summary block
+does not appear in the difference at all** — the run count, the passing count and the failing set are
+identical to the copy the close commit carried, which is what *the population is unmoved and the
+standing red is the only red* means at the object rather than in prose.
+
+**★ A READER WHO OPENS THE CLOSE COMMIT'S OWN COPY OF `guard_state.json` WILL FIND DIFFERENT OUTPUT
+LINES, AND THAT IS THE ORDERING RULE WORKING RATHER THAN A DISCREPANCY.** That copy is the state
+before this close's own regenerations were performed; it cannot record the end state, the end state
+being a property of the tree the close commit LEFT, and a commit cannot contain a run over itself.
+
+**★ THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** The sentence at §10 was written at the
+close and was true of it. Taken over the batch including this further commit the answer is unchanged
+in kind and larger by one item: the guard-state artifact was rewritten, and that is what running the
+set does. **Nothing else was produced; nothing this batch touched lies outside the subjects of its own
+ordered acts; no session was booted; `docs/scoring_model.md` was not opened; no pack file moved; and
+the harmony-boundary subject's manifest block is byte-unchanged.**
+
+**THE COMMIT COUNT.** The ordered structure yields FOUR, and **this batch carries FOUR.** No
+correction commit was needed beyond them; had one been, both surfaces would declare it.
+
+*Provenance: CC, 2026-08-24, appended in the one further commit after the close commit
+`41b77c9f922c91c9d6414a83fd7dbccc75b99911` existed — a commit whose own identity this paragraph
+therefore cannot contain. Every value above was read from the run recorded in
+`tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference between
+that artifact and the close commit's own blob; no value here was carried forward from an earlier run
+or inferred from a summary.*
