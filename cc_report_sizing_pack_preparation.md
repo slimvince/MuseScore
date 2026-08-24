@@ -304,6 +304,33 @@ number — the series stands at F88** — and no open-items row created, flipped
    after the edits and before the commit; the rendered read-me and the delivered reading file were
    re-read whole from disk.
 
+## 7. THE CORRECTION — a FIFTH commit, added after the end state
+
+**The standing self-check over this batch's own diff, run after the end-state commit, found ONE
+convention slip, and a fifth commit corrects it.** The full record is the **★ THE CORRECTION** block
+at the end of the close section of `cowork_away_returns.md`; what follows is the same act stated
+here, because the previous batch's precedent is that an extra commit is declared in BOTH surfaces.
+
+- **What it was.** The newer of this batch's two `STATUS.md` pointer entries closed with *"no count,
+  no leak identity and no rendered figure is restated here"*. **Bare *figure* is reserved for
+  figuration**; the numeric sense is written *number* or *value*. The reserved-word inventory names
+  this exact collision and the standing bar is that no NEW instance of a known collision is
+  introduced. Corrected to *value*.
+- **Where it was not.** The close section and this report carried no bare numeric use of the word —
+  their only appearances are metalinguistic mentions of the word itself — so nothing else moved.
+- **What the fifth commit carries, and nothing else:** the one corrected word in `STATUS.md`; the
+  session-start read-size artifact regenerated, so that correcting a must-read leaves no red; this
+  section; and the close's own declaration block.
+- **What it does not disturb.** The end state is a property of the tree the close commit LEFT, which
+  is fixed and historical; this commit cannot change what that run measured. The one standing red is
+  unmoved, no STOP is created, and the guard population is untouched.
+- **A second, smaller item, DECLARED rather than corrected.** The end-state commit's subject reads
+  *OI-372s tool* where it means *OI-372's tool*: a POSIX single-quoted commit subject cannot carry an
+  apostrophe, and the dispatch fixes plain single-quoted subjects. **A commit subject is immutable
+  without a rewrite of history, which is not an act this batch may take**, so it is declared and left.
+  The subject's meaning is unaffected.
+- **The commit count.** The ordered structure yields FOUR; **this batch carries FIVE.**
+
 ---
 
 *Provenance: CC, 2026-08-24, under `cc_instruction_sizing_pack_preparation.md`, executing Ruling 1

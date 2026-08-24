@@ -18470,3 +18470,48 @@ therefore cannot contain. Every value above was read from the run recorded in
 `tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference between
 that artifact and the close commit's own blob; no value here was carried forward from an earlier run
 or inferred from a summary.*
+
+# ★ THE CORRECTION — a FIFTH commit, declared here and in the report
+
+**The standing self-check over this batch's own diff, run after the end-state commit
+`ed1c1962f8c284493ecf2004dc86c85f570dd833`, found ONE convention slip, and this commit corrects it.**
+
+**WHAT IT WAS.** The newer of this batch's two `STATUS.md` pointer entries closed with *"no count, no
+leak identity and no rendered figure is restated here"*. **Bare *figure* is reserved for figuration**;
+the numeric sense is written *number* or *value*. The reserved-word inventory names this exact
+collision, and the standing bar is that **no NEW instance of a known collision is introduced** while
+the ruled per-word cleanup has not reached it. The word is corrected to *value*. **The close section
+above and the report carried no bare numeric use of the word** — its only appearances there are
+metalinguistic mentions of the word itself — so nothing else moved.
+
+**WHY IT WAS NOT LEFT AND REPORTED INSTEAD.** The self-check's own rule is that a violation found is
+surfaced and never silently shipped, and the correcting edit is one word inside a surface a session
+reads at every boot. The correction is taken here rather than rowed because this dispatch bars
+creating an open-items row, and because leaving it would put a new instance of a known collision into
+the must-read while claiming in this very section that every non-musical use was qualified.
+
+**WHAT THIS COMMIT CARRIES, and nothing else:** the one corrected word in `STATUS.md`; the
+session-start read-size artifact regenerated, so that correcting a must-read does not leave that check
+red; the report's own declaration of this commit; and this block. **No other file moves.**
+
+**WHAT IT DOES NOT DISTURB.** The end state asserted above is a property of the tree the close commit
+`2fa17e669ddabc237a64964da47cc98a48178de3` LEFT, and that tree is fixed and historical: this commit
+does not and cannot change what that run measured. What it does change is the FINAL tree, which
+therefore carries no run of its own — the same property the end-state commit already has, for the
+reason stated above, that a commit cannot contain a run over itself. **The one standing red is
+unmoved, no STOP is created, and the guard population is untouched.**
+
+**A SECOND, SMALLER ITEM, DECLARED RATHER THAN CORRECTED.** The end-state commit's subject reads
+*OI-372s tool* where it means *OI-372's tool*: a POSIX single-quoted commit subject cannot carry an
+apostrophe, and the dispatch fixes plain single-quoted subjects. **A commit subject is immutable
+without a rewrite of history, which is not an act this batch may take**, so it is declared here and
+left. Nothing about the subject's meaning is affected.
+
+**THE COMMIT COUNT.** The ordered structure yields FOUR commits; **this batch carries FIVE**, the
+fifth being this correction. It is declared in both surfaces — here and at the report's §7 — on the
+precedent the previous batch set when its own self-check found a defect after its close.
+
+*Provenance: CC, 2026-08-24, appended in the fifth commit after the end-state commit
+`ed1c1962f8c284493ecf2004dc86c85f570dd833` existed — a commit whose own identity this paragraph
+therefore cannot contain. The slip was found by re-reading this batch's own diff against the
+conventions, which is what the standing self-check is for.*
