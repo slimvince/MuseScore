@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 56,
+  "ruling_records_read": 57,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -196,6 +196,7 @@
   "cowork_rulings_2026_08_24_blind_return_sitting.md",
   "cowork_rulings_2026_08_24_comparison_design_sitting.md",
   "cowork_rulings_2026_08_24_method_ruling_sitting.md",
+  "cowork_rulings_2026_08_24_sizing_leak_list_sitting.md",
   "cowork_rulings_2026_08_24_sizing_pilot_sitting.md",
   "cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
@@ -211,6 +212,9 @@
    ],
    "cowork_restructuring_period_start_decision_surface.md": [
     "cowork_rulings_2026_08_15_period_start.md"
+   ],
+   "cowork_sizing_pack_leak_list_reading.md": [
+    "cowork_rulings_2026_08_24_sizing_leak_list_sitting.md"
    ],
    "cowork_withheld_family_harmony_boundary_reading.md": [
     "cowork_rulings_2026_08_22_withheld_family_sitting.md"
