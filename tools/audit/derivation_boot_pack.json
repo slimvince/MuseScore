@@ -2651,6 +2651,207 @@
           "characters": 5910
         }
       ]
+    },
+    "scoring-model": {
+      "subject": "scoring-model",
+      "the_subject_in_plain_words": "The unit whose specification `docs/scoring_model.md` carries — derived here from the domain and from the ruled design intent, without that document being opened.",
+      "the_oracle_this_family_protects": "NONE. This unit is not held out and has no oracle. Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` rules the withheld family EMPTY for this subject — no withheld identities, no withheld documents, no withheld passages — and leaves the whole of the cutting to the standing leak check. The declined alternatives are recorded at that ruling: withholding in the held-out shape would starve the derivation of ruled intent no test needs and size a handicapped method, and reusing the harmony-boundary pack would carry another oracle's cuts.",
+      "the_directory": "tools/audit/derivation_boot_pack/scoring-model",
+      "★_the_bound_on_the_candidate_criterion": "The candidate criterion is a PATTERN MATCH over the rulings sort and the decisions register's own text. ITS REACH IS UNMEASURED (#19): an entry that bears on this subject in words none of the criterion's terms carry would not appear here, and an empty match would be evidence of nothing. The bound is stated rather than a detection measurement being owed, under D-673, and the test that clause fixes is met: NO ANALYSIS DECISION CONSUMES THIS ENUMERATION — the user rules it at the reading file this dispatch delivers.",
+      "the_candidate_criterion": {
+        "a candidate is every DESIGN-INTENT entry meeting ANY of": [
+          "its `group` is E — Layer 2, the slicer",
+          "its `home` document is one of the withheld-document candidates",
+          "its `home` is `ARCHITECTURE.md` at a line inside one of the oracle spans below",
+          "any of `title`, `verbatim`, `plain`, `patterns` contains one of the keywords",
+          "it is an identity the ruling names"
+        ],
+        "the_oracle_spans_located_by_text_on_every_run": [],
+        "the_keywords": [],
+        "the_groups": [],
+        "the_home_documents": [],
+        "named_by_the_ruling": []
+      },
+      "counted": {
+        "design_intent_class": 244,
+        "candidates": 0,
+        "verdicts": {
+          "IN": 0,
+          "OUT": 0,
+          "UNPLACED": 0
+        },
+        "withheld_identities_authored": 0,
+        "withheld_identities_derived": 0,
+        "withheld_identities_total": 0,
+        "withheld_documents": 0,
+        "withheld_passages": 0,
+        "leaks": 3,
+        "design_intent_entries_rendered": 241,
+        "defect_type_rows_rendered": 25,
+        "files_in_the_pack": 7
+      },
+      "THE_WITHHELD_FAMILY": {
+        "★_what_this_is": "AUTHORED, and it CLEARS NOTHING (D-655). A session may author an establishment; its verdicts are delivered as a ratification-surface reading file and the user rules them. No session boots from this pack before that ruling.",
+        "identities": [],
+        "documents": {},
+        "passages": [],
+        "derived_cross_reference_additions": {
+          "★_what_these_are": "Entries of the DESIGN-INTENT class whose own text QUOTES OR CROSS-REFERENCES a withheld identity or names a withheld document, added to the withheld set by the derivation rather than by hand. The fields searched include `rationale` and `status_source`, which the pack does not render — a cross-reference in either is still a route to the withheld material.",
+          "★_the_bound": "ONE PASS, from the AUTHORED identities only. It is NOT transitive: an entry that cross-references one of these additions rather than an authored identity is not itself added.",
+          "additions": []
+        }
+      },
+      "THE_CANDIDATES_AND_THEIR_VERDICTS": [],
+      "LEAKS": {
+        "★_what_this_is": "An entry of member (5) or a row of member (6) whose RENDERED fields carry a withheld identity string, a withheld document's name, a `docs/` or `src/` path, or the string `ARCHITECTURE.md`. It is NOT rendered into the pack and is listed here instead.",
+        "★_the_scope, stated because a scope that is not stated reads as total": "Members (5) and (6) ONLY — the two this tool GENERATES. Members (1)-(4) are ruled WHOLE and are not string-checked; member (2)'s Conventions span names `ARCHITECTURE.md` in the never-work-from-memory rule BY DESIGN.",
+        "entries": [
+          {
+            "member": 5,
+            "id": "D-270",
+            "title": "The held-out evaluation protocol - five-fold cross-validation grouped by ground-truth analysis file",
+            "matched": [
+              {
+                "field": "verbatim",
+                "kind": "a-docs-or-src-path",
+                "matched": "docs/score_inventory.md"
+              }
+            ]
+          },
+          {
+            "member": 5,
+            "id": "D-296",
+            "title": "READING MuseScore's engraving code is allowed from anywhere we may edit; only EDITING the notation and engraving code is off limits",
+            "matched": [
+              {
+                "field": "verbatim",
+                "kind": "a-docs-or-src-path",
+                "matched": "src/notation"
+              },
+              {
+                "field": "verbatim",
+                "kind": "a-docs-or-src-path",
+                "matched": "src/engraving"
+              }
+            ]
+          },
+          {
+            "member": 5,
+            "id": "D-440",
+            "title": "The language-model integration is purpose-built and does not wait for the plugin-API reform",
+            "matched": [
+              {
+                "field": "verbatim",
+                "kind": "a-docs-or-src-path",
+                "matched": "src/llm/"
+              }
+            ]
+          }
+        ]
+      },
+      "the_members_as_rendered": [
+        {
+          "member": 1,
+          "file": "01_the_phase_definitions.md",
+          "title": "The six phases and the standing constraints over every one of them",
+          "source": "ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md",
+          "rendered_from": "the file itself, quoted",
+          "spans": [
+            {
+              "kind": "heading-to-heading",
+              "opens_at": "## 3. DECISION 1 — the proposed phase definitions",
+              "closes_before": "## 4. DECISION 2",
+              "lines_rendered": 242
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
+          "characters": 18713
+        },
+        {
+          "member": 2,
+          "file": "02_the_guiding_principles_and_the_conventions.md",
+          "title": "The guiding principles and the conventions",
+          "source": "CLAUDE.md",
+          "rendered_from": "the file itself, quoted — TWO spans only",
+          "spans": [
+            {
+              "kind": "heading-to-paragraph",
+              "opens_at": "## Guiding principles",
+              "closes_at_the_end_of_the_paragraph_opening": "**Delegation pointer",
+              "lines_rendered": 297
+            },
+            {
+              "kind": "heading-to-eof",
+              "opens_at": "## Conventions",
+              "closes_at": "the end of the file",
+              "lines_rendered": 376
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
+          "characters": 59521
+        },
+        {
+          "member": 3,
+          "file": "03_the_writing_standards.md",
+          "title": "The writing standards every derived specification is written to",
+          "source": "cowork_design_doc_template.md",
+          "rendered_from": "the file itself, quoted, whole",
+          "spans": [
+            {
+              "kind": "whole",
+              "taken": "the whole file",
+              "lines_rendered": 189
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
+          "characters": 15002
+        },
+        {
+          "member": 4,
+          "file": "04_the_dispatch_protocol.md",
+          "title": "The dispatch protocol a deriving session is dispatched under",
+          "source": "cowork_audit_protocol.md",
+          "rendered_from": "the file itself, quoted",
+          "spans": [
+            {
+              "kind": "heading-to-eof",
+              "opens_at": "## The dispatch protocol these audits are commissioned and run under",
+              "closes_at": "the end of the file",
+              "lines_rendered": 1344
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
+          "characters": 99970
+        },
+        {
+          "member": 5,
+          "file": "05_the_ratified_design_intent.md",
+          "title": "The ratified design intent, CUT for this subject",
+          "source": "tools/audit/rulings_sort_classification.json + tools/audit/decisions/backbone_decisions.json",
+          "rendered_from": "GENERATED — the DESIGN-INTENT class less the withheld family, four fields per entry",
+          "entries_rendered": 241,
+          "leak_checked": true,
+          "characters": 294729
+        },
+        {
+          "member": 6,
+          "file": "06_the_defect_type_catalog.md",
+          "title": "The defect-type catalog — type and definition only",
+          "source": "DEFECT_TYPES.md",
+          "rendered_from": "GENERATED — two columns of the catalog table",
+          "rows_rendered": 25,
+          "columns_kept": [
+            "ID",
+            "type (plain)"
+          ],
+          "leak_checked": true,
+          "characters": 5910
+        }
+      ]
     }
   }
 }

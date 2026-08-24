@@ -310,6 +310,34 @@ WITHHELD: dict[str, dict] = {
         # The identity the ruling names in terms; every other IN verdict below joins it.
         "the_identity_the_ruling_names": "D-057",
     },
+
+    # ── THE SIZING SUBJECT — an EMPTY withheld family by ruling ────────────────────────────────
+    # Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md`, quoted verbatim:
+    #
+    #     a second subject, `scoring-model`: no withheld identities, no withheld documents, no
+    #     withheld passages … The standing leak check does the whole of the cutting … The leak
+    #     list goes to the user as a reading file in the shape List Four took. Members (1)-(4) and
+    #     (6) render whole; member (2) carries NO withheld passage for this subject.
+    #
+    # THE FAMILY IS EMPTY BECAUSE THIS UNIT IS NOT HELD OUT AND HAS NO ORACLE — not because a
+    # search came back empty. There is therefore no candidate criterion either: nothing is
+    # withheld, so nothing needs deriving as a candidate and no verdict is authored.
+    "scoring-model": {
+        "the_subject_in_plain_words":
+            "The unit whose specification `docs/scoring_model.md` carries — derived here from the "
+            "domain and from the ruled design intent, without that document being opened.",
+        "the_oracle_this_family_protects": (
+            "NONE. This unit is not held out and has no oracle. Ruling 1 of "
+            "`cowork_rulings_2026_08_24_sizing_pilot_sitting.md` rules the withheld family EMPTY "
+            "for this subject — no withheld identities, no withheld documents, no withheld "
+            "passages — and leaves the whole of the cutting to the standing leak check. The "
+            "declined alternatives are recorded at that ruling: withholding in the held-out shape "
+            "would starve the derivation of ruled intent no test needs and size a handicapped "
+            "method, and reusing the harmony-boundary pack would carry another oracle's cuts."),
+        "withheld_documents": {},
+        "withheld_passages": [],
+        # NO `the_identity_the_ruling_names`: the ruling names none, the family being empty.
+    },
 }
 
 # ══════════════════════════════════════════════════════════════════════════════════════════════
@@ -334,6 +362,18 @@ CRITERION = {
         ),
         "keywords": KEYWORDS,
         "always": ("D-057",),
+    },
+    # EMPTY BY RULING, and the emptiness is a statement about the SUBJECT rather than a search
+    # result: nothing is withheld for `scoring-model`, so no candidate has to be derived and no
+    # verdict has to be authored. Every term is empty, which is the shape the tool's own STOPs
+    # already accept — an empty criterion returns no candidate, an empty verdict table grades
+    # none, and the distribution accounts for the population exactly.
+    "scoring-model": {
+        "groups": (),
+        "home_documents": (),
+        "architecture_spans": (),
+        "keywords": (),
+        "always": (),
     },
 }
 
@@ -786,6 +826,11 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "It bears on orchestration — that one path builds, slices and decodes — not on "
                   "where a slice's edges fall."),
     },
+
+    # The sizing subject's criterion is empty by ruling, so the derivation returns no candidate and
+    # there is nothing to grade. The empty table is authored rather than left absent so that the
+    # emptiness is visible here, where a reader looks for a subject's verdicts.
+    "scoring-model": {},
 }
 
 
@@ -1125,18 +1170,68 @@ def render_defect_types(rows: list[list[str]], header: list[str]) -> str:
     return "\n".join(out) + "\n"
 
 
-def render_read_me(subject: str, subject_words: str, passages: list[dict]) -> str:
+def render_what_was_cut(withheld_entries: int, passages: list[dict]) -> str:
+    """The read-me's what-was-cut section, DERIVED from what was actually withheld.
+
+    LICENSED ACCOMMODATION (ii) of §4(1) of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md`,
+    quoted verbatim: *"the read-me's what-was-cut section renders truthfully for a subject with no
+    withheld entries and no withheld passages"*.  Before it, the two-kinds lead-in and the
+    entries bullet were HARDCODED, so a subject withholding nothing would have told its session
+    that material had been withheld from it and that there were `0 passages` — the zero-passage
+    bound the record declared twice.
+
+    IT IS DERIVED FROM THE COUNTS AND NOT SWITCHED ON A SUBJECT NAME, so it is true at any future
+    subject; and the two-kinds state re-renders BYTE-IDENTICALLY, which is what shows the
+    rendering derived rather than duplicated (#6).
+    """
+    member_two = MEMBERS[1]["filename"]
+    kinds: list[str] = []
+    if withheld_entries:
+        kinds.append("entries of the design-intent file that were not rendered — you will see "
+                     "identifier gaps, and\n  those gaps are **not** evidence of anything")
+    n = len(passages)
+    if n == 1:
+        kinds.append(f"one passage inside `{member_two}`, marked in place where it was removed")
+    elif n > 1:
+        kinds.append(f"{n} passages inside `{member_two}`, each marked in place where it was "
+                     f"removed")
+
+    head = "## What has been cut out of this pack, and why you are told"
+    tail = ("**Do not try to reconstruct any of it, and do not treat a gap as a hint.** Derive the "
+            "unit from the\ndomain and from what this pack does carry.")
+
+    if not kinds:
+        return f"""{head}
+
+**Nothing has been withheld from this pack for this subject.** No register entry and no passage
+was held back: this unit is not held out against a ruled answer you have not read.
+
+What the design-intent file does not carry is the entries a standing check removed for a
+different reason — an entry whose own rendered words name a path into this project's own
+implementation documents. You will see identifier gaps where that happened, and those gaps are
+**not** evidence of anything.
+
+{tail}"""
+
+    lead = "One kind:" if len(kinds) == 1 else "Two kinds:"
+    bullets = "\n".join("* " + k + (";" if i < len(kinds) - 1 else ".")
+                        for i, k in enumerate(kinds))
+    return f"""{head}
+
+Material has been withheld from this pack **for this subject**, so that what you derive can be
+compared against a ruled answer you have not read. {lead}
+
+{bullets}
+
+{tail}"""
+
+
+def render_read_me(subject: str, subject_words: str, passages: list[dict],
+                   withheld_entries: int) -> str:
     names = [READ_ME] + [m["filename"] for m in MEMBERS]
     listing = "\n".join(
         [f"{i + 1}. `{m['filename']}` — {m['title']}" for i, m in enumerate(MEMBERS)])
-    # DERIVED from the passages actually applied for this subject, so the sentence stays true at
-    # whatever count a subject's authored table carries: singular wording at one, plural at more.
-    n = len(passages)
-    passages_line = (
-        f"* one passage inside `{MEMBERS[1]['filename']}`, marked in place where it was removed."
-        if n == 1 else
-        f"* {n} passages inside `{MEMBERS[1]['filename']}`, each marked in place where it was "
-        f"removed.")
+    what_was_cut = render_what_was_cut(withheld_entries, passages)
     return f"""# READ THIS FIRST — the whole of what this session opens
 
 You are an **implementation-blind deriving session**. Your work is to write what the analysis
@@ -1166,17 +1261,7 @@ file, including one of these six — STOP READING THAT FILE AT THAT POINT and re
 and HOW MUCH you had seen.** That record is part of your output. It is not a failure; an unrecorded
 one is.
 
-## What has been cut out of this pack, and why you are told
-
-Material has been withheld from this pack **for this subject**, so that what you derive can be
-compared against a ruled answer you have not read. Two kinds:
-
-* entries of the design-intent file that were not rendered — you will see identifier gaps, and
-  those gaps are **not** evidence of anything;
-{passages_line}
-
-**Do not try to reconstruct any of it, and do not treat a gap as a hint.** Derive the unit from the
-domain and from what this pack does carry.
+{what_was_cut}
 
 ## What your output is
 
@@ -1349,7 +1434,7 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
         raise Stop(f"{want_passages} withheld passage(s) authored, {len(passages_applied)} applied")
 
     files[READ_ME] = render_read_me(subject, authored["the_subject_in_plain_words"],
-                                    passages_applied)
+                                    passages_applied, len(withheld_ids))
 
     record = {
         "subject": subject,
