@@ -1,9 +1,11 @@
 # BRIEF for the blind deriving session — the SCORING-MODEL subject (the sizing unit of the pilot)
 
-> **STATUS: DRAFT FOR THE USER'S RULING.** Written by the writing side (Cowork, 2026-08-24, the
-> forty-fifth Cowork session) at branch tip `24d7f0be93`, after the boot pack for this subject was
-> rendered and verified at the objects. **It dispatches nothing and boots no session.** It becomes
-> a session's brief when the user has ruled the points of §8.
+> **STATUS: RULED 2026-08-24.** Written by the writing side (Cowork, 2026-08-24, the forty-fifth
+> Cowork session) at branch tip `24d7f0be93`, after the boot pack for this subject was rendered and
+> verified at the objects; refreshed to the ruled state the same day at tip `3fbbcb5b5d`. **It
+> dispatches nothing and boots no session.** **Every point of §8 is now RULED**
+> (`cowork_rulings_2026_08_24_sizing_brief_sitting.md`). **This is the brief the sizing session
+> reads; the user opens that session when the user chooses.**
 >
 > **Who reads this file, and when.** The deriving session reads it FIRST, before it opens the boot
 > pack. Everything the session is allowed to read is named in §3; **this brief and that directory
@@ -105,10 +107,28 @@ claim it takes from them as the pack's principles prescribe (FACT where the pape
 and read states or measures it; THEORY where it is established published theory; CONJECTURE
 otherwise). **A source that could not be fetched yields no statement**; the gap is recorded.
 
-**Annotated scores: see §8 (P3).** Whether the three staged chorale-and-analysis pairs of the
-pilot's first unit are staged to this session too is the user's to rule; if they are, they are
-staged BY NAME and are the annotators' own published readings — one human reading each, graded
-against in this project, never a specification.
+**The annotated scores — staged to the session BY NAME, and nothing else of the corpus (ruled
+2026-08-24).** Beside the brief and the pack, the writing side stages these files, each by its own
+name and never a directory:
+
+* chorale **001** *Aus meines Herzens Grunde* — `tools/dcml/bach_chorales/MS3/001 Aus meines Herzens Grunde.mscx`,
+  with `tools/dcml/when_in_rome/Corpus/Early_Choral/Bach,_Johann_Sebastian/Chorales/001/analysis.txt`
+  and `…/001/analysis_BCMH.txt`;
+* chorale **003** *Ach Gott, vom Himmel sieh darein* — `…/MS3/003 Ach Gott, vom Himmel sieh darein.mscx`,
+  with `…/Chorales/003/analysis.txt` and `…/003/analysis_BCMH.txt`;
+* the **BWV 301** score *Du, o schönes Weltgebäude* — `…/MS3/137 Du, o schönes Weltgebäude.mscx`,
+  with `…/Chorales/`**`134`**`/analysis.txt` — **paired by CONTENT and never by number**: the two
+  corpora number by different schemes, and folder 137 holds a different chorale entirely (ruled
+  2026-08-24 at the blind-return sitting; folder 134 matches this score on title, key signature,
+  meter and bar count). Folder 134 carries no BCMH file.
+
+**What these are, and what they are not.** They are the annotators' own published readings — one
+human reading each, named to its analyst, graded against in this project, and **never a
+specification**. They are **EXEMPLARS, NOT A CORPUS**: the session may read what an analyst chose
+at a given place and reason about what would make that reading fit, and it may say what three
+chorales could not show. **It builds, designs, scopes and runs NO measurement over them** — that
+bar is unchanged by their being staged, and a count taken over three chorales is not a measured
+fact about this project's data.
 
 **The admitted-facts hole, declared.** The pack carries no ledger of empirically established facts
 about this project's own data. The session works with none; where it would have wanted one it
@@ -185,7 +205,8 @@ incomplete.**
 ## 7. The output, and what the session does NOT do
 
 **One file.** The session writes its statements, open questions, sizing record and independence
-record to ONE new file at the repository root, whose name the user fixes at §8 (P4), with the
+record to ONE new file at the repository root, whose name the user fixed on 2026-08-24 (Ruling 3
+of the sizing-brief sitting): **`cowork_blind_derivation_scoring_model_2026_08_24.md`**, with the
 status banner *DRAFT — BLIND DERIVATION, NOT COMPARED, NOT RATIFIED*. It is written for a reader
 who knows music theory and not this project: terms explained at first use, predicates qualified,
 no invented labels, music-theory words in their musical sense only.
@@ -202,26 +223,19 @@ rule and reads no commit log; it derives nothing on any subject but the one in �
 decide anything about the derivation method** — that was ruled established on 2026-08-24 on a
 different unit, and this session's business is the subject and the sizing, not the method.
 
-## 8. The points the user rules before this brief is dispatched — their state on 2026-08-24
+## 8. The points the user rules before this brief is dispatched — ALL RULED on 2026-08-24
 
 - **(P1) The deriving side's identity — RULED:** a fresh Cowork session (Ruling 2 of
   `cowork_rulings_2026_08_24_sizing_pilot_sitting.md`). Applied in §7.
-- **(P2) Fetched research — OPEN, with a default.** §3 allows it, on the same ground the first
-  unit's ruling took: the method's ruled inputs are independent sources and fetched literature, and
-  a session forbidden research would size a different method from the one established. **Confirm or
-  strike.**
-- **(P3) Annotated scores — OPEN.** The first unit was staged three chorale scores with their
-  published human analyses (ruled 2026-08-22 for that unit). For a scoring subject the case is
-  weaker than it was for boundaries — a published Roman-numeral reading shows WHICH chord an
-  analyst chose, not how well any candidate fitted — but it still exhibits real readings against
-  real sounding content. **Three ways, and the user rules:** stage the same three pairs by name;
-  stage none; or stage them only if a statement's own text needs an exemplar, which the session
-  cannot know in advance and which therefore reads as "stage them". *(If staged, the pairs are the
-  ruled ones: chorales 001 and 003 with their two analyses each, and the BWV 301 score with* When
-  in Rome *folder 134's analysis — pairing by content, never by number, per Ruling 1 of the
-  blind-return sitting.)*
-- **(P4) The output file's name — OPEN.** The draft name is
-  `cowork_blind_derivation_scoring_model_2026_08_24.md`, following the first unit's fixed pattern.
+- **(P2) Fetched research — RULED:** allowed, as §3 is written (Ruling 1 of
+  `cowork_rulings_2026_08_24_sizing_brief_sitting.md`). The ground: the method's ruled inputs are
+  the pack and fetched literature, and a session forbidden research would size a different method
+  from the one established.
+- **(P3) Annotated scores — RULED:** the three pairs are staged BY NAME (Ruling 2 of the same
+  record), applied in §3 with the file list and with the exemplars-not-a-corpus bar restated there.
+
+- **(P4) The output file's name — RULED:** `cowork_blind_derivation_scoring_model_2026_08_24.md`
+  (Ruling 3 of the same record). Applied in §7.
 - **(P5) The withheld family — RULED EMPTY** (Ruling 1 of the sizing-pilot sitting) and applied:
   nothing is withheld from this pack, and §3 tells the session so.
 
@@ -260,3 +274,12 @@ writing standards applied are `cowork_design_doc_template.md`'s two; the fourtee
 does not bind this kind, and the kind is stated so the exemption is not claimed by silence. The
 reserved-word conventions bind every line above: TOWARDS the ultimate objective and TOWARDS the
 guiding principles.
+
+**Amended 2026-08-24, after the sizing-brief sitting** (record
+`cowork_rulings_2026_08_24_sizing_brief_sitting.md`, taken at tip `3fbbcb5b5d`): the banner set to
+RULED; §3's annotated-score paragraph replaced by the ruled file list with the
+exemplars-not-a-corpus bar restated; §7's output name fixed by Ruling 3; §8 brought to the rulings'
+state. **§§0–2, §4, §5, §6 and the whole of §7 but its one name sentence are byte-unchanged**, and
+so is everything of §9 above this note. The same sitting ruled that two known prose defects in the
+generator's own manifest and docstring are left as reported facts until the generator is next
+touched for a substantive reason; **neither reaches this brief or the pack it names**.

@@ -1,7 +1,120 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTY-THIRD ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, NINTH CYCLE) — THE SIZING-PACK BATCH RETURNED AND WAS VERIFIED AT THE OBJECTS (SIX COMMITS, TIP `24d7f0be93`; THE SCORING-MODEL PACK AT A5 ON EVERY AXIS; LICENSE (i) MEASURED UNNECESSARY, LICENSE (ii) TAKEN WITH ITS BYTE-IDENTITY PROOF); ★ THE LEAK LIST IS RULED A — THE CHECK KEEPS EXCLUDING D-270, D-296, D-440 — AND LIMB (i) LICENSES TWO MANIFEST-PROSE CORRECTIONS; RECORD `cowork_rulings_2026_08_24_sizing_leak_list_sitting.md` ON DISK, UNTRACKED; ★ THE SIZING BRIEF IS WRITTEN — `cowork_blind_session_brief_scoring_model.md`, DRAFT, ON DISK, UNTRACKED, ITS §8 POINTS (P2) (P3) (P4) OPEN; ★ THE DISPATCH IS WRITTEN — `cc_instruction_manifest_prose_and_sizing_brief.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-FOURTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, TENTH CYCLE) — THE MANIFEST-PROSE BATCH RETURNED AND WAS VERIFIED AT THE OBJECTS (FOUR COMMITS, NO CORRECTION COMMIT, TIP `3fbbcb5b5d`; BOTH CORRECTIONS BOUNDED, THE HARMONY-BOUNDARY MANIFEST BLOCK CHANGED IN NO KEY, ALL FOURTEEN PACK FILES BYTE-IDENTICAL); ★ THE SIZING BRIEF'S THREE OPEN POINTS AND ONE LIMB ARE RULED — RESEARCH ALLOWED, THE THREE ANNOTATED PAIRS STAGED BY NAME AS EXEMPLARS, THE OUTPUT NAME FIXED, THE TWO GENERATOR-PROSE DEFECTS LEFT AS REPORTED FACTS — RECORD `cowork_rulings_2026_08_24_sizing_brief_sitting.md` ON DISK, UNTRACKED; ★ THE BRIEF IS REFRESHED TO **RULED** ON DISK (TRACKED, MODIFIED); ★ THE DISPATCH IS WRITTEN — `cc_instruction_sizing_brief_ruled.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, NOTHING STANDS BEFORE THE SIZING SESSION. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE (every alternative
+weighed against the ultimate objective AND the guiding principles; never a reaction to the latest
+news apart from the plan; never self-generated work). The six phases govern; the successor plan
+EXECUTES three of them.**
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in
+full; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **This session did NOT discharge
+it** (standing declaration). **The bar binds you afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`3fbbcb5b5d`** (parent `41b77c9f92`), both refs at it. The manifest-prose batch's four commits,
+oldest first: `1bd8e434e5` (Task 0 — the leak-list record and the DRAFT brief landed),
+`e1946429d2` (Task 1 — the two prose corrections), `41b77c9f92` (close), `3fbbcb5b5d` (end state).
+**If you meet THAT tip: the dispatch `cc_instruction_sizing_brief_ruled.md` is yours to hand to a
+new Claude Code session after re-taking the branch rule and re-validating its A1 (TWO tracked
+modifications — this handoff and the REFRESHED brief; TWO untracked paths — the sizing-brief
+record and the dispatch).** If you meet a commit on `3fbbcb5b5d` whose subject opens `record: the
+2026-08-24 sizing-brief rulings landed`, the batch has started — READ-ONLY until
+`cc_report_sizing_brief_ruled.md` exists, then verify its close (THE SIZING BRIEF RULED section of
+`cowork_away_returns.md`) whole and at the objects. **After it lands, the next act is the SIZING
+SESSION and nothing stands before it:** a FRESH COWORK SESSION, its desktop connecting the
+repository folder AND the chorale folder
+`C:\s\MS\tools\dcml\when_in_rome\Corpus\Early_Choral\Bach,_Johann_Sebastian\Chorales`; it reads
+`cowork_blind_session_brief_scoring_model.md` FIRST, then
+`tools/audit/derivation_boot_pack/scoring-model/`, is staged the EIGHT files the brief's §3 names
+BY NAME, fetches research, and writes ONE file,
+`cowork_blind_derivation_scoring_model_2026_08_24.md`, committing nothing. **Then:** its output
+lands uncompared by the next ordinary dispatch; the TESTS (a)+(b) BATCH runs (withdrawal rate
+under plan §6.4's hand-applied admission per Ruling 8, each admitted fact in the ledger's ruled
+entry shape; the format test over five statements including a probabilistic factor form and a
+conditional-independence premise, judged from the comparison side); then the SIZING RECORD and the
+tests' reading file come to the user WITH THE FRAMEWORK PHASE'S OPENING SURFACE, the LEDGER owed
+before that phase.
+
+**★ WHAT THIS ENTRY ADDS.** (1) The manifest-prose batch verified at the objects: four commits and
+no correction commit; every landed file byte-identical to the delivered one; membership 56→57 with
+the brief absent from the whole artifact and the one anticipated additive cross-reference reported;
+guard 75/74/1; **both subjects' `counted` blocks byte-identical, the harmony-boundary subject block
+changed in NO KEY — the stronger of the two outcomes the dispatch admitted — and all fourteen pack
+files across both subjects byte-identical**, each re-measured by this side rather than taken from
+the report. The empty-criterion block now states that no search was run and that the empty lists
+are a consequence of the ruling, with the five term lists still rendered under a statement that
+their emptiness says nothing; the non-empty branch is byte-for-byte what it was, which is what
+makes the byte-identity a proof. **The A1 remedy worked:** the inserted-entry count was measured
+(one), not asserted. (2) **One correction of the returning report, at the object:** its §6.2 names
+TWO ruling records cited in the generator but absent from the manifest's top-level list; the
+enumeration of all eight cited records against the five listed returns **THREE** — the third being
+the leak-list record cited by that batch's own new docstring, which arrived in the same act it was
+counting from. (3) The brief's open points ruled: **(P2)** research allowed as §3 writes it;
+**(P3)** the three annotated pairs staged BY NAME — 001 and 003 with two analyses each, and the
+BWV 301 score with folder **134**'s analysis, paired by content and never by number — **as
+EXEMPLARS, NOT A CORPUS, with the no-measurement bar restated in the brief itself**; **(P4)** the
+output name fixed. (4) The limb ruled **(i)**: the three unlisted ruling records and the module
+docstring's stale *WHAT THIS DOES NOT ASSERT* block are **left as reported facts**, discharged the
+next time the generator is touched for a substantive reason — the next dispatch has no reason to
+open it, and licensing a correction now would ADD a generator edit to a dispatch that would
+otherwise not have one. (5) The brief refreshed to RULED, its unruled regions byte-unchanged and
+the amendment noted at the foot of §9; the dispatch written — **the smallest of the arc: no
+generator edit, no pack re-render, three ordered commits**, with Ruling 4's deferral carried into
+its own bars so nothing rides along.
+
+**★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch. **Then:** the
+reading of the batch's return; **the user opens the SIZING SESSION**; the reading of its output's
+receipt; (after the tests batch) **the FRAMEWORK PHASE'S OPENING SURFACE with the sizing record**.
+**Third in the standing order:** the quarantined findings. **The ledger** before the framework
+phase. **Last:** pruning-and-satellites.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (per the batches' reports; NOT re-confirmed by this session). **NO
+FINDING NUMBER ALLOCATED — F88.** The two owed dispositions of the plan's §2 STILL UNROWED. FIVE
+quarantined questions stand. Standing bounds: member (2) not claimed free of other leaks; pairing
+by content, never by number; **the manifest's top-level rulings list is INCOMPLETE BY THREE and the
+module docstring's not-asserted block is stale — both deferred by Ruling 4, both recorded here and
+at `cc_report_manifest_prose_and_sizing_brief.md` §6.2–6.3 with verbatim and location.** The first
+unit's blind output stays unratified; its ten DIFFERS rows and the comparison report's §4 facts
+stay standing evidence for the AUDIT phase.
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** `git rev-parse`/
+`hash-object` byte-identity checks over the landed files and all fourteen pack files
+(working-tree reads through the shell, the declared class); `grep`/`sed`/`python3` over
+`git show <hash>:path` output on the VM (object reads), including the eight-versus-five
+ruling-record enumeration. No working-tree `git status`/`git diff`. **Presentation-form: none
+flagged this cycle.**
+
+**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
+`cowork_rulings_2026_08_24_sizing_brief_sitting.md` and `cc_instruction_sizing_brief_ruled.md`
+(sizes and sha256 in the closing message; the record carries `pinned` on no line — the dispatch
+names the word in its route-B clause and is no ruling record). Modified against the tip:
+`cowork_handoff.md` (this entry above the fifty-third, its heading marked superseded) and
+`cowork_blind_session_brief_scoring_model.md` (the refresh — banner, §3's annotated-score
+paragraph, §7's one name sentence, §8, and a note appended at the foot of §9; **§§0–2, §4, §5, §6
+and the rest of §9 byte-unchanged**). **Nothing committed, nothing pushed, nothing regenerated by
+this session.** Memory-filesystem: not read this session; nothing written.
+
+**★ DECLARED DEPARTURES.** The session-start read NOT taken (standing). `BUILD_AND_TEST.md` NOT
+read. `docs/scoring_model.md` not opened this cycle (its title and banner were read at the
+previous cycle, declared there). Neither blind output opened. The generator read only at its
+cited-record enumeration, not at its logic. The rendered packs not opened this cycle. The
+fifty-second and older entries NOT re-read.
+
+**★ THE CADENCE:** the next session starts at the branch rule, establishes whether the dispatch has
+been started, and — if not — re-validates its A1 (measuring, not asserting, the handoff count) and
+hands it to a new Claude Code session; while it runs, nothing is owed but the reading of its
+return; after it lands, the user opens the sizing session, and the writing side's next act after
+THAT is the dispatch that commits the sizing output and prepares the tests batch.
+
+*(The fifty-third entry below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-THIRD ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, NINTH CYCLE) — THE SIZING-PACK BATCH RETURNED AND WAS VERIFIED AT THE OBJECTS (SIX COMMITS, TIP `24d7f0be93`; THE SCORING-MODEL PACK AT A5 ON EVERY AXIS; LICENSE (i) MEASURED UNNECESSARY, LICENSE (ii) TAKEN WITH ITS BYTE-IDENTITY PROOF); ★ THE LEAK LIST IS RULED A — THE CHECK KEEPS EXCLUDING D-270, D-296, D-440 — AND LIMB (i) LICENSES TWO MANIFEST-PROSE CORRECTIONS; RECORD `cowork_rulings_2026_08_24_sizing_leak_list_sitting.md` ON DISK, UNTRACKED; ★ THE SIZING BRIEF IS WRITTEN — `cowork_blind_session_brief_scoring_model.md`, DRAFT, ON DISK, UNTRACKED, ITS §8 POINTS (P2) (P3) (P4) OPEN; ★ THE DISPATCH IS WRITTEN — `cc_instruction_manifest_prose_and_sizing_brief.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-fourth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE (every alternative
