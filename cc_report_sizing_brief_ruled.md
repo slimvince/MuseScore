@@ -161,6 +161,26 @@ directly.
   included, hashes to the same value at both. **Independently**, the whole-population enumeration of
   tracked modifications at the close's own tree carries none of them. **The STOP A5 reserves for any
   difference at any of them did not arise.**
+  **★ RE-TAKEN AFTER THE LAST COMMIT, WHICH IS THE TERM A5 ACTUALLY STATES (added in the declared
+  fourth commit, §9).** The same recursive tree listing was hashed at the incoming tip and at the
+  end-state commit `4f6a6d8dbb914347fa7d1908bccc2d300f31e9da` and **returns the same value at both**;
+  the nine governing documents — `CLAUDE.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `OPEN_ITEMS.md`,
+  `BUILD_AND_TEST.md`, `DEFECT_TYPES.md`, `cowork_audit_protocol.md`,
+  `cowork_design_doc_template.md` and `docs/scoring_model.md` — were hashed the same way at the same
+  two commits and **also return the same value at both**; and the whole-population enumeration at the
+  final tree returns **no tracked modification at all**. The earlier sentence recorded a
+  verification taken at the Task 0 commit, which is true and is weaker than the term; this is the
+  term met.
+
+## 9. The declared fourth commit
+
+**The ordered structure yields THREE commits. This batch carries FOUR, and the fourth is declared
+here and in the close, which is what the dispatch requires of one.** It adds no act and changes no
+verdict: it records the A5 verification re-taken **after the last commit** — the term A5 states, which
+the first three commits evidenced only at the Task 0 commit — and corrects the close's commit count,
+which said THREE and was true when it was written. **No file of the analysis, no governing document,
+no register entry, no generator, no pack file and no artifact was touched by it; it edits this report
+and the close section and nothing else.**
 
 ## 6. Surfaced for the writing side
 

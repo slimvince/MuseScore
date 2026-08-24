@@ -19109,6 +19109,30 @@ manifest is byte-unchanged.**
 **THE COMMIT COUNT.** The ordered structure yields THREE, and **this batch carries THREE.** No
 correction commit was needed beyond them; had one been, both surfaces would declare it.
 
+> **★ THE PARAGRAPH ABOVE IS OVERTAKEN BY A DECLARED FOURTH COMMIT, AND ITS WORDING STANDS (#12).**
+> It was true when it was written. **A FOURTH COMMIT WAS TAKEN, AND IT IS DECLARED HERE AND IN
+> `cc_report_sizing_brief_ruled.md` §9 — BOTH SURFACES, WHICH IS WHAT THE DISPATCH REQUIRES OF ONE.**
+>
+> **What forced it.** A5's own term is that the packs, the manifest and the generator are *each
+> verified at the object AFTER THE LAST COMMIT*. The first three commits evidenced that comparison
+> **at the Task 0 commit** — true, and weaker than the term. The verification was then re-taken at
+> the final commit and is recorded rather than left unevidenced.
+>
+> **What it establishes, measured at the objects.** The recursive tree listing of
+> `tools/audit/derivation_boot_pack` (all fourteen files), `tools/audit/derivation_boot_pack.json`
+> and `tools/audit/gen_derivation_boot_pack.py`, blob identifiers included, **hashes to the same
+> value at the incoming tip `3fbbcb5b5d` and at the end-state commit
+> `4f6a6d8dbb914347fa7d1908bccc2d300f31e9da`**. The nine governing documents — `CLAUDE.md`,
+> `ARCHITECTURE.md`, `DECISIONS.md`, `OPEN_ITEMS.md`, `BUILD_AND_TEST.md`, `DEFECT_TYPES.md`,
+> `cowork_audit_protocol.md`, `cowork_design_doc_template.md` and `docs/scoring_model.md` — hashed
+> the same way at the same two commits, **also return the same value at both**. The
+> whole-population enumeration at the final tree returns **no tracked modification at all**.
+>
+> **What it does NOT do.** It adds no act, moves no verdict, and touches no file of the analysis, no
+> governing document, no register entry, no generator, no pack file and no artifact. **It edits this
+> close section and the report, and nothing else.** The guard set was not re-run for it: it changes
+> no artifact any guard reads, and the end-state run above stands as this batch's end state.
+
 *Provenance: CC, 2026-08-25 by the clock, recording work performed as the 2026-08-24 batch, appended
 in the one further commit after the close commit `bd17eeb9c6a2b5398a3cfb189e74957b6585acfa` existed —
 a commit whose own identity this paragraph therefore cannot contain. Every value above was read from
