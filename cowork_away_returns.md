@@ -17562,3 +17562,276 @@ therefore cannot contain. Every value above was read from the run recorded in
 `tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference between
 that artifact and the close commit's own blob; no value here was carried forward from an earlier run
 or inferred from a summary.*
+
+---
+
+# ═══ THE BLIND OUTPUT LANDED, UNCOMPARED (dispatch `cc_instruction_blind_output_landing.md`, performed 2026-08-24) ═══
+
+> **★ THIS CLOSE DOES NOT ASSERT THE END STATE, AND THE OMISSION IS DELIBERATE.** The end-state
+> guard run is taken **after** the commit carrying this close exists, so its values cannot be
+> written into that commit. They land in **ONE FURTHER COMMIT**, appended beneath this section. No
+> row, cell or sentence anywhere in this section asserts what the guard set says at the tree this
+> close leaves.
+>
+> **★ BOTH TASKS RAN. NO STOP-AND-REPORT RULE FIRED.** No `src/` edit, no golden, **no test
+> changed, moved or run**, nothing under `tools/corpus/` or `tools/robust_stop/` moved, **no
+> measurement of the ANALYSIS built, designed, scoped or run**, no design, no repair, no derivation
+> of any specification statement.
+>
+> **★ AND THE ONE RULE THAT MADE THIS BATCH UNUSUAL WAS OBEYED IN FULL: THE BLIND OUTPUT WAS NOT
+> READ.** It was verified at its name, its byte size, its sha256, its first line and its banner
+> line, and opened no further. **NO COMPARISON WAS PERFORMED OR PREPARED. NO VERDICT OF ANY KIND IS
+> STATED ON IT. NO SESSION WAS BOOTED. NO ORACLE WAS OPENED.** Nothing about the file beyond those
+> five things appears anywhere in this section, and nothing beyond them was looked at.
+>
+> **No boot-list member edited at its home; no entry, sort artifact or data source of the decisions
+> register touched; `CLAUDE.md`, `ARCHITECTURE.md`, `DEFECT_TYPES.md`,
+> `cowork_design_doc_template.md`, `cowork_audit_protocol.md`, the phase-definition surface,
+> `DECISIONS.md`, `OPEN_ITEMS.md` and `docs/scoring_model.md` are byte-unchanged.** **NO open-items
+> row created, flipped or discarded.** **No finding number allocated; the series stands at F88.**
+> **No line of the blind output, of the ruling record or of the dispatch was written by this
+> session** — all three were landed as delivered. The report is `cc_report_blind_output_landing.md`,
+> and no figure of it is restated here (**D-431**).
+
+## 1. The chain, named as far as a sentence can name it
+
+**ONE commit so far, pushed to `origin/master` and verified at the object by explicit hash:**
+`95c17e6660cb230676b44da339a2c9e87653c21c` (Task 0 — the blind output, the sitting record and this
+dispatch landed, the handoff's entries landed with them, the evidence-pin membership regenerated),
+whose parent is the tip this batch met, `3a32d1e70848e8dbaf21014d8922844ae65e97f0`.
+
+**THE SECOND COMMIT IS THIS CLOSE, AND A SENTENCE CANNOT NAME ITS OWN HASH.** It carries the report,
+the one `STATUS.md` pointer entry, the ruled forward-bound move, the regenerated session-start read
+measurement and this section. **AND A THIRD FOLLOWS IT**, carrying the end-state guard run, for the
+reason stated at the head of this section.
+
+**★ EXACTLY THOSE THREE, AND NO BACKFILL COMMIT.** The dispatch orders Task 0, the close, and the
+one further commit carrying the end-state run — and it chooses, in terms, the other resolution to
+the problem the previous batch answered with two extra commits: where a hash block would need the
+close and end-state hashes, the block says in words that a commit cannot carry its own hash and
+points at the git log. **The report's hash block does exactly that, and no commit outside the
+ordered structure was written.**
+
+**THE TASK 0 COMMIT WAS WRITTEN ONCE.** Its subject is the dispatch's exact prescribed wording, read
+back at the commit object. It was written with a plain single-quoted `git commit -m` form, the
+apostrophe closed and reopened in the ordinary POSIX way, so the here-string mangling the
+batch-before-last met did not recur and **no amendment was needed**.
+
+## 2. The headline — the blind derivation's output is IN GIT, byte-identical, and nobody on this side has read it
+
+The implementation-blind deriving session delivered one file to the repository root and ended. This
+batch put it in git and did nothing else to it.
+
+**The landing is byte-identical, and that is established rather than asserted.** The committed blob
+and the working-tree file's own `git hash-object` are the same object id. That blob's recorded byte
+size and its piped content hash are exactly the two values the dispatch's premise ledger carries —
+**read at a content-addressed git object, not at the mount** — so a filter altering the file in
+transit is excluded rather than assumed against.
+
+**The five things checked, and the boundary that made them the whole check.** Name; byte size;
+sha256; first line, which is the title; banner line, which reads *DRAFT — BLIND DERIVATION, NOT
+COMPARED, NOT RATIFIED*. The first line and the banner were read in a bounded three-line read with
+the file tools. **One further reading was taken over the file and it is a COUNT, not a read** — the
+word route B of the membership derivation matches on occurs on no line — so no content of the file
+entered this session at any point.
+
+**Why the boundary is the point rather than a restriction to be regretted.** An ordinarily-booted
+session's session-start read includes the specifications the blind session was kept from. Such a
+session can neither judge the output's independence nor compare it, and reading it would spend the
+one property the pilot exists to measure. **The comparison is a later act under its own dispatch,
+and this batch prepared none of it.**
+
+**The ruling record landed with it, and its Ruling 1 was NOT acted on.** The record fixes the third
+chorale's human analysis for the comparison and corrects the deriving-side enumeration's
+number-pairing of record. **That correction is an INPUT to the comparison dispatch. This batch
+applied it nowhere**, touched no staged file, and re-ran nothing about the derivation's inputs.
+
+## 3. The declared start state matched, and the tree that was actually met
+
+The dispatch declared two failing checks with their causes and made a third failing verdict a STOP.
+**Measured before the first edit, with the whole guard set run in CHECK mode as the dispatch fixes:
+exactly the two declared** — [[OI-372]]'s tool, the one standing red, and the evidence-pin
+membership check reporting its artifact STALE, caused by this dispatch's own untracked ruling
+record. `gen_guard_state.py --check` opened "STALE vs the run" for the same cause, which the
+dispatch declares is not a third failing check. **Zero STOP verdicts.**
+`gen_guard_classification.py --check` was run separately, as its own STOP requires, and **passed**.
+
+**A1 held in shape, and the whole tracked-modification population was ENUMERATED rather than
+sampled**, with the sanctioned enumeration tool: **exactly ONE tracked modification**,
+`cowork_handoff.md`, and no other tracked path anywhere in the tree. Its difference against the tip
+is **ONE hunk at the file's fourth line**, one deletion and the rest insertions, and **the deleted
+line returns verbatim as the last inserted line with one clause appended** — established
+mechanically, the deleted text being a strict prefix of that line and the whole of the suffix being
+the superseded-as-entry-point marking. **Nothing was lost.** All three named untracked paths present
+and absent from the tip, each checked at the object.
+
+**★ AND A1's ACCOUNT OF WHAT THE HANDOFF CONTAINS IS NOT WHAT THE TREE HOLDS — DECLARED, NOT
+ABSORBED.** A1 states ONE entry inserted, the forty-ninth, with the forty-eighth heading marked
+superseded as the entry point. **Measured: TWO entries are inserted — the forty-ninth and the
+forty-eighth — and the heading marked superseded as the entry point is the FORTY-SEVENTH.** The
+cause is visible at the objects and is ordinary: the forty-eighth entry describes the
+brief-ratification batch's own final tip, so it was written after that batch's last commit and was
+never committed; the tip's fourth line is therefore still the forty-seventh heading. **This is not a
+STOP under A1's own stated condition**, which fires on a modification at any OTHER tracked path, and
+there is none. **The SHAPE A1 describes holds in full** — one hunk, additions only, the outgoing
+entry-point heading marked superseded, nothing else in the file touched.
+
+**No stale index lock was met**, and staging was refused by nothing; the **D-669** remedy the
+earlier batch performed was neither needed nor taken. Recorded because a hazard reported once reads
+as standing until someone says it did not repeat.
+
+## 4. What needs the user — NOTHING from this batch
+
+No question is put and no surface is delivered. **The blind output is in git, uncompared, and the
+next act is the COMPARISON SURFACE** — designed by the writing side, ruled by the user, BEFORE any
+comparison dispatch is written. The annotated-score pairing the landed ruling record fixes is one of
+that surface's inputs and was not acted on here.
+
+## 5. The predictions, graded at the artifacts, route by route and field by field
+
+**A1 — the working tree, stated by CONTENT: HELD IN SHAPE, with ONE stated content difference
+declared** (§3, §8.1). Not a STOP under A1's own condition.
+
+**A2 — one red remains, zero STOPs: HELD so far, and graded finally at the end state.** The two reds
+this batch caused are the two it names — the membership check, cleared at Task 0 by the very act
+that tracked this dispatch's own untracked inputs; and the session-start read measurement's red at
+the close, cleared in the same task by regenerating it. **No red arose outside the subjects of this
+batch's own ordered acts.**
+
+**A3 — the membership regeneration, from EVERY route: HELD.** Route A moved by exactly the predicted
+amount and added exactly the predicted name. **The blind output entered route A nowhere, and entered
+no other route either — its name occurs in no part of the regenerated artifact.** Route B added
+nothing, and BOTH landed files were checked rather than the ruling record alone: neither carries the
+word that route matches on anywhere in its text, counted with the file tools. Route C is unmoved —
+this batch adds no measurement tool. **AND NO FURTHER DIFFERENCE AROSE AT ALL:** the artifact's WHOLE
+difference against the committed blob is the two hunks route A predicts, measured before the
+regeneration was accepted, with the difference written to an absolute scratch path outside the
+repository and read with the file tools. **The narrowed bar the standing clause carries — an
+additive derived cross-reference caused by the ordered act — was therefore never engaged.**
+
+**A4 — the guard registry: no tool was added by any act of this batch, and the rest is graded at the
+end state**, which is a later commit than this close.
+
+**A5 — the pack, the manifest, the brief and the reading file BYTE-UNCHANGED: HELD.** None of
+`tools/audit/derivation_boot_pack/` (its six members and the read-me),
+`tools/audit/derivation_boot_pack.json`, `cowork_blind_session_brief_harmony_boundary.md` or
+`ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md` appears in the enumerated
+changed-path set of the Task 0 commit or of this close's staged set — enumerated with the sanctioned
+tool before each commit rather than assumed — so each is unchanged entirely rather than merely at a
+field. **No verdict row, identity, document, passage, leak or member record moved, because no file
+that carries one was touched.** Re-confirmed at the commit objects in the end-state section below.
+
+## 6. Surfaced findings (D-641, #13, #19)
+
+**No finding number is allocated; the series stands at F88.** Nothing was found that bears on the
+analysis, and nothing was rowed. [[OI-179]] stays OPEN and GATES; [[OI-372]] and [[OI-374]] stand as
+found.
+
+**★ NOTHING ABOUT THE BLIND OUTPUT IS REPORTED, AND THAT IS A RULE RATHER THAN AN ABSENCE OF
+MATERIAL.** The dispatch puts anything noticed about the file beyond its name, size, hash, first
+line and banner outside this batch's read and forbids it from existing in the report. **Nothing
+beyond those five things was looked at, so nothing is being withheld here either** — the statement
+is that the read did not happen, not that its results are held back.
+
+**★ ONE PREMISE OF THE DISPATCH WAS REFUTED AT THE OBJECT AND IS SURFACED RATHER THAN ABSORBED:
+A1's account of the handoff's content** (§3). It bears on no analysis question and on no
+measurement; it is here because a premise refuted at the object is evidence about the premise, and
+because the next session verifying this chain will meet the same two entries.
+
+## 7. Per-task log
+
+**Task 0 — the landing, the membership regeneration, and the push.** A1's check first and entirely
+at content-addressed objects, with the population enumerated and the one hunk's deletion proved to
+return verbatim; the blind output checked at five things and opened no further; the membership
+artifact regenerated and its difference measured from every route before it was accepted; **exactly
+the five named paths** committed, each staged by explicit path and the staged set enumerated before
+the commit rather than assumed; pushed; `origin/master` verified at the object to name the Task 0
+commit, the commit's own path set re-enumerated at the commit object, and the landed blind output's
+blob proved to be the same object id as the working-tree file's own hash; the membership check
+re-run and **PASSING**. **E0 — MET in every particular**, including the ruling-record count read at
+the COMMITTED artifact rather than at the run's own console line.
+
+**Task 1 — the close.** ONE `STATUS.md` pointer entry for Task 0, stating no verdict and naming no
+comparison. The previous batch's entries moved verbatim to `STATUS_ARCHIVE.md` through the
+forward-bound tool at its three declared authored inputs — **authored-input maintenance (D-648),
+licensed in terms by this dispatch, so it is not a departure** — with the outgoing aiming
+**APPENDED rather than overwritten** (#12) and the reconciliation proved in both directions by that
+tool's own check. The session-start read measurement was regenerated, which is the second red the
+dispatch predicted at the close and the act that clears it.
+
+## 8. Declared departures
+
+1. **A1's account of `cowork_handoff.md`'s content does not match the tree**, and the difference is
+   recorded at §3 with its cause established at the objects. Not a STOP under A1's own condition.
+2. **The blind output's sha256 was first taken with a hashing utility over the working-tree file,
+   before the content-addressed route existed.** The dispatch orders the hash verified and the file
+   tools cannot produce a sha256, so the ordered check has no file-tools route. The armed guard
+   admitted the command. **The verification of record is the content-addressed one** — the staged
+   blob's own recorded size and its piped content hash — which is a read-only git object query by
+   explicit hash and needs no exception; the earlier working-tree hash agrees with it exactly.
+   Declared because the working-tree-read rule covers every read mechanism, and a hazard met once
+   should not be silent merely because it produced the right value.
+3. **Two shell attempts were DENIED by the armed guard and neither was worked around** — an
+   interpreter invocation carrying a literal repository path at the very first act, and an `awk`
+   pipeline aimed at a repository path while resolving a staged blob id. Each was replaced with a
+   route the rule admits.
+4. **The report's hash block names only the Task 0 commit**, on the dispatch's own instruction, and
+   **no backfill commit was written** (§1).
+5. **Reads not performed:** the blind output beyond its first three lines; the brief, including its
+   status banner; any rendered pack member; any oracle document; any `ARCHITECTURE.md` oracle span.
+   Member (4)'s dispatch-protocol section was read at its own home, `cowork_audit_protocol.md`,
+   because this dispatch's read-first block orders that read.
+
+## 9. The plan lines, unchanged and unopened
+
+**The COMPARISON SURFACE is the next act** — the writing side designs it (who compares, what it
+reads and in what order, how statements are graded against the withheld ruling and the untrusted
+sources, what the user rules) and the user rules it BEFORE any comparison dispatch is written. **The
+annotated-score pairing of the landed ruling record — the third chorale's analysis at *When in Rome*
+folder 134 — is an input to that surface.** Then the comparison dispatch; then **the ruling on the
+method**, which is the pilot's whole point. The sizing pilot follows the method's ruling; the ledger
+comes before the framework phase; pruning-and-satellites is last. **None of them is opened here.**
+
+## 10. ★ THE PLAN'S TELL, IN ONE SENTENCE
+
+**Did this batch produce anything other than the five landed paths and the report? YES, and each is
+named:** the `STATUS.md` pointer entry written and the previous batch's two entries moved to
+`STATUS_ARCHIVE.md`; the forward-bound tool's three declared authored inputs re-aimed with its
+outgoing aiming appended; the forward-bound and session-start read artifacts regenerated; this close
+section; and the guard-state artifact rewritten by the end-state run that follows. **Every item is
+an ordered act of this dispatch, nothing this batch touched lies outside the subjects of those acts,
+and NO SESSION WAS BOOTED, NO COMPARISON MADE AND NO ORACLE OPENED at any point.**
+
+## 11. ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. **Principles.** **#19** — the blind output lands as an unverified authored deliverable and clears
+   nothing; the landing batch is barred from judging it, so its independence stays measurable by the
+   comparison, and nothing here is claimed established that was not measured. **#6** — the pairing
+   correction stays in the ONE record that carries it and was copied into no input. **#12** — the
+   output landed byte-identical, established at the blob; the handoff's deleted line was proved to
+   return verbatim rather than assumed to; the forward bound's outgoing aiming is appended rather
+   than replaced; the deriving session's own statements are relayed as its own by the record that
+   carries them and are restated as facts nowhere here. **#13** — the A1 content difference and the
+   working-tree hash were surfaced rather than absorbed. **#17(f)/D-431** — no count is transcribed
+   in this close, the report, the commit message or the `STATUS.md` entry; every figure is named to
+   an artifact and a field. **#24** — no difference between two measured quantities is asserted
+   anywhere. **Conforms.**
+2. **Conventions.** American English. No self-invented label. Music-theory words in their musical
+   sense — *measurement tool* is used and never the reserved word; *score* appears only of the
+   musical score; *the decisions register* and *the open-items register* are written in full;
+   TOWARDS, never the other word, in every orientation phrase.
+3. **Figures and premises.** Every quantity is named to its artifact and field; the ordered rulings
+   are quoted at their record; every premise the dispatch carried was re-read at the object rather
+   than accepted — the tip and both refs, the tip commit's parent and subject, the guard-state
+   summary, the committed membership count, and the blind output's size, hash, first line, banner
+   and word count.
+4. **The file-tools rule.** Working-tree content was read with the file tools throughout, with the
+   one declared exception at §8.2. Shell use was otherwise limited to read-only git object queries
+   by explicit hash, per-path diffs against an explicit hash whose output was written to an absolute
+   scratch path outside the repository and read with the file tools, the sanctioned enumeration
+   tool, and the project's own scripts.
+5. **Uncertainty.** No difference between two measured quantities is asserted anywhere in this batch.
+
+*Provenance: Claude Code, 2026-08-24, executing `cc_instruction_blind_output_landing.md`. Every
+commit hash above was resolved at the object before it was written. TOWARDS the ultimate objective
+and TOWARDS the guiding principles.*

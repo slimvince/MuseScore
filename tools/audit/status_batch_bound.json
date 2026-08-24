@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_brief_ratification_and_readme_boundary.md, Task 2",
+ "dispatch": "cc_instruction_blind_output_landing.md, Task 1",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -77,29 +77,34 @@
    "executing_act": "cc_instruction_second_passage_withheld.md, Task 2",
    "base_commit": "cf00b6af7b89a6599c610b31bc9f47b639ccb217",
    "the_then_previous_batch": "cc_instruction_withheld_family_correction.md"
+  },
+  {
+   "executing_act": "cc_instruction_brief_ratification_and_readme_boundary.md, Task 2",
+   "base_commit": "a3ed95077697de6f75e46ecc0a0183346e6e823e",
+   "the_then_previous_batch": "cc_instruction_second_passage_withheld.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "a3ed95077697de6f75e46ecc0a0183346e6e823e",
- "the_then_previous_batch": "cc_instruction_second_passage_withheld.md",
+ "base_commit": "95c17e6660cb230676b44da339a2c9e87653c21c",
+ "the_then_previous_batch": "cc_instruction_brief_ratification_and_readme_boundary.md",
  "entries_moved": 2,
- "characters_moved": 3501,
+ "characters_moved": 3830,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2160,
-   "sha256": "4c9cf9afaa86ab0903cbc0f7fe7cceb1f5c55f549a0518ea43a86c3d81d4a7c0",
+   "characters": 2285,
+   "sha256": "2bb214bdc7a92c0f968552540e962915b6a3b1694a3fad48f1fd864f47bea88e",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-23 (CC — **★ A SECOND PASSAGE OF BOOT-PACK MEMBER (2) IS WITHHELD — THE FOUNDING-INSTANCES SENTENCE OF THE DEFENSE-AT-ITS-HOME RULE — AND THE"
+   "opening": "*2026-08-23 (CC — **★ THE BOOT PACK'S READ-ME BOUNDARY IS SCOPED SO THAT IT STAYS TRUE — THE WHOLE-OF-YOUR-READ SENTENCE BOUNDED TO THIS REPOSITORY WI"
   },
   {
    "line_at_base": 10,
-   "characters": 1341,
-   "sha256": "c542dd8e39875a2e9c715254e08357dc0bd33667cb46d3fc63c97d3e8c1f4b9a",
+   "characters": 1545,
+   "sha256": "3137209303752ec9689ad8f186fa0af43173540a94930fdcb51a762d0c006b0b",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-23 (CC — **★ THE 2026-08-23 SECOND MEMBER-TWO LEAK RULING RECORD AND ITS DISPATCH LAND IN GIT, AND THE EVIDENCE-PIN MEMBERSHIP IS REGENERATED"
+   "opening": "*2026-08-23 (CC — **★ THE 2026-08-23 BRIEF-VALIDATION RULING RECORD AND ITS DISPATCH LAND IN GIT, THE BLIND SESSION'S BRIEF LANDS AT ITS RULED STATE, "
   }
  ],
  "reconciliation": {
