@@ -329,7 +329,27 @@ here, because the previous batch's precedent is that an extra commit is declared
   apostrophe, and the dispatch fixes plain single-quoted subjects. **A commit subject is immutable
   without a rewrite of history, which is not an act this batch may take**, so it is declared and left.
   The subject's meaning is unaffected.
-- **The commit count.** The ordered structure yields FOUR; **this batch carries FIVE.**
+- **The commit count.** The ordered structure yields FOUR; the correction made FIVE.
+
+## 8. THE CORRECTION'S OWN CLAIM, MEASURED — a SIXTH commit
+
+**§7's correction block asserted that the one standing red is unmoved, that no STOP is created and
+that the guard population is untouched. Those three were written BEFORE they were taken** — a claim
+resting on an assertion rather than on an object (**#15**). A sixth commit records the measurement,
+rather than editing the claim silently, so the text stands as it was written (**#12**).
+
+**Measured at the tree the correction commit left**, with the FULL guard set run in check mode —
+which writes nothing, so the tree carried **zero tracked modifications** before and after the run,
+enumerated with the sanctioned enumeration tool both times: **75 guards run**, 4 not run, 16
+historical, the population UNMOVED; **ONE failing check**, [[OI-372]]'s tool, the standing red;
+**ZERO STOP verdicts**; `gen_guard_classification.py --check` re-derives.
+
+**The three claims hold, and the correction commit created no red.** It is recorded because a claim
+that turns out to be right was still unmeasured when it was written, and *it happened to be right* is
+not the establishment this record accepts. The full block is at the end of the close section of
+`cowork_away_returns.md`.
+
+**THE COMMIT COUNT, RE-TAKEN: this batch carries SIX.** Both surfaces declare it.
 
 ---
 

@@ -18515,3 +18515,33 @@ precedent the previous batch set when its own self-check found a defect after it
 `ed1c1962f8c284493ecf2004dc86c85f570dd833` existed — a commit whose own identity this paragraph
 therefore cannot contain. The slip was found by re-reading this batch's own diff against the
 conventions, which is what the standing self-check is for.*
+
+# ★ THE CORRECTION'S OWN CLAIM, NOW MEASURED — a SIXTH commit
+
+**The correction block above states that the one standing red is unmoved, that no STOP is created and
+that the guard population is untouched. Those three were WRITTEN BEFORE THEY WERE TAKEN**, which is a
+claim resting on an assertion rather than on an object (**#15**). This block records the measurement,
+and it is a sixth commit rather than a silent edit because the correction block's own text stands as
+it was written (**#12**).
+
+**MEASURED at the tree the correction commit `19081fb7e7d378c3b163a97184cbbd85c94173c5` left**, with
+the FULL guard set run in check mode — which writes nothing, so the tree was carrying **zero tracked
+modifications** when the run began and still carried zero when it ended, enumerated with the
+sanctioned enumeration tool both times:
+
+- **75 guards run**, 4 not run, 16 historical records — the population UNMOVED.
+- **ONE failing check**, [[OI-372]]'s tool, the one standing red.
+- **ZERO STOP verdicts.**
+- `gen_guard_classification.py --check` re-derives.
+
+**So the three claims hold, and the correction commit created no red.** Recorded because a claim that
+turns out to be right was still, at the moment it was written, unmeasured — and *it happened to be
+right* is not the establishment this record accepts.
+
+**THE COMMIT COUNT, RE-TAKEN.** The ordered structure yields FOUR; the correction made FIVE; **this
+batch carries SIX.** Both surfaces declare it.
+
+*Provenance: CC, 2026-08-24, appended in the sixth commit after the correction commit
+`19081fb7e7d378c3b163a97184cbbd85c94173c5` existed — a commit whose own identity this paragraph
+therefore cannot contain. Every value above was read from the check-mode run itself and from the
+enumeration taken before and after it.*
