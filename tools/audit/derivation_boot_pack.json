@@ -5,7 +5,8 @@
     "Ruling 1 and amendments (a1) and (a3) of `cowork_rulings_2026_08_22_boot_list_sitting.md` — the standing boot list, the per-session withheld list generated rather than hand-cut, and the defect catalog admitted at two columns.",
     "Ruling 1 of `cowork_rulings_2026_08_22_pilot_order_sitting.md` — the held-out test runs first, and this generator is built with the pilot's opening.",
     "Ruling 1 of `cowork_rulings_2026_08_22_member_two_leak_sitting.md` — the founding-instance passage of the never-work-from-memory rule is withheld from member (2) as an authored input in the D-677 shape.",
-    "Ruling 4(c) of `cowork_rulings_2026_08_21_successor_plan_sitting.md` — the held-out test and its oracle."
+    "Ruling 4(c) of `cowork_rulings_2026_08_21_successor_plan_sitting.md` — the held-out test and its oracle.",
+    "Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` — the second subject, `scoring-model`, rendered with an EMPTY withheld family, the standing leak check doing the whole of the cutting."
   ],
   "★_it_boots_no_session": "Rendering the pack is not opening it. Nothing here derives a specification statement, opens an oracle, or takes a pilot act.",
   "★_the_verdicts_clear_nothing": "The withheld family is AUTHORED. Under D-655 a session may perform an owed establishment and author its verdicts, and those verdicts CLEAR NO GUARD when they are written: they are delivered as a ratification-surface reading file, and the user rules them before any session boots from this pack.",
@@ -2657,15 +2658,9 @@
       "the_subject_in_plain_words": "The unit whose specification `docs/scoring_model.md` carries — derived here from the domain and from the ruled design intent, without that document being opened.",
       "the_oracle_this_family_protects": "NONE. This unit is not held out and has no oracle. Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` rules the withheld family EMPTY for this subject — no withheld identities, no withheld documents, no withheld passages — and leaves the whole of the cutting to the standing leak check. The declined alternatives are recorded at that ruling: withholding in the held-out shape would starve the derivation of ruled intent no test needs and size a handicapped method, and reusing the harmony-boundary pack would carry another oracle's cuts.",
       "the_directory": "tools/audit/derivation_boot_pack/scoring-model",
-      "★_the_bound_on_the_candidate_criterion": "The candidate criterion is a PATTERN MATCH over the rulings sort and the decisions register's own text. ITS REACH IS UNMEASURED (#19): an entry that bears on this subject in words none of the criterion's terms carry would not appear here, and an empty match would be evidence of nothing. The bound is stated rather than a detection measurement being owed, under D-673, and the test that clause fixes is met: NO ANALYSIS DECISION CONSUMES THIS ENUMERATION — the user rules it at the reading file this dispatch delivers.",
+      "★_the_bound_on_the_candidate_criterion": "NO CANDIDATE SEARCH WAS RUN FOR THIS SUBJECT, and no criterion is authored for it. Its withheld family is EMPTY BY RULING — no withheld identities, no withheld documents, no withheld passages — so there is nothing for a candidate search to find. The empty candidate list and the empty verdict table below are a CONSEQUENCE OF THAT RULING and NOT the result of a pattern match that returned nothing.",
       "the_candidate_criterion": {
-        "a candidate is every DESIGN-INTENT entry meeting ANY of": [
-          "its `group` is E — Layer 2, the slicer",
-          "its `home` document is one of the withheld-document candidates",
-          "its `home` is `ARCHITECTURE.md` at a line inside one of the oracle spans below",
-          "any of `title`, `verbatim`, `plain`, `patterns` contains one of the keywords",
-          "it is an identity the ruling names"
-        ],
+        "★_there_is_no_criterion_here_and_nothing_was_searched": "Every term below is empty because none was authored, the withheld family being empty by ruling. Read no reach and no coverage into them: this tool made no attempt to find a candidate for this subject, so their emptiness says nothing about what the record holds on it.",
         "the_oracle_spans_located_by_text_on_every_run": [],
         "the_keywords": [],
         "the_groups": [],

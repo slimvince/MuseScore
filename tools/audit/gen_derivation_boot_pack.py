@@ -1059,6 +1059,83 @@ def candidates(subject: str, design_intent: list[dict], backbone: dict) -> list[
     return found
 
 
+def criterion_is_empty(spec: dict) -> bool:
+    """True where the authored criterion carries NO term at all.
+
+    DERIVED FROM THE AUTHORED ENTRY AND NEVER SWITCHED ON A SUBJECT NAME, which is the condition
+    the licence for this rendering states in terms.  A subject whose withheld family is empty by
+    ruling authors no criterion — every term of its entry is empty — so this test recognizes the
+    state rather than recognizing the subject, and a later subject in the same state renders the
+    same way without a line being touched.
+    """
+    return not any(spec[term] for term in
+                   ("groups", "home_documents", "architecture_spans", "keywords", "always"))
+
+
+def criterion_block(subject: str) -> tuple[str, dict]:
+    """The manifest's bound paragraph and its candidate-criterion block, for one subject.
+
+    LICENSED by Ruling 2(a) of `cowork_rulings_2026_08_24_sizing_leak_list_sitting.md`, quoted
+    verbatim: *"the manifest's candidate-criterion block renders truthfully for a subject whose
+    criterion is EMPTY BY RULING -- stating that no search was run because the ruling empties the
+    family, rather than describing a pattern match that never ran; derived from the authored
+    entry, not switched on a subject name, with the harmony-boundary subject block required to
+    re-render BYTE-UNCHANGED as the proof"*.
+
+    Before it, both were written for a criterion that runs a pattern match over the register's own
+    text: a subject with no criterion at all published five conditional bullets describing that
+    match, and a bound paragraph disclaiming ITS unmeasured reach -- so a generated artifact read
+    as though a search had been run and returned nothing.  The disclaimer belongs to the non-empty
+    case alone, which is where it is now rendered.
+
+    The NON-EMPTY branch is byte-for-byte what this tool published before the correction.
+    """
+    spec = CRITERION[subject]
+    spans = architecture_spans(spec["architecture_spans"])
+    terms = {
+        "the_oracle_spans_located_by_text_on_every_run": spans,
+        "the_keywords": list(spec["keywords"]),
+        "the_groups": list(spec["groups"]),
+        "the_home_documents": list(spec["home_documents"]),
+        "named_by_the_ruling": list(spec["always"]),
+    }
+    if criterion_is_empty(spec):
+        return (
+            "NO CANDIDATE SEARCH WAS RUN FOR THIS SUBJECT, and no criterion is authored for it. "
+            "Its withheld family is EMPTY BY RULING — no withheld identities, no withheld "
+            "documents, no withheld passages — so there is nothing for a candidate search to "
+            "find. The empty candidate list and the empty verdict table below are a CONSEQUENCE "
+            "OF THAT RULING and NOT the result of a pattern match that returned nothing.",
+            {
+                "★_there_is_no_criterion_here_and_nothing_was_searched": (
+                    "Every term below is empty because none was authored, the withheld family "
+                    "being empty by ruling. Read no reach and no coverage into them: this tool "
+                    "made no attempt to find a candidate for this subject, so their emptiness "
+                    "says nothing about what the record holds on it."),
+                **terms,
+            },
+        )
+    return (
+        "The candidate criterion is a PATTERN MATCH over the rulings sort and the decisions "
+        "register's own text. ITS REACH IS UNMEASURED (#19): an entry that bears on this "
+        "subject in words none of the criterion's terms carry would not appear here, and an "
+        "empty match would be evidence of nothing. The bound is stated rather than a "
+        "detection measurement being owed, under D-673, and the test that clause fixes is "
+        "met: NO ANALYSIS DECISION CONSUMES THIS ENUMERATION — the user rules it at the "
+        "reading file this dispatch delivers.",
+        {
+            "a candidate is every DESIGN-INTENT entry meeting ANY of": [
+                "its `group` is E — Layer 2, the slicer",
+                "its `home` document is one of the withheld-document candidates",
+                "its `home` is `ARCHITECTURE.md` at a line inside one of the oracle spans below",
+                "any of `title`, `verbatim`, `plain`, `patterns` contains one of the keywords",
+                "it is an identity the ruling names",
+            ],
+            **terms,
+        },
+    )
+
+
 def cross_reference_additions(authored: set[str], docs: set[str],
                               design_intent: list[dict], backbone: dict) -> list[dict]:
     """Every DESIGN-INTENT entry that quotes or cross-references a withheld identity or document."""
@@ -1436,34 +1513,15 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
     files[READ_ME] = render_read_me(subject, authored["the_subject_in_plain_words"],
                                     passages_applied, len(withheld_ids))
 
+    criterion_bound, criterion_terms = criterion_block(subject)
+
     record = {
         "subject": subject,
         "the_subject_in_plain_words": authored["the_subject_in_plain_words"],
         "the_oracle_this_family_protects": authored["the_oracle_this_family_protects"],
         "the_directory": f"tools/audit/derivation_boot_pack/{subject}",
-        "★_the_bound_on_the_candidate_criterion": (
-            "The candidate criterion is a PATTERN MATCH over the rulings sort and the decisions "
-            "register's own text. ITS REACH IS UNMEASURED (#19): an entry that bears on this "
-            "subject in words none of the criterion's terms carry would not appear here, and an "
-            "empty match would be evidence of nothing. The bound is stated rather than a "
-            "detection measurement being owed, under D-673, and the test that clause fixes is "
-            "met: NO ANALYSIS DECISION CONSUMES THIS ENUMERATION — the user rules it at the "
-            "reading file this dispatch delivers."),
-        "the_candidate_criterion": {
-            "a candidate is every DESIGN-INTENT entry meeting ANY of": [
-                "its `group` is E — Layer 2, the slicer",
-                "its `home` document is one of the withheld-document candidates",
-                "its `home` is `ARCHITECTURE.md` at a line inside one of the oracle spans below",
-                "any of `title`, `verbatim`, `plain`, `patterns` contains one of the keywords",
-                "it is an identity the ruling names",
-            ],
-            "the_oracle_spans_located_by_text_on_every_run":
-                architecture_spans(CRITERION[subject]["architecture_spans"]),
-            "the_keywords": list(CRITERION[subject]["keywords"]),
-            "the_groups": list(CRITERION[subject]["groups"]),
-            "the_home_documents": list(CRITERION[subject]["home_documents"]),
-            "named_by_the_ruling": list(CRITERION[subject]["always"]),
-        },
+        "★_the_bound_on_the_candidate_criterion": criterion_bound,
+        "the_candidate_criterion": criterion_terms,
         "counted": {
             "design_intent_class": len(design_intent),
             "candidates": len(cands),
@@ -1557,6 +1615,9 @@ def build() -> tuple[dict, dict[str, dict[str, str]]]:
             "member (2) as an authored input in the D-677 shape.",
             "Ruling 4(c) of `cowork_rulings_2026_08_21_successor_plan_sitting.md` — the held-out "
             "test and its oracle.",
+            "Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` — the second "
+            "subject, `scoring-model`, rendered with an EMPTY withheld family, the standing leak "
+            "check doing the whole of the cutting.",
         ],
         "★_it_boots_no_session": (
             "Rendering the pack is not opening it. Nothing here derives a specification "
