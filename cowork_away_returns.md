@@ -18179,3 +18179,244 @@ therefore cannot contain. Every value above was read from the run recorded in
 `tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference between
 that artifact and the close commit's own blob; no value here was carried forward from an earlier run
 or inferred from a summary.*
+
+---
+
+# ═══ THE SIZING PACK — the `scoring-model` subject rendered with an EMPTY withheld family, the leak check alone cutting, and the leak list delivered for ruling (dispatch `cc_instruction_sizing_pack_preparation.md`, performed 2026-08-24) ═══
+
+# THE PILOT CLOSED ESTABLISHED AND THE SIZING PACK RENDERED
+
+## 0. What this batch was, and what it deliberately was not
+
+Task 0 landed TWO sitting records — the method-ruling record that closes the pilot and the
+sizing-pilot record that designs its successor — together with the modified handoff and the dispatch
+itself, and regenerated the evidence-pin membership. Task 1 authored the `scoring-model` subject into
+the boot-pack generator's AUTHORED tables with an EMPTY withheld family, rendered the pack, and
+delivered the leak list as `ratification_surfaces/cowork_sizing_pack_leak_list_reading.md`. Task 2 is
+this close.
+
+**The method-ruling record was LANDED, not acted on.** It orders nothing this batch executes, and
+nothing in it was executed. **No session was booted. Nothing was derived, nothing compared, no oracle
+opened, and `docs/scoring_model.md` was NOT opened** — its existence is named in the authored subject
+line and in the pack's own boundary clause, and its content was never read. **Nothing of the
+harmony-boundary subject was touched**, which is proven below at the objects rather than asserted.
+
+## 1. The branch rule, and every SHA of this batch
+
+The branch rule was taken at the tip and at nothing else: both refs named
+`9264b968b7b104d81ec3da8579bf55aa9cdc2cf4`, whose parent and subject are the ones the dispatch's
+premise ledger states. The commits, oldest first:
+
+- **`ac81167005660bbe12aa8840196ff8318e8df2e1`** — Task 0, subject `record: the pilot closes
+  ESTABLISHED and the sizing pilot is designed — the 2026-08-24 method-ruling and sizing-pilot
+  rulings landed; evidence-pin membership regenerated`; exactly the five ordered paths, enumerated at
+  the commit by the sanctioned enumeration tool.
+- **`7c1119dcdbb3c5466652516a95b2eda819ce9a38`** — Task 1, subject `the scoring-model boot pack
+  rendered with an EMPTY withheld family — the leak check alone cuts; the leak list delivered for
+  ruling; no session booted`; ten paths — the generator, the manifest, the seven files of the new
+  pack directory, and the reading file.
+- **the close commit** — this section, the report, the two `STATUS.md` entries, the forward bound's
+  application with its re-aimed authored inputs, and the regenerated read-size artifact. **A commit
+  cannot carry its own hash; the git log carries it, and no backfill commit was written.**
+- **the one further commit** — the end-state guard run, which this close deliberately does not assert
+  (§9).
+
+Both refs were verified at the object after each push.
+
+## 2. The guard states
+
+**Before the first edit the FULL set was run in CHECK mode.** 75 guards run, **two failing and both
+declared**: [[OI-372]]'s tool `gen_filing_convention_application.py --check`, the one standing red;
+and `gen_evidence_pin_membership.py --check` reporting its artifact STALE, caused by this dispatch's
+own two untracked ruling records. `gen_guard_state.py`'s own comparison opened "STALE vs the run" for
+the same cause, which the dispatch declares is not a third failing check. **Zero STOP verdicts.**
+`gen_guard_classification.py --check` was run separately, as its own STOP requires, and PASSED.
+
+**At Task 1, after the subject was authored, the accommodation taken and the pack rendered, the FULL
+set was run again as a check.** 75 guards run, **ONE failing** — [[OI-372]]'s tool alone; the
+membership red was cleared by Task 0 step 2 and now passes. Four not run and sixteen historical
+records, unchanged. **Zero STOP verdicts.** `gen_guard_classification.py --check` PASSED again, run
+separately. **The boot-pack generator's own `--check` is GREEN over BOTH subjects.**
+
+**The end-state run is §9's, and it is not asserted here.**
+
+## 3. E0–E2, graded
+
+- **E0 — MET.** Exactly the five ordered paths in the Task 0 commit; `ruling_records_read` at 56 in
+  the regenerated membership artifact; `gen_evidence_pin_membership.py --check` PASSING at the
+  resulting tree; `origin/master` at `ac81167005`, verified at the object.
+- **E1 — MET, on every term.** The new subject stands at A5 as measured (§4). Both `--check`s are
+  green — the boot pack's over both subjects, and the guard classification's. **The
+  harmony-boundary subject block is BYTE-UNCHANGED in the re-derived manifest**: the manifest's whole
+  difference against the Task 0 commit is ONE hunk, purely additive, and the diff carries no removed
+  content line at all. **The harmony-boundary pack DIRECTORY is byte-unchanged, every file**, proven
+  by enumerating the tracked-modification population after the render: only the manifest and the
+  generator appear, and no file of that directory does. The reading file is whole and in LIST FOUR's
+  ruled shape. **One licensed accommodation was taken and it is declared with its whole diff hunk in
+  the report; the other was NOT needed.** No session was booted.
+- **E2 — the further commit's, §9.** Not asserted here.
+
+## 4. A2–A5, graded
+
+- **A2 — MET at Task 1, and §9 carries the end state.** Exactly one red remained after Task 1 and it
+  is the standing one. Of the reds this batch caused: the membership check was cleared by Task 0
+  step 2, and the boot-pack generator's own red — red between the authored-table edit and the render
+  — was cleared inside Task 1's own commit. The third, `gen_session_start_read_size.py --check`, is
+  this close's, cleared by the regeneration this close performed after `STATUS.md` moved. **No red
+  outside the subjects of this batch's own acts arose at any run.**
+- **A3 — HELD on every route, and the anticipated addition arose and is reported.** Route A moved
+  54 → 56 by exactly the two predicted names, `cowork_rulings_2026_08_24_method_ruling_sitting.md`
+  and `cowork_rulings_2026_08_24_sizing_pilot_sitting.md`. Route B added nothing: neither landed
+  record carries the word that route matches on, on any line, checked at both files before the
+  regeneration. Route C is unmoved: this batch adds no measurement tool, and the pin-constant
+  population, the member set and the pinned count are all absent from the difference. **The measured
+  difference against the committed blob is THREE hunks** — the count, the two added names, and ONE
+  additive derived cross-reference: the method-ruling record's leading blockquote names
+  `ratification_surfaces/cowork_comparison_harmony_boundary_reading.md`, which no tool writes, so the
+  record joins that document's list of namings-of-a-non-generated-document. **That is the addition
+  A3's own text anticipates and orders reported rather than absorbed, and its cause is the ordered
+  act itself.** No existing value moved anywhere.
+- **A4 — HELD, and the registry did not move.** No tool was added. The boot-pack generator's
+  registered invocation is **per tool and not per subject** — it takes `--check` once and renders
+  every subject — so gaining a subject moves neither the derived candidate population nor the
+  authored invocation table, and the STOP-and-report A4 reserves for a per-subject registry was not
+  reached. The population stands at 75 run, 4 not run, 16 historical at both runs; the failing set is
+  unchanged except for the membership red this batch's own Task 0 cleared.
+  `gen_guard_classification.py --check` re-derives at both runs.
+- **A5 — HELD, every item, and the two measured-not-predicted items are answered.** At the manifest:
+  the new block's `design_intent_class` is 244; `withheld_identities_authored`,
+  `withheld_identities_derived`, `withheld_identities_total`, `withheld_documents` and
+  `withheld_passages` are all zero; `candidates` is zero and all three verdict cells are zero, which
+  is the empty shape the authored tables express with no code change; `files_in_the_pack` is 7.
+  **`leaks` was MEASURED over the whole class of 244**, and the three harmony-boundary leaks recur
+  with **no further member** — the identities and their matched strings are in the reading file and
+  at the artifact, and no count is restated here (**D-431**).
+  `design_intent_entries_rendered` is 244 less the leaks, computed at the artifact. The new directory
+  holds the read-me and six members. **Member (2) carries ZERO withheld markers**, measured by
+  searching the rendered file for the marker string; the harmony-boundary copy carries its two.
+  **The member-by-member comparison across the two subjects was taken at the content-addressed blob
+  identifiers of the staged files, not by sampling and not by assumption:** members (1), (3), (4) and
+  (6) are BYTE-IDENTICAL across subjects; members (2) and (5) and the read-me differ, each by exactly
+  the construction that must differ — the withheld passages, the cut, and the subject line with the
+  what-was-cut section. **The harmony-boundary pack directory is byte-unchanged, every file.**
+
+## 5. The departures, declared
+
+1. **Shell use.** Read-only git object queries by explicit hash (`git for-each-ref`, `git show
+   <sha>`, `git show --no-patch --format`); the per-path `git diff --numstat <sha> -- <path>` and
+   `git diff <sha> -- <path>` forms, with the changed passages written to scratch paths OUTSIDE the
+   repository and read there with the file tools; `git ls-files -s` over the index, which emits mode,
+   blob identifier, stage and path and no content; the sanctioned enumeration tool; the project's own
+   generators; and `grep`, `head`, `tail`, `ls` and `sed` over scratch files and over git-object
+   output, never over working-tree content. **No working-tree `git status` and no bare working-tree
+   `git diff`.** One `python -c` naming a repository path was attempted at the session's start and was
+   DENIED by the armed guard; the read was retaken with the file tools, which is the guard working.
+2. **No stale index lock was met**, so the **D-669** remedy was neither needed nor taken.
+3. **No file outside the ordered subjects was written**, and the pre-edit guard run was performed in
+   the ordered CHECK invocation, so — unlike the previous batch — no guard artifact was rewritten
+   before the first edit and no restore was needed.
+
+## 6. What was established, recorded and NOT graded
+
+**This batch allocates NO finding number — the series stands at F88 — and creates NO open-items row;
+both are barred by the dispatch. Nothing below is graded as a defect anywhere.**
+
+1. **The dispatch's assumption A1 understates the working tree by one handover entry, and the
+   difference is reported rather than absorbed.** A1 states ONE entry (the fifty-second) inserted
+   above the committed content with the fifty-first heading marked superseded-as-entry-point.
+   Measured at the objects, the committed handoff's newest entry is the **FIFTIETH**: the tree
+   carried BOTH the fifty-first and the fifty-second entries uncommitted, and the ONE replaced line is
+   the FIFTIETH heading, which gains its own superseded-as-entry-point clause. The arithmetic closes
+   exactly — the two inserted blocks plus one replaced line account for the whole measured difference.
+   **The cause is on the record and is not a discrepancy in the tree:** the fifty-first entry was
+   written at the method-ruling sitting, which produced no dispatch to land it, so it waited for this
+   one. **A1's declared STOP — a modification at any OTHER tracked path — did not fire**, the untracked
+   landing set is exactly the three named, and the ordered act is unchanged: Task 0 commits the
+   handoff whole and both entries land together.
+2. **Licensed accommodation (i) was NOT needed, which is itself a measured fact about the tool.** The
+   authored shape expresses an empty withheld family and an empty candidate criterion with no code
+   change at all: the optional keys are read through `.get`, an empty criterion returns no candidate,
+   an empty verdict table grades none, and the distribution accounts for the population exactly. Only
+   accommodation (ii) was taken.
+3. **The manifest's own prose about the candidate criterion is written for a NON-EMPTY criterion and
+   was NOT corrected, because no license reaches it.** For the new subject the block's five
+   conditional bullets and the bound paragraph describe a pattern match, while this subject's criterion
+   is empty by ruling rather than by a search that returned nothing; the parameter lists rendered
+   directly beneath them are all published empty, and the bound paragraph's own words say an empty
+   match is evidence of nothing. **The narrow-letter default governs and the observation is reported
+   rather than acted on** — it is the writing side's to rule.
+4. **The generator's top-level `the_rulings_it_executes` list does not name the sizing-pilot ruling**,
+   for the same reason: it is neither the authored subject entry nor a licensed accommodation. The
+   ruling IS cited inside the authored subject entry itself, which is licensed, so the manifest does
+   carry the citation at the subject it governs.
+
+## 7. Quarantined questions
+
+**None new.** The five standing quarantined questions are untouched, and this batch neither answered
+nor added to them. [[OI-179]] stays OPEN and GATES; [[OI-372]] and [[OI-374]] stand as found.
+
+## 8. The plan lines
+
+1. **The user rules the LEAK LIST** — `ratification_surfaces/cowork_sizing_pack_leak_list_reading.md`.
+2. **The SIZING BRIEF is written by the writing side and validated against the landed pack**, its open
+   points to the user as the harmony-boundary brief's were.
+3. **The FRESH COWORK SESSION derives** `docs/scoring_model.md`'s unit blind; its output lands
+   uncompared by the next ordinary dispatch, as the boundary unit's did.
+4. **The TESTS (a)+(b) BATCH** — the record check's withdrawal rate under the plan's hand-applied
+   admission, and the format test over five statements judged from the comparison side.
+5. **The LEDGER before the framework phase**, with which the sizing record and the tests' reading
+   file come to the user.
+
+## 9. The end state is NOT asserted here
+
+Per the dispatch's own clause, this close does not assert the batch's end state. The one further
+commit carries it: a fresh full guard run at the tree this close leaves, committed only after the run
+that produced it.
+
+## 10. The plan's tell, in one sentence
+
+**Did this batch produce anything other than the two landed records, the rendered pack, the reading
+file and the report?** Yes, and each item is named: the regenerated evidence-pin membership artifact
+and the regenerated session-start read-size artifact, both ordered; the one licensed rendering
+accommodation inside the generator; the forward bound's application, which moved the previous batch's
+two `STATUS.md` entries to the archive and wrote its own reconciliation artifact; the re-aiming of
+that tool's three authored inputs, which is what applying it forward means; and the two `STATUS.md`
+pointer entries. **Nothing else was produced, nothing this batch touched lies outside the subjects of
+its own ordered acts, no session was booted, `docs/scoring_model.md` was not opened, and the
+harmony-boundary subject — its pack, its family, its reading file and its manifest block — is
+byte-unchanged.**
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. *Principles touched.* **#19** — nothing is withheld without a ruled reason, and the empty family is
+   itself the ruling; the reading file states what its check does NOT cover rather than letting an
+   unstated scope read as total. **#6** — one generator, one authored home, both subjects derived from
+   it, and the license (ii) proof is exactly that the harmony-boundary read-me re-renders
+   byte-identically under the changed code, which is what shows the rendering derived rather than
+   duplicated; the proof was taken BEFORE any file was written. **#12** — the harmony-boundary subject
+   is byte-unchanged everywhere, and the leak list is delivered to the user rather than absorbed into
+   a session's judgment. **#17(f)/D-431** — the leak count was measured at the artifact and is
+   restated in no prose here, in the report, in the reading file or in either `STATUS.md` entry.
+   **#13** — the assumption A1 understates the tree, and that is surfaced at §6 with its arithmetic
+   rather than quietly worked around. **#10** — two places where the generated manifest's own prose is
+   written for the other subject are reported at §6 rather than corrected past the licence's letter.
+   Conforms.
+2. *Conventions.* American English; no self-invented labels — "subject", "member", "leak" and "pack"
+   are the generator's and the rulings' own; music-theory words in their musical sense with every
+   non-musical use qualified, the self-check over the delivered reading file replacing bare *figure*
+   in its numeric sense and keeping bare *score* out of it entirely.
+3. *Figures and premises.* The tip, the guard summary, the membership count and the
+   harmony-boundary `counted` block were each re-read at the objects rather than carried from the
+   dispatch's ledger; the leak identities were read from the artifact the render itself wrote; the
+   member comparison was read from the staged blob identifiers.
+4. *File-tools rule.* Declared at §5.1, including the one denied interpreter read and its retaking.
+5. *Uncertainty.* No difference between measured quantities is asserted in this batch.
+6. *Re-read from disk before release.* The generator's whole diff was re-read from the git objects
+   after the edits and before the commit, and the rendered read-me and the delivered reading file
+   were re-read whole from disk.
+
+*Provenance: CC, 2026-08-24, at the tree carrying `7c1119dcdbb3c5466652516a95b2eda819ce9a38`, under
+`cc_instruction_sizing_pack_preparation.md` Task 2, executing Ruling 1 and §4(1) of
+`cowork_rulings_2026_08_24_sizing_pilot_sitting.md`. Every value above was read at a content-addressed
+git object or at the artifact the run itself wrote; none was carried forward from an earlier run or
+inferred from a summary. TOWARDS the ultimate objective and TOWARDS the guiding principles.*

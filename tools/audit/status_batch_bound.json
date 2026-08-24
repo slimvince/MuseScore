@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_comparison_harmony_boundary.md, Task 2",
+ "dispatch": "cc_instruction_sizing_pack_preparation.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -87,21 +87,34 @@
    "executing_act": "cc_instruction_blind_output_landing.md, Task 1",
    "base_commit": "95c17e6660cb230676b44da339a2c9e87653c21c",
    "the_then_previous_batch": "cc_instruction_brief_ratification_and_readme_boundary.md"
+  },
+  {
+   "executing_act": "cc_instruction_comparison_harmony_boundary.md, Task 2",
+   "base_commit": "5b994124f2d193742d4c9ca2e25f85625cd9c733",
+   "the_then_previous_batch": "cc_instruction_blind_output_landing.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "5b994124f2d193742d4c9ca2e25f85625cd9c733",
- "the_then_previous_batch": "cc_instruction_blind_output_landing.md",
- "entries_moved": 1,
- "characters_moved": 2552,
+ "base_commit": "7c1119dcdbb3c5466652516a95b2eda819ce9a38",
+ "the_then_previous_batch": "cc_instruction_comparison_harmony_boundary.md",
+ "entries_moved": 2,
+ "characters_moved": 4033,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2552,
-   "sha256": "4448ea6c1c745ecd12a6d82947f1ae93cc58983c74e1fb07d6462f78baf4261c",
+   "characters": 2530,
+   "sha256": "b1d5e5567b260f8eda76b961eafb6f4c26127fbcbb427ab3402f1445a1f30f80",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-24 (CC — **★ THE BLIND DERIVATION'S OUTPUT FILE IS LANDED IN GIT BYTE-IDENTICAL TO WHAT WAS DELIVERED — UNCOMPARED, AND UNREAD BY THIS BATCH "
+   "opening": "*2026-08-24 (CC — **★ THE COMPARISON IS TABULATED: THE BLIND DERIVATION'S STATEMENTS ARE GRADED ON TWO AXES IN THE CLOSED VOCABULARY — AGAINST THE WIT"
+  },
+  {
+   "line_at_base": 10,
+   "characters": 1503,
+   "sha256": "23ff4b9f8ed9ba73902068c6dca2242c0e0d6f1fafc780dff8c159c87432a27e",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-24 (CC — **★ THE 2026-08-24 COMPARISON-DESIGN RULING RECORD AND THE COMPARISON DISPATCH LAND IN GIT AND ARE PUSHED; THE EVIDENCE-PIN MEMBERSH"
   }
  ],
  "reconciliation": {
