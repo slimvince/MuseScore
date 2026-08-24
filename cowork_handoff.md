@@ -1,7 +1,104 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-NINTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, FIFTH CYCLE) — THE BLIND DERIVING SESSION HAS DELIVERED: `cowork_blind_derivation_harmony_boundary_2026_08_23.md` EXISTS AT THE ROOT (89,497 BYTES, sha256 `86b19428…ab0407`, UNTRACKED, BANNER *DRAFT — BLIND DERIVATION, NOT COMPARED, NOT RATIFIED*), VERIFIED AT NAME, SIZE, HASH AND BANNER AND **DELIBERATELY UNREAD BEYOND THAT BY THIS ORACLE-AWARE SESSION**; ★ ITS OPEN QUESTION 9 VERIFIED REAL AT THE OBJECTS AND RULED A — THE THIRD CHORALE'S HUMAN ANALYSIS IS *WHEN IN ROME* FOLDER 134, CONTENT-MATCHED, RECORD `cowork_rulings_2026_08_24_blind_return_sitting.md` ON DISK, UNTRACKED; ★ THE LANDING DISPATCH IS WRITTEN — `cc_instruction_blind_output_landing.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING, AND IT BARS ITS OWN EXECUTOR FROM READING THE OUTPUT; ★ AFTER IT LANDS, THE NEXT ACT IS THE COMPARISON SURFACE. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (FIFTIETH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, SIXTH CYCLE) — THE LANDING BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `3a32d1e708`, TIP `2eeacf6b7a`, BOTH REFS AT IT, THE BLIND OUTPUT IN GIT BYTE-IDENTICAL AND UNREAD BY EVERY ORACLE-AWARE PARTY, MEMBERSHIP 52→53, GUARD 75/74/1; ★ THE COMPARISON SURFACE WAS DELIVERED WHOLE AND THE USER RULED ALL FOUR DECISIONS A ("I agree with A A A A") — A FRESH CC SESSION COMPARES, OUTPUT-FIRST READING ORDER, THE CLOSED TWO-AXIS VOCABULARY, NO METHOD RECOMMENDATION — RECORD `cowork_rulings_2026_08_24_comparison_design_sitting.md` ON DISK, UNTRACKED; ★ THE COMPARISON DISPATCH IS WRITTEN — `cc_instruction_comparison_harmony_boundary.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER ITS RETURN, THE METHOD RULING SURFACE. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the successor plan EXECUTES three of them.** If you are the
+comparison session, YOUR dispatch's ordered first read governs — the blind output whole before
+anything, this file included only at its ordered place.
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in
+full; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **This session did NOT discharge
+it** (standing declaration). **The bar binds you afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`2eeacf6b7a`** (parent `2a799c2444`), both refs at it. The landing batch's four commits, oldest
+first: `95c17e6660` (Task 0 — the blind output, the blind-return record, the previous handoff
+entries and the membership landed; subject stating no verdict), `d5d9ffe970` (close),
+`2a799c2444` (end state), `2eeacf6b7a` (a declared correction commit — the report and close had
+stated TWO guard denials where the batch produced THREE; only those sentences and the
+commit-count paragraph moved). **If you meet THAT tip: the dispatch
+`cc_instruction_comparison_harmony_boundary.md` is yours to hand to a new Claude Code session
+after re-taking the branch rule and re-validating its A1 (ONE tracked modification — this
+handoff; TWO untracked paths).** If you meet a commit on `2eeacf6b7a` with the subject `record:
+the 2026-08-24 comparison-design rulings landed; evidence-pin membership regenerated`, the batch
+has started — READ-ONLY until `cc_report_comparison_harmony_boundary.md` exists, then verify its
+close (THE COMPARISON TABULATED, THE METHOD UNRULED section of `cowork_away_returns.md`) whole
+and at the objects — the tabulation reading file is
+`ratification_surfaces/cowork_comparison_harmony_boundary_reading.md`, and reading IT whole is
+part of the verification (the comparison is not oracle-contaminating: everything in it is already
+this side's). **After it verifies: the METHOD RULING SURFACE** — the writing side frames the
+user's ruling on the derivation method over the tabulation, with alternatives, per Ruling 4 of
+the comparison-design sitting; then, if the method is ruled usable, the sizing pilot; the ledger
+before the framework phase.
+
+**★ WHAT THIS ENTRY ADDS.** (1) The landing batch verified: four commits, subjects as prescribed;
+the blind output's landed blob equals the delivered file (`86b19428…ab0407`); membership 52→53
+with the blind output entering NO route; pack, manifest, brief, reading file untouched; the
+commit subject unmangled at first attempt; the fourth (correction) commit's diff touching exactly
+the report and the close. Two of its declared departures corrected THIS side's drafting: A1's
+handoff account (the forty-eighth entry was never committed, so the tree carried two uncommitted
+entries — the shape held; **the standing lesson: A1 statements about the handoff are taken from
+the TREE, not from what this session delivered to disk**) and E2's four-commit arithmetic where
+the ordered structure yields three. (2) The comparison surface delivered whole — background,
+bounds (textual comparison only; D-450/D-575 caveat; salvage visibility; independence record
+relayed verdict-free; the thirty-fifth session's neutral-brief lesson binding the tone) and four
+decisions with alternatives rated; **the user ruled A, A, A, A in one turn, by letter, after the
+whole surface**. (3) The sitting record and the comparison dispatch written. The dispatch's
+notable orders: the blind output is CC's VERY FIRST read, before the session-start read, by
+Ruling 2, the departure stated in terms; the closed vocabulary quoted as the whole verdict
+language (MATCHES / DEFENDED ALTERNATIVE / SILENT / CONTRADICTS-UNDEFENDED / UNGRADED on the
+oracle axis; AGREES / DIFFERS / THE-TEXT-IS-SILENT on the current-text axis); the second arm
+engaged only where a statement touches a factor of the factorization; the 26/10 counts relayed
+as unverified and ordered re-counted; no recommendation anywhere; four commits, no backfills.
+(4) This entry written.
+
+**★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch. **Then:** the
+reading of the comparison's return (the tabulation read whole as part of it); **the METHOD
+RULING** — the pilot's whole point; then the sizing pilot (conditional on that ruling); the
+quarantined findings; **the ledger** before the framework phase; pruning-and-satellites last.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (per the batches' reports; NOT re-confirmed by this session). **NO
+FINDING NUMBER ALLOCATED — F88.** The two owed dispositions of the plan's §2 STILL UNROWED. FIVE
+quarantined questions stand. Standing bounds: the D-450/D-575 comparison caveat (now an input to
+the running comparison); member (2) not claimed free of other leaks; the read-me's zero-passage
+rendering limit; pairing by content, never by number.
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** `git rev-parse`/
+`hash-object` byte-identity checks per landed file (working-tree reads through the shell, the
+declared class); `grep`/`sed`/`python3` over `git show <hash>:path` output on the VM (object
+reads); `sha256sum` over landed files on the VM. No working-tree `git status`/`git diff`.
+**Presentation-form: none flagged.** The surface was delivered whole in one turn; the user chose
+to rule all four decisions in their next turn by letter — the user's own cadence over their own
+decisions, recorded as such in the sitting record §0.
+
+**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
+`cowork_rulings_2026_08_24_comparison_design_sitting.md` and
+`cc_instruction_comparison_harmony_boundary.md` (sizes and sha256 in the closing message; the
+record carries `pinned` on no line — the dispatch names the word in its route-B clause and is no
+ruling record). Modified against the tip: `cowork_handoff.md` ONLY (this entry above the
+forty-ninth, its heading marked superseded). **Nothing committed, nothing pushed, nothing
+regenerated by this session.** Memory-filesystem: not read this session; nothing written.
+
+**★ DECLARED DEPARTURES.** The session-start read NOT taken (standing). `BUILD_AND_TEST.md` NOT
+read. The blind output STILL not read beyond its first three lines by this side — the bar holds
+until the comparison lands. The oracle spans not re-opened this entry (their identities carried
+from the ruled records, their location ordered by-text in the dispatch). The forty-seventh and
+older entries NOT re-read.
+
+**★ THE CADENCE:** the next session starts at the branch rule, establishes whether the
+comparison dispatch has been started, and — if not — re-validates its A1 and hands it to a new
+Claude Code session; while it runs, nothing is owed but the reading of its return; after it
+verifies, the writing side puts the METHOD RULING surface to the user, with alternatives, and
+the pilot closes at the user's word.
+
+*(The forty-ninth entry below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FORTY-NINTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, FIFTH CYCLE) — THE BLIND DERIVING SESSION HAS DELIVERED: `cowork_blind_derivation_harmony_boundary_2026_08_23.md` EXISTS AT THE ROOT (89,497 BYTES, sha256 `86b19428…ab0407`, UNTRACKED, BANNER *DRAFT — BLIND DERIVATION, NOT COMPARED, NOT RATIFIED*), VERIFIED AT NAME, SIZE, HASH AND BANNER AND **DELIBERATELY UNREAD BEYOND THAT BY THIS ORACLE-AWARE SESSION**; ★ ITS OPEN QUESTION 9 VERIFIED REAL AT THE OBJECTS AND RULED A — THE THIRD CHORALE'S HUMAN ANALYSIS IS *WHEN IN ROME* FOLDER 134, CONTENT-MATCHED, RECORD `cowork_rulings_2026_08_24_blind_return_sitting.md` ON DISK, UNTRACKED; ★ THE LANDING DISPATCH IS WRITTEN — `cc_instruction_blind_output_landing.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING, AND IT BARS ITS OWN EXECUTOR FROM READING THE OUTPUT; ★ AFTER IT LANDS, THE NEXT ACT IS THE COMPARISON SURFACE. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fiftieth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.** If you are the

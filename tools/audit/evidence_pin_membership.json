@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 53,
+  "ruling_records_read": 54,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -194,6 +194,7 @@
   "cowork_rulings_2026_08_23_brief_validation_sitting.md",
   "cowork_rulings_2026_08_23_member_two_second_leak_sitting.md",
   "cowork_rulings_2026_08_24_blind_return_sitting.md",
+  "cowork_rulings_2026_08_24_comparison_design_sitting.md",
   "cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
