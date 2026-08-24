@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 54,
+  "ruling_records_read": 56,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -195,11 +195,16 @@
   "cowork_rulings_2026_08_23_member_two_second_leak_sitting.md",
   "cowork_rulings_2026_08_24_blind_return_sitting.md",
   "cowork_rulings_2026_08_24_comparison_design_sitting.md",
+  "cowork_rulings_2026_08_24_method_ruling_sitting.md",
+  "cowork_rulings_2026_08_24_sizing_pilot_sitting.md",
   "cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
   "what_this_is": "documents a ruling record states it was taken from that NO tool writes. The class rule reaches a GENERATED document only, so these are outside it — recorded rather than dropped (#12).",
   "documents": {
+   "cowork_comparison_harmony_boundary_reading.md": [
+    "cowork_rulings_2026_08_24_method_ruling_sitting.md"
+   ],
    "cowork_phase_definition_surface_2026_08_15.md": [
     "cowork_rulings_2026_08_15_phase_definition_sitting.md",
     "cowork_rulings_2026_08_22_pilot_order_sitting.md"

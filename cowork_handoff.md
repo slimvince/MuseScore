@@ -1,7 +1,180 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTIETH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, SIXTH CYCLE) — THE LANDING BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `3a32d1e708`, TIP `2eeacf6b7a`, BOTH REFS AT IT, THE BLIND OUTPUT IN GIT BYTE-IDENTICAL AND UNREAD BY EVERY ORACLE-AWARE PARTY, MEMBERSHIP 52→53, GUARD 75/74/1; ★ THE COMPARISON SURFACE WAS DELIVERED WHOLE AND THE USER RULED ALL FOUR DECISIONS A ("I agree with A A A A") — A FRESH CC SESSION COMPARES, OUTPUT-FIRST READING ORDER, THE CLOSED TWO-AXIS VOCABULARY, NO METHOD RECOMMENDATION — RECORD `cowork_rulings_2026_08_24_comparison_design_sitting.md` ON DISK, UNTRACKED; ★ THE COMPARISON DISPATCH IS WRITTEN — `cc_instruction_comparison_harmony_boundary.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER ITS RETURN, THE METHOD RULING SURFACE. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-SECOND ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, EIGHTH CYCLE) — THE SIZING PILOT IS DESIGNED AND RULED (A, A, A: EMPTY WITHHELD FAMILY WITH THE LEAK CHECK ALONE; A FRESH COWORK SESSION DERIVES; TESTS (a)+(b) IN ONE COMPARISON-SIDE BATCH) — RECORD `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` ON DISK, UNTRACKED, BESIDE THE STILL-UNTRACKED METHOD-RULING RECORD; ★ THE DISPATCH IS WRITTEN — `cc_instruction_sizing_pack_preparation.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ITS TASK 0 LANDS BOTH RECORDS; ★ THE PLAN §6.1/§11 AND RULINGS 3, 4, 8 OF THE SUCCESSOR-PLAN SITTING WERE RE-READ AT THE TIP OBJECTS BEFORE THE SURFACE WAS WRITTEN. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases
+govern; the successor plan EXECUTES three of them.**
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in
+full; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **This session did NOT discharge
+it** (standing declaration). **The bar binds you afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`9264b968b7`**, both refs at it, unmoved since the comparison batch. **If you meet THAT tip:
+the dispatch `cc_instruction_sizing_pack_preparation.md` is yours to hand to a new Claude Code
+session after re-taking the branch rule and re-validating its A1 (ONE tracked modification —
+this handoff; THREE untracked paths — the two 2026-08-24 records of the sixth and seventh
+sittings and the dispatch).** If you meet a commit on `9264b968b7` whose subject opens
+`record: the pilot closes ESTABLISHED and the sizing pilot is designed`, the batch has started —
+READ-ONLY until `cc_report_sizing_pack_preparation.md` exists, then verify its close (THE PILOT
+CLOSED ESTABLISHED AND THE SIZING PACK RENDERED section of `cowork_away_returns.md`) whole and
+at the objects. **After it lands, in the ruled §4 order:** the user rules the LEAK LIST
+(`ratification_surfaces/cowork_sizing_pack_leak_list_reading.md`); the SIZING BRIEF is written
+by the writing side and validated against the landed pack, its open points to the user; the
+FRESH COWORK SESSION derives `docs/scoring_model.md`'s unit blind (its output lands uncompared
+by the next ordinary dispatch, as the boundary unit's did); the TESTS (a)+(b) BATCH (withdrawal
+rate under §6.4's hand-applied admission per Ruling 8, each admitted fact in the ledger's ruled
+entry shape; the format test over five statements including a probabilistic factor form and a
+conditional-independence premise, judged from the comparison side); then the sizing record and
+the tests' reading file come to the user WITH THE FRAMEWORK PHASE'S OPENING SURFACE, the LEDGER
+owed before that phase.
+
+**★ WHAT THIS ENTRY ADDS.** (1) The sizing-pilot surface delivered under the sharpened rule —
+every element cited to plan §6.1/§11 and Rulings 3/4/8 (re-read at the tip objects first),
+alternatives rated against the objective AND the principles, the symmetry-generated and
+plan-contradicting shapes declined by their ratings. **The user ruled "This far agree on
+A A A"** — the empty family (the leak check alone cuts member (5); this unit has no oracle and
+withholding would size a handicapped method); the fresh Cowork session (the sizing must
+transfer to the configuration later units use — the user's A carries that intent); one
+comparison-side batch for (a)+(b). (2) The record written; the dispatch written, carrying TWO
+LICENSES quoted from the record's §4(1): a minimal authored-shape accommodation for an empty
+family if the tool needs one, and the read-me's what-was-cut rendering made truthful at zero —
+the zero-passage bound declared twice on the record, met by this sitting; the license (ii)
+check is that the harmony-boundary read-me re-renders BYTE-UNCHANGED, proving the rendering
+derived. The leak count is MEASURED, never predicted (the three known leaks predicted to recur;
+the rest measured). (3) One cadence clarification of record: the surface's closing line offered
+the question for the next turn per the standing two-turn form; the user answered on the surface
+directly; the answer supersedes the offer and no further question was put.
+
+**★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch. **Then:** the
+reading of the batch's return; the leak-list ruling; the brief's open points; (after the
+derivation and the tests) the FRAMEWORK PHASE'S OPENING SURFACE with the sizing record. **Third
+in the standing order:** the quarantined findings. **The ledger** before the framework phase.
+**Last:** pruning-and-satellites.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (per the batches' reports; NOT re-confirmed by this session). **NO
+FINDING NUMBER ALLOCATED — F88.** The two owed dispositions of the plan's §2 STILL UNROWED.
+FIVE quarantined questions stand. Standing bounds: member (2) not claimed free of other leaks;
+pairing by content, never by number; the zero-passage rendering bound is met by this sitting's
+license (ii) and retires when that batch lands. **The blind output stays unratified; the ten
+DIFFERS rows and the comparison report's §4 facts stay standing evidence for the AUDIT phase.**
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** `grep`/`sed` over
+`git show <hash>:path` output on the VM for the plan and sitting-record reads (object reads).
+No working-tree reads beyond the standing byte-identity checks. **Presentation-form: none
+flagged this cycle** (the fifty-first entry's flagged form stands corrected of record).
+
+**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
+`cowork_rulings_2026_08_24_method_ruling_sitting.md` (sha256 `dc2eb610…`, 7,235 bytes),
+`cowork_rulings_2026_08_24_sizing_pilot_sitting.md` and
+`cc_instruction_sizing_pack_preparation.md` (sizes and sha256 in the closing message; NO record
+carries `pinned` on any line — the dispatch names the word in its route-B clause and is no
+ruling record). Modified against the tip: `cowork_handoff.md` ONLY (this entry above the
+fifty-first, its heading marked superseded). **Nothing committed, nothing pushed, nothing
+regenerated by this session.** Memory-filesystem: not read this session; nothing written.
+
+**★ DECLARED DEPARTURES.** The session-start read NOT taken (standing). `BUILD_AND_TEST.md` NOT
+read. `docs/scoring_model.md` NOT opened (nothing this cycle needed its content; the deriving
+session must never meet this side having read it recently anyway). The plan read at §0
+headings, §6.1, §11 and §12's decisions 2–4; the successor-plan sitting record at Rulings 2–9.
+The fiftieth and older entries NOT re-read.
+
+**★ THE CADENCE:** the next session starts at the branch rule, establishes whether the
+sizing-pack dispatch has been started, and — if not — re-validates its A1 and hands it to a new
+Claude Code session; while it runs, nothing is owed but the reading of its return; after it
+lands, the leak list is the user's, and the brief follows.
+
+*(The fifty-first entry below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-FIRST ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, SEVENTH CYCLE) — **THE PILOT IS CLOSED: THE DERIVATION METHOD IS RULED ESTABLISHED** (Ruling 4(c)'s ex-ante criterion met at the tabulation — 7 MATCHES, 1 DEFENDED ALTERNATIVE, 0 CONTRADICTS, 0 UNGRADED where the oracle speaks; the coverage bound recorded as a fact), AND ROW 18's ALTERNATIVE IS RANKED BESIDE THE ORACLE WITH THE RULED ORDERING UNMOVED — RECORD `cowork_rulings_2026_08_24_method_ruling_sitting.md` ON DISK, UNTRACKED; ★ THE COMPARISON BATCH WAS VERIFIED AT THE OBJECTS (FOUR COMMITS, TIP `9264b968b7`); ★ **A STANDING SHARPENING OF THE DECISION-SURFACE RULE WAS GIVEN BY THE USER AND IS RECORDED IN §0 OF THE SITTING RECORD**; ★ NO DISPATCH IS WRITTEN — THE NEXT ACT IS THE SIZING-PILOT DESIGN SURFACE, AND THE RECORD LANDS AT THAT DISPATCH'S TASK 0. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-second entry above.)
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING. The six phases govern; the successor plan EXECUTES three of them.**
+
+**★ A STANDING SHARPENING, GIVEN BY THE USER THIS CYCLE AND BINDING EVERY FUTURE DECISION
+SURFACE:** every alternative is weighed against the ULTIMATE OBJECTIVE **and** the GUIDING
+PRINCIPLES, explicitly; alternatives must NOT be reactions to the latest news taken apart from
+the larger context and plan; and alternatives must NOT self-generate work. A surface that fails
+this is re-put in the corrected form (this cycle's first method surface was, and was).
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — `CLAUDE.md`, `STATUS.md`, `DECISIONS.md` in
+full; `BUILD_AND_TEST.md` conditional; rule (a)'s `gating_ids`. **This session did NOT discharge
+it** (standing declaration). **The bar binds you afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`9264b968b7`** (parent `b4b713d0c1`), both refs at it. The comparison batch's four commits,
+oldest first: `35dd95e152` (Task 0), `5b994124f2` (Task 1 — the tabulation), `b4b713d0c1`
+(close), `9264b968b7` (end state) — verified at the objects this cycle; the tabulation is
+`ratification_surfaces/cowork_comparison_harmony_boundary_reading.md` (read it whole; it is not
+oracle-contaminating for the writing side). **If you meet THAT tip: nothing is running and
+nothing is dispatched.** The next acts, in the ruled order: **(1)** the writing side designs the
+SIZING PILOT surface (plan line "the sizing pilot after the method is ruled" — the method is now
+ruled; the subject `docs/scoring_model.md` per the plan) and the user rules it at its own
+sitting; that sitting's dispatch lands, at its Task 0, the method-ruling record AND this handoff
+entry. **(2)** The empirical-findings ledger before the framework phase (condition 1 of the
+deriving-side sitting). **(3)** The quarantined findings, third in the standing order. **(4)**
+Pruning-and-satellites, last.
+
+**★ WHAT THIS ENTRY ADDS.** (1) The comparison batch verified: exactly the ordered four commits,
+every delivered file byte-identical, membership 53→54, guard 75/74/1, the blind output
+byte-unchanged throughout; the report's declared departures clean (its own pre-delivery re-read
+caught and corrected three rows written on a false tie-surface premise, distribution recounted).
+(2) The tabulation read whole: oracle axis 7 MATCHES / 1 DEFENDED ALTERNATIVE / 18 SILENT / 0
+CONTRADICTS / 0 UNGRADED; current-text axis 15 AGREES / 10 DIFFERS / 1 SILENT; the independence
+relay with the positive stop-on-meeting statement, three disclosures, and the checked fact that
+no cited design-intent identifier is a member of the withheld list; the D-450/D-575 caveat's
+trigger met on no row. (3) The first method surface REJECTED by the user as to form; the
+sharpening above given; the surface re-put in the corrected form. (4) **The user ruled A with
+limb (i): the METHOD IS ESTABLISHED**, the coverage bound (the oracle reached eight rows of
+twenty-six) recorded as a fact ordering nothing; Row 18's alternative ranked beside the unmoved
+oracle for the audit phase to weigh. The declined alternatives and their ratings are in the
+record. (5) **What does NOT follow, stated so silence claims nothing:** no blind-output
+statement is ratified; the ten DIFFERS rows and the report's §4 facts spawn no rows and no
+finding numbers — they are standing evidence for the AUDIT phase; nothing moves at any register.
+(6) No dispatch written this cycle — the just-in-time rule: the next dispatch is the
+sizing-pilot sitting's, and it carries this record and this handoff at its Task 0.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (per the batches' reports; NOT re-confirmed by this session). **NO
+FINDING NUMBER ALLOCATED — F88.** The two owed dispositions of the plan's §2 STILL UNROWED. FIVE
+quarantined questions stand. Standing bounds: member (2) not claimed free of other leaks; the
+read-me's zero-passage rendering limit; pairing by content, never by number. The D-450/D-575
+caveat is DISCHARGED for this pilot (trigger met on no row) and stands as method for any future
+unit that withholds beyond the test's words.
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** `git rev-parse`/
+`hash-object` byte-identity checks per file read whole (working-tree reads through the shell,
+the declared class); `grep`/`sed` over `git show <hash>:path` output on the VM (object reads).
+No working-tree `git status`/`git diff`. **Presentation-form: ONE, flagged by the user** — the
+first method surface's alternatives were not rated against the objective and the principles and
+two were reactive self-generated work; re-put corrected; the sharpening recorded as standing.
+
+**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
+`cowork_rulings_2026_08_24_method_ruling_sitting.md` (size and sha256 in the closing message;
+carries `pinned` on no line). Modified against the tip: `cowork_handoff.md` ONLY (this entry
+above the fiftieth, its heading marked superseded). **Nothing committed, nothing pushed, nothing
+regenerated by this session.** Memory-filesystem: not read this session; nothing written.
+
+**★ DECLARED DEPARTURES.** The session-start read NOT taken (standing). `BUILD_AND_TEST.md` NOT
+read. The blind output STILL read only at its first three lines by this side — its content
+reaches this side only as the tabulation quotes it, which is the comparison design working as
+ruled. The forty-ninth and older entries NOT re-read.
+
+**★ THE CADENCE:** the next session (or this one, at the user's word) designs the sizing-pilot
+surface under the sharpened decision-surface rule, puts it to the user, writes that sitting's
+dispatch, and lands this record and this handoff at its Task 0; while that batch runs, nothing
+is owed but the reading of its return.
+
+*(The fiftieth entry below remains binding in everything it states; it is superseded only as the
+entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FIFTIETH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, SIXTH CYCLE) — THE LANDING BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `3a32d1e708`, TIP `2eeacf6b7a`, BOTH REFS AT IT, THE BLIND OUTPUT IN GIT BYTE-IDENTICAL AND UNREAD BY EVERY ORACLE-AWARE PARTY, MEMBERSHIP 52→53, GUARD 75/74/1; ★ THE COMPARISON SURFACE WAS DELIVERED WHOLE AND THE USER RULED ALL FOUR DECISIONS A ("I agree with A A A A") — A FRESH CC SESSION COMPARES, OUTPUT-FIRST READING ORDER, THE CLOSED TWO-AXIS VOCABULARY, NO METHOD RECOMMENDATION — RECORD `cowork_rulings_2026_08_24_comparison_design_sitting.md` ON DISK, UNTRACKED; ★ THE COMPARISON DISPATCH IS WRITTEN — `cc_instruction_comparison_harmony_boundary.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER ITS RETURN, THE METHOD RULING SURFACE. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-first entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.** If you are the
