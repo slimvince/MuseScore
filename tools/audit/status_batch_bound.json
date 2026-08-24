@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_manifest_prose_and_sizing_brief.md, Task 2",
+ "dispatch": "cc_instruction_sizing_brief_ruled.md, Task 1",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -97,29 +97,34 @@
    "executing_act": "cc_instruction_sizing_pack_preparation.md, Task 2",
    "base_commit": "7c1119dcdbb3c5466652516a95b2eda819ce9a38",
    "the_then_previous_batch": "cc_instruction_comparison_harmony_boundary.md"
+  },
+  {
+   "executing_act": "cc_instruction_manifest_prose_and_sizing_brief.md, Task 2",
+   "base_commit": "e1946429d22265ccbc9aad8a23611a9789431c20",
+   "the_then_previous_batch": "cc_instruction_sizing_pack_preparation.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "e1946429d22265ccbc9aad8a23611a9789431c20",
- "the_then_previous_batch": "cc_instruction_sizing_pack_preparation.md",
+ "base_commit": "7f6f72d85873b93a39f956e0ce3366c4f85fcc28",
+ "the_then_previous_batch": "cc_instruction_manifest_prose_and_sizing_brief.md",
  "entries_moved": 2,
- "characters_moved": 3965,
+ "characters_moved": 4194,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2188,
-   "sha256": "a03d752a64a00778ac1cbf5b765f19334b995e674641650921a289fc7c100e96",
+   "characters": 2315,
+   "sha256": "64350add6ae42d9eec89da693b9a7cd6aa9ddc0ab9611eaf5a5b844d29e4823f",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-24 (CC — **★ THE `scoring-model` BOOT PACK IS RENDERED WITH AN EMPTY WITHHELD FAMILY — THE STANDING LEAK CHECK ALONE CUTS IT — AND THE LEAK L"
+   "opening": "*2026-08-24 (CC — **★ THE BOOT-PACK MANIFEST'S OWN PROSE IS CORRECTED IN TWO BOUNDED PLACES: AN EMPTY-BY-RULING CANDIDATE CRITERION NO LONGER READS AS"
   },
   {
    "line_at_base": 10,
-   "characters": 1777,
-   "sha256": "0770ba75e4af307f32fc007ee6110af7bf4076f80c685e880342dd6d73fe4c0b",
+   "characters": 1879,
+   "sha256": "484c721482062a475822b4b5927e8649f6a193b45db770394705f290744d0b9e",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-24 (CC — **★ THE 2026-08-24 METHOD-RULING AND SIZING-PILOT RULING RECORDS AND THIS DISPATCH LAND IN GIT AND ARE PUSHED; THE EVIDENCE-PIN MEMB"
+   "opening": "*2026-08-24 (CC — **★ THE 2026-08-24 SIZING LEAK-LIST RULING RECORD AND THE DRAFT SIZING BRIEF LAND IN GIT AND ARE PUSHED; THE EVIDENCE-PIN MEMBERSHIP"
   }
  ],
  "reconciliation": {

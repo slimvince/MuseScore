@@ -18836,3 +18836,228 @@ therefore cannot contain. Every value above was read from the run recorded in
 `tools/audit/guard_state.json`, which that run itself wrote, and from the measured difference between
 that artifact and the close commit's own blob; no value here was carried forward from an earlier run
 or inferred from a summary.*
+
+---
+
+# ═══ THE SIZING-BRIEF RULINGS AND THE RULED BRIEF — five paths landed, the membership regenerated, no generator edit and no pack re-render (dispatch `cc_instruction_sizing_brief_ruled.md`, performed 2026-08-24) ═══
+
+# THE SIZING BRIEF RULED
+
+## 0. What this batch was, and what it deliberately was not
+
+Task 0 landed five paths — the 2026-08-24 sizing-brief ruling record, the REFRESHED and **RULED**
+sizing brief, the modified handoff and the dispatch itself, together with the regenerated
+evidence-pin membership — and pushed. Task 1 is this close. **It is the smallest batch of the arc, and
+it was executed as such.**
+
+**The brief was LANDED, not written and not edited.** It arrived refreshed to the ruled state and was
+committed exactly as delivered; it was read at its status banner only, which is the whole of what the
+dispatch admits of it. **NO SESSION WAS BOOTED. Nothing was derived and nothing compared. THE
+GENERATOR WAS NOT OPENED AND NOT EDITED, NEITHER PACK DIRECTORY WAS RE-RENDERED OR TOUCHED, AND THE
+MANIFEST WAS NOT TOUCHED** — Ruling 4's deferral carried into the dispatch's own bars, so that no
+generator edit rode along on a batch with no reason to open it. `docs/scoring_model.md` was not
+opened; neither blind output was opened; no rendered pack member and no oracle document was opened.
+**All of this is established below at the objects rather than asserted.**
+
+## 1. The branch rule, and every SHA of this batch
+
+The branch rule was taken at the tip and at nothing else. Both refs named
+`3fbbcb5b5d37be6e922540ed5db16d6f898593da`; its parent is
+`41b77c9f922c91c9d6414a83fd7dbccc75b99911`, and its subject opens *"end state: the guard set run at
+the tree the close left"* — the premise ledger's three claims about the tip, re-measured rather than
+accepted. The commits, oldest first:
+
+- **`7f6f72d85873b93a39f956e0ce3366c4f85fcc28`** — Task 0, subject `record: the 2026-08-24
+  sizing-brief rulings landed and the sizing brief is RULED; evidence-pin membership regenerated`;
+  **exactly the five ordered paths**, enumerated AT THE COMMIT by the sanctioned enumeration tool.
+- **the close commit** — this section, the report `cc_report_sizing_brief_ruled.md`, the one
+  `STATUS.md` pointer entry, the forward bound's application with its re-aimed authored inputs and
+  its reconciliation artifact, the regenerated read-size artifact, and the guard-state artifact the
+  ordered write-mode run wrote. **A commit cannot carry its own hash; the git log carries it, and NO
+  BACKFILL COMMIT was written.**
+- **the one further commit** — the end-state guard run, which this close deliberately does not assert
+  (§9).
+
+Both refs were verified at the object after the push.
+
+## 2. The guard states
+
+**Before the first edit the FULL set was run in CHECK mode**, which writes no artifact. **75 guards
+run, TWO failing and both declared**: [[OI-372]]'s tool
+`gen_filing_convention_application.py --check`, the one standing red; and
+`gen_evidence_pin_membership.py --check` reporting its artifact STALE, caused by this dispatch's own
+untracked ruling record. `gen_guard_state.py`'s own comparison opened *"STALE vs the run"* for the
+same cause, which the dispatch declares is not a third failing check. **4 not run, 16 historical
+records. ZERO STOP verdicts. No third failing verdict arose, so that STOP did not fire — the declared
+start state reproduced exactly.**
+
+**At the close, after every ordered edit, the FULL set was run in WRITE mode** — the artifact of a
+real run, which is what the dispatch orders committed. **75 guards run, ONE failing** — [[OI-372]]'s
+tool alone. **Both reds this batch caused were cleared by the acts that caused them:** the membership
+check by Task 0 step 2, and `gen_session_start_read_size.py --check` by the regeneration this close
+performed after `STATUS.md` moved. **4 not run and 16 historical records, both unchanged. ZERO STOP
+verdicts.** `gen_guard_classification.py --check` was run separately afterwards, as its own STOP
+requires, and **re-derives**.
+
+**The end-state run is §9's, and it is not asserted here.**
+
+## 3. E0 and E2, graded
+
+- **E0 — MET on every term.** Exactly the five ordered paths in the Task 0 commit, enumerated at the
+  commit rather than at the staging act alone; `ruling_records_read` at **58** in the committed
+  membership artifact, with the brief absent from route A and from the artifact entirely;
+  `gen_evidence_pin_membership.py --check` **PASSING** at the resulting tree; `origin/master` at
+  `7f6f72d858`, read at the object after the push; **and the generator, the manifest and both pack
+  directories absent from the commit's own path set**, which the commit-level enumeration shows
+  directly rather than by inference.
+- **E2 — the further commit's, §9.** Not asserted here.
+
+## 4. A1 and A3–A5, graded
+
+- **A1 — MET, and its content description is exact.** The whole tracked population was ENUMERATED
+  rather than sampled, and returned **exactly the two predicted tracked modifications and no
+  others** — the handoff and the refreshed brief. **Both named untracked paths are present on disk
+  and `git ls-tree` at the explicit tip hash returns neither**, so each is genuinely new at that
+  commit. **The inserted-entry count was MEASURED at ONE**: the handoff's whole difference is a
+  single hunk, the one removed line is the fifty-third entry's own entry-point heading, and it
+  reappears among the added lines byte-identical but for its appended superseded clause — **the
+  arithmetic closing over the whole measured difference.** **The brief's difference is FIVE hunks
+  and they are exactly the five regions the dispatch names**, so the byte-unchangedness of §§0–2,
+  §4, §5, §6 and the remainder of §9 is established by the difference itself. **A1's declared STOP —
+  a modification at any other tracked path, the generator, the manifest, either pack directory or
+  any governing document among them — did not fire.**
+- **A3 — HELD on every route, with nothing left over.** Route A moved **57 → 58** by exactly the one
+  predicted name, `cowork_rulings_2026_08_24_sizing_brief_sitting.md`. **The brief did NOT enter
+  route A**, so the STOP A3 declares for that did not fire; it appears nowhere in the artifact at
+  all, established by searching the regenerated artifact for the brief's name and the dispatch's and
+  finding neither. Route B added nothing: the landed record carries the word that route matches on
+  **no line**, checked at the record before the regeneration. Route C is unmoved: this batch adds no
+  measurement tool, and the pin-constant population, the member set and the pinned count are all
+  absent from the difference. **The whole measured difference against the committed blob is TWO
+  hunks — the count and the one added name — so the measure-and-report item A3 reserves for an
+  additive derived cross-reference had nothing to report.** The difference was measured **before**
+  the artifact was staged.
+- **A4 — HELD, and the registry did not move.** No tool was added; the population stands at **75
+  run, 4 not run, 16 historical** at both runs; the failing set is unchanged except for the
+  membership red this batch's own Task 0 cleared. `gen_guard_classification.py --check` re-derives.
+  **`guard_state.json`'s whole difference against the Task 0 commit's own blob is THREE recorded
+  stdout blocks, and every one is THIS batch's own act** — the forward bound's reconciliation line,
+  the membership check's count, and the session-start read measurement. **No stdout line older than
+  this batch appears in it**, so the hazard A4 names did not arise. **The summary block does not
+  appear in the difference at all**, which is what *the population is unmoved* means at the object
+  rather than in prose.
+- **A5 — HELD, and established at the objects.** The manifest `tools/audit/derivation_boot_pack.json`,
+  the generator `tools/audit/gen_derivation_boot_pack.py` and **both pack directories — all fourteen
+  files** — are byte-identical between the tip and the Task 0 commit: the recursive tree listing of
+  exactly those paths, blob identifiers included, hashes to the same value at both commits.
+  **Independently**, the whole-population enumeration of tracked modifications at this close's own
+  tree carries none of them. **The STOP A5 reserves for any difference at any of them did not
+  arise.**
+
+## 5. The departures, declared
+
+1. **Shell use.** Read-only git object queries by explicit hash (`git for-each-ref`, `git show -s
+   --format`, `git show <sha>:path`, `git ls-tree [-r] <sha>`); the per-path `git diff <sha> --
+   <path>` form, with every difference written to a scratch path OUTSIDE this repository and read
+   back there; the sanctioned enumeration tool; the project's own committed tools; the `git add` /
+   `git commit -m` / `git push` acts; and `grep`, `sed`, `tail`, `wc` and `sha256sum` over scratch
+   files and over git-object output only, never over working-tree content. **No working-tree `git
+   status`, and no bare working-tree `git diff`.**
+2. **NO shell read was denied by the armed guard this batch**, and none was retried in another
+   dialect.
+3. **No stale index lock was met**, so the **D-669** remedy was neither needed nor taken.
+4. **The pre-edit guard run was performed in the ordered CHECK invocation**, so no guard artifact was
+   rewritten before the first edit and no restore was needed.
+5. **The brief was read at its status banner only.** `docs/scoring_model.md`, both blind outputs,
+   every rendered pack member, every oracle document and the boot-pack generator were **NOT opened**.
+
+## 6. What was established, recorded and NOT graded
+
+**This batch allocates NO finding number — the series stands at F88 — and creates NO open-items row;
+both are barred by the dispatch. Nothing below is graded as a defect anywhere, and nothing below was
+acted on.** The report's §6 carries each with its location; both are named here so that a reader of
+the close meets them.
+
+1. **ONE OBSERVATION ABOUT THE DELIVERED BRIEF, RECORDED RATHER THAN FIXED: §8 gained a blank line
+   between its (P3) and (P4) bullets.** It stands in the measured difference as an added empty line
+   immediately before the (P4) bullet. **It was NOT corrected** — the dispatch bars any edit to the
+   brief's content, and this is a presentation-form artifact rather than a statement, the class
+   **D-639**'s own third worked example places outside the doc-sync half's reach. It changes no
+   statement of the brief and reaches no session's reading of it. Recorded so the writing side may
+   take it or leave it the next time that file is opened for a substantive reason.
+2. **THE TWO DEFERRED GENERATOR-PROSE DEFECTS WERE NOT LOOKED FOR AND NOT CORRECTED.** Ruling 4
+   leaves the manifest's incomplete top-level `the_rulings_it_executes` list and the module
+   docstring's stale *WHAT THIS DOES NOT ASSERT* block as reported facts. **This batch did not open
+   the generator, did not search for a further instance of that class, and corrected neither** —
+   which is what the dispatch's own bars require.
+
+## 7. Quarantined questions
+
+**None new.** The five standing quarantined questions are untouched, and this batch neither answered
+nor added to them. [[OI-179]] stays **OPEN and GATES**; [[OI-372]] and [[OI-374]] stand as found. The
+two owed dispositions of the plan's §2 remain unrowed, as they were.
+
+## 8. The plan lines
+
+1. **The FRESH COWORK SESSION derives the sizing subject under the ruled brief.** The user opens it,
+   and **nothing stands before it**.
+2. **Its output lands uncompared by the next ordinary dispatch**, as the boundary unit's did.
+3. **Then the TESTS (a)+(b) BATCH** — the record check's withdrawal rate under the plan's
+   hand-applied admission, and the format test over five statements judged from the comparison side.
+4. **Then the SIZING RECORD and the FRAMEWORK PHASE'S OPENING SURFACE**, with **the LEDGER owed
+   before that phase**.
+
+## 9. The end state is NOT asserted here
+
+Per the dispatch's own clause, this close does not assert the batch's end state. The one further
+commit carries it: a fresh full guard run at the tree this close leaves, committed only after the run
+that produced it.
+
+## 10. The plan's tell, in one sentence
+
+**Did this batch produce anything other than the five landed paths and the report?** Yes, and each
+item is named: the one `STATUS.md` pointer entry; the forward bound's application, which moved the
+previous batch's two `STATUS.md` entries verbatim to `STATUS_ARCHIVE.md` and wrote its own
+reconciliation artifact; the re-aiming of that tool's three authored inputs, with the outgoing aiming
+appended rather than overwritten, which is what applying it forward means; the regenerated
+session-start read-size artifact; and the guard-state artifact the ordered runs rewrote. **Nothing
+else was produced, nothing this batch touched lies outside the subjects of its own ordered acts, no
+session was booted, the generator was not opened, no pack file moved and the manifest is
+byte-unchanged.**
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. *Principles touched.* **#12** — the outgoing aiming of the forward-bound tool is appended rather
+   than overwritten, the previous batch's entries are MOVED verbatim rather than retyped, and the
+   brief's unruled regions survive byte-for-byte because nothing edited them. **#15** — every
+   byte-identity claim is verified at content-addressed objects and by whole-population enumeration,
+   never at an assertion. **#6** — the annotated pairs have one home, the brief's §3, and the pack is
+   untouched by them; the forward bound has one tool, re-aimed rather than duplicated. **#19** — the
+   membership artifact's difference was graded route by route BEFORE it was accepted, so what is
+   committed is what was measured rather than what was expected. **#13** — the one observation about
+   the delivered brief is surfaced rather than absorbed or fixed. **#10 and the just-in-time rule** —
+   Ruling 4's deferral was honored and no generator edit rode along. Conforms.
+2. *Conventions.* American English throughout. No self-invented labels — *subject*, *pack*, *route*,
+   *bound* and *member* are the rulings' and the tools' own words. Music-theory words in their
+   musical sense only, every non-musical use qualified: this check wrote *count*, *value* and
+   *number* rather than a bare *figure*, *the remainder* rather than *the rest*, *any entry of the
+   decisions register* rather than a bare *register entry*, and *measurement tool* rather than
+   *instrument*. **No new instance of a known collision was introduced.**
+3. *Figures and premises.* The tip, both refs, the parent, the tip's subject, the guard summary and
+   the membership count were re-read at the objects rather than carried from the dispatch's premise
+   ledger; every difference was read from a per-path `git diff` against an explicit hash, written to
+   a scratch path outside the repository and read back there; **the handoff's inserted-entry count
+   was MEASURED**, which is the remedy the dispatch itself carries forward.
+4. *File-tools rule.* Declared at §5, including that no shell read was denied this batch.
+5. *Uncertainty.* No difference between two measured quantities is asserted in this batch.
+6. *Re-read from disk before release.* The staged path set was enumerated before the commit and the
+   commit's own path set enumerated after it; the membership artifact's difference was read from the
+   git objects before the staging act; the `STATUS.md` entry was re-read at the file after the
+   forward bound had been applied over it.
+
+*Provenance: CC, 2026-08-24, at the tree carrying `7f6f72d85873b93a39f956e0ce3366c4f85fcc28`, under
+`cc_instruction_sizing_brief_ruled.md` Task 1, executing §5 of
+`cowork_rulings_2026_08_24_sizing_brief_sitting.md`. Every value above was read at a
+content-addressed git object, at a measured per-path difference, or at an artifact the run itself
+wrote; none was carried forward from an earlier run or inferred from a summary. TOWARDS the ultimate
+objective and TOWARDS the guiding principles.*
