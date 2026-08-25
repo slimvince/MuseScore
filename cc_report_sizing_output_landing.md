@@ -337,10 +337,45 @@ opened, no pack file moved, the manifest is byte-unchanged and `CLAUDE.md` is by
    git objects before the staging act; the landed blob was extracted and re-hashed after the push;
    the tracked population was re-enumerated after every ordered close regeneration.
 
+## 11. The end state, and A5 verified after the last commit — added in the one further commit
+
+**This section is written in the further commit, after the close commit
+`3e34b406c5bad3b5df627d60b2774e15e66ce602` existed. The full close carries the same record in
+`cowork_away_returns.md`'s END STATE section; both surfaces carry it, which is what the dispatch
+requires.**
+
+- **E2 — MET on all four terms.** The FULL guard set was run in write mode at the tree carrying the
+  close commit, and this section was written only after that run: **75 guards run** — the population
+  UNMOVED — **ONE failing check**, `tools/audit/gen_filing_convention_application.py --check`,
+  [[OI-372]]'s tool; **every other run check passing**; **ZERO STOP verdicts**; 4 not run and 16
+  historical records, both unchanged. `gen_guard_classification.py --check` re-derives.
+- **A2 — MET.** Exactly one red remains and it is the standing one; both reds this batch caused were
+  cleared by the acts that caused them. **No red arose outside the subjects of this batch's own
+  acts.**
+- **The artifact that run wrote is BYTE-IDENTICAL to the close commit's own copy** — the per-path
+  difference is empty, the blob identifiers agree, and the whole-population enumeration of tracked
+  modifications at the tree after the run returns nothing at all.
+- **A5 — MET at the objects AFTER THE LAST COMMIT, inside THREE commits.** A commit cannot contain a
+  statement about its own tree, which is why the previous batch declared a fourth commit for this
+  term. The term is met here by two measured halves: **(1)** between the incoming tip `4f57ce5133`
+  and the close commit `3e34b406c5` the blob identifier is the SAME at every member of A5's
+  population — the nine governing documents, the boot-pack generator, the manifest, **both pack
+  directories in full**, both sizing briefs and **the FIRST unit's blind output** — the one member
+  not SAME being the SECOND unit's blind output, absent at the tip and present at the close commit,
+  which is the landing this batch was ordered to perform and whose content is byte-identical to the
+  delivered file at the landed blob's own raw bytes; and **(2)** the staged set for this further
+  commit, enumerated with the sanctioned enumeration tool immediately before it was taken, is
+  `cowork_away_returns.md` and this report and nothing else, and a commit's tree differs from its
+  parent's only at its own path set. **No member of A5's population is in it, so A5 holds at the last
+  commit, which is this one. The STOP A5 reserves did not arise.**
+- **THE COMMIT COUNT.** The ordered structure yields THREE, and **this batch carries THREE.** No
+  correction commit was needed; had one been, both surfaces would declare it.
+
 ---
 
 *Provenance: CC, 2026-08-25 by the clock, recording work performed as the 2026-08-24 batch, at the
-tree carrying `0a6ccc75b4026ea8c9b47a76698481e1800a2a6f`, under
+tree carrying `0a6ccc75b4026ea8c9b47a76698481e1800a2a6f` and, for §11, at the tree carrying
+`3e34b406c5bad3b5df627d60b2774e15e66ce602`, under
 `cc_instruction_sizing_output_landing.md`, executing Ruling 2 and §3 of
 `cowork_rulings_2026_08_24_blinding_failure_sitting.md`. Every value above was read at a
 content-addressed git object, at a measured per-path difference, or at an artifact the run itself

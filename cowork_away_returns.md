@@ -19391,3 +19391,82 @@ tree carrying `0a6ccc75b4026ea8c9b47a76698481e1800a2a6f`, under
 content-addressed git object, at a measured per-path difference, or at an artifact the run itself
 wrote; none was carried forward from an earlier run or inferred from a summary. TOWARDS the ultimate
 objective and TOWARDS the guiding principles.*
+
+# THE END STATE — E2, at the tree the close left
+
+**The FULL guard set was run in write mode at the tree carrying the close commit
+`3e34b406c5bad3b5df627d60b2774e15e66ce602`, and this section is committed only after that run.** The
+result:
+
+- **75 guards run** — the population UNMOVED, this batch having added no tool — with **4 not run**
+  and **16 historical records**, both unchanged.
+- **ONE failing check: `tools/audit/gen_filing_convention_application.py --check`**, [[OI-372]]'s
+  tool, the one standing red this batch met and did not touch. **Every other run check passes.**
+- **ZERO STOP verdicts.**
+- `gen_guard_classification.py --check` was run separately afterwards, as its own STOP requires, and
+  **re-derives**.
+
+**E2 — MET**, on all four of its terms.
+
+**A2 — MET.** Exactly one red remains and it is the standing one. **Both reds this batch caused were
+cleared by the acts that caused them:** the evidence-pin membership check by Task 0's regeneration,
+and the session-start read measurement by the regeneration the close performed after `STATUS.md`
+moved. **No red arose outside the subjects of this batch's own acts, so the STOP A2 reserves for one
+did not fire.**
+
+**★ THE ARTIFACT THIS RUN WROTE IS BYTE-IDENTICAL TO THE CLOSE COMMIT'S OWN COPY, AND THAT IS
+MEASURED RATHER THAN ASSUMED.** The per-path difference of `tools/audit/guard_state.json` against
+`3e34b406c5` is **EMPTY**; the artifact's content hash and the close commit's blob are the same
+object id; and the whole-population enumeration of tracked modifications at the tree after the run
+returns **nothing at all**. **So this further commit carries the end-state RECORD and no artifact
+change** — the same positive finding the previous batch recorded, and for the same reason: this
+close performed its write-mode run AFTER every ordered regeneration, so no guard's recorded output
+depends on the close section or on the session report.
+
+## ★ A5, VERIFIED AT THE OBJECTS AFTER THE LAST COMMIT — WITHOUT A FOURTH COMMIT, AND THE CONSTRUCTION IS STATED
+
+A5's term is *byte-unchanged by this batch, verified at the objects AFTER THE LAST COMMIT*. **A
+commit cannot contain a statement about its own tree, which is why the previous batch had to declare
+a fourth commit for exactly this term.** This batch meets the term inside THREE commits by a
+construction of two measured halves, and the construction is written down rather than left to be
+inferred:
+
+1. **THE DIRECT COMPARISON, at the objects.** Between the incoming tip `4f57ce5133` and the close
+   commit `3e34b406c5`, the blob identifier is the SAME at every member of A5's population: the nine
+   governing documents (`CLAUDE.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `OPEN_ITEMS.md`,
+   `BUILD_AND_TEST.md`, `DEFECT_TYPES.md`, `cowork_audit_protocol.md`,
+   `cowork_design_doc_template.md`, `docs/scoring_model.md`); the boot-pack generator
+   `tools/audit/gen_derivation_boot_pack.py`; the manifest `tools/audit/derivation_boot_pack.json`;
+   **both pack directories in full — all fourteen files**; both sizing briefs
+   (`cowork_blind_session_brief_scoring_model.md`,
+   `cowork_blind_session_brief_harmony_boundary.md`); and **the FIRST unit's blind output
+   `cowork_blind_derivation_harmony_boundary_2026_08_23.md`**. The one member that is not SAME is
+   the SECOND unit's blind output, which is ABSENT at the tip and present at the close commit — that
+   is the landing this batch was ordered to perform, and its content is byte-identical to the
+   delivered file, established at the landed blob's own raw bytes.
+2. **THE PATH SET OF THIS COMMIT.** The staged set for this further commit was enumerated with the
+   sanctioned enumeration tool immediately before it was taken, and it is **`cowork_away_returns.md`
+   and `cc_report_sizing_output_landing.md` and nothing else**. A commit's tree differs from its
+   parent's only at its own path set, and **no member of A5's population is in it.**
+
+**The two halves together establish A5 at the objects at the LAST commit, which is this one.** **The
+STOP A5 reserves for any difference at any of them did not arise.**
+
+**★ THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** The sentence at §10 was written at the
+close and was true of it. Taken over the batch including this further commit the answer is unchanged
+in kind and larger by one item: this end-state section, and the report's own §11 recording it.
+**Nothing else was produced; nothing this batch touched lies outside the subjects of its own ordered
+acts; no session was booted; no comparison was made; no verdict was taken; the boot-pack generator
+was not opened; `docs/scoring_model.md` was not opened; no pack file moved; the manifest is
+byte-unchanged; and `CLAUDE.md` is byte-unchanged.**
+
+**THE COMMIT COUNT.** The ordered structure yields THREE, and **this batch carries THREE.** No
+correction commit was needed beyond them; had one been, both surfaces would declare it.
+
+*Provenance: CC, 2026-08-25 by the clock, recording work performed as the 2026-08-24 batch, appended
+in the one further commit after the close commit `3e34b406c5bad3b5df627d60b2774e15e66ce602` existed —
+a commit whose own identity this paragraph therefore cannot contain. Every value above was read from
+the run recorded in `tools/audit/guard_state.json`, which that run itself wrote, from the measured
+difference between that artifact and the close commit's own blob, from per-path blob identifiers at
+two explicit commit hashes, and from the staged-set enumeration taken immediately before this commit;
+no value here was carried forward from an earlier run or inferred from a summary.*
