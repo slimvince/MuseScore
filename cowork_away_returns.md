@@ -19139,3 +19139,255 @@ a commit whose own identity this paragraph therefore cannot contain. Every value
 the run recorded in `tools/audit/guard_state.json`, which that run itself wrote, and from the measured
 difference between that artifact and the close commit's own blob; no value here was carried forward
 from an earlier run or inferred from a summary.*
+
+# ═══ THE SIZING OUTPUT LANDED, THE METHOD RULING SUSPENDED — five paths landed byte-identical, uncompared and unread beyond a bounded receipt, the membership regenerated, no generator edit and no pack re-render (dispatch `cc_instruction_sizing_output_landing.md`, performed 2026-08-25 as the 2026-08-24 batch) ═══
+
+# THE SIZING OUTPUT LANDED, THE METHOD RULING SUSPENDED
+
+## 0. What this batch was, and what it deliberately was not
+
+Task 0 landed five paths — the delivered blind derivation output, the 2026-08-24 blinding-failure
+ruling record, the modified handoff and the dispatch itself, together with the regenerated
+evidence-pin membership — and pushed. Task 1 is this close.
+
+**The output was LANDED, not judged.** It was read at its first three lines and at no further line;
+the FIRST unit's blind output was not opened at all. **NO COMPARISON WAS MADE AND NO VERDICT OF ANY
+KIND WAS TAKEN** — not on either blind output, not on the derivation method, not on the blinding
+failure. **The landed record's Ruling 1 was LANDED and NOT EXECUTED**, and the three acts its §4
+holds — the framework phase, the detail-specification phase and the tests batch — were neither
+opened nor prepared.
+
+**NO SESSION WAS BOOTED. Nothing was derived. THE BOOT-PACK GENERATOR WAS NOT OPENED AND NOT EDITED,
+NEITHER PACK DIRECTORY WAS RE-RENDERED OR TOUCHED, AND THE MANIFEST WAS NOT TOUCHED.**
+`docs/scoring_model.md` was not opened; the sizing brief was not opened; no rendered pack member and
+no oracle document was opened. **`CLAUDE.md` WAS NOT EDITED IN ANY WAY — not a split, not a move, not
+an ignore rule, not a wrapper — AND THE BOOT MECHANISM WAS NOT INVESTIGATED AND NO FIX WAS DESIGNED
+FOR IT.** **All of this is established below at the objects rather than asserted.**
+
+## 1. The branch rule, and every SHA of this batch
+
+The branch rule was taken at the tip and at nothing else. Both refs named
+`4f57ce5133fc4eec5e2ea5ffecd5e9116d77187a`; its parent is
+`4f6a6d8dbb914347fa7d1908bccc2d300f31e9da`, and its subject opens *"declared fourth commit: the A5
+verification re-taken AFTER the last commit"* — the premise ledger's three claims about the tip,
+re-measured rather than accepted. The commits, oldest first:
+
+- **`0a6ccc75b4026ea8c9b47a76698481e1800a2a6f`** — Task 0, subject `record: the sizing derivation
+  output landed UNCOMPARED and UNREAD by the landing batch; the 2026-08-24 blinding-failure ruling
+  landed and the method ruling stands SUSPENDED; evidence-pin membership regenerated`; **exactly the
+  five ordered paths**, enumerated AT THE COMMIT by the sanctioned enumeration tool.
+- **the close commit** — this section, the report `cc_report_sizing_output_landing.md`, the one
+  `STATUS.md` pointer entry, the forward bound's application with its re-aimed authored inputs and
+  its reconciliation artifact, the regenerated read-size artifact, and the guard-state artifact the
+  ordered write-mode run wrote. **A commit cannot carry its own hash; the git log carries it, and NO
+  BACKFILL COMMIT was written.**
+- **the one further commit** — the end-state guard run and A5's verification taken after the last
+  commit, which this close deliberately does not assert (§9).
+
+Both refs were verified at the object after the push.
+
+## 2. The guard states
+
+**Before the first edit the FULL set was run in CHECK mode**, which writes no artifact. **75 guards
+run, TWO failing and both declared**: [[OI-372]]'s tool
+`gen_filing_convention_application.py --check`, the one standing red; and
+`gen_evidence_pin_membership.py --check` reporting its artifact STALE, caused by this dispatch's own
+untracked ruling record. `gen_guard_state.py`'s own comparison opened *"STALE vs the run"* for the
+same cause, which the dispatch declares is not a third failing check. **4 not run, 16 historical
+records. ZERO STOP verdicts. No third failing verdict arose, so that STOP did not fire — the declared
+start state reproduced exactly.**
+
+**At the close, after every ordered edit, the FULL set was run in WRITE mode** — the artifact of a
+real run, which is what the dispatch orders committed. **75 guards run, ONE failing** — [[OI-372]]'s
+tool alone. **Both reds this batch caused were cleared by the acts that caused them:** the membership
+check by Task 0 step 2, and `gen_session_start_read_size.py --check` by the regeneration this close
+performed after `STATUS.md` moved. **4 not run and 16 historical records, both unchanged. ZERO STOP
+verdicts.** `gen_guard_classification.py --check` was run separately afterwards, as its own STOP
+requires, and **re-derives**.
+
+**The end-state run is §9's, and it is not asserted here.**
+
+## 3. E0 and E2, graded
+
+- **E0 — MET on every term.** Exactly the five ordered paths in the Task 0 commit, enumerated at the
+  commit rather than at the staging act alone; `ruling_records_read` at **59** in the committed
+  membership artifact, with the blind output absent from route A and from the artifact entirely;
+  `gen_evidence_pin_membership.py --check` **PASSING** at the resulting tree; `origin/master` at
+  `0a6ccc75b4`, read at the object after the push; **the landed output byte-identical to the
+  delivered file, established at the blob's own raw bytes — 125,529 characters and the sha256 the
+  receipt names**; **and `CLAUDE.md`, the boot-pack generator, the manifest and both pack directories
+  absent from the commit's own path set**, which the commit-level enumeration shows directly rather
+  than by inference.
+- **E2 — the further commit's, §9.** Not asserted here.
+
+## 4. A1 and A3–A5, graded
+
+- **A1 — MET, and its content description is exact.** The whole tracked population was ENUMERATED
+  rather than sampled, and returned **exactly the ONE predicted tracked modification and no other
+  tracked path at all** — the handoff. **All three named untracked paths are present on disk and
+  `git cat-file -e` at the explicit tip hash returns ABSENT for each**, so each is genuinely new at
+  that commit. Independently, the per-path explicit-hash form over the nine governing documents, the
+  boot-pack generator, the manifest, the sizing brief and **all fourteen pack files** returns the
+  same value at the tip and at the tree for every one of them. **THE INSERTED-ENTRY COUNT WAS
+  MEASURED AT TWO** — the FIFTY-SIXTH and the FIFTY-FIFTH, the latter also never committed — with the
+  handoff's whole difference a single hunk of 227 added lines and ONE removed line, the removed line
+  being the fifty-fourth entry's own entry-point heading, which reappears among the added lines
+  byte-identical but for its appended superseded clause; **the arithmetic closes over the whole
+  measured difference, and the file's own line count moved by exactly the insertion.** **A1's
+  declared STOP — a modification at any other tracked path, and at `CLAUDE.md`, the generator, the
+  manifest, either pack directory or the sizing brief in particular — did not fire.**
+- **A3 — HELD on every route, with nothing left over.** Route A moved **58 → 59** by exactly the one
+  predicted name, `cowork_rulings_2026_08_24_blinding_failure_sitting.md`. **The blind output did NOT
+  enter route A**, so the STOP A3 declares for that did not fire; it appears nowhere in the artifact
+  at all, established by searching the regenerated artifact for its name and the dispatch's and
+  finding neither. Route B added nothing: the landed record carries the word that route matches on
+  **no line**, checked at the record before the regeneration; the dispatch does carry it and is no
+  ruling record, so that route never reads it. Route C is unmoved: this batch adds no measurement
+  tool, and the pin-constant population, the member set and the pinned count are all absent from the
+  difference. **The whole measured difference against the committed blob is TWO hunks — the count and
+  the one added name — so the measure-and-report item A3 reserves for an additive derived
+  cross-reference had nothing to report.** The difference was measured **before** the artifact was
+  staged.
+- **A4 — HELD, and the registry did not move.** No tool was added; the population stands at **75
+  run, 4 not run, 16 historical** at both runs; the failing set is unchanged except for the
+  membership red this batch's own Task 0 cleared. `gen_guard_classification.py --check` re-derives.
+  **`guard_state.json`'s whole difference against the Task 0 commit's own blob is THREE recorded
+  stdout blocks, and every one is THIS batch's own act** — the forward bound's reconciliation line,
+  the membership check's count, and the session-start read measurement. **No stdout line older than
+  this batch appears in it**, so the hazard A4 names did not arise. **The summary block does not
+  appear in the difference at all**, which is what *the population is unmoved* means at the object
+  rather than in prose.
+- **A5 — its verification belongs to the further commit and is recorded there (§9).** A5's own term
+  is *verified at the objects AFTER THE LAST COMMIT*, and the last commit of this batch is the
+  further one; taking it here would evidence a comparison at the close commit, which is weaker than
+  the term. **The predecessor batch's declared fourth commit exists precisely because that
+  distinction was met late; this batch meets it in the structure the dispatch already orders.**
+
+## 5. The departures, declared
+
+1. **Shell use.** Read-only git object queries by explicit hash (`git for-each-ref`, `git log -1
+   --format`, `git cat-file -t/-e/-p`, `git rev-parse <sha>:<path>`, `git show <sha>:<path>`,
+   `git ls-tree [-r] <sha>`, `git show --stat <sha>`); the per-path `git diff <sha> -- <path>` form,
+   with every difference written to a scratch path OUTSIDE this repository and read back there;
+   `git hash-object` over working-tree files, which emits an object id and never content; the
+   sanctioned enumeration tool; the project's own committed tools; the `git add` / `git commit -m` /
+   `git push` acts; and `grep`, `sed`, `tail`, `head`, `wc` and `python -c` over scratch files and
+   over git-object output only. **No working-tree `git status` and no bare working-tree `git diff`.**
+2. **ONE working-tree read through the shell, declared as its own class:** `sha256sum` and `wc -c`
+   over the landed blind output for the receipt's size and hash terms — the same class the writing
+   side declared for the same act on the same file, and the only route to those two terms. **The
+   file's CONTENT was read only with the file tools, bounded to three lines**, and its `pinned` count
+   was taken with the file tools in counting mode, so no content entered this session from it.
+3. **THREE shell reads were DENIED by the armed guard, and each is recorded rather than absorbed.**
+   **(i)** a `grep` reached by a relative path after a `cd` to the scratch directory — the path was
+   outside this repository, but the guard cannot see that through an unexpanded relative path and
+   **denies on indeterminate**, which is the published policy behaving as ruled; it was re-taken with
+   the absolute scratch path and admitted. **(ii)** an `ls` aimed at `.gitattributes` — a genuine
+   repository path, correctly denied, and answered with the `Glob` file tool. **(iii)** a `python -c`
+   carrying the literal repository path of `tools/audit/guard_state.json` — a genuine repository path
+   in interpreter code, correctly denied, and answered with the `Grep` file tool. **Nothing was
+   retried in another dialect to get a denied read through.**
+4. **No stale index lock was met**, so the **D-669** remedy was neither needed nor taken.
+5. **The pre-edit guard run was performed in the ordered CHECK invocation**, so no guard artifact was
+   rewritten before the first edit and no restore was needed.
+6. **What was NOT opened.** The first unit's blind output, `docs/scoring_model.md`, the sizing brief,
+   every rendered pack member, every oracle document and the boot-pack generator. The landed blind
+   output was opened at three lines. `CLAUDE.md` was read as an ordinary session-start read and was
+   not edited.
+
+## 6. What was established, recorded and NOT graded
+
+**This batch allocates NO finding number — the series stands at F88 — and creates NO open-items row;
+both are barred by the dispatch. NO VERDICT of any kind is taken on either blind output, on the
+derivation method, or on the blinding failure.** Three things are recorded so that a reader of the
+close meets them:
+
+1. **NOTHING ABOUT EITHER BLIND OUTPUT IS REPORTED.** The landed output was read at its first three
+   lines and at no further line; the first unit's was not opened at all. Nothing about either is
+   stated anywhere in this close or in the report beyond the five receipt terms — which is what the
+   dispatch requires of a session that is oracle-aware by its own ordinary session-start read.
+2. **THE BOOT MECHANISM WAS NOT INVESTIGATED AND NO FIX WAS DESIGNED FOR IT.** The landed record
+   reports that a deriving session's boot carried the standing instruction file automatically. This
+   batch did not investigate it, did not attempt to reproduce it, and proposed no mechanism for a
+   boot that would exclude the file. **The determination that governs this is the user's and is not a
+   repository act.**
+3. **THE THREE DEFERRED APPARATUS ITEMS WERE NOT LOOKED FOR AND NOT CORRECTED.** The manifest's
+   incomplete top-level rulings list, the boot-pack generator docstring's stale not-asserted block
+   and the sizing brief's §8 stray blank line stand exactly as the record left them; **this batch
+   opened none of the three files they live in.**
+
+## 7. Quarantined questions
+
+**None new.** The five standing quarantined questions are untouched, and this batch neither answered
+nor added to them. [[OI-179]] stays **OPEN and GATES**; [[OI-372]] and [[OI-374]] stand as found. The
+two owed dispositions of the plan's §2 remain unrowed, as they were.
+
+## 8. The plan lines
+
+1. **THE DETERMINATION IS THE USER'S, AND NOTHING PROCEEDS ON THE METHOD RULING UNTIL IT RETURNS.**
+   It is made from evidence that already exists — the harmony-boundary deriving session's own boot
+   state — and it is not a new derivation, not a new pilot, and not either side's to perform.
+2. **The FRAMEWORK PHASE, the DETAIL-SPECIFICATION PHASE and the TESTS (a)+(b) BATCH are HELD** by
+   the landed record. None was opened and none was prepared.
+3. **The LEDGER stays owed before the framework phase.**
+
+## 9. The end state is NOT asserted here
+
+Per the dispatch's own clause, this close does not assert the batch's end state. The one further
+commit carries it: a fresh full guard run at the tree this close leaves, committed only after the run
+that produced it, together with **A5's verification taken after the last commit**.
+
+## 10. The plan's tell, in one sentence
+
+**Did this batch produce anything other than the five landed paths and the report?** Yes, and each
+item is named: the one `STATUS.md` pointer entry; this close section; the forward bound's
+application, which moved the previous batch's one `STATUS.md` entry verbatim to `STATUS_ARCHIVE.md`
+and wrote its own reconciliation artifact; the re-aiming of that tool's three authored inputs, with
+the outgoing aiming appended rather than overwritten, which is what applying it forward means; the
+regenerated session-start read-size artifact; and the guard-state artifact the ordered runs rewrote.
+**Nothing else was produced, nothing this batch touched lies outside the subjects of its own ordered
+acts, no session was booted, no comparison was made, no verdict was taken, the boot-pack generator
+was not opened, no pack file moved, the manifest is byte-unchanged and `CLAUDE.md` is
+byte-unchanged.**
+
+## ★ THE STANDING SELF-CHECK (D-434) OVER THIS BATCH'S OWN WORK
+
+1. *Principles touched.* **#19** — the output lands as an authored deliverable whose blinding is
+   known to have failed, and nothing here claims it established; the membership difference was graded
+   route by route BEFORE the artifact was accepted, so what is committed is what was measured.
+   **#12** — the suspended ruling's own text stands unamended, the outgoing aiming of the
+   forward-bound tool is appended rather than overwritten, the previous batch's entry is MOVED
+   verbatim rather than retyped, and the output lands byte-identical. **#15** — every byte-identity
+   claim is verified at content-addressed objects and by whole-population enumeration, never at an
+   assertion; the landed output's identity is taken at the blob's own raw bytes and not at the
+   staging act. **#13** — the three guard denials and the measured entry count are surfaced rather
+   than absorbed. **#6** — the forward bound has one tool, re-aimed rather than duplicated, and no
+   rule of the landed record is restated in `STATUS.md`. **#10 and the just-in-time rule** — nothing
+   was prepared for the held acts and no fix was designed for a mechanism whose determination is the
+   user's. Conforms.
+2. *Conventions.* American English throughout. No self-invented labels — *subject*, *pack*, *route*,
+   *bound*, *member* and *receipt* are the rulings' and the tools' own words. Music-theory words in
+   their musical sense only, every non-musical use qualified: this close wrote *count*, *value* and
+   *number* rather than a bare *figure*, *the remainder* rather than *the rest*, *any entry of the
+   decisions register* rather than a bare *register entry*, and *measurement tool* rather than
+   *instrument*. **No new instance of a known collision was introduced.**
+3. *Figures and premises.* The tip, both refs, the parent, the tip's subject, the guard summary and
+   the membership count were re-read at the objects rather than carried from the dispatch's premise
+   ledger; every difference was read from a per-path `git diff` against an explicit hash, written to
+   a scratch path outside the repository and read back there; **the handoff's inserted-entry count
+   was MEASURED**, which is the remedy the dispatch itself carries forward.
+4. *File-tools rule.* Declared at §5, including the one declared working-tree read through the shell
+   and all three guard denials.
+5. *Uncertainty.* No difference between two measured quantities is asserted in this batch.
+6. *Re-read from disk before release.* The staged path set was enumerated before the commit and the
+   commit's own path set enumerated after it; the membership artifact's difference was read from the
+   git objects before the staging act; the landed blob was extracted and re-hashed after the push;
+   the tracked population was re-enumerated after every ordered close regeneration.
+
+*Provenance: CC, 2026-08-25 by the clock, recording work performed as the 2026-08-24 batch, at the
+tree carrying `0a6ccc75b4026ea8c9b47a76698481e1800a2a6f`, under
+`cc_instruction_sizing_output_landing.md` Task 1, executing Ruling 2 and §3 of
+`cowork_rulings_2026_08_24_blinding_failure_sitting.md`. Every value above was read at a
+content-addressed git object, at a measured per-path difference, or at an artifact the run itself
+wrote; none was carried forward from an earlier run or inferred from a summary. TOWARDS the ultimate
+objective and TOWARDS the guiding principles.*
