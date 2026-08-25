@@ -909,7 +909,7 @@ harvest of this source is complete.**
 ### 8.3 ★ THE RULED VERDICT FOR THIS CLASS IS CONFIRMED AT THE OBJECTS
 
 The artifact inventory's ruled verdict calls this class *"the richest DESIGN-antipattern source in
-the repository"*. **Twelve files yielded sixteen candidates, thirteen of them proposing PASSES** —
+the repository"*. **Twelve files yielded sixteen candidates, fourteen of them proposing PASSES** —
 against twenty candidates from four sources in the whole of the first harvest. **And the fifth field
 is present at the source**, which is the thing the first harvest could not get: these reports state
 not only that an approach was measured worse but WHY, and several state the reason a neighbouring
@@ -1299,10 +1299,15 @@ paraphrased into a stronger claim than it makes, and **no figure any source carr
 | C40 | A structurally-predicted benefit missed on both size and failure mode | eg2 probe report | PARTLY | PARTLY | **UNDECIDABLE** · leans PROCESS |
 | C41 | A wrong continued root has no musical future | deltaseven phase E | YES | YES | **PASSES** |
 
-**Counted: 21 candidates. 15 propose PASSES (one only as restated, one on the conflict half alone,
-two with a #6 reservation), 4 are UNDECIDABLE (two of them leaning to the process side), and 1 is
-NOT PROPOSED because the record already homes it. Nothing is admitted, and every verdict is a
-proposal.**
+**Counted: 21 candidates. 16 propose PASSES (one only as restated, one on the conflict half alone,
+one with a #6 reservation), 4 are UNDECIDABLE (two of them leaning to the process side, two carrying
+a #6 reservation), and 1 is NOT PROPOSED because the record already homes it. 16 + 4 + 1 = 21.
+Nothing is admitted, and every verdict is a proposal.**
+
+*★ Both counts in this part were CORRECTED after the batch's own standing self-check re-read the
+table against the entries: this line read "15 propose PASSES" and §8.3 read "thirteen of them", and
+both were one short. The correction landed in the batch's report commit rather than in the commit
+that wrote the table, and is declared there and here rather than made silently.*
 
 **Together with Part One the file now carries 41 candidates. The two parts are NOT merged and no
 combined count is offered as a result** — Part One's verdicts were taken under its own dispatch and
