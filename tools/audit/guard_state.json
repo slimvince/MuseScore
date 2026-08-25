@@ -262,7 +262,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "REGISTER LINT: OPEN_ITEMS.md — 375 row IDs",
+        "REGISTER LINT: OPEN_ITEMS.md — 376 row IDs",
         "REGISTER LINT: PASS — every row ID is unique"
       ],
       "stderr": [],
@@ -492,10 +492,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
-        "PASS: nongating_apparatus_rows.json re-derives byte-identically (25 non-gating / 24 gates of 49 candidates over 241 open rows)"
+        "FAIL: nongating_apparatus_rows.json differs from what the generator now produces"
       ],
       "stderr": [],
       "what_it_checks": "the non-gating apparatus-row declaration re-derives from the INDEX"
@@ -1088,20 +1088,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
-        "the evidence pin's class membership re-derives",
-        "  generated ratification documents 7; ruling records read 59",
-        "  members 7 — pinned 5, UNRESOLVED 0",
-        "  tools carrying a pin constant 8; outside this class 3",
-        "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",
-        "    tools/audit/gen_claude_md_finer_surface.py           PINNED — at the commit a ruling record states",
-        "    tools/audit/gen_ratified_document_check.py           PINNED — at the commit a ruling record states",
-        "    tools/audit/gen_governing_surface_readers.py         PINNED — at the commit a ruling record states",
-        "    tools/audit/gen_rulings_sort.py                      NOT PINNED — a record states the commit; the pin is not applied",
-        "    tools/audit/gen_deciding_act_recovery.py             PINNED — by the route the tool's own pin constant records",
-        "    tools/audit/gen_decisions_filter.py                  PINNED — by the route the tool's own pin constant records"
+        "STALE vs the derivation: evidence_pin_membership.json does not re-derive"
       ],
       "stderr": [],
       "what_it_checks": "who belongs to the evidence pin's ruled class, derived on every run from the ruling records themselves rather than listed: every ratification document a tool WRITES, every root-level ruling record, and what each record says in its own two structural blocks — its leading blockquote and its provenance paragraph — that it was taken from. Its live half is that the membership tracks the record: a ruling taken tomorrow from a generated document appears tomorrow, and a member the record stops naming leaves. Its STOPs are demands about the tree AS IT STANDS — a member this artifact records as PINNED whose generator no longer carries that commit in a pin constant, a tool carrying a pin constant the run does not account for in one of its two classes, and a generated ratification document with two writers (#6). ★ WHAT IT DOES NOT ASSERT: that a member SHOULD be pinned, or that an UNRESOLVED member has no discoverable commit — only that no record states one in the form the resolution uses, which is why an unresolved member is published to the user as data and never given a guessed pin"
@@ -1384,8 +1374,8 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "living mode: index=375 detail=375 baseline=200 post-baseline=175",
-        "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
+        "living mode: index=376 detail=376 baseline=200 post-baseline=176",
+        "OVERALL PASS — bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
       "what_it_checks": "the open-items index/detail bijection, and the original items still byte-verbatim"
@@ -1406,11 +1396,23 @@
   ],
   "summary": {
     "run": 75,
-    "passing": 74,
-    "failing": 1,
+    "passing": 72,
+    "failing": 3,
     "failing_tools": [
       {
+        "tool": "tools/audit/gen_nongating_apparatus_rows.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
         "tool": "tools/audit/gen_filing_convention_application.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/gen_evidence_pin_membership.py",
         "args": [
           "--check"
         ]
