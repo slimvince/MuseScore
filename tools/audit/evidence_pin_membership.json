@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 63,
+  "ruling_records_read": 64,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -200,6 +200,7 @@
   "cowork_rulings_2026_08_24_sizing_brief_sitting.md",
   "cowork_rulings_2026_08_24_sizing_leak_list_sitting.md",
   "cowork_rulings_2026_08_24_sizing_pilot_sitting.md",
+  "cowork_rulings_2026_08_25_cascade_sitting.md",
   "cowork_rulings_2026_08_25_determination_route_sitting.md",
   "cowork_rulings_2026_08_25_forward_fact_sitting.md",
   "cowork_rulings_2026_08_25_landing_return_sitting.md",

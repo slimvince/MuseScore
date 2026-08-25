@@ -34,25 +34,25 @@
    "CLAUDE.md": 155067,
    "STATUS.md": 6195,
    "DECISIONS.md": 126774,
-   "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2748
+   "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2774
   },
-  "total_characters": 290784,
+  "total_characters": 290810,
   "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
-    "characters": 60734,
+    "characters": 61322,
     "what_it_is": "the 216 gating rows, each carrying its recorded ground — the GROUNDS a session opens when it challenges a verdict, and the third of the five figures Ruling 3 orders corrected"
    },
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one": {
-    "characters": 4867,
+    "characters": 4895,
     "what_it_is": "the comparison with the frozen record — retrospective evidence for the phase's retrospective, and the fifth of the five figures Ruling 3 orders corrected"
    }
   },
   "the_section_that_carries_the_pointer": {
    "key": "★_the_live_gating_answer",
-   "characters": 74858,
+   "characters": 75528,
    "what_it_is": "the whole section the artifact carries at that key — the answer TOGETHER with the grounds that establish it. A session reads the answer at boot and opens the rest to challenge a verdict."
   },
-  "characters_the_section_carries_beyond_the_answer": 72110
+  "characters_the_section_carries_beyond_the_answer": 72754
  },
  "at_earlier_commits": [
   {
@@ -117,16 +117,16 @@
   {
    "from_commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
    "from_total": 367121,
-   "to_total": 290784,
-   "change_in_characters": -76337,
+   "to_total": 290810,
+   "change_in_characters": -76311,
    "change_percent": -20.79
   },
   {
    "from_commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
    "from_total": 296832,
-   "to_total": 290784,
-   "change_in_characters": -6048,
-   "change_percent": -2.04
+   "to_total": 290810,
+   "change_in_characters": -6022,
+   "change_percent": -2.03
   }
  ],
  "what_this_does_not_assert": [
