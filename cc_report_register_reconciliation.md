@@ -862,8 +862,20 @@ prediction.
 ## 14. WHERE THIS LEAVES THINGS
 
 **Landed, in order:** `0a2675855c5a92fc2e32cd55c05281ba4d2c24e6` (the writing-side files) and
-`bae32fec8f4845868b22361ed3faea965aa87216` (the batch's work). This report lands as the third and
-last commit, alone.
+`bae32fec8f4845868b22361ed3faea965aa87216` (the batch's work). This report landed as the third
+commit, `da06b82079e56e6c107ffb2a6cd07925a5434c19`, **together with — and not alone — the two-figure
+correction §12 records**, because a correction the self-check found in a file the previous commit had
+already written cannot land in that previous commit. **A fourth commit carries this paragraph and
+nothing else**, correcting a sentence of this report that said *"alone"*: the statement was false of
+the commit it described, and #10 does not let a document state something false about itself. **No
+other word of this report changed, and no measurement in it moved.**
+
+**The closing tree, measured after the report's own commit** and recorded here because no earlier
+commit could carry it: `python tools/audit/changed_paths.py` → **831 changed path record(s)
+[worktree]**, **every one of them untracked**. **ZERO tracked modifications remain.** The arithmetic
+closes against §1.2's start state: 840 untracked at Task 1, less the nine §2 paths this batch landed,
+is 831; and the four tracked modifications §1.2 found are all committed. **Nothing of the standing
+untracked population was committed, touched or re-litigated.**
 
 **Owed and NOT discharged, stated as facts and not as asks:**
 
