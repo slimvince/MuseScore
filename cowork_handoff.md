@@ -1,7 +1,455 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTY-SIXTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, TWELFTH CYCLE) — ★★ **THE BLINDING DID NOT HOLD, AND THE METHOD RULING IS SUSPENDED.** THE SIZING SESSION RETURNED AND REPORTED THAT ITS BOOT CARRIED THE UNCUT `CLAUDE.md` AS SYSTEM CONTEXT BEFORE THE BRIEF WAS READ; THIS SIDE VERIFIED AT THE OBJECTS THAT THE UNCUT FILE CARRIES THE SUBJECT'S OWN MATERIAL **AND BOTH HARMONY-BOUNDARY WITHHELD PASSAGES INCLUDING THE ORACLE'S OWN WORDS**, NONE OF WHICH EITHER PACK CARRIES; ★ WHETHER THE **FIRST** UNIT'S SESSION BOOTED THE SAME WAY IS **UNKNOWN AND NOT SETTLEABLE FROM THIS SIDE'S RECORD**; ★ RULED **A + (i)**: THE METHOD RULING IS **SUSPENDED** (NOT VOIDED) PENDING ONE DETERMINATION THE USER MAKES FROM EVIDENCE THAT ALREADY EXISTS, AND THE SIZING OUTPUT **LANDS NOW, UNCOMPARED**, WITH BOTH EXPOSURES RECORDED — RECORD `cowork_rulings_2026_08_24_blinding_failure_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH IS WRITTEN — `cc_instruction_sizing_output_landing.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING. THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (SIXTIETH ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, SIXTEENTH CYCLE) — ★ **A CLEAN BOOT EXISTS: THE METHOD IS EXECUTABLE.** ★ **THE METHOD RULING OF 2026-08-24 IS VOIDED** — NOT REFUTED, **UNTESTED** — AND **THE HELD-OUT TEST IS RE-RUN ON THE SAME UNIT (HARMONY-BOUNDARY) UNDER A CLEAN BOOT**, KEEPING THE CONTAMINATED OUTPUT AS **THE COMPARISON'S OTHER ARM**; ★ THE RE-RUN SESSION **VERIFIES ITS OWN BOOT AS ITS FIRST ACT AND STOPS IF `CLAUDE.md` ARRIVED**; ★ THE DISCOVERABILITY HAZARD IS **ROWED IN THE OPEN-ITEMS REGISTER** — `CLAUDE.md` IS THE SINGLE POINT OF FAILURE FOR ITS OWN DISCOVERABILITY; ★ **AND THIS SIDE'S OWN CITATION WAS WRONG AND IS CORRECTED BEFORE ANYTHING LANDED — THERE IS NO "RULING 9(b)", AND RULING 9 OPENS NO FINDINGS SERIES, SO THE STANDING "F88" LINE IS RETIRED**; ★ **ONE DISPATCH IS OWED AND IS WRITTEN NEXT** (lands four uncommitted files + creates the register row and its detail file in the same commit). THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
+the successor plan EXECUTES three of them, and TWO OF THOSE THREE ARE HELD.**
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — and the fifty-sixth entry's bar binds you afresh:
+**`CLAUDE.md` carries both harmony-boundary withheld passages and the scoring subject's own
+material, so any session that has taken the ordinary session-start read is ORACLE-AWARE FOR BOTH
+PILOT UNITS and may never judge, compare or read either blind output beyond a bounded receipt.**
+**This session did NOT take the session-start read** (standing declaration).
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`f225b61343`**, both refs at it, **unmoved — verified at the object this cycle, not carried.** **If
+you meet THAT tip: the dispatch named below has NOT yet returned.** Four files sit on disk
+uncommitted: this handoff and the THREE 2026-08-25 records.
+
+**★ WHAT RETURNED THIS CYCLE — the throwaway session's three answers, relayed by the user and
+recorded as ITS ACCOUNT, not as this side's measurement.** **(i) `CLAUDE.md`, and ONLY `CLAUDE.md`,
+arrives — WHOLE**, injected as a `# claudeMd` system-reminder inside the first user turn, from a
+per-connected-folder mirror. It is not read; it is delivered. **(ii) The connected-folder set IS the
+mechanism** — with **ONE VARIABLE THE SESSION COULD NOT OBSERVE ABOUT ITSELF: whether the mechanism
+reads only each connected root or also WALKS UP toward an ancestor. Recorded as INFERRED, NOT
+OBSERVED.** **(iii) ★ A CLEAN BOOT EXISTS** — four configurations named: no folder connected at all;
+only a subfolder carrying no `CLAUDE.md`; no desktop bridge; the file renamed or moved. **So the
+method is EXECUTABLE, and the redesign branch of the forward-fact record's §3 DOES NOT OPEN.**
+
+**★ THE DETERMINATION IS ANSWERED — AND THE BOUND IS PART OF THE ANSWER.** **The harmony-boundary
+deriving session's boot carried the uncut `CLAUDE.md`.** The chain: the mechanism fires on a fresh
+session on this configuration (observed, now); **it does not know which subject it serves**; that
+session was a fresh Cowork session on this same configuration; nothing on the record distinguishes
+it from the sizing session. **★ THIS IS AN INFERENCE FROM A MECHANISM OBSERVED ON 2026-08-25 TO A
+SESSION THAT RAN ON 2026-08-23. IT IS NEVER TO BE CITED AS A MEASUREMENT OF THAT SESSION, AND ANY
+RECORD THAT REPEATS IT REPEATS THE BOUND WITH IT.** It is enough to act on because `CLAUDE.md` lines
+1489–1490 carry that unit's oracle VERBATIM (verified at the object), and the never-work-from-memory
+rule holds that *it was probably not used* is no defence.
+
+**★ THE RULING — `cowork_rulings_2026_08_25_method_voiding_sitting.md`.** The method ruling of
+2026-08-24 is **VOIDED**. **The method is neither established nor refuted: it is UNTESTED**, because
+the test that would have tested it was not blind. **The voided ruling's record STANDS UNAMENDED
+(#12); nothing landed is unlanded.** **The held-out test is RE-RUN on the SAME unit** — the pack,
+the brief, the withheld family and the oracle all exist and are ruled, so **this is a re-open, not a
+re-design, and it generates no new design work.** **★ THE CONTAMINATED OUTPUT IS KEPT AND IS THE
+COMPARISON'S OTHER ARM: two derivations of ONE subject, one contaminated and one clean, are direct
+evidence of how much context leakage actually changes a derivation** — which no different unit could
+buy. **How that second comparison is designed is NOT decided and gets its own surface when both arms
+exist.** Declined: B (stand with a permanent bound — a bound is not a test); C (re-run a DIFFERENT
+unit — same cost, strictly less, and it burns a second oracle); D (narrow what the method is trusted
+for — a settlement negotiated with the evidence rather than obtained from it).
+
+**★ THE RE-RUN'S ONE ADDED BOUND, AND IT IS THE ONLY THING ABOUT THE DERIVATION THAT CHANGES.**
+**Before it reads anything — before the pack, before the brief — the re-run session's first act is to
+report what stands in its context about this repository. If `CLAUDE.md` or any repository file
+arrived: IT STOPS AND REPORTS. It does not derive.** If nothing arrived, that statement becomes part
+of its independence record and is filed with its output. **This is also the answer to the unobserved
+walk-up variable: the configuration is NOT certified in advance by reasoning about the mechanism; it
+is verified FROM INSIDE, at boot, by the session that depends on it** — and if it falls the wrong
+way the cost is one aborted session, not one wasted derivation. **Everything else — brief, pack,
+read-me boundary, stop-on-meeting clause, six-field form — stands exactly as ratified.**
+
+**★ WHOSE ACT IT IS: THE RE-RUN SESSION IS THE USER'S TO OPEN.** This side does not open it, does not
+choose its configuration, and **proposes no mechanism for making a boot clean** — that bar is
+unchanged. The four configurations above are the throwaway session's report, relayed and not
+endorsed.
+
+**★ THE HAZARD — ROWED IN THE OPEN-ITEMS REGISTER, AND THE ROUTING IS THIS SIDE'S CORRECTION.** This
+side's surface said *"allocate a finding number (F89) and row it under Ruling 9(b)"*. **Checked at
+the object afterwards, BOTH HALVES ARE WRONG.** Ruling 9 of the successor-plan sitting **has no
+limbs** — the *"(b)"* was the user's word choosing Alternative B, and this side read a choice token
+as a sub-clause — and it reads, verbatim: *"a finding about the apparatus is rowed under the
+open-items register's rules (c) and (e) and lapses under the ruled lapse rule (D-676) … **No findings
+series is opened.**"* **So "allocate F89" asks for the one thing the ruling forbids.** **What the
+user ruled survives intact — the hazard gets a ROW rather than staying prose — and only the mechanism
+this side named was wrong; the mechanism was never the user's to choose, it was already ruled.** The
+corrected routing, verified at `CLAUDE.md`'s register section: **rule (c) — an index row AND its
+detail file, IN THE SAME COMMIT that records the discovery; rule (e) — prose-only tracking is a
+doc-sync violation. NO FINDING NUMBER. THE IDENTITY IS MEASURED BY THE BATCH ACROSS BOTH THE INDEX
+AND `open_items/`, NEVER ASSERTED.** **★ AND WHETHER THE ROW GATES IS NOT SETTLED AND IS NOT THIS
+SIDE'S TO SETTLE:** the row is created **without a non-gating declaration**, so it takes the ruled
+DEFAULT and **GATES** (a row making no apparatus claim is not a candidate of the generated
+non-gating set, so nothing stops); **the verdict is put to the user on its own surface.** That
+default is safe today because the only stages it could gate are already held.
+
+**The finding itself.** **`CLAUDE.md`
+is the single point of failure for its own discoverability**: the instructions to read `STATUS.md`
+and `DECISIONS.md`, and the gating rows, **live only inside the file that may not arrive.** In the
+four configurations a session starts with no repository text, no knowledge that standing instructions
+exist, **and no signal that anything is missing — it does not fail loudly; it proceeds ungoverned and
+unaware.** **★ THE IRONY IS PART OF THE FINDING: the configuration that gives a deriving session its
+correct blindness is the same one that leaves an ordinary session silently ungoverned.** **NO REMEDY
+IS PROPOSED** — the row is a finding, not a task with a foregone answer. **Its consequence is the
+part that matters now: a ruling is not binding mechanically; it binds only a session that met it.**
+
+**★ THE ONE DISPATCH, decided in the record rather than assumed.** It lands at Task 0 the four
+uncommitted files and **creates the register row AND its detail file in that same commit, at an
+identity it MEASURES**. Why now and not folded into the re-run's landing: **(1)** four uncommitted
+files, one a 673 KB handoff, is the state the record cannot cite; **(2)** the hazard concerns the
+very configuration the re-run will use, **and rule (c) requires the row in the same commit that
+records the discovery — which is this commit**; **(3)** the re-run is the user's to open and its
+duration is unknown. **It does NOT touch pack, generator, manifest, withheld family,
+either brief or either blind output, and does not amend the voided ruling's record. The re-run's
+output lands LATER, in its own ordinary batch, on the first unit's precedent — byte-identical,
+uncompared, unread by the landing batch.**
+
+**★ WHAT IS HELD.** The framework phase's opening surface and the detail-specification phase **do not
+open** — they opened ON the method ruling, now void. **The tests batch (a)+(b) stays HELD**, and
+whether **(b)** survives on its own ground (it judges FORM, not content) is **still not decided** and
+gets its own surface. **The empirical findings ledger REMAINS OWED before the framework phase** and
+is the standing alternative act whenever the user prefers repository work to tooling work.
+
+**★ STANDING HAZARDS.** [[OI-372]] the ONE standing red. [[OI-374]] untouched. [[OI-179]] OPEN and
+GATES (NOT re-confirmed by this session). **★ THE STANDING LINE "NO FINDING NUMBER ALLOCATED — THE
+SERIES STANDS AT F88" IS RETIRED HERE AND MUST NOT BE COPIED FORWARD:** Ruling 9 opens NO findings
+series, so that line has been asserting a live series this plan does not have — the F-series belongs
+to the PREDECESSOR audit and is closed to new entries. **Its replacement: apparatus findings are
+ROWED in the open-items register, and the register's next identity is MEASURED, never carried.
+ONE SUCH ROW IS OWED AND DOES NOT YET EXIST IN THE TREE.** *(Nothing already written is amended —
+#12; the correction stands beside it.)* The two owed dispositions of the plan's §2 STILL UNROWED. FIVE
+quarantined questions stand. **Three deferred apparatus items** carried: the manifest's top-level
+rulings list incomplete by THREE; the generator docstring's stale not-asserted block; the sizing
+brief's §8 stray blank line. Other standing bounds: member (2) of the harmony-boundary pack not
+claimed free of other leaks; pairing by content, never by number; **A1 NEVER ASSERTS THE HANDOFF'S
+INSERTED-ENTRY COUNT — it is measured.** **Both blind outputs stay unratified and unread by every
+oracle-aware party**; the sizing record's four declared shortfalls stand; the 197 unread
+design-intent entries and S25 stay open.
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** the tip was verified at
+the object this cycle rather than carried from the previous sitting. **FOUR FURTHER OBJECTS WERE READ
+AT THE TIP, ALL FOR THE SELF-CORRECTION, AND ARE NAMED SO IT CAN BE CHECKED RATHER THAN BELIEVED:**
+`cowork_rulings_2026_08_21_successor_plan_sitting.md` §9; `CLAUDE.md`'s open-items-register section;
+the `open_items/` tree listing; the register INDEX's head. **★ AND THE ERROR CLASS IS WORTH CARRYING:
+this side put a RULING CITATION to the user without checking it at the object, and read a
+choice-token "(b)" as a sub-clause. The A1 lesson generalises — a citation is measured, not
+recalled.** **The three answers are the throwaway session's ACCOUNT and are labelled as such
+everywhere they appear — this side measured no boot mechanism and claims none.** **The
+determination of §1 is an INFERENCE and is bounded as one at every occurrence.** **One variable —
+the walk-up — is INFERRED AND NOT OBSERVED, and the re-run's first act is what will observe it.**
+**Presentation-form: none flagged.**
+
+**★ WHAT IS ON DISK AT THIS WRITING.** Untracked:
+`cowork_rulings_2026_08_25_determination_route_sitting.md`,
+`cowork_rulings_2026_08_25_forward_fact_sitting.md` (supersedes the first IN ORDER, declines its
+route D; **the first stands unamended** — #12) and
+`cowork_rulings_2026_08_25_method_voiding_sitting.md`. Modified against the tip: `cowork_handoff.md`
+ONLY (this entry above the fifty-ninth, its heading marked superseded). **Nothing committed, nothing
+pushed, nothing regenerated.** Memory-filesystem: not read; nothing written.
+
+**★ THE CADENCE:** **the dispatch is written next and handed to a fresh CC session.** When it
+returns, verify at the objects and close the cycle. **The re-run is the user's to open at any time
+after — it does not wait on the dispatch, and the dispatch does not wait on it.** When the re-run
+returns, its output lands in its own ordinary batch and the SECOND COMPARISON's design is put on its
+own surface. **TWO SURFACES ARE OWED AND NAMED SO THEY ARE NOT LOST: (1) whether the new register row
+GATES or is declared apparatus; (2) whether the format test (b) survives on its own ground.** **If the user instead calls for the ledger, that is the standing alternative and is
+taken up in its own right.**
+
+*(The fifty-ninth entry below remains binding in everything it states; it is superseded only as the
+entry point.)*
+
+---
+
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-NINTH ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, FIFTEENTH CYCLE) — ★ **THE PRIORITY IS CORRECTED: THE NEXT ACT IS THE FORWARD FACT, NOT THE BACKWARD DETERMINATION.** ROUTE (D) IS **DECLINED** — THE BOOT STATE IS NOT CARRIED IN A SESSION'S TRANSCRIPT, SO NO READING OF THE SESSION IN QUESTION CAN SETTLE IT, AND THIS SIDE CANNOT REACH PAST SESSIONS AT ALL (CHECKED); ★ THE NEXT ACT IS **ONE THROWAWAY COWORK SESSION** ANSWERING THREE QUESTIONS BEFORE IT READS ANYTHING, OF WHICH **(iii) — WHETHER A CLEAN BOOT IS ACHIEVABLE AT ALL — IS THE LOAD-BEARING ONE**; ★ RECORD `cowork_rulings_2026_08_25_forward_fact_sitting.md` ON DISK, UNTRACKED, BESIDE THE STILL-UNTRACKED ROUTE RECORD IT SUPERSEDES IN ORDER; ★ **NO DISPATCH IS WRITTEN AND NONE IS OWED.** THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the sixtieth entry above.)
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
+the successor plan EXECUTES three of them, and TWO OF THOSE THREE ARE HELD.**
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — and note what the fifty-sixth entry establishes
+about it: **`CLAUDE.md` carries both harmony-boundary withheld passages and the scoring subject's
+own material, so any session that has taken the ordinary session-start read is ORACLE-AWARE FOR BOTH
+PILOT UNITS and may never judge, compare or read either blind output beyond a bounded receipt.**
+**This session did NOT take the session-start read** (standing declaration). **The bar binds you
+afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`f225b61343`**, both refs at it, **unmoved since the landing batch**. **If you meet THAT tip:
+NOTHING IS RUNNING AND NOTHING IS DISPATCHED. Do not write a dispatch.** Three files sit on disk
+uncommitted — this handoff and the two 2026-08-25 records — and **all three land at the Task 0 of
+whatever dispatch the throwaway session's ANSWERS eventually produce**, not before.
+
+**★ WHAT CHANGED THIS CYCLE, AND WHY — the writing side owns the misordering.** The fifty-eighth
+entry ruled a cascade **D → B → A** for the determination. **Three questions from the user
+dismantled its first route and inverted its priority:** **(1)** an auto-loaded standing instruction
+file arrives as SYSTEM CONTEXT, behind the conversation — **so the boot state is not in a
+transcript, and no reading of the harmony-boundary session can settle the determination**; a
+resume-and-ask carries the further confound that a resumed session may rebuild its context, making
+its answer describe the resume. **(2)** This side **cannot reach past sessions at all** — checked,
+not assumed; and in the hypothetical it is oracle-aware and barred from most of such a transcript,
+while the one part it would want is not in it. **(3) The determination settles whether ONE PAST TEST
+counts; BOTH of its branches converge on a different question — can a deriving session be booted
+WITHOUT the standing instruction file?** On *clean* the mechanism still leaks, so every future
+derivation carries the same doubt unless the boot can be made clean; on *contaminated* the test can
+only be re-run if a clean boot exists. **The forward fact governs whether the method is EXECUTABLE
+AT ALL. The first surface filed it as a footnote. That was this side's error and it is corrected
+here.**
+
+**★ THE NEXT ACT — THE USER'S TO OPEN, AND THE PHRASING IS PART OF THE RULING.** A **fresh Cowork
+session** on the **same folder configuration the deriving sessions used** (the repository folder AND
+the chorale folder), given **no brief, no pack, no subject**, asked exactly this and then discarded:
+
+> *Before you read any file — and do not read any file — answer three things.*
+> *(i) What is already present in your context about this repository? In particular, did*
+> *`CLAUDE.md`, or any other repository file, arrive at boot — by what route, and how much of it?*
+> *(ii) Does the set of connected folders change what arrives at boot?*
+> *(iii) Is there any configuration in which a session on this repository starts with NO repository*
+> *file in its context at all — and if so, what is it?*
+> *Read nothing, write nothing, commit nothing.*
+
+**A question that sent the session to READ the file would manufacture the state being tested for**,
+which is why the wording is ruled and not paraphrased. **(i)** yields the determination as a
+by-product — recorded as an INFERENCE to the harmony-boundary session, never as a measurement of it.
+**(ii)** probes the one variable that could plausibly have differed. **(iii) is the load-bearing
+question of the whole act.** Bound on all three: the session observes **now**, not 2026-08-23.
+
+**★ WHAT THE ANSWERS PRODUCE — written down so no later session invents it.** **(iii) CLEAN BOOT
+ACHIEVABLE** → the method is executable; the surface then put decides whether the existing held-out
+test counts on (i)'s inference or is **re-run under the clean boot**, with the sizing unit's own
+contamination weighed in the same surface. **(iii) NO CLEAN BOOT ACHIEVABLE** → **a finding about
+the PLAN, not about any session**: blind derivation *by context exclusion* is not executable in this
+tooling, and the surface then put is the **redesign** — blindness enforced by what a session is TOLD
+plus a forensic check of its output — with its own alternatives and the honest question of whether
+the plan's phase two survives in any form. **Nothing of that redesign is drafted before it is
+needed.** **(iii) NOT ESTABLISHABLE by the session about itself** → itself an answer; the surface
+then states what evidence would settle it and what it would cost, and the user rules whether to
+spend it.
+
+**★ THE STANDING ALTERNATIVE ACT, rated and not foreclosed.** If the user prefers repository work to
+tooling work, **the empirical findings ledger is owed before the framework phase regardless of how
+the method's fate falls** (Ruling 8 of 2026-08-21 left it a declared hole, hand-applied per
+admission). It resolves nothing about the method, and the suspension would sit while it ran — but it
+is owed work that no branch makes unnecessary, and it is available at any time.
+
+**★ AND ONE THING ESTABLISHED THIS CYCLE THAT BEARS ON THE WHOLE PROJECT'S DISCIPLINE.** Asked
+whether old Cowork sessions hold ideas worth mining, the answer is **no, and by design**: everything
+of value lands in the repository — records, dispatches, reports, briefs, outputs — and a transcript
+is process, not product. An idea existing only in a transcript is a defect in the record, not a
+reservoir. **For a BLIND session it is worse than useless: its transcript is the raw material of a
+derivation whose independence is in question, and mining it would compound the problem.** **The
+caveat, which is the mechanism this project actually depends on:** the blind sessions' findings —
+the 137 pairing defect, the stop-on-meeting event, the blinding failure itself — reached the record
+**only because those sessions reported them in conversation and the user relayed them.** There is no
+reservoir of unmined ideas, but there **is** a dependency on that relay being complete.
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (NOT re-confirmed by this session). **NO FINDING NUMBER ALLOCATED — F88.**
+The two owed dispositions of the plan's §2 STILL UNROWED. FIVE quarantined questions stand. **Three
+deferred apparatus items** carried: the manifest's top-level rulings list incomplete by THREE; the
+generator docstring's stale not-asserted block; the sizing brief's §8 stray blank line. Other
+standing bounds: member (2) of the harmony-boundary pack not claimed free of other leaks; pairing by
+content, never by number; **A1 NEVER ASSERTS THE HANDOFF'S INSERTED-ENTRY COUNT — it is measured.**
+**Both blind outputs stay unratified and unread by every oracle-aware party**, and the sizing
+record's four declared shortfalls stand for whatever surface uses it.
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** one `ListAgents` call,
+to check rather than assert that no past-session listing is available to this side; no object read
+and no working-tree read this cycle. **The two facts about transcripts and system context are this
+side's REASONING and are labelled as such in the record, not measured** — a later session that can
+measure them should, and should correct this record if it is wrong. **Presentation-form: none
+flagged.**
+
+**★ WHAT IS ON DISK AT THIS WRITING.** Untracked:
+`cowork_rulings_2026_08_25_determination_route_sitting.md` and
+`cowork_rulings_2026_08_25_forward_fact_sitting.md` (the second supersedes the first IN ORDER and
+declines its route D; **the first stands unamended**, recording the ruling as it was given — #12).
+Modified against the tip: `cowork_handoff.md` ONLY (this entry above the fifty-eighth, its heading
+marked superseded). **Nothing committed, nothing pushed, nothing regenerated.** Memory-filesystem:
+not read; nothing written.
+
+**★ THE CADENCE:** nothing is owed and nothing proceeds. **When the user relays the throwaway
+session's three answers — and which of them it could and could not establish about itself — the
+writing side writes the surface §3 of the forward-fact record names for that answer, and the
+dispatch that lands it carries this handoff and both records at its Task 0.** Until then: no
+dispatch, no further record, no surface. **If the user instead calls for the ledger, that is the
+standing alternative and is taken up in its own right.**
+
+*(The fifty-eighth entry below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-EIGHTH ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, FOURTEENTH CYCLE) — THE DETERMINATION'S ROUTE IS RULED: AN ORDERED CASCADE **D → B → A**, EACH ANSWER CARRYING ITS OWN BOUND — RECORD `cowork_rulings_2026_08_25_determination_route_sitting.md` ON DISK, UNTRACKED; ★ **NO DISPATCH IS WRITTEN AND NONE IS OWED — THE DETERMINATION IS NOT A REPOSITORY ACT**; ★ THE METHOD RULING STANDS **SUSPENDED** AND THE THREE ACTS STAY **HELD**; ★ WHAT EACH ANSWER PRODUCES IS WRITTEN DOWN IN THE RECORD SO NO LATER SESSION INVENTS THE NEXT STEP. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-ninth entry above.)
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
+the successor plan EXECUTES three of them, and TWO OF THOSE THREE ARE HELD.**
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — and note what the fifty-sixth entry establishes
+about it: **`CLAUDE.md` carries both harmony-boundary withheld passages and the scoring subject's
+own material, so any session that has taken the ordinary session-start read is ORACLE-AWARE FOR BOTH
+PILOT UNITS and may never judge, compare or read either blind output beyond a bounded receipt.**
+**This session did NOT take the session-start read** (standing declaration). **The bar binds you
+afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`f225b61343`**, both refs at it, **unmoved since the landing batch**. **If you meet THAT tip:
+NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** **Do not write a dispatch.** The two files on disk
+uncommitted are this handoff and the determination-route record, and **both land at the Task 0 of
+whatever dispatch the determination's ANSWER eventually produces** — not before.
+
+**★ THE DETERMINATION, AND ITS RULED ROUTE.** The question is unchanged: **did the harmony-boundary
+deriving session's boot carry the uncut `CLAUDE.md`?** The route is now ruled as an ordered
+cascade — **the first route available is the one taken, and the later routes are not run once an
+earlier has returned:**
+**(D) FIRST — the first session's own boot state or transcript**, opened by the user. Settles what
+happened THEN, in the session actually in question; the only route that does. Bound: it settles
+nothing about any later session's boot. Availability is the user's to state.
+**(B) IF D IS NOT AVAILABLE — one direct re-test on a throwaway fresh Cowork session**, same folder
+configuration, no brief, no pack, no subject; its ONLY act is to answer, **before reading
+anything**, what is already in its context about this repository, whether `CLAUDE.md` arrived at
+boot and by what route, and whether the connected-folder set changes what arrives. **The phrasing is
+part of the ruling** — a question that sends the session to READ `CLAUDE.md` would manufacture the
+state it tests for. It writes nothing, commits nothing, opens nothing, and is discarded. Bound: it
+observes NOW and not THEN, and the inference to 2026-08-23 is named as an inference.
+**(A) IF NEITHER — rule on the mechanism inference** (a boot mechanism does not know which subject
+it serves; both sessions were fresh Cowork sessions on the same folder configuration; nothing on the
+record distinguishes them). Bound: an inference throughout, never later cited as a measurement.
+**(C) — a forensic pass over the first blind output for verbatim traces — is DECLINED for this
+determination** (the never-work-from-memory rule already holds that *it was not used* is no
+defence, so a clean result cannot rehabilitate the test) **and kept as its own later question: how
+much of that output survives as usable.**
+
+**★ WHAT EACH ANSWER PRODUCES — written down so no later session invents it.** **CLEAN** → a short
+record lifting the suspension, carrying the bound of whichever route produced the answer; the held
+acts then resume in the ruled order (the tests batch (a)+(b); then the framework phase's opening
+surface with the sizing record; the ledger owed before that phase). **CONTAMINATED** → the surface
+putting the VOIDING of the method ruling and the RE-RUN of the held-out test, with its own
+alternatives — **including whether a boot that provably excludes the standing instruction file
+exists at all**, which route (B)'s second question bears on directly. **INDETERMINATE** → that is
+itself an answer and is recorded as one; the surface then put is the third shape: the method's
+establishment cannot be settled on the evidence that exists, and the alternatives become *accept
+with the doubt as a permanent bound* / *re-run regardless* / *narrow what the method is trusted
+for*. **None of the three is chosen in advance.**
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (NOT re-confirmed by this session). **NO FINDING NUMBER ALLOCATED — F88.**
+The two owed dispositions of the plan's §2 STILL UNROWED. FIVE quarantined questions stand. **Three
+deferred apparatus items** carried and none urgent: the manifest's top-level rulings list incomplete
+by THREE; the generator docstring's stale not-asserted block; the sizing brief's §8 stray blank
+line. Other standing bounds: member (2) of the harmony-boundary pack not claimed free of other
+leaks; pairing by content, never by number; **A1 NEVER ASSERTS THE HANDOFF'S INSERTED-ENTRY COUNT —
+it is measured** (the remedy earned twice). **Both blind outputs stay unratified and unread by every
+oracle-aware party.** The sizing record's own declared shortfalls stand for whatever surface uses
+it: a model session's generation time and not an analyst's hours; a batch mean, not a per-statement
+value; **44 of 241** design-intent entries read; and S25's model component with no countable ground
+truth in the exemplars.
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** none — this cycle
+took no object read and no working-tree read; the surface and the ruling were written from artifacts
+this session had already verified at the objects, and the record says so of itself.
+**Presentation-form: none flagged.**
+
+**★ WHAT IS ON DISK AT THIS WRITING.** Untracked:
+`cowork_rulings_2026_08_25_determination_route_sitting.md`. Modified against the tip:
+`cowork_handoff.md` ONLY (this entry above the fifty-seventh, its heading marked superseded).
+**Nothing committed, nothing pushed, nothing regenerated.** Memory-filesystem: not read; nothing
+written.
+
+**★ THE CADENCE:** nothing is owed and nothing proceeds. **When the user reports what the cascade
+returned — and which route returned it — the writing side writes the surface or the record §2 names
+for that answer, and the dispatch that lands it carries this handoff and the route record at its
+Task 0.** Until then: no dispatch, no further record, no surface.
+
+*(The fifty-seventh entry below remains binding in everything it states; it is superseded only as
+the entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-SEVENTH ENTRY, 2026-08-24/25 — THE SAME FORTY-FIFTH SESSION, THIRTEENTH CYCLE) — THE LANDING BATCH RETURNED AND WAS VERIFIED AT THE OBJECTS (THREE COMMITS, TIP `f225b61343`; THE SIZING OUTPUT IN GIT BYTE-IDENTICAL AND UNREAD BEYOND ITS RECEIPT; MEMBERSHIP 58→59 WITH THE OUTPUT ABSENT; GUARD 75/74/1; `CLAUDE.md`, BOTH PACKS, THE GENERATOR, THE MANIFEST, BOTH BRIEFS AND THE FIRST UNIT'S OUTPUT ALL BYTE-UNCHANGED); ★ **NOTHING IS OWED BY THE WRITING SIDE AND NOTHING PROCEEDS.** THE METHOD RULING STANDS **SUSPENDED**; THE FRAMEWORK PHASE, THE DETAIL-SPECIFICATION PHASE AND THE TESTS BATCH STAY **HELD**; ★ **THE ONE THING THE WHOLE PROGRAMME NOW WAITS ON IS THE USER'S DETERMINATION.** THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-eighth entry above.)
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
+the successor plan EXECUTES three of them, and TWO OF THOSE THREE ARE HELD.**
+
+**★ THE DETERMINATION, RESTATED BECAUSE EVERYTHING WAITS ON IT.** **Whether the harmony-boundary
+deriving session's boot carried the uncut `CLAUDE.md`.** It is made from evidence that already
+exists — that session's own boot state — and **it is the USER's to reach.** It is not a new
+derivation, not a new pilot, not a repository act, and **no session may design a mechanism for an
+instruction-file-free boot.** **CLEAN** → the method ruling stands and the suspension is recorded
+lifted. **CONTAMINATED** → the ruling is voided and the held-out test re-run under a boot that
+provably excludes the file, put to the user then with its own alternatives. **The full statement is
+the fifty-sixth entry below and `cowork_rulings_2026_08_24_blinding_failure_sitting.md`, both now
+committed; this entry adds only that the landing is verified and that nothing else is owed.**
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — and note what the fifty-sixth entry establishes
+about it: **`CLAUDE.md` carries both harmony-boundary withheld passages and the scoring subject's
+own material, so any session that has taken the ordinary session-start read is ORACLE-AWARE FOR BOTH
+PILOT UNITS and may never judge, compare or read either blind output beyond a bounded receipt.**
+**This session did NOT take the session-start read** (standing declaration). **The bar binds you
+afresh.**
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`f225b61343`** (parent `3e34b406c5`), both refs at it. The landing batch's three commits, oldest
+first: `0a6ccc75b4` (Task 0 — the sizing output, the blinding-failure record and the dispatch
+landed), `3e34b406c5` (close), `f225b61343` (end state, carrying A5's verification taken after the
+last commit). **If you meet THAT tip: NOTHING IS RUNNING, NOTHING IS DISPATCHED, AND NOTHING IS
+OWED.** Do not write a dispatch, a record or a surface until the determination has returned and the
+user has said what it returned. **The one thing on disk uncommitted is this handoff, and it lands at
+the Task 0 of whatever dispatch the determination's answer produces.**
+
+**★ WHAT THIS ENTRY ADDS — the verification, taken at the objects by this side and not from the
+report.** Three commits and no correction commit. Every landed file byte-identical to the delivered
+one, the sizing output included at sha256 `4887a9ab…9861b`. Membership **58→59** with exactly the
+blinding-failure record added and **the output appearing nowhere in the artifact**. Guard
+**75/74/1**, population unmoved. **`CLAUDE.md`, `ARCHITECTURE.md`, `DECISIONS.md`,
+`docs/scoring_model.md`, the manifest, the generator, the sizing brief and the FIRST unit's blind
+output are byte-identical between the incoming tip and the final tip** — each re-measured here.
+**Two things in the return are worth carrying:** **(1)** CC met A5's *after-the-last-commit* term
+**inside three commits**, where the previous batch had needed a declared fourth — by measuring the
+population's blob identifiers between the tip and the close commit and then observing that a
+commit's tree differs from its parent's only at its own path set, which its enumerated staged set
+shows carries no member of that population. **(2)** The A1 remedy earned its keep: the dispatch left
+the handoff's inserted-entry count to measurement and **the measured count was TWO, not one** — the
+fifty-fifth entry had also never been committed, having been written in the cycle that produced no
+dispatch. **Had this side asserted the count, it would have been wrong a third time.** The remedy
+stays: **A1 never asserts that count again.**
+
+**★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
+[[OI-179]] OPEN and GATES (NOT re-confirmed by this session). **NO FINDING NUMBER ALLOCATED — F88.**
+The two owed dispositions of the plan's §2 STILL UNROWED. FIVE quarantined questions stand. **Three
+deferred apparatus items**, all carried and none urgent: the manifest's top-level rulings list
+incomplete by THREE; the generator docstring's stale not-asserted block; the sizing brief's §8 stray
+blank line. Other standing bounds: member (2) of the harmony-boundary pack not claimed free of other
+leaks; pairing by content, never by number. **Both blind outputs stay unratified and unread by every
+oracle-aware party.** **The sizing record's own declared shortfalls stand for whatever surface uses
+it:** its clock measures a model session's generation time and not an analyst's hours; its
+per-statement value is a batch mean, reported as a shortfall against what the brief asked; its
+derivation rested on **44 of 241** design-intent entries; and its S25 concludes a model component for
+which the exemplars carry no countable ground truth at all.
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** `git rev-parse`/
+`hash-object` byte-identity checks over the landed files and A5's population (working-tree reads
+through the shell, the declared class); `grep`/`python3` over `git show <hash>:path` output on the VM
+(object reads). No working-tree `git status`/`git diff`. Neither blind output opened this cycle.
+**Presentation-form: none flagged.**
+
+**★ WHAT IS ON DISK AT THIS WRITING.** Modified against the tip: `cowork_handoff.md` ONLY (this entry
+above the fifty-sixth, its heading marked superseded). Untracked: **nothing owed by this session.**
+**Nothing committed, nothing pushed, nothing regenerated.** Memory-filesystem: not read; nothing
+written.
+
+**★ THE CADENCE:** nothing is owed and nothing proceeds. When the user reports what the determination
+returned, the writing side writes the surface that answers it — **CLEAN:** a short record lifting the
+suspension, after which the held acts resume in the ruled order (the tests batch, then the framework
+phase's opening surface with the sizing record, the ledger owed before that phase). **CONTAMINATED:**
+the surface that puts the voiding and the re-run, with its own alternatives rated against the
+ultimate objective and the guiding principles. **Until then, no dispatch, no record, no surface.**
+
+*(The fifty-sixth entry below remains binding in everything it states; it is superseded only as the
+entry point.)*
+
+---
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-SIXTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, TWELFTH CYCLE) — ★★ **THE BLINDING DID NOT HOLD, AND THE METHOD RULING IS SUSPENDED.** THE SIZING SESSION RETURNED AND REPORTED THAT ITS BOOT CARRIED THE UNCUT `CLAUDE.md` AS SYSTEM CONTEXT BEFORE THE BRIEF WAS READ; THIS SIDE VERIFIED AT THE OBJECTS THAT THE UNCUT FILE CARRIES THE SUBJECT'S OWN MATERIAL **AND BOTH HARMONY-BOUNDARY WITHHELD PASSAGES INCLUDING THE ORACLE'S OWN WORDS**, NONE OF WHICH EITHER PACK CARRIES; ★ WHETHER THE **FIRST** UNIT'S SESSION BOOTED THE SAME WAY IS **UNKNOWN AND NOT SETTLEABLE FROM THIS SIDE'S RECORD**; ★ RULED **A + (i)**: THE METHOD RULING IS **SUSPENDED** (NOT VOIDED) PENDING ONE DETERMINATION THE USER MAKES FROM EVIDENCE THAT ALREADY EXISTS, AND THE SIZING OUTPUT **LANDS NOW, UNCOMPARED**, WITH BOTH EXPOSURES RECORDED — RECORD `cowork_rulings_2026_08_24_blinding_failure_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH IS WRITTEN — `cc_instruction_sizing_output_landing.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-seventh entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
