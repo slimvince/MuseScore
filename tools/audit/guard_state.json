@@ -1092,7 +1092,7 @@
       "verdict": "PASS",
       "stdout": [
         "the evidence pin's class membership re-derives",
-        "  generated ratification documents 7; ruling records read 64",
+        "  generated ratification documents 7; ruling records read 68",
         "  members 7 — pinned 5, UNRESOLVED 0",
         "  tools carrying a pin constant 8; outside this class 3",
         "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",
@@ -1117,15 +1117,15 @@
         "the session-start read measurement re-derives",
         "  rule (a) points at tools/audit/nongating_apparatus_rows.json -> ★_the_live_gating_answer -> gating_ids",
         "    CLAUDE.md                                                                155067",
-        "    STATUS.md                                                                  6195",
+        "    STATUS.md                                                                  5397",
         "    DECISIONS.md                                                             126774",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids     2774",
-        "  total at the tree 290810",
+        "  total at the tree 290012",
         "  further spans of the same artifact, NOT counted into the read:",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows    61322",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one     4895",
-        "  vs 1760d9a4a8: 367121 -> 290810  (-76311, -20.79%)",
-        "  vs 594074e1e1: 296832 -> 290810  (-6022, -2.03%)"
+        "  vs 1760d9a4a8: 367121 -> 290012  (-77109, -21.00%)",
+        "  vs 594074e1e1: 296832 -> 290012  (-6820, -2.30%)"
       ],
       "stderr": [],
       "what_it_checks": "what an ordinary session reads at session start, in characters, measured at the tree and at the recorded earlier commit's git object. It is the arc's own subject made checkable: the pruning direction of 2026-08-16 is about this number, and every act in the arc has had to state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule (a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the artifact it names, so a pointer that has stopped resolving fails on the day it stops rather than being hidden inside a number. It goes red when a governing surface changes, which is the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the clause that makes it one so the authored half is checkable by reading three clauses; and nothing about whether the read is small enough, which is [[OI-370]]'s own subject"

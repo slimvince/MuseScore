@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 64,
+  "ruling_records_read": 68,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -205,6 +205,10 @@
   "cowork_rulings_2026_08_25_forward_fact_sitting.md",
   "cowork_rulings_2026_08_25_landing_return_sitting.md",
   "cowork_rulings_2026_08_25_method_voiding_sitting.md",
+  "cowork_rulings_2026_08_25_next_act_sitting.md",
+  "cowork_rulings_2026_08_25_regress_termination_sitting.md",
+  "cowork_rulings_2026_08_25_second_vector_sitting.md",
+  "cowork_rulings_2026_08_25_v1_sufficiency_sitting.md",
   "cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
