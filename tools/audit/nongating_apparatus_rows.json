@@ -22,8 +22,8 @@
   "the_two_stops": "The tool refuses to run if a first-cut candidate has no authored verdict, and refuses an authored verdict for a row that is not an open candidate - so the table cannot drift away from the register without failing loudly."
  },
  "population": {
-  "rows_parsed": 375,
-  "open_rows": 241,
+  "rows_parsed": 376,
+  "open_rows": 242,
   "first_cut_candidates": 49,
   "first_cut_vocabulary": [
    "doc-sync",
@@ -180,9 +180,9 @@
    "what_it_does_NOT_establish": "That any individual GATES verdict is right — a verdict about a row's subject is authored and is challengeable at the row. What is established is that the partition is complete, that every identity is a live open row, and that every gating row carries a ground."
   },
   "the_default_that_places_every_row_outside_the_apparatus_cut": "A row that is not apparatus, or whose subject the row does not settle, GATES. The declaration only ever removes a wait where the row's own text supports removing it.",
-  "gating_rows": 216,
+  "gating_rows": 217,
   "non_gating_rows": 25,
-  "open_rows": 241,
+  "open_rows": 242,
   "gating_ids": [
    "OI-1",
    "OI-10",
@@ -357,6 +357,7 @@
    "OI-371",
    "OI-372",
    "OI-374",
+   "OI-376",
    "OI-38",
    "OI-39",
    "OI-4",
@@ -581,6 +582,7 @@
     "OI-37",
     "OI-372",
     "OI-374",
+    "OI-376",
     "OI-38",
     "OI-39",
     "OI-4",
@@ -1490,6 +1492,11 @@
     "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
    },
    {
+    "id": "OI-376",
+    "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
+    "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
+   },
+   {
     "id": "OI-38",
     "gate_ground": "the ruled default - the row is outside the over-inclusive apparatus first cut, so the non-gating declaration does not reach it at all",
     "how_it_was_placed": "the ruled default, the row being outside the over-inclusive apparatus first cut"
@@ -1711,7 +1718,7 @@
    "why_it_is_frozen": "its generator `tools/audit/gen_phase1_completion_inventory.py` carries the verdict `records-a-point-in-time-measurement` in the committed guard classification and stands HISTORICAL, because its subject is the three-phase structure the six phases superseded. It is a historical record and not a live answer.",
    "★_the_two_populations_are_different_BY_CONSTRUCTION_and_that_is_the_finding": "the frozen split is applied over `the wide cut` — an authored keyword selection of open rows, whose own over-inclusion that artifact declares unmeasured — while this derivation's population is EVERY OPEN ROW of the INDEX as it stands. So the difference below is not drift between two answers to one question: it is the gap between a frozen answer over a narrow authored cut and the live answer over the whole open register.",
    "frozen_gating_rows": 30,
-   "live_gating_rows": 216,
+   "live_gating_rows": 217,
    "in_the_frozen_record_and_still_gating_live": [
     "OI-105",
     "OI-107",
@@ -1893,6 +1900,7 @@
     "OI-37",
     "OI-372",
     "OI-374",
+    "OI-376",
     "OI-38",
     "OI-39",
     "OI-4",

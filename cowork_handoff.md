@@ -1,7 +1,130 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (SIXTIETH ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, SIXTEENTH CYCLE) — ★ **A CLEAN BOOT EXISTS: THE METHOD IS EXECUTABLE.** ★ **THE METHOD RULING OF 2026-08-24 IS VOIDED** — NOT REFUTED, **UNTESTED** — AND **THE HELD-OUT TEST IS RE-RUN ON THE SAME UNIT (HARMONY-BOUNDARY) UNDER A CLEAN BOOT**, KEEPING THE CONTAMINATED OUTPUT AS **THE COMPARISON'S OTHER ARM**; ★ THE RE-RUN SESSION **VERIFIES ITS OWN BOOT AS ITS FIRST ACT AND STOPS IF `CLAUDE.md` ARRIVED**; ★ THE DISCOVERABILITY HAZARD IS **ROWED IN THE OPEN-ITEMS REGISTER** — `CLAUDE.md` IS THE SINGLE POINT OF FAILURE FOR ITS OWN DISCOVERABILITY; ★ **AND THIS SIDE'S OWN CITATION WAS WRONG AND IS CORRECTED BEFORE ANYTHING LANDED — THERE IS NO "RULING 9(b)", AND RULING 9 OPENS NO FINDINGS SERIES, SO THE STANDING "F88" LINE IS RETIRED**; ★ **ONE DISPATCH IS OWED AND IS WRITTEN NEXT** (lands four uncommitted files + creates the register row and its detail file in the same commit). THE CURRENT ENTRY POINT.
+## ★★★★★ COWORK SESSION CLOSE (SIXTY-FIRST ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, SEVENTEENTH CYCLE) — ★ **THE METHOD-VOIDING RECORDS ARE LANDED AND VERIFIED AT THE OBJECTS**; ★ **TWO GUARD REDS BEYOND THE STANDING ONE — ONE WE CAUSED, ONE THAT PREDATED THE BATCH — AND BOTH ARE DISCHARGED BY REGENERATION IN THE DISPATCH NAMED BELOW**; ★ **A LANDED REGISTER ROW CARRIES ONE WRONG CITATION (D-436 → D-438) AND IT IS CORRECTED IN PLACE, ANNOTATED**; ★ **THE GATING VERDICT IS NOT A SURFACE AFTER ALL — IT IS DERIVED FROM A CUT, AND THE DERIVED ANSWER IS ACCEPTED AS IT FALLS**; ★ **A1 WAS WRONG A THIRD TIME, BY THREE ENTRIES**. THE CURRENT ENTRY POINT.
+
+**You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
+BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
+the successor plan EXECUTES three of them, and TWO OF THOSE THREE ARE HELD.**
+
+**★ YOUR SESSION-START READ is unchanged (#6)** — and the fifty-sixth entry's bar binds you afresh:
+**`CLAUDE.md` carries both harmony-boundary withheld passages and the scoring subject's own
+material, so any session that has taken the ordinary session-start read is ORACLE-AWARE FOR BOTH
+PILOT UNITS and may never judge, compare or read either blind output beyond a bounded receipt.**
+**This session did NOT take the session-start read** (standing declaration).
+
+**★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
+**`64d640317fd652d1192350f0eafe4ef83abca680`** — the method-voiding landing batch's second commit,
+parent `2dfe0ba485f438817f60385b4f6ea9fc0e6e4432`, itself on `f225b61343`. **If you meet THAT tip,
+`cc_instruction_regeneration_and_citation.md` has not yet returned.** Two files sit uncommitted:
+this handoff and `cowork_rulings_2026_08_25_landing_return_sitting.md`.
+
+**★ AND ONE STANDING BAR THAT COST A STEP THIS CYCLE: DO NOT RUN `git status` IN THIS REPOSITORY.**
+The `PreToolUse` guard refuses it (**D-253**); the sanctioned enumeration is **`python
+tools/audit/changed_paths.py`**. The sixtieth cycle's dispatch asked for `git status` in error, CC
+substituted the sanctioned tool and reported the contradiction. **Struck from the dispatch form.**
+
+**★ WHAT LANDED, VERIFIED AT THE OBJECTS AND NOT TAKEN FROM THE REPORT.** Both commits exist as
+reported — `2dfe0ba485` with **exactly six** paths, then `64d640317f` with **exactly four**. **All
+four landing files are byte-identical at the committed objects** to what the writing side measured
+before dispatch. **`OI-376` was opened** — its INDEX row splits into six cells, opens with the bare
+canonical `OPEN` token, and carries **no apparatus claim, no gating verdict, no finding number and
+no remedy**; its detail file is 6,797 bytes. **The identity was MEASURED on both surfaces** (INDEX
+and `open_items/` agreeing at OI-375) and confirmed afterwards by `register_check.json` moving
+375→376 with no gap and no orphan.
+
+**★ THE GUARD SET WENT FROM ONE RED TO THREE, AND THE TWO NEW ONES HAVE DIFFERENT OWNERS.**
+`{run 75, passing 72, failing 3}`. **(1) `gen_nongating_apparatus_rows.py --check` — WE CAUSED IT,
+and A5 of that dispatch was rightly falsified.** The writing side reasoned the row was outside the
+tool's first cut and so needed no verdict — **true, and it is** — but the same artifact also
+publishes `gating_ids` over **every** open row, so **adding ANY open row moves it by construction**.
+The artifact is **out of date, not wrong**. **(2) `gen_evidence_pin_membership.py --check` — IT
+PREDATED THE BATCH**, established at the objects: the artifact at the old tip carries `…_08_21`,
+`…_08_22`, `…_08_23`, `…_08_24` and **no** `…_08_25` entry, while all three 2026-08-25 records were
+already in the tree. **(3) The standing red [[OI-372]] — untouched.** **Both new reds are discharged
+by plain regeneration and nothing else.**
+
+**★ THE CITATION DEFECT — FOUND BY THIS SIDE AT `DECISIONS.md`, IN A ROW THAT HAD ALREADY LANDED.**
+`OI-376`'s status cell withholds a gating verdict citing *"a verdict is derived from a cut and never
+hand-added ([[OI-319]], [[OI-336]], **D-436**)"*. **D-436 is the wrong number** — it reads *"A
+mechanism is judged on three measured conditions … and a failing one is REPORTED, not automatically
+removed."* **The decision that states the register's gating cut is D-438**, which is also what
+[[OI-336]] turns on. **[[OI-319]] and [[OI-336]] are same-class and stand.** **So: a transposition,
+not a fabrication — but on the AUTHORITATIVE STATUS SURFACE.** **Corrected IN PLACE with an inline
+note saying it was corrected**, because **#12 protects a RULED TEXT from being rewritten; a pointer
+that leads somewhere false is a #10 violation, not a ruled text.**
+
+**★ AND ONE THING THE SIXTIETH ENTRY PROMISED AS A SURFACE THAT TURNS OUT NOT TO BE ONE.** It said
+`OI-376`'s gating verdict would be put to the user. **At the tool's source the verdict is DERIVED
+FROM A CUT, never hand-added — so there is nothing to put.** Ruled instead: **the regeneration's
+derived answer is ACCEPTED AS IT FALLS and reported.** The writing side's expectation — a row
+outside the first cut takes the gating side by the ruled default — **is a READING of the source, not
+a measurement**, and the regeneration replaces it with one. **★ IF THE DERIVED ANSWER DIFFERS, THAT
+IS A FINDING AND IS REPORTED — NOT FIXED BY RE-WORDING THE ROW'S SUBJECT CELL. Re-wording a row to
+move a derived verdict is gaming the cut and is forbidden in terms.**
+
+**★ A1 WAS WRONG A THIRD TIME, BY THREE ENTRIES — AND THE ERROR IS THIS SIDE'S.** Measured: the old
+tip carried **44** entry headings, the new commit **48**. **The fifty-seventh, fifty-eighth,
+fifty-ninth AND sixtieth all landed together**, and the superseded-marker went onto the
+fifty-**sixth** heading, not the fifty-ninth. **This side's own handoff had said 57–59 were
+uncommitted and it then wrote "one new entry" into the dispatch anyway.** The rule that orders this
+MEASURED is what made the error free. **The error is that the assertion keeps reappearing in prose
+beside the rule that forbids it — do not write a count into a dispatch, ever, in any form.**
+
+**★ WHAT IS HELD — UNCHANGED.** The method ruling stands **VOIDED**; the method is **UNTESTED**. The
+framework phase and the detail-specification phase do not open. The tests batch (a)+(b) stays held,
+and whether **(b)** survives on its own ground is **still not decided** and gets its own surface.
+**The empirical findings ledger REMAINS OWED before the framework phase** and is the standing
+alternative act whenever the user prefers repository work.
+
+**★ THE RE-RUN IS UNBLOCKED AND IS THE USER'S TO OPEN AT ANY TIME.** A fresh Cowork session, on a
+configuration chosen to be clean, on the **same unit (harmony-boundary)**, with the ruled brief, pack
+and withheld family unchanged. **Its ONE added bound: before it reads anything, it reports what stands
+in its context about this repository, and STOPS if `CLAUDE.md` or any repository file arrived.** The
+contaminated first output is KEPT as the comparison's other arm. **It does not wait on the dispatch
+and the dispatch does not wait on it.** **This side does not open it and proposes no mechanism for a
+clean boot.**
+
+**★ STANDING HAZARDS.** [[OI-372]] the ONE standing red **once the two regenerations land**.
+[[OI-374]] untouched. [[OI-179]] OPEN and GATES (NOT re-confirmed by this session). **[[OI-376]] IS
+NOW OPEN** — `CLAUDE.md` is the single point of failure for its own discoverability; **no remedy is
+proposed and it is a finding, not a task.** **NO FINDINGS SERIES EXISTS — Ruling 9 opens none; the
+old "the series stands at F88" line is retired and must not be copied forward.** The two owed
+dispositions of the plan's §2 STILL UNROWED. FIVE quarantined questions stand. **Three deferred
+apparatus items** carried: the manifest's top-level rulings list incomplete by THREE; the generator
+docstring's stale not-asserted block; the sizing brief's §8 stray blank line. **A large pre-existing
+untracked population (~831 paths) stands in the tree — a standing condition, already routed as a
+finding, NOT to be re-litigated or committed.** Other bounds: member (2) of the harmony-boundary
+pack not claimed free of other leaks; pairing by content, never by number. **Both blind outputs stay
+unratified and unread by every oracle-aware party**; the sizing record's four declared shortfalls
+stand; the 197 unread design-intent entries and S25 stay open.
+
+**★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** the return was verified
+at content-addressed objects — both commits and their path lists, the four landing blobs' hashes, the
+row's cell count and status token, the guard summary, the evidence-pin artifact's record population,
+and the handoff entry counts on both sides. **The citation defect was MEASURED at `DECISIONS.md` and
+is quoted from it.** **CC's one inference — that the evidence-pin red predated the batch — was
+CHECKED against the artifact and stands.** **This side's expectation about `OI-376`'s gating
+placement is labelled a READING of the tool's source and is published in the dispatch SO THAT IT CAN
+BE FALSIFIED.** **Presentation-form: none flagged.**
+
+**★ WHAT IS ON DISK AT THIS WRITING.** Untracked:
+`cowork_rulings_2026_08_25_landing_return_sitting.md` and
+`cc_instruction_regeneration_and_citation.md`. Modified against the tip: `cowork_handoff.md` ONLY
+(this entry above the sixtieth, its heading marked superseded). **Nothing committed by this side,
+nothing pushed, nothing regenerated by this side.** Memory-filesystem: not read; nothing written.
+
+**★ THE CADENCE:** **`cc_instruction_regeneration_and_citation.md` goes to a fresh CC session.** When
+it returns, verify at the objects and close. **Then nothing is owed by this side** — the next move is
+the user's: **the re-run**, or the **ledger** as the standing alternative. **ONE SURFACE REMAINS
+NAMED SO IT IS NOT LOST: whether the format test (b) survives on its own ground.**
+
+*(The sixtieth entry below remains binding in everything it states; it is superseded only as the
+entry point.)*
+
+---
+
+## ★★★★★ COWORK SESSION CLOSE (SIXTIETH ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, SIXTEENTH CYCLE) — ★ **A CLEAN BOOT EXISTS: THE METHOD IS EXECUTABLE.** ★ **THE METHOD RULING OF 2026-08-24 IS VOIDED** — NOT REFUTED, **UNTESTED** — AND **THE HELD-OUT TEST IS RE-RUN ON THE SAME UNIT (HARMONY-BOUNDARY) UNDER A CLEAN BOOT**, KEEPING THE CONTAMINATED OUTPUT AS **THE COMPARISON'S OTHER ARM**; ★ THE RE-RUN SESSION **VERIFIES ITS OWN BOOT AS ITS FIRST ACT AND STOPS IF `CLAUDE.md` ARRIVED**; ★ THE DISCOVERABILITY HAZARD IS **ROWED IN THE OPEN-ITEMS REGISTER** — `CLAUDE.md` IS THE SINGLE POINT OF FAILURE FOR ITS OWN DISCOVERABILITY; ★ **AND THIS SIDE'S OWN CITATION WAS WRONG AND IS CORRECTED BEFORE ANYTHING LANDED — THERE IS NO "RULING 9(b)", AND RULING 9 OPENS NO FINDINGS SERIES, SO THE STANDING "F88" LINE IS RETIRED**; ★ **ONE DISPATCH IS OWED AND IS WRITTEN NEXT** (lands four uncommitted files + creates the register row and its detail file in the same commit). THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the sixty-first entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
