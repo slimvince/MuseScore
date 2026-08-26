@@ -364,19 +364,19 @@ recorded act.
 
 ### D-182 — #19 - an unestablished measurement tool is forbidden (Class B)
 
-- **Recorded at:** `CLAUDE.md:118` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:122` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** A measuring script, a corpus, a gate or a recorded figure is trusted only once it has been positively shown to be right - checked against an independent oracle, with a derivation of what its unit actually measures, and a reproduce-check. Never merely because nothing has contradicted it.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-185 — #22 - every hard gate declares in advance how it handles the largest change it will meet
 
-- **Recorded at:** `CLAUDE.md:214` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:222` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** A rule that decides whether a change may ship must say, before the fact, what it does when the change is far bigger than the incremental ones it was written for. It must never be rewritten while such a change is sitting in front of it.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-190 — The decision-neutrality corollary - what exists carries no weight in choosing a design
 
-- **Recorded at:** `CLAUDE.md:254` · **status:** `live` · **group:** S
+- **Recorded at:** `CLAUDE.md:266` · **status:** `live` · **group:** S
 - **What the entry says the decision is:** A design is chosen on the principles and the goal of the best possible analysis, and on nothing else. What it would cost to make existing code obsolete is a secondary consideration that can only break a tie between designs already equal; how many places downstream would have to change counts for nothing; and a change in what the user sees counts for nothing either - though every such change still needs ratifying and verifying exactly as before. The best design is chosen first, and what exists then either serves it or is retired.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -1132,7 +1132,7 @@ recorded act.
 
 ### D-474 — No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field
 
-- **Recorded at:** `CLAUDE.md:131-141` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:139-149` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** Principle #21 says the accuracy of the human annotation is itself something to measure, so that an error we cannot fix is told apart from two experts simply disagreeing. Searching the literature found that nobody has published such a figure for this repertoire — so the ceiling cannot be cited from anywhere and would have to be measured here.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -1492,7 +1492,7 @@ recorded act.
 
 ### D-576 — The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent
 
-- **Recorded at:** `CLAUDE.md:814-818` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:826-830` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** A chord's root and its lowest note can both be named correctly while the key is wrong. So a measurement built on root agreement barely moves when the tonality is misread — but the quality of the chord, its Roman numeral and some of its inversions are all corrupted. The measurement therefore reports less damage than a listener or reader would see.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -1606,13 +1606,13 @@ recorded act.
 
 ### D-656 — The crediting rule is NOT amended to count a tonicization label as agreeing with the annotator's modulated numeral; only a diagnostic partial-sub-split is defensible
 
-- **Recorded at:** `CLAUDE.md:1032-1041` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:1044-1053` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** Where our analysis names an applied chord relative to the home key and the human annotator has changed key, the accuracy comparison is not to be altered so that our label counts as agreeing. Only a diagnostic that splits such cases out and exposes the masking is defensible. This is the measurement half of a decision whose build half — leaving the labeller unwired — belongs to the function layer's specification.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-660 — A research-tied name is not renamed but is governed by a two-tier rule, and the terminology cleanup runs in a fixed order with no tree-wide rename
 
-- **Recorded at:** `CLAUDE.md:1549-1560` · **status:** `live` · **group:** K
+- **Recorded at:** `CLAUDE.md:1561-1572` · **status:** `live` · **group:** K
 - **What the entry says the decision is:** A term borrowed from the published research that collides with this project's vocabulary is not renamed. Instead: where the research is actually discussed, the collision is explained and our own synonym stated; and every later use of the borrowed term outside our vocabulary carries a short inline note pointing at the research, so an unannotated repeat use is a flag. The wider terminology cleanup runs in a fixed order — the derived inventory first, then per-word batches the user rules, governing surfaces first — and there is no tree-wide rename.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 

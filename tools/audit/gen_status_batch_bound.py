@@ -60,15 +60,15 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "0a6ccc75b4026ea8c9b47a76698481e1800a2a6f"
+BASE_COMMIT = "2d7c3c3119e92dadb7b8fbffa76403ef5c7b6f5f"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_sizing_brief_ruled.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_register_reconciliation.md"
 
-ACT_DATE = "2026-08-25"
-DISPATCH = "cc_instruction_sizing_output_landing.md"
-TASK = "Task 1"
+ACT_DATE = "2026-08-26"
+DISPATCH = "cc_instruction_amendment_landing.md"
+TASK = "Task 7"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -136,6 +136,26 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_sizing_brief_ruled.md, Task 1",
      "base_commit": "7f6f72d85873b93a39f956e0ce3366c4f85fcc28",
      "the_then_previous_batch": "cc_instruction_manifest_prose_and_sizing_brief.md"},
+    {"executing_act": "cc_instruction_sizing_output_landing.md, Task 1",
+     "base_commit": "0a6ccc75b4026ea8c9b47a76698481e1800a2a6f",
+     "the_then_previous_batch": "cc_instruction_sizing_brief_ruled.md"},
+    # ★ BACKFILLED 2026-08-26 by `cc_instruction_amendment_landing.md` Task 7, on Ruling 5 of
+    # `cowork_rulings_2026_08_26_amendment_landing_sitting.md`. This move was performed WITHOUT
+    # this tool: the executing dispatch forbade every edit to a tool source by name, and re-aiming
+    # this one is such an edit, so the move was taken from the committed object by hand and
+    # declared at the archive block itself. The row is written here so the tool's record of
+    # aimings — kept rather than replaced (#12) — no longer omits a move that happened, and the
+    # extra field says what the three-field rows would otherwise imply falsely (#10).
+    {"executing_act": "cc_instruction_register_reconciliation.md, Task 4",
+     "base_commit": "0a2675855c5a92fc2e32cd55c05281ba4d2c24e6",
+     "the_then_previous_batch": "cc_instruction_sizing_output_landing.md",
+     "★_not_performed_by_this_tool":
+         "Performed by hand from the committed object, byte-faithfully, because the executing "
+         "dispatch forbade editing any tool source and this tool's per-batch re-aiming is such an "
+         "edit. The departure was declared at the STATUS_ARCHIVE.md block the move wrote and is "
+         "reported at `cc_report_register_reconciliation.md` §5.3 and §5.4. Backfilled here on "
+         "Ruling 5 of `cowork_rulings_2026_08_26_amendment_landing_sitting.md`, which also names "
+         "the re-aiming a carve-out from that bar so the conflict cannot recur."},
 ]
 
 ARCHIVE_HEADER = (

@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_sizing_output_landing.md, Task 1",
+ "dispatch": "cc_instruction_amendment_landing.md, Task 7",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -107,21 +107,32 @@
    "executing_act": "cc_instruction_sizing_brief_ruled.md, Task 1",
    "base_commit": "7f6f72d85873b93a39f956e0ce3366c4f85fcc28",
    "the_then_previous_batch": "cc_instruction_manifest_prose_and_sizing_brief.md"
+  },
+  {
+   "executing_act": "cc_instruction_sizing_output_landing.md, Task 1",
+   "base_commit": "0a6ccc75b4026ea8c9b47a76698481e1800a2a6f",
+   "the_then_previous_batch": "cc_instruction_sizing_brief_ruled.md"
+  },
+  {
+   "executing_act": "cc_instruction_register_reconciliation.md, Task 4",
+   "base_commit": "0a2675855c5a92fc2e32cd55c05281ba4d2c24e6",
+   "the_then_previous_batch": "cc_instruction_sizing_output_landing.md",
+   "★_not_performed_by_this_tool": "Performed by hand from the committed object, byte-faithfully, because the executing dispatch forbade editing any tool source and this tool's per-batch re-aiming is such an edit. The departure was declared at the STATUS_ARCHIVE.md block the move wrote and is reported at `cc_report_register_reconciliation.md` §5.3 and §5.4. Backfilled here on Ruling 5 of `cowork_rulings_2026_08_26_amendment_landing_sitting.md`, which also names the re-aiming a carve-out from that bar so the conflict cannot recur."
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "0a6ccc75b4026ea8c9b47a76698481e1800a2a6f",
- "the_then_previous_batch": "cc_instruction_sizing_brief_ruled.md",
+ "base_commit": "2d7c3c3119e92dadb7b8fbffa76403ef5c7b6f5f",
+ "the_then_previous_batch": "cc_instruction_register_reconciliation.md",
  "entries_moved": 1,
- "characters_moved": 2766,
+ "characters_moved": 2800,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2766,
-   "sha256": "0d175311c91ef05eb8662cc9d6b4ef47d62128d66d5c97fe93e08865adc6d570",
+   "characters": 2800,
+   "sha256": "36027e477170b51e85a57cd2afc583d71a544ead765ff0bc92da4a268b4fd3c7",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-24 (CC — **★ THE 2026-08-24 SIZING-BRIEF RULING RECORD AND THE RULED SIZING BRIEF ARE LANDED AND PUSHED, AND THE EVIDENCE-PIN MEMBERSHIP IS R"
+   "opening": "*2026-08-26 (CC — **★ THE FOUR 2026-08-25 RULING RECORDS AND THE HANDOFF'S NEWEST ENTRY ARE LANDED, AND THE METHOD RULING IS NO LONGER SUSPENDED — the"
   }
  ],
  "reconciliation": {

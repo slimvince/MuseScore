@@ -271,6 +271,10 @@
 
 > 18. **Unverified causal premises are FORBIDDEN (Class A).** No design may carry load on a
 >     causal claim about our own system or data that is checkable but unchecked.
+>     Class A reaches a causal claim only where that claim is checkable, which is this
+>     principle's recorded ground. A claim about the conditions under which a session ran — its
+>     boot, its context, what reached it — is not checkable from outside that session, and is
+>     therefore declared, not established.
 
 **In plain words.** No design may rest on a claim about how our own system or data behaves when that claim could be checked and has not been.
 
@@ -288,6 +292,10 @@
 >     recorded figure is trusted only after being *positively established* (oracle cross-check,
 >     derivation of what the measurement unit actually measures, reproduce-check) — never
 >     because it is merely unfalsified.
+>     The objects of this principle are the four it names and no others — a measurement tool, a
+>     corpus, a gate, a recorded figure — and each is an inspectable, re-runnable artifact,
+>     because each of the three establishment methods named here requires one. A session, a
+>     person or a conversation is never the object of a Class B demand.
 
 **In plain words.** A measuring script, a corpus, a gate or a recorded figure is trusted only once it has been positively shown to be right - checked against an independent oracle, with a derivation of what its unit actually measures, and a reproduce-check. Never merely because nothing has contradicted it.
 
@@ -295,7 +303,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `CLAUDE.md:118`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:122`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:53-56; ratified by the user 2026-07-10, analysis in `cowork_premise_gate_reflection.md` (CLAUDE.md:122-125).
 
@@ -312,7 +320,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:122`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:130`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:57-60; ratified by the user 2026-07-18 at the joint-estimator plan review, analysis `cowork_joint_estimator_architecture.md` §6/§7 (CLAUDE.md:125-129). The ratified protocols are open_items/OI-176 and OI-177.
 
@@ -330,7 +338,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:126`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:134`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:61-65; ratified by the user 2026-07-18 (CLAUDE.md:125-129). Sharpens #9.
 
@@ -348,7 +356,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:214`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:222`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:66-70; ratified by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -365,7 +373,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:219`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:227`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:71-74; ratified by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -375,6 +383,10 @@
 >     corpus is quantified; a difference within the uncertainty is not a finding, and no
 >     decision rests on one. (The companion of #16: reproducibility bounds instrument error,
 >     this bounds sampling error.)
+>     Every reported result carries its uncertainty. Where a condition of a result's production
+>     cannot be established at an inspectable object, that condition is DECLARED as a bound and
+>     the result stands with the bound attached. A declared bound discharges an establishment
+>     demand that has no inspectable object. It does not discharge one that has.
 
 **In plain words.** How much a measured number could move by chance, given how much music it was measured on, is quantified and reported with it. A difference inside that range is not a finding and no decision may rest on one.
 
@@ -382,7 +394,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:223`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:231`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:75-78; ratified by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -399,7 +411,7 @@
 
 **Status.** LIVE · decided 2026-07-18 · ratified by user
 
-**Home.** `CLAUDE.md:228`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:240`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:80-83; ratified with #20-#24 by the user 2026-07-18 (CLAUDE.md:125-129).
 
@@ -417,7 +429,7 @@
 
 **Status.** LIVE · decided 2026-07-10 · ratified by user
 
-**Home.** `CLAUDE.md:233`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:245`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:85-89; ratified with #17-#19 by the user 2026-07-10 (CLAUDE.md:122-125).
 
@@ -443,7 +455,7 @@
 
 **Status.** LIVE · decided 2026-07-26 · ratified by user
 
-**Home.** `CLAUDE.md:254`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:266`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** CLAUDE.md:106-118; user-ratified 2026-07-26 at the notation-layer adoption increment's decision surface, analysis `cowork_notation_adoption_increment.md` §2 (CLAUDE.md:129-131).
 
@@ -459,7 +471,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1739-1741`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1751-1753`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md (the user's rulings at the analysis-cost session, 2026-07-28), a session handoff block that ages into an archive outside the session-start read. It corrects a Cowork misreading of 'implementation efficiency is not very relevant', which meant BUILD effort, not runtime. OPEN_ITEMS OI-240 closes on this move
 
@@ -505,7 +517,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1749-1751`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1761-1763`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, the user's ruling at the OI-199 pass-2 session, 2026-07-28. Homed beside #8 in CLAUDE.md because it is a ruling about what #8 permits; what the admission rule IS, and that it has no specified form, is in the estimator's own specification (D-098) and at OPEN_ITEMS OI-226. Cross-read with STATUS.md's earlier note that the classification 'is the user's to settle' - this row records that it was settled. OPEN_ITEMS OI-240 closes on this move
 
@@ -521,7 +533,7 @@
 
 **Status.** LIVE · decided 2026-07-28 · ratified by user
 
-**Home.** `CLAUDE.md:1760-1762`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1772-1774`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** Re-homed 2026-08-02 (the phase-1 specification-completion pass): formerly recorded only at cowork_handoff.md, recorded at the OI-199 pass-2 session, 2026-07-28. OPEN_ITEMS OI-240 closes on this move
 
@@ -637,7 +649,7 @@ identity competition, with cadence + functional labeling marked "E4 (planned)" =
 
 **Status.** LIVE · decided 2026-08-04 · ratified by user
 
-**Home.** `CLAUDE.md:1620-1639`  — a project-wide convention with no owning layer; this is its correct home.
+**Home.** `CLAUDE.md:1632-1651`  — a project-wide convention with no owning layer; this is its correct home.
 
 **Provenance.** User ruling of 2026-08-04, transmitted in the dispatch `cc_instruction_phase1_delegations_and_corrections.md` §0a as R1, which states both the test and its fallback. Homed at the D-231 phase-1 clause in `CLAUDE.md`, which is where the obligation it bounds is defined — the dispatch's own instruction was to record it 'where the TRUE half is defined, so a later row is classifiable without a fresh ruling'. The ruling ALSO moves a gate verdict (OI-332 classes itself apparatus on one half of D-438's line, whose other half makes a correction to a statement about the build state gating); that consequence is REPORTED at `tools/audit/decisions/true_half_reach.json` and rowed at `OPEN_ITEMS.md` OI-336, not applied here, because a non-gating verdict is derived from a cut and never hand-added.
 

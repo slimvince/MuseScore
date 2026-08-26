@@ -774,10 +774,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 2,
+      "verdict": "FAIL",
       "stdout": [
-        "the soft-discard re-checks: 474 live + 203 retired = 677 before, no entry in both blocks and none in neither, every retired record carrying its finding, its date, its authority and the ruled clause"
+        "STOP: the committed plan's recorded arithmetic disagrees with the data file's: the plan records {'the_live_record_before': 677, 'retired_by_this_act': 165, 'the_live_record_after': 512}, while the block's former population is 680 and 165 record(s) carry this act's own `retired_by`"
       ],
       "stderr": [],
       "what_it_checks": "the ruled soft-discard's PLAN re-derives, and no retirement has been applied. Before the act this is what is live: every sentence of the ruling that ordered the discard must still be in its ruling record; the population must still be DERIVABLE from the committed recovery and sole-carrier artifacts — the entries the recovery pass returned NOTHING-FOUND for minus the members the guard withheld, with a member that is BOTH halting it and a member the decisions register's data file does not carry live halting it too (D-671); and the committed plan must still re-derive from those inputs. AFTER the act, the plan cannot be re-derived by construction, and what this checks instead is the applied state: live plus retired accounting for the whole former population BY ARITHMETIC, no entry in both blocks and none in neither, and every retired record carrying its finding, its date, its retiring authority and the ruled clause verbatim — the four the ruling requires of every record"
@@ -787,10 +787,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 2,
+      "verdict": "FAIL",
       "stdout": [
-        "the residue discard re-checks: 474 live + 203 retired = 677 before; this act retired 38; the sitting's sums reconcile (keep 474, retired 203, total 677); every ruled keep carries its recorded deciding act"
+        "STOP: the sitting's arithmetic does not reconcile at ['the_whole_population', 'the_live_record']: {\"the_whole_population\": {\"keep_plus_retired\": 677, \"the_sum_the_sitting_states\": 677, \"the_population_the_data_file_records_before_any_retirement\": 680, \"it_reconciles\": false}, \"the_live_record\": {\"before_this_act\": 515, \"after_this_act\": 477, \"the_movement_the_sitting_states\": \"512 → 474\", \"it_reconciles\": false}} — the ruling makes this a STOP-and-report, not an adjustment"
       ],
       "stderr": [],
       "what_it_checks": "the residue sitting's applied state re-checks: the two retirements accounting for the whole former population BY ARITHMETIC, no entry in both blocks and none in neither, every record THIS act retired carrying its finding, its date, its retiring authority, the ruling that retired it and the ruled clause verbatim, and every one of the fifty-three ruled KEEPS still carrying the deciding act recorded for it — re-quoted on every run from the artifact it was taken from, so a stamp removed or rewritten fails on the day it happens. THE SITTING'S OWN ARITHMETIC IS RE-RECONCILED against the record as it stands, and the ruling makes that a STOP rather than an adjustment in its own words. Every population is DERIVED on every run and never listed: the 29 from the sole-carrier guard crossed with the recovery pass, the 9, the 47 and the 6 from the ratified-document check's own per-entry result, and the one candidate carried from the nine as the sole-carrier member among them — any other number halting it"
@@ -974,7 +974,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 1, 2,766 characters",
+        "  entries moved: 1, 2,800 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],
@@ -1077,7 +1077,7 @@
         "  characters moved: 3,542",
         "  CLAUDE.md: proposed 2, moved 0, stayed 2, all six directions True",
         "  OPEN_ITEMS.md: proposed 8, moved 1, stayed 7, all six directions True",
-        "  DECISIONS.md: proposed 3, moved 0, stayed 3, all six directions True",
+        "  DECISIONS.md: proposed 3, moved 0, stayed 3, all six directions False",
         "  STATUS.md: proposed 6, moved 0, stayed 0, all six directions True"
       ],
       "stderr": [],
@@ -1092,7 +1092,7 @@
       "verdict": "PASS",
       "stdout": [
         "the evidence pin's class membership re-derives",
-        "  generated ratification documents 7; ruling records read 68",
+        "  generated ratification documents 7; ruling records read 69",
         "  members 7 — pinned 5, UNRESOLVED 0",
         "  tools carrying a pin constant 8; outside this class 3",
         "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",
@@ -1116,16 +1116,16 @@
       "stdout": [
         "the session-start read measurement re-derives",
         "  rule (a) points at tools/audit/nongating_apparatus_rows.json -> ★_the_live_gating_answer -> gating_ids",
-        "    CLAUDE.md                                                                155067",
-        "    STATUS.md                                                                  5397",
-        "    DECISIONS.md                                                             126774",
+        "    CLAUDE.md                                                                156082",
+        "    STATUS.md                                                                  5214",
+        "    DECISIONS.md                                                             127608",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids     2774",
-        "  total at the tree 290012",
+        "  total at the tree 291678",
         "  further spans of the same artifact, NOT counted into the read:",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows    61322",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one     4895",
-        "  vs 1760d9a4a8: 367121 -> 290012  (-77109, -21.00%)",
-        "  vs 594074e1e1: 296832 -> 290012  (-6820, -2.30%)"
+        "  vs 1760d9a4a8: 367121 -> 291678  (-75443, -20.55%)",
+        "  vs 594074e1e1: 296832 -> 291678  (-5154, -1.74%)"
       ],
       "stderr": [],
       "what_it_checks": "what an ordinary session reads at session start, in characters, measured at the tree and at the recorded earlier commit's git object. It is the arc's own subject made checkable: the pruning direction of 2026-08-16 is about this number, and every act in the arc has had to state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule (a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the artifact it names, so a pointer that has stopped resolving fails on the day it stops rather than being hidden inside a number. It goes red when a governing surface changes, which is the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the clause that makes it one so the authored half is checkable by reading three clauses; and nothing about whether the read is small enough, which is [[OI-370]]'s own subject"
@@ -1157,10 +1157,15 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
-        "the derivation boot pack re-derives"
+        "STALE: the derivation boot pack does not re-derive",
+        "  - derivation_boot_pack.json does not re-derive",
+        "  - harmony-boundary/02_the_guiding_principles_and_the_conventions.md does not re-render",
+        "  - harmony-boundary/05_the_ratified_design_intent.md does not re-render",
+        "  - scoring-model/02_the_guiding_principles_and_the_conventions.md does not re-render",
+        "  - scoring-model/05_the_ratified_design_intent.md does not re-render"
       ],
       "stderr": [],
       "what_it_checks": "the derivation boot pack still re-renders BYTE-IDENTICALLY — the manifest and every file of every subject's pack directory, with the directory's own membership compared both ways so a file added to or removed from it is caught rather than ignored. What it guards is not the withheld family's verdicts, which are AUTHORED and clear nothing until the user rules them (D-655), but demands on the record AS IT STANDS. Every member span is located by its own ANCHOR TEXT on every run and an anchor that is missing or matches twice HALTS it, so no member is ever cut from a coordinate that has drifted and a heading moving under a governing document is reported on the day it happens; the withheld PASSAGE is located the same way, inside the bullet the ruling scopes it to, with a closing anchor preceding its opening a halt as well. Its other STOPs ride with it: a derived candidate with no authored verdict and a verdict for an entry the derivation no longer returns as a candidate each halt it — the two directions together, so a candidate cannot be graded by silence and a verdict cannot outlive its subject; a verdict outside the closed three-value vocabulary, or a distribution that does not account for the candidate population, halts it; an authored withheld identity outside the DESIGN-INTENT class, or one nobody derived as a candidate, halts it; a withheld identity, document or passage missing its finding, its date or its reason halts it (amended #10's own demand of a withholding record); and a member's source file the tree does not carry halts it. ★ WHAT IT DOES NOT ASSERT: that the candidate criterion is complete — its reach is a pattern match over the register's own text and is UNMEASURED, stated on the artifact under D-673 with the test that clause fixes met, since no analysis decision consumes the enumeration; that any verdict is right; or that the members rendered whole carry no other leak, the leak check being scoped to the two members this tool GENERATES and saying so of itself. ★ AND IT BOOTS NO SESSION: rendering the pack is not opening it"
@@ -1201,10 +1206,10 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "backbone decisions: 474",
+        "backbone decisions: 477",
         "cross-references resolving: ALL",
-        "verbatim quotes found at their cited home: 474/474",
-        "cited line numbers correct: 468/468   (6 cited to a file with no line number, by design)"
+        "verbatim quotes found at their cited home: 477/477",
+        "cited line numbers correct: 471/471   (6 cited to a file with no line number, by design)"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -1385,7 +1390,7 @@
       "verdict": "PASS",
       "stdout": [
         "living mode: index=377 detail=377 baseline=200 post-baseline=177",
-        "OVERALL PASS — bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
+        "OVERALL PASS � bijection holds, no detail file carries a status of its own, and all 200 original items stay byte-verbatim (report: open_items\\register_check.json)"
       ],
       "stderr": [],
       "what_it_checks": "the open-items index/detail bijection, and the original items still byte-verbatim"
@@ -1406,11 +1411,29 @@
   ],
   "summary": {
     "run": 75,
-    "passing": 74,
-    "failing": 1,
+    "passing": 71,
+    "failing": 4,
     "failing_tools": [
       {
         "tool": "tools/audit/gen_filing_convention_application.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/apply_soft_discard.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/apply_residue_discard.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/gen_derivation_boot_pack.py",
         "args": [
           "--check"
         ]

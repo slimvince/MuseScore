@@ -318,7 +318,7 @@
     "this_pass_moved_none_of_the_spans_a_standing_mechanism_owns": true,
     "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
     "every_moved_span_is_absent_from_the_parent": true,
-    "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
+    "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": false,
     "no_span_the_reading_flagged_is_in_the_companion": true,
     "moved_plus_kept_accounts_for_the_base_blob_to_the_character": true,
     "the_base_blob_sha256": "e7c5b75078f3175757468e799a609b7698f6a8e1bfe92aa187f6a3b45cf797c9",

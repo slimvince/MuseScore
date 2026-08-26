@@ -34,23 +34,23 @@
  },
  "the_deciding_clauses_located_in_CLAUDE.md": {
   "rule_(i)_admitted": {
-   "citation": "CLAUDE.md:526",
+   "citation": "CLAUDE.md:538",
    "text": "wordings do that, and it is the clause (h) deliberately did not touch. **ADMITTED:** an **explicit"
   },
   "rule_(i)_not_admitted": {
-   "citation": "CLAUDE.md:530",
+   "citation": "CLAUDE.md:542",
    "text": "ADMITTED:** a **bare appended citation** — *\"Full spec: X.\"* — or a **provenance attribution**,"
   },
   "rule_(h)_granularity": {
-   "citation": "CLAUDE.md:502",
+   "citation": "CLAUDE.md:514",
    "text": "phase-1q whole-document reading): a delegation naming a DOCUMENT reaches ALL of its sections; a"
   },
   "rule_(k)_a_glob_confers_nothing": {
-   "citation": "CLAUDE.md:567",
+   "citation": "CLAUDE.md:579",
    "text": "the members it names EXPLICITLY. A glob pattern and a trailing ellipsis CONFER NOTHING.** *Why:* a"
   },
   "rule_(k1)_the_strongest_naming_governs": {
-   "citation": "CLAUDE.md:573",
+   "citation": "CLAUDE.md:585",
    "text": "AND AN EXCLUDED FORM, THE STRONGEST NAMING GOVERNS**; being cited elsewhere in a weaker form does not"
   }
  },

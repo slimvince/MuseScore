@@ -339,8 +339,8 @@
         "ARCHITECTURE.md:2641",
         "ARCHITECTURE.md:4202",
         "ARCHITECTURE.md:5444",
-        "CLAUDE.md:509",
-        "CLAUDE.md:918"
+        "CLAUDE.md:521",
+        "CLAUDE.md:930"
       ]
     },
     {
@@ -668,7 +668,7 @@
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:4",
         "ARCHITECTURE.md:48",
-        "CLAUDE.md:286"
+        "CLAUDE.md:298"
       ]
     },
     {
@@ -830,9 +830,9 @@
       "current_contract_home": 4,
       "current_gap": 0,
       "form": "explicit-delegation-clause",
-      "delegation_citation": "CLAUDE.md:1278",
+      "delegation_citation": "CLAUDE.md:1290",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "CLAUDE.md:1278",
+      "delegation_citation_now": "CLAUDE.md:1290",
       "delegation_line_now": "**Read `docs/scoring_model.md` at the start of any session that touches scoring",
       "delegation_written_since_the_check": false,
       "what_the_naming_was_at_the_check": null,
@@ -843,14 +843,14 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:2925",
-        "CLAUDE.md:705",
-        "CLAUDE.md:1274",
-        "CLAUDE.md:1276",
-        "CLAUDE.md:1278",
-        "CLAUDE.md:1302",
-        "CLAUDE.md:1310",
-        "CLAUDE.md:1329",
-        "CLAUDE.md:1595"
+        "CLAUDE.md:717",
+        "CLAUDE.md:1286",
+        "CLAUDE.md:1288",
+        "CLAUDE.md:1290",
+        "CLAUDE.md:1314",
+        "CLAUDE.md:1322",
+        "CLAUDE.md:1341",
+        "CLAUDE.md:1607"
       ]
     },
     {
@@ -866,7 +866,7 @@
       "form": "provenance-attribution",
       "delegation_citation": "CLAUDE.md:129",
       "form_now": "explicit-delegation-clause",
-      "delegation_citation_now": "CLAUDE.md:294",
+      "delegation_citation_now": "CLAUDE.md:306",
       "delegation_line_now": "write list).** The ratified contract for the ORDER OF WORK from here to the precision phase — the",
       "delegation_written_since_the_check": true,
       "what_the_naming_was_at_the_check": "\"Companion standing rules elsewhere: … the MEASURE-BEFORE-BUILD gate (`cowork_engage_arc_plan.md`, …)\" — a naming inside a list of citations.",
@@ -877,9 +877,9 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:2106",
-        "CLAUDE.md:290",
-        "CLAUDE.md:295",
-        "CLAUDE.md:550"
+        "CLAUDE.md:302",
+        "CLAUDE.md:307",
+        "CLAUDE.md:562"
       ]
     },
     {
@@ -907,7 +907,7 @@
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:5782",
         "ARCHITECTURE.md:7054",
-        "CLAUDE.md:288"
+        "CLAUDE.md:300"
       ]
     },
     {
@@ -1010,7 +1010,7 @@
       "decided_by_the_bar": true,
       "mentions_in_ratified_surfaces": [
         "ARCHITECTURE.md:1264",
-        "CLAUDE.md:246"
+        "CLAUDE.md:258"
       ]
     },
     {
