@@ -1,6 +1,305 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## COWORK SESSION CLOSE (SIXTY-SIXTH ENTRY, 2026-08-26 — THE FORTY-EIGHTH SESSION'S ONLY ENTRY) — THE METHOD IS USABLE FOR v1, TWO PHASES ARE UN-HELD, AND THE LEDGER'S SEED IS COMPLETE. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The sixty-fifth entry below remains binding except where
+this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short on purpose. The user ruled the work borderline too meta on 2026-08-25, and it is now
+a standing bar in his own words: *when an act is about the process rather than about the analysis
+software, say so and check it is worth its cost before proposing it.* Keep the next entry short too.
+
+### What was ruled, across two sittings
+
+**`cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` — three rulings.** The derivation method is
+**USABLE for v1**, on the user's own ground: a first specification cannot be the ultimate one because
+the sources are not exhausted until the audit has run, so the best derivable from everything held
+except the code is good enough by construction. This **supersedes the method's VOIDED status** and
+discharges §3.2's postcondition by its first limb. Independence is evidenced by the **ten DIFFERS
+rows**. **The framework and detail-specification phases are UN-HELD**, and **E and C are neither the
+next act nor owed** — the held-out test's pass condition tests whether output lands near a judgement
+the user already made, which is not a test of design quality.
+
+**`cowork_rulings_2026_08_26_amendment_landing_sitting.md` — five rulings.** (1) The three ruled clause
+amendments land at their home file, **`CLAUDE.md`**, at #18/#19/#24 — not in the register, which is
+generated from `backbone_decisions.json` and whose entries are establishment-checked against their
+home. (2) Only the **unregistered residue** of the sharpened decision-surface rule is registered, as
+one entry **citing D-424 and D-249** rather than repeating them. (3) The two verdicts and the
+phase-status change are carried by the **decisions register**. (4) All new entries go to **group T**.
+(5) The forward-bound tool `gen_status_batch_bound.py` is re-aimed as a **named carve-out** and its
+missing row backfilled.
+
+### The ledger's seed is complete — `cowork_fact_gate_admissions_2026_08_26.md`
+
+**All 41 harvested candidates are disposed, and the arithmetic closes: 31 admitted, 1 routed as a
+pointer (already homed, #6), 3 held with their measurements named, 2 failed, 3 proposed for nothing,
+1 routed to the phase definitions. 31+1+3+2+3+1 = 41.**
+
+Three were admitted as **restated music halves** (C8, C9, C11) — those restatements are transcribed in
+the record because they exist nowhere else; the sources' own sentences are NOT what is admitted. Three
+were admitted on a **named half or bound** (C27, C31, C32), with the remedy or implementation half
+explicitly not admitted.
+
+**★ THE WORKING RULE THE USER ARTICULATED, AND IT IS SHARPER THAN THE RULED POLARITY SPLIT:** *a fact
+about musical inference crosses the gate; a statement about our software or spec-development procedure
+goes to the phase definitions' constraints.* The ruled split (*design antipatterns in, process
+antipatterns out*) made this side route two candidates by their **remedy**; the user's formulation
+locates the cut at the **subject** and settled three candidates in one line. **Not proposed as an
+amendment to the ruled split; whether it should become one is undecided.**
+
+**The ledger itself is NOT built.** These 31 are its seed under Ruling 8 and every one is re-checked at
+the ledger's own gate when it is built. **Building it is the next act.**
+
+### ★ THE ONE FINDING TO CARRY FORWARD, BECAUSE TWO SEPARATE STREAMS OF WORK HIT IT TODAY
+
+**A disposition is not a home unless something can receive it.**
+
+**Phase status has no home.** Measured: `HELD`/`VOIDED` return zero in the phase-definition surface;
+zero for phase status over the `DECISIONS.md` index; the successor plan carries none. The state that
+blocked every substantive act for weeks lived **only in handoff prose** — the same carrier that turned
+one decision-surface rule into three materially different wordings.
+
+**And everything the harvest routed away has nowhere to go.** Twenty-one `DEFECT_TYPES.md` rows,
+C31's method half and C40 are all routed to *"the phase definitions' constraints and stop rules"* —
+and the phase definitions live in a **frozen ratification surface** whose §3 is proposal text with no
+slot for a constraint added later, whose first line still reads *"NOTHING HERE IS RULED"*, and whose
+**Decisions 2–5 remain open**. `cowork_specification_reconstruction_plan_successor_2026_08_21.md` has
+the same defect — *"DRAFT FOR THE USER'S RATIFICATION. NO WORK BEGINS UNTIL THIS PLAN IS RULED"*, six
+days after its twelve rulings.
+
+**The user's own framing, and the shape this side would argue for.** Everything needs a home, even if
+the home is "discarded" — which the **disposition discipline** already rules: five classes, one per
+statement, completeness checked by arithmetic. The defect is not a missing principle; it is that one
+disposition names a destination that cannot receive. **A mechanism of the right shape already
+exists** — the **cross-layer transfer list**, *"the parking list for content found in the wrong layer
+during derivation, so nothing is silently dropped and nothing is absorbed into the wrong charter"* —
+which opens at the framework phase. **Put as a surface, not decided.**
+
+**Among the routed-away rows is DT-20** — *an instruction whose mandatory preconditions defeat one of
+its own requirements*, founding instance a required session-start read leaking exactly what a blinding
+requirement withheld. **That is the contamination problem that voided the method, sitting in this
+project's own defect catalogue with nowhere to go.**
+
+### Where the plan stands
+
+**Both framework prerequisites are MET:** the method verdict (above) and the **rulings sort**,
+completed 2026-08-17 — 411 rulings placed, totals **244 design-intent / 167
+implementation-management / 0 unplaced**. *(Read at the handoff's record of that sitting, **not** at
+`rulings_sort_classification.json`.)*
+
+**The framework phase is no longer gated.** What stands between it and opening is an input: the
+**empirical findings ledger**, whose seed is now complete and which is **not built**.
+
+**The pilot's one unfinished half is SIZING** — time per statement, differences per document, share
+needing a user ruling (§3.2 outputs). Unscoped by every session so far. It decides how the framework
+and detail phases are sequenced.
+
+### The dispatch that was out
+
+**`cc_instruction_amendment_landing.md`** — lands the five rulings of the amendment-landing sitting.
+It verifies register **rule (n)** at `CLAUDE.md` before any write and stops the two verdict rows if it
+is not what `cc_report_register_reconciliation.md` claimed; the phase-status row proceeds regardless.
+It amends `CLAUDE.md` behind a three-site fence, additions only. It permits exactly one `.py` edit.
+
+**IT REPORTED — `cc_report_amendment_landing.md`, and the tip is now
+`68c42b7f7743c02bdebefacdd9ed06ca9060fbbe`** (verified by the writing side at
+`.git/refs/heads/master`). Three commits: `2d7c3c3119e…` (2 paths, the writing side),
+`4c47b55f3de…` (30 paths, the work), and the report's own.
+
+**Landed.** The three clause amendments at `CLAUDE.md` #18/#19/#24 — **12 added lines, zero
+deletions**, no sentence reworded, no principle renumbered. **Verified independently by the writing
+side:** `decisions/group_S.md` now carries *"inspectable"* at lines 296, 387 and 389, where it carried
+it nowhere before. **The register now says what `CLAUDE.md` says, which is Ruling 1's whole ground.**
+Three register entries in group T — **D-678** (method usable for v1), **D-679** (independence
+evidenced), **D-680** (phases un-held) — identifiers re-measured, D-677 the previous ceiling, no hole
+left. The forward-bound tool re-aimed and the 2026-08-26 hand move backfilled; this batch's own bound
+performed **with** the tool. The sweep closed in **three rounds**, 14 failing → 5 → 4.
+
+**Rule (n) HOLDS** and is quoted whole at the report's §3: an establishment verdict about one corpus,
+measurement tool or gate is *"the same KIND as supersession and shelving: register business. Its home
+is this register itself, its evidence pointed at the record that measured it."* Its subject list does
+not name the derivation method; **the rule settles that against itself**, its final sentence putting
+the line at the KIND rather than the subject.
+
+**★ TASK 5 STOPPED — THE DECISION-SURFACE RESIDUE ENTRY WAS NOT ENTERED, AND THE CAUSE IS THE WRITING
+SIDE'S, TWICE.** Its ruled home is `CLAUDE.md` beside D-249; the register's establishment check
+requires an entry's quoted text to be **found** in the file its `home` names; the residue words are not
+in `CLAUDE.md`; and the dispatch's own fence permitted writes at exactly three passages. **So the
+dispatch ordered an entry whose home required a write the same dispatch forbade — the identical shape
+as `cc_instruction_register_reconciliation.md`'s Task 2, in consecutive dispatches.** CC stopped rather
+than choosing a false home class to quiet the guards. **Two routes, neither chosen: (a) authorise the
+`CLAUDE.md` write and home it beside D-249 — one sentence in a dispatch; or (b) author the
+delegation-scope and form judgment for ruling records, which changes what a ruling record IS in this
+apparatus.**
+
+**★★ THE BOOT PACKS NOW CARRY SUPERSEDED PRINCIPLE TEXT, AND THAT IS THE MOST URGENT THING IN THIS
+ENTRY.** `gen_derivation_boot_pack.py --check` is STALE across `derivation_boot_pack.json` and four
+pack files, because the packs render the guiding principles and the ratified design intent and both
+moved. **The dispatch's §6 forbade touching the pack directories, the manifest and the generator, so
+it was left red.** Consequence, stated plainly: **a session booting from either pack reads the
+PRE-AMENDMENT #18, #19 and #24 — which is exactly the failure the amendments were ruled to prevent,
+and it is the DT-20 shape a third time.** Caused by the writing side's own fence.
+
+**★★ THE REGISTER CANNOT ACCEPT A NEW ENTRY WITHOUT TURNING A GUARD RED — a standing apparatus defect,
+not this batch's.** `apply_soft_discard.py --check` conflates the live record before the 2026-08-16 act
+with the block's running population invariant; `apply_residue_discard.py --check` **hard-codes the
+live-record size of 2026-08-17** and one of its two limbs reconciles at **no value of any field** once
+an entry is added. Register **rule (c)** requires every new ratification to get an entry. **So rule (c)
+and those two checks are mutually unsatisfiable from the first addition after 2026-08-17 onward, and
+this batch was that first addition.** Both classified DECISION reds and **untouched** — curing either
+means running a ruled discard act in write mode. `the_population_before_this_retirement` was moved
+677 → 680, forced by the ordered act and **the only non-derived figure in the register data this batch
+moved**.
+
+**A3 FALSIFIED — fifty-eight further entries' cited lines drifted**, every one homed in `CLAUDE.md`
+below an insertion, and **not uniformly**: +8 for six entries, +12 for fifty-two. Re-aimed by
+`reaim_home_anchors.py` per citation, never by an assumed shift. **Ten group files moved, not one**,
+because re-aimed `CLAUDE.md` anchors render into every group with entries homed there.
+
+**The sweep residue, four:** [[OI-372]]; the two discard-act decision reds above; and the boot-pack
+staleness the dispatch forbade curing. **The sixty-fifth entry's prediction that a `cc_report_*` file
+would widen [[OI-372]] did NOT come true** — the candidate list is the same three, re-checked with the
+new report on disk.
+
+**Two dispatch defects of the writing side's, corrected by CC and declared:** the dispatch named
+`tools/audit/gen_cluster_dispositions.py`, which does not exist — the tool is at
+`tools/audit/decisions/`. And the three-constant tool fence was too narrow: **five** constants moved,
+because `ACT_DATE` and `TASK` are interpolated into the archive header and leaving them would have
+written two false statements into a governing document.
+
+**Also reported, not fixed:** the three new `CLAUDE.md` clauses carry **no provenance line**, unlike
+every other amendment in those principles; #19 now holds two vocabularies in one principle
+(*"instrument"* in its existing text, *"measurement tool"* in the ruled clause) and the fence forbade
+touching the old sentence; the `process` home class renders a line rule (n) does not support, because
+**no class says "register business, no specification home owed"**; and one `post_split_archive.json`
+reconciliation flag flipped `true → false` because a pinned span contains a generated count that grew
+474 → 477.
+
+### Standing hazards, carried unchanged
+
+[[OI-372]] is the one standing DECISION red and is **never regenerated**; the sweep rule stands
+absolute, and **if you cannot tell which kind a red is, treat it as a decision red and STOP**.
+[[OI-179]] OPEN and GATES. [[OI-377]] OPEN, rowed and deliberately not fixed. No findings series
+exists. The standing untracked population is already routed and never committed. **Blast radius: one
+register row moves five artifacts, two invisible to any instruction phrased as regenerating only what
+goes red.**
+
+**Still open, blocking nothing:** whether uncommitted root-level ruling records should feed
+`evidence_pin_membership.json`; *what these amendments replace*; the **format test (b)**, on which no
+sitting has ruled — the v1-sufficiency sitting ruled the method, not that test; the D-424 homing
+defect (a general governance rule homed in a notation-adoption document); and **the harvest's coverage
+bound — 12 of 265** files of the coding side's measurement reports, complement named exactly, thirty
+best members named individually.
+
+### Declared by the writing side
+
+**THIS SESSION IS ORACLE-AWARE FOR THE HARMONY-BOUNDARY UNIT.** It read `ARCHITECTURE.md:378–409` at
+the user's request, to explain the evidence-ranking ruling to him. **Neither blind output was opened at
+any point and this side neither judged nor compared either.** **`CLAUDE.md` was never opened** —
+deliberately, to keep this side non-oracle-aware for the **scoring-model** unit, whose blind output is
+landed, unratified and uncompared. **Register rule (n) went unverified for that reason** and the
+verification was pushed into the dispatch, where the batch reads `CLAUDE.md` at start-up anyway.
+
+The session-start read was not taken. `STATUS.md` read once at its own subject; `DECISIONS.md` read at
+its D-424 and D-249 rows and by concept search, not whole; `decisions/group_S.md` at its banner and
+D-182; `BUILD_AND_TEST.md` not opened.
+
+**Memory filesystem:** not read before the first rulings; `/preferences.md` read after them and two
+lines appended, both the user's own stated instructions about how to work. No repository content
+written to it.
+
+**Method:** refs read from the three ref files with the file tools; **no shell command run on the
+repository and `git status` never at risk**. On-disk sizes taken by **staging each path individually**
+— a narrower route than the root listing that defeated three previous sittings, and it works; the root
+listing still exceeds the bridge tool's output cap. **No hashes and no carriage-return counts taken by
+this side**; that part of the ordered start-state measurement now stands undone for a fourth session,
+though `cc_report_register_reconciliation.md` §1.3 supplies blob identities for ten paths.
+
+**Relayed, not re-measured:** every figure of both batch reports beyond the four items verified at
+their objects; the rulings-sort totals; the third restatement of the decision-surface rule.
+
+### This session's counted errors — FOURTEEN
+
+**Class one, the dominant one — reasoning about an artifact without opening it (five).** (1) The two
+positions at Row 18 were put on mismatched axes, "content" set opposite an evidence ranking without
+saying content **is** that ranking's top class. (2) The user was pointed at the raw derivation and the
+raw ruling for three turns without being told the row-by-row comparison already existed and was
+committed. (3) The register-reconciliation dispatch ordered clause amendments written into
+`decisions/group_S.md` **without reading its banner**, which says GENERATED FILE — and forbade editing
+`CLAUDE.md`, the actual home, in the same document; the two instructions could not both be obeyed.
+(4) The first surface for the decision-surface rule was put without checking whether its clauses were
+already registered; **two of them were** (D-424, D-249). (5) Two routes were offered for the
+phase-status ruling naming a destination — the phase surface's §3 — **never checked for whether it
+could receive content**; it cannot.
+
+**Class two — a bar written without checking what it would block (two).** (6) A blanket "no tool
+source edits" bar blocked the **ruled** `STATUS.md` forward-bound mechanism, which is re-aimed each
+batch by editing three constants. (7) A dispatch was presented to the user **without being written to
+disk**, breaking the convention every previous dispatch follows, undeclared — and it made the dispatch
+order its own commit while not existing.
+
+**Class three — the gate applied wrongly (three).** (8) C6's *"no reading of that content"* was
+compressed to *"no reading"*, overclaiming; (9) C6 was then proposed for pulling on a **correctness
+filter that is not the gate's job**, corrected by the user; (10) C22 was first routed by its
+**remedy** rather than its fact — self-caught before recording.
+
+**Class four — presentation form (three).** (11) The Ruling 2 choice question was put without the
+prescribed rated lettered form and the user had to instruct *"phrase the decision as prescribed"*.
+(12) C31's two halves were put as *"which half"*, which read as asking the user to select between two
+**mechanisms** — both are real; that is the finding. (13) *"We are not trying to find the best
+inference method"* was confirmed to the user when the ultimate objective is **maximum-precision
+harmonic inference** and every proposal is rated towards it.
+
+**A FOURTEENTH, LEARNED ONLY WHEN THE SECOND BATCH REPORTED, AND IT IS ERROR (3) REPEATED.** The
+amendment-landing dispatch fenced `CLAUDE.md` to three passages and, **in the same document**, ordered
+a register entry whose ruled home is `CLAUDE.md` — an entry the establishment check cannot accept
+unless its words are written there. **Task 5 stopped on it.** The register-reconciliation dispatch had
+made the identical mistake one dispatch earlier. **The same fence also left both derivation boot packs
+carrying superseded principle text**, which is the DT-20 shape a third time and the most urgent thing
+this entry carries. **Class two is therefore three of fourteen, and it is the class that is not
+improving.**
+
+**★ THE DIAGNOSIS. Class one is five of fourteen and every one of its artifacts was on disk and cheap
+to open.** The corrective mechanism in eleven of the thirteen was **the user asking a sharper
+question** — which is the sixty-fifth entry's own conclusion, reached again. **The counterweight,
+recorded because it is what held:** nothing landed in the repository on a wrong premise; both batches
+stopped exactly where they should; CC caught errors (3) and (6) by obeying the dispatch and reporting
+the conflict rather than choosing silently.
+
+**And the finding that outranks the errors:** sixty-five handoff entries, a VOIDED method and two HELD
+phases were resting on a test the user dismantled in about four questions, none of which required
+reading anything this side did not already have in front of it.
+
+### The cadence for the successor
+
+**NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** The tip is
+`68c42b7f7743c02bdebefacdd9ed06ca9060fbbe`, both batches of 2026-08-26 have reported, and **the
+tracked tree is clean** — 833 changed path records, every one untracked, which is the standing
+population plus this session's own writing-side files. **Do not write a dispatch on arrival.**
+**Merge this entry into `cowork_handoff.md` at the next dispatch's Task 0** (see the banner) and
+**delete `cowork_handoff_entry_66_pending.md` in the same act.**
+
+**★ FIRST, AND AHEAD OF EVERYTHING BELOW: THE BOOT PACKS.** They carry superseded principle text right
+now. Any pilot or derivation session booting from either pack reads the pre-amendment #18, #19 and
+#24. **A dispatch authorising the pack regeneration is small, is not a decision, and should not wait
+behind a sitting.**
+
+**Then, five things are OWED and named so they are not rediscovered** — the report's §14 carries all
+five in full and **no open-items row was created for any of them**: the residue entry and its two
+routes; the two discard-act arithmetic checks; the boot packs; a register class for *"register
+business, no specification home owed"*; and whether either superseded item (the E-then-C ordering, the
+method's VOIDED status) is owed a register entry of its own — **neither has one, measured.**
+
+**Then, in order of what actually moves the work:** **build the ledger** from the 31 seeded admissions
+— the framework phase's last input. **Put the homelessness surface** — where routed-away constraints
+and phase status live, with the cross-layer transfer list as the candidate mechanism. **Scope the
+sizing measurement**, the pilot's last unfinished half. **Then open the framework phase.**
+
+*(The sixty-fifth entry below remains binding except where this entry names a change; it is superseded
+only as the entry point.)*
+
+---
 ## COWORK SESSION CLOSE (SIXTY-FIFTH ENTRY, 2026-08-25 — THE FORTY-SEVENTH SESSION'S ONLY ENTRY) — THE REGRESS IS TERMINATED BY RULING, NOT BY ANOTHER LEVEL OF APPARATUS. THE CURRENT ENTRY POINT. NOTHING IS RUNNING. NOTHING IS DISPATCHED. THREE ACTS ARE ORDERED AND EACH IS THE USER'S TO OPEN.
 
 You start clueless. Read this block first. **The sixty-fourth entry below remains binding in
