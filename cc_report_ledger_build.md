@@ -4,7 +4,18 @@
 >
 > CC, 2026-08-26, executing `cc_instruction_ledger_build.md`. Start-state tip
 > `673d0eec4e66fc62ceb9eb7d33faf7aef98d4c7f`, read at `.git/refs/heads/master` with the file tool —
-> **the ref side**. Task 0(c)'s landing commit is `4bc362c57e300688a28617a764f97f98e9df836e`.
+> **the ref side**. Task 0(c)'s landing commit is `4bc362c57e300688a28617a764f97f98e9df836e`; the
+> batch's second and final commit is `902d903a62443fe2f0f503deafdca3264e59f7fb`, which carries this
+> report. **This file was committed inside that commit and therefore states its own hash from the
+> one line added afterwards** — the tree arithmetic and the close are in the commit message, and
+> **the end state is not asserted by this file.**
+>
+> **THE TREE ARITHMETIC AT THE CLOSE, measured with `python tools/audit/changed_paths.py` and not
+> with `git status` (D-253):** **836** changed path records at the start (1 tracked modification +
+> 835 untracked) → **843** at the close (**8** tracked modifications + 835 untracked). It closes:
+> the three Task 0(c) landings left the untracked and tracked-modified population, and the ledger
+> and this report entered it. **All eight tracked modifications are inside the fence** and are
+> enumerated at §8.
 >
 > **NOTHING WAS ADMITTED, CHANGED OR REFUSED AS AN ACT.** The thirty-one admissions are the user's.
 > What this batch performed is the **re-check at the gate** Ruling 8 requires when the ledger is
