@@ -30,7 +30,7 @@
     "re_derives_a_live_invariant": 69,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 1
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 3
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_finish_line_item1_routes.py",
@@ -51,6 +51,8 @@
     "tools/audit/gen_phase1_finish_line.py"
   ],
   "live_tools_that_fail_and_stay": [
+    "tools/audit/decisions/apply_residue_discard.py",
+    "tools/audit/decisions/apply_soft_discard.py",
     "tools/audit/gen_filing_convention_application.py"
   ],
   "rows": [
@@ -84,7 +86,7 @@
       "evidence": "apply_residue_discard.py, the `THE STOPS` list of its module docstring; `populations()`, which derives all four sets on every run and halts on an overlap or on an entry the data file does not carry live; `the_arithmetic()`, which re-reconciles the sitting's own sums; `check_applied()`, which re-quotes every ruled keep's stamp from the artifact it came from",
       "why": "LIVE. Its claims are re-answered against the record AS IT STANDS on every run: the two retirements accounting for the former population, no entry in both blocks and none in neither, every record this act retired carrying what the ruling requires of it, and — the half nothing else asserts — every one of the fifty-three ruled KEEPS still carrying the deciding act recorded for it, re-derived from the check and recovery artifacts rather than compared with a copy. A stamp removed, rewritten, or drifting from its source fails on the day it happens. The sitting's arithmetic is re-reconciled too, and the ruling makes a disagreement a STOP rather than an adjustment. ★ WHAT IT DOES NOT ASSERT: that any retired entry's statement is unsound or unwanted — the ruled clause every record carries says the opposite in terms, and the statement stands at its home.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "state_at_the_committed_tree": "FAIL"
     },
     {
       "tool": "tools/audit/decisions/apply_soft_discard.py",
@@ -92,7 +94,7 @@
       "evidence": "apply_soft_discard.py, the `THE STOPS` list of its module docstring; `population()`, which derives the discard set and halts on a sole-carrier inside it or on an entry the data file does not carry live; `check_applied()`, whose docstring states which half is live in which of the two states this act can be in",
       "why": "LIVE in BOTH of the states this tool can be in, which is why it is a guard rather than a record of an act. BEFORE the act — the state at this commit, the act having been planned, measured and reverted — what re-derives is the PLAN: the ruling's sentences must still be in its ruling record, the population must still be derivable from the committed recovery and sole-carrier artifacts in both directions against the decisions register's data file (D-671), and the committed plan must still match that derivation, so an artifact moving under the plan turns this red instead of leaving a stale plan to be executed later. AFTER the act the plan is un-derivable by construction, and the live assertion becomes the applied state's own arithmetic: live plus retired accounting for the recorded former population, no entry in both blocks and none in neither, and every retired record carrying the four things the ruling requires. ★ WHAT IT DOES NOT ASSERT: that the act SHOULD be performed. It was not: the dispatch's assumption A3 was falsified by the measurement, and what is committed is the plan and the tool, never a mutation.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "state_at_the_committed_tree": "FAIL"
     },
     {
       "tool": "tools/audit/decisions/gen_cluster_dispositions.py",

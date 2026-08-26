@@ -113,10 +113,18 @@ override convenience.
     weighting one.
 18. **Unverified causal premises are FORBIDDEN (Class A).** No design may carry load on a
     causal claim about our own system or data that is checkable but unchecked.
+    Class A reaches a causal claim only where that claim is checkable, which is this
+    principle's recorded ground. A claim about the conditions under which a session ran — its
+    boot, its context, what reached it — is not checkable from outside that session, and is
+    therefore declared, not established.
 19. **Unestablished instruments are FORBIDDEN (Class B).** An instrument, corpus, gate, or
     recorded figure is trusted only after being *positively established* (oracle cross-check,
     derivation of what the measurement unit actually measures, reproduce-check) — never
     because it is merely unfalsified.
+    The objects of this principle are the four it names and no others — a measurement tool, a
+    corpus, a gate, a recorded figure — and each is an inspectable, re-runnable artifact,
+    because each of the three establishment methods named here requires one. A session, a
+    person or a conversation is never the object of a Class B demand.
 20. **Fit/evaluation separation.** No value is graded on data that helped fit it. Every fit
     event declares its held-out data (split or k-fold) and its capacity budget (parameter
     count, regularization, justified against corpus size) BEFORE fitting; the headline claim
@@ -222,6 +230,10 @@ override convenience.
     corpus is quantified; a difference within the uncertainty is not a finding, and no
     decision rests on one. (The companion of #16: reproducibility bounds instrument error,
     this bounds sampling error.)
+    Every reported result carries its uncertainty. Where a condition of a result's production
+    cannot be established at an inspectable object, that condition is DECLARED as a bound and
+    the result stands with the bound attached. A declared bound discharges an establishment
+    demand that has no inspectable object. It does not discharge one that has.
 
 *Ledger corollary to #17 (ratified with #20–#24):* when a decision selects a **constrained
 optimum** (a design chosen for methodology-compliance rather than raw measured performance),

@@ -2579,7 +2579,7 @@
               "kind": "heading-to-paragraph",
               "opens_at": "## Guiding principles",
               "closes_at_the_end_of_the_paragraph_opening": "**Delegation pointer",
-              "lines_rendered": 297
+              "lines_rendered": 309
             },
             {
               "kind": "heading-to-eof",
@@ -2590,7 +2590,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 58747
+          "characters": 59762
         },
         {
           "member": 3,
@@ -2635,7 +2635,7 @@
           "rendered_from": "GENERATED — the DESIGN-INTENT class less the withheld family, four fields per entry",
           "entries_rendered": 208,
           "leak_checked": true,
-          "characters": 252228
+          "characters": 252572
         },
         {
           "member": 6,
@@ -2774,7 +2774,7 @@
               "kind": "heading-to-paragraph",
               "opens_at": "## Guiding principles",
               "closes_at_the_end_of_the_paragraph_opening": "**Delegation pointer",
-              "lines_rendered": 297
+              "lines_rendered": 309
             },
             {
               "kind": "heading-to-eof",
@@ -2785,7 +2785,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 59521
+          "characters": 60536
         },
         {
           "member": 3,
@@ -2830,7 +2830,7 @@
           "rendered_from": "GENERATED — the DESIGN-INTENT class less the withheld family, four fields per entry",
           "entries_rendered": 241,
           "leak_checked": true,
-          "characters": 294729
+          "characters": 295073
         },
         {
           "member": 6,

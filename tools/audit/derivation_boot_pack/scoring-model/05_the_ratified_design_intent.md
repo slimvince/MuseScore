@@ -482,6 +482,10 @@ idioms, discovered and encoded.
     recorded figure is trusted only after being *positively established* (oracle cross-check,
     derivation of what the measurement unit actually measures, reproduce-check) — never
     because it is merely unfalsified.
+    The objects of this principle are the four it names and no others — a measurement tool, a
+    corpus, a gate, a recorded figure — and each is an inspectable, re-runnable artifact,
+    because each of the three establishment methods named here requires one. A session, a
+    person or a conversation is never the object of a Class B demand.
 ```
 
 **In plain words:** A measuring script, a corpus, a gate or a recorded figure is trusted only once it has been positively shown to be right - checked against an independent oracle, with a derivation of what its unit actually measures, and a reproduce-check. Never merely because nothing has contradicted it.

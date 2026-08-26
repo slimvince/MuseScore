@@ -60,15 +60,15 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "2d7c3c3119e92dadb7b8fbffa76403ef5c7b6f5f"
+BASE_COMMIT = "68c42b7f7743c02bdebefacdd9ed06ca9060fbbe"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_register_reconciliation.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_amendment_landing.md"
 
 ACT_DATE = "2026-08-26"
-DISPATCH = "cc_instruction_amendment_landing.md"
-TASK = "Task 7"
+DISPATCH = "cc_instruction_boot_pack_regeneration.md"
+TASK = "Task 4"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -156,6 +156,9 @@ PREVIOUS_AIMINGS = [
          "reported at `cc_report_register_reconciliation.md` §5.3 and §5.4. Backfilled here on "
          "Ruling 5 of `cowork_rulings_2026_08_26_amendment_landing_sitting.md`, which also names "
          "the re-aiming a carve-out from that bar so the conflict cannot recur."},
+    {"executing_act": "cc_instruction_amendment_landing.md, Task 7",
+     "base_commit": "2d7c3c3119e92dadb7b8fbffa76403ef5c7b6f5f",
+     "the_then_previous_batch": "cc_instruction_register_reconciliation.md"},
 ]
 
 ARCHIVE_HEADER = (
