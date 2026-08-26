@@ -62,6 +62,10 @@ comes back as evidence rather than as this side's opinion.
 
 ## 3. The grounds, stated so they are not re-derived
 
+> **★ TWO STATEMENTS OF THIS SECTION ARE CORRECTED OF RECORD AT §8, ADDED 2026-08-26 AFTER THE BATCH
+> RETURNED AND MEASURED THEM AT THEIR OBJECTS. The text below stands unamended — the correction is
+> recorded beside it and never over it (#12). Read §8 before relying on this section.**
+
 **(b) is the only test of fields the plan itself marks UNESTABLISHED.** §7 of the successor plan carries
 field six's sub-fields — the ARM, a named SITE, the OBSERVABLE read, the DECISION RULE over it, and the
 named near-miss it is not falsified by — as unestablished input, because neither evaluation traced
@@ -166,3 +170,106 @@ of those premises, and every one was caught before a dispatch carried it.
 delivered whole, re-put once after fact-checking found three errors in it, and the choice question was
 reserved for a later turn per the standing cadence; the user ruled from the corrected surface. The
 user's words: "Agree on C (assuming CC:s feedback has no bearing on this decision)."*
+
+---
+
+## 8. CORRECTIONS OF RECORD — added 2026-08-26, after `cc_report_sizing_tests.md` returned
+
+*Added as an addition. **No sentence above is reworded, no ruling is amended and no ruling is voided.**
+Rulings 1 and 2 stand as taken; what is corrected is two statements of §3, which are grounds and not
+rulings. Both were measured at their objects by the batch this record ordered, and both were wrong in
+the direction that favoured the alternative this side recommended. Provenance for both:
+`cc_report_sizing_tests.md` §5.3 and §6.2, and the reading file
+`ratification_surfaces/cowork_sizing_tests_reading.md` §2.4 and §3.2.*
+
+### 8.1 §3's additivity claim is FALSE at the object
+
+**What §3 says:** that test (a)'s harvest *"is additive to the 31-admission seed of
+`cowork_fact_gate_admissions_2026_08_26.md`, which came from a different source entirely."*
+
+**What is true.** The dead-end corpus — `docs/scoring_model.md` §8, *"Known constraints and dead
+ends"*, lines 1129–1456, identified and proved by the batch against four independent texts — is **the
+largest single contributor to that 31-admission seed**, not a different source.
+`cowork_empirical_findings_candidates.md` §5 records it as *"§8 read whole, `:1129–1457`, at the
+object"*, yielding *"10 candidates — C1–C10. The richest source by a wide margin."*
+
+**The measured consequence.** Eight facts passed the §6.4 admission test at the record check, and
+**every one of the eight was already in the seed** — C1, C2, C4, C5, C6, C7 admitted in round one, C8
+and C9 in round three as restated music halves. **Test (a)'s second product is additive by nothing.**
+The one §8 item bearing on a statement that the seed does not carry fails the gate as stated, and its
+possible restatement is named at the reading file and not proposed.
+
+**How the error was made, recorded because the mechanism is this project's recurring one.** The
+sixty-sixth handoff entry states a **coverage bound** on the harvest — *"12 of 265 files of the coding
+side's measurement reports"* — and this side read a bound stated about one source as though it were the
+whole source list. `cowork_empirical_findings_candidates.md` was never opened before the claim was
+written. **That is reasoning about an artifact without opening it, in a ruling record.**
+
+**★ What it does to the ground of the ruling.** The additivity of (a)'s harvest was the load-bearing
+reason this side recommended alternative C over alternative A, and it does not hold. **On the corrected
+facts, A — run (b) alone, decline (a) — was the better choice**, and would have lost nothing. Ruling 1
+is not disturbed by this: it was taken by the user on a surface this side had put, the tests ran, and
+their results stand. **What is recorded here is that the recommendation behind it was wrong, and why.**
+
+### 8.2 §3's five-sub-field claim overstates what (b) can reach
+
+**What §3 says:** that (b) is *"the only test of fields the plan itself marks UNESTABLISHED"*, naming
+five — the **ARM**, a named **SITE**, the **OBSERVABLE** read, the **DECISION RULE** over it, and the
+named **near-miss it is not falsified by**.
+
+**What is true.** The **ARM and the SITE are absent from all thirty-six statements of the sizing
+output, by instruction.** The output's own §1 preamble: *"Field 6 is written in terms of an
+**observable** and a **decision rule over it**; naming code sites is left to a later session, **as the
+brief directs**."* The deriving session opened no code.
+
+**So (b) reaches three of the five, not five** — and no output produced under a brief carrying that
+instruction can reach the other two. Whether that instruction should stand, and where the ARM and the
+SITE are to be tested instead, is **not decided here and is not proposed**; it is named so it is not
+rediscovered.
+
+### 8.3 What the batch established that §3 did NOT overstate
+
+Recorded beside the corrections so the section is not read as wholly unsound.
+
+- **The separability question is answered on its sample.** All five statements return **SEPARABLE**,
+  and on all five the recorded answer to whether the verdict could have rested on anything the
+  contamination carries is **no**. Ruling 2's stop rule was live throughout and was not triggered. The
+  verdict is **YES ON THIS SAMPLE** — five of thirty-six, about separability only, argued and not
+  established.
+- **There is no cleaner input, now or later** — §3's second ground — stands unchallenged.
+- **The sizing output supplies the hard kinds** — §3's fourth ground — was confirmed at the text: the
+  probabilistic factor form at S13 and the conditional-independence premise at S18, located by reading
+  the statements rather than taken from the output's own account, which was found to agree afterwards.
+
+### 8.4 A fourth wording of the sizing record was introduced by this side's own dispatch
+
+`cc_instruction_sizing_tests.md` Task 2 relayed the ruled sizing-record list in this side's words,
+because the same dispatch's Task 6 barred opening either brief. **The relay is not the successor plan's
+§6.1 list**: it drops *share withdrawn* and adds three fields §6.1 does not name. The batch declared
+this at its §8.2 and could not establish from inside itself which list the brief's §5 carries.
+
+**This record notes it against itself:** the sitting that documented three materially different wordings
+of the sizing record across three documents then wrote a fourth into its own dispatch. **No correction
+to the reading file is proposed** — the field-by-field report stands as taken, with its source named.
+
+### 8.5 Two further findings the batch returned about the ruled statement form
+
+Neither is a correction to this record; both are recorded here because nothing else yet has a home for
+them and they bear on the framework phase, which will write in this form.
+
+- **A third footing for field six that §7 does not provide for.** The plan gives two — behavioural-in-code
+  and premise-in-the-residual. Eight statements falsify in **the model's own written specification**
+  (S18, S14, S20, S22, S23, S24, S25, S33), which is neither.
+- **No statement of the thirty-six falsifies in the residual.** The output placed its premises in field
+  five of every statement and wrote none as a statement of its own, so the residual footing had nothing
+  to attach to. Reported as a property of the output, with no verdict on whether it should have been
+  otherwise.
+
+---
+
+*Provenance of §8: Cowork, 2026-08-26, written after `cc_report_sizing_tests.md` was verified at the
+objects by this side — the tip at `.git/refs/heads/master` (ref side), the batch's own start-state hash,
+and the report read whole rather than in summary. Every figure in §8 is the batch's, read at the report
+and at the reading file; this side re-measured none of them at the repository and opened neither the
+blind output nor `cowork_empirical_findings_candidates.md`. **The §8.1 correction is therefore relayed
+from the batch that found it, and the writing side's error it records is this side's own.***
