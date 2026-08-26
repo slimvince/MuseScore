@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_ledger_build.md, Task 5",
+ "dispatch": "cc_instruction_ledger_admissions.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -133,21 +133,26 @@
    "executing_act": "cc_instruction_sizing_tests.md, Task 7",
    "base_commit": "9683a9c1fe351cde4450bfe63c86d2331a83946b",
    "the_then_previous_batch": "cc_instruction_boot_pack_regeneration.md"
+  },
+  {
+   "executing_act": "cc_instruction_ledger_build.md, Task 5",
+   "base_commit": "4bc362c57e300688a28617a764f97f98e9df836e",
+   "the_then_previous_batch": "cc_instruction_sizing_tests.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "4bc362c57e300688a28617a764f97f98e9df836e",
- "the_then_previous_batch": "cc_instruction_sizing_tests.md",
+ "base_commit": "550ffc28cd80b52aa8d0e6f8a88925b8b3cf2de0",
+ "the_then_previous_batch": "cc_instruction_ledger_build.md",
  "entries_moved": 1,
- "characters_moved": 2812,
+ "characters_moved": 3381,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2812,
-   "sha256": "1e53ca90894790c2e39ecb3ab5877c9be66247da0c51dc2cee7b59be6a1a40e7",
+   "characters": 3381,
+   "sha256": "2cf3cb9c7aa75a4b28e8a27205b3faca4fa73d3ddae5aebd138346bb7f2c3eb7",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-26 (CC — **★ THE SIZING UNIT'S TWO HELD TESTS ARE RUN, AND EACH PRODUCT CARRIES THE LABEL ITS BOUND REQUIRES AT THE POINT IT APPEARS.** The r"
+   "opening": "*2026-08-26 (CC — **★ THE EMPIRICAL FINDINGS LEDGER EXISTS.** The framework phase's last owed input is built, as the SINGLE HAND-WRITTEN RECORD whose "
   }
  ],
  "reconciliation": {
