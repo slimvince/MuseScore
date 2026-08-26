@@ -1341,3 +1341,344 @@ proposes **no remedy**, and takes **no verdict** on anything except the admissio
 **no** governing document, **no** tool source, **no** measured value, **no** golden, **no** corpus of
 scores, and nothing under `tools/robust_stop/`. **Whether any of C21–C41 is admitted, and in what
 words, is the user's.**
+
+---
+---
+
+# PART THREE — THE THIRD HARVEST, over the one ruled seed neither of the first two reached
+
+> **Produced by CC, 2026-08-26, dispatch `cc_instruction_ledger_build.md` Task 1, at the tip left by
+> that dispatch's Task 0(c).** Everything above this line is the FIRST and SECOND harvests and is
+> **unchanged** — no candidate C1–C41 was edited, renumbered or re-verdicted, and neither §3's nor
+> §10's summary table is touched. The banner at the head of this file governs Part Three exactly as
+> it governs Parts One and Two: **nothing here is admitted, this file is not the ledger, and every
+> verdict below is a proposal the user may overturn.**
+>
+> **Why Part Three exists.** The ruled seed list names **three** seeds. Parts One and Two account for
+> two of them. The third — *the refuted-repair register entries* — was **never mined by either
+> harvest**, and §13.1 below establishes that at the objects rather than asserting it. The candidates
+> are numbered **C42 onward** and each names its source entry, so the three harvests never merge by
+> accident.
+>
+> **★ A CORRECTION OF RECORD TO `cc_report_ledger_harvest.md` §9.1 IS DECLARED AT §13.1** and is not
+> made in that report, which is a dated report and not this batch's to edit.
+
+---
+
+## 13. WHAT THE THIRD SEED DENOTES, AND WHETHER IT HAD BEEN MINED
+
+### 13.1 ★ WHICH REGISTER, ESTABLISHED AT THE OBJECT AND NOT INFERRED
+
+**The ruled phrase, quoted from the record that states it** —
+`cowork_rulings_2026_08_15_method_directions.md:53–54`, direction 4 of nine:
+
+> Existing seeds: `DEFECT_TYPES.md`, `docs/scoring_model.md` §8, the
+> refuted-repair register entries.
+
+**Restated at `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md:218`**, inside the
+section the user RULED, as *"the refuted-repair entries"* — the word *register* dropped, which is why
+the phrase cannot be settled from that restatement alone.
+
+**THE REGISTER IS THE DECISIONS REGISTER, and the establishing text is `OPEN_ITEMS.md:42`** — row
+OI-2, whose own words use the phrase in this project's sense:
+
+> **D-490** and **D-491** are the falsification and the refuted repair behind that recommendation,
+> **D-493** the un-computable long-run successor.
+
+`D-491` is a decisions-register entry and its own title reads *"REFUTED: making the override's
+comparison vertically fair does not repair it"* (`decisions/group_H.md:1121`). So *the refuted repair*
+names a **decisions-register entry recording that a proposed repair was refuted**, and the usage
+pre-dates the ruling by eleven days. Two further supports, stated because one quotation is not an
+establishment: the decisions register's unit word is **entry** throughout its own rules
+(`CLAUDE.md`, the decisions-register section, rule (c) — *"gets its register entry"*), while the
+open-items register's unit word is **row** and **item** (rules (c) and (d) — *"an index row"*,
+*"flips the INDEX row"*); and the open-items register holds OPEN ISSUES, not refuted repairs, so a
+*refuted-repair row* would have no referent there.
+
+**The criterion applied, stated once so every verdict below is mechanical rather than a matter of
+taste.** A register entry is a **refuted-repair entry** when its recorded content is that a
+**repair** — a proposed or built remedy for a known defect of the analysis: a guard, a gate, a
+threshold, a re-ordering, a widening, an alternative mechanism or an alternative approach — was
+**tried or analysed and then REFUTED, FALSIFIED, SHELVED WITH EVIDENCE, REVERTED, measured inert, or
+recorded as a dead end.** An entry recording a positive design choice, a convention, a scope decision
+or a process rule is **not** one, however it is worded.
+
+### 13.2 ★ IT WAS **NOT** MINED — established in both harvests, at the objects
+
+- **The first harvest's Task 3 names four sources and the decisions register is not among them**
+  (`cc_instruction_ledger_harvest.md:223–230`): `docs/scoring_model.md`; **`OPEN_ITEMS.md` and
+  `open_items/`** — described there as *"the register's own recorded empirical findings"*, which is
+  **a different register**; `cowork_away_returns.md` and the `cc_report_*.md` population; and
+  `cowork_handoff.md`.
+- **That harvest's own source table records the same four** (§5 above, and
+  `cc_report_ledger_harvest.md:454–459`).
+- **The second harvest's two sources are `DEFECT_TYPES.md` and the coding side's measurement
+  reports** (§11 above). Neither is the decisions register.
+- **No candidate C1–C41 carries a `D-…` provenance.** C10's *establishment status* field names D-490
+  and D-491, but its **provenance** is `docs/scoring_model.md:1276–1292` — it was reached through the
+  scoring model, not through the register.
+
+**★ A CORRECTION OF RECORD IS DECLARED TO THE WRITING SIDE.** `cc_report_ledger_harvest.md` §9.1
+states, of the three ruled seeds, *"Task 3 names the second and the third and not the first."*
+**That is false at the object.** Task 3 names the **second** only. Its source 2 is the **open-items**
+register, and that report read it as though it were the ruled third seed. The consequence is exactly
+what this part exists to repair: a ruled seed was recorded as accounted for while nothing had been
+mined from it. **No edit is made to that report** — it is a dated report, and the correction is
+declared here and in `cc_report_ledger_build.md`.
+
+### 13.3 ★ THE STRUCTURAL FINDING — MOST OF THE THIRD SEED IS HOMED INSIDE THE SECOND
+
+The population was enumerated at the twenty `decisions/group_*.md` files and then **split by HOME**,
+because a refuted-repair entry whose home is `docs/scoring_model.md` §8 was **already mined whole** by
+the first harvest, which read `:1129–1457` at the object.
+
+**Homed INSIDE `docs/scoring_model.md` §8 (`:1129–1457`) — already mined; NOT re-harvested here,
+because re-harvesting them would make the second copy Ruling 1 exists to prevent:**
+
+| Entry | Home | Already reached as |
+|---|---|---|
+| D-215 | `:1137` | — (no candidate; the sparse-predecessor gate is the FAIL half) |
+| D-299 | `:1413–1417` | — |
+| D-300 | `:1418–1424` | **C9** |
+| D-301 | `:1425–1430` | **C8** |
+| D-302 | `:1431–1439` | **C5**, **C7** |
+| D-317 | `:1375–1381` | — |
+| D-318 | `:1382–1385` | — |
+| D-319 | `:1386–1392` | **C4** |
+| D-320 | `:1393–1399` | **C1** |
+| D-328 | `:1207–1216` | — |
+| D-490 | `:1276–1284` | **C10** |
+| D-491 | `:1285–1292` | **C10** |
+| D-492 | `:1302–1312` | **C10** |
+| D-493 | `:1293–1301` | **C10** |
+
+**So the third seed and the second OVERLAP heavily by construction**, and the overlap is not an
+accident: the user's homing ruling of 2026-08-07 routed the refuted-repair family of the chord and
+function layers into `docs/scoring_model.md` §8 under the scoring-surface rule (recorded in each
+entry's provenance). **The third seed's genuinely unreached members are the ones homed elsewhere**,
+and they are what Part Three mines.
+
+**Homed OUTSIDE every source either earlier harvest reached — the actual new population:**
+D-026, D-098, D-278, D-282, D-283, D-284, D-285, D-286, D-287, D-288, D-290, D-376, D-403, D-531,
+D-608, D-609, D-622.
+
+### 13.4 THE COVERAGE BOUND OF THIS HARVEST, STATED RATHER THAN LEFT TO BE FOUND (#19)
+
+The population was reached by **pattern over the `### D-…` headings** of the twenty group files, using
+the signature set *REFUTED, FALSIFIED, SHELVED, REVERTED, dead end, measured FALSE, measured inert,
+not to pay, must not be retried, cannot fix, no separating power, never adopted, REJECTED, measured
+weaker, not repair, UN-COMPUTABLE, no further, over-counts, never-fitted, Meta-finding, abandoned,
+not adopted*. **The 477 entries were NOT all read.** A refuted-repair entry whose heading carries none
+of those words would have been missed, and that is this search's stated ceiling. **The harvest is not
+claimed complete over the third seed.**
+
+---
+
+## 14. THE CANDIDATES OF THE THIRD HARVEST — C42 to C47, NONE ADMITTED
+
+**Verdict columns are read exactly as in §2 and §9**, and the calibration is unchanged: *a prohibition
+on re-attempting a specific mechanism FAILS; a fact about the music or the corpus PASSES.* **No figure
+any source carries is restated here (D-431)** — each is left at its cited line.
+
+### C42 — A diatonic leading tone is present at about as many genuine key changes as spurious ones, so leading-tone chromaticism does not discriminate a real modulation
+
+- **The fact, approach-level:** In this repertoire the presence of a diatonic leading tone at a
+  cadence does **not** separate a real key change from a passing one — it occurs at close to the same
+  rate on both sides. And the signals that would distinguish a relative major/minor pair are already
+  exhausted by aggregating the cadence evidence, so nothing is left for a second, local rule to use.
+- **Provenance:** the refuted-repair entry **D-290** — *"The key-agnostic local cadence approach is
+  FALSIFIED at its precision ceiling"* — full entry `decisions/group_F.md:95–115`, home
+  `ARCHITECTURE.md:1762–1766`, measuring record `cc_cadence_precision_investigation_dossier.md`.
+- **Uncertainty, in the source's own terms:** the entry gives the two rates and a precision-and-recall
+  ceiling and no interval; they are at the cited lines and are **not restated here (D-431)**. **The
+  entry's own scope caveat is carried unaltered:** measured on the Bach ground-truth corpus, other
+  repertoires unmeasured — the entry records that the caveat was written into the home text precisely
+  because *"a falsification carried into a specification without its scope reads as wider than it was
+  measured to be."*
+- **Establishment status, as the source declares it:** measured with a byte-matched re-implementation
+  that reproduced the committed analysis exactly on all 326 pieces — *"which is what makes the ceiling
+  a measurement rather than an estimate."* Not upgraded.
+- **Failure diagnosis:** stated — the gate signal is orthogonal to correctness, and the relative-pair
+  signals were already spent by the existing aggregation.
+- **Survives? YES, on the leading-tone half. Approach-level? YES. → PASSES on that half.** How often
+  a leading tone accompanies a modulation is a property of the music. **NOT proposed:** the ceiling
+  figures and the clause *"below the bar the wiring step required"*, which are about one
+  implementation and the bar one step of ours set. **Read it beside C39**, which measures the same
+  question from the other side and finds the difficulty asymmetric between the two scale relations.
+
+### C43 — One settled indication of the prevailing key does not fix the key at the edge of a selection; a confident earlier key established over a RUN does
+
+- **The fact, approach-level:** Where an analysis must read backwards for tonal context, the question
+  *how far back is far enough* is not answered by a single settled moment inside the material read
+  back. The tonality at the leading edge changes only once a confident earlier key is established
+  **over a stretch** — so a stopping rule keyed on one settled indication stops too early.
+- **Provenance:** the refuted-repair entry **D-622** — *"The reach-back convergence PROXY was measured
+  FALSE and dropped"* — full entry `decisions/group_F.md:705–729`, home `ARCHITECTURE.md:1894–1905`,
+  design record `cowork_layer3_reachback_design.md` §3.
+- **Uncertainty, in the source's own terms:** none offered; and the entry records in terms that **the
+  record states neither a date nor a ratifier** for the item. No rate is claimed and none is invented.
+- **Establishment status, as the source declares it:** measured at the build, and **verified at the
+  code rather than taken from the design** — the entry records that the production source itself notes
+  the proxy stops prematurely. The entry also names what validates the replacement: a determinism test
+  over extension step size.
+- **Failure diagnosis:** stated, and it is the finding — the proxy was an unlabelled assumption, it was
+  measured, it was false, and it was dropped.
+- **Survives? YES. Approach-level? YES. → PASSES.** How much earlier music it takes to settle the
+  tonality at a given moment is a property of the music, not of any reader of it. **It is also the
+  record's own clearest measured instance of #17(d)** — a proxy standing in for the behavioural
+  quantity, refuted when finally measured — which is a **#6 reservation** on the rule half rather than
+  an objection to the fact.
+
+### C44 — Cycling or re-ranking over the carried candidate lists of an already-committed pipeline adds nothing
+
+- **The fact, at exactly the width the user's own scoping ruling gives it:** where each stage of an
+  analysis has already committed and published its ranked alternatives, going back over those carried
+  lists — re-ranking them, or cycling between stages using them — **adds nothing measurable**. The
+  finding binds on that design class and on no other.
+- **Provenance:** the refuted-repair entry **D-026** — *"The global joint-lattice decode was measured
+  inert (2026-06-29)"* — full entry `decisions/group_C.md:69–82`, home `ARCHITECTURE.md:1054–1055`.
+- **Uncertainty, in the source's own terms:** none offered. The entry records what the record does NOT
+  state — how the measurement was reconciled with the later joint estimator — and points at
+  `OPEN_ITEMS.md` OI-234 for it. That gap is carried here rather than smoothed.
+- **Establishment status, as the source declares it:** measured 2026-06-29 and **ratified by the
+  user**; and **scoped by a second user ruling of 2026-08-02** which is part of the establishment and
+  not a gloss on it — *"the finding STANDS FOR WHAT IT TESTED … binding on that design class — and does
+  NOT bear on the fitted semi-Markov joint decode (a different mechanism class)."*
+- **Failure diagnosis:** **cause undiagnosed.** The entry records the null result and names no
+  mechanism for it. Recorded in the ruled field's own words rather than filled in.
+- **Survives? YES, at the ruled width. Approach-level? YES. → PASSES as a design-class antipattern**,
+  at that width and no wider. It is a statement about a class of inference architectures, and the
+  user's scoping ruling is what makes it citable at all — without it the entry reads as contradicting
+  the production design, which the ruling establishes it does not.
+
+### C45 — Whether widening a search can help is decided by whether the wrong reading is the model's own optimum
+
+- **The fact, as the source states it:** the failure class beam widening was proposed for *"is not a
+  search failure at all"* — **the wrong reading is the highest-scoring one**, so examining more
+  readings in parallel finds the same wrong answer; only changing how readings are scored, or cutting
+  the music differently, can move it.
+- **Provenance:** the refuted-repair entry **D-288** — *"Beam widening is SHELVED - a wider search
+  cannot fix the failure class it was proposed for"* — full entry `decisions/group_C.md:648–666`, home
+  `ARCHITECTURE.md:320–324`.
+- **Uncertainty, in the source's own terms:** the arithmetic is given on two named sonorities and is at
+  the cited lines, **not restated here (D-431)**. No population rate is claimed.
+- **Establishment status, as the source declares it:** *"derived and then cross-checked against
+  independent earlier measurements"*, and **ratified by the user (directive), on Cowork's
+  verification** — the entry says so in its status line. Derived, not measured over a corpus, and not
+  upgraded.
+- **Failure diagnosis:** stated — the error is a modelling error and not a search error, so the lever
+  proposed does not reach it.
+- **Survives? UNDECIDABLE. Approach-level? PARTLY. → UNDECIDABLE, and the two readings are named
+  rather than one being chosen.** Read as *an incorrect reading can be the optimum of a
+  locally-informed objective on this repertoire*, it is a fact about the music-and-model relation and
+  would pass; read as *our failure class was of that kind*, the evidence is one dormant scorer's own
+  score arithmetic on two passages and it fails. **The durable operational content — diagnose whether
+  an error is a search failure or a model failure before widening the search — is a statement about
+  how we work**, which the user's working rule routes to the phase definitions rather than the ledger.
+  **The user's, which of the three is meant.**
+
+### C46 — The factoring rejected at the coupling design, on constraints two of which were about preserving what was already built, is the shape the production engine now has
+
+- **The fact, as the source states it:** one decision over a single combined state holding tonic, mode
+  and chord together was **REJECTED** in favour of a bounded coupling over two existing decoders, on
+  three stated constraints — that the combined state *"discards both built decoders and re-lays the
+  pipeline"*; that the gain is concentrated on a coupled minority so re-laying the pipeline is
+  disproportionate; and the forward-only control-flow contract. The step was afterwards shelved against
+  measurement, **and the rejected option is the shape the production engine now has.** The entry also
+  records what the published literature does and does not settle: the single combined state is *"a
+  *modeling* choice"*, and the recipe the literature prescribes is realizable in either factoring.
+- **Provenance:** the refuted-repair entry **D-376**, status **SHELVED WITH EVIDENCE**, decided
+  2026-07-07, ratified by the user — full entry `decisions/group_A.md:344–373`.
+- **Uncertainty, in the source's own terms:** the coupled-minority share is a `[data]` figure at the
+  cited lines and is **not restated here (D-431)**; it is measured on our own coupling trigger.
+- **Establishment status, as the source declares it:** a design decision with three stated constraints
+  and cited research grounding, later shelved against measurement. The reversal is a fact of the
+  record, not a measurement.
+- **Failure diagnosis:** stated by the record's own later course rather than by the entry — two of the
+  three constraints were about what was already built, and the design chosen on them did not survive.
+- **Survives? PARTLY. Approach-level? PARTLY. → UNDECIDABLE, leaning PROCESS, with a #6
+  reservation.** The durable half is that arguments from what is already built are not evidence about
+  which design serves the objective — and that is **already ruled and already homed** as the
+  decision-neutrality corollary at `CLAUDE.md` (**D-190**), whose clause (a) states that reuse counts
+  only as carried-forward establishment and never as sunk cost. **Recorded here because it is the
+  record's own clearest measured instance of why that corollary was needed, and proposed for
+  nothing.**
+
+### C47 — No case was found where the correct key sits below the top rank of a carried key candidate list
+
+- **The fact, as the source states it:** the failure that carrying a ranked distribution of key
+  candidates forward was designed to fix *"had already been fixed another way"*; the resolver returns
+  the correct key at the top rank for every stretch of it; and *"no case was found anywhere in the
+  corpus where the correct key sits at the second or third rank."*
+- **Provenance:** the refuted-repair entry **D-287** — *"Key-as-distribution is SHELVED"* — full entry
+  `decisions/group_F.md:73–93`, home `ARCHITECTURE.md:1751–1755`, measuring record
+  `cc_step3_key_investigation_report.md`.
+- **Uncertainty, in the source's own terms:** an absence established by a search over the corpus, which
+  bounds what was looked for and not what exists. The entry records a **stated re-open condition** — a
+  confirmed case with the correct key at rank one or two — so this is *"a shelving with a trigger, not
+  a permanent exclusion"*, and that is carried here unaltered.
+- **Establishment status, as the source declares it:** measured and cited; a second, **structural**
+  reason is recorded beside it — the confidence field is re-ranked without being recomputed, so it
+  cannot scale anything.
+- **Failure diagnosis:** stated — the motivating case had been fixed by a different change, and no
+  other case in the corpus needed the mechanism.
+- **Survives? NO. Approach-level? NO. → FAILS.** Every quantity is a property of **our** resolver's
+  ranking and **our** carried menu: *rank* has no meaning once the implementation producing the ranking
+  is thrown away, and the structural second reason is about one field of one implementation.
+  **Recorded because a source that fails is part of the coverage**, and because this entry is the
+  clearest case in the third seed of a genuinely careful refutation that is still not ledger material.
+
+---
+
+## 15. WHAT THE THIRD HARVEST CONSIDERED AND DID **NOT** PROPOSE
+
+Recorded so the harvest is not silently incomplete. **No act is taken on any of these.**
+
+| Entry | Why no candidate |
+|---|---|
+| **D-608** — the symmetric-root spelling pin's entry premise measured FALSE | **Corroborates C22 at a named instance** (a guard reached only after another stage has committed a label it usually does not commit), recorded rather than counted twice (#6). |
+| **D-278** — the joint key-and-chord step SHELVED, measured not to pay | Its measured content is **C11's**, already admitted; corroboration, not a new candidate (#6). |
+| **D-609** — the abstention rate rides on an arbitrary never-fitted seed constant | Every quantity is a property of one constant in one decoder's header. The durable half is **#19 itself**, already homed. |
+| **D-403** — the one-decision-four-sites premise over-counts | A statement about how a duplication claim is counted at our own code: a **process** antipattern under the user's working rule. |
+| **D-284**, **D-282**, **D-283**, **D-285** — the four superseded meta-findings | Each is design-method guidance whose content the record already homes in a named successor (D-036, D-115, D-191, D-001/D-096, D-004/D-426). **#6** on all four. |
+| **D-286** — whole-score interactive analysis SHELVED WITH EVIDENCE | A **scope and cost** decision, not a refuted repair of an analysis defect; excluded by §13.1's criterion. |
+| **D-531** — the learned emission replacement is NOT triggered | Nothing was refuted: a replacement's stated trigger was not met and the incumbent was retained as an explicit fallback. Excluded by the criterion. |
+| **D-098** — the declared reserve prune was never adopted | The prune was never built or measured; the entry records that what the decoder actually narrows *"has no specified form"*, which is an open question (`OPEN_ITEMS.md` OI-226) and not a refutation. |
+
+---
+
+## 16. SUMMARY OF THE THIRD HARVEST'S PROPOSED VERDICTS
+
+| # | Candidate | Source entry | Survives? | Approach-level? | Verdict |
+|---|---|---|---|---|---|
+| C42 | A diatonic leading tone does not discriminate a real modulation | **D-290** | YES (half) | YES | **PASSES on the leading-tone half** |
+| C43 | One settled indication does not fix the key at a selection edge | **D-622** | YES | YES | **PASSES** · #6 reservation on the rule half |
+| C44 | Re-ranking already-committed carried lists adds nothing | **D-026** | YES (at the ruled width) | YES | **PASSES as a design-class antipattern** |
+| C45 | Widening a search cannot reach a modelling error | **D-288** | ? | PARTLY | **UNDECIDABLE** · leans PROCESS |
+| C46 | The rejected joint factoring is the production shape | **D-376** | PARTLY | PARTLY | **UNDECIDABLE** · leans PROCESS · #6 reservation |
+| C47 | The correct key never sits below the top carried rank | **D-287** | NO | NO | **FAILS** |
+
+**Counted: 6 candidates. 3 propose PASSES (one on a named half, one at a ruled width), 2 are
+UNDECIDABLE and both lean to the process side, and 1 FAILS. 3 + 2 + 1 = 6. Nothing is admitted, and
+every verdict is a proposal.**
+
+**Together with Parts One and Two the file now carries 47 candidates. The three parts are NOT merged
+and no combined count is offered as a result** — Parts One and Two's verdicts were taken under their
+own dispatches and are not reopened here.
+
+---
+
+## 17. WHAT PART THREE DOES **NOT** DO
+
+It **admits nothing**, and it does not make this file the ledger. It **does not touch Parts One or
+Two** — no candidate C1–C41 was edited, renumbered or re-verdicted, and neither summary table is
+changed. It **claims no completeness** over the third seed: §13.4 states the cap.
+
+It **does not retire, prune, supersede or re-banner this file** — under the ledger form ruled on
+2026-08-26 the ledger CITES into it, so it is load-bearing; the contradiction with this file's own
+banner sentence is reported and acted on by nothing here. It opens **no register row**, allocates
+**no finding number**, proposes **no remedy**, and takes **no verdict** on anything except the
+admission test. It **edits no register entry** and takes no view on any entry's status. It changes
+**no** governing document, **no** tool source, **no** measured value, **no** golden, **no** corpus of
+scores, and nothing under `tools/robust_stop/`. **Whether any of C42–C47 is admitted, and in what
+words, is the user's.**
