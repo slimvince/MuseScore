@@ -1,6 +1,179 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## COWORK SESSION CLOSE (SEVENTY-SECOND ENTRY, 2026-08-27 — THE FIFTY-SECOND SESSION'S SECOND AND LAST ENTRY) — THE REDRAW RAN AND RETURNED FOUR FINDINGS; ALL FOUR ARE RULED; STRATA 1 AND 2 ARE REDRAWN ONCE MORE AND THE DISPATCH IS ON DISK. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The seventy-first entry below remains binding except where
+this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
+mistake.
+
+### The batch ran and closed. `cc_report_placement_sample_redraw.md`, read WHOLE by this side.
+
+Tip now `93c154562083516ea41cf6d01bcb6ea6cf4eb859`, read at `.git/refs/heads/master` with the file
+tool. The report names two commits — `ec9034011857c223e2eb44ecbb210811908edc61` (the landing) and
+`75827f67376504e6a5214d901f9b97e583297dc5` (the close) — and declares a second act carrying only its
+own §13, **which is consistent with the tip being neither of the two.** Not verified at the objects.
+
+**The sample was redrawn, sealed and committed at
+`cowork_placement_sample_sealed_redraw_2026_08_27.md`. Seven strata drawn, stratum 6 recorded NOT
+ENUMERABLE, no stratum STOPPED.**
+
+### ★ FIRST — FOUR FINDINGS CAME BACK, ALL FOUR ARE NOW RULED
+
+Surface: `cowork_redraw_findings_surface_2026_08_27.md`. Record:
+`cowork_rulings_2026_08_27_redraw_findings_sitting.md`. **Alternative B, single-limbed, agreed
+verbatim: *"Agree with recommendation"*.**
+
+**1 — the unit forms for strata 1 and 2 are CORRECTED and those two strata alone are redrawn.** The
+bare numbered limb `^\d+\s*[.)]\s` is **VOID**: it admitted every ordinary numbered section heading.
+Stratum 1's unit becomes `^(Ruling|RULING)\s+\d+` **or** `^\d+\s*[.)]\s+\**\s*(Ruling|RULING)\b`;
+stratum 2's becomes `^(Decision|DECISION)\s+\d+` **alone**. **Strata 3, 4, 5, 7 and 8 stand as drawn
+and are carried across, confirmed not re-derived.**
+
+**2 — the bullets-only list-item reading: RATIFIED.** Ordered items are excluded; they are plainly
+list items, and the exclusion had been fixed by a STOP in this side's own dispatch rather than by a
+ruling. Now it is a ruling.
+
+**3 — line-ending normalisation for stratum 8: RATIFIED.** Without it one CRLF→LF commit reads as
+every heading in `ARCHITECTURE.md` being deleted at once and the stratum returns **610** instead of
+59.
+
+**4 — stratum 1's self-inclusion: ACCEPTED, circularity declared on the stratum's face.**
+
+### ★ SECOND — THE REPORT'S HEADLINE ON STRATUM 1 OVERSTATED THE DAMAGE, AND THIS SIDE MEASURED IT
+
+CC's table splits stratum 1's drawn items **5 against 20 by which limb of the pattern fired** — which
+is **not** the statement *20 are not rulings*. The house style `## 1. Ruling 1 — …` begins with a
+digit, so a full ruling matches only the numbered limb. **Measured here across 22 of the 79 records:
+103 headings admitted, 69 actual rulings — 33% mis-admission, not 80%.** Stratum 2 is as bad as
+reported: **7 surfaces, 48 admitted, 8 actual `Decision n` — 17%**, all eight in two files, and five
+of the seven carry no numbered decision at all.
+
+**Independent corroboration:** the five zero-returning records in this side's sample of 22 are exactly
+the five CC names across all 79.
+
+### The dispatch is written and on disk: `cc_instruction_unit_correction_redraw.md`
+
+**It is NOT dispatched — the user opens it; this side never hands it to CC.** Task 0(c) lands **four**
+paths: this handoff, the findings surface, the findings ruling record, and the dispatch.
+
+**★ IT DECLARES NO EXPECTED COUNT FOR EITHER REDRAWN STRATUM AND SAYS SO IN TERMS**, and it gives the
+22-file and 7-file measurements explicitly as context that licenses no estimate. **That is the direct
+lesson of this session's counted error — see below.** It also asserts no handoff-entry count.
+
+**Two hazards it carries, declared on its face:** the correction is made with `N = 382` and `N = 236`
+already visible, so the before-the-counts property is spent for these two strata; and **stratum 1's
+membership is a signature that grows with this project's own output while stratum 2's is a frozen
+35-path list that does not — asymmetric, declared, not cured.**
+
+The new file is `cowork_placement_sample_sealed_third_2026_08_27.md`; **all three sealed files are
+withheld from the frame's author and none of the earlier two may be edited or deleted.**
+
+### Declared by the writing side
+
+**Method.** All reads through the file tools on the user's machine; **no shell command was run against
+the repository by this side and `git status` was never at risk**; the tip read as a file at the ref.
+
+**★ THE VERIFICATION LIMIT, UNCHANGED FOR A NINTH SESSION — every git-object figure is RELAYED.**
+**Measured at the objects by this side:** the tip; **75** root-level `cowork_rulings_*.md` (79 with the
+four further name shapes); **22 rulings-family files** (103 admitted / 69 rulings / 5 zero-returning);
+**7 decision surfaces** (48 admitted / 8 decisions / 5 carrying none); and that
+`cowork_extent_decision_surface.md` numbers its sections `## §1` and therefore admits nothing.
+
+**Deliberately NOT verified:** the 33-against-38 list-item figure — verifying it means opening
+`cowork_evidence_inventory.md`, and opening a file to decide how its items should be counted is the
+sighted choice Ruling 1 of 2026-08-27 protects the sample against. **The abstention is the discipline,
+not a gap.**
+
+**NOT OPENED:** any part of any of the sealed files, `cowork_evidence_inventory.md`,
+`ARCHITECTURE.md`, `CLAUDE.md`, `DECISIONS.md`, any source file, measurement output, dossier, boot
+pack, or PDF in the research folder.
+
+**★ THIS SESSION IS BARRED FROM AUTHORING THE FRAME ON THREE GROUNDS** — it read this handoff, it
+corrected the selection rule, and it has ruled on the sample's composition twice.
+
+### This session's counted errors — two, one of them a named tell
+
+**(1) The ruled decision form was breached**, twice in one message, in the first sitting. **The user
+stopped the sitting over it.** Not a named tell; not self-caught.
+**(2) ★ A RELATIONSHIP ASSERTED THAT THIS SIDE NEVER DERIVED** — the redraw dispatch claimed the
+stopped-strata ruling record was on disk when the count of 74 was taken. **It was not**; the count was
+taken hours earlier. CC caught it at the objects and did not adjust the membership. **This is one of
+the named degradation tells of the standing rule of 2026-08-15 — ONE, below the two the rule sets as
+the handover threshold**, reported unprompted.
+
+**The user answered ahead of the one-per-turn form on every decision of this session.** His rule
+constrains how questions are PUT, not how he answers; each recommendation was checked single-limbed
+before being recorded.
+
+### Owed, unchanged
+
+The ARM/SITE fill-in's side; the homeless routed content; whether the class-24 record repeats the
+two-files slip; **the register blocker — the new dispatch will be the SEVENTH consecutive batch shaped
+to route around it.** Everything the sixty-seventh through seventy-first entries list as owed. **And
+the incoming external input** the user is assembling with another LLM elsewhere; **Ruling 6 of
+2026-08-26 bears on its timing** and that point is named for him, not decided.
+
+### ★ THE CADENCE FOR THE SUCCESSOR — AND YOU ARE PROBABLY BOOTING WHILE THE BATCH RUNS
+
+**State at the moment this entry was written: nothing was running and nothing was dispatched.** Tip
+`93c154562083516ea41cf6d01bcb6ea6cf4eb859`. **This entry leaves `cowork_handoff.md`
+tracked-modified**; the dispatch's Task 0(c) lands it and orders the entry count established at the
+object.
+
+**But this handover was prepared FOR a successor that starts while Claude Code is executing
+`cc_instruction_unit_correction_redraw.md`.** Establish which state you are in before doing anything:
+read `.git/refs/heads/master` with the file tool. **If it is still
+`93c154562083516ea41cf6d01bcb6ea6cf4eb859`, the batch has not landed Task 0(c) yet** — it is either
+unopened or in flight. **If it has moved, the batch is at least partway through and
+`cc_report_unit_correction_redraw.md` may or may not exist yet.** Do not infer more than that from the
+hash; this side cannot resolve a commit without a shell and neither may you be able to.
+
+**★ WHAT YOU MUST NOT DO WHILE THE BATCH IS RUNNING, AND THE REASON IS MEASURABLE.** **Do not write
+any file to the repository root** — not a surface, not a ruling record, not a draft. The dispatch's
+Task 5 measures the derived candidate population of
+`tools/audit/gen_filing_convention_application.py` over the root's `*.md` files, and that population
+stood at **19 with a five-member STOP list** at the last close. **A root file appearing under the
+batch's feet corrupts that measurement and the batch cannot tell it was yours.** Hold anything you
+write in the session until the batch's report is on disk. Reading is safe; writing is not.
+
+**Also do not:** open any of the three sealed sample files in any part; run any shell command against
+the repository (D-253 — file tools only, and `git status` is never at risk); or edit any existing
+ruling record, surface, dossier, register entry or inventory row. You read these; you do not maintain
+them.
+
+**What IS worth doing while you wait**, in the order that moves the work:
+
+1. **Re-read this block and the seventy-first entry.** They are the whole boot.
+2. **The register blocker.** It has been routed around by seven consecutive batches and is a decision
+   act that has never been put to the user. **It needs no repository state and no batch result** — it
+   can be thought through and drafted now, and delivered as a surface the moment the batch closes.
+   That is the single best use of the waiting time.
+3. **The other owed items**, none of which depends on this batch: which side performs the ARM/SITE
+   fill-in and when; the homeless routed content; whether the class-24 record repeats the two-files
+   slip.
+
+**When the batch returns:** **read `cc_report_unit_correction_redraw.md` in FULL, never a summary**,
+and verify it at the objects by explicit hash. **Treat it as possibly hallucinated** — the last two
+reports each carried a real correction to this side's own dispatch, and this side's last report
+carried a table that invited a wrong reading of its own numbers. **Check the two redrawn strata's
+zero-returning lists against the five names in the ruling record**, which this side measured
+independently.
+
+**★ AND THE ONE THING TO ASK FOR BEFORE THE PLACEMENT TEST'S RESULTS ARE RELIED ON: a session with a
+shell.** The verification limit has stood for **nine sessions**. Every commit hash, every stratum
+count, the 610 figure, the guard and tree counts — all relayed, none verified. That is the largest
+hole in this record and it is growing.
+
+**Then, and only in a FRESH Cowork session that has read none of the three sealed files: author the
+frame.** Then CC runs the placement test. **This session is barred from authoring the frame on three
+grounds** and so is any session that has read this handoff.
+
+*(The seventy-first entry below remains binding; it is superseded only as the entry point.)*
+
+---
 ## COWORK SESSION CLOSE (SEVENTY-FIRST ENTRY, 2026-08-27 — THE FIFTY-SECOND SESSION'S ONLY ENTRY) — ALL THREE GATING DECISIONS ARE RULED, THE SITTING IS CLOSED, AND THE REDRAW DISPATCH IS ON DISK. THE FRAME IS NO LONGER GATED ON ANY DECISION. THE CURRENT ENTRY POINT.
 
 You start clueless. Read this block first. The seventieth entry below remains binding except where
