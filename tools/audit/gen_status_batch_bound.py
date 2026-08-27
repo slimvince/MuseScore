@@ -60,20 +60,20 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "7c32f37fb36c55e16e3504d45934fb692a39be04"
+BASE_COMMIT = "85e0b8da162a5b937f4a4be0f033f5c7d281eddf"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_placement_sample_redraw.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_unit_correction_redraw.md"
 
-ACT_DATE = "2026-08-27"
-DISPATCH = "cc_instruction_unit_correction_redraw.md"
-# TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the re-aiming and
-# the run at its Task 6(b), and the STATUS.md entry this move accompanies at its Task 6(a); both
-# halves of "the same act that writes its own entries" therefore sit inside Task 6, so Task 6 is
-# what the archive header names. The sub-letter is not carried because the header names an act,
-# not a sub-step, and every previous aiming names a whole task.
-TASK = "Task 6"
+ACT_DATE = "2026-08-28"
+DISPATCH = "cc_instruction_framework_pack_preparation.md"
+# TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
+# batch's own `STATUS.md` entries in the same numbered task — its Task 2, item 1 — so both halves
+# of "the same act that writes its own entries" sit inside Task 2, and Task 2 is what the archive
+# header names. No sub-item is carried, because the header names an act rather than a sub-step and
+# every previous aiming names a whole task.
+TASK = "Task 2"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -182,6 +182,9 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_placement_sample_redraw.md, Task 6",
      "base_commit": "ec9034011857c223e2eb44ecbb210811908edc61",
      "the_then_previous_batch": "cc_instruction_placement_sample.md"},
+    {"executing_act": "cc_instruction_unit_correction_redraw.md, Task 6",
+     "base_commit": "7c32f37fb36c55e16e3504d45934fb692a39be04",
+     "the_then_previous_batch": "cc_instruction_placement_sample_redraw.md"},
 ]
 
 ARCHIVE_HEADER = (
