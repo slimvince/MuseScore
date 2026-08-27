@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_placement_sample_redraw.md, Task 6",
+ "dispatch": "cc_instruction_unit_correction_redraw.md, Task 6",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -148,21 +148,26 @@
    "executing_act": "cc_instruction_placement_sample.md, Task 5",
    "base_commit": "9053861b9cc71d8de8dc9c12105abd553620b55a",
    "the_then_previous_batch": "cc_instruction_ledger_admissions.md"
+  },
+  {
+   "executing_act": "cc_instruction_placement_sample_redraw.md, Task 6",
+   "base_commit": "ec9034011857c223e2eb44ecbb210811908edc61",
+   "the_then_previous_batch": "cc_instruction_placement_sample.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "ec9034011857c223e2eb44ecbb210811908edc61",
- "the_then_previous_batch": "cc_instruction_placement_sample.md",
+ "base_commit": "7c32f37fb36c55e16e3504d45934fb692a39be04",
+ "the_then_previous_batch": "cc_instruction_placement_sample_redraw.md",
  "entries_moved": 1,
- "characters_moved": 4268,
+ "characters_moved": 4722,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 4268,
-   "sha256": "e0668ccfe7525b460e2169bd38f9591db942523afa846633d5d57d967ff242b5",
+   "characters": 4722,
+   "sha256": "26f40c2a6cb1f4ac743785c1f9d2d377756db6aed225853c471b2dbf08c603d4",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-27 (CC — **★ THE PLACEMENT SAMPLE IS ENUMERATED, DRAWN, SEALED AND COMMITTED — AND IT IS NOT COMPLETE, BECAUSE STRATA ARE STOPPED.** The fram"
+   "opening": "*2026-08-27 (CC — **★ THE PLACEMENT SAMPLE IS REDRAWN, RE-SEALED AND COMMITTED; NO STRATUM REMAINS STOPPED, AND THE FRAME IS NO LONGER GATED ON ANY DE"
   }
  ],
  "reconciliation": {

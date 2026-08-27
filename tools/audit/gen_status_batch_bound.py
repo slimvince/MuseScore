@@ -60,14 +60,14 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "ec9034011857c223e2eb44ecbb210811908edc61"
+BASE_COMMIT = "7c32f37fb36c55e16e3504d45934fb692a39be04"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_placement_sample.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_placement_sample_redraw.md"
 
 ACT_DATE = "2026-08-27"
-DISPATCH = "cc_instruction_placement_sample_redraw.md"
+DISPATCH = "cc_instruction_unit_correction_redraw.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the re-aiming and
 # the run at its Task 6(b), and the STATUS.md entry this move accompanies at its Task 6(a); both
 # halves of "the same act that writes its own entries" therefore sit inside Task 6, so Task 6 is
@@ -179,6 +179,9 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_placement_sample.md, Task 5",
      "base_commit": "9053861b9cc71d8de8dc9c12105abd553620b55a",
      "the_then_previous_batch": "cc_instruction_ledger_admissions.md"},
+    {"executing_act": "cc_instruction_placement_sample_redraw.md, Task 6",
+     "base_commit": "ec9034011857c223e2eb44ecbb210811908edc61",
+     "the_then_previous_batch": "cc_instruction_placement_sample.md"},
 ]
 
 ARCHIVE_HEADER = (
