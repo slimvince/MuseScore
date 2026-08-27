@@ -1,6 +1,333 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## COWORK SESSION CLOSE (SEVENTY-FIRST ENTRY, 2026-08-27 — THE FIFTY-SECOND SESSION'S ONLY ENTRY) — ALL THREE GATING DECISIONS ARE RULED, THE SITTING IS CLOSED, AND THE REDRAW DISPATCH IS ON DISK. THE FRAME IS NO LONGER GATED ON ANY DECISION. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The seventieth entry below remains binding except where
+this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
+mistake.
+
+### ★ FIRST — THE GATE IS OPEN. NO DECISION BLOCKS THE FRAME ANY MORE
+
+The seventieth entry named three decisions as gating the frame and said no surface had been written
+for any of them. **All three were put, one per turn on its own surface, and all three are ruled.**
+The record is `cowork_rulings_2026_08_27_stopped_strata_sitting.md`, closed, carrying Rulings 1–3.
+
+**The frame is now gated on ONE thing only: the new sealed sample existing.** Every stratum the
+previous batch reported as STOPPED is settled.
+
+### What was ruled
+
+**1 — the four stopped strata are settled by a membership and a unit declared FOR THIS SAMPLE ONLY**
+(surface: `cowork_stopped_strata_surface_2026_08_27.md`). Stratum 1 takes **the ruled definition, 78
+files** — the ground is that it was put to the user and the rival matcher never was, not that 78 is
+the better number. Stratum 2 takes **an explicit list of 35 paths**, no signature, because a filename
+convention on *surface* verifiably admits a dispatch and a ruling record. Stratum 3 takes **25
+`*_dossier.md` files** (26 minus the one that is also a dispatch) with **every markdown list item** as
+a declared stand-in unit — **the weakest thing in the sitting, and a placeable result from it is weak
+evidence.** **Stratum 6 is NOT ENUMERABLE and is not drawn**: its only readable population sits inside
+the evidence inventory and is therefore already stratum 5, and the reading with real coverage needs a
+marker convention that does not exist. **That emptiness is the finding.**
+
+**2 — the three declared readings are all CONFIRMED as CC took them**
+(surface: `cowork_declared_readings_surface_2026_08_27.md`): the inventory row is every list item at
+any depth (`N = 33`); *member* is the whole member file; *heading* is fence-aware (730 / 59).
+**No redraw follows from Ruling 2.**
+
+**3 — the take rule is REPLACED** (surface: `cowork_take_rule_surface_2026_08_27.md`).
+
+### ★ SECOND — THE CURE THE SEVENTIETH ENTRY PROPOSED WAS ITSELF DEFECTIVE
+
+That entry proposed `floor(i·N/T) + 1`. **Its last reachable position is `floor(24N/25) + 1`, so at
+`N = 730` it reaches 701 and twenty-nine items at the end of the ordering remain impossible to draw.**
+It removes four items from the hole and leaves the rest. **Derived by this side from the rule's own
+text and corrected before it could be ruled.**
+
+**What was ruled instead**, for `i = 0 … T−1`, `T = 25` unchanged and still **declared, not derived**:
+
+```
+p_i = 1 + ( i * (N - 1) + 12 ) // 24
+```
+
+**Integer arithmetic, deliberately — a rule stated with *round* is implementation-defined at exactly
+one half and would not be deterministic.** `p_0 = 1` and `p_24 = N` for every `N`: **no region at
+either end is unreachable, at any count.** Its declared cost: **item 1 and item `N` are always
+drawn**, half of which the old rule already paid.
+
+**The counts-visible hazard is spent and is declared as spent.** The rule was changed knowing 33, 59
+and 730. What partly answers it: threshold and take both stay at 25, and the formula is chosen on a
+property statable without any count. What does not: the counts sized the defect and compared the
+candidates. **Read the change as made sighted, because it was.**
+
+### One correction to CC's arithmetic, derived here
+
+CC's report gives stratum 8's unreachable region as positions **51–59**. By the rule's own text
+`k = 2`, the last drawn position is 49, so it is **50–59 — ten items, not nine.** Strata 5 and 7 are
+correct as reported.
+
+### The dispatch is written and on disk: `cc_instruction_placement_sample_redraw.md`
+
+**It is NOT dispatched — the user opens it; this side never hands it to CC.** Task 0(c) lands **six**
+paths: this handoff, the three surfaces, the ruling record, and the dispatch itself.
+
+**★ IT DELIBERATELY ASSERTS NO COUNT OF NEW HANDOFF ENTRIES AND ORDERS CC TO ESTABLISH IT AT THE
+OBJECT.** The last two dispatches both stated one and both were wrong.
+
+**It carries THREE DECLARED READINGS authored by this side and never put to the user**, in the same
+class as the three CC declared last batch — reportable and overturnable, named here so they are not
+mistaken for ruled: (i) the form of a **numbered ruling**, (ii) the form of a **numbered decision** —
+both defined as a heading matching `^(Ruling|Decision)\s+\d+` or `^\d+\s*[.)]\s`, with a file matching
+zero contributing zero and reported as zero, never construed; (iii) **fence-awareness extended from
+headings to list items**, with a STOP if that moves stratum 5 off the ruled `N = 33`.
+
+**What the redraw covers:** strata 5, 7, 8 redrawn; strata 1, 2, 3 drawn for the first time; stratum 6
+recorded not enumerable; **stratum 4's census of 21 carries across untouched — knowable without
+opening the sealed file.** The new file is
+`cowork_placement_sample_sealed_redraw_2026_08_27.md`; it **supersedes**
+`cowork_placement_sample_sealed_2026_08_27.md`, which is **kept, not deleted**, and **BOTH are
+withheld from the frame's author.**
+
+### Declared by the writing side
+
+**Method.** All reads through the file tools on the user's machine; **no shell command was run against
+the repository by this side and `git status` was never at risk**; the tip read as a file at the ref
+and unchanged at `aa3077709117962ab05b27d79466bfacc77a2382`.
+
+**★ THE VERIFICATION LIMIT, UNCHANGED FOR A NINTH SESSION: this side cannot resolve a commit or a blob
+without a shell, so every git-object figure is RELAYED, not verified.** What it did re-establish at
+the objects rather than take from the report: the tip; **74** root-level `cowork_rulings_*.md` files
+and the on-disk presence of all four further ruling records (so **74 against 78 is confirmed**); **31**
+files in `ratification_surfaces/`; the four root-level decision surfaces; **26** root-level
+`*_dossier.md` files and the one dispatch among them; and that a filename signature on *surface* also
+admits a dispatch and a ruling record. **The next session that has a shell should spend it on the
+object-level verification undone since the sixty-third entry.**
+
+**Read whole:** `cc_report_placement_sample.md`, `cowork_rulings_2026_08_27_placement_sample_sitting.md`,
+`cc_instruction_placement_sample.md`.
+
+**NOT OPENED:** `cowork_placement_sample_sealed_2026_08_27.md` **in any part — not its banner, not its
+§0**; `cowork_evidence_inventory.md`; `ARCHITECTURE.md`; `CLAUDE.md`; `DECISIONS.md`; any source file,
+measurement output, dossier, boot pack, or PDF in the research folder. **The abstention from the
+evidence inventory was deliberate and is part of Ruling 2's ground:** choosing how an item is counted
+while looking at the items is the defect Ruling 1 of 2026-08-27 protects the sample against.
+
+**★ THIS SESSION IS BARRED FROM AUTHORING THE FRAME ON THREE GROUNDS** — it read this handoff, it
+corrected the selection rule, and it ruled on the sample's composition.
+
+### This session's counted errors — one, and the user caught it
+
+**The ruled decision form was breached, twice in one message.** After the second surface was
+delivered, this side restated its recommendations in conversation and re-put the choice question in
+the same message — a second wording of the substance, and a question in a turn carrying decision
+content. **The user stopped the sitting over it.** The decision was re-presented in the prescribed way
+and **the conversational restatement is void**. Recorded at the ruling record's §2. **It is not one of
+the named degradation tells and it was not self-caught.**
+
+**The user answered ahead of the one-per-turn form on all three decisions** — the fourth consecutive
+occasion. His rule constrains how questions are PUT, not how he answers; each recommendation was
+checked single-limbed before being recorded as ruled.
+
+### Owed, unchanged
+
+The ARM/SITE fill-in's side; the homeless routed content; whether the class-24 record repeats the
+two-files slip; **the register blocker — the redraw dispatch is the SIXTH consecutive batch shaped to
+route around it, recorded in its fence rather than hidden.** Everything the sixty-seventh through
+seventieth entries list as owed. **And the incoming external input:** the user is assembling, with
+another LLM elsewhere, a comprehensive list of public research, algorithms and software, to be handed
+over where the specifications are bettered against it. **Ruling 6 of 2026-08-26 bears on its timing** —
+a different decomposition cannot be recovered after the frame is ratified — and that point is named
+for him, not decided.
+
+### The cadence for the successor
+
+**NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** Tip `aa3077709117962ab05b27d79466bfacc77a2382`.
+This entry leaves `cowork_handoff.md` tracked-modified; **the dispatch's Task 0(c) lands it and orders
+the entry count established at the object.**
+
+**In order of what moves the work:** the user opens the redraw dispatch; when it returns, **read its
+close in full and verify it at the objects by explicit hash**; then **author the frame in a fresh
+Cowork session** that has read neither sealed file; then CC runs the placement test. Behind those: the
+ARM/SITE fill-in's side, the homeless routed content, and the register blocker whenever the user will
+spend a sitting on it.
+
+*(The seventieth entry below remains binding; it is superseded only as the entry point, and its
+proposed cure for the take rule is superseded on the merits — see above.)*
+
+---
+## COWORK SESSION CLOSE (SEVENTIETH ENTRY, 2026-08-27 — THE FIFTY-FIRST SESSION'S SECOND AND LAST ENTRY) — THE SAMPLE IS DRAWN ON FOUR STRATA AND **STOPPED ON FOUR**; THE TAKE RULE HAS A DEFECT AND IT IS THE WRITING SIDE'S; THE FRAME IS GATED ON THREE DECISIONS NOT YET PUT. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The sixty-ninth entry below remains binding except where
+this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
+mistake.
+
+### The batch ran and closed. `cc_report_placement_sample.md`, read WHOLE by this side.
+
+Tip now `aa3077709117962ab05b27d79466bfacc77a2382`, read at `.git/refs/heads/master` with the file
+tool. The report names two commits — `9053861b9cc71d8de8dc9c12105abd553620b55a` (Task 0(c), the
+seven landings) and `8516cc2d92c75db616ac0d75c76bbed9ecca4b92` (the close) — and declares a third
+act carrying only its own §8.4, **which is consistent with the tip being neither of the two.** Not
+verified at the objects: see the verification limit below.
+
+### ★ FIRST — FOUR OF THE EIGHT STRATA ARE **STOPPED**, AND THE FRAME IS GATED ON EVERY ONE
+
+Drawn and sealed: **4** (deferred register entries, census, `N = 21`), **5** (evidence inventory,
+`N = 33`), **7** (current headings, `N = 730`), **8** (deleted headings, `N = 59`). **96 items.**
+
+**STOPPED, each because the stratum's membership is not determinable from a named object:**
+
+- **1 — ruling records.** Two objects disagree, **74 against 78**. `gen_evidence_pin_membership.py`
+  matches `^cowork_rulings_.*\.md$`; `gen_artifact_inventory.py`'s class
+  `writing-side-ruling-records` also admits `cowork_ruling_`, `cowork_owner_rulings_`,
+  `cowork_pending_rulings_`, `cowork_document_route_rulings_`. **This side confirmed independently
+  that all four extra files are on disk.** ★ **The second signature was PUT TO THE USER AND RULED**
+  (`ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` §16); the first never was.
+- **2 — decision surfaces.** No object enumerates the class, and `ratification_surfaces/` is
+  **refuted as complete at the objects** — root-level surfaces exist, including this phase's own
+  opening surface.
+- **3 — dossiers.** The only tree-wide user-ruled classification deliberately does not separate
+  them (its signature is *path and extension only*, by design), **and the declared unit — "one claim
+  or finding entry" — has no determinable form**; two dossiers opened to check use unrelated
+  structures.
+- **6 — declared dormancies.** The concept is ratified at `CLAUDE.md:251-255`; **no artifact
+  enumerates the population** and three candidate readings disagree, one of them about the subject
+  rather than the extent.
+
+**The pattern, and it is this project's recurring one:** the placement population was named in
+prose at the plan's §6.2 and repeated as eight strata in a ruling, and **half of it has nothing that
+can enumerate it.**
+
+### ★ SECOND — THE TAKE RULE HAS A DEFECT AND IT IS THIS SIDE'S, NOT CC'S
+
+The rule takes positions `1, 1+k, …, 1+24k` with `k = floor(N/T)`. **For `T < N < 2T` it degenerates
+to positions 1…25 — the first twenty-five in the ordering, contiguously — and in every case it
+leaves an unreachable tail.** Because the ordering is path-then-line, that tail is always *the end of
+the last-sorted files*, so the exclusion is **correlated with content, not neutral**. Measured by CC:
+stratum 5 loses items 26–33 (its Layer-5 section contributes nothing); stratum 8 loses 51–59;
+stratum 7 loses 698–730. **CC applied the rule exactly as written and adjusted nothing** — correctly.
+
+**The cure this side would propose:** positions `floor(i·N/T) + 1` for `i = 0…T−1`, `T` unchanged at
+25. **The hazard that comes with it, declared:** the counts are now visible, so any change to the
+rule is made knowing them. What answers it is that the replacement is a general formula and `T` does
+not move — but a successor must put that to the user, not assume it.
+
+### Three declared readings, owed to the writing side and not to CC
+
+CC took, in each case, the reading that adds no judgement of its own, and named the alternative with
+what it changes. **All three are the writing side's to confirm or overturn.**
+(i) stratum 5's *"row"* — every markdown list item, `N = 33`, against top-level only, `N = 24`,
+which would flip the stratum to a census; (ii) strata 7 and 8's *"member"* — the whole member file
+against only its delegated sections; (iii) strata 7 and 8's *"markdown heading"* — fence-aware
+(730 / 59) against naive (737 / 60). **On (iii) the naive reading demonstrably put two shell
+comments into the drawn set**, which is close to decisive.
+
+### ★ A FINDING ABOUT THE LANDING DISCIPLINE, RELAYED FROM CC AND NOT YET VERIFIED
+
+CC established that the tip blob's topmost handoff entry was the **SIXTY-SIXTH**, so **three**
+entries were unlanded, not two. **The sixty-seventh entry's own instruction to land it at the next
+dispatch's Task 0 was not executed by the batch that followed it, and nobody noticed for two
+sessions.** The dispatch's own account of the modification was short by one entry — this side's
+error, below.
+
+### The root population widened, as predicted, and was NOT cured
+
+`cowork_placement_sample_sealed_2026_08_27.md` entered the filing-convention candidate population on
+signature S1 — its tail is the stratum-8 list, every row carrying the word *deleted* beside a commit
+hash. **Candidates 17 → 18; the STOP list behind `[[OI-372]]` 3 → 4.** Nothing classified, nothing
+cured, the guard not regenerated, and **neither new file was shaped to stay out of the population** —
+the dispatch forbade that and CC declares it did not. CC also reports the signature cannot
+distinguish *a document whose own subject was deleted* from *a document that enumerates deletions in
+another document*, and did not re-tune it (DT-2).
+
+### Where the work stands — the frame is gated on THREE decisions, none of them put
+
+**NO SURFACE HAS BEEN WRITTEN FOR THESE.** The successor's first act is to put them, one per turn,
+each self-contained, with no question in the turn that delivers the surface:
+
+1. **How the four stopped strata are settled.** The shape this side would argue for, offered as a
+   reading and not a ruling: an explicit membership **and unit** declared per stratum by the writing
+   side **for this sample only** — not a durable class definition, because the placement test needs a
+   population, not a taxonomy, and a durable taxonomy is process work the standing bar catches. On
+   stratum 1 the ruled signature should beat the unruled one on its face.
+2. **The three declared readings.**
+3. **The take rule's defect** — corrected formula and a redraw of strata 5, 7 and 8, with the
+   counts-visible hazard declared.
+
+**A redraw of the drawn strata plus the addition of the stopped ones is very nearly a whole new
+sample.** That is the honest position and it is better than authoring the frame against a sample
+with a content-correlated exclusion.
+
+**★ AND THE FRAME IS STILL NOT AUTHORED UNTIL ALL OF THAT IS RULED.** The sealed file's banner says
+so in terms. `cowork_placement_sample_sealed_2026_08_27.md` **must not be read by the frame's
+author.**
+
+### Owed, unchanged
+
+The ARM/SITE fill-in's side; the homeless routed content; whether the class-24 record repeats the
+two-files slip; the register blocker — **CC records this as the fifth consecutive batch shaped to
+route around it.** Everything the sixty-seventh, sixty-eighth and sixty-ninth entries list as owed.
+**And now: the incoming external input.** The user is assembling, with another LLM elsewhere, a
+comprehensive list of public research, algorithms and software, to be handed over at the stage where
+the specifications are bettered against it. **Ruling 6 of 2026-08-26 bears on its timing** — a
+different decomposition cannot be recovered after the frame is ratified — and that point is named
+for him, not decided.
+
+### Declared by the writing side
+
+**Method.** All reads through the file tools on the user's machine; **no shell command was run
+against the repository by this side and `git status` was never at risk**; the tip read as a file at
+the ref. **★ THE VERIFICATION LIMIT, STATED PLAINLY: this side cannot resolve a commit or a blob
+without a shell, so CC's object-level figures are RELAYED, not verified** — undone for an eighth
+session. What this side did verify independently: the tip at the ref; the existence on disk of all
+four extra root-level ruling records behind stratum 1's disagreement; and that `cowork_handoff.md`
+measures **812,048 bytes**, matching the blob size CC reports for the working copy.
+
+**Read at the object:** `cc_report_placement_sample.md` **WHOLE, never a summary**;
+`cowork_placement_sample_sealed_2026_08_27.md` **banner and §0 ONLY — no drawn item was read by this
+side, and no drawn item is restated anywhere in this entry.**
+
+**NOT OPENED:** `CLAUDE.md`, `ARCHITECTURE.md`, any source file, any measurement output, any boot
+pack, the class-24 record, any PDF in the research folder.
+
+**★ THIS SESSION IS BARRED FROM AUTHORING THE FRAME ON THREE GROUNDS NOW** — oracle-aware by the
+handoff; it authored the selection rule; and it has opened the sealed sample's banner.
+
+### This session's counted errors — four, and two are the familiar tell
+
+**(1) A hazard asserted that the instrument removes** — the unpayable-take warning; self-caught,
+corrected at the ruling record's §2.1.
+**(2) A count asserted without measuring it.** The dispatch's Task 0(c) said the handoff carried two
+new entries. It carried three. **Taken from the sixty-eighth entry's prose rather than from the
+object** — the tell the user's own standing rule names first.
+**(3) An instrument authored with a defect its wording hid** — the take rule's degenerate case,
+found by CC and not by this side.
+**(4) An instruction that cannot be obeyed literally** — Task 5(d)'s singular *"then commit"*; a
+report cannot carry its own commit hash. CC declared the departure and used this project's own
+precedent. **Same shape as DT-20.**
+
+**★ PER THE USER'S STANDING RULE OF 2026-08-15, THIS SIDE REPORTS THAT IT HAS MADE TWO OF THE NAMED
+DEGRADATION ERRORS IN ONE SESSION** — errors (1) and (2) are both *asserting something never derived
+at the object* — **and recommends the three decisions be put by a fresh session.** This is a verified
+stop: nothing is running, nothing is dispatched, everything this session wrote is landed.
+
+### The cadence for the successor
+
+**NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** Tip
+`aa3077709117962ab05b27d79466bfacc77a2382`. **Seven tracked modifications stood at CC's close, all
+inside its fence and all named at its §8.1; the closing commits take them.** This entry leaves
+`cowork_handoff.md` tracked-modified — **land it at the next dispatch's Task 0, and this time check
+at the object how many entries are new, because the last two accounts of that were wrong.**
+
+**Then: put the three decisions above, one per turn.** Behind them, unchanged: the ARM/SITE
+fill-in's side, the homeless routed content, and the register blocker whenever the user will spend a
+sitting on it.
+
+*(The sixty-ninth entry below remains binding; it is superseded only as the entry point.)*
+
+---
 ## COWORK SESSION CLOSE (SIXTY-NINTH ENTRY, 2026-08-27 — THE FIFTY-FIRST SESSION'S ONLY ENTRY) — THE PLACEMENT SAMPLE IS RULED IN FULL AND ITS DISPATCH IS ON DISK. THE FRAME IS GATED ON ONE THING. THE CURRENT ENTRY POINT.
 
 You start clueless. Read this block first. The sixty-eighth entry below remains binding except
