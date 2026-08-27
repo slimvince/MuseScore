@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 72,
+  "ruling_records_read": 74,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -210,9 +210,11 @@
   "cowork_rulings_2026_08_25_second_vector_sitting.md",
   "cowork_rulings_2026_08_25_v1_sufficiency_sitting.md",
   "cowork_rulings_2026_08_26_amendment_landing_sitting.md",
+  "cowork_rulings_2026_08_26_framework_opening_sitting.md",
   "cowork_rulings_2026_08_26_ledger_dispositions_sitting.md",
   "cowork_rulings_2026_08_26_ledger_form_sitting.md",
   "cowork_rulings_2026_08_26_sizing_tests_sitting.md",
+  "cowork_rulings_2026_08_27_placement_sample_sitting.md",
   "cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
