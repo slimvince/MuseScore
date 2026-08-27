@@ -1,6 +1,440 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## COWORK SESSION CLOSE (SIXTY-NINTH ENTRY, 2026-08-27 — THE FIFTY-FIRST SESSION'S ONLY ENTRY) — THE PLACEMENT SAMPLE IS RULED IN FULL AND ITS DISPATCH IS ON DISK. THE FRAME IS GATED ON ONE THING. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The sixty-eighth entry below remains binding except
+where this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
+mistake.
+
+### What was ruled — one sitting, three rulings, all at `cowork_rulings_2026_08_27_placement_sample_sitting.md`
+
+Put at `cowork_placement_sample_surface_2026_08_27.md`, delivered with no question in its turn.
+**The user then ruled all three in ONE turn**, verbatim: *"I have read it, and agree with the three
+decisions' recommendations."* **Second consecutive sitting where he answered ahead of the
+one-per-turn form; his rule constrains how questions are PUT, not how he answers.** Each
+recommendation was checked single-limbed before being recorded as ruled — the test yesterday's
+decision 5 failed.
+
+**1 (C)** — **CC does not choose the sample.** The selection rule is authored by the writing side
+and written into the dispatch **before any count is known**; CC enumerates, applies it
+mechanically, and **commits** the sealed sample. The ground: Ruling 1 of 2026-08-26 already made CC
+the side that RUNS the placement test, so a CC-drawn sample would be the tested side picking its
+own examination questions. **The commit IS the seal.**
+**2 (B)** — **census the small strata, sample the large ones.** Threshold and take declared before
+the counts: `T = 25`, whole stratum if `N ≤ 25`, else exactly 25 by systematic take. **`T = 25` IS
+DECLARED, NOT DERIVED — no measurement in this project supports it, and it must be cited that way.**
+**3 (A)** — **the seal does not work for two of the eight strata and that is declared, not cured.**
+The frame's author must read ruling records and decision surfaces to know what it may do, and those
+are two strata the sample is drawn from. So: the author writes its **read list into the frame**; the
+placement report gives the proportion **per stratum, never pooled**; a *placeable* result from those
+two strata is weaker evidence and the report says so, while an *unplaceable* one is full strength.
+Blinding the author was put and declined on a named ground, not rejected on merits.
+
+### Where the work stands
+
+**THE FRAME IS GATED ON ONE THING ONLY: the sealed sample.** With these rulings the instrument is
+fully specified and needs no further ruling before it runs.
+
+**THE DISPATCH IS WRITTEN AND ON DISK: `cc_instruction_placement_sample.md`.** **It is NOT
+dispatched — the user opens it, this side never hands it to CC.** Its Task 0(c) lands **seven**
+paths. It does **not** run the placement test and has no frame to run it against.
+
+**★ WHAT THE SUCCESSOR MUST NOT DO.** The frame's author is a **fresh** Cowork session and **must
+not read `cowork_placement_sample_sealed_2026_08_27.md`** once it exists — that file is withheld
+from the author alongside the code. And **the frame is not authored until the user has ruled on
+every stratum the dispatch reports as STOPPED**; a sample missing a stratum nobody ruled on is
+incomplete, not sealed.
+
+### Owed, named so it is not rediscovered
+
+**Which side performs the ARM/SITE fill-in, and when** (Ruling 4 of 2026-08-26). **The homeless
+routed content** — twenty-one defect-catalogue rows, one half of one admitted finding, one further
+candidate — left standing deliberately by Ruling 5 with the user's reservation attached. **Whether
+the class-24 record repeats the two-files slip.** The **register blocker**, still a decision act
+never put; this batch is again shaped to route around it, recorded in the dispatch's fence rather
+than hidden. Everything the sixty-seventh and sixty-eighth entries list as owed is unchanged.
+
+### Standing hazards, carried unchanged
+
+The **register blocker** blocks nothing yet. **DT-20** is still routed to a destination that cannot
+receive it. `[[OI-372]]` the one standing DECISION red — **this batch adds root-level `.md` files
+and can widen it; the dispatch orders that reported, not cured, and forbids shaping the files to
+stay out of the population.** `[[OI-179]]` OPEN and GATES. `[[OI-377]]` OPEN, rowed, deliberately
+not fixed.
+
+### Declared by the writing side
+
+**Method.** All reads through the file tools on the user's machine at his standing instruction; **no
+shell command was run against the repository by this side and `git status` was never at risk**; the
+tip was read as a file at `.git/refs/heads/master` and is
+`0e7186a961f50b32e0552483b289b11069f1319a`, unchanged. Paths staged individually; the root listing
+still exceeds the bridge tool's cap. **No hashes and no line-ending counts taken by this side** —
+undone for a seventh session.
+
+**NOT OPENED BY THIS SIDE:** `CLAUDE.md`, `ARCHITECTURE.md`, any source file, any measurement
+output, the class-24 record, `EMPIRICAL_FINDINGS_LEDGER.md`, any boot pack, and every PDF in the
+research folder. The dispatch form was taken from `cc_instruction_ledger_build.md`, read whole, not
+from the protocol section.
+
+**★ THIS SESSION IS BARRED FROM AUTHORING THE FRAME ON TWO INDEPENDENT GROUNDS** — it is
+oracle-aware for the harmony-boundary unit by having read this handoff, and it authored the sample's
+selection rule.
+
+**Memory filesystem.** `/preferences.md` and `/areas/musescore-arranger.md` read before any
+judgement. No repository content written to it.
+
+**Relayed, not re-measured:** the sizing record's three defects; the pilot's results; the ledger's
+entry count; the register's 477 entries; the rulings sort's totals; every figure of the
+sixty-seventh and sixty-eighth entries beyond the tip. **The size of every one of the eight strata
+is measured by nobody and asserted nowhere.**
+
+### This session's counted errors — one, self-caught
+
+**A hazard asserted that the instrument removes.** The surface warned against a take too large to
+pay; under a per-stratum cap that case cannot arise, and the real residual is a wide uncertainty
+range. Caught while writing the rule, corrected at the ruling record's §2.1 **beside** the text,
+not over it.
+
+### The cadence for the successor
+
+**NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** The tip is unchanged at
+`0e7186a961f50b32e0552483b289b11069f1319a`. **SEVEN root-level files are on disk untracked or
+tracked-modified and the dispatch's Task 0(c) names all seven** — this handoff, the opening surface,
+the framework-opening ruling record, the literature report, the placement-sample surface, today's
+ruling record, and the dispatch itself. No pending file was created and none should be looked for.
+
+**Then, in order of what moves the work:** the user opens the dispatch; when it returns, **read its
+close in full and verify it at the objects by explicit hash**; rule on any STOPPED stratum; then
+**author the frame in a fresh Cowork session** that has not read the sealed sample. Behind those:
+the ARM/SITE fill-in's side, the homeless routed content, and the register blocker whenever the user
+will spend a sitting on it.
+
+*(The sixty-eighth entry below remains binding; it is superseded only as the entry point.)*
+
+---
+## COWORK SESSION CLOSE (SIXTY-EIGHTH ENTRY, 2026-08-26 — THE FIFTIETH SESSION'S ONLY ENTRY) — THE FRAMEWORK PHASE IS OPEN, SIX RULINGS TAKEN, THE LITERATURE ACT RUN AND ITS PREMISE FOUND FALSE. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The sixty-seventh entry below remains binding except
+where this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
+mistake.
+
+### ★ FIRST — A PREMISE OF A RATIFIED SURFACE IS FALSE AT THE OBJECT
+
+`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3.3 says *"the
+research-papers class holds **two files** against a method resting on fetched-and-read
+literature."* **Measured at the folder today: `docs/research_papers/` holds FIFTY-EIGHT PDFs plus
+`BIBLIOGRAPHY.md` and `README.md`.** Two is the count of what this repository **tracks** — the
+binaries are gitignore-guarded and live in the private repo `slimvince/research-papers`, as
+`README.md` states. **A fact about git was read as a fact about the project's holdings, and it has
+stood in a ratified surface since 2026-08-15.** The class-24 record itself was **not** opened; the
+correction is against that sentence only.
+
+### What was ruled — one sitting, six rulings, all at `cowork_rulings_2026_08_26_framework_opening_sitting.md`
+
+Put at `cowork_framework_phase_opening_surface_2026_08_26.md`, delivered with no question in its
+turn. **The user then ruled five in ONE turn** rather than one per turn — his own rule constrains
+how questions are PUT, not how he answers; recorded at the record's §0.
+
+**1 (A)** — a **fresh** Cowork session authors the frame; **CC runs the placement test**. Recorded
+with it: CC boots with the whole of `CLAUDE.md`, so the placing side is **not blind** — which does
+not defeat a test that requires *non-authorship*, not blindness.
+**2 (B)** — the literature-reachability act is **separate and prior**, with its STOP written into
+the ruling.
+**3 (B)** — the placement sample is **stratified and SEALED before the frame's author begins**.
+Sizing it from the pilot's sizing record is **explicitly not adopted** (that record is labelled
+NOT A BUDGET).
+**4 (A)** — the **no-code-sites instruction STANDS**; the **ARM** and the **SITE** are filled in
+afterwards by a side permitted to read code, the gap **declared on the frame's face**, and the two
+sub-fields **not dropped without the worth test**.
+**5 (A, "for now")** — the cross-layer transfer list opens **narrow**. The user's reservation is
+part of the ruling: the wider shape is **parked, not refused**.
+**6 (§6A)** — **on a finding the USER raised, not this side's.** He asked at what point we check
+for public ideas we have missed. Confirmed at the objects: the sources are defined as *"published
+research actually fetched and read"* and the act was scoped to *"the literature **this project
+rests on**"* — a set closed by what we already cite. **The only outward-facing hook in all six
+phases is reactive** (*"underived: open, needs a ruling or new research"*). So the act was
+**widened** and allocated to the fiftieth session, which ran it.
+
+### What was run, and what it returned — `cowork_literature_reachability_2026_08_26.md`
+
+**THE RULED STOP DID NOT FIRE.** Every core joint-model and factor-form source whose subject is a
+state or factor space has a local copy — Raphael & Stoddard 2003, Catteau 2006, Temperley 2009,
+Masada & Bunescu 2019, Harana 2023, Korzeniowski & Widmer 2018, Harasim 2018, Feisthauer 2020,
+Teodoru & Raphael 2007, the CRF machinery, and the whole neural lineage through AnalysisGNN 2025.
+**The frame is authored from four sources, not three.**
+
+**ONE REAL GAP, and it is a primary source rather than a version: Krumhansl 1990.** Five of the six
+non-local register rows have a local substitute by the same authors on the same model. **If
+level one rests on key profiles, their primary source is not on disk.** Named, not disposed of.
+
+**Part (ii) returned THIRTEEN CANDIDATES, bounded on the face of the list as candidates only** — no
+admission, no ranking, no establishment status. **Only ONE was read (BACHI, page fetched); the
+other twelve are title and abstract.** The sweep's own bound — six queries, named, non-exhaustive —
+is **declared and NOT discharged**. The four that bear hardest on undecided questions: **BACHI**
+(factors the chord LABEL into root × quality × bass; boundaries a supervised signal, not a decoded
+variable); the **neural HSMM** (duration in the state, no labelled analyses); **keyscapes** and
+**Wavescapes** (decline a single segmentation entirely); **Jacoby/Tishby/Tymoczko** (derive the
+functional categories rather than assume them).
+
+### Where the work stands
+
+**THE FRAMEWORK PHASE IS OPEN AND ITS FIRST RULED ACT IS DISCHARGED.** The frame is **not**
+authored. **The next act is authoring it, and it must be a FRESH Cowork session** — this one is
+barred by Ruling 1 and is oracle-aware besides.
+
+**Before the frame is authored, the placement sample must be drawn and SEALED** (Ruling 3). Its
+side is not allocated; the deleted-headings stratum needs repository history, which points at CC.
+
+### Owed, named so it is not rediscovered
+
+**Which side draws and seals the placement sample** (Ruling 3). **Which side performs the ARM/SITE
+fill-in, and when** (Ruling 4). **The homeless routed content** — twenty-one defect-catalogue rows,
+one half of one admitted finding, one further candidate — left standing **deliberately** by
+Ruling 5 with the user's reservation attached; it is owed, not disposed. **Whether the class-24
+record repeats the two-files slip.** Everything the sixty-seventh entry lists as owed is unchanged.
+
+### Standing hazards, carried unchanged
+
+The **register blocker** is still a pattern and still never put to the user; it blocks nothing yet.
+**DT-20** is still routed to a destination that cannot receive it. `[[OI-372]]` the one standing
+DECISION red. `[[OI-179]]` OPEN and GATES. `[[OI-377]]` OPEN, rowed, deliberately not fixed.
+
+### Declared by the writing side
+
+**Method.** All reads through the file tools on the user's machine at his standing instruction;
+**no shell command was run against the repository by this side and `git status` was never at
+risk**; the tip was read as a file at `.git/refs/heads/master` and is
+`0e7186a961f50b32e0552483b289b11069f1319a`. Paths staged individually; the root listing still
+exceeds the bridge tool's cap. **No hashes and no line-ending counts taken by this side** — undone
+for a sixth session. The web searches ran from the Cowork environment, which is the capability
+Ruling 6 allocated this act here for.
+
+**NOT OPENED BY THIS SIDE:** `CLAUDE.md`, `ARCHITECTURE.md`, any source file, any measurement
+output, the class-24 record, and every PDF in the research folder.
+
+**THIS SESSION IS ORACLE-AWARE FOR THE HARMONY-BOUNDARY UNIT** by having read this handoff, which
+states the oracle's top evidence class in prose. It must not derive that unit blind. **Ruling 1
+independently bars it from authoring the frame.**
+
+**Memory filesystem.** `/preferences.md` and `/areas/musescore-arranger.md` read before any
+judgement. No repository content written to it.
+
+**Relayed, not re-measured:** the ledger's entry count; the pilot's withdrawal-rate result; the
+sizing record's three defects; the rulings sort's totals; the register's 477 entries; the
+README's account of what each user-supplied paper settled; every redistribution tier in the
+register.
+
+### This session's counted errors — two, both the familiar class
+
+**(1) An artifact reasoned about without opening it.** The opening surface's Decision 1 argued that
+CC's network reach *"has been the constraint before"*. **No object supports that.** The handoff
+records CC's boot contamination, not a network constraint. The recommendation does not turn on it —
+the untested-capability argument stands on its own — but the sentence was asserted from nothing.
+**Self-caught while writing this close.**
+
+**(2) A relayed fact stated bare.** The same decision stated CC's whole-`CLAUDE.md` boot as fact.
+It is the sixty-seventh entry's declaration, and the surface's §5 labelled the handoff's figures
+generally but not this one.
+
+**★ The counterweight. The session's most valuable act came from the USER'S question, not from this
+side's plan** — the widened sweep, and with it the discovery that a ratified surface has carried a
+false premise for eleven days. This is the sixty-fifth, sixty-sixth and sixty-seventh entries'
+conclusion reached a fourth time: **the corrective mechanism is the user asking a sharper
+question.**
+
+### The cadence for the successor
+
+**NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** The tip is unchanged at
+`0e7186a961f50b32e0552483b289b11069f1319a`. **THREE root-level files are on disk and untracked or
+tracked-modified — `cowork_handoff.md` (this entry), the opening surface, the ruling record — plus
+`cowork_literature_reachability_2026_08_26.md`. LAND ALL FOUR AT THE NEXT DISPATCH'S TASK 0.** No
+pending file was created and none should be looked for. **Do not write a dispatch on arrival.**
+
+**Then, in order of what moves the work:** settle who seals the placement sample and seal it; then
+**author the frame in a fresh Cowork session**. Behind those: the ARM/SITE fill-in's side, the
+homeless routed content, and the register blocker whenever the user will spend a sitting on it.
+
+*(The sixty-seventh entry below remains binding; it is superseded only as the entry point.)*
+
+---
+## COWORK SESSION CLOSE (SIXTY-SEVENTH ENTRY, 2026-08-26 — THE FORTY-NINTH SESSION'S ONLY ENTRY) — THE PILOT IS FINISHED, THE LEDGER IS BUILT, AND THE FRAMEWORK PHASE IS GATED ON NOTHING. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The sixty-sixth entry below remains binding **except at the
+three corrections below**, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short, per the standing bar the sixty-sixth entry set and the user's own bar on acts about
+the process rather than the analysis software. Bold is reserved for what stops a successor making a
+mistake.
+
+### ★ FIRST — THREE PLACES WHERE THE SIXTY-SIXTH ENTRY IS WRONG, MEASURED AT THE OBJECTS
+
+Read these before anything else, because a successor reading that entry alone will inherit all three.
+
+**(1) "The pilot's one unfinished half is SIZING … Unscoped by every session so far" — FALSE.** Sizing
+was scoped on 2026-08-24 across three sittings the user ruled (`…sizing_pilot_sitting.md`, "This far
+agree on A A A"; `…sizing_leak_list_sitting.md`; `…sizing_brief_sitting.md`, "agree"), with a ruled
+six-step execution order. Steps (1)–(4) were done and **the derivation ran** —
+`cowork_blind_derivation_scoring_model_2026_08_24.md`, landed. What was actually outstanding was that
+its tests were **HELD**, on a ground no later ruling had touched: *its input is the output whose
+blinding failed*. **The gloss originates one document upstream**, at the v1-sufficiency record's
+closing notes, and the sixty-sixth entry relayed it faithfully.
+
+**(2) The three-item gloss of the sizing record is not the ruled list.** Plan §6.1 names six; the ruled
+brief's §5 names six that are **not the same six**. *(And this session then wrote a **fourth** wording
+into `cc_instruction_sizing_tests.md` Task 2 — see the errors below.)*
+
+**(3) Non-oracle-awareness for the `scoring-model` unit protects nothing ruled.** Ruling 1 of the
+sizing-pilot sitting: *"this unit is not held out and has no oracle"*; withholding in the held-out
+shape was put and **declined**. Re-measured this session at 0 withheld identities, 0 documents,
+0 passages. **The sixty-fifth and sixty-sixth entries treat that blindness as load-bearing. It is not.**
+
+**The sixty-sixth entry was RIGHT where this side doubted it:** *"the format test (b), on which no
+sitting has ruled"* is correct — Ruling 3 of the sizing-pilot sitting ruled how (b) would run; whether
+it survives the contamination was left undecided in three records.
+
+### What was ruled today — five sittings, all recorded at the root
+
+`…2026_08_26_sizing_tests_sitting.md` — the tests batch **UN-HELD**; both (a) and (b) run with the
+contamination as a named bound on each; the content-independence question **measured, not assumed**.
+*(Its §8 carries two corrections of record to its own §3, added after the batch returned.)*
+`…2026_08_26_ledger_form_sitting.md` — the ledger is **one hand-written record whose entries CITE and
+never transcribe** (the user's word "C"); no generator built.
+`…2026_08_26_ledger_dispositions_sitting.md` — C9 restated on the music and admitted ("B"); five
+candidates disposed as proposed ("confirm"); C45 split three ways ("A").
+
+### Where the work stands
+
+**THE PILOT IS FINISHED.** (a) the withdrawal rate — run, **0 of 36**, labelled UNCITABLE at the point
+it appears. (b) the format test — run on the ruled sample of five; **S8 returns field six not
+returnable without interpretation**; separability **YES on this sample**, argued not established.
+(c) the held-out test — not owed. The sizing record — reported, labelled **NOT A BUDGET** with its
+three defects (failed blinding; 18 % input coverage, 44 of 241 design-intent entries; and its own
+session's declaration that **the clock is a model's generation time, not an analyst's hours**).
+
+**THE LEDGER EXISTS** — `EMPIRICAL_FINDINGS_LEDGER.md`, **35 entries**, counted at the file by the
+writing side. All three ruled seeds represented. The third seed's coverage bound is **declared and not
+discharged**: reached by pattern over the register's entry headings, 477 entries not all read.
+
+**THE FRAMEWORK PHASE IS GATED ON NOTHING.** Its two open decisions are ruled — the grain of a unit is
+**derived inside the phase** (Ruling 2, 2026-08-21), and every unplaceable statement is a finding with
+**no bright line** (Ruling 5).
+
+**The next act is the framework phase's opening surface.** What it will require, read at §6.2 this
+session: four derivation sources, none weighted above the others — the annotation schema; the state and
+factor spaces of **published models, fetched and read**; theory including what annotators do not write
+down; and the ratified factorization. Current and deleted headings are **not** the frame's source; they
+are the test population. **The placement test is run by the side that did NOT author the frame** — a
+role constraint that must be settled before the frame is authored, not after. The **cross-layer
+transfer list opens with this phase**, which is the candidate mechanism for the homelessness problem.
+And **the format test (b) runs here if the pilot did not discharge it** — the pilot reached three of
+its five sub-fields, so the **ARM** and the **SITE** are still untested and this is where they have a
+home, though whether they become reachable there is unknown.
+
+### Owed, named so it is not rediscovered
+
+**Discharged today:** the boot packs, which the sixty-sixth entry called the most urgent thing it
+carried. Both regenerated, `--check` green, all six withheld counts unchanged.
+
+**Still owed:** the decision-surface residue entry and its two routes; a register class for *"register
+business, no specification home owed"*; whether either superseded item is owed a register entry; the
+register entries for un-holding the tests batch and for the seven dispositions; where the **ARM** and
+the **SITE** get tested; and the candidates file's own banner, which calls it *"superseded by the
+ledger itself"* while the ruled ledger form makes it **load-bearing** — it must not be retired.
+
+**★ THE REGISTER BLOCKER IS NOW A PATTERN, NOT AN INCIDENT.** `apply_soft_discard.py --check` and
+`apply_residue_discard.py --check` are mutually unsatisfiable with register rule (c) for every addition
+after 2026-08-17. **Four consecutive batches have been shaped to route around it**, each leaving another
+entry owed. Curing it means running a ruled discard act in write mode; **it is a decision act and has
+never been put to the user.** It blocks nothing yet.
+
+### Standing hazards
+
+**DT-20 — an instruction whose mandatory or unavoidable use defeats a requirement it serves — was hit
+five ways in one day** and it is still routed to a destination that cannot receive it. The routes:
+`cowork_handoff.md` itself states the harmony-boundary oracle's top evidence class; the boot-pack
+generator's authored table states the withheld oracle's ranking in prose; the blinding-failure record
+**quotes the withheld sentence verbatim in order to record that it leaked**; a CC session's boot carries
+the whole of `CLAUDE.md` before its first token, which is what voided the method; and this session's own
+ordered reading-order departure was obeyed to the letter and **could not have the effect it was ordered
+for**, for the same reason.
+
+**★ A guard that documents can be written around.** `gen_filing_convention_application.py` fires on a
+fate word plus a 7+ hex run in a document's last 25 non-blank lines. CC declared that its report's
+absence from the candidate list is **engineered** — hashes deliberately kept out of that tail. Every
+*"the list did not widen"* result taken from a CC report inherits that.
+
+**A measurement tool that writes when asked for help.** `gen_session_start_read_size.py --help` is not
+consumed by its parser and runs in default write mode.
+
+`[[OI-372]]` the one standing DECISION red, never regenerated; its candidate list is the same three.
+`[[OI-179]]` OPEN and GATES. `[[OI-377]]` OPEN, rowed, deliberately not fixed.
+
+### Declared by the writing side
+
+**THIS SESSION IS ORACLE-AWARE FOR THE HARMONY-BOUNDARY UNIT, by three routes and none chosen** — the
+handoff's sixty-sixth entry, the boot-pack generator's source, and the blinding-failure record's
+verbatim quotation. **`CLAUDE.md` was never opened.** For `scoring-model` the question does not arise
+(see correction (3)). **Neither blind output was opened**; the sizing tests' reading file was not read
+by this side either.
+
+**Method.** All reads through the file tools on the user's machine at his standing instruction; **no
+shell command was run on the repository by this side and `git status` was never at risk**. Paths staged
+individually; the root listing still exceeds the bridge tool's cap and was read by pattern search.
+**No hashes and no carriage-return counts taken by this side** — undone for a fifth session.
+
+**Memory filesystem.** `/preferences.md` and `/areas/musescore-arranger.md` read before any judgement;
+one line appended to the latter, a role boundary the user stated. No repository content written to it.
+
+**Relayed, not re-measured:** every figure of the four batch reports beyond the tip and the ledger's
+own entry count.
+
+### This session's counted errors — ten, and the classes are the familiar two
+
+**Reasoning about an artifact without opening it (four).** (1) *"The pilot is soon reaching an end"*
+confirmed to the user with the contamination and the hold unread. (2) The dispositions record's §3
+claimed test (a)'s harvest was *"additive to the 31-admission seed … from a different source
+entirely"* — a coverage bound read as a source list; the dead-end corpus **is** that seed's largest
+contributor and the harvest was additive by nothing. (3) The same §3 grounded (b) on being the only
+test of five unestablished sub-fields; **three are reachable**. (4) A ruling was cited against
+re-deriving the sizing unit that applies to a different unit and a different test.
+
+**An instruction written too narrow (four).** (5) A fourth wording of the sizing record written into a
+dispatch. (6) `cc_instruction_ledger_build.md` Task 0(c) omitted
+`cowork_fact_gate_admissions_2026_08_26.md`, so the committed ledger cited an untracked target — cured
+the next batch. (7) A figure (477) ordered restated into a governing document against **D-431**. (8) A
+STOP condition proposed for the third seed that would have gated the framework phase behind an
+undispositioned harvest — **self-caught before the dispatch was written**.
+
+**Two of form.** (9) *"I hand A to CC"* — the writing side does not; the user opens it. (10) *"When it
+returns"* said of a dispatch.
+
+**★ The counterweight, recorded because it is what held.** **Four batches ran, none stopped, and every
+fence held.** Nothing landed in the repository on a wrong premise. Every one of errors (2), (3) and (6)
+was caught **by the batch the writing side had itself ordered** — the fact-check tasks worked. And the
+corrective mechanism in the rest was the user asking a sharper question, which is the sixty-fifth and
+sixty-sixth entries' conclusion reached a third time.
+
+### The cadence for the successor
+
+**NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** The tip is
+`0e7186a961f50b32e0552483b289b11069f1319a` (ref side). **This entry leaves `cowork_handoff.md`
+tracked-modified; land it at the next dispatch's Task 0.** No pending file was created and none should
+be looked for. **Do not write a dispatch on arrival.**
+
+**Then, in order of what moves the work: put the framework phase's opening surface.** It is the next
+act and it is large. Behind it, in the order the record already gives: the homelessness question, which
+the cross-layer transfer list opens with that phase; and the register blocker, whenever the user is
+willing to spend a sitting on it.
+
+*(The sixty-sixth entry below remains binding except at the three corrections above; it is superseded
+only as the entry point.)*
+
+---
 ## COWORK SESSION CLOSE (SIXTY-SIXTH ENTRY, 2026-08-26 — THE FORTY-EIGHTH SESSION'S ONLY ENTRY) — THE METHOD IS USABLE FOR v1, TWO PHASES ARE UN-HELD, AND THE LEDGER'S SEED IS COMPLETE. THE CURRENT ENTRY POINT.
 
 You start clueless. Read this block first. The sixty-fifth entry below remains binding except where
