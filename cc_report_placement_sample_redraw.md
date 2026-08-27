@@ -731,5 +731,45 @@ absence engineered and this one is stating the opposite about itself, at the mec
 can be told apart.
 
 **The tree state at the close is §9.4.** The commit that carries this report cannot state its own
-hash; if a second commit is made whose whole diff is that one line, it is declared here in advance as
-this project's own precedent, twice used.
+hash, so §13 below adds it in a second act.
+
+---
+
+## 13. This batch's own two commit hashes
+
+**★ A DECLARED DEPARTURE FROM TASK 6(d)'s LETTER, which says *write the report, then commit*, in the
+singular.** The closing commit's hash is knowable only after that commit exists, so it is added here
+in a **second act whose entire diff is this one new section of this one file**. The path is inside
+the dispatch's own fence, so no fence is widened and the standing clause's STOP is not engaged; what
+departs is the singular *then commit*, and it is recorded rather than passed over. **The precedent is
+this project's own** — the previous two batches each recorded their closing arithmetic the same way,
+in a further commit touching exactly one path, and the dispatch names that precedent itself.
+
+| act | commit |
+|---|---|
+| Task 0(c), the landing | `ec9034011857c223e2eb44ecbb210811908edc61` |
+| the close — the sealed sample, this report, `STATUS.md`, the forward bound, the sweep artifacts | `75827f67376504e6a5214d901f9b97e583297dc5` |
+
+**The closing commit touched exactly nine paths**, enumerated by
+`tools/audit/changed_paths.py --commit 75827f67376504e6a5214d901f9b97e583297dc5`: `STATUS.md`,
+`STATUS_ARCHIVE.md`, `cc_report_placement_sample_redraw.md` (added),
+`cowork_placement_sample_sealed_redraw_2026_08_27.md` (added),
+`tools/audit/evidence_pin_membership.json`, `tools/audit/gen_status_batch_bound.py`,
+`tools/audit/guard_state.json`, `tools/audit/session_start_read_size.json`,
+`tools/audit/status_batch_bound.json`. **Every one is inside the fence and every one is named in
+§9.1.** Nothing of the standing untracked population was committed.
+
+**NOTHING ELSE MOVES IN THIS SECOND ACT:** no stratum re-enumerated, no item added to, removed from
+or reordered in the sealed sample, no guard run, no artifact regenerated, no other path touched, no
+`STATUS.md` edit, no register entry, no ratification, no admission, no `src/` change, no test
+changed, moved or run, no golden, nothing under `tools/corpus/` or `tools/robust_stop/`, no
+open-items row created, flipped or discarded and no finding number allocated. **The sealed sample is
+unchanged and no stratum is STOPPED.**
+
+**★ AND THE ROOT-POPULATION MEASUREMENT WAS RE-TAKEN WITH THIS SECTION ON DISK**, because this
+section puts two commit hashes into the file's tail and that is precisely what S1's marker half
+looks for. `gen_filing_convention_application.py --derive-only` still returns **19 candidates** and
+this report is still not among them: the hashes stand on lines that carry no fate word, and the fate
+words in this section stand on lines that carry no hash. **Again, nothing was arranged to produce
+that** — it is reported here so the check is on the record rather than assumed to have been
+unnecessary.
