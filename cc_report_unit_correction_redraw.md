@@ -646,6 +646,47 @@ Performed on the diff actually on disk, per the standing rule, before this repor
 
 ## 13. The close
 
-*This section is written AFTER the closing commit, in the second act the dispatch anticipates at
-Task 6(d): a report cannot carry its own closing commit hash. It records the two commit hashes, the
-end-state arithmetic, and the re-taken root-population measurement with those hashes on disk.*
+**★ A DECLARED DEPARTURE FROM TASK 6(d)'s LETTER, which says *write the report, then commit*, in the
+singular.** The closing commit's hash is knowable only after that commit exists, so this section is
+added in a second act whose whole diff is one new section of one file. **The path is inside the
+dispatch's own fence**, so no fence is widened and the standing clause's STOP is not engaged; the
+departure is the singular *then commit*, and it is recorded rather than passed over. **The dispatch
+names the precedent itself, and it is this project's own** — the last two batches each recorded their
+closing arithmetic the same way, in a further commit touching exactly one path.
+
+**The two commits.**
+
+| | commit |
+|---|---|
+| the Task 0(c) landing | `7c32f37fb36c55e16e3504d45934fb692a39be04` |
+| the close | `01996f266a4e7b158f283b233dc69870aa3dce61` |
+
+**The nine paths the closing commit touched**, enumerated by
+`python tools/audit/changed_paths.py --commit 01996f266a4e7b158f283b233dc69870aa3dce61` and not by
+`git status` — `STATUS.md`, `STATUS_ARCHIVE.md`, `cc_report_unit_correction_redraw.md` (added),
+`cowork_placement_sample_sealed_third_2026_08_27.md` (added),
+`tools/audit/evidence_pin_membership.json`, `tools/audit/gen_status_batch_bound.py`,
+`tools/audit/guard_state.json`, `tools/audit/session_start_read_size.json`,
+`tools/audit/status_batch_bound.json`. **Every one of the nine is inside the fence and every one is
+named in §10.** *9 files changed, 1,986 insertions, 27 deletions.*
+
+**The end state, measured after the closing commit:** **832 changed path records, all of them
+untracked, and ZERO tracked modifications.** 841 − 9 = 832 closes against §11's close-state row, and
+the standing untracked population is exactly what it was after the landing.
+
+**THE ROOT-POPULATION MEASUREMENT WAS RE-TAKEN**, because this very section puts two commit hashes
+into the report's tail and that is exactly what the guard's marker half looks for. **It still returns
+20 candidates and the same six-member STOP list, and this report is still not among them.** What the
+guard's verdict means, stated plainly: **S1 needs a fate word and a marker on ONE line, and in this
+file's tail they never meet** — the two commit hashes stand in a table whose rows carry no fate word,
+and the fate words in §10's and §13's closing paragraphs stand on lines that carry no run of seven or
+more hexadecimal characters. **Nothing was arranged to produce that**, and the check is recorded
+rather than assumed to have been unnecessary.
+
+**NOTHING ELSE MOVES.** No stratum re-enumerated, no item added to, removed from or reordered in the
+sealed sample, no guard run, no artifact regenerated, no other path touched, no `STATUS.md` edit, no
+`CLAUDE.md`, `ARCHITECTURE.md` or `DECISIONS.md` edit, no register entry, no ratification, no
+admission, no `src/` change, no test changed, moved or run, no golden, nothing under `tools/corpus/`
+or `tools/robust_stop/`, no open-items row created, flipped or discarded, and no finding number
+allocated. **The sealed sample is unchanged, no stratum is STOPPED, and the frame remains gated on
+nothing but that file's existence — which it now has.**
