@@ -30,7 +30,7 @@
     "re_derives_a_live_invariant": 69,
     "records_a_point_in_time_measurement": 16,
     "neither_not_a_guard": 2,
-    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 3
+    "live_tools_that_FAIL_at_the_committed_tree_and_STAY": 4
   },
   "tools_that_leave_the_live_guard_list": [
     "tools/audit/decisions/gen_finish_line_item1_routes.py",
@@ -53,6 +53,7 @@
   "live_tools_that_fail_and_stay": [
     "tools/audit/decisions/apply_residue_discard.py",
     "tools/audit/decisions/apply_soft_discard.py",
+    "tools/audit/gen_derivation_boot_pack.py",
     "tools/audit/gen_filing_convention_application.py"
   ],
   "rows": [
@@ -398,7 +399,7 @@
       "evidence": "gen_derivation_boot_pack.py, THE STOPS and WHAT THIS DOES NOT ASSERT paragraphs of its module docstring; `locate()`, which requires an anchor to match exactly one line; `withhold_passage()`, which locates the withheld passage by its own text inside the bullet the ruling scopes it to; `build_subject()`, which reconciles the authored verdicts against the derived candidate population in both directions; `check_all()`, which compares the manifest and every pack file byte for byte and the directory's membership both ways",
       "why": "LIVE. Everything it asserts is a demand about the record AS IT STANDS, and each becomes false the moment the record moves under it. Its member spans are not stored: each is LOCATED BY ITS OWN ANCHOR TEXT on every run, in five governing documents, and an anchor that is missing or matches twice HALTS it — so a heading moving under one of those documents is reported on the day it moves rather than silently re-cutting a span from a drifted coordinate, which is the whole reason the boot list was ruled by anchor and never by line number. The withheld PASSAGE is located the same way and halts on the same conditions. Its population is live too: the candidate list is re-derived from the rulings sort and the decisions register's data file on every run, and the authored verdicts and that population must agree in BOTH directions, so an entry entering or leaving the DESIGN-INTENT class halts it instead of being graded by silence or quietly dropped (D-671). The `ARCHITECTURE.md` spans the criterion reads are located by their own text on every run as well. It carries no recorded commit and reads none, so the OI-301 shape does not arise for it: it is not a record of a completed act but a rendering of the current record, and it is MEANT to move when its sources move. ★ WHAT IT DOES NOT ASSERT: that any withheld-family verdict is RIGHT — every verdict is AUTHORED and clears no guard until the user rules the reviewed set (D-655); that the candidate criterion is COMPLETE — its reach is a pattern match over the register's own text, UNMEASURED, and stated as such on the artifact under D-673, whose test is met because no analysis decision consumes the enumeration; and that the members rendered whole carry no other leak — the leak check is scoped to the two members this tool GENERATES and the artifact says so of itself. ★ AND IT BOOTS NO SESSION: rendering the pack is not opening it.",
       "in_the_live_guard_list_after_this_classification": true,
-      "state_at_the_committed_tree": "PASS"
+      "state_at_the_committed_tree": "FAIL"
     },
     {
       "tool": "tools/audit/gen_discard_reach_split.py",

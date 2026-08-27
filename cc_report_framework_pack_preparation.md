@@ -367,8 +367,97 @@ Performed by re-reading the diff of every touched path, not the memory of writin
    declared as such on the artifact. **No difference between two measured quantities is asserted
    anywhere in this report**, so #24's demand does not arise.
 
-## 12. The end state — NOT asserted here
+## 12. The end state — written in the further commit the dispatch's Task 2 item 3 requires
 
-**Per the dispatch's Task 2 item 3, this close does not assert the end state.** The further commit
-carries it, and this section is completed there with: the closing commit's own hash, the end-state
-commit's hash, and the fresh full guard run made at the tree the close left.
+*The close commit did not assert this section; it is added here, in the one further commit, which is
+the only act that can carry a run made at the tree the close left. **This section asserts no hash it
+could not know:** the closing commit's hash is stated because it exists; the hash of the commit
+carrying this section is not, because a commit cannot state its own.*
+
+**The closing commit is `b4fd021fe0c9ff37fd21cc3795212f5b510668e3`**, carrying exactly six paths,
+verified at the object: `STATUS.md` (M), `STATUS_ARCHIVE.md` (M),
+`cc_report_framework_pack_preparation.md` (A), `tools/audit/gen_status_batch_bound.py` (M),
+`tools/audit/session_start_read_size.json` (M), `tools/audit/status_batch_bound.json` (M). *6 files
+changed, 417 insertions(+), 27 deletions(-).* Pushed; `origin/master` verified at it.
+
+**What the close did.** Three `STATUS.md` pointer entries — one for each task that did work, the
+newest naming the dispatch and the two below it saying *Same dispatch*, per the convention the
+forward-bound tool derives membership from. The previous batch's single entry was moved verbatim to
+`STATUS_ARCHIVE.md` by `python tools/audit/gen_status_batch_bound.py --apply`, the tool re-aimed
+under the carve-out ruled for it by name, with the outgoing aiming **appended** to its record of
+aimings rather than overwritten (#12). The move reports itself: **one entry moved, byte-present in
+the archive exactly once, absent from the must-read**, and `--check` re-derives it.
+`tools/audit/session_start_read_size.json` was regenerated, stale by construction because this batch
+writes to a member of that read. **No count, no identity and no rendered value is restated in any
+`STATUS.md` entry (D-431).**
+
+**One ordering point, recorded because getting it wrong is a STOP rather than a warning.** The
+forward-bound tool strips the `Last updated: ` prefix from the entry it moves, on the ground that the
+next batch's own entries take that prefix over. Run **before** this batch's entries were written it
+found the entry zero times and STOPPED, correctly. The entries were written first and the prefix
+handed over; the move then ran clean. Nothing was retyped and nothing was edited in transit.
+
+### The end-state guard run, made at the tree the close left
+
+`python tools/audit/gen_guard_state.py` (write mode, the artifact of a real run): **75 guards run, 4
+failing, 4 not run, 16 historical records.** The four failing:
+
+- `tools/audit/gen_filing_convention_application.py --check`
+- `tools/audit/decisions/apply_soft_discard.py --check`
+- `tools/audit/decisions/apply_residue_discard.py --check`
+- **`tools/audit/gen_derivation_boot_pack.py --check`** — **this batch's own declared STOP, §7.**
+
+**E2 — NOT MET AS WRITTEN, and the failure was declared in advance rather than discovered here.** It
+asks for *the three known failing checks and no others, zero STOPs*. There is a fourth, and it is a
+STOP rather than a drift report. **It is this batch's own act and nothing else**: the three known
+checks fail for their own recorded causes, unchanged; `gen_evidence_pin_membership.py --check`, which
+the dispatch's declared start state named as a fifth, passes, cleared at Task 0. **No red outside
+this batch's own acts' subjects appeared at any point in the batch.**
+
+### One derived artifact moved with it, measured before it was accepted
+
+`tools/audit/guard_classification.py`'s artifact reads the guard state's own pass/fail column, so a
+guard flipping PASS→FAIL moves it. It is regenerated here, and **its whole difference against its
+committed blob is three lines**, every one of them the same declared fact: the live-and-failing count
+moves by one, `tools/audit/gen_derivation_boot_pack.py` joins the failing list, and that tool's
+recorded state moves from `PASS` to `FAIL`. **No verdict, no classification, no member and no other
+count moved.** It is a staleness red whose whole cause is the act the dispatch orders, so it is
+regenerated rather than left — the standing safety rule being that a staleness red is regenerated and
+a decision red never is. The three decision reds were **not** touched.
+
+### The tree at the end
+
+Measured by `tools/audit/changed_paths.py` and not by `git status` (**D-253**), immediately before
+the commit carrying this section: **834 changed path records — 832 untracked and exactly TWO tracked
+modifications**, `tools/audit/guard_state.json` and `tools/audit/guard_classification.json`, which
+are the two paths this commit carries beside the report. **Nothing of the standing untracked
+population is committed by any commit of this batch.**
+
+**The batch's arithmetic closes.** It began at 836 records — 835 untracked, one tracked modification
+(`cowork_handoff.md`). Task 0 committed three of those untracked files and the one tracked
+modification; Task 1 added the reading file untracked and then committed it with the generator; the
+close added the report untracked and then committed it with five tracked modifications. **Every path
+every commit of this batch carries is inside the dispatch's own fence**, with the two derived
+artifacts of this section the only addition — each caused by an act the dispatch orders, each
+measured, and each declared here.
+
+## 13. The plan lines, as the dispatch states them
+
+1. **The user rules the two candidate lists** at
+   `ratification_surfaces/cowork_withheld_family_framework_reading.md` — one verdict per
+   design-intent candidate, and one per member-(2) passage. Nothing is withheld until then.
+2. **The render is a later batch**, after that ruling: the reviewed verdicts are written into the
+   generator's authored table, the pack directory for this subject is rendered, and the boot-pack
+   check goes green in the same act.
+3. **The brief is finalised against the rendered pack** —
+   `cowork_blind_session_brief_framework.md` stays a DRAFT until then, its §7 (P2) being the point
+   this batch feeds and the other five §7 points still unruled.
+4. **Then the fresh Cowork session authors the framework document**, blind, with ratification of its
+   decomposition HELD until the user's incoming external list has arrived and been dispositioned
+   against it.
+
+**Two things this batch surfaces that stand outside those four**, both for the user rather than for a
+successor session to act on unprompted: **the second tool shape of §7(5)**, which will write a false
+statement into the manifest at the render unless the criterion machinery is corrected first; and
+**the member-(2) premise correction of §5**, which decides how much of `CLAUDE.md` the withheld
+family has to reach.
