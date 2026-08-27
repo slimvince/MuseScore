@@ -657,3 +657,21 @@ standing untracked population is committed** beyond the seven the dispatch names
 
 **The end state is NOT asserted by this report.** These are the values measured immediately before
 the closing commit; the commit itself moves the tracked half.
+
+### 8.4 This batch's own commits, and one line written in a second act
+
+| Commit | What |
+|---|---|
+| `9053861b9cc71d8de8dc9c12105abd553620b55a` | Task 0(c) — the seven landings, 7 files, +2,273 |
+| `8516cc2d92c75db616ac0d75c76bbed9ecca4b92` | the close — the sealed sample, this report, `STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and the five generated artifacts; 9 files, +1,625 / −28 |
+
+**★ A SECOND COMMIT TOUCHING ONLY THIS FILE, AND IT IS A DECLARED DEPARTURE FROM TASK 5(d)'S
+LETTER.** That task says *"write `cc_report_placement_sample.md` at the root, then commit"*, in the
+singular. **The closing commit's own hash cannot be written from inside the commit that carries it**,
+so the row above naming `8516cc2d92c75db616ac0d75c76bbed9ecca4b92` is added afterwards, in one commit
+whose whole diff is this section. The path is inside §6's fence, so no fence was widened and the
+standing clause's STOP is not engaged; what is departed from is the singular *"then commit"*, and it
+is recorded here rather than passed over. **Nothing else moves in that act:** no strata re-enumerated,
+no item added, removed or reordered, no guard re-run, no artifact regenerated, no other path touched.
+The precedent is this project's own — a previous batch recorded its closing arithmetic the same way,
+in a third commit touching exactly one path.
