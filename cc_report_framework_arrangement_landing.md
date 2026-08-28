@@ -42,8 +42,8 @@ file at `.git/refs/heads/master`.
 | Task 0 | `9c39e101e85accaf436506ab44557b128a696f54` | `record: the framework phase is authored informed — the 2026-08-28 rulings, the informed brief and the phase constraints-and-stop-rules home landed` |
 | Task 1 | `821c2a44551664dcefba132ad709500c1a366686` | `the framework subject is retired from the boot-pack generator — the ruling cancels its pack, and the fourth failing check goes green` |
 | Task 2 | `722c7327a9472436cdc43a9ffc0dd4eb1533823a` | `the blind framework brief is marked superseded by the informed brief, and is kept` |
-| Task 3 — the close | *§9 — written in the further commit, this file being inside the commit it would name* | |
-| the end state | *§9* | |
+| Task 3 — the close | `668b0071c0a5f7f18566f3b4b663488911e5f85e` | `close the framework-arrangement landing batch: … four STATUS.md pointer entries, the previous batch moved through the forward bound, the read size regenerated, and the report` |
+| the end state | *§9.5 — the one line this batch cannot write from inside the commit that carries it* | `the end state: the guard set run at the tree the close left — 75 run, 72 passing, THREE failing, and the fourth is GREEN; the report §9 written` |
 
 Each of the first three was pushed and `origin/master` was re-read at
 `.git/refs/remotes/origin/master` after each push; each read returned the commit just made.
@@ -380,7 +380,85 @@ it.
 it produces: the guard run that grades E3 must be made at the tree the close leaves, and its
 artifact must be committed only after that run. The dispatch orders exactly this shape.
 
-*(Filled in by the further commit.)*
+### 9.1 The close, at the object
+
+**Commit `668b0071c0a5f7f18566f3b4b663488911e5f85e`**, subject:
+
+```
+close the framework-arrangement landing batch: the ruling landed, the framework subject retired
+from the boot-pack generator, the blind brief bannered, and the fourth failing guard check GREEN
+— four STATUS.md pointer entries, the previous batch moved through the forward bound, the read
+size regenerated, and the report
+```
+
+`changed_paths.py --commit` returns exactly six records and no other: `STATUS.md` (M),
+`STATUS_ARCHIVE.md` (M), `cc_report_framework_arrangement_landing.md` (A),
+`tools/audit/gen_status_batch_bound.py` (M), `tools/audit/session_start_read_size.json` (M),
+`tools/audit/status_batch_bound.json` (M). Pushed; `origin/master` read at that commit.
+
+**What the close did, mechanically.** Four `STATUS.md` pointer entries were written — the close and
+one for each of Tasks 2, 1 and 0 — under the OI-222 pointer convention, restating no count, no
+identity and no rendered value (**D-431**). The previous batch's three entries were then moved to
+`STATUS_ARCHIVE.md` by `python tools/audit/gen_status_batch_bound.py --apply`, whose own
+reconciliation reports **every moved entry byte-present in the archive exactly once and absent
+from the must-read** — the move is byte-faithful and nothing was retyped (#12). `--check` then
+re-derives that reconciliation. `tools/audit/session_start_read_size.json` was regenerated; its
+own output names the four members of the session-start read and the totals, and no value from it
+is restated here (**D-431**).
+
+### 9.2 The end-state guard run, made at the tree the close left
+
+`python tools/audit/gen_guard_state.py` was run in write mode **after** commit `668b0071c0`, over
+the whole population.
+
+**75 run, 72 passing, 3 failing, 4 not run, 16 historical records. ZERO STOPs.** The three failing
+are exactly the three known:
+
+- `tools/audit/gen_filing_convention_application.py --check`
+- `tools/audit/decisions/apply_soft_discard.py --check`
+- `tools/audit/decisions/apply_residue_discard.py --check`
+
+**and no others.** Every value in this paragraph is at `tools/audit/guard_state.json` → `summary`
+and `summary.failing_tools`, written by that run and committed by the further commit below.
+
+### 9.3 The artifact's own difference, measured before it was accepted
+
+| | blob |
+|---|---|
+| at `668b0071c0` | `4dec87ce8d03dd4e4452a0e6805b30df6d985e38` |
+| regenerated | `cef5d3e388a2479d279ca526ab26015b238486c8` |
+
+`--numstat`: **11 added, 2135 removed.** The whole difference, read at the diff hunk by hunk:
+
+- the boot-pack check's record flips from a captured STOP to `exit_code: 0` / `verdict: PASS`, and
+  the ~2,100 lines of captured halt output — every ungraded candidate the previous batch's STOP
+  printed — are gone with it, which is the whole of the large deletion;
+- `summary.passing` moves from 71 to 72 and `summary.failing` from 4 to 3, and
+  `gen_derivation_boot_pack.py` leaves `failing_tools`;
+- three guards' captured output lines change because those guards' own artifacts moved in this
+  batch's ordered acts: the forward-bound move's reconciliation line, the evidence-pin membership's
+  read count, and the session-start read size's totals.
+
+**Every one of those causes is this batch's own ordered act. Nothing moved whose cause is outside
+it**, so A4 holds at the end state as it held at §4.5.
+
+### 9.4 The tree at the end
+
+After the run, the working-tree enumeration showed **one** tracked modification,
+`tools/audit/guard_state.json`, and nothing else. The untracked population is the repository's
+long-standing one plus this batch's own report.
+
+**E3 is MET**: a fresh full guard run at the tree carrying the close, the three known failing checks
+and no others, zero STOPs, and the artifact committed only after the run that produced it.
+
+### 9.5 The one value this batch cannot write from inside the commit that carries it
+
+The further commit's own hash is knowable only after that commit exists, so it is not stated here.
+Its **subject** is stated instead, and it is the line to look for: *"the end state: the guard set
+run at the tree the close left — 75 run, 72 passing, THREE failing, and the fourth is GREEN; the
+report §9 written"*. Its whole diff is two paths — this report and `tools/audit/guard_state.json` —
+both inside this dispatch's own fence, so no fence is widened. The preceding two batches recorded
+their own closing arithmetic the same way.
 
 ---
 
