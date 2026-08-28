@@ -60,20 +60,20 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "836ad8ba57ab22c89cdcd6a6d85b8fa2a70a2d0d"
+BASE_COMMIT = "0e927c2db2f8241660e5c2711288e61fdd921d53"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_informed_brief_landing.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_arm_and_site_fillin.md"
 
 ACT_DATE = "2026-08-28"
-DISPATCH = "cc_instruction_arm_and_site_fillin.md"
+DISPATCH = "cc_instruction_landing_2026_08_28.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
-# batch's own `STATUS.md` entries in the same numbered task — its Task 3, item 1 — so both halves
-# of "the same act that writes its own entries" sit inside Task 3, and Task 3 is what the archive
+# batch's own `STATUS.md` entries in the same numbered task — its Task 2, item 1 — so both halves
+# of "the same act that writes its own entries" sit inside Task 2, and Task 2 is what the archive
 # header names. No sub-item is carried, because the header names an act rather than a sub-step and
 # every previous aiming names a whole task.
-TASK = "Task 3"
+TASK = "Task 2"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -194,6 +194,9 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_informed_brief_landing.md, Task 1",
      "base_commit": "1d213b19b618aa1d148a7777460c48f37fd5de68",
      "the_then_previous_batch": "cc_instruction_framework_arrangement_landing.md"},
+    {"executing_act": "cc_instruction_arm_and_site_fillin.md, Task 3",
+     "base_commit": "836ad8ba57ab22c89cdcd6a6d85b8fa2a70a2d0d",
+     "the_then_previous_batch": "cc_instruction_informed_brief_landing.md"},
 ]
 
 ARCHIVE_HEADER = (

@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_arm_and_site_fillin.md, Task 3",
+ "dispatch": "cc_instruction_landing_2026_08_28.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -173,29 +173,50 @@
    "executing_act": "cc_instruction_informed_brief_landing.md, Task 1",
    "base_commit": "1d213b19b618aa1d148a7777460c48f37fd5de68",
    "the_then_previous_batch": "cc_instruction_framework_arrangement_landing.md"
+  },
+  {
+   "executing_act": "cc_instruction_arm_and_site_fillin.md, Task 3",
+   "base_commit": "836ad8ba57ab22c89cdcd6a6d85b8fa2a70a2d0d",
+   "the_then_previous_batch": "cc_instruction_informed_brief_landing.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "836ad8ba57ab22c89cdcd6a6d85b8fa2a70a2d0d",
- "the_then_previous_batch": "cc_instruction_informed_brief_landing.md",
- "entries_moved": 2,
- "characters_moved": 4934,
+ "base_commit": "0e927c2db2f8241660e5c2711288e61fdd921d53",
+ "the_then_previous_batch": "cc_instruction_arm_and_site_fillin.md",
+ "entries_moved": 4,
+ "characters_moved": 6887,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 3494,
-   "sha256": "31774a338b46aaa2bcac1a1b1ac7c523d5c9ccc87c77da6352ff489d110a3c21",
+   "characters": 3036,
+   "sha256": "437829cc09328dfd97ad1872c75b47f3cef9824400f9e2754192ee63d7370c6b",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-28 (CC — **★ THE SEVEN BRIEF-POINTS RULINGS, THE REVISED INFORMED BRIEF AND THE TWO RATIFICATION-SURFACE BANNERS ARE LANDED — AND THIS BATCH "
+   "opening": "*2026-08-28 (CC — **★ THE ARM AND THE SITE ARE FILLED IN FOR THE FRAMEWORK DOCUMENT'S BEHAVIOURAL STATEMENTS, AND BOTH SUB-FIELDS ARE JUDGED REACHABLE"
   },
   {
    "line_at_base": 10,
-   "characters": 1440,
-   "sha256": "e1973090d251390955f6fe2e72799086f6eb242d621383fbd0ee4e0d96c2d9da",
+   "characters": 1257,
+   "sha256": "5ef9dbe964bb2a44891262551e793209cd978d5634e660a36f13a3df5b65e8e3",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-28 (CC — Same dispatch, Task 0: the paths the writing side had already modified — the handoff, the revised informed brief and the two `ratifi"
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 2: the two sub-fields judged REACHABLE AT ALL, which is what Ruling 4 of `cowork_rulings_2026_08_26_framework_op"
+  },
+  {
+   "line_at_base": 12,
+   "characters": 1445,
+   "sha256": "11ee5cc75a28ebb979c79c087f17b989712c7cf57d8fba84a32e4b91d234a9ba",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 1: the ARM and the SITE written into ONE new file at the repository root, which is the one home for these facts "
+  },
+  {
+   "line_at_base": 14,
+   "characters": 1149,
+   "sha256": "ba9aa85a6185a6352d414633d02ad52d443cad08530d7df7875b72039975ad8f",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 0: pinned first, then established, and nothing written. **The dispatch and the framework document were each pinn"
   }
  ],
  "reconciliation": {
