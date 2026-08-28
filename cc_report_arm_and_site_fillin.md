@@ -33,7 +33,10 @@ asserted.
 | Task 2 commit | `836ad8ba57ab22c89cdcd6a6d85b8fa2a70a2d0d`, tree `39cb14efb7a9862c91aa7e646349d1d4f433024b`, parent `b5db8fc3d55072d152b04d6e842b1f0baf31672b` |
 | `tools/audit/evidence_pin_membership.json` before regeneration | blob `de44577a3a713465e76bc95b81c513e605020e08` (at `836ad8ba57`) |
 | — after regeneration | blob `565611d4fe6276a495805e6ba1998d98b785600d` |
-| Task 3 commit | §9 |
+| Task 3 close commit | `a243a28c975a97123f155096d30b1f89f6622797`, tree `91aa1816d06eca42bd3063530ac5c1087b8ec72d`, parent `836ad8ba57ab22c89cdcd6a6d85b8fa2a70a2d0d` |
+| `tools/audit/guard_state.json` before the end-state run | blob `78d59922a6785df62e5590fd4c398de4903f339a` (at `6005daecaf`) |
+| — after the end-state run | blob `e5fb6edf7e48ba30f0153785b5f7b85279973b09` |
+| The end-state commit | §12 |
 
 **Both commits were verified at the object** with `git cat-file commit <sha>` for the subject and
 `git diff-tree --no-commit-id --name-status -r <sha>` for the paths. Task 1 touched exactly
@@ -324,9 +327,52 @@ Re-read the actual diff of every touched path before reporting.
    confined to read-only git object queries by explicit hash (`cat-file`, `hash-object`, `rev-parse
    <sha>:<path>`, `diff <blob> <blob>`, `diff-tree`), the sanctioned enumeration tool
    `tools/audit/changed_paths.py`, the sanctioned generators, and `git commit` / `git push`. The
-   armed guard denied two attempted commands during the batch — a `python -c` carrying a repository
-   path and a compound command ending in `cat .git/refs/heads/master` — and both were re-done through
-   the file tools rather than worked around.
+   armed guard denied three attempted commands during the batch — a `python -c` carrying a repository
+   path, a compound command ending in `cat .git/refs/heads/master`, and a `git diff` whose two blob
+   identities were held in shell variables rather than written as literals (deny-on-indeterminate,
+   working exactly as its ruling states). **Each was re-done through the file tools or with literal
+   hashes; none was worked around.**
 5. **Uncertainty on any comparison.** No two measured quantities are compared in this report, so #24
-   raises no demand. The one comparison made — the regenerated artifact against its committed blob —
-   is a byte diff, not a measurement.
+   raises no demand. The comparisons made — each regenerated artifact against its committed blob —
+   are byte diffs, not measurements.
+
+---
+
+## 12. The end state — E3
+
+The close commit `a243a28c975a97123f155096d30b1f89f6622797` was pushed and `origin/master` re-read at
+its ref before the end-state run began. **At that tree the FULL guard set was then run in write
+mode**, and the artifact it produced is committed **only after the run that produced it**, in the
+further commit this section records.
+
+**E3 — MET.** The run reported **exactly the three known failing checks and no others** —
+`tools/audit/gen_filing_convention_application.py --check`,
+`tools/audit/decisions/apply_soft_discard.py --check` and
+`tools/audit/decisions/apply_residue_discard.py --check` — **zero STOPs, and no UNCLASSIFIED tool.**
+`tools/audit/gen_evidence_pin_membership.py --check`, the fourth red of the declared start state, is
+GREEN at the end state, its cause discharged by the regeneration §6.4 measures. The summary itself is
+read at `tools/audit/guard_state.json` → `summary` and is not transcribed here (**D-431**).
+
+**The artifact's own movement was measured, blob to blob by explicit hash, before it was accepted.**
+The whole difference between the pre-batch guard state and the end-state one is **three captured
+output blocks and no verdict**: the forward bound's own reconciliation line, the evidence-pin
+regeneration's ruling-record line, and the session-start read-size measurement. **No tool's pass/fail
+state moved in either direction.**
+
+### 12.1 One observation about a tool that is NOT in the guard set — reported, not acted on
+
+`tools/audit/gen_guard_classification.py --check` reports **STALE**. It is deliberately **not** one of
+the tools the guard set runs — `gen_guard_state.py` excludes it by name to avoid recursion, and its
+own docstring says it is run separately afterwards — so **E3 is unaffected by it**, and the two
+preceding batches' end-state commits likewise touched only their report and `guard_state.json`.
+
+**It was not caused by this batch, and that is established rather than inferred.** The classification
+derives each tool's state from the guard state; the blob-to-blob diff above proves **no tool's
+pass/fail state differs** between the pre-batch guard state and this one, so its re-derivation is
+identical against either and the STALE verdict holds equally before this batch ran. What is visible in
+the artifact is that its `live_tools_that_fail_and_stay` block names **four** tools, one of them
+`tools/audit/gen_derivation_boot_pack.py`, which PASSES in **both** guard-state blobs. **Whether that
+is the whole cause of the STALE verdict was not established, and nothing was run to find out** — the
+dispatch bars running any generator outside the guard set, this batch creates no open-items row and
+allocates no finding number, and a maintenance act must establish its cause before touching a
+mechanism. **Recorded for a later act.**
