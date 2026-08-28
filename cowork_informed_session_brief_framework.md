@@ -119,8 +119,17 @@ of the ruled purpose and is not itself ruled:**
 
 ### Stage one — derive from outside this project, and WRITE IT DOWN
 
-**Before opening any file of this project's own**, derive the decomposition from these and nothing
-else:
+**★ WHAT THE STAGE-ONE BAR ACTUALLY IS, because the obvious reading of it is wrong.** It is **not**
+*open no file of this project* — four of the six sources below are files in this repository. **It is:
+open nothing that says what this project's analysis DOES or is SPECIFIED to do.** That means
+`ARCHITECTURE.md`, the per-layer design documents, `docs/scoring_model.md`, the registers and the
+source code — and nothing else is closed to stage one. **The sources below are admissible precisely
+because none of them describes the built thing:** published research and music theory are not ours;
+the annotation exemplars are other people's readings of music; the ledger's entries have each passed
+the test of surviving our implementation being thrown away; and the ten-factor model is ratified
+design intent, admitted to a deriving session by name.
+
+Derive the decomposition from these and nothing else:
 
 - **music theory** — what a harmonic analysis of this repertoire consists of, *including what
   annotators do not write down*;
@@ -128,7 +137,11 @@ else:
   and a `BIBLIOGRAPHY.md`**, counted at the folder; read them there rather than re-fetching. The
   candidate list at `cowork_literature_reachability_2026_08_26.md` §5 names published models this
   project does not reference, each with a remark on what it decomposes differently;
-- **the ground-truth annotation schema**, read at the staged exemplars of §7 (P6);
+- **the ground-truth annotation schema**, read at the three exemplars of §7 (P6). **They are inside
+  this repository and nothing needs staging** — the paths are named there. **★ TWO OF THE THREE CARRY
+  TWO INDEPENDENT HUMAN ANALYSES OF THE SAME PIECE**, which is a fact about the ground truth and not a
+  duplicate: what two analysts of one chorale agree and disagree about bears directly on what any one
+  layer can be expected to decide;
 - **`EMPIRICAL_FINDINGS_LEDGER.md`** — thirty-five facts that have already passed the test of
   surviving the implementation being thrown away, which is what makes them admissible here;
 - **`cowork_joint_estimator_factorization.md`**, the user-ratified ten-factor model, admissible as
@@ -154,6 +167,33 @@ a chore attached to the work — **it is the phase's second deliverable.**
 would have derived; a session that writes its own answer first can say exactly what our material
 changed and why. The difference is observed rather than remembered, which is the only reason this
 arrangement can claim anything at all about independence.
+
+### ★ WHAT THIS SESSION DOES NOT OPEN IN EITHER STAGE — AND THE ORDINARY SESSION-START READ IS REPLACED
+
+**The ordinary session-start read of this repository does NOT apply to this session.** Do not perform
+it. **Read this brief first, and open nothing else until stage one is written.**
+
+**These are closed to this session in BOTH stages, and opening any of them disqualifies it from
+authoring** — the bar is that the authoring side must not be the side that argued the case for the
+arrangement it is working under:
+
+- **`cowork_handoff.md`** — any entry, in any portion. It carries the argument that produced this
+  brief.
+- **`cowork_rulings_2026_08_28_informed_framework_sitting.md`** and
+  **`cowork_rulings_2026_08_28_informed_brief_points_sitting.md`** — the two records that decided how
+  this session works. **What they ruled is already in this brief; their reasoning is not for you.**
+- **Any `cc_report_*.md` and any `cc_instruction_*.md`** — the coding side's reports and dispatches.
+- **§8 of this brief**, its provenance section.
+- **The three sealed placement-sample files**, as below.
+
+**This is not a blindness bar and it is not about the analysis.** Everything closed here is a record
+of *how this phase was decided*, not of what the analysis does — and stage two opens the whole of the
+latter. **If you have already read any of them, say so and stop; the session is not void, but it may
+not author this document.**
+
+*(`EMPIRICAL_FINDINGS_LEDGER.md`, `PHASE_CONSTRAINTS_AND_STOP_RULES.md` and the phase-definition
+surface are NOT on this list. The first is a stage-one source; the other two state the rules you work
+under and are meant to be read.)*
 
 ### The two bounds that travel with stage one's sources
 
@@ -331,6 +371,26 @@ successor reading the brief alone must be able to see what was decided and what 
   designed, scoped or run over them.** They serve stage one's annotation-schema source. Declined:
   none, which would leave that source with no artifact behind it; and a larger set, which at some size
   stops being exemplars and engages **#9** and **#20**.
+
+  **★ THE PATHS, ENUMERATED AT THE FOLDERS BY THE WRITING SIDE ON 2026-08-28. ALL SIX FILES ARE
+  INSIDE THIS REPOSITORY; NOTHING IS STAGED, CONNECTED OR COPIED.**
+
+  | | The score | The human analysis |
+  |---|---|---|
+  | **001** | `tools/dcml/bach_chorales/MS3/001 Aus meines Herzens Grunde.mscx` | `tools/dcml/when_in_rome/Corpus/Early_Choral/Bach,_Johann_Sebastian/Chorales/001/analysis.txt` **and `analysis_BCMH.txt`** |
+  | **003** | `tools/dcml/bach_chorales/MS3/003 Ach Gott, vom Himmel sieh darein.mscx` | `…/Chorales/003/analysis.txt` **and `analysis_BCMH.txt`** |
+  | **137** | `tools/dcml/bach_chorales/MS3/137 Du, o schönes Weltgebäude.mscx` | `…/Chorales/137/analysis.txt` **only — no `analysis_BCMH.txt`**, established at the folder |
+
+  **The analyses are RomanText: plain text, Roman numerals with the beat positions they sit at.** The
+  scores carry **no harmony annotation of their own** — the human reading is these separate files, which
+  is itself a fact about how this ground truth is shaped.
+
+  **★ 001 AND 003 EACH CARRY TWO INDEPENDENT ANALYSES OF THE SAME PIECE, AND THAT IS THE POINT OF
+  READING THEM.** Where the two disagree is evidence about what a human analysis actually settles and
+  what it leaves open — which bears directly on what any one layer can be asked to decide, and on
+  where uncertainty has to live. **Reading the disagreement is not measuring it:** no rate, no count
+  and no proportion is taken from three pieces, and a statement resting on one would be exactly the
+  unestablished instrument **#19** forbids.
 - **(P7) The code-site fill-in. RULED: it stays with a side other than the author**, §4. **Declared:
   the original ground is gone and this ruling rests on a preference the writing side marked as one.**
 
