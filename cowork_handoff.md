@@ -1,6 +1,378 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## COWORK SESSION CLOSE (SEVENTY-SIXTH ENTRY, 2026-08-28 — THE FIFTY-SIXTH SESSION) — THE FRAMEWORK DOCUMENT IS AUTHORED INFORMED: BLINDNESS IS DROPPED FOR THIS PHASE BY USER RULING, AND THE 208 VERDICTS ARE NOT TAKEN. THE LEDGER EXISTS AND HAS SINCE 2026-08-26. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The seventy-fifth entry below remains binding except where
+this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+*(First written mid-session and amended when the ruling was taken. The ordinal is taken from the
+heading of the entry immediately below, read at this file; no entry count is asserted.)*
+
+**On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
+mistake. **In conversation with the user, plain ordinary English — the seventy-fifth entry's second
+counted error was writing to him in the form of these records, and that bar holds.**
+
+### The state, established before anything else was done
+
+Tip `bf3249e73d9eb91d0f2513bc2c16aa626b53e464`, read at `.git/refs/heads/master` with the file tool
+— UNCHANGED from the seventy-fifth entry. Nothing ran, nothing was dispatched, nothing was landed.
+
+### ★ THE RULING — READ THE RECORD, NOT THIS SUMMARY
+
+`cowork_rulings_2026_08_28_informed_framework_sitting.md`, on disk, untracked, **read it whole.** The
+framework phase's deriving session is **NOT implementation-blind**: it may read `ARCHITECTURE.md`, the
+specifications and the registers as design input. **No pack is rendered for this subject, no candidate
+verdicts are taken, no leak check is run.** The user's words: *"In my opinion 3 still stands, yours too
+it seems."*
+
+**The first limb of the phase surface's §3.3 constraint is set aside for this phase; the second limb —
+*evidence treated as the decision* — is NOT touched and still binds.**
+
+**★ THE RULING DOES NOT YET REACH THE PHASE DEFINITIONS, AND A SUCCESSOR MUST NOT ASSUME IT DOES.**
+The authority is ruled (2026-08-15, Ruling 3: the phase definitions move by ratification). The
+artifact that could receive the amendment does not exist, and **roughly twenty-five items are already
+queued at that same door** — twenty-one `DEFECT_TYPES.md` rows, C31 half (a), C40, C45 reading three.
+**The companion act is a live constraints-and-stop-rules document**; its shape is not ruled.
+
+**Four things are NOT ruled and must not be read as ruled:** the independent challenge run is **not
+commissioned**; the three sealed placement samples are **not disposed of**; the **#18** exposure — the
+document rests on the current division being right, checkable and unchecked — is **not discharged**;
+and whether §3.3's constraint sentences are themselves ruled, or only the six-phase structure around
+them, is **not established**.
+
+**Kept, not deleted (#12):** `ratification_surfaces/cowork_withheld_family_framework_reading.md`. It
+is the record of an enumeration performed and then not used, and a later blind run over this subject
+starts from it.
+
+### ★ THE LEDGER EXISTS. DO NOT WRITE A SECOND ONE.
+
+`EMPIRICAL_FINDINGS_LEDGER.md`, at the repository root, 51,246 bytes, **thirty-five entries**, read
+at the file by this side: its banner, §1–§2, its section and entry headings, and §§7–10. It was built
+by Claude Code on 2026-08-26 under `cc_instruction_ledger_build.md` and extended the same day under
+`cc_instruction_ledger_admissions.md`; it is in the ruled form of the 2026-08-26 form sitting — one
+hand-written record whose entries cite `cowork_empirical_findings_candidates.md` rather than
+transcribe it. All three ruled seeds are represented; the third seed's coverage bound is declared and
+not discharged.
+
+**So the ground of `cowork_rulings_2026_08_28_ledger_precondition_sitting.md` is FALSE in one part.**
+Its §1 states *"It was never built"* and *"No ledger file exists at the repository root or in
+`ratification_surfaces/`, both enumerated by this side."* The file was there when that record was
+written. **The ruling itself stands** — the ledger binds before the framework document's author is
+booted — and it is satisfied by an object that already existed, so **nothing is owed by way of
+writing it, and the question of who writes it is moot.**
+
+**This handoff already said so.** At line 1313, inside an earlier entry: *"THE LEDGER EXISTS —
+`EMPIRICAL_FINDINGS_LEDGER.md`, 35 entries, counted at the file by the writing side."* The 2026-08-28
+session read the seventy-first to seventy-fourth entries only and its own root enumeration missed the
+file. The correction is recorded here, beside that record and not over it (#12); the record is
+untracked and not landed, and what happens to it is the user's.
+
+### ★ WHAT IS ACTUALLY OWED IN ITS PLACE, AND IT IS A RULING
+
+**The ledger is NOT one of the boot list's six members.** Ruling 1 of
+`cowork_rulings_2026_08_22_boot_list_sitting.md`, read whole at the record: the six are the phase
+definitions surface §3, `CLAUDE.md` at two spans, `cowork_design_doc_template.md`, the
+dispatch-protocol section of `cowork_audit_protocol.md`, the `DESIGN-INTENT` class of
+`rulings_sort_classification.json`, and `DEFECT_TYPES.md`. Its amendment (a2) carries the ledger hole
+**for the pilot**, by its own terms. And `cowork_blind_session_brief_framework.md` contains no
+occurrence of *ledger* or *empirical*, established here by pattern over the file.
+
+**Therefore a framework author booting from the standing list does not read the ledger, whether or not
+it exists.** If the precondition means the author has the established facts in hand, it is met only by
+a ruling that puts the ledger into this subject's pack — as a seventh member, or as an addition to the
+brief's derivation sources. That ruling has not been taken and no session may take it.
+
+### ★ A SECOND FINDING, PUT BY THE USER AND ESTABLISHED AT THE FOLDERS: THE BOOT LIST OMITS TWO BODIES OF NON-IMPLEMENTATION MATERIAL
+
+The user observed that the six members are, apart from member (5), about how we work rather than about
+how inference could be done, and that several excluded documents are the opposite. Checked here:
+
+**Member (5) is the only member carrying analysis content**, and it is the member the 208 verdicts cut.
+Every IN verdict therefore moves the pack toward being process documents alone. That cost belongs on
+the surface when the two lists are ruled.
+
+**The eight exclusions are all ours** — `ARCHITECTURE.md`, the specifications, `docs/scoring_model.md`,
+the registers, the reports. Those are excluded on the blindness ground and the ground holds.
+
+**But two bodies of material are neither members nor named exclusions**, so the closed-list form of the
+boot list silently keeps them out without a ruling ever having been taken:
+
+1. `docs/research_papers/` — **fifty-eight PDFs plus `BIBLIOGRAPHY.md`**, enumerated at the folder by
+   this side with the directory tool. This is external published work, not implementation-derived, and
+   it is exactly source (ii) of the framework brief's four sources. `cowork_blind_session_brief_framework.md`
+   §3, read at the file, confines the session's whole in-repository read to the brief and the pack, so
+   **the session must fetch from the open web what the project already holds on disk** — while the same
+   §3 records that the primary source for key profiles is NOT held.
+2. `EMPIRICAL_FINDINGS_LEDGER.md`, per the finding above.
+
+**Neither omission is a defect of the 2026-08-22 ruling**, which ratified a draft written on 2026-08-19,
+before this phase's source list existed. It is an amendment the user has never been asked for.
+
+### One item of the seventy-fifth entry's owed list is DISCHARGED BY ABSENCE
+
+`cowork_rulings_2026_08_27_ledger_precondition_sitting.md`, the misdated copy that entry orders
+deleted, **is not on disk.** The repository root was enumerated with the directory tool at this
+session's opening; no 2026-08-27-dated ledger-precondition file is there. Nothing to delete.
+
+### Declared by this side
+
+**Method.** All reads through the file tools on bridge-staged snapshots. **No shell command of any
+kind was run — the user barred it in his opening instruction, in those words.** The tip was read as a
+file at the ref.
+
+**★ THE VERIFICATION LIMIT, UNCHANGED FOR A TWELFTH SESSION.** No commit and no blob was resolved by
+this side; every git-object value anywhere in the record remains RELAYED. A session with a shell is
+still the largest owed item.
+
+**Read whole:** `cc_report_framework_pack_preparation.md`;
+`cowork_rulings_2026_08_28_ledger_precondition_sitting.md`;
+`cowork_rulings_2026_08_26_ledger_form_sitting.md`;
+`cowork_rulings_2026_08_26_ledger_dispositions_sitting.md`;
+`cowork_rulings_2026_08_22_boot_list_sitting.md`. **Read in part:** the seventy-fifth and
+seventy-fourth entries of this file and the head of the seventy-third, plus two passages found by
+pattern; `ratification_surfaces/cowork_withheld_family_framework_reading.md` at §1–§5, **LIST ONE
+whole**, LIST TWO and LIST THREE; `EMPIRICAL_FINDINGS_LEDGER.md` as above;
+`cowork_blind_session_brief_framework.md` at §3 and §7; **`CLAUDE.md` at its guiding principles
+#1–#24 whole and nowhere else**; `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md`
+at its banner and its constraint clauses; `cowork_rulings_2026_08_15_phase_definition_sitting.md` at
+§2 and §3; `tools/audit/gen_derivation_boot_pack.py` at its docstring STOPs, its authored tables and
+its subject loop; `tools/audit/guard_state.json` by pattern — **`summary` 75 run, 71 passing, 4
+failing, the four named**.
+
+**NOT OPENED:** any part of any of the three sealed sample files; `ARCHITECTURE.md`;
+`DECISIONS.md`; `STATUS.md`; `cowork_evidence_inventory.md`;
+`cowork_joint_estimator_factorization.md`; `cowork_empirical_findings_candidates.md` (staged and not
+opened); any source file, measurement output, dossier, boot-pack member, or PDF. **The ordinary
+session-start read was NOT performed**, the user's instruction being a single named file and what it
+directs.
+
+**★ CONTAMINATION HAZARD, DECLARED.** This session read LIST ONE whole — 208 design-intent titles,
+which are the decomposition stated in short form — and `CLAUDE.md`'s principles whole. **It is barred
+from authoring the framework document**, as is any session that reads this entry. Under the ruling
+that bar costs less than it did, the author being informed, **but it is not lifted**: the bar exists so
+that the authoring side is not the side that argued the case.
+
+### This session's counted errors — one, self-caught, and it moved a recommendation
+
+**It mispriced an alternative and recommended on the wrong price.** Alternative 2 was recommended at a
+cost of "one session" when the owed list and `cc_report_framework_pack_preparation.md` §13 put five or
+six gates in front of it. Corrected at the files before the user ruled; the corrected price flipped the
+ranking. **Reported unprompted, per the standing rule of 2026-08-15** — one, below the rule's
+two-tell handover threshold. *The overstatement that anchoring "cannot be undone" was also withdrawn
+at the user's correction; it is recorded at §1 of the ruling record rather than counted twice here.*
+
+### The cadence for the successor
+
+NOTHING IS RUNNING AND NOTHING IS DISPATCHED. Tip `bf3249e73d9eb91d0f2513bc2c16aa626b53e464`.
+
+**★ THE SEVENTY-FIFTH ENTRY'S CADENCE IS SUPERSEDED WHOLE. Steps (1) to (4) of it are DEAD** — the
+candidate lists are not ruled, the §7(5) tool shape is off the critical path (it bites at a render and
+there is no render), no pack is rendered, and the brief is not finalised against one.
+
+**The new order:** (1) **the amendment home is ON DISK — `PHASE_CONSTRAINTS_AND_STOP_RULES.md`,
+untracked at the root. Its SHAPE is a writing-side proposal and is NOT ruled; the one amendment inside
+it is the user's and IS ratified.** It carries the §3.3 set-aside, the #18 exposure carried with it,
+and the pending queue named for the first time in one place — twenty-one `DEFECT_TYPES.md` rows (which
+twenty-one is RELAYED, not established), C31 half (a), C40, C45 reading three, none of them ruled and
+none of their content reproduced. **Two tracked-file edits are owed and they are NOT in the same
+class — an earlier draft of this entry wrongly put both on a dispatch.** The superseded banner on
+`cowork_blind_session_brief_framework.md` is ordered at the dispatch's Task 2. **The pointer at
+`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3.3 is NOT ordered by any
+batch: editing a ratified surface is not a batch's call, and whether it is edited at all is a question
+for the user**, put with a second of the same kind — whether
+`ratification_surfaces/cowork_withheld_family_framework_reading.md`, which asks for verdicts that will
+now never be taken, is marked on its face. **Until that is settled the surface is STALE at §3.3 and
+`PHASE_CONSTRAINTS_AND_STOP_RULES.md` governs.** (2) **the rewritten brief is ON DISK —
+`cowork_informed_session_brief_framework.md`, untracked, a DRAFT with four unruled points at its §7**
+(P1 what the informed session reads, P4 the file name, P5 the sizing record, P6 the annotated scores;
+**P5 and P6 must be settled before the session runs**, and **P7 is new** — whether this session does
+the code-site fill-in Ruling 4 of the framework-opening sitting routed away on a ground the ruling has
+removed). It supersedes `cowork_blind_session_brief_framework.md`, which is **kept and NOT edited**;
+that brief is tracked and a superseded banner on its face is **owed to a dispatch**. **The whole of
+what replaces blindness is the brief's §3 incumbency rule — D-190 doing the work — and its §5
+sources-and-incumbency record, which makes the #18 exposure enumerable without discharging it.**
+(3) **THE DISPATCH IS ON DISK AND NOT OPENED —
+`cc_instruction_framework_arrangement_landing.md`. The user opens it; this side never hands it to
+CC.** Task 0 lands the five untracked writing-side files and the modified handoff; Task 1 deletes the
+`framework` subject's two authored entries from `tools/audit/gen_derivation_boot_pack.py`, and A2
+**predicts, as a prediction, that the fourth failing check goes GREEN and the set reads 75/72/3**;
+Task 2 banners the blind brief; Task 3 closes on a gate that is meetable as written, unlike the last
+batch's. **It edits nothing under `ratification_surfaces/`, deliberately.** (4) the user rules the
+informed brief's §7 — **P1, the read scope, is the substantive one**; (5) **the author is booted, and
+this is where a FRESH SESSION is required**: not one that has read this entry or the ruling record,
+the bar being that the authoring side is not the side that argued the case; (6) the independent
+challenge run and the sealed samples' disposition are put to the user, unruled.
+
+Everything the seventy-fifth entry and the entries below it list as owed still stands, less: the
+ledger's writing, the misdated file's deletion, the two candidate lists, and the §7(5) ruling's
+urgency. **Added by this entry:** the amendment home; the challenge run; the sealed samples; the #18
+exposure; §3.3's ruled status.
+
+**★ AND THE REGISTER BLOCKER IS NOW AT ITS FIFTH CONSECUTIVE ROUTE-AROUND.** This ruling owes a
+register entry and the register cannot accept one. The blocker has still never been put to the user.
+A successor should stop treating that as background.
+
+---
+## COWORK SESSION CLOSE (SEVENTY-FIFTH ENTRY, 2026-08-28 — THE FIFTY-FIFTH SESSION'S ONLY ENTRY) — THE PACK-PREPARATION BATCH RAN AND RETURNED A DECLARED STOP; ONE RULING TAKEN AND RECORDED; TWO FINDINGS, ONE OF THEM CONFIRMED BY CC INDEPENDENTLY. **THE USER CLOSED THIS SESSION OVER ITS LANGUAGE.** THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The seventy-fourth entry below remains binding except
+where this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
+mistake. *(The ordinal above and the session count are taken from the heading of the entry
+immediately below, read at this file; no entry count is asserted.)*
+
+### The state, established before anything else was done
+
+Tip **`bf3249e73d9eb91d0f2513bc2c16aa626b53e464`**, read at `.git/refs/heads/master` with the file
+tool. It has moved from the seventy-fourth entry's `acedffc66d8c40f17d5fe6dbb73ca1ac90129997`,
+**because the batch ran to completion during this session.** `cc_report_framework_pack_preparation.md`
+and `ratification_surfaces/cowork_withheld_family_framework_reading.md` are both on disk.
+
+### ★ THE BATCH RAN AND RETURNED A DECLARED STOP — READ ITS §7 FIRST
+
+`cc_report_framework_pack_preparation.md`, read WHOLE by this side. **The enumeration ran in full and
+is delivered; the manifest gained NO `framework` block and assumption A3 FAILS.** The generator has
+no state for *enumerate the candidates and withhold nothing*: a derived candidate must carry an
+authored verdict or the tool STOPs, and the only verdict that withholds is `IN`. **Nothing was
+authored to make the tool complete** — that would have been the grading the dispatch reserves to the
+user (D-655).
+
+**`gen_derivation_boot_pack.py --check` now FAILS and goes on failing** until the user rules and a
+later batch applies the verdicts. **The accepted cost, not a discharged one: while it fails, it
+cannot report drift in the two EXISTING packs either.**
+
+### ★ WHAT THIS SIDE VERIFIED ITSELF, AND WHAT REMAINS RELAYED
+
+**At the files:** **76** entry headings in this handoff, so the report's 74 + 2 closes; the manifest
+carries **no `framework` block** and its modification time never moved;
+`tools/audit/derivation_boot_pack/` holds **two directories and no third**;
+`tools/audit/guard_state.json` records **75 run, 71 passing, 4 failing**, exactly the four tools the
+report names; and **D-565 is the only decisions-register entry homed in
+`cowork_joint_estimator_factorization.md`**, which confirms the standing exclusion's "exactly one" by
+a route CC did not use.
+
+**★ THE VERIFICATION LIMIT, UNCHANGED FOR AN ELEVENTH SESSION — every git-object value in the
+report is still RELAYED**: every commit and blob hash, the one-changed-passage insertion, the
+byte-identity of the fourteen pack files, and the changed-path counts. **This batch added four more
+commits to the hole.** A session with a shell is still the largest owed item.
+
+### ★ ONE RULING WAS TAKEN AND IS ON DISK
+
+`cowork_rulings_2026_08_28_ledger_precondition_sitting.md`. **The empirical findings ledger BINDS and
+is written before the framework document's author is booted.** The user's words, verbatim: *"Agree on
+A"*.
+
+**The ground:** Ruling 3 of `cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` — *"B is untouched:
+the empirical findings ledger remains owed before the framework phase"* — carried into the register as
+**D-680**, and **the ledger was never built** (the 2026-08-26 form ruling says so in terms; no ledger
+file exists at the root or in `ratification_surfaces/`). **Neither the framework-opening ruling, nor
+the 2026-08-27 authoring ruling, nor the framework brief names it.** The pilot's exemption is scoped
+to the pilot.
+
+**It binds on BOOTING THE AUTHOR, not on the enumeration, the withheld-set ruling or the render — do
+not halt the chain on it.** Any session may write the ledger except the framework document's author.
+**It is not written; who writes it was put to the user and he closed the session instead of
+answering.**
+
+### ★ TWO FINDINGS OF THIS SIDE, ONE SINCE CONFIRMED AT THE TOOL BY CC
+
+**1 — member (2) is NOT `CLAUDE.md` rendered whole.** It is **two spans**: lines 3–311 and 1481–1856
+of 1856. The dispatch and the seventy-fourth entry both state the whole-file premise and both are
+**FALSE**. Established here at `tools/audit/gen_derivation_boot_pack.py` before the report existed,
+and **independently confirmed by CC at its §5** — so the leak surface is far narrower than the premise
+implies, and a later proposal to widen member (2) must meet that cost first.
+
+**2 — the ledger precondition above.**
+
+### The two candidate lists are the critical path, and their size is the problem
+
+`ratification_surfaces/cowork_withheld_family_framework_reading.md`. **Measured at the file by this
+side: LIST ONE carries 208 rows; LIST TWO carries 12 passages inside member (2).** The file
+recommends nothing for any of them (**D-658**). **208 verdicts stand between here and the render, and
+how they are taken at all is itself undecided.**
+
+### Owed
+
+**The two candidate lists.** **The second tool shape at the report's §7(5)** — two places hardcode the
+first subject's criterion while claiming to describe the running one, and **at the render they write
+false statements into a generated artifact**; correcting them touches the criterion machinery, which
+the dispatch barred, so it needs a ruling before the render batch. **The report's declared departures
+1–5**, the user's to overrule. **The five unruled §7 points of the brief** other than P2. **The
+ledger, and who writes it.** The off-record 2026-08-27 ruling's confirmation; the verdict on the
+previous batch's §12.3 shell write and its §9 departure; the vocabulary renamings; the ARM/SITE
+fill-in's side; the homeless routed content; the class-24 record; **the register blocker, untouched**;
+the decisions-register entries for two sittings' rulings; **and a session with a shell.** Everything
+the sixty-seventh through seventy-fourth entries list as owed.
+
+**One cleanup, and it is this session's own mess: `cowork_rulings_2026_08_27_ledger_precondition_sitting.md`
+is a MISDATED copy of the ruling record and must be DELETED, not landed.** It is untracked. The
+correctly dated file is the one named above.
+
+### Declared by this side
+
+**Method.** All reads through the file tools on bridge-staged snapshots; **no shell command was run
+against the repository and `git status` was never at risk**; every tip read as a file at the ref.
+**The user barred shell use for this session explicitly**, in his opening instruction.
+
+**Read whole:** `cc_report_framework_pack_preparation.md`; `cc_instruction_framework_pack_preparation.md`;
+`cowork_blind_session_brief_framework.md`; `cowork_blind_session_brief_scoring_model.md`;
+`cowork_rulings_2026_08_27_framework_authoring_sitting.md`; `cowork_rulings_2026_08_22_boot_list_sitting.md`;
+`cowork_rulings_2026_08_25_v1_sufficiency_sitting.md`; `cowork_rulings_2026_08_26_ledger_form_sitting.md`;
+`STATUS.md`; the `DECISIONS.md` INDEX; the derived gating answer at
+`tools/audit/nongating_apparatus_rows.json`. **Read in part:** the seventy-fourth to seventy-first
+entries of this file; `tools/audit/gen_derivation_boot_pack.py`; `CLAUDE.md` at its headings and its
+delegation-pointer paragraph; the new reading file at §1–§5, LIST TWO and LIST THREE.
+
+**NOT OPENED:** any part of any of the three sealed sample files; `ARCHITECTURE.md`;
+`cowork_evidence_inventory.md`; `cowork_joint_estimator_factorization.md`; any source file,
+measurement output, dossier, boot-pack member, or PDF.
+
+**★ CONTAMINATION HAZARD, DECLARED.** This session read the `DECISIONS.md` INDEX in full and opened
+`CLAUDE.md` as a file. **It is barred from authoring the framework document**, as is any session that
+reads this entry. It is eligible to write the ledger.
+
+### This session's counted errors — two, BOTH caught by the user, and he closed the session over the second
+
+**(1) The misdate.** The ruling record was dated 2026-08-27 from this session's own environment
+rather than established at the user's machine, where the local date was 2026-08-28 — as Claude Code
+stamped on the batch it ran in the same hours. A date asserted from a source that was never checked
+against the objects. **Corrected by writing the correctly dated file; the misdated one is owed a
+deletion, above.** Self-caught, at the close.
+
+**(2) ★ THE LANGUAGE DEGRADED, AND THE USER CAUGHT IT: *"i see even you langauge skill are
+deteriorating, it is getting more and more difficult to understand your language style."*** This side
+had been writing to him in the style of these records — heavy bold, stacked clauses, project
+shorthand used as though familiar — which **is one of the named degradation tells of the standing
+rule of 2026-08-15** (*compact jargon instead of plain phrases*), **and this side did not report it
+unprompted, as that rule requires.** He closed the session in the next turn.
+
+**Two tells is the rule's own handover threshold, and the handover is this entry.** A successor
+should read the two errors above as the evidence and not discount them. **Write to the user in plain
+ordinary English; the record form belongs in these files and not in conversation with him.**
+
+### The cadence for the successor
+
+**NOTHING IS RUNNING AND NOTHING IS DISPATCHED. No dispatch was written by this session** — the next
+act is the user's ruling on the two candidate lists, not a Claude Code batch, so none is owed. Tip
+`bf3249e73d9eb91d0f2513bc2c16aa626b53e464`.
+
+**In the order that moves the work:** (1) the user rules the two candidate lists, and how 208 verdicts
+are taken is his to settle first; (2) the §7(5) tool shape is ruled before the render batch; (3) a
+later batch writes the reviewed verdicts, renders the pack, and turns the boot-pack check green in the
+same act; (4) the brief is finalised against the rendered pack and its five remaining §7 points ruled;
+(5) **the ledger is written before the author is booted**; (6) **then, and only in a FRESH Cowork
+session that has read none of this, the framework document is authored.**
+
+**This entry leaves `cowork_handoff.md` tracked-modified, and it may sit that way**, because the next
+act is not a batch and there is no Task 0 to land it. **The next dispatch, whenever it comes, lands it
+and establishes the entry count at the object — this entry asserts none.**
+
+*(The seventy-fourth entry below remains binding; it is superseded only as the entry point, and its
+statement that member (2) is `CLAUDE.md` rendered whole is established FALSE at the tool — see above.)*
+
+---
 ## COWORK SESSION CLOSE (SEVENTY-FOURTH ENTRY, 2026-08-27 — THE FIFTY-FOURTH SESSION'S ONLY ENTRY) — ONE RULING TAKEN AND RECORDED THE SAME DAY; THE FRAMEWORK BRIEF AND THE PACK-PREPARATION DISPATCH ARE ON DISK AND NEITHER IS OPENED. THE CURRENT ENTRY POINT.
 
 You start clueless. Read this block first. The seventy-third entry below remains binding except where
