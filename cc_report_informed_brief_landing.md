@@ -263,11 +263,85 @@ allocated**, as the dispatch directs.
 
 ### 9.1 The close, at the object
 
-*Filled in below, at the object, after the close commit is made.*
+Commit **`0dd0b3fda8ea5b15dcffc765186d9658a0ac6308`**, subject *"close the informed-brief landing
+batch: two STATUS.md pointer entries, the previous batch moved through the forward bound, the read
+size regenerated, and the report"*. Re-enumerated at the object with `changed_paths.py --commit`:
 
-### 9.2 The end-state guard run
+```
+M  STATUS.md
+M  STATUS_ARCHIVE.md
+A  cc_report_informed_brief_landing.md
+M  tools/audit/gen_status_batch_bound.py
+M  tools/audit/session_start_read_size.json
+M  tools/audit/status_batch_bound.json
+```
 
-*Filled in below, at the object, in the further commit.*
+**Six paths and no others.** Pushed; `origin/master` verified at
+`0dd0b3fda8ea5b15dcffc765186d9658a0ac6308`.
+
+### 9.2 The end-state guard run, made at the tree the close left
+
+`python tools/audit/gen_guard_state.py` was run in write mode **after** commit `0dd0b3fda8`, over
+the whole population.
+
+**75 run, 72 passing, 3 failing, 4 not run, 16 historical records. ZERO STOPs.** The three failing
+are exactly the three known:
+
+- `tools/audit/gen_filing_convention_application.py --check`
+- `tools/audit/decisions/apply_soft_discard.py --check`
+- `tools/audit/decisions/apply_residue_discard.py --check`
+
+**and no others.** `gen_derivation_boot_pack.py --check` is **GREEN**, as it was at the start state.
+Every value in this paragraph is at `tools/audit/guard_state.json` → `summary` and
+`summary.failing_tools`, written by that run and committed by the further commit below.
+
+### 9.3 The artifact's own difference, measured before it was accepted
+
+| | blob |
+|---|---|
+| at `0dd0b3fda8` | `cef5d3e388a2479d279ca526ab26015b238486c8` |
+| regenerated | `78d59922a6785df62e5590fd4c398de4903f339a` |
+
+`--numstat`: **6 added, 6 removed** — six changed lines and nothing else. Read hunk by hunk, the
+whole difference is three guards' captured output lines, and every one of them is this batch's own
+ordered act:
+
+- the forward bound's reconciliation line, because the move ran (§5, item 2);
+- the evidence-pin membership's read count, because the landing ruling record entered its population
+  (§4.3);
+- the session-start read size's `STATUS.md` figure, its total and its two comparison lines, because
+  `STATUS.md` changed at the close (§5, items 1 and 3).
+
+**`summary` did not move at all** — the same run, passing and failing counts, and the same
+`failing_tools` list. **Nothing moved whose cause is outside this batch**, so A2 and A4 hold at the
+end state as they held at §3.
+
+### 9.4 The tree at the end
+
+After the run, the working-tree enumeration showed **one** tracked modification,
+`tools/audit/guard_state.json`, and nothing else. The untracked population is the repository's
+long-standing one.
+
+**E1 is MET**: a fresh full guard run at the tree carrying the close, the three known failing checks
+and no others, zero STOPs, and the artifact committed only after the run that produced it.
+
+### 9.5 The one value this batch cannot write from inside the commit that carries it
+
+The further commit's own hash is knowable only after that commit exists, so it is not stated here.
+Its **subject** is stated instead, and it is the line to look for: *"the end state: the guard set run
+at the tree the close left — the three known failing checks and no others, zero STOPs; the report §9
+written"*. Its whole diff is two paths — this report and `tools/audit/guard_state.json` — both inside
+this dispatch's own fence, so no fence is widened.
+
+### 9.6 One advisory residue, reported rather than tuned away
+
+`python tools/audit/process_check.py` was run over this report before it was committed. It reports
+**no missing self-check section** and a small residue of `D-431 bare quantity` flags on the
+`--numstat` figures and the commit's own file/line counts. Those figures are measurements taken in
+this session at content-addressed objects, each stated beside the command that produced it, which is
+the form this report exists to carry; the same flags fire on the previous batch's report and on this
+batch's own dispatch, so the residue is the checker's known reach and not a new defect. **It is
+reported rather than removed, and nothing was reworded to make a check pass.**
 
 ## 10. Declared departures, and what is deliberately NOT done
 
