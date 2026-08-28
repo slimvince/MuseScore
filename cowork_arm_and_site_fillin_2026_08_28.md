@@ -529,3 +529,115 @@ statement-versus-code disagreement:* three joint-module headers —
 declaration `DORMANT (no production consumer)`, while `buildAdapterFacts` is called by
 `src/composing/analysis/joint/jointnotationproducer.cpp` and by `tools/batch_analyze.cpp`. It is
 recorded, not acted on: no row is created and no file is edited by this batch.
+
+---
+
+# The judgment — are the ARM and the SITE reachable at all?
+
+This is a judgment about the **FORM of the statement**, not about the analysis. Alternative A of
+Decision 4 of `cowork_rulings_2026_08_26_framework_opening_sitting.md` says in terms that the act
+adding sub-fields 1 and 2 **is where their testability is judged**, and it had not been tested
+before: the pilot reached three of the five sub-fields and left these two untested.
+
+Every count below is **measured from the nine entries above**, by reading each entry's own sub-field 1
+and sub-field 5, and is asserted nowhere else.
+
+## 1. What the nine entries returned
+
+**Sub-field 1, the ARM — a verdict for nine of nine.**
+
+| ARM verdict | Statements | Count |
+|---|---|---|
+| BOTH | B1, B2, B3, B4, B5, B6, B8, B9 | 8 |
+| NEITHER | B7 | 1 |
+| JOINT only | — | 0 |
+| LEGACY only | — | 0 |
+| NOT APPLICABLE | — | 0 |
+
+**And the half the sub-field exists for: eight of the nine bind DIFFERENTLY on the two arms** — B1,
+B2, B3, B4, B5, B6, B8 and B9 each carry a stated difference in the entry above. The one that does
+not differ is **B7**, which binds the same way on both arms: nowhere.
+
+**Sub-field 2, the SITE — a verdict for nine of nine.**
+
+| SITE verdict | Statements | Count |
+|---|---|---|
+| REACHED | B1, B2, B4, B5, B6, B8, B9 | 7 |
+| AMBIGUOUS | B3 | 1 |
+| NO SITE | B7 | 1 |
+
+## 2. Is each sub-field reachable in practice?
+
+**The ARM — REACHABLE, with no exceptions.** Every one of the nine returned an arm verdict, and the
+one NEITHER is an answer about the system rather than a shortfall of the sub-field: B7 names a
+behaviour no arm implements, so *neither* is the correct value and the sub-field said so. **The
+ground for the verdict is not the count but what the count exposed:** eight of the nine statements
+bind differently on the two arms, and four of those differences are ones a reader of §10.2 alone
+could not have guessed — B4's two sides are computed in opposite dependency order on the two arms;
+B8's carve-out is honoured verbatim on one arm and not implemented on the other; B9's same field
+carries a bounded value on one arm and an unbounded one on the other; and B6 differs **within** the
+joint arm, between its notation surface and its batch/corpus surface. Without sub-field 1 none of
+those is visible, and a statement read as one requirement would in fact be two.
+
+*What made it reachable, stated because it is a condition and not a property of the sub-field:* the
+two arms are **named at the code**, in module headers that declare which path is production and which
+is compiled and dormant, and the arm status is homed in `CLAUDE.md` gate block (A). The ARM sub-field
+is cheap exactly to the extent that this remains true.
+
+**The SITE — REACHABLE with named exceptions, and the exceptions are not one structural cause.** Seven
+of nine reached a site outright. The two that did not fail for **different and unrelated** reasons,
+which is why this is the *reachable-with-exceptions* verdict and not the *fails-broadly-for-one-cause*
+verdict the dispatch requires to be said as one:
+
+- **B3 is AMBIGUOUS** because the statement's word *assignment* has two readings and the system
+  answers them differently: the per-note category the decode computes exists on the joint arm, and a
+  published per-note fact of the kind B3's own observable names exists on neither. The two readings
+  are named in the entry and neither was chosen.
+- **B7 has NO SITE** because nothing in the system publishes a rival carrying boundaries of its own.
+  That is a fact about the system, established by enumerating every rival carrier and every
+  candidate-boundary producer, not a limit of the sub-field. **The sub-field worked here**: it
+  returned the absence, with what was searched, rather than the nearest plausible site.
+
+**Neither exception is caused by the sub-field being unanswerable.** In both cases the sub-field
+produced a usable finding; what it did not produce is a file-and-function name, because in one case
+there is nothing to name and in the other the statement admits two subjects.
+
+## 3. What it cost
+
+One session, reading only: no build, no test, no measurement of the analysis, and no session booted.
+**The ARM was nearly free** once the two production surfaces were established — three reads settled it
+for all nine — **and essentially all of the effort went to the SITE**, of which the single largest
+share went to **B7's NO SITE**, because establishing an absence required enumerating every rival
+carrier and every candidate-boundary producer in the module rather than opening one file. The seven
+REACHED sites cost roughly one targeted search plus one header read each; B3 cost more than a REACHED
+site because it required proving a negative on the production path before the dormant module that
+does implement something like it could be named correctly.
+
+## 4. P1 and P2, graded
+
+**P1 — "B7 has NO SITE" — HELD.** The dispatch registered it to be tested rather than confirmed, and
+it was tested by search before it was accepted: the searches are listed in B7's entry and they are
+wider than the ground the prediction was registered on. The writing side's ground was the incumbent
+carry described at `ARCHITECTURE.md` §2.15; the verdict here rests instead on the **joint arm's own
+posterior slice**, where both axes demonstrably hold the segment fixed
+(`computePosteriorSlice`, `src/composing/analysis/joint/jointdecoder.cpp`), on the shape of every
+alternative carrier on both arms, and on what `analyzeRegions` does with the segmenter's unpromoted
+candidate boundaries. **No site was found, and none was invented.**
+
+**P2 — "at least one statement binds differently on the two arms" — HELD, and by a wide margin.**
+Eight of the nine bind differently. The prediction's own falsifying outcome — every statement binding
+identically on both arms, which would itself have been a finding about how much the arm distinction
+buys — did not occur.
+
+## 5. What this judgment does NOT conclude
+
+**It does not conclude that either sub-field should be dropped, and it may not.** Alternative C of
+Decision 4 — dropping sub-fields 1 and 2 — was not taken, and its exclusion is on the record: dropping
+them is a disposal, and this project's disposal discipline requires a worth test carrying a finding, a
+date and a reason. That test has never been run on them, and **running it is the user's act, not a
+batch's.** What is offered above is the material such a test would need: the per-sub-field counts, the
+verdicts with their reasons, the cost, and — the load-bearing item for a worth test — **what the ARM
+sub-field exposed that §10.2 alone does not carry.**
+
+It also concludes nothing about whether the code satisfies any statement. Eleven questions of that
+kind were met while binding; all eleven are quarantined above, unresolved, and reserved to the audit.
