@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_framework_pack_preparation.md, Task 2",
+ "dispatch": "cc_instruction_framework_arrangement_landing.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -158,21 +158,42 @@
    "executing_act": "cc_instruction_unit_correction_redraw.md, Task 6",
    "base_commit": "7c32f37fb36c55e16e3504d45934fb692a39be04",
    "the_then_previous_batch": "cc_instruction_placement_sample_redraw.md"
+  },
+  {
+   "executing_act": "cc_instruction_framework_pack_preparation.md, Task 2",
+   "base_commit": "85e0b8da162a5b937f4a4be0f033f5c7d281eddf",
+   "the_then_previous_batch": "cc_instruction_unit_correction_redraw.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "85e0b8da162a5b937f4a4be0f033f5c7d281eddf",
- "the_then_previous_batch": "cc_instruction_unit_correction_redraw.md",
- "entries_moved": 1,
- "characters_moved": 4919,
+ "base_commit": "722c7327a9472436cdc43a9ffc0dd4eb1533823a",
+ "the_then_previous_batch": "cc_instruction_framework_pack_preparation.md",
+ "entries_moved": 3,
+ "characters_moved": 6598,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 4919,
-   "sha256": "e8c229871dc427469515bf932e0d74674218b6182c21ec384952a7d57a376a30",
+   "characters": 4457,
+   "sha256": "085173962ea6dabe3479798a42e2215955a71c9b72194c783df72108947673ff",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-27 (CC — **★ THE UNIT FORMS FOR THE TWO GOVERNANCE STRATA ARE CORRECTED, THOSE TWO STRATA ALONE ARE REDRAWN, AND THE SAMPLE IS RE-SEALED IN A"
+   "opening": "*2026-08-28 (CC — **★ THE `framework` SUBJECT IS AUTHORED INTO THE BOOT-PACK GENERATOR WITH AN EMPTY WITHHELD FAMILY, ITS WITHHELD CANDIDATES ARE ENUM"
+  },
+  {
+   "line_at_base": 10,
+   "characters": 1124,
+   "sha256": "93de8d0e2798e5d4a69e560a30a99bc29caf339e31cea8f0367a64983f5fbea3",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 1: the `framework` subject authored into the boot-pack generator's AUTHORED tables — the subject line, the plain"
+  },
+  {
+   "line_at_base": 12,
+   "characters": 1017,
+   "sha256": "dee4fbe80bd4aafb6a002703e613087fc6d2d36072dd8325af82bb0a8d1691fe",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 0: the 2026-08-27 ruling record that authors the framework document now with its ratification HELD, the DRAFT fr"
   }
  ],
  "reconciliation": {
