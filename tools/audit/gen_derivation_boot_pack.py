@@ -339,34 +339,9 @@ WITHHELD: dict[str, dict] = {
         # NO `the_identity_the_ruling_names`: the ruling names none, the family being empty.
     },
 
-    # ── THE FRAMEWORK SUBJECT — an EMPTY withheld family, and the candidates ENUMERATED ────────
-    # `cc_instruction_framework_pack_preparation.md` Task 1(a).  The family is authored EMPTY and
-    # NOTHING IS WITHHELD BY THE ACT THAT AUTHORS IT: the candidates are enumerated and delivered
-    # as a reading file, and the user rules them.  NO PACK DIRECTORY IS RENDERED for this subject,
-    # because a rendered pack is a bootable pack and the withheld set is not yet ruled.
-    #
-    # THE EMPTINESS HERE IS NOT THE `scoring-model` EMPTINESS, and the difference is stated so a
-    # reader does not take one for the other.  There the family is empty BY RULING, permanently,
-    # because that unit is not held out; here it is empty BECAUSE NOTHING HAS BEEN RULED YET, and
-    # a criterion IS authored below precisely so that the candidates can be put to the user.
-    "framework": {
-        "the_subject_in_plain_words":
-            "How the analysis should be divided into layers — what question each layer answers, "
-            "on what evidence, what it publishes, and what may cross between them.",
-        "the_oracle_this_family_protects": (
-            "NONE, and this field states that rather than naming an oracle span. This subject is "
-            "not held out against a ruled answer and there is none to protect. What the family "
-            "exists to keep out is the ruled NOT-ALLOWED clause of "
-            "`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3.3, quoted "
-            "verbatim: \"NOT ALLOWED: implementation-derived material as design input; evidence "
-            "treated as the decision.\" The family is EMPTY as authored — no identities, no "
-            "documents, no passages — and the candidates below are ENUMERATED for the user to "
-            "rule before anything is withheld and before any pack is rendered."),
-        "withheld_documents": {},
-        "withheld_passages": [],
-        # NO `the_identity_the_ruling_names`: nothing is withheld by the act that authors this
-        # entry, so there is no identity for a ruling to name.
-    },
+    # THE `framework` SUBJECT IS ABSENT DELIBERATELY, not by oversight: its deriving session is
+    # not implementation-blind, so no pack is rendered for it and nothing is withheld
+    # (`cowork_rulings_2026_08_28_informed_framework_sitting.md`).
 }
 
 # ══════════════════════════════════════════════════════════════════════════════════════════════
@@ -402,30 +377,6 @@ CRITERION = {
         "home_documents": (),
         "architecture_spans": (),
         "keywords": (),
-        "always": (),
-    },
-    # The framework subject's criterion, given in full by
-    # `cc_instruction_framework_pack_preparation.md` Task 1(b) and imported rather than re-decided.
-    # It names NO oracle span and NO home document: this subject has no oracle.
-    #
-    # ITS KEYWORDS ARE WRITTEN IN PLACE RATHER THAN AS A MODULE-LEVEL CONSTANT BESIDE `KEYWORDS`,
-    # and the choice is recorded because it is deliberate: a second module-level collection is a
-    # DERIVED member of `tools/audit/recognizer_establishment_sort.json`'s per-tool record, so
-    # naming one would move a second artifact this subject has no business moving.  Measured, not
-    # assumed -- with the constant named, that artifact's whole difference was one added line, and
-    # inlining returns it byte-identical.
-    "framework": {
-        "groups": ("A", "C", "D", "E", "F", "G", "H", "I"),
-        "home_documents": (),
-        "architecture_spans": (),
-        "keywords": (
-            "layer", "layers", "decomposition", "charter", "boundary contract", "publishes",
-            "consumes", "one path per concern", "span typology", "the record", "seam", "adapter",
-            "pipeline", "stage", "upstream", "downstream", "note model", "slicer", "slice",
-            "key and mode", "chord identity", "function layer", "grouping layer", "derived view",
-            "emission", "decode", "joint estimator", "state space", "factor", "forward-only",
-            "backward edge", "re-derive", "recompute",
-        ),
         "always": (),
     },
 }
