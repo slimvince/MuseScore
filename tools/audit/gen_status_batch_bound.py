@@ -60,20 +60,20 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "722c7327a9472436cdc43a9ffc0dd4eb1533823a"
+BASE_COMMIT = "1d213b19b618aa1d148a7777460c48f37fd5de68"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_framework_pack_preparation.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_framework_arrangement_landing.md"
 
 ACT_DATE = "2026-08-28"
-DISPATCH = "cc_instruction_framework_arrangement_landing.md"
+DISPATCH = "cc_instruction_informed_brief_landing.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
-# batch's own `STATUS.md` entries in the same numbered task — its Task 3, item 1 — so both halves
-# of "the same act that writes its own entries" sit inside Task 3, and Task 3 is what the archive
+# batch's own `STATUS.md` entries in the same numbered task — its Task 1, item 1 — so both halves
+# of "the same act that writes its own entries" sit inside Task 1, and Task 1 is what the archive
 # header names. No sub-item is carried, because the header names an act rather than a sub-step and
 # every previous aiming names a whole task.
-TASK = "Task 3"
+TASK = "Task 1"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -188,6 +188,9 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_framework_pack_preparation.md, Task 2",
      "base_commit": "85e0b8da162a5b937f4a4be0f033f5c7d281eddf",
      "the_then_previous_batch": "cc_instruction_unit_correction_redraw.md"},
+    {"executing_act": "cc_instruction_framework_arrangement_landing.md, Task 3",
+     "base_commit": "722c7327a9472436cdc43a9ffc0dd4eb1533823a",
+     "the_then_previous_batch": "cc_instruction_framework_pack_preparation.md"},
 ]
 
 ARCHIVE_HEADER = (

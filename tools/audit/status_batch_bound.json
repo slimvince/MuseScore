@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_framework_arrangement_landing.md, Task 3",
+ "dispatch": "cc_instruction_informed_brief_landing.md, Task 1",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -163,37 +163,50 @@
    "executing_act": "cc_instruction_framework_pack_preparation.md, Task 2",
    "base_commit": "85e0b8da162a5b937f4a4be0f033f5c7d281eddf",
    "the_then_previous_batch": "cc_instruction_unit_correction_redraw.md"
+  },
+  {
+   "executing_act": "cc_instruction_framework_arrangement_landing.md, Task 3",
+   "base_commit": "722c7327a9472436cdc43a9ffc0dd4eb1533823a",
+   "the_then_previous_batch": "cc_instruction_framework_pack_preparation.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "722c7327a9472436cdc43a9ffc0dd4eb1533823a",
- "the_then_previous_batch": "cc_instruction_framework_pack_preparation.md",
- "entries_moved": 3,
- "characters_moved": 6598,
+ "base_commit": "1d213b19b618aa1d148a7777460c48f37fd5de68",
+ "the_then_previous_batch": "cc_instruction_framework_arrangement_landing.md",
+ "entries_moved": 4,
+ "characters_moved": 5882,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 4457,
-   "sha256": "085173962ea6dabe3479798a42e2215955a71c9b72194c783df72108947673ff",
+   "characters": 3090,
+   "sha256": "df508146ba8e75e4a51a0322f39ad8c4119c7a1b4f41b15589f580370bf998d2",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-28 (CC — **★ THE `framework` SUBJECT IS AUTHORED INTO THE BOOT-PACK GENERATOR WITH AN EMPTY WITHHELD FAMILY, ITS WITHHELD CANDIDATES ARE ENUM"
+   "opening": "*2026-08-28 (CC — **★ THE `framework` SUBJECT IS RETIRED FROM THE BOOT-PACK GENERATOR, AND THE GUARD CHECK THE PREVIOUS BATCH LEFT FAILING IS GREEN.**"
   },
   {
    "line_at_base": 10,
-   "characters": 1124,
-   "sha256": "93de8d0e2798e5d4a69e560a30a99bc29caf339e31cea8f0367a64983f5fbea3",
+   "characters": 787,
+   "sha256": "0ccf551e1ea509c62ba394ab417b27e051c5a6bba75ca7b5e55437cb72744ccb",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-28 (CC — Same dispatch, Task 1: the `framework` subject authored into the boot-pack generator's AUTHORED tables — the subject line, the plain"
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 2: a superseded banner written at the head of the blind framework brief, naming the informed brief that replaces"
   },
   {
    "line_at_base": 12,
-   "characters": 1017,
-   "sha256": "dee4fbe80bd4aafb6a002703e613087fc6d2d36072dd8325af82bb0a8d1691fe",
+   "characters": 1003,
+   "sha256": "a4b8d11b364aee46e56bc0f2b6c423a0ee37bd3f08bfe6849ff35428a32d9cc4",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-28 (CC — Same dispatch, Task 0: the 2026-08-27 ruling record that authors the framework document now with its ratification HELD, the DRAFT fr"
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 1: the two authored `framework` entries deleted from `tools/audit/gen_derivation_boot_pack.py` — one in the with"
+  },
+  {
+   "line_at_base": 14,
+   "characters": 1002,
+   "sha256": "cd4d59044de6ee5b072a097e4d7daa5e0c2d61196156bf8da4585d85a87d06bf",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 0: the two 2026-08-28 ruling records, the informed framework brief, the phase constraints-and-stop-rules home an"
   }
  ],
  "reconciliation": {
