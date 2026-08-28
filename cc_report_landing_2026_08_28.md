@@ -493,8 +493,9 @@ open-items row — **and it is surfaced here rather than left in the enumeration
 |---|---|
 | tip at the start, `HEAD` = `master` = `origin/master` | `a4992ab70ceef83aebbf01a7b7890bd16dcd43ee` |
 | Task 1 commit — the landing | `0e927c2db2f8241660e5c2711288e61fdd921d53` |
-| Task 2 commit — the close | *§12* |
-| the end-state commit | *§12* |
+| Task 2 commit — the close | `6d01920d001b150702388f9d36f90ab161322f9d` |
+| the end-state commit | `39d0b91134178f1d9c4fdfe417532868caf2b716` |
+| the §7 completion commit — **the fourth, declared at §9.3** | *its own identity cannot stand inside itself; it is the commit whose parent is `39d0b911…`* |
 | dispatch blob, pinned at Task 0 and unmoved at Task 1 | `23fd2409ab1eddb4382e20d545506d6179ef4ce7` |
 | staging-file blob, pinned at Task 0 | `e01694ca1d1ea704635bd5d3eed561e29c1ef1ea` |
 | `cowork_handoff.md` before the prepend | `d318da1e97f4cf210023c6b780402f3a242028be` |
@@ -551,6 +552,21 @@ only in the five paths this batch's own close acts write.
    written; the exposure is closed by the blob being identical at the pin and at the staging.
 2. **A file appeared in the tree that no order of this batch created, and it was reported rather
    than STOPPED** — §5.3. The reasoning is stated in full there.
+
+3. **★ A FOURTH COMMIT WAS TAKEN, WHERE THE DISPATCH ORDERS THREE.** Task 2 item 5 says *"Commit,
+   push, verify; then the ONE further commit with the end-state guard run."* Item 2 also requires
+   **every SHA** in the report, and two of them — the close commit and the end-state commit — could
+   not be written into a report that is committed BY those commits. The end-state commit's §12 named
+   neither, so the report as it stood promised at §7 two values it did not carry. **The fourth
+   commit fills exactly those two cells and changes nothing else.** *Why it was taken rather than
+   left:* an unmet cell in the report's own SHA table is a statement the record makes about itself
+   that is false, and it costs a later reader the two identities the report exists to publish; the
+   commit-count clause is a cadence rule, and enforcing it past its own purpose is the shape the
+   dispatch protocol's own standing clause names. **What it does NOT do:** it re-runs no guard,
+   moves no measured value, edits no other section and touches no file but this report. **The
+   end-state guard artifact is untouched and remains the artifact of the run that produced it** —
+   §12's claim is about the tree the guard ran at, and this commit changes nothing the guard set
+   reads.
 
 **No other departure.** In particular: no bar of the dispatch was widened, no landed file's content
 was edited, no register or governing document was touched, and no open-items row was created for
