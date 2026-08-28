@@ -1,5 +1,14 @@
 # BRIEF for the blind deriving session — the FRAMEWORK document
 
+> **★ SUPERSEDED, 2026-08-28, BY `cowork_informed_session_brief_framework.md`.** The user ruled at
+> `cowork_rulings_2026_08_28_informed_framework_sitting.md` that the framework phase's deriving
+> session is **not implementation-blind**, so the arrangement this brief is written for — a rendered
+> boot pack, a withheld family, a leak check — is not the arrangement that phase now runs under.
+> **This file is KEPT and not deleted (#12):** it is the record of what was designed under the
+> previous arrangement, and it is the starting point for any later blind run over this subject.
+> **Nothing else in it is edited**, and every statement below it stands as it was written — read it
+> as a record, never as an instruction.
+>
 > **STATUS: DRAFT — NOT RULED, NOT DISPATCHED, AND NOT YET USABLE.** Written by the writing side
 > (Cowork, 2026-08-27, the fifty-fourth session) at branch tip
 > `acedffc66d8c40f17d5fe6dbb73ca1ac90129997`, read as a file at `.git/refs/heads/master`.
