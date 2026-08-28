@@ -601,7 +601,27 @@ Owed, and NOT done:
 
 ## 12. The end state
 
-*Written by the further commit, which carries the fresh full guard run at the tree the close left.*
+**A fresh FULL guard run was performed at the tree the close left**, in write mode, and
+`tools/audit/guard_state.json` is committed as the artifact of that run and of no other —
+**the run came first and the commit second.**
+
+`python tools/audit/gen_guard_state.py`, exit **0**. Its summary line reports **75 guards run,
+3 failing, 4 not run, 16 historical records**, and the artifact's own `summary` block reads
+**run 75, passing 72, failing 3**. The three failing are **the three known and no others**:
+
+- `tools/audit/gen_filing_convention_application.py --check`
+- `tools/audit/decisions/apply_soft_discard.py --check`
+- `tools/audit/decisions/apply_residue_discard.py --check`
+
+**ZERO STOPs** — a search of the whole run output for `STOP` returns none. **No check that passed
+at the start failed at the end, and no new failure appeared**: the start-state run (§3.3) and this
+one report the same three failing tools and the same counts.
+
+**The only path that moved between the close commit and this one is
+`tools/audit/guard_state.json`**, confirmed at `python tools/audit/changed_paths.py`. A3 holds
+through the end state.
+
+**E2 is MET.**
 
 ---
 
