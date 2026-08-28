@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 80,
+  "ruling_records_read": 81,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -218,6 +218,7 @@
   "cowork_rulings_2026_08_27_placement_sample_sitting.md",
   "cowork_rulings_2026_08_27_redraw_findings_sitting.md",
   "cowork_rulings_2026_08_27_stopped_strata_sitting.md",
+  "cowork_rulings_2026_08_28_framework_delta_sitting.md",
   "cowork_rulings_2026_08_28_informed_brief_points_sitting.md",
   "cowork_rulings_2026_08_28_informed_framework_sitting.md",
   "cowork_rulings_2026_08_28_ledger_precondition_sitting.md",

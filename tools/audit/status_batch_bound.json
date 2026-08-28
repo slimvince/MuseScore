@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_informed_brief_landing.md, Task 1",
+ "dispatch": "cc_instruction_arm_and_site_fillin.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -168,45 +168,34 @@
    "executing_act": "cc_instruction_framework_arrangement_landing.md, Task 3",
    "base_commit": "722c7327a9472436cdc43a9ffc0dd4eb1533823a",
    "the_then_previous_batch": "cc_instruction_framework_pack_preparation.md"
+  },
+  {
+   "executing_act": "cc_instruction_informed_brief_landing.md, Task 1",
+   "base_commit": "1d213b19b618aa1d148a7777460c48f37fd5de68",
+   "the_then_previous_batch": "cc_instruction_framework_arrangement_landing.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "1d213b19b618aa1d148a7777460c48f37fd5de68",
- "the_then_previous_batch": "cc_instruction_framework_arrangement_landing.md",
- "entries_moved": 4,
- "characters_moved": 5882,
+ "base_commit": "836ad8ba57ab22c89cdcd6a6d85b8fa2a70a2d0d",
+ "the_then_previous_batch": "cc_instruction_informed_brief_landing.md",
+ "entries_moved": 2,
+ "characters_moved": 4934,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 3090,
-   "sha256": "df508146ba8e75e4a51a0322f39ad8c4119c7a1b4f41b15589f580370bf998d2",
+   "characters": 3494,
+   "sha256": "31774a338b46aaa2bcac1a1b1ac7c523d5c9ccc87c77da6352ff489d110a3c21",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-28 (CC — **★ THE `framework` SUBJECT IS RETIRED FROM THE BOOT-PACK GENERATOR, AND THE GUARD CHECK THE PREVIOUS BATCH LEFT FAILING IS GREEN.**"
+   "opening": "*2026-08-28 (CC — **★ THE SEVEN BRIEF-POINTS RULINGS, THE REVISED INFORMED BRIEF AND THE TWO RATIFICATION-SURFACE BANNERS ARE LANDED — AND THIS BATCH "
   },
   {
    "line_at_base": 10,
-   "characters": 787,
-   "sha256": "0ccf551e1ea509c62ba394ab417b27e051c5a6bba75ca7b5e55437cb72744ccb",
+   "characters": 1440,
+   "sha256": "e1973090d251390955f6fe2e72799086f6eb242d621383fbd0ee4e0d96c2d9da",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-28 (CC — Same dispatch, Task 2: a superseded banner written at the head of the blind framework brief, naming the informed brief that replaces"
-  },
-  {
-   "line_at_base": 12,
-   "characters": 1003,
-   "sha256": "a4b8d11b364aee46e56bc0f2b6c423a0ee37bd3f08bfe6849ff35428a32d9cc4",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-28 (CC — Same dispatch, Task 1: the two authored `framework` entries deleted from `tools/audit/gen_derivation_boot_pack.py` — one in the with"
-  },
-  {
-   "line_at_base": 14,
-   "characters": 1002,
-   "sha256": "cd4d59044de6ee5b072a097e4d7daa5e0c2d61196156bf8da4585d85a87d06bf",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-28 (CC — Same dispatch, Task 0: the two 2026-08-28 ruling records, the informed framework brief, the phase constraints-and-stop-rules home an"
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 0: the paths the writing side had already modified — the handoff, the revised informed brief and the two `ratifi"
   }
  ],
  "reconciliation": {
