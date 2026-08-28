@@ -1,8 +1,10 @@
 # BRIEF for the INFORMED deriving session — the FRAMEWORK document
 
-> **STATUS: DRAFT — NOT RULED, NOT DISPATCHED. §7 lists the points the user rules before this brief
-> is handed to anyone, and none of them is ruled.** Written by the writing side (Cowork, 2026-08-28)
-> at branch tip `bf3249e73d9eb91d0f2513bc2c16aa626b53e464`, read as a file at
+> **STATUS: READY, NOT DISPATCHED. ★ ALL SEVEN OF §7's POINTS ARE NOW RULED** —
+> `cowork_rulings_2026_08_28_informed_brief_points_sitting.md`, the user's words *"I agree with all
+> recommendations."* **One item is left undecided by name and is marked at §5.** Written by the
+> writing side (Cowork, 2026-08-28) and revised the same day against those rulings; the tip at the
+> revision was `8798d6049e2e237efd4d8bffd5b7f7f904815493`, read as a file at
 > `.git/refs/heads/master`. It dispatches nothing and boots no session.
 >
 > **★ IT SUPERSEDES `cowork_blind_session_brief_framework.md`, WHICH IS KEPT AND NOT EDITED (#12).**
@@ -10,21 +12,29 @@
 > 2026-08-28. **The user ruled that arrangement away** —
 > `cowork_rulings_2026_08_28_informed_framework_sitting.md`, his words *"In my opinion 3 still stands,
 > yours too it seems."* The blind brief stays on disk as the record of what was designed under the
-> previous ruling and as the starting point for any later blind run over this subject. **It is
-> tracked; putting a superseded banner on its face is owed to a dispatch and is not done here.**
+> previous ruling and as the starting point for any later blind run over this subject. **It now
+> carries a superseded banner on its face**, placed by
+> `cc_instruction_framework_arrangement_landing.md` Task 2.
 >
 > **★ WHAT CHANGED, IN ONE SENTENCE.** The session may now read this project's own material —
 > `ARCHITECTURE.md`, the specifications, the registers, the code — as design input; **there is no boot
 > pack, no withheld family and no leak check**; and what replaces blindness as the guard against
-> simply restating what exists is **§3's incumbency rule**, which is where the weight of this brief now
-> sits.
+> simply restating what exists is **the two-stage order of §3 together with the incumbency rule**,
+> which is where the whole weight of this brief now sits.
+>
+> **★ THE SHAPE OF THE WORK, BEFORE ANY DETAIL: IT IS TWO STAGES AND THE ORDER IS NOT A SUGGESTION.**
+> **Stage one derives from OUTSIDE this project and is written down before anything of ours is
+> opened. Stage two reads ours and revises, recording every change and why.** A session that reads our
+> material first has destroyed the only instrument this phase has, and cannot restore it by trying
+> harder afterwards. §3 states it; §5 is the record it produces.
 >
 > **★ THREE BARS SURVIVE THE RULING AND A READER MUST NOT ASSUME OTHERWISE.** The three sealed
 > placement-sample files stay sealed (§3). The second limb of the phase constraint — *evidence treated
 > as the decision* — still binds (§4). And **no session that has read
-> `cowork_rulings_2026_08_28_informed_framework_sitting.md` or the seventy-sixth entry of
-> `cowork_handoff.md` may author this document**, the bar being that the authoring side is not the
-> side that argued the case for the arrangement it works under.
+> `cowork_rulings_2026_08_28_informed_framework_sitting.md`,
+> `cowork_rulings_2026_08_28_informed_brief_points_sitting.md`, or the seventy-sixth or
+> seventy-seventh entry of `cowork_handoff.md` may author this document**, the bar being that the
+> authoring side is not the side that argued the case for the arrangement it works under.
 >
 > **On the section set.** It follows the ruled form of the two pilot briefs
 > (`cowork_rulings_2026_08_23_brief_validation_sitting.md`), with §5 changed in kind — an independence
@@ -59,6 +69,8 @@ is explained here, once, before it is used; standard music theory is used in its
   therefore made rather than followed.
 - **Incumbency** — the fact that some design is the one this project already built or already
   specified. §3 states what incumbency is worth here.
+- **The first-stage draft** — what this session writes from the outside sources alone, before it opens
+  any of this project's own material. It is a deliverable in its own right and is never overwritten.
 - **Tonality** — used throughout for what is commonly called "the key". In this project the bare word
   *key* is reserved for tonality and is never used for a lookup key or a map key; *bar* is used for
   the metric unit, never *measure*; *score* means the musical score and never a number; *note* means a
@@ -100,20 +112,55 @@ of the ruled purpose and is not itself ruled:**
 - **What is NOT a layer.** Responsibilities that look like one and are not — a view over what other
   layers decided, a presentation concern, a measurement concern.
 
-## 3. What the session reads — and the one rule that now carries the weight
+## 3. What the session reads, and IN WHAT ORDER — the rule that carries the whole weight
 
-**The session may read this repository.** `ARCHITECTURE.md` and the per-layer design documents,
-`docs/scoring_model.md` and the other design documents, the decisions register, the open-items
-register, `EMPIRICAL_FINDINGS_LEDGER.md`, the ratified design intent, the source code. **Whether that
-read is unbounded or is an enumerated list is §7 (P1) and is not ruled.**
+**Ruled** (`cowork_rulings_2026_08_28_informed_brief_points_sitting.md`, Ruling 1). The read is
+**neither unbounded nor an enumerated list. It is two stages, and the order is the instrument.**
 
-**It should also fetch and read published research** — peer-reviewed papers, published algorithms,
-public datasets' documentation. `docs/research_papers/` holds **fifty-eight PDFs and a
-`BIBLIOGRAPHY.md`**, counted at the folder, and they are read from disk rather than re-fetched.
-`cowork_literature_reachability_2026_08_26.md` §5 carries a candidate list of published models this
-project does not reference, each with a remark on what it decomposes differently; **its own §6 declares
-the sweep non-exhaustive** — one item was actually read and the rest are titles and abstracts — **so a
-session that treats that list as coverage has misread it.**
+### Stage one — derive from outside this project, and WRITE IT DOWN
+
+**Before opening any file of this project's own**, derive the decomposition from these and nothing
+else:
+
+- **music theory** — what a harmonic analysis of this repertoire consists of, *including what
+  annotators do not write down*;
+- **published research**, fetched or read from disk. `docs/research_papers/` holds **fifty-eight PDFs
+  and a `BIBLIOGRAPHY.md`**, counted at the folder; read them there rather than re-fetching. The
+  candidate list at `cowork_literature_reachability_2026_08_26.md` §5 names published models this
+  project does not reference, each with a remark on what it decomposes differently;
+- **the ground-truth annotation schema**, read at the staged exemplars of §7 (P6);
+- **`EMPIRICAL_FINDINGS_LEDGER.md`** — thirty-five facts that have already passed the test of
+  surviving the implementation being thrown away, which is what makes them admissible here;
+- **`cowork_joint_estimator_factorization.md`**, the user-ratified ten-factor model, admissible as
+  design intent by Ruling 2 of the successor-plan sitting.
+
+**The first-stage draft is then WRITTEN — a complete answer to §2's question, in §4's form, with its
+defenses.** It is not notes and it is not an outline. **It is never overwritten and never edited after
+stage two opens** (#12): stage two revises the document, and the first-stage draft stands beside it as
+what this session would have said. *Where the first-stage draft lives — a section of the framework
+document, an appendix, or a sibling file — is the one thing the rulings leave open; see §5.*
+
+### Stage two — read this project's material, and revise on the record
+
+**Only now** open `ARCHITECTURE.md`, the per-layer design documents, `docs/scoring_model.md`, the
+decisions register, the open-items register, the ratified design intent and the source code. Read what
+you judge relevant; nothing here is enumerated, because the guard is the order and not the list.
+
+**Every change stage two makes to the stage-one answer is recorded with its reason**, and every point
+at which stage one already agreed is recorded as agreement. That record is §5, and producing it is not
+a chore attached to the work — **it is the phase's second deliverable.**
+
+**Why the order and not a wall.** A session that reads our answer first cannot afterwards say what it
+would have derived; a session that writes its own answer first can say exactly what our material
+changed and why. The difference is observed rather than remembered, which is the only reason this
+arrangement can claim anything at all about independence.
+
+### The two bounds that travel with stage one's sources
+
+**The literature sweep is not coverage.** `cowork_literature_reachability_2026_08_26.md` **§6 declares
+its own sweep non-exhaustive** — one item was actually read and every other is a title and an abstract,
+and four classes of work were unreachable by construction. **A session that treats its §5 list as
+coverage has misread it**, and a decomposition the list does not contain is not thereby excluded.
 
 **One gap is named rather than hidden.** The same report's §4 item 3 records that the primary source
 for key profiles is **not held on disk**. A conclusion resting on key profiles is defending a factor
@@ -192,39 +239,58 @@ changed, as an explicit finding for the user to rule** — and does not present 
 
 **Where a statement is behavioural**, it names what would falsify it in plain terms: the
 **OBSERVABLE**, the **DECISION RULE** over it, and the **near-miss it is NOT falsified by**.
-*(Under the previous arrangement this session could not name code sites and that fill-in was ruled to
-a side permitted to read code —`cowork_rulings_2026_08_26_framework_opening_sitting.md`, Ruling 4.
-**This session may read code, so whether it performs that fill-in itself or leaves it to the ruled
-side is §7 (P7) and is not ruled.** Until it is, the session leaves the fill-in undone and declares
-the gap, which is the previous arrangement's behaviour and the safe one.)*
+**★ IT DOES NOT NAME CODE SITES AND DOES NOT NAME WHICH ARM A STATEMENT BINDS — RULED, AND NOT
+BECAUSE IT CANNOT.** That fill-in stays with a side other than the author
+(`cowork_rulings_2026_08_28_informed_brief_points_sitting.md`, Ruling 5). This session may read code,
+so the original ground — that it could not — is gone; **the routing is kept because a verifier who is
+not the author is the stronger form of #15, and an author checking its own statements against the code
+it just read as design input is the weakest.** **The gap is declared on the face of the framework
+document:** its statements are checkable in principle and not yet checkable in fact until that fill-in
+runs.
 
 **What cannot be settled is written as an open question, never filled with the most plausible
 reading.**
 
-## 5. The sources-and-incumbency record — what replaces the independence record
+## 5. The two-stage record — the phase's second deliverable
 
-An independence record is meaningless for a session that may read everything. What this session
-records instead, and **an output without it is incomplete**:
+An independence record is meaningless for a session that may read everything. **What replaces it is
+not a claim the session makes about itself but a comparison of two texts it wrote**, and an output
+without it is incomplete.
 
-1. **Every source it opened** — repository files by path, fetched or on-disk research by citation.
-2. **Every design point at which its answer AGREES with the arrangement this project already has**,
-   each with one line: **reached on the evidence**, or **carried forward** — and, where carried
-   forward, what evidence would be needed to reach it independently.
-3. **Every design point at which its answer DIFFERS**, with the difference stated plainly. These are
-   the phase's most valuable output and must not be buried in the defense prose.
-4. **A positive statement that none of the three sealed files was opened.**
+1. **The first-stage draft, whole and unedited.** It is the artifact the rest of this section is read
+   against. **★ WHERE IT LIVES IS THE ONE THING THE RULINGS LEAVE OPEN** — a section of the framework
+   document, an appendix, or a sibling file. Until the user settles it, **the session keeps it as a
+   clearly-marked appendix of the one output file** and says on its face that the placement is not
+   ruled. It is never edited after stage two opens (#12).
+2. **Every source opened, in each stage separately** — repository files by path, research by citation
+   — so that the two stages' inputs can be told apart by a reader.
+3. **Every design point at which stage two's answer AGREES with the arrangement this project already
+   has**, each with one line: **reached at stage one on the evidence**, or **carried forward at stage
+   two** — and, where carried forward, what evidence would be needed to reach it independently.
+4. **Every design point at which the answer DIFFERS from this project's arrangement**, stated plainly.
+   **These are the phase's most valuable output and must not be buried in the defense prose.**
+5. **Every change stage two made to the stage-one draft, with its reason** — including changes that
+   have nothing to do with our arrangement, so that the list is a complete account of the revision and
+   not a curated one.
+6. **A positive statement that none of the three sealed files was opened.**
 
-**Why (2) exists, stated so it is not treated as bookkeeping.** The framework document produced under
-this ruling rests on the current division being right wherever it agrees with it, and that is a claim
-which is checkable and which this arrangement does not check — the **#18** exposure the ruling record
-names as undischarged. Item (2) does not discharge it. It makes the exposure **enumerable**, so that a
-later independent run, if the user commissions one, has a list to attack rather than a whole document.
+**Why this exists, stated so it is not treated as bookkeeping.** The framework document produced under
+the informed arrangement rests on the current division being right wherever it agrees with it, and
+that is a claim which is checkable and which this arrangement does not check — the **#18** exposure the
+ruling record names as **undischarged**. **This record does not discharge it.** It makes the exposure
+**enumerable**: a later independent run, should the user commission one, attacks a list rather than a
+whole document, and item (1) lets a reader see what this session had before it read ours.
 
 ## 6. The output, and what the session does NOT do
 
-**One file, at the repository root**, whose name is §7 (P4), carrying the status banner **DRAFT —
-INFORMED DERIVATION, NOT COMPARED, NOT RATIFIED**, and bound by the fourteen-section design-document
-standard the writing-standards document states. It is written for a reader who knows music theory and
+**One file, at the repository root**, named
+**`cowork_framework_document_draft_<YYYY_MM_DD>.md`** — the date being the day the session writes it,
+**established at the user's machine and never asserted from the session's own environment**, a
+misdating having been a counted error of 2026-08-28. **The draft name is ruled and so is its
+retirement: the file is RENAMED as an explicit step at ratification** and not before
+(`cowork_rulings_2026_08_28_informed_brief_points_sitting.md`, Ruling 2). It carries the status banner
+**DRAFT — INFORMED DERIVATION, NOT COMPARED, NOT RATIFIED**, and is bound by the fourteen-section
+design-document standard the writing-standards document states. It is written for a reader who knows music theory and
 not this project: terms explained at first use, predicates qualified, no invented labels, music-theory
 words in their musical sense only.
 
@@ -245,45 +311,53 @@ allocates no finding number; it writes no `STATUS.md` entry, no handover block, 
 close; it commits nothing; it writes no dispatch; and **it decides nothing about the derivation
 method**, which was ruled usable for a first version on 2026-08-25 and is not this session's business.
 
-## 7. The points the user rules before this brief is dispatched — NONE IS RULED
+## 7. The points the user ruled — ALL FIVE RULED 2026-08-28, and ONE ITEM LEFT OPEN
 
-- **(P1) What the informed session reads — unbounded, or an enumerated list.** The ruling permits
-  this project's material as design input; it does not say whether the session is pointed at named
-  documents or turned loose on the repository. **An enumerated list is a smaller read and risks
-  omitting what matters; an unbounded read risks the session spending its span on the code.** The
-  writing side names this as the largest of the remaining points.
+Ruled at `cowork_rulings_2026_08_28_informed_brief_points_sitting.md`; the user's words, *"I agree
+with all recommendations."* **The points are recorded here rather than removed (#12), because a
+successor reading the brief alone must be able to see what was decided and what the alternative was.**
 
-- **(P4) The output file's name.** Fixed by the user for each pilot unit by ruling; not fixed here.
+- **(P1) What the informed session reads. RULED: two stages, §3.** Declined: an unbounded read, on
+  the ground that the shortest path to a finished document runs through `ARCHITECTURE.md`; an
+  enumerated list, because authoring that list is the same judgment the retired 208 verdicts were.
+- **(P4) The output file's name. RULED: a dated draft name, renamed at ratification, §6.** Declined:
+  a permanent root name, on **#6**, while the document it may supersede still stands.
+- **(P5) A sizing record. RULED: a minimal one, declared NOT A BUDGET.** The session records when it
+  started and ended, what it read in each stage, and what it produced. Declined: none, because it
+  cannot be reconstructed afterwards; and a full record in the pilot's shape, on **#19** — the pilot's
+  carries three named defects and a second copy of them is not established by being second.
+- **(P6) Annotated scores. RULED: the same three score-and-analysis pairs the pilot units were given,
+  BY NAME, as exemplars and never as a corpus**, with the bar that **no measurement is built,
+  designed, scoped or run over them.** They serve stage one's annotation-schema source. Declined:
+  none, which would leave that source with no artifact behind it; and a larger set, which at some size
+  stops being exemplars and engages **#9** and **#20**.
+- **(P7) The code-site fill-in. RULED: it stays with a side other than the author**, §4. **Declared:
+  the original ground is gone and this ruling rests on a preference the writing side marked as one.**
 
-- **(P5) Whether this session keeps a sizing record.** The pilot's sizing was the pilot's business and
-  no ruling extends it. **Must be settled before the session runs — a cost measurement cannot be
-  reconstructed afterwards.**
-
-- **(P6) Whether annotated scores are staged, and which.** The pilot units were given three
-  score-and-analysis pairs BY NAME, as exemplars and never as a corpus, with the bar that no
-  measurement is built, designed, scoped or run over them. **The annotation schema is a source**, and
-  it is a question about what annotators record, so some exemplar may be needed. Which, and how many,
-  is not ruled. **Must be settled before the session runs.**
-
-- **(P7) Whether this session performs the code-site fill-in itself.** Ruling 4 of the framework-opening
-  sitting routes that fill-in to a side permitted to read code, on the ground that the deriving session
-  was not one. **That ground is gone.** Whether the routing goes with it, or stands for a separate
-  reason, is the user's.
+**★ THE ONE ITEM STILL OPEN: where the first-stage draft lives** — a section of the framework
+document, an appendix, or a sibling file. **Until it is settled the session keeps it as a
+clearly-marked appendix and says the placement is not ruled** (§5, item 1).
 
 **Two points of the superseded brief are recorded as DISSOLVED rather than dropped (#12).** **(P2)**,
 the withheld set for this subject — which that brief called the hardest of its points — and **(P3)**,
 whether the staged candidate list is cut. Both existed only because a pack was to be rendered with a
 withheld family. **No pack is rendered; neither question arises.** The enumeration performed for P2
-is kept at `ratification_surfaces/cowork_withheld_family_framework_reading.md`.
+is kept, and now bannered, at `ratification_surfaces/cowork_withheld_family_framework_reading.md`.
 
 ## 8. Provenance — for the user and the record; NOT opened by the deriving session
 
 Written by the writing side (Cowork) on 2026-08-28, in the session that took the informed-framework
-ruling, at tip `bf3249e73d9eb91d0f2513bc2c16aa626b53e464` read as a file at the ref. **No shell
-command was run against the repository by this side and every git-object value it could state is
-RELAYED**, the tip included. It supersedes `cowork_blind_session_brief_framework.md` and carries that
-brief's §0, §1, §2, §4 and §6 substantially unchanged, its §3 and §5 replaced in kind, and its §7
-reduced and extended as §7 states.
+ruling, at tip `bf3249e73d9eb91d0f2513bc2c16aa626b53e464`, **landed by
+`cc_instruction_framework_arrangement_landing.md` Task 0, and REVISED the same day against the seven
+rulings of the informed-brief-points sitting at tip
+`8798d6049e2e237efd4d8bffd5b7f7f904815493`** — every tip read as a file at the ref. **No shell command
+was run against the repository by this side and every git-object value it could state is RELAYED**,
+the tips included.
+
+It supersedes `cowork_blind_session_brief_framework.md` and carries that brief's §0, §1, §2 and §4
+substantially unchanged. **Changed in kind at the revision:** §3 became the two-stage order, §5 became
+the two-stage record, §6 took the ruled draft name, and §7 became a record of what was ruled rather
+than a list of what was open. **The revision added no bar and removed none.**
 
 **The bar on who may author from this brief is in the banner and is not a formality:** the session
 that wrote this brief argued the case for the arrangement the brief describes, and a side that has

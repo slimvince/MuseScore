@@ -1,6 +1,154 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## COWORK SESSION CLOSE (SEVENTY-SEVENTH ENTRY, 2026-08-28 — THE FIFTY-SIXTH SESSION'S SECOND ENTRY) — THE BATCH RAN AND ITS EVERY CHECKABLE CLAIM HOLDS AT THE FILES; SEVEN FURTHER RULINGS TAKEN AND RECORDED; THE TWO BANNERS MADE. ONE FALSE EXPLANATION IN CC'S REPORT, NAMED. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The seventy-sixth entry below remains binding except where
+this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
+mistake. **In conversation with the user, plain ordinary English** — the seventy-fifth entry's second
+counted error, and the bar holds.
+
+### The state, established before anything else was done
+
+Tip **`8798d6049e2e237efd4d8bffd5b7f7f904815493`**, read at `.git/refs/heads/master` with the file
+tool. It has moved from the seventy-sixth entry's `bf3249e73d9eb91d0f2513bc2c16aa626b53e464`,
+**because `cc_instruction_framework_arrangement_landing.md` ran to completion.**
+`cc_report_framework_arrangement_landing.md` is on disk and was **read WHOLE by this side.**
+
+### ★ THE BATCH DID WHAT IT SAID — AND THIS SIDE CHECKED, NOT ASSUMED
+
+**Established at the files by this side, each independently of the report's own statement of it:**
+
+- `tools/audit/guard_state.json` → `summary` reads **75 run, 72 passing, 3 failing**, and
+  `failing_tools` holds exactly `gen_filing_convention_application.py`,
+  `decisions/apply_soft_discard.py` and `decisions/apply_residue_discard.py`. **The fourth check is
+  GREEN. A2's prediction held.**
+- `tools/audit/gen_derivation_boot_pack.py` carries the string `framework` **only inside the
+  retirement comment**; both authored entries are gone.
+- The blind brief's banner is **nine lines inserted after its line 2**; its former line 3 is now line
+  12, so nothing below it moved in substance.
+- The handoff's entry count: **78 headings match `^## .*COWORK SESSION CLOSE` in the landed file**,
+  against the **76** the previous batch established at the tip blob — **so CC's "two new entries" is
+  confirmed by a second route.**
+- Both `ratification_surfaces/` files were **unmodified at their modification times** when this side
+  re-staged them, which corroborates §5's byte-identity claim without resolving a hash.
+
+**★ THE VERIFICATION LIMIT, UNCHANGED FOR A TWELFTH SESSION.** No commit and no blob was resolved by
+this side. **Every git-object value in that report — the five commits, every blob, every `--numstat`,
+the fifteen pack-file identities — is RELAYED.** A session with a shell remains the largest owed item.
+
+### ★ ONE FALSE EXPLANATION IN THE REPORT, AND IT IS AN EXPLANATION AND NOT A FIGURE
+
+**§3.3's parenthetical is wrong.** Meeting a conflict between its own count (10 → 12 entry headings)
+and the seventy-fifth entry's "76 entry headings in this handoff", the report explains it by asserting
+that `cowork_handoff_archive.md` holds the entries moved out of the file.
+
+**The archive file does exist** — enumerated at the root by this side, so nothing was invented from
+nothing. **But it is not the cause.** The cause is the report's own counting pattern: it counted the
+literal heading `## COWORK SESSION CLOSE`, while the previous batch counted `^## .*COWORK SESSION
+CLOSE`. Measured here in the landed file: the strict pattern returns **12**, the loose one **78**.
+**The figures are unaffected and the established +2 stands by two routes.** What is defective is a
+reconciliation asserted rather than measured — the same class as the three presentation-form
+discrepancies the seventy-third entry found, and it is **the user's to rule, not this side's to
+correct at CC's file.**
+
+### ★ SEVEN FURTHER RULINGS, AND THE RECORD IS ON DISK
+
+`cowork_rulings_2026_08_28_informed_brief_points_sitting.md`, untracked, **read it whole.** The user's
+words: *"I agree with all recommendations."* Each alternative had been put single-limbed, which is
+what makes one sentence recordable as seven rulings.
+
+**P1 — the session derives in TWO STAGES:** it derives from the outside sources and **records that
+draft** before opening any of our material, then reads ours and revises, **recording each change and
+its reason.** This is the load-bearing one. It does **NOT** discharge the **#18** exposure; it makes
+it enumerable. **P4** — a dated draft name, renamed at ratification. **P5** — a minimal sizing record,
+declared NOT A BUDGET. **P6** — the same three chorales, by name, as exemplars, no measurement.
+**P7** — the code-site fill-in stays with a side other than the author; **the ruling rests on a
+preference this side declared as one, the original ground having been removed by the informed
+ruling.** **B1, B2** — both banners, appended.
+
+### ★ THE TWO BANNERS ARE MADE, BY THIS SIDE, AND THEY ARE TRACKED MODIFICATIONS
+
+`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` gains an appended banner naming
+the §3.3 set-aside and pointing at `PHASE_CONSTRAINTS_AND_STOP_RULES.md`;
+`ratification_surfaces/cowork_withheld_family_framework_reading.md` gains one saying its verdicts will
+not be taken and that it is kept as the starting point for any later blind run. **Neither edits a line
+of ruled text; both were placed where those files already carry appended banners.**
+
+**★ SO THE TREE NOW CARRIES FOUR TRACKED MODIFICATIONS, NOT ONE — this file, those two surfaces, and
+the revised informed brief.** Every dispatch before `cc_instruction_informed_brief_landing.md` assumed
+exactly one. **A dispatch written on the old assumption will STOP on its own check**, and the one on
+disk states this at its head and gives A1 a per-path shape: the first three additions-only with zero
+deletions, the brief a revision where deletions are expected.
+
+### Owed, and the first item is the next act
+
+1. **`cowork_informed_session_brief_framework.md` must be REVISED to apply the seven rulings** — §3
+   becomes the two-stage read rule, §5 the two-stage record, §6 the dated draft name, §7 empties.
+   **The brief is now TRACKED**, so the revision is a fourth tracked modification and lands with the
+   rest. **★ DONE — the revision is on disk.** §3 is the two-stage order, §5 the two-stage record
+   (six numbered items, the first-stage draft itself being item 1), §6 the ruled draft name with its
+   date **established at the user's machine and never asserted from a session's environment**, §7 a
+   record of what was ruled and what was declined. **The brief's STATUS is now READY, NOT
+   DISPATCHED.**
+2. **★ THE DISPATCH IS ON DISK AND NOT OPENED — `cc_instruction_informed_brief_landing.md`. The user
+   opens it; this side never hands it to CC.** It lands six paths in one commit and closes. **It edits
+   nothing itself** — every landed path is the writing side's text — **and it touches no tool at all.**
+   Its A1 declares **four** tracked modifications with a per-path shape, and says at its head that a
+   batch carrying the old one-modification assumption will stop on its own check. It also orders the
+   entry count taken **with its pattern named**, which is the direct lesson of the previous report's
+   §3.3, and it **carries that finding without correcting it at CC's file.**
+3. **The first-stage draft's home** — not decided (Ruling 1's own §1). **The brief's own §5 item 1
+   holds it as a clearly-marked appendix meanwhile, and says on its face that the placement is not
+   ruled.**
+4. **The #18 exposure**, undischarged. **The independent challenge run**, uncommissioned. **The three
+   sealed samples**, undisposed. **The register blocker**, at its sixth consecutive route-around and
+   still never put to the user.
+5. Everything the seventy-sixth entry and the entries below it list as owed.
+
+### The cadence for the successor
+
+NOTHING IS RUNNING. Tip `8798d6049e2e237efd4d8bffd5b7f7f904815493`. **A DISPATCH IS ON DISK AND NOT
+OPENED** — `cc_instruction_informed_brief_landing.md`; the user opens it. When it returns: **read its
+report in FULL, treat it as possibly hallucinated, and establish at the files everything a session
+without a shell can.**
+
+(1) the batch lands; (2) **the author is booted — and THIS IS THE FRESH-SESSION POINT**: not a session
+that has read this entry, the seventy-sixth, either 2026-08-28 ruling record, or the informed brief's
+own provenance section, the bar being that the authoring side is not the side that argued the case;
+(3) the challenge run, the sealed samples' disposition and the first-stage draft's home are put to the
+user, all unruled.
+
+**★ WHAT THE BOOTED SESSION IS GIVEN, so a successor does not improvise it:**
+`cowork_informed_session_brief_framework.md` and nothing else of this argument. **Its §3 is the whole
+method** — stage one derives from outside this project and is written down before anything of ours is
+opened; stage two reads ours and revises on the record. **A session that reads our material first has
+destroyed the only instrument this phase has**, and the brief says so on its own face.
+
+### Declared by this side
+
+**Method.** All reads through the file tools on bridge-staged snapshots. **No shell command of any
+kind — the user barred it in his opening instruction.** Every tip read as a file at the ref.
+
+**Read whole since the seventy-sixth entry:** `cc_report_framework_arrangement_landing.md`. **Read in
+part:** `tools/audit/guard_state.json`, `tools/audit/gen_derivation_boot_pack.py` and
+`cowork_blind_session_brief_framework.md`, each by pattern at the claims above; the two
+`ratification_surfaces/` files at their banner regions.
+
+**★ CONTAMINATION HAZARD, DECLARED.** Unchanged and now stronger: this side read LIST ONE whole,
+`CLAUDE.md`'s principles whole, and argued the case for the arrangement. **It is barred from authoring
+the framework document**, as is any session that reads this entry.
+
+### This session's counted errors — still one
+
+The mispriced alternative recorded at the seventy-sixth entry. **No second error is counted here**;
+the classification slip about which of two owed edits belonged to a dispatch was caught and corrected
+in the same turn it was written, at both files that carried it, and is recorded there rather than
+counted twice.
+
+---
 ## COWORK SESSION CLOSE (SEVENTY-SIXTH ENTRY, 2026-08-28 — THE FIFTY-SIXTH SESSION) — THE FRAMEWORK DOCUMENT IS AUTHORED INFORMED: BLINDNESS IS DROPPED FOR THIS PHASE BY USER RULING, AND THE 208 VERDICTS ARE NOT TAKEN. THE LEDGER EXISTS AND HAS SINCE 2026-08-26. THE CURRENT ENTRY POINT.
 
 You start clueless. Read this block first. The seventy-fifth entry below remains binding except where

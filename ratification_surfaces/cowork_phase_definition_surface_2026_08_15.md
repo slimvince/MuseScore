@@ -25,6 +25,23 @@
 > kind, with evidence, routed to their homes, amendments by ratification only — §3.9 below,
 > added on that ruling). Decisions 2–5 remain open on this surface.
 >
+> **★ AMENDED 2026-08-28 — §3.3's FIRST *NOT ALLOWED* LIMB IS SET ASIDE FOR THE FRAMEWORK PHASE.
+> THE AMENDMENT IS NOT WRITTEN INTO §3.3 AND ITS CLAUSE TEXT BELOW IS UNCHANGED.** The user ruled
+> that the framework phase's deriving session is **not implementation-blind**: it may read this
+> project's code and specifications as design input. **The first limb of §3.3's constraint —
+> *implementation-derived material as design input* — does not bind that phase. The second limb —
+> *evidence treated as the decision* — is untouched and continues to bind**, as does every constraint
+> of every other phase. What replaces the set-aside limb is the incumbency rule of
+> `cowork_informed_session_brief_framework.md` §3, which is register entry **D-190** applied at that
+> desk: reading what exists is permitted, citing it as a reason is not.
+>
+> **The amendment's home is `PHASE_CONSTRAINTS_AND_STOP_RULES.md` at the repository root, §2.1**, and
+> that document is the live one: **this surface is STALE wherever the two differ.** The ruling records
+> are `cowork_rulings_2026_08_28_informed_framework_sitting.md` (the set-aside) and
+> `cowork_rulings_2026_08_28_informed_brief_points_sitting.md` (Ruling 6, which ruled this banner's
+> appended form rather than an edit to the clause, on **#12** — a correction is recorded beside ruled
+> text, never over it). **Nothing else in this surface is edited.**
+>
 > Per the standing full-decision-surface rule, this text is delivered for reading FIRST; the
 > choice questions are put separately, after the user has read it. Nothing is assumed answered.
 

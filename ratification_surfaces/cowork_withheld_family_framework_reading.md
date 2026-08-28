@@ -1,5 +1,23 @@
 # The WITHHELD-FAMILY CANDIDATES for the `framework` subject — put to the user for a ruling
 
+> **★ SUPERSEDED AS A REQUEST, 2026-08-28 — THE VERDICTS THIS FILE ASKS FOR WILL NOT BE TAKEN.** The
+> user ruled that the framework phase's deriving session is **not implementation-blind**
+> (`cowork_rulings_2026_08_28_informed_framework_sitting.md`), so **no pack is rendered for this
+> subject, nothing is withheld, and no leak check runs.** The 208 design-intent verdicts and the
+> twelve member-(2) passage verdicts asked for below **are not owed, and no session should read them
+> as outstanding work.** The `framework` subject was removed from the boot-pack generator's authored
+> tables in the same act.
+>
+> **★ THIS FILE IS KEPT AND NOT DELETED (#12), AND IT IS NOT AN EMPTY DRAWER.** It is the record of an
+> enumeration that ran in full and was then overtaken by a ruling, and it is **the starting point for
+> any later blind run over this subject** — the independent challenge run, should the user commission
+> it, begins here rather than re-deriving 208 candidates. **Nothing below this banner is edited**;
+> every statement stands as written, including the two declared bounds on the criterion's and the
+> signature's unmeasured reach, and the correction of the member-(2) premise at LIST TWO.
+>
+> *(This banner's appended form was ruled rather than assumed:
+> `cowork_rulings_2026_08_28_informed_brief_points_sitting.md`, Ruling 7.)*
+>
 > **STATUS: NOT RULED. NOTHING IS WITHHELD. NO PACK IS RENDERED. NO SESSION IS BOOTED.**
 >
 > Prepared by Claude Code, 2026-08-28, under `cc_instruction_framework_pack_preparation.md` Task 1,
