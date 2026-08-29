@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_landing_2026_08_28.md, Task 2",
+ "dispatch": "cc_instruction_second_landing_2026_08_28.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -178,45 +178,42 @@
    "executing_act": "cc_instruction_arm_and_site_fillin.md, Task 3",
    "base_commit": "836ad8ba57ab22c89cdcd6a6d85b8fa2a70a2d0d",
    "the_then_previous_batch": "cc_instruction_informed_brief_landing.md"
+  },
+  {
+   "executing_act": "cc_instruction_landing_2026_08_28.md, Task 2",
+   "base_commit": "0e927c2db2f8241660e5c2711288e61fdd921d53",
+   "the_then_previous_batch": "cc_instruction_arm_and_site_fillin.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "0e927c2db2f8241660e5c2711288e61fdd921d53",
- "the_then_previous_batch": "cc_instruction_arm_and_site_fillin.md",
- "entries_moved": 4,
- "characters_moved": 6887,
+ "base_commit": "9735d8e9398b137a61ec0a20f34d994f9f61a0e1",
+ "the_then_previous_batch": "cc_instruction_landing_2026_08_28.md",
+ "entries_moved": 3,
+ "characters_moved": 5617,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 3036,
-   "sha256": "437829cc09328dfd97ad1872c75b47f3cef9824400f9e2754192ee63d7370c6b",
+   "characters": 3032,
+   "sha256": "9d18e58ab07972be95a75fc7ec9d6f2e0f9ebc984b898bc51e503d0afb66f8b6",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-28 (CC — **★ THE ARM AND THE SITE ARE FILLED IN FOR THE FRAMEWORK DOCUMENT'S BEHAVIOURAL STATEMENTS, AND BOTH SUB-FIELDS ARE JUDGED REACHABLE"
+   "opening": "*2026-08-28 (CC — **★ THE TWO 2026-08-28 COWORK SESSIONS' WORK IS LANDED AND PUSHED, AND THE EIGHTIETH HANDOFF ENTRY IS PREPENDED — A BACKUP ACT THAT "
   },
   {
    "line_at_base": 10,
-   "characters": 1257,
-   "sha256": "5ef9dbe964bb2a44891262551e793209cd978d5634e660a36f13a3df5b65e8e3",
+   "characters": 1413,
+   "sha256": "8f061c110827363066b5676081d464cb60f97a3e7a577331dd497814c3a6d039",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-28 (CC — Same dispatch, Task 2: the two sub-fields judged REACHABLE AT ALL, which is what Ruling 4 of `cowork_rulings_2026_08_26_framework_op"
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 1: the eightieth handoff entry prepended, the two 2026-08-28 Cowork sessions' documents landed, and the commit p"
   },
   {
    "line_at_base": 12,
-   "characters": 1445,
-   "sha256": "11ee5cc75a28ebb979c79c087f17b989712c7cf57d8fba84a32e4b91d234a9ba",
+   "characters": 1172,
+   "sha256": "c7612fea5bed44d92ce0f85b0f90b6bf950a627fcaa14f30b49d884caa3d61f9",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-28 (CC — Same dispatch, Task 1: the ARM and the SITE written into ONE new file at the repository root, which is the one home for these facts "
-  },
-  {
-   "line_at_base": 14,
-   "characters": 1149,
-   "sha256": "ba9aa85a6185a6352d414633d02ad52d443cad08530d7df7875b72039975ad8f",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-28 (CC — Same dispatch, Task 0: pinned first, then established, and nothing written. **The dispatch and the framework document were each pinn"
+   "opening": "*2026-08-28 (CC — Same dispatch, Task 0: pinned first, then established, and nothing written. **The instruction and the staging file were each pinned "
   }
  ],
  "reconciliation": {
