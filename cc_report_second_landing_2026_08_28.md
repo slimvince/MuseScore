@@ -468,12 +468,37 @@ Owed, and NOT done:
 
 ## 12. The end state
 
-**★ THIS SECTION IS DELIBERATELY EMPTY AT THE CLOSE COMMIT AND IS WRITTEN AT THE END-STATE COMMIT.**
-E2 requires a fresh full guard run at the tree the close leaves, and `tools/audit/guard_state.json`
-committed only after the run that produced it. That run therefore cannot have happened when the
-close commit is taken, and **asserting its result here would be a statement the record makes about
-itself that is not yet true.** The section is filled from the run's own output, in the commit that
-carries the artifact of that run and of no other.
+*(This section was deliberately EMPTY at the close commit and is written here, at the end-state
+commit. E2 requires a fresh full guard run at the tree the close leaves, and
+`tools/audit/guard_state.json` committed only after the run that produced it — so that run cannot
+have happened when the close commit is taken, and asserting its result there would have been a
+statement the record makes about itself that is not yet true. The close commit's own §12 says
+exactly that and nothing more.)*
+
+**A fresh FULL guard run was performed at the tree the close left**, in write mode, and
+`tools/audit/guard_state.json` is committed as the artifact of that run and of no other — **the run
+came first and the commit second.**
+
+`python tools/audit/gen_guard_state.py`, exit **0**. Its summary line reports **75 guards run, 3
+failing, 4 not run, 16 historical records**, and the artifact's own `summary` block reads **run 75,
+passing 72, failing 3**. The three failing are **the three known and no others**:
+
+- `tools/audit/gen_filing_convention_application.py --check`
+- `tools/audit/decisions/apply_soft_discard.py --check`
+- `tools/audit/decisions/apply_residue_discard.py --check`
+
+**ZERO STOPs** — a search of the whole run output for `STOP` returns none.
+
+**★ THE FOURTH RED IS GONE, AND THAT IS THIS BATCH'S OWN ORDERED ACT RATHER THAN A DRIFT.**
+`gen_evidence_pin_membership.py --check` failed at the start (§3.3) and passes at the end, because
+Task 1 regenerated that artifact over the population the new ruling record had already joined (§4.2).
+**No check that passed at the start failed at the end, and no new failure appeared.**
+
+**The only path that moved between the close commit and this one is `tools/audit/guard_state.json`**,
+confirmed at `python tools/audit/changed_paths.py`: one tracked modification and no second, the
+untracked count unchanged from the close. **A3 holds through the end state.**
+
+**E2 is MET.**
 
 ---
 
