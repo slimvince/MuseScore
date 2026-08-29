@@ -335,9 +335,9 @@ test would have stopped on.
 | tip at the start, `HEAD` = `master` = `origin/master` | `c1b755f4037707314dbfca2b74916782a2c1dec0` |
 | its parent — the previous batch's end-state commit | `39d0b91134178f1d9c4fdfe417532868caf2b716` |
 | Task 1 commit — the landing | `9735d8e9398b137a61ec0a20f34d994f9f61a0e1` |
-| Task 2 commit — the close | *filled by the further commit declared at §9.3 — it cannot stand in the report that commit carries* |
-| the end-state commit | *filled by the further commit declared at §9.3 — same reason* |
-| the §7 completion commit — **the further commit, declared at §9.3** | *its own identity cannot stand inside itself; it is the commit whose parent is the end-state commit named in the row above* |
+| Task 2 commit — the close | `b8dc957257788d64a2ecbc58cf05c045ddd048fb` |
+| the end-state commit | `121bf4303ac23c98e245d9b31c58b3046403f7aa` |
+| the §7 completion commit — **the further commit, declared at §9.3** | *its own identity cannot stand inside itself; it is the commit whose parent is `121bf4303a…`* |
 | dispatch blob, pinned at Task 0, unmoved before staging and at the commit object | `67b74738d8de1ecfa9fbf9754e545d9835696e52` |
 | `cowork_rulings_2026_08_28_unit_question_sitting.md` | `60aa72f3f6a813a44218924d168ed1eef4f2402d` |
 | `cowork_unit_question_surface_2026_08_28.md` | `c1f26025dbe7c84f5e2374e606c74600a313eb6c` |
