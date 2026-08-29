@@ -337,7 +337,9 @@ test would have stopped on.
 | Task 1 commit — the landing | `9735d8e9398b137a61ec0a20f34d994f9f61a0e1` |
 | Task 2 commit — the close | `b8dc957257788d64a2ecbc58cf05c045ddd048fb` |
 | the end-state commit | `121bf4303ac23c98e245d9b31c58b3046403f7aa` |
-| the §7 completion commit — **the further commit, declared at §9.3** | *its own identity cannot stand inside itself; it is the commit whose parent is `121bf4303a…`* |
+| the §7 completion commit — **the further commit, declared at §9.3** | `b25d71e6c7202fb5461571a309d3369ade00aa02` |
+| the §12 correction commit — **declared at §9.4** | `b0f1d8e25c8886870fbee6df438a2606f91ac67d` |
+| the commit that completed this table — **declared at §9.4** | *its own identity cannot stand inside itself; it is the commit whose parent is `b0f1d8e25c…`, and it is the last commit of this batch* |
 | dispatch blob, pinned at Task 0, unmoved before staging and at the commit object | `67b74738d8de1ecfa9fbf9754e545d9835696e52` |
 | `cowork_rulings_2026_08_28_unit_question_sitting.md` | `60aa72f3f6a813a44218924d168ed1eef4f2402d` |
 | `cowork_unit_question_surface_2026_08_28.md` | `c1f26025dbe7c84f5e2374e606c74600a313eb6c` |
@@ -426,6 +428,15 @@ Its untracked count is Task 0's less the four paths landed, which reconciles exa
    correction touches no file but this report, changes no measured value, re-runs no guard, and
    preserves the former wording in place (**#12**). **It does not make the commit-count clause
    wider for any future batch**; the narrow-letter default is unchanged.
+
+   **A SIXTH AND FINAL COMMIT CLOSES THE SAME DEPARTURE**, and it is named here rather than given a
+   §9.5 because it corrects the consequence of the fifth rather than a new thing. The fifth commit
+   left §7's stated scope — *every SHA this batch produced or resolved* — missing its own identity,
+   which is a completeness claim the table did not meet. The sixth fills the fourth and fifth
+   commits' cells and **closes the regress at the same place the record already closes it**: the
+   last commit of a batch is described by its parent, because no commit can name itself inside a
+   file it carries. **It touches no file but this report, re-runs no guard and moves no measured
+   value**, and it is the last commit of this batch.
 
 **No other departure.** In particular: no bar of the dispatch was widened, no landed file's content
 was edited, no register or governing document was touched, and no open-items row was created for any
