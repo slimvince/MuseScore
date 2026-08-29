@@ -416,6 +416,17 @@ Its untracked count is Task 0's less the four paths landed, which reconciles exa
    artifact of the run that produced it** — §12's claim is about the tree the guard ran at, and this
    commit changes nothing the guard set reads.
 
+4. **★ A FIFTH COMMIT WAS TAKEN TO CORRECT A FALSE SENTENCE THIS REPORT MADE ABOUT ITSELF** — §12's
+   account of what moved at the end-state commit. Item 4 provides for ONE further commit, and this
+   is a second one. *Why it was taken rather than left:* the sentence stated the enumeration's
+   result as though it were the commit's contents, and the two differ because writing §12 moved the
+   report after the enumeration was taken. **Leaving it would ship a statement that is false at
+   HEAD, in the very file whose job is to report what this batch did**, which is the shape the
+   licence-and-falsity clause names — correct it and report the widening in the same act. The
+   correction touches no file but this report, changes no measured value, re-runs no guard, and
+   preserves the former wording in place (**#12**). **It does not make the commit-count clause
+   wider for any future batch**; the narrow-letter default is unchanged.
+
 **No other departure.** In particular: no bar of the dispatch was widened, no landed file's content
 was edited, no register or governing document was touched, and no open-items row was created for any
 of the findings below — the dispatch forbids creating one.
@@ -494,9 +505,18 @@ passing 72, failing 3**. The three failing are **the three known and no others**
 Task 1 regenerated that artifact over the population the new ruling record had already joined (§4.2).
 **No check that passed at the start failed at the end, and no new failure appeared.**
 
-**The only path that moved between the close commit and this one is `tools/audit/guard_state.json`**,
-confirmed at `python tools/audit/changed_paths.py`: one tracked modification and no second, the
-untracked count unchanged from the close. **A3 holds through the end state.**
+**The enumeration taken immediately after the run, and before this section was written, reported
+`tools/audit/guard_state.json` as the ONE tracked modification and no second**, with the untracked
+count unchanged from the close (`python tools/audit/changed_paths.py`). **This section was then
+written, so the end-state commit carries two paths — that artifact and this report — and both are
+members of A3's list. A3 holds through the end state.**
+
+*★ CORRECTED IN A FIFTH COMMIT, AND THE CORRECTION IS DECLARED RATHER THAN MADE QUIETLY (§9.4).* The
+sentence above first read *"The only path that moved between the close commit and this one is
+`tools/audit/guard_state.json`"*. That was the enumeration's own result and it was true of the
+moment it was taken; it was **not** true of the commit that then carried it, because writing this
+section moved the report as well. The former wording stands here (**#12**), and what replaces it
+states both the measurement and what happened after it.
 
 **E2 is MET.**
 
