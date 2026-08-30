@@ -626,11 +626,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 2,
+      "verdict": "FAIL",
       "stdout": [
-        "OK: the inventory re-derives at 31c573b06e, and the signature table still covers the tree at HEAD <sha> with nothing unclassified.",
-        "    the untracked appendix has moved — excluded from the comparison by design."
+        "STOP: 1 file(s) matched no rule in the signature table — this is the dispatch's own stop rule and prediction P1's refutation condition. First ten: ['external resarch summary/external research.xlsx']"
       ],
       "stderr": [],
       "what_it_checks": "the artifact inventory re-derives at the commit its own artifact RECORDS -- so it passes indefinitely rather than going red at the next commit -- and, separately, its signature table still covers the tree AS IT STANDS with nothing unclassified. The second half is the live one and the reason this is a guard at all: a file added by a later commit in a top-level directory no rule names halts this tool instead of reaching a later pass ungraded. Its last rule is bounded on purpose so that STOP can fire, and the artifact carries the probes that establish it does (#19). The untracked appendix is a reading of the working tree and is excluded from the byte comparison, so writing a scratch file does not turn this guard red"
@@ -974,7 +973,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 3, 5,617 characters",
+        "  entries moved: 3, 5,676 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],
@@ -1088,20 +1087,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
-        "the evidence pin's class membership re-derives",
-        "  generated ratification documents 7; ruling records read 82",
-        "  members 7 — pinned 5, UNRESOLVED 0",
-        "  tools carrying a pin constant 8; outside this class 3",
-        "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",
-        "    tools/audit/gen_claude_md_finer_surface.py           PINNED — at the commit a ruling record states",
-        "    tools/audit/gen_ratified_document_check.py           PINNED — at the commit a ruling record states",
-        "    tools/audit/gen_governing_surface_readers.py         PINNED — at the commit a ruling record states",
-        "    tools/audit/gen_rulings_sort.py                      NOT PINNED — a record states the commit; the pin is not applied",
-        "    tools/audit/gen_deciding_act_recovery.py             PINNED — by the route the tool's own pin constant records",
-        "    tools/audit/gen_decisions_filter.py                  PINNED — by the route the tool's own pin constant records"
+        "STALE vs the derivation: evidence_pin_membership.json does not re-derive"
       ],
       "stderr": [],
       "what_it_checks": "who belongs to the evidence pin's ruled class, derived on every run from the ruling records themselves rather than listed: every ratification document a tool WRITES, every root-level ruling record, and what each record says in its own two structural blocks — its leading blockquote and its provenance paragraph — that it was taken from. Its live half is that the membership tracks the record: a ruling taken tomorrow from a generated document appears tomorrow, and a member the record stops naming leaves. Its STOPs are demands about the tree AS IT STANDS — a member this artifact records as PINNED whose generator no longer carries that commit in a pin constant, a tool carrying a pin constant the run does not account for in one of its two classes, and a generated ratification document with two writers (#6). ★ WHAT IT DOES NOT ASSERT: that a member SHOULD be pinned, or that an UNRESOLVED member has no discoverable commit — only that no record states one in the form the resolution uses, which is why an unresolved member is published to the user as data and never given a guessed pin"
@@ -1117,15 +1106,15 @@
         "the session-start read measurement re-derives",
         "  rule (a) points at tools/audit/nongating_apparatus_rows.json -> ★_the_live_gating_answer -> gating_ids",
         "    CLAUDE.md                                                                156082",
-        "    STATUS.md                                                                  8275",
+        "    STATUS.md                                                                  8594",
         "    DECISIONS.md                                                             127608",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids     2774",
-        "  total at the tree 294739",
+        "  total at the tree 295058",
         "  further spans of the same artifact, NOT counted into the read:",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows    61322",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one     4895",
-        "  vs 1760d9a4a8: 367121 -> 294739  (-72382, -19.72%)",
-        "  vs 594074e1e1: 296832 -> 294739  (-2093, -0.71%)"
+        "  vs 1760d9a4a8: 367121 -> 295058  (-72063, -19.63%)",
+        "  vs 594074e1e1: 296832 -> 295058  (-1774, -0.60%)"
       ],
       "stderr": [],
       "what_it_checks": "what an ordinary session reads at session start, in characters, measured at the tree and at the recorded earlier commit's git object. It is the arc's own subject made checkable: the pruning direction of 2026-08-16 is about this number, and every act in the arc has had to state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule (a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the artifact it names, so a pointer that has stopped resolving fails on the day it stops rather than being hidden inside a number. It goes red when a governing surface changes, which is the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the clause that makes it one so the authored half is checkable by reading three clauses; and nothing about whether the read is small enough, which is [[OI-370]]'s own subject"
@@ -1406,11 +1395,17 @@
   ],
   "summary": {
     "run": 75,
-    "passing": 72,
-    "failing": 3,
+    "passing": 70,
+    "failing": 5,
     "failing_tools": [
       {
         "tool": "tools/audit/gen_filing_convention_application.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/gen_artifact_inventory.py",
         "args": [
           "--check"
         ]
@@ -1423,6 +1418,12 @@
       },
       {
         "tool": "tools/audit/decisions/apply_residue_discard.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/gen_evidence_pin_membership.py",
         "args": [
           "--check"
         ]

@@ -5,9 +5,12 @@
 written; this batch executed two days after.** Stated here because two dated fields in the record
 follow from it (§6.1) and because a reader meeting the file name would otherwise take the two dates
 for one.
-**Outcome:** Task 0, Task 1 and Task 2 performed. Nothing stopped. **One contradiction inside the
-dispatch is SURFACED and not resolved in the dispatch's favour (§9.2), three declared departures and
-three findings are below, and none was absorbed silently.**
+**Outcome:** Task 0, Task 1 and Task 2 performed; the landing is committed and pushed. **E2 IS NOT
+MET, and this report is a STOP-AND-REPORT: the end-state guard run turned up a FIFTH failing verdict
+— a genuine STOP — caused by this batch's own ordered landing, whose remedy is a mechanism change
+reserved to the user (§12.1).** One contradiction inside the dispatch is also SURFACED and not
+resolved in the dispatch's favour (§9.2). Four declared departures and four findings are below, and
+none was absorbed silently.
 
 ---
 
@@ -355,7 +358,10 @@ stopped on.
   direction it was made** — *"which this batch neither adds to nor lands, so no movement caused by
   this batch is expected there"* — the movement is real and is caused by another side's file, not by
   this batch.
-- **The fifth-failing-verdict STOP did not fire.** Four failing, no fifth, zero STOPs.
+- **The fifth-failing-verdict STOP did not fire AT THE START.** Four failing, no fifth, zero STOPs.
+  **★ IT FIRED AT THE END STATE**, on a check that was passing at the start: see §12.1. A2's clause
+  is written of the start state; it is applied here to the batch as a whole, which is the reading
+  that reports more rather than less.
 
 ### A3 — the footprint — **HELD**
 
@@ -428,15 +434,35 @@ report. The end-state guard artifact is untouched and remains the artifact of th
 it** — §12's claim is about the tree the guard ran at, and this commit changes nothing the guard set
 reads.
 
+### 9.4 ★ A SECOND FURTHER COMMIT ADDS ONE SENTENCE TO THE `STATUS.md` CLOSE ENTRY
+
+Item 4 provides for ONE further commit and this is a second one, so it is declared rather than taken
+quietly. **Why it is taken:** the close commit's `STATUS.md` entries were written before the
+end-state guard run existed, so the close entry says nothing about the fifth verdict (§12.1) —
+**the batch's most consequential finding, absent from the one surface every session reads at boot.**
+The entry as written is not false: its guard sentence is scoped to the START state and is accurate
+there. **It is incomplete about the batch, and the pointer convention it is written under makes the
+report the home of the evidence — but a STOP left out of the must-read is the shape #13 exists
+against.** The commit adds one sentence naming the STOP and pointing at §12.1, **preserves the
+existing wording in place (#12), moves no other text, re-runs no guard, touches no file but
+`STATUS.md`, and widens no bar for any future batch.**
+
 **No other departure.** In particular: no bar of the dispatch was widened, no landed file's content
-was edited, the workbook was not opened, no folder was renamed, no register or governing document was
-touched, and no open-items row was created for any of the findings below — the dispatch forbids
-creating one.
+was edited, the workbook was not opened, no folder was renamed, no tool source was edited beyond the
+forward bound's named carve-out — **the artifact-inventory tool the fifth verdict names was NOT
+touched** — no register or governing document was touched, and no open-items row was created for any
+of the findings below, the dispatch forbidding one.
 
 ---
 
 ## 10. Findings surfaced, none acted on
 
+0. **★ THE ARTIFACT INVENTORY HALTS ON THE LANDED WORKBOOK, AND THE GUARD SET IS LEFT WITH A STOP IN
+   IT** (§12.1). The tool's authored signature table names no rule for the workbook's shape, and its
+   own live stop rule refuses to let a newly tracked file enter a later pass ungraded. **This is a
+   STOP-and-report under A2, and it is reported and not acted on:** the remedy is a mechanism change
+   the user rules and this batch's bars forbid. **It is the batch's most consequential finding and it
+   is listed first.**
 1. **★ THREE `cowork_*.md` DOCUMENTS DATED 2026-08-29 STAND UNTRACKED AT THE ROOT, IN GIT NOWHERE AND
    PUSHED NOWHERE — and one of them is named as the phase retrospective the record twice calls owed
    and non-existent** (§5.2). Not opened, not landed, not rowed. **A landing act for them is due, and
@@ -476,13 +502,90 @@ Still owed and NOT done:
 
 ---
 
-## 12. The end state
+## 12. The end state — ★ E2 IS NOT MET, AND A FIFTH FAILING VERDICT IS A STOP-AND-REPORT
 
 *(This section was deliberately EMPTY at the close commit and is written here, at the end-state
 commit. E2 requires a fresh full guard run at the tree the close leaves, and
 `tools/audit/guard_state.json` committed only after the run that produced it — so that run cannot
 have happened when the close commit is taken, and asserting its result there would have been a
 statement the record makes about itself that is not yet true.)*
+
+**A fresh FULL guard run was performed at the tree the close left**, in write mode, and
+`tools/audit/guard_state.json` is committed as the artifact of that run and of no other — **the run
+came first and the commit second.**
+
+`python tools/audit/gen_guard_state.py`, exit **0**. Its summary line reports **75 guards run, 5
+failing, 4 not run, 16 historical records**, and the artifact's own `summary` block reads **run 75,
+passing 70, failing 5**.
+
+The five failing:
+
+- `tools/audit/gen_filing_convention_application.py --check` — the first known
+- `tools/audit/decisions/apply_soft_discard.py --check` — the second known
+- `tools/audit/decisions/apply_residue_discard.py --check` — the third known
+- `tools/audit/gen_evidence_pin_membership.py --check` — the fourth, carried from the start state
+  unchanged and unregenerated (§3.4)
+- **`tools/audit/gen_artifact_inventory.py --check` — the FIFTH, NEW, and caused by this batch's own
+  ordered act**
+
+### 12.1 ★ THE FIFTH VERDICT, ESTABLISHED AT THE OBJECTS AND NOT ACTED ON
+
+Run on its own, `python tools/audit/gen_artifact_inventory.py --check` exits **2** — a STOP, not a
+drift — with this text, which the guard artifact captures verbatim at that tool's entry:
+
+> `STOP: 1 file(s) matched no rule in the signature table — this is the dispatch's own stop rule and prediction P1's refutation condition. First ten: ['external resarch summary/external research.xlsx']`
+
+**The cause is established at the tool's own docstring and needs no inference.** That tool classifies
+**every tracked file** by an AUTHORED signature table of path shapes, and its stop rule 4 states the
+live half in terms: *"`--check` … separately re-runs the classification at the CURRENT tree and STOPS
+if anything there is unclassified. … a file added by a later commit that no rule names must halt this
+tool rather than enter a later pass ungraded."* **The workbook was untracked at Task 0, so no rule had
+to name it; Task 1 made it tracked, and no rule names it.** That is why this check passed at the start
+(§3.3) and STOPS at the end.
+
+**★ THIS IS THE TOOL WORKING, NOT THE LANDING FAILING.** The halt is the designed refusal to let a
+newly tracked file enter a later pass ungraded. **The landing is exactly what the dispatch orders and
+what the user ruled**, and nothing about it is withdrawn or in doubt.
+
+**NOTHING WAS DONE ABOUT IT, and the refusal is deliberate on three separate grounds.** The remedy is
+a new row in that tool's AUTHORED signature table. **(a)** That is a tool-source edit, and this batch's
+standing bars permit exactly one — the forward bound's per-batch re-aiming, excepted by name.
+**(b)** It is a **mechanism change**: authoring a new judgment for a subject the pass's own cut did
+not previously reach is precisely what **D-648** excludes from authored-input maintenance, and
+**D-436** reserves a mechanism's fate to the user. **(c)** **D-657** requires a mechanism change to be
+decided over its whole population both ways before it is applied, which is a derivation no order of
+this batch authorizes. **A2's own words are the operative instruction here — *a fifth failing verdict
+is a STOP-and-report* — and this is the report half.**
+
+*What the fix would be, stated so the next dispatch need not rediscover it:* one authored signature
+row naming the shape this file has, decided over the tool's whole population both ways, plus a
+regeneration of `tools/audit/artifact_inventory.json`. **Both are the user's to order.**
+
+### 12.2 E2, graded limb by limb
+
+| E2's limb | verdict |
+|---|---|
+| a fresh full guard run at the tree the close leaves | **MET** |
+| `tools/audit/guard_state.json` committed only after the run that produced it | **MET** |
+| *"the three known failing checks and no others"* | **NOT MET — five failing** |
+| *"zero STOPs"* | **NOT MET — one STOP** |
+
+**E2 IS NOT MET, and it is reported unmet rather than made true by an unordered act.** Two distinct
+causes, neither of them absorbed:
+
+- **the fourth red** is caused by a root-level ruling record another side wrote after the previous
+  batch closed, and clearing it is an act A3 does not name (§3.4, §9.2);
+- **the fifth red** is caused by this batch's own ordered landing, and clearing it is a mechanism
+  change reserved to the user (§12.1).
+
+**No check that passed at the start failed at the end for any reason other than the landing the
+dispatch orders**, and **no check that failed at the start passes at the end.**
+
+**The enumeration taken immediately after the run and before this section was written reported
+`tools/audit/guard_state.json` as the ONE tracked modification and no second**
+(`python tools/audit/changed_paths.py`, filtered with `Grep` by `^ ?[MADRCU]`). **This section was
+then written, so the end-state commit carries two paths — that artifact and this report — and both
+are members of A3's list. A3 holds through the end state.**
 
 ---
 
@@ -495,9 +598,13 @@ making them.
    committed as they stand, the forward bound's outgoing aiming was appended rather than replaced,
    and the previous batch's `STATUS.md` entries were moved verbatim with the tool's own byte
    reconciliation rather than retyped. **#6** — the workbook stays the one copy; no extraction and no
-   second home was created for it. **#13** — the contradiction between A2/A3 and E2 is surfaced as a
-   STOP-shaped finding at §9.2 rather than built around, and the three untracked 2026-08-29 documents
-   are surfaced rather than absorbed into the enumeration. **#15** — every claim about a commit or a
+   second home was created for it. **#13** — the fifth guard verdict is surfaced as a STOP and
+   **nothing was built around it**: the tool that halts was not touched, the halt was not routed
+   around, and the batch reports rather than repairs (§12.1); the contradiction between A2/A3 and E2
+   is likewise surfaced at §9.2 rather than resolved; and the three untracked 2026-08-29 documents
+   are surfaced rather than absorbed into the enumeration. **#7** — the remedy for the fifth verdict
+   belongs to the tool's own authored table and to a user ruling, not to this batch, so it was left
+   there. **#15** — every claim about a commit or a
    blob in this report is verified at the object by explicit hash, never at an assertion; both landed
    paths are checked at three readings each, and `origin/master` at two independent ones. **#17f /
    D-431** — no figure is transcribed from the dispatch, which states none; the figures this report
