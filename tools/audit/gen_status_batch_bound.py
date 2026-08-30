@@ -60,19 +60,19 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "9735d8e9398b137a61ec0a20f34d994f9f61a0e1"
+BASE_COMMIT = "0396bb6a70a6ad983ee14c84d85e9201c8f7ef16"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_landing_2026_08_28.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_second_landing_2026_08_28.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. The executing
-# dispatch is dated 2026-08-28 and this batch ran on 2026-08-29; the archive header states when the
+# dispatch is dated 2026-08-28 and this batch ran on 2026-08-30; the archive header states when the
 # act happened, so a header carrying the dispatch's date would say something false about the record
 # (#10). It is a fourth authored field beside the three aiming inputs above, and it is named here
 # rather than left to be inferred from the aiming rows.
-ACT_DATE = "2026-08-29"
-DISPATCH = "cc_instruction_second_landing_2026_08_28.md"
+ACT_DATE = "2026-08-30"
+DISPATCH = "cc_instruction_third_landing_2026_08_28.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
 # batch's own `STATUS.md` entries in the same numbered task — its Task 2, item 1 — so both halves
 # of "the same act that writes its own entries" sit inside Task 2, and Task 2 is what the archive
@@ -205,6 +205,9 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_landing_2026_08_28.md, Task 2",
      "base_commit": "0e927c2db2f8241660e5c2711288e61fdd921d53",
      "the_then_previous_batch": "cc_instruction_arm_and_site_fillin.md"},
+    {"executing_act": "cc_instruction_second_landing_2026_08_28.md, Task 2",
+     "base_commit": "9735d8e9398b137a61ec0a20f34d994f9f61a0e1",
+     "the_then_previous_batch": "cc_instruction_landing_2026_08_28.md"},
 ]
 
 ARCHIVE_HEADER = (
