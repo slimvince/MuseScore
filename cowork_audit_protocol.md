@@ -1521,3 +1521,44 @@ arc has used at every such stop.
 governs; and a stop presented as completion. Nor does it decide WHICH task stops — that is the
 ordering rule above, which places the unstoppable task first precisely so that the stoppable one is
 what absorbs the shortfall.
+
+**STANDING CLAUSE (ratified 2026-08-29, the framework phase retrospective, P-2):** **Every dispatch
+is PINNED TO A BLOB at Task 0 as the standing form**, and the pin is ordered in the user's own
+opening line where possible — *"pin `<dispatch>` to a blob with `git hash-object -w`, then read it
+from that object, and execute it"* — so that the reading and the execution are of one decidable
+state. **Where the session read the file from the working tree first, the declared-departure route
+applies: declare it, pin at Task 0, and prove the blob unmoved before staging.** *Evidence, measured
+rather than argued:* the pin order is unperformable as *pin before reading* when the user's opening
+line names only the dispatch file, established twice — at the first landing batch's finding 4 and
+again when the second landing batch executed the fallback; the fallback worked, and the wording above
+is the wording to keep. The mechanism's own worth was established earlier still: pinning made a
+dispatch's state decidable mid-flight and caught a live edit of a running instruction. *(This clause
+subsumes backlog item 9.)*
+
+**STANDING CLAUSE (ratified 2026-08-29, the framework phase retrospective, P-3):** **A footprint
+assumption is stated as the LIST OF THE BATCH'S OWN ORDERED ACTS, never as a blanket**; movement no
+order of the batch caused is **reported and graded, never absorbed and never auto-stopped**; **and an
+ACCEPTANCE CRITERION is DERIVED from the declared start state plus that footprint, never written
+independently of them.** *Evidence:* the fifty-eighth session's error (5) was a blanket bar its own
+tasks broke — the third instance of that shape — against the first landing batch's §5.3, which graded
+a third-party file's appearance correctly under the act-list form; and **the fifty-ninth session's
+counted error is the founding instance of the last clause**, a dispatch whose acceptance limb
+demanded a guard state its own assumptions predicted could not hold. *(This clause subsumes backlog
+item 10.)*
+
+**STANDING CLAUSE (ratified 2026-08-29, the framework phase retrospective, P-4):** **A disposition
+given in conversation does not exist for any mechanism this project has until a RULING RECORD LANDS
+ON DISK.** A sitting's record is therefore written in the same session, **at the first ruling**, and
+extended per ruling while the sitting runs — never assembled at the sitting's end. *Evidence:* the
+August ratifications became owed precisely because dispositions lived only in conversation, which is
+the framework-delta sitting's own founding finding — the rule-(c) suspension derives its owed list
+from ruling records on disk, so a disposition left in conversation is invisible to that derivation by
+construction; the ratification sitting wrote its record at the first ruling and extended it three
+times, and no disposition of it was ever unrecorded.
+
+**STANDING CLAUSE (ratified 2026-08-29, the framework phase retrospective, P-5):** **Before the
+writing side commits ANY file to the tree, it establishes whether a batch is running** — the expected
+report's absence and the ref's freshness are the cheap checks. *Evidence:* the §9.0 decision surface
+was committed minutes before that side established a batch was mid-flight; the running batch's own
+enumeration flagged it, and the timing had to be declared in two records afterwards. Every later
+write of that session was held until the running batch's report had landed and been verified.

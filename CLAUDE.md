@@ -1844,6 +1844,13 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   to learn nothing; this is the never-guess rule's logical end — gather the cheap evidence before any
   commitment — and it operationalizes principle #5 (investigate when facts may be scarce).
 
+- **THE ORDINARY SESSION-START READ BINDS EVEN WHEN THE OPENING INSTRUCTION NAMES A SINGLE FILE
+  (ratified 2026-08-29, Ruling 5 of `cowork_rulings_2026_08_29_ratification_sitting.md`; the
+  framework phase retrospective, P-1).** A single-file opening instruction is not an exemption from
+  the standing conventions: the reads rule (a) and the register sections mandate are performed
+  before the named file is acted on. *Evidence:* the fifty-eighth session skipped the read on that
+  ground and counted five errors of one shape; the fifty-ninth performed it and counted one.
+
 ## The self-check after every coding exercise (user-directed, 2026-07-11)
 
 After EVERY coding exercise — code, scripts, instruments, and document edits alike —

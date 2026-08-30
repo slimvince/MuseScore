@@ -1,6 +1,218 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
+## COWORK SESSION CLOSE (EIGHTY-FIRST ENTRY, 2026-08-28 THROUGH 2026-08-30 — THE FIFTY-NINTH SESSION) — ★★ THE FRAMEWORK IS RATIFIED AND THE PHASE IS CLOSED. §9.0 ruled (a unit is a DECISION); Δ2 ruled (a deciding layer owns the ANSWER); the external research list arrived, was read whole and dispositioned with NO falsifier; Δ3/Δ5 released and ruled; the retrospective written and RATIFIED. Three landing batches ran and were verified; the third ends on a guard STOP whose remedy the user has ruled and the closing dispatch carries. ONE counted error, owned below. THE CURRENT ENTRY POINT.
+
+You start clueless. Read this block first. The eightieth entry below remains binding except where
+this entry names a change, and every standing bar of the earlier blocks remains binding.
+
+**On form.** Short, per the standing bar. **In conversation with the user, plain ordinary English.**
+
+### The boot, done the cheap way the eightieth entry ordered
+
+The user's opening instruction named one file — the eightieth entry's staging file — **and the
+ordinary session-start read was performed anyway**: `CLAUDE.md` whole, `DECISIONS.md` whole,
+`STATUS.md`, and the live gating answer at `tools/audit/nongating_apparatus_rows.json`. The
+eightieth entry's own errors block names skipping that read as the cheapest single cause of its
+error count, and this session treats that as settled.
+
+### ★ THE RULING OF THIS SESSION — §9.0: WHAT IS A UNIT?
+
+**The user ruled the framework document's §9.0 at the decision reading: a unit of the architecture
+is one question about the music that the analysis settles, and could settle differently — not a
+factor of the model, and not a two-tier reconciliation carrying factors as sub-units.**
+
+- **The surface:** `cowork_unit_question_surface_2026_08_28.md` — full self-contained prose, every
+  pro and con naming its principle, every option rated towards the principles and towards the
+  objective (D-424), fact-checked with what was verified at the files marked apart from what is
+  relayed. Delivered as user-visible text in its own turn AND written to disk.
+- **The disposition:** the user's words verbatim — *"Read and I agree with recommendation."* —
+  given after confirming the reading, pre-empting the separate choice question. Declared in the
+  ruling record, not dressed up.
+- **The record:** `cowork_rulings_2026_08_28_unit_question_sitting.md`, on disk, so the rule-(c)
+  suspension's derivation can reach it. **What it does NOT do is stated inside it:** Δ2 (layer
+  ownership) becomes gradable and is NOT decided; the §1.4 ratification hold stands; Δ3 and Δ5 stay
+  held; revisitable at ratification if the external research list bears on it.
+
+### ★ THE EXTERNAL RESEARCH LIST HAS ARRIVED — THE INPUT THE RATIFICATION HOLD WAITS ON
+
+**`C:\s\MS\external resarch summary\external research.xlsx`** — the folder name's spelling is the
+user's, as it stands; do not "fix" it silently, the records point at it. A 21-sheet workbook
+(~1,500 rows) the user prepared with another LLM: a research and design-input register over the
+public research on chord/mode/harmonic inference — a research register with per-row provenance and
+verification status, primary-source deep reads, corpus and standards inventories, a provisional
+decomposition of its own, and named gaps (chiefly: no mature general seven-mode symbolic inference;
+mode-specific functional harmony a larger gap still). **Read whole by the fifty-ninth session's
+writing side; reported to the user; NOT dispositioned, NOT compared in detail, and nothing acted
+on.**
+
+**The user's direction (2026-08-28): the file is OURS — git-handle it as such, and record where it
+is.** The third landing dispatch (below) lands it; this entry, the user memory, and the landing
+commit are the record of where it lives. **Its ruled place in the plan is the ratification sitting:
+the framework document's §1.4 holds ratification of the decomposition until this list is
+dispositioned against it — that dispositioning pass is now UNBLOCKED on the input side and is the
+critical path's next user-facing act.**
+
+**★ THE DISPOSITIONING IS PREPARED.** `cowork_research_list_disposition_surface_2026_08_29.md`, at
+the root, written by this side on the user's direction and committed to the tree (unlanded; rides
+the next landing act). It classifies the list against `docs/research_papers/BIBLIOGRAPHY.md` (large
+already-weighed overlap; the genuinely new classes named — the McLeod & Rohrmeier family, the
+executable grammar/ontology branch, the mode branch, recent and multilingual items), dispositions
+every §9 design point and every A.4 difference (**no chosen design point meets a falsifier; one
+rival-shaped item at DP-D resolves on its own stated scope; DP-N/O/Q stay open; mode routes as a
+new question to L2's detail specification, measurement design and the style system; R-7 narrowed,
+not closed**), and proposes the sitting order — ratification first, DP-D ruled explicitly, the mode
+routing, one decision per turn. **The ratification sitting is ready to take whenever the user is.**
+
+**Compatibility, assessed on the full read and put to the user:** substantively compatible —
+principles congruent with ours, heavy overlap with the literature the framework derivation used,
+plus genuinely new branches (the ontology line, the mode gaps, graded chord-evaluation metrics).
+The frictions are at OUR side of the boundary, not defects in the file: its identifiers (D001…,
+R001…, E001…) collide with our register namespaces, so any citation into our record uses a
+prefixed or sheet+row form, never their IDs bare; its vocabulary uses words our convention
+reserves, which quoted text may keep (our register's own quoting rule) while our restatements use
+our vocabulary; and it is an .xlsx, which the record's quote-verification tools cannot anchor into.
+**The workbook itself is NOT amended, ever** — it is an external source document; its own no-loss
+and never-overwrite rules match our filing convention's dated-report branch. If the dispositioning
+pass needs anchored citations, a mechanically generated text extraction BESIDE the file is a
+separate small piece of work, decided when that pass is commissioned.
+
+### ★★ THE RATIFICATION SITTING RAN ON 2026-08-29 AND THE DECOMPOSITION IS RATIFIED
+
+`cowork_rulings_2026_08_29_ratification_sitting.md`, at the root, committed to the tree (unlanded;
+rides the next landing act). **Four rulings, each on a full surface delivered as user-visible text
+in its own turn, the user disposing directly — declared in the record, not dressed up:** (1) Δ2
+ruled at the derived side in the split form — a deciding layer owns the ANSWER to its question;
+(2) **the framework's decomposition, charters and boundary contracts are RATIFIED** — §1.4's hold
+discharged by the dispositioning, **Δ3 and Δ5 released and ruled** — with the placement test
+retained as a post-ratification check and its two open questions (the shell condition, the test's
+worth) still the user's; (3) the list's one rival-shaped item (the 2024 alteration/suspension work)
+reopens nothing and is admitted as detail-phase input at the list's verification grades; (4) the
+mode question ROUTED with its evidence to L2's detail specification, measurement design and the
+style system — decided at none of them yet.
+
+**What ratification makes DUE:** the framework document's ruled RENAME (an executing act, not
+performed); the register entries through the suspension route; the landing of the sitting's
+documents. **The §3.9 retrospective IS WRITTEN AND RATIFIED** —
+`cowork_framework_phase_retrospective_2026_08_29.md`, at the root, committed to the tree
+(unlanded), ratified by the user the same day (his word verbatim: "ratified"; Ruling 5 of the
+sitting record). Its six proposals (P-1 through P-6) move to their named homes **by later executing
+acts** — P-2 and P-3 subsume backlog items 9 and 10. **★ THE FRAMEWORK PHASE IS CLOSED.** The
+ruled RENAME of the framework document rides the closing dispatch, **its target name RULED — the
+user's word verbatim: "FRAMEWORK.md"** (Ruling 5 of the sitting record). **The
+detail-specification phase is next**, opening on its own terms under the ruled phase definitions;
+nothing of it is begun by this session.
+
+### The two landing batches
+
+**The first (`cc_instruction_landing_2026_08_28.md`) ran to completion and its report was read IN
+FULL and verified at the files by this side:** the eightieth entry stands at the handoff's line 4,
+the staging file is gone, `STATUS.md` carries the batch's pointer entries, and the guard artifact's
+own summary reads 75 run / 72 passing / 3 failing — the three known. Its declared fourth commit
+explains the ref moving one step past its named end-state commit. **Every commit identity remains
+RELAYED — no git object was resolved by this side; the verification limit continues.**
+
+**Its findings, placed and not jumped on:** (1) two documents in git nowhere → the second landing
+batch, below; (2) **the mixed dispatch-file population** — some historical `cc_instruction_*.md`
+tracked, a large population never committed, nothing in the record saying which state is intended —
+**a USER question, acted on by no session, carried here so it is not lost**; (3) the Task-0
+pin-before-reading order is not performable when the user's opening line names only the dispatch —
+**answered structurally in the second landing dispatch's head; the dispatch-protocol note remains
+owed at `cowork_audit_protocol.md` and is the user's act**; (4) the evidence-pin membership check's
+flip-flop is explained by mechanism (its population is the file system, not the index) — nothing
+owed.
+
+**The second (`cc_instruction_second_landing_2026_08_28.md`) ran on 2026-08-29 and its report
+(`cc_report_second_landing_2026_08_28.md`) was read IN FULL and verified by this side:** the
+STATUS.md close entries and the guard artifact's 75/72/3 summary confirmed at the files, and the
+two Cowork-authored landed documents proven BYTE-IDENTICAL to this side's authored copies by its
+own hash comparison of staged snapshots. Every commit identity remains RELAYED. The batch declared
+three extra self-correcting commits over its own report's SHA table (its §9.3–§9.4) — read them
+there; none touches anything but the report. **Its one new finding: the root's untracked document
+population is larger than the three enumeration patterns reach (a further class of
+`cc_<subject>_report/investigation/dossier.md` names) — the mixed-population user question got
+larger, and remains a user question.**
+
+**The third (`cc_instruction_third_landing_2026_08_28.md`) ran on 2026-08-30: the workbook is in
+git and pushed, byte-exact, unopened, the folder spelling kept — E0 and E1 met — but the batch ends
+on a STOP and E2 IS NOT MET, graded honestly by CC** (`cc_report_third_landing_2026_08_28.md`, read
+in full and verified at the files by this side: the guard summary 75/70/5 at the artifact, the ref
+at the batch's last declared commit). **Two reds beyond the three known:** (a) the evidence-pin
+membership check, caused by this side's ratification sitting record entering the file-system
+population after the second batch — expected by the dispatch's A2, and left unregenerated because
+A3 did not name the artifact; (b) **★ the artifact-inventory guard HALTS on the landed workbook** —
+its authored signature table names no rule for the file's shape, and its live stop rule refuses to
+let a newly tracked file enter a later pass ungraded. **The tool working, not the landing failing.
+The remedy — one authored signature row plus regeneration of `artifact_inventory.json`, decided
+over the tool's whole population both ways (D-657) — is a mechanism change reserved to the user
+(D-436/D-648) and rides the closing dispatch on his ruling.**
+
+**★ THIS SESSION'S COUNTED ERROR (1), owned here:** the third landing dispatch carried an E2 its
+own A2 and A3 made unmeetable — E2 demanded "the three known failing checks and no others" while A2
+predicted the fourth red and A3 deliberately excluded the membership artifact from the footprint.
+**The same family as the seventy-eighth and eightieth entries' criterion-its-own-orders-break
+shape, one step milder** (an acceptance limb, not a bar, and the dispatch's own
+STOP-on-contradiction head gave CC the route it used correctly). The lesson for the retrospective's
+P-3 line: **an acceptance criterion is derived from the declared start state plus the footprint,
+never written independently of them.**
+
+### Declared by this side
+
+**Method.** All reads through the file tools on bridge-staged snapshots; container-side comparison
+of two bridge directory listings was used to establish what moved while a batch ran. **No shell
+command of any kind, in the container or on the device. The re-presented shell surface's answer is
+STILL OWED; treat no-shell as the working method, not as a settled ruling.** The tip was read as a
+file at the ref; every git-object identity is RELAYED.
+
+**One timing error-adjacent act, declared here as it was declared in the ruling record and in the
+first batch's report:** the §9.0 surface was committed to the tree minutes before this side
+established that the first landing batch was running. CC's §5.3 found it, graded its footprint
+assumption at its own stated words, and did not STOP. The ruling record was held out of the tree
+until the report landed. **The lesson a successor should carry: before committing ANY file to the
+tree, establish whether a batch is running — the ref's modification time and the presence of the
+expected report are the cheap checks.**
+
+**Contamination.** This side read the eightieth entry, the framework document at §0–§5, §9, §10.1
+and Appendix A.4, and the delta-sitting record. **It is barred from authoring the framework
+document, as is any session that reads this entry.**
+
+**Counted errors this session: ONE** — the third landing dispatch's E2/A2/A3 contradiction, owned
+in full at the third-batch block above, with its lesson stated for the protocol's P-3 clause.
+
+### The cadence for the successor
+
+0. **The closing dispatch's SECOND WRITING (`cc_instruction_phase_close_second_2026_08_30.md`) is
+   the next act.** The FIRST writing stopped at Task 0 on its own declared-start-state clause —
+   six failing guard verdicts measured against five declared; the sixth
+   (`gen_session_start_read_size.py --check`) went stale when the third landing batch's further
+   commit moved `STATUS.md`, a measured input, after the artifact was regenerated
+   (`cc_report_phase_close_2026_08_30.md`, its §4 the established cause). **The stop was correct
+   and is not a counted error on either side; the first writing lands as record, never runs.** The
+   second writing declares six, derives its end criterion from six, and declares in advance the
+   one red its interim guard runs will see. It clears all three extra reds (the signature row is
+   USER-RULED 2026-08-30; the membership and read-size regenerations are footprint-named), renames
+   the framework document to `FRAMEWORK.md`, executes the six ratified retrospective edits,
+   prepends THIS entry, and lands every 2026-08-29/30 document. **Until it runs, the sitting
+   record, the disposition surface and the ratified retrospective are in git nowhere.** **A lesson
+   for a later protocol ratification, carried here:** a further commit that touches `STATUS.md`,
+   `CLAUDE.md` or `DECISIONS.md` touches a guard's measured input — the second writing orders the
+   read-size artifact regenerated in the same commit, and the rule deserves a standing home.
+1. **The detail-specification phase is next** — it opens on its own terms under the ruled phase
+   definitions and the ratified `FRAMEWORK.md`; nothing of it is begun by this session, and its
+   opening is the user's sitting.
+2. **The placement test** stands as a post-ratification check (Ruling 2); its two open questions —
+   the shell condition and the test's worth — remain the user's, on his timetable.
+3. **Still owed and unchanged:** the shell surface's answer; the mixed and WIDER untracked-population
+   question (the third report measured a further class of 160 `cc_<subject>_*.md` names — a user
+   ruling on which classes should be tracked); the register suspension's underived owed list; the
+   register dispatch's revalidation debts (backlog items 5–7); the eleven quarantined audit
+   questions, reserved to the AUDIT and untouched through five batches.
+
+**The backlog is the eightieth entry's, less what this session discharged:** items 9 and 10 are
+subsumed by the ratified P-2 and P-3; the §9.0 surface (A.2) is done and ruled; the external-input
+carry note is discharged — the list arrived, is in git, and is dispositioned.
+
+---
 ## COWORK SESSION CLOSE (EIGHTIETH ENTRY, 2026-08-28 — THE FIFTY-EIGHTH SESSION) — ★ A BATCH IS RUNNING: THE §10 ARM-AND-SITE FILL-IN. FOUR DISPOSITIONS RECORDED AND TWO OF THEM HELD; THE CROSS-LAYER TRANSFER LIST OPENED, WHICH WAS A PHASE OUTPUT WITH NO ARTIFACT; THE REGISTER REPAIR PARKED AND NOW KNOWN INCOMPLETE. **THIS SIDE MADE FOUR ERRORS OF ONE SHAPE AND THIS ENTRY IS THE HANDOVER.** THE CURRENT ENTRY POINT.
 
 You start clueless. Read this block first. The seventy-ninth entry below remains binding except

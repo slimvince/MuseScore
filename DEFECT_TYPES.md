@@ -38,6 +38,31 @@
 
 | DT-26 | **Scope-assumed enumeration — a completeness claim proven only WITHIN a scope that was itself never checked.** A sweep is run mechanically (so it looks rigorous, and it does prove what it claims *inside* its file set), and its result is then reported as the answer to a question whose real population extends past that file set — e.g. “these are every occurrence of the pattern” answering “can this behavior be made X-independent?”. The mechanical sweep is not the error; **taking the scope as given is.** Distinct from DT-5 (a fact trapped where it is computed) and DT-21 (a file tagged with the wrong layer): here nothing is mis-tagged and nothing is trapped — the enumeration is simply *complete about the wrong set*, and reads as complete about the right one. The failure is silent by construction: a scoped sweep cannot report what it never looked at | **OI-175** (2026-07-16, the OI-170 dispatch): the tonic-use enumeration swept the dispatch's named L4 files (118 hits) and was about to ship “nothing was left unclassified” — while `harmonicsegmenter.cpp:849-852`, a **live, chord-deciding** tonic site (the Iter-74 Fix-B head-gap tonic prior, which overwrites a committed root/bass/quality), sat two directories outside the scope. Caught only by re-running the identical pattern tree-wide (**140** hits) and reading the 22-hit remainder file by file. The **fourth** consecutive audit of this same defect family to miss sites (OI-167 → OI-168 → OI-170 → OI-175) | script: run the enumeration's own pattern over the WHOLE module tree (not the scoped file set), diff the two hit sets, and require every out-of-scope hit to be listed and dispositioned in the artifact — an unexplained non-empty remainder IS the finding. **RECONCILE IT ARITHMETICALLY** (`tree-wide − scoped == Σ per-file remainder`) and STOP on mismatch: the listing is what a reader trusts, and a listing can under-report while looking complete. **Anchor the scope exclusion on exact paths, and DERIVE the remainder listing from that same exclusion** (never a hand-kept file list). Both traps are real and were hit *by this row's own founding check on its first run*: a bare-substring exclusion (`notationcomposingbridge`) also swallowed `notationcomposingbridgehelpers.{cpp,h}`, silently dropping 4 hits — the listing summed to 18 while `140 − 118` demanded 22, and **only the arithmetic caught it**. Keep the scope check IN the generated artifact (`cc_oi170_measurements.txt` §SWEEP 1b/1c is the reference implementation), so a later sweep cannot silently drop it | YES (tree-wide vs scoped hit-set diff + the reconciliation assert) |
 
+**★ DT-20 — TWO FURTHER INSTANCES, both 2026-08-28, recorded 2026-08-30.** Added on the user's
+ratification of the framework phase retrospective (Ruling 5 of
+`cowork_rulings_2026_08_29_ratification_sitting.md`; the proposal is P-6 of
+`cowork_framework_phase_retrospective_2026_08_29.md` §2). They are recorded here, beneath the table,
+rather than inside DT-20's instances cell, because an edit inside a table row is a line REPLACEMENT
+and the ratifying dispatch requires every edit of this act to be additions-only with zero deletion
+lines; the note names its row instead.
+
+- **The informed session brief's §8 bar — a bar that could only be obeyed by a reader who had
+  already breached it.** The bar's own subject is the section that states it, so learning that the
+  bar exists requires exactly the read the bar forbids. The §8 text, and the record that the bar was
+  over-broad, are carried at `cowork_informed_brief_provenance.md`.
+- **The Task-0 pin order — an order performable only from outside the file that states it.** A
+  session told to read a dispatch learns from that dispatch that it should have pinned the file to a
+  blob BEFORE reading it, which by then it cannot do. The remedy is not to restate the order but to
+  move it OUT of the file: the pin is ordered in the user's own opening line, with a
+  declared-departure fallback — declare the pre-pin read, pin, and prove the blob unmoved before
+  staging. Recorded at `cc_report_third_landing_2026_08_28.md` §3.1, and ratified as the standing
+  form at the same retrospective's P-2.
+
+*Both are the same shape as the founding instance above: the composition of the instruction, not its
+content, is what defeats it. The signature column's remedy applies unchanged — at instruction design,
+cross-check every required read and every required act against every withholding requirement and
+every precondition in the same instruction.*
+
 *Usage: protocol P8 pass 2 sweeps the audited layer against every catalog row — mechanical
 signatures run as scripts over the whole layer; review signatures applied row-by-row to the
 P1 inventory. New types found in pass 1 are PROMOTED into this catalog before pass 2 runs.

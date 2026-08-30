@@ -3,7 +3,7 @@
  "dispatch": "cc_instruction_artifact_inventory.md",
  "generator": "tools/audit/gen_artifact_inventory.py",
  "reproduce": "python tools/audit/gen_artifact_inventory.py --check   # re-derives at the commit recorded below and exits 1 on drift, then re-runs the classification at the current tree and stops if anything is unclassified",
- "derived_at_commit": "31c573b06eef24920c4acc755771e0a7e34dc48c",
+ "derived_at_commit": "36666956655fbd9c315786eca14d80918a8abdea",
  "★_the_establishment_caveat_of_the_signature_table": "#19, NOT DISCHARGED HERE. The signature table above is AUTHORED, and the only thing that checks it is the unclassified STOP — which establishes that every file matched SOME rule, and nothing at all about whether it matched the RIGHT one. A file sitting in a directory whose name misdescribes it is classed by the misdescription, and this tool cannot know. What would settle the other half is a reading of a sample of members per class against the class's own stated signature, which is an act named here and not started. A reader may not take an empty unclassified bucket as evidence that the classification is correct.",
  "what_is_AUTHORED_here": {
   "the_signature_table": "Which path shapes name which class, in which order, and what each class is called. Published in full beside every class as its `signature`, so the rule can be checked against the members without reading the generator.",
@@ -17,12 +17,12 @@
   "the untracked appendix, which is a dated reading of the working tree"
  ],
  "the_population": {
-  "entries_in_the_tree": 12570,
-  "classified": 12570,
+  "entries_in_the_tree": 12997,
+  "classified": 12997,
   "unclassified": 0,
   "★_unclassified_is_a_STOP_not_a_bucket": "The dispatch's own stop rule. A non-empty bucket halts this tool before it writes, so a committed artifact carrying an empty bucket is the only kind that can exist.",
   "classes_in_the_signature_table": 44,
-  "total_bytes": 866461121
+  "total_bytes": 893907724
  },
  "the_signature_tables_own_establishment": {
   "★_what_these_probes_establish_and_what_they_do_not": "They establish that the unclassified STOP CAN fire — the first probe is a path in a top-level directory no rule names, and it must come back unclassified — and that eight ordering-sensitive placements land where the table says they do. They establish NOTHING about whether any real file is in the right class; that is the caveat above, and it is not discharged by a green probe.",
@@ -1528,7 +1528,7 @@
    "order_in_the_signature_table": 9,
    "signature": "the repository's own dot-files and notices: `.gitignore`, `.gitattributes`, `.gitmodules`, `.clangd`, `.coderabbit.yaml`, `.git-blame-ignore-revs`, anything below `.tx/`, `.vscode_template/` or `hooks/`, the `muse` submodule link, and `LICENSE.txt`, `README.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`",
    "files": 18,
-   "total_bytes": 56146,
+   "total_bytes": 56116,
    "extensions_present": {
     "(no extension)": 8,
     ".md": 4,
@@ -1552,7 +1552,7 @@
    "order_in_the_signature_table": 10,
    "signature": "the seven repository-root documents a session is instructed to read: `CLAUDE.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `OPEN_ITEMS.md`, `STATUS.md`, `BUILD_AND_TEST.md`, `DEFECT_TYPES.md`",
    "files": 7,
-   "total_bytes": 1954797,
+   "total_bytes": 1218091,
    "extensions_present": {
     ".md": 7
    },
@@ -1572,15 +1572,15 @@
     },
     {
      "path": "BUILD_AND_TEST.md",
-     "bytes": 28192
+     "bytes": 27397
     },
     {
      "path": "CLAUDE.md",
-     "bytes": 155165
+     "bytes": 157352
     },
     {
      "path": "DECISIONS.md",
-     "bytes": 162014
+     "bytes": 129368
     },
     {
      "path": "DEFECT_TYPES.md",
@@ -1588,11 +1588,11 @@
     },
     {
      "path": "OPEN_ITEMS.md",
-     "bytes": 613253
+     "bytes": 345910
     },
     {
      "path": "STATUS.md",
-     "bytes": 447530
+     "bytes": 9421
     }
    ]
   },
@@ -1601,7 +1601,7 @@
    "order_in_the_signature_table": 11,
    "signature": "`STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` — the halves the 2026-07-18 split moved out of the two live documents above, reference-only and outside the session-start reads",
    "files": 2,
-   "total_bytes": 1485545,
+   "total_bytes": 2242762,
    "extensions_present": {
     ".md": 2
    },
@@ -1613,7 +1613,7 @@
    "every_member": [
     {
      "path": "STATUS_ARCHIVE.md",
-     "bytes": 1004488
+     "bytes": 1761705
     },
     {
      "path": "cowork_handoff_archive.md",
@@ -1625,10 +1625,10 @@
    "class": "the-open-items-register-detail-files",
    "order_in_the_signature_table": 12,
    "signature": "anywhere below `open_items/` — one detail file per row plus the split reconciliation artifact; the INDEX itself is a governing document above",
-   "files": 377,
-   "total_bytes": 1997180,
+   "files": 379,
+   "total_bytes": 2019450,
    "extensions_present": {
-    ".md": 375,
+    ".md": 377,
     ".json": 2
    },
    "example_paths": [
@@ -2847,7 +2847,7 @@
     },
     {
      "path": "open_items/OI-370.md",
-     "bytes": 8390
+     "bytes": 10570
     },
     {
      "path": "open_items/OI-371.md",
@@ -2859,15 +2859,23 @@
     },
     {
      "path": "open_items/OI-373.md",
-     "bytes": 11048
+     "bytes": 13679
     },
     {
      "path": "open_items/OI-374.md",
-     "bytes": 10096
+     "bytes": 12941
     },
     {
      "path": "open_items/OI-375.md",
      "bytes": 12567
+    },
+    {
+     "path": "open_items/OI-376.md",
+     "bytes": 7024
+    },
+    {
+     "path": "open_items/OI-377.md",
+     "bytes": 7136
     },
     {
      "path": "open_items/OI-38.md",
@@ -3143,7 +3151,7 @@
     },
     {
      "path": "open_items/register_check.json",
-     "bytes": 83217
+     "bytes": 83671
     },
     {
      "path": "open_items/split_reconciliation.json",
@@ -3156,7 +3164,7 @@
    "order_in_the_signature_table": 13,
    "signature": "anywhere below `decisions/` — the rendered per-group entry files; the INDEX itself is a governing document above",
    "files": 20,
-   "total_bytes": 1952080,
+   "total_bytes": 1656343,
    "extensions_present": {
     ".md": 20
    },
@@ -3172,83 +3180,83 @@
    "every_member": [
     {
      "path": "decisions/group_A.md",
-     "bytes": 123928
+     "bytes": 115357
     },
     {
      "path": "decisions/group_B.md",
-     "bytes": 25987
+     "bytes": 30532
     },
     {
      "path": "decisions/group_C.md",
-     "bytes": 251243
+     "bytes": 231157
     },
     {
      "path": "decisions/group_D.md",
-     "bytes": 39830
+     "bytes": 22516
     },
     {
      "path": "decisions/group_E.md",
-     "bytes": 31790
+     "bytes": 6164
     },
     {
      "path": "decisions/group_F.md",
-     "bytes": 153389
+     "bytes": 112358
     },
     {
      "path": "decisions/group_G.md",
-     "bytes": 227704
+     "bytes": 195008
     },
     {
      "path": "decisions/group_H.md",
-     "bytes": 223384
+     "bytes": 215298
     },
     {
      "path": "decisions/group_I.md",
-     "bytes": 72075
+     "bytes": 62760
     },
     {
      "path": "decisions/group_J.md",
-     "bytes": 34347
+     "bytes": 28177
     },
     {
      "path": "decisions/group_K.md",
-     "bytes": 101520
+     "bytes": 99497
     },
     {
      "path": "decisions/group_L.md",
-     "bytes": 29278
+     "bytes": 24730
     },
     {
      "path": "decisions/group_M.md",
-     "bytes": 112340
+     "bytes": 87619
     },
     {
      "path": "decisions/group_N.md",
-     "bytes": 32665
+     "bytes": 21981
     },
     {
      "path": "decisions/group_O.md",
-     "bytes": 18518
+     "bytes": 2337
     },
     {
      "path": "decisions/group_P.md",
-     "bytes": 10233
+     "bytes": 6021
     },
     {
      "path": "decisions/group_Q.md",
-     "bytes": 88567
+     "bytes": 45292
     },
     {
      "path": "decisions/group_S.md",
-     "bytes": 68028
+     "bytes": 67678
     },
     {
      "path": "decisions/group_T.md",
-     "bytes": 272120
+     "bytes": 257258
     },
     {
      "path": "decisions/group_U.md",
-     "bytes": 35134
+     "bytes": 24603
     }
    ]
   },
@@ -3256,28 +3264,44 @@
    "class": "ratification-surfaces",
    "order_in_the_signature_table": 14,
    "signature": "anywhere below `ratification_surfaces/` — the reading surfaces a ruling was taken on",
-   "files": 18,
-   "total_bytes": 823822,
+   "files": 32,
+   "total_bytes": 2417217,
    "extensions_present": {
-    ".md": 18
+    ".md": 32
    },
    "example_paths": [
     "ratification_surfaces/cowork_artifact_inventory_ruling_surface.md",
+    "ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md",
+    "ratification_surfaces/cowork_comparison_harmony_boundary_reading.md",
     "ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md",
-    "ratification_surfaces/cowork_decisions_pending_ratification.md",
-    "ratification_surfaces/cowork_decisions_pending_ratification_2.md",
-    "ratification_surfaces/cowork_decisions_pending_ratification_3.md",
-    "ratification_surfaces/cowork_decisions_pending_ratification_4.md"
+    "ratification_surfaces/cowork_deciding_act_recovery_surface_2026_08_16.md",
+    "ratification_surfaces/cowork_decisions_filter_surface_2026_08_15.md"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
     {
      "path": "ratification_surfaces/cowork_artifact_inventory_ruling_surface.md",
-     "bytes": 76900
+     "bytes": 82383
+    },
+    {
+     "path": "ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md",
+     "bytes": 49383
+    },
+    {
+     "path": "ratification_surfaces/cowork_comparison_harmony_boundary_reading.md",
+     "bytes": 70242
     },
     {
      "path": "ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md",
      "bytes": 13997
+    },
+    {
+     "path": "ratification_surfaces/cowork_deciding_act_recovery_surface_2026_08_16.md",
+     "bytes": 269498
+    },
+    {
+     "path": "ratification_surfaces/cowork_decisions_filter_surface_2026_08_15.md",
+     "bytes": 493005
     },
     {
      "path": "ratification_surfaces/cowork_decisions_pending_ratification.md",
@@ -3316,6 +3340,18 @@
      "bytes": 42682
     },
     {
+     "path": "ratification_surfaces/cowork_discard_reach_surface_2026_08_16.md",
+     "bytes": 20385
+    },
+    {
+     "path": "ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md",
+     "bytes": 186422
+    },
+    {
+     "path": "ratification_surfaces/cowork_governing_surface_split_2026_08_16.md",
+     "bytes": 13010
+    },
+    {
      "path": "ratification_surfaces/cowork_oi354_legacy_mark_establishment_2026_08_09.md",
      "bytes": 18578
     },
@@ -3326,6 +3362,10 @@
     {
      "path": "ratification_surfaces/cowork_perspective_inventory_ratification.md",
      "bytes": 11267
+    },
+    {
+     "path": "ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md",
+     "bytes": 47596
     },
     {
      "path": "ratification_surfaces/cowork_reserved_word_inventory_2026_08_09.md",
@@ -3342,6 +3382,30 @@
     {
      "path": "ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md",
      "bytes": 142011
+    },
+    {
+     "path": "ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md",
+     "bytes": 263986
+    },
+    {
+     "path": "ratification_surfaces/cowork_sizing_pack_leak_list_reading.md",
+     "bytes": 8657
+    },
+    {
+     "path": "ratification_surfaces/cowork_sizing_tests_reading.md",
+     "bytes": 49685
+    },
+    {
+     "path": "ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md",
+     "bytes": 14411
+    },
+    {
+     "path": "ratification_surfaces/cowork_withheld_family_framework_reading.md",
+     "bytes": 68533
+    },
+    {
+     "path": "ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md",
+     "bytes": 33099
     }
    ]
   },
@@ -3349,10 +3413,10 @@
    "class": "writing-side-ruling-records",
    "order_in_the_signature_table": 15,
    "signature": "repository-root files whose name begins `cowork_rulings_`, `cowork_ruling_`, `cowork_owner_rulings_`, `cowork_pending_rulings_` or `cowork_document_route_rulings_`",
-   "files": 27,
-   "total_bytes": 132873,
+   "files": 86,
+   "total_bytes": 875423,
    "extensions_present": {
-    ".md": 27
+    ".md": 86
    },
    "example_paths": [
     "cowork_document_route_rulings_2026_08_08.md",
@@ -3457,6 +3521,14 @@
      "bytes": 4291
     },
     {
+     "path": "cowork_rulings_2026_08_15_batch_return.md",
+     "bytes": 8232
+    },
+    {
+     "path": "cowork_rulings_2026_08_15_inventory_sitting.md",
+     "bytes": 22531
+    },
+    {
      "path": "cowork_rulings_2026_08_15_method_directions.md",
      "bytes": 10397
     },
@@ -3465,8 +3537,236 @@
      "bytes": 3735
     },
     {
+     "path": "cowork_rulings_2026_08_15_phase_definition_sitting.md",
+     "bytes": 15405
+    },
+    {
      "path": "cowork_rulings_2026_08_15_session_length.md",
      "bytes": 3828
+    },
+    {
+     "path": "cowork_rulings_2026_08_16_preparation_return.md",
+     "bytes": 32217
+    },
+    {
+     "path": "cowork_rulings_2026_08_17_callers_sitting.md",
+     "bytes": 5001
+    },
+    {
+     "path": "cowork_rulings_2026_08_17_eighth_return.md",
+     "bytes": 21359
+    },
+    {
+     "path": "cowork_rulings_2026_08_17_governing_surface_split.md",
+     "bytes": 11672
+    },
+    {
+     "path": "cowork_rulings_2026_08_17_ninth_return.md",
+     "bytes": 23053
+    },
+    {
+     "path": "cowork_rulings_2026_08_17_residue_sitting.md",
+     "bytes": 8909
+    },
+    {
+     "path": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+     "bytes": 11713
+    },
+    {
+     "path": "cowork_rulings_2026_08_17_session_start_read_sitting.md",
+     "bytes": 12224
+    },
+    {
+     "path": "cowork_rulings_2026_08_17_seventh_return.md",
+     "bytes": 9401
+    },
+    {
+     "path": "cowork_rulings_2026_08_17_sixth_return.md",
+     "bytes": 9216
+    },
+    {
+     "path": "cowork_rulings_2026_08_18_eleventh_stop.md",
+     "bytes": 23923
+    },
+    {
+     "path": "cowork_rulings_2026_08_18_tenth_return.md",
+     "bytes": 21918
+    },
+    {
+     "path": "cowork_rulings_2026_08_19_eleventh_return.md",
+     "bytes": 20899
+    },
+    {
+     "path": "cowork_rulings_2026_08_19_thirteenth_return.md",
+     "bytes": 23833
+    },
+    {
+     "path": "cowork_rulings_2026_08_19_twelfth_return.md",
+     "bytes": 19516
+    },
+    {
+     "path": "cowork_rulings_2026_08_21_evaluation_brief_sitting.md",
+     "bytes": 5945
+    },
+    {
+     "path": "cowork_rulings_2026_08_21_successor_plan_sitting.md",
+     "bytes": 11478
+    },
+    {
+     "path": "cowork_rulings_2026_08_22_boot_list_sitting.md",
+     "bytes": 7965
+    },
+    {
+     "path": "cowork_rulings_2026_08_22_deriving_side_sitting.md",
+     "bytes": 13966
+    },
+    {
+     "path": "cowork_rulings_2026_08_22_dispatch_order_sitting.md",
+     "bytes": 4162
+    },
+    {
+     "path": "cowork_rulings_2026_08_22_member_two_leak_sitting.md",
+     "bytes": 5785
+    },
+    {
+     "path": "cowork_rulings_2026_08_22_pilot_order_sitting.md",
+     "bytes": 6878
+    },
+    {
+     "path": "cowork_rulings_2026_08_22_step_zero_return_sitting.md",
+     "bytes": 16397
+    },
+    {
+     "path": "cowork_rulings_2026_08_22_withheld_family_sitting.md",
+     "bytes": 12810
+    },
+    {
+     "path": "cowork_rulings_2026_08_23_brief_validation_sitting.md",
+     "bytes": 6375
+    },
+    {
+     "path": "cowork_rulings_2026_08_23_member_two_second_leak_sitting.md",
+     "bytes": 6827
+    },
+    {
+     "path": "cowork_rulings_2026_08_24_blind_return_sitting.md",
+     "bytes": 6188
+    },
+    {
+     "path": "cowork_rulings_2026_08_24_blinding_failure_sitting.md",
+     "bytes": 10840
+    },
+    {
+     "path": "cowork_rulings_2026_08_24_comparison_design_sitting.md",
+     "bytes": 6415
+    },
+    {
+     "path": "cowork_rulings_2026_08_24_method_ruling_sitting.md",
+     "bytes": 7235
+    },
+    {
+     "path": "cowork_rulings_2026_08_24_sizing_brief_sitting.md",
+     "bytes": 7079
+    },
+    {
+     "path": "cowork_rulings_2026_08_24_sizing_leak_list_sitting.md",
+     "bytes": 4995
+    },
+    {
+     "path": "cowork_rulings_2026_08_24_sizing_pilot_sitting.md",
+     "bytes": 7189
+    },
+    {
+     "path": "cowork_rulings_2026_08_25_cascade_sitting.md",
+     "bytes": 10488
+    },
+    {
+     "path": "cowork_rulings_2026_08_25_determination_route_sitting.md",
+     "bytes": 7635
+    },
+    {
+     "path": "cowork_rulings_2026_08_25_forward_fact_sitting.md",
+     "bytes": 8859
+    },
+    {
+     "path": "cowork_rulings_2026_08_25_landing_return_sitting.md",
+     "bytes": 9544
+    },
+    {
+     "path": "cowork_rulings_2026_08_25_method_voiding_sitting.md",
+     "bytes": 19961
+    },
+    {
+     "path": "cowork_rulings_2026_08_25_next_act_sitting.md",
+     "bytes": 10785
+    },
+    {
+     "path": "cowork_rulings_2026_08_25_regress_termination_sitting.md",
+     "bytes": 21304
+    },
+    {
+     "path": "cowork_rulings_2026_08_25_second_vector_sitting.md",
+     "bytes": 11105
+    },
+    {
+     "path": "cowork_rulings_2026_08_25_v1_sufficiency_sitting.md",
+     "bytes": 7082
+    },
+    {
+     "path": "cowork_rulings_2026_08_26_amendment_landing_sitting.md",
+     "bytes": 16933
+    },
+    {
+     "path": "cowork_rulings_2026_08_26_framework_opening_sitting.md",
+     "bytes": 20284
+    },
+    {
+     "path": "cowork_rulings_2026_08_26_ledger_dispositions_sitting.md",
+     "bytes": 10295
+    },
+    {
+     "path": "cowork_rulings_2026_08_26_ledger_form_sitting.md",
+     "bytes": 5142
+    },
+    {
+     "path": "cowork_rulings_2026_08_26_sizing_tests_sitting.md",
+     "bytes": 18506
+    },
+    {
+     "path": "cowork_rulings_2026_08_27_framework_authoring_sitting.md",
+     "bytes": 10616
+    },
+    {
+     "path": "cowork_rulings_2026_08_27_placement_sample_sitting.md",
+     "bytes": 11611
+    },
+    {
+     "path": "cowork_rulings_2026_08_27_redraw_findings_sitting.md",
+     "bytes": 12484
+    },
+    {
+     "path": "cowork_rulings_2026_08_27_stopped_strata_sitting.md",
+     "bytes": 21356
+    },
+    {
+     "path": "cowork_rulings_2026_08_28_framework_delta_sitting.md",
+     "bytes": 11715
+    },
+    {
+     "path": "cowork_rulings_2026_08_28_informed_brief_points_sitting.md",
+     "bytes": 13148
+    },
+    {
+     "path": "cowork_rulings_2026_08_28_informed_framework_sitting.md",
+     "bytes": 16576
+    },
+    {
+     "path": "cowork_rulings_2026_08_28_ledger_precondition_sitting.md",
+     "bytes": 11692
+    },
+    {
+     "path": "cowork_rulings_2026_08_28_unit_question_sitting.md",
+     "bytes": 5878
     },
     {
      "path": "cowork_rulings_oi345_oi342_2026_08_07.md",
@@ -3479,7 +3779,7 @@
    "order_in_the_signature_table": 16,
    "signature": "`cowork_handoff.md`, `cowork_away_returns.md`, and repository-root files beginning `cowork_instruction_` — the running session record and the dispatches the writing side wrote to itself",
    "files": 3,
-   "total_bytes": 1052119,
+   "total_bytes": 2434917,
    "extensions_present": {
     ".md": 3
    },
@@ -3492,11 +3792,11 @@
    "every_member": [
     {
      "path": "cowork_away_returns.md",
-     "bytes": 823569
+     "bytes": 1450957
     },
     {
      "path": "cowork_handoff.md",
-     "bytes": 221647
+     "bytes": 977057
     },
     {
      "path": "cowork_instruction_return_session.md",
@@ -3508,18 +3808,18 @@
    "class": "writing-side-design-documents",
    "order_in_the_signature_table": 17,
    "signature": "every other repository-root file beginning `cowork_` — designs, audits, dossiers, plans, inventories and findings authored by the writing side",
-   "files": 113,
-   "total_bytes": 2217918,
+   "files": 153,
+   "total_bytes": 3527636,
    "extensions_present": {
-    ".md": 113
+    ".md": 153
    },
    "example_paths": [
     "cowork_adjudication_dossier.md",
     "cowork_architecture_reassessment.md",
     "cowork_architecture_review_2026_07.md",
+    "cowork_arm_and_site_fillin_2026_08_28.md",
     "cowork_audit_cadencekeyanchor.md",
-    "cowork_audit_chordanalyzer_oracle.md",
-    "cowork_audit_chordpostpasses_sparse.md"
+    "cowork_audit_chordanalyzer_oracle.md"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
@@ -3534,6 +3834,10 @@
     {
      "path": "cowork_architecture_review_2026_07.md",
      "bytes": 32561
+    },
+    {
+     "path": "cowork_arm_and_site_fillin_2026_08_28.md",
+     "bytes": 40390
     },
     {
      "path": "cowork_audit_cadencekeyanchor.md",
@@ -3577,7 +3881,7 @@
     },
     {
      "path": "cowork_audit_protocol.md",
-     "bytes": 83550
+     "bytes": 113550
     },
     {
      "path": "cowork_audit_regionanalyzer.md",
@@ -3590,6 +3894,30 @@
     {
      "path": "cowork_audit_sectioncadencedetection.md",
      "bytes": 3824
+    },
+    {
+     "path": "cowork_blind_derivation_harmony_boundary_2026_08_23.md",
+     "bytes": 89497
+    },
+    {
+     "path": "cowork_blind_derivation_scoring_model_2026_08_24.md",
+     "bytes": 125529
+    },
+    {
+     "path": "cowork_blind_session_brief_framework.md",
+     "bytes": 24515
+    },
+    {
+     "path": "cowork_blind_session_brief_harmony_boundary.md",
+     "bytes": 22424
+    },
+    {
+     "path": "cowork_blind_session_brief_scoring_model.md",
+     "bytes": 20128
+    },
+    {
+     "path": "cowork_blind_session_opening_instruction_harmony_boundary.md",
+     "bytes": 8119
     },
     {
      "path": "cowork_bounded_context_design.md",
@@ -3620,6 +3948,18 @@
      "bytes": 8359
     },
     {
+     "path": "cowork_cross_layer_transfer_list.md",
+     "bytes": 5862
+    },
+    {
+     "path": "cowork_curated_boot_list_draft_2026_08_19.md",
+     "bytes": 11298
+    },
+    {
+     "path": "cowork_declared_readings_surface_2026_08_27.md",
+     "bytes": 14174
+    },
+    {
      "path": "cowork_delta_check_dispositions.md",
      "bytes": 8894
     },
@@ -3636,8 +3976,16 @@
      "bytes": 18546
     },
     {
+     "path": "cowork_empirical_findings_candidates.md",
+     "bytes": 127358
+    },
+    {
      "path": "cowork_engage_arc_plan.md",
      "bytes": 16055
+    },
+    {
+     "path": "cowork_evaluation_boot_list_2026_08_21.md",
+     "bytes": 5437
     },
     {
      "path": "cowork_evidence_inventory.md",
@@ -3648,12 +3996,24 @@
      "bytes": 11044
     },
     {
+     "path": "cowork_fact_gate_admissions_2026_08_26.md",
+     "bytes": 20530
+    },
+    {
      "path": "cowork_factorization_desk_simulation.md",
      "bytes": 47051
     },
     {
      "path": "cowork_fb_redesign_design.md",
      "bytes": 27968
+    },
+    {
+     "path": "cowork_framework_document_draft_2026_08_28.md",
+     "bytes": 139963
+    },
+    {
+     "path": "cowork_framework_phase_opening_surface_2026_08_26.md",
+     "bytes": 30582
     },
     {
      "path": "cowork_functional_analysis_research_grounding.md",
@@ -3686,6 +4046,14 @@
     {
      "path": "cowork_information_loss_audit.md",
      "bytes": 21183
+    },
+    {
+     "path": "cowork_informed_brief_provenance.md",
+     "bytes": 3435
+    },
+    {
+     "path": "cowork_informed_session_brief_framework.md",
+     "bytes": 30363
     },
     {
      "path": "cowork_jazz_realization_qa_instrument.md",
@@ -3812,6 +4180,10 @@
      "bytes": 9975
     },
     {
+     "path": "cowork_literature_reachability_2026_08_26.md",
+     "bytes": 14682
+    },
+    {
      "path": "cowork_mode_key_chord_inference_discussion.md",
      "bytes": 11221
     },
@@ -3856,8 +4228,32 @@
      "bytes": 10243
     },
     {
+     "path": "cowork_placement_sample_sealed_2026_08_27.md",
+     "bytes": 50684
+    },
+    {
+     "path": "cowork_placement_sample_sealed_redraw_2026_08_27.md",
+     "bytes": 57947
+    },
+    {
+     "path": "cowork_placement_sample_sealed_third_2026_08_27.md",
+     "bytes": 67409
+    },
+    {
+     "path": "cowork_placement_sample_surface_2026_08_27.md",
+     "bytes": 19673
+    },
+    {
+     "path": "cowork_plan_evaluation_brief_2026_08_21.md",
+     "bytes": 10728
+    },
+    {
      "path": "cowork_polyphony_phrase_harmony_research.md",
      "bytes": 18039
+    },
+    {
+     "path": "cowork_prediction_tabulation_2026_08_21.md",
+     "bytes": 17159
     },
     {
      "path": "cowork_prefit_gates.md",
@@ -3884,6 +4280,26 @@
      "bytes": 3785
     },
     {
+     "path": "cowork_redraw_findings_surface_2026_08_27.md",
+     "bytes": 17107
+    },
+    {
+     "path": "cowork_register_blocker_surface_2026_08_28.md",
+     "bytes": 10683
+    },
+    {
+     "path": "cowork_register_rule_c_suspension_2026_08_28.md",
+     "bytes": 3629
+    },
+    {
+     "path": "cowork_report_plan_evaluation_2026_08_21.md",
+     "bytes": 42761
+    },
+    {
+     "path": "cowork_review_findings_prediction_2026_08_21.md",
+     "bytes": 21495
+    },
+    {
      "path": "cowork_score_census.md",
      "bytes": 41783
     },
@@ -3894,6 +4310,14 @@
     {
      "path": "cowork_score_census_plain_draft.md",
      "bytes": 29727
+    },
+    {
+     "path": "cowork_section8_bar_record_2026_08_28.md",
+     "bytes": 4701
+    },
+    {
+     "path": "cowork_section8_breach_surface_2026_08_28.md",
+     "bytes": 8477
     },
     {
      "path": "cowork_sensitive_cell_probe.md",
@@ -3920,8 +4344,32 @@
      "bytes": 25170
     },
     {
+     "path": "cowork_specification_reconstruction_plan_2026_08_19.md",
+     "bytes": 18148
+    },
+    {
+     "path": "cowork_specification_reconstruction_plan_successor_2026_08_21.md",
+     "bytes": 62074
+    },
+    {
+     "path": "cowork_specification_reconstruction_plan_v2_2026_08_19.md",
+     "bytes": 15424
+    },
+    {
+     "path": "cowork_specification_reconstruction_plan_v3_2026_08_19.md",
+     "bytes": 19887
+    },
+    {
+     "path": "cowork_specification_reconstruction_plan_v4_2026_08_19.md",
+     "bytes": 20408
+    },
+    {
      "path": "cowork_stage5_fitter_design.md",
      "bytes": 147297
+    },
+    {
+     "path": "cowork_stopped_strata_surface_2026_08_27.md",
+     "bytes": 23253
     },
     {
      "path": "cowork_structural_integrity_audit.md",
@@ -3934,6 +4382,10 @@
     {
      "path": "cowork_style_taxonomy_proposal.md",
      "bytes": 12772
+    },
+    {
+     "path": "cowork_take_rule_surface_2026_08_27.md",
+     "bytes": 13326
     },
     {
      "path": "cowork_target_architecture.md",
@@ -3968,8 +4420,16 @@
      "bytes": 13509
     },
     {
+     "path": "cowork_unit_question_surface_2026_08_28.md",
+     "bytes": 12522
+    },
+    {
      "path": "cowork_upstream_merge_risk.md",
      "bytes": 6448
+    },
+    {
+     "path": "cowork_verification_plan_preparation_tenth.md",
+     "bytes": 27937
     },
     {
      "path": "cowork_voiceleading_axis_design.md",
@@ -4083,18 +4543,18 @@
    "class": "dispatches-to-the-coding-side",
    "order_in_the_signature_table": 19,
    "signature": "repository-root files beginning `cc_instruction_` — one dispatch per CC session",
-   "files": 95,
-   "total_bytes": 792493,
+   "files": 241,
+   "total_bytes": 2670251,
    "extensions_present": {
-    ".md": 95
+    ".md": 241
    },
    "example_paths": [
     "cc_instruction_acquisition_round.md",
     "cc_instruction_adoption_measurement.md",
     "cc_instruction_algorithm_completion.md",
-    "cc_instruction_artifact_inventory.md",
-    "cc_instruction_backlog_triage.md",
-    "cc_instruction_c1_fold_and_explanation.md"
+    "cc_instruction_amendment_landing.md",
+    "cc_instruction_analysis_cost_profile.md",
+    "cc_instruction_apply_the_bearing_cut.md"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
@@ -4111,12 +4571,44 @@
      "bytes": 6250
     },
     {
+     "path": "cc_instruction_amendment_landing.md",
+     "bytes": 15045
+    },
+    {
+     "path": "cc_instruction_analysis_cost_profile.md",
+     "bytes": 21827
+    },
+    {
+     "path": "cc_instruction_apply_the_bearing_cut.md",
+     "bytes": 10419
+    },
+    {
+     "path": "cc_instruction_arm_and_site_fillin.md",
+     "bytes": 24658
+    },
+    {
      "path": "cc_instruction_artifact_inventory.md",
      "bytes": 8880
     },
     {
+     "path": "cc_instruction_away_execution.md",
+     "bytes": 7448
+    },
+    {
      "path": "cc_instruction_backlog_triage.md",
      "bytes": 6495
+    },
+    {
+     "path": "cc_instruction_batch_return_rulings.md",
+     "bytes": 8951
+    },
+    {
+     "path": "cc_instruction_blind_output_landing.md",
+     "bytes": 17065
+    },
+    {
+     "path": "cc_instruction_brief_ratification_and_readme_boundary.md",
+     "bytes": 21284
     },
     {
      "path": "cc_instruction_c1_fold_and_explanation.md",
@@ -4127,8 +4619,44 @@
      "bytes": 7250
     },
     {
+     "path": "cc_instruction_c1_ruling_and_item1c.md",
+     "bytes": 7581
+    },
+    {
+     "path": "cc_instruction_cascade_sweep.md",
+     "bytes": 18113
+    },
+    {
+     "path": "cc_instruction_census_delegation_and_commit.md",
+     "bytes": 7095
+    },
+    {
+     "path": "cc_instruction_commit_and_finish_line.md",
+     "bytes": 6836
+    },
+    {
+     "path": "cc_instruction_comparison_harmony_boundary.md",
+     "bytes": 20839
+    },
+    {
      "path": "cc_instruction_corpus_wave3.md",
      "bytes": 12160
+    },
+    {
+     "path": "cc_instruction_d231_landing.md",
+     "bytes": 8784
+    },
+    {
+     "path": "cc_instruction_decision_clustering.md",
+     "bytes": 9089
+    },
+    {
+     "path": "cc_instruction_decision_harvest.md",
+     "bytes": 21503
+    },
+    {
+     "path": "cc_instruction_decisions_register_completion.md",
+     "bytes": 13293
     },
     {
      "path": "cc_instruction_design_pass_commit.md",
@@ -4149,6 +4677,10 @@
     {
      "path": "cc_instruction_doc_split.md",
      "bytes": 5605
+    },
+    {
+     "path": "cc_instruction_document_routes_and_d472.md",
+     "bytes": 6909
     },
     {
      "path": "cc_instruction_eg2_establish_and_probe.md",
@@ -4203,20 +4735,64 @@
      "bytes": 9373
     },
     {
+     "path": "cc_instruction_evidence_candidate_pass.md",
+     "bytes": 11654
+    },
+    {
      "path": "cc_instruction_fact_dependency_audit.md",
      "bytes": 9358
+    },
+    {
+     "path": "cc_instruction_false_statements_pass.md",
+     "bytes": 7739
+    },
+    {
+     "path": "cc_instruction_finish_line_item1.md",
+     "bytes": 7137
+    },
+    {
+     "path": "cc_instruction_finish_line_item1b.md",
+     "bytes": 7572
+    },
+    {
+     "path": "cc_instruction_five_rulings.md",
+     "bytes": 14951
+    },
+    {
+     "path": "cc_instruction_framework_arrangement_landing.md",
+     "bytes": 20113
+    },
+    {
+     "path": "cc_instruction_framework_pack_preparation.md",
+     "bytes": 22683
     },
     {
      "path": "cc_instruction_grammar_completion_addendum.md",
      "bytes": 5829
     },
     {
+     "path": "cc_instruction_guard_dialect_close_and_push.md",
+     "bytes": 7845
+    },
+    {
+     "path": "cc_instruction_guard_fix_and_item1d.md",
+     "bytes": 7428
+    },
+    {
      "path": "cc_instruction_harness_group.md",
      "bytes": 18749
     },
     {
+     "path": "cc_instruction_informed_brief_landing.md",
+     "bytes": 15632
+    },
+    {
      "path": "cc_instruction_instrument_hygiene_sweep.md",
      "bytes": 10756
+    },
+    {
+     "path": "cc_instruction_item7_reach_derivation.md",
+     "bytes": 7566
     },
     {
      "path": "cc_instruction_joint_fact_adapter.md",
@@ -4319,8 +4895,40 @@
      "bytes": 10067
     },
     {
+     "path": "cc_instruction_landing_2026_08_28.md",
+     "bytes": 16469
+    },
+    {
+     "path": "cc_instruction_ledger_admissions.md",
+     "bytes": 11326
+    },
+    {
+     "path": "cc_instruction_ledger_build.md",
+     "bytes": 11612
+    },
+    {
+     "path": "cc_instruction_ledger_harvest.md",
+     "bytes": 22535
+    },
+    {
+     "path": "cc_instruction_licensed_homing_and_oi344.md",
+     "bytes": 10960
+    },
+    {
+     "path": "cc_instruction_manifest_prose_and_sizing_brief.md",
+     "bytes": 18325
+    },
+    {
+     "path": "cc_instruction_marginals.md",
+     "bytes": 9548
+    },
+    {
      "path": "cc_instruction_measurement_chain_hardening.md",
      "bytes": 10002
+    },
+    {
+     "path": "cc_instruction_method_voiding_landing.md",
+     "bytes": 17220
     },
     {
      "path": "cc_instruction_misaligned_span_exclusion.md",
@@ -4335,8 +4943,48 @@
      "bytes": 9360
     },
     {
+     "path": "cc_instruction_module_layering_assessment.md",
+     "bytes": 3759
+    },
+    {
+     "path": "cc_instruction_notation_noteseam.md",
+     "bytes": 7830
+    },
+    {
+     "path": "cc_instruction_notation_p4.md",
+     "bytes": 8568
+    },
+    {
+     "path": "cc_instruction_notation_p6.md",
+     "bytes": 7889
+    },
+    {
+     "path": "cc_instruction_notation_p7.md",
+     "bytes": 5283
+    },
+    {
+     "path": "cc_instruction_notation_pstrings.md",
+     "bytes": 8308
+    },
+    {
+     "path": "cc_instruction_notation_record_assembly.md",
+     "bytes": 9973
+    },
+    {
+     "path": "cc_instruction_notation_seams_1.md",
+     "bytes": 6654
+    },
+    {
+     "path": "cc_instruction_notation_switch.md",
+     "bytes": 6736
+    },
+    {
      "path": "cc_instruction_note_table_fit.md",
      "bytes": 8730
+    },
+    {
+     "path": "cc_instruction_oi150_baselines.md",
+     "bytes": 6558
     },
     {
      "path": "cc_instruction_oi155.md",
@@ -4367,8 +5015,76 @@
      "bytes": 8261
     },
     {
+     "path": "cc_instruction_oi179_reply_and_phase2_surface.md",
+     "bytes": 10697
+    },
+    {
+     "path": "cc_instruction_oi199_joint_p3_p4.md",
+     "bytes": 11759
+    },
+    {
+     "path": "cc_instruction_oi199_pass1.md",
+     "bytes": 13419
+    },
+    {
+     "path": "cc_instruction_oi206_investigation.md",
+     "bytes": 7503
+    },
+    {
+     "path": "cc_instruction_oi207_adjudication.md",
+     "bytes": 10630
+    },
+    {
+     "path": "cc_instruction_oi207_residual_pass.md",
+     "bytes": 3973
+    },
+    {
+     "path": "cc_instruction_oi315_class_licence.md",
+     "bytes": 7114
+    },
+    {
+     "path": "cc_instruction_oi315_licence_and_cells.md",
+     "bytes": 6549
+    },
+    {
+     "path": "cc_instruction_oi375_width_correction.md",
+     "bytes": 7627
+    },
+    {
+     "path": "cc_instruction_owner_rulings_homing.md",
+     "bytes": 7616
+    },
+    {
+     "path": "cc_instruction_pack_section7_and_errata_state.md",
+     "bytes": 6340
+    },
+    {
+     "path": "cc_instruction_pass_continuation_second.md",
+     "bytes": 31817
+    },
+    {
      "path": "cc_instruction_period_checks.md",
      "bytes": 10611
+    },
+    {
+     "path": "cc_instruction_phase1_completion_inventory.md",
+     "bytes": 7553
+    },
+    {
+     "path": "cc_instruction_phase1_delegations_and_corrections.md",
+     "bytes": 7680
+    },
+    {
+     "path": "cc_instruction_phase1f_final_partition.md",
+     "bytes": 5603
+    },
+    {
+     "path": "cc_instruction_phase1g_triage.md",
+     "bytes": 6210
+    },
+    {
+     "path": "cc_instruction_phase1j_homing_and_reads.md",
+     "bytes": 5965
     },
     {
      "path": "cc_instruction_phase1k_ratification_application_and_reads.md",
@@ -4379,6 +5095,90 @@
      "bytes": 15280
     },
     {
+     "path": "cc_instruction_phase1m_dispositions_and_measurements.md",
+     "bytes": 14345
+    },
+    {
+     "path": "cc_instruction_phase1n_criterion_premise_and_reading_regime.md",
+     "bytes": 12483
+    },
+    {
+     "path": "cc_instruction_phase1o_gate_partition_and_probe_rerun.md",
+     "bytes": 13281
+    },
+    {
+     "path": "cc_instruction_phase1p_home_rulings_and_mechanisms.md",
+     "bytes": 12640
+    },
+    {
+     "path": "cc_instruction_phase1q_reclassification_and_guards.md",
+     "bytes": 12047
+    },
+    {
+     "path": "cc_instruction_phase1r_commit_and_reclassify.md",
+     "bytes": 10272
+    },
+    {
+     "path": "cc_instruction_phase1s_stale_rules_and_enumeration.md",
+     "bytes": 11164
+    },
+    {
+     "path": "cc_instruction_phase1t_restatement_and_pruning.md",
+     "bytes": 7379
+    },
+    {
+     "path": "cc_instruction_phase1u_partition_record_and_directory.md",
+     "bytes": 11966
+    },
+    {
+     "path": "cc_instruction_phase1v_channel_ratification.md",
+     "bytes": 9750
+    },
+    {
+     "path": "cc_instruction_phase1w_legacy_mark_verification.md",
+     "bytes": 8859
+    },
+    {
+     "path": "cc_instruction_phase1x_guard_visibility_and_commit.md",
+     "bytes": 9524
+    },
+    {
+     "path": "cc_instruction_phase1y_corpus_arm_stamping.md",
+     "bytes": 8952
+    },
+    {
+     "path": "cc_instruction_phase1z_commit_and_instrument_record.md",
+     "bytes": 8027
+    },
+    {
+     "path": "cc_instruction_phase_rulings_landing.md",
+     "bytes": 11218
+    },
+    {
+     "path": "cc_instruction_pilot_preparation_withheld_family.md",
+     "bytes": 42826
+    },
+    {
+     "path": "cc_instruction_placement_sample.md",
+     "bytes": 13518
+    },
+    {
+     "path": "cc_instruction_placement_sample_redraw.md",
+     "bytes": 24076
+    },
+    {
+     "path": "cc_instruction_plan_challenge.md",
+     "bytes": 10766
+    },
+    {
+     "path": "cc_instruction_plan_evaluation.md",
+     "bytes": 10156
+    },
+    {
+     "path": "cc_instruction_posterior_slice.md",
+     "bytes": 12007
+    },
+    {
      "path": "cc_instruction_prefit_gates_commit.md",
      "bytes": 2744
     },
@@ -4387,16 +5187,228 @@
      "bytes": 8389
     },
     {
+     "path": "cc_instruction_preparation_eighth.md",
+     "bytes": 15448
+    },
+    {
+     "path": "cc_instruction_preparation_eleventh.md",
+     "bytes": 26140
+    },
+    {
+     "path": "cc_instruction_preparation_eleventh_amended.md",
+     "bytes": 41205
+    },
+    {
+     "path": "cc_instruction_preparation_fifth.md",
+     "bytes": 15483
+    },
+    {
+     "path": "cc_instruction_preparation_fourteenth.md",
+     "bytes": 22927
+    },
+    {
+     "path": "cc_instruction_preparation_fourth.md",
+     "bytes": 15432
+    },
+    {
+     "path": "cc_instruction_preparation_ninth.md",
+     "bytes": 31128
+    },
+    {
+     "path": "cc_instruction_preparation_opening.md",
+     "bytes": 16684
+    },
+    {
+     "path": "cc_instruction_preparation_second.md",
+     "bytes": 15085
+    },
+    {
+     "path": "cc_instruction_preparation_seventh.md",
+     "bytes": 11455
+    },
+    {
+     "path": "cc_instruction_preparation_sixth.md",
+     "bytes": 15392
+    },
+    {
+     "path": "cc_instruction_preparation_tenth.md",
+     "bytes": 24702
+    },
+    {
+     "path": "cc_instruction_preparation_third.md",
+     "bytes": 14477
+    },
+    {
+     "path": "cc_instruction_preparation_thirteenth.md",
+     "bytes": 22616
+    },
+    {
+     "path": "cc_instruction_preparation_twelfth.md",
+     "bytes": 26200
+    },
+    {
      "path": "cc_instruction_probe_decoder.md",
      "bytes": 8449
+    },
+    {
+     "path": "cc_instruction_reads_1.md",
+     "bytes": 6523
+    },
+    {
+     "path": "cc_instruction_reads_2.md",
+     "bytes": 8725
+    },
+    {
+     "path": "cc_instruction_reads_3.md",
+     "bytes": 9904
+    },
+    {
+     "path": "cc_instruction_reads_4.md",
+     "bytes": 7867
+    },
+    {
+     "path": "cc_instruction_reads_5.md",
+     "bytes": 9813
+    },
+    {
+     "path": "cc_instruction_reads_6.md",
+     "bytes": 8997
+    },
+    {
+     "path": "cc_instruction_regeneration_and_citation.md",
+     "bytes": 15190
+    },
+    {
+     "path": "cc_instruction_register_baseline_repair.md",
+     "bytes": 39361
+    },
+    {
+     "path": "cc_instruction_register_reconciliation.md",
+     "bytes": 20894
     },
     {
      "path": "cc_instruction_research_library.md",
      "bytes": 3805
     },
     {
+     "path": "cc_instruction_resume_lapse_records.md",
+     "bytes": 7704
+    },
+    {
+     "path": "cc_instruction_return_continuation.md",
+     "bytes": 11597
+    },
+    {
+     "path": "cc_instruction_return_continuation_10.md",
+     "bytes": 5920
+    },
+    {
+     "path": "cc_instruction_return_continuation_11.md",
+     "bytes": 5017
+    },
+    {
+     "path": "cc_instruction_return_continuation_12.md",
+     "bytes": 5158
+    },
+    {
+     "path": "cc_instruction_return_continuation_13.md",
+     "bytes": 5066
+    },
+    {
+     "path": "cc_instruction_return_continuation_14.md",
+     "bytes": 6724
+    },
+    {
+     "path": "cc_instruction_return_continuation_2.md",
+     "bytes": 9059
+    },
+    {
+     "path": "cc_instruction_return_continuation_3.md",
+     "bytes": 6919
+    },
+    {
+     "path": "cc_instruction_return_continuation_4.md",
+     "bytes": 7517
+    },
+    {
+     "path": "cc_instruction_return_continuation_5.md",
+     "bytes": 7896
+    },
+    {
+     "path": "cc_instruction_return_continuation_6.md",
+     "bytes": 7030
+    },
+    {
+     "path": "cc_instruction_return_continuation_7.md",
+     "bytes": 6254
+    },
+    {
+     "path": "cc_instruction_return_continuation_8.md",
+     "bytes": 6135
+    },
+    {
+     "path": "cc_instruction_return_continuation_9.md",
+     "bytes": 5741
+    },
+    {
+     "path": "cc_instruction_row_landing_and_oi141_arm_check.md",
+     "bytes": 15370
+    },
+    {
+     "path": "cc_instruction_ruled_inventory_landing.md",
+     "bytes": 8611
+    },
+    {
+     "path": "cc_instruction_ruling69_discard_input.md",
+     "bytes": 6054
+    },
+    {
+     "path": "cc_instruction_scoring_model_pass.md",
+     "bytes": 7595
+    },
+    {
+     "path": "cc_instruction_second_landing_2026_08_28.md",
+     "bytes": 15881
+    },
+    {
+     "path": "cc_instruction_second_passage_withheld.md",
+     "bytes": 24200
+    },
+    {
      "path": "cc_instruction_secondary_dominant_refit.md",
      "bytes": 6584
+    },
+    {
+     "path": "cc_instruction_sitting_outcome_and_bound.md",
+     "bytes": 7268
+    },
+    {
+     "path": "cc_instruction_sizing_brief_ruled.md",
+     "bytes": 15178
+    },
+    {
+     "path": "cc_instruction_sizing_output_landing.md",
+     "bytes": 16974
+    },
+    {
+     "path": "cc_instruction_sizing_pack_preparation.md",
+     "bytes": 18983
+    },
+    {
+     "path": "cc_instruction_sizing_regen_and_readme.md",
+     "bytes": 6037
+    },
+    {
+     "path": "cc_instruction_sizing_tests.md",
+     "bytes": 16754
+    },
+    {
+     "path": "cc_instruction_spec_completion.md",
+     "bytes": 6748
+    },
+    {
+     "path": "cc_instruction_stage3_design_ratification.md",
+     "bytes": 4054
     },
     {
      "path": "cc_instruction_stage5_phase0.md",
@@ -4447,12 +5459,36 @@
      "bytes": 16506
     },
     {
+     "path": "cc_instruction_step_zero_exclusion_and_pass_continuation.md",
+     "bytes": 48726
+    },
+    {
+     "path": "cc_instruction_stop_record_and_enumeration.md",
+     "bytes": 6487
+    },
+    {
+     "path": "cc_instruction_successor_plan_landing_and_step_zero.md",
+     "bytes": 39808
+    },
+    {
      "path": "cc_instruction_term_inventory.md",
      "bytes": 6478
     },
     {
+     "path": "cc_instruction_third_landing_2026_08_28.md",
+     "bytes": 11014
+    },
+    {
+     "path": "cc_instruction_three_owner_rulings.md",
+     "bytes": 8479
+    },
+    {
      "path": "cc_instruction_tpc_capability_verify.md",
      "bytes": 3656
+    },
+    {
+     "path": "cc_instruction_unit_correction_redraw.md",
+     "bytes": 16543
     },
     {
      "path": "cc_instruction_vl_docs_fold.md",
@@ -4477,6 +5513,14 @@
     {
      "path": "cc_instruction_wir_alignment_probe.md",
      "bytes": 6074
+    },
+    {
+     "path": "cc_instruction_withheld_family_correction.md",
+     "bytes": 24976
+    },
+    {
+     "path": "cc_instruction_worth_test.md",
+     "bytes": 6710
     }
    ]
   },
@@ -4484,20 +5528,20 @@
    "class": "reports-from-the-coding-side",
    "order_in_the_signature_table": 20,
    "signature": "every other repository-root file beginning `cc_` — the reports, dossiers and measurement outputs CC returned",
-   "files": 82,
-   "total_bytes": 1598342,
+   "files": 167,
+   "total_bytes": 3940634,
    "extensions_present": {
-    ".md": 79,
+    ".md": 164,
     ".txt": 2,
     ".json": 1
    },
    "example_paths": [
     "cc_a8_rebaseline_measure_report.md",
     "cc_acquisition_round_report.md",
+    "cc_adoption_measurement_report.md",
     "cc_backlog_triage_report.md",
     "cc_c1_fold_report.md",
-    "cc_c1_reliability_report.md",
-    "cc_corpus_wave2_report.md"
+    "cc_c1_reliability_report.md"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
@@ -4510,6 +5554,10 @@
      "bytes": 21088
     },
     {
+     "path": "cc_adoption_measurement_report.md",
+     "bytes": 11313
+    },
+    {
      "path": "cc_backlog_triage_report.md",
      "bytes": 30515
     },
@@ -4520,6 +5568,14 @@
     {
      "path": "cc_c1_reliability_report.md",
      "bytes": 22102
+    },
+    {
+     "path": "cc_cadence_key_investigation_dossier.md",
+     "bytes": 19230
+    },
+    {
+     "path": "cc_cadence_precision_investigation_dossier.md",
+     "bytes": 15319
     },
     {
      "path": "cc_corpus_wave2_report.md",
@@ -4536,6 +5592,10 @@
     {
      "path": "cc_dl3a_closeout_report.md",
      "bytes": 14044
+    },
+    {
+     "path": "cc_e0_fullspine_report.md",
+     "bytes": 26169
     },
     {
      "path": "cc_eg2_probe_report.md",
@@ -4598,6 +5658,26 @@
      "bytes": 62178
     },
     {
+     "path": "cc_foundation_stage3b_report.md",
+     "bytes": 9022
+    },
+    {
+     "path": "cc_functional_residual_dossier.md",
+     "bytes": 20608
+    },
+    {
+     "path": "cc_gap_analysis_report.md",
+     "bytes": 49606
+    },
+    {
+     "path": "cc_gap_analysis_v2_report.md",
+     "bytes": 22109
+    },
+    {
+     "path": "cc_gate_rebaseline_verify_report.md",
+     "bytes": 20739
+    },
+    {
      "path": "cc_grammar_completion_report.md",
      "bytes": 16970
     },
@@ -4610,6 +5690,10 @@
      "bytes": 17446
     },
     {
+     "path": "cc_key_emission_headroom_dossier.md",
+     "bytes": 21935
+    },
+    {
      "path": "cc_key_grading_and_calibration_rebaseline_report.md",
      "bytes": 18191
     },
@@ -4620,6 +5704,10 @@
     {
      "path": "cc_key_mode_inference_diagnosis_report.md",
      "bytes": 21265
+    },
+    {
+     "path": "cc_keyregression_diagnosis_report.md",
+     "bytes": 16579
     },
     {
      "path": "cc_l1l2_audit_blind_rerun_report.md",
@@ -4694,8 +5782,48 @@
      "bytes": 17264
     },
     {
+     "path": "cc_layer1_coverage_report.md",
+     "bytes": 6465
+    },
+    {
+     "path": "cc_layer1_impl_report.md",
+     "bytes": 13011
+    },
+    {
+     "path": "cc_layer2_audit_dossier.md",
+     "bytes": 24489
+    },
+    {
+     "path": "cc_layer2_impl_report.md",
+     "bytes": 12662
+    },
+    {
+     "path": "cc_layer3_error_decomposition_report.md",
+     "bytes": 16016
+    },
+    {
+     "path": "cc_layer3_jazz_churn_investigation.md",
+     "bytes": 8040
+    },
+    {
+     "path": "cc_layer3_sweep_report.md",
+     "bytes": 25077
+    },
+    {
+     "path": "cc_layer3_tpc_keymeasure_report.md",
+     "bytes": 14168
+    },
+    {
+     "path": "cc_layer3_wiring_report.md",
+     "bytes": 23344
+    },
+    {
      "path": "cc_measurement_chain_hardening_report.md",
      "bytes": 14632
+    },
+    {
+     "path": "cc_metric_rebaseline_report.md",
+     "bytes": 23938
     },
     {
      "path": "cc_mode_grading_adjudication_probe_report.md",
@@ -4704,6 +5832,14 @@
     {
      "path": "cc_mode_key_chord_probe_report.md",
      "bytes": 23294
+    },
+    {
+     "path": "cc_module_layering_assessment_dossier.md",
+     "bytes": 25125
+    },
+    {
+     "path": "cc_note_table_fit_report.md",
+     "bytes": 13020
     },
     {
      "path": "cc_oi155_report.md",
@@ -4752,6 +5888,246 @@
     {
      "path": "cc_phase1d_enumeration_wave_report.md",
      "bytes": 23136
+    },
+    {
+     "path": "cc_phase_d_merger_report.md",
+     "bytes": 10344
+    },
+    {
+     "path": "cc_refactor1_split_build_report.md",
+     "bytes": 9052
+    },
+    {
+     "path": "cc_refactor1_split_design_dossier.md",
+     "bytes": 25747
+    },
+    {
+     "path": "cc_report_amendment_landing.md",
+     "bytes": 50778
+    },
+    {
+     "path": "cc_report_arm_and_site_fillin.md",
+     "bytes": 25235
+    },
+    {
+     "path": "cc_report_batch_return_rulings.md",
+     "bytes": 17733
+    },
+    {
+     "path": "cc_report_blind_output_landing.md",
+     "bytes": 21572
+    },
+    {
+     "path": "cc_report_boot_pack_regeneration.md",
+     "bytes": 26429
+    },
+    {
+     "path": "cc_report_brief_ratification_and_readme_boundary.md",
+     "bytes": 23027
+    },
+    {
+     "path": "cc_report_cascade_sweep.md",
+     "bytes": 31134
+    },
+    {
+     "path": "cc_report_comparison_harmony_boundary.md",
+     "bytes": 12919
+    },
+    {
+     "path": "cc_report_d231_landing.md",
+     "bytes": 17027
+    },
+    {
+     "path": "cc_report_framework_arrangement_landing.md",
+     "bytes": 32350
+    },
+    {
+     "path": "cc_report_framework_pack_preparation.md",
+     "bytes": 32626
+    },
+    {
+     "path": "cc_report_informed_brief_landing.md",
+     "bytes": 28511
+    },
+    {
+     "path": "cc_report_landing_2026_08_28.md",
+     "bytes": 44784
+    },
+    {
+     "path": "cc_report_ledger_admissions.md",
+     "bytes": 26703
+    },
+    {
+     "path": "cc_report_ledger_build.md",
+     "bytes": 40337
+    },
+    {
+     "path": "cc_report_ledger_harvest.md",
+     "bytes": 48672
+    },
+    {
+     "path": "cc_report_manifest_prose_and_sizing_brief.md",
+     "bytes": 20897
+    },
+    {
+     "path": "cc_report_method_voiding_landing.md",
+     "bytes": 33271
+    },
+    {
+     "path": "cc_report_pass_continuation_second.md",
+     "bytes": 27695
+    },
+    {
+     "path": "cc_report_phase_rulings_landing.md",
+     "bytes": 15828
+    },
+    {
+     "path": "cc_report_pilot_preparation.md",
+     "bytes": 23828
+    },
+    {
+     "path": "cc_report_placement_sample.md",
+     "bytes": 43014
+    },
+    {
+     "path": "cc_report_placement_sample_redraw.md",
+     "bytes": 44484
+    },
+    {
+     "path": "cc_report_plan_challenge.md",
+     "bytes": 63752
+    },
+    {
+     "path": "cc_report_plan_evaluation.md",
+     "bytes": 62772
+    },
+    {
+     "path": "cc_report_preparation_eighth.md",
+     "bytes": 30796
+    },
+    {
+     "path": "cc_report_preparation_eleventh.md",
+     "bytes": 36780
+    },
+    {
+     "path": "cc_report_preparation_eleventh_amended.md",
+     "bytes": 45865
+    },
+    {
+     "path": "cc_report_preparation_fifth.md",
+     "bytes": 33932
+    },
+    {
+     "path": "cc_report_preparation_fourteenth.md",
+     "bytes": 38133
+    },
+    {
+     "path": "cc_report_preparation_fourth.md",
+     "bytes": 30446
+    },
+    {
+     "path": "cc_report_preparation_ninth.md",
+     "bytes": 33789
+    },
+    {
+     "path": "cc_report_preparation_opening.md",
+     "bytes": 23639
+    },
+    {
+     "path": "cc_report_preparation_second.md",
+     "bytes": 27597
+    },
+    {
+     "path": "cc_report_preparation_seventh.md",
+     "bytes": 30076
+    },
+    {
+     "path": "cc_report_preparation_sixth.md",
+     "bytes": 35342
+    },
+    {
+     "path": "cc_report_preparation_tenth.md",
+     "bytes": 35409
+    },
+    {
+     "path": "cc_report_preparation_third.md",
+     "bytes": 26943
+    },
+    {
+     "path": "cc_report_preparation_thirteenth.md",
+     "bytes": 38066
+    },
+    {
+     "path": "cc_report_preparation_twelfth.md",
+     "bytes": 41751
+    },
+    {
+     "path": "cc_report_regeneration_and_citation.md",
+     "bytes": 28530
+    },
+    {
+     "path": "cc_report_register_baseline_repair.md",
+     "bytes": 35064
+    },
+    {
+     "path": "cc_report_register_reconciliation.md",
+     "bytes": 65331
+    },
+    {
+     "path": "cc_report_ruled_inventory_landing.md",
+     "bytes": 20674
+    },
+    {
+     "path": "cc_report_second_landing_2026_08_28.md",
+     "bytes": 35740
+    },
+    {
+     "path": "cc_report_second_passage_withheld.md",
+     "bytes": 21688
+    },
+    {
+     "path": "cc_report_sizing_brief_ruled.md",
+     "bytes": 19258
+    },
+    {
+     "path": "cc_report_sizing_output_landing.md",
+     "bytes": 27463
+    },
+    {
+     "path": "cc_report_sizing_pack_preparation.md",
+     "bytes": 22833
+    },
+    {
+     "path": "cc_report_sizing_tests.md",
+     "bytes": 32333
+    },
+    {
+     "path": "cc_report_step_zero.md",
+     "bytes": 28540
+    },
+    {
+     "path": "cc_report_step_zero_return_executed.md",
+     "bytes": 30280
+    },
+    {
+     "path": "cc_report_third_landing_2026_08_28.md",
+     "bytes": 40887
+    },
+    {
+     "path": "cc_report_unit_correction_redraw.md",
+     "bytes": 42215
+    },
+    {
+     "path": "cc_report_withheld_family_correction.md",
+     "bytes": 22186
+    },
+    {
+     "path": "cc_stage2_2_ab_dossier.md",
+     "bytes": 19906
+    },
+    {
+     "path": "cc_stage4a_mode_import_report.md",
+     "bytes": 12497
     },
     {
      "path": "cc_stage5_phase0_report.md",
@@ -4808,6 +6184,14 @@
     {
      "path": "cc_term_inventory_report.md",
      "bytes": 21089
+    },
+    {
+     "path": "cc_tonicization_modulation_metric_dossier.md",
+     "bytes": 14611
+    },
+    {
+     "path": "cc_uncertain_resolver_measurement_report.md",
+     "bytes": 15187
     },
     {
      "path": "cc_vl_foundation_build_report.md",
@@ -4898,15 +6282,17 @@
   {
    "class": "published-research-papers",
    "order_in_the_signature_table": 23,
-   "signature": "anywhere below `docs/research_papers/`",
-   "files": 2,
-   "total_bytes": 16689,
+   "signature": "anywhere below `docs/research_papers/`, and anywhere below `external resarch summary/` — the user's external register over the published research on chord, mode and harmonic inference, delivered 2026-08-28 and landed as this project's file; the folder name's spelling is the user's and stands as it is",
+   "files": 3,
+   "total_bytes": 199656,
    "extensions_present": {
-    ".md": 2
+    ".md": 2,
+    ".xlsx": 1
    },
    "example_paths": [
     "docs/research_papers/BIBLIOGRAPHY.md",
-    "docs/research_papers/README.md"
+    "docs/research_papers/README.md",
+    "external resarch summary/external research.xlsx"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
@@ -4917,6 +6303,10 @@
     {
      "path": "docs/research_papers/README.md",
      "bytes": 4182
+    },
+    {
+     "path": "external resarch summary/external research.xlsx",
+     "bytes": 182967
     }
    ]
   },
@@ -5155,10 +6545,10 @@
    "class": "audit-apparatus-generators",
    "order_in_the_signature_table": 26,
    "signature": "every `*.py` anywhere below `tools/audit/`",
-   "files": 103,
-   "total_bytes": 3039356,
+   "files": 133,
+   "total_bytes": 4643276,
    "extensions_present": {
-    ".py": 103
+    ".py": 133
    },
    "example_paths": [
     "tools/audit/apply_l5_pass2_verdicts.py",
@@ -5166,7 +6556,7 @@
     "tools/audit/claude_md_rule_triage.py",
     "tools/audit/compare_blind_rerun.py",
     "tools/audit/corpus_arm_stamp.py",
-    "tools/audit/decisions/gen_apply_field_diff.py"
+    "tools/audit/decisions/apply_residue_discard.py"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
@@ -5180,7 +6570,7 @@
     },
     {
      "path": "tools/audit/claude_md_rule_triage.py",
-     "bytes": 58148
+     "bytes": 62918
     },
     {
      "path": "tools/audit/compare_blind_rerun.py",
@@ -5191,12 +6581,20 @@
      "bytes": 33097
     },
     {
+     "path": "tools/audit/decisions/apply_residue_discard.py",
+     "bytes": 41009
+    },
+    {
+     "path": "tools/audit/decisions/apply_soft_discard.py",
+     "bytes": 34868
+    },
+    {
      "path": "tools/audit/decisions/gen_apply_field_diff.py",
      "bytes": 14267
     },
     {
      "path": "tools/audit/decisions/gen_cluster_dispositions.py",
-     "bytes": 42241
+     "bytes": 43006
     },
     {
      "path": "tools/audit/decisions/gen_decision_clusters.py",
@@ -5208,7 +6606,7 @@
     },
     {
      "path": "tools/audit/decisions/gen_decisions_register.py",
-     "bytes": 40373
+     "bytes": 43012
     },
     {
      "path": "tools/audit/decisions/gen_finish_line_item1_routes.py",
@@ -5216,7 +6614,7 @@
     },
     {
      "path": "tools/audit/decisions/gen_home_classification.py",
-     "bytes": 37851
+     "bytes": 45737
     },
     {
      "path": "tools/audit/decisions/gen_homing_edit_shape.py",
@@ -5252,7 +6650,7 @@
     },
     {
      "path": "tools/audit/decisions/gen_phase1p_delegation_bar.py",
-     "bytes": 70002
+     "bytes": 73531
     },
     {
      "path": "tools/audit/decisions/gen_phase1q_record_divergence.py",
@@ -5264,7 +6662,7 @@
     },
     {
      "path": "tools/audit/decisions/gen_phase1w_legacy_verification.py",
-     "bytes": 95336
+     "bytes": 103596
     },
     {
      "path": "tools/audit/decisions/gen_r1_superseded_reach.py",
@@ -5303,6 +6701,10 @@
      "bytes": 20732
     },
     {
+     "path": "tools/audit/decisions/gen_retired_subject_moves.py",
+     "bytes": 18662
+    },
+    {
      "path": "tools/audit/decisions/gen_route_homing_edit_shape.py",
      "bytes": 9219
     },
@@ -5328,19 +6730,51 @@
     },
     {
      "path": "tools/audit/gen_artifact_inventory.py",
-     "bytes": 46248
+     "bytes": 49238
     },
     {
      "path": "tools/audit/gen_artifact_inventory_surface.py",
-     "bytes": 62445
+     "bytes": 68661
     },
     {
      "path": "tools/audit/gen_blind_rerun_sample.py",
      "bytes": 33527
     },
     {
+     "path": "tools/audit/gen_census_movement_classification.py",
+     "bytes": 14228
+    },
+    {
+     "path": "tools/audit/gen_claude_md_finer_archive.py",
+     "bytes": 36715
+    },
+    {
+     "path": "tools/audit/gen_claude_md_finer_spans.py",
+     "bytes": 45155
+    },
+    {
+     "path": "tools/audit/gen_claude_md_finer_surface.py",
+     "bytes": 25706
+    },
+    {
+     "path": "tools/audit/gen_deciding_act_recovery.py",
+     "bytes": 53220
+    },
+    {
+     "path": "tools/audit/gen_decisions_filter.py",
+     "bytes": 48854
+    },
+    {
+     "path": "tools/audit/gen_derivation_boot_pack.py",
+     "bytes": 102913
+    },
+    {
+     "path": "tools/audit/gen_discard_reach_split.py",
+     "bytes": 29072
+    },
+    {
      "path": "tools/audit/gen_discard_records.py",
-     "bytes": 30126
+     "bytes": 39059
     },
     {
      "path": "tools/audit/gen_dispositions.py",
@@ -5351,20 +6785,44 @@
      "bytes": 56119
     },
     {
+     "path": "tools/audit/gen_epoch_write_path.py",
+     "bytes": 26421
+    },
+    {
+     "path": "tools/audit/gen_evidence_pin_membership.py",
+     "bytes": 23547
+    },
+    {
      "path": "tools/audit/gen_filing_convention_application.py",
      "bytes": 24589
     },
     {
+     "path": "tools/audit/gen_framework_untrusted_candidates.py",
+     "bytes": 13083
+    },
+    {
      "path": "tools/audit/gen_gating_row_sizing.py",
-     "bytes": 94788
+     "bytes": 96171
+    },
+    {
+     "path": "tools/audit/gen_governing_surface_readers.py",
+     "bytes": 32216
+    },
+    {
+     "path": "tools/audit/gen_governing_surface_spans.py",
+     "bytes": 22672
+    },
+    {
+     "path": "tools/audit/gen_governing_surface_split.py",
+     "bytes": 41416
     },
     {
      "path": "tools/audit/gen_guard_classification.py",
-     "bytes": 58491
+     "bytes": 124262
     },
     {
      "path": "tools/audit/gen_guard_state.py",
-     "bytes": 42650
+     "bytes": 98014
     },
     {
      "path": "tools/audit/gen_index_status_normalization.py",
@@ -5376,7 +6834,7 @@
     },
     {
      "path": "tools/audit/gen_july_screen.py",
-     "bytes": 61758
+     "bytes": 283778
     },
     {
      "path": "tools/audit/gen_l3_pass2_sample.py",
@@ -5384,7 +6842,7 @@
     },
     {
      "path": "tools/audit/gen_nongating_apparatus_rows.py",
-     "bytes": 121618
+     "bytes": 137642
     },
     {
      "path": "tools/audit/gen_oi356_parser_correction.py",
@@ -5416,7 +6874,7 @@
     },
     {
      "path": "tools/audit/gen_period_stratum_split.py",
-     "bytes": 25671
+     "bytes": 36498
     },
     {
      "path": "tools/audit/gen_phase1_completion_inventory.py",
@@ -5427,24 +6885,76 @@
      "bytes": 105722
     },
     {
+     "path": "tools/audit/gen_phase1_gate_readers.py",
+     "bytes": 26431
+    },
+    {
      "path": "tools/audit/gen_phase3_gate_partition.py",
      "bytes": 60459
+    },
+    {
+     "path": "tools/audit/gen_post_split_archive.py",
+     "bytes": 37055
     },
     {
      "path": "tools/audit/gen_ratification_surface_set.py",
      "bytes": 16539
     },
     {
+     "path": "tools/audit/gen_ratified_document_check.py",
+     "bytes": 58080
+    },
+    {
+     "path": "tools/audit/gen_recognizer_establishment_sort.py",
+     "bytes": 44863
+    },
+    {
      "path": "tools/audit/gen_reserved_word_scanner.py",
      "bytes": 27396
+    },
+    {
+     "path": "tools/audit/gen_retirement_caller_check.py",
+     "bytes": 97378
+    },
+    {
+     "path": "tools/audit/gen_retirement_census_movement.py",
+     "bytes": 50837
+    },
+    {
+     "path": "tools/audit/gen_rulings_sort.py",
+     "bytes": 53370
+    },
+    {
+     "path": "tools/audit/gen_session_start_read_size.py",
+     "bytes": 19724
     },
     {
      "path": "tools/audit/gen_signature_sweep.py",
      "bytes": 37584
     },
     {
+     "path": "tools/audit/gen_sole_carrier_subclass.py",
+     "bytes": 43319
+    },
+    {
+     "path": "tools/audit/gen_specification_document_set.py",
+     "bytes": 68920
+    },
+    {
      "path": "tools/audit/gen_status_archive_pass.py",
      "bytes": 17389
+    },
+    {
+     "path": "tools/audit/gen_status_batch_bound.py",
+     "bytes": 23562
+    },
+    {
+     "path": "tools/audit/gen_status_residue_move.py",
+     "bytes": 27877
+    },
+    {
+     "path": "tools/audit/gen_test_construction_evidence.py",
+     "bytes": 25370
     },
     {
      "path": "tools/audit/guard_armed_check.py",
@@ -5588,22 +7098,22 @@
    "class": "audit-apparatus-artifacts",
    "order_in_the_signature_table": 27,
    "signature": "everything else below `tools/audit/` — the generated JSON, JSONL, Markdown and text these generators write",
-   "files": 257,
-   "total_bytes": 88551539,
+   "files": 301,
+   "total_bytes": 104769558,
    "extensions_present": {
-    ".json": 174,
+    ".json": 204,
     ".csv": 71,
+    ".md": 19,
     ".txt": 6,
-    ".md": 5,
     ".jsonl": 1
    },
    "example_paths": [
     "tools/audit/arm_comment_sweep.json",
     "tools/audit/artifact_inventory.json",
+    "tools/audit/census_movement_classification.json",
     "tools/audit/changed_paths_away_task0.json",
     "tools/audit/changed_paths_away_task1.json",
-    "tools/audit/changed_paths_away_task2.json",
-    "tools/audit/changed_paths_backlog_commit.json"
+    "tools/audit/changed_paths_away_task2.json"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
@@ -5613,7 +7123,11 @@
     },
     {
      "path": "tools/audit/artifact_inventory.json",
-     "bytes": 883356
+     "bytes": 883637
+    },
+    {
+     "path": "tools/audit/census_movement_classification.json",
+     "bytes": 13412
     },
     {
      "path": "tools/audit/changed_paths_away_task0.json",
@@ -5688,8 +7202,20 @@
      "bytes": 27758
     },
     {
+     "path": "tools/audit/claude_md_finer_archive.json",
+     "bytes": 16428
+    },
+    {
+     "path": "tools/audit/claude_md_finer_readers.json",
+     "bytes": 484953
+    },
+    {
+     "path": "tools/audit/claude_md_finer_spans.json",
+     "bytes": 157411
+    },
+    {
      "path": "tools/audit/claude_md_rule_triage.json",
-     "bytes": 61140
+     "bytes": 62356
     },
     {
      "path": "tools/audit/corpus_arm_backstamp.json",
@@ -5700,12 +7226,16 @@
      "bytes": 7114
     },
     {
+     "path": "tools/audit/deciding_act_recovery.json",
+     "bytes": 849866
+    },
+    {
      "path": "tools/audit/decisions/apply_field_diff.json",
      "bytes": 51253
     },
     {
      "path": "tools/audit/decisions/backbone_decisions.json",
-     "bytes": 2269343
+     "bytes": 2749929
     },
     {
      "path": "tools/audit/decisions/cluster_dispositions.csv",
@@ -5757,7 +7287,7 @@
     },
     {
      "path": "tools/audit/decisions/home_classification.json",
-     "bytes": 374344
+     "bytes": 304938
     },
     {
      "path": "tools/audit/decisions/item1_rehome_blocker.json",
@@ -5789,7 +7319,7 @@
     },
     {
      "path": "tools/audit/decisions/phase1p_delegation_bar.json",
-     "bytes": 78596
+     "bytes": 77517
     },
     {
      "path": "tools/audit/decisions/phase1q_record_divergence.json",
@@ -5797,7 +7327,7 @@
     },
     {
      "path": "tools/audit/decisions/phase1w_legacy_verification.json",
-     "bytes": 87004
+     "bytes": 88222
     },
     {
      "path": "tools/audit/decisions/r1_superseded_reach.json",
@@ -5825,7 +7355,7 @@
     },
     {
      "path": "tools/audit/decisions/reads5_repack.json",
-     "bytes": 23017
+     "bytes": 23048
     },
     {
      "path": "tools/audit/decisions/reads5_yield.json",
@@ -5834,6 +7364,10 @@
     {
      "path": "tools/audit/decisions/reads6_yield.json",
      "bytes": 26418
+    },
+    {
+     "path": "tools/audit/decisions/retired_subject_moves.json",
+     "bytes": 12517
     },
     {
      "path": "tools/audit/decisions/route_homing_edit_shape.json",
@@ -5888,8 +7422,76 @@
      "bytes": 436784
     },
     {
+     "path": "tools/audit/decisions_filter_classification.json",
+     "bytes": 1813106
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack.json",
+     "bytes": 234265
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/harmony-boundary/00_READ_THIS_FIRST.md",
+     "bytes": 3106
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/harmony-boundary/01_the_phase_definitions.md",
+     "bytes": 18850
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/harmony-boundary/02_the_guiding_principles_and_the_conventions.md",
+     "bytes": 60231
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/harmony-boundary/03_the_writing_standards.md",
+     "bytes": 15159
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/harmony-boundary/04_the_dispatch_protocol.md",
+     "bytes": 100599
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/harmony-boundary/05_the_ratified_design_intent.md",
+     "bytes": 254361
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/harmony-boundary/06_the_defect_type_catalog.md",
+     "bytes": 5968
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/scoring-model/00_READ_THIS_FIRST.md",
+     "bytes": 3235
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/scoring-model/01_the_phase_definitions.md",
+     "bytes": 18850
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/scoring-model/02_the_guiding_principles_and_the_conventions.md",
+     "bytes": 61008
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/scoring-model/03_the_writing_standards.md",
+     "bytes": 15159
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/scoring-model/04_the_dispatch_protocol.md",
+     "bytes": 100599
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/scoring-model/05_the_ratified_design_intent.md",
+     "bytes": 297167
+    },
+    {
+     "path": "tools/audit/derivation_boot_pack/scoring-model/06_the_defect_type_catalog.md",
+     "bytes": 5968
+    },
+    {
+     "path": "tools/audit/discard_reach_split.json",
+     "bytes": 45960
+    },
+    {
      "path": "tools/audit/discard_records.json",
-     "bytes": 29054
+     "bytes": 26510
     },
     {
      "path": "tools/audit/doc_change_candidates.json",
@@ -5900,20 +7502,44 @@
      "bytes": 6670366
     },
     {
+     "path": "tools/audit/epoch_write_path.json",
+     "bytes": 14589
+    },
+    {
+     "path": "tools/audit/evidence_pin_membership.json",
+     "bytes": 17464
+    },
+    {
      "path": "tools/audit/filing_convention_application.json",
      "bytes": 24329
+    },
+    {
+     "path": "tools/audit/framework_untrusted_candidates.json",
+     "bytes": 34647
     },
     {
      "path": "tools/audit/gating_row_sizing.json",
      "bytes": 85871
     },
     {
+     "path": "tools/audit/governing_surface_readers.json",
+     "bytes": 715880
+    },
+    {
+     "path": "tools/audit/governing_surface_spans.json",
+     "bytes": 671496
+    },
+    {
+     "path": "tools/audit/governing_surface_split_application.json",
+     "bytes": 333141
+    },
+    {
      "path": "tools/audit/guard_classification.json",
-     "bytes": 50517
+     "bytes": 116986
     },
     {
      "path": "tools/audit/guard_state.json",
-     "bytes": 47766
+     "bytes": 108395
     },
     {
      "path": "tools/audit/index_status_normalization.json",
@@ -5925,11 +7551,11 @@
     },
     {
      "path": "tools/audit/july_screen.json",
-     "bytes": 102880
+     "bytes": 730354
     },
     {
      "path": "tools/audit/july_screen_report.md",
-     "bytes": 70556
+     "bytes": 428442
     },
     {
      "path": "tools/audit/l1l2/blind_rerun_errorrate.csv",
@@ -6365,7 +7991,7 @@
     },
     {
      "path": "tools/audit/nongating_apparatus_rows.json",
-     "bytes": 97940
+     "bytes": 174083
     },
     {
      "path": "tools/audit/notation_surface/consumption_fields.csv",
@@ -6477,19 +8103,27 @@
     },
     {
      "path": "tools/audit/period_stratum_split.json",
-     "bytes": 76875
+     "bytes": 407628
     },
     {
      "path": "tools/audit/phase1_completion_inventory.json",
-     "bytes": 111601
+     "bytes": 113647
     },
     {
      "path": "tools/audit/phase1_finish_line.json",
-     "bytes": 135013
+     "bytes": 137059
+    },
+    {
+     "path": "tools/audit/phase1_gate_readers.json",
+     "bytes": 153642
     },
     {
      "path": "tools/audit/phase3_gate_partition.json",
      "bytes": 56387
+    },
+    {
+     "path": "tools/audit/post_split_archive.json",
+     "bytes": 40037
     },
     {
      "path": "tools/audit/process_check_c1_ruling_item1c_dispatch.json",
@@ -6624,16 +8258,68 @@
      "bytes": 44524
     },
     {
+     "path": "tools/audit/ratified_document_check.json",
+     "bytes": 1081315
+    },
+    {
+     "path": "tools/audit/recognizer_establishment_sort.json",
+     "bytes": 115209
+    },
+    {
      "path": "tools/audit/reserved_word_scanner.json",
      "bytes": 18938
+    },
+    {
+     "path": "tools/audit/residue_discard_application.json",
+     "bytes": 202171
+    },
+    {
+     "path": "tools/audit/retirement_caller_check.json",
+     "bytes": 4442109
+    },
+    {
+     "path": "tools/audit/retirement_census_movement.json",
+     "bytes": 9524
+    },
+    {
+     "path": "tools/audit/rulings_sort_classification.json",
+     "bytes": 586371
+    },
+    {
+     "path": "tools/audit/session_start_read_size.json",
+     "bytes": 8014
     },
     {
      "path": "tools/audit/shell_read_guard_establishment.json",
      "bytes": 79796
     },
     {
+     "path": "tools/audit/soft_discard_application.json",
+     "bytes": 25251
+    },
+    {
+     "path": "tools/audit/sole_carrier_subclass.json",
+     "bytes": 734411
+    },
+    {
+     "path": "tools/audit/specification_document_set.json",
+     "bytes": 150918
+    },
+    {
      "path": "tools/audit/status_archive_pass_2026_08_11.json",
      "bytes": 24749
+    },
+    {
+     "path": "tools/audit/status_batch_bound.json",
+     "bytes": 11695
+    },
+    {
+     "path": "tools/audit/status_residue_move.json",
+     "bytes": 17861
+    },
+    {
+     "path": "tools/audit/test_construction_evidence.json",
+     "bytes": 330347
     }
    ]
   },
@@ -9095,11 +10781,12 @@
    "class": "stray-working-files-committed-to-the-repository-root",
    "order_in_the_signature_table": 43,
    "signature": "every remaining file sitting DIRECTLY at the repository root, plus the three top-level directories `META-INF/`, `Thumbnails/` and `Testing/` — dumped analysis JSON, diagnostic text, logs, an exported musical score and an audio file, application settings written by a run, and the unpacked members of a musical score container together with the CTest temporary directory. ★ THIS RULE IS BOUNDED ON PURPOSE: it is the last rule, and a deliberately narrow one, so that a file in a top-level directory no rule names reaches the unclassified STOP instead of being swallowed here.",
-   "files": 39,
-   "total_bytes": 8341937,
+   "files": 45,
+   "total_bytes": 8788109,
    "extensions_present": {
     ".json": 20,
     ".txt": 8,
+    ".md": 6,
     ".log": 4,
     "(no extension)": 2,
     ".mp3": 1,
@@ -9110,11 +10797,11 @@
    },
    "example_paths": [
     "--output-json",
+    "BUILD_AND_TEST_ARCHIVE.md",
+    "CLAUDE_ARCHIVE.md",
     "Compatibility",
-    "META-INF/container.xml",
-    "Testing/Temporary/CTestCostData.txt",
-    "Testing/Temporary/LastTest.log",
-    "Thumbnails/thumbnail.png"
+    "DECISIONS_ARCHIVE.md",
+    "EMPIRICAL_FINDINGS_LEDGER.md"
    ],
    "the_ruling_surface_descends_into_this_class": true,
    "every_member": [
@@ -9123,12 +10810,36 @@
      "bytes": 76034
     },
     {
+     "path": "BUILD_AND_TEST_ARCHIVE.md",
+     "bytes": 5050
+    },
+    {
+     "path": "CLAUDE_ARCHIVE.md",
+     "bytes": 12973
+    },
+    {
      "path": "Compatibility",
      "bytes": 369
     },
     {
+     "path": "DECISIONS_ARCHIVE.md",
+     "bytes": 1679
+    },
+    {
+     "path": "EMPIRICAL_FINDINGS_LEDGER.md",
+     "bytes": 51246
+    },
+    {
      "path": "META-INF/container.xml",
      "bytes": 385
+    },
+    {
+     "path": "OPEN_ITEMS_ARCHIVE.md",
+     "bytes": 363791
+    },
+    {
+     "path": "PHASE_CONSTRAINTS_AND_STOP_RULES.md",
+     "bytes": 11433
     },
     {
      "path": "Testing/Temporary/CTestCostData.txt",
@@ -9311,7 +11022,7 @@
    },
    "authored_by_this_project": {
     "classes": 34,
-    "files": 2146
+    "files": 2573
    }
   },
   "limb_3_one_class_each_for_the_three_named_subjects": {
@@ -9342,8 +11053,461 @@
   "★_IGNORED_FILES_ARE_LISTED_TOO_AND_THIS_IS_WHY": "`git status` reports only untracked files that no ignore rule covers, and this repository ignores `/cc_*.md` — the whole dispatch-and-report family. Listing only the un-ignored half would therefore have hidden exactly the class A2 exists to surface: an un-landed record. The ignored half is listed at the repository root file by file; ignored DIRECTORIES are listed collapsed, because they are build output and dependency trees.",
   "untracked_candidate_records": {
    "what_they_are": "untracked, not ignored, and not inside a directory the record names as scratch",
-   "count": 0,
-   "paths": []
+   "count": 452,
+   "paths": [
+    "cc_L6_corpus_oracle_report.md",
+    "cc_absent_root_investigation.md",
+    "cc_anchor_design_dossier.md",
+    "cc_anchor_recompute_report.md",
+    "cc_anchor_redesign_dossier.md",
+    "cc_approval_styletag_swap_commit.md",
+    "cc_architecture_opinion.md",
+    "cc_artifact_inventory_report.md",
+    "cc_audit_cadencekeyanchor_report.md",
+    "cc_audit_chordanalyzer_oracle_report.md",
+    "cc_audit_harmonicfunctionlayer_report.md",
+    "cc_audit_jointkeydecision_report.md",
+    "cc_audit_keymodeanalyzer_report.md",
+    "cc_audit_localmodulationdetector_report.md",
+    "cc_b2_subdominant_guard_report.md",
+    "cc_b_guard_scoping_dossier.md",
+    "cc_backfill_engravingbridge_report.md",
+    "cc_backfill_formatter_report.md",
+    "cc_backfill_l3_keymode_report.md",
+    "cc_backfill_l4_oracle_report.md",
+    "cc_baseline_reconciliation_report.md",
+    "cc_batch_analyze_restore_report.md",
+    "cc_batch_analyze_unification_report.md",
+    "cc_bridge_lookahead_report.md",
+    "cc_bwv301_diagnostic_report.md",
+    "cc_clang_branch_coverage_report.md",
+    "cc_consumer_build_report.md",
+    "cc_corpus_hygiene_report.md",
+    "cc_corpus_hygiene_report_corelli.md",
+    "cc_corpus_wave1_report.md",
+    "cc_deltaseven_7a_diagnostic_report.md",
+    "cc_deltaseven_phase_e_diagnostic_report.md",
+    "cc_deltaseven_predecessor_report.md",
+    "cc_doc_recovery_report.md",
+    "cc_doctruth_gate_sync_report.md",
+    "cc_e0doubleprime_report.md",
+    "cc_e0prime_report.md",
+    "cc_e3_investigation_report.md",
+    "cc_engage_u1_uncap_report.md",
+    "cc_extension_build_report.md",
+    "cc_foundations_verification_report.md",
+    "cc_gate_r_report.md",
+    "cc_gate_r_verify_report.md",
+    "cc_instruction_L5_close_commit.md",
+    "cc_instruction_L6_corpus_oracle_check.md",
+    "cc_instruction_a8_metric_rebaseline_measure.md",
+    "cc_instruction_absent_root_guard.md",
+    "cc_instruction_absent_root_investigate.md",
+    "cc_instruction_adoption_commit.md",
+    "cc_instruction_anchor_design_investigation.md",
+    "cc_instruction_anchor_recompute_impl.md",
+    "cc_instruction_anchor_redesign_investigation.md",
+    "cc_instruction_architecture_opinion.md",
+    "cc_instruction_audit_cadencekeyanchor.md",
+    "cc_instruction_audit_chordanalyzer_oracle.md",
+    "cc_instruction_audit_harmonicfunctionlayer.md",
+    "cc_instruction_audit_jointkeydecision.md",
+    "cc_instruction_audit_keymodeanalyzer.md",
+    "cc_instruction_audit_localmodulationdetector.md",
+    "cc_instruction_away_batch.md",
+    "cc_instruction_b2_aug7.md",
+    "cc_instruction_b2_final.md",
+    "cc_instruction_b2_guardfix.md",
+    "cc_instruction_b2_retry.md",
+    "cc_instruction_b2_subdominant_guard_build.md",
+    "cc_instruction_b3.md",
+    "cc_instruction_b_dominant_subdominant_guard_scoping.md",
+    "cc_instruction_backfill_engravingbridge.md",
+    "cc_instruction_backfill_formatter.md",
+    "cc_instruction_backfill_l3_keymode.md",
+    "cc_instruction_backfill_l4_oracle_gates.md",
+    "cc_instruction_backup_batch2.md",
+    "cc_instruction_backup_cowork_docs.md",
+    "cc_instruction_baseline_reconciliation.md",
+    "cc_instruction_batch_analyze_restore.md",
+    "cc_instruction_batch_analyze_unification_audit.md",
+    "cc_instruction_boot_pack_regeneration.md",
+    "cc_instruction_bridge_anchor_investigation.md",
+    "cc_instruction_bridge_lookahead.md",
+    "cc_instruction_bwv301_diagnostic.md",
+    "cc_instruction_c1_investigate.md",
+    "cc_instruction_cadence_key_investigation.md",
+    "cc_instruction_cadence_precision_investigation.md",
+    "cc_instruction_carryfix2_resolver_identity.md",
+    "cc_instruction_carryfix_dl5a_e0prime.md",
+    "cc_instruction_carryfix_task2_addendum.md",
+    "cc_instruction_clang_branch_coverage.md",
+    "cc_instruction_classifier_fix.md",
+    "cc_instruction_commit_cadence_instrument.md",
+    "cc_instruction_commit_docs.md",
+    "cc_instruction_commit_exploration_mode.md",
+    "cc_instruction_commit_idiom_work.md",
+    "cc_instruction_commit_reads3.md",
+    "cc_instruction_consumer_build.md",
+    "cc_instruction_consumer_build_addendum.md",
+    "cc_instruction_convert_curated_scores.md",
+    "cc_instruction_corpus_clone.md",
+    "cc_instruction_corpus_hygiene.md",
+    "cc_instruction_corpus_hygiene_corelli.md",
+    "cc_instruction_corpus_hygiene_record.md",
+    "cc_instruction_corpus_wave1_dlc_onboarding.md",
+    "cc_instruction_corpus_wave2_axis2_beds.md",
+    "cc_instruction_dcml_parser_applied_root_fix.md",
+    "cc_instruction_decision_enumeration_wave.md",
+    "cc_instruction_decoder_work_counts.md",
+    "cc_instruction_deltaseven_7a_diagnostic.md",
+    "cc_instruction_deltaseven_phase_e_diagnostic.md",
+    "cc_instruction_deltaseven_predecessor_diagnostic.md",
+    "cc_instruction_doc_governance_commit.md",
+    "cc_instruction_doc_pass_caps_and_gates.md",
+    "cc_instruction_doc_recovery.md",
+    "cc_instruction_doc_sync_layer1.md",
+    "cc_instruction_doctruth_gate_sync.md",
+    "cc_instruction_e0_addendum_carry_cap.md",
+    "cc_instruction_e0_fullspine_measure.md",
+    "cc_instruction_e1.md",
+    "cc_instruction_e2_investigate.md",
+    "cc_instruction_e2a.md",
+    "cc_instruction_e2b.md",
+    "cc_instruction_e2b_fixup.md",
+    "cc_instruction_e2b_investigate.md",
+    "cc_instruction_e2b_review.md",
+    "cc_instruction_e2c.md",
+    "cc_instruction_e2c_investigate.md",
+    "cc_instruction_e2d.md",
+    "cc_instruction_e2d_architecture_review.md",
+    "cc_instruction_e2d_cleanup.md",
+    "cc_instruction_e2d_enable.md",
+    "cc_instruction_e2d_enable_v2.md",
+    "cc_instruction_e2d_enable_v2_investigate.md",
+    "cc_instruction_e2d_enable_v3.md",
+    "cc_instruction_e2d_enable_v3b.md",
+    "cc_instruction_e2d_investigate.md",
+    "cc_instruction_e2d_investigate2.md",
+    "cc_instruction_e2d_v3c_investigate.md",
+    "cc_instruction_e3.md",
+    "cc_instruction_e3_investigate.md",
+    "cc_instruction_engage_u1_uncap.md",
+    "cc_instruction_equivalence_harness.md",
+    "cc_instruction_evidence_sizing.md",
+    "cc_instruction_extension_build.md",
+    "cc_instruction_fetch_more_scores.md",
+    "cc_instruction_foundation_stage0.md",
+    "cc_instruction_foundation_stage2a.md",
+    "cc_instruction_foundation_stage3a.md",
+    "cc_instruction_foundation_stage3b.md",
+    "cc_instruction_foundations_verification.md",
+    "cc_instruction_functional_residual_investigation.md",
+    "cc_instruction_gap_analysis_spec_vs_impl.md",
+    "cc_instruction_gate_default_measure.md",
+    "cc_instruction_gate_r_verify_and_commit.md",
+    "cc_instruction_gate_rebaseline_verify.md",
+    "cc_instruction_grammar_completion.md",
+    "cc_instruction_housekeeping_e2d.md",
+    "cc_instruction_housekeeping_e2d_pass2.md",
+    "cc_instruction_j_key_i.md",
+    "cc_instruction_j_key_ii.md",
+    "cc_instruction_j_key_ii_redux.md",
+    "cc_instruction_j_key_iii_integration_investigation.md",
+    "cc_instruction_j_key_iii_step2_wiring.md",
+    "cc_instruction_j_key_iii_step3_land.md",
+    "cc_instruction_j_key_iii_step3c_dormant_commit.md",
+    "cc_instruction_j_key_iii_step3d_push_then_B.md",
+    "cc_instruction_jazz_nondeterminism.md",
+    "cc_instruction_joint_architecture_investigation.md",
+    "cc_instruction_joint_table_codegen.md",
+    "cc_instruction_key_emission_headroom.md",
+    "cc_instruction_keyregression_diagnosis.md",
+    "cc_instruction_l1l3_delta_check_resync.md",
+    "cc_instruction_l1l3_spec_sync.md",
+    "cc_instruction_l1l4_review_tidy.md",
+    "cc_instruction_l3_keyalt_forwardcarry.md",
+    "cc_instruction_l6_dormant_build.md",
+    "cc_instruction_layer1_audit.md",
+    "cc_instruction_layer1_coverage.md",
+    "cc_instruction_layer1_implementation.md",
+    "cc_instruction_layer1_phase1a_build.md",
+    "cc_instruction_layer2_audit.md",
+    "cc_instruction_layer2_corpus_validation.md",
+    "cc_instruction_layer2_implementation.md",
+    "cc_instruction_layer2_phase2_build.md",
+    "cc_instruction_layer3_characterization_scaffold.md",
+    "cc_instruction_layer3_decoder_audit.md",
+    "cc_instruction_layer3_decoder_build.md",
+    "cc_instruction_layer3_decoder_followup.md",
+    "cc_instruction_layer3_docsync_commit.md",
+    "cc_instruction_layer3_error_decomposition.md",
+    "cc_instruction_layer3_incrementA_indexing.md",
+    "cc_instruction_layer3_incrementB_groundtruth.md",
+    "cc_instruction_layer3_jazz_churn_investigation.md",
+    "cc_instruction_layer3_keymode_audit.md",
+    "cc_instruction_layer3_phase3_build.md",
+    "cc_instruction_layer3_sweep.md",
+    "cc_instruction_layer3_tpc_keymeasure.md",
+    "cc_instruction_layer3_wiring.md",
+    "cc_instruction_layer3_wiring_code.md",
+    "cc_instruction_layer3_wiring_commit.md",
+    "cc_instruction_layer4_audit.md",
+    "cc_instruction_layer4_b_fairkey.md",
+    "cc_instruction_layer4_build_increment_a.md",
+    "cc_instruction_layer4_build_increment_b.md",
+    "cc_instruction_layer4_residual_decomposition.md",
+    "cc_instruction_measurement_pipeline_audit.md",
+    "cc_instruction_metric_build.md",
+    "cc_instruction_metric_build_l0l1.md",
+    "cc_instruction_metric_decomposition.md",
+    "cc_instruction_metric_design_investigation.md",
+    "cc_instruction_metric_first_investigation.md",
+    "cc_instruction_metric_rebaseline_batch.md",
+    "cc_instruction_modulation_keypath_scoping.md",
+    "cc_instruction_notation_consumption_audit.md",
+    "cc_instruction_notation_seams_2.md",
+    "cc_instruction_oi274_second_half.md",
+    "cc_instruction_open_items_split.md",
+    "cc_instruction_partition2_archives.md",
+    "cc_instruction_phase1h_full_reads.md",
+    "cc_instruction_phase1i_reads_and_delivery.md",
+    "cc_instruction_phase2_architecture_support.md",
+    "cc_instruction_phase5_kmasks_complete.md",
+    "cc_instruction_phase5_kmasks_derive.md",
+    "cc_instruction_phase5b_step0_investigate.md",
+    "cc_instruction_phase5b_step1_g1.md",
+    "cc_instruction_phase5b_step2_g2.md",
+    "cc_instruction_phase5b_step2final_o2_inherit.md",
+    "cc_instruction_phase5b_step3_g6.md",
+    "cc_instruction_phase5b_step4_g4_spellingpin.md",
+    "cc_instruction_phase5b_stepM_measure.md",
+    "cc_instruction_phase5c_L5_close_review.md",
+    "cc_instruction_phase5c_step1.md",
+    "cc_instruction_phase5c_step2.md",
+    "cc_instruction_phase5c_step2_amend.md",
+    "cc_instruction_phase5c_step2_resolution.md",
+    "cc_instruction_phase5c_step3.md",
+    "cc_instruction_phase5c_step4.md",
+    "cc_instruction_phase5c_step5.md",
+    "cc_instruction_phase5c_step5_followup.md",
+    "cc_instruction_phase5c_step6.md",
+    "cc_instruction_phase5c_stepM.md",
+    "cc_instruction_phase5c_stepM_consolidate.md",
+    "cc_instruction_phase5c_stepM_followup.md",
+    "cc_instruction_phase_close_2026_08_30.md",
+    "cc_instruction_phase_close_second_2026_08_30.md",
+    "cc_instruction_phase_d_investigation.md",
+    "cc_instruction_phase_d_merger.md",
+    "cc_instruction_phase_d_reanalysis.md",
+    "cc_instruction_phase_e_commit_unification.md",
+    "cc_instruction_phase_e_exploration_mode.md",
+    "cc_instruction_phase_e_predecessor_survey.md",
+    "cc_instruction_phase_e_rcb_bass_chord_tone_gate.md",
+    "cc_instruction_phrase_boundary_build.md",
+    "cc_instruction_precision_headroom_investigation.md",
+    "cc_instruction_push_bi_checkpoint.md",
+    "cc_instruction_push_doc_sync.md",
+    "cc_instruction_push_layer1_checkpoint.md",
+    "cc_instruction_push_layer2.md",
+    "cc_instruction_push_layer2_validation.md",
+    "cc_instruction_push_layer3_incrementA.md",
+    "cc_instruction_push_layer3_incrementB.md",
+    "cc_instruction_redesign_segregation.md",
+    "cc_instruction_redesign_step1_free_wiring.md",
+    "cc_instruction_redesign_step2_predecessor_confidence.md",
+    "cc_instruction_refactor1_chordanalyzer_split_design.md",
+    "cc_instruction_refactor1_split_build.md",
+    "cc_instruction_refactor_harmonicsegmenter_split.md",
+    "cc_instruction_refactor_keymodeanalyzer_split.md",
+    "cc_instruction_refactor_keyresolver_split.md",
+    "cc_instruction_refactor_regiontonecollector_split.md",
+    "cc_instruction_refactor_sectionanalyzer_split.md",
+    "cc_instruction_repair_direction_enumeration.md",
+    "cc_instruction_repair_index_verify_b2.md",
+    "cc_instruction_rerun_discovery.md",
+    "cc_instruction_revert_absent_root_guard.md",
+    "cc_instruction_roadmap_sync.md",
+    "cc_instruction_run_discovery.md",
+    "cc_instruction_scoring_doc.md",
+    "cc_instruction_spec_impl_delta_L1L4.md",
+    "cc_instruction_stage0_followup.md",
+    "cc_instruction_stage0_hygiene.md",
+    "cc_instruction_stage1a_functionlayer_tests.md",
+    "cc_instruction_stage1b_gate_tests.md",
+    "cc_instruction_stage1c_segmentation_key_tests.md",
+    "cc_instruction_stage1d_metric_script_tests.md",
+    "cc_instruction_stage2_1_phase4c_move.md",
+    "cc_instruction_stage2_2_ab_exploration.md",
+    "cc_instruction_stage2_2a_corpus_hardening.md",
+    "cc_instruction_stage2_2ii_ship_package.md",
+    "cc_instruction_stage2_3_addendum.md",
+    "cc_instruction_stage2_3_diagnose_production_view.md",
+    "cc_instruction_stage2_4_divergence_decisions.md",
+    "cc_instruction_stage2_4_ratification.md",
+    "cc_instruction_stage2_5_p3_profile.md",
+    "cc_instruction_stage3_1_beam1_decoder.md",
+    "cc_instruction_stage3_1b_approval.md",
+    "cc_instruction_stage3_1b_decode_once.md",
+    "cc_instruction_stage3_1b_revision.md",
+    "cc_instruction_stage3_2_design.md",
+    "cc_instruction_stage3_3_gater_decision.md",
+    "cc_instruction_stage3_3_signal_migration.md",
+    "cc_instruction_stage3_4i_gate_retirement_dossier.md",
+    "cc_instruction_stage3_4ii_c1_removal.md",
+    "cc_instruction_stage3_decoder_design.md",
+    "cc_instruction_stage4_design.md",
+    "cc_instruction_stage4a_commit_and_stage4b_scoping.md",
+    "cc_instruction_stage4a_declared_mode_import_fix.md",
+    "cc_instruction_stage4b_i_commit.md",
+    "cc_instruction_stage4b_i_demote_and_measure.md",
+    "cc_instruction_stage4b_ii_strengthen.md",
+    "cc_instruction_stage4c_i_cadence_detector_measure.md",
+    "cc_instruction_stage4c_iii_refine_detection.md",
+    "cc_instruction_stage4d_i_modulation_detector_measure.md",
+    "cc_instruction_stage5_phase3.md",
+    "cc_instruction_stage6_tonic_i_labeler_measure.md",
+    "cc_instruction_step1_pc_primitive_extraction.md",
+    "cc_instruction_step2_merge_predicate_dedup.md",
+    "cc_instruction_step3_key_investigation.md",
+    "cc_instruction_stepback.md",
+    "cc_instruction_styletag_swap.md",
+    "cc_instruction_term_grounding_inventory.md",
+    "cc_instruction_test_backfill.md",
+    "cc_instruction_tonicization_modulation_metric_check.md",
+    "cc_instruction_tpc_capability_build.md",
+    "cc_instruction_tree_repair_and_coverage.md",
+    "cc_instruction_tsv_oracle_addendum.md",
+    "cc_instruction_tsv_oracle_infrastructure.md",
+    "cc_instruction_types_header_build.md",
+    "cc_instruction_types_header_investigation.md",
+    "cc_instruction_uncertain_resolver_measurement.md",
+    "cc_instruction_union_branch_coverage.md",
+    "cc_instruction_vl_idiom_discovery.md",
+    "cc_instruction_vocabulary_build.md",
+    "cc_j_key_i_report.md",
+    "cc_j_key_ii_redux_report.md",
+    "cc_j_key_ii_report.md",
+    "cc_j_key_iii_integration_dossier.md",
+    "cc_j_key_iii_step2_report.md",
+    "cc_j_key_iii_step3_report.md",
+    "cc_jazz_nondeterminism_report.md",
+    "cc_joint_architecture_dossier.md",
+    "cc_kmasks_complete_report.md",
+    "cc_kmasks_derive_report.md",
+    "cc_l1l3_delta_check_resync_report.md",
+    "cc_l1l3_spec_sync_report.md",
+    "cc_l1l4_review_report.md",
+    "cc_l3_keyalt_forwardcarry_report.md",
+    "cc_l6_build_report.md",
+    "cc_label_table_fit_report.md",
+    "cc_layer1_audit_dossier.md",
+    "cc_layer1_doc_sync_report.md",
+    "cc_layer1_phase1a_report.md",
+    "cc_layer2_corpus_validation_report.md",
+    "cc_layer2_phase2_report.md",
+    "cc_layer3_characterization_report.md",
+    "cc_layer3_decoder_audit_dossier.md",
+    "cc_layer3_decoder_build_report.md",
+    "cc_layer3_incrementA_report.md",
+    "cc_layer3_incrementB_report.md",
+    "cc_layer3_keymode_audit_dossier.md",
+    "cc_layer3_phase3_report.md",
+    "cc_layer3_wiring_design_dossier.md",
+    "cc_layer4_audit_dossier.md",
+    "cc_layer4_build_a_report.md",
+    "cc_layer4_build_b_fairkey_report.md",
+    "cc_layer4_build_b_report.md",
+    "cc_layer4_residual_decomposition_report.md",
+    "cc_measurement_pipeline_audit.md",
+    "cc_metric_build_l0l1_report.md",
+    "cc_metric_build_report.md",
+    "cc_metric_decomposition_report.md",
+    "cc_metric_first_dossier.md",
+    "cc_metric_round2_report.md",
+    "cc_metric_round3_report.md",
+    "cc_modulation_keypath_scoping_dossier.md",
+    "cc_notation_consumption_audit_report.md",
+    "cc_phase2_architecture_support_report.md",
+    "cc_phase5b_step0_report.md",
+    "cc_phase5b_step1_report.md",
+    "cc_phase5b_step2_report.md",
+    "cc_phase5b_step2final_report.md",
+    "cc_phase5b_step3_report.md",
+    "cc_phase5b_step4_report.md",
+    "cc_phase5b_stepM_measure_report.md",
+    "cc_phase5c_L5_close_review.md",
+    "cc_phase5c_step0_report.md",
+    "cc_phase5c_step1_report.md",
+    "cc_phase5c_step2_amendment.md",
+    "cc_phase5c_step2_report.md",
+    "cc_phase5c_step3_report.md",
+    "cc_phase5c_step4_report.md",
+    "cc_phase5c_step5_followup_report.md",
+    "cc_phase5c_step5_report.md",
+    "cc_phase5c_step6_report.md",
+    "cc_phase5c_stepM_followup_report.md",
+    "cc_phase5c_stepM_report.md",
+    "cc_phase_d_investigation_report.md",
+    "cc_phase_e_commit_unification_report.md",
+    "cc_phase_e_exploration_mode_report.md",
+    "cc_phase_e_predecessor_survey_report.md",
+    "cc_phrase_boundary_build_report.md",
+    "cc_precision_headroom_dossier.md",
+    "cc_refactor_harmonicsegmenter_report.md",
+    "cc_refactor_keymodeanalyzer_report.md",
+    "cc_refactor_keyresolver_report.md",
+    "cc_refactor_regiontonecollector_report.md",
+    "cc_refactor_sectionanalyzer_report.md",
+    "cc_report_phase_close_2026_08_30.md",
+    "cc_secondary_dominant_refit_report.md",
+    "cc_spec_impl_delta_L1L4_report.md",
+    "cc_stage0_report.md",
+    "cc_stage1a_report.md",
+    "cc_stage1b_report.md",
+    "cc_stage1c_report.md",
+    "cc_stage1d_report.md",
+    "cc_stage2_1_report.md",
+    "cc_stage2_2a_report.md",
+    "cc_stage2_2ii_report.md",
+    "cc_stage2_3_report.md",
+    "cc_stage2_4_report.md",
+    "cc_stage2_5_report.md",
+    "cc_stage2a_wip_triage_report.md",
+    "cc_stage3_1_report.md",
+    "cc_stage3_1b_report.md",
+    "cc_stage3_2_design_report.md",
+    "cc_stage3_3_report.md",
+    "cc_stage3_4i_dossier.md",
+    "cc_stage3_4ii_report.md",
+    "cc_stage3_design_report.md",
+    "cc_stage3a_notation_triage_report.md",
+    "cc_stage4_design_report.md",
+    "cc_stage4b_i_report.md",
+    "cc_stage4b_ii_report.md",
+    "cc_stage4b_scoping_dossier.md",
+    "cc_stage4c_i_report.md",
+    "cc_stage4c_iii_report.md",
+    "cc_stage4d_i_report.md",
+    "cc_stage6_tonic_i_report.md",
+    "cc_step1_pc_primitive_report.md",
+    "cc_step2_merge_predicate_report.md",
+    "cc_stepback_report.md",
+    "cc_styletag_swap_report.md",
+    "cc_test_backfill_report.md",
+    "cc_tpc_capability_build_report.md",
+    "cc_tpc_capability_verify_report.md",
+    "cc_tree_repair_and_coverage_report.md",
+    "cc_tsv_oracle_report.md",
+    "cc_types_header_build_report.md",
+    "cc_types_header_investigation_report.md",
+    "cc_union_branch_coverage_report.md",
+    "cc_vocabulary_build_report.md",
+    "cowork_framework_phase_retrospective_2026_08_29.md",
+    "cowork_handoff_entry_eighty_one.md",
+    "cowork_research_list_disposition_surface_2026_08_29.md",
+    "cowork_rulings_2026_08_29_ratification_sitting.md"
+   ]
   },
   "untracked_inside_a_scratch_directory": {
    "what_they_are": "untracked, not ignored, inside `scratch_artifacts/` or a dated `cowork_scratch_*` directory",
@@ -17636,578 +19800,13 @@
   },
   "ignored_files_at_the_repository_root": {
    "what_they_are": "present on disk, covered by an ignore rule, sitting at the repository root — the class that contains un-landed records",
-   "count": 571,
+   "count": 6,
    "paths": [
     "build_overrides.cmake",
-    "cc_L6_corpus_oracle_report.md",
-    "cc_absent_root_investigation.md",
-    "cc_adoption_measurement_report.md",
-    "cc_anchor_design_dossier.md",
-    "cc_anchor_recompute_report.md",
-    "cc_anchor_redesign_dossier.md",
-    "cc_approval_styletag_swap_commit.md",
-    "cc_architecture_opinion.md",
-    "cc_audit_cadencekeyanchor_report.md",
-    "cc_audit_chordanalyzer_oracle_report.md",
-    "cc_audit_harmonicfunctionlayer_report.md",
-    "cc_audit_jointkeydecision_report.md",
-    "cc_audit_keymodeanalyzer_report.md",
-    "cc_audit_localmodulationdetector_report.md",
-    "cc_b2_subdominant_guard_report.md",
-    "cc_b_guard_scoping_dossier.md",
-    "cc_backfill_engravingbridge_report.md",
-    "cc_backfill_formatter_report.md",
-    "cc_backfill_l3_keymode_report.md",
-    "cc_backfill_l4_oracle_report.md",
-    "cc_baseline_reconciliation_report.md",
-    "cc_batch_analyze_restore_report.md",
-    "cc_batch_analyze_unification_report.md",
-    "cc_bridge_lookahead_report.md",
-    "cc_bwv301_diagnostic_report.md",
-    "cc_cadence_key_investigation_dossier.md",
-    "cc_cadence_precision_investigation_dossier.md",
-    "cc_clang_branch_coverage_report.md",
-    "cc_consumer_build_report.md",
-    "cc_corpus_hygiene_report.md",
-    "cc_corpus_hygiene_report_corelli.md",
-    "cc_corpus_wave1_report.md",
-    "cc_deltaseven_7a_diagnostic_report.md",
-    "cc_deltaseven_phase_e_diagnostic_report.md",
-    "cc_deltaseven_predecessor_report.md",
-    "cc_doc_recovery_report.md",
-    "cc_doctruth_gate_sync_report.md",
-    "cc_e0_fullspine_report.md",
-    "cc_e0doubleprime_report.md",
-    "cc_e0prime_report.md",
     "cc_e2d_architecture_review_report.md",
     "cc_e2d_investigation_report.md",
     "cc_e2d_v3c_investigation_report.md",
-    "cc_e3_investigation_report.md",
-    "cc_engage_u1_uncap_report.md",
-    "cc_extension_build_report.md",
     "cc_foundation_stage0_report.md",
-    "cc_foundation_stage3b_report.md",
-    "cc_foundations_verification_report.md",
-    "cc_functional_residual_dossier.md",
-    "cc_gap_analysis_report.md",
-    "cc_gap_analysis_v2_report.md",
-    "cc_gate_r_report.md",
-    "cc_gate_r_verify_report.md",
-    "cc_gate_rebaseline_verify_report.md",
-    "cc_instruction_L5_close_commit.md",
-    "cc_instruction_L6_corpus_oracle_check.md",
-    "cc_instruction_a8_metric_rebaseline_measure.md",
-    "cc_instruction_absent_root_guard.md",
-    "cc_instruction_absent_root_investigate.md",
-    "cc_instruction_adoption_commit.md",
-    "cc_instruction_analysis_cost_profile.md",
-    "cc_instruction_anchor_design_investigation.md",
-    "cc_instruction_anchor_recompute_impl.md",
-    "cc_instruction_anchor_redesign_investigation.md",
-    "cc_instruction_apply_the_bearing_cut.md",
-    "cc_instruction_architecture_opinion.md",
-    "cc_instruction_audit_cadencekeyanchor.md",
-    "cc_instruction_audit_chordanalyzer_oracle.md",
-    "cc_instruction_audit_harmonicfunctionlayer.md",
-    "cc_instruction_audit_jointkeydecision.md",
-    "cc_instruction_audit_keymodeanalyzer.md",
-    "cc_instruction_audit_localmodulationdetector.md",
-    "cc_instruction_away_batch.md",
-    "cc_instruction_away_execution.md",
-    "cc_instruction_b2_aug7.md",
-    "cc_instruction_b2_final.md",
-    "cc_instruction_b2_guardfix.md",
-    "cc_instruction_b2_retry.md",
-    "cc_instruction_b2_subdominant_guard_build.md",
-    "cc_instruction_b3.md",
-    "cc_instruction_b_dominant_subdominant_guard_scoping.md",
-    "cc_instruction_backfill_engravingbridge.md",
-    "cc_instruction_backfill_formatter.md",
-    "cc_instruction_backfill_l3_keymode.md",
-    "cc_instruction_backfill_l4_oracle_gates.md",
-    "cc_instruction_backup_batch2.md",
-    "cc_instruction_backup_cowork_docs.md",
-    "cc_instruction_baseline_reconciliation.md",
-    "cc_instruction_batch_analyze_restore.md",
-    "cc_instruction_batch_analyze_unification_audit.md",
-    "cc_instruction_bridge_anchor_investigation.md",
-    "cc_instruction_bridge_lookahead.md",
-    "cc_instruction_bwv301_diagnostic.md",
-    "cc_instruction_c1_investigate.md",
-    "cc_instruction_c1_ruling_and_item1c.md",
-    "cc_instruction_cadence_key_investigation.md",
-    "cc_instruction_cadence_precision_investigation.md",
-    "cc_instruction_carryfix2_resolver_identity.md",
-    "cc_instruction_carryfix_dl5a_e0prime.md",
-    "cc_instruction_carryfix_task2_addendum.md",
-    "cc_instruction_census_delegation_and_commit.md",
-    "cc_instruction_clang_branch_coverage.md",
-    "cc_instruction_classifier_fix.md",
-    "cc_instruction_commit_and_finish_line.md",
-    "cc_instruction_commit_cadence_instrument.md",
-    "cc_instruction_commit_docs.md",
-    "cc_instruction_commit_exploration_mode.md",
-    "cc_instruction_commit_idiom_work.md",
-    "cc_instruction_commit_reads3.md",
-    "cc_instruction_consumer_build.md",
-    "cc_instruction_consumer_build_addendum.md",
-    "cc_instruction_convert_curated_scores.md",
-    "cc_instruction_corpus_clone.md",
-    "cc_instruction_corpus_hygiene.md",
-    "cc_instruction_corpus_hygiene_corelli.md",
-    "cc_instruction_corpus_hygiene_record.md",
-    "cc_instruction_corpus_wave1_dlc_onboarding.md",
-    "cc_instruction_corpus_wave2_axis2_beds.md",
-    "cc_instruction_dcml_parser_applied_root_fix.md",
-    "cc_instruction_decision_clustering.md",
-    "cc_instruction_decision_enumeration_wave.md",
-    "cc_instruction_decision_harvest.md",
-    "cc_instruction_decisions_register_completion.md",
-    "cc_instruction_decoder_work_counts.md",
-    "cc_instruction_deltaseven_7a_diagnostic.md",
-    "cc_instruction_deltaseven_phase_e_diagnostic.md",
-    "cc_instruction_deltaseven_predecessor_diagnostic.md",
-    "cc_instruction_doc_governance_commit.md",
-    "cc_instruction_doc_pass_caps_and_gates.md",
-    "cc_instruction_doc_recovery.md",
-    "cc_instruction_doc_sync_layer1.md",
-    "cc_instruction_doctruth_gate_sync.md",
-    "cc_instruction_document_routes_and_d472.md",
-    "cc_instruction_e0_addendum_carry_cap.md",
-    "cc_instruction_e0_fullspine_measure.md",
-    "cc_instruction_e1.md",
-    "cc_instruction_e2_investigate.md",
-    "cc_instruction_e2a.md",
-    "cc_instruction_e2b.md",
-    "cc_instruction_e2b_fixup.md",
-    "cc_instruction_e2b_investigate.md",
-    "cc_instruction_e2b_review.md",
-    "cc_instruction_e2c.md",
-    "cc_instruction_e2c_investigate.md",
-    "cc_instruction_e2d.md",
-    "cc_instruction_e2d_architecture_review.md",
-    "cc_instruction_e2d_cleanup.md",
-    "cc_instruction_e2d_enable.md",
-    "cc_instruction_e2d_enable_v2.md",
-    "cc_instruction_e2d_enable_v2_investigate.md",
-    "cc_instruction_e2d_enable_v3.md",
-    "cc_instruction_e2d_enable_v3b.md",
-    "cc_instruction_e2d_investigate.md",
-    "cc_instruction_e2d_investigate2.md",
-    "cc_instruction_e2d_v3c_investigate.md",
-    "cc_instruction_e3.md",
-    "cc_instruction_e3_investigate.md",
-    "cc_instruction_engage_u1_uncap.md",
-    "cc_instruction_equivalence_harness.md",
-    "cc_instruction_evidence_candidate_pass.md",
-    "cc_instruction_evidence_sizing.md",
-    "cc_instruction_extension_build.md",
-    "cc_instruction_false_statements_pass.md",
-    "cc_instruction_fetch_more_scores.md",
-    "cc_instruction_finish_line_item1.md",
-    "cc_instruction_finish_line_item1b.md",
-    "cc_instruction_five_rulings.md",
-    "cc_instruction_foundation_stage0.md",
-    "cc_instruction_foundation_stage2a.md",
-    "cc_instruction_foundation_stage3a.md",
-    "cc_instruction_foundation_stage3b.md",
-    "cc_instruction_foundations_verification.md",
-    "cc_instruction_functional_residual_investigation.md",
-    "cc_instruction_gap_analysis_spec_vs_impl.md",
-    "cc_instruction_gate_default_measure.md",
-    "cc_instruction_gate_r_verify_and_commit.md",
-    "cc_instruction_gate_rebaseline_verify.md",
-    "cc_instruction_grammar_completion.md",
-    "cc_instruction_guard_dialect_close_and_push.md",
-    "cc_instruction_guard_fix_and_item1d.md",
-    "cc_instruction_housekeeping_e2d.md",
-    "cc_instruction_housekeeping_e2d_pass2.md",
-    "cc_instruction_item7_reach_derivation.md",
-    "cc_instruction_j_key_i.md",
-    "cc_instruction_j_key_ii.md",
-    "cc_instruction_j_key_ii_redux.md",
-    "cc_instruction_j_key_iii_integration_investigation.md",
-    "cc_instruction_j_key_iii_step2_wiring.md",
-    "cc_instruction_j_key_iii_step3_land.md",
-    "cc_instruction_j_key_iii_step3c_dormant_commit.md",
-    "cc_instruction_j_key_iii_step3d_push_then_B.md",
-    "cc_instruction_jazz_nondeterminism.md",
-    "cc_instruction_joint_architecture_investigation.md",
-    "cc_instruction_joint_table_codegen.md",
-    "cc_instruction_key_emission_headroom.md",
-    "cc_instruction_keyregression_diagnosis.md",
-    "cc_instruction_l1l3_delta_check_resync.md",
-    "cc_instruction_l1l3_spec_sync.md",
-    "cc_instruction_l1l4_review_tidy.md",
-    "cc_instruction_l3_keyalt_forwardcarry.md",
-    "cc_instruction_l6_dormant_build.md",
-    "cc_instruction_layer1_audit.md",
-    "cc_instruction_layer1_coverage.md",
-    "cc_instruction_layer1_implementation.md",
-    "cc_instruction_layer1_phase1a_build.md",
-    "cc_instruction_layer2_audit.md",
-    "cc_instruction_layer2_corpus_validation.md",
-    "cc_instruction_layer2_implementation.md",
-    "cc_instruction_layer2_phase2_build.md",
-    "cc_instruction_layer3_characterization_scaffold.md",
-    "cc_instruction_layer3_decoder_audit.md",
-    "cc_instruction_layer3_decoder_build.md",
-    "cc_instruction_layer3_decoder_followup.md",
-    "cc_instruction_layer3_docsync_commit.md",
-    "cc_instruction_layer3_error_decomposition.md",
-    "cc_instruction_layer3_incrementA_indexing.md",
-    "cc_instruction_layer3_incrementB_groundtruth.md",
-    "cc_instruction_layer3_jazz_churn_investigation.md",
-    "cc_instruction_layer3_keymode_audit.md",
-    "cc_instruction_layer3_phase3_build.md",
-    "cc_instruction_layer3_sweep.md",
-    "cc_instruction_layer3_tpc_keymeasure.md",
-    "cc_instruction_layer3_wiring.md",
-    "cc_instruction_layer3_wiring_code.md",
-    "cc_instruction_layer3_wiring_commit.md",
-    "cc_instruction_layer4_audit.md",
-    "cc_instruction_layer4_b_fairkey.md",
-    "cc_instruction_layer4_build_increment_a.md",
-    "cc_instruction_layer4_build_increment_b.md",
-    "cc_instruction_layer4_residual_decomposition.md",
-    "cc_instruction_licensed_homing_and_oi344.md",
-    "cc_instruction_marginals.md",
-    "cc_instruction_measurement_pipeline_audit.md",
-    "cc_instruction_metric_build.md",
-    "cc_instruction_metric_build_l0l1.md",
-    "cc_instruction_metric_decomposition.md",
-    "cc_instruction_metric_design_investigation.md",
-    "cc_instruction_metric_first_investigation.md",
-    "cc_instruction_metric_rebaseline_batch.md",
-    "cc_instruction_modulation_keypath_scoping.md",
-    "cc_instruction_module_layering_assessment.md",
-    "cc_instruction_notation_consumption_audit.md",
-    "cc_instruction_notation_noteseam.md",
-    "cc_instruction_notation_p4.md",
-    "cc_instruction_notation_p6.md",
-    "cc_instruction_notation_p7.md",
-    "cc_instruction_notation_pstrings.md",
-    "cc_instruction_notation_record_assembly.md",
-    "cc_instruction_notation_seams_1.md",
-    "cc_instruction_notation_seams_2.md",
-    "cc_instruction_notation_switch.md",
-    "cc_instruction_oi150_baselines.md",
-    "cc_instruction_oi179_reply_and_phase2_surface.md",
-    "cc_instruction_oi199_joint_p3_p4.md",
-    "cc_instruction_oi199_pass1.md",
-    "cc_instruction_oi206_investigation.md",
-    "cc_instruction_oi207_adjudication.md",
-    "cc_instruction_oi207_residual_pass.md",
-    "cc_instruction_oi274_second_half.md",
-    "cc_instruction_oi315_class_licence.md",
-    "cc_instruction_oi315_licence_and_cells.md",
-    "cc_instruction_oi375_width_correction.md",
-    "cc_instruction_open_items_split.md",
-    "cc_instruction_owner_rulings_homing.md",
-    "cc_instruction_pack_section7_and_errata_state.md",
-    "cc_instruction_partition2_archives.md",
-    "cc_instruction_phase1_completion_inventory.md",
-    "cc_instruction_phase1_delegations_and_corrections.md",
-    "cc_instruction_phase1f_final_partition.md",
-    "cc_instruction_phase1g_triage.md",
-    "cc_instruction_phase1h_full_reads.md",
-    "cc_instruction_phase1i_reads_and_delivery.md",
-    "cc_instruction_phase1j_homing_and_reads.md",
-    "cc_instruction_phase1m_dispositions_and_measurements.md",
-    "cc_instruction_phase1n_criterion_premise_and_reading_regime.md",
-    "cc_instruction_phase1o_gate_partition_and_probe_rerun.md",
-    "cc_instruction_phase1p_home_rulings_and_mechanisms.md",
-    "cc_instruction_phase1q_reclassification_and_guards.md",
-    "cc_instruction_phase1r_commit_and_reclassify.md",
-    "cc_instruction_phase1s_stale_rules_and_enumeration.md",
-    "cc_instruction_phase1t_restatement_and_pruning.md",
-    "cc_instruction_phase1u_partition_record_and_directory.md",
-    "cc_instruction_phase1v_channel_ratification.md",
-    "cc_instruction_phase1w_legacy_mark_verification.md",
-    "cc_instruction_phase1x_guard_visibility_and_commit.md",
-    "cc_instruction_phase1y_corpus_arm_stamping.md",
-    "cc_instruction_phase1z_commit_and_instrument_record.md",
-    "cc_instruction_phase2_architecture_support.md",
-    "cc_instruction_phase5_kmasks_complete.md",
-    "cc_instruction_phase5_kmasks_derive.md",
-    "cc_instruction_phase5b_step0_investigate.md",
-    "cc_instruction_phase5b_step1_g1.md",
-    "cc_instruction_phase5b_step2_g2.md",
-    "cc_instruction_phase5b_step2final_o2_inherit.md",
-    "cc_instruction_phase5b_step3_g6.md",
-    "cc_instruction_phase5b_step4_g4_spellingpin.md",
-    "cc_instruction_phase5b_stepM_measure.md",
-    "cc_instruction_phase5c_L5_close_review.md",
-    "cc_instruction_phase5c_step1.md",
-    "cc_instruction_phase5c_step2.md",
-    "cc_instruction_phase5c_step2_amend.md",
-    "cc_instruction_phase5c_step2_resolution.md",
-    "cc_instruction_phase5c_step3.md",
-    "cc_instruction_phase5c_step4.md",
-    "cc_instruction_phase5c_step5.md",
-    "cc_instruction_phase5c_step5_followup.md",
-    "cc_instruction_phase5c_step6.md",
-    "cc_instruction_phase5c_stepM.md",
-    "cc_instruction_phase5c_stepM_consolidate.md",
-    "cc_instruction_phase5c_stepM_followup.md",
-    "cc_instruction_phase_d_investigation.md",
-    "cc_instruction_phase_d_merger.md",
-    "cc_instruction_phase_d_reanalysis.md",
-    "cc_instruction_phase_e_commit_unification.md",
-    "cc_instruction_phase_e_exploration_mode.md",
-    "cc_instruction_phase_e_predecessor_survey.md",
-    "cc_instruction_phase_e_rcb_bass_chord_tone_gate.md",
-    "cc_instruction_phrase_boundary_build.md",
-    "cc_instruction_posterior_slice.md",
-    "cc_instruction_precision_headroom_investigation.md",
-    "cc_instruction_push_bi_checkpoint.md",
-    "cc_instruction_push_doc_sync.md",
-    "cc_instruction_push_layer1_checkpoint.md",
-    "cc_instruction_push_layer2.md",
-    "cc_instruction_push_layer2_validation.md",
-    "cc_instruction_push_layer3_incrementA.md",
-    "cc_instruction_push_layer3_incrementB.md",
-    "cc_instruction_reads_1.md",
-    "cc_instruction_reads_2.md",
-    "cc_instruction_reads_3.md",
-    "cc_instruction_reads_4.md",
-    "cc_instruction_reads_5.md",
-    "cc_instruction_reads_6.md",
-    "cc_instruction_redesign_segregation.md",
-    "cc_instruction_redesign_step1_free_wiring.md",
-    "cc_instruction_redesign_step2_predecessor_confidence.md",
-    "cc_instruction_refactor1_chordanalyzer_split_design.md",
-    "cc_instruction_refactor1_split_build.md",
-    "cc_instruction_refactor_harmonicsegmenter_split.md",
-    "cc_instruction_refactor_keymodeanalyzer_split.md",
-    "cc_instruction_refactor_keyresolver_split.md",
-    "cc_instruction_refactor_regiontonecollector_split.md",
-    "cc_instruction_refactor_sectionanalyzer_split.md",
-    "cc_instruction_repair_direction_enumeration.md",
-    "cc_instruction_repair_index_verify_b2.md",
-    "cc_instruction_rerun_discovery.md",
-    "cc_instruction_resume_lapse_records.md",
-    "cc_instruction_return_continuation.md",
-    "cc_instruction_return_continuation_10.md",
-    "cc_instruction_return_continuation_11.md",
-    "cc_instruction_return_continuation_12.md",
-    "cc_instruction_return_continuation_13.md",
-    "cc_instruction_return_continuation_14.md",
-    "cc_instruction_return_continuation_2.md",
-    "cc_instruction_return_continuation_3.md",
-    "cc_instruction_return_continuation_4.md",
-    "cc_instruction_return_continuation_5.md",
-    "cc_instruction_return_continuation_6.md",
-    "cc_instruction_return_continuation_7.md",
-    "cc_instruction_return_continuation_8.md",
-    "cc_instruction_return_continuation_9.md",
-    "cc_instruction_revert_absent_root_guard.md",
-    "cc_instruction_roadmap_sync.md",
-    "cc_instruction_row_landing_and_oi141_arm_check.md",
-    "cc_instruction_ruling69_discard_input.md",
-    "cc_instruction_run_discovery.md",
-    "cc_instruction_scoring_doc.md",
-    "cc_instruction_scoring_model_pass.md",
-    "cc_instruction_sitting_outcome_and_bound.md",
-    "cc_instruction_sizing_regen_and_readme.md",
-    "cc_instruction_spec_completion.md",
-    "cc_instruction_spec_impl_delta_L1L4.md",
-    "cc_instruction_stage0_followup.md",
-    "cc_instruction_stage0_hygiene.md",
-    "cc_instruction_stage1a_functionlayer_tests.md",
-    "cc_instruction_stage1b_gate_tests.md",
-    "cc_instruction_stage1c_segmentation_key_tests.md",
-    "cc_instruction_stage1d_metric_script_tests.md",
-    "cc_instruction_stage2_1_phase4c_move.md",
-    "cc_instruction_stage2_2_ab_exploration.md",
-    "cc_instruction_stage2_2a_corpus_hardening.md",
-    "cc_instruction_stage2_2ii_ship_package.md",
-    "cc_instruction_stage2_3_addendum.md",
-    "cc_instruction_stage2_3_diagnose_production_view.md",
-    "cc_instruction_stage2_4_divergence_decisions.md",
-    "cc_instruction_stage2_4_ratification.md",
-    "cc_instruction_stage2_5_p3_profile.md",
-    "cc_instruction_stage3_1_beam1_decoder.md",
-    "cc_instruction_stage3_1b_approval.md",
-    "cc_instruction_stage3_1b_decode_once.md",
-    "cc_instruction_stage3_1b_revision.md",
-    "cc_instruction_stage3_2_design.md",
-    "cc_instruction_stage3_3_gater_decision.md",
-    "cc_instruction_stage3_3_signal_migration.md",
-    "cc_instruction_stage3_4i_gate_retirement_dossier.md",
-    "cc_instruction_stage3_4ii_c1_removal.md",
-    "cc_instruction_stage3_decoder_design.md",
-    "cc_instruction_stage3_design_ratification.md",
-    "cc_instruction_stage4_design.md",
-    "cc_instruction_stage4a_commit_and_stage4b_scoping.md",
-    "cc_instruction_stage4a_declared_mode_import_fix.md",
-    "cc_instruction_stage4b_i_commit.md",
-    "cc_instruction_stage4b_i_demote_and_measure.md",
-    "cc_instruction_stage4b_ii_strengthen.md",
-    "cc_instruction_stage4c_i_cadence_detector_measure.md",
-    "cc_instruction_stage4c_iii_refine_detection.md",
-    "cc_instruction_stage4d_i_modulation_detector_measure.md",
-    "cc_instruction_stage5_phase3.md",
-    "cc_instruction_stage6_tonic_i_labeler_measure.md",
-    "cc_instruction_step1_pc_primitive_extraction.md",
-    "cc_instruction_step2_merge_predicate_dedup.md",
-    "cc_instruction_step3_key_investigation.md",
-    "cc_instruction_stepback.md",
-    "cc_instruction_stop_record_and_enumeration.md",
-    "cc_instruction_styletag_swap.md",
-    "cc_instruction_term_grounding_inventory.md",
-    "cc_instruction_test_backfill.md",
-    "cc_instruction_three_owner_rulings.md",
-    "cc_instruction_tonicization_modulation_metric_check.md",
-    "cc_instruction_tpc_capability_build.md",
-    "cc_instruction_tree_repair_and_coverage.md",
-    "cc_instruction_tsv_oracle_addendum.md",
-    "cc_instruction_tsv_oracle_infrastructure.md",
-    "cc_instruction_types_header_build.md",
-    "cc_instruction_types_header_investigation.md",
-    "cc_instruction_uncertain_resolver_measurement.md",
-    "cc_instruction_union_branch_coverage.md",
-    "cc_instruction_vl_idiom_discovery.md",
-    "cc_instruction_vocabulary_build.md",
-    "cc_instruction_worth_test.md",
-    "cc_j_key_i_report.md",
-    "cc_j_key_ii_redux_report.md",
-    "cc_j_key_ii_report.md",
-    "cc_j_key_iii_integration_dossier.md",
-    "cc_j_key_iii_step2_report.md",
-    "cc_j_key_iii_step3_report.md",
-    "cc_jazz_nondeterminism_report.md",
-    "cc_joint_architecture_dossier.md",
-    "cc_key_emission_headroom_dossier.md",
-    "cc_keyregression_diagnosis_report.md",
-    "cc_kmasks_complete_report.md",
-    "cc_kmasks_derive_report.md",
-    "cc_l1l3_delta_check_resync_report.md",
-    "cc_l1l3_spec_sync_report.md",
-    "cc_l1l4_review_report.md",
-    "cc_l3_keyalt_forwardcarry_report.md",
-    "cc_l6_build_report.md",
-    "cc_label_table_fit_report.md",
-    "cc_layer1_audit_dossier.md",
-    "cc_layer1_coverage_report.md",
-    "cc_layer1_doc_sync_report.md",
-    "cc_layer1_impl_report.md",
-    "cc_layer1_phase1a_report.md",
-    "cc_layer2_audit_dossier.md",
-    "cc_layer2_corpus_validation_report.md",
-    "cc_layer2_impl_report.md",
-    "cc_layer2_phase2_report.md",
-    "cc_layer3_characterization_report.md",
-    "cc_layer3_decoder_audit_dossier.md",
-    "cc_layer3_decoder_build_report.md",
-    "cc_layer3_error_decomposition_report.md",
-    "cc_layer3_incrementA_report.md",
-    "cc_layer3_incrementB_report.md",
-    "cc_layer3_jazz_churn_investigation.md",
-    "cc_layer3_keymode_audit_dossier.md",
-    "cc_layer3_phase3_report.md",
-    "cc_layer3_sweep_report.md",
-    "cc_layer3_tpc_keymeasure_report.md",
-    "cc_layer3_wiring_design_dossier.md",
-    "cc_layer3_wiring_report.md",
-    "cc_layer4_audit_dossier.md",
-    "cc_layer4_build_a_report.md",
-    "cc_layer4_build_b_fairkey_report.md",
-    "cc_layer4_build_b_report.md",
-    "cc_layer4_residual_decomposition_report.md",
-    "cc_measurement_pipeline_audit.md",
-    "cc_metric_build_l0l1_report.md",
-    "cc_metric_build_report.md",
-    "cc_metric_decomposition_report.md",
-    "cc_metric_first_dossier.md",
-    "cc_metric_rebaseline_report.md",
-    "cc_metric_round2_report.md",
-    "cc_metric_round3_report.md",
-    "cc_modulation_keypath_scoping_dossier.md",
-    "cc_module_layering_assessment_dossier.md",
-    "cc_notation_consumption_audit_report.md",
-    "cc_note_table_fit_report.md",
-    "cc_phase2_architecture_support_report.md",
-    "cc_phase5b_step0_report.md",
-    "cc_phase5b_step1_report.md",
-    "cc_phase5b_step2_report.md",
-    "cc_phase5b_step2final_report.md",
-    "cc_phase5b_step3_report.md",
-    "cc_phase5b_step4_report.md",
-    "cc_phase5b_stepM_measure_report.md",
-    "cc_phase5c_L5_close_review.md",
-    "cc_phase5c_step0_report.md",
-    "cc_phase5c_step1_report.md",
-    "cc_phase5c_step2_amendment.md",
-    "cc_phase5c_step2_report.md",
-    "cc_phase5c_step3_report.md",
-    "cc_phase5c_step4_report.md",
-    "cc_phase5c_step5_followup_report.md",
-    "cc_phase5c_step5_report.md",
-    "cc_phase5c_step6_report.md",
-    "cc_phase5c_stepM_followup_report.md",
-    "cc_phase5c_stepM_report.md",
-    "cc_phase_d_investigation_report.md",
-    "cc_phase_d_merger_report.md",
-    "cc_phase_e_commit_unification_report.md",
-    "cc_phase_e_exploration_mode_report.md",
-    "cc_phase_e_predecessor_survey_report.md",
-    "cc_phrase_boundary_build_report.md",
-    "cc_precision_headroom_dossier.md",
-    "cc_refactor1_split_build_report.md",
-    "cc_refactor1_split_design_dossier.md",
-    "cc_refactor_harmonicsegmenter_report.md",
-    "cc_refactor_keymodeanalyzer_report.md",
-    "cc_refactor_keyresolver_report.md",
-    "cc_refactor_regiontonecollector_report.md",
-    "cc_refactor_sectionanalyzer_report.md",
-    "cc_secondary_dominant_refit_report.md",
-    "cc_spec_impl_delta_L1L4_report.md",
-    "cc_stage0_report.md",
-    "cc_stage1a_report.md",
-    "cc_stage1b_report.md",
-    "cc_stage1c_report.md",
-    "cc_stage1d_report.md",
-    "cc_stage2_1_report.md",
-    "cc_stage2_2_ab_dossier.md",
-    "cc_stage2_2a_report.md",
-    "cc_stage2_2ii_report.md",
-    "cc_stage2_3_report.md",
-    "cc_stage2_4_report.md",
-    "cc_stage2_5_report.md",
-    "cc_stage2a_wip_triage_report.md",
-    "cc_stage3_1_report.md",
-    "cc_stage3_1b_report.md",
-    "cc_stage3_2_design_report.md",
-    "cc_stage3_3_report.md",
-    "cc_stage3_4i_dossier.md",
-    "cc_stage3_4ii_report.md",
-    "cc_stage3_design_report.md",
-    "cc_stage3a_notation_triage_report.md",
-    "cc_stage4_design_report.md",
-    "cc_stage4a_mode_import_report.md",
-    "cc_stage4b_i_report.md",
-    "cc_stage4b_ii_report.md",
-    "cc_stage4b_scoping_dossier.md",
-    "cc_stage4c_i_report.md",
-    "cc_stage4c_iii_report.md",
-    "cc_stage4d_i_report.md",
-    "cc_stage6_tonic_i_report.md",
-    "cc_step1_pc_primitive_report.md",
-    "cc_step2_merge_predicate_report.md",
-    "cc_stepback_report.md",
-    "cc_styletag_swap_report.md",
-    "cc_test_backfill_report.md",
-    "cc_tonicization_modulation_metric_dossier.md",
-    "cc_tpc_capability_build_report.md",
-    "cc_tpc_capability_verify_report.md",
-    "cc_tree_repair_and_coverage_report.md",
-    "cc_tsv_oracle_report.md",
-    "cc_types_header_build_report.md",
-    "cc_types_header_investigation_report.md",
-    "cc_uncertain_resolver_measurement_report.md",
-    "cc_union_branch_coverage_report.md",
-    "cc_vocabulary_build_report.md",
     "foundation_wip_combined.patch"
    ]
   },

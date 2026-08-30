@@ -279,8 +279,11 @@ SIGNATURE_TABLE = [
      "anywhere below `docs/old_docs/`",
      under("docs/old_docs/"), True),
     ("published-research-papers",
-     "anywhere below `docs/research_papers/`",
-     under("docs/research_papers/"), True),
+     "anywhere below `docs/research_papers/`, and anywhere below `external resarch summary/` — the "
+     "user's external register over the published research on chord, mode and harmonic inference, "
+     "delivered 2026-08-28 and landed as this project's file; the folder name's spelling is the "
+     "user's and stands as it is",
+     any_of(under("docs/research_papers/"), under("external resarch summary/")), True),
     ("generated-api-documentation-assets",
      "anywhere below `docs/apidocs_static/`, plus `docs/index.html`",
      any_of(under("docs/apidocs_static/"), exact_path("docs/index.html")), False),

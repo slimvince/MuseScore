@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 82,
+  "ruling_records_read": 83,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -223,6 +223,7 @@
   "cowork_rulings_2026_08_28_informed_framework_sitting.md",
   "cowork_rulings_2026_08_28_ledger_precondition_sitting.md",
   "cowork_rulings_2026_08_28_unit_question_sitting.md",
+  "cowork_rulings_2026_08_29_ratification_sitting.md",
   "cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {

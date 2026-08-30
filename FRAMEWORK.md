@@ -1,5 +1,11 @@
 # The framework document — the all-encompassing architecture of the harmonic analysis
 
+> **★ RATIFIED by the user 2026-08-29 — Ruling 2 of
+> `cowork_rulings_2026_08_29_ratification_sitting.md`; the decomposition, charters and boundary
+> contracts govern. Renamed from `cowork_framework_document_draft_2026_08_28.md` to
+> `FRAMEWORK.md` at ratification per Ruling 5. The banner below is preserved as written at
+> drafting; its "DRAFT / NOT RATIFIED" words describe the drafting moment, not the present.**
+
 > **DRAFT — INFORMED DERIVATION, NOT COMPARED, NOT RATIFIED.**
 >
 > Derived 2026-08-28 under `cowork_informed_session_brief_framework.md`, in the two stages that brief's
