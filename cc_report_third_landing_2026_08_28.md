@@ -326,8 +326,9 @@ stopped on.
 |---|---|
 | tip at the start, `master` = `origin/master` | `6bdf4f3d2024e7257d910f5286d87ae3e4eeb823` |
 | Task 1 commit — the landing | `0396bb6a70a6ad983ee14c84d85e9201c8f7ef16` |
-| Task 2 commit — the close | *filled by the further commit declared at §9.3* |
-| the end-state commit | *filled by the further commit declared at §9.3* |
+| Task 2 commit — the close | `9dbcc282648c50f7d88cf5f8b8c73b9f6581d7f9` |
+| the end-state commit | `ab6fb98d11834dea17f6d24dd6ad1bcf4417c6ba` |
+| the further commit that filled the two cells above and added the `STATUS.md` sentence — **declared at §9.3 and §9.4** | *its own identity cannot stand inside itself; it is the commit whose parent is `ab6fb98d11…`, and it is the last commit of this batch* |
 | dispatch blob, pinned at Task 0, at the staged index and at the commit object | `bd5a053d6481eac90b67accd0d6171baed95e7c8` |
 | workbook blob, pinned at Task 0, at the staged index and at the commit object | `9bf55eadb4dbf13fbea30b89077f89646dc10542` |
 
@@ -428,11 +429,17 @@ which is exactly what the previous batch's dispatch carried and this one does no
 The close commit's identity and the end-state commit's identity cannot stand inside a report those
 commits carry. Item 4 orders exactly this remedy — *"where the report's SHA table cannot carry its own
 committing identities, one further commit fills exactly those cells, as the first landing batch did
-and declared"* — and the further commit fills those two cells of §7 and changes nothing else. **It
-re-runs no guard, moves no measured value, edits no other section and touches no file but this
-report. The end-state guard artifact is untouched and remains the artifact of the run that produced
-it** — §12's claim is about the tree the guard ran at, and this commit changes nothing the guard set
-reads.
+and declared"* — and the further commit fills those two cells of §7. **It re-runs no
+guard, moves no measured value, edits no other section of this report, and the end-state guard
+artifact is untouched and remains the artifact of the run that produced it** — §12's claim is about
+the tree the guard ran at, and this commit changes nothing the guard set reads.
+
+*★ ONE CLAUSE OF THE PARAGRAPH ABOVE WAS NARROWED WHEN §9.4 BECAME NECESSARY, AND THE FORMER WORDING
+STANDS (#12).* It read *"fills those two cells of §7 and changes nothing else … touches no file but
+this report"*. **That was written before the end-state guard run existed and is no longer true of the
+commit it describes:** §9.4's sentence goes into `STATUS.md`, and performing the two acts as one
+commit rather than two is the smaller footprint. **The two acts are declared separately, at §9.3 and
+§9.4, and are carried by one commit; nothing else rides it.**
 
 ### 9.4 ★ A SECOND FURTHER COMMIT ADDS ONE SENTENCE TO THE `STATUS.md` CLOSE ENTRY
 
