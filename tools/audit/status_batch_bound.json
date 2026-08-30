@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_third_landing_2026_08_28.md, Task 2",
+ "dispatch": "cc_instruction_phase_close_second_2026_08_30.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -188,37 +188,42 @@
    "executing_act": "cc_instruction_second_landing_2026_08_28.md, Task 2",
    "base_commit": "9735d8e9398b137a61ec0a20f34d994f9f61a0e1",
    "the_then_previous_batch": "cc_instruction_landing_2026_08_28.md"
+  },
+  {
+   "executing_act": "cc_instruction_third_landing_2026_08_28.md, Task 2",
+   "base_commit": "0396bb6a70a6ad983ee14c84d85e9201c8f7ef16",
+   "the_then_previous_batch": "cc_instruction_second_landing_2026_08_28.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "0396bb6a70a6ad983ee14c84d85e9201c8f7ef16",
- "the_then_previous_batch": "cc_instruction_second_landing_2026_08_28.md",
+ "base_commit": "3e75ef85bce5805eefee0f5015da59d88cc0582a",
+ "the_then_previous_batch": "cc_instruction_third_landing_2026_08_28.md",
  "entries_moved": 3,
- "characters_moved": 5676,
+ "characters_moved": 6737,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 3089,
-   "sha256": "cee74befef452fa2abd035ff1f9c05d2938818847db126647784358251fb7571",
+   "characters": 4187,
+   "sha256": "3f22b78c89289153cd8ec97d0c01a99b768df6cd9bc004ad196c7291566656fe",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-29 (CC — **★ THE UNIT-QUESTION RULING RECORD, ITS §9.0 DECISION SURFACE AND THE PREVIOUS CC SESSION'S REGISTER-REPAIR STOP REPORT ARE LANDED "
+   "opening": "*2026-08-30 (CC — **★ THE EXTERNAL RESEARCH WORKBOOK IS LANDED AND PUSHED — THE PUBLISHED-RESEARCH LIST THE FRAMEWORK DOCUMENT'S §1.4 RATIFICATION HOL"
   },
   {
    "line_at_base": 10,
-   "characters": 1350,
-   "sha256": "40f097867177916704eb753cbb64a3be13827d54cd761b8a8b2985fc940440d4",
+   "characters": 1153,
+   "sha256": "f0889ebc09838f0576f7547c1933b054857d5062d5c65bd7cfffb84519c1619e",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-29 (CC — Same dispatch, Task 1: the unit-question ruling record, its decision surface and the previous CC session's register-repair stop repo"
+   "opening": "*2026-08-30 (CC — Same dispatch, Task 1: the external research workbook landed beside the dispatch itself, and the commit pushed. **Both paths were co"
   },
   {
    "line_at_base": 12,
-   "characters": 1237,
-   "sha256": "26cdd17d61130ef8555fa04cee1811090a677753dc93d0e4ee62fa40f199808d",
+   "characters": 1397,
+   "sha256": "932aab60f26fb8538adbf85e2692737b6251584684d3d85d92855b5134a0e4d2",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-29 (CC — Same dispatch, Task 0: pinned first, then established, and nothing written. **The instruction was pinned to a blob with `git hash-ob"
+   "opening": "*2026-08-30 (CC — Same dispatch, Task 0: pinned first, then established, and nothing written. **The instruction was pinned to a blob with `git hash-ob"
   }
  ],
  "reconciliation": {
