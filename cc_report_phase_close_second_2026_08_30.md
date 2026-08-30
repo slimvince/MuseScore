@@ -575,11 +575,59 @@ Carried forward, unchanged:
 
 ---
 
-## 14. The end state
+## 14. The end state — ★ E-FINAL IS MET UNDER ITS OWN CONDITIONAL LIMB
 
 *(Deliberately EMPTY at the close commit and written at the end-state commit. E-final requires a
 fresh full guard run at the tree the close leaves and `tools/audit/guard_state.json` committed only
 after the run that produced it, so that run cannot have happened when the close is taken.)*
+
+**A fresh FULL guard run was performed at the tree the close left**, in write mode, and
+`tools/audit/guard_state.json` is committed as the artifact of that run and of no other — **the run
+came first and the commit second.**
+
+`python tools/audit/gen_guard_state.py`, exit **0**: **75 guards run, 8 failing, 4 not run, 16
+historical records**, and the artifact's own `summary` block reads **run 75, passing 67, failing 8**.
+
+| the eight | what it is |
+|---|---|
+| `gen_filing_convention_application.py --check` | **the first known** |
+| `decisions/apply_soft_discard.py --check` | **the second known** |
+| `decisions/apply_residue_discard.py --check` | **the third known** |
+| `gen_artifact_inventory_surface.py --check` | ordered-edit red, stop-reported at §5.3 |
+| `gen_test_construction_evidence.py --check` | ordered-edit red, stop-reported at §5.3 |
+| `gen_retirement_caller_check.py --check` | ordered-edit red, stop-reported at §5.3 |
+| `gen_derivation_boot_pack.py --check` | ordered-edit red, stop-reported at §6.3 |
+| `decisions/gen_cluster_dispositions.py --verify` | ordered-edit red, stop-reported at §6.3 |
+
+**E-FINAL IS MET.** Its derivation predicts *"the three known failing checks and no others"* **UNLESS
+a Task 3 or Task 4 guard run stop-reported an unexpected ordered-edit red, in which case E-final is
+graded with exactly that red named and attributed, and nothing else new.** The conditional limb is
+the one that applies: **the eight are the three known plus exactly the five reds §5.3 and §6.3 name
+and attribute, and NOTHING ELSE IS NEW.**
+
+**★ THE THREE START-STATE REDS THIS BATCH WAS SENT TO CLEAR ARE ALL CLEARED, AND EACH BY THE ORDERED
+ACT.**
+
+- **`gen_artifact_inventory.py --check` — the STOP the third landing batch left is GONE**, cleared by
+  the user-ruled signature row (§4).
+- **`gen_evidence_pin_membership.py --check` — GREEN**, cleared by the footprint-named regeneration
+  (§5.1).
+- **`gen_session_start_read_size.py --check` — GREEN**, cleared by Task 7's ordered regeneration (§8),
+  which is exactly what E-final's derivation says clears it.
+
+**On STOPs.** The run's captured output carries STOP text at three tools and **all three are the
+three KNOWN failing checks**, each raising the same STOP it raised at Task 0 — the filing-convention
+derivation's unclassified candidates, and the two discard checks' recorded arithmetic disagreement,
+whose repair is the PARKED register dispatch and is not this batch's business. **No new STOP
+appeared, and the one STOP this batch was sent to remove is removed.**
+
+**The enumeration taken immediately after the run and before this section was written reported
+`tools/audit/guard_state.json` as the ONE tracked modification and no second**
+(`python tools/audit/changed_paths.py`, filtered with `Grep` by `^ ?[MADRCU]`). **This section was
+then written, so the end-state commit carries two paths — that artifact and this report — and both
+are members of A3's list. A3 holds through the end state.** Neither path is a measured input of
+`tools/audit/session_start_read_size.json`, so departure (5)'s staleness rule owes no regeneration
+here, and that is stated rather than assumed.
 
 ---
 
