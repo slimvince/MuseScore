@@ -443,8 +443,9 @@ a user question, not a session's.
 |---|---|
 | tip at the start, `master` = `origin/master` | `36666956655fbd9c315786eca14d80918a8abdea` |
 | Task 6 commit — the landing | `3e75ef85bce5805eefee0f5015da59d88cc0582a` |
-| Task 7 commit — the close | *filled by the further commit declared at §11.5* |
-| the end-state commit | *filled by the further commit declared at §11.5* |
+| Task 7 commit — the close | `1d859fd238823edc9e335248099c3b1ef31837b0` |
+| the end-state commit | `21e78f575a4e0d0b12a02da1494b8078af0b065a` |
+| the further commit that filled the two cells above — **declared at §11.5** | *its own identity cannot stand inside itself; it is the commit whose parent is `21e78f575a…`, and it is the last commit of this batch* |
 | this dispatch, pinned at Task 0, at the index and at the commit object | `df89e7e45be58a0639c6929b279a35b9ca8b3f3d` |
 | the staging file, pinned at Task 0 | `29e51daf0d76231c35279823e12f39b8ba241aec` |
 | the staging file at the FIRST writing's Task 0 — moved since | `b4a1358e76536962bd32138003d4753da12fe8aa` |
