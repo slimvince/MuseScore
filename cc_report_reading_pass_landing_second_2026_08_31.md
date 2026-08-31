@@ -141,14 +141,29 @@ before anything was added.
 | **(ii)** | the four staged handoff entries, **as files** | 4 | **TRACKED, not prepended, not deleted** |
 | **(iii)** | `docs/research_papers/reading_pass_2026_08/` — the markdown content records | 17 | **TRACKED** |
 | **(iii)** | `docs/research_papers/reading_pass_2026_08/` — the paper binary | 1 | **NOT tracked; now ignored** |
-| **(iv)** | **outside the dispatch's three classes** — see below | 777 | **untouched** |
+| **(iv)** | **outside the dispatch's three classes** — see below | — | **untouched** |
 
-**Staged total: 81 records — 74 additions and 7 modifications, with no `.pdf` among them**, measured
-with `changed_paths.py --staged` rather than asserted.
+**★ THE TWO UNITS ARE DIFFERENT AND ARE KEPT APART, because mixing them is how a count goes wrong.**
+The enumeration counts an untracked DIRECTORY as **one record** (git's own
+`--untracked-files=normal`, which `changed_paths.py` documents); the table above counts **files**.
+So classes (i)–(iii) cover **75 files** — 74 tracked plus the one ignored binary — which appear in
+the enumeration as **18 records**, `reading_pass/` and `docs/research_papers/reading_pass_2026_08/`
+being one record each.
+
+| in enumeration records | |
+|---|---|
+| before the batch | **852** |
+| reached by classes (i)–(iii) | **18** |
+| **class (iv), untouched** | **834** |
+
+**Confirmed by measurement, not by subtraction alone:** the enumeration re-run after the push reports
+**834 untracked records and zero tracked modifications**, and nothing of the reading pass remains
+untracked. **Staged total: 81 records — 74 additions and 7 modifications, with no `.pdf` among
+them**, measured with `changed_paths.py --staged`.
 
 ### 3.1 ★ CLASS (iv) — DECLARED, BECAUSE THE DISPATCH'S THREE CLASSES DO NOT REACH IT
 
-The dispatch says *"classify every untracked path"* and gives three classes. **777 untracked records
+The dispatch says *"classify every untracked path"* and gives three classes. **834 untracked records
 fall outside all three** and are left exactly as found: the long-standing `cc_*.md` reports and
 dispatches at the repository root, the whole of `scratch_artifacts/`, and the two PDFs under
 `external resarch summary/` — a folder this batch is barred from opening, renaming or moving. **None
