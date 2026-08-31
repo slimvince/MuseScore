@@ -247,9 +247,91 @@ and the apply then succeeded. **No entry was retyped at any point.**
 
 ---
 
-## 6. The end state — the guard set re-run
+## 6. The commit, and the end state
 
-*Completed in the follow-up commit; see §7 departure 4.*
+| what | value |
+|---|---|
+| the batch commit | `20ed03f49e09c42a885d475e8ceefebecfb7e702` |
+| parent | `b8e738448ea061a2212d82de454e46a55ecf6f8f` |
+| files changed | 82 — 11,848 insertions, 39 deletions |
+| `origin/master`, route 1 (local remote-tracking ref) | `20ed03f49e09c42a885d475e8ceefebecfb7e702` |
+| `origin/master`, route 2 (`git ls-remote` against the remote) | `20ed03f49e09c42a885d475e8ceefebecfb7e702` |
+
+### 6.1 Every landed blob re-established at the commit object
+
+| path | blob at the commit |
+|---|---|
+| `FRAMEWORK.md` | `0b4a96dbc1ab8f94af3611010233c952d9b54e72` |
+| `tools/audit/evidence_pin_membership.json` | `fb3a00be268401e5386954cc3c410c9c827539df` |
+| `cc_instruction_reading_pass_landing_2026_08_31.md` (first writing) | `cb51384fea5c5aebf51a9e57eb303610b7f9c737` |
+| `cc_instruction_reading_pass_landing_second_2026_08_31.md` (this dispatch) | `a06bfc2a392267428f0b1182d67035b2ff0b14cc` |
+| `cowork_rulings_2026_08_31_decision_surface_sitting.md` | `d02c571a1d811e6fe3457c9cf4c5917bd248a5c6` |
+| `ratification_surfaces/cowork_v4_divergence_surface_2026_08_31.md` | `51a74b931a2c1dc1f350d76318157de37d709cf7` |
+| `ratification_surfaces/cowork_dpk_ground_surface_2026_08_31.md` | `25ab6bb12917cb4a098580cca8240a0655850195` |
+| `reading_pass/stop_v4_divergence_2026_08_30.md` | `cfcab2d4e38bd3b820800fcbdd95b1edd97fba97` |
+| `cowork_handoff_entry_eighty_two.md` | `343d303d2428dd0a0e412e1eb8a42d26ae68a6fb` |
+| `cowork_handoff_entry_eighty_three.md` | `b4a2c892dd60194981c5bad42010211c7264edbc` |
+| `cowork_handoff_entry_eighty_four.md` | `5fdf7ecab61cfc51fe6c999754f0aabfa18a5962` |
+| **`cowork_handoff_entry_eighty_five.md`** | **`94d356c5cec545b17c5649192d75dd112a29ddb2`** |
+
+**Every one equals its pin except the eighty-fifth entry, and that one is measured rather than
+carried.** It was pinned at `4cb4b57061f4404d910fc38bbf7c6cdf64da5f93` during the FIRST writing's
+run; **its blob has since MOVED** — the writing side rewrote it between the two dispatches, +84 / −11
+lines, and the current file names the second writing. The commit therefore carries the file **as it
+stands**, which is correct, and the stale pin is reported rather than used. *This is the same
+moved-staging-blob hazard the phase-close batch recorded, met a second time.*
+
+**Two negative checks, both proven at the commit object:**
+
+- **`cowork_handoff.md` is byte-identical to its parent** — `4f7056c362990cfffa5bb03038f1fce1edcfe968`
+  at both. Nothing was prepended, spliced or deleted.
+- **The Saarland PDF is ABSENT from the commit tree** — `git cat-file -e` fails on it at this commit
+  while the file exists on disk, which is exactly the intended state.
+
+### 6.2 ★ THE END-STATE GUARD SET — TEN FAILING, AND EVERY MOVEMENT NAMED
+
+`python tools/audit/gen_guard_state.py --check` at the tree this batch left: **75 run, 10 failing, 4
+not run, 16 historical records.**
+
+**The ninth CLEARED, and the clearance is Task 3's own prediction coming true:**
+
+| | |
+|---|---|
+| `gen_evidence_pin_membership.py --check` | **was FAIL at the start state, now PASSES** |
+
+**Two checks went red under this batch's own ordered acts. Both are STOP-REPORTED and LEFT
+UNREPAIRED, as the dispatch orders.**
+
+1. **`gen_artifact_inventory.py --check` — its own designed STOP fired.** Its words: *"40 file(s)
+   matched no rule in the signature table — this is the dispatch's own stop rule and prediction P1's
+   refutation condition"*, the first ten listed all under `reading_pass/`. **The cause is
+   established and is this batch's ordered additions:** `reading_pass/` is a **new top-level
+   directory**, and that tool's last rule is bounded on purpose so that a file arriving in a
+   top-level directory no rule names halts it instead of being graded silently. **Its only remedy is
+   an amendment to the signature table, which the dispatch reserves to the user** — *"Classifying
+   these new paths is a user act that follows this batch."* **Not repaired; the signature table was
+   not touched.**
+2. **`gen_session_start_read_size.py --check` — `STALE vs the measurement`.** The cause is
+   `STATUS.md` changing, which is what this batch was ordered to do. That tool's own authored
+   description says this is the point of it: *"It goes red when a governing surface changes … the
+   session-start read moved and the record does not yet say so."* **Its regeneration was not ordered
+   by this dispatch** — Task 3 authorises exactly one regeneration, and it is the other one — **so it
+   is reported and left.**
+
+**★ WHY THIS IS NOT THE TASK-0 TENTH-FAILURE STOP, stated because it is a judgment and not a
+reading-off.** Task 0's clause — *"A TENTH failure is news: report it and STOP"* — governs the
+**declared start state**, and the start state was measured **before the first act** and held at
+exactly nine with no tenth (§1). These two reds appeared **after** that measurement, out of the
+batch's own ordered acts, which is the case the dispatch legislates separately and in the opposite
+direction: *"Adding files will very likely move what `gen_artifact_inventory_surface.py` derives …
+Run it after the additions and REPORT what it says — do not repair it."* **The dispatch anticipated
+the surface check moving and did not anticipate these two; the treatment it orders for that class —
+report, do not repair, do not touch the signature table — is what was applied.** *If the user reads
+the tenth-failure clause as reaching post-act reds too, this batch should be treated as having
+stopped after Task 3 and the landing reviewed; that reading is put here rather than assumed away.*
+
+**The three long-known and the four surviving ordered-edit reds are unchanged**, and none was
+repaired.
 
 ---
 
@@ -279,6 +361,20 @@ and the apply then succeeded. **No entry was retyped at any point.**
    commit. The end-state guard run and the commit identities cannot exist until the commit does, so
    the SHA table and §6 are completed in a small second commit that touches this report only — the
    construction the phase-close batch used for the same reason.
+
+5. **Two checks went red after the start-state measurement, out of this batch's own ordered acts**,
+   and were reported rather than repaired. The reading under which that is not a Task-0 STOP is
+   stated in full at §6.2, together with the alternative reading, rather than assumed away.
+
+6. **One staged blob had moved since it was pinned** — the eighty-fifth handoff entry, rewritten by
+   the writing side between the two dispatches. Measured and reported at §6.1; the current content
+   was landed and the stale pin was not carried.
+
+7. **The commit message carries a `Co-Authored-By` trailer**, which this repository's own commit
+   messages do not use. It is added under a standing instruction to this session about commit
+   messages; **it is the first such trailer in this repository's history** and is declared here so
+   the deviation from house style is a recorded choice rather than a drift. *Say the word and the
+   next batch drops it.*
 
 ---
 
