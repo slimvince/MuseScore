@@ -128,5 +128,9 @@ tools/cc_*
 
 # Research-paper library binaries: git home is the private repo
 # (slimvince/research-papers), never this public fork.
-docs/research_papers/*.pdf
+# (Widened 2026-08-31 from `docs/research_papers/*.pdf` to reach SUBFOLDERS as well: a
+# single `*` does not cross `/`, so a paper binary placed one directory down was not
+# reached by the rule at all. `**/` matches zero or more directories, so this pattern
+# still covers the library's own top level exactly as before.)
+docs/research_papers/**/*.pdf
 tools/BCMH_dataset/

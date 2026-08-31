@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_phase_close_second_2026_08_30.md, Task 2",
+ "dispatch": "cc_instruction_reading_pass_landing_second_2026_08_31.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -193,37 +193,50 @@
    "executing_act": "cc_instruction_third_landing_2026_08_28.md, Task 2",
    "base_commit": "0396bb6a70a6ad983ee14c84d85e9201c8f7ef16",
    "the_then_previous_batch": "cc_instruction_second_landing_2026_08_28.md"
+  },
+  {
+   "executing_act": "cc_instruction_phase_close_second_2026_08_30.md, Task 2",
+   "base_commit": "3e75ef85bce5805eefee0f5015da59d88cc0582a",
+   "the_then_previous_batch": "cc_instruction_third_landing_2026_08_28.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "3e75ef85bce5805eefee0f5015da59d88cc0582a",
- "the_then_previous_batch": "cc_instruction_third_landing_2026_08_28.md",
- "entries_moved": 3,
- "characters_moved": 6737,
+ "base_commit": "b8e738448ea061a2212d82de454e46a55ecf6f8f",
+ "the_then_previous_batch": "cc_instruction_phase_close_second_2026_08_30.md",
+ "entries_moved": 4,
+ "characters_moved": 7333,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 4187,
-   "sha256": "3f22b78c89289153cd8ec97d0c01a99b768df6cd9bc004ad196c7291566656fe",
+   "characters": 3354,
+   "sha256": "2e9dd6482d52d2c1f1b64b806b0fbe9b2429ff431896a3884b2ecf94812bf1f3",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-30 (CC — **★ THE EXTERNAL RESEARCH WORKBOOK IS LANDED AND PUSHED — THE PUBLISHED-RESEARCH LIST THE FRAMEWORK DOCUMENT'S §1.4 RATIFICATION HOL"
+   "opening": "*2026-08-30 (CC — **★★ THE FRAMEWORK PHASE IS CLOSED. ITS DOCUMENT IS RATIFIED AND RENAMED — `FRAMEWORK.md` STANDS AT THE REPOSITORY ROOT, LANDED AND "
   },
   {
    "line_at_base": 10,
-   "characters": 1153,
-   "sha256": "f0889ebc09838f0576f7547c1933b054857d5062d5c65bd7cfffb84519c1619e",
+   "characters": 1418,
+   "sha256": "9e86e34c180feedb1087a10f6be41d21bc6d8674c25d6df828f48d6032236c09",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-30 (CC — Same dispatch, Task 1: the external research workbook landed beside the dispatch itself, and the commit pushed. **Both paths were co"
+   "opening": "*2026-08-30 (CC — Same dispatch, Tasks 3 to 6: the ruled rename, the six ratified edits, the prepend, and the landing. **`git mv` first and the ratifi"
   },
   {
    "line_at_base": 12,
-   "characters": 1397,
-   "sha256": "932aab60f26fb8538adbf85e2692737b6251584684d3d85d92855b5134a0e4d2",
+   "characters": 1400,
+   "sha256": "5a0b586b6abce4e7f71451b130290ff61283e8be47eeca123b9f20f6ca6e7543",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-30 (CC — Same dispatch, Task 0: pinned first, then established, and nothing written. **The instruction was pinned to a blob with `git hash-ob"
+   "opening": "*2026-08-30 (CC — Same dispatch, Tasks 1 and 2: the two ordered guard clearances, each measured before it was accepted. **The user-ruled signature row"
+  },
+  {
+   "line_at_base": 14,
+   "characters": 1161,
+   "sha256": "8da262b84cecd341a66250d31f19f6d334641f356560bd57638e4c1c2a27f5ff",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-08-30 (CC — Same dispatch, Task 0: pinned first, then established, and nothing written. **The user's opening line carried the pin order itself, "
   }
  ],
  "reconciliation": {

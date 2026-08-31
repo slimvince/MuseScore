@@ -350,9 +350,27 @@ pitch-class set: a unison or octave shrink is a real change though the pitch cla
 change 1.)*
 
 **Why metric strength earns its place.** It is measured to constrain where harmonies change —
-harmonic change was counted at 71.5% of tactus beats against 2.4% of the lowest metrical level — and
-removing metrical-accent features from a segmental analyser costs about six points of F-measure.
+harmonic change was counted at 71.5% of the strongest-level beats against 22.3% of tactus beats
+and 2.4% of the level below (Temperley 2009, Table 1, Kostka–Payne corpus) — and removing
+metrical-accent features from a segmental analyser costs about six points of F-measure.
 [FACT — both.]
+
+**★ CORRECTED 2026-08-31 ON THE USER'S RULING, WITH THE FORMER WORDING PRESERVED IN PLACE (#12.)**
+Ruling 2 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` §3a, Option A — correct
+minimally. **THE FORMER WORDING WAS:** *"harmonic change was counted at 71.5% of tactus beats
+against 2.4% of the lowest metrical level"*. *Why it was corrected:* the primary-source reading pass
+read Temperley 2009 at the object and returned a DIVERGES verdict on this figure, written up at
+`reading_pass/stop_v4_divergence_2026_08_30.md` and decided at
+`ratification_surfaces/cowork_v4_divergence_surface_2026_08_31.md`. Both numbers are at the primary,
+but its Table 1 attaches 71.5% to the level ABOVE the tactus, the tactus row itself reads 22.3%, and
+level 1 is not the lowest level that model carries. The clause as written was therefore false at the
+paper it cites and its `[FACT]` label unearned, which is what #1 and the theory-grounding corollary
+reach. **The design point is untouched and its ground is sharpened:** a monotone gradient across
+three metrical levels is stronger evidence that metric strength constrains where harmonies change
+than a single contrast between two. **The second half of the sentence — the six-point ablation —
+verified exactly at its own primary and is unchanged.** *Option B of that surface was DECLINED: a
+further finding the same paper carries is deliberately NOT brought into this charter and stays where
+the pass recorded it, in the STOP memo and the findings surface; the ruling states the reason there.*
 
 **Why the cadence *cues* sit here rather than downstream.** They are computable from the notation
 without knowing the tonality, and two independent studies measure that they carry real discrimination
@@ -690,9 +708,40 @@ falsifies directly.
 **DP-K — What does the analysis publish where it cannot decide?**
 **CHOSEN: rivals in the same stream, each with its mass, including rivals that differ in
 segmentation.** *Rival:* one best reading with a confidence number, which cannot express an alternative
-containing a different number of chords. *Ground:* the ground truth's own form; and the finding that
-automatic systems already score **above** human-human agreement on the same data, which means a
-single-answer target has stopped measuring harmony and started measuring one annotator. [FACT.]
+containing a different number of chords. *Ground:* the ground truth's own form; and one study of
+popular-music audio in which the automatic systems it evaluated scored about ten percent above the
+annotator-pairwise agreement that same study measured — evidence that a single-answer target can
+stop measuring harmony and start measuring one annotator. [FACT — as that one study reports it; the
+domain bound is declared at R-1.] Recorded beside it, with NO contradiction asserted between the
+two: a second study of the same domain, on different data and an earlier generation of systems,
+reports the opposite sign. [FACT.]
+
+**Two FURTHER grounds, on this project's own repertoire — classical symbolic music — added
+2026-08-31 under the user's Ruling 3, each carrying the read grade it was obtained at, because a
+ground travels no stronger than the read that produced it:**
+- At every moment a score can carry two defensible key labels at once, stated there as a principle,
+  with that study's own corpus annotating both. [Feisthauer 2021, the Lille thesis — DECLARED
+  PARTIAL, chapter level.]
+- Annotation traditions differ enormously in which of the two they record: one textbook marks a
+  local key at 41.63% of onsets against another at 15.97%, and a dual-annotated dataset is released.
+  [Nápoles López, Feisthauer, Levé & Fujinaga 2020 — RELAYED.]
+
+**★ GROUND 2 WAS NARROWED HERE AND THE FORMER WORDING IS PRESERVED IN PLACE (#12.)** Ruling 3 of
+`cowork_rulings_2026_08_31_decision_surface_sitting.md` §3b, Option B — qualify in place and add the
+on-domain evidence; the decision surface is
+`ratification_surfaces/cowork_dpk_ground_surface_2026_08_31.md`. **THE FORMER WORDING WAS:** *"and
+the finding that automatic systems already score **above** human-human agreement on the same data,
+which means a single-answer target has stopped measuring harmony and started measuring one
+annotator. [FACT.]"* — quoted with its own emphasis markers intact. *Why it was narrowed:* the
+finding verifies at its primary, and it is neither forbidden nor undeclared; what was wrong is that
+a result ONE study reports was written as a settled property of
+the field, which #1 and the theory-grounding corollary reach. **DP-K itself is not reopened, and its
+first ground — the ground truth's own form, read at the object on this repertoire — is untouched.**
+**No contradiction is asserted between the two studies:** they differ in year, in corpus and in
+system generation, and no source this pass read compares them. *Why the two further grounds were
+added rather than merely noted:* §7 calls the rival-set shape the single most consequential shape
+decision in that section, and the pass found evidence for it on this project's own repertoire where
+the charter had been resting on popular-music audio.
 
 **DP-L — Is the chord symbol a decision or a derivation?** **CHOSEN: a derivation, published as a view.**
 

@@ -60,26 +60,27 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "3e75ef85bce5805eefee0f5015da59d88cc0582a"
+BASE_COMMIT = "b8e738448ea061a2212d82de454e46a55ecf6f8f"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_third_landing_2026_08_28.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_phase_close_second_2026_08_30.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
-# dispatch is dated 2026-08-30 and this batch ran on 2026-08-30, so the two agree for the first time
-# in this run of batches; the field is kept authored rather than inferred because the archive header
+# dispatch is dated 2026-08-31 and this batch ran on 2026-08-31, so the two agree, as they did for
+# the batch before it; the field is kept authored rather than inferred because the archive header
 # states when the ACT happened, and a header carrying a dispatch's date would say something false
 # about the record (#10) on any batch where the two differ again. It is a fourth authored field
 # beside the three aiming inputs above.
-ACT_DATE = "2026-08-30"
-DISPATCH = "cc_instruction_phase_close_second_2026_08_30.md"
+ACT_DATE = "2026-08-31"
+DISPATCH = "cc_instruction_reading_pass_landing_second_2026_08_31.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
-# batch's own `STATUS.md` entries in the same numbered task — its Task 2, item 1 — so both halves
-# of "the same act that writes its own entries" sit inside Task 2, and Task 2 is what the archive
-# header names. No sub-item is carried, because the header names an act rather than a sub-step and
-# every previous aiming names a whole task.
-TASK = "Task 2"
+# batch's own `STATUS.md` entry in the same numbered task — its Task 5, whose closing paragraph
+# orders the update and the forward bound together — so both halves of "the same act that writes
+# its own entries" sit inside Task 5, and Task 5 is what the archive header names. No sub-item is
+# carried, because the header names an act rather than a sub-step and every previous aiming names a
+# whole task.
+TASK = "Task 5"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -212,6 +213,9 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_third_landing_2026_08_28.md, Task 2",
      "base_commit": "0396bb6a70a6ad983ee14c84d85e9201c8f7ef16",
      "the_then_previous_batch": "cc_instruction_second_landing_2026_08_28.md"},
+    {"executing_act": "cc_instruction_phase_close_second_2026_08_30.md, Task 2",
+     "base_commit": "3e75ef85bce5805eefee0f5015da59d88cc0582a",
+     "the_then_previous_batch": "cc_instruction_third_landing_2026_08_28.md"},
 ]
 
 ARCHIVE_HEADER = (
