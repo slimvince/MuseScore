@@ -623,7 +623,7 @@ Per the ruled output form: candidates enumerated from every source kind with est
 most one chosen per concern, or NONE** written as *underived*; and the rivals recorded in the defense,
 so that a later reader can re-test whether the ground for excluding each still holds.
 
-### 9.0 The prior question: what is a unit? — PUT TO THE USER, NOT SETTLED
+### 9.0 The prior question: what is a unit? — SETTLED: a unit is a DECISION the analysis makes about the music
 
 The three candidate readings are units as **factors of the model**, units as **decisions the analysis
 makes about the music**, or units as **a reconciliation of the two**.
@@ -641,7 +641,30 @@ independence claims rather than published-fact contracts. *What the reconciliati
 change:* every decision would carry its factor set as sub-units, roughly doubling the unit count and
 making every charter two-tiered.
 
-**Stated as this phase's first ratified finding, for the user to rule. It is not settled here.**
+**SETTLED BY THE USER, 2026-08-31 — Ruling 8 of
+`cowork_rulings_2026_08_31_decision_surface_sitting.md`.** A unit of this architecture is a
+**decision the analysis makes about the music** — the second of the three readings above. **A factor
+is not a unit:** §0 states that a factor is *"a means of computing a decision, never a decision."*
+**The factor roster and the terms that rate candidate readings stay inside L2's detail
+specification**, where §5's L2 charter and DP-P already place them.
+
+**★ THIS SECTION'S HEADING AND ITS CLOSING SENTENCE WERE CORRECTED 2026-08-31 ON THE USER'S RULING,
+WITH BOTH FORMER WORDINGS PRESERVED IN PLACE (#12.)** Ruling 8 of
+`cowork_rulings_2026_08_31_decision_surface_sitting.md` §3g — Option A, the grain of a unit is the
+decision; the user's words, verbatim, *"Agree on A"* — scoped into a narrow batch of its own by
+Ruling 18 (§3r) of the same record. **THE FORMER HEADING WAS:** *"### 9.0 The prior question: what is
+a unit? — PUT TO THE USER, NOT SETTLED"*. **THE FORMER CLOSING SENTENCE WAS:** *"**Stated as this
+phase's first ratified finding, for the user to rule. It is not settled here.**"* — each quoted with
+its own heading marker and emphasis markers intact. **Both are SUPERSEDED**: each said the question
+was open, which it ceased to be when the ruling stood, and a governing surface that misstates the
+record on the prior question is the one statement in it most
+able to bend a derivation written under it. *Why the words are kept rather than deleted:* a
+preservation block is marked as superseded and so reads as history, and removing it would hide from
+a later reader that the charter has been corrected. **The three candidate readings above, the
+evidence paragraph and the what-each-reading-would-change paragraph are outside the ruled edit and
+are untouched**; an excluded alternative is evidence about the choice. **No design point is
+reopened, and no charter, boundary contract or other section of this document is edited by that
+ruling.**
 
 ### The design points
 
@@ -898,10 +921,23 @@ such labels stands as an open increment. **An unowned object is how one concern 
 a span may consider is part of L2's specification and carries its own defense (§5, L2). Where such a
 rule exists without a recorded basis, no ceiling claim over that search is established.
 
-**R-6 — Three design points are underived and one is put to the user.** DP-N (the cadential six-four),
+**R-6 — Three design points are underived.** DP-N (the cadential six-four),
 DP-O (hierarchy) and DP-Q (declining to read a span) are open with their falsifiers or their settling
-conditions stated; §9.0 (the grain of a unit) is a finding for the user to rule. **None is filled with
+conditions stated. **None is filled with
 the most plausible reading.**
+
+**★ R-6's HEADING AND ITS §9.0 CLAUSE WERE CORRECTED 2026-08-31 ON THE USER'S RULING, WITH THE FORMER
+WORDING PRESERVED IN PLACE (#12.)** Ruling 8 of
+`cowork_rulings_2026_08_31_decision_surface_sitting.md` §3g, scoped by Ruling 18 (§3r) of the same
+record. **THE FORMER WORDING WAS:** *"**R-6 — Three design points are underived and one is put to the
+user.** DP-N (the cadential six-four), DP-O (hierarchy) and DP-Q (declining to read a span) are open
+with their falsifiers or their settling conditions stated; §9.0 (the grain of a unit) is a finding for
+the user to rule. **None is filled with the most plausible reading.**"* — quoted with its own emphasis
+markers intact, and **SUPERSEDED**. *Why it was corrected:* that ruling settled §9.0, so a risk row
+listing it among the items awaiting a ruling states something false about the record. **DP-N, DP-O and
+DP-Q stand EXACTLY as they are** — the ruling says so in terms — and so does the closing sentence that
+none is filled with the most plausible reading; what is struck is the §9.0 clause and the half of the
+heading that counted it.
 
 **R-7 — The literature behind this document is not coverage.** The outward sweep this project ran
 declares itself non-exhaustive: one item was actually read and every other is a title and an abstract,

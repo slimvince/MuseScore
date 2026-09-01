@@ -60,6 +60,50 @@ THE SIX MEMBERS, as ruled:
       included (amendment (a3); the founding-instance and detection-signature columns are
       implementation descriptions and are excluded).
 
+AND, SINCE 2026-08-31, PER-SUBJECT EXTRAS AFTER THEM (user, Ruling 16 of
+`cowork_rulings_2026_08_31_decision_surface_sitting.md` -- his words, verbatim: "extend
+generator").  Ruling 14 first put such an addition OUTSIDE this tool and ruled its own overturn
+condition; it fired, decisively because `check_all` compares the DIRECTORY LISTING against the
+generated set, so a file written into a pack directory from outside makes that pack permanently
+STALE.  The extension is ADDITIVE AND PER-SUBJECT: the ruled six stay in every pack, unchanged
+and in their ruled order -- which `build_subject` now STOPs on rather than promising -- and a
+subject may carry EXTRAS after them.  An extra is quoted from named PARTS and may carry two
+authored filters, `removals` (a passage by anchor text) and `cuts` (a section by what its heading
+contains), each VERIFIED IN BOTH DIRECTIONS on every render: what was removed is absent, and
+re-inserting exactly what was removed reproduces the source byte for byte.  Neither marks its
+omission in place -- the verification is that the rendered member equals its source with exactly
+those spans deleted, and a mark is an addition -- so what was cut is disclosed to the session in
+the read-me instead.  `EXTRAS` carries an entry for EVERY subject and an empty list is authored,
+never left absent.
+
+AND, SINCE 2026-08-31, A SPENT SUBJECT IS FROZEN RATHER THAN RE-RENDERED (user, Ruling 17(a) of
+`cowork_rulings_2026_08_31_decision_surface_sitting.md`).  A subject whose deriving session HAS
+RUN is SPENT: its pack is no longer an input to be kept current, it is the RECORD OF WHAT THAT
+SESSION WAS GIVEN.  D-646 is the ruled shape -- *a generated record that must outlive its own
+writer is frozen at an established snapshot, and the freeze is enforced by a hash STOP* -- and
+`FROZEN` below is that snapshot: per subject, one digest per file of its pack directory.
+
+  WHY A FREEZE AND NOT A REFRESH, recorded here so a later reader meets the ground rather than
+  the mechanism alone.  Members (2) and (4) of both spent packs no longer re-render, because
+  `CLAUDE.md` and `cowork_audit_protocol.md` have GROWN since those packs were rendered.  The
+  drift is ADDITION-ONLY, and the first lines a re-render would add are the P-1
+  ordinary-session-start-read clause and the P-2 standing dispatch clause, BOTH RATIFIED
+  2026-08-29 -- after both packs were rendered and after both their sessions ran.  Re-rendering
+  would therefore make those packs claim their sessions read rules that did not yet exist, which
+  is a falsification of the record of two completed derivations (#12).
+
+  THE DIGEST IS THE GIT BLOB HASH OF THE FILE'S OWN BYTES, and that is the point of choosing it:
+  `git hash-object <file>` reproduces it from OUTSIDE this tool, so the freeze is checkable
+  without trusting the generator that declares it (#19).  It was established at the objects when
+  the table was filled that the filtered and unfiltered hashes agree for every one of these
+  files, so the recorded digest is the hash of the bytes on disk and not of a normalized form.
+
+  WHAT THE FREEZE DOES.  `write_all` writes NOTHING into a frozen subject's directory.
+  `check_all` verifies that subject against its RECORDED DIGESTS instead of against a re-render,
+  in both directions -- every recorded file present, every present file recorded, every digest
+  equal -- and any mismatch is a STOP rather than a drift line, because a moved frozen file is
+  not staleness to be regenerated away.  The manifest CONTINUES TO CARRY both subjects' entries.
+
 THE LEAK CHECK, AND ITS SCOPE, STATED HERE BECAUSE A SCOPE THAT IS NOT STATED READS AS TOTAL.  It
 runs over MEMBERS (5) AND (6) ONLY -- the two members this tool GENERATES rather than quotes.  An
 entry whose rendered fields carry a withheld identity string, the withheld document's name, a
@@ -92,7 +136,34 @@ THE STOPS, so this cannot silently stop being a derivation:
   7. a member's file that the tree does not carry STOPS it;
   8. a withheld PASSAGE whose opening or closing anchor is not found exactly once inside the
      bullet the ruling scopes it to STOPS it, and so does a closing anchor that precedes its
-     opening.
+     opening;
+  9. a subject with no authored `EXTRAS` entry STOPS it -- an empty list is authored so that a
+     missing one cannot read as an empty one;
+ 10. an EXTRA's removal anchor not found exactly once, or not sitting inside its own delimiter
+     pair, STOPS it; an EXTRA's cut heading not found exactly once, or not terminated by a
+     further heading at its own level, STOPS it; two of a part's filters overlapping STOPS it;
+     and EITHER DIRECTION of the extras' verification failing STOPS it -- filtered text still
+     present, or re-inserting what was removed not reproducing the source;
+ 11. the ruled six not intact, in their ruled order, at the head of a subject's rendered members
+     STOPS it;
+ 12. a FROZEN subject whose directory does not hold EXACTLY the recorded files, or one of whose
+     files does not carry its recorded digest, STOPS it -- in both directions, so neither an
+     added file nor a removed one passes; a FROZEN entry naming a subject this tool does not
+     build STOPS it; and a freeze record missing its finding, its date or its reason STOPS it,
+     on the same demand every other authored input here answers.
+
+THE FOUR RESIDUALS THE EXTENSION CAUSED ARE REPAIRED (user, Ruling 17(c) of
+`cowork_rulings_2026_08_31_decision_surface_sitting.md`).  When the extras dimension landed,
+`the_rulings_it_executes`, `the_STOPS`, `what_is_AUTHORED` and `the_pack_files_in_order` still
+described the PRE-EXTENSION tool -- the last naming the ruled six and the read-me and no
+subject's extras -- and the read-me's stop-and-record clause still read *"including one of these
+six"*.  They were left standing then, and deliberately: the dispatch that ordered the extension
+made it a STOP for the manifest to change by anything other than the addition of the new subject,
+and every one of those fields is global.  Ruling 17(c) RELAXES that bar for this purpose and for
+no other, and the four are now repaired: `the_pack_files_in_order` is DERIVED PER SUBJECT from
+the members actually rendered for it, the three descriptive fields state this tool's actual
+state, and the read-me's count is derived.  THE STOP-AND-RECORD CLAUSE'S RULE IS UNCHANGED and
+the boundary clause is untouched -- only the count moved.
 
 WHAT THIS DOES NOT ASSERT.
   * That the CANDIDATE CRITERION is complete.  Its reach is that of a pattern match over the
@@ -116,6 +187,7 @@ Run:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -228,10 +300,256 @@ MEMBERS = [
 
 READ_ME = "00_READ_THIS_FIRST.md"
 
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+# AUTHORED — the FROZEN table: a SPENT subject, pinned at the blobs its pack actually carries.
+#
+# THE RULING THIS EXISTS FOR (user, 2026-08-31, Ruling 17(a) of
+# `cowork_rulings_2026_08_31_decision_surface_sitting.md`), quoted verbatim:
+#
+#     The two existing packs are not re-rendered.  They are frozen, and `--check` ranges over
+#     live subjects. … `harmony-boundary` and `scoring-model` are pinned at their current blobs
+#     as SPENT, with that hash STOP; nothing is re-rendered and nothing is lost, and `l0-l1` can
+#     go green on its own.
+#
+# WHAT MAKES A SUBJECT SPENT, stated so the table is not read as a convenience: its deriving
+# session HAS RUN, so its pack is no longer an input to be kept current — it is the record of
+# what that session was given, and D-646 is the ruled shape for a generated record that must
+# outlive its own writer.
+#
+# THE GROUND FOR FREEZING RATHER THAN REFRESHING, which is a fact and not a preference: members
+# (2) and (4) of both packs no longer re-render because `CLAUDE.md` and `cowork_audit_protocol.md`
+# have GROWN, and the first lines a re-render would add are the P-1 and P-2 clauses RATIFIED
+# 2026-08-29 — after both packs were rendered and after both their sessions ran.  A re-render
+# would make those packs claim their sessions read rules that did not yet exist (#12).
+#
+# THE DIGEST IS THE GIT BLOB HASH OF THE FILE'S OWN BYTES.  `git hash-object <file>` reproduces
+# every value below from outside this tool, so the freeze does not rest on this generator's own
+# word (#19).  Each digest was taken at the object on 2026-08-31, and it was established in the
+# same act that `git hash-object` and `git hash-object --no-filters` agree on every one of these
+# files — so the recorded value is the hash of the bytes on disk, not of a normalized form.
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+FROZEN: dict[str, dict] = {
+    "harmony-boundary": {
+        "finding": ("Its deriving session has run.  `--check` reports members (2) and (4) STALE "
+                    "because `CLAUDE.md` and `cowork_audit_protocol.md` have grown since this "
+                    "pack was rendered, and the drift is addition-only."),
+        "date": "2026-08-31",
+        "reason": ("Re-rendering would add to this pack the P-1 and P-2 clauses ratified "
+                   "2026-08-29 — after this pack was rendered and after its session ran — and so "
+                   "would make the pack claim its session read rules that did not yet exist "
+                   "(#12).  Frozen at the blobs it carries, under D-646, with the hash STOP."),
+        "digests": {
+            "00_READ_THIS_FIRST.md": "ae9edbb2cef09eb94f1156713f1dc22e9d71b402",
+            "01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+            "02_the_guiding_principles_and_the_conventions.md":
+                "5d1fd0365379ba90ae817a5a1c5e9446348f0744",
+            "03_the_writing_standards.md": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+            "04_the_dispatch_protocol.md": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+            "05_the_ratified_design_intent.md": "dbcd948d20fffaec8eb45e84ee7620b33fec5ea8",
+            "06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+        },
+    },
+    "scoring-model": {
+        "finding": ("Its deriving session has run.  `--check` reports members (2) and (4) STALE "
+                    "for the same two grown sources, and the drift is addition-only here too."),
+        "date": "2026-08-31",
+        "reason": ("The same ground, and it is the same two ratified clauses: a re-render would "
+                   "put rules dated after this session into the pack that session was given "
+                   "(#12).  Frozen at the blobs it carries, under D-646, with the hash STOP."),
+        "digests": {
+            "00_READ_THIS_FIRST.md": "5068c69314655a6b258196e7b30886c8350a083c",
+            "01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+            "02_the_guiding_principles_and_the_conventions.md":
+                "cf718c5678b07e89924b2e39d53982074069fa9c",
+            "03_the_writing_standards.md": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+            "04_the_dispatch_protocol.md": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+            "05_the_ratified_design_intent.md": "60563ab26e5c5c8827e32645b12eceaeb355933b",
+            "06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+        },
+    },
+    # `l0-l1` IS ABSENT DELIBERATELY, and its absence is what makes it LIVE: its deriving session
+    # has not run, so its pack is still an input and must stay current with its sources.
+}
+
 # The header row of `DEFECT_TYPES.md`'s catalog table, matched exactly once.  Amendment (a3)
 # admits its first two columns — `ID` and `type (plain)` — and excludes the other three.
 DEFECT_TABLE_HEADER = "| ID | type (plain) | founding instance | detection signature | mechanical? |"
 DEFECT_COLUMNS_KEPT = 2
+
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+# AUTHORED — the PER-SUBJECT EXTRAS, rendered AFTER the ruled six.
+#
+# THE RULING THIS EXISTS FOR (user, 2026-08-31, Ruling 16 of
+# `cowork_rulings_2026_08_31_decision_surface_sitting.md`).  The user's words, verbatim:
+#
+#     extend generator
+#
+# and the shape ruled with them, quoted verbatim from the same ruling:
+#
+#     `MEMBERS` is global and was ruled by the user on 2026-08-22.  The extension is therefore
+#     ADDITIVE and PER-SUBJECT: the ruled six stay in every pack, unchanged and in their ruled
+#     order, and a subject may carry EXTRAS after them.  For the two existing subjects the extras
+#     list is empty, so both existing packs and the manifest must re-render BYTE-IDENTICAL.
+#
+# WHY THE GENERATOR RATHER THAN THE BRIEF.  Ruling 14 first put the filtered charter member
+# outside this tool and ruled its own overturn condition; it fired at three findings in this
+# file, the decisive one being that `check_all` compares the DIRECTORY LISTING against the
+# generated set — so a file written into a pack directory from outside makes that pack
+# permanently STALE.  Extras are members, inside the pack's own integrity check.
+#
+# EVERY SUBJECT CARRIES AN ENTRY HERE, and an EMPTY list is AUTHORED rather than left absent, so
+# that the emptiness is visible where a reader looks for a subject's extras — the shape the
+# `scoring-model` verdict table already uses.  A subject absent from this table STOPS the tool.
+#
+# AN EXTRA IS RENDERED FROM PARTS.  Each part names ONE source file, the spans of it that are
+# taken (the same four span kinds the ruled members use, by ANCHOR TEXT and never by line
+# number), and two AUTHORED FILTERS over what those spans returned:
+#
+#   removals  a passage addressed by ANCHOR TEXT, deleted from the opening of the delimiter pair
+#             it sits inside to that pair's close.  The anchor must match EXACTLY ONCE in the
+#             part's own text, whitespace-normalized so an anchor may span a line break, or the
+#             tool STOPS.
+#   cuts      a section addressed by a string its HEADING contains, deleted from that heading up
+#             to the next heading at the same level.  Not found exactly once, or not terminated
+#             by such a heading, STOPS the tool.
+#
+# BOTH FILTERS ARE VERIFIED IN BOTH DIRECTIONS ON EVERY RUN, and a failure in either direction is
+# a STOP: what was removed is ABSENT from what is rendered, AND re-inserting exactly what was
+# removed at the offsets it came from reproduces the source byte for byte — which is what proves
+# NOTHING ELSE was taken out.  Neither filter marks its omission in place: the ruling's own
+# verification is that the rendered member equals its source with exactly the named spans
+# deleted, and a mark is an addition.  What was cut is disclosed to the session in the read-me
+# instead, which is where the design-intent member's own gaps are disclosed.
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+EXTRAS: dict[str, list[dict]] = {
+    # EMPTY BY RULING for both existing subjects, and the emptiness is the proof the extension is
+    # additive: their packs and their manifest entries must re-render byte-identical.
+    "harmony-boundary": [],
+    "scoring-model": [],
+
+    "l0-l1": [
+        {
+            "number": 7,
+            "filename": "07_the_charter_the_layers_and_the_decisions.md",
+            "title": "The ratified charter — the layers, their contracts, and the architecture "
+                     "decisions",
+            "source": "FRAMEWORK.md",
+            "rendered_from": "the file itself, quoted — §5 and §9 whole, with two passages removed",
+            "parts": [
+                {
+                    "source": "FRAMEWORK.md",
+                    "spans": [
+                        {"kind": "heading-to-heading",
+                         "start": "## 5. Building-block view — the layers",
+                         "end": "## 6. Runtime view — scenarios"},
+                        {"kind": "heading-to-heading",
+                         "start": "## 9. Architecture decisions",
+                         "end": "## 10. Quality and testing"},
+                    ],
+                    # Ruling 11 Decision 1 cuts every passage describing what this project
+                    # currently has.  Ruling 16 carried Ruling 14's other half unchanged and
+                    # named two: DP-N's and DP-Q's stage-two parentheticals.  Ruling 17(b) then
+                    # widened the filter by ONE and no more, on the sweep the extension reported
+                    # — §5's second-axis provenance parenthetical.  The filter is exactly these
+                    # three; widening it further is the user's act, not this tool's.
+                    #
+                    # NOT REMOVED, and the exclusions are recorded because an excluded candidate
+                    # is evidence about the filter (Ruling 17(b)): DP-N's two disagreeing
+                    # analyses and DP-Q's three exemplar analyses DESCRIBE CORPUS MATERIAL rather
+                    # than what this project's system does, so they do not breach
+                    # implementation-blindness, and both are load-bearing EVIDENCE for their
+                    # design points; and the two references to the ledger are MOOT, the pack
+                    # carrying that document whole as member (9).
+                    "removals": [
+                        {"anchor": "This is adopted from this project's material",
+                         "opens_with": "*(",
+                         "closes_with": ")*",
+                         "why": ("§5's second-axis parenthetical.  Ruling 17(b) of "
+                                 "`cowork_rulings_2026_08_31_decision_surface_sitting.md`: pure "
+                                 "provenance — it tells the reader that this project's own "
+                                 "material holds the decision — the same shape as the two "
+                                 "anchors Ruling 16 carried, and its removal costs the deriving "
+                                 "session nothing.")},
+                        {"anchor": "Stage two established that this project's own layer "
+                                   "specifications",
+                         "opens_with": "*(",
+                         "closes_with": ")*",
+                         "why": ("DP-N.  Ruling 16 of "
+                                 "`cowork_rulings_2026_08_31_decision_surface_sitting.md`, "
+                                 "carrying Ruling 14's unspent half: it states what this "
+                                 "project's own layer specifications do and do not say about the "
+                                 "cadential six-four, which is a description of what this project "
+                                 "currently has.")},
+                        {"anchor": "Stage two found the same question open in this project's own "
+                                   "record",
+                         "opens_with": "*(",
+                         "closes_with": ")*",
+                         "why": ("DP-Q.  The same ruling: it states a rule this project's own "
+                                 "record carries about abstention on the tonality axis, and that "
+                                 "the record does not settle which governs.")},
+                    ],
+                    "cuts": [],
+                },
+            ],
+        },
+        {
+            "number": 8,
+            "filename": "08_the_five_research_extracts.md",
+            "title": "Five published sources, read at the object — the L1 slice",
+            "source": "reading_pass/extracts/ — the five named in "
+                      "`reading_pass/candidacy_upgrades.md`'s reading-progress table",
+            "rendered_from": "the five files themselves, quoted whole, each with ONE named "
+                             "section cut",
+            "parts": [
+                {
+                    "source": f"reading_pass/extracts/{stem}.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [],
+                    # Ruling 11 Decision 2: the extracts go in WITH their
+                    # "What an L1 detail specification could adopt, adapt, or must argue against"
+                    # sections CUT — this side's conclusions over the papers, which a deriving
+                    # session must reach for itself.  ONE named section, and no more: the
+                    # findings section each extract also carries is deliberately NOT cut.
+                    "cuts": [
+                        {"heading_contains": "detail specification could adopt, adapt, or must "
+                                             "argue against",
+                         "heading_level": "## ",
+                         "why": ("Ruling 11 Decision 2 of "
+                                 "`cowork_rulings_2026_08_31_decision_surface_sitting.md`: it is "
+                                 "this side's conclusion about what an L1 specification should "
+                                 "do with the paper, which is the deriving session's own work.")},
+                    ],
+                }
+                for stem in (
+                    "pardo-birmingham-2002-algorithms-for-chordal-analysis",
+                    "temperley-sleator-1999-modeling-meter-and-harmony",
+                    "bigo-feisthauer-giraud-leve-2018-relevance-of-musical-features-for-cadence-"
+                    "detection",
+                    "karystinaios-widmer-2022-cadence-detection-graph-neural-networks",
+                    "sears-pearce-caplin-mcadams-2018-simulating-expectations-for-tonal-cadences",
+                )
+            ],
+        },
+        {
+            "number": 9,
+            "filename": "09_the_empirical_findings_ledger.md",
+            "title": "The admitted empirical findings",
+            "source": "EMPIRICAL_FINDINGS_LEDGER.md",
+            "rendered_from": "the file itself, quoted, whole and unfiltered",
+            "parts": [
+                # WHOLE AND UNFILTERED, by Ruling 12's correction of record: §3.4 of
+                # `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` names
+                # "the same independent sources and ledger as the framework phase" among this
+                # phase's inputs, so the ledger enters by the phase definition's own naming and
+                # not by any decision taken at that sitting.
+                {"source": "EMPIRICAL_FINDINGS_LEDGER.md",
+                 "spans": [{"kind": "whole"}],
+                 "removals": [],
+                 "cuts": []},
+            ],
+        },
+    ],
+}
 
 # ══════════════════════════════════════════════════════════════════════════════════════════════
 # AUTHORED — the WITHHELD table, per subject.  Each identity, document and passage carries its
@@ -339,6 +657,38 @@ WITHHELD: dict[str, dict] = {
         # NO `the_identity_the_ruling_names`: the ruling names none, the family being empty.
     },
 
+    # ── THE FIRST DERIVING SUBJECT OF THE DETAIL-SPECIFICATION PHASE — an EMPTY withheld family ─
+    # Ruling 10 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` made L0+L1 that
+    # phase's first deriving subject.  The EMPTY family is ordered by Task 4 of
+    # `cc_instruction_l0l1_boot_pack_2026_08_31.md`, quoted verbatim:
+    #
+    #     Add `l0-l1` with an EMPTY withheld family, on the `scoring-model` precedent Task 1
+    #     established.
+    #
+    # ★ WHAT THE RECORD DOES AND DOES NOT SAY, WRITTEN HERE SO IT IS NOT LATER READ AS MORE THAN
+    # IT IS.  For `scoring-model` a ruling states in its own words that the unit is not held out
+    # and has no oracle.  NO RULING OF 2026-08-31 SAYS THAT OF `l0-l1`.  What the record carries
+    # is the dispatch's order above and the precedent it rests on, and that is what is stated
+    # here — the ground is DECLARED, not established (#24), and inventing a ruling to fill it
+    # would be the defence-written-afterwards that the never-work-from-memory rule forbids.
+    "l0-l1": {
+        "the_subject_in_plain_words":
+            "L0, the input contract — what a notated record must supply, what may be assumed of "
+            "it, and what happens when a real score does not supply it — and L1, which finds the "
+            "moments at which a harmony may begin and publishes what the notation says at each, "
+            "deciding nothing about the music.",
+        "the_oracle_this_family_protects": (
+            "NONE IS NAMED.  No withheld identities, no withheld documents, no withheld passages: "
+            "Task 4 of `cc_instruction_l0l1_boot_pack_2026_08_31.md` orders the family empty on "
+            "the `scoring-model` precedent, and the standing leak check does the whole of the "
+            "cutting over the two generated members.  What is NOT claimed, because no ruling of "
+            "2026-08-31 states it: that this unit is not held out against an oracle.  The record "
+            "carries the order and the precedent, and no more."),
+        "withheld_documents": {},
+        "withheld_passages": [],
+        # NO `the_identity_the_ruling_names`: none is named, the family being empty.
+    },
+
     # THE `framework` SUBJECT IS ABSENT DELIBERATELY, not by oversight: its deriving session is
     # not implementation-blind, so no pack is rendered for it and nothing is withheld
     # (`cowork_rulings_2026_08_28_informed_framework_sitting.md`).
@@ -373,6 +723,17 @@ CRITERION = {
     # already accept — an empty criterion returns no candidate, an empty verdict table grades
     # none, and the distribution accounts for the population exactly.
     "scoring-model": {
+        "groups": (),
+        "home_documents": (),
+        "architecture_spans": (),
+        "keywords": (),
+        "always": (),
+    },
+    # EMPTY on the same ground and in the same shape: the withheld family is empty for this
+    # subject, so no candidate has to be derived and no verdict has to be authored.  The
+    # empty-criterion branch of `criterion_block` recognizes the STATE and not the subject name,
+    # so this subject renders truthfully without a line of that function being touched.
+    "l0-l1": {
         "groups": (),
         "home_documents": (),
         "architecture_spans": (),
@@ -835,6 +1196,10 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
     # there is nothing to grade. The empty table is authored rather than left absent so that the
     # emptiness is visible here, where a reader looks for a subject's verdicts.
     "scoring-model": {},
+
+    # The first deriving subject of the detail-specification phase, in the same state and for the
+    # same reason: an empty criterion returns no candidate, so there is nothing to grade.
+    "l0-l1": {},
 }
 
 
@@ -965,6 +1330,162 @@ def withhold_passage(text: str, passage: dict, marker: str) -> tuple[str, dict]:
         "finding": passage["finding"],
         "date": passage["date"],
         "reason": passage["reason"],
+    }
+
+
+# ── the extras: two authored filters, each verified in BOTH directions ────────────────────────
+# Counted in words up to twenty, because the read-me is prose and "The 9 files of this pack"
+# would read as a defect.  Beyond twenty the digit is rendered: a pack that large is not a state
+# this tool has ever been in, and a STOP there would fail a run for a cosmetic reason.
+NUMBER_WORDS = ("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
+                "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
+                "seventeen", "eighteen", "nineteen", "twenty")
+
+
+def number_word(n: int) -> str:
+    return NUMBER_WORDS[n] if 0 <= n < len(NUMBER_WORDS) else str(n)
+
+
+def _removal_spans(text: str, removals: list[dict], rel: str) -> list[dict]:
+    """The offsets of each authored removal, located by ANCHOR TEXT and never by line number."""
+    norm, idx = _normalize(text)
+    spans = []
+    for r in removals:
+        at = _find_once(norm, r["anchor"], f"{rel}: the removal's anchor")
+        origin = idx[at]
+        opens, closes = r["opens_with"], r["closes_with"]
+        a = text.rfind(opens, 0, origin)
+        if a == -1:
+            raise Stop(f"{rel}: nothing opens with {opens!r} before the anchor {r['anchor']!r}")
+        if text.find(closes, a, origin) != -1:
+            raise Stop(f"{rel}: the nearest {opens!r} before the anchor {r['anchor']!r} is closed "
+                       f"again before the anchor is reached — the anchor is not inside it")
+        c = text.find(closes, origin)
+        if c == -1:
+            raise Stop(f"{rel}: nothing closes with {closes!r} after the anchor {r['anchor']!r}")
+        b = c + len(closes)
+        spans.append({"kind": "removal", "anchor": r["anchor"],
+                      "opens_with": opens, "closes_with": closes, "why": r["why"],
+                      "start": a, "end": b, "the_text_removed": text[a:b],
+                      "characters_removed": b - a})
+    return spans
+
+
+def _cut_spans(text: str, cuts: list[dict], rel: str) -> list[dict]:
+    """The offsets of each authored section cut, located by what its HEADING contains."""
+    lines = text.split("\n")
+    starts, pos = [], 0
+    for ln in lines:
+        starts.append(pos)
+        pos += len(ln) + 1
+    spans = []
+    for cut in cuts:
+        level, needle = cut["heading_level"], cut["heading_contains"]
+        hits = [i for i, ln in enumerate(lines) if ln.startswith(level) and needle in ln]
+        if len(hits) != 1:
+            raise Stop(f"{rel}: {len(hits)} headings at {level!r} contain {needle!r}, not exactly "
+                       f"one")
+        h = hits[0]
+        nxt = next((j for j in range(h + 1, len(lines)) if lines[j].startswith(level)), None)
+        if nxt is None:
+            raise Stop(f"{rel}: the section {lines[h]!r} is not terminated by a further {level!r} "
+                       f"heading")
+        a, b = starts[h], starts[nxt]
+        spans.append({"kind": "cut", "heading": lines[h], "heading_contains": needle,
+                      "closes_before": lines[nxt], "why": cut["why"],
+                      "start": a, "end": b, "the_text_removed": text[a:b],
+                      "characters_removed": b - a})
+    return spans
+
+
+def filter_part(text: str, part: dict, rel: str) -> tuple[str, list[dict]]:
+    """Apply one part's authored filters, and VERIFY IN BOTH DIRECTIONS or STOP.
+
+    The two directions, which are the ruling's own verification and not this tool's invention:
+    what was removed is ABSENT from what is rendered, and re-inserting exactly what was removed
+    at the offsets it came from reproduces the source BYTE FOR BYTE — which is what proves that
+    nothing else was taken out.  Nothing is marked in place: a mark would be an addition, and the
+    verification is that the rendered text equals the source with exactly these spans deleted.
+    """
+    spans = (_removal_spans(text, part.get("removals", []), rel)
+             + _cut_spans(text, part.get("cuts", []), rel))
+    spans.sort(key=lambda s: s["start"])
+    for prev, nxt in zip(spans, spans[1:]):
+        if nxt["start"] < prev["end"]:
+            raise Stop(f"{rel}: two authored filters overlap, at {prev['start']}–{prev['end']} "
+                       f"and {nxt['start']}–{nxt['end']}")
+
+    out = text
+    for s in reversed(spans):
+        out = out[:s["start"]] + out[s["end"]:]
+
+    # DIRECTION ONE — what was removed is gone.
+    for s in spans:
+        if s["the_text_removed"] in out:
+            raise Stop(f"{rel}: a filtered passage is still present in the rendered text")
+        if s["kind"] == "cut" and s["heading"] in out:
+            raise Stop(f"{rel}: the cut section's heading {s['heading']!r} is still present")
+
+    # DIRECTION TWO — nothing else was removed.
+    rebuilt, cur, fpos = [], 0, 0
+    for s in spans:
+        keep = s["start"] - cur
+        rebuilt.append(out[fpos:fpos + keep])
+        fpos += keep
+        rebuilt.append(s["the_text_removed"])
+        cur = s["end"]
+    rebuilt.append(out[fpos:])
+    if "".join(rebuilt) != text:
+        raise Stop(f"{rel}: re-inserting what was removed does not reproduce the source — "
+                   f"something else was removed")
+
+    for s in spans:
+        s.pop("start")
+        s.pop("end")
+    return out, spans
+
+
+def render_extra(extra: dict) -> tuple[str, dict]:
+    """One extra member: its parts, each taken by anchor and filtered, joined and verified."""
+    texts, part_records = [], []
+    for part in extra["parts"]:
+        rel = part["source"]
+        bodies, span_records = [], []
+        for spec in part["spans"]:
+            body, srec = span_lines(rel, spec)
+            span_records.append(srec)
+            bodies.append("\n".join(body))
+        text = "\n\n".join(bodies)
+        text, filters = filter_part(text, part, rel)
+        texts.append(text)
+        part_records.append({
+            "source": rel,
+            "spans": span_records,
+            "filters_applied": filters,
+            "★_verified_in_both_directions": (
+                "What each filter removed is ABSENT from the rendered text, AND re-inserting "
+                "exactly what was removed at the offsets it came from reproduces this source "
+                "byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every "
+                "render."),
+            "characters": len(text),
+        })
+    return "\n\n".join(texts) + "\n", {
+        "member": extra["number"],
+        "file": extra["filename"],
+        "title": extra["title"],
+        "source": extra["source"],
+        "rendered_from": extra["rendered_from"],
+        "★_this_is_an_EXTRA": (
+            "Rendered AFTER the ruled six under Ruling 16 of "
+            "`cowork_rulings_2026_08_31_decision_surface_sitting.md`.  The ruled six are not "
+            "removed, not reordered and not renamed for any subject; `MEMBERS` keeps its ruled "
+            "content."),
+        "parts": part_records,
+        "leak_checked": False,
+        "leak_not_checked_because": (
+            "The leak check is ruled over members (5) and (6) — the two this tool GENERATES.  An "
+            "extra is quoted, and what it may not carry is cut by its own authored filters, "
+            "which are verified in both directions."),
     }
 
 
@@ -1251,8 +1772,18 @@ def render_defect_types(rows: list[list[str]], header: list[str]) -> str:
     return "\n".join(out) + "\n"
 
 
-def render_what_was_cut(withheld_entries: int, passages: list[dict]) -> str:
+def render_what_was_cut(withheld_entries: int, passages: list[dict],
+                        extras_filtered: list[dict]) -> str:
     """The read-me's what-was-cut section, DERIVED from what was actually withheld.
+
+    ★ EXTENDED 2026-08-31 TO THE EXTRAS, AND THE REASON IS THE ONE THE FUNCTION ALREADY CARRIES.
+    An extra member may be filtered by its own authored removals and cuts.  Before this, a
+    subject with no withheld family but a filtered extra would have told its session that
+    *nothing has been withheld from this pack* while three of its nine members had material
+    deleted out of them silently — the same falsity, in the same section, that the licensed
+    accommodation below was written to remove.  The extras' filtering is therefore DERIVED into
+    this section from the counts, exactly as the other two kinds are, and NOT switched on a
+    subject name.  A subject whose extras are empty renders BYTE-IDENTICALLY to before.
 
     LICENSED ACCOMMODATION (ii) of §4(1) of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md`,
     quoted verbatim: *"the read-me's what-was-cut section renders truthfully for a subject with no
@@ -1277,6 +1808,20 @@ def render_what_was_cut(withheld_entries: int, passages: list[dict]) -> str:
         kinds.append(f"{n} passages inside `{member_two}`, each marked in place where it was "
                      f"removed")
 
+    held_out = bool(kinds)
+    for x in extras_filtered:
+        bits = []
+        if x["removals"]:
+            bits.append(f"{number_word(x['removals'])} passage"
+                        f"{'' if x['removals'] == 1 else 's'}")
+        if x["cuts"]:
+            bits.append(f"{number_word(x['cuts'])} whole section"
+                        f"{'' if x['cuts'] == 1 else 's'}")
+        if bits:
+            kinds.append(f"{' and '.join(bits)} taken out of `{x['filename']}` — deleted where "
+                         f"they stood,\n  with no mark, so you cannot tell from that file where "
+                         f"one was")
+
     head = "## What has been cut out of this pack, and why you are told"
     tail = ("**Do not try to reconstruct any of it, and do not treat a gap as a hint.** Derive the "
             "unit from the\ndomain and from what this pack does carry.")
@@ -1294,13 +1839,24 @@ implementation documents. You will see identifier gaps where that happened, and 
 
 {tail}"""
 
-    lead = "One kind:" if len(kinds) == 1 else "Two kinds:"
+    lead = f"{number_word(len(kinds)).capitalize()} kind{'' if len(kinds) == 1 else 's'}:"
     bullets = "\n".join("* " + k + (";" if i < len(kinds) - 1 else ".")
                         for i, k in enumerate(kinds))
+    # The opening sentence names WHY, and the why is not the same in the two states.  Where a
+    # family is withheld, the pack is cut so that what is derived can be compared against an
+    # answer the session has not read.  Where nothing is held out and only an extra is filtered,
+    # there is no such answer, and saying there is would be false.  DERIVED from what was
+    # actually withheld, not switched on a subject name.
+    opening = ("Material has been withheld from this pack **for this subject**, so that what you "
+               "derive can be\ncompared against a ruled answer you have not read."
+               if held_out else
+               "Material has been removed from this pack **for this subject**, so that what it "
+               "carries states\nwhat the analysis SHOULD do and never what this project already "
+               "has. Nothing is held back\nfrom you as an answer to be compared against; what is "
+               "gone is this side's own conclusions and\nits account of what exists.")
     return f"""{head}
 
-Material has been withheld from this pack **for this subject**, so that what you derive can be
-compared against a ruled answer you have not read. {lead}
+{opening} {lead}
 
 {bullets}
 
@@ -1308,11 +1864,21 @@ compared against a ruled answer you have not read. {lead}
 
 
 def render_read_me(subject: str, subject_words: str, passages: list[dict],
-                   withheld_entries: int) -> str:
-    names = [READ_ME] + [m["filename"] for m in MEMBERS]
+                   withheld_entries: int, members: list[dict],
+                   extras_filtered: list[dict]) -> str:
+    # DERIVED from the member count for THIS subject, which is the prose defect the per-subject
+    # extras dimension itself causes and must therefore fix (Ruling 16, 2026-08-31): the heading
+    # read "The six files of this pack, in order" and built its list from the global `MEMBERS`,
+    # so a pack carrying extras would have stated six over a directory of ten.  A subject with no
+    # extras renders BYTE-IDENTICALLY to before.
+    #
+    # THE STOP-AND-RECORD CLAUSE'S COUNT IS DERIVED THE SAME WAY (Ruling 17(c), 2026-08-31).  It
+    # read "in any file, including one of these six", which would have stated six over nine in
+    # the FIRST thing a blind session reads.  ONLY THE COUNT MOVED: the rule the clause states is
+    # unchanged, and the boundary clause above it is untouched.
     listing = "\n".join(
-        [f"{i + 1}. `{m['filename']}` — {m['title']}" for i, m in enumerate(MEMBERS)])
-    what_was_cut = render_what_was_cut(withheld_entries, passages)
+        [f"{i + 1}. `{m['filename']}` — {m['title']}" for i, m in enumerate(members)])
+    what_was_cut = render_what_was_cut(withheld_entries, passages, extras_filtered)
     return f"""# READ THIS FIRST — the whole of what this session opens
 
 You are an **implementation-blind deriving session**. Your work is to write what the analysis
@@ -1321,7 +1887,7 @@ what any existing code or specification says it currently **does**.
 
 **The unit for this session is: {subject_words}**
 
-## The six files of this pack, in order
+## The {number_word(len(members))} files of this pack, in order
 
 {listing}
 
@@ -1338,7 +1904,7 @@ read beyond this directory — your brief, score and analysis files your brief s
 name, and published research — is stated by your brief, and by nothing in this directory.
 
 **If you nonetheless meet a statement about how THIS project's analysis currently works — in any
-file, including one of these six — STOP READING THAT FILE AT THAT POINT and record WHERE you were
+file, including one of these {number_word(len(members))} — STOP READING THAT FILE AT THAT POINT and record WHERE you were
 and HOW MUCH you had seen.** That record is part of your output. It is not a failure; an unrecorded
 one is.
 
@@ -1359,6 +1925,9 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
         raise Stop(f"no authored WITHHELD table for subject {subject!r}")
     if subject not in CRITERION:
         raise Stop(f"no authored candidate criterion for subject {subject!r}")
+    if subject not in EXTRAS:
+        raise Stop(f"no authored EXTRAS list for subject {subject!r} — an empty list is authored, "
+                   f"never left absent, so that a missing one cannot read as an empty one")
     authored = WITHHELD[subject]
     design_intent = [e for e in sort_entries if e.get("proposed_class") == "DESIGN-INTENT"]
     di_ids = {e["id"] for e in design_intent}
@@ -1514,8 +2083,32 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
     if len(passages_applied) != want_passages:
         raise Stop(f"{want_passages} withheld passage(s) authored, {len(passages_applied)} applied")
 
+    # ── the EXTRAS, rendered AFTER the ruled six ─────────────────────────────────────────────
+    extras = EXTRAS[subject]
+    extras_filtered = []
+    for x in extras:
+        text, rec = render_extra(x)
+        files[x["filename"]] = text
+        rec["characters"] = len(text)
+        member_records.append(rec)
+        extras_filtered.append({
+            "filename": x["filename"],
+            "removals": sum(len(p.get("removals", [])) for p in x["parts"]),
+            "cuts": sum(len(p.get("cuts", [])) for p in x["parts"]),
+        })
+
+    # ── STOP: the ruled six are not removed, not reordered and not renamed, for any subject ───
+    # The user ruled `MEMBERS` on 2026-08-22 and Ruling 16 rules the extension ADDITIVE.  Making
+    # that mechanical rather than a promise is what stops a later edit from quietly moving one.
+    ruled = [(m["number"], m["filename"]) for m in MEMBERS]
+    rendered_six = [(r["member"], r["file"]) for r in member_records[:len(MEMBERS)]]
+    if rendered_six != ruled:
+        raise Stop(f"the ruled six are not intact and in their ruled order: rendered "
+                   f"{rendered_six}, ruled {ruled}")
+
     files[READ_ME] = render_read_me(subject, authored["the_subject_in_plain_words"],
-                                    passages_applied, len(withheld_ids))
+                                    passages_applied, len(withheld_ids),
+                                    MEMBERS + extras, extras_filtered)
 
     criterion_bound, criterion_terms = criterion_block(subject)
 
@@ -1594,9 +2187,17 @@ def build() -> tuple[dict, dict[str, dict[str, str]]]:
         if e.get("id") and e["id"] not in backbone:
             backbone[e["id"]] = e
 
+    # STOP 12's first limb: a freeze naming a subject this tool does not build would pin a
+    # directory nothing here accounts for, and its digests would never be checked.
+    orphan_freeze = sorted(set(FROZEN) - set(WITHHELD))
+    if orphan_freeze:
+        raise Stop(f"FROZEN names subject(s) this tool does not build: {orphan_freeze}")
+
     subjects, packs = {}, {}
     for subject in sorted(WITHHELD):
         rec, files = build_subject(subject, sort["entries"], backbone)
+        if subject in FROZEN:
+            rec["★_FROZEN"] = frozen_block(subject)
         subjects[subject] = rec
         packs[subject] = files
 
@@ -1622,6 +2223,26 @@ def build() -> tuple[dict, dict[str, dict[str, str]]]:
             "Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` — the second "
             "subject, `scoring-model`, rendered with an EMPTY withheld family, the standing leak "
             "check doing the whole of the cutting.",
+            "Ruling 1 of `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` — the "
+            "second withheld passage of member (2), the defense-at-its-home bullet's "
+            "founding-instances sentence, withheld for the harmony-boundary subject.",
+            "Ruling 2(a) of `cowork_rulings_2026_08_24_sizing_leak_list_sitting.md` — the "
+            "manifest's candidate-criterion block renders truthfully for a subject whose "
+            "criterion is EMPTY BY RULING, derived from the authored entry and never switched on "
+            "a subject name.",
+            "Ruling 16 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` — the "
+            "PER-SUBJECT EXTRAS dimension, ADDITIVE: the ruled six stay in every pack, unchanged "
+            "and in their ruled order, and a subject may carry extras after them.",
+            "Rulings 11 (Decisions 1 and 2) and 12 of "
+            "`cowork_rulings_2026_08_31_decision_surface_sitting.md` — what the `l0-l1` subject's "
+            "three extras carry: the charter's §5 and §9 leak-filtered, the five reading-pass "
+            "extracts with one named section cut from each, and the empirical findings ledger "
+            "whole by the phase definition's own naming.",
+            "Ruling 17 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` — (a) the two "
+            "SPENT subjects frozen at their established blobs with a hash STOP (D-646) rather "
+            "than re-rendered; (b) the filter widened by ONE named candidate and no more; (c) "
+            "the four residuals repaired, the bar that forbade it relaxed for this purpose "
+            "alone; (d) the what-was-cut section's derivation from the counts ratified.",
         ],
         "★_it_boots_no_session": (
             "Rendering the pack is not opening it. Nothing here derives a specification "
@@ -1639,6 +2260,13 @@ def build() -> tuple[dict, dict[str, dict[str, str]]]:
             "the candidate criterion the dispatch fixes",
             "one verdict per derived candidate — IN, OUT or UNPLACED — with its finding, its date "
             "and its reason",
+            "the EXTRAS a subject carries after the ruled six — each one's parts, the spans taken "
+            "from each part by ANCHOR TEXT and never by line number, and its two filters "
+            "(`removals` by anchor text, `cuts` by what a heading contains), each carrying its "
+            "own reason; an EMPTY list is authored for a subject with none, never left absent",
+            "the FROZEN table — the per-file blob digests at which a SPENT subject's pack is "
+            "pinned, with its finding, its date and its reason (the D-677 shape again), so that "
+            "the freeze is enforced by a hash STOP rather than trusted",
         ],
         "what_is_DERIVED": [
             "the candidate list, with the matching criterion recorded per candidate",
@@ -1660,8 +2288,28 @@ def build() -> tuple[dict, dict[str, dict[str, str]]]:
             "a member's source file the tree does not carry",
             "a withheld passage whose opening or closing anchor is not found exactly once inside "
             "its ruled scope, or whose closing precedes its opening",
+            "a subject with no authored EXTRAS entry — an empty list is authored so that a "
+            "missing one cannot read as an empty one",
+            "an EXTRA's removal anchor not found exactly once or not sitting inside its own "
+            "delimiter pair; an EXTRA's cut heading not found exactly once or not terminated by "
+            "a further heading at its own level; two of a part's filters overlapping; and EITHER "
+            "DIRECTION of the extras' verification failing — filtered text still present, or "
+            "re-inserting what was removed not reproducing the source",
+            "the ruled six not intact, in their ruled order, at the head of a subject's rendered "
+            "members",
+            "a FROZEN subject whose directory does not hold EXACTLY the recorded files, or one "
+            "of whose files does not carry its recorded blob digest — checked in both "
+            "directions; a FROZEN entry naming a subject this tool does not build; and a freeze "
+            "record missing its finding, its date or its reason",
         ],
-        "the_pack_files_in_order": [READ_ME] + [m["filename"] for m in MEMBERS],
+        # DERIVED PER SUBJECT (Ruling 17(c)), from the members actually rendered for it, so this
+        # field can no longer name six files over a directory of ten.  It is derived from the
+        # member records already built rather than from a second walk of `MEMBERS` and `EXTRAS`,
+        # so there is ONE derivation of a pack's file list and not two (#6).
+        "the_pack_files_in_order": {
+            subject: [READ_ME] + [r["file"] for r in rec["the_members_as_rendered"]]
+            for subject, rec in sorted(subjects.items())
+        },
         "subjects": subjects,
     }
     return manifest, packs
@@ -1671,11 +2319,93 @@ def pack_dir(subject: str) -> str:
     return os.path.join(PACK_ROOT, subject)
 
 
+# ── the freeze: enforced by a hash STOP, never by a convention (D-646) ────────────────────────
+def blob_sha1(path: str) -> str:
+    """The GIT BLOB hash of a file's own bytes — the form `git hash-object` reproduces.
+
+    Chosen over a bare content hash for one reason: an independent tool can confirm the freeze
+    without trusting this generator's own arithmetic (#19).
+    """
+    data = open(path, "rb").read()
+    h = hashlib.sha1()
+    h.update(b"blob %d\0" % len(data))
+    h.update(data)
+    return h.hexdigest()
+
+
+def verify_frozen(subject: str) -> dict:
+    """A frozen subject, checked against its RECORDED DIGESTS and never against a re-render.
+
+    BOTH DIRECTIONS, because one alone would pass a defect: every recorded file is present and
+    carries its digest, AND the directory holds no file the freeze does not record.  Any failure
+    is a STOP rather than a drift line — a frozen file that has moved is not staleness to be
+    regenerated away, it is the record of a completed derivation having been altered.
+    """
+    rec = FROZEN[subject]
+    for f in ("finding", "date", "reason"):
+        if not rec.get(f):
+            raise Stop(f"the freeze of {subject!r} lacks its {f} and does not reach the "
+                       f"derivation (amended #10, the shape every authored input here answers)")
+    d = pack_dir(subject)
+    if not os.path.isdir(d):
+        raise Stop(f"{subject} is FROZEN and its pack directory is missing")
+    on_disk = sorted(n for n in os.listdir(d) if os.path.isfile(os.path.join(d, n)))
+    recorded = sorted(rec["digests"])
+    if on_disk != recorded:
+        raise Stop(f"{subject} is FROZEN: the directory holds {on_disk}, and the freeze records "
+                   f"{recorded}")
+    checked = {}
+    for name in recorded:
+        got = blob_sha1(os.path.join(d, name))
+        want = rec["digests"][name]
+        if got != want:
+            raise Stop(f"{subject}/{name} is FROZEN at blob {want} and now hashes {got} — the "
+                       f"record of a completed derivation has been altered")
+        checked[name] = got
+    return checked
+
+
+def frozen_block(subject: str) -> dict:
+    """What the manifest says about a frozen subject, so its member records cannot mislead.
+
+    The member records below a frozen subject are built from the CURRENT sources, because this
+    tool builds every subject the same way and the ruling keeps both subjects' entries.  For a
+    frozen subject those records therefore describe what the sources WOULD render and not what
+    the directory holds — so the difference is stated here rather than left for a reader to walk
+    into, and the DIGESTS are named as the authority over the counts.
+    """
+    rec = FROZEN[subject]
+    return {
+        "★_this_subject_is_FROZEN_and_is_NOT_re-rendered": (
+            "Its deriving session has RUN, so this pack is the record of what that session was "
+            "given rather than an input to be kept current. Under D-646 it is pinned at the "
+            "digests below and the freeze is enforced by a hash STOP at `--check`, in both "
+            "directions. `write_all` writes nothing into its directory."),
+        "★_so_read_the_member_records_below_with_this_in_mind": (
+            "They are built from the sources AS THEY STAND TODAY, because every subject is built "
+            "the same way and the ruling keeps this subject's entry. Where a member's sources "
+            "have grown since the pack was rendered, the record's counts describe what WOULD be "
+            "rendered and NOT what the frozen directory holds. THE DIGESTS ARE THE AUTHORITY ON "
+            "WHAT THE DIRECTORY HOLDS."),
+        "finding": rec["finding"],
+        "date": rec["date"],
+        "reason": rec["reason"],
+        "the_digests": rec["digests"],
+        "the_digest_form": (
+            "The git blob hash of each file's own bytes — `git hash-object <file>` reproduces "
+            "every value, so the freeze can be confirmed without trusting this generator (#19)."),
+    }
+
+
 def write_all(manifest: dict, packs: dict, only: str | None) -> None:
     with open(OUT, "w", encoding="utf-8", newline="") as fh:
         fh.write(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
     for subject, files in sorted(packs.items()):
         if only and subject != only:
+            continue
+        if subject in FROZEN:
+            # THE FREEZE, at the one place that could break it.  Nothing is written into a spent
+            # subject's directory — not the whole pack, not one file of it.
             continue
         d = pack_dir(subject)
         os.makedirs(d, exist_ok=True)
@@ -1685,12 +2415,19 @@ def write_all(manifest: dict, packs: dict, only: str | None) -> None:
 
 
 def check_all(manifest: dict, packs: dict) -> int:
-    drift = []
+    drift: list[str] = []
+    frozen_checked: dict[str, dict] = {}
     want = json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
     have = open(OUT, encoding="utf-8").read() if os.path.exists(OUT) else ""
     if have != want:
         drift.append("derivation_boot_pack.json does not re-derive")
     for subject, files in sorted(packs.items()):
+        if subject in FROZEN:
+            # VERIFIED AGAINST ITS RECORDED DIGESTS, never against a re-render: the sources have
+            # grown since this pack was rendered, and re-rendering it is exactly what the ruling
+            # forbids.  A mismatch raises rather than joining `drift` — see `verify_frozen`.
+            frozen_checked[subject] = verify_frozen(subject)
+            continue
         d = pack_dir(subject)
         if not os.path.isdir(d):
             drift.append(f"{subject}: the pack directory is missing")
@@ -1709,6 +2446,8 @@ def check_all(manifest: dict, packs: dict) -> int:
             print(f"  - {d}")
         return 1
     print("the derivation boot pack re-derives")
+    for subject, checked in sorted(frozen_checked.items()):
+        print(f"  {subject}: FROZEN — {len(checked)} file(s) at their recorded blobs")
     return 0
 
 

@@ -6,7 +6,12 @@
     "Ruling 1 of `cowork_rulings_2026_08_22_pilot_order_sitting.md` — the held-out test runs first, and this generator is built with the pilot's opening.",
     "Ruling 1 of `cowork_rulings_2026_08_22_member_two_leak_sitting.md` — the founding-instance passage of the never-work-from-memory rule is withheld from member (2) as an authored input in the D-677 shape.",
     "Ruling 4(c) of `cowork_rulings_2026_08_21_successor_plan_sitting.md` — the held-out test and its oracle.",
-    "Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` — the second subject, `scoring-model`, rendered with an EMPTY withheld family, the standing leak check doing the whole of the cutting."
+    "Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` — the second subject, `scoring-model`, rendered with an EMPTY withheld family, the standing leak check doing the whole of the cutting.",
+    "Ruling 1 of `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` — the second withheld passage of member (2), the defense-at-its-home bullet's founding-instances sentence, withheld for the harmony-boundary subject.",
+    "Ruling 2(a) of `cowork_rulings_2026_08_24_sizing_leak_list_sitting.md` — the manifest's candidate-criterion block renders truthfully for a subject whose criterion is EMPTY BY RULING, derived from the authored entry and never switched on a subject name.",
+    "Ruling 16 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` — the PER-SUBJECT EXTRAS dimension, ADDITIVE: the ruled six stay in every pack, unchanged and in their ruled order, and a subject may carry extras after them.",
+    "Rulings 11 (Decisions 1 and 2) and 12 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` — what the `l0-l1` subject's three extras carry: the charter's §5 and §9 leak-filtered, the five reading-pass extracts with one named section cut from each, and the empirical findings ledger whole by the phase definition's own naming.",
+    "Ruling 17 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` — (a) the two SPENT subjects frozen at their established blobs with a hash STOP (D-646) rather than re-rendered; (b) the filter widened by ONE named candidate and no more; (c) the four residuals repaired, the bar that forbade it relaxed for this purpose alone; (d) the what-was-cut section's derivation from the counts ratified."
   ],
   "★_it_boots_no_session": "Rendering the pack is not opening it. Nothing here derives a specification statement, opens an oracle, or takes a pilot act.",
   "★_the_verdicts_clear_nothing": "The withheld family is AUTHORED. Under D-655 a session may perform an owed establishment and author its verdicts, and those verdicts CLEAR NO GUARD when they are written: they are delivered as a ratification-surface reading file, and the user rules them before any session boots from this pack.",
@@ -14,7 +19,9 @@
     "the six ruled members and their spans, each by ANCHOR TEXT and never by line number, imported from the ruled draft rather than re-decided",
     "the WITHHELD table per subject — identities, documents and passages, each with its finding, its date and its reason (the D-677 shape)",
     "the candidate criterion the dispatch fixes",
-    "one verdict per derived candidate — IN, OUT or UNPLACED — with its finding, its date and its reason"
+    "one verdict per derived candidate — IN, OUT or UNPLACED — with its finding, its date and its reason",
+    "the EXTRAS a subject carries after the ruled six — each one's parts, the spans taken from each part by ANCHOR TEXT and never by line number, and its two filters (`removals` by anchor text, `cuts` by what a heading contains), each carrying its own reason; an EMPTY list is authored for a subject with none, never left absent",
+    "the FROZEN table — the per-file blob digests at which a SPENT subject's pack is pinned, with its finding, its date and its reason (the D-677 shape again), so that the freeze is enforced by a hash STOP rather than trusted"
   ],
   "what_is_DERIVED": [
     "the candidate list, with the matching criterion recorded per candidate",
@@ -31,17 +38,44 @@
     "a verdict outside the closed three-value vocabulary, or a distribution that does not account for the candidate population",
     "an authored withheld identity that is not among the derived candidates",
     "a member's source file the tree does not carry",
-    "a withheld passage whose opening or closing anchor is not found exactly once inside its ruled scope, or whose closing precedes its opening"
+    "a withheld passage whose opening or closing anchor is not found exactly once inside its ruled scope, or whose closing precedes its opening",
+    "a subject with no authored EXTRAS entry — an empty list is authored so that a missing one cannot read as an empty one",
+    "an EXTRA's removal anchor not found exactly once or not sitting inside its own delimiter pair; an EXTRA's cut heading not found exactly once or not terminated by a further heading at its own level; two of a part's filters overlapping; and EITHER DIRECTION of the extras' verification failing — filtered text still present, or re-inserting what was removed not reproducing the source",
+    "the ruled six not intact, in their ruled order, at the head of a subject's rendered members",
+    "a FROZEN subject whose directory does not hold EXACTLY the recorded files, or one of whose files does not carry its recorded blob digest — checked in both directions; a FROZEN entry naming a subject this tool does not build; and a freeze record missing its finding, its date or its reason"
   ],
-  "the_pack_files_in_order": [
-    "00_READ_THIS_FIRST.md",
-    "01_the_phase_definitions.md",
-    "02_the_guiding_principles_and_the_conventions.md",
-    "03_the_writing_standards.md",
-    "04_the_dispatch_protocol.md",
-    "05_the_ratified_design_intent.md",
-    "06_the_defect_type_catalog.md"
-  ],
+  "the_pack_files_in_order": {
+    "harmony-boundary": [
+      "00_READ_THIS_FIRST.md",
+      "01_the_phase_definitions.md",
+      "02_the_guiding_principles_and_the_conventions.md",
+      "03_the_writing_standards.md",
+      "04_the_dispatch_protocol.md",
+      "05_the_ratified_design_intent.md",
+      "06_the_defect_type_catalog.md"
+    ],
+    "l0-l1": [
+      "00_READ_THIS_FIRST.md",
+      "01_the_phase_definitions.md",
+      "02_the_guiding_principles_and_the_conventions.md",
+      "03_the_writing_standards.md",
+      "04_the_dispatch_protocol.md",
+      "05_the_ratified_design_intent.md",
+      "06_the_defect_type_catalog.md",
+      "07_the_charter_the_layers_and_the_decisions.md",
+      "08_the_five_research_extracts.md",
+      "09_the_empirical_findings_ledger.md"
+    ],
+    "scoring-model": [
+      "00_READ_THIS_FIRST.md",
+      "01_the_phase_definitions.md",
+      "02_the_guiding_principles_and_the_conventions.md",
+      "03_the_writing_standards.md",
+      "04_the_dispatch_protocol.md",
+      "05_the_ratified_design_intent.md",
+      "06_the_defect_type_catalog.md"
+    ]
+  },
   "subjects": {
     "harmony-boundary": {
       "subject": "harmony-boundary",
@@ -2585,12 +2619,12 @@
               "kind": "heading-to-eof",
               "opens_at": "## Conventions",
               "closes_at": "the end of the file",
-              "lines_rendered": 376
+              "lines_rendered": 383
             }
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 59762
+          "characters": 60339
         },
         {
           "member": 3,
@@ -2620,12 +2654,12 @@
               "kind": "heading-to-eof",
               "opens_at": "## The dispatch protocol these audits are commissioned and run under",
               "closes_at": "the end of the file",
-              "lines_rendered": 1344
+              "lines_rendered": 1385
             }
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 99970
+          "characters": 103431
         },
         {
           "member": 5,
@@ -2650,6 +2684,433 @@
           ],
           "leak_checked": true,
           "characters": 5910
+        }
+      ],
+      "★_FROZEN": {
+        "★_this_subject_is_FROZEN_and_is_NOT_re-rendered": "Its deriving session has RUN, so this pack is the record of what that session was given rather than an input to be kept current. Under D-646 it is pinned at the digests below and the freeze is enforced by a hash STOP at `--check`, in both directions. `write_all` writes nothing into its directory.",
+        "★_so_read_the_member_records_below_with_this_in_mind": "They are built from the sources AS THEY STAND TODAY, because every subject is built the same way and the ruling keeps this subject's entry. Where a member's sources have grown since the pack was rendered, the record's counts describe what WOULD be rendered and NOT what the frozen directory holds. THE DIGESTS ARE THE AUTHORITY ON WHAT THE DIRECTORY HOLDS.",
+        "finding": "Its deriving session has run.  `--check` reports members (2) and (4) STALE because `CLAUDE.md` and `cowork_audit_protocol.md` have grown since this pack was rendered, and the drift is addition-only.",
+        "date": "2026-08-31",
+        "reason": "Re-rendering would add to this pack the P-1 and P-2 clauses ratified 2026-08-29 — after this pack was rendered and after its session ran — and so would make the pack claim its session read rules that did not yet exist (#12).  Frozen at the blobs it carries, under D-646, with the hash STOP.",
+        "the_digests": {
+          "00_READ_THIS_FIRST.md": "ae9edbb2cef09eb94f1156713f1dc22e9d71b402",
+          "01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+          "02_the_guiding_principles_and_the_conventions.md": "5d1fd0365379ba90ae817a5a1c5e9446348f0744",
+          "03_the_writing_standards.md": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+          "04_the_dispatch_protocol.md": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+          "05_the_ratified_design_intent.md": "dbcd948d20fffaec8eb45e84ee7620b33fec5ea8",
+          "06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19"
+        },
+        "the_digest_form": "The git blob hash of each file's own bytes — `git hash-object <file>` reproduces every value, so the freeze can be confirmed without trusting this generator (#19)."
+      }
+    },
+    "l0-l1": {
+      "subject": "l0-l1",
+      "the_subject_in_plain_words": "L0, the input contract — what a notated record must supply, what may be assumed of it, and what happens when a real score does not supply it — and L1, which finds the moments at which a harmony may begin and publishes what the notation says at each, deciding nothing about the music.",
+      "the_oracle_this_family_protects": "NONE IS NAMED.  No withheld identities, no withheld documents, no withheld passages: Task 4 of `cc_instruction_l0l1_boot_pack_2026_08_31.md` orders the family empty on the `scoring-model` precedent, and the standing leak check does the whole of the cutting over the two generated members.  What is NOT claimed, because no ruling of 2026-08-31 states it: that this unit is not held out against an oracle.  The record carries the order and the precedent, and no more.",
+      "the_directory": "tools/audit/derivation_boot_pack/l0-l1",
+      "★_the_bound_on_the_candidate_criterion": "NO CANDIDATE SEARCH WAS RUN FOR THIS SUBJECT, and no criterion is authored for it. Its withheld family is EMPTY BY RULING — no withheld identities, no withheld documents, no withheld passages — so there is nothing for a candidate search to find. The empty candidate list and the empty verdict table below are a CONSEQUENCE OF THAT RULING and NOT the result of a pattern match that returned nothing.",
+      "the_candidate_criterion": {
+        "★_there_is_no_criterion_here_and_nothing_was_searched": "Every term below is empty because none was authored, the withheld family being empty by ruling. Read no reach and no coverage into them: this tool made no attempt to find a candidate for this subject, so their emptiness says nothing about what the record holds on it.",
+        "the_oracle_spans_located_by_text_on_every_run": [],
+        "the_keywords": [],
+        "the_groups": [],
+        "the_home_documents": [],
+        "named_by_the_ruling": []
+      },
+      "counted": {
+        "design_intent_class": 244,
+        "candidates": 0,
+        "verdicts": {
+          "IN": 0,
+          "OUT": 0,
+          "UNPLACED": 0
+        },
+        "withheld_identities_authored": 0,
+        "withheld_identities_derived": 0,
+        "withheld_identities_total": 0,
+        "withheld_documents": 0,
+        "withheld_passages": 0,
+        "leaks": 3,
+        "design_intent_entries_rendered": 241,
+        "defect_type_rows_rendered": 25,
+        "files_in_the_pack": 10
+      },
+      "THE_WITHHELD_FAMILY": {
+        "★_what_this_is": "AUTHORED, and it CLEARS NOTHING (D-655). A session may author an establishment; its verdicts are delivered as a ratification-surface reading file and the user rules them. No session boots from this pack before that ruling.",
+        "identities": [],
+        "documents": {},
+        "passages": [],
+        "derived_cross_reference_additions": {
+          "★_what_these_are": "Entries of the DESIGN-INTENT class whose own text QUOTES OR CROSS-REFERENCES a withheld identity or names a withheld document, added to the withheld set by the derivation rather than by hand. The fields searched include `rationale` and `status_source`, which the pack does not render — a cross-reference in either is still a route to the withheld material.",
+          "★_the_bound": "ONE PASS, from the AUTHORED identities only. It is NOT transitive: an entry that cross-references one of these additions rather than an authored identity is not itself added.",
+          "additions": []
+        }
+      },
+      "THE_CANDIDATES_AND_THEIR_VERDICTS": [],
+      "LEAKS": {
+        "★_what_this_is": "An entry of member (5) or a row of member (6) whose RENDERED fields carry a withheld identity string, a withheld document's name, a `docs/` or `src/` path, or the string `ARCHITECTURE.md`. It is NOT rendered into the pack and is listed here instead.",
+        "★_the_scope, stated because a scope that is not stated reads as total": "Members (5) and (6) ONLY — the two this tool GENERATES. Members (1)-(4) are ruled WHOLE and are not string-checked; member (2)'s Conventions span names `ARCHITECTURE.md` in the never-work-from-memory rule BY DESIGN.",
+        "entries": [
+          {
+            "member": 5,
+            "id": "D-270",
+            "title": "The held-out evaluation protocol - five-fold cross-validation grouped by ground-truth analysis file",
+            "matched": [
+              {
+                "field": "verbatim",
+                "kind": "a-docs-or-src-path",
+                "matched": "docs/score_inventory.md"
+              }
+            ]
+          },
+          {
+            "member": 5,
+            "id": "D-296",
+            "title": "READING MuseScore's engraving code is allowed from anywhere we may edit; only EDITING the notation and engraving code is off limits",
+            "matched": [
+              {
+                "field": "verbatim",
+                "kind": "a-docs-or-src-path",
+                "matched": "src/notation"
+              },
+              {
+                "field": "verbatim",
+                "kind": "a-docs-or-src-path",
+                "matched": "src/engraving"
+              }
+            ]
+          },
+          {
+            "member": 5,
+            "id": "D-440",
+            "title": "The language-model integration is purpose-built and does not wait for the plugin-API reform",
+            "matched": [
+              {
+                "field": "verbatim",
+                "kind": "a-docs-or-src-path",
+                "matched": "src/llm/"
+              }
+            ]
+          }
+        ]
+      },
+      "the_members_as_rendered": [
+        {
+          "member": 1,
+          "file": "01_the_phase_definitions.md",
+          "title": "The six phases and the standing constraints over every one of them",
+          "source": "ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md",
+          "rendered_from": "the file itself, quoted",
+          "spans": [
+            {
+              "kind": "heading-to-heading",
+              "opens_at": "## 3. DECISION 1 — the proposed phase definitions",
+              "closes_before": "## 4. DECISION 2",
+              "lines_rendered": 242
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
+          "characters": 18713
+        },
+        {
+          "member": 2,
+          "file": "02_the_guiding_principles_and_the_conventions.md",
+          "title": "The guiding principles and the conventions",
+          "source": "CLAUDE.md",
+          "rendered_from": "the file itself, quoted — TWO spans only",
+          "spans": [
+            {
+              "kind": "heading-to-paragraph",
+              "opens_at": "## Guiding principles",
+              "closes_at_the_end_of_the_paragraph_opening": "**Delegation pointer",
+              "lines_rendered": 309
+            },
+            {
+              "kind": "heading-to-eof",
+              "opens_at": "## Conventions",
+              "closes_at": "the end of the file",
+              "lines_rendered": 383
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
+          "characters": 61113
+        },
+        {
+          "member": 3,
+          "file": "03_the_writing_standards.md",
+          "title": "The writing standards every derived specification is written to",
+          "source": "cowork_design_doc_template.md",
+          "rendered_from": "the file itself, quoted, whole",
+          "spans": [
+            {
+              "kind": "whole",
+              "taken": "the whole file",
+              "lines_rendered": 189
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
+          "characters": 15002
+        },
+        {
+          "member": 4,
+          "file": "04_the_dispatch_protocol.md",
+          "title": "The dispatch protocol a deriving session is dispatched under",
+          "source": "cowork_audit_protocol.md",
+          "rendered_from": "the file itself, quoted",
+          "spans": [
+            {
+              "kind": "heading-to-eof",
+              "opens_at": "## The dispatch protocol these audits are commissioned and run under",
+              "closes_at": "the end of the file",
+              "lines_rendered": 1385
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
+          "characters": 103431
+        },
+        {
+          "member": 5,
+          "file": "05_the_ratified_design_intent.md",
+          "title": "The ratified design intent, CUT for this subject",
+          "source": "tools/audit/rulings_sort_classification.json + tools/audit/decisions/backbone_decisions.json",
+          "rendered_from": "GENERATED — the DESIGN-INTENT class less the withheld family, four fields per entry",
+          "entries_rendered": 241,
+          "leak_checked": true,
+          "characters": 295073
+        },
+        {
+          "member": 6,
+          "file": "06_the_defect_type_catalog.md",
+          "title": "The defect-type catalog — type and definition only",
+          "source": "DEFECT_TYPES.md",
+          "rendered_from": "GENERATED — two columns of the catalog table",
+          "rows_rendered": 25,
+          "columns_kept": [
+            "ID",
+            "type (plain)"
+          ],
+          "leak_checked": true,
+          "characters": 5910
+        },
+        {
+          "member": 7,
+          "file": "07_the_charter_the_layers_and_the_decisions.md",
+          "title": "The ratified charter — the layers, their contracts, and the architecture decisions",
+          "source": "FRAMEWORK.md",
+          "rendered_from": "the file itself, quoted — §5 and §9 whole, with two passages removed",
+          "★_this_is_an_EXTRA": "Rendered AFTER the ruled six under Ruling 16 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`.  The ruled six are not removed, not reordered and not renamed for any subject; `MEMBERS` keeps its ruled content.",
+          "parts": [
+            {
+              "source": "FRAMEWORK.md",
+              "spans": [
+                {
+                  "kind": "heading-to-heading",
+                  "opens_at": "## 5. Building-block view — the layers",
+                  "closes_before": "## 6. Runtime view — scenarios",
+                  "lines_rendered": 205
+                },
+                {
+                  "kind": "heading-to-heading",
+                  "opens_at": "## 9. Architecture decisions",
+                  "closes_before": "## 10. Quality and testing",
+                  "lines_rendered": 197
+                }
+              ],
+              "filters_applied": [
+                {
+                  "kind": "removal",
+                  "anchor": "This is adopted from this project's material",
+                  "opens_with": "*(",
+                  "closes_with": ")*",
+                  "why": "§5's second-axis parenthetical.  Ruling 17(b) of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: pure provenance — it tells the reader that this project's own material holds the decision — the same shape as the two anchors Ruling 16 carried, and its removal costs the deriving session nothing.",
+                  "the_text_removed": "*(This is adopted from this project's material; the first-stage draft\nhad no second axis and placed phrase structure on the spine. Appendix A item 5, change 2.)*",
+                  "characters_removed": 161
+                },
+                {
+                  "kind": "removal",
+                  "anchor": "Stage two established that this project's own layer specifications",
+                  "opens_with": "*(",
+                  "closes_with": ")*",
+                  "why": "DP-N.  Ruling 16 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`, carrying Ruling 14's unspent half: it states what this project's own layer specifications do and do not say about the cadential six-four, which is a description of what this project currently has.",
+                  "the_text_removed": "*(Stage\ntwo established that this project's own layer specifications do not state the answer either: they state\nthat the sonority is functionally folded into the dominant's approach and never registers as a tonic\narrival, and that a published convention is followed for such variants generally — but no document\nstates which label is emitted. Appendix A item 4.)*",
+                  "characters_removed": 363
+                },
+                {
+                  "kind": "removal",
+                  "anchor": "Stage two found the same question open in this project's own record",
+                  "opens_with": "*(",
+                  "closes_with": ")*",
+                  "why": "DP-Q.  The same ruling: it states a rule this project's own record carries about abstention on the tonality axis, and that the record does not settle which governs.",
+                  "the_text_removed": "*(Stage two found the same question open in this project's own\nrecord, from the other direction: one rule states that the decoder always commits on the tonality axis\nand never abstains, while a product target admits calibrated abstention when evidence is weak, and the\nrecord states that which governs is not settled. Appendix A item 3.)*",
+                  "characters_removed": 338
+                }
+              ],
+              "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
+              "characters": 29030
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "The leak check is ruled over members (5) and (6) — the two this tool GENERATES.  An extra is quoted, and what it may not carry is cut by its own authored filters, which are verified in both directions.",
+          "characters": 29031
+        },
+        {
+          "member": 8,
+          "file": "08_the_five_research_extracts.md",
+          "title": "Five published sources, read at the object — the L1 slice",
+          "source": "reading_pass/extracts/ — the five named in `reading_pass/candidacy_upgrades.md`'s reading-progress table",
+          "rendered_from": "the five files themselves, quoted whole, each with ONE named section cut",
+          "★_this_is_an_EXTRA": "Rendered AFTER the ruled six under Ruling 16 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`.  The ruled six are not removed, not reordered and not renamed for any subject; `MEMBERS` keeps its ruled content.",
+          "parts": [
+            {
+              "source": "reading_pass/extracts/pardo-birmingham-2002-algorithms-for-chordal-analysis.md",
+              "spans": [
+                {
+                  "kind": "whole",
+                  "taken": "the whole file",
+                  "lines_rendered": 297
+                }
+              ],
+              "filters_applied": [
+                {
+                  "kind": "cut",
+                  "heading": "## What an L1 or L2 detail specification could adopt, adapt, or must argue against",
+                  "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                  "closes_before": "## ★ Findings, routed and not applied",
+                  "why": "Ruling 11 Decision 2 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: it is this side's conclusion about what an L1 specification should do with the paper, which is the deriving session's own work.",
+                  "the_text_removed": "## What an L1 or L2 detail specification could adopt, adapt, or must argue against\n\n- **Adopt:** the partition-point construction itself, which is the L1 charter's own — and the bound it\n  carries, that partition points are at most twice the number of notes, which is what makes the change-point\n  set finite and enumerable.\n- **Adapt:** the note weight defined as the count of minimal segments a note spans rather than its\n  notated duration. This is a live alternative to duration weighting for any evidence term over a span,\n  and the authors report choosing it over duration and velocity on measured grounds.\n- **Must argue against:** the context-free segment content score. The framework's L2 decides\n  segmentation *with* tonality, chord and chord-tone assignment; this paper's decomposition is the\n  boundary case where the segment content score reads nothing but pitch classes, and its authors' own\n  conclusion is that the assumption does not hold well enough to recover the analyst's segmentation.\n- **Must argue against, second:** the two-subtask split itself — label a segment, then search over\n  segmentations using those labels' scores. That is DP-C's *before* rival in its cleanest published form,\n  built by authors who state its limits themselves.\n\n",
+                  "characters_removed": 1266
+                }
+              ],
+              "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
+              "characters": 19434
+            },
+            {
+              "source": "reading_pass/extracts/temperley-sleator-1999-modeling-meter-and-harmony.md",
+              "spans": [
+                {
+                  "kind": "whole",
+                  "taken": "the whole file",
+                  "lines_rendered": 261
+                }
+              ],
+              "filters_applied": [
+                {
+                  "kind": "cut",
+                  "heading": "## What an L1 or L2 detail specification could adopt, adapt, or must argue against",
+                  "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                  "closes_before": "## ★ Findings, routed and not applied",
+                  "why": "Ruling 11 Decision 2 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: it is this side's conclusion about what an L1 specification should do with the paper, which is the deriving session's own work.",
+                  "the_text_removed": "## What an L1 or L2 detail specification could adopt, adapt, or must argue against\n\n- **Must argue against — the metrical grid as the boundary set.** This system's chord-span boundaries can\n  fall only on lowest-level metrical beats, 100–300 msec apart. That is DP-C's *before*-a-grid rival in its\n  metrical form, and the L1 charter's ground against it — that a window not respecting harmonic or metrical\n  boundaries counts evidence belonging to the next harmony as evidence for the current one — applies to it\n  directly. **Our change points are onsets and releases; theirs are metrical pips.**\n- **Must argue against — the division itself.** This is the cleanest published statement that meter and\n  harmony are mutually dependent, and its authors could not optimise them jointly. Our L0 removes the\n  dependency by *giving* meter rather than inferring it. The rival is not that we should infer meter; the\n  rival is the claim that a system which does not must still carry the dependency somewhere.\n- **Adapt — the line of fifths as the space for root and spelling proximity.** A spatial model in which\n  proximity is computed by a recency-weighted centre of gravity is a live candidate for any term over\n  neighbouring spans, and it is unbounded rather than circular, which the authors give as its advantage\n  (p. 18).\n- **Adapt — the ornamental dissonance rule's two conditions** (closely followed by a step, and metrically\n  weak) as a chord-tone-assignment term. Note this is DP-D's territory and this system decides ornamental\n  status *inside* the same optimisation as the root, not before it.\n- **Note, do not adopt — the prune.** The pruned dynamic-programming table is a published precedent for\n  exactly the mechanism **D-098** records as declared and never adopted; the authors' claim that it does\n  not compromise accuracy is unmeasured.\n\n",
+                  "characters_removed": 1855
+                }
+              ],
+              "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
+              "characters": 16988
+            },
+            {
+              "source": "reading_pass/extracts/bigo-feisthauer-giraud-leve-2018-relevance-of-musical-features-for-cadence-detection.md",
+              "spans": [
+                {
+                  "kind": "whole",
+                  "taken": "the whole file",
+                  "lines_rendered": 192
+                }
+              ],
+              "filters_applied": [
+                {
+                  "kind": "cut",
+                  "heading": "## What an L1 detail specification could adopt, adapt, or must argue against",
+                  "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                  "closes_before": "## ★ Findings, routed and not applied",
+                  "why": "Ruling 11 Decision 2 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: it is this side's conclusion about what an L1 specification should do with the paper, which is the deriving session's own work.",
+                  "the_text_removed": "## What an L1 detail specification could adopt, adapt, or must argue against\n\n- **Adopt — the three-onset frame (X, Y, Z) as the shape of a local cue.** A cue is not a property of one\n  moment but of an arrival and its named preparation, and the paper's own ablation shows the preparation\n  earns its place: dropping X and Y (feature set ZR) costs 0.80 → 0.52 on Bach PAC.\n- **Adopt — the bass-implied-tonality construction.** `Z-bass-compatible-with-I` is a *hypothetical*\n  tonality anchored on the bass of the arrival, tested by the presence of degrees 4 and 7 in the\n  preceding beats. **This is exactly what lets a cue be key-agnostic without being tonality-blind**, and\n  it is the construction the L1 charter's third cue names.\n- **Adapt — the metric-strength cue as a filter rather than as evidence.** `R-Z-strong-beat` *\"correctly\n  filters out more than half of the beats\"*, which is a different role from contributing weight.\n- **Must argue against — nothing here.** The paper is not a rival to any chosen point; it is the primary\n  under one.\n\n",
+                  "characters_removed": 1056
+                }
+              ],
+              "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
+              "characters": 11245
+            },
+            {
+              "source": "reading_pass/extracts/karystinaios-widmer-2022-cadence-detection-graph-neural-networks.md",
+              "spans": [
+                {
+                  "kind": "whole",
+                  "taken": "the whole file",
+                  "lines_rendered": 200
+                }
+              ],
+              "filters_applied": [
+                {
+                  "kind": "cut",
+                  "heading": "## What an L1 detail specification could adopt, adapt, or must argue against",
+                  "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                  "closes_before": "## ★ Findings, routed and not applied",
+                  "why": "Ruling 11 Decision 2 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: it is this side's conclusion about what an L1 specification should do with the paper, which is the deriving session's own work.",
+                  "the_text_removed": "## What an L1 detail specification could adopt, adapt, or must argue against\n\n- **Adopt as evidence, not as machinery — the granularity result.** A cadence cue can be carried at the\n  **note** level and aggregated upward, and the note-level figures are consistently the highest of the\n  three. Our L1 publishes cues per change point; this is measured support that the finer grain is not a\n  loss.\n- **Adapt — the finding that local features plus non-local structure beat local features alone.** The\n  general-feature arm of Table 3 shows a graph's neighbourhood supplies context that hand-designed anchor\n  heuristics were previously carrying. **For L1 this is a caution rather than a design**: L1 decides\n  nothing, so it may publish cues but must not acquire a learned context stage of its own — that context\n  belongs to L2, which sees the whole span.\n- **Must argue against — nothing here.** Like row 37, this is a primary under a chosen point, not a rival\n  to one.\n\n",
+                  "characters_removed": 972
+                }
+              ],
+              "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
+              "characters": 12710
+            },
+            {
+              "source": "reading_pass/extracts/sears-pearce-caplin-mcadams-2018-simulating-expectations-for-tonal-cadences.md",
+              "spans": [
+                {
+                  "kind": "whole",
+                  "taken": "the whole file",
+                  "lines_rendered": 238
+                }
+              ],
+              "filters_applied": [
+                {
+                  "kind": "cut",
+                  "heading": "## What an L1 detail specification could adopt, adapt, or must argue against",
+                  "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                  "closes_before": "## ★ Findings, routed and not applied",
+                  "why": "Ruling 11 Decision 2 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: it is this side's conclusion about what an L1 specification should do with the paper, which is the deriving session's own work.",
+                  "the_text_removed": "## What an L1 detail specification could adopt, adapt, or must argue against\n\n**Nothing, and that is the finding.** The method needs a key L1 does not have, needs cadence labels L1\ndoes not produce, and outputs a quantity that is not evidence about the score. **It is not an L1\ncandidate and should not be treated as one in the derivation.** Its bearing is on L3's cadence typing,\non the phrase-boundary primitive, and on measurement design — all named below and all outside the L1\nslice.\n\n",
+                  "characters_removed": 490
+                }
+              ],
+              "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
+              "characters": 16336
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "The leak check is ruled over members (5) and (6) — the two this tool GENERATES.  An extra is quoted, and what it may not carry is cut by its own authored filters, which are verified in both directions.",
+          "characters": 76722
+        },
+        {
+          "member": 9,
+          "file": "09_the_empirical_findings_ledger.md",
+          "title": "The admitted empirical findings",
+          "source": "EMPIRICAL_FINDINGS_LEDGER.md",
+          "rendered_from": "the file itself, quoted, whole and unfiltered",
+          "★_this_is_an_EXTRA": "Rendered AFTER the ruled six under Ruling 16 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`.  The ruled six are not removed, not reordered and not renamed for any subject; `MEMBERS` keeps its ruled content.",
+          "parts": [
+            {
+              "source": "EMPIRICAL_FINDINGS_LEDGER.md",
+              "spans": [
+                {
+                  "kind": "whole",
+                  "taken": "the whole file",
+                  "lines_rendered": 675
+                }
+              ],
+              "filters_applied": [],
+              "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
+              "characters": 50665
+            }
+          ],
+          "leak_checked": false,
+          "leak_not_checked_because": "The leak check is ruled over members (5) and (6) — the two this tool GENERATES.  An extra is quoted, and what it may not carry is cut by its own authored filters, which are verified in both directions.",
+          "characters": 50666
         }
       ]
     },
@@ -2780,12 +3241,12 @@
               "kind": "heading-to-eof",
               "opens_at": "## Conventions",
               "closes_at": "the end of the file",
-              "lines_rendered": 376
+              "lines_rendered": 383
             }
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 60536
+          "characters": 61113
         },
         {
           "member": 3,
@@ -2815,12 +3276,12 @@
               "kind": "heading-to-eof",
               "opens_at": "## The dispatch protocol these audits are commissioned and run under",
               "closes_at": "the end of the file",
-              "lines_rendered": 1344
+              "lines_rendered": 1385
             }
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 99970
+          "characters": 103431
         },
         {
           "member": 5,
@@ -2846,7 +3307,24 @@
           "leak_checked": true,
           "characters": 5910
         }
-      ]
+      ],
+      "★_FROZEN": {
+        "★_this_subject_is_FROZEN_and_is_NOT_re-rendered": "Its deriving session has RUN, so this pack is the record of what that session was given rather than an input to be kept current. Under D-646 it is pinned at the digests below and the freeze is enforced by a hash STOP at `--check`, in both directions. `write_all` writes nothing into its directory.",
+        "★_so_read_the_member_records_below_with_this_in_mind": "They are built from the sources AS THEY STAND TODAY, because every subject is built the same way and the ruling keeps this subject's entry. Where a member's sources have grown since the pack was rendered, the record's counts describe what WOULD be rendered and NOT what the frozen directory holds. THE DIGESTS ARE THE AUTHORITY ON WHAT THE DIRECTORY HOLDS.",
+        "finding": "Its deriving session has run.  `--check` reports members (2) and (4) STALE for the same two grown sources, and the drift is addition-only here too.",
+        "date": "2026-08-31",
+        "reason": "The same ground, and it is the same two ratified clauses: a re-render would put rules dated after this session into the pack that session was given (#12).  Frozen at the blobs it carries, under D-646, with the hash STOP.",
+        "the_digests": {
+          "00_READ_THIS_FIRST.md": "5068c69314655a6b258196e7b30886c8350a083c",
+          "01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+          "02_the_guiding_principles_and_the_conventions.md": "cf718c5678b07e89924b2e39d53982074069fa9c",
+          "03_the_writing_standards.md": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+          "04_the_dispatch_protocol.md": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+          "05_the_ratified_design_intent.md": "60563ab26e5c5c8827e32645b12eceaeb355933b",
+          "06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19"
+        },
+        "the_digest_form": "The git blob hash of each file's own bytes — `git hash-object <file>` reproduces every value, so the freeze can be confirmed without trusting this generator (#19)."
+      }
     }
   }
 }
