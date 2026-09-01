@@ -1,0 +1,311 @@
+{
+  "what_this_is": "THE SECOND L0+L1 BOOT-PACK BATCH — the two spent packs FROZEN, the filter widened by one named anchor, the four residuals repaired, and the `l0-l1` pack RENDERED. Written by the CC run of `cc_instruction_l0l1_boot_pack_second_2026_08_31.md`, executing Ruling 17 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`.",
+  "★_THE_PREDICTION_WRITTEN_BEFORE_THE_RENDER": {
+    "when": "Written to this file BEFORE the generator was run to write anything, and before the freeze was verified at the objects (#17b). The measured block below was filled afterwards, from the objects, and never from this text.",
+    "1_the_two_spent_subjects_do_not_move": "Nothing is written into `tools/audit/derivation_boot_pack/harmony-boundary/` or `.../scoring-model/`. All FOURTEEN of their files still carry the blobs Task 1 recorded, proven by re-hash after the render.",
+    "2_the_check_goes_green": "`python tools/audit/gen_derivation_boot_pack.py --check` exits 0. Each of the six red lines Task 1 recorded is accounted for: the manifest by regeneration (Ruling 17(c)), the four member lines by their subjects being FROZEN and verified against digests rather than re-rendered, and the missing `l0-l1` directory by the render.",
+    "3_the_l0-l1_pack_is_ten_files": "The read-me, the ruled six in their ruled order, and the three extras at 7, 8 and 9.",
+    "4_the_charter_member_now_carries_THREE_removals": "The two Ruling 16 carried, plus Ruling 17(b)'s one further anchor — `This is adopted from this project's material` — each matching exactly once and each verified in BOTH directions.",
+    "5_no_ruled_member_moves": "`MEMBERS` is untouched; the ruled six stand intact and in order for every subject, which the tool STOPs on rather than promising."
+  },
+  "★_the_start_state_this_batch_established_BEFORE_asserting_on_it": {
+    "why_it_is_here": "The dispatch's own standing fix: a dispatch establishes the start state of every check it will assert on, before it asserts on it. Task 1 ordered it; this is what Task 1 found.",
+    "the_check_output_line_by_line": [
+      "STALE: the derivation boot pack does not re-derive",
+      "  - derivation_boot_pack.json does not re-derive",
+      "  - harmony-boundary/02_the_guiding_principles_and_the_conventions.md does not re-render",
+      "  - harmony-boundary/04_the_dispatch_protocol.md does not re-render",
+      "  - l0-l1: the pack directory is missing",
+      "  - scoring-model/02_the_guiding_principles_and_the_conventions.md does not re-render",
+      "  - scoring-model/04_the_dispatch_protocol.md does not re-render"
+    ],
+    "★_the_relayed_list_is_CONFIRMED_at_the_object": "The first writing reported six red lines — the manifest, members (2) and (4) of both existing packs, and the missing `l0-l1` directory. Run at HEAD before this batch touched anything, `--check` reports exactly those six and no seventh. Nothing was corrected.",
+    "exit_code": 1,
+    "★_what_in_the_manifest_does_not_re-derive_established_rather_than_assumed": {
+      "why_this_was_measured": "The dispatch resolves the manifest line by REGENERATION. A session that regenerates without knowing what will move cannot say what it changed. So the on-disk manifest was diffed against a freshly built one, in memory, before anything was written.",
+      "the_difference_is_exactly_two_kinds": [
+        "FOUR SCALAR FIELDS, all of them counts of members (2) and (4) of the two existing subjects: `lines_rendered` and `characters`. They move because `CLAUDE.md` and `cowork_audit_protocol.md` have GROWN — member (2)'s Conventions span 376 lines to 383, member (4) 1344 lines to 1385.",
+        "THE WHOLE `l0-l1` SUBJECT BLOCK, absent from the on-disk manifest because the first writing STOPPED before the render."
+      ],
+      "★_and_the_consequence_this_batch_had_to_decide": "Regenerating the manifest re-derives the frozen subjects' member records from TODAY's sources, so those records would describe what the sources WOULD render and not what the frozen directory holds. That is a falsity in a generated record, and it is disclosed rather than shipped silently: each frozen subject's manifest entry now carries `★_FROZEN`, which states that the directory is not re-rendered, that the counts below it describe a render that is not on disk, and that THE DIGESTS ARE THE AUTHORITY on what the directory holds.",
+      "declared_and_not_established": "The pre-render diff was taken with the pre-freeze generator. It is a measurement of the START state and of nothing else."
+    },
+    "the_fifteen_blobs_Task_1_recorded": {
+      "★_the_form": "The git blob hash of each file's own bytes. For every one of the fifteen, `git hash-object` and `git hash-object --no-filters` AGREE — so the recorded value is the hash of the bytes on disk and not of a newline-normalized form, and the freeze is reproducible from outside this project's own tools (#19).",
+      "★_derived_not_transcribed": "Read from `FROZEN` in `tools/audit/gen_derivation_boot_pack.py`, so this artifact and the tool cannot disagree about what the freeze pins.",
+      "tools/audit/derivation_boot_pack/harmony-boundary/00_READ_THIS_FIRST.md": "ae9edbb2cef09eb94f1156713f1dc22e9d71b402",
+      "tools/audit/derivation_boot_pack/harmony-boundary/01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+      "tools/audit/derivation_boot_pack/harmony-boundary/02_the_guiding_principles_and_the_conventions.md": "5d1fd0365379ba90ae817a5a1c5e9446348f0744",
+      "tools/audit/derivation_boot_pack/harmony-boundary/03_the_writing_standards.md": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+      "tools/audit/derivation_boot_pack/harmony-boundary/04_the_dispatch_protocol.md": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+      "tools/audit/derivation_boot_pack/harmony-boundary/05_the_ratified_design_intent.md": "dbcd948d20fffaec8eb45e84ee7620b33fec5ea8",
+      "tools/audit/derivation_boot_pack/harmony-boundary/06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+      "tools/audit/derivation_boot_pack/scoring-model/00_READ_THIS_FIRST.md": "5068c69314655a6b258196e7b30886c8350a083c",
+      "tools/audit/derivation_boot_pack/scoring-model/01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+      "tools/audit/derivation_boot_pack/scoring-model/02_the_guiding_principles_and_the_conventions.md": "cf718c5678b07e89924b2e39d53982074069fa9c",
+      "tools/audit/derivation_boot_pack/scoring-model/03_the_writing_standards.md": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+      "tools/audit/derivation_boot_pack/scoring-model/04_the_dispatch_protocol.md": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+      "tools/audit/derivation_boot_pack/scoring-model/05_the_ratified_design_intent.md": "60563ab26e5c5c8827e32645b12eceaeb355933b",
+      "tools/audit/derivation_boot_pack/scoring-model/06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+      "tools/audit/derivation_boot_pack.json": "944ffd748e79abee16092c40438a105cf0d17701"
+    },
+    "the_previous_batch's_extension_confirmed_present_at_the_file": {
+      "★_why_this_was_checked": "The dispatch RELAYS the previous batch's claims about the generator and orders them RE-ESTABLISHED rather than trusted. Absent or materially different is a STOP. Each below was read at `tools/audit/gen_derivation_boot_pack.py`, by its own symbol.",
+      "the_per-subject_EXTRAS_table_rendering_after_the_ruled_six": "PRESENT — `EXTRAS`, a fourth authored per-subject table, rendered in `build_subject` after the `MEMBERS` loop.",
+      "the_removals_and_cuts_filters_with_both-ways_verification": "PRESENT — `_removal_spans`, `_cut_spans` and `filter_part`; `filter_part` runs DIRECTION ONE (what was removed is absent) and DIRECTION TWO (re-inserting what was removed reproduces the source byte for byte), each a STOP.",
+      "the_derived_read-me_count": "PRESENT — the read-me's heading is built from `number_word(len(members))`, not from a literal.",
+      "the_STOP_on_the_ruled_six_not_standing_intact_and_in_order": "PRESENT — `build_subject` compares the first `len(MEMBERS)` rendered member records against `MEMBERS` by (number, filename) and raises.",
+      "l0-l1_in_all_four_authored_tables_with_an_empty_withheld_family": "PRESENT — in `EXTRAS` (three extras), `WITHHELD` (no identities, no documents, no passages), `CRITERION` (every term empty) and `VERDICTS` (empty).",
+      "verdict": "PRESENT AND AS REPORTED. No STOP."
+    }
+  },
+  "★_THE_MEASURED_RESULT": "See `the_measured_result` below. Filled after the act, from the objects.",
+  "the_measured_result": {
+    "★_the_prediction_was_pinned_before_this_block_existed": {
+      "the_prediction-only_artifact_blob": "0b3e0b9f05a5df3fb50d2d69ee7a5217beff7ead",
+      "what_it_proves": "The prediction block above was written and content-addressed BEFORE the render and before this block was computed. `git cat-file blob 0b3e0b9f05a5df3fb50d2d69ee7a5217beff7ead` returns this file without its measured half, so the ordering #17(b) requires is checkable and not merely asserted."
+    },
+    "1_the_two_spent_subjects_did_not_move": {
+      "verdict": "PREDICTION HELD",
+      "files_re-hashed": 14,
+      "files_whose_blob_moved": [],
+      "★_how_it_was_proven": "Every file of both frozen packs was re-hashed at the object AFTER the render and compared with the blob Task 1 recorded. `git hash-object` reproduces each value independently of this tool.",
+      "per_file": {
+        "harmony-boundary/00_READ_THIS_FIRST.md": {
+          "recorded": "ae9edbb2cef09eb94f1156713f1dc22e9d71b402",
+          "now": "ae9edbb2cef09eb94f1156713f1dc22e9d71b402",
+          "equal": true
+        },
+        "harmony-boundary/01_the_phase_definitions.md": {
+          "recorded": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+          "now": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+          "equal": true
+        },
+        "harmony-boundary/02_the_guiding_principles_and_the_conventions.md": {
+          "recorded": "5d1fd0365379ba90ae817a5a1c5e9446348f0744",
+          "now": "5d1fd0365379ba90ae817a5a1c5e9446348f0744",
+          "equal": true
+        },
+        "harmony-boundary/03_the_writing_standards.md": {
+          "recorded": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+          "now": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+          "equal": true
+        },
+        "harmony-boundary/04_the_dispatch_protocol.md": {
+          "recorded": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+          "now": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+          "equal": true
+        },
+        "harmony-boundary/05_the_ratified_design_intent.md": {
+          "recorded": "dbcd948d20fffaec8eb45e84ee7620b33fec5ea8",
+          "now": "dbcd948d20fffaec8eb45e84ee7620b33fec5ea8",
+          "equal": true
+        },
+        "harmony-boundary/06_the_defect_type_catalog.md": {
+          "recorded": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+          "now": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+          "equal": true
+        },
+        "scoring-model/00_READ_THIS_FIRST.md": {
+          "recorded": "5068c69314655a6b258196e7b30886c8350a083c",
+          "now": "5068c69314655a6b258196e7b30886c8350a083c",
+          "equal": true
+        },
+        "scoring-model/01_the_phase_definitions.md": {
+          "recorded": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+          "now": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+          "equal": true
+        },
+        "scoring-model/02_the_guiding_principles_and_the_conventions.md": {
+          "recorded": "cf718c5678b07e89924b2e39d53982074069fa9c",
+          "now": "cf718c5678b07e89924b2e39d53982074069fa9c",
+          "equal": true
+        },
+        "scoring-model/03_the_writing_standards.md": {
+          "recorded": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+          "now": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+          "equal": true
+        },
+        "scoring-model/04_the_dispatch_protocol.md": {
+          "recorded": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+          "now": "48a68197394ead0dbe0266b5f91bf3c885fc93ef",
+          "equal": true
+        },
+        "scoring-model/05_the_ratified_design_intent.md": {
+          "recorded": "60563ab26e5c5c8827e32645b12eceaeb355933b",
+          "now": "60563ab26e5c5c8827e32645b12eceaeb355933b",
+          "equal": true
+        },
+        "scoring-model/06_the_defect_type_catalog.md": {
+          "recorded": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+          "now": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+          "equal": true
+        }
+      }
+    },
+    "2_the_check_is_GREEN": {
+      "verdict": "GREEN",
+      "exit_code": 0,
+      "the_output_line_by_line": [
+        "the derivation boot pack re-derives",
+        "  harmony-boundary: FROZEN — 7 file(s) at their recorded blobs",
+        "  scoring-model: FROZEN — 7 file(s) at their recorded blobs"
+      ],
+      "★_each_of_the_six_start-state_red_lines_accounted_for": {
+        "derivation_boot_pack.json does not re-derive": "RESOLVED BY REGENERATION, which Ruling 17(c) permits. What moved: the four count fields of members (2) and (4) of the two existing subjects, the whole new `l0-l1` subject block, the three repaired descriptive fields, `the_pack_files_in_order` becoming per-subject, and each frozen subject's new `★_FROZEN` block.",
+        "harmony-boundary/02_the_guiding_principles_and_the_conventions.md does not re-render": "RESOLVED BY THE FREEZE, not by a re-render. The file is unchanged and is now verified against its recorded digest.",
+        "harmony-boundary/04_the_dispatch_protocol.md does not re-render": "RESOLVED BY THE FREEZE, on the same ground.",
+        "scoring-model/02_the_guiding_principles_and_the_conventions.md does not re-render": "RESOLVED BY THE FREEZE, on the same ground.",
+        "scoring-model/04_the_dispatch_protocol.md does not re-render": "RESOLVED BY THE FREEZE, on the same ground.",
+        "l0-l1: the pack directory is missing": "RESOLVED BY THE RENDER."
+      },
+      "★_and_it_is_green_for_no_other_reason": "No red line outside Task 1's list appeared at any point, and none was made green by relaxing a check: the manifest comparison, the directory-listing comparison and the per-file byte comparison are all unchanged for a LIVE subject. What changed is that a FROZEN subject is verified against digests instead — a STRICTER test than the one it replaces on the question the freeze asks, since it also STOPs on an added file."
+    },
+    "3_the_l0-l1_pack_is_ten_files": {
+      "verdict": "PREDICTION HELD",
+      "files": 10,
+      "the_ruled_six_stand_intact_and_in_order": [
+        [
+          1,
+          "01_the_phase_definitions.md"
+        ],
+        [
+          2,
+          "02_the_guiding_principles_and_the_conventions.md"
+        ],
+        [
+          3,
+          "03_the_writing_standards.md"
+        ],
+        [
+          4,
+          "04_the_dispatch_protocol.md"
+        ],
+        [
+          5,
+          "05_the_ratified_design_intent.md"
+        ],
+        [
+          6,
+          "06_the_defect_type_catalog.md"
+        ]
+      ],
+      "the_three_extras_after_them": [
+        [
+          7,
+          "07_the_charter_the_layers_and_the_decisions.md"
+        ],
+        [
+          8,
+          "08_the_five_research_extracts.md"
+        ],
+        [
+          9,
+          "09_the_empirical_findings_ledger.md"
+        ]
+      ],
+      "★_this_is_enforced_and_not_promised": "`build_subject` compares the first six rendered member records against `MEMBERS` by (number, filename) and STOPs on any difference, for every subject.",
+      "per_file": {
+        "00_READ_THIS_FIRST.md": {
+          "blob": "7e7339cf3250ac87337317ca109cf9645dd31b8d",
+          "bytes": 3853
+        },
+        "01_the_phase_definitions.md": {
+          "blob": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+          "bytes": 18850
+        },
+        "02_the_guiding_principles_and_the_conventions.md": {
+          "blob": "00ffb0bede471f15d70de6cb7435a617b09caa58",
+          "bytes": 61585
+        },
+        "03_the_writing_standards.md": {
+          "blob": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+          "bytes": 15159
+        },
+        "04_the_dispatch_protocol.md": {
+          "blob": "02107d1ab37af197821edf3ca98ccf6f7ae5c0d3",
+          "bytes": 104078
+        },
+        "05_the_ratified_design_intent.md": {
+          "blob": "60563ab26e5c5c8827e32645b12eceaeb355933b",
+          "bytes": 297167
+        },
+        "06_the_defect_type_catalog.md": {
+          "blob": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+          "bytes": 5968
+        },
+        "07_the_charter_the_layers_and_the_decisions.md": {
+          "blob": "b373880edf1a993111c10a77d78937c6071be7cf",
+          "bytes": 27291
+        },
+        "08_the_five_research_extracts.md": {
+          "blob": "54d0892b022107a8bd4cedc9e4bba54679a1ed41",
+          "bytes": 77287
+        },
+        "09_the_empirical_findings_ledger.md": {
+          "blob": "2bf845db798e91382236387e7f35fabf48b2ec07",
+          "bytes": 51246
+        }
+      }
+    },
+    "4_the_charter_member_carries_THREE_removals": {
+      "verdict": "PREDICTION HELD",
+      "removals": [
+        {
+          "anchor": "This is adopted from this project's material",
+          "characters_removed": 161
+        },
+        {
+          "anchor": "Stage two established that this project's own layer specifications",
+          "characters_removed": 363
+        },
+        {
+          "anchor": "Stage two found the same question open in this project's own record",
+          "characters_removed": 338
+        }
+      ],
+      "the_one_added_by_Ruling_17b": "This is adopted from this project's material",
+      "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
+      "the_extracts_member's_cuts": 5,
+      "★_the_filter_was_not_widened_further": "The sweep's other candidates stay in place BY RULING and none was removed: DP-N's two disagreeing analyses and DP-Q's three exemplar analyses describe CORPUS material rather than what this project's system does and are load-bearing evidence for their design points; the two references to the ledger are moot, member (9) carrying that document whole. No new candidate was found and none was removed."
+    },
+    "5_the_freeze_is_ESTABLISHED_and_not_merely_declared": {
+      "★_why_this_was_run": "#19: a guard that has never been seen to fire is unfalsified, not established. Every case perturbed the AUTHORED table IN MEMORY ONLY — no repository file was written, moved or deleted.",
+      "cases": [
+        "the baseline verifies as it stands",
+        "a frozen file's content moved — digest mismatch",
+        "a recorded file missing from the directory",
+        "the directory holding a file the freeze does not record",
+        "a freeze record lacking its reason",
+        "a FROZEN entry naming a subject the tool does not build"
+      ],
+      "result": "RESULT: 6 of 6 cases behaved as required",
+      "the_probe_output": [
+        "BASELINE — the freeze verifies as it stands:",
+        "  PASS    7 file(s) verified",
+        "",
+        "FALSIFICATION CASES — each must STOP:",
+        "  PASS    a frozen file's content moved (digest mismatch)",
+        "            STOP: harmony-boundary/05_the_ratified_design_intent.md is FROZEN at blob 0000000000000000000000000000000000000000 and now hashes dbcd948d20fffaec8eb45e84ee7620b33fec5ea8 — the record of a completed derivation has been altered",
+        "  PASS    a recorded file is missing from the directory",
+        "            STOP: harmony-boundary is FROZEN: the directory holds ['00_READ_THIS_FIRST.md', '01_the_phase_definitions.md', '02_the_guiding_principles_and_the_conventions.md', '03_the_writing_standards.md', '04_the_dispatch_protocol.md', '05_the_ratified_design_intent.md', '06_the_defect_type_catalog.md'], and the freeze records ['00_READ_THIS_FIRST.md', '01_the_phase_definitions.md', '02_the_guiding_principles_and_the_conventions.md', '03_the_writing_standards.md', '04_the_dispatch_protocol.md', '05_the_ratified_design_intent.md', '06_the_defect_type_catalog.md', '99_a_file_that_is_not_there.md']",
+        "  PASS    the directory holds a file the freeze does not record",
+        "            STOP: harmony-boundary is FROZEN: the directory holds ['00_READ_THIS_FIRST.md', '01_the_phase_definitions.md', '02_the_guiding_principles_and_the_conventions.md', '03_the_writing_standards.md', '04_the_dispatch_protocol.md', '05_the_ratified_design_intent.md', '06_the_defect_type_catalog.md'], and the freeze records ['00_READ_THIS_FIRST.md', '01_the_phase_definitions.md', '02_the_guiding_principles_and_the_conventions.md', '03_the_writing_standards.md', '04_the_dispatch_protocol.md', '05_the_ratified_design_intent.md']",
+        "  PASS    a freeze record lacking its reason",
+        "            STOP: the freeze of 'harmony-boundary' lacks its reason and does not reach the derivation (amended #10, the shape every authored input here answers)",
+        "",
+        "ORPHAN-FREEZE CASE — a FROZEN entry naming a subject this tool does not build:",
+        "  PASS    STOP: FROZEN names subject(s) this tool does not build: ['a-subject-that-does-not-exist']",
+        "",
+        "WITHHELD table untouched by this probe: True",
+        "RESULT: 6 of 6 cases behaved as required"
+      ]
+    },
+    "6_what_this_batch_did_NOT_do": {
+      "no_ruled_member_removed_reordered_or_renamed": "`MEMBERS` is untouched; the six stand intact and in order for all three subjects.",
+      "nothing_written_into_either_frozen_pack": "Proven by the re-hash above, and mechanically by `write_all` skipping a frozen subject's directory entirely.",
+      "FRAMEWORK.md_is_not_amended": "It was read and never written. The filtering governs what a pack CARRIES, never what that document SAYS.",
+      "no_score_staged_no_brief_written_no_session_booted": true
+    }
+  }
+}

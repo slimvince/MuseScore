@@ -1,0 +1,310 @@
+{
+  "what_this_is": "The record of the batch that extended `tools/audit/gen_derivation_boot_pack.py` with a PER-SUBJECT extras dimension and added the `l0-l1` subject, executing Rulings 11, 12, 15 and 16 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` under the dispatch `cc_instruction_l0l1_boot_pack_2026_08_31.md`. It carries the prediction this batch was required to state BEFORE the act, and the measurement that tests it.",
+  "★_why_this_file_exists_and_that_its_name_is_not_in_the_dispatch_footprint": "Task 2 of the dispatch orders the prediction stated `in the artifact and in the report`, and §11's Created list names only the `l0-l1` pack directory and this batch's report. No artifact is named there. This file is created under Task 2's own order — §11's heading says the footprint is `enumerated from this batch's own orders` — and the divergence is REPORTED rather than absorbed, in this field and in the report's footprint section. No other file is created.",
+  "the_prediction_stated_before_the_act": {
+    "★_when_it_was_written": "Before any edit to the generator and before any re-render. #17(b): the prediction is recorded before the measurement, not after.",
+    "verbatim_from_the_dispatch_§4": "The extension is additive and per-subject. The ruled six members stay in every pack, unchanged and in their ruled order. For the two existing subjects the extras list is EMPTY, so `tools/audit/derivation_boot_pack/harmony-boundary/`, `…/scoring-model/` and `tools/audit/derivation_boot_pack.json` MUST re-render BYTE-IDENTICAL.",
+    "the_one_admitted_exception_and_its_direction": "The manifest gains the `l0-l1` subject and nothing of the two existing subjects' entries may move. A difference anywhere in either existing pack is a STOP, not a thing to explain afterwards.",
+    "how_it_is_tested": "Every file of both existing pack directories and the manifest was hashed with `git hash-object --no-filters -w` BEFORE the first edit (`the_pre_batch_state` below, the blobs written into the object database so the pre-state is recoverable by hash). The same command is re-run after the render and the two outputs compared. A hash that moves is the STOP."
+  },
+  "the_pre_batch_state": {
+    "★_how_these_were_taken": "`git hash-object --no-filters -w <path>` per file, before any edit of this batch. `--no-filters` hashes the bytes on disk rather than the end-of-line-normalised form, so a line-ending change could not hide inside an equal hash. Each blob is written into the object database, so every pre-batch file is recoverable at `git cat-file blob <hash>` whatever happens afterwards.",
+    "files": [
+      {
+        "path": "tools/audit/derivation_boot_pack.json",
+        "blob": "944ffd748e79abee16092c40438a105cf0d17701"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/harmony-boundary/00_READ_THIS_FIRST.md",
+        "blob": "ae9edbb2cef09eb94f1156713f1dc22e9d71b402"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/harmony-boundary/01_the_phase_definitions.md",
+        "blob": "518b1e50d60af2b4e2ddcd8978623832eb071899"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/harmony-boundary/02_the_guiding_principles_and_the_conventions.md",
+        "blob": "5d1fd0365379ba90ae817a5a1c5e9446348f0744"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/harmony-boundary/03_the_writing_standards.md",
+        "blob": "518048459da6a865285a0f7c66c5d8f8045f0fc2"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/harmony-boundary/04_the_dispatch_protocol.md",
+        "blob": "48a68197394ead0dbe0266b5f91bf3c885fc93ef"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/harmony-boundary/05_the_ratified_design_intent.md",
+        "blob": "dbcd948d20fffaec8eb45e84ee7620b33fec5ea8"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/harmony-boundary/06_the_defect_type_catalog.md",
+        "blob": "1dec7621dc48d89242cacaf79b3048cd965d6a19"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/scoring-model/00_READ_THIS_FIRST.md",
+        "blob": "5068c69314655a6b258196e7b30886c8350a083c"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/scoring-model/01_the_phase_definitions.md",
+        "blob": "518b1e50d60af2b4e2ddcd8978623832eb071899"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/scoring-model/02_the_guiding_principles_and_the_conventions.md",
+        "blob": "cf718c5678b07e89924b2e39d53982074069fa9c"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/scoring-model/03_the_writing_standards.md",
+        "blob": "518048459da6a865285a0f7c66c5d8f8045f0fc2"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/scoring-model/04_the_dispatch_protocol.md",
+        "blob": "48a68197394ead0dbe0266b5f91bf3c885fc93ef"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/scoring-model/05_the_ratified_design_intent.md",
+        "blob": "60563ab26e5c5c8827e32645b12eceaeb355933b"
+      },
+      {
+        "path": "tools/audit/derivation_boot_pack/scoring-model/06_the_defect_type_catalog.md",
+        "blob": "1dec7621dc48d89242cacaf79b3048cd965d6a19"
+      }
+    ]
+  },
+  "the_post_batch_state": "NOT RENDERED — deliberately, and the ground is at `the_start_state_stop` above.  Every file named in `the_pre_batch_state` is unchanged on disk, which is re-checkable by running `git hash-object --no-filters` over the same paths and comparing with the blobs recorded there.",
+  "the_verdict": {
+    "the_prediction": "HELD.  The extension is additive and per-subject: at the same sources the pre- and post-batch generators render every file of both existing packs identically, `MEMBERS` is unchanged, the ruled six stand at the head of every subject in their ruled order, and the manifest differs only by the added `l0-l1` subject.",
+    "the_render": "NOT PERFORMED.  A STOP the dispatch names fired before the write, and it is a start-state condition this batch did not cause and does not repair."
+  },
+  "the_measurement": {
+    "★_what_was_measured_and_why_it_is_this_and_not_a_disk_comparison": "The prediction is a claim about what the EXTENSION does, so it is tested by running the PRE-batch generator and the POST-batch generator over the SAME sources, in memory, and comparing what each would render.  A disk comparison cannot answer it, because the packs on disk were already stale before this batch began — see `the_start_state_stop` below — so a difference there would confound source drift with the effect of the extension.  Nothing was rendered to any pack directory and no manifest was written.",
+    "how_to_re_run_it": "`git show f54995c092:tools/audit/gen_derivation_boot_pack.py` gives the pre-batch generator; both it and the file at HEAD-of-working-tree are executed with `__file__` set to the real tool path so their own ROOT resolves to the repository, and `build()` is called on each.  The driver is `scratchpad/prove_additive.py` / `scratchpad/write_artifact.py`.",
+    "every_file_of_both_existing_packs_renders_identically": true,
+    "per_file": [
+      {
+        "subject": "harmony-boundary",
+        "file": "(the file set of this pack)",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "harmony-boundary",
+        "file": "00_READ_THIS_FIRST.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "harmony-boundary",
+        "file": "01_the_phase_definitions.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "harmony-boundary",
+        "file": "02_the_guiding_principles_and_the_conventions.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "harmony-boundary",
+        "file": "03_the_writing_standards.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "harmony-boundary",
+        "file": "04_the_dispatch_protocol.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "harmony-boundary",
+        "file": "05_the_ratified_design_intent.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "harmony-boundary",
+        "file": "06_the_defect_type_catalog.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "scoring-model",
+        "file": "(the file set of this pack)",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "scoring-model",
+        "file": "00_READ_THIS_FIRST.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "scoring-model",
+        "file": "01_the_phase_definitions.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "scoring-model",
+        "file": "02_the_guiding_principles_and_the_conventions.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "scoring-model",
+        "file": "03_the_writing_standards.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "scoring-model",
+        "file": "04_the_dispatch_protocol.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "scoring-model",
+        "file": "05_the_ratified_design_intent.md",
+        "identical_pre_to_post": true
+      },
+      {
+        "subject": "scoring-model",
+        "file": "06_the_defect_type_catalog.md",
+        "identical_pre_to_post": true
+      }
+    ],
+    "subjects_added": [
+      "l0-l1"
+    ],
+    "subjects_removed": [],
+    "the_manifest_changes_only_by_the_added_subject": true,
+    "MEMBERS_unchanged_pre_to_post": true,
+    "the_ruled_six_at_the_head_of_every_subject_in_their_ruled_order": {
+      "harmony-boundary": [
+        [
+          1,
+          "01_the_phase_definitions.md"
+        ],
+        [
+          2,
+          "02_the_guiding_principles_and_the_conventions.md"
+        ],
+        [
+          3,
+          "03_the_writing_standards.md"
+        ],
+        [
+          4,
+          "04_the_dispatch_protocol.md"
+        ],
+        [
+          5,
+          "05_the_ratified_design_intent.md"
+        ],
+        [
+          6,
+          "06_the_defect_type_catalog.md"
+        ]
+      ],
+      "l0-l1": [
+        [
+          1,
+          "01_the_phase_definitions.md"
+        ],
+        [
+          2,
+          "02_the_guiding_principles_and_the_conventions.md"
+        ],
+        [
+          3,
+          "03_the_writing_standards.md"
+        ],
+        [
+          4,
+          "04_the_dispatch_protocol.md"
+        ],
+        [
+          5,
+          "05_the_ratified_design_intent.md"
+        ],
+        [
+          6,
+          "06_the_defect_type_catalog.md"
+        ],
+        [
+          7,
+          "07_the_charter_the_layers_and_the_decisions.md"
+        ],
+        [
+          8,
+          "08_the_five_research_extracts.md"
+        ],
+        [
+          9,
+          "09_the_empirical_findings_ledger.md"
+        ]
+      ],
+      "scoring-model": [
+        [
+          1,
+          "01_the_phase_definitions.md"
+        ],
+        [
+          2,
+          "02_the_guiding_principles_and_the_conventions.md"
+        ],
+        [
+          3,
+          "03_the_writing_standards.md"
+        ],
+        [
+          4,
+          "04_the_dispatch_protocol.md"
+        ],
+        [
+          5,
+          "05_the_ratified_design_intent.md"
+        ],
+        [
+          6,
+          "06_the_defect_type_catalog.md"
+        ]
+      ]
+    }
+  },
+  "the_start_state_stop": {
+    "★_what_it_is": "The two existing packs were ALREADY STALE at the commit this batch started from, and this batch did not cause it.  `cowork_audit_protocol.md` and `CLAUDE.md` have grown since those packs were last rendered, so members (2) and (4) of both packs no longer re-render.  It is a START-STATE red on `--check`, established at the git objects by explicit commit hash and NOT repaired here.",
+    "how_it_was_established_without_the_generator": "At commit `f54995c092`, both the sources and the pack files are tracked and were unmodified in the working tree, so both are at that commit.  Their content was taken with `git show f54995c092:<path>`, the ruled spans re-cut in the scratchpad by the same rule the tool applies, and compared with the pack file at the same commit.  They differ.  The generator is not in that argument at all.",
+    "the_pre_batch_generator_reproduces_the_same_red": "The pre-batch generator's own render of these four files differs from what is on disk by exactly the amounts below, which are computed from ITS output, not from the extended tool's: every one of the four is a file both generators render identically (see `every_file_of_both_existing_packs_renders_identically` above).",
+    "the_on_disk_manifest_also_does_not_re_derive": true,
+    "the_four_files": [
+      {
+        "subject": "harmony-boundary",
+        "file": "02_the_guiding_principles_and_the_conventions.md",
+        "characters_on_disk": 59762,
+        "characters_if_re_rendered": 60339,
+        "lines_the_re_render_would_add": 7,
+        "lines_the_re_render_would_remove": 0,
+        "the_first_line_the_re_render_would_add": "- **THE ORDINARY SESSION-START READ BINDS EVEN WHEN THE OPENING INSTRUCTION NAMES A SINGLE FILE"
+      },
+      {
+        "subject": "harmony-boundary",
+        "file": "04_the_dispatch_protocol.md",
+        "characters_on_disk": 99970,
+        "characters_if_re_rendered": 103431,
+        "lines_the_re_render_would_add": 41,
+        "lines_the_re_render_would_remove": 0,
+        "the_first_line_the_re_render_would_add": "**STANDING CLAUSE (ratified 2026-08-29, the framework phase retrospective, P-2):** **Every dispatch"
+      },
+      {
+        "subject": "scoring-model",
+        "file": "02_the_guiding_principles_and_the_conventions.md",
+        "characters_on_disk": 60536,
+        "characters_if_re_rendered": 61113,
+        "lines_the_re_render_would_add": 7,
+        "lines_the_re_render_would_remove": 0,
+        "the_first_line_the_re_render_would_add": "- **THE ORDINARY SESSION-START READ BINDS EVEN WHEN THE OPENING INSTRUCTION NAMES A SINGLE FILE"
+      },
+      {
+        "subject": "scoring-model",
+        "file": "04_the_dispatch_protocol.md",
+        "characters_on_disk": 99970,
+        "characters_if_re_rendered": 103431,
+        "lines_the_re_render_would_add": 41,
+        "lines_the_re_render_would_remove": 0,
+        "the_first_line_the_re_render_would_add": "**STANDING CLAUSE (ratified 2026-08-29, the framework phase retrospective, P-2):** **Every dispatch"
+      }
+    ],
+    "★_the_consequence_for_TASK_6": "Task 6's three conditions cannot all hold from this start state, and the conflict is not a matter of judgment: `--check` GREEN requires the two existing packs to be re-rendered from the grown sources, and `byte-identical to their pre-batch state` forbids exactly that.  §4 of the dispatch settles which way it falls — *a difference anywhere in either existing pack is a STOP, not a thing to explain afterwards* — so the STOP fires BEFORE the write, which is why the pre-batch state was pinned first.  NOTHING WAS WRITTEN to either existing pack, to the new pack directory, or to the manifest: `write_all` writes the manifest for every subject on any invocation, so even `--subject l0-l1` would have moved the two existing subjects' manifest entries, which the same task forbids in terms.  Refreshing those packs changes what a future blind deriving session reads, which is a behaviour change and the user's to ratify (#14)."
+  }
+}
