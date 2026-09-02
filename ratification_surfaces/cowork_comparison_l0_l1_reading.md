@@ -47,11 +47,12 @@ The population's order is the artifact's:
 | 10 | `cowork_phrase_boundary_design.md` | **DONE** |
 | 11 | `cowork_joint_estimator_factorization.md` | **DONE** |
 | 12 | `cowork_evidence_inventory.md` | **DONE** |
-| 13–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 13 | `cowork_layer6_grouping_design.md` | **DONE** |
+| 14–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 13–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 14–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 13**, `cowork_layer6_grouping_design.md`.
+dispatch resumes at **position 14**, `cowork_target_architecture.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -6456,6 +6457,361 @@ claim test do. The two records reached the same principle from different startin
 
 ---
 
+### 6.13 — Document 13: `cowork_layer6_grouping_design.md`
+
+> **Manifest for this document.** Outgoing statements: **20** (rows 13.1 to 13.20; no row of this
+> document splits). Paragraphs counted under *not a statement*: **70**, across the banner and 19
+> sections. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit under Ruling 32 item 4, retained by
+> Ruling 33 as a member of the ruled specification document set.
+>
+> **What it is.** The grouping layer's design — under the ratified charter, **L3's territory**: *"the
+> phrase and section grouping"*. It is in scope here because it is the **consumer** of L1's notated
+> boundary evidence, and it states what a consumer needs from that evidence more precisely than any
+> producing document does.
+>
+> **★ IT IS THE FIRST OUTGOING TEXT THAT COVERS THE WORKING SPAN EXACTLY, AND THE FIRST THAT MARKS A
+> SPAN EDGE.** Rows 13.10 and 13.11 are the other side of the clip family that Rows 2.13, 2.15, 2.20,
+> 6.35, 7.9 and 7.14 all put as a difference: this document's partition is total over the analysed
+> span, its first group opens at the span start whether or not a marker sits there, and an edge group
+> whose tick is the selection edge is marked as such and never presented as complete.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §0 — the terms
+
+**Row 13.1 — the word *phrase* is reserved for the accepted melodic unit, which this layer does not
+segment.**
+*Statement.* "**★ Naming convention: the word \"phrase\" appears in this document only as \"phrase
+[MT]\" (the accepted melodic unit, out of scope); the harmonic-grouping object L6 produces is always
+the \"punctuation-span.\"**" — §0 (locator: line 72).
+*Derived.* S-50 (no published field is named *boundary*, *cadence*, *phrase*).
+*Current-text axis.* S-50: **DIFFERS** — S-50 bars the word from a published field name, and this
+reserves it for a different object instead of barring it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 10.8: that the naming bar and the two
+outgoing reservations of the word *phrase* be reconciled into one rule. **Three documents now reserve
+the word, and they reserve it three ways.**
+
+**Row 13.2 — the grouping span's boundaries are the score's notated punctuation, not a cadence, which
+would be circular.**
+*Statement.* "the `{ }` unit whose boundaries are the score's *notated punctuation* (fermatas, rests,
+double barlines, key-signature changes, …) …. Its boundaries are delimited by those **surface cues**
+…, **not** by requiring a cadence (defining a span by its cadence and then aligning cadences to it …
+would be circular)." — §0 (locator: line 64).
+*Derived.* S-39, S-43, S-51.
+*Current-text axis.* S-39: **AGREES** on the four named marks. S-43: **AGREES** on the key-signature
+change. S-51: **AGREES** on the circularity argument.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(`FRAMEWORK.md` §5 makes the same point in its own
+words at L3 — *"defining a phrase span by its cadence and then aligning cadences to that span is
+circular; the span's boundaries come from the notated cues"* — so this is a place where the outgoing
+text and the ratified charter say the same thing.)*
+
+**Row 13.3 — a boundary is a tick where the primitive places a picked peak at a surface-cue location:
+fermata, breath, rest, structural bar line, key-signature change or subito tempo.**
+*Statement.* "**Boundary [L6].** A tick where the **phrase-boundary primitive** places a picked peak —
+a surface-cue location (fermata / breath / rest / structural barline / key-signature change / subito
+tempo). … **choosing which ticks are boundaries is the primitive's job upstream, not L6's.**" — §0
+(locator: line 79).
+*Derived.* S-39, S-43, S-7, S-40.
+*Current-text axis.* S-39: **AGREES** on the fermata, rest and bar line. S-43: **AGREES** on the
+signature change. S-7: **DIFFERS** on the breath mark and the tempo change. S-40: **DIFFERS** on the
+picked peak.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 10.23 — **the same six-kind marker set,
+stated a second time and from the consumer's side**, which is evidence that the set is settled in the
+outgoing record whatever the charter's five kinds say.
+
+**Row 13.4 — the slice is the atomic analysis unit, one chord-rhythm segment.**
+*Statement.* "**Slice [L6].** The atomic analysis unit — one chord-rhythm segment from Layer 2 (the
+… constant-sonority atom; maximal same-chord runs of slices form the typology's **chord-span**)." —
+§0 (locator: line 76).
+*Derived.* S-29, S-33, S-51.
+*Current-text axis.* S-29: **DIFFERS**. S-33: **DIFFERS**. S-51: **DIFFERS**.
+*The difference, in both texts' own words.* S-29 makes a slice *"the half-open interval from its
+change point to the next"* and S-33 its identity *"the set of events (by note identity)"*, with S-51
+barring a chord from an L1 output; this text calls it *"one chord-rhythm segment"* and a
+*"constant-sonority atom"* — the second phrase is the derivation's own, the first is not.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **word *slice*** family of Row 9.13. **A
+third meaning appears here**: L1's stretch of unchanging sound, L5's committed chord plus key, and
+this document's chord-rhythm segment.
+
+#### §1 to §3 — the principle, the model and the contract
+
+**Row 13.5 — every signal this layer needs has already been computed by an earlier layer, the
+boundaries among them.**
+*Statement.* "Every signal Layer 6 needs has already been computed by an earlier layer — the
+punctuation-span boundaries (the Layer-1.5 phrase-boundary primitive), the cadences and the Roman
+numerals (Layer 5), the local keys (Layer 3)." — §1 (locator: line 107).
+*Derived.* S-53, S-50. *Current-text axis.* S-53: **AGREES**. S-50: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 13.6 — harmony is universally analysed at the onset and verticality level, so a flat grouping
+omits no standard technique.**
+*Statement.* "the deep search found **no published system that models overlapping per-voice phrases
+for harmonic analysis** — harmony is universally analysed at the **onset / verticality level**
+(ChordGNN onset-wise; music21 `chordify`), so keeping L6's grouping flat omits no standard technique"
+— §2 (locator: line 146).
+*Derived.* S-28, S-15.
+*Current-text axis.* S-28: **AGREES** — the onset-and-release partition is what S-28 constructs. S-15:
+**AGREES** — S-15 cites the same partition-point definition, and Row 6.57 records `chordify` as one of
+the two sources the slicing design names.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Recorded because it bears on the independence
+question: this is a third outgoing document naming the same published construction.)*
+
+**Row 13.7 — the perfect/imperfect cadence call is on the bass-derived inversion, not the top voice.**
+*Statement.* "(The perfect/imperfect cadence call is Layer-5's, on bass-derived inversion, not the top
+voice.)" — §2 (locator: line 149).
+*Derived.* S-44, S-13. *Current-text axis.* S-44: **AGREES**. S-13: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 8.3, 8.4, 9.1, 9.7 and 10.17. **This is the
+fifth independent statement of the same rule in the outgoing record.**
+
+**Row 13.8 — the inputs are the boundary ticks and their strengths, scaled to the strongest cue, with
+local maxima selected as boundaries.**
+*Statement.* "the boundary ticks and their strengths (fermata / breath / rest / barline /
+key-signature / tempo cues — strengths scaled to the strongest cue, local maxima selected as
+boundaries; the primitive's max-normalisation and peak-picking)" — §3 (locator: line 158).
+*Derived.* S-39, S-40. *Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family, with
+Rows 10.22 and 10.29. **A fourth document states the graded, max-normalised, peak-picked form.**
+
+**Row 13.9 — each punctuation-span carries the provenance of the cue that opened and closed it and its
+scope, which keeps a local boundary from being presented as a global one.**
+*Statement.* "the boundary strength **and the provenance** (which cue fired and its **scope** —
+global/system-wide vs per-part …) that opened/closed it …. Carrying the scope is what keeps the
+annotation from silently presenting a **local** boundary (e.g. one part's breath) as a **global** one
+(e.g. a double barline) — L6 annotates the distinction, it does not flatten it." — §3 (locator: line
+168).
+*Derived.* S-39, S-40. *Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS**.
+*The difference, in both texts' own words.* S-39 names the voice on the REST-BEGINS flag alone and
+publishes FERMATA, BAR-LINE and REPEAT without a scope; this text requires **every** boundary to carry
+which cue fired and whether it fired globally or per part, and states what is lost without it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 9.28, 10.32, 10.33 and 10.53. **★ THIS IS
+THE CONSUMER'S SIDE OF THE MARKER-SCOPE GAP, and it is the strongest form of it**: three documents
+name the gap, and this one is the layer that would be misled by it.
+
+#### §5 and §7 — the rules and the crosscutting concepts
+
+**Row 13.10 — the partition is total and flat, half-open, and the first span opens at the analysed
+span's start even if no boundary marker sits there.**
+*Statement.* "each punctuation-span runs from one boundary (inclusive) to the next (exclusive). The
+partition is **total** (covers the whole span) and **flat** (no nesting). The first punctuation-span
+opens at the span start even if no boundary marker sits there; the last punctuation-span closes at the
+span end." — §5.1 (locator: line 210).
+*Derived.* S-29 (the half-open convention), S-31 (nothing is merged away), S-32 (the published list
+covers the working span exactly; its first change point is the span's start).
+*Current-text axis.* S-29: **AGREES**. S-31: **AGREES**. S-32: **AGREES**, and exactly — *"opens at
+the span start even if no boundary marker sits there"* is S-32's own rule in the outgoing text's
+words.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **★ THIS IS THE FIRST OUTGOING TEXT IN THE COMPARISON
+THAT COVERS THE WORKING SPAN EXACTLY.** Rows 2.13, 2.20, 6.35, 7.9 and 7.14 all put the opposite as a
+difference — the slicing texts tile the intersection with the sounding material and give leading
+silence no group. **The outgoing record therefore contains both answers, in different documents**, and
+that is worth the user's attention when the published-domain family is ruled.
+
+**Row 13.11 — an edge group whose tick is the selection edge carries a clipped-by-selection-edge
+provenance, and a truncated group is never presented as complete.**
+*Statement.* "An edge group whose opening/closing tick is the **selection edge rather than a musical
+boundary** carries the provenance `clipped-by-selection-edge` … — a truncated group is never presented
+as a complete one" — §5.1 (locator: line 213).
+*Derived.* S-32 (events crossing the span's start are marked *entered sounding*; those releasing after
+its end are marked *cut by the span*).
+*Current-text axis.* S-32: **AGREES**, and this is the closest agreement with S-32's marking rule
+anywhere in the outgoing record.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **★ S-32's EDGE MARK, REACHED INDEPENDENTLY AND FOR THE
+SAME REASON** — that a consumer must be able to tell an artefact of where the span begins from a real
+boundary. Row 2.15 puts the absence of exactly this mark as a proposal against the slicing text; here
+a consumer requires it.
+
+**Row 13.12 — an edge span reaching the selection edge with no closing boundary and no cadence is
+surfaced with an extension cue; acting on it is the orchestrator's.**
+*Statement.* "an edge span that reaches the selection edge with **no closing boundary and no cadence**
+is surfaced with an `extension-cue` tag — the signal that widening the selection would complete it.
+… acting on it — invoking L1's `extend` and re-running — is the decision of the **orchestrator** …,
+never L6's." — §5.1 (locator: line 217).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES** on marking the edge. S-53: **THE DERIVATION IS SILENT** on
+enlargement.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **enlargement contract** family, and
+adding to it the third role Row 10.5 named: a layer that **surfaces the need** without asking and
+without acting.
+
+**Row 13.13 — the layer consumes the picked-peak set as-is and does not re-threshold or re-detect
+boundaries.**
+*Statement.* "**L6 consumes the primitive's picked-peak set as-is — it does not re-threshold or
+re-detect boundaries** (peak selection is the primitive's owned job)" — §5.1 (locator: line 222).
+*Derived.* S-53, S-50. *Current-text axis.* S-53: **AGREES**. S-50: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 2.9, 6.17 and 12.28 — the consume-do-not-
+re-derive discipline, stated a fourth time.
+
+**Row 13.14 — a cadence's arrival may slightly precede the notated span end, so the alignment carries
+a window.**
+*Statement.* "A cadence **closes** the punctuation-span whose **ending boundary lies at the cadence's
+arrival tick, or within the alignment window after it** (a cadence's arrival may slightly precede the
+notated span end — for example a suspended resolution …)" — §5.3 (locator: line 278).
+*Derived.* S-39.
+*Current-text axis.* S-39: **DIFFERS** — S-39 places the fermata's boundary at the held note's
+release and admits no offset between a mark and the moment it signals.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 11.12. **The same displacement met from a
+second direction**: Row 11.12 has the arrival before a metrically weak fermata, this has it before the
+notated span end for a suspended resolution — two documents, two mechanisms, the same shape.
+
+**Row 13.15 — the boundaries come from the one primitive; this layer adds no second boundary
+detector.**
+*Statement.* "**Reuse, do not duplicate.** Punctuation-span boundaries come from the one
+phrase-boundary primitive …. L6 adds **no** second boundary detector, cadence detector, or key
+segmenter." — §7 (locator: line 318).
+*Derived.* S-50, S-53. *Current-text axis.* S-50: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 13.16 — assembly, not detection: an independent detector is rejected as duplicating the upstream
+layers.**
+*Statement.* "**D2 — Assembly, not detection.** L6 reuses the upstream primitives and detects nothing.
+*Rejected:* an independent L6 punctuation-span/cadence/key detector — it would duplicate Layers 1.5/5/3
+and reintroduce the divergence the rebuild exists to remove." — §9 (locator: line 345).
+*Derived.* S-50, S-53. *Current-text axis.* S-50: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 13.15 — rowed separately because this is where
+the decision carries its rejected alternative.
+
+#### §10, §11 and §14 — the oracles, the risks and the lineage
+
+**Row 13.17 — the reference engine reaches competitive accuracy with no explicit grouping layer, so
+this layer is an explainability layer and not an accuracy requirement.**
+*Statement.* "The SOTA reaches competitive Roman-numeral accuracy with **no** explicit grouping layer
+…. L6 is a deliberate **explainability** layer, not an accuracy requirement" — §7 (locator: line 324).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis*** (NOT A LAYER), with Row
+10.48 — what the analysis's accuracy depends on is a measured comparison, which is that layer's own
+content.
+
+**Row 13.18 — the fermata oracle is not fully independent, because the primitive also consumes
+fermatas.**
+*Statement.* "the chorale **fermatas** (351/353 — the chorale grouping marker the primitive also
+consumes, so a strong but not fully independent check)" — §10 (locator: line 366); and "**The
+punctuation-span oracle is partly the phrase-boundary primitive's own input** (fermatas) — independent
+validation needs the TSV `{}` oracle; weight the fermata check accordingly." — §11 (locator: line 384).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis***, with Row 10.44 — the
+same circularity caveat, stated in a second document and there sharpened into a prohibition.
+
+**Row 13.19 — one score of the corpus has no fermata at all.**
+*Statement.* "**`bwv112.5` has no fermata** — a single-score edge case for the fermata
+punctuation-span oracle" — §11 (locator: line 390).
+*Derived.* S-39.
+*Current-text axis.* S-39: **AGREES** that the flag set may simply be empty; the derivation states no
+consequence for a score with none.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 8.8 and 10.2. **★ THIS IS THE
+CONCRETE INSTANCE OF THOSE TWO PROPOSALS**: the boundary evidence really can be absent over a whole
+score, and one score of the gate corpus is that case.
+
+**Row 13.20 — the field models phrase and cadence as one texture-wide layer, not per-voice, and treats
+voice separation as a separate task.**
+*Statement.* "models phrase/cadence as **one texture-wide layer, not per-voice** (AnalysisGNN, the
+cadence-GNN), treats **voice separation** as a *separate* task" — §14 (locator: line 422).
+*Derived.* S-46 (the cue requires the same notated voice), S-39.
+*Current-text axis.* S-46: **DIFFERS** — S-46's cue is per notated voice by rule, with a declared
+relaxation only where the record carries no voice. S-39: **AGREES** — S-39's flags are texture-wide
+apart from REST-BEGINS.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+the notated evidence is **texture-wide** or **per voice**, since S-39 is one and S-46 is the other and
+this text reports the field as settled on the first. *(It is the marker-scope family's question asked
+from the literature's side, and it points the opposite way from Rows 10.25 and 10.42, where the
+outgoing text runs its own cues per voice.)*
+
+---
+
+#### Not a statement — counted by paragraph, per section, so the arithmetic closes (70)
+
+| Section | Paragraphs counted | What they are |
+|---|---|---|
+| the banner | 1 | the as-built status, its commits, its validation figures and its sign-off history |
+| §0 [MT] | 4 | the lead-in and the cadence, key-area and modulation/local-key terms |
+| §0 [L6] | 3 | the key-span, progression-schema-span and open-mark terms |
+| §0 other | 4 | flat partition, hierarchical grouping, GTTM, and the Caplinian formal functions |
+| §1 | 1 | the remainder of the core principle — what assembly produces |
+| §2 | 6 | the four things the layer does and the two other things it does not |
+| §3 | 9 | the other consumed inputs, the other produced outputs, and the cross-cutting closing paragraph |
+| §4 | 1 | the scattered as-built machinery this layer rebuilds |
+| §5.0 | 1 | the pointer to §0 and the one construction detail |
+| §5.1 | 2 | span interlocking, and the codetta refinement with its canonical reading |
+| §5.2 | 3 | key-area grouping, the confirmed-modulation case, and the proper-layer flag |
+| §5.3 | 3 | the no-cadence case, the internal tag, and the type distinctions |
+| §5.4 | 1 | carrying the residual |
+| §5.5 | 1 | hosting the recognised-schema annotations |
+| §6 | 1 | the proportionality bound |
+| §7 | 2 | additive-and-read-only, and the firewall |
+| §8 | 3 | the override/merge division |
+| §9 | 4 | decisions D1, D3, D4 and D5 |
+| §10 | 5 | the key-area and cadence oracles, the metrics, the two-step plan, and the dormancy |
+| §11 | 4 | the other four risks |
+| §12 | 1 | the glossary pointer and its two operational terms |
+| §13 | 1 | the as-built mapping |
+| §14 | 2 | the borrowed-and-discarded record and the remainder of the polyphony search |
+| §15 | 7 | the seven open items |
+| **Total** | **70** | — |
+
+#### The arithmetic at this document
+
+- Rows written: **20** (13.1 to 13.20). No row of this document splits.
+- **Outgoing statements dispositioned: 20.**
+- Paragraphs counted under *not a statement*: **70**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 9 | 13.2, 13.5, 13.6, 13.7, 13.10, 13.11, 13.13, 13.15, 13.16 |
+| ADOPTED — proposed | 9 | 13.1, 13.3, 13.4, 13.8, 13.9, 13.12, 13.14, 13.19, 13.20 |
+| RELOCATED | 2 | 13.17, 13.18 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **20** | — |
+
+**The column sums to 20, against 20 statements, so the arithmetic closes at this document:**
+9 + 9 + 2 + 0 + 0 + 0 + 0 = 20.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 24 |
+| DIFFERS | 12 |
+| THE DERIVATION IS SILENT | 3 |
+| **Total verdicts** | **39** |
+
+*(Counted per named derived statement per statement-row. 39 verdicts over 20 statements because
+fifteen rows name more than one derived statement.)*
+
+#### What this document's rows put in front of the user
+
+**Rows 13.10 and 13.11 change what the published-domain family looks like.** Every slicing document in
+the population — 2, 6 and 7 — tiles the intersection of the span with the sounding material, gives
+leading and trailing silence no slice, and publishes no mark at the span's edge; six rows put that as a
+difference against S-31 and S-32. **This document does the opposite**: its partition is total over the
+analysed span, its first group opens at the span start whether or not a marker sits there, and an edge
+group whose tick is the selection edge carries a `clipped-by-selection-edge` provenance so that *"a
+truncated group is never presented as a complete one"* — which is S-32's *cut by the span* mark reached
+independently, and for the reason S-32 gives. **The outgoing record contains both answers, and the
+user is choosing between two of its own documents as much as between the two records.**
+
+**Row 13.9 is the strongest form of the marker-scope gap yet.** Documents 9 and 10 name it from the
+producing side; here the consumer states what it loses without it — a local breath presented as a
+global double bar line — and requires the provenance and the scope on every group.
+
+**Two families return.** The **boundary-evidence form** (Row 13.8, a fourth statement of the graded,
+max-normalised, peak-picked profile) and the **word *slice*** (Row 13.4, a third meaning: L1's stretch
+of unchanging sound, L5's committed chord plus key, this layer's chord-rhythm segment). **And Row
+13.19 is the concrete instance of two earlier proposals**: one score of the gate corpus has no fermata
+at all, which is what Rows 8.8 and 10.2 propose the specification should record as possible.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -6541,6 +6897,9 @@ worked; it is not complete over the population.**
   a fermata-derived phrase list is inadmissible as ground truth for a primitive that reads fermatas.
 - Row 10.48 — that a competitive reference engine does no explicit phrase segmentation, so the
   primitive is not an accuracy requirement and is to be kept proportionate.
+- Row 13.17 — the same proportionality claim for the grouping layer, on the same reference engine.
+- Row 13.18 — that the fermata oracle is not fully independent, the primitive consuming fermatas
+  itself, so independent validation needs the annotation oracle.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -6869,6 +7228,24 @@ Gathered from the documents tabulated so far. **Not complete over the population
 53. Rows 12.19 and 12.21 — the top-voice question argued from the other side, a cadence cue over the
     **soprano** at a phrase end (12.19); and a **graded boundary confidence instead of a binary cut**
     (12.21), the third document to want one.
+54. **★ Rows 13.10 and 13.11 — THE PUBLISHED-DOMAIN FAMILY HAS BOTH ANSWERS INSIDE THE OUTGOING
+    RECORD.** Item 6 above gathers six rows where the slicing documents tile the intersection with the
+    sounding material and publish no edge mark; **this document's partition is total over the analysed
+    span, opens its first group at the span start whether or not a marker sits there, and marks an edge
+    group `clipped-by-selection-edge` so that a truncated group is never presented as complete** —
+    which is S-32's own rule and S-32's own reason. The ruling therefore chooses between two outgoing
+    documents as much as between the two records.
+55. **Row 13.9 — the MARKER-SCOPE gap stated from the CONSUMING side, which is its strongest form.**
+    The grouping layer requires every group to carry which cue fired and its scope, and states what is
+    lost without it: a local breath presented as a global double bar line. With Rows 9.28, 10.32, 10.33
+    and 10.53 — four documents now name this gap.
+56. Rows 13.1, 13.3, 13.4, 13.8, 13.12, 13.14, 13.19 and 13.20 — the word *phrase* reserved a third
+    way (13.1); the six-kind marker set from the consuming side (13.3); a **third meaning for the word
+    *slice*** — a chord-rhythm segment (13.4); the graded peak-picked profile a fourth time (13.8); a
+    layer that **surfaces an extension cue without asking and without acting** (13.12); the arrival
+    displacement met from a second direction, before a notated span end (13.14); **one score of the
+    gate corpus with no fermata at all** (13.19, the concrete instance of items in this list already);
+    and whether the notated evidence is **texture-wide or per voice** (13.20).
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -6938,37 +7315,45 @@ Gathered from the documents tabulated so far. **Not complete over the population
     notated voice and S-35's per-change-point class, against a signature read once, voice identity
     dropped at the tone surface, and a decoder-private beat weight.
 31. Row 12.19 — S-13's and S-44's refusal of the top voice, against a cadence cue over the soprano.
+32. Rows 13.4 and 13.8 — S-29's half-open stretch and S-39's flags, against a chord-rhythm segment
+    called a slice and a max-normalised peak-picked profile, each a third and fourth statement.
+33. Row 13.9 — S-39's scope-free flags, against every group carrying its cue's scope, from the
+    consuming side.
+34. Row 13.14 — S-39's fermata boundary at the release, against an alignment window admitting an
+    arrival that precedes the notated span end.
+35. Row 13.20 — S-46's per-voice cue, against a report that the field models phrase and cadence as one
+    texture-wide layer.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the twelve documents tabulated, not a distribution over the
-population.** The population is 29 documents; 17 are untouched. No figure below may be read as
+**This is a RUNNING total over the thirteen documents tabulated, not a distribution over the
+population.** The population is 29 documents; 16 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 447 statements placed so far:**
+**Dispositions, over the 467 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | **176** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | **136** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | **27** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | **76** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | **31** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | **447** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | **185** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | **145** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | **29** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | **76** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | **31** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | **467** |
 
-**The arithmetic closes:** 176 + 136 + 27 + 76 + 0 + 31 + 1 = 447, against 447 statements, and each
+**The arithmetic closes:** 185 + 145 + 29 + 76 + 0 + 31 + 1 = 467, against 467 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same twelve documents:**
+**Current-text verdicts, over the same thirteen documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | **458** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | **160** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | **131** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | **749** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | **482** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | **172** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | **134** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | **788** |
 
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
