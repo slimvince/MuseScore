@@ -2969,6 +2969,76 @@ no code. It moves no charter, no design point and no phase. **No dispatch is wri
 identity is allocated** — that register cannot accept one and
 `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
 
+## 3an. Ruling 33 — THE TERM SEARCH IS CUT TO THE RULED SPECIFICATION DOCUMENT SET; THE OTHER HIT FILES ARE A PUBLISHED RESIDUE FOR THE MINING MAP
+
+**Taken 2026-09-02 by the same session, after the batch under `cc_instruction_comparison_l0_l1_2026_09_02.md`
+returned with its own ruled size stop fired at Task 1 and Task 2 unopened.** The batch was verified at
+the objects before the surface was put: the four commits `550874eb…`, `ae2adfc6…`, `a4d431a8…`,
+`8f1e4e9d…` with the paths the close names; `origin/master` equal to the local tip at the ref files;
+the derivation's blob `9b102c57…` identical by sha256 to the copy this side had read before the
+dispatch was written.
+
+**The user's words, verbatim: "Agree on: cut to the ruled specification set".**
+
+**The facts the surface rested on, each read at the artifact.** At
+`tools/audit/l0_l1_outgoing_population.json` → `the_term_search.counts`, the search admitted 112 files,
+9 of them already named by Ruling 32, so 103 outside the named members, against the dispatch's stop at
+forty. Narrowing the term list does not reach the stop: at the per-file hits, dropping `MusicXML`,
+`.mscx`, `key signature` and both spellings of `leading tone` leaves 53 files; dropping `fermata` too
+leaves 46 and loses L1's own boundary evidence. The inflation is by document KIND: the inventory class
+`writing-side-design-documents` holds designs, audits, dossiers, plans, inventories and findings
+together (its signature at `tools/audit/artifact_inventory.json` says so), so the search admits the
+pilot's blind outputs and briefs, the three sealed placement samples, reports, research-grounding notes
+and both registers — kinds the ruled kind list of `cowork_design_doc_template.md` (user, 2026-08-09)
+places outside *specification* and *design document*. **The record already holds a ruled, derived
+answer to which documents are the specifications:** `tools/audit/specification_document_set.json`,
+26 members derived from `ARCHITECTURE.md`'s admitted delegations under Ruling 6 of
+`cowork_rulings_2026_08_21_successor_plan_sitting.md`. Intersected with the search's hits — this side's
+derivation at the two artifacts, to be re-derived by the next dispatch's tool — 18 hit files sit in that
+set outside Ruling 32's named members. Three of Ruling 32's named members
+(`cowork_layer1_tone_collection_design.md`, `cowork_layer1_extend_design.md`,
+`cowork_layer2_reslice_design.md`) are not in the set and stay in the population by name.
+
+**What was decided.** Ruling 32's item 4 is narrowed: a term-search hit enters the outgoing population
+only if its file is a member of the specification document set. The population is therefore Ruling
+32's eleven named members plus every hit file in that set. **Every other hit file is published on the
+population artifact as a listed RESIDUE** — hit, outside the specification set, not dispositioned by
+this comparison — and is the territory of the phase's other mechanism for design content in
+non-specification documents, the mining map named at the phase definition §3.4's inputs. **The residue
+is published, never dropped (#12).**
+
+**The two alternatives declined.** *Split all 103 across dispatches*: declined on the principles
+axis — three to four dispatches tabulating the pilot's own briefs and outputs, sealed samples and
+registers as if they were specifications, most of whose statements would place as *historical* or
+*not a statement*; apparatus cost of the kind the user flagged as too meta on 2026-08-25, and against
+the reading-budget lesson the derivation's §5 was written to establish. *Narrow the terms only*:
+declined on the objective axis — it loses fermata and key-signature passages and still does not reach
+the stop (46 at best), and it tunes a threshold by hand until the number fits, the shape D-431 and the
+recognizer clause exist against. **The two axes agreed and Ruling 1's precedence clause was not
+exercised.** The risk of the ruled option, stated with it: a good idea that sits only in a report
+reaches L1 through the mining map rather than through this comparison.
+
+**Three writing-side defects in the dispatch this batch ran, counted here because the batch found them
+and this side owns them.** (1) The declared start state was read from `guard_state.json` at the tip
+without checking which commit had written that object; it was three commits stale (written at
+`21e78f575a`), so eight reds were declared where the tree carried eleven. (2) Assumption A1 named two
+tracked modifications and missed a third, `cowork_handoff.md`, modified on disk by the eighty-ninth
+session and ordered read by the same dispatch. (3) Assumption A4 ordered a script carrying a `--check`
+mode written and forbade enrolling it, without opening `tools/audit/gen_guard_state.py`, whose derived
+candidate population makes an unenrolled `--check` script a STOP by construction (its own comments
+call this the standing new-tool rule); the STOP stands at the end-state run, and E3 was unmeetable as
+written — the P-3 shape. **All three are one shape: a claim about an object this side had not opened.**
+The remedies are in the next dispatch: the start state declared from the guard artifact commit
+`8f1e4e9d…` wrote; the enrolment of `tools/audit/gen_l0_l1_outgoing_population.py` in the runner's
+authored list, ordered as the one-script instance of the marker-enrolment act on the user-owed list,
+the user having been told and not objecting.
+
+**What it does NOT do.** It authorizes no derivation, no disposition, no measurement, no code. It moves
+no charter, no design point and no phase. It does not amend Ruling 32 beyond its item 4, and the eleven
+named members stand. **No dispatch is written by this ruling (D-250)** — the dispatch is written by the
+same session in the next act. **No decisions-register identity is allocated** — that register cannot
+accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
 ## 4. What this ruling does NOT do
 
 It authorizes no fix, no design, no inference change, no measurement, and no amendment to any
@@ -3065,3 +3135,14 @@ Layer 2 and Layer 5 sections; `cowork_joint_estimator_factorization.md` §3; and
 `tools/audit/artifact_inventory.json`. Same targeted-edit method on a container copy of the bridge-staged
 snapshot, committed under the change guard rather than forced. **Nothing else in this record was altered by
 this extension.***
+
+*★ AND WITH **Ruling 33** (§3an) by the same session, 2026-09-02, after verifying the comparison batch at
+the objects: the four commits by explicit hash with their path lists, both refs at the ref files, the
+derivation blob by sha256 against the copy read before the dispatch, and `cowork_handoff.md` on disk against
+its tip blob. For the surface that session read at the files: `cc_report_comparison_l0_l1_2026_09_02.md`
+whole; the close and its end-state section in `cowork_away_returns.md` whole;
+`tools/audit/l0_l1_outgoing_population.json` (its counts and every per-file hit record);
+`tools/audit/specification_document_set.json` (its members); the kind list of `cowork_design_doc_template.md`;
+and the authored invocation list of `tools/audit/gen_guard_state.py`. Same targeted-edit method on a
+container copy, committed under the change guard rather than forced. **Nothing else in this record was
+altered by this extension.***

@@ -1,7 +1,7 @@
 # Cowork Session Handoff — MuseScore Studio Harmonic Analysis
 
 ---
-## COWORK SESSION CLOSE (EIGHTY-EIGHTH ENTRY, 2026-09-01 — THE CONTINUING LINE) — ★★ **THE FIRST DERIVATION IS FULLY PREPARED AND HAS NOT RUN.** The brief is complete, the boot pack exists, four scores are staged by name, and the sitting landed in two commits. **NOTHING IS IN FLIGHT** — no dispatch is running, no surface awaits a ruling, nothing is half-written. **THE NEXT ACT IS THE USER'S: he opens a fresh Cowork session on the brief.** A session that boots on this entry does NOT boot that one. THE CURRENT ENTRY POINT.
+## COWORK SESSION CLOSE (EIGHTY-EIGHTH ENTRY, 2026-09-01 — THE CONTINUING LINE) — ★★ **THE FIRST DERIVATION IS FULLY PREPARED AND HAS NOT RUN.** The brief is complete, the boot pack exists, four scores are staged by name, and the sitting landed in two commits. **NO DISPATCH IS IN FLIGHT — BUT THIS BANNER'S ORIGINAL CLAIM THAT NOTHING AWAITS A RULING IS NO LONGER TRUE, AND ITS ORIGINAL NEXT ACT IS NOW WRONG.** ★★ **`cowork_running_order_2026_09_01.md` IS THE AUTHORITY ON WHO DOES WHAT, WHEN, AND WHAT WAITS ON WHAT. READ IT BEFORE THE TABLE BELOW, AND WHERE THEY DIFFER THE TABLE BELOW IS WRONG.** **DO NOT BOOT THE BLIND SESSION YET** — Ruling 25 discarded the first one, and the replacement waits on acts the running order names. **Two rulings are owed by the user and are stated at §3aj.11 of the sitting record.** A session that boots on this entry does NOT boot the blind one. THE CURRENT ENTRY POINT.
 
 You start clueless. Read this block first, then perform the ordinary session-start read: `CLAUDE.md`
 whole, `DECISIONS.md` whole, `STATUS.md`, and the derived gating answer
@@ -16,8 +16,23 @@ sitting now binds how you write a decision surface — read it before you write 
 
 ### ★★ THE ORDER OF ACTS — WHO DOES WHAT, WHEN, AND WHAT DEPENDS ON WHAT
 
-**Read this before anything else you do. Three things were prepared at the close of the eighty-seventh
-session's successor, and they are NOT sequential.**
+### ★ SUPERSEDED IN PART — READ THIS FIRST
+
+**This table was written before the blind session was booted and stopped.** ★★ **THE LIVE ANSWER IS
+`cowork_running_order_2026_09_01.md`, at the repository root. Open it before you act on anything
+below.** Two things in the table are now false:
+
+- **Act 1 has RUN.** You are reading its output; the topmost heading says EIGHTY-EIGHTH. **Act 3 is
+  therefore unblocked and is what you are doing.**
+- **Act 2 is NOT unblocked, and its wording is wrong.** The blind session was booted, **it stopped at its
+  own first act because it was given this project's memory index before it acted**, and **Ruling 25
+  (§3ai) discarded it rather than resuming it.** The replacement boot waits on the memory-index rewrite
+  and on the user's memory test. **Do not tell the user to boot it, and do not boot anything, until the
+  running order's acts A, B and E have been dealt with.**
+
+**Act 4 is unchanged and still yours**, and still waits on an output file that does not yet exist.
+
+**The table as originally written, kept because an amended record should show what it amended:**
 
 | # | Act | Whose | Depends on | Blocks |
 |---|---|---|---|---|
@@ -26,9 +41,11 @@ session's successor, and they are NOT sequential.**
 | 3 | **Open YOU** — the continuing line — on `cowork_handoff.md` | the user | **act 1** | — |
 | 4 | Write the comparison instruction, then compare | **you** | **act 2's output file** | L2 |
 
-**Acts 1 and 2 are INDEPENDENT of each other.** The blind session's whole read is its brief and its
-pack, and the pack's read-me forbids it `cowork_handoff.md` by name — so the prepend cannot touch it and
-it cannot touch the prepend. **Either may run first, or both at once.**
+**What remains true of the reasoning under it.** The blind session's whole read is its brief and its
+pack, and the pack's read-me forbids it `cowork_handoff.md` by name — so the prepend never could touch
+it. **What that reasoning missed is that the brief and the pack are not a session's whole intake**: the
+project memory index arrives before either. That is the finding the running order and §3ai and §3aj
+exist to handle.
 
 **Act 3 depends on act 1 and on nothing else.** **HOW YOU TELL WHETHER ACT 1 HAS RUN:** open
 `cowork_handoff.md` and read its topmost `## COWORK SESSION CLOSE (` heading. **If it says EIGHTY-EIGHTH,
@@ -55,7 +72,9 @@ them, which is why the checking held — and where it did not, §3y, §3aa, §3a
 misses in this side's own name.
 
 **The sitting record is `cowork_rulings_2026_08_31_decision_surface_sitting.md`**, extended by this
-session through **§3ag**. **No content of it is restated here (#6).** Its figures are each published
+session through **§3aj** — this line originally said §3ag and was corrected when §3ah through §3aj were
+added. **§3ai is Ruling 25 and §3aj is what followed it; read both before acting on the blind
+derivation.** **No content of it is restated here (#6).** Its figures are each published
 beside the object they are re-derivable from (**D-663**); **do not transcribe one into a new
 document** (#17f, **D-431**) — go to the object.
 
