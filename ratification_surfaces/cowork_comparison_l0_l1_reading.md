@@ -50,11 +50,12 @@ The population's order is the artifact's:
 | 13 | `cowork_layer6_grouping_design.md` | **DONE** |
 | 14 | `cowork_target_architecture.md` | **DONE** |
 | 15 | `cowork_layer3_keymode_design.md` | **DONE** |
-| 16–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 16 | `cowork_score_census.md` | **DONE** |
+| 17–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 16–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 17–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 16**, `cowork_score_census.md`.
+dispatch resumes at **position 17**, `docs/scoring_model.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -7529,6 +7530,164 @@ a weighted quantity where S-46 tests a motion (15.19).
 
 ---
 
+### 6.16 — Document 16: `cowork_score_census.md`
+
+> **Manifest for this document.** Outgoing statements: **2** (rows 16.1 and 16.2). Paragraphs counted
+> under *not a statement*: **63**, across the banner and 10 sections. Both counted at this document by
+> this session.
+>
+> **Why this document is in the population:** a term-search hit under Ruling 32 item 4, retained by
+> Ruling 33 as a member of the ruled specification document set.
+>
+> **★ TWO STATEMENTS OUT OF SIXTY-FIVE PARAGRAPHS, AND THAT IS THE HONEST RESULT RATHER THAN A THIN
+> READING.** This document is a **census of scores and ground-truth corpora**: what exists, where it
+> is, under what licence, against which need, and by what process it was enumerated. **Almost none of
+> it says anything about what the analysis does with a notated record** — its subject is the material
+> the analysis is measured against, which `FRAMEWORK.md` §5 assigns to *the measurement of the
+> analysis*, a NOT-A-LAYER. **The whole document was read**, and the two statements below are what
+> speaks to L0's or L1's subject.
+>
+> **This is the term search's reach caveat working as the artifact declares it.** §3 of this file
+> records that the term list is authored and that the hit set is *"a lower bound, never a census"*; it
+> follows that a hit may also be a **document whose subject lies elsewhere**, and this is the first
+> clear instance. The rows the document does produce are not thereby small — Row 16.2 is a flat
+> disagreement about what a notated voice is worth in keyboard music.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+**Row 16.1 — a voice or stream label set's labels are derived from engraved notation, not from a
+listener's judgment about heard lines.**
+
+*Outgoing statement.* "**What a voice/stream label set actually MEASURES is said at intake** …— the
+voice labels obtainable today are derived from **engraved notation**, not from a listener's judgment
+about heard lines, and the intake record says so in those terms. … a label taken from the engraving
+measures the engraver's decision, and a consumer that needs heard streams would be graded against
+something else without being told." — §8c, the intake rule (locator: line 328).
+
+*Derived statements that speak to it.* S-13 (L0 supplies *notated* voices only; *"a contrapuntal voice
+that the notation does not mark is derived, not given, and no L1 computation may need it"*), S-52
+(every published item carries an establishment status, and a consumer may not put a provisional item
+under load).
+
+*Current-text axis.* S-13: **AGREES**, and closely — both texts separate the **notated** voice from
+the **heard** line and say that treating one as the other misleads a consumer. S-52: **AGREES** in
+discipline; this text calls its own rule *"principle #21 at the intake point"*, which is S-52's ground
+one level up.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-13). **★ S-13's PROXY HAZARD REACHED INDEPENDENTLY,
+AND FROM THE GROUND-TRUTH SIDE** — S-13 declares it about what L0 supplies, this declares it about
+what a label set measures, and both name the same gap between the engraving and the line.
+
+---
+
+**Row 16.2 — for keyboard music the engraved voice is close enough to the inference target that the
+field works with it.**
+
+*Outgoing statement.* "For keyboard music the engraved voice is close enough to the inference target
+that the field works with it, and that acceptance is itself recorded rather than left unsaid." — the
+same rule (locator: line 330).
+
+*Derived statements that speak to it.* S-13.
+
+*Current-text axis.* S-13: **DIFFERS**.
+
+*The difference, in both texts' own words.* S-13 names **keyboard notation as the case where the proxy
+fails**: its premise is *"notated voice is a usable proxy for a line"* and its false-negative path is
+*"keyboard notation in which one notated voice carries a chord (the chorale file writes soprano and
+alto as two `<voice>` elements of one staff; a piano reduction might write both as one chord). The cue
+then sees a chord, not a line, and S-46's fallback fires."* The outgoing text names **keyboard music as
+the case where the proxy is accepted**, on the ground that the field works with it.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+the notated voice is a usable proxy **in keyboard music specifically**, since the two texts name that
+repertoire as the proxy's failure case and as its accepted case respectively — and S-46's cue, its
+relaxation, and Row 10.25's per-voice profiles all rest on the answer.
+
+---
+
+#### Not a statement — counted by paragraph, per section, so the arithmetic closes (63)
+
+*Every paragraph below is about the corpora the analysis is measured against — their enumeration,
+their licences, their needs coverage and the process that finds them — and none states what the
+analysis does, must do, may assume or must not do about L0's or L1's subject.*
+
+| Section | Paragraphs counted | What they are |
+|---|---|---|
+| the banner | 1 | the census's status and its two appendix drafts |
+| §1 | 3 | why corpora kept being discovered, the container-closure table, and the standing process rule |
+| §2 | 6 | the six headline findings |
+| §3 | 2 | the five inclusion criteria, and the measure-do-not-infer rule for an annotation layer |
+| §4 | 2 | the dedupe-by-work rule and the record-only rule for an overlapping acquisition |
+| §5 | 7 | the five decision tiers, the corpus-expansion ratification, and the jazz-fit deferral |
+| §6 | 3 | the three implementation riders |
+| §7 | 1 | the residual risk, named and bounded |
+| §8 | 9 | the comprehensiveness claim, the deliberate non-enumerations, and the six mitigations |
+| §8b | 5 | the recurring-discovery finding, its two mechanisms, the purpose-sweep trigger, and the wave-3 executions |
+| §8c | 24 | the full-needs audit: its question, the row-earning rule, the twenty-row needs vector, the audit and search steps, the fitting-pool licence constraint, the difficulty-grade prohibition, the intake rule's other three consequences, and the supersession protocol |
+| **Total** | **63** | — |
+
+#### The arithmetic at this document
+
+- Rows written: **2** (16.1 and 16.2). No row of this document splits.
+- **Outgoing statements dispositioned: 2.**
+- Paragraphs counted under *not a statement*: **63**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 1 | 16.1 |
+| ADOPTED — proposed | 1 | 16.2 |
+| RELOCATED | 0 | — |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **2** | — |
+
+**The column sums to 2, against 2 statements, so the arithmetic closes at this document:**
+1 + 1 + 0 + 0 + 0 + 0 + 0 = 2.
+
+**★ RELOCATED IS ZERO HERE, AND THAT IS DELIBERATE RATHER THAN AN OVERSIGHT.** A great deal of this
+document belongs to *the measurement of the analysis* — the licence pool for a shipped fitted value,
+the record-only rule for an overlapping acquisition, the needs vector's cadence and phrase columns.
+**None of it is an outgoing statement under this comparison's unit**, which requires a statement about
+what the analysis does with a notated record; a rule about which corpus may feed a fit says nothing
+about that. Those paragraphs are therefore **counted, not relocated** — the transfer list is for
+content found in the wrong charter, not for content outside the subject altogether.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 2 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **3** |
+
+#### What this document's rows put in front of the user
+
+**Row 16.2 is a flat disagreement about one repertoire, and it is sharper than its size suggests.**
+S-13's premise is that a notated voice is a usable proxy for a line, and its declared false-negative
+path is **keyboard notation** — the chorale writing soprano and alto as two voices of one staff, a
+piano reduction writing both as one chord, the cue then seeing a chord rather than a line and S-46's
+relaxation firing. This document names **keyboard music as the case where the engraved voice is close
+enough that the field works with it**. Both texts are explicit and both give a reason. **S-46's
+same-voice condition, its relaxation, and the per-voice cue profiles of Rows 10.25 and 10.42 all rest
+on which is right.**
+
+**Row 16.1 is the agreement beside it**, and it is worth recording: the derivation declares the
+notated-versus-heard gap as a hazard of what L0 supplies, and this document declares the same gap as a
+property of what a label set measures — the same distinction, reached from the ground-truth side, and
+grounded in the same principle.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -8016,6 +8175,14 @@ Gathered from the documents tabulated so far. **Not complete over the population
     start — states that the loop **re-slices and re-decodes** between iterations, and asks that an
     **enlargement of the span** be distinguished from a **window inside it**. The derived
     specification has neither.
+62. **★ Row 16.2 — that the specification state whether the NOTATED VOICE is a usable proxy for a line
+    IN KEYBOARD MUSIC.** S-13's premise is that it is, and its declared false-negative path is keyboard
+    notation exactly — *"the chorale file writes soprano and alto as two `<voice>` elements of one
+    staff; a piano reduction might write both as one chord … the cue then sees a chord, not a line, and
+    S-46's fallback fires"*; the outgoing record states that **for keyboard music the engraved voice is
+    close enough to the inference target that the field works with it**. Both are explicit and both
+    give a reason. **S-46's same-voice condition, its relaxation, and the per-voice cue profiles of
+    Rows 10.25 and 10.42 all rest on the answer.**
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -8105,37 +8272,46 @@ Gathered from the documents tabulated so far. **Not complete over the population
     evidence.
 41. Row 15.19 — S-46's motion test, against characteristic-pitch and leading-tone terms hard-gated on
     a window weight, so a present-but-weak tone counts as absent.
+42. Row 16.2 — S-13's false-negative path, which names keyboard notation as the proxy's failure case,
+    against keyboard music named as the case where the field accepts the proxy.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the fifteen documents tabulated, not a distribution over the
-population.** The population is 29 documents; 14 are untouched. No figure below may be read as
+**This is a RUNNING total over the sixteen documents tabulated, not a distribution over the
+population.** The population is 29 documents; 13 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 513 statements placed so far:**
+**Dispositions, over the 515 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | **209** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | **156** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | **35** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | **81** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | **31** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | **513** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | **210** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | **157** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | **35** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | **81** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | **31** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | **515** |
 
-**The arithmetic closes:** 209 + 156 + 35 + 81 + 0 + 31 + 1 = 513, against 513 statements, and each
+**The arithmetic closes:** 210 + 157 + 35 + 81 + 0 + 31 + 1 = 515, against 515 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same fifteen documents:**
+**Current-text verdicts, over the same sixteen documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | **541** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | **184** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | **148** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | **873** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | **543** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | **185** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | **148** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | **876** |
+
+**★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
+document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
+or how important the document is. Document 16 contributes two statements out of sixty-five paragraphs
+because its subject is the corpora the analysis is measured against; document 10 contributes
+fifty-three out of eighty because its subject is L1's face (e) exactly. **No comparison between two
+documents' counts is a comparison of their weight.**
 
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
