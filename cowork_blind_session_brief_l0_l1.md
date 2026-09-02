@@ -1,5 +1,42 @@
 # BRIEF for the blind deriving session — the L0+L1 subject (the detail-specification phase's first derivation)
 
+> **★★★ AMENDED 2026-09-02: THE MATERIAL IS DELIVERED IN STAGES, AND THIS BRIEF ARRIVES ALONE AND
+> FIRST.** The fourth boot declared clean of `CLAUDE.md`, of any memory index and of any connected folder
+> — **the nothing-mounted ruling held** — and stopped on a third route: **the harness reads attached files
+> into a session's context before its first turn, in an order nobody chose, and this brief arrived LAST,
+> after nine others.** Every reading order this document specifies was defeated before the session could
+> act, and **no wording here could have prevented it.** Three changes, all at their own clauses: a new
+> **§3a** stating how material arrives and that pre-reading is expected and not a stop; the
+> boot-declaration allow-list narrowed to **this brief alone in message one**; and the
+> **stop-on-meeting clause** split, since a file already in context whole cannot be stopped before —
+> it is now recorded instead, by location and without paraphrase. **No ruled point, no charter, no pack
+> member and no staged score moved.**
+>
+> **★★ AMENDED AGAIN 2026-09-01, ON THE USER'S RULING: THE DERIVING SESSION IS OPENED WITH NOTHING
+> MOUNTED, AND EVERYTHING IT READS IS ATTACHED TO ITS CONVERSATION.** The reason is measured, not
+> precautionary: **the harness injects `CLAUDE.md` in full, as a `# claudeMd` block, for any session with
+> the project folder connected** — observed independently in two sessions at the same staged path — and
+> `CLAUDE.md` is the file Ruling 13 names as disqualifying for this subject. **No wording in this brief
+> could have prevented that; only not mounting the folder does.** Four things moved: the boot-declaration
+> allow-list is rewritten for a session with no folder and now requires a **block-by-block inventory**
+> rather than a summary, because that summarising is exactly how two careful sessions missed a repository
+> file; §3's read scope is the attachments; the bars are restated as *do not go looking* rather than *do
+> not list*; and §7's output is **delivered into the conversation**, there being no path to write to.
+> **No ruled point, no charter, no pack member and no staged score moved.** *(Considered and not taken:
+> temporarily swapping `CLAUDE.md` for a stripped copy. It would have left a governing document modified
+> in the working tree, exposed every other session booting in that window, and owed a restore act.)*
+>
+> **★ AMENDED 2026-09-01, on the user's approval, after the first replacement boot stopped.** Two changes,
+> both recorded at the clauses themselves: the boot-declaration clause became an **allow-list** — it could
+> not otherwise be cleared, because this harness always injects a project note — and §3 gained a **bar on
+> listing directories and on reading this repository through a shell**, after a session met some 250
+> document titles while searching for this file. **That bar is POINTED AT from the block before §0**,
+> because §3 is read too late to prevent the act it forbids — the same too-late defect the allow-list was
+> repairing, made once more in the act of repairing it and corrected the same day on the user's catch.
+> **The boot line that opens this session must carry this brief's absolute path AND the read mechanism**,
+> and it is stated at `cowork_running_order_2026_09_01.md`. Nothing else in this brief moved: no ruled
+> point, no charter, no pack member, no staged score.
+>
 > **STATUS: ALL FIVE POINTS OF §8 ARE RULED, THE BOOT PACK §3 NAMES EXISTS, AND FOUR SCORES ARE STAGED.
 > This brief is complete. It dispatches nothing and boots no session.** **P1, P2 and P4 were ruled
 > 2026-08-31** (Ruling 13, `cowork_rulings_2026_08_31_decision_surface_sitting.md` §3m); **(P5) the pack
@@ -23,6 +60,93 @@
 > derives; where the charter speaks, the session obeys and says so.
 
 ---
+
+## ★★ BEFORE §0, BEFORE THE PACK, BEFORE ANYTHING — DECLARE WHAT YOU WERE GIVEN AT BOOT
+
+**Stop here and do this first. It is not a formality, and a previous attempt at this derivation ended
+at exactly this point.**
+
+**★ YOU HAVE NO PROJECT FOLDER AND YOU MUST NOT ACQUIRE ONE. Amended 2026-09-01 on the user's ruling.**
+This session is opened with **nothing mounted**. **Everything you may read is ATTACHED to this
+conversation** — this brief, ten pack members, four score files — and **there is no other source you may
+draw on inside this project.** You do not mount, connect, request or accept a project folder; you do not
+list a directory; you do not run a shell over project material; you do not search for a project file.
+**If a project folder becomes available to you at any point, that is not an opportunity — STOP and say
+so.** The ground for all of this is at §3, and it is named here because §3 is read too late: the acts it
+forbids happen while a session is still orienting itself.
+
+*Why. Two earlier attempts were disqualified. The first met roughly 250 document titles while hunting for
+this brief — **file names are content**, and the repository root's titles announce this project's
+decomposition of its own analysis. The second received `CLAUDE.md` in full because the harness injects it
+for any session with the project folder connected. **Neither failed through its own conduct**, which was
+exemplary in both cases; each failed because it was booted into a room that contained more than it was
+allowed to see. Nothing is mounted this time for exactly that reason.*
+
+**In your first message, before you read §0 of this brief and before you open anything at all, state
+everything that was present in your context before your first act and that you did not fetch
+yourself** — an injected memory index, a project note, a summary of prior decisions, a file the harness
+opened for you, anything at all. **Quote it or describe it, and say how much of it you saw. Report ALL
+of it, the expected material below included** — the report is part of your independence record (§6), and
+an output without it is incomplete.
+
+**★ HOW TO DO THIS, MECHANICALLY — added 2026-09-01 because two sessions in a row got it wrong the same
+way, and both were careful sessions.** **Enumerate the blocks in your context ONE BY ONE and quote each
+one's opening line.** Do not summarise a region as "the generic system prompt", "the usual scaffolding"
+or "harness boilerplate" and move on. **Both earlier failures were exactly that**: a repository file sat
+nested inside a block that looked generic, and the reader classified the block instead of reading it. The
+second session found its own error only on a re-check and corrected itself unprompted, which is why you
+are told to do the careful pass first. **A block you have not quoted the opening line of is a block you
+have not inventoried.**
+
+**Then apply this test. It is a MATCHING test, not a judgment. Do not reason about whether what you
+received matters.**
+
+**EXPECTED MATERIAL — this and nothing else. It is NOT a stop:**
+
+- **this brief, and — in message one — nothing else of this project.** It may already have been read into
+  your context before your turn began; **that is expected** (§3a). Report it; do not stop on it.
+- ordinary harness scaffolding with no project content: today's date, the timezone, tool and skill
+  inventories, subagent listings, git-attribution boilerplate, generic product and behaviour guidance
+- a note saying a computer is reachable, **provided no project folder is connected to you**
+
+**The pack members and the scores are NOT expected in message one.** They arrive later, in their own
+messages (§3a). **If any of them is already present when you make this declaration, say so** — it means
+the staging did not hold, and that is a fact the user needs, though it is not by itself a stop, those
+files being material you are entitled to.
+
+**If everything you received matches that list: say so positively** — *"everything I received at boot is
+on the expected list; no project folder is connected, no repository file reached me, and nothing else was
+present"* — **and continue to §0.**
+
+**If ANYTHING falls outside it: STOP.** Named because each has actually happened: **a `# claudeMd` block
+or any other block carrying the contents of a repository file**; `CLAUDE.md` under any path, including a
+staged or uploaded copy; **an injected memory index or any summary of this project's prior decisions**; a
+project-instruction note carrying any content at all; **a folder-context reminder naming a connected
+project folder**; a file the harness opened for you. Do not read the rest of this brief. Do not open a
+pack member. Do not open a score. **Report what you received and its extent, and end there.** Whether it
+disqualifies you is not yours to judge and not something you should reason about — **say what you got and
+stop.**
+
+**If you are unsure whether something is on the list, it is not on the list. STOP.** And **if you later
+discover you missed something in this inventory, say so at once and stop then** — a late correction is
+worth far more than a tidy first answer, and the session that made one is the reason this instruction
+exists.
+
+**Why this exists, stated so you do not treat it as boilerplate.** This project keeps knowledge of how
+its analysis currently works in more places than a prohibition list can name, and at least one of them
+arrives **before a session can read any instruction at all**. **The stop-on-meeting clause at §3 fires
+too late for that case, because by then you have already been given the material.** This clause is the
+only one that fires in time, and it works by detection rather than prevention — **it cannot stop you
+being given something; it can stop you deriving from it.**
+
+**★ WHY IT IS AN ALLOW-LIST RATHER THAN "STOP IF ANYTHING ARRIVED", amended 2026-09-01 on the user's
+approval.** As first written this clause stopped on **any** unfetched material. **That branch could never
+be cleared**: this harness always injects a project note and a folder reminder, so its "nothing was
+present" alternative was unreachable and every session booted on this brief stopped here regardless of how
+clean its boot was. **One did, on 2026-09-01, over a project note whose whole content is the sentence
+above.** The allow-list narrows what stops you; **it does not narrow what you report, and it hands you no
+judgment** — you match, you do not assess. Ruling 25 part 4's design is intact: detection, not prevention,
+and the significance call stays with the user.
 
 ## 0. Terms, explained before anything rests on them
 
@@ -133,27 +257,84 @@ a statement here depends on that, the dependency is written as a statement in it
 
 ## 3. What the session reads — and the one rule that matters most
 
-**The session's whole read inside this repository is this brief, the directory
-`tools/audit/derivation_boot_pack/l0-l1/`, and the four score files named later in this section.** Open
-the directory's `00_READ_THIS_FIRST.md` first; it names the
-members and the order to read them. **Nothing else inside this repository is opened:** not this
-project's specifications, not `ARCHITECTURE.md`, not the open-items or decisions registers, not any
-session handoff, dispatch or report, and **above all not any document that states how this project's
-analysis currently reads a score, finds change points, or computes metric strength.** The ordinary
-session-start read of this repository is **REPLACED, for this session, by the pack.** The session takes
-no branch rule, reads no commit log, and runs nothing.
+**★ EVERYTHING YOU MAY READ IS ATTACHED TO THIS CONVERSATION. Amended 2026-09-01 on the user's ruling:
+NOTHING IS MOUNTED.** There is no project folder, no device bridge and no repository path. **Your whole
+read of this project is: this brief, the ten attached pack members, and the four attached score files.**
+Open the pack member named `00_READ_THIS_FIRST.md` first; it names the members and the order to read
+them. **The ordinary session-start read of this project is REPLACED, for you, by the pack.** You take no
+branch rule, read no commit log, and run nothing.
+
+**Nothing else of this project is opened**, and with nothing mounted there is nothing else you *could*
+open: not this project's specifications, not its architecture document, not its open-items or decisions
+registers, not any session handoff, dispatch or report, and **above all not any document stating how this
+project's analysis currently reads a score, finds change points, or computes metric strength.**
+
+**★ AND YOU DO NOT GO LOOKING. This is the bar's home; the block before §0 points here.** You do not
+mount, connect, request or accept a project folder. You do not list directories. You do not run a shell
+over project material. You do not search for a project file by name or by pattern. **Every file you may
+read is attached and named, so you never need to hunt for one — and if you find yourself hunting, you
+have already gone wrong: stop and say so.**
+
+*Why these are bars and not preferences, in the words of what actually happened.* **File NAMES are
+content.** This project's document titles announce its own decomposition of the analysis — layer names,
+component names, the subjects of design documents. **A session on 2026-09-01 met roughly 250 such titles
+while looking for this brief, and was disqualified**, having opened not one of them. **A second session
+the same day received `CLAUDE.md` in full**, because the harness injects it for any session with the
+project folder connected, and `CLAUDE.md` describes how this project reads a key signature and a declared
+mode out of a notated file — which is L0's own subject. **Nothing is mounted for you precisely so that
+neither route exists.** Both sessions behaved well; the room they were booted into was the problem.
+
+## 3a. ★★ HOW YOUR MATERIAL ARRIVES — READ THIS BEFORE YOU WONDER WHERE THE PACK IS
+
+**Added 2026-09-02, after three attempts were disqualified by things that reached a session before it
+could act.**
+
+**You are given your material IN STAGES, in separate messages, and this brief arrives ALONE and FIRST.**
+
+1. **Message one carries this brief and nothing else.** You read it, you perform the block-by-block boot
+   inventory demanded before §0, and **you declare. Then you stop and wait.** You do not ask for the pack,
+   you do not look for it, and you do not begin §2.
+2. **The pack members and the four scores follow in later messages.** When they have all arrived you read
+   the pack member named `00_READ_THIS_FIRST.md` first, then the members in the order it gives.
+
+**★ EXPECT THE FILES TO ARRIVE ALREADY READ. THIS IS NORMAL AND IS NOT A STOP.** This harness places an
+attached file's contents into a session's context **before that session's first turn**, without the
+session issuing any call, and **in an order nobody chose.** That is why the brief now comes alone: sent
+together with the pack, it arrived **last, after nine other files**, and the reading order this brief
+specifies was defeated before the session could act. **Nothing written in this brief could have prevented
+that** — only the staging can.
+
+**So, precisely:**
+
+- **A file arriving pre-read is EXPECTED and is not a stop**, whether it is this brief in message one or a
+  pack member later. **It is still reported** in your inventory, by name and by how much you saw.
+- **A file you did not expect at all is still a STOP**, pre-read or not — anything that is not this brief,
+  a named pack member, or one of the four named scores.
+- **You still never fetch, mount, list or search for anything.** Waiting is the correct behaviour when
+  something has not arrived yet; hunting for it is not.
 
 **Beyond the repository, the session MAY fetch and read published research** — peer-reviewed papers,
 published algorithms, public documentation — and MUST label every load-bearing claim it takes from them
 FACT (stated or measured in a paper actually fetched and read), THEORY (established published theory),
 or CONJECTURE. **A source that could not be fetched yields no statement**; the gap is recorded.
 
-**★ THE STOP-ON-MEETING CLAUSE.** If anywhere in the pack or in this brief the session meets a statement
-about how THIS project's analysis currently does any of §2's subject, it **STOPS READING THAT FILE AT
-THAT POINT** and records, in its independence record (§6), which file, where in it, and how much it saw
-before stopping. It then continues with the remaining files. It does not delete, paraphrase or reason
-about what it saw. **A session whose output carries no such record, and no positive statement that
+**★ THE STOP-ON-MEETING CLAUSE — AMENDED 2026-09-02 FOR WHOLE-FILE DELIVERY.** If anywhere in the pack or
+in this brief you meet a statement about how THIS project's analysis currently does any of §2's subject:
+
+- **If you are reading the file yourself and have not yet passed the statement: STOP READING THAT FILE AT
+  THAT POINT.** Continue with the remaining files.
+- **If the file was already in your context whole when your turn began** — see §3a, this is now the normal
+  case — **you cannot stop before seeing it, and no fault attaches to you for that.** Record it instead.
+
+**Either way, record in your independence record (§6): which file, where in it (by line or by heading),
+and how much of it you saw.** Do not delete, paraphrase or reason about what you saw, and **do not let it
+enter a statement.** **A session whose output carries no such record, and no positive statement that
 nothing was met, is incomplete.**
+
+*Why the clause was weakened rather than dropped.* Its purpose was to limit how much of a leaky passage a
+session absorbs; whole-file delivery removes that lever and leaves only the record. **The record is worth
+having on its own** — a session of 2026-09-02 produced exactly one, by line number and without paraphrase,
+and it is the only measurement anyone has of what the pack's filter left behind.
 
 **★ FOUR SCORES ARE STAGED, BY NAME. The session may open these four files, and no other score:**
 
@@ -245,8 +426,8 @@ reading, and a session that may not reach its primary must trust it, which #19 d
 
 ## 7. The output, and what the session does NOT do
 
-**One file for both charters**, written to the repository root, **named
-`cowork_blind_derivation_l0_l1_2026_08_31.md`** (RULED, §8 (P4)), with the status banner
+**One file for both charters**, **named `cowork_blind_derivation_l0_l1_2026_08_31.md`** (RULED, §8 (P4)),
+with the status banner
 *DRAFT — BLIND DERIVATION, NOT COMPARED, NOT RATIFIED*. It is written for a reader who knows music
 theory and not this project: terms explained at first use, predicates qualified, no invented labels,
 music-theory words in their musical sense only.
@@ -263,10 +444,14 @@ allocates no register identity; it takes no branch rule and reads no commit log;
 any subject but §2's; and **it decides nothing about the derivation method itself**, which was ruled
 established on a different unit.
 
-**The deriving side is a fresh Cowork session.** The file is delivered to the repository root through
-the device bridge, hash-verified after re-staging, and committed by a later dispatch. **The session
-itself commits nothing, writes no `STATUS.md` entry, no handover block, no report and no close beyond
-its own output file.**
+**The deriving side is a fresh Cowork session with NOTHING MOUNTED** (amended 2026-09-01 on the user's
+ruling). **So the file is DELIVERED INTO THIS CONVERSATION, not written to any repository path** — the
+session has no path to write to and must not seek one. **The user places it; a later dispatch commits
+it.** The session itself commits nothing, writes no status entry, no handover block, no report and no
+close beyond its own output file.
+
+**Write it whole and deliver it once, finished.** Nothing about the delivery route changes what the file
+must contain, and a file delivered in pieces cannot be checked against §6 as one object.
 
 ## 8. The points the user rules before this brief is dispatched — ALL FIVE RULED
 
