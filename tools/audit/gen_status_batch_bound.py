@@ -60,11 +60,18 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # commit, the then-previous batch and the executing act. Nothing else about this tool changes, and
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
-BASE_COMMIT = "b8e738448ea061a2212d82de454e46a55ecf6f8f"
+#
+# ★ RE-AIMED 2026-09-02 by `cc_instruction_comparison_l0_l1_2026_09_02.md` Task 3, the per-batch
+# re-aiming this tool's own carve-out provides for. The PREVIOUS aiming is recorded rather than
+# overwritten (#12): base commit `b8e738448ea061a2212d82de454e46a55ecf6f8f`, then-previous batch
+# `cc_instruction_phase_close_second_2026_08_30.md`, act date 2026-08-31 — that move RAN, and this
+# tool's own already-in-the-archive STOP is what established that it had before the re-aiming was
+# made. Nothing else about this tool changes.
+BASE_COMMIT = "ae2adfc6270aee98f18c0e1d553abb796523397a"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_phase_close_second_2026_08_30.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_reading_pass_landing_second_2026_08_31.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-08-31 and this batch ran on 2026-08-31, so the two agree, as they did for
@@ -72,7 +79,7 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_phase_close_second_2026_08_30.md"
 # states when the ACT happened, and a header carrying a dispatch's date would say something false
 # about the record (#10) on any batch where the two differ again. It is a fourth authored field
 # beside the three aiming inputs above.
-ACT_DATE = "2026-08-31"
+ACT_DATE = "2026-09-02"
 DISPATCH = "cc_instruction_reading_pass_landing_second_2026_08_31.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
 # batch's own `STATUS.md` entry in the same numbered task — its Task 5, whose closing paragraph

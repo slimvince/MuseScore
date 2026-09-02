@@ -201,42 +201,18 @@
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "b8e738448ea061a2212d82de454e46a55ecf6f8f",
- "the_then_previous_batch": "cc_instruction_phase_close_second_2026_08_30.md",
- "entries_moved": 4,
- "characters_moved": 7333,
+ "base_commit": "ae2adfc6270aee98f18c0e1d553abb796523397a",
+ "the_then_previous_batch": "cc_instruction_reading_pass_landing_second_2026_08_31.md",
+ "entries_moved": 1,
+ "characters_moved": 3657,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 3354,
-   "sha256": "2e9dd6482d52d2c1f1b64b806b0fbe9b2429ff431896a3884b2ecf94812bf1f3",
+   "characters": 3657,
+   "sha256": "d5f4e6f47d59c094ca17e98c7e248c917fa86cb0c314619a82d5753b91984a88",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-30 (CC — **★★ THE FRAMEWORK PHASE IS CLOSED. ITS DOCUMENT IS RATIFIED AND RENAMED — `FRAMEWORK.md` STANDS AT THE REPOSITORY ROOT, LANDED AND "
-  },
-  {
-   "line_at_base": 10,
-   "characters": 1418,
-   "sha256": "9e86e34c180feedb1087a10f6be41d21bc6d8674c25d6df828f48d6032236c09",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-30 (CC — Same dispatch, Tasks 3 to 6: the ruled rename, the six ratified edits, the prepend, and the landing. **`git mv` first and the ratifi"
-  },
-  {
-   "line_at_base": 12,
-   "characters": 1400,
-   "sha256": "5a0b586b6abce4e7f71451b130290ff61283e8be47eeca123b9f20f6ca6e7543",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-30 (CC — Same dispatch, Tasks 1 and 2: the two ordered guard clearances, each measured before it was accepted. **The user-ruled signature row"
-  },
-  {
-   "line_at_base": 14,
-   "characters": 1161,
-   "sha256": "8da262b84cecd341a66250d31f19f6d334641f356560bd57638e4c1c2a27f5ff",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-08-30 (CC — Same dispatch, Task 0: pinned first, then established, and nothing written. **The user's opening line carried the pin order itself, "
+   "opening": "*2026-08-31 (CC — **★★ THE PRIMARY-SOURCE READING PASS IS IN GIT. Its entire evidence base — the population, the fetch record, the continuation file, "
   }
  ],
  "reconciliation": {
