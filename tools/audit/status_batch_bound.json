@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_reading_pass_landing_second_2026_08_31.md, Task 5",
+ "dispatch": "cc_instruction_comparison_l0_l1_second_2026_09_02.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -198,21 +198,40 @@
    "executing_act": "cc_instruction_phase_close_second_2026_08_30.md, Task 2",
    "base_commit": "3e75ef85bce5805eefee0f5015da59d88cc0582a",
    "the_then_previous_batch": "cc_instruction_third_landing_2026_08_28.md"
+  },
+  {
+   "executing_act": "cc_instruction_reading_pass_landing_second_2026_08_31.md, Task 5",
+   "base_commit": "b8e738448ea061a2212d82de454e46a55ecf6f8f",
+   "the_then_previous_batch": "cc_instruction_phase_close_second_2026_08_30.md"
+  },
+  {
+   "executing_act": "cc_instruction_comparison_l0_l1_2026_09_02.md, Task 3",
+   "base_commit": "ae2adfc6270aee98f18c0e1d553abb796523397a",
+   "the_then_previous_batch": "cc_instruction_reading_pass_landing_second_2026_08_31.md",
+   "★_the_re_aiming_was_incomplete": "Only TWO of the four authored fields were moved — `BASE_COMMIT` and `PREVIOUS_BATCH_DISPATCH`. `DISPATCH` and `TASK` were left naming the THEN-PREVIOUS batch (`cc_instruction_reading_pass_landing_second_2026_08_31.md`, Task 5), so the archive header that move wrote into `STATUS_ARCHIVE.md` states that the entries were moved by the batch whose entries were being moved. The header's DATE is right and its ATTRIBUTION is wrong. Found and recorded 2026-09-02 by `cc_instruction_comparison_l0_l1_second_2026_09_02.md` Task 3, which re-aimed all four fields; the already-written archive block was deliberately NOT edited — it is a previous batch's record, the executing dispatch bars rewriting an archived document, and recording the defect is what a later reader needs rather than a silently corrected header."
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "ae2adfc6270aee98f18c0e1d553abb796523397a",
- "the_then_previous_batch": "cc_instruction_reading_pass_landing_second_2026_08_31.md",
- "entries_moved": 1,
- "characters_moved": 3657,
+ "base_commit": "2acef005a99b829cb1c9ea173031fb6c3a4a1051",
+ "the_then_previous_batch": "cc_instruction_comparison_l0_l1_2026_09_02.md",
+ "entries_moved": 2,
+ "characters_moved": 4420,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 3657,
-   "sha256": "d5f4e6f47d59c094ca17e98c7e248c917fa86cb0c314619a82d5753b91984a88",
+   "characters": 2535,
+   "sha256": "fffd1b6d6ba26aa9abba98e596ae6b1c9b3e6a4228fccba186c6119a01140627",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-08-31 (CC — **★★ THE PRIMARY-SOURCE READING PASS IS IN GIT. Its entire evidence base — the population, the fetch record, the continuation file, "
+   "opening": "*2026-09-02 (CC — **★★ THE L0/L1 OUTGOING POPULATION IS DERIVED AND PUBLISHED, AND THE COMPARISON DID NOT OPEN: THE DISPATCH'S OWN RULED SIZE STOP FIR"
+  },
+  {
+   "line_at_base": 10,
+   "characters": 1885,
+   "sha256": "f014799a7032c72f55be7ec23b1856f051cc6d2b257e0c9e37cfe7bca4bb10f3",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-09-02 (CC — Same dispatch, Task 0. **★★ THE FIRST BLIND DERIVATION IS IN GIT, AND THAT IT LANDED UNTOUCHED IS PROVEN RATHER THAN ASSERTED:** the"
   }
  ],
  "reconciliation": {

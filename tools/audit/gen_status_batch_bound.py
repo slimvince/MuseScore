@@ -61,33 +61,46 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # every previous aiming is recorded rather than overwritten (#12): a reader can see the bound being
 # maintained rather than a value that keeps changing for no stated reason.
 #
-# ★ RE-AIMED 2026-09-02 by `cc_instruction_comparison_l0_l1_2026_09_02.md` Task 3, the per-batch
-# re-aiming this tool's own carve-out provides for. The PREVIOUS aiming is recorded rather than
-# overwritten (#12): base commit `b8e738448ea061a2212d82de454e46a55ecf6f8f`, then-previous batch
-# `cc_instruction_phase_close_second_2026_08_30.md`, act date 2026-08-31 — that move RAN, and this
-# tool's own already-in-the-archive STOP is what established that it had before the re-aiming was
-# made. Nothing else about this tool changes.
-BASE_COMMIT = "ae2adfc6270aee98f18c0e1d553abb796523397a"
+# ★ RE-AIMED 2026-09-02 by `cc_instruction_comparison_l0_l1_second_2026_09_02.md` Task 3, the
+# per-batch re-aiming this tool's own carve-out provides for. The PREVIOUS aiming is recorded rather
+# than overwritten (#12): base commit `ae2adfc6270aee98f18c0e1d553abb796523397a`, then-previous batch
+# `cc_instruction_reading_pass_landing_second_2026_08_31.md`, act date 2026-09-02 — that move RAN,
+# and this tool's own already-in-the-archive STOP is what established that it had before this
+# re-aiming was made.
+#
+# ★★ AND THE PREVIOUS RE-AIMING WAS INCOMPLETE, WHICH IS RECORDED HERE RATHER THAN LEFT TO BE
+# REDISCOVERED. Four fields are authored, and the 2026-09-02 re-aiming moved only TWO of them:
+# `BASE_COMMIT` and `PREVIOUS_BATCH_DISPATCH` were re-aimed, while `DISPATCH` and `TASK` were left
+# naming the THEN-PREVIOUS batch. So the archive header that move wrote states that the entries were
+# moved "by `cc_instruction_reading_pass_landing_second_2026_08_31.md` Task 5" when the act was in
+# fact `cc_instruction_comparison_l0_l1_2026_09_02.md` Task 3 — a header that misattributes its own
+# act. **The block already written into `STATUS_ARCHIVE.md` is NOT edited by this batch**: it is a
+# previous batch's record, this dispatch bars moving or rewriting an archived document, and a
+# correction there would rewrite what another act did rather than record it. What this batch does is
+# name the defect here, re-aim all FOUR fields, and report it. The comment at `ACT_DATE` below is
+# corrected in the same act, its former reasoning having been written for a batch whose dispatch date
+# and run date agreed.
+BASE_COMMIT = "2acef005a99b829cb1c9ea173031fb6c3a4a1051"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_reading_pass_landing_second_2026_08_31.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_2026_09_02.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
-# dispatch is dated 2026-08-31 and this batch ran on 2026-08-31, so the two agree, as they did for
-# the batch before it; the field is kept authored rather than inferred because the archive header
-# states when the ACT happened, and a header carrying a dispatch's date would say something false
-# about the record (#10) on any batch where the two differ again. It is a fourth authored field
-# beside the three aiming inputs above.
+# dispatch is dated 2026-09-02 and this batch ran on 2026-09-02, so the two agree; the field is kept
+# authored rather than inferred because the archive header states when the ACT happened, and a header
+# carrying a dispatch's date would say something false about the record (#10) on any batch where the
+# two differ. It is a fourth authored field beside the three aiming inputs above — and it is the one
+# field the previous re-aiming DID move, which is how a header that names the wrong dispatch still
+# carries the right date.
 ACT_DATE = "2026-09-02"
-DISPATCH = "cc_instruction_reading_pass_landing_second_2026_08_31.md"
+DISPATCH = "cc_instruction_comparison_l0_l1_second_2026_09_02.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
-# batch's own `STATUS.md` entry in the same numbered task — its Task 5, whose closing paragraph
-# orders the update and the forward bound together — so both halves of "the same act that writes
-# its own entries" sit inside Task 5, and Task 5 is what the archive header names. No sub-item is
-# carried, because the header names an act rather than a sub-step and every previous aiming names a
-# whole task.
-TASK = "Task 5"
+# batch's own `STATUS.md` entries in the same numbered task — its Task 3, whose item 1 orders the
+# pointer entries and the forward bound together — so both halves of "the same act that writes its own
+# entries" sit inside Task 3, and Task 3 is what the archive header names. No sub-item is carried,
+# because the header names an act rather than a sub-step and every previous aiming names a whole task.
+TASK = "Task 3"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -223,6 +236,23 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_phase_close_second_2026_08_30.md, Task 2",
      "base_commit": "3e75ef85bce5805eefee0f5015da59d88cc0582a",
      "the_then_previous_batch": "cc_instruction_third_landing_2026_08_28.md"},
+    {"executing_act": "cc_instruction_reading_pass_landing_second_2026_08_31.md, Task 5",
+     "base_commit": "b8e738448ea061a2212d82de454e46a55ecf6f8f",
+     "the_then_previous_batch": "cc_instruction_phase_close_second_2026_08_30.md"},
+    {"executing_act": "cc_instruction_comparison_l0_l1_2026_09_02.md, Task 3",
+     "base_commit": "ae2adfc6270aee98f18c0e1d553abb796523397a",
+     "the_then_previous_batch": "cc_instruction_reading_pass_landing_second_2026_08_31.md",
+     "★_the_re_aiming_was_incomplete":
+         "Only TWO of the four authored fields were moved — `BASE_COMMIT` and "
+         "`PREVIOUS_BATCH_DISPATCH`. `DISPATCH` and `TASK` were left naming the THEN-PREVIOUS batch "
+         "(`cc_instruction_reading_pass_landing_second_2026_08_31.md`, Task 5), so the archive "
+         "header that move wrote into `STATUS_ARCHIVE.md` states that the entries were moved by the "
+         "batch whose entries were being moved. The header's DATE is right and its ATTRIBUTION is "
+         "wrong. Found and recorded 2026-09-02 by "
+         "`cc_instruction_comparison_l0_l1_second_2026_09_02.md` Task 3, which re-aimed all four "
+         "fields; the already-written archive block was deliberately NOT edited — it is a previous "
+         "batch's record, the executing dispatch bars rewriting an archived document, and recording "
+         "the defect is what a later reader needs rather than a silently corrected header."},
 ]
 
 ARCHIVE_HEADER = (

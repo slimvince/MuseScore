@@ -19713,3 +19713,181 @@ therefore cannot contain. Every value above was read from the run recorded in
 `tools/audit/guard_state.json`, which that run itself wrote, and from the staged-set enumeration taken
 immediately before this commit; no value here was carried forward from an earlier run or inferred
 from a summary.*
+
+---
+
+## THE L0/L1 COMPARISON TABULATED (SECOND WRITING), NOTHING DECIDED — ★ THE STOP CLEARED, THE POPULATION CUT, AND SEVEN OF TWENTY-NINE DOCUMENTS TABULATED
+
+**★ THE HEADING IS THE DISPATCH'S ORDERED NAME.** This batch ran
+`cc_instruction_comparison_l0_l1_second_2026_09_02.md` whole: Task 0 landed the records and pushed,
+Task 1 cut the outgoing population to the ruled specification set and enrolled the population tool in
+the guard runner, **Task 2 OPENED** — the ruled size stop that ended the previous batch does not fire
+under the cut — and Task 3 closed. **The tabulation is INCOMPLETE and stopped at a member boundary
+(D-672), which is recorded here, in the reading file's own §0, and in the report.**
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `8f1e4e9deffd816f0e54c07c0912055a144f404f` | the local tip; `origin/master` EQUAL to it at the ref file — nothing unpushed |
+| Task 0 | `85b72aec12e427686945feb8b7a7e9c3306a3c5a` | the sitting record, the amended handoff, the ninetieth entry, this dispatch — **four paths** |
+| Task 1 | `03bbd3eefe8c03f8cee290cdc674c3644487ef07` | `gen_l0_l1_outgoing_population.py`, its artifact, `gen_guard_state.py` — three paths |
+| Task 2, documents 1 and 2 | in the git log, between Task 1 and `615a49866d` | the reading file created, with `ARCHITECTURE.md`'s Layer 1 and Layer 2 sections |
+| Task 2, document 3 | `615a49866df1f2d8e64de23d97e6f1b06b8f7a58`'s short form `615a49866d` | `cowork_layer1_note_model_design.md` |
+| Task 2, document 4 | `91498d43f0` | `cowork_layer1_tone_collection_design.md` |
+| Task 2, document 5 | `64c11c5ee1` | `cowork_layer1_extend_design.md` |
+| Task 2, document 6 | `9689b0f68b` | `cowork_layer2_slicing_design.md` |
+| Task 2, document 7 | `cdeb3001e2` | `cowork_layer2_reslice_design.md` |
+| Task 2, the relay | `2acef005a99b829cb1c9ea173031fb6c3a4a1051` | the independence record and the running distribution |
+| the close | this commit | `STATUS.md`, `STATUS_ARCHIVE.md`, the forward bound's re-aiming and its artifact, the read size, this section, the report |
+| the end state | the one further commit | the end-state guard run, which this section does not assert |
+
+**Every commit above was pushed and `origin/master` verified equal at `.git/refs/remotes/origin/master`
+with the file tools, never from a push's own output.** Where a row above gives a short hash, the full
+one is in the git log; the two the close leans on — Task 0 and Task 1 — are given in full.
+
+**THE DISPATCH WAS PINNED** to blob `d9fb1db0c492677afa9db8790b157a0aadf0be02` with `git hash-object -w`
+at Task 0 under standing clause **P-2**, and re-hashed immediately before staging, returning the same
+identifier. **The working-tree-first read is declared** as that clause's own fallback route, the user's
+opening line having named the dispatch file alone.
+
+### Both guard states
+
+**THE START STATE, run before the first edit, HELD EXACTLY AS DECLARED.** 75 guards run, **10
+failing**, 4 not run, 16 historical, **and one STOP** — `unclassified_candidates` carrying
+`tools/audit/gen_l0_l1_outgoing_population.py`. **That is the declared start state's items 1 and 2,
+member for member, with no eleventh red and no second STOP.** Item 3's two predictions also held:
+`gen_evidence_pin_membership.py --check` PASSED and `gen_session_start_read_size.py --check` PASSED.
+**The dispatch's repair of the first writing's stale-object defect worked**: it read its start state
+from the object the tip's own commit wrote, and the tree matched it.
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it, per the dispatch's item 3.
+
+### E0–E3, graded
+
+- **E0 — MET.** Four paths in one commit, not five: A3 was measured before being accepted and came
+  back byte-identical, so `evidence_pin_membership.json` did not move and the ordered path list's
+  *only if it moved* excluded it. `origin/master` verified at the commit. A1's whole-tree check is
+  below.
+- **E1 — MET.** The artifact carries the cut (`the_specification_set_cut`, with the ruled set read
+  verbatim and the three named members that are NOT in it called out as still in the population by
+  name), the residue whole (`the_residue_for_the_mining_map`, each file with the ruled one-line
+  statement and its per-file hit records kept intact), and **both** ordered lists — the cut population
+  and `the_population_before_ruling_33` (#12). The enrolment tuple is present and **the STOP is
+  cleared at a measured run**. The size stop was evaluated **on the IN-set count** and its outcome is
+  that it is **NOT reached**. No figure is restated here (**D-431**).
+- **E2 — MET FOR SEVEN DOCUMENTS, NOT REACHED FOR TWENTY-TWO, and the split is recorded rather than
+  blurred.** For each of positions 1 to 7: its manifest count is at its own section; every outgoing
+  statement carries exactly one disposition, or UNPLACED with what was read; every DIFFERS carries its
+  one-sentence difference in both texts' own words with nothing chosen; the transfer list, the audit
+  questions and the proposals are gathered; **and the arithmetic closes at every one of the seven**,
+  stated as a sum rather than asserted. The independence record is relayed with no verdict word
+  attached. **No recommendation appears anywhere.** A5 holds. **What E2 requires only once every
+  document is done — the derived-side rows S-1 to S-54 with their arithmetic check, the open
+  questions, and the derivation's §7 — is NOT written**, and each is marked NOT YET WRITTEN in place so
+  that no reader mistakes a missing section for an empty one.
+- **E3 — carried by the one further commit**, derived from the declared start state plus this batch's
+  own ordered acts.
+
+### A1–A5, graded
+
+- **A1 — HELD IN FULL, and the check was the whole-population one the dispatch ordered.**
+  `tools/audit/changed_paths.py` enumerated the tracked population: **exactly the two modifications A1
+  names, and no third.** `cowork_handoff.md` — 26 insertions, 7 deletions, every changed passage
+  between the title line and the eighty-seventh entry's heading, so all inside the topmost entry, with
+  nothing below it. The sitting record — two hunks, **zero deletion lines**, additions only. Both
+  untracked paths confirmed present. **This is the repair of the first writing's A1 working.**
+- **A2 — HELD.** The ten failing tools and the one STOP, exactly. Both predicted-stale checks passed.
+  **No red outside the declared set, so no classification by measured cause was owed and none is
+  invented.**
+- **A3 — MEASURED AND HELD ON ALL THREE ROUTES.** `evidence_pin_membership.json` was snapshotted, the
+  committed blob extracted by explicit hash, the artifact regenerated, and both comparisons run with
+  `cmp`: byte-identical each time, `ruling_records_read` unmoved. **The reading file landing under
+  `ratification_surfaces/` had not moved it as of the post-Task-1 run**, which passed before that file
+  existed; the end-state run measures it again with the file present, and that measurement is the one
+  the further commit reports.
+- **A4 — HELD, MEASURED.** Population **76**, one more than 75. `unclassified_candidates` **empty**.
+  The new tool **passes its own `--check`**. The failing set is **the ten named, plus none.**
+- **A5 — HOLDS, and this writing's named exception is what made it holdable.** The derivation, the
+  brief, the pack and its artifact, and every outgoing text in the population are byte-unchanged; the
+  two governing documents this dispatch's own Task 3 orders — `STATUS.md` and `STATUS_ARCHIVE.md` —
+  are the stated exception. **The first writing's blanket collided with its own Task 3; this one named
+  the exception and the collision did not recur.**
+
+### Declared departures
+
+1. **The dispatch was read from the working tree before it was pinned** — P-2's fallback route, the
+   user's opening line having named only the dispatch file. Pinned at Task 0; blob proven unmoved
+   before staging.
+2. **The ordered first read preceded the session-start read** — the derivation's §5, then §6, then §7,
+   then the whole file, before `CLAUDE.md`. **The read SET is unchanged; only its ORDER.**
+3. **★ AN UNORDERED FULL GUARD RUN WAS TAKEN IN WRITE MODE, AND IT IS DECLARED RATHER THAN ABSORBED.**
+   The runner was invoked with `--help`, which it does not handle, so it took its default path and ran
+   the whole set in **write** mode instead of check mode. **It was not killed** — the standing rule
+   against stopping a long-running process without asking. Its verdicts are the same set a check run
+   measures, so the start state above is established from a real full run; the artifact it wrote was
+   **restored from the tip object** `8f1e4e9d…` before Task 0's commit, and the tracked population was
+   re-enumerated afterwards to prove the tree back at exactly the two A1 modifications. **No commit of
+   this batch carries that run's artifact.**
+4. **`tools/audit/gen_status_batch_bound.py` was re-aimed** — the per-batch re-aiming its own carve-out
+   provides for and this dispatch licenses in terms. The previous aiming is recorded beside the new one
+   rather than overwritten (#12).
+5. **A scratch directory outside the repository** carried every diff, every extracted object and every
+   captured tool output, each read back with the file tools.
+
+### ★ ONE FINDING OF THIS BATCH, ABOUT THE APPARATUS
+
+**The previous batch's re-aiming of the forward-bound tool was incomplete, and the archive header it
+wrote misattributes its own act.** The tool has FOUR authored fields. The 2026-09-02 re-aiming moved
+**two** — the base commit and the then-previous batch — and left `DISPATCH` and `TASK` naming the
+then-previous batch, so the block written into `STATUS_ARCHIVE.md` states that the entries were moved
+*"by `cc_instruction_reading_pass_landing_second_2026_08_31.md` Task 5"* when the act was
+`cc_instruction_comparison_l0_l1_2026_09_02.md` Task 3. **The header's date is right and its
+attribution is wrong.**
+
+**What this batch did about it:** re-aimed all four fields, and recorded the defect in the tool's own
+preserved-aimings list, where a later reader meets it beside the aiming it describes. **What this batch
+deliberately did NOT do:** edit the already-written archive block. It is a previous batch's record,
+this dispatch bars rewriting an archived document, and recording the defect is what a later reader
+needs rather than a silently corrected header. **Sorted by D-438's test it is APPARATUS** — it bears on
+neither the analysis, its inputs, nor a measurement tool an analysis measurement depends on — **so
+under R3 it is reported and left, and no open-items row is created**, this dispatch permitting one only
+under the register's rule (c).
+
+### Quarantined audit questions
+
+**Forty-six are produced and they are NOT restated here.** They are gathered in the reading file's own
+AUDIT QUESTIONS section, one per QUARANTINED row, each in one sentence. **The eleven the record already
+carries stay reserved to the AUDIT**, untouched by this batch.
+
+### What the user is asked to rule
+
+**NOTHING IN THE READING FILE, WHICH SAYS SO IN TERMS.** The disposition surface comes separately, put
+by the writing side over these rows, one decision per turn. **This section recommends nothing** — not
+about any disposition, any difference, the derivation, the method, or the L0/L1 split.
+
+### The plan lines
+
+- **The writing side puts the DISPOSITION surface to the user over these rows, one decision per turn —
+  that is the next act, and it is now UNBLOCKED**: rows exist, and the reading file's PROPOSALS section
+  gathers them.
+- **The comparison resumes at position 8**, `ARCHITECTURE.md`'s Layer 5 section, with positions 8 to 29
+  untouched.
+- **The L0/L1 split returns at ratification**, as Ruling 32 states in terms.
+- **The pack finding of §3al.4 goes to L2's pack.**
+- **Then L2**, sequenced by Ruling 10.
+
+### The plan's tell, in one sentence
+
+**Did this batch produce anything other than the landed records, the population artifact, the reading
+file and the report?** **Yes, and it is named:** two `STATUS.md` pointer entries and the forward bound's
+move into `STATUS_ARCHIVE.md` with the tool's own re-aiming and artifact, the regenerated
+`tools/audit/session_start_read_size.json` — every one of them an act Task 3 orders — **and the one
+enrolment tuple in `tools/audit/gen_guard_state.py`, which Task 1 orders and which is the whole of the
+guard-registry change.**
+
+*Provenance: CC, 2026-09-02. Every commit identifier above was read at the object by explicit hash;
+`origin/master` was read at its ref file with the file tools after each push; the guard verdicts are
+this batch's own runs and not carried from any earlier one; A1 was established with the sanctioned
+enumeration tool over the whole tracked population; and A3 was established by `cmp` against the
+committed blob. No figure of the population artifact is restated in this section (D-431).*
