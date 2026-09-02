@@ -52,11 +52,12 @@ The population's order is the artifact's:
 | 15 | `cowork_layer3_keymode_design.md` | **DONE** |
 | 16 | `cowork_score_census.md` | **DONE** |
 | 17 | `docs/scoring_model.md` | **DONE** |
-| 18–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 18 | `cowork_bounded_context_design.md` | **DONE** |
+| 19–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 18–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 19–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 18**, `cowork_bounded_context_design.md`.
+dispatch resumes at **position 19**, `cowork_voiceleading_axis_design.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -7996,6 +7997,736 @@ density test that decides whether the lowest sounding pitch counts as a bass at 
 
 ---
 
+### 6.18 — Document 18: `cowork_bounded_context_design.md`
+
+> **Manifest for this document.** Outgoing statements: **46** (rows 18.1 to 18.43; three rows split, at
+> 18.3, 18.14 and 18.18). Paragraphs, bullets and numbered items counted under *not a statement*:
+> **27**, across the banner block, the glossary paragraph and 10 sections. Both counted at this
+> document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **★ THIS IS THE CROSS-LAYER DESIGN BEHIND THE TWO REGISTER ENTRIES THE DERIVATION WAS GIVEN.** S-32
+> rests on **D-030 and D-031**, and S-53 on **D-030** — *"The analysis works on a selection and
+> whole-score analysis is the degenerate case [RULED — D-030, D-031]"* and *"D-030's bounded-context
+> rule fixes the span as the caller's [RULED]"*. Those two entries' home is `ARCHITECTURE.md`, and this
+> document is the design they stand on; its own banner records the delegation — *"ARCHITECTURE §2.15's
+> bounded-context bullet points here"*, and *"This document is the ONE cross-layer extension spec"*.
+> **So on this one subject the derivation did not derive: it received two lines and used them at two
+> statements.** What this document holds beyond those two lines is a protocol the derived specification
+> does not carry, which is why twenty-three of the forty-six rows below are proposals rather than
+> carries.
+>
+> **★ D-030 AND D-031 ARE NOT AMONG THE EIGHT ENTRIES THE DERIVATION'S §6.2 RECORDS AS MET AND STOPPED
+> AT.** That list is D-023, D-024, D-033, D-057, D-207, D-221, D-224 and D-229. D-030 and D-031 appear
+> in the record's other list — the entries §5 records as **consulted and used** — and §6.2 says so in
+> terms: *"The design-intent entries the derivation uses (D-030, D-031, D-034, D-100, D-207 as a
+> contrast) are within the read span"*. **The distinction bears on this document and on no other in the
+> population:** here the derivation is working from a given rather than from an independent reading,
+> and every AGREES below is to be read that way.
+>
+> **The layer numbering is the old one, and the mapping is stated once so the rows need not repeat it.**
+> This document calls the note model *Architectural Layer 1* and the change-point slicer *Architectural
+> Layer 2*; under the ratified charter those are **L0** and **L1**. *Architectural Layer 3* (key) and
+> *Architectural Layer 4* (chord) are the charter's **L2**; *Architectural Layer 5* (function and
+> cadence) is its **L3**. Nine rows relocate on that mapping.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §1 and §2 — the three spans, and the invariant
+
+**Row 18.1 — the analysis works on the part of the score the user selected, never the whole score.**
+*Statement.* "The shipped product analyses **the part of the score the user has selected**, never the
+whole score." — §1 (locator: line 21); stated again in the banner as "the analysis works on the
+**user's selection**, and a layer that needs evidence beyond the selection **asks for it**" (line 14).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES**, and by descent rather than by coincidence — its defense is this
+sentence's own register entries, *"The analysis works on a selection and whole-score analysis is the
+degenerate case [RULED — D-030, D-031]"*. S-53: **AGREES** — *"the working span is the only thing a
+caller supplies beyond L0."*
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 18.2 — the whole-score case is the degenerate case: with the selection equal to the score no
+extension ever fires and behaviour is unchanged.**
+*Statement.* "**The whole-score case is the degenerate case.** When the selection *is* the whole score
+(batch testing), the loaded span already spans the piece, no layer's edge reasoning has anywhere to
+extend to, and **no extension ever fires** — so behaviour is identical to today. The bounded model
+therefore *generalises* the current behaviour; 'load the whole score' is simply the special case
+'selection = score.'" — §2 (locator: lines 46–49); "(Reading a whole score start-to-end happens only
+in the offline batch-testing harness, which is not part of the product.)" — §1 (line 21).
+*Derived.* S-32.
+*Current-text axis.* S-32: **AGREES** — the degenerate-case reading is the half of D-031 S-32 cites.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 18.3 (i) — a layer often needs evidence from outside the selection to judge its edges
+correctly.**
+*Statement.* "A selection is a **temporal subset** of the piece, and a layer often needs evidence from
+*outside* the selection to judge its edges correctly — the key established *before* the selection
+begins, a chord's neighbour just *past* the selection's end." — §1 (locator: lines 22–25).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES** on the fact, and its remedy is a MARK rather than a request —
+events sounding across the span's start are marked *entered sounding* and events releasing after its
+end *cut by the span*, so that L2 *"know[s] that the first slice's onsets are not real onsets"*. S-53:
+**THE DERIVATION IS SILENT** on obtaining the missing music: its span is fixed and supplied by the
+caller.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+the span's edge is handled by marking alone or may also be handled by enlarging the span — the two
+texts name the same problem and take different remedies, and the derivation's remedy does not exclude
+this one.
+
+**Row 18.3 (ii) — as built, the whole score is loaded regardless, so all context is incidentally
+present.**
+*Statement.* "The current code sidesteps this by loading the whole score regardless, so all context is
+incidentally present. That is the wrong foundation for the product, and the wrong thing to build on."
+— §1 (locator: lines 25–26).
+*Derived.* S-32.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** — it specifies a span and says nothing about
+what any code does with one.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* is the whole score still loaded
+regardless of the selection on the arm that ships, and does any layer therefore read outside the span
+it was given without saying so?
+
+**Row 18.4 — the analysis output covers exactly the selection; everything outside it is evidence,
+never a result.**
+*Statement.* "**Invariant.** The analysis output covers **exactly the selection**; everything outside
+it is evidence, never a result." — §2 (locator: lines 43–44); the two bullets it summarises are
+"**Selection span** — what the user picked. It is the **output span**: analysis labels are emitted only
+for the selection" (line 35) and "**Context (evidence) span** — *loaded minus selection*: the extra
+music a layer pulled in **as evidence only**, never labelled in the output" (lines 40–41). Restated as
+§3 item 4 (line 59) and as §7's fourth decision (lines 211–212).
+*Derived.* S-32, S-50.
+*Current-text axis.* S-32: **AGREES** on covering — *"The published slice list covers the working span
+exactly"* — and carries no second span, so it cannot express the difference between the span that is
+covered and the span that is labelled. S-50: **THE DERIVATION IS SILENT** — its publication list has no
+output-versus-evidence distinction on any item.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether the
+working span of S-32 and S-53 is the span that is covered by slices or the span that carries the
+analysis output, since this text has two and the derivation has one.
+
+**Row 18.5 — the loaded span starts equal to the selection and grows by extension, and the selection
+is always inside it and it always inside the score.**
+*Statement.* "**Loaded span** — what Architectural Layer 1 currently holds. It **starts equal to the
+selection** and grows by extension. Always **selection ⊆ loaded ⊆ score**." — §2 (locator: lines
+37–38).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** — its span does not grow. S-53: **THE
+DERIVATION IS SILENT** — the span is what a caller supplies, once.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.6 — the score is the hard outer bound, and an enlargement can never pass it.**
+*Statement.* "**Score** — the whole piece; the hard outer bound that extension can never pass." — §2
+(locator: line 39); the supplier "**clamps at the score's start/end**" — §5 (line 153).
+*Derived.* S-32.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** — it never distinguishes the span's edge from
+the score's edge.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+#### §3 — the contract every layer obeys
+
+**Row 18.7 — a layer never reads notes or slices outside the loaded span.**
+*Statement.* "A layer **never reads notes or slices outside the loaded span.**" — §3 item 1 (locator:
+line 53).
+*Derived.* S-53, S-32.
+*Current-text axis.* S-53: **AGREES**, at its falsifier's own words — *"falsified if L1 reads any L2
+output or any value not in L0 plus the span."* S-32: **AGREES** — the covering property is relative to
+the span.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(The derived specification carries the rule for L1;
+this text binds every layer, which is the charter's other members' business and travels with them.)*
+
+**Row 18.8 — a layer whose reasoning needs evidence beyond the loaded span either requests an
+enlargement or recognises it has reached the score boundary and proceeds with what it has.**
+*Statement.* "When a layer's reasoning needs evidence beyond the loaded span, it either **(a) requests
+an extension** from Architectural Layer 1 in that direction, or **(b) recognises it has reached the
+score boundary** (nothing more exists) and proceeds with what it has." — §3 item 2 (locator: lines
+54–56); the same rule at §1 (lines 28–31) and §4's *Request* bullet (lines 119–120).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT**. S-53: **THE DERIVATION IS SILENT** — it has no
+request at all.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.9 — a layer must tell "unavailable because not loaded" apart from "unavailable because the
+score starts or ends here", and the supplier reports which.**
+*Statement.* "A layer must distinguish **'unavailable because not loaded'** (→ request extension) from
+**'unavailable because the score starts/ends here'** (→ proceed, truncated). Architectural Layer 1
+reports which." — §3 item 3 (locator: lines 57–58).
+*Derived.* S-32, S-25.
+*Current-text axis.* S-32: **DIFFERS** — its span-edge marks are *entered sounding* and *cut by the
+span*, one mark for both reasons; a consumer reading them cannot tell a span edge from the score's own
+end. S-25: **DIFFERS** in the same way and names the case — *"a tie continuing into a bar outside the
+working span (S-53) — the flag would fire on a span edge that is not a defect; L1 marks span-edge ties
+as 'cut by the span', not as defects"* — which separates a defect from a span edge but not a span edge
+from the score's edge.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the span-edge marks say which of
+the two reasons applies, since the outgoing rule makes a layer's next act depend on the answer.
+
+**Row 18.10 — a layer never guesses how much more context it needs; the amount is discovered, not
+chosen.**
+*Statement.* "A layer **never guesses how much** more context it needs — guessing an amount is the
+un-knowledge-based move this contract forbids. It knows *what* it needs, not how far away that is, so
+it **extends incrementally and stops on a principled condition**; the amount is **discovered, not
+chosen**." — §3 item 5 (locator: lines 60–62).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.11 — the principled stop is convergence, applied directly on the in-selection quantity the
+enlargement was requested for.**
+*Statement.* "The principled stop is **convergence**: extend until the layer's **in-selection output
+stops changing** with further context. This is self-validating — you have enough context exactly when
+adding more does not change the answer … **A layer applies that criterion DIRECTLY, on the
+in-selection quantity the extension was requested for**: it re-infers over the enlarged span, compares
+that quantity step against step, and stops when it repeats." — §3 item 6 (locator: lines 63–71).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.12 — a cheaper domain proxy standing in for the convergence test was tried, measured false
+and struck; the headline rule is unchanged.**
+*Statement.* "**TRIED AND CLOSED — a cheaper domain proxy standing in for the convergence test.** This
+item formerly ended with a clause licensing a layer to substitute such a proxy, and that clause is
+struck. … **The one time it was exercised, measurement disproved it.** … **Why the strike reaches the
+general clause and not only its worked example:** the example was the clause's single exercise, and it
+produced a proxy validated once in design that build then measured false — which is the unvalidated
+structural-proxy substitution principle #17(d) forbids … **What is UNCHANGED: item 5's headline
+rule**." — §3, the dated annotation of 2026-08-07 (locator: lines 73–90); the same strike is recorded
+at §5's third bullet (lines 158–163) and §10's third bullet (lines 274–277).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** in discipline — a consumer may not put a provisional item under
+load until the parameter it rests on is established, which is what a proxy validated once in design
+and never measured would have been.
+*PROPOSED DISPOSITION.* **HISTORICAL** — a superseded clause preserved in place with its supersession
+note. *(Its live half is Row 18.10's, which the annotation says in terms is unchanged.)*
+
+**Row 18.13 — the hard bound and the score boundary are safety caps, never the needed amount, and a
+cap that fired is never the discovered amount.**
+*Statement.* "Every extension also carries a **hard bound** (a maximum reach) and terminates at the
+**score boundary** — these are **safety caps for the pathological 'never converges,' not the needed
+amount**, with a no-oscillation guard." — §3 item 7 (locator: lines 91–92); "§7's safety caps are the
+only other way out of the loop, and a cap that fired is never the discovered amount" — item 6 (lines
+70–71).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.14 (i) — the enlargement step size is the requesting layer's, and is an efficiency knob that
+never changes the answer.**
+*Statement.* "The **increment size** — how much to load per step before re-checking convergence — is
+**chosen by the requesting layer; it is not fixed and not Architectural Layer 1's to decide.** … It is
+an **efficiency knob only**: a larger increment means fewer round-trips …, never a different answer,
+because convergence (item 6) fixes the result." — §3 item 8 (locator: lines 93–99).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.14 (ii) — the supplier executes exactly the one requested step and never evaluates
+convergence, that being inference, which it does not do.**
+*Statement.* "Architectural Layer 1's *extend* executes **exactly the one requested step and never
+evaluates convergence** (that would be inference, which it does not do), so the increment can only be a
+per-call parameter from the requester." — §3 item 8 (locator: lines 100–102); "It holds **no analysis
+knowledge**" — §5 (line 153).
+*Derived.* S-51, S-53.
+*Current-text axis.* S-51: **AGREES** — the claim test is that an output is evidence, not a claim, when
+it is *"computable from L0 facts with no tonality, chord or boundary as input"*, and a supplier that
+evaluated convergence would be deciding. S-53: **AGREES** — forward only, and L1 reads nothing but L0
+plus the span.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 18.15 — denial and truncation are honest, never silent: the affected output carries its
+truncation provenance, and a truncated result is never presented as a complete one.**
+*Statement.* "**Denial/truncation is honest, never silent.** When an extension is refused (hard bound,
+score boundary at a *selection* edge with the stop condition unmet, or a driver-level safety cap), the
+layer proceeds on truncated evidence AND the affected output carries **`clipped-by-selection-edge`**
+provenance (+ `cue-denied` where a request was actually refused) — a truncated result is never
+presented as a complete one." — §3 item 10 (locator: lines 103–106).
+*Derived.* S-32, S-25, S-52, S-50.
+*Current-text axis.* S-32: **AGREES**, and for the same stated reason — its marks exist because
+*"Marking entered and cut events keeps the span's edges honest (#12)"*. S-25: **AGREES** — a span-edge
+tie carries a mark saying it is a span edge rather than a defect. S-52: **AGREES** — every published
+item carries its establishment status, and a consumer may not put a provisional item under load.
+S-50: **DIFFERS** — S-50 says *"L1 publishes exactly"* and then lists what it publishes, and **S-32's
+and S-25's span-edge marks are not in that list**, so the derivation's two texts do not agree with each
+other about whether the marks are published items.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the publication list carry the
+span-edge marks and the truncation provenance explicitly, since the rule they serve is stated in both
+texts and only one of them publishes them.
+
+**Row 18.16 — the request to the supplier is in ticks, and the supplier is unit-blind.**
+*Statement.* "**Units.** The request to Architectural Layer 1 is in **ticks** — it is unit-blind (it
+loads a time range, it knows nothing of slices or measures)." — §3 item 9 (locator: lines 108–109).
+*Derived.* S-28, S-53.
+*Current-text axis.* S-28: **AGREES** on the time axis — its defense is that *"The record gives
+positions as exact fractions (MuseScore's `<Division>480` ticks and `<fractions>` locations; MusicXML's
+divisions)"*, which is the unit this request is made in. S-53: **THE DERIVATION IS SILENT** on the
+request's form.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.17 — the change-point slice is the fundamental quantum of meaning: nothing an analysis can
+see changes at a finer granularity, so no requester reaches finer than a change point.**
+*Statement.* "The **fundamental quantum of meaning is the slice (change-point)**: the sounding set is
+constant within a slice, so no analysis can change at finer granularity — a **beat or sub-change-point
+step would load no new note and change nothing**, so requesters never reach finer than a
+change-point." — §3 item 9 (locator: lines 110–112).
+*Derived.* S-33, S-28, S-29.
+*Current-text axis.* S-33: **AGREES** — slice identity is the event set, so within a slice there is
+nothing left to change. S-28: **AGREES** — the change points are the onsets and releases, with no
+tolerance and no grid. S-29: **AGREES** — the half-open slice is the stretch between two of them.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(This is the outgoing record's sharpest statement of
+why the beat is not the analysis grain, and it agrees with Row 6.58's rejection of a metric grid rather
+than with Row 14.25's beat-labelling reference.)*
+
+**Row 18.18 (i) — a bar boundary is nameable before the earlier notes are loaded.**
+*Statement.* "Architectural Layer 3 reach-back in **measures** (a key's scale, and a notation boundary
+nameable before the earlier notes are loaded)" — §3 item 9 (locator: lines 112–113).
+*Derived.* S-34.
+*Current-text axis.* S-34: **AGREES** — the notated metrical hierarchy is derived from the time
+signature in force and from nothing else, so the bar's positions are known without reading a note.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 18.18 (ii) — the requesting layer steps in its own natural unit: the key layer in bars, the
+chord layer in slices.**
+*Statement.* "Above that floor, the requester steps in **its own natural unit** and converts to a tick
+target: Architectural Layer 3 reach-back in **measures** …; Architectural Layer 4's window in
+**slices**." — §3 item 9 (locator: lines 111–114).
+*Derived.* S-34, S-33.
+*Current-text axis.* S-34: **AGREES** that the bar is an L1-published level. S-33: **AGREES** that the
+slice is an L1-published unit.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** — which
+unit a key or chord decision steps in is that decision's own business. *(S-34's bar level and S-33's
+slice travel with it as the units it names.)*
+
+**Row 18.19 — the new slices emerge from the slicer re-slicing the enlarged region, and the requester
+never enumerates them to the supplier.**
+*Statement.* "The new slices then emerge from Architectural Layer 2 re-slicing the loaded region — the
+requester never enumerates them to Architectural Layer 1." — §3 item 9 (locator: lines 114–115).
+*Derived.* S-53, S-33.
+*Current-text axis.* S-53: **AGREES** — forward only, and L1 computable in one forward pass over the
+span it is given. S-33: **AGREES** — the slices are a function of the events in the span, so
+re-slicing is what produces them.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state that the
+slice list over an enlarged span is produced by re-slicing and never by patching, which is the rule
+this sentence makes explicit and S-53 only implies.
+
+#### §4 — the protocol
+
+**Row 18.20 — supply: the additional notes are appended without dropping what was held, the look-up
+index is kept consistent, the new span and whether the score boundary was hit are returned, and a
+repeat request is a no-op.**
+*Statement.* "**Supply (Architectural Layer 1).** It loads the additional notes in that direction,
+**appends** them to the note model (never dropping already-loaded notes), keeps its look-up index
+consistent, and returns the **new loaded span** and **whether the score boundary was hit**.
+Re-requesting an already-loaded span is a **no-op** (idempotent)." — §4 (locator: lines 121–123);
+restated at §5's first bullet (lines 151–154) and §10's first bullet (lines 269–272).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** — it states what a slice list over a span
+covers, not how a span is supplied. S-53: **THE DERIVATION IS SILENT** — the span arrives once.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *(The same operations are specified at Document 5's
+rows; this is the second statement of them in the outgoing record, and the two are read together.)*
+
+**Row 18.21 — a recompute after an enlargement is a fresh forward re-inference, never a local patch of
+the previous output.**
+*Statement.* "**Bounded recompute — a fresh forward re-inference, not a patch.** 'Re-run' means each
+affected layer **re-infers as if running for the first time** over the enlarged loaded span — never a
+local patch of its previous output." — §4 (locator: lines 124–126).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES** — L1 is *"computable in one forward pass over the working
+span"*, which is what re-inferring from scratch over the enlarged span is.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.22 — the interior change points are stable under enlargement, and the edge slice extends
+because the old clip boundary was artificial and not a real change point.**
+*Statement.* "Architectural Layer 2 re-slices over the enlarged span: its **interior** real
+change-points are stable, but the **edge slice abutting the old loaded boundary extends** into the
+newly-loaded context (the old clip boundary was artificial, not a real change-point …)." — §4
+(locator: lines 126–129).
+*Derived.* S-32, S-28.
+*Current-text axis.* S-32: **DIFFERS** — S-32 makes the span's ends the slice list's first and last
+change points, so under it the clip boundary IS a change point of the published list; this text says a
+clip boundary is not a real change point at all. S-28: **AGREES** with this text and not with S-32 —
+change points are onsets and releases, and a clip boundary is neither.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether a
+span edge is a change point or a marked artificial boundary that is not one — S-28 and S-32 answer it
+differently inside the derivation, and this text answers it a third time.
+
+**Row 18.23 — what guarantees correctness is re-slice equivalence: the result equals a fresh slicing
+over the enlarged span.**
+*Statement.* "This is benign: what guarantees correctness is **re-slice equivalence** (the result
+equals a fresh slice over the enlarged span), and the edge extension is exactly the 'more context at
+the leading edge' convergence (§3.6) absorbs." — §4 (locator: lines 129–131).
+*Derived.* S-33, S-28.
+*Current-text axis.* S-33: **AGREES** — identity is the event set, so a fresh slicing over a larger
+span reproduces the interior slices exactly. S-28: **AGREES** — the change points are a function of
+the events and of nothing else.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.24 — the requesting layer's changed inference propagates forward, and every inferring layer
+after it re-infers in turn.**
+*Statement.* "because more context can change *what it decides*, **its changed inference propagates
+forward** — every inferring layer **after** it re-infers in turn (a different leading-edge key changes
+the chord there, which changes the function, and so on)." — §4 (locator: lines 131–133).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES** on the direction — nothing L1 publishes depends on anything L2
+decides, so a change re-enters the pipeline at the front and travels forward.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.25 — the request is a data-supply call down the stack, control and not inference; inference
+never flows backward.**
+*Statement.* "The extension **request** is a data-supply call **down** to Architectural Layer 1 (a
+higher layer using a lower layer's service — control, not inference). … **Inference never flows
+backward** — a later layer re-inferring cannot alter an earlier layer's result. So an extension is
+precisely *'ask down for more raw material, then infer forward again,'* with no backward inference edge
+anywhere." — §4 (locator: lines 136–141); recorded again as §7's fifth decision (lines 213–214).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES**, and at the one place the derivation anticipates exactly this
+act — its falsifier's exemption reads *"Not falsified by: a caller passing a span computed by an
+earlier L2 run — that is the caller's act, not L1's input."*
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The closest independent meeting in this document:
+two texts written apart reach the same distinction between a control call downward and an inference
+edge backward, and each states it as the thing that keeps the forward-only contract intact.*
+
+**Row 18.26 — the equivalence invariant: any sequence of enlargements must give the same result as one
+fresh run over the final span.**
+*Statement.* "**Equivalence invariant (the correctness guard).** The result after **any** sequence of
+extensions must equal a **single fresh run over the final loaded span** — extension is an optimisation
+of *'load more, then run from scratch,'* never a different computation." — §4 (locator: lines
+142–144); restated as a test obligation at §8 — "extending in one big step or several small ones to
+the same span must give the same result. (A required test.)" (lines 227–229).
+*Derived.* S-53, S-33.
+*Current-text axis.* S-53: **AGREES** — one forward pass over the span is the whole of L1's
+computation, so a sequence of passes over growing spans ends where a single pass over the last one
+would. S-33: **AGREES** — the slices are determined by the events in the span, not by how the span was
+arrived at.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 18.27 — the forward cascade is bounded: a carried-in key affects the leading-edge slices and
+decays inward, so only the affected slices re-infer.**
+*Statement.* "In practice the forward cascade is **bounded**: the new context changes inference only
+where it actually reaches (a carried-in key affects the leading-edge slices and decays inward), so only
+the affected slices re-infer — the same locality that makes the stop condition terminate." — §4
+(locator: lines 144–147).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT** — it carries no claim about how far a decision's
+influence reaches.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** — how
+far a carried-in key reaches is a property of the tonal reading, not of the slice list.
+
+#### §5 — the per-layer roles
+
+**Row 18.28 — the supplier holds no analysis knowledge: it supplies notes, and the decision to enlarge
+and the stop condition belong to the requesting layer.**
+*Statement.* "It holds **no analysis knowledge** — it supplies notes; the *decision* to extend, and the
+stop condition, belong to the requesting layer (single responsibility)." — §5, first bullet (locator:
+lines 153–154); recorded again as §7's third decision (lines 208–210).
+*Derived.* S-51, S-53, S-1.
+*Current-text axis.* S-51: **AGREES** — the claim test draws the line at deciding, and a supplier that
+chose when to stop would be deciding. S-53: **AGREES** — the span is the caller's, not L1's. S-1:
+**AGREES** — L0 supplies what the record carries and nothing it would have to judge.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 18.29 — on an enlargement the slicer produces the change-point slices for the newly loaded
+region, preserving complete coverage and slice identity over the larger span.**
+*Statement.* "**Architectural Layer 2 — re-slice on extend.** When the loaded span grows, it produces
+the change-point slices for the **newly loaded region**, preserving complete coverage and slice
+identity over the larger span." — §5, second bullet (locator: lines 155–157).
+*Derived.* S-32, S-33.
+*Current-text axis.* S-32: **AGREES** — complete coverage of the span is S-32's own property. S-33:
+**AGREES** — slice identity is the event set, which is what is preserved.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *(The two properties are carried; that they survive an
+enlargement is the addition.)*
+
+**Row 18.30 — slices falling in the context span are usable as evidence but are not output.**
+*Statement.* "Slices that fall in the context span are usable as evidence but are **not** output." —
+§5, second bullet (locator: line 157); "context slices are evidence, not output" — §10, second bullet
+(line 273).
+*Derived.* S-32, S-50.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** — every slice of the span is published alike.
+S-50: **THE DERIVATION IS SILENT** — its publication list marks no slice as evidence-only.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that a published slice say whether it
+is inside the output span or is context, since a consumer that labels a context slice breaks the
+invariant at Row 18.4 without any published field telling it so.
+
+**Row 18.31 — reach-back IS an enlargement request, with a direction, a stop condition and a bound.**
+*Statement.* "Reach-back **is** an extension request: direction = earlier, stop = *'the leading-edge
+settled key repeats across iterations'*, bound = a maximum reach." — §5, third bullet (locator: lines
+158–160).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+
+**Row 18.32 — the leading-edge evidence window requests an enlargement or truncates at the score
+start, and the context slices anchor the carried-in key while output is emitted only for the selection
+slices.**
+*Statement.* "Its per-slice evidence window (± a few beats) at the **leading edge** of the selection
+requests extension, or truncates at the score start. The whole-run decode then runs over selection
+slices **plus** context slices; the context slices **anchor the carried-in key**, and output is emitted
+only for the selection slices." — §5, third bullet (locator: lines 163–166).
+*Derived.* S-32.
+*Current-text axis.* S-32: **AGREES** on the underlying fact — the opening of a span is not
+self-sufficient, which is why S-32 marks its events *entered sounding*.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** —
+anchoring a carried-in key is the tonal reading's act. *(S-32's span-edge marks travel with it as what
+the tonal reading is told about the span's opening.)*
+
+**Row 18.33 — the chord window must, at a selection edge, request an enlargement or recognise the
+score boundary, and never assume the neighbour slice exists.**
+*Statement.* "Its neighbour window (the slice ± a few neighbour slices, and the rewritten *'extend
+until the chord is in view, stop at the first inconsistent slice'* rule) must, at a **selection edge**,
+**request extension or recognise the score boundary** — never assume the neighbour slice exists." —
+§5, fourth bullet (locator: lines 167–170).
+*Derived.* S-32.
+*Current-text axis.* S-32: **AGREES** on what a span edge is — events releasing past it are marked
+*cut by the span*, which is the published form of "the neighbour may not be there".
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+
+**Row 18.34 — the request fires only when the truncation is decision-relevant: a truncated window
+whose evidence sufficed requests nothing.**
+*Statement.* "**Discovery sharpening…:** the request fires only when the truncation is
+**decision-relevant** — the decision under the truncated window is not already a full-margin `Commit`
+(a truncated window whose evidence sufficed requests nothing)." — §5, fourth bullet (locator: lines
+171–174).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** — the
+criterion is stated in the decision's own vocabulary (a decision already at full margin), so it cannot
+be stated at the input contract without importing that vocabulary.
+
+**Row 18.35 — as built, the chord layer's request path is uncoded and the window silently truncates.**
+*Statement.* "*(As-built status: this request path is UNCODED — the window silently truncates;
+gap-analysis item #5. The build item of this design.)*" — §5, fourth bullet (locator: line 174).
+*Derived.* S-32.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** — it states what a span's edges carry, not what
+any code does at one.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* does a window at a span edge still
+truncate silently on the arm that ships — that is, without the Row 18.15 provenance — and is the
+statement that the path is uncoded still true at the current commit?
+
+**Row 18.36 — a decision's forward context span runs to the first of a cadence-anchored function, a
+punctuation boundary, or a hard bound.**
+*Statement.* "A slice's **decision-context span** extends forward until the FIRST of: **(i)** a
+cadence-anchored function (a chord whose function a §5.2 cadence fixed), **(ii)** a punctuation
+boundary (the L1.5 primitive's picked tick), **(iii)** a hard bound of `K` slices / `B` beats
+(settings — the §3.7 safety cap)." — §5, fifth bullet (locator: lines 175–179).
+*Derived.* S-51.
+*Current-text axis.* S-51: **AGREES**, and the agreement is worth its own sentence — a
+cadence-anchored function and a picked boundary are both decisions under S-51's claim test, and this
+text places neither at the layer that publishes candidates: the picked tick is attributed to a
+*primitive* the document numbers **L1.5**, outside the slicer.
+*PROPOSED DISPOSITION.* **RELOCATED — to L3, *the read-off facts*** — a function fixed by a cadence
+and a picked punctuation boundary are read-off facts, with Rows 8.1, 9.3, 9.10 and 1.21–1.24.
+
+**Row 18.37 — the discovery rule and the one-pass closure: an enlargement may finalize an open
+decision and never re-open a closed one, and a denied request leaves the decision resolved on what it
+saw with its provenance.**
+*Statement.* "**Discovery:** a §5.5 resolution, §5.2 vote aggregation, or §5.3 persistence decision
+whose span was cut by the **selection edge before any of (i)–(iii) held** requests a forward extension
+… Extension re-runs flow forward under the §8 one-pass closure (an extension may finalize an open
+decision, never re-open a closed one — data supply, not a back-edge). Denied → the decision resolves on
+what it saw (or its honest open mark) + the item-10 provenance." — §5, fifth bullet (locator: lines
+179–183).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES** on the shape — supplying data forward is not a backward
+inference edge, which is the same distinction Row 18.25 turns on.
+*PROPOSED DISPOSITION.* **RELOCATED — to L3, *the read-off facts***. *(Its honesty half is Row 18.15's
+rule, cited here by that row's own number in the outgoing text.)*
+
+**Row 18.38 — the consumer surfaces the truncation provenance and the enlargement cue, and never acts
+on them.**
+*Statement.* "L6 requests nothing (assembly); it surfaces the item-10 provenance and the
+`extension-cue` tag (L6 §5.1 amendment, 2026-07-02)." — §5, sixth bullet (locator: lines 184–185);
+"Layer 6 (when resumed) surfaces these marks and the `extension-cue` tag …; it never acts on them." —
+§3 item 10 (line 107).
+*Derived.* S-50, S-52, S-51.
+*Current-text axis.* S-50: **AGREES** — the naming bar exists so that a published mark is surfaced as
+what it is and not consumed as a conclusion. S-52: **AGREES** — a consumer may not put a provisional
+item under load. S-51: **AGREES** — evidence is surfaced, decisions are not made from it at the
+publishing end.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Rowed here rather than relocated because its content
+is a rule about how an L1-published mark is consumed, which is L1's face (g); Row 13.9 is the same
+shape from the same direction.)*
+
+#### §8 and §11 — the risks, the interim, and the acceptance list
+
+**Row 18.39 — the note model's look-up structures under enlargement are the main implementation
+difficulty, and both must extend consistently.**
+*Statement.* "**The note-model index under extension is the main implementation difficulty** (the
+genuinely non-trivial piece). The start-time-ordered list and the 'latest end-time so far' structure
+must extend consistently — by append + re-index, or by an incremental structure." — §8 (locator: lines
+220–222).
+*Derived.* S-3.
+*Current-text axis.* S-3: **THE DERIVATION IS SILENT** — it fixes the per-note facts L0 supplies and
+specifies no look-up structure over them.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* do the two named look-up structures
+still exist on the arm that ships, and does either extend consistently under an enlargement — or is
+the rebuild interim below what actually runs?
+
+**Row 18.40 — interim: the supplier may rebuild over the enlarged span on each enlargement, and the
+interim is invisible to the layers above because the contract is what they are written against.**
+*Statement.* "**Interim:** until that is built, Architectural Layer 1 may *rebuild* over the enlarged
+span on each extension (correctness first, speed later) — but the *contract* (build-selection +
+extend) is what every layer above is written against, so the interim is invisible to them." — §8
+(locator: lines 222–224); "the §11 'reads the whole score' note becomes an explicit **interim** behind
+the build-selection + extend contract" — §10, first bullet (lines 270–272).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT** — it specifies a computation over a span, not
+how the span's content is assembled.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *(A declared, bounded migration state with its
+retirement named, which is the shape principle #23 requires; recorded as a proposal because the derived
+specification carries no such declaration.)*
+
+**Row 18.41 — enlargement and incremental re-analysis must compose cleanly: an edit inside the
+selection and an enlargement outside it are different operations on the same model.**
+*Statement.* "**Composition with incremental re-analysis.** The layers already offer 're-analyse a
+sub-range' (for score edits). Extension (grow the loaded span) and re-analysis (re-run part of it) must
+compose cleanly — an edit *inside* the selection and an extension *outside* it are different operations
+on the same model." — §8 (locator: lines 230–232).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT**. S-53: **THE DERIVATION IS SILENT** — the
+derived specification has no notion of the score being edited at all.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say what an
+edit to the notated record does to a published slice list, which is the one thing in this document's
+subject the derivation nowhere considers.
+
+**Row 18.42 — the degenerate case must stay byte-identical, or the corpus measurements move for the
+wrong reason; with the selection equal to the score no request fires, so it is byte-identical by
+construction.**
+*Statement.* "**Batch-path preservation.** The degenerate case (selection = score) must stay
+**byte-identical** to today, or the corpus metrics move for the wrong reason. This is the regression
+guard for the whole change. **(Gate-proof framing…:** with selection = score no request ever fires, so
+the corpus gate 53/24/53 is byte-identical **by construction** — the standing proof obligation of the
+build.)" — §8 (locator: lines 233–236).
+*Derived.* S-32.
+*Current-text axis.* S-32: **AGREES** on the premise the argument rests on — whole-score analysis is
+the degenerate case, so nothing fires there.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)** — what a
+change must not move in a corpus measurement is the measurement layer's business. *(The gate this text
+names is superseded, as the §11 annotation of 2026-08-02 records in terms; the rule that a rebuild must
+not move a measured value for a reason unrelated to the analysis is what relocates, not the value.)*
+
+**Row 18.43 — the acceptance list requires the supplier's build-selection-and-extend seam and the
+slicer's re-slice-on-enlargement, the latter recorded done — and the whole list is deprecated as
+naming the superseded stack.**
+*Statement.* "**Coded, L1–L5:** L1 build-selection + extend seam (interim rebuild allowed, §8); L2
+re-slice-on-extend (done); L3 reach-back activated as this design's request (from gated-off); L4's
+request-or-truncate path (uncoded today, gap-analysis #5) + item-10 denial provenance; L5's pinned
+extent + discovery rule." — §11 item 2 (locator: lines 242–243). Against it: "**THE ACCEPTANCE LIST
+ABOVE (items 1–4) IS DEPRECATED — NOT TO BE USED, NOT EVEN RELEVANT:** it names layers, seams and a
+corpus gate of the superseded legacy stack (the 53/24/53 batch stop was itself superseded
+2026-07-06)." — the dated annotation of 2026-08-02 (lines 253–257).
+*Derived.* S-32.
+*Current-text axis.* S-32: **AGREES** that a build-selection-and-extend seam is what the given design
+intent requires; the coding claims about particular seams are outside what the derivation states.
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build program recorded and then deprecated at its own
+surface, preserved with the ruling that deprecated it. *(Recorded rather than dropped because the same
+annotation says the GATE itself stands and transfers, so a reader who takes the list as dead must not
+also take the gate as dead.)*
+
+---
+
+#### Not a statement — counted by paragraph, bullet and numbered item, per section, so the arithmetic closes (27)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the banner block | 5 | the signed status with the L6 gate, the just-in-time coding note, the consolidation note naming the four merged items, the build-order sentence, and the not-applicable views |
+| §1 | 0 | both paragraphs contribute rowed statements |
+| §2 | 0 | all four span bullets, the invariant and the degenerate-case paragraph are rowed |
+| §3 | 0 | all ten contract items and the dated annotation are rowed |
+| §4 | 1 | the *Request* bullet, which restates §3 items 2 and 7, rowed at 18.8 and 18.13 |
+| §5 | 0 | all six per-layer bullets are rowed |
+| §6 | 4 | the four runtime scenarios, each a worked illustration of a rule already rowed at §3 or §5 |
+| §7 | 6 | the six architecture decisions, each restating a rule rowed above together with the alternative declined |
+| §8 | 2 | the re-slice and re-decode cost bullet, and the determinism bullet, which restates the equivalence invariant rowed at 18.26 as a test obligation |
+| §11 | 3 | acceptance items 1, 3 and 4 — the ratification step, the regression-test list, and the resumption of the grouping track |
+| the glossary paragraph | 1 | the nine terms, each restating a rule rowed above |
+| §10 | 5 | the five spec-propagation bullets, each restating what this design changes in a layer specification |
+| **Total** | **27** | — |
+
+*A section counts zero where every one of its units contributes a rowed statement; the count is of
+units the tabulation did not reach, not of units it did not read. **The whole document was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **43** (18.1 to 18.43), of which **three split** — 18.3, 18.14 and 18.18 — giving
+  **46** statements.
+- **Outgoing statements dispositioned: 46.**
+- Units counted under *not a statement*: **27**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 9 | 18.1, 18.2, 18.7, 18.14(ii), 18.17, 18.18(i), 18.25, 18.28, 18.38 |
+| ADOPTED — proposed | 23 | 18.3(i), 18.4, 18.5, 18.6, 18.8, 18.9, 18.10, 18.11, 18.13, 18.14(i), 18.15, 18.16, 18.19, 18.20, 18.21, 18.22, 18.23, 18.24, 18.26, 18.29, 18.30, 18.40, 18.41 |
+| RELOCATED | 9 | 18.18(ii), 18.27, 18.31, 18.32, 18.33, 18.34, 18.36, 18.37, 18.42 |
+| QUARANTINED | 3 | 18.3(ii), 18.35, 18.39 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 2 | 18.12, 18.43 |
+| UNPLACED | 0 | — |
+| **Total** | **46** | — |
+
+**The column sums to 46, against 46 statements, so the arithmetic closes at this document:**
+9 + 23 + 9 + 3 + 0 + 2 + 0 = 46.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 44 |
+| DIFFERS | 4 |
+| THE DERIVATION IS SILENT | 25 |
+| **Total verdicts** | **73** |
+
+*(Counted per named derived statement per statement-row. 73 verdicts over 46 statements because
+twenty-two rows name more than one derived statement. **SILENT is the largest share this document
+produces of any of the eighteen so far relative to its size**, and the reason is stated in the manifest
+header: the derivation received the selection model as two register entries and specified no protocol
+around it, so most of what this document rules on is territory it never entered.)*
+
+#### What this document's rows put in front of the user
+
+**The derivation carries ONE span where this document carries THREE, and several rows turn on that.**
+S-32 says the slice list *"covers the working span exactly"* and S-53 says *"the working span is the
+only thing a caller supplies beyond L0"*; this document distinguishes the **selection** (what carries
+output), the **loaded** span (what may be read as evidence) and the **score** (the outer bound), and
+its invariant is that the first is a strict output span and the second is not. Rows 18.4, 18.5, 18.6
+and 18.30 are that difference in four places, and Row 18.30 is where it bites: **nothing S-50 publishes
+tells a consumer whether a slice is inside the output span or is context**, so the invariant can be
+broken without any published field being wrong.
+
+**Row 18.22 puts a question to the derivation that the derivation answers twice, differently.** S-32
+makes the span's first and last change points the span's own ends; S-28 makes a change point an onset
+or a release and nothing else. Where a span edge falls at neither an onset nor a release, those two
+statements disagree, and this document takes the third position explicitly — *"the old clip boundary
+was artificial, not a real change-point"*. **This is a difference inside the derived specification that
+an outgoing document surfaced**, and it is stated here without being resolved.
+
+**Row 18.15 is the same shape at S-50.** The rule that a truncated result is never presented as a
+complete one is carried three times over in the derivation — S-32's marks, S-25's span-edge flag,
+S-52's establishment status — and **S-50's list of what L1 publishes, which says *exactly*, contains
+none of them.** The honesty rule is derived and its carrier is not published.
+
+**Row 18.25 is the closest independent meeting in this document.** Two texts written apart both draw
+the line between a control call downward and an inference edge backward, and both say it is what keeps
+the forward-only contract intact — the derivation at S-53's falsifier exemption, *"a caller passing a
+span computed by an earlier L2 run — that is the caller's act, not L1's input"*, and this document at
+*"a data-supply call down the stack is not an analysis back-edge"*. **Nothing about the meeting is
+inherited**: S-53's citation of D-030 covers the span being the caller's, not this distinction.
+
+**Row 18.17 is the outgoing record's sharpest statement of why the beat is not the analysis grain** —
+*"the sounding set is constant within a slice, so no analysis can change at finer granularity"* — and
+it sides with Row 6.58's rejection of a metric grid against Row 14.25's beat-labelling reference.
+
+**And Row 18.41 names the one thing in this subject the derivation nowhere considers: a score that is
+edited.** The layers already offer re-analysis of a sub-range for edits, and this document requires
+that enlarging a span and re-running part of one compose cleanly. The derived specification has no
+notion of an edit at all.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -8036,6 +8767,11 @@ worked; it is not complete over the population.**
   the key layer.
 - Row 9.10 — the cadence markers a later layer publishes: the type from the full typology, the
   location, and the confidence.
+- Row 18.36 — a decision's forward context span running to the first of a cadence-anchored function, a
+  picked punctuation boundary, or a hard bound.
+- Row 18.37 — the discovery rule and the one-pass closure: an enlargement may finalize an open decision
+  and never re-open a closed one, and a denied request leaves the decision resolved on what it saw with
+  its provenance.
 
 **To L2 — *the tonal reading, the one entangled decision*.**
 
@@ -8078,6 +8814,18 @@ worked; it is not complete over the population.**
   travel with it.)*
 - Row 17.14 — that nothing visible at the moment of scoring separates a chord from its third-above
   reading, and that what separates them is the surrounding music.
+- Row 18.18(ii) — which unit a requesting layer steps in when it asks for more music: the key layer in
+  bars, the chord layer in slices. *(S-34's bar level and S-33's slice travel with it.)*
+- Row 18.27 — that the forward cascade is bounded because a carried-in key affects the leading-edge
+  slices and decays inward.
+- Row 18.31 — that reach-back IS an enlargement request, with its direction, its stop condition and its
+  bound.
+- Row 18.32 — the leading-edge evidence window, and the context slices anchoring the carried-in key
+  while output is emitted only for the selection slices. *(S-32's span-edge marks travel with it.)*
+- Row 18.33 — that the chord window must, at a selection edge, request an enlargement or recognise the
+  score boundary, and never assume the neighbour slice exists.
+- Row 18.34 — that the request fires only when the truncation is decision-relevant, a truncated window
+  whose evidence sufficed requesting nothing.
 
 **To *the second axis — voice leading*.**
 
@@ -8107,6 +8855,9 @@ worked; it is not complete over the population.**
   to optimise away.
 - Row 15.21 — that the layer is graded against published human analyses on a held-out set, with the
   unambiguous and genuinely ambiguous cases partitioned and each given its own bar.
+- Row 18.42 — that the degenerate whole-score case must stay byte-identical, or a corpus measurement
+  moves for a reason unrelated to the analysis. *(The gate the text names is superseded, as its own
+  dated annotation records; the rule is what relocates.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -8236,6 +8987,14 @@ by paragraph rather than rowed. **Document 9 added the two below.**
     present-but-weak tone as absent?
 65. Row 17.5 — do the three named sites still answer a collection question through the tonic, and is
     the measured inertness of the two gates still true at the current commit?
+66. Row 18.3(ii) — is the whole score still loaded regardless of the selection on the arm that ships,
+    and does any layer therefore read outside the span it was given without saying so?
+67. Row 18.35 — does a window at a span edge still truncate silently on the arm that ships — without
+    the Row 18.15 provenance — and is the recorded statement that the request path is uncoded still
+    true at the current commit?
+68. Row 18.39 — do the note model's two named look-up structures still exist on the arm that ships,
+    does either extend consistently under an enlargement, or is the declared rebuild interim what
+    actually runs?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -8516,6 +9275,54 @@ Gathered from the documents tabulated so far. **Not complete over the population
 64. Row 17.9 — that the specification state whether a **register or density condition qualifies what
     counts as the bass**; S-44 declares the proxy hazard and takes no remedy, and the outgoing record
     has one.
+65. **★★ Rows 18.4, 18.5, 18.6 and 18.30 — that the specification state whether the WORKING SPAN is the
+    span the slices cover or the span the output labels.** The outgoing record has three spans and an
+    invariant over them — the **selection** (*"the **output span**: analysis labels are emitted only for
+    the selection"*), the **loaded** span (*"starts equal to the selection and grows by extension.
+    Always selection ⊆ loaded ⊆ score"*) and the **score** as the outer bound — and S-32 and S-53 have
+    one. **The consequence is Row 18.30:** nothing S-50 publishes tells a consumer whether a slice is
+    inside the output span or is context, so *"everything outside it is evidence, never a result"* can
+    be broken with no published field wrong.
+66. Row 18.3(i) — that the specification state whether a span's edge is handled by **marking alone** or
+    may also be handled by **enlarging the span**; S-32 marks the edge and the outgoing record asks for
+    more music, and the two remedies do not exclude each other.
+67. Rows 18.8, 18.10, 18.11, 18.13, 18.14(i), 18.16 and 18.20 — the **enlargement protocol** itself,
+    which the derived specification does not carry in any part: request-an-enlargement or
+    recognise-the-score-boundary; the amount **discovered, not chosen**; convergence as the stop
+    condition, applied on the in-selection quantity; the hard bound and score boundary as safety caps
+    that are never the needed amount; the step size as the requester's efficiency knob; the request
+    made in ticks to a unit-blind supplier; and the supply operation — append without dropping, index
+    kept consistent, new span and boundary-hit returned, a repeat request a no-op.
+68. Row 18.9 — that the **span-edge marks say WHICH reason applies**: *"unavailable because not
+    loaded"* against *"unavailable because the score starts/ends here"*. S-32's *entered sounding* and
+    *cut by the span* and S-25's span-edge tie flag carry one mark for both, and the outgoing rule makes
+    a layer's next act depend on the answer.
+69. **★★ Row 18.15 — that the PUBLICATION LIST carry the span-edge marks and the truncation
+    provenance.** The honesty rule is derived three times over — S-32's marks *"keep the span's edges
+    honest (#12)"*, S-25 marks a span-edge tie as a span edge rather than a defect, S-52 puts an
+    establishment status on every published item — and **S-50 says *"L1 publishes exactly"* and lists
+    none of them.** The outgoing record's form is a named provenance on the affected output.
+70. Row 18.19 — that the specification state that a slice list over an enlarged span is produced by
+    **re-slicing and never by patching**, which S-53 implies and does not say.
+71. Rows 18.21, 18.23, 18.26 and 18.29 — the **enlargement's correctness conditions**: a recompute is a
+    fresh forward re-inference and never a local patch; re-slice equivalence; the equivalence invariant
+    over any sequence of enlargements; and complete coverage and slice identity surviving the
+    enlargement.
+72. **★★ Row 18.22 — that the specification state whether a SPAN EDGE IS A CHANGE POINT.** S-32 makes
+    the span's ends the slice list's first and last change points; S-28 makes a change point an onset or
+    a release and nothing else; the outgoing record takes a third position — *"the old clip boundary was
+    artificial, not a real change-point"*. **The first two are both in the derivation**, and where a
+    span edge falls at neither an onset nor a release they answer differently.
+73. Row 18.24 — that a changed inference propagates **forward and only forward**, every inferring layer
+    after the requester re-inferring in turn.
+74. Row 18.40 — that the **rebuild interim** be declared as a bounded migration state with its
+    retirement named, the contract rather than the implementation being what the layers above are
+    written against.
+75. **★ Row 18.41 — that the specification state what an EDIT TO THE NOTATED RECORD does to a published
+    slice list.** The outgoing record requires that enlarging a span and re-analysing a sub-range
+    *"compose cleanly — an edit inside the selection and an extension outside it are different
+    operations on the same model"*. **The derived specification has no notion of an edit at all**, and
+    this is the one thing in L0's subject it nowhere considers.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -8614,37 +9421,44 @@ Gathered from the documents tabulated so far. **Not complete over the population
 45. Rows 17.1, 17.9 and 17.14 — S-33's event-set identity and S-44's unconditional lowest-sounding
     bass, against a weighted pitch-class histogram, a register-qualified bass, and a scorer whose
     visible evidence is that histogram.
+46. Row 18.9 — S-32's *entered sounding* and *cut by the span* and S-25's span-edge tie flag, one mark
+    for both reasons, against a rule that a layer must tell a not-yet-loaded edge from the score's own
+    end and that the supplier reports which.
+47. **Rows 18.22 and 18.15 — the two places where the difference is INSIDE the derivation and an
+    outgoing document surfaced it.** S-32's span-end change points against S-28's onsets-and-releases,
+    with the outgoing record calling a clip boundary artificial; and S-50's *"publishes exactly"* list
+    against S-32's, S-25's and S-52's marks, which that list does not contain.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the seventeen documents tabulated, not a distribution over the
-population.** The population is 29 documents; 12 are untouched. No figure below may be read as
+**This is a RUNNING total over the eighteen documents tabulated, not a distribution over the
+population.** The population is 29 documents; 11 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 529 statements placed so far:**
+**Dispositions, over the 575 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | **215** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | **159** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | **41** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | **82** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **31** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | **529** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | **224** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | **182** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | **50** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | **85** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | **33** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | **575** |
 
-**The arithmetic closes:** 215 + 159 + 41 + 82 + 0 + 31 + 1 = 529, against 529 statements, and each
+**The arithmetic closes:** 224 + 182 + 50 + 85 + 0 + 33 + 1 = 575, against 575 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same seventeen documents:**
+**Current-text verdicts, over the same eighteen documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | **560** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | **197** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | **148** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | **905** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | **604** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | **201** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | **173** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | **978** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -8653,6 +9467,13 @@ because its subject is the corpora the analysis is measured against; document 10
 fifty-three out of eighty because its subject is L1's face (e) exactly. **No comparison between two
 documents' counts is a comparison of their weight.**
 
+**★ AND A SECOND NOTE THE COUNTS NEED, AT DOCUMENT 18.** Its column carries the largest ADOPTED —
+proposed count of the eighteen and a SILENT share out of proportion to its size. The reason is stated
+in its own manifest header and is not a property of the document's quality: **the derivation received
+this document's subject as two ratified register entries and specified no protocol around them**, so
+almost everything it rules on is territory the derived specification never entered. A high proposed
+count there means the derivation is silent, not that the document is wrong or right.
+
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
 file's own rows.
@@ -8660,7 +9481,7 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the seven documents was placed there.** The reason is visible in the classes that did
+statement in the eighteen documents was placed there.** The reason is visible in the classes that did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
 which it records as HISTORICAL. Neither is a discard, and neither loses anything.
@@ -8713,6 +9534,15 @@ this comparison's Document 4, Row 4.15 turns on; and **D-023 and D-057**, on sli
 priority of evidence, bear on the rows where the derivation and the outgoing text agree about slice
 identity (Rows 2.12, 6.34, 6.59). **This is a fact the user reads the AGREES verdicts against**, and it
 is stated rather than left to be inferred.
+
+**The record's OTHER list of design-intent entries — the ones it records as USED rather than met — and
+the one document of this population it bears on.** §5 records the entries each statement consulted, and
+§6.2 states that *"The design-intent entries the derivation uses (D-030, D-031, D-034, D-100, D-207 as
+a contrast) are within the read span"*. **D-030 and D-031 are the bounded-context and degenerate-case
+entries, used at S-32 and S-53** — and Document 18 is the cross-layer design those two entries stand
+on. Its §6.18 header says so at the document rather than here, and the consequence is stated there: on
+that one subject the derivation is working from a given. **This is relayed as the record's own
+statement, with no verdict attached**, exactly as everything else in this section.
 
 **The two elements the session did not read, per staged file.** The record gives counts obtained by
 searching for the element names, the search returning line numbers only, and states that no line inside
