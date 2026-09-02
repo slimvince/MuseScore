@@ -55,11 +55,12 @@ The population's order is the artifact's:
 | 18 | `cowork_bounded_context_design.md` | **DONE** |
 | 19 | `cowork_voiceleading_axis_design.md` | **DONE** |
 | 20 | `docs/llm_integration.md` | **DONE** |
-| 21–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 21 | `cowork_joint_estimator_architecture.md` | **DONE** |
+| 22–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 21–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 22–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 21**, `cowork_joint_estimator_architecture.md`.
+dispatch resumes at **position 22**, `cowork_layer4_chordsymbol_design.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -9697,6 +9698,373 @@ publisher deciding would be a claim.
 
 ---
 
+### 6.21 — Document 21: `cowork_joint_estimator_architecture.md`
+
+> **Manifest for this document.** Outgoing statements: **18** (rows 21.1 to 21.18; no row of this
+> document splits). Units counted under *not a statement*: **34**, across 7 sections, the opening
+> decision and the provenance footer. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **What it is.** The **user-ratified architecture decision** that key, mode and chord are inferred by
+> one joint estimate — L2's charter subject, *the tonal reading, the one entangled decision*, named as
+> such. Six rows relocate there. What is tabulated below is the part that reaches L0's or L1's subject:
+> **what the estimate is handed, and what it may not read.**
+>
+> **★ IT IS THE OUTGOING RECORD'S FULLEST TREATMENT OF THE KEY SIGNATURE, AND IT AGREES WITH THE
+> CHARTER CLAUSE THE DERIVATION QUOTES.** The charter's words, carried at S-6, are *"The key signature
+> is a weak prior (C-2), never a fact about the tonality."* This document rules a **weak, fitted,
+> transposition-invariant soft prior** with *"No conditional gate and no threshold anywhere"*, on the
+> stated ground that a weak prior *"is negligible where the content likelihood is decisive and tips the
+> scale only where the evidence is ambiguous"*. Rows 21.12, 21.13 and 21.18 are that agreement in three
+> places, and Row 21.13 answers a question Row 12.2(ii) sent to the audit.
+>
+> **★ AND IT CARRIES THE DECLARED-MODE DISAGREEMENT A SECOND TIME, IN A RATIFIED ARCHITECTURE.** S-1's
+> own worked counter-example is *"a 'declared mode' tag in a file fails (i) — no copyist reads it off
+> the page"*, and S-2 rules such a tag annotation that no layer may consume as evidence. **Row 21.14 is
+> that tag as a conditioning input with its own fitted strength** — the same difference Row 12.3
+> recorded, here in the document that decides the architecture rather than in one that inventories
+> evidence.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §1, §2 and §3 — what the estimate is, the factor roster, and what it reframes
+
+**Row 21.1 — segmentation is a modeled variable inside the one decode, not a fixed pre-pass shaped by a
+provisional key.**
+*Statement.* "**State:** a joint `(tonic, mode, chord)` per unit, with **segmentation as a modeled
+(semi-Markov) variable**, not a fixed pre-pass a provisional key shaped" — §1 (locator: lines 23–25);
+the consequence at §3, *"(provisional key → segmentation) — **superseded** by A's joint decode with
+segmentation as a modeled variable; the ad-hoc back-edge dissolves into the joint estimate"* (line 58).
+*Derived.* S-53, S-28.
+*Current-text axis.* S-53: **AGREES**, and closely — *"Nothing L1 publishes depends on anything L2
+decides"*, which is the back-edge this text says dissolves. S-28: **AGREES** on the division of labour:
+the change-point set is exhaustive and deterministic, and what the decode chooses is which runs of it
+are one segment.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Row 11.10. *(Recorded because it names in terms the back-edge S-53 forbids, and rules it gone.)*
+
+**Row 21.2 — every enumerated clue enters the one decode as a term; the joint model is the antidote to
+the information a pipeline loses.**
+*Statement.* "**Factors = our enumerated clues.** Every hint in `cowork_evidence_inventory.md` enters
+as an emission, transition, or prior *term* in the one decode — the joint model is the antidote to the
+information loss a pipeline causes (#12)." — §1 (locator: lines 29–31).
+*Derived.* S-50, S-53.
+*Current-text axis.* S-50: **AGREES** — the published list exists so that every clue is available to
+be consumed, which is what this text does with it. S-53: **AGREES** — the candidates and the evidence
+are published and the decision is left, and here the decision reads all of them at once.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(This is the consuming end of the publish-broadly rule
+the derivation's own list is built for; Document 12 is the inventory it names.)*
+
+**Row 21.3 — the notated spelling and the accidentals condition an emission and disambiguate the
+mode.**
+*Statement.* "**notated spelling + accidentals** → spelling-conditioned emission + mode
+disambiguation" — §2 (locator: line 45).
+*Derived.* S-3, S-14.
+*Current-text axis.* S-3: **AGREES** — the spelled pitch is supplied per note. S-14: **AGREES** —
+spelling is a required input L0 does not infer, which is what makes a spelling-conditioned emission
+possible at all.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Row 11.7. *(S-3's spelled pitch travels with it.)*
+
+**Row 21.4 — the cadence and leading-tone evidence is a factor in the decode and not a forward vote,
+computed key-agnostically before it.**
+*Statement.* "**cadence votes + leading-tone events** → emission/transition factor on `(tonic, mode)`
+at cadence points (the OI-166 channel, as a *factor*)" — §2 (locator: line 46); "**OI-166**
+(key-agnostic cadence pre-scan) — still built, at L1.5; it is now the **cadence factor** of A, not a
+forward vote. Its precision probe still gates whether/how strongly the factor is weighted." — §3 (line
+55).
+*Derived.* S-45, S-46, S-51.
+*Current-text axis.* S-45: **AGREES** — the bass-falls-a-fifth cue is exactly a key-agnostic cadence
+signal published as evidence. S-46: **AGREES** — the leading-tone cue is the second, and this text
+names leading-tone events beside cadence votes as this factor's two inputs. S-51: **AGREES** on the
+reason both may live below the decision — the charter's ground is that they are *"computable from the
+notation without knowing the tonality"*, and this text calls the pre-scan **key-agnostic** in its own
+words.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The outgoing record's clearest confirmation that a
+cadence cue is EVIDENCE and not a decision: it is computed without the key, published, and consumed as
+one term among several rather than voting forward on its own.*
+
+**Row 21.5 — harmonic rhythm, boundary strength, fermatas and phrase facts feed the segment-duration
+model and the boundary and cadence-location priors.**
+*Statement.* "**harmonic rhythm + boundary strength** → the segmentation (semi-Markov segment-duration)
+model; … **fermatas + phrase facts** → segment-boundary and cadence-location priors" — §2 (locator:
+lines 48, 50).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **AGREES** on the inputs — FERMATA and the other flag kinds are published
+per change point with their witnesses, which is what a boundary prior would read. S-40: **DIFFERS** on
+the form — *"nothing is collapsed to a single 'boundary strength'"*, and *boundary strength* is what
+this factor is named for; the fifth statement of that difference in the outgoing record.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Row 11.3. *(S-39's flags travel with it as the evidence the factor reads; S-40's refusal to collapse
+travels as the open question about the form it reads them in.)*
+
+**Row 21.6 — beat strength and metric position weight the emission and supply a
+chord-change-on-strong-beat prior.**
+*Statement.* "**beat strength / metric position** → emission weighting + a chord-change-on-strong-beat
+prior" — §2 (locator: line 49).
+*Derived.* S-35.
+*Current-text axis.* S-35: **AGREES** — the metric strength class is published per change point as an
+ordinal with its period, which is what a weighting and a change-on-strong-beat prior consume.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Rows 11.3 and 11.6. *(S-35's class travels with it.)*
+
+**Row 21.7 — bass-motion skeletons are a bass and inversion emission.**
+*Statement.* "**bass-motion skeletons** → a bass/inversion emission" — §2 (locator: line 51).
+*Derived.* S-44, S-45.
+*Current-text axis.* S-44: **AGREES** on what the bass is — *"the lowest sounding pitch of that slice's
+sounding set — not a notated voice"*. S-45: **AGREES** — the bass-motion cue is published as evidence
+with its two bass notes as witnesses, which is a skeleton in this text's sense.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Row 11.5. *(S-44's definition of the bass travels with it.)*
+
+**Row 21.8 — the tone collection entering the emission is non-chord-tone-cleaned and
+metric-weighted.**
+*Statement.* "NCT-cleaned **tone collections / pitch content** → emission `P(pitches | tonic, mode,
+chord)`, metric-weighted" — §2 (locator: line 43).
+*Derived.* S-33, S-35.
+*Current-text axis.* S-33: **DIFFERS** — slice identity is the event set, and a cleaned, weighted
+collection is neither the events nor recoverable from what it publishes. S-35: **AGREES** on the metric
+input.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Rows 1.9, 12.13 and 17.1. *★ Recorded with the observation that this roster line and Row 21.10 are the
+same document's two answers about cleaning: this line says the collection entering the emission is
+NCT-cleaned; §5a rules that **"No live cleaning stage exists."***
+
+**Row 21.9 — the signature-mask collection term is the correct form of the collection emission.**
+*Statement.* "**OI-168 / OI-170** (the δ collection-membership fix) — the signature-mask collection
+term is the correct *form* of that emission factor; the class-(a) fix stands as adopting the right
+form." — §3 (locator: line 56); the same point at §5a, *"(The signature's separate job — naming the
+prevailing collection for the spelling/collection emission, the OI-168 mask — is a different factor and
+untouched by this decision.)"* (lines 189–190).
+*Derived.* S-6.
+*Current-text axis.* S-6: **AGREES** — the signature is supplied in force at every position, and its
+one L1-adjacent job is *"a spelled context (S-9)"*, which is the collection this term reads. The same
+agreement Row 17.3 records at the code's own fix.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §5a — the ratified design decisions
+
+**Row 21.10 — there is no cleaning stage: a tone's status and the chord are decided together, and every
+covariate is computable without knowing the chord, so there is no circularity.**
+*Statement.* "**No live cleaning stage exists.** Non-chord tones live INSIDE the pitch-emission factor
+… with the emission probability conditioned on **chord-independent melodic and metric covariates** —
+stepwise approach and departure, chromatic-neighbor motion, metric weakness, the tied-over/syncopated
+preparation … every covariate computable without knowing the chord, so no circularity. Chord identity
+and tone status are decided together in the one decode (#12 — no ornament verdict is ever committed
+early)." — §5a (locator: lines 146–153).
+*Derived.* S-51, S-23, S-35.
+*Current-text axis.* S-51: **AGREES**, and at the same test — an output is evidence rather than a claim
+*"if and only if it is computable from L0 facts with no tonality, chord or boundary as input"*, which
+is this text's *computable without knowing the chord, so no circularity* in the derivation's own words.
+S-23: **AGREES** — the tied-over preparation is the tie fact, and a tied group is one event whose
+onset is the first note's. S-35: **AGREES** — metric weakness is the published class read as a
+covariate.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★ The strongest independent meeting in this document:
+two texts written apart reach the same circularity test, one as the rule for what a layer may publish
+and one as the rule for what a factor may condition on.*
+
+**Row 21.11 — ornament labels are derived after the decode from the committed chord and published as a
+derived fact.**
+*Statement.* "**Ornament labels (passing tone, neighbor tone, suspension, appoggiatura, pedal point)
+are derived AFTER the decode** from the committed chord by the standard definitions and published as a
+derived fact for the presentation layer" — §5a (locator: lines 153–156).
+*Derived.* S-51, S-16.
+*Current-text axis.* S-51: **AGREES** — a suspension is chord-relative by definition, so naming one is
+a claim and belongs after the decision, not before it. S-16: **AGREES**, and the pair marks a
+distinction worth stating: **L1 publishes the notated ornament SIGN** — S-16's grace note as an
+*ornamental attachment* carrying *"its notated form (slashed or unslashed, appoggiatura or
+acciaccatura where the file says)"*, and S-17's trill or mordent *"published as an attribute of that
+event, by name, with no realisation"* — while this text publishes the derived ornament LABEL. **Same
+word, two objects, and both texts keep them apart.**
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 21.12 — the notated signature is a weak, fitted, transposition-invariant soft prior on tonic and
+mode, with no conditional gate and no threshold anywhere.**
+*Statement.* "A **weak, fitted, transposition-invariant soft prior on (tonic, mode)** from the notated
+signature … **No conditional gate and no threshold anywhere:** the user's intent — the signature
+consulted only where the analysis is otherwise unsure — is delivered by the probability calculus itself
+(a weak prior is negligible where the content likelihood is decisive and tips the scale only where the
+evidence is ambiguous), never by an 'if uncertain' code path." — §5a (locator: lines 169–176).
+*Derived.* S-6, S-9.
+*Current-text axis.* S-6: **AGREES**, at the charter clause it quotes — *"The key signature is a weak
+prior (C-2), never a fact about the tonality"* — and this text builds exactly that and nothing
+stronger. S-9: **AGREES** on the boundary — L1 does not read the signature at all, and the prior lives
+where the tonality is decided.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ Two texts reach the same rule and give the same
+reason: a weak prior needs no threshold, because being weak is what makes it yield to the evidence.*
+
+**Row 21.13 — a mid-piece signature change re-anchors the prior.**
+*Statement.* "A mid-piece signature change re-anchors the prior (discharging the OI-94(a) deferral)."
+— §5a (locator: lines 178–179).
+*Derived.* S-6, S-43.
+*Current-text axis.* S-6: **AGREES** — L0 supplies the signature *"in force at every position"* and
+*"the position of every change of either"*, so the change is a supplied fact. S-43: **AGREES**, and
+names the same restraint: the proposed KEY-SIGNATURE-CHANGE flag is *"the one place a key signature
+enters L1 — as the fact that it **changed**, never as its value"*, which is what re-anchoring reads.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ This answers a question this file sent to the audit:
+audit question 54, Row 12.2(ii), asks whether a mid-piece key-signature change is still never
+re-anchored. **The ratified architecture rules that it is.** The audit question stands — it asks about
+the arm that ships — but the design intent is no longer in doubt.*
+
+**Row 21.14 — the declared mode, where the score carries one, is a second conditioning input with its
+own fitted strength.**
+*Statement.* "the declared mode, where the score carries one, is a second conditioning input with its
+own fitted strength" — §5a (locator: lines 172–173).
+*Derived.* S-1, S-2.
+*Current-text axis.* S-1: **DIFFERS**, and at its own worked counter-example — *"a 'declared mode' tag
+in a file fails (i) — no copyist reads it off the page"*, so it is not admitted to L0 at all. S-2:
+**DIFFERS** on what may then be done with it — a declared mode or tonality tag *"is not part of L0. It
+may be carried beside L0 as *annotation*, so labelled, and no layer may consume it as evidence about
+the music"*, where this text conditions the estimate on it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether a
+**declared-mode tag** is admitted, refused, or carried as annotation and consumable by a deciding layer
+— the second time the outgoing record puts this question, after Row 12.3, and the first time in a
+ratified architecture.
+
+**Row 21.15 — the declared-mode wall is formally retired.**
+*Statement.* "**The declared-mode wall (the −7 hard penalty) is formally retired.**" — §5a (locator:
+line 182).
+*Derived.* S-1.
+*Current-text axis.* S-1: **AGREES** on the direction of the retirement — a hard penalty built on a tag
+the criterion does not admit is exactly what the criterion exists to prevent, whatever the sign of the
+penalty.
+*PROPOSED DISPOSITION.* **HISTORICAL** — the retirement of a named mechanism, recorded as an event.
+
+**Row 21.16 — the signature-influence rate is measured by ablation and published at every fit, with the
+recorded expectation that it is small.**
+*Statement.* "**The signature-influence rate is measured by ablation and published at every fit** (the
+fraction of committed keys the signature factor changed), with the recorded expectation that it is
+SMALL — a large fitted weight or influence rate is a #3 finding to investigate, not to ship." — §5a
+(locator: lines 179–182).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** in discipline — a value's standing travels with it, and a factor
+whose influence is published at every fit is a factor no consumer can put under load unknowingly.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)** — an
+ablation and a published influence rate are that member's business, which `FRAMEWORK.md` §5 names as
+*"Metric definitions, grading conventions and what counts as ground truth"* and a later stage's.
+
+**Row 21.17 — the un-rounded reading is preserved and published: the modal-variant evidence is a
+derived fact on the output surface, so a passage decoded as D minor can be shown as D Dorian.**
+*Statement.* "**User's condition, part of the decision: the un-rounded reading is preserved and
+published.** The emission factor's modal-variant evidence is published as a derived fact on the output
+surface, so the presentation layer can show the end-user that a passage decoded as, say, D minor would
+— without the rounding to major/minor — be called D Dorian" — §5a (locator: lines 96–101).
+*Derived.* S-50, S-52.
+*Current-text axis.* S-50: **AGREES** — the published surface carries the evidence beside the
+conclusion, with the witnesses that produced it. S-52: **AGREES** — the derived reading is published
+with its standing as a derived fact, so a consumer knows what it is looking at.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(The same discipline as Row 19.23's ranked alternative
+list and Row 21.11's derived ornament labels: what the commitment rounded away is published beside the
+commitment, not lost in it — #12.)*
+
+**Row 21.18 — the modal notation practice is handled statistically, with no special case: a Dorian
+chorale written one flat short is measured mass one fifth away in minor.**
+*Statement.* "Bach's modal notation practice (the Dorian chorale written one flat short) is handled
+statistically as measured mass one fifth away in minor — no special case." — §5a (locator: lines
+176–178).
+*Derived.* S-6, S-9.
+*Current-text axis.* S-6: **AGREES** — the signature is a sign, supplied as it stands, and the
+discrepancy between the sign and the tonality is a fact about the notation rather than an error to be
+corrected at L0. S-9: **AGREES** — no L1 computation reads the signature, so nothing below the decision
+has to know that the notation is modal.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+---
+
+#### Not a statement — counted by paragraph, bullet and numbered item, per section, so the arithmetic closes (34)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the opening decision | 2 | the ratified decision and the paragraph giving its reasons |
+| §1 | 3 | the inference target, the parameter discipline, and the admission of learned factors |
+| §2 | 2 | the roster lead and the progression-grammaticality factor |
+| §3 | 3 | the exotic-mode question, the retiring hand-set constants, and the retained measurement chain |
+| §4 | 5 | the funnel lead and its four steps |
+| §5 | 2 | what was decided and what remains for the structure-design step |
+| §5a | 3 | the factorization pointer, the fitting parameterization, and the scale-degree chord state |
+| §6 | 6 | the recorded assessment's lead, its agreement, its two reservations, its refinement, and the later form upgrade |
+| §7 | 7 | the plan-amendment lead and the six guardrails |
+| the footer | 1 | the provenance line |
+| **Total** | **34** | — |
+
+*The count is of units the tabulation did not reach, not of units it did not read. **The whole document
+was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **18** (21.1 to 21.18). No row of this document splits.
+- **Outgoing statements dispositioned: 18.**
+- Units counted under *not a statement*: **34**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 9 | 21.2, 21.4, 21.9, 21.10, 21.11, 21.12, 21.13, 21.17, 21.18 |
+| ADOPTED — proposed | 1 | 21.14 |
+| RELOCATED | 7 | 21.1, 21.3, 21.5, 21.6, 21.7, 21.8, 21.16 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 1 | 21.15 |
+| UNPLACED | 0 | — |
+| **Total** | **18** | — |
+
+**The column sums to 18, against 18 statements, so the arithmetic closes at this document:**
+9 + 1 + 7 + 0 + 0 + 1 + 0 = 18.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 30 |
+| DIFFERS | 4 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **34** |
+
+*(Counted per named derived statement per statement-row. 34 verdicts over 18 statements because
+fourteen rows name more than one derived statement. **SILENT is zero for the third document running**,
+and here the reason is that the document is a roster: every factor it names is named by the L1 fact it
+reads, and the derivation publishes each of those facts.)*
+
+#### What this document's rows put in front of the user
+
+**Row 21.10 is the strongest independent meeting in this document, and possibly in the file.** S-51's
+claim test is *"computable from L0 facts with no tonality, chord or boundary as input"*; this document
+rules the non-chord-tone covariates admissible because *"every covariate computable without knowing the
+chord, so no circularity"*. **Two texts, written apart, state the same test** — one as the rule for what
+a layer may publish, the other as the rule for what a factor may condition on.
+
+**Rows 21.12, 21.13 and 21.18 are the key signature settled three times over, in the charter's own
+direction.** A weak prior with no gate and no threshold; a mid-piece change that re-anchors it; and a
+modal notation practice handled by where the measured mass falls rather than by a special case. **Row
+21.13 answers audit question 54 at the design level** — a mid-piece signature change re-anchors, and
+what the audit still owes is whether the arm that ships does it.
+
+**Row 21.14 is the declared-mode tag met a second time, and the second time it is ratified
+architecture.** S-1 names that tag as its own counter-example — *"no copyist reads it off the page"* —
+and S-2 bars any layer from consuming it as evidence. Here it is a conditioning input with a fitted
+strength. **Both texts are explicit; neither addresses the other's ground.**
+
+**Row 21.8 is the outgoing record disagreeing with itself inside one document.** The factor roster says
+the tone collection entering the emission is **NCT-cleaned**; §5a rules that **"No live cleaning stage
+exists"** and puts the tone's status inside the decode. Row 21.10 is the second half. **Stated, not
+adjudicated.**
+
+**And Row 21.11 marks a word that means two things in the record, with both texts keeping them
+apart.** L1 publishes the notated ornament **sign** — S-16's grace attachment with its notated form,
+S-17's trill *"by name, with no realisation"*. This document publishes the derived ornament **label** —
+passing tone, suspension, appoggiatura — after the decode, from the committed chord. Neither text
+confuses them, and the record is clearer for having both said so.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -9788,6 +10156,20 @@ worked; it is not complete over the population.**
   bar, key and mode, and the harmonic rhythm — where the chord changes occur. *(Read beside Row 17.13:
   a boundary decided from a chord, which S-28's construction and S-51's no-chord-as-input test place
   outside the layer that publishes change points.)*
+- Row 21.1 — segmentation as a modeled variable inside the one decode, the provisional-key back-edge
+  dissolved. *(S-53's forward-only rule and S-28's exhaustive candidates travel with it.)*
+- Row 21.3 — the spelling-conditioned emission and the mode disambiguation it supports. *(S-3's spelled
+  pitch travels with it.)*
+- Row 21.5 — harmonic rhythm, boundary strength, fermatas and phrase facts as the segment-duration
+  model and the boundary and cadence-location priors. *(S-39's flags travel with it as the evidence;
+  S-40's refusal to collapse travels as the open question about the form.)*
+- Row 21.6 — beat strength and metric position as an emission weighting and a
+  chord-change-on-strong-beat prior. *(S-35's class travels with it.)*
+- Row 21.7 — bass-motion skeletons as a bass and inversion emission. *(S-44's definition of the bass
+  travels with it.)*
+- Row 21.8 — the non-chord-tone-cleaned, metric-weighted tone collection entering the emission. *(S-33's
+  event-set identity travels with it; and the same document's §5a rules that no live cleaning stage
+  exists.)*
 - Row 18.18(ii) — which unit a requesting layer steps in when it asks for more music: the key layer in
   bars, the chord layer in slices. *(S-34's bar level and S-33's slice travel with it.)*
 - Row 18.27 — that the forward cascade is bounded because a carried-in key affects the leading-edge
@@ -9850,6 +10232,8 @@ worked; it is not complete over the population.**
 - Row 18.42 — that the degenerate whole-score case must stay byte-identical, or a corpus measurement
   moves for a reason unrelated to the analysis. *(The gate the text names is superseded, as its own
   dated annotation records; the rule is what relocates.)*
+- Row 21.16 — that the signature-influence rate is measured by ablation and published at every fit,
+  with a large influence rate recorded in advance as a finding to investigate rather than to ship.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -10368,6 +10752,12 @@ Gathered from the documents tabulated so far. **Not complete over the population
     derived statements fix what is published and never its arrangement, and this text makes the
     arrangement a load-bearing decision — *"Hierarchical, not flat. Instrument → Measure → Beat → Note,
     not a flat list of events sorted by tick."*
+88. **★★ Row 21.14 — that the specification say whether a DECLARED-MODE TAG is admitted, refused, or
+    carried as annotation and consumable by a deciding layer.** S-1 names the tag as its own
+    counter-example — *"no copyist reads it off the page"* — and S-2 bars any layer from consuming it as
+    evidence; the ratified architecture makes it *"a second conditioning input with its own fitted
+    strength"*. **The second time the outgoing record puts this question, after Row 12.3, and the first
+    time in a ratified architecture.**
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -10491,37 +10881,42 @@ Gathered from the documents tabulated so far. **Not complete over the population
     S-50's naming bar — *"No published field is named boundary, cadence, phrase, chord, key, tonality,
     degree or function"* — against a published surface of chord symbols, Roman numerals, key and mode,
     and where the chord changes.
+53. **Row 21.14 — S-1's copyist test and S-2's annotation bar against the declared-mode tag as a
+    conditioning input with its own fitted strength**, in the ratified architecture; and Rows 21.5 and
+    21.8 — S-40's refusal to collapse against a factor named for *boundary strength*, and S-33's
+    event-set identity against a cleaned, weighted collection, in the same document that rules no
+    cleaning stage exists.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the twenty documents tabulated, not a distribution over the
-population.** The population is 29 documents; 9 are untouched. No figure below may be read as
+**This is a RUNNING total over the twenty-one documents tabulated, not a distribution over the
+population.** The population is 29 documents; 8 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 624 statements placed so far:**
+**Dispositions, over the 642 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | **252** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | **195** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | **57** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | **86** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | **33** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | **624** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | **261** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | **196** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | **64** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | **86** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | **34** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | **642** |
 
-**The arithmetic closes:** 252 + 195 + 57 + 86 + 0 + 33 + 1 = 624, against 624 statements, and each
+**The arithmetic closes:** 261 + 196 + 64 + 86 + 0 + 34 + 1 = 642, against 642 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same twenty documents:**
+**Current-text verdicts, over the same twenty-one documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | **673** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | **216** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | **175** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | **1064** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | **703** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | **220** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | **175** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | **1098** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -10544,7 +10939,7 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the twenty documents was placed there.** The reason is visible in the classes that did
+statement in the twenty-one documents was placed there.** The reason is visible in the classes that did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
 which it records as HISTORICAL. Neither is a discard, and neither loses anything.
