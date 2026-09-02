@@ -51,11 +51,12 @@ The population's order is the artifact's:
 | 14 | `cowork_target_architecture.md` | **DONE** |
 | 15 | `cowork_layer3_keymode_design.md` | **DONE** |
 | 16 | `cowork_score_census.md` | **DONE** |
-| 17–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 17 | `docs/scoring_model.md` | **DONE** |
+| 18–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 17–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 18–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 17**, `docs/scoring_model.md`.
+dispatch resumes at **position 18**, `cowork_bounded_context_design.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -7688,6 +7689,313 @@ grounded in the same principle.
 
 ---
 
+### 6.17 — Document 17: `docs/scoring_model.md`
+
+> **Manifest for this document.** Outgoing statements: **14** (rows 17.1 to 17.14; no row of this
+> document splits). Paragraphs counted under *not a statement*: **176**, across the banner block and
+> 12 sections. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit under Ruling 32 item 4, retained by
+> Ruling 33 as a member of the ruled specification document set. **It is also the pilot's own
+> subject** — the document the derivation method was first proved on — which is recorded because a
+> reader will notice it and should not have to work out why it appears here as an outgoing text.
+>
+> **What it is.** The legacy vertical chord scorer's one specification — under the ratified charter,
+> **L2's territory** throughout. Its own §1 scoping sentence says the scorer it describes is dormant
+> on both production surfaces and that its present tense is *"the tense of its specification rather
+> than a statement about what runs"*. **Fourteen of its statements reach L0's or L1's subject**, and
+> six of those relocate to L2 because they are scoring rules that read an L1 fact.
+>
+> **★ ROW 17.13 IS THE FINDING, AND IT IS A SECOND CASE OF THE RECORD HOLDING BOTH ANSWERS.** This
+> document states as a standing constraint that **chord identity drives boundary placement**, so a
+> chord-level change re-segments regions it never touched. Row 14.3 states that where the slices are
+> is *"a deterministic FACT, not a judgment"* read off the notes, and S-28's construction makes the
+> dependency impossible by design.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §1 and §5 — the pipeline and the bass
+
+**Row 17.1 — the analysis builds a pitch-class weight histogram from the input tones and picks bass
+candidates by lowest pitch plus onset evidence.**
+*Statement.* "**Tone collection.** Build a 12-element pitch-class weight histogram from the input
+tones; pick bass candidate(s) by lowest pitch + onset evidence." — §1 (locator: line 101).
+*Derived.* S-33, S-44, S-28.
+*Current-text axis.* S-33: **DIFFERS** — identity is the event set, not a pitch-class histogram.
+S-44: **DIFFERS** — the bass is the lowest sounding pitch, with no onset condition. S-28: **AGREES**
+that onsets are the events.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Rows 1.9, 3.46, 4.28, 4.33, 12.13 and 14.12 — weighting sounding notes into evidence is scoring;
+S-33's and S-44's definitions travel with it.
+
+**Row 17.2 — the pedal-point check replaces the reading when the bass is not a chord tone of the
+winner and the upper voices form a confident chord on their own.**
+*Statement.* "**Pedal point check.** Two-pass: if the bass is not a chord tone of the Pass 1 winner
+and the upper voices form a confident chord on their own, replace with the Pass 2 result and flag
+`isPedalPoint`." — §1 (locator: line 126).
+*Derived.* S-54, S-44.
+*Current-text axis.* S-54: **AGREES** on the distinction it turns on — S-54 keeps *pedal point* (a
+held tone in the harmony) apart from *pedal mark* (a damper instruction), citing the same design-intent
+entry, and this is the first. S-44: **AGREES** on the bass.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2** — deciding a chord over a held bass is a tonal reading.
+*(Recorded because it is the outgoing record's only worked use of the pedal-**point** sense, and Row
+12.8 is the only worked use of the pedal-**mark** sense; the derivation's S-54 is the one place both
+are named together.)*
+
+**Row 17.8 — bass-candidate enumeration fires only where there is evidence the bass voice moves within
+the region.**
+*Statement.* "**Bass-candidate enumeration** fires only when there is musical evidence the bass voice
+moves within the region: At least one candidate with `onsetAtRegionStart == true` AND at least one
+with `false` …, **OR** `sparseUpperRegisterAmbiguous`" — §5 (locator: line 811).
+*Derived.* S-44, S-28.
+*Current-text axis.* S-44: **DIFFERS** — S-44's bass is read off the sounding set unconditionally,
+with no enumeration and no firing condition. S-28: **AGREES** on onsets as the events.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2**, with Row 17.1.
+
+**Row 17.9 — sparse upper-register lowest notes are not real bass voices and must not earn inversion
+credit.**
+*Statement.* "sparse upper-register \"bass\" notes are not real bass voices and must not trigger
+inversion bonuses" — §5 (locator: line 828); with "**`hasStructuralBass`** … True when `lowestPitch
+<= 60` (middle C) OR `distinctPcs >= 3`." (locator: line 823).
+*Derived.* S-44.
+*Current-text axis.* S-44: **DIFFERS**.
+*The difference, in both texts' own words.* S-44 defines the bass as *"the lowest sounding pitch of
+that slice's sounding set"* with no register condition, and names its own proxy hazard — *"an Alberti
+or arpeggiated texture where the lowest pitch of a short slice is not the harmony's bass"*; this text
+adds a **register test** that decides whether the lowest sounding pitch counts as a bass at all.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+**a register or density condition qualifies what counts as the bass**, since S-44 declares the hazard
+and takes no remedy, and the outgoing record has one.
+
+**Row 17.10 — the bass and the chord are chosen together as one triple; the analyzer does not commit
+to a bass and then score chords against it.**
+*Statement.* "The analyzer does **not** commit to a bass and then score chords against it. It
+enumerates the plausible bass candidates and the whole root × template grid against each, and the
+winner is the best **(bass, root, template)** triple" — §5 (locator: line 846).
+*Derived.* S-44, S-51.
+*Current-text axis.* S-44: **AGREES** that the bass is not committed by a separate earlier decision.
+S-51: **DIFFERS** — S-44's bass is an L1 fact read off the sounding set, not a jointly decided
+quantity.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2** — the joint decision is L2's own, and the charter names
+L2 as *"the one entangled decision"*. *(Recorded because this section says in terms that it is *"the
+same principle the production estimator carries on its own terms — coupled quantities are decided
+together rather than one being committed early"*, and the derivation reaches the opposite conclusion
+for the bass specifically: S-44 makes it a read fact precisely so it is not a decision.)*
+
+#### §3, §4 and §6 — the key signature, the spelling, and what a rule may read
+
+**Row 17.3 — the two key-consuming scoring tests ask a collection question and test the notated
+signature's own mask, taking no tonic and no mode scale.**
+*Statement.* "Both ask the same question — *is this pitch class in the key?* — and that is a question
+about the key's **collection**, not its tonic. … whose contract is *\"Key-agnostic: depends ONLY on
+the notated signature, never a resolved mode.\"* **Neither term takes a tonic or a mode scale.**" —
+§4 (locator: line 327).
+*Derived.* S-6 (the key signature supplied, *"never a fact about the tonality"*), S-9 (L1 does not
+read the key signature), S-43 (the flag reads the fact of a change and never its value).
+*Current-text axis.* S-6: **AGREES**, and this is the charter's own C-2 clause applied. S-9:
+**AGREES**. S-43: **AGREES** in kind — both texts use the signature without reading a tonality out of
+it.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **★ THE STRONGEST AGREEMENT ON THE KEY SIGNATURE IN
+THE OUTGOING RECORD** — the derivation says the signature is a sign and not the tonality, and this
+document's fix makes exactly that structural in the code it specifies.
+
+**Row 17.4 — the tonic-anchored membership test must not return: a scale degree is tonic-relative by
+definition, but a membership question must not be.**
+*Statement.* "**⚠ Do not reintroduce `keyTonicPc + scale` for a membership test.** A scale-DEGREE is
+tonic-relative by definition and legitimately uses that pair …; a membership question must not." — §4
+(locator: line 356).
+*Derived.* S-6, S-9. *Current-text axis.* S-6: **AGREES**. S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 17.3 — and rowed separately because this is
+the prohibition, where 17.3 is the rule.
+
+**Row 17.5 — three named sites still answer a collection question through the tonic and carry the same
+defect; they are declared, not fixed.**
+*Statement.* "Note that `buildChordResult`'s `diatonicToKey` flag and the Gate I / Gate L
+`invRootIsDiatonic` checks … still answer a *collection* question through the *tonic* pair and so
+still carry the OI-168 defect — they are declared, not fixed" — §4 (locator: line 357).
+*Derived.* S-6, S-9. *Current-text axis.* S-6: **DIFFERS**. S-9: **DIFFERS**.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the three named sites still answer a
+collection question through the tonic, and is the measured inertness of the two gates still true at
+the current commit?
+
+**Row 17.6 — a template tone's authored spelling is read and rewarded when it matches the expected
+interval.**
+*Statement.* "`tpcConsistencyBonusPerTone` | 0.20 | Per non-root template tone whose authored TPC
+matches the expected delta." — §4, *Other terms* (locator: line 721).
+*Derived.* S-3 (L0 supplies spelled pitch per note).
+*Current-text axis.* S-3: **AGREES** — the fact this term reads is the one S-3 requires L0 to supply.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 17.7 — the notated spelling of a third decides between a minor reading and a raised-ninth
+reading.**
+*Statement.* "`kSus4FlatThirdFactor` … REPLACES the extension factor at the m3/♯9 position when the
+note's TPC spells a **flat** third (E♭ over C …), i.e. minor intent, which suppresses the Sus4
+reading"; "`kSus4SharpThirdFactor` | the same site, **sharp** spelling (D♯ over C …), i.e. ♯9 intent"
+— §4 (locators: lines 779–780).
+*Derived.* S-3, S-1.
+*Current-text axis.* S-3: **AGREES**. S-1: **AGREES** — and this is the criterion working as designed:
+the **spelling** is the L0 fact, and *"minor intent"* is the reading a later layer takes from it,
+which S-1 condition (ii) keeps out of L0.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **This is the outgoing record's clearest worked case of
+a spelled pitch deciding a reading that a pitch class cannot**, and it sits beside Rows 12.26, 15.16
+and 12.1(i) as the fourth statement that the notated spelling carries information the fold discards.
+
+**Row 17.11 — a gate or scoring rule reads structured fields only: no chord-symbol string parsing and
+no Roman-numeral inference.**
+*Statement.* "A gate or scoring rule reads **structured fields only** — no chord-symbol string parsing
+and no Roman-numeral inference, in any gate, any scoring term, or any future change to either." — §6
+(locator: line 869).
+*Derived.* S-2 (a chord symbol is annotation and no layer may consume it as evidence about the music),
+S-8 (a composer's own figures are annotation too).
+*Current-text axis.* S-2: **AGREES**. S-8: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **S-2's bar reached from the consuming side**, with Row
+12.9 — and here as a standing prohibition on every future change rather than as a statement of current
+behaviour.
+
+**Row 17.12 — joint scoring fires only when at least one tone has an onset at the region start or more
+than one distinct metric position.**
+*Statement.* "**Joint scoring requires regional accumulation.** `jointScoringEnabled` fires only when
+at least one tone has `onsetAtRegionStart == true` or `distinctMetricPositions > 0`" — §8 (locator:
+line 1188).
+*Derived.* S-28 (onsets are change points), S-35 (the metric strength class per change point).
+*Current-text axis.* S-28: **AGREES** that an onset at a span's start is an L1 fact. S-35: **AGREES**
+that a distinct metric position is one.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2** — when a scoring mode fires is L2's; the two L1 facts it
+reads are carried at S-28 and S-35 and travel with it.
+
+#### §8 — the constraints
+
+**Row 17.13 — chord identity drives boundary placement, so a chord-level change re-segments regions it
+never touched.**
+*Statement.* "**A chord-level change is NOT confined to the cases it fires on: chord identity drives
+boundary placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never touched.**
+Where one region ends and the next begins depends partly on what the chords are, so changing one
+chord's identity — even changing it correctly — makes the adjacent regions re-merge differently, and
+readings that were right can become wrong where the change never looked. … this is structural rather
+than a condition that can be tightened away." — §8 (locator: line 1336).
+*Derived.* S-28 (a change point is the onset or release of an eligible event, with no tolerance), S-51
+(an L1 output is computable from L0 facts with no tonality, chord or boundary as input), S-30 (no
+slice has zero length, by construction).
+*Current-text axis.* S-28: **DIFFERS**. S-51: **DIFFERS**. S-30: **DIFFERS**.
+*The difference, in both texts' own words.* S-28 constructs the change-point set from onsets and
+releases alone — *"There is no tolerance"*, the set *"exhaustive"* — and S-51 admits an L1 output as
+evidence only where it is computable *"with no tonality, chord or boundary as input"*, so **no chord
+can move a boundary**; this text states, as a standing structural constraint, that *"where one region
+ends and the next begins depends partly on what the chords are"*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+a boundary may depend on a chord, since the two answers give the analysis different failure modes —
+the derivation's construction makes the cascade this constraint describes impossible, and the
+constraint exists because it was measured.
+
+**★ AND THE OUTGOING RECORD HOLDS BOTH ANSWERS AGAIN.** Row 14.3 states that *"\"Where the slices
+are\" is a deterministic FACT, not a judgment … there is nothing to get right or wrong about slice
+placement"*, and Rows 2.1, 6.6 and 6.8 restate it at the slicing layer. This constraint describes the
+architecture that preceded them and states that the coupling is structural. **Which is a statement
+about which pipeline is being described, and this row does not adjudicate it** — it is the third such
+case, after the published domain at Row 13.10 and grace notes at Row 14.21.
+
+**Row 17.14 — nothing the scorer can see at the moment of scoring separates a chord from its
+third-above reading.**
+*Statement.* "nothing this scorer can see at the moment of scoring — the sounding pitch classes, their
+weights, the templates, the key — separates the two readings. What separates them is the surrounding
+music: the following chord's root, the preceding chord's identity, and whether the bass falls on a
+strong beat." — §8 (locator: line 1322).
+*Derived.* S-33, S-44.
+*Current-text axis.* S-33: **DIFFERS** — the enumeration of what the scorer can see is a **pitch-class
+fold with weights**, where S-33's slice identity is the event set. S-44: **DIFFERS** — the remedy it
+names includes *"whether the bass falls on a strong beat"*, which pairs S-44's bass with S-35's metric
+class, and the derivation publishes both without relating them.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2**, with Row 17.1 — what evidence decides a chord is L2's.
+*(Recorded because it names, as the missing evidence, three facts the derivation publishes at L1: the
+bass, the metric strength class, and the neighbouring slices.)*
+
+---
+
+#### Not a statement — counted by paragraph, per section, so the arithmetic closes (176)
+
+| Section | Paragraphs counted | What they are |
+|---|---|---|
+| the banner block | 5 | the status banner, the read-this note, the reference-document paragraph, the file-layout note, and the code-locator re-aim table |
+| §1 | 10 | the scoping sentence, the pipeline's other six steps, the bottom-up statement, and the override-file subsection |
+| §2 | 4 | the template lead, the seventeen-row template table, the ordering note and the diagnose note |
+| §3 | 9 | the three matrices, the score formula, the atomic-update requirement, and the floating-point tie policy |
+| §4 | 38 | the dim7 rotation selector and its defect history, the root-continuity bonus, Gate R whole, `w_complete`, the step bonuses, `w_seq`, `w_dim`, the aug7 guard, the scoring phase, the other-terms table, the cap note, and the twelve unnamed constants |
+| §5 | 6 | the two founding bugs, the joint design, the structural-bass predicate and the inversion-bonus computation |
+| §6 | 27 | the gate layer whole — the outer guard, the execution order, the promotion primitive and its three decisions, the gate table, the retired and retained dispositions, and the known asymmetries |
+| §7 | 4 | the inversion correction and the pre-sort capture |
+| §8 | 41 | the thirteen constraint bullets, the six re-homed constraints, the fine-grain override's four findings, the bass-as-root shelving's first half, the quality-overwrite acceptance, the eight dead ends, and the void validation basis |
+| §9 | 9 | the eight-step template checklist and its lead |
+| §10 | 8 | the harmonic function layer's history and rationale |
+| §11 | 12 | the oracle/competition split, the decoder, and the temporal-signal migration |
+| the footer | 3 | the update stamps |
+| **Total** | **176** | — |
+
+#### The arithmetic at this document
+
+- Rows written: **14** (17.1 to 17.14). No row of this document splits.
+- **Outgoing statements dispositioned: 14.**
+- Paragraphs counted under *not a statement*: **176**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 5 | 17.3, 17.4, 17.6, 17.7, 17.11 |
+| ADOPTED — proposed | 2 | 17.9, 17.13 |
+| RELOCATED | 6 | 17.1, 17.2, 17.8, 17.10, 17.12, 17.14 |
+| QUARANTINED | 1 | 17.5 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **14** | — |
+
+**The column sums to 14, against 14 statements, so the arithmetic closes at this document:**
+5 + 2 + 6 + 1 + 0 + 0 + 0 = 14.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 17 |
+| DIFFERS | 12 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **29** |
+
+*(Counted per named derived statement per statement-row. 29 verdicts over 14 statements because
+twelve rows name more than one derived statement. **SILENT is zero here** — every statement of this
+document that reaches L0's or L1's subject reaches a fact the derivation publishes, which is what a
+scoring layer's specification would be expected to do.)*
+
+#### What this document's rows put in front of the user
+
+**Row 17.13 is the third place where the outgoing record holds both answers to one question.** It
+states, as a standing structural constraint, that **chord identity drives boundary placement** and
+that a chord-level change therefore re-segments regions it never touched — measured, and named as
+structural rather than tightenable. Row 14.3 and the whole slicing family state the opposite: slice
+placement is a fact read off the notes, and S-51 forbids a chord as an input to it. **Both are in the
+record, and they describe two pipelines.**
+
+**Row 17.3 is the strongest agreement on the key signature anywhere.** The derivation's charter clause
+is that the signature is a sign and *"never a fact about the tonality"*; this document's own fix makes
+that structural in the code — a membership test over the notated signature's collection, taking no
+tonic and no mode scale, with the prohibition on the tonic-anchored form stated at Row 17.4.
+
+**Row 17.7 is the clearest worked case of spelling deciding a reading.** A flat third against a sharp
+third at the same pitch class, deciding a minor reading against a raised-ninth one — the fourth
+statement in the outgoing record that the notated spelling carries what the fold discards, and one
+where S-1's criterion is visibly respected: the spelling is the fact, the intent is the reading.
+
+**And Row 17.9 puts a real question to the derivation.** S-44 defines the bass as the lowest sounding
+pitch and declares the proxy hazard without taking a remedy; this document has one — a register and
+density test that decides whether the lowest sounding pitch counts as a bass at all.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -7759,6 +8067,17 @@ worked; it is not complete over the population.**
   not a replacement for the notes. *(The view-not-replacement half is carried at S-33 and travels.)*
 - Row 15.18 — a dominant-shaped sonority as note-level key evidence, readable before and without any
   chord decision. *(The anchoring move is carried at S-47 and travels.)*
+- Row 17.1 — the pitch-class weight histogram built from the input tones, with bass candidates picked
+  by lowest pitch plus onset evidence. *(S-33's and S-44's definitions travel with it.)*
+- Row 17.2 — the two-pass pedal-point check that replaces the reading when the bass is not a chord
+  tone and the upper voices form a confident chord on their own.
+- Row 17.8 — bass-candidate enumeration fired only where there is evidence the bass voice moves within
+  the region.
+- Row 17.10 — the bass and the chord chosen together as one (bass, root, template) triple.
+- Row 17.12 — the condition under which joint scoring fires. *(S-28's onsets and S-35's metric class
+  travel with it.)*
+- Row 17.14 — that nothing visible at the moment of scoring separates a chord from its third-above
+  reading, and that what separates them is the surrounding music.
 
 **To *the second axis — voice leading*.**
 
@@ -7915,6 +8234,8 @@ by paragraph rather than rowed. **Document 9 added the two below.**
     downstream depend on that?
 64. Row 15.19 — is the presence gate still in force, and does any cue or key term still treat a
     present-but-weak tone as absent?
+65. Row 17.5 — do the three named sites still answer a collection question through the tonic, and is
+    the measured inertness of the two gates still true at the current commit?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -8183,6 +8504,18 @@ Gathered from the documents tabulated so far. **Not complete over the population
     close enough to the inference target that the field works with it**. Both are explicit and both
     give a reason. **S-46's same-voice condition, its relaxation, and the per-voice cue profiles of
     Rows 10.25 and 10.42 all rest on the answer.**
+63. **★★ Row 17.13 — that the specification state whether a BOUNDARY MAY DEPEND ON A CHORD.** The
+    outgoing record carries it as a **standing structural constraint**, measured: *"chord identity
+    drives boundary placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never
+    touched … this is structural rather than a condition that can be tightened away."* S-28's
+    construction and S-51's no-chord-as-input test make the dependency impossible, and Row 14.3 states
+    the opposite in the outgoing record's own words — *"there is nothing to get right or wrong about
+    slice placement"*. **The third case of the record holding both answers**, after the published
+    domain (Row 13.10) and grace notes (Row 14.21), and the one where the two answers give the analysis
+    different failure modes.
+64. Row 17.9 — that the specification state whether a **register or density condition qualifies what
+    counts as the bass**; S-44 declares the proxy hazard and takes no remedy, and the outgoing record
+    has one.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -8274,37 +8607,44 @@ Gathered from the documents tabulated so far. **Not complete over the population
     a window weight, so a present-but-weak tone counts as absent.
 42. Row 16.2 — S-13's false-negative path, which names keyboard notation as the proxy's failure case,
     against keyboard music named as the case where the field accepts the proxy.
+43. Row 17.13 — S-28's chord-free change-point construction, S-51's no-chord-as-input test and S-30's
+    by-construction invariant, against chord identity driving boundary placement.
+44. Row 17.5 — S-6's signature-as-collection, against three named sites still answering a collection
+    question through the tonic.
+45. Rows 17.1, 17.9 and 17.14 — S-33's event-set identity and S-44's unconditional lowest-sounding
+    bass, against a weighted pitch-class histogram, a register-qualified bass, and a scorer whose
+    visible evidence is that histogram.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the sixteen documents tabulated, not a distribution over the
-population.** The population is 29 documents; 13 are untouched. No figure below may be read as
+**This is a RUNNING total over the seventeen documents tabulated, not a distribution over the
+population.** The population is 29 documents; 12 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 515 statements placed so far:**
+**Dispositions, over the 529 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | **210** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | **157** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | **35** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | **81** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | **31** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | **515** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | **215** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | **159** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | **41** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | **82** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **31** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | **529** |
 
-**The arithmetic closes:** 210 + 157 + 35 + 81 + 0 + 31 + 1 = 515, against 515 statements, and each
+**The arithmetic closes:** 215 + 159 + 41 + 82 + 0 + 31 + 1 = 529, against 529 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same sixteen documents:**
+**Current-text verdicts, over the same seventeen documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | **543** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | **185** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | **148** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | **876** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | **560** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | **197** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | **148** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | **905** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
