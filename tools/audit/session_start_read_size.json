@@ -32,11 +32,11 @@
   },
   "characters_per_member": {
    "CLAUDE.md": 156659,
-   "STATUS.md": 6273,
+   "STATUS.md": 10095,
    "DECISIONS.md": 127608,
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2774
   },
-  "total_characters": 293314,
+  "total_characters": 297136,
   "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
     "characters": 61322,
@@ -117,16 +117,16 @@
   {
    "from_commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
    "from_total": 367121,
-   "to_total": 293314,
-   "change_in_characters": -73807,
-   "change_percent": -20.1
+   "to_total": 297136,
+   "change_in_characters": -69985,
+   "change_percent": -19.06
   },
   {
    "from_commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
    "from_total": 296832,
-   "to_total": 293314,
-   "change_in_characters": -3518,
-   "change_percent": -1.19
+   "to_total": 297136,
+   "change_in_characters": 304,
+   "change_percent": 0.1
   }
  ],
  "what_this_does_not_assert": [
