@@ -48,11 +48,12 @@ The population's order is the artifact's:
 | 11 | `cowork_joint_estimator_factorization.md` | **DONE** |
 | 12 | `cowork_evidence_inventory.md` | **DONE** |
 | 13 | `cowork_layer6_grouping_design.md` | **DONE** |
-| 14–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 14 | `cowork_target_architecture.md` | **DONE** |
+| 15–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 14–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 15–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 14**, `cowork_target_architecture.md`.
+dispatch resumes at **position 15**, `cowork_layer3_keymode_design.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -6812,6 +6813,409 @@ at all, which is what Rows 8.8 and 10.2 propose the specification should record 
 
 ---
 
+### 6.14 — Document 14: `cowork_target_architecture.md`
+
+> **Manifest for this document.** Outgoing statements: **25** (rows 14.1 to 14.25; no row of this
+> document splits). Paragraphs counted under *not a statement*: **44**, across the banner and 11
+> sections. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit under Ruling 32 item 4, retained by
+> Ruling 33 as a member of the ruled specification document set.
+>
+> **What it is, and why it matters more than its position suggests.** It is the **north-star design
+> the whole rebuild was written against**, user-ratified 2026-06-21 and since demoted to a rationale
+> reference beneath `ARCHITECTURE.md`. Its §1 and its §6.1 are about L1's subject directly: the
+> atomic unit, what makes a slice boundary, ties, and grace notes.
+>
+> **★★ ITS §6.1 CARRIES THE OTHER SIDE OF THE GRACE-NOTE FAMILY, AND IT IS THE DERIVATION'S ANSWER.**
+> Row 14.21: *"a grace does not open a slice of its own — it is annotated onto the following slice as
+> an ornament."* That is S-16 in substance, recorded as this architecture's own lean, in the document
+> the slicing design was built from. **The grace family therefore has both answers inside the outgoing
+> record**, exactly as the published-domain family turned out to at Row 13.10.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §1 — the core principle
+
+**Row 14.1 — the atomic unit is the constant-sonority slice, the span between consecutive note onsets
+and offsets, never the metric beat.**
+*Statement.* "Harmony is constant between note change-points and changes only when notes change, so
+the atomic unit of analysis is the **constant-sonority slice** (the span between consecutive note
+onsets/offsets) — never the metric beat." — §1 (locator: line 18).
+*Derived.* S-28, S-29, S-33.
+*Current-text axis.* S-28: **AGREES**. S-29: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(The refusal of the metric beat is S-28's own ground
+and Row 6.58's rejected alternative, reached here first and ratified.)*
+
+**Row 14.2 — the score's notes are the single lossless source of truth; every later layer annotates or
+derives a view and nothing transforms or discards them.**
+*Statement.* "**The score's notes are the single lossless source of truth.** Every later layer
+*annotates* or *derives a view*; nothing transforms or discards the notes (annotate-A-with-B, never
+replace A)." — §1 (locator: line 22).
+*Derived.* S-3, S-18, S-33.
+*Current-text axis.* S-3: **AGREES**. S-18: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 14.3 — where the slices are is a deterministic fact, not a judgment, so segmentation as a
+decision is removed entirely.**
+*Statement.* "**\"Where the slices are\" is a deterministic FACT, not a judgment.** It is read off the
+notes. This removes segmentation-as-a-decision entirely — there is nothing to get right or wrong about
+slice placement." — §1 (locator: line 24).
+*Derived.* S-28, S-51. *Current-text axis.* S-28: **AGREES**. S-51: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 2.1, 6.6 and 11.2.
+
+**Row 14.4 — the construction dissolves the largest measured error class, over-grab, by construction.**
+*Statement.* "This dissolves the largest measured error class (**over-grab, ~45%**) *by construction*:
+with every slice analyzed on its own, no unit ever spans two harmonies." — §1 (locator: line 29).
+*Derived.* S-28.
+*Current-text axis.* S-28: **AGREES** on the construction — S-28's own ground for refusing a tolerance
+is that it *"could delete a real candidate, which the charter's construction exists to make
+impossible"*.
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Rows 6.7(ii) and 6.54(ii) — the same measured
+attribution, met a third time. *Audit question:* is the over-grab share reproducible, and on which arm
+was it measured?
+
+**Row 14.5 — universality lives in the fact layers, which are style-agnostic and lossless; style
+lives only in the analysis layers' calibration.**
+*Statement.* "**Universality lives in the fact layers** (L1/L2 are style-agnostic and lossless);
+**style-specificity lives ONLY in the analysis-layer calibration** …, never in structure" — §1
+(locator: line 34).
+*Derived.* S-1 (a fact is admitted only if it is the notated text and not a claim about what the music
+means), S-3.
+*Current-text axis.* S-1: **AGREES**. S-3: **AGREES** — nothing in S-3 to S-7 varies by style.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 14.6 — the working unit is a selection; whole-score reading is validation-only.**
+*Statement.* "**The working unit is a SELECTION** (a note/chord or a user-selected measure run) —
+**whole-score reading is validation-only**, not the shipping model." — §1 (locator: line 37).
+*Derived.* S-32 (whole-score analysis is the degenerate case), S-53 (the working span is the only
+thing a caller supplies beyond L0).
+*Current-text axis.* S-32: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 14.7 — the working span is extensible: a later layer pulls context beyond the selection on
+demand, by a fixed margin plus a lazy extend-until-stable with a cap.**
+*Statement.* "**(R3) the working span is EXTENSIBLE** — a later layer pulls context beyond the
+selection on demand via a **hybrid** (small fixed margin + lazy extend-until-stable/cap)." — §1
+(locator: line 40).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT**. S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **enlargement contract** family: this is
+where the requirement originates in the outgoing record, and it is a **user mandate**, which the later
+documents implement.
+
+#### §2 — the layer model
+
+**Row 14.8 — a layer uses the notated spelling, metric weight, articulation and voice assignment the
+note layer carries losslessly, rather than collapsing to bare pitch class.**
+*Statement.* "it uses the **notated spelling** (the tonal pitch class — `G♯` vs `A♭`), metric weight,
+articulation, and voice/staff assignment that Layer 1 carries losslessly, rather than collapsing to
+bare pitch class." — §2 (locator: line 80).
+*Derived.* S-3 (spelled pitch, staff and notated voice, and *"the ornament and articulation signs
+attached to it"*), S-35 (the metric strength class), S-13.
+*Current-text axis.* S-3: **AGREES**, and this is **the one place in the outgoing record that names
+articulation among the facts a layer must use** — which Rows 1.3, 3.42 and 4.3 record as absent from
+the as-built per-note list. S-35: **AGREES**. S-13: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 14.9 — the note model is the lossless annotated set of sounding notes, carrying twelve named
+facts including ties, with no weighting, filtering or aggregation.**
+*Statement.* "Read the score once → the lossless, annotated set of sounding notes (pitch, tpc, staff,
+voice, onset, offset, duration, ties, `isGrace`, `plays`, `visible`, staff-eligibility). Preserved
+end-to-end. **No** weighting, filtering, or aggregation. ONE representation, ONE path." — §2, the layer
+table (locator: line 90).
+*Derived.* S-3, S-18.
+*Current-text axis.* S-3: **DIFFERS**. S-18: **AGREES** on the no-filtering discipline.
+*The difference, in both texts' own words.* S-3 additionally requires *"whether it is pitched"*,
+*"whether it is cue-sized"*, *"the ornament and articulation signs attached to it"* and a metric
+position given as *"(bar index, offset within the bar, absolute position)"*; this list carries none of
+those four.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 1.3, 3.42 and 4.3 — **and it
+narrows those rows usefully: the TARGET list carries `ties`, which the as-built eleven fields do
+not.** One of the five facts S-3 requires and the implementation lacks was in the architecture all
+along.
+
+**Row 14.10 — the slices come from the note model as the constant-sonority spans between the union of
+note onsets and offsets: deterministic, lossless, not a heuristic.**
+*Statement.* "From the note model → the constant-sonority slices (spans between the union of note
+onsets/offsets). Deterministic; lossless; not a heuristic." — §2, the layer table (locator: line 91).
+*Derived.* S-28, S-29. *Current-text axis.* S-28: **AGREES**. S-29: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 14.11 — a future voice-leading layer would read the per-voice motion the note model already
+carries losslessly.**
+*Statement.* "It would read the per-voice motion the Layer-1 note model already carries losslessly, so
+it is a future layer over Layer 1, **parallel** to the harmonic stack" — §2 (locator: line 100).
+*Derived.* S-13. *Current-text axis.* S-13: **AGREES** that notated voices are supplied and that a
+line is not.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***, with Row 12.17.
+
+**Row 14.12 — the pitch-class weighting is a derived view, not a primitive and not a replacement for
+the notes.**
+*Statement.* "**The pitch-class weighting** that today lives in `collectRegionTones` is a *derived
+view* used by the chord-symbol layer (4), not a primitive and not a replacement for the notes." — §2
+(locator: line 136).
+*Derived.* S-33, S-49. *Current-text axis.* S-33: **DIFFERS**. S-49: **DIFFERS**.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Rows 1.9, 3.46, 4.28, 4.33 and 12.13. *(The view-not-replacement half is carried by S-33 and travels
+with it.)*
+
+**Row 14.13 — a layer that needs evidence beyond the selection requests an extension from the note
+layer, append-only, clamping at and reporting the score boundary, with the requester carrying the stop
+condition and a hard bound.**
+*Statement.* "a layer that needs evidence beyond it **requests an extension** from Architectural Layer
+1 (the supplier), which loads more notes in the asked direction, append-only, clamping at — and
+reporting — the score boundary; the requesting layer carries the **stop condition** and a **hard
+bound**, so extension terminates." — §2 (locator: line 204).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT**. S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **enlargement contract** family. **★
+THIS IS THE FULLEST SINGLE-SENTENCE STATEMENT OF THAT CONTRACT IN THE OUTGOING RECORD** — append-only,
+clamp-and-report, and the requester owning the stop condition — and Rows 3.35, 5.11 to 5.20 and 13.12
+are its implementations.
+
+**Row 14.14 — no layer may assume infinite context; output covers only the selection and extended
+music is evidence.**
+*Statement.* "**No layer may assume infinite context** (\"the whole score is always loaded\") — that
+assumption is the expensive-to-retrofit error this contract exists to forbid …. Output covers only the
+selection; extended music is **evidence**." — §2 (locator: line 207).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES** on the output covering the span. S-53: **THE DERIVATION IS
+SILENT** on the prohibition.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 14.13 — and with Rows 2.28, 5.10, 6.45 and
+7.23, which are the same output-versus-context line seen at the slicing layer.
+
+**Row 14.15 — requesting notes from a lower layer is a data-supply call down the stack, not an
+analysis back-edge.**
+*Statement.* "Requesting notes from a lower layer is a **data-supply call down the stack, not an
+analysis back-edge**, so it is consistent with the forward-only contract above." — §2 (locator: line
+210).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES** — S-53's own closing clause makes the caller's span the caller's
+act and not L1's input.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 14.16 — a tonal stream is segmented many ways at once; each segmentation is a span type defined
+by what event bounds it, and the bare word *region* is banned as ambiguous.**
+*Statement.* "A tonal stream is segmented **many ways at once**, not one. Each segmentation is a
+distinct **span type**, defined by **what event bounds it** …; the bare word \"region\" must name
+exactly one of them, never several." — §2 (locator: line 228); with "\"Region\" unqualified is banned
+as ambiguous." (locator: line 274).
+*Derived.* S-29, S-50.
+*Current-text axis.* S-29: **DIFFERS** — the derivation has one span type, the slice, and needs no
+family. S-50: **AGREES** on the naming discipline.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **word *slice*** family: that the
+specification say which span types L1 publishes and name each by its bounding event, since the
+outgoing record needs six names where the derivation needs one.
+
+**Row 14.17 — the atomic span is bounded by harmony change and is one committed chord plus one
+assigned local key.**
+*Statement.* "**Harmonic region** — bounded by **harmony change** (the chord-rhythm slicer, Layer 2).
+The **atomic** unit: one committed chord + one assigned local key. (The as-built `HarmonicRegion`;
+Layer 5 calls it a *slice*.)" — §2 (locator: line 233).
+*Derived.* S-29, S-33, S-51.
+*Current-text axis.* S-29: **DIFFERS**. S-33: **DIFFERS**. S-51: **DIFFERS**.
+*The difference, in both texts' own words.* S-29's slice is bounded by **change points** — onsets and
+releases of eligible notes — and S-33 makes its identity the event set, with S-51 barring a chord or a
+tonality from an L1 output; this span is bounded by **harmony change** and *is* a committed chord plus
+an assigned key.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **word *slice*** family. **★ A FOURTH
+MEANING, AND THE ONE THAT MAKES THE FAMILY WORTH RULING**: this document says in terms that the
+function layer calls this object a *slice*, while §1 of the same document calls the constant-sonority
+span a slice too. **The collision is inside one document.**
+
+**Row 14.18 — the punctuation span is bounded by phrase markers: fermata, breath, rest, structural bar
+line.**
+*Statement.* "**Phrase** — bounded by **phrase markers** (fermata/breath/rest/structural barline — the
+Layer-1.5 primitive). The grouping/punctuation unit." — §2 (locator: line 237).
+*Derived.* S-39, S-7.
+*Current-text axis.* S-39: **AGREES** on the fermata, rest and bar line. S-7: **DIFFERS** on the
+breath mark.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 10.13, 10.23 and 13.3 — **the fourth
+document to name the breath mark among the boundary kinds**, which OQ-9 leaves open.
+
+#### §6.1 — the change-point set, and §6.2 to §6.5
+
+**Row 14.19 — boundaries fall at every onset AND every release; the onsets-only alternative was
+rejected because a chord tone releasing shrinks the set mid-span.**
+*Statement.* "*RESOLVED (user, 2026-06-21):* **boundaries at every onset AND every release** — both
+change the sounding set, so both open a slice; this is what makes each slice a *genuine*
+constant-sonority span. The earlier onsets-only lean broke that property (a chord tone releasing
+shrinks the set mid-span)" — §6.1 (locator: line 339).
+*Derived.* S-28, S-33.
+*Current-text axis.* S-28: **AGREES**. S-33: **AGREES**, and on the same argument — S-33's charter
+ground is that *"a unison or octave shrink is a real change though the pitch classes are unchanged"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **This is where the release clause was decided in the
+outgoing record, with its alternative weighed and user-ratified**, and the derivation reaches the same
+answer from the same property. Row 6.46 states it again from the slicing design.
+
+**Row 14.20 — a tied note is one sounding event; the tie continuation is not a new onset, and getting
+it wrong makes every downstream slice wrong.**
+*Statement.* "**Tie resolution is a LAYER-1 concern, not layer 2.** A tied note is one sounding event
+from first attack to final release; the tie continuation is **not** a new onset. The note model must
+represent a tied group as a single sounding span (onset→release), so layer 2 never sees a spurious
+change-point at a tie. *(If layer 1 gets this wrong, every downstream slice is wrong — it is a
+correctness obligation for layer 1.)*" — §6.1 (locator: line 344).
+*Derived.* S-23.
+*Current-text axis.* S-23: **AGREES**, and exactly — S-23's own falsifier is *"falsified if the
+boundary between two tied notes is a change point with no other witness"*, which is this sentence's
+prohibition.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **The two texts state the same rule and the same
+consequence**, and this one adds that it is a correctness obligation on the supplying layer — which is
+worth setting beside Row 1.7, where the as-built republishes every tie continuation with its own span.
+
+**Row 14.21 — a grace note does not open a slice of its own; it is annotated onto the following slice
+as an ornament.**
+*Statement.* "*Lean:* **a grace does not open a slice of its own** — it is annotated onto the following
+slice as an ornament, so analysis sees the real harmony, not a one-grace vertical. (Equivalent to
+treating grace as a layer-1 annotation, not a layer-2 boundary.)" — §6.1 (locator: line 348).
+*Derived.* S-16, S-15, S-30.
+*Current-text axis.* S-16: **AGREES**, and in substance exactly — S-16 states that *"A grace note
+opens no change point and belongs to no sounding set"* and publishes it as *"an ornamental attachment
+of its host note"*. S-15: **AGREES** — *"it is not a grace note"* is one of its five eligibility
+conditions. S-30: **AGREES** — the no-zero-length-slice invariant rests on this answer.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**★★ THIS ROW CHANGES THE GRACE-NOTE FAMILY, AND IT IS THE MOST CONSEQUENTIAL FINDING OF THIS
+DOCUMENT.** Item 8 of §12 records the grace question as the sharpest flat contradiction in the
+comparison: five rows across three documents — 2.16, 2.17, 3.44, 3.57, 6.26, 6.30 and 6.55 — state
+that a grace *"genuinely opens/closes a boundary by its span"*, that the slicer needs no grace code,
+that no note kind is special-cased, and that excluding graces was *"a heuristic that was dropped"*.
+**The north-star architecture those documents were written against says the opposite, in terms, and
+gives the derivation's reason.** The outgoing record therefore contains **both** answers, the
+architecture's lean matching the derivation and the slicing implementation departing from it. *(This
+row states that; it adjudicates nothing. Whether the departure was deliberate is the audit's business
+and no verdict on it is taken here.)*
+
+**Row 14.22 — the current scoring leans on a tie-inflation effect that the faithful note model
+removed.**
+*Statement.* "the current scoring **leans on the tie-inflation bug** — a held (tied) note used to get a
+spurious repetition-boost that happened to push some ambiguous sonorities toward the oracle root ….
+The faithful note model removed that boost, surfacing a small downstream wobble" — §6.2 (locator: line
+354).
+*Derived.* S-23.
+*Current-text axis.* S-23: **THE DERIVATION IS SILENT** on what any scoring leans on.
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Rows 1.15, 1.16 and 3.56. *Audit question:* does any
+live scoring path still depend on a repetition effect the tie-resolved note model removes?
+
+**Row 14.23 — the slice count is about the onset density of the piece.**
+*Statement.* "The slice count ≈ the **onset density** of the piece (dense homophony → many slices; a
+held chord with a melody over it → a slice per melody onset)." — §6.4 (locator: line 401).
+*Derived.* S-28.
+*Current-text axis.* S-28: **AGREES** — S-28 names the same cost and bounds it from the same published
+source, *"Pardo & Birmingham bound the count at twice the note count"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 14.24 — the slices are finer than the annotation grain, so several slices map to one annotated
+event and should all carry the same analysis.**
+*Statement.* "Our slices are **finer** than the oracle's annotation grain …. So several slices map to
+one oracle event, and they should all carry the **same** analysis …. A *disagreement* among slices
+covering one oracle event is itself a signal" — §6.5 (locator: line 409).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis*** (NOT A LAYER) — how the
+analysis grain and the annotation grain compose is a metric-definition question, which
+`FRAMEWORK.md` §5 assigns there.
+
+**Row 14.25 — per-event analysis is the winning shape, the reference engine labelling every beat
+rather than coarse-segmenting first.**
+*Statement.* "**Matches the SOTA.** Contrapunctus — which beats AugmentedNet/AnalysisGNN out-of-sample
+— labels *every beat* rather than coarse-segment-then-analyze; per-event analysis is the winning
+shape." — §3 (locator: line 283).
+*Derived.* S-28.
+*Current-text axis.* S-28: **DIFFERS**.
+*The difference, in both texts' own words.* S-28's construction is over **change points** — onsets and
+releases as exact rationals — and Row 6.58 records a *"fixed metric-grid or beat-synchronous
+segmentation"* as **rejected**, because *"a metric grid imposes a judgement: it over-slices a held
+chord on the clock and can miss a change that falls between grid points"*; the cited reference engine
+labels **every beat**, which is that grid.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state what the
+per-event evidence is — a change point or a beat — since this document cites a beat-labelling system
+as the evidence for a change-point construction, and Row 6.58 rejects the grid the citation rests on.
+
+---
+
+#### Not a statement — counted by paragraph, per section, so the arithmetic closes (44)
+
+| Section | Paragraphs counted | What they are |
+|---|---|---|
+| the banner | 1 | the governance demotion and the historical ratification status |
+| §1 | 2 | the remainder of the scope mandate (the two other binding requirements and its pointer), and the effort-preset block |
+| §2 | 17 | the minimality principle; the layer table's rows 3 to 6; the Harmonic Vocabulary block; the three dependency-order sub-points; the seven control-flow paragraphs; the verifiability block; and the span family's other members with the nesting rule |
+| §3 | 4 | the other four evidence bullets |
+| §4 | 7 | the as-built banner, the existing pipeline, the four target-mapping bullets and the closing line |
+| §5 | 3 | the sweep-order implications |
+| §6 lead-in | 1 | how the open questions are to be resolved |
+| §6.2 | 4 | the other four analysis-layer questions |
+| §6.3 | 3 | the grouping layer's three questions |
+| §6.4 | 1 | the performance mitigations |
+| closing | 1 | that nothing is implemented from this document directly |
+| **Total** | **44** | — |
+
+#### The arithmetic at this document
+
+- Rows written: **25** (14.1 to 14.25). No row of this document splits.
+- **Outgoing statements dispositioned: 25.**
+- Paragraphs counted under *not a statement*: **44**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 12 | 14.1, 14.2, 14.3, 14.5, 14.6, 14.8, 14.10, 14.15, 14.19, 14.20, 14.21, 14.23 |
+| ADOPTED — proposed | 8 | 14.7, 14.9, 14.13, 14.14, 14.16, 14.17, 14.18, 14.25 |
+| RELOCATED | 3 | 14.11, 14.12, 14.24 |
+| QUARANTINED | 2 | 14.4, 14.22 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **25** | — |
+
+**The column sums to 25, against 25 statements, so the arithmetic closes at this document:**
+12 + 8 + 3 + 2 + 0 + 0 + 0 = 25.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 31 |
+| DIFFERS | 9 |
+| THE DERIVATION IS SILENT | 7 |
+| **Total verdicts** | **47** |
+
+*(Counted per named derived statement per statement-row. 47 verdicts over 25 statements because
+sixteen rows name more than one derived statement.)*
+
+#### What this document's rows put in front of the user
+
+**Row 14.21 is the finding of this document and one of the most consequential of the comparison.** The
+north-star architecture the whole rebuild was written against says, in terms, that **a grace note does
+not open a slice of its own** and is annotated onto the following slice as an ornament — which is S-16
+in substance. Seven rows across documents 2, 3 and 6 say the opposite. **The grace family therefore has
+both answers inside the outgoing record**, and the one that matches the derivation is the ratified
+architecture.
+
+**Rows 14.19 and 14.20 are the outgoing record's own derivations of two rules the derivation
+reaches independently** — boundaries at every onset *and* every release, with the onsets-only
+alternative weighed and rejected on the shrinking-set argument; and a tied group as one sounding span,
+named a correctness obligation on the supplying layer. Both are user-ratified here and restated at
+document 6.
+
+**Row 14.13 is where the enlargement contract originates.** Append-only, clamp-and-report, and the
+requester carrying the stop condition and the hard bound — a user mandate that Rows 3.35, 5.11 to
+5.20, 10.5 and 13.12 all implement, and for which the derived specification has nothing.
+
+**And Row 14.17 makes the *word slice* family worth ruling.** This one document calls the
+constant-sonority span a slice in §1 and calls a committed chord plus an assigned key a slice in §2,
+saying in terms that the function layer uses the second sense. **The collision is inside a single
+document**, which is why four documents now use the word three ways.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -6879,11 +7283,15 @@ worked; it is not complete over the population.**
 - Row 12.25 — dominant-shape detection as a key vote: a dominant-seventh-shaped sonority implying a
   tonic a fifth below by its shape. *(The key-agnosticism it appeals to is carried at S-47 and S-51 and
   travels with it.)*
+- Row 14.12 — the pitch-class weighting as a derived view used by the chord layer, not a primitive and
+  not a replacement for the notes. *(The view-not-replacement half is carried at S-33 and travels.)*
 
 **To *the second axis — voice leading*.**
 
 - Row 12.17 — texture classification, homophonic against polyphonic, and the routing of key detectors
   by texture.
+- Row 14.11 — that a future voice-leading layer would read the per-voice motion the note model already
+  carries losslessly, parallel to the harmonic stack.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -6900,6 +7308,8 @@ worked; it is not complete over the population.**
 - Row 13.17 — the same proportionality claim for the grouping layer, on the same reference engine.
 - Row 13.18 — that the fermata oracle is not fully independent, the primitive consuming fermatas
   itself, so independent validation needs the annotation oracle.
+- Row 14.24 — that the slices are finer than the annotation grain, so several map to one annotated
+  event and should all carry the same analysis, a disagreement among them being itself a signal.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -7017,6 +7427,10 @@ by paragraph rather than rowed. **Document 9 added the two below.**
     ends-a-phrase facts still dormant and gated off?
 59. Row 12.16 — are the per-note melodic signals still unavailable outside the decoder, and does
     anything that needs them re-derive them?
+60. Row 14.4 — the same question as audit question 40, met a third time: is the over-grab share
+    reproducible, and on which arm was it measured?
+61. Row 14.22 — does any live scoring path still depend on a repetition effect that the tie-resolved
+    note model removes?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -7246,6 +7660,31 @@ Gathered from the documents tabulated so far. **Not complete over the population
     displacement met from a second direction, before a notated span end (13.14); **one score of the
     gate corpus with no fermata at all** (13.19, the concrete instance of items in this list already);
     and whether the notated evidence is **texture-wide or per voice** (13.20).
+57. **★★ ROW 14.21 — THE GRACE-NOTE FAMILY HAS BOTH ANSWERS INSIDE THE OUTGOING RECORD, AND THE ONE
+    THAT MATCHES THE DERIVATION IS THE RATIFIED ARCHITECTURE.** Item 8 above records the grace question
+    as the sharpest flat contradiction in the comparison, on seven rows across documents 2, 3 and 6.
+    **The north-star architecture those documents were written against states the opposite, in terms:**
+    *"a grace does not open a slice of its own — it is annotated onto the following slice as an
+    ornament, so analysis sees the real harmony, not a one-grace vertical."* That is S-16 in substance,
+    with S-16's own reason. **The user is therefore choosing between two of the record's own documents
+    as much as between the two records** — the second time this has turned out to be so, after Row
+    13.10 on the published domain.
+58. **★ Row 14.13 — the ENLARGEMENT CONTRACT's origin, and its fullest single-sentence statement.** A
+    layer needing evidence beyond the selection requests an extension from the note layer, which loads
+    in the asked direction, **append-only**, **clamping at and reporting the score boundary**, with the
+    **requester carrying the stop condition and a hard bound**. It is a user mandate of 2026-06-24, and
+    Rows 3.35, 5.11 to 5.20, 10.5 and 13.12 are its implementations; the derived specification has
+    nothing equivalent. With Rows 14.7 and 14.14.
+59. **★ Rows 14.16 and 14.17 — the WORD *SLICE* family, and the collision inside one document.** This
+    document's §1 calls the constant-sonority span a slice and its §2 calls a committed chord plus an
+    assigned local key a slice, saying in terms that the function layer uses the second sense; it also
+    bans the bare word *region* and requires every span to be named by its bounding event. **Four
+    documents now use *slice* three ways**, and one of them uses it two ways itself.
+60. Rows 14.9, 14.18 and 14.25 — the per-note fact list again, **narrowed usefully**: the target list
+    carries `ties`, which the as-built eleven fields do not (14.9); the **breath mark** among the
+    boundary kinds a fourth time (14.18); and that the specification state what the per-event evidence
+    is — a change point or a beat — since this document cites a **beat-labelling** reference engine as
+    the evidence for a change-point construction that Row 6.58 rejects the grid of (14.25).
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -7323,37 +7762,43 @@ Gathered from the documents tabulated so far. **Not complete over the population
     arrival that precedes the notated span end.
 35. Row 13.20 — S-46's per-voice cue, against a report that the field models phrase and cadence as one
     texture-wide layer.
+36. Row 14.9 — S-3's per-note requirements, against a target list of twelve that carries ties but not
+    the pitched flag, the cue size, the ornament signs or the bar-relative position.
+37. Rows 14.16 and 14.17 — S-29's single span type and S-51's no-chord-and-no-tonality bar, against a
+    six-member span family whose atomic member is a committed chord plus an assigned local key.
+38. Row 14.25 — S-28's change points and Row 6.58's rejection of a metric grid, against a
+    beat-labelling reference engine cited as the evidence for the construction.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the thirteen documents tabulated, not a distribution over the
-population.** The population is 29 documents; 16 are untouched. No figure below may be read as
+**This is a RUNNING total over the fourteen documents tabulated, not a distribution over the
+population.** The population is 29 documents; 15 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 467 statements placed so far:**
+**Dispositions, over the 492 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | **185** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | **145** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | **29** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | **76** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | **31** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | **467** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | **197** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | **153** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | **32** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | **78** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | **31** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | **492** |
 
-**The arithmetic closes:** 185 + 145 + 29 + 76 + 0 + 31 + 1 = 467, against 467 statements, and each
+**The arithmetic closes:** 197 + 153 + 32 + 78 + 0 + 31 + 1 = 492, against 492 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same thirteen documents:**
+**Current-text verdicts, over the same fourteen documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | **482** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | **172** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | **134** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | **788** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | **513** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | **181** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | **141** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | **835** |
 
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
