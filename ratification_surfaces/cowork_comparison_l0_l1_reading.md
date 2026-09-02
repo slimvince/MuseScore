@@ -56,11 +56,12 @@ The population's order is the artifact's:
 | 19 | `cowork_voiceleading_axis_design.md` | **DONE** |
 | 20 | `docs/llm_integration.md` | **DONE** |
 | 21 | `cowork_joint_estimator_architecture.md` | **DONE** |
-| 22–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 22 | `cowork_layer4_chordsymbol_design.md` | **DONE** |
+| 23–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 22–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 23–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 22**, `cowork_layer4_chordsymbol_design.md`.
+dispatch resumes at **position 23**, `cowork_prefit_gates.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -7745,9 +7746,11 @@ and the upper voices form a confident chord on their own, replace with the Pass 
 held tone in the harmony) apart from *pedal mark* (a damper instruction), citing the same design-intent
 entry, and this is the first. S-44: **AGREES** on the bass.
 *PROPOSED DISPOSITION.* **RELOCATED — to L2** — deciding a chord over a held bass is a tonal reading.
-*(Recorded because it is the outgoing record's only worked use of the pedal-**point** sense, and Row
-12.8 is the only worked use of the pedal-**mark** sense; the derivation's S-54 is the one place both
-are named together.)*
+*(Recorded because it is the outgoing record's first worked use of the pedal-**point** sense, and Row
+12.8 the only worked use of the pedal-**mark** sense; the derivation's S-54 is the one place both are
+named together. **Corrected at Document 22:** this parenthetical read *"the only worked use of the
+pedal-point sense"* when it was written, and **Row 22.18 is a second** — the two named flags a
+chord-layer result carries and does not pass forward.)*
 
 **Row 17.8 — bass-candidate enumeration fires only where there is evidence the bass voice moves within
 the region.**
@@ -10065,6 +10068,431 @@ confuses them, and the record is clearer for having both said so.
 
 ---
 
+### 6.22 — Document 22: `cowork_layer4_chordsymbol_design.md`
+
+> **Manifest for this document.** Outgoing statements: **20** (rows 22.1 to 22.20; no row of this
+> document splits). Units counted under *not a statement*: **102**, across the banner block and 16
+> sections. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **What it is.** The signed specification of the chord-symbol layer — L2's charter subject throughout,
+> *the tonal reading, the one entangled decision*. What is tabulated below is what it says about **the
+> facts it is handed, the boundaries it may not read across, and the form in which it hands its own
+> result on**.
+>
+> **★ IT STATES ROW 18.9's DISTINCTION A SECOND TIME, AND STATES THE CONSEQUENCE.** Document 18 rules
+> that a layer must tell *"unavailable because not loaded"* from *"unavailable because the score
+> starts/ends here"*. **Row 22.5 is what that means at a window's edge:** *"A slice at the very start or
+> end of the piece simply has one fewer neighbour; a slice at the edge of a *selection* (not of the
+> score) reaches for the missing context rather than guessing without it."* S-32's and S-25's span-edge
+> marks carry one mark for both cases.
+>
+> **★ AND ROW 22.12 IS S-24's OWN SHAPE APPLIED TO THE SPELLING.** S-24 tests a tie link for internal
+> validity in three parts and, on failure, **refuses rather than repairs** — two events and a defect
+> flag naming the link. This document tests the notated spelling for internal validity in three parts —
+> present on every sounding tone, no two same-pitch-class notes spelled differently, a clean stack of
+> thirds on exactly one member — and, on failure, **defers rather than repairs**: name the quality and
+> bass, carry the rotations, mark the root open. **Neither text cites the other, and both refuse to
+> decide what the transcriber meant.**
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §0, §1 and §3 — the unit, the facts consumed, and the boundary
+
+**Row 22.1 — the slice is the atomic unit the layer decides per; the chord-span is the maximal run of
+same-chord slices, assembled downstream and never decided here.**
+*Statement.* "**Slice** | The **constant-sonority slice** from Architectural Layer 2 …; the §2.15 span
+typology's atomic unit. This layer decides **per slice**; the typology's **chord-span** (the span one
+committed chord prevails over …) is the maximal run of same-chord slices, assembled downstream, never
+decided here." — §0 (locator: line 35).
+*Derived.* S-33, S-29.
+*Current-text axis.* S-33: **AGREES** — the slice is a set of events, and a run of slices carrying one
+chord is a different object from a slice. S-29: **AGREES** — the half-open slice is the unit, and this
+text builds its larger span out of slices rather than instead of them.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The clean statement of the relation Row 18.17 makes
+and Row 17.13 breaks: the slice is the atomic unit, and the chord's span is assembled out of slices —
+not the other way round.*
+
+**Row 22.2 — the half-tier publishes the bass, spelling, metric-weight and phrase-boundary views, the
+last as an aggregated boundary-strength profile.**
+*Statement.* "**Layer 1.5** | The shared notation-derived-view half-tier (bass, spelling,
+metric-weight, and phrase-boundary views) …; the **texture strength profile** is the phrase-boundary
+primitive's aggregated boundary-strength output" — §0 (locator: line 38).
+*Derived.* S-44, S-35, S-40.
+*Current-text axis.* S-44: **AGREES** — the bass is a published derived fact. S-35: **AGREES** — the
+metric class is published per change point. S-40: **DIFFERS** — *"nothing is collapsed to a single
+'boundary strength'"*, against an **aggregated boundary-strength** profile; the sixth statement of that
+difference in the outgoing record.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 19.13. *The proposal:* that the specification
+say whether the boundary evidence a consumer reads is the flag set with its witnesses or an aggregated
+strength — six outgoing documents now assume the second.
+
+**Row 22.3 — the layer consumes the slice's pitches, their notated spelling, their metric weight and
+the neighbouring slices, and may use nothing already decided downstream.**
+*Statement.* "The evidence it may use is the **notes** (which pitches sound, their notated spelling,
+their metric weight), the **key/mode** (a preference), and the **immediately neighbouring chords** …
+It may **not** use function, cadence, or any already-decided downstream result." — §2 (locator: lines
+133–136); the same list at §1 (lines 65–67) and §3 (lines 181–184), with *"What it deliberately does
+not read: function, cadences, or any already-decided downstream result fed back to it"* (line 198).
+*Derived.* S-3, S-33, S-35, S-53.
+*Current-text axis.* S-3: **AGREES** — the notated spelling is a supplied per-note fact. S-33:
+**AGREES** — *which pitches sound* is the slice's sounding set by event identity. S-35: **AGREES** —
+the metric weight is the published class. S-53: **AGREES** — nothing decided downstream is read back,
+which is the same forward-only contract one layer up.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 22.4 — the notated spelling is used in preference to bare pitch class and names a root where
+pitch class cannot, but it is strong-but-fallible and is weighed rather than trusted blindly.**
+*Statement.* "**Maximal information — use the notated spelling, not bare pitch class.** … most
+importantly the **notated spelling** (the tonal pitch class, `G♯` versus `A♭`), which names a chord's
+root where pitch class cannot — decisively for the symmetric sonorities. It is a strong-but-fallible
+signal (engraving can be expedient; a MIDI import may carry arbitrary spelling), so it is weighed, not
+trusted blindly" — §2 (locator: lines 128–132).
+*Derived.* S-3, S-14.
+*Current-text axis.* S-3: **AGREES** — the spelled pitch is supplied, and it is what distinguishes
+`G♯` from `A♭`. S-14: **DIFFERS** on the case it does not reach — S-14 rules what happens when spelling
+is **absent** (*"L0 refuses the score"*), and this text is about spelling that is **present and
+unreliable**, which the derived statements nowhere address.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say what L0 does
+with spelling that is present but **arbitrary** — an imported record whose letters were assigned rather
+than notated. S-14 refuses a record with no spelling and admits one with any spelling, and the
+outgoing record says the second case is real and common.
+
+#### §2 — the boundaries the window may not read across
+
+**Row 22.5 — the window must not assume a neighbour slice exists: at a selection edge it requests an
+enlargement, and at the score boundary it proceeds truncated, a slice at the start or end of the piece
+simply having one fewer neighbour.**
+*Statement.* "**Bounded context at the selection edge.** The window must **not assume a neighbour slice
+exists.** When it would reach beyond the currently-loaded span — at the edge of the user's selection —
+Architectural Layer 4 either **requests an extension** … or, if Architectural Layer 1 reports the
+**score boundary**, proceeds with the truncated window. A slice at the very start or end of the piece
+simply has one fewer neighbour; a slice at the edge of a *selection* (not of the score) reaches for the
+missing context rather than guessing without it." — §2 (locator: lines 149–155).
+*Derived.* S-32, S-25.
+*Current-text axis.* S-32: **DIFFERS** — its span-edge marks are *entered sounding* and *cut by the
+span*, one mark for both reasons, so a consumer cannot tell the two cases apart. S-25: **DIFFERS** the
+same way — a span-edge tie is marked as a span edge rather than a defect, and never as the score's own
+end.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 18.9. *★ This is the second statement of that
+distinction in the outgoing record, and the first to state the CONSEQUENCE: the two cases produce
+different behaviour, so a consumer that cannot tell them apart cannot act correctly at either.*
+
+**Row 22.6 — a strong notated texture boundary — a double bar, a fermata, an all-voice rest —
+truncates the window, and only texture-level boundaries qualify: a lone per-part breath does not.**
+*Statement.* "A *notated* structural/phrase boundary — a double bar, a fermata, an all-voice rest —
+read from the **Layer-1.5 phrase-boundary primitive** … is a second, **surface** reason the
+embellishment/neighbour window should not read across: a neighbour slice *after* a phrase end is not
+context for the chord *before* it. … Only strong, **texture-level** boundaries qualify (a lone per-part
+breath does not …)." — §2 (locator: lines 156–166).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **AGREES** on the evidence, kind for kind — its published flags carry
+BAR-LINE *"carrying the bar-line type — single, double, final"*, FERMATA, and REST-BEGINS, which are
+this text's three named boundaries. S-40: **DIFFERS** on the form — this text reads them through an
+aggregated strength profile and a strength threshold, where S-40 publishes them as several flags and
+collapses nothing.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether a
+boundary flag carries the **scope** it was detected over — a whole texture against one part — since
+this text makes a window-truncation decision turn on exactly that distinction and S-39's flags carry no
+scope. *(The same question as Row 13.9 and Row 19.13, here with a named consumer that needs the
+answer.)*
+
+**Row 22.7 — the analysis works on the user's selected music, at any size and in any style; its
+structure assumes no style.**
+*Statement.* "**Works on the user's selected music, at any size and in any style** (its *structure*
+assumes no style)." — §2 (locator: lines 169–170).
+*Derived.* S-1.
+*Current-text axis.* S-1: **AGREES** — the admission criterion is what is on the page, which admits no
+repertoire assumption into the structure of what is read.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 22.8 — the style preset is a bounded additive adjustment that cannot flip a reading whose
+note-fit difference exceeds the bound.**
+*Statement.* "the preference is a **bounded additive adjustment** to a candidate's §5 fit score …, so
+it can reorder only readings whose note-fit difference is **smaller than that bound** — that is the
+operational meaning of 'overridden by clear note evidence'" — §2 (locator: lines 170–176).
+*Derived.* S-51.
+*Current-text axis.* S-51: **THE DERIVATION IS SILENT** — it has no notion of a style preference, and
+the claim test it does state is about inputs rather than about weights.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***. *(Read
+beside Row 21.12: the same shape as the key signature's weak prior — a preference bounded so the
+evidence overrides it, with no threshold and no conditional path.)*
+
+**Row 22.9 — the layer does not notice score edits: deciding the analysis is stale is the caller's
+job.**
+*Statement.* "**It does not notice score edits** — deciding the analysis is stale is the caller's job."
+— §2 (locator: line 177).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES** on where the responsibility sits — *"the working span is the only
+thing a caller supplies beyond L0"*, so what the caller supplies, including when to supply it again, is
+the caller's.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 18.41. *The proposal:* that the specification
+state that a layer does not detect staleness and that the caller decides when an analysis is
+re-requested — the derived statements never say who notices an edit, and two outgoing documents now
+assume an answer.
+
+**Row 22.10 — a sub-range can be re-named after a small edit, consistent with the incremental contract
+of the layers below.**
+*Statement.* "*Re-name a sub-range* — re-run the naming over part of the sequence after a small edit,
+consistent with the incremental contract of the layers below." — §3 (locator: lines 191–192); *"each
+slice's reading is cached; re-naming only a sub-range keeps editing responsive"* (§8, lines 404–405).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** — it covers a span exactly and says nothing
+about re-covering part of one. S-53: **THE DERIVATION IS SILENT** — one forward pass over a span is
+specified, and no partial re-pass.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 18.41. *The proposal:* that the specification
+say what **the layers below** owe an incremental re-analysis, since this text asserts they have an
+incremental contract and the derived statements describe none.
+
+**Row 22.11 — the window extends across contiguous neighbouring slices while they support one
+consistent chord reading, and stops at the first inconsistent slice.**
+*Statement.* "The window starts at the slice and its immediate neighbours and extends across contiguous
+neighbouring slices **while they continue to support one consistent chord reading**, stopping at the
+first slice whose notes are inconsistent with that reading." — §2 (locator: lines 143–148).
+*Derived.* S-33.
+*Current-text axis.* S-33: **AGREES** on what the window is made of — slices, each identified by its
+event set, so the window is a run of them and not a re-cut of the time axis.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Row 18.33.
+
+#### §5, §7 and §8 — the spelling test, the carry, and what is never done
+
+**Row 22.12 — the spelling is pinned as a root only when it passes a three-part validity test, and on
+failure the layer defers rather than repairs.**
+*Statement.* "the layer reads the spelling and **pins the root from it** where the spelling passes the
+stated test …, all three parts required: (1) **present** — every sounding tone of the rotation set
+carries a valid notated spelling; (2) **internally consistent** — no two sounding notes of the same
+pitch class are spelled differently (a slice sounding both `G♯` and `A♭` fails); (3) **a clean stack of
+thirds** … Failing **any** part of the test … the layer defers: name the quality and bass, carry the
+rotations, mark 'uncertain' (open question: the root), and leave the re-spelling judgment to the later
+function step." — §5 (locator: lines 296–311).
+*Derived.* S-24, S-3, S-14.
+*Current-text axis.* S-24: **AGREES**, and in the same shape — a tie link *"counts as a tie only if"*
+three conditions hold, and a link failing any of them is refused rather than repaired, the record
+carrying a flag: *"refusing to repair the flag keeps L1 from deciding what the transcriber meant"*.
+S-3: **AGREES** — the spelling being tested is the supplied per-note fact. S-14: **DIFFERS** — it
+rules only on spelling that is **absent**, and two of this test's three parts are about spelling that
+is present and self-contradictory.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification carry an
+**internal-validity test on the notated spelling**, on S-24's own pattern — refuse, mark, and do not
+repair — since S-14 handles only the absent case and the outgoing record's test is the one the
+symmetric sonorities turn on.
+
+**Row 22.13 — the layer annotates and does not transform: the slices and the notes are unchanged.**
+*Statement.* "**It annotates, it does not transform** — the slices and notes are unchanged; the chord
+and membership are added as annotations; the competing readings are kept so the decision can be
+revisited." — §8 (locator: lines 392–393).
+*Derived.* S-53, S-33.
+*Current-text axis.* S-53: **AGREES** — nothing a later layer does reaches back into what an earlier
+one published. S-33: **AGREES** — the slice's identity is its event set, which a chord decision cannot
+change.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 22.14 — there is never a pooled recompute: several slices' pitches are never pooled into one bag,
+and the note model stays the lossless source so membership is decided from the real notes and not a
+lossy aggregate.**
+*Statement.* "**Never a pooled recompute** (the authoritative statement of this prohibition). …
+the layer never pools several slices' pitches into one bag and re-derives a chord from the bag — that
+over-reads, treating every passing note as a chord tone … The note model stays the lossless source so
+membership is decided from the real notes, not a lossy aggregate." — §8 (locator: lines 394–398); the
+measured failure it corrects at §13, *"passing and neighbour notes entered the bag and inflated the
+chord"* (lines 519–521).
+*Derived.* S-33, S-50.
+*Current-text axis.* S-33: **AGREES**, and this is its reason stated as a defect that actually
+happened — identity is the event set *"not the set of pitch classes and not the set of pitches"*, and a
+pooled bag is exactly the pitch-class aggregate. S-50: **AGREES** — what is published is each slice's
+sounding set by event identity, which is what makes deciding from the real notes possible.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★ The outgoing record's own measured case for S-33: a
+lossy aggregate was built once, it over-read, and the correction was to decide from the published
+events instead.*
+
+**Row 22.15 — an undecidable reading is carried with a mark naming the open question, and the layer
+above selects among the carried readings and never re-derives.**
+*Statement.* "**Forward-only resolution** — the genuinely undecidable slices are carried as competing
+readings plus 'uncertain,' not forced; Architectural Layer 5 *selects* among them, it does not re-enter
+this layer." — §8 (locator: lines 402–403); the same rule at §1, *"never by inventing a chord or
+re-deriving one from the raw notes"* (lines 72–73).
+*Derived.* S-50, S-53, S-51.
+*Current-text axis.* S-50: **AGREES** — publishing the candidates with their witnesses is the same act.
+S-53: **AGREES** — *"the want is met by publishing the candidates and the evidence and leaving the
+decision"*, which is this rule one layer up. S-51: **AGREES** — what may not be decided here is carried
+rather than guessed.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The derivation's own discipline, stated by a layer
+that decides: it commits what it can, publishes what it cannot, and names which question is open.*
+
+**Row 22.16 — the carried alternatives are capped at a fixed number of highest-ranked readings.**
+*Statement.* "the carried alternatives are capped at a fixed number of highest-ranked readings (a
+tunable; identifier `topK`) and exclude spelling-pinned symmetric siblings — calibration facts the
+Layer-5 override design accounts for, not defects here." — §15 O1b (locator: lines 582–584).
+*Derived.* S-50.
+*Current-text axis.* S-50: **DIFFERS** — what it publishes is exhaustive by its own word, *"L1
+publishes exactly"*, with nothing capped; and #12's recomputable clause, which permits a collapse only
+where the collapsed values can be got back, does not cover a cap that discards the readings below a
+rank.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *★★ Read beside Row 19.23, which publishes **the full
+ranked list of ALL class fits, each carried with its weight** on the ground of zero information loss.
+**The outgoing record holds both rules**, in two documents, about the same kind of object: one caps the
+carry, the other refuses to. The proposal is that the specification say which.*
+
+**Row 22.17 — an extension the carry could not obtain is marked unknown rather than asserted absent,
+and is never synthesized.**
+*Statement.* "a carried *alternative*'s extensions are copied from the scorer's own ranked result where
+that cell produced one, else left **honest-carry** (extensions = 0, `extensionsKnown` = **false** — the
+seventh is *unknown*, never asserted absent, and never synthesized). A Layer-5 consumer reads the
+extensions only when `extensionsKnown`" — §7 (locator: lines 363–370).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES**, and precisely — every published item carries its establishment
+status, and *"A consumer may not put a provisional item under load"*, which is what a consumer reading
+extensions **only when they are known** is doing.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The clearest worked instance in the outgoing record
+of the distinction S-52's status field exists for: unknown is not absent, and a consumer is told
+which.*
+
+**Row 22.18 — the pedal-point flags are not carried forward, no consuming rule reading them.**
+*Statement.* "(The pedal-point flags are **not** carried — no Layer-5 §5 rule consumes them;
+identifiers: `isPedalPoint`/`pedalBassPc`.)" — §7 (locator: lines 369–370).
+*Derived.* S-54.
+*Current-text axis.* S-54: **AGREES** on keeping the two senses apart — the derivation cites the same
+design-intent entry to hold *pedal point* (a held tone in the harmony) away from *pedal mark* (a damper
+instruction), and these two flags are the first sense.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* do the two named flags still exist on
+the arm that ships, does anything consume them, and is a fact published by one layer and consumed by
+none dormancy or waste? *(This is the outgoing record's **second** worked use of the pedal-point sense;
+Row 17.2's parenthetical is corrected in place.)*
+
+#### §10 — the measured apportionment
+
+**Row 22.19 — a large majority of the standing root-error set is settled by the notated spelling, and
+most of the rest by bass and inversion, local voice leading, or plain over-segmentation grab that
+change-point slicing removes by construction.**
+*Statement.* "a large majority is settled by the notated spelling (≈60% Baroque / ≈42% Jazz), and most
+of the rest by bass/inversion, local voice-leading, or is plain **over-segmentation grab** (a span
+stretching across two ground-truth chords — 'over-grab' …) that the change-point slicing … removes by
+construction." — §10 (locator: lines 451–460).
+*Derived.* S-28, S-33.
+*Current-text axis.* S-28: **AGREES** on why the over-grab class disappears — a change point is an
+onset or a release, so a slice cannot stretch across a real harmonic change by construction. S-33:
+**AGREES** — a slice ends where the event set changes, which is what makes an over-grab impossible.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* the same as audit questions 40 and 60,
+met a fourth time — is the over-grab share reproducible, on which arm was it measured, and does the
+apportionment still hold at the current commit? *(This document's own §10 also carries the correction
+CLAUDE.md records: an over-grabbed stretch picks up a bass that does not sound where the error is, so
+the function-only share is overstated.)*
+
+**Row 22.20 — the confidence is vertical-fit only by construction, with no progression signal folded
+in.**
+*Statement.* "this layer's confidence is **vertical-fit only** by construction (no progression signal
+folded in — that is Layer 5's to supply)" — §15 O1b (locator: line 581); the declaration at §7, *"a
+margin-family quantity, not a calibrated probability, **vertical-fit only** by construction"* (lines
+374–377).
+*Derived.* S-52, S-51.
+*Current-text axis.* S-52: **AGREES** — what a published number is and is not is declared with it.
+S-51: **AGREES** — a quantity computed without the progression is evidence about the slice, not a claim
+about the music around it.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** — a
+chord decision's own confidence is that layer's.
+
+---
+
+#### Not a statement — counted by paragraph, bullet, table row and numbered item, per section, so the arithmetic closes (102)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the banner block | 5 | the signed status, the as-built block, the deferral line, the resolved open item, and the two not-applicable template sections |
+| §0 | 7 | the terms lead and six term rows — the layer's own vocabulary, dormancy, the punctuation-span, the home metric, the error classes, the pinned snapshots, the precision phase and the build-plan labels |
+| §1 | 17 | what the layer is, why it commits, its scope, the six things it does not do, the recognized vocabulary and its three pieces, the catalogue argument, and the non-tertian exclusion |
+| §2 | 5 | minimality, the key as a preference, certainty as output, the accuracy-measurement note, and the window's harmonic stop condition's own lead |
+| §3 | 4 | the operations lead, the naming operation, the consumers, and the implementation locator |
+| §4 | 6 | the strategy lead, its three steps, and the two-reading scheme |
+| §5 | 15 | the four internal parts with their sub-rules — listing, the preferences, the three-tier membership rule and its plausibility check, and the commit/inherit/abstain conditions — plus incomplete chords and arpeggios |
+| §6 | 7 | the seven runtime scenarios |
+| §7 | 2 | the per-slice result's field list and the internal settings |
+| §9 | 7 | the seven architecture decisions with their alternatives |
+| §10 | 6 | the held-out comparison, the safety test, the membership measurement, the uncertainty calibration, the behaviour tests, and the test locator |
+| §11 | 5 | the five risks |
+| §12 | 1 | the glossary |
+| §13 | 3 | what the layer replaces, the listing-not-re-scoring correction, and the key-before-chord order |
+| §14 | 8 | the borrowed sources, the discarded alternatives, and the corpora |
+| §15 | 4 | the resolved destination of *uncertain*, the bounded-window deferral, the idiom-calibrated tie-breaker, and the power-chord question |
+| **Total** | **102** | — |
+
+*The count is of units the tabulation did not reach, not of units it did not read. **The whole document
+was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **20** (22.1 to 22.20). No row of this document splits.
+- **Outgoing statements dispositioned: 20.**
+- Units counted under *not a statement*: **102**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 7 | 22.1, 22.3, 22.7, 22.13, 22.14, 22.15, 22.17 |
+| ADOPTED — proposed | 8 | 22.2, 22.4, 22.5, 22.6, 22.9, 22.10, 22.12, 22.16 |
+| RELOCATED | 3 | 22.8, 22.11, 22.20 |
+| QUARANTINED | 2 | 22.18, 22.19 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **20** | — |
+
+**The column sums to 20, against 20 statements, so the arithmetic closes at this document:**
+7 + 8 + 3 + 2 + 0 + 0 + 0 = 20.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 28 |
+| DIFFERS | 7 |
+| THE DERIVATION IS SILENT | 3 |
+| **Total verdicts** | **38** |
+
+*(Counted per named derived statement per statement-row. 38 verdicts over 20 statements because
+thirteen rows name more than one derived statement. **All three SILENT verdicts sit on the two edit
+rows and the style preset** — the two subjects the derived specification nowhere enters.)*
+
+#### What this document's rows put in front of the user
+
+**Row 22.16 sets two outgoing documents against each other about information loss.** Document 19
+publishes *"the full ranked alternative list … nothing below the top is discarded"* on the stated ground
+of zero information loss. This document caps the carried alternatives at a fixed number of
+highest-ranked readings and calls that a calibration fact rather than a defect. **The two rules are
+about the same kind of object — a committed reading with its rejected alternatives — and the record
+holds both.**
+
+**Row 22.12 is S-24's shape reached independently.** Both texts take a notated fact — a tie link, a
+spelling — test it for internal validity in three parts, and on failure **refuse rather than repair**,
+publishing a mark instead of a guess. S-24 says why: *"refusing to repair the flag keeps L1 from
+deciding what the transcriber meant."* This document says the same of the re-spelling judgment and
+hands it forward.
+
+**Row 22.5 is the first place the outgoing record says what Row 18.9's distinction is FOR.** A slice at
+the score's end has one fewer neighbour and proceeds; a slice at a selection's edge reaches for the
+missing music. **The behaviours differ, so a consumer that cannot tell the cases apart cannot act
+correctly at either** — and S-32's and S-25's marks do not tell them apart.
+
+**Row 22.14 is the outgoing record's own measured case for S-33.** A pooled pitch aggregate was built,
+it over-read — *"passing and neighbour notes entered the bag and inflated the chord"* — and the
+correction was to decide from the published events. S-33's *"not the set of pitch classes and not the
+set of pitches"* is the same conclusion reached from the definition rather than from the defect.
+
+**And Row 22.17 is S-52's status field doing exactly the work it was derived for.** An extension that
+could not be obtained is marked **unknown**, never asserted absent and never synthesized, and the
+consumer reads it only when it is known. Two texts, the same distinction, and both make the consumer's
+duty explicit.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -10170,6 +10598,14 @@ worked; it is not complete over the population.**
 - Row 21.8 — the non-chord-tone-cleaned, metric-weighted tone collection entering the emission. *(S-33's
   event-set identity travels with it; and the same document's §5a rules that no live cleaning stage
   exists.)*
+- Row 22.8 — the style preset as a bounded additive adjustment that clear note evidence overrides.
+  *(Read beside Row 21.12: the same shape as the key signature's weak prior, with no threshold and no
+  conditional path.)*
+- Row 22.11 — the window extending across contiguous slices while they support one consistent chord
+  reading, and stopping at the first inconsistent one. *(With Row 18.33; S-33's slice identity travels
+  with it as what the window is made of.)*
+- Row 22.20 — the chord decision's own confidence, vertical-fit only by construction with no
+  progression signal folded in.
 - Row 18.18(ii) — which unit a requesting layer steps in when it asks for more music: the key layer in
   bars, the chord layer in slices. *(S-34's bar level and S-33's slice travel with it.)*
 - Row 18.27 — that the forward cascade is bounded because a carried-in key affects the leading-edge
@@ -10376,6 +10812,11 @@ by paragraph rather than rowed. **Document 9 added the two below.**
     than zero — reach it by another route; and is `staffEligible` an L0-supplied fact or an
     eligibility decision above it? *(The same subject as audit question 2, Row 1.6(ii), met a second
     time.)*
+70. Row 22.18 — do the two named pedal-point flags still exist on the arm that ships, does anything
+    consume them, and is a fact published by one layer and consumed by none declared dormancy or waste?
+71. Row 22.19 — the same question as audit questions 40 and 60, met a fourth time: is the over-grab
+    share reproducible, on which arm was it measured, and does the whole apportionment — spelling,
+    bass and inversion, local voice leading, over-grab — still hold at the current commit?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -10758,6 +11199,34 @@ Gathered from the documents tabulated so far. **Not complete over the population
     evidence; the ratified architecture makes it *"a second conditioning input with its own fitted
     strength"*. **The second time the outgoing record puts this question, after Row 12.3, and the first
     time in a ratified architecture.**
+89. **★★ Row 22.16 — that the specification say whether a carried alternative list may be CAPPED.**
+    Document 19 publishes *"the full ranked alternative list … nothing below the top is discarded"* on
+    the ground of zero information loss; Document 22 caps the carry at a fixed number of highest-ranked
+    readings and calls that a calibration fact. **The record holds both rules about the same kind of
+    object.** S-50's own list is exhaustive by its word *exactly*, and #12's recomputable clause does
+    not cover a cap that discards the readings below a rank.
+90. **★★ Row 22.12 — that the specification carry an INTERNAL-VALIDITY TEST ON THE NOTATED SPELLING**,
+    on S-24's own pattern: present, self-consistent, and forming a clean stack of thirds; on failure,
+    refuse, mark, and do not repair. S-14 rules only the **absent** case, and the outgoing record's
+    three-part test is what the symmetric sonorities turn on.
+91. Row 22.4 — that the specification say what L0 does with spelling that is **present but arbitrary**
+    — an imported record whose letters were assigned rather than notated. S-14 refuses a record with no
+    spelling and admits one with any spelling; the outgoing record says the second case is real and
+    common, and weighs the spelling rather than trusting it.
+92. **★ Rows 22.5 and 18.9 — that the SPAN-EDGE MARKS SAY WHICH REASON APPLIES.** Recorded a second
+    time here because Document 22 supplies what Document 18's rule lacked: the two cases produce
+    **different behaviour** — a slice at the score's end has one fewer neighbour and proceeds, a slice
+    at a selection's edge reaches for the missing music — so a consumer that cannot tell them apart
+    cannot act correctly at either.
+93. **★ Rows 22.6, 22.2, 19.13 and 13.9 — that a boundary flag carry the SCOPE it was detected over**,
+    a whole texture against one part, and that the specification say whether what a consumer reads is
+    the flag set with its witnesses or an aggregated strength. **Six outgoing documents now assume an
+    aggregated strength**, and Document 22 makes a window-truncation decision turn on the scope
+    distinction S-39's flags do not carry.
+94. Rows 22.9 and 22.10 — that the specification state **who notices a score edit** (this text says the
+    caller, and that the layer does not) and **what the layers below owe an incremental re-analysis**
+    (this text asserts they have an incremental contract). With Row 18.41: the derived statements have
+    no notion of an edit at all.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -10886,37 +11355,45 @@ Gathered from the documents tabulated so far. **Not complete over the population
     21.8 — S-40's refusal to collapse against a factor named for *boundary strength*, and S-33's
     event-set identity against a cleaned, weighted collection, in the same document that rules no
     cleaning stage exists.
+54. Rows 22.5 and 22.2 — S-32's and S-25's one span-edge mark for two reasons, against a rule whose two
+    cases produce different behaviour; and S-40's refusal to collapse against an aggregated
+    boundary-strength profile, a sixth time.
+55. Rows 22.4 and 22.12 — S-14's refusal of a record with **no** spelling, against a record whose
+    spelling is present, arbitrary, and self-contradictory, tested in three parts and deferred rather
+    than repaired.
+56. **Row 22.16 — S-50's exhaustive publication against a carried alternative list capped at a fixed
+    rank**, and against Document 19's own full ranked list.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the twenty-one documents tabulated, not a distribution over the
-population.** The population is 29 documents; 8 are untouched. No figure below may be read as
+**This is a RUNNING total over the twenty-two documents tabulated, not a distribution over the
+population.** The population is 29 documents; 7 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 642 statements placed so far:**
+**Dispositions, over the 662 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | **261** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | **196** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | **64** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | **86** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | **34** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | **642** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | **268** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | **204** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | **67** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | **88** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | **34** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | **662** |
 
-**The arithmetic closes:** 261 + 196 + 64 + 86 + 0 + 34 + 1 = 642, against 642 statements, and each
+**The arithmetic closes:** 268 + 204 + 67 + 88 + 0 + 34 + 1 = 662, against 662 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same twenty-one documents:**
+**Current-text verdicts, over the same twenty-two documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | **703** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | **220** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | **175** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | **1098** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | **731** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | **227** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | **178** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | **1136** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -10939,7 +11416,7 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the twenty-one documents was placed there.** The reason is visible in the classes that did
+statement in the twenty-two documents was placed there.** The reason is visible in the classes that did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
 which it records as HISTORICAL. Neither is a discard, and neither loses anything.
