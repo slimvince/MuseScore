@@ -62,11 +62,13 @@ The population's order is the artifact's:
 | 25 | `cowork_notation_adoption_increment.md` | **DONE** |
 | 26 | `cowork_idiom_entry_mapping.md` | **DONE** |
 | 27 | `cowork_notation_output_contract.md` | **DONE** |
-| 28–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 28 | `cowork_progression_schema_dictionary.md` | **DONE** |
+| 29 | `cowork_stage5_fitter_design.md` | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 28–29 has been read for
-tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 28**, `cowork_progression_schema_dictionary.md`.
+**UNTOUCHED means untouched, not partly worked.** Nothing in document 29 has been read for
+tabulation, quoted, counted or dispositioned, and no row for it exists anywhere. The next
+dispatch resumes at **position 29**, `cowork_stage5_fitter_design.md` — **the last member of the
+population.**
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -12052,6 +12054,286 @@ from a decided key sits on the same surface as the notated signature published a
 
 ---
 
+### 6.28 — Document 28: `cowork_progression_schema_dictionary.md`
+
+> **Manifest for this document.** Outgoing statements: **13** (rows 28.1 to 28.13; no row of this
+> document splits). Units counted under *not a statement*: **71**, across the banner and 13 sections.
+> Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **What it is.** The specification of a **reference catalog** — the named chord progressions and
+> substitutions of tonal music, queried by other components and analysing nothing itself. Its content
+> is L2's throughout, and five rows relocate. **What reaches L0's and L1's subject is its
+> QUERY CONTRACT**, which is a publication discipline stated for a knowledge base rather than for a
+> layer, and which agrees with the derived one at almost every point.
+>
+> **★★ ITS COMPLETENESS CONTRACT IS THE OPPOSITE OF S-50's, AND SAYS SO.** L1's publication list is
+> exhaustive by its own word — *"L1 publishes exactly"*. This catalog declares *"Completeness is
+> asymptotic — a registry to extend; a consumer must degrade gracefully on the unrecognised and never
+> assume the catalog is exhaustive."* **Two published surfaces in one record, with opposite contracts
+> about what a consumer may assume**, and each states its own explicitly. Row 28.12.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+**Row 28.1 — the component decides nothing: the threshold, the weighting and the choice of what to do
+with a candidate are the consumer's; it supplies ranked candidates only, and there is no binary match
+or no-match, only the score.**
+*Statement.* "**Decide anything.** The matching threshold, the style weighting, and the choice of what
+to do with a candidate are the **consumer's**; the component only supplies ranked candidates." — §2
+(locator: lines 53–54); "The consumer applies its own style weighting and its own threshold; **there is
+no binary match/no-match, only the score** (as the inference layers carry ranked alternatives with
+confidence)." — §4 (lines 120–122); "**Matching candidates is the component's; deciding is the
+consumer's** — a consumer must not treat a returned candidate as a decision." — §9 (lines 283–284).
+*Derived.* S-50, S-51, S-53.
+*Current-text axis.* S-50: **AGREES** — what is published is candidates and evidence, named for what
+they are. S-51: **AGREES** — the claim test's whole point is that the publishing end supplies what is
+computable and never the conclusion. S-53: **AGREES** — *"the want is met by publishing the candidates
+and the evidence and leaving the decision"*, which is this component's contract in its own words.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ The decides-nothing discipline stated by a
+component that is not a layer at all, and reached from a different argument: not that deciding here
+would be circular, but that the knowledge base holds no information about any particular piece.*
+
+**Row 28.2 — a returned list may be empty, and a consumer must handle an empty result and never assume
+a non-empty one.**
+*Statement.* "**The list may be empty** — for *recognise* (nothing matches), for *suggest
+follow/precede* (no progression fits), and for *suggest replace* (no substitution applies) — and a
+consumer must handle an empty result, never assuming a non-empty one." — §4 (locator: lines 122–124).
+*Derived.* S-31.
+*Current-text axis.* S-31: **AGREES**, and in the same shape — a silent slice is *"published as a slice
+like any other, with its empty set, and is not merged into a neighbour"*, and its recorded
+false-negative path is *"a consumer that divides by the set's size"*. **Both texts publish the empty
+case rather than eliding it, and both put the duty on the consumer.**
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 28.3 — every entry carries the established source it is drawn from, and the correctness, coverage
+and provenance of the entries is what makes them true rather than invented.**
+*Statement.* "**Provenance** — the established source the entry is drawn from (§11)." — §3 (locator:
+line 82); "**The component's quality is the correctness, coverage, and provenance of its entries** —
+each traceable to an established source (§11), not invented. That is what makes an entry true." — §8
+(lines 266–267).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** — every published item carries its establishment status, and
+here the status is the source it came from.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 28.4 — every returned entry carries a match score, and the list is ranked by it with a stated tie
+order: specificity, then length.**
+*Statement.* "**Every returned entry carries a match score** … The list is **ranked** by the score,
+tied entries ordered secondarily by **specificity** — how constrained the skeleton is … — then by
+**length** (the longer realisation first)." — §4 (locator: lines 114–120).
+*Derived.* S-50, S-52.
+*Current-text axis.* S-50: **AGREES** — each published item carries the quantity that produced it.
+S-52: **AGREES** — what a score is travels with it.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Read beside Row 27.12: there the ordering **source**
+is a stamped field; here the ordering **rule** is stated in the contract. Two ways of telling a
+consumer what ranked what it reads.)*
+
+**Row 28.5 — the catalog holds structural content and returns ranked structural matches; the weighting,
+the threshold and the decision are the consumer's, at the later phase.**
+*Statement.* "**The firewall line.** The component holds **structural content** and returns **ranked
+structural matches**; the weighting, the threshold, and the decision are **precision-phase, at the
+consumer**. Adding or correcting an entry is a content change here; tuning how strongly an entry fires
+is a precision-phase change there." — §6 (locator: lines 244–246).
+*Derived.* S-51, S-48.
+*Current-text axis.* S-51: **AGREES** — structure below, decision above. S-48: **AGREES** on where a
+tunable value lives — declared as a parameter of the consuming decision, not folded into the fact.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 28.6 — the component carries a style label only; the preset selects the active subset and the
+weighting, and the structure is style-independent.**
+*Statement.* "**Select or detect a style.** The active style is chosen by the **preset** …; the
+component only carries a **style label** on each entry." — §2 (locator: lines 60–61); "**Style behavior
+is the consumer's.** The component carries the style **label**; the **preset selects** the active
+subset, the **style weighting** … and the **threshold** are the consumer's" — §6 (lines 240–242).
+*Derived.* S-1.
+*Current-text axis.* S-1: **AGREES** — the admission criterion admits no repertoire assumption into
+what is held, which is this rule for a catalog: the label is content, the weighting is the consumer's.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(The same rule as Rows 19.9 and 22.7, here about a
+knowledge base rather than an analysis.)*
+
+**Row 28.7 — voice leading is a different dimension held elsewhere; a schema conventionally defined by
+voice leading is present here only by its harmonic pattern, and the complete schema is recognised by
+combining the two.**
+*Statement.* "**Hold voice-leading.** It is the **harmonic** vocabulary … Voice-leading … is a
+**different dimension**, held elsewhere … A schema conventionally defined by voice-leading is present
+here **only by its harmonic pattern**; its voice-leading is held elsewhere and combined when the
+complete schema is recognised." — §2 (locator: lines 55–59); the same at §5.2 (lines 195–197), as
+decision D5 (lines 261–263) and as a risk, *"a consumer must not read them as full schema
+recognition"* (lines 279–280).
+*Derived.* S-13, S-51.
+*Current-text axis.* S-13: **AGREES** — the voice-leading dimension reads notated voices, which is what
+L0 supplies and all it supplies. S-51: **AGREES** — a recognised complete schema is a claim, assembled
+above the layers that publish its parts.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***, with Row 26.2. *(This is
+the source side of the same statement Document 26 makes as a mapping and Document 19 makes as a claim
+— three documents, one placement, and the risk section here adds the consumer's duty not to read a
+partial recognition as a whole one.)*
+
+**Row 28.8 — the voicing substitution is a voicing and not a function, so it is outside the component,
+noted only so it is not mistaken for a function-level substitution.**
+*Statement.* "**Upper-structure / voicing substitution** … it is a *voicing*, not a function, so it is
+**outside this component** (noted only so it is not mistaken for a function-level substitution)." —
+§5.3 (locator: lines 220–222).
+*Derived.* S-33.
+*Current-text axis.* S-33: **AGREES** on the distinction the exclusion rests on — the same pitch
+classes in a different arrangement are a different event set, so a voicing is a real difference and not
+a variant of one thing.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***, with Rows 26.4 and 19.5.
+*(Recorded because the exclusion is written **so that it is not mistaken** for something else — the
+same reason S-50's naming bar exists.)*
+
+**Row 28.9 — the tritone substitute on the tonic is enharmonically the German sixth, and the analysis
+separates the two by spelling.**
+*Statement.* "*(The `subV7/I` is enharmonically the German sixth — the common-practice chord the
+analysis tool already separates **by spelling**, L5 §5.6.)*" — §5.1 (locator: lines 162–164); the same
+pair at §6, *"a shared convention (`ii–V–I`; `subV` = the enharmonic German sixth) is a single entry,
+its cross-style links visible"* (lines 242–243).
+*Derived.* S-3, S-14.
+*Current-text axis.* S-3: **AGREES** — the spelled pitch is supplied, and it is the only fact that
+separates these two. S-14: **AGREES** — spelling is a required input and is not inferred, so the
+separation is read rather than guessed.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Row 26.1. *★★ The outgoing record now names this pair three times — here, at Document 26's mapping,
+and at Document 22's spelling-pin test — and every time the notated spelling is what decides.*
+
+**Row 28.10 — a functional skeleton is key-relative and degree-parameterised, so one entry instantiates
+in every key and a slot instantiates at every target degree.**
+*Statement.* "**Functional skeleton** (progression entries) — the pattern as a **key-relative**
+sequence of (scale-degree, chord-quality) pairs … Being key-relative, one entry instantiates in every
+key; being **degree-parameterised**, a generative slot instantiates at every target degree." — §3
+(locator: lines 77–79).
+*Derived.* S-9, S-51.
+*Current-text axis.* S-9: **AGREES** on the boundary — anything key-relative is above the layer that
+does not read the key at all, and this content is key-relative by construction. S-51: **AGREES** — a
+scale degree presupposes a tonality, which the claim test names among the things a lower layer may not
+take as input.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+
+**Row 28.11 — as built, a realisation is exact and whole with no partial spans, the score is one for an
+exact realisation, and the pop loop is encoded in one canonical rotation only.**
+*Statement.* "**As built (v1) the realisation is exact and whole** — every member matched, full length,
+no partial spans" — §4 (locator: lines 102–103); "**As built (v1) the score is 1.0 for an exact
+realisation** … verified at the as-built recogniser" — §4 (lines 115–117); "**rotation rule (as built,
+verified at the catalog):** ONE entry, encoded in the canonical rotation `I–V–vi–IV` only; the v1 exact
+matcher therefore recognises only that order" — §5.2 (lines 185–188).
+*Derived.* S-50.
+*Current-text axis.* S-50: **THE DERIVATION IS SILENT** — it fixes what a layer publishes and says
+nothing about how a knowledge base matches.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* is the matcher still exact-and-whole on
+the arm that ships, does the score still take only the one value, and is the pop loop still encoded in
+a single rotation that the matcher will not recognise in its other three?
+
+**Row 28.12 — the catalog is not exhaustive: a consumer must degrade gracefully on the unrecognised and
+never assume completeness.**
+*Statement.* "**Completeness is asymptotic** — a registry to extend; a consumer must degrade gracefully
+on the unrecognised and never assume the catalog is exhaustive." — §9 (locator: lines 277–278); the
+same at §5, *"**The lists below are a first pass, not exhaustive** — a registry to extend"* (lines
+136–137).
+*Derived.* S-50.
+*Current-text axis.* S-50: **DIFFERS**, and instructively — its publication list is **exhaustive by its
+own word**, *"L1 publishes exactly"*, so a consumer of L1 may assume completeness and a consumer of
+this catalog may not. **Two published surfaces in one record with opposite contracts, each stated.**
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that a published surface state
+**whether it is exhaustive**, so a consumer knows whether an absence means *not there* or *not yet
+catalogued*. S-50 is exhaustive and does not say so as a contract; this one says so and is not.
+
+**Row 28.13 — a missing ground truth is a consumer limitation and not a property of the entries.**
+*Statement.* "**A missing ground truth is a consumer limitation, not an entry property.** … That bears
+on the consumer's measured accuracy, not on the entries' truth." — §8 (locator: lines 271–274).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** on the separation — what a thing is and how well it has been
+measured are two different statuses, and neither stands in for the other.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**.
+
+---
+
+#### Not a statement — counted by paragraph, bullet, table row and numbered item, per section, so the arithmetic closes (71)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the banner | 1 | the component-spec status and its companions |
+| §0 | 9 | the terms lead and the eight term rows |
+| §1 | 4 | what the component is, its two consumers, the shareability argument, and the dependency map |
+| §2 | 1 | the *what it does* lead |
+| §3 | 6 | the entry lead, the two kinds, and the name, style-tag and substitution-mapping fields |
+| §4 | 6 | the query lead, the span definition, the four query descriptions, and the composition note |
+| §5 | 18 | the content lead and the remaining function-map, named-progression and substitution entries |
+| §6 | 2 | bidirectionality and the one-taxonomy rule |
+| §7 | 4 | decisions D1 to D4 |
+| §8 | 1 | validation belongs to the consumer |
+| §9 | 1 | the no-jazz-ground-truth risk |
+| §10 | 11 | the glossary rows |
+| §11 | 1 | the sources |
+| §12 | 6 | the six open items |
+| **Total** | **71** | — |
+
+*The count is of units the tabulation did not reach, not of units it did not read. **The whole document
+was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **13** (28.1 to 28.13). No row of this document splits.
+- **Outgoing statements dispositioned: 13.**
+- Units counted under *not a statement*: **71**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 6 | 28.1, 28.2, 28.3, 28.4, 28.5, 28.6 |
+| ADOPTED — proposed | 1 | 28.12 |
+| RELOCATED | 5 | 28.7, 28.8, 28.9, 28.10, 28.13 |
+| QUARANTINED | 1 | 28.11 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **13** | — |
+
+**The column sums to 13, against 13 statements, so the arithmetic closes at this document:**
+6 + 1 + 5 + 1 + 0 + 0 + 0 = 13.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 18 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 1 |
+| **Total verdicts** | **20** |
+
+*(Counted per named derived statement per statement-row. 20 verdicts over 13 statements because six
+rows name more than one derived statement. **The single DIFFERS is the completeness contract**, and it
+is a difference between two surfaces rather than a disagreement about one.)*
+
+#### What this document's rows put in front of the user
+
+**Row 28.12 is the only place in the population where a published surface states that it is NOT
+exhaustive.** S-50's list is exhaustive by its own word; this catalog's is *"asymptotic"*, and it puts
+the consequence on the consumer — *"never assume the catalog is exhaustive"*. **Both contracts are
+right for their own surface**, and the record holds them side by side without either saying so about
+the other.
+
+**Row 28.1 reaches the decides-nothing rule from outside the layer stack.** The catalog supplies ranked
+candidates and no verdict, and its reason is not S-51's circularity argument but a simpler one: it
+holds no information about any particular piece of music. **Two routes to the same contract.**
+
+**Row 28.2 is S-31's empty case, met in a knowledge base.** A silent slice is published as a slice with
+an empty set; an empty candidate list is returned as a result a consumer must handle. **Both texts
+refuse to make an absence disappear, and both name the consumer's duty.**
+
+**And Row 28.9 is the third naming of one pair.** The tritone substitute on the tonic and the German
+sixth are the same pitch classes; the record separates them by spelling here, at Document 26's mapping,
+and at Document 22's three-part spelling test. **Every time, the page decides.**
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -12189,6 +12471,10 @@ worked; it is not complete over the population.**
 - Row 27.7 — the augmented-sixth sub-type derived from the sounding pitch classes rather than from the
   vocabulary class, the class having collapsed the family. *(A worked case of #12's recomputable
   clause: the distinction survives because the sounding set is published.)*
+- Row 28.9 — the tritone substitute on the tonic as the enharmonic German sixth, separated by spelling.
+  *(With Row 26.1; S-3's spelled pitch and S-14's required spelling travel.)*
+- Row 28.10 — the key-relative, degree-parameterised functional skeleton that instantiates in every key.
+  *(S-9's bar on reading the key travels with it as why it sits above L1.)*
 - Row 18.18(ii) — which unit a requesting layer steps in when it asks for more music: the key layer in
   bars, the chord layer in slices. *(S-34's bar level and S-33's slice travel with it.)*
 - Row 18.27 — that the forward cascade is bounded because a carried-in key affects the leading-edge
@@ -12232,6 +12518,11 @@ worked; it is not complete over the population.**
 - Row 26.4 — the voicing substitution excluded from the function idioms as a voicing rather than a
   function. *(S-33's event-set identity travels with it; Document 19's §5.4 names it as that axis's
   waiting claim.)*
+- Row 28.7 — voice leading as a different dimension held elsewhere, a voice-leading-defined schema
+  present only by its harmonic pattern, and the consumer's duty not to read a partial recognition as a
+  whole one. *(The source side of Rows 26.2 and 19.x; S-13's notated voices travel with it.)*
+- Row 28.8 — the voicing substitution excluded from the catalog as a voicing and not a function, noted
+  so it is not mistaken for one. *(With Row 26.4.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -12276,6 +12567,8 @@ worked; it is not complete over the population.**
   that rests on it until it is established on an adequate corpus.
 - Row 25.15 — that the running binary's inference values are exactly the ratified fitted values, with
   no stale data anywhere on the inference path.
+- Row 28.13 — that a missing ground truth is a consumer limitation and not a property of the entries
+  measured against it.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -12438,6 +12731,9 @@ by paragraph rather than rowed. **Document 9 added the two below.**
     still unread, and is each **declared dormancy with its future consumer named**, or waste?
 77. Row 25.12 — do both notation entry points still exist, and do they read the same published facts or
     two different renderings of them?
+78. Row 28.11 — is the catalog matcher still exact-and-whole on the arm that ships, does the match score
+    still take only the one value, and is the pop loop still encoded in a single rotation the matcher
+    will not recognise in its other three?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -12887,6 +13183,10 @@ Gathered from the documents tabulated so far. **Not complete over the population
 101. Row 27.4 — that a signature-shaped value **derived from a decided key** be named apart from the
      **notated** signature on the same surface. Row 27.3 publishes the notated one as an input echo and
      Row 27.4 publishes the derived one; nothing in either text says a consumer is told which it holds.
+102. **★★ Row 28.12 — that a published surface state WHETHER IT IS EXHAUSTIVE**, so a consumer knows
+     whether an absence means *not there* or *not yet catalogued*. S-50's list is exhaustive by its own
+     word and does not say so as a contract; the catalog says so and is not — *"a consumer must degrade
+     gracefully on the unrecognised and never assume the catalog is exhaustive."*
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -13036,37 +13336,39 @@ Gathered from the documents tabulated so far. **Not complete over the population
     signature supplied in force at every position, against a signature-fifths value **computed from a
     decided key**; and S-3's and S-14's notated spelling, against the derived spelling again — this
     time with the notated spelling named as what **establishes** the derivation.
+61. **Row 28.12 — S-50's exhaustive publication against a catalog that declares itself asymptotic**, a
+    difference between two published surfaces rather than a disagreement about one.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the twenty-seven documents tabulated, not a distribution over the
-population.** The population is 29 documents; 2 are untouched. No figure below may be read as
+**This is a RUNNING total over the twenty-eight documents tabulated, not a distribution over the
+population.** The population is 29 documents; **1 is untouched**. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 730 statements placed so far:**
+**Dispositions, over the 743 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | 7 | 9 | 0 | 13 | **301** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | 1 | 2 | 0 | 3 | **211** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | 9 | 1 | 4 | 2 | **88** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | 3 | 4 | 0 | 0 | **95** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | **34** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | 20 | 16 | 4 | 18 | **730** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | 7 | 9 | 0 | 13 | 6 | **307** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | 1 | 2 | 0 | 3 | 1 | **212** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | 9 | 1 | 4 | 2 | 5 | **93** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | 3 | 4 | 0 | 0 | 1 | **96** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **34** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | 20 | 16 | 4 | 18 | 13 | **743** |
 
-**The arithmetic closes:** 301 + 211 + 88 + 95 + 0 + 34 + 1 = 730, against 730 statements, and each
+**The arithmetic closes:** 307 + 212 + 93 + 96 + 0 + 34 + 1 = 743, against 743 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same twenty-seven documents:**
+**Current-text verdicts, over the same twenty-eight documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | 28 | 25 | 7 | 34 | **844** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | 3 | 2 | 0 | 3 | **236** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | 0 | 1 | 0 | 0 | **179** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | 31 | 28 | 7 | 37 | **1259** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | 28 | 25 | 7 | 34 | 18 | **862** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | 3 | 2 | 0 | 3 | 1 | **237** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | 0 | 1 | 0 | 0 | 1 | **180** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | 31 | 28 | 7 | 37 | 20 | **1279** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -13089,7 +13391,7 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the twenty-seven documents was placed there.** The reason is visible in the classes that
+statement in the twenty-eight documents was placed there.** The reason is visible in the classes that
 did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
