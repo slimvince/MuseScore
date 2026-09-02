@@ -43,11 +43,12 @@ The population's order is the artifact's:
 | 6 | `cowork_layer2_slicing_design.md` | **DONE** |
 | 7 | `cowork_layer2_reslice_design.md` | **DONE** |
 | 8 | `ARCHITECTURE.md` — the Layer 5 section | **DONE** |
-| 9–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 9 | `cowork_layer5_function_design.md` | **DONE** |
+| 10–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 9–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 10–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 9**, `cowork_layer5_function_design.md`.
+dispatch resumes at **position 10**, `cowork_phrase_boundary_design.md`.
 
 **Where the previous stop fell, and why it was a clean one.** Positions 1 to 7 are exactly **Ruling
 32's items 1 and 2** — the two `ARCHITECTURE.md` sections and all five root design documents, which is
@@ -4296,6 +4297,604 @@ lead below the top voice — for a rule S-13 already states without them.
 
 ---
 
+### 6.9 — Document 9: `cowork_layer5_function_design.md`
+
+> **Manifest for this document.** Outgoing statements: **34** — rows 9.1 to 9.33, of which Row 9.5
+> carries two claims and is split (i)/(ii), so 33 row numbers carry 34 statements. Paragraphs counted
+> under *not a statement*: **118**. Both counted at this document by this session; the counts appear
+> here and nowhere else.
+>
+> **Why this document is in the population:** named by **Ruling 32 item 3** — the ratified contract
+> the `ARCHITECTURE.md` Layer 5 section delegates to by name, and the home of the cadence detector the
+> ruling established as describing an output the new L1 charter publishes. It is **not** in the ruled
+> specification document set and stays in the population by name.
+>
+> **What this document is, and why 118 paragraphs are counted rather than rowed.** It is a whole
+> design document in the fourteen-section standard for a layer that is **not** L0 or L1: its subject
+> is the Roman numeral, the cadence, tonicization versus modulation, and the resolution of readings an
+> earlier layer left open. **It was read whole.** Thirty-four of its statements speak to L0's or L1's
+> subject — overwhelmingly to face (f), the local cadence cues, and to face (e), the notated boundary
+> evidence — and the rest is counted by paragraph, per section, so the arithmetic closes without
+> listing material outside the subject sentence by sentence.
+>
+> **★ THIS IS THE RICHEST DOCUMENT SO FAR ON FACE (f), AND IT IS THE FIRST TO ENGAGE THE CADENCE CUES
+> AT ALL.** Documents 1 to 8 between them produced almost nothing on the cues; this one states how a
+> cadence is detected, from what evidence, under what gate, and with what limits — including **a
+> measured limit of one of the derivation's own cues that the derivation does not have**.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.** The eight design-intent entries and two guiding-principle spans that record names are
+> none of the entries this document cites.
+
+---
+
+#### The banner and §1 — the amendment on record, and the three jobs
+
+**Row 9.1 — the highest sounding voice is not reliably the structural melody.**
+*Statement.* "the perfect/imperfect cadence distinction (§5.2) no longer rests on the **top voice** —
+the highest sounding voice is not reliably the structural melody (orchestral doubling; barbershop
+lead below the top), so the call is made on the **bass-derived inversion** criterion" — the status
+banner (locator: line 4).
+*Derived.* S-13 (L0 supplies *notated* voices only; an unmarked contrapuntal line is derived, not
+given), S-44 (the bass is the lowest sounding pitch of the slice's sounding set, *"not a notated
+voice"*).
+*Current-text axis.* S-13: **AGREES**. S-44: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-13 with S-44), travelling with **Row 8.4**, which is
+the same rule met in the `ARCHITECTURE.md` Layer 5 section. *(The two named counter-cases — orchestral
+doubling and a close-harmony lead below the top — are the outgoing text's own evidence for a rule
+S-13 states without them.)*
+
+**Row 9.2 — the two gating prerequisites are the metric-weight contract and the phrase boundary.**
+*Statement.* "the gating prerequisites are now the metric-weight contract and the phrase boundary."
+— the status banner (locator: line 8).
+*Derived.* S-35 (the metric strength class, published per change point as an ordinal with its level's
+period), S-39 (the notated boundary evidence, published per change point as flags with witnesses).
+*Current-text axis.* S-35: **AGREES** that the metric strength must be defined before a consumer uses
+it. S-39: **AGREES** that the notated boundary evidence must be defined before a consumer uses it.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-35 with S-39: both facts this sentence says must be
+contracted are contracted, at L1, by the derivation). *(What FORM each takes is where the two texts
+part, at Rows 9.6 and 9.8.)*
+
+**Row 9.3 — a cadence is a function-level event and belongs after key and chord, never inside the key
+layer.**
+*Statement.* "A cadence is a function-level event (a dominant arriving at, or being denied, a tonic),
+so it belongs after key and chord, never inside the key layer." — §1 (locator: line 37).
+*Derived.* S-50 (the naming bar), S-51 (the test for whether an output is a claim).
+*Current-text axis.* S-50: **AGREES**. S-51: **AGREES**.
+*PROPOSED DISPOSITION.* **RELOCATED — to L3, *the read-off facts*.** `FRAMEWORK.md` §5 assigns *"the
+**cadence** at each phrase end, with its type"* to L3 and states the split in its own words —
+*"Why cadence type is here while the cadence cues are at L1"* — and this sentence is that split stated
+from the consuming side. Its L1-side half is carried by S-50 and travels with the relocation.
+
+#### §2 and §3 — the constraints and what the layer is handed
+
+**Row 9.4 — notated spelling is read through one shared interpreter, and only where the distinction is
+a spelling distinction.**
+*Statement.* "**Spelling-aware where, and only where, the distinction is a spelling distinction.** …
+For these the layer reads the notated spelling through the one shared spelling interpreter … the same
+derived view every layer reads spelling through." — §2 (locator: line 59).
+*Derived.* S-3 (L0 supplies spelled pitch per note), S-14 (spelling is a required input and L0 does
+not infer it).
+*Current-text axis.* S-3: **AGREES**. S-14: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-3 with S-14: the fact is given, once, and read rather
+than derived — which is what "one shared interpreter" asks for).
+
+**Row 9.5 (i) — the per-note notated spelling and each note's voice are supplied by the note layer.**
+*Statement.* "From Layer 1 …: the per-note **notated spelling** (also the shared Layer-1.5 spelling
+view), each note's **voice**" — §3, *Consumes* (locator: line 85).
+*Derived.* S-3 (spelled pitch and notated voice per note), S-13 (notated voices only).
+*Current-text axis.* S-3: **AGREES**. S-13: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 9.5 (ii) — the bass of each slice is the lowest sounding note.**
+*Statement.* "and the **bass** of each slice (the lowest sounding note)." — the same sentence
+(locator: line 86).
+*Derived.* S-44.
+*Current-text axis.* S-44: **AGREES**, and exactly — S-44 defines the bass as *"the lowest sounding
+pitch of that slice's sounding set — not a notated voice"*, which is this clause word for word in
+substance.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **This is the closest agreement with S-44 anywhere in
+the outgoing record**, and it is worth setting beside Document 4's Row 4.17, where a *verified
+description of code* selects the bass by a weighting floor instead.
+
+**Row 9.6 — the metric weight of each slice is an earlier-layer prerequisite the slicing spec defers.**
+*Statement.* "**[earlier-layer prerequisite] The metric weight of each slice.** The Layer-2 spec
+defers it (\"derived on demand by the consuming layers\"); it needs a defined owner and contract
+before this layer consumes it." — §3 (locator: line 87).
+*Derived.* S-35, S-50.
+*Current-text axis.* S-35: **DIFFERS**. S-50: **DIFFERS**.
+*The difference, in both texts' own words.* S-35 publishes the metric strength class **from L1, per
+change point**, as *"an ordinal (0 for the bar, 1 for the next level down, and so on) together with
+the level's period"* with an *off-grid* class ranked below every level, and S-50 lists it among what
+L1 publishes; the outgoing text records it as **not published at all** — deferred to *"the consuming
+layers"* — and as a contract still owed.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with **Rows 6.41 and 6.42** and carrying
+the **metric strength class** family: that the specification state what form the metric strength takes
+and who publishes it.
+
+**Row 9.7 — the top voice is an optional cue, not a build gate.**
+*Statement.* "**(Optional, NOT a prerequisite) The top voice — the highest sounding voice of a
+slice.** … the highest voice is **not** reliably the structural melody (§5.2), so the distinction
+rests on the bass-derived inversion criterion instead." — §3 (locator: line 89).
+*Derived.* S-13, S-44.
+*Current-text axis.* S-13: **AGREES**. S-44: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, travelling with Rows 9.1 and 8.4.
+
+**Row 9.8 — the phrase boundary and phrase segmentation are a prerequisite no earlier spec defines.**
+*Statement.* "**[earlier-layer prerequisite] The phrase boundary (the fermata-marked phrase end in
+chorales) and, with it, the phrase segmentation** that bounds a region (§5.0). No earlier spec detects
+or defines this, yet the cadence phrase-gate and the salience cues (§5.2) rest on it — the most
+load-bearing of the three prerequisites." — §3 (locator: line 93).
+*Derived.* S-39 (per change point, a set of boundary flags each with its witnesses), S-50 (no
+published field named *boundary* or *phrase*).
+*Current-text axis.* S-39: **DIFFERS**. S-50: **DIFFERS**.
+*The difference, in both texts' own words.* S-39 publishes *"a set of boundary flags, each with its
+witnesses"* per change point — BAR-LINE, REPEAT, FERMATA, REST-BEGINS, ALL-SILENT — and S-50 bars a
+published field named *boundary* or *phrase*; the outgoing text needs **a phrase boundary and a phrase
+segmentation**, which are groupings decided over that evidence rather than the evidence itself, and
+records that no earlier specification supplies them.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family named
+at Row 8.5: that the specification state whether what an earlier layer publishes is the notated
+evidence with its witnesses or a phrase segmentation derived from it — and, if the former, where the
+segmentation is decided. *(`FRAMEWORK.md` §5 answers the second half in its own words — *"Which of
+those are phrase ends, and how they group into sections, is decided here"*, at L3 — which is recorded
+and not adjudicated.)*
+
+**Row 9.9 — a section end is a phrase boundary coinciding with a double bar, a repeat mark or the end
+of the piece.**
+*Statement.* "(A \"section end\" is a phrase boundary that **also coincides with a structural score
+boundary** — a double bar, a repeat mark, or the end of the piece — used only as the section-end
+salience cue in §5.2.)" — §3 (locator: line 95).
+*Derived.* S-39.
+*Current-text axis.* S-39: **AGREES** — the three structural marks this sentence names are three of
+S-39's own kinds: the BAR-LINE flag *"carrying the bar-line type — single, double, final"* and the
+REPEAT flag.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-39 publishes all three, each with its witnesses).
+
+**Row 9.10 — the cadence markers carry type, location and confidence.**
+*Statement.* "**Cadence markers** at each point of closure: the cadence **type from the full
+typology** …, its **location**, and its **confidence** — never a reduced set" — §3, *Produces*
+(locator: line 117).
+*Derived.* S-50.
+*Current-text axis.* S-50: **AGREES** on the boundary — a published field named *cadence* is barred at
+L1, and this is a later layer's output.
+*PROPOSED DISPOSITION.* **RELOCATED — to L3, *the read-off facts***, travelling with Rows 8.1 and 9.3.
+
+**Row 9.11 — grouping and merging of adjacent same-label slices is the layer above's, and must not
+feed back.**
+*Statement.* "**Grouping/merging** of adjacent same-label slices for display (the cosmetic layer
+above; it inherits this layer's correctness and must not feed back)." — §3, *Does not do* (locator:
+line 130).
+*Derived.* S-31 (a silent slice is published like any other and is not merged into a neighbour), S-33
+(slice identity is the event set), S-53 (nothing an earlier layer publishes depends on what a later
+one decides).
+*Current-text axis.* S-31: **AGREES**. S-33: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 6.11 and 6.27, which state the same
+non-merging rule from the slicing side.
+
+#### §4 and §5.0 — the strategy and the shared definitions
+
+**Row 9.12 — cadences are detected key-agnostically on the event pair of approach and arrival chords.**
+*Statement.* "**Detect cadences** key-agnostically, on the *event pair* (the chord approaching a point
+of arrival and the chord of arrival), scored by a feature test (§5.2). Each surviving cadence then
+casts a **weighted vote for the tonic** of its region." — §4 (locator: line 139).
+*Derived.* S-51 (the test for a claim: computable from L0 facts with no tonality, chord or boundary as
+input), S-44 (cues are computed at onset change points and defined over the bass of a slice's sounding
+set).
+*Current-text axis.* S-51: **AGREES** on key-agnosticism. S-44: **DIFFERS**.
+*The difference, in both texts' own words.* S-51 admits an output as evidence rather than a claim only
+where it is *"computable from L0 facts with no tonality, chord or boundary as input"*, and S-44 to
+S-47 define every cue over the **bass** and the **eligible events** of the slices; the outgoing
+detector is defined over an **event pair of committed chords** — *"the chord approaching a point of
+arrival and the chord of arrival"* — which is a decided object no L1 computation has.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state **what
+the cadence evidence is computed FROM** — the notation alone, or committed chords — since the answer
+decides whether the evidence can sit at L1 at all.
+
+**★ A NEW FAMILY, MET FOR THE FIRST TIME AT DOCUMENT 9: THE CADENCE EVIDENCE'S INPUTS.** It is named
+as new, as §12 does for the metric strength class at document 6 and the boundary-evidence form at
+document 8. Rows 9.12 and, in its own way, 9.26 carry it. It is not the same question as
+key-agnosticism, on which the two texts agree throughout: a detector can read no key and still read
+chords.
+
+**Row 9.13 — the slice is one committed chord plus one assigned local key.**
+*Statement.* "Layer 5 works over the **slice** — the atomic chord-rhythm unit (one committed chord +
+one assigned local key; a maximal run of same-chord slices is the typology's **chord-span**, the
+member formerly named *harmonic region*)" — §5.0 (locator: line 161).
+*Derived.* S-29 (a slice is the half-open interval from its change point to the next), S-33 (slice
+identity is the set of events by note identity), S-51 (an L1 output carries no tonality, chord or
+boundary).
+*Current-text axis.* S-29: **DIFFERS**. S-33: **DIFFERS**. S-51: **DIFFERS**.
+*The difference, in both texts' own words.* S-29 makes a slice *"the half-open interval from its
+change point to the next"* and S-33 makes its identity *"the set of events (by note identity)"*, with
+S-51 barring any tonality or chord from an L1 output; the outgoing text's slice is *"one committed
+chord + one assigned local key"* — an object that exists only after both decisions have been taken.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the record fix **one meaning for
+the word *slice***, since the two texts use it for two different objects — a stretch of unchanging
+sound in one, a decided chord-and-key unit in the other — and every rule quantified over "slices"
+reads differently under each.
+
+**★ A SECOND NEW FAMILY AT DOCUMENT 9: THE WORD *SLICE*.** It is distinct from the *what a slice
+carries* family of Rows 2.27, 6.21, 6.33, 7.2 and 7.25, which asks what is stored on an object both
+texts agree about; this asks what the object **is**. Row 9.13 carries it.
+
+**Row 9.14 — the decision-context span's extent is pinned to a cadence-anchored function, a
+peak-picked punctuation boundary, or a hard bound.**
+*Statement.* "the span extends forward until the FIRST of **(i)** a cadence-anchored function,
+**(ii)** a punctuation boundary (the boundary tick the Layer-1.5 phrase-boundary primitive selects by
+peak-picking …), **(iii)** the hard bound of `K` slices / `B` beats (settings, the safety cap)." —
+§5.0 (locator: line 175).
+*Derived.* S-39, S-53.
+*Current-text axis.* S-39: **DIFFERS** — a boundary tick **selected by peak-picking** from a
+continuous profile is not a flag at a change point with its witnesses. S-53: **THE DERIVATION IS
+SILENT** on a look-ahead window of any kind.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family: that
+the specification state whether a boundary is a published notated fact or a **peak** picked from a
+graded profile, the two differing in exactly the way S-40 names.
+
+**Row 9.15 — a decision cut by the selection edge fires an extension request.**
+*Statement.* "A decision whose span is cut by the **selection edge** before any of (i)–(iii) holds
+fires this layer's **extension request** per the one cross-layer extension spec" — §5.0 (locator: line
+179).
+*Derived.* S-32 (events at the span's edges are marked *entered sounding* or *cut by the span*), S-53
+(the working span is the only thing a caller supplies beyond L0).
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** on enlargement. S-53: **THE DERIVATION IS
+SILENT** — S-53 fixes the span and never contemplates changing it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **enlargement contract** family of §12
+item 25: this is a consuming layer stating that it *makes* the request the derivation has no contract
+to receive.
+
+**Row 9.16 — the punctuation-span is delimited by the phrase-boundary primitive and is read only as
+the cadence phrase-gate.**
+*Statement.* "**Punctuation-span** — a run of slices delimited by the phrase-boundary primitive (the
+`endsPhrase` overlay); the grouping unit **Layer 6** owns … Layer 5 reads it only as the **cadence
+phrase-gate (§5.2)** … never as a key or analysis unit." — §5.0 (locator: line 184).
+*Derived.* S-39, S-53.
+*Current-text axis.* S-39: **DIFFERS**, as at Row 9.8 — the object read is a segmentation, not the
+evidence. S-53: **AGREES** on the read-only, no-feedback consumption.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 9.8 and carrying the
+**boundary-evidence form** family.
+
+**Row 9.17 — "metrically strong" is a parameter-free local maximum of the metric weight.**
+*Statement.* "(\"Metrically strong\" is realised **parameter-free** as a **local maximum of the metric
+weight** — no threshold — per the Step-1 build.)" — §5.0 (locator: line 194).
+*Derived.* S-35.
+*Current-text axis.* S-35: **DIFFERS**.
+*The difference, in both texts' own words.* S-35 publishes *"an ordinal (0 for the bar, 1 for the next
+level down, and so on) together with the level's period"*, so that *"classes from different signatures
+are comparable by period as well as by rank"*, and adds an *off-grid* class; a **local maximum** is a
+comparison between neighbouring scalars, which an ordinal-plus-period carries but a bounded number
+alone does not.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 9.6, 6.41 and 6.42 and carrying
+the **metric strength class** family.
+
+**Row 9.18 — a leading-tone resolution is the leading tone moving to the tonic in that same voice at
+the arrival.**
+*Statement.* "A **leading-tone resolution** is detected when the leading-tone pitch sounding in a
+voice of the approach chord moves to the tonic in **that same voice** at the arrival" — §5.0 (locator:
+line 236).
+*Derived.* S-46 (LEADING-TONE-RESOLVES).
+*Current-text axis.* S-46: **AGREES**, and almost word for word — S-46 fires when *"some eligible
+event in the slice before Z, in a notated voice, is a semitone below Z's bass pitch class … and an
+event in the same notated voice onsets at Z on Z's bass pitch class"*, and its own defense is that
+*"requiring the same notated voice makes it a *resolution* rather than a coincidence"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **This is the closest agreement on face (f) anywhere in
+the outgoing record**, and the two texts reach the same-voice condition by the same argument.
+
+**Row 9.19 — "resolution" means a detected voice-motion event, never the mere presence of the leading
+tone or tritone.**
+*Statement.* "\"Resolution\" everywhere in §5 means such a detected voice-motion event — never the
+mere presence of the leading tone or tritone (the false-positive trap)." — §5.0 (locator: line 239).
+*Derived.* S-46, S-47 (FOURTH-AND-SEVENTH-IN-THE-APPROACH).
+*Current-text axis.* S-46: **AGREES**, exactly. S-47: **DIFFERS**.
+*The difference, in both texts' own words.* S-47's cue is true *"when both the fourth degree and the
+seventh degree of that candidate … sound among the eligible events of the slices within the cue window
+before Z"* — a **presence** test, taken from the charter's own third cue and from the published source
+the derivation cites; the outgoing text names presence-testing *"the false-positive trap"* and admits
+only a detected voice motion.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether a
+**presence-based** cue is admissible beside a **motion-based** one, and if so how a consumer is told
+which it is reading — the charter's third cue being a presence test and this text naming presence
+testing as the trap its own rule exists against.
+
+**★ A THIRD NEW FAMILY AT DOCUMENT 9: PRESENCE VERSUS RESOLUTION.** Rows 9.19, 9.20 and 9.26 carry it.
+It is not a disagreement about key-agnosticism and not about the cue's inputs; it is about what
+counts as evidence at all.
+
+#### §5.2 — cadence detection
+
+**Row 9.20 — the leading-tone-resolution event does not by itself separate an authentic cadence from a
+tonic-to-subdominant motion.**
+*Statement.* "A *plain* triad V→I and a plain I→IV are **exact transpositions**: a key-agnostic
+event-pair test, hypothesising the arrival is the tonic, reads both as \"V→I\" … So the
+leading-tone-resolution event **does NOT by itself discriminate authentic from tonic-to-subdominant**
+— that needs the key, which this detector is *informing*." — §5.2 (locator: line 267).
+*Derived.* S-46.
+*Current-text axis.* S-46: **DIFFERS**.
+*The difference, in both texts' own words.* S-46's falsifier states that the cue is *"Not falsified
+by: it being true on a deceptive resolution's leading tone — … if it is true, the bass IS the pitch
+the leading tone resolved to, which is what it detects"*, and S-46's status is *settled*; the outgoing
+text records, as a **corrected premise from its own build**, that the same event fires identically on
+a tonic-to-subdominant motion and therefore *"does NOT by itself discriminate"*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that S-46's published cue carry this
+limit on its face — that it detects a semitone-to-bass resolution and not an authentic arrival — so
+that a consumer weighing it is not misled by its name. **THIS IS A PLACE WHERE THE OUTGOING TEXT HOLDS
+A FACT THE DERIVATION DOES NOT**, and the third such place in the comparison, after Rows 3.60 and
+4.37.
+
+**Row 9.21 — a cadence candidate is admitted only at a phrase boundary.**
+*Statement.* "**Chorale phrase gate.** A cadence candidate is admitted only at a **phrase boundary** —
+in the chorale corpus the fermata is the reliable marker. This removes the mid-phrase passing motions
+that otherwise masquerade as cadences." — §5.2 (locator: line 315).
+*Derived.* S-44 (cues are computed at onset change points only), S-39.
+*Current-text axis.* S-44: **THE DERIVATION IS SILENT** — S-44 gates the cues on the change point
+being an onset and on nothing else. S-39: **THE DERIVATION IS SILENT** — S-39 publishes the boundary
+evidence and never uses it to gate a cue.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether a
+cue's firing is **gated** on notated boundary evidence or published unconditionally beside it, since
+the outgoing text's gate is what removes its own commonest false positive and the derivation publishes
+both facts without connecting them.
+
+**Row 9.22 — the detector casts soft evidence; the disambiguation is a later layer's judgement.**
+*Statement.* "The cadence detector casts soft evidence; the authentic-vs-passing disambiguation is a
+**key-layer** judgement" — §5.2 (locator: line 277).
+*Derived.* S-51, S-53.
+*Current-text axis.* S-51: **AGREES**. S-53: **AGREES** — S-53's whole content is that the want is met
+*"by publishing the candidates and the evidence and leaving the decision"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 9.23 — the cadence vote weight is a monotone weighted sum of the evidence and salience cues.**
+*Statement.* "The weight is a **monotone-increasing combination — a weighted sum, its weights
+precision-phase constants —** of the **evidence-strength cues** … and the **salience cues** …, minus
+the per-type lower-confidence discount" — §5.2 (locator: line 318).
+*Derived.* S-40 (nothing is collapsed to a single boundary strength), S-50 (every predicate is
+published with its witnesses).
+*Current-text axis.* S-40: **DIFFERS**. S-50: **DIFFERS**.
+*The difference, in both texts' own words.* S-40 states that *"Several marks at one change point are
+published as several flags in the set; nothing is collapsed to a single 'boundary strength'"*, because
+combining them *"would be a judgment of their joint weight"* and *"would lose the parts"*; the
+outgoing text combines the evidence cues and the salience cues — the fermata, the section end, the
+final bar and the metric weight among them — into **one number**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. *(The
+row is recorded without choosing: the outgoing combination happens in a later layer, where S-40's bar
+does not reach; what the two texts differ on is whether the parts are still available to it.)*
+
+**Row 9.24 — the salience cues are a strong metric position, a fermata, a section end and the final
+bar.**
+*Statement.* "the **salience cues** (a strong metric position — the metric weight of §3; a fermata; a
+section end; the final bar)" — §5.2 (locator: line 320).
+*Derived.* S-35, S-39.
+*Current-text axis.* S-35: **AGREES** — a strong metric position is exactly the class S-35 publishes.
+S-39: **AGREES** — a fermata, a section end and the final bar are the FERMATA flag, the REPEAT and
+double-bar flags, and the BAR-LINE flag's *final* type.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-35 with S-39: every one of the four named cues is a
+fact the derivation publishes at L1).
+
+**Row 9.25 — the detector reads no already-resolved key; the key is what the vote informs.**
+*Statement.* "The detector reads no already-resolved key; the key is the thing the vote informs." —
+§5.2 (locator: line 323).
+*Derived.* S-51, S-47, S-9.
+*Current-text axis.* S-51: **AGREES**, and on the same circularity ground. S-47: **AGREES** — the
+candidate tonality is *"the anchor and nothing more: L1 publishes no tonality"*. S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, travelling with Row 8.2.
+
+#### §9, §11, §13, §14 and §15 — the decisions, the risks, the lineage and the open items
+
+**Row 9.26 — cadence detection is key-agnostic; the key-dependent detector and the single-chord
+interval test are rejected.**
+*Statement.* "**D2 — Cadence detection is key-agnostic and votes for the key; it does not read a
+resolved key.** *Rejected:* the prior key-dependent detector, which is circular …; and the
+single-chord interval test, which false-positives on tonic-to-subdominant and tonic-to-dominant
+because it tests leading-tone **presence** … rather than leading-tone **resolution**." — §9 (locator:
+line 627).
+*Derived.* S-51, S-46, S-47.
+*Current-text axis.* S-51: **AGREES**. S-46: **AGREES** — S-46 tests a motion, which is what this
+rejection asks for. S-47: **DIFFERS**, as at Row 9.19.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-51 with S-46: the decision's own content —
+key-agnosticism, with the circular detector rejected — is carried, and the alternatives are weighed on
+the same grounds). *(The presence-versus-resolution half is stated at Row 9.19 and is not counted a
+second time here.)*
+
+**Row 9.27 — the phrase-boundary primitive's non-chorale markers are unvalidated.**
+*Statement.* "**The phrase-boundary primitive's non-chorale markers are unvalidated.** The graded
+model carries rest- and structural-boundary cues for general (non-chorale) textures, but the corpus is
+entirely fermata-marked chorales, so those markers have **no ground-truth oracle here** — a
+validation-coverage gap" — §11 (locator: line 695).
+*Derived.* S-52 (every published item carries an establishment status; a consumer may not put a
+provisional item under load), S-39.
+*Current-text axis.* S-52: **AGREES** in discipline. S-39: **THE DERIVATION IS SILENT** — S-39
+publishes each flag with its witnesses and states no establishment gap for any of them.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the phrase-boundary primitive's
+non-fermata marker set have any ground-truth oracle at the current commit, and is anything downstream
+putting an unvalidated marker under load?
+
+**Row 9.28 — the primitive distinguishes global markers from per-part breaths and fermatas.**
+*Statement.* "the primitive itself carries a **marker-scope + provenance** refinement, distinguishing
+global markers from per-part breaths/fermatas so a local event is not promoted to a global boundary" —
+§11 (locator: line 702).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS**.
+*The difference, in both texts' own words.* S-39 names the voice on **one** flag only — *"REST-BEGINS
+(a notated voice's silence begins at this change point, by rest or by unwritten gap, naming the
+voice)"* — and publishes FERMATA, BAR-LINE and REPEAT without a scope; the outgoing text requires
+**every** marker to carry its scope, so that *"a local event is not promoted to a global boundary"*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that **every** boundary flag carry its
+scope — global, per-staff or per-voice — and its provenance, which S-39 does for the rest flag and for
+no other. **THIS ROW RUNS TOWARDS THE DERIVATION**: the outgoing text names a distinction the
+derivation's own fermata rules would need and do not have.
+
+**Row 9.29 — two cadence detectors exist, one key-dependent and circular, one key-agnostic whose
+leading-tone test false-positives.**
+*Statement.* "Two cadence detectors exist: a production one that is **key-dependent and circular** and
+conflates the perfect with the imperfect cadence, and a dormant **key-agnostic** one whose
+leading-tone test **false-positives on tonic-to-subdominant and tonic-to-dominant**." — §13 (locator:
+line 762).
+*Derived.* S-51, S-46.
+*Current-text axis.* S-51: **AGREES** that a key-reading detector is circular. S-46: **AGREES** that
+the motion test is the right one.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do both cadence detectors still exist at
+the current commit, which of them runs on the arm that ships, and does the key-dependent one still
+read a resolved key?
+
+**Row 9.30 — the event-pair, feature-scored, phrase-gated design is borrowed from the cadence-detection
+literature.**
+*Statement.* "**Borrowed:** … the event-pair, feature-scored, phrase-gated cadence design and the
+cadence-confirms-key direction, from the computational cadence-detection literature" — §14 (locator:
+line 780).
+*Derived.* S-45, S-46, S-47.
+*Current-text axis.* S-45: **AGREES**. S-46: **AGREES**. S-47: **AGREES** — all three cite the same
+published lineage, S-47 quoting its source's feature by name.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Recorded because it bears on the independence
+question the user judges separately, exactly as Row 6.25 was: the derivation reached its three cues
+from extracts of that same literature, which were boot-pack members.)*
+
+**Row 9.31 — the metric weight is the beat-strength at the slice's start tick, owned by one primitive.**
+*Statement.* "the contract is documented in the Layer-2 slicing design (slice metric weight =
+beat-strength at the slice's start tick, owned by `scoreharvest/metricweights`, already consumed by
+Layer 4 — no code)" — §15-0 (locator: line 794).
+*Derived.* S-35.
+*Current-text axis.* S-35: **DIFFERS**, as at Rows 9.6, 9.17, 6.41 and 6.42 — an ordinal with its
+level's period against a beat-strength number.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with those rows and carrying the **metric
+strength class** family.
+
+**Row 9.32 — the phrase boundary must be defined generally and must exclude cadential closure as
+circular.**
+*Statement.* "The phrase boundary is defined **generally** (the tool analyzes any instrumentation):
+the fermata is only the *chorale-specific* marker, so the owning layer needs a phrase-boundary notion
+covering non-chorale textures too (rests, structural score boundaries — **but not cadential closure**,
+which is *this* layer's and would be circular)." — §15-0 (locator: line 799).
+*Derived.* S-39, S-51.
+*Current-text axis.* S-39: **AGREES** — rests and structural score boundaries are S-39's REST-BEGINS,
+BAR-LINE and REPEAT flags, and S-39 defines all five kinds without reference to any instrumentation.
+S-51: **AGREES**, and on the same circularity argument S-51 uses of the cues.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-39 with S-51). **The exclusion of cadential closure
+from the boundary evidence is S-51's own argument reached independently**, which is worth the user's
+attention beside Row 9.26.
+
+**Row 9.33 — in punctuation-poor textures the gate starves, and admission relaxes with vote-weight
+scaling by boundary strength.**
+*Statement.* "in textures with deliberately suppressed surface punctuation … the gate **starves** the
+detector and everything downstream of its votes. Amendment: specify the gate's behaviour when the L1.5
+profile is flat — **relax admission with vote-weight scaling by boundary strength** … instead of a
+hard gate" — §15-11 (locator: line 888).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **THE DERIVATION IS SILENT** on a score that carries almost no boundary
+evidence. S-40: **DIFFERS** — the scaling consumes a single boundary strength S-40 refuses to publish.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 8.5, 8.6 and 8.8 and carrying the
+**boundary-evidence form** family. *(This is the same amendment the `ARCHITECTURE.md` Layer 5 section
+carries at Rows 8.5 to 8.9, met here at its own source.)*
+
+---
+
+#### Not a statement — counted by paragraph, per section, so the arithmetic closes (118)
+
+*Counted by paragraph as this document's manifest header states, and grouped by section so the count
+is checkable at the document. A "paragraph" is one top-level block: a paragraph of prose, or one
+top-level bullet or numbered item with its sub-bullets. Where a block is partly tabulated above, its
+remainder is counted once.*
+
+| Section | Paragraphs counted | What they are |
+|---|---|---|
+| the banner | 2 | the status, sign-off and audit record; the scope decision on the layer's output |
+| §1 | 6 | the layer's purpose and the other two of its three jobs |
+| §2 | 6 | forward-only, selection-not-re-derivation, the firewall, the cross-layer budget, the output |
+| §3 | 9 | what it consumes from the chord and key layers; what it produces, in the annotation standard; what it does not do |
+| §4 | 7 | the five other steps of the forward pass and their ordering |
+| §5.0 | 6 | the key-span, the progression, the licensed-progression grammar and its ownership |
+| §5.1 | 1 | the base Roman-numeral derivation |
+| §5.2 | 7 | the six-four collapse and the five cadence-type rules |
+| §5.3 | 5 | tonicization versus modulation, its two conditions and the change-cost |
+| §5.4 | 1 | the cadence-confirmed modulation recompute |
+| §5.5 | 12 | the six ambiguity kinds and the selection machinery |
+| §5.6 | 5 | the four relational labels and their precedence |
+| §5.7 | 1 | the soft bass-scale-degree prior |
+| §6 | 6 | the runtime scenarios |
+| §7 | 3 | the data the layer carries and its confidence forms |
+| §8 | 4 | the four-case override model and the crosscutting rules |
+| §9 | 6 | the other six architecture decisions |
+| §10 | 5 | the metric, the testing discipline and the corpus gate |
+| §11 | 9 | the other nine risks |
+| §12 | 1 | the glossary — definitions restating §5, none introducing a rule not already rowed |
+| §13 | 2 | what the layer replaces, and the as-built identifiers |
+| §14 | 1 | the remainder of the borrowed-and-discarded record |
+| §15 | 13 | the other open items and deferred refinements |
+| **Total** | **118** | — |
+
+#### The arithmetic at this document
+
+- Rows written: **33** (9.1 to 9.33).
+- Of those, rows split into two claims and counted as two statements each: **9.5** — one row, so
+  **+1**.
+- **Outgoing statements dispositioned: 34.**
+- Paragraphs counted under *not a statement*: **118**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by
+  reading the disposition line of each row: 34 disposition lines over 34 statements.
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 15 | 9.1, 9.2, 9.4, 9.5(i), 9.5(ii), 9.7, 9.9, 9.11, 9.18, 9.22, 9.24, 9.25, 9.26, 9.30, 9.32 |
+| ADOPTED — proposed | 15 | 9.6, 9.8, 9.12, 9.13, 9.14, 9.15, 9.16, 9.17, 9.19, 9.20, 9.21, 9.23, 9.28, 9.31, 9.33 |
+| RELOCATED | 2 | 9.3, 9.10 |
+| QUARANTINED | 2 | 9.27, 9.29 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **34** | — |
+
+**The column sums to 34, against 34 statements, so the arithmetic closes at this document:**
+15 + 15 + 2 + 2 + 0 + 0 + 0 = 34. **The statement lists in the right-hand column are the record**, and
+the integers are re-derivable from them by counting.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 39 |
+| DIFFERS | 20 |
+| THE DERIVATION IS SILENT | 7 |
+| **Total verdicts** | **66** |
+
+*(Counted per named derived statement per statement-row. 66 verdicts over 34 statements because
+twenty-six rows name more than one derived statement.)*
+
+#### What this document's rows put in front of the user
+
+**This is the first document in the comparison that engages face (f) — the local cadence cues — at
+all, and on the cues themselves the two texts agree closely.** Row 9.18 is the closest agreement in
+the outgoing record: a leading-tone resolution is the leading tone moving to the tonic **in that same
+voice**, which is S-46 in substance and by the same argument. Row 9.5(ii) is the closest agreement
+with S-44: the bass of a slice is the lowest sounding note. Row 9.25 repeats Row 8.2's
+key-agnosticism, Row 9.32 reaches S-51's circularity argument independently, and Row 9.30 records that
+both texts took the design from the same published literature.
+
+**Three new families are met here, and each is a question the earlier documents did not raise.** *The
+cadence evidence's inputs* (Row 9.12): the outgoing detector reads an event pair of **committed
+chords**, where every derived cue is defined over the bass and the eligible events — and the answer
+decides whether the evidence can sit at L1 at all. *Presence versus resolution* (Rows 9.19, 9.20,
+9.26): the outgoing text names presence-testing "the false-positive trap", and the charter's own third
+cue, published at S-47, is a presence test. *The word slice* (Row 9.13): the outgoing slice is "one
+committed chord + one assigned local key", the derived slice is a stretch of unchanging sound — two
+different objects under one reserved word.
+
+**One row carries a measured fact the derivation does not have.** Row 9.20: a plain V→I and a plain
+I→IV are exact transpositions, so the leading-tone-resolution event fires identically on both and
+**does not by itself discriminate** — recorded in the outgoing text as a corrected premise from its
+own build, where S-46's status is *settled*. It is the third place in the comparison where the
+outgoing text supplies something the derivation lacked, after Rows 3.60 and 4.37. **And Row 9.28 runs
+the same way**: every boundary marker should carry its scope, so a per-part fermata is not promoted to
+a global boundary — a distinction S-39 makes for the rest flag and for no other.
+
+**The families already on the books return in force.** The **boundary-evidence form** (Rows 9.8, 9.14,
+9.16, 9.23, 9.28, 9.33) — six rows, where document 8 had two — and the **metric strength class** (Rows
+9.6, 9.17, 9.31) are between them nine of this document's fifteen proposals. The **enlargement
+contract** appears once, at Row 9.15, from the requesting side.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -4332,6 +4931,10 @@ worked; it is not complete over the population.**
 - Row 8.3 — the perfect/imperfect cadence call, made on the bass-derived inversion, with the soprano
   arrival degree a soft nudge and no attempt at melody identification. *(Its bass half is carried at
   S-44 and travels with it.)*
+- Row 9.3 — that a cadence is a function-level event and belongs after key and chord, never inside
+  the key layer.
+- Row 9.10 — the cadence markers a later layer publishes: the type from the full typology, the
+  location, and the confidence.
 
 **To L2 — *the tonal reading, the one entangled decision*.**
 
@@ -4358,7 +4961,7 @@ worked; it is not complete over the population.**
 Gathered from the documents tabulated so far. **Not complete over the population.** **Document 8
 added none**, its QUARANTINED count being zero for the reason its own arithmetic section states — the
 implementation-describing material in that section is not about L0's or L1's subject and is counted
-by paragraph rather than rowed.
+by paragraph rather than rowed. **Document 9 added the two below.**
 
 1. Row 1.2 — does the note model read the score exactly once, and is the queryable surface it builds
    the one the change-point construction consumes?
@@ -4443,6 +5046,11 @@ by paragraph rather than rowed.
 46. Rows 7.10 and 7.26 — is the degenerate whole-score slicing still byte-identical, the clip being a
     no-op there? *(The same question as audit questions 10 and 38, asked of the slicer rather than of
     the note model.)*
+
+47. Row 9.27 — does the phrase-boundary primitive's non-fermata marker set have any ground-truth
+    oracle at the current commit, and is anything downstream putting an unvalidated marker under load?
+48. Row 9.29 — do both cadence detectors still exist at the current commit, which of them runs on the
+    arm that ships, and does the key-dependent one still read a resolved key?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -4553,6 +5161,41 @@ Gathered from the documents tabulated so far. **Not complete over the population
 34. Row 8.8 — that L1's specification record that the notated boundary evidence may be **empty or
     near-empty over a whole passage**, which is a property of what L1 publishes and which the
     derivation does not state.
+35. **Rows 9.8, 9.14, 9.16, 9.23, 9.28 and 9.33 — the BOUNDARY-EVIDENCE FORM family, six more times.**
+    That an earlier layer publishes a *phrase segmentation* rather than the notated evidence (9.8,
+    9.16); that a boundary is a **peak picked** from a graded profile (9.14); that the evidence and
+    salience cues are combined into **one weighted vote** where S-40 refuses to collapse them (9.23);
+    that admission relaxes with **vote-weight scaling by boundary strength** when the profile is flat
+    (9.33); and that **every marker should carry its scope** — global, per-staff or per-voice — where
+    S-39 names the voice on the rest flag alone (9.28).
+36. **Rows 9.6, 9.17 and 9.31 — the METRIC STRENGTH CLASS family, three more times**, and here from
+    the consuming side: the metric weight is recorded as *deferred to the consuming layers* and owed a
+    contract (9.6), consumed as a **local maximum** of a scalar (9.17), and defined as the
+    **beat-strength at the slice's start tick** (9.31), where S-35 publishes an ordinal with its
+    level's period and an *off-grid* class.
+37. **Row 9.12 — that the specification state WHAT THE CADENCE EVIDENCE IS COMPUTED FROM.** The
+    outgoing detector reads an **event pair of committed chords**; every derived cue is defined over
+    the **bass** and the **eligible events**, and S-51 admits an output as evidence only where it is
+    computable *"with no tonality, chord or boundary as input"*. **A new family, met for the first time
+    at document 9: the cadence evidence's inputs.** The answer decides whether the evidence can sit at
+    L1 at all.
+38. **Rows 9.19, 9.20 and 9.26 — that the specification state whether a PRESENCE-BASED cue is
+    admissible beside a MOTION-BASED one.** The outgoing text names presence-testing *"the
+    false-positive trap"* and rejects a detector built on it; the charter's own third cue, published at
+    S-47, is a presence test over the fourth and seventh degrees in the approach. **A new family: presence
+    versus resolution.** Row 9.20 carries the sharpest instance — **a measured fact the derivation does
+    not have**: a plain V→I and a plain I→IV are exact transpositions, so S-46's cue fires identically
+    on both and does not by itself discriminate, where S-46's status is *settled*.
+39. **Row 9.13 — that the record fix ONE MEANING FOR THE WORD *SLICE*.** The outgoing slice is *"one
+    committed chord + one assigned local key"*; the derived slice is the half-open stretch between two
+    change points whose identity is the event set, carrying no decision at all. **A new family: the
+    word slice.** It is distinct from the *what a slice carries* family at items 11 and 31 above, which
+    asks what is stored on an object both texts agree about.
+40. Row 9.15 — the **enlargement contract** family from the requesting side: a decision cut by the
+    selection edge **fires an extension request**, which the derived L0 has no contract to receive.
+41. Row 9.21 — that the specification state whether a cue's firing is **gated on notated boundary
+    evidence** or published unconditionally beside it; the outgoing gate is what removes its own
+    commonest false positive, and the derivation publishes both facts without connecting them.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -4588,37 +5231,47 @@ Gathered from the documents tabulated so far. **Not complete over the population
     tuplets, cross-staff notes and multi-voice unisons, which the derivation does not reach.
 14. Rows 8.5 and 8.6 — S-39's per-change-point flags with their witnesses and S-40's prohibition on a
     single boundary strength, against a graded phrase-boundary profile consumed as a scalar weight.
+15. Row 9.12 — S-44 to S-47's cues over the bass and the eligible events, and S-51's
+    no-chord-as-input test, against a detector over an event pair of committed chords.
+16. Row 9.13 — S-29's half-open stretch between change points and S-33's event-set identity, against a
+    slice that is one committed chord plus one assigned local key.
+17. Rows 9.19 and 9.26 — S-47's presence test over the fourth and seventh degrees, against a text that
+    names presence-testing the false-positive trap.
+18. Row 9.20 — S-46's *settled* status, against a measured finding that the same event fires
+    identically on a plain V→I and a plain I→IV.
+19. Row 9.28 — S-39's naming of the voice on the rest flag alone, against a requirement that every
+    marker carry its scope and provenance.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the eight documents tabulated, not a distribution over the
-population.** The population is 29 documents; 21 are untouched. No figure below may be read as
+**This is a RUNNING total over the nine documents tabulated, not a distribution over the
+population.** The population is 29 documents; 20 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 311 statements placed so far:**
+**Dispositions, over the 345 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | Total |
-|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | **119** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | **85** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | **14** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | **62** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | **30** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | **311** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | **134** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | **100** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | **16** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | **64** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | **30** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | **345** |
 
-**The arithmetic closes:** 119 + 85 + 14 + 62 + 0 + 30 + 1 = 311, against 311 statements, and each
+**The arithmetic closes:** 134 + 100 + 16 + 64 + 0 + 30 + 1 = 345, against 345 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same eight documents:**
+**Current-text verdicts, over the same nine documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | Total |
-|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | **306** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | **87** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | **102** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | **495** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | **345** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | **107** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | **109** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | **561** |
 
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
