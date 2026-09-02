@@ -53,11 +53,12 @@ The population's order is the artifact's:
 | 16 | `cowork_score_census.md` | **DONE** |
 | 17 | `docs/scoring_model.md` | **DONE** |
 | 18 | `cowork_bounded_context_design.md` | **DONE** |
-| 19–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 19 | `cowork_voiceleading_axis_design.md` | **DONE** |
+| 20–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 19–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 20–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 19**, `cowork_voiceleading_axis_design.md`.
+dispatch resumes at **position 20**, `docs/llm_integration.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -8727,6 +8728,557 @@ notion of an edit at all.
 
 ---
 
+### 6.19 — Document 19: `cowork_voiceleading_axis_design.md`
+
+> **Manifest for this document.** Outgoing statements: **29** (rows 19.1 to 19.29; no row of this
+> document splits). Units counted under *not a statement*: **111**, across the banner block and 21
+> sections and subsections. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **What it is.** The design of **the second axis — voice leading**, which `FRAMEWORK.md` §5 names as a
+> charter member of its own. Most of the document is therefore about that member's subject and is
+> counted rather than rowed; what is tabulated below is **the twenty-nine places where it states
+> something about what the notated record supplies, or about what L1 publishes and may not decide**.
+>
+> **★ IT IS THE OUTGOING RECORD'S FULLEST TREATMENT OF THE NOTATED VOICE, WHICH IS S-13's SUBJECT.**
+> Seven rows turn on it, and one of them — **Row 19.16** — is **S-13's declared false-negative path
+> given an owner and a component name**. S-13 says a contrapuntal voice the notation does not mark is
+> *"derived, not given"*, and its premise's failure case is keyboard notation in which one notated voice
+> carries a chord. This document names that case *implied polyphony*, makes recovering it a separate
+> inference component whose output is marked **inferred** by rule and never called a voice, and
+> **measures** that the notated voices suffice without it for its own first classification.
+>
+> **★ AND IT IS THE ONE OUTGOING DOCUMENT THAT DECLARES A SECOND SAMPLING UNIT.** Row 19.14: *"NOT
+> imported: L2 slices (the axis's sampling is by voice-pair onsets, not verticalities)"*. Read beside
+> Row 18.17 — *"the fundamental quantum of meaning is the slice (change-point)"* — the outgoing record
+> has one document saying the change-point slice is the finest unit at which anything can change, and
+> another declaring a unit of its own, sampled at onsets alone.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §0 — the one-sense declarations and the defined terms
+
+**Row 19.1 — a voice is the notated (staff, voice) line the score writes; an inferred perceptual line
+is always a stream and never a voice.**
+*Statement.* "**'voice'** is used in this document ONLY for the **notated voice** — the (staff, voice)
+line the score writes (an L1 fact). … The *inferred* perceptual line is always called a **stream**,
+never a voice." — §0 (locator: lines 61–64); recorded as a decision at §9-D3, *"two-tier voice model:
+notated voice = fact; stream = inference. Never conflated … *Alternative rejected:* a single 'voice'
+concept with a quality flag — exactly the silent fact/judgment mixing the universality principle
+forbids"* (lines 549–551).
+*Derived.* S-13.
+*Current-text axis.* S-13: **AGREES**, and as closely as any pair of statements in this file — *"L0
+supplies *notated* voices only; a contrapuntal voice that the notation does not mark is derived, not
+given, and no L1 computation may need it."*
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.2 — the notation's own structure: a staff holds one to four engraving voices, and a part may
+hold several staves.**
+*Statement.* "In MuseScore's concrete model (user-stated, 2026-07-03): a staff holds one to four
+engraving voices, and a part may hold several staves (piano: two, one per hand)." — §0 (locator: lines
+62–64).
+*Derived.* S-13, S-3.
+*Current-text axis.* S-13: **AGREES** on the direction of the fallback — it specifies what L0 does
+*"Where a score does not supply voice membership beyond 'one voice per staff'"*, which is the same
+structure read from the sparse end. S-3: **THE DERIVATION IS SILENT** on the enclosing structure — it
+supplies each note's *"staff and notated voice"* and never says what a staff or a part may hold.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state the
+staff, voice and part structure the record supplies, since the per-note pair alone does not say how
+many voices a staff may carry or that one part may span two staves.
+
+**Row 19.3 — a single notated line may project two or more perceptual lines, which is why stream
+separation exists as a task.**
+*Statement.* "**Implied polyphony / compound melody [MT].** A single notated line that projects two or
+more perceptual lines (e.g. a Bach solo-violin or keyboard figuration alternating between registers).
+The reason stream separation [VL] exists as a task." — §0 (locator: lines 132–134).
+*Derived.* S-13.
+*Current-text axis.* S-13: **AGREES** — this is its premise's false-negative path stated from the
+other side, and both texts name keyboard writing as the case.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.4 — a stream is always marked inferred, carries per-note membership confidence, and is never
+conflated with a notated voice.**
+*Statement.* "**Stream [VL].** An *inferred* perceptual line recovered from implied polyphony by
+stream separation. Always marked inferred, with per-note membership confidence; never conflated with a
+notated voice." — §0 (locator: lines 151–152).
+*Derived.* S-13, S-52.
+*Current-text axis.* S-13: **AGREES** — *derived, not given* is the same mark under another name.
+S-52: **AGREES** — every published item carries its establishment status, and *inferred* is that
+status for an item no notated fact supplies.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.5 — "interval preserved" is semitone-exact and not generic diatonic size: a pair moving from
+a major third to a minor third is similar motion, although both are thirds on the staff.**
+*Statement.* "Two lines count as **parallel** only when they move the same direction AND the SIGNED
+SEMITONE distance between them is unchanged … So a pair moving from a major third to a minor third is
+similar motion, not parallel, although both are thirds on the staff. *Why this reading and not the
+generic-diatonic one:* it was settled by REPLICATION rather than by choice." — §0 (locator: lines
+109–116); the closure recorded at §15-2 (lines 662–665).
+*Derived.* S-3, S-14.
+*Current-text axis.* S-3: **AGREES** that both readings are available — L0 supplies the *"spelled pitch
+(letter, accidental, octave)"*, from which the semitone distance and the staff distance both follow.
+S-14: **AGREES** on the standing of spelling as a supplied input — *"spelling is a required input and
+L0 does not infer it"* — and this text is a downstream declaration of which of the two supplied
+readings a feature computes on.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading*** — a motion-classification
+convention is that axis's own. *(Recorded because it is the outgoing record's clearest case of a
+feature DECLINING the notated spelling by design, with its reason on the page: the spelling is
+supplied, and this feature computes on semitones because a replicated study did.)*
+
+**Row 19.6 — the motion sampling rule: sample at the merged set of the two voices' onsets, hold each
+voice at its most recent onset at or before the sample, classify between consecutive samples, and drop
+samples where neither voice moves.**
+*Statement.* "for each concurrent voice pair, sample at the merged set of the two voices' note onsets;
+a voice's pitch at a sample is its most recent onset at-or-before that time (piecewise-constant hold);
+classify the motion type between consecutive samples, dropping samples where neither voice moves" —
+§0 (locator: lines 154–157); the rule again at §5.2 (lines 343–344).
+*Derived.* S-28, S-29.
+*Current-text axis.* S-28: **DIFFERS** — the derived change-point set is *"two onsets or releases"*,
+and this samples **onsets only**, so a release opens no sample here. S-29: **AGREES** on the reading
+between samples — the piecewise-constant hold is the half-open stretch, a voice's pitch being what its
+last onset put there until the next.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***. *(S-28's onsets-and-
+releases construction travels with it as the fact the sampling rule departs from.)*
+
+**Row 19.7 — a per-voice span kind: spans of different voices may overlap and be out of phase by
+construction, and strict tiling within one voice is not asserted.**
+*Statement.* "**Phrase-span [VL].** A per-voice span holding one melodic phrase [MT]. Phrase-spans of
+*different voices* may overlap and be out of phase by construction; within one voice, consecutive
+phrases are *expected* to tile its line, but strict tiling is not asserted — phrase **elision** … makes
+shared boundary notes a real case … This is a **per-voice span kind** — deliberately outside the
+harmonic axis's flat, texture-wide span families." — §0 (locator: lines 171–177); the same claim at the
+melodic-phrase term, *"In contrapuntal textures phrases are **concurrent, overlapping, and out of phase
+across voices** … a per-voice object, not a texture-wide partition"* (lines 129–131), and as ratification
+ask A5 (lines 718–720).
+*Derived.* S-29, S-32.
+*Current-text axis.* S-29: **DIFFERS** — the derived span type is the half-open slice, and two slices
+never overlap and never share a boundary position. S-32: **DIFFERS** — the published list *"covers the
+working span exactly"*, which a family that may leave gaps and overlap does not.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***. *(Recorded because the
+derived specification has exactly one span shape and this names a second with the opposite properties,
+declared rather than assumed.)*
+
+#### §2 and §3 — the constraints, and what the axis is handed
+
+**Row 19.8 — the fact layers are style-agnostic and carry no confidence; judgment enters only at the
+first inference component.**
+*Statement.* "**Universality in the fact layers; style only in calibration.** VL-A and VL-B are
+style-agnostic, lossless-derived **facts** and carry no confidence. Judgment enters only at VL-C and
+later components." — §2 (locator: lines 220–222); repeated at §5.1's last rule, *"No confidence (facts
+carry none)"* (line 335), and at §5.2's *"Deterministic, no tunable thresholds, no judgment, no
+confidence"* (line 350).
+*Derived.* S-51, S-52.
+*Current-text axis.* S-51: **AGREES** — the claim test puts the line at deciding, and a fact layer that
+decides nothing publishes candidates and evidence. S-52: **AGREES** — a fact carries the status
+*notated* or *computed*, and *provisional* is reserved for what rests on an unestablished parameter.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.9 — the components run on whatever notated score the user opens, at any size and in any
+style; style enters only through calibration parameters, never through structure.**
+*Statement.* "**Any notated score, any size, any style** (the product constraint the harmonic spine
+carries): the components run on whatever notated score the user opens; style enters only through
+calibration parameters (the VL-C reference set), never through structure." — §2 (locator: lines
+223–225).
+*Derived.* S-1.
+*Current-text axis.* S-1: **AGREES** — the admission criterion is what is on the page, which is the
+same refusal to let a repertoire assumption enter the structure of what is read.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.10 — every component analyses the selection, requests append-only enlargement with a stop
+condition and a hard bound, and carries the denial and truncation provenance honestly.**
+*Statement.* "**The bounded-context contract**: every component analyses the selection, requests
+append-only extension from L1 with a stop condition and hard bound when its reasoning needs more, and
+carries the denial/truncation provenance honestly (§8)." — §2 (locator: lines 226–228); the axis's own
+stop condition at §8 (lines 512–521), and the marks themselves in the data design — *"truncation
+provenance (`clipped-by-selection-edge` / `cue-denied` where applicable)"* (line 504).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES** — marking the span's edges is what keeps them honest. S-53:
+**THE DERIVATION IS SILENT** on the request itself, exactly as at Rows 18.8 and 18.15.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 18.8, 18.13 and 18.15. *(Recorded because
+this is the third outgoing document to carry the two named marks, and the second to name them in a
+published data shape.)*
+
+**Row 19.11 — what lacks ground truth is built with an alternative-confidence path and an
+empirically-unvalidated mark, never silently trusted.**
+*Statement.* "**Verifiability with honest marks.** What lacks ground truth is built (if at all) with an
+alternative-confidence path and an **empirically-unvalidated** mark, never silently trusted" — §2
+(locator: lines 237–239).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES**, and at the same rule — *"A consumer may not put a provisional
+item under load until the parameter is established."*
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.12 — the note model is shared and axis-neutral, carrying onset and duration, pitch with
+notated spelling, metric weight, and (staff, voice); the axis adds no second note model.**
+*Statement.* "**The L1 note model** (axis-neutral, shared): notes with onset/duration, pitch + notated
+spelling, metric weight, and (staff, voice) — everything VL-A needs, already carried losslessly. **The
+axis adds no second note model** (total unification)." — §3 (locator: lines 249–251).
+*Derived.* S-3, S-35.
+*Current-text axis.* S-3: **DIFFERS** — it supplies **metric position** (*"bar index, offset within
+the bar, absolute position"*) and no weight, and it carries **seven further per-note facts this list
+does not name**: whether the note is pitched, whether it is a grace note, the two tie flags, the
+not-to-be-played flag, visibility, cue size, and the ornament and articulation signs. S-35: **DIFFERS**
+— the metric strength class is published **per change point** as an ordinal with its level's period,
+not per note as a weight.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say which layer
+owns a metric **weight** as against a metric **position** and a per-change-point **class**, since the
+outgoing record has a per-note weight here and this same document says at §7 that the weight is not
+stored on the event at all.
+
+**Row 19.13 — the boundary primitive is consumed as evidence rather than re-detected, and it carries a
+graded profile with per-part cue and scope provenance.**
+*Statement.* "**The L1.5 phrase-boundary primitive** (its graded profile + per-part cue/scope
+provenance; evidence for VL-E when designed): the per-part cues (breath, caesura, fermata) are natural
+per-voice phrase evidence; VL-E consumes the existing primitive rather than re-detecting the cues." —
+§3 (locator: lines 252–254).
+*Derived.* S-39, S-40, S-50.
+*Current-text axis.* S-39: **DIFFERS** — the derived flags are published per change point with their
+witnesses and carry no scope, where this carries per-part scope provenance; the same difference Row
+13.9 records from the consuming side. S-40: **DIFFERS** — *"nothing is collapsed to a single 'boundary
+strength'"*, against a **graded profile**; the fourth statement of that difference in the outgoing
+record, after Rows 10.x, 13.8 and 13.9. S-50: **AGREES** on consuming rather than re-deriving, which is
+the publish-once discipline the derivation's list exists to serve.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether the
+boundary evidence is published as a flag set with witnesses or as a graded profile, and whether a flag
+carries the scope it was detected over — three outgoing documents now assume the second of each.
+
+**Row 19.14 — the slices are not imported: the sampling is by voice-pair onsets and not by
+verticalities, and nothing is read from the chord, function or grouping layers.**
+*Statement.* "**NOT imported:** L2 slices (the axis's sampling is by voice-pair onsets, not
+verticalities); L4/L5/L6 outputs (v1 reads nothing from them)." — §3 (locator: lines 258–259).
+*Derived.* S-28, S-33, S-53.
+*Current-text axis.* S-28: **DIFFERS** — the change-point set is onsets **and releases**, and this
+declines both the set and the release half of it. S-33: **DIFFERS** — slice identity is the event set,
+and this reads a per-voice-pair sample series that is not that partition of time. S-53: **AGREES**, and
+strongly, on the direction of reading — nothing here consumes a decided chord, function or grouping,
+which is S-53's own rule applied across an axis boundary.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***. *★ Read beside Row 18.17,
+which states that the change-point slice is the finest granularity at which anything can change: the
+outgoing record carries both that claim and a second sampling unit declared against it.*
+
+#### §4 and §5 — the strategy and the component rules
+
+**Row 19.15 — the shape transfers unchanged: lossless facts, then mechanical derived views, then
+judgment layers with declared confidence.**
+*Statement.* "The spine's shape — lossless facts → mechanical derived views → judgment layers with
+declared confidence — transfers unchanged: VL-A is the axis's 'L1 view', VL-B its 'L1.5', VL-C its
+first inference layer." — §4 (locator: lines 294–295).
+*Derived.* S-50, S-51.
+*Current-text axis.* S-50: **AGREES** — the published surface is facts and evidence with witnesses.
+S-51: **AGREES** — the claim test is the line this ordering draws.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.16 — the analysis works on notated voices without stream separation, measured; recovering the
+implied lines is an enrichment for keyboard and solo-string textures, not a prerequisite.**
+*Statement.* "**(3) the axis works on notated voices without stream separation** — the study
+discriminated textures from notated (staff, voice) lines directly, so VL-D is an enrichment for
+per-voice detail in keyboard textures, not a prerequisite." — §4 (locator: lines 300–302); the
+component that owns the recovery at §5.4, *"Recover streams from implied polyphony / compound melody,
+so keyboard and solo-string textures get per-line detail … Output: streams with per-note membership
+confidence, always marked inferred"* (lines 414–422).
+*Derived.* S-13.
+*Current-text axis.* S-13: **AGREES**, and this is the row the manifest header names — S-13 declares
+the notated voice a proxy and names keyboard notation as its failure case; this text **measures** that
+the proxy carries its own first classification, and gives the failure case a named component whose
+output is marked inferred by rule.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ Read beside Row 16.2, which is the flat disagreement
+about whether the notated voice is a usable proxy in keyboard music: this document sits on neither
+side of it — it accepts the proxy for the question it asks and builds the remedy for the question it
+does not.*
+
+**Row 19.17 — every note appears in exactly one voice's series, the notated (staff, voice) fact
+deciding membership and nothing being inferred; nothing is dropped or merged, and the round trip
+reproduces the span's content.**
+*Statement.* "**Lossless and axis-neutral — a partition, not a detection:** every L1 note appears in
+**exactly one** voice's series (the notated (staff, voice) fact decides membership; nothing is
+inferred) … nothing is dropped or merged. Round-trip (view → notes) reproduces the L1 content of the
+span. A note serving two perceptual lines (a compound-melody pivot, a voice crossing) is a
+**stream**-tier phenomenon … never a VL-A one." — §5.1 (locator: lines 321–327).
+*Derived.* S-13, S-3.
+*Current-text axis.* S-13: **AGREES** — membership is the notated fact and nothing else. S-3:
+**AGREES** — every note carries *"its staff and notated voice"*, so the partition is read and not
+computed.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.18 — a tied chain is already one sounding event in the note model, and the derived view
+inherits that resolution.**
+*Statement.* "tie chains are already resolved by L1 (the tie-resolved note model … — a tied chain is
+one sounding event) and the view inherits that resolution" — §5.1 (locator: lines 322–324).
+*Derived.* S-23.
+*Current-text axis.* S-23: **AGREES** — a tied group is one event, and the intermediate notes open
+nothing.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.19 — a chordal voice is a recorded fact and not an error: a voice whose events carry several
+simultaneous pitches is marked chordal per event.**
+*Statement.* "**Chordal voices are a recorded fact,** not an error: a voice whose events carry multiple
+simultaneous pitches (keyboard writing) is marked chordal per event." — §5.1 (locator: lines 328–329).
+*Derived.* S-13.
+*Current-text axis.* S-13: **AGREES** on what the case is — its false-negative path is *"keyboard
+notation in which one notated voice carries a chord"* — and the derivation **declares the hazard
+without publishing a mark for it**, where this text publishes one per event.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 publish a per-event **chordal**
+mark on a notated voice, since S-13's declared false-negative path is exactly the case the mark
+identifies and no derived statement makes it findable.
+
+**Row 19.20 — a reduction of a chordal voice is declared, uniform and per query, never silent and
+never per source, and the rule is carried in the output's provenance.**
+*Statement.* "**Reduction is declared, uniform, and per-query — never silent, never per-source.** A
+consumer needing one line from a chordal voice names a reduction rule … The rule is a parameter of the
+*query*, carried in the output's provenance." — §5.1 (locator: lines 330–334); the risk it answers at
+§11, *"Motion profiles of chordal textures depend on the declared reduction … The uniform declared rule
++ provenance makes this inspectable, not invisible"* (lines 604–607).
+*Derived.* S-52, S-50.
+*Current-text axis.* S-52: **AGREES** — a published item carries the standing of what produced it.
+S-50: **AGREES** — *"Every predicate is published with its witnesses"*, and a declared reduction named
+in the output is that discipline applied to a lossy view.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.21 — the per-sample motion-event series is exported and not only the rates, the event series
+being itself a fact.**
+*Statement.* "**The per-sample motion-event series is part of the export, not only the rates.** The
+profile is an aggregation of classified motion events …; the event series itself is a fact and is
+exposed. The rates are all VL-C needs; the events are what a future part-writing checker needs … cheap
+to expose at build, structural to retrofit." — §5.2 (locator: lines 345–349).
+*Derived.* S-40, S-50.
+*Current-text axis.* S-40: **AGREES**, and at the same principle — *"nothing is collapsed to a single
+'boundary strength'"*; here nothing is collapsed to a rate. S-50: **AGREES** — the witnesses are
+published beside the predicate.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The outgoing record's plainest statement of why an
+aggregate is published beside its parts rather than instead of them, and the one that gives the reason
+in build terms.*
+
+**Row 19.22 — the eligibility filter is the per-(staff, voice) line-view filter `plays && visible &&
+staffEligible`.**
+*Statement.* "The profile-eligibility filter is the verified per-(staff,voice) line-view filter `plays
+&& visible && staffEligible` (the `phraseboundaryview.cpp` precedent — the instruction's 2-flag
+parenthetical reconciled to the verified 3-flag existing-derived-view filter)." — §5.2 (locator: lines
+356–358); the same flags in the data design, *"and the L1 eligibility flags"* (line 496).
+*Derived.* S-15.
+*Current-text axis.* S-15: **DIFFERS**, in both directions. The derived conditions are five — *"it is
+pitched, it is not marked as not to be played, it is visible, it is not a grace note, and its notated
+duration is greater than zero"* — of which this filter carries **two**; and this filter carries a
+**staff-level** flag S-15 has no counterpart for, which is Row 1.6(ii)'s subject met a second time in
+the outgoing record.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* is the eligibility filter still those
+three flags on the arm that ships, do the three S-15 conditions it omits — pitched, not a grace note,
+duration greater than zero — reach it by another route, and is `staffEligible` an L0-supplied fact or
+an eligibility decision above it?
+
+**Row 19.23 — the output carries the committed class plus the full ranked list of all class fits with
+their weights; nothing below the top is discarded.**
+*Statement.* "**Output — the committed class PLUS the full ranked alternative list (zero information
+loss …):** the span's voice-leading idiom … is the TOP of a **fully ranked list of ALL class fits, each
+carried with its weight** — nothing below the top is discarded; a downstream consumer (and Stage-5
+calibration) sees everything VL-C saw." — §5.3 (locator: lines 372–376).
+*Derived.* S-50, S-53.
+*Current-text axis.* S-50: **AGREES** — publishing the candidates with their witnesses is the same
+discipline. S-53: **AGREES** on the shape — *"the want is met by publishing the candidates and the
+evidence and leaving the decision"* — with the difference, stated and not adjudicated, that this
+component commits a top class and publishes the rest beneath it.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §7, §8 and §9 — the data, the crosscutting rules and the decisions
+
+**Row 19.24 — the metric weight is not copied into the event: it stays with the shared metric-weight
+machinery and is read on demand, so no derived quantity is stored twice.**
+*Statement.* "Metric weight is NOT copied into the event: it stays with the shared metric-weight
+machinery (`scoreharvest`) and is read on demand by any consumer that needs it (total unification — no
+second store of a derived quantity; §2 amendment at signing, 2026-07-03)." — §7 (locator: lines
+496–498).
+*Derived.* S-35.
+*Current-text axis.* S-35: **AGREES** — the metric strength class is derived once, per change point,
+and published there; a consumer reads it rather than keeping its own copy.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Read beside Row 19.12, which lists the metric weight
+among the note model's carried per-note facts: the same document says the weight is available from the
+shared machinery and is not stored on the event.)*
+
+**Row 19.25 — the analysis is of notated music only; where a source carries no voices the coordinate is
+undefined, not zero, in every consumer, and this is a representational fact rather than a corpus
+accident.**
+*Statement.* "**Coverage declaration (honest, structural).** The axis analyses **notated music only** —
+lead-sheet sources carry no voices, so the voice-leading coordinate of the 2-D style structure is
+simply *undefined* for them (undefined, not zero, in every consumer). This is a representational fact,
+not a corpus accident." — §8 (locator: lines 528–530); as ratification ask A6 (lines 721–722).
+*Derived.* S-13, S-52.
+*Current-text axis.* S-13: **AGREES** — where the record does not supply voices, what is missing is
+declared rather than filled. S-52: **AGREES** — the standing of a value travels with it, and
+*undefined* is a status, not a number.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ This is the outgoing record's cleanest answer to
+L0's third question — what happens when a real score does not supply something — and the answer is
+that the consumer is told, in a form no arithmetic can silently absorb.*
+
+**Row 19.26 — where the record supplies no voice pair the profile is undefined and the component
+abstains with a *no-pair* reason rather than classifying on the remaining evidence.**
+*Statement.* "a single-voice selection has no voice pairs — the motion profile is undefined and VL-C
+abstains with a *no-pair* reason rather than classifying on the interval profile alone" — §5.3
+(locator: lines 408–410); the risk it answers at §11, *"A single-line selection is a real use case (a
+melody); serving it belongs to VL-D/E territory …, not to a degraded v1 guess"* (lines 610–612).
+*Derived.* S-13, S-31.
+*Current-text axis.* S-13: **AGREES** — what the notation does not mark is not manufactured. S-31:
+**AGREES** in shape — the derivation publishes an empty sounding set as a slice like any other rather
+than merging it away, and this publishes an undefined profile with its reason rather than a guess.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification carry a named
+reason on every declined output, since the derived statements decline in several places and none
+publishes why.
+
+**Row 19.27 — the fact layers are pure functions, and the inference component is deterministic given
+its fitted reference set, with no run-time randomness.**
+*Statement.* "**Determinism.** VL-A/B are pure functions; VL-C is deterministic given its fitted
+reference set (a shipped parameter, seeded/fitted offline under the discovery protocol — no run-time
+stochasticity)." — §8 (locator: lines 526–527).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES** — *"L1 is therefore computable in one forward pass over the
+working span"*, which is the same claim for the derived layer.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 19.28 — the cross-axis rule: a harmonic layer may consume this axis's facts freely because facts
+depend on no harmonic inference, and this axis may consume a committed harmonic output only where the
+combined graph stays acyclic.**
+*Statement.* "**D6 — the cross-axis dependency rule (acyclicity by declaration).** Cross-axis reads are
+admissible only where the combined two-axis dependency graph stays acyclic, checked at each wiring:
+(a) harmonic layers may consume axis-2 **facts** … freely … because facts depend on no harmonic
+inference; (b) an axis-2 component may consume a **committed harmonic output** … provided nothing that
+harmonic layer depends on, directly or transitively, consumes that axis-2 component." — §9-D6 (locator:
+lines 559–567).
+*Derived.* S-53, S-51.
+*Current-text axis.* S-53: **AGREES**, and this is its rule generalised — *"Nothing L1 publishes
+depends on anything L2 decides"* is case (a) with the axes collapsed. S-51: **AGREES** — the claim test
+is what makes case (a) safe, a fact being computable with no tonality, chord or boundary as input.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state the
+acyclicity test in the general form this text gives it, since the derived statement asserts the
+forward-only property for one pair of layers and does not say what makes a read admissible in general.
+
+**Row 19.29 — the open questions the outgoing record leaves: may one note belong to two spans of the
+same voice, and do rests between spans sit inside a span or between spans.**
+*Statement.* "may one note belong to two phrase-spans of the same voice (phrase elision — the cadence
+tone beginning the next phrase)? And do rests between phrases sit inside a phrase-span or between
+phrase-spans? Both are VL-E design-doc decisions" — §15-9 (locator: lines 697–700).
+*Derived.* S-31, S-29.
+*Current-text axis.* S-31: **AGREES** on the answer the derivation gives for its own span kind — a
+silent stretch is *"published as a slice like any other, with its empty set, and is not merged into a
+neighbour"*, so a rest is inside a span and not between spans. S-29: **AGREES** on the other — the
+half-open stretch means a boundary position belongs to exactly one span, so no note is shared.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***. *(Recorded because the
+derived specification answers both questions for the change-point slice, and an outgoing document
+leaves both open for a per-voice span kind; S-29's half-open convention and S-31's published silence
+travel with it as the answers already taken for the other span shape.)*
+
+---
+
+#### Not a statement — counted by paragraph, bullet and numbered item, per section, so the arithmetic closes (111)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the banner block | 7 | the as-built status with its gate correction, the two closed build declarations, the signed status with its ratification clarification, the original draft banner, the writing-standards record, the fresh-eyes audit record, and the not-applicable views |
+| §0 | 22 | five of the six one-sense declarations, the five cited project terms, six of the eight music-theory terms, and six of the nine operational terms — all vocabulary rules or definitions of the axis's own objects |
+| §1 | 4 | what the axis is, why it exists, its scope in and out, and its status |
+| §2 | 5 | the lead and four constraints about the axis's own build — forward-only within the axis, the confidence contract, dormancy, and knowledge-based coding |
+| §3 | 15 | the import and export leads, the exported component surfaces, the five consumers, the committed-key import, and the deferred implementation locator |
+| §5 lead | 1 | which components are specified now and which are design-gated |
+| §5.1 | 1 | the *owns* line |
+| §5.2 | 2 | the *owns* line and the study-parity duty |
+| §5.3 | 6 | the *owns* line, the lead, the input, the granularity decision, the class-assignment measurement, and the three declared floors |
+| §5.4 | 5 | the lead and the four staged components other than stream separation |
+| §6 | 5 | the scenarios lead and the four runtime scenarios |
+| §7 | 4 | the lead and three data types |
+| §8 | 2 | the confidence declaration and the style discipline |
+| §9 | 5 | decisions D1, D2, D4, D5 and D7 |
+| §10 | 5 | the per-component test obligations, the dormancy-and-gate proof, and the documentation-sync list |
+| §11 | 3 | ground-truth scarcity, the interval profile's artifact caveat, and scope-creep risk |
+| §12 | 1 | the pointer to §0 in place of a glossary |
+| §13 | 1 | the axis's prediction, pilot and confirmation history |
+| §14 | 3 | the borrowed sources, the discarded alternatives, and the corpora |
+| §15 | 8 | eight of the ten open items — the measurements, the census beds, the deferred designs and the validation ruling |
+| §16 | 6 | six of the eight ratification asks |
+| **Total** | **111** | — |
+
+*A section counts zero where every one of its units contributes a rowed statement; §4 is the only such
+section here. The count is of units the tabulation did not reach, not of units it did not read. **The
+whole document was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **29** (19.1 to 19.29). No row of this document splits.
+- **Outgoing statements dispositioned: 29.**
+- Units counted under *not a statement*: **111**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 16 | 19.1, 19.3, 19.4, 19.8, 19.9, 19.11, 19.15, 19.16, 19.17, 19.18, 19.20, 19.21, 19.23, 19.24, 19.25, 19.27 |
+| ADOPTED — proposed | 7 | 19.2, 19.10, 19.12, 19.13, 19.19, 19.26, 19.28 |
+| RELOCATED | 5 | 19.5, 19.6, 19.7, 19.14, 19.29 |
+| QUARANTINED | 1 | 19.22 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **29** | — |
+
+**The column sums to 29, against 29 statements, so the arithmetic closes at this document:**
+16 + 7 + 5 + 1 + 0 + 0 + 0 = 29.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 38 |
+| DIFFERS | 10 |
+| THE DERIVATION IS SILENT | 2 |
+| **Total verdicts** | **50** |
+
+*(Counted per named derived statement per statement-row. 50 verdicts over 29 statements because
+nineteen rows name more than one derived statement. **SILENT is almost absent here**, and the reason is
+the opposite of Document 18's: everything this document says about L0's subject reaches a fact the
+derivation publishes, because what it is handed is exactly the note model L0 specifies.)*
+
+#### What this document's rows put in front of the user
+
+**Row 19.16 is S-13's declared false-negative path with an owner.** S-13 says the notated voice is what
+L0 supplies and that a contrapuntal voice the notation does not mark is derived rather than given; its
+premise's failure case is keyboard writing where one notated voice carries a chord. This document names
+that case, measures that its first classification does not need it resolved, gives the resolution a
+component of its own, and rules that the component's output is marked **inferred** and never called a
+voice. **Read beside Row 16.2** — the flat disagreement about whether the notated voice is a usable
+proxy in keyboard music — this document is on neither side: it accepts the proxy for the question it
+asks and builds the remedy for the one it does not.
+
+**Row 19.14 declares a second sampling unit, and Row 18.17 says there cannot be one.** Document 18
+states that the change-point slice is *"the fundamental quantum of meaning"* because the sounding set
+is constant inside it, so nothing can change at a finer granularity. This document declines the slice
+outright — *"NOT imported: L2 slices"* — and samples at voice-pair onsets, dropping releases. **Both
+are in the outgoing record, and they are about the same music.**
+
+**Row 19.12 puts a per-note metric WEIGHT where the derivation has a per-change-point CLASS**, and the
+same document then says at §7 that the weight is not stored on the event at all. Row 19.24 is that
+correction, and it agrees with the derivation. The two rows together are the outgoing record asking a
+question the derived specification answers only for change points: **what does a note carry about the
+meter, as against what a change point carries?**
+
+**Row 19.22 is Row 1.6(ii)'s subject met a second time, and from a different direction.** A verified
+eligibility filter of three flags stands against S-15's five conditions: two of the five are present,
+three are absent, and the third flag is a **staff-level** condition S-15 has no counterpart for. The
+first document raised staff-level exclusion as a question about what L0 supplies; this one shows it
+already deciding which notes a derived view sees.
+
+**Row 19.25 is the record's cleanest answer to L0's third question.** Where a source carries no voices
+the coordinate is *"undefined, not zero, in every consumer … a representational fact, not a corpus
+accident"* — a form of declining that no arithmetic downstream can silently absorb.
+
+**And Row 19.19 asks for something small and concrete.** S-13 declares the chordal-voice hazard and
+publishes no mark for it; this document marks a chordal voice **per event**, as a fact. The proposal is
+one published flag, and it makes S-13's declared failure case findable rather than only declared.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -8833,6 +9385,21 @@ worked; it is not complete over the population.**
   by texture.
 - Row 14.11 — that a future voice-leading layer would read the per-voice motion the note model already
   carries losslessly, parallel to the harmonic stack.
+- Row 19.5 — that "interval preserved" is semitone-exact and not generic diatonic size, so a major
+  third moving to a minor third is similar motion. *(S-3's spelled pitch and S-14's required spelling
+  travel with it as the supplied facts the convention chooses between.)*
+- Row 19.6 — the motion sampling rule: the merged onset set of a voice pair, a piecewise-constant hold,
+  classification between consecutive samples, and samples dropped where neither voice moves. *(S-28's
+  onsets-and-releases construction travels with it as what the rule departs from.)*
+- Row 19.7 — the per-voice span kind: spans of different voices overlapping and out of phase by
+  construction, with strict tiling within a voice not asserted. *(S-29's half-open, non-overlapping
+  slice and S-32's exact covering travel with it.)*
+- Row 19.14 — that the slices are not imported and the sampling is by voice-pair onsets rather than
+  verticalities. *★ Read beside Row 18.17, which states that the change-point slice is the finest
+  granularity at which anything can change.*
+- Row 19.29 — the two open span questions: whether one note may belong to two spans of the same voice,
+  and whether a rest sits inside a span or between spans. *(S-29's half-open convention and S-31's
+  published silence travel with it as the answers already taken for the change-point slice.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -8995,6 +9562,11 @@ by paragraph rather than rowed. **Document 9 added the two below.**
 68. Row 18.39 — do the note model's two named look-up structures still exist on the arm that ships,
     does either extend consistently under an enlargement, or is the declared rebuild interim what
     actually runs?
+69. Row 19.22 — is the eligibility filter still `plays && visible && staffEligible` on the arm that
+    ships; do the three S-15 conditions it omits — pitched, not a grace note, notated duration greater
+    than zero — reach it by another route; and is `staffEligible` an L0-supplied fact or an
+    eligibility decision above it? *(The same subject as audit question 2, Row 1.6(ii), met a second
+    time.)*
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -9323,6 +9895,32 @@ Gathered from the documents tabulated so far. **Not complete over the population
     *"compose cleanly — an edit inside the selection and an extension outside it are different
     operations on the same model"*. **The derived specification has no notion of an edit at all**, and
     this is the one thing in L0's subject it nowhere considers.
+76. Row 19.2 — that the specification state the **staff, voice and part structure** the record
+    supplies: a staff holding one to four engraving voices, and a part spanning several staves. S-3
+    supplies each note's staff and notated voice and never says what a staff or a part may hold.
+77. **★ Row 19.19 — that L0 publish a per-event CHORDAL mark on a notated voice.** S-13 declares the
+    hazard — *"keyboard notation in which one notated voice carries a chord"* — and publishes no mark
+    for it; the outgoing record marks a chordal voice per event, as a fact. **The proposal is one
+    published flag, and it makes S-13's declared failure case findable rather than only declared.**
+78. **★ Rows 19.12 and 19.24 — that the specification say what a NOTE carries about the meter, as
+    against what a CHANGE POINT carries.** The outgoing record lists a per-note *metric weight* among
+    the note model's carried facts and then, in the same document, rules that the weight is not stored
+    on the event but read on demand from one shared source. S-3 supplies a metric **position** and
+    S-35 publishes a per-change-point **class**; neither is a per-note weight.
+79. Row 19.13 — that the specification say whether the boundary evidence is published as a **flag set
+    with witnesses** or as a **graded profile**, and whether a flag carries the **scope** it was
+    detected over. Three outgoing documents now assume the second of each, against S-39's scope-free
+    flags and S-40's refusal to collapse.
+80. Row 19.26 — that every declined output carry a **named reason**; the derived statements decline in
+    several places and none publishes why, where the outgoing record abstains with a *no-pair* reason
+    rather than classifying on what remains.
+81. Row 19.28 — that the specification state the **acyclicity test in its general form** — a lower
+    layer may consume another axis's facts freely because facts depend on no inference, and a component
+    may consume a committed output only where the combined graph stays acyclic. S-53 asserts the
+    forward-only property for one pair of layers and does not say what makes a read admissible in
+    general.
+82. Row 19.10 — the bounded-context contract as a third outgoing document states it, and the second to
+    name the two truncation marks in a published data shape.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -9428,37 +10026,47 @@ Gathered from the documents tabulated so far. **Not complete over the population
     outgoing document surfaced it.** S-32's span-end change points against S-28's onsets-and-releases,
     with the outgoing record calling a clip boundary artificial; and S-50's *"publishes exactly"* list
     against S-32's, S-25's and S-52's marks, which that list does not contain.
+48. **Rows 19.6, 19.7 and 19.14 — the second axis's own time unit against L1's.** S-28's
+    onsets-and-releases change points and S-33's event-set slice identity, against a sampling by
+    voice-pair onsets alone, and S-29's half-open non-overlapping slice and S-32's exact covering,
+    against a per-voice span family that overlaps across voices and does not assert tiling within one.
+49. Rows 19.12 and 19.13 — S-3's per-note list and S-35's per-change-point metric class, against a
+    per-note *metric weight* and a four-item import list that names none of S-3's seven other facts;
+    and S-39's scope-free flags and S-40's no-collapse rule, against a graded profile carrying per-part
+    scope provenance.
+50. Row 19.22 — S-15's five eligibility conditions against a verified three-flag filter carrying two of
+    them plus a staff-level flag S-15 has no counterpart for.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the eighteen documents tabulated, not a distribution over the
-population.** The population is 29 documents; 11 are untouched. No figure below may be read as
+**This is a RUNNING total over the nineteen documents tabulated, not a distribution over the
+population.** The population is 29 documents; 10 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 575 statements placed so far:**
+**Dispositions, over the 604 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | **224** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | **182** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | **50** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | **85** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | **33** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | **575** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | **240** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | **189** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | **55** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | **86** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | **33** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | **604** |
 
-**The arithmetic closes:** 224 + 182 + 50 + 85 + 0 + 33 + 1 = 575, against 575 statements, and each
+**The arithmetic closes:** 240 + 189 + 55 + 86 + 0 + 33 + 1 = 604, against 604 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same eighteen documents:**
+**Current-text verdicts, over the same nineteen documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | **604** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | **201** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | **173** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | **978** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | **642** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | **211** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | **175** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | **1028** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -9481,7 +10089,7 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the eighteen documents was placed there.** The reason is visible in the classes that did
+statement in the nineteen documents was placed there.** The reason is visible in the classes that did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
 which it records as HISTORICAL. Neither is a discard, and neither loses anything.
