@@ -63,12 +63,14 @@ The population's order is the artifact's:
 | 26 | `cowork_idiom_entry_mapping.md` | **DONE** |
 | 27 | `cowork_notation_output_contract.md` | **DONE** |
 | 28 | `cowork_progression_schema_dictionary.md` | **DONE** |
-| 29 | `cowork_stage5_fitter_design.md` | **UNTOUCHED** |
+| 29 | `cowork_stage5_fitter_design.md` | **DONE** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in document 29 has been read for
-tabulation, quoted, counted or dispositioned, and no row for it exists anywhere. The next
-dispatch resumes at **position 29**, `cowork_stage5_fitter_design.md` — **the last member of the
-population.**
+**★ EVERY DOCUMENT OF THE POPULATION IS TABULATED. All 29 are DONE**, each read whole and each closing
+its own arithmetic. **What remains unwritten is the whole-population half of this file** — the sections
+that can only be written once every document is done, and which are marked **NOT YET WRITTEN** where
+they belong below: the derived-side rows (one per S-1…S-54 with the two-way arithmetic check), the
+seventeen open questions, and the derivation's own §7. The per-document gathers at §10, §11, §12 and
+§13 are complete over all 29 documents and say so.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -12334,6 +12336,333 @@ and at Document 22's three-part spelling test. **Every time, the page decides.**
 
 ---
 
+### 6.29 — Document 29: `cowork_stage5_fitter_design.md` — **the last member of the population**
+
+> **Manifest for this document.** Outgoing statements: **14** (rows 29.1 to 29.14; no row of this
+> document splits). Units counted under *not a statement*: **186**, across the banner and 16 sections —
+> **the largest document in the population and the largest counted remainder.** Both counted at this
+> document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **What it is.** The design of the machinery that replaces hand-chosen scoring constants with fitted
+> values — *the measurement of the analysis*'s subject almost throughout, and L2's for the constants
+> themselves. Four rows relocate to the measurement. **What reaches L0's and L1's subject is of two
+> kinds: six standing rules about what a published surface owes, and four MEASURED FACTS about what the
+> current one loses.**
+>
+> **★★★ IT CARRIES THE OUTGOING RECORD'S MEASURED EVIDENCE FOR FOUR THINGS THIS FILE HAS BEEN ASKING
+> ABOUT.** **(1) A spelling destroyed** — *"same-pc different-TPC tones collapse to one spelling by
+> **iteration order**, destroying a distinct enharmonic spelling"* (Row 29.7), which is S-3's supplied
+> spelling lost in the reading. **(2) A carried alternative overwritten** — one promotion path keeps the
+> distinct enharmonic partner and the other replaces it with a near-duplicate of the winner (Row 29.8).
+> **(3) The cap's cost measured** — the cap discards an above-threshold reading on most slices, and a
+> third distinct root clears threshold on about a quarter (Row 29.9); this is the measurement Rows 24.1
+> and 27.8 rest on. **(4) A boundary failure that weights cannot remove** — *"the weight fit relocates
+> the boundary failure, it cannot remove it"* (Row 29.10), measured at one named case.
+>
+> **★★ AND ITS RULE ABOUT PUBLISHED LISTS IS THE STRICTEST IN THE RECORD.** Constraint 8: *"calibration
+> re-scales confidences; it never prunes the ranked alternatives a layer publishes. A reliability map is
+> a monotone re-labeling, not a filter."* Read with Row 29.2's ruling that **the carried alternatives are
+> inside the byte-identity acceptance contract**, so *"same winner, different alternatives"* is a
+> behaviour change.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### The standing rules — what a published surface owes
+
+**Row 29.1 — a re-labelling never prunes the ranked alternatives a layer publishes: a reliability map is
+a monotone re-labelling, not a filter.**
+*Statement.* "**Zero information loss (E-14, user principle):** calibration re-scales confidences; it
+never prunes the ranked alternatives a layer publishes. A reliability map is a monotone re-labeling, not
+a filter." — §2 constraint 8 (locator: lines 187–188).
+*Derived.* S-50, S-52.
+*Current-text axis.* S-50: **AGREES** — what is published stands, and a downstream reading of it does
+not change what it contains. S-52: **AGREES** — a status is re-stated, never used to remove the item it
+is attached to.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ The strictest statement in the outgoing record of
+what a downstream operation may do to a published list: it may re-label, and it may not remove.*
+
+**Row 29.2 — the carried alternatives are a load-bearing output surface, so the same winner with
+different alternatives is a behaviour change; evidence about a rule's inertness must measure the full
+output surface and not the winner alone.**
+*Statement.* "**RULED: `alternatives[]` IS inside the byte-identity acceptance contract** — the carried
+alternatives are a load-bearing output surface …, so 'same winner, different alternatives' is a behavior
+change. … **Evidence-method lesson recorded: firing-site/inertness evidence must measure the FULL output
+surface (winner + alternatives), not the winner alone.**" — §15 O-11 (i) (locator: lines 1014–1023).
+*Derived.* S-50, S-52.
+*Current-text axis.* S-50: **AGREES** — everything on the published surface is published, so a change to
+any of it is a change. S-52: **AGREES** — a carried alternative has a standing of its own and is not a
+by-product of the winner.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ The consequence is concrete and was paid: a rule's
+retirement was **held** because it was winner-inert and alternatives-active on a named set of scores.
+The published carry is treated as output, not as internal state.*
+
+**Row 29.3 — a defect in a published quantity is an upstream finding and not a mapping target: fitting a
+non-monotone map would launder an inference defect into the confidence semantics.**
+*Statement.* "**D-8 Calibration maps are monotone or deferred.** A non-monotone empirical curve … is an
+upstream finding, not a mapping target — fitting a non-monotone map would launder an inference defect
+into the confidence semantics." — §9 D-8 (locator: lines 695–697).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES**, and this is the failure its status field exists against — a
+published quantity whose meaning has been bent to hide what produced it.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ The same refusal as Rows 24.15 and 27.11, in a third
+form: there a mark and a field may not be reused for a different thing; here a curve may not be
+straightened to make a defect publishable.*
+
+**Row 29.4 — the two published honesty forms: an unknown carried as unknown, and a collapse that is
+lossless because the collapsed value is recomputable from what is carried.**
+*Statement.* "**New taxonomy forms:** (+1) honest-unknown-carry (the positive counter-form —
+`extensionsKnown`/`openMark`/`SliceDecision::Abstain`), (+2) recomputable-collapse (a hard value derived
+from a carried/regenerable source is lossless — guards against over-flagging; e.g.
+`SliceKeyMode.uncertain ≡ confidence<threshold`)." — §15 O-20 (locator: lines 1316–1318).
+*Derived.* S-52, S-33.
+*Current-text axis.* S-52: **AGREES** — the honest-unknown carry is its status field working, and the
+three named fields are the ones Rows 22.17 and 24.15 turn on. S-33: **AGREES** on the second form's
+test — a value derived from a carried set is recoverable from it, so collapsing it loses nothing.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ The outgoing record naming both halves of #12 as
+**forms** rather than as judgments: what an honest carry looks like, and what a harmless collapse looks
+like. The second exists explicitly to stop an audit reporting every summary as a fault.*
+
+**Row 29.5 — structure is never fitted: the interval definitions, the structural class test, the entry
+conditions as against their thresholds, the outer-guard structure, and the grammar itself.**
+*Statement.* "Structural predicates (template interval definitions, the class-(a) structural test,
+§6-block entry *conditions* as opposed to their numeric thresholds, the outer-guard structure), the
+licensed-progression grammar itself …, and any value whose Phase-0 row names a ratified structural
+rationale." — §4.6 (locator: lines 494–498).
+*Derived.* S-51, S-48.
+*Current-text axis.* S-51: **AGREES** — the line between what is structural and what is a decision is
+the line the claim test draws, and this text draws it between what is defined and what is tuned. S-48:
+**AGREES** — a parameter is declared as a parameter, and what is not one is not treated as one.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 29.6 — a failure is reported as a finding with its evidence and never smoothed over: a family that
+cannot beat its baseline, a rule that cannot be retired, a confidence that cannot be calibrated.**
+*Statement.* "**Honest failure reporting.** A family that cannot beat its baseline under the
+constraints, a rule that cannot be retired, a confidence that cannot be calibrated — each is a *finding*,
+reported with its evidence, never smoothed over" — §8 (locator: lines 623–625).
+*Derived.* S-48, S-52.
+*Current-text axis.* S-48: **AGREES**, and it is the same act — the derivation declares its own cue
+window UNESTABLISHED and names the measurement that would settle it rather than filling the gap. S-52:
+**AGREES** — what is not established is published as not established.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### The measured facts — what the current surface loses
+
+**Row 29.7 — as measured, two spellings of one pitch class collapse to one by iteration order,
+destroying a distinct notated spelling.**
+*Statement.* "the legacy `mergeChordAnalysisTones`/`tpcForPc` spelling collapse … — same-pc different-TPC
+tones collapse to one spelling by **iteration order**, destroying a distinct enharmonic spelling; the
+rebuild L4 already reads per-note spelling correctly (shared `lineOfFifths`), so the fix is the named
+'**second tpc reader**' unification residual" — §15 O-20 (locator: lines 1306–1310).
+*Derived.* S-3, S-24.
+*Current-text axis.* S-3: **DIFFERS** — it supplies the **spelled pitch** per note, and this destroys
+the distinction between two spellings of one pitch class before any consumer sees it. S-24: **AGREES**
+on the case being real and nameable — its own tie test turns on *"the same spelled pitch"*, and Row
+22.12's spelling-pin test fails a slice *"sounding both `G♯` and `A♭`"*, which is exactly the
+configuration this collapse destroys.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* does the same-pitch-class spelling
+collapse still exist on the arm that ships, does a second reader of the spelling still exist beside the
+one that reads it correctly, and which of the two does each consumer reach?
+
+**Row 29.8 — as measured, one promotion path preserves the distinct enharmonic partner among the carried
+alternatives and the other overwrites it with a near-duplicate of the winner.**
+*Statement.* "Gate A `std::swap` (preserves the distinct enharmonic partner) vs FM2
+`push_back(buildResult)` (appends a winner near-duplicate, loses it) …; consumer PRESENT …,
+user-visible" — §15 O-20 (locator: lines 1303–1305); characterised at O-19, *"a Minor7-slash winner's
+**enharmonic Major-add6 partner** is retained as an alternative under Gate A's swap … but **overwritten
+by a freshly-built near-duplicate of the winner** under FM2's append"* (lines 1328–1330).
+*Derived.* S-50, S-33.
+*Current-text axis.* S-50: **DIFFERS** — a published list from which a distinct reading is replaced by a
+duplicate of another entry is not the publication the derivation specifies. S-33: **AGREES** on what
+makes the two entries distinct — different spellings of the same sounding content are different
+readings, not one.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* do both promotion paths still exist on
+the arm that ships, does either still overwrite a distinct carried reading with a near-duplicate, and
+has the unification that would end it landed?
+
+**Row 29.9 — as measured, the carried set's cap discards an above-threshold reading on most slices, and
+a third distinct root clears threshold on about a quarter of them.**
+*Statement.* "the cap-of-3 discards ≥1 above-threshold reading on **79.5/75.4/79.3 %** of slices. …
+**The load-bearing exclusion tail (#12):** a **≥3rd distinct root** clears threshold on **25.1/16.1/24.9
+%** of slices — roots the cap-of-3 + single diff-root append … **cannot carry**" — §15 O-24 (locator:
+lines 1226–1234).
+*Derived.* S-50.
+*Current-text axis.* S-50: **DIFFERS** — its publication is fixed by content and carries no cut, so the
+class of loss this measures has no counterpart in it.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* is the carried set still capped on the
+arm that ships, and does the measured discard rate still hold? *★★ This is the measurement Rows 24.1 and
+27.8 rest on — the first ruling that the exclusion tail is load-bearing, and the second that no
+truncation constant exists anywhere in the publication.*
+
+**Row 29.10 — as measured, a weight fit can relocate a boundary failure but cannot remove it: the
+candidate reads the right chord and starts it late, across the bar line into the next annotated
+region.**
+*Statement.* "a **Layer-2/4 segmentation over-grab** (the candidate reads the RIGHT chord, Dm/F, but
+starts an eighth late and extends across the barline into the GT's Gm region — **the weight fit
+relocates the boundary failure, it cannot remove it**; the … 'ceiling is upstream of weights' caveat,
+now measured at a single case)." — §15 O-11 (ii) (locator: lines 1027–1031).
+*Derived.* S-28, S-32.
+*Current-text axis.* S-28: **AGREES**, and it is the reason the failure is not weight-reachable — a
+change point is an onset or a release, so where a span begins is a fact about the notes and not a
+quantity a weight can move. S-32: **AGREES** — a span that extends across an annotated boundary is a
+covering problem, not a scoring one.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* is the named case still failing this way
+on the arm that ships, and does the class it stands for — a right chord placed at a wrong boundary —
+still account for what the record apportions to segmentation? *★★★ The outgoing record's single clearest
+demonstration that a boundary error is a boundary error: the analysis had the chord right and the span
+wrong, and no weight could fix it.*
+
+#### The measurement's own subject
+
+**Row 29.11 — the ceiling of a weight-fitting objective is upstream of the weights: much of the residual
+is spelling, bass and inversion, and segmentation, none of them weight-reachable.**
+*Statement.* "**The objective's ceiling is upstream of weights.** The cross-layer-budget caveat …: much
+BIR=false mass is spelling, bass/inversion, segmentation — not weight-reachable." — §11 (locator: lines
+825–829).
+*Derived.* S-3, S-44, S-28.
+*Current-text axis.* S-3: **AGREES** — the spelling is a supplied fact, so an error in reading it is not
+a scoring error. S-44: **AGREES** — the bass is defined and read, not scored. S-28: **AGREES** — the
+change points are read off the notes.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**, with Rows
+22.19 and 14.4. *(The apportionment itself is the measurement layer's; what this row adds is that three
+of its four named classes are L0's and L1's facts.)*
+
+**Row 29.12 — the measurement's unit is the union of both sides' boundaries, each resulting half-open
+span scored once and weighted by its duration.**
+*Statement.* "**robust unit** | The granularity-robust **union-of-boundaries cell**: overlay our region
+boundaries with the human-annotation row boundaries; each resulting half-open tick span is scored once
+and weighted by its duration." — §0 (locator: line 31).
+*Derived.* S-29, S-32.
+*Current-text axis.* S-29: **AGREES**, and precisely — the derived slice is a **half-open** stretch
+between two change points, and the measurement's cell is a half-open stretch between two boundaries.
+S-32: **AGREES** — each is scored once and together they cover the span, which is exactly the covering
+property.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**. *★
+Recorded because the measurement's unit was built on the same two properties the derived slice has —
+half-open and exactly covering — and neither text cites the other for them.*
+
+**Row 29.13 — every shipped value can answer what data shaped it, from its manifest row and its
+ledger.**
+*Statement.* "**License provenance as a first-class property.** Every shipped parameter can answer 'what
+data shaped you?' from the manifest + ledger." — §8 (locator: lines 618–620).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** — an established value is one whose ground is known and
+retrievable, which is what this makes structural.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**, with Row
+27.2. *(Row 27.2 is the same rule for a published analysis record; this is it for a fitted value.)*
+
+**Row 29.14 — a cell without ground-truth coverage is unscored and never mis-bucketed, a parse failure
+is reported separately, and every reported rate names its denominator.**
+*Statement.* "**Error/edge handling.** Cells without WiR coverage are unscored, never mis-bucketed …;
+key-parse failures reported separately (the §2.1a denominator lesson — every reported rate names its
+denominator …)." — §8 (locator: lines 626–628).
+*Derived.* S-31, S-52.
+*Current-text axis.* S-31: **AGREES** in shape — an uncovered cell is handled as its own case rather
+than folded into a neighbouring one, which is the same refusal that publishes a silent slice as a slice.
+S-52: **AGREES** — a figure carries what it is over.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**.
+
+---
+
+#### Not a statement — counted by paragraph, bullet, table row and numbered item, per section, so the arithmetic closes (186)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the banner | 1 | the signed status and the arc's framing |
+| §0 | 32 | the terms lead, thirty-one term rows other than the robust unit, and the cross-document handles |
+| §1 | 10 | what the arc is, its four motivating problems, its scope in and out, and the two dated corrections |
+| §2 | 13 | the twelve remaining constraints — the licence pool, the dual track, the two-tier policy, the preset and idiom rules, measure-first, held-out discipline, adoption discipline, doc lockstep, unification, coverage and the fork rule |
+| §3 | 11 | the imports, the exports, the consumers, the not-depended-on list, the five-row source-split table, and the locators |
+| §4 | 34 | the five phases — inventory and cost, the objective's own clauses, the harness and screen, the four families and the style-response measurement, the calibration steps, and the adoption and re-baseline blocks |
+| §5 | 8 | the seven building blocks and their tooling note |
+| §6 | 5 | the five runtime scenarios |
+| §7 | 5 | the four artifact schemas and the ownership note |
+| §8 | 3 | determinism, the sandwich, and performance |
+| §9 | 10 | decisions D-1 to D-7 and D-9 to D-11 |
+| §10 | 6 | the six testing obligations |
+| §11 | 7 | the seven remaining risks |
+| §12 | 1 | the glossary pointer |
+| §13 | 1 | the background |
+| §14 | 8 | the borrowed methods, the three lever dispositions, the style-table precedents, the negative-transfer precedent, and the rejected alternatives |
+| §15 | 30 | the nine ratification asks and twenty-one of the twenty-five open items |
+| the QA record | 1 | the five-pass self-check and audit record |
+| **Total** | **186** | — |
+
+*The count is of units the tabulation did not reach, not of units it did not read. **The whole document
+was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **14** (29.1 to 29.14). No row of this document splits.
+- **Outgoing statements dispositioned: 14.**
+- Units counted under *not a statement*: **186**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 6 | 29.1, 29.2, 29.3, 29.4, 29.5, 29.6 |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 4 | 29.11, 29.12, 29.13, 29.14 |
+| QUARANTINED | 4 | 29.7, 29.8, 29.9, 29.10 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **14** | — |
+
+**The column sums to 14, against 14 statements, so the arithmetic closes at this document:**
+6 + 0 + 4 + 4 + 0 + 0 + 0 = 14.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 23 |
+| DIFFERS | 3 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **26** |
+
+*(Counted per named derived statement per statement-row. 26 verdicts over 14 statements because ten
+rows name more than one derived statement. **ADOPTED — proposed is zero — the only document in the
+population where it is** — because this document proposes nothing about L0's or L1's subject: it either
+states a rule the derivation already carries, or reports a measurement of what the current surface
+loses.)*
+
+#### What this document's rows put in front of the user
+
+**Rows 29.7 to 29.10 are the measured half of four questions this file has been carrying.** A **spelling
+destroyed by iteration order** (S-3's supplied fact, lost before any consumer sees it). A **carried
+alternative overwritten** with a near-duplicate of the winner. **The cap's cost measured** — an
+above-threshold reading discarded on most slices, a third distinct root above threshold on about a
+quarter. And **a boundary failure a weight fit could only relocate**, at a case where the analysis had
+the chord right and the span wrong. **Every one of them is an L0 or L1 fact lost or misplaced, measured
+by an arc whose subject was the scoring weights.**
+
+**Row 29.2 is the rule that made one of those losses actionable.** The carried alternatives were ruled
+**inside the byte-identity acceptance contract**, so a rule that was winner-inert and alternatives-active
+could not retire on the winner evidence alone. **Evidence about a change must measure the whole published
+surface** — which is the derivation's own publication discipline enforced as an acceptance rule.
+
+**Row 29.4 names both halves of the no-information-loss principle as forms.** The **honest-unknown
+carry** — the positive counter-form, and the three fields Rows 22.17 and 24.15 turn on — and the
+**recomputable collapse**, which exists to stop an audit reporting every summary as a fault. **The
+outgoing record has a vocabulary for this, and the derived specification has the rules without the
+vocabulary.**
+
+**Row 29.12 is a quiet coincidence worth naming.** The measurement's cell is a **half-open span between
+the union of both sides' boundaries, scored once and covering the whole**. S-29's slice is half-open and
+S-32's list covers the span exactly. **The measurement and the analysis were built on the same two
+properties, and neither text cites the other for them.**
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -12569,6 +12898,16 @@ worked; it is not complete over the population.**
   no stale data anywhere on the inference path.
 - Row 28.13 — that a missing ground truth is a consumer limitation and not a property of the entries
   measured against it.
+- Row 29.11 — that the ceiling of a weight-fitting objective is upstream of the weights, much of the
+  residual being spelling, bass and inversion, and segmentation. *(With Rows 22.19 and 14.4; three of its
+  four named classes are L0's and L1's own facts.)*
+- Row 29.12 — the measurement's unit: the union of both sides' boundaries, each resulting half-open span
+  scored once and weighted by its duration. *(S-29's half-open slice and S-32's exact covering travel
+  with it — the same two properties, reached independently.)*
+- Row 29.13 — that every shipped value can answer what data shaped it, from its manifest row and its
+  ledger. *(With Row 27.2, which is the same rule for a published analysis record.)*
+- Row 29.14 — that an uncovered cell is unscored and never mis-bucketed, a parse failure is reported
+  separately, and every reported rate names its denominator.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -12734,6 +13073,16 @@ by paragraph rather than rowed. **Document 9 added the two below.**
 78. Row 28.11 — is the catalog matcher still exact-and-whole on the arm that ships, does the match score
     still take only the one value, and is the pop loop still encoded in a single rotation the matcher
     will not recognise in its other three?
+79. **★★ Row 29.7 — does the same-pitch-class spelling collapse still exist on the arm that ships**, is
+    there still a second reader of the spelling beside the one that reads it correctly, and which of the
+    two does each consumer reach? *(A measured destruction of an S-3 supplied fact, by iteration order.)*
+80. Row 29.8 — do both promotion paths still exist, does either still overwrite a distinct carried
+    reading with a near-duplicate of the winner, and has the unification that would end it landed?
+81. Row 29.9 — is the carried set still capped on the arm that ships, and does the measured discard rate
+    still hold? *(The measurement Rows 24.1 and 27.8 rest on.)*
+82. **★★ Row 29.10 — is the named case still failing as a right chord at a wrong boundary**, and does
+    the class it stands for still account for what the record apportions to segmentation? *(The one
+    measured demonstration that a boundary error cannot be reached by a weight.)*
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -13338,37 +13687,42 @@ Gathered from the documents tabulated so far. **Not complete over the population
     time with the notated spelling named as what **establishes** the derivation.
 61. **Row 28.12 — S-50's exhaustive publication against a catalog that declares itself asymptotic**, a
     difference between two published surfaces rather than a disagreement about one.
+62. **Rows 29.7, 29.8 and 29.9 — the three MEASURED losses.** S-3's spelled pitch against two spellings
+    of one pitch class collapsed by iteration order; S-50's published list against a distinct carried
+    reading overwritten by a near-duplicate of the winner; and S-50's uncapped publication against a
+    measured discard of an above-threshold reading on most slices. **These are the only DIFFERS in the
+    file backed by a measurement of the current surface rather than by a reading of a specification.**
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the twenty-eight documents tabulated, not a distribution over the
-population.** The population is 29 documents; **1 is untouched**. No figure below may be read as
-describing the outgoing text as a whole.
+**★ THIS IS NOW THE DISTRIBUTION OVER THE WHOLE POPULATION — all 29 documents, none untouched.** It is
+a count of THIS FILE's own rows, and of nothing else: it says how the dispositions and verdicts this
+session authored fall, not how good either text is. No ratio, percentage or grade is derived from it.
 
-**Dispositions, over the 743 statements placed so far:**
+**Dispositions, over the 757 statements placed:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | 7 | 9 | 0 | 13 | 6 | **307** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | 1 | 2 | 0 | 3 | 1 | **212** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | 9 | 1 | 4 | 2 | 5 | **93** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | 3 | 4 | 0 | 0 | 1 | **96** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **34** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | 20 | 16 | 4 | 18 | 13 | **743** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | 7 | 9 | 0 | 13 | 6 | 6 | **313** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | 1 | 2 | 0 | 3 | 1 | 0 | **212** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | 9 | 1 | 4 | 2 | 5 | 4 | **97** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | 3 | 4 | 0 | 0 | 1 | 4 | **100** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **34** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | 20 | 16 | 4 | 18 | 13 | 14 | **757** |
 
-**The arithmetic closes:** 307 + 212 + 93 + 96 + 0 + 34 + 1 = 743, against 743 statements, and each
+**The arithmetic closes:** 313 + 212 + 97 + 100 + 0 + 34 + 1 = 757, against 757 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same twenty-eight documents:**
+**Current-text verdicts, over all twenty-nine documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | 28 | 25 | 7 | 34 | 18 | **862** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | 3 | 2 | 0 | 3 | 1 | **237** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | 0 | 1 | 0 | 0 | 1 | **180** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | 31 | 28 | 7 | 37 | 20 | **1279** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | 28 | 25 | 7 | 34 | 18 | 23 | **885** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | 3 | 2 | 0 | 3 | 1 | 3 | **240** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | **180** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | 31 | 28 | 7 | 37 | 20 | 26 | **1305** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -13391,8 +13745,8 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the twenty-eight documents was placed there.** The reason is visible in the classes that
-did
+statement in the whole population of twenty-nine documents was placed there.** The reason is visible in
+the classes that did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
 which it records as HISTORICAL. Neither is a discard, and neither loses anything.
