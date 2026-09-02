@@ -38,11 +38,12 @@ The population's order is the artifact's:
 | 1 | `ARCHITECTURE.md` — the Layer 1 section | **DONE** |
 | 2 | `ARCHITECTURE.md` — the Layer 2 section | **DONE** |
 | 3 | `cowork_layer1_note_model_design.md` | **DONE** |
-| 4–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 4 | `cowork_layer1_tone_collection_design.md` | **DONE** |
+| 5–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 4–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 5–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 4**, `cowork_layer1_tone_collection_design.md`.
+dispatch resumes at **position 5**, `cowork_layer1_extend_design.md`.
 
 **The sections that can only be written once every document is done are therefore NOT written**, and
 their absence is deliberate rather than an omission: the derived-side rows (one per S-1…S-54 with the
@@ -2168,6 +2169,490 @@ the derivation's OQ-4.
 
 ---
 
+### 6.4 — Document 4: `cowork_layer1_tone_collection_design.md`
+
+> **Manifest for this document.** Outgoing statements: **40** (rows 4.1 to 4.40). Listed under *not a
+> statement*: **6**. Counted at this document by this session.
+>
+> **Why this document is in the population:** named by Ruling 32 item 2 — one of the five root design
+> documents. It is **not** in the ruled specification document set, and stays in the population by
+> name.
+>
+> **★ THIS DOCUMENT'S OWN BANNER DECLARES IT HISTORICAL, AND THAT CHANGES HOW ITS ROWS READ WITHOUT
+> CHANGING HOW THEY ARE DISPOSITIONED.** Its banner states that the responsibility it designs *"is now
+> the lossless note model's"*, that it *"is NOT a contract home"*, and that its sign-off checkboxes
+> were never ticked. **A document's status is not a disposition**: the phase definition assigns a
+> disposition per *statement*, so a statement of this document whose content a derived statement
+> carries is ADOPTED — carried exactly as it would be anywhere else, and the banner is rowed as the
+> status it is. What the banner does change is the reading: a large part of this document is a
+> **verified description of code as it stood**, and such statements land QUARANTINED because that is
+> what they are, not because the document is superseded.
+
+---
+
+#### §1 and §2 — the intended role and the scope
+
+**Row 4.1 — collect, and only collect, every sounding note, annotated, losslessly, by one path.**
+*Statement.* "**Collect — and only collect — every sounding note in a region, annotated, losslessly,
+by ONE path.**" — §1 (locator: line 34).
+*Derived.* S-3, S-18, S-33.
+*Current-text axis.* S-3: **AGREES**. S-18: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 4.2 — it is the boundary between the engraving model and the analysis types.**
+*Statement.* "It is the boundary between the engraving model (Score/Segment/Note) and the analysis
+types." — §1 (locator: line 35).
+*Derived.* S-1, S-9.
+*Current-text axis.* S-1: **AGREES**. S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-1 is that boundary stated as a test).
+
+**Row 4.3 — one factual question, answered with the annotated note set.**
+*Statement.* "It answers exactly one factual question: 'for region `[startTick, endTick)`, what notes
+sound?' — and returns the **note set**, each note annotated with the facts needed downstream (pitch,
+tpc/spelling, staff, voice, onset, offset, in-region duration, `isGrace`, `plays`, `visible`,
+staff-eligibility)." — §1 (locator: line 36).
+*Derived.* S-3, S-29.
+*Current-text axis.* S-29: **AGREES** on the half-open region. S-3: **DIFFERS**.
+*The difference.* The same shortfall as Rows 1.3 and 3.42 — no pitched flag, no tie flags, no cue
+size, no ornament signs, no bar-relative position — and one addition of its own: an **in-region
+duration**, a note's duration clipped to the queried region, which S-3 does not carry and which is a
+property of the query rather than of the note.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.42, and adding one question of
+its own: whether a clipped in-region duration belongs in L0 at all, being a function of the caller's
+region.
+
+**Row 4.4 — the four things it must not do.**
+*Statement.* "It must **NOT** filter (drop grace/non-playing/invisible), **NOT** weight or aggregate
+into pitch-class evidence, **NOT** select a bass, and **NOT** make any harmonic/segmentation/key
+decision." — §1 (locator: line 38).
+*Derived.* S-18, S-33, S-44, S-51.
+*Current-text axis.* S-18: **AGREES**. S-33: **AGREES**. S-51: **AGREES**. S-44: **DIFFERS**.
+*The difference.* S-44 defines the bass **inside L1** — *"every cue is defined over the **bass**, which
+at a slice is the lowest sounding pitch of that slice's sounding set"* — while the outgoing statement
+forbids this layer to select a bass at all.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state where the
+bass is determined, since S-44 places it at L1 as a cue input and this text places it downstream. *(The
+two are reconcilable — S-44's bass is read off the sounding set rather than selected by weighting —
+and the proposal is that the specification say so rather than leaving the two texts to be read
+together.)*
+
+**Row 4.5 — collection, filtering and weighting are three responsibilities.**
+*Statement.* "**Collection** (this layer): the facts …. **Filtering** (a distinct, explicit decision)
+…. **Weighting** (a distinct derived layer): the pitch-class evidence + bass, computed as a *view*
+over the collected notes — never replacing them." — §1 (locator: line 41).
+*Derived.* S-15, S-18, S-33, S-49.
+*Current-text axis.* S-15: **AGREES**. S-18: **AGREES**. S-33: **AGREES**. S-49: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** — the derivation draws the same three lines: S-3 and
+S-18 for the facts, S-15 for the filter, S-49 for the view published beside rather than instead.
+
+**Row 4.6 — the module is organised by mechanism rather than by responsibility.**
+*Statement.* "**NOT this layer, but living in the same module** (a decomposition smell …): the
+segmentation sub-boundary detectors …, `findTemporalContext` …, `collectPitchContext` …. The module
+header calls itself 'single source of truth for score-walking helpers' — i.e. it is organised by
+*mechanism* (score-walking), not by *responsibility*." — §2 (locator: line 55).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do those three co-located functions still
+sit in that module, and does any of them still run on the arm that ships?
+
+#### §3 — what the code did, as verified at the time
+
+*Every row of this section describes the implementation as it stood when the document was written, so
+every one is QUARANTINED. The derived statements are named where one speaks to the described
+behaviour, because a DIFFERS here is what makes the audit question worth asking.*
+
+**Row 4.7 — staff eligibility as coded.**
+*Statement.* "A staff is eligible at a tick iff: it is **shown**, its instrument at that tick does
+**not** use a **drumset** …, and it is **not a 'Chord Track' staff** …. So: hidden, percussion, and
+chord-symbol staves are dropped" — §3.1 (locator: line 64).
+*Derived.* S-15, S-20, S-2.
+*Current-text axis.* S-20: **AGREES** on percussion. S-2: **AGREES** on the chord track. S-15:
+**DIFFERS** on hidden staves, and on *dropped* rather than *flagged*.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does any live path still **drop** an
+ineligible-staff note rather than carry it flagged?
+
+**Row 4.8 — the backward sustain walk stops at a fixed four-whole-note cap.**
+*Statement.* "**Backward sustain walk.** From the first segment at/after `startTick`, walk
+**backward** while `segTick ≥ startTick − Fraction(4,1)`. `Fraction(4,1)` = **4 whole notes** …, a
+**fixed cap**." — §3.2 (locator: line 71).
+*Derived.* S-29.
+*Current-text axis.* S-29: **DIFFERS** — S-29's sounding set is defined by onset and release with no
+search bound, so a note held longer than the cap is in the set S-29 defines and absent from the one
+this walk builds.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does any live path still bound the backward
+search, and if so does it drop notes S-29's sounding set contains?
+
+**Row 4.9 — the forward walk, and a legacy dense-start branch.**
+*Statement.* "**Forward region walk.** Walk segments with `tick < endTick`. (If
+`excludeLookAheadOnDenseStart` AND ≥3 PCs already sound at `startTick`, segments after `startTick` are
+skipped — a **legacy batch-only path; the bridge leaves it OFF**.)" — §3.2 (locator: line 76).
+*Derived.* S-28, S-29.
+*Current-text axis.* S-28: **DIFFERS**. S-29: **DIFFERS** — skipping segments after the region's start
+removes change points S-28 makes exhaustive.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the dense-start branch reachable on any
+arm that ships?
+
+**Row 4.10 — per-note filtering drops grace, silent and invisible notes.**
+*Statement.* "**Per-note filtering.** Only `ChordRest`s that are chords and **not grace notes**; per
+note, only those with `n->play()` **and** `n->visible()` (silent / invisible notes skipped). Rests
+contribute nothing." — §3.2 (locator: line 79).
+*Derived.* S-15, S-16, S-18, S-4.
+*Current-text axis.* S-15: **AGREES** on the three conditions it shares. S-16: **AGREES** that a grace
+opens nothing. S-18: **DIFFERS** — S-18 carries the excluded notes, this skips them. S-4: **DIFFERS**
+— S-4 requires L0 to supply per-rest facts, this contributes nothing for a rest.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are rests supplied to any live consumer as
+S-4 requires, or does the surface still contribute nothing for them?
+
+**Row 4.11 — the weighting ladder.**
+*Statement.* "Base weight per note occurrence = `(durationInRegion / regionDuration) ×
+beatWeight(beatType)`, where `beatWeight`: DOWNBEAT 1.0 · stressed 0.85 · unstressed 0.75 · sub-beat
+0.5." — §3.2 (locator: line 82).
+*Derived.* S-35.
+*Current-text axis.* S-35: **DIFFERS** — S-35 publishes a metric strength **class** as an ordinal with
+its level's period and refuses to fold it into a number, while this is a four-valued numeric ladder
+folded straight into a weight.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the shipped arm still weight by this
+four-valued ladder, and is that the same quantity S-35's class is meant to publish?
+
+**Row 4.12 — aggregation by pitch class.**
+*Statement.* "**Aggregation by PITCH CLASS** into `accum[12]`: sums `totalWeight`,
+`durationInRegion`; records the set of distinct onset ticks …, the **lowest** pitch + its tpc, a
+per-tick voice count, and an `onsetAtRegionStart` flag" — §3.2 (locator: line 84).
+*Derived.* S-33.
+*Current-text axis.* S-33: **DIFFERS**, decisively — identity is the event set, not the pitch-class
+set.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does any live consumer still receive
+pitch-class accumulators in place of the event set?
+
+**Row 4.13 — the repetition boost.**
+*Statement.* "**Pass 2 — repetition boost:** `totalWeight ×= (1 + 0.3 × (distinctMetricPositions −
+1))`." — §3.2 (locator: line 87).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the constant still in force, and was it
+ever fitted?
+
+**Row 4.14 — the cross-voice boost.**
+*Statement.* "**Pass 3 — cross-voice boost:** `totalWeight ×= 1.5` if the PC is sounded by `>1` voice
+at some tick." — §3.2 (locator: line 88).
+*Derived.* S-33.
+*Current-text axis.* S-33: **DIFFERS** — a doubling is a change of the event set in S-33 and a weight
+multiplier here.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* same as Row 4.13.
+
+**Row 4.15 — the sustain-pedal tail is driven by actual pedal markings.**
+*Statement.* "**Pass 4 — sustain-pedal tail:** **driven by actual pedal markings** …. For a note whose
+written end is inside the region under an active pedal, adds a **discounted** tail-weight … for the
+span from note-off to pedal release." — §3.2 (locator: line 89).
+*Derived.* S-54.
+*Current-text axis.* S-54: **DIFFERS** — S-54 keeps the notated release whatever pedal mark spans it
+and publishes a PEDAL-HELD attribute instead, naming the extend-the-release alternative as OQ-3;
+the outgoing text extends the sounding weight to the pedal lift.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a live path still extend a note's
+weight to the pedal lift, which S-54 makes an open question and does not decide?
+
+**Row 4.16 — the weights are normalised to sum to one.**
+*Statement.* "**Normalise** all PC weights to sum to **1.0**." — §3.2 (locator: line 93).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the normalisation still applied, and
+does any consumer read the un-normalised weight?
+
+**Row 4.17 — bass selection with a passing-tone floor.**
+*Statement.* "**Bass selection.** Bass PC = the **lowest pitch among PCs whose weight ≥
+`bassPassingToneMinWeightFraction` × total`** …; falls back to the absolute lowest if none clears the
+floor." — §3.2 (locator: line 94).
+*Derived.* S-44.
+*Current-text axis.* S-44: **DIFFERS** — S-44's bass is *"the lowest sounding pitch of that slice's
+sounding set"*, with no floor and no weighting, and S-44 names the proxy hazard it accepts.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which bass does the shipped arm use, and
+does any cue or gate read a floored bass where S-44 specifies the lowest sounding pitch?
+
+**Row 4.18 — the output is one entry per sounding pitch class.**
+*Statement.* "**Output:** a `vector<ChordAnalysisTone>` with **one entry per sounding pitch class**
+(≤12)." — §3.2 (locator: line 97).
+*Derived.* S-33, S-50.
+*Current-text axis.* S-33: **DIFFERS**. S-50: **DIFFERS**.
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Row 4.12.
+
+**Row 4.19 — a second, divergent collection semantics.**
+*Statement.* "`buildTones` converts those to `ChordAnalysisTone` **one-per-note** (no weighting …).
+… **It is a second, divergent collection semantics** (per-note + unweighted) vs `collectRegionTones`
+(per-pitch-class + weighted)." — §3.3 (locator: line 105).
+*Derived.* S-50.
+*Current-text axis.* S-50: **DIFFERS** — S-50 publishes one output surface and names it exhaustively.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do two collection semantics still coexist,
+and which does the arm that ships read?
+
+**Row 4.20 — the reach, summarised.**
+*Statement.* "It reaches **backward** (pre-region sustains) **and forward within the region**; it does
+**not** reach forward past `endTick`. … The backward cap is the fixed `Fraction(4,1)` = 4 whole notes
+in **both** collectors." — §3.4 (locator: line 111).
+*Derived.* S-29, S-53.
+*Current-text axis.* S-29: **DIFFERS** (as at Row 4.8). S-53: **AGREES** that the span is the caller's.
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Row 4.8.
+
+#### §4 — the findings the document records about that code
+
+**Row 4.21 — the layer conflates three responsibilities.**
+*Statement.* "**The layer conflates THREE responsibilities …** As built it does *collection* +
+*filtering* + *weighting/aggregation* in one pass …. These are factual, decisional, and interpretive
+jobs respectively; merging them is what forces the information loss …, the silent dropping …, and the
+divergent paths." — §4.0 (locator: line 117).
+*Derived.* S-15, S-18, S-33.
+*Current-text axis.* S-15: **AGREES**. S-18: **AGREES**. S-33: **AGREES** — the derivation separates
+the same three.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the three still merged in one pass on
+any live path?
+
+**Row 4.22 — it drops rather than collects-and-annotates.**
+*Statement.* "It *identifies* grace notes … and discards them, and likewise discards `!play()`,
+`!visible()`, and ineligible-staff notes. Discarding is a filtering decision, not collection — and it
+is irreversible information loss" — §4.1b (locator: line 124).
+*Derived.* S-18, S-16.
+*Current-text axis.* S-18: **AGREES**. S-16: **AGREES** — both require the excluded note to be
+published rather than dropped.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the loss still present on any live path?
+
+**Row 4.23 — it turns the score into pitch-class evidence and discards the notes.**
+*Statement.* "`collectRegionTones` collapses every note into ≤12 per-pitch-class accumulators.
+Register beyond 'lowest per PC' is dropped, **voice identity** is dropped …, **individual
+onsets/offsets and tie structure** are dropped …, and **spelling (tpc) is kept only for the lowest
+occurrence** of each PC." — §4.1 (locator: line 131).
+*Derived.* S-3, S-13, S-23, S-33.
+*Current-text axis.* S-3: **AGREES** that those facts are required. S-13: **AGREES**. S-23:
+**AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which of the four dropped facts is still
+unavailable to a live consumer?
+
+**Row 4.24 — the backward reach should be until silent, not a fixed cap.**
+*Statement.* "Correct behaviour is to walk back to each voice's actual onset (until the voice is
+genuinely silent), not a magic horizon." — §4.2 (locator: line 143).
+*Derived.* S-29.
+*Current-text axis.* S-29: **THE DERIVATION IS SILENT** on the search, as at Rows 1.5(ii) and 3.26.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 1.5(ii), 3.26 and 3.53 — this is
+the fourth independent place in the outgoing record where the no-horizon rule is stated and the
+derivation does not carry it.
+
+**Row 4.25 — there is no forward reach, and progression context lives elsewhere.**
+*Statement.* "The layer is region-bounded with no anticipation/cross-region forward read; 'what comes
+next' is answered downstream …. If we decide a region needs wider context …, today there is no single
+place to extend the reach — it is split across layers." — §4.3 (locator: line 146).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES** that the extension decision is the consumer's.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the reach still split across layers with
+no single place to extend it?
+
+**Row 4.26 — two divergent collection semantics risk drift.**
+*Statement.* "One layer should have one collection contract; the two paths risk drift (the exact
+failure mode the module was created to end)." — §4.4 (locator: line 154).
+*Derived.* S-50.
+*Current-text axis.* S-50: **AGREES**.
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Row 4.19.
+
+**Row 4.27 — the module is multi-responsibility.**
+*Statement.* "Segmentation sub-boundary detectors, temporal context, and key-pitch context share the
+file with tone collection. The layer's single responsibility is blurred by co-location" — §4.5
+(locator: line 157).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Row 4.6.
+
+**Row 4.28 — the evidence weighting is a stack of unvalidated heuristics.**
+*Statement.* "The repetition boost …, cross-voice boost …, the four `beatWeight` values, the
+pedal-tail multiplier, and the bass passing-tone floor are hardcoded constants that materially decide
+what counts as chord evidence …. None is validated against this layer's own oracle …; they are
+inherited heuristics, not measured choices." — §4.6 (locator: line 161).
+*Derived.* S-35, S-44, S-48, S-52.
+*Current-text axis.* S-48: **AGREES** in discipline — S-48 declares its own window UNESTABLISHED and
+refuses to assert a value. S-52: **AGREES** — a provisional item may not be put under load. S-35:
+**DIFFERS**. S-44: **DIFFERS**.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***. What
+counts as chord evidence, and with what weight, is L2's; the establishment discipline the sentence
+appeals to is already carried at S-48 and S-52 and travels with the relocation rather than being lost.
+
+**Row 4.29 — a legacy branch and an unread surface.**
+*Statement.* "`excludeLookAheadOnDenseStart` is a legacy batch-only branch left OFF in production — a
+divergent path that should be confirmed dead and removed or justified. `[unverified]`: I have not
+re-read `buildPedalWindowIndex`, `safeBeatType`, or the preference *values*" — §4.7 (locator: line
+167).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the legacy branch dead at the current
+commit, and were the three unverified items ever read?
+
+#### §5 and §6 — the proposed target design and the correctness oracle
+
+**Row 4.30 — collection is pure, lossless and one path; nothing dropped, nothing aggregated.**
+*Statement.* "**COLLECTION (this layer) — pure, lossless, ONE path.** Output the **note set**: every
+sounding note in the region, each annotated with … the *flags* …. **Nothing is dropped** … and
+**nothing is aggregated or weighted.**" — §5 (locator: line 175).
+*Derived.* S-3, S-18, S-33.
+*Current-text axis.* S-3: **AGREES**. S-18: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 4.31 — reach until silent, not to a fixed cap.**
+*Statement.* "**Reach until silent, not to a fixed cap.** Within collection, walk back to each voice's
+true onset …. Any forward/context reach is an explicit named capability, not a magic horizon." — §5
+(locator: line 182).
+*Derived.* S-29, S-53.
+*Current-text axis.* S-29: **THE DERIVATION IS SILENT**. S-53: **AGREES** on the named-capability half.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 4.24.
+
+**Row 4.32 — filtering is separate, reversible and inspectable.**
+*Statement.* "**FILTERING (a separate, explicit decision).** A thin step that reads the collection's
+annotations and decides which notes are eligible …. It is *reversible* (it selects, it does not
+destroy) and *inspectable* (the dropped notes remain in the collection)." — §5 (locator: line 185).
+*Derived.* S-15, S-18.
+*Current-text axis.* S-15: **AGREES**. S-18: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** — S-15 is exactly this step, and S-18 is exactly its
+reversibility.
+
+**Row 4.33 — weighting is a separate derived layer, a view and never a replacement.**
+*Statement.* "**WEIGHTING (a separate derived layer).** From the filtered notes, compute the
+pitch-class evidence, the weights …, and the bass — as a **view over the note set, never a
+replacement.** Its heuristics become tunable parameters validated against an oracle, not hardcoded
+magic." — §5 (locator: line 188).
+*Derived.* S-33, S-49.
+*Current-text axis.* S-33: **AGREES** on view-not-replacement. S-49: **AGREES**.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Row 4.28.
+
+**Row 4.34 — the module gains a single responsibility.**
+*Statement.* "**Single responsibility for the module.** Move the segmentation detectors, temporal
+context, and pitch context out into their own layers; this file becomes collection only." — §5
+(locator: line 191).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Rows 4.6 and 4.27 — it names a code move rather than a
+rule of the analysis.
+
+**Row 4.35 — the open sign-off question on the granularity of filtering and weighting.**
+*Statement.* "*(Open question for sign-off: are Filtering and Weighting separate layers, or is this
+layer 'collection + annotation' with Filtering/Weighting as the immediately-downstream layers 1b/1c?
+Either is consistent with the separation — the user decides the granularity.)*" — §5 (locator: line
+194).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — an unanswered sign-off question on a document whose own
+banner records that the sign-off never happened and that the concern was absorbed elsewhere.
+
+**Row 4.36 — this layer's correctness is judged against the score, not against the annotations.**
+*Statement.* "This layer is upstream of key and chord, so its correctness is judged against the
+**score**, not DCML/music21: does it collect exactly the notes a human reading the score would say
+sound in `[start,end)` …, with bass and weights that faithfully reflect the notation?" — §6 (locator:
+line 199).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states falsifiers per statement and
+names no grading oracle.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis*** (NOT A LAYER):
+*"Metric definitions, grading conventions and what counts as ground truth are the measurement layer's
+own design content."* **It is a substantive rule and the relocation is not a way of setting it
+aside** — it is the same rule the record already carries as a standing grading convention.
+
+**Row 4.37 — completeness is all note cases handled, enumerated.**
+*Statement.* "Completeness = all note cases handled (sustains past the cap, ties, tuplets, grace,
+cross-staff, multi-voice unisons, pedal, invisible/non-playing)." — §6 (locator: line 201).
+*Derived.* S-15, S-16, S-18, S-23, S-54.
+*Current-text axis.* S-23: **AGREES** (ties). S-16: **AGREES** (grace). S-18: **AGREES**
+(invisible/non-playing). S-54: **AGREES** (pedal). S-15: **DIFFERS** — the derivation's eligibility
+list reaches neither **tuplets**, **cross-staff** notes nor **multi-voice unisons** as named cases.
+*The difference.* This enumeration names eight note cases a complete L0 must handle; S-15's five
+conditions and S-3's fact list between them name five of the eight and are silent on tuplets,
+cross-staff notes and multi-voice unisons — the last of which is exactly what S-33's slice identity
+turns on.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that this eight-case completeness list
+be carried into L0 as the check its own statements are tested against. **This row is the second place
+in this comparison where the outgoing text supplies something the derivation lacked**, the first being
+Row 3.60.
+
+**Row 4.38 — the per-event metric does not cover this layer.**
+*Statement.* "the per-event tiered metric does **not** cover this layer." — §6 (locator: line 203).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis*** (NOT A LAYER), with Row
+4.36.
+
+#### The banner
+
+**Row 4.39 — the responsibility this document designs is now the note model's.**
+*Statement.* "The single responsibility §1 states — collect every sounding note in a stretch of music,
+annotated, losslessly, by one path — **is now the lossless note model's**" — the status banner
+(locator: line 6).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+**Row 4.40 — the sign-off never happened; the design was superseded by absorption.**
+*Statement.* "This document was put to the user for sign-off and its §7 checkboxes were never ticked;
+what happened instead is that the design was superseded by the note model absorbing the role." — the
+status banner (locator: line 9).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (6)
+
+1. The banner's filing decision — "**Why it was ruled NOT delegated rather than delegated late:** a
+   delegation here would create a SECOND home for a concern that already has one, which principle #6
+   forbids" — *a filing decision about this document*.
+2. The banner's register pointer — "Its two register entries — D-569 and D-570 — keep the class
+   `gap`" — *provenance*.
+3. The **provenance block** — "every 'currently does' statement below is from a source read this
+   session of `…regiontonecollector.{h,cpp}` and `regiontoneprimitives.cpp` at HEAD `edd33901ed`" —
+   *provenance and a commit identifier*.
+4. §1's revision note — "*(The original §1 conflated collection with weighting/bass — corrected here
+   per the user's three review comments …)*" — *provenance*.
+5. §2's **IN this layer** list of three function names — *implementation locators*.
+6. §7's five sign-off checkboxes, none ticked — *a sign-off form*, whose unticked state is rowed as
+   Row 4.40.
+
+#### The arithmetic at this document
+
+- Statements: **40** (rows 4.1 to 4.40; no row of this document splits).
+- Listed under *not a statement*: **6**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 5 | 4.1, 4.2, 4.5, 4.30, 4.32 |
+| ADOPTED — proposed | 5 | 4.3, 4.4, 4.24, 4.31, 4.37 |
+| RELOCATED | 4 | 4.28, 4.33, 4.36, 4.38 |
+| QUARANTINED | 23 | 4.6, 4.7, 4.8, 4.9, 4.10, 4.11, 4.12, 4.13, 4.14, 4.15, 4.16, 4.17, 4.18, 4.19, 4.20, 4.21, 4.22, 4.23, 4.25, 4.26, 4.27, 4.29, 4.34 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 3 | 4.35, 4.39, 4.40 |
+| UNPLACED | 0 | — |
+| **Total** | **40** | — |
+
+**The column sums to 40, against 40 statements:** 5 + 5 + 4 + 23 + 0 + 3 + 0 = 40. **The arithmetic
+closes at this document.**
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 43 |
+| DIFFERS | 20 |
+| THE DERIVATION IS SILENT | 13 |
+| **Total verdicts** | **76** |
+
+#### What this document's rows put in front of the user
+
+**Twenty-three of its forty statements are QUARANTINED**, and that is the document doing its job
+rather than failing one: §3 and §4 are a verified description of code and a list of findings about it,
+which is exactly the class the phase definition reserves for the audit. The two rows worth reading
+now are the ones that run **towards** the derivation rather than against it. **Row 4.37** supplies an
+eight-case completeness list — sustains past a cap, ties, tuplets, grace, cross-staff, multi-voice
+unisons, pedal, invisible and non-playing — of which the derivation names five and is silent on
+tuplets, cross-staff notes and multi-voice unisons; the last is precisely what S-33's slice identity
+turns on, so its absence is not decorative. **Row 4.24** is the fourth independent statement of the
+no-horizon rule in the outgoing record, and the derivation carries it in none of the four places.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -2207,12 +2692,19 @@ worked; it is not complete over the population.**
   pitch-class aggregation, and a weighted bass pick.
 - Row 3.46 — the derived summary views as a class: deliberately lossy read-only summaries over the
   note model, the weighting and the bass pick among them.
+- Row 4.28 — that the evidence weighting is a stack of unvalidated hardcoded constants that materially
+  decide what counts as chord evidence.
+- Row 4.33 — weighting as a separate derived layer: a view over the note set, never a replacement,
+  with its heuristics becoming tunable parameters validated against an oracle.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
 - Row 1.23(ii) — the primitive is validated against this project's own annotated corpus rather than
   cited.
 - Row 1.24(ii) — a figure measured only on chorale texture is to be distrusted.
+- Row 4.36 — an upstream layer's correctness is judged against the **score**, not against the DCML or
+  music21 annotations.
+- Row 4.38 — the per-event tiered metric does not cover an upstream layer.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -2250,6 +2742,31 @@ Gathered from the documents tabulated so far. **Not complete over the population
     order, at the current commit, and is that tested rather than asserted?
 17. Row 3.56 — the same measurement as audit questions 8 and 9 above, recorded a second time in a
     second document: are the recorded per-preset movements reproducible on the arm that ships?
+18. Rows 4.6, 4.27 and 4.34 — do the three co-located non-members still sit in that module, and does
+    any of them still run on the arm that ships?
+19. Row 4.7 — does any live path still **drop** an ineligible-staff note rather than carry it flagged?
+20. Rows 4.8 and 4.20 — does any live path still bound the backward search, and if so does it drop
+    notes S-29's sounding set contains?
+21. Row 4.9 — is the dense-start branch reachable on any arm that ships?
+22. Row 4.10 — are rests supplied to any live consumer as S-4 requires, or does the surface still
+    contribute nothing for them?
+23. Row 4.11 — does the shipped arm still weight by the four-valued beat ladder, and is that the same
+    quantity S-35's class is meant to publish?
+24. Rows 4.12 and 4.18 — does any live consumer still receive pitch-class accumulators in place of the
+    event set?
+25. Rows 4.13, 4.14 and 4.16 — are the repetition boost, the cross-voice boost and the normalisation
+    still in force, and was any of the three ever fitted?
+26. Row 4.15 — does a live path still extend a note's weight to the pedal lift, which S-54 makes an
+    open question and does not decide?
+27. Row 4.17 — which bass does the shipped arm use, and does any cue or gate read a floored bass where
+    S-44 specifies the lowest sounding pitch?
+28. Rows 4.19 and 4.26 — do two collection semantics still coexist, and which does the arm that ships
+    read?
+29. Rows 4.21, 4.22 and 4.23 — are the three responsibilities still merged in one pass, is the
+    information loss still present, and which of the four dropped facts is still unavailable?
+30. Row 4.25 — is the reach still split across layers with no single place to extend it?
+31. Row 4.29 — is the legacy dense-start branch dead at the current commit, and were the three
+    unverified items ever read?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -2300,6 +2817,16 @@ Gathered from the documents tabulated so far. **Not complete over the population
     metric-strength class from.
 19. Row 3.35 — that the append-only and clamp-and-report properties of enlarging the span be stated.
 20. Rows 3.44 and 3.57 — the grace question again, met at the build and at the risk register.
+21. Row 4.3 — that the specification state whether a **clipped in-region duration** belongs in L0 at
+    all, being a function of the caller's region rather than of the note.
+22. Row 4.4 — that the specification state where the bass is determined, S-44 placing it at L1 as a
+    cue input and this text placing it downstream.
+23. Rows 4.24 and 4.31 — the no-horizon rule for the fourth and fifth time, here with the reach-until-
+    silent form and its defense.
+24. Row 4.37 — **that the eight-case completeness list be carried into L0** — sustains past a cap,
+    ties, tuplets, grace, cross-staff, multi-voice unisons, pedal, invisible and non-playing — of
+    which the derivation names five and is silent on tuplets, cross-staff notes and multi-voice
+    unisons.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -2324,6 +2851,15 @@ Gathered from the documents tabulated so far. **Not complete over the population
     set"* against *"a grace genuinely opens/closes a boundary by its span"*, with S-15's
     not-a-grace-note condition and S-30's no-zero-length-slice invariant riding on the answer.
 11. Row 2.27 — S-50's published sounding set per slice against a slice carrying start and end only.
+12. Rows 4.3, 4.7, 4.10, 4.11, 4.12, 4.14, 4.15, 4.17, 4.18, 4.19, 4.20 and 4.28 — twelve differences
+    between the derivation and a **verified description of code as it stood**: the fixed backward cap,
+    the dense-start skip, the dropping of grace, silent, invisible and ineligible-staff notes, rests
+    contributing nothing, the four-valued beat ladder, pitch-class aggregation, the cross-voice
+    multiplier, the pedal tail extending a note's weight to the lift, the floored bass pick, the
+    per-pitch-class output, and two divergent collection semantics. **Every one is QUARANTINED rather
+    than proposed**, because a description of code is the audit's business and not this comparison's.
+13. Row 4.37 — S-15's five eligibility conditions against an eight-case completeness list naming
+    tuplets, cross-staff notes and multi-voice unisons, which the derivation does not reach.
 
 ## 13. The distribution over the whole population
 
