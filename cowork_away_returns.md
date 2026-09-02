@@ -20155,3 +20155,60 @@ are this batch's own runs and not carried from any earlier one; A1 was establish
 enumeration tool over the whole tracked population; A3 by regeneration and comparison against the
 committed blob; and the forward-bound finding by running the tool at both aimings and reading its own
 message. No count of the reading file is restated in this section (D-431).*
+
+### ★ THE END STATE, carried by the one further commit after the close
+
+**The close does not assert this; this section does, and it was written after the run that produced
+it.** The full guard set was run at the tree the close left, and its artifact
+`tools/audit/guard_state.json` is committed here **as the artifact of that real run**, not of an
+earlier one.
+
+**THE RUN.** Population **76** — unchanged, this batch having enrolled no tool. **Passing 66, failing
+10**, 4 not run, 16 historical records. **ZERO STOPs**: `unclassified_candidates` is empty, read at the
+artifact the run itself wrote.
+
+**E2 IS MET IN EVERY LIMB, AND EACH IS STATED AGAINST THE DECLARED START STATE RATHER THAN ASSERTED.**
+**Population 76: MET** — equal to the declared start state's, because no tool was added. **Zero STOPs:
+MET.** **The failing set exactly the ten named in the declared start state, LESS any this batch's
+ordered acts cleared, PLUS NONE: MET** — the ten are member for member the ten the dispatch's own FACT
+names, no Task-2 ordered act was capable of clearing one, and nothing this batch did turned any check
+red at the end.
+
+**★ NEITHER A2 EXCEPTION FIRED, AND BOTH ARE ACCOUNTED FOR RATHER THAN PASSED OVER.**
+`gen_evidence_pin_membership.py --check` **PASSES at the end state** — the writing side's additions to
+the sitting record did not move its derivation. `gen_l0_l1_outgoing_population.py --check` **PASSES at
+the end state too**, and the reason is this batch's own shape: the second writing's exception fired
+because Task 3's forward-bound move took the entry carrying the recorded-tier `tie` hit OUT of
+`STATUS.md`; **this batch's move did not run**, that entry is still in the file, and this batch's own
+two new entries added no hit of their own. **So the population artifact is byte-unchanged and no
+regeneration was owed** — the second writing's regeneration case did not recur.
+
+**`gen_status_batch_bound.py --check` PASSES**, which is the mechanical proof that the reverted
+re-aiming left the tool exactly as it stood: the check verifies the previous move, and it verifies it
+still.
+
+**A5 AT THE LAST COMMIT.** The path set of this further commit was enumerated with the sanctioned
+enumeration tool immediately before it was taken and is **`cowork_away_returns.md` and
+`tools/audit/guard_state.json`, and nothing else.** **No member of A5's protected population is in
+it**: the derivation, the brief, the pack and its artifact, every outgoing text in the population, the
+population tool, the population artifact, and every governing document other than the `STATUS.md` the
+close carries all stand at the identifiers the close records.
+
+**THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** Unchanged in kind and larger by one item:
+this end-state section. **Nothing else was produced. No session was booted. No measurement of the
+analysis was built, designed, scoped or run. No disposition was applied anywhere, and every one in the
+reading file is a proposal.** `CLAUDE.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `OPEN_ITEMS.md`,
+`BUILD_AND_TEST.md`, `FRAMEWORK.md`, `DEFECT_TYPES.md` and `STATUS_ARCHIVE.md` are byte-unchanged, and
+so is every outgoing text the comparison read.
+
+**THE COMMIT COUNT.** The dispatch's ordered structure yields **Task 0, one commit per outgoing
+document, the whole-population commit, the close, the end state.** Task 1 contributed **twenty-three** —
+twenty-two documents plus the population-complete commit — so this batch carries **twenty-six**: Task 0,
+twenty-three for Task 1, the close, and this one.
+
+*Provenance: CC, 2026-09-02 into 2026-09-03, appended in the one further commit after the close commit
+`24f6d0e09f33560b56a207a71454c78c730c01bb` existed — a commit whose own identity this paragraph
+therefore cannot contain. Every value above was read from the run recorded in
+`tools/audit/guard_state.json`, which that run itself wrote, and from the staged-set enumeration taken
+immediately before this commit. No value here was carried forward from an earlier run or inferred from
+a summary.*
