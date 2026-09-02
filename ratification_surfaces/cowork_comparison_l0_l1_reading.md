@@ -42,17 +42,26 @@ The population's order is the artifact's:
 | 5 | `cowork_layer1_extend_design.md` | **DONE** |
 | 6 | `cowork_layer2_slicing_design.md` | **DONE** |
 | 7 | `cowork_layer2_reslice_design.md` | **DONE** |
-| 8–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 8 | `ARCHITECTURE.md` — the Layer 5 section | **DONE** |
+| 9–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 8–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 9–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 8**, `ARCHITECTURE.md` — the Layer 5 section.
+dispatch resumes at **position 9**, `cowork_layer5_function_design.md`.
 
-**Where this stop falls, and why it is a clean one.** Positions 1 to 7 are exactly **Ruling 32's items
-1 and 2** — the two `ARCHITECTURE.md` sections and all five root design documents, which is the whole
-of the old Layer-1 and Layer-2 territory. What remains is item 3's four places (positions 8 to 11) and
-the eighteen files Ruling 33's cut admits (positions 12 to 29). The stop was taken at a member
-boundary on capacity, as **D-672** provides for.
+**Where the previous stop fell, and why it was a clean one.** Positions 1 to 7 are exactly **Ruling
+32's items 1 and 2** — the two `ARCHITECTURE.md` sections and all five root design documents, which is
+the whole of the old Layer-1 and Layer-2 territory. What remains is the rest of item 3's four places
+(positions 9 to 11) and the eighteen files Ruling 33's cut admits (positions 12 to 29). Every stop is
+taken at a member boundary, as **D-672** provides for.
+
+**★ THE READING RULE CHANGES AT POSITION 8, AND EACH DOCUMENT'S MANIFEST HEADER SAYS SO.** Documents 1
+to 7 are wholly about L0's and L1's subject, so their *not a statement* lists run sentence by
+sentence. From position 8 the population admits documents that speak to L0's or L1's subject in a few
+places only; each is **read whole**, its subject-bearing passages are tabulated, and the rest is
+counted under *not a statement* by paragraph (positions 8 to 11) or by section (positions 12 to 29),
+so that the arithmetic closes at the document and a reader can see how much of it the comparison
+reached.
 
 **The sections that can only be written once every document is done are therefore NOT written**, and
 their absence is deliberate rather than an omission: the derived-side rows (one per S-1…S-54 with the
@@ -3971,6 +3980,322 @@ invariant that must hold"*, and the derived specification has no equivalent.
 
 ---
 
+### 6.8 — Document 8: `ARCHITECTURE.md`, the section *"#### Layer 5 — the function/cadence layer"*
+
+> **Manifest for this document.** Outgoing statements: **9** (rows 8.1 to 8.9; no row of this
+> document splits). Paragraphs counted under *not a statement*: **14**. Both counted at this document
+> by this session; the counts appear here and nowhere else.
+>
+> **Why this document is in the population:** named by **Ruling 32 item 3** — one of the four places
+> the ruling established, at the files, where the current text describes an output the new L1 charter
+> publishes. The ruling names the cadence detector in this section by name.
+>
+> **How the section is bounded:** by heading text, from `#### Layer 5 — the function/cadence layer`
+> to the next `#### ` heading (`#### Layer 6 — the grouping layer`), exactly as the population
+> artifact locates it (**D-307**). Line numbers below are locators beside the heading, never the
+> anchor.
+>
+> **★ THE READING RULE CHANGES HERE, AND THE CHANGE IS STATED RATHER THAN LEFT TO BE NOTICED.**
+> Documents 1 to 7 were wholly about L0's and L1's subject, so their *not a statement* lists ran
+> sentence by sentence. **This document is about a different layer** — it is in the population
+> because four of its passages describe L1's own published facts from the consuming side. The whole
+> section was read; the passages that speak to L0's or L1's subject are tabulated below; and the rest
+> is counted by **paragraph**, so the arithmetic closes at the document without listing material
+> outside the subject sentence by sentence. **A reader can therefore see how much of this document
+> the comparison reached: nine statements out of a section whose other fourteen paragraphs are about
+> function, cadence type, key confirmation and tonicization — none of them L0's or L1's subject.**
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.** That record names two spans of the guiding-principles member and eight design-intent
+> entries by identifier; the entries this section cites are none of them. The fact is stated because
+> the rows of documents 1 to 7 state it where it does apply.
+
+---
+
+**Row 8.1 — the cadence and local-key markers are produced by the function layer.**
+
+*Outgoing statement.* "The function layer reads the L4 chord **in** the L3 key and produces the
+**Roman numeral** (the precise superset of a T/S/D summary) plus **cadence** and **local-key**
+markers" — the opening paragraph (locator: line 2077).
+
+*Derived statements that speak to it.* S-50 (what L1 publishes, and the naming bar), S-51 (the test
+for whether an L1 output is a claim the charter forbids).
+
+*Current-text axis.* S-50: **AGREES** on the boundary — S-50 states that *"No published field is
+named *boundary*, *cadence*, *phrase*, *chord*, *key*, *tonality*, *degree* or *function*"*, and this
+sentence places the cadence marker at a later layer, which is the same line drawn from the other
+side. S-51: **AGREES**.
+
+*PROPOSED DISPOSITION.* **RELOCATED — to L3, *the read-off facts*.** `FRAMEWORK.md` §5 assigns to
+L3 *"the **cadence** at each phrase end, with its type"* and keeps only the cues at L1, and this
+sentence states what that later layer produces. The L1-side line it implies is already carried by
+S-50 and travels with the relocation rather than being lost.
+
+---
+
+**Row 8.2 — the cadence detector is key-agnostic and does not read a resolved key.**
+
+*Outgoing statement.* "The cadence detector is **key-agnostic** (it votes for the key; it does not
+read a resolved key)." — the opening paragraph (locator: line 2083).
+
+*Derived statements that speak to it.* S-51 (an output is evidence rather than a claim if and only
+if it is computable from L0 facts with no tonality, chord or boundary as input), S-47 (the candidate
+tonality is an anchor on a note the score gives and nothing more; L1 publishes no tonality), S-9 (L1
+does not read the key signature).
+
+*Current-text axis.* S-51: **AGREES**, and on the same ground — S-51's own defense cites the
+charter's reason for placing the cues at L1, that they are *"computable from the notation without
+knowing the tonality"*, and names the circularity of *"a detector that reads a resolved tonality and
+then votes on it"*. S-47: **AGREES**. S-9: **AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-51 with S-47 and S-9: the key-agnosticism and the
+reason for it are both carried). *(Recorded and not adjudicated: the outgoing text calls the thing a
+**detector** and places it at this layer, while the derivation publishes **cues** at L1 and forbids
+L1 a decided cadence. Which object the key-agnosticism attaches to is the charter's own split
+between cue and cadence type, and no verdict on it is taken here.)*
+
+---
+
+**Row 8.3 — the perfect/imperfect cadence call is made on the bass-derived inversion.**
+
+*Outgoing statement.* "**The perfect/imperfect cadence call is made on the BASS-DERIVED INVERSION;
+the soprano arrival degree is a soft optional nudge and this layer never attempts melody
+identification (D-584).**" — the three standing constraints (locator: line 2111).
+
+*Derived statements that speak to it.* S-44 (every cue is defined over the **bass**, which at a slice
+is the lowest sounding pitch of that slice's sounding set — *"not a notated voice"*), S-50.
+
+*Current-text axis.* S-44: **AGREES** on the evidence being the bass rather than a notated voice.
+S-50: **THE DERIVATION IS SILENT** on a perfect-versus-imperfect call, which S-50's naming bar places
+outside L1 altogether.
+
+*PROPOSED DISPOSITION.* **RELOCATED — to L3, *the read-off facts*** — `FRAMEWORK.md` §5 assigns
+*"the **cadence** at each phrase end, with its type"* to L3, and a perfect/imperfect call is a
+cadence type. **The bass half is already carried at S-44 and travels with the relocation rather than
+being lost.**
+
+---
+
+**Row 8.4 — the structural melody is not reliably recoverable from the notation.**
+
+*Outgoing statement.* "the highest sounding voice is often a doubling, and in some textures the lead
+sits below the top, so the structural melody the criterion needs is not reliably recoverable." — the
+same bullet (locator: line 2114).
+
+*Derived statements that speak to it.* S-13 (L0 supplies *notated* voices only; *"a contrapuntal
+voice that the notation does not mark is derived, not given, and no L1 computation may need it"*),
+S-44.
+
+*Current-text axis.* S-13: **AGREES** in substance and on the same ground. S-44: **AGREES** — S-44
+makes the same move at the bottom of the texture that this sentence makes at the top, defining the
+bass as the lowest sounding pitch rather than as a notated voice.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-13). *(Recorded because it is worth the user's
+attention rather than because it changes the disposition: the outgoing text supplies **two named
+counter-cases** the derivation does not have — orchestral doubling in the top voice, and a lead
+sitting below the top — as evidence for a rule S-13 already states.)*
+
+---
+
+**Row 8.5 — cadences are looked for at phrase ends, read as a published notation-derived fact, and
+that fact is a graded profile.**
+
+*Outgoing statement.* "Cadences are looked for at phrase ends, which this layer reads as a published
+L1.5 fact — the graded phrase-boundary profile." — the two ratified obligations (locator: line 2143).
+
+*Derived statements that speak to it.* S-39 (per change point, a set of boundary flags each with its
+witnesses), S-40 (several marks at one change point are published as several flags; nothing is
+collapsed), S-50 (the naming bar).
+
+*Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS**. S-50: **DIFFERS**.
+
+*The difference, in both texts' own words.* S-39 publishes, per change point, *"a set of boundary
+flags, each with its witnesses"* — BAR-LINE, REPEAT, FERMATA, REST-BEGINS, ALL-SILENT — and S-40
+states that *"nothing is collapsed to a single 'boundary strength'"*, on the ground that combining
+flags *"would be a judgment of their joint weight"* and *"would lose the parts"*; the outgoing text
+publishes a **graded phrase-boundary profile**, one continuous strength per position, and S-50
+additionally bars any published field named *boundary* or *phrase*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+the notated boundary evidence is published as **per-change-point flags with their witnesses** or as a
+**graded profile**, since the two texts publish different objects and S-40's own defense is that a
+combined strength is a judgment L1 may not take.
+
+**★ A NEW FAMILY, MET FOR THE FIRST TIME AT DOCUMENT 8: THE BOUNDARY-EVIDENCE FORM.** It is named as
+new, as §12 does for the metric strength class at document 6, and it is **the same shape as that
+family without being the same fact**: a per-change-point published fact that the derivation carries
+as a structured object with its witnesses and the outgoing text carries as a single graded number.
+Rows 8.5 and 8.6 carry it.
+
+---
+
+**Row 8.6 — the profile's graded strength scales the cadence vote.**
+
+*Outgoing statement.* "The required fallback admits cadences more freely there and weights their
+votes down by the graded strength the profile already carries." — the same bullet (locator: line
+2147).
+
+*Derived statements that speak to it.* S-39, S-40.
+
+*Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS** — as at Row 8.5, and here the graded
+strength is not merely published but consumed as a scalar weight.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 8.5 and carrying the same new
+family, **the boundary-evidence form**.
+
+---
+
+**Row 8.7 — the surface punctuation the profile reads is fermatas, rests and structural bar lines.**
+
+*Outgoing statement.* "in a punctuation-poor texture the fermatas, rests and structural barlines are
+deliberately absent, so the profile loses its contour and every phrase-gated consumer starves" — the
+same bullet (locator: line 2149).
+
+*Derived statements that speak to it.* S-39 (the five kinds and their placement rules), S-31 (a
+silent slice is published like any other, *"Silence is a notated fact and strong boundary
+evidence"*).
+
+*Current-text axis.* S-39: **AGREES** — three of the charter's five kinds are named here and S-39
+publishes each with its witnesses. S-31: **AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-39 with S-31; S-39 carries all three of the marks
+this sentence names, and two further kinds it does not).
+
+---
+
+**Row 8.8 — the notated boundary evidence can be absent over a whole passage.**
+
+*Outgoing statement.* "In music with almost no surface punctuation that profile goes featureless and
+everything gated on it gets nothing to work with." — the same bullet (locator: line 2145).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation publishes the boundary evidence
+and its witnesses and says nothing about a score that carries almost none of it.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L1's specification record that
+the notated boundary evidence may be **empty or near-empty over a whole passage**, this being a
+property of what L1 publishes rather than of any consumer, and every consumer gated on it being
+unfed when it is. *(What the fallback should then be is the consuming layer's and is Row 8.6's
+subject, not this one's.)*
+
+---
+
+**Row 8.9 — a consumer's need does not change what the producing layer publishes.**
+
+*Outgoing statement.* "**The obligation is cadence admission's and therefore this layer's**; the
+profile it reads is the primitive's published output and the primitive's own contract is unchanged by
+it." — the same bullet (locator: line 2151).
+
+*Derived statements that speak to it.* S-53 (nothing L1 publishes depends on anything L2 decides;
+where a statement would have wanted a later layer's answer, *"the want is met by publishing the
+candidates and the evidence and leaving the decision"*).
+
+*Current-text axis.* S-53: **AGREES** in substance and in direction — a consumer's need does not
+reach back into what the producing layer publishes, which is S-53's whole content.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-53).
+
+---
+
+#### Not a statement — counted by paragraph, so the arithmetic closes (14)
+
+*Counted by paragraph rather than by sentence, as this document's manifest header states, because
+this section is about a different layer and most of it is outside L0's and L1's subject.*
+
+1. The section heading with its build-state parenthesis — *a heading and a build state*.
+2. The remainder of the opening paragraph — *what this layer reads and produces, a build state and
+   its deferral, the forward-override's two instances, the resolution of carried abstentions, and a
+   citation to another document*.
+3. The Layer-5 **delegation pointer** paragraph naming `cowork_layer5_function_design.md` — *a
+   pointer and a filing decision*; the document it names is population position 9.
+4. The resolver block — *where the resolver of carried uncertain readings lives, and the three tests
+   it satisfies*; under the ratified charter its subject is L2's and L3's.
+5. The **delegation pointer** paragraph naming `cowork_layer5_engagement_design.md` — *a pointer*;
+   the document it names is population position 24.
+6. The lead-in to the three standing constraints — *a section lead-in and a re-homing provenance
+   mark*.
+7. The remainder of the perfect/imperfect bullet — *the constraint's own defense and its catalog
+   citation*.
+8. The bass-scale-degree / Rule-of-the-Octave bullet — *a harmonic prior over the bass scale degree,
+   which needs a tonality*; L2's subject.
+9. The *"Function"* naming bullet — *terminology in the published literature, and this layer's own
+   output naming*.
+10. The lead-in to the two ratified obligations — *a section lead-in and a design-only marker*.
+11. The remainder of the cadence-admission bullet — *the fallback's own rule and the stress
+    simulation it is derived from*; cadence admission is L3's under the ratified charter.
+12. The key-confirmation-channels bullet — *channels that confirm a key without a cadence*; L2's
+    subject.
+13. The tonicization-labeller block — *a decision not to wire a labeller and where the real lever
+    is*; L2's and L3's subject.
+14. The measurement note beneath it — *a measurement and the process lesson drawn from it*.
+
+#### The arithmetic at this document
+
+- Rows written: **9** (8.1 to 8.9). No row of this document splits.
+- **Outgoing statements dispositioned: 9.**
+- Paragraphs counted under *not a statement*: **14**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by
+  reading the disposition line of each row: 9 disposition lines over 9 statements, no row without one
+  and no row with a second.
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 4 | 8.2, 8.4, 8.7, 8.9 |
+| ADOPTED — proposed | 3 | 8.5, 8.6, 8.8 |
+| RELOCATED | 2 | 8.1, 8.3 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **9** | — |
+
+**The column sums to 9, against 9 statements, so the arithmetic closes at this document:**
+4 + 3 + 2 + 0 + 0 + 0 + 0 = 9. **The statement lists in the right-hand column are the record**, and
+the integers are re-derivable from them by counting.
+
+**QUARANTINED and HISTORICAL are both zero here, and that is worth one sentence rather than leaving
+it to be noticed.** This section carries build states and implementation descriptions in quantity —
+its heading says *Built+Dormant*, and its opening paragraph names a phase and a date. **None of them
+is about L0's or L1's subject**, so under this document's reading rule they fall in the paragraphs
+counted above rather than becoming rows. The zeroes are the reading rule working, not an absence of
+such material.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 11 |
+| DIFFERS | 5 |
+| THE DERIVATION IS SILENT | 2 |
+| **Total verdicts** | **18** |
+
+*(Counted per named derived statement per statement-row, so a row naming three derived statements
+contributes three verdicts; a row naming none contributes one SILENT. 18 verdicts over 9 statements
+because seven rows name more than one derived statement.)*
+
+#### What this document's rows put in front of the user, in one paragraph
+
+**One new family and one confirmation.** The new family is **the boundary-evidence form** (Rows 8.5
+and 8.6): the derivation publishes, per change point, a set of named boundary flags each carrying its
+witnesses, and forbids collapsing them into a single boundary strength because that would be a
+judgment of their joint weight; the outgoing text reads a **graded phrase-boundary profile** — one
+continuous number per position — and scales a cadence vote by it. It is the same shape as the metric
+strength class family met at document 6, on a different published fact, and the two will want ruling
+together. The confirmation is **Row 8.2**: the reason Ruling 32 put this section in the population at
+all. The outgoing text states that the cadence detector is key-agnostic and does not read a resolved
+key, and the derivation's S-51 states the same rule with the same circularity argument — so on the
+one point where this section and L1 meet head-on, the two records agree. Beside those, **Rows 8.1 and
+8.3 relocate**: the cadence marker and the perfect/imperfect call are L3's under the ratified
+charter, and their bass-side and naming-side halves are already carried at S-44 and S-50. And **Row
+8.4 runs towards the derivation**, supplying two named counter-cases — orchestral doubling, and a
+lead below the top voice — for a rule S-13 already states without them.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -4003,6 +4328,10 @@ worked; it is not complete over the population.**
 - Row 1.23(i) — carrying the monophonic cues over to polyphony is this project's own engineering.
 - Row 1.24(i) — the gap cue generalizes cleanly to polyphony, a phrase boundary there being a
   near-simultaneous rest or long note across all voices.
+- Row 8.1 — the cadence and local-key markers a later layer produces over the decided chord and key.
+- Row 8.3 — the perfect/imperfect cadence call, made on the bass-derived inversion, with the soprano
+  arrival degree a soft nudge and no attempt at melody identification. *(Its bass half is carried at
+  S-44 and travels with it.)*
 
 **To L2 — *the tonal reading, the one entangled decision*.**
 
@@ -4026,7 +4355,10 @@ worked; it is not complete over the population.**
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
-Gathered from the documents tabulated so far. **Not complete over the population.**
+Gathered from the documents tabulated so far. **Not complete over the population.** **Document 8
+added none**, its QUARANTINED count being zero for the reason its own arithmetic section states — the
+implementation-describing material in that section is not about L0's or L1's subject and is counted
+by paragraph rather than rowed.
 
 1. Row 1.2 — does the note model read the score exactly once, and is the queryable surface it builds
    the one the change-point construction consumes?
@@ -4210,6 +4542,17 @@ Gathered from the documents tabulated so far. **Not complete over the population
 31. Rows 7.2 and 7.25 — what a slice carries, for the fourth and fifth time.
 32. Row 7.8 — that the specification name the hazard the clip exists against: a sustained-in note
     dragging the slice list before the span's start.
+33. **Rows 8.5 and 8.6 — that the specification state what FORM the notated boundary evidence takes.**
+    S-39 publishes, per change point, a set of named boundary flags each carrying its witnesses, and
+    S-40 forbids collapsing them *"to a single 'boundary strength'"* because that *"would be a
+    judgment of their joint weight"* and *"would lose the parts"*; the outgoing text publishes a
+    **graded phrase-boundary profile**, one continuous number per position, and scales a cadence vote
+    by it. **This is a new family, met for the first time at document 8: the boundary-evidence form.**
+    It is the same shape as the metric strength class family at item 26 above, on a different
+    published fact, and the two will want ruling together.
+34. Row 8.8 — that L1's specification record that the notated boundary evidence may be **empty or
+    near-empty over a whole passage**, which is a property of what L1 publishes and which the
+    derivation does not state.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -4243,37 +4586,39 @@ Gathered from the documents tabulated so far. **Not complete over the population
     than proposed**, because a description of code is the audit's business and not this comparison's.
 13. Row 4.37 — S-15's five eligibility conditions against an eight-case completeness list naming
     tuplets, cross-staff notes and multi-voice unisons, which the derivation does not reach.
+14. Rows 8.5 and 8.6 — S-39's per-change-point flags with their witnesses and S-40's prohibition on a
+    single boundary strength, against a graded phrase-boundary profile consumed as a scalar weight.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the seven documents tabulated, not a distribution over the
-population.** The population is 29 documents; 22 are untouched. No figure below may be read as
+**This is a RUNNING total over the eight documents tabulated, not a distribution over the
+population.** The population is 29 documents; 21 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 302 statements placed so far:**
+**Dispositions, over the 311 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | Total |
-|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | **115** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | **82** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | **12** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | **62** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | **30** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | **302** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | Total |
+|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | **119** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | **85** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | **14** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | **62** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | **30** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | **311** |
 
-**The arithmetic closes:** 115 + 82 + 12 + 62 + 0 + 30 + 1 = 302, against 302 statements, and each
+**The arithmetic closes:** 119 + 85 + 14 + 62 + 0 + 30 + 1 = 311, against 311 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same seven documents:**
+**Current-text verdicts, over the same eight documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | Total |
-|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | **295** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | **82** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | **100** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | **477** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | Total |
+|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | **306** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | **87** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | **102** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | **495** |
 
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
