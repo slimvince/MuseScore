@@ -41,11 +41,18 @@ The population's order is the artifact's:
 | 4 | `cowork_layer1_tone_collection_design.md` | **DONE** |
 | 5 | `cowork_layer1_extend_design.md` | **DONE** |
 | 6 | `cowork_layer2_slicing_design.md` | **DONE** |
-| 7–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 7 | `cowork_layer2_reslice_design.md` | **DONE** |
+| 8–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 7–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 8–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 7**, `cowork_layer2_reslice_design.md`.
+dispatch resumes at **position 8**, `ARCHITECTURE.md` — the Layer 5 section.
+
+**Where this stop falls, and why it is a clean one.** Positions 1 to 7 are exactly **Ruling 32's items
+1 and 2** — the two `ARCHITECTURE.md` sections and all five root design documents, which is the whole
+of the old Layer-1 and Layer-2 territory. What remains is item 3's four places (positions 8 to 11) and
+the eighteen files Ruling 33's cut admits (positions 12 to 29). The stop was taken at a member
+boundary on capacity, as **D-672** provides for.
 
 **The sections that can only be written once every document is done are therefore NOT written**, and
 their absence is deliberate rather than an omission: the derived-side rows (one per S-1…S-54 with the
@@ -3629,6 +3636,341 @@ a bounded range. Those are two different published facts, and the difference is 
 
 ---
 
+### 6.7 — Document 7: `cowork_layer2_reslice_design.md`
+
+> **Manifest for this document.** Outgoing statements: **32** (rows 7.1 to 7.32). Listed under *not a
+> statement*: **3**. Counted at this document by this session.
+>
+> **Why this document is in the population:** named by Ruling 32 item 2. It is **not** in the ruled
+> specification document set, and stays in the population by name.
+>
+> **With this document, Ruling 32's items 1 and 2 are complete** — the two `ARCHITECTURE.md` sections
+> and all five root design documents. What remains of the population is item 3's four places and the
+> eighteen files Ruling 33's cut admits.
+>
+> **This document is where the clip is designed**, and the clip is what four earlier rows keep
+> returning to. It states the semantic explicitly and calls it deliberate, which is why several rows
+> here are the fullest statement of a difference met earlier only in passing.
+
+---
+
+**Row 7.1 — the clip is built, and it is inert on the whole-score path.**
+*Statement.* "**Status: BUILT.** The loaded-span clip is built … (clip the multiset to
+`[max(loadedStart, front), min(loadedEnd, back))`, inject the two endpoints, re-establish
+sorted-unique; inert and byte-identical on the whole-score live path)." — the banner (locator: line 3).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state. *(The clip rule itself is rowed at 7.9 and
+7.13.)*
+
+**Row 7.2 — the slice is kept minimal, with no selection-versus-context tag.**
+*Statement.* "The §5 'decision to confirm at build' was taken: the `Slice` is kept **minimal**
+(`struct Slice { int start; int end; }`, no selection-vs-context annotation) — the consuming layer
+computes in-selection/context from the model's selection span." — the banner (locator: line 5).
+*Derived.* S-50. *Current-text axis.* S-50: **DIFFERS** — S-50 publishes the slice list with each
+slice's sounding set by event identity.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.27, 6.21 and 6.33.
+
+**Row 7.3 — the layer slices whatever span the model holds and behaves correctly when it is enlarged.**
+*Statement.* "make Architectural Layer 2 produce slices for whatever span Architectural Layer 1
+currently holds, and behave correctly when that span is **extended**" — the banner (locator: line 7).
+*Derived.* S-32, S-53. *Current-text axis.* S-32: **THE DERIVATION IS SILENT** on enlargement. S-53:
+**AGREES** that the span is the caller's.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.21, 5.32 and 6.44.
+
+**Row 7.4 — slicing is a pure, stateless function of the loaded notes and the loaded span.**
+*Statement.* "slicing is a **pure, stateless function** of (the loaded notes, the loaded span), so the
+additive and re-slice-equivalence invariants hold *by construction* once one clipping rule is fixed —
+the only real design decision here." — the banner (locator: line 10).
+*Derived.* S-28, S-53. *Current-text axis.* S-28: **AGREES** — determinism from exact positions.
+S-53: **AGREES** — L1 is computable in one forward pass over the working span.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the purity property be stated in
+the specification, since it is what makes every enlargement invariant hold without a separate proof.
+
+#### §1 — what is there now, verified at source
+
+**Row 7.5 — the function, its boundary set, its tiling, its empty slices and its degenerate case.**
+*Statement.* "boundaries = the sorted-unique union of every **onset and release** of eligible notes;
+consecutive boundaries form slices, tiling **`[firstEligibleOnset, lastEligibleRelease)`** with no
+gaps/overlaps; an all-rest interior span is an explicit empty slice; it returns empty with fewer than
+two boundaries." — §1 (locator: line 15).
+*Derived.* S-28, S-29, S-31, S-32.
+*Current-text axis.* S-28: **AGREES**. S-29: **AGREES**. S-31: **AGREES**. S-32: **DIFFERS** — the
+tiling runs between the first eligible onset and the last eligible release, not between the working
+span's own two ends.
+*PROPOSED DISPOSITION.* **QUARANTINED**, the section describing code as verified. *Audit question:*
+does the live tiling still run between the first eligible onset and the last eligible release rather
+than between the span's ends?
+
+**Row 7.6 — the function has no stored state.**
+*Statement.* "It has **no stored state** — re-running it on a model just re-derives the slices." — §1
+(locator: line 18).
+*Derived.* S-53. *Current-text axis.* S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the function still stateless at the
+current commit?
+
+**Row 7.7 — the model retains every note overlapping the loaded span, sustained-in included.**
+*Statement.* "`build` retains every note **overlapping** the loaded span — including **sustained-in**
+notes whose onset is *before* `loadedStart`." — §1 (locator: line 21).
+*Derived.* S-29, S-32. *Current-text axis.* S-29: **AGREES**. S-32: **AGREES**.
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Row 5.24's rule already carried. *Audit question:* is
+the overlap retention still what the live build does?
+
+#### §2 — the clip, which the document calls the one real design decision
+
+**Row 7.8 — without the clip, slicing would run outside the loaded span.**
+*Statement.* "because sustained-in notes are retained with onsets *before* `loadedStart`,
+`firstEligibleOnset` can be **< `loadedStart`**. The current tiling … would then create slices in
+`[noteOnset, loadedStart)` — analysing music *outside* the loaded span. That is a scope leak under
+bounded context." — §2 (locator: line 25).
+*Derived.* S-32. *Current-text axis.* S-32: **AGREES** on the requirement that the list not run
+outside the span — S-32 marks such an event *entered sounding* rather than slicing before the span.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification name this
+hazard — a sustained-in note dragging the slice list before the span's start — and state the remedy,
+since the derivation's S-32 avoids it without saying that it is avoiding anything.
+
+**Row 7.9 — the rule: slice the intersection, clipping sustained-in and sustained-out notes.**
+*Statement.* "**The rule (the fix):** slice the **intersection of the loaded span and the
+eligible-notes span** … with a sustained-in note **present from `loadedStart`** (clipped) and a
+sustained-out note **ending at `loadedEnd`** (clipped)." — §2 (locator: line 29).
+*Derived.* S-32. *Current-text axis.* S-32: **DIFFERS**.
+*The difference.* S-32 covers *"the working span exactly"* and keeps the event whole, **marking** it
+*entered sounding* or *cut by the span*; the outgoing rule covers the **intersection** and **clips the
+note's span** to the loaded boundary, publishing no mark.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.13 and 2.15 — this is the
+fullest statement of that difference in the outgoing record, and the row where the two remedies stand
+side by side.
+
+**Row 7.10 — on a whole score the clip collapses and nothing moves.**
+*Statement.* "**Degenerate case (whole score) stays byte-identical.** … the clip collapses to exactly
+`[firstEligibleOnset, lastEligibleRelease)` — today's behaviour, unchanged." — §2 (locator: line 35).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Rows 2.3 and 5.31.
+
+**Row 7.11 — on a partial selection the clip is what makes the result correct.**
+*Statement.* "**Partial selection is correct.** Sustained-in/out notes are clipped to the loaded
+boundary instead of dragging the slicing outside the loaded span." — §2 (locator: line 39).
+*Derived.* S-32. *Current-text axis.* S-32: **DIFFERS**, as at Row 7.9.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 7.9.
+
+**Row 7.12 — the function takes the span from the model and stops deriving it from the notes.**
+*Statement.* "The function therefore needs the loaded span from the model …; it stops deriving the
+slicing span from the notes alone." — §2 (locator: line 42).
+*Derived.* S-32, S-53. *Current-text axis.* S-32: **AGREES** — S-32's span is given, not derived from
+the notes. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state
+explicitly that the slicing domain is **given by the caller** and not derived from where the notes
+happen to start, which is the difference Rows 7.5 and 7.9 turn on.
+
+**Row 7.13 — the clip acts on the whole boundary multiset, not only on the two ends.**
+*Statement.* "the clip is on the **boundary multiset**, not just the two ends — **drop** every boundary
+outside `[clipStart, clipEnd]` and **inject** the two clip endpoints" — §2 (locator: line 45).
+*Derived.* S-28. *Current-text axis.* S-28: **DIFFERS** — an injected endpoint is not the onset or
+release of an eligible event, which is the whole of S-28's definition.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.25 and 6.2.
+
+**Row 7.14 — selection-edge silence is deliberately not sliced.**
+*Statement.* "**Selection-edge silence is not sliced** — `max(loadedStart, firstEligibleOnset)` means
+leading/trailing rest *within* the loaded span gets no empty slice, while *interior* silence still
+does; this is consistent with today's 'don't invent silence outside the note domain,' **but it is a
+deliberate semantic and is stated so on purpose.**" — §2 (locator: line 48).
+*Derived.* S-31, S-32. *Current-text axis.* S-31: **DIFFERS**. S-32: **DIFFERS**.
+*The difference.* S-32 requires the list's first change point to be *"the span's start"* and, where no
+eligible event begins there, *"the first slice is a silent slice"*, with S-31 requiring that silent
+slice to be published like any other; the outgoing text gives leading and trailing rest inside the
+loaded span **no** empty slice, and says so deliberately.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.13, 2.20 and 6.35. **This row
+is where the difference is stated at its plainest**: the outgoing text names the semantic, calls it
+deliberate, and gives its reason, and the derivation takes the opposite one for a reason of its own.
+
+#### §3 — what holds under enlargement
+
+**Row 7.15 — the loaded-edge boundary is artificial and vanishes on enlargement.**
+*Statement.* "The clip injects an **artificial boundary at `loadedStart`** — *not* a real change-point
+(a sustained-in note sounds on both sides; the boundary is there only because the far side was
+unloaded). Extend earlier and that artificial boundary **vanishes**, so the **edge slice grows
+outward**." — §3 (locator: line 55).
+*Derived.* S-28, S-32. *Current-text axis.* S-28: **DIFFERS**. S-32: **DIFFERS**, as at Row 2.25.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.25 and 7.13.
+
+**Row 7.16 — the counterexample that refuted the earlier claim.**
+*Statement.* "(Counterexample: one eligible note A `[100,1000)`; old span `[500,1000)` → one slice
+`[500,1000)`; extend to `[100,1000)` → one slice `[100,1000)` — the edge slice *grew*, it was not
+'preserved + a new slice prepended.')" — §3 (locator: line 59).
+*Derived.* S-32. *Current-text axis.* S-32: **THE DERIVATION IS SILENT** on enlargement.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 7.15 — it is the evidence the rule rests on,
+and a proposal without its evidence is weaker than one with it.
+
+**Row 7.17 — what does hold: interior stability and an extending edge slice.**
+*Statement.* "**(a)** interior **real** change-points within the old region are **byte-stable** …;
+**(b)** the **edge slice abutting the clip extends** into the newly-loaded context, its content over
+the original span unchanged." — §3 (locator: line 61).
+*Derived.* S-28, S-32. *Current-text axis.* S-28: **AGREES** on the stability of real change points.
+S-32: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.21 and 7.15.
+
+**Row 7.18 — re-slice equivalence, the correctness-critical invariant.**
+*Statement.* "**Re-slice equivalence — the correctness-critical invariant.** Slicing the model after an
+extend equals slicing a model `build`-t over the enlarged span directly — both are the same pure
+function of the same (notes, span)." — §3 (locator: line 66).
+*Derived.* S-53. *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.21, 5.32 and 6.44 — the fourth
+statement of the same invariant, and the one that names it *correctness-critical*.
+
+**Row 7.19 — the naive stability test is wrong and must not be written.**
+*Statement.* "A naïve 'old slices byte-identical' test would fail on any tie-across-the-clip case; the
+§6 test asserts the real property instead." — §3 (locator: line 68).
+*Derived.* S-23. *Current-text axis.* S-23: **AGREES** — a tie across the clip is exactly S-23's one
+event spanning the boundary, which is why the naive test fails.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 2.26.
+
+#### §4 and §5 — the interim, the deferral, and the output-versus-context line
+
+**Row 7.20 — the interim re-slices the whole loaded model.**
+*Statement.* "**Interim (Phase 2, now):** on extend, **re-slice the whole loaded model** …. Correct and
+simple — purity makes it identical to an incremental result." — §4 (locator: line 72).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a delivery increment.
+
+**Row 7.21 — the deferred incremental re-slice must recompute the seam.**
+*Statement.* "**Deferred (Phase 2b, byte-identical perf):** an **incremental re-slice** … — but it
+**must recompute the seam**, not blindly reuse the old edge slice. … a naïve prepend/append would keep
+a spurious boundary the fresh re-slice does not have — **violating re-slice equivalence** …, the one
+invariant that must hold." — §4 (locator: line 74).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a deferred increment. *(Its operative rule — that the seam
+must be recomputed — is rowed at 7.22.)*
+
+**Row 7.22 — the seam rule: drop the old clip-edge boundary unless a real change point sits there.**
+*Statement.* "drop the old clip-edge boundary unless a **real** change-point sits there, recompute only
+the seam + new region, leave interior boundaries reused." — §4 (locator: line 78).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES** on what makes a boundary real — an onset or a
+release of an eligible event, which is exactly the test this rule applies.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 7.15 and 7.18.
+
+**Row 7.23 — the slices outside the selection are context and evidence, not output.**
+*Statement.* "L2 produces slices for the **loaded** span; the **output** is only the **selection**. The
+slices in `[loadedStart, selectionStart)` ∪ `[selectionEnd, loadedEnd)` are **context (evidence), not
+output**." — §5 (locator: line 83).
+*Derived.* S-32, S-53. *Current-text axis.* S-32: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 2.28, 5.10 and 6.45.
+
+**Row 7.24 — the distinction is computed at the consuming layer, this layer owning no selection
+semantics.**
+*Statement.* "Recommended: compute it at the consuming layer (keep the `Slice` minimal …), since L2
+owns no selection semantics." — §5 (locator: line 87).
+*Derived.* S-53. *Current-text axis.* S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 2.28.
+
+**Row 7.25 — the decision was taken at the build: the slice is minimal.**
+*Statement.* "**Decision taken at build: the `Slice` is minimal … — no in-selection/context tag; the
+consumer derives it from the model's selection span.**" — §5 (locator: line 88).
+*Derived.* S-50. *Current-text axis.* S-50: **DIFFERS**, as at Row 7.2.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.27, 6.21, 6.33 and 7.2.
+
+#### §6 and §8 — the invariants and the delivery
+
+**Row 7.26 — degenerate byte-identity over the whole-score span.**
+*Statement.* "**Degenerate byte-identity:** for the whole-score loaded span, the slices are
+**byte-identical** to today …. (The §2 clip is a no-op there.)" — §6 (locator: line 93).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Rows 2.3, 5.31 and 7.10.
+
+**Row 7.27 — the stability test asserts the real property, and the naive one must not be written.**
+*Statement.* "assert the **real** property — **interior real change-points are identical** before/after,
+the **edge slice extends** into the new context (it does *not* stay byte-identical), and the **content
+over the original span is unchanged**. A naïve 'all old slices byte-identical' assertion is wrong …
+— do not write it." — §6 (locator: line 95).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES** on the identity of real change points.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.26, 7.17 and 7.19.
+
+**Row 7.28 — re-slice equivalence stated as a testable invariant.**
+*Statement.* "**Re-slice equivalence:** re-slice after extend == `changePointSlices` over a model built
+on the enlarged span." — §6 (locator: line 99).
+*Derived.* S-53. *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 7.18.
+
+**Row 7.29 — clip correctness: where a sustained-in and a sustained-out note land.**
+*Statement.* "**Clip correctness:** a sustained-in note appears in the first slice (from
+`loadedStart`), not in a slice before it; a sustained-out note's last slice ends at `loadedEnd`." — §6
+(locator: line 100).
+*Derived.* S-32. *Current-text axis.* S-32: **DIFFERS**, as at Row 7.9 — S-32 marks rather than clips.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.15 and 7.9.
+
+**Row 7.30 — coverage, note-set identity and empty slices are preserved over enlarged spans.**
+*Statement.* "Complete coverage, no gaps/overlaps, exact-note-set identity, empty-slice-for-silence —
+all preserved over extended spans." — §6 (locator: line 102).
+*Derived.* S-29, S-31, S-33. *Current-text axis.* S-29: **AGREES**. S-31: **AGREES**. S-33:
+**AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 7.31 — the Layer-2 specification gains the clip rule as as-built on the build.**
+*Statement.* "The Architectural Layer 2 spec already carries the bounded-context crosscutting note; on
+build it gains the §2 clip rule as as-built, and the build-state goes to the delivery notes." — §8
+(locator: line 113).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a statement about another document's build markers, with Row
+5.41.
+
+**Row 7.32 — Phase 2 is the buildable unit; Phase 2b is separate and deferrable.**
+*Statement.* "**Phase 2 (interim re-slice + the clip)** is the buildable unit; **Phase 2b (incremental
+re-slice)** is the separate, byte-identical, deferrable perf step." — §8 (locator: line 115).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL**, with Row 5.42.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (3)
+
+1. §7's four read-only verification bullets — *a verification plan for a build that has since
+   happened*.
+2. "Each is its own gated Claude-Code instruction." — *a dispatch plan*, with Document 5's item 4.
+3. The banner's parenthetical pointer to `cowork_bounded_context_design.md` — *a pointer*; that
+   document is population position 18.
+
+#### The arithmetic at this document
+
+- Statements: **32** (rows 7.1 to 7.32; no row of this document splits).
+- Listed under *not a statement*: **3**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 3 | 7.23, 7.24, 7.30 |
+| ADOPTED — proposed | 19 | 7.2, 7.3, 7.4, 7.8, 7.9, 7.11, 7.12, 7.13, 7.14, 7.15, 7.16, 7.17, 7.18, 7.19, 7.22, 7.25, 7.27, 7.28, 7.29 |
+| RELOCATED | 0 | — |
+| QUARANTINED | 5 | 7.5, 7.6, 7.7, 7.10, 7.26 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 5 | 7.1, 7.20, 7.21, 7.31, 7.32 |
+| UNPLACED | 0 | — |
+| **Total** | **32** | — |
+
+**The column sums to 32, against 32 statements:** 3 + 19 + 0 + 5 + 0 + 5 + 0 = 32. **The arithmetic
+closes at this document.**
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 22 |
+| DIFFERS | 11 |
+| THE DERIVATION IS SILENT | 12 |
+| **Total verdicts** | **45** |
+
+#### What this document's rows put in front of the user
+
+**Nineteen of thirty-two statements are ADOPTED — proposed, the highest share of any document so
+far**, and they are not nineteen separate proposals: they are two, stated many times. **The first is
+the clip** (Rows 7.9, 7.11, 7.13, 7.14, 7.15, 7.29) — and Row 7.14 is where the difference finally
+stands in the open, because the outgoing text names the semantic, calls it *"a deliberate semantic …
+stated so on purpose"*, and gives its reason, while S-32 and S-31 take the opposite one for a reason
+of their own. That is a genuine design disagreement between two considered positions, not an
+oversight on either side. **The second is enlargement** (Rows 7.3, 7.16, 7.17, 7.18, 7.22, 7.27,
+7.28), which the derivation does not contemplate at all. Row 7.18 calls re-slice equivalence *"the one
+invariant that must hold"*, and the derived specification has no equivalent.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -3762,6 +4104,13 @@ Gathered from the documents tabulated so far. **Not complete over the population
     commit, over the corpus as it now stands?
 42. Row 6.52 — is the chorale redundancy figure measured, and does it hold on the denser repertoire
     the sentence names?
+43. Row 7.5 — does the live tiling still run between the first eligible onset and the last eligible
+    release rather than between the working span's own two ends?
+44. Row 7.6 — is the slicing function still stateless at the current commit?
+45. Row 7.7 — is overlap retention still what the live build does?
+46. Rows 7.10 and 7.26 — is the degenerate whole-score slicing still byte-identical, the clip being a
+    no-op there? *(The same question as audit questions 10 and 38, asked of the slicer rather than of
+    the note model.)*
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -3845,6 +4194,22 @@ Gathered from the documents tabulated so far. **Not complete over the population
     document 6: the span's edge, the three-flag eligibility test, what a slice carries, the published
     domain, enlargement equivalence, and grace notes. **Row 6.55 is the clearest statement anywhere in
     the outgoing record of the grace decision's reason.**
+29. **Rows 7.9, 7.11, 7.13, 7.14, 7.15 and 7.29 — the CLIP, stated at its fullest.** The outgoing text
+    slices the intersection of the loaded span with the sounding material, clipping a sustained-in
+    note to begin at the span's start and a sustained-out one to end at its end, injecting the two
+    endpoints into the boundary set, and giving leading and trailing rest inside the span no empty
+    slice. S-32 covers the working span exactly, keeps the event whole and **marks** it *entered
+    sounding* or *cut by the span*, and S-31 requires a silent first slice where nothing begins at the
+    start. **Row 7.14 records the outgoing choice as "a deliberate semantic … stated so on purpose",
+    so this is a disagreement between two considered positions rather than an oversight on either
+    side.**
+30. Rows 7.3, 7.4, 7.12, 7.16, 7.17, 7.18, 7.22, 7.27 and 7.28 — the enlargement contract met a second
+    time, now from the slicer's side: purity, seam recomputation, and **re-slice equivalence, which
+    Row 7.18 calls "the one invariant that must hold"** and for which the derived specification has no
+    equivalent.
+31. Rows 7.2 and 7.25 — what a slice carries, for the fourth and fifth time.
+32. Row 7.8 — that the specification name the hazard the clip exists against: a sustained-in note
+    dragging the slice list before the span's start.
 
 **Differences stated, with nothing chosen between the two texts.**
 
