@@ -32,15 +32,26 @@ WHAT IT DOES, AND NOTHING ELSE.
      never as a census -- the recognizer clause of the dispatch protocol, which applies because
      nothing else independently enumerates "passages about L0's or L1's subject".
 
-  4. COUNTS -- files searched per class, files with hits, hits per file, hits per term -- AT THE
-     ARTIFACT.  No figure is restated in the dispatch or in the report (D-431).
+  4. CUTS THE HITS TO THE RULED SPECIFICATION DOCUMENT SET (Ruling 33, §3an of the same record).
+     A term-search hit ADMITS its file to the population only if that file's path is a `member`
+     of `tools/audit/specification_document_set.json` -> `the_document_set` (path equality,
+     exact).  The population is therefore Ruling 32's eleven named members plus every hit file in
+     that set.  Every hit file OUTSIDE the set is published as a listed RESIDUE -- hit, outside
+     the specification document set, not dispositioned by this comparison, reachable by the
+     mining map.  NOTHING IS DROPPED (#12): the residue's per-file hit records stay whole, and
+     the pre-cut ordering is preserved beside the cut one.
 
-  5. ORDERS THE POPULATION: the eleven named members first, in the ruling's own order, then the
-     hit files by descending hit count (ties broken by path, so the order is deterministic).
-     That order is the comparison's batch order.
+  5. COUNTS -- files searched per class, files with hits, hits per file, hits per term, and per
+     hit file whether it is IN or OUT of the specification set -- AT THE ARTIFACT.  No figure is
+     restated in the dispatch or in the report (D-431).
+
+  6. ORDERS THE POPULATION: the eleven named members first, in the ruling's own order, then the
+     IN-SET hit files by descending hit count (ties broken by path, so the order is
+     deterministic).  That order is the comparison's batch order.  The first writing's ordering,
+     before Ruling 33 cut it, is kept beside it at `the_population_before_ruling_33`.
 
 WHAT IT DOES NOT DO.  It takes no disposition, grades nothing, compares nothing, and edits no
-outgoing text.  It reports a population and its reach.
+outgoing text.  It reports a population and its reach.  It dispositions no residue file.
 
 Run:
     python tools/audit/gen_l0_l1_outgoing_population.py           # write the artifact
@@ -57,6 +68,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 OUT = os.path.join(HERE, "l0_l1_outgoing_population.json")
 INVENTORY = os.path.join(HERE, "artifact_inventory.json")
+SPEC_SET = os.path.join(HERE, "specification_document_set.json")
 
 sys.path.insert(0, HERE)
 from output_encoding import use_utf8_output      # noqa: E402  (path set above)
@@ -66,6 +78,27 @@ use_utf8_output()
 
 class Stop(Exception):
     """A named member is not at its path, or a class is not in the inventory. Never a warning."""
+
+
+# --------------------------------------------------------------------------------------------
+# (0) THE CUT -- Ruling 33.  Read from the ruled set's own artifact, never re-derived here (#6).
+# --------------------------------------------------------------------------------------------
+THE_CUT_IS_RULED = (
+    "THE CUT IS RULING 33's, AND THE SET IT CUTS TO IS READ, NEVER RE-DERIVED HERE.  Ruling 33 "
+    "(§3an of `cowork_rulings_2026_08_31_decision_surface_sitting.md`) narrows Ruling 32's item "
+    "4: a term-search hit enters the outgoing population ONLY IF its file is a member of the "
+    "specification document set.  That set has one home — "
+    "`tools/audit/specification_document_set.json`, derived from `ARCHITECTURE.md`'s admitted "
+    "delegations under Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md` — and "
+    "this tool reads its `the_document_set` members by EXACT PATH EQUALITY.  It authors no "
+    "membership judgment of its own, so a document leaving or entering that set moves this "
+    "population without anyone editing this tool."
+)
+
+THE_RESIDUE_STATEMENT = (
+    "hit, outside the specification document set, not dispositioned by this comparison; "
+    "reachable by the mining map"
+)
 
 
 # --------------------------------------------------------------------------------------------
@@ -255,6 +288,30 @@ def load_classes():
     return by_name
 
 
+def load_specification_document_set():
+    """The RULED specification document set (Ruling 33's cut), read at its own artifact.
+
+    Returns the member paths in the artifact's own order.  A missing artifact, a missing
+    `the_document_set`, or a record with no `member` path is a STOP: the cut cannot be applied
+    from a set this tool cannot read, and guessing one would author the very membership judgment
+    the ruling reserves to the derived set.
+    """
+    if not os.path.isfile(SPEC_SET):
+        raise Stop("the specification document set is not at its path: %s" % SPEC_SET)
+    with open(SPEC_SET, "r", encoding="utf-8") as handle:
+        data = json.load(handle)
+    records = data.get("the_document_set") if isinstance(data, dict) else None
+    if not isinstance(records, list) or not records:
+        raise Stop("specification_document_set.json carries no the_document_set list")
+    members = []
+    for record in records:
+        member = record.get("member") if isinstance(record, dict) else None
+        if not member:
+            raise Stop("a record of the_document_set carries no member path")
+        members.append(member)
+    return members
+
+
 def search_terms(text, terms, tier):
     """Case-insensitive hits, one record per matched line per term."""
     hits = []
@@ -296,6 +353,8 @@ def derive():
 
     classes = load_classes()
     named_paths = {entry["path"] for entry in NAMED_MEMBERS}
+    spec_members = load_specification_document_set()      # STOPs if unreadable
+    spec_paths = set(spec_members)
 
     per_file = {}
     per_class_counts = {}
@@ -311,6 +370,7 @@ def derive():
                     "path": rel_path,
                     "inventory_class": class_name,
                     "absent_from_the_tree": True,
+                    "in_the_specification_document_set": rel_path in spec_paths,
                     "admitting_hits": [],
                     "recorded_hits": [],
                 })
@@ -326,6 +386,7 @@ def derive():
                     "path": rel_path,
                     "inventory_class": class_name,
                     "is_a_named_member": rel_path in named_paths,
+                    "in_the_specification_document_set": rel_path in spec_paths,
                     "admitting_hit_count": len(admitting),
                     "recorded_hit_count": len(recorded),
                     "admitting_hits": admitting,
@@ -338,7 +399,9 @@ def derive():
             "files_with_at_least_one_admitting_hit": with_hits,
         }
 
-    # The population as DOCUMENTS: every named member, plus every file with an admitting hit.
+    # The population as DOCUMENTS: every named member, plus every file with an admitting hit
+    # THAT IS ALSO A MEMBER OF THE RULED SPECIFICATION SET (Ruling 33).  Everything else that was
+    # hit is the RESIDUE and is published whole.
     admitted = [
         record for record in per_file.values()
         if record.get("admitting_hit_count", 0) > 0
@@ -346,27 +409,46 @@ def derive():
     admitted_outside_named = [r for r in admitted if not r.get("is_a_named_member")]
     admitted_outside_named.sort(key=lambda r: (-r["admitting_hit_count"], r["path"]))
 
-    order = []
-    seen = []
-    for entry in named:
-        label = entry["path"] if entry["section"] is None else \
-            "%s :: %s" % (entry["path"], entry["section"]["opens_at"])
-        order.append({
-            "position": len(order) + 1,
-            "path": entry["path"],
-            "section": entry["section"]["opens_at"] if entry["section"] else None,
-            "why_in_the_population": "named by Ruling 32 item %d" % entry["ruling_item"],
-            "admitting_hit_count": per_file.get(entry["path"], {}).get("admitting_hit_count"),
-        })
-        seen.append(label)
-    for record in admitted_outside_named:
-        order.append({
-            "position": len(order) + 1,
-            "path": record["path"],
-            "section": None,
-            "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-            "admitting_hit_count": record["admitting_hit_count"],
-        })
+    in_set_outside_named = [
+        r for r in admitted_outside_named if r.get("in_the_specification_document_set")
+    ]
+    residue = [
+        r for r in admitted_outside_named if not r.get("in_the_specification_document_set")
+    ]
+
+    def named_rows():
+        rows = []
+        for entry in named:
+            rows.append({
+                "position": len(rows) + 1,
+                "path": entry["path"],
+                "section": entry["section"]["opens_at"] if entry["section"] else None,
+                "why_in_the_population": "named by Ruling 32 item %d" % entry["ruling_item"],
+                "admitting_hit_count": per_file.get(entry["path"], {}).get("admitting_hit_count"),
+            })
+        return rows
+
+    def with_hit_rows(rows, records, why):
+        for record in records:
+            rows.append({
+                "position": len(rows) + 1,
+                "path": record["path"],
+                "section": None,
+                "why_in_the_population": why,
+                "admitting_hit_count": record["admitting_hit_count"],
+            })
+        return rows
+
+    # The CUT population -- the comparison's batch order.
+    order = with_hit_rows(
+        named_rows(), in_set_outside_named,
+        "a term-search hit under Ruling 32 item 4, IN the ruled specification document set "
+        "(Ruling 33)")
+
+    # The PRE-CUT population -- the first writing's list, preserved beside the cut one (#12).
+    order_before_the_cut = with_hit_rows(
+        named_rows(), admitted_outside_named,
+        "a term-search hit under Ruling 32 item 4")
 
     size_stop = {
         "the_threshold": 40,
@@ -375,8 +457,14 @@ def derive():
             "executing session's.  It is NOT a figure about the corpus and states nothing about "
             "how large the outgoing text is."
         ),
-        "hit_files_outside_the_named_members": len(admitted_outside_named),
-        "the_stop_is_reached": len(admitted_outside_named) > 40,
+        "what_it_is_evaluated_on": (
+            "The IN-SET count outside the named members -- the population as Ruling 33 cuts it, "
+            "not the pre-cut hit count.  The pre-cut figure is kept beside it so the effect of "
+            "the cut on this stop is readable rather than argued."
+        ),
+        "hit_files_outside_the_named_members_IN_the_specification_set": len(in_set_outside_named),
+        "hit_files_outside_the_named_members_before_the_cut": len(admitted_outside_named),
+        "the_stop_is_reached": len(in_set_outside_named) > 40,
     }
 
     return {
@@ -391,6 +479,22 @@ def derive():
             "anything, and it edits no outgoing text.  It reports a population and its reach."
         ),
         "the_ruling": "§3am (Ruling 32) of cowork_rulings_2026_08_31_decision_surface_sitting.md",
+        "the_cut": "§3an (Ruling 33) of the same record — the term search is cut to the ruled specification document set",
+        "the_specification_set_cut": {
+            "★_the_cut_is_ruled_and_the_set_is_read": THE_CUT_IS_RULED,
+            "read_from": "tools/audit/specification_document_set.json -> the_document_set -> each record's `member`",
+            "the_test": "path equality, exact",
+            "members_in_the_set_as_read": len(spec_members),
+            "the_members_as_read": spec_members,
+            "named_members_that_are_also_in_the_set": sorted(named_paths & spec_paths),
+            "named_members_that_are_NOT_in_the_set": sorted(named_paths - spec_paths),
+            "★_a_named_member_stays_in_the_population_by_name": (
+                "Ruling 33 narrows Ruling 32's item 4 — the term-search limb — and nothing else.  "
+                "The eleven named members stand whether or not they are in the specification "
+                "set, so a named member listed above as NOT in the set is still in the "
+                "population, by name."
+            ),
+        },
         "the_named_members": named,
         "the_term_search": {
             "the_classes_searched": SEARCH_CLASSES,
@@ -409,6 +513,8 @@ def derive():
                 "files_with_at_least_one_admitting_hit": len(admitted),
                 "of_those_already_named_by_the_ruling": len(admitted) - len(admitted_outside_named),
                 "hit_files_outside_the_named_members": len(admitted_outside_named),
+                "of_those_IN_the_specification_document_set": len(in_set_outside_named),
+                "of_those_OUT_of_it_and_therefore_residue": len(residue),
             },
             "per_file": dict(sorted(per_file.items())),
         },
@@ -437,6 +543,48 @@ def derive():
             ),
         },
         "the_population_in_comparison_order": order,
+        "the_population_before_ruling_33": {
+            "★_what_this_is": (
+                "The ordering the first writing of this tool produced, before Ruling 33 cut the "
+                "term-search limb to the specification document set.  It is preserved beside the "
+                "cut population rather than overwritten (#12): the cut removed files from a "
+                "published population, and what a cut removed is evidence about the cut."
+            ),
+            "counted": len(order_before_the_cut),
+            "the_ordering": order_before_the_cut,
+        },
+        "the_residue_for_the_mining_map": {
+            "★_what_this_is": (
+                "Every file the term search HIT that is NOT a member of the ruled specification "
+                "document set.  Ruling 33 publishes it rather than dropping it (#12).  It is the "
+                "territory of the phase's OTHER mechanism for design content in "
+                "non-specification documents — the mining map named at the phase definition "
+                "§3.4's inputs — and NOTHING here is dispositioned by this comparison."
+            ),
+            "★_what_is_NOT_claimed": (
+                "That a residue file holds nothing about L0's or L1's subject.  The cut is by "
+                "DOCUMENT KIND, not by content: a residue file may hold design content, and the "
+                "mining map is how it reaches L1.  The risk of the ruled option is stated at the "
+                "ruling itself — a good idea sitting only in a report reaches L1 through the "
+                "mining map rather than through this comparison."
+            ),
+            "the_statement_that_applies_to_every_entry": THE_RESIDUE_STATEMENT,
+            "counted": len(residue),
+            "the_per_file_hit_records_are_kept_whole": (
+                "A residue file keeps its full record at `the_term_search.per_file` — every "
+                "admitting hit and every recorded hit, with line numbers — exactly as an "
+                "in-population file does.  Nothing is dropped."
+            ),
+            "files": [
+                {
+                    "path": record["path"],
+                    "inventory_class": record["inventory_class"],
+                    "admitting_hit_count": record["admitting_hit_count"],
+                    "the_statement": THE_RESIDUE_STATEMENT,
+                }
+                for record in residue
+            ],
+        },
         "the_size_stop": size_stop,
     }
 
@@ -463,11 +611,18 @@ def main():
         handle.write(rendered)
     counts = derived["the_term_search"]["counts"]
     print("named members: %d" % len(derived["the_named_members"]))
+    print("specification set members as read: %d" % (
+        derived["the_specification_set_cut"]["members_in_the_set_as_read"]))
     print("files with an admitting hit: %d (outside the named members: %d)" % (
         counts["files_with_at_least_one_admitting_hit"],
         counts["hit_files_outside_the_named_members"]))
-    print("population in comparison order: %d entries" % len(derived["the_population_in_comparison_order"]))
-    print("size stop reached: %s (threshold %d)" % (
+    print("  of those IN the specification set: %d; residue: %d" % (
+        counts["of_those_IN_the_specification_document_set"],
+        counts["of_those_OUT_of_it_and_therefore_residue"]))
+    print("population in comparison order: %d entries (before the cut: %d)" % (
+        len(derived["the_population_in_comparison_order"]),
+        derived["the_population_before_ruling_33"]["counted"]))
+    print("size stop reached: %s (threshold %d, evaluated on the IN-set count)" % (
         derived["the_size_stop"]["the_stop_is_reached"], derived["the_size_stop"]["the_threshold"]))
     print("wrote %s" % OUT)
     return 0

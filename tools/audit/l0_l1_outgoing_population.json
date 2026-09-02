@@ -2,6 +2,55 @@
  "★_what_this_artifact_is": "The outgoing population for the L0/L1 comparison, derived under Ruling 32 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`.  It fixes WHICH current-text documents the comparison covers and in WHAT ORDER they are worked.  It takes no disposition and grades nothing.",
  "★_what_it_does_not_do": "It does not compare, dispose, adopt, relocate, quarantine, discard or grade anything, and it edits no outgoing text.  It reports a population and its reach.",
  "the_ruling": "§3am (Ruling 32) of cowork_rulings_2026_08_31_decision_surface_sitting.md",
+ "the_cut": "§3an (Ruling 33) of the same record — the term search is cut to the ruled specification document set",
+ "the_specification_set_cut": {
+  "★_the_cut_is_ruled_and_the_set_is_read": "THE CUT IS RULING 33's, AND THE SET IT CUTS TO IS READ, NEVER RE-DERIVED HERE.  Ruling 33 (§3an of `cowork_rulings_2026_08_31_decision_surface_sitting.md`) narrows Ruling 32's item 4: a term-search hit enters the outgoing population ONLY IF its file is a member of the specification document set.  That set has one home — `tools/audit/specification_document_set.json`, derived from `ARCHITECTURE.md`'s admitted delegations under Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md` — and this tool reads its `the_document_set` members by EXACT PATH EQUALITY.  It authors no membership judgment of its own, so a document leaving or entering that set moves this population without anyone editing this tool.",
+  "read_from": "tools/audit/specification_document_set.json -> the_document_set -> each record's `member`",
+  "the_test": "path equality, exact",
+  "members_in_the_set_as_read": 26,
+  "the_members_as_read": [
+   "ARCHITECTURE.md",
+   "cowork_bounded_context_design.md",
+   "cowork_confidence_contract.md",
+   "cowork_evidence_inventory.md",
+   "cowork_idiom_entry_mapping.md",
+   "cowork_joint_estimator_architecture.md",
+   "cowork_joint_estimator_factorization.md",
+   "cowork_layer1_note_model_design.md",
+   "cowork_layer2_slicing_design.md",
+   "cowork_layer3_keymode_design.md",
+   "cowork_layer4_chordsymbol_design.md",
+   "cowork_layer5_engagement_design.md",
+   "cowork_layer5_function_design.md",
+   "cowork_layer6_grouping_design.md",
+   "cowork_notation_adoption_increment.md",
+   "cowork_notation_output_contract.md",
+   "cowork_phrase_boundary_design.md",
+   "cowork_prefit_gates.md",
+   "cowork_progression_schema_design.md",
+   "cowork_progression_schema_dictionary.md",
+   "cowork_score_census.md",
+   "cowork_stage5_fitter_design.md",
+   "cowork_target_architecture.md",
+   "cowork_voiceleading_axis_design.md",
+   "docs/llm_integration.md",
+   "docs/scoring_model.md"
+  ],
+  "named_members_that_are_also_in_the_set": [
+   "ARCHITECTURE.md",
+   "cowork_joint_estimator_factorization.md",
+   "cowork_layer1_note_model_design.md",
+   "cowork_layer2_slicing_design.md",
+   "cowork_layer5_function_design.md",
+   "cowork_phrase_boundary_design.md"
+  ],
+  "named_members_that_are_NOT_in_the_set": [
+   "cowork_layer1_extend_design.md",
+   "cowork_layer1_tone_collection_design.md",
+   "cowork_layer2_reslice_design.md"
+  ],
+  "★_a_named_member_stays_in_the_population_by_name": "Ruling 33 narrows Ruling 32's item 4 — the term-search limb — and nothing else.  The eleven named members stand whether or not they are in the specification set, so a named member listed above as NOT in the set is still in the population, by name."
+ },
  "the_named_members": [
   {
    "ruling_item": 1,
@@ -177,7 +226,7 @@
    },
    "hits_per_term": {
     "slice": 1083,
-    "tie": 888,
+    "tie": 889,
     "fermata": 132,
     "MusicXML": 126,
     "leading-tone": 112,
@@ -210,13 +259,16 @@
    },
    "files_with_at_least_one_admitting_hit": 112,
    "of_those_already_named_by_the_ruling": 9,
-   "hit_files_outside_the_named_members": 103
+   "hit_files_outside_the_named_members": 103,
+   "of_those_IN_the_specification_document_set": 18,
+   "of_those_OUT_of_it_and_therefore_residue": 85
   },
   "per_file": {
    "ARCHITECTURE.md": {
     "path": "ARCHITECTURE.md",
     "inventory_class": "governing-documents",
     "is_a_named_member": true,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 100,
     "recorded_hit_count": 251,
     "admitting_hits": [
@@ -2334,6 +2386,7 @@
     "path": "BUILD_AND_TEST.md",
     "inventory_class": "governing-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 7,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -2393,6 +2446,7 @@
     "path": "CLAUDE.md",
     "inventory_class": "governing-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 11,
     "recorded_hit_count": 40,
     "admitting_hits": [
@@ -2710,6 +2764,7 @@
     "path": "DECISIONS.md",
     "inventory_class": "governing-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 7,
     "recorded_hit_count": 30,
     "admitting_hits": [
@@ -2943,6 +2998,7 @@
     "path": "DEFECT_TYPES.md",
     "inventory_class": "governing-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 3,
     "admitting_hits": [],
@@ -2971,6 +3027,7 @@
     "path": "OPEN_ITEMS.md",
     "inventory_class": "governing-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 10,
     "recorded_hit_count": 35,
     "admitting_hits": [
@@ -3248,10 +3305,28 @@
      }
     ]
    },
+   "STATUS.md": {
+    "path": "STATUS.md",
+    "inventory_class": "governing-documents",
+    "is_a_named_member": false,
+    "in_the_specification_document_set": false,
+    "admitting_hit_count": 0,
+    "recorded_hit_count": 1,
+    "admitting_hits": [],
+    "recorded_hits": [
+     {
+      "line_number": 8,
+      "term": "tie",
+      "tier": "recorded",
+      "line": "*Last updated: 2026-09-02 (CC — **★★ THE L0/L1 OUTGOING POPULATION IS DERIVED AND PUBLISHED, AND THE COMPARISON DID NOT OPEN: THE DISPATCH'S OWN RULED SIZE STOP FIRED AT TASK 1 AND TASK 2 WAS NOT ENTERED.** The population is `tools/audit/l0_l1_outgoing_population.json`, written by `tools/audit/gen_l0_l1_outgoing_population.py` under Ruling 32 — the eleven members the ruling names, each **proven present at its path** and the three `ARCHITECTURE.md` sections **located by heading text and never by line number** (**D-307**), plus every file admitted by the term search over the three ruled inventory classes, whose membership is read from the inventory's own `every_member` and never from a directory listing. ★ **THE TWO SEARCH TIERS ARE DECLARED AUTHORED ON THE ARTIFACT ITSELF**, not merely in the tool, and **the reach is STATED AS A LOWER BOUND WITH NO INDEPENDENTLY-KNOWN POPULATION TO RECONCILE AGAINST — declared UNMEASURED, never a census** (**D-673** and the recognizer clause). ★ **THE SIZE STOP IS THE BATCH'S OWN THRESHOLD, NOT A FIGURE ABOUT THE CORPUS**, and whether the term list narrows or the comparison splits across dispatches is the user's ruling, not this batch's. **NO DISPOSITION WAS PROPOSED OR APPLIED, NO STATEMENT WAS GRADED, NO OUTGOING TEXT WAS EDITED, AND NO READING FILE EXISTS** — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` was NOT created, because a partly worked population is exactly what the ruled stop exists to prevent. ★ **THREE THINGS THE DISPATCH PREDICTED ARE REFUTED AND ALL THREE ARE REPORTED RATHER THAN ABSORBED:** its declared start state was read from a `guard_state.json` object written **three commits before the tip**, so the tree carries more standing reds than the eight it names, each cause established at its own tool; assumption A1 enumerated two tracked modifications where the tree carries three, the third being the writing side's own amendment of the eighty-eighth handoff entry; and **assumption A4 is refuted by measurement — the new script carries a `--check` mode, so leaving it unenrolled HALTS the guard runner rather than leaving the population unmoved.** **The dispatch forbids enrolment twice, so it was not enrolled and the halt stands, unrepaired and attributed.** Dispatch **`cc_instruction_comparison_l0_l1_2026_09_02.md`**. Per the OI-222 pointer convention this entry is a **POINTER** — every count, every term, every hit and the whole ordered population are the artifact, and the report carries the causes — and no figure is restated here (**D-431**).)*"
+     }
+    ]
+   },
    "cowork_adjudication_dossier.md": {
     "path": "cowork_adjudication_dossier.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 4,
     "admitting_hits": [
@@ -3299,6 +3374,7 @@
     "path": "cowork_architecture_reassessment.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 8,
     "admitting_hits": [
@@ -3364,6 +3440,7 @@
     "path": "cowork_architecture_review_2026_07.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 5,
     "recorded_hit_count": 24,
     "admitting_hits": [
@@ -3549,6 +3626,7 @@
     "path": "cowork_arm_and_site_fillin_2026_08_28.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 9,
     "recorded_hit_count": 43,
     "admitting_hits": [
@@ -3872,6 +3950,7 @@
     "path": "cowork_audit_cadencekeyanchor.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -3907,6 +3986,7 @@
     "path": "cowork_audit_chordanalyzer_oracle.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 5,
     "admitting_hits": [],
@@ -3947,6 +4027,7 @@
     "path": "cowork_audit_chordpostpasses_sparse.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 2,
     "admitting_hits": [],
@@ -3969,6 +4050,7 @@
     "path": "cowork_audit_harmonicfunctionlayer.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 3,
     "admitting_hits": [],
@@ -3997,6 +4079,7 @@
     "path": "cowork_audit_keymodeanalyzer.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 4,
     "admitting_hits": [],
@@ -4031,6 +4114,7 @@
     "path": "cowork_audit_obligation_map.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 9,
     "admitting_hits": [
@@ -4108,6 +4192,7 @@
     "path": "cowork_audit_postscoringgates.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 2,
     "admitting_hits": [],
@@ -4130,6 +4215,7 @@
     "path": "cowork_audit_protocol.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 9,
     "admitting_hits": [],
@@ -4194,6 +4280,7 @@
     "path": "cowork_audit_regionanalyzer.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 2,
     "admitting_hits": [],
@@ -4216,6 +4303,7 @@
     "path": "cowork_audit_sectioncadencedetection.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 3,
     "admitting_hits": [],
@@ -4244,6 +4332,7 @@
     "path": "cowork_blind_derivation_harmony_boundary_2026_08_23.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 24,
     "recorded_hit_count": 36,
     "admitting_hits": [
@@ -4615,6 +4704,7 @@
     "path": "cowork_blind_derivation_scoring_model_2026_08_24.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 17,
     "recorded_hit_count": 30,
     "admitting_hits": [
@@ -4908,6 +4998,7 @@
     "path": "cowork_blind_session_brief_framework.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 2,
     "admitting_hits": [],
@@ -4930,6 +5021,7 @@
     "path": "cowork_blind_session_brief_harmony_boundary.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 6,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -4983,6 +5075,7 @@
     "path": "cowork_blind_session_brief_scoring_model.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 2,
     "admitting_hits": [
@@ -5030,6 +5123,7 @@
     "path": "cowork_blind_session_opening_instruction_harmony_boundary.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 0,
     "admitting_hits": [
@@ -5046,6 +5140,7 @@
     "path": "cowork_bounded_context_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 6,
     "recorded_hit_count": 33,
     "admitting_hits": [
@@ -5291,6 +5386,7 @@
     "path": "cowork_candidate_findings_2026_08_02b.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 2,
     "admitting_hits": [],
@@ -5313,6 +5409,7 @@
     "path": "cowork_candidate_lever_register.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 2,
     "admitting_hits": [
@@ -5348,6 +5445,7 @@
     "path": "cowork_candidate_open_items_2026_08_02.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 6,
     "recorded_hit_count": 21,
     "admitting_hits": [
@@ -5521,6 +5619,7 @@
     "path": "cowork_census_full_needs_audit.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 18,
     "admitting_hits": [
@@ -5652,6 +5751,7 @@
     "path": "cowork_confidence_contract.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 0,
     "recorded_hit_count": 13,
     "admitting_hits": [],
@@ -5740,6 +5840,7 @@
     "path": "cowork_corpus_audit.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 3,
     "admitting_hits": [
@@ -5793,6 +5894,7 @@
     "path": "cowork_delta_check_dispositions.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 17,
     "admitting_hits": [],
@@ -5905,6 +6007,7 @@
     "path": "cowork_design_doc_template.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -5921,6 +6024,7 @@
     "path": "cowork_eg1_premise_checks.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 8,
     "admitting_hits": [],
@@ -5979,6 +6083,7 @@
     "path": "cowork_eg2_scoping.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 27,
     "admitting_hits": [
@@ -6164,6 +6269,7 @@
     "path": "cowork_empirical_findings_candidates.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 16,
     "recorded_hit_count": 21,
     "admitting_hits": [
@@ -6397,6 +6503,7 @@
     "path": "cowork_engage_arc_plan.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 9,
     "admitting_hits": [],
@@ -6461,6 +6568,7 @@
     "path": "cowork_evidence_inventory.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 26,
     "recorded_hit_count": 10,
     "admitting_hits": [
@@ -6688,6 +6796,7 @@
     "path": "cowork_extent_decision_surface.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -6704,6 +6813,7 @@
     "path": "cowork_fact_gate_admissions_2026_08_26.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 2,
     "admitting_hits": [
@@ -6739,6 +6849,7 @@
     "path": "cowork_factorization_desk_simulation.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 27,
     "recorded_hit_count": 13,
     "admitting_hits": [
@@ -6990,6 +7101,7 @@
     "path": "cowork_fb_redesign_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 13,
     "admitting_hits": [],
@@ -7078,6 +7190,7 @@
     "path": "cowork_framework_document_draft_2026_08_28.md",
     "inventory_class": "writing-side-design-documents",
     "absent_from_the_tree": true,
+    "in_the_specification_document_set": false,
     "admitting_hits": [],
     "recorded_hits": []
    },
@@ -7085,6 +7198,7 @@
     "path": "cowork_framework_phase_opening_surface_2026_08_26.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 2,
     "admitting_hits": [],
@@ -7107,6 +7221,7 @@
     "path": "cowork_functional_analysis_research_grounding.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -7123,6 +7238,7 @@
     "path": "cowork_gateA_unification_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 4,
     "admitting_hits": [],
@@ -7157,6 +7273,7 @@
     "path": "cowork_gate_policy_amendment.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 6,
     "admitting_hits": [],
@@ -7203,6 +7320,7 @@
     "path": "cowork_idiom_discovery_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 5,
     "recorded_hit_count": 3,
     "admitting_hits": [
@@ -7262,6 +7380,7 @@
     "path": "cowork_idiom_discovery_findings.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -7278,6 +7397,7 @@
     "path": "cowork_idiom_entry_mapping.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 1,
     "recorded_hit_count": 0,
     "admitting_hits": [
@@ -7294,6 +7414,7 @@
     "path": "cowork_implementation_review.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -7341,6 +7462,7 @@
     "path": "cowork_information_loss_audit.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 7,
     "admitting_hits": [],
@@ -7393,6 +7515,7 @@
     "path": "cowork_informed_session_brief_framework.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -7428,6 +7551,7 @@
     "path": "cowork_jazz_realization_qa_instrument.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 5,
     "recorded_hit_count": 0,
     "admitting_hits": [
@@ -7468,6 +7592,7 @@
     "path": "cowork_joint_estimator_architecture.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 4,
     "recorded_hit_count": 2,
     "admitting_hits": [
@@ -7515,6 +7640,7 @@
     "path": "cowork_joint_estimator_factorization.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": true,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 11,
     "recorded_hit_count": 9,
     "admitting_hits": [
@@ -7646,6 +7772,7 @@
     "path": "cowork_joint_key_chord_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 17,
     "admitting_hits": [],
@@ -7758,6 +7885,7 @@
     "path": "cowork_key_chord_joint_inference_grounding.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -7774,6 +7902,7 @@
     "path": "cowork_key_drift_research_grounding.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 8,
     "admitting_hits": [
@@ -7839,6 +7968,7 @@
     "path": "cowork_key_layer_design_opening.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 6,
     "admitting_hits": [
@@ -7910,6 +8040,7 @@
     "path": "cowork_key_mode_inference_diagnosis.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 5,
     "recorded_hit_count": 0,
     "admitting_hits": [
@@ -7950,6 +8081,7 @@
     "path": "cowork_l1_l5_premise_debt_audit.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 21,
     "admitting_hits": [],
@@ -8086,6 +8218,7 @@
     "path": "cowork_l1l3_stabilization_plan.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 19,
     "admitting_hits": [
@@ -8235,6 +8368,7 @@
     "path": "cowork_l1l4_architecture_audit.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 16,
     "admitting_hits": [
@@ -8366,6 +8500,7 @@
     "path": "cowork_l1l4_completion_ledger.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 8,
     "admitting_hits": [
@@ -8443,6 +8578,7 @@
     "path": "cowork_l1l4_review_charter.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 3,
     "admitting_hits": [
@@ -8478,6 +8614,7 @@
     "path": "cowork_l1l4_review_note.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 3,
     "admitting_hits": [],
@@ -8506,6 +8643,7 @@
     "path": "cowork_layer1_extend_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": true,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 11,
     "admitting_hits": [
@@ -8607,6 +8745,7 @@
     "path": "cowork_layer1_note_model_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": true,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 11,
     "recorded_hit_count": 46,
     "admitting_hits": [
@@ -8960,6 +9099,7 @@
     "path": "cowork_layer1_tone_collection_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": true,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 25,
     "admitting_hits": [
@@ -9139,6 +9279,7 @@
     "path": "cowork_layer2_reslice_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": true,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 6,
     "recorded_hit_count": 67,
     "admitting_hits": [
@@ -9588,6 +9729,7 @@
     "path": "cowork_layer2_slicing_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": true,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 10,
     "recorded_hit_count": 86,
     "admitting_hits": [
@@ -10175,6 +10317,7 @@
     "path": "cowork_layer3_keymode_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 14,
     "recorded_hit_count": 98,
     "admitting_hits": [
@@ -10858,6 +11001,7 @@
     "path": "cowork_layer3_keymode_impl_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 19,
     "admitting_hits": [],
@@ -10982,6 +11126,7 @@
     "path": "cowork_layer3_reachback_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 22,
     "admitting_hits": [
@@ -11131,6 +11276,7 @@
     "path": "cowork_layer3_spec_language_sweep.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 9,
     "admitting_hits": [],
@@ -11195,6 +11341,7 @@
     "path": "cowork_layer4_chordsymbol_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 4,
     "recorded_hit_count": 107,
     "admitting_hits": [
@@ -11872,6 +12019,7 @@
     "path": "cowork_layer4_spec_review.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 19,
     "admitting_hits": [],
@@ -11996,6 +12144,7 @@
     "path": "cowork_layer5_engagement_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 2,
     "recorded_hit_count": 48,
     "admitting_hits": [
@@ -12307,6 +12456,7 @@
     "path": "cowork_layer5_function_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": true,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 48,
     "recorded_hit_count": 73,
     "admitting_hits": [
@@ -13044,6 +13194,7 @@
     "path": "cowork_layer5_function_methods.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 6,
     "recorded_hit_count": 8,
     "admitting_hits": [
@@ -13139,6 +13290,7 @@
     "path": "cowork_layer5_spec_review.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 3,
     "admitting_hits": [
@@ -13174,6 +13326,7 @@
     "path": "cowork_layer6_grouping_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 19,
     "recorded_hit_count": 14,
     "admitting_hits": [
@@ -13383,6 +13536,7 @@
     "path": "cowork_layer6_grouping_research.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 9,
     "recorded_hit_count": 0,
     "admitting_hits": [
@@ -13447,6 +13601,7 @@
     "path": "cowork_literature_reachability_2026_08_26.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 4,
     "admitting_hits": [],
@@ -13481,6 +13636,7 @@
     "path": "cowork_mode_key_chord_inference_discussion.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 4,
     "admitting_hits": [],
@@ -13515,6 +13671,7 @@
     "path": "cowork_notation_adoption_increment.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 2,
     "recorded_hit_count": 24,
     "admitting_hits": [
@@ -13682,6 +13839,7 @@
     "path": "cowork_notation_output_contract.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 1,
     "recorded_hit_count": 7,
     "admitting_hits": [
@@ -13741,6 +13899,7 @@
     "path": "cowork_oi200_perspective_inventory.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -13788,6 +13947,7 @@
     "path": "cowork_phase1_commissioning_surface_2026_08_11.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 4,
     "admitting_hits": [],
@@ -13822,6 +13982,7 @@
     "path": "cowork_phase2_architecture_review.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 4,
     "admitting_hits": [],
@@ -13856,6 +14017,7 @@
     "path": "cowork_phase5_branch_backfill_spec.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 6,
     "admitting_hits": [
@@ -13909,6 +14071,7 @@
     "path": "cowork_phase5b_l4_build_plan.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 15,
     "admitting_hits": [
@@ -14016,6 +14179,7 @@
     "path": "cowork_phase5c_l5_build_plan.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -14069,6 +14233,7 @@
     "path": "cowork_phrase_boundary_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": true,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 46,
     "recorded_hit_count": 31,
     "admitting_hits": [
@@ -14542,6 +14707,7 @@
     "path": "cowork_phrase_boundary_methods.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 7,
     "recorded_hit_count": 4,
     "admitting_hits": [
@@ -14619,6 +14785,7 @@
     "path": "cowork_placement_sample_sealed_2026_08_27.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 20,
     "recorded_hit_count": 16,
     "admitting_hits": [
@@ -14846,6 +15013,7 @@
     "path": "cowork_placement_sample_sealed_redraw_2026_08_27.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 8,
     "recorded_hit_count": 10,
     "admitting_hits": [
@@ -14965,6 +15133,7 @@
     "path": "cowork_placement_sample_sealed_third_2026_08_27.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 8,
     "recorded_hit_count": 10,
     "admitting_hits": [
@@ -15084,6 +15253,7 @@
     "path": "cowork_placement_sample_surface_2026_08_27.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 5,
     "admitting_hits": [],
@@ -15124,6 +15294,7 @@
     "path": "cowork_plan_evaluation_brief_2026_08_21.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -15140,6 +15311,7 @@
     "path": "cowork_polyphony_phrase_harmony_research.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -15193,6 +15365,7 @@
     "path": "cowork_prediction_tabulation_2026_08_21.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 3,
     "admitting_hits": [],
@@ -15221,6 +15394,7 @@
     "path": "cowork_prefit_gates.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 3,
     "recorded_hit_count": 3,
     "admitting_hits": [
@@ -15268,6 +15442,7 @@
     "path": "cowork_premise_gate_reflection.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -15297,6 +15472,7 @@
     "path": "cowork_product_tool_register.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 4,
     "admitting_hits": [
@@ -15338,6 +15514,7 @@
     "path": "cowork_progression_schema_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 0,
     "recorded_hit_count": 13,
     "admitting_hits": [],
@@ -15426,6 +15603,7 @@
     "path": "cowork_progression_schema_dictionary.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 1,
     "recorded_hit_count": 8,
     "admitting_hits": [
@@ -15491,6 +15669,7 @@
     "path": "cowork_report_plan_evaluation_2026_08_21.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 11,
     "admitting_hits": [],
@@ -15567,6 +15746,7 @@
     "path": "cowork_review_findings_prediction_2026_08_21.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 2,
     "admitting_hits": [],
@@ -15589,6 +15769,7 @@
     "path": "cowork_score_census.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 7,
     "recorded_hit_count": 29,
     "admitting_hits": [
@@ -15816,6 +15997,7 @@
     "path": "cowork_score_census_gt_draft.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 47,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -16139,6 +16321,7 @@
     "path": "cowork_score_census_plain_draft.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 44,
     "recorded_hit_count": 9,
     "admitting_hits": [
@@ -16468,6 +16651,7 @@
     "path": "cowork_sensitive_cell_probe.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 9,
     "admitting_hits": [
@@ -16539,6 +16723,7 @@
     "path": "cowork_siloed_facts_audit.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 8,
     "admitting_hits": [],
@@ -16597,6 +16782,7 @@
     "path": "cowork_spec_code_audit_adjudication_method.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -16613,6 +16799,7 @@
     "path": "cowork_spec_language_sweep.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 11,
     "admitting_hits": [],
@@ -16689,6 +16876,7 @@
     "path": "cowork_spec_polish_findings_a.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 23,
     "admitting_hits": [
@@ -16862,6 +17050,7 @@
     "path": "cowork_spec_polish_findings_b.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 9,
     "admitting_hits": [
@@ -16945,6 +17134,7 @@
     "path": "cowork_specification_reconstruction_plan_2026_08_19.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -16961,6 +17151,7 @@
     "path": "cowork_specification_reconstruction_plan_successor_2026_08_21.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 15,
     "admitting_hits": [],
@@ -17061,6 +17252,7 @@
     "path": "cowork_specification_reconstruction_plan_v2_2026_08_19.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -17077,6 +17269,7 @@
     "path": "cowork_specification_reconstruction_plan_v3_2026_08_19.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -17093,6 +17286,7 @@
     "path": "cowork_specification_reconstruction_plan_v4_2026_08_19.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 21,
     "admitting_hits": [],
@@ -17229,6 +17423,7 @@
     "path": "cowork_stage5_fitter_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 1,
     "recorded_hit_count": 53,
     "admitting_hits": [
@@ -17564,6 +17759,7 @@
     "path": "cowork_stopped_strata_surface_2026_08_27.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -17580,6 +17776,7 @@
     "path": "cowork_structural_integrity_audit.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 10,
     "admitting_hits": [
@@ -17657,6 +17854,7 @@
     "path": "cowork_style_clustering_plan.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -17673,6 +17871,7 @@
     "path": "cowork_style_taxonomy_proposal.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -17726,6 +17925,7 @@
     "path": "cowork_take_rule_surface_2026_08_27.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -17742,6 +17942,7 @@
     "path": "cowork_target_architecture.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 15,
     "recorded_hit_count": 67,
     "admitting_hits": [
@@ -18245,6 +18446,7 @@
     "path": "cowork_target_architecture_review.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 7,
     "admitting_hits": [],
@@ -18297,6 +18499,7 @@
     "path": "cowork_target_document_structure_2026_08_09.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 2,
     "admitting_hits": [],
@@ -18319,6 +18522,7 @@
     "path": "cowork_term_theory_grounding.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 13,
     "recorded_hit_count": 6,
     "admitting_hits": [
@@ -18444,6 +18648,7 @@
     "path": "cowork_types_header_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -18460,6 +18665,7 @@
     "path": "cowork_uncertain_resolver_investigation.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -18476,6 +18682,7 @@
     "path": "cowork_union_search_record.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 5,
     "recorded_hit_count": 4,
     "admitting_hits": [
@@ -18541,6 +18748,7 @@
     "path": "cowork_unit_question_surface_2026_08_28.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 4,
     "admitting_hits": [],
@@ -18575,6 +18783,7 @@
     "path": "cowork_upstream_merge_risk.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -18640,6 +18849,7 @@
     "path": "cowork_verification_plan_preparation_tenth.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 5,
     "admitting_hits": [],
@@ -18680,6 +18890,7 @@
     "path": "cowork_voiceleading_axis_design.md",
     "inventory_class": "writing-side-design-documents",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 6,
     "recorded_hit_count": 19,
     "admitting_hits": [
@@ -18841,6 +19052,7 @@
     "path": "docs/README.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -18857,6 +19069,7 @@
     "path": "docs/architecture_joint_inference.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 3,
     "admitting_hits": [
@@ -18898,6 +19111,7 @@
     "path": "docs/back_half_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 7,
     "recorded_hit_count": 9,
     "admitting_hits": [
@@ -19005,6 +19219,7 @@
     "path": "docs/beam_widening_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 15,
     "admitting_hits": [],
@@ -19105,6 +19320,7 @@
     "path": "docs/decoder_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 26,
     "admitting_hits": [
@@ -19296,6 +19512,7 @@
     "path": "docs/divergence_d_recon.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 5,
     "admitting_hits": [],
@@ -19336,6 +19553,7 @@
     "path": "docs/duplication_audit.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 8,
     "admitting_hits": [],
@@ -19394,6 +19612,7 @@
     "path": "docs/extension_stripping_policy.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -19410,6 +19629,7 @@
     "path": "docs/format_symbol_audit.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 5,
     "admitting_hits": [],
@@ -19450,6 +19670,7 @@
     "path": "docs/implementation_roadmap.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 5,
     "recorded_hit_count": 34,
     "admitting_hits": [
@@ -19695,6 +19916,7 @@
     "path": "docs/iter92_joint_bass_chord_scoring.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 2,
     "admitting_hits": [
@@ -19724,6 +19946,7 @@
     "path": "docs/iter97_bir_false_categorization.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 4,
     "admitting_hits": [
@@ -19765,6 +19988,7 @@
     "path": "docs/iter97_delta_characterization.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -19800,6 +20024,7 @@
     "path": "docs/key_detection_baroque_partial_signature.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 5,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -19847,6 +20072,7 @@
     "path": "docs/key_path_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 6,
     "admitting_hits": [
@@ -19900,6 +20126,7 @@
     "path": "docs/layer_architecture_audit.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 6,
     "admitting_hits": [
@@ -19953,6 +20180,7 @@
     "path": "docs/layer_audit_plan.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 4,
     "admitting_hits": [
@@ -19994,6 +20222,7 @@
     "path": "docs/llm_integration.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 5,
     "recorded_hit_count": 15,
     "admitting_hits": [
@@ -20125,6 +20354,7 @@
     "path": "docs/llm_triage_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 3,
     "admitting_hits": [
@@ -20172,6 +20402,7 @@
     "path": "docs/musescore_parser_special_notations_recon.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 0,
     "admitting_hits": [
@@ -20188,6 +20419,7 @@
     "path": "docs/nct_detection_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 6,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -20265,6 +20497,7 @@
     "path": "docs/perf_p3_baseline.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 5,
     "admitting_hits": [],
@@ -20305,6 +20538,7 @@
     "path": "docs/phase5_recon.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -20328,6 +20562,7 @@
     "path": "docs/policy2_coalescing_map.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -20344,6 +20579,7 @@
     "path": "docs/precision_metric_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 3,
     "admitting_hits": [
@@ -20391,6 +20627,7 @@
     "path": "docs/quality_observations_iter76.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 4,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -20432,6 +20669,7 @@
     "path": "docs/redesign_plan.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 23,
     "admitting_hits": [
@@ -20593,6 +20831,7 @@
     "path": "docs/scoped_joint_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 2,
     "admitting_hits": [
@@ -20622,6 +20861,7 @@
     "path": "docs/score_inventory.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 27,
     "recorded_hit_count": 10,
     "admitting_hits": [
@@ -20855,6 +21095,7 @@
     "path": "docs/score_vs_normalized_confidence_recon.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 2,
     "admitting_hits": [],
@@ -20877,6 +21118,7 @@
     "path": "docs/scoring_model.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": true,
     "admitting_hit_count": 7,
     "recorded_hit_count": 30,
     "admitting_hits": [
@@ -21110,6 +21352,7 @@
     "path": "docs/stage4b_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -21169,6 +21412,7 @@
     "path": "docs/stage4c_cadence_key_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 5,
     "admitting_hits": [
@@ -21222,6 +21466,7 @@
     "path": "docs/stage4d_local_modulation_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 3,
     "recorded_hit_count": 1,
     "admitting_hits": [
@@ -21257,6 +21502,7 @@
     "path": "docs/stage6_functional_layer_design.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 12,
     "admitting_hits": [
@@ -21352,6 +21598,7 @@
     "path": "docs/symbol_input_audit.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 1,
     "recorded_hit_count": 0,
     "admitting_hits": [
@@ -21368,6 +21615,7 @@
     "path": "docs/three_paths_divergence_recon.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 2,
     "recorded_hit_count": 0,
     "admitting_hits": [
@@ -21390,6 +21638,7 @@
     "path": "docs/unified_analysis_pipeline.md",
     "inventory_class": "documentation-directory-prose",
     "is_a_named_member": false,
+    "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
     "recorded_hit_count": 1,
     "admitting_hits": [],
@@ -21491,730 +21740,1460 @@
   },
   {
    "position": 12,
-   "path": "cowork_score_census_gt_draft.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 47
-  },
-  {
-   "position": 13,
-   "path": "cowork_score_census_plain_draft.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 44
-  },
-  {
-   "position": 14,
-   "path": "cowork_factorization_desk_simulation.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 27
-  },
-  {
-   "position": 15,
-   "path": "docs/score_inventory.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 27
-  },
-  {
-   "position": 16,
    "path": "cowork_evidence_inventory.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
    "admitting_hit_count": 26
   },
   {
-   "position": 17,
-   "path": "cowork_blind_derivation_harmony_boundary_2026_08_23.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 24
-  },
-  {
-   "position": 18,
-   "path": "cowork_placement_sample_sealed_2026_08_27.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 20
-  },
-  {
-   "position": 19,
+   "position": 13,
    "path": "cowork_layer6_grouping_design.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
    "admitting_hit_count": 19
   },
   {
-   "position": 20,
-   "path": "cowork_blind_derivation_scoring_model_2026_08_24.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 17
-  },
-  {
-   "position": 21,
-   "path": "cowork_empirical_findings_candidates.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 16
-  },
-  {
-   "position": 22,
+   "position": 14,
    "path": "cowork_target_architecture.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
    "admitting_hit_count": 15
   },
   {
-   "position": 23,
+   "position": 15,
    "path": "cowork_layer3_keymode_design.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
    "admitting_hit_count": 14
   },
   {
-   "position": 24,
-   "path": "cowork_term_theory_grounding.md",
+   "position": 16,
+   "path": "cowork_score_census.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 13
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 7
+  },
+  {
+   "position": 17,
+   "path": "docs/scoring_model.md",
+   "section": null,
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 7
+  },
+  {
+   "position": 18,
+   "path": "cowork_bounded_context_design.md",
+   "section": null,
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 6
+  },
+  {
+   "position": 19,
+   "path": "cowork_voiceleading_axis_design.md",
+   "section": null,
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 6
+  },
+  {
+   "position": 20,
+   "path": "docs/llm_integration.md",
+   "section": null,
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 5
+  },
+  {
+   "position": 21,
+   "path": "cowork_joint_estimator_architecture.md",
+   "section": null,
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 4
+  },
+  {
+   "position": 22,
+   "path": "cowork_layer4_chordsymbol_design.md",
+   "section": null,
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 4
+  },
+  {
+   "position": 23,
+   "path": "cowork_prefit_gates.md",
+   "section": null,
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 3
+  },
+  {
+   "position": 24,
+   "path": "cowork_layer5_engagement_design.md",
+   "section": null,
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 2
   },
   {
    "position": 25,
-   "path": "CLAUDE.md",
+   "path": "cowork_notation_adoption_increment.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 11
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 2
   },
   {
    "position": 26,
-   "path": "OPEN_ITEMS.md",
+   "path": "cowork_idiom_entry_mapping.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 10
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 1
   },
   {
    "position": 27,
-   "path": "cowork_arm_and_site_fillin_2026_08_28.md",
+   "path": "cowork_notation_output_contract.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 9
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 1
   },
   {
    "position": 28,
-   "path": "cowork_layer6_grouping_research.md",
+   "path": "cowork_progression_schema_dictionary.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 9
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
+   "admitting_hit_count": 1
   },
   {
    "position": 29,
-   "path": "cowork_placement_sample_sealed_redraw_2026_08_27.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 8
-  },
-  {
-   "position": 30,
-   "path": "cowork_placement_sample_sealed_third_2026_08_27.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 8
-  },
-  {
-   "position": 31,
-   "path": "BUILD_AND_TEST.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 7
-  },
-  {
-   "position": 32,
-   "path": "DECISIONS.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 7
-  },
-  {
-   "position": 33,
-   "path": "cowork_phrase_boundary_methods.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 7
-  },
-  {
-   "position": 34,
-   "path": "cowork_score_census.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 7
-  },
-  {
-   "position": 35,
-   "path": "docs/back_half_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 7
-  },
-  {
-   "position": 36,
-   "path": "docs/scoring_model.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 7
-  },
-  {
-   "position": 37,
-   "path": "cowork_blind_session_brief_harmony_boundary.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 6
-  },
-  {
-   "position": 38,
-   "path": "cowork_bounded_context_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 6
-  },
-  {
-   "position": 39,
-   "path": "cowork_candidate_open_items_2026_08_02.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 6
-  },
-  {
-   "position": 40,
-   "path": "cowork_layer5_function_methods.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 6
-  },
-  {
-   "position": 41,
-   "path": "cowork_voiceleading_axis_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 6
-  },
-  {
-   "position": 42,
-   "path": "docs/nct_detection_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 6
-  },
-  {
-   "position": 43,
-   "path": "cowork_architecture_review_2026_07.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 5
-  },
-  {
-   "position": 44,
-   "path": "cowork_idiom_discovery_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 5
-  },
-  {
-   "position": 45,
-   "path": "cowork_jazz_realization_qa_instrument.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 5
-  },
-  {
-   "position": 46,
-   "path": "cowork_key_mode_inference_diagnosis.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 5
-  },
-  {
-   "position": 47,
-   "path": "cowork_union_search_record.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 5
-  },
-  {
-   "position": 48,
-   "path": "docs/implementation_roadmap.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 5
-  },
-  {
-   "position": 49,
-   "path": "docs/key_detection_baroque_partial_signature.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 5
-  },
-  {
-   "position": 50,
-   "path": "docs/llm_integration.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 5
-  },
-  {
-   "position": 51,
-   "path": "cowork_blind_session_brief_scoring_model.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 52,
-   "path": "cowork_corpus_audit.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 53,
-   "path": "cowork_joint_estimator_architecture.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 54,
-   "path": "cowork_key_layer_design_opening.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 55,
-   "path": "cowork_l1l3_stabilization_plan.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 56,
-   "path": "cowork_l1l4_architecture_audit.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 57,
-   "path": "cowork_layer4_chordsymbol_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 58,
-   "path": "cowork_spec_polish_findings_a.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 59,
-   "path": "cowork_upstream_merge_risk.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 60,
-   "path": "docs/decoder_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 61,
-   "path": "docs/quality_observations_iter76.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 4
-  },
-  {
-   "position": 62,
-   "path": "cowork_audit_cadencekeyanchor.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 63,
-   "path": "cowork_informed_session_brief_framework.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 64,
-   "path": "cowork_l1l4_completion_ledger.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 65,
-   "path": "cowork_prefit_gates.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 66,
-   "path": "cowork_spec_polish_findings_b.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 67,
-   "path": "docs/iter97_delta_characterization.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 68,
-   "path": "docs/llm_triage_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 69,
-   "path": "docs/precision_metric_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 70,
-   "path": "docs/stage4b_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 71,
-   "path": "docs/stage4d_local_modulation_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 3
-  },
-  {
-   "position": 72,
-   "path": "cowork_adjudication_dossier.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 73,
-   "path": "cowork_audit_obligation_map.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 74,
-   "path": "cowork_candidate_lever_register.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 75,
-   "path": "cowork_census_full_needs_audit.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 76,
-   "path": "cowork_eg2_scoping.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 77,
-   "path": "cowork_fact_gate_admissions_2026_08_26.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 78,
-   "path": "cowork_layer5_engagement_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 79,
-   "path": "cowork_notation_adoption_increment.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 80,
-   "path": "cowork_phase5c_l5_build_plan.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 81,
-   "path": "cowork_polyphony_phrase_harmony_research.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 82,
-   "path": "cowork_premise_gate_reflection.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 83,
-   "path": "cowork_style_taxonomy_proposal.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 84,
-   "path": "docs/architecture_joint_inference.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 85,
-   "path": "docs/redesign_plan.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 86,
-   "path": "docs/stage4c_cadence_key_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 87,
-   "path": "docs/stage6_functional_layer_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 88,
-   "path": "docs/three_paths_divergence_recon.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 2
-  },
-  {
-   "position": 89,
-   "path": "cowork_architecture_reassessment.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 90,
-   "path": "cowork_blind_session_opening_instruction_harmony_boundary.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 91,
-   "path": "cowork_idiom_entry_mapping.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 92,
-   "path": "cowork_implementation_review.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 93,
-   "path": "cowork_key_drift_research_grounding.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 94,
-   "path": "cowork_l1l4_review_charter.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 95,
-   "path": "cowork_layer3_reachback_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 96,
-   "path": "cowork_layer5_spec_review.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 97,
-   "path": "cowork_notation_output_contract.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 98,
-   "path": "cowork_oi200_perspective_inventory.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 99,
-   "path": "cowork_phase5_branch_backfill_spec.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 100,
-   "path": "cowork_phase5b_l4_build_plan.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 101,
-   "path": "cowork_product_tool_register.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 102,
-   "path": "cowork_progression_schema_dictionary.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 103,
-   "path": "cowork_sensitive_cell_probe.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 104,
    "path": "cowork_stage5_fitter_design.md",
    "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 105,
-   "path": "cowork_structural_integrity_audit.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 106,
-   "path": "docs/iter92_joint_bass_chord_scoring.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 107,
-   "path": "docs/iter97_bir_false_categorization.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 108,
-   "path": "docs/key_path_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 109,
-   "path": "docs/layer_architecture_audit.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 110,
-   "path": "docs/layer_audit_plan.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 111,
-   "path": "docs/musescore_parser_special_notations_recon.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 112,
-   "path": "docs/phase5_recon.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 113,
-   "path": "docs/scoped_joint_design.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
-   "admitting_hit_count": 1
-  },
-  {
-   "position": 114,
-   "path": "docs/symbol_input_audit.md",
-   "section": null,
-   "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+   "why_in_the_population": "a term-search hit under Ruling 32 item 4, IN the ruled specification document set (Ruling 33)",
    "admitting_hit_count": 1
   }
  ],
+ "the_population_before_ruling_33": {
+  "★_what_this_is": "The ordering the first writing of this tool produced, before Ruling 33 cut the term-search limb to the specification document set.  It is preserved beside the cut population rather than overwritten (#12): the cut removed files from a published population, and what a cut removed is evidence about the cut.",
+  "counted": 114,
+  "the_ordering": [
+   {
+    "position": 1,
+    "path": "ARCHITECTURE.md",
+    "section": "#### Layer 1 — the lossless note model",
+    "why_in_the_population": "named by Ruling 32 item 1",
+    "admitting_hit_count": 100
+   },
+   {
+    "position": 2,
+    "path": "ARCHITECTURE.md",
+    "section": "#### Layer 2 — the deterministic change-point slicer",
+    "why_in_the_population": "named by Ruling 32 item 1",
+    "admitting_hit_count": 100
+   },
+   {
+    "position": 3,
+    "path": "cowork_layer1_note_model_design.md",
+    "section": null,
+    "why_in_the_population": "named by Ruling 32 item 2",
+    "admitting_hit_count": 11
+   },
+   {
+    "position": 4,
+    "path": "cowork_layer1_tone_collection_design.md",
+    "section": null,
+    "why_in_the_population": "named by Ruling 32 item 2",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 5,
+    "path": "cowork_layer1_extend_design.md",
+    "section": null,
+    "why_in_the_population": "named by Ruling 32 item 2",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 6,
+    "path": "cowork_layer2_slicing_design.md",
+    "section": null,
+    "why_in_the_population": "named by Ruling 32 item 2",
+    "admitting_hit_count": 10
+   },
+   {
+    "position": 7,
+    "path": "cowork_layer2_reslice_design.md",
+    "section": null,
+    "why_in_the_population": "named by Ruling 32 item 2",
+    "admitting_hit_count": 6
+   },
+   {
+    "position": 8,
+    "path": "ARCHITECTURE.md",
+    "section": "#### Layer 5 — the function/cadence layer",
+    "why_in_the_population": "named by Ruling 32 item 3",
+    "admitting_hit_count": 100
+   },
+   {
+    "position": 9,
+    "path": "cowork_layer5_function_design.md",
+    "section": null,
+    "why_in_the_population": "named by Ruling 32 item 3",
+    "admitting_hit_count": 48
+   },
+   {
+    "position": 10,
+    "path": "cowork_phrase_boundary_design.md",
+    "section": null,
+    "why_in_the_population": "named by Ruling 32 item 3",
+    "admitting_hit_count": 46
+   },
+   {
+    "position": 11,
+    "path": "cowork_joint_estimator_factorization.md",
+    "section": null,
+    "why_in_the_population": "named by Ruling 32 item 3",
+    "admitting_hit_count": 11
+   },
+   {
+    "position": 12,
+    "path": "cowork_score_census_gt_draft.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 47
+   },
+   {
+    "position": 13,
+    "path": "cowork_score_census_plain_draft.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 44
+   },
+   {
+    "position": 14,
+    "path": "cowork_factorization_desk_simulation.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 27
+   },
+   {
+    "position": 15,
+    "path": "docs/score_inventory.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 27
+   },
+   {
+    "position": 16,
+    "path": "cowork_evidence_inventory.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 26
+   },
+   {
+    "position": 17,
+    "path": "cowork_blind_derivation_harmony_boundary_2026_08_23.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 24
+   },
+   {
+    "position": 18,
+    "path": "cowork_placement_sample_sealed_2026_08_27.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 20
+   },
+   {
+    "position": 19,
+    "path": "cowork_layer6_grouping_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 19
+   },
+   {
+    "position": 20,
+    "path": "cowork_blind_derivation_scoring_model_2026_08_24.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 17
+   },
+   {
+    "position": 21,
+    "path": "cowork_empirical_findings_candidates.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 16
+   },
+   {
+    "position": 22,
+    "path": "cowork_target_architecture.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 15
+   },
+   {
+    "position": 23,
+    "path": "cowork_layer3_keymode_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 14
+   },
+   {
+    "position": 24,
+    "path": "cowork_term_theory_grounding.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 13
+   },
+   {
+    "position": 25,
+    "path": "CLAUDE.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 11
+   },
+   {
+    "position": 26,
+    "path": "OPEN_ITEMS.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 10
+   },
+   {
+    "position": 27,
+    "path": "cowork_arm_and_site_fillin_2026_08_28.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 9
+   },
+   {
+    "position": 28,
+    "path": "cowork_layer6_grouping_research.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 9
+   },
+   {
+    "position": 29,
+    "path": "cowork_placement_sample_sealed_redraw_2026_08_27.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 8
+   },
+   {
+    "position": 30,
+    "path": "cowork_placement_sample_sealed_third_2026_08_27.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 8
+   },
+   {
+    "position": 31,
+    "path": "BUILD_AND_TEST.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 7
+   },
+   {
+    "position": 32,
+    "path": "DECISIONS.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 7
+   },
+   {
+    "position": 33,
+    "path": "cowork_phrase_boundary_methods.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 7
+   },
+   {
+    "position": 34,
+    "path": "cowork_score_census.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 7
+   },
+   {
+    "position": 35,
+    "path": "docs/back_half_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 7
+   },
+   {
+    "position": 36,
+    "path": "docs/scoring_model.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 7
+   },
+   {
+    "position": 37,
+    "path": "cowork_blind_session_brief_harmony_boundary.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 6
+   },
+   {
+    "position": 38,
+    "path": "cowork_bounded_context_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 6
+   },
+   {
+    "position": 39,
+    "path": "cowork_candidate_open_items_2026_08_02.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 6
+   },
+   {
+    "position": 40,
+    "path": "cowork_layer5_function_methods.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 6
+   },
+   {
+    "position": 41,
+    "path": "cowork_voiceleading_axis_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 6
+   },
+   {
+    "position": 42,
+    "path": "docs/nct_detection_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 6
+   },
+   {
+    "position": 43,
+    "path": "cowork_architecture_review_2026_07.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 5
+   },
+   {
+    "position": 44,
+    "path": "cowork_idiom_discovery_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 5
+   },
+   {
+    "position": 45,
+    "path": "cowork_jazz_realization_qa_instrument.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 5
+   },
+   {
+    "position": 46,
+    "path": "cowork_key_mode_inference_diagnosis.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 5
+   },
+   {
+    "position": 47,
+    "path": "cowork_union_search_record.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 5
+   },
+   {
+    "position": 48,
+    "path": "docs/implementation_roadmap.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 5
+   },
+   {
+    "position": 49,
+    "path": "docs/key_detection_baroque_partial_signature.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 5
+   },
+   {
+    "position": 50,
+    "path": "docs/llm_integration.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 5
+   },
+   {
+    "position": 51,
+    "path": "cowork_blind_session_brief_scoring_model.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 52,
+    "path": "cowork_corpus_audit.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 53,
+    "path": "cowork_joint_estimator_architecture.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 54,
+    "path": "cowork_key_layer_design_opening.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 55,
+    "path": "cowork_l1l3_stabilization_plan.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 56,
+    "path": "cowork_l1l4_architecture_audit.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 57,
+    "path": "cowork_layer4_chordsymbol_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 58,
+    "path": "cowork_spec_polish_findings_a.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 59,
+    "path": "cowork_upstream_merge_risk.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 60,
+    "path": "docs/decoder_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 61,
+    "path": "docs/quality_observations_iter76.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 4
+   },
+   {
+    "position": 62,
+    "path": "cowork_audit_cadencekeyanchor.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 63,
+    "path": "cowork_informed_session_brief_framework.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 64,
+    "path": "cowork_l1l4_completion_ledger.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 65,
+    "path": "cowork_prefit_gates.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 66,
+    "path": "cowork_spec_polish_findings_b.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 67,
+    "path": "docs/iter97_delta_characterization.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 68,
+    "path": "docs/llm_triage_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 69,
+    "path": "docs/precision_metric_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 70,
+    "path": "docs/stage4b_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 71,
+    "path": "docs/stage4d_local_modulation_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 3
+   },
+   {
+    "position": 72,
+    "path": "cowork_adjudication_dossier.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 73,
+    "path": "cowork_audit_obligation_map.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 74,
+    "path": "cowork_candidate_lever_register.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 75,
+    "path": "cowork_census_full_needs_audit.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 76,
+    "path": "cowork_eg2_scoping.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 77,
+    "path": "cowork_fact_gate_admissions_2026_08_26.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 78,
+    "path": "cowork_layer5_engagement_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 79,
+    "path": "cowork_notation_adoption_increment.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 80,
+    "path": "cowork_phase5c_l5_build_plan.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 81,
+    "path": "cowork_polyphony_phrase_harmony_research.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 82,
+    "path": "cowork_premise_gate_reflection.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 83,
+    "path": "cowork_style_taxonomy_proposal.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 84,
+    "path": "docs/architecture_joint_inference.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 85,
+    "path": "docs/redesign_plan.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 86,
+    "path": "docs/stage4c_cadence_key_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 87,
+    "path": "docs/stage6_functional_layer_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 88,
+    "path": "docs/three_paths_divergence_recon.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 2
+   },
+   {
+    "position": 89,
+    "path": "cowork_architecture_reassessment.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 90,
+    "path": "cowork_blind_session_opening_instruction_harmony_boundary.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 91,
+    "path": "cowork_idiom_entry_mapping.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 92,
+    "path": "cowork_implementation_review.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 93,
+    "path": "cowork_key_drift_research_grounding.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 94,
+    "path": "cowork_l1l4_review_charter.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 95,
+    "path": "cowork_layer3_reachback_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 96,
+    "path": "cowork_layer5_spec_review.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 97,
+    "path": "cowork_notation_output_contract.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 98,
+    "path": "cowork_oi200_perspective_inventory.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 99,
+    "path": "cowork_phase5_branch_backfill_spec.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 100,
+    "path": "cowork_phase5b_l4_build_plan.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 101,
+    "path": "cowork_product_tool_register.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 102,
+    "path": "cowork_progression_schema_dictionary.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 103,
+    "path": "cowork_sensitive_cell_probe.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 104,
+    "path": "cowork_stage5_fitter_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 105,
+    "path": "cowork_structural_integrity_audit.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 106,
+    "path": "docs/iter92_joint_bass_chord_scoring.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 107,
+    "path": "docs/iter97_bir_false_categorization.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 108,
+    "path": "docs/key_path_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 109,
+    "path": "docs/layer_architecture_audit.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 110,
+    "path": "docs/layer_audit_plan.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 111,
+    "path": "docs/musescore_parser_special_notations_recon.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 112,
+    "path": "docs/phase5_recon.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 113,
+    "path": "docs/scoped_joint_design.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   },
+   {
+    "position": 114,
+    "path": "docs/symbol_input_audit.md",
+    "section": null,
+    "why_in_the_population": "a term-search hit under Ruling 32 item 4",
+    "admitting_hit_count": 1
+   }
+  ]
+ },
+ "the_residue_for_the_mining_map": {
+  "★_what_this_is": "Every file the term search HIT that is NOT a member of the ruled specification document set.  Ruling 33 publishes it rather than dropping it (#12).  It is the territory of the phase's OTHER mechanism for design content in non-specification documents — the mining map named at the phase definition §3.4's inputs — and NOTHING here is dispositioned by this comparison.",
+  "★_what_is_NOT_claimed": "That a residue file holds nothing about L0's or L1's subject.  The cut is by DOCUMENT KIND, not by content: a residue file may hold design content, and the mining map is how it reaches L1.  The risk of the ruled option is stated at the ruling itself — a good idea sitting only in a report reaches L1 through the mining map rather than through this comparison.",
+  "the_statement_that_applies_to_every_entry": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map",
+  "counted": 85,
+  "the_per_file_hit_records_are_kept_whole": "A residue file keeps its full record at `the_term_search.per_file` — every admitting hit and every recorded hit, with line numbers — exactly as an in-population file does.  Nothing is dropped.",
+  "files": [
+   {
+    "path": "cowork_score_census_gt_draft.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 47,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_score_census_plain_draft.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 44,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_factorization_desk_simulation.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 27,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/score_inventory.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 27,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_blind_derivation_harmony_boundary_2026_08_23.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 24,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_placement_sample_sealed_2026_08_27.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 20,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_blind_derivation_scoring_model_2026_08_24.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 17,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_empirical_findings_candidates.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 16,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_term_theory_grounding.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 13,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "CLAUDE.md",
+    "inventory_class": "governing-documents",
+    "admitting_hit_count": 11,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "OPEN_ITEMS.md",
+    "inventory_class": "governing-documents",
+    "admitting_hit_count": 10,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_arm_and_site_fillin_2026_08_28.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 9,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_layer6_grouping_research.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 9,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_placement_sample_sealed_redraw_2026_08_27.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 8,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_placement_sample_sealed_third_2026_08_27.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 8,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "BUILD_AND_TEST.md",
+    "inventory_class": "governing-documents",
+    "admitting_hit_count": 7,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "DECISIONS.md",
+    "inventory_class": "governing-documents",
+    "admitting_hit_count": 7,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_phrase_boundary_methods.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 7,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/back_half_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 7,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_blind_session_brief_harmony_boundary.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 6,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_candidate_open_items_2026_08_02.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 6,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_layer5_function_methods.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 6,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/nct_detection_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 6,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_architecture_review_2026_07.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 5,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_idiom_discovery_design.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 5,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_jazz_realization_qa_instrument.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 5,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_key_mode_inference_diagnosis.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 5,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_union_search_record.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 5,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/implementation_roadmap.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 5,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/key_detection_baroque_partial_signature.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 5,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_blind_session_brief_scoring_model.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 4,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_corpus_audit.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 4,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_key_layer_design_opening.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 4,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_l1l3_stabilization_plan.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 4,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_l1l4_architecture_audit.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 4,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_spec_polish_findings_a.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 4,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_upstream_merge_risk.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 4,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/decoder_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 4,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/quality_observations_iter76.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 4,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_audit_cadencekeyanchor.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 3,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_informed_session_brief_framework.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 3,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_l1l4_completion_ledger.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 3,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_spec_polish_findings_b.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 3,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/iter97_delta_characterization.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 3,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/llm_triage_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 3,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/precision_metric_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 3,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/stage4b_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 3,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/stage4d_local_modulation_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 3,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_adjudication_dossier.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_audit_obligation_map.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_candidate_lever_register.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_census_full_needs_audit.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_eg2_scoping.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_fact_gate_admissions_2026_08_26.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_phase5c_l5_build_plan.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_polyphony_phrase_harmony_research.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_premise_gate_reflection.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_style_taxonomy_proposal.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/architecture_joint_inference.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/redesign_plan.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/stage4c_cadence_key_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/stage6_functional_layer_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/three_paths_divergence_recon.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 2,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_architecture_reassessment.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_blind_session_opening_instruction_harmony_boundary.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_implementation_review.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_key_drift_research_grounding.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_l1l4_review_charter.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_layer3_reachback_design.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_layer5_spec_review.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_oi200_perspective_inventory.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_phase5_branch_backfill_spec.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_phase5b_l4_build_plan.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_product_tool_register.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_sensitive_cell_probe.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "cowork_structural_integrity_audit.md",
+    "inventory_class": "writing-side-design-documents",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/iter92_joint_bass_chord_scoring.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/iter97_bir_false_categorization.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/key_path_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/layer_architecture_audit.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/layer_audit_plan.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/musescore_parser_special_notations_recon.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/phase5_recon.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/scoped_joint_design.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   },
+   {
+    "path": "docs/symbol_input_audit.md",
+    "inventory_class": "documentation-directory-prose",
+    "admitting_hit_count": 1,
+    "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map"
+   }
+  ]
+ },
  "the_size_stop": {
   "the_threshold": 40,
   "what_it_is": "A stop threshold for THIS BATCH, ruled in its dispatch so the decision is not the executing session's.  It is NOT a figure about the corpus and states nothing about how large the outgoing text is.",
-  "hit_files_outside_the_named_members": 103,
-  "the_stop_is_reached": true
+  "what_it_is_evaluated_on": "The IN-SET count outside the named members -- the population as Ruling 33 cuts it, not the pre-cut hit count.  The pre-cut figure is kept beside it so the effect of the cut on this stop is readable rather than argued.",
+  "hit_files_outside_the_named_members_IN_the_specification_set": 18,
+  "hit_files_outside_the_named_members_before_the_cut": 103,
+  "the_stop_is_reached": false
  }
 }

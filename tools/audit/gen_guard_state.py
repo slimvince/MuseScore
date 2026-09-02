@@ -219,6 +219,21 @@ AUTHORED = [
      "citation. Every ADMITTED anchor must sit on a line that names its own target. And the "
      "delegation seed is reconciled in BOTH directions, so a seed-admitted delegation the text no "
      "longer carries halts it rather than being quietly dropped"),
+    # ---- AUTHORED 2026-09-02, cc_instruction_comparison_l0_l1_second_2026_09_02.md Task 1 -----
+    # Registered under Ruling 33 (§3an of cowork_rulings_2026_08_31_decision_surface_sitting.md),
+    # in the act that amends the tool, for the reason the entries above give: a derived candidate
+    # with no authored invocation is this runner's own STOP, and a new guard may not be silently
+    # left unrun. The preceding dispatch ordered this tool written and forbade enrolling it, which
+    # halted the runner by construction; this entry clears that STOP.
+    ("tools/audit/gen_l0_l1_outgoing_population.py", ["--check"],
+     "the L0/L1 outgoing population re-derives from Ruling 32's named members, the term search "
+     "over the three prose classes of the artifact inventory, and the cut to the ruled "
+     "specification document set (Ruling 33). What it guards is not the term list, which is "
+     "authored and says so, but that every named member is present at its path, that the searched "
+     "population is the inventory's and not the file system's, that the cut reads the "
+     "specification set as it stands, and that the residue is published whole — so a document "
+     "moving under it, or a member leaving the specification set, halts the run rather than "
+     "moving the population silently"),
     # ---- AUTHORED 2026-08-15, cc_instruction_artifact_inventory.md ---------------------------
     # Registered in the act that creates it, for the reason stated three entries above.
     ("tools/audit/gen_artifact_inventory.py", ["--check"],
