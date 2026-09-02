@@ -49,11 +49,12 @@ The population's order is the artifact's:
 | 12 | `cowork_evidence_inventory.md` | **DONE** |
 | 13 | `cowork_layer6_grouping_design.md` | **DONE** |
 | 14 | `cowork_target_architecture.md` | **DONE** |
-| 15–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 15 | `cowork_layer3_keymode_design.md` | **DONE** |
+| 16–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 15–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 16–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 15**, `cowork_layer3_keymode_design.md`.
+dispatch resumes at **position 16**, `cowork_score_census.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -7216,6 +7217,318 @@ document**, which is why four documents now use the word three ways.
 
 ---
 
+### 6.15 — Document 15: `cowork_layer3_keymode_design.md`
+
+> **Manifest for this document.** Outgoing statements: **21** (rows 15.1 to 15.21; no row of this
+> document splits). Paragraphs counted under *not a statement*: **79**, across the banner and 16
+> sections. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit under Ruling 32 item 4, retained by
+> Ruling 33 as a member of the ruled specification document set.
+>
+> **What it is.** The key/mode decoder's design — under the ratified charter, **L2's territory**: *the
+> tonal reading, the one entangled decision*. It is in scope here as the **first consumer of L1's
+> outputs**, and as the outgoing record's only **named requester of an enlargement with a stated stop
+> condition**.
+>
+> **★ ITS AGREEMENT RATE IS THE HIGHEST OF ANY DOCUMENT SO FAR — twenty-eight AGREES against three
+> DIFFERS — and the reason is structural: almost every statement of it that reaches L0's or L1's
+> subject is a statement about what this layer may NOT do**, and those boundaries are the ones the
+> derivation draws.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §0 to §3 — the terms, the boundary and the inputs
+
+**Row 15.1 — the slice is the constant-sonority slice from the slicing layer, the atomic analysis
+unit.**
+*Statement.* "**Slice** | The **constant-sonority slice** from Architectural Layer 2 … — the span
+typology's atomic analysis unit" — §0 (locator: line 50).
+*Derived.* S-29, S-33. *Current-text axis.* S-29: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Worth recording against the **word *slice***
+family: this document's term row uses the **constant-sonority** sense — the derivation's — where
+documents 9, 13 and 14 use a decided-object sense. A fourth document, and the first that agrees.)*
+
+**Row 15.2 — the tonal pitch class is the notated spelling of a pitch, carried losslessly by the note
+layer.**
+*Statement.* "**Tonal pitch class (tpc)** | The notated spelling of a pitch (G♯ distinct from A♭), as
+carried losslessly by Architectural Layer 1." — §0 (locator: line 65).
+*Derived.* S-3, S-14. *Current-text axis.* S-3: **AGREES**. S-14: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 15.3 — it does not read or change the notes or slices, and does not detect cadences, a cadence
+being a function-level event decided later.**
+*Statement.* "It does **not** detect cadences — a cadence is a function-level event, decided later ….
+It does **not** … read or change the notes or slices (Architectural Layers 1 and 2)." — §1 (locator:
+line 126).
+*Derived.* S-9, S-50, S-53.
+*Current-text axis.* S-9: **AGREES**. S-50: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 8.1, 9.3 and 13.2 — the same cadence-placement
+line, and the read-do-not-change discipline beside it.
+
+**Row 15.4 — the only evidence it may use is the notes: which pitches sound and how much each is
+emphasised, by being in the bass, on a strong beat, or sounding often.**
+*Statement.* "the only evidence it may use is the notes — which pitches sound, and how much each is
+emphasised (by being in the bass, on a strong beat, or sounding often)." — §2 (locator: line 155).
+*Derived.* S-44 (the bass is the lowest sounding pitch of the slice's sounding set), S-35 (the metric
+strength class), S-3.
+*Current-text axis.* S-44: **AGREES**. S-35: **AGREES**. S-3: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **Both of the L1 facts this sentence names as the
+emphasis evidence — the bass and the beat strength — are published by the derivation**, at S-44 and
+S-35.
+
+**Row 15.5 — it may not use chord symbols, function or cadence detection, because using them here
+would reverse the dependency order.**
+*Statement.* "It may **not** use chord symbols, function, or cadence detection, because those are
+decided in later architectural layers and using them here would reverse the dependency order." — §2
+(locator: line 156).
+*Derived.* S-51, S-53. *Current-text axis.* S-51: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 15.6 — the written key signature is treated as a weak hint only, not as the truth.**
+*Statement.* "**The score's written key signature is treated as a weak hint only, not as the truth** —
+the key/mode is inferred primarily from the notes." — §2 (locator: line 195).
+*Derived.* S-6, S-9.
+*Current-text axis.* S-6: **AGREES**, and this is the charter's own clause — *"The key signature is a
+weak prior (C-2), never a fact about the tonality."* S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 15.7 — the reach-back is an extension request with a direction, a stop condition and a hard
+bound, terminating at the score start.**
+*Statement.* "This reach-back **is an extension request** …: direction = earlier in time, stop
+condition = *\"the prevailing key before the selection is in view,\"* hard bound = a maximum reach,
+terminating at the score start." — §2 (locator: line 179).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT**. S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **enlargement contract** family. **★ THIS
+IS THE ONLY NAMED REQUESTER IN THE OUTGOING RECORD WITH A STATED STOP CONDITION** — Row 14.13 requires
+the requester to carry one, and this is the layer that does.
+
+**Row 15.8 — the reach-back loop extends earlier, re-slices and re-decodes until the leading-edge
+settled key stops changing, the hard bound is hit, or the score start is reached; the output is the
+selection only.**
+*Statement.* "action = ask Architectural Layer 1 to `extend(Earlier)` → re-slice (Layer 2) → re-decode
+(Layer 3), repeated until the leading-edge **settled** key stops changing across iterations …, the
+hard bound (max reach) is hit, or the score start is reached; output = the selection only." — §2
+(locator: line 186).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES** on the output covering the selection only. S-53: **THE
+DERIVATION IS SILENT** on the loop.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 15.7. *(It is also the outgoing record's
+clearest statement that an enlargement **re-runs the slicing**, which is the re-slice equivalence
+property Rows 2.21, 5.32, 6.44, 7.18 and 7.28 all propose.)*
+
+**Row 15.9 — it is not responsible for noticing that the score has been edited.**
+*Statement.* "**It is not responsible for noticing when the score has been edited.** Deciding that the
+analysis is out of date and must be re-run is the caller's responsibility" — §2 (locator: line 193).
+*Derived.* S-53. *Current-text axis.* S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 3.29 — **and it answers that row's proposal
+from the consuming side**: Row 3.29 proposes that L0 state who owns staleness, and this layer says the
+caller does.
+
+**Row 15.10 — the fact layers use no preset; the preset first enters here, as a weak prior.**
+*Statement.* "**This is the first architectural layer where the user's style preset … is used.**
+Architectural Layers 1 and 2 are pure facts and use no preset." — §2 (locator: line 169).
+*Derived.* S-1, S-3.
+*Current-text axis.* S-1: **AGREES** — nothing in S-1's criterion varies by style. S-3: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 14.5.
+
+**Row 15.11 — the notes in and around a slice are read through the note model's indexed query, not
+through a direct score walk.**
+*Statement.* "reading the notes in and just around that slice **through the Architectural Layer 1 note
+model's indexed query** (\"which notes sound between A and B\") — **not** through the older
+direct-score-walk pitch collector" — §5 (locator: line 244).
+*Derived.* S-9, S-3.
+*Current-text axis.* S-9: **AGREES** — one published surface, read rather than re-derived. S-3:
+**AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Recorded because it is a named consumer of the
+overlap query Row 5.7 describes, and it names the alternative it exists against.)*
+
+**Row 15.12 — it annotates and does not transform: the slices and notes are unchanged.**
+*Statement.* "**It annotates, it does not transform** — the slices and notes are unchanged; the chosen
+key/modes are added as an annotation" — §8 (locator: line 297).
+*Derived.* S-3, S-18, S-33.
+*Current-text axis.* S-3: **AGREES**. S-18: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 14.2.
+
+**Row 15.13 — reaching back for context is separate from the small fixed per-slice scoring window.**
+*Statement.* "**Reaching back for context** — Architectural Layer 3 is the first architectural layer
+that asks an earlier architectural layer … for more music than the user selected; this is separate from
+the small fixed per-slice scoring window." — §8 (locator: line 301).
+*Derived.* S-53. *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 15.7 and 15.8: that the specification
+distinguish an **enlargement of the working span** from a **window inside it**, which the derivation
+does not, having neither.
+
+**Row 15.14 — the note-model look-up index keeps the per-slice note reads fast.**
+*Statement.* "the Architectural Layer 1 look-up index keeps the per-slice note reads fast" — §8
+(locator: line 299).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Rows 3.45, 3.55 and 5.6. *Audit question:* is the
+per-slice read still routed through the index on the arm that ships?
+
+**Row 15.15 — as built the layer works in pitch class and is spelling-blind.**
+*Statement.* "As built, Architectural Layer 3 works in **pitch class** — it is spelling-blind." — §15
+(locator: line 497).
+*Derived.* S-3.
+*Current-text axis.* S-3: **DIFFERS** — S-3 supplies spelled pitch per note and S-14 refuses a score
+without it, so a consumer that folds to pitch class discards a fact L0 requires.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the key path still spelling-blind on the
+arm that ships, and does anything downstream depend on that?
+
+**Row 15.16 — the spelling of an accidental is a modulation-direction clue the pitch-class emission
+discards.**
+*Statement.* "the spelling of an accidental (`G♯` vs `A♭`) is a **modulation-direction** clue
+(sharp-side vs flat-side) the pitch-class emission currently discards" — §15 (locator: line 499).
+*Derived.* S-3, S-14.
+*Current-text axis.* S-3: **AGREES**. S-14: **AGREES** — its own defense is that an inferred spelling
+is derived and may not cross into L1, which is the same premise from the supply side.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 12.26 — **a third statement in the outgoing
+record that the notated spelling carries information a pitch class does not.**
+
+**Row 15.17 — the spelling reading must be one shared derived view used by both consuming layers, not
+duplicated per layer.**
+*Statement.* "**shared primitive** — Architectural Layer 4 also reads the notated tpc …; the
+spelling-reading/interpretation must be **one shared derived view** used by both, not duplicated per
+layer (the unification rule)." — §15 (locator: line 507).
+*Derived.* S-3, S-50.
+*Current-text axis.* S-3: **AGREES**. S-50: **AGREES** on the one-home discipline.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 9.4, 13.15 and 13.16.
+
+**Row 15.18 — a dominant-shaped sonority is note-level evidence for the key it implies, readable from
+the notes alone before and without any chord decision.**
+*Statement.* "a sonority shaped like a dominant seventh or leading-tone seventh is strong
+**note-level** evidence for the key it implies (its tritone resolves into exactly one major and one
+minor tonic pair) — evidence readable from the notes alone, **before and without any chord decision**"
+— §15 (locator: line 525).
+*Derived.* S-51, S-47.
+*Current-text axis.* S-51: **DIFFERS** — a sonority *shape* is a chord-level object, and S-51 admits
+an output as evidence only where it is computable with no chord as input. S-47: **AGREES** on
+anchoring a candidate tonality on a sounding fact.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Row 12.25 — the same claim met a second time, and the **cadence evidence's inputs** family's third
+instance.
+
+**Row 15.19 — the characteristic-pitch and leading-tone terms are hard-gated on a window weight, so a
+present-but-weak leading tone is treated as absent.**
+*Statement.* "The characteristic-pitch and true-leading-tone scorer terms are **hard-gated** on a
+`>0.1` window weight …: a key's leading tone that is *present but weak* (below the gate) is treated as
+**absent**, so the key is denied its anchors *and* penalized." — §11 (locator: line 399).
+*Derived.* S-46.
+*Current-text axis.* S-46: **DIFFERS** — S-46's cue tests a **motion** in a notated voice and has no
+weight gate at all; a presence gate on a weighted quantity is a third thing again.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the presence gate still in force on the
+arm that ships, and does any cue or key term still treat a present-but-weak tone as absent?
+
+**Row 15.20 — a modal reading the major/minor-only ground truth cannot represent is not an error to
+optimise away.**
+*Statement.* "Many apparent \"misses\" on modal music are cases where Architectural Layer 3's modal
+reading is defensible but the major/minor-only human analysis cannot represent it; those are not errors
+to optimise away." — §11 (locator: line 371).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis*** (NOT A LAYER) — what a
+disagreement the ground truth cannot represent means is a grading convention, which `FRAMEWORK.md` §5
+assigns there.
+
+**Row 15.21 — the layer is graded against published human analyses on a held-out set, with the
+ambiguous and unambiguous cases partitioned.**
+*Statement.* "We compare Architectural Layer 3's key/mode against those, on a **held-out set of pieces
+it was not tuned on**. The bar, with its partition stated: a case counts as **unambiguous** when the
+ground-truth annotation gives a single local key/mode there …; every other case … counts as
+**genuinely ambiguous**." — §10 (locator: line 336).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis***, with Rows 4.36, 4.38,
+10.44, 13.18 and 15.20.
+
+---
+
+#### Not a statement — counted by paragraph, per section, so the arithmetic closes (79)
+
+| Section | Paragraphs counted | What they are |
+|---|---|---|
+| the banner | 2 | the 2026-08-11 scope correction, and the preserved as-built wiring history |
+| §0 | 15 | the other fifteen rows of the terms table |
+| §1 | 7 | the layer's purpose, its responsibility boundary, the override clause, and the recognized and unrecognized mode vocabulary |
+| §2 | 4 | the certainty-in-output, output-changes, any-size and reach-back-as-built constraints' remainders |
+| §3 | 4 | what it reads and offers, its consumers, and the implementation locators |
+| §4 | 1 | the solution strategy |
+| §5 | 4 | the four decision steps |
+| §6 | 6 | the six runtime scenarios |
+| §7 | 1 | the data design |
+| §8 | 2 | certainty-as-output, and the effort-preset readiness |
+| §9 | 7 | the seven architecture decisions |
+| §10 | 5 | the behaviour, scenario, safety-net, two-goal and regression-test bullets |
+| §11 | 9 | the other nine risks |
+| §12 | 1 | the glossary |
+| §13 | 4 | what it replaces and the three recorded corrections |
+| §14 | 6 | the borrowed, available, discarded and corpus records |
+| §15 | 1 | the remainders of the two deferred enhancements |
+| **Total** | **79** | — |
+
+#### The arithmetic at this document
+
+- Rows written: **21** (15.1 to 15.21). No row of this document splits.
+- **Outgoing statements dispositioned: 21.**
+- Paragraphs counted under *not a statement*: **79**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 12 | 15.1, 15.2, 15.3, 15.4, 15.5, 15.6, 15.9, 15.10, 15.11, 15.12, 15.16, 15.17 |
+| ADOPTED — proposed | 3 | 15.7, 15.8, 15.13 |
+| RELOCATED | 3 | 15.18, 15.20, 15.21 |
+| QUARANTINED | 3 | 15.14, 15.15, 15.19 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **21** | — |
+
+**The column sums to 21, against 21 statements, so the arithmetic closes at this document:**
+12 + 3 + 3 + 3 + 0 + 0 + 0 = 21.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 28 |
+| DIFFERS | 3 |
+| THE DERIVATION IS SILENT | 7 |
+| **Total verdicts** | **38** |
+
+*(Counted per named derived statement per statement-row. 38 verdicts over 21 statements because
+fourteen rows name more than one derived statement.)*
+
+#### What this document's rows put in front of the user
+
+**This is the highest agreement rate of any document in the comparison — twenty-eight AGREES against
+three DIFFERS — and the reason is worth stating.** Almost every statement of this document that
+reaches L0's or L1's subject is a statement about what a **consumer** may not do: not read or change
+the notes and slices, not use chord symbols or cadences, not treat the key signature as the truth, not
+own staleness, not detect cadences. **Those are the boundaries the derivation draws from the other
+side**, and the two records draw them in the same places.
+
+**Rows 15.7 and 15.8 are the enlargement contract's one worked consumer.** Row 14.13 requires the
+requesting layer to carry a stop condition and a hard bound; this is the layer that names both —
+*"the prevailing key before the selection is in view"*, a maximum reach, terminating at the score
+start — and states that the loop **re-slices** between iterations, which is the re-slice equivalence
+property five earlier rows propose.
+
+**Row 15.9 answers Row 3.29 from the consuming side**: staleness is the caller's, which Row 3.29 puts
+as an open proposal to L0.
+
+**And the three DIFFERS are all consumers reaching past what L1 publishes**: a spelling-blind key path
+where L0 supplies spelled pitch (15.15), a dominant *shape* used as key evidence where S-51 admits no
+chord as input (15.18, the **cadence evidence's inputs** family a third time), and a presence gate on
+a weighted quantity where S-46 tests a motion (15.19).
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -7285,6 +7598,8 @@ worked; it is not complete over the population.**
   travels with it.)*
 - Row 14.12 — the pitch-class weighting as a derived view used by the chord layer, not a primitive and
   not a replacement for the notes. *(The view-not-replacement half is carried at S-33 and travels.)*
+- Row 15.18 — a dominant-shaped sonority as note-level key evidence, readable before and without any
+  chord decision. *(The anchoring move is carried at S-47 and travels.)*
 
 **To *the second axis — voice leading*.**
 
@@ -7310,6 +7625,10 @@ worked; it is not complete over the population.**
   itself, so independent validation needs the annotation oracle.
 - Row 14.24 — that the slices are finer than the annotation grain, so several map to one annotated
   event and should all carry the same analysis, a disagreement among them being itself a signal.
+- Row 15.20 — that a modal reading the major/minor-only ground truth cannot represent is not an error
+  to optimise away.
+- Row 15.21 — that the layer is graded against published human analyses on a held-out set, with the
+  unambiguous and genuinely ambiguous cases partitioned and each given its own bar.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -7431,6 +7750,12 @@ by paragraph rather than rowed. **Document 9 added the two below.**
     reproducible, and on which arm was it measured?
 61. Row 14.22 — does any live scoring path still depend on a repetition effect that the tie-resolved
     note model removes?
+62. Row 15.14 — is the per-slice note read still routed through the note model's look-up index on the
+    arm that ships?
+63. Row 15.15 — is the key path still spelling-blind on the arm that ships, and does anything
+    downstream depend on that?
+64. Row 15.19 — is the presence gate still in force, and does any cue or key term still treat a
+    present-but-weak tone as absent?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -7685,6 +8010,12 @@ Gathered from the documents tabulated so far. **Not complete over the population
     boundary kinds a fourth time (14.18); and that the specification state what the per-event evidence
     is — a change point or a beat — since this document cites a **beat-labelling** reference engine as
     the evidence for a change-point construction that Row 6.58 rejects the grid of (14.25).
+61. **★ Rows 15.7, 15.8 and 15.13 — the ENLARGEMENT CONTRACT's one worked REQUESTER.** Row 14.13
+    requires the requesting layer to carry a stop condition and a hard bound; this layer names both —
+    *"the prevailing key before the selection is in view"*, a maximum reach, terminating at the score
+    start — states that the loop **re-slices and re-decodes** between iterations, and asks that an
+    **enlargement of the span** be distinguished from a **window inside it**. The derived
+    specification has neither.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -7768,37 +8099,43 @@ Gathered from the documents tabulated so far. **Not complete over the population
     six-member span family whose atomic member is a committed chord plus an assigned local key.
 38. Row 14.25 — S-28's change points and Row 6.58's rejection of a metric grid, against a
     beat-labelling reference engine cited as the evidence for the construction.
+39. Row 15.15 — S-3's spelled pitch and S-14's refusal of unspelled input, against a key path that is
+    spelling-blind as built.
+40. Row 15.18 — S-51's no-chord-as-input test, against a dominant *shape* used as note-level key
+    evidence.
+41. Row 15.19 — S-46's motion test, against characteristic-pitch and leading-tone terms hard-gated on
+    a window weight, so a present-but-weak tone counts as absent.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the fourteen documents tabulated, not a distribution over the
-population.** The population is 29 documents; 15 are untouched. No figure below may be read as
+**This is a RUNNING total over the fifteen documents tabulated, not a distribution over the
+population.** The population is 29 documents; 14 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 492 statements placed so far:**
+**Dispositions, over the 513 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | **197** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | **153** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | **32** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | **78** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | **31** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | **492** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | **209** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | **156** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | **35** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | **81** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | **31** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | **513** |
 
-**The arithmetic closes:** 197 + 153 + 32 + 78 + 0 + 31 + 1 = 492, against 492 statements, and each
+**The arithmetic closes:** 209 + 156 + 35 + 81 + 0 + 31 + 1 = 513, against 513 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same fourteen documents:**
+**Current-text verdicts, over the same fifteen documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | **513** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | **181** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | **141** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | **835** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | **541** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | **184** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | **148** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | **873** |
 
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
