@@ -54,11 +54,12 @@ The population's order is the artifact's:
 | 17 | `docs/scoring_model.md` | **DONE** |
 | 18 | `cowork_bounded_context_design.md` | **DONE** |
 | 19 | `cowork_voiceleading_axis_design.md` | **DONE** |
-| 20–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 20 | `docs/llm_integration.md` | **DONE** |
+| 21–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 20–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 21–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 20**, `docs/llm_integration.md`.
+dispatch resumes at **position 21**, `cowork_joint_estimator_architecture.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -9279,6 +9280,423 @@ one published flag, and it makes S-13's declared failure case findable rather th
 
 ---
 
+### 6.20 — Document 20: `docs/llm_integration.md`
+
+> **Manifest for this document.** Outgoing statements: **20** (rows 20.1 to 20.20; no row of this
+> document splits). Units counted under *not a statement*: **175**, across the banner, the table of
+> contents, 11 sections and the footer. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **What it is.** The design of a natural-language interface to the score — a consumer of the analysis
+> rather than a part of it, and the only document in the population written from the READING side. Its
+> own banner says *"Design phase. No code written yet."*, which is why **no row of this document is
+> QUARANTINED**: there is no implementation to ask the audit about.
+>
+> **★ IT DRAWS THE ADMISSION LINE INDEPENDENTLY, AND DRAWS IT DIFFERENTLY.** S-1 admits a fact to L0 on
+> two conditions — *"(i) it is part of the notated text — two competent copyists transcribing the same
+> source would agree on it … and (ii) it is not a claim about what the music means: not a tonality, a
+> chord, a function, a boundary, a phrase, or a degree."* This document's line is **intentional against
+> computed**: *"The LLM sees everything the user intentionally set. It does not see what the engraving
+> engine computed automatically."* **The first condition is the same line reached from another
+> direction. The second is absent** — and the document's own list of what is admitted names **chord
+> symbols and lyrics**, which S-2 rules may be carried *"beside L0 as annotation, so labelled"* with
+> the bar that *"no layer may consume it as evidence about the music."* Rows 20.3, 20.4 and 20.14 are
+> that difference in three places.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §3 — the admission filter and the reading model
+
+**Row 20.1 — the reader sees everything the user intentionally set and nothing the engraving engine
+computed automatically.**
+*Statement.* "The LLM sees everything the user intentionally set. It does not see what the engraving
+engine computed automatically. … **Hidden from LLM:** pixel positions, bounding boxes, beam geometry,
+stem lengths, slur curves, spacing adjustments, staff line positions — anything in `LayoutData`." —
+§3.4 (locator: lines 179–191); restated as a serialization principle, *"**Clean.** No rendering data.
+No layout objects. No beam geometry. No bounding boxes"* (§7.1, lines 543–544), and as four rows of the
+§7.3 table — stem direction, beam type, pixel positions and staff line position, each marked *Computed*
+(lines 590–593).
+*Derived.* S-1.
+*Current-text axis.* S-1: **AGREES** on its first condition — two competent copyists agree on the
+pitch and disagree about nothing in the beam geometry, because the beam geometry is not something
+either of them transcribes. **The same line, reached from the engraving engine's side rather than the
+copyist's.**
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 20.2 — the mechanical boundary: a property stored on the property system is intentional; a
+property regenerated on each layout pass is computed and excluded.**
+*Statement.* "The practical boundary: if a property is stored via the `Pid` property system on an
+`EngravingObject`, it is intentional and belongs in the LLM's view. If it lives in `LayoutData` and is
+regenerated on each layout pass, it is computed and should be excluded." — §3.4 (locator: lines
+192–196).
+*Derived.* S-1.
+*Current-text axis.* S-1: **AGREES**, and this is a **mechanical form of its first condition** — the
+copyist test is a judgment about what two readers would agree on, and this is a property of the record
+file's own representation that decides the same cases without one.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification record this as a
+second, checkable form of the admission test for record files of this kind, beside the copyist test,
+since S-1's own falsifier is RESIDUAL and this one is not.
+
+**Row 20.3 — the enumerated intentional properties, chord symbols and lyrics among them.**
+*Statement.* "**Visible to LLM:** pitch, duration, voice, dynamics, articulation, note colors,
+visibility flags, text formatting (italic lyrics, bold text), manual placement overrides, instrument
+assignments, chord symbols, lyrics, tempo marks, key signatures, time signatures, rehearsal marks,
+spanners (ties, slurs, hairpins)." — §3.4 (locator: lines 182–186).
+*Derived.* S-3, S-41, S-6, S-2.
+*Current-text axis.* S-3: **AGREES** on the note-level members — pitch, duration, voice, visibility
+and the tie spanner are each an item of its per-note list. S-41: **AGREES** on the positioned marks —
+dynamics, tempo marks and rehearsal marks are what the marks list carries with their positions. S-6:
+**AGREES** — the key signature is supplied, as a sign. S-2: **DIFFERS**, and this is the document's
+sharpest difference: *"a chord symbol (`<Harmony>`), a staff text, a lyric … is not part of L0. It may
+be carried beside L0 as *annotation*, so labelled, and **no layer may consume it as evidence about the
+music**"* — where this list admits chord symbols and lyrics into what the reasoning consumer is
+handed, unlabelled.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether
+S-2's bar binds a **downstream reasoner** as it binds a layer. S-2's words are *no layer*, and the
+consumer here is not a layer; the record does not say whether the bar reaches it.
+
+**Row 20.4 — a visual property such as color is semantically meaningful and must be shown: a user who
+colors notes is communicating intent.**
+*Statement.* "Note that visual properties such as color are *semantically meaningful* and must be
+included. A user who has colored certain notes red is using color to communicate intent — *'these
+notes are flagged for review'* — and the LLM needs to see that." — §3.4 (locator: lines 197–200); the
+§7.3 table's *"Note color | Yes | Semantically meaningful (user-set)"* (line 587).
+*Derived.* S-1, S-2.
+*Current-text axis.* S-1: **AGREES** that the mark is admissible — a colored note is on the page and
+two copyists would reproduce the color, and a color is not a tonality, a chord or a degree. S-2:
+**DIFFERS** on what may then be done with it — the intent this text names, *these notes are flagged for
+review*, is an **editor's analytical mark** in S-2's own list, carried beside L0 and not consumed as
+evidence, where this text requires the reader to see it and act on it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say where a
+**user's own mark on the score** falls — admitted as notated text, or carried as annotation — since
+S-1's two conditions admit it and S-2's list excludes it, and the outgoing record needs it consumed.
+
+**Row 20.5 — the whole score is never handed over at once: sections are read on demand, and what has
+been read stays in the reader's own history.**
+*Statement.* "The LLM is never given the entire score as a blob of data. For large scores, this would
+exhaust the context window with noise and degrade reasoning quality. Instead, the LLM has **search
+tools** it calls against the score" — §3.3 (locator: lines 155–159); *"**Compact.** … For large scores,
+the LLM calls search tools iteratively to read only the sections it needs — it never receives the whole
+score at once"* (§7.1, lines 546–548); and *"the LLM uses search tools to fetch sections on demand. The
+conversation history contains the results of previous searches — the LLM does not need to re-fetch what
+it already read"* (§8.3, lines 622–624).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES** — the working span is a stretch, and whole-score reading is the
+degenerate case rather than the model. S-53: **AGREES** — *"the working span is the only thing a caller
+supplies beyond L0"*, and here the caller supplies a different one each time.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(The third outgoing document to state the
+bounded-context shape, and the only one to state it in the vocabulary of a reader's attention rather
+than a layer's inputs.)*
+
+#### §5 — the information model
+
+**Row 20.6 — there are no direct references from a note to its staff or its bar: an embedded address
+is the sole locator, giving part and staff, bar number, voice, and beat or tick.**
+*Statement.* "There are **no direct object references** from Note to Staff or Note to Measure. The
+`MusicalAddress` embedded in every ChordRest (and inherited by Note) is the sole locator: `partId` +
+`staffIndexInPart` … `measureNumber` … `voice` … `beat` / `tick`. **Consequence:** queries are pure
+filter operations over MusicalAddresses — no graph traversal." — §5.3 (locator: lines 399–412).
+*Derived.* S-3.
+*Current-text axis.* S-3: **AGREES**, item for item — it supplies per note *"its metric position (bar
+index, offset within the bar, absolute position); its staff and notated voice"*, which is this address
+with its four fields.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 20.7 — the address is a join key: a chord symbol, an annotation and a note at the same address
+are co-located, so "what chord symbol is sounding at this note" is a match on the composite key.**
+*Statement.* "**MusicalAddress as join key:** Harmony, Annotation, and Note at the same MusicalAddress
+are co-located. 'What chord symbol is sounding at this note?' is a match on the composite key —
+equivalent to a SQL join." — §5.3 (locator: lines 414–416).
+*Derived.* S-2, S-41.
+*Current-text axis.* S-2: **AGREES** on the shape — the annotation is *carried beside* the notated
+text at its own position, which is what being joinable rather than embedded means. S-41: **AGREES** —
+the positioned marks list publishes each mark with the position it stands at, which is the same join
+from the other side.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 20.8 — the address alone does not identify a note: several notes of one chord share it, so a
+note needs an identity of its own.**
+*Statement.* "**Address alone does not uniquely identify a Note.** Multiple notes in the same chord
+share an identical address (same part + staff + measure + beat + voice). A `NoteId` is required to
+unambiguously target a single note. `NoteId` must appear explicitly on the Note entity." — §5.3
+(locator: lines 418–422).
+*Derived.* S-33.
+*Current-text axis.* S-33: **AGREES**, and this is an independent arrival at its load-bearing word —
+*"Slice identity is the set of events (**by note identity**), not the set of pitch classes and not the
+set of pitches"*. One text reaches note identity from what a slice is; the other from what an address
+fails to distinguish.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §6 — addressing a region by what the notation carries
+
+**Row 20.9 — the notated landmarks a region may be addressed by: rehearsal marks, tempo marks, key
+changes, section labels, double barlines and repeat signs.**
+*Statement.* "**Explicit markers stored in the score:** Rehearsal marks … Tempo marks … Key changes …
+Section labels if present … Double barlines and repeat signs" — §6 (locator: lines 485–490); the same
+set as a query surface, *"get_structural_events() → TempoMarks, KeyChanges, RehearsalMarks,
+InstrumentEntries"* (§3.3, line 166) and *"StructuralEvents structuralIndex() const; // tempos, keys,
+rehearsal marks, instrument entries"* (§5.4, line 441).
+*Derived.* S-39, S-41, S-43.
+*Current-text axis.* S-39: **AGREES** — BAR-LINE *"carrying the bar-line type — single, double,
+final"* and REPEAT *"a start-repeat, an end-repeat with its count, an ending start, an ending end"* are
+this list's last two members published as flags. S-41: **AGREES** — the positioned marks list is where
+rehearsal marks, tempo marks and section labels stand. S-43: **AGREES** — the proposed
+KEY-SIGNATURE-CHANGE and TIME-SIGNATURE-CHANGE flags are this list's third member.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ An independent enumeration of almost exactly the
+derivation's boundary-flag and marks lists, arrived at by asking how a musician names a place in a
+score rather than what a layer should publish.*
+
+**Row 20.10 — texture and instrumentation events are inferred rather than stored: where a group of
+staves goes from resting to playing, where a solo ends, where the full ensemble first plays together.**
+*Statement.* "**Texture and instrumentation events (inferred):** *'When the choir enters'* — detect
+when vocal staves go from resting to playing; *'Where the solo ends'* — detect texture change in a solo
+instrument; *'When the strings drop out'*; *'The first time the full orchestra plays together'*" — §6
+(locator: lines 492–496).
+*Derived.* S-31, S-39.
+*Current-text axis.* S-31: **AGREES** on what makes the event visible — a silent stretch is *"published
+as a slice like any other, with its empty set, and is not merged into a neighbour"*, so an entry is the
+boundary between an empty sounding set and a non-empty one. S-39: **AGREES** — REST-BEGINS is one of
+the published flags, which is the same event from the other side.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether an
+**entry** — a staff or a voice going from silent to sounding — is published as a flag of its own. It is
+recoverable from the published silent slices, and the outgoing record names it as something a consumer
+asks for by name.
+
+**Row 20.11 — the consumer resolves a reference against the supplied structural facts; no index of
+reference types is built in advance, because the space is open-ended.**
+*Statement.* "**Resolution strategy:** The LLM is the resolver. It is given the score's structural
+events … and resolves natural language references against that. … No pre-built index. The LLM's
+language understanding is the resolution mechanism. Do not try to enumerate and pre-categorize
+reference types — the space is open-ended. The system only needs to ensure the LLM has the information
+required to resolve whatever reference the user makes." — §6 (locator: lines 512–521).
+*Derived.* S-50, S-51.
+*Current-text axis.* S-50: **AGREES** — what is published is the facts with their witnesses, and no
+field is named for the conclusion a consumer will draw from it. S-51: **AGREES** — the claim test says
+the publishing layer supplies what is computable without a decision and leaves the decision; this is
+that rule written as a design strategy for the deciding end.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The outgoing record's clearest statement of the
+decides-nothing discipline seen from the CONSUMER's side: the supplier's job is to make the facts
+available, and the resolution is not the supplier's to pre-empt.*
+
+#### §7 — the form of what is published
+
+**Row 20.12 — the representation is hierarchical and not flat: instrument, then bar, then beat, then
+note, rather than a flat list of events sorted by tick.**
+*Statement.* "**Hierarchical, not flat.** Instrument → Measure → Beat → Note, not a flat list of events
+sorted by tick." — §7.1 (locator: lines 532–533).
+*Derived.* S-34, S-28.
+*Current-text axis.* S-34: **AGREES** that the bar-and-beat tree is a real published structure — the
+notated metrical hierarchy is *"an ordered list of levels, each a period and a phase within the bar,
+from the bar downward"*. S-28: **DIFFERS** on what the published sequence is — the derived unit is the
+change-point series, which is neither a beat grid nor a nesting, and a note that begins off every beat
+has a place in it and no place in this tree.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say how the
+published facts are **laid out for a reader** — the derived statements fix what is published and never
+its arrangement, and this text makes the arrangement a load-bearing design decision.
+
+**Row 20.13 — positions are expressed relative to the time signature rather than as raw tick
+fractions.**
+*Statement.* "**Beat-aligned, not tick-aligned.** Beats expressed relative to the time signature, not
+as raw tick fractions. 'Beat 2 of a 3/4 measure' is more meaningful to reasoning than 'tick 1440.'" —
+§7.1 (locator: lines 535–537).
+*Derived.* S-3, S-35.
+*Current-text axis.* S-3: **AGREES** — the metric position it supplies is *"bar index, offset within
+the bar, absolute position"*, which carries both readings and names the bar-relative one first. S-35:
+**AGREES** on the reason — the class is published *"as an ordinal … together with the level's period,
+so that classes from different signatures are comparable"*, which is the same refusal to let a raw tick
+number stand in for a metric fact.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 20.14 — the harmonic analysis travels with the notes so that the consumer does not re-derive
+harmony from raw pitch data.**
+*Statement.* "**Musically annotated.** Include chord symbols and harmonic analysis from the composing
+module alongside the notes. The LLM should not have to re-derive harmony from raw pitch data." — §7.1
+(locator: lines 539–541); *"The composing module's harmonic analysis of the relevant section is always
+included in the initial context, even when notes are not"* (§8.3, lines 626–628); and the reason at
+§10, *"Musical assistants are better when they have harmonic analysis, not just note lists"* (lines
+716–717).
+*Derived.* S-50, S-53.
+*Current-text axis.* S-50: **AGREES** — a derived fact is published once on the producing surface with
+its witnesses. S-53: **AGREES** on the direction — a consumer reads what the layer decided and does not
+recompute it.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The publish-once, never-re-derive discipline stated
+from the consuming end and defended by an argument from outside music entirely — that a reader given
+the analysis reasons better than one given only the source.*
+
+**Row 20.15 — the pitch published is concert pitch unless the reader asks for the written pitch.**
+*Statement.* "Pitch (concert) | Yes | Always concert pitch unless user requests written" — §7.3
+(locator: line 577); *"transposition": "concert"* in the worked example (line 555).
+*Derived.* S-3.
+*Current-text axis.* S-3: **AGREES**, in its own words — the spelled pitch is supplied *"at concert
+(sounding) pitch"*, and its defense adds that *"concert pitch is the printed pitch corrected by the
+printed transposition of the instrument"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 20.16 — ties and slurs are published as properties of the note.**
+*Statement.* "Ties / slurs | Yes | As note properties ('tiedForward', 'slurStart')" — §7.3 (locator:
+line 589).
+*Derived.* S-3, S-23.
+*Current-text axis.* S-3: **AGREES** — it supplies per note *"whether it is tied to the preceding note
+and to the following note"*, which is these two flags. S-23: **AGREES** that the tie is a per-note
+notated fact, with the difference — stated and not chosen — that the derivation then rules the tied
+group **one event**, which this text does not say and does not need for its own purpose.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 20.17 — a hidden note is published, because its being hidden affects the reader's conclusions.**
+*Statement.* "Visibility flag | Yes | Hidden notes affect LLM reasoning" — §7.3 (locator: line 588);
+*visibility flags* are also in the §3.4 admitted list (line 183).
+*Derived.* S-3, S-15.
+*Current-text axis.* S-3: **AGREES** — *"whether it is visible"* is a supplied per-note fact. S-15:
+**DIFFERS** on what follows from it — an invisible note is **not eligible**: it opens no change point
+and belongs to no slice's sounding set, where this text publishes it precisely because leaving it out
+would mislead the reader.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether an
+**ineligible** note is dropped from what is published or published carrying its ineligibility. The
+derived statements exclude it from the sounding set and never say it disappears; #12 and this text both
+argue it should still be visible to a consumer.
+
+**Row 20.18 — duration is published as a beat fraction or by its common name.**
+*Statement.* "Duration | Yes | As beat fraction or common name (quarter, half, etc.)" — §7.3 (locator:
+line 578).
+*Derived.* S-3.
+*Current-text axis.* S-3: **AGREES** — *"its notated duration as a rational fraction of a whole note,
+tuplet ratios applied"*, of which the common name is a rendering.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §10 — what the analysis publishes to this consumer
+
+**Row 20.19 — the analysis publishes chord symbols and Roman numerals per bar, the key and mode, and
+the harmonic rhythm — where the chord changes occur.**
+*Statement.* "the composing module's analysis is included in every score section sent to the LLM: Chord
+symbols and Roman numeral analysis per measure; Key and mode inference; Harmonic rhythm (where chord
+changes occur)" — §10 (locator: lines 704–711).
+*Derived.* S-50, S-51.
+*Current-text axis.* S-50: **DIFFERS** as a description of L1's surface — *"No published field is named
+*boundary*, *cadence*, *phrase*, *chord*, *key*, *tonality*, *degree* or *function*"*, and three of the
+four items here bear exactly those names. S-51: **AGREES** on the classification that makes it so —
+each named item **is** a claim by the claim test, so it is published by a layer that decides, which is
+what this text describes.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** — a
+chord, a key and where the chord changes are that layer's outputs. *(Read beside Row 17.13: "where
+chord changes occur" is a boundary decided from a chord, which S-28's construction and S-51's
+no-chord-as-input test place outside the layer that publishes change points.)*
+
+**Row 20.20 — voice-leading quality assessments — parallel motion and voice crossing — are published
+to the consumer and used to validate what it produces.**
+*Statement.* "Voice leading quality assessments (parallel motion, voice crossing)" — §10 (locator: line
+712); the use at §4.3, *"Voice leading issues (parallel fifths/octaves, voice crossing) — via composing
+module"* (line 301).
+*Derived.* S-51.
+*Current-text axis.* S-51: **AGREES** on where it belongs — a parallel-fifth finding is computable
+from notated facts with no tonality, chord or boundary as input, so it is evidence rather than a claim;
+what it is not is L1's, the linear dimension being a charter member of its own.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading*** — with Rows 19.5, 19.6,
+19.7, 19.14 and 19.29. *(Document 19's §5.4 names this same check as that axis's own advisory
+component, and Document 19's Row 19.21 names the per-sample motion events it would read.)*
+
+---
+
+#### Not a statement — counted by paragraph, bullet and table row, per section, so the arithmetic closes (175)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the banner | 1 | the design-phase status and the not-a-finished-specification note |
+| the table of contents | 1 | the eleven-item list |
+| §1 | 4 | the vision, the coding-assistant analogy, the working name, and what music has that code does not |
+| §2 | 34 | the five capability categories and their twenty-eight illustrative requests — analytical, quality-assurance, modification, creative and ambient |
+| §3 | 19 | the purpose-built-integration decision, the stateless tool-call model, the search-tool surface and its analogy, the multi-provider abstraction, and conversational continuity |
+| §4 | 18 | the architecture diagram and the four component descriptions — score reader, operation set, validation layer, and the provider interface |
+| §5 | 20 | the shared-foundation argument, the sixteen-row existing-interface audit, the three named gaps, and the six exclusions |
+| §6 | 11 | the addressing lead and the content, conversation and relative reference families |
+| §7 | 10 | the serialization lead, the worked example, and seven include-or-exclude table rows — voice, dynamic, articulation, key, tempo, rehearsal marks and lyrics |
+| §8 | 8 | the provider abstraction and its three launch providers, the generated tool definitions, and the two short-conversation context paragraphs |
+| §9 | 31 | the four implementation phases with their goals, deliverables and example interactions |
+| §10 | 5 | the module's standing note, the not-just-a-separate-tool paragraph, the language-server argument, the validator use, and the future surfacing |
+| §11 | 12 | the plugin-API assessment, the deeper architectural point and its four implications, the extension-point question, the three-step build strategy, and the two tiers |
+| the footer | 1 | the authorship and update line |
+| **Total** | **175** | — |
+
+*The count is of units the tabulation did not reach, not of units it did not read. **The whole document
+was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **20** (20.1 to 20.20). No row of this document splits.
+- **Outgoing statements dispositioned: 20.**
+- Units counted under *not a statement*: **175**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 12 | 20.1, 20.5, 20.6, 20.7, 20.8, 20.9, 20.11, 20.13, 20.14, 20.15, 20.16, 20.18 |
+| ADOPTED — proposed | 6 | 20.2, 20.3, 20.4, 20.10, 20.12, 20.17 |
+| RELOCATED | 2 | 20.19, 20.20 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **20** | — |
+
+**The column sums to 20, against 20 statements, so the arithmetic closes at this document:**
+12 + 6 + 2 + 0 + 0 + 0 + 0 = 20.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 31 |
+| DIFFERS | 5 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **36** |
+
+*(Counted per named derived statement per statement-row. 36 verdicts over 20 statements because
+thirteen rows name more than one derived statement. **SILENT is zero, and QUARANTINED is zero.** The
+first because every statement of this document that reaches L0's or L1's subject reaches a fact the
+derivation publishes — it is asking what a reader of a score needs, which is the derivation's own
+question from the other end. The second because nothing here is built: the document's own banner says
+so.)*
+
+#### What this document's rows put in front of the user
+
+**Rows 20.3, 20.4 and 20.14 are one difference in three places, and it is the difference S-2 exists to
+draw.** S-2 rules that a chord symbol, a staff text and a lyric are carried *"beside L0 as *annotation*,
+so labelled"*, with the bar that **no layer may consume it as evidence about the music**. This document
+admits chord symbols and lyrics into what it hands its reader, requires a user's colored note to be
+seen and acted on, and makes the harmonic analysis travel with the notes so the reader *"should not
+have to re-derive harmony from raw pitch data"*. **The consumer here is not a layer**, and the record
+does not say whether S-2's bar reaches it. That question is put and not answered.
+
+**Row 20.9 is an independent arrival at the derivation's own two lists.** Asked how a musician names a
+place in a score, this document answers: rehearsal marks, tempo marks, key changes, section labels,
+double barlines and repeat signs. S-39's flag kinds and S-41's positioned marks list are that answer
+reached from the opposite question — what a layer should publish.
+
+**Row 20.8 reaches S-33's load-bearing word from a direction nothing else in the population takes.**
+S-33 says slice identity is the event set **by note identity**; this document says a musical address
+cannot tell two notes of one chord apart, so a note needs an identity of its own. Neither text mentions
+the other's reason.
+
+**Row 20.17 asks something small that nothing else has asked.** S-15 makes an invisible note
+**ineligible** — it opens no change point and joins no sounding set. This document publishes hidden
+notes because their absence would mislead the reader. **Neither text says what becomes of an ineligible
+note in what is published**, and #12 says something must.
+
+**And Row 20.11 is the decides-nothing rule written by the deciding end.** *"Do not try to enumerate
+and pre-categorize reference types — the space is open-ended. The system only needs to ensure the LLM
+has the information required to resolve whatever reference the user makes."* S-50 and S-51 say the same
+thing about L1 and give a different reason: not that the consumer is better at resolving, but that the
+publisher deciding would be a claim.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -9366,6 +9784,10 @@ worked; it is not complete over the population.**
   travel with it.)*
 - Row 17.14 — that nothing visible at the moment of scoring separates a chord from its third-above
   reading, and that what separates them is the surrounding music.
+- Row 20.19 — the analysis surface a downstream reader is handed: chord symbols and Roman numerals per
+  bar, key and mode, and the harmonic rhythm — where the chord changes occur. *(Read beside Row 17.13:
+  a boundary decided from a chord, which S-28's construction and S-51's no-chord-as-input test place
+  outside the layer that publishes change points.)*
 - Row 18.18(ii) — which unit a requesting layer steps in when it asks for more music: the key layer in
   bars, the chord layer in slices. *(S-34's bar level and S-33's slice travel with it.)*
 - Row 18.27 — that the forward cascade is bounded because a carried-in key affects the leading-edge
@@ -9400,6 +9822,9 @@ worked; it is not complete over the population.**
 - Row 19.29 — the two open span questions: whether one note may belong to two spans of the same voice,
   and whether a rest sits inside a span or between spans. *(S-29's half-open convention and S-31's
   published silence travel with it as the answers already taken for the change-point slice.)*
+- Row 20.20 — the voice-leading assessments published to a downstream reader and used to validate what
+  it produces: parallel motion and voice crossing. *(Document 19's §5.4 names the same check as that
+  axis's own advisory component, reading the per-sample motion events of Row 19.21.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -9921,6 +10346,28 @@ Gathered from the documents tabulated so far. **Not complete over the population
     general.
 82. Row 19.10 — the bounded-context contract as a third outgoing document states it, and the second to
     name the two truncation marks in a published data shape.
+83. **★★ Rows 20.3 and 20.4 — that the specification say whether S-2's BAR ON CONSUMING AN ANNOTATION
+    reaches a downstream READER as it reaches a layer.** S-2's words are *"no **layer** may consume it
+    as evidence about the music"*, and the outgoing record hands chord symbols and lyrics to a
+    reasoning consumer that is not a layer, and requires a user's colored note to be seen and acted on
+    — *"these notes are flagged for review"*. **Both texts are explicit and neither answers the
+    other's case.** The companion half: where a **user's own mark on the score** falls, S-1's two
+    conditions admitting it and S-2's list of annotation excluding it.
+84. Row 20.2 — that the specification record the **mechanical form of the admission test** this text
+    gives — a property held on the property system is intentional, a property regenerated on each
+    layout pass is computed — beside the copyist test, whose own falsifier S-1 marks RESIDUAL.
+85. **★ Row 20.17 — that the specification say what becomes of an INELIGIBLE note in what is
+    published.** S-15 makes an invisible note ineligible — no change point, no sounding set — and never
+    says it disappears; the outgoing record publishes hidden notes because *"Hidden notes affect LLM
+    reasoning"*, and #12 says the exclusion must be recoverable.
+86. Row 20.10 — that the specification say whether an **entry** — a staff or a voice going from silent
+    to sounding — is published as a flag of its own. It is recoverable from S-31's published silent
+    slices and S-39's REST-BEGINS, and the outgoing record names it as something a consumer asks for by
+    name: *"When the choir enters"*.
+87. Row 20.12 — that the specification say how the published facts are **laid out for a reader**. The
+    derived statements fix what is published and never its arrangement, and this text makes the
+    arrangement a load-bearing decision — *"Hierarchical, not flat. Instrument → Measure → Beat → Note,
+    not a flat list of events sorted by tick."*
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -10036,37 +10483,45 @@ Gathered from the documents tabulated so far. **Not complete over the population
     scope provenance.
 50. Row 19.22 — S-15's five eligibility conditions against a verified three-flag filter carrying two of
     them plus a staff-level flag S-15 has no counterpart for.
+51. **Rows 20.3 and 20.4 — S-2's annotation bar against an admitted list that names chord symbols and
+    lyrics**, and against a user's colored note the outgoing record requires its reader to act on;
+    S-1's own two conditions admit that note and S-2's list of analytical marks excludes it.
+52. Rows 20.12, 20.17 and 20.19 — S-28's change-point series against a bar-and-beat nesting; S-15's
+    ineligible invisible note against a hidden note published because leaving it out would mislead; and
+    S-50's naming bar — *"No published field is named boundary, cadence, phrase, chord, key, tonality,
+    degree or function"* — against a published surface of chord symbols, Roman numerals, key and mode,
+    and where the chord changes.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the nineteen documents tabulated, not a distribution over the
-population.** The population is 29 documents; 10 are untouched. No figure below may be read as
+**This is a RUNNING total over the twenty documents tabulated, not a distribution over the
+population.** The population is 29 documents; 9 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 604 statements placed so far:**
+**Dispositions, over the 624 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | **240** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | **189** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | **55** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | **86** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | **33** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | **604** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | **252** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | **195** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | **57** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | **86** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | **33** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | **624** |
 
-**The arithmetic closes:** 240 + 189 + 55 + 86 + 0 + 33 + 1 = 604, against 604 statements, and each
+**The arithmetic closes:** 252 + 195 + 57 + 86 + 0 + 33 + 1 = 624, against 624 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same nineteen documents:**
+**Current-text verdicts, over the same twenty documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | **642** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | **211** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | **175** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | **1028** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | **673** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | **216** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | **175** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | **1064** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -10089,7 +10544,7 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the nineteen documents was placed there.** The reason is visible in the classes that did
+statement in the twenty documents was placed there.** The reason is visible in the classes that did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
 which it records as HISTORICAL. Neither is a discard, and neither loses anything.
