@@ -59,11 +59,12 @@ The population's order is the artifact's:
 | 22 | `cowork_layer4_chordsymbol_design.md` | **DONE** |
 | 23 | `cowork_prefit_gates.md` | **DONE** |
 | 24 | `cowork_layer5_engagement_design.md` | **DONE** |
-| 25–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 25 | `cowork_notation_adoption_increment.md` | **DONE** |
+| 26–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 25–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 26–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 25**, `cowork_notation_adoption_increment.md`.
+dispatch resumes at **position 26**, `cowork_idiom_entry_mapping.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -11166,6 +11167,352 @@ stands. That is #19 applied to a conclusion the same document wanted.
 
 ---
 
+### 6.25 — Document 25: `cowork_notation_adoption_increment.md`
+
+> **Manifest for this document.** Outgoing statements: **16** (rows 25.1 to 25.16; no row of this
+> document splits). Units counted under *not a statement*: **95**, across the ratification block and 10
+> sections. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **What it is.** A **user-ratified decision surface** with six rulings — what surface the in-app
+> analysis publishes on, what its uncertainty is, what the mode field carries, how the fitted tables
+> reach the running application, and how two ratified publications are scheduled. **It is the outgoing
+> record's densest statement of the publication discipline itself**, which is why nine of its sixteen
+> rows are carried and only one relocates.
+>
+> **★★★ ROW 25.14 IS THE FIRST ROW SINCE DOCUMENT 4 TO MEET A PASSAGE THE DERIVATION'S §6.2 RECORDS
+> THE DERIVING SESSION HAVING SEEN.** The user's pedal-point ruling defines the pedal point as *"the
+> STRUCTURAL pedal of harmony theory (a tone held against changing harmony), not the piano
+> sustain-pedal marking"*, **voice-independently**, and supersedes the legacy bass-only fact because
+> *"its bass-narrowing was an implementation limit, not a theory scope"*. **S-54 cites D-207 for
+> exactly that voice-independent definition**, and D-207 is one of the eight design-intent entries §6.2
+> records as met and stopped at. **This fact is stated here, at the row, and relayed to §14 where the
+> other two such meetings are recorded.**
+>
+> **★★★ AND ROW 25.13 IS A DERIVED SPELLING.** The audit carries to contract drafting *"the root/bass-
+> spelling derivation from (key, degree) as an instrument to establish at build"* — that is, the
+> spelling COMPUTED from a decided key and a decided degree. **S-3 supplies the spelling from the page
+> and S-14 refuses a record that does not carry it**; neither contemplates deriving it from a decision.
+>
+> **Every other row of this document is checked against §6.2 and meets nothing it records.**
+
+---
+
+#### §1, §3 and §8 — what a published surface must be
+
+**Row 25.1 — every fact the layer computes is published once, on the producing layer's own surface, in
+the producer's own terms, with establishment status attached, and nothing computed is narrowed or
+reinterpreted at a boundary.**
+*Statement.* "every fact A computes is published once, on the producing layer's own surface, in the
+producer's own terms, with establishment status attached (the fact-publication corollary, #6/#7/#12;
+the evidence-publication amendment); nothing computed is narrowed or reinterpreted at a boundary
+(#12/#19); the surface carries what best-possible-inference consumers will need (#4)" — §3 (locator:
+lines 136–140).
+*Derived.* S-50, S-52, S-53.
+*Current-text axis.* S-50: **AGREES** — the publication list is the producing layer's own surface, in
+its own terms, with witnesses. S-52: **AGREES** — the establishment status is attached to every
+published item. S-53: **AGREES** — a consumer reads what is published rather than re-deriving it.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ The single closest statement in the outgoing
+record to the discipline S-50 and S-52 encode, and it derives the same requirements from the same
+principles before naming any option.*
+
+**Row 25.2 — mapping a layer's facts into another layer's field shapes loses or distorts information at
+the boundary, and lets a consumer read a number whose meaning changed without its establishment
+changing.**
+*Statement.* "Mapping A's facts into them loses or distorts information at the boundary (#12) and lets
+a consumer read a number whose meaning changed without its establishment changing (#19)." — §3, option
+A1's second con (locator: lines 150–153).
+*Derived.* S-52, S-50.
+*Current-text axis.* S-52: **AGREES**, and this is the failure its status field exists against — a
+value whose standing no longer matches what a consumer believes about it. S-50: **AGREES** — the naming
+bar is the same argument about a field's name, and this is the argument about its shape.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 25.3 — every consumed field gets a declared source on the new surface or a declared retirement
+with its reason; no silent drops.**
+*Statement.* "Every legacy field with information not recomputable from A's surface must be
+individually dispositioned (republished, or retired-with-rationale) — the #12 no-information-loss
+check" — §3, option A2's second con (locator: lines 183–185); the mechanism at §8, *"every consumed
+fact gets a declared source on A's surface OR a declared retirement-with-rationale — no silent drops"*
+(lines 446–447).
+*Derived.* S-50, S-2.
+*Current-text axis.* S-50: **AGREES** — what is published is enumerated, so what would stop being
+published is enumerable. S-2: **AGREES** in shape — a fact not admitted is **carried, so labelled**,
+rather than dropped, which is this rule's *retired-with-rationale* half.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The recomputable test of #12 applied field by field
+to a surface change: what is recomputable may go, what is not must be republished, and either way the
+disposition is written down.*
+
+**Row 25.8 — the analysis inputs are built from the published note surface plus the score's structural
+facts, for any loaded score.**
+*Statement.* "**The fact adapter is app-ready.** `buildAdapterFacts(score, stem)` … builds the
+decoder's inputs from the L1 published note surface plus the score's structural facts, for any loaded
+score — not batch-specific." — §1 (locator: lines 90–92).
+*Derived.* S-50, S-53, S-1.
+*Current-text axis.* S-50: **AGREES** — the inputs are the published surface. S-53: **AGREES** — L0
+plus the span and nothing else. S-1: **AGREES** — *any loaded score*, which is the admission criterion
+carrying no repertoire assumption.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 25.9 — the input builder carries an accepted residual in metric-position bookkeeping on a named
+set of pieces.**
+*Statement.* "Its one accepted residual is the OI-184 reader-skew class (10 corpus stems,
+metric-position bookkeeping; option 1 accepted-and-recorded; the repair is bundled into the OI-184
+unification event)." — §1 (locator: lines 92–94).
+*Derived.* S-3, S-36.
+*Current-text axis.* S-3: **AGREES** — it specifies the metric position exactly (*"bar index, offset
+within the bar, absolute position"*), which is what makes a reading skew measurable rather than a
+matter of opinion. S-36: **AGREES** — its anacrusis alignment is where this bookkeeping bites, and Row
+23.1 is the ground truth's half of the same question.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* does the metric-position reader skew
+still exist on the arm that ships, on which pieces, and does it affect the change-point positions or
+only the counts drawn from them?
+
+**Row 25.10 — two published fields have no production consumer.**
+*Statement.* "two in-memory-only fields with no production consumer (`keyAlternatives`, `fanout`)" —
+§1 (locator: lines 62–63).
+*Derived.* S-50.
+*Current-text axis.* S-50: **AGREES** on the direction — what a layer publishes is decided by what it
+computes, not by who asks; and the publish-broadly rule the derivation works under says an evidence
+fact is published even without a named consumer, **provided its status is on the surface and its
+dormancy is declared**.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* are the two named fields still
+published and still unconsumed on the arm that ships, and is each **declared dormancy with its future
+consumer named** or waste?
+
+#### §4 and §5 — what the published uncertainty and the mode field carry
+
+**Row 25.4 — the published uncertainty is the full posterior, published as model probabilities with
+their establishment status attached: model-internal quantities, not calibrated confidences until a
+gated calibration is measured, and no consumer load-bears on the calibration.**
+*Statement.* "published as model probabilities with their establishment status attached
+(model-internal quantities, NOT calibrated real-world confidences until a #20-gated calibration is ever
+measured)" — §4, option B-full (locator: lines 232–234); the guard restated as a con, *"Model
+probabilities invite over-reading: the #19 guard (status on the surface; no consumer load-bears on
+calibration) must be explicit in the contract"* (lines 253–254).
+*Derived.* S-52, S-48.
+*Current-text axis.* S-52: **AGREES**, clause for clause — *"Every published item carries an
+establishment status … A consumer may not put a provisional item under load until the parameter is
+established."* S-48: **AGREES** in form — the quantity is published with its standing declared and the
+measurement that would upgrade it named.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ The derivation's establishment-status rule and this
+ruling are the same rule, and both give the same reason: a number a consumer misreads as calibrated is
+worse than no number.*
+
+**Row 25.5 — a local slice hides the cross-segmentation mass, so a boundary-ambiguous passage looks
+artificially certain.**
+*Statement.* "the cross-segmentation blindness is a permanent, declared #12 loss (#17e names the
+false-negative path: a boundary-ambiguous passage looks artificially certain)" — §4, option B-slice's
+first con (locator: lines 268–271); the same point in B-full's first pro, *"no posterior mass invisible
+anywhere, including the cross-segmentation mass every local slice hides"* (lines 236–238).
+*Derived.* S-40, S-52.
+*Current-text axis.* S-40: **AGREES** on the mechanism — collapsing several marks into one number
+loses the parts, and here what is lost is the uncertainty about **where the boundary is**, which is
+S-40's own subject. S-52: **AGREES** — a published number whose ambiguity has been summed away
+misrepresents its own standing.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say what a
+published confidence about a fact at a boundary means **when the boundary itself is uncertain**. S-40
+refuses to collapse the boundary evidence; nothing in the derived statements says what a downstream
+uncertainty owes that refusal.
+
+**Row 25.6 — the narrower surface's fields are defined as views of the fuller one, so nothing is
+published twice.**
+*Statement.* "the slice's fields are defined as views of the posterior so nothing is published twice
+(#6)" — §4, the recommendation (locator: lines 285–286).
+*Derived.* S-50.
+*Current-text axis.* S-50: **AGREES** — one publication per fact, and a narrower reading of it is a
+view rather than a second copy.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 25.7 — the un-rounded modal reading is published beside the two-mode key as its own fact, and no
+rounded exotic-mode label is ever inferred or published again.**
+*Statement.* "the surface carries A's two-mode key; the un-rounded modal reading is published beside it
+as its own fact; no 21-value mode label is ever inferred or published again." — §5, option C1 (locator:
+lines 296–297); the reason, *"The modal color survives UN-rounded — strictly more information than any
+21-value label (#12) — with establishment status on the surface"* (lines 302–304).
+*Derived.* S-50, S-52.
+*Current-text axis.* S-50: **AGREES** — the fuller fact is published and the rounded label is not, so
+the surface carries what was computed. S-52: **AGREES** — with the standing of the reading attached.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 21.17. *(The second statement of the same
+ruling in the outgoing record, here as a surface contract rather than as a design decision.)*
+
+**Row 25.16 — the ornament labels are derived after the decode and published, and publishing before
+validation is lawful only status-marked unvalidated with no consumer load-bearing on them.**
+*Statement.* "Decision 4: ornament labels (the non-chord-tone categories) are derived post-decode and
+PUBLISHED." — §1 (locator: lines 97–98); the condition at §7, *"Publishing with validation incomplete
+is lawful only status-marked unvalidated (evidence-publication amendment), with no consumer
+load-bearing (#19)."* (lines 415–416).
+*Derived.* S-52, S-51.
+*Current-text axis.* S-52: **AGREES** — *provisional* is exactly a published item whose ground is not
+yet established, and the bar on load-bearing is S-52's own second sentence. S-51: **AGREES** — an
+ornament label is a claim, so it is derived after the decision and never before it.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 21.11.
+
+#### §6 and §10 — delivery, the audit's findings, and the pedal-point ruling
+
+**Row 25.15 — the running binary's inference values must be exactly the ratified fitted values, with no
+stale data on the inference path.**
+*Statement.* "the running binary's inference values must be EXACTLY the ratified fitted values — #16
+(provenance), #19 (established instrument), #9 (no stale data), with a direct #4 stake: silent table
+drift silently changes inference." — §6 (locator: lines 333–336).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** — an established value is trusted because its ground is known,
+and a value whose ground may have changed under it is not established at all.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**.
+
+**Row 25.11 — the function-labeling layer is dormant: no live surface reads it.**
+*Statement.* "**(b) the function-labeling layer is DORMANT** (no live surface reads — live section
+reads are `sectionanalyzer.cpp` + `sectioncadencedetection.cpp`)" — §10 (locator: lines 495–496).
+*Derived.* S-50.
+*Current-text axis.* S-50: **AGREES** on the discipline it implies — a published fact with no consumer
+is either declared dormancy with its future consumer named, or waste.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* is the function-labeling layer still
+unread on the arm that ships, and is its dormancy declared with a named future consumer?
+
+**Row 25.12 — there is a second notation entry point: the single-note surface, consumed by four named
+readers.**
+*Statement.* "**(a) there is a SECOND notation entry point** — the single-note
+`analyzeNoteHarmonicContext[Details]` surface, consumed by the tuning bridge, status
+bar/accessibility, … (writes Harmony elements) and … (right-click menu)" — §10 (locator: lines
+490–494).
+*Derived.* S-50.
+*Current-text axis.* S-50: **THE DERIVATION IS SILENT** — it fixes what is published and says nothing
+about how many entry points read it.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* do both entry points still exist on the
+arm that ships, and do they read the same published facts or two different renderings of them?
+
+**Row 25.13 — the root and bass spelling is derived from the decided key and the decided degree, and
+that derivation is an instrument to establish at build.**
+*Statement.* "the root/bass-spelling derivation from (key, degree) as an instrument to establish at
+build (#19)." — §10 (locator: lines 501–502).
+*Derived.* S-3, S-14.
+*Current-text axis.* S-3: **DIFFERS** — the spelled pitch is a **supplied** per-note fact read from the
+page, not a quantity computed from a decision. S-14: **DIFFERS**, and at its own rule — *"spelling is a
+required input and L0 does not infer it"*, where this derives a spelling from a decided key and a
+decided degree.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say how a
+**derived** spelling relates to the **notated** one — whether the derived spelling may disagree with
+the page, which of the two a consumer reads, and what a disagreement between them means. **S-14 refuses
+a record with no spelling; nothing in the derived statements contemplates computing one from a
+decision.** *★★ Read beside Rows 22.4 and 22.12, where the notated spelling is weighed and tested for
+internal validity: three outgoing rows now turn on the standing of a spelling, and this is the only one
+where a spelling is manufactured.*
+
+**Row 25.14 — the pedal point is the structural pedal of harmony theory, a tone held against changing
+harmony and not the sustain-pedal marking; it is defined voice-independently and derived after the
+decode from published facts, superseding the legacy bass-only fact whose narrowing was an
+implementation limit rather than a theory scope.**
+*Statement.* "The pedal-point concept — the STRUCTURAL pedal of harmony theory (a tone held against
+changing harmony), not the piano sustain-pedal marking — becomes an ornament-label class …, defined
+VOICE-INDEPENDENTLY (bass / internal / inverted sub-labels), derived post-decode at the presentation
+layer from published facts. This supersedes the legacy bass-only `isPedalPoint`/`pedalBassPc` fact …,
+whose bass-narrowing was an implementation limit, not a theory scope — the voice-independent class
+publishes strictly more information (#12) from the same facts." — §10, the user-ratified pedal-point
+ruling (locator: lines 504–512).
+*Derived.* S-54.
+*Current-text axis.* S-54: **AGREES**, and this is the closest single agreement in the file: S-54's own
+words are *"The pack's design intent defines a pedal **point** voice-independently (D-207) — a
+different thing (a held tone in the harmony) from a pedal **mark** (a damper instruction); the two
+words are kept apart here."* **Both texts draw the same distinction, both call the pedal point
+voice-independent, and both cite the same design-intent entry as the source of that definition.**
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ **THIS ROW MEETS A PASSAGE THE DERIVATION'S §6.2
+RECORDS THE DERIVING SESSION HAVING SEEN — D-207.** The agreement is therefore **not independent**, and
+the fact is stated here and relayed to §14, exactly as the dispatch requires. It is also the outgoing
+record's **fourth** worked use of the pedal-point sense, after Rows 17.2, 22.18 and 24.11, and the only
+one that is a user ruling.*
+
+---
+
+#### Not a statement — counted by paragraph, bullet and numbered item, per section, so the arithmetic closes (95)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the ratification block | 8 | the ratification paragraph, the authorship line, the three incorporated rulings, the codification note, and what the increment is and is not |
+| §1 | 4 | the notation seam, what the joint module publishes today, the deliberately minimal batch render, and the table-delivery inventory |
+| §2 | 2 | the proposed principles amendment and its fit note |
+| §3 | 16 | the decision's lead and the three options' remaining pros, cons and ratings, with the recommendation and its ledger |
+| §4 | 12 | the decision's lead and the three options' remaining pros, cons and ratings |
+| §5 | 14 | the decision's lead, option C1's remaining pros and its con, option C2 whole, and the recommendation |
+| §6 | 22 | the three delivery options' pros, cons and ratings, and the recommendation with its ledger |
+| §7 | 12 | the scheduling lead, the modal-reading paragraph, and the two ornament options' remaining pros, cons and ratings |
+| §8 | 4 | the build-under-sanction step, the establishment step, the switch commit, and what follows it |
+| §9 | 1 | the rulings as asked and answered |
+| **Total** | **95** | — |
+
+*The count is of units the tabulation did not reach, not of units it did not read. **The whole document
+was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **16** (25.1 to 25.16). No row of this document splits.
+- **Outgoing statements dispositioned: 16.**
+- Units counted under *not a statement*: **95**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 9 | 25.1, 25.2, 25.3, 25.4, 25.6, 25.7, 25.8, 25.14, 25.16 |
+| ADOPTED — proposed | 2 | 25.5, 25.13 |
+| RELOCATED | 1 | 25.15 |
+| QUARANTINED | 4 | 25.9, 25.10, 25.11, 25.12 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **16** | — |
+
+**The column sums to 16, against 16 statements, so the arithmetic closes at this document:**
+9 + 2 + 1 + 4 + 0 + 0 + 0 = 16.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 25 |
+| DIFFERS | 2 |
+| THE DERIVATION IS SILENT | 1 |
+| **Total verdicts** | **28** |
+
+*(Counted per named derived statement per statement-row. 28 verdicts over 16 statements because ten
+rows name more than one derived statement. **This is the highest carried share of any document in the
+population**, and the reason is what the document is: a decision surface whose every option is weighed
+against the publication principles the derivation works from.)*
+
+#### What this document's rows put in front of the user
+
+**Row 25.14 is the file's third meeting with a passage the derivation records having seen, and the
+closest agreement in it.** The user's pedal-point ruling and S-54 draw the same line between the
+structural pedal point and the sustain-pedal mark, both call the point voice-independent, and **both
+cite D-207**. The derivation's §6.2 lists D-207 among the entries met and stopped at, so the agreement
+is not independent — and the row says so rather than leaving a reader to find it.
+
+**Row 25.13 is a spelling manufactured from a decision.** The audit carries to drafting a *"root/bass-
+spelling derivation from (key, degree)"*. S-3 supplies the spelling from the page; S-14 refuses a record
+that does not carry one and states that L0 does not infer it. **Neither says what a derived spelling
+is, whether it may disagree with the page, or which of the two a consumer reads** — and Rows 22.4 and
+22.12 make the notated spelling load-bearing in two other places.
+
+**Row 25.1 is the publication discipline stated whole, by a document deriving it from the principles
+rather than inheriting it.** Published once, on the producing layer's surface, in the producer's terms,
+with establishment status, nothing narrowed at a boundary. That is S-50 and S-52 together, reached
+independently and applied to a surface change rather than to a specification.
+
+**Row 25.5 asks something the derived statements do not reach.** S-40 refuses to collapse the boundary
+evidence into one strength. This document names the consequence downstream: a published confidence
+computed inside one segmentation makes **a boundary-ambiguous passage look artificially certain**.
+Nothing in the derived statements says what a published uncertainty owes an uncertain boundary.
+
+**And Rows 25.10 and 25.11 are two published surfaces nobody reads.** The fact-publication discipline
+the derivation works under allows that — evidence is published broadly, without a named consumer — but
+only as **declared dormancy with its future consumer named**. Whether these are declared or are waste
+is the audit's to answer.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -11373,6 +11720,8 @@ worked; it is not complete over the population.**
   because removing a tone can change which reading wins.
 - Row 24.14 — that a load-bearing premise measured underpowered and unfavourable hard-gates the build
   that rests on it until it is established on an adequate corpus.
+- Row 25.15 — that the running binary's inference values are exactly the ratified fitted values, with
+  no stale data anywhere on the inference path.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -11529,6 +11878,12 @@ by paragraph rather than rowed. **Document 9 added the two below.**
 74. Row 24.11 — does any live path detect a **pedal point** on the arm that ships, and if the legacy
     pass is the only one, what happens to that detection when it retires? *(Distinct from the
     derivation's OQ-3, which is about the pedal **mark**.)*
+75. Row 25.9 — does the metric-position reader skew still exist on the arm that ships, on which pieces,
+    and does it move the change-point positions or only the counts drawn from them?
+76. Rows 25.10 and 25.11 — are the two named fields and the function-labeling layer still published and
+    still unread, and is each **declared dormancy with its future consumer named**, or waste?
+77. Row 25.12 — do both notation entry points still exist, and do they read the same published facts or
+    two different renderings of them?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -11950,6 +12305,17 @@ Gathered from the documents tabulated so far. **Not complete over the population
     renamed or demoted mechanism's basis value is re-named with it. S-50's naming bar reaches what a
     field is called; this extends it to the provenance value beside it, so a basis no longer naming an
     act it performs is not read as still performing it.
+97. **★★ Row 25.13 — that the specification say how a DERIVED spelling relates to the NOTATED one.**
+    The outgoing record carries *"the root/bass-spelling derivation from (key, degree) as an instrument
+    to establish at build"* — a spelling computed from a decided key and a decided degree. S-3 supplies
+    the spelling from the page and S-14 states that *"spelling is a required input and L0 does not infer
+    it"*. **Whether a derived spelling may disagree with the page, which of the two a consumer reads,
+    and what a disagreement means are all unanswered** — and Rows 22.4 and 22.12 make the notated
+    spelling load-bearing in two other places.
+98. **★ Row 25.5 — that the specification say what a published confidence about a fact at a boundary
+    means WHEN THE BOUNDARY ITSELF IS UNCERTAIN.** S-40 refuses to collapse the boundary evidence into
+    one strength; this text names the downstream consequence of computing an uncertainty inside one
+    segmentation — *"a boundary-ambiguous passage looks artificially certain"*.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -12093,37 +12459,39 @@ Gathered from the documents tabulated so far. **Not complete over the population
     uncapped publication against a cap filled by variants of the same answer, against a later pass
     replacing the published readings wholesale, and S-33's event-set identity against a distribution
     over roots standing in for the set.
+59. **Row 25.13 — S-3's spelled pitch read from the page and S-14's refusal to infer a spelling,
+    against a root and bass spelling DERIVED from a decided key and a decided degree.**
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the twenty-four documents tabulated, not a distribution over the
-population.** The population is 29 documents; 5 are untouched. No figure below may be read as
+**This is a RUNNING total over the twenty-five documents tabulated, not a distribution over the
+population.** The population is 29 documents; 4 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 692 statements placed so far:**
+**Dispositions, over the 708 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | 7 | **279** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | 1 | **206** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | 9 | **81** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | 3 | **91** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | **34** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | 20 | **692** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | 7 | 9 | **288** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | 1 | 2 | **208** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | 9 | 1 | **82** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | 3 | 4 | **95** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | **34** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | 20 | 16 | **708** |
 
-**The arithmetic closes:** 279 + 206 + 81 + 91 + 0 + 34 + 1 = 692, against 692 statements, and each
+**The arithmetic closes:** 288 + 208 + 82 + 95 + 0 + 34 + 1 = 708, against 708 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same twenty-four documents:**
+**Current-text verdicts, over the same twenty-five documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | 28 | **778** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | 3 | **231** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | 0 | **178** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | 31 | **1187** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | 28 | 25 | **803** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | 3 | 2 | **233** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | 0 | 1 | **179** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | 31 | 28 | **1215** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -12146,7 +12514,7 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the twenty-four documents was placed there.** The reason is visible in the classes that
+statement in the twenty-five documents was placed there.** The reason is visible in the classes that
 did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
@@ -12193,13 +12561,15 @@ of onset and release and would have been written the same way had the line not b
 reader weighing S-29 should know the line was seen. **That is the record's own statement, relayed
 without comment.**
 
-**Where an outgoing statement of this comparison meets one of those passages, the row says so.** Two do
-so far, and both are recorded here because the dispatch requires it: **D-207** is met at the
+**Where an outgoing statement of this comparison meets one of those passages, the row says so.** Three
+do so far, and all are recorded here because the dispatch requires it: **D-207** is met at the
 derivation's S-54, which cites it to keep *pedal point* apart from *pedal mark* — the same distinction
-this comparison's Document 4, Row 4.15 turns on; and **D-023 and D-057**, on slice identity and on the
-priority of evidence, bear on the rows where the derivation and the outgoing text agree about slice
-identity (Rows 2.12, 6.34, 6.59). **This is a fact the user reads the AGREES verdicts against**, and it
-is stated rather than left to be inferred.
+this comparison's Document 4, Row 4.15 turns on, **and the distinction Document 25, Row 25.14 records
+the user ruling in the same words and with the same citation, which makes that row's agreement NOT an
+independent one**; and **D-023 and D-057**, on slice identity and on the priority of evidence, bear on
+the rows where the derivation and the outgoing text agree about slice identity (Rows 2.12, 6.34, 6.59).
+**This is a fact the user reads the AGREES verdicts against**, and it is stated rather than left to be
+inferred.
 
 **The record's OTHER list of design-intent entries — the ones it records as USED rather than met — and
 the one document of this population it bears on.** §5 records the entries each statement consulted, and
