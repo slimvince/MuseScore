@@ -37,11 +37,12 @@ The population's order is the artifact's:
 |---|---|---|
 | 1 | `ARCHITECTURE.md` — the Layer 1 section | **DONE** |
 | 2 | `ARCHITECTURE.md` — the Layer 2 section | **DONE** |
-| 3–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 3 | `cowork_layer1_note_model_design.md` | **DONE** |
+| 4–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 3–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 4–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 3**, `cowork_layer1_note_model_design.md`.
+dispatch resumes at **position 4**, `cowork_layer1_tone_collection_design.md`.
 
 **The sections that can only be written once every document is done are therefore NOT written**, and
 their absence is deliberate rather than an omission: the derived-side rows (one per S-1…S-54 with the
@@ -1465,6 +1466,708 @@ disagree only about where it is carried.
 
 ---
 
+### 6.3 — Document 3: `cowork_layer1_note_model_design.md`
+
+> **Manifest for this document.** Outgoing statements: **64** — rows 3.1 to 3.62, of which Row 3.14
+> carries three claims and is split (i)/(ii)/(iii), so 62 row numbers carry 64 statements. Listed
+> under *not a statement*: **11**. Counted at this document by this session.
+>
+> **Why this document is in the population:** named by Ruling 32 item 2 — the ratified contract the
+> `ARCHITECTURE.md` Layer 1 section delegates to by name. It is the fullest current statement of
+> L0's subject in the record.
+>
+> **A note on this document's form, because it changes how the rows read.** It is a whole design
+> document in the fourteen-section standard, so a large part of it is deliberately about the
+> *component* rather than about the analysis: its testing plan, its risks, its build state, its
+> glossary. Those parts are dispositioned exactly like any other statement, and a good many land as
+> QUARANTINED or HISTORICAL for that reason and not because anything is wrong with them.
+>
+> **Rows are written compactly from here on.** A row carrying no DIFFERS states its quote, its
+> location, the derived statements, the verdict and the disposition, and stops; a row carrying a
+> DIFFERS states the difference in both texts' own words, as every such row above does.
+
+---
+
+#### §0 — the terms table
+
+**Row 3.1 — the analysis works over the user's selection, extended on request.**
+*Statement.* "the **selection** is the music the user chose; the **loaded span** is the music this
+layer currently covers (selection plus any granted extensions)" — §0, the first row (locator: line 17).
+*Derived.* S-32 (the published slice list covers the working span exactly), S-53 (the working span is
+the only thing a caller supplies beyond L0).
+*Current-text axis.* S-32: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.2 — which staves take no part in tonal analysis.**
+*Statement.* "**Staff-eligible** | The note's staff takes part in tonal analysis. Ineligible staves
+… : **hidden** staves, **percussion (drumset)** staves, and the **chord-symbol track**" — §0
+(locator: line 18).
+*Derived.* S-20 (unpitched notes), S-2 (annotation carried beside L0), S-15 (the five per-note
+conditions).
+*Current-text axis.* S-20: **AGREES** on percussion. S-2: **AGREES** on the chord-symbol track.
+S-15: **DIFFERS** on hidden staves.
+*The difference.* S-15's eligibility test is per note and names no staff-level fact, so a note on a
+**hidden** staff meets all five of its conditions where the outgoing text excludes it; S-20 reaches
+percussion only because such a note is *unpitched*, and S-2 reaches the chord-symbol track only
+because a chord symbol is *annotation*, so neither reaches a hidden staff carrying ordinary pitched
+notes.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 1.6(ii) and 2.8: that L0 supply
+a per-staff analysis-eligibility fact.
+
+**Row 3.3 — the chord-symbol track is detected and its notes are kept and marked.**
+*Statement.* "Detected by the shared staff-eligibility predicate; its notes are kept and marked
+ineligible." — §0 (locator: line 19).
+*Derived.* S-2, S-18.
+*Current-text axis.* S-2: **AGREES**. S-18: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-2 carries the chord-symbol case explicitly, S-18 the
+keep-and-label discipline).
+
+**Row 3.4 — the two per-note flags, and that one covers muted and cue notes together.**
+*Statement.* "whether the note actually plays (false for muted notes and imported cue notes …), and
+whether it is visible" — §0 (locator: line 20).
+*Derived.* S-3, S-15, S-18, S-19.
+*Current-text axis.* S-3: **AGREES**. S-15: **AGREES**. S-18: **AGREES**. S-19: **DIFFERS**.
+*The difference.* S-19 makes cue size an **attribute** that *"does not by itself change eligibility"*,
+publishing it and leaving the case to OQ-4; the outgoing text folds an imported cue note into the
+**plays** flag, so a cue note is ineligible with no separate fact recorded.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 state whether cue size
+survives as its own fact or is absorbed into the sounds flag, since S-19 publishes it and this text
+does not.
+
+**Row 3.5 — voice-level eligibility is not this layer's to define.**
+*Statement.* "Voice-level 'eligibility' (the three-flag combination consumers use) is defined by the
+consuming spec …; this layer defines the staff flag and the two per-note flags it is built from." —
+§0 (locator: line 20).
+*Derived.* S-15 (eligibility belongs to L1, the charter leaving it to the derivation), S-13.
+*Current-text axis.* S-15: **DIFFERS**.
+*The difference.* S-15 places the eligibility predicate squarely in L1 and derives it there; the
+outgoing text splits it — the staff flag and two per-note flags here, the combination defined in a
+consuming specification.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that eligibility have **one** home,
+since it is currently defined across at least three documents and the two texts disagree about which
+owns it.
+
+#### §1 — introduction and purpose
+
+**Row 3.6 — the layer produces the complete list of notes that actually sound, with their facts.**
+*Statement.* "It produces the **complete** list of the notes that actually sound in the music being
+analysed — **tie-resolved and lossless** … — together with the facts about each note that the later
+architectural layers need." — §1 (locator: line 27).
+*Derived.* S-3, S-23, S-18.
+*Current-text axis.* S-3: **AGREES**. S-23: **AGREES**. S-18: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.7 — it is built once and no later layer re-reads the score.**
+*Statement.* "It is built once and is then read by every later architectural layer; no later
+architectural layer reads the raw MuseScore score again." — §1 (locator: line 29).
+*Derived.* S-9 (what L1 reads from L0).
+*Current-text axis.* S-9: **AGREES** in substance — S-9 fixes L1's inputs as L0's published facts and
+nothing else.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.8 — the layer works on the user's selection, not on a whole score.**
+*Statement.* "It never works on 'a whole score' in the abstract. It works on **the part of the score
+that the user has selected for analysis**" — §1 (locator: line 33).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-32 cites the same ground: whole-score analysis is the
+degenerate case).
+
+**Row 3.9 — whole-score reading happens only in offline measurement.**
+*Statement.* "(Reading an entire score from beginning to end happens only in our offline testing of
+the analysis quality; it never happens in the shipping product.)" — §1 (locator: line 35).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is a whole-score build in fact confined to
+the offline measurement path at the current commit?
+
+**Row 3.10 — one shared reading for the whole system.**
+*Statement.* "It gives the whole analysis system **one** shared, accurate reading of the notes, so
+that every later architectural layer works from the same correct note list instead of each computing
+its own." — §1 (locator: line 38).
+*Derived.* S-9.
+*Current-text axis.* S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.11 — a tied group is one held note with one start and one end.**
+*Statement.* "**Tie-resolved.** A group of tied notes is treated as **one single held note** — one
+start time and one end time — instead of as the several separate written notes it appears to be." —
+§1 (locator: line 43).
+*Derived.* S-23.
+*Current-text axis.* S-23: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.12 — slurred notes are not merged; only ties join written notes.**
+*Statement.* "Slurred notes are *not* merged this way: a slur marks phrasing, not one continuous
+sound, so slurred notes — whether of the same pitch or of different pitches — remain separate notes …
+Only ties join written notes into one sounding note; slurs do not." — §1 (locator: line 45).
+*Derived.* S-24 (the tie test), S-7 (L0 does not supply slurs).
+*Current-text axis.* S-24: **AGREES**. S-7: **DIFFERS**.
+*The difference.* S-7 excludes slurs from what L0 supplies altogether, naming in its own premise the
+false-negative path *"a slur used in place of a tie between identical pitches (S-16) — L0 would then
+need slurs to repair the tie"*, and records that as *"not adopted"*; the outgoing text states the
+slur-versus-tie rule as a live distinction the layer makes.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-24 carries the operative rule — a link is a tie only
+on same spelled pitch, same voice, adjacency — which is what makes a slur fail to merge; the
+difference is about whether slurs are *supplied*, and it is stated at Row 3.12 rather than resolved).
+
+**Row 3.13 — the layer keeps every note and every fact any later step might need.**
+*Statement.* "**Lossless.** Architectural Layer 1 **keeps every note, and every fact about each note
+that any later step might need, and never discards any of it or reduces it to a summary.**" — §1
+(locator: line 48).
+*Derived.* S-2, S-18, S-20.
+*Current-text axis.* S-2: **AGREES**. S-18: **AGREES**. S-20: **DIFFERS**.
+*The difference.* S-20 states of an unpitched note that *"It is not published by L1 at all"*, and
+records the decision to publish it broadly as *"considered and declined"*; the outgoing text keeps
+every note without exception.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+losslessness admits an exception for unpitched notes, the two texts differing on exactly that one
+class.
+
+**Row 3.14 (i) — no note at all is lost, even one that will not feed tonal analysis.**
+*Statement.* "(a) any note at all — even a note that will not feed tonal analysis is kept, only
+marked" — §1 (locator: line 50).
+*Derived.* S-18.
+*Current-text axis.* S-18: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.14 (ii) — pitch, voice and timing are never replaced by a summary.**
+*Statement.* "(b) each note's exact pitch, voice, and timing — the real notes are never replaced by a
+count, an average, or a pitch histogram" — §1 (locator: line 51).
+*Derived.* S-33, S-3.
+*Current-text axis.* S-33: **AGREES** — S-33's whole content is that identity is the event set and not
+a folded summary. S-3: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.14 (iii) — which notes are present is separated from what a later layer decides about them.**
+*Statement.* "(c) the separation between *which notes are present* and *what a later architectural
+layer decides about them*" — §1 (locator: line 52).
+*Derived.* S-1 (the admission criterion's condition (ii)), S-53.
+*Current-text axis.* S-1: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-1(ii) is this separation stated as a test).
+
+**Row 3.15 — three kinds of note should not contribute to key-and-chord reasoning.**
+*Statement.* "Three kinds of note should not contribute to key-and-chord reasoning: notes that are
+**muted** …, notes that are **invisible**, and every note that sits on a staff which is not tonal —
+drum/percussion staves, the chord-symbol track …, and hidden staves." — §1 (locator: line 56).
+*Derived.* S-15, S-18, S-20, S-2.
+*Current-text axis.* S-15: **DIFFERS**. S-18: **AGREES**. S-20: **AGREES**. S-2: **AGREES**.
+*The difference.* As at Row 3.2 — the hidden-staff case is reached by no derived statement.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.2.
+
+**Row 3.16 — they are kept and flagged, never dropped.**
+*Statement.* "Architectural Layer 1 **keeps all of these notes and sets a flag on each one saying
+which case it is; it never drops them.**" — §1 (locator: line 59).
+*Derived.* S-18.
+*Current-text axis.* S-18: **AGREES** — S-18 requires exactly this, *"labelled by which flag excluded
+them"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.17 — ignoring such a note is a separate, later step.**
+*Statement.* "Choosing to *ignore* such a note is a separate step done later (the summary views
+described below skip any note that is muted, invisible, or on a non-tonal staff)." — §1 (locator:
+line 60).
+*Derived.* S-15, S-18.
+*Current-text axis.* S-15: **AGREES** — eligibility is a decision taken over L0's facts, not inside
+them. S-18: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.18 — the layer's scope in one sentence.**
+*Statement.* "read the selected music once; resolve ties; record the per-note facts; and answer the
+question 'which notes are sounding during a given span of time?'" — §1 (locator: line 64).
+*Derived.* S-3, S-23, S-29.
+*Current-text axis.* S-3: **AGREES**. S-23: **AGREES**. S-29: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.19 — it does not weight, average or reduce notes to pitch evidence.**
+*Statement.* "It does **not** weight, average, or reduce notes to pitch evidence — that is done by
+the summary views, on top of it, and by later architectural layers." — §1 (locator: line 68).
+*Derived.* S-33, S-49, S-50.
+*Current-text axis.* S-33: **AGREES**. S-49: **AGREES**. S-50: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.20 — it does not cut the music into spans and makes no key, chord or function judgement.**
+*Statement.* "It does **not** cut the music into spans (that is Architectural Layer 2) and makes
+**no** key, chord, or function judgement (that is Architectural Layer 3 and later)." — §1 (locator:
+line 70).
+*Derived.* S-9, S-51, S-53.
+*Current-text axis.* S-9: **AGREES**. S-51: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(The layer numbering is the old scheme; under the
+ratified charter the slicing this sentence excludes is L1's own, which is a renaming and not a
+disagreement.)*
+
+**Row 3.21 — it drops no note.**
+*Statement.* "It does **not** drop any note — it keeps every note and only marks the ones that should
+not feed tonal analysis." — §1 (locator: line 72).
+*Derived.* S-18, S-20.
+*Current-text axis.* S-18: **AGREES**. S-20: **DIFFERS** (as at Row 3.13).
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-18; the unpitched exception is stated once at Row
+3.13 and is not counted again here).
+
+**Row 3.22 — it does not decide when to rebuild itself and does not watch for edits.**
+*Statement.* "It does **not** decide *when* to build or rebuild itself, and does **not** watch for
+score edits — it builds, or widens, only when the caller asks." — §1 (locator: line 73).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES** in substance — the caller supplies the span and L1 does no
+looping of its own.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.23 — it does not decide that more music is needed.**
+*Statement.* "It does **not** decide that more music is needed — it supplies a widened span on
+request, but the request comes from a later architectural layer." — §1 (locator: line 75).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §2 — constraints
+
+**Row 3.24 — lossless and read-only toward the music.**
+*Statement.* "**Lossless, and read-only toward the music:** keep every note, change no note,
+summarise no note." — §2 (locator: line 79).
+*Derived.* S-1, S-18, S-33.
+*Current-text axis.* S-1: **AGREES**. S-18: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.25 — one reading for the whole system; no other code re-reads the score.**
+*Statement.* "**One reading for the whole analysis system:** there is a single note model; no other
+code re-reads the raw score." — §2 (locator: line 80).
+*Derived.* S-9.
+*Current-text axis.* S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.26 — no limit on how far backwards a span query searches.**
+*Statement.* "**No limit on how far backwards in time a query searches:** … the answer must include
+notes that started **earlier in time** than that span and are still sounding when it begins, no
+matter how much earlier they started." — §2 (locator: line 81).
+*Derived.* S-29.
+*Current-text axis.* S-29: **THE DERIVATION IS SILENT** — S-29 defines the sounding set without
+bounding the search that finds it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, the same proposal as Row 1.5(ii): that L0 state the
+no-backward-horizon rule explicitly.
+
+**Row 3.27 — it operates at any selection size and in any style, within a stated cost budget.**
+*Statement.* "**Operates on the user's selected part of the score, at any selection size and in any
+musical style** (it makes no assumption about style); it must stay fast even when the selected music
+is the entire piece" — §2 (locator: line 84).
+*Derived.* S-32.
+*Current-text axis.* S-32: **AGREES** on the span half; **THE DERIVATION IS SILENT** on cost.
+*PROPOSED DISPOSITION.* **QUARANTINED**, for its cost half. *Audit question:* is the stated
+logarithmic-plus-output bound met at the largest score the record requires to be handled?
+
+**Row 3.28 — the loaded span can be widened on request, and the requester decides.**
+*Statement.* "Architectural Layer 1 can be asked to **widen the span of music it covers — earlier in
+time, later in time, or both — and to take in the extra notes.** Architectural Layer 1 is the
+*supplier* … deciding that more music is needed is the requesting architectural layer's
+responsibility" — §2 (locator: line 88).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.29 — it is not responsible for noticing that its model is stale.**
+*Statement.* "**Architectural Layer 1 is not responsible for noticing when its note model has become
+out of date.** … Deciding that the note model must be rebuilt … is the caller's responsibility" — §2
+(locator: line 97).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 state who owns staleness,
+since the derivation's contract is silent on what happens when the notated record changes under a
+built model.
+
+**Row 3.30 — once built, the results do not change.**
+*Statement.* "**Fixed for the architectural layers above it:** once the note model is built, its
+results do not change; the only permitted code changes are speed improvements that return *identical*
+results." — §2 (locator: line 102).
+*Derived.* S-28 (positions are exact), S-53.
+*Current-text axis.* S-28: **AGREES** in substance on determinism. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §3 — context and scope
+
+**Row 3.31 — the inputs are the selected score and the notation system's tie information.**
+*Statement.* "the user-selected portion of the MuseScore score, plus the notation system's tie
+information (which written notes are tied to which)." — §3 (locator: line 106).
+*Derived.* S-3, S-23.
+*Current-text axis.* S-3: **DIFFERS**.
+*The difference.* S-3 requires L0 to supply, per note, a great deal more than pitch and tie links —
+its metric position as *"(bar index, offset within the bar, absolute position)"*, its ornament and
+articulation signs, its cue size — and S-5 to S-7 require per-bar facts, signature-change positions,
+fermatas, pedal marks and tremolo marks; the outgoing input list names the score and the tie
+information only.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the input list be stated at the
+width S-3 to S-7 require, since the two texts differ over what the layer is handed rather than over
+what it does with it.
+
+**Row 3.32 — the operations: build, return every note in onset order.**
+*Statement.* "*Build the note model* from the selected music (reading it once). *Return every note in
+the note model*, in a fixed order — earliest start time first." — §3 (locator: line 110).
+*Derived.* S-3.
+*Current-text axis.* S-3: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.33 — the sounding-during-a-span query, with no backward limit.**
+*Statement.* "*Which notes are sounding during the span of time from A to B?* — returns the notes
+whose own sounding span overlaps the span A-to-B, including notes that started **earlier in time**
+than A and are still sounding at A; there is no limit on how far **backwards in time** it searches."
+— §3 (locator: line 111).
+*Derived.* S-29.
+*Current-text axis.* S-29: **AGREES** on the overlap definition; the no-limit half is Row 3.26's.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.34 — the onsets-within-a-span query.**
+*Statement.* "*Which notes start within the span of time from A to B?*" — §3 (locator: line 114).
+*Derived.* S-28.
+*Current-text axis.* S-28: **AGREES** in substance — onsets are the derivation's change points.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.35 — extend widens the covered span, adds notes only, clamps and reports.**
+*Statement.* "extensions only ever **add** notes (nothing already loaded changes); each call widens by
+**one increment** and returns, the requesting layer, not this one, deciding whether to ask again; a
+request past the score edge clamps at the boundary and reports it." — §3 (locator: line 121).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES** on who decides; **THE DERIVATION IS SILENT** on the clamp and
+the append-only property.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 state the append-only and
+clamp-and-report properties of enlarging the span, which the derivation does not carry.
+
+**Row 3.36 — the consumers.**
+*Statement.* "the derived summary views …; the Architectural Layer 2 slicer; the Architectural Layer 3
+key/mode code." — §3 (locator: line 126).
+*Derived.* S-9, S-53.
+*Current-text axis.* S-9: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.37 — it knows nothing of keys, chords and function.**
+*Statement.* "**What Architectural Layer 1 deliberately knows nothing about:** keys, chords, and
+function — it sits beneath all musical judgement." — §3 (locator: line 129).
+*Derived.* S-1, S-9, S-51.
+*Current-text axis.* S-1: **AGREES**. S-9: **AGREES**. S-51: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §4 to §8 — strategy, structure, runtime, data, crosscutting
+
+**Row 3.38 — read once into one onset-ordered list; one note per tied group.**
+*Statement.* "Read the user-selected music exactly once into a single list of notes ordered by start
+time. For each group of tied notes, record one note that runs from the first tied note's start time to
+the last tied note's end time" — §4 (locator: line 138).
+*Derived.* S-23.
+*Current-text axis.* S-23: **AGREES**, and exactly — S-23 fixes the onset as the first note's and the
+release as the last's.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.39 — mark rather than drop, and answer span queries from the list.**
+*Statement.* "Keep every note; for the notes that should not feed tonal analysis, set a marking flag
+rather than dropping them; and answer span-of-time questions directly from the list." — §4 (locator:
+line 140).
+*Derived.* S-18, S-29.
+*Current-text axis.* S-18: **AGREES**. S-29: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.40 — a held sound is one note, a long note is never missed, no note is counted twice.**
+*Statement.* "a held sound is one note, a long note is never missed, and no note is counted twice." —
+§4 (locator: line 143).
+*Derived.* S-23.
+*Current-text axis.* S-23: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.41 — a note record is one tie-resolved note with the eleven facts.**
+*Statement.* "**A note record** — one tie-resolved note together with its facts (the eleven fields
+listed in Section 7)." — §5 (locator: line 146).
+*Derived.* S-3.
+*Current-text axis.* S-3: **DIFFERS** (the same difference as Row 1.3, stated there).
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.42.
+
+**Row 3.42 — the eleven facts, enumerated.**
+*Statement.* "Each note record carries eleven facts: its **sounding pitch**; its **spelled pitch** …;
+which **staff** and which **voice** …; its **start time-position**, its **end time-position**, and its
+**duration** …; and four yes/no facts — whether it is a **grace note**, whether it actually **sounds**
+…, whether it is **visible**, and whether it is **staff-eligible**" — §7 (locator: line 175).
+*Derived.* S-3.
+*Current-text axis.* S-3: **DIFFERS**.
+*The difference.* S-3 additionally requires *"whether it is pitched"*, *"whether it is tied to the
+preceding note and to the following note"*, *"whether it is cue-sized"*, *"the ornament and
+articulation signs attached to it"*, and a metric position decomposed into *"(bar index, offset within
+the bar, absolute position)"*; the outgoing eleven carry an absolute position only and add
+`staff-eligible`, which S-3 does not name.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the per-note fact list be
+reconciled to one list — the five S-3 facts absent here decide S-15's eligibility test, S-17's
+ornament attribute and S-34's bar-relative metric hierarchy, so their absence is not cosmetic.
+
+**Row 3.43 — the model owns an onset-ordered list, a borrowed score pointer and a look-up index.**
+*Statement.* "**The note model** — owns the list of note records ordered by start time, a borrowed
+reference to the source MuseScore score, and a numeric look-up index." — §5 (locator: line 147).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the borrowed score reference outlive
+the model in every path that holds one?
+
+**Row 3.44 — building walks every staff, voice and position including grace notes.**
+*Statement.* "Building the note model walks every staff, every voice, and every time-position
+(including grace notes), resolves ties, records the per-note facts, and sorts the records by start
+time." — §5 (locator: line 148).
+*Derived.* S-15, S-16.
+*Current-text axis.* S-16: **DIFFERS**.
+*The difference.* S-16 states that a grace note *"opens no change point and belongs to no sounding
+set"* and is published instead as an *ornamental attachment* of its host; the outgoing text walks
+grace notes into the same record list as ordinary notes, carrying only an `isGrace` flag.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.16 and 2.17 — the same grace
+question, met here at the build rather than at the slicer.
+
+**Row 3.45 — the look-up index answers span queries without scanning.**
+*Statement.* "**The numeric look-up index** — a structure that lets the two span-of-time questions …
+be answered quickly even when the selected music is large, instead of scanning the whole list of notes
+every time." — §5 (locator: line 151).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the index return exactly what a linear
+scan returns, in the same order, at the current commit?
+
+**Row 3.46 — the summary views are deliberately lossy and sit on top.**
+*Statement.* "**Derived summary views (a separate module, not part of Architectural Layer 1's
+core):** … read-only summaries built *on top of* the note model — deliberately lossy convenience
+views, with the lossless note model still underneath them." — §5 (locator: line 155).
+*Derived.* S-33, S-49.
+*Current-text axis.* S-33: **AGREES** that the lossless set is what identity rests on. S-49:
+**AGREES** that a derived view is published beside, not instead of, the facts.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, for
+the weighting view's own content, exactly as Row 1.9; the losslessness half is carried by S-33 and
+travels with the relocation rather than being lost.
+
+**Row 3.47 — the five runtime scenarios.**
+*Statement.* the five bullets of §6 — building; a span query; three tied quarters plus a following
+note becoming **two** notes; a note carried in from earlier; widening the span (locator: lines
+161–172).
+*Derived.* S-23, S-29, S-53.
+*Current-text axis.* S-23: **AGREES** (the three-tied-quarters case is S-23's own arithmetic).
+S-29: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Counted as one statement: the five bullets are one
+worked illustration of rules already rowed, and none states a rule the rows above do not.)*
+
+**Row 3.48 — all times are absolute positions within the piece.**
+*Statement.* "All times are absolute time-positions within the piece." — §7 (locator: line 181).
+*Derived.* S-3, S-34, S-36.
+*Current-text axis.* S-3: **DIFFERS**.
+*The difference.* S-3 requires the position as *"(bar index, offset within the bar, absolute
+position)"* — three things — because S-34's metrical hierarchy and S-36's anacrusis alignment are
+computed from the bar-relative offset; the outgoing text carries the absolute position alone.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.42: that the bar index and the
+within-bar offset be supplied, the metric-strength class depending on them.
+
+**Row 3.49 — single source of truth.**
+*Statement.* "**Single source of truth** — … every architectural layer reads these notes; no
+architectural layer re-reads the raw MuseScore score." — §8 (locator: line 186).
+*Derived.* S-9.
+*Current-text axis.* S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.50 — deterministic.**
+*Statement.* "**Deterministic** — the same selected music always produces exactly the same note
+model." — §8 (locator: line 188).
+*Derived.* S-28.
+*Current-text axis.* S-28: **AGREES** in substance.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.51 — edge handling.**
+*Statement.* "**Edge handling** — an empty or backwards span of time returns no notes; a silent span
+returns no notes; grace, muted, invisible, and non-tonal-staff notes are kept and marked, never
+dropped." — §8 (locator: line 191).
+*Derived.* S-18, S-31.
+*Current-text axis.* S-18: **AGREES** on keep-and-mark. S-31: **DIFFERS**.
+*The difference.* S-31 requires a silent stretch to be **published as a slice with an empty sounding
+set** rather than passed over — *"Silence is a notated fact and strong boundary evidence"* — where the
+outgoing text returns nothing for a silent span.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** for the keep-and-mark half; the silence half is the same
+question as Rows 2.13 and 2.20 and is not counted a second time there. *(Where a row's two halves
+would fall to different dispositions, the disposition recorded is the one its principal clause takes;
+this is the only row of this document where that arises, and it is stated rather than left implicit.)*
+
+#### §9 — the architecture decisions
+
+**Row 3.52 — a tied group is one note, and the alternative was weighed.**
+*Statement.* "**A group of tied notes is one note, not several.** Alternative considered: keep each
+tied note separate. Chosen: one note — the held parts of a tie still sound, so counting them as
+separate notes counts the same sustained sound more than once." — §9 (locator: line 195).
+*Derived.* S-23.
+*Current-text axis.* S-23: **AGREES**, and on the same ground.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.53 — no backward limit, and the alternative was weighed.**
+*Statement.* "**No limit on how far backwards in time a query searches.** Alternative considered:
+limit the backward-in-time search for speed. Chosen: no limit — a limit silently drops notes held
+longer than the limit" — §9 (locator: line 198).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 1.5(ii) and 3.26 — and this row
+is the one that carries the **defense** the proposal needs, which is why it is rowed separately.
+
+**Row 3.54 — keep and mark rather than filter while reading.**
+*Statement.* "**Keep every note and mark it, rather than filter notes out while reading.** …
+Chosen: keep-and-mark — so that choosing to ignore a note is an explicit, reversible step taken in a
+later architectural layer." — §9 (locator: line 201).
+*Derived.* S-18, S-15.
+*Current-text axis.* S-18: **AGREES**. S-15: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 3.55 — the index structure, and the alternatives weighed.**
+*Statement.* "**A numeric look-up index** … Alternatives considered: an interval tree, a bucketed
+index. Chosen: this structure — it is the simplest one that answers the span-of-time queries quickly
+*and* returns notes in exactly the same order a plain left-to-right scan would." — §9 (locator: line
+204).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Row 3.45. *Audit question:* is the order-equivalence
+with a linear scan tested rather than asserted?
+
+#### §10 to §14 — testing, risks, glossary, background, related work
+
+**Row 3.56 — the accuracy shift the layer caused, and that it was accepted.**
+*Statement.* "**An accepted, fully-explained shift in the accuracy metric, caused by building
+Architectural Layer 1 correctly** — resolving ties and removing the backward-in-time search limit
+moved the project's accuracy metric by a small, fully-attributed amount" — §11 (locator: line 222).
+*Derived.* None.
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Rows 1.15 and 1.16 — the same measurement, recorded
+twice in two documents.
+
+**Row 3.57 — grace-note timing is to be confirmed when a later layer uses grace notes.**
+*Statement.* "**Grace-note timing** — exactly how a grace note's start time, end time, and duration
+are recorded should be confirmed when Architectural Layer 3 begins using grace notes (there is
+deliberately no special grace-note handling in Architectural Layer 1)." — §11 (locator: line 228).
+*Derived.* S-16, S-15.
+*Current-text axis.* S-16: **DIFFERS**.
+*The difference.* S-16 settles the grace question — no change point, no membership of any sounding
+set, published as an ornamental attachment — and marks its own status *settled*; the outgoing text
+records the same question as **open**, to be confirmed later, and states that the layer applies no
+special handling.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.16, 2.17 and 3.44. **This row
+is evidence that the grace question is open in the outgoing record and closed in the derivation**,
+which is worth the user's attention when the disagreement at Row 2.16 is ruled.
+
+**Row 3.58 — the whole-score build is interim, and the target is build-over-selection plus extend.**
+*Statement.* "**The build currently reads the whole score even when only part of it is queried** — an
+**interim** behaviour, not the target. … the target is *build over the selection, then extend on
+request*." — §11 (locator: line 230).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES** on the target. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state and its plan; the rule it points at is already
+carried at Rows 3.8 and 3.28.
+
+**Row 3.59 — what the layer replaces, and the two defects it fixes by construction.**
+*Statement.* "**What it replaces:** the earlier per-consumer note collectors … They were tie-blind …
+and they limited their backward-in-time search to four whole-notes, which silently dropped notes held
+longer than that. Architectural Layer 1 fixes both problems by construction." — §13 (locator: line
+254).
+*Derived.* S-23.
+*Current-text axis.* S-23: **AGREES** on the tie half; **THE DERIVATION IS SILENT** on the horizon
+half.
+*PROPOSED DISPOSITION.* **HISTORICAL** — it records what was replaced and why.
+
+**Row 3.60 — a specified cue-note flag was removed because the distinction is unrecoverable after
+import.**
+*Statement.* "**A field we specified then removed:** we had planned a 'cue note' flag, then removed it
+— once a MuseScore score is imported, a cue note can no longer be told apart from an ordinary muted
+note, and the existing 'does it sound' flag already excludes both." — §13 (locator: line 261).
+*Derived.* S-19.
+*Current-text axis.* S-19: **DIFFERS**.
+*The difference.* S-19 publishes cue size as an attribute and leaves eligibility to the flags,
+recording the unresolved cases as OQ-4 and OQ-5; the outgoing text records that the cue distinction is
+**not recoverable at all** after import, which if true would close OQ-4 by removing its subject.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that this fact — that an imported
+score carries no cue distinction — be stated in L0, because it bears directly on two of the
+derivation's open questions and the derivation did not have it. **This is the clearest case in this
+document of the outgoing text holding a fact the derivation lacked.**
+
+**Row 3.61 — what the design is built on, from the field.**
+*Statement.* "**Built on:** the idea of a **lossless symbolic-music event list** … **Standard
+interval-query data structures** … **Tie and playback resolution** comes from MuseScore's own note
+model …, not reinvented." — §14 (locator: line 268).
+*Derived.* S-23, S-3.
+*Current-text axis.* S-23: **AGREES**. S-3: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** — the lineage is the same one S-23 and S-3 cite.
+
+**Row 3.62 — summarising to pitch classes at read time was rejected as lossy.**
+*Statement.* "**Discarded / not used:** **summarising notes to pitch classes at read time** — rejected
+here because it is lossy; summarising belongs in the derived views, on top of the lossless model." —
+§14 (locator: line 273).
+*Derived.* S-33.
+*Current-text axis.* S-33: **AGREES**, and decisively — S-33's own content is that identity is the
+event set and not the pitch-class set.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+---
+
+#### Not a statement — listed so the arithmetic closes (11)
+
+1. The status banner and its five source-commit identifiers — *provenance and a build state's
+   identifiers*.
+2. The §0 rows **Tie-resolved / lossless**, **Byte-identical**, **Phase-1a / Phase-1b**, and **The
+   system check (§10)** — *four vocabulary rows that point at other sections or other documents and
+   state no rule of their own*. (Counted as four.)
+3. "**Implementation (source files):** the note model and its look-up index are in
+   `src/composing/analysis/notemodel/note_model.{h,cpp}` …" — *an implementation locator*.
+4. §10's five testing bullets — *a test plan and its test-file locator*, which state what is checked
+   rather than what the analysis does. (Counted as one.)
+5. §12's glossary — *definitions restating §1 and §0*, none introducing a rule not already rowed.
+6. The §11 bullet's closing sentence, "The build-selection + extend **contract** is what every layer
+   above is written against, so the interim is invisible to them." — *a restatement of Row 3.58*.
+7. "**Corpora used:** the **353-piece Bach chorale set (plus a Corelli trio)** — used to confirm the
+   look-up index stays correct and fast at scale." — *a measurement-corpus citation*.
+
+#### The arithmetic at this document
+
+- Statements: **64** (rows 3.1 to 3.62, with Row 3.14 split into three; Row 3.47's five runtime
+  bullets are counted as one, stated at that row).
+- Listed under *not a statement*: **11**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 39 | 3.1, 3.3, 3.6, 3.7, 3.8, 3.10, 3.11, 3.12, 3.14(i), 3.14(ii), 3.14(iii), 3.16, 3.17, 3.18, 3.19, 3.20, 3.21, 3.22, 3.23, 3.24, 3.25, 3.28, 3.30, 3.32, 3.33, 3.34, 3.36, 3.37, 3.38, 3.39, 3.40, 3.47, 3.49, 3.50, 3.51, 3.52, 3.54, 3.61, 3.62 |
+| ADOPTED — proposed | 16 | 3.2, 3.4, 3.5, 3.13, 3.15, 3.26, 3.29, 3.31, 3.35, 3.41, 3.42, 3.44, 3.48, 3.53, 3.57, 3.60 |
+| RELOCATED | 1 | 3.46 |
+| QUARANTINED | 6 | 3.9, 3.27, 3.43, 3.45, 3.55, 3.56 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 2 | 3.58, 3.59 |
+| UNPLACED | 0 | — |
+| **Total** | **64** | — |
+
+**The column sums to 64, against 64 statements, so the arithmetic closes at this document:**
+39 + 16 + 1 + 6 + 0 + 2 + 0 = 64. **The statement lists are the record**; the integers are counted at
+them.
+
+**Two rows carry a DIFFERS *and* an ADOPTED — carried disposition, and that is deliberate rather than
+an inconsistency.** Row 3.12 (slurs) and Row 3.51 (edge handling) each have a principal clause whose
+content a derived statement carries, and a secondary clause on which the two texts differ; the row
+states the difference and the disposition follows the principal clause. The two axes are independent
+by construction — the current-text axis is evidence about the present text, the disposition axis is
+the statement's fate — so a row may honestly carry AGREES on one derived statement, DIFFERS on
+another, and one disposition.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 81 |
+| DIFFERS | 15 |
+| THE DERIVATION IS SILENT | 11 |
+| **Total verdicts** | **107** |
+
+#### What this document's rows put in front of the user
+
+Three things. **The grace question returns, twice** — at Row 3.44 (the build walks grace notes into
+the record list) and at Row 3.57, where the outgoing text records grace timing as an **open** question
+to be confirmed later while the derivation's S-16 marks the same question **settled**. Together with
+Row 2.16 that is three independent places in the outgoing record where grace notes are handled
+opposite to the derivation. **The input list is narrower than the derivation's** — Rows 3.31, 3.42 and
+3.48: the outgoing layer is handed the score and its tie links and publishes eleven per-note facts,
+where S-3 to S-7 require the bar-relative position, the ornament signs, the cue size, the tie flags
+and the per-bar and per-signature facts that S-34 and S-36 compute the metric-strength class from.
+**And one row runs the other way** — Row 3.60, where the outgoing text holds a fact the derivation did
+not have: an imported score cannot distinguish a cue note from a muted one, which bears directly on
+the derivation's OQ-4.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -1502,6 +2205,8 @@ worked; it is not complete over the population.**
 
 - Row 1.9 — the weighted pitch-class view: duration×beat, repetition, cross-voice and pedal weighting,
   pitch-class aggregation, and a weighted bass pick.
+- Row 3.46 — the derived summary views as a class: deliberately lossy read-only summaries over the
+  note model, the weighting and the bass pick among them.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -1537,6 +2242,14 @@ Gathered from the documents tabulated so far. **Not complete over the population
     requires to be handled?
 12. Row 2.24 — are the recorded suite and corpus figures the current ones, and do the suite sizes they
     name still exist at the current commit?
+13. Row 3.9 — is a whole-score build in fact confined to the offline measurement path at the current
+    commit?
+14. Row 3.27 — is the stated cost bound met at the largest score the record requires to be handled?
+15. Row 3.43 — does the borrowed score reference outlive the note model in every path that holds one?
+16. Rows 3.45 and 3.55 — does the look-up index return exactly what a linear scan returns, in the same
+    order, at the current commit, and is that tested rather than asserted?
+17. Row 3.56 — the same measurement as audit questions 8 and 9 above, recorded a second time in a
+    second document: are the recorded per-preset movements reproducible on the arm that ships?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -1572,6 +2285,21 @@ Gathered from the documents tabulated so far. **Not complete over the population
     boundary marked as such.
 11. Row 2.27 — that the specification state whether a slice carries its sounding set or leaves it to
     be fetched from L0 by identity.
+12. Rows 3.2 and 3.15 — the same per-staff eligibility proposal as items 2 and 5 above, met a third
+    time; the hidden-staff case is reached by no derived statement in any of the three.
+13. Rows 3.4 and 3.60 — that L0 state whether cue size survives as its own fact, **and** that the fact
+    the outgoing text holds and the derivation lacks be stated: an imported score carries no cue
+    distinction at all, which bears on OQ-4.
+14. Row 3.5 — that eligibility have one home, it being currently defined across three documents.
+15. Row 3.13 — that the specification state whether losslessness admits an exception for unpitched
+    notes, S-20 declining to publish them and the outgoing text keeping every note.
+16. Rows 3.26 and 3.53 — the no-backward-horizon rule, with the defense Row 3.53 carries.
+17. Row 3.29 — that L0 state who owns staleness when the notated record changes under a built model.
+18. Rows 3.31, 3.41, 3.42 and 3.48 — that the input list and the per-note fact list be stated at the
+    width S-3 to S-7 require, the bar-relative position in particular, which S-34 and S-36 compute the
+    metric-strength class from.
+19. Row 3.35 — that the append-only and clamp-and-report properties of enlarging the span be stated.
+20. Rows 3.44 and 3.57 — the grace question again, met at the build and at the risk register.
 
 **Differences stated, with nothing chosen between the two texts.**
 
