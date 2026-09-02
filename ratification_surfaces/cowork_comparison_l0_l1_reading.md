@@ -44,11 +44,12 @@ The population's order is the artifact's:
 | 7 | `cowork_layer2_reslice_design.md` | **DONE** |
 | 8 | `ARCHITECTURE.md` — the Layer 5 section | **DONE** |
 | 9 | `cowork_layer5_function_design.md` | **DONE** |
-| 10–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 10 | `cowork_phrase_boundary_design.md` | **DONE** |
+| 11–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 10–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 11–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 10**, `cowork_phrase_boundary_design.md`.
+dispatch resumes at **position 11**, `cowork_joint_estimator_factorization.md`.
 
 **Where the previous stop fell, and why it was a clean one.** Positions 1 to 7 are exactly **Ruling
 32's items 1 and 2** — the two `ARCHITECTURE.md` sections and all five root design documents, which is
@@ -4895,6 +4896,784 @@ contract** appears once, at Row 9.15, from the requesting side.
 
 ---
 
+### 6.10 — Document 10: `cowork_phrase_boundary_design.md`
+
+> **Manifest for this document.** Outgoing statements: **53** (rows 10.1 to 10.53; no row of this
+> document splits). Paragraphs counted under *not a statement*: **27**. Both counted at this document
+> by this session; the counts appear here and nowhere else.
+>
+> **Why this document is in the population:** named by **Ruling 32 item 3** — one of the four places
+> the ruling established as describing an output the new L1 charter publishes. It is **not** in the
+> ruled specification document set and stays in the population by name.
+>
+> **★ THIS DOCUMENT IS ALMOST ENTIRELY L1's FACE (e), AND THAT IS WHY ITS COUNTS INVERT DOCUMENT 9's.**
+> Where document 9 gave 34 statements against 118 counted paragraphs, this one gives 53 against 27:
+> its whole subject is what the notated surface says about where phrases end, which is the charter's
+> *notated boundary evidence*. **It is the fullest statement of face (e) in the outgoing record, and
+> the two texts differ on it structurally rather than in detail.** It also reaches faces (a), (c) and
+> (g): it states an eligibility test, it consumes the slicing layer's empty slices, and it fixes the
+> form and the establishment status of what it publishes.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §0 and §1 — the terms and the purpose
+
+**Row 10.7 — "eligible" is a three-flag test, and the voice-level combination is stated here because
+the note layer does not state it.**
+*Statement.* "**Eligible voice** | A (staff, voice) line whose notes pass the eligibility test …: the
+note **sounds** …, is **visible**, and lies on a **staff that takes part in tonal analysis** … Muted
+and invisible notes are **excluded** from every per-voice cue profile … Layer 1 defines the staff
+flag, this row states the voice-level combination Layer 1 does not." — §0 (locator: line 40).
+*Derived.* S-15 (the five per-note eligibility conditions), S-20 (unpitched notes), S-2 (annotation
+carried beside L0).
+*Current-text axis.* S-15: **DIFFERS**. S-20: **AGREES** on the percussion case reached through the
+staff flag. S-2: **AGREES** on the chord-symbol case reached the same way.
+*The difference, in both texts' own words.* S-15 admits a note *"if and only if it is pitched, it is
+not marked as not to be played, it is visible, it is not a grace note, and its notated duration is
+greater than zero"* — five per-note conditions; this text tests **three** flags, one of them
+staff-level, and omits *pitched*, *not a grace note* and *positive duration*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **eligibility** family of §12 item 5 and
+travelling with Rows 2.8, 3.2, 3.5, 3.15 and 6.20. **This is the fourth document to state the same
+three-flag test, and the second to say in terms that eligibility has no single home.**
+
+**Row 10.8 — the picked boundary delimits the grouping span; the word *phrase* is reserved for the
+melodic object this primitive does not model.**
+*Statement.* "this primitive's picked boundary is the **cue that delimits Layer 6's
+punctuation-span** — the primitive keeps its \"phrase-boundary\" code name; … \"phrase [MT]\" is
+reserved for the melodic voice-leading object this primitive does not model." — §0 (locator: line 41).
+*Derived.* S-50 (no published field is named *boundary*, *cadence* or *phrase*).
+*Current-text axis.* S-50: **DIFFERS** — the primitive's published object is named *phrase boundary*,
+which is one of the names S-50 excludes, while the reservation this row states is a different one
+(the melodic phrase against the grouping span).
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the naming bar and this
+document's own reservation be reconciled into one rule, since both reserve the word *phrase* and they
+reserve it for different things.
+
+**Row 10.9 — a phrase boundary is a tick where a phrase ends; the next phrase's start is not
+separately marked.**
+*Statement.* "A **phrase boundary** is a tick where a musical phrase **ends** (the next phrase begins
+at the following sounding onset, which this primitive does not separately mark)." — §1 (locator: line
+49).
+*Derived.* S-39, S-50.
+*Current-text axis.* S-39: **DIFFERS**. S-50: **DIFFERS**.
+*The difference, in both texts' own words.* S-39 publishes, per change point, *"a set of boundary
+flags, each with its witnesses"* — evidence that a bar line, a fermata, a rest or a repeat is there —
+and takes no view on whether a phrase ends; this text publishes a **phrase end**, which is a reading
+of that evidence.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family: that
+the specification state whether what is published is the notated evidence or a phrase end read from it.
+
+**Row 10.10 — the primitive emits a graded strength, not only a yes/no, so a consumer can read a
+boundary's confidence.**
+*Statement.* "It emits a *graded strength*, not only a yes/no, so a consumer can read the confidence
+of a boundary, not just its presence." — §1 (locator: line 55).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS** — S-40 states that *"nothing is collapsed
+to a single 'boundary strength'"*, in those words.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. **The
+two texts use the same phrase — *boundary strength* — for the thing one publishes and the other
+forbids**, which is why the family is worth ruling once rather than row by row.
+
+#### §2 — the constraints
+
+**Row 10.1 — a phrase boundary is read from the written surface alone, never from a resolved key,
+chord or cadence.**
+*Statement.* "**Notation-only — key-, chord-, and function-agnostic.** A phrase boundary is read from
+the written surface (rests, durations, pitch intervals, metric position, annotations, barlines), never
+from a resolved key, a chord reading, or a cadence. This is structural: the function layer's cadence
+detection *consumes* phrase boundaries, so a boundary that depended on cadence would be circular." —
+§2 (locator: line 64).
+*Derived.* S-51 (an output is evidence rather than a claim only where it is computable from L0 facts
+with no tonality, chord or boundary as input), S-9 (L1 does not read the key signature).
+*Current-text axis.* S-51: **AGREES**, and on the same circularity argument S-51 gives for the cues.
+S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-51 with S-9). **The acyclicity argument is reached
+here independently and stated in the same shape**, which is worth the user's attention beside Rows
+9.26 and 9.32.
+
+**Row 10.2 — a surface-only primitive systematically misses boundaries marked only harmonically, and
+that is accepted.**
+*Statement.* "A known consequence (accepted): a surface-only primitive **systematically misses
+boundaries marked only harmonically** — a cadence with no surface gap — which the function layer
+recovers downstream." — §2 (locator: line 68).
+*Derived.* S-39, S-50.
+*Current-text axis.* S-39: **THE DERIVATION IS SILENT**. S-50: **THE DERIVATION IS SILENT** — the
+derivation publishes the notated evidence and states no coverage claim for it, in either direction.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L1's specification record that
+the notated boundary evidence is **systematically incomplete as a phrase signal** — a real boundary
+can be marked harmonically and leave no notated trace — so that a consumer does not read an absent
+flag as an absent boundary.
+
+**Row 10.3 — the fermata is the reliable marker in chorales but is not universal.**
+*Statement.* "**General, not chorale-specific.** The tool analyses scores of any instrumentation. The
+fermata is the reliable phrase marker *in chorales* but is not universal; the surface-cue model and
+the other notated markers extend the primitive to any texture." — §2 (locator: line 70).
+*Derived.* S-39.
+*Current-text axis.* S-39: **AGREES** — S-39 defines all five kinds without reference to any
+instrumentation, and its own worked evidence is a chorale.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, travelling with Row 9.32.
+
+**Row 10.4 — the notated markers are deterministic facts; the surface-cue strength is a computed
+profile with precision-phase constants.**
+*Statement.* "Its two parts have different character, stated honestly: the **notated markers**
+(fermata, structural barline, all-voice rest) are **deterministic facts**; the **surface-cue boundary
+strength** is a **computed profile** whose combination weights and peak threshold are **precision-phase
+constants**." — §2 (locator: line 73).
+*Derived.* S-39, S-51, S-52.
+*Current-text axis.* S-39: **DIFFERS**. S-51: **AGREES** that a computed predicate over L0 facts is
+not thereby a claim. S-52: **AGREES** that anything resting on an unestablished constant is
+*provisional*.
+*The difference, in both texts' own words.* S-39 publishes **only** the deterministic half — the five
+notated kinds, each with its witnesses — and the derivation adds no computed profile anywhere; this
+text publishes both halves under one name and says so in terms, calling the primitive *"a small
+notation-only inference, not a pure deterministic fact"*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family: that
+the specification state whether L1 publishes the deterministic marks alone or a computed strength
+beside them — and, if both, that the computed half carry S-52's *provisional* status while its
+constants are unestablished.
+
+**Row 10.5 — the primitive inherits the loaded span, requests no extension of its own, and recomputes
+over an enlarged span.**
+*Statement.* "**A DERIVED VIEW: it inherits the loaded span and requests no extension of its own.** …
+Its profile simply **ends where the loaded span ends**. A consumer that wants boundary evidence beyond
+that stretch extends the span through **its own** bounded-context obligation, and this primitive then
+**recomputes over the enlarged span** — the standard re-run." — §2 (locator: line 83).
+*Derived.* S-32 (the published list covers the working span exactly), S-53 (the working span is the
+only thing a caller supplies beyond L0).
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** on enlargement. S-53: **THE DERIVATION IS
+SILENT** — S-53 fixes the span and never contemplates changing it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **enlargement contract** family of §12
+item 25 — and adding the one part of it the earlier rows do not state: **who may NOT ask**. Its
+defense is its own: *"a derived view that reached for its own context would hold a second, independent
+extension policy beside its consumers', and its answer would then depend on which consumer asked."*
+
+**Row 10.6 — the published boundary strength is a per-profile max-normalised confidence, comparable
+within one score only, participating in no override frame.**
+*Statement.* "**Its published boundary strength is a per-profile MAX-NORMALISED confidence, comparable
+within ONE score's profile only, and it participates in NO override frame.** … a quantity that cannot
+be compared across scores must not be given the authority to overrule one that can." — §2 (locator:
+line 89).
+*Derived.* S-52 (every published item carries an establishment status; a consumer may not put a
+provisional item under load), S-50.
+*Current-text axis.* S-52: **AGREES** in discipline, and closely — both texts attach a standing to a
+published quantity and bound what a consumer may do with it. S-50: **DIFFERS** — S-50's published
+items are predicates with witnesses, not a normalised scalar.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that a published L1 quantity state
+**the frame within which it is comparable**, which S-52's three statuses do not carry and which this
+text makes the load-bearing half of its own publication rule.
+
+#### §3 — what it is handed and what it publishes
+
+**Row 10.11 — L0 supplies each note's voice, pitch, onset and duration, and the eligible voices.**
+*Statement.* "from Layer 1, the note model — each note's **voice, pitch, onset, and duration** (a
+note's **offset** = onset + duration), and the **eligible** voices that take part in analysis" — §3
+(locator: line 97).
+*Derived.* S-3, S-13.
+*Current-text axis.* S-3: **AGREES**. S-13: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 10.12 — L0 supplies fermatas, rests and bar lines as read from the engraved notation.**
+*Statement.* "the score's **annotations** (fermatas), **rests**, and **barlines** as read from the
+engraved notation" — §3 (locator: line 98).
+*Derived.* S-4 (per rest: duration, position, staff, voice, visibility, and any fermata on it), S-5
+(per bar: the bar-line type at its start and end), S-7 (fermatas supplied).
+*Current-text axis.* S-4: **AGREES**. S-5: **AGREES**. S-7: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (all three named facts are L0 facts in the derivation
+too).
+
+**Row 10.13 — L0 supplies breath marks and caesuras.**
+*Statement.* "the **breath marks** and **caesuras**" — §3 (locator: line 99).
+*Derived.* S-7 (what L0 does and does not supply).
+*Current-text axis.* S-7: **DIFFERS**.
+*The difference, in both texts' own words.* S-7's supplied list is *"the fermatas, the pedal marks
+with their spans, and the tremolo marks"* and its excluded list is *"tempo, dynamics, slurs, beams,
+stem directions, or layout"* — a breath mark and a caesura appear in neither; this text consumes both
+as notation.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the breath mark and the caesura
+be added to L0's supplied facts. **★ THIS ANSWERS OQ-9 IN THE AFFIRMATIVE.** The derivation asks, in
+its own words, *"Are a caesura, a breath mark, a section break or a segno boundary evidence? The
+charter names five kinds; these pass S-1 and are not in the list. Not added here"* — and the outgoing
+text adds two of the four and uses them.
+
+**Row 10.14 — L0 supplies tempo markings: subito tempo changes and written ritardandos.**
+*Statement.* "the **tempo markings** (sudden/subito tempo changes and written ritardandos)" — §3
+(locator: line 99).
+*Derived.* S-7.
+*Current-text axis.* S-7: **DIFFERS**, and explicitly — S-7 states that *"L0 does not supply tempo,
+dynamics, slurs, beams, stem directions, or layout"* and defends the exclusion on the ground that
+*"nothing in §3 consumes them; they are excluded to keep the contract minimal"*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, by the route S-7 itself provides — *"a later layer
+that needs one adds it by the same test"* — the outgoing text being a consumer that needs it. *(S-1's
+criterion admits a tempo marking: two copyists agree on it and it asserts no harmony.)*
+
+**Row 10.15 — L0 supplies mid-score key-signature changes as the engraved signature event, not the
+inferred key.**
+*Statement.* "**mid-score key-signature changes** (the *engraved signature event*, not the inferred
+key)" — §3 (locator: line 100).
+*Derived.* S-6 (the position of every signature change is supplied), S-9 (L1 does not read the key
+signature), S-43 (the proposed KEY-SIGNATURE-CHANGE flag, true when the signature-in-force changes and
+saying nothing about the tonality).
+*Current-text axis.* S-6: **AGREES**. S-9: **AGREES**. S-43: **AGREES**, and exactly — S-43's own
+defense is that the flag *"does not read the signature's value, so S-9's bar is respected"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-6 with S-43). **★ THIS IS S-43's PROPOSED FLAG
+REACHED INDEPENDENTLY**, and the derivation marks that statement *open* because *"an addition to a
+ratified list is the user's"* (OQ-15). The outgoing text already treats it as settled and uses it.
+
+**Row 10.16 — the empty slices, maximal spans where every eligible voice rests, are consumed from the
+slicing layer.**
+*Statement.* "From Layer 2, the **empty slices** (maximal spans where every eligible voice rests) —
+the substrate of the all-voice-rest marker and the aggregation limiting case." — §3 (locator: line
+101).
+*Derived.* S-31 (a silent slice is published as a slice like any other, with its empty set, and is not
+merged into a neighbour).
+*Current-text axis.* S-31: **AGREES**, and this row is **the first consumer of S-31 found in the
+outgoing record**: S-31's own defense is that *"Silence is a notated fact and strong boundary
+evidence"*, and here a named consumer reads exactly that.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 10.17 — the top voice is not consumed; the highest voice is not reliably the melody.**
+*Statement.* "so this primitive does not consume any top-voice primitive. The top voice is at most an
+*optional* soft cue for the function layer's cadence test — not a prerequisite (the highest voice is
+not reliably the melody) and not used here" — §3 (locator: line 103).
+*Derived.* S-13, S-44.
+*Current-text axis.* S-13: **AGREES**. S-44: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, travelling with Rows 8.4, 9.1 and 9.7. **This is the
+fourth independent statement of the same rule in the outgoing record.**
+
+**Row 10.18 — the outputs are the per-voice profiles, the texture profile, the picked ticks and the
+"ends a phrase" flag, all notation facts.**
+*Statement.* "**Produces:** the **per-voice boundary-strength profiles** …; the **texture
+boundary-strength profile** …; the **picked boundary ticks** …; and the derived **\"ends a phrase\"**
+flag for a region …. All are notation facts carrying no judgement of key, chord, or function." — §3
+(locator: line 107).
+*Derived.* S-39, S-50, S-51.
+*Current-text axis.* S-39: **DIFFERS**. S-50: **DIFFERS**. S-51: **AGREES** on the closing clause —
+every one of the four is computable from L0 facts with no tonality, chord or boundary as input, which
+is S-51's own test.
+*The difference, in both texts' own words.* S-50 publishes *"per change point, its metric strength
+class and its boundary flag set"* and *"the positioned marks list"*, each predicate with its
+witnesses; this text publishes **four profiles and a picked set** — two graded series, a selection out
+of them, and a per-region boolean.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. **This
+is the fullest statement of that family's outgoing side**: not one difference of form but a different
+output surface.
+
+**Row 10.19 — it detects no cadence, weights no cadential salience, reads no resolved key, chord or
+function, and applies no grouping or reduction.**
+*Statement.* "**Does not do:** detect cadences, weight cadential salience, or read any resolved
+key/chord/function (all downstream); apply phrase *grouping* or reduction (a later concern)." — §3
+(locator: line 112).
+*Derived.* S-51, S-53.
+*Current-text axis.* S-51: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §4 — the model
+
+**Row 10.20 — three cue profiles are computed: gap, inter-onset and pitch-interval.**
+*Statement.* "the **gap profile** — the offset-to-onset interval (the silence/separation) between
+successive events; the **inter-onset profile** — the time between successive attacks; the
+**pitch-interval profile** — the absolute interval (in semitones) between successive notes **of a
+single voice's line**" — §4.1 (locator: line 121).
+*Derived.* S-3 (onset, release and spelled pitch per note), S-39.
+*Current-text axis.* S-3: **AGREES** — all three cues are computed from facts S-3 supplies and from
+nothing else. S-39: **THE DERIVATION IS SILENT** — S-39's boundary evidence is the five notated marks
+and contains no cue derived from durations or intervals.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+**derived surface cues** — a gap, an agogic lengthening, a melodic leap — are boundary evidence
+beside the five notated marks, the derivation carrying none of the three.
+
+**Row 10.21 — each profile's strength is the local-change rule, rising with both the degree of change
+and the size of the value.**
+*Statement.* "the per-point strength is `x · (left + right)`. So the strength rises with **both** (a)
+the **degree of local change** … **and** (b) the **size** of the value itself (the leading `x` — a
+large gap is a stronger boundary than a small one, even where both are local changes)." — §4.1
+(locator: line 130).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **THE DERIVATION IS SILENT**. S-40: **THE DERIVATION IS SILENT** on how a
+strength would be computed, S-40 forbidding one rather than specifying it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 10.20: the mechanism the proposal
+at 10.20 would need if the answer there is that derived cues are admitted.
+
+**Row 10.22 — the combined surface strength is a max-normalised, gap-dominant weighted sum of the
+three profiles.**
+*Statement.* "The **combined surface strength** at a point is the **weighted sum** of the three
+normalised profiles, with the **gap profile weighted highest** … The three weights are
+**precision-phase constants**; the mechanism … is fixed here." — §4.1 (locator: line 136).
+*Derived.* S-40.
+*Current-text axis.* S-40: **DIFFERS** — S-40 forbids exactly this combination for the notated marks,
+on the ground that a joint weight *"would be a judgment of their joint weight"* and *"would lose the
+parts"*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family.
+
+**Row 10.23 — six kinds of deterministic notated marker are boundary signals.**
+*Statement.* the six bullets of §4.2 — "a **fermata** on an eligible voice"; "a **breath mark** … or a
+**caesura**"; "a **double, final, or repeat barline**"; "a **mid-score key-signature change** — read
+as the **engraved signature event**"; "a **sudden (subito) tempo change** … or a **written ritardando
+/ rallentando**"; "the **onset of a maximal all-voice-rest span**" (locator: lines 148–164).
+*Derived.* S-39 (the charter's five kinds and their placement rules), S-43 (the two proposed signature
+flags), S-31 (silence as boundary evidence), S-7 (what L0 does not supply).
+*Current-text axis.* S-39: **AGREES** on the fermata and the bar line. S-43: **AGREES** on the
+key-signature change. S-31: **AGREES** on the all-voice-rest onset. S-7: **DIFFERS** on the breath
+mark, the caesura and the tempo change.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the **set of notated boundary
+kinds be settled once** — the charter names five, S-43 proposes two more and marks the addition the
+user's (OQ-15), and this text uses six of which three are in neither list. **★ IT ANSWERS OQ-9 AND
+OQ-15 TOGETHER, AND IN THE AFFIRMATIVE FOR BOTH.**
+
+**Row 10.24 — each marker spikes the profile above the maximum possible surface-cue strength, so it
+dominates wherever it occurs.**
+*Statement.* "each contributes … a **fixed additive spike to the combined profile at its tick, of a
+magnitude set above the maximum possible surface-cue strength** …, so the marker **exceeds any
+surface-cue peak** and dominates wherever it occurs" — §4.2 (locator: line 143).
+*Derived.* S-40.
+*Current-text axis.* S-40: **DIFFERS** — a marker whose contribution is a magnitude on one scale is
+the collapse S-40 excludes; S-40 publishes the marker as a flag with its witnesses and lets the
+consumer weigh it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family.
+
+**Row 10.25 — the cues run per eligible voice, each voice getting its own three profiles.**
+*Statement.* "they are computed **per eligible voice** — each voice gets its own **gap, inter-onset,
+and pitch-interval** profiles over that voice's own note sequence. So the **pitch-interval cue applies
+to every voice**, not only the top one" — §4.3 (locator: line 167).
+*Derived.* S-13 (notated voices only), S-46 (the leading-tone cue is defined over a notated voice,
+with a declared relaxation where the record carries none).
+*Current-text axis.* S-13: **AGREES**. S-46: **AGREES** in discipline — both texts compute a per-voice
+predicate over notated voices and neither infers a line.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-13 with S-46).
+
+**Row 10.26 — the texture strength is the sum of the per-voice strengths at an onset.**
+*Statement.* "the texture strength at an onset is the **sum of the per-voice strengths at that
+onset** — so a point where **many voices phrase together** … scores high … while a boundary in a
+single inner voice scores low." — §4.3 (locator: line 172).
+*Derived.* S-40.
+*Current-text axis.* S-40: **DIFFERS** — S-39 already separates one voice resting from all voices
+resting, by publishing REST-BEGINS *"naming the voice"* beside ALL-SILENT, and S-40 keeps the parts;
+this text expresses the same distinction as a **magnitude**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. *(The
+two texts want the same distinction and encode it differently, which is worth the user's attention:
+this is not a case where one text lacks the information the other has.)*
+
+**Row 10.27 — two voices' events are merged into the same onset when they fall within a coincidence
+window.**
+*Statement.* "Because voice onsets do not always align exactly, two voices' events are merged into the
+**same onset** for the sum when they fall within a **coincidence window `τ`** (a precision-phase
+constant absorbing notational near-alignment …)." — §4.3 (locator: line 176).
+*Derived.* S-28 (two onsets or releases are the same change point if and only if their metric
+positions are equal as rational numbers).
+*Current-text axis.* S-28: **DIFFERS**, and flatly.
+*The difference, in both texts' own words.* S-28 states *"There is no tolerance: two events a
+thirty-second apart are two change points, and the slice between them is a slice"*, and defends it on
+the ground that *"A tolerance would merge distinct moments and could delete a real candidate, which
+the charter's construction exists to make impossible"*; this text **merges** two voices' events into
+one onset inside a window, and calls the window a precision-phase constant.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether a
+**coincidence tolerance** is admissible anywhere in L1, since S-28 excludes one by name and this text
+needs one to aggregate across voices. **★ THIS IS A NEW FAMILY, MET FOR THE FIRST TIME AT DOCUMENT 10:
+THE COINCIDENCE TOLERANCE.** It is the first place in the whole comparison where the outgoing text
+asks for a tolerance that S-28's construction is expressly built to exclude.
+
+**Row 10.28 — the picked set is the surface peaks union every notated marker, the markers emitted
+unconditionally.**
+*Statement.* "The picked-boundary set is **the surface-cue peaks UNION every notated marker** —
+because the §4.2 markers are **deterministic facts** …, they are emitted **unconditionally**, not
+subjected to the threshold; only the **surface-cue** strength is peak-picked." — §4.4 (locator: line
+188).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **AGREES** on the markers being emitted unconditionally as facts — which is
+what S-39 does with all five kinds. S-40: **DIFFERS** on the union with a thresholded set.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 10.4: the deterministic half of
+this rule is S-39's own, and what is proposed is the specification's statement of how the two halves
+compose.
+
+**Row 10.29 — a surface tick is picked when it is a local maximum above an adaptive threshold of the
+whole profile's mean plus k standard deviations.**
+*Statement.* "a surface tick is picked when its texture combined strength … is **both** a **local
+maximum** … **and** above an **adaptive threshold** — the **mean of the whole score's texture combined
+strength profile plus `k` standard deviations**" — §4.4 (locator: line 194).
+*Derived.* S-28, S-51.
+*Current-text axis.* S-28: **DIFFERS** — S-28's set is exhaustive and admits no selection. S-51:
+**DIFFERS** — a thresholded selection out of a computed profile is a decision about which evidence
+counts.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family: that
+the specification state whether L1 may **select** among boundary evidence, or must publish it all and
+leave the selection to a consumer, which is what S-53 does everywhere else.
+
+**Row 10.30 — the boundary tick is the onset at which the phrase's sounding ends.**
+*Statement.* "The **boundary tick** of a picked peak is the onset at which the phrase's sounding ends:
+the fermata or last-sounding note's tick, the structural-barline tick, or the onset of the
+all-voice-rest span." — §4.4 (locator: line 199).
+*Derived.* S-39.
+*Current-text axis.* S-39: **AGREES**, and precisely — S-39's placement rules are that *"a fermata
+prolongs the note it sits on, so the boundary it signals is where that note **ends**"* and that a rest
+marks *"the change point at the preceding event's release"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **★ S-39's PLACEMENT RULE IS REACHED HERE
+INDEPENDENTLY**, including the fermata's, which S-39 derives from what the sign means and this text
+states as where the sounding ends.
+
+**Row 10.31 — a region ends a phrase when a picked boundary tick falls within its half-open tick span.**
+*Statement.* "A region **ends a phrase** when a picked boundary tick falls within its half-open tick
+span." — §4.4 (locator: line 200).
+*Derived.* S-29.
+*Current-text axis.* S-29: **AGREES** — the half-open convention, which S-29 calls *"not a choice but
+a consequence of what onset and release mean"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 10.32 — every picked boundary should carry which cue or marker fired and at what scope; the
+picked set is scope-blind today.**
+*Statement.* "A picked boundary — texture **and** per-voice — carries its **provenance**: which cue or
+marker produced it, and whether it fired **globally** or **per voice** …. **The picked set is
+SCOPE-BLIND today**, which is the defect this requirement names: a marker written on one voice — a
+breath mark — is spiked onto the texture profile and thereafter reads exactly like a marker that
+applies to the whole ensemble" — §4.4 (locator: line 206).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS**.
+*The difference, in both texts' own words.* S-39 names the voice on **one** flag — *"REST-BEGINS (a
+notated voice's silence begins at this change point, by rest or by unwritten gap, naming the voice)"*
+— and publishes FERMATA, BAR-LINE and REPEAT with witnesses but no scope; this text requires **every**
+picked boundary to carry which cue fired and whether it fired globally or per voice.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 9.28. **THIS ROW RUNS TOWARDS THE
+DERIVATION**, and it is the second document to name the same gap.
+
+**Row 10.33 — a per-part marker should reach the texture profile through the same voice-coincidence
+aggregation as the graded cues, not by being spiked onto it.**
+*Statement.* "the principled form is already in this section — a per-voice marker should reach the
+texture profile through the **same voice-coincidence aggregation** the graded cues use (§4.3), not by
+being spiked onto it." — §4.4 (locator: line 212).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **DIFFERS**, as at Row 10.32. S-40: **DIFFERS**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 10.32 and 10.53.
+
+**Row 10.34 — cadential closure, harmonic-rhythm change and any inferred key change are excluded as
+boundary signals.**
+*Statement.* "**Not** a boundary signal here: **cadential closure** (a dominant-to-tonic arrival),
+harmonic-rhythm change, and any **inferred key change** … including them would make the primitive
+depend on a layer that depends on it" — §4.5 (locator: line 221).
+*Derived.* S-51, S-9.
+*Current-text axis.* S-51: **AGREES**. S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 10.1 and 9.32.
+
+**Row 10.35 — a written key-signature change is notation in; the inferred key and its changes are out.**
+*Statement.* "**This is distinct from the admissible §4.2 marker: a written *key-signature change* is
+a notational event read off the staff (notation **in**); the *inferred key* and its changes are
+**out**.**" — §4.5 (locator: line 224).
+*Derived.* S-43, S-9, S-6.
+*Current-text axis.* S-43: **AGREES**, and in the same words in substance — S-43 publishes *"the fact
+that it changed, never as its value"*. S-9: **AGREES**. S-6: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 10.15. **The two texts draw the same line in
+the same place, independently.**
+
+**Row 10.36 — the global regularisers and the surprisal cue are named and deferred.**
+*Statement.* "**Deferred** (named, not built): the **global regularisers** — a phrase-length prior and
+metric-parallelism bias … and the **information-content / surprisal** cue (it matches rule systems but
+needs a trained statistical model)." — §4.5 (locator: line 225).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a deferral with its reason; a status rather than a rule.
+
+**Row 10.37 — the seven runtime scenarios.**
+*Statement.* the seven bullets of §5 — a chorale phrase end; an instrumental phrase ended by a rest; a
+phrase end marked by lengthening; a section break; a passing leap that is not a boundary; one voice
+phrasing while the others continue; a purely harmonic cadence with no surface gap (locator: lines
+231–247).
+*Derived.* S-31, S-39, S-40.
+*Current-text axis.* S-31: **AGREES** (the all-voice-rest case). S-39: **AGREES** (the fermata and the
+double bar). S-40: **DIFFERS** (the threshold and the graded strengths the other five turn on).
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with the **boundary-evidence form** family.
+*(Counted as one statement, as at Rows 3.47 and 6.31: seven worked illustrations of rules already
+rowed, none stating a rule the rows above do not.)*
+
+#### §6 to §11 — the decisions, the testing, the risks and the open items
+
+**Row 10.38 — the owner is the notation-derived view layer; the note model and the function layer are
+rejected.**
+*Statement.* "**D1 — Owner: Architectural Layer 1.5 (the notation-derived views).** … *Rejected:* the
+Layer-1 note model (deliberately narrow — it records notes, it does not derive phrase structure) and
+the function layer (it consumes phrase boundaries; it cannot own them)." — §6 (locator: line 250).
+*Derived.* S-39, S-50.
+*Current-text axis.* S-39: **AGREES** on the boundary evidence not being the note model's. S-50:
+**AGREES** on the consumer not owning what it consumes.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Under the ratified charter there is no Layer 1.5 and
+the notated boundary evidence is L1's own published output; that is a re-siting of one fact, not a
+disagreement about it, and it is recorded rather than adjudicated.)*
+
+**Row 10.39 — one unified primitive replaces two duplicated fermata scans, and the retirement is
+byte-identical.**
+*Statement.* "**D2 — One unified primitive replaces the two duplicated fermata scans.** The fermata
+logic exists today in two hand-synchronised copies; they are retired into the single owned primitive
+and every consumer re-points at it. The retirement is byte-identical." — §6 (locator: line 254).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the two hand-synchronised fermata scans
+retired at the current commit, and is the retirement still byte-identical?
+
+**Row 10.40 — notation-only, with cadential closure staying in the function layer to keep the
+dependency acyclic.**
+*Statement.* "**D3 — Notation-only; cadential closure stays in the function layer.** To keep the
+dependency acyclic (cadence consumes phrase boundaries), the primitive reads only the surface, never
+cadence/function." — §6 (locator: line 257).
+*Derived.* S-51.
+*Current-text axis.* S-51: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 10.1 — and rowed separately because this is
+where the decision carries its alternatives, as Row 3.53 was.
+
+**Row 10.41 — a graded boundary-strength model, not a binary union; the binary union is rejected as a
+degenerate lower-precision case.**
+*Statement.* "**D4 — A graded boundary-strength model, not a binary union (user-ratified
+2026-06-26).** The boundary is a peak in a continuous strength profile, not the OR of a few binary
+signals. *Rejected:* the binary union — a degenerate special case that cannot express \"a gap larger
+than its neighbours,\" inflates recall, and wrecks precision (per the research: a weighted combination
+measurably beats any single cue and beats a naive union; the leading harmony-free models all compute
+graded strength + peaks)." — §6 (locator: line 260).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS**.
+*The difference, in both texts' own words.* S-39 publishes a **set of flags** per change point and
+S-40 states that *"Several marks at one change point are published as several flags in the set;
+nothing is collapsed"* — which is, in this decision's own vocabulary, the binary form it rejects; the
+outgoing decision is that a graded strength *"measurably beats"* it, ratified, with published research
+cited.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. **★
+THIS IS THE FULLEST STATEMENT OF THAT FAMILY ANYWHERE, AND IT IS THE ROW THE USER SHOULD READ FIRST
+WHEN RULING IT**: the outgoing choice is user-ratified, carries a research defense, and names the
+derivation's form as the alternative it rejected — while S-40's defense is that a combined strength is
+a judgment L1 may not take. **Two considered positions, each with its ground.**
+
+**Row 10.42 — per-voice cues aggregated to the texture, rejecting a top-voice-only pitch cue and a
+single arbitrary voice.**
+*Statement.* "**D5 — Per-voice cues aggregated to the texture …** *Rejected:* (a) a whole-texture
+reduction with **top-voice-only pitch** — it discards every inner voice's pitch cue and yields no
+per-voice phrasing; (b) running the cues on one arbitrary voice — ill-defined in polyphony." — §6
+(locator: line 266).
+*Derived.* S-13, S-46.
+*Current-text axis.* S-13: **AGREES**. S-46: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 10.25.
+
+**Row 10.43 — the fermata alone is chorale-specific and the model generalises beyond it.**
+*Statement.* "**D6 — Generalise beyond the fermata.** The fermata alone is chorale-specific; the
+surface-cue model + the rest/barline markers extend the primitive to any instrumentation. *Rejected:*
+keeping it fermata-only (leaves the whole tool chorale-scoped — contrary to its purpose)." — §6
+(locator: line 273).
+*Derived.* S-39.
+*Current-text axis.* S-39: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 10.3 and 9.32.
+
+**Row 10.44 — the picked boundaries are validated against the analysts' own phrase markers; a
+fermata-derived phrase list is inadmissible as ground truth.**
+*Statement.* "the picked texture boundaries are checked against the corpus's **analyst-annotated
+phrase markers** … an **independent** ground truth: the markers are supplied by the human analyst, not
+derived from fermatas, so validating the fermata marker against them is not circular. A
+fermata-derived phrase list would be inadmissible as ground truth here, for exactly that circularity."
+— §7 (locator: line 281).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT** — it states falsifiers per
+statement and names no grading oracle.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis*** (NOT A LAYER):
+`FRAMEWORK.md` §5's own words, *"Metric definitions, grading conventions and what counts as ground
+truth are the measurement layer's own design content and a later stage's business."* **It is a
+substantive rule and the relocation does not set it aside** — it is the same self-annotation
+prohibition the record already carries as a standing grading convention, reached here for one
+primitive.
+
+**Row 10.45 — the graded-model step is measured against the corpus gate, and the live consumers are
+enumerated before the change is treated as output-moving.**
+*Statement.* "A caveat to verify at build: the existing \"ends a phrase\" consumers may all be
+dormant/gated, in which case the new strength is byte-identical on production *today* and becomes
+load-bearing only when the function layer engages; the build enumerates the live consumers before
+treating the change as output-moving" — §7 (locator: line 288).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* were the live consumers of the "ends a
+phrase" flag enumerated, and is the graded strength still unreachable on the arm that ships?
+
+**Row 10.46 — polyphony is the weakest-supported area: the cues are validated monophonically and the
+aggregation must be validated, not assumed.**
+*Statement.* "**Polyphony is the weakest-supported area** — the cues are validated monophonically; the
+per-voice aggregation (D5) is engineering on top, and must be validated on our corpus, not assumed." —
+§8 (locator: line 294).
+*Derived.* S-52 (a consumer may not put a provisional item under load), S-48 (a value whose
+measurement has not been made is UNESTABLISHED and no value is asserted).
+*Current-text axis.* S-52: **AGREES**. S-48: **AGREES** in discipline.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-52 with S-48: an unvalidated extension is declared
+rather than assumed, which is what both derived statements require).
+
+**Row 10.47 — the weights and the peak threshold are precision-phase constants left at stated
+defaults.**
+*Statement.* "**The weights and the peak threshold are precision-phase constants** — until tuned, the
+build leaves them at stated defaults …. The mechanism, not the tuning, is what this doc fixes." — §8
+(locator: line 298).
+*Derived.* S-48 (the cue window is UNESTABLISHED; L1 carries declared stand-ins until measured), S-52
+(anything resting on an unestablished parameter is *provisional*).
+*Current-text axis.* S-48: **AGREES**, and closely — S-48 carries *"declared stand-ins"* for exactly
+this reason. S-52: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(S-48 additionally requires the measurement that would
+set the value to be named; this text names the phase but not the measurement, which is recorded and
+not adjudicated.)*
+
+**Row 10.48 — a competitive reference engine does no explicit phrase segmentation, so this primitive
+is not an accuracy requirement.**
+*Statement.* "The state-of-the-art-competitive reference engine … does **no** explicit phrase
+segmentation or cadence detection and is still competitive at Roman-numeral analysis …. So this
+primitive is **not** an accuracy requirement — it is load-bearing for *our* cadence mechanism …
+**Build the graded model right, but keep it proportionate**" — §8 (locator: line 303).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis*** (NOT A LAYER). What the
+analysis's accuracy does and does not depend on is a measured comparison against a reference engine,
+which is that layer's own content; **the relocation does not set the constraint aside**, and the
+charter's own position is the opposite in one respect worth stating without adjudicating it — the
+notated boundary evidence is one of L1's four mandated published outputs, not an optional one.
+
+**Row 10.49 — the fermata scan exists in two byte-identical hand-synced copies and the "ends a phrase"
+flag is re-derived inline at every consuming site.**
+*Statement.* "Today the fermata-boundary scan exists in **two byte-identical copies** kept in hand-sync
+… and the per-region \"ends a phrase\" flag is re-derived inline at every consuming site" — §10
+(locator: line 360).
+*Derived.* S-39.
+*Current-text axis.* S-39: **THE DERIVATION IS SILENT** on how any fact is computed or how often.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the two copies still exist at the
+current commit, and is the flag still re-derived inline at each consuming site?
+
+**Row 10.50 — the only consumer is a default-off gated pass, so the primitive is unreachable in
+production.**
+*Statement.* "the only consumer is the default-off joint-key re-key pass …, so the primitive is
+**unreachable in production** — byte-identical, built-dormant (verified at source)." — §11-2 (locator:
+line 374).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the primitive still unreachable on the
+arm that ships, and is the enumeration that established it still true at the current commit?
+
+**Row 10.51 — the eligible-voice qualifier is not applied to the fermata and breath markers, and the
+tempo marker fires at any discrete tempo text.**
+*Statement.* "(a) The **eligible-voice qualifier** on the fermata/breath markers is not yet applied —
+they fire at *any* fermata/breath …. (b) The **tempo marker** fires at any *discrete* tempo-text tick
+(incl. the opening tempo); it should fire on a genuine tempo **change** only" — §11-2b (locator: line
+378).
+*Derived.* S-15 (eligibility), S-7 (what L0 supplies).
+*Current-text axis.* S-15: **DIFFERS** — a marker firing on an ineligible voice contradicts the
+eligibility test both texts otherwise apply. S-7: **DIFFERS** — the tempo marker reads a fact S-7 does
+not supply, and reads it at the wrong event.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the fermata and breath markers still
+fire on ineligible voices, and does the tempo marker still fire at the opening tempo rather than at a
+change?
+
+**Row 10.52 — articulation and dynamics cues are admissible as additional low-weight surface
+profiles if measured to help.**
+*Statement.* "**Articulation and dynamics cues** (slur ends, abrupt dynamic changes) — weak/auxiliary
+in the literature; admissible as additional low-weight surface profiles if measured to help, deferred
+from the first build." — §11-4 (locator: line 387).
+*Derived.* S-7.
+*Current-text axis.* S-7: **DIFFERS** — S-7 excludes *"tempo, dynamics, slurs, beams, stem directions,
+or layout"* from what L0 supplies, and this names two of the excluded facts as admissible boundary
+evidence.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 10.13, 10.14 and 10.23: that the
+L0 supplied list be settled against the boundary evidence that consumes it, since three separate rows
+of this document name facts S-7 excludes.
+
+**Row 10.53 — the markers partition into globally-scoped and per-part-scoped kinds, enumerated.**
+*Statement.* "**Globally-scoped (system-wide by notation):** the **structural barline**, the
+**mid-score key-signature change**, the **subito tempo change**, and the **all-voice-rest onset** ….
+**Per-part-scoped (notated on one voice/staff):** the **breath mark**, the **caesura**, and — strictly
+— the **fermata**." — §11-5 (locator: line 393).
+*Derived.* S-39, S-40.
+*Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS**.
+*The difference, in both texts' own words.* S-39 publishes FERMATA as *"an event bearing a fermata
+releases at this change point"* with no scope, and names a voice only on REST-BEGINS; this text
+partitions **every** marker kind by scope and calls the fermata *"the borderline case: conventionally
+an ensemble hold, but notated per staff"*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 10.32, 10.33 and 9.28. **THIS ROW RUNS
+TOWARDS THE DERIVATION AND IS THE FULLEST STATEMENT OF THE SCOPE GAP**: it enumerates the partition,
+which neither Row 9.28 nor Row 10.32 does.
+
+---
+
+#### Not a statement — counted by paragraph, per section, so the arithmetic closes (27)
+
+*Counted by paragraph as this document's manifest header states, and grouped by section so the count
+is checkable at the document. A "paragraph" is one top-level block; where a block is partly tabulated
+above, its remainder is counted once.*
+
+| Section | Paragraphs counted | What they are |
+|---|---|---|
+| the banner | 2 | the status, revision and audit record; the bounded-context stance's pointer form, whose two rules are rowed at 10.5 and 10.6 in their fuller §2 form |
+| §0 | 7 | the terms lead-in and six vocabulary rows pointing at other sections or documents |
+| §1 | 2 | why the primitive exists, and the span-typology parenthetical |
+| §2 | 2 | the one-owner constraint and the byte-identical/gated build statement |
+| §4 lead-in | 1 | the model's two parts named before they are stated |
+| §4.3 | 1 | that both the per-voice and the texture strengths are exposed |
+| §4.4 | 2 | the as-built peak-picking realisation, and the last-region parenthetical |
+| §7 | 2 | the oracle-test list and the de-duplication gate |
+| §8 | 3 | the accepted harmonic miss, the inference-not-fact character, and the output-movement gate — each rowed elsewhere |
+| §9 | 1 | the glossary — definitions restating §4, none introducing a rule not already rowed |
+| §10 | 1 | the enumeration of today's consumers |
+| §11 | 3 | the precision-phase constant list, the deferred cues, and the chorale-inert sub-bullet |
+| **Total** | **27** | — |
+
+#### The arithmetic at this document
+
+- Rows written: **53** (10.1 to 10.53). No row of this document splits.
+- **Outgoing statements dispositioned: 53.**
+- Paragraphs counted under *not a statement*: **27**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by
+  reading the disposition line of each row: 53 disposition lines over 53 statements.
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 19 | 10.1, 10.3, 10.11, 10.12, 10.15, 10.16, 10.17, 10.19, 10.25, 10.30, 10.31, 10.34, 10.35, 10.38, 10.40, 10.42, 10.43, 10.46, 10.47 |
+| ADOPTED — proposed | 26 | 10.2, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9, 10.10, 10.13, 10.14, 10.18, 10.20, 10.21, 10.22, 10.23, 10.24, 10.26, 10.27, 10.28, 10.29, 10.32, 10.33, 10.37, 10.41, 10.52, 10.53 |
+| RELOCATED | 2 | 10.44, 10.48 |
+| QUARANTINED | 5 | 10.39, 10.45, 10.49, 10.50, 10.51 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 1 | 10.36 |
+| UNPLACED | 0 | — |
+| **Total** | **53** | — |
+
+**The column sums to 53, against 53 statements, so the arithmetic closes at this document:**
+19 + 26 + 2 + 5 + 0 + 1 + 0 = 53. **The statement lists in the right-hand column are the record**, and
+the integers are re-derivable from them by counting.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 48 |
+| DIFFERS | 32 |
+| THE DERIVATION IS SILENT | 14 |
+| **Total verdicts** | **94** |
+
+*(Counted per named derived statement per statement-row. 94 verdicts over 53 statements because
+thirty rows name more than one derived statement.)*
+
+#### What this document's rows put in front of the user
+
+**This is the document the boundary-evidence form family has to be ruled on, and Row 10.41 is where to
+start.** The outgoing choice — a graded boundary-strength profile with peak-picking, rather than the
+OR of binary signals — is **user-ratified, carries a published-research defense, and names the
+derivation's own form as the alternative it rejected**; S-40's defense for the other side is that a
+combined strength is a judgment L1 may not take and that collapsing loses the parts. Sixteen of this
+document's rows carry the family. **Two considered positions with their grounds, not an oversight on
+either side.**
+
+**A new family appears, and it is the first of its kind in the comparison: the coincidence tolerance
+(Row 10.27).** To aggregate cues across voices the outgoing text merges two voices' events into one
+onset inside a window `τ`; S-28 states *"There is no tolerance"* and defends it on the ground that a
+tolerance *"could delete a real candidate, which the charter's construction exists to make
+impossible"*. Nothing earlier in the comparison asked for one.
+
+**Three rows put facts S-7 excludes into the boundary evidence** — breath marks and caesuras (10.13),
+tempo markings and written ritardandos (10.14), and, deferred but named, slur ends and dynamic changes
+(10.52). **Row 10.13 and Row 10.23 answer OQ-9 in the affirmative**, and Row 10.23 answers OQ-15 the
+same way: the charter names five boundary kinds, S-43 proposes two more and marks the addition the
+user's, and this text uses six of which three are in neither list.
+
+**And the agreements are as substantial as the differences.** Row 10.30 reaches S-39's fermata
+placement rule independently — the boundary is where the held note *ends*. Row 10.35 draws S-43's line
+between the written signature change and the inferred key in the same place. Row 10.1 reaches S-51's
+circularity argument. Row 10.16 is the first named consumer of S-31's silent slice found anywhere in
+the outgoing record. **Two rows run towards the derivation** — 10.32 and 10.53, the marker-scope gap,
+which document 9 also named and which this document enumerates.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -4955,6 +5734,10 @@ worked; it is not complete over the population.**
 - Row 4.36 — an upstream layer's correctness is judged against the **score**, not against the DCML or
   music21 annotations.
 - Row 4.38 — the per-event tiered metric does not cover an upstream layer.
+- Row 10.44 — that picked boundaries are validated against the analysts' own phrase markers, and that
+  a fermata-derived phrase list is inadmissible as ground truth for a primitive that reads fermatas.
+- Row 10.48 — that a competitive reference engine does no explicit phrase segmentation, so the
+  primitive is not an accuracy requirement and is to be kept proportionate.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -5051,6 +5834,14 @@ by paragraph rather than rowed. **Document 9 added the two below.**
     oracle at the current commit, and is anything downstream putting an unvalidated marker under load?
 48. Row 9.29 — do both cadence detectors still exist at the current commit, which of them runs on the
     arm that ships, and does the key-dependent one still read a resolved key?
+49. Row 10.39 — are the two hand-synchronised fermata scans retired at the current commit, and is the
+    retirement still byte-identical?
+50. Row 10.45 — were the live consumers of the "ends a phrase" flag enumerated, and is the graded
+    strength still unreachable on the arm that ships?
+51. Rows 10.49 and 10.50 — do the two fermata-scan copies still exist, is the flag still re-derived
+    inline at each consuming site, and is the primitive still unreachable in production?
+52. Row 10.51 — do the fermata and breath markers still fire on ineligible voices, and does the tempo
+    marker still fire at the opening tempo rather than at a change?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -5196,6 +5987,42 @@ Gathered from the documents tabulated so far. **Not complete over the population
 41. Row 9.21 — that the specification state whether a cue's firing is **gated on notated boundary
     evidence** or published unconditionally beside it; the outgoing gate is what removes its own
     commonest false positive, and the derivation publishes both facts without connecting them.
+42. **★ Rows 10.4, 10.9, 10.10, 10.18, 10.20, 10.21, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and
+    10.41 — the BOUNDARY-EVIDENCE FORM family at its fullest, and Row 10.41 is where the ruling
+    starts.** The outgoing text publishes a **graded boundary-strength profile** built from three
+    derived surface cues (gap, inter-onset, pitch-interval) under a local-change rule, max-normalised
+    and combined as a gap-dominant weighted sum, with the notated markers added as spikes above any
+    surface peak, and boundaries then **picked** as local maxima above an adaptive threshold; S-39
+    publishes a **set of named flags with their witnesses** per change point and S-40 forbids
+    collapsing them *"to a single 'boundary strength'"* because that *"would be a judgment of their
+    joint weight"*. **Row 10.41 is the decision that chose the outgoing form, user-ratified, with a
+    published-research defense, naming the derivation's own form as the alternative it rejected.**
+43. **Row 10.27 — that the specification state whether a COINCIDENCE TOLERANCE is admissible anywhere
+    in L1.** The outgoing text merges two voices' events into one onset inside a window `τ` so that
+    per-voice cues can be aggregated; S-28 states *"There is no tolerance: two events a thirty-second
+    apart are two change points"* and defends it on the ground that a tolerance *"could delete a real
+    candidate, which the charter's construction exists to make impossible"*. **A new family, met for
+    the first time at document 10: the coincidence tolerance**, and the first place in the comparison
+    where the outgoing text asks for something S-28's construction is expressly built to exclude.
+44. **Rows 10.13, 10.14, 10.23 and 10.52 — that the L0 supplied list be settled against the boundary
+    evidence that consumes it.** Four rows name facts S-7 excludes — the breath mark, the caesura,
+    tempo markings and written ritardandos, and (deferred but named) slur ends and dynamic changes —
+    each as boundary evidence. **★ Rows 10.13 and 10.23 ANSWER OQ-9 IN THE AFFIRMATIVE, and Row 10.23
+    answers OQ-15 the same way**: the charter names five boundary kinds, S-43 proposes two more and
+    marks the addition the user's, and the outgoing text uses six of which three are in neither list.
+45. Rows 10.2, 10.5, 10.6, 10.7 and 10.8 — that the specification record that the notated boundary
+    evidence is **systematically incomplete as a phrase signal** (10.2); that a derived view **may not
+    request its own extension**, with its own defense (10.5, the enlargement contract family's missing
+    half); that a published quantity state **the frame within which it is comparable** (10.6); the
+    **eligibility** family a fourth time (10.7); and that the two texts' reservations of the word
+    *phrase* be reconciled (10.8).
+46. **Rows 10.32, 10.33 and 10.53 — the MARKER-SCOPE gap, enumerated.** Every picked boundary should
+    carry which cue fired and at what scope, a per-part marker should reach the texture through the
+    same voice-coincidence aggregation as the graded cues, and the marker kinds partition into
+    globally-scoped and per-part-scoped — the structural bar line, the signature change, the tempo
+    change and the all-voice rest against the breath mark, the caesura and, strictly, the fermata.
+    **These rows run TOWARDS the derivation**, which names the voice on the rest flag alone; Row 9.28
+    named the same gap and this document enumerates it.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -5241,37 +6068,47 @@ Gathered from the documents tabulated so far. **Not complete over the population
     identically on a plain V→I and a plain I→IV.
 19. Row 9.28 — S-39's naming of the voice on the rest flag alone, against a requirement that every
     marker carry its scope and provenance.
+20. Row 10.27 — S-28's *"There is no tolerance"*, against a coincidence window merging two voices'
+    events into one onset.
+21. Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.29 and 10.41 — S-39's flags-with-witnesses and
+    S-40's prohibition on a single boundary strength, against a graded profile, a weighted sum, marker
+    spikes on one scale, and a thresholded selection.
+22. Rows 10.13, 10.14 and 10.52 — S-7's exclusion of tempo, dynamics and slurs, and its silence on the
+    breath mark and the caesura, against four such facts consumed as boundary evidence.
+23. Row 10.7 — S-15's five per-note eligibility conditions against a three-flag test, a fourth time.
+24. Row 10.53 — S-39's scope-free fermata, bar-line and repeat flags, against a partition of every
+    marker kind into globally-scoped and per-part-scoped.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the nine documents tabulated, not a distribution over the
-population.** The population is 29 documents; 20 are untouched. No figure below may be read as
+**This is a RUNNING total over the ten documents tabulated, not a distribution over the
+population.** The population is 29 documents; 19 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 345 statements placed so far:**
+**Dispositions, over the 398 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | **134** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | **100** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | **16** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | **64** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | **30** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | **345** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | **153** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | **126** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | **18** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | **69** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | **31** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | **398** |
 
-**The arithmetic closes:** 134 + 100 + 16 + 64 + 0 + 30 + 1 = 345, against 345 statements, and each
+**The arithmetic closes:** 153 + 126 + 18 + 69 + 0 + 31 + 1 = 398, against 398 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same nine documents:**
+**Current-text verdicts, over the same ten documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | **345** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | **107** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | **109** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | **561** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | **393** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | **139** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | **123** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | **655** |
 
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
