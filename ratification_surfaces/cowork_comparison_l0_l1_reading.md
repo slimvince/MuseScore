@@ -57,11 +57,12 @@ The population's order is the artifact's:
 | 20 | `docs/llm_integration.md` | **DONE** |
 | 21 | `cowork_joint_estimator_architecture.md` | **DONE** |
 | 22 | `cowork_layer4_chordsymbol_design.md` | **DONE** |
-| 23–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 23 | `cowork_prefit_gates.md` | **DONE** |
+| 24–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 23–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 24–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 23**, `cowork_prefit_gates.md`.
+dispatch resumes at **position 24**, `cowork_layer5_engagement_design.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -10493,6 +10494,266 @@ duty explicit.
 
 ---
 
+### 6.23 — Document 23: `cowork_prefit_gates.md`
+
+> **Manifest for this document.** Outgoing statements: **10** (rows 23.1 to 23.10; no row of this
+> document splits). Units counted under *not a statement*: **39**, across the opening, four protocol
+> sections and the closing paragraph. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **What it is.** Four **user-ratified governance protocols** — held-out evaluation, capacity budget,
+> the adoption protocol for the hard stop, and the sanctioned dual path — written before any value was
+> fitted. Almost all of it is *the measurement of the analysis*'s subject, which `FRAMEWORK.md` §5
+> names a NOT-A-LAYER, and four rows relocate there. **Ten statements reach L0's or L1's subject, and
+> they are concentrated in one place: the isolation clause and its 2026-07-20 amendment.**
+>
+> **★★ ROW 23.4 IS THE OUTGOING RECORD SAYING, IN A RATIFIED AMENDMENT, THAT THE TIE-RESOLVED NOTE
+> MODEL IS NOT ENOUGH.** The amendment's own words: *"the published note model is tie-resolved and
+> lossy for A's needs, and a module-private raw score walk would be the raw-source-outside-the-fact-layer
+> defect class the certification audits condemned."* Its remedy is **additive publication** — *"the
+> missing notated-note facts (tie flags, unresolved notated notes and continuations, and kin) … once,
+> on the fact layer's output surface"* — and the standing rule that follows it: *"A consumes the
+> published facts; it never re-reads the raw score."* **S-50's list of what is published, which says
+> *exactly*, contains no unresolved notated notes**, and Row 1.7 found the republication already
+> present in the outgoing record. This is the third statement of the same need, and the first that is
+> ratified.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### The held-out and capacity protocols — what they owe an L1 fact
+
+**Row 23.1 — the anacrusis beat-alignment convention must be positively established before per-beat
+and boundary-table counts are drawn from anacrusis-bearing pieces; the region-granularity counts are
+unaffected.**
+*Statement.* "**Precondition (dependency):** OI-184 (the WiR anacrusis beat-alignment convention) must
+be positively established (#19) before per-beat/boundary-table counts are drawn from anacrusis-bearing
+pieces — the emission and transition counts at region granularity are unaffected, so table fitting may
+begin while OI-184 is being settled, but the boundary/metric tables' counts wait for it." — the
+held-out protocol (locator: lines 53–56).
+*Derived.* S-36, S-35.
+*Current-text axis.* S-36: **AGREES** that the anacrusis needs an explicit convention and takes one —
+positions are assigned by aligning the short bar's **end** with a nominal bar's end, so *"The bar's
+start is therefore not class 0 unless the alignment makes it so"*. S-35: **AGREES** — the metric class
+depends on that alignment, which is why a count drawn per beat cannot precede it.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)** — the
+convention at issue is the **ground truth's**, not ours. *★ Recorded because the two sides need the
+same convention and only one of them has taken it: S-36 fixes ours and declares its ground; the
+annotation's is an open establishment obligation (#19), and a count drawn across the two before it is
+settled would compare positions that mean different things.*
+
+**Row 23.10 — fitted values are chorale values; generalization claims stay de-scoped.**
+*Statement.* "**Scope of the values:** fitted values are Bach-chorale values; generalization claims
+stay de-scoped (the OI-7 pattern); Jazz-preset correctness claims remain gated on OI-7's jazz GT." —
+the capacity budget (locator: lines 92–93).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** — a published value carries what it rests on, and a consumer may
+not put under load a value whose ground has not been established for the case at hand.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**.
+
+#### The adoption protocol — the committed surface
+
+**Row 23.2 — the committed surface carries no abstention state: the carry and the abstention
+re-express as posterior mass.**
+*Statement.* "**Output mapping, declared now:** A commits its MAP (Viterbi) path — no abstention state
+on the committed surface (the old carry/abstention re-expresses as posterior mass, per the ratified
+decode plan)." — the adoption protocol (locator: lines 105–109).
+*Derived.* S-51, S-52.
+*Current-text axis.* S-51: **AGREES** in substance — mass spread over candidates is the carry in
+another form, and neither commits what the evidence does not decide. S-52: **AGREES** — what a
+published number is and is not travels with it, and the protocol says in terms that a nonzero
+abstention reading *"is a harness defect, not a result"*.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***. *(Read
+beside Row 22.15, where the layer below carries competing readings and an explicit *uncertain* mark:
+the outgoing record has two forms of the same honesty — a named open question, and a distribution.)*
+
+#### The dual path — the isolation clause and its amendment
+
+**Row 23.3 — the module reads only the published fact surface — notes, notated spellings, metric
+weights, fermatas, signature and declared mode — and never a lower layer's decided outputs.**
+*Statement.* "**Isolation.** A lives in its own new module …; it reads ONLY the L1/L1.5 published fact
+surface (notes, notated spellings/tpc, metric weights, fermatas, signature and declared mode) — never
+legacy L2/L3/L4 outputs." — the dual path (locator: lines 152–154).
+*Derived.* S-3, S-6, S-39, S-53.
+*Current-text axis.* S-3: **AGREES** — notes with their notated spelling are the supplied per-note
+facts. S-6: **AGREES** — the signature in force at every position is supplied. S-39: **AGREES** — the
+FERMATA flag is one of the published boundary flags. S-53: **AGREES** — nothing decided downstream is
+read, which is the forward-only contract stated as a module boundary.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ The outgoing record's most exact enumeration of what
+a consumer may read, and every member of it is something the derivation publishes.*
+
+**Row 23.4 — the tie-resolved note model is lossy for a consumer that needs the notated notes, and the
+missing facts — the tie flags, the unresolved notated notes and their continuations — are published
+additively on the fact layer's own surface.**
+*Statement.* "the published note model is tie-resolved and lossy for A's needs, and a module-private
+raw score walk would be the raw-source-outside-the-fact-layer defect class the certification audits
+condemned. The sanctioned touchable set therefore ALSO includes ADDITIVE extension of the L1/L1.5 fact
+surface — publishing the missing notated-note facts (tie flags, unresolved notated notes and
+continuations, and kin) once, on the fact layer's output surface" — the dual path, the 2026-07-20
+amendment (locator: lines 158–166).
+*Derived.* S-23, S-3, S-50.
+*Current-text axis.* S-23: **AGREES** on the resolution itself — a tied group is one event, and this
+text does not undo that; what it says is that the resolved event alone is not everything a consumer
+needs. S-3: **AGREES** — the two tie flags, *"whether it is tied to the preceding note and to the
+following note"*, are already supplied per note. S-50: **DIFFERS** — its list of what is published says
+*"L1 publishes exactly"* and contains **no unresolved notated notes and no per-note tie flags**, so the
+facts this amendment requires have no home in it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the publication list carry the
+**unresolved notated notes and their continuations** beside the resolved events. *★★ This is the third
+statement of the same need in the outgoing record — Row 1.7 found the republication already built, Row
+3.x's tie family describes it, and this is the first place it is **ratified**, with a measured reason:
+a consumer needed a fact the resolution had folded away, and the alternative was a module reading the
+raw score behind the fact layer's back.*
+
+**Row 23.5 — a module never re-reads the raw score: what it needs is published once on the fact
+layer's own output surface and consumed from there.**
+*Statement.* "A consumes the published facts; it never re-reads the raw score." — the dual path, the
+2026-07-20 amendment (locator: lines 165–166); the defect it names, *"a module-private raw score walk
+would be the raw-source-outside-the-fact-layer defect class the certification audits condemned"* (lines
+159–161).
+*Derived.* S-50, S-53.
+*Current-text axis.* S-50: **AGREES** — a fact is published once, on the producing surface, with its
+witnesses. S-53: **AGREES** — a layer reads L0 plus its span and nothing else, which is what forbids a
+private walk of the record.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★ The publish-once, read-from-the-surface rule with a
+named defect class behind it: not an aesthetic preference but the thing an audit has already caught.*
+
+**Row 23.6 — the additive extension is proved per commit by byte-identity for every existing consumer
+and full test coverage of the new published paths.**
+*Statement.* "under two proofs per commit: byte-identity for every existing consumer (both suites +
+pipeline snapshots untouched) and full test coverage of the new published paths." — the dual path, the
+2026-07-20 amendment (locator: lines 163–165).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** in discipline — a newly published item is trusted only after it
+is positively established, and *"full test coverage of the new published paths"* is that establishment
+for a published surface.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)** — what a
+change must prove before it lands is that member's business.
+
+**Row 23.7 — the shared primitives permitted across the module boundary are the dependency-free
+pitch-class and mask helpers, enumerated in advance; any other shared include is a violation.**
+*Statement.* "Insulation false-negative path, enumerated (#17e): shared utility primitives — permitted
+only for dependency-free pc/mask helpers (`normalizePc`, `diatonicMaskFromFifths` — the OI-173
+shared-predicate leaf), the allowed list enumerated in the build dispatch; any other shared include is
+a violation surfaced at review." — the dual path (locator: lines 154–157).
+*Derived.* S-6, S-53.
+*Current-text axis.* S-6: **AGREES** — the one permitted mask helper computes the signature's own
+collection, which is exactly the job S-6 leaves the signature: *"a spelled context (S-9)"*, never a
+tonality. S-53: **AGREES** — an enumerated allowed list is how an insulation claim is made checkable,
+which is what its falsifier asks for.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 23.8 — the segmenter's filter cascade and its head-gap tonic prior retire, superseded by a
+modeled segmentation.**
+*Statement.* "the L2 segmenter's filter cascade and the OI-175 head-gap tonic prior → superseded by the
+modeled semi-Markov segmentation" — the retirement map (locator: lines 175–176).
+*Derived.* S-51, S-28.
+*Current-text axis.* S-51: **AGREES**, and this is the claim test executing — a **tonic prior inside a
+segmenter** is a tonality used as an input to a boundary, which S-51's two-part test excludes in terms
+(*"computable from L0 facts with no tonality, chord or boundary as input"*), and the outgoing record
+retires it. S-28: **AGREES** — the change points are onsets and releases, so a filter cascade over them
+is not what places them.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★ The one place in the outgoing record where a
+mechanism S-51's test forbids is scheduled for removal by name. Read beside Row 17.13, where chord
+identity driving boundary placement is recorded as structural: this text retires the key's version of
+the same dependency.*
+
+**Row 23.9 — grading is on the full output surface: the committed path and the posterior mass, never
+the winner alone.**
+*Statement.* "**Side-by-side grading on the full output surface (#15):** committed path AND posterior
+mass (the carry analogue), all three presets, through the retained OI-145 measurement chain — never the
+winner alone." — the dual path (locator: lines 170–172).
+*Derived.* S-50.
+*Current-text axis.* S-50: **AGREES** — what is published is the candidates and the evidence together,
+and grading the winner alone would grade less than the layer publishes.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**.
+
+---
+
+#### Not a statement — counted by paragraph, numbered item and sub-item, per section, so the arithmetic closes (39)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the opening | 3 | the ratification paragraph, the authorship and scope paragraph, and the provisional-constant note |
+| the held-out protocol | 8 | what it prevents, the unit and axes, the split and its leakage guard, the fit-inside-training rule, the headline claim, the publishable refit, the reserved overlap set, and the pass condition |
+| the capacity budget | 7 | what it prevents, the published parameter inventory, the budget rule, the global bound, the sensitive-cell treatment, the fit-scope declaration, and the pass condition |
+| the adoption protocol | 9 | what it prevents, the sequence, the four pass conditions with their amendment, the failure route, and the register disposition |
+| the dual path | 11 | the declared violation, production byte-identity, five of the six retirement-map items, the reverse map, the visibility bound, and the register disposition |
+| the closing | 1 | the ratification ask restated |
+| **Total** | **39** | — |
+
+*The count is of units the tabulation did not reach, not of units it did not read. **The whole document
+was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **10** (23.1 to 23.10). No row of this document splits.
+- **Outgoing statements dispositioned: 10.**
+- Units counted under *not a statement*: **39**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 4 | 23.3, 23.5, 23.7, 23.8 |
+| ADOPTED — proposed | 1 | 23.4 |
+| RELOCATED | 5 | 23.1, 23.2, 23.6, 23.9, 23.10 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **10** | — |
+
+**The column sums to 10, against 10 statements, so the arithmetic closes at this document:**
+4 + 1 + 5 + 0 + 0 + 0 + 0 = 10.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 19 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **20** |
+
+*(Counted per named derived statement per statement-row. 20 verdicts over 10 statements because eight
+rows name more than one derived statement. **The single DIFFERS is S-50's publication list at Row
+23.4** — the one place this document asks for something the derived surface does not carry, and it
+asks for it in a ratified amendment.)*
+
+#### What this document's rows put in front of the user
+
+**Row 23.4 is a ratified finding that the tie-resolved model is not sufficient on its own.** The
+amendment says why it was needed: a module needed a notated fact the resolution had folded away, and
+the alternative on offer was **a private walk of the raw score behind the fact layer's back**, which an
+audit had already condemned as a defect class. The remedy is additive publication of the tie flags and
+the unresolved notated notes. **S-50's list does not carry them**, and Row 1.7 shows the outgoing record
+building the republication anyway.
+
+**Row 23.8 is the claim test executing on a named mechanism.** A **head-gap tonic prior inside the
+segmenter** is a tonality used as an input to a boundary — precisely what S-51 excludes — and the
+retirement map schedules its removal. **Read beside Row 17.13**, where chord identity driving boundary
+placement is recorded as structural and not tightenable: the record removes the key's version of that
+dependency and keeps the chord's.
+
+**Row 23.3 is the outgoing record's exact list of what a consumer may read**, and every member of it —
+the notes, the notated spellings, the metric weights, the fermatas, the signature, the declared mode —
+is something the derivation publishes. The one member that is contested elsewhere is the declared mode
+(Rows 12.3 and 21.14).
+
+**And Row 23.1 puts a symmetric question to the ground truth.** S-36 takes an explicit convention for
+an anacrusis and gives its reason; the annotation's own convention is an open **establishment**
+obligation. Until it is settled, a per-beat count drawn across the two sides compares positions that
+may not mean the same thing.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -10606,6 +10867,9 @@ worked; it is not complete over the population.**
   with it as what the window is made of.)*
 - Row 22.20 — the chord decision's own confidence, vertical-fit only by construction with no
   progression signal folded in.
+- Row 23.2 — the committed surface carrying no abstention state, the carry and the abstention
+  re-expressing as posterior mass. *(Read beside Row 22.15's named open question: two forms of the same
+  honesty.)*
 - Row 18.18(ii) — which unit a requesting layer steps in when it asks for more music: the key layer in
   bars, the chord layer in slices. *(S-34's bar level and S-33's slice travel with it.)*
 - Row 18.27 — that the forward cascade is bounded because a carried-in key affects the leading-edge
@@ -10670,6 +10934,14 @@ worked; it is not complete over the population.**
   dated annotation records; the rule is what relocates.)*
 - Row 21.16 — that the signature-influence rate is measured by ablation and published at every fit,
   with a large influence rate recorded in advance as a finding to investigate rather than to ship.
+- Row 23.1 — that the ground truth's own anacrusis beat-alignment convention be positively established
+  before any per-beat or boundary count is drawn from an anacrusis-bearing piece. *(S-36's alignment
+  rule travels with it as the convention this side has already taken.)*
+- Row 23.6 — that an additive extension of the published surface be proved per commit by byte-identity
+  for every existing consumer and full test coverage of the new paths.
+- Row 23.9 — that grading is on the full output surface, the committed path and the posterior mass,
+  never the winner alone.
+- Row 23.10 — that fitted values are chorale values and generalization claims stay de-scoped.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -11227,6 +11499,13 @@ Gathered from the documents tabulated so far. **Not complete over the population
     caller, and that the layer does not) and **what the layers below owe an incremental re-analysis**
     (this text asserts they have an incremental contract). With Row 18.41: the derived statements have
     no notion of an edit at all.
+95. **★★ Row 23.4 — that the publication list carry the UNRESOLVED NOTATED NOTES AND THEIR
+    CONTINUATIONS beside the resolved events.** The ratified amendment's own words: *"the published
+    note model is tie-resolved and lossy for A's needs, and a module-private raw score walk would be
+    the raw-source-outside-the-fact-layer defect class the certification audits condemned."* S-50's list
+    says *exactly* and contains neither the unresolved notes nor the per-note tie flags S-3 supplies.
+    **The third statement of this need in the outgoing record — after Row 1.7's built republication —
+    and the first that is ratified, with a measured reason.**
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -11363,37 +11642,40 @@ Gathered from the documents tabulated so far. **Not complete over the population
     than repaired.
 56. **Row 22.16 — S-50's exhaustive publication against a carried alternative list capped at a fixed
     rank**, and against Document 19's own full ranked list.
+57. **Row 23.4 — S-50's *"L1 publishes exactly"* list against a ratified amendment that requires the
+    unresolved notated notes, their continuations and the per-note tie flags to be published**, on the
+    ground that the tie-resolved model alone is lossy for a real consumer.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the twenty-two documents tabulated, not a distribution over the
-population.** The population is 29 documents; 7 are untouched. No figure below may be read as
+**This is a RUNNING total over the twenty-three documents tabulated, not a distribution over the
+population.** The population is 29 documents; 6 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 662 statements placed so far:**
+**Dispositions, over the 672 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | **268** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | **204** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | **67** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | **88** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | **34** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | **662** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | **272** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | **205** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | **72** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | **88** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | **34** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | **672** |
 
-**The arithmetic closes:** 268 + 204 + 67 + 88 + 0 + 34 + 1 = 662, against 662 statements, and each
+**The arithmetic closes:** 272 + 205 + 72 + 88 + 0 + 34 + 1 = 672, against 672 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same twenty-two documents:**
+**Current-text verdicts, over the same twenty-three documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | **731** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | **227** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | **178** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | **1136** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | **750** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | **228** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | **178** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | **1156** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -11416,7 +11698,8 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the twenty-two documents was placed there.** The reason is visible in the classes that did
+statement in the twenty-three documents was placed there.** The reason is visible in the classes that
+did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
 which it records as HISTORICAL. Neither is a discard, and neither loses anything.
