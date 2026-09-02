@@ -2,7 +2,8 @@
 
 > **STATUS: READING FILE — a tabulation delivered to the user. It recommends nothing, establishes
 > nothing, applies nothing, and rules on nothing.** Prepared by Claude Code, 2026-09-02, under
-> `cc_instruction_comparison_l0_l1_second_2026_09_02.md` Task 2, executing **Ruling 33** (§3an of
+> `cc_instruction_comparison_l0_l1_second_2026_09_02.md` Task 2 and continued under
+> `cc_instruction_comparison_l0_l1_third_2026_09_02.md` Task 1, executing **Ruling 33** (§3an of
 > `cowork_rulings_2026_08_31_decision_surface_sitting.md`) together with **Ruling 32** (§3am), and
 > through them Rulings 1–4 and §5 of `cowork_rulings_2026_08_24_comparison_design_sitting.md` and the
 > disposition discipline of `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §0
@@ -21,10 +22,13 @@
 > and are the counts of record for this comparison; the deriving session relayed the same two counts
 > in its §5, and this session re-counted rather than carrying them.
 >
-> **★ THIS TABULATION IS INCOMPLETE AND SAYS SO AT ITS HEAD (D-672).** The population is 29
-> documents. Which of them are done, which are untouched, and where the next dispatch resumes are
-> stated in the *Progress* section immediately below — read it before reading anything else in this
-> file. **No document below is partly worked**: a document is either tabulated whole or not begun.
+> **★ THE PER-DOCUMENT TABULATION IS COMPLETE; THE WHOLE-POPULATION SECTIONS ARE NOT, AND THE FILE
+> SAYS SO AT ITS HEAD (D-672).** **All 29 documents of the population are tabulated**, each read whole.
+> **Three sections remain unwritten** — §7 (the derived side, one row per S-1…S-54), §8 (the seventeen
+> open questions) and §9 (the derivation's own §7) — and each says so where it belongs. **Nothing below
+> is partly worked**: a document is tabulated whole, and an unwritten section is unwritten whole. The
+> *Progress* section immediately below states where the writing stopped and what the next dispatch
+> resumes at — read it before reading anything else in this file.
 
 ---
 
@@ -66,23 +70,43 @@ The population's order is the artifact's:
 | 29 | `cowork_stage5_fitter_design.md` | **DONE** |
 
 **★ EVERY DOCUMENT OF THE POPULATION IS TABULATED. All 29 are DONE**, each read whole and each closing
-its own arithmetic. **What remains unwritten is the whole-population half of this file** — the sections
-that can only be written once every document is done, and which are marked **NOT YET WRITTEN** where
-they belong below: the derived-side rows (one per S-1…S-54 with the two-way arithmetic check), the
-seventeen open questions, and the derivation's own §7. The per-document gathers at §10, §11, §12 and
-§13 are complete over all 29 documents and say so.
+its own arithmetic. The per-document gathers at §10, §11, §12 and §13 are complete over all 29
+documents and say so; §13's distribution is now over the whole population.
 
-**★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
-`ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
-ruling established at the files). **What remains is the eighteen files Ruling 33's cut admits**,
-positions 12 to 29, which the term search found and which the ruled specification document set
-retained.
+**★ WHERE THIS WRITING STOPS, AND WHY — the stop is at the POPULATION BOUNDARY (D-672).** What remains
+unwritten is the whole-population half of this file: **§7** (one row per S-1…S-54 with the two-way
+arithmetic check), **§8** (the seventeen open questions) and **§9** (the derivation's own §7). Each is
+marked **NOT YET WRITTEN** where it belongs below, and none is partly written.
 
-**Where the previous stop fell, and why it was a clean one.** Positions 1 to 7 are exactly **Ruling
-32's items 1 and 2** — the two `ARCHITECTURE.md` sections and all five root design documents, which is
-the whole of the old Layer-1 and Layer-2 territory. What remains is the rest of item 3's four places
-(positions 9 to 11) and the eighteen files Ruling 33's cut admits (positions 12 to 29). Every stop is
-taken at a member boundary, as **D-672** provides for.
+**The reason, stated so the next writing does not repeat the attempt blind.** §7's check is that every
+AGREES and every DIFFERS recorded in §6 appears in §7 and the reverse. The mechanical facts of the
+population are known and are recorded here so the next writing starts from them rather than
+re-deriving them: **§6 carries 1,305 verdicts**, of which **885 AGREES, 240 DIFFERS and 180 THE
+DERIVATION IS SILENT**; **89 rows name no derived statement at all** (their axis reads *THE DERIVATION
+IS SILENT* with no S-number), so the verdicts attributable to a named derived statement are
+**1,216 — 885 + 240 + 91**. §7 must place those 1,216, and the two-way check closes against these
+figures.
+
+**What the attempt found, and why it stopped rather than shipping an approximation.** The attribution
+is read off §6's own axis lines. Most read `S-<n>: **VERDICT**` and attribute mechanically. **A minority
+do not**: an axis line that continues past a line break can carry a second statement's verdict on the
+next line, and a few rows state **two verdict words for ONE named statement** (Row 3.27 —
+*"S-32: **AGREES** on the span half; **THE DERIVATION IS SILENT** on cost"*). Those cases have to be
+resolved at the row, one at a time. **They were not resolved, so no count is asserted**: putting an
+unverified arithmetic into a file whose whole claim is that its arithmetic closes would be the one
+defect this comparison cannot afford. **The next dispatch resumes at Task 1(j)** and owes those rows a
+per-row reading before §7's totals are written.
+
+**★ THE POPULATION'S TWO RULED HALVES ARE BOTH COMPLETE.** Positions 1 to 11 are **Ruling 32's named
+population** — item 1 (the two `ARCHITECTURE.md` sections), item 2 (the five root design documents) and
+item 3 (the four places the ruling established at the files). Positions 12 to 29 are **the eighteen
+files Ruling 33's cut admits**, which the term search found and which the ruled specification document
+set retained. **Both halves are tabulated in full.**
+
+**Every stop this file has taken was at a member boundary, as D-672 provides for.** The first fell after
+position 7 — exactly Ruling 32's items 1 and 2, the whole of the old Layer-1 and Layer-2 territory. The
+second fell after position 17. **This one falls at the population's own end**, which is the cleanest
+boundary the writing has: no document is partly worked, and what is owed is three named sections, whole.
 
 **★ THE READING RULE CHANGES AT POSITION 8, AND EACH DOCUMENT'S MANIFEST HEADER SAYS SO.** Documents 1
 to 7 are wholly about L0's and L1's subject, so their *not a statement* lists run sentence by
@@ -92,12 +116,10 @@ counted under *not a statement* by paragraph (positions 8 to 11) or by section (
 so that the arithmetic closes at the document and a reader can see how much of it the comparison
 reached.
 
-**The sections that can only be written once every document is done are therefore NOT written**, and
-their absence is deliberate rather than an omission: the derived-side rows (one per S-1…S-54 with the
-arithmetic check), the distribution of dispositions, and the transfer/audit-question/proposal
-gathers over the whole population. What each of those sections will contain is stated where it
-belongs below, marked **NOT YET WRITTEN**, so that no reader mistakes a missing section for an empty
-one. The per-document gathers for the documents that ARE done are present.
+**Four of the whole-population sections ARE now written and say so: §10 the transfer list, §11 the
+audit questions, §12 the proposals and differences, and §13 the distribution** — each complete over all
+29 documents. **Three are not: §7, §8 and §9**, each marked **NOT YET WRITTEN** where it belongs, so
+that no reader mistakes a missing section for an empty one.
 
 ---
 
@@ -12665,27 +12687,34 @@ properties, and neither text cites the other for them.**
 
 ## 7. The derived side — one row per S-1 to S-54
 
-**NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
-be written once every document of the population is tabulated: a derived statement's row must name
-**every** outgoing statement that speaks to it, across the whole population, and the arithmetic check
-the dispatch orders is that every AGREES and every DIFFERS in §6 appears here and the reverse. Writing
-it over one document would state a completeness this comparison does not yet have.
+**NOT YET WRITTEN — and the precondition it waited on is now MET, so the reason has changed and is
+stated rather than left as it was.** This section is the same matrix as §6 read from the other side: a
+derived statement's row must name **every** outgoing statement that speaks to it across the whole
+population, and the check is that every AGREES and every DIFFERS in §6 appears here and the reverse.
+**Every document of the population is now tabulated**, so the section is writable; **it is not written
+because its attribution is not yet resolved at the rows that need a per-row reading** — §0 records
+which cases those are, and records the population's mechanical figures (1,305 verdicts; 885 / 240 /
+180; 89 rows naming no derived statement; **1,216 verdicts to place**) so the next writing starts from
+them. **No count is asserted here**, because an unverified one would be worse than none.
 
 ## 8. The open questions OQ-1 to OQ-17
 
-**NOT YET WRITTEN**, for the same reason: each open question is to be listed with one sentence on what
-the outgoing text says about it, **with location**, or that it says nothing — and "the outgoing text
-says nothing" is a claim over the whole population, not over one document of it.
+**NOT YET WRITTEN.** Each of the seventeen is to be listed with one sentence on what the outgoing text
+says about it, **with location**, or that it says nothing. The precondition — the whole population
+tabulated — is met; this section is owed by the same writing that owes §7, and is not written because
+that writing stopped at the population boundary (§0).
 
 ## 9. The derivation's §7 — the five places the decomposition seemed wrong or incomplete
 
 **NOT YET WRITTEN**, for the same reason as §8: each of the five points is to be answered against what
-the outgoing text says, and that answer is a statement about the population as a whole.
+the outgoing text says over the whole population, and the writing that owes it stopped at the
+population boundary.
 
 ## 10. The TRANSFER LIST — every RELOCATED row, by target charter
 
-Gathered from the documents tabulated so far. **This list will grow as the remaining documents are
-worked; it is not complete over the population.**
+**★ COMPLETE OVER THE POPULATION.** All 29 documents are tabulated, and every RELOCATED row of every
+one of them appears below — **97 rows**, matching §13's RELOCATED total. Each names the charter it goes
+to in `FRAMEWORK.md` §5's own words, and where a derived statement travels with it, the row says which.
 
 **To L3 — *the read-off facts*.**
 
@@ -12911,10 +12940,12 @@ worked; it is not complete over the population.**
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
-Gathered from the documents tabulated so far. **Not complete over the population.** **Document 8
-added none**, its QUARANTINED count being zero for the reason its own arithmetic section states — the
-implementation-describing material in that section is not about L0's or L1's subject and is counted
-by paragraph rather than rowed. **Document 9 added the two below.**
+**★ COMPLETE OVER THE POPULATION.** All 29 documents are tabulated, and the QUARANTINED rows of all of
+them are below as **82 numbered questions** — fewer numbers than rows, because several questions carry
+more than one row where the same question is met a second, third or fourth time and the row says so.
+*(Documents 8, 20, 21, 23, 26 and 27 contribute none, each for the reason its own arithmetic section
+states. **Document 29's four are the only QUARANTINED rows in the file that rest on a MEASUREMENT of
+the current surface rather than on a description of it.**)*
 
 1. Row 1.2 — does the note model read the score exactly once, and is the queryable surface it builds
    the one the change-point construction consumes?
@@ -13089,7 +13120,9 @@ by paragraph rather than rowed. **Document 9 added the two below.**
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing
 chosen
 
-Gathered from the documents tabulated so far. **Not complete over the population.**
+**★ COMPLETE OVER THE POPULATION.** All 29 documents are tabulated, and every ADOPTED — proposed row
+and every DIFFERS verdict of every one of them is below, each in one sentence. **Nothing is chosen
+between the two texts anywhere in this section, and no item is a recommendation.**
 
 **Additions proposed to the derived specification.**
 
