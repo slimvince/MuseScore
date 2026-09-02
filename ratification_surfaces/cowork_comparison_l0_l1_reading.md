@@ -40,11 +40,12 @@ The population's order is the artifact's:
 | 3 | `cowork_layer1_note_model_design.md` | **DONE** |
 | 4 | `cowork_layer1_tone_collection_design.md` | **DONE** |
 | 5 | `cowork_layer1_extend_design.md` | **DONE** |
-| 6–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 6 | `cowork_layer2_slicing_design.md` | **DONE** |
+| 7–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 6–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 7–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 6**, `cowork_layer2_slicing_design.md`.
+dispatch resumes at **position 7**, `cowork_layer2_reslice_design.md`.
 
 **The sections that can only be written once every document is done are therefore NOT written**, and
 their absence is deliberate rather than an omission: the derived-side rows (one per S-1…S-54 with the
@@ -3065,6 +3066,569 @@ this document establishes is that the derivation does not have one and the curre
 
 ---
 
+### 6.6 — Document 6: `cowork_layer2_slicing_design.md`
+
+> **Manifest for this document.** Outgoing statements: **61** — rows 6.1 to 6.59, of which Rows 6.7
+> and 6.54 carry two claims each and are split (i)/(ii). Listed under *not a statement*: **8**.
+> Counted at this document by this session.
+>
+> **Why this document is in the population:** named by Ruling 32 item 2, and it is the ratified
+> contract the `ARCHITECTURE.md` Layer 2 section delegates to by name. **It is the fullest statement
+> of L1's own subject in the outgoing record** — faces (a) and (c) of the brief, whole.
+>
+> **The agreement here is close, and that is the finding.** This document and the derivation reach the
+> same construction from the same published source, in many places in almost the same words. The rows
+> worth reading are the few where they part.
+
+---
+
+#### §0 to §1 — terms, purpose, and what the layer does not do
+
+**Row 6.1 — a slice is a span over which the sounding, tonal note set does not change.**
+*Statement.* "**Slice** | This layer's output unit — a span of time during which the set of sounding,
+tonal notes does not change …. the **chord-spans** … are later, coarser groupings **of slices**, never
+produced here." — §0 (locator: line 15).
+*Derived.* S-29, S-31, S-33.
+*Current-text axis.* S-29: **AGREES**. S-31: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.2 — the clip drops boundaries outside the loaded span and injects its endpoints.**
+*Statement.* "**The clip** | The slicer bounds its boundary set to the note model's **loaded span** —
+every boundary outside it is dropped and the loaded span's two endpoints are injected — so no slice
+extends past the loaded music" — §0 (locator: line 17).
+*Derived.* S-28, S-32.
+*Current-text axis.* S-28: **DIFFERS** — an injected endpoint is not the onset or release of an
+eligible event. S-32: **AGREES** that the list's ends are the span's ends.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.25: that the specification say
+whether an injected span endpoint is a change point or an artificial boundary marked as such.
+
+**Row 6.3 — it cuts the music into slices and hands the list on.**
+*Statement.* "It cuts the analysed music into **slices** and hands the list of slices to the next
+architectural layer." — §1 (locator: line 25).
+*Derived.* S-50, S-53. *Current-text axis.* S-50: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.4 — the note set is the same from a slice's start to its end.**
+*Statement.* "A **slice** is a span of time during which the set of sounding, tonal notes does not
+change at all — so the set of notes is the same from the slice's start to its end, and it changes only
+when you cross into the next slice." — §1 (locator: line 26).
+*Derived.* S-29, S-33. *Current-text axis.* S-29: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.5 — it reads the note model and no other source.**
+*Statement.* "The notes provided by Architectural Layer 1 (the note model) …. It reads no other
+source." — §1 (locator: line 31).
+*Derived.* S-9. *Current-text axis.* S-9: **AGREES** — the charter's *"Consumes: L0 only"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.6 — cutting is a fact read off the notes, not a guess.**
+*Statement.* "It makes cutting the music into spans a **fact read directly off the notes, not a
+guess.**" — §1 (locator: line 34).
+*Derived.* S-28, S-51. *Current-text axis.* S-28: **AGREES**. S-51: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.7 (i) — what over-grab is.**
+*Statement.* "When boundaries are guessed, a single span can **over-grab** — stretch across two or
+more different chords — and is then forced to carry one chord label when it really contains several"
+— §1 (locator: line 35).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES** — S-28's ground for refusing a tolerance is
+this exact failure.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.7 (ii) — over-grab is the largest single source of error.**
+*Statement.* "over-grab is the largest single source of error in the analysis." — §1 (locator: line
+38).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is that attribution reproducible, and on
+which arm was it measured?
+
+**Row 6.8 — reading the slices off the notes makes over-grab impossible by construction.**
+*Statement.* "because a slice ends the instant the set of sounding-and-tonal notes changes, **a chord
+can change only at a slice boundary, never inside a slice.**" — §1 (locator: line 38).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES**, and on the same ground the charter gives.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.9 — the scope in one sentence.**
+*Statement.* "read the note model and produce the ordered list of slices that exactly covers the
+analysed span." — §1 (locator: line 42).
+*Derived.* S-32, S-50. *Current-text axis.* S-32: **AGREES**. S-50: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.10 — it decides no key, chord or non-chord note.**
+*Statement.* "It does **not** decide any key, chord, or non-chord-note" — §1 (locator: line 46).
+*Derived.* S-51, S-53. *Current-text axis.* S-51: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.11 — it does not group equal-sounding neighbouring slices.**
+*Statement.* "It does **not** group equal-sounding neighbouring slices together" — §1 (locator: line
+47).
+*Derived.* S-31, S-33. *Current-text axis.* S-31: **AGREES** — S-31 forbids merging a silent slice
+into a neighbour on the same ground. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.12 — no threshold, no smoothing, no merging, and no judgment of which notes matter.**
+*Statement.* "It does **not** apply any threshold, smoothing, or merging, and does **not** judge which
+notes 'matter' — it cuts at every change in the sounding-and-tonal note set, and re-decides nothing
+Architectural Layer 1 already marked." — §1 (locator: line 48).
+*Derived.* S-28, S-15. *Current-text axis.* S-28: **AGREES**. S-15: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.13 — it does not read or change the notes.**
+*Statement.* "It does **not** read or change the notes (Architectural Layer 1)." — §1 (locator: line
+50).
+*Derived.* S-9. *Current-text axis.* S-9: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §2 to §4 — constraints, the external view, and the strategy
+
+**Row 6.14 — a fact, never a guess: every change is a boundary, full stop.**
+*Statement.* "**A fact, never a guess:** no thresholds, no heuristics, no interpretation of which notes
+'matter' — every change in the sounding-and-tonal note set is a boundary, full stop." — §2 (locator:
+line 53).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.15 — complete coverage, and silence recorded as an explicit empty slice.**
+*Statement.* "**The slices completely cover the analysed span, with no gaps and no overlaps**, and they
+hide nothing: a span of time during which no tonal note sounds (silence) is recorded as an explicit
+empty slice, not skipped over." — §2 (locator: line 55).
+*Derived.* S-31, S-32. *Current-text axis.* S-31: **AGREES**, exactly. S-32: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Note for the user: this sentence says silence is
+never skipped, where the `ARCHITECTURE.md` Layer 2 section at Row 2.20 says leading and trailing
+silence inside the loaded span is not sliced. The two outgoing texts differ from each other on the
+same point; that is stated, not adjudicated.)*
+
+**Row 6.16 — the notes are left untouched; a slice points at a span of the model.**
+*Statement.* "The notes themselves are left untouched (each slice just points at a span of the note
+model)." — §2 (locator: line 57).
+*Derived.* S-9, S-18. *Current-text axis.* S-9: **AGREES**. S-18: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.17 — it uses Layer 1's markings and does not second-guess them.**
+*Statement.* "**It uses Architectural Layer 1's 'counts toward tonal analysis' markings; it does not
+re-decide them.**" — §2 (locator: line 58).
+*Derived.* S-9, S-15. *Current-text axis.* S-9: **AGREES**. S-15: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.18 — it is connected into the live pipeline.**
+*Statement.* "**Connected into the live analysis pipeline:** Architectural Layer 3 now reads the
+slices" — §2 (locator: line 61).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state, with Row 2.2.
+
+**Row 6.19 — any selection size, any style, work proportional to the note count.**
+*Statement.* "**Works on the user's selected music, at any size and in any musical style;** the work it
+does grows only in proportion to the number of notes." — §2 (locator: line 66).
+*Derived.* S-32, S-53. *Current-text axis.* S-32: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.20 — the inputs are five per-note facts.**
+*Statement.* "the Architectural Layer 1 note model — each note's start time, end time, and the
+markings for whether it sounds, is visible, and is on a tonal staff." — §3 (locator: line 70).
+*Derived.* S-3, S-15. *Current-text axis.* S-3: **DIFFERS**. S-15: **DIFFERS**.
+*The difference.* S-15 needs five per-note facts to decide eligibility — *pitched*, *played*,
+*visible*, *not a grace note*, *positive duration* — and S-3 supplies them; this input list carries
+three of the five (played, visible, tonal staff) plus a staff-level fact S-15 does not name, and omits
+*pitched*, *not a grace note* and *positive duration*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.8 — this is the third statement
+of the same three-flag test.
+
+**Row 6.21 — a slice is a pair of positions and stores no notes.**
+*Statement.* "Each slice is just a pair of time-positions, a start and an end; the slice does not
+store its notes, because the notes for a slice can be fetched on demand by asking the Architectural
+Layer 1 note model" — §3 (locator: line 73).
+*Derived.* S-50. *Current-text axis.* S-50: **DIFFERS** — S-50 publishes the slice list *"with each
+slice's sounding set by event identity"*.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.27.
+
+**Row 6.22 — the consumers.**
+*Statement.* "the Architectural Layer 3 key/mode code …; later, Architectural Layer 4 … and
+Architectural Layer 6" — §3 (locator: line 76).
+*Derived.* S-53. *Current-text axis.* S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.23 — it knows nothing of weighting, keys, chords or function.**
+*Statement.* "**What Architectural Layer 2 deliberately knows nothing about:** weighting, keys, chords,
+or function." — §3 (locator: line 78).
+*Derived.* S-9, S-51. *Current-text axis.* S-9: **AGREES**. S-51: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.24 — a sounding, visible, tonal note causes a change when it starts and when it stops.**
+*Statement.* "A note that is sounding, visible, and on a tonal staff causes a change both when it
+**starts** and when it **stops**; collect all those start- and stop-moments, and the spans between
+consecutive moments are the slices." — §4 (locator: line 84).
+*Derived.* S-28, S-15. *Current-text axis.* S-28: **AGREES**. S-15: **AGREES** on the three shared
+conditions.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.25 — the construction is the published salami slice.**
+*Statement.* "This is the well-known 'salami-slicing' idea (Pardo & Birmingham; music21's
+`chordify`)." — §4 (locator: line 86).
+*Derived.* S-15, S-28. *Current-text axis.* S-15: **AGREES** — S-15 cites the same Pardo & Birmingham
+partition-point definition as its FACT. S-28: **AGREES**, citing the same paper's bound.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Recorded because it bears on the independence
+question the user will judge separately: the derivation reached this construction from the same
+primary, which was a boot-pack member.)*
+
+**Row 6.26 — it is produced as a pure fact, with no selection and no special handling.**
+*Statement.* "Architectural Layer 2 produces it as a pure fact: no selection of which moments count, no
+smoothing, no special handling of particular kinds of note." — §4 (locator: line 87).
+*Derived.* S-16, S-28. *Current-text axis.* S-28: **AGREES**. S-16: **DIFFERS** — S-16 handles grace
+notes specially by construction, excluding them from the change-point set.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.16.
+
+**Row 6.27 — equal-sounding neighbouring slices are merged later, never here.**
+*Statement.* "Equal-sounding neighbouring slices are merged later, by Architectural Layer 6 — never
+here." — §4 (locator: line 89).
+*Derived.* S-31, S-53. *Current-text axis.* S-31: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+#### §5 to §8 — the construction, the data, and the crosscutting concepts
+
+**Row 6.28 — collect the boundary moments, sorted and de-duplicated.**
+*Statement.* "record its start time-position and its end time-position; sort these time-positions and
+remove duplicates (a moment that is one note's stop and another note's start is a single boundary, not
+two)." — §5 (locator: line 93).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES**, exactly — S-28's *"Two onsets or releases are
+the same change point if and only if their metric positions are equal as rational numbers"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.29 — form the slices; an empty pair is an explicit empty slice; fewer than two moments yields
+none.**
+*Statement.* "Each pair of consecutive boundary moments becomes one slice …. A pair of consecutive
+moments during which no sounding-and-tonal note is present is an explicit **empty slice** …. If there
+are fewer than two boundary moments, there are no slices." — §5 (locator: line 96).
+*Derived.* S-29, S-30, S-31. *Current-text axis.* S-29: **AGREES**. S-30: **AGREES**. S-31:
+**AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.30 — no stored state, no thresholds, no note kind special-cased.**
+*Statement.* "There is no stored state, there are no thresholds, and no kind of note is
+special-cased." — §5 (locator: line 99).
+*Derived.* S-16, S-28. *Current-text axis.* S-28: **AGREES**. S-16: **DIFFERS**, as at Row 6.26.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 2.16.
+
+**Row 6.31 — the five runtime scenarios.**
+*Statement.* the five bullets of §6 — a passing note over a held chord; a held chord under a moving
+melody; a held sound written as tied notes; one chord-note stopping; a span where every tonal voice
+rests (locator: lines 102–111).
+*Derived.* S-23, S-29, S-31, S-33. *Current-text axis.* S-23: **AGREES** (the tied case). S-29:
+**AGREES**. S-31: **AGREES** (the all-rest case). S-33: **AGREES** (the shrinking set).
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Counted as one statement, as at Row 3.47: five worked
+illustrations of rules already rowed.)*
+
+**Row 6.32 — a slice is a half-open pair of positions.**
+*Statement.* "A slice is a pair of time-positions: a **start** and an **end** (the span is inclusive of
+the start moment and exclusive of the end moment)." — §7 (locator: line 114).
+*Derived.* S-29. *Current-text axis.* S-29: **AGREES**, exactly.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.33 — a slice stores no notes; they are fetched on demand.**
+*Statement.* "A slice stores no notes; its notes are fetched on demand from the Architectural Layer 1
+note model." — §7 (locator: line 115).
+*Derived.* S-50. *Current-text axis.* S-50: **DIFFERS**, as at Row 6.21.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.27 and 6.21.
+
+**Row 6.34 — a slice's identity is the exact note set, not a folded summary.**
+*Statement.* "**A slice's identity is the exact set of sounding, tonal notes inside it — not a
+folded-down summary of their pitches.** … if two notes of the same pitch are sounding and one stops,
+the set of notes has genuinely changed … even though the collection of **pitch classes** present has
+not." — §7 (locator: line 116).
+*Derived.* S-33. *Current-text axis.* S-33: **AGREES**, and with the same worked case.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.35 — the output covers the span from its first boundary moment to its last.**
+*Statement.* "The output is an ordered list of slices that covers the analysed span from its first
+boundary moment to its last." — §7 (locator: line 118).
+*Derived.* S-32. *Current-text axis.* S-32: **DIFFERS** — S-32's first change point is *"the span's
+start"*, not the first boundary moment.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.13 and 2.20 — the same domain
+question, stated a third time.
+
+**Row 6.36 — zero interpretation.**
+*Statement.* "**Zero interpretation** — Architectural Layer 2 makes no musical judgement of any kind;
+this is the principle it embodies." — §8 (locator: line 122).
+*Derived.* S-51. *Current-text axis.* S-51: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.37 — complete coverage with nothing hidden, and the only cost is redundant slices.**
+*Statement.* "every moment of the analysed span lies in exactly one slice, including silence; because a
+slice boundary marks every possible moment a chord could change, a real chord change can never be
+missed. The only cost is harmless extra slices that look identical and are merged later." — §8
+(locator: line 124).
+*Derived.* S-28, S-31. *Current-text axis.* S-28: **AGREES**. S-31: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.38 — deterministic, linear in the note count, careful at the edges.**
+*Statement.* "**Deterministic; work proportional to the number of notes; careful edge handling** (an
+empty range, a single note, a moment that is both a stop and a start, a fully silent range)." — §8
+(locator: line 127).
+*Derived.* S-28, S-30. *Current-text axis.* S-28: **AGREES** (the both-stop-and-start case is S-28's
+own). S-30: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.39 — a slice is constant content, not constant time, and must never be treated as equal-weight.**
+*Statement.* "**A slice is a unit of constant *content*, not of constant musical *time*.** Two slices
+are both 'one slice' whether one is a ten-measure held chord and the other a passing sixteenth — but
+they carry very different inferential weight, so the layers above must **never treat slices as
+equal-weight units**." — §8 (locator: line 130).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT** — it publishes the slice list and
+says nothing about how a consumer must weight its members.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification carry the
+prohibition on treating slices as equal-weight units, since it is a real constraint on every consumer
+and the derivation states nothing equivalent.
+
+**Row 6.40 — the metric extent is evidence, weighted by metric structure and not by tempo.**
+*Statement.* "A slice's **metric extent** — its **duration** … and its **metric position/weight** … —
+is **evidence**, and it is weighted by metric structure, **not by tempo**: the harmonic reading (and
+the human ground truth) keys off beat strength and notated duration in beats/measures, not absolute
+clock time." — §8 (locator: line 132).
+*Derived.* S-35, S-3. *Current-text axis.* S-35: **AGREES** on metric strength as a notated class.
+S-3: **AGREES** — S-3's positions are *"rational positions on the score's time axis, not clock
+times"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.41 — the slice is kept minimal and the metric facts are derived on demand.**
+*Statement.* "Architectural Layer 2 keeps the slice **minimal** (`[start, end)` only); the duration and
+metric weight are **derived on demand** by the consuming layers …, not stored here." — §8 (locator:
+line 135).
+*Derived.* S-35, S-50. *Current-text axis.* S-35: **DIFFERS** — S-35 publishes the metric strength
+class **per change point** as an L1 output; S-50 lists it among what L1 publishes.
+*The difference.* S-35 makes the metric strength class one of L1's published outputs, *"published as
+an ordinal … together with the level's period"*; the outgoing text deliberately does not store it and
+leaves each consuming layer to derive it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+the metric strength class is **published by L1** or **derived by each consumer**, since the two texts
+answer differently and the second answer is what the next row exists to repair.
+
+**Row 6.42 — the metric weight is the beat strength at the slice's start, in a bounded range.**
+*Statement.* "the **metric weight of a slice = the beat-strength at the slice's start tick**, computed
+by the **`scoreharvest/metricweights` primitive** … — a **preference-free** …, key-/chord-agnostic
+notation-derived value in `[0.5, 1.0]` (downbeat 1.0 → subbeat 0.5)" — §8 (locator: line 140).
+*Derived.* S-35. *Current-text axis.* S-35: **DIFFERS**.
+*The difference.* S-35 publishes *"an ordinal (0 for the bar, 1 for the next level down, and so on)
+together with the level's period, so that classes from different signatures are comparable by period
+as well as by rank"*, and adds an *off-grid* class ranked below every level; the outgoing text
+publishes a single number in `[0.5, 1.0]` on a four-step ladder, with no period and no off-grid case.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state which
+form the metric strength takes — an ordinal with its period, or a bounded number — because S-35's own
+defense is that a rank-1 class in 3/4 and in 4/4 are not the same thing and a consumer comparing
+scores needs the period, which the bounded number does not carry.
+
+**Row 6.43 — the metric-weight primitive has one owner and is not re-defined by a consumer.**
+*Statement.* "It is owned there (a **Layer-1.5** notation view …), **not** re-defined by any consuming
+layer." — §8 (locator: line 145).
+*Derived.* S-50. *Current-text axis.* S-50: **AGREES** on the one-home discipline.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.44 — on enlargement the layer re-slices the new span, preserving coverage and identity.**
+*Statement.* "When a higher layer **extends** the loaded span …, Architectural Layer 2 produces the
+change-point slices for the **newly loaded span**, preserving complete coverage and slice identity over
+the enlarged span." — §8 (locator: line 149).
+*Derived.* S-32, S-33. *Current-text axis.* S-32: **THE DERIVATION IS SILENT** on enlargement. S-33:
+**AGREES** on identity.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.21 and 5.32.
+
+**Row 6.45 — context slices are evidence, not output, and this layer draws no such distinction.**
+*Statement.* "Slices that fall in the **context span** … are usable as evidence by the layers above but
+are **not** part of the analysis output. Architectural Layer 2 itself makes no selection-versus-context
+distinction" — §8 (locator: line 152).
+*Derived.* S-32, S-53. *Current-text axis.* S-32: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 2.28 and 5.10.
+
+#### §9 to §14 — the decisions, the risks, the background, and the sources
+
+**Row 6.46 — a boundary at every start AND every stop, the starts-only alternative rejected.**
+*Statement.* "**A boundary at every note start AND every note stop** (not only at note starts).
+Alternative considered: cut only where notes start. Chosen: cut at both — a note stopping mid-span
+shrinks the sounding set, so a starts-only rule would leave a slice whose note set is not actually
+constant." — §9 (locator: line 158).
+*Derived.* S-28, S-33. *Current-text axis.* S-28: **AGREES**. S-33: **AGREES** — the charter's own
+release clause, reached here by the same argument.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.47 — silence is covered as explicit empty slices, the skip alternative rejected.**
+*Statement.* "**Cover the whole span, including silence, as explicit empty slices.** Alternative
+considered: skip silent spans …. Chosen: keep them — dropping silence hides a real fact that is useful
+later (for example a phrase boundary) and breaks complete coverage." — §9 (locator: line 161).
+*Derived.* S-31, S-39. *Current-text axis.* S-31: **AGREES**, and on the same two grounds — the
+evidence and the coverage. S-39: **AGREES** — S-39 publishes REST-BEGINS and ALL-SILENT as boundary
+evidence for exactly the phrase use this sentence names.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.48 — the change-point fact is read off the notes with no selection or smoothing.**
+*Statement.* "**Read the change-point fact straight off the notes and apply no selection or
+smoothing.** … the change-point set already existed in older code; only the guessing built on top of
+it had to be removed" — §9 (locator: line 164).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.49 — the layer was built unconnected, and the connection has since happened.**
+*Statement.* "**Build Architectural Layer 2 on its own, not yet connected into the live pipeline.** …
+*(As-built note: that connection has since happened …)*" — §9 (locator: line 167).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build decision and its later event.
+
+**Row 6.50 — the whole-corpus property check and its result.**
+*Statement.* "the real slicer was run over all 353 test pieces and checked, against an **independent
+re-computation of the boundary moments from the note model** …, for: complete coverage with no gaps or
+overlaps; a genuinely constant tonal-note set inside each slice; no missing or invented boundaries; and
+identical output on a second run. All 353 passed." — §10 (locator: line 176).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does that check still run and still pass at
+the current commit, over the corpus as it now stands?
+
+**Row 6.51 — fine slicing creates redundancy, which the next layer resolves.**
+*Statement.* "**Slicing finely creates the opposite problem, left for Architectural Layer 3:** the fine
+slices produce many neighbouring slices that carry the same harmony, and recognising that they are the
+same is Architectural Layer 3's job — not solved here." — §11 (locator: line 189).
+*Derived.* S-28, S-53. *Current-text axis.* S-28: **AGREES** — S-28 names the same cost and assigns it
+the same way, *"The cost — very short slices in florid textures — is L2's to weigh, not L1's to
+pre-empt"*. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.52 — how often slices are redundant depends on the music.**
+*Statement.* "**How often slices are redundant depends on the music** — on the chorale test pieces
+almost no slice is redundant; denser textures (sustained pedals, broken chords) would produce more" —
+§11 (locator: line 192).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES** in substance — S-28 names florid textures as
+the cost case.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the chorale redundancy figure measured,
+and does it hold on the denser repertoire the sentence names?
+
+**Row 6.53 — the layer is now connected, which was the retirement trigger.**
+*Statement.* "**Connected into the live analysis pipeline** — Architectural Layer 3 now reads the
+slices …, the retirement trigger this risk anticipated" — §11 (locator: line 194).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL**, with Rows 2.2 and 6.18.
+
+**Row 6.54 (i) — what the layer replaces, and why guessing let spans over-grab.**
+*Statement.* "**What it replaces:** the earlier 'segment-first' pipeline …. It *guessed* span
+boundaries using tunable score thresholds before any analysis, which let spans over-grab" — §13
+(locator: line 209).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES** on the argument.
+*PROPOSED DISPOSITION.* **HISTORICAL** — what was replaced.
+
+**Row 6.54 (ii) — the measured share of the error attributed to over-grab.**
+*Statement.* "about 45% of the measured error on the project's per-event oracle-root corpus metric" —
+§13 (locator: line 211).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Row 6.7(ii) — the same attribution, given a figure here.
+
+**Row 6.55 — the old code computed the same boundary moments and threw most of them away.**
+*Statement.* "older code … already computed the same note-start/note-stop boundary moments, but the old
+pipeline then **discarded** most of them by selecting a subset using chord-score thresholds (and it
+also skipped grace notes and snapped mid-tuplet moments). Architectural Layer 2 keeps the
+boundary-moment fact and drops the selection and those two special-case heuristics." — §13 (locator:
+line 214).
+*Derived.* S-16, S-28. *Current-text axis.* S-28: **AGREES** on keeping the whole set. S-16:
+**DIFFERS** — the sentence names *skipping grace notes* as a heuristic the layer **drops**, so grace
+notes are kept in the boundary set; S-16 excludes them from it by rule.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.16. **This row is the clearest
+statement in the outgoing record of the grace decision and its reason**: excluding graces is recorded
+here as a *heuristic that was dropped*, where the derivation records excluding them as a *consequence
+of a grace having no metric duration*.
+
+**Row 6.56 — the old machinery still coexists during the transition.**
+*Statement.* "**Transitional coexistence:** … the **old segment-first machinery … still coexists**
+during the transition, and deciding what of it moves to the grouping layer versus is deleted is scoped
+as L6 is built." — §13 (locator: line 218).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+**Row 6.57 — the construction is adopted from two named published sources.**
+*Statement.* "**Built on:** the **onset-and-offset 'salami slice'** — Pardo & Birmingham … — and the
+verticalization done by **music21's `chordify`** …. Both cut at every note start and stop; we adopt
+that as the lossless change-point fact" — §14 (locator: line 226).
+*Derived.* S-15, S-28. *Current-text axis.* S-15: **AGREES**. S-28: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 6.25.
+
+**Row 6.58 — a metric grid was rejected because it imposes a judgment.**
+*Statement.* "**fixed metric-grid or beat-synchronous segmentation** … — rejected because a metric grid
+imposes a judgement: it over-slices a held chord on the clock and can miss a change that falls between
+grid points." — §14 (locator: line 230).
+*Derived.* S-28. *Current-text axis.* S-28: **AGREES** — S-28's own ground against a tolerance is the
+missed-change half of this argument.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 6.59 — pitch-class-mask change detection was rejected.**
+*Statement.* "**Pitch-class-mask change detection** … — rejected because a slice's identity is the
+exact set of notes, not the set of pitch classes (a same-pitch doubling that drops is a real change the
+folded view misses)." — §14 (locator: line 233).
+*Derived.* S-33. *Current-text axis.* S-33: **AGREES**, with the same worked case.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+---
+
+#### Not a statement — listed so the arithmetic closes (8)
+
+1. The status banner and its two source-commit identifiers — *provenance and a build state's
+   identifiers*.
+2. §0's rows **The loaded span / selection / context span**, **Byte-identical / the whole-score live
+   path**, **The two automated suites / pinned outputs**, **The key-mode sequence decoder**, **Layer
+   1.5** and **Pass-2/2b** — *six vocabulary rows pointing at other documents*. (Counted as six.)
+3. "**Implementation (source files):** `src/composing/analysis/slicing/slicer.{h,cpp}`
+   (`changePointSlices`, `Slice`)." — *an implementation locator*.
+4. §10's behaviour-test, branch-coverage, isolation-check and regression-test bullets, and the
+   `--validate-slices` locator — *a test plan and its locators* (the whole-corpus check's *result* is
+   rowed as Row 6.50).
+5. §12's glossary — *definitions restating §1, §7 and §8*.
+6. "**Corpora used:** the **353-piece Bach chorale set (plus a Corelli trio)**" — *a measurement-corpus
+   citation*.
+7. The **delegation pointer** the `ARCHITECTURE.md` Layer 2 section carries to this document — *not in
+   this document at all; noted because a reader may look for it here*.
+8. §11's third bullet's closing clause, "its coexistence with the old machinery during that transition
+   is described in Section 13" — *a cross-reference*, whose content is rowed as Row 6.56.
+
+#### The arithmetic at this document
+
+- Statements: **61** (rows 6.1 to 6.59, with Rows 6.7 and 6.54 split into two each; Row 6.31's five
+  bullets counted as one, stated at that row).
+- Listed under *not a statement*: **8**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 40 | 6.1, 6.3, 6.4, 6.5, 6.6, 6.7(i), 6.8, 6.9, 6.10, 6.11, 6.12, 6.13, 6.14, 6.15, 6.16, 6.17, 6.19, 6.22, 6.23, 6.24, 6.25, 6.27, 6.28, 6.29, 6.31, 6.32, 6.34, 6.36, 6.37, 6.38, 6.40, 6.43, 6.45, 6.46, 6.47, 6.48, 6.51, 6.57, 6.58, 6.59 |
+| ADOPTED — proposed | 12 | 6.2, 6.20, 6.21, 6.26, 6.30, 6.33, 6.35, 6.39, 6.41, 6.42, 6.44, 6.55 |
+| RELOCATED | 0 | — |
+| QUARANTINED | 4 | 6.7(ii), 6.50, 6.52, 6.54(ii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 5 | 6.18, 6.49, 6.53, 6.54(i), 6.56 |
+| UNPLACED | 0 | — |
+| **Total** | **61** | — |
+
+**The column sums to 61, against 61 statements:** 40 + 12 + 0 + 4 + 0 + 5 + 0 = 61. **The arithmetic
+closes at this document.**
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 77 |
+| DIFFERS | 11 |
+| THE DERIVATION IS SILENT | 9 |
+| **Total verdicts** | **97** |
+
+#### What this document's rows put in front of the user
+
+**This is the closest agreement in the comparison so far** — seventy-seven AGREES against eleven
+DIFFERS —
+and the two texts reach it from the same published source, which Row 6.25 records because it bears on
+the independence question the user judges separately. Where they part, they part on four things, and
+three of them have been met before. **The grace question, for the fourth and fifth time** (Rows 6.26,
+6.30 and especially 6.55, which is the clearest statement anywhere in the outgoing record of the
+reason: excluding graces is recorded there as a *heuristic that was dropped*, where the derivation
+records excluding them as a *consequence* of a grace having no metric duration of its own). **The
+published domain, a third time** (Row 6.35). **The slice's contents, a third time** (Rows 6.21 and
+6.33). And one that is **new and consequential: the metric strength class** (Rows 6.41 and 6.42) —
+the derivation publishes it from L1 as an ordinal with its level's period and an off-grid case, and
+the outgoing text does not store it at all, leaving each consuming layer to derive a single number in
+a bounded range. Those are two different published facts, and the difference is not one of wording.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -3192,6 +3756,12 @@ Gathered from the documents tabulated so far. **Not complete over the population
     note without a horizon?
 38. Row 5.31 — is the degenerate whole-score path still byte-identical at the current commit?
 39. Row 5.34 — is the onset-sort invariant tested on both directions of enlargement?
+40. Rows 6.7(ii) and 6.54(ii) — is the attribution of the error share to over-grab reproducible, and
+    on which arm was it measured?
+41. Row 6.50 — does the whole-corpus slicing property check still run and still pass at the current
+    commit, over the corpus as it now stands?
+42. Row 6.52 — is the chorale redundancy figure measured, and does it hold on the denser repertoire
+    the sentence names?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -3262,6 +3832,19 @@ Gathered from the documents tabulated so far. **Not complete over the population
     enlarged extent; determinism independent of how finely the enlargement was taken; and
     non-interference with re-analysing a sub-range. **Whether L0 should carry such a contract at all is
     the user's to rule.**
+26. **Rows 6.41 and 6.42 — that the specification state what form the metric strength class takes, and
+    who publishes it.** S-35 publishes it from L1 as an ordinal carrying its level's period, with an
+    *off-grid* class ranked below every level; the outgoing text does not store it at all and leaves
+    each consuming layer to derive a single number in `[0.5, 1.0]` on a four-step ladder. S-35's own
+    defense is that a rank-1 class in 3/4 and in 4/4 are not the same thing and a consumer comparing
+    scores needs the period, which the bounded number does not carry. **This is a new difference, met
+    for the first time at document 6.**
+27. Row 6.39 — that the prohibition on treating slices as equal-weight units be carried into the
+    specification; it binds every consumer and the derivation states nothing equivalent.
+28. Rows 6.2, 6.20, 6.21, 6.26, 6.30, 6.33, 6.35, 6.44 and 6.55 — the same five questions met again at
+    document 6: the span's edge, the three-flag eligibility test, what a slice carries, the published
+    domain, enlargement equivalence, and grace notes. **Row 6.55 is the clearest statement anywhere in
+    the outgoing record of the grace decision's reason.**
 
 **Differences stated, with nothing chosen between the two texts.**
 
