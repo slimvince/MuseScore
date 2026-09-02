@@ -60,11 +60,12 @@ The population's order is the artifact's:
 | 23 | `cowork_prefit_gates.md` | **DONE** |
 | 24 | `cowork_layer5_engagement_design.md` | **DONE** |
 | 25 | `cowork_notation_adoption_increment.md` | **DONE** |
-| 26–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 26 | `cowork_idiom_entry_mapping.md` | **DONE** |
+| 27–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 26–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 27–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 26**, `cowork_idiom_entry_mapping.md`.
+dispatch resumes at **position 27**, `cowork_notation_output_contract.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -11513,6 +11514,154 @@ is the audit's to answer.
 
 ---
 
+### 6.26 — Document 26: `cowork_idiom_entry_mapping.md`
+
+> **Manifest for this document.** Outgoing statements: **4** (rows 26.1 to 26.4; no row of this
+> document splits). Units counted under *not a statement*: **23**, across the banner, three tables and
+> the closing notes. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **★ FOUR STATEMENTS, AND ALL FOUR RELOCATE — the second document in the population to reach L0's or
+> L1's subject almost nowhere.** It is a **tagging table**: each entry of the progression-and-schema
+> catalog mapped to one or more harmonic idioms, with two cross-attributes. Which idiom a progression
+> belongs to is the tonal reading's business throughout, and the two rows that are not that are the
+> voice-leading axis's. **The whole document was read**, and the four rows below are what speaks to
+> L0's or L1's subject at all — each of them by resting on a fact the derivation publishes.
+>
+> **This is the term search's reach caveat working as the artifact declares it**, for the second time
+> after Document 16: a hit may be a document whose subject lies elsewhere. §3 of this file records that
+> the hit set is *"a lower bound, never a census"*.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+**Row 26.1 — the substitute dominant and its enharmonic German-sixth reading are the same sonority
+under two spellings, and the two readings belong to different idioms.**
+*Statement.* "Substitute dominant `subV7/x` (tritone sub) | **5** | (its enharmonic German-6th reading
+→ **2**)" — §5.1 (locator: line 17).
+*Derived.* S-3, S-14.
+*Current-text axis.* S-3: **AGREES** — the spelled pitch is supplied per note, and it is the **only**
+thing separating these two readings, which share every pitch class. S-14: **AGREES** — spelling is a
+required input and is not inferred, so the distinction is available to be read rather than guessed.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** — which
+idiom a chord belongs to is that layer's. *(Recorded because it is the outgoing record's most compact
+case of a **spelling deciding a reading** where the pitch classes cannot: two idioms, one sonority, and
+the page decides. Read beside Rows 17.7, 22.4 and 22.12.)*
+
+**Row 26.2 — the galant schemata and the line cliché are defined by voice leading; their harmonic-idiom
+tag is a placeholder and their primary identity belongs to the voice-leading axis.**
+*Statement.* "**The galant schemata and line cliché are voice-leading-defined** (Prinner, Romanesca, …
+; the cliché's chromatic line). Their harmonic-idiom tag here is a placeholder; their **primary
+identity belongs to the voice-leading axis** … — flag them so the future layer claims them." — the
+closing notes (locator: lines 53–55); the same flag on the entries themselves at §5.2 (lines 29, 34)
+and §5.3 (line 47).
+*Derived.* S-13, S-51.
+*Current-text axis.* S-13: **AGREES** on what such a pattern reads — an outer-voice scale-degree
+skeleton is read from **notated voices**, which is what L0 supplies and all it supplies. S-51:
+**AGREES** — a recognized schema is a claim about what the music means, so it belongs above the layer
+that publishes evidence.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***, with Rows 19.5, 19.6,
+19.7, 19.14, 19.29 and 20.20. *(Document 19's §5.4 names the same six entries as that axis's claim, and
+this is the mapping side of the same statement.)*
+
+**Row 26.3 — the mode and the chromaticism are carried as cross-attributes, tagged independently of the
+idiom.**
+*Statement.* "Cross-attributes (tagged separately per entry): **mode** (major/minor), **chromaticism**
+(diatonic↔chromatic)." — the banner (locator: lines 8–9); restated in the notes, *"Each entry also gets
+the two cross-attributes … tagged independently of the idiom."* (lines 56–57).
+*Derived.* S-40, S-50.
+*Current-text axis.* S-40: **AGREES** in shape — several independent facts about one thing are carried
+as several fields, not folded into one label, which is exactly its refusal to collapse marks into a
+single strength. S-50: **AGREES** — each published item is named for what it is.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+
+**Row 26.4 — a voicing substitution is out of scope: it is a voicing and not a function idiom.**
+*Statement.* "Upper-structure / voicing substitution | **— (out)** | a *voicing*, not a function-idiom
+(already out of scope, dictionary §5.3)" — §5.3 (locator: line 48).
+*Derived.* S-33.
+*Current-text axis.* S-33: **AGREES** on the distinction the exclusion rests on — *"two slices with the
+same pitch-class content but different event sets are different slices"*, which is what makes a voicing
+a real difference rather than a variant of the same thing.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***. *(Document 19's §5.4
+names this same exclusion as that axis's waiting claim; this is the excluding side of it, and the two
+texts agree on where it goes.)*
+
+---
+
+#### Not a statement — counted by table row, bullet and paragraph, so the arithmetic closes (23)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the banner | 2 | the tagging note with its multi-valued rule, and the idiom list |
+| §5.1 | 4 | the four remaining function-map entries — the diatonic functions, the two applied classes, and modal interchange |
+| §5.2 | 9 | the nine remaining named progressions and schemas — the cadences, the seventh-functional core, the turnarounds, the sequences, the pop loops and the advanced-jazz entries |
+| §5.3 | 7 | the seven remaining substitution operations |
+| the notes | 1 | the multi-tag-is-correct note |
+| **Total** | **23** | — |
+
+*Every unit above assigns a progression, a schema or a substitution to an idiom, and none states what
+the analysis does, must do, may assume or must not do about L0's or L1's subject. **The whole document
+was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **4** (26.1 to 26.4). No row of this document splits.
+- **Outgoing statements dispositioned: 4.**
+- Units counted under *not a statement*: **23**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 4 | 26.1, 26.2, 26.3, 26.4 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **4** | — |
+
+**The column sums to 4, against 4 statements, so the arithmetic closes at this document:**
+0 + 0 + 4 + 0 + 0 + 0 + 0 = 4.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 7 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **7** |
+
+*(Counted per named derived statement per statement-row. 7 verdicts over 4 statements because three
+rows name more than one derived statement. **Every verdict is AGREES and every disposition is
+RELOCATED**, which is the honest shape of a document whose subject lies elsewhere: what little of it
+touches L0's or L1's subject touches it by **resting on** a fact the derivation publishes — a spelling,
+a notated voice, an event set.)*
+
+#### What this document's rows put in front of the user
+
+**Row 26.1 is the most compact case in the outgoing record of a spelling deciding a reading.** A
+substitute dominant and a German sixth share every pitch class; the page separates them, and the two
+readings are assigned to different idioms on that basis alone. **S-3 supplies the spelling and S-14
+refuses a record without it** — this is what those two statements are for, stated in a single table
+cell.
+
+**And Rows 26.2 and 26.4 are the mapping side of two claims Document 19 makes from the other side.**
+The galant schemata and the line cliché are flagged here as voice-leading-defined with a placeholder
+harmonic tag; Document 19's §5.4 names the same six entries as that axis's claim. The voicing
+substitution is excluded here as *"a voicing, not a function-idiom"*; Document 19 names it as that
+axis's waiting claim. **Two documents, written apart, agree on where both belong.**
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -11641,6 +11790,10 @@ worked; it is not complete over the population.**
   priors. *(S-35's class travels with it.)*
 - Row 24.19 — the carry expressed as a distribution over distinct roots, each with its best voicing,
   its variant set and its carried confidence. *(S-33's event-set identity travels with it.)*
+- Row 26.1 — the substitute dominant and its enharmonic German-sixth reading assigned to different
+  idioms on the notated spelling alone. *(S-3's spelled pitch and S-14's required spelling travel.)*
+- Row 26.3 — the mode and the chromaticism carried as cross-attributes, tagged independently of the
+  idiom.
 - Row 18.18(ii) — which unit a requesting layer steps in when it asks for more music: the key layer in
   bars, the chord layer in slices. *(S-34's bar level and S-33's slice travel with it.)*
 - Row 18.27 — that the forward cascade is bounded because a carried-in key affects the leading-edge
@@ -11678,6 +11831,12 @@ worked; it is not complete over the population.**
 - Row 20.20 — the voice-leading assessments published to a downstream reader and used to validate what
   it produces: parallel motion and voice crossing. *(Document 19's §5.4 names the same check as that
   axis's own advisory component, reading the per-sample motion events of Row 19.21.)*
+- Row 26.2 — the galant schemata and the line cliché as voice-leading-defined patterns whose harmonic
+  tag is a placeholder. *(S-13's notated voices travel with it; Document 19's §5.4 names the same six
+  entries as that axis's claim.)*
+- Row 26.4 — the voicing substitution excluded from the function idioms as a voicing rather than a
+  function. *(S-33's event-set identity travels with it; Document 19's §5.4 names it as that axis's
+  waiting claim.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -12464,34 +12623,34 @@ Gathered from the documents tabulated so far. **Not complete over the population
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the twenty-five documents tabulated, not a distribution over the
-population.** The population is 29 documents; 4 are untouched. No figure below may be read as
+**This is a RUNNING total over the twenty-six documents tabulated, not a distribution over the
+population.** The population is 29 documents; 3 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 708 statements placed so far:**
+**Dispositions, over the 712 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | 7 | 9 | **288** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | 1 | 2 | **208** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | 9 | 1 | **82** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | 3 | 4 | **95** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | **34** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | 20 | 16 | **708** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | 7 | 9 | 0 | **288** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | 1 | 2 | 0 | **208** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | 9 | 1 | 4 | **86** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | 3 | 4 | 0 | **95** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | **34** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | 20 | 16 | 4 | **712** |
 
-**The arithmetic closes:** 288 + 208 + 82 + 95 + 0 + 34 + 1 = 708, against 708 statements, and each
+**The arithmetic closes:** 288 + 208 + 86 + 95 + 0 + 34 + 1 = 712, against 712 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same twenty-five documents:**
+**Current-text verdicts, over the same twenty-six documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | 28 | 25 | **803** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | 3 | 2 | **233** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | 0 | 1 | **179** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | 31 | 28 | **1215** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | 28 | 25 | 7 | **810** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | 3 | 2 | 0 | **233** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | 0 | 1 | 0 | **179** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | 31 | 28 | 7 | **1222** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -12514,7 +12673,7 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the twenty-five documents was placed there.** The reason is visible in the classes that
+statement in the twenty-six documents was placed there.** The reason is visible in the classes that
 did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
