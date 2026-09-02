@@ -4244,17 +4244,134 @@ Gathered from the documents tabulated so far. **Not complete over the population
 13. Row 4.37 — S-15's five eligibility conditions against an eight-case completeness list naming
     tuplets, cross-staff notes and multi-voice unisons, which the derivation does not reach.
 
-## 13. The distribution over the whole population
+## 13. The distribution so far, counted at this file's own rows
 
-**NOT YET WRITTEN.** The per-document distribution for document 1 is at §6.1, with its arithmetic
-discrepancy reported at the rows rather than reconciled. A distribution over the population is written
-when the population is worked.
+**This is a RUNNING total over the seven documents tabulated, not a distribution over the
+population.** The population is 29 documents; 22 are untouched. No figure below may be read as
+describing the outgoing text as a whole.
+
+**Dispositions, over the 302 statements placed so far:**
+
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | Total |
+|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | **115** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | **82** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | **12** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | **62** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | **30** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | **302** |
+
+**The arithmetic closes:** 115 + 82 + 12 + 62 + 0 + 30 + 1 = 302, against 302 statements, and each
+column sums to its own document's statement count as that document's own arithmetic section states.
+
+**Current-text verdicts, over the same seven documents:**
+
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | Total |
+|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | **295** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | **82** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | **100** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | **477** |
+
+**No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
+measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
+file's own rows.
+
+**DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
+#10's worth test discards an issue that bears neither on building something that serves
+maximum-precision inference nor on the code's comparability against a correct specification. **No
+statement in the seven documents was placed there.** The reason is visible in the classes that did
+absorb the population: the statements that might have looked discardable are overwhelmingly
+implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
+which it records as HISTORICAL. Neither is a discard, and neither loses anything.
 
 ## 14. The derivation's independence record, relayed
 
-**NOT YET WRITTEN.** The dispatch orders it relayed in its own section with no verdict word attached.
-It is a relay of the derivation's §6 and is owed once, not per document; it is deliberately not
-written here so that it is written whole rather than in pieces.
+**Relayed as facts, with no verdict word attached.** Judging the deriving session's independence is the
+user's, at the record. Everything in this section is the derivation's own §6 and §5, read and reported.
+**Nothing here is a verdict, and the words *blind*, *independent*, *clean* and their opposites do not
+appear as gradings of it anywhere in this file.**
+
+**What arrived, and in how many messages.** The record states that **message one carried the brief
+alone**, pre-read whole before the session's first turn; that the boot inventory was declared in the
+session's first message; that everything received was on the expected list; that **no project folder
+was connected at any time**, none was requested or accepted, no directory was listed, and no shell was
+run over project material — the shell being used only to read the clock and to write and edit the
+output file in the session's own workspace. **Message two carried the ten pack members and the four
+scores**, of which **nine of the fourteen were pre-read into context before the turn began**.
+
+**How much of each file was read.** The record gives this per file. Read **whole**: the read-me, the
+phase definitions, the guiding principles and conventions, the writing standards, the defect-type
+catalog, the charter, the empirical findings ledger, and the five research extracts. Read **in part**:
+the dispatch protocol whole in two calls; **`05_the_ratified_design_intent` to line 700 only**, the
+file being 290.2 KB by the tool's figure, with the rest not opened. Of the four staged scores, two were
+pre-read to line 2000 only and two were read at named windows.
+
+**The stop-on-meeting record, by file and location.** The record states that statements about how this
+project's analysis currently does L0's subject were met at these places, that none was paraphrased and
+none entered a statement: in **the brief itself** at four locations; in **the guiding-principles
+member** at four spans, one of which names two specification locations and states their content on
+slice identity and note collection; in **the dispatch-protocol member** at two spans, one naming a
+removed mechanism concerning a declared mode at a piece's start and one naming three files; and in
+**the design-intent member** at eight entries by identifier — **D-023, D-024, D-033, D-057, D-207,
+D-221, D-224, D-229** — with several further entries in the same span recorded as seen on subjects
+outside L0's. The record states that **the session stopped reading that member at line 700 under the
+stop-on-meeting clause**. The defect-type catalog was met at one row. **The positive statement it
+gives:** apart from those locations, no such passage was met in any pack member, and none in any score
+file.
+
+**A note the record volunteers about one of its own statements.** It records that the convention at one
+of those met lines was in context before **S-29** was derived, that S-29's defense rests on the meaning
+of onset and release and would have been written the same way had the line not been seen, and that a
+reader weighing S-29 should know the line was seen. **That is the record's own statement, relayed
+without comment.**
+
+**Where an outgoing statement of this comparison meets one of those passages, the row says so.** Two do
+so far, and both are recorded here because the dispatch requires it: **D-207** is met at the
+derivation's S-54, which cites it to keep *pedal point* apart from *pedal mark* — the same distinction
+this comparison's Document 4, Row 4.15 turns on; and **D-023 and D-057**, on slice identity and on the
+priority of evidence, bear on the rows where the derivation and the outgoing text agree about slice
+identity (Rows 2.12, 6.34, 6.59). **This is a fact the user reads the AGREES verdicts against**, and it
+is stated rather than left to be inferred.
+
+**The two elements the session did not read, per staged file.** The record gives counts obtained by
+searching for the element names, the search returning line numbers only, and states that no line inside
+a `<Harmony>` or `<StaffText>` element was read — **with one declared exception**: in the chorale, two
+`<StaffText>` elements lay inside the pre-read extent and **were seen**, their content entering no
+statement. The record states that no count is evidence for any statement and that no statement rests on
+how often anything occurs in the staged set.
+
+**The fetched sources, and the primaries not re-read.** Fetched and read through prompted extraction:
+the MusicXML 4.0 reference pages for the grace and tie elements; Temperley 2009 from the author's site,
+which the record names as the primary behind the charter's metric-strength figures and **not** one of
+the five whose extracts are pack members; and the Annotated Mozart Sonatas article, whose yield the
+record calls thin and declares as such. **One fetch failed** — the music21 chordify documentation,
+returning 404 — and the record states that no statement rests on it and that the gap is recorded rather
+than filled. **The five primaries whose extracts are pack members were not re-read**, and the record
+states why: their claims are quoted verbatim with page or section in the extracts, a re-read would have
+duplicated rather than checked that work, and every fact taken from an extract is labelled at its
+statement.
+
+**Where notation was wanted and an open question was written instead.** The record names seven such
+places by open-question number, and states that the two gaps the brief itself declared — tremolo and
+pedal marks — are two of them.
+
+**What the session records not doing.** It opened no untrusted source, edited no specification and no
+code, ran no build, test or measurement tool, created no open-items row, allocated no identifier, took
+no branch rule, read no commit log, derived nothing on any subject but its own, compared this file
+against nothing, and decided nothing about the derivation method. It states that its output was
+delivered into the conversation and written to no repository path.
+
+**The measured-cost record's own values are named to the file and are not restated here** (**D-431**):
+the wall-clock stamps and the interval they bound, the time per statement, the share marked *open*, the
+share the session would put to the user with the question each would ask, the share marked *given* and
+its split, the share whose sixth field could not be written, the share resting on a *measured* source
+class, and the per-statement lists of which pack members and which fetched sources were consulted — all
+are at `cowork_blind_derivation_l0_l1_2026_08_31.md` §5. **The two counts this file carries of its own
+are the statement count and the open-question count in its manifest header**, taken at that file's own
+structure by this session, together with the distributions at §13, counted at this file's own rows.
 
 ## 15. What the user is asked to rule in this file
 
