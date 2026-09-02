@@ -39,11 +39,12 @@ The population's order is the artifact's:
 | 2 | `ARCHITECTURE.md` — the Layer 2 section | **DONE** |
 | 3 | `cowork_layer1_note_model_design.md` | **DONE** |
 | 4 | `cowork_layer1_tone_collection_design.md` | **DONE** |
-| 5–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 5 | `cowork_layer1_extend_design.md` | **DONE** |
+| 6–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 5–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 6–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 5**, `cowork_layer1_extend_design.md`.
+dispatch resumes at **position 6**, `cowork_layer2_slicing_design.md`.
 
 **The sections that can only be written once every document is done are therefore NOT written**, and
 their absence is deliberate rather than an omission: the derived-side rows (one per S-1…S-54 with the
@@ -2653,6 +2654,417 @@ no-horizon rule in the outgoing record, and the derivation carries it in none of
 
 ---
 
+### 6.5 — Document 5: `cowork_layer1_extend_design.md`
+
+> **Manifest for this document.** Outgoing statements: **42** (rows 5.1 to 5.42). Listed under *not a
+> statement*: **4**. Counted at this document by this session.
+>
+> **Why this document is in the population:** named by Ruling 32 item 2. It is **not** in the ruled
+> specification document set, and stays in the population by name.
+>
+> **What this document is about, and why the derivation is silent so often.** Its whole subject is
+> **enlarging the span of music the analysis holds** — building over a selection and extending it on
+> request. The derivation touches that subject at exactly one statement, S-53, which fixes the working
+> span as the only thing a caller supplies beyond L0 and says nothing about changing it. So this
+> document is the largest single source of **ADOPTED — proposed** rows in the comparison so far: it
+> states a contract the derived specification does not have.
+
+---
+
+**Row 5.1 — both operations this document designs are built.**
+*Statement.* "**AS-BUILT — BOTH OPERATIONS THIS DOCUMENT DESIGNS ARE BUILT.**" — the status banner
+(locator: line 3).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+**Row 5.2 — it implements the supplier side of the bounded-context contract.**
+*Statement.* "Implements the supplier side of the bounded-context contract … at Architectural Layer 1:
+build the note model over the **user's selection**, and **extend** the loaded span on request." — the
+banner (locator: line 13).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 5.3 — the hard part is isolated behind a byte-identical interim so the contract lands first.**
+*Statement.* "the genuinely hard part (the look-up index under extension) is isolated and **deferred
+behind a byte-identical interim**, so the *contract* lands first and the layers above are written
+against it immediately." — the banner (locator: line 16).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a delivery plan.
+
+#### §1 — what is there now, verified at source
+
+*Every row of this section describes code as it stood, so every one is QUARANTINED.*
+
+**Row 5.4 — the build walks the whole score.**
+*Statement.* "`NoteModel::build(const Score*)` — **walks the whole score** (every staff, voice,
+segment, grace), resolves ties, annotates each note, sorts by onset …. One whole-piece build." — §1
+(locator: line 20).
+*Derived.* S-16, S-32.
+*Current-text axis.* S-16: **DIFFERS** — the walk takes in grace notes, which S-16 excludes from the
+change-point set and from every sounding set. S-32: **DIFFERS** — the build is whole-piece where S-32's
+list covers the working span.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the whole-piece walk still the live
+build, and does it still take grace notes into the same list?
+
+**Row 5.5 — the note list is the lossless store.**
+*Statement.* "`m_notes` — the onset-sorted `NoteEvent` list (the lossless store)." — §1 (locator: line
+22).
+*Derived.* S-3, S-18.
+*Current-text axis.* S-3: **AGREES**. S-18: **AGREES**.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the store still lossless in the sense
+S-18 requires — every excluded note present and labelled?
+
+**Row 5.6 — the look-up index is static and built once.**
+*Statement.* "`NoteQueryIndex` — the look-up index, **static, built once** from `m_notes` … a
+**max-release segment tree**, a *perfect binary tree* sized to a power of two, built once" — §1
+(locator: line 23).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Rows 3.45 and 3.55.
+
+**Row 5.7 — the two queries and their predicates.**
+*Statement.* "Queries: `overlapping(t0,t1)` (`onset < t1 && release > t0`, no horizon) and
+`onsetIn(t0,t1)`." — §1 (locator: line 27).
+*Derived.* S-29.
+*Current-text axis.* S-29: **AGREES**, and exactly — S-29's sounding set is *"the set of eligible
+events whose onset is at or before t and whose release is after t"*, which is this predicate at a
+point rather than over a span.
+*PROPOSED DISPOSITION.* **QUARANTINED**, the section being a description of code. *Audit question:*
+does the live predicate still use strict `<` on the onset and strict `>` on the release, which is what
+makes it S-29's half-open convention rather than the closed alternative?
+
+**Row 5.8 — what makes extension non-trivial.**
+*Statement.* "the note list must stay **onset-sorted** as notes are added at the **front** … or
+**back** …, and the index is a **static perfect-binary-tree** that does not natively accept
+insertions." — §1 (locator: line 29).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the live index still require a full
+rebuild on every enlargement?
+
+#### §2 — the API change, which the document calls the contract
+
+**Row 5.9 — build over a selection, recording the loaded span and the selection span.**
+*Statement.* "**`build` over a selection** — given the score and a **selection span** …, build the
+note model holding the notes the selection needs …. The model records its **loaded span** … and the
+**selection span**" — §2 (locator: line 35).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 5.10 — telling output slices from context slices is the layers-above's concern.**
+*Statement.* "(so the layers above can tell output slices from context slices — though that labelling
+is their concern, not Architectural Layer 1's)" — §2 (locator: line 37).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Row 2.28.
+
+**Row 5.11 — extend grows the loaded span by a requested tick amount.**
+*Statement.* "**`extend(direction, amount)`** — grow the loaded span **earlier** or **later** in time
+by the **requested amount, expressed in ticks**" — §2 (locator: line 39).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT** — S-53 fixes the span and never contemplates
+changing it.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 carry an enlargement operation
+at all, the derived contract having none.
+
+**Row 5.12 — the layer is unit-blind: it knows ticks, not slices or bars.**
+*Statement.* "Architectural Layer 1 is **unit-blind** — it knows ticks, not slices or measures — so
+the requester converts its own natural unit to a tick target before calling" — §2 (locator: line 40).
+*Derived.* S-3, S-53.
+*Current-text axis.* S-3: **AGREES** that positions are the supplied unit. S-53: **AGREES** that the
+caller owns the choice.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.11: that the enlargement's unit be stated
+as the position, with conversion the requester's.
+
+**Row 5.13 — the finest meaningful step is the change point.**
+*Statement.* "The **finest meaningful step is the change-point/slice**: within a slice the sounding set
+is constant, so a sub-change-point (beat/tick) extension loads no new note and changes no analysis —
+requesters never ask finer than that." — §2 (locator: line 42).
+*Derived.* S-29.
+*Current-text axis.* S-29: **AGREES** on the ground — the sounding set is constant across a slice.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 1.18 and 1.20; this is the third
+statement of the same rule in the outgoing record.
+
+**Row 5.14 — loading is append-only.**
+*Statement.* "Loading is **append-only** (never drop a loaded note)." — §2 (locator: line 44).
+*Derived.* S-18.
+*Current-text axis.* S-18: **AGREES** in spirit — nothing is dropped — but S-18 is about excluded
+notes, not about enlargement, so the append-only property itself is not carried.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 3.35.
+
+**Row 5.15 — it returns the new span and a boundary flag.**
+*Statement.* "Returns the **new loaded span** and a **boundaryReached** flag (true when clamped at the
+score start/end)." — §2 (locator: line 44).
+*Derived.* S-32.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT** — S-32 marks events at the span's edges and
+says nothing about reporting that the score's own edge was reached.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 3.35.
+
+**Row 5.16 — re-requesting a covered span is a no-op.**
+*Statement.* "Re-requesting an already-covered span is a **no-op** (idempotent)." — §2 (locator: line
+45).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 5.17 — extend does exactly one step and never evaluates a stop condition.**
+*Statement.* "**`extend` does exactly one requested step** — it loads what it is asked for and returns;
+it does **not** loop, and it **never evaluates a stop/convergence condition** (that is inference, which
+Architectural Layer 1 does not do)." — §2 (locator: line 46).
+*Derived.* S-51, S-53.
+*Current-text axis.* S-51: **AGREES** — evaluating a convergence condition would be exactly the kind of
+claim S-51's test excludes. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 5.18 — the queries are unchanged and operate over whatever is loaded.**
+*Statement.* "**Queries unchanged** … — they simply operate over whatever is currently loaded." — §2
+(locator: line 49).
+*Derived.* S-29, S-53.
+*Current-text axis.* S-29: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 5.19 — the decision, the increment, the stop test and the loop live in the requester.**
+*Statement.* "The decision to extend, the **increment size**, the **convergence/stop test**, and the
+**extend → re-infer → re-check loop** all live in the **requesting layer**, never here (single
+responsibility …)." — §2 (locator: line 50).
+*Derived.* S-53.
+*Current-text axis.* S-53: **AGREES**, and on the same ground.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 5.20 — the increment is a per-call parameter, not a fixed constant of this layer.**
+*Statement.* "The increment is the requester's natural inference scale …, so it is a per-call
+parameter, not a fixed Architectural-Layer-1 constant." — §2 (locator: line 53).
+*Derived.* S-48, S-52.
+*Current-text axis.* S-48: **AGREES** in discipline — a value not established is not asserted. S-52:
+**AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.11.
+
+#### §3 to §5 — the delivery split, the capture rule, and the index
+
+**Row 5.21 — Phase 1a is the contract with a correct, byte-identical interim.**
+*Statement.* "**1a — the contract, with an interim that is correct and byte-identical.** … internally
+may still walk the whole score and retain the notes overlapping the loaded span, and rebuild the
+static index …" — §3 (locator: line 60).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a delivery increment.
+
+**Row 5.22 — Phase 1b is the efficiency, deferred.**
+*Statement.* "**1b — the efficiency, byte-identical, DEFERRED (can land after L4).** … **Gate:**
+byte-identical to 1a, and `index ≡ linear scan` over extended spans." — §3 (locator: line 67).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a deferred increment with its gate.
+
+**Row 5.23 — the split corrects the foundational assumption now.**
+*Statement.* "This split means the **foundational assumption is corrected now** (everything above is
+written to build-selection + extend) while the genuinely tricky code is done later under a
+byte-identity gate." — §3 (locator: line 71).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+**Row 5.24 — the model must hold every note overlapping the loaded span, sustained-in included.**
+*Statement.* "The loaded model must hold **every note whose span overlaps the loaded span** — `onset <
+loadedEnd && release > loadedStart` — which includes a note that **started before `loadedStart` and
+sustains into the selection** (it really sounds during the selection; it is content, not mere
+context)." — §4 (locator: line 76).
+*Derived.* S-29, S-32.
+*Current-text axis.* S-29: **AGREES**, exactly — this is S-29's predicate over a span. S-32:
+**AGREES** — S-32's *entered sounding* case is this same note.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 5.25 — in the interim the capture is free.**
+*Statement.* "**In 1a (interim)** this is free: the whole-score walk sees every note; filtering by
+overlap keeps the sustained-in ones automatically." — §4 (locator: line 79).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+**Row 5.26 — a span-scoped walk must find the active note without re-introducing a horizon.**
+*Statement.* "a span-scoped walk must additionally find, at `loadedStart`, the note active in each
+track … **without** re-introducing the old backward horizon and **without** walking from the score
+start." — §4 (locator: line 81).
+*Derived.* S-29.
+*Current-text axis.* S-29: **THE DERIVATION IS SILENT** on the search that finds the set.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* has the span-scoped walk been built, and if
+so does it find every sustained-in note without a horizon?
+
+**Row 5.27 — sustained-in capture is a different need from reach-back.**
+*Statement.* "Distinguish this from **reach-back** (Architectural Layer 3): reach-back loads notes
+*entirely before* the selection as **key evidence**; sustained-in capture loads notes that *sound
+inside* the selection. Different needs, same supplier mechanism." — §4 (locator: line 85).
+*Derived.* S-32, S-53.
+*Current-text axis.* S-32: **AGREES** — S-32's *entered sounding* mark exists to draw exactly this
+line. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 5.28 — the interim rebuilds the index on every build and extend.**
+*Statement.* "**1a:** **rebuild** `NoteQueryIndex` from the merged onset-sorted `m_notes` on every
+build and extend …. Simple, correct, and identical to a fresh build over the enlarged span." — §5
+(locator: line 90).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the rebuild still what runs?
+
+**Row 5.29 — the deferred options, to be chosen on measurement.**
+*Statement.* "**1b (deferred) options**, to be chosen on measurement, all byte-identical to the 1a
+rebuild: a **merge + rebuild** …; or a segment tree sized with **headroom** …; or a different overlap
+structure that accepts ordered insertion … — only if the rebuild proves a measured bottleneck." — §5
+(locator: line 93).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — deferred options with their trigger.
+
+**Row 5.30 — the interface is unchanged, so the choice is invisible above this layer.**
+*Statement.* "The **interface is unchanged**, so the choice is invisible above Architectural Layer 1."
+— §5 (locator: line 99).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the interface in fact unchanged across
+the two implementations?
+
+#### §6 — the invariants the document calls the correctness contract
+
+**Row 5.31 — degenerate byte-identity.**
+*Statement.* "**Degenerate byte-identity.** `build(selection = whole score)` and a never-extended model
+are **byte-identical** to today's `build(score)` … (The corpus runs this path; it must not move.)" —
+§6 (locator: line 102).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the degenerate path still byte-identical
+at the current commit?
+
+**Row 5.32 — build-then-extend equivalence.**
+*Statement.* "**Build-then-extend equivalence.** `build(A)` then `extend` to span `X` yields a model
+**identical** to `build(X)` directly — extension is an optimisation of 'load more, build fresh,' never
+a different result." — §6 (locator: line 104).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.21 — the L0 half of the same
+equivalence the slicer states for itself, and the property that makes enlargement safe.
+
+**Row 5.33 — append-only, no drop.**
+*Statement.* "**Append-only / no-drop.** Extension never removes or alters an already-loaded note;
+`m_notes` only grows." — §6 (locator: line 107).
+*Derived.* S-18.
+*Current-text axis.* S-18: **AGREES** in spirit, as at Row 5.14.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.14.
+
+**Row 5.34 — the onset sort is preserved across front and back extension.**
+*Statement.* "**Onset-sort preserved** across front (earlier) and back (later) extension." — §6
+(locator: line 108).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the sort invariant tested on both
+directions?
+
+**Row 5.35 — extend is idempotent and loads only the genuinely new notes.**
+*Statement.* "**Idempotent extend.** Re-requesting a covered span is a no-op; overlapping requests load
+only the genuinely-new notes once." — §6 (locator: line 109).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.16.
+
+**Row 5.36 — extension clamps at the score edge and reports it.**
+*Statement.* "**Boundary clamp + report.** Extension never passes the score start/end; it clamps and
+sets `boundaryReached`." — §6 (locator: line 111).
+*Derived.* S-32.
+*Current-text axis.* S-32: **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.15.
+
+#### §8 and §9 — the risks and the delivery
+
+**Row 5.37 — sustained-in capture without a whole-score walk is the deferred correctness point.**
+*Statement.* "**Sustained-in without a whole-score walk** — the 1b correctness point …; de-risked by a
+read-only DOM spike before 1b, and irrelevant to 1a." — §8 (locator: line 123).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Row 5.26.
+
+**Row 5.38 — the extensible index is the deferred performance point.**
+*Statement.* "**The extensible index** — the 1b performance point …; irrelevant to 1a (rebuild)." — §8
+(locator: line 125).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Row 5.28.
+
+**Row 5.39 — the result must not depend on how finely the span was enlarged.**
+*Statement.* "**Determinism independent of extension granularity** — reaching span `X` in one big step
+or several small ones must give an identical model (a required test; falls out of invariant 2)." — §8
+(locator: line 126).
+*Derived.* S-28, S-53.
+*Current-text axis.* S-28: **AGREES** in discipline — determinism at exact positions. S-53: **THE
+DERIVATION IS SILENT** on enlargement.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.32 — it is the property a consumer most
+easily breaks, and the derivation carries nothing equivalent.
+
+**Row 5.40 — enlargement and incremental re-analysis are different operations and must not interfere.**
+*Statement.* "**Composition with re-analyse-a-sub-range** — extension (grow the loaded span) and the
+existing incremental re-analysis (re-run part of it) are different operations on the same model; they
+must not interfere." — §8 (locator: line 128).
+*Derived.* S-53.
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+
+**Row 5.41 — the Layer-1 specification marks extend designed-but-unbuilt.**
+*Statement.* "The Architectural Layer 1 spec already marks *extend* designed-but-unbuilt and §11 as
+interim behind this contract; on build, those become as-built" — §9 (locator: line 133).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL** — a statement about another document's build markers. *(Whether
+it is true at the current commit is the audit's business; this document's own banner records that both
+operations are built, and Document 3's §3 records `extend` as built, which a reader may set beside
+it.)*
+
+**Row 5.42 — Phase 1a is the buildable unit; Phase 1b is separate and deferrable.**
+*Statement.* "**Phase 1a** (contract + interim) is the buildable unit now; **Phase 1b** (efficiency) is
+a separate, byte-identical, deferrable step." — §9 (locator: line 136).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+#### Not a statement — listed so the arithmetic closes (4)
+
+1. The banner's **former status, preserved** — "**FORMER STATUS, PRESERVED (#12):** *'Status: DRAFT
+   for sign-off. Read-only design — no code.'*" — *a preserved superseded banner*, whose supersession
+   is rowed as Row 5.1.
+2. The banner's account of why the correction was costly — "Every sibling design in this family carries
+   an accurate as-built banner, which is what made this one costly" — *provenance about the document
+   itself*.
+3. §7's five test bullets — *a test plan*.
+4. "Each is its own gated Claude-Code instruction; 1b gets the DOM spike first." — *a dispatch plan*.
+
+#### The arithmetic at this document
+
+- Statements: **42** (rows 5.1 to 5.42; no row of this document splits).
+- Listed under *not a statement*: **4**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 8 | 5.2, 5.9, 5.10, 5.17, 5.18, 5.19, 5.24, 5.27 |
+| ADOPTED — proposed | 13 | 5.11, 5.12, 5.13, 5.14, 5.15, 5.16, 5.20, 5.32, 5.33, 5.35, 5.36, 5.39, 5.40 |
+| RELOCATED | 0 | — |
+| QUARANTINED | 12 | 5.4, 5.5, 5.6, 5.7, 5.8, 5.26, 5.28, 5.30, 5.31, 5.34, 5.37, 5.38 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 9 | 5.1, 5.3, 5.21, 5.22, 5.23, 5.25, 5.29, 5.41, 5.42 |
+| UNPLACED | 0 | — |
+| **Total** | **42** | — |
+
+**The column sums to 42, against 42 statements:** 8 + 13 + 0 + 12 + 0 + 9 + 0 = 42. **The arithmetic
+closes at this document.**
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 25 |
+| DIFFERS | 2 |
+| THE DERIVATION IS SILENT | 26 |
+| **Total verdicts** | **53** |
+
+#### What this document's rows put in front of the user
+
+**Twenty-six of the fifty-three verdicts at this document are SILENT, and that is the finding.** The
+derivation has no contract for enlarging the span at all: it fixes the working span at S-53 and stops.
+The outgoing text has a full one — append-only, idempotent, one step per call, clamp-and-report,
+build-then-extend equivalence, determinism independent of how finely the span was enlarged, and the
+rule that the requester owns the decision, the increment and the stop test. **Thirteen ADOPTED —
+proposed rows come out of this one document**, and taken together they are a single proposal: that the
+derived L0 gain an enlargement contract. Whether L0 should have one at all is the user's to rule; what
+this document establishes is that the derivation does not have one and the current record does.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -2767,6 +3179,19 @@ Gathered from the documents tabulated so far. **Not complete over the population
 30. Row 4.25 — is the reach still split across layers with no single place to extend it?
 31. Row 4.29 — is the legacy dense-start branch dead at the current commit, and were the three
     unverified items ever read?
+32. Row 5.4 — is the whole-piece walk still the live build, and does it still take grace notes into
+    the same list as ordinary notes?
+33. Row 5.5 — is the note store still lossless in the sense S-18 requires, every excluded note present
+    and labelled?
+34. Rows 5.6, 5.28, 5.30 and 5.38 — is the index still static and rebuilt whole on every enlargement,
+    and is the interface in fact unchanged across the two implementations?
+35. Row 5.7 — does the live overlap predicate still use strict `<` on the onset and strict `>` on the
+    release, which is what makes it S-29's half-open convention?
+36. Row 5.8 — does the live index still require a full rebuild on every enlargement?
+37. Rows 5.26 and 5.37 — has the span-scoped walk been built, and if so does it find every sustained-in
+    note without a horizon?
+38. Row 5.31 — is the degenerate whole-score path still byte-identical at the current commit?
+39. Row 5.34 — is the onset-sort invariant tested on both directions of enlargement?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -2827,6 +3252,16 @@ Gathered from the documents tabulated so far. **Not complete over the population
     ties, tuplets, grace, cross-staff, multi-voice unisons, pedal, invisible and non-playing — of
     which the derivation names five and is silent on tuplets, cross-staff notes and multi-voice
     unisons.
+25. **Rows 5.11 to 5.16, 5.20, 5.32, 5.33, 5.35, 5.36, 5.39 and 5.40 — one proposal in thirteen
+    parts: that L0 gain an ENLARGEMENT CONTRACT, which the derivation does not have.** Its parts, as
+    the outgoing text states them: an enlargement operation at all; its unit stated as the position,
+    with conversion the requester's; the change point as the finest meaningful step; append-only, so
+    nothing already loaded is dropped or altered; the new span and a boundary-reached report returned;
+    idempotence, so a covered request is a no-op; the increment a per-call parameter rather than a
+    constant of the layer; build-then-extend equivalence, so enlarging equals building afresh at the
+    enlarged extent; determinism independent of how finely the enlargement was taken; and
+    non-interference with re-analysing a sub-range. **Whether L0 should carry such a contract at all is
+    the user's to rule.**
 
 **Differences stated, with nothing chosen between the two texts.**
 
