@@ -19660,3 +19660,56 @@ guard verdicts are this batch's own two runs and not carried from any earlier on
 unexpected reds were each re-run individually and their messages read; and A5 was established by
 per-path blob identifiers at two explicit commit hashes. No figure of the population artifact is
 restated in this section (D-431).*
+
+### ★ THE END STATE, carried by the one further commit after the close
+
+**The close does not assert this; this section does, and it was written after the run that produced
+it.** The full guard set was run in write mode at the tree the close left, and its artifact
+`tools/audit/guard_state.json` is committed here **as the artifact of that real run**, not of an
+earlier one.
+
+**THE RUN.** Population **at run 75** — unmoved, as assumption A4 predicted of the population half.
+**Failing 10**, passing 65, 4 not run, 16 historical records. **And one STOP:**
+`unclassified_candidates` carries exactly `tools/audit/gen_l0_l1_outgoing_population.py`.
+
+**AGAINST THE START STATE, WHICH THIS BATCH MEASURED RATHER THAN INHERITED.** The CHECK-mode run
+before the first edit returned **11 failing**; the end state returns **10**. **The one that cleared is
+`gen_session_start_read_size.py --check`, cleared by this batch's own ordered regeneration in Task 3
+— an ordered act, and the only movement in the failing set.** Every other member of the failing set is
+the same tool it was before the first edit, and **nothing this batch did turned any check red.**
+
+**E3 IS NOT MET, AND THE REASON IS THE ONE THE CLOSE ALREADY ESTABLISHED, NOT A NEW ONE.** E3 demands
+*the failing set exactly the eight standing reds, zero STOPs, population at run 75*. **Population at
+run 75: MET.** **The failing set: NOT MET** — the tree carried eleven before this batch's first edit,
+because the dispatch's declared start state was read from a `guard_state.json` object written three
+commits earlier, and this batch repaired none of the four it did not name. **Zero STOPs: NOT MET** —
+the one STOP is the unenrolled new script, which **assumption A4 both created and forbade the remedy
+for**: it ordered the script written and ordered it not enrolled, and a `tools/audit/*.py` carrying a
+`--check` mode cannot be left unenrolled without halting the runner. **The bar was obeyed, the halt
+stands, and it is attributed to this batch's own ordered act rather than absorbed.**
+
+**A5 AT THE LAST COMMIT.** The path set of this further commit was enumerated with the sanctioned
+enumeration tool immediately before it was taken and is **`cowork_away_returns.md` and
+`tools/audit/guard_state.json` and nothing else**. **No member of A5's population is in it**, and no
+member moved: the derivation, the brief, the pack artifact, the governing documents other than the
+`STATUS.md` pair Task 3 orders, and every outgoing text in the population stand at the identifiers the
+close records.
+
+**THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** Unchanged in kind and larger by one item:
+this end-state section and the guard artifact it records. **Nothing else was produced. No session was
+booted. No comparison was made, no statement graded, no disposition proposed or applied, and the
+reading file still does not exist.** The pack, its generator and its artifact were not opened for
+writing; no outgoing text moved; `CLAUDE.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `OPEN_ITEMS.md`,
+`BUILD_AND_TEST.md` and `DEFECT_TYPES.md` are byte-unchanged.
+
+**THE COMMIT COUNT.** The dispatch's ordered structure yields **Task 0, Task 1, one commit per
+outgoing document, the close, the end state**. **Task 2 contributed none, the ruled size stop having
+fired before any document was tabulated**, so this batch carries **four**: Task 0, Task 1, the close,
+and this one.
+
+*Provenance: CC, 2026-09-02, appended in the one further commit after the close commit
+`a4d431a86911da3c539444cf3f241126d3369bb9` existed — a commit whose own identity this paragraph
+therefore cannot contain. Every value above was read from the run recorded in
+`tools/audit/guard_state.json`, which that run itself wrote, and from the staged-set enumeration taken
+immediately before this commit; no value here was carried forward from an earlier run or inferred
+from a summary.*
