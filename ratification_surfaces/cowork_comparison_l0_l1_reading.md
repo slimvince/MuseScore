@@ -45,11 +45,18 @@ The population's order is the artifact's:
 | 8 | `ARCHITECTURE.md` — the Layer 5 section | **DONE** |
 | 9 | `cowork_layer5_function_design.md` | **DONE** |
 | 10 | `cowork_phrase_boundary_design.md` | **DONE** |
-| 11–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 11 | `cowork_joint_estimator_factorization.md` | **DONE** |
+| 12–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 11–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 12–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 11**, `cowork_joint_estimator_factorization.md`.
+dispatch resumes at **position 12**, `cowork_evidence_inventory.md`.
+
+**★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
+`ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
+ruling established at the files). **What remains is the eighteen files Ruling 33's cut admits**,
+positions 12 to 29, which the term search found and which the ruled specification document set
+retained.
 
 **Where the previous stop fell, and why it was a clean one.** Positions 1 to 7 are exactly **Ruling
 32's items 1 and 2** — the two `ARCHITECTURE.md` sections and all five root design documents, which is
@@ -5674,6 +5681,339 @@ which document 9 also named and which this document enumerates.
 
 ---
 
+### 6.11 — Document 11: `cowork_joint_estimator_factorization.md`
+
+> **Manifest for this document.** Outgoing statements: **17** (rows 11.1 to 11.17; no row of this
+> document splits). Paragraphs counted under *not a statement*: **27**. Both counted at this document
+> by this session; the counts appear here and nowhere else.
+>
+> **Why this document is in the population:** named by **Ruling 32 item 3** — the ruling established
+> at the file that its beat-strength, fermata and cadence factors describe outputs the new L1 charter
+> publishes. **With this document Ruling 32's item 3 is complete**, and so is the whole of the
+> ruling's named population; what remains is the eighteen files Ruling 33's cut admits (positions 12
+> to 29).
+>
+> **What this document is.** The ratified structure specification of the joint estimator — under the
+> new charter, **L2's own territory**: the variables, the score form, the factor roster, the premise
+> ledger and the decode. It is short and dense. **Six of its seventeen statements RELOCATE to L2**,
+> which is this document's own charter and not a criticism of it; what makes it worth reading here is
+> the other eleven, where it states what L1's published facts ARE rather than how they are scored.
+>
+> **★ IT IS THE SECOND DOCUMENT TO ENGAGE FACE (f), AND IT NAMES THE CHARTER'S THREE CUES EXACTLY.**
+> Row 11.13 lists the leading-tone resolution, the fourth-and-seventh pair and the dominant-to-tonic
+> bass motion, from the same published source S-45 to S-47 cite.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN** — it cites no design-intent entry by identifier and none of the recorded spans.
+
+---
+
+#### §1 and §2 — the variables and the score
+
+**Row 11.1 — a piece is a sequence of events: the minimal segments between consecutive note onsets and
+offsets.**
+*Statement.* "A piece is a sequence of **events** — the minimal segments between consecutive note
+onsets/offsets (the Pardo & Birmingham partition, already the analyzer's slice unit)." — §1 (locator:
+line 23).
+*Derived.* S-28 (two positions are the same change point iff equal as rationals), S-29 (a slice is the
+half-open interval from its change point to the next), S-33 (slice identity is the event set).
+*Current-text axis.* S-28: **AGREES**. S-29: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **The two texts name the same construction and cite the
+same published source** — S-15 and S-28 quote Pardo & Birmingham's partition-point definition and its
+bound — which is recorded here because it bears on the independence question the user judges
+separately, as Rows 6.25 and 9.30 were.
+
+**Row 11.2 — segment boundaries are decided, not given.**
+*Statement.* "**The segmentation** `S`: a partition of the event sequence into contiguous **harmonic
+segments** (semi-Markov: segment boundaries are decided, not given)." — §1 (locator: line 26).
+*Derived.* S-51 (an L1 output is evidence, never a decided boundary), S-53 (L1 publishes candidates
+and evidence and leaves every decision to its consumer).
+*Current-text axis.* S-51: **AGREES**. S-53: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **This is the L1/L2 line stated from the consuming
+side, in one clause**: the change points are given, the harmonic boundaries are decided, and the
+decision is this document's and not L1's.
+
+**Row 11.3 — the boundary factor is conditioned on beat strength and fermata, evaluated per
+boundary or event.**
+*Statement.* "`+ Σ_j  w_bound · log P_bound(boundary at j | beat strength, fermata)  [segmentation]`"
+— §2, the score (locator: line 54); with the granularity amendment, "the chord-transition,
+key-transition, entry, and boundary factors **per boundary/event**" (locator: line 68).
+*Derived.* S-35 (the metric strength class per change point), S-39 (the FERMATA flag with its
+witnesses).
+*Current-text axis.* S-35: **AGREES** that the metric strength is the conditioning fact. S-39:
+**AGREES** that the fermata is boundary evidence.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*.**
+`FRAMEWORK.md` §5 assigns to L2 *"the **segmentation** — a partition of the working span into harmonic
+spans whose boundaries are a subset of L1's change points"*, and this is the term that scores it. **The
+two L1 facts it consumes are carried at S-35 and S-39 and travel with the relocation rather than being
+lost.**
+
+**Row 11.4 — the cadence evidence enters as one weighted factor voting for the segment's key.**
+*Statement.* "`+ Σ_j  w_cad   · (cadence evidence features at j → k_j)             [cadence factor]`"
+— §2, the score (locator: line 55).
+*Derived.* S-47 (the cue is published as flags with witnesses and names no tonality), S-53.
+*Current-text axis.* S-47: **AGREES** that the cue is evidence toward a candidate tonality and not a
+claim. S-53: **AGREES** that the weighing is the consumer's.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2**, which is where the weighing happens; the cue itself is
+Row 11.13's and stays at L1.
+
+**Row 11.5 — the bass factor is evaluated per event, against each event's sounding bass.**
+*Statement.* "the BASS factor **per event** (each event's sounding bass against the segment's chord —
+Ni's published per-frame form)" — §2 (locator: line 65).
+*Derived.* S-44 (the bass at a slice is the lowest sounding pitch of its sounding set, not a notated
+voice).
+*Current-text axis.* S-44: **AGREES** — *"each event's sounding bass"* is S-44's bass, read per event.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2**, the factor being a scoring term; **S-44's definition of
+the bass is what it reads and travels with it.**
+
+#### §3 — the factors
+
+**Row 11.6 — the pitch emission is conditioned on chord-independent covariates, among them metric
+weakness and tied-over preparation.**
+*Statement.* "emission probability conditioned on the category AND the chord-independent covariates …:
+metric weakness, stepwise approach, stepwise departure, chromatic-neighbor motion, tied-over
+preparation." — §3.1 (locator: line 78).
+*Derived.* S-35 (the metric strength class), S-23 (a tied group is one event; only the first note opens
+an onset), S-51 (an output is evidence where it is computable with no tonality, chord or boundary as
+input).
+*Current-text axis.* S-35: **AGREES** — *metric weakness* is that class read from the weak end. S-23:
+**AGREES** — *tied-over preparation* is a tie fact. S-51: **AGREES** — *chord-independent* is S-51's
+own test, applied by the consumer to its own covariates.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2**, the emission being L2's scoring; **the two L1 facts it
+names are carried at S-35 and S-23 and travel with it.** *(Recorded because it is the clearest case in
+the outgoing record of L1's published facts being consumed exactly as covariates, which is the
+charter's own word for them: L1 *"hands the next layer its covariates"*.)*
+
+**Row 11.7 — the spelling emission reads the spelled degree and carries the collection question
+through the signature mask, with no tonic in the membership test.**
+*Statement.* "**Spelling emission** `P_spell(spelled degree | k)` … Also carries the collection
+question through the signature mask (the OI-168 form) — no tonic in the membership test." — §3.2
+(locator: line 84).
+*Derived.* S-3 (spelled pitch supplied per note), S-6 (the key signature supplied, *"never a fact
+about the tonality"*), S-9 (L1 does not read the key signature).
+*Current-text axis.* S-3: **AGREES**. S-6: **AGREES** — the signature is used as a collection mask,
+not as the tonality, which is S-6's own premise. S-9: **AGREES** — the bar is on L1, and this is a
+later layer.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2**; the L0 facts it reads are carried at S-3 and S-6 and
+travel with it.
+
+**Row 11.8 — bass-motion continuity across segments is not in the first structure.**
+*Statement.* "Bass-motion continuity across segments is NOT in the first structure (recorded as a
+possible later factor with its own ledger entry)." — §3.3 (locator: line 93).
+*Derived.* S-45 (BASS-FALLS-A-FIFTH, published per onset change point with its witnesses, the two
+bass notes, the register of the motion and the slices Y and Z).
+*Current-text axis.* S-45: **DIFFERS**.
+*The difference, in both texts' own words.* S-45 publishes the bass motion between a slice and an
+earlier differing-bass slice as one of L1's three cues, *"with witnesses: the two bass notes, the
+register of the motion … and the slices Y and Z"*; the outgoing text records bass motion **across
+segments** as not in the structure at all, deferred to a possible later factor.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+the bass motion between slices is **L1-published evidence** — S-45 publishes it — since a consumer
+that records it as unmodelled is not reading a fact L1 already supplies.
+
+**Row 11.9 — the boundary probability is conditioned on beat-strength class with the above-tactus ≫
+tactus ≫ sub-tactus shape.**
+*Statement.* "conditioned on beat-strength class (the Temperley 2009 change-on-strong-beat shape:
+above-tactus ≫ tactus ≫ sub-tactus; our values fit from the corpus)" — §3.7 (locator: line 111).
+*Derived.* S-35.
+*Current-text axis.* S-35: **AGREES**, and from the same primary — S-35's defense cites *"harmonic
+change at 71.5% of the beats at the level above the tactus, 22.3% at the tactus, 2.4% at the level
+below [FACT — Temperley 2009 Table 1, p. 5, fetched]"*, which is this shape, in this order.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **The two texts read the same table the same way**, and
+the derivation reached it by fetching the paper. *(The outgoing text additionally says the values are
+fit from this project's own corpus rather than taken from the paper, which is S-35's own
+UNESTABLISHED remedy and is recorded without adjudication.)*
+
+**Row 11.10 — segment duration is otherwise implicit-geometric with a hard length cap.**
+*Statement.* "Segment duration is otherwise implicit-geometric with a hard length cap (the established
+semi-Markov default; an explicit harmonic-rhythm duration model is recorded as CONJECTURE-gated future
+work)." — §3.7 (locator: line 113).
+*Derived.* S-30 (no slice has zero length), S-32 (the published list covers the working span exactly).
+*Current-text axis.* S-30: **THE DERIVATION IS SILENT** on any length distribution. S-32: **THE
+DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2** — a harmonic segment's duration model is L2's
+segmentation content, and L1's slices have no duration prior at all.
+
+**Row 11.11 — the fermata enters the boundary factor as a boundary prior and the cadence factor as a
+cadence-location prior.**
+*Statement.* "**Fermata** — enters `P_bound` as a boundary prior (the chorale phrase-end convention)
+and enters the cadence factor as a cadence-location prior" — §3.8 (locator: line 115).
+*Derived.* S-39 (the FERMATA flag and its placement rule).
+*Current-text axis.* S-39: **AGREES** — S-39 publishes the fermata as boundary evidence with its
+witnesses and leaves its weighing to the consumer, and this names two consumers of exactly that.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Recorded because it is the clearest instance in the
+outgoing record of one L1 flag feeding two independent consumers, which is what S-39's
+publish-with-witnesses form is for.)*
+
+**Row 11.12 — the cadential arrival may sit one strong beat before a metrically weak fermata.**
+*Statement.* "with de Clercq's weak-beat displacement (the cadential arrival may sit one strong beat
+before a metrically weak fermata) as a covariate, not an exception." — §3.8 (locator: line 116).
+*Derived.* S-39.
+*Current-text axis.* S-39: **DIFFERS**.
+*The difference, in both texts' own words.* S-39 places the fermata's boundary at one tick and defends
+it from what the sign means — *"a fermata prolongs the note it sits on, so the boundary it signals is
+where that note **ends**"* — and its own near-miss clause covers only a fermata on a phrase's first
+chord; the outgoing text carries a **published displacement**, that the arrival the fermata marks may
+sit one strong beat earlier when the fermata falls on a metrically weak position, and carries it as a
+covariate rather than as a special case.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the fermata flag be published
+with the metric strength of its own position, so a consumer can apply the displacement — the
+derivation publishes both facts and never relates them. **★ THIS IS A PUBLISHED FINDING THE DERIVATION
+DOES NOT HAVE**, the fourth such place in the comparison after Rows 3.60, 4.37 and 9.20.
+
+**Row 11.13 — the cadence factor's features are the leading-tone resolution, the fourth-and-seventh
+pair, and dominant-to-tonic bass motion.**
+*Statement.* "the leading-tone resolution (seventh degree rising to the tonic in candidate key k), the
+tritone pair (both the fourth and seventh degrees of k sounding in the approach), dominant-to-tonic
+bass motion (falling fifth / rising fourth), each a feature with a fitted weight (the Bigo feature
+forms + the Feisthauer beats-since-decay shape)." — §3.9 (locator: line 119).
+*Derived.* S-45 (BASS-FALLS-A-FIFTH, equivalently rising a fourth), S-46 (LEADING-TONE-RESOLVES), S-47
+(FOURTH-AND-SEVENTH-IN-THE-APPROACH).
+*Current-text axis.* S-45: **AGREES**. S-46: **AGREES**. S-47: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **★ THE CHARTER'S THREE CUES, NAMED EXACTLY AND IN THE
+SAME ORDER OF EVIDENCE, FROM THE SAME PUBLISHED SOURCE** — the derivation cites Bigo et al. for all
+three and quotes the fourth-and-seventh feature verbatim. **This is the closest whole-face agreement
+in the comparison**, and it is recorded because it bears on the independence question: that extract
+was a boot-pack member.
+
+**Row 11.14 — each cadence feature is evaluated in a candidate key and carries a fitted weight.**
+*Statement.* the same sentence: "in candidate key k … each a feature with a fitted weight" — §3.9
+(locator: line 119).
+*Derived.* S-47, S-51.
+*Current-text axis.* S-47: **DIFFERS**. S-51: **DIFFERS**.
+*The difference, in both texts' own words.* S-47 anchors the candidate tonality on **a note the score
+gives** — *"T_I, whose tonic is Z's bass pitch class, and T_V, whose dominant is Z's bass pitch
+class"* — and states that *"The candidate tonality is the anchor and nothing more: L1 publishes no
+tonality"*, with S-51 admitting the cue as evidence only because it is computable with no tonality as
+input; the outgoing feature is evaluated **in candidate key `k`**, which is the decode's own state
+variable, and is weighted by a fitted constant.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+the cue is published **once per bass-anchored candidate** or **evaluated per decode candidate key** —
+the first is computable at L1 and the second is not, so the answer decides where the cue lives.
+*(This is the **cadence evidence's inputs** family of Row 9.12, met a second time and from the other
+direction: there the extra input was a committed chord, here it is a candidate key.)*
+
+**Row 11.15 — the known false positives are carried as feature refinements, and the weight must
+respect the measured weakness of half-cadence detection.**
+*Statement.* "The known false positives (the parallel major/minor of the same tonic; plagal motion
+misread) are carried as feature refinements, and the factor's weight must respect the measured
+weakness of half-cadence detection." — §3.9 (locator: line 123).
+*Derived.* S-47.
+*Current-text axis.* S-47: **AGREES**, and on the same measured ground — S-47 publishes the V-anchored
+flag as *weak* evidence precisely because *"the half cadence is weak on local cues (F .29 and .41)"*,
+and states that omitting it *"would decide"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Both texts reach the same conclusion from the same
+two measured figures: publish the weak cue, weight it low, and do not omit it.)*
+
+**Row 11.16 — the signature and declared-mode prior conditions the initial key state only, re-entering
+only at a notated mid-piece signature change.**
+*Statement.* "**SETTLED …: the prior conditions the INITIAL key state only, re-entering only at a
+notated mid-piece signature change …; the persistent-pull variant is rejected**" — §3.10 (locator:
+line 127).
+*Derived.* S-6 (the position of every signature change is supplied), S-9 (L1 does not read the key
+signature), S-43 (a KEY-SIGNATURE-CHANGE flag that reads the fact of the change and never its value).
+*Current-text axis.* S-6: **AGREES**. S-9: **AGREES**. S-43: **AGREES** — the re-entry point this
+decision names is exactly the event S-43 proposes publishing.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-6 with S-43). **This is the second consumer found for
+S-43's proposed flag**, after Row 10.15, and it is a consumer that needs the change's *position* and
+not its value — which is what S-43 publishes.
+
+#### §4 — the premise ledger
+
+**Row 11.17 — segment boundaries depend on meter and fermatas, not on the key.**
+*Statement.* "P7 | Segment boundaries depend on meter and fermatas, not on the key | ASSUMPTION |
+Cadential closure influences segmentation beyond meter; partially covered by the cadence factor
+sitting at boundaries; visible as boundary residual at cadences" — §4 (locator: line 144).
+*Derived.* S-39, S-35, S-51.
+*Current-text axis.* S-39: **AGREES**. S-35: **AGREES**. S-51: **AGREES** — the premise is S-51's own
+test written as a conditional independence, and its named false-negative path is Row 10.2's accepted
+miss seen from the scoring side.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Worth the user's attention: the outgoing text labels
+this an **ASSUMPTION** with a named false-negative path, where the derivation states the same content
+as a rule; both texts declare the same exposure and neither hides it.)*
+
+---
+
+#### Not a statement — counted by paragraph, per section, so the arithmetic closes (27)
+
+| Section | Paragraphs counted | What they are |
+|---|---|---|
+| the header | 2 | the ratification record and the standing/authorship block |
+| §1 | 2 | the state variable and its two components; the key-change and chord-symbol clauses |
+| §2 | 4 | the score's lead-in; its seven other factor lines; the identity-weight ablation baseline; the granularity amendment's remaining clauses and its measured ground |
+| §3 | 3 | the chord-transition, key-transition and entry-chord factors |
+| §4 | 7 | the ledger's header row and premises P1 to P6 and P8 |
+| §5 | 3 | the tie-break total order, the below-threshold back-off, and the exact-decode plan with its reserve |
+| §6 | 4 | the stage banner, the two declared forms' lead-in, the five synthetic cases, and the five real-corpus traces |
+| §7 | 2 | what the document does not decide, and the ratification asked for |
+| **Total** | **27** | — |
+
+#### The arithmetic at this document
+
+- Rows written: **17** (11.1 to 11.17). No row of this document splits.
+- **Outgoing statements dispositioned: 17.**
+- Paragraphs counted under *not a statement*: **27**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** 17 disposition
+  lines over 17 statements.
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 8 | 11.1, 11.2, 11.9, 11.11, 11.13, 11.15, 11.16, 11.17 |
+| ADOPTED — proposed | 3 | 11.8, 11.12, 11.14 |
+| RELOCATED | 6 | 11.3, 11.4, 11.5, 11.6, 11.7, 11.10 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **17** | — |
+
+**The column sums to 17, against 17 statements, so the arithmetic closes at this document:**
+8 + 3 + 6 + 0 + 0 + 0 + 0 = 17. **The statement lists in the right-hand column are the record**, and
+the integers are re-derivable from them by counting.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 28 |
+| DIFFERS | 4 |
+| THE DERIVATION IS SILENT | 2 |
+| **Total verdicts** | **34** |
+
+*(Counted per named derived statement per statement-row. 34 verdicts over 17 statements because
+twelve rows name more than one derived statement.)*
+
+#### What this document's rows put in front of the user
+
+**This is the closest agreement of the whole comparison so far, and it is on the face the earlier
+documents barely reached.** Row 11.13 names the charter's three cadence cues exactly — the
+leading-tone resolution, the fourth-and-seventh pair in the approach, and the falling-fifth or
+rising-fourth bass motion — from the same published source the derivation quotes; Row 11.15 reaches
+the same conclusion about the half cadence from the same two measured figures; Row 11.1 names the same
+event partition from the same paper; and Row 11.9 reads the same metrical table in the same order.
+**Twenty-eight AGREES against four DIFFERS.** All four sources are boot-pack extracts, which is
+recorded because it bears on the independence question the user judges separately.
+
+**Six rows relocate to L2, and that is the document doing its job rather than failing one**: it is
+L2's own structure specification, so its factor terms — the boundary factor, the cadence factor's
+weighting, the bass factor's granularity, the two emissions and the duration model — belong to that
+charter. **Every L1 fact they read is carried by a derived statement and travels with the
+relocation**, which Rows 11.3, 11.5, 11.6 and 11.7 each state.
+
+**Three rows differ, and one of them supplies something the derivation lacks.** Row 11.12: de Clercq's
+**weak-beat displacement** — a cadential arrival may sit one strong beat before a metrically weak
+fermata — carried in the outgoing text as a covariate, where S-39 fixes the fermata's boundary at the
+held note's release and never relates it to the metric strength of its own position. Row 11.14 is the
+**cadence evidence's inputs** family met from its second direction: the cue evaluated per decode
+candidate key rather than per bass-anchored candidate. And Row 11.8 runs the other way from most of
+this comparison — the outgoing structure records bass-motion continuity as **unmodelled**, where S-45
+publishes exactly that motion as one of L1's three cues.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -5725,6 +6065,17 @@ worked; it is not complete over the population.**
   decide what counts as chord evidence.
 - Row 4.33 — weighting as a separate derived layer: a view over the note set, never a replacement,
   with its heuristics becoming tunable parameters validated against an oracle.
+- Row 11.3 — the boundary factor: the probability of a segment boundary at an event, conditioned on
+  beat strength and fermata. *(The two L1 facts it reads are carried at S-35 and S-39 and travel.)*
+- Row 11.4 — the cadence evidence entering the score as one weighted factor voting for the segment's
+  key.
+- Row 11.5 — the bass factor evaluated per event, each event's sounding bass against the segment's
+  chord. *(S-44's definition of the bass travels with it.)*
+- Row 11.6 — the pitch emission conditioned on chord-independent covariates, among them metric
+  weakness and tied-over preparation. *(S-35's class and S-23's tie fact travel with it.)*
+- Row 11.7 — the spelling emission over the spelled degree, carrying the collection question through
+  the signature mask. *(S-3's spelled pitch and S-6's signature travel with it.)*
+- Row 11.10 — segment duration as implicit-geometric with a hard length cap.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -6023,6 +6374,18 @@ Gathered from the documents tabulated so far. **Not complete over the population
     change and the all-voice rest against the breath mark, the caesura and, strictly, the fermata.
     **These rows run TOWARDS the derivation**, which names the voice on the rest flag alone; Row 9.28
     named the same gap and this document enumerates it.
+47. **★ Row 11.12 — that the FERMATA FLAG be published with the metric strength of its own position.**
+    The outgoing text carries de Clercq's **weak-beat displacement** — a cadential arrival may sit one
+    strong beat before a metrically weak fermata — as a covariate rather than an exception; S-39 fixes
+    the fermata's boundary at the held note's release and never relates it to the metric class of that
+    position, though the derivation publishes both facts. **A published finding the derivation does not
+    have**, the fourth such after Rows 3.60, 4.37 and 9.20.
+48. Row 11.14 — the **cadence evidence's inputs** family from its second direction: that the
+    specification state whether a cue is published **once per bass-anchored candidate** (S-47's form,
+    computable at L1) or **evaluated per decode candidate key** (this text's form, which is not).
+49. Row 11.8 — that the specification state whether the **bass motion between slices** is L1-published
+    evidence; S-45 publishes it as one of L1's three cues, and this text records bass-motion continuity
+    across segments as not in the structure at all.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -6078,37 +6441,43 @@ Gathered from the documents tabulated so far. **Not complete over the population
 23. Row 10.7 — S-15's five per-note eligibility conditions against a three-flag test, a fourth time.
 24. Row 10.53 — S-39's scope-free fermata, bar-line and repeat flags, against a partition of every
     marker kind into globally-scoped and per-part-scoped.
+25. Row 11.8 — S-45's published bass-motion cue with its witnesses, against bass-motion continuity
+    recorded as not in the structure.
+26. Row 11.12 — S-39's fermata boundary at the held note's release, against a published weak-beat
+    displacement placing the arrival one strong beat earlier.
+27. Row 11.14 — S-47's bass-anchored candidate tonality and S-51's no-tonality-as-input test, against
+    a cue evaluated in the decode's own candidate key.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the ten documents tabulated, not a distribution over the
-population.** The population is 29 documents; 19 are untouched. No figure below may be read as
+**This is a RUNNING total over the eleven documents tabulated, not a distribution over the
+population.** The population is 29 documents; 18 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 398 statements placed so far:**
+**Dispositions, over the 415 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | **153** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | **126** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | **18** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | **69** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | **31** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | **398** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | **161** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | **129** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | **24** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | **69** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | **31** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | **415** |
 
-**The arithmetic closes:** 153 + 126 + 18 + 69 + 0 + 31 + 1 = 398, against 398 statements, and each
+**The arithmetic closes:** 161 + 129 + 24 + 69 + 0 + 31 + 1 = 415, against 415 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same ten documents:**
+**Current-text verdicts, over the same eleven documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | **393** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | **139** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | **123** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | **655** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | **421** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | **143** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | **125** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | **689** |
 
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
