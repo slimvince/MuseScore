@@ -226,7 +226,7 @@
    },
    "hits_per_term": {
     "slice": 1083,
-    "tie": 889,
+    "tie": 888,
     "fermata": 132,
     "MusicXML": 126,
     "leading-tone": 112,
@@ -3302,23 +3302,6 @@
       "term": "slice",
       "tier": "recorded",
       "line": "| OI-73 | Membership verdict dies at the L4→L5 boundary | chordTonePcs/nonChordTonePcs are never copied onto FunctionSlice. | siloed facts / E4 surface | OPEN — E4 surface design | [detail](open_items/OI-73.md) |"
-     }
-    ]
-   },
-   "STATUS.md": {
-    "path": "STATUS.md",
-    "inventory_class": "governing-documents",
-    "is_a_named_member": false,
-    "in_the_specification_document_set": false,
-    "admitting_hit_count": 0,
-    "recorded_hit_count": 1,
-    "admitting_hits": [],
-    "recorded_hits": [
-     {
-      "line_number": 8,
-      "term": "tie",
-      "tier": "recorded",
-      "line": "*Last updated: 2026-09-02 (CC — **★★ THE L0/L1 OUTGOING POPULATION IS DERIVED AND PUBLISHED, AND THE COMPARISON DID NOT OPEN: THE DISPATCH'S OWN RULED SIZE STOP FIRED AT TASK 1 AND TASK 2 WAS NOT ENTERED.** The population is `tools/audit/l0_l1_outgoing_population.json`, written by `tools/audit/gen_l0_l1_outgoing_population.py` under Ruling 32 — the eleven members the ruling names, each **proven present at its path** and the three `ARCHITECTURE.md` sections **located by heading text and never by line number** (**D-307**), plus every file admitted by the term search over the three ruled inventory classes, whose membership is read from the inventory's own `every_member` and never from a directory listing. ★ **THE TWO SEARCH TIERS ARE DECLARED AUTHORED ON THE ARTIFACT ITSELF**, not merely in the tool, and **the reach is STATED AS A LOWER BOUND WITH NO INDEPENDENTLY-KNOWN POPULATION TO RECONCILE AGAINST — declared UNMEASURED, never a census** (**D-673** and the recognizer clause). ★ **THE SIZE STOP IS THE BATCH'S OWN THRESHOLD, NOT A FIGURE ABOUT THE CORPUS**, and whether the term list narrows or the comparison splits across dispatches is the user's ruling, not this batch's. **NO DISPOSITION WAS PROPOSED OR APPLIED, NO STATEMENT WAS GRADED, NO OUTGOING TEXT WAS EDITED, AND NO READING FILE EXISTS** — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` was NOT created, because a partly worked population is exactly what the ruled stop exists to prevent. ★ **THREE THINGS THE DISPATCH PREDICTED ARE REFUTED AND ALL THREE ARE REPORTED RATHER THAN ABSORBED:** its declared start state was read from a `guard_state.json` object written **three commits before the tip**, so the tree carries more standing reds than the eight it names, each cause established at its own tool; assumption A1 enumerated two tracked modifications where the tree carries three, the third being the writing side's own amendment of the eighty-eighth handoff entry; and **assumption A4 is refuted by measurement — the new script carries a `--check` mode, so leaving it unenrolled HALTS the guard runner rather than leaving the population unmoved.** **The dispatch forbids enrolment twice, so it was not enrolled and the halt stands, unrepaired and attributed.** Dispatch **`cc_instruction_comparison_l0_l1_2026_09_02.md`**. Per the OI-222 pointer convention this entry is a **POINTER** — every count, every term, every hit and the whole ordered population are the artifact, and the report carries the causes — and no figure is restated here (**D-431**).)*"
      }
     ]
    },

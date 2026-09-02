@@ -19891,3 +19891,70 @@ guard-registry change.**
 this batch's own runs and not carried from any earlier one; A1 was established with the sanctioned
 enumeration tool over the whole tracked population; and A3 was established by `cmp` against the
 committed blob. No figure of the population artifact is restated in this section (D-431).*
+
+### ★ THE END STATE, carried by the one further commit after the close
+
+**The close does not assert this; this section does, and it was written after the run that produced
+it.** The full guard set was run in write mode at the tree the close left, and its artifact
+`tools/audit/guard_state.json` is committed here **as the artifact of that real run**, not of an
+earlier one.
+
+**THE RUN.** Population **76** — 75 plus the one tool Task 1 enrolled. **Failing 10**, 4 not run, 16
+historical records. **ZERO STOPs**: `unclassified_candidates` is empty, the STOP the previous batch
+left standing having been cleared by the enrolment.
+
+**E3 IS MET IN EVERY LIMB, AND EACH IS STATED AGAINST THE DECLARED START STATE RATHER THAN ASSERTED.**
+**Population at run 76: MET** — exactly one more than the declared 75, the one being the enrolled tool.
+**Zero STOPs: MET.** **The failing set exactly the ten named in the declared start state, LESS any this
+batch's ordered acts cleared, PLUS NONE: MET** — the ten are member for member the ten the dispatch's
+own FACT names, `gen_session_start_read_size.py --check` was already passing at the start state so
+Task 3's regeneration cleared nothing, and nothing this batch did turned any check red at the end.
+
+**★ ONE RED APPEARED AT A FIRST END-STATE RUN AND WAS RESOLVED BY MEASUREMENT, NOT BY ARGUMENT — the
+sequence is recorded because the resolution changed a committed artifact.** A first full run at the
+close's tree returned **eleven** failing, the eleventh being
+`tools/audit/gen_l0_l1_outgoing_population.py --check`, which had passed at Task 1. **The cause was
+established at the object rather than guessed:** `STATUS.md` is a member of the searched class
+`governing-documents` and carried **exactly one** recorded-tier hit — the substring `tie`, inside the
+word *TIERS* in the previous batch's entry — and **Task 3's forward-bound move took that entry out of
+`STATUS.md`**, so the file produced no hit at all and its per-file record left the derivation. This is
+the tool's own `--check` doing precisely what the dispatch says it is for: *"a later change to either
+input turns it STALE, which is what a check is for."*
+
+**The difference was MEASURED before anything was decided**, by snapshotting the committed artifact,
+regenerating, and diffing. **It is exactly two things and nothing else:** the `hits_per_term` tally for
+`tie` falls by one, and `STATUS.md`'s per-file record is removed. **No member of the population moves.
+No admitting-hit count moves. The named members, the specification-set cut, the residue, the ordered
+population, the pre-cut ordering and the size stop are all byte-identical** — `STATUS.md` had **zero**
+admitting hits and was therefore never in the population at all. **The regenerated artifact is
+committed here**, and the guard set was then re-run so that the artifact committed with it is the
+artifact of the tree it describes, which is what E3 requires. **No row of the reading file rests on
+what moved**: the file states in terms that it restates no count from that artifact, and the population
+and its order — the two things the rows do rest on — are unchanged.
+
+**A5 AT THE LAST COMMIT.** The path set of this further commit was enumerated with the sanctioned
+enumeration tool immediately before it was taken and is **`cowork_away_returns.md`,
+`tools/audit/guard_state.json` and `tools/audit/l0_l1_outgoing_population.json`, and nothing else.**
+**No member of A5's protected population is in it**: the derivation, the brief, the pack and its
+artifact, every outgoing text in the population, and every governing document other than the
+`STATUS.md` pair Task 3 orders all stand at the identifiers the close records.
+
+**THE TELL, RE-TAKEN OVER THE BATCH INCLUDING THIS COMMIT.** Unchanged in kind and larger by two items:
+this end-state section, and the regenerated population artifact whose whole difference is stated above.
+**Nothing else was produced. No session was booted. No measurement of the analysis was built, designed,
+scoped or run. No disposition was applied anywhere, and every one in the reading file is a proposal.**
+`CLAUDE.md`, `ARCHITECTURE.md`, `DECISIONS.md`, `OPEN_ITEMS.md`, `BUILD_AND_TEST.md`, `FRAMEWORK.md`
+and `DEFECT_TYPES.md` are byte-unchanged, and so is every outgoing text the comparison read.
+
+**THE COMMIT COUNT.** The dispatch's ordered structure yields **Task 0, Task 1, one commit per outgoing
+document, the close, the end state.** Task 2 contributed **eight** — seven documents plus the
+independence-record relay — so this batch carries **twelve**: Task 0, Task 1, eight for Task 2, the
+close, and this one.
+
+*Provenance: CC, 2026-09-02, appended in the one further commit after the close commit
+`2dd7131f8c02f315b0bb5b304a5cef5f027c37b7` existed — a commit whose own identity this paragraph
+therefore cannot contain. Every value above was read from the run recorded in
+`tools/audit/guard_state.json`, which that run itself wrote, and from the staged-set enumeration taken
+immediately before this commit; the population artifact's difference was established by `diff` against
+a snapshot of the committed file. No value here was carried forward from an earlier run or inferred
+from a summary.*
