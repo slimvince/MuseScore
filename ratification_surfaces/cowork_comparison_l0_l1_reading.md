@@ -46,11 +46,12 @@ The population's order is the artifact's:
 | 9 | `cowork_layer5_function_design.md` | **DONE** |
 | 10 | `cowork_phrase_boundary_design.md` | **DONE** |
 | 11 | `cowork_joint_estimator_factorization.md` | **DONE** |
-| 12–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 12 | `cowork_evidence_inventory.md` | **DONE** |
+| 13–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 12–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 13–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 12**, `cowork_evidence_inventory.md`.
+dispatch resumes at **position 13**, `cowork_layer6_grouping_design.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -6014,6 +6015,447 @@ publishes exactly that motion as one of L1's three cues.
 
 ---
 
+### 6.12 — Document 12: `cowork_evidence_inventory.md`
+
+> **Manifest for this document.** Outgoing statements: **32** — rows 12.1 to 12.28, of which Rows
+> 12.1, 12.2, 12.10 and 12.12 each carry two claims and are split (i)/(ii), so 28 row numbers carry 32
+> statements. Sections counted under *not a statement*: **21 paragraphs across 8 sections**. Both
+> counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit under **Ruling 32 item 4**, retained
+> by **Ruling 33** because it is a member of the ruled specification document set. **It is the first
+> document of that cut**, and the first of eighteen.
+>
+> **What this document is, and why so much of it is in scope.** It is an inventory of every fact each
+> layer finds or could find, with a status label on each — INPUT, PUBLISHED, SILOED, DORMANT,
+> UNDISCUSSED. **Its §1 is a list of what the notated record supplies, which is L0's subject
+> exactly**, and its §3 and §4 enumerate facts about metric weight, phrase ends, slices and bass
+> motion, which are L1's. So a document admitted by a term search turns out to speak to the subject
+> more directly than most of the named members.
+>
+> **★ ITS STATUS LABELS PUT SEVEN ROWS IN QUARANTINE BY CONSTRUCTION.** A bullet that says a fact is
+> SILOED, TRAPPED or DORMANT is describing the implementation, which is the audit's business; a
+> bullet that says a fact is INPUT is describing L0. Several bullets do both, and those are split
+> (i)/(ii) so that each half reaches its own disposition.
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §1 — the score itself, which is L0's subject
+
+**Row 12.1 (i) — notated pitches with spelling are input.**
+*Statement.* "Notated pitches with SPELLING (tonal pitch classes — F♯ vs G♭ as the composer wrote
+them). INPUT" — §1 (locator: line 17).
+*Derived.* S-3, S-14. *Current-text axis.* S-3: **AGREES**. S-14: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-3 supplies it, S-14 refuses a score without it).
+
+**Row 12.1 (ii) — spelling is consumed today by one pin only.**
+*Statement.* "carried at the note layer, consumed today by one pin only (OI-15)" — the same bullet.
+*Derived.* S-3. *Current-text axis.* S-3: **THE DERIVATION IS SILENT** on who consumes a supplied fact.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is spelled pitch still consumed by one pin
+only, and does any live consumer read the unspelled pitch class where the spelling is available?
+
+**Row 12.2 (i) — notated key signatures, including mid-piece changes, are input.**
+*Statement.* "Notated key signature(s), INCLUDING mid-piece changes. INPUT" — §1 (locator: line 20).
+*Derived.* S-6. *Current-text axis.* S-6: **AGREES** — S-6 supplies *"the position of every change of
+either"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 12.2 (ii) — the signature is read once at the start and its changes are never re-anchored.**
+*Statement.* "read once at start, changes never re-anchored (OI-94)" — the same bullet.
+*Derived.* S-6, S-43. *Current-text axis.* S-6: **DIFFERS** — S-6 supplies the signature *"in force at
+every position"* and the position of every change. S-43: **DIFFERS** — S-43 proposes publishing the
+change as a flag.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is a mid-piece signature change still never
+re-anchored on the arm that ships?
+
+**Row 12.3 — the declared mode from the file format is input.**
+*Statement.* "Declared mode from the file format. INPUT; siloed to the key path (OI-78)." — §1
+(locator: line 22).
+*Derived.* S-1 (the admission criterion), S-2 (what fails it is carried as annotation).
+*Current-text axis.* S-1: **DIFFERS**. S-2: **AGREES** on the carrying discipline.
+*The difference, in both texts' own words.* S-1 admits a fact to L0 only if *"two competent copyists
+transcribing the same source would agree on it"*, and names this exact case as its worked
+counter-example — *"a 'declared mode' tag in a file fails (i) — no copyist reads it off the page"* — so
+S-2 would carry it beside L0 as annotation that no layer consumes as evidence; this text calls it
+**INPUT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+the declared mode is an L0 fact or an annotation, since the derivation excludes it by its own criterion
+and the outgoing record treats it as input. **This is the sharpest disagreement about L0's ADMISSION
+CRITERION found anywhere in the comparison** — every other difference has been about the list, not
+about the test.
+
+**Row 12.4 — time signatures, bar lines including double and section bar lines, and repeats are input;
+a double bar line is a section-boundary hint.**
+*Statement.* "Time signatures; barlines including double/section barlines; repeats. INPUT; … a double
+barline is a section boundary hint, directly useful for phrase-aligned key spans." — §1 (locator: line
+23).
+*Derived.* S-5, S-6, S-39.
+*Current-text axis.* S-5: **AGREES**. S-6: **AGREES**. S-39: **AGREES** — the BAR-LINE flag carries
+the type, and REPEAT is its own kind.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 12.5 — the fermata is the phrase-end marker in chorales and the most reliable phrase-boundary
+fact in this corpus.**
+*Statement.* "**Fermatas.** In Bach chorales the fermata IS the phrase-end marker — the single most
+reliable phrase-boundary fact in exactly our corpus" — §1 (locator: line 27).
+*Derived.* S-39, S-7. *Current-text axis.* S-39: **AGREES**. S-7: **AGREES** (fermatas are supplied).
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 10.3 and 10.43 on the chorale-specificity.
+
+**Row 12.6 — a long rest signals a phrase end as a fermata does, and the phrase-end publication wanted
+is fermatas and long rests together.**
+*Statement.* "a sufficiently long rest signals a phrase end just as a fermata does …. The composite
+publication the key layer wants: phrase-end facts from fermatas AND long rests together …, the silence
+threshold fit rather than guessed." — §1 (locator: line 32).
+*Derived.* S-39 (REST-BEGINS and ALL-SILENT), S-31 (silence is a notated fact and strong boundary
+evidence), S-28 (there is no tolerance).
+*Current-text axis.* S-39: **AGREES**. S-31: **AGREES**. S-28: **DIFFERS** — a *"sufficiently long"*
+rest is a threshold on a notated quantity, and S-28 admits none anywhere in the change-point
+construction.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether a
+silence must exceed a **length threshold** to count as boundary evidence, S-39 publishing every rest
+onset unconditionally and this text requiring the rest to be long enough. *(Related to but distinct
+from the **coincidence tolerance** family of Row 10.27: that is a tolerance on simultaneity, this is a
+threshold on duration.)*
+
+**Row 12.7 — grace notes, slurs and articulation, lyrics, tempo and character markings, pedal lines,
+and instrument and part names are further input facts.**
+*Statement.* "Grace notes (embellishment hints); slurs/articulation (phrase shaping, weak);
+lyrics/verse structure …; tempo/character markings (style/preset hints, weak); pedal lines …;
+instrument/part names (voice identification)." — §1 (locator: line 39).
+*Derived.* S-16 (grace notes published as ornamental attachments), S-7 (what L0 does not supply), S-2
+(annotation carried beside L0), S-13 (notated voices).
+*Current-text axis.* S-16: **AGREES** on grace notes being carried. S-2: **AGREES** on lyrics being
+annotation. S-13: **AGREES** on part names serving voice identification. S-7: **DIFFERS** on slurs,
+articulation and tempo.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 10.13, 10.14 and 10.52: that the
+L0 supplied list be settled, this being the **fifth** place in the outgoing record naming a fact S-7
+excludes.
+
+**Row 12.8 — a pedal line affects which pitches actually sound together.**
+*Statement.* "pedal lines (sustain — affects which pitches actually sound together; the known
+piano-pedal gap in the backlog)" — the same bullet (locator: line 42).
+*Derived.* S-54 (a release is the notated release whatever pedal mark spans it; PEDAL-HELD is
+published as an attribute; whether the release extends to the lift is OQ-3).
+*Current-text axis.* S-54: **DIFFERS** — S-54's interim rule is that the pedal changes **no** release
+and the question is explicitly open; this text states as a fact that the pedal changes what sounds
+together.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** **★ THIS BEARS DIRECTLY ON OQ-3**, which the
+derivation could not settle because no staged file carried a pedal mark: the outgoing record takes the
+position S-54 declined to take, and names it a known gap.
+
+**Row 12.9 — chord-symbol, Roman-numeral and Nashville annotations in the score are recognized as
+flags and never read.**
+*Statement.* "Existing chord-symbol / Roman-numeral / Nashville annotations IN the score — recognized
+as flags, never read (OI-80). A user-provided ground-truth hint the analysis ignores entirely." — §1
+(locator: line 45).
+*Derived.* S-2 (a chord symbol is annotation and no layer may consume it as evidence about the music),
+S-8 (a composer's own figures are annotation too).
+*Current-text axis.* S-2: **AGREES**. S-8: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Recorded and not adjudicated: the outgoing sentence
+reads the not-reading as a loss — *"ignores entirely"* — where S-2 and S-8 make it a rule with a stated
+cost. The two texts do the same thing for different reasons.)*
+
+#### §2 to §4 — the note layer, the derived views and the slicing layer
+
+**Row 12.10 (i) — the note layer publishes per note: pitch class, octave and register, onset,
+duration, tie state, voice and staff identity, and spelled pitch.**
+*Statement.* "Per note: pitch class, octave/register, onset, duration, tie state, voice and staff
+identity, spelled pitch. PUBLISHED at the model" — §2 (locator: line 51).
+*Derived.* S-3. *Current-text axis.* S-3: **AGREES** — and this list carries the **tie state** that
+Rows 1.3, 3.42 and 4.3 record as missing from the eleven as-built fields.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 12.10 (ii) — voice and staff identity is dropped at the shared tone surface, which is why
+everything above the note layer is voice-blind.**
+*Statement.* "**but voice/staff identity is DROPPED at the shared tone surface** (OI-74), which is why
+everything above the note layer is voice-blind (the structural root of several silos)." — the same
+bullet.
+*Derived.* S-13, S-33.
+*Current-text axis.* S-13: **DIFFERS** — S-13 supplies the notated voice and S-46's cue requires it.
+S-33: **DIFFERS** — identity by note is what S-33 makes a slice's identity.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is voice and staff identity still dropped
+at the shared tone surface, and does S-46's same-voice condition therefore have no input on the arm
+that ships?
+
+**Row 12.11 — register and bass-register identity, octave doubling counts and notated accidentals
+outside the signature are facts the note layer knows and does not publish.**
+*Statement.* "**register/bass-register identity as evidence** …; octave doubling counts (which pc the
+texture emphasizes); courtesy accidentals versus functional accidentals (a NOTATED accidental outside
+the signature is a tonicization/mode event in the composer's own hand …)." — §2 (locator: line 55).
+*Derived.* S-33 (a unison or octave doubling beginning or ending is a change point), S-3 (spelled
+pitch), S-44 (the bass is the lowest sounding pitch).
+*Current-text axis.* S-33: **AGREES** — and decisively: S-33 makes an octave doubling a change point,
+so the count this text calls UNDISCUSSED is a consequence of what the derivation publishes. S-3:
+**AGREES** — a notated accidental is part of spelled pitch. S-44: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **All three facts this bullet calls unpublished are
+published by the derivation**, which is worth the user's attention: S-33's slice identity is exactly
+the octave-doubling fact, and S-3's spelled pitch is exactly the notated accidental.
+
+**Row 12.12 (i) — beat strength is evidence for cadence arrival and for which tones are structural.**
+*Statement.* "Beat strength is evidence for cadence arrival and for which tones are structural." — §3
+(locator: line 65).
+*Derived.* S-35. *Current-text axis.* S-35: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 12.12 (ii) — the per-note beat weight is decoder-private.**
+*Statement.* "region-level weights PUBLISHED; **per-note beat weight decoder-private** (OI-82)" — the
+same bullet.
+*Derived.* S-35, S-50.
+*Current-text axis.* S-35: **DIFFERS** — S-35 publishes the class **per change point**. S-50:
+**DIFFERS** — S-50 lists it among what L1 publishes.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the per-position metric weight still
+private to one decoder, and does any consumer that needs it re-derive it?
+
+**Row 12.13 — the weighted pitch-class collections per span, with repetition and cross-voice boosts.**
+*Statement.* "Weighted pitch-class collections per span (with repetition and cross-voice boosts —
+constants unfit, OI-87). PUBLISHED to the key path (its emission input)." — §3 (locator: line 67).
+*Derived.* S-33, S-49. *Current-text axis.* S-33: **DIFFERS**. S-49: **DIFFERS**.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
+Rows 1.9, 3.46, 4.28 and 4.33 — weighting sounding notes into evidence is scoring.
+
+**Row 12.14 — bass onset and sub-boundary facts are computed and their consumption is narrow.**
+*Statement.* "Bass onset/sub-boundary facts. Computed; consumption narrow." — §3 (locator: line 69).
+*Derived.* S-44. *Current-text axis.* S-44: **AGREES** that the bass is a computed L1 fact.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which consumers read the bass onset facts,
+and is the bass they read S-44's lowest sounding pitch or Row 4.17's floored pick?
+
+**Row 12.15 — the phrase-boundary view's ends-a-phrase facts are dormant and gated off.**
+*Statement.* "**Phrase-boundary view: ends-a-phrase facts. DORMANT, gated off**" — §3 (locator: line
+70).
+*Derived.* S-39. *Current-text axis.* S-39: **THE DERIVATION IS SILENT** on any gate.
+*PROPOSED DISPOSITION.* **QUARANTINED**, with Rows 10.45 and 10.50 — the same fact, recorded in a
+second document.
+
+**Row 12.16 — the per-note melodic signals are trapped inside the decoder's membership internals.**
+*Statement.* "Per-note melodic signals (step/leap/suspension — `StepwiseSignals`): **TRAPPED inside
+the decoder's membership internals** (OI-72)." — §3 (locator: line 72).
+*Derived.* S-46. *Current-text axis.* S-46: **THE DERIVATION IS SILENT** on step and leap signals; its
+cue reads a semitone motion in one notated voice and nothing wider.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the per-note melodic signals still
+unavailable outside the decoder, and does anything that needs them re-derive them?
+
+**Row 12.17 — texture classification is dormant.**
+*Statement.* "Texture classification (homophonic/polyphonic; the voice-leading axis): DORMANT. The
+comparable product routes its key detectors BY texture — never discussed here." — §3 (locator: line
+74).
+*Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+*PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***, which `FRAMEWORK.md` §5
+names as an axis with its own layers running beside the harmonic spine.
+
+**Row 12.18 — a bass falling a fifth into a strong beat is the dominant-to-tonic skeleton, computable
+voice-aware without any chord knowledge.**
+*Statement.* "**bass MOTION intervals** (a bass falling a fifth into a strong beat is the
+dominant→tonic skeleton — computable voice-aware from the model without any chord knowledge)" — §3
+(locator: line 76).
+*Derived.* S-45 (BASS-FALLS-A-FIFTH), S-51 (computable with no tonality, chord or boundary as input).
+*Current-text axis.* S-45: **AGREES**, and exactly. S-51: **AGREES** — *"without any chord
+knowledge"* is S-51's own test in the outgoing text's words.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **★ THE INVENTORY LISTS THIS AS *UNDISCUSSED*, AND IT
+IS ONE OF THE CHARTER'S THREE CADENCE CUES**, published at S-45 with its witnesses. That is worth the
+user's attention: the fact the outgoing record calls never-proposed is the fact the charter mandates.
+
+**Row 12.19 — the soprano scale-degree at phrase ends: cadence formulas constrain the melody note.**
+*Statement.* "**soprano scale-degree at phrase ends** (cadence formulas constrain the melody note — a
+PAC wants the tonic on top)" — §3 (locator: line 78).
+*Derived.* S-13, S-44.
+*Current-text axis.* S-13: **DIFFERS**. S-44: **DIFFERS**.
+*The difference, in both texts' own words.* S-13 supplies *notated* voices only and states that *"no L1
+computation may need"* an unmarked line, and S-44 defines every cue over the bass *"not a notated
+voice"*; this text proposes a cue over the **soprano**, which Rows 8.4, 9.1, 9.7 and 10.17 all record
+as not reliably the structural melody.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with those four rows: **the outgoing record
+argues both sides of the top-voice question in different documents**, and the specification should
+state which it takes.
+
+**Row 12.20 — the slicing layer publishes slices, slice durations and explicit empty slices.**
+*Statement.* "Slices (change-point boundaries), slice durations, explicit empty slices. PUBLISHED." —
+§4 (locator: line 85).
+*Derived.* S-29, S-31, S-33.
+*Current-text axis.* S-29: **AGREES**. S-31: **AGREES**. S-33: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 12.21 — boundary strength: a graded boundary confidence instead of a binary cut.**
+*Statement.* "**boundary STRENGTH** (how decisive the change-point evidence was — a graded boundary
+confidence instead of a binary cut; useful for tonicization-boundary arbitration and for the
+segmentation-edge artifact class)" — §4 (locator: line 87).
+*Derived.* S-39, S-40. *Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS** — *"a graded boundary
+confidence instead of a binary cut"* is, in this text's own words, the collapse S-40 excludes.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. **This
+is the third document to want a graded boundary confidence**, after documents 8 and 10.
+
+**Row 12.22 — harmonic rhythm: accelerating harmonic rhythm approaching a phrase end is a
+cadence-approach signal, computable purely from slice durations.**
+*Statement.* "**harmonic rhythm** (the pattern of slice durations — accelerating harmonic rhythm
+approaching a phrase end is a classic cadence-approach signal, textbook theory, computable purely from
+slice durations)" — §4 (locator: line 89).
+*Derived.* S-29, S-50.
+*Current-text axis.* S-29: **THE DERIVATION IS SILENT** — S-29 defines a slice and publishes no
+statistic over slice lengths. S-50: **THE DERIVATION IS SILENT**.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L1 publish, or state that it does
+not publish, the **pattern of slice durations** — a fact computable from what it already publishes,
+which this text names as classic cadence-approach evidence. *(`FRAMEWORK.md` §5 assigns *the harmonic
+rhythm* to L3, which is recorded and not adjudicated: the pattern of L1's slice durations and the
+harmonic rhythm over decided chords are different quantities.)*
+
+**Row 12.23 — anacrusis and pickup detection.**
+*Statement.* "anacrusis/pickup detection" — §4 (locator: line 92).
+*Derived.* S-36 (in an anacrusis, positions are assigned to levels by aligning the bar's end with the
+end of a nominal bar).
+*Current-text axis.* S-36: **AGREES** — S-36 both detects the case, from the record's own irregular
+mark, and states what follows from it for the metric class.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(The derivation carries the fact this bullet calls
+undiscussed, and carries it further: S-36 says what the anacrusis does to the metric strength class,
+which this bullet does not reach.)*
+
+#### §6 and §8 — the chord layer's key-agnostic cues, and the circularity map
+
+**Row 12.24 — leading-tone-resolution events: a note a semitone below a candidate tonic resolving up
+at an arrival, key-agnostic and voice-aware.**
+*Statement.* "**Leading-tone-resolution events** (a note a semitone below a candidate tonic resolving
+up at an arrival — key-agnostic, voice-aware)." — §6 (locator: line 128).
+*Derived.* S-46.
+*Current-text axis.* S-46: **AGREES**, and in nearly the same words — S-46 fires when an event *"in a
+notated voice, is a semitone below Z's bass pitch class"* and an event *"in the same notated voice"*
+onsets at Z on that pitch class.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** **A second cue the inventory lists as undiscussed and
+the charter mandates**, with Row 12.18.
+
+**Row 12.25 — dominant-shape detection as a key vote: a dominant-seventh-shaped sonority implies a
+tonic a fifth below by its shape, before any key is known.**
+*Statement.* "**Dominant-SHAPE detection as a key vote.** A dominant-seventh-shaped sonority implies a
+tonic a fifth below BY ITS SHAPE, before any key is known. … the strongest chord-derived key hint that
+needs NO key input." — §6 (locator: line 124).
+*Derived.* S-51, S-47.
+*Current-text axis.* S-51: **DIFFERS** — S-51 admits an output as evidence only where it is computable
+*"with no tonality, chord or boundary as input"*, and a dominant **shape** is a chord shape. S-47:
+**AGREES** on the underlying move — anchoring a candidate tonality on a sounding fact rather than on a
+decided key.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, the
+chord being L2's; the key-agnosticism it appeals to is carried at S-47 and S-51 and travels with it.
+*(This is the **cadence evidence's inputs** family of Rows 9.12 and 11.14, met a third time: the
+question each time is whether a chord may be an input to key-axis evidence.)*
+
+**Row 12.26 — key and spelling is not circular here: the composer already spelled every note, so
+spelling is input, not inference.**
+*Statement.* "**Key ↔ spelling — NOT CIRCULAR FOR US.** … We read NOTATED scores: the composer already
+spelled every note. Spelling is INPUT, not inference. The circle exists only for audio systems; ours
+is broken by the source material itself." — §8 (locator: line 164).
+*Derived.* S-14, S-3.
+*Current-text axis.* S-14: **AGREES**, and on the same ground — S-14's *"Spelling is given, not
+inferred"* is the charter's own design point, and its false-negative path names MIDI-derived scores as
+out of scope, which is this sentence's *"audio systems"*.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 12.27 — key and cadence is broken by the key-agnostic form: the machinery votes for a tonic from
+root motion, quality and the raised leading tone, with no key input.**
+*Statement.* "**Key ↔ cadence — BROKEN BY THE KEY-AGNOSTIC FORM.** … The rebuilt machinery votes for a
+tonic FROM root motion, quality, and the raised leading tone — no key input." — §8 (locator: line 168).
+*Derived.* S-51, S-45, S-46.
+*Current-text axis.* S-51: **AGREES**. S-45: **AGREES** (root motion). S-46: **AGREES** (the raised
+leading tone).
+*PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 8.2, 9.25, 10.1 and 10.40. **This is the
+fifth independent statement of the key-agnosticism rule in the outgoing record, and every one of them
+agrees with the derivation.**
+
+**Row 12.28 — the general law: an abstract circle becomes acyclic when the score already contains one
+side, or a key-agnostic form of the evidence exists.**
+*Statement.* "a circle in the ABSTRACT … becomes acyclic in the CONCRETE when one of: the score
+already contains one side (spelling, signatures, fermatas, annotations); a key-agnostic form of the
+evidence exists (tonic votes, dominant shapes, bass skeletons); …" — §8 (locator: line 196).
+*Derived.* S-1 (the admission criterion), S-51.
+*Current-text axis.* S-1: **AGREES** — *"the score already contains one side"* is S-1's condition (i)
+stated as a remedy. S-51: **AGREES**.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Worth the user's attention: the outgoing law's first
+two conditions are exactly what L0's criterion and L1's claim test do, which is the strongest
+convergence of reasoning between the two records found so far.)*
+
+---
+
+#### Not a statement — counted by paragraph, per section, so the arithmetic closes (21)
+
+| Section | Paragraphs counted | What they are |
+|---|---|---|
+| the banner | 1 | the direction the inventory was written under and its status-label key |
+| §3 | 1 | the remainder of the undiscussed bullet — melodic contour per voice and parallel-motion facts, both voice-leading-axis objects |
+| §5 | 2 | what the key layer produces today, and the four facts it knows and does not publish |
+| §6 | 2 | what the chord layer produces today, and its other under-discussed facts |
+| §7 | 2 | what the function layer produces dormant, and its undiscussed facts |
+| §8 | 5 | the key layer's shopping list; the circularity lead-in; and circles 3, 4 and 5 — chord, non-chord-tone and progression-grammar |
+| §8b | 2 | the two declared future consumers, intonation and explainability |
+| §8c | 4 | the music21 local-key question, its origin, its status if adopted, and its gate |
+| §9 | 2 | what the inventory changes, and the cross-reference line |
+| **Total** | **21** | — |
+
+#### The arithmetic at this document
+
+- Rows written: **28** (12.1 to 12.28).
+- Of those, rows split into two claims and counted as two statements each: **12.1, 12.2, 12.10,
+  12.12** — four rows, so **+4**.
+- **Outgoing statements dispositioned: 32.**
+- Paragraphs counted under *not a statement*: **21**, across 8 sections and the banner.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** 32 disposition
+  lines over 32 statements.
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 15 | 12.1(i), 12.2(i), 12.4, 12.5, 12.9, 12.10(i), 12.11, 12.12(i), 12.18, 12.20, 12.23, 12.24, 12.26, 12.27, 12.28 |
+| ADOPTED — proposed | 7 | 12.3, 12.6, 12.7, 12.8, 12.19, 12.21, 12.22 |
+| RELOCATED | 3 | 12.13, 12.17, 12.25 |
+| QUARANTINED | 7 | 12.1(ii), 12.2(ii), 12.10(ii), 12.12(ii), 12.14, 12.15, 12.16 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **32** | — |
+
+**The column sums to 32, against 32 statements, so the arithmetic closes at this document:**
+15 + 7 + 3 + 7 + 0 + 0 + 0 = 32. **The statement lists in the right-hand column are the record.**
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 37 |
+| DIFFERS | 17 |
+| THE DERIVATION IS SILENT | 6 |
+| **Total verdicts** | **60** |
+
+*(Counted per named derived statement per statement-row. 60 verdicts over 32 statements because
+seventeen rows name more than one derived statement.)*
+
+#### What this document's rows put in front of the user
+
+**Row 12.3 is the sharpest disagreement about L0's ADMISSION CRITERION found anywhere in the
+comparison.** The outgoing record calls the **declared mode from the file format** an INPUT; S-1's
+criterion excludes it by name — *"no copyist reads it off the page"* — and S-2 would carry it beside
+L0 as annotation no layer may consume. Every other L0 difference in this comparison has been about
+what belongs on the list; this one is about the test that makes the list.
+
+**Two rows show the derivation publishing what this inventory calls never-proposed.** Row 12.18: a
+bass falling a fifth into a strong beat, *"computable … without any chord knowledge"* — which is S-45,
+one of the charter's three cues, published with its witnesses. Row 12.24: a leading-tone resolution,
+*"key-agnostic, voice-aware"* — which is S-46, in nearly the same words. **The facts this document
+lists as UNDISCUSSED are, two of them, the facts the charter mandates.** Row 12.11 is the same shape:
+octave-doubling counts and notated accidentals are S-33's slice identity and S-3's spelled pitch.
+
+**Row 12.8 takes the position S-54 declined to take**, and bears directly on **OQ-3**: the outgoing
+record states that a pedal line affects which pitches actually sound together, where the derivation
+could not settle it because no staged score carried a pedal mark. **Row 12.19 shows the outgoing
+record arguing both sides of the top-voice question** — a cadence cue over the soprano here, against
+four rows elsewhere recording that the highest voice is not reliably the melody.
+
+**And Row 12.28 is the strongest convergence of reasoning in the comparison.** The outgoing general law
+for dissolving a circular dependency names two conditions — the score already contains one side, and a
+key-agnostic form of the evidence exists — which are exactly what S-1's admission criterion and S-51's
+claim test do. The two records reached the same principle from different starting points.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -6076,6 +6518,16 @@ worked; it is not complete over the population.**
 - Row 11.7 — the spelling emission over the spelled degree, carrying the collection question through
   the signature mask. *(S-3's spelled pitch and S-6's signature travel with it.)*
 - Row 11.10 — segment duration as implicit-geometric with a hard length cap.
+- Row 12.13 — the weighted pitch-class collections per span, with their repetition and cross-voice
+  boosts.
+- Row 12.25 — dominant-shape detection as a key vote: a dominant-seventh-shaped sonority implying a
+  tonic a fifth below by its shape. *(The key-agnosticism it appeals to is carried at S-47 and S-51 and
+  travels with it.)*
+
+**To *the second axis — voice leading*.**
+
+- Row 12.17 — texture classification, homophonic against polyphonic, and the routing of key detectors
+  by texture.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -6193,6 +6645,19 @@ by paragraph rather than rowed. **Document 9 added the two below.**
     inline at each consuming site, and is the primitive still unreachable in production?
 52. Row 10.51 — do the fermata and breath markers still fire on ineligible voices, and does the tempo
     marker still fire at the opening tempo rather than at a change?
+53. Row 12.1(ii) — is spelled pitch still consumed by one pin only, and does any live consumer read the
+    unspelled pitch class where the spelling is available?
+54. Row 12.2(ii) — is a mid-piece key-signature change still never re-anchored on the arm that ships?
+55. Row 12.10(ii) — is voice and staff identity still dropped at the shared tone surface, and does
+    S-46's same-voice condition therefore have no input on the arm that ships?
+56. Row 12.12(ii) — is the per-position metric weight still private to one decoder, and does any
+    consumer that needs it re-derive it?
+57. Row 12.14 — which consumers read the bass onset facts, and is the bass they read S-44's lowest
+    sounding pitch or Row 4.17's floored pick?
+58. Row 12.15 — the same question as audit questions 50 and 51, recorded in a third document: are the
+    ends-a-phrase facts still dormant and gated off?
+59. Row 12.16 — are the per-note melodic signals still unavailable outside the decoder, and does
+    anything that needs them re-derive them?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -6386,6 +6851,24 @@ Gathered from the documents tabulated so far. **Not complete over the population
 49. Row 11.8 — that the specification state whether the **bass motion between slices** is L1-published
     evidence; S-45 publishes it as one of L1's three cues, and this text records bass-motion continuity
     across segments as not in the structure at all.
+50. **★ Row 12.3 — that the specification state whether the DECLARED MODE from the file format is an
+    L0 fact or an annotation.** S-1 admits a fact only where *"two competent copyists … would agree on
+    it"* and names this exact case as its worked counter-example — *"no copyist reads it off the
+    page"* — so S-2 would carry it beside L0, consumed by no layer as evidence about the music; the
+    outgoing record calls it **INPUT**. **This is the only difference in the comparison about L0's
+    ADMISSION CRITERION rather than about its list.**
+51. **★ Row 12.8 — that the specification state what a pedal line does to what sounds together.** The
+    outgoing record states as a fact that it *"affects which pitches actually sound together"*; S-54's
+    interim rule is that the notated release stands whatever pedal mark spans it, and S-54 marks the
+    question **OQ-3**, unfilled because no staged score carried a pedal mark. **The outgoing record
+    takes the position the derivation declined to take.**
+52. Rows 12.6, 12.7 and 12.22 — that a silence must exceed a **length threshold** to count as boundary
+    evidence (12.6); that the L0 supplied list be settled, a fifth document naming facts S-7 excludes
+    (12.7); and that L1 publish, or state that it does not publish, the **pattern of slice durations**
+    as cadence-approach evidence (12.22).
+53. Rows 12.19 and 12.21 — the top-voice question argued from the other side, a cadence cue over the
+    **soprano** at a phrase end (12.19); and a **graded boundary confidence instead of a binary cut**
+    (12.21), the third document to want one.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -6447,37 +6930,45 @@ Gathered from the documents tabulated so far. **Not complete over the population
     displacement placing the arrival one strong beat earlier.
 27. Row 11.14 — S-47's bass-anchored candidate tonality and S-51's no-tonality-as-input test, against
     a cue evaluated in the decode's own candidate key.
+28. Row 12.3 — S-1's copyist test, which names the declared-mode tag as its own counter-example,
+    against that tag recorded as INPUT.
+29. Row 12.8 — S-54's notated release with OQ-3 unfilled, against a stated fact that a pedal line
+    changes what sounds together.
+30. Rows 12.2(ii), 12.10(ii) and 12.12(ii) — S-6's signature in force at every position, S-13's
+    notated voice and S-35's per-change-point class, against a signature read once, voice identity
+    dropped at the tone surface, and a decoder-private beat weight.
+31. Row 12.19 — S-13's and S-44's refusal of the top voice, against a cadence cue over the soprano.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the eleven documents tabulated, not a distribution over the
-population.** The population is 29 documents; 18 are untouched. No figure below may be read as
+**This is a RUNNING total over the twelve documents tabulated, not a distribution over the
+population.** The population is 29 documents; 17 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 415 statements placed so far:**
+**Dispositions, over the 447 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | **161** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | **129** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | **24** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | **69** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | **31** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | **415** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | **176** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | **136** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | **27** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | **76** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | **31** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | **447** |
 
-**The arithmetic closes:** 161 + 129 + 24 + 69 + 0 + 31 + 1 = 415, against 415 statements, and each
+**The arithmetic closes:** 176 + 136 + 27 + 76 + 0 + 31 + 1 = 447, against 447 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same eleven documents:**
+**Current-text verdicts, over the same twelve documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | **421** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | **143** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | **125** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | **689** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | **458** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | **160** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | **131** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | **749** |
 
 **No ratio, percentage or grade is derived from any of these counts**, and none is offered as a
 measurement of anything. They are the arithmetic the disposition discipline requires, taken at this
