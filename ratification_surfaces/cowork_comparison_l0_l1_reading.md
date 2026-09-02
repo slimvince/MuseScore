@@ -58,11 +58,12 @@ The population's order is the artifact's:
 | 21 | `cowork_joint_estimator_architecture.md` | **DONE** |
 | 22 | `cowork_layer4_chordsymbol_design.md` | **DONE** |
 | 23 | `cowork_prefit_gates.md` | **DONE** |
-| 24–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 24 | `cowork_layer5_engagement_design.md` | **DONE** |
+| 25–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 24–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 25–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 24**, `cowork_layer5_engagement_design.md`.
+dispatch resumes at **position 25**, `cowork_notation_adoption_increment.md`.
 
 **★ WITH DOCUMENT 11, RULING 32's NAMED POPULATION IS COMPLETE** — its item 1 (the two
 `ARCHITECTURE.md` sections), item 2 (the five root design documents) and item 3 (the four places the
@@ -10754,6 +10755,417 @@ may not mean the same thing.
 
 ---
 
+### 6.24 — Document 24: `cowork_layer5_engagement_design.md`
+
+> **Manifest for this document.** Outgoing statements: **20** (rows 24.1 to 24.20; no row of this
+> document splits). Units counted under *not a statement*: **110**, across two banner blocks and 10
+> sections. Both counted at this document by this session.
+>
+> **Why this document is in the population:** a term-search hit retained by Ruling 33 as a member of
+> the ruled specification document set.
+>
+> **What it is.** Two read-only design passes over how the function layer is wired to the chord
+> layer's carry — L2's and L3's charter subjects throughout. Nine rows relocate. What is tabulated
+> below is what it says about **what a published carry must contain, and what a published mark may
+> mean**.
+>
+> **★★★ ROW 24.1 IS THE OUTGOING RECORD'S MEASURED CASE FOR CARRYING THE EXCLUDED.** In its own words:
+> *"the ruled-out and low-confidence roots are **information**, not noise … carry every above-threshold
+> distinct root, each at its graded confidence; carry ruled-out roots at low confidence rather than
+> dropping them."* And the measurement behind it: a **third distinct root clears threshold on about a
+> quarter of competition slices**, so a carry that surfaces only the winner and one alternate discards
+> it there. **Read beside Row 22.16, which caps the carry at a fixed rank, and Row 19.23, which caps
+> nothing: this document is the third position and the only measured one.**
+>
+> **★★★ AND ROW 24.15 IS S-52's DISTINCTION MADE AT A MARK.** The reasoning is quoted whole in the row:
+> a mark meaning *"no decided answer — genuinely undecidable"* may not be reused where the layer below
+> **committed confidently**, because that would tell a consumer *undecided* when a decision was made.
+> **The same shape as Row 22.17's unknown-is-not-absent, one level up and about a different field.**
+>
+> **None of this document's rows meets a passage the derivation's §6.2 records the deriving session
+> having SEEN.**
+
+---
+
+#### §2 — what the carry must contain
+
+**Row 24.1 — the exclusion tail is load-bearing: every above-threshold distinct root is carried at its
+graded confidence, and ruled-out roots are carried at low confidence rather than dropped.**
+*Statement.* "This is exactly the **load-bearing exclusion tail** (#12, finding-by-exclusion): the
+ruled-out and low-confidence roots are **information**, not noise … The contract therefore requires:
+**carry every above-threshold distinct root, each at its graded confidence; carry ruled-out roots at
+low confidence rather than dropping them.** A carry that surfaces only the winner + one alternate …
+**discards the ≥3rd root on ~¼ of slices** — a #12 violation the engaged carry must not inherit." —
+§2.2 (locator: lines 135–142).
+*Derived.* S-50, S-52.
+*Current-text axis.* S-50: **AGREES** — its publication list is exhaustive and caps nothing, so what
+the layer holds is what a consumer sees. S-52: **AGREES** — a carried item keeps its standing, which
+is what *"each at its graded confidence"* means and what makes a low-confidence carry safe.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ The outgoing record's only **measured** statement
+about capping a carried set, and it says the cap costs real information on about a quarter of the
+slices where it applies. Read beside Row 22.16 (a cap at a fixed rank) and Row 19.23 (no cap at all).*
+
+**Row 24.2 — as built, the cap is on voicings and not on roots, so a third distinct root is not
+guaranteed to survive; and on a committed slice no alternate root is named at all.**
+*Statement.* "The `topK` cap is on **voicings** …, **not roots**. `topK=6` voicings can be **saturated
+by the top ~2 roots' inversions/templates** before a 3rd distinct root is reached — so the ≥3rd-root
+minority … is **not guaranteed to survive** into `alternatives[]`. … on a **Commit** slice
+`openQuestion` is `None` … so **no alternate root is named at all**" — §2.3 (locator: lines 153–160).
+*Derived.* S-50.
+*Current-text axis.* S-50: **DIFFERS** — what it publishes is fixed by content and not by a rank cut,
+so the failure mode this text describes — a cap filled by variants of the same answer before a
+different answer is reached — has no counterpart in it.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* on the arm that ships, is the carried
+set still capped on voicings rather than on distinct roots; how often is the cap saturated before a
+second or third distinct root is reached; and does a committed slice still name no alternate root?
+
+**Row 24.3 — the owed guarantee is a distinct-root-first carry: capped on distinct roots, each root's
+variant depth bounded, the exclusion tail carried below the primary set.**
+*Statement.* "The engaged carry must **preserve distinct roots explicitly**, not as a by-product of a
+voicing cap. The declared *shape*: a **distinct-root-first carry** — for each distinct root above
+threshold, carry its best voicing + its variant set + its confidence, and cap on **distinct roots**
+(with each root's own variant depth bounded) … The exclusion tail (#12) is carried as the
+low-confidence roots below the primary set." — §2.3 (locator: lines 164–172).
+*Derived.* S-50.
+*Current-text axis.* S-50: **AGREES** on the direction — what is published is organised by what it
+means, not by how many entries fit.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** — the
+shape of a chord carry is that layer's.
+
+**Row 24.4 — the fan-out was measured on the legacy path, the voicing count a cap admits was not
+separately measured, and the guarantee gap is a structural argument independent of that unmeasured
+count.**
+*Statement.* "the §8 fan-out was measured on the **legacy production path** … the exact voicing-count a
+topK=6 cap admits was not separately measured on the decoder path. The distinct-root *guarantee* gap
+(§2.3) is a structural argument from the cap being voicing-keyed, independent of that unmeasured
+count." — §2.3, the flagged note (locator: lines 174–180).
+*Derived.* S-48, S-52.
+*Current-text axis.* S-48: **AGREES** in discipline — it declares its own window UNESTABLISHED and
+names the measurement that would settle it rather than filling the gap. S-52: **AGREES** — what rests
+on an unestablished quantity is marked, and here the argument is explicitly built not to.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**. *★
+Recorded because it is the outgoing record separating what was measured from what the argument needs,
+in the same paragraph — the shape S-48 takes for the cue window.*
+
+**Row 24.19 — the carry contract is expressed on the meaningful axis: a distribution over distinct
+roots, each with its best voicing, its variant set and its carried confidence.**
+*Statement.* "the carry contract is best expressed on the **meaningful axis — distinct roots**. Per
+slice Layer 5 reads a **distribution over distinct roots**, each root carrying: its **best
+voicing/variant** …; its **variant set** …; its **carried confidence** — so a root's *rank and margin*
+survive, not just its presence." — §2.1 (locator: lines 126–133).
+*Derived.* S-33, S-44.
+*Current-text axis.* S-33: **DIFFERS** — the derived unit's identity is the **event set**, and a
+distribution over roots is a summary of readings over that set rather than the set itself. S-44:
+**AGREES** — each carried reading keeps its bass and inversion, which is the fact S-44 defines.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+
+#### §3 and §4 — the evidence channels and the layer boundary
+
+**Row 24.5 — the bass and its inversion are a strong, semi-independent root-correctness signal,
+dissociable in the published research from pitch-class content.**
+*Statement.* "**Bass / inversion** | **load-bearing** — a strong, semi-independent root-correctness
+signal. … | Vuvan et al. 2021 dissociate bass from pitch-class content; both independently drive
+expectation" — §3.2 (locator: line 205).
+*Derived.* S-44.
+*Current-text axis.* S-44: **AGREES** — it defines the bass as *"the lowest sounding pitch of that
+slice's sounding set — not a notated voice"* and grounds every cue on it, for the same reason this
+table gives: the bass carries information the pitch-class content does not.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+*(S-44's definition of the bass travels with it.)*
+
+**Row 24.6 — the notated spelling disambiguates enharmonic and symmetric roots a pitch-class-blind fit
+cannot, and is read only where the distinction is a spelling distinction.**
+*Statement.* "**Pitch spelling** | **load-bearing** — disambiguates enharmonic/symmetric roots
+pitch-class-blind fit cannot (the symmetric-rotation churn). Read only where the distinction *is* a
+spelling distinction" — §3.2 (locator: line 206).
+*Derived.* S-3, S-14.
+*Current-text axis.* S-3: **AGREES** — the spelled pitch is supplied per note. S-14: **AGREES** —
+spelling is a required input and is not inferred, which is why it can carry a distinction the pitch
+classes cannot.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+
+**Row 24.7 — the licensed-progression signal is weak and uncorrelated with root correctness: it may
+break a tie among already-consistent readings and may never override a vertically-committed root.**
+*Statement.* "**Licensed progression** | **weak / NON-load-bearing for root correctness** — a tidy
+signal *uncorrelated* with root correctness; used only as a **tie-break among already-consistent
+readings**, NEVER as an override lever." — §3.2 (locator: line 209); the structural consequence at
+§3.3, *"the **licensed-progression signal is demoted to a tie-break** among already-consistent readings
+— never an override of a vertically-committed root"* (lines 226–228).
+*Derived.* S-51.
+*Current-text axis.* S-51: **AGREES**, and from the other end — its claim test excludes a chord or a
+boundary as an **input** to what a lower layer publishes, and this text excludes a progression judgment
+as an **override** of what a lower layer committed. **Both keep the same signal out of the same place,
+and this one has a measurement behind it.**
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 24.8 — the metric position and the harmonic rhythm are supporting features, not hand-weighted
+priors.**
+*Statement.* "**Metric position / harmonic rhythm** | supporting feature (not a hand-weighted prior)."
+— §3.2 (locator: line 210).
+*Derived.* S-35.
+*Current-text axis.* S-35: **AGREES** — the metric class is published as an ordinal with its period, a
+fact rather than a weight, and what a consumer does with it is the consumer's.
+*PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+
+**Row 24.9 — the selection reads the carry forward and never re-derives from the notes; the only
+cross-layer recompute is a bounded forward closure, never a back-edge.**
+*Statement.* "It **reads L4's carry forward and never re-derives from notes** (D4) — it reasons
+**within** the region key L3 chose. … **Acyclicity (the forward-only control-flow contract).** L5 reads
+L4's carry forward; the only cross-layer *recompute* is the §8 localized-forward-convergence-bounded
+mechanism (marked-final one-pass closure), never a back-edge." — §4.1 (locator: lines 259–271).
+*Derived.* S-53, S-50.
+*Current-text axis.* S-53: **AGREES**, and this is its rule two layers up — nothing published is
+re-derived by its consumer, and no inference edge runs backward. S-50: **AGREES** — the published
+surface is what the consumer reads, which is what makes re-derivation unnecessary.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+**Row 24.20 — the selection publishes its own joint-consistency margin as a declared confidence
+attached to the named decision, distinct from the resolver's next-best margin.**
+*Statement.* "**NEW: the selection's joint-consistency margin** as a declared **Class-M** confidence —
+'how much more consistent is the selected reading than the best *different-root* reading, across the
+§3.2 channels' … This is the honest confidence of the *selection decision itself* (U1: it attaches to
+the named decision 'function-of-unit-by-selection'), distinct from the resolver's `nextBestMargin`
+component." — §3.4 (locator: lines 240–243).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** — a published quantity carries what it is about, and a
+confidence attached to a **named** decision is that discipline applied to a number.
+*PROPOSED DISPOSITION.* **RELOCATED — to L3, *the read-off facts***.
+
+#### §6 — the pedal reader
+
+**Row 24.10 — as built, the pedal pass overwrites the whole winner-and-carry vector, re-implements the
+different-root scan a fourth time, and disables a display mechanism to keep it from contaminating the
+detection arithmetic.**
+*Statement.* "**(i) the clobber** — `results = pass2` replaces the shared winner+carry vector,
+discarding the Pass-1 full-voice reading and its distinct-root alternatives (a #12 information-loss on
+the carry); **(ii) the re-implemented diff-root scan** — … the **4th copy** of the 'best different-root
+alternative' decision; **(iii) the defensive append-disable** — … a display concern contaminating the
+detection math." — §6.1 (locator: lines 374–384).
+*Derived.* S-50, S-54.
+*Current-text axis.* S-50: **DIFFERS** — a published surface that a later pass **replaces wholesale**
+is not the publication the derivation specifies, in which what is published stands and consumers
+read. S-54: **AGREES** on the sense at issue — this is *pedal point*, a held tone in the harmony, which
+S-54 keeps expressly apart from a *pedal mark*.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* does a pass still replace the published
+readings wholesale on the arm that ships; is the different-root decision still computed in four places;
+and does a display-side mechanism still have to be disabled for a detection to compute correctly?
+
+**Row 24.11 — the decoder has no pedal detection at all, so engagement must give it a home rather than
+inherit one.**
+*Statement.* "the dormant decoder has **NO pedal detection** (grep of `chordslicedecoder.cpp`: 0
+matches) — engagement must give pedal a home, it is not inheriting one." — §6.1 (locator: lines
+386–387); the same gap in the built-versus-owed table, *"Pedal detection | **none in the decoder**
+(audit gap)"* (line 113).
+*Derived.* S-54.
+*Current-text axis.* S-54: **AGREES** on keeping the two senses apart, and the contrast is worth
+stating: **the derivation's open question is about the pedal MARK** — whether a damper instruction
+extends a release, OQ-3 — and **this document's gap is about the pedal POINT**, a held bass tone under
+a changing harmony. Two different unresolved things wearing one word, and both texts say which they
+mean.
+*PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* does any live path detect a pedal point
+on the arm that ships, and if the legacy pass is the only one, what happens to that detection when it
+retires? *(This is the outgoing record's **third** worked use of the pedal-point sense, after Rows 17.2
+and 22.18.)*
+
+**Row 24.12 — the pedal reading is an additive annotation on a carried candidate, and the full-voice
+reading and the rest of the distribution survive at their graded confidence rather than being
+overwritten.**
+*Statement.* "the reader **marks that alternative as the pedal reading** … and carries it as the
+slice's pedal-annotated candidate — **while the original full-voice reading and the rest of the
+distinct-root distribution SURVIVE in the carry** as honest alternatives (#12: no information loss; the
+bass-rooted reading is retained at its graded confidence, not overwritten)." — §6.3 (locator: lines
+415–421); the consequence at §6.4, *"The reader **annotates a carried candidate**; it never assigns
+`results = pass2`"* (lines 429–431).
+*Derived.* S-50, S-53.
+*Current-text axis.* S-50: **AGREES** — an annotation added beside what is published leaves the
+publication intact. S-53: **AGREES** — a later reader does not alter an earlier layer's result.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★ The annotate-never-mutate rule stated as the cure
+for a named defect, with the three symptoms shown to dissolve together once the mutation goes.*
+
+**Row 24.13 — whether the carried alternative agrees with a bass-stripped re-decode is a corpus fact to
+measure and not to assume, because stripping the bass can change which template wins.**
+*Statement.* "subject to one owed measurement …: whether the carried distinct-root alternative
+(bass-as-non-chord-tone) **agrees** with today's upper-voice re-decode `pass2`. Stripping the bass pc
+can change which template wins among the upper voices, so the equivalence is a corpus fact to
+*measure*, not assume" — §6.2 (locator: lines 401–404); restated as an owed measurement at §8.3 (lines
+562–566).
+*Derived.* S-52, S-48.
+*Current-text axis.* S-52: **AGREES** — what rests on an unestablished equivalence may not be put under
+load. S-48: **AGREES** in form — the measurement that would settle it is named rather than the gap
+filled.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)**.
+
+**Row 24.14 — the premise that the pedal material is already a carried alternative is measured
+underpowered and unfavourable, and the build is hard-gated on establishing it on a pedal-dense
+corpus.**
+*Statement.* "*(⛔ HARD-GATED 2026-07-10 …: [owed-P1] must be settled on an ESTABLISHED pedal-dense
+corpus BEFORE this is built — the load-bearing premise 'the material pedal need is usually already a
+carried distinct-root alternative' is currently underpowered AND unfavorable …)*" — §9.2 item 3
+(locator: lines 604–607).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES**, and this is establishment enforced against a design the same
+document argued for: the premise is named, measured, found wanting, and the build gated on settling it
+rather than on the argument's plausibility.
+*PROPOSED DISPOSITION.* **RELOCATED — to *the measurement of the analysis* (NOT A LAYER)** — an
+establishment obligation on a corpus is that member's business. *(No figure from it is restated here.)*
+
+#### §7 — what a published mark may mean
+
+**Row 24.15 — a mark meaning *no decided answer* may not be reused where the layer below committed
+confidently: that would tell a consumer *undecided* when a decision was made.**
+*Statement.* "**Overloading the plain boolean `openMark = true` on an F-B slice is semantically
+WRONG.** `openMark` means *'no decided answer — genuinely undecidable.'* The F-B case is the opposite:
+**L4 committed confidently** … and the reading is carried unchanged; what is surfaced is a *secondary*
+contradicting signal. Setting `openMark` would tell L6/display 'undecided' when L4 decided — an
+information loss (#12) and a **semantic collision** with the case-3 abstain meaning already on that
+field." — §7.2 (locator: lines 481–486).
+*Derived.* S-52, S-50.
+*Current-text axis.* S-52: **AGREES**, and this is its status field's whole reason — a published item
+carries **what kind of thing it is**, and two different states may not share one token. S-50:
+**AGREES** — the naming bar exists because *"a field's name is what a consumer will treat it as"*, which
+is precisely the collision this text refuses.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★★ The same distinction as Row 22.17's
+unknown-is-not-absent, one level up and about a different field: here it is
+**undecided-is-not-contradicted**, and the argument given is that a consumer would act on the wrong
+one.*
+
+**Row 24.16 — the honest mark carries its reason as a kind on one channel, rather than a second
+parallel flag beside it.**
+*Statement.* "**The #6-clean vehicle: UNIFY into one structured open-mark carrying its REASON/KIND.**
+Promote the boolean `openMark` … to a small open-mark annotation that names *why* the slice is marked —
+one channel, distinct kinds: **`Undecided`** …; **`FunctionContextContradiction`** …" — §7.2 (locator:
+lines 490–498); the alternative refused, *"A parallel … bool beside `openMark` is a duplicate channel
+(#6 violation) — two booleans on the same struct both meaning 'a surfaced honest-uncertainty
+annotation'"* (lines 486–488).
+*Derived.* S-39, S-50, S-52.
+*Current-text axis.* S-39: **AGREES**, and structurally — its boundary flags are **kinds on one
+channel**, each published *"with its witnesses"*, which is exactly the shape this text argues its way
+to. S-50: **AGREES** — one published channel per concern, named for what it detected. S-52: **AGREES**
+— the mark's reason is its standing, travelling with it.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *★★ Two texts reach the same design — a set of named
+kinds on one field rather than a growing row of booleans — and this one reaches it from a #6 argument
+about duplicate channels.*
+
+**Row 24.17 — the contradiction that used to overturn a reading is preserved as the mark's payload, so
+the signal is annotated rather than dropped.**
+*Statement.* "the **contradiction is preserved as the open-mark payload** — the frame's two quantities
+… carried as a **Class-M calibrated-uncertainty** on the annotation … The 1043 signals become
+uncertainty annotations, not dropped — the exact information a future … joint step will consume. This
+is the §8 case-3 honest-carry realized: **zero information loss** (#12), strictly dominating §3.A
+disable (which throws the … signals away)." — §7.3 (locator: lines 507–517).
+*Derived.* S-52.
+*Current-text axis.* S-52: **AGREES** — the quantity is published with its class declared, so a
+consumer knows it is a calibrated uncertainty and not a decision.
+*PROPOSED DISPOSITION.* **ADOPTED — carried.** *(No figure of that measurement is restated here beyond
+the quoted sentence's own words.)*
+
+**Row 24.18 — a resolution's basis is published as a named transparency value, and a demoted
+mechanism's basis is re-valued rather than left naming an act it no longer performs.**
+*Statement.* "It composes with the existing `ResolutionBasis` transparency enum …: the demoted
+`ResolutionBasis::FineGrainOverride` value becomes an **annotation basis** (renamed/re-valued to
+`FineGrainContradiction` — an owed spec edit), never an override basis." — §7.2 (locator: lines
+504–505).
+*Derived.* S-50.
+*Current-text axis.* S-50: **AGREES** — its naming bar is that a published field is named for what it
+is, and a value named for an act no longer performed would be consumed as that act.
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say that a
+published item names **how it was arrived at**, and that a renamed or demoted mechanism's basis value
+is re-named with it — the naming bar applied to provenance rather than to content.
+
+---
+
+#### Not a statement — counted by paragraph, bullet, table row and numbered item, per section, so the arithmetic closes (110)
+
+| Section | Units counted | What they are |
+|---|---|---|
+| the two banner blocks | 8 | the status, scope and structure-only declarations, the one-home arguments, and the grounding-tag keys of both parts |
+| §1 | 22 | the built-versus-owed inventory: the input contract, the two-phase selection machinery, the output assembly, the confidence frames, and the summary table |
+| §2 | 6 | the fan-out shape, the carry's three fields, and the guarantee-gap argument's remaining steps |
+| §3 | 11 | the joint-consistency objective, the two supporting channels, the F-B reconciliation's remaining bullets, and the published confidence's other components |
+| §4 | 13 | the layer-boundary bullets other than acyclicity, the five engagement gaps, and the four downstream hinges |
+| §5 | 3 | what Part 1 settles, the boundary honored, and the signature |
+| §6 | 16 | the current mechanism's four steps, the material-in-the-carry argument, the placement's remaining bullets, the dissolution of the three symptoms, and the no-fourth-scan note |
+| §7 | 8 | the settled disposition recap, the existing open-mark's three structs, and the annotation trigger |
+| §8 | 8 | the two boundary bullets, the two owed build items, and the remaining owed measurements |
+| §9 | 12 | the stage-closure statement and table, and eight of the nine build-inventory items |
+| §10 | 3 | what Part 2 settles, the boundary honored, and the signature |
+| **Total** | **110** | — |
+
+*The count is of units the tabulation did not reach, not of units it did not read. **The whole document
+was read.***
+
+#### The arithmetic at this document
+
+- Rows written: **20** (24.1 to 24.20). No row of this document splits.
+- **Outgoing statements dispositioned: 20.**
+- Units counted under *not a statement*: **110**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED rows at this document: 0.**
+
+#### The distribution at this document, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 7 | 24.1, 24.7, 24.9, 24.12, 24.15, 24.16, 24.17 |
+| ADOPTED — proposed | 1 | 24.18 |
+| RELOCATED | 9 | 24.3, 24.4, 24.5, 24.6, 24.8, 24.13, 24.14, 24.19, 24.20 |
+| QUARANTINED | 3 | 24.2, 24.10, 24.11 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **20** | — |
+
+**The column sums to 20, against 20 statements, so the arithmetic closes at this document:**
+7 + 1 + 9 + 3 + 0 + 0 + 0 = 20.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 28 |
+| DIFFERS | 3 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **31** |
+
+*(Counted per named derived statement per statement-row. 31 verdicts over 20 statements because eleven
+rows name more than one derived statement. **All three DIFFERS are about a published set being cut or
+replaced** — a cap filled by variants, a wholesale overwrite, and a distribution over roots standing in
+for the event set.)*
+
+#### What this document's rows put in front of the user
+
+**Row 24.1 settles, inside the outgoing record and with a measurement, the question Row 22.16 opened.**
+Three documents now state a rule about a carried alternative set: one caps it at a fixed rank
+(Document 22), one refuses to cap it (Document 19), and this one **measures what a cap costs** — a
+third distinct root clears threshold on about a quarter of competition slices — and rules that the
+ruled-out readings are carried at low confidence rather than dropped. **That is #12's exclusion clause
+with a number behind it.**
+
+**Row 24.15 is the sharpest statement in the outgoing record about what a published mark may mean.**
+A field meaning *genuinely undecidable* may not be reused for a case where the layer below committed
+confidently, **because a consumer would read it as undecided and act accordingly**. Row 24.16 is the
+remedy the same argument produces: one channel carrying named kinds, which is the shape S-39's flag set
+already has.
+
+**Row 24.11 is the third worked use of the pedal-POINT sense, and the contrast with S-54 is exact.**
+The derivation's open question is about the pedal **mark** — whether a damper instruction extends a
+release. This document's gap is about the pedal **point** — a held bass tone under a changing harmony,
+which no live decoder detects. **Two different unresolved things wearing one word**, and both texts say
+which they mean.
+
+**Row 24.7 is a measured refutation of a signal, and it lands on S-51's side.** The
+licensed-progression channel is *"uncorrelated with root correctness"* and may never override a
+vertically-committed root. S-51 keeps a chord or a boundary out of what a lower layer publishes; this
+keeps a progression judgment out of what an upper layer may overturn. **Same signal, same exclusion,
+two different grounds — and this one is measured.**
+
+**And Row 24.14 is a design gated against its own author's argument.** The premise that the pedal
+material is already in the carry is the argument §6.2 makes at length; §9.2 then hard-gates the build
+until that premise is established on a corpus, recording it as **underpowered and unfavourable** as it
+stands. That is #19 applied to a conclusion the same document wanted.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -10796,6 +11208,8 @@ worked; it is not complete over the population.**
   location, and the confidence.
 - Row 18.36 — a decision's forward context span running to the first of a cadence-anchored function, a
   picked punctuation boundary, or a hard bound.
+- Row 24.20 — the selection's own joint-consistency margin, published as a declared confidence attached
+  to the named decision and distinct from the resolver's next-best margin.
 - Row 18.37 — the discovery rule and the one-pass closure: an enlargement may finalize an open decision
   and never re-open a closed one, and a denied request leaves the decision resolved on what it saw with
   its provenance.
@@ -10870,6 +11284,16 @@ worked; it is not complete over the population.**
 - Row 23.2 — the committed surface carrying no abstention state, the carry and the abstention
   re-expressing as posterior mass. *(Read beside Row 22.15's named open question: two forms of the same
   honesty.)*
+- Row 24.3 — the owed distinct-root-first carry: capped on distinct roots, each root's variant depth
+  bounded, the exclusion tail carried below the primary set.
+- Row 24.5 — the bass and its inversion as a strong, semi-independent root-correctness signal. *(S-44's
+  definition of the bass travels with it.)*
+- Row 24.6 — the notated spelling disambiguating enharmonic and symmetric roots, read only where the
+  distinction is a spelling distinction. *(S-3's spelled pitch and S-14's required spelling travel.)*
+- Row 24.8 — metric position and harmonic rhythm as supporting features rather than hand-weighted
+  priors. *(S-35's class travels with it.)*
+- Row 24.19 — the carry expressed as a distribution over distinct roots, each with its best voicing,
+  its variant set and its carried confidence. *(S-33's event-set identity travels with it.)*
 - Row 18.18(ii) — which unit a requesting layer steps in when it asks for more music: the key layer in
   bars, the chord layer in slices. *(S-34's bar level and S-33's slice travel with it.)*
 - Row 18.27 — that the forward cascade is bounded because a carried-in key affects the leading-edge
@@ -10942,6 +11366,13 @@ worked; it is not complete over the population.**
 - Row 23.9 — that grading is on the full output surface, the committed path and the posterior mass,
   never the winner alone.
 - Row 23.10 — that fitted values are chorale values and generalization claims stay de-scoped.
+- Row 24.4 — that a measurement's own scope is stated beside the argument it supports, and that an
+  argument built not to need an unmeasured count says so. *(S-48's declared stand-in travels with it as
+  the same shape.)*
+- Row 24.13 — that whether a carried alternative agrees with a re-decode is measured and not assumed,
+  because removing a tone can change which reading wins.
+- Row 24.14 — that a load-bearing premise measured underpowered and unfavourable hard-gates the build
+  that rests on it until it is established on an adequate corpus.
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -11089,6 +11520,15 @@ by paragraph rather than rowed. **Document 9 added the two below.**
 71. Row 22.19 — the same question as audit questions 40 and 60, met a fourth time: is the over-grab
     share reproducible, on which arm was it measured, and does the whole apportionment — spelling,
     bass and inversion, local voice leading, over-grab — still hold at the current commit?
+72. Row 24.2 — on the arm that ships, is the carried set still capped on voicings rather than on
+    distinct roots; how often is the cap saturated by variants before a second or third distinct root
+    is reached; and does a committed slice still name no alternate root at all?
+73. Row 24.10 — does a pass still replace the published readings wholesale; is the different-root
+    decision still computed in four places; and does a display-side mechanism still have to be disabled
+    for a detection to compute correctly?
+74. Row 24.11 — does any live path detect a **pedal point** on the arm that ships, and if the legacy
+    pass is the only one, what happens to that detection when it retires? *(Distinct from the
+    derivation's OQ-3, which is about the pedal **mark**.)*
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -11506,6 +11946,10 @@ Gathered from the documents tabulated so far. **Not complete over the population
     says *exactly* and contains neither the unresolved notes nor the per-note tie flags S-3 supplies.
     **The third statement of this need in the outgoing record — after Row 1.7's built republication —
     and the first that is ratified, with a measured reason.**
+96. Row 24.18 — that the specification say a published item names **how it was arrived at**, and that a
+    renamed or demoted mechanism's basis value is re-named with it. S-50's naming bar reaches what a
+    field is called; this extends it to the provenance value beside it, so a basis no longer naming an
+    act it performs is not read as still performing it.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -11645,37 +12089,41 @@ Gathered from the documents tabulated so far. **Not complete over the population
 57. **Row 23.4 — S-50's *"L1 publishes exactly"* list against a ratified amendment that requires the
     unresolved notated notes, their continuations and the per-note tie flags to be published**, on the
     ground that the tie-resolved model alone is lossy for a real consumer.
+58. Rows 24.2, 24.10 and 24.19 — the three places a published set is cut or replaced: S-50's
+    uncapped publication against a cap filled by variants of the same answer, against a later pass
+    replacing the published readings wholesale, and S-33's event-set identity against a distribution
+    over roots standing in for the set.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**This is a RUNNING total over the twenty-three documents tabulated, not a distribution over the
-population.** The population is 29 documents; 6 are untouched. No figure below may be read as
+**This is a RUNNING total over the twenty-four documents tabulated, not a distribution over the
+population.** The population is 29 documents; 5 are untouched. No figure below may be read as
 describing the outgoing text as a whole.
 
-**Dispositions, over the 672 statements placed so far:**
+**Dispositions, over the 692 statements placed so far:**
 
-| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | **272** |
-| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | **205** |
-| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | **72** |
-| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | **88** |
-| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
-| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | **34** |
-| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
-| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | **672** |
+| Disposition | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ADOPTED — carried | 8 | 12 | 39 | 5 | 8 | 40 | 3 | 4 | 15 | 19 | 8 | 15 | 9 | 12 | 12 | 1 | 5 | 9 | 16 | 12 | 9 | 7 | 4 | 7 | **279** |
+| ADOPTED — proposed | 7 | 10 | 16 | 5 | 13 | 12 | 19 | 3 | 15 | 26 | 3 | 7 | 9 | 8 | 3 | 1 | 2 | 23 | 7 | 6 | 1 | 8 | 1 | 1 | **206** |
+| RELOCATED | 7 | 0 | 1 | 4 | 0 | 0 | 0 | 2 | 2 | 2 | 6 | 3 | 2 | 3 | 3 | 0 | 6 | 9 | 5 | 2 | 7 | 3 | 5 | 9 | **81** |
+| QUARANTINED | 9 | 3 | 6 | 23 | 12 | 4 | 5 | 0 | 2 | 5 | 0 | 7 | 0 | 2 | 3 | 0 | 1 | 3 | 1 | 0 | 0 | 2 | 0 | 3 | **91** |
+| DISCARDED | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **0** |
+| HISTORICAL | 4 | 2 | 2 | 3 | 9 | 5 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 1 | 0 | 0 | 0 | **34** |
+| UNPLACED | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | **1** |
+| **Statements** | 35 | 28 | 64 | 40 | 42 | 61 | 32 | 9 | 34 | 53 | 17 | 32 | 20 | 25 | 21 | 2 | 14 | 46 | 29 | 20 | 18 | 20 | 10 | 20 | **692** |
 
-**The arithmetic closes:** 272 + 205 + 72 + 88 + 0 + 34 + 1 = 672, against 672 statements, and each
+**The arithmetic closes:** 279 + 206 + 81 + 91 + 0 + 34 + 1 = 692, against 692 statements, and each
 column sums to its own document's statement count as that document's own arithmetic section states.
 
-**Current-text verdicts, over the same twenty-three documents:**
+**Current-text verdicts, over the same twenty-four documents:**
 
-| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | Total |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | **750** |
-| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | **228** |
-| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | **178** |
-| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | **1156** |
+| Verdict | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AGREES | 20 | 27 | 81 | 43 | 25 | 77 | 22 | 11 | 39 | 48 | 28 | 37 | 24 | 31 | 28 | 2 | 17 | 44 | 38 | 31 | 30 | 28 | 19 | 28 | **778** |
+| DIFFERS | 9 | 14 | 15 | 20 | 2 | 11 | 11 | 5 | 20 | 32 | 4 | 17 | 12 | 9 | 3 | 1 | 12 | 4 | 10 | 5 | 4 | 7 | 1 | 3 | **231** |
+| THE DERIVATION IS SILENT | 22 | 7 | 11 | 13 | 26 | 9 | 12 | 2 | 7 | 14 | 2 | 6 | 3 | 7 | 7 | 0 | 0 | 25 | 2 | 0 | 0 | 3 | 0 | 0 | **178** |
+| **Verdicts** | 51 | 48 | 107 | 76 | 53 | 97 | 45 | 18 | 66 | 94 | 34 | 60 | 39 | 47 | 38 | 3 | 29 | 73 | 50 | 36 | 34 | 38 | 20 | 31 | **1187** |
 
 **★ A NOTE THE COUNTS NEED, RECORDED AT DOCUMENT 16 BECAUSE THAT IS WHERE IT FIRST BITES.** A
 document's statement count measures **how much of it speaks to L0's or L1's subject**, not how large
@@ -11698,7 +12146,7 @@ file's own rows.
 **DISCARDED is zero, and that is a fact worth stating rather than leaving to be noticed.** Principle
 #10's worth test discards an issue that bears neither on building something that serves
 maximum-precision inference nor on the code's comparability against a correct specification. **No
-statement in the twenty-three documents was placed there.** The reason is visible in the classes that
+statement in the twenty-four documents was placed there.** The reason is visible in the classes that
 did
 absorb the population: the statements that might have looked discardable are overwhelmingly
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
