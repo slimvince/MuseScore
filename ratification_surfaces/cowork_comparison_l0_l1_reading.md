@@ -36,11 +36,12 @@ The population's order is the artifact's:
 | # | Document | State |
 |---|---|---|
 | 1 | `ARCHITECTURE.md` — the Layer 1 section | **DONE** |
-| 2–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
+| 2 | `ARCHITECTURE.md` — the Layer 2 section | **DONE** |
+| 3–29 | the remainder of the population, in the artifact's order | **UNTOUCHED** |
 
-**UNTOUCHED means untouched, not partly worked.** Nothing in documents 2–29 has been read for
+**UNTOUCHED means untouched, not partly worked.** Nothing in documents 3–29 has been read for
 tabulation, quoted, counted or dispositioned, and no row for any of them exists anywhere. The next
-dispatch resumes at **position 2**, `ARCHITECTURE.md` — the Layer 2 section.
+dispatch resumes at **position 3**, `cowork_layer1_note_model_design.md`.
 
 **The sections that can only be written once every document is done are therefore NOT written**, and
 their absence is deliberate rather than an omission: the derived-side rows (one per S-1…S-54 with the
@@ -895,6 +896,575 @@ notes of a tied group open nothing — the same shape the pilot's comparison fou
 
 ---
 
+### 6.2 — Document 2: `ARCHITECTURE.md`, the section *"#### Layer 2 — the deterministic change-point slicer"*
+
+> **Manifest for this document.** Outgoing statements: **28** (rows 2.1 to 2.28). Listed under *not a
+> statement*: **5**. Counted at this document by this session; the count appears here and nowhere
+> else.
+>
+> **Why this document is in the population:** named by Ruling 32 item 1. It is the current
+> specification of change-point slicing — the centre of L1's subject, faces (a) and (c).
+>
+> **How the section is bounded:** by heading text, from `#### Layer 2 — the deterministic
+> change-point slicer` to the next `#### ` heading (`#### Layer 3 — key/mode is the sequence
+> decoder`), as the population artifact locates it (**D-307**).
+>
+> **★ This document carries the sharpest disagreement found so far**, at Row 2.16 — grace notes.
+
+---
+
+**Row 2.1 — the slicer's output is a fact, not a judgment.**
+
+*Outgoing statement.* "A pure, deterministic FACT read off the layer-1 note model, **not** a
+judgment." — the opening paragraph (locator: line 1640).
+
+*Derived statements that speak to it.* S-50 (what L1 publishes and the naming bar), S-51 (the test for
+whether an output is a claim), S-53 (nothing L1 publishes depends on L2).
+
+*Current-text axis.* S-50: **AGREES**. S-51: **AGREES**. S-53: **AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-51 makes the same distinction mechanical: an output
+is evidence rather than a claim when it is computable from L0 facts with no tonality, chord or
+boundary as input).
+
+---
+
+**Row 2.2 — the slicer is wired into the live pipeline.**
+
+*Outgoing statement.* "It **is** now wired into the live analysis pipeline: layer 3 consumes the
+slicer (`regionanalyzer.cpp:579` → `KeyModeSequenceDecoder`)." — the opening paragraph (locator: line
+1641).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 2.3 — the slicer's own output did not move; the consuming layer did.**
+
+*Outgoing statement.* "The slicer's own output stays **byte-identical** on the whole-score live path
+(the clip is inert there); the analysis movement came from **L3's consumption** of the slices, not
+from the slicer." — the opening paragraph (locator: line 1643).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the clip still inert on the whole-score
+path at the current commit, and is that tested rather than asserted?
+
+---
+
+**Row 2.4 — the layer enumerates the change-point slices from the note model.**
+
+*Outgoing statement.* "**Enumerate the change-point slices of a score from the note model.**" — the
+module table (locator: line 1648).
+
+*Derived statements that speak to it.* S-28, S-29.
+
+*Current-text axis.* S-28: **AGREES**. S-29: **AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+---
+
+**Row 2.5 — the slice list is ordered, covering, gapless and non-overlapping, and half-open.**
+
+*Outgoing statement.* "`changePointSlices(noteModel)` returns an ordered, **covering, lossless** list
+of half-open `[start,end)` spans that **tile the domain with no gaps and no overlaps**." — the module
+table (locator: line 1648).
+
+*Derived statements that speak to it.* S-29 (the half-open convention), S-31 (a silent slice is
+published like any other), S-32 (the list covers the working span exactly).
+
+*Current-text axis.* S-29: **AGREES**. S-31: **AGREES**. S-32: **AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (the charter's own *"ordered, covering, gapless and
+non-overlapping"*, which S-29 derives the half-open form of).
+
+---
+
+**Row 2.6 — boundaries are the sorted-unique union of every onset and every release of the eligible
+notes.**
+
+*Outgoing statement.* "Boundaries = the sorted-unique union of every **onset AND every release** of
+the **eligible** notes; consecutive boundaries form the slices." — the module table (locator: line
+1648).
+
+*Derived statements that speak to it.* S-28 (two positions are the same change point iff equal as
+rationals, with no tolerance), S-15 (what makes a note eligible).
+
+*Current-text axis.* S-28: **AGREES** — *sorted-unique* is exactly S-28's exact-equality merge with no
+tolerance. S-15: **AGREES** on the construction, and the eligibility term itself is Row 2.8's subject.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-28 with the charter's own release clause).
+
+---
+
+**Row 2.7 — the enumeration's cost.**
+
+*Outgoing statement.* "O(n log n)." — the module table (locator: line 1648).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states no cost bound anywhere.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the enumeration's measured cost the
+stated bound on the largest scores the record requires to be handled?
+
+---
+
+**Row 2.8 — a note participates in boundary generation on three flags.**
+
+*Outgoing statement.* "A note participates in boundary generation iff layer 1 flagged it `plays &&
+visible && staffEligible`." — *Boundaries over layer-1's eligibility annotation* (locator: line 1651).
+
+*Derived statements that speak to it.* S-15.
+
+*Current-text axis.* S-15: **DIFFERS**.
+
+*The difference, in both texts' own words.* S-15 admits a note as eligible *"if and only if it is
+pitched, it is not marked as not to be played, it is visible, it is not a grace note, and its notated
+duration is greater than zero"* — five conditions; the outgoing text tests **three** flags, of which
+one (`staffEligible`) is not among S-15's, and omits *pitched*, *not a grace note* and *positive
+duration*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the eligibility predicate be
+stated once, in one place, over the union of the two lists — S-15's five conditions together with the
+staff-level fact Row 1.6(ii) already proposes — since the two texts currently test different
+predicates under the same word.
+
+---
+
+**Row 2.9 — the slicer reads the flags and does not re-decide them.**
+
+*Outgoing statement.* "The slicer **reads** those flags; it does not re-filter." —
+*Boundaries over layer-1's eligibility annotation* (locator: line 1652).
+
+*Derived statements that speak to it.* S-9 (what L1 reads from L0), S-15.
+
+*Current-text axis.* S-9: **AGREES**. S-15: **AGREES** — S-15 builds eligibility from L0 facts and
+re-derives none of them.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+---
+
+**Row 2.10 — an ineligible note opens no boundary but rides along in the slice's overlapping set.**
+
+*Outgoing statement.* "A muted / invisible / non-tonal-staff note opens **no** boundary, yet still
+rides along in each slice's `overlapping()` set (passed through, not dropped)." — *Boundaries over
+layer-1's eligibility annotation* (locator: line 1652).
+
+*Derived statements that speak to it.* S-15 (an eligible note *"belongs to the sounding set of every
+slice between"* its onset and release), S-18 (excluded notes are carried beside L1's output as
+*silent notes*), S-20 (an unpitched note *"enters no sounding set … is not published by L1 at all"*).
+
+*Current-text axis.* S-18: **AGREES** on carrying rather than dropping. S-15: **DIFFERS**. S-20:
+**DIFFERS**.
+
+*The difference, in both texts' own words.* S-15 puts only **eligible** events in a slice's sounding
+set and S-18 carries the excluded ones **beside** L1's output, labelled by the flag that excluded
+them, while S-20 says an unpitched note *"enters no sounding set"* at all; the outgoing text keeps the
+ineligible note **inside** each slice's own overlapping set, *"passed through, not dropped"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the two texts agree that nothing is dropped and
+disagree about **where** the carried note lives — in the slice's own set, or beside the output — and
+that is a difference about the published shape of L1's output rather than about a rule of analysis.
+This session cannot defend calling it ADOPTED (the content is not carried: S-18's carrier is a
+different structure), RELOCATED (it is L1's own output shape), or QUARANTINED (the sentence states a
+rule about the output, not a property of the code) in one sentence at the two texts. **The user
+places it.**
+
+---
+
+**Row 2.11 — a slice is constant *tonal* sonority; ineligible notes are passenger metadata.**
+
+*Outgoing statement.* "A slice is therefore 'constant **tonal** sonority'; non-eligible notes are
+passenger metadata." — *Boundaries over layer-1's eligibility annotation* (locator: line 1654).
+
+*Derived statements that speak to it.* S-15, S-33.
+
+*Current-text axis.* S-15: **AGREES** — the constancy is over the eligible set in both texts. S-33:
+**AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-15 with S-33).
+
+---
+
+**Row 2.12 — slice identity is the eligible sounding-note set, not the pitch-class set.**
+
+*Outgoing statement.* "**Slice identity is the eligible sounding-NOTE set** (not the octave-folded PC
+set — a unison/octave shrink is a real boundary though the PC set is unchanged)." — *Boundaries over
+layer-1's eligibility annotation* (locator: line 1655).
+
+*Derived statements that speak to it.* S-33.
+
+*Current-text axis.* S-33: **AGREES** — and the agreement is exact, both texts giving the unison or
+octave shrink as the case that decides it.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-33, whose own source class is *given*: it quotes the
+charter, and this sentence is the charter's other statement of the same rule).
+
+---
+
+**Row 2.13 — the tiled domain is the intersection of the eligible-notes span with the loaded span.**
+
+*Outgoing statement.* "The tiled domain is the intersection of the eligible-notes span with the
+model's **loaded span**: `[max(loadedStart, firstEligibleOnset), min(loadedEnd,
+lastEligibleRelease))`." — *Covering / empty slices, clipped to the loaded span* (locator: line 1658).
+
+*Derived statements that speak to it.* S-32.
+
+*Current-text axis.* S-32: **DIFFERS**.
+
+*The difference, in both texts' own words.* S-32 states that *"The published slice list covers the
+working span exactly. Its first change point is the span's start; its last is the span's end"*, and
+that where no eligible event begins at the span's start *"the first slice is a silent slice"*; the
+outgoing text tiles the **intersection**, so a working span beginning in silence is tiled from the
+first eligible onset instead of from the span's start.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state which of
+the two domains is published — the working span exactly, or its intersection with the sounding
+material — since the two differ precisely over leading and trailing silence, and Row 2.15 is the same
+question stated from the other side.
+
+---
+
+**Row 2.14 — every tick in the domain lands in exactly one slice.**
+
+*Outgoing statement.* "Every tick in that domain lands in exactly one slice." — *Covering / empty
+slices* (locator: line 1660).
+
+*Derived statements that speak to it.* S-29, S-30 (no slice has zero length), S-31.
+
+*Current-text axis.* S-29: **AGREES**. S-30: **AGREES**. S-31: **AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-29's half-open convention is what makes the
+exactly-one property hold by construction, which S-29 states in terms).
+
+---
+
+**Row 2.15 — a sustained-in or sustained-out note is clipped to the loaded boundary.**
+
+*Outgoing statement.* "A **sustained-in** note (onset `< loadedStart`) is clipped to start at
+`loadedStart`, a **sustained-out** note (release `> loadedEnd`) to end at `loadedEnd` — slicing never
+drags outside the loaded span." — *Covering / empty slices* (locator: line 1661).
+
+*Derived statements that speak to it.* S-32.
+
+*Current-text axis.* S-32: **DIFFERS**.
+
+*The difference, in both texts' own words.* Both bound the slicing to the span; S-32 does it by
+**keeping the event and marking it** — a slice *"whose sounding set consists of events that began
+before the span (marked *entered sounding*)"*, and *"events that release after the span's end are
+marked *cut by the span*"* — while the outgoing text does it by **clipping the note's span** and
+publishes no such mark.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the *entered sounding* and *cut
+by the span* marks S-32 requires be published beside the clipped slice list, so that a consumer can
+tell a real onset at the span's start from an artefact of where the span begins.
+
+---
+
+**Row 2.16 — no note kind is special-cased, and a grace note opens and closes a boundary by its span.**
+
+*Outgoing statement.* "**No special-casing of any note kind** — grace and tuplet outcomes fall out of
+the note-model spans as facts (verified at source: a grace event carries onset = parent-chord tick and
+duration = `playTicksFraction()` = its nominal written value, so a grace genuinely opens/closes a
+boundary by its span; tuplet ticks are the model's real, un-snapped ticks)." — *Zero interpretation*
+(locator: line 1676).
+
+*Derived statements that speak to it.* S-15, S-16, S-30.
+
+*Current-text axis.* S-16: **DIFFERS**. S-15: **DIFFERS**. S-30: **DIFFERS**.
+
+*The difference, in both texts' own words.* S-16 states flatly that *"A grace note opens no change
+point and belongs to no sounding set"*, and S-15 makes *"it is not a grace note"* one of the five
+eligibility conditions, on the ground that a grace note has no metric duration of its own so *"a
+change point there would be a performance decision, which L1 may not take"*; the outgoing text states
+that *"a grace genuinely opens/closes a boundary by its span"*, the span being the grace's nominal
+written value at the parent chord's tick. S-30 adds that the derivation relies on graces having **no**
+position in order to assert that no slice has zero length.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state, once and
+explicitly, whether a grace note opens a change point — the two texts give opposite answers, and the
+answer decides both the change-point set and the no-zero-length-slice invariant. **This row is the
+sharpest disagreement in the two documents tabulated so far, and it is put as a difference, not
+settled here.**
+
+---
+
+**Row 2.17 — the slicer needs no grace or tuplet code.**
+
+*Outgoing statement.* "The slicer needs no grace/tuplet code." — *Zero interpretation* (locator: line
+1680).
+
+*Derived statements that speak to it.* S-16.
+
+*Current-text axis.* S-16: **DIFFERS** — S-16 requires a grace note to be excluded from the
+change-point set and published instead as an *ornamental attachment* of its host, which is a rule
+about graces that some code must implement.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.16 as its consequence.
+
+---
+
+**Row 2.18 — no thresholds, no merging, no notion of ornamental or passing.**
+
+*Outgoing statement.* "No thresholds, min-gap, merge, or snapping; no notion of
+'ornamental/passing/structural'." — *Zero interpretation* (locator: line 1675).
+
+*Derived statements that speak to it.* S-28 (*"There is no tolerance"*), S-31 (a silent slice is not
+merged into a neighbour), S-50 (the naming bar).
+
+*Current-text axis.* S-28: **AGREES**. S-31: **AGREES**. S-50: **AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-28 with S-31).
+
+---
+
+**Row 2.19 — an interior all-rest span is an explicit empty slice, not a gap.**
+
+*Outgoing statement.* "An interior span where all eligible voices rest is an **explicit EMPTY slice**
+(empty eligible overlap set), not a gap — it falls out of the consecutive-boundary construction for
+free." — *Covering / empty slices* (locator: line 1666).
+
+*Derived statements that speak to it.* S-31.
+
+*Current-text axis.* S-31: **AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-31: *"A silent slice … is published as a slice like
+any other, with its empty set, and is not merged into a neighbour"*).
+
+---
+
+**Row 2.20 — leading and trailing silence inside the loaded span is not sliced.**
+
+*Outgoing statement.* "Leading/trailing silence within the loaded span is not sliced; silence outside
+the domain is not invented." — *Covering / empty slices* (locator: line 1668).
+
+*Derived statements that speak to it.* S-32, S-31.
+
+*Current-text axis.* S-32: **DIFFERS**. S-31: **DIFFERS**.
+
+*The difference, in both texts' own words.* S-32 requires the list's first change point to be *"the
+span's start"* and, where nothing begins there, a **silent first slice**; the outgoing text does not
+slice leading or trailing silence at all.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.13 — it is the same question
+seen from the silence side, and the proposal is the same: state which domain is published.
+
+---
+
+**Row 2.21 — re-slicing on extend is a re-call of the same pure function.**
+
+*Outgoing statement.* "**Re-slice on extend** = re-call `changePointSlices` on the enlarged model (the
+slicer is a pure function of (notes, loaded span)): interior real change-points are stable, the edge
+slice abutting an *artificial* clip boundary extends into the new context, and the result equals a
+fresh slice over the enlarged span (re-slice equivalence)." — *Covering / empty slices* (locator: line
+1669).
+
+*Derived statements that speak to it.* S-53 (L1 is computable in one forward pass, the working span
+being the only thing a caller supplies beyond L0).
+
+*Current-text axis.* S-53: **THE DERIVATION IS SILENT** on extension — S-53 fixes the span as the
+caller's and never contemplates enlarging one.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state the
+re-slice equivalence property — that slicing after an enlargement equals slicing a span built at the
+enlarged extent — since it is what makes an enlargement safe and the derivation states no equivalent.
+
+---
+
+**Row 2.22 — incremental re-slicing is deferred.**
+
+*Outgoing statement.* "Incremental re-slice is Phase 2b (deferred, byte-identical)." — *Covering /
+empty slices* (locator: line 1672).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a deferral, a status rather than a rule.
+
+---
+
+**Row 2.23 — boundaries are necessary but not sufficient; a real chord change can never be missed.**
+
+*Outgoing statement.* "Boundaries are **necessary but not sufficient** for a chord change (the
+exhaustive candidate grid): a real chord change can never be missed (over-grab is structurally
+impossible), and the slicer never asserts a change — layer 3 decides which boundaries are real, layer
+N groups equal analyses." — *Zero interpretation* (locator: line 1680).
+
+*Derived statements that speak to it.* S-28, S-50, S-53.
+
+*Current-text axis.* S-28: **AGREES** — S-28's ground for refusing a tolerance is exactly that *"A
+tolerance would merge distinct moments and could delete a real candidate, which the charter's
+construction exists to make impossible."* S-50: **AGREES**. S-53: **AGREES**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-28 with S-53; the layer numbering in the sentence is
+the old scheme and is a naming rather than a claim).
+
+---
+
+**Row 2.24 — the corpus and suite figures at the build.**
+
+*Outgoing statement.* "composing 631/631, notation 53/53, snapshots 11/11 with no golden refresh;
+corpus 0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53" — *Fully
+covered + byte-identical on the live path* (locator: line 1691).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are these figures the current ones, and do
+the suite sizes they name still exist at the current commit?
+
+---
+
+**Row 2.25 — the loaded-edge boundary is artificial, vanishes on extension, and the edge slice grows.**
+
+*Outgoing statement.* "The clip injects a boundary at the loaded start that is not a change-point at
+all: a sustained-in note sounds on both sides of it, and it exists only because the far side was not
+loaded." — the 2026-08-08 block (locator: line 1703).
+
+*Derived statements that speak to it.* S-28, S-32.
+
+*Current-text axis.* S-32: **DIFFERS**. S-28: **DIFFERS**.
+
+*The difference, in both texts' own words.* S-32 makes the span's start a **change point** — *"Its
+first change point is the span's start"* — while S-28 defines a change point as the onset or release
+of an eligible event; the outgoing text says the injected boundary *"is not a change-point at all"*
+and exists only because the far side was unloaded. **The derivation is internally in the same tension
+and does not name it**: S-32 admits a change point that S-28's definition does not produce.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether the
+span's edge is a change point or an artificial boundary marked as such, since a consumer weighing
+boundary evidence at that position needs to know which it is.
+
+---
+
+**Row 2.26 — an "old slices stay byte-identical" assertion is false and must never be written as a
+test.**
+
+*Outgoing statement.* "an 'old slices stay byte-identical' assertion is **FALSE and must never be
+written as a test**." — the 2026-08-08 block (locator: line 1701).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.21: the prohibition is the
+operational half of the re-slice equivalence property, and it is the half a later build is most
+likely to breach.
+
+---
+
+**Row 2.27 — the slice stays minimal; selection-versus-context is the consumer's to derive.**
+
+*Outgoing statement.* "**The slice stays MINIMAL — it carries start and end and nothing else; whether
+a slice is inside the user's selection or is only surrounding context is derived by the consumer.**"
+— the 2026-08-08 block (locator: line 1718).
+
+*Derived statements that speak to it.* S-50.
+
+*Current-text axis.* S-50: **DIFFERS**.
+
+*The difference, in both texts' own words.* S-50 publishes *"the slice list … with each slice's
+sounding set by event identity"*, so the slice carries its notes; the outgoing text carries *"start
+and end and nothing else"* and leaves the notes to be fetched from the note model on demand.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
+the sounding set is **carried on** the slice or **fetched from** L0 by identity, since S-50 lists it
+as published and the outgoing text deliberately does not store it.
+
+---
+
+**Row 2.28 — this layer owns no selection semantics, so a selection tag would be another concern's.**
+
+*Outgoing statement.* "this layer owns no selection semantics — cutting the music where the sounding
+set changes involves no judgment about what the user selected — so a selection tag would keep another
+component's concern in this one's output." — the 2026-08-08 block (locator: line 1722).
+
+*Derived statements that speak to it.* S-53.
+
+*Current-text axis.* S-53: **AGREES** in substance — S-53's whole point is that L1 publishes
+candidates and evidence and leaves every decision to its consumer.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (S-53).
+
+---
+
+#### Not a statement — listed so the arithmetic closes (5)
+
+1. "The **constant-(tonal-)sonority slicer** — layer 2 of the rebuild." — *a naming*, and the layer
+   numbering is the old four-layer scheme.
+2. "Built with `slicer_tests.cpp` (20 tests: the audit §3 functional set + edge/eligibility cases +
+   the Phase-2 bounded-context set CP1–CP7 — degenerate clip-inertness, sustained-in/out clip
+   correctness, seam-aware stability on extend, re-slice equivalence)." — *a test count and a test
+   locator*.
+3. "See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
+   `cc_layer2_audit_dossier.md`." — *a pointer*; the second of the three is population position 6.
+4. The **delegation pointer** paragraph naming `cowork_layer2_slicing_design.md`, with its
+   parenthetical distinguishing a citation from a delegation — *a pointer and a filing decision*.
+5. "On a **whole-score** model `loadedStart ≤ firstEligibleOnset` and `loadedEnd ≥
+   lastEligibleRelease`, so the clip is **inert** … byte-identical to before the clip." — *a
+   restatement of Row 2.3's measured property in arithmetic form*; it is not counted twice.
+
+#### The arithmetic at this document
+
+- Statements: **28** (rows 2.1 to 2.28; no row of this document splits).
+- Listed under *not a statement*: **5**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** 28 disposition
+  lines over 28 statements.
+- **UNPLACED rows at this document: 1** (Row 2.10).
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 12 | 2.1, 2.4, 2.5, 2.6, 2.9, 2.11, 2.12, 2.14, 2.18, 2.19, 2.23, 2.28 |
+| ADOPTED — proposed | 10 | 2.8, 2.13, 2.15, 2.16, 2.17, 2.20, 2.21, 2.25, 2.26, 2.27 |
+| RELOCATED | 0 | — |
+| QUARANTINED | 3 | 2.3, 2.7, 2.24 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 2 | 2.2, 2.22 |
+| UNPLACED | 1 | 2.10 |
+| **Total** | **28** | — |
+
+**The column sums to 28, against 28 statements, so the arithmetic closes at this document:**
+12 + 10 + 0 + 3 + 0 + 2 + 1 = 28. **The statement lists are the record** and the integers are
+re-derivable from them by counting.
+
+#### The current-text axis at this document, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 27 |
+| DIFFERS | 14 |
+| THE DERIVATION IS SILENT | 7 |
+| **Total verdicts** | **48** |
+
+*(48 verdicts over 28 statements because thirteen rows name more than one derived statement.)*
+
+#### What this document's rows put in front of the user, in one paragraph
+
+**Row 2.16 is the sharpest disagreement in this comparison so far and it is a flat contradiction, not
+a nuance**: the derivation states that a grace note opens no change point and belongs to no sounding
+set, and the outgoing text states that a grace *"genuinely opens/closes a boundary by its span"*. It
+is not a small case — it decides the change-point set on any score with ornaments, and the
+derivation's no-zero-length-slice invariant (S-30) is built on the opposite answer. Beside it sit
+three questions the two texts answer differently and which are really one question asked three ways —
+**what the published domain is** (Rows 2.13, 2.20) and **what the span's edge is** (Row 2.25): the
+derivation covers the working span exactly, with a silent first slice and *entered sounding* marks,
+while the outgoing text tiles the intersection with the sounding material and publishes no mark. And
+**Row 2.10 is the one UNPLACED row so far**, where both texts refuse to drop an ineligible note and
+disagree only about where it is carried.
+
+---
+
 ## 7. The derived side — one row per S-1 to S-54
 
 **NOT YET WRITTEN.** This section is the same matrix as §6 read from the other side, and it can only
@@ -961,6 +1531,12 @@ Gathered from the documents tabulated so far. **Not complete over the population
 8. Row 1.15 — are the recorded per-preset movements reproducible at the current commit on the arm that
    ships?
 9. Row 1.16 — does the legacy reproduction mode still exist and still reproduce the prior set?
+10. Row 2.3 — is the loaded-span clip still inert on the whole-score path at the current commit, and
+    is that tested rather than asserted?
+11. Row 2.7 — is the enumeration's measured cost the stated bound on the largest scores the record
+    requires to be handled?
+12. Row 2.24 — are the recorded suite and corpus figures the current ones, and do the suite sizes they
+    name still exist at the current commit?
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
@@ -980,6 +1556,22 @@ Gathered from the documents tabulated so far. **Not complete over the population
    rather than as a settable value.
 4. Rows 1.25, 1.27(ii) and 1.29 — that L0's supplied list gain stem direction by the route S-7 itself
    provides, and that the reading permission be stated as binding on any consumer.
+5. Row 2.8 — that the eligibility predicate be stated once, over the union of S-15's five per-note
+   conditions and the staff-level fact, since the two texts currently test different predicates under
+   the same word.
+6. Rows 2.13 and 2.20 — that the specification state which domain is published: the working span
+   exactly, with a silent first slice where nothing begins at its start, or its intersection with the
+   sounding material.
+7. Row 2.15 — that the *entered sounding* and *cut by the span* marks S-32 requires be published
+   beside the clipped slice list.
+8. Rows 2.16 and 2.17 — that the specification state, once and explicitly, whether a grace note opens
+   a change point. **The two texts give opposite answers.**
+9. Rows 2.21 and 2.26 — that the re-slice equivalence property be stated, together with the
+   prohibition on asserting that old slices stay byte-identical across an enlargement.
+10. Row 2.25 — that the specification say whether the span's edge is a change point or an artificial
+    boundary marked as such.
+11. Row 2.27 — that the specification state whether a slice carries its sounding set or leaves it to
+    be fetched from L0 by identity.
 
 **Differences stated, with nothing chosen between the two texts.**
 
@@ -992,6 +1584,18 @@ Gathered from the documents tabulated so far. **Not complete over the population
    aggregation and a weighted bass pick.
 5. Rows 1.25 and 1.27(ii) — S-7's exclusion of stem direction and S-9's bound on what L1 reads,
    against a licence to consume it.
+6. Row 2.8 — S-15's five per-note eligibility conditions against a three-flag test carrying a
+   staff-level fact S-15 does not name.
+7. Row 2.10 — S-15's eligible-only sounding set and S-18's carrier beside the output, against an
+   ineligible note riding inside each slice's own overlapping set. **UNPLACED.**
+8. Rows 2.13, 2.20 and 2.25 — S-32's exact coverage of the working span, its silent first slice and
+   its edge marks, against a domain clipped to the sounding material with an edge boundary the
+   outgoing text calls artificial.
+9. Row 2.15 — S-32's *entered sounding* / *cut by the span* marking against span clipping.
+10. Rows 2.16 and 2.17 — S-16's *"A grace note opens no change point and belongs to no sounding
+    set"* against *"a grace genuinely opens/closes a boundary by its span"*, with S-15's
+    not-a-grace-note condition and S-30's no-zero-length-slice invariant riding on the answer.
+11. Row 2.27 — S-50's published sounding set per slice against a slice carrying start and end only.
 
 ## 13. The distribution over the whole population
 
