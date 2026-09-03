@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_comparison_l0_l1_sixth_2026_09_03.md, Task 2",
+ "dispatch": "cc_instruction_comparison_l0_l1_seventh_2026_09_03.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -230,53 +230,42 @@
    "executing_act": "cc_instruction_comparison_l0_l1_fifth_2026_09_03.md, Task 4",
    "base_commit": "cd62b001686d0f2793ad1d85df84057eaec57e38",
    "the_then_previous_batch": "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md"
+  },
+  {
+   "executing_act": "cc_instruction_comparison_l0_l1_sixth_2026_09_03.md, Task 2",
+   "base_commit": "31a951bb2b206a89f150992fa4181e705115ef6c",
+   "the_then_previous_batch": "cc_instruction_comparison_l0_l1_fifth_2026_09_03.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "31a951bb2b206a89f150992fa4181e705115ef6c",
- "the_then_previous_batch": "cc_instruction_comparison_l0_l1_fifth_2026_09_03.md",
- "entries_moved": 5,
- "characters_moved": 6324,
+ "base_commit": "cbb059bc1924f6fa04afcda959938e4ae610df0e",
+ "the_then_previous_batch": "cc_instruction_comparison_l0_l1_sixth_2026_09_03.md",
+ "entries_moved": 3,
+ "characters_moved": 4253,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2484,
-   "sha256": "291f90ca18093e5d20de03b31a636cc669a0dfdd2b1dbaeda8d68545a882c358",
+   "characters": 1931,
+   "sha256": "52f744f3cdf58f7ed887d8ecd4ec56c3a561545bd9cba74fc4688e8a918dfa0d",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-03 (CC — `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md`, Task 4, the close. **★★ THE APPLICATION ACT RAN: THE DERIVED L0/L1 SPECIFICAT"
+   "opening": "*2026-09-03 (CC — `cc_instruction_comparison_l0_l1_sixth_2026_09_03.md`, Task 2, the close. **★★ THE RATIFICATION ACT IS APPLIED: THE DERIVED L0/L1 SP"
   },
   {
    "line_at_base": 10,
-   "characters": 1231,
-   "sha256": "a011390745fa93d3e042dc34189e81e58b42d9b2fe27a16dbc73fdd789904c29",
+   "characters": 1139,
+   "sha256": "9cb8d24a5e22decd60e22f0700c9cdb4d2cabb13d5a0ffa8b1f0c8cc5a4a6e1a",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-03 (CC — Same dispatch, Task 3. **★ THE READING FILE'S RULED ROWS RE-MARKED, AND THE FAMILY PLACEMENTS RECORDED AS A STOP.** Every row Ruling"
+   "opening": "*2026-09-03 (CC — Same dispatch, Task 1. **★ THE CORRECTIONS APPLIED AND CHECKED AT THE OBJECT.** The successor was edited by targeted edits only, nev"
   },
   {
    "line_at_base": 12,
-   "characters": 509,
-   "sha256": "a8a6666e2b320de5c073471e47625318b7a7002811261f297df39c1a868a9133",
+   "characters": 1183,
+   "sha256": "49b607fa0acac71c2b9810ed5c180c4daab5fd977e606c801c83ad11ee9b423f",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-03 (CC — Same dispatch, Task 2. **★ THE DERIVATION RE-BANNERED UNDER D-674, BODY UNTOUCHED.** One blockquote inserted immediately after the t"
-  },
-  {
-   "line_at_base": 14,
-   "characters": 901,
-   "sha256": "fae3de964ff12df437315a41c5ceeeb452496eb7d61b90e768e7c39641edbd4c",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-03 (CC — Same dispatch, Task 1. **★ THE SUCCESSOR WRITTEN AND CHECKED AT THE OBJECT.** `cowork_derived_specification_l0_l1_2026_09_03.md` was"
-  },
-  {
-   "line_at_base": 16,
-   "characters": 1199,
-   "sha256": "aa57bba5c42f5876c8ef77555cb303d44abd5ed5e8c1ec897c85f81b0364a62f",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-03 (CC — Same dispatch, Task 0. **★ RULING 63, THE NINETY-FIFTH ENTRY AND THIS DISPATCH LANDED IN ONE COMMIT OF THREE PATHS.** ★ **A1 WAS CHE"
+   "opening": "*2026-09-03 (CC — Same dispatch, Task 0. **★ RULINGS 64–77, THE NINETY-SIXTH ENTRY AND THIS DISPATCH LANDED IN ONE COMMIT OF THREE PATHS.** ★ **A1 WAS"
   }
  ],
  "reconciliation": {
