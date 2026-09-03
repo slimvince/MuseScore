@@ -20432,10 +20432,16 @@ and it attaches no verdict word to the deriving session's independence.
 ### The plan's tell, in one sentence
 
 **Did this batch produce anything other than the landed records, the reading file's three sections and
-the report?** **Yes, and it is named:** two `STATUS.md` pointer entries, the forward-bound move's
-`STATUS_ARCHIVE.md` block, the re-aimed `gen_status_batch_bound.py` with its two new
-`PREVIOUS_AIMINGS` rows, and the regenerated `status_batch_bound.json` and
-`session_start_read_size.json` — **every one of them an act Task 2 orders — and nothing else.**
+the report?** **Yes, and it is named in full:** two `STATUS.md` pointer entries, the forward-bound
+move's `STATUS_ARCHIVE.md` block, the re-aimed `gen_status_batch_bound.py` with its two new
+`PREVIOUS_AIMINGS` rows, the regenerated `status_batch_bound.json` and `session_start_read_size.json`,
+this close section, and `tools/audit/guard_state.json` as the artifact of the end-state run — **every
+one of them an act this dispatch's Task 2 orders — and nothing else.**
+
+*(The last two names were added in a further commit after the end state, the tell as first written
+having stopped at Task 2's item 1 and closed with "and nothing else" — a sentence made inaccurate by
+the very acts items 2 to 4 order. Corrected rather than left standing, the former wording preserved in
+this note, #12 and #10.)*
 
 ### The end state — measured at the tree carrying the close, and E2 MET, with one red found and cleared on the way
 
